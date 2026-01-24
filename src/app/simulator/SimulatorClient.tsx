@@ -134,6 +134,15 @@ export function SimulatorClient() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
+      {/* Info box o algoritmu */}
+      <div className="bg-sky-50 border-l-4 border-sky-500 p-4 rounded-r-xl mb-6">
+        <p className="text-sm text-sky-800">
+          <strong>Jak funguje přijímání:</strong> Vaše šance závisí pouze na bodech, ne na pořadí priorit.
+          Priorita určuje jen to, na kterou školu budete přiřazeni, pokud se dostanete nad čáru u více škol.
+          {' '}<Link href="/jak-funguje-prijimani" className="underline font-medium">Zjistit více &rarr;</Link>
+        </p>
+      </div>
+
       <div className="grid lg:grid-cols-3 gap-8">
         {/* Levý panel - vstup */}
         <div className="space-y-6">

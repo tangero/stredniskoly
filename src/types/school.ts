@@ -96,3 +96,44 @@ export const krajNames: Record<string, string> = {
   'CZ072': 'Zlínský',
   'CZ080': 'Moravskoslezský'
 };
+
+// Délka studia - mapování typu na popis
+export const studyLengthLabels: Record<string, string> = {
+  'GY4': '4leté',
+  'GY6': '6leté',
+  'GY8': '8leté',
+  'SOŠ': '4leté',
+  'SOU': '3leté',
+  'VOŠ': '3leté',
+};
+
+// Typ pro související školu v datech "kam se hlásí ostatní"
+export interface RelatedSchool {
+  id: string;
+  count: number;
+  pct: number;
+  nazev: string;
+  obor: string;
+  obec: string;
+  min_body: number;
+}
+
+// Typ pro detailní data školy z school_details
+export interface SchoolDetail {
+  id: string;
+  as_p1?: {
+    total: number;
+    backup_p2?: RelatedSchool[];
+    backup_p3?: RelatedSchool[];
+  };
+  as_p2?: {
+    total: number;
+    preferred_p1?: RelatedSchool[];
+    backup_p3?: RelatedSchool[];
+  };
+  as_p3?: {
+    total: number;
+    preferred_p1?: RelatedSchool[];
+    preferred_p2?: RelatedSchool[];
+  };
+}

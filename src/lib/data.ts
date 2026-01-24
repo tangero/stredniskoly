@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { School, SchoolAnalysis, SchoolData, SchoolsData, krajNames } from '@/types/school';
-import { createSlug, createKrajSlug } from './utils';
+import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames } from '@/types/school';
+import { createSlug, createKrajSlug, extractRedizo } from './utils';
 
 const dataDir = path.join(process.cwd(), 'public');
 
@@ -199,4 +199,56 @@ export async function getRegionStats(schools: School[]): Promise<RegionStats> {
     avgIndexPoptavky,
     avgMinBody
   };
+}
+
+/**
+ * Získá všechny obory dané školy (podle REDIZO)
+ */
+export async function getSchoolsByRedizo(redizo: string): Promise<School[]> {
+  const schools = await getAllSchools();
+  return schools.filter(s => extractRedizo(s.id) === redizo);
+}
+
+/**
+ * Načte detailní data školy z school_details
+ */
+export async function getSchoolDetail(schoolId: string): Promise<SchoolDetail | null> {
+  try {
+    // Převést ID na formát souboru (nahradit / za -)
+    const fileId = schoolId.replace(/\//g, '-');
+    const filePath = path.join(dataDir, 'school_details', `${fileId}.json`);
+    const data = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(data);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Získá data z původního schools_data.json pro historická data
+ */
+export async function getSchoolHistoricalData(redizo: string): Promise<{
+  data2024?: SchoolData;
+  data2025?: SchoolData;
+} | null> {
+  try {
+    const filePath = path.join(dataDir, 'schools_data.json');
+    const content = await fs.readFile(filePath, 'utf-8');
+    const data = JSON.parse(content);
+
+    // Hledat v datech pro roky 2024 a 2025
+    let data2024: SchoolData | undefined;
+    let data2025: SchoolData | undefined;
+
+    if (data['2024']) {
+      data2024 = data['2024'].find((s: SchoolData) => s.redizo === redizo);
+    }
+    if (data['2025']) {
+      data2025 = data['2025'].find((s: SchoolData) => s.redizo === redizo);
+    }
+
+    return { data2024, data2025 };
+  } catch {
+    return null;
+  }
 }

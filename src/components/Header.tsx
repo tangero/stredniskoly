@@ -18,6 +18,9 @@ export function Header() {
             <Link href="/regiony" className="hover:underline underline-offset-4">
               Regiony
             </Link>
+            <Link href="/jak-funguje-prijimani" className="hover:underline underline-offset-4">
+              Jak to funguje?
+            </Link>
           </div>
         </nav>
       </div>
