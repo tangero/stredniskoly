@@ -49,21 +49,12 @@ export const metadata: Metadata = {
     title: 'Simulátor přijímacích zkoušek na SŠ',
     description:
       'Zjistěte své šance na přijetí na střední školu. Data z let 2024-2025.',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Simulátor přijímacích zkoušek na střední školy',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Simulátor přijímacích zkoušek na SŠ',
     description:
       'Zjistěte své šance na přijetí na střední školu. Data z let 2024-2025.',
-    images: ['/og-image.png'],
   },
   alternates: {
     canonical: 'https://stredniskoly.vercel.app',
