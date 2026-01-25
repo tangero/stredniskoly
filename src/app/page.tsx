@@ -130,7 +130,7 @@ export default async function HomePage() {
             {kraje.slice(0, 14).map(kraj => (
               <Link
                 key={kraj.kod}
-                href={`/region/${kraj.slug}`}
+                href={`/regiony/${kraj.slug}`}
                 className="p-4 bg-slate-50 rounded-xl text-center hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
               >
                 <div className="font-semibold text-sm">{kraj.nazev}</div>

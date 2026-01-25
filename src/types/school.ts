@@ -26,6 +26,13 @@ export interface School {
   priority_pcts: number[];
   category_code: 'first_choice' | 'preferred' | 'balanced' | 'backup';
   category_name: string;
+  // Nová pole pro detailní statistiky
+  prihlasky_priority?: number[];  // přihlášky podle priority [p1, p2, p3, p4, p5]
+  prijati_priority?: number[];    // přijatí podle priority [p1, p2, p3, p4, p5]
+  cj_prumer?: number;             // průměr z češtiny
+  cj_min?: number;                // minimum z češtiny
+  ma_prumer?: number;             // průměr z matematiky
+  ma_min?: number;                // minimum z matematiky
 }
 
 export interface SchoolAnalysis {

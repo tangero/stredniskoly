@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ApplicantChoicesSection, PriorityDistributionBar } from '@/components/SchoolDetailClient';
-import { getSchoolBySlug, generateAllSlugs, getSchoolsByRedizo, getSchoolDetail } from '@/lib/data';
+import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid } from '@/components/SchoolDetailClient';
+import { getSchoolBySlug, generateAllSlugs, getSchoolsByRedizo, getSchoolDetail, getExtendedSchoolStats, getSchoolDifficultyProfile } from '@/lib/data';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug, extractRedizo } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames } from '@/types/school';
 
@@ -74,30 +74,6 @@ function StudyLengthBadge({ typ, delka }: { typ: string; delka: number }) {
   );
 }
 
-// Difficulty progress bar
-function DifficultyBar({ obtiznost }: { obtiznost: number }) {
-  const difficulty = getDifficultyClass(obtiznost);
-  const percentage = Math.min(100, obtiznost);
-
-  const barColor = obtiznost >= 70 ? 'bg-red-500' :
-                   obtiznost >= 45 ? 'bg-yellow-500' : 'bg-green-500';
-
-  return (
-    <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-      <div className={`text-3xl font-bold ${difficulty.colorClass}`}>{obtiznost.toFixed(0)}</div>
-      <div className="text-sm text-slate-600 mt-1">Obtížnost přijetí</div>
-      <div className="h-2 bg-slate-100 rounded-full overflow-hidden mt-3">
-        <div
-          className={`h-full rounded-full ${barColor}`}
-          style={{ width: `${percentage}%` }}
-        />
-      </div>
-      <div className={`text-xs font-medium mt-2 ${difficulty.colorClass}`}>
-        {difficulty.label.toUpperCase()}
-      </div>
-    </div>
-  );
-}
 
 export default async function SchoolDetailPage({ params }: Props) {
   const { slug } = await params;
@@ -114,9 +90,11 @@ export default async function SchoolDetailPage({ params }: Props) {
   const redizo = extractRedizo(school.id);
 
   // Načíst další data
-  const [otherPrograms, schoolDetail] = await Promise.all([
+  const [otherPrograms, schoolDetail, extendedStats, difficultyProfile] = await Promise.all([
     getSchoolsByRedizo(redizo),
     getSchoolDetail(school.id),
+    getExtendedSchoolStats(school.id),
+    getSchoolDifficultyProfile(school.id, school.typ, school.min_body),
   ]);
 
   // Filtrovat ostatní obory (vyloučit aktuální)
@@ -156,7 +134,7 @@ export default async function SchoolDetailPage({ params }: Props) {
               <span className="mx-2">/</span>
               <Link href="/skoly" className="hover:text-indigo-600">Školy</Link>
               <span className="mx-2">/</span>
-              <Link href={`/region/${krajSlug}`} className="hover:text-indigo-600">
+              <Link href={`/regiony/${krajSlug}`} className="hover:text-indigo-600">
                 {krajNames[school.kraj_kod] || school.kraj}
               </Link>
               <span className="mx-2">/</span>
@@ -188,29 +166,27 @@ export default async function SchoolDetailPage({ params }: Props) {
 
         {/* Stats Grid */}
         <div className="max-w-6xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-indigo-600">{formatNumber(school.total_applicants)}</div>
-              <div className="text-sm text-slate-600 mt-1">Uchazečů celkem</div>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-indigo-600">{school.min_body}</div>
-              <div className="text-sm text-slate-600 mt-1">Min. body 2025</div>
-            </div>
-            <DifficultyBar obtiznost={school.obtiznost} />
-            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-indigo-600">{school.index_poptavky.toFixed(1)}×</div>
-              <div className="text-sm text-slate-600 mt-1">Konkurence</div>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-indigo-600">{school.kapacita}</div>
-              <div className="text-sm text-slate-600 mt-1">Kapacita míst</div>
-            </div>
-          </div>
+          <StatsGrid
+            totalApplicants={school.total_applicants}
+            priority1Count={school.priority_counts[0] || 0}
+            minBody={school.min_body}
+            jpzMin={extendedStats?.jpz_min || 0}
+            cjMin={extendedStats?.cj_min || 0}
+            maMin={extendedStats?.ma_min || 0}
+            hasExtraCriteria={extendedStats?.hasExtraCriteria || false}
+            extraBody={extendedStats?.extra_body || 0}
+            obtiznost={school.obtiznost}
+            indexPoptavky={school.index_poptavky}
+            kapacita={school.kapacita}
+          />
 
           {/* Priority Distribution Bar */}
           <div className="mb-8">
-            <PriorityDistributionBar priorityPcts={school.priority_pcts} />
+            <PriorityDistributionBar
+              priorityPcts={school.priority_pcts}
+              prihlasky_priority={extendedStats?.prihlasky_priority}
+              prijati_priority={extendedStats?.prijati_priority}
+            />
           </div>
 
           {/* Kam se hlásí ostatní uchazeči */}
@@ -220,6 +196,51 @@ export default async function SchoolDetailPage({ params }: Props) {
               priorityCounts={school.priority_counts}
             />
           </div>
+
+          {/* Analýza strategií uchazečů */}
+          <div className="mb-8">
+            <ApplicantStrategyAnalysis
+              schoolDetail={schoolDetail}
+              currentSchoolMinBody={school.min_body}
+            />
+          </div>
+
+          {/* Šance přijetí podle priority a Náročnost testů */}
+          {extendedStats && (
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              {extendedStats.prihlasky_priority.length > 0 && extendedStats.prijati_priority.length > 0 && (
+                <AcceptanceByPriority
+                  prihlasky_priority={extendedStats.prihlasky_priority}
+                  prijati_priority={extendedStats.prijati_priority}
+                />
+              )}
+              {(extendedStats.cj_prumer > 0 || extendedStats.ma_prumer > 0) && (
+                <TestDifficulty
+                  cj_prumer={extendedStats.cj_prumer}
+                  cj_min={extendedStats.cj_min}
+                  ma_prumer={extendedStats.ma_prumer}
+                  ma_min={extendedStats.ma_min}
+                  min_body={school.min_body}
+                />
+              )}
+            </div>
+          )}
+
+          {/* Profil náročnosti školy */}
+          {difficultyProfile && extendedStats && (
+            <div className="mb-8">
+              <SchoolDifficultyProfile
+                profile={difficultyProfile}
+                schoolType={school.typ}
+                cjPrumer={extendedStats.cj_prumer}
+                maPrumer={extendedStats.ma_prumer}
+                jpzMin={extendedStats.jpz_min}
+                minBody={school.min_body}
+                extraBody={extendedStats.extra_body}
+                hasExtraCriteria={extendedStats.hasExtraCriteria}
+              />
+            </div>
+          )}
 
           {/* Ostatní obory této školy */}
           {otherProgramsFiltered.length > 0 && (
@@ -292,9 +313,21 @@ export default async function SchoolDetailPage({ params }: Props) {
               <h2 className="text-xl font-semibold mb-4">Bodové statistiky</h2>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-600">Minimální body:</span>
+                  <span className="text-slate-600">Min. skóre pro přijetí:</span>
                   <span className="font-semibold text-red-600">{school.min_body}</span>
                 </div>
+                {extendedStats && extendedStats.hasExtraCriteria && (
+                  <>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-slate-500 pl-4">└ z toho JPZ (ČJ+MA):</span>
+                      <span className="font-medium text-slate-700">{extendedStats.jpz_min}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-slate-500 pl-4">└ body za další kritéria:</span>
+                      <span className="font-medium text-amber-600">+{extendedStats.extra_body}</span>
+                    </div>
+                  </>
+                )}
                 <div className="flex justify-between items-center">
                   <span className="text-slate-600">Průměrné body:</span>
                   <span className="font-semibold">{school.prumer_body?.toFixed(1) || '-'}</span>
@@ -306,6 +339,13 @@ export default async function SchoolDetailPage({ params }: Props) {
                   </span>
                 </div>
               </div>
+              {extendedStats && extendedStats.hasExtraCriteria && (
+                <div className="mt-4 p-3 bg-amber-50 rounded-lg text-xs text-amber-700">
+                  <strong>Poznámka:</strong> Tento obor přidává ke skóre z JPZ ještě body za další kritéria
+                  (typicky prospěch na ZŠ). Pro férové srovnání s ostatními školami používáme v percentilech
+                  náročnosti pouze čisté JPZ body ({extendedStats.jpz_min} b.).
+                </div>
+              )}
             </div>
           </div>
 

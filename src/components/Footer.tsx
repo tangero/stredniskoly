@@ -7,9 +7,18 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="font-semibold mb-3">O projektu</h3>
-            <p className="text-slate-400 text-sm">
+            <p className="text-slate-400 text-sm mb-3">
               Simulátor přijímacích zkoušek využívá reálná data z CERMAT pro odhad
               šancí na přijetí na střední školy v ČR.
+            </p>
+            <p className="text-slate-400 text-sm">
+              <strong className="text-slate-300">Autor:</strong> Patrick Zandl
+              <br />
+              <span className="text-xs">Jde o experiment, data nemusí být přesná.</span>
+              <br />
+              <a href="mailto:patrick@zandl.cz" className="text-indigo-400 hover:text-indigo-300 transition-colors">
+                patrick@zandl.cz
+              </a>
             </p>
           </div>
           <div>

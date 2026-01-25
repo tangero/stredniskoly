@@ -80,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="cs">
+    <html lang="cs" suppressHydrationWarning>
       <body className="antialiased bg-slate-50 text-slate-900 min-h-screen">
         {children}
         <Analytics />
