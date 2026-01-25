@@ -30,6 +30,25 @@ function createSlug(name: string, obor?: string): string {
   return slug;
 }
 
+// Deduplikace a agregace škol podle ID
+function deduplicateSchools(schools: RelatedSchool[]): RelatedSchool[] {
+  const schoolMap = new Map<string, RelatedSchool>();
+
+  for (const school of schools) {
+    const existing = schoolMap.get(school.id);
+    if (existing) {
+      // Agregovat počty a procenta
+      existing.count += school.count;
+      existing.pct += school.pct;
+    } else {
+      schoolMap.set(school.id, { ...school });
+    }
+  }
+
+  // Seřadit podle procent sestupně
+  return Array.from(schoolMap.values()).sort((a, b) => b.pct - a.pct);
+}
+
 interface Props {
   schoolDetail: SchoolDetail | null;
   priorityCounts: number[];
@@ -41,18 +60,16 @@ function RelatedSchoolCard({ school }: { school: RelatedSchool }) {
   return (
     <Link
       href={`/skola/${slug}`}
-      className="block p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors"
+      className="block p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors border-l-4 border-indigo-400"
     >
-      <div className="flex justify-between items-start">
-        <div>
-          <div className="font-medium text-sm">{school.nazev}</div>
-          <div className="text-xs text-slate-600">{school.obor}</div>
-          <div className="text-xs text-slate-500">{school.obec}</div>
+      <div className="flex justify-between items-center">
+        <div className="flex-1">
+          <div className="font-medium">{school.nazev}</div>
+          <div className="text-sm text-slate-600">{school.obor} • {school.obec}</div>
         </div>
-        <div className="text-right">
-          <div className="text-sm font-semibold text-indigo-600">{school.count} uch.</div>
-          <div className="text-xs text-slate-500">{school.pct.toFixed(1)}%</div>
-          <div className="text-xs text-slate-500">min: {school.min_body} b.</div>
+        <div className="text-right ml-4">
+          <div className="text-lg font-bold text-indigo-600">{school.pct.toFixed(1)}%</div>
+          <div className="text-xs text-slate-500">{school.count} uch. • min: {school.min_body} b.</div>
         </div>
       </div>
     </Link>
@@ -73,9 +90,14 @@ export function ApplicantChoicesSection({ schoolDetail, priorityCounts }: Props)
   // Získat data podle vybrané priority
   const getRelatedSchools = () => {
     if (selectedPriority === 1 && schoolDetail.as_p1) {
+      // Kombinovat a deduplikovat záložní volby
+      const allBackup = [
+        ...(schoolDetail.as_p1.backup_p2 || []),
+        ...(schoolDetail.as_p1.backup_p3 || [])
+      ];
       return {
         total: schoolDetail.as_p1.total,
-        backup: [...(schoolDetail.as_p1.backup_p2 || []), ...(schoolDetail.as_p1.backup_p3 || [])],
+        backup: deduplicateSchools(allBackup),
         label: '1. volbu',
         description: 'Kam dali své záložní volby?'
       };
@@ -83,16 +105,21 @@ export function ApplicantChoicesSection({ schoolDetail, priorityCounts }: Props)
     if (selectedPriority === 2 && schoolDetail.as_p2) {
       return {
         total: schoolDetail.as_p2.total,
-        preferred: schoolDetail.as_p2.preferred_p1 || [],
-        backup: schoolDetail.as_p2.backup_p3 || [],
+        preferred: deduplicateSchools(schoolDetail.as_p2.preferred_p1 || []),
+        backup: deduplicateSchools(schoolDetail.as_p2.backup_p3 || []),
         label: '2. volbu',
         description: 'Jakou měli 1. volbu a kam dali 3. volbu?'
       };
     }
     if (selectedPriority === 3 && schoolDetail.as_p3) {
+      // Kombinovat a deduplikovat preferované volby
+      const allPreferred = [
+        ...(schoolDetail.as_p3.preferred_p1 || []),
+        ...(schoolDetail.as_p3.preferred_p2 || [])
+      ];
       return {
         total: schoolDetail.as_p3.total,
-        preferred: [...(schoolDetail.as_p3.preferred_p1 || []), ...(schoolDetail.as_p3.preferred_p2 || [])],
+        preferred: deduplicateSchools(allPreferred),
         label: '3. volbu',
         description: 'Jaké měli preferované volby?'
       };
@@ -176,16 +203,16 @@ export function ApplicantChoicesSection({ schoolDetail, priorityCounts }: Props)
         </p>
       </div>
 
-      {/* Related schools */}
-      <div className="space-y-4">
+      {/* Related schools - 1 sloupec */}
+      <div className="space-y-6">
         {/* Preferred schools (for p2, p3) */}
         {relatedData.preferred && relatedData.preferred.length > 0 && (
           <div>
             <h3 className="font-medium text-sm text-slate-700 mb-3">
               {selectedPriority === 2 ? 'Jejich 1. volba (preferovaná škola):' : 'Jejich preferované volby:'}
             </h3>
-            <div className="grid md:grid-cols-2 gap-3">
-              {relatedData.preferred.slice(0, 6).map((school) => (
+            <div className="space-y-2">
+              {relatedData.preferred.slice(0, 8).map((school) => (
                 <RelatedSchoolCard key={school.id} school={school} />
               ))}
             </div>
@@ -199,8 +226,8 @@ export function ApplicantChoicesSection({ schoolDetail, priorityCounts }: Props)
               {selectedPriority === 1 ? 'Jejich záložní volby:' :
                selectedPriority === 2 ? 'Jejich 3. volba (záloha):' : ''}
             </h3>
-            <div className="grid md:grid-cols-2 gap-3">
-              {relatedData.backup.slice(0, 6).map((school) => (
+            <div className="space-y-2">
+              {relatedData.backup.slice(0, 8).map((school) => (
                 <RelatedSchoolCard key={school.id} school={school} />
               ))}
             </div>
