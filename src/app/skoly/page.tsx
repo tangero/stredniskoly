@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { getAllSchools } from '@/lib/data';
+import { SchoolSearch } from '@/components/SchoolSearch';
+import { getAllSchools, getAllKraje } from '@/lib/data';
 import { createSlug, getDifficultyClass } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames } from '@/types/school';
 
@@ -31,6 +32,7 @@ function StudyLengthBadge({ delka }: { delka: number }) {
 
 export default async function SchoolsPage() {
   const schools = await getAllSchools();
+  const kraje = await getAllKraje();
 
   // Seřadit podle obtížnosti (nejvyšší první)
   const sortedSchools = [...schools].sort((a, b) => b.obtiznost - a.obtiznost);
@@ -46,9 +48,12 @@ export default async function SchoolsPage() {
         <div className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white py-12">
           <div className="max-w-6xl mx-auto px-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Analýza škol</h1>
-            <p className="text-lg opacity-90">
+            <p className="text-lg opacity-90 mb-8">
               Prohlédněte si detailní statistiky {schools.length.toLocaleString('cs-CZ')} škol a oborů v ČR
             </p>
+
+            {/* Vyhledávání */}
+            <SchoolSearch schools={schools} kraje={kraje} />
           </div>
         </div>
 
