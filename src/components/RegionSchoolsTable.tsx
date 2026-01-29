@@ -235,8 +235,8 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
           valB = statsB?.jpz_min || 0;
           break;
         case 'skore':
-          valA = a.min_body;
-          valB = b.min_body;
+          valA = statsA?.jpz_prumer || a.prumer_body;
+          valB = statsB?.jpz_prumer || b.prumer_body;
           break;
         case 'kapacita':
           valA = a.kapacita;
@@ -339,36 +339,32 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
                 </div>
               </th>
               <SortableHeader
-                label="JPZ body"
+                label="Body min"
                 sortKeyName="jpz"
                 sortKey={sortKey}
                 sortDir={sortDir}
                 onSort={handleSort}
                 tooltip={
-                  <InfoTooltip title="JPZ body (čisté)">
-                    <strong>Čisté body z jednotné přijímací zkoušky</strong> (ČJ + MA).
+                  <InfoTooltip title="Minimální body pro přijetí">
+                    <strong>Minimální počet bodů z JPZ</strong> s jakým byl někdo přijat.
                     <br /><br />
-                    Tyto body jsou porovnatelné mezi všemi školami, protože neobsahují
-                    dodatečná kritéria jako prospěch ze ZŠ.
+                    Menší čísla = body jednoho studenta (ČJ / MA).
                     <br /><br />
                     Maximum: 100 bodů (50 ČJ + 50 MA)
                   </InfoTooltip>
                 }
               />
               <SortableHeader
-                label="Skóre"
+                label="Body průměr"
                 sortKeyName="skore"
                 sortKey={sortKey}
                 sortDir={sortDir}
                 onSort={handleSort}
                 tooltip={
-                  <InfoTooltip title="Celkové skóre">
-                    <strong>Celkové minimální skóre</strong> potřebné pro přijetí.
+                  <InfoTooltip title="Průměrné body přijatých">
+                    <strong>Průměrné body z JPZ</strong> všech přijatých studentů.
                     <br /><br />
-                    Pokud se liší od JPZ bodů, škola přidává body za další kritéria
-                    (typicky prospěch na ZŠ).
-                    <br /><br />
-                    <span className="text-amber-400">📝</span> = obor má dodatečná kritéria
+                    <span className="text-amber-400">📝</span> = obor má dodatečná kritéria (prospěch aj.)
                   </InfoTooltip>
                 }
               />
@@ -485,13 +481,13 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
                     </div>
                   </td>
 
-                  {/* JPZ body */}
+                  {/* Body min */}
                   <td className="p-3 text-center">
                     {stats ? (
                       <div>
                         <div className="text-lg font-bold text-slate-900">{jpzMin}</div>
                         <div className="text-xs text-slate-500">
-                          {stats.cj_min}/{stats.ma_min}
+                          {stats.cj_at_jpz_min}/{stats.ma_at_jpz_min}
                         </div>
                       </div>
                     ) : (
@@ -499,11 +495,11 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
                     )}
                   </td>
 
-                  {/* Skóre */}
+                  {/* Body průměr */}
                   <td className="p-3 text-center">
                     <div className="flex items-center justify-center gap-1">
                       <span className={`text-lg font-bold ${hasExtra ? 'text-amber-600' : 'text-slate-900'}`}>
-                        {school.min_body}
+                        {stats?.jpz_prumer || school.prumer_body}
                       </span>
                       {hasExtra && (
                         <span title="Obor má dodatečná kritéria (prospěch aj.)" className="cursor-help">
@@ -512,7 +508,7 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
                       )}
                     </div>
                     {hasExtra && stats && (
-                      <div className="text-xs text-amber-600">+{stats.extra_body} b.</div>
+                      <div className="text-xs text-amber-600">+{stats.extra_body} extra</div>
                     )}
                   </td>
 
