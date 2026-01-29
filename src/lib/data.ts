@@ -310,11 +310,13 @@ export interface ExtendedSchoolStats {
   prihlasky_priority: number[];  // přihlášky podle priority
   prijati_priority: number[];    // přijatí podle priority
   cj_prumer: number;             // průměr z češtiny (0-50 bodů)
-  cj_min: number;                // minimum z češtiny (0-50 bodů)
+  cj_min: number;                // nezávislé minimum z češtiny (0-50 bodů) - POZOR: může být z jiného studenta než ma_min!
   ma_prumer: number;             // průměr z matematiky (0-50 bodů)
-  ma_min: number;                // minimum z matematiky (0-50 bodů)
-  // Vypočítaná pole pro oddělení JPZ od celkového skóre
-  jpz_min: number;               // Čisté JPZ body (cj_min + ma_min, max 100)
+  ma_min: number;                // nezávislé minimum z matematiky (0-50 bodů) - POZOR: může být z jiného studenta než cj_min!
+  // Skutečná data z raw dat jednotlivých uchazečů
+  jpz_min: number;               // SKUTEČNÉ minimum JPZ bodů (z jednoho studenta, max 100)
+  cj_at_jpz_min: number;         // ČJ body studenta s nejnižším JPZ
+  ma_at_jpz_min: number;         // MA body studenta s nejnižším JPZ
   jpz_prumer: number;            // Čistý JPZ průměr (cj_prumer + ma_prumer, max 100)
   min_body: number;              // Celkové body pro přijetí (JPZ + extra kritéria)
   extra_body: number;            // Body za další kritéria (prospěch, školní zkouška)
@@ -358,14 +360,22 @@ async function getSchoolsDataById(): Promise<Map<string, ExtendedSchoolStats>> {
         const cj_prumer = Math.round((cj_prumer_raw / 2) * 10) / 10; // 1 desetinné místo
         const ma_prumer = Math.round((ma_prumer_raw / 2) * 10) / 10;
 
-        // JPZ celkem (max 100 bodů)
-        const jpz_min = cj_min + ma_min;
+        // SKUTEČNÉ JPZ minimum (z raw dat jednotlivých uchazečů)
+        // Toto je skutečné JPZ skóre studenta s nejnižším JPZ, ne součet nezávislých minim!
+        const jpz_min_actual = school.jpz_min_actual || 0;
+        const cj_at_jpz_min = school.cj_at_jpz_min || 0;
+        const ma_at_jpz_min = school.ma_at_jpz_min || 0;
+
+        // Použít skutečné JPZ minimum, pokud je k dispozici, jinak fallback na součet nezávislých minim
+        const jpz_min = jpz_min_actual > 0 ? jpz_min_actual : (cj_min + ma_min);
         const jpz_prumer = Math.round((cj_prumer + ma_prumer) * 10) / 10;
 
         // Celkové body pro přijetí (také převedeno z % škály)
         const min_body = Math.round(min_body_raw / 2);
+
+        // Extra body = rozdíl mezi celkovým skóre a skutečným JPZ minimem
         const extra_body = min_body - jpz_min;
-        const hasExtraCriteria = extra_body > 5; // Threshold 5 bodů (původně 10 v % škále)
+        const hasExtraCriteria = extra_body > 5; // Threshold 5 bodů
 
         schoolsDataByIdCache.set(baseId, {
           prihlasky_priority: school.prihlasky_priority || [],
@@ -375,6 +385,8 @@ async function getSchoolsDataById(): Promise<Map<string, ExtendedSchoolStats>> {
           ma_prumer,
           ma_min,
           jpz_min,
+          cj_at_jpz_min,
+          ma_at_jpz_min,
           jpz_prumer,
           min_body,
           extra_body,

@@ -171,8 +171,8 @@ export default async function SchoolDetailPage({ params }: Props) {
             priority1Count={school.priority_counts[0] || 0}
             minBody={school.min_body}
             jpzMin={extendedStats?.jpz_min || 0}
-            cjMin={extendedStats?.cj_min || 0}
-            maMin={extendedStats?.ma_min || 0}
+            cjAtJpzMin={extendedStats?.cj_at_jpz_min || 0}
+            maAtJpzMin={extendedStats?.ma_at_jpz_min || 0}
             hasExtraCriteria={extendedStats?.hasExtraCriteria || false}
             extraBody={extendedStats?.extra_body || 0}
             obtiznost={school.obtiznost}

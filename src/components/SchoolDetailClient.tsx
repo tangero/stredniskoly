@@ -1310,9 +1310,9 @@ interface StatsGridProps {
   totalApplicants: number;
   priority1Count: number;
   minBody: number;
-  jpzMin: number;
-  cjMin: number;
-  maMin: number;
+  jpzMin: number;              // skutečné minimum JPZ (z jednoho studenta)
+  cjAtJpzMin: number;          // ČJ body studenta s nejnižším JPZ
+  maAtJpzMin: number;          // MA body studenta s nejnižším JPZ
   hasExtraCriteria: boolean;
   extraBody: number;
   obtiznost: number;
@@ -1341,8 +1341,8 @@ export function StatsGrid({
   priority1Count,
   minBody,
   jpzMin,
-  cjMin,
-  maMin,
+  cjAtJpzMin,
+  maAtJpzMin,
   hasExtraCriteria,
   extraBody,
   obtiznost,
@@ -1371,26 +1371,36 @@ export function StatsGrid({
         </div>
       </div>
 
-      {/* Min. body - přepracováno */}
+      {/* Min. body z JPZ */}
       <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-        <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">Min. bodů 2025</div>
+        <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">Min. bodů z JPZ 2025</div>
         <div className="text-2xl font-bold text-indigo-600">
-          ČJ {cjMin} <span className="text-slate-400">/</span> MA {maMin}
+          ČJ {cjAtJpzMin} <span className="text-slate-400">/</span> MA {maAtJpzMin}
         </div>
         <div className="text-xs text-slate-500 mt-1">(z max. 50 / 50)</div>
-        <div className="text-xs text-slate-600 mt-2">
-          celkem z JPZ: <span className="font-semibold">{jpzMin} b.</span> <span className="text-slate-400">(max 100)</span>
+        <div className="text-xs text-slate-600 mt-2 flex items-center justify-center">
+          celkem z JPZ: <span className="font-semibold ml-1">{jpzMin} b.</span>
+          <InfoTooltip title="Minimální JPZ body pro přijetí">
+            Toto jsou <strong>skutečné body z testů</strong> přijatého studenta s nejnižším JPZ skóre.
+            <br /><br />
+            ČJ {cjAtJpzMin} + MA {maAtJpzMin} = <strong>{jpzMin} bodů</strong> (z max. 100)
+            <br /><br />
+            Pokud dosáhnete alespoň tohoto skóre z JPZ testů, máte reálnou šanci na přijetí.
+          </InfoTooltip>
         </div>
         {hasExtraCriteria && (
           <>
             <div className="text-xs text-slate-600 mt-1">
-              min. skóre: <span className="font-semibold text-amber-600">{minBody} b.</span>
+              min. celkové skóre: <span className="font-semibold text-amber-600">{minBody} b.</span>
             </div>
-            <div className="text-xs text-amber-600 mt-1">
+            <div className="text-xs text-amber-600 mt-1 flex items-center justify-center">
               +{extraBody} b. za další kritéria
               <InfoTooltip title="Dodatečná kritéria">
                 Tento obor přidává ke skóre z JPZ ještě <strong>+{extraBody} bodů</strong> za další kritéria
                 (typicky prospěch na ZŠ).
+                <br /><br />
+                Student s nejnižším JPZ ({jpzMin} b.) měl navíc {extraBody} bodů za prospěch,
+                a tak dosáhl celkového skóre {minBody} bodů.
                 <br /><br />
                 Konkrétní kritéria a jejich váhu nastudujte na stránkách školy.
               </InfoTooltip>
