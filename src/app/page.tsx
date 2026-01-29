@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { SchoolSearch } from '@/components/SchoolSearch';
 import { getAllSchools, getAllKraje } from '@/lib/data';
 
 export default async function HomePage() {
@@ -54,6 +55,17 @@ export default async function HomePage() {
               <div className="text-sm opacity-80">Data z let</div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Vyhledávání škol */}
+      <section className="py-12 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">Najdi svou školu</h2>
+          <p className="text-center text-slate-600 mb-8">
+            Hledej podle názvu školy, oboru, města nebo kraje
+          </p>
+          <SchoolSearch schools={schools} kraje={kraje} />
         </div>
       </section>
 
