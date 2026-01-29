@@ -76,16 +76,21 @@ async function getSchoolDetailFile(schoolId: string) {
 }
 
 function calculateDifficultyProfile(school: any, allSchools: any[]) {
-  const jpzMin = (school.cj_min || 0) + (school.ma_min || 0);
+  // Data jsou v % škále, převádíme na skutečné body (dělíme 2)
+  const getJpz = (s: any) => ((s.cj_min || 0) + (s.ma_min || 0)) / 2;
+  const getCj = (s: any) => (s.cj_min || 0) / 2;
+  const getMa = (s: any) => (s.ma_min || 0) / 2;
+
+  const jpzMin = getJpz(school);
   if (!jpzMin) return null;
 
   // Získat všechny školy se stejným typem
-  const sameTypeSchools = allSchools.filter(s => s.typ === school.typ && ((s.cj_min || 0) + (s.ma_min || 0)) > 0);
-  const allWithJpz = allSchools.filter(s => ((s.cj_min || 0) + (s.ma_min || 0)) > 0);
+  const sameTypeSchools = allSchools.filter(s => s.typ === school.typ && getJpz(s) > 0);
+  const allWithJpz = allSchools.filter(s => getJpz(s) > 0);
 
   // Percentily
-  const nationalRank = allWithJpz.filter(s => ((s.cj_min || 0) + (s.ma_min || 0)) < jpzMin).length;
-  const typeRank = sameTypeSchools.filter(s => ((s.cj_min || 0) + (s.ma_min || 0)) < jpzMin).length;
+  const nationalRank = allWithJpz.filter(s => getJpz(s) < jpzMin).length;
+  const typeRank = sameTypeSchools.filter(s => getJpz(s) < jpzMin).length;
 
   const percentileNational = Math.round((nationalRank / allWithJpz.length) * 100);
   const percentileType = sameTypeSchools.length > 1
@@ -93,14 +98,14 @@ function calculateDifficultyProfile(school: any, allSchools: any[]) {
     : 50;
 
   // Průměry pro z-skóre
-  const avgCj = allWithJpz.reduce((sum, s) => sum + (s.cj_min || 0), 0) / allWithJpz.length;
-  const avgMa = allWithJpz.reduce((sum, s) => sum + (s.ma_min || 0), 0) / allWithJpz.length;
+  const avgCj = allWithJpz.reduce((sum, s) => sum + getCj(s), 0) / allWithJpz.length;
+  const avgMa = allWithJpz.reduce((sum, s) => sum + getMa(s), 0) / allWithJpz.length;
 
-  const stdCj = Math.sqrt(allWithJpz.reduce((sum, s) => sum + Math.pow((s.cj_min || 0) - avgCj, 2), 0) / allWithJpz.length) || 1;
-  const stdMa = Math.sqrt(allWithJpz.reduce((sum, s) => sum + Math.pow((s.ma_min || 0) - avgMa, 2), 0) / allWithJpz.length) || 1;
+  const stdCj = Math.sqrt(allWithJpz.reduce((sum, s) => sum + Math.pow(getCj(s) - avgCj, 2), 0) / allWithJpz.length) || 1;
+  const stdMa = Math.sqrt(allWithJpz.reduce((sum, s) => sum + Math.pow(getMa(s) - avgMa, 2), 0) / allWithJpz.length) || 1;
 
-  const zScoreCj = ((school.cj_min || 0) - avgCj) / stdCj;
-  const zScoreMa = ((school.ma_min || 0) - avgMa) / stdMa;
+  const zScoreCj = (getCj(school) - avgCj) / stdCj;
+  const zScoreMa = (getMa(school) - avgMa) / stdMa;
 
   // Focus index (-1 = humanitní, +1 = matematický)
   const focusIndex = (zScoreMa - zScoreCj) / 2;
@@ -110,10 +115,10 @@ function calculateDifficultyProfile(school: any, allSchools: any[]) {
   else if (focusIndex < -0.5) focusLabel = 'Humanitně zaměřený';
   else if (focusIndex < -0.2) focusLabel = 'Mírně humanitní';
 
-  // Srovnání s průměrem
-  const avgJpz = allWithJpz.reduce((sum, s) => sum + ((s.cj_min || 0) + (s.ma_min || 0)), 0) / allWithJpz.length;
+  // Srovnání s průměrem (v bodech)
+  const avgJpz = allWithJpz.reduce((sum, s) => sum + getJpz(s), 0) / allWithJpz.length;
   const avgTypeJpz = sameTypeSchools.length > 0
-    ? sameTypeSchools.reduce((sum, s) => sum + ((s.cj_min || 0) + (s.ma_min || 0)), 0) / sameTypeSchools.length
+    ? sameTypeSchools.reduce((sum, s) => sum + getJpz(s), 0) / sameTypeSchools.length
     : avgJpz;
 
   return {
@@ -210,17 +215,32 @@ export async function GET(
       ? school.priority_counts
       : school.prihlasky_priority || schoolAnalysis?.prihlasky_priority || [0, 0, 0, 0, 0];
 
+    // Převod z % skórů na skutečné body (data z CERMATu jsou v % škále 0-100)
+    // JPZ test má max 50 bodů za předmět, takže dělíme 2
+    const cj_min_raw = school.cj_min || schoolAnalysis?.cj_min || 0;
+    const ma_min_raw = school.ma_min || schoolAnalysis?.ma_min || 0;
+    const cj_prumer_raw = school.cj_prumer || schoolAnalysis?.cj_prumer || 0;
+    const ma_prumer_raw = school.ma_prumer || schoolAnalysis?.ma_prumer || 0;
+    const min_body_raw = school.min_body || 0;
+
+    const cj_min = Math.round(cj_min_raw / 2);
+    const ma_min = Math.round(ma_min_raw / 2);
+    const cj_prumer = Math.round((cj_prumer_raw / 2) * 10) / 10;
+    const ma_prumer = Math.round((ma_prumer_raw / 2) * 10) / 10;
+    const min_body = Math.round(min_body_raw / 2);
+    const jpz_min = cj_min + ma_min;
+
     const result: SchoolDetail = {
       total_applicants: school.total_applicants || school.prihlasky || 0,
       priority_counts: priorityCounts,
       prihlasky_priority: school.prihlasky_priority || schoolAnalysis?.prihlasky_priority || [0, 0, 0, 0, 0],
       prijati_priority: school.prijati_priority || schoolAnalysis?.prijati_priority || [0, 0, 0, 0, 0],
-      cj_prumer: school.cj_prumer || schoolAnalysis?.cj_prumer || 0,
-      cj_min: school.cj_min || schoolAnalysis?.cj_min || 0,
-      ma_prumer: school.ma_prumer || schoolAnalysis?.ma_prumer || 0,
-      ma_min: school.ma_min || schoolAnalysis?.ma_min || 0,
-      min_body: school.min_body || 0,
-      jpz_min: (school.cj_min || 0) + (school.ma_min || 0),
+      cj_prumer,
+      cj_min,
+      ma_prumer,
+      ma_min,
+      min_body,
+      jpz_min,
       index_poptavky: school.index_poptavky || 0,
       obtiznost: school.obtiznost || 0,
       kapacita: school.kapacita || 0,

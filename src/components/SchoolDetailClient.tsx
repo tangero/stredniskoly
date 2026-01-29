@@ -135,20 +135,21 @@ interface Props {
   priorityCounts: number[];
 }
 
-// Funkce pro určení obtížnosti podle min_body
+// Funkce pro určení obtížnosti podle min_body (v bodech, max ~100 z JPZ)
 function getDifficultyFromMinBody(minBody: number): {
   label: string;
   color: string;
   bgColor: string;
   borderColor: string;
 } {
-  if (minBody >= 120) {
+  // Prahy přepočítané na skutečné body (původně pro % škálu)
+  if (minBody >= 60) {
     return { label: 'Velmi těžké', color: 'text-red-700', bgColor: 'bg-red-100', borderColor: 'border-red-500' };
   }
-  if (minBody >= 90) {
+  if (minBody >= 45) {
     return { label: 'Těžké', color: 'text-orange-700', bgColor: 'bg-orange-100', borderColor: 'border-orange-500' };
   }
-  if (minBody >= 60) {
+  if (minBody >= 30) {
     return { label: 'Střední', color: 'text-yellow-700', bgColor: 'bg-yellow-100', borderColor: 'border-yellow-500' };
   }
   return { label: 'Snazší', color: 'text-green-700', bgColor: 'bg-green-100', borderColor: 'border-green-500' };
@@ -680,7 +681,7 @@ export function TestDifficulty({ cj_prumer, cj_min, ma_prumer, ma_min, min_body 
   // Pokud nemáme data, nezobrazovat
   if (!cj_prumer && !ma_prumer) return null;
 
-  const maxPoints = 100; // Maximum bodů z jednoho testu (JPZ 50b + školní část 50b)
+  const maxPoints = 50; // Maximum bodů z jednoho JPZ testu
   const cjPct = (cj_prumer / maxPoints) * 100;
   const maPct = (ma_prumer / maxPoints) * 100;
 
@@ -700,7 +701,7 @@ export function TestDifficulty({ cj_prumer, cj_min, ma_prumer, ma_min, min_body 
         <div className="p-4 bg-blue-50 rounded-lg">
           <div className="flex items-center justify-between mb-2">
             <span className="font-medium text-blue-800">Čeština</span>
-            <span className="text-xs text-blue-600">max 100 b.</span>
+            <span className="text-xs text-blue-600">max 50 b.</span>
           </div>
 
           <div className="space-y-2">
@@ -725,7 +726,7 @@ export function TestDifficulty({ cj_prumer, cj_min, ma_prumer, ma_min, min_body 
         <div className="p-4 bg-purple-50 rounded-lg">
           <div className="flex items-center justify-between mb-2">
             <span className="font-medium text-purple-800">Matematika</span>
-            <span className="text-xs text-purple-600">max 100 b.</span>
+            <span className="text-xs text-purple-600">max 50 b.</span>
           </div>
 
           <div className="space-y-2">
@@ -754,7 +755,7 @@ export function TestDifficulty({ cj_prumer, cj_min, ma_prumer, ma_min, min_body 
           <span className="text-xl font-bold text-slate-900">{min_body} bodů</span>
         </div>
         <div className="text-xs text-slate-500 mt-1">
-          (JPZ body: max 100 ČJ + max 100 MA = max 200 bodů celkem)
+          (JPZ body: max 50 ČJ + max 50 MA = max 100 bodů celkem)
         </div>
       </div>
 
@@ -1376,8 +1377,9 @@ export function StatsGrid({
         <div className="text-2xl font-bold text-indigo-600">
           ČJ {cjMin} <span className="text-slate-400">/</span> MA {maMin}
         </div>
+        <div className="text-xs text-slate-500 mt-1">(z max. 50 / 50)</div>
         <div className="text-xs text-slate-600 mt-2">
-          celkem z JPZ: <span className="font-semibold">{jpzMin} b.</span>
+          celkem z JPZ: <span className="font-semibold">{jpzMin} b.</span> <span className="text-slate-400">(max 100)</span>
         </div>
         {hasExtraCriteria && (
           <>

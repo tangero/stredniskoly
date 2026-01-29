@@ -89,10 +89,11 @@ function MiniPriorityBar({ pcts }: { pcts: number[] }) {
   );
 }
 
+// Prahy přepočítané na skutečné body (původně pro % škálu)
 function getDifficultyBorder(minBody: number): string {
-  if (minBody >= 120) return 'border-l-red-500';
-  if (minBody >= 90) return 'border-l-orange-500';
-  if (minBody >= 60) return 'border-l-yellow-500';
+  if (minBody >= 60) return 'border-l-red-500';
+  if (minBody >= 45) return 'border-l-orange-500';
+  if (minBody >= 30) return 'border-l-yellow-500';
   return 'border-l-green-500';
 }
 

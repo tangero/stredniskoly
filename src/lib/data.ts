@@ -9,15 +9,30 @@ let schoolAnalysisCache: SchoolAnalysis | null = null;
 let schoolsDataCache: SchoolsData | null = null;
 
 /**
- * Načte school_analysis.json
+ * Načte school_analysis.json a převede % skóry na skutečné body
+ *
+ * Data z CERMATu jsou v % skórech (0-100 za předmět, 0-200 celkem).
+ * Převádíme na skutečné body z JPZ testu (max 50+50=100 bodů).
  */
 export async function getSchoolAnalysis(): Promise<SchoolAnalysis> {
   if (schoolAnalysisCache) return schoolAnalysisCache;
 
   const filePath = path.join(dataDir, 'school_analysis.json');
   const data = await fs.readFile(filePath, 'utf-8');
-  schoolAnalysisCache = JSON.parse(data);
-  return schoolAnalysisCache!;
+  const rawData = JSON.parse(data) as SchoolAnalysis;
+
+  // Převést % skóry na skutečné body (dělit 2)
+  const convertedData: SchoolAnalysis = {};
+  for (const [key, school] of Object.entries(rawData)) {
+    convertedData[key] = {
+      ...school,
+      min_body: Math.round(school.min_body / 2),
+      prumer_body: Math.round((school.prumer_body / 2) * 10) / 10,
+    };
+  }
+
+  schoolAnalysisCache = convertedData;
+  return schoolAnalysisCache;
 }
 
 /**
@@ -210,7 +225,7 @@ export async function getSchoolsByRedizo(redizo: string): Promise<School[]> {
 }
 
 /**
- * Načte detailní data školy z school_details
+ * Načte detailní data školy z school_details a převede min_body z % na body
  */
 export async function getSchoolDetail(schoolId: string): Promise<SchoolDetail | null> {
   try {
@@ -218,7 +233,36 @@ export async function getSchoolDetail(schoolId: string): Promise<SchoolDetail | 
     const fileId = schoolId.replace(/\//g, '-');
     const filePath = path.join(dataDir, 'school_details', `${fileId}.json`);
     const data = await fs.readFile(filePath, 'utf-8');
-    return JSON.parse(data);
+    const rawData = JSON.parse(data) as SchoolDetail;
+
+    // Pomocná funkce pro převod min_body v RelatedSchool
+    const convertRelatedSchools = (schools?: Array<{ id: string; count: number; pct: number; nazev: string; obor: string; obec: string; min_body: number }>) => {
+      if (!schools) return undefined;
+      return schools.map(s => ({
+        ...s,
+        min_body: Math.round(s.min_body / 2)
+      }));
+    };
+
+    // Převést min_body ve všech souvisejících školách
+    return {
+      id: rawData.id,
+      as_p1: rawData.as_p1 ? {
+        total: rawData.as_p1.total,
+        backup_p2: convertRelatedSchools(rawData.as_p1.backup_p2),
+        backup_p3: convertRelatedSchools(rawData.as_p1.backup_p3),
+      } : undefined,
+      as_p2: rawData.as_p2 ? {
+        total: rawData.as_p2.total,
+        preferred_p1: convertRelatedSchools(rawData.as_p2.preferred_p1),
+        backup_p3: convertRelatedSchools(rawData.as_p2.backup_p3),
+      } : undefined,
+      as_p3: rawData.as_p3 ? {
+        total: rawData.as_p3.total,
+        preferred_p1: convertRelatedSchools(rawData.as_p3.preferred_p1),
+        preferred_p2: convertRelatedSchools(rawData.as_p3.preferred_p2),
+      } : undefined,
+    };
   } catch {
     return null;
   }
@@ -255,20 +299,26 @@ export async function getSchoolHistoricalData(redizo: string): Promise<{
 
 /**
  * Rozšířená data o statistikách testů z schools_data.json
+ *
+ * DŮLEŽITÉ: Data z CERMATu jsou v % skórech (0-100 za předmět).
+ * Tato data jsou převedena na skutečné body z JPZ testu:
+ * - ČJ test: max 50 bodů
+ * - MA test: max 50 bodů
+ * - JPZ celkem: max 100 bodů
  */
 export interface ExtendedSchoolStats {
   prihlasky_priority: number[];  // přihlášky podle priority
   prijati_priority: number[];    // přijatí podle priority
-  cj_prumer: number;             // průměr z češtiny
-  cj_min: number;                // minimum z češtiny
-  ma_prumer: number;             // průměr z matematiky
-  ma_min: number;                // minimum z matematiky
+  cj_prumer: number;             // průměr z češtiny (0-50 bodů)
+  cj_min: number;                // minimum z češtiny (0-50 bodů)
+  ma_prumer: number;             // průměr z matematiky (0-50 bodů)
+  ma_min: number;                // minimum z matematiky (0-50 bodů)
   // Vypočítaná pole pro oddělení JPZ od celkového skóre
-  jpz_min: number;               // Čisté JPZ body (cj_min + ma_min) - porovnatelné mezi školami
-  jpz_prumer: number;            // Čistý JPZ průměr (cj_prumer + ma_prumer)
-  min_body: number;              // Celkové skóre pro přijetí (může zahrnovat prospěch aj.)
+  jpz_min: number;               // Čisté JPZ body (cj_min + ma_min, max 100)
+  jpz_prumer: number;            // Čistý JPZ průměr (cj_prumer + ma_prumer, max 100)
+  min_body: number;              // Celkové body pro přijetí (JPZ + extra kritéria)
   extra_body: number;            // Body za další kritéria (prospěch, školní zkouška)
-  hasExtraCriteria: boolean;     // Má škola další kritéria? (extra_body > 10)
+  hasExtraCriteria: boolean;     // Má škola další kritéria? (extra_body > 5)
 }
 
 // Cache pro schools_data indexovaný podle ID
@@ -294,17 +344,28 @@ async function getSchoolsDataById(): Promise<Map<string, ExtendedSchoolStats>> {
 
       // Uložit data (preferovat novější rok - 2025)
       if (!schoolsDataByIdCache.has(baseId) || year === '2025') {
-        const cj_min = school.cj_min || 0;
-        const ma_min = school.ma_min || 0;
-        const cj_prumer = school.cj_prumer || 0;
-        const ma_prumer = school.ma_prumer || 0;
-        const min_body = school.min_body || 0;
+        // Data z CERMATu jsou v % skórech (0-100), převádíme na skutečné body
+        // JPZ test má max 50 bodů za předmět, takže % skór dělíme 2
+        const cj_min_raw = school.cj_min || 0;
+        const ma_min_raw = school.ma_min || 0;
+        const cj_prumer_raw = school.cj_prumer || 0;
+        const ma_prumer_raw = school.ma_prumer || 0;
+        const min_body_raw = school.min_body || 0;
 
-        // Vypočítat čisté JPZ body a extra body
+        // Převod z % skórů na skutečné body (% / 2 = body z 50)
+        const cj_min = Math.round(cj_min_raw / 2);
+        const ma_min = Math.round(ma_min_raw / 2);
+        const cj_prumer = Math.round((cj_prumer_raw / 2) * 10) / 10; // 1 desetinné místo
+        const ma_prumer = Math.round((ma_prumer_raw / 2) * 10) / 10;
+
+        // JPZ celkem (max 100 bodů)
         const jpz_min = cj_min + ma_min;
-        const jpz_prumer = cj_prumer + ma_prumer;
+        const jpz_prumer = Math.round((cj_prumer + ma_prumer) * 10) / 10;
+
+        // Celkové body pro přijetí (také převedeno z % škály)
+        const min_body = Math.round(min_body_raw / 2);
         const extra_body = min_body - jpz_min;
-        const hasExtraCriteria = extra_body > 10;
+        const hasExtraCriteria = extra_body > 5; // Threshold 5 bodů (původně 10 v % škále)
 
         schoolsDataByIdCache.set(baseId, {
           prihlasky_priority: school.prihlasky_priority || [],
@@ -550,14 +611,15 @@ async function getNationalStats() {
     jpzMinValues: number[];
   }>();
 
-  // Sbíráme data z roku 2025
+  // Sbíráme data z roku 2025 a převádíme z % skórů na skutečné body
   for (const school of (data['2025'] || [])) {
-    const cj = school.cj_prumer || 0;
-    const ma = school.ma_prumer || 0;
-    const minBody = school.min_body || 0;
-    const cj_min = school.cj_min || 0;
-    const ma_min = school.ma_min || 0;
-    const jpzMin = cj_min + ma_min;  // čisté JPZ body
+    // Převod z % skórů (0-100) na skutečné body (0-50 za předmět)
+    const cj = (school.cj_prumer || 0) / 2;
+    const ma = (school.ma_prumer || 0) / 2;
+    const minBody = (school.min_body || 0) / 2;
+    const cj_min = (school.cj_min || 0) / 2;
+    const ma_min = (school.ma_min || 0) / 2;
+    const jpzMin = cj_min + ma_min;  // čisté JPZ body (max 100)
     const typ = school.typ || 'Neznámý';
 
     if (cj > 0 && ma > 0 && minBody > 0 && jpzMin > 0) {

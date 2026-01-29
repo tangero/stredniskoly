@@ -149,7 +149,8 @@ export function SimulatorClient() {
     router.push(newUrl, { scroll: false });
   }, [router, searchParams]);
 
-  const totalScore = (scoreCj + scoreMa) * 2;
+  // Celkové skóre JPZ = ČJ + MA (max 50 + 50 = 100 bodů)
+  const totalScore = scoreCj + scoreMa;
 
   // Načíst detaily školy z API
   const fetchSchoolDetails = useCallback(async (schoolId: string) => {
@@ -339,7 +340,7 @@ export function SimulatorClient() {
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white">Srovnání vybraných oborů</h2>
                 <p className="text-slate-400 mt-1">
-                  Tvoje JPZ skóre: <span className="text-white font-bold">{totalScore} bodů</span> (ČJ: {scoreCj} × 2, MA: {scoreMa} × 2)
+                  Tvoje JPZ skóre: <span className="text-white font-bold">{totalScore} bodů</span> (ČJ: {scoreCj}, MA: {scoreMa})
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -591,13 +592,13 @@ export function SimulatorClient() {
               <div className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                 {totalScore}
               </div>
-              <div className="text-slate-500 text-sm">z 200 možných bodů</div>
+              <div className="text-slate-500 text-sm">z 100 možných bodů</div>
 
               {/* Progress bar */}
               <div className="mt-3 h-2 bg-slate-200 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-indigo-500 to-purple-600 transition-all duration-300"
-                  style={{ width: `${(totalScore / 200) * 100}%` }}
+                  style={{ width: `${totalScore}%` }}
                 ></div>
               </div>
 
@@ -1242,7 +1243,7 @@ function SortableSchoolCard({
                   </div>
                 </div>
                 <div className="text-[10px] text-white/40 mt-2 text-center">
-                  max 100 bodů na test, celkem max 200
+                  max 50 bodů na test, celkem max 100
                 </div>
               </div>
             )}
