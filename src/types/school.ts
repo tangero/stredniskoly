@@ -125,6 +125,48 @@ export interface RelatedSchool {
   min_body: number;
 }
 
+// Kohorty přijatých studentů podle profilu
+// Index: 0=exc_math, 1=exc_bal, 2=exc_hum, 3=good_math, 4=good_bal, 5=good_hum, 6=low_math, 7=low_bal, 8=low_hum
+export type CohortCounts = [number, number, number, number, number, number, number, number, number] | null;
+
+export const COHORT_LABELS = [
+  'Výborný matematik',
+  'Výborný vyvážený',
+  'Výborný humanitní',
+  'Dobrý matematik',
+  'Dobrý vyvážený',
+  'Dobrý humanitní',
+  'Slabší matematik',
+  'Slabší vyvážený',
+  'Slabší humanitní',
+] as const;
+
+export const COHORT_COLORS = [
+  { bg: 'bg-purple-100', text: 'text-purple-800', bar: 'bg-purple-500' },   // exc_math
+  { bg: 'bg-indigo-100', text: 'text-indigo-800', bar: 'bg-indigo-500' },   // exc_bal
+  { bg: 'bg-blue-100', text: 'text-blue-800', bar: 'bg-blue-500' },         // exc_hum
+  { bg: 'bg-purple-50', text: 'text-purple-700', bar: 'bg-purple-400' },    // good_math
+  { bg: 'bg-indigo-50', text: 'text-indigo-700', bar: 'bg-indigo-400' },    // good_bal
+  { bg: 'bg-blue-50', text: 'text-blue-700', bar: 'bg-blue-400' },          // good_hum
+  { bg: 'bg-slate-100', text: 'text-slate-600', bar: 'bg-slate-400' },      // low_math
+  { bg: 'bg-slate-50', text: 'text-slate-500', bar: 'bg-slate-300' },       // low_bal
+  { bg: 'bg-slate-50', text: 'text-slate-500', bar: 'bg-slate-300' },       // low_hum
+] as const;
+
+// Seskupení pro zjednodušené zobrazení
+export const COHORT_GROUPS = {
+  level: [
+    { name: 'Výborní', indices: [0, 1, 2], color: 'text-green-600' },
+    { name: 'Dobří', indices: [3, 4, 5], color: 'text-blue-600' },
+    { name: 'Slabší', indices: [6, 7, 8], color: 'text-slate-500' },
+  ],
+  profile: [
+    { name: 'Matematici', indices: [0, 3, 6], color: 'text-purple-600' },
+    { name: 'Vyvážení', indices: [1, 4, 7], color: 'text-indigo-600' },
+    { name: 'Humanitní', indices: [2, 5, 8], color: 'text-blue-600' },
+  ],
+} as const;
+
 // Typ pro detailní data školy z school_details
 export interface SchoolDetail {
   id: string;

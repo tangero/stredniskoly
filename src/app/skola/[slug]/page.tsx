@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid } from '@/components/SchoolDetailClient';
+import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution } from '@/components/SchoolDetailClient';
 import { getSchoolBySlug, generateAllSlugs, getSchoolsByRedizo, getSchoolDetail, getExtendedSchoolStats, getSchoolDifficultyProfile } from '@/lib/data';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug, extractRedizo } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames } from '@/types/school';
@@ -217,12 +217,19 @@ export default async function SchoolDetailPage({ params }: Props) {
               {(extendedStats.cj_prumer > 0 || extendedStats.ma_prumer > 0) && (
                 <TestDifficulty
                   cj_prumer={extendedStats.cj_prumer}
-                  cj_min={extendedStats.cj_min}
+                  cj_at_jpz_min={extendedStats.cj_at_jpz_min}
                   ma_prumer={extendedStats.ma_prumer}
-                  ma_min={extendedStats.ma_min}
-                  min_body={school.min_body}
+                  ma_at_jpz_min={extendedStats.ma_at_jpz_min}
+                  jpz_min={extendedStats.jpz_min}
                 />
               )}
+            </div>
+          )}
+
+          {/* Profily přijatých studentů */}
+          {extendedStats?.cohorts && (
+            <div className="mb-8">
+              <CohortDistribution cohorts={extendedStats.cohorts} />
             </div>
           )}
 

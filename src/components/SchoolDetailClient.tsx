@@ -671,13 +671,13 @@ export function AcceptanceByPriority({ prihlasky_priority, prijati_priority }: A
 // Náročnost testů (ČJ vs MA)
 interface TestDifficultyProps {
   cj_prumer: number;
-  cj_min: number;
+  cj_at_jpz_min: number;  // ČJ body studenta s nejnižším celkovým JPZ
   ma_prumer: number;
-  ma_min: number;
-  min_body: number;
+  ma_at_jpz_min: number;  // MA body studenta s nejnižším celkovým JPZ
+  jpz_min: number;        // Skutečné minimum JPZ (cj_at_jpz_min + ma_at_jpz_min)
 }
 
-export function TestDifficulty({ cj_prumer, cj_min, ma_prumer, ma_min, min_body }: TestDifficultyProps) {
+export function TestDifficulty({ cj_prumer, cj_at_jpz_min, ma_prumer, ma_at_jpz_min, jpz_min }: TestDifficultyProps) {
   // Pokud nemáme data, nezobrazovat
   if (!cj_prumer && !ma_prumer) return null;
 
@@ -685,15 +685,15 @@ export function TestDifficulty({ cj_prumer, cj_min, ma_prumer, ma_min, min_body 
   const cjPct = (cj_prumer / maxPoints) * 100;
   const maPct = (ma_prumer / maxPoints) * 100;
 
-  // Který předmět je náročnější (kde mají přijatí vyšší body)?
-  const harderSubject = cj_prumer > ma_prumer ? 'čeština' : 'matematika';
+  // Rozdíl mezi průměry - pro zajímavost o profilu studentů
   const diff = Math.abs(cj_prumer - ma_prumer);
+  const harderSubject = cj_prumer > ma_prumer ? 'čeština' : 'matematika';
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm">
       <h2 className="text-xl font-semibold mb-2">Výsledky testů přijatých</h2>
       <p className="text-sm text-slate-600 mb-4">
-        Průměrné body přijatých a nejnižší výsledek z jednotlivých částí testu.
+        Průměrné body přijatých a výsledky studenta s nejnižším celkovým skóre.
       </p>
 
       <div className="grid md:grid-cols-2 gap-4">
@@ -716,8 +716,8 @@ export function TestDifficulty({ cj_prumer, cj_min, ma_prumer, ma_min, min_body 
             </div>
 
             <div className="flex justify-between text-sm">
-              <span className="text-slate-600">Nejnižší výsledek:</span>
-              <span className="font-medium text-blue-600">{cj_min} b.</span>
+              <span className="text-slate-600">Min. přijatý student:</span>
+              <span className="font-medium text-blue-600">{cj_at_jpz_min} b.</span>
             </div>
           </div>
         </div>
@@ -741,8 +741,8 @@ export function TestDifficulty({ cj_prumer, cj_min, ma_prumer, ma_min, min_body 
             </div>
 
             <div className="flex justify-between text-sm">
-              <span className="text-slate-600">Nejnižší výsledek:</span>
-              <span className="font-medium text-purple-600">{ma_min} b.</span>
+              <span className="text-slate-600">Min. přijatý student:</span>
+              <span className="font-medium text-purple-600">{ma_at_jpz_min} b.</span>
             </div>
           </div>
         </div>
@@ -751,11 +751,11 @@ export function TestDifficulty({ cj_prumer, cj_min, ma_prumer, ma_min, min_body 
       {/* Celkový součet */}
       <div className="mt-4 p-4 bg-slate-100 rounded-lg">
         <div className="flex justify-between items-center">
-          <span className="text-slate-700">Minimální skóre pro přijetí:</span>
-          <span className="text-xl font-bold text-slate-900">{min_body} bodů</span>
+          <span className="text-slate-700">Minimální JPZ pro přijetí:</span>
+          <span className="text-xl font-bold text-slate-900">{jpz_min} bodů</span>
         </div>
         <div className="text-xs text-slate-500 mt-1">
-          (JPZ body: max 50 ČJ + max 50 MA = max 100 bodů celkem)
+          (ČJ {cj_at_jpz_min} + MA {ma_at_jpz_min} = {jpz_min} bodů z max. 100)
         </div>
       </div>
 
@@ -1468,6 +1468,150 @@ export function StatsGrid({
             <br /><br />
             Toto číslo je dáno vyhláškou školy a může se mezi lety měnit.
           </InfoTooltip>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Komponenta pro zobrazení kohort přijatých studentů
+interface CohortDistributionProps {
+  cohorts: number[] | null;
+}
+
+const COHORT_CONFIG = [
+  { name: 'Výborný matematik', short: 'Výb. mat.', color: 'bg-purple-500', textColor: 'text-purple-700' },
+  { name: 'Výborný vyvážený', short: 'Výb. vyv.', color: 'bg-indigo-500', textColor: 'text-indigo-700' },
+  { name: 'Výborný humanitní', short: 'Výb. hum.', color: 'bg-blue-500', textColor: 'text-blue-700' },
+  { name: 'Dobrý matematik', short: 'Dob. mat.', color: 'bg-purple-400', textColor: 'text-purple-600' },
+  { name: 'Dobrý vyvážený', short: 'Dob. vyv.', color: 'bg-indigo-400', textColor: 'text-indigo-600' },
+  { name: 'Dobrý humanitní', short: 'Dob. hum.', color: 'bg-blue-400', textColor: 'text-blue-600' },
+  { name: 'Slabší matematik', short: 'Sl. mat.', color: 'bg-purple-300', textColor: 'text-purple-500' },
+  { name: 'Slabší vyvážený', short: 'Sl. vyv.', color: 'bg-slate-300', textColor: 'text-slate-500' },
+  { name: 'Slabší humanitní', short: 'Sl. hum.', color: 'bg-blue-300', textColor: 'text-blue-500' },
+];
+
+export function CohortDistribution({ cohorts }: CohortDistributionProps) {
+  if (!cohorts || cohorts.every(c => c === 0)) {
+    return null;
+  }
+
+  const total = cohorts.reduce((a, b) => a + b, 0);
+  if (total === 0) return null;
+
+  // Seskupit podle úrovně a profilu
+  const byLevel = [
+    { name: 'Výborní', count: cohorts[0] + cohorts[1] + cohorts[2], color: 'text-green-600' },
+    { name: 'Dobří', count: cohorts[3] + cohorts[4] + cohorts[5], color: 'text-blue-600' },
+    { name: 'Slabší', count: cohorts[6] + cohorts[7] + cohorts[8], color: 'text-slate-500' },
+  ];
+
+  const byProfile = [
+    { name: 'Matematici', count: cohorts[0] + cohorts[3] + cohorts[6], color: 'text-purple-600' },
+    { name: 'Vyvážení', count: cohorts[1] + cohorts[4] + cohorts[7], color: 'text-indigo-600' },
+    { name: 'Humanitní', count: cohorts[2] + cohorts[5] + cohorts[8], color: 'text-blue-600' },
+  ];
+
+  // Najít dominantní kohorty (>10%)
+  const significantCohorts = cohorts
+    .map((count, idx) => ({ count, idx, pct: (count / total) * 100 }))
+    .filter(c => c.pct >= 5)
+    .sort((a, b) => b.count - a.count);
+
+  return (
+    <div className="bg-white p-6 rounded-xl shadow-sm">
+      <h3 className="text-lg font-semibold mb-4 flex items-center">
+        Profily přijatých studentů
+        <InfoTooltip title="Profily studentů">
+          Rozdělení přijatých studentů podle jejich výsledků v testech JPZ.
+          <br /><br />
+          <strong>Úroveň</strong> = celková úspěšnost (průměr ČJ a MA, normalizovaný)
+          <br />
+          <strong>Profil</strong> = relativní síla v předmětech (matematik má lepší MA než ČJ vzhledem k populaci)
+          <br /><br />
+          Data jsou <strong>normalizovaná</strong> - zohledňují, že test z matematiky je těžší než z češtiny.
+        </InfoTooltip>
+      </h3>
+
+      {/* Souhrnné statistiky */}
+      <div className="grid grid-cols-2 gap-4 mb-4">
+        {/* Podle úrovně */}
+        <div>
+          <div className="text-xs text-slate-500 uppercase tracking-wide mb-2">Podle úrovně</div>
+          <div className="space-y-1">
+            {byLevel.map(level => {
+              const pct = (level.count / total) * 100;
+              return (
+                <div key={level.name} className="flex items-center text-sm">
+                  <span className={`w-20 ${level.color} font-medium`}>{level.name}</span>
+                  <div className="flex-1 h-4 bg-slate-100 rounded-full overflow-hidden mx-2">
+                    <div
+                      className={`h-full ${level.name === 'Výborní' ? 'bg-green-500' : level.name === 'Dobří' ? 'bg-blue-500' : 'bg-slate-400'}`}
+                      style={{ width: `${pct}%` }}
+                    />
+                  </div>
+                  <span className="w-12 text-right text-slate-600">{pct.toFixed(0)}%</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Podle profilu */}
+        <div>
+          <div className="text-xs text-slate-500 uppercase tracking-wide mb-2">Podle profilu</div>
+          <div className="space-y-1">
+            {byProfile.map(profile => {
+              const pct = (profile.count / total) * 100;
+              return (
+                <div key={profile.name} className="flex items-center text-sm">
+                  <span className={`w-20 ${profile.color} font-medium`}>{profile.name}</span>
+                  <div className="flex-1 h-4 bg-slate-100 rounded-full overflow-hidden mx-2">
+                    <div
+                      className={`h-full ${profile.name === 'Matematici' ? 'bg-purple-500' : profile.name === 'Humanitní' ? 'bg-blue-500' : 'bg-indigo-500'}`}
+                      style={{ width: `${pct}%` }}
+                    />
+                  </div>
+                  <span className="w-12 text-right text-slate-600">{pct.toFixed(0)}%</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Detailní rozložení - kompaktní horizontální bar */}
+      <div className="mt-4">
+        <div className="text-xs text-slate-500 uppercase tracking-wide mb-2">Detailní rozložení ({total} přijatých)</div>
+        <div className="h-6 flex rounded-full overflow-hidden">
+          {cohorts.map((count, idx) => {
+            const pct = (count / total) * 100;
+            if (pct < 1) return null;
+            return (
+              <div
+                key={idx}
+                className={`${COHORT_CONFIG[idx].color} relative group`}
+                style={{ width: `${pct}%` }}
+                title={`${COHORT_CONFIG[idx].name}: ${count} (${pct.toFixed(0)}%)`}
+              >
+                {pct >= 8 && (
+                  <span className="absolute inset-0 flex items-center justify-center text-xs text-white font-medium">
+                    {pct.toFixed(0)}%
+                  </span>
+                )}
+              </div>
+            );
+          })}
+        </div>
+        {/* Legenda - jen významné kohorty */}
+        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs">
+          {significantCohorts.slice(0, 5).map(({ idx, count, pct }) => (
+            <div key={idx} className="flex items-center">
+              <div className={`w-3 h-3 rounded ${COHORT_CONFIG[idx].color} mr-1`} />
+              <span className={COHORT_CONFIG[idx].textColor}>{COHORT_CONFIG[idx].short}</span>
+              <span className="text-slate-400 ml-1">({pct.toFixed(0)}%)</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

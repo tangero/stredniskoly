@@ -321,6 +321,8 @@ export interface ExtendedSchoolStats {
   min_body: number;              // Celkové body pro přijetí (JPZ + extra kritéria)
   extra_body: number;            // Body za další kritéria (prospěch, školní zkouška)
   hasExtraCriteria: boolean;     // Má škola další kritéria? (extra_body > 5)
+  // Kohorty přijatých studentů (9 kategorií podle úrovně a profilu)
+  cohorts: number[] | null;      // [exc_math, exc_bal, exc_hum, good_math, good_bal, good_hum, low_math, low_bal, low_hum]
 }
 
 // Cache pro schools_data indexovaný podle ID
@@ -390,7 +392,8 @@ async function getSchoolsDataById(): Promise<Map<string, ExtendedSchoolStats>> {
           jpz_prumer,
           min_body,
           extra_body,
-          hasExtraCriteria
+          hasExtraCriteria,
+          cohorts: school.cohorts || null
         });
       }
     }

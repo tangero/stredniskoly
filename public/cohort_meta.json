@@ -1,0 +1,82 @@
+{
+  "normalization": {
+    "cj_mean": 27.87,
+    "cj_std": 10.11,
+    "ma_mean": 19.71,
+    "ma_std": 9.97
+  },
+  "cohorts": [
+    {
+      "code": "exc_math",
+      "name": "Výborný matematik",
+      "level_min": 0.75,
+      "level_max": 99,
+      "diff_min": 0.4,
+      "diff_max": 99
+    },
+    {
+      "code": "exc_bal",
+      "name": "Výborný vyvážený",
+      "level_min": 0.75,
+      "level_max": 99,
+      "diff_min": -0.4,
+      "diff_max": 0.4
+    },
+    {
+      "code": "exc_hum",
+      "name": "Výborný humanitní",
+      "level_min": 0.75,
+      "level_max": 99,
+      "diff_min": -99,
+      "diff_max": -0.4
+    },
+    {
+      "code": "good_math",
+      "name": "Dobrý matematik",
+      "level_min": 0,
+      "level_max": 0.75,
+      "diff_min": 0.4,
+      "diff_max": 99
+    },
+    {
+      "code": "good_bal",
+      "name": "Dobrý vyvážený",
+      "level_min": 0,
+      "level_max": 0.75,
+      "diff_min": -0.4,
+      "diff_max": 0.4
+    },
+    {
+      "code": "good_hum",
+      "name": "Dobrý humanitní",
+      "level_min": 0,
+      "level_max": 0.75,
+      "diff_min": -99,
+      "diff_max": -0.4
+    },
+    {
+      "code": "low_math",
+      "name": "Slabší matematik",
+      "level_min": -99,
+      "level_max": 0,
+      "diff_min": 0.4,
+      "diff_max": 99
+    },
+    {
+      "code": "low_bal",
+      "name": "Slabší vyvážený",
+      "level_min": -99,
+      "level_max": 0,
+      "diff_min": -0.4,
+      "diff_max": 0.4
+    },
+    {
+      "code": "low_hum",
+      "name": "Slabší humanitní",
+      "level_min": -99,
+      "level_max": 0,
+      "diff_min": -99,
+      "diff_max": -0.4
+    }
+  ]
+}
