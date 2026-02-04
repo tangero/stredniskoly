@@ -35,6 +35,33 @@ function createSlug(name: string, obor?: string): string {
   return slug;
 }
 
+// Aliasy pro školy s pobočkami (PORG má více kampusů pod jedním REDIZO)
+const SCHOOL_ALIASES: Array<{
+  searchTerms: string[];  // Hledané výrazy
+  displayName: string;    // Zobrazený název
+  description: string;    // Popis
+  slug: string;           // URL slug
+}> = [
+  {
+    searchTerms: ['porg libeň', 'porg liben', 'porg praha 8', 'porg lindnerova'],
+    displayName: 'PORG Libeň',
+    description: 'Gymnázium 8leté • Praha 8, Lindnerova',
+    slug: '600006018-porg-gymnazium-pod-krcskym-lesem-gymnazium-8lete-porg-liben-praha-8',
+  },
+  {
+    searchTerms: ['porg ostrava', 'porg rostislavova'],
+    displayName: 'PORG Ostrava',
+    description: 'Gymnázium 8leté • Ostrava, Rostislavova',
+    slug: '600006018-porg-gymnazium-pod-krcskym-lesem-gymnazium-8lete-porg-ostrava',
+  },
+  {
+    searchTerms: ['porg krč', 'porg krc', 'novy porg', 'nový porg', 'porg praha 4'],
+    displayName: 'Nový PORG (Praha-Krč)',
+    description: 'Gymnázium 4leté a 8leté • Praha 4, Pod Krčským lesem',
+    slug: '600006018-porg-gymnazium-pod-krcskym-lesem',
+  },
+];
+
 export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
@@ -60,9 +87,17 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
 
   // Vyhledávání
   const results = useMemo(() => {
-    if (!query || query.length < 2) return { schools: [], kraje: [], obce: [], okresy: [] };
+    if (!query || query.length < 2) return { schools: [], aliases: [], kraje: [], obce: [], okresy: [] };
 
     const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+    // Hledat aliasy (PORG pobočky atd.)
+    const matchedAliases = SCHOOL_ALIASES.filter(alias =>
+      alias.searchTerms.some(term => {
+        const termNorm = term.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return termNorm.includes(q) || q.includes(termNorm);
+      })
+    );
 
     // Hledat školy
     const matchedSchools = schools
@@ -100,6 +135,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
 
     return {
       schools: matchedSchools,
+      aliases: matchedAliases,
       kraje: matchedKraje,
       obce: matchedObce,
       okresy: matchedOkresy
@@ -107,7 +143,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
   }, [query, schools, kraje, locations]);
 
   // Celkový počet výsledků
-  const totalResults = results.schools.length + results.kraje.length + results.obce.length + results.okresy.length;
+  const totalResults = results.schools.length + results.aliases.length + results.kraje.length + results.obce.length + results.okresy.length;
 
   // Zavřít dropdown při kliknutí mimo
   useEffect(() => {
@@ -189,6 +225,26 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
           ref={dropdownRef}
           className="absolute z-50 w-full mt-2 bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden max-h-[400px] overflow-y-auto"
         >
+          {/* Aliasy (PORG pobočky) */}
+          {results.aliases.length > 0 && (
+            <div>
+              <div className="px-4 py-2 text-xs font-semibold text-slate-500 bg-slate-50 uppercase tracking-wide">
+                Pobočky škol
+              </div>
+              {results.aliases.map((alias, idx) => (
+                <Link
+                  key={alias.slug}
+                  href={`/skola/${alias.slug}`}
+                  className={`block px-4 py-3 hover:bg-indigo-50 ${selectedIndex === idx ? 'bg-indigo-50' : ''}`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div className="font-medium text-slate-900">{highlightMatch(alias.displayName, query)}</div>
+                  <div className="text-sm text-slate-600">{alias.description}</div>
+                </Link>
+              ))}
+            </div>
+          )}
+
           {/* Školy */}
           {results.schools.length > 0 && (
             <div>
@@ -197,11 +253,12 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
               </div>
               {results.schools.map((school, idx) => {
                 const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+                const adjustedIdx = idx + results.aliases.length;
                 return (
                   <Link
                     key={school.id}
                     href={`/skola/${slug}`}
-                    className={`block px-4 py-3 hover:bg-indigo-50 ${selectedIndex === idx ? 'bg-indigo-50' : ''}`}
+                    className={`block px-4 py-3 hover:bg-indigo-50 ${selectedIndex === adjustedIdx ? 'bg-indigo-50' : ''}`}
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="font-medium text-slate-900">{highlightMatch(school.nazev, query)}</div>
