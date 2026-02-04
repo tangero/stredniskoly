@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { SchoolDetail, RelatedSchool } from '@/types/school';
+import { SchoolDetail, RelatedSchool, getSchoolTypeFullName } from '@/types/school';
 
 // Info tooltip komponenta - exportujeme pro použití v jiných komponentách
 interface InfoTooltipProps {
@@ -1490,6 +1490,84 @@ const COHORT_CONFIG = [
   { name: 'Slabší vyvážený', short: 'Sl. vyv.', color: 'bg-slate-300', textColor: 'text-slate-500' },
   { name: 'Slabší humanitní', short: 'Sl. hum.', color: 'bg-blue-300', textColor: 'text-blue-500' },
 ];
+
+// Komponenta pro navigaci mezi obory školy
+interface ProgramTabsProps {
+  programs: Array<{
+    id: string;
+    nazev: string;
+    obor: string;
+    typ: string;
+    delka_studia: number;
+    min_body: number;
+    slug: string;
+  }>;
+  currentProgramId: string;
+}
+
+export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
+  // Nezobrazovat, pokud má škola pouze jeden obor
+  if (programs.length <= 1) {
+    return null;
+  }
+
+  // Seřadit obory podle délky studia (kratší první) a pak podle min. bodů
+  const sortedPrograms = [...programs].sort((a, b) => {
+    if (a.delka_studia !== b.delka_studia) {
+      return a.delka_studia - b.delka_studia;
+    }
+    return b.min_body - a.min_body;
+  });
+
+  const currentProgram = programs.find(p => p.id === currentProgramId);
+
+  return (
+    <div className="bg-white border-b shadow-sm">
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Info text */}
+        <div className="py-3 text-sm text-slate-600 border-b border-slate-100">
+          <span className="font-medium text-slate-900">Tato škola nabízí {programs.length} obory.</span>
+          {' '}Zobrazujete statistiky pro:{' '}
+          <span className="font-semibold text-indigo-600">
+            {currentProgram ? getSchoolTypeFullName(currentProgram.typ, currentProgram.obor) : 'Neznámý obor'}
+          </span>
+        </div>
+
+        {/* Tabs */}
+        <div className="flex overflow-x-auto scrollbar-hide -mb-px">
+          {sortedPrograms.map((program) => {
+            const isActive = program.id === currentProgramId;
+            const fullName = getSchoolTypeFullName(program.typ, program.obor);
+
+            return (
+              <Link
+                key={program.id}
+                href={`/skola/${program.slug}`}
+                className={`
+                  flex-shrink-0 px-4 py-3 border-b-3 transition-colors
+                  ${isActive
+                    ? 'border-b-[3px] border-indigo-600 text-indigo-600 font-semibold bg-indigo-50/50'
+                    : 'border-b-[3px] border-transparent text-slate-600 hover:text-indigo-600 hover:bg-slate-50'
+                  }
+                `}
+              >
+                <div className="flex flex-col items-start">
+                  <span className="text-sm whitespace-nowrap">
+                    {isActive && <span className="mr-1">★</span>}
+                    {fullName}
+                  </span>
+                  <span className={`text-xs mt-0.5 ${isActive ? 'text-indigo-500' : 'text-slate-400'}`}>
+                    min. {program.min_body} b.
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function CohortDistribution({ cohorts }: CohortDistributionProps) {
   if (!cohorts || cohorts.every(c => c === 0)) {

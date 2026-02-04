@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution } from '@/components/SchoolDetailClient';
+import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution, ProgramTabs } from '@/components/SchoolDetailClient';
 import { getSchoolBySlug, generateAllSlugs, getSchoolsByRedizo, getSchoolDetail, getExtendedSchoolStats, getSchoolDifficultyProfile } from '@/lib/data';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug, extractRedizo } from '@/lib/utils';
-import { categoryLabels, categoryColors, krajNames } from '@/types/school';
+import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -60,16 +60,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// Helper pro délku studia badge
+// Helper pro délku studia badge - nyní s plnými názvy
 function StudyLengthBadge({ typ, delka }: { typ: string; delka: number }) {
   const colors: Record<number, string> = {
     4: 'bg-blue-100 text-blue-800',
     6: 'bg-purple-100 text-purple-800',
     8: 'bg-indigo-100 text-indigo-800',
   };
+
+  // Mapování délky studia na české slovo
+  const delkaSlovy: Record<number, string> = {
+    2: 'Dvouleté',
+    3: 'Tříleté',
+    4: 'Čtyřleté',
+    5: 'Pětileté',
+    6: 'Šestileté',
+    8: 'Osmileté',
+  };
+
+  const delkaText = delkaSlovy[delka] || `${delka}leté`;
+
   return (
     <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${colors[delka] || 'bg-slate-100 text-slate-800'}`}>
-      {delka}leté • {typ}
+      {delkaText} studium
     </span>
   );
 }
@@ -90,15 +103,23 @@ export default async function SchoolDetailPage({ params }: Props) {
   const redizo = extractRedizo(school.id);
 
   // Načíst další data
-  const [otherPrograms, schoolDetail, extendedStats, difficultyProfile] = await Promise.all([
+  const [allPrograms, schoolDetail, extendedStats, difficultyProfile] = await Promise.all([
     getSchoolsByRedizo(redizo),
     getSchoolDetail(school.id),
     getExtendedSchoolStats(school.id),
     getSchoolDifficultyProfile(school.id, school.typ, school.min_body),
   ]);
 
-  // Filtrovat ostatní obory (vyloučit aktuální)
-  const otherProgramsFiltered = otherPrograms.filter(p => p.id !== school.id);
+  // Připravit data pro ProgramTabs - všechny obory školy včetně aktuálního
+  const programsForTabs = allPrograms.map(program => ({
+    id: program.id,
+    nazev: program.nazev,
+    obor: program.obor,
+    typ: program.typ,
+    delka_studia: program.delka_studia,
+    min_body: program.min_body,
+    slug: `${extractRedizo(program.id)}-${createSlug(program.nazev, program.obor)}`,
+  }));
 
   // JSON-LD strukturovaná data
   const jsonLd = {
@@ -150,7 +171,9 @@ export default async function SchoolDetailPage({ params }: Props) {
               <h1 className="text-2xl md:text-4xl font-bold">{school.nazev}</h1>
               <StudyLengthBadge typ={school.typ} delka={school.delka_studia} />
             </div>
-            <p className="text-lg md:text-xl opacity-90 mb-4">{school.obor}</p>
+            <p className="text-lg md:text-xl opacity-90 mb-4">
+              {getSchoolTypeFullName(school.typ, school.obor)}
+            </p>
             <div className="flex flex-wrap items-center gap-4 text-sm opacity-80">
               <span>{school.obec}, {krajNames[school.kraj_kod] || school.kraj}</span>
               <span>•</span>
@@ -163,6 +186,9 @@ export default async function SchoolDetailPage({ params }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Navigace oborů - zobrazí se pouze pokud má škola více oborů */}
+        <ProgramTabs programs={programsForTabs} currentProgramId={school.id} />
 
         {/* Stats Grid */}
         <div className="max-w-6xl mx-auto px-4 py-8">
@@ -246,45 +272,6 @@ export default async function SchoolDetailPage({ params }: Props) {
                 extraBody={extendedStats.extra_body}
                 hasExtraCriteria={extendedStats.hasExtraCriteria}
               />
-            </div>
-          )}
-
-          {/* Ostatní obory této školy */}
-          {otherProgramsFiltered.length > 0 && (
-            <div className="bg-white p-6 rounded-xl shadow-sm mb-8">
-              <h2 className="text-xl font-semibold mb-4">Další obory této školy</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {otherProgramsFiltered.map(program => {
-                  const programSlug = `${extractRedizo(program.id)}-${createSlug(program.nazev, program.obor)}`;
-                  const programCategory = categoryColors[program.category_code];
-                  const programDifficulty = getDifficultyClass(program.obtiznost);
-
-                  return (
-                    <Link
-                      key={program.id}
-                      href={`/skola/${programSlug}`}
-                      className="block p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors"
-                    >
-                      <div className="flex justify-between items-start mb-2">
-                        <div className="font-medium">{program.obor}</div>
-                        <StudyLengthBadge typ={program.typ} delka={program.delka_studia} />
-                      </div>
-                      <div className="flex justify-between items-center text-sm">
-                        <span className={`px-2 py-0.5 rounded text-xs font-medium ${programCategory.bg} ${programCategory.text}`}>
-                          {categoryLabels[program.category_code]}
-                        </span>
-                        <div className="text-right">
-                          <span className="text-slate-600">Min: </span>
-                          <span className="font-medium">{program.min_body} b.</span>
-                          <span className={`ml-2 ${programDifficulty.colorClass}`}>
-                            ({program.obtiznost.toFixed(0)})
-                          </span>
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
             </div>
           )}
 

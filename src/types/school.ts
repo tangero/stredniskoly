@@ -114,6 +114,28 @@ export const studyLengthLabels: Record<string, string> = {
   'VOŠ': '3leté',
 };
 
+// Mapování typů škol na plné české názvy
+export const schoolTypeFullNames: Record<string, string> = {
+  'GY4': 'Čtyřleté gymnázium',
+  'GY6': 'Šestileté gymnázium',
+  'GY8': 'Osmileté gymnázium',
+  'SOŠ': 'Střední odborná škola',
+  'SOU': 'Střední odborné učiliště',
+  'LYC': 'Lyceum',
+  'VOŠ': 'Vyšší odborná škola',
+  'KON': 'Konzervatoř',
+};
+
+// Funkce pro získání plného názvu typu s fallbackem
+export function getSchoolTypeFullName(typ: string, obor?: string): string {
+  // Pokud máme mapování, použijeme ho
+  if (schoolTypeFullNames[typ]) {
+    return schoolTypeFullNames[typ];
+  }
+  // Fallback na obor nebo typ
+  return obor || typ;
+}
+
 // Typ pro související školu v datech "kam se hlásí ostatní"
 export interface RelatedSchool {
   id: string;
