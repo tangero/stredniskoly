@@ -37,6 +37,7 @@ export default function JakVybratSkoluPage() {
           <nav className="bg-white rounded-xl p-6 mb-8 shadow-sm">
             <h3 className="font-semibold mb-3">Na této stránce</h3>
             <ul className="space-y-2 text-indigo-600">
+              <li><a href="#extra-body" className="hover:underline text-red-600 font-semibold">⚠️ Pozor na extra body za prospěch!</a></li>
               <li><a href="#strategie-vyberu" className="hover:underline">1. Strategie výběru škol</a></li>
               <li><a href="#priprava" className="hover:underline">2. Příprava na testy</a></li>
               <li><a href="#vyber-profilu" className="hover:underline">3. Jak vybrat správný profil školy</a></li>
@@ -56,6 +57,45 @@ export default function JakVybratSkoluPage() {
             <Link href="/jak-funguje-prijimani" className="inline-block mt-3 text-green-700 hover:text-green-900 font-medium underline">
               Zjistit více o algoritmu přijímání →
             </Link>
+          </div>
+
+          {/* DŮLEŽITÉ VAROVÁNÍ - Extra body */}
+          <div id="extra-body" className="bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-400 p-6 rounded-xl mb-8 shadow-md">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-14 h-14 bg-red-500 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                ⚠️
+              </div>
+              <div>
+                <strong className="block text-xl mb-2 text-red-800">Pozor na &quot;extra body&quot; za prospěch!</strong>
+                <p className="text-slate-800 mb-3">
+                  Řada škol (zejména gymnázií) <strong>nepočítá pouze body z přijímacích testů</strong>,
+                  ale přidává k nim ještě body za další kritéria:
+                </p>
+                <ul className="text-slate-700 space-y-1 mb-4 ml-4">
+                  <li>• <strong>Prospěch ze ZŠ</strong> – vysvědčení z 8. a 9. třídy</li>
+                  <li>• <strong>Mimoškolní činnosti</strong> – olympiády, soutěže, certifikáty</li>
+                  <li>• <strong>Školní přijímací zkouška</strong> – vlastní test školy</li>
+                </ul>
+                <p className="text-red-800 font-semibold mb-3">
+                  Tyto extra body mohou tvořit až 30 % celkového hodnocení!
+                </p>
+                <div className="bg-white/70 rounded-lg p-4 border border-red-200">
+                  <p className="text-slate-700 text-sm mb-2">
+                    <strong>Co to znamená pro vás:</strong>
+                  </p>
+                  <ul className="text-slate-600 text-sm space-y-1">
+                    <li>📌 U každé školy si na jejím webu ověřte kritéria přijímání</li>
+                    <li>📌 Zjistěte, kolik bodů je možné získat za prospěch</li>
+                    <li>📌 Zvažte, zda na tyto body vaše dítě reálně dosáhne</li>
+                    <li>📌 V našem simulátoru a analýze škol vidíte pouze body z JPZ testů</li>
+                  </ul>
+                </div>
+                <p className="text-red-700 text-sm mt-3 italic">
+                  Tuto databázi extra bodů za prospěch nemáme k dispozici – liší se škola od školy
+                  a mění se každý rok. Vždy si informace ověřte přímo na stránkách konkrétní školy.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Sekce 1 - Strategie výběru */}

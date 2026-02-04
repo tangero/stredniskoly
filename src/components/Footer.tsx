@@ -39,6 +39,11 @@ export function Footer() {
                   Přehled regionů
                 </Link>
               </li>
+              <li>
+                <Link href="/jak-vybrat-skolu" className="text-slate-400 hover:text-white transition-colors">
+                  Jak vybrat a uspět
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
