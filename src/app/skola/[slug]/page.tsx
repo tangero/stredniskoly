@@ -94,8 +94,12 @@ function StudyLengthBadge({ typ, delka }: { typ: string; delka: number }) {
 }
 
 // Komponenta pro kartu oboru v přehledu
-function ProgramCard({ program, schoolNazev, redizo }: { program: SchoolProgram; schoolNazev: string; redizo: string }) {
-  const difficulty = getDifficultyClass(program.index_poptavky * 20); // Přibližný odhad obtížnosti
+function ProgramCard({ program, schoolNazev, redizo, showStudyLength }: {
+  program: SchoolProgram;
+  schoolNazev: string;
+  redizo: string;
+  showStudyLength?: boolean;
+}) {
   const demand = getDemandClass(program.index_poptavky);
 
   // Vytvořit slug pro detail
@@ -103,9 +107,12 @@ function ProgramCard({ program, schoolNazev, redizo }: { program: SchoolProgram;
     ? `${redizo}-${createSlug(schoolNazev, program.obor, program.zamereni)}`
     : `${redizo}-${createSlug(schoolNazev, program.obor)}`;
 
-  const displayName = program.zamereni
+  const baseName = program.zamereni
     ? `${program.obor} - ${program.zamereni}`
     : program.obor;
+
+  // Pokud má duplikátní název, přidat délku studia
+  const displayName = showStudyLength ? `${baseName} (${program.delka_studia}leté)` : baseName;
 
   return (
     <Link
@@ -177,6 +184,13 @@ export default async function SchoolDetailPage({ params }: Props) {
     const totalKapacita = sortedPrograms.reduce((sum, p) => sum + p.kapacita, 0);
     const totalPrihlasky = sortedPrograms.reduce((sum, p) => sum + p.prihlasky, 0);
 
+    // Zjistit duplicitní názvy oborů (různá délka studia, ale stejný název)
+    const oborCountsOverview = new Map<string, number>();
+    for (const p of sortedPrograms) {
+      const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+      oborCountsOverview.set(baseName, (oborCountsOverview.get(baseName) || 0) + 1);
+    }
+
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
@@ -242,14 +256,19 @@ export default async function SchoolDetailPage({ params }: Props) {
             {/* Seznam oborů */}
             <h2 className="text-2xl font-bold mb-6">Obory a zaměření</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {sortedPrograms.map(program => (
-                <ProgramCard
-                  key={program.id}
-                  program={program}
-                  schoolNazev={overview.nazev}
-                  redizo={redizo}
-                />
-              ))}
+              {sortedPrograms.map(program => {
+                const baseName = program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor;
+                const hasDuplicateName = (oborCountsOverview.get(baseName) || 0) > 1;
+                return (
+                  <ProgramCard
+                    key={program.id}
+                    program={program}
+                    schoolNazev={overview.nazev}
+                    redizo={redizo}
+                    showStudyLength={hasDuplicateName}
+                  />
+                );
+              })}
             </div>
 
             {/* Kontakt */}
@@ -301,8 +320,19 @@ export default async function SchoolDetailPage({ params }: Props) {
   ]);
 
   // Připravit data pro ProgramTabs
+  // Zjistit duplicitní názvy oborů (různá délka studia, ale stejný název)
+  const oborCounts = new Map<string, number>();
+  for (const p of detailedPrograms) {
+    const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    oborCounts.set(baseName, (oborCounts.get(baseName) || 0) + 1);
+  }
+
   const programsForTabs = detailedPrograms.map(p => {
-    const displayName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
+    // Pokud je více oborů se stejným názvem, přidat délku studia
+    const hasDuplicateName = (oborCounts.get(baseName) || 0) > 1;
+    const displayName = hasDuplicateName ? `${baseName} (${p.delka_studia}leté)` : baseName;
+
     const programSlug = p.zamereni
       ? `${redizo}-${createSlug(school.nazev, p.obor, p.zamereni)}`
       : `${redizo}-${createSlug(school.nazev, p.obor)}`;
