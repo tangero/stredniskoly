@@ -2,6 +2,48 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+// Rate limiting - jednoduchá in-memory implementace
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minuta
+const RATE_LIMIT_MAX = 100; // max 100 požadavků za minutu
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+
+  if (!record || now > record.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    return true;
+  }
+
+  if (record.count >= RATE_LIMIT_MAX) {
+    return false;
+  }
+
+  record.count++;
+  return true;
+}
+
+// Validace ID - povolené znaky: čísla, pomlčky, podtržítka, lomítka, písmena
+// Formát: XXXXXXXXX_XX-XX-X/XX nebo XXXXXXXXX_XX-XX-X/XX_zaměření
+const VALID_ID_PATTERN = /^[0-9]{9}_[0-9]{2}-[0-9]{2}-[A-Z]\/[0-9]{2}(_[A-Za-z0-9áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ_\-,\s]+)?$/;
+
+function isValidSchoolId(id: string): boolean {
+  // Základní kontroly
+  if (!id || typeof id !== 'string') return false;
+  if (id.length > 200) return false; // max délka
+
+  // Kontrola nebezpečných sekvencí (path traversal)
+  if (id.includes('..') || id.includes('./') || id.includes('~')) return false;
+
+  // Kontrola formátu - povolíme i varianty se zaměřením
+  // Příklady platných ID:
+  // 600006018_79-41-K/41
+  // 600006018_79-41-K/81_8leté_PORG_Libeň
+  const basicPattern = /^[0-9]{9}_[0-9]{2}-[0-9]{2}-[A-Z]\/[0-9]{2}/;
+  return basicPattern.test(id);
+}
+
 interface SchoolDetail {
   total_applicants: number;
   priority_counts: number[];
@@ -65,9 +107,28 @@ async function getSchoolAnalysis() {
 
 async function getSchoolDetailFile(schoolId: string) {
   try {
+    // Dodatečná validace před čtením souboru
+    if (!isValidSchoolId(schoolId)) {
+      return null;
+    }
+
     // Soubory mají pomlčku místo lomítka v názvu
-    const fileName = schoolId.replace(/\//g, '-');
-    const filePath = path.join(process.cwd(), 'public', 'school_details', `${fileName}.json`);
+    // Sanitizace: povolíme pouze alfanumerické znaky, pomlčky a podtržítka
+    const fileName = schoolId
+      .replace(/\//g, '-')
+      .replace(/[^a-zA-Z0-9\-_áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ,\s]/g, '');
+
+    const baseDir = path.join(process.cwd(), 'public', 'school_details');
+    const filePath = path.join(baseDir, `${fileName}.json`);
+
+    // Ověření, že výsledná cesta je stále v povoleném adresáři (path traversal ochrana)
+    const resolvedPath = path.resolve(filePath);
+    const resolvedBase = path.resolve(baseDir);
+    if (!resolvedPath.startsWith(resolvedBase)) {
+      console.warn(`Path traversal attempt detected: ${schoolId}`);
+      return null;
+    }
+
     const data = await fs.readFile(filePath, 'utf-8');
     return JSON.parse(data);
   } catch {
@@ -137,7 +198,27 @@ export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  // Rate limiting
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0] ||
+             request.headers.get('x-real-ip') ||
+             'unknown';
+
+  if (!checkRateLimit(ip)) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429 }
+    );
+  }
+
   const { id } = await params;
+
+  // Validace ID - ochrana proti path traversal
+  if (!isValidSchoolId(id)) {
+    return NextResponse.json(
+      { error: 'Invalid school ID format' },
+      { status: 400 }
+    );
+  }
 
   try {
     const schoolsData = await getSchoolsData();

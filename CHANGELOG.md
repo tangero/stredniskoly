@@ -2,6 +2,36 @@
 
 ## 2026-02-04
 
+### Bezpečnostní audit a optimalizace
+
+**Kritické bezpečnostní opravy:**
+- **Path Traversal ochrana** v API `/api/school-details/[id]` - validace ID, kontrola nebezpečných sekvencí (`..`, `./`, `~`)
+- **Input validace** - regex pattern pro validní school ID formát
+- **Path resolution check** - ověření, že výsledná cesta zůstává v povoleném adresáři
+
+**High priority opravy:**
+- **Security headers** přidány do `next.config.ts`:
+  - Content-Security-Policy (CSP)
+  - Strict-Transport-Security (HSTS)
+  - X-Frame-Options (clickjacking ochrana)
+  - X-Content-Type-Options
+  - X-XSS-Protection
+  - Referrer-Policy
+  - Permissions-Policy
+- **Rate limiting** - max 100 požadavků za minutu na IP adresu pro API
+- **X-Powered-By header** skryt
+
+**Optimalizace bandwidth (Vercel Pro):**
+- **Nové API** `/api/schools/search` pro server-side filtrování škol
+- **Eliminace 5.1 MB JSON fetche** - simulátor nyní stahuje pouze relevantní data (typicky <50 KB)
+- **Cache headers** pro statická data (24h cache, 7 dnů stale-while-revalidate)
+- **Debounced search** - API se volá až po dokončení psaní (300ms delay)
+- **Odhadovaná úspora**: ~51 GB/měsíc při 10 000 unikátních návštěvnících simulátoru
+
+**Vyhledávání škol:**
+- **Aliasy pro PORG pobočky** - vyhledávání "PORG Libeň", "PORG Ostrava", "Nový PORG" funguje správně
+- Nová sekce "Pobočky škol" ve výsledcích hledání
+
 ### Nová struktura stránek škol: Přehled + Detail oborů
 
 Kompletní přepracování struktury URL a stránek škol:

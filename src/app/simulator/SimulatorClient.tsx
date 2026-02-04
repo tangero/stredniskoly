@@ -38,10 +38,6 @@ interface School {
   index_poptavky_2025: number;
 }
 
-interface SchoolsData {
-  [year: string]: School[];
-}
-
 interface SchoolDetailData {
   total_applicants: number;
   priority_counts: number[];
@@ -120,6 +116,8 @@ export function SimulatorClient() {
   const [delkaStudia, setDelkaStudia] = useState<number | null>(4);
   const [schoolDetails, setSchoolDetails] = useState<Map<string, SchoolDetailData>>(new Map());
   const [loadingDetails, setLoadingDetails] = useState<Set<string>>(new Set());
+  // Cache pro vybrané školy (aby zůstaly dostupné i po změně filtrů)
+  const [selectedSchoolsCache, setSelectedSchoolsCache] = useState<Map<string, School>>(new Map());
 
   // Pro zpětnou kompatibilitu
   const selectedSchools = useMemo(() => new Set(selectedSchoolIds), [selectedSchoolIds]);
@@ -198,24 +196,52 @@ export function SimulatorClient() {
     }
   }, []);
 
+  // Načtení škol při změně filtrů (debounced)
   useEffect(() => {
-    fetch('/schools_data.json')
+    const controller = new AbortController();
+
+    const fetchSchools = async () => {
+      const params = new URLSearchParams();
+      params.set('minScore', String(Math.max(0, totalScore - 25)));
+      params.set('maxScore', String(Math.min(100, totalScore + 25)));
+      params.set('limit', '50');
+
+      if (delkaStudia) params.set('delkaStudia', String(delkaStudia));
+      if (krajFilter) params.set('kraj', krajFilter);
+      if (searchTerm) params.set('search', searchTerm);
+
+      try {
+        const res = await fetch(`/api/schools/search?${params.toString()}`, {
+          signal: controller.signal
+        });
+        const data = await res.json();
+        setSchools(data.schools || []);
+      } catch (err: any) {
+        if (err.name !== 'AbortError') {
+          console.error('Error loading schools:', err);
+        }
+      }
+    };
+
+    // Debounce hledání
+    const timeoutId = setTimeout(fetchSchools, searchTerm ? 300 : 0);
+
+    return () => {
+      clearTimeout(timeoutId);
+      controller.abort();
+    };
+  }, [totalScore, delkaStudia, krajFilter, searchTerm]);
+
+  const [kraje, setKraje] = useState<Array<[string, string]>>([]);
+
+  // Načtení seznamu krajů při startu
+  useEffect(() => {
+    fetch('/api/schools/search?krajeOnly=1')
       .then(res => res.json())
-      .then((data: SchoolsData) => {
-        // Data jsou strukturovaná jako {"2024": [...], "2025": [...]}
-        // Použijeme nejnovější rok (2025 nebo 2024)
-        const year = data['2025'] ? '2025' : '2024';
-        const schoolList = data[year] || [];
-
-        // Přemapovat pole na formát s min_body_2025 a jpz_min
-        const mappedSchools = schoolList.map(s => ({
-          ...s,
-          min_body_2025: (s as any).min_body || 0,
-          jpz_min: (s as any).jpz_min_actual || (s as any).min_body || 0,  // preferuj jpz_min_actual
-          index_poptavky_2025: (s as any).index_poptavky || 0,
-        }));
-
-        setSchools(mappedSchools);
+      .then(data => {
+        if (data.kraje) {
+          setKraje(data.kraje.map((k: { kod: string; nazev: string }) => [k.kod, k.nazev]));
+        }
         setLoading(false);
 
         // Zobrazit onboarding při první návštěvě
@@ -226,20 +252,10 @@ export function SimulatorClient() {
         }
       })
       .catch(err => {
-        console.error('Error loading schools:', err);
+        console.error('Error loading kraje:', err);
         setLoading(false);
       });
   }, []);
-
-  const kraje = useMemo(() => {
-    const krajMap = new Map<string, string>();
-    schools.forEach(s => {
-      if (s.kraj_kod && s.kraj) {
-        krajMap.set(s.kraj_kod, s.kraj.trim());
-      }
-    });
-    return Array.from(krajMap.entries()).sort((a, b) => a[1].localeCompare(b[1], 'cs'));
-  }, [schools]);
 
   const getStatus = useCallback((minBody: number): { status: StatusType; label: string; color: string } => {
     const diff = totalScore - minBody;
@@ -248,36 +264,11 @@ export function SimulatorClient() {
     return { status: 'rejected', label: 'Malá šance', color: 'red' };
   }, [totalScore]);
 
-  // Automaticky doporučené školy podle skóre uživatele
+  // Doporučené školy - filtrování provádí API, zde pouze použijeme data
   const recommendedSchools = useMemo(() => {
-    return schools
-      .filter(s => {
-        // Filtrovat podle délky studia
-        if (delkaStudia && s.delka_studia !== delkaStudia) return false;
-        // Filtrovat podle kraje pokud je vybraný
-        if (krajFilter && s.kraj_kod !== krajFilter) return false;
-        // Filtrovat podle hledání
-        if (searchTerm) {
-          const term = searchTerm.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-          const nazev = s.nazev.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-          const nazevDisplay = (s.nazev_display || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-          const obor = s.obor.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-          const obec = s.obec.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-          const ulice = (s.ulice || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-          const adresa = (s.adresa || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-          return nazev.includes(term) || nazevDisplay.includes(term) || obor.includes(term) || obec.includes(term) || ulice.includes(term) || adresa.includes(term);
-        }
-        // Bez hledání - zobrazit školy v rozmezí ±20 bodů od skóre uživatele
-        return Math.abs(s.jpz_min - totalScore) <= 25;
-      })
-      .sort((a, b) => {
-        // Řadit podle vzdálenosti od skóre uživatele
-        const diffA = Math.abs(a.jpz_min - totalScore);
-        const diffB = Math.abs(b.jpz_min - totalScore);
-        return diffA - diffB;
-      })
-      .slice(0, 50);
-  }, [schools, krajFilter, searchTerm, totalScore, delkaStudia]);
+    // Data jsou již filtrována a seřazena na serveru
+    return schools;
+  }, [schools]);
 
   // Kategorizované doporučené školy
   const categorizedSchools = useMemo(() => {
@@ -296,11 +287,11 @@ export function SimulatorClient() {
   }, [recommendedSchools, getStatus]);
 
   const selectedSchoolsList = useMemo(() => {
-    // Zachovat pořadí podle selectedSchoolIds
+    // Zachovat pořadí podle selectedSchoolIds, použít cache
     return selectedSchoolIds
-      .map(id => schools.find(s => s.id === id))
+      .map(id => selectedSchoolsCache.get(id))
       .filter((s): s is School => s !== undefined);
-  }, [schools, selectedSchoolIds]);
+  }, [selectedSchoolsCache, selectedSchoolIds]);
 
   const stats = useMemo(() => {
     let accepted = 0, borderline = 0, rejected = 0;
@@ -316,12 +307,23 @@ export function SimulatorClient() {
   const toggleSchool = useCallback((id: string) => {
     setSelectedSchoolIds(prev => {
       if (prev.includes(id)) {
+        // Odebrat z výběru
+        setSelectedSchoolsCache(cache => {
+          const next = new Map(cache);
+          next.delete(id);
+          return next;
+        });
         return prev.filter(x => x !== id);
       } else {
+        // Přidat do výběru - najít školu a uložit do cache
+        const school = schools.find(s => s.id === id);
+        if (school) {
+          setSelectedSchoolsCache(cache => new Map(cache).set(id, school));
+        }
         return [...prev, id];
       }
     });
-  }, []);
+  }, [schools]);
 
   if (loading) {
     return (
