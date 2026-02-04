@@ -1513,9 +1513,8 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
     return null;
   }
 
-  // Zjistit, zda jsou všechny programy zaměření (mají stejný slug)
-  const uniqueSlugs = new Set(programs.map(p => p.slug));
-  const areAllZamereni = uniqueSlugs.size === 1 && programs.some(p => p.hasZamereni);
+  // Zjistit, zda jsou všechny programy zaměření (v rámci jednoho oboru)
+  const hasZamereni = programs.some(p => p.hasZamereni);
 
   // Seřadit obory podle délky studia (kratší první) a pak podle min. bodů
   const sortedPrograms = [...programs].sort((a, b) => {
@@ -1525,11 +1524,8 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
     return b.min_body - a.min_body;
   });
 
-  // Hledat aktivní program - ID ze schools_data.json může začínat na currentProgramId
-  // např. currentProgramId = "600005682_79-41-K/41" a program.id = "600005682_79-41-K/41_Humanitní_vědy"
-  const currentProgram = programs.find(p =>
-    p.id === currentProgramId || p.id.startsWith(currentProgramId + '_')
-  );
+  // Hledat aktivní program
+  const currentProgram = programs.find(p => p.id === currentProgramId);
 
   // Počítat celkovou kapacitu všech oborů
   const totalKapacita = programs.reduce((sum, p) => sum + (p.kapacita || 0), 0);
@@ -1540,18 +1536,16 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
         {/* Info text */}
         <div className="py-3 text-sm text-slate-600 border-b border-slate-100">
           <span className="font-medium text-slate-900">
-            {areAllZamereni ? (
-              // Škola se zaměřeními v rámci jednoho oboru
+            {hasZamereni ? (
               <>Tento obor má {programs.length} zaměření (celkem {totalKapacita} míst).</>
             ) : (
-              // Škola s různými obory
               <>
                 Tato škola nabízí {programs.length} {programs.length === 1 ? 'obor' : programs.length < 5 ? 'obory' : 'oborů'}
                 {totalKapacita > 0 && ` (celkem ${totalKapacita} míst)`}.
               </>
             )}
           </span>
-          {!areAllZamereni && currentProgram && (
+          {currentProgram && (
             <>
               {' '}Zobrazujete:{' '}
               <span className="font-semibold text-indigo-600">
@@ -1561,62 +1555,36 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
           )}
         </div>
 
-        {/* Tabs */}
+        {/* Tabs - všechny klikatelné */}
         <div className="flex overflow-x-auto scrollbar-hide -mb-px">
-          {sortedPrograms.map((program, index) => {
-            // Aktivní je program, jehož ID odpovídá nebo začíná na currentProgramId
-            const isActive = program.id === currentProgramId || program.id.startsWith(currentProgramId + '_');
-
-            // Pro zaměření: první tab je aktivní (všechny vedou na stejnou stránku)
-            const isActiveForZamereni = areAllZamereni && index === 0;
-            const showAsActive = areAllZamereni ? isActiveForZamereni : isActive;
-
-            const tabClassName = `
-              flex-shrink-0 px-4 py-3 border-b-3 transition-colors
-              ${showAsActive
-                ? 'border-b-[3px] border-indigo-600 text-indigo-600 font-semibold bg-indigo-50/50'
-                : areAllZamereni
-                  ? 'border-b-[3px] border-transparent text-slate-500 bg-slate-50/50'
-                  : 'border-b-[3px] border-transparent text-slate-600 hover:text-indigo-600 hover:bg-slate-50 cursor-pointer'
-              }
-            `;
-
-            const tabContent = (
-              <div className="flex flex-col items-start">
-                <span className="text-sm whitespace-nowrap">
-                  {showAsActive && <span className="mr-1">★</span>}
-                  {program.obor}
-                </span>
-                <span className={`text-xs mt-0.5 ${showAsActive ? 'text-indigo-500' : 'text-slate-400'}`}>
-                  {program.kapacita && `${program.kapacita} míst • `}min. {program.min_body} b.
-                </span>
-              </div>
-            );
-
-            // Pro zaměření bez samostatných stránek zobrazit jako neaktivní info (div)
-            // Pro různé KKOV kódy zobrazit jako klikatelné odkazy (Link)
-            if (areAllZamereni) {
-              return (
-                <div key={program.id} className={tabClassName}>
-                  {tabContent}
-                </div>
-              );
-            }
+          {sortedPrograms.map((program) => {
+            const isActive = program.id === currentProgramId;
 
             return (
-              <Link key={program.id} href={`/skola/${program.slug}`} className={tabClassName}>
-                {tabContent}
+              <Link
+                key={program.id}
+                href={`/skola/${program.slug}`}
+                className={`
+                  flex-shrink-0 px-4 py-3 border-b-3 transition-colors
+                  ${isActive
+                    ? 'border-b-[3px] border-indigo-600 text-indigo-600 font-semibold bg-indigo-50/50'
+                    : 'border-b-[3px] border-transparent text-slate-600 hover:text-indigo-600 hover:bg-slate-50 cursor-pointer'
+                  }
+                `}
+              >
+                <div className="flex flex-col items-start">
+                  <span className="text-sm whitespace-nowrap">
+                    {isActive && <span className="mr-1">★</span>}
+                    {program.obor}
+                  </span>
+                  <span className={`text-xs mt-0.5 ${isActive ? 'text-indigo-500' : 'text-slate-400'}`}>
+                    {program.kapacita && `${program.kapacita} míst • `}min. {program.min_body} b.
+                  </span>
+                </div>
               </Link>
             );
           })}
         </div>
-
-        {/* Info pro zaměření */}
-        {areAllZamereni && (
-          <div className="py-2 text-xs text-slate-500 bg-slate-50 px-4 -mx-4">
-            Zobrazená data jsou agregovaná za všechna zaměření tohoto oboru.
-          </div>
-        )}
       </div>
     </div>
   );

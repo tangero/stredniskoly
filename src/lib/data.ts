@@ -81,44 +81,200 @@ export async function getSlugToIdMap(): Promise<Map<string, string>> {
 }
 
 /**
- * Najde školu podle slug
+ * Typ stránky školy - přehled nebo detail oboru/zaměření
  */
-export async function getSchoolBySlug(slug: string): Promise<School | null> {
+export type SchoolPageType = 'overview' | 'program' | 'zamereni';
+
+/**
+ * Rozpozná typ stránky podle slugu
+ */
+export async function getSchoolPageType(slug: string): Promise<{
+  type: SchoolPageType;
+  redizo: string;
+  school: School | null;
+  program: SchoolProgram | null;
+}> {
   const schools = await getAllSchools();
+  const redizo = slug.split('-')[0];
 
-  for (const school of schools) {
-    const schoolSlug = createSlug(school.nazev, school.obor);
-    const fullSlug = `${school.id.split('_')[0]}-${schoolSlug}`;
+  if (!redizo) {
+    return { type: 'overview', redizo: '', school: null, program: null };
+  }
 
-    if (fullSlug === slug) {
-      return school;
+  // Najít školy s tímto REDIZO
+  const schoolsWithRedizo = schools.filter(s => s.id.startsWith(redizo));
+  if (schoolsWithRedizo.length === 0) {
+    return { type: 'overview', redizo, school: null, program: null };
+  }
+
+  const firstSchool = schoolsWithRedizo[0];
+  const schoolNameSlug = createSlug(firstSchool.nazev);
+  const overviewSlug = `${redizo}-${schoolNameSlug}`;
+
+  // Je to přehled školy (krátký slug bez oboru)?
+  if (slug === overviewSlug) {
+    return { type: 'overview', redizo, school: firstSchool, program: null };
+  }
+
+  // Načíst všechny programy/zaměření
+  const programs = await getProgramsByRedizo(redizo);
+
+  // Zkusit najít zaměření (nejdelší slug)
+  for (const program of programs) {
+    if (program.zamereni) {
+      const zamereniSlug = `${redizo}-${createSlug(firstSchool.nazev, program.obor, program.zamereni)}`;
+      if (slug === zamereniSlug) {
+        return { type: 'zamereni', redizo, school: firstSchool, program };
+      }
     }
   }
 
-  // Fallback: zkusit najít podle REDIZO na začátku
-  const redizo = slug.split('-')[0];
-  if (redizo) {
-    for (const school of schools) {
-      if (school.id.startsWith(redizo)) {
-        return school;
-      }
+  // Zkusit najít obor (střední délka slugu)
+  for (const school of schoolsWithRedizo) {
+    const oborSlug = `${redizo}-${createSlug(school.nazev, school.obor)}`;
+    if (slug === oborSlug) {
+      // Najít odpovídající program (bez zaměření)
+      const program = programs.find(p => !p.zamereni && p.obor === school.obor);
+      return {
+        type: 'program',
+        redizo,
+        school,
+        program: program || {
+          id: school.id,
+          redizo,
+          nazev: school.nazev,
+          obor: school.obor,
+          zamereni: undefined,
+          typ: school.typ,
+          delka_studia: school.delka_studia,
+          kapacita: school.kapacita,
+          prihlasky: school.prihlasky,
+          prijati: school.prijati,
+          min_body: school.min_body,
+          index_poptavky: school.index_poptavky,
+          obec: school.obec,
+        }
+      };
     }
+  }
+
+  // Fallback - vrátit první školu jako přehled
+  return { type: 'overview', redizo, school: firstSchool, program: null };
+}
+
+/**
+ * Najde školu podle slug (kompatibilita se starým API)
+ */
+export async function getSchoolBySlug(slug: string): Promise<School | null> {
+  const pageInfo = await getSchoolPageType(slug);
+
+  // Pro přehled vrátit první školu
+  if (pageInfo.type === 'overview' && pageInfo.school) {
+    return pageInfo.school;
+  }
+
+  // Pro detail vrátit konkrétní školu
+  if (pageInfo.school) {
+    return pageInfo.school;
   }
 
   return null;
 }
 
 /**
+ * Získá základní info o škole podle REDIZO (pro přehled školy)
+ */
+export async function getSchoolOverview(redizo: string): Promise<{
+  nazev: string;
+  adresa: string;
+  adresa_plna: string;
+  obec: string;
+  okres: string;
+  kraj: string;
+  kraj_kod: string;
+  zrizovatel: string;
+  programs: SchoolProgram[];
+} | null> {
+  const schools = await getSchoolsByRedizo(redizo);
+  if (schools.length === 0) return null;
+
+  const firstSchool = schools[0];
+  const programs = await getProgramsByRedizo(redizo);
+
+  return {
+    nazev: firstSchool.nazev,
+    adresa: firstSchool.adresa,
+    adresa_plna: firstSchool.adresa_plna || firstSchool.adresa,
+    obec: firstSchool.obec,
+    okres: firstSchool.okres,
+    kraj: firstSchool.kraj,
+    kraj_kod: firstSchool.kraj_kod,
+    zrizovatel: firstSchool.zrizovatel,
+    programs,
+  };
+}
+
+/**
  * Generuje všechny slugy pro statické stránky
+ * Včetně přehledů škol a detailů oborů/zaměření
  */
 export async function generateAllSlugs(): Promise<{ slug: string }[]> {
   const schools = await getAllSchools();
+  const slugs: { slug: string }[] = [];
+  const addedSlugs = new Set<string>();
 
-  return schools.map(school => {
-    const slug = createSlug(school.nazev, school.obor);
-    const fullSlug = `${school.id.split('_')[0]}-${slug}`;
-    return { slug: fullSlug };
-  });
+  // Načíst detailní data ze schools_data.json pro zaměření
+  const filePath = path.join(dataDir, 'schools_data.json');
+  const content = await fs.readFile(filePath, 'utf-8');
+  const data = JSON.parse(content);
+  const yearData = data['2025'] || data['2024'] || [];
+
+  // Seskupit školy podle REDIZO
+  const schoolsByRedizo = new Map<string, School[]>();
+  for (const school of schools) {
+    const redizo = school.id.split('_')[0];
+    if (!schoolsByRedizo.has(redizo)) {
+      schoolsByRedizo.set(redizo, []);
+    }
+    schoolsByRedizo.get(redizo)!.push(school);
+  }
+
+  for (const [redizo, schoolList] of schoolsByRedizo) {
+    const firstSchool = schoolList[0];
+    const schoolNameSlug = createSlug(firstSchool.nazev);
+
+    // 1. Přehled školy (krátký slug: redizo-nazev)
+    const overviewSlug = `${redizo}-${schoolNameSlug}`;
+    if (!addedSlugs.has(overviewSlug)) {
+      slugs.push({ slug: overviewSlug });
+      addedSlugs.add(overviewSlug);
+    }
+
+    // 2. Detail oborů (standardní slug: redizo-nazev-obor)
+    for (const school of schoolList) {
+      const oborSlug = createSlug(school.nazev, school.obor);
+      const fullSlug = `${redizo}-${oborSlug}`;
+      if (!addedSlugs.has(fullSlug)) {
+        slugs.push({ slug: fullSlug });
+        addedSlugs.add(fullSlug);
+      }
+    }
+
+    // 3. Detail zaměření (ze schools_data.json)
+    const detailedRecords = yearData.filter((s: { redizo: string }) => s.redizo === redizo);
+    for (const record of detailedRecords) {
+      if (record.zamereni) {
+        const zamereniSlug = createSlug(firstSchool.nazev, record.obor, record.zamereni);
+        const fullSlug = `${redizo}-${zamereniSlug}`;
+        if (!addedSlugs.has(fullSlug)) {
+          slugs.push({ slug: fullSlug });
+          addedSlugs.add(fullSlug);
+        }
+      }
+    }
+  }
+
+  return slugs;
 }
 
 /**
@@ -533,6 +689,60 @@ export async function getExtendedSchoolStats(schoolId: string): Promise<Extended
   const baseId = schoolId.split('_').slice(0, 2).join('_');
 
   return dataById.get(baseId) || null;
+}
+
+/**
+ * Získá rozšířené statistiky pro konkrétní program/zaměření
+ * Na rozdíl od getExtendedSchoolStats, tato funkce hledá přesné ID včetně zaměření
+ */
+export async function getExtendedStatsForProgram(programId: string): Promise<ExtendedSchoolStats | null> {
+  const filePath = path.join(dataDir, 'schools_data.json');
+  const content = await fs.readFile(filePath, 'utf-8');
+  const data = JSON.parse(content);
+
+  // Hledat přesně podle ID v datech 2025, pak 2024
+  for (const year of ['2025', '2024']) {
+    if (!data[year]) continue;
+
+    const school = data[year].find((s: { id: string }) => s.id === programId);
+    if (school) {
+      // Převod z % skórů na skutečné body
+      const cj_min = Math.round((school.cj_min || 0) / 2);
+      const ma_min = Math.round((school.ma_min || 0) / 2);
+      const cj_prumer = Math.round(((school.cj_prumer || 0) / 2) * 10) / 10;
+      const ma_prumer = Math.round(((school.ma_prumer || 0) / 2) * 10) / 10;
+      const min_body = Math.round((school.min_body || 0) / 2);
+
+      const jpz_min_actual = school.jpz_min_actual || 0;
+      const cj_at_jpz_min = school.cj_at_jpz_min || 0;
+      const ma_at_jpz_min = school.ma_at_jpz_min || 0;
+      const jpz_min = jpz_min_actual > 0 ? jpz_min_actual : (cj_min + ma_min);
+      const jpz_prumer = Math.round((cj_prumer + ma_prumer) * 10) / 10;
+
+      const extra_body = min_body - jpz_min;
+      const hasExtraCriteria = extra_body > 5;
+
+      return {
+        prihlasky_priority: school.prihlasky_priority || [],
+        prijati_priority: school.prijati_priority || [],
+        cj_prumer,
+        cj_min,
+        ma_prumer,
+        ma_min,
+        jpz_min,
+        cj_at_jpz_min,
+        ma_at_jpz_min,
+        jpz_prumer,
+        min_body,
+        extra_body,
+        hasExtraCriteria,
+        cohorts: school.cohorts || null
+      };
+    }
+  }
+
+  // Fallback na standardní metodu (pro obory bez zaměření)
+  return getExtendedSchoolStats(programId);
 }
 
 /**

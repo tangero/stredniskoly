@@ -6,10 +6,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 /**
- * Vytvoří SEO-friendly slug z názvu školy
+ * Helper pro slugifikaci textu
  */
-export function createSlug(name: string, obor?: string): string {
-  let slug = name
+function slugify(text: string, maxLength?: number): string {
+  let slug = text
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '') // odstranit diakritiku
@@ -18,16 +18,41 @@ export function createSlug(name: string, obor?: string): string {
     .replace(/-+/g, '-') // odstranit duplicitní pomlčky
     .replace(/^-|-$/g, ''); // odstranit pomlčky na začátku/konci
 
+  // Zkrátit na maxLength, pokud je zadáno (zaříznout na poslední pomlčce)
+  if (maxLength && slug.length > maxLength) {
+    slug = slug.substring(0, maxLength);
+    const lastDash = slug.lastIndexOf('-');
+    if (lastDash > maxLength * 0.6) {
+      slug = slug.substring(0, lastDash);
+    }
+  }
+
+  return slug;
+}
+
+/**
+ * Vytvoří SEO-friendly slug z názvu školy, oboru a zaměření
+ * Maximální délka slugu je omezena kvůli souborovému systému
+ */
+export function createSlug(name: string, obor?: string, zamereni?: string): string {
+  // Omezit délku jednotlivých částí
+  let slug = slugify(name, 60);
+
   if (obor) {
-    const oborSlug = obor
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '');
-    slug = `${slug}-${oborSlug}`;
+    slug = `${slug}-${slugify(obor, 40)}`;
+  }
+
+  if (zamereni) {
+    slug = `${slug}-${slugify(zamereni, 40)}`;
+  }
+
+  // Celkový slug max 150 znaků (+ 10 znaků pro redizo = 160 celkem, bezpečné pro FS)
+  if (slug.length > 150) {
+    slug = slug.substring(0, 150);
+    const lastDash = slug.lastIndexOf('-');
+    if (lastDash > 100) {
+      slug = slug.substring(0, lastDash);
+    }
   }
 
   return slug;

@@ -2,6 +2,36 @@
 
 ## 2026-02-04
 
+### Nová struktura stránek škol: Přehled + Detail oborů
+
+Kompletní přepracování struktury URL a stránek škol:
+
+**Nová struktura URL:**
+- `/skola/{redizo}-{nazev}` - **Přehled školy** s kartami všech oborů/zaměření
+- `/skola/{redizo}-{nazev}-{obor}` - **Detail oboru** s konkrétními statistikami
+- `/skola/{redizo}-{nazev}-{obor}-{zamereni}` - **Detail zaměření** s vlastními daty
+
+**Stránka přehledu školy:**
+- Základní kontaktní informace o škole
+- Karty všech oborů a zaměření s porovnáním:
+  - Min. body pro přijetí
+  - Kapacita
+  - Index poptávky
+  - Počet přihlášek / přijatých
+- Celkové statistiky školy
+
+**Stránka detailu oboru/zaměření:**
+- Konkrétní statistiky pro daný obor nebo zaměření
+- Navigační taby pro přepnutí na jiný obor/zaměření
+- Odkaz zpět na přehled školy v breadcrumbs
+- Každé zaměření má vlastní data (např. Gymnázium Arabská - Programování má 160 bodů, Přírodní vědy 172 bodů)
+
+**Příklad:**
+- Gymnázium Arabská (`/skola/600005682-gymnazium-arabska`) - přehled 3 zaměření
+  - Humanitní vědy: 60 míst, min. 136 bodů
+  - Programování: 30 míst, min. 158 bodů
+  - Přírodní vědy: 60 míst, min. 154 bodů
+
 ### Nová stránka: Jak vybrat školu a uspět u přijímaček
 
 - **Nová stránka:** `/jak-vybrat-skolu` - komplexní průvodce pro uchazeče
@@ -12,25 +42,12 @@
   - Odkazy na užitečné zdroje (TAU CERMAT, To-DAS.cz, CERMAT)
 - **Hlavní stránka:** Výrazný odkaz na průvodce přidán do HERO sekce
 
-### Oprava zobrazení všech zaměření školy
-
-- **Oprava:** Navigace oborů nyní správně zobrazuje všechna zaměření školy
-  - Např. Gymnázium Arabská nyní zobrazuje 3 zaměření: Humanitní vědy, Programování, Přírodní vědy
-  - Data se načítají ze `schools_data.json`, který obsahuje detailní rozdělení na zaměření
-  - Zobrazuje se celková kapacita všech oborů školy
-  - Každý tab zobrazuje kapacitu a minimální body pro přijetí
-
-- **Oprava:** Rozlišování mezi dvěma typy navigace oborů:
-  - Školy s různými KKOV kódy (např. Gymnázium Jana Nerudy) - taby jsou klikatelné odkazy na samostatné stránky
-  - Školy se zaměřeními v rámci jednoho KKOV (např. Gymnázium Arabská) - taby zobrazují informace, data jsou agregovaná
-
 ### Navigace oborů na detailu školy
 
 - **Nová funkce:** Přidána navigace mezi obory školy pomocí horizontálních tabů
-  - Taby se zobrazí pod hlavičkou stránky, pokud má škola více oborů
+  - Všechny taby jsou klikatelné a vedou na samostatné stránky
   - Aktivní obor je vizuálně zvýrazněn (hvězdička, indigo podtržení)
-  - Každý tab zobrazuje plný název typu a minimální body pro přijetí
-  - Informační text nad taby sděluje celkový počet oborů školy
+  - Každý tab zobrazuje kapacitu a minimální body pro přijetí
 
 - **Vylepšení:** Plné české názvy typů škol místo zkratek
   - GY4 -> "Čtyřleté gymnázium"
@@ -40,17 +57,12 @@
   - SOU -> "Střední odborné učiliště"
   - LYC -> "Lyceum"
 
-- **Vylepšení:** Badge délky studia nyní zobrazuje plná slova
-  - "4leté" -> "Čtyřleté studium"
-  - "6leté" -> "Šestileté studium"
-  - atd.
-
-- **Odstraněno:** Sekce "Další obory této školy" na konci stránky (nahrazena taby)
-
 ### Technické změny
 
-- Přidána komponenta `ProgramTabs` v `SchoolDetailClient.tsx`
-- Přidáno mapování `schoolTypeFullNames` a funkce `getSchoolTypeFullName` v `types/school.ts`
-- Upravena komponenta `StudyLengthBadge` pro použití plných českých názvů
-- Nová funkce `getProgramsByRedizo` v `data.ts` pro načítání zaměření ze `schools_data.json`
-- Upravena logika porovnání ID pro správné označení aktivního tabu
+- Nový typ stránky `SchoolPageType` (overview/program/zamereni) v `data.ts`
+- Nová funkce `getSchoolPageType()` pro rozpoznání typu stránky podle slugu
+- Nová funkce `getSchoolOverview()` pro načtení dat přehledu školy
+- Nová funkce `getExtendedStatsForProgram()` pro načtení statistik konkrétního zaměření
+- Rozšířená funkce `generateAllSlugs()` generuje slugy pro přehledy, obory i zaměření
+- Funkce `createSlug()` nyní podporuje třetí argument (zaměření) a omezuje délku slugu
+- Celkový počet generovaných stránek vzrostl z ~2250 na ~4480
