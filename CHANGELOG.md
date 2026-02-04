@@ -2,6 +2,16 @@
 
 ## 2026-02-04
 
+### Nová stránka: Jak vybrat školu a uspět u přijímaček
+
+- **Nová stránka:** `/jak-vybrat-skolu` - komplexní průvodce pro uchazeče
+  - Osvědčené strategie pro výběr tří priorit na přihlášce
+  - Tipy na přípravu na jednotné přijímací zkoušky
+  - Jak vybrat správný profil školy (technická vs. humanitní)
+  - Praktické rady pro den zkoušky
+  - Odkazy na užitečné zdroje (TAU CERMAT, To-DAS.cz, CERMAT)
+- **Hlavní stránka:** Výrazný odkaz na průvodce přidán do HERO sekce
+
 ### Navigace oborů na detailu školy
 
 - **Nová funkce:** Přidána navigace mezi obory školy pomocí horizontálních tabů

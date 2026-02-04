@@ -40,6 +40,20 @@ export default async function HomePage() {
             </Link>
           </div>
 
+          {/* Výrazný odkaz na průvodce */}
+          <div className="mt-8 pt-6 border-t border-white/20">
+            <Link
+              href="/jak-vybrat-skolu"
+              className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors group"
+            >
+              <span className="text-xl">📚</span>
+              <span className="underline underline-offset-2 group-hover:no-underline">
+                Jak vybrat školu a uspět u přijímaček – praktický průvodce
+              </span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
+          </div>
+
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 mt-12">
             <div className="text-center">
