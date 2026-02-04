@@ -111,17 +111,20 @@ export default async function SchoolDetailPage({ params }: Props) {
   ]);
 
   // Připravit data pro ProgramTabs - všechna zaměření/obory školy
-  // Používáme detailní data ze schools_data.json, která obsahují i zaměření
   const programsForTabs = detailedPrograms.map(program => {
     // Vytvořit zobrazovaný název - kombinace oboru a zaměření
     const displayName = program.zamereni
       ? `${program.obor} - ${program.zamereni}`
       : program.obor;
 
-    // Vytvořit slug - pro zaměření použijeme celé ID
-    const slugBase = program.zamereni
-      ? createSlug(program.nazev, `${program.obor}-${program.zamereni}`)
-      : createSlug(program.nazev, program.obor);
+    // Vytvořit slug
+    // Pro školy bez zaměření: použít standardní slug (redizo-nazev-obor)
+    // Pro školy se zaměřením: slug obsahující zaměření (ale stránka neexistuje, proto odkážeme na hlavní obor)
+    const slugBase = createSlug(program.nazev, program.obor);
+
+    // Pro programy se zaměřením: odkaz vede na hlavní obor (protože stránky pro zaměření neexistují)
+    // Pro programy bez zaměření: standardní slug
+    const programSlug = `${program.redizo}-${slugBase}`;
 
     return {
       id: program.id,
@@ -131,7 +134,8 @@ export default async function SchoolDetailPage({ params }: Props) {
       delka_studia: program.delka_studia,
       min_body: program.min_body,
       kapacita: program.kapacita,
-      slug: `${program.redizo}-${slugBase}`,
+      slug: programSlug,
+      hasZamereni: !!program.zamereni,
     };
   });
 

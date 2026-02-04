@@ -20,6 +20,10 @@
   - Zobrazuje se celková kapacita všech oborů školy
   - Každý tab zobrazuje kapacitu a minimální body pro přijetí
 
+- **Oprava:** Rozlišování mezi dvěma typy navigace oborů:
+  - Školy s různými KKOV kódy (např. Gymnázium Jana Nerudy) - taby jsou klikatelné odkazy na samostatné stránky
+  - Školy se zaměřeními v rámci jednoho KKOV (např. Gymnázium Arabská) - taby zobrazují informace, data jsou agregovaná
+
 ### Navigace oborů na detailu školy
 
 - **Nová funkce:** Přidána navigace mezi obory školy pomocí horizontálních tabů

@@ -244,34 +244,98 @@ export interface SchoolProgram {
 }
 
 /**
- * Získá všechna zaměření/obory dané školy ze schools_data.json (rok 2025)
- * Tato funkce vrací detailní rozdělení na zaměření (např. Humanitní vědy, Programování)
+ * Získá všechna zaměření/obory dané školy
+ * Kombinuje data ze school_analysis.json (obory) a schools_data.json (zaměření)
+ *
+ * Logika:
+ * 1. Načte obory ze school_analysis.json (mají správné slugy a data)
+ * 2. Pro každý obor zkontroluje, zda v schools_data.json existují zaměření
+ * 3. Pokud ano, rozloží obor na jednotlivá zaměření
  */
 export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram[]> {
+  // Načíst obory ze school_analysis.json
+  const schoolsFromAnalysis = await getSchoolsByRedizo(redizo);
+
+  // Načíst detailní data ze schools_data.json
   const filePath = path.join(dataDir, 'schools_data.json');
   const content = await fs.readFile(filePath, 'utf-8');
   const data = JSON.parse(content);
-
-  const programs: SchoolProgram[] = [];
-
-  // Preferujeme data z roku 2025
   const yearData = data['2025'] || data['2024'] || [];
 
-  for (const school of yearData) {
-    if (school.redizo === redizo) {
+  // Najít všechny záznamy pro tuto školu v schools_data.json
+  const detailedRecords = yearData.filter((s: { redizo: string }) => s.redizo === redizo);
+
+  // Vytvořit mapu: baseId -> seznam zaměření
+  const zamereniMap = new Map<string, Array<{
+    id: string;
+    zamereni: string;
+    kapacita: number;
+    min_body: number;
+    prihlasky: number;
+    prijati: number;
+  }>>();
+
+  for (const record of detailedRecords) {
+    // Extrahovat base ID (redizo_kkov) z plného ID
+    const idParts = record.id.split('_');
+    const baseId = idParts.length >= 2 ? `${idParts[0]}_${idParts[1]}` : record.id;
+
+    if (!zamereniMap.has(baseId)) {
+      zamereniMap.set(baseId, []);
+    }
+
+    // Pokud má zaměření, přidat do seznamu
+    if (record.zamereni) {
+      zamereniMap.get(baseId)!.push({
+        id: record.id,
+        zamereni: record.zamereni,
+        kapacita: record.kapacita,
+        min_body: Math.round((record.min_body || 0) / 2),
+        prihlasky: record.prihlasky,
+        prijati: record.prijati,
+      });
+    }
+  }
+
+  // Vytvořit výsledný seznam programů
+  const programs: SchoolProgram[] = [];
+
+  for (const school of schoolsFromAnalysis) {
+    const zamereniList = zamereniMap.get(school.id);
+
+    if (zamereniList && zamereniList.length > 0) {
+      // Škola má zaměření - rozložit na jednotlivá zaměření
+      for (const z of zamereniList) {
+        programs.push({
+          id: z.id,
+          redizo: redizo,
+          nazev: school.nazev,
+          obor: school.obor,
+          zamereni: z.zamereni,
+          typ: school.typ,
+          delka_studia: school.delka_studia,
+          kapacita: z.kapacita,
+          prihlasky: z.prihlasky,
+          prijati: z.prijati,
+          min_body: z.min_body,
+          index_poptavky: school.index_poptavky,
+          obec: school.obec,
+        });
+      }
+    } else {
+      // Škola nemá zaměření - použít data ze school_analysis.json
       programs.push({
         id: school.id,
-        redizo: school.redizo,
-        nazev: school.nazev || school.nazev_display,
+        redizo: redizo,
+        nazev: school.nazev,
         obor: school.obor,
-        zamereni: school.zamereni,
+        zamereni: undefined,
         typ: school.typ,
         delka_studia: school.delka_studia,
         kapacita: school.kapacita,
         prihlasky: school.prihlasky,
         prijati: school.prijati,
-        // Převod z % skóre na skutečné body
-        min_body: Math.round((school.min_body || 0) / 2),
+        min_body: school.min_body,
         index_poptavky: school.index_poptavky,
         obec: school.obec,
       });

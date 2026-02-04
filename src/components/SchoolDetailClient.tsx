@@ -1502,6 +1502,7 @@ interface ProgramTabsProps {
     min_body: number;
     kapacita?: number;
     slug: string;
+    hasZamereni?: boolean;
   }>;
   currentProgramId: string;
 }
@@ -1511,6 +1512,10 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
   if (programs.length <= 1) {
     return null;
   }
+
+  // Zjistit, zda jsou všechny programy zaměření (mají stejný slug)
+  const uniqueSlugs = new Set(programs.map(p => p.slug));
+  const areAllZamereni = uniqueSlugs.size === 1 && programs.some(p => p.hasZamereni);
 
   // Seřadit obory podle délky studia (kratší první) a pak podle min. bodů
   const sortedPrograms = [...programs].sort((a, b) => {
@@ -1535,12 +1540,20 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
         {/* Info text */}
         <div className="py-3 text-sm text-slate-600 border-b border-slate-100">
           <span className="font-medium text-slate-900">
-            Tato škola nabízí {programs.length} {programs.length === 1 ? 'obor' : programs.length < 5 ? 'obory' : 'oborů'}
-            {totalKapacita > 0 && ` (celkem ${totalKapacita} míst)`}.
+            {areAllZamereni ? (
+              // Škola se zaměřeními v rámci jednoho oboru
+              <>Tento obor má {programs.length} zaměření (celkem {totalKapacita} míst).</>
+            ) : (
+              // Škola s různými obory
+              <>
+                Tato škola nabízí {programs.length} {programs.length === 1 ? 'obor' : programs.length < 5 ? 'obory' : 'oborů'}
+                {totalKapacita > 0 && ` (celkem ${totalKapacita} míst)`}.
+              </>
+            )}
           </span>
-          {currentProgram && (
+          {!areAllZamereni && currentProgram && (
             <>
-              {' '}Zobrazujete statistiky pro:{' '}
+              {' '}Zobrazujete:{' '}
               <span className="font-semibold text-indigo-600">
                 {currentProgram.obor}
               </span>
@@ -1550,35 +1563,60 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
 
         {/* Tabs */}
         <div className="flex overflow-x-auto scrollbar-hide -mb-px">
-          {sortedPrograms.map((program) => {
+          {sortedPrograms.map((program, index) => {
             // Aktivní je program, jehož ID odpovídá nebo začíná na currentProgramId
             const isActive = program.id === currentProgramId || program.id.startsWith(currentProgramId + '_');
 
-            return (
-              <Link
-                key={program.id}
-                href={`/skola/${program.slug}`}
-                className={`
-                  flex-shrink-0 px-4 py-3 border-b-3 transition-colors
-                  ${isActive
-                    ? 'border-b-[3px] border-indigo-600 text-indigo-600 font-semibold bg-indigo-50/50'
-                    : 'border-b-[3px] border-transparent text-slate-600 hover:text-indigo-600 hover:bg-slate-50'
-                  }
-                `}
-              >
-                <div className="flex flex-col items-start">
-                  <span className="text-sm whitespace-nowrap">
-                    {isActive && <span className="mr-1">★</span>}
-                    {program.obor}
-                  </span>
-                  <span className={`text-xs mt-0.5 ${isActive ? 'text-indigo-500' : 'text-slate-400'}`}>
-                    {program.kapacita && `${program.kapacita} míst • `}min. {program.min_body} b.
-                  </span>
+            // Pro zaměření: první tab je aktivní (všechny vedou na stejnou stránku)
+            const isActiveForZamereni = areAllZamereni && index === 0;
+            const showAsActive = areAllZamereni ? isActiveForZamereni : isActive;
+
+            const tabClassName = `
+              flex-shrink-0 px-4 py-3 border-b-3 transition-colors
+              ${showAsActive
+                ? 'border-b-[3px] border-indigo-600 text-indigo-600 font-semibold bg-indigo-50/50'
+                : areAllZamereni
+                  ? 'border-b-[3px] border-transparent text-slate-500 bg-slate-50/50'
+                  : 'border-b-[3px] border-transparent text-slate-600 hover:text-indigo-600 hover:bg-slate-50 cursor-pointer'
+              }
+            `;
+
+            const tabContent = (
+              <div className="flex flex-col items-start">
+                <span className="text-sm whitespace-nowrap">
+                  {showAsActive && <span className="mr-1">★</span>}
+                  {program.obor}
+                </span>
+                <span className={`text-xs mt-0.5 ${showAsActive ? 'text-indigo-500' : 'text-slate-400'}`}>
+                  {program.kapacita && `${program.kapacita} míst • `}min. {program.min_body} b.
+                </span>
+              </div>
+            );
+
+            // Pro zaměření bez samostatných stránek zobrazit jako neaktivní info (div)
+            // Pro různé KKOV kódy zobrazit jako klikatelné odkazy (Link)
+            if (areAllZamereni) {
+              return (
+                <div key={program.id} className={tabClassName}>
+                  {tabContent}
                 </div>
+              );
+            }
+
+            return (
+              <Link key={program.id} href={`/skola/${program.slug}`} className={tabClassName}>
+                {tabContent}
               </Link>
             );
           })}
         </div>
+
+        {/* Info pro zaměření */}
+        {areAllZamereni && (
+          <div className="py-2 text-xs text-slate-500 bg-slate-50 px-4 -mx-4">
+            Zobrazená data jsou agregovaná za všechna zaměření tohoto oboru.
+          </div>
+        )}
       </div>
     </div>
   );
