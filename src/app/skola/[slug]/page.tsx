@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution, ProgramTabs } from '@/components/SchoolDetailClient';
-import { getSchoolBySlug, generateAllSlugs, getSchoolsByRedizo, getSchoolDetail, getExtendedSchoolStats, getSchoolDifficultyProfile } from '@/lib/data';
+import { getSchoolBySlug, generateAllSlugs, getSchoolsByRedizo, getSchoolDetail, getExtendedSchoolStats, getSchoolDifficultyProfile, getProgramsByRedizo } from '@/lib/data';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug, extractRedizo } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
@@ -103,23 +103,37 @@ export default async function SchoolDetailPage({ params }: Props) {
   const redizo = extractRedizo(school.id);
 
   // Načíst další data
-  const [allPrograms, schoolDetail, extendedStats, difficultyProfile] = await Promise.all([
-    getSchoolsByRedizo(redizo),
+  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile] = await Promise.all([
+    getProgramsByRedizo(redizo),
     getSchoolDetail(school.id),
     getExtendedSchoolStats(school.id),
     getSchoolDifficultyProfile(school.id, school.typ, school.min_body),
   ]);
 
-  // Připravit data pro ProgramTabs - všechny obory školy včetně aktuálního
-  const programsForTabs = allPrograms.map(program => ({
-    id: program.id,
-    nazev: program.nazev,
-    obor: program.obor,
-    typ: program.typ,
-    delka_studia: program.delka_studia,
-    min_body: program.min_body,
-    slug: `${extractRedizo(program.id)}-${createSlug(program.nazev, program.obor)}`,
-  }));
+  // Připravit data pro ProgramTabs - všechna zaměření/obory školy
+  // Používáme detailní data ze schools_data.json, která obsahují i zaměření
+  const programsForTabs = detailedPrograms.map(program => {
+    // Vytvořit zobrazovaný název - kombinace oboru a zaměření
+    const displayName = program.zamereni
+      ? `${program.obor} - ${program.zamereni}`
+      : program.obor;
+
+    // Vytvořit slug - pro zaměření použijeme celé ID
+    const slugBase = program.zamereni
+      ? createSlug(program.nazev, `${program.obor}-${program.zamereni}`)
+      : createSlug(program.nazev, program.obor);
+
+    return {
+      id: program.id,
+      nazev: program.nazev,
+      obor: displayName,
+      typ: program.typ,
+      delka_studia: program.delka_studia,
+      min_body: program.min_body,
+      kapacita: program.kapacita,
+      slug: `${program.redizo}-${slugBase}`,
+    };
+  });
 
   // JSON-LD strukturovaná data
   const jsonLd = {

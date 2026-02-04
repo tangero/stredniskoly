@@ -1500,6 +1500,7 @@ interface ProgramTabsProps {
     typ: string;
     delka_studia: number;
     min_body: number;
+    kapacita?: number;
     slug: string;
   }>;
   currentProgramId: string;
@@ -1519,25 +1520,39 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
     return b.min_body - a.min_body;
   });
 
-  const currentProgram = programs.find(p => p.id === currentProgramId);
+  // Hledat aktivní program - ID ze schools_data.json může začínat na currentProgramId
+  // např. currentProgramId = "600005682_79-41-K/41" a program.id = "600005682_79-41-K/41_Humanitní_vědy"
+  const currentProgram = programs.find(p =>
+    p.id === currentProgramId || p.id.startsWith(currentProgramId + '_')
+  );
+
+  // Počítat celkovou kapacitu všech oborů
+  const totalKapacita = programs.reduce((sum, p) => sum + (p.kapacita || 0), 0);
 
   return (
     <div className="bg-white border-b shadow-sm">
       <div className="max-w-6xl mx-auto px-4">
         {/* Info text */}
         <div className="py-3 text-sm text-slate-600 border-b border-slate-100">
-          <span className="font-medium text-slate-900">Tato škola nabízí {programs.length} obory.</span>
-          {' '}Zobrazujete statistiky pro:{' '}
-          <span className="font-semibold text-indigo-600">
-            {currentProgram ? getSchoolTypeFullName(currentProgram.typ, currentProgram.obor) : 'Neznámý obor'}
+          <span className="font-medium text-slate-900">
+            Tato škola nabízí {programs.length} {programs.length === 1 ? 'obor' : programs.length < 5 ? 'obory' : 'oborů'}
+            {totalKapacita > 0 && ` (celkem ${totalKapacita} míst)`}.
           </span>
+          {currentProgram && (
+            <>
+              {' '}Zobrazujete statistiky pro:{' '}
+              <span className="font-semibold text-indigo-600">
+                {currentProgram.obor}
+              </span>
+            </>
+          )}
         </div>
 
         {/* Tabs */}
         <div className="flex overflow-x-auto scrollbar-hide -mb-px">
           {sortedPrograms.map((program) => {
-            const isActive = program.id === currentProgramId;
-            const fullName = getSchoolTypeFullName(program.typ, program.obor);
+            // Aktivní je program, jehož ID odpovídá nebo začíná na currentProgramId
+            const isActive = program.id === currentProgramId || program.id.startsWith(currentProgramId + '_');
 
             return (
               <Link
@@ -1554,10 +1569,10 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
                 <div className="flex flex-col items-start">
                   <span className="text-sm whitespace-nowrap">
                     {isActive && <span className="mr-1">★</span>}
-                    {fullName}
+                    {program.obor}
                   </span>
                   <span className={`text-xs mt-0.5 ${isActive ? 'text-indigo-500' : 'text-slate-400'}`}>
-                    min. {program.min_body} b.
+                    {program.kapacita && `${program.kapacita} míst • `}min. {program.min_body} b.
                   </span>
                 </div>
               </Link>

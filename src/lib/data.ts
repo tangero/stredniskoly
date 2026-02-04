@@ -217,11 +217,68 @@ export async function getRegionStats(schools: School[]): Promise<RegionStats> {
 }
 
 /**
- * Získá všechny obory dané školy (podle REDIZO)
+ * Získá všechny obory dané školy (podle REDIZO) ze school_analysis.json
  */
 export async function getSchoolsByRedizo(redizo: string): Promise<School[]> {
   const schools = await getAllSchools();
   return schools.filter(s => extractRedizo(s.id) === redizo);
+}
+
+/**
+ * Typ pro program/zaměření školy z schools_data.json
+ */
+export interface SchoolProgram {
+  id: string;
+  redizo: string;
+  nazev: string;
+  obor: string;
+  zamereni?: string;
+  typ: string;
+  delka_studia: number;
+  kapacita: number;
+  prihlasky: number;
+  prijati: number;
+  min_body: number;
+  index_poptavky: number;
+  obec: string;
+}
+
+/**
+ * Získá všechna zaměření/obory dané školy ze schools_data.json (rok 2025)
+ * Tato funkce vrací detailní rozdělení na zaměření (např. Humanitní vědy, Programování)
+ */
+export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram[]> {
+  const filePath = path.join(dataDir, 'schools_data.json');
+  const content = await fs.readFile(filePath, 'utf-8');
+  const data = JSON.parse(content);
+
+  const programs: SchoolProgram[] = [];
+
+  // Preferujeme data z roku 2025
+  const yearData = data['2025'] || data['2024'] || [];
+
+  for (const school of yearData) {
+    if (school.redizo === redizo) {
+      programs.push({
+        id: school.id,
+        redizo: school.redizo,
+        nazev: school.nazev || school.nazev_display,
+        obor: school.obor,
+        zamereni: school.zamereni,
+        typ: school.typ,
+        delka_studia: school.delka_studia,
+        kapacita: school.kapacita,
+        prihlasky: school.prihlasky,
+        prijati: school.prijati,
+        // Převod z % skóre na skutečné body
+        min_body: Math.round((school.min_body || 0) / 2),
+        index_poptavky: school.index_poptavky,
+        obec: school.obec,
+      });
+    }
+  }
+
+  return programs;
 }
 
 /**

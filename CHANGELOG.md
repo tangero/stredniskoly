@@ -12,6 +12,14 @@
   - Odkazy na užitečné zdroje (TAU CERMAT, To-DAS.cz, CERMAT)
 - **Hlavní stránka:** Výrazný odkaz na průvodce přidán do HERO sekce
 
+### Oprava zobrazení všech zaměření školy
+
+- **Oprava:** Navigace oborů nyní správně zobrazuje všechna zaměření školy
+  - Např. Gymnázium Arabská nyní zobrazuje 3 zaměření: Humanitní vědy, Programování, Přírodní vědy
+  - Data se načítají ze `schools_data.json`, který obsahuje detailní rozdělení na zaměření
+  - Zobrazuje se celková kapacita všech oborů školy
+  - Každý tab zobrazuje kapacitu a minimální body pro přijetí
+
 ### Navigace oborů na detailu školy
 
 - **Nová funkce:** Přidána navigace mezi obory školy pomocí horizontálních tabů
@@ -40,3 +48,5 @@
 - Přidána komponenta `ProgramTabs` v `SchoolDetailClient.tsx`
 - Přidáno mapování `schoolTypeFullNames` a funkce `getSchoolTypeFullName` v `types/school.ts`
 - Upravena komponenta `StudyLengthBadge` pro použití plných českých názvů
+- Nová funkce `getProgramsByRedizo` v `data.ts` pro načítání zaměření ze `schools_data.json`
+- Upravena logika porovnání ID pro správné označení aktivního tabu
