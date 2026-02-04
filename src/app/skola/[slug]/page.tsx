@@ -102,10 +102,14 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength }: {
 }) {
   const demand = getDemandClass(program.index_poptavky);
 
-  // Vytvořit slug pro detail
+  // Vytvořit slug pro detail - pokud má duplicitní název, přidat délku studia do slugu
   const programSlug = program.zamereni
-    ? `${redizo}-${createSlug(schoolNazev, program.obor, program.zamereni)}`
-    : `${redizo}-${createSlug(schoolNazev, program.obor)}`;
+    ? showStudyLength
+      ? `${redizo}-${createSlug(schoolNazev, program.obor, program.zamereni, program.delka_studia)}`
+      : `${redizo}-${createSlug(schoolNazev, program.obor, program.zamereni)}`
+    : showStudyLength
+      ? `${redizo}-${createSlug(schoolNazev, program.obor, undefined, program.delka_studia)}`
+      : `${redizo}-${createSlug(schoolNazev, program.obor)}`;
 
   const baseName = program.zamereni
     ? `${program.obor} - ${program.zamereni}`
@@ -333,9 +337,14 @@ export default async function SchoolDetailPage({ params }: Props) {
     const hasDuplicateName = (oborCounts.get(baseName) || 0) > 1;
     const displayName = hasDuplicateName ? `${baseName} (${p.delka_studia}leté)` : baseName;
 
+    // Pro duplicitní názvy přidat délku studia do slugu
     const programSlug = p.zamereni
-      ? `${redizo}-${createSlug(school.nazev, p.obor, p.zamereni)}`
-      : `${redizo}-${createSlug(school.nazev, p.obor)}`;
+      ? hasDuplicateName
+        ? `${redizo}-${createSlug(school.nazev, p.obor, p.zamereni, p.delka_studia)}`
+        : `${redizo}-${createSlug(school.nazev, p.obor, p.zamereni)}`
+      : hasDuplicateName
+        ? `${redizo}-${createSlug(school.nazev, p.obor, undefined, p.delka_studia)}`
+        : `${redizo}-${createSlug(school.nazev, p.obor)}`;
 
     return {
       id: p.id,

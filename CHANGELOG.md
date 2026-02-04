@@ -57,6 +57,15 @@ Kompletní přepracování struktury URL a stránek škol:
   - SOU -> "Střední odborné učiliště"
   - LYC -> "Lyceum"
 
+### Oprava duplicitních URL pro programy se stejným názvem
+
+- **Bug fix:** Školy s více programy se stejným názvem ale různou délkou studia nyní mají unikátní URL
+  - Např. Gymnázium Jana Nerudy má 4leté i 6leté gymnázium
+  - Dříve: obě generovaly stejnou URL `/skola/600004589-gymnazium-jana-nerudy-hellichova-gymnazium`
+  - Nyní: `/skola/600004589-gymnazium-jana-nerudy-hellichova-gymnazium-4lete` a `...-6lete`
+- **Rozpoznávání stránek:** Funkce `getSchoolPageType()` správně rozpoznává slugy s délkou studia
+- **Generování odkazů:** Všechny odkazy v tabech a kartách programů používají správné unikátní URL
+
 ### Technické změny
 
 - Nový typ stránky `SchoolPageType` (overview/program/zamereni) v `data.ts`
@@ -64,5 +73,5 @@ Kompletní přepracování struktury URL a stránek škol:
 - Nová funkce `getSchoolOverview()` pro načtení dat přehledu školy
 - Nová funkce `getExtendedStatsForProgram()` pro načtení statistik konkrétního zaměření
 - Rozšířená funkce `generateAllSlugs()` generuje slugy pro přehledy, obory i zaměření
-- Funkce `createSlug()` nyní podporuje třetí argument (zaměření) a omezuje délku slugu
+- Funkce `createSlug()` nyní podporuje čtvrtý argument (`delkaStudia`) pro rozlišení duplicitních názvů
 - Celkový počet generovaných stránek vzrostl z ~2250 na ~4480

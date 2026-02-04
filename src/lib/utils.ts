@@ -33,13 +33,23 @@ function slugify(text: string, maxLength?: number): string {
 /**
  * Vytvoří SEO-friendly slug z názvu školy, oboru a zaměření
  * Maximální délka slugu je omezena kvůli souborovému systému
+ *
+ * @param name - Název školy
+ * @param obor - Název oboru (volitelné)
+ * @param zamereni - Název zaměření (volitelné)
+ * @param delkaStudia - Délka studia v letech (volitelné, přidá se do slugu pokud je zadáno)
  */
-export function createSlug(name: string, obor?: string, zamereni?: string): string {
+export function createSlug(name: string, obor?: string, zamereni?: string, delkaStudia?: number): string {
   // Omezit délku jednotlivých částí
   let slug = slugify(name, 60);
 
   if (obor) {
-    slug = `${slug}-${slugify(obor, 40)}`;
+    let oborSlug = slugify(obor, 40);
+    // Pokud je zadána délka studia, přidat ji k názvu oboru
+    if (delkaStudia) {
+      oborSlug = `${oborSlug}-${delkaStudia}lete`;
+    }
+    slug = `${slug}-${oborSlug}`;
   }
 
   if (zamereni) {

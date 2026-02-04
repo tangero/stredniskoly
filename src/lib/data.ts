@@ -87,6 +87,7 @@ export type SchoolPageType = 'overview' | 'program' | 'zamereni';
 
 /**
  * Rozpozná typ stránky podle slugu
+ * Podporuje i slugy s délkou studia (např. "gymnazium-4lete") pro duplicitní názvy oborů
  */
 export async function getSchoolPageType(slug: string): Promise<{
   type: SchoolPageType;
@@ -119,9 +120,36 @@ export async function getSchoolPageType(slug: string): Promise<{
   // Načíst všechny programy/zaměření
   const programs = await getProgramsByRedizo(redizo);
 
-  // Zkusit najít zaměření (nejdelší slug)
+  // Zjistit duplicitní názvy oborů (stejný název, různá délka studia)
+  const oborCounts = new Map<string, number>();
+  for (const school of schoolsWithRedizo) {
+    oborCounts.set(school.obor, (oborCounts.get(school.obor) || 0) + 1);
+  }
+
+  // Zjistit duplicitní kombinace obor+zaměření
+  const zamereniCounts = new Map<string, number>();
   for (const program of programs) {
     if (program.zamereni) {
+      const key = `${program.obor}|${program.zamereni}`;
+      zamereniCounts.set(key, (zamereniCounts.get(key) || 0) + 1);
+    }
+  }
+
+  // Zkusit najít zaměření (nejdelší slug) - s i bez délky studia
+  for (const program of programs) {
+    if (program.zamereni) {
+      const key = `${program.obor}|${program.zamereni}`;
+      const hasDuplicateZamereni = (zamereniCounts.get(key) || 0) > 1;
+
+      // Zkusit slug s délkou studia
+      if (hasDuplicateZamereni) {
+        const zamereniSlugWithLength = `${redizo}-${createSlug(firstSchool.nazev, program.obor, program.zamereni, program.delka_studia)}`;
+        if (slug === zamereniSlugWithLength) {
+          return { type: 'zamereni', redizo, school: firstSchool, program };
+        }
+      }
+
+      // Zkusit standardní slug bez délky studia
       const zamereniSlug = `${redizo}-${createSlug(firstSchool.nazev, program.obor, program.zamereni)}`;
       if (slug === zamereniSlug) {
         return { type: 'zamereni', redizo, school: firstSchool, program };
@@ -129,8 +157,40 @@ export async function getSchoolPageType(slug: string): Promise<{
     }
   }
 
-  // Zkusit najít obor (střední délka slugu)
+  // Zkusit najít obor (střední délka slugu) - s i bez délky studia
   for (const school of schoolsWithRedizo) {
+    const hasDuplicateName = (oborCounts.get(school.obor) || 0) > 1;
+
+    // Zkusit slug s délkou studia pro duplicitní názvy
+    if (hasDuplicateName) {
+      const oborSlugWithLength = `${redizo}-${createSlug(school.nazev, school.obor, undefined, school.delka_studia)}`;
+      if (slug === oborSlugWithLength) {
+        // Najít odpovídající program (bez zaměření, se stejnou délkou studia)
+        const program = programs.find(p => !p.zamereni && p.obor === school.obor && p.delka_studia === school.delka_studia);
+        return {
+          type: 'program',
+          redizo,
+          school,
+          program: program || {
+            id: school.id,
+            redizo,
+            nazev: school.nazev,
+            obor: school.obor,
+            zamereni: undefined,
+            typ: school.typ,
+            delka_studia: school.delka_studia,
+            kapacita: school.kapacita,
+            prihlasky: school.prihlasky,
+            prijati: school.prijati,
+            min_body: school.min_body,
+            index_poptavky: school.index_poptavky,
+            obec: school.obec,
+          }
+        };
+      }
+    }
+
+    // Zkusit standardní slug bez délky studia
     const oborSlug = `${redizo}-${createSlug(school.nazev, school.obor)}`;
     if (slug === oborSlug) {
       // Najít odpovídající program (bez zaměření)
@@ -217,6 +277,9 @@ export async function getSchoolOverview(redizo: string): Promise<{
 /**
  * Generuje všechny slugy pro statické stránky
  * Včetně přehledů škol a detailů oborů/zaměření
+ *
+ * Pro programy se stejným názvem ale různou délkou studia (např. "Gymnázium" 4leté a 6leté)
+ * se do slugu přidává délka studia, aby byly URL unikátní.
  */
 export async function generateAllSlugs(): Promise<{ slug: string }[]> {
   const schools = await getAllSchools();
@@ -250,9 +313,19 @@ export async function generateAllSlugs(): Promise<{ slug: string }[]> {
       addedSlugs.add(overviewSlug);
     }
 
-    // 2. Detail oborů (standardní slug: redizo-nazev-obor)
+    // Zjistit duplicitní názvy oborů (stejný název, různá délka studia)
+    const oborCounts = new Map<string, number>();
     for (const school of schoolList) {
-      const oborSlug = createSlug(school.nazev, school.obor);
+      oborCounts.set(school.obor, (oborCounts.get(school.obor) || 0) + 1);
+    }
+
+    // 2. Detail oborů (standardní slug: redizo-nazev-obor nebo redizo-nazev-obor-Xlete pro duplicity)
+    for (const school of schoolList) {
+      const hasDuplicateName = (oborCounts.get(school.obor) || 0) > 1;
+      // Pro duplicitní názvy přidat délku studia
+      const oborSlug = hasDuplicateName
+        ? createSlug(school.nazev, school.obor, undefined, school.delka_studia)
+        : createSlug(school.nazev, school.obor);
       const fullSlug = `${redizo}-${oborSlug}`;
       if (!addedSlugs.has(fullSlug)) {
         slugs.push({ slug: fullSlug });
@@ -261,10 +334,23 @@ export async function generateAllSlugs(): Promise<{ slug: string }[]> {
     }
 
     // 3. Detail zaměření (ze schools_data.json)
+    // Pro zaměření také kontrolovat duplicitní kombinace obor+zaměření
     const detailedRecords = yearData.filter((s: { redizo: string }) => s.redizo === redizo);
+    const zamereniCounts = new Map<string, number>();
     for (const record of detailedRecords) {
       if (record.zamereni) {
-        const zamereniSlug = createSlug(firstSchool.nazev, record.obor, record.zamereni);
+        const key = `${record.obor}|${record.zamereni}`;
+        zamereniCounts.set(key, (zamereniCounts.get(key) || 0) + 1);
+      }
+    }
+
+    for (const record of detailedRecords) {
+      if (record.zamereni) {
+        const key = `${record.obor}|${record.zamereni}`;
+        const hasDuplicateZamereni = (zamereniCounts.get(key) || 0) > 1;
+        const zamereniSlug = hasDuplicateZamereni
+          ? createSlug(firstSchool.nazev, record.obor, record.zamereni, record.delka_studia)
+          : createSlug(firstSchool.nazev, record.obor, record.zamereni);
         const fullSlug = `${redizo}-${zamereniSlug}`;
         if (!addedSlugs.has(fullSlug)) {
           slugs.push({ slug: fullSlug });
