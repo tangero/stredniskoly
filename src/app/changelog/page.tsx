@@ -20,6 +20,22 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '1.5.0',
+    date: '5. 2. 2026',
+    title: 'UX/UI audit a opravy přístupnosti',
+    changes: [
+      { type: 'fix', text: 'Přidán Header a Footer na stránku Jak funguje přijímání' },
+      { type: 'fix', text: 'Responsivní SVG diagram (nahrazena fixní šířka 700px)' },
+      { type: 'new', text: 'Mobilní card view pro Top 50 škol na /skoly' },
+      { type: 'new', text: 'Mobilní card view pro Top 10 oborů na /regiony' },
+      { type: 'improve', text: 'Numerická mobilní klávesnice pro zadávání bodů v simulátoru' },
+      { type: 'improve', text: 'Responsivní legenda na stránce /skoly' },
+      { type: 'improve', text: 'Breadcrumb navigace na stránce Jak funguje přijímání' },
+      { type: 'improve', text: 'Footer grid layout pro tablety (sm:grid-cols-2)' },
+      { type: 'new', text: 'UX/UI audit report (AUDIT.md)' },
+    ],
+  },
+  {
     version: '1.4.0',
     date: '5. 2. 2026',
     title: 'Mobilní responsivita',
