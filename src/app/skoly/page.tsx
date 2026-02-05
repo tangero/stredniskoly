@@ -83,32 +83,33 @@ export default async function SchoolsPage() {
           </div>
 
           {/* Legenda */}
-          <div className="bg-white p-4 rounded-xl shadow-sm mb-4 flex flex-wrap gap-4 items-center text-sm">
-            <span className="font-medium text-slate-700">Legenda:</span>
-            <div className="flex gap-2 items-center">
-              <span className="px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">4L</span>
-              <span className="text-slate-600">4leté</span>
-            </div>
-            <div className="flex gap-2 items-center">
-              <span className="px-2 py-0.5 rounded text-xs font-medium bg-purple-100 text-purple-800">6L</span>
-              <span className="text-slate-600">6leté</span>
-            </div>
-            <div className="flex gap-2 items-center">
-              <span className="px-2 py-0.5 rounded text-xs font-medium bg-indigo-100 text-indigo-800">8L</span>
-              <span className="text-slate-600">8leté</span>
-            </div>
-            <span className="text-slate-400">|</span>
-            <div className="flex gap-2 items-center">
-              <span className="px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">První volba</span>
-            </div>
-            <div className="flex gap-2 items-center">
-              <span className="px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">Preferovaná</span>
-            </div>
-            <div className="flex gap-2 items-center">
-              <span className="px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">Vyvážená</span>
-            </div>
-            <div className="flex gap-2 items-center">
-              <span className="px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">Záložní</span>
+          <div className="bg-white p-4 rounded-xl shadow-sm mb-4 text-sm">
+            <div className="font-medium text-slate-700 mb-2">Legenda:</div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:flex md:flex-wrap gap-x-4 gap-y-2 md:items-center">
+              <div className="flex gap-2 items-center">
+                <span className="px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">4L</span>
+                <span className="text-slate-600">4leté</span>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="px-2 py-0.5 rounded text-xs font-medium bg-purple-100 text-purple-800">6L</span>
+                <span className="text-slate-600">6leté</span>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="px-2 py-0.5 rounded text-xs font-medium bg-indigo-100 text-indigo-800">8L</span>
+                <span className="text-slate-600">8leté</span>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">1. volba</span>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">Prefer.</span>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">Vyvážená</span>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">Záložní</span>
+              </div>
             </div>
           </div>
 
@@ -119,7 +120,8 @@ export default async function SchoolsPage() {
               <p className="text-slate-600 text-sm mt-1">Seřazeno podle indexu obtížnosti přijetí</p>
             </div>
 
-            <div className="overflow-x-auto">
+            {/* Desktop tabulka */}
+            <div className="hidden md:block overflow-x-auto">
               <table className="w-full">
                 <thead className="bg-slate-50">
                   <tr>
@@ -170,6 +172,41 @@ export default async function SchoolsPage() {
                   })}
                 </tbody>
               </table>
+            </div>
+
+            {/* Mobilní karty */}
+            <div className="md:hidden divide-y">
+              {topSchools.map((school, idx) => {
+                const difficulty = getDifficultyClass(school.obtiznost);
+                const category = categoryColors[school.category_code];
+                const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+
+                return (
+                  <div key={school.id} className="p-4">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span className="text-slate-400 text-sm font-medium shrink-0">{idx + 1}.</span>
+                        <Link href={`/skola/${slug}`} className="text-indigo-600 hover:underline font-medium text-sm truncate">
+                          {school.nazev}
+                        </Link>
+                      </div>
+                      <span className={`inline-block px-2 py-1 rounded text-sm font-medium shrink-0 ${difficulty.bgClass} ${difficulty.colorClass}`}>
+                        {school.obtiznost.toFixed(0)}
+                      </span>
+                    </div>
+                    <div className="text-sm text-slate-600 mb-2 truncate">{school.obor}</div>
+                    <div className="flex flex-wrap items-center gap-2 text-xs">
+                      <StudyLengthBadge delka={school.delka_studia} />
+                      <span className={`inline-block px-2 py-0.5 rounded font-medium ${category.bg} ${category.text}`}>
+                        {categoryLabels[school.category_code]}
+                      </span>
+                      <span className="text-slate-500">{krajNames[school.kraj_kod] || school.kraj}</span>
+                      <span className="ml-auto text-slate-700 font-medium">min. {school.min_body}b</span>
+                      <span className="text-slate-500">index {school.index_poptavky.toFixed(1)}</span>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
