@@ -20,6 +20,14 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '1.5.1',
+    date: '5. 2. 2026',
+    title: 'Rozlišení duplicitních oborů v simulátoru',
+    changes: [
+      { type: 'fix', text: 'Zobrazení zaměření/pobočky u oborů v simulátoru - odstraněny vizuální duplikáty' },
+    ],
+  },
+  {
     version: '1.5.0',
     date: '5. 2. 2026',
     title: 'UX/UI audit a opravy přístupnosti',

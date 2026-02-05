@@ -75,7 +75,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/changelog" className="text-slate-400 hover:text-white transition-colors">
-                  Changelog (v1.5.0)
+                  Changelog (v1.5.1)
                 </Link>
               </li>
               <li>
