@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Jak funguje přijímací řízení na SŠ | Algoritmus rozřazování',
@@ -8,19 +10,35 @@ export const metadata: Metadata = {
 
 export default function JakFungujePrijimaniPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      {/* Hlavička */}
-      <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-indigo-600 mb-4">
-          Jak funguje přijímací řízení na SŠ
-        </h1>
-        <p className="text-lg text-slate-600">
-          Průvodce algoritmem rozřazování uchazečů (Deferred Acceptance)
-        </p>
-        <Link href="/simulator" className="inline-block mt-4 text-indigo-600 hover:underline">
-          &larr; Zpět na simulátor
-        </Link>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+
+      <main className="flex-1">
+        {/* Breadcrumb */}
+        <div className="bg-white border-b">
+          <div className="max-w-4xl mx-auto px-4 py-3">
+            <nav className="text-sm text-slate-600">
+              <Link href="/" className="hover:text-indigo-600">Domů</Link>
+              <span className="mx-2">/</span>
+              <Link href="/simulator" className="hover:text-indigo-600">Simulátor</Link>
+              <span className="mx-2">/</span>
+              <span className="text-slate-900">Jak funguje přijímání</span>
+            </nav>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white py-12">
+          <div className="max-w-4xl mx-auto px-4">
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">
+              Jak funguje přijímací řízení na SŠ
+            </h1>
+            <p className="text-lg opacity-90">
+              Průvodce algoritmem rozřazování uchazečů (Deferred Acceptance)
+            </p>
+          </div>
+        </div>
+
+      <div className="max-w-4xl mx-auto px-4 py-8">
 
       {/* Obsah */}
       <nav className="bg-slate-100 rounded-xl p-6 mb-8">
@@ -61,8 +79,8 @@ export default function JakFungujePrijimaniPage() {
         </ul>
 
         {/* SVG Diagram */}
-        <div className="my-8 overflow-x-auto">
-          <svg width="700" height="200" viewBox="0 0 700 200" className="mx-auto">
+        <div className="my-8">
+          <svg viewBox="0 0 700 200" className="w-full max-w-[700px] mx-auto" preserveAspectRatio="xMidYMid meet">
             <rect x="0" y="0" width="700" height="200" fill="#f8fafc" rx="12"/>
 
             <defs>
@@ -386,6 +404,10 @@ export default function JakFungujePrijimaniPage() {
           Vyzkoušet simulátor &rarr;
         </Link>
       </div>
+      </div>
+      </main>
+
+      <Footer />
     </div>
   );
 }
