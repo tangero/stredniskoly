@@ -99,7 +99,8 @@ export default async function RegionsPage() {
               Top 10 nejtěžších středoškolských oborů podle přijímacích nároků
             </h2>
             <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-              <div className="overflow-x-auto">
+              {/* Desktop tabulka */}
+              <div className="hidden md:block overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-slate-50">
                     <tr>
@@ -147,6 +148,40 @@ export default async function RegionsPage() {
                     })}
                   </tbody>
                 </table>
+              </div>
+
+              {/* Mobilní karty */}
+              <div className="md:hidden divide-y">
+                {top10Schools.map((school, index) => {
+                  const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+                  const medalColors = ['text-amber-500', 'text-slate-400', 'text-amber-700'];
+
+                  return (
+                    <div key={school.id} className="p-4">
+                      <div className="flex items-start justify-between gap-2 mb-1">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <span className={`font-bold shrink-0 ${index < 3 ? medalColors[index] : 'text-slate-400'}`}>
+                            {index + 1}.
+                          </span>
+                          <Link href={`/skola/${slug}`} className="font-medium text-indigo-600 hover:underline text-sm truncate">
+                            {school.nazev}
+                          </Link>
+                        </div>
+                        <span className="font-bold text-slate-900 shrink-0">{school.jpzMin}b</span>
+                      </div>
+                      <div className="text-sm text-slate-600 mb-1 truncate">{school.obor}</div>
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-slate-500">{school.obec}, {school.kraj}</span>
+                        <span className={`font-semibold ${
+                          school.index_poptavky >= 3 ? 'text-red-600' :
+                          school.index_poptavky >= 2 ? 'text-orange-600' : 'text-green-600'
+                        }`}>
+                          {school.index_poptavky.toFixed(1)}× konkurence
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
