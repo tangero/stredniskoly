@@ -559,6 +559,7 @@ export function SimulatorClient() {
                 <div className="relative">
                   <input
                     type="number"
+                    inputMode="numeric"
                     min="0"
                     max="50"
                     value={scoreCj}
@@ -577,6 +578,7 @@ export function SimulatorClient() {
                 <div className="relative">
                   <input
                     type="number"
+                    inputMode="numeric"
                     min="0"
                     max="50"
                     value={scoreMa}
