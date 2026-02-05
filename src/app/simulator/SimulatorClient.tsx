@@ -506,7 +506,7 @@ export function SimulatorClient() {
               <label className="block text-white/80 text-sm font-medium mb-3 text-center">
                 Jaký typ studia hledáš?
               </label>
-              <div className="grid grid-cols-4 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 <button
                   onClick={() => setDelkaStudia(null)}
                   className={`py-3 px-4 rounded-xl font-medium transition-all ${
@@ -958,7 +958,8 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
       onClick={onToggle}
       className={`${c.bg} ${c.border} rounded-lg px-3 py-2 cursor-pointer transition-all`}
     >
-      <div className="flex items-center gap-2 text-sm">
+      {/* Desktop layout - jedna řádka */}
+      <div className="hidden sm:flex items-center gap-2 text-sm">
         {/* Checkbox */}
         {isSelected && (
           <span className="w-5 h-5 bg-indigo-600 text-white text-xs rounded flex items-center justify-center shrink-0">
@@ -1006,6 +1007,48 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
         <span className={`font-bold shrink-0 ${c.diff}`}>
           {diff > 0 ? '+' : ''}{diff}
         </span>
+      </div>
+
+      {/* Mobile layout - dvě řádky */}
+      <div className="sm:hidden">
+        {/* Řádek 1: badges + obor + body */}
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-1.5 min-w-0">
+            {isSelected && (
+              <span className="w-5 h-5 bg-indigo-600 text-white text-xs rounded flex items-center justify-center shrink-0">
+                ✓
+              </span>
+            )}
+            {school.delka_studia && (
+              <span className={`px-1.5 py-0.5 rounded text-xs font-medium shrink-0 ${
+                school.delka_studia === 8 ? 'bg-indigo-100 text-indigo-700' :
+                school.delka_studia === 6 ? 'bg-purple-100 text-purple-700' :
+                'bg-blue-100 text-blue-700'
+              }`}>
+                {school.delka_studia}l
+              </span>
+            )}
+            <Link
+              href={`/skola/${slug}`}
+              onClick={(e) => e.stopPropagation()}
+              className="font-semibold text-slate-900 hover:text-indigo-600 truncate text-sm"
+            >
+              {school.obor}
+            </Link>
+          </div>
+          <div className="flex items-center gap-1.5 shrink-0">
+            <span className="text-xs text-slate-400">min {school.jpz_min}</span>
+            <span className={`font-bold text-sm ${c.diff}`}>
+              {diff > 0 ? '+' : ''}{diff}
+            </span>
+          </div>
+        </div>
+        {/* Řádek 2: škola + obec */}
+        <div className="flex items-center gap-1 mt-1 text-xs text-slate-500">
+          <span className="truncate">{school.nazev_display || school.nazev}</span>
+          <span className="text-slate-300">·</span>
+          <span className="shrink-0">{school.obec}</span>
+        </div>
       </div>
     </div>
   );

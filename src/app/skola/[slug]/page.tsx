@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution, ProgramTabs } from '@/components/SchoolDetailClient';
-import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, SchoolProgram } from '@/lib/data';
+import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData } from '@/lib/data';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
@@ -67,6 +67,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Helper pro zobrazení trendu min. bodů
+function MinBodyTrend({ trend }: { trend: YearlyTrendData | null }) {
+  if (!trend || trend.minBody2024 === 0) return null;
+
+  const change = trend.minBodyChange;
+  const isUp = change > 0;
+  const isDown = change < 0;
+
+  return (
+    <div className="flex items-center gap-1 text-xs">
+      <span className="text-slate-400">2024:</span>
+      <span className="font-medium text-slate-500">{trend.minBody2024}</span>
+      {change !== 0 && (
+        <span className={`font-medium ${isDown ? 'text-green-600' : isUp ? 'text-red-600' : 'text-slate-500'}`}>
+          ({isDown ? '' : '+'}{change})
+        </span>
+      )}
+    </div>
+  );
+}
+
 // Helper pro délku studia badge
 function StudyLengthBadge({ typ, delka }: { typ: string; delka: number }) {
   const colors: Record<number, string> = {
@@ -94,11 +115,12 @@ function StudyLengthBadge({ typ, delka }: { typ: string; delka: number }) {
 }
 
 // Komponenta pro kartu oboru v přehledu
-function ProgramCard({ program, schoolNazev, redizo, showStudyLength }: {
+function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend }: {
   program: SchoolProgram;
   schoolNazev: string;
   redizo: string;
   showStudyLength?: boolean;
+  trend?: YearlyTrendData | null;
 }) {
   const demand = getDemandClass(program.index_poptavky);
 
@@ -137,7 +159,8 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength }: {
         <div className="grid grid-cols-3 gap-4 mt-4">
           <div className="text-center">
             <div className="text-2xl font-bold text-red-600">{program.min_body}</div>
-            <div className="text-xs text-slate-500">Min. body</div>
+            <div className="text-xs text-slate-500">Min. body 2025</div>
+            {trend && <MinBodyTrend trend={trend} />}
           </div>
           <div className="text-center">
             <div className="text-2xl font-bold text-slate-700">{program.kapacita}</div>
@@ -194,6 +217,10 @@ export default async function SchoolDetailPage({ params }: Props) {
       const baseName = p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor;
       oborCountsOverview.set(baseName, (oborCountsOverview.get(baseName) || 0) + 1);
     }
+
+    // Načíst trend data pro všechny programy
+    const programIds = sortedPrograms.map(p => p.id);
+    const trendDataMap = await getTrendDataForPrograms(programIds);
 
     return (
       <div className="min-h-screen flex flex-col">
@@ -270,6 +297,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                     schoolNazev={overview.nazev}
                     redizo={redizo}
                     showStudyLength={hasDuplicateName}
+                    trend={trendDataMap.get(program.id)}
                   />
                 );
               })}
@@ -314,13 +342,14 @@ export default async function SchoolDetailPage({ params }: Props) {
   const category = categoryColors[school.category_code];
 
   // Načíst další data - pro zaměření použít specifickou funkci
-  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile] = await Promise.all([
+  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData] = await Promise.all([
     getProgramsByRedizo(redizo),
     getSchoolDetail(program.id),
     pageInfo.type === 'zamereni'
       ? getExtendedStatsForProgram(program.id)
       : getExtendedSchoolStats(school.id),
     getSchoolDifficultyProfile(school.id, school.typ, program.min_body),
+    getTrendDataForProgram(program.id),
   ]);
 
   // Připravit data pro ProgramTabs
@@ -454,6 +483,8 @@ export default async function SchoolDetailPage({ params }: Props) {
             obtiznost={school.obtiznost}
             indexPoptavky={program.index_poptavky}
             kapacita={program.kapacita}
+            trendData={trendData}
+            prijati2024={trendData?.prijati2024}
           />
 
           {/* Priority Distribution Bar */}
@@ -540,6 +571,19 @@ export default async function SchoolDetailPage({ params }: Props) {
                   <span className="text-slate-600">Počet přihlášek:</span>
                   <span className="font-semibold">{formatNumber(program.prihlasky)}</span>
                 </div>
+                {trendData && trendData.prihlasky2024 > 0 && (
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-slate-500 pl-4">└ v roce 2024:</span>
+                    <span className="font-medium text-slate-600">
+                      {formatNumber(trendData.prihlasky2024)}
+                      {trendData.prihlaskyChange !== 0 && (
+                        <span className={`ml-2 ${trendData.prihlaskyDirection === 'down' ? 'text-green-600' : trendData.prihlaskyDirection === 'up' ? 'text-amber-600' : ''}`}>
+                          ({trendData.prihlaskyChange > 0 ? '+' : ''}{trendData.prihlaskyChange.toFixed(0)}%)
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                )}
                 <div className="flex justify-between items-center">
                   <span className="text-slate-600">Počet přijatých:</span>
                   <span className="font-semibold">{formatNumber(program.prijati)}</span>
@@ -559,9 +603,22 @@ export default async function SchoolDetailPage({ params }: Props) {
               <h2 className="text-xl font-semibold mb-4">Bodové statistiky</h2>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-600">Min. skóre pro přijetí:</span>
+                  <span className="text-slate-600">Min. skóre pro přijetí (2025):</span>
                   <span className="font-semibold text-red-600">{program.min_body}</span>
                 </div>
+                {trendData && trendData.minBody2024 > 0 && (
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="text-slate-500 pl-4">└ v roce 2024:</span>
+                    <span className="font-medium text-slate-600">
+                      {trendData.minBody2024}
+                      {trendData.minBodyChange !== 0 && (
+                        <span className={`ml-2 ${trendData.minBodyChange < 0 ? 'text-green-600' : 'text-red-600'}`}>
+                          ({trendData.minBodyChange > 0 ? '+' : ''}{trendData.minBodyChange} bodů)
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                )}
                 {extendedStats && extendedStats.hasExtraCriteria && (
                   <>
                     <div className="flex justify-between items-center text-sm">

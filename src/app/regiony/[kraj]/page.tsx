@@ -192,10 +192,11 @@ export default async function RegionPage({ params, searchParams }: Props) {
             )}
           </div>
 
-          {/* Legenda */}
+          {/* Legenda - kompaktní na mobilech */}
           <div className="bg-slate-50 p-4 rounded-xl mb-6 text-sm">
-            <div className="flex flex-wrap gap-4 items-center">
-              <span className="font-medium text-slate-700">Legenda:</span>
+            <div className="font-medium text-slate-700 mb-2">Legenda:</div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:flex md:flex-wrap gap-x-4 gap-y-2 md:items-center">
+              {/* Priority */}
               <div className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded-full bg-green-500"></span>
                 <span className="text-slate-600">1. priorita</span>
@@ -208,36 +209,31 @@ export default async function RegionPage({ params, searchParams }: Props) {
                 <span className="w-3 h-3 rounded-full bg-red-500"></span>
                 <span className="text-slate-600">3. priorita</span>
               </div>
-              <span className="text-slate-300">|</span>
+              {/* Obtížnost */}
               <div className="flex items-center gap-1.5">
                 <span className="w-1 h-4 bg-green-500 rounded"></span>
-                <span className="text-slate-600">Snazší (&lt;60 b.)</span>
+                <span className="text-slate-600">Snazší</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="w-1 h-4 bg-yellow-500 rounded"></span>
                 <span className="text-slate-600">Střední</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="w-1 h-4 bg-orange-500 rounded"></span>
+                <span className="w-1 h-4 bg-red-500 rounded"></span>
                 <span className="text-slate-600">Těžké</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-1 h-4 bg-red-500 rounded"></span>
-                <span className="text-slate-600">Velmi těžké (≥120 b.)</span>
-              </div>
-              <span className="text-slate-300">|</span>
+              {/* Další */}
               <div className="flex items-center gap-1.5">
                 <span>📝</span>
-                <span className="text-slate-600">Dodatečná kritéria (prospěch)</span>
+                <span className="text-slate-600">Extra kritéria</span>
               </div>
-              <span className="text-slate-300">|</span>
               <div className="flex items-center gap-1.5">
                 <span className="px-1.5 py-0.5 rounded text-xs bg-green-100 text-green-700">↓</span>
-                <span className="text-slate-600">Pokles přihlášek (lepší šance)</span>
+                <span className="text-slate-600">Méně přihlášek</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="px-1.5 py-0.5 rounded text-xs bg-red-100 text-red-700">↑</span>
-                <span className="text-slate-600">Nárůst přihlášek</span>
+                <span className="text-slate-600">Více přihlášek</span>
               </div>
             </div>
           </div>

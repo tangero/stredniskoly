@@ -261,13 +261,13 @@ export function ApplicantChoicesSection({ schoolDetail, priorityCounts }: Props)
       <div className="flex flex-wrap gap-2 mb-6">
         <button
           onClick={() => setSelectedPriority(1)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
+          className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 sm:gap-2 ${
             selectedPriority === 1
               ? 'bg-green-500 text-white'
               : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
           }`}
         >
-          Tento obor jako 1. volba
+          <span className="hidden sm:inline">Tento obor jako</span> 1. volba
           <span className={`px-2 py-0.5 rounded text-xs ${
             selectedPriority === 1 ? 'bg-green-600' : 'bg-slate-200'
           }`}>
@@ -276,13 +276,13 @@ export function ApplicantChoicesSection({ schoolDetail, priorityCounts }: Props)
         </button>
         <button
           onClick={() => setSelectedPriority(2)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
+          className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 sm:gap-2 ${
             selectedPriority === 2
               ? 'bg-yellow-500 text-white'
               : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
           }`}
         >
-          Tento obor jako 2. volba
+          <span className="hidden sm:inline">Tento obor jako</span> 2. volba
           <span className={`px-2 py-0.5 rounded text-xs ${
             selectedPriority === 2 ? 'bg-yellow-600' : 'bg-slate-200'
           }`}>
@@ -291,13 +291,13 @@ export function ApplicantChoicesSection({ schoolDetail, priorityCounts }: Props)
         </button>
         <button
           onClick={() => setSelectedPriority(3)}
-          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
+          className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-1.5 sm:gap-2 ${
             selectedPriority === 3
               ? 'bg-red-500 text-white'
               : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
           }`}
         >
-          Tento obor jako 3. volba
+          <span className="hidden sm:inline">Tento obor jako</span> 3. volba
           <span className={`px-2 py-0.5 rounded text-xs ${
             selectedPriority === 3 ? 'bg-red-600' : 'bg-slate-200'
           }`}>
@@ -1318,6 +1318,16 @@ interface StatsGridProps {
   obtiznost: number;
   indexPoptavky: number;
   kapacita: number;
+  // Trend data pro varování o oscilaci
+  trendData?: {
+    prihlasky2024: number;
+    prihlasky2025: number;
+    prihlaskyChange: number;
+    minBody2024: number;
+    minBody2025: number;
+    minBodyChange: number;
+  } | null;
+  prijati2024?: number;  // počet přijatých v roce 2024 (pro normalizaci)
 }
 
 // Helper pro formátování čísel
@@ -1347,10 +1357,47 @@ export function StatsGrid({
   extraBody,
   obtiznost,
   indexPoptavky,
-  kapacita
+  kapacita,
+  trendData,
+  prijati2024
 }: StatsGridProps) {
   const difficulty = getDifficultyInfo(obtiznost);
   const percentage = Math.min(100, obtiznost);
+
+  // Detekce oscilace přihlášek (normalizovaná na počet přijatých)
+  // Pokud se "konkurence na místo" mění výrazně, může jít o efekt kyvadla
+  let oscillationWarning: { type: 'up' | 'down'; message: string; detail: string } | null = null;
+
+  if (trendData && trendData.prihlasky2024 > 0 && prijati2024 && prijati2024 > 0) {
+    // Počet přijatých v 2025 odhadneme z kapacity (není ideální, ale data o přijatých 2025 máme)
+    const prijati2025 = kapacita; // přibližně
+
+    // Konkurence = přihlášky / přijatí
+    const konkurence2024 = trendData.prihlasky2024 / prijati2024;
+    const konkurence2025 = trendData.prihlasky2025 / prijati2025;
+
+    // Změna konkurence v procentech
+    const konkurenceChange = ((konkurence2025 - konkurence2024) / konkurence2024) * 100;
+
+    // Threshold pro varování: 25% změna normalizované konkurence
+    if (Math.abs(konkurenceChange) >= 25) {
+      if (konkurenceChange < 0) {
+        // Letos méně přihlášek (relativně)
+        oscillationWarning = {
+          type: 'down',
+          message: '2025: Výrazně méně zájemců',
+          detail: `V roce 2024 bylo ${trendData.prihlasky2024} přihlášek na ${prijati2024} míst (${konkurence2024.toFixed(1)}× konkurence). V roce 2025 je to ${trendData.prihlasky2025} přihlášek (${konkurence2025.toFixed(1)}×). Příští rok může zájem opět vzrůst – rodiče reagují na loňské statistiky.`
+        };
+      } else {
+        // V roce 2025 více přihlášek (relativně)
+        oscillationWarning = {
+          type: 'up',
+          message: '2025: Výrazně více zájemců',
+          detail: `V roce 2024 bylo ${trendData.prihlasky2024} přihlášek na ${prijati2024} míst (${konkurence2024.toFixed(1)}× konkurence). V roce 2025 je to ${trendData.prihlasky2025} přihlášek (${konkurence2025.toFixed(1)}×). Příští rok může zájem klesnout – rodiče reagují na loňské statistiky.`
+        };
+      }
+    }
+  }
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
@@ -1367,7 +1414,7 @@ export function StatsGrid({
           </InfoTooltip>
         </div>
         <div className="text-xs text-slate-500 mt-2">
-          z toho na 1. místě: <span className="font-semibold text-green-600">{formatNumber(priority1Count)}</span>
+          Na 1. místo dalo obor <span className="font-semibold text-green-600">{formatNumber(priority1Count)}</span> uchazečů
         </div>
       </div>
 
@@ -1437,39 +1484,54 @@ export function StatsGrid({
         </div>
       </div>
 
-      {/* Konkurence */}
+      {/* Konkurence + Kapacita (sloučeno) */}
       <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-        <div className="text-3xl font-bold text-indigo-600">{indexPoptavky.toFixed(1)}×</div>
+        <div className="text-2xl font-bold text-indigo-600">
+          {indexPoptavky.toFixed(1)}× <span className="text-slate-400 font-normal text-lg">na</span> {kapacita}
+        </div>
         <div className="text-sm text-slate-600 mt-1 flex items-center justify-center">
-          Konkurence
-          <InfoTooltip title="Index konkurence (poptávky)">
-            <strong>Poměr přihlášek ke kapacitě</strong> oboru.
-            <br /><br />
-            Hodnota {indexPoptavky.toFixed(1)}× znamená, že na jedno místo připadá
+          Konkurence / Kapacita
+          <InfoTooltip title="Konkurence a kapacita">
+            <strong>Konkurence {indexPoptavky.toFixed(1)}×</strong> znamená, že na jedno místo připadá
             přibližně {indexPoptavky.toFixed(1)} přihlášek.
             <br /><br />
-            • <strong>Pod 1.5×</strong> - nízká konkurence
-            <br />
-            • <strong>1.5-3×</strong> - střední konkurence
-            <br />
-            • <strong>Nad 3×</strong> - vysoká konkurence
+            • Pod 1.5× - nízká konkurence<br />
+            • 1.5-3× - střední konkurence<br />
+            • Nad 3× - vysoká konkurence
+            <br /><br />
+            <strong>Kapacita {kapacita} míst</strong> je maximální počet studentů,
+            které může škola přijmout do prvního ročníku.
           </InfoTooltip>
         </div>
       </div>
 
-      {/* Kapacita */}
-      <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-        <div className="text-3xl font-bold text-indigo-600">{kapacita}</div>
-        <div className="text-sm text-slate-600 mt-1 flex items-center justify-center">
-          Kapacita míst
-          <InfoTooltip title="Kapacita oboru">
-            <strong>Maximální počet studentů</strong>, které může škola přijmout
-            do prvního ročníku tohoto oboru.
-            <br /><br />
-            Toto číslo je dáno vyhláškou školy a může se mezi lety měnit.
-          </InfoTooltip>
+      {/* Varování o oscilaci přihlášek - jako karta v gridu */}
+      {oscillationWarning && (
+        <div className={`p-6 rounded-xl shadow-sm text-center border-2 ${
+          oscillationWarning.type === 'down'
+            ? 'bg-amber-50 border-amber-300'
+            : 'bg-orange-50 border-orange-300'
+        }`}>
+          <div className="text-3xl mb-1">
+            {oscillationWarning.type === 'down' ? '📉' : '📈'}
+          </div>
+          <div className={`text-sm font-semibold ${
+            oscillationWarning.type === 'down' ? 'text-amber-800' : 'text-orange-800'
+          }`}>
+            {oscillationWarning.type === 'down' ? 'Méně' : 'Více'} zájemců
+          </div>
+          <div className={`text-xs mt-1 flex items-center justify-center ${
+            oscillationWarning.type === 'down' ? 'text-amber-600' : 'text-orange-600'
+          }`}>
+            oproti 2024
+            <InfoTooltip title={oscillationWarning.type === 'down' ? 'Pokles zájmu v 2025' : 'Nárůst zájmu v 2025'}>
+              {oscillationWarning.detail}
+              <br /><br />
+              <strong>Tip:</strong> Tato oscilace je běžná. Rodiče reagují na loňské statistiky a příští rok se trend může obrátit.
+            </InfoTooltip>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

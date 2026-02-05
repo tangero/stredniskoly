@@ -857,6 +857,7 @@ export interface YearlyTrendData {
   prihlasky2025: number;
   prihlaskyChange: number;      // procentuální změna
   prihlaskyDirection: 'up' | 'down' | 'stable';
+  prijati2024: number;          // počet přijatých v roce 2024 (pro normalizaci)
   indexPoptavky2024: number;
   indexPoptavky2025: number;
   indexChange: number;          // rozdíl indexů
@@ -883,6 +884,7 @@ async function getTrendDataMap(): Promise<Map<string, YearlyTrendData>> {
   // Indexovat data 2024 podle ID
   const data2024Map = new Map<string, {
     prihlasky: number;
+    prijati: number;
     index_poptavky: number;
     min_body: number;
   }>();
@@ -891,6 +893,7 @@ async function getTrendDataMap(): Promise<Map<string, YearlyTrendData>> {
     const baseId = school.id.split('_').slice(0, 2).join('_');
     data2024Map.set(baseId, {
       prihlasky: school.prihlasky || 0,
+      prijati: school.prijati || 0,
       index_poptavky: school.index_poptavky || 0,
       min_body: school.min_body || 0
     });
@@ -903,6 +906,7 @@ async function getTrendDataMap(): Promise<Map<string, YearlyTrendData>> {
 
     const prihlasky2025 = school.prihlasky || 0;
     const prihlasky2024 = prev?.prihlasky || 0;
+    const prijati2024 = prev?.prijati || 0;
     const indexPoptavky2025 = school.index_poptavky || 0;
     const indexPoptavky2024 = prev?.index_poptavky || 0;
     const minBody2025 = school.min_body || 0;
@@ -926,6 +930,7 @@ async function getTrendDataMap(): Promise<Map<string, YearlyTrendData>> {
       prihlasky2025,
       prihlaskyChange,
       prihlaskyDirection,
+      prijati2024,
       indexPoptavky2024,
       indexPoptavky2025,
       indexChange: indexPoptavky2025 - indexPoptavky2024,
@@ -950,6 +955,108 @@ export async function getTrendDataForSchools(schoolIds: string[]): Promise<Map<s
     const trend = allTrends.get(baseId);
     if (trend) {
       result.set(schoolId, trend);
+    }
+  }
+
+  return result;
+}
+
+// Cache pro trend data programů (včetně zaměření)
+let trendDataByProgramCache: Map<string, YearlyTrendData> | null = null;
+
+/**
+ * Načte trend data pro všechny programy včetně zaměření
+ * Na rozdíl od getTrendDataMap, tato funkce používá plné ID (včetně zaměření)
+ */
+async function getTrendDataByProgramMap(): Promise<Map<string, YearlyTrendData>> {
+  if (trendDataByProgramCache) return trendDataByProgramCache;
+
+  const filePath = path.join(dataDir, 'schools_data.json');
+  const content = await fs.readFile(filePath, 'utf-8');
+  const data = JSON.parse(content);
+
+  trendDataByProgramCache = new Map();
+
+  // Indexovat data 2024 podle plného ID
+  const data2024Map = new Map<string, {
+    prihlasky: number;
+    prijati: number;
+    index_poptavky: number;
+    min_body: number;
+  }>();
+
+  for (const school of (data['2024'] || [])) {
+    data2024Map.set(school.id, {
+      prihlasky: school.prihlasky || 0,
+      prijati: school.prijati || 0,
+      index_poptavky: school.index_poptavky || 0,
+      min_body: school.min_body || 0
+    });
+  }
+
+  // Spárovat s daty 2025
+  for (const school of (data['2025'] || [])) {
+    const prev = data2024Map.get(school.id);
+
+    const prihlasky2025 = school.prihlasky || 0;
+    const prihlasky2024 = prev?.prihlasky || 0;
+    const prijati2024 = prev?.prijati || 0;
+    const indexPoptavky2025 = school.index_poptavky || 0;
+    const indexPoptavky2024 = prev?.index_poptavky || 0;
+    // min_body jsou v % skórech (0-200), převádíme na skutečné body (0-100)
+    const minBody2025 = Math.round((school.min_body || 0) / 2);
+    const minBody2024 = Math.round((prev?.min_body || 0) / 2);
+
+    // Spočítat změny
+    let prihlaskyChange = 0;
+    let prihlaskyDirection: 'up' | 'down' | 'stable' = 'stable';
+
+    if (prihlasky2024 > 0) {
+      prihlaskyChange = ((prihlasky2025 - prihlasky2024) / prihlasky2024) * 100;
+      if (prihlaskyChange > 5) {
+        prihlaskyDirection = 'up';
+      } else if (prihlaskyChange < -5) {
+        prihlaskyDirection = 'down';
+      }
+    }
+
+    trendDataByProgramCache.set(school.id, {
+      prihlasky2024,
+      prihlasky2025,
+      prihlaskyChange,
+      prihlaskyDirection,
+      prijati2024,
+      indexPoptavky2024,
+      indexPoptavky2025,
+      indexChange: indexPoptavky2025 - indexPoptavky2024,
+      minBody2024,
+      minBody2025,
+      minBodyChange: minBody2025 - minBody2024
+    });
+  }
+
+  return trendDataByProgramCache;
+}
+
+/**
+ * Získá trend data pro konkrétní program (včetně zaměření)
+ */
+export async function getTrendDataForProgram(programId: string): Promise<YearlyTrendData | null> {
+  const allTrends = await getTrendDataByProgramMap();
+  return allTrends.get(programId) || null;
+}
+
+/**
+ * Získá trend data pro pole programů (včetně zaměření)
+ */
+export async function getTrendDataForPrograms(programIds: string[]): Promise<Map<string, YearlyTrendData>> {
+  const allTrends = await getTrendDataByProgramMap();
+  const result = new Map<string, YearlyTrendData>();
+
+  for (const programId of programIds) {
+    const trend = allTrends.get(programId);
+    if (trend) {
+      result.set(programId, trend);
     }
   }
 
