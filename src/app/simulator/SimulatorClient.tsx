@@ -32,6 +32,7 @@ interface School {
   kraj_kod: string;
   typ: string;
   delka_studia?: number;
+  zamereni?: string;
   min_body_2025: number;  // celkové body včetně extra kritérií
   jpz_min: number;        // čisté JPZ body (max 100)
   index_poptavky_2025: number;
@@ -785,7 +786,9 @@ export function SimulatorClient() {
                               <Link href={`/skola/${slug}`} className="font-medium text-sm hover:text-indigo-600 block truncate">
                                 {school.nazev_display || school.nazev}
                               </Link>
-                              <div className="text-xs text-slate-600 truncate">{school.obor}</div>
+                              <div className="text-xs text-slate-600 truncate">
+                                {school.obor}{school.zamereni ? ` – ${school.zamereni.replace(/_/g, ' ')}` : ''}
+                              </div>
                             </div>
                             <div className="flex items-center gap-2 ml-2">
                               <span className={`text-sm font-bold ${
@@ -989,6 +992,13 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
           {school.obor}
         </Link>
 
+        {school.zamereni && (
+          <>
+            <span className="text-slate-300">–</span>
+            <span className="text-slate-500 text-xs shrink-0">{school.zamereni.replace(/_/g, ' ')}</span>
+          </>
+        )}
+
         <span className="text-slate-300">·</span>
 
         {/* Název školy */}
@@ -1045,8 +1055,14 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
             </span>
           </div>
         </div>
-        {/* Řádek 2: škola + obec */}
+        {/* Řádek 2: zaměření (pokud existuje) + škola + obec */}
         <div className="flex items-center gap-1 mt-1 text-xs text-slate-500">
+          {school.zamereni && (
+            <>
+              <span className="text-slate-600 font-medium shrink-0">{school.zamereni.replace(/_/g, ' ')}</span>
+              <span className="text-slate-300">·</span>
+            </>
+          )}
           <span className="truncate">{school.nazev_display || school.nazev}</span>
           <span className="text-slate-300">·</span>
           <span className="shrink-0">{school.obec}</span>
@@ -1164,10 +1180,12 @@ function SortableSchoolCard({
       {/* Obsah karty */}
       <div className="p-4 text-white">
         {/* Název a obor - fixní výška pro zarovnání */}
-        <div className="h-[72px] mb-2">
+        <div className="h-[84px] mb-2">
           <Link href={`/skola/${slug}`} className="block hover:underline" onClick={closeStrategy}>
             <h3 className="font-bold text-lg leading-tight line-clamp-2">{school.nazev_display || school.nazev}</h3>
-            <p className="text-white/80 text-sm truncate">{school.obor}</p>
+            <p className="text-white/80 text-sm truncate">
+              {school.obor}{school.zamereni ? ` – ${school.zamereni.replace(/_/g, ' ')}` : ''}
+            </p>
           </Link>
         </div>
         <p className="text-white/60 text-xs mb-4">{school.obec} · {school.kraj?.trim()}</p>
