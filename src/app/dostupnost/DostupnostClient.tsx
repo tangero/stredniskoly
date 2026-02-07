@@ -180,6 +180,7 @@ export function DostupnostClient() {
       return;
     }
 
+    let isCurrent = true;
     setSuggestLoading(true);
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
@@ -190,24 +191,27 @@ export function DostupnostClient() {
         const response = await fetch(`/api/dostupnost/stop-suggest?${params.toString()}`, {
           signal: controller.signal,
         });
+        if (!isCurrent) return;
         if (!response.ok) {
           setSuggestLoading(false);
           return;
         }
         const payload = await response.json() as { suggestions?: StopSuggestion[]; totalFound?: number };
+        if (!isCurrent) return;
         const items = Array.isArray(payload.suggestions) ? payload.suggestions : [];
         setSuggestions(items);
         setSuggestionsTotal(payload.totalFound ?? items.length);
         setHighlightIndex(-1);
         setShowDropdown(items.length > 0);
-      } catch {
-        // Ignore suggest errors (abort, network)
-      } finally {
         setSuggestLoading(false);
+      } catch {
+        // Aborted or network error — only update state if this effect is still current
+        if (isCurrent) setSuggestLoading(false);
       }
     }, 150);
 
     return () => {
+      isCurrent = false;
       controller.abort();
       window.clearTimeout(timer);
     };
