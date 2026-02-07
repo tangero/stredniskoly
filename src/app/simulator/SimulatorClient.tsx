@@ -506,7 +506,7 @@ export function SimulatorClient() {
             {/* Tip */}
             <div className="bg-indigo-500/20 border border-indigo-500/30 rounded-xl p-4 mb-6">
               <p className="text-indigo-200 text-sm">
-                <strong>💡 Tip:</strong> Přetáhni karty pro změnu pořadí priorit. Pořadí neovlivňuje šance na přijetí - záleží jen na bodech.
+                <strong>💡 Přetahování:</strong> Kartu můžeš chytit kdekoliv (kromě křížku vpravo nahoře) a přetáhnout na nové pořadí priority. Pořadí neovlivňuje šanci na přijetí, určuje jen výsledné přiřazení školy.
               </p>
             </div>
 
@@ -1249,29 +1249,32 @@ function SortableSchoolCard({
   return (
     <div
       ref={setNodeRef}
+      {...attributes}
+      {...listeners}
       style={style}
-      className={`bg-gradient-to-b ${statusColors[status.status]} border-2 rounded-2xl overflow-hidden w-[320px] shrink-0 ${isDragging ? 'shadow-2xl ring-4 ring-white/30' : ''}`}
+      className={`bg-gradient-to-b ${statusColors[status.status]} border-2 rounded-2xl overflow-hidden w-[320px] shrink-0 cursor-grab active:cursor-grabbing ${isDragging ? 'shadow-2xl ring-4 ring-white/30' : ''}`}
     >
       {/* Header s drag handle a pořadím */}
       <div className="bg-black/20 px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          {/* Drag handle */}
-          <button
-            {...attributes}
-            {...listeners}
-            className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold text-white cursor-grab active:cursor-grabbing hover:bg-white/30 transition-colors"
-            title="Přetáhni pro změnu pořadí"
-          >
+          <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold text-white">
             {index + 1}
-          </button>
+          </div>
           <span className="text-white/80 text-sm">
             {index === 0 ? '1. priorita' : `${index + 1}. priorita`}
           </span>
         </div>
         <button
-          onClick={() => toggleSchool(school.id)}
+          onPointerDown={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (window.confirm('Odebrat tento obor ze srovnání?')) {
+              toggleSchool(school.id);
+            }
+          }}
           className="p-1 text-white/60 hover:text-white transition-colors"
           title="Odebrat ze srovnání"
+          aria-label="Odebrat obor ze srovnání"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
