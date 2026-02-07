@@ -37,27 +37,45 @@ async function loadGraph(): Promise<TransitGraphData> {
   return parsed;
 }
 
+function addPrefixes(pMap: Map<string, number[]>, word: string, idx: number): void {
+  for (let len = 1; len <= Math.min(3, word.length); len++) {
+    const prefix = word.slice(0, len);
+    let arr = pMap.get(prefix);
+    if (!arr) {
+      arr = [];
+      pMap.set(prefix, arr);
+    }
+    arr.push(idx);
+  }
+}
+
 function buildIndex(graph: TransitGraphData): void {
   if (stopIndex) return;
 
   const entries: StopEntry[] = [];
   const pMap = new Map<string, number[]>();
+  const seen = new Set<string>();
 
   for (const [stopId, [name, lat, lon]] of Object.entries(graph.stops)) {
     const nameNorm = normalizeText(name);
     const idx = entries.length;
     entries.push({ stopId, name, nameNorm, lat, lon });
 
-    // Build prefix map for 1, 2, and 3 character prefixes
-    for (let len = 1; len <= Math.min(3, nameNorm.length); len++) {
-      const prefix = nameNorm.slice(0, len);
-      let arr = pMap.get(prefix);
-      if (!arr) {
-        arr = [];
-        pMap.set(prefix, arr);
-      }
-      arr.push(idx);
+    // Index prefixes of every word so substring search works
+    // e.g. "brandys nad labem-stara boleslav, zahradni mesto"
+    // → words: brandys, nad, labem, stara, boleslav, zahradni, mesto
+    seen.clear();
+    const words = nameNorm.split(/[\s,\-]+/);
+    for (const word of words) {
+      if (word.length === 0 || seen.has(word)) continue;
+      seen.add(word);
+      addPrefixes(pMap, word, idx);
     }
+  }
+
+  // Deduplicate indices within each prefix bucket
+  for (const [key, arr] of pMap) {
+    pMap.set(key, [...new Set(arr)]);
   }
 
   stopIndex = entries;
@@ -104,7 +122,14 @@ export async function GET(request: NextRequest) {
 
     const totalFound = matches.length;
 
-    // Sort: exact → startsWith → contains, then shorter name first
+    // Sort: exact → nameStartsWith → wordBoundary → contains, then shorter name first
+    const isWordStart = (name: string, q: string): boolean => {
+      const idx = name.indexOf(q);
+      if (idx <= 0) return idx === 0;
+      const ch = name[idx - 1];
+      return ch === ' ' || ch === ',' || ch === '-';
+    };
+
     matches.sort((a, b) => {
       const aExact = a.nameNorm === queryNorm ? 0 : 1;
       const bExact = b.nameNorm === queryNorm ? 0 : 1;
@@ -112,6 +137,9 @@ export async function GET(request: NextRequest) {
       const aStarts = a.nameNorm.startsWith(queryNorm) ? 0 : 1;
       const bStarts = b.nameNorm.startsWith(queryNorm) ? 0 : 1;
       if (aStarts !== bStarts) return aStarts - bStarts;
+      const aWord = isWordStart(a.nameNorm, queryNorm) ? 0 : 1;
+      const bWord = isWordStart(b.nameNorm, queryNorm) ? 0 : 1;
+      if (aWord !== bWord) return aWord - bWord;
       return a.name.length - b.name.length;
     });
 

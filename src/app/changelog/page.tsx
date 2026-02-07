@@ -32,6 +32,7 @@ const changelog: ChangelogEntry[] = [
       { type: 'improve', text: 'Podpora dlouhých názvů zastávek (např. Brandýs nad Labem-St. Boleslav)' },
       { type: 'improve', text: 'ARIA atributy pro přístupnost (combobox, listbox)' },
       { type: 'fix', text: 'Oprava race condition — abortnutý fetch přepisoval loading stav při rychlém psaní' },
+      { type: 'new', text: 'Vyhledávání zastávek i uvnitř názvu — např. „Zahradní město" najde i Brandýs nad Labem-St. Boleslav, Zahradní Město' },
     ],
   },
   {
