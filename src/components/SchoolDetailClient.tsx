@@ -1588,15 +1588,36 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
 
   // Hledat aktivní program
   const currentProgram = programs.find(p => p.id === currentProgramId);
+  const activeProgramIndex = sortedPrograms.findIndex(p => p.id === currentProgramId);
+  const activeProgramPosition = activeProgramIndex >= 0 ? activeProgramIndex + 1 : null;
 
   // Počítat celkovou kapacitu všech oborů
   const totalKapacita = programs.reduce((sum, p) => sum + (p.kapacita || 0), 0);
 
   return (
-    <div className="bg-white border-b shadow-sm">
+    <div className="bg-gradient-to-b from-indigo-50/70 via-white to-white border-b border-indigo-100 shadow-sm">
       <div className="max-w-6xl mx-auto px-4">
+        {/* Hlavička sekce */}
+        <div className="py-3 border-b border-indigo-100">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <p className="text-sm font-semibold text-indigo-900">
+                Vyberte {hasZamereni ? 'zaměření' : 'obor'} ({programs.length})
+              </p>
+              <p className="text-xs text-slate-600">
+                Škola má více variant. Kliknutím přepnete detail.
+              </p>
+            </div>
+            {activeProgramPosition && (
+              <span className="inline-flex items-center rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700">
+                Zobrazeno {activeProgramPosition}. z {programs.length}
+              </span>
+            )}
+          </div>
+        </div>
+
         {/* Info text */}
-        <div className="py-3 text-sm text-slate-600 border-b border-slate-100">
+        <div className="pt-3 pb-2 text-sm text-slate-700">
           <span className="font-medium text-slate-900">
             {hasZamereni ? (
               <>Tento obor má {programs.length} zaměření (celkem {totalKapacita} míst).</>
@@ -1617,8 +1638,10 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
           )}
         </div>
 
-        {/* Tabs - všechny klikatelné */}
-        <div className="flex overflow-x-auto scrollbar-hide -mb-px">
+        {/* Karty - všechny klikatelné */}
+        <div className="relative">
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent md:hidden" />
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-3" role="tablist" aria-label={hasZamereni ? 'Zaměření školy' : 'Obory školy'}>
           {sortedPrograms.map((program) => {
             const isActive = program.id === currentProgramId;
 
@@ -1626,26 +1649,38 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
               <Link
                 key={program.id}
                 href={`/skola/${program.slug}`}
+                role="tab"
+                aria-selected={isActive}
+                aria-current={isActive ? 'page' : undefined}
                 className={`
-                  flex-shrink-0 px-4 py-3 border-b-3 transition-colors
+                  group flex-shrink-0 min-w-[250px] rounded-lg border px-4 py-3 transition-all
                   ${isActive
-                    ? 'border-b-[3px] border-indigo-600 text-indigo-600 font-semibold bg-indigo-50/50'
-                    : 'border-b-[3px] border-transparent text-slate-600 hover:text-indigo-600 hover:bg-slate-50 cursor-pointer'
+                    ? 'border-indigo-400 bg-indigo-600 text-white shadow-sm'
+                    : 'border-slate-200 bg-white text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50'
                   }
                 `}
               >
-                <div className="flex flex-col items-start">
-                  <span className="text-sm whitespace-nowrap">
-                    {isActive && <span className="mr-1">★</span>}
-                    {program.obor}
-                  </span>
-                  <span className={`text-xs mt-0.5 ${isActive ? 'text-indigo-500' : 'text-slate-400'}`}>
+                <div className="flex flex-col items-start gap-1">
+                  <div className="w-full flex items-start justify-between gap-2">
+                    <span className="text-sm font-semibold">
+                      {program.obor}
+                    </span>
+                    <span
+                      className={`inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold ${
+                        isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600 group-hover:bg-indigo-100 group-hover:text-indigo-700'
+                      }`}
+                    >
+                      {isActive ? 'Aktivní' : 'Zobrazit'}
+                    </span>
+                  </div>
+                  <span className={`text-xs ${isActive ? 'text-indigo-100' : 'text-slate-500'}`}>
                     {program.kapacita && `${program.kapacita} míst • `}min. {program.min_body} b.
                   </span>
                 </div>
               </Link>
             );
           })}
+          </div>
         </div>
       </div>
     </div>

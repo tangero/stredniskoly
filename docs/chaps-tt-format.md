@@ -158,6 +158,41 @@ Textový blok s tagy:
 {OE}csadsc@csad-me.cz   ← Email
 ```
 
+### 8. Post-header metadata (0x0042+)
+
+```
+0x0042: uint32 timestamp/checksum (liší se mezi soubory)
+0x0046: uint32 = 40 (konstantní, velikost metadata bloku)
+0x004A: byte verze = 3
+0x004B: byte flags (0xCF u MHD, 0x01 u PID)
+0x004C-0x0061: uint32 validity ranges (start_date, end_date)
+0x0062: byte = 3 + ASCII "CEG" = country/encoding identifier
+```
+
+Většina polí 0x0046-0x006E je **shodná** mezi Brandys.tt a PID.tt.
+
+### 9. Řetězec inicializačních sekcí (0x006B+)
+
+6 sekcí v párech (offset tabulka + string data):
+
+| Pár | Obsah |
+|-----|-------|
+| 0+1 | Název systému vícejazyčně: "MHD Brandys n.L.-St-Bol." (CZ/EN/DE) |
+| 2+3 | Copyright: ROPID & DP Praha s URL (CZ/EN/DE) |
+| 4+5 | Companion soubory: PID.ttp, PID.ttm, PID.ttq, PID.ttr |
+
+### 10. Stop ID tabulka (0x04BC)
+
+33 × uint32 identifikátory zastávek, kompozitní formát: `hi16 = zone/area, lo16 = stop_ref`. Zastávky v párech pro oba směry (např. `0x01136BD1`/`0x01136BD2`).
+
+### 11. Dopravní módy (0x0E10+)
+
+19 módů v CZ/EN/DE: Metro, Tram, Bus, RegBus, NBus, NTram, NahrD (náhradní), Lanovka, SkBus (školní), BusInv (bezbariérový), BusSml (smluvní), Loď, Vlak, OstTrol (trolejbus) a další.
+
+### 12. Kalendářní/platnostní bitmapy (0x306A+)
+
+Více bitmap regionů (90-115 bytů), pattern 0xFF/0x00 kódující aktivní dny. ~832 bitů = ~2.3 roku platnostního rozsahu.
+
 ---
 
 ## Alignment issue

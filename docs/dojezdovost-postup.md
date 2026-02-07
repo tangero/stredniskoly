@@ -235,22 +235,64 @@ Konvertováno z oficiálních CIS JŘ dat (Ministerstvo dopravy → CHAPS → po
 
 ## Další kroky
 
-### Krátkodobě (nyní aktuální)
+### Krátkodobě
 1. ~~**Ověřit dekódované časy** proti IDOS/DPP~~ → **HOTOVO** (7/7 hran = 100%)
 2. ~~**Prozkoumat dostupnost GTFS pro celou ČR**~~ → **HOTOVO** (celostátní GTFS nalezeno)
-3. **Sestavit graf dopravní sítě z GTFS** — zastávky jako uzly, hrany = přímé spojení s cestovním časem
-4. **Geocodovat ~2 700 škol** (Rejstřík MŠMT → GPS) a přiřadit nejbližší zastávku
-5. **Prototyp reachability** — pro danou zastávku + max. čas vrátit dosažitelné školy
+3. ~~**Sestavit graf dopravní sítě z GTFS**~~ → **HOTOVO** (96 969 hran, 36 187 zastávek)
+4. ~~**Geocodovat školy**~~ → **HOTOVO** (1 086/1 086 = 100%, přes shodu názvů obcí)
+5. ~~**Prototyp reachability**~~ → **HOTOVO** (Dijkstra + walking distance, funguje)
 
-### Střednědobě
-6. **Implementovat BFS/Dijkstra** na grafu zastávek
-7. **Předpočítat matici dostupnosti** (zastávka → seznam škol v dosahu pro různé časové limity)
-8. **API endpoint** pro frontend
+### 9. Graf dopravní sítě z GTFS (HOTOVO)
+
+Skript `build_transit_graph.py` zpracoval 713 MB stop_times za 15 sekund:
+
+| Metrika | Hodnota |
+|---------|---------|
+| Zastávky (parent stations) s hranami | **36 187** |
+| Směrované hrany | **96 969** |
+| Průměrný stupeň | 2.7 |
+| Výstup | `data/transit_graph.json` (8.2 MB) |
+
+Top propojené stanice: Praha-Černý Most (28), Hradec Králové-Terminál (28), Jičín-AS (27).
+
+### 10. Geocoding škol (HOTOVO)
+
+Přiřazení nejbližší GTFS zastávky ke každé škole přes shodu názvů obcí:
+
+| Metrika | Hodnota |
+|---------|---------|
+| Fyzických škol (REDIZO) | 1 086 |
+| Matchnuto | **1 086 (100%)** |
+| Medián vzdálenosti | 0.2 km |
+| < 1 km | 867 (80%) |
+| < 2 km | 918 (85%) |
+
+**Známé problémy:** ~90 škol s vzdáleností >10 km kvůli:
+- Duplicitní názvy měst (Frýdlant vs Frýdlant nad Ostravicí)
+- Praha jako jedna entita (všechny pražské školy = stejná zastávka)
+- **Řešení pro produkci:** reálný geocoding adres přes API
+
+### 11. Prototyp dojezdovosti (HOTOVO)
+
+Skript `dojezdovost.py` — Dijkstra na grafu zastávek + walking distance ke školám.
+
+**Test z Brandýs nad Labem, max 60 min:**
+- Dosažitelných zastávek: **2 869**
+- Dosažitelných škol: **205** (z 1 086)
+- Nejbližší: Střední zemědělská škola Brandýs (11 min), Gymnázium J.S.Machara (11 min)
+- Čelákovice (17 min), Neratovice (23 min), Lysá nad Labem (25 min)
+- Nymburk (43 min), Mělník (50 min), Praha (54 min), Poděbrady (55 min)
+
+### Střednědobě (další kroky)
+6. **Reálný geocoding adres** — API (Mapy.cz, Nominatim) pro přesné GPS škol, zejména v Praze
+7. **Předpočítat matici dostupnosti** pro nejčastěji hledané zastávky
+8. **API endpoint** — Next.js route pro frontend dotazy
+9. **Frontend** — výběr zastávky (našeptávač), slider max. času, výpis dosažitelných škol
 
 ### Dlouhodobě
-9. **Frontend** — uživatelské rozhraní s našeptávačem zastávek a vizualizací výsledků
-10. **Aktualizace dat** — automatický stah nových GTFS dat (CIS JŘ se aktualizuje 3× týdně)
-11. **.tt dekodér** — zachovat jako zálohu/alternativu, ale GTFS je primární zdroj
+10. **Aktualizace dat** — automatický stah GTFS (CIS JŘ se aktualizuje 3× týdně)
+11. **Optimalizace** — předpočítat graf do kompaktnějšího formátu, WebWorker pro Dijkstra
+12. **.tt dekodér** — zachovat jako zálohu pro validaci
 
 ---
 

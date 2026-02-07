@@ -10,6 +10,7 @@ export function Header() {
     { href: '/simulator', label: 'Simulátor' },
     { href: '/skoly', label: 'Analýza škol' },
     { href: '/praha-dostupnost', label: 'Školy dostupné MHD' },
+    { href: '/dostupnost', label: 'Dojezdovost ČR' },
     { href: '/regiony', label: 'Regiony' },
     { href: '/jak-vybrat-skolu', label: 'Průvodce', labelFull: 'Jak vybrat a uspět' },
     { href: '/jak-funguje-prijimani', label: 'Jak to funguje?' },
