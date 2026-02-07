@@ -20,6 +20,20 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '1.5.2',
+    date: '7. 2. 2026',
+    title: 'Optimalizace našeptávače zastávek',
+    changes: [
+      { type: 'improve', text: 'Předpočítaný index pro vyhledávání zastávek — místo 36k normalizací při každém dotazu jen lookup do Map' },
+      { type: 'new', text: 'Klávesová navigace v našeptávači (šipky, Enter, Escape)' },
+      { type: 'new', text: 'Zvýraznění matchovaného textu v návrzích zastávek' },
+      { type: 'new', text: 'Zobrazení počtu nalezených výsledků a loading stavu' },
+      { type: 'improve', text: 'Zavření dropdownu kliknutím mimo oblast' },
+      { type: 'improve', text: 'Podpora dlouhých názvů zastávek (např. Brandýs nad Labem-St. Boleslav)' },
+      { type: 'improve', text: 'ARIA atributy pro přístupnost (combobox, listbox)' },
+    ],
+  },
+  {
     version: '1.5.1',
     date: '5. 2. 2026',
     title: 'Rozlišení duplicitních oborů v simulátoru',
