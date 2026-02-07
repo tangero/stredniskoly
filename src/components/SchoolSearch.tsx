@@ -202,7 +202,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleKeyDown}
           placeholder="Hledat školu, obec, okres nebo kraj..."
-          className="w-full px-4 py-3 pl-12 rounded-xl border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none text-lg text-slate-900 bg-white"
+          className="w-full px-4 py-3 pl-12 rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none text-lg text-slate-900 bg-white"
         />
         <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -223,7 +223,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
       {isOpen && query.length >= 2 && totalResults > 0 && (
         <div
           ref={dropdownRef}
-          className="absolute z-50 w-full mt-2 bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden max-h-[400px] overflow-y-auto"
+          className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-slate-200 overflow-hidden max-h-[400px] overflow-y-auto"
         >
           {/* Aliasy (PORG pobočky) */}
           {results.aliases.length > 0 && (
@@ -235,7 +235,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                 <Link
                   key={alias.slug}
                   href={`/skola/${alias.slug}`}
-                  className={`block px-4 py-3 hover:bg-indigo-50 ${selectedIndex === idx ? 'bg-indigo-50' : ''}`}
+                  className={`block px-4 py-3 hover:bg-blue-50 ${selectedIndex === idx ? 'bg-blue-50' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   <div className="font-medium text-slate-900">{highlightMatch(alias.displayName, query)}</div>
@@ -258,7 +258,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                   <Link
                     key={school.id}
                     href={`/skola/${slug}`}
-                    className={`block px-4 py-3 hover:bg-indigo-50 ${selectedIndex === adjustedIdx ? 'bg-indigo-50' : ''}`}
+                    className={`block px-4 py-3 hover:bg-blue-50 ${selectedIndex === adjustedIdx ? 'bg-blue-50' : ''}`}
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="font-medium text-slate-900">{highlightMatch(school.nazev, query)}</div>
@@ -280,7 +280,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                 <Link
                   key={kraj.kod}
                   href={`/regiony/${kraj.slug}`}
-                  className="block px-4 py-3 hover:bg-indigo-50"
+                  className="block px-4 py-3 hover:bg-blue-50"
                   onClick={() => setIsOpen(false)}
                 >
                   <div className="font-medium text-slate-900">{highlightMatch(kraj.nazev, query)} kraj</div>
@@ -304,7 +304,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                   <Link
                     key={obec}
                     href={`/regiony/${krajSlug}?obec=${encodeURIComponent(obec)}`}
-                    className="block px-4 py-3 hover:bg-indigo-50"
+                    className="block px-4 py-3 hover:bg-blue-50"
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="font-medium text-slate-900">{highlightMatch(obec, query)}</div>
@@ -330,7 +330,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                   <Link
                     key={okres}
                     href={`/regiony/${krajSlug}?okres=${encodeURIComponent(okres)}`}
-                    className="block px-4 py-3 hover:bg-indigo-50"
+                    className="block px-4 py-3 hover:bg-blue-50"
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="font-medium text-slate-900">{highlightMatch(okres, query)}</div>
@@ -347,7 +347,7 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
 
       {/* Žádné výsledky */}
       {isOpen && query.length >= 2 && totalResults === 0 && (
-        <div className="absolute z-50 w-full mt-2 bg-white rounded-xl shadow-xl border border-slate-200 p-6 text-center">
+        <div className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-slate-200 p-6 text-center">
           <div className="text-slate-400 text-lg mb-2">Nic nenalezeno</div>
           <div className="text-sm text-slate-500">Zkuste jiný výraz nebo zkontrolujte pravopis</div>
         </div>

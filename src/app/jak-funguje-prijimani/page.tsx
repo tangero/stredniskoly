@@ -18,16 +18,16 @@ export default function JakFungujePrijimaniPage() {
         <div className="bg-white border-b">
           <div className="max-w-4xl mx-auto px-4 py-3">
             <nav className="text-sm text-slate-600">
-              <Link href="/" className="hover:text-indigo-600">Domů</Link>
+              <Link href="/" className="hover:text-blue-600">Domů</Link>
               <span className="mx-2">/</span>
-              <Link href="/simulator" className="hover:text-indigo-600">Simulátor</Link>
+              <Link href="/simulator" className="hover:text-blue-600">Simulátor</Link>
               <span className="mx-2">/</span>
               <span className="text-slate-900">Jak funguje přijímání</span>
             </nav>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white py-12">
+        <div className="bg-white text-white py-12">
           <div className="max-w-4xl mx-auto px-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
               Jak funguje přijímací řízení na SŠ
@@ -43,7 +43,7 @@ export default function JakFungujePrijimaniPage() {
       {/* Obsah */}
       <nav className="bg-slate-100 rounded-xl p-6 mb-8">
         <h3 className="font-semibold mb-3">Obsah</h3>
-        <ul className="space-y-2 text-indigo-600">
+        <ul className="space-y-2 text-blue-600">
           <li><a href="#zakladni-princip" className="hover:underline">1. Základní princip</a></li>
           <li><a href="#jak-algoritmus-funguje" className="hover:underline">2. Jak algoritmus funguje krok za krokem</a></li>
           <li><a href="#priklad" className="hover:underline">3. Praktický příklad</a></li>
@@ -54,7 +54,7 @@ export default function JakFungujePrijimaniPage() {
 
       {/* Sekce 1 */}
       <section id="zakladni-princip" className="bg-white rounded-xl shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-bold text-indigo-600 mb-6 pb-4 border-b-2 border-indigo-600">
+        <h2 className="text-2xl font-bold text-blue-600 mb-6 pb-4 border-b-2 border-blue-600">
           1. Základní princip
         </h2>
 
@@ -116,7 +116,7 @@ export default function JakFungujePrijimaniPage() {
 
       {/* Sekce 2 */}
       <section id="jak-algoritmus-funguje" className="bg-white rounded-xl shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-bold text-indigo-600 mb-6 pb-4 border-b-2 border-indigo-600">
+        <h2 className="text-2xl font-bold text-blue-600 mb-6 pb-4 border-b-2 border-blue-600">
           2. Jak algoritmus funguje krok za krokem
         </h2>
 
@@ -127,7 +127,7 @@ export default function JakFungujePrijimaniPage() {
 
         <div className="space-y-4">
           <div className="flex gap-4 p-4 bg-slate-50 rounded-xl">
-            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+            <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
               1
             </div>
             <div>
@@ -140,7 +140,7 @@ export default function JakFungujePrijimaniPage() {
           </div>
 
           <div className="flex gap-4 p-4 bg-slate-50 rounded-xl">
-            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+            <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
               2
             </div>
             <div>
@@ -153,7 +153,7 @@ export default function JakFungujePrijimaniPage() {
           </div>
 
           <div className="flex gap-4 p-4 bg-slate-50 rounded-xl">
-            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+            <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
               3
             </div>
             <div>
@@ -167,7 +167,7 @@ export default function JakFungujePrijimaniPage() {
           </div>
 
           <div className="flex gap-4 p-4 bg-slate-50 rounded-xl">
-            <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+            <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
               4
             </div>
             <div>
@@ -191,12 +191,12 @@ export default function JakFungujePrijimaniPage() {
 
       {/* Sekce 3 - Příklad */}
       <section id="priklad" className="bg-white rounded-xl shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-bold text-indigo-600 mb-6 pb-4 border-b-2 border-indigo-600">
+        <h2 className="text-2xl font-bold text-blue-600 mb-6 pb-4 border-b-2 border-blue-600">
           3. Praktický příklad
         </h2>
 
         <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-6">
-          <h4 className="font-semibold text-indigo-600 mb-4">Situace: Gymnázium X má 2 volná místa</h4>
+          <h4 className="font-semibold text-blue-600 mb-4">Situace: Gymnázium X má 2 volná místa</h4>
 
           <p className="mb-4">Máme tři uchazeče:</p>
 
@@ -273,7 +273,7 @@ export default function JakFungujePrijimaniPage() {
 
       {/* Sekce 4 - Mýty */}
       <section id="myty" className="bg-white rounded-xl shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-bold text-indigo-600 mb-6 pb-4 border-b-2 border-indigo-600">
+        <h2 className="text-2xl font-bold text-blue-600 mb-6 pb-4 border-b-2 border-blue-600">
           4. Mýty vs. realita
         </h2>
 
@@ -343,7 +343,7 @@ export default function JakFungujePrijimaniPage() {
 
       {/* Sekce 5 - Strategie */}
       <section id="strategie" className="bg-white rounded-xl shadow-sm p-8 mb-8">
-        <h2 className="text-2xl font-bold text-indigo-600 mb-6 pb-4 border-b-2 border-indigo-600">
+        <h2 className="text-2xl font-bold text-blue-600 mb-6 pb-4 border-b-2 border-blue-600">
           5. Optimální strategie
         </h2>
 
@@ -364,7 +364,7 @@ export default function JakFungujePrijimaniPage() {
         </ol>
 
         <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-6">
-          <h4 className="font-semibold text-indigo-600 mb-3">Příklad dobré strategie pro uchazeče se 160 body:</h4>
+          <h4 className="font-semibold text-blue-600 mb-3">Příklad dobré strategie pro uchazeče se 160 body:</h4>
           <ol className="list-decimal list-inside space-y-2 text-slate-700">
             <li><strong>1. priorita:</strong> Prestižní gymnázium (min. 165b) - ambiciózní volba</li>
             <li><strong>2. priorita:</strong> Kvalitní střední škola (min. 155b) - realistická volba</li>
@@ -386,7 +386,7 @@ export default function JakFungujePrijimaniPage() {
       </section>
 
       {/* Závěr */}
-      <section className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl p-8 text-center">
+      <section className="bg-white text-white rounded-xl p-8 text-center">
         <h2 className="text-2xl font-bold mb-4">Shrnutí</h2>
         <p className="text-lg opacity-95">
           Vaše šance na přijetí závisí pouze na bodech. Priorita určuje pouze to, kam chcete jít.
@@ -399,7 +399,7 @@ export default function JakFungujePrijimaniPage() {
       <div className="text-center mt-8">
         <Link
           href="/simulator"
-          className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
         >
           Vyzkoušet simulátor &rarr;
         </Link>

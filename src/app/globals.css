@@ -1,12 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #667eea;
-  --color-primary-dark: #5a67d8;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-primary: #0074e4;
+  --color-primary-dark: #003688;
+  --color-text: #28313b;
+  --color-muted: #818c99;
+  --color-border: #e0e6ed;
+  --color-bg-alt: #f2f5f7;
+  --color-success: #38caaa;
+  --color-warning: #ffbf66;
+  --color-danger: #ff525b;
 }
 
 /* Smooth scrolling */
@@ -18,6 +21,12 @@ html {
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+
+/* Search bar placeholder contrast */
+.hs-search::placeholder {
+  color: #6b7280;
+  opacity: 1;
 }
 
 /* Custom scrollbar */

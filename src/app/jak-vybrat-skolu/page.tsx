@@ -19,7 +19,7 @@ export default function JakVybratSkoluPage() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-600 text-white py-16">
+      <section className="bg-gradient-to-br from-blue-500 via-blue-500 to-blue-600 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-6">
             Jak vybrat školu a uspět u přijímaček
@@ -36,7 +36,7 @@ export default function JakVybratSkoluPage() {
           {/* Obsah */}
           <nav className="bg-white rounded-xl p-6 mb-8 shadow-sm">
             <h3 className="font-semibold mb-3">Na této stránce</h3>
-            <ul className="space-y-2 text-indigo-600">
+            <ul className="space-y-2 text-blue-600">
               <li><a href="#extra-body" className="hover:underline text-red-600 font-semibold">⚠️ Pozor na extra body za prospěch!</a></li>
               <li><a href="#strategie-vyberu" className="hover:underline">1. Strategie výběru škol</a></li>
               <li><a href="#priprava" className="hover:underline">2. Příprava na testy</a></li>
@@ -100,7 +100,7 @@ export default function JakVybratSkoluPage() {
 
           {/* Sekce 1 - Strategie výběru */}
           <section id="strategie-vyberu" className="bg-white rounded-xl shadow-sm p-8 mb-8">
-            <h2 className="text-2xl font-bold text-indigo-600 mb-6 pb-4 border-b-2 border-indigo-600">
+            <h2 className="text-2xl font-bold text-blue-600 mb-6 pb-4 border-b-2 border-blue-600">
               1. Strategie výběru škol
             </h2>
 
@@ -168,7 +168,7 @@ export default function JakVybratSkoluPage() {
 
             {/* Příklad */}
             <div className="mt-8 bg-slate-50 border border-slate-200 rounded-xl p-6">
-              <h4 className="font-semibold text-indigo-600 mb-4">Příklad: Uchazeč očekává 65 bodů</h4>
+              <h4 className="font-semibold text-blue-600 mb-4">Příklad: Uchazeč očekává 65 bodů</h4>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <span className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
@@ -188,7 +188,7 @@ export default function JakVybratSkoluPage() {
 
           {/* Sekce 2 - Příprava */}
           <section id="priprava" className="bg-white rounded-xl shadow-sm p-8 mb-8">
-            <h2 className="text-2xl font-bold text-indigo-600 mb-6 pb-4 border-b-2 border-indigo-600">
+            <h2 className="text-2xl font-bold text-blue-600 mb-6 pb-4 border-b-2 border-blue-600">
               2. Příprava na testy
             </h2>
 
@@ -199,7 +199,7 @@ export default function JakVybratSkoluPage() {
 
             <div className="space-y-4">
               <div className="flex gap-4 p-4 bg-slate-50 rounded-xl">
-                <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
                   1
                 </div>
                 <div>
@@ -212,7 +212,7 @@ export default function JakVybratSkoluPage() {
               </div>
 
               <div className="flex gap-4 p-4 bg-slate-50 rounded-xl">
-                <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
                   2
                 </div>
                 <div>
@@ -225,7 +225,7 @@ export default function JakVybratSkoluPage() {
               </div>
 
               <div className="flex gap-4 p-4 bg-slate-50 rounded-xl">
-                <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
                   3
                 </div>
                 <div>
@@ -238,7 +238,7 @@ export default function JakVybratSkoluPage() {
               </div>
 
               <div className="flex gap-4 p-4 bg-slate-50 rounded-xl">
-                <div className="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold">
+                <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
                   4
                 </div>
                 <div>
@@ -263,7 +263,7 @@ export default function JakVybratSkoluPage() {
 
           {/* Sekce 3 - Profil školy */}
           <section id="vyber-profilu" className="bg-white rounded-xl shadow-sm p-8 mb-8">
-            <h2 className="text-2xl font-bold text-indigo-600 mb-6 pb-4 border-b-2 border-indigo-600">
+            <h2 className="text-2xl font-bold text-blue-600 mb-6 pb-4 border-b-2 border-blue-600">
               3. Jak vybrat správný profil školy
             </h2>
 
@@ -272,15 +272,15 @@ export default function JakVybratSkoluPage() {
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="p-5 bg-purple-50 rounded-xl">
-                <h4 className="font-semibold text-purple-800 mb-3 flex items-center gap-2">
+              <div className="p-5 bg-blue-50 rounded-xl">
+                <h4 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
                   <span className="text-2xl">🔢</span> Matematicky zaměřené školy
                 </h4>
                 <p className="text-slate-700 text-sm mb-2">
                   Přijatí studenti mají typicky lepší výsledky z matematiky než z češtiny.
                   Vhodné pro ty, kteří uvažují o technických, přírodovědných nebo IT oborech.
                 </p>
-                <p className="text-purple-700 text-sm">
+                <p className="text-blue-700 text-sm">
                   Zjistíte podle &quot;Indexu zaměření&quot; na detailu školy.
                 </p>
               </div>
@@ -320,8 +320,8 @@ export default function JakVybratSkoluPage() {
               </li>
             </ul>
 
-            <div className="mt-6 p-4 bg-indigo-50 rounded-xl">
-              <p className="text-indigo-800">
+            <div className="mt-6 p-4 bg-blue-50 rounded-xl">
+              <p className="text-blue-800">
                 <strong>Tip:</strong> V našem detailu každé školy najdete &quot;Profil náročnosti&quot; včetně
                 zaměření školy a srovnání s podobnými školami. Využijte tyto informace při rozhodování.
               </p>
@@ -330,7 +330,7 @@ export default function JakVybratSkoluPage() {
 
           {/* Sekce 4 - Praktické tipy */}
           <section id="prakticke-tipy" className="bg-white rounded-xl shadow-sm p-8 mb-8">
-            <h2 className="text-2xl font-bold text-indigo-600 mb-6 pb-4 border-b-2 border-indigo-600">
+            <h2 className="text-2xl font-bold text-blue-600 mb-6 pb-4 border-b-2 border-blue-600">
               4. Praktické tipy
             </h2>
 
@@ -365,8 +365,8 @@ export default function JakVybratSkoluPage() {
             </div>
 
             {/* Den zkoušky */}
-            <div className="mt-6 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-xl p-6">
-              <h4 className="font-semibold text-indigo-800 mb-3">V den zkoušky</h4>
+            <div className="mt-6 bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-200 rounded-xl p-6">
+              <h4 className="font-semibold text-blue-800 mb-3">V den zkoušky</h4>
               <ul className="text-slate-700 space-y-2">
                 <li>📝 Vezměte si více tužek a per (i náhradní)</li>
                 <li>⏰ Přijďte s dostatečným předstihem</li>
@@ -380,7 +380,7 @@ export default function JakVybratSkoluPage() {
 
           {/* Sekce 5 - Zdroje */}
           <section id="zdroje" className="bg-white rounded-xl shadow-sm p-8 mb-8">
-            <h2 className="text-2xl font-bold text-indigo-600 mb-6 pb-4 border-b-2 border-indigo-600">
+            <h2 className="text-2xl font-bold text-blue-600 mb-6 pb-4 border-b-2 border-blue-600">
               5. Užitečné zdroje
             </h2>
 
@@ -390,7 +390,7 @@ export default function JakVybratSkoluPage() {
                 href="https://tau.cermat.cz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-5 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200 hover:border-blue-400 transition-colors"
+                className="block p-5 bg-gradient-to-r from-blue-50 to-blue-50 rounded-xl border border-blue-200 hover:border-blue-400 transition-colors"
               >
                 <div className="flex items-center justify-between">
                   <div>
@@ -428,24 +428,24 @@ export default function JakVybratSkoluPage() {
                 href="https://prijimacky.cermat.cz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-5 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200 hover:border-purple-400 transition-colors"
+                className="block p-5 bg-gradient-to-r from-blue-50 to-blue-50 rounded-xl border border-blue-200 hover:border-blue-400 transition-colors"
               >
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-semibold text-purple-800 text-lg">Přijímačky CERMAT</h4>
+                    <h4 className="font-semibold text-blue-800 text-lg">Přijímačky CERMAT</h4>
                     <p className="text-slate-600 text-sm mt-1">
                       Oficiální informace o jednotných přijímacích zkouškách, termíny, vzorové testy.
                     </p>
                   </div>
-                  <span className="text-purple-500 text-2xl">→</span>
+                  <span className="text-blue-500 text-2xl">→</span>
                 </div>
-                <div className="mt-2 text-xs text-purple-600">prijimacky.cermat.cz</div>
+                <div className="mt-2 text-xs text-blue-600">prijimacky.cermat.cz</div>
               </a>
 
               {/* Náš simulátor */}
               <Link
                 href="/simulator"
-                className="block p-5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl text-white hover:from-indigo-600 hover:to-purple-700 transition-colors"
+                className="block p-5 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl text-white hover:from-blue-600 hover:to-blue-700 transition-colors"
               >
                 <div className="flex items-center justify-between">
                   <div>
@@ -461,7 +461,7 @@ export default function JakVybratSkoluPage() {
           </section>
 
           {/* Závěrečné CTA */}
-          <section className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl p-8 text-center">
+          <section className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">Připraveni začít?</h2>
             <p className="opacity-90 mb-6 max-w-xl mx-auto">
               Vyzkoušejte náš simulátor a zjistěte, na které školy máte šanci.
@@ -470,7 +470,7 @@ export default function JakVybratSkoluPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/simulator"
-                className="inline-block bg-white text-purple-600 px-8 py-4 rounded-xl font-semibold hover:bg-opacity-90 transition-all"
+                className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-opacity-90 transition-all"
               >
                 Spustit simulátor
               </Link>

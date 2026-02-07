@@ -425,7 +425,7 @@ export function SimulatorClient() {
   if (loading) {
     return (
       <div className="max-w-6xl mx-auto px-4 py-12 text-center">
-        <div className="animate-spin w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full mx-auto"></div>
+        <div className="animate-spin w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full mx-auto"></div>
         <p className="mt-4 text-slate-600">Načítám data...</p>
       </div>
     );
@@ -455,7 +455,7 @@ export function SimulatorClient() {
                     navigator.clipboard.writeText(url.toString());
                     alert('Odkaz zkopírován do schránky!');
                   }}
-                  className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-colors text-sm flex items-center gap-2"
+                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors text-sm flex items-center gap-2"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
@@ -504,8 +504,8 @@ export function SimulatorClient() {
             </div>
 
             {/* Tip */}
-            <div className="bg-indigo-500/20 border border-indigo-500/30 rounded-xl p-4 mb-6">
-              <p className="text-indigo-200 text-sm">
+            <div className="bg-blue-500/20 border border-blue-500/30 rounded-xl p-4 mb-6">
+              <p className="text-blue-200 text-sm">
                 <strong>💡 Přetahování:</strong> Kartu můžeš chytit kdekoliv (kromě křížku vpravo nahoře) a přetáhnout na nové pořadí priority. Pořadí neovlivňuje šanci na přijetí, určuje jen výsledné přiřazení školy.
               </p>
             </div>
@@ -555,19 +555,19 @@ export function SimulatorClient() {
             <h3 className="text-2xl font-bold mb-4">Jak funguje simulátor?</h3>
             <div className="space-y-4 text-slate-700">
               <div className="flex gap-3">
-                <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center font-bold text-indigo-600">1</div>
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600">1</div>
                 <div>
                   <strong>Zadej body</strong> z českého jazyka a matematiky (0-50)
                 </div>
               </div>
               <div className="flex gap-3">
-                <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center font-bold text-indigo-600">2</div>
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600">2</div>
                 <div>
                   <strong>Prohlédni si doporučené školy</strong> podle tvého skóre
                 </div>
               </div>
               <div className="flex gap-3">
-                <div className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center font-bold text-indigo-600">3</div>
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600">3</div>
                 <div>
                   <strong>Přidej školy do výběru</strong> a sleduj své šance
                 </div>
@@ -575,7 +575,7 @@ export function SimulatorClient() {
             </div>
             <button
               onClick={() => setShowOnboarding(false)}
-              className="mt-6 w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+              className="mt-6 w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
             >
               Rozumím, začít
             </button>
@@ -584,7 +584,7 @@ export function SimulatorClient() {
       )}
 
       {/* Hero section - zadání bodů */}
-      <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white py-10 lg:py-14 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-blue-600 via-blue-600 to-blue-600 text-white py-10 lg:py-14 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -611,7 +611,7 @@ export function SimulatorClient() {
                   onClick={() => setDelkaStudia(null)}
                   className={`py-3 px-4 rounded-xl font-medium transition-all ${
                     delkaStudia === null
-                      ? 'bg-white text-indigo-700 shadow-lg'
+                      ? 'bg-white text-blue-700 shadow-lg'
                       : 'bg-white/20 text-white hover:bg-white/30'
                   }`}
                 >
@@ -621,7 +621,7 @@ export function SimulatorClient() {
                   onClick={() => setDelkaStudia(8)}
                   className={`py-3 px-4 rounded-xl font-medium transition-all ${
                     delkaStudia === 8
-                      ? 'bg-white text-indigo-700 shadow-lg'
+                      ? 'bg-white text-blue-700 shadow-lg'
                       : 'bg-white/20 text-white hover:bg-white/30'
                   }`}
                 >
@@ -631,7 +631,7 @@ export function SimulatorClient() {
                   onClick={() => setDelkaStudia(6)}
                   className={`py-3 px-4 rounded-xl font-medium transition-all ${
                     delkaStudia === 6
-                      ? 'bg-white text-purple-700 shadow-lg'
+                      ? 'bg-white text-blue-700 shadow-lg'
                       : 'bg-white/20 text-white hover:bg-white/30'
                   }`}
                 >
@@ -693,7 +693,7 @@ export function SimulatorClient() {
             {/* Celkové skóre */}
             <div className="bg-white rounded-xl p-5 text-center">
               <div className="text-sm text-slate-600 font-medium mb-1">CELKOVÉ SKÓRE JPZ</div>
-              <div className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <div className="text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
                 {totalScore}
               </div>
               <div className="text-slate-500 text-sm">z 100 možných bodů</div>
@@ -701,7 +701,7 @@ export function SimulatorClient() {
               {/* Progress bar */}
               <div className="mt-3 h-2 bg-slate-200 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-indigo-500 to-purple-600 transition-all duration-300"
+                  className="h-full bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-300"
                   style={{ width: `${totalScore}%` }}
                 ></div>
               </div>
@@ -728,7 +728,7 @@ export function SimulatorClient() {
 
         {/* Statistiky výběru - sticky na mobilu */}
         {selectedSchools.size > 0 && (
-          <div className="bg-white rounded-xl shadow-sm p-4 mb-6 sticky top-0 z-40 border-b-2 border-indigo-500">
+          <div className="bg-white rounded-xl shadow-sm p-4 mb-6 sticky top-0 z-40 border-b-2 border-blue-500">
             <div className="flex items-center justify-between flex-wrap gap-3">
               <div className="flex items-center gap-3">
                 <h2 className="font-semibold">Tvůj výběr ({selectedSchools.size})</h2>
@@ -746,7 +746,7 @@ export function SimulatorClient() {
               </div>
               <button
                 onClick={() => openStrategy()}
-                className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium text-sm hover:from-indigo-700 hover:to-purple-700 transition-all shadow-md"
+                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-600 text-white rounded-lg font-medium text-sm hover:from-blue-700 hover:to-blue-700 transition-all shadow-md"
               >
                 📋 Zobrazit srovnání
               </button>
@@ -764,7 +764,7 @@ export function SimulatorClient() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Hledej školu, město, obor..."
-                className="w-full pl-10 pr-10 py-3 border-2 border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-0 focus:outline-none transition-colors bg-white"
+                className="w-full pl-10 pr-10 py-3 border-2 border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:ring-0 focus:outline-none transition-colors bg-white"
               />
               <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -786,7 +786,7 @@ export function SimulatorClient() {
               <select
                 value={krajFilter}
                 onChange={(e) => setKrajFilter(e.target.value)}
-                className="w-full py-3 px-4 border-2 border-slate-200 rounded-xl text-slate-900 focus:border-indigo-500 focus:ring-0 focus:outline-none transition-colors bg-white"
+                className="w-full py-3 px-4 border-2 border-slate-200 rounded-xl text-slate-900 focus:border-blue-500 focus:ring-0 focus:outline-none transition-colors bg-white"
               >
                 <option value="">Všechny kraje</option>
                 {kraje.map(([kod, nazev]) => (
@@ -805,8 +805,8 @@ export function SimulatorClient() {
                 </span>
                 {delkaStudia && (
                   <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                    delkaStudia === 8 ? 'bg-indigo-100 text-indigo-700' :
-                    delkaStudia === 6 ? 'bg-purple-100 text-purple-700' :
+                    delkaStudia === 8 ? 'bg-blue-100 text-blue-700' :
+                    delkaStudia === 6 ? 'bg-blue-100 text-blue-700' :
                     'bg-blue-100 text-blue-700'
                   }`}>
                     {delkaStudia}leté
@@ -820,7 +820,7 @@ export function SimulatorClient() {
               </div>
               <button
                 onClick={() => { setSearchTerm(''); setKrajFilter(''); setDelkaStudia(null); }}
-                className="text-indigo-600 hover:underline"
+                className="text-blue-600 hover:underline"
               >
                 Zrušit filtry
               </button>
@@ -837,7 +837,7 @@ export function SimulatorClient() {
                 {/* CTA pro srovnání */}
                 <button
                   onClick={() => openStrategy()}
-                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg p-4 text-white hover:from-indigo-700 hover:to-purple-700 transition-all"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-600 rounded-xl shadow-lg p-4 text-white hover:from-blue-700 hover:to-blue-700 transition-all"
                 >
                   <div className="flex items-center justify-between">
                     <div className="text-left">
@@ -883,7 +883,7 @@ export function SimulatorClient() {
                         <div key={school.id} className={`p-2 rounded-lg border-l-4 ${colors[status.color] || ''}`}>
                           <div className="flex justify-between items-start">
                             <div className="flex-1 min-w-0">
-                              <Link href={`/skola/${slug}`} className="font-medium text-sm hover:text-indigo-600 block truncate">
+                              <Link href={`/skola/${slug}`} className="font-medium text-sm hover:text-blue-600 block truncate">
                                 {school.nazev_display || school.nazev}
                               </Link>
                               <div className="text-xs text-slate-600 truncate">
@@ -943,7 +943,7 @@ export function SimulatorClient() {
                   </p>
                   <button
                     onClick={() => { setSearchTerm(''); setKrajFilter(''); }}
-                    className="text-indigo-600 hover:underline font-medium"
+                    className="text-blue-600 hover:underline font-medium"
                   >
                     Zrušit všechny filtry
                   </button>
@@ -1068,7 +1068,7 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
       <div className="hidden sm:flex items-center gap-2 text-sm">
         {/* Checkbox */}
         {isSelected && (
-          <span className="w-5 h-5 bg-indigo-600 text-white text-xs rounded flex items-center justify-center shrink-0">
+          <span className="w-5 h-5 bg-blue-600 text-white text-xs rounded flex items-center justify-center shrink-0">
             ✓
           </span>
         )}
@@ -1076,8 +1076,8 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
         {/* Délka studia badge */}
         {school.delka_studia && (
           <span className={`px-1.5 py-0.5 rounded text-xs font-medium shrink-0 ${
-            school.delka_studia === 8 ? 'bg-indigo-100 text-indigo-700' :
-            school.delka_studia === 6 ? 'bg-purple-100 text-purple-700' :
+            school.delka_studia === 8 ? 'bg-blue-100 text-blue-700' :
+            school.delka_studia === 6 ? 'bg-blue-100 text-blue-700' :
             'bg-blue-100 text-blue-700'
           }`}>
             {school.delka_studia}l
@@ -1088,7 +1088,7 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
         <Link
           href={`/skola/${slug}`}
           onClick={(e) => e.stopPropagation()}
-          className="font-semibold text-slate-900 hover:text-indigo-600 shrink-0"
+          className="font-semibold text-slate-900 hover:text-blue-600 shrink-0"
         >
           {school.obor}
         </Link>
@@ -1128,14 +1128,14 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-1.5 min-w-0">
             {isSelected && (
-              <span className="w-5 h-5 bg-indigo-600 text-white text-xs rounded flex items-center justify-center shrink-0">
+              <span className="w-5 h-5 bg-blue-600 text-white text-xs rounded flex items-center justify-center shrink-0">
                 ✓
               </span>
             )}
             {school.delka_studia && (
               <span className={`px-1.5 py-0.5 rounded text-xs font-medium shrink-0 ${
-                school.delka_studia === 8 ? 'bg-indigo-100 text-indigo-700' :
-                school.delka_studia === 6 ? 'bg-purple-100 text-purple-700' :
+                school.delka_studia === 8 ? 'bg-blue-100 text-blue-700' :
+                school.delka_studia === 6 ? 'bg-blue-100 text-blue-700' :
                 'bg-blue-100 text-blue-700'
               }`}>
                 {school.delka_studia}l
@@ -1144,7 +1144,7 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
             <Link
               href={`/skola/${slug}`}
               onClick={(e) => e.stopPropagation()}
-              className="font-semibold text-slate-900 hover:text-indigo-600 truncate text-sm"
+              className="font-semibold text-slate-900 hover:text-blue-600 truncate text-sm"
             >
               {school.obor}
             </Link>
@@ -1423,7 +1423,7 @@ function SortableSchoolCard({
                   {/* Pozadí s gradientem */}
                   <div className="absolute inset-0 flex">
                     <div className="flex-1 bg-blue-500/30"></div>
-                    <div className="flex-1 bg-purple-500/30"></div>
+                    <div className="flex-1 bg-blue-500/30"></div>
                   </div>
                   {/* Střední čára */}
                   <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/30"></div>

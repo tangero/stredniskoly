@@ -167,7 +167,7 @@ function RelatedSchoolCard({ school }: { school: RelatedSchool }) {
       {/* Řádek 1: Název školy + procento */}
       <div className="flex justify-between items-center gap-2">
         <div className="font-medium text-slate-900 truncate text-sm">{school.nazev}</div>
-        <div className="text-lg font-bold text-indigo-600 shrink-0">{school.pct.toFixed(1)}%</div>
+        <div className="text-lg font-bold text-blue-600 shrink-0">{school.pct.toFixed(1)}%</div>
       </div>
       {/* Řádek 2: Obor, město, body, počet uchazečů */}
       <div className="flex justify-between items-center gap-2 mt-0.5">
@@ -527,8 +527,8 @@ export function ApplicantStrategyAnalysis({ schoolDetail, currentSchoolMinBody }
           description: `Uchazeči s 2. volbou zde mají dobrý rozptyl: 1. volba průměrně ${avgPreferredMinBody.toFixed(0)} b., 3. volba ${avgBackupMinBody.toFixed(0)} b. (rozpětí ${spread.toFixed(0)} b.)`,
           count: schoolDetail.as_p2.total,
           percentage: 100,
-          color: 'text-purple-700',
-          bgColor: 'bg-purple-50'
+          color: 'text-blue-700',
+          bgColor: 'bg-blue-50'
         });
       }
     }
@@ -653,8 +653,8 @@ export function AcceptanceByPriority({ prihlasky_priority, prijati_priority }: A
       </div>
 
       {/* Interpretace */}
-      <div className="mt-4 p-4 bg-indigo-50 border-l-4 border-indigo-500 rounded-r-lg">
-        <p className="text-sm text-indigo-800">
+      <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
+        <p className="text-sm text-blue-800">
           <strong>Tip:</strong> Čím vyšší prioritu škole dáte, tím vyšší máte šanci na přijetí.
           {relevantChances[0]?.chance > 80 && relevantChances[0]?.priority === 1 && (
             <> S 1. prioritou máte na této škole velmi vysokou šanci!</>
@@ -723,26 +723,26 @@ export function TestDifficulty({ cj_prumer, cj_at_jpz_min, ma_prumer, ma_at_jpz_
         </div>
 
         {/* Matematika */}
-        <div className="p-4 bg-purple-50 rounded-lg">
+        <div className="p-4 bg-blue-50 rounded-lg">
           <div className="flex items-center justify-between mb-2">
-            <span className="font-medium text-purple-800">Matematika</span>
-            <span className="text-xs text-purple-600">max 50 b.</span>
+            <span className="font-medium text-blue-800">Matematika</span>
+            <span className="text-xs text-blue-600">max 50 b.</span>
           </div>
 
           <div className="space-y-2">
             <div>
               <div className="flex justify-between text-sm mb-1">
                 <span className="text-slate-600">Průměr přijatých:</span>
-                <span className="font-bold text-purple-700">{ma_prumer.toFixed(1)} b.</span>
+                <span className="font-bold text-blue-700">{ma_prumer.toFixed(1)} b.</span>
               </div>
-              <div className="h-2 bg-purple-200 rounded-full overflow-hidden">
-                <div className="h-full bg-purple-500 rounded-full" style={{ width: `${maPct}%` }} />
+              <div className="h-2 bg-blue-200 rounded-full overflow-hidden">
+                <div className="h-full bg-blue-500 rounded-full" style={{ width: `${maPct}%` }} />
               </div>
             </div>
 
             <div className="flex justify-between text-sm">
               <span className="text-slate-600">Min. přijatý student:</span>
-              <span className="font-medium text-purple-600">{ma_at_jpz_min} b.</span>
+              <span className="font-medium text-blue-600">{ma_at_jpz_min} b.</span>
             </div>
           </div>
         </div>
@@ -839,8 +839,8 @@ export function SchoolDifficultyProfile({ profile, schoolType, cjPrumer, maPrume
 
   // Barva pro zaměření
   const getFocusColor = (index: number) => {
-    if (index > 0.5) return 'text-purple-600';
-    if (index > 0.2) return 'text-purple-500';
+    if (index > 0.5) return 'text-blue-600';
+    if (index > 0.2) return 'text-blue-500';
     if (index > -0.2) return 'text-slate-600';
     if (index > -0.5) return 'text-blue-500';
     return 'text-blue-600';
@@ -927,7 +927,7 @@ export function SchoolDifficultyProfile({ profile, schoolType, cjPrumer, maPrume
       </div>
 
       {/* Index zaměření */}
-      <div className="p-4 bg-gradient-to-r from-blue-50 via-slate-50 to-purple-50 rounded-lg mb-6">
+      <div className="p-4 bg-gradient-to-r from-blue-50 via-slate-50 to-blue-50 rounded-lg mb-6">
         <div className="text-sm text-slate-600 mb-2">
           Zaměření oboru
           <InfoTooltip title="Index zaměření">
@@ -946,11 +946,11 @@ export function SchoolDifficultyProfile({ profile, schoolType, cjPrumer, maPrume
           <span className={`text-lg font-bold ${getFocusColor(profile.focusIndex)}`}>
             {profile.focusLabel}
           </span>
-          <span className="text-sm font-medium text-purple-600">Matematické</span>
+          <span className="text-sm font-medium text-blue-600">Matematické</span>
         </div>
 
         {/* Škála */}
-        <div className="relative h-3 bg-gradient-to-r from-blue-300 via-slate-300 to-purple-300 rounded-full">
+        <div className="relative h-3 bg-gradient-to-r from-blue-300 via-slate-300 to-blue-300 rounded-full">
           <div
             className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-slate-700 rounded-full shadow"
             style={{ left: `calc(${focusPosition}% - 8px)` }}
@@ -1095,8 +1095,8 @@ export function SchoolDifficultyProfile({ profile, schoolType, cjPrumer, maPrume
       </div>
 
       {/* Interpretace */}
-      <div className="mt-4 p-4 bg-indigo-50 border-l-4 border-indigo-500 rounded-r-lg">
-        <p className="text-sm text-indigo-800">
+      <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
+        <p className="text-sm text-blue-800">
           <strong>Co to znamená:</strong>{' '}
           {profile.percentilOverall >= 90 ? (
             <>Tato škola patří mezi 10% nejtěžších v ČR. </>
@@ -1403,7 +1403,7 @@ export function StatsGrid({
     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
       {/* Uchazeči - sloučeno */}
       <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-        <div className="text-3xl font-bold text-indigo-600">{formatNumber(totalApplicants)}</div>
+        <div className="text-3xl font-bold text-blue-600">{formatNumber(totalApplicants)}</div>
         <div className="text-sm text-slate-600 mt-1 flex items-center justify-center">
           Uchazečů celkem
           <InfoTooltip title="Počet uchazečů">
@@ -1421,7 +1421,7 @@ export function StatsGrid({
       {/* Min. body z JPZ */}
       <div className="bg-white p-6 rounded-xl shadow-sm text-center">
         <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">Min. bodů z JPZ 2025</div>
-        <div className="text-2xl font-bold text-indigo-600">
+        <div className="text-2xl font-bold text-blue-600">
           ČJ {cjAtJpzMin} <span className="text-slate-400">/</span> MA {maAtJpzMin}
         </div>
         <div className="text-xs text-slate-500 mt-1">(z max. 50 / 50)</div>
@@ -1486,7 +1486,7 @@ export function StatsGrid({
 
       {/* Konkurence + Kapacita (sloučeno) */}
       <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-        <div className="text-2xl font-bold text-indigo-600">
+        <div className="text-2xl font-bold text-blue-600">
           {indexPoptavky.toFixed(1)}× <span className="text-slate-400 font-normal text-lg">na</span> {kapacita}
         </div>
         <div className="text-sm text-slate-600 mt-1 flex items-center justify-center">
@@ -1542,13 +1542,13 @@ interface CohortDistributionProps {
 }
 
 const COHORT_CONFIG = [
-  { name: 'Výborný matematik', short: 'Výb. mat.', color: 'bg-purple-500', textColor: 'text-purple-700' },
-  { name: 'Výborný vyvážený', short: 'Výb. vyv.', color: 'bg-indigo-500', textColor: 'text-indigo-700' },
+  { name: 'Výborný matematik', short: 'Výb. mat.', color: 'bg-blue-500', textColor: 'text-blue-700' },
+  { name: 'Výborný vyvážený', short: 'Výb. vyv.', color: 'bg-blue-600', textColor: 'text-blue-700' },
   { name: 'Výborný humanitní', short: 'Výb. hum.', color: 'bg-blue-500', textColor: 'text-blue-700' },
-  { name: 'Dobrý matematik', short: 'Dob. mat.', color: 'bg-purple-400', textColor: 'text-purple-600' },
-  { name: 'Dobrý vyvážený', short: 'Dob. vyv.', color: 'bg-indigo-400', textColor: 'text-indigo-600' },
+  { name: 'Dobrý matematik', short: 'Dob. mat.', color: 'bg-blue-400', textColor: 'text-blue-600' },
+  { name: 'Dobrý vyvážený', short: 'Dob. vyv.', color: 'bg-blue-400', textColor: 'text-blue-600' },
   { name: 'Dobrý humanitní', short: 'Dob. hum.', color: 'bg-blue-400', textColor: 'text-blue-600' },
-  { name: 'Slabší matematik', short: 'Sl. mat.', color: 'bg-purple-300', textColor: 'text-purple-500' },
+  { name: 'Slabší matematik', short: 'Sl. mat.', color: 'bg-blue-300', textColor: 'text-blue-500' },
   { name: 'Slabší vyvážený', short: 'Sl. vyv.', color: 'bg-slate-300', textColor: 'text-slate-500' },
   { name: 'Slabší humanitní', short: 'Sl. hum.', color: 'bg-blue-300', textColor: 'text-blue-500' },
 ];
@@ -1595,13 +1595,13 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
   const totalKapacita = programs.reduce((sum, p) => sum + (p.kapacita || 0), 0);
 
   return (
-    <div className="bg-gradient-to-b from-indigo-50/70 via-white to-white border-b border-indigo-100 shadow-sm">
+    <div className="bg-gradient-to-b from-blue-50/70 via-white to-white border-b border-blue-100 shadow-sm">
       <div className="max-w-6xl mx-auto px-4">
         {/* Hlavička sekce */}
-        <div className="py-3 border-b border-indigo-100">
+        <div className="py-3 border-b border-blue-100">
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div>
-              <p className="text-sm font-semibold text-indigo-900">
+              <p className="text-sm font-semibold text-blue-900">
                 Vyberte {hasZamereni ? 'zaměření' : 'obor'} ({programs.length})
               </p>
               <p className="text-xs text-slate-600">
@@ -1609,7 +1609,7 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
               </p>
             </div>
             {activeProgramPosition && (
-              <span className="inline-flex items-center rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700">
+              <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
                 Zobrazeno {activeProgramPosition}. z {programs.length}
               </span>
             )}
@@ -1631,7 +1631,7 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
           {currentProgram && (
             <>
               {' '}Zobrazujete:{' '}
-              <span className="font-semibold text-indigo-600">
+              <span className="font-semibold text-blue-600">
                 {currentProgram.obor}
               </span>
             </>
@@ -1655,8 +1655,8 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
                 className={`
                   group flex-shrink-0 min-w-[250px] rounded-lg border px-4 py-3 transition-all
                   ${isActive
-                    ? 'border-indigo-400 bg-indigo-600 text-white shadow-sm'
-                    : 'border-slate-200 bg-white text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/50'
+                    ? 'border-blue-400 bg-blue-600 text-white shadow-sm'
+                    : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50/50'
                   }
                 `}
               >
@@ -1667,13 +1667,13 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
                     </span>
                     <span
                       className={`inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold ${
-                        isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600 group-hover:bg-indigo-100 group-hover:text-indigo-700'
+                        isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600 group-hover:bg-blue-100 group-hover:text-blue-700'
                       }`}
                     >
                       {isActive ? 'Aktivní' : 'Zobrazit'}
                     </span>
                   </div>
-                  <span className={`text-xs ${isActive ? 'text-indigo-100' : 'text-slate-500'}`}>
+                  <span className={`text-xs ${isActive ? 'text-blue-100' : 'text-slate-500'}`}>
                     {program.kapacita && `${program.kapacita} míst • `}min. {program.min_body} b.
                   </span>
                 </div>
@@ -1703,8 +1703,8 @@ export function CohortDistribution({ cohorts }: CohortDistributionProps) {
   ];
 
   const byProfile = [
-    { name: 'Matematici', count: cohorts[0] + cohorts[3] + cohorts[6], color: 'text-purple-600' },
-    { name: 'Vyvážení', count: cohorts[1] + cohorts[4] + cohorts[7], color: 'text-indigo-600' },
+    { name: 'Matematici', count: cohorts[0] + cohorts[3] + cohorts[6], color: 'text-blue-600' },
+    { name: 'Vyvážení', count: cohorts[1] + cohorts[4] + cohorts[7], color: 'text-blue-600' },
     { name: 'Humanitní', count: cohorts[2] + cohorts[5] + cohorts[8], color: 'text-blue-600' },
   ];
 
@@ -1764,7 +1764,7 @@ export function CohortDistribution({ cohorts }: CohortDistributionProps) {
                   <span className={`w-20 ${profile.color} font-medium`}>{profile.name}</span>
                   <div className="flex-1 h-4 bg-slate-100 rounded-full overflow-hidden mx-2">
                     <div
-                      className={`h-full ${profile.name === 'Matematici' ? 'bg-purple-500' : profile.name === 'Humanitní' ? 'bg-blue-500' : 'bg-indigo-500'}`}
+                      className={`h-full ${profile.name === 'Matematici' ? 'bg-blue-500' : profile.name === 'Humanitní' ? 'bg-blue-500' : 'bg-blue-600'}`}
                       style={{ width: `${pct}%` }}
                     />
                   </div>

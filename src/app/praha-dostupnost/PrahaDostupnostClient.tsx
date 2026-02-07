@@ -402,7 +402,7 @@ export function PrahaDostupnostClient() {
               onChange={(e) => setAddress(e.target.value)}
               list="praha-dostupnost-addresses"
               placeholder={coverageMode === 'praha' ? 'Např. Vinohradská 179, Praha 3' : 'Např. Bellušova 1861, Praha nebo Benešov'}
-              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
+              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
             />
             <datalist id="praha-dostupnost-addresses">
               {addressSuggestions.map((item) => (
@@ -421,7 +421,7 @@ export function PrahaDostupnostClient() {
               max={180}
               value={maxMinutes}
               onChange={(e) => setMaxMinutes(Number(e.target.value))}
-              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
+              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
             />
           </label>
 
@@ -432,7 +432,7 @@ export function PrahaDostupnostClient() {
             <select
               value={coverageMode}
               onChange={(e) => setCoverageMode(e.target.value as 'praha' | 'pid_region')}
-              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
+              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
             >
               <option value="pid_region">Praha + Středočeský kraj</option>
               <option value="praha">Pouze Praha</option>
@@ -444,7 +444,7 @@ export function PrahaDostupnostClient() {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 rounded-xl bg-indigo-600 text-white px-4 py-3 font-semibold hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 rounded-xl bg-blue-600 text-white px-4 py-3 font-semibold hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
               >
                 {loading ? `Počítám ${loadingSeconds}s` : 'Vyhledat'}
               </button>
@@ -462,11 +462,11 @@ export function PrahaDostupnostClient() {
         </div>
 
         {loading && (
-          <div className="mt-4 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-2">
-            <p className="text-sm font-medium text-indigo-800">
+          <div className="mt-4 rounded-lg border border-blue-100 bg-blue-50 px-3 py-2">
+            <p className="text-sm font-medium text-blue-800">
               {loadingStage(loadingSeconds)}
             </p>
-            <p className="text-xs text-indigo-700 mt-1">
+            <p className="text-xs text-blue-700 mt-1">
               Požadavek běží {loadingSeconds}s. První výpočet může trvat déle kvůli geokódování škol.
             </p>
           </div>
@@ -594,7 +594,7 @@ export function PrahaDostupnostClient() {
                     type="button"
                     disabled={selectedSimulatorIds.length === 0}
                     onClick={openSelectedInSimulator}
-                    className="text-sm px-3 py-1.5 rounded-lg bg-indigo-600 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors"
+                    className="text-sm px-3 py-1.5 rounded-lg bg-blue-600 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors"
                   >
                     Otevřít v Simulátoru ({selectedSimulatorIds.length})
                   </button>
@@ -627,12 +627,12 @@ export function PrahaDostupnostClient() {
                           checked={school.simulatorSchoolId ? selectedSimulatorIds.includes(school.simulatorSchoolId) : false}
                           disabled={!school.simulatorSchoolId}
                           onChange={() => toggleSimulatorSelection(school.simulatorSchoolId)}
-                          className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                          className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
                         />
                       </td>
                       <td className="p-3 text-slate-500 align-top">{index + 1 + ((result.pagination.page - 1) * result.pagination.pageSize)}</td>
                       <td className="p-3 align-top">
-                        <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-indigo-600 hover:underline">
+                        <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-blue-600 hover:underline">
                           {school.nazev}
                         </Link>
                         <p className="text-xs text-slate-500 mt-1">
@@ -658,7 +658,7 @@ export function PrahaDostupnostClient() {
                           {school.bestMode === 'walk' ? (
                             <span className="text-emerald-700 font-medium">Pěšky nejrychleji</span>
                           ) : (
-                            <span className="text-indigo-700 font-medium">Nejrychleji MHD</span>
+                            <span className="text-blue-700 font-medium">Nejrychleji MHD</span>
                           )}
                         </p>
                         <p className="text-xs text-slate-500">
@@ -701,9 +701,9 @@ export function PrahaDostupnostClient() {
                         checked={school.simulatorSchoolId ? selectedSimulatorIds.includes(school.simulatorSchoolId) : false}
                         disabled={!school.simulatorSchoolId}
                         onChange={() => toggleSimulatorSelection(school.simulatorSchoolId)}
-                        className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                        className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
                       />
-                      <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-indigo-600 hover:underline">
+                      <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-blue-600 hover:underline">
                       {index + 1 + ((result.pagination.page - 1) * result.pagination.pageSize)}. {school.nazev}
                       </Link>
                     </div>
@@ -795,7 +795,7 @@ export function PrahaDostupnostClient() {
               {result.sources.pidStops.startsWith('http') ? (
                 <p>
                   Zdroj PID stop list:{' '}
-                  <a href={result.sources.pidStops} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
+                  <a href={result.sources.pidStops} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                     {result.sources.pidStops}
                   </a>
                 </p>

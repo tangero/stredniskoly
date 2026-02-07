@@ -1,11 +1,18 @@
 import type { Metadata, Viewport } from 'next';
+import { Cabin } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
+
+const cabin = Cabin({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400', '600', '700'],
+  display: 'swap',
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#667eea',
+  themeColor: '#0074e4',
 };
 
 export const metadata: Metadata = {
@@ -72,7 +79,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" suppressHydrationWarning>
-      <body className="antialiased bg-slate-50 text-slate-900 min-h-screen">
+      <body className={`antialiased min-h-screen ${cabin.className}`} style={{ backgroundColor: '#ffffff', color: '#28313b' }}>
         {children}
         <Analytics />
       </body>

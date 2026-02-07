@@ -20,7 +20,7 @@ export default function PrahaDostupnostPage() {
       <Header />
 
       <main className="flex-1 bg-slate-50">
-        <section className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white py-12">
+        <section className="py-0 text-white py-12">
           <div className="max-w-6xl mx-auto px-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-3">
               Dostupnost škol podle MHD (PID)

@@ -77,7 +77,7 @@ export default async function RegionsPage() {
       <Header />
 
       <main className="flex-1">
-        <div className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white py-12">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white py-12">
           <div className="max-w-6xl mx-auto px-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Přehled regionů</h1>
             <p className="text-lg opacity-90 mb-8">
@@ -124,7 +124,7 @@ export default async function RegionsPage() {
                           </td>
                           <td className="px-3 py-2">
                             <Link href={`/skola/${slug}`} className="group inline">
-                              <span className="font-medium text-indigo-600 group-hover:underline">{school.nazev}</span>
+                              <span className="font-medium text-blue-600 group-hover:underline">{school.nazev}</span>
                               <span className="text-slate-400 mx-1">·</span>
                               <span className="text-slate-600">{school.obor}</span>
                               <span className="text-slate-400 mx-1">·</span>
@@ -163,7 +163,7 @@ export default async function RegionsPage() {
                           <span className={`font-bold shrink-0 ${index < 3 ? medalColors[index] : 'text-slate-400'}`}>
                             {index + 1}.
                           </span>
-                          <Link href={`/skola/${slug}`} className="font-medium text-indigo-600 hover:underline text-sm truncate">
+                          <Link href={`/skola/${slug}`} className="font-medium text-blue-600 hover:underline text-sm truncate">
                             {school.nazev}
                           </Link>
                         </div>
@@ -196,34 +196,34 @@ export default async function RegionsPage() {
                   href={`/regiony/${kraj.slug}`}
                   className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow group"
                 >
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-indigo-600 transition-colors">
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-blue-600 transition-colors">
                     {kraj.nazev}
                   </h3>
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     <div>
-                      <div className="text-2xl font-bold text-indigo-600">{kraj.stats.totalSchools}</div>
+                      <div className="text-2xl font-bold text-blue-600">{kraj.stats.totalSchools}</div>
                       <div className="text-slate-600">Škol/oborů</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-indigo-600">
+                      <div className="text-2xl font-bold text-blue-600">
                         {Math.round(kraj.stats.totalKapacita / 100) / 10}k
                       </div>
                       <div className="text-slate-600">Kapacita</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-indigo-600">
+                      <div className="text-2xl font-bold text-blue-600">
                         {kraj.stats.avgIndexPoptavky.toFixed(1)}
                       </div>
                       <div className="text-slate-600">Prům. index</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-indigo-600">
+                      <div className="text-2xl font-bold text-blue-600">
                         {Math.round(kraj.stats.avgMinBody)}
                       </div>
                       <div className="text-slate-600">Prům. min. body</div>
                     </div>
                   </div>
-                  <div className="mt-4 text-indigo-600 text-sm font-medium group-hover:underline">
+                  <div className="mt-4 text-blue-600 text-sm font-medium group-hover:underline">
                     Zobrazit detail →
                   </div>
                 </Link>

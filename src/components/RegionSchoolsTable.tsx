@@ -63,8 +63,8 @@ function createSlug(name: string, obor?: string): string {
 function StudyLengthBadge({ delka }: { delka: number }) {
   const colors: Record<number, string> = {
     4: 'bg-blue-100 text-blue-800',
-    6: 'bg-purple-100 text-purple-800',
-    8: 'bg-indigo-100 text-indigo-800',
+    6: 'bg-blue-100 text-blue-800',
+    8: 'bg-blue-100 text-blue-800',
   };
   return (
     <span className={`inline-block px-1.5 py-0.5 rounded text-xs font-medium ${colors[delka] || 'bg-slate-100 text-slate-800'}`}>
@@ -114,7 +114,7 @@ type SortDir = 'asc' | 'desc';
 // Ikona pro třídění
 function SortIcon({ active, direction }: { active: boolean; direction: SortDir }) {
   return (
-    <span className={`ml-1 inline-block ${active ? 'text-indigo-600' : 'text-slate-300'}`}>
+    <span className={`ml-1 inline-block ${active ? 'text-blue-600' : 'text-slate-300'}`}>
       {direction === 'asc' ? '↑' : '↓'}
     </span>
   );
@@ -296,7 +296,7 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+    <div className="bg-white rounded-lg shadow-sm overflow-hidden">
       <div className="p-6 border-b flex justify-between items-center flex-wrap gap-2">
         <div>
           <h2 className="text-xl font-semibold">Školy v {krajName} kraji</h2>
@@ -453,7 +453,7 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
                   {/* Škola a obor */}
                   <td className="p-3">
                     <Link href={`/skola/${slug}`} className="group">
-                      <div className="font-medium text-indigo-600 group-hover:underline">{school.nazev}</div>
+                      <div className="font-medium text-blue-600 group-hover:underline">{school.nazev}</div>
                       <div className="text-sm text-slate-600">{school.obor}</div>
                       <div className="text-xs text-slate-400 flex items-center gap-2 mt-0.5">
                         {school.obec}
@@ -575,7 +575,7 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
             <Link
               key={school.id}
               href={`/skola/${slug}`}
-              className={`block bg-white p-4 rounded-xl shadow-sm border-l-4 ${borderColor} hover:bg-slate-50`}
+              className={`block bg-white p-4 rounded-lg shadow-sm border-l-4 ${borderColor} hover:bg-slate-50`}
             >
               <div className="flex justify-between items-start gap-3">
                 <div className="flex-1 min-w-0">
@@ -597,7 +597,7 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
                   <div className="text-xs text-slate-400 mt-1">{school.obec}</div>
                 </div>
                 <div className="text-right shrink-0">
-                  <div className="text-2xl font-bold text-indigo-600">{jpzMin || school.min_body}</div>
+                  <div className="text-2xl font-bold text-blue-600">{jpzMin || school.min_body}</div>
                   <div className="text-xs text-slate-500">JPZ bodů</div>
                   {hasExtra && (
                     <div className="text-xs text-amber-600">skóre: {school.min_body}</div>
@@ -653,7 +653,7 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
                     onClick={() => setCurrentPage(page)}
                     className={`w-10 h-10 rounded-lg text-sm font-medium transition-colors ${
                       currentPage === page
-                        ? 'bg-indigo-600 text-white'
+                        ? 'bg-blue-600 text-white'
                         : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-50'
                     }`}
                   >

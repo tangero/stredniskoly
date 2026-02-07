@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 function SimulatorLoading() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 text-center">
-      <div className="animate-spin w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full mx-auto"></div>
+      <div className="animate-spin w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full mx-auto"></div>
       <p className="mt-4 text-slate-600">Načítám simulátor...</p>
     </div>
   );

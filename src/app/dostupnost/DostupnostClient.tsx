@@ -429,7 +429,7 @@ export function DostupnostClient() {
     return (
       <>
         {text.slice(0, origStart)}
-        <strong className="text-indigo-700">{text.slice(origStart, origEnd)}</strong>
+        <strong className="text-blue-700">{text.slice(origStart, origEnd)}</strong>
         {text.slice(origEnd)}
       </>
     );
@@ -524,7 +524,7 @@ export function DostupnostClient() {
                 aria-expanded={showDropdown}
                 aria-autocomplete="list"
                 aria-activedescendant={highlightIndex >= 0 ? `stop-option-${highlightIndex}` : undefined}
-                className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
+                className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
               />
             </label>
             {selectedStop && (
@@ -547,7 +547,7 @@ export function DostupnostClient() {
                     onClick={() => selectSuggestion(s)}
                     onMouseEnter={() => setHighlightIndex(i)}
                     className={`w-full text-left px-4 py-2.5 text-sm text-slate-800 border-b border-slate-100 last:border-b-0 transition-colors truncate ${
-                      i === highlightIndex ? 'bg-indigo-50' : 'hover:bg-slate-50'
+                      i === highlightIndex ? 'bg-blue-50' : 'hover:bg-slate-50'
                     }`}
                   >
                     <span className="break-words whitespace-normal">{highlightMatch(s.name, stopQuery)}</span>
@@ -575,7 +575,7 @@ export function DostupnostClient() {
               max={180}
               value={maxMinutes}
               onChange={(e) => setMaxMinutes(Number(e.target.value))}
-              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
+              className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
             />
           </label>
 
@@ -586,7 +586,7 @@ export function DostupnostClient() {
             <select
               value={typFilter}
               onChange={(e) => setTypFilter(e.target.value)}
-              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
+              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none"
             >
               {TYP_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -599,7 +599,7 @@ export function DostupnostClient() {
               <button
                 type="submit"
                 disabled={loading || !selectedStop}
-                className="flex-1 rounded-xl bg-indigo-600 text-white px-4 py-3 font-semibold hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 rounded-xl bg-blue-600 text-white px-4 py-3 font-semibold hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
               >
                 {loading ? `Počítám ${loadingSeconds}s` : 'Vyhledat'}
               </button>
@@ -617,11 +617,11 @@ export function DostupnostClient() {
         </div>
 
         {loading && (
-          <div className="mt-4 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-2">
-            <p className="text-sm font-medium text-indigo-800">
+          <div className="mt-4 rounded-lg border border-blue-100 bg-blue-50 px-3 py-2">
+            <p className="text-sm font-medium text-blue-800">
               {loadingStage(loadingSeconds)}
             </p>
-            <p className="text-xs text-indigo-700 mt-1">
+            <p className="text-xs text-blue-700 mt-1">
               Požadavek běží {loadingSeconds}s. První výpočet může trvat déle kvůli načítání grafu.
             </p>
           </div>
@@ -685,7 +685,7 @@ export function DostupnostClient() {
                     type="button"
                     disabled={selectedSimulatorIds.length === 0}
                     onClick={openSelectedInSimulator}
-                    className="text-sm px-3 py-1.5 rounded-lg bg-indigo-600 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors"
+                    className="text-sm px-3 py-1.5 rounded-lg bg-blue-600 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors"
                   >
                     Otevřít v Simulátoru ({selectedSimulatorIds.length})
                   </button>
@@ -704,7 +704,7 @@ export function DostupnostClient() {
                         aria-label="Vybrat/odznačit vše"
                         checked={selectableSimulatorIds.length > 0 && selectedSimulatorIds.length === selectableSimulatorIds.length}
                         onChange={toggleSelectAllForSimulator}
-                        className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                        className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
                       />
                     </th>
                     <th className="text-left p-3">#</th>
@@ -727,12 +727,12 @@ export function DostupnostClient() {
                             checked={school.simulatorSchoolId ? selectedSimulatorIds.includes(school.simulatorSchoolId) : false}
                             disabled={!school.simulatorSchoolId}
                             onChange={() => toggleSimulatorSelection(school.simulatorSchoolId)}
-                            className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                            className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
                           />
                         </td>
                         <td className="p-3 text-slate-500 align-top">{rowNum}</td>
                         <td className="p-3 align-top">
-                          <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-indigo-600 hover:underline">
+                          <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-blue-600 hover:underline">
                             {school.nazev}
                           </Link>
                           <div className="flex flex-wrap gap-1 mt-1">
@@ -761,7 +761,7 @@ export function DostupnostClient() {
                             jízda {rideMin} + čekání {school.waitMinutes} + chůze {school.walkMinutes}
                           </p>
                           {school.usedLines.length > 0 && (
-                            <p className="text-xs text-indigo-600 mt-1">
+                            <p className="text-xs text-blue-600 mt-1">
                               Linky: {linesLabel(school.usedLines)}
                             </p>
                           )}
@@ -796,9 +796,9 @@ export function DostupnostClient() {
                           checked={school.simulatorSchoolId ? selectedSimulatorIds.includes(school.simulatorSchoolId) : false}
                           disabled={!school.simulatorSchoolId}
                           onChange={() => toggleSimulatorSelection(school.simulatorSchoolId)}
-                          className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                          className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
                         />
-                        <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-indigo-600 hover:underline">
+                        <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-blue-600 hover:underline">
                           {rowNum}. {school.nazev}
                         </Link>
                       </div>
@@ -826,7 +826,7 @@ export function DostupnostClient() {
                       jízda {rideMin} + čekání {school.waitMinutes} + chůze {school.walkMinutes} min
                     </p>
                     {school.usedLines.length > 0 && (
-                      <p className="text-xs text-indigo-600 mt-1">Linky: {linesLabel(school.usedLines)}</p>
+                      <p className="text-xs text-blue-600 mt-1">Linky: {linesLabel(school.usedLines)}</p>
                     )}
                     <p className="text-xs text-slate-500">zastávka: {school.stopName}</p>
                   </div>

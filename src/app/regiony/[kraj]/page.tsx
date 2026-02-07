@@ -89,16 +89,16 @@ export default async function RegionPage({ params, searchParams }: Props) {
         <div className="bg-white border-b">
           <div className="max-w-6xl mx-auto px-4 py-3">
             <nav className="text-sm text-slate-600">
-              <Link href="/" className="hover:text-indigo-600">Domů</Link>
+              <Link href="/" className="hover:text-blue-600">Domů</Link>
               <span className="mx-2">/</span>
-              <Link href="/regiony" className="hover:text-indigo-600">Regiony</Link>
+              <Link href="/regiony" className="hover:text-blue-600">Regiony</Link>
               <span className="mx-2">/</span>
               <span className="text-slate-900">{kraj.nazev}</span>
             </nav>
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white py-12">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white py-12">
           <div className="max-w-6xl mx-auto px-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">{kraj.nazev} kraj</h1>
             <p className="text-lg opacity-90">
@@ -111,23 +111,23 @@ export default async function RegionPage({ params, searchParams }: Props) {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-indigo-600">{stats.totalSchools}</div>
+              <div className="text-3xl font-bold text-blue-600">{stats.totalSchools}</div>
               <div className="text-sm text-slate-600">Škol/oborů</div>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-indigo-600">
+              <div className="text-3xl font-bold text-blue-600">
                 {Math.round(stats.totalKapacita / 100) / 10}k
               </div>
               <div className="text-sm text-slate-600">Celková kapacita</div>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-indigo-600">
+              <div className="text-3xl font-bold text-blue-600">
                 {stats.avgIndexPoptavky.toFixed(1)}
               </div>
               <div className="text-sm text-slate-600">Prům. index poptávky</div>
             </div>
             <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-              <div className="text-3xl font-bold text-indigo-600">
+              <div className="text-3xl font-bold text-blue-600">
                 {Math.round(stats.avgMinBody)}
               </div>
               <div className="text-sm text-slate-600">Prům. min. body</div>
@@ -142,7 +142,7 @@ export default async function RegionPage({ params, searchParams }: Props) {
                 href={`/regiony/${krajSlug}`}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   !selectedDelka
-                    ? 'bg-indigo-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
                 }`}
               >
@@ -153,8 +153,8 @@ export default async function RegionPage({ params, searchParams }: Props) {
                   href={`/regiony/${krajSlug}?delka=8`}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     selectedDelka === 8
-                      ? 'bg-indigo-600 text-white'
-                      : 'bg-indigo-100 text-indigo-800 hover:bg-indigo-200'
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-blue-100 text-blue-800 hover:bg-blue-200'
                   }`}
                 >
                   8leté ({countByLength[8]})
@@ -165,8 +165,8 @@ export default async function RegionPage({ params, searchParams }: Props) {
                   href={`/regiony/${krajSlug}?delka=6`}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     selectedDelka === 6
-                      ? 'bg-purple-600 text-white'
-                      : 'bg-purple-100 text-purple-800 hover:bg-purple-200'
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-blue-100 text-blue-800 hover:bg-blue-200'
                   }`}
                 >
                   6leté ({countByLength[6]})

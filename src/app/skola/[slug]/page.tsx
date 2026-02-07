@@ -92,8 +92,8 @@ function MinBodyTrend({ trend }: { trend: YearlyTrendData | null }) {
 function StudyLengthBadge({ typ, delka }: { typ: string; delka: number }) {
   const colors: Record<number, string> = {
     4: 'bg-blue-100 text-blue-800',
-    6: 'bg-purple-100 text-purple-800',
-    8: 'bg-indigo-100 text-indigo-800',
+    6: 'bg-blue-100 text-blue-800',
+    8: 'bg-blue-100 text-blue-800',
   };
 
   const delkaSlovy: Record<number, string> = {
@@ -178,7 +178,7 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend }: {
           <span className="text-slate-500">
             {program.prihlasky} přihlášek → {program.prijati} přijatých
           </span>
-          <span className="text-indigo-600 font-medium">Detail →</span>
+          <span className="text-blue-600 font-medium">Detail →</span>
         </div>
       </div>
     </Link>
@@ -231,11 +231,11 @@ export default async function SchoolDetailPage({ params }: Props) {
           <div className="bg-white border-b">
             <div className="max-w-6xl mx-auto px-4 py-3">
               <nav className="text-sm text-slate-600">
-                <Link href="/" className="hover:text-indigo-600">Domů</Link>
+                <Link href="/" className="hover:text-blue-600">Domů</Link>
                 <span className="mx-2">/</span>
-                <Link href="/skoly" className="hover:text-indigo-600">Školy</Link>
+                <Link href="/skoly" className="hover:text-blue-600">Školy</Link>
                 <span className="mx-2">/</span>
-                <Link href={`/regiony/${krajSlug}`} className="hover:text-indigo-600">
+                <Link href={`/regiony/${krajSlug}`} className="hover:text-blue-600">
                   {krajNames[school.kraj_kod] || school.kraj}
                 </Link>
                 <span className="mx-2">/</span>
@@ -245,7 +245,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           </div>
 
           {/* Header */}
-          <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-600 text-white py-12">
+          <div className="bg-gradient-to-br from-blue-500 via-blue-500 to-blue-600 text-white py-12">
             <div className="max-w-6xl mx-auto px-4">
               <h1 className="text-2xl md:text-4xl font-bold mb-4">{overview.nazev}</h1>
               <p className="text-lg opacity-90 mb-4">
@@ -265,7 +265,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           <div className="max-w-6xl mx-auto px-4 py-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               <div className="bg-white p-4 rounded-xl shadow-sm text-center">
-                <div className="text-3xl font-bold text-indigo-600">{sortedPrograms.length}</div>
+                <div className="text-3xl font-bold text-blue-600">{sortedPrograms.length}</div>
                 <div className="text-sm text-slate-500">Oborů/zaměření</div>
               </div>
               <div className="bg-white p-4 rounded-xl shadow-sm text-center">
@@ -318,7 +318,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             <div className="text-center">
               <Link
                 href="/simulator"
-                className="inline-block bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+                className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
               >
                 Vyzkoušet v simulátoru
               </Link>
@@ -422,15 +422,15 @@ export default async function SchoolDetailPage({ params }: Props) {
         <div className="bg-white border-b">
           <div className="max-w-6xl mx-auto px-4 py-3">
             <nav className="text-sm text-slate-600">
-              <Link href="/" className="hover:text-indigo-600">Domů</Link>
+              <Link href="/" className="hover:text-blue-600">Domů</Link>
               <span className="mx-2">/</span>
-              <Link href="/skoly" className="hover:text-indigo-600">Školy</Link>
+              <Link href="/skoly" className="hover:text-blue-600">Školy</Link>
               <span className="mx-2">/</span>
-              <Link href={`/regiony/${krajSlug}`} className="hover:text-indigo-600">
+              <Link href={`/regiony/${krajSlug}`} className="hover:text-blue-600">
                 {krajNames[school.kraj_kod] || school.kraj}
               </Link>
               <span className="mx-2">/</span>
-              <Link href={`/skola/${overviewSlug}`} className="hover:text-indigo-600">
+              <Link href={`/skola/${overviewSlug}`} className="hover:text-blue-600">
                 {school.nazev}
               </Link>
               <span className="mx-2">/</span>
@@ -440,7 +440,7 @@ export default async function SchoolDetailPage({ params }: Props) {
         </div>
 
         {/* Header */}
-        <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-600 text-white py-12">
+        <div className="bg-gradient-to-br from-blue-500 via-blue-500 to-blue-600 text-white py-12">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex flex-wrap items-start gap-4 mb-4">
               <h1 className="text-2xl md:text-4xl font-bold">{school.nazev}</h1>
@@ -649,9 +649,9 @@ export default async function SchoolDetailPage({ params }: Props) {
           </div>
 
           {/* Interpretace */}
-          <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-xl mb-8">
-            <h3 className="font-semibold text-indigo-800 mb-2">Co to znamená?</h3>
-            <p className="text-indigo-700">
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl mb-8">
+            <h3 className="font-semibold text-blue-800 mb-2">Co to znamená?</h3>
+            <p className="text-blue-700">
               {program.index_poptavky >= 3
                 ? `O tento obor je vysoký zájem (${program.index_poptavky.toFixed(1)}× více přihlášek než míst). Doporučujeme mít záložní variantu.`
                 : program.index_poptavky >= 2
@@ -675,7 +675,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           <div className="text-center">
             <Link
               href="/simulator"
-              className="inline-block bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
             >
               Vyzkoušet v simulátoru
             </Link>
