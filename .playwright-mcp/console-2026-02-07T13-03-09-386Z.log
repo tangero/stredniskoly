@@ -1,0 +1,2 @@
+[    2014ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ https://www.googletagmanager.com/gtag/js?id=G-Q2BKS24J38:0
+[    9555ms] [WARNING] Google Maps JavaScript API has been loaded directly without loading=async. This can result in suboptimal performance. For best-practice loading patterns please see https://goo.gle/js-api-loading @ https://maps.googleapis.com/maps/api/js?key=AIzaSyD5f_ym3MW5HYmqvAcI8g_6dt9loJzbthc:332
