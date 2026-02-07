@@ -55,6 +55,12 @@ const cacheHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Include data files in serverless function bundles (Vercel)
+  outputFileTracingIncludes: {
+    '/api/dostupnost': ['./data/transit_graph.json', './data/school_locations.json'],
+    '/api/dostupnost/stop-suggest': ['./data/transit_graph.json'],
+  },
+
   // Security a cache headers
   async headers() {
     return [
