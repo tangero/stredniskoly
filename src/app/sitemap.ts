@@ -3,7 +3,7 @@ import { getAllSchools, getAllKraje } from '@/lib/data';
 import { createSlug } from '@/lib/utils';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://stredniskoly.vercel.app';
+  const baseUrl = 'https://prijimackynaskolu.cz';
 
   // Statické stránky
   const staticPages: MetadataRoute.Sitemap = [

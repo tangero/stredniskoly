@@ -38,6 +38,9 @@ const changelog: ChangelogEntry[] = [
       { type: 'improve', text: 'Odebrána položka „Školy dostupné MHD" (nahrazena celostátní dojezdovostí)' },
       { type: 'improve', text: 'Trvalý redirect /praha-dostupnost → /dostupnost' },
       { type: 'improve', text: 'Build skript pro graf z GTFS — 35 575 zastávek, 1 431 linek, headway tabulka' },
+      { type: 'new', text: 'Vlastní doména prijimackynaskolu.cz' },
+      { type: 'improve', text: 'Nový hlavní titulek: „Najdi si svou střední školu a zjisti své šance"' },
+      { type: 'improve', text: 'Aktualizace všech kanonických URL, sitemapy a robots.txt na novou doménu' },
     ],
   },
   {

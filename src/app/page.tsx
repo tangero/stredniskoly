@@ -19,7 +19,7 @@ export default async function HomePage() {
       <section className="bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-600 text-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            Zjisti své šance na přijetí na střední školu
+            Najdi si svou střední školu a zjisti své šance
           </h1>
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
             Simulátor využívá reálná data z jednotných přijímacích zkoušek.

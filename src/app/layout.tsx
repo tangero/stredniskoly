@@ -9,9 +9,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://stredniskoly.vercel.app'),
+  metadataBase: new URL('https://prijimackynaskolu.cz'),
   title: {
-    default: 'Simulátor přijímacích zkoušek na SŠ | Zjisti své šance',
+    default: 'Najdi si svou střední školu a zjisti své šance | Přijímačky na střední školy',
     template: '%s | Přijímačky na střední školy',
   },
   description:
@@ -44,20 +44,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'cs_CZ',
-    url: 'https://stredniskoly.vercel.app',
+    url: 'https://prijimackynaskolu.cz',
     siteName: 'Simulátor přijímacích zkoušek',
-    title: 'Simulátor přijímacích zkoušek na SŠ',
+    title: 'Přijímačky na střední školy',
     description:
       'Zjistěte své šance na přijetí na střední školu. Data z let 2024-2025.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Simulátor přijímacích zkoušek na SŠ',
+    title: 'Přijímačky na střední školy',
     description:
       'Zjistěte své šance na přijetí na střední školu. Data z let 2024-2025.',
   },
   alternates: {
-    canonical: 'https://stredniskoly.vercel.app',
+    canonical: 'https://prijimackynaskolu.cz',
   },
   icons: {
     icon: '/icon.svg',

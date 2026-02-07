@@ -50,7 +50,7 @@ export default async function Image() {
             🎓
           </div>
           <span style={{ color: 'rgba(255,255,255,0.9)', fontSize: 24, fontWeight: 600 }}>
-            stredniskoly.cz
+            prijimackynaskolu.cz
           </span>
         </div>
 
@@ -85,7 +85,7 @@ export default async function Image() {
               margin: '20px 0 0 0',
             }}
           >
-            Zjisti své šance na přijetí na střední školu
+            Najdi si svou střední školu a zjisti své šance
           </h2>
         </div>
 
