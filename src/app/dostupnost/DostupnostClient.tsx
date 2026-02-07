@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 
 type ReachableSchool = {
@@ -114,6 +114,10 @@ export function DostupnostClient() {
   const [stopQuery, setStopQuery] = useState('');
   const [selectedStop, setSelectedStop] = useState<StopSuggestion | null>(null);
   const [suggestions, setSuggestions] = useState<StopSuggestion[]>([]);
+  const [suggestionsTotal, setSuggestionsTotal] = useState(0);
+  const [suggestLoading, setSuggestLoading] = useState(false);
+  const [highlightIndex, setHighlightIndex] = useState(-1);
+  const [showDropdown, setShowDropdown] = useState(false);
   const [maxMinutes, setMaxMinutes] = useState(60);
   const [lastSearch, setLastSearch] = useState<{
     stopId: string;
@@ -127,6 +131,8 @@ export function DostupnostClient() {
   const abortRef = useRef<AbortController | null>(null);
   const timeoutRef = useRef<number | null>(null);
   const timeoutTriggeredRef = useRef(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
 
   const totalFound = result?.pagination.totalItems ?? 0;
 
@@ -152,13 +158,29 @@ export function DostupnostClient() {
     return () => window.clearInterval(interval);
   }, [loading]);
 
+  // Click outside to close dropdown
+  useEffect(() => {
+    function handleMouseDown(e: MouseEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setShowDropdown(false);
+      }
+    }
+    document.addEventListener('mousedown', handleMouseDown);
+    return () => document.removeEventListener('mousedown', handleMouseDown);
+  }, []);
+
+  // Fetch suggestions with debounce
   useEffect(() => {
     const query = stopQuery.trim();
     if (query.length < 2 || selectedStop) {
       setSuggestions([]);
+      setSuggestionsTotal(0);
+      setSuggestLoading(false);
+      setShowDropdown(false);
       return;
     }
 
+    setSuggestLoading(true);
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
       try {
@@ -168,13 +190,22 @@ export function DostupnostClient() {
         const response = await fetch(`/api/dostupnost/stop-suggest?${params.toString()}`, {
           signal: controller.signal,
         });
-        if (!response.ok) return;
-        const payload = await response.json() as { suggestions?: StopSuggestion[] };
-        setSuggestions(Array.isArray(payload.suggestions) ? payload.suggestions : []);
+        if (!response.ok) {
+          setSuggestLoading(false);
+          return;
+        }
+        const payload = await response.json() as { suggestions?: StopSuggestion[]; totalFound?: number };
+        const items = Array.isArray(payload.suggestions) ? payload.suggestions : [];
+        setSuggestions(items);
+        setSuggestionsTotal(payload.totalFound ?? items.length);
+        setHighlightIndex(-1);
+        setShowDropdown(items.length > 0);
       } catch {
-        // Ignore suggest errors
+        // Ignore suggest errors (abort, network)
+      } finally {
+        setSuggestLoading(false);
       }
-    }, 200);
+    }, 150);
 
     return () => {
       controller.abort();
@@ -278,6 +309,9 @@ export function DostupnostClient() {
     setSelectedStop(suggestion);
     setStopQuery(suggestion.name);
     setSuggestions([]);
+    setSuggestionsTotal(0);
+    setShowDropdown(false);
+    setHighlightIndex(-1);
   }
 
   function handleStopQueryChange(value: string) {
@@ -285,6 +319,82 @@ export function DostupnostClient() {
     if (selectedStop && value !== selectedStop.name) {
       setSelectedStop(null);
     }
+  }
+
+  const handleInputKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!showDropdown || suggestions.length === 0) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setHighlightIndex((prev) => {
+        const next = prev < suggestions.length - 1 ? prev + 1 : 0;
+        scrollToItem(next);
+        return next;
+      });
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setHighlightIndex((prev) => {
+        const next = prev > 0 ? prev - 1 : suggestions.length - 1;
+        scrollToItem(next);
+        return next;
+      });
+    } else if (e.key === 'Enter' && highlightIndex >= 0) {
+      e.preventDefault();
+      selectSuggestion(suggestions[highlightIndex]);
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      setShowDropdown(false);
+      setHighlightIndex(-1);
+    }
+  }, [showDropdown, suggestions, highlightIndex]);
+
+  function scrollToItem(index: number) {
+    requestAnimationFrame(() => {
+      const container = listRef.current;
+      if (!container) return;
+      const item = container.children[index] as HTMLElement | undefined;
+      if (item) {
+        item.scrollIntoView({ block: 'nearest' });
+      }
+    });
+  }
+
+  function highlightMatch(text: string, query: string): React.ReactNode {
+    if (!query.trim()) return text;
+    const norm = (s: string) =>
+      s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const textNorm = norm(text);
+    const queryNorm = norm(query.trim());
+    const matchStart = textNorm.indexOf(queryNorm);
+    if (matchStart === -1) return text;
+    const matchEnd = matchStart + queryNorm.length;
+    // Map normalized positions back to original text (same length since we only strip combining marks)
+    // Since normalize('NFD') + strip diacritics can change lengths, we need character-by-character mapping
+    const origChars = [...text];
+    const normChars: string[] = [];
+    const origToNormIndex: number[] = [];
+    for (const ch of origChars) {
+      const normalized = ch.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      origToNormIndex.push(normChars.length);
+      for (const nc of normalized) {
+        normChars.push(nc);
+      }
+    }
+    // Find original start and end
+    let origStart = -1;
+    let origEnd = -1;
+    for (let i = 0; i < origChars.length; i++) {
+      if (origToNormIndex[i] === matchStart && origStart === -1) origStart = i;
+      if (origToNormIndex[i] < matchEnd) origEnd = i + 1;
+    }
+    if (origStart === -1 || origEnd === -1) return text;
+    return (
+      <>
+        {text.slice(0, origStart)}
+        <strong className="text-indigo-700">{text.slice(origStart, origEnd)}</strong>
+        {text.slice(origEnd)}
+      </>
+    );
   }
 
   function toggleSimulatorSelection(simulatorSchoolId: string | null) {
@@ -330,7 +440,7 @@ export function DostupnostClient() {
     <div className="space-y-6">
       <form onSubmit={onSubmit} className="bg-white rounded-2xl shadow-sm border p-5 md:p-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div className="md:col-span-6 relative">
+          <div className="md:col-span-6 relative" ref={wrapperRef}>
             <label>
               <span className="block text-sm font-medium text-slate-700 mb-1">
                 Výchozí zastávka
@@ -339,8 +449,16 @@ export function DostupnostClient() {
                 type="text"
                 value={stopQuery}
                 onChange={(e) => handleStopQueryChange(e.target.value)}
+                onKeyDown={handleInputKeyDown}
+                onFocus={() => {
+                  if (suggestions.length > 0 && !selectedStop) setShowDropdown(true);
+                }}
                 placeholder="Začněte psát název zastávky..."
                 autoComplete="off"
+                role="combobox"
+                aria-expanded={showDropdown}
+                aria-autocomplete="list"
+                aria-activedescendant={highlightIndex >= 0 ? `stop-option-${highlightIndex}` : undefined}
                 className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
               />
             </label>
@@ -349,19 +467,36 @@ export function DostupnostClient() {
                 Vybrána: {selectedStop.name}
               </p>
             )}
-            {suggestions.length > 0 && (
-              <div className="absolute z-20 top-full left-0 right-0 mt-1 bg-white border border-slate-200 rounded-xl shadow-lg max-h-64 overflow-y-auto">
-                {suggestions.map((s) => (
+            {showDropdown && (
+              <div className="absolute z-20 top-full left-0 right-0 mt-1 bg-white border border-slate-200 rounded-xl shadow-lg max-h-64 overflow-y-auto" role="listbox" ref={listRef}>
+                {suggestLoading && suggestions.length === 0 && (
+                  <div className="px-4 py-3 text-sm text-slate-500">Hledám...</div>
+                )}
+                {suggestions.map((s, i) => (
                   <button
                     key={s.stopId}
+                    id={`stop-option-${i}`}
                     type="button"
+                    role="option"
+                    aria-selected={i === highlightIndex}
                     onClick={() => selectSuggestion(s)}
-                    className="w-full text-left px-4 py-2.5 hover:bg-indigo-50 text-sm text-slate-800 border-b border-slate-100 last:border-b-0 transition-colors"
+                    onMouseEnter={() => setHighlightIndex(i)}
+                    className={`w-full text-left px-4 py-2.5 text-sm text-slate-800 border-b border-slate-100 last:border-b-0 transition-colors truncate ${
+                      i === highlightIndex ? 'bg-indigo-50' : 'hover:bg-slate-50'
+                    }`}
                   >
-                    {s.name}
+                    <span className="break-words whitespace-normal">{highlightMatch(s.name, stopQuery)}</span>
                   </button>
                 ))}
+                {suggestionsTotal > suggestions.length && (
+                  <div className="px-4 py-2 text-xs text-slate-400 border-t border-slate-100">
+                    Zobrazeno {suggestions.length} z {suggestionsTotal} výsledků
+                  </div>
+                )}
               </div>
+            )}
+            {suggestLoading && !showDropdown && stopQuery.trim().length >= 2 && !selectedStop && (
+              <p className="text-xs text-slate-500 mt-1">Hledám zastávky...</p>
             )}
           </div>
 
