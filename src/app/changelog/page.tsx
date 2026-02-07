@@ -31,6 +31,7 @@ const changelog: ChangelogEntry[] = [
       { type: 'improve', text: 'Zavření dropdownu kliknutím mimo oblast' },
       { type: 'improve', text: 'Podpora dlouhých názvů zastávek (např. Brandýs nad Labem-St. Boleslav)' },
       { type: 'improve', text: 'ARIA atributy pro přístupnost (combobox, listbox)' },
+      { type: 'fix', text: 'Oprava race condition — abortnutý fetch přepisoval loading stav při rychlém psaní' },
     ],
   },
   {
