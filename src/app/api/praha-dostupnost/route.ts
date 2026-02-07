@@ -43,6 +43,7 @@ type SearchRequest = {
   maxMinutes?: number;
   limit?: number;
   page?: number;
+  coverageMode?: CoverageMode;
 };
 
 type GeocodeResult = {
@@ -51,17 +52,35 @@ type GeocodeResult = {
   district?: string;
 };
 
+type CoverageMode = 'praha' | 'pid_region';
+
+type PidCoverageSummary = {
+  coverageMode: CoverageMode;
+  stopCount: number;
+  municipalityCount: number;
+  districtCodeCount: number;
+  municipalitiesTop: Array<{
+    name: string;
+    stops: number;
+  }>;
+};
+
+type PidStopsLoadResult = {
+  stops: PidStop[];
+  source: string;
+};
+
 const PID_STOPS_URL = 'https://data.pid.cz/stops/json/stops.json';
 const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
 const USER_AGENT = 'stredniskoly-praha-dostupnost/0.1';
 
 const DEFAULT_MAX_MINUTES = 30;
+const DEFAULT_COVERAGE_MODE: CoverageMode = 'pid_region';
 const MAX_GEOCODES_PER_REQUEST = 24;
 const GEOCODE_TIMEOUT_MS = 2500;
 const GEOCODE_CONCURRENCY = 6;
 const PAGE_SIZE = 50;
 
-// Praha + blízké okolí (pro jistotu při příměstských trasách).
 const PRAHA_BBOX = {
   minLat: 49.95,
   maxLat: 50.25,
@@ -69,10 +88,20 @@ const PRAHA_BBOX = {
   maxLon: 14.85,
 };
 
+// PID region (Praha + Středočeský kraj) s malou rezervou.
+const PID_REGION_BBOX = {
+  minLat: 49.35,
+  maxLat: 50.75,
+  minLon: 13.2,
+  maxLon: 15.95,
+};
+
 let prahaSchoolsCache: PrahaSchool[] | null = null;
-let pidStopsCache: PidStop[] | null = null;
-let pidStopTokenIndexCache: Map<string, number[]> | null = null;
-let pidLineToStopIndicesCache: Map<string, number[]> | null = null;
+const pidStopsCacheByCoverage = new Map<CoverageMode, PidStop[]>();
+const pidStopsSourceByCoverage = new Map<CoverageMode, string>();
+const pidStopTokenIndexCacheByCoverage = new Map<CoverageMode, Map<string, number[]>>();
+const pidLineToStopIndicesCacheByCoverage = new Map<CoverageMode, Map<string, number[]>>();
+const pidCoverageSummaryCacheByCoverage = new Map<CoverageMode, PidCoverageSummary>();
 
 const geocodeCache = new Map<string, GeocodeResult>();
 const geocodeMissCache = new Set<string>();
@@ -119,13 +148,40 @@ function haversineKm(a: Point, b: Point): number {
   return 2 * R * Math.atan2(Math.sqrt(q), Math.sqrt(1 - q));
 }
 
-function isLikelyPrahaStop(lat: number, lon: number): boolean {
+function inBBox(point: Point, bbox: { minLat: number; maxLat: number; minLon: number; maxLon: number }): boolean {
   return (
-    lat >= PRAHA_BBOX.minLat &&
-    lat <= PRAHA_BBOX.maxLat &&
-    lon >= PRAHA_BBOX.minLon &&
-    lon <= PRAHA_BBOX.maxLon
+    point.lat >= bbox.minLat &&
+    point.lat <= bbox.maxLat &&
+    point.lon >= bbox.minLon &&
+    point.lon <= bbox.maxLon
   );
+}
+
+function parseCoverageMode(value: unknown): CoverageMode {
+  return value === 'praha' ? 'praha' : DEFAULT_COVERAGE_MODE;
+}
+
+function shouldIncludeStop(stop: {
+  lat: number;
+  lon: number;
+  districtCode?: string;
+  municipality?: string;
+}, coverageMode: CoverageMode): boolean {
+  if (coverageMode === 'praha') {
+    return inBBox({ lat: stop.lat, lon: stop.lon }, PRAHA_BBOX);
+  }
+
+  const districtCode = (stop.districtCode ?? '').toUpperCase();
+  if (districtCode.startsWith('CZ010') || districtCode.startsWith('CZ020')) {
+    return true;
+  }
+
+  const municipality = normalizeText(stop.municipality ?? '');
+  if (municipality === 'praha') {
+    return true;
+  }
+
+  return inBBox({ lat: stop.lat, lon: stop.lon }, PID_REGION_BBOX);
 }
 
 function ensureArray<T>(value: unknown): T[] {
@@ -342,23 +398,40 @@ function deduplicateStops(stops: PidStop[]): PidStop[] {
   return Array.from(map.values());
 }
 
-async function loadPidStops(): Promise<PidStop[]> {
-  if (pidStopsCache) return pidStopsCache;
-
-  const response = await fetch(PID_STOPS_URL, {
-    method: 'GET',
-    headers: {
-      'User-Agent': USER_AGENT,
-      Accept: 'application/json',
-    },
-    cache: 'no-store',
-  });
-
-  if (!response.ok) {
-    throw new Error(`PID stop list HTTP ${response.status}`);
+async function loadPidStops(coverageMode: CoverageMode): Promise<PidStopsLoadResult> {
+  const cached = pidStopsCacheByCoverage.get(coverageMode);
+  if (cached) {
+    return {
+      stops: cached,
+      source: pidStopsSourceByCoverage.get(coverageMode) ?? PID_STOPS_URL,
+    };
   }
 
-  const payload = await response.json();
+  let payload: unknown;
+  let source = PID_STOPS_URL;
+  const localStopsPath = path.join(process.cwd(), 'data', 'PID', 'stops.json');
+
+  try {
+    const raw = await fs.readFile(localStopsPath, 'utf-8');
+    payload = JSON.parse(raw);
+    source = localStopsPath;
+  } catch {
+    const response = await fetch(PID_STOPS_URL, {
+      method: 'GET',
+      headers: {
+        'User-Agent': USER_AGENT,
+        Accept: 'application/json',
+      },
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      throw new Error(`PID stop list HTTP ${response.status}`);
+    }
+
+    payload = await response.json();
+  }
+
   const candidates = extractPidStopCandidates(payload);
 
   const stops: PidStop[] = [];
@@ -367,28 +440,35 @@ async function loadPidStops(): Promise<PidStop[]> {
     const lat = toNumber(c.avgLat ?? c.lat ?? c.latitude);
     const lon = toNumber(c.avgLon ?? c.lon ?? c.longitude);
     if (!name || lat === null || lon === null) continue;
-    if (!isLikelyPrahaStop(lat, lon)) continue;
+
+    const districtCode = typeof c.districtCode === 'string' ? c.districtCode : undefined;
+    const municipality = typeof c.municipality === 'string' ? c.municipality : undefined;
+    if (!shouldIncludeStop({ lat, lon, districtCode, municipality }, coverageMode)) continue;
 
     const lineLabels = Array.from(extractLineLabelsFromObject(c)).sort((a, b) => a.localeCompare(b));
 
     stops.push({
       name,
-      municipality: typeof c.municipality === 'string' ? c.municipality : undefined,
-      districtCode: typeof c.districtCode === 'string' ? c.districtCode : undefined,
+      municipality,
+      districtCode,
       lat,
       lon,
       lineLabels,
     });
   }
 
-  pidStopsCache = deduplicateStops(stops);
-  pidStopTokenIndexCache = null;
-  pidLineToStopIndicesCache = null;
-  return pidStopsCache;
+  const deduplicated = deduplicateStops(stops);
+  pidStopsCacheByCoverage.set(coverageMode, deduplicated);
+  pidStopsSourceByCoverage.set(coverageMode, source);
+  pidStopTokenIndexCacheByCoverage.delete(coverageMode);
+  pidLineToStopIndicesCacheByCoverage.delete(coverageMode);
+  pidCoverageSummaryCacheByCoverage.delete(coverageMode);
+  return { stops: deduplicated, source };
 }
 
-function getPidStopTokenIndex(stops: PidStop[]): Map<string, number[]> {
-  if (pidStopTokenIndexCache) return pidStopTokenIndexCache;
+function getPidStopTokenIndex(stops: PidStop[], coverageMode: CoverageMode): Map<string, number[]> {
+  const cached = pidStopTokenIndexCacheByCoverage.get(coverageMode);
+  if (cached) return cached;
 
   const index = new Map<string, number[]>();
   for (let i = 0; i < stops.length; i += 1) {
@@ -399,12 +479,13 @@ function getPidStopTokenIndex(stops: PidStop[]): Map<string, number[]> {
     }
   }
 
-  pidStopTokenIndexCache = index;
+  pidStopTokenIndexCacheByCoverage.set(coverageMode, index);
   return index;
 }
 
-function getPidLineToStopIndices(stops: PidStop[]): Map<string, number[]> {
-  if (pidLineToStopIndicesCache) return pidLineToStopIndicesCache;
+function getPidLineToStopIndices(stops: PidStop[], coverageMode: CoverageMode): Map<string, number[]> {
+  const cached = pidLineToStopIndicesCacheByCoverage.get(coverageMode);
+  if (cached) return cached;
 
   const map = new Map<string, number[]>();
   for (let i = 0; i < stops.length; i += 1) {
@@ -414,8 +495,51 @@ function getPidLineToStopIndices(stops: PidStop[]): Map<string, number[]> {
     }
   }
 
-  pidLineToStopIndicesCache = map;
+  pidLineToStopIndicesCacheByCoverage.set(coverageMode, map);
   return map;
+}
+
+function getPidCoverageSummary(stops: PidStop[], coverageMode: CoverageMode): PidCoverageSummary {
+  const cached = pidCoverageSummaryCacheByCoverage.get(coverageMode);
+  if (cached) return cached;
+
+  const municipalityCountMap = new Map<string, { name: string; count: number }>();
+  const districtCodeSet = new Set<string>();
+
+  for (const stop of stops) {
+    const municipality = (stop.municipality ?? '').trim();
+    if (municipality) {
+      const key = normalizeText(municipality);
+      const existing = municipalityCountMap.get(key);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        municipalityCountMap.set(key, { name: municipality, count: 1 });
+      }
+    }
+
+    const districtCode = (stop.districtCode ?? '').trim().toUpperCase();
+    if (districtCode) districtCodeSet.add(districtCode);
+  }
+
+  const municipalitiesTop = Array.from(municipalityCountMap.values())
+    .sort((a, b) => {
+      if (a.count !== b.count) return b.count - a.count;
+      return a.name.localeCompare(b.name, 'cs');
+    })
+    .slice(0, 25)
+    .map(item => ({ name: item.name, stops: item.count }));
+
+  const summary: PidCoverageSummary = {
+    coverageMode,
+    stopCount: stops.length,
+    municipalityCount: municipalityCountMap.size,
+    districtCodeCount: districtCodeSet.size,
+    municipalitiesTop,
+  };
+
+  pidCoverageSummaryCacheByCoverage.set(coverageMode, summary);
+  return summary;
 }
 
 function pickStreet(address: string, ulice?: string): string {
@@ -801,11 +925,12 @@ export async function POST(request: NextRequest) {
   const address = (payload.address ?? '').trim();
   const maxMinutesRaw = Number(payload.maxMinutes ?? DEFAULT_MAX_MINUTES);
   const pageRaw = Number(payload.page ?? 1);
+  const coverageMode = parseCoverageMode(payload.coverageMode);
   const maxMinutes = Number.isFinite(maxMinutesRaw) ? Math.max(5, Math.min(180, maxMinutesRaw)) : DEFAULT_MAX_MINUTES;
   const requestedPage = Number.isFinite(pageRaw) ? Math.max(1, Math.floor(pageRaw)) : 1;
 
   if (!address) {
-    return NextResponse.json({ error: 'Zadejte výchozí adresu v Praze.' }, { status: 400 });
+    return NextResponse.json({ error: 'Zadejte výchozí adresu.' }, { status: 400 });
   }
 
   try {
@@ -813,10 +938,12 @@ export async function POST(request: NextRequest) {
     const timings: Record<string, number> = {};
 
     let phaseStartedAt = Date.now();
-    const [schools, stops] = await Promise.all([
+    const [schools, pidStopsResult] = await Promise.all([
       loadPrahaSchools(),
-      loadPidStops(),
+      loadPidStops(coverageMode),
     ]);
+    const stops = pidStopsResult.stops;
+    const pidStopsSource = pidStopsResult.source;
     timings.loadDataMs = Date.now() - phaseStartedAt;
 
     if (schools.length === 0) {
@@ -827,7 +954,13 @@ export async function POST(request: NextRequest) {
     }
 
     phaseStartedAt = Date.now();
-    const originGeocode = await geocodeAddress(`${address}, Praha, Česko`);
+    const primaryOriginQuery = coverageMode === 'pid_region'
+      ? `${address}, Česko`
+      : `${address}, Praha, Česko`;
+    let originGeocode = await geocodeAddress(primaryOriginQuery);
+    if (!originGeocode && coverageMode === 'pid_region') {
+      originGeocode = await geocodeAddress(`${address}, Praha, Česko`);
+    }
     timings.geocodeOriginMs = Date.now() - phaseStartedAt;
     if (!originGeocode) {
       return NextResponse.json({
@@ -836,8 +969,9 @@ export async function POST(request: NextRequest) {
     }
 
     const originStops = findNearestStops(originGeocode.point, stops, 6);
-    const stopTokenIndex = getPidStopTokenIndex(stops);
-    const lineToStopIndices = getPidLineToStopIndices(stops);
+    const stopTokenIndex = getPidStopTokenIndex(stops, coverageMode);
+    const lineToStopIndices = getPidLineToStopIndices(stops, coverageMode);
+    const coverageSummary = getPidCoverageSummary(stops, coverageMode);
 
     const schoolLocations = new Map<string, SchoolLocation>();
     const unresolvedSchools: PrahaSchool[] = [];
@@ -1042,6 +1176,7 @@ export async function POST(request: NextRequest) {
         address,
         maxMinutes,
         page,
+        coverageMode,
       },
       origin: {
         lat: originGeocode.point.lat,
@@ -1071,17 +1206,18 @@ export async function POST(request: NextRequest) {
         geocodedThisRequest,
         geocodeCandidates: geocodeCandidates.length,
         geocodeConcurrency: GEOCODE_CONCURRENCY,
-        model: 'pid-stop-based-estimate-v1',
+        coverage: coverageSummary,
+        model: 'pid-opendata-stop-estimate-v2',
         timingsMs: timings,
         notes: [
-          'Výpočet používá PID stop list (open data) + geokódování adres a odhad jízdní doby mezi zastávkami.',
+          'Výpočet používá oficiální PID OpenData stop list + geokódování adres a odhad jízdní doby mezi zastávkami.',
           'Identifikace linek MHD je odhad z linek dostupných u výchozí a cílové zastávky (případně 1 přestup).',
           'Nejde o přesný jízdní řád. Pro produkční přesnost doporučujeme GTFS Connection Scan / RAPTOR precompute.',
         ],
       },
       sources: {
-        pidStops: 'https://data.pid.cz/stops/json/stops.json',
-        pidOpenDataInfo: 'https://pid.cz/en/opendata/',
+        pidStops: pidStopsSource,
+        pidOpenDataInfo: 'https://pid.cz/o-systemu/opendata/',
       },
     });
   } catch (error) {

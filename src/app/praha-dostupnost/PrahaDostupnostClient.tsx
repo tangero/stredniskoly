@@ -36,6 +36,8 @@ type SearchResponse = {
   input: {
     address: string;
     maxMinutes: number;
+    page: number;
+    coverageMode: 'praha' | 'pid_region';
   };
   origin: {
     lat: number;
@@ -70,6 +72,16 @@ type SearchResponse = {
     geocodedThisRequest: number;
     geocodeCandidates?: number;
     geocodeConcurrency?: number;
+    coverage?: {
+      coverageMode: 'praha' | 'pid_region';
+      stopCount: number;
+      municipalityCount: number;
+      districtCodeCount: number;
+      municipalitiesTop: Array<{
+        name: string;
+        stops: number;
+      }>;
+    };
     model: string;
     timingsMs?: Record<string, number>;
     notes: string[];
@@ -87,10 +99,14 @@ function sourceLabel(source: ReachableSchool['source']): string {
   return 'Odhad dle městské části';
 }
 
+function coverageLabel(mode: 'praha' | 'pid_region'): string {
+  return mode === 'praha' ? 'Pouze Praha' : 'Praha + Středočeský kraj';
+}
+
 function loadingStage(seconds: number): string {
   if (seconds < 2) return 'Načítám zastávky PID a data škol...';
   if (seconds < 5) return 'Geokóduji zadanou adresu a páruji školy k zastávkám...';
-  if (seconds < 10) return 'Počítám odhad dojezdu pro všechny školy v Praze...';
+  if (seconds < 10) return 'Počítám odhad dojezdu pro všechny školy...';
   return 'Finalizuji seřazený seznam škol podle času cesty...';
 }
 
@@ -135,7 +151,13 @@ function admissionRowClass(band: ReachableSchool['admissionBand']): string {
 export function PrahaDostupnostClient() {
   const [address, setAddress] = useState('');
   const [maxMinutes, setMaxMinutes] = useState(30);
-  const [lastSearch, setLastSearch] = useState<{ address: string; maxMinutes: number } | null>(null);
+  const [coverageMode, setCoverageMode] = useState<'praha' | 'pid_region'>('pid_region');
+  const [addressSuggestions, setAddressSuggestions] = useState<Array<{ label: string; value: string }>>([]);
+  const [lastSearch, setLastSearch] = useState<{
+    address: string;
+    maxMinutes: number;
+    coverageMode: 'praha' | 'pid_region';
+  } | null>(null);
   const [loading, setLoading] = useState(false);
   const [loadingSeconds, setLoadingSeconds] = useState(0);
   const [error, setError] = useState<string | null>(null);
@@ -174,6 +196,37 @@ export function PrahaDostupnostClient() {
     return () => window.clearInterval(interval);
   }, [loading]);
 
+  useEffect(() => {
+    const query = address.trim();
+    if (query.length < 2) {
+      setAddressSuggestions([]);
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      try {
+        const params = new URLSearchParams();
+        params.set('q', query);
+        params.set('limit', '8');
+        params.set('coverageMode', coverageMode);
+        const response = await fetch(`/api/praha-dostupnost/address-suggest?${params.toString()}`, {
+          signal: controller.signal,
+        });
+        if (!response.ok) return;
+        const payload = await response.json() as { suggestions?: Array<{ label: string; value: string }> };
+        setAddressSuggestions(Array.isArray(payload.suggestions) ? payload.suggestions : []);
+      } catch {
+        // Ignore suggest errors, main search keeps working.
+      }
+    }, 220);
+
+    return () => {
+      controller.abort();
+      window.clearTimeout(timer);
+    };
+  }, [address, coverageMode]);
+
   function cancelLoading() {
     abortRef.current?.abort();
     abortRef.current = null;
@@ -189,6 +242,7 @@ export function PrahaDostupnostClient() {
     address: string;
     maxMinutes: number;
     page: number;
+    coverageMode: 'praha' | 'pid_region';
     clearSelection: boolean;
   }) {
     abortRef.current?.abort();
@@ -213,6 +267,7 @@ export function PrahaDostupnostClient() {
           address: params.address,
           maxMinutes: params.maxMinutes,
           page: params.page,
+          coverageMode: params.coverageMode,
         }),
         signal: abortRef.current.signal,
       });
@@ -226,7 +281,11 @@ export function PrahaDostupnostClient() {
       }
 
       setResult(payload as SearchResponse);
-      setLastSearch({ address: params.address, maxMinutes: params.maxMinutes });
+      setLastSearch({
+        address: params.address,
+        maxMinutes: params.maxMinutes,
+        coverageMode: params.coverageMode,
+      });
       if (params.clearSelection) setSelectedSimulatorIds([]);
     } catch (err) {
       if (err instanceof Error && err.name === 'AbortError') {
@@ -255,7 +314,7 @@ export function PrahaDostupnostClient() {
 
     const normalizedAddress = address.trim();
     if (!normalizedAddress) {
-      setError('Zadejte prosím výchozí adresu v Praze.');
+      setError('Zadejte prosím výchozí adresu.');
       return;
     }
 
@@ -263,6 +322,7 @@ export function PrahaDostupnostClient() {
       address: normalizedAddress,
       maxMinutes,
       page: 1,
+      coverageMode,
       clearSelection: true,
     });
   }
@@ -304,6 +364,7 @@ export function PrahaDostupnostClient() {
       address: lastSearch.address,
       maxMinutes: lastSearch.maxMinutes,
       page,
+      coverageMode: lastSearch.coverageMode,
       clearSelection: false,
     });
   }
@@ -312,20 +373,26 @@ export function PrahaDostupnostClient() {
     <div className="space-y-6">
       <form onSubmit={onSubmit} className="bg-white rounded-2xl shadow-sm border p-5 md:p-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <label className="md:col-span-7">
+          <label className="md:col-span-6">
             <span className="block text-sm font-medium text-slate-700 mb-1">
-              Výchozí adresa v Praze
+              Výchozí adresa
             </span>
             <input
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              placeholder="Např. Vinohradská 179, Praha 3"
+              list="praha-dostupnost-addresses"
+              placeholder={coverageMode === 'praha' ? 'Např. Vinohradská 179, Praha 3' : 'Např. Bellušova 1861, Praha nebo Benešov'}
               className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
             />
+            <datalist id="praha-dostupnost-addresses">
+              {addressSuggestions.map((item) => (
+                <option key={`${item.value}-${item.label}`} value={item.value} label={item.label} />
+              ))}
+            </datalist>
           </label>
 
-          <label className="md:col-span-3">
+          <label className="md:col-span-2">
             <span className="block text-sm font-medium text-slate-700 mb-1">
               Limit dojezdu (min)
             </span>
@@ -337,6 +404,20 @@ export function PrahaDostupnostClient() {
               onChange={(e) => setMaxMinutes(Number(e.target.value))}
               className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
             />
+          </label>
+
+          <label className="md:col-span-2">
+            <span className="block text-sm font-medium text-slate-700 mb-1">
+              Oblast PID dat
+            </span>
+            <select
+              value={coverageMode}
+              onChange={(e) => setCoverageMode(e.target.value as 'praha' | 'pid_region')}
+              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
+            >
+              <option value="pid_region">Praha + Středočeský kraj</option>
+              <option value="praha">Pouze Praha</option>
+            </select>
           </label>
 
           <div className="md:col-span-2 flex items-end">
@@ -391,13 +472,16 @@ export function PrahaDostupnostClient() {
                   Nalezeno <strong>{totalFound}</strong> škol v dojezdovém limitu.
                   Zobrazeno {result.reachableSchools.length} škol (strana {result.pagination.page} z {result.pagination.totalPages}).
                 </p>
+                <p className="text-slate-600 text-xs mt-1">
+                  Režim pokrytí: <strong>{coverageLabel(result.input.coverageMode)}</strong>
+                </p>
               </div>
               <div className="text-sm text-slate-600">
                 Pokrytí adres: <strong>{qualityPct}%</strong>
               </div>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-4 text-sm">
+            <div className="grid md:grid-cols-4 gap-4 text-sm">
               <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
                 <p className="font-medium text-slate-700">Vstupní adresa</p>
                 <p className="text-slate-600 mt-1 break-words">
@@ -417,6 +501,18 @@ export function PrahaDostupnostClient() {
               <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
                 <p className="font-medium text-slate-700">Model výpočtu</p>
                 <p className="text-slate-600 mt-1">{result.diagnostics.model}</p>
+              </div>
+              <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
+                <p className="font-medium text-slate-700">Pokrytí PID dat</p>
+                {result.diagnostics.coverage ? (
+                  <p className="text-slate-600 mt-1">
+                    zastávky: {result.diagnostics.coverage.stopCount}
+                    <br />
+                    obce: {result.diagnostics.coverage.municipalityCount}
+                  </p>
+                ) : (
+                  <p className="text-slate-600 mt-1">bez přehledu pokrytí</p>
+                )}
               </div>
             </div>
           </div>
@@ -647,12 +743,27 @@ export function PrahaDostupnostClient() {
                   <li key={note}>{note}</li>
                 ))}
               </ul>
-              <p>
-                Zdroj PID stop list:{' '}
-                <a href={result.sources.pidStops} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
-                  {result.sources.pidStops}
-                </a>
-              </p>
+              {result.diagnostics.coverage && result.diagnostics.coverage.municipalitiesTop.length > 0 && (
+                <div>
+                  <p className="font-medium text-slate-700 mb-1">Nejvíce zastávek v obcích (TOP 10)</p>
+                  <p className="text-slate-600">
+                    {result.diagnostics.coverage.municipalitiesTop
+                      .slice(0, 10)
+                      .map((item) => `${item.name} (${item.stops})`)
+                      .join(', ')}
+                  </p>
+                </div>
+              )}
+              {result.sources.pidStops.startsWith('http') ? (
+                <p>
+                  Zdroj PID stop list:{' '}
+                  <a href={result.sources.pidStops} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
+                    {result.sources.pidStops}
+                  </a>
+                </p>
+              ) : (
+                <p>Zdroj PID stop list: <span className="font-mono">{result.sources.pidStops}</span> (lokální soubor)</p>
+              )}
             </div>
           </details>
         </section>

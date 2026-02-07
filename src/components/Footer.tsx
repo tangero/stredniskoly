@@ -35,6 +35,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/praha-dostupnost" className="text-slate-400 hover:text-white transition-colors">
+                  Školy dostupné MHD
+                </Link>
+              </li>
+              <li>
                 <Link href="/regiony" className="text-slate-400 hover:text-white transition-colors">
                   Přehled regionů
                 </Link>
