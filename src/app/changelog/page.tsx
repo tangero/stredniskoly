@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Changelog - Historie verzí',
-  description: 'Historie všech změn a verzí aplikace Přijímačky na SŠ.',
+  description: 'Historie všech změn a verzí aplikace Přijímačky na střední školy.',
 };
 
 interface ChangelogEntry {
@@ -19,6 +19,27 @@ interface ChangelogEntry {
 }
 
 const changelog: ChangelogEntry[] = [
+  {
+    version: '2.0.0',
+    date: '7. 2. 2026',
+    title: 'Transfer-aware Dijkstra v2 a rebranding',
+    changes: [
+      { type: 'new', text: 'Transfer-aware Dijkstra — realistické přepravní časy s přestupními penalizacemi a čekáním na spoj (headway/2)' },
+      { type: 'new', text: 'Zobrazení použitých linek (autobus, vlak, metro) u každé dostupné školy' },
+      { type: 'new', text: 'Rozpad času na jízdu, čekání a chůzi u každé trasy' },
+      { type: 'new', text: 'Počet přestupů jako badge u každé školy' },
+      { type: 'new', text: 'Filtr podle typu školy (GY4, GY8, LYC, SOŠ, SOU...)' },
+      { type: 'new', text: 'Kompletní seznam oborů/zaměření u každé školy místo jednoho typu' },
+      { type: 'new', text: 'Adresa školy v přehledu dostupnosti' },
+      { type: 'new', text: 'Panel „Jak to funguje" s návodem a vysvětlením výpočtu' },
+      { type: 'new', text: 'Nová SVG favicon — motiv graduační čepice' },
+      { type: 'improve', text: 'Přejmenování serveru na „Přijímačky na střední školy"' },
+      { type: 'improve', text: 'Menu: „Dojezdovost ČR" → „Do jaké školy dojedete MHD"' },
+      { type: 'improve', text: 'Odebrána položka „Školy dostupné MHD" (nahrazena celostátní dojezdovostí)' },
+      { type: 'improve', text: 'Trvalý redirect /praha-dostupnost → /dostupnost' },
+      { type: 'improve', text: 'Build skript pro graf z GTFS — 35 575 zastávek, 1 431 linek, headway tabulka' },
+    ],
+  },
   {
     version: '1.5.2',
     date: '7. 2. 2026',

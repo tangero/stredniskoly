@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Graduation cap (mortarboard) -->
+  <polygon points="16,4 2,12 16,20 30,12" fill="#6366f1"/>
+  <polygon points="16,20 2,12 2,14 16,22 30,14 30,12" fill="#4f46e5"/>
+  <!-- Tassel -->
+  <line x1="26" y1="12" x2="26" y2="22" stroke="#eab308" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="26" cy="23" r="1.5" fill="#eab308"/>
+  <!-- Board under cap -->
+  <path d="M8,15 L8,23 Q16,28 24,23 L24,15 L16,21 Z" fill="#818cf8"/>
+</svg>

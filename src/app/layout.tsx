@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://stredniskoly.vercel.app'),
   title: {
     default: 'Simulátor přijímacích zkoušek na SŠ | Zjisti své šance',
-    template: '%s | Přijímačky na SŠ',
+    template: '%s | Přijímačky na střední školy',
   },
   description:
     'Zjistěte své šance na přijetí na střední školu. Simulátor využívá reálná data z jednotných přijímacích zkoušek 2024-2025 pro celou ČR.',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     canonical: 'https://stredniskoly.vercel.app',
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/icon.svg',
     apple: '/apple-touch-icon.png',
   },
 };

@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       openGraph: {
-        title: `${title} | Přijímačky na SŠ`,
+        title: `${title} | Přijímačky na střední školy`,
         description,
         type: 'article',
         url: `/skola/${slug}`,
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     openGraph: {
-      title: `${title} | Přijímačky na SŠ`,
+      title: `${title} | Přijímačky na střední školy`,
       description,
       type: 'article',
       url: `/skola/${slug}`,

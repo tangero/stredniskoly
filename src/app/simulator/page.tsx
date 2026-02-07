@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Simulátor přijímacích zkoušek',
   description: 'Zadejte své body z českého jazyka a matematiky a zjistěte, na které střední školy máte šanci se dostat.',
   openGraph: {
-    title: 'Simulátor přijímacích zkoušek | Přijímačky na SŠ',
+    title: 'Simulátor přijímacích zkoušek | Přijímačky na střední školy',
     description: 'Zjistěte své šance na přijetí na střední školu.',
   },
 };

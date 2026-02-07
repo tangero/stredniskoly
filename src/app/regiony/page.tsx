@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Přehled regionů',
   description: 'Přehled středních škol podle krajů ČR. Statistiky přijímacích zkoušek pro jednotlivé regiony.',
   openGraph: {
-    title: 'Přehled regionů | Přijímačky na SŠ',
+    title: 'Přehled regionů | Přijímačky na střední školy',
     description: 'Přehled středních škol podle krajů ČR.',
   },
 };

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Analýza škol',
   description: 'Prohlédněte si detailní analýzu všech středních škol v ČR. Statistiky přijímacích zkoušek, index poptávky, obtížnost přijetí.',
   openGraph: {
-    title: 'Analýza škol | Přijímačky na SŠ',
+    title: 'Analýza škol | Přijímačky na střední školy',
     description: 'Detailní analýza všech středních škol v ČR.',
   },
 };

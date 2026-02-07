@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Najděte školy dostupné do zadané doby cesty MHD v oblasti Prahy a Středočeského kraje nad PID OpenData.",
   openGraph: {
-    title: "Dostupnost škol v Praze a Středočeském kraji | Přijímačky na SŠ",
+    title: "Dostupnost škol v Praze a Středočeském kraji | Přijímačky na střední školy",
     description:
       "Vyhledejte školy dostupné do časového limitu podle adresy v oblasti Prahy a Středočeského kraje (PID OpenData).",
   },

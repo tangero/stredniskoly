@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${kraj.nazev} kraj - Přehled škol`,
     description: `Přehled středních škol v ${kraj.nazev} kraji. ${kraj.count} škol a oborů, statistiky přijímacích zkoušek.`,
     openGraph: {
-      title: `${kraj.nazev} kraj | Přijímačky na SŠ`,
+      title: `${kraj.nazev} kraj | Přijímačky na střední školy`,
       description: `Přehled ${kraj.count} středních škol v ${kraj.nazev} kraji.`,
     },
   };

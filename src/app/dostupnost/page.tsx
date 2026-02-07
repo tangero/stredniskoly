@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Najděte střední školy dostupné veřejnou dopravou z libovolné zastávky v ČR. Transfer-aware Dijkstra routing na celostátním GTFS grafu.",
   openGraph: {
-    title: "Dopravní dostupnost škol v celé ČR | Přijímačky na SŠ",
+    title: "Dopravní dostupnost škol v celé ČR | Přijímačky na střední školy",
     description:
       "Vyhledejte školy dostupné do časového limitu z libovolné zastávky v České republice. Zahrnuje čekání na spoj, přestupy a linky.",
   },

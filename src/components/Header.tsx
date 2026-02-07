@@ -9,8 +9,7 @@ export function Header() {
   const navLinks = [
     { href: '/simulator', label: 'Simulátor' },
     { href: '/skoly', label: 'Analýza škol' },
-    { href: '/praha-dostupnost', label: 'Školy dostupné MHD' },
-    { href: '/dostupnost', label: 'Dojezdovost ČR' },
+    { href: '/dostupnost', label: 'Dojezdovost', labelFull: 'Do jaké školy dojedete MHD' },
     { href: '/regiony', label: 'Regiony' },
     { href: '/jak-vybrat-skolu', label: 'Průvodce', labelFull: 'Jak vybrat a uspět' },
     { href: '/jak-funguje-prijimani', label: 'Jak to funguje?' },
@@ -21,7 +20,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <Link href="/" className="text-xl font-bold hover:opacity-90 transition-opacity">
-            Přijímačky na SŠ
+            Přijímačky na střední školy
           </Link>
 
           {/* Desktop navigace */}
