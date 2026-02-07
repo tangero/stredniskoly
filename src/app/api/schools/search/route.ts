@@ -48,6 +48,14 @@ function normalizeZamereni(zamereni?: string): string | undefined {
   return value.length > 0 ? value : undefined;
 }
 
+function normalizeMinBodyScore(minBody?: number): number {
+  if (typeof minBody !== 'number' || !Number.isFinite(minBody) || minBody <= 0) {
+    return 0;
+  }
+  // Historicky jsou minima v rozsahu 0-200 (součet ČJ+MA), v UI pracujeme se škálou 0-100.
+  return minBody > 100 ? Math.round(minBody / 2) : Math.round(minBody);
+}
+
 function deduplicateById(schools: School[]): School[] {
   const byId = new Map<string, School>();
   for (const school of schools) {
@@ -183,7 +191,7 @@ export async function GET(request: NextRequest) {
           typ: s.typ,
           delka_studia: s.delka_studia,
           slug: getSchoolSlug(s, slugContext),
-          min_body_2025: s.min_body || 0,
+          min_body_2025: normalizeMinBodyScore(s.min_body),
           jpz_min: s.jpz_min_actual || s.min_body || 0,
           index_poptavky_2025: s.index_poptavky || 0,
         }));
@@ -252,7 +260,7 @@ export async function GET(request: NextRequest) {
         typ: s.typ,
         delka_studia: s.delka_studia,
         slug: getSchoolSlug(s, slugContext),
-        min_body_2025: s.min_body || 0,
+        min_body_2025: normalizeMinBodyScore(s.min_body),
         jpz_min: s.jpz_min_actual || s.min_body || 0,
         index_poptavky_2025: s.index_poptavky || 0,
       }))

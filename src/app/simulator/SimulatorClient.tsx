@@ -116,6 +116,13 @@ function createSlug(name: string, obor?: string, zamereni?: string, delkaStudia?
   return slug;
 }
 
+function getAdmissionThreshold(school: Pick<School, 'min_body_2025' | 'jpz_min'>): number {
+  if (Number.isFinite(school.min_body_2025) && school.min_body_2025 > 0) {
+    return school.min_body_2025;
+  }
+  return school.jpz_min;
+}
+
 export function SimulatorClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -367,7 +374,7 @@ export function SimulatorClient() {
     const rejected: School[] = [];
 
     recommendedSchools.forEach(school => {
-      const status = getStatus(school.jpz_min);
+      const status = getStatus(getAdmissionThreshold(school));
       if (status.status === 'accepted') accepted.push(school);
       else if (status.status === 'borderline') borderline.push(school);
       else rejected.push(school);
@@ -386,7 +393,7 @@ export function SimulatorClient() {
   const stats = useMemo(() => {
     let accepted = 0, borderline = 0, rejected = 0;
     selectedSchoolsList.forEach(school => {
-      const status = getStatus(school.jpz_min);
+      const status = getStatus(getAdmissionThreshold(school));
       if (status.status === 'accepted') accepted++;
       else if (status.status === 'borderline') borderline++;
       else rejected++;
@@ -863,8 +870,9 @@ export function SimulatorClient() {
                   <h2 className="font-semibold mb-3 text-sm text-slate-600">Vybrané obory</h2>
                   <div className="space-y-2 max-h-[50vh] overflow-y-auto">
                     {selectedSchoolsList.map(school => {
-                      const status = getStatus(school.jpz_min);
-                      const diff = totalScore - school.jpz_min;
+                      const admissionMin = getAdmissionThreshold(school);
+                      const status = getStatus(admissionMin);
+                      const diff = totalScore - admissionMin;
                       const slug = school.slug || `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor, school.zamereni, school.delka_studia)}`;
                       const colors: Record<string, string> = {
                         green: 'border-green-500 bg-green-50',
@@ -1027,7 +1035,8 @@ interface SchoolCardProps {
 }
 
 function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolCardProps) {
-  const diff = yourScore - school.jpz_min;
+  const admissionMin = getAdmissionThreshold(school);
+  const diff = yourScore - admissionMin;
   const slug = school.slug || `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor, school.zamereni, school.delka_studia)}`;
 
   const colors = {
@@ -1107,7 +1116,7 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
         <div className="flex-1 min-w-0"></div>
 
         {/* Body */}
-        <span className="text-xs text-slate-400 shrink-0">min {school.jpz_min}</span>
+        <span className="text-xs text-slate-400 shrink-0">min {admissionMin}</span>
         <span className={`font-bold shrink-0 ${c.diff}`}>
           {diff > 0 ? '+' : ''}{diff}
         </span>
@@ -1141,7 +1150,7 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
             </Link>
           </div>
           <div className="flex items-center gap-1.5 shrink-0">
-            <span className="text-xs text-slate-400">min {school.jpz_min}</span>
+            <span className="text-xs text-slate-400">min {admissionMin}</span>
             <span className={`font-bold text-sm ${c.diff}`}>
               {diff > 0 ? '+' : ''}{diff}
             </span>
@@ -1201,8 +1210,9 @@ function SortableSchoolCard({
     opacity: isDragging ? 0.5 : 1,
   };
 
-  const status = getStatus(school.jpz_min);
-  const diff = totalScore - school.jpz_min;
+  const admissionMin = getAdmissionThreshold(school);
+  const status = getStatus(admissionMin);
+  const diff = totalScore - admissionMin;
   const slug = school.slug || `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor, school.zamereni, school.delka_studia)}`;
 
   const statusColors = {
@@ -1454,7 +1464,7 @@ function SortableSchoolCard({
           <div className="space-y-3 text-sm">
             <div className="flex justify-between">
               <span className="text-white/70">Min. skóre k přijetí:</span>
-              <span className="font-semibold">{school.jpz_min} bodů</span>
+              <span className="font-semibold">{admissionMin} bodů</span>
             </div>
             <div className="flex justify-between">
               <span className="text-white/70">Tvoje JPZ skóre:</span>
