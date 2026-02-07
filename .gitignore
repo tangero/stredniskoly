@@ -42,3 +42,4 @@ next-env.d.ts
 /data/*
 !/data/transit_graph.json
 !/data/school_locations.json
+/.playwright-mcp

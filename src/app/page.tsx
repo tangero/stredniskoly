@@ -19,11 +19,11 @@ export default async function HomePage() {
       <section className="bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-600 text-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            Najdi si svou střední školu a zjisti své šance
+            Najdi si svou střední školu <br /> a zjisti své šance
           </h1>
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-            Simulátor využívá reálná data z jednotných přijímacích zkoušek.
-            Zadej své body a zjisti, kam máš největší šanci.
+            Přehledná data všech středních škol a maturitních oborů v České republice. Simulátor, kam se dostanete podle výsledků zkoušek nanečisto využívá reálná data z jednotných přijímacích zkoušek. Autor: <a href="https://cs.wikipedia.org/wiki/Patrick_Zandl">Patrick Zandl</a>, kvůli svým dětem.
+
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -51,6 +51,22 @@ export default async function HomePage() {
                 Jak vybrat školu a uspět u přijímaček – praktický průvodce
               </span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
+
+            </Link>
+          </div>
+
+          {/* Výrazný odkaz na dopravní analýzu */}
+          <div className="mt-8 pt-6 border-t border-white/20">
+            <Link
+              href="/dostupnost"
+              className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors group"
+            >
+              <span className="text-xl">🚌</span>
+              <span className="underline underline-offset-2 group-hover:no-underline">
+                Do jaké školy ve vašem okolí se dostanete MHD za rozumnou dobu?
+              </span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+
             </Link>
           </div>
 
