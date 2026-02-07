@@ -28,8 +28,11 @@ type PrahaSchool = {
   obory: string[];
   minBodyMin: number | null;
   indexPoptavkyAvg: number | null;
+  difficultyScore: number | null;
   simulatorSchoolId: string | null;
 };
+
+type SchoolDifficultyBand = 'very_high' | 'high' | 'medium' | 'low' | 'very_low' | 'unknown';
 
 type SchoolLocationSource = 'cache' | 'street_stop_match' | 'geocoded' | 'district_centroid';
 
@@ -70,6 +73,31 @@ type PidStopsLoadResult = {
   source: string;
 };
 
+type DifficultyThresholds = {
+  veryLowMax: number;
+  lowMax: number;
+  mediumMax: number;
+  highMax: number;
+};
+
+type DepartureProfileSnapshot = {
+  profile?: string;
+  sourceDate?: string;
+  windowStart?: string;
+  windowEnd?: string;
+  generatedAt?: string;
+  lineHeadways?: Record<string, { departures?: number; headwayMinutes?: number }>;
+};
+
+type DepartureProfileInfo = {
+  profile: string;
+  sourceDate: string;
+  windowStart: string;
+  windowEnd: string;
+  source: string;
+  loaded: boolean;
+};
+
 const PID_STOPS_URL = 'https://data.pid.cz/stops/json/stops.json';
 const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
 const USER_AGENT = 'stredniskoly-praha-dostupnost/0.1';
@@ -80,6 +108,12 @@ const MAX_GEOCODES_PER_REQUEST = 24;
 const GEOCODE_TIMEOUT_MS = 2500;
 const GEOCODE_CONCURRENCY = 6;
 const PAGE_SIZE = 50;
+const DEFAULT_WAIT_MINUTES = 4;
+const TRANSFER_PENALTY_MINUTES = 3;
+const DIRECT_PENALTY_MINUTES = 1;
+const UNKNOWN_PENALTY_MINUTES = 2;
+const WALK_RECOMMEND_MAX_AIR_KM = 1.0;
+const DEPARTURE_PROFILE_PATH = path.join(process.cwd(), 'public', 'pid_departure_profile_monday_07_08.json');
 
 const PRAHA_BBOX = {
   minLat: 49.95,
@@ -97,6 +131,9 @@ const PID_REGION_BBOX = {
 };
 
 let prahaSchoolsCache: PrahaSchool[] | null = null;
+let difficultyThresholdsCache: DifficultyThresholds | null = null;
+let departureLineHeadwayCache: Map<string, number> | null = null;
+let departureProfileInfoCache: DepartureProfileInfo | null = null;
 const pidStopsCacheByCoverage = new Map<CoverageMode, PidStop[]>();
 const pidStopsSourceByCoverage = new Map<CoverageMode, string>();
 const pidStopTokenIndexCacheByCoverage = new Map<CoverageMode, Map<string, number[]>>();
@@ -202,6 +239,37 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
   const parsed = JSON.parse(raw) as Record<string, unknown>;
   const yearData = pickYearData(parsed);
 
+  const redizoDifficultyMap = new Map<string, number>();
+  try {
+    const analysisPath = path.join(process.cwd(), 'public', 'school_analysis.json');
+    const analysisRaw = await fs.readFile(analysisPath, 'utf-8');
+    const analysisParsed = JSON.parse(analysisRaw) as Record<string, unknown>;
+    const diffAgg = new Map<string, { sum: number; count: number }>();
+
+    for (const entry of Object.values(analysisParsed)) {
+      if (!entry || typeof entry !== 'object') continue;
+      const row = entry as Record<string, unknown>;
+      const redizo = String(row.redizo ?? '').trim();
+      const obtiznost = toNumber(row.obtiznost);
+      if (!redizo || obtiznost === null) continue;
+
+      if (!diffAgg.has(redizo)) {
+        diffAgg.set(redizo, { sum: 0, count: 0 });
+      }
+
+      const item = diffAgg.get(redizo)!;
+      item.sum += obtiznost;
+      item.count += 1;
+    }
+
+    for (const [redizo, stats] of diffAgg.entries()) {
+      if (stats.count <= 0) continue;
+      redizoDifficultyMap.set(redizo, stats.sum / stats.count);
+    }
+  } catch {
+    // Fallback: pokud není analysis k dispozici, náročnost zůstane neznámá.
+  }
+
   const map = new Map<string, {
     redizo: string;
     nazevRaw: string;
@@ -286,8 +354,28 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
     indexPoptavkyAvg: value.indexPoptavkyCount > 0
       ? value.indexPoptavkySum / value.indexPoptavkyCount
       : null,
+    difficultyScore: redizoDifficultyMap.get(value.redizo) ?? null,
     simulatorSchoolId: value.simulatorSchoolId,
   }));
+
+  const difficultyValues = prahaSchoolsCache
+    .map(item => item.difficultyScore)
+    .filter((value): value is number => typeof value === 'number' && Number.isFinite(value))
+    .sort((a, b) => a - b);
+
+  const q20 = quantile(difficultyValues, 0.2);
+  const q40 = quantile(difficultyValues, 0.4);
+  const q60 = quantile(difficultyValues, 0.6);
+  const q80 = quantile(difficultyValues, 0.8);
+
+  difficultyThresholdsCache = (q20 !== null && q40 !== null && q60 !== null && q80 !== null)
+    ? {
+        veryLowMax: roundToOne(q20),
+        lowMax: roundToOne(q40),
+        mediumMax: roundToOne(q60),
+        highMax: roundToOne(q80),
+      }
+    : null;
 
   return prahaSchoolsCache;
 }
@@ -409,27 +497,34 @@ async function loadPidStops(coverageMode: CoverageMode): Promise<PidStopsLoadRes
 
   let payload: unknown;
   let source = PID_STOPS_URL;
+  const compactStopsPath = path.join(process.cwd(), 'public', 'pid_stops_compact.json');
   const localStopsPath = path.join(process.cwd(), 'data', 'PID', 'stops.json');
 
   try {
-    const raw = await fs.readFile(localStopsPath, 'utf-8');
+    const raw = await fs.readFile(compactStopsPath, 'utf-8');
     payload = JSON.parse(raw);
-    source = localStopsPath;
+    source = compactStopsPath;
   } catch {
-    const response = await fetch(PID_STOPS_URL, {
-      method: 'GET',
-      headers: {
-        'User-Agent': USER_AGENT,
-        Accept: 'application/json',
-      },
-      cache: 'no-store',
-    });
+    try {
+      const raw = await fs.readFile(localStopsPath, 'utf-8');
+      payload = JSON.parse(raw);
+      source = localStopsPath;
+    } catch {
+      const response = await fetch(PID_STOPS_URL, {
+        method: 'GET',
+        headers: {
+          'User-Agent': USER_AGENT,
+          Accept: 'application/json',
+        },
+        cache: 'no-store',
+      });
 
-    if (!response.ok) {
-      throw new Error(`PID stop list HTTP ${response.status}`);
+      if (!response.ok) {
+        throw new Error(`PID stop list HTTP ${response.status}`);
+      }
+
+      payload = await response.json();
     }
-
-    payload = await response.json();
   }
 
   const candidates = extractPidStopCandidates(payload);
@@ -671,14 +766,26 @@ type TransitPathInference = {
 };
 
 function findNearestStops(point: Point, stops: PidStop[], take: number): StopDistanceInfo[] {
-  return stops
-    .map((stop, stopIndex) => ({
-      stop,
-      stopIndex,
-      distanceKm: haversineKm(point, { lat: stop.lat, lon: stop.lon }),
-    }))
-    .sort((a, b) => a.distanceKm - b.distanceKm)
-    .slice(0, take);
+  const limit = Math.max(1, take);
+  const best: StopDistanceInfo[] = [];
+
+  for (let i = 0; i < stops.length; i += 1) {
+    const stop = stops[i];
+    const distanceKm = haversineKm(point, { lat: stop.lat, lon: stop.lon });
+    const candidate: StopDistanceInfo = { stop, stopIndex: i, distanceKm };
+
+    if (best.length < limit) {
+      best.push(candidate);
+      best.sort((a, b) => a.distanceKm - b.distanceKm);
+      continue;
+    }
+
+    if (distanceKm >= best[best.length - 1].distanceKm) continue;
+    best[best.length - 1] = candidate;
+    best.sort((a, b) => a.distanceKm - b.distanceKm);
+  }
+
+  return best;
 }
 
 function inferTransitPath(
@@ -779,6 +886,7 @@ function estimateTripMinutes(params: {
   schoolStop: StopDistanceInfo;
   allStops: PidStop[];
   lineToStopIndices: Map<string, number[]>;
+  departureLineHeadways: Map<string, number>;
 }): {
   totalMinutes: number;
   originStop: PidStop;
@@ -792,7 +900,6 @@ function estimateTripMinutes(params: {
 } {
   const WALK_KMPH = 4.8;
   const TRANSIT_KMPH = 22;
-  const WAIT_BUFFER = 4;
 
   const schoolWalkKm = haversineKm(params.schoolPoint, {
     lat: params.schoolStop.stop.lat,
@@ -815,10 +922,10 @@ function estimateTripMinutes(params: {
       { lat: params.schoolStop.stop.lat, lon: params.schoolStop.stop.lon },
     );
     const transitMinutes = (transitKm / TRANSIT_KMPH) * 60;
-    const genericTransferMinutes = 4 + Math.min(4, transitKm / 5);
+    const genericTransferMinutes = DEFAULT_WAIT_MINUTES + Math.min(3, transitKm / 6);
     const originWalkMinutes = (originStopInfo.distanceKm / WALK_KMPH) * 60;
 
-    const baseTotal = originWalkMinutes + transitMinutes + schoolWalkMinutes + WAIT_BUFFER + genericTransferMinutes;
+    const baseTotal = originWalkMinutes + transitMinutes + schoolWalkMinutes + genericTransferMinutes;
     if (!best || baseTotal < best.baseTotal) {
       best = {
         baseTotal,
@@ -851,14 +958,22 @@ function estimateTripMinutes(params: {
     params.lineToStopIndices,
   );
 
-  let transferMinutes = best.genericTransferMinutes;
+  const scheduleWaitMinutes = estimateScheduleWaitMinutes(
+    path.routeType,
+    path.lines,
+    params.departureLineHeadways,
+  );
+
+  let transferMinutes = scheduleWaitMinutes;
   if (path.routeType === 'direct') {
-    transferMinutes = 1.5 + Math.min(3, best.transitKm / 5);
+    transferMinutes += DIRECT_PENALTY_MINUTES;
   } else if (path.routeType === 'transfer') {
-    transferMinutes = 6 + Math.min(3, best.transitKm / 6);
+    transferMinutes += TRANSFER_PENALTY_MINUTES;
+  } else {
+    transferMinutes += UNKNOWN_PENALTY_MINUTES;
   }
 
-  const totalMinutes = best.originWalkMinutes + best.transitMinutes + schoolWalkMinutes + WAIT_BUFFER + transferMinutes;
+  const totalMinutes = best.originWalkMinutes + best.transitMinutes + schoolWalkMinutes + transferMinutes;
 
   return {
     totalMinutes: Math.round(totalMinutes),
@@ -889,6 +1004,111 @@ function quantile(sortedValues: number[], q: number): number | null {
   if (lower === upper) return sortedValues[lower];
   const weight = pos - lower;
   return sortedValues[lower] * (1 - weight) + sortedValues[upper] * weight;
+}
+
+function roundToOne(value: number): number {
+  return Math.round(value * 10) / 10;
+}
+
+function getDifficultyBand(
+  difficultyScore: number | null,
+  thresholds: DifficultyThresholds | null,
+): SchoolDifficultyBand {
+  if (difficultyScore === null || thresholds === null) return 'unknown';
+  if (difficultyScore >= thresholds.highMax) return 'very_high';
+  if (difficultyScore >= thresholds.mediumMax) return 'high';
+  if (difficultyScore >= thresholds.lowMax) return 'medium';
+  if (difficultyScore >= thresholds.veryLowMax) return 'low';
+  return 'very_low';
+}
+
+function estimateWaitMinutesForLine(line: string, lineHeadways: Map<string, number>): number {
+  const headway = lineHeadways.get(line);
+  if (!headway || !Number.isFinite(headway) || headway <= 0) return DEFAULT_WAIT_MINUTES;
+  const halfHeadway = headway / 2;
+  return Math.max(1, Math.min(12, halfHeadway));
+}
+
+function estimateScheduleWaitMinutes(
+  routeType: TransitPathInference['routeType'],
+  lines: string[],
+  lineHeadways: Map<string, number>,
+): number {
+  if (lines.length === 0) return DEFAULT_WAIT_MINUTES;
+
+  if (routeType === 'direct') {
+    // Při přímém spojení vycházíme z nejlepší dostupné linky.
+    let best = Number.POSITIVE_INFINITY;
+    for (const line of lines) {
+      best = Math.min(best, estimateWaitMinutesForLine(line, lineHeadways));
+    }
+    return Number.isFinite(best) ? best : DEFAULT_WAIT_MINUTES;
+  }
+
+  if (routeType === 'transfer') {
+    const first = estimateWaitMinutesForLine(lines[0], lineHeadways);
+    const second = estimateWaitMinutesForLine(lines[1] ?? lines[0], lineHeadways);
+    return Math.min(18, first + second);
+  }
+
+  return estimateWaitMinutesForLine(lines[0], lineHeadways);
+}
+
+async function loadDepartureProfile(): Promise<{
+  lineHeadways: Map<string, number>;
+  info: DepartureProfileInfo;
+}> {
+  if (departureLineHeadwayCache && departureProfileInfoCache) {
+    return {
+      lineHeadways: departureLineHeadwayCache,
+      info: departureProfileInfoCache,
+    };
+  }
+
+  const fallbackInfo: DepartureProfileInfo = {
+    profile: 'monday_07_08',
+    sourceDate: 'unknown',
+    windowStart: '07:00:00',
+    windowEnd: '08:00:00',
+    source: DEPARTURE_PROFILE_PATH,
+    loaded: false,
+  };
+
+  try {
+    const raw = await fs.readFile(DEPARTURE_PROFILE_PATH, 'utf-8');
+    const parsed = JSON.parse(raw) as DepartureProfileSnapshot;
+    const lineHeadways = new Map<string, number>();
+
+    for (const [lineRaw, item] of Object.entries(parsed.lineHeadways ?? {})) {
+      const line = normalizeLineLabel(lineRaw);
+      if (!line) continue;
+      const headway = toNumber(item?.headwayMinutes);
+      if (headway === null || headway <= 0) continue;
+      lineHeadways.set(line, headway);
+    }
+
+    departureLineHeadwayCache = lineHeadways;
+    departureProfileInfoCache = {
+      profile: parsed.profile ?? 'monday_07_08',
+      sourceDate: parsed.sourceDate ?? 'unknown',
+      windowStart: parsed.windowStart ?? '07:00:00',
+      windowEnd: parsed.windowEnd ?? '08:00:00',
+      source: DEPARTURE_PROFILE_PATH,
+      loaded: lineHeadways.size > 0,
+    };
+
+    return {
+      lineHeadways,
+      info: departureProfileInfoCache,
+    };
+  } catch {
+    departureLineHeadwayCache = new Map<string, number>();
+    departureProfileInfoCache = fallbackInfo;
+    return {
+      lineHeadways: departureLineHeadwayCache,
+      info: fallbackInfo,
+    };
+  }
 }
 
 async function mapWithConcurrency<T, R>(
@@ -938,12 +1158,14 @@ export async function POST(request: NextRequest) {
     const timings: Record<string, number> = {};
 
     let phaseStartedAt = Date.now();
-    const [schools, pidStopsResult] = await Promise.all([
+    const [schools, pidStopsResult, departureProfile] = await Promise.all([
       loadPrahaSchools(),
       loadPidStops(coverageMode),
+      loadDepartureProfile(),
     ]);
     const stops = pidStopsResult.stops;
     const pidStopsSource = pidStopsResult.source;
+    const departureLineHeadways = departureProfile.lineHeadways;
     timings.loadDataMs = Date.now() - phaseStartedAt;
 
     if (schools.length === 0) {
@@ -1073,16 +1295,18 @@ export async function POST(request: NextRequest) {
         schoolStop: nearestSchoolStop,
         allStops: stops,
         lineToStopIndices,
+        departureLineHeadways,
       });
 
       if (!Number.isFinite(estimate.totalMinutes)) continue;
 
       const walkOnlyMinutes = Math.round((haversineKm(originGeocode.point, loc.point) / 4.8) * 60);
-      const walkIsFaster = walkOnlyMinutes + 1 < estimate.totalMinutes;
+      const schoolPointDistanceKm = haversineKm(originGeocode.point, loc.point);
+      const allowWalkRecommendation = schoolPointDistanceKm < WALK_RECOMMEND_MAX_AIR_KM;
+      const walkIsFaster = allowWalkRecommendation && walkOnlyMinutes + 1 < estimate.totalMinutes;
       const fastestMinutes = walkIsFaster ? walkOnlyMinutes : estimate.totalMinutes;
       if (fastestMinutes > maxMinutes) continue;
 
-      const schoolPointDistanceKm = haversineKm(originGeocode.point, loc.point);
       const schoolSlug = `${school.redizo}-${createSlug(school.nazevRaw || school.nazev)}`;
       reachable.push({
         redizo: school.redizo,
@@ -1104,10 +1328,11 @@ export async function POST(request: NextRequest) {
         routeType: estimate.routeType,
         usedLines: estimate.lines,
         transferStop: estimate.transferStop,
-        admissionBand: 'unknown' as 'very_high' | 'high' | 'medium' | 'low' | 'very_low' | 'unknown',
+        admissionBand: getDifficultyBand(school.difficultyScore, difficultyThresholdsCache),
         oboryPreview: school.obory.slice(0, 4),
         oboryCount: school.obory.length,
         minBodyMin: school.minBodyMin,
+        difficultyScore: school.difficultyScore !== null ? roundToOne(school.difficultyScore) : null,
         indexPoptavkyAvg: school.indexPoptavkyAvg !== null
           ? Math.round(school.indexPoptavkyAvg * 100) / 100
           : null,
@@ -1124,42 +1349,7 @@ export async function POST(request: NextRequest) {
       return a.nazev.localeCompare(b.nazev, 'cs');
     });
 
-    const minBodyValues = reachable
-      .map(item => item.minBodyMin)
-      .filter((value): value is number => typeof value === 'number' && Number.isFinite(value))
-      .sort((a, b) => a - b);
-
-    const q20 = quantile(minBodyValues, 0.2);
-    const q40 = quantile(minBodyValues, 0.4);
-    const q60 = quantile(minBodyValues, 0.6);
-    const q80 = quantile(minBodyValues, 0.8);
-
-    const admissionThresholds = (q20 !== null && q40 !== null && q60 !== null && q80 !== null)
-      ? {
-          veryLowMax: Math.round(q20),
-          lowMax: Math.round(q40),
-          mediumMax: Math.round(q60),
-          highMax: Math.round(q80),
-        }
-      : null;
-
-    if (admissionThresholds) {
-      for (const item of reachable) {
-        if (item.minBodyMin === null) {
-          item.admissionBand = 'unknown';
-        } else if (item.minBodyMin >= admissionThresholds.highMax) {
-          item.admissionBand = 'very_high';
-        } else if (item.minBodyMin >= admissionThresholds.mediumMax) {
-          item.admissionBand = 'high';
-        } else if (item.minBodyMin >= admissionThresholds.lowMax) {
-          item.admissionBand = 'medium';
-        } else if (item.minBodyMin >= admissionThresholds.veryLowMax) {
-          item.admissionBand = 'low';
-        } else {
-          item.admissionBand = 'very_low';
-        }
-      }
-    }
+    const admissionThresholds = difficultyThresholdsCache;
 
     const totalItems = reachable.length;
     const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
@@ -1211,9 +1401,12 @@ export async function POST(request: NextRequest) {
         timingsMs: timings,
         notes: [
           'Výpočet používá oficiální PID OpenData stop list + geokódování adres a odhad jízdní doby mezi zastávkami.',
+          `Čekání na spoje používá profil ${departureProfile.info.profile} pro ${departureProfile.info.sourceDate} (${departureProfile.info.windowStart}-${departureProfile.info.windowEnd}).`,
+          `Doporučení pěší trasy se zobrazuje jen při vzdušné vzdálenosti pod ${WALK_RECOMMEND_MAX_AIR_KM.toFixed(1)} km.`,
           'Identifikace linek MHD je odhad z linek dostupných u výchozí a cílové zastávky (případně 1 přestup).',
           'Nejde o přesný jízdní řád. Pro produkční přesnost doporučujeme GTFS Connection Scan / RAPTOR precompute.',
         ],
+        departureProfile: departureProfile.info,
       },
       sources: {
         pidStops: pidStopsSource,

@@ -179,30 +179,84 @@ GTFS data pro PID region (`data/PID/`) obsahují:
 
 **Klíčový poznatek:** Pro PID region (Praha + Středočeský kraj) máme k dispozici **kompletní strukturovaná data** ve standardním GTFS formátu, včetně GPS souřadnic. To výrazně zjednodušuje problém pro tento region — není potřeba dekódovat .tt soubory ani GPS.
 
+### 8. Objev celostátních GTFS dat (PRŮLOM)
+
+Nalezena celostátní GTFS data pokrývající **veškerou veřejnou dopravu v ČR**:
+
+**Zdroj:** `https://www.spojenka.cz/jrdata/jizdnirady-gtfs.zip` (90 MB)
+Konvertováno z oficiálních CIS JŘ dat (Ministerstvo dopravy → CHAPS → portál `portal.cisjr.cz`).
+
+| Metrika | Hodnota |
+|---------|---------|
+| Zastávky | **86 897** (98.5% s GPS) |
+| Spoje | **295 855** |
+| Odjezdy (stop_times) | **5 419 131** |
+| Linky | **5 767** |
+| Dopravci | **211** |
+| Autobusy | 3 376 linek |
+| Vlaky | 1 292 linek |
+| Tramvaje | 56 linek |
+| Metro | 3 linky |
+| Trolejbusy | 39 linek |
+
+**Ověření pokrytí** — zastávky nalezeny ve všech testovaných městech:
+
+| Město | Zastávek | Město | Zastávek |
+|-------|----------|-------|----------|
+| Brno | 1 120 | Ostrava | 1 619 |
+| Plzeň | 1 082 | Liberec | 461 |
+| Zlín | 420 | Olomouc | 371 |
+| České Budějovice | 303 | Karlovy Vary | 300 |
+| Jičín | 249 | Trutnov | 134 |
+| Hradec Králové | 100 | Pardubice | 103 |
+| Tachov | 65 | | |
+
+**Tento objev mění celý přístup k projektu.** Místo reverse engineeringu proprietárních .tt souborů můžeme použít standardní GTFS data s:
+- Kompletními jízdními řády (všechny spoje, ne jen šablony)
+- GPS souřadnicemi zastávek
+- Kalendáři platnosti
+- Přestupními vazbami (transfers.txt)
+- Standardním formátem s bohatým ekosystémem nástrojů
+
+**Oficiální zdroj národních dat v JDF formátu:**
+- URL: `https://portal.cisjr.cz/pub/JDF/JDF.zip` (58 MB)
+- Aktualizace: 3× týdně
+- Konverze na GTFS: nástroj `jdf2gtfs` (github.com/masopust/jdf2gtfs)
+
+**Regionální GTFS feedy (přímo od dopravních autorit):**
+| Region | URL |
+|--------|-----|
+| PID (Praha + Středočeský) | `data.pid.cz/PID_GTFS.zip` |
+| IDS JMK (Brno + Jihomoravský) | `data.brno.cz` |
+| DPMO (Olomouc) | `dpmo.cz/doc/dpmo-olomouc-cz.zip` |
+| DPMLJ (Liberec + Jablonec) | `dpmlj.cz/gtfs.zip` |
+
 ---
 
 ## Další kroky
 
-### Krátkodobě
-1. ~~**Ověřit dekódované časy** proti IDOS/DPP~~ → **HOTOVO** (7/7 hran odpovídá)
-2. **Prozkoumat dostupnost GTFS dat pro celou ČR** — pokud existují i mimo PID, odpadá potřeba .tt dekodéru
-3. **Dekódovat GPS souřadnice zastávek** z .tt souborů (nalezeny, ale formát neznámý)
-4. **Rozšířit dekodér na Data1 (vlaky) a Data2 (autobusy)**
+### Krátkodobě (nyní aktuální)
+1. ~~**Ověřit dekódované časy** proti IDOS/DPP~~ → **HOTOVO** (7/7 hran = 100%)
+2. ~~**Prozkoumat dostupnost GTFS pro celou ČR**~~ → **HOTOVO** (celostátní GTFS nalezeno)
+3. **Sestavit graf dopravní sítě z GTFS** — zastávky jako uzly, hrany = přímé spojení s cestovním časem
+4. **Geocodovat ~2 700 škol** (Rejstřík MŠMT → GPS) a přiřadit nejbližší zastávku
+5. **Prototyp reachability** — pro danou zastávku + max. čas vrátit dosažitelné školy
 
 ### Střednědobě
-5. **Geocodovat 2 700 škol** (Rejstřík MŠMT → GPS)
-6. **Sestavit celostátní graf veřejné dopravy** (zastávky + cestovní časy)
-7. **Implementovat Dijkstrův/BFS algoritmus** pro reachability
+6. **Implementovat BFS/Dijkstra** na grafu zastávek
+7. **Předpočítat matici dostupnosti** (zastávka → seznam škol v dosahu pro různé časové limity)
+8. **API endpoint** pro frontend
 
 ### Dlouhodobě
-8. **Frontend** — uživatelské rozhraní s našeptávačem a výsledky
-9. **Optimalizace** — předpočítat matici dostupností, caching
-10. **Aktualizace dat** — automatický stah nových jízdních řádů
+9. **Frontend** — uživatelské rozhraní s našeptávačem zastávek a vizualizací výsledků
+10. **Aktualizace dat** — automatický stah nových GTFS dat (CIS JŘ se aktualizuje 3× týdně)
+11. **.tt dekodér** — zachovat jako zálohu/alternativu, ale GTFS je primární zdroj
 
 ---
 
 ## Klíčové poznatky
 
+### Reverse engineering .tt formátu
 1. **CHAPS .tt formát je konzistentní** — stejná struktura napříč 98 MHD soubory
 2. **Dva režimy časových záznamů** — flagged (bit 31 vždy) vs unflagged (bit 31 jen na hranicích)
 3. **Alignment je kritický** — sekce nejsou zarovnány na 4 byty
@@ -210,6 +264,11 @@ GTFS data pro PID region (`data/PID/`) obsahují:
 5. **P-records kódují linky, dopravce i platnost** — umožňují filtraci podle dne v týdnu
 6. **Zdvojené zastávky** — každá zastávka existuje 2x (pro každý směr)
 7. **Dekódované cestovní časy odpovídají realitě** — 7/7 hran ověřeno proti PID GTFS = 100% shoda
-8. **PID GTFS data jsou k dispozici** — pro Prahu + Středočeský kraj existují kompletní GTFS data s GPS
-9. **.tt zkracuje názvy zastávek** — „Pražská" místo „Brandýs n.L.-St.Bol.,Pražská"
-10. **Brandys.tt obsahuje jen místní MHD úseky** — linka 478 tam má jen 8 zastávek, plná trasa (23 zastávek) je v PID.tt
+8. **.tt zkracuje názvy zastávek** — „Pražská" místo „Brandýs n.L.-St.Bol.,Pražská"
+9. **Brandys.tt obsahuje jen místní MHD úseky** — linka 478 tam má jen 8 zastávek, plná trasa (23 zastávek) je v PID.tt
+
+### GTFS data
+10. **Celostátní GTFS data existují** — 86 897 zastávek, 295 855 spojů, 5 767 linek
+11. **98.5% zastávek má GPS** — dostatečné pro matching se školami
+12. **GTFS je lepší zdroj než .tt** — kompletní jízdní řády, GPS, standardní formát, snadná aktualizace
+13. **.tt dekodér zůstává hodnotný** — jako validační nástroj a pro případy kdy GTFS nestačí

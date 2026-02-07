@@ -1,0 +1,2672 @@
+{
+  "profile": "monday_07_08",
+  "sourceDate": "20260209",
+  "windowStart": "07:00:00",
+  "windowEnd": "08:00:00",
+  "generatedAt": "2026-02-07T14:35:14.156Z",
+  "activeServiceIds": 236,
+  "activeTrips": 46715,
+  "lines": 665,
+  "lineHeadways": {
+    "1": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "2": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "3": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "4": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "5": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "6": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "7": {
+      "departures": 13,
+      "headwayMinutes": 4.6
+    },
+    "8": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "9": {
+      "departures": 26,
+      "headwayMinutes": 2.3
+    },
+    "10": {
+      "departures": 14,
+      "headwayMinutes": 4.3
+    },
+    "11": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "12": {
+      "departures": 13,
+      "headwayMinutes": 4.6
+    },
+    "13": {
+      "departures": 15,
+      "headwayMinutes": 4
+    },
+    "14": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "15": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "16": {
+      "departures": 13,
+      "headwayMinutes": 4.6
+    },
+    "17": {
+      "departures": 24,
+      "headwayMinutes": 2.5
+    },
+    "18": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "19": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "20": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "21": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "22": {
+      "departures": 27,
+      "headwayMinutes": 2.2
+    },
+    "23": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "24": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "25": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "26": {
+      "departures": 14,
+      "headwayMinutes": 4.3
+    },
+    "31": {
+      "departures": 24,
+      "headwayMinutes": 2.5
+    },
+    "58": {
+      "departures": 17,
+      "headwayMinutes": 3.5
+    },
+    "59": {
+      "departures": 41,
+      "headwayMinutes": 1.5
+    },
+    "100": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "101": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "102": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "103": {
+      "departures": 14,
+      "headwayMinutes": 4.3
+    },
+    "104": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "105": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "106": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "107": {
+      "departures": 32,
+      "headwayMinutes": 1.9
+    },
+    "108": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "109": {
+      "departures": 14,
+      "headwayMinutes": 4.3
+    },
+    "110": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "111": {
+      "departures": 11,
+      "headwayMinutes": 5.5
+    },
+    "112": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "113": {
+      "departures": 26,
+      "headwayMinutes": 2.3
+    },
+    "115": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "116": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "117": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "118": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "120": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "121": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "122": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "123": {
+      "departures": 13,
+      "headwayMinutes": 4.6
+    },
+    "124": {
+      "departures": 15,
+      "headwayMinutes": 4
+    },
+    "125": {
+      "departures": 20,
+      "headwayMinutes": 3
+    },
+    "126": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "128": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "129": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "130": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "131": {
+      "departures": 19,
+      "headwayMinutes": 3.2
+    },
+    "133": {
+      "departures": 19,
+      "headwayMinutes": 3.2
+    },
+    "134": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "135": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "136": {
+      "departures": 19,
+      "headwayMinutes": 3.2
+    },
+    "137": {
+      "departures": 24,
+      "headwayMinutes": 2.5
+    },
+    "138": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "139": {
+      "departures": 15,
+      "headwayMinutes": 4
+    },
+    "141": {
+      "departures": 11,
+      "headwayMinutes": 5.5
+    },
+    "142": {
+      "departures": 15,
+      "headwayMinutes": 4
+    },
+    "143": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "144": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "145": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "146": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "147": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "148": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "149": {
+      "departures": 11,
+      "headwayMinutes": 5.5
+    },
+    "150": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "151": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "152": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "153": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "154": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "155": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "156": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "157": {
+      "departures": 13,
+      "headwayMinutes": 4.6
+    },
+    "158": {
+      "departures": 15,
+      "headwayMinutes": 4
+    },
+    "159": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "160": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "161": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "162": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "163": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "164": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "166": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "167": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "168": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "169": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "170": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "171": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "172": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "173": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "174": {
+      "departures": 22,
+      "headwayMinutes": 2.7
+    },
+    "175": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "176": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "177": {
+      "departures": 23,
+      "headwayMinutes": 2.6
+    },
+    "180": {
+      "departures": 18,
+      "headwayMinutes": 3.3
+    },
+    "181": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "182": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "183": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "184": {
+      "departures": 15,
+      "headwayMinutes": 4
+    },
+    "185": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "186": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "187": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "188": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "189": {
+      "departures": 20,
+      "headwayMinutes": 3
+    },
+    "190": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "191": {
+      "departures": 21,
+      "headwayMinutes": 2.9
+    },
+    "193": {
+      "departures": 17,
+      "headwayMinutes": 3.5
+    },
+    "194": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "195": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "196": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "197": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "199": {
+      "departures": 15,
+      "headwayMinutes": 4
+    },
+    "200": {
+      "departures": 39,
+      "headwayMinutes": 1.5
+    },
+    "201": {
+      "departures": 20,
+      "headwayMinutes": 3
+    },
+    "202": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "203": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "204": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "207": {
+      "departures": 19,
+      "headwayMinutes": 3.2
+    },
+    "208": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "209": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "210": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "211": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "212": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "213": {
+      "departures": 17,
+      "headwayMinutes": 3.5
+    },
+    "214": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "215": {
+      "departures": 20,
+      "headwayMinutes": 3
+    },
+    "216": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "218": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "219": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "220": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "221": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "222": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "223": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "224": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "225": {
+      "departures": 15,
+      "headwayMinutes": 4
+    },
+    "226": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "227": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "228": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "229": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "231": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "232": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "234": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "235": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "236": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "240": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "241": {
+      "departures": 18,
+      "headwayMinutes": 3.3
+    },
+    "242": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "243": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "244": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "245": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "246": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "247": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "248": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "249": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "250": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "251": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "252": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "253": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "254": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "255": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "256": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "257": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "258": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "259": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "260": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "261": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "263": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "264": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "265": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "266": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "267": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "268": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "269": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "270": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "271": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "272": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "273": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "274": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "275": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "276": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "277": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "278": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "280": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "300": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "301": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "302": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "303": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "304": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "305": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "306": {
+      "departures": 11,
+      "headwayMinutes": 5.5
+    },
+    "307": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "309": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "310": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "311": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "312": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "313": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "314": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "315": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "316": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "317": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "318": {
+      "departures": 16,
+      "headwayMinutes": 3.8
+    },
+    "319": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "320": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "322": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "323": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "324": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "325": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "326": {
+      "departures": 11,
+      "headwayMinutes": 5.5
+    },
+    "327": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "328": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "329": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "330": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "331": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "332": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "333": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "334": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "335": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "336": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "337": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "338": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "339": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "340": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "341": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "342": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "343": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "344": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "345": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "346": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "347": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "348": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "349": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "350": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "351": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "352": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "353": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "354": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "355": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "356": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "357": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "358": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "359": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "360": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "361": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "362": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "363": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "364": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "365": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "366": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "367": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "368": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "369": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "370": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "371": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "372": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "373": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "374": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "375": {
+      "departures": 11,
+      "headwayMinutes": 5.5
+    },
+    "376": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "377": {
+      "departures": 9,
+      "headwayMinutes": 6.7
+    },
+    "378": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "379": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "380": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "381": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "382": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "383": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "384": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "385": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "386": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "387": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "388": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "389": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "390": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "391": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "392": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "393": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "394": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "395": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "396": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "397": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "398": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "399": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "400": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "401": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "402": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "403": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "404": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "405": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "406": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "407": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "409": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "410": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "411": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "412": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "413": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "414": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "415": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "417": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "418": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "419": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "420": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "423": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "425": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "427": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "428": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "429": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "430": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "431": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "432": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "433": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "434": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "435": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "438": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "440": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "441": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "442": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "443": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "444": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "445": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "446": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "447": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "448": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "449": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "450": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "451": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "452": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "453": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "454": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "455": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "456": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "457": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "460": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "461": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "462": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "463": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "464": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "465": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "466": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "467": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "469": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "470": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "471": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "472": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "473": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "474": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "475": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "476": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "477": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "478": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "479": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "480": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "481": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "482": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "484": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "485": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "487": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "488": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "489": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "490": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "491": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "492": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "493": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "494": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "495": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "496": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "497": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "498": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "499": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "500": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "501": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "502": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "503": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "504": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "505": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "506": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "508": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "509": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "513": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "514": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "516": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "517": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "518": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "519": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "521": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "522": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "523": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "524": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "526": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "529": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "530": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "531": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "532": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "533": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "537": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "538": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "539": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "540": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "541": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "543": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "545": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "547": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "548": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "549": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "550": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "551": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "553": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "555": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "556": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "557": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "558": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "560": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "561": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "562": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "566": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "567": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "569": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "571": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "573": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "579": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "581": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "582": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "584": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "585": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "586": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "587": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "588": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "590": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "591": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "593": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "594": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "595": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "596": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "597": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "598": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "599": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "600": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "616": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "617": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "618": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "619": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "620": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "621": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "624": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "625": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "626": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "627": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "630": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "631": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "632": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "633": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "636": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "637": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "638": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "639": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "640": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "641": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "642": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "643": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "646": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "649": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "650": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "651": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "652": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "653": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "655": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "656": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "657": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "658": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "659": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "660": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "661": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "662": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "663": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "664": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "666": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "667": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "668": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "669": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "670": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "671": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "672": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "674": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "675": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "677": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "679": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "685": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "688": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "689": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "690": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "691": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "693": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "694": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "696": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "697": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "698": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "699": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "702": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "705": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "706": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "708": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "710": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "711": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "712": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "714": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "715": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "717": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "718": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "720": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "721": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "723": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "724": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "727": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "732": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "734": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "735": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "737": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "739": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "740": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "741": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "742": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "743": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "747": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "748": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "750": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "751": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "752": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "753": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "755": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "760": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "761": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "762": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "764": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "765": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "767": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "768": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "770": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "771": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "772": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "773": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "775": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "780": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "781": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "782": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "783": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "784": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "785": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "790": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "792": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "793": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "794": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "795": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "797": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "798": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "799": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "801": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "802": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "805": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "821": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "822": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "823": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "824": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "825": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "826": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "840": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "841": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "842": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "843": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "844": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "845": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "846": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "847": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "849": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "850": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "853": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "856": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "857": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "858": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "861": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "897": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "A": {
+      "departures": 45,
+      "headwayMinutes": 1.3
+    },
+    "AE": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "B": {
+      "departures": 50,
+      "headwayMinutes": 1.2
+    },
+    "BB1": {
+      "departures": 13,
+      "headwayMinutes": 4.6
+    },
+    "BB2": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "C": {
+      "departures": 61,
+      "headwayMinutes": 1
+    },
+    "L4": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "P1": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "P2": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "R10": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "R16": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "R17": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "R18": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "R19": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "R20": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "R21": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "R22": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "R23": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "R24": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "R26": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "R41": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "R44": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "R45": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "R49": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "R9": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S1": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "S10": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S11": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S12": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "S18": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S2": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "S20": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "S21": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S23": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S27": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S28": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "S3": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "S31": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S32": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S34": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S35": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S36": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S4": {
+      "departures": 7,
+      "headwayMinutes": 8.6
+    },
+    "S40": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S43": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "S44": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S45": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "S49": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "S5": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "S54": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "S57": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "S6": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "S60": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S61": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "S65": {
+      "departures": 4,
+      "headwayMinutes": 15
+    },
+    "S7": {
+      "departures": 10,
+      "headwayMinutes": 6
+    },
+    "S70": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S75": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S76": {
+      "departures": 5,
+      "headwayMinutes": 12
+    },
+    "S8": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S80": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S82": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "S88": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S9": {
+      "departures": 8,
+      "headwayMinutes": 7.5
+    },
+    "S98": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "S99": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "U11": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "U12": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "U21": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "U22": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "U40": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "V50": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "V51": {
+      "departures": 1,
+      "headwayMinutes": 60
+    },
+    "X221": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "X25": {
+      "departures": 12,
+      "headwayMinutes": 5
+    },
+    "X302": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "X315": {
+      "departures": 2,
+      "headwayMinutes": 30
+    },
+    "X398": {
+      "departures": 3,
+      "headwayMinutes": 20
+    },
+    "XS2": {
+      "departures": 6,
+      "headwayMinutes": 10
+    },
+    "XS40": {
+      "departures": 1,
+      "headwayMinutes": 60
+    }
+  }
+}

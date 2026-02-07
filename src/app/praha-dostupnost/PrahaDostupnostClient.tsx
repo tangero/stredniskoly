@@ -27,6 +27,7 @@ type ReachableSchool = {
   oboryPreview: string[];
   oboryCount: number;
   minBodyMin: number | null;
+  difficultyScore: number | null;
   indexPoptavkyAvg: number | null;
   schoolUrl: string;
   simulatorSchoolId: string | null;
@@ -82,6 +83,14 @@ type SearchResponse = {
         stops: number;
       }>;
     };
+    departureProfile?: {
+      profile: string;
+      sourceDate: string;
+      windowStart: string;
+      windowEnd: string;
+      source: string;
+      loaded: boolean;
+    };
     model: string;
     timingsMs?: Record<string, number>;
     notes: string[];
@@ -132,11 +141,21 @@ function routeLabel(school: ReachableSchool): string {
 }
 
 function timeCohort(minutes: number): { label: string; badgeClass: string } {
-  if (minutes <= 15) return { label: '0-15 min', badgeClass: 'bg-emerald-100 text-emerald-800' };
-  if (minutes <= 25) return { label: '16-25 min', badgeClass: 'bg-sky-100 text-sky-800' };
-  if (minutes <= 35) return { label: '26-35 min', badgeClass: 'bg-amber-100 text-amber-800' };
-  if (minutes <= 45) return { label: '36-45 min', badgeClass: 'bg-orange-100 text-orange-800' };
-  return { label: '46+ min', badgeClass: 'bg-rose-100 text-rose-800' };
+  const bucket = Math.max(0, Math.floor(minutes / 10));
+  const start = bucket * 10;
+  const end = start + 9;
+  const palette = [
+    'bg-emerald-100 text-emerald-800',
+    'bg-green-100 text-green-800',
+    'bg-sky-100 text-sky-800',
+    'bg-cyan-100 text-cyan-800',
+    'bg-amber-100 text-amber-800',
+    'bg-orange-100 text-orange-800',
+    'bg-rose-100 text-rose-800',
+    'bg-fuchsia-100 text-fuchsia-800',
+  ];
+  const badgeClass = palette[Math.min(bucket, palette.length - 1)];
+  return { label: `${start}-${end} min`, badgeClass };
 }
 
 function admissionRowClass(band: ReachableSchool['admissionBand']): string {
@@ -523,26 +542,32 @@ export function PrahaDostupnostClient() {
               <div>
                 <p className="font-medium text-slate-700 mb-2">Kohorty času cesty</p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800">0-15 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-sky-100 text-sky-800">16-25 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800">26-35 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-orange-100 text-orange-800">36-45 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-800">46+ min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800">0-9 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-green-100 text-green-800">10-19 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-sky-100 text-sky-800">20-29 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-cyan-100 text-cyan-800">30-39 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800">40-49 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-orange-100 text-orange-800">50-59 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-800">60-69 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-fuchsia-100 text-fuchsia-800">70+ min</span>
                 </div>
+                <p className="text-xs text-slate-600 mt-2">
+                  „Pěšky nejrychleji“ zobrazujeme jen pokud je vzdušná vzdálenost pod 1,0 km.
+                </p>
               </div>
               <div>
-                <p className="font-medium text-slate-700 mb-2">Podbarvení školy podle minimálních bodů pro přijetí</p>
+                <p className="font-medium text-slate-700 mb-2">Podbarvení školy podle našeho hodnocení náročnosti</p>
                 <div className="space-y-1 text-slate-700">
                   {admissionThresholds ? (
                     <>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-emerald-100"></span>nejvyšší náročnost: ≥ {admissionThresholds.highMax} bodů</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-lime-100"></span>vyšší náročnost: {admissionThresholds.mediumMax} až {admissionThresholds.highMax - 1} bodů</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-amber-100"></span>střední náročnost: {admissionThresholds.lowMax} až {admissionThresholds.mediumMax - 1} bodů</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-orange-100"></span>nižší náročnost: {admissionThresholds.veryLowMax} až {admissionThresholds.lowMax - 1} bodů</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-rose-100"></span>nejnižší náročnost: &lt; {admissionThresholds.veryLowMax} bodů</p>
+                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-emerald-100"></span>nejvyšší náročnost: ≥ {admissionThresholds.highMax.toFixed(1)}</p>
+                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-lime-100"></span>vyšší náročnost: {admissionThresholds.mediumMax.toFixed(1)} až {admissionThresholds.highMax.toFixed(1)}</p>
+                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-amber-100"></span>střední náročnost: {admissionThresholds.lowMax.toFixed(1)} až {admissionThresholds.mediumMax.toFixed(1)}</p>
+                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-orange-100"></span>nižší náročnost: {admissionThresholds.veryLowMax.toFixed(1)} až {admissionThresholds.lowMax.toFixed(1)}</p>
+                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-rose-100"></span>nejnižší náročnost: &lt; {admissionThresholds.veryLowMax.toFixed(1)}</p>
                     </>
                   ) : (
-                    <p>Hranice náročnosti budou k dispozici po načtení dostatečného množství škol.</p>
+                    <p>Hranice náročnosti budou k dispozici po načtení dat hodnocení.</p>
                   )}
                 </div>
               </div>
@@ -617,6 +642,9 @@ export function PrahaDostupnostClient() {
                           {school.oboryPreview.join(', ')}
                           {school.oboryCount > school.oboryPreview.length ? ` +${school.oboryCount - school.oboryPreview.length}` : ''}
                         </p>
+                        {typeof school.difficultyScore === 'number' && (
+                          <p className="text-xs text-slate-600 mt-1">Náročnost (naše hodnocení): {school.difficultyScore.toFixed(1)}</p>
+                        )}
                         {typeof school.minBodyMin === 'number' && (
                           <p className="text-xs text-slate-600 mt-1">Min. body pro přijetí: {school.minBodyMin}</p>
                         )}
@@ -684,6 +712,9 @@ export function PrahaDostupnostClient() {
                     </span>
                   </div>
                   <p className="text-sm text-slate-600 mt-1">{school.adresa}</p>
+                  {typeof school.difficultyScore === 'number' && (
+                    <p className="text-xs text-slate-600 mt-1">Náročnost: {school.difficultyScore.toFixed(1)}</p>
+                  )}
                   {typeof school.minBodyMin === 'number' && (
                     <p className="text-xs text-slate-600 mt-1">Min. body: {school.minBodyMin}</p>
                   )}
@@ -753,6 +784,13 @@ export function PrahaDostupnostClient() {
                       .join(', ')}
                   </p>
                 </div>
+              )}
+              {result.diagnostics.departureProfile && (
+                <p>
+                  Profil návazností: <strong>{result.diagnostics.departureProfile.profile}</strong>{' '}
+                  ({result.diagnostics.departureProfile.sourceDate},{' '}
+                  {result.diagnostics.departureProfile.windowStart}-{result.diagnostics.departureProfile.windowEnd})
+                </p>
               )}
               {result.sources.pidStops.startsWith('http') ? (
                 <p>
