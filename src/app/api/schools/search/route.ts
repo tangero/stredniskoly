@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { createSlug } from '@/lib/utils';
 
 type SchoolsData = Record<string, School[]>;
 
@@ -29,6 +30,7 @@ interface School {
   nazev: string;
   nazev_display?: string;
   obor: string;
+  zamereni?: string;
   obec: string;
   ulice?: string;
   adresa?: string;
@@ -39,6 +41,77 @@ interface School {
   min_body?: number;
   jpz_min_actual?: number;
   index_poptavky?: number;
+}
+
+function normalizeZamereni(zamereni?: string): string | undefined {
+  const value = (zamereni || '').trim();
+  return value.length > 0 ? value : undefined;
+}
+
+function deduplicateById(schools: School[]): School[] {
+  const byId = new Map<string, School>();
+  for (const school of schools) {
+    if (!byId.has(school.id)) {
+      byId.set(school.id, school);
+    }
+  }
+  return Array.from(byId.values());
+}
+
+function buildSlugContext(schools: School[]) {
+  const oborCountsByRedizo = new Map<string, Map<string, number>>();
+  const zamereniCountsByRedizo = new Map<string, Map<string, number>>();
+
+  for (const school of schools) {
+    const redizo = school.id.split('_')[0];
+    const obor = school.obor || '';
+    const zamereni = normalizeZamereni(school.zamereni);
+
+    if (!oborCountsByRedizo.has(redizo)) {
+      oborCountsByRedizo.set(redizo, new Map<string, number>());
+    }
+    const oborCounts = oborCountsByRedizo.get(redizo)!;
+    oborCounts.set(obor, (oborCounts.get(obor) || 0) + 1);
+
+    if (zamereni) {
+      if (!zamereniCountsByRedizo.has(redizo)) {
+        zamereniCountsByRedizo.set(redizo, new Map<string, number>());
+      }
+      const zamereniCounts = zamereniCountsByRedizo.get(redizo)!;
+      const key = `${obor}|${zamereni}`;
+      zamereniCounts.set(key, (zamereniCounts.get(key) || 0) + 1);
+    }
+  }
+
+  return { oborCountsByRedizo, zamereniCountsByRedizo };
+}
+
+function getSchoolSlug(
+  school: School,
+  slugContext: ReturnType<typeof buildSlugContext>
+): string {
+  const redizo = school.id.split('_')[0];
+  const zamereni = normalizeZamereni(school.zamereni);
+  const obor = school.obor || '';
+  const schoolName = school.nazev || '';
+  const delkaStudia = school.delka_studia;
+
+  if (zamereni) {
+    const zamereniCounts = slugContext.zamereniCountsByRedizo.get(redizo);
+    const zamereniKey = `${obor}|${zamereni}`;
+    const hasDuplicateZamereni = (zamereniCounts?.get(zamereniKey) || 0) > 1;
+    const zamereniSlug = hasDuplicateZamereni
+      ? createSlug(schoolName, obor, zamereni, delkaStudia)
+      : createSlug(schoolName, obor, zamereni);
+    return `${redizo}-${zamereniSlug}`;
+  }
+
+  const oborCounts = slugContext.oborCountsByRedizo.get(redizo);
+  const hasDuplicateOborName = (oborCounts?.get(obor) || 0) > 1;
+  const oborSlug = hasDuplicateOborName
+    ? createSlug(schoolName, obor, undefined, delkaStudia)
+    : createSlug(schoolName, obor);
+  return `${redizo}-${oborSlug}`;
 }
 
 export async function GET(request: NextRequest) {
@@ -57,7 +130,9 @@ export async function GET(request: NextRequest) {
   try {
     const data = await getSchoolsData();
     const year = data['2025'] ? '2025' : '2024';
-    const schools: School[] = data[year] || [];
+    const schoolsRaw: School[] = data[year] || [];
+    const schools = deduplicateById(schoolsRaw);
+    const slugContext = buildSlugContext(schools);
 
     // Generovat seznam krajů (cachováno)
     if (!krajeCache) {
@@ -99,6 +174,7 @@ export async function GET(request: NextRequest) {
           nazev: s.nazev,
           nazev_display: s.nazev_display,
           obor: s.obor,
+          zamereni: normalizeZamereni(s.zamereni),
           obec: s.obec,
           ulice: s.ulice,
           adresa: s.adresa,
@@ -106,6 +182,7 @@ export async function GET(request: NextRequest) {
           kraj_kod: s.kraj_kod,
           typ: s.typ,
           delka_studia: s.delka_studia,
+          slug: getSchoolSlug(s, slugContext),
           min_body_2025: s.min_body || 0,
           jpz_min: s.jpz_min_actual || s.min_body || 0,
           index_poptavky_2025: s.index_poptavky || 0,
@@ -138,6 +215,7 @@ export async function GET(request: NextRequest) {
           const nazev = normalizeText(s.nazev || '');
           const nazevDisplay = normalizeText(s.nazev_display || '');
           const obor = normalizeText(s.obor || '');
+          const zamereni = normalizeText(normalizeZamereni(s.zamereni) || '');
           const obec = normalizeText(s.obec || '');
           const ulice = normalizeText(s.ulice || '');
           const adresa = normalizeText(s.adresa || '');
@@ -145,6 +223,7 @@ export async function GET(request: NextRequest) {
           if (!nazev.includes(searchNorm) &&
               !nazevDisplay.includes(searchNorm) &&
               !obor.includes(searchNorm) &&
+              !zamereni.includes(searchNorm) &&
               !obec.includes(searchNorm) &&
               !ulice.includes(searchNorm) &&
               !adresa.includes(searchNorm)) {
@@ -164,6 +243,7 @@ export async function GET(request: NextRequest) {
         nazev: s.nazev,
         nazev_display: s.nazev_display,
         obor: s.obor,
+        zamereni: normalizeZamereni(s.zamereni),
         obec: s.obec,
         ulice: s.ulice,
         adresa: s.adresa,
@@ -171,6 +251,7 @@ export async function GET(request: NextRequest) {
         kraj_kod: s.kraj_kod,
         typ: s.typ,
         delka_studia: s.delka_studia,
+        slug: getSchoolSlug(s, slugContext),
         min_body_2025: s.min_body || 0,
         jpz_min: s.jpz_min_actual || s.min_body || 0,
         index_poptavky_2025: s.index_poptavky || 0,

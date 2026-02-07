@@ -268,26 +268,53 @@ function buildStopToSchoolsIndex(
 
   const index = new Map<string, Array<{ redizo: string; distanceKm: number; lat: number; lon: number }>>();
 
+  // Pre-compute lat/lon bounding box margin for MAX_WALK_DISTANCE_KM
+  // 1.5 km ≈ 0.0135° lat, ≈ 0.022° lon at 50°N
+  const LAT_MARGIN = 0.015;
+  const LON_MARGIN = 0.025;
+
+  // Build spatial grid for stops (cell size ~0.02° ≈ 2km)
+  const CELL_SIZE = 0.02;
+  const stopGrid = new Map<string, Array<[string, number, number]>>();
+  for (const [stopId, [, stopLat, stopLon]] of Object.entries(graph.stops)) {
+    const cellKey = `${Math.floor(stopLat / CELL_SIZE)},${Math.floor(stopLon / CELL_SIZE)}`;
+    if (!stopGrid.has(cellKey)) stopGrid.set(cellKey, []);
+    stopGrid.get(cellKey)!.push([stopId, stopLat, stopLon]);
+  }
+
   for (const [redizo, schoolLoc] of Object.entries(schoolLocations.schools)) {
     const primaryStopId = schoolLoc.stop_id;
-    const schoolPoint: Point = { lat: schoolLoc.lat, lon: schoolLoc.lon };
+    const schoolLat = schoolLoc.lat;
+    const schoolLon = schoolLoc.lon;
 
     // Add primary mapped stop
     if (!index.has(primaryStopId)) index.set(primaryStopId, []);
     index.get(primaryStopId)!.push({
       redizo,
       distanceKm: schoolLoc.distance_km,
-      lat: schoolLoc.lat,
-      lon: schoolLoc.lon,
+      lat: schoolLat,
+      lon: schoolLon,
     });
 
-    // Also check nearby stops from the graph (within MAX_WALK_DISTANCE_KM)
-    for (const [stopId, [, stopLat, stopLon]] of Object.entries(graph.stops)) {
-      if (stopId === primaryStopId) continue;
-      const dist = haversineKm(schoolPoint, { lat: stopLat, lon: stopLon });
-      if (dist <= MAX_WALK_DISTANCE_KM) {
-        if (!index.has(stopId)) index.set(stopId, []);
-        index.get(stopId)!.push({ redizo, distanceKm: dist, lat: schoolLoc.lat, lon: schoolLoc.lon });
+    // Check nearby grid cells
+    const minCellLat = Math.floor((schoolLat - LAT_MARGIN) / CELL_SIZE);
+    const maxCellLat = Math.floor((schoolLat + LAT_MARGIN) / CELL_SIZE);
+    const minCellLon = Math.floor((schoolLon - LON_MARGIN) / CELL_SIZE);
+    const maxCellLon = Math.floor((schoolLon + LON_MARGIN) / CELL_SIZE);
+
+    for (let cLat = minCellLat; cLat <= maxCellLat; cLat++) {
+      for (let cLon = minCellLon; cLon <= maxCellLon; cLon++) {
+        const cellStops = stopGrid.get(`${cLat},${cLon}`);
+        if (!cellStops) continue;
+
+        for (const [stopId, stopLat, stopLon] of cellStops) {
+          if (stopId === primaryStopId) continue;
+          const dist = haversineKm({ lat: schoolLat, lon: schoolLon }, { lat: stopLat, lon: stopLon });
+          if (dist <= MAX_WALK_DISTANCE_KM) {
+            if (!index.has(stopId)) index.set(stopId, []);
+            index.get(stopId)!.push({ redizo, distanceKm: dist, lat: schoolLat, lon: schoolLon });
+          }
+        }
       }
     }
   }

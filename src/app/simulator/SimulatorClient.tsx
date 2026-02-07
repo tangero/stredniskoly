@@ -24,6 +24,7 @@ interface School {
   id: string;
   nazev: string;
   nazev_display: string;
+  slug?: string;
   obor: string;
   obec: string;
   ulice?: string;
@@ -75,7 +76,7 @@ interface SchoolDetailData {
 
 type StatusType = 'accepted' | 'borderline' | 'rejected';
 
-function createSlug(name: string, obor?: string): string {
+function createSlug(name: string, obor?: string, zamereni?: string, delkaStudia?: number): string {
   let slug = name
     .toLowerCase()
     .normalize('NFD')
@@ -86,7 +87,7 @@ function createSlug(name: string, obor?: string): string {
     .replace(/^-|-$/g, '');
 
   if (obor) {
-    const oborSlug = obor
+    let oborSlug = obor
       .toLowerCase()
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
@@ -94,7 +95,22 @@ function createSlug(name: string, obor?: string): string {
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
       .replace(/^-|-$/g, '');
+    if (delkaStudia) {
+      oborSlug = `${oborSlug}-${delkaStudia}lete`;
+    }
     slug = `${slug}-${oborSlug}`;
+  }
+
+  if (zamereni) {
+    const zamereniSlug = zamereni
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+    slug = `${slug}-${zamereniSlug}`;
   }
 
   return slug;
@@ -849,7 +865,7 @@ export function SimulatorClient() {
                     {selectedSchoolsList.map(school => {
                       const status = getStatus(school.jpz_min);
                       const diff = totalScore - school.jpz_min;
-                      const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+                      const slug = school.slug || `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor, school.zamereni, school.delka_studia)}`;
                       const colors: Record<string, string> = {
                         green: 'border-green-500 bg-green-50',
                         yellow: 'border-yellow-500 bg-yellow-50',
@@ -1012,7 +1028,7 @@ interface SchoolCardProps {
 
 function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolCardProps) {
   const diff = yourScore - school.jpz_min;
-  const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+  const slug = school.slug || `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor, school.zamereni, school.delka_studia)}`;
 
   const colors = {
     accepted: {
@@ -1187,7 +1203,7 @@ function SortableSchoolCard({
 
   const status = getStatus(school.jpz_min);
   const diff = totalScore - school.jpz_min;
-  const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+  const slug = school.slug || `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor, school.zamereni, school.delka_studia)}`;
 
   const statusColors = {
     accepted: 'from-green-600 to-green-700 border-green-500',
