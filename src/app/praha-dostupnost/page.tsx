@@ -1,14 +1,16 @@
-import { Metadata } from 'next';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { PrahaDostupnostClient } from './PrahaDostupnostClient';
+import { Metadata } from "next";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { PrahaDostupnostClient } from "./PrahaDostupnostClient";
 
 export const metadata: Metadata = {
-  title: 'Dostupnost škol v Praze (MHD)',
-  description: 'Najděte školy v Praze dostupné do zadané doby cesty MHD z vaší adresy.',
+  title: "Dostupnost škol v Praze (MHD)",
+  description:
+    "Najděte školy v Praze dostupné do zadané doby cesty MHD z vaší adresy.",
   openGraph: {
-    title: 'Dostupnost škol v Praze | Přijímačky na SŠ',
-    description: 'Vyhledejte školy dostupné do časového limitu podle adresy a PID open dat.',
+    title: "Dostupnost škol v Praze | Přijímačky na SŠ",
+    description:
+      "Vyhledejte školy dostupné do časového limitu podle adresy a PID open dat.",
   },
 };
 
@@ -24,8 +26,12 @@ export default function PrahaDostupnostPage() {
               Dostupnost škol v Praze podle MHD
             </h1>
             <p className="text-lg opacity-90 max-w-3xl">
-              Zadejte adresu a dojezdový limit. Nástroj vypíše všechny školy, které se vejdou do času,
-              a seřadí je podle odhadovaného času cesty.
+              Zadejte adresu a dojezdový limit. Nástroj vypíše všechny školy,
+              které se vejdou do času, a seřadí je podle odhadovaného času
+              cesty. Následně si můžete až pět škol zaškrtnout a porovnat v
+              Simulátoru. A kdyby vás zajímalo, proč to funguje jen pro Prahu,
+              tak proto, že data o veřejné dopravě nejsou veřejná, sedí si na
+              nich CHAPS...
             </p>
           </div>
         </section>

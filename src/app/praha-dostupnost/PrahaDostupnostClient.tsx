@@ -23,6 +23,7 @@ type ReachableSchool = {
   routeType: 'direct' | 'transfer' | 'unknown';
   usedLines: string[];
   transferStop?: string;
+  admissionBand: 'very_high' | 'high' | 'medium' | 'low' | 'very_low' | 'unknown';
   oboryPreview: string[];
   oboryCount: number;
   minBodyMin: number | null;
@@ -46,6 +47,22 @@ type SearchResponse = {
     distanceMeters: number;
   }>;
   reachableSchools: ReachableSchool[];
+  pagination: {
+    page: number;
+    pageSize: number;
+    totalItems: number;
+    totalPages: number;
+    hasNext: boolean;
+    hasPrev: boolean;
+  };
+  legends: {
+    admissionThresholds: {
+      veryLowMax: number;
+      lowMax: number;
+      mediumMax: number;
+      highMax: number;
+    } | null;
+  };
   diagnostics: {
     totalSchools: number;
     resolvedSchools: number;
@@ -98,9 +115,27 @@ function routeLabel(school: ReachableSchool): string {
   return `MHD: ${school.usedLines.join(', ')}`;
 }
 
+function timeCohort(minutes: number): { label: string; badgeClass: string } {
+  if (minutes <= 15) return { label: '0-15 min', badgeClass: 'bg-emerald-100 text-emerald-800' };
+  if (minutes <= 25) return { label: '16-25 min', badgeClass: 'bg-sky-100 text-sky-800' };
+  if (minutes <= 35) return { label: '26-35 min', badgeClass: 'bg-amber-100 text-amber-800' };
+  if (minutes <= 45) return { label: '36-45 min', badgeClass: 'bg-orange-100 text-orange-800' };
+  return { label: '46+ min', badgeClass: 'bg-rose-100 text-rose-800' };
+}
+
+function admissionRowClass(band: ReachableSchool['admissionBand']): string {
+  if (band === 'very_high') return 'bg-emerald-50/70';
+  if (band === 'high') return 'bg-lime-50/70';
+  if (band === 'medium') return 'bg-amber-50/70';
+  if (band === 'low') return 'bg-orange-50/70';
+  if (band === 'very_low') return 'bg-rose-50/70';
+  return 'bg-slate-50/40';
+}
+
 export function PrahaDostupnostClient() {
   const [address, setAddress] = useState('');
   const [maxMinutes, setMaxMinutes] = useState(30);
+  const [lastSearch, setLastSearch] = useState<{ address: string; maxMinutes: number } | null>(null);
   const [loading, setLoading] = useState(false);
   const [loadingSeconds, setLoadingSeconds] = useState(0);
   const [error, setError] = useState<string | null>(null);
@@ -110,7 +145,7 @@ export function PrahaDostupnostClient() {
   const timeoutRef = useRef<number | null>(null);
   const timeoutTriggeredRef = useRef(false);
 
-  const totalFound = result?.reachableSchools.length ?? 0;
+  const totalFound = result?.pagination.totalItems ?? 0;
 
   const qualityPct = useMemo(() => {
     if (!result || result.diagnostics.totalSchools === 0) return 0;
@@ -123,6 +158,8 @@ export function PrahaDostupnostClient() {
       .map((school) => school.simulatorSchoolId)
       .filter((id): id is string => Boolean(id));
   }, [result]);
+
+  const admissionThresholds = result?.legends.admissionThresholds ?? null;
 
   useEffect(() => {
     if (!loading) {
@@ -148,17 +185,12 @@ export function PrahaDostupnostClient() {
     setError('Výpočet byl zrušen.');
   }
 
-  async function onSubmit(event: FormEvent) {
-    event.preventDefault();
-
-    if (loading) return;
-
-    const normalizedAddress = address.trim();
-    if (!normalizedAddress) {
-      setError('Zadejte prosím výchozí adresu v Praze.');
-      return;
-    }
-
+  async function runSearch(params: {
+    address: string;
+    maxMinutes: number;
+    page: number;
+    clearSelection: boolean;
+  }) {
     abortRef.current?.abort();
     abortRef.current = new AbortController();
     timeoutTriggeredRef.current = false;
@@ -178,8 +210,9 @@ export function PrahaDostupnostClient() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          address: normalizedAddress,
-          maxMinutes,
+          address: params.address,
+          maxMinutes: params.maxMinutes,
+          page: params.page,
         }),
         signal: abortRef.current.signal,
       });
@@ -188,12 +221,13 @@ export function PrahaDostupnostClient() {
       if (!response.ok) {
         setError(payload?.error ?? 'Nepodařilo se načíst data.');
         setResult(null);
-        setSelectedSimulatorIds([]);
+        if (params.clearSelection) setSelectedSimulatorIds([]);
         return;
       }
 
       setResult(payload as SearchResponse);
-      setSelectedSimulatorIds([]);
+      setLastSearch({ address: params.address, maxMinutes: params.maxMinutes });
+      if (params.clearSelection) setSelectedSimulatorIds([]);
     } catch (err) {
       if (err instanceof Error && err.name === 'AbortError') {
         setError(timeoutTriggeredRef.current
@@ -203,7 +237,7 @@ export function PrahaDostupnostClient() {
         setError('Volání API selhalo. Zkuste to prosím za chvíli znovu.');
       }
       setResult(null);
-      setSelectedSimulatorIds([]);
+      if (params.clearSelection) setSelectedSimulatorIds([]);
     } finally {
       abortRef.current = null;
       if (timeoutRef.current !== null) {
@@ -212,6 +246,25 @@ export function PrahaDostupnostClient() {
       }
       setLoading(false);
     }
+  }
+
+  async function onSubmit(event: FormEvent) {
+    event.preventDefault();
+
+    if (loading) return;
+
+    const normalizedAddress = address.trim();
+    if (!normalizedAddress) {
+      setError('Zadejte prosím výchozí adresu v Praze.');
+      return;
+    }
+
+    await runSearch({
+      address: normalizedAddress,
+      maxMinutes,
+      page: 1,
+      clearSelection: true,
+    });
   }
 
   function toggleSimulatorSelection(simulatorSchoolId: string | null) {
@@ -241,6 +294,18 @@ export function PrahaDostupnostClient() {
     params.set('srovnani', '1');
 
     window.open(`/simulator?${params.toString()}`, '_blank', 'noopener,noreferrer');
+  }
+
+  async function goToPage(page: number) {
+    if (!lastSearch) return;
+    if (loading) return;
+    if (page < 1) return;
+    await runSearch({
+      address: lastSearch.address,
+      maxMinutes: lastSearch.maxMinutes,
+      page,
+      clearSelection: false,
+    });
   }
 
   return (
@@ -324,6 +389,7 @@ export function PrahaDostupnostClient() {
                 </h2>
                 <p className="text-slate-600 text-sm mt-1">
                   Nalezeno <strong>{totalFound}</strong> škol v dojezdovém limitu.
+                  Zobrazeno {result.reachableSchools.length} škol (strana {result.pagination.page} z {result.pagination.totalPages}).
                 </p>
               </div>
               <div className="text-sm text-slate-600">
@@ -351,6 +417,38 @@ export function PrahaDostupnostClient() {
               <div className="rounded-xl bg-slate-50 border border-slate-200 p-4">
                 <p className="font-medium text-slate-700">Model výpočtu</p>
                 <p className="text-slate-600 mt-1">{result.diagnostics.model}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border p-5 md:p-6">
+            <h3 className="font-semibold text-slate-800 mb-4">Vysvětlivky barev</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-sm">
+              <div>
+                <p className="font-medium text-slate-700 mb-2">Kohorty času cesty</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800">0-15 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-sky-100 text-sky-800">16-25 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800">26-35 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-orange-100 text-orange-800">36-45 min</span>
+                  <span className="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-800">46+ min</span>
+                </div>
+              </div>
+              <div>
+                <p className="font-medium text-slate-700 mb-2">Podbarvení školy podle minimálních bodů pro přijetí</p>
+                <div className="space-y-1 text-slate-700">
+                  {admissionThresholds ? (
+                    <>
+                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-emerald-100"></span>nejvyšší náročnost: ≥ {admissionThresholds.highMax} bodů</p>
+                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-lime-100"></span>vyšší náročnost: {admissionThresholds.mediumMax} až {admissionThresholds.highMax - 1} bodů</p>
+                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-amber-100"></span>střední náročnost: {admissionThresholds.lowMax} až {admissionThresholds.mediumMax - 1} bodů</p>
+                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-orange-100"></span>nižší náročnost: {admissionThresholds.veryLowMax} až {admissionThresholds.lowMax - 1} bodů</p>
+                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-rose-100"></span>nejnižší náročnost: &lt; {admissionThresholds.veryLowMax} bodů</p>
+                    </>
+                  ) : (
+                    <p>Hranice náročnosti budou k dispozici po načtení dostatečného množství škol.</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -397,9 +495,11 @@ export function PrahaDostupnostClient() {
                   </tr>
                 </thead>
                 <tbody>
-                  {result.reachableSchools.map((school, index) => (
-                    <tr key={`${school.redizo}-${school.adresa}`} className="border-t hover:bg-slate-50">
-                      <td className="p-3 text-center">
+                  {result.reachableSchools.map((school, index) => {
+                    const cohort = timeCohort(school.estimatedMinutes);
+                    return (
+                    <tr key={`${school.redizo}-${school.adresa}`} className={`border-t ${admissionRowClass(school.admissionBand)}`}>
+                      <td className="p-3 text-center align-top">
                         <input
                           type="checkbox"
                           aria-label={`Vybrat ${school.nazev} do simulátoru`}
@@ -409,8 +509,8 @@ export function PrahaDostupnostClient() {
                           className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
                         />
                       </td>
-                      <td className="p-3 text-slate-500">{index + 1}</td>
-                      <td className="p-3">
+                      <td className="p-3 text-slate-500 align-top">{index + 1 + ((result.pagination.page - 1) * result.pagination.pageSize)}</td>
+                      <td className="p-3 align-top">
                         <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-indigo-600 hover:underline">
                           {school.nazev}
                         </Link>
@@ -421,11 +521,14 @@ export function PrahaDostupnostClient() {
                           {school.oboryPreview.join(', ')}
                           {school.oboryCount > school.oboryPreview.length ? ` +${school.oboryCount - school.oboryPreview.length}` : ''}
                         </p>
+                        {typeof school.minBodyMin === 'number' && (
+                          <p className="text-xs text-slate-600 mt-1">Min. body pro přijetí: {school.minBodyMin}</p>
+                        )}
                       </td>
-                      <td className="p-3 text-sm text-slate-600">{school.mestskaCast || 'Neuvedeno'}</td>
-                      <td className="p-3 text-right">
-                        <span className="inline-block rounded-lg px-2.5 py-1 text-sm font-semibold bg-indigo-100 text-indigo-700">
-                          {school.estimatedMinutes.toFixed(1)} min
+                      <td className="p-3 text-sm text-slate-600 align-top">{school.mestskaCast || 'Neuvedeno'}</td>
+                      <td className="p-3 text-right align-top">
+                        <span className={`inline-block rounded-lg px-2.5 py-1 text-sm font-semibold ${cohort.badgeClass}`}>
+                          {school.estimatedMinutes} min
                         </span>
                         <p className="text-xs mt-1">
                           {school.bestMode === 'walk' ? (
@@ -435,35 +538,37 @@ export function PrahaDostupnostClient() {
                           )}
                         </p>
                         <p className="text-xs text-slate-500">
-                          pěšky {school.walkOnlyMinutes.toFixed(1)} | MHD {school.mhdMinutes.toFixed(1)}
+                          pěšky {school.walkOnlyMinutes} | MHD {school.mhdMinutes}
                         </p>
                         <p className="text-xs text-slate-500 mt-1">{school.distanceKm.toFixed(1)} km vzdušně</p>
                       </td>
-                      <td className="p-3 text-sm text-slate-600">
+                      <td className="p-3 text-sm text-slate-600 align-top">
                         <p>{routeLabel(school)}</p>
                         {school.bestMode === 'mhd' ? (
                           <>
                             <p className="text-xs text-slate-500 mt-1">{school.originStop} → {school.schoolStop}</p>
                             <p className="text-xs text-slate-500 mt-1">
-                              pěšky {school.originWalkMinutes.toFixed(1)} + MHD {school.transitMinutes.toFixed(1)} + přestupní čas {school.transferMinutes.toFixed(1)} + pěšky {school.schoolWalkMinutes.toFixed(1)}
+                              pěšky {school.originWalkMinutes} + MHD {school.transitMinutes} + přestupní čas {school.transferMinutes} + pěšky {school.schoolWalkMinutes}
                             </p>
                           </>
                         ) : (
                           <p className="text-xs text-slate-500 mt-1">
-                            MHD alternativa: {school.originStop} → {school.schoolStop} ({school.mhdMinutes.toFixed(1)} min)
+                            MHD alternativa: {school.originStop} → {school.schoolStop} ({school.mhdMinutes} min)
                           </p>
                         )}
                       </td>
-                      <td className="p-3 text-sm text-slate-600">{school.adresa}</td>
+                      <td className="p-3 text-sm text-slate-600 align-top">{school.adresa}</td>
                     </tr>
-                  ))}
+                  )})}
                 </tbody>
               </table>
             </div>
 
             <div className="md:hidden divide-y">
-              {result.reachableSchools.map((school, index) => (
-                <div key={`${school.redizo}-${school.adresa}`} className="p-4">
+              {result.reachableSchools.map((school, index) => {
+                const cohort = timeCohort(school.estimatedMinutes);
+                return (
+                <div key={`${school.redizo}-${school.adresa}`} className={`p-4 ${admissionRowClass(school.admissionBand)}`}>
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-start gap-2 min-w-0">
                       <input
@@ -475,27 +580,58 @@ export function PrahaDostupnostClient() {
                         className="mt-1 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
                       />
                       <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-indigo-600 hover:underline">
-                      {index + 1}. {school.nazev}
+                      {index + 1 + ((result.pagination.page - 1) * result.pagination.pageSize)}. {school.nazev}
                       </Link>
                     </div>
-                    <span className="shrink-0 rounded-lg px-2 py-1 text-xs font-semibold bg-indigo-100 text-indigo-700">
-                      {school.estimatedMinutes.toFixed(1)} min
+                    <span className={`shrink-0 rounded-lg px-2 py-1 text-xs font-semibold ${cohort.badgeClass}`}>
+                      {school.estimatedMinutes} min
                     </span>
                   </div>
                   <p className="text-sm text-slate-600 mt-1">{school.adresa}</p>
+                  {typeof school.minBodyMin === 'number' && (
+                    <p className="text-xs text-slate-600 mt-1">Min. body: {school.minBodyMin}</p>
+                  )}
                   <p className="text-xs text-slate-500 mt-1">
                     {routeLabel(school)}
                   </p>
                   <p className="text-xs text-slate-500 mt-1">
-                    pěšky {school.walkOnlyMinutes.toFixed(1)} | MHD {school.mhdMinutes.toFixed(1)}
+                    pěšky {school.walkOnlyMinutes} | MHD {school.mhdMinutes}
                   </p>
                   <p className="text-xs text-slate-500 mt-1">
                     {sourceLabel(school.source)}
                   </p>
                 </div>
-              ))}
+              )})}
             </div>
           </div>
+
+          {result.pagination.totalPages > 1 && (
+            <div className="bg-white rounded-2xl shadow-sm border p-4 md:p-5">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <p className="text-sm text-slate-600">
+                  Strana <strong>{result.pagination.page}</strong> z <strong>{result.pagination.totalPages}</strong>
+                </p>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    disabled={!result.pagination.hasPrev || loading}
+                    onClick={() => goToPage(result.pagination.page - 1)}
+                    className="px-3 py-1.5 rounded-lg border border-slate-300 text-slate-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
+                  >
+                    Předchozí
+                  </button>
+                  <button
+                    type="button"
+                    disabled={!result.pagination.hasNext || loading}
+                    onClick={() => goToPage(result.pagination.page + 1)}
+                    className="px-3 py-1.5 rounded-lg border border-slate-300 text-slate-700 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
+                  >
+                    Další
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
 
           <details className="bg-white rounded-2xl shadow-sm border p-5 md:p-6">
             <summary className="cursor-pointer font-semibold text-slate-800">

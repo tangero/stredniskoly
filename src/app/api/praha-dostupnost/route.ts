@@ -42,6 +42,7 @@ type SearchRequest = {
   address?: string;
   maxMinutes?: number;
   limit?: number;
+  page?: number;
 };
 
 type GeocodeResult = {
@@ -55,10 +56,10 @@ const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
 const USER_AGENT = 'stredniskoly-praha-dostupnost/0.1';
 
 const DEFAULT_MAX_MINUTES = 30;
-const MAX_LIMIT = 5000;
 const MAX_GEOCODES_PER_REQUEST = 24;
 const GEOCODE_TIMEOUT_MS = 2500;
 const GEOCODE_CONCURRENCY = 6;
+const PAGE_SIZE = 50;
 
 // Praha + blízké okolí (pro jistotu při příměstských trasách).
 const PRAHA_BBOX = {
@@ -736,12 +737,12 @@ function estimateTripMinutes(params: {
   const totalMinutes = best.originWalkMinutes + best.transitMinutes + schoolWalkMinutes + WAIT_BUFFER + transferMinutes;
 
   return {
-    totalMinutes: Math.round(totalMinutes * 10) / 10,
+    totalMinutes: Math.round(totalMinutes),
     originStop: best.originStopInfo.stop,
-    originWalkMinutes: Math.round(best.originWalkMinutes * 10) / 10,
-    schoolWalkMinutes: Math.round(schoolWalkMinutes * 10) / 10,
-    transitMinutes: Math.round(best.transitMinutes * 10) / 10,
-    transferMinutes: Math.round(transferMinutes * 10) / 10,
+    originWalkMinutes: Math.round(best.originWalkMinutes),
+    schoolWalkMinutes: Math.round(schoolWalkMinutes),
+    transitMinutes: Math.round(best.transitMinutes),
+    transferMinutes: Math.round(transferMinutes),
     routeType: path.routeType,
     lines: path.lines,
     transferStop: path.transferStop,
@@ -751,6 +752,19 @@ function estimateTripMinutes(params: {
 function average(values: number[]): number | null {
   if (values.length === 0) return null;
   return values.reduce((sum, value) => sum + value, 0) / values.length;
+}
+
+function quantile(sortedValues: number[], q: number): number | null {
+  if (sortedValues.length === 0) return null;
+  if (sortedValues.length === 1) return sortedValues[0];
+
+  const clampedQ = Math.max(0, Math.min(1, q));
+  const pos = (sortedValues.length - 1) * clampedQ;
+  const lower = Math.floor(pos);
+  const upper = Math.ceil(pos);
+  if (lower === upper) return sortedValues[lower];
+  const weight = pos - lower;
+  return sortedValues[lower] * (1 - weight) + sortedValues[upper] * weight;
 }
 
 async function mapWithConcurrency<T, R>(
@@ -786,9 +800,9 @@ export async function POST(request: NextRequest) {
 
   const address = (payload.address ?? '').trim();
   const maxMinutesRaw = Number(payload.maxMinutes ?? DEFAULT_MAX_MINUTES);
-  const limitRaw = Number(payload.limit);
+  const pageRaw = Number(payload.page ?? 1);
   const maxMinutes = Number.isFinite(maxMinutesRaw) ? Math.max(5, Math.min(180, maxMinutesRaw)) : DEFAULT_MAX_MINUTES;
-  const limit = Number.isFinite(limitRaw) ? Math.max(1, Math.min(MAX_LIMIT, limitRaw)) : null;
+  const requestedPage = Number.isFinite(pageRaw) ? Math.max(1, Math.floor(pageRaw)) : 1;
 
   if (!address) {
     return NextResponse.json({ error: 'Zadejte výchozí adresu v Praze.' }, { status: 400 });
@@ -929,7 +943,7 @@ export async function POST(request: NextRequest) {
 
       if (!Number.isFinite(estimate.totalMinutes)) continue;
 
-      const walkOnlyMinutes = Math.round(((haversineKm(originGeocode.point, loc.point) / 4.8) * 60) * 10) / 10;
+      const walkOnlyMinutes = Math.round((haversineKm(originGeocode.point, loc.point) / 4.8) * 60);
       const walkIsFaster = walkOnlyMinutes + 1 < estimate.totalMinutes;
       const fastestMinutes = walkIsFaster ? walkOnlyMinutes : estimate.totalMinutes;
       if (fastestMinutes > maxMinutes) continue;
@@ -956,6 +970,7 @@ export async function POST(request: NextRequest) {
         routeType: estimate.routeType,
         usedLines: estimate.lines,
         transferStop: estimate.transferStop,
+        admissionBand: 'unknown' as 'very_high' | 'high' | 'medium' | 'low' | 'very_low' | 'unknown',
         oboryPreview: school.obory.slice(0, 4),
         oboryCount: school.obory.length,
         minBodyMin: school.minBodyMin,
@@ -975,6 +990,49 @@ export async function POST(request: NextRequest) {
       return a.nazev.localeCompare(b.nazev, 'cs');
     });
 
+    const minBodyValues = reachable
+      .map(item => item.minBodyMin)
+      .filter((value): value is number => typeof value === 'number' && Number.isFinite(value))
+      .sort((a, b) => a - b);
+
+    const q20 = quantile(minBodyValues, 0.2);
+    const q40 = quantile(minBodyValues, 0.4);
+    const q60 = quantile(minBodyValues, 0.6);
+    const q80 = quantile(minBodyValues, 0.8);
+
+    const admissionThresholds = (q20 !== null && q40 !== null && q60 !== null && q80 !== null)
+      ? {
+          veryLowMax: Math.round(q20),
+          lowMax: Math.round(q40),
+          mediumMax: Math.round(q60),
+          highMax: Math.round(q80),
+        }
+      : null;
+
+    if (admissionThresholds) {
+      for (const item of reachable) {
+        if (item.minBodyMin === null) {
+          item.admissionBand = 'unknown';
+        } else if (item.minBodyMin >= admissionThresholds.highMax) {
+          item.admissionBand = 'very_high';
+        } else if (item.minBodyMin >= admissionThresholds.mediumMax) {
+          item.admissionBand = 'high';
+        } else if (item.minBodyMin >= admissionThresholds.lowMax) {
+          item.admissionBand = 'medium';
+        } else if (item.minBodyMin >= admissionThresholds.veryLowMax) {
+          item.admissionBand = 'low';
+        } else {
+          item.admissionBand = 'very_low';
+        }
+      }
+    }
+
+    const totalItems = reachable.length;
+    const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+    const page = Math.max(1, Math.min(requestedPage, totalPages));
+    const pageStart = (page - 1) * PAGE_SIZE;
+    const pageItems = reachable.slice(pageStart, pageStart + PAGE_SIZE);
+
     const resolvedSchools = schoolLocations.size;
     const unresolvedSchoolsCount = schools.length - resolvedSchools;
     timings.totalMs = Date.now() - requestStartedAt;
@@ -983,6 +1041,7 @@ export async function POST(request: NextRequest) {
       input: {
         address,
         maxMinutes,
+        page,
       },
       origin: {
         lat: originGeocode.point.lat,
@@ -993,7 +1052,18 @@ export async function POST(request: NextRequest) {
         name: item.stop.name,
         distanceMeters: Math.round(item.distanceKm * 1000),
       })),
-      reachableSchools: limit ? reachable.slice(0, limit) : reachable,
+      reachableSchools: pageItems,
+      pagination: {
+        page,
+        pageSize: PAGE_SIZE,
+        totalItems,
+        totalPages,
+        hasNext: page < totalPages,
+        hasPrev: page > 1,
+      },
+      legends: {
+        admissionThresholds,
+      },
       diagnostics: {
         totalSchools: schools.length,
         resolvedSchools,
