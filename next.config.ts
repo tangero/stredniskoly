@@ -85,6 +85,22 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  // Permanent redirects
+  async redirects() {
+    return [
+      {
+        source: '/praha-dostupnost',
+        destination: '/dostupnost',
+        permanent: true,
+      },
+      {
+        source: '/praha-dostupnost/:path*',
+        destination: '/dostupnost',
+        permanent: true,
+      },
+    ];
+  },
+
   // Optimalizace pro produkci
   poweredByHeader: false, // Skrýt X-Powered-By header
 

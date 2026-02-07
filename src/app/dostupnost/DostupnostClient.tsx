@@ -6,16 +6,19 @@ import Link from 'next/link';
 type ReachableSchool = {
   redizo: string;
   nazev: string;
+  adresa: string;
   obec: string;
   kraj: string;
-  typ: string;
+  typy: string[];
   estimatedMinutes: number;
   stopName: string;
   transitMinutes: number;
   walkMinutes: number;
+  waitMinutes: number;
+  transfers: number;
+  usedLines: string[];
   admissionBand: 'very_high' | 'high' | 'medium' | 'low' | 'very_low' | 'unknown';
-  oboryPreview: string[];
-  oboryCount: number;
+  obory: string[];
   minBodyMin: number | null;
   difficultyScore: number | null;
   schoolUrl: string;
@@ -68,6 +71,16 @@ type StopSuggestion = {
   lon: number;
 };
 
+const TYP_OPTIONS: { value: string; label: string }[] = [
+  { value: '', label: 'Vše' },
+  { value: 'GY4', label: 'Gymnázium 4leté' },
+  { value: 'GY6', label: 'Gymnázium 6leté' },
+  { value: 'GY8', label: 'Gymnázium 8leté' },
+  { value: 'LYC', label: 'Lyceum' },
+  { value: 'SOS', label: 'SOŠ' },
+  { value: 'SOU', label: 'SOU' },
+];
+
 function loadingStage(seconds: number): string {
   if (seconds < 2) return 'Načítám transit graf a data škol...';
   if (seconds < 5) return 'Spouštím Dijkstra algoritmus na grafu zastávek...';
@@ -102,12 +115,33 @@ function admissionRowClass(band: ReachableSchool['admissionBand']): string {
   return 'bg-slate-50/40';
 }
 
+function transferLabel(transfers: number): string {
+  if (transfers === 0) return 'bez přestupu';
+  if (transfers === 1) return '1 přestup';
+  if (transfers >= 2 && transfers <= 4) return `${transfers} přestupy`;
+  return `${transfers} přestupů`;
+}
+
+function transferBadgeClass(transfers: number): string {
+  if (transfers === 0) return 'bg-emerald-100 text-emerald-700';
+  if (transfers === 1) return 'bg-amber-100 text-amber-700';
+  return 'bg-rose-100 text-rose-700';
+}
+
 function typLabel(typ: string): string {
-  if (typ.startsWith('GY')) return 'Gymnázium';
+  if (typ === 'GY4') return 'Gymnázium 4l';
+  if (typ === 'GY6') return 'Gymnázium 6l';
+  if (typ === 'GY8') return 'Gymnázium 8l';
+  if (typ === 'LYC') return 'Lyceum';
   if (typ === 'SOS') return 'SOŠ';
   if (typ === 'SOU') return 'SOU';
   if (typ === 'KON') return 'Konzervatoř';
   return typ || '—';
+}
+
+function linesLabel(lines: string[]): string {
+  if (lines.length === 0) return '';
+  return lines.join(' → ');
 }
 
 export function DostupnostClient() {
@@ -119,9 +153,11 @@ export function DostupnostClient() {
   const [highlightIndex, setHighlightIndex] = useState(-1);
   const [showDropdown, setShowDropdown] = useState(false);
   const [maxMinutes, setMaxMinutes] = useState(60);
+  const [typFilter, setTypFilter] = useState('');
   const [lastSearch, setLastSearch] = useState<{
     stopId: string;
     maxMinutes: number;
+    typFilter: string;
   } | null>(null);
   const [loading, setLoading] = useState(false);
   const [loadingSeconds, setLoadingSeconds] = useState(0);
@@ -158,7 +194,6 @@ export function DostupnostClient() {
     return () => window.clearInterval(interval);
   }, [loading]);
 
-  // Click outside to close dropdown
   useEffect(() => {
     function handleMouseDown(e: MouseEvent) {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
@@ -169,7 +204,6 @@ export function DostupnostClient() {
     return () => document.removeEventListener('mousedown', handleMouseDown);
   }, []);
 
-  // Fetch suggestions with debounce
   useEffect(() => {
     const query = stopQuery.trim();
     if (query.length < 2 || selectedStop) {
@@ -205,7 +239,6 @@ export function DostupnostClient() {
         setShowDropdown(items.length > 0);
         setSuggestLoading(false);
       } catch {
-        // Aborted or network error — only update state if this effect is still current
         if (isCurrent) setSuggestLoading(false);
       }
     }, 150);
@@ -231,6 +264,7 @@ export function DostupnostClient() {
   async function runSearch(params: {
     stopId: string;
     maxMinutes: number;
+    typFilter: string;
     page: number;
     clearSelection: boolean;
   }) {
@@ -253,6 +287,7 @@ export function DostupnostClient() {
         body: JSON.stringify({
           stopId: params.stopId,
           maxMinutes: params.maxMinutes,
+          typFilter: params.typFilter,
           page: params.page,
         }),
         signal: abortRef.current.signal,
@@ -270,6 +305,7 @@ export function DostupnostClient() {
       setLastSearch({
         stopId: params.stopId,
         maxMinutes: params.maxMinutes,
+        typFilter: params.typFilter,
       });
       if (params.clearSelection) setSelectedSimulatorIds([]);
     } catch (err) {
@@ -304,6 +340,7 @@ export function DostupnostClient() {
     await runSearch({
       stopId: selectedStop.stopId,
       maxMinutes,
+      typFilter,
       page: 1,
       clearSelection: true,
     });
@@ -372,8 +409,6 @@ export function DostupnostClient() {
     const matchStart = textNorm.indexOf(queryNorm);
     if (matchStart === -1) return text;
     const matchEnd = matchStart + queryNorm.length;
-    // Map normalized positions back to original text (same length since we only strip combining marks)
-    // Since normalize('NFD') + strip diacritics can change lengths, we need character-by-character mapping
     const origChars = [...text];
     const normChars: string[] = [];
     const origToNormIndex: number[] = [];
@@ -384,7 +419,6 @@ export function DostupnostClient() {
         normChars.push(nc);
       }
     }
-    // Find original start and end
     let origStart = -1;
     let origEnd = -1;
     for (let i = 0; i < origChars.length; i++) {
@@ -435,6 +469,7 @@ export function DostupnostClient() {
     await runSearch({
       stopId: lastSearch.stopId,
       maxMinutes: lastSearch.maxMinutes,
+      typFilter: lastSearch.typFilter,
       page,
       clearSelection: false,
     });
@@ -442,9 +477,35 @@ export function DostupnostClient() {
 
   return (
     <div className="space-y-6">
+      {/* Informacni panel a navod */}
+      <div className="bg-white rounded-2xl shadow-sm border p-5 md:p-6">
+        <h3 className="font-semibold text-slate-800 mb-3">Jak to funguje</h3>
+        <div className="grid md:grid-cols-2 gap-4 text-sm text-slate-700">
+          <div>
+            <p className="font-medium text-slate-800 mb-2">Postup:</p>
+            <ol className="list-decimal pl-5 space-y-1">
+              <li>Zadejte název zastávky (autobus, vlak, metro, tramvaj)</li>
+              <li>Vyberte maximální dojezdový čas a typ školy</li>
+              <li>Klikněte na Vyhledat</li>
+              <li>Vyberte zajímavé školy a otevřete je v Simulátoru</li>
+            </ol>
+          </div>
+          <div>
+            <p className="font-medium text-slate-800 mb-2">Jak počítáme časy:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Dijkstra routing na celostátním GTFS grafu (35 000+ zastávek)</li>
+              <li>Zahrnujeme čekání na spoj (headway/2 z ranního profilu Po 7-8h)</li>
+              <li>Přestupní penalizace 2 min za každý přestup</li>
+              <li>Chůze ke škole max 1,5 km rychlostí 5 km/h</li>
+              <li>Slouží jako odhad, ne přesný jízdní řád</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <form onSubmit={onSubmit} className="bg-white rounded-2xl shadow-sm border p-5 md:p-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div className="md:col-span-6 relative" ref={wrapperRef}>
+          <div className="md:col-span-5 relative" ref={wrapperRef}>
             <label>
               <span className="block text-sm font-medium text-slate-700 mb-1">
                 Výchozí zastávka
@@ -518,7 +579,22 @@ export function DostupnostClient() {
             />
           </label>
 
-          <div className="md:col-span-4 flex items-end">
+          <label className="md:col-span-2">
+            <span className="block text-sm font-medium text-slate-700 mb-1">
+              Typ školy
+            </span>
+            <select
+              value={typFilter}
+              onChange={(e) => setTypFilter(e.target.value)}
+              className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none"
+            >
+              {TYP_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+          </label>
+
+          <div className="md:col-span-3 flex items-end">
             <div className="w-full flex gap-2">
               <button
                 type="submit"
@@ -589,41 +665,6 @@ export function DostupnostClient() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-sm border p-5 md:p-6">
-            <h3 className="font-semibold text-slate-800 mb-4">Vysvětlivky barev</h3>
-            <div className="grid md:grid-cols-2 gap-6 text-sm">
-              <div>
-                <p className="font-medium text-slate-700 mb-2">Kohorty času cesty</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800">0-9 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-green-100 text-green-800">10-19 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-sky-100 text-sky-800">20-29 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-cyan-100 text-cyan-800">30-39 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800">40-49 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-orange-100 text-orange-800">50-59 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-800">60-69 min</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-fuchsia-100 text-fuchsia-800">70+ min</span>
-                </div>
-              </div>
-              <div>
-                <p className="font-medium text-slate-700 mb-2">Podbarvení školy podle našeho hodnocení náročnosti</p>
-                <div className="space-y-1 text-slate-700">
-                  {admissionThresholds ? (
-                    <>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-emerald-100"></span>nejvyšší náročnost: &ge; {admissionThresholds.highMax.toFixed(1)}</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-lime-100"></span>vyšší náročnost: {admissionThresholds.mediumMax.toFixed(1)} až {admissionThresholds.highMax.toFixed(1)}</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-amber-100"></span>střední náročnost: {admissionThresholds.lowMax.toFixed(1)} až {admissionThresholds.mediumMax.toFixed(1)}</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-orange-100"></span>nižší náročnost: {admissionThresholds.veryLowMax.toFixed(1)} až {admissionThresholds.lowMax.toFixed(1)}</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-rose-100"></span>nejnižší náročnost: &lt; {admissionThresholds.veryLowMax.toFixed(1)}</p>
-                    </>
-                  ) : (
-                    <p>Hranice náročnosti budou k dispozici po načtení dat hodnocení.</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div className="bg-white rounded-2xl shadow-sm border overflow-hidden">
             <div className="px-5 py-4 md:px-6 border-b bg-slate-50">
               <div className="flex flex-wrap items-center justify-between gap-3">
@@ -668,18 +709,17 @@ export function DostupnostClient() {
                     </th>
                     <th className="text-left p-3">#</th>
                     <th className="text-left p-3">Škola</th>
-                    <th className="text-left p-3">Obec</th>
-                    <th className="text-left p-3">Kraj</th>
-                    <th className="text-right p-3">Čas</th>
-                    <th className="text-left p-3">Typ</th>
+                    <th className="text-right p-3">Čas a trasa</th>
+                    <th className="text-left p-3">Adresa</th>
                   </tr>
                 </thead>
                 <tbody>
                   {result.reachableSchools.map((school, index) => {
                     const cohort = timeCohort(school.estimatedMinutes);
                     const rowNum = index + 1 + ((result.pagination.page - 1) * result.pagination.pageSize);
+                    const rideMin = Math.max(0, school.transitMinutes - school.waitMinutes);
                     return (
-                      <tr key={`${school.redizo}`} className={`border-t ${admissionRowClass(school.admissionBand)}`}>
+                      <tr key={school.redizo} className={`border-t ${admissionRowClass(school.admissionBand)}`}>
                         <td className="p-3 text-center align-top">
                           <input
                             type="checkbox"
@@ -695,10 +735,13 @@ export function DostupnostClient() {
                           <Link href={school.schoolUrl} className="font-medium text-slate-900 hover:text-indigo-600 hover:underline">
                             {school.nazev}
                           </Link>
-                          <p className="text-xs text-slate-500 mt-1">REDIZO {school.redizo}</p>
+                          <div className="flex flex-wrap gap-1 mt-1">
+                            {school.typy.map((t) => (
+                              <span key={t} className="inline-block text-xs px-1.5 py-0.5 rounded bg-slate-200 text-slate-700">{typLabel(t)}</span>
+                            ))}
+                          </div>
                           <p className="text-xs text-slate-600 mt-1">
-                            {school.oboryPreview.join(', ')}
-                            {school.oboryCount > school.oboryPreview.length ? ` +${school.oboryCount - school.oboryPreview.length}` : ''}
+                            {school.obory.join(', ')}
                           </p>
                           {typeof school.difficultyScore === 'number' && (
                             <p className="text-xs text-slate-600 mt-1">Náročnost: {school.difficultyScore.toFixed(1)}</p>
@@ -707,20 +750,29 @@ export function DostupnostClient() {
                             <p className="text-xs text-slate-600 mt-1">Min. body: {school.minBodyMin}</p>
                           )}
                         </td>
-                        <td className="p-3 text-sm text-slate-600 align-top">{school.obec || '—'}</td>
-                        <td className="p-3 text-sm text-slate-600 align-top">{school.kraj || '—'}</td>
                         <td className="p-3 text-right align-top">
                           <span className={`inline-block rounded-lg px-2.5 py-1 text-sm font-semibold ${cohort.badgeClass}`}>
                             {school.estimatedMinutes} min
                           </span>
+                          <span className={`inline-block rounded-lg px-2 py-0.5 text-xs ml-1 ${transferBadgeClass(school.transfers)}`}>
+                            {transferLabel(school.transfers)}
+                          </span>
                           <p className="text-xs text-slate-500 mt-1">
-                            MHD {school.transitMinutes} + chůze {school.walkMinutes}
+                            jízda {rideMin} + čekání {school.waitMinutes} + chůze {school.walkMinutes}
                           </p>
-                          <p className="text-xs text-slate-500">
+                          {school.usedLines.length > 0 && (
+                            <p className="text-xs text-indigo-600 mt-1">
+                              Linky: {linesLabel(school.usedLines)}
+                            </p>
+                          )}
+                          <p className="text-xs text-slate-500 mt-0.5">
                             zastávka: {school.stopName}
                           </p>
                         </td>
-                        <td className="p-3 text-sm text-slate-600 align-top">{typLabel(school.typ)}</td>
+                        <td className="p-3 text-sm text-slate-600 align-top">
+                          <p>{school.adresa || '—'}</p>
+                          <p className="text-xs text-slate-500 mt-1">{school.obec}{school.kraj ? `, ${school.kraj}` : ''}</p>
+                        </td>
                       </tr>
                     );
                   })}
@@ -733,8 +785,9 @@ export function DostupnostClient() {
               {result.reachableSchools.map((school, index) => {
                 const cohort = timeCohort(school.estimatedMinutes);
                 const rowNum = index + 1 + ((result.pagination.page - 1) * result.pagination.pageSize);
+                const rideMin = Math.max(0, school.transitMinutes - school.waitMinutes);
                 return (
-                  <div key={`${school.redizo}`} className={`p-4 ${admissionRowClass(school.admissionBand)}`}>
+                  <div key={school.redizo} className={`p-4 ${admissionRowClass(school.admissionBand)}`}>
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex items-start gap-2 min-w-0">
                         <input
@@ -753,12 +806,13 @@ export function DostupnostClient() {
                         {school.estimatedMinutes} min
                       </span>
                     </div>
-                    <p className="text-sm text-slate-600 mt-1">{school.obec}{school.kraj ? `, ${school.kraj}` : ''}</p>
-                    <p className="text-xs text-slate-500 mt-1">{typLabel(school.typ)}</p>
-                    <p className="text-xs text-slate-600 mt-1">
-                      {school.oboryPreview.join(', ')}
-                      {school.oboryCount > school.oboryPreview.length ? ` +${school.oboryCount - school.oboryPreview.length}` : ''}
-                    </p>
+                    <p className="text-sm text-slate-600 mt-1">{school.adresa || school.obec}</p>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {school.typy.map((t) => (
+                        <span key={t} className="inline-block text-xs px-1.5 py-0.5 rounded bg-slate-200 text-slate-700">{typLabel(t)}</span>
+                      ))}
+                    </div>
+                    <p className="text-xs text-slate-600 mt-1">{school.obory.join(', ')}</p>
                     {typeof school.difficultyScore === 'number' && (
                       <p className="text-xs text-slate-600 mt-1">Náročnost: {school.difficultyScore.toFixed(1)}</p>
                     )}
@@ -766,8 +820,15 @@ export function DostupnostClient() {
                       <p className="text-xs text-slate-600 mt-1">Min. body: {school.minBodyMin}</p>
                     )}
                     <p className="text-xs text-slate-500 mt-1">
-                      MHD {school.transitMinutes} + chůze {school.walkMinutes} min | zastávka: {school.stopName}
+                      <span className={`inline-block rounded px-1.5 py-0.5 mr-1 ${transferBadgeClass(school.transfers)}`}>
+                        {transferLabel(school.transfers)}
+                      </span>
+                      jízda {rideMin} + čekání {school.waitMinutes} + chůze {school.walkMinutes} min
                     </p>
+                    {school.usedLines.length > 0 && (
+                      <p className="text-xs text-indigo-600 mt-1">Linky: {linesLabel(school.usedLines)}</p>
+                    )}
+                    <p className="text-xs text-slate-500">zastávka: {school.stopName}</p>
                   </div>
                 );
               })}
@@ -808,7 +869,7 @@ export function DostupnostClient() {
             </summary>
             <div className="mt-4 space-y-3 text-sm text-slate-700">
               <p>
-                Výpočet používá Dijkstra shortest path na celostátním GTFS transit grafu
+                Výpočet používá transfer-aware Dijkstra shortest path na celostátním GTFS transit grafu
                 s {result.diagnostics.reachableStopCount.toLocaleString('cs-CZ')} dosažitelnými stanicemi.
                 Slouží jako rychlý shortlist, ne jako přesný jízdní řád.
               </p>

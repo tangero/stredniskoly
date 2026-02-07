@@ -6,11 +6,11 @@ import { DostupnostClient } from "./DostupnostClient";
 export const metadata: Metadata = {
   title: "Dopravní dostupnost škol v celé ČR",
   description:
-    "Najděte střední školy dostupné veřejnou dopravou z libovolné zastávky v ČR. Dijkstra routing na celostátním GTFS grafu.",
+    "Najděte střední školy dostupné veřejnou dopravou z libovolné zastávky v ČR. Transfer-aware Dijkstra routing na celostátním GTFS grafu.",
   openGraph: {
     title: "Dopravní dostupnost škol v celé ČR | Přijímačky na SŠ",
     description:
-      "Vyhledejte školy dostupné do časového limitu z libovolné zastávky v České republice.",
+      "Vyhledejte školy dostupné do časového limitu z libovolné zastávky v České republice. Zahrnuje čekání na spoj, přestupy a linky.",
   },
 };
 
@@ -23,13 +23,12 @@ export default function DostupnostPage() {
         <section className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white py-12">
           <div className="max-w-6xl mx-auto px-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-3">
-              Dopravní dostupnost škol v celé ČR
+              Dopravní dostupnost středních škol
             </h1>
             <p className="text-lg opacity-90 max-w-3xl">
-              Vyberte výchozí zastávku kdekoliv v České republice, zadejte
-              maximální dojezdový čas a nástroj najde všechny střední školy
-              dosažitelné veřejnou dopravou. Výpočet používá Dijkstra routing
-              na celostátním GTFS grafu (36 000+ stanic).
+              Zadejte výchozí zastávku kdekoliv v ČR a zjistěte, které střední školy
+              stihnete do zvoleného časového limitu. Výpočet zahrnuje jízdní dobu,
+              čekání na spoj i přestupy na 35 000+ stanicích veřejné dopravy.
             </p>
           </div>
         </section>

@@ -5,9 +5,12 @@ import { createSlug } from '@/lib/utils';
 
 type Point = { lat: number; lon: number };
 
+type EdgeV2 = [string, number, string[]]; // [dest, travelTimeMin, routeShorts]
+
 type TransitGraphData = {
   stops: Record<string, [string, number, number]>;
-  edges: Record<string, [string, number][]>;
+  edges: Record<string, EdgeV2[]>;
+  headways: Record<string, number>; // routeShort → headway minutes
 };
 
 type SchoolLocationsData = {
@@ -36,7 +39,7 @@ type AggregatedSchool = {
   adresa: string;
   obec: string;
   kraj: string;
-  typ: string;
+  typy: string[];
   obory: string[];
   minBodyMin: number | null;
   difficultyScore: number | null;
@@ -47,6 +50,7 @@ type SearchRequest = {
   stopId?: string;
   maxMinutes?: number;
   page?: number;
+  typFilter?: string;
 };
 
 const PAGE_SIZE = 50;
@@ -178,7 +182,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
     adresa: string;
     obec: string;
     kraj: string;
-    typ: string;
+    typy: Set<string>;
     obory: Set<string>;
     minBodyMin: number | null;
     simulatorSchoolId: string | null;
@@ -205,7 +209,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
         adresa,
         obec,
         kraj,
-        typ,
+        typy: new Set<string>(),
         obory: new Set<string>(),
         minBodyMin: null,
         simulatorSchoolId: schoolId || null,
@@ -214,6 +218,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
     }
 
     const item = map.get(redizo)!;
+    if (typ) item.typy.add(typ);
     const obor = String(row.obor ?? '').trim();
     if (obor) item.obory.add(obor);
 
@@ -236,7 +241,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
     adresa: value.adresa,
     obec: value.obec,
     kraj: value.kraj,
-    typ: value.typ,
+    typy: Array.from(value.typy).sort(),
     obory: Array.from(value.obory).sort((a, b) => a.localeCompare(b, 'cs')),
     minBodyMin: value.minBodyMin,
     difficultyScore: redizoDifficultyMap.get(value.redizo) ?? null,
@@ -323,46 +328,106 @@ function buildStopToSchoolsIndex(
   return index;
 }
 
+const TRANSFER_PENALTY = 2; // minutes for changing platforms
+const DEFAULT_HEADWAY = 8; // fallback headway when route not in table
+const MAX_WAIT = 15; // cap on waiting time
+
+type DijkstraResult = {
+  cost: number;
+  transfers: number;
+  waitMinutes: number;
+  usedRoutes: string[];
+};
+
+function pickBestRoute(
+  edgeRoutes: string[],
+  headways: Record<string, number>,
+): { route: string; headway: number } {
+  let bestRoute = edgeRoutes[0] ?? '';
+  let bestHeadway = headways[bestRoute] ?? DEFAULT_HEADWAY;
+  for (let i = 1; i < edgeRoutes.length; i++) {
+    const h = headways[edgeRoutes[i]] ?? DEFAULT_HEADWAY;
+    if (h < bestHeadway) {
+      bestHeadway = h;
+      bestRoute = edgeRoutes[i];
+    }
+  }
+  return { route: bestRoute, headway: bestHeadway };
+}
+
 function dijkstra(
-  edges: Record<string, [string, number][]>,
+  edges: Record<string, EdgeV2[]>,
+  headways: Record<string, number>,
   startId: string,
   maxMinutes: number,
-): Map<string, number> {
-  const dist = new Map<string, number>();
-  dist.set(startId, 0);
+): Map<string, DijkstraResult> {
+  // State: (cost, stopId, currentRoute)
+  // Key for visited: "stopId|route"
+  const bestPerStop = new Map<string, DijkstraResult>();
+  const dist = new Map<string, number>(); // "stopId|route" → cost
   const visited = new Set<string>();
 
-  // Simple priority queue using sorted array — sufficient for 36k nodes
-  const pq: [number, string][] = [[0, startId]];
+  // Priority queue: [cost, stopId, currentRoute, transfers, waitMinutes, usedRoutes]
+  type PQEntry = [number, string, string, number, number, string[]];
+  const pq: PQEntry[] = [[0, startId, '', 0, 0, []]];
+  dist.set(`${startId}|`, 0);
 
   while (pq.length > 0) {
-    // Find minimum (avoid full sort: just find min index)
     let minIdx = 0;
     for (let i = 1; i < pq.length; i++) {
       if (pq[i][0] < pq[minIdx][0]) minIdx = i;
     }
-    const [d, u] = pq[minIdx];
+    const [d, u, curRoute, transfers, waitMin, usedRoutes] = pq[minIdx];
     pq[minIdx] = pq[pq.length - 1];
     pq.pop();
 
-    if (visited.has(u)) continue;
-    visited.add(u);
+    const stateKey = `${u}|${curRoute}`;
+    if (visited.has(stateKey)) continue;
+    visited.add(stateKey);
     if (d > maxMinutes) continue;
+
+    // Update best known for this stop
+    const existing = bestPerStop.get(u);
+    if (!existing || d < existing.cost) {
+      bestPerStop.set(u, { cost: d, transfers, waitMinutes: waitMin, usedRoutes });
+    }
 
     const neighbors = edges[u];
     if (!neighbors) continue;
 
-    for (const [neighbor, travelTime] of neighbors) {
-      const nd = d + travelTime;
+    for (const [neighbor, travelTime, edgeRoutes] of neighbors) {
+      // Can we continue on the same route?
+      const sameRoute = curRoute !== '' && edgeRoutes.includes(curRoute);
+
+      if (sameRoute) {
+        // No transfer — just travel time
+        const nd = d + travelTime;
+        if (nd > maxMinutes) continue;
+        const nKey = `${neighbor}|${curRoute}`;
+        if (!dist.has(nKey) || nd < dist.get(nKey)!) {
+          dist.set(nKey, nd);
+          pq.push([nd, neighbor, curRoute, transfers, waitMin, usedRoutes]);
+        }
+      }
+
+      // Also consider transferring to the best route on this edge
+      const { route: bestRoute, headway } = pickBestRoute(edgeRoutes, headways);
+      const waitTime = Math.min(headway / 2, MAX_WAIT);
+      const isFirstBoarding = curRoute === '';
+      const transferCost = isFirstBoarding ? waitTime : waitTime + TRANSFER_PENALTY;
+      const newTransfers = isFirstBoarding ? 0 : transfers + 1;
+      const nd = d + travelTime + transferCost;
       if (nd > maxMinutes) continue;
-      if (!dist.has(neighbor) || nd < dist.get(neighbor)!) {
-        dist.set(neighbor, nd);
-        pq.push([nd, neighbor]);
+      const nKey = `${neighbor}|${bestRoute}`;
+      if (!dist.has(nKey) || nd < dist.get(nKey)!) {
+        dist.set(nKey, nd);
+        const newUsedRoutes = usedRoutes.includes(bestRoute) ? usedRoutes : [...usedRoutes, bestRoute];
+        pq.push([nd, neighbor, bestRoute, newTransfers, waitMin + waitTime, newUsedRoutes]);
       }
     }
   }
 
-  return dist;
+  return bestPerStop;
 }
 
 export async function POST(request: NextRequest) {
@@ -378,6 +443,7 @@ export async function POST(request: NextRequest) {
   const pageRaw = Number(payload.page ?? 1);
   const maxMinutes = Number.isFinite(maxMinutesRaw) ? Math.max(5, Math.min(180, maxMinutesRaw)) : 60;
   const requestedPage = Number.isFinite(pageRaw) ? Math.max(1, Math.floor(pageRaw)) : 1;
+  const typFilter = (payload.typFilter ?? '').trim();
 
   if (!stopId) {
     return NextResponse.json({ error: 'Vyberte výchozí zastávku.' }, { status: 400 });
@@ -402,7 +468,7 @@ export async function POST(request: NextRequest) {
     const [startName, startLat, startLon] = graph.stops[stopId];
 
     phaseStart = Date.now();
-    const reachableStops = dijkstra(graph.edges, stopId, maxMinutes);
+    const reachableStops = dijkstra(graph.edges, graph.headways ?? {}, stopId, maxMinutes);
     timings.dijkstraMs = Date.now() - phaseStart;
 
     phaseStart = Date.now();
@@ -417,11 +483,15 @@ export async function POST(request: NextRequest) {
       transitMinutes: number;
       walkMinutes: number;
       totalMinutes: number;
+      waitMinutes: number;
+      transfers: number;
+      usedRoutes: string[];
       stopId: string;
       stopName: string;
     }>();
 
-    for (const [reachableStopId, transitMin] of reachableStops) {
+    for (const [reachableStopId, dijkResult] of reachableStops) {
+      const transitMin = dijkResult.cost;
       const nearbySchools = stopSchoolIndex.get(reachableStopId);
       if (!nearbySchools) continue;
 
@@ -438,9 +508,12 @@ export async function POST(request: NextRequest) {
         const existing = bestSchoolTimes.get(redizo);
         if (!existing || totalMin < existing.totalMinutes) {
           bestSchoolTimes.set(redizo, {
-            transitMinutes: transitMin,
+            transitMinutes: Math.round(transitMin * 10) / 10,
             walkMinutes: Math.round(walkMin * 10) / 10,
             totalMinutes: Math.round(totalMin * 10) / 10,
+            waitMinutes: Math.round(dijkResult.waitMinutes * 10) / 10,
+            transfers: dijkResult.transfers,
+            usedRoutes: dijkResult.usedRoutes,
             stopId: reachableStopId,
             stopName,
           });
@@ -456,20 +529,26 @@ export async function POST(request: NextRequest) {
       const school = schoolsMap.get(redizo);
       if (!school) continue;
 
+      // Apply typ filter
+      if (typFilter && !school.typy.some((t) => t === typFilter)) continue;
+
       const schoolSlug = `${school.redizo}-${createSlug(school.nazevRaw || school.nazev)}`;
       reachableSchools.push({
         redizo: school.redizo,
         nazev: school.nazev,
+        adresa: school.adresa,
         obec: school.obec,
         kraj: school.kraj,
-        typ: school.typ,
+        typy: school.typy,
         estimatedMinutes: Math.round(timing.totalMinutes),
         stopName: timing.stopName,
-        transitMinutes: timing.transitMinutes,
+        transitMinutes: Math.round(timing.transitMinutes),
         walkMinutes: Math.round(timing.walkMinutes),
+        waitMinutes: Math.round(timing.waitMinutes),
+        transfers: timing.transfers,
+        usedLines: timing.usedRoutes,
         admissionBand: getDifficultyBand(school.difficultyScore, difficultyThresholdsCache),
-        oboryPreview: school.obory.slice(0, 4),
-        oboryCount: school.obory.length,
+        obory: school.obory,
         minBodyMin: school.minBodyMin,
         difficultyScore: school.difficultyScore !== null ? roundToOne(school.difficultyScore) : null,
         schoolUrl: `/skola/${schoolSlug}`,
@@ -521,13 +600,14 @@ export async function POST(request: NextRequest) {
       diagnostics: {
         totalSchoolsInDb: schools.length,
         reachableStopCount: reachableStops.size,
-        model: 'dijkstra-transit-graph-v1',
+        model: 'dijkstra-transit-graph-v2',
         timingsMs: timings,
         notes: [
-          'Výpočet používá Dijkstra shortest path na celostátním GTFS transit grafu (spojenka.cz).',
-          'Časy hran v grafu jsou průměrné jízdní doby mezi zastávkami.',
+          'Výpočet používá transfer-aware Dijkstra na celostátním GTFS transit grafu (spojenka.cz).',
+          'Hrany grafu obsahují informace o linkách, čas zahrnuje jízdní dobu + čekání na spoj + přestupní penalizaci.',
+          `Čekání na spoj = headway/2 (max ${MAX_WAIT} min), přestupní penalizace = ${TRANSFER_PENALTY} min.`,
+          'Headway linek je odvozen z pondělního ranního profilu 7:00–8:00.',
           'Chůze ze zastávky ke škole je počítána rychlostí 5 km/h, max 1,5 km.',
-          'Nejde o přesný jízdní řád — nezohledňuje čekání na spoje ani přestupní časy.',
           'Pro přesnější výsledky doporučujeme ověřit konkrétní spojení na spojenka.cz.',
         ],
       },

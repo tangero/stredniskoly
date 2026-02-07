@@ -4,7 +4,8 @@ import path from 'path';
 
 type TransitGraphData = {
   stops: Record<string, [string, number, number]>;
-  edges: Record<string, [string, number][]>;
+  edges: Record<string, [string, number, string[]][]>;
+  headways?: Record<string, number>;
 };
 
 type StopEntry = {
