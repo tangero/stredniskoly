@@ -39,4 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-/data
+/data/*
+!/data/transit_graph.json
+!/data/school_locations.json
