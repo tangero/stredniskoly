@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import {
@@ -111,13 +111,13 @@ export function SimulatorClient() {
   const [selectedSchoolIds, setSelectedSchoolIds] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [krajFilter, setKrajFilter] = useState('');
-  const [, setShowFilters] = useState(false);
   const [showOnboarding, setShowOnboarding] = useState(false);
   const [delkaStudia, setDelkaStudia] = useState<number | null>(4);
   const [schoolDetails, setSchoolDetails] = useState<Map<string, SchoolDetailData>>(new Map());
   const [loadingDetails, setLoadingDetails] = useState<Set<string>>(new Set());
   // Cache pro vybrané školy (aby zůstaly dostupné i po změně filtrů)
   const [selectedSchoolsCache, setSelectedSchoolsCache] = useState<Map<string, School>>(new Map());
+  const didHydrateFromUrl = useRef(false);
 
   // Pro zpětnou kompatibilitu
   const selectedSchools = useMemo(() => new Set(selectedSchoolIds), [selectedSchoolIds]);
@@ -151,6 +151,80 @@ export function SimulatorClient() {
 
   // Celkové skóre JPZ = ČJ + MA (max 50 + 50 = 100 bodů)
   const totalScore = scoreCj + scoreMa;
+
+  // Předvyplnění z URL (sdílený odkaz: ?cj=..&ma=..&skoly=id1,id2)
+  useEffect(() => {
+    const cjParam = searchParams.get('cj');
+    const maParam = searchParams.get('ma');
+    const skolyParam = searchParams.get('skoly');
+
+    if (cjParam) {
+      const cj = parseInt(cjParam, 10);
+      if (Number.isFinite(cj)) {
+        setScoreCj(Math.min(50, Math.max(0, cj)));
+      }
+    }
+
+    if (maParam) {
+      const ma = parseInt(maParam, 10);
+      if (Number.isFinite(ma)) {
+        setScoreMa(Math.min(50, Math.max(0, ma)));
+      }
+    }
+
+    if (skolyParam) {
+      const ids = Array.from(
+        new Set(
+          skolyParam
+            .split(',')
+            .map(id => id.trim())
+            .filter(id => id.length > 0)
+        )
+      ).slice(0, 30);
+
+      setSelectedSchoolIds(prev => {
+        if (prev.length === ids.length && prev.every((v, i) => v === ids[i])) {
+          return prev;
+        }
+        return ids;
+      });
+    } else if (!didHydrateFromUrl.current) {
+      setSelectedSchoolIds([]);
+    }
+
+    didHydrateFromUrl.current = true;
+  }, [searchParams]);
+
+  // Dotáhnout metadata vybraných škol podle ID (i mimo aktuální filtry)
+  useEffect(() => {
+    if (selectedSchoolIds.length === 0) return;
+
+    const missing = selectedSchoolIds.filter(id => !selectedSchoolsCache.has(id));
+    if (missing.length === 0) return;
+
+    const controller = new AbortController();
+    const params = new URLSearchParams();
+    params.set('ids', missing.join(','));
+    params.set('limit', String(Math.min(100, missing.length)));
+
+    fetch(`/api/schools/search?${params.toString()}`, { signal: controller.signal })
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (!data?.schools) return;
+        setSelectedSchoolsCache(prev => {
+          const next = new Map(prev);
+          (data.schools as School[]).forEach((school) => next.set(school.id, school));
+          return next;
+        });
+      })
+      .catch((err) => {
+        if (err?.name !== 'AbortError') {
+          console.error('Error preloading selected schools:', err);
+        }
+      });
+
+    return () => controller.abort();
+  }, [selectedSchoolIds, selectedSchoolsCache]);
 
   // Načíst detaily školy z API
   const fetchSchoolDetails = useCallback(async (schoolId: string) => {
@@ -216,8 +290,8 @@ export function SimulatorClient() {
         });
         const data = await res.json();
         setSchools(data.schools || []);
-      } catch (err: any) {
-        if (err.name !== 'AbortError') {
+      } catch (err: unknown) {
+        if (!(err instanceof DOMException && err.name === 'AbortError')) {
           console.error('Error loading schools:', err);
         }
       }

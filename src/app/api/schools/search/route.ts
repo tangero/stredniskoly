@@ -2,16 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+type SchoolsData = Record<string, School[]>;
+
 // Cache pro schools data
-let schoolsCache: any = null;
+let schoolsCache: SchoolsData | null = null;
 let krajeCache: Array<{ kod: string; nazev: string }> | null = null;
 
-async function getSchoolsData() {
+async function getSchoolsData(): Promise<SchoolsData> {
   if (schoolsCache) return schoolsCache;
 
   const filePath = path.join(process.cwd(), 'public', 'schools_data.json');
   const data = await fs.readFile(filePath, 'utf-8');
-  schoolsCache = JSON.parse(data);
+  schoolsCache = JSON.parse(data) as SchoolsData;
   return schoolsCache;
 }
 
@@ -50,6 +52,7 @@ export async function GET(request: NextRequest) {
   const search = searchParams.get('search') || '';
   const limit = Math.min(parseInt(searchParams.get('limit') || '50'), 100);
   const krajeOnly = searchParams.get('krajeOnly') === '1';
+  const idsParam = searchParams.get('ids') || '';
 
   try {
     const data = await getSchoolsData();
@@ -72,6 +75,47 @@ export async function GET(request: NextRequest) {
     // Pokud je požadován pouze seznam krajů, vrátit
     if (krajeOnly) {
       return NextResponse.json({ kraje: krajeCache });
+    }
+
+    // Přímé načtení podle konkrétních ID (pro předvýběr v simulátoru)
+    if (idsParam) {
+      const requestedIds = Array.from(
+        new Set(
+          idsParam
+            .split(',')
+            .map(v => v.trim())
+            .filter(v => v.length > 0 && v.length <= 220)
+        )
+      ).slice(0, 200);
+
+      const byId = new Map<string, School>();
+      schools.forEach(s => byId.set(s.id, s));
+
+      const byIds = requestedIds
+        .map(id => byId.get(id))
+        .filter((s): s is School => Boolean(s))
+        .map(s => ({
+          id: s.id,
+          nazev: s.nazev,
+          nazev_display: s.nazev_display,
+          obor: s.obor,
+          obec: s.obec,
+          ulice: s.ulice,
+          adresa: s.adresa,
+          kraj: s.kraj,
+          kraj_kod: s.kraj_kod,
+          typ: s.typ,
+          delka_studia: s.delka_studia,
+          min_body_2025: s.min_body || 0,
+          jpz_min: s.jpz_min_actual || s.min_body || 0,
+          index_poptavky_2025: s.index_poptavky || 0,
+        }));
+
+      return NextResponse.json({
+        schools: byIds,
+        kraje: krajeCache,
+        total: byIds.length,
+      });
     }
 
     // Filtrování škol

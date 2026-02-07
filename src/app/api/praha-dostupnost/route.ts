@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { createSlug } from '@/lib/utils';
 
 type Point = {
   lat: number;
@@ -13,11 +14,13 @@ type PidStop = {
   districtCode?: string;
   lat: number;
   lon: number;
+  lineLabels: string[];
 };
 
 type PrahaSchool = {
   key: string;
   redizo: string;
+  nazevRaw: string;
   nazev: string;
   adresa: string;
   ulice?: string;
@@ -25,6 +28,7 @@ type PrahaSchool = {
   obory: string[];
   minBodyMin: number | null;
   indexPoptavkyAvg: number | null;
+  simulatorSchoolId: string | null;
 };
 
 type SchoolLocationSource = 'cache' | 'street_stop_match' | 'geocoded' | 'district_centroid';
@@ -52,7 +56,9 @@ const USER_AGENT = 'stredniskoly-praha-dostupnost/0.1';
 
 const DEFAULT_MAX_MINUTES = 30;
 const MAX_LIMIT = 5000;
-const MAX_GEOCODES_PER_REQUEST = 70;
+const MAX_GEOCODES_PER_REQUEST = 24;
+const GEOCODE_TIMEOUT_MS = 2500;
+const GEOCODE_CONCURRENCY = 6;
 
 // Praha + blízké okolí (pro jistotu při příměstských trasách).
 const PRAHA_BBOX = {
@@ -65,6 +71,7 @@ const PRAHA_BBOX = {
 let prahaSchoolsCache: PrahaSchool[] | null = null;
 let pidStopsCache: PidStop[] | null = null;
 let pidStopTokenIndexCache: Map<string, number[]> | null = null;
+let pidLineToStopIndicesCache: Map<string, number[]> | null = null;
 
 const geocodeCache = new Map<string, GeocodeResult>();
 const geocodeMissCache = new Set<string>();
@@ -140,6 +147,7 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
 
   const map = new Map<string, {
     redizo: string;
+    nazevRaw: string;
     nazev: string;
     adresa: string;
     ulice?: string;
@@ -148,6 +156,8 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
     minBodyMin: number | null;
     indexPoptavkySum: number;
     indexPoptavkyCount: number;
+    simulatorSchoolId: string | null;
+    simulatorSchoolMinBody: number | null;
   }>();
 
   for (const row of yearData) {
@@ -156,11 +166,13 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
     if (krajKod !== 'CZ010' && normalizeText(obec) !== 'praha') continue;
 
     const redizo = String(row.redizo ?? '').trim();
+    const nazevRaw = String(row.nazev ?? '').trim();
     const nazev = String(row.nazev_display ?? row.nazev ?? '').trim();
     const adresa = String(row.adresa_plna ?? row.adresa ?? '').trim();
     const ulice = String(row.ulice ?? '').trim() || undefined;
     const mestskaCastRaw = String(row.mestska_cast ?? '').trim();
     const mestskaCast = mestskaCastRaw.length > 0 ? mestskaCastRaw : null;
+    const schoolId = String(row.id ?? '').trim();
 
     if (!redizo || !nazev || !adresa) continue;
 
@@ -168,6 +180,7 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
     if (!map.has(key)) {
       map.set(key, {
         redizo,
+        nazevRaw: nazevRaw || nazev,
         nazev,
         adresa,
         ulice,
@@ -176,6 +189,8 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
         minBodyMin: null,
         indexPoptavkySum: 0,
         indexPoptavkyCount: 0,
+        simulatorSchoolId: schoolId || null,
+        simulatorSchoolMinBody: null,
       });
     }
 
@@ -186,6 +201,12 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
     const minBody = toNumber(row.min_body);
     if (minBody !== null) {
       item.minBodyMin = item.minBodyMin === null ? minBody : Math.min(item.minBodyMin, minBody);
+      if (!item.simulatorSchoolId || item.simulatorSchoolMinBody === null || minBody < item.simulatorSchoolMinBody) {
+        item.simulatorSchoolId = schoolId || item.simulatorSchoolId;
+        item.simulatorSchoolMinBody = minBody;
+      }
+    } else if (!item.simulatorSchoolId && schoolId) {
+      item.simulatorSchoolId = schoolId;
     }
 
     const indexPoptavky = toNumber(row.index_poptavky);
@@ -198,6 +219,7 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
   prahaSchoolsCache = Array.from(map.entries()).map(([key, value]) => ({
     key,
     redizo: value.redizo,
+    nazevRaw: value.nazevRaw,
     nazev: value.nazev,
     adresa: value.adresa,
     ulice: value.ulice,
@@ -207,6 +229,7 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
     indexPoptavkyAvg: value.indexPoptavkyCount > 0
       ? value.indexPoptavkySum / value.indexPoptavkyCount
       : null,
+    simulatorSchoolId: value.simulatorSchoolId,
   }));
 
   return prahaSchoolsCache;
@@ -247,18 +270,75 @@ function extractPidStopCandidates(payload: unknown): Record<string, unknown>[] {
   return out;
 }
 
-function deduplicateStops(stops: PidStop[]): PidStop[] {
-  const seen = new Set<string>();
-  const out: PidStop[] = [];
+function normalizeLineLabel(raw: unknown): string | null {
+  if (typeof raw !== 'string' && typeof raw !== 'number') return null;
+  const value = String(raw).trim().toUpperCase().replace(/\s+/g, '');
+  if (!value) return null;
+  if (value === '0') return null;
+  if (value.startsWith('CZ')) return null;
 
-  for (const stop of stops) {
-    const key = `${normalizeText(stop.name)}|${stop.lat.toFixed(5)}|${stop.lon.toFixed(5)}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(stop);
+  // Typické PID označení linek: 194, 22, A, B, C, S1, R9, N95, X-A apod.
+  const valid = /^(?:[A-Z]{1,2}\d{1,3}|\d{1,3}[A-Z]?|[A-Z]{1,3}|N\d{1,3}|S\d{1,2}|R\d{1,2}|X\d{1,3})$/;
+  if (!valid.test(value)) return null;
+
+  return value;
+}
+
+function extractLineLabelsFromObject(value: unknown, keyHint = '', out = new Set<string>(), depth = 0): Set<string> {
+  if (depth > 5 || value === null || value === undefined) return out;
+
+  const hint = keyHint.toLowerCase();
+  const shouldReadScalar =
+    hint.includes('line') ||
+    hint.includes('route') ||
+    hint.includes('linka') ||
+    hint.includes('publiccode') ||
+    hint.includes('shortname') ||
+    hint.includes('lineno') ||
+    hint.includes('linenumber') ||
+    hint === 'name';
+
+  if (typeof value === 'string' || typeof value === 'number') {
+    if (shouldReadScalar) {
+      const normalized = normalizeLineLabel(value);
+      if (normalized) out.add(normalized);
+    }
+    return out;
+  }
+
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      extractLineLabelsFromObject(item, keyHint, out, depth + 1);
+    }
+    return out;
+  }
+
+  if (typeof value === 'object') {
+    for (const [key, nested] of Object.entries(value as Record<string, unknown>)) {
+      extractLineLabelsFromObject(nested, key, out, depth + 1);
+    }
   }
 
   return out;
+}
+
+function deduplicateStops(stops: PidStop[]): PidStop[] {
+  const map = new Map<string, PidStop>();
+
+  for (const stop of stops) {
+    const key = `${normalizeText(stop.name)}|${stop.lat.toFixed(5)}|${stop.lon.toFixed(5)}`;
+    const existing = map.get(key);
+    if (!existing) {
+      map.set(key, stop);
+      continue;
+    }
+
+    if (stop.lineLabels.length > 0) {
+      existing.lineLabels = Array.from(new Set([...existing.lineLabels, ...stop.lineLabels])).sort((a, b) => a.localeCompare(b));
+    }
+  }
+
+  return Array.from(map.values());
 }
 
 async function loadPidStops(): Promise<PidStop[]> {
@@ -288,17 +368,21 @@ async function loadPidStops(): Promise<PidStop[]> {
     if (!name || lat === null || lon === null) continue;
     if (!isLikelyPrahaStop(lat, lon)) continue;
 
+    const lineLabels = Array.from(extractLineLabelsFromObject(c)).sort((a, b) => a.localeCompare(b));
+
     stops.push({
       name,
       municipality: typeof c.municipality === 'string' ? c.municipality : undefined,
       districtCode: typeof c.districtCode === 'string' ? c.districtCode : undefined,
       lat,
       lon,
+      lineLabels,
     });
   }
 
   pidStopsCache = deduplicateStops(stops);
   pidStopTokenIndexCache = null;
+  pidLineToStopIndicesCache = null;
   return pidStopsCache;
 }
 
@@ -316,6 +400,21 @@ function getPidStopTokenIndex(stops: PidStop[]): Map<string, number[]> {
 
   pidStopTokenIndexCache = index;
   return index;
+}
+
+function getPidLineToStopIndices(stops: PidStop[]): Map<string, number[]> {
+  if (pidLineToStopIndicesCache) return pidLineToStopIndicesCache;
+
+  const map = new Map<string, number[]>();
+  for (let i = 0; i < stops.length; i += 1) {
+    for (const line of stops[i].lineLabels) {
+      if (!map.has(line)) map.set(line, []);
+      map.get(line)!.push(i);
+    }
+  }
+
+  pidLineToStopIndicesCache = map;
+  return map;
 }
 
 function pickStreet(address: string, ulice?: string): string {
@@ -379,7 +478,7 @@ async function geocodeAddress(address: string): Promise<GeocodeResult | null> {
 
   try {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 7000);
+    const timer = setTimeout(() => controller.abort(), GEOCODE_TIMEOUT_MS);
 
     const response = await fetch(url.toString(), {
       method: 'GET',
@@ -433,21 +532,128 @@ async function geocodeAddress(address: string): Promise<GeocodeResult | null> {
   }
 }
 
-function findNearestStops(point: Point, stops: PidStop[], take: number): Array<{ stop: PidStop; distanceKm: number }> {
+type StopDistanceInfo = {
+  stop: PidStop;
+  stopIndex: number;
+  distanceKm: number;
+};
+
+type TransitPathInference = {
+  routeType: 'direct' | 'transfer' | 'unknown';
+  lines: string[];
+  transferCount: number;
+  transferStop?: string;
+};
+
+function findNearestStops(point: Point, stops: PidStop[], take: number): StopDistanceInfo[] {
   return stops
-    .map(stop => ({
+    .map((stop, stopIndex) => ({
       stop,
+      stopIndex,
       distanceKm: haversineKm(point, { lat: stop.lat, lon: stop.lon }),
     }))
     .sort((a, b) => a.distanceKm - b.distanceKm)
     .slice(0, take);
 }
 
+function inferTransitPath(
+  origin: StopDistanceInfo,
+  destination: StopDistanceInfo,
+  stops: PidStop[],
+  lineToStopIndices: Map<string, number[]>,
+): TransitPathInference {
+  const originLines = origin.stop.lineLabels;
+  const destinationLines = destination.stop.lineLabels;
+
+  if (originLines.length === 0 || destinationLines.length === 0) {
+    return {
+      routeType: 'unknown',
+      lines: [],
+      transferCount: 1,
+    };
+  }
+
+  const destinationLineSet = new Set(destinationLines);
+  const direct = originLines.filter(line => destinationLineSet.has(line));
+  if (direct.length > 0) {
+    return {
+      routeType: 'direct',
+      lines: direct.slice(0, 3),
+      transferCount: 0,
+    };
+  }
+
+  const originCandidates = originLines.slice(0, 10);
+  const destinationCandidates = destinationLines.slice(0, 10);
+
+  let bestTransfer: {
+    lineA: string;
+    lineB: string;
+    transferStop: string;
+    score: number;
+  } | null = null;
+
+  for (const lineA of originCandidates) {
+    const aStops = lineToStopIndices.get(lineA);
+    if (!aStops || aStops.length === 0) continue;
+    const aSet = new Set(aStops);
+
+    for (const lineB of destinationCandidates) {
+      if (lineA === lineB) continue;
+      const bStops = lineToStopIndices.get(lineB);
+      if (!bStops || bStops.length === 0) continue;
+      const bSet = new Set(bStops);
+
+      const smaller = aStops.length <= bStops.length ? aStops : bStops;
+      for (const candidateIndex of smaller) {
+        if (!aSet.has(candidateIndex)) continue;
+        if (!bSet.has(candidateIndex)) continue;
+
+        const transfer = stops[candidateIndex];
+        const score =
+          haversineKm(
+            { lat: origin.stop.lat, lon: origin.stop.lon },
+            { lat: transfer.lat, lon: transfer.lon },
+          ) +
+          haversineKm(
+            { lat: transfer.lat, lon: transfer.lon },
+            { lat: destination.stop.lat, lon: destination.stop.lon },
+          );
+
+        if (!bestTransfer || score < bestTransfer.score) {
+          bestTransfer = {
+            lineA,
+            lineB,
+            transferStop: transfer.name,
+            score,
+          };
+        }
+      }
+    }
+  }
+
+  if (bestTransfer) {
+    return {
+      routeType: 'transfer',
+      lines: [bestTransfer.lineA, bestTransfer.lineB],
+      transferCount: 1,
+      transferStop: bestTransfer.transferStop,
+    };
+  }
+
+  return {
+    routeType: 'unknown',
+    lines: Array.from(new Set([...originLines.slice(0, 2), ...destinationLines.slice(0, 2)])).slice(0, 4),
+    transferCount: 1,
+  };
+}
+
 function estimateTripMinutes(params: {
-  originPoint: Point;
-  originStops: Array<{ stop: PidStop; distanceKm: number }>;
+  originStops: StopDistanceInfo[];
   schoolPoint: Point;
-  schoolStop: PidStop;
+  schoolStop: StopDistanceInfo;
+  allStops: PidStop[];
+  lineToStopIndices: Map<string, number[]>;
 }): {
   totalMinutes: number;
   originStop: PidStop;
@@ -455,59 +661,119 @@ function estimateTripMinutes(params: {
   schoolWalkMinutes: number;
   transitMinutes: number;
   transferMinutes: number;
+  routeType: TransitPathInference['routeType'];
+  lines: string[];
+  transferStop?: string;
 } {
   const WALK_KMPH = 4.8;
   const TRANSIT_KMPH = 22;
   const WAIT_BUFFER = 4;
 
   const schoolWalkKm = haversineKm(params.schoolPoint, {
-    lat: params.schoolStop.lat,
-    lon: params.schoolStop.lon,
+    lat: params.schoolStop.stop.lat,
+    lon: params.schoolStop.stop.lon,
   });
   const schoolWalkMinutes = (schoolWalkKm / WALK_KMPH) * 60;
 
   let best: {
-    total: number;
-    originStop: PidStop;
+    baseTotal: number;
+    transitKm: number;
+    originStopInfo: StopDistanceInfo;
     originWalkMinutes: number;
     transitMinutes: number;
-    transferMinutes: number;
+    genericTransferMinutes: number;
   } | null = null;
 
   for (const originStopInfo of params.originStops) {
     const transitKm = haversineKm(
       { lat: originStopInfo.stop.lat, lon: originStopInfo.stop.lon },
-      { lat: params.schoolStop.lat, lon: params.schoolStop.lon },
+      { lat: params.schoolStop.stop.lat, lon: params.schoolStop.stop.lon },
     );
     const transitMinutes = (transitKm / TRANSIT_KMPH) * 60;
-    const transferMinutes = 3 + Math.min(8, transitKm / 2.5);
+    const genericTransferMinutes = 4 + Math.min(4, transitKm / 5);
     const originWalkMinutes = (originStopInfo.distanceKm / WALK_KMPH) * 60;
 
-    const total = originWalkMinutes + transitMinutes + schoolWalkMinutes + WAIT_BUFFER + transferMinutes;
-    if (!best || total < best.total) {
+    const baseTotal = originWalkMinutes + transitMinutes + schoolWalkMinutes + WAIT_BUFFER + genericTransferMinutes;
+    if (!best || baseTotal < best.baseTotal) {
       best = {
-        total,
-        originStop: originStopInfo.stop,
+        baseTotal,
+        transitKm,
+        originStopInfo,
         originWalkMinutes,
         transitMinutes,
-        transferMinutes,
+        genericTransferMinutes,
       };
     }
   }
 
+  if (!best) {
+    return {
+      totalMinutes: Number.POSITIVE_INFINITY,
+      originStop: params.originStops[0].stop,
+      originWalkMinutes: 0,
+      schoolWalkMinutes: 0,
+      transitMinutes: 0,
+      transferMinutes: 0,
+      routeType: 'unknown',
+      lines: [],
+    };
+  }
+
+  const path = inferTransitPath(
+    best.originStopInfo,
+    params.schoolStop,
+    params.allStops,
+    params.lineToStopIndices,
+  );
+
+  let transferMinutes = best.genericTransferMinutes;
+  if (path.routeType === 'direct') {
+    transferMinutes = 1.5 + Math.min(3, best.transitKm / 5);
+  } else if (path.routeType === 'transfer') {
+    transferMinutes = 6 + Math.min(3, best.transitKm / 6);
+  }
+
+  const totalMinutes = best.originWalkMinutes + best.transitMinutes + schoolWalkMinutes + WAIT_BUFFER + transferMinutes;
+
   return {
-    totalMinutes: Math.round((best?.total ?? Number.POSITIVE_INFINITY) * 10) / 10,
-    originStop: best?.originStop ?? params.originStops[0].stop,
-    originWalkMinutes: Math.round((best?.originWalkMinutes ?? 0) * 10) / 10,
+    totalMinutes: Math.round(totalMinutes * 10) / 10,
+    originStop: best.originStopInfo.stop,
+    originWalkMinutes: Math.round(best.originWalkMinutes * 10) / 10,
     schoolWalkMinutes: Math.round(schoolWalkMinutes * 10) / 10,
-    transitMinutes: Math.round((best?.transitMinutes ?? 0) * 10) / 10,
-    transferMinutes: Math.round((best?.transferMinutes ?? 0) * 10) / 10,
+    transitMinutes: Math.round(best.transitMinutes * 10) / 10,
+    transferMinutes: Math.round(transferMinutes * 10) / 10,
+    routeType: path.routeType,
+    lines: path.lines,
+    transferStop: path.transferStop,
   };
 }
 
 function average(values: number[]): number | null {
   if (values.length === 0) return null;
   return values.reduce((sum, value) => sum + value, 0) / values.length;
+}
+
+async function mapWithConcurrency<T, R>(
+  values: T[],
+  concurrency: number,
+  worker: (value: T, index: number) => Promise<R>,
+): Promise<R[]> {
+  if (values.length === 0) return [];
+  const safeConcurrency = Math.max(1, Math.min(concurrency, values.length));
+  const out = new Array<R>(values.length);
+  let pointer = 0;
+
+  async function run() {
+    while (true) {
+      const index = pointer;
+      pointer += 1;
+      if (index >= values.length) break;
+      out[index] = await worker(values[index], index);
+    }
+  }
+
+  await Promise.all(Array.from({ length: safeConcurrency }, () => run()));
+  return out;
 }
 
 export async function POST(request: NextRequest) {
@@ -529,10 +795,15 @@ export async function POST(request: NextRequest) {
   }
 
   try {
+    const requestStartedAt = Date.now();
+    const timings: Record<string, number> = {};
+
+    let phaseStartedAt = Date.now();
     const [schools, stops] = await Promise.all([
       loadPrahaSchools(),
       loadPidStops(),
     ]);
+    timings.loadDataMs = Date.now() - phaseStartedAt;
 
     if (schools.length === 0) {
       return NextResponse.json({ error: 'Nepodařilo se načíst pražské školy.' }, { status: 500 });
@@ -541,7 +812,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Nepodařilo se načíst PID zastávky.' }, { status: 502 });
     }
 
+    phaseStartedAt = Date.now();
     const originGeocode = await geocodeAddress(`${address}, Praha, Česko`);
+    timings.geocodeOriginMs = Date.now() - phaseStartedAt;
     if (!originGeocode) {
       return NextResponse.json({
         error: 'Nepodařilo se geokódovat zadanou adresu. Zkuste přesnější zadání.',
@@ -550,10 +823,12 @@ export async function POST(request: NextRequest) {
 
     const originStops = findNearestStops(originGeocode.point, stops, 6);
     const stopTokenIndex = getPidStopTokenIndex(stops);
+    const lineToStopIndices = getPidLineToStopIndices(stops);
 
     const schoolLocations = new Map<string, SchoolLocation>();
     const unresolvedSchools: PrahaSchool[] = [];
 
+    phaseStartedAt = Date.now();
     for (const school of schools) {
       const cacheHit = geocodeCache.get(normalizeText(school.adresa));
       if (cacheHit) {
@@ -572,6 +847,7 @@ export async function POST(request: NextRequest) {
         unresolvedSchools.push(school);
       }
     }
+    timings.matchStreetStopMs = Date.now() - phaseStartedAt;
 
     const districtNorm = normalizeText(originGeocode.district ?? '');
     unresolvedSchools.sort((a, b) => {
@@ -584,14 +860,27 @@ export async function POST(request: NextRequest) {
     });
 
     let geocodedThisRequest = 0;
-    for (const school of unresolvedSchools.slice(0, MAX_GEOCODES_PER_REQUEST)) {
-      const geo = await geocodeAddress(`${school.adresa}, Praha, Česko`);
-      if (!geo) continue;
+    const geocodeCandidates = unresolvedSchools.slice(0, MAX_GEOCODES_PER_REQUEST);
+
+    phaseStartedAt = Date.now();
+    const geocodedSchools = await mapWithConcurrency(
+      geocodeCandidates,
+      GEOCODE_CONCURRENCY,
+      async (school) => {
+        const geo = await geocodeAddress(`${school.adresa}, Praha, Česko`);
+        return { school, geo };
+      },
+    );
+    timings.geocodeSchoolsMs = Date.now() - phaseStartedAt;
+
+    for (const item of geocodedSchools) {
+      if (!item.geo) continue;
       geocodedThisRequest += 1;
-      schoolLocations.set(school.key, { point: geo.point, source: 'geocoded' });
+      schoolLocations.set(item.school.key, { point: item.geo.point, source: 'geocoded' });
     }
 
     // Fallback: centroid podle městské části z již vyřešených škol.
+    phaseStartedAt = Date.now();
     const districtPoints = new Map<string, Point[]>();
     for (const school of schools) {
       const loc = schoolLocations.get(school.key);
@@ -619,7 +908,9 @@ export async function POST(request: NextRequest) {
       if (!centroid) continue;
       schoolLocations.set(school.key, { point: centroid, source: 'district_centroid' });
     }
+    timings.districtFallbackMs = Date.now() - phaseStartedAt;
 
+    phaseStartedAt = Date.now();
     const reachable = [];
     for (const school of schools) {
       const loc = schoolLocations.get(school.key);
@@ -629,22 +920,31 @@ export async function POST(request: NextRequest) {
       if (!nearestSchoolStop) continue;
 
       const estimate = estimateTripMinutes({
-        originPoint: originGeocode.point,
         originStops,
         schoolPoint: loc.point,
-        schoolStop: nearestSchoolStop.stop,
+        schoolStop: nearestSchoolStop,
+        allStops: stops,
+        lineToStopIndices,
       });
 
       if (!Number.isFinite(estimate.totalMinutes)) continue;
-      if (estimate.totalMinutes > maxMinutes) continue;
+
+      const walkOnlyMinutes = Math.round(((haversineKm(originGeocode.point, loc.point) / 4.8) * 60) * 10) / 10;
+      const walkIsFaster = walkOnlyMinutes + 1 < estimate.totalMinutes;
+      const fastestMinutes = walkIsFaster ? walkOnlyMinutes : estimate.totalMinutes;
+      if (fastestMinutes > maxMinutes) continue;
 
       const schoolPointDistanceKm = haversineKm(originGeocode.point, loc.point);
+      const schoolSlug = `${school.redizo}-${createSlug(school.nazevRaw || school.nazev)}`;
       reachable.push({
         redizo: school.redizo,
         nazev: school.nazev,
         adresa: school.adresa,
         mestskaCast: school.mestskaCast,
-        estimatedMinutes: estimate.totalMinutes,
+        estimatedMinutes: fastestMinutes,
+        mhdMinutes: estimate.totalMinutes,
+        walkOnlyMinutes,
+        bestMode: walkIsFaster ? 'walk' : 'mhd',
         distanceKm: Math.round(schoolPointDistanceKm * 10) / 10,
         source: loc.source,
         originStop: estimate.originStop.name,
@@ -653,14 +953,20 @@ export async function POST(request: NextRequest) {
         transitMinutes: estimate.transitMinutes,
         transferMinutes: estimate.transferMinutes,
         schoolWalkMinutes: estimate.schoolWalkMinutes,
+        routeType: estimate.routeType,
+        usedLines: estimate.lines,
+        transferStop: estimate.transferStop,
         oboryPreview: school.obory.slice(0, 4),
         oboryCount: school.obory.length,
         minBodyMin: school.minBodyMin,
         indexPoptavkyAvg: school.indexPoptavkyAvg !== null
           ? Math.round(school.indexPoptavkyAvg * 100) / 100
           : null,
+        schoolUrl: `/skola/${schoolSlug}`,
+        simulatorSchoolId: school.simulatorSchoolId,
       });
     }
+    timings.computeReachableMs = Date.now() - phaseStartedAt;
 
     reachable.sort((a, b) => {
       if (a.estimatedMinutes !== b.estimatedMinutes) {
@@ -671,6 +977,7 @@ export async function POST(request: NextRequest) {
 
     const resolvedSchools = schoolLocations.size;
     const unresolvedSchoolsCount = schools.length - resolvedSchools;
+    timings.totalMs = Date.now() - requestStartedAt;
 
     return NextResponse.json({
       input: {
@@ -692,9 +999,13 @@ export async function POST(request: NextRequest) {
         resolvedSchools,
         unresolvedSchools: unresolvedSchoolsCount,
         geocodedThisRequest,
+        geocodeCandidates: geocodeCandidates.length,
+        geocodeConcurrency: GEOCODE_CONCURRENCY,
         model: 'pid-stop-based-estimate-v1',
+        timingsMs: timings,
         notes: [
           'Výpočet používá PID stop list (open data) + geokódování adres a odhad jízdní doby mezi zastávkami.',
+          'Identifikace linek MHD je odhad z linek dostupných u výchozí a cílové zastávky (případně 1 přestup).',
           'Nejde o přesný jízdní řád. Pro produkční přesnost doporučujeme GTFS Connection Scan / RAPTOR precompute.',
         ],
       },
