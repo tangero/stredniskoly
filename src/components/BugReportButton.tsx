@@ -166,7 +166,7 @@ export default function BugReportButton() {
 
                   {showTips && (
                     <div className="px-3 pb-3 text-xs text-blue-800 space-y-2">
-                      <p className="font-medium mb-2">Uveďte prosím:</p>
+                      <p className="font-medium mb-2">Popište prosím:</p>
                       <ul className="space-y-1.5 ml-4">
                         <li className="flex items-start gap-2">
                           <span className="text-blue-600 mt-0.5">✓</span>
@@ -174,23 +174,18 @@ export default function BugReportButton() {
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-blue-600 mt-0.5">✓</span>
-                          <span><strong>Kde:</strong> Na jaké stránce? (např. simulátor, detail školy)</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-blue-600 mt-0.5">✓</span>
                           <span><strong>Jak to zopakovat:</strong> Jaké kroky vedly k chybě?</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-blue-600 mt-0.5">✓</span>
-                          <span><strong>Co jste čekali:</strong> Co mělo fungovat správně?</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-blue-600 mt-0.5">✓</span>
-                          <span><strong>Zařízení:</strong> Mobil nebo počítač? (technické info sbíráme automaticky)</span>
+                          <span><strong>Co jste čekali vs co se stalo:</strong> Jaký byl rozdíl?</span>
                         </li>
                       </ul>
                       <p className="text-blue-700 mt-3 pt-2 border-t border-blue-200">
-                        <strong>Příklad:</strong> „Na simulátoru škola ukazuje 71 bodů, ale po rozkliknutí ČJ 22 + MA 11 = 33. Čekal jsem stejné číslo."
+                        <strong>Příklad:</strong> „Škola ukazuje 71 bodů, ale po rozkliknutí ČJ 22 + MA 11 = 33. Čekal jsem stejné číslo."
+                      </p>
+                      <p className="text-blue-600 mt-2 text-[11px]">
+                        ℹ️ URL stránky, zařízení a čas sbíráme automaticky
                       </p>
                     </div>
                   )}
