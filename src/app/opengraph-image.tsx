@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Simulátor přijímacích zkoušek na střední školy';
+export const alt = 'Vyhledávání středních škol, přijímačky a dojíždění';
 export const size = {
   width: 1200,
   height: 630,
@@ -20,11 +20,23 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          backgroundColor: '#ffffff',
           fontFamily: 'system-ui, sans-serif',
         }}
       >
-        {/* Dekorativní elementy */}
+        {/* Header bar */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 6,
+            backgroundColor: '#0074e4',
+          }}
+        />
+
+        {/* Logo */}
         <div
           style={{
             position: 'absolute',
@@ -40,16 +52,18 @@ export default async function Image() {
               width: 48,
               height: 48,
               borderRadius: 12,
-              background: 'rgba(255,255,255,0.2)',
+              backgroundColor: '#0074e4',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               fontSize: 28,
+              color: 'white',
+              fontWeight: 700,
             }}
           >
             🎓
           </div>
-          <span style={{ color: 'rgba(255,255,255,0.9)', fontSize: 24, fontWeight: 600 }}>
+          <span style={{ color: '#28313b', fontSize: 24, fontWeight: 600 }}>
             prijimackynaskolu.cz
           </span>
         </div>
@@ -67,25 +81,24 @@ export default async function Image() {
         >
           <h1
             style={{
-              fontSize: 72,
+              fontSize: 68,
               fontWeight: 800,
-              color: 'white',
+              color: '#28313b',
               margin: 0,
               lineHeight: 1.1,
-              textShadow: '0 4px 12px rgba(0,0,0,0.15)',
             }}
           >
-            Simulátor přijímaček
+            Najdi si svou střední školu
           </h1>
           <h2
             style={{
-              fontSize: 36,
+              fontSize: 34,
               fontWeight: 400,
-              color: 'rgba(255,255,255,0.9)',
+              color: '#818c99',
               margin: '20px 0 0 0',
             }}
           >
-            Najdi si svou střední školu a zjisti své šance
+            Vyhledávání škol, přijímačky i dojíždění na jednom místě
           </h2>
         </div>
 
@@ -93,7 +106,7 @@ export default async function Image() {
         <div
           style={{
             display: 'flex',
-            gap: 60,
+            gap: 40,
             marginTop: 50,
           }}
         >
@@ -102,39 +115,39 @@ export default async function Image() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              background: 'rgba(255,255,255,0.15)',
+              border: '2px solid #e0e6ed',
               padding: '20px 40px',
               borderRadius: 16,
             }}
           >
-            <span style={{ fontSize: 48, fontWeight: 800, color: 'white' }}>2 200+</span>
-            <span style={{ fontSize: 18, color: 'rgba(255,255,255,0.8)' }}>oborů</span>
+            <span style={{ fontSize: 48, fontWeight: 800, color: '#0074e4' }}>2 200+</span>
+            <span style={{ fontSize: 18, color: '#818c99' }}>oborů</span>
           </div>
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              background: 'rgba(255,255,255,0.15)',
+              border: '2px solid #e0e6ed',
               padding: '20px 40px',
               borderRadius: 16,
             }}
           >
-            <span style={{ fontSize: 48, fontWeight: 800, color: 'white' }}>14</span>
-            <span style={{ fontSize: 18, color: 'rgba(255,255,255,0.8)' }}>krajů ČR</span>
+            <span style={{ fontSize: 48, fontWeight: 800, color: '#0074e4' }}>14</span>
+            <span style={{ fontSize: 18, color: '#818c99' }}>krajů ČR</span>
           </div>
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              background: 'rgba(255,255,255,0.15)',
+              border: '2px solid #e0e6ed',
               padding: '20px 40px',
               borderRadius: 16,
             }}
           >
-            <span style={{ fontSize: 48, fontWeight: 800, color: 'white' }}>2025</span>
-            <span style={{ fontSize: 18, color: 'rgba(255,255,255,0.8)' }}>aktuální data</span>
+            <span style={{ fontSize: 48, fontWeight: 800, color: '#0074e4' }}>2025</span>
+            <span style={{ fontSize: 18, color: '#818c99' }}>aktuální data</span>
           </div>
         </div>
 
@@ -145,16 +158,16 @@ export default async function Image() {
             bottom: 40,
             display: 'flex',
             alignItems: 'center',
-            gap: 8,
-            color: 'rgba(255,255,255,0.7)',
+            gap: 24,
+            color: '#818c99',
             fontSize: 18,
           }}
         >
-          <span>Zadej body z ČJ a MA</span>
-          <span style={{ margin: '0 8px' }}>→</span>
-          <span>Vyber školy</span>
-          <span style={{ margin: '0 8px' }}>→</span>
-          <span>Zjisti šance</span>
+          <span style={{ color: '#0074e4', fontWeight: 600 }}>Simulátor</span>
+          <span>·</span>
+          <span style={{ color: '#0074e4', fontWeight: 600 }}>Vyhledávání škol</span>
+          <span>·</span>
+          <span style={{ color: '#0074e4', fontWeight: 600 }}>Dostupnost a dojíždění</span>
         </div>
       </div>
     ),

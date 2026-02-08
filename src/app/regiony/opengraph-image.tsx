@@ -20,10 +20,22 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          backgroundColor: '#ffffff',
           fontFamily: 'system-ui, sans-serif',
         }}
       >
+        {/* Header bar */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 6,
+            backgroundColor: '#0074e4',
+          }}
+        />
+
         {/* Logo */}
         <div
           style={{
@@ -40,17 +52,19 @@ export default async function Image() {
               width: 48,
               height: 48,
               borderRadius: 12,
-              background: 'rgba(255,255,255,0.2)',
+              backgroundColor: '#0074e4',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               fontSize: 28,
+              color: 'white',
+              fontWeight: 700,
             }}
           >
             🗺️
           </div>
-          <span style={{ color: 'rgba(255,255,255,0.9)', fontSize: 24, fontWeight: 600 }}>
-            Regiony ČR
+          <span style={{ color: '#28313b', fontSize: 24, fontWeight: 600 }}>
+            prijimackynaskolu.cz
           </span>
         </div>
 
@@ -59,10 +73,9 @@ export default async function Image() {
           style={{
             fontSize: 64,
             fontWeight: 800,
-            color: 'white',
+            color: '#28313b',
             margin: 0,
             textAlign: 'center',
-            textShadow: '0 4px 12px rgba(0,0,0,0.15)',
           }}
         >
           Střední školy podle krajů
@@ -70,7 +83,7 @@ export default async function Image() {
         <p
           style={{
             fontSize: 32,
-            color: 'rgba(255,255,255,0.9)',
+            color: '#818c99',
             margin: '20px 0 50px 0',
           }}
         >
@@ -106,11 +119,11 @@ export default async function Image() {
             <div
               key={kraj}
               style={{
-                background: 'rgba(255,255,255,0.15)',
+                border: '2px solid #e0e6ed',
                 padding: '12px 20px',
                 borderRadius: 12,
                 fontSize: 18,
-                color: 'white',
+                color: '#28313b',
                 fontWeight: 500,
               }}
             >
@@ -124,11 +137,11 @@ export default async function Image() {
           style={{
             position: 'absolute',
             bottom: 40,
-            color: 'rgba(255,255,255,0.6)',
+            color: '#818c99',
             fontSize: 20,
           }}
         >
-          stredniskoly.cz/regiony
+          prijimackynaskolu.cz/regiony
         </div>
       </div>
     ),

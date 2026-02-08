@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     'body',
     'šance na přijetí',
   ],
-  authors: [{ name: 'Simulátor přijímacích zkoušek' }],
-  creator: 'Simulátor přijímacích zkoušek',
-  publisher: 'Simulátor přijímacích zkoušek',
+  authors: [{ name: 'Přijímačky na školu' }],
+  creator: 'Přijímačky na školu',
+  publisher: 'Přijímačky na školu',
   robots: {
     index: true,
     follow: true,
@@ -53,16 +53,16 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'cs_CZ',
     url: 'https://prijimackynaskolu.cz',
-    siteName: 'Simulátor přijímacích zkoušek',
-    title: 'Přijímačky na střední školy',
+    siteName: 'Přijímačky na školu',
+    title: 'Vyhledávání středních škol, přijímačky a dojíždění',
     description:
-      'Zjistěte své šance na přijetí na střední školu. Data z let 2024-2025.',
+      'Najděte si střední školu, zjistěte šance na přijetí a ověřte dostupnost dojíždění. Data z let 2024-2025.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Přijímačky na střední školy',
+    title: 'Vyhledávání středních škol, přijímačky a dojíždění',
     description:
-      'Zjistěte své šance na přijetí na střední školu. Data z let 2024-2025.',
+      'Najděte si střední školu, zjistěte šance na přijetí a ověřte dostupnost dojíždění. Data z let 2024-2025.',
   },
   alternates: {
     canonical: 'https://prijimackynaskolu.cz',

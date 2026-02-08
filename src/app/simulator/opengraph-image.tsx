@@ -20,10 +20,22 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          backgroundColor: '#ffffff',
           fontFamily: 'system-ui, sans-serif',
         }}
       >
+        {/* Header bar */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 6,
+            backgroundColor: '#0074e4',
+          }}
+        />
+
         {/* Logo */}
         <div
           style={{
@@ -40,17 +52,19 @@ export default async function Image() {
               width: 48,
               height: 48,
               borderRadius: 12,
-              background: 'rgba(255,255,255,0.2)',
+              backgroundColor: '#0074e4',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               fontSize: 28,
+              color: 'white',
+              fontWeight: 700,
             }}
           >
             🎯
           </div>
-          <span style={{ color: 'rgba(255,255,255,0.9)', fontSize: 24, fontWeight: 600 }}>
-            Simulátor
+          <span style={{ color: '#28313b', fontSize: 24, fontWeight: 600 }}>
+            Simulátor přijímaček
           </span>
         </div>
 
@@ -67,30 +81,28 @@ export default async function Image() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              background: 'white',
+              border: '2px solid #e0e6ed',
               padding: '30px 50px',
               borderRadius: 20,
-              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
             }}
           >
-            <span style={{ fontSize: 24, color: '#64748b', marginBottom: 8 }}>Čeština</span>
-            <span style={{ fontSize: 72, fontWeight: 800, color: '#667eea' }}>42</span>
-            <span style={{ fontSize: 18, color: '#94a3b8' }}>bodů z 50</span>
+            <span style={{ fontSize: 24, color: '#818c99', marginBottom: 8 }}>Čeština</span>
+            <span style={{ fontSize: 72, fontWeight: 800, color: '#0074e4' }}>42</span>
+            <span style={{ fontSize: 18, color: '#818c99' }}>bodů z 50</span>
           </div>
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              background: 'white',
+              border: '2px solid #e0e6ed',
               padding: '30px 50px',
               borderRadius: 20,
-              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
             }}
           >
-            <span style={{ fontSize: 24, color: '#64748b', marginBottom: 8 }}>Matematika</span>
-            <span style={{ fontSize: 72, fontWeight: 800, color: '#764ba2' }}>38</span>
-            <span style={{ fontSize: 18, color: '#94a3b8' }}>bodů z 50</span>
+            <span style={{ fontSize: 24, color: '#818c99', marginBottom: 8 }}>Matematika</span>
+            <span style={{ fontSize: 72, fontWeight: 800, color: '#003688' }}>38</span>
+            <span style={{ fontSize: 18, color: '#818c99' }}>bodů z 50</span>
           </div>
         </div>
 
@@ -100,14 +112,14 @@ export default async function Image() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            background: 'rgba(255,255,255,0.15)',
+            backgroundColor: '#f2f5f7',
             padding: '25px 60px',
             borderRadius: 20,
           }}
         >
-          <span style={{ fontSize: 28, color: 'rgba(255,255,255,0.8)' }}>Celkové skóre</span>
-          <span style={{ fontSize: 80, fontWeight: 800, color: 'white' }}>160</span>
-          <span style={{ fontSize: 22, color: 'rgba(255,255,255,0.7)' }}>z 200 možných bodů</span>
+          <span style={{ fontSize: 28, color: '#818c99' }}>Celkové skóre</span>
+          <span style={{ fontSize: 80, fontWeight: 800, color: '#0074e4' }}>160</span>
+          <span style={{ fontSize: 22, color: '#818c99' }}>z 200 možných bodů</span>
         </div>
 
         {/* Hlavní text */}
@@ -115,7 +127,7 @@ export default async function Image() {
           style={{
             fontSize: 42,
             fontWeight: 700,
-            color: 'white',
+            color: '#28313b',
             margin: '40px 0 0 0',
             textAlign: 'center',
           }}
@@ -128,11 +140,11 @@ export default async function Image() {
           style={{
             position: 'absolute',
             bottom: 40,
-            color: 'rgba(255,255,255,0.6)',
+            color: '#818c99',
             fontSize: 20,
           }}
         >
-          stredniskoly.cz/simulator
+          prijimackynaskolu.cz/simulator
         </div>
       </div>
     ),
