@@ -32,6 +32,19 @@ type DifficultyThresholds = {
   highMax: number;
 };
 
+type SchoolProgram = {
+  id: string;
+  obor: string;
+  zamereni: string;
+  typ: string;
+  delkaStudia: number;
+  jpzMin: number | null;
+  jpzPrumer: number | null;
+  indexPoptavky: number | null;
+  kapacita: number | null;
+  prihlasky: number | null;
+};
+
 type AggregatedSchool = {
   redizo: string;
   nazevRaw: string;
@@ -41,6 +54,7 @@ type AggregatedSchool = {
   kraj: string;
   typy: string[];
   obory: string[];
+  programs: SchoolProgram[];
   minBodyMin: number | null;
   difficultyScore: number | null;
   simulatorSchoolId: string | null;
@@ -184,6 +198,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
     kraj: string;
     typy: Set<string>;
     obory: Set<string>;
+    programs: SchoolProgram[];
     minBodyMin: number | null;
     simulatorSchoolId: string | null;
     simulatorSchoolMinBody: number | null;
@@ -211,6 +226,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
         kraj,
         typy: new Set<string>(),
         obory: new Set<string>(),
+        programs: [],
         minBodyMin: null,
         simulatorSchoolId: schoolId || null,
         simulatorSchoolMinBody: null,
@@ -222,8 +238,29 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
     const obor = String(row.obor ?? '').trim();
     if (obor) item.obory.add(obor);
 
-    // Use jpz_min_actual (sum of CJ+MA JPZ scores, max 100) instead of min_body (total score including extra criteria)
+    // Add per-program detail
     const jpzMin = toNumber(row.jpz_min_actual);
+    const jpzPrumer = toNumber(row.jpz_prumer_actual);
+    const indexPoptavky = toNumber(row.index_poptavky);
+    const kapacita = toNumber(row.kapacita);
+    const prihlasky = toNumber(row.prihlasky);
+    const delkaStudia = toNumber(row.delka_studia);
+    const zamereni = String(row.zamereni ?? '').trim();
+
+    item.programs.push({
+      id: schoolId,
+      obor: obor || nazev,
+      zamereni,
+      typ,
+      delkaStudia: delkaStudia ?? 4,
+      jpzMin: jpzMin,
+      jpzPrumer: jpzPrumer,
+      indexPoptavky: indexPoptavky,
+      kapacita: kapacita !== null ? Math.round(kapacita) : null,
+      prihlasky: prihlasky !== null ? Math.round(prihlasky) : null,
+    });
+
+    // Use jpz_min_actual for the school-level minimum
     const minBody = jpzMin !== null ? jpzMin : toNumber(row.min_body);
     if (minBody !== null) {
       item.minBodyMin = item.minBodyMin === null ? minBody : Math.min(item.minBodyMin, minBody);
@@ -245,6 +282,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
     kraj: value.kraj,
     typy: Array.from(value.typy).sort(),
     obory: Array.from(value.obory).sort((a, b) => a.localeCompare(b, 'cs')),
+    programs: value.programs,
     minBodyMin: value.minBodyMin,
     difficultyScore: redizoDifficultyMap.get(value.redizo) ?? null,
     simulatorSchoolId: value.simulatorSchoolId,
@@ -537,6 +575,7 @@ export async function POST(request: NextRequest) {
         usedLines: timing.usedRoutes,
         admissionBand: getDifficultyBand(school.difficultyScore, difficultyThresholdsCache),
         obory: school.obory,
+        programs: school.programs,
         minBodyMin: school.minBodyMin,
         difficultyScore: school.difficultyScore !== null ? roundToOne(school.difficultyScore) : null,
         schoolUrl: `/skola/${schoolSlug}`,

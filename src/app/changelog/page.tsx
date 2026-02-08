@@ -20,6 +20,24 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '2.2.0',
+    date: '8. 2. 2026',
+    title: 'Redesign dostupnosti: per-oborové detaily a opravy mapování škol',
+    changes: [
+      { type: 'new', text: 'Kartový layout výsledků dostupnosti — škola + doprava na prvním řádku, obory s detaily na druhém' },
+      { type: 'new', text: 'Per-oborové údaje: body min (JPZ), body průměr, index konkurence, kapacita, délka studia u každého oboru' },
+      { type: 'new', text: 'Barevné kódování JPZ bodů podle kohort (<30 emerald, 30-49 green, 50-69 amber, 70+ red)' },
+      { type: 'new', text: 'InfoTooltip nápověda u sloupců Body min, Body prům a Konkurence' },
+      { type: 'new', text: 'Seznam 15 měst s MHD daty (DPP, DPMB, DPO, PMDP, DPMO atd.) v rozbalovacím panelu' },
+      { type: 'new', text: 'Upozornění, že pro ostatní obce máme pouze meziměstskou dopravu (autobusy a vlaky)' },
+      { type: 'improve', text: 'Geokódování školních adres přes Nominatim — 914 unikátních zastávek místo 389 (Praha: 146 místo 1)' },
+      { type: 'improve', text: 'Filtrování nočních linek z GTFS grafu — pouze ranní tripy (5:00–10:00)' },
+      { type: 'improve', text: 'Headway výpočet přesunut před agregaci hran, linky bez headway dat se odfiltrují' },
+      { type: 'fix', text: 'Oprava city_match chyby: všechny školy v jednom městě mapovány na jednu zastávku (179 pražských škol → Vršovické nám.)' },
+      { type: 'fix', text: 'Oprava min_body → jpz_min_actual: použití JPZ bodů (CJ+MA, max 100) místo celkových bodů' },
+    ],
+  },
+  {
     version: '2.1.0',
     date: '7. 2. 2026',
     title: 'Grafická kompatibilita s Hlídačem státu',

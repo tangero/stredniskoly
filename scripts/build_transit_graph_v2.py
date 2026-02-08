@@ -137,6 +137,14 @@ def main():
         if not route_short:
             return
 
+        # Filter: only process trips with departures in the morning window (5:00-10:00)
+        dep_times = [dep for _, _, dep in stops_list if dep is not None]
+        if not dep_times:
+            return
+        min_dep = min(dep_times)
+        if min_dep < 5 * 3600 or min_dep >= 10 * 3600:
+            return
+
         for i in range(len(stops_list) - 1):
             sid_from, _, dep_sec_from = stops_list[i]
             sid_to, arr_sec_to, _ = stops_list[i + 1]
@@ -201,38 +209,7 @@ def main():
     print(f"  Processed {lines_processed} lines in {time.time() - t_stream:.1f}s")
     print(f"  Raw edge pairs: {len(edge_data)}")
 
-    # --- Step 6: Aggregate edges ---
-    print("Aggregating edges...")
-    edges_out = defaultdict(list)
-    total_edges = 0
-
-    for (p_from, p_to), route_times in edge_data.items():
-        # Median travel time across all routes for this edge
-        all_times = []
-        route_shorts = []
-        for route_short, times in route_times.items():
-            all_times.extend(times)
-            route_shorts.append(route_short)
-
-        if not all_times:
-            continue
-
-        median_sec = statistics.median(all_times)
-        median_min = round(median_sec / 60, 1)
-
-        # Clamp minimum to 0.5 min
-        if median_min < 0.5:
-            median_min = 0.5
-
-        # Sort routes for determinism
-        route_shorts.sort()
-
-        edges_out[p_from].append([p_to, median_min, route_shorts])
-        total_edges += 1
-
-    print(f"  Aggregated edges: {total_edges}")
-
-    # --- Step 7: Compute headways per route ---
+    # --- Step 6: Compute headways per route (before edge aggregation, so we can filter) ---
     print("Computing headways...")
     route_headways_raw = defaultdict(list)
 
@@ -262,6 +239,43 @@ def main():
     # Sample headways
     sample_routes = sorted(headways_out.items(), key=lambda x: x[1])[:10]
     print(f"  Shortest headway routes: {sample_routes}")
+
+    # --- Step 7: Aggregate edges (filter routes without headway data) ---
+    print("Aggregating edges...")
+    edges_out = defaultdict(list)
+    total_edges = 0
+
+    for (p_from, p_to), route_times in edge_data.items():
+        # Collect all routes on this edge
+        route_shorts = list(route_times.keys())
+
+        # Filter: only keep routes that have headway data (removes night/infrequent lines)
+        route_shorts = [r for r in route_shorts if r in headways_out]
+        if not route_shorts:
+            continue
+
+        # Compute travel times only for routes with headway
+        all_times = []
+        for route_short in route_shorts:
+            all_times.extend(route_times[route_short])
+
+        if not all_times:
+            continue
+
+        median_sec = statistics.median(all_times)
+        median_min = round(median_sec / 60, 1)
+
+        # Clamp minimum to 0.5 min
+        if median_min < 0.5:
+            median_min = 0.5
+
+        # Sort routes for determinism
+        route_shorts.sort()
+
+        edges_out[p_from].append([p_to, median_min, route_shorts])
+        total_edges += 1
+
+    print(f"  Aggregated edges: {total_edges}")
 
     # --- Step 8: Build stops dict (only parents that appear in edges) ---
     print("Building stops dict...")
