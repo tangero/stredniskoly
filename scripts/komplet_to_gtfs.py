@@ -190,7 +190,7 @@ class KompletToGTFS:
                 self.logger.error("No .tt files found!")
                 return False
 
-            self.gtfs_stats.total_files = len(tt_files)
+            self.gtfs_stats.total_files = sum(len(f) for f in tt_files.values())
 
             # 2. Dekóduj každý soubor
             self.logger.info("\n" + "="*80)
