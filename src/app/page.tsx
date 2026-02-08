@@ -22,7 +22,9 @@ export default async function HomePage() {
             Najdi si svou střední školu <br /> a zjisti své šance
           </h1>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto" style={{ color: '#818c99' }}>
-            Přehledná data všech středních škol a maturitních oborů v České republice. Simulátor, kam se dostanete podle výsledků zkoušek nanečisto využívá reálná data z jednotných přijímacích zkoušek. Autor: <a href="https://cs.wikipedia.org/wiki/Patrick_Zandl" style={{ color: '#0074e4' }}>Patrick Zandl</a>, kvůli svým dětem.
+            Přehledná data všech středních škol a maturitních oborů v České republice.
+            Pozor: nejsou zde školy, kde se dělají jen talentové zkoušky! Chybí konzervatoře, sportovní a umělecké školy, cca 130 škol, nemají jednotné přijímačky.
+            Simulátor, kam se dostanete podle výsledků zkoušek nanečisto využívá reálná data z jednotných přijímacích zkoušek. Autor: <a href="https://cs.wikipedia.org/wiki/Patrick_Zandl" style={{ color: '#0074e4' }}>Patrick Zandl</a>, kvůli svým dětem.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -38,6 +40,13 @@ export default async function HomePage() {
               style={{ color: '#0074e4', border: '2px solid #0074e4', borderRadius: '4px', letterSpacing: '1px' }}
             >
               Prozkoumat školy
+            </Link>
+            <Link
+              href="https://skola.prolnuto.cz"
+              className="inline-block px-8 py-3.5 font-semibold text-base no-underline uppercase tracking-wide transition-all hover:opacity-80"
+              style={{ color: '#0074e4', border: '2px solid #0074e4', borderRadius: '4px', letterSpacing: '1px' }}
+            >
+              Letní škola AI
             </Link>
           </div>
 
