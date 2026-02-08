@@ -13,6 +13,7 @@ export function Header() {
     { href: '/regiony', label: 'Regiony' },
     { href: '/jak-vybrat-skolu', label: 'Průvodce' },
     { href: '/jak-funguje-prijimani', label: 'Jak to funguje?' },
+    { href: '/issues', label: 'Nahlášené chyby' },
   ];
 
   return (

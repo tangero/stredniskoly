@@ -717,13 +717,23 @@ export function SimulatorClient() {
 
       {/* Hlavní obsah */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Info box */}
-        <div className="bg-sky-50 border-l-4 border-sky-500 p-4 rounded-r-xl mb-6">
-          <p className="text-sm text-sky-800">
-            <strong>Jak funguje přijímání:</strong> Vaše šance závisí pouze na bodech, ne na pořadí priorit.
-            Priorita určuje jen to, na kterou školu budete přiřazeni, pokud se dostanete nad čáru u více škol.
-            {' '}<Link href="/jak-funguje-prijimani" className="underline font-medium">Zjistit více →</Link>
-          </p>
+        {/* Info boxy */}
+        <div className="space-y-4 mb-6">
+          <div className="bg-sky-50 border-l-4 border-sky-500 p-4 rounded-r-xl">
+            <p className="text-sm text-sky-800">
+              <strong>Jak funguje přijímání:</strong> Vaše šance závisí pouze na bodech, ne na pořadí priorit.
+              Priorita určuje jen to, na kterou školu budete přiřazeni, pokud se dostanete nad čáru u více škol.
+              {' '}<Link href="/jak-funguje-prijimani" className="underline font-medium">Zjistit více →</Link>
+            </p>
+          </div>
+
+          <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl">
+            <p className="text-sm text-amber-900">
+              <strong>💡 Extra kritéria:</strong> Některé školy hodnotí i prospěch, olympiády nebo jiné úspěchy.
+              Pokud vidíte číslo ve formátu "min 33 (+38)", znamená to: <strong>33 bodů z JPZ testů + 38 bodů za extra kritéria = 71 bodů celkem</strong>.
+              Simulátor počítá s celkovým minimem, ale zobrazuje i rozdělení.
+            </p>
+          </div>
         </div>
 
         {/* Statistiky výběru - sticky na mobilu */}
@@ -879,6 +889,7 @@ export function SimulatorClient() {
                         yellow: 'border-yellow-500 bg-yellow-50',
                         red: 'border-red-500 bg-red-50'
                       };
+                      const hasExtraCriteria = school.jpz_min > 0 && admissionMin - school.jpz_min > 5;
                       return (
                         <div key={school.id} className={`p-2 rounded-lg border-l-4 ${colors[status.color] || ''}`}>
                           <div className="flex justify-between items-start">
@@ -889,6 +900,11 @@ export function SimulatorClient() {
                               <div className="text-xs text-slate-600 truncate">
                                 {school.obor}{school.zamereni ? ` – ${school.zamereni.replace(/_/g, ' ')}` : ''}
                               </div>
+                              {hasExtraCriteria && (
+                                <div className="text-[10px] text-slate-500 mt-0.5" title={`JPZ minimum: ${school.jpz_min} bodů + extra kritéria: ${admissionMin - school.jpz_min} bodů`}>
+                                  JPZ {school.jpz_min} + extra {admissionMin - school.jpz_min}
+                                </div>
+                              )}
                             </div>
                             <div className="flex items-center gap-2 ml-2">
                               <span className={`text-sm font-bold ${
@@ -1116,7 +1132,15 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
         <div className="flex-1 min-w-0"></div>
 
         {/* Body */}
-        <span className="text-xs text-slate-400 shrink-0">min {admissionMin}</span>
+        <span className="text-xs text-slate-400 shrink-0">
+          {school.jpz_min > 0 && school.min_body_2025 - school.jpz_min > 5 ? (
+            <span title={`JPZ: ${school.jpz_min} bodů + extra kritéria: ${school.min_body_2025 - school.jpz_min} bodů`}>
+              min {school.jpz_min} (+{school.min_body_2025 - school.jpz_min})
+            </span>
+          ) : (
+            `min ${admissionMin}`
+          )}
+        </span>
         <span className={`font-bold shrink-0 ${c.diff}`}>
           {diff > 0 ? '+' : ''}{diff}
         </span>
@@ -1150,7 +1174,15 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
             </Link>
           </div>
           <div className="flex items-center gap-1.5 shrink-0">
-            <span className="text-xs text-slate-400">min {admissionMin}</span>
+            <span className="text-xs text-slate-400">
+              {school.jpz_min > 0 && school.min_body_2025 - school.jpz_min > 5 ? (
+                <span title={`JPZ: ${school.jpz_min} bodů + extra: ${school.min_body_2025 - school.jpz_min}`}>
+                  {school.jpz_min}(+{school.min_body_2025 - school.jpz_min})
+                </span>
+              ) : (
+                `min ${admissionMin}`
+              )}
+            </span>
             <span className={`font-bold text-sm ${c.diff}`}>
               {diff > 0 ? '+' : ''}{diff}
             </span>
@@ -1408,6 +1440,29 @@ function SortableSchoolCard({
                       <div className="text-xs text-white/50">{Math.round(details.ma_prumer)} prům.</div>
                     )}
                   </div>
+                </div>
+                {/* JPZ minimum celkem */}
+                <div className="mt-2 pt-2 border-t border-white/10">
+                  <div className="flex justify-between items-baseline">
+                    <span className="text-white/70 text-xs">JPZ celkem (ČJ + MA):</span>
+                    <span className="text-white font-bold">{details.jpz_min} bodů</span>
+                  </div>
+                  {/* Extra kritéria pokud existují */}
+                  {admissionMin - details.jpz_min > 5 && (
+                    <>
+                      <div className="flex justify-between items-baseline mt-1">
+                        <span className="text-white/70 text-xs">Extra kritéria:</span>
+                        <span className="text-yellow-300 font-bold">+{admissionMin - details.jpz_min} bodů</span>
+                      </div>
+                      <div className="flex justify-between items-baseline mt-1 pt-1 border-t border-white/10">
+                        <span className="text-white/70 text-xs">Celkové minimum:</span>
+                        <span className="text-white font-bold text-lg">{admissionMin} bodů</span>
+                      </div>
+                      <div className="text-[10px] text-yellow-200/60 mt-2 text-center">
+                        Extra body: prospěch, olympiády, aj.
+                      </div>
+                    </>
+                  )}
                 </div>
                 <div className="text-[10px] text-white/40 mt-2 text-center">
                   max 50 bodů na test, celkem max 100
