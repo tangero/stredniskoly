@@ -1,0 +1,68 @@
+name: Notifikace nových issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    # Pouze pro issues s labelem "bug-report"
+    if: contains(github.event.issue.labels.*.name, 'bug-report')
+
+    steps:
+      - name: Poslat email notifikaci
+        uses: dawidd6/action-send-mail@v3
+        with:
+          # SMTP server (použij Gmail, Outlook, nebo vlastní SMTP)
+          server_address: smtp.gmail.com
+          server_port: 587
+
+          # Přihlašovací údaje (uložené v GitHub Secrets)
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+
+          # Email detaily
+          subject: "[Bug Report] Nový issue #${{ github.event.issue.number }}"
+          to: ${{ secrets.NOTIFICATION_EMAIL }}
+          from: GitHub Issues Bot
+
+          # Tělo emailu
+          body: |
+            🐛 Nový bug report byl nahlášen!
+
+            **Issue:** #${{ github.event.issue.number }}
+            **Název:** ${{ github.event.issue.title }}
+            **Autor:** ${{ github.event.issue.user.login }}
+            **Vytvořeno:** ${{ github.event.issue.created_at }}
+
+            **Obsah:**
+            ${{ github.event.issue.body }}
+
+            ---
+
+            **Akce:**
+            🔗 Zobrazit issue: ${{ github.event.issue.html_url }}
+            🔗 Odpovědět: ${{ github.event.issue.html_url }}#new_comment_field
+
+            ---
+
+            Tento email byl automaticky vygenerován GitHub Actions.
+
+          # HTML verze (volitelné)
+          html_body: |
+            <h2>🐛 Nový bug report</h2>
+            <table>
+              <tr><td><strong>Issue:</strong></td><td>#${{ github.event.issue.number }}</td></tr>
+              <tr><td><strong>Název:</strong></td><td>${{ github.event.issue.title }}</td></tr>
+              <tr><td><strong>Autor:</strong></td><td>${{ github.event.issue.user.login }}</td></tr>
+            </table>
+
+            <h3>Obsah:</h3>
+            <pre>${{ github.event.issue.body }}</pre>
+
+            <p>
+              <a href="${{ github.event.issue.html_url }}" style="background: #0074e4; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+                Zobrazit issue na GitHubu
+              </a>
+            </p>
