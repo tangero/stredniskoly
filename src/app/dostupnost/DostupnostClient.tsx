@@ -579,9 +579,9 @@ export function DostupnostClient() {
 
               return (
                 <div key={school.redizo} className="bg-white rounded-2xl shadow-sm border overflow-hidden">
-                  {/* Row 1: School name, address, travel info */}
-                  <div className="p-4 md:p-5 flex flex-col md:flex-row md:items-start gap-3">
-                    <div className="flex items-start gap-3 flex-1 min-w-0">
+                  {/* Row 1: School name + address */}
+                  <div className="p-4 md:p-5 pb-2 md:pb-3">
+                    <div className="flex items-start gap-3">
                       <input
                         type="checkbox"
                         aria-label={`Vybrat ${school.nazev} do simulátoru`}
@@ -600,22 +600,28 @@ export function DostupnostClient() {
                         <p className="text-sm text-slate-500 mt-0.5">{school.adresa || school.obec}{school.kraj ? `, ${school.kraj}` : ''}</p>
                       </div>
                     </div>
+                  </div>
 
-                    {/* Travel info - right side */}
-                    <div className="flex items-center gap-2 md:flex-col md:items-end shrink-0 pl-7 md:pl-0">
-                      <span className={`inline-block rounded-lg px-3 py-1 text-sm font-bold ${cohort.badgeClass}`}>
+                  {/* Row 2: Travel info - full width bar */}
+                  <div className="mx-4 md:mx-5 mb-3 rounded-xl bg-slate-50 px-4 py-3">
+                    <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                      <span className={`inline-flex items-center rounded-lg px-3 py-1 text-base font-bold ${cohort.badgeClass}`}>
                         {school.estimatedMinutes} min
                       </span>
-                      <span className={`inline-block rounded-lg px-2 py-0.5 text-xs ${transferBadgeClass(school.transfers)}`}>
+                      <span className={`inline-flex items-center rounded-lg px-2.5 py-1 text-sm font-medium ${transferBadgeClass(school.transfers)}`}>
                         {transferLabel(school.transfers)}
                       </span>
-                      <div className="text-xs text-slate-500 md:text-right">
-                        <span>jízda {rideMin} + čekání {school.waitMinutes} + chůze {school.walkMinutes}</span>
-                        {school.usedLines.length > 0 && (
-                          <p className="text-blue-600">Linky: {linesLabel(school.usedLines)}</p>
-                        )}
-                        <p>zastávka: {school.stopName}</p>
-                      </div>
+                      <span className="text-sm text-slate-600">
+                        jízda {rideMin} + čekání {school.waitMinutes} + chůze {school.walkMinutes}
+                      </span>
+                      {school.usedLines.length > 0 && (
+                        <span className="text-sm font-medium text-blue-600">
+                          Linky: {linesLabel(school.usedLines)}
+                        </span>
+                      )}
+                      <span className="text-sm text-slate-600">
+                        zastávka: {school.stopName}
+                      </span>
                     </div>
                   </div>
 
@@ -624,7 +630,14 @@ export function DostupnostClient() {
                     <div className="border-t border-slate-100">
                       {/* Desktop: table */}
                       <div className="hidden md:block overflow-x-auto">
-                        <table className="w-full text-sm">
+                        <table className="w-full text-sm" style={{ tableLayout: 'fixed' }}>
+                          <colgroup>
+                            <col style={{ width: '40%' }} />
+                            <col style={{ width: '10%' }} />
+                            <col style={{ width: '15%' }} />
+                            <col style={{ width: '15%' }} />
+                            <col style={{ width: '20%' }} />
+                          </colgroup>
                           <thead className="bg-slate-50 text-slate-600">
                             <tr>
                               <th className="text-left px-4 py-2 font-medium">Obor / zaměření</th>

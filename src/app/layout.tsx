@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Cabin } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import BugReportButton from '@/components/BugReportButton';
 import './globals.css';
 
 const cabin = Cabin({
@@ -81,6 +82,7 @@ export default function RootLayout({
     <html lang="cs" suppressHydrationWarning>
       <body className={`antialiased min-h-screen ${cabin.className}`} style={{ backgroundColor: '#ffffff', color: '#28313b' }}>
         {children}
+        <BugReportButton />
         <Analytics />
       </body>
     </html>

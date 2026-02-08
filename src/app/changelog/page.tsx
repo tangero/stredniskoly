@@ -20,6 +20,17 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '2.3.0',
+    date: '8. 2. 2026',
+    title: 'Bug report widget, UX dopravních informací a zarovnání tabulek',
+    changes: [
+      { type: 'new', text: 'Plovoucí tlačítko „Nahlásit chybu" — formulář vytvoří GitHub Issue přímo z webu' },
+      { type: 'new', text: 'API endpoint /api/bug-report s rate limitingem (3 req/15 min) a serverovou validací' },
+      { type: 'improve', text: 'Dopravní informace v kartách dostupnosti přesunuty do vlastního pruhu přes celou šířku s většími fonty' },
+      { type: 'improve', text: 'Zarovnání sloupců tabulky oborů (table-layout: fixed) — hodnoty pod sebou napříč kartami' },
+    ],
+  },
+  {
     version: '2.2.0',
     date: '8. 2. 2026',
     title: 'Redesign dostupnosti: per-oborové detaily a opravy mapování škol',
