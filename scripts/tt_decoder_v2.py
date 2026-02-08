@@ -54,8 +54,17 @@ class TTDecoderV2:
 
     def _find_stops(self) -> bool:
         """Najdi offset tabulku zastávek + string blob."""
+        # Adaptivní search range podle velikosti souboru
+        file_size = len(self.data)
+        if file_size < 1_000_000:  # < 1 MB
+            search_limit = file_size
+        elif file_size < 10_000_000:  # < 10 MB
+            search_limit = 500_000  # 500 KB
+        else:  # >= 10 MB
+            search_limit = 2_000_000  # 2 MB
+
         for alignment in range(4):
-            for offset in range(0x40 + alignment, min(0x40 + 10000, len(self.data) - 8), 4):
+            for offset in range(0x40 + alignment, min(0x40 + search_limit, len(self.data) - 8), 4):
                 try:
                     total_bytes = struct.unpack('<I', self.data[offset:offset+4])[0]
                     item_count = struct.unpack('<I', self.data[offset+4:offset+8])[0]
@@ -160,8 +169,17 @@ class TTDecoderV2:
         """
         sections_found = []
 
+        # Adaptivní scan limit podle velikosti souboru
+        file_size = len(self.data)
+        if file_size < 1_000_000:  # < 1 MB
+            scan_limit = file_size
+        elif file_size < 10_000_000:  # < 10 MB
+            scan_limit = 5_000_000  # 5 MB
+        else:  # >= 10 MB
+            scan_limit = 20_000_000  # 20 MB
+
         # Skenuj každých 1 KB
-        for start in range(0x100, min(len(self.data), 200000), 0x400):
+        for start in range(0x100, min(len(self.data), scan_limit), 0x400):
             for alignment in range(4):
                 offset = start + alignment
 
@@ -228,7 +246,10 @@ class TTDecoderV2:
         # Dekóduj z nejlepší sekce
         trips = self._decode_from_offset(best_offset)
 
-        if len(trips) >= 2:
+        # Akceptuj pokud:
+        # - Máš alespoň 2 spoje, NEBO
+        # - Máš 1 spoj s alespoň 10 zastávkami
+        if len(trips) >= 2 or (len(trips) == 1 and len(trips[0]) >= 10):
             self.trips = trips
             return True
 
