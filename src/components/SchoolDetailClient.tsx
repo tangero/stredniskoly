@@ -592,42 +592,69 @@ export function AcceptanceByPriority({ prihlasky_priority, prijati_priority }: A
     };
   }).filter(Boolean) as { priority: number; prihlasky: number; prijati: number; chance: number }[];
 
-  // Filtrovat pouze priority s daty (1-3)
-  const relevantChances = chances.filter(c => c.priority <= 3 && c.prihlasky > 0);
+  // Filtrovat pouze priority s daty (až 5 - u škol s talentovými zkouškami)
+  const relevantChances = chances.filter(c => c.priority <= 5 && c.prihlasky > 0);
 
   if (relevantChances.length === 0) return null;
+
+  // Zjistit, jestli máme rozšířené priority (4. a 5.)
+  const hasExtendedPriorities = relevantChances.some(c => c.priority > 3);
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm">
       <h2 className="text-xl font-semibold mb-2">Šance přijetí podle priority</h2>
       <p className="text-sm text-slate-600 mb-4">
-        Jak se liší šance na přijetí podle toho, jakou prioritu škole dáte?
+        Jak se liší šance na přijetí podle toho, jakou prioritu škole dáte?{hasExtendedPriorities && ' (4. a 5. priorita je možná u škol s talentovými zkouškami)'}
       </p>
 
       <div className="space-y-4">
         {relevantChances.map(({ priority, prihlasky, prijati, chance }) => {
-          const color = priority === 1 ? 'green' : priority === 2 ? 'yellow' : 'red';
-          const bgColor = `bg-${color}-500`;
-          const textColor = `text-${color}-700`;
-          const lightBg = `bg-${color}-50`;
+          // Barvy pro všech 5 priorit
+          const getBgClass = (p: number) => {
+            if (p === 1) return 'bg-green-500';
+            if (p === 2) return 'bg-yellow-500';
+            if (p === 3) return 'bg-red-500';
+            if (p === 4) return 'bg-purple-500';
+            return 'bg-blue-500';
+          };
+
+          const getTextClass = (p: number) => {
+            if (p === 1) return 'text-green-600';
+            if (p === 2) return 'text-yellow-600';
+            if (p === 3) return 'text-red-600';
+            if (p === 4) return 'text-purple-600';
+            return 'text-blue-600';
+          };
+
+          const getLightBgClass = (p: number) => {
+            if (p === 1) return 'bg-green-50';
+            if (p === 2) return 'bg-yellow-50';
+            if (p === 3) return 'bg-red-50';
+            if (p === 4) return 'bg-purple-50';
+            return 'bg-blue-50';
+          };
+
+          const getPriorityLabel = (p: number) => {
+            if (p === 1) return 'První';
+            if (p === 2) return 'Druhá';
+            if (p === 3) return 'Třetí';
+            if (p === 4) return 'Čtvrtá';
+            return 'Pátá';
+          };
 
           return (
-            <div key={priority} className={`p-4 rounded-lg ${lightBg}`}>
+            <div key={priority} className={`p-4 rounded-lg ${getLightBgClass(priority)}`}>
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
-                  <span className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${
-                    priority === 1 ? 'bg-green-500' : priority === 2 ? 'bg-yellow-500' : 'bg-red-500'
-                  }`}>
+                  <span className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold ${getBgClass(priority)}`}>
                     {priority}.
                   </span>
                   <span className="font-medium">
-                    {priority === 1 ? 'První' : priority === 2 ? 'Druhá' : 'Třetí'} priorita
+                    {getPriorityLabel(priority)} priorita
                   </span>
                 </div>
                 <div className="text-right">
-                  <span className={`text-2xl font-bold ${
-                    priority === 1 ? 'text-green-600' : priority === 2 ? 'text-yellow-600' : 'text-red-600'
-                  }`}>
+                  <span className={`text-2xl font-bold ${getTextClass(priority)}`}>
                     {chance.toFixed(0)}%
                   </span>
                   <span className="text-sm text-slate-500 ml-2">šance</span>
@@ -637,9 +664,7 @@ export function AcceptanceByPriority({ prihlasky_priority, prijati_priority }: A
               {/* Progress bar */}
               <div className="h-3 bg-slate-200 rounded-full overflow-hidden mb-2">
                 <div
-                  className={`h-full rounded-full ${
-                    priority === 1 ? 'bg-green-500' : priority === 2 ? 'bg-yellow-500' : 'bg-red-500'
-                  }`}
+                  className={`h-full rounded-full ${getBgClass(priority)}`}
                   style={{ width: `${Math.min(100, chance)}%` }}
                 />
               </div>
@@ -1143,19 +1168,25 @@ export function PriorityDistributionBar({ priorityPcts, prihlasky_priority, prij
   const p1 = priorityPcts[0] || 0;
   const p2 = priorityPcts[1] || 0;
   const p3 = priorityPcts[2] || 0;
+  const p4 = priorityPcts[3] || 0;
+  const p5 = priorityPcts[4] || 0;
 
   // Spočítáme šance přijetí a rozložení přijatých
+  // Podpora až 5 priorit (u škol s talentovými zkouškami)
   const hasAcceptanceData = prihlasky_priority && prijati_priority &&
     prihlasky_priority.length >= 3 && prijati_priority.length >= 3;
 
   const acceptanceChances: { priority: number; chance: number; prijato: number; prihlaseno: number }[] = [];
-  const acceptedPcts: number[] = [0, 0, 0];
+  const acceptedPcts: number[] = [0, 0, 0, 0, 0];
   let totalPrijati = 0;
 
   if (hasAcceptanceData) {
-    totalPrijati = prijati_priority.slice(0, 3).reduce((a, b) => a + b, 0);
+    // Spočítat celkový počet přijatých ze všech priorit (až 5)
+    const maxPriorities = Math.min(prihlasky_priority.length, prijati_priority.length, 5);
+    totalPrijati = prijati_priority.slice(0, maxPriorities).reduce((a, b) => a + b, 0);
 
-    for (let i = 0; i < 3; i++) {
+    // Projít všechny dostupné priority (až 5)
+    for (let i = 0; i < maxPriorities; i++) {
       const prihlaseno = prihlasky_priority[i] || 0;
       const prijato = prijati_priority[i] || 0;
       const chance = prihlaseno > 0 ? (prijato / prihlaseno) * 100 : 0;
@@ -1163,6 +1194,10 @@ export function PriorityDistributionBar({ priorityPcts, prihlasky_priority, prij
       acceptedPcts[i] = totalPrijati > 0 ? (prijato / totalPrijati) * 100 : 0;
     }
   }
+
+  // Zjistit, jestli máme data pro 4. nebo 5. prioritu (školy s talentovými zkouškami)
+  const hasExtendedPriorities = (p4 > 0 || p5 > 0) ||
+    (prihlasky_priority && (prihlasky_priority[3] > 0 || prihlasky_priority[4] > 0));
 
   // Zjistíme, z kterých priorit se nepřijímá
   const noAcceptanceFrom = acceptanceChances.filter(c => c.prihlaseno > 0 && c.chance === 0);
@@ -1172,7 +1207,7 @@ export function PriorityDistributionBar({ priorityPcts, prihlasky_priority, prij
     <div className="bg-white p-6 rounded-xl shadow-sm">
       <h2 className="text-xl font-semibold mb-2">Rozložení priorit uchazečů</h2>
       <p className="text-sm text-slate-600 mb-4">
-        Jak uchazeči tuto školu volí na své přihlášce (1., 2. nebo 3. priorita).
+        Jak uchazeči tuto školu volí na své přihlášce (1., 2. nebo 3. priorita{hasExtendedPriorities ? ', případně 4. nebo 5. priorita u škol s talentovými zkouškami' : ''}).
       </p>
 
       {/* Stacked bar - přihlášky */}
@@ -1200,6 +1235,22 @@ export function PriorityDistributionBar({ priorityPcts, prihlasky_priority, prij
             style={{ width: `${p3}%` }}
           >
             {p3.toFixed(1)}%
+          </div>
+        )}
+        {p4 > 0 && (
+          <div
+            className="bg-purple-500 flex items-center justify-center text-white text-sm font-medium"
+            style={{ width: `${p4}%` }}
+          >
+            {p4.toFixed(1)}%
+          </div>
+        )}
+        {p5 > 0 && (
+          <div
+            className="bg-blue-500 flex items-center justify-center text-white text-sm font-medium"
+            style={{ width: `${p5}%` }}
+          >
+            {p5.toFixed(1)}%
           </div>
         )}
       </div>
@@ -1233,7 +1284,23 @@ export function PriorityDistributionBar({ priorityPcts, prihlasky_priority, prij
                 {acceptedPcts[2].toFixed(0)}%
               </div>
             )}
-            {acceptedPcts[0] === 0 && acceptedPcts[1] === 0 && acceptedPcts[2] === 0 && (
+            {acceptedPcts[3] > 0 && (
+              <div
+                className="bg-purple-600 flex items-center justify-center text-white text-sm font-medium"
+                style={{ width: `${acceptedPcts[3]}%` }}
+              >
+                {acceptedPcts[3].toFixed(0)}%
+              </div>
+            )}
+            {acceptedPcts[4] > 0 && (
+              <div
+                className="bg-blue-600 flex items-center justify-center text-white text-sm font-medium"
+                style={{ width: `${acceptedPcts[4]}%` }}
+              >
+                {acceptedPcts[4].toFixed(0)}%
+              </div>
+            )}
+            {acceptedPcts.every(p => p === 0) && (
               <div className="bg-slate-300 flex items-center justify-center text-slate-600 text-sm font-medium w-full">
                 Žádní přijatí
               </div>
@@ -1256,6 +1323,18 @@ export function PriorityDistributionBar({ priorityPcts, prihlasky_priority, prij
           <span className="w-3 h-3 rounded-full bg-red-500"></span>
           <span>3. priorita</span>
         </div>
+        {hasExtendedPriorities && (
+          <>
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-purple-500"></span>
+              <span>4. priorita</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-blue-500"></span>
+              <span>5. priorita</span>
+            </div>
+          </>
+        )}
       </div>
 
       {/* Interpretation */}
