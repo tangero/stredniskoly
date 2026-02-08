@@ -200,6 +200,7 @@ export function DostupnostClient() {
   const [highlightIndex, setHighlightIndex] = useState(-1);
   const [showDropdown, setShowDropdown] = useState(false);
   const [maxMinutes, setMaxMinutes] = useState(60);
+  const [maxMinutesInput, setMaxMinutesInput] = useState('60');
   const [typFilter, setTypFilter] = useState('');
   const [lastSearch, setLastSearch] = useState<{
     stopId: string;
@@ -484,7 +485,18 @@ export function DostupnostClient() {
 
           <label className="md:col-span-2">
             <span className="block text-sm font-medium text-slate-700 mb-1">Max dojezd (min)</span>
-            <input type="number" min={5} max={180} value={maxMinutes} onChange={(e) => setMaxMinutes(Number(e.target.value))}
+            <input type="text" inputMode="numeric" pattern="[0-9]*" value={maxMinutesInput}
+              onChange={(e) => {
+                const raw = e.target.value.replace(/[^0-9]/g, '').replace(/^0+(\d)/, '$1');
+                setMaxMinutesInput(raw);
+                const n = parseInt(raw, 10);
+                if (!isNaN(n)) setMaxMinutes(n);
+              }}
+              onBlur={() => {
+                const n = Math.max(5, Math.min(180, maxMinutes || 60));
+                setMaxMinutes(n);
+                setMaxMinutesInput(String(n));
+              }}
               className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none" />
           </label>
 
