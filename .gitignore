@@ -42,4 +42,15 @@ next-env.d.ts
 /data/*
 !/data/transit_graph.json
 !/data/school_locations.json
+
+# TT Decoder outputs (large binary/generated files)
+/data/decoded_tt*/
+/data/gtfs_from_tt*/
+/data/KOMPLET_decoded/
+/data/GTFS_CZ/
+*.json.log
+/logs/
+tt_decoder_*.log
+
 /.playwright-mcp
+__pycache__/
