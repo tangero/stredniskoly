@@ -88,7 +88,7 @@ export default function RootLayout({
         <Script
           async
           data-id="101500959"
-          src="//static.getclicky.com/js"
+          src="https://static.getclicky.com/js"
           strategy="afterInteractive"
         />
       </body>
