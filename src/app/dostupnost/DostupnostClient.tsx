@@ -552,7 +552,7 @@ export function DostupnostClient() {
             <div className="bg-slate-50 rounded-xl p-3 text-xs text-slate-600">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
                 <span className="font-medium text-slate-700">Legenda:</span>
-                <span>Body min/prům = body JPZ (CJ+MA, max 100)</span>
+                <span>Body prům = průměrné body JPZ (CJ+MA, max 100)</span>
                 <span className="flex items-center gap-1">
                   <InfoTooltip title="Konkurence (Index poptávky)">
                     Poměr přihlášek ke kapacitě. Pod 1,5× = nízká, 1,5-3× = střední, nad 3× = vysoká konkurence.
@@ -631,15 +631,9 @@ export function DostupnostClient() {
                               <th className="text-center px-3 py-2 font-medium">Délka</th>
                               <th className="text-center px-3 py-2 font-medium">Typ</th>
                               <th className="text-center px-3 py-2 font-medium">
-                                Body min
-                                <InfoTooltip title="Minimální body JPZ">
-                                  Nejnižší součet bodů z ČJ + MA (JPZ), se kterým byl někdo přijat. Max 100 bodů.
-                                </InfoTooltip>
-                              </th>
-                              <th className="text-center px-3 py-2 font-medium">
                                 Body prům
                                 <InfoTooltip title="Průměrné body JPZ">
-                                  Průměrný součet bodů z ČJ + MA všech přijatých. Max 100 bodů.
+                                  Průměrný součet bodů z ČJ + MA všech přijatých. Max 100 bodů. Čím vyšší, tím náročnější škola.
                                 </InfoTooltip>
                               </th>
                               <th className="text-center px-3 py-2 font-medium">
@@ -668,15 +662,10 @@ export function DostupnostClient() {
                                     <span className="text-xs text-slate-600">{typLabel(prog.typ)}</span>
                                   </td>
                                   <td className="px-3 py-2 text-center">
-                                    {prog.jpzMin !== null ? (
-                                      <span className={`inline-block px-2 py-0.5 rounded text-xs font-bold ${jpzBadgeColor(prog.jpzMin)}`}>
-                                        {prog.jpzMin}
-                                      </span>
-                                    ) : <span className="text-slate-400">—</span>}
-                                  </td>
-                                  <td className="px-3 py-2 text-center">
                                     {prog.jpzPrumer !== null ? (
-                                      <span className="font-semibold text-slate-700">{prog.jpzPrumer}</span>
+                                      <span className={`inline-block px-2 py-0.5 rounded text-xs font-bold ${jpzBadgeColor(prog.jpzPrumer)}`}>
+                                        {prog.jpzPrumer}
+                                      </span>
                                     ) : <span className="text-slate-400">—</span>}
                                   </td>
                                   <td className="px-3 py-2 text-center">
@@ -705,16 +694,15 @@ export function DostupnostClient() {
                                     {prog.zamereni && <span className="text-slate-500 font-normal"> — {prog.zamereni}</span>}
                                   </p>
                                 </div>
-                                {prog.jpzMin !== null && (
-                                  <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-bold ${jpzBadgeColor(prog.jpzMin)}`}>
-                                    {prog.jpzMin}b
+                                {prog.jpzPrumer !== null && (
+                                  <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-bold ${jpzBadgeColor(prog.jpzPrumer)}`}>
+                                    {prog.jpzPrumer}b
                                   </span>
                                 )}
                               </div>
                               <div className="flex flex-wrap gap-2 mt-1 text-xs">
                                 <span className="px-1.5 py-0.5 rounded bg-blue-100 text-blue-800 font-medium">{prog.delkaStudia}L</span>
                                 <span className="text-slate-500">{typLabel(prog.typ)}</span>
-                                {prog.jpzPrumer !== null && <span className="text-slate-600">prům. {prog.jpzPrumer}b</span>}
                                 <span className={`font-semibold ${konk.color}`}>{konk.text}</span>
                                 {prog.kapacita !== null && <span className="text-slate-400">{prog.kapacita} míst</span>}
                               </div>

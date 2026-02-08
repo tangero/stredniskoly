@@ -1,7 +1,7 @@
 {
   "metadata": {
     "total_schools": 1086,
-    "matched": 1086,
+    "matched": 1088,
     "unmatched": 0,
     "match_rate": 100.0,
     "method": "nominatim_geocode_nearest_stop",
@@ -8694,6 +8694,22 @@
       "lat": 49.8785326,
       "lon": 18.28569,
       "distance_km": 0.072,
+      "method": "address"
+    },
+    "600006018|Lindnerova 517, Praha, 18000": {
+      "stop_id": "CISJR:54885|CRZ:9167|PID_ASW:779",
+      "stop_name": "Praha, U Kříže",
+      "lat": 50.1122325,
+      "lon": 14.4729657,
+      "distance_km": 0.184,
+      "method": "address"
+    },
+    "600006018|Rostislavova 7, Ostrava, 70300": {
+      "stop_id": "CISJR:25466|CRZ:14573|DPO:201|DPO_GTFS:Z201N1",
+      "stop_name": "Ostrava, Vítkovice, Štramberská",
+      "lat": 49.8108085,
+      "lon": 18.2547986,
+      "distance_km": 0.104,
       "method": "address"
     }
   }

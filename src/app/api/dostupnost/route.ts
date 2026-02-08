@@ -46,6 +46,7 @@ type SchoolProgram = {
 };
 
 type AggregatedSchool = {
+  groupKey: string; // redizo|adresa — unique per campus (handles multi-campus schools like PORG)
   redizo: string;
   nazevRaw: string;
   nazev: string;
@@ -75,8 +76,8 @@ let graphCache: TransitGraphData | null = null;
 let schoolLocationsCache: SchoolLocationsData | null = null;
 let allSchoolsCache: AggregatedSchool[] | null = null;
 let difficultyThresholdsCache: DifficultyThresholds | null = null;
-// Index: stopId → [{redizo, distance_km, schoolLat, schoolLon}]
-let stopToSchoolsIndex: Map<string, Array<{ redizo: string; distanceKm: number; lat: number; lon: number }>> | null = null;
+// Index: stopId → [{groupKey, distance_km, schoolLat, schoolLon}]
+let stopToSchoolsIndex: Map<string, Array<{ groupKey: string; distanceKm: number; lat: number; lon: number }>> | null = null;
 
 function toNumber(value: unknown): number | null {
   if (typeof value === 'number' && Number.isFinite(value)) return value;
@@ -216,8 +217,11 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
 
     if (!redizo || !nazev) continue;
 
-    if (!map.has(redizo)) {
-      map.set(redizo, {
+    // Group by redizo+adresa to handle multi-campus schools (e.g. PORG Praha 4 vs Libeň vs Ostrava)
+    const groupKey = `${redizo}|${adresa}`;
+
+    if (!map.has(groupKey)) {
+      map.set(groupKey, {
         redizo,
         nazevRaw: nazevRaw || nazev,
         nazev,
@@ -233,7 +237,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
       });
     }
 
-    const item = map.get(redizo)!;
+    const item = map.get(groupKey)!;
     if (typ) item.typy.add(typ);
     const obor = String(row.obor ?? '').trim();
     if (obor) item.obory.add(obor);
@@ -273,7 +277,8 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
     }
   }
 
-  allSchoolsCache = Array.from(map.values()).map((value) => ({
+  allSchoolsCache = Array.from(map.entries()).map(([groupKey, value]) => ({
+    groupKey,
     redizo: value.redizo,
     nazevRaw: value.nazevRaw,
     nazev: value.nazev,
@@ -308,10 +313,11 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
 function buildStopToSchoolsIndex(
   schoolLocations: SchoolLocationsData,
   graph: TransitGraphData,
-): Map<string, Array<{ redizo: string; distanceKm: number; lat: number; lon: number }>> {
+  schools: AggregatedSchool[],
+): Map<string, Array<{ groupKey: string; distanceKm: number; lat: number; lon: number }>> {
   if (stopToSchoolsIndex) return stopToSchoolsIndex;
 
-  const index = new Map<string, Array<{ redizo: string; distanceKm: number; lat: number; lon: number }>>();
+  const index = new Map<string, Array<{ groupKey: string; distanceKm: number; lat: number; lon: number }>>();
 
   // Pre-compute lat/lon bounding box margin for MAX_WALK_DISTANCE_KM
   // 1.5 km ≈ 0.0135° lat, ≈ 0.022° lon at 50°N
@@ -327,37 +333,61 @@ function buildStopToSchoolsIndex(
     stopGrid.get(cellKey)!.push([stopId, stopLat, stopLon]);
   }
 
-  for (const [redizo, schoolLoc] of Object.entries(schoolLocations.schools)) {
+  // Build groupKey → school mapping for reverse lookup
+  const groupKeyByRedizoAdresa = new Map<string, string>();
+  for (const school of schools) {
+    groupKeyByRedizoAdresa.set(school.groupKey, school.groupKey);
+  }
+
+  // Build redizo → [groupKey] mapping for fallback
+  const redizoToGroupKeys = new Map<string, string[]>();
+  for (const school of schools) {
+    const existing = redizoToGroupKeys.get(school.redizo) ?? [];
+    existing.push(school.groupKey);
+    redizoToGroupKeys.set(school.redizo, existing);
+  }
+
+  function addToIndex(stopId: string, groupKey: string, distanceKm: number, lat: number, lon: number) {
+    if (!index.has(stopId)) index.set(stopId, []);
+    index.get(stopId)!.push({ groupKey, distanceKm, lat, lon });
+  }
+
+  for (const [locKey, schoolLoc] of Object.entries(schoolLocations.schools)) {
     const primaryStopId = schoolLoc.stop_id;
     const schoolLat = schoolLoc.lat;
     const schoolLon = schoolLoc.lon;
 
-    // Add primary mapped stop
-    if (!index.has(primaryStopId)) index.set(primaryStopId, []);
-    index.get(primaryStopId)!.push({
-      redizo,
-      distanceKm: schoolLoc.distance_km,
-      lat: schoolLat,
-      lon: schoolLon,
-    });
+    // Determine groupKey(s): try exact match first (groupKey format in school_locations),
+    // then fallback to redizo (for schools with single address)
+    let groupKeys: string[];
+    if (groupKeyByRedizoAdresa.has(locKey)) {
+      // Exact groupKey match (for multi-campus entries like PORG Libeň, PORG Ostrava)
+      groupKeys = [locKey];
+    } else {
+      // Fallback: locKey is a plain redizo → get all groupKeys for this redizo
+      groupKeys = redizoToGroupKeys.get(locKey) ?? [];
+    }
 
-    // Check nearby grid cells
-    const minCellLat = Math.floor((schoolLat - LAT_MARGIN) / CELL_SIZE);
-    const maxCellLat = Math.floor((schoolLat + LAT_MARGIN) / CELL_SIZE);
-    const minCellLon = Math.floor((schoolLon - LON_MARGIN) / CELL_SIZE);
-    const maxCellLon = Math.floor((schoolLon + LON_MARGIN) / CELL_SIZE);
+    for (const gk of groupKeys) {
+      addToIndex(primaryStopId, gk, schoolLoc.distance_km, schoolLat, schoolLon);
 
-    for (let cLat = minCellLat; cLat <= maxCellLat; cLat++) {
-      for (let cLon = minCellLon; cLon <= maxCellLon; cLon++) {
-        const cellStops = stopGrid.get(`${cLat},${cLon}`);
-        if (!cellStops) continue;
+      // Check nearby grid cells for walkable stops
+      const minCellLat = Math.floor((schoolLat - LAT_MARGIN) / CELL_SIZE);
+      const maxCellLat = Math.floor((schoolLat + LAT_MARGIN) / CELL_SIZE);
+      const minCellLon = Math.floor((schoolLon - LON_MARGIN) / CELL_SIZE);
+      const maxCellLon = Math.floor((schoolLon + LON_MARGIN) / CELL_SIZE);
 
-        for (const [stopId, stopLat, stopLon] of cellStops) {
-          if (stopId === primaryStopId) continue;
-          const dist = haversineKm({ lat: schoolLat, lon: schoolLon }, { lat: stopLat, lon: stopLon });
-          if (dist <= MAX_WALK_DISTANCE_KM) {
-            if (!index.has(stopId)) index.set(stopId, []);
-            index.get(stopId)!.push({ redizo, distanceKm: dist, lat: schoolLat, lon: schoolLon });
+      for (let cLat = minCellLat; cLat <= maxCellLat; cLat++) {
+        for (let cLon = minCellLon; cLon <= maxCellLon; cLon++) {
+          const cellStops = stopGrid.get(`${cLat},${cLon}`);
+          if (!cellStops) continue;
+
+          for (const [stopId, sLat, sLon] of cellStops) {
+            if (stopId === primaryStopId) continue;
+            const dist = haversineKm({ lat: schoolLat, lon: schoolLon }, { lat: sLat, lon: sLon });
+            if (dist <= MAX_WALK_DISTANCE_KM) {
+              addToIndex(stopId, gk, dist, schoolLat, schoolLon);
+            }
           }
         }
       }
@@ -498,13 +528,13 @@ export async function POST(request: NextRequest) {
     timings.dijkstraMs = Date.now() - phaseStart;
 
     phaseStart = Date.now();
-    const stopSchoolIndex = buildStopToSchoolsIndex(schoolLocations, graph);
+    const stopSchoolIndex = buildStopToSchoolsIndex(schoolLocations, graph, schools);
     timings.buildIndexMs = Date.now() - phaseStart;
 
     phaseStart = Date.now();
-    const schoolsMap = new Map(schools.map((s) => [s.redizo, s]));
+    const schoolsMap = new Map(schools.map((s) => [s.groupKey, s]));
 
-    // For each school find the best reachable stop
+    // For each school find the best reachable stop (keyed by groupKey for multi-campus support)
     const bestSchoolTimes = new Map<string, {
       transitMinutes: number;
       walkMinutes: number;
@@ -525,15 +555,15 @@ export async function POST(request: NextRequest) {
       if (!stopInfo) continue;
       const stopName = stopInfo[0];
 
-      for (const { redizo, distanceKm } of nearbySchools) {
+      for (const { groupKey, distanceKm } of nearbySchools) {
         if (distanceKm > MAX_WALK_DISTANCE_KM) continue;
         const walkMin = (distanceKm / WALK_SPEED_KMPH) * 60;
         const totalMin = transitMin + walkMin;
         if (totalMin > maxMinutes) continue;
 
-        const existing = bestSchoolTimes.get(redizo);
+        const existing = bestSchoolTimes.get(groupKey);
         if (!existing || totalMin < existing.totalMinutes) {
-          bestSchoolTimes.set(redizo, {
+          bestSchoolTimes.set(groupKey, {
             transitMinutes: Math.round(transitMin * 10) / 10,
             walkMinutes: Math.round(walkMin * 10) / 10,
             totalMinutes: Math.round(totalMin * 10) / 10,
@@ -551,8 +581,8 @@ export async function POST(request: NextRequest) {
     phaseStart = Date.now();
     const reachableSchools: Array<Record<string, unknown>> = [];
 
-    for (const [redizo, timing] of bestSchoolTimes) {
-      const school = schoolsMap.get(redizo);
+    for (const [groupKey, timing] of bestSchoolTimes) {
+      const school = schoolsMap.get(groupKey);
       if (!school) continue;
 
       // Apply typ filter
