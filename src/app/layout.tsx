@@ -86,11 +86,12 @@ export default function RootLayout({
         <BugReportButton />
         <Analytics />
         <Script
-          async
-          data-id="101500959"
           src="https://static.getclicky.com/js"
           strategy="afterInteractive"
         />
+        <Script id="clicky-init" strategy="afterInteractive">
+          {`clicky.init(101500959);`}
+        </Script>
       </body>
     </html>
   );
