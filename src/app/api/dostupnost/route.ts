@@ -222,7 +222,9 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
     const obor = String(row.obor ?? '').trim();
     if (obor) item.obory.add(obor);
 
-    const minBody = toNumber(row.min_body);
+    // Use jpz_min_actual (sum of CJ+MA JPZ scores, max 100) instead of min_body (total score including extra criteria)
+    const jpzMin = toNumber(row.jpz_min_actual);
+    const minBody = jpzMin !== null ? jpzMin : toNumber(row.min_body);
     if (minBody !== null) {
       item.minBodyMin = item.minBodyMin === null ? minBody : Math.min(item.minBodyMin, minBody);
       if (!item.simulatorSchoolId || item.simulatorSchoolMinBody === null || minBody < item.simulatorSchoolMinBody) {
@@ -329,7 +331,7 @@ function buildStopToSchoolsIndex(
 }
 
 const TRANSFER_PENALTY = 2; // minutes for changing platforms
-const DEFAULT_HEADWAY = 8; // fallback headway when route not in table
+const DEFAULT_HEADWAY = 60; // fallback headway when route not in table (high penalty to discourage unknown routes)
 const MAX_WAIT = 15; // cap on waiting time
 
 type DijkstraResult = {
@@ -338,22 +340,6 @@ type DijkstraResult = {
   waitMinutes: number;
   usedRoutes: string[];
 };
-
-function pickBestRoute(
-  edgeRoutes: string[],
-  headways: Record<string, number>,
-): { route: string; headway: number } {
-  let bestRoute = edgeRoutes[0] ?? '';
-  let bestHeadway = headways[bestRoute] ?? DEFAULT_HEADWAY;
-  for (let i = 1; i < edgeRoutes.length; i++) {
-    const h = headways[edgeRoutes[i]] ?? DEFAULT_HEADWAY;
-    if (h < bestHeadway) {
-      bestHeadway = h;
-      bestRoute = edgeRoutes[i];
-    }
-  }
-  return { route: bestRoute, headway: bestHeadway };
-}
 
 function dijkstra(
   edges: Record<string, EdgeV2[]>,
@@ -410,19 +396,21 @@ function dijkstra(
         }
       }
 
-      // Also consider transferring to the best route on this edge
-      const { route: bestRoute, headway } = pickBestRoute(edgeRoutes, headways);
-      const waitTime = Math.min(headway / 2, MAX_WAIT);
-      const isFirstBoarding = curRoute === '';
-      const transferCost = isFirstBoarding ? waitTime : waitTime + TRANSFER_PENALTY;
-      const newTransfers = isFirstBoarding ? 0 : transfers + 1;
-      const nd = d + travelTime + transferCost;
-      if (nd > maxMinutes) continue;
-      const nKey = `${neighbor}|${bestRoute}`;
-      if (!dist.has(nKey) || nd < dist.get(nKey)!) {
-        dist.set(nKey, nd);
-        const newUsedRoutes = usedRoutes.includes(bestRoute) ? usedRoutes : [...usedRoutes, bestRoute];
-        pq.push([nd, neighbor, bestRoute, newTransfers, waitMin + waitTime, newUsedRoutes]);
+      // Consider transferring to each route available on this edge
+      for (const edgeRoute of edgeRoutes) {
+        const headway = headways[edgeRoute] ?? DEFAULT_HEADWAY;
+        const waitTime = Math.min(headway / 2, MAX_WAIT);
+        const isFirstBoarding = curRoute === '';
+        const transferCost = isFirstBoarding ? waitTime : waitTime + TRANSFER_PENALTY;
+        const newTransfers = isFirstBoarding ? 0 : transfers + 1;
+        const nd = d + travelTime + transferCost;
+        if (nd > maxMinutes) continue;
+        const nKey = `${neighbor}|${edgeRoute}`;
+        if (!dist.has(nKey) || nd < dist.get(nKey)!) {
+          dist.set(nKey, nd);
+          const newUsedRoutes = usedRoutes.includes(edgeRoute) ? usedRoutes : [...usedRoutes, edgeRoute];
+          pq.push([nd, neighbor, edgeRoute, newTransfers, waitMin + waitTime, newUsedRoutes]);
+        }
       }
     }
   }

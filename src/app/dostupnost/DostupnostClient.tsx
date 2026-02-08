@@ -747,7 +747,7 @@ export function DostupnostClient() {
                             <p className="text-xs text-slate-600 mt-1">Náročnost: {school.difficultyScore.toFixed(1)}</p>
                           )}
                           {typeof school.minBodyMin === 'number' && (
-                            <p className="text-xs text-slate-600 mt-1">Min. body: {school.minBodyMin}</p>
+                            <p className="text-xs text-slate-600 mt-1">Min. body JPZ: {school.minBodyMin}</p>
                           )}
                         </td>
                         <td className="p-3 text-right align-top">
@@ -817,7 +817,7 @@ export function DostupnostClient() {
                       <p className="text-xs text-slate-600 mt-1">Náročnost: {school.difficultyScore.toFixed(1)}</p>
                     )}
                     {typeof school.minBodyMin === 'number' && (
-                      <p className="text-xs text-slate-600 mt-1">Min. body: {school.minBodyMin}</p>
+                      <p className="text-xs text-slate-600 mt-1">Min. body JPZ: {school.minBodyMin}</p>
                     )}
                     <p className="text-xs text-slate-500 mt-1">
                       <span className={`inline-block rounded px-1.5 py-0.5 mr-1 ${transferBadgeClass(school.transfers)}`}>
