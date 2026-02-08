@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "version": "1.0",
+    "last_updated": "2026-02-08",
+    "description": "Poznámky a upozornění ke školám a oborům"
+  },
+  "notes": {
+    "600004554_26-45-M/01": {
+      "type": "warning",
+      "title": "Obor nebude otevřen",
+      "message": "Obor \"Globální síťové technologie\" nebude otevřen pro školní rok 2026/27. Data v aplikaci jsou z přijímaček 2024/2025.",
+      "source": "GitHub Issue #2",
+      "date": "2026-02-08",
+      "expires": "2026-09-01"
+    }
+  },
+  "examples": {
+    "_comment": "Příklady použití pro budoucí poznámky",
+    "600001234_79-41-K/41": {
+      "type": "info",
+      "title": "Nový obor",
+      "message": "Od roku 2026/27 škola otevírá nový obor XYZ",
+      "source": "Web školy",
+      "date": "2026-02-08"
+    },
+    "600005678_18-20-M/01": {
+      "type": "update",
+      "title": "Změna kapacity",
+      "message": "Kapacita navýšena z 30 na 60 míst pro rok 2026/27",
+      "source": "Email od školy",
+      "date": "2026-02-08"
+    }
+  },
+  "types": {
+    "warning": {
+      "icon": "⚠️",
+      "color": "amber",
+      "description": "Důležité upozornění (rušení oboru, změna podmínek)"
+    },
+    "info": {
+      "icon": "ℹ️",
+      "color": "blue",
+      "description": "Informace (nový obor, změna názvu)"
+    },
+    "update": {
+      "icon": "🔄",
+      "color": "green",
+      "description": "Aktualizace (změna kapacity, nové zaměření)"
+    }
+  }
+}
