@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Cabin } from 'next/font/google';
+import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
 import BugReportButton from '@/components/BugReportButton';
 import './globals.css';
@@ -84,6 +85,12 @@ export default function RootLayout({
         {children}
         <BugReportButton />
         <Analytics />
+        <Script
+          async
+          data-id="101500959"
+          src="//static.getclicky.com/js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
