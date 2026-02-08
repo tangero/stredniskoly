@@ -34,11 +34,11 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://static.getclicky.com",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",
-      "connect-src 'self' https://vitals.vercel-insights.com",
+      "connect-src 'self' https://vitals.vercel-insights.com https://*.getclicky.com",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'"
