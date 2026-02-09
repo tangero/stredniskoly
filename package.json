@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "update:csi": "node scripts/process-csi-data.js"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

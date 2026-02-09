@@ -4,7 +4,8 @@ import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution, ProgramTabs } from '@/components/SchoolDetailClient';
-import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData } from '@/lib/data';
+import { SchoolInspections } from '@/components/SchoolInspections';
+import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo } from '@/lib/data';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
@@ -204,6 +205,9 @@ export default async function SchoolDetailPage({ params }: Props) {
     const overview = await getSchoolOverview(redizo);
     if (!overview) notFound();
 
+    // Načíst data ČŠI
+    const csiData = await getCSIDataByRedizo(redizo);
+
     // Seřadit programy podle min_body (nejobtížnější první)
     const sortedPrograms = [...overview.programs].sort((a, b) => b.min_body - a.min_body);
 
@@ -323,6 +327,9 @@ export default async function SchoolDetailPage({ params }: Props) {
                 Vyzkoušet v simulátoru
               </Link>
             </div>
+
+            {/* Inspekční zprávy ČŠI */}
+            <SchoolInspections csiData={csiData} />
           </div>
         </main>
 
@@ -342,7 +349,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   const category = categoryColors[school.category_code];
 
   // Načíst další data - pro zaměření použít specifickou funkci
-  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData] = await Promise.all([
+  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData] = await Promise.all([
     getProgramsByRedizo(redizo),
     getSchoolDetail(program.id),
     pageInfo.type === 'zamereni'
@@ -350,6 +357,7 @@ export default async function SchoolDetailPage({ params }: Props) {
       : getExtendedSchoolStats(school.id),
     getSchoolDifficultyProfile(school.id, school.typ, program.min_body),
     getTrendDataForProgram(program.id),
+    getCSIDataByRedizo(redizo),
   ]);
 
   // Připravit data pro ProgramTabs
@@ -680,6 +688,9 @@ export default async function SchoolDetailPage({ params }: Props) {
               Vyzkoušet v simulátoru
             </Link>
           </div>
+
+          {/* Inspekční zprávy ČŠI */}
+          <SchoolInspections csiData={csiData} />
         </div>
       </main>
 

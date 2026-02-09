@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames } from '@/types/school';
+import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData } from '@/types/school';
 import { createSlug, createKrajSlug, extractRedizo } from './utils';
 
 const dataDir = path.join(process.cwd(), 'public');
@@ -1297,4 +1297,69 @@ export async function getSchoolDifficultyProfile(
       typeName: schoolType
     }
   };
+}
+
+// ============================================================================
+// ČŠI (Česká školní inspekce) Data
+// ============================================================================
+
+// Cache pro ČŠI data
+let csiDataCache: CSIDataset | null = null;
+
+/**
+ * Načte data ČŠI (inspekční zprávy) z JSON souboru
+ */
+export async function getCSIData(): Promise<CSIDataset> {
+  if (csiDataCache) return csiDataCache;
+
+  try {
+    const filePath = path.join(dataDir, 'csi_inspections.json');
+    const data = await fs.readFile(filePath, 'utf-8');
+    csiDataCache = JSON.parse(data);
+    return csiDataCache!;
+  } catch (error) {
+    console.error('Chyba při načítání ČŠI dat:', error);
+    return {};
+  }
+}
+
+/**
+ * Získá inspekční zprávy pro školu podle REDIZO
+ */
+export async function getCSIDataByRedizo(redizo: string): Promise<CSISchoolData | null> {
+  const csiData = await getCSIData();
+  return csiData[redizo] || null;
+}
+
+/**
+ * Zjistí, zda byla škola inspekována v posledních N letech
+ */
+export function wasInspectedRecently(csiData: CSISchoolData | null, years: number = 2): boolean {
+  if (!csiData || !csiData.lastInspectionDate) return false;
+
+  const lastInspection = new Date(csiData.lastInspectionDate);
+  const yearsAgo = new Date();
+  yearsAgo.setFullYear(yearsAgo.getFullYear() - years);
+
+  return lastInspection >= yearsAgo;
+}
+
+/**
+ * Získá popisný text pro badge podle data poslední inspekce
+ */
+export function getInspectionBadgeText(csiData: CSISchoolData | null): string | null {
+  if (!csiData || csiData.inspectionCount === 0) return null;
+
+  const lastDate = csiData.lastInspectionDate ? new Date(csiData.lastInspectionDate) : null;
+  if (!lastDate) return null;
+
+  const now = new Date();
+  const yearsDiff = now.getFullYear() - lastDate.getFullYear();
+
+  if (yearsDiff === 0) return 'Inspekce letos';
+  if (yearsDiff === 1) return 'Inspekce vloni';
+  if (yearsDiff <= 2) return 'Inspekce nedávno';
+  if (yearsDiff <= 5) return `${csiData.inspectionCount}× inspekce za 10 let`;
+
+  return `${csiData.inspectionCount}× inspekce`;
 }

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-02-09
+
+### Integrace inspekčních zpráv ČŠI na detailu školy
+
+- Přidána nová sekce **„Inspekční zprávy ČŠI“** na detail školy (`/skola/[slug]`) pro přehled školy i detail oboru/zaměření
+- Přidána komponenta `SchoolInspections` s:
+  - přehledem všech dostupných inspekcí školy,
+  - odkazy na PDF inspekční zprávy,
+  - odkazem na profil školy v InspIS PORTÁL
+- Rozšířen datový model o typy `CSIInspection`, `CSISchoolData`, `CSIDataset`
+- Do `src/lib/data.ts` přidány funkce pro práci s ČŠI daty:
+  - `getCSIData()`
+  - `getCSIDataByRedizo()`
+  - `wasInspectedRecently()`
+  - `getInspectionBadgeText()`
+- Přidán skript `scripts/process-csi-data.js` a npm příkaz `npm run update:csi` pro stažení a zpracování otevřených dat ČŠI
+- Přidán dataset `public/csi_inspections.json` (agregace podle REDIZO)
+- Doplněna dokumentace integrace v `docs/CSI_INTEGRATION.md`
+
 ## 2026-02-04
 
 ### Bezpečnostní audit a optimalizace

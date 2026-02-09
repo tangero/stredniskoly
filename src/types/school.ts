@@ -208,3 +208,23 @@ export interface SchoolDetail {
     preferred_p2?: RelatedSchool[];
   };
 }
+
+// Typy pro data ČŠI (Česká školní inspekce)
+export interface CSIInspection {
+  dateFrom: string;      // ISO datetime
+  dateTo: string;        // ISO datetime
+  reportUrl: string;     // URL ke stažení PDF zprávy
+  portalUrl: string;     // URL na profil školy v InspIS PORTÁL
+}
+
+export interface CSISchoolData {
+  redizo: string;
+  jmeno: string;
+  inspections: CSIInspection[];
+  inspectionCount: number;
+  lastInspectionDate: string | null;
+}
+
+export interface CSIDataset {
+  [redizo: string]: CSISchoolData;
+}
