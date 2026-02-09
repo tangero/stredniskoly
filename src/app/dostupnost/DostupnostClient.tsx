@@ -83,6 +83,7 @@ type StopSuggestion = {
   name: string;
   lat: number;
   lon: number;
+  context?: string;
 };
 
 const TYP_OPTIONS: { value: string; label: string }[] = [
@@ -217,6 +218,7 @@ export function DostupnostClient() {
   const timeoutTriggeredRef = useRef(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+  const suggestionsListId = 'stop-suggestions-list';
 
   const totalFound = result?.pagination.totalItems ?? 0;
 
@@ -461,18 +463,29 @@ export function DostupnostClient() {
               <input type="text" value={stopQuery} onChange={(e) => handleStopQueryChange(e.target.value)}
                 onKeyDown={handleInputKeyDown} onFocus={() => { if (suggestions.length > 0 && !selectedStop) setShowDropdown(true); }}
                 placeholder="Začněte psát název zastávky..." autoComplete="off" role="combobox" aria-expanded={showDropdown}
+                aria-controls={suggestionsListId}
                 aria-autocomplete="list" aria-activedescendant={highlightIndex >= 0 ? `stop-option-${highlightIndex}` : undefined}
                 className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none" />
             </label>
-            {selectedStop && <p className="text-xs text-emerald-700 mt-1">Vybrána: {selectedStop.name}</p>}
+            {selectedStop && (
+              <p className="text-xs text-emerald-700 mt-1">
+                Vybrána: {selectedStop.name}
+                {selectedStop.context ? ` (${selectedStop.context})` : ''}
+              </p>
+            )}
             {showDropdown && (
-              <div className="absolute z-20 top-full left-0 right-0 mt-1 bg-white border border-slate-200 rounded-xl shadow-lg max-h-64 overflow-y-auto" role="listbox" ref={listRef}>
+              <div id={suggestionsListId} className="absolute z-20 top-full left-0 right-0 mt-1 bg-white border border-slate-200 rounded-xl shadow-lg max-h-64 overflow-y-auto" role="listbox" ref={listRef}>
                 {suggestLoading && suggestions.length === 0 && <div className="px-4 py-3 text-sm text-slate-500">Hledám...</div>}
                 {suggestions.map((s, i) => (
                   <button key={s.stopId} id={`stop-option-${i}`} type="button" role="option" aria-selected={i === highlightIndex}
                     onClick={() => selectSuggestion(s)} onMouseEnter={() => setHighlightIndex(i)}
-                    className={`w-full text-left px-4 py-2.5 text-sm text-slate-800 border-b border-slate-100 last:border-b-0 transition-colors truncate ${i === highlightIndex ? 'bg-blue-50' : 'hover:bg-slate-50'}`}>
-                    <span className="break-words whitespace-normal">{highlightMatch(s.name, stopQuery)}</span>
+                    className={`w-full text-left px-4 py-2.5 text-sm text-slate-800 border-b border-slate-100 last:border-b-0 transition-colors ${i === highlightIndex ? 'bg-blue-50' : 'hover:bg-slate-50'}`}>
+                    <span className="block break-words whitespace-normal">{highlightMatch(s.name, stopQuery)}</span>
+                    {s.context && (
+                      <span className="block mt-0.5 text-xs text-slate-500 break-words whitespace-normal">
+                        {s.context}
+                      </span>
+                    )}
                   </button>
                 ))}
                 {suggestionsTotal > suggestions.length && (

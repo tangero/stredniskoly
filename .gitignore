@@ -54,3 +54,4 @@ tt_decoder_*.log
 
 /.playwright-mcp
 __pycache__/
+/inspekce/

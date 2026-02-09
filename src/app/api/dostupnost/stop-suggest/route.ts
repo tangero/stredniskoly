@@ -14,11 +14,27 @@ type StopEntry = {
   nameNorm: string;
   lat: number;
   lon: number;
+  context: string | null;
 };
 
 let graphCache: TransitGraphData | null = null;
 let stopIndex: StopEntry[] | null = null;
 let prefixMap: Map<string, number[]> | null = null;
+
+const REGION_TAG_TO_LABEL: Record<string, string> = {
+  PID: 'Praha + Středočeský kraj',
+  PID_ASW: 'Praha + Středočeský kraj',
+  PID_GTFS: 'Praha + Středočeský kraj',
+  IDPK: 'Plzeňský kraj',
+  IDSJMK: 'Jihomoravský kraj',
+  JMK_GTFS: 'Jihomoravský kraj',
+  DUK: 'Ústecký kraj',
+  IDZK: 'Zlínský kraj',
+  DPO: 'Moravskoslezský kraj',
+  DPO_GTFS: 'Moravskoslezský kraj',
+  PMDP_GTFS: 'Plzeňský kraj',
+  DPKV: 'Karlovarský kraj',
+};
 
 function normalizeText(value: string): string {
   return value
@@ -50,17 +66,70 @@ function addPrefixes(pMap: Map<string, number[]>, word: string, idx: number): vo
   }
 }
 
+function formatCoordinate(value: number, positive: string, negative: string): string {
+  const absValue = Math.abs(value).toFixed(3);
+  const hemisphere = value >= 0 ? positive : negative;
+  return `${absValue}°${hemisphere}`;
+}
+
+function contextFromCoordinates(lat: number, lon: number): string | null {
+  if (!Number.isFinite(lat) || !Number.isFinite(lon) || (lat === 0 && lon === 0)) {
+    return null;
+  }
+  return `${formatCoordinate(lat, 'N', 'S')}, ${formatCoordinate(lon, 'E', 'W')}`;
+}
+
+function contextFromStopId(stopId: string): string | null {
+  const labels = new Set<string>();
+
+  for (const token of stopId.split('|')) {
+    const sep = token.indexOf(':');
+    if (sep <= 0) continue;
+    const tag = token.slice(0, sep);
+    const regionLabel = REGION_TAG_TO_LABEL[tag];
+    if (regionLabel) {
+      labels.add(regionLabel);
+    }
+  }
+
+  if (labels.size === 0) return null;
+  return [...labels].join(' / ');
+}
+
+function fallbackIdContext(stopId: string): string | null {
+  for (const token of stopId.split('|')) {
+    if (token.startsWith('CRZ:')) {
+      return `CRZ ${token.slice(4)}`;
+    }
+    if (token.startsWith('CISJR:')) {
+      return `CISJR ${token.slice(6)}`;
+    }
+  }
+  return null;
+}
+
+function buildDisambiguationContext(entry: Pick<StopEntry, 'stopId' | 'lat' | 'lon'>): string {
+  return (
+    contextFromStopId(entry.stopId) ??
+    contextFromCoordinates(entry.lat, entry.lon) ??
+    fallbackIdContext(entry.stopId) ??
+    'jiná lokalita'
+  );
+}
+
 function buildIndex(graph: TransitGraphData): void {
   if (stopIndex) return;
 
   const entries: StopEntry[] = [];
   const pMap = new Map<string, number[]>();
+  const nameCounts = new Map<string, number>();
   const seen = new Set<string>();
 
   for (const [stopId, [name, lat, lon]] of Object.entries(graph.stops)) {
     const nameNorm = normalizeText(name);
     const idx = entries.length;
-    entries.push({ stopId, name, nameNorm, lat, lon });
+    entries.push({ stopId, name, nameNorm, lat, lon, context: null });
+    nameCounts.set(nameNorm, (nameCounts.get(nameNorm) ?? 0) + 1);
 
     // Index prefixes of every word so substring search works
     // e.g. "brandys nad labem-stara boleslav, zahradni mesto"
@@ -77,6 +146,13 @@ function buildIndex(graph: TransitGraphData): void {
   // Deduplicate indices within each prefix bucket
   for (const [key, arr] of pMap) {
     pMap.set(key, [...new Set(arr)]);
+  }
+
+  // Only names with duplicates need extra context in autocomplete.
+  for (const entry of entries) {
+    if ((nameCounts.get(entry.nameNorm) ?? 0) > 1) {
+      entry.context = buildDisambiguationContext(entry);
+    }
   }
 
   stopIndex = entries;
@@ -141,7 +217,11 @@ export async function GET(request: NextRequest) {
       const aWord = isWordStart(a.nameNorm, queryNorm) ? 0 : 1;
       const bWord = isWordStart(b.nameNorm, queryNorm) ? 0 : 1;
       if (aWord !== bWord) return aWord - bWord;
-      return a.name.length - b.name.length;
+      const lenDiff = a.name.length - b.name.length;
+      if (lenDiff !== 0) return lenDiff;
+      const nameDiff = a.name.localeCompare(b.name, 'cs');
+      if (nameDiff !== 0) return nameDiff;
+      return (a.context ?? '').localeCompare(b.context ?? '', 'cs');
     });
 
     const results = matches.slice(0, limit).map((e) => ({
@@ -149,6 +229,7 @@ export async function GET(request: NextRequest) {
       name: e.name,
       lat: e.lat,
       lon: e.lon,
+      context: e.context ?? undefined,
     }));
 
     return NextResponse.json({ suggestions: results, totalFound });

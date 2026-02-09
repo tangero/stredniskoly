@@ -2,6 +2,15 @@
 
 ## 2026-02-09
 
+### Dostupnost: rozlišení duplicitních zastávek v našeptávači
+
+- V API `GET /api/dostupnost/stop-suggest` přidán disambiguační kontext pro zastávky se stejným názvem
+- Pro stejné názvy (např. `Újezd`) se nyní zobrazí doplňující lokalita:
+  - primárně kraj/region podle identifikátorů zastávky (např. `IDPK` = Plzeňský kraj, `IDZK` = Zlínský kraj, `PID` = Praha + Středočeský kraj),
+  - fallback na souřadnice, pokud kraj nelze jednoznačně určit z ID
+- Frontend v `DostupnostClient` nově zobrazuje v dropdownu druhý řádek s kontextem a stejný kontext i u potvrzené vybrané zastávky
+- Upřesněno řazení návrhů při shodách (stabilnější pořadí) a doplněna ARIA vazba `combobox` → `listbox`
+
 ### Integrace inspekčních zpráv ČŠI na detailu školy
 
 - Přidána nová sekce **„Inspekční zprávy ČŠI“** na detail školy (`/skola/[slug]`) pro přehled školy i detail oboru/zaměření
