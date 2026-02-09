@@ -3,64 +3,99 @@
   "school_profile": {
     "school_type": "gymnázium",
     "inspection_period": "2025-11-20 až 2025-11-25",
-    "school_change_summary": "Škola prošla změnou na vedoucím pracovním místě ředitele. Byly zlepšeny materiální podmínky, např. nové počítačové učebny a částečná renovace budovy."
+    "school_change_summary": "Škola prošla změnou na vedoucím pracovním místě a zlepšením materiálních podmínek."
   },
   "for_parents": {
     "strengths": [
       {
         "tag": "Erasmus+ projekt",
-        "detail": "Škola využívá projekt Erasmus+ pro jazykové vzdělávání a profesní stínování žáků i učitelů v zahraničí, což podporuje jejich sociální a komunikační dovednosti.",
-        "evidence": "Dlouhodobě efektivní využívání projektu Erasmus+ umožňuje žákům i pedagogům absolvovat jazykové vzdělávání a profesní stínování na partnerských školách v zahraničí."
+        "detail": "Žáci a pedagogové mají možnost jazykového vzdělávání a stínování v zahraničí.",
+        "evidence": "Škola využívá Erasmus+ projekt pro výměny."
       },
       {
-        "tag": "Vysoké výsledky maturitní zkoušky",
-        "detail": "Škola dosahuje dlouhodobě dobrých výsledků u maturitní zkoušky a vysoké úspěšnosti absolventů při přechodu na vysoké školy.",
-        "evidence": "Dlouhodobě efektivní využívání projektu Erasmus+ umožňuje žákům i pedagogům absolvovat jazykové vzdělávání a profesní stínování na partnerských školách v zahraničí."
+        "tag": "vysoké výsledky maturitní zkoušky",
+        "detail": "Žáci dosahují výborných výsledků u maturitní zkoušky.",
+        "evidence": "Průměrně více jak 55 % žáků prospělo s vyznamenáním."
       },
       {
-        "tag": "Úspěšné účastníctví v soutěžích",
-        "detail": "Žáci školy dosahují významných úspěchů v soutěžích, olympiádách a projektech, což podporuje jejich klíčové kompetence.",
-        "evidence": "V posledním školním roce dosáhli žáci významných úspěchů např. v Mezinárodní matematické olympiádě (bronzová medaile)."
+        "tag": "úspěšné účastníctví v soutěžích",
+        "detail": "Žáci školy dosahují vysokých úspěchů v soutěžích a olympiádách.",
+        "evidence": "Žáci získali medaile v různých olympiádách."
       }
     ],
     "risks": [
       {
-        "tag": "Nesjednocená kritéria hodnocení",
-        "detail": "V rámci školy nebyla v době inspekce sjednocena kritéria hodnocení. Pouze část pedagogů si stanovuje jednotné postupy při hodnocení, ostatní to dělají individuálně.",
-        "evidence": "Kritéria hodnocení nebyla v době inspekční činnosti sjednocena v rámci celé školy. Pouze část vyučujících si v rámci předmětových komisí stanovuje jednotné postupy při hodnocení, ostatní si je určují individuálně podle vlastních potřeb."
+        "tag": "nejednotná kritéria hodnocení",
+        "detail": "Kritéria hodnocení nejsou sjednocena v rámci školy.",
+        "evidence": "Pouze část učitelů stanovuje jednotné postupy při hodnocení."
       },
       {
-        "tag": "Nedostatečné využití aktivizujících metod",
-        "detail": "Žáci nebyli systematicky vedeni k využívání rozmanitých informačních zdrojů a kritickému myšlení. Menší zastoupení kooperativních forem práce omezovalo plné využití jejich učebního potenciálu.",
-        "evidence": "Žáci nebyli systematicky vedeni k využívání rozmanitých informačních zdrojů, podpoře komunikativních dovedností ani dostatečně podněcováni ke kritickému myšlení. Menší zastoupení kooperativních forem práce v hodinách omezovalo plné využití jejich učebního potenciálu."
+        "tag": "nedostatečná podpora nadaných žáků",
+        "detail": "Žáci s nadáním nejsou dostatečně podporováni výukou.",
+        "evidence": "Učitelé nemají připraveny úkoly s odlišnou mírou náročnosti."
       },
       {
-        "tag": "Nedostatečná podpora nadaných žáků",
-        "detail": "Ve sledované výuce nebyly žákům nabízeny aktivity podporující jejich individuální rozvoj a nadání.",
-        "evidence": "Ve sledované výuce nebyly žákům nabízeny aktivity podporující jejich individuální rozvoj a nadání, neboť učitelé neměli připraveny úkoly s odlišnou mírou náročnosti."
+        "tag": "neefektivní spolupráce výchovného poradce",
+        "detail": "Spolupráce s výchovným poradcem není plně využita.",
+        "evidence": "Asistent pedagoga není efektivně zapojen do výuky."
       }
     ],
     "questions_for_open_day": [
-      "Má škola systém podpory žáků se speciálními vzdělávacími potřebami?",
-      "Jaké metody využívají učitelé pro podporu nadaných žáků?",
-      "Jaký je podíl studentů se speciálními vzdělávacími potřebami a s jazykovými odlišnostmi?"
+      "Je kritéria hodnocení sjednocena v rámci školy?",
+      "Jak je podporováno nadané dětství výukou?",
+      "Jaký je podíl výchovného poradce v práci s žáky?"
     ],
     "who_school_fits": [
-      "Žáci, kteří chtějí využít mezinárodní mobilitu a výuku cizích jazyků.",
-      "Žáci s vyššími studijními ambicemi, kteří chtějí dosahovat vysokých výsledků v soutěžích a olympiádách.",
-      "Žáci, kteří chtějí absolvovat vysoké školství."
+      "Žákům, kteří mají zájem o mezinárodní výměny a jazykové vzdělávání.",
+      "Žákům, kteří chtějí zúčastnit se soutěží a olympiád.",
+      "Žákům, kteří mají vysoké vzdělávací potenciály a chtějí dosahovat výborných výsledků."
     ],
     "who_should_be_cautious": [
-      "Žáci s potřebou individuální podpory, kteří se mohou potýkat s nedostatečným využitím aktivizujících metod.",
-      "Žáci, kteří hledají školu s jednotným systémem hodnocení a jasně stanovenými kritérii."
+      "Žákům, kteří potřebují individuální podporu a rozvoj v kritickém myšlení.",
+      "Žákům, kteří potřebují zvýšenou podporu v matematických a jazykových oborech.",
+      "Žákům, kteří potřebují lepší podporu výchovného poradce a psychologa."
     ],
-    "plain_czech_summary": "Škola má výborné výsledky v maturitních zkouškách a v soutěžích. Je výhodná pro žáky, kteří chtějí využít mezinárodní mobilitu a cizí jazyky. Může být méně vhodná pro žáky, kteří potřebují individuální podporu nebo jednotný systém hodnocení."
+    "plain_czech_summary": "Škola má výborné výsledky u maturitní zkoušky a úspěšně se zapojuje do mezinárodních projektů. Některé oblasti jsou však zlepšovatelné, jako například jednotnost hodnocení nebo podpora nadaných žáků."
   },
   "hard_facts": {
     "maturita": {
-      "trend": "Dlouhodobě výborná úroveň",
+      "trend": "vysoký",
       "key_numbers": [
-        "V osmiletém studiu prospělo s vyznamenáním více jak 72 % žáků.",
-        "V čtyřletém studiu prospělo s vyznamenáním více jak 55 % žáků."
+        "více jak 55 % žáků prospělo s vyznamenáním",
+        "více jak 72 % žáků osmiletého gymnázia prospělo s vyznamenáním",
+        "téměř nulová hrubá neúspěšnost u maturitní zkoušky"
       ],
-      "e
+      "evidence": "V posledních třech letech byly výsledky maturitní zkoušky výborné."
+    },
+    "absence": {
+      "trend": "nízká",
+      "key_numbers": [
+        "průměrná omluvená absence 120 hodin na žáka",
+        "neomluvená absence řeší škola zřídka"
+      ],
+      "evidence": "Škola vykazuje nízkou úroveň absence."
+    },
+    "support_services": [
+      "výchovný poradce",
+      "školní psycholog",
+      "asistenti pedagoga"
+    ],
+    "safety_climate": [
+      "škola má výbornou reprezentaci",
+      "přítomnost školního poradenského pracoviště"
+    ],
+    "partnerships_practice": [
+      "aktivní spolupráce s mezinárodními školami",
+      "účast ve výměnných programech Erasmus+"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 3,
+    "czech_clarity_reason": "Zpráva je srozumitelná, ale některé závěry jsou nejasné.",
+    "uncertainty_notes": [
+      "Nejsou jasné postupy pro práci s nadanými žáky.",
+      "Chybí výsledky výuky v rámci jednotlivých předmětů.",
+      "Nejsou jasně stanoveny cíle pro školní poradenské pracoviště."
+    ]
+  }
+}

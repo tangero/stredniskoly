@@ -1,8 +1,8 @@
 {
   "report_id": "GY4_600013481_2025-11-20",
   "model_id": "claude_sonnet_4_5",
-  "run_started_utc": "2026-02-09T07:46:01.682598+00:00",
-  "run_finished_utc": "2026-02-09T07:46:50.033890+00:00",
+  "run_started_utc": "2026-02-09T09:04:58.998529+00:00",
+  "run_finished_utc": "2026-02-09T09:06:11.142846+00:00",
   "raw_file": "GY4_600013481_2025-11-20.raw.txt",
   "call_error": null,
   "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",

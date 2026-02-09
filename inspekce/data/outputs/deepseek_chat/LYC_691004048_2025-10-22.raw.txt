@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "school_profile": {
+    "school_type": "Střední škola",
+    "inspection_period": "22. 10. 2025 až 24. 10. 2025",
+    "school_change_summary": "Škola odstranila nedostatky v ŠVP a přijala opatření ke snížení absence a zvýšení úspěšnosti u maturit."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příznivé klima",
+        "detail": "Vstřícný přístup pedagogů vytváří psychické bezpečí pro žáky.",
+        "evidence": "Pozitivní vztahy mezi zaměstnanci a žáky."
+      },
+      {
+        "tag": "Podpora začínajících učitelů",
+        "detail": "Systematická podpora nových pedagogů.",
+        "evidence": "Uvádějící učitelé a sledování ředitelkou."
+      },
+      {
+        "tag": "Spolupráce se školami",
+        "detail": "Škola rozvíjí spolupráci s partnerskými školami.",
+        "evidence": "Projekt Erasmus a výměny učitelů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká diferenciace",
+        "detail": "Učitelé nezohledňují rozdílnou úroveň schopností žáků.",
+        "evidence": "Absence diferenciace v hospitovaných hodinách."
+      },
+      {
+        "tag": "Podprůměrné výsledky",
+        "detail": "Žáci dlouhodobě dosahují podprůměrných výsledků u maturit.",
+        "evidence": "Výsledky v celorepublikovém porovnání."
+      },
+      {
+        "tag": "Nedostatečné vyhodnocování",
+        "detail": "Nedostatečné vyhodnocování podpůrných opatření.",
+        "evidence": "Ústní vyhodnocování bez písemné dokumentace."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje žáky s individuálními potřebami?",
+      "Jaké jsou plány na zlepšení výsledků u maturit?",
+      "Jaké aktivity nabízí škola pro rozvoj kritického myšlení?"
+    ],
+    "who_school_fits": [
+      "Žáci hledající podporující a respektující prostředí.",
+      "Zájemci o obory pedagogiky a gymnázium.",
+      "Žáci s talentem v umění nebo sportu."
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující vysokou míru individuální podpory.",
+      "Zájemci o technické obory.",
+      "Žáci s nízkou motivací k samostatné práci."
+    ],
+    "plain_czech_summary": "Škola nabízí podporující prostředí a rozvíjí spolupráci s partnerskými školami. Nicméně, dlouhodobě dosahuje podprůměrných výsledků u maturit a nedostatečně diferencuje výuku. Pro rodiče je důležité zvážit, zda škola poskytne dostatečnou podporu pro individuální potřeby žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Podprůměrné výsledky",
+      "key_numbers": [
+        "Podprůměrné výsledky v celorepublikovém porovnání.",
+        "Zpřísnění hodnocení od školního roku 2025/2026.",
+        "Zavedení postupových zkoušek."
+      ],
+      "evidence": "Výsledky maturitních zkoušek v letech 2022-2025."
+    },
+    "absence": {
+      "trend": "Snižování absence",
+      "key_numbers": [
+        "Nové podmínky pro individuální vzdělávací plány.",
+        "Snížení počtu žáků s vysokou absencí.",
+        "Monitorování absence třídními učiteli."
+      ],
+      "evidence": "Údaje o absenci za školní rok 2025/2026."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovným poradcem a metodičkou prevence.",
+      "Individuální vzdělávací plány pro nadané sportovce.",
+      "Podpora žáků ohrožených školním neúspěchem."
+    ],
+    "safety_climate": [
+      "Pravidelné dotazníkové šetření klimatu školy.",
+      "Preventivní programy proti šikaně a kyberšikaně.",
+      "Spolupráce s externími odborníky."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se školami pro praktické vyučování.",
+      "Projekt Erasmus s výměnami učitelů a žáků.",
+      "Workshopy v zahraničí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je dobře strukturovaná, ale některé části jsou příliš technické.",
+    "uncertainty_notes": [
+      "Není jasné, jak efektivní jsou nová opatření pro zlepšení maturitních výsledků.",
+      "Chybí detailnější informace o podpoře žáků s individuálními potřebami.",
+      "Není zcela zřejmé, jak škola vyhodnocuje efektivitu preventivních programů."
+    ]
+  }
+}
+```

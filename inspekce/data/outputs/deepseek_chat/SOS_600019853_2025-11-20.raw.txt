@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola",
+    "inspection_period": "20. 11. 2025 až 25. 11. 2025",
+    "school_change_summary": "Škola se zapojila do projektu stupňovitého propojení oborů a zlepšila materiální podmínky, ale nedokázala dostatečně řešit dílčí nedostatky zjištěné při předchozí inspekci."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s partnery",
+        "detail": "Škola spolupracuje s mnoha zaměstnavateli, což žákům přináší praktické zkušenosti.",
+        "evidence": "Významná část praktického vyučování probíhá na pracovištích smluvních partnerů."
+      },
+      {
+        "tag": "Školní aktivity",
+        "detail": "Škola nabízí rozmanité aktivity, které podporují rozvoj žáků.",
+        "evidence": "Žáci se účastní kulturních akcí, soutěží a odborných exkurzí."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola modernizovala odborné učebny, které jsou vybaveny podle nových trendů.",
+        "evidence": "Modernizace odborných učeben pro praktické vyučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná aktivizace žáků",
+        "detail": "Výuka často probíhá frontálně, což vede k pasivitě žáků.",
+        "evidence": "V téměř 80 % hodin převažovala frontální forma práce."
+      },
+      {
+        "tag": "Individualizace výuky",
+        "detail": "Škola nedostatečně zohledňuje individuální potřeby žáků.",
+        "evidence": "Individualizace výuky byla ve sledované výuce minimální."
+      },
+      {
+        "tag": "Problémy s docházkou",
+        "detail": "V oboru ošetřovatel přetrvává vysoká neomluvená absence.",
+        "evidence": "Neomluvená absence v oboru ošetřovatel dosahuje téměř 5 %."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje žáky s odlišným mateřským jazykem?",
+      "Jaké jsou možnosti pro nadané žáky v oblasti cizích jazyků?",
+      "Jaké jsou plány školy na další modernizaci učeben?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o zdravotnictví a sociální práci.",
+      "Žáci, kteří preferují praktické vzdělávání.",
+      "Žáci, kteří chtějí získat výuční list i maturitu."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální podpory.",
+      "Žáci, kteří mají problémy s docházkou.",
+      "Žáci, kteří preferují aktivní formy výuky."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktické vzdělávání díky spolupráci s mnoha partnery a modernímu vybavení. Nicméně výuka často probíhá frontálně, což může vést k pasivitě žáků. Škola také nedostatečně řeší individuální potřeby žáků a problémy s docházkou, zejména v oboru ošetřovatel."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Úspěšnost u maturitní zkoušky se zlepšuje.",
+      "key_numbers": [
+        "Úspěšnost v roce 2025: 96,2 %",
+        "Nejvyšší neúspěšnost v roce 2024: 46 %",
+        "Všichni žáci úspěšní ve společné části v roce 2025"
+      ],
+      "evidence": "Hrubá neúspěšnost u maturitní zkoušky klesla z 20 % v roce 2023 na 3,8 % v roce 2025."
+    },
+    "absence": {
+      "trend": "Celková absence klesá.",
+      "key_numbers": [
+        "Absence v roce 2024/2025: 144 hodin na žáka",
+        "Neomluvená absence v oboru ošetřovatel: téměř 5 %",
+        "Nejnižší absence v oboru praktická sestra"
+      ],
+      "evidence": "Celková absence se snížila z 176 hodin na žáka v roce 2022/2023 na 144 hodin v roce 2024/2025."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje podporu žákům se speciálními potřebami.",
+      "Kariérní poradenství je propojeno se zaměstnavateli.",
+      "Prevence rizikového chování zahrnuje aktivity proti šikaně a záškoláctví."
+    ],
+    "safety_climate": [
+      "Škola věnuje pozornost bezpečnosti žáků.",
+      "Jsou stanoveny postupy pro řešení nežádoucího chování."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s mnoha zdravotnickými zařízeními.",
+      "Výměnné pobyty s partnerskou školou v Německu."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je přehledná a obsahuje relevantní informace, ale některé části jsou příliš detailní.",
+    "uncertainty_notes": [
+      "Není jasné, jak škola plánuje řešit problémy s docházkou.",
+      "Chybí informace o konkrétních plánech na další modernizaci.",
+      "Není zcela zřejmé, jak škola podporuje nadané žáky."
+    ]
+  }
+}
+```

@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600014061_2025-10-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T09:01:57.669976+00:00",
+  "run_finished_utc": "2026-02-09T09:02:22.192490+00:00",
+  "raw_file": "GY8_600014061_2025-10-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014061_2025-10-20",
+    "school_profile": {
+      "school_type": "Gymnázium (8leté) a Základní umělecká škola (hudební, taneční, výtvarný obor)",
+      "inspection_period": "20. 10. 2025 – 22. 10. 2025",
+      "school_change_summary": "Od inspekce v 2021: generační obměna pedagogů, zlepšení prostor (rekonstrukce podkroví, elektroinstalace, nové učebny IT), nové hudební nástroje. Gymnázium má systematické vedení, základní umělecká škola má stále nedostatky v řízení a metodické podpoře."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Nulová neúspěšnost u maturit, 100% přijetí na vysoké školy, mnozí studují v zahraničí.",
+          "evidence": "V loňském roce 27 maturantů: 18 s vyznamenáním, 9 prospělo. Nulová hrubá neúspěšnost."
+        },
+        {
+          "tag": "Kvalitní výuka a motivace",
+          "detail": "Pestré metody, mezipředmětové vztahy, kooperativní formy práce, efektivní zpětná vazba.",
+          "evidence": "82% žáků prospělo s vyznamenáním, žáci aktivně se zapojují a kladou otázky."
+        },
+        {
+          "tag": "Bohaté mimoškolní aktivity",
+          "detail": "Soutěže, olympiády, projekty Erasmus+, mezinárodní programy, tradičních akcí.",
+          "evidence": "Úspěchy v debatní lize, ekonomické a astronomické olympiádě, středoškolské odborné činnosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší vedení v umělecké škole",
+          "detail": "Nedostatečná metodická podpora začínajících učitelů, vyšší fluktuace pedagogů v hudebním a výtvarném oboru.",
+          "evidence": "Hospitační činnost je formální, chybí jasná struktura mentoringu, zvýšená fluktuace pedagogů."
+        },
+        {
+          "tag": "Nejednotné postupy v hudebním oboru",
+          "detail": "Rozdílná docházka do souborové hry, zejména Interpretačního semináře s vysokou absencí.",
+          "evidence": "Polovina žáků nerozvíjí umělecké kompetence v plném rozsahu, rozdílné pojetí pedagogické koncepce."
+        },
+        {
+          "tag": "Absence participativní struktury v umělecké škole",
+          "detail": "Chybí umělecká rada, metodické sdružení, předmětové komise pro umělecké obory.",
+          "evidence": "Omezuje systematickou spolupráci, sdílení zkušeností a inovaci výuky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak probíhá metodická podpora a mentoring pro začínající učitele v hudebním a výtvarném oboru?",
+        "Jaké jsou důvody vyšší absence v Interpretačním semináři a jak se to řeší?",
+        "Jak se škola vypořádává s fluktuací pedagogů v uměleckých oborech?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí na vysokou školu – gymnázium má 100% úspěšnost přijetí",
+        "Talentovaní hudebníci, tanečníci a výtvarníci – kvalitní umělecké vzdělání s koncerty a soutěžemi",
+        "Žáci zajímající se o mezinárodní spolupráci a jazykové pobyty"
+      ],
+      "who_should_be_cautious": [
+        "Žáci v hudebním oboru by měli vědět, že kvalita výuky se liší podle předmětu a pedagoga",
+        "Rodiny, které očekávají jednotný přístup v umělecké škole – stále se zlepšuje, ale nejsou všechny obory na stejné úrovni",
+        "Žáci, kteří potřebují silnou metodickou podporu – v umělecké škole ji zatím nemají všichni pedagogové"
+      ],
+      "plain_czech_summary": "Gymnázium Šlapanice je velmi kvalitní střední škola s výborným vedením, kde žáci dosahují skvělých výsledků. Maturitní zkoušky zvládají bez neúspěšnosti a všichni jsou přijímáni na vysoké školy. Výuka je zajímavá, učitelé motivují žáky a podporují jejich rozvoj. Základní umělecká škola nabízí kvalitní hudební, taneční a výtvarné vzdělání, ale vedení zde není tak jednotné. Někdy se liší kvalita výuky podle pedagoga a oboru. Škola se snaží zlepšit, ale v umělecké části ještě pracuje na lepší podpoře začínajících učitelů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "Nulová hrubá neúspěšnost v posledních třech letech",
+          "Loňský rok: 18 z 27 maturantů s vyznamenáním (67%)",
+          "100% přijetí na vysoké školy"
+        ],
+        "evidence": "Vysokou úroveň výsledků prokazují také žáci při maturitní zkoušce. V posledních třech letech vykazuje škola nulovou hrubou neúspěšnost žáků."
+      },
+      "absence": {
+        "trend": "Nízká, v normě",
+        "key_numbers": [
+          "Průměrná absence kolem 107 hodin na žáka za školní rok",
+          "Vysoká absence v Interpretačním semináři (polovina žáků)"
+        ],
+        "evidence": "Průměrná absence žáků se v posledních letech pohybuje kolem 107 hodin na žáka za školní rok. Analýzou třídních knih byla prokázána nerovnoměrná docházka do Interpretačního semináře."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, psycholožka, metodička prevence",
+        "Psycholožka pracuje s individuálními případy i třídními kolektivy, řeší nežádoucí chování",
+        "Metodička prevence má zpracované krizové plány a preventivní programy (šikana, kyberšikana, drogy)"
+      ],
+      "safety_climate": [
+        "Nežádoucí projevy chování jsou ojedinělé (nadužívání digitálních technologií, nevhodné chování mezi žáky, kouření)",
+        "Otevřená a vstřícná komunikace všech účastníků vzdělávání",
+        "Vedení aktivně podporuje školní wellbeing a rozvoj sociálních kompetencí"
+      ],
+      "partnerships_practice": [
+        "Erasmus+ – jazykové výjezdy pro učitele",
+        "Mezinárodní cena vévody z Edinburghu, British Council – Stronger Together",
+        "Participace v charitativních akcích a kulturních programech regionu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a věcná, ale místy obsahuje úřednickou terminologii. Pro rodiče jsou klíčové informace jasné – gymnázium je výborné, umělecká škola má potenciál ale není jednotná.",
+      "uncertainty_notes": [
+        "Není jasné, jak se konkrétně liší kvalita výuky v jednotlivých hudebních předmětech – zpráva to naznačuje, ale nedává konkrétní příklady",
+        "Není specifikováno, které pedagogy se týká nedostatečná metodická podpora – zda všechny nebo jen některé",
+        "Chybí informace o tom, jak dlouho trvá, než se nové opatření v umělecké škole projeví"
+      ]
+    }
+  }
+}

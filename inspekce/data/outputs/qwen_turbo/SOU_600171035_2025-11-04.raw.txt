@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600171035_2025-11-04",
+  "school_profile": {
+    "school_type": "Střední škola elektrotechnická a energetická",
+    "inspection_period": "4. 11. 2025 – 6. 11. 2025",
+    "school_change_summary": "Škola zaznamenala změnu ve vedení, částečnou obměnu pedagogického sboru a zlepšení materiálních podmínek."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerská spolupráce",
+        "detail": "Škola má rozsáhlou spolupráci s odbornými firmami a průmyslovými podniky.",
+        "evidence": "Škola úzce spolupracuje s odbornými firmami a několika středními školami."
+      },
+      {
+        "tag": "Stabilní výsledky žáků",
+        "detail": "Žáci dosahují dobrých výsledků u maturitní a závěrečné zkoušky.",
+        "evidence": "Hrubá neúspěšnost žáků je nižší než celostátní průměr."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola má moderní technické zázemí pro výuku odborných předmětů.",
+        "evidence": "Škola má k dispozici specializovaná pracoviště a moderní technologie."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatky ve školním řádu",
+        "detail": "Školní řád a školní vzdělávací programy nejsou plně vypracované.",
+        "evidence": "Přetrvávají nedostatky ve školním řádu a ve školních vzdělávacích programech."
+      },
+      {
+        "tag": "Omezená podpora žákům",
+        "detail": "Podpora žákům se speciálními vzdělávacími potřebami je omezená.",
+        "evidence": "Podpora žákům se speciálními potřebami byla realizována pouze v omezené míře."
+      },
+      {
+        "tag": "Materiální nedostatky",
+        "detail": "Prostor vnitřní tělocvičny je velmi malý.",
+        "evidence": "Velmi malý prostor vnitřní tělocvičny je problémem."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké jsou konkrétní podmínky pro výuku odborných předmětů?",
+      "Jak škola podporuje žáky se speciálními vzdělávacími potřebami?",
+      "Jaké jsou možnosti spolupráce s firmami a průmyslovými podniky?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí vzdělávat se v oboru elektrotechniky.",
+      "Žáci, kteří mají zájem o praktické vzdělávání a odbornou praxi.",
+      "Žáci, kteří chtějí účastnit se soutěží a aktivit v oblasti techniky."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami, kteří potřebují vyšší podporu.",
+      "Žáci, kteří mají vysokou absenci nebo neuspokojivé výsledky.",
+      "Rodiče, kteří se zajímají o detailní informace o školním řádu a vzdělávacích programech."
+    ],
+    "plain_czech_summary": "Škola má dobré výsledky žáků a moderní vybavení, ale má nedostatky ve školním řádu a podpoře žákům se speciálními potřebami. Dále je potřeba zlepšit materiální podmínky a podporu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní a dobré výsledky",
+      "key_numbers": [
+        "2 % hrubá neúspěšnost v roce 2024",
+        "6,9 % hrubá neúspěšnost v roce 2025",
+        "Závěrečné zkoušky úspěšně vykonají téměř všichni žáci"
+      ],
+      "evidence": "Žáci školy dosahují lepších výsledků než celostátní průměr."
+    },
+    "absence": {
+      "trend": "Snížení průměrné absence",
+      "key_numbers": [
+        "173,21 hodin na žáka v roce 2023/2024",
+        "126,09 hodin na žáka v roce 2024/2025",
+        "Snížení o 27 %"
+      ],
+      "evidence": "Limit absence zaveden v roce 2024/2025 vedl k poklesu absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště je zřízeno a funguje.",
+      "Existuje systém zpracování dokumentace žáků se speciálními vzdělávacími potřebami.",
+      "Škola podporuje talentované žáky a zapojuje je do soutěží."
+    ],
+    "safety_climate": [
+      "Prevence šikany, kyberšikany a nevhodného chování je zahrnuta v prevenci.",
+      "Škola spolupracuje s rodiči a zajišťuje bezpečné prostředí.",
+      "Zajišťuje bezpečnostní pravidla v odborném výcviku."
+    ],
+    "partnerships_practice": [
+      "Škola úzce spolupracuje s odbornými firmami a průmyslovými podniky.",
+      "Spolupráce s energetickými podniky a asociacemi je dlouhodobá.",
+      "Škola je zapojena do projektů Erasmus+ a Operačního programu."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Většina informací je jasná, ale některé části jsou zdlouhavé a mohou být zlepšeny.",
+    "uncertainty_notes": [
+      "Nedostatky ve školním řádu mohou ovlivnit výsledky vzdělávání.",
+      "Materiální podmínky v tělocvičně jsou omezené.",
+      "Pozornost k žákům se speciálními potřebami je nedostatečná."
+    ]
+  }
+}

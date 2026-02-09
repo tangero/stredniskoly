@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T08:57:09.254483+00:00",
+  "run_finished_utc": "2026-02-09T08:57:34.492608+00:00",
+  "raw_file": "GY8_600008029_2025-10-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008029_2025-10-21",
+    "school_profile": {
+      "school_type": "gymnázium",
+      "inspection_period": "2025-10-21 až 2025-10-24",
+      "school_change_summary": "Škola prochází generací pedagogického sboru a modernizací prostředí."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Sociální partnerství",
+          "detail": "Škola spolupracuje s obcí a místními partnery.",
+          "evidence": "Spolupráce školy se sociálními partnery reflektuje význam sounáležitosti s obcí."
+        },
+        {
+          "tag": "Personální rozvoj",
+          "detail": "Škola podporuje profesní rozvoj pedagogů.",
+          "evidence": "Pedagogický sbor prochází generací a profesním rozvojem."
+        },
+        {
+          "tag": "Vzdělávací programy",
+          "detail": "Škola nabízí rozmanité vzdělávací aktivity.",
+          "evidence": "Pestrá nabídka mimoškolních akcí a soutěží."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Výuka má omezenou diferenciaci podle potenciálu žáků.",
+          "evidence": "Ve výuce byla pouze výjimečně uplatněna diferenciace ve výuce."
+        },
+        {
+          "tag": "Digitální technologie",
+          "detail": "Žáci málo pracují s digitálními technologiemi.",
+          "evidence": "Digitální technologie využívali vyučující, ale ne žáci."
+        },
+        {
+          "tag": "Materiální podmínky",
+          "detail": "Žáci mají omezený přístup k tělocvičně.",
+          "evidence": "Dvě menší tělocvičny v budově školy nejsou využívány."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaký je dopad spolupráce s místními partnery na vzdělávací prostředí?",
+        "Jak škola využívá digitální technologie ve výuce?",
+        "Jaký je stav a využití technických prostředků ve škole?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří mají zájem o humanitní a vědecké obory.",
+        "Rodinné prostředí, které podporuje sociální a kulturní aktivity.",
+        "Žáci, kteří mají zájem o mezinárodní výměny a soutěže."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a diferencovanou výuku.",
+        "Rodiče, kteří očekávají rozsáhlé využití digitálních technologií ve výuce.",
+        "Rodiče, kteří se zajímají o širší využití sportovních prostředí."
+      ],
+      "plain_czech_summary": "Škola má silné sociální partnerství a vzdělávací programy, ale má omezenou diferenciaci výuky a omezený přístup k tělocvičně. Rodiče by měli zvážit, jestli odpovídá potřebám jejich dětí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní",
+        "key_numbers": [
+          "100 % prospěchu",
+          "polovina s vyznamenáním",
+          "5 žáků s certifikátem jazyka"
+        ],
+        "evidence": "V 1. pololetí školního roku 2024/2025 neprospěli pouze dva žáci, na konci školního roku prospěli všichni."
+      },
+      "absence": {
+        "trend": "Nízká",
+        "key_numbers": [
+          "neomluvené hodiny nebyly zaznamenány"
+        ],
+        "evidence": "Absence žáků zůstává na nízké úrovni."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště",
+        "Kariérové poradenství",
+        "Preventivní program školy"
+      ],
+      "safety_climate": [
+        "Významná role peer aktivit v prevenci rizikového chování",
+        "Třídnické hodiny a besedy s odborníky",
+        "Elektronická schránka důvěry"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s energetickou společností",
+        "Spolupráce s Pedagogickou a Přírodovědeckou fakultou Jihočeské univerzity",
+        "Spolupráce se základními školami v regionu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 3,
+      "czech_clarity_reason": "Text je jasný, ale některé části jsou dlouhé a složité.",
+      "uncertainty_notes": [
+        "Není jasné, jakým způsobem se škola zlepšuje na základě doporučení.",
+        "Není zcela jasné, jakým způsobem škola hodnotí výsledky žáků.",
+        "Není zcela jasné, jakým způsobem škola řeší dlouhodobé odchody žáků."
+      ]
+    }
+  }
+}

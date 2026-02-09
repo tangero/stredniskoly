@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium (střední vzdělání s maturitní zkouškou)",
+    "inspection_period": "21. až 23. října 2025",
+    "school_change_summary": "Škola prochází generační obměnou pedagogického sboru. V září 2025 nastoupil nový zástupce ředitele. Realizovány byly rekonstrukce prostor, obnova vybavení kabinetů a rozšíření IT infrastruktury včetně robotických stavebnic."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství a zapojení v komunitě",
+        "detail": "Škola aktivně spolupracuje s místní obcí, energetickou společností a univerzitou, což posiluje vztah žáků k místu a jejich sociální cítění.",
+        "evidence": "Spolupráce s Pedagogickou fakultou Jihočeské univerzity, projekt 'Provázející učitel', charitativní aktivity v obci."
+      },
+      {
+        "tag": "Osobnostní rozvoj a peer aktivity",
+        "detail": "Škola systematicky podporuje sociální a osobnostní kompetence žáků prostřednictvím peer programů a studentského parlamentu.",
+        "evidence": "Vrstevnické iniciativy, peer program, studentský parlament, elektronická schránka důvěry, adaptační kurzy."
+      },
+      {
+        "tag": "Úspěchy v soutěžích a mimoškolních aktivitách",
+        "detail": "Žáci dosahují výrazných úspěchů v soutěžích a vědeckých aktivitách.",
+        "evidence": "1. místo v krajské přehlídce SOČ, 1. místo v kategorii E fyzikální olympiády, 3. místo v celostátní výtvarné soutěži."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace ve výuce",
+        "detail": "Učitelé jen výjimečně přizpůsobují úkoly různým schopnostem a zájmům jednotlivých žáků.",
+        "evidence": "Ve většině sledovaných hodin chyběla diferenciace vzdělávacích cílů formou gradace úkolů."
+      },
+      {
+        "tag": "Omezené využití aktivních metod",
+        "detail": "Výuka často probíhá formou výkladu bez dostatečného prostoru pro aktivní zapojení žáků.",
+        "evidence": "Hodiny s převažujícím výkladem neposkytovaly žákům dostatek možností pro aktivitu a rozvoj komunikativních dovedností."
+      },
+      {
+        "tag": "Chybějící infrastruktura pro tělesnou výchovu",
+        "detail": "Dvě tělocvičny nejsou z technických důvodů využívány, žáci docházejí do městské sportovní haly.",
+        "evidence": "Absence funkční tělocvičny limituje organizaci výuky tělesné výchovy v zimním období."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku různým schopnostem a zájmům jednotlivých žáků?",
+      "Jaké jsou plány na vybudování funkční tělocvičny nebo společného prostoru pro setkávání školní komunity?",
+      "Jak se škola připravuje na maturitní zkoušky a jaké jsou výsledky v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o přírodní vědy a techniku – škola má silné partnerství s energetickou společností a podporuje vědecké aktivity.",
+      "Sociálně aktivní žáci – škola nabízí peer program, studentský parlament a zapojení do komunitních aktivit.",
+      "Jazykově nadaní žáci – výuka cizích jazyků s rodilou mluvčí, jazykové zájezdy do německy mluvících zemí a Anglie."
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individuální přístup a diferenciovanou výuku – inspekce zjistila, že diferenciace není běžnou praxí.",
+      "Žáci se zájmem o intenzivní tělesnou výchovu – chybí funkční tělocvična v areálu školy.",
+      "Žáci preferující aktivní a praktické metody výuky – výuka často probíhá formou výkladu bez dostatečného prostoru pro experimentování."
+    ],
+    "plain_czech_summary": "Gymnázium v Týně nad Vltavou je malá venkovská škola s dlouhou tradicí. Silnými stránkami jsou partnerství s místní komunitou, podpora osobnostního rozvoje žáků a úspěchy v soutěžích. Žáci dosahují dobrých výsledků, absence je nízká. Inspekce však upozorňuje na nedostatečnou diferenciaci ve výuce a omezené využívání aktivních metod. Chybí také funkční tělocvična a prostor pro setkávání školní komunity. Škola se připravuje na změny – nový zástupce ředitele a generační obměna pedagogů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě srovnatelné s celostátním průměrem, v roce 2025 nadprůměrné výsledky v matematice a německém jazyce",
+      "key_numbers": [
+        "Pouze 1 žák skládal opravnou zkoušku (angličtina, úspěšně)",
+        "5 žáků nahradilo maturitu z cizího jazyka certifikátem SERRJ",
+        "Vyrovnaný počet žáků volících matematiku a cizí jazyk"
+      ],
+      "evidence": "Ve zkušebním roce 2025 dosáhla v některých předmětech (matematika, německý jazyk) škola nadprůměrných výsledků."
+    },
+    "absence": {
+      "trend": "Nízká úroveň, bez neomluvených hodin",
+      "key_numbers": [
+        "Absence zůstává na nízké úrovni",
+        "Neomluvené hodiny nebyly zaznamenány",
+        "Odchody po 4. ročníku nižšího gymnázia kolem 10 %"
+      ],
+      "evidence": "Absence žáků zůstává na nízké úrovni, neomluvené hodiny nebyly zaznamenány."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s kariérovým poradenstvím a spoluprací se zákonnými zástupci",
+      "Podpůrná opatření v souladu s doporučeními školských poradenských zařízení",
+      "Preventivní program zaměřený na předcházení rizikovému chování s třídnickými hodinami a besedami s odborníky"
+    ],
+    "safety_climate": [
+      "Příjemné a vstřícné pracovní klima během sledované výuky",
+      "Peer program a vrstevnické iniciativy přispívající k bezpečnému prostředí",
+      "Elektronická schránka důvěry pro žáky",
+      "Adaptační kurzy a projektové dny"
+    ],
+    "partnerships_practice": [
+      "Energetická společnost – klíčový partner podporující zájem o technické vzdělání",
+      "Pedagogická a Přírodovědecká fakulta Jihočeské univerzity – projekt 'Provázející učitel'",
+      "Základní školy v regionu – spolupráce na prevenci rizikového chování",
+      "Absolventi jako odborníci z praxe – přednášky a workshopy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků s vyznamenáním – pouze 'téměř polovina' v 1. pololetí 2024/2025",
+      "Nejsou uvedeny konkrétní výsledky maturit v procentech, pouze kvalitativní popis",
+      "Počet pedagogů a jejich kvalifikace nejsou v textu specifikovány"
+    ]
+  }
+}
+```

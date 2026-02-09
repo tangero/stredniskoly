@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T09:00:09.894159+00:00",
+  "run_finished_utc": "2026-02-09T09:00:40.047518+00:00",
+  "raw_file": "LYC_691004048_2025-10-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_691004048_2025-10-22",
+    "school_profile": {
+      "school_type": "střední škola",
+      "inspection_period": "2025-10-22 až 2025-10-24",
+      "school_change_summary": "Škola odstranila nedostatky v školním vzdělávacím programu a přijala opatření ke zlepšení úspěšnosti žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Pozitivní klima",
+          "detail": "Pedagogové a pracovníci školy mají vstřícný přístup k žákům.",
+          "evidence": "Pozitivní vzájemné vztahy mezi zaměstnanci školy."
+        },
+        {
+          "tag": "Systémová podpora",
+          "detail": "Škola má jednotný systém hodnocení žáků v průběhu učební praxe.",
+          "evidence": "Nově nastavený systém hodnocení žáků v průběhu učební praxe."
+        },
+        {
+          "tag": "Významná spolupráce",
+          "detail": "Škola spolupracuje s externími odborníky a organizacemi.",
+          "evidence": "Spolupráce s externími odborníky na prevenci šikany a kyberšikany."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nízká diferenciace",
+          "detail": "Není dostatečně zohledněna rozdílná úroveň schopností žáků.",
+          "evidence": "Nízká míra diferenciace náročnosti zadaných úloh."
+        },
+        {
+          "tag": "Podprůměrné výsledky",
+          "detail": "Žáci školy dlouhodobě dosahují podprůměrných výsledků u maturitních zkoušek.",
+          "evidence": "Podprůměrné výsledky u maturitních zkoušek v porovnání s jinými školami."
+        },
+        {
+          "tag": "Nedostatečná podpora",
+          "detail": "Není systematicky sledováno plnění výstupů školního vzdělávacího programu.",
+          "evidence": "Není systematicky sledováno plnění výstupů školního vzdělávacího programu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola zajišťuje diferencovaný přístup k žákům s různými schopnostmi?",
+        "Jakým způsobem škola podporuje rozvoj kritického myšlení žáků?",
+        "Jaké jsou konkrétní opatření ke zlepšení výsledků žáků u maturitních zkoušek?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří potřebují podporu v psychickém i sociálním prostředí.",
+        "Žáci, kteří se účastní praktických vyučování v rámci školních partnerství.",
+        "Žáci, kteří se zajímají o výuku s využitím digitálních technologií."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují větší diferenciaci výuky podle svých schopností.",
+        "Žáci, kteří chtějí dosáhnout lepších výsledků u maturitních zkoušek.",
+        "Žáci, kteří čekají na systematické hodnocení jejich výkonů."
+      ],
+      "plain_czech_summary": "Škola má pozitivní klima a spolupráci se školami, ale má problémy s diferenciací výuky a výsledky žáků jsou podprůměrné. Škola přijala opatření ke zlepšení výsledků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Podprůměrné výsledky",
+        "key_numbers": [
+          "Dlouhodobě podprůměrné výsledky",
+          "Někteří žáci selhávají i přes dobré výsledky",
+          "Zlepšení od roku 2025/2026"
+        ],
+        "evidence": "Podprůměrné výsledky v porovnání s jinými školami."
+      },
+      "absence": {
+        "trend": "Stabilní úroveň",
+        "key_numbers": [
+          "Stabilní úroveň absence",
+          "Opatření ke snižování absence",
+          "Systémová opatření"
+        ],
+        "evidence": "Škola přijala opatření ke snižování vysoké absence."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s jasnými kompetencemi.",
+        "Spolupráce s externími odborníky na prevenci šikany a kyberšikany.",
+        "Školní metodička prevence plánovaná systematicky."
+      ],
+      "safety_climate": [
+        "Bezpečné prostředí pro žáky.",
+        "Povinná dokumentace je řádně vedena.",
+        "Škola důrazně klade důraz na pozitivní klima."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s školami na praktickém vyučování.",
+        "Zahraniční spolupráce v rámci projektu Erasmus.",
+        "Spolupráce s externími organizacemi na prevenci rizikových forem chování."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 3,
+      "czech_clarity_reason": "Zpráva je srozumitelná, ale obsahuje některé technické termíny.",
+      "uncertainty_notes": [
+        "Není jasně uvedeno, jakým způsobem se škola vyhodnocuje efektivita opatření.",
+        "Není uvedeno, jak se přijímá zpětná vazba od žáků.",
+        "Není jasně popsáno, jak se škola rozhoduje o podpoře žáků s náročnějším vzdělávacím potřebami."
+      ]
+    }
+  }
+}

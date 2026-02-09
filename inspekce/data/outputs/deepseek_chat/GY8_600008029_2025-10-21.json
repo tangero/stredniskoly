@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "model_id": "deepseek_chat",
+  "run_started_utc": "2026-02-09T08:50:30.350772+00:00",
+  "run_finished_utc": "2026-02-09T08:51:04.933345+00:00",
+  "raw_file": "GY8_600008029_2025-10-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008029_2025-10-21",
+    "school_profile": {
+      "school_type": "Gymnázium",
+      "inspection_period": "21. 10. 2025 − 23. 10. 2025",
+      "school_change_summary": "Generační obměna pedagogického sboru, rekonstrukce prostor, obnova vybavení kabinetů a IT techniky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s partnery",
+          "detail": "Škola spolupracuje s místními subjekty, což posiluje vztah žáků k obci.",
+          "evidence": "Klíčovým partnerem je energetická společnost."
+        },
+        {
+          "tag": "Peer aktivity",
+          "detail": "Starší žáci připravují aktivity pro mladší, což rozvíjí sociální kompetence.",
+          "evidence": "Studentský parlament a peer programy."
+        },
+        {
+          "tag": "Podpora začínajících učitelů",
+          "detail": "Začínající učitelé jsou podporováni mentory a tandemovou výukou.",
+          "evidence": "Podpora realizována prostřednictvím tandemové výuky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace ve výuce",
+          "detail": "Ve výuce chybí diferenciace podle potenciálu jednotlivých žáků.",
+          "evidence": "Diferenciace byla uplatněna pouze výjimečně."
+        },
+        {
+          "tag": "Funkční tělocvična",
+          "detail": "Škola nemá funkční tělocvičnu, což limituje výuku tělesné výchovy.",
+          "evidence": "Žáci docházejí do městské sportovní haly."
+        },
+        {
+          "tag": "Prostory pro setkávání",
+          "detail": "Chybí prostory pro setkávání širší školní komunity.",
+          "evidence": "Nedostatek prostor pro setkávání žáků a učitelů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola podporuje začínající učitele?",
+        "Jaké jsou možnosti pro sportovní aktivity žáků?",
+        "Jak škola pracuje s diferenciací ve výuce?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o všeobecné vzdělání.",
+        "Žáci, kteří chtějí být aktivní v mimoškolních aktivitách.",
+        "Žáci, kteří preferují menší školu s rodinnou atmosférou."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup ve výuce.",
+        "Žáci se zájmem o intenzivní sportovní vyžití.",
+        "Žáci, kteří preferují moderní prostory pro setkávání."
+      ],
+      "plain_czech_summary": "Gymnázium v Týně nad Vltavou nabízí všeobecné vzdělání s důrazem na spolupráci s místními partnery a rozvoj sociálních kompetencí. Škola podporuje začínající učitele a má pestrou nabídku mimoškolních aktivit. Limitem je absence funkční tělocvičny a nedostatek prostor pro setkávání. Výuka by mohla více diferencovat podle potenciálu žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě srovnatelné s celostátním průměrem.",
+        "key_numbers": [
+          "Nadprůměrné výsledky v matematice a němčině.",
+          "5 žáků nahradilo maturitu certifikátem."
+        ],
+        "evidence": "Výsledky maturitních zkoušek ve zkušebním roce 2025."
+      },
+      "absence": {
+        "trend": "Nízká absence, žádné neomluvené hodiny.",
+        "key_numbers": [
+          "2 neprospívající žáci v 1. pololetí.",
+          "Všichni žáci prospěli na konci roku."
+        ],
+        "evidence": "Absence žáků zůstává na nízké úrovni."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště.",
+        "Kariérové poradenství.",
+        "Elektronická schránka důvěry."
+      ],
+      "safety_climate": [
+        "Preventivní program proti rizikovému chování.",
+        "Adaptační kurzy a besedy s odborníky.",
+        "Peer programy napříč ročníky."
+      ],
+      "partnerships_practice": [
+        "Energetická společnost.",
+        "Jihočeská univerzita.",
+        "Základní školy v regionu."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, ale některé části jsou příliš detailní.",
+      "uncertainty_notes": [
+        "Není jasné, jak často probíhá tandemová výuka.",
+        "Chybí informace o konkrétních výsledcích maturit.",
+        "Není uvedeno, jak často se konají mimoškolní akce."
+      ]
+    }
+  }
+}

@@ -1,0 +1,98 @@
+```json
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "school_profile": {
+    "school_type": "Střední škola gastronomie a služeb",
+    "inspection_period": "12. 11. 2025 až 17. 11. 2025",
+    "school_change_summary": "Od poslední inspekce došlo k částečnému zlepšení v průběhu výukového procesu a byly vybudovány nové prostory pro teoretické i praktické vyučování."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s partnery",
+        "detail": "Spolupráce s tuzemskými i zahraničními partnery podporuje rozvoj odbornosti žáků.",
+        "evidence": "Žáci se účastní zahraničních pracovních pobytů a soutěží."
+      },
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Materiální vybavení pro odborné vzdělávání odpovídá současným trendům.",
+        "evidence": "Nově vybudovaná počítačová učebna a kadeřnický salón."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola podporuje žáky v přípravě na závěrečné zkoušky.",
+        "evidence": "Žáci dosahují dobrých výsledků při ukončování vzdělání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Formativní hodnocení",
+        "detail": "Ve výuce chybí formativní hodnocení a sebehodnocení žáků.",
+        "evidence": "Zpětná vazba je poskytována pouze stručně."
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Výsledky ve společné části maturitní zkoušky mají sestupnou tendenci.",
+        "evidence": "Neúspěšnost v oboru Podnikání vzrostla na 39,3 %."
+      },
+      {
+        "tag": "Individuální podpora",
+        "detail": "Nedostatečná diferenciace výuky pro žáky se speciálními potřebami.",
+        "evidence": "Žáci nadaní a se speciálními potřebami nedostávají dostatečnou podporu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje žáky se speciálními vzdělávacími potřebami?",
+      "Jaké jsou výsledky maturitních zkoušek v posledních letech?",
+      "Jaké možnosti zahraničních stáží škola nabízí?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o gastronomii a služby.",
+      "Žáci, kteří chtějí získat praktické dovednosti.",
+      "Žáci, kteří plánují pracovat v zahraničí."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individuální podporu ve výuce.",
+      "Žáci, kteří mají problémy s kritickým myšlením.",
+      "Žáci, kteří se připravují na maturitní zkoušku."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní odborné vzdělání s moderním vybavením a podporou zahraničních stáží. Nicméně, výsledky maturitních zkoušek jsou v posledních letech horší a chybí individuální podpora žáků se speciálními potřebami. Škola je vhodná pro žáky se zájmem o gastronomii a služby, ale ti, kteří potřebují více podpory, by měli zvážit své možnosti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Sestupná tendence",
+      "key_numbers": [
+        "Neúspěšnost v oboru Podnikání: 39,3 %",
+        "Neúspěšnost v oboru Hotelnictví: 26,1 %",
+        "Neúspěšnost v oboru Kosmetické služby: 22,7 %"
+      ],
+      "evidence": "Výsledky maturitních zkoušek v letech 2023-2025."
+    },
+    "absence": {
+      "trend": "Není uvedeno",
+      "key_numbers": [],
+      "evidence": "Není uvedeno"
+    },
+    "support_services": [
+      "Výchovná poradkyně",
+      "Školní psycholožka",
+      "Speciální pedagožka"
+    ],
+    "safety_climate": [
+      "Preventivní programy a adaptační aktivity."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s tuzemskými i zahraničními partnery."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je přehledná, ale některé části jsou příliš technické.",
+    "uncertainty_notes": [
+      "Chybí informace o trendu absence.",
+      "Není jasné, jaké jsou výsledky závěrečných zkoušek.",
+      "Není uvedeno, jak škola řeší problémy s neúspěšností žáků."
+    ]
+  }
+}
+```

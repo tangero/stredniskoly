@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola s obory praktická sestra, ošetřovatel a sociální činnost",
+    "inspection_period": "20. 11. – 25. 11. 2025",
+    "school_change_summary": "Škola modernizovala odborné učebny, zapojila se do projektu stupňovitého propojení oborů a posílila poradenské pracoviště. Přes zlepšení materiálních podmínek přetrvávají nedostatky v kvalitě výuky a účinnosti pedagogického vedení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe u zaměstnavatelů",
+        "detail": "Široká síť partnerských zdravotnických zařízení poskytuje žákům cenné praktické zkušenosti.",
+        "evidence": "Všestranná spolupráce s mnoha partnery umožňuje žákům získávat potřebné praktické zkušenosti, profesní dovednosti a zvyšovat svou uplatnitelnost na trhu práce."
+      },
+      {
+        "tag": "Mimoškolní aktivity",
+        "detail": "Pestré aktivity podporují rozvoj žáků a pozitivní atmosféru ve škole.",
+        "evidence": "Rozmanité školní a mimoškolní aktivity podporují rozvoj klíčových kompetencí žáků a současně posilují pozitivní klima i soudržnost žákovského kolektivu."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Odborné učebny jsou vybaveny moderními pomůckami odpovídajícími trendům ve zdravotnictví.",
+        "evidence": "Ke zlepšení stavu došlo především v oblasti materiálních podmínek vzdělávání, zejména modernizací odborných učeben pro praktické vyučování, jejichž vybavení odpovídá novým trendům ve zdravotnictví."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Ve většině hodin převládá výklad učitele, žáci málo aktivně pracují.",
+        "evidence": "V téměř 80 % hospitovaného teoretického vyučování převažovala frontální forma práce s výkladem učitele. Převládající frontální forma práce a minimum příležitostí pro rozvoj kritického myšlení vedly k pasivitě žáků."
+      },
+      {
+        "tag": "Předčasné ukončování studia",
+        "detail": "Část žáků nedokončí studium, zejména v oboru sociální činnost.",
+        "evidence": "Přesto se škole dlouhodobě nedaří udržet všechny žáky ve vzdělávání po celou dobu studia. V oboru sociální činnost je celková úspěšnost ukončení studia nižší (43 %)."
+      },
+      {
+        "tag": "Problémy s docházkou",
+        "detail": "Přetrvává záškoláctví, v oboru ošetřovatel je vysoká neomluvená absence.",
+        "evidence": "Přes aktivní monitoring rizikových projevů přetrvávají dlouhodobě problémy se záškoláctvím. V oboru ošetřovatel přetrvává zvýšený podíl neomluvené absence (téměř 5 %)."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje na zlepšení kvality výuky a aktivizaci žáků v hodinách?",
+      "Jaká podpora je poskytována žákům, kteří mají problémy s docházkou nebo prospěchem?",
+      "Kde všude probíhá praktická výuka a jak škola zajišťuje jednotnost výuky mezi různými vyučujícími?"
+    ],
+    "who_school_fits": [
+      "Žáky se zájmem o zdravotnictví a sociální péči, kteří ocení praktickou přípravu v reálných zařízeních",
+      "Studenty hledající školu s moderním vybavením a pestrou nabídkou mimoškolních aktivit",
+      "Uchazeče, kteří potřebují podporu školního poradenského pracoviště a individuální přístup"
+    ],
+    "who_should_be_cautious": [
+      "Žáky preferující aktivní, moderní formy výuky s důrazem na samostatnou práci a diskusi",
+      "Studenty, kteří potřebují silnou motivaci a strukturu pro pravidelnou docházku",
+      "Uchazeče o obor sociální činnost s ohledem na nižší úspěšnost dokončení studia"
+    ],
+    "plain_czech_summary": "Škola nabízí zdravotnické obory s velmi dobrou praktickou přípravou v moderně vybavených učebnách a u širokého spektra zaměstnavatelů. Žáci získávají cenné zkušenosti v reálných zdravotnických zařízeních a mohou se zapojit do mnoha mimoškolních aktivit. Funguje zde vstřícné poradenské pracoviště.\n\nVážným problémem je však kvalita běžné výuky – ve většině hodin žáci pasivně poslouchají výklad, málo diskutují a samostatně pracují. Škola se potýká se záškoláctvím a část žáků studium nedokončí, zejména v oboru sociální činnost. Vedení školy sice přijímá opatření ke zlepšení, ale jejich účinnost zatím není dostatečná. Výsledky maturit se v oboru praktická sestra zlepšují, v sociální činnosti zůstávají problematické."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "V oboru praktická sestra výrazné zlepšení, v sociální činnosti přetrvávají problémy",
+      "key_numbers": [
+        "Praktická sestra: hrubá neúspěšnost u maturity klesla z 20 % (2023) na 3,8 % (2025)",
+        "Sociální činnost: hrubá neúspěšnost 46 % (2024) a 30 % (2025), zejména z cizího jazyka",
+        "Ošetřovatel: 100% úspěšnost závěrečné zkoušky, 13 % žáků ji složí až v opravném termínu"
+      ],
+      "evidence": "Hrubá neúspěšnost u maturitní zkoušky dlouhodobě klesá: 20 % (2023), 13 % (2024) a 3,8 % (2025). V oboru sociální činnost byla zvýšená hrubá neúspěšnost zaznamenána v letech 2024 (46 %) a 2025 (30 %), zejména z důvodu slabších výsledků z cizího jazyka."
+    },
+    "absence": {
+      "trend": "Celková absence klesá, ale v oboru ošetřovatel přetrvává vysoká neomluvená absence",
+      "key_numbers": [
+        "Celková absence klesla ze 176 hodin na žáka (2022/23) na 144 hodin (2024/25)",
+        "Obor ošetřovatel: téměř 5 % neomluvené absence",
+        "Ostatní obory: neomluvená absence minimální"
+      ],
+      "evidence": "Celková absence se snížila o zhruba pětinu, ze 176 hodin na žáka ve školním roce 2022/2023 na 144 hodin ve školním roce 2024/2025. V oboru ošetřovatel přetrvává zvýšený podíl neomluvené absence (téměř 5 %)."
+    },
+    "support_services": [
+      "Fungující školní poradenské pracoviště s výchovnou poradkyní, dvěma metodiky prevence, speciální pedagožkou a kariérovou poradkyní",
+      "Systematická podpora žáků se speciálními vzdělávacími potřebami a žáků s odlišným mateřským jazykem",
+      "Rezervy při práci s nadanými žáky a včasném zpracování individuálních vzdělávacích plánů"
+    ],
+    "safety_climate": [
+      "Vstřícná a respektující komunikace mezi učiteli a žáky, výuka bez kázeňských problémů",
+      "Rizikové oblasti: záškoláctví, šikana, kyberšikana a netolerantní chování",
+      "Škola má stanovené postupy pro včasné podchycení a řešení nežádoucího chování prostřednictvím výchovných komisí"
+    ],
+    "partnerships_practice": [
+      "Široké portfolio partnerských zdravotnických zařízení pro praktické vyučování žáků",
+      "Spolupráce se základními školami v okolí (zdravovědný den, první pomoc)",
+      "Dlouholetá spolupráce s partnerskou školou v Německu umožňující výměnné pobyty žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je psán srozumitelně s minimem úřednických obratů. Některé formulace by mohly být ještě přímočařejší pro laickou veřejnost.",
+    "uncertainty_notes": [
+      "Není zcela jasné, jaká konkrétní opatření škola přijala k řešení pasivní výuky mimo hospitační činnost",
+      "Chybí informace o konkrétních počtech žáků v jednotlivých oborech pro lepší kontext statistik",
+      "Není specifikováno, jak škola pracuje s nadanými žáky mimo oblast cizích jazyků"
+    ]
+  }
+}
+```

@@ -1,0 +1,97 @@
+```json
+{
+  "report_id": "SOU_600013171_2025-10-13",
+  "school_profile": {
+    "school_type": "Střední škola gastronomická a technická",
+    "inspection_period": "13. až 15. 10. 2025",
+    "school_change_summary": "Výrazný nárůst počtu žáků (o téměř 100), pozastavení činnosti školní jídelny-výdejny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s podnikatelskými subjekty",
+        "detail": "Žáci získávají praktické zkušenosti v reálném pracovním prostředí.",
+        "evidence": "Žáci některých oborů mají příležitost zúčastnit se zahraničních stáží."
+      },
+      {
+        "tag": "Podpora žáků v domově mládeže",
+        "detail": "Domov mládeže vytváří přátelské klima a podporuje sociální vztahy.",
+        "evidence": "Vychovatelé využívají pestrou nabídku aktivit a spolupracují s místními organizacemi."
+      },
+      {
+        "tag": "Nízká absence v teoretické výuce",
+        "detail": "Škola úspěšně motivuje žáky k docházce.",
+        "evidence": "Neomluvená absence je v teoretické výuce ojedinělá."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná metodická podpora učitelů",
+        "detail": "Učitelé s krátkou praxí nebo bez požadovaného vzdělání potřebují větší podporu.",
+        "evidence": "Výuka vedená těmito učiteli vykazovala metodické a didaktické nedostatky."
+      },
+      {
+        "tag": "Minimální aktivizace žáků",
+        "detail": "Výuka často postrádá pestrost metod a forem práce.",
+        "evidence": "Převažovala frontální výuka s minimálním zapojením žáků."
+      },
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Výuka nezohledňuje žáky s různými vzdělávacími potřebami.",
+        "evidence": "Chybí diferenciace náročnosti úkolů podle schopností žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje učitele s krátkou praxí?",
+      "Jaké metody aktivizace žáků jsou ve výuce využívány?",
+      "Jak škola řeší neomluvenou absenci v praktické výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o gastronomii a technické obory.",
+      "Žáci, kteří preferují praktické vzdělávání.",
+      "Žáci z regionu, kteří potřebují ubytování v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individuální přístup ve výuce.",
+      "Žáci, kteří preferují aktivní a pestrou výuku.",
+      "Žáci, kteří mají problémy s docházkou."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktické vzdělání v gastronomii a technických oborech, ale má rezervy v metodické podpoře učitelů a aktivizaci žáků. Domov mládeže poskytuje příjemné prostředí, ale výuka by mohla být více individualizovaná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "15 žáků maturovalo",
+        "2 neuspěli"
+      ],
+      "evidence": "Maturitní zkoušku vykonalo 15 žáků, z nich dva neuspěli."
+    },
+    "absence": {
+      "trend": "Nízká v teoretické výuce, vyšší v praktické",
+      "key_numbers": [
+        "Nízká neomluvená absence v teorii",
+        "Přetrvávající záškoláctví v praxi"
+      ],
+      "evidence": "V teoretické výuce je neomluvená absence ojedinělá, v praktické výuce přetrvává."
+    },
+    "support_services": [
+      "Poradenské služby zajišťuje výchovná poradkyně a metodička prevence."
+    ],
+    "safety_climate": [
+      "Žáci jsou vedeni k dodržování bezpečnostních předpisů."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s profesními organizacemi a podnikatelskými subjekty."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je dobře strukturovaná, ale některé části jsou příliš formální.",
+    "uncertainty_notes": [
+      "Není jasné, jak často jsou využívány mobilní telefony ve výuce.",
+      "Chybí detailnější informace o podpoře žáků s odlišným mateřským jazykem."
+    ]
+  }
+}
+```

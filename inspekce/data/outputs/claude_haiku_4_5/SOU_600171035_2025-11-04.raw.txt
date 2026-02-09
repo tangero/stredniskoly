@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOU_600171035_2025-11-04",
+  "school_profile": {
+    "school_type": "Střední škola elektrotechnická a energetická (obory: Mechanik elektrotechnik, Elektrikář-silnoproud, Elektromechanik, Autoelektrikář) s domovem mládeže a jídelnou",
+    "inspection_period": "4. listopadu 2025 až 6. listopadu 2025",
+    "school_change_summary": "Nový ředitel od roku 2023, částečná obměna pedagogů, zlepšené materiální podmínky, nové ON-Voltage centrum pro simulaci energetických technologií, zřízeno školní poradenské pracoviště"
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u zkoušek",
+        "detail": "Žáci dosahují stabilně lepších výsledků u maturit a závěrečných zkoušek než průměr v ČR (2024: 2% neúspěšnosti vs. 13,7% celorepublikově).",
+        "evidence": "V roce 2024 hrubá neúspěšnost 2 %, celostátní průměr 13,7 %. Závěrečné zkoušky úspěšně vykonají téměř všichni."
+      },
+      {
+        "tag": "Moderní vybavení a praxe",
+        "detail": "Škola má kvalitní odborné zázemí, nové centrum pro simulaci technologií a spolupracuje s desítkami firem pro praktickou přípravu.",
+        "evidence": "Vybudováno ON-Voltage centrum, detašované pracoviště s kvalitním zařízením, partnerství s desítkami výrobních podniků."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci pravidelně vítězí v odborných soutěžích, včetně prestižní soutěže České ručičky.",
+        "evidence": "Úspěchy v regionálních i celostátních kolech, ocenění Nejlepší žák elektrotechnických škol, vítězství ve florbale a stolním tenisu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Frontální výuka převažuje",
+        "detail": "Učitelé používají převážně frontální výuku (68 %), málo skupinové práce a diferencovaných úloh podle schopností.",
+        "evidence": "Frontální výuka v 68 % hodin, skupinová práce v 21 %, diferencované zadávání jen okrajově."
+      },
+      {
+        "tag": "Slabá podpora žáků se speciálními potřebami",
+        "detail": "Přestože existuje poradenské pracoviště, praktická realizace podpůrných opatření je omezená a diferencovaný přístup minimální.",
+        "evidence": "Podpůrná opatření zaznamenána jen v omezené míře, diferencovaný přístup využíván minimálně, dopad zatím částečný."
+      },
+      {
+        "tag": "Nedostatky v dokumentech školy",
+        "detail": "Školní řád a vzdělávací programy obsahují nedostatky a nejsou dostatečně kvalitně zpracovány.",
+        "evidence": "Přetrvávají nedostatky v obsahu základních dokumentů školy jako jsou školní řád a školní vzdělávací programy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami? Jaké jsou příklady individuálního přístupu?",
+      "Jaké jsou možnosti doučování a dodatečné podpory pro žáky, kteří zaostávají?",
+      "Jak probíhá spolupráce s firmami a jaké jsou konkrétní příležitosti pro praxi během studia?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o elektrotechniku a energetiku, kteří chtějí kvalitní praktickou přípravu a vysoké šance na úspěch u zkoušek",
+      "Talentovaní žáci, kterým se dostane podpory v soutěžích a odborných aktivitách",
+      "Žáci z okolí, kteří mohou využít kvalitní domov mládeže s bohatým volnočasovým programem"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – podpora je zatím částečná a diferencovaný přístup není dostatečně uplatňován",
+      "Žáci, kteří potřebují aktivní, interaktivní výuku – převažuje frontální přístup učitele",
+      "Žáci, kteří se učí lépe v menších skupinách – skupinová práce se realizuje jen v 21 % hodin"
+    ],
+    "plain_czech_summary": "Sokolnická elektrotechnická škola je kvalitní zařízení se skvělými výsledky u zkoušek a moderním vybavením. Žáci se učí v reálném prostředí díky spolupráci s firmami a mají šanci na úspěch. Domov mládeže nabízí dobré podmínky. Slabší stránkou je, že výuka je často vedena tradičně (učitel vede, žáci poslouchají) a žáci se speciálními potřebami nedostávají dostatek individuální podpory. Škola na tom ale pracuje."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně nadprůměrné výsledky, mírný nárůst neúspěšnosti v roce 2025",
+      "key_numbers": [
+        "2024: 2% neúspěšnosti (vs. 13,7% celorepublikově)",
+        "2025: 6,9% neúspěšnosti",
+        "Průměrný prospěch 1,93–2,25 za poslední tři roky"
+      ],
+      "evidence": "Žáci dosahují dlouhodobě lepších výsledků než průměr skupiny oborů na celostátní úrovni. Závěrečné zkoušky úspěšně vykonají téměř všichni."
+    },
+    "absence": {
+      "trend": "Výrazný pokles po zavedení limitu absence v září 2024",
+      "key_numbers": [
+        "2023/2024: 173,21 hodin na žáka",
+        "2024/2025: 126,09 hodin na žáka",
+        "Snížení o 27 % (47,12 hodin na žáka)"
+      ],
+      "evidence": "Limit absence pro možnost hodnocení známkou na vysvědčení vedl k výraznému poklesu. Vedení školy opatření vyhodnotilo jako efektivní."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se stanoveným vedením a vymezením odpovědností",
+      "Program poradenských služeb zahrnující prevenci sociálně-patologických jevů a školní neúspěšnosti",
+      "Kariérové poradenství ve spolupráci s výchovným poradcem a třídními učiteli",
+      "Systém zpracování dokumentace žáků se speciálními vzdělávacími potřebami"
+    ],
+    "safety_climate": [
+      "Přátelský a podporující přístup pedagogů k žákům, příznivé sociální klima ve třídách",
+      "Důsledné zahrnutí bezpečnostních pravidel a používání ochranných pomůcek ve všech aktivitách",
+      "Řešení případů šikany, kyberšikany a nevhodného chování s zapojením třídních učitelů a vedení",
+      "Osvěta v oblasti bezpečného chování v online prostředí"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se Svazem energetiky České republiky a profesními asociacemi",
+      "Partnerství s desítkami výrobních podniků a firem pro odbornou praxi žáků",
+      "Projekty financované EU (Erasmus+, Operační program Jan Amos Komenský)",
+      "Mezinárodní spolupráce zaměřená na vodíkové technologie",
+      "Spolupráce domova mládeže s domovem seniorů a mateřskou školou"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní čísla a příklady. Některé pasáže jsou však delší a složitější (např. popis pedagogických postupů), což mírně snižuje přístupnost pro laiky.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jak přesně se liší kvalita výuky mezi jednotlivými obory a ročníky",
+      "Není jasné, jaký je konkrétní obsah 'nedostatků v školním řádu' – zůstává vágní",
+      "Chybí informace o počtu žáků se speciálními potřebami na prvním stupni (zmíněno, že škola žádné neeviduje)"
+    ]
+  }
+}
+```

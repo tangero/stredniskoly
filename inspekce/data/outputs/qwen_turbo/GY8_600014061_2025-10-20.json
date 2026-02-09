@@ -1,0 +1,109 @@
+{
+  "report_id": "GY8_600014061_2025-10-20",
+  "model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T08:57:34.494343+00:00",
+  "run_finished_utc": "2026-02-09T08:57:56.578644+00:00",
+  "raw_file": "GY8_600014061_2025-10-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014061_2025-10-20",
+    "school_profile": {
+      "school_type": "Gymnázium a základní umělecká škola",
+      "inspection_period": "2025-10-20 až 2025-10-23",
+      "school_change_summary": "Došlo ke generaci pedagogického sboru a zlepšení prostorových podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Rozmanitost výuky",
+          "detail": "Pestré metody a formy výuky podporují klíčové kompetence žáků.",
+          "evidence": "Pestré výukové metody a formy včetně inspirativně zadávaných úloh."
+        },
+        {
+          "tag": "Komunikace",
+          "detail": "Otevřená komunikace podporuje sociální kompetence žáků.",
+          "evidence": "Otevřená a vstřícná komunikace všech účastníků vzdělávání."
+        },
+        {
+          "tag": "Úspěšnost žáků",
+          "detail": "Výborné výsledky při maturitě a přijetí na vysoké školy.",
+          "evidence": "Výborné výsledky při ukončování vzdělávání maturitní zkouškou."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná kontrola",
+          "detail": "Nedostatečná kontrolní činnost v základní umělecké škole.",
+          "evidence": "Nedostatečná kontrolní činnost v základní umělecké škole."
+        },
+        {
+          "tag": "Nedostatek metodické podpory",
+          "detail": "Chybí jasná struktura metodické podpory pro začínající pedagogy.",
+          "evidence": "Chybí jasně vymezená struktura metodické podpory pro začínající učitele."
+        },
+        {
+          "tag": "Nerovnoměrná docházka",
+          "detail": "Rozdílná docházka žáků způsobuje nerovnoměrnou kvalitu výuky.",
+          "evidence": "Rozdílná docházka žáků do kolektivní výuky hudebního oboru."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké metody výuky se používají v jednotlivých předmětech?",
+        "Jaký je dopad uměleckých aktivit na rozvoj žáků?",
+        "Jak škola podporuje začínající pedagogy?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří mají zájem o umění a kreativitu.",
+        "Žáci, kteří mají vysoké vzdělávací ambice.",
+        "Žáci, kteří chtějí zapojit se do projektů a soutěží."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s potřebou individuální podpory.",
+        "Žáci, kteří chtějí věnovat víc pozornosti uměleckému vzdělávání.",
+        "Žáci, kteří mají nízkou motivaci."
+      ],
+      "plain_czech_summary": "Škola má výborné výsledky a kvalitní výuku, ale v uměleckém vzdělávání je potřeba zlepšit metodickou podporu a kontrolu. Žáci mají dobrou motivaci a úspěšnost, ale v některých oborech dochází k nerovnoměrnosti."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "výborný",
+        "key_numbers": [
+          "82 % žáků prospělo s vyznamenáním v loňském roce",
+          "18 prospělo s vyznamenáním, 9 prospělo v maturitní zkoušce",
+          "všichni žáci prospěli v sledovaném období"
+        ],
+        "evidence": "V loňském školním roce prospělo s vyznamenáním 82 % žáků."
+      },
+      "absence": {
+        "trend": "stabilní",
+        "key_numbers": [
+          "průměrná absence 107 hodin na žáka za školní rok"
+        ],
+        "evidence": "Průměrná absence žáků se pohybuje kolem 107 hodin na žáka za školní rok."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje efektivní služby.",
+        "Školní psycholožka řeší nežádoucí projevy chování.",
+        "Metodička prevence má dobře zpracované krizové plány."
+      ],
+      "safety_climate": [
+        "Budova školy je dobře udržovaná a esteticky zřízená.",
+        "Škola poskytuje bezpečné prostředí pro žáky."
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje s různými institucemi a projekty.",
+        "Žáci se zapojují do mezinárodních programů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, ale některé části jsou trochu složité.",
+      "uncertainty_notes": [
+        "Není jasné, jaký je konkrétní dopad výuky na výsledky žáků.",
+        "Není přesně uvedeno, jakým způsobem se ředitelka a pedagogická rada řídí.",
+        "Není zcela jasné, jakým způsobem škola zajišťuje kontrolu v základní umělecké škole."
+      ]
+    }
+  }
+}

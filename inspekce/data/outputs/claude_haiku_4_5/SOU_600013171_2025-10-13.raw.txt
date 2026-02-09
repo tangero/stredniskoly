@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600013171_2025-10-13",
+  "school_profile": {
+    "school_type": "Střední škola gastronomická a technická (SOU) s domovem mládeže",
+    "inspection_period": "13. až 15. října 2025",
+    "school_change_summary": "Výrazný nárůst počtu žáků (téměř 100 nových žáků od minulé inspekce, nyní 272 žáků v 13 třídách). Pozastavena činnost školní jídelny. Pedagogický sbor se částečně obměnil a rozšířil."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe v reálném prostředí",
+        "detail": "Škola má velmi dobrou spolupráci se sociálními partnery, která žákům umožňuje získávat odborné dovednosti přímo v pracovním prostředí.",
+        "evidence": "Spolupráce s podnikatelskými subjekty, zahraniční stáže v hlavních sídlech firem pro některé obory."
+      },
+      {
+        "tag": "Nízká absence v teoretické výuce",
+        "detail": "Absence žáků v teoretické výuce je nízká a neomluveným případům se daří předcházet.",
+        "evidence": "Absence v teoretické výuce nízká, neomluveným jen ojedinělá, svědčí o nastavení pravidel a motivaci."
+      },
+      {
+        "tag": "Domov mládeže s podporou",
+        "detail": "Domov mládeže vytváří přátelské klima a vychovatelé zajišťují podporu žáků k učení.",
+        "evidence": "Pozitivní přátelské klima, pestré aktivity, spolupráce s pedagogy školy, řešení problémů ubytovaných žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá kvalita teoretické výuky",
+        "detail": "Převažuje frontální výuka s pasivním zapojením žáků, chybí aktivizace a kooperativní metody.",
+        "evidence": "Žáci se zúčastnili pasivně, do sešitů si zapisovali nadiktované učivo, jen občas skupinové činnosti."
+      },
+      {
+        "tag": "Nekvalifikovaní učitelé bez podpory",
+        "detail": "Část učitelů nemá požadované vzdělání a specializaci, chybí jim metodická podpora.",
+        "evidence": "Vyučující bez požadovaného vzdělání vykazují metodické a didaktické nedostatky, neefektivní plánování času, občas odborné chyby."
+      },
+      {
+        "tag": "Absence v praktické výuce",
+        "detail": "V praktické výuce přetrvává záškoláctví spojené s neomluvenou absencí.",
+        "evidence": "V praktické výuce se škole nedaří tak jako v teoretické, záškoláctví s neomluvenou absencí stále přetrvává."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje učitele bez požadovaného vzdělání? Jaké školení nebo mentoring dostávají?",
+      "Jaké jsou důvody absence v praktické výuce a jak je škola řeší?",
+      "Jak se škola vypořádala s pozastavením činnosti školní jídelny a jak to ovlivňuje chod domova mládeže?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří se chtějí učit praktickým dovednostem v reálném pracovním prostředí a mají zájem o gastronomii, stavbu nebo prodej.",
+      "Žáci ze vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže s podporou a aktivitami.",
+      "Žáci, kteří potřebují strukturované prostředí s jasně nastavenými pravidly a motivací k docházce."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují aktivní a interaktivní výuku – teoretická výuka je zde převážně frontální a pasivní.",
+      "Žáci se speciálními vzdělávacími potřebami – jejich potřeby nejsou dostatečně zohledňovány v běžné výuce.",
+      "Žáci, kteří se spoléhají na kvalitní metodickou podporu – část učitelů nemá dostatečné vzdělání a zkušenosti."
+    ],
+    "plain_czech_summary": "Střední škola v Žamberku nabízí praktické obory s velmi dobrou spoluprací s firmami. Žáci se učí v reálném pracovním prostředí a mají nízkou absenci. Domov mládeže poskytuje podporu. Problém je v kvalitě teoretické výuky – převažuje nudná frontální výuka bez aktivního zapojení žáků. Část učitelů nemá potřebné vzdělání a chybí jim metodická podpora. Škola se snaží zlepšit, ale má co dělat."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dobrý – vysoká úspěšnost",
+      "key_numbers": [
+        "15 žáků vykonalo maturitní zkoušku",
+        "2 žáci neuspěli",
+        "Úspěšnost 86,7 %"
+      ],
+      "evidence": "Maturitní zkoušku vykonalo 15 žáků, z nich dva neuspěli."
+    },
+    "absence": {
+      "trend": "Dobrý v teoretické výuce, problematický v praktické",
+      "key_numbers": [
+        "Absence v teoretické výuce nízká",
+        "Neomluveným absence jen ojedinělá",
+        "V praktické výuce přetrvává záškoláctví"
+      ],
+      "evidence": "Napříč obory vzdělání je absence v teoretické výuce nízká, neomluveným jen ojedinělá. V praktické výuce se škole tolik nedaří a záškoláctví přetrvává."
+    },
+    "support_services": [
+      "Výchovná poradkyně (zástupkyně ředitelky)",
+      "Metodička prevence (absolvovala specializační studium)",
+      "Kariérová poradkyně (doplňuje si specializaci)",
+      "Poradenské služby vycházejí z plánu na školní rok"
+    ],
+    "safety_climate": [
+      "Klidná pracovní atmosféra, žáci dodržují nastavená pravidla",
+      "Mobilní telefony odkládány do stojánků, kontrola jejich používání",
+      "Žáci vedeni k dodržování hygienických předpisů a bezpečnosti v praktické výuce",
+      "Rizikové situace se daří včas zachytit a úspěšně řešit"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery pro praktický výcvik",
+      "Zahraniční stáže v hlavních sídlech firem pro některé obory",
+      "Spolupráce se základními školami v regionu",
+      "Spolupráce s profesními organizacemi (Asociace kuchařů, Cech topenářů, Česká barmanská asociace)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky. Jsou jasně odděleny silné a slabé stránky. Doporučení jsou konkrétní. Pouze některé pasáže jsou více odborné, ale celkově je text pro rodiče pochopitelný.",
+    "uncertainty_notes": [
+      "Není jasné, jak dlouho bude školní jídelna pozastavena a jaký to má dopad na chod domova mládeže.",
+      "Počet nekvalifikovaných učitelů není přesně specifikován – není jasné, kolik jich je a které předměty vyučují.",
+      "Není uvedeno, jaké konkrétní obory mají zahraniční stáže a jak často se jich žáci účastní."
+    ]
+  }
+}
+```

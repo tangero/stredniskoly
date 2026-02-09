@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T08:56:45.826590+00:00",
+  "run_finished_utc": "2026-02-09T08:57:09.252529+00:00",
+  "raw_file": "GY4_600005143_2025-11-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600005143_2025-11-19",
+    "school_profile": {
+      "school_type": "gymnázium",
+      "inspection_period": "19. 11. 2025 − 22. 11. 2025 a 24. 11. 2025",
+      "school_change_summary": "Škola si udržuje stabilní naplněnost a zlepšila materiálně-technické podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "aktivní ředitel",
+          "detail": "Ředitel efektivně využívá zdroje pro výuku a mimoškolní činnost.",
+          "evidence": "Ředitel získává finanční a personální zdroje pro výuku."
+        },
+        {
+          "tag": "podpora praktických dovedností",
+          "detail": "Škola podporuje praktické dovednosti žáků v různých oblastech.",
+          "evidence": "Praktické dovednosti jsou rozvíjeny v přírodovědných i estetických předmětech."
+        },
+        {
+          "tag": "zapojení žáků do školního života",
+          "detail": "Žáci jsou zapojeni do projektů a rozšiřujících aktivit.",
+          "evidence": "Žáci podílejí na organizaci akcí a prezentacích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "aktivizační metody",
+          "detail": "Některé hodiny používají méně aktivizační metody.",
+          "evidence": "Nízká míra aktivizace žáků v některých vyučovacích hodinách."
+        },
+        {
+          "tag": "formativní hodnocení",
+          "detail": "Některé učitelé nevýrazně používají formativní zpětnou vazbu.",
+          "evidence": "Méně časté uplatňování formativní zpětné vazby."
+        },
+        {
+          "tag": "nejednotná klasifikace",
+          "detail": "Rozdílná klasifikace v různých předmětech závisí na učiteli.",
+          "evidence": "Nejednotná měřítka hodnocení v některých předmětech."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaký je dopad využití digitálních technologií na výuku?",
+        "Jak se škola podílí na mezinárodních projektech?",
+        "Jakým způsobem se škola stará o žáky s různými potřebami?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí rozvíjet jazykové dovednosti a studovat v zahraničí.",
+        "Žákům zájemcům o vědecké a technické obory.",
+        "Žákům, kteří chtějí být zapojeni do výuky a mimoškolních aktivit."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kteří potřebují více individuálního přístupu v učení.",
+        "Žákům, kteří mají potíže s aktivizací a zájmem o výuku.",
+        "Žákům, kteří chtějí studovat v třídách s vysokou klasifikací."
+      ],
+      "plain_czech_summary": "Škola má kvalitní podmínky pro výuku, ale některé vyučovací metody potřebují zlepšení. Žáci jsou zapojeni do různých aktivit, ale existují rozdíly v hodnocení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "stabilní",
+        "key_numbers": [
+          "35−40 % maturantů s vyznamenáním",
+          "80 % žáků nahrazuje profilovou část maturitní zkoušky mezinárodním certifikátem",
+          "31 žáků úspěšně skládá zkoušku Deutsches Sprachdiplom II"
+        ],
+        "evidence": "Výsledky maturitních zkoušek jsou stabilní a lepší než průměr."
+      },
+      "absence": {
+        "trend": "nízká",
+        "key_numbers": [
+          "nižší počet kázeňských opatření",
+          "přijatelný počet zameškaných hodin",
+          "zanedbatelná míra neomluvené absence"
+        ],
+        "evidence": "Škola má nízkou úroveň absence a rizikového chování."
+      },
+      "support_services": [
+        "školní psycholožky",
+        "výchovní poradkyně",
+        "asistentky pedagoga"
+      ],
+      "safety_climate": [
+        "elektronický a kamerový systém",
+        "celodenní personální dohled",
+        "úzká spolupráce poradenských pracovníků"
+      ],
+      "partnerships_practice": [
+        "partnerství s Univerzitou Karlovou",
+        "zahraniční mobility v rámci Erasmus+",
+        "spolupráce s Národním muzeem"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, ale některé části mohou být jasnější.",
+      "uncertainty_notes": [
+        "Není jasné, jak se škola připravuje na budoucí výzvy.",
+        "Nebylo zjištěno, jakým způsobem škola hodnotí učitelskou práci.",
+        "Není jasné, jak se škola věnuje dlouhodobému vzdělávání pedagogů."
+      ]
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T08:58:28.535006+00:00",
+  "run_finished_utc": "2026-02-09T08:58:53.787615+00:00",
+  "raw_file": "SOS_600171361_2025-11-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600171361_2025-11-12",
+    "school_profile": {
+      "school_type": "Střední škola gastronomie a služeb",
+      "inspection_period": "2025-11-12 až 2025-11-17",
+      "school_change_summary": "Škola provozuje školní jídelny a poskytuje střední stupeň vzdělání s výučním listem a s maturitou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s partnery",
+          "detail": "Škola spolupracuje s tuzemskými i zahraničními partnery, což podporuje odbornost žáků.",
+          "evidence": "Spolupráce s tuzemskými i zahraničními partnery efektivně podporuje odbornost žáků."
+        },
+        {
+          "tag": "Materiální vybavení",
+          "detail": "Škola má moderní vybavení pro odborné vzdělávání.",
+          "evidence": "Materiální vybavení pro odborné vzdělávání odpovídá současným trendům."
+        },
+        {
+          "tag": "Praktické vyučování",
+          "detail": "Praktické vyučování probíhá na různých pracovištích, což posiluje odborné dovednosti žáků.",
+          "evidence": "Praktické vyučování probíhá na různých pracovištích, zahrnujících i smluvní."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečné hodnocení",
+          "detail": "Škola má nedostatečné formátivní hodnocení a sebehodnocení žáků.",
+          "evidence": "Formativní hodnocení reflektující individuální pokrok se uplatňuje výjmečně."
+        },
+        {
+          "tag": "Nedostatečná analýza výsledků",
+          "detail": "Škola nedostatečně analyzuje výsledky vzdělávání žáků.",
+          "evidence": "Škola nedostatečně analyzuje data získaná z interní evaluace výsledků vzdělávání."
+        },
+        {
+          "tag": "Nedostatečné podpůrné opatření",
+          "detail": "Škola částečně nezajišťuje účinné podpůrné opatření pro žáky se speciálními potřebami.",
+          "evidence": "Škola nezcela důsledně provádí systematickou analýzu příčin neúspěšnosti žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaký je poměr žáků s výučním listem a s maturitou?",
+        "Jak se škola připravuje na maturitní zkoušky?",
+        "Jaké jsou možnosti praktického vyučování v rámci školy?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí získat odborné dovednosti v oblasti gastronomie a služeb.",
+        "Žáci, kteří chtějí využít zahraniční praktické pobytové programy.",
+        "Žáci, kteří preferují výuku v praxi a praktické vyučování."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se speciálními vzdělávacími potřebami, protože škola má nedostatek individuální podpory.",
+        "Žáci, kteří potřebují větší formátivní hodnocení a sebehodnocení.",
+        "Žáci, kteří chtějí vysoké výsledky v maturitních zkouškách, protože výsledky jsou často pod průměrem."
+      ],
+      "plain_czech_summary": "Škola má dobré odborné vzdělávání a praktické vyučování. Může být vhodná pro žáky, kteří chtějí získat odborné dovednosti. Škola má však nedostatky v hodnocení a podpoře žáků se speciálními potřebami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Sestupný",
+        "key_numbers": [
+          "39,3 % neúspěšnost v Podnikání v roce 2025",
+          "26,1 % neúspěšnost v Hotelnictví v roce 2025",
+          "22,7 % neúspěšnost v Kosmetických službách v roce 2025"
+        ],
+        "evidence": "Výsledky ve společné části maturitní zkoušky v části sledovaného období nedosahovaly vždy úrovně průměru dané skupiny oborů vzdělání."
+      },
+      "absence": {
+        "trend": "Neuvedeno",
+        "key_numbers": [
+          "Školní rok 2025/2026: 629 žáků"
+        ],
+        "evidence": "Škola vzdělávala 629 žáků v roce 2025/2026."
+      },
+      "support_services": [
+        "Výchovná poradna",
+        "Psycholožka",
+        "Speciální pedagožka"
+      ],
+      "safety_climate": [
+        "Škola provozuje školní jídelny a výdejny.",
+        "Klima školy je monitorováno prostřednictvím dotazníkových šetření."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s tuzemskými a zahraničními partnery.",
+        "Škola je zapojena do projektu získávání dílčích kvalifikací v oblasti gastronomie."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 3,
+      "czech_clarity_reason": "Text je jasný, ale některé části jsou složité a mohou být pro rodiče nejasné.",
+      "uncertainty_notes": [
+        "Není jasné, jak škola uplatňuje individuální podpory pro žáky se speciálními potřebami.",
+        "Není uvedeno detailní hodnocení výsledků vzdělávání žáků.",
+        "Není jasné, jak se škola připravuje na maturitní zkoušky."
+      ]
+    }
+  }
+}

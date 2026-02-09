@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "school_profile": {
+    "school_type": "Osmiletý gymnázium v Týně nad Vltavou s 204 žáky v osmi třídách, denní forma vzdělávání s maturitou",
+    "inspection_period": "21. 10. 2025 – 23. 10. 2025",
+    "school_change_summary": "V roce 2024 nastoupil nový zástupce ředitele, probíhá generační obměna pedagogů. Škola prošla rozsáhlou rekonstrukcí suterénních prostor a přízemí, vybudovala nové zázemí pro žáky a upravila venkovní plochy. Obnovila vybavení kabinetů a IT techniku včetně robotických stavebnic."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s místní komunitou",
+        "detail": "Škola aktivně spolupracuje s obcí a energetickou společností, posiluje vztah žáků k místu, kde žijí.",
+        "evidence": "Spolupráce školy se sociálními partnery reflektuje význam sounáležitosti s obcí, podporuje vztah žáků k místu, kde žijí, a posiluje mezigenerační i sociální cítění."
+      },
+      {
+        "tag": "Peer programy a osobnostní rozvoj",
+        "detail": "Starší žáci vedou mladší spolužáky, funguje studentský parlament a aktivní prevence rizikového chování.",
+        "evidence": "Škola posiluje pozitivní sebepojetí a sebevědomí žáků a podporuje rozvoj jejich sociálních a osobnostních kompetencí, včetně peer aktivit probíhajících na škole mezi žáky jednotlivých ročníků."
+      },
+      {
+        "tag": "Nadprůměrné maturitní výsledky",
+        "detail": "V roce 2025 dosáhla škola v matematice a němčině nadprůměrných výsledků, pouze jeden žák konal opravnou zkoušku.",
+        "evidence": "Ve zkušebním roce 2025 dosáhla v některých předmětech (matematika, německý jazyk) škola nadprůměrných výsledků. Pouze jeden žák konal opravnou zkoušku z anglického jazyka."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Chybějící diferenciace výuky",
+        "detail": "Výuka málo zohledňuje individuální potenciál jednotlivých žáků, chybí gradace úkolů podle schopností.",
+        "evidence": "Ve výuce byla pouze výjimečně uplatněna diferenciace ve výuce s ohledem na potenciál jednotlivých žáků. Chyběla diferenciace vzdělávacích cílů, např. formou gradace zadávaných úkolů."
+      },
+      {
+        "tag": "Absence tělocvičny",
+        "detail": "Dvě tělocvičny v budově nejsou využívány, žáci musí v zimě docházet do městské haly.",
+        "evidence": "Dvě menší tělocvičny v budově školy nejsou z technických důvodů využívány. Absence funkční tělocvičny limituje organizaci a výuku tělesné výchovy v zimním období."
+      },
+      {
+        "tag": "Nedostatečné využití formativního hodnocení",
+        "detail": "Učitelé málo využívají zpětnou vazbu s jasnými kritérii, která by žákům pomohla pochopit jejich pokrok.",
+        "evidence": "Zdařilé využití prvků formativního hodnocení bylo zaznamenáno méně často, neboť zpravidla chyběla kritéria, podle kterých by hodnocení probíhalo."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola konkrétně pracuje s nadanými žáky a jak diferencuje výuku podle jejich schopností?",
+      "Jaké jsou plány školy s opravou tělocvičen a jak to ovlivňuje výuku tělesné výchovy v zimních měsících?",
+      "Jakým způsobem škola zapojuje poznatky z dalšího vzdělávání pedagogů do každodenní výuky?"
+    ],
+    "who_school_fits": [
+      "Žáky, kteří chtějí studovat v malém venkovském gymnáziu s rodinnou atmosférou a silným vztahem k místní komunitě",
+      "Studenty se zájmem o přírodní vědy, techniku a jazyky, kteří ocení spolupráci s univerzitou a energetickou společností",
+      "Děti, které oceňují peer aktivity, možnost zapojit se do studentského parlamentu a charitativních projektů v regionu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s výrazně nadprůměrným potenciálem, kteří potřebují systematickou diferenciaci a individuální přístup ve výuce",
+      "Studenti se silným zájmem o sport, kteří očekávají kvalitní zázemí pro tělesnou výchovu přímo v budově školy",
+      "Děti, které preferují moderní výukové metody s důrazem na kritické myšlení, práce s různými zdroji a aktivní využívání IT"
+    ],
+    "plain_czech_summary": "Gymnázium v Týně nad Vltavou je malá venkovská škola s 204 žáky, která nabízí rodinné prostředí a silné propojení s místní komunitou. Škola prošla rozsáhlou rekonstrukcí a má dobré materiální zázemí. Výrazným pozitivem jsou peer programy, kdy starší žáci vedou mladší, a spolupráce s energetickou společností i univerzitou. Maturitní výsledky jsou nadprůměrné, zejména v matematice a němčině. Slabinou je nedostatečná diferenciace výuky podle schopností žáků a chybějící funkční tělocvičny v budově. Výuka probíhá v příjemném klimatu, ale málo využívá moderní metody rozvíjející kritické myšlení. Škola je vhodná pro žáky hledající klidné prostředí s důrazem na komunitu, méně pro ty, kdo potřebují systematickou práci s nadáním."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "stabilní s nadprůměrnými výsledky",
+      "key_numbers": [
+        "V roce 2025 nadprůměrné výsledky v matematice a německém jazyce",
+        "Pouze 1 žák konal opravnou zkoušku (anglický jazyk), úspěšně složil na podzim",
+        "5 žáků nahradilo maturitu z cizího jazyka certifikátem"
+      ],
+      "evidence": "Výsledky maturitních zkoušek jsou dlouhodobě srovnatelné s celostátním průměrem škol stejného zaměření. Ve zkušebním roce 2025 dosáhla v některých předmětech (matematika, německý jazyk) škola nadprůměrných výsledků."
+    },
+    "absence": {
+      "trend": "velmi nízká",
+      "key_numbers": [
+        "Absence žáků zůstává na nízké úrovni",
+        "Neomluvené hodiny nebyly zaznamenány",
+        "Cca 10 % žáků odchází po 4. ročníku na jiné školy"
+      ],
+      "evidence": "Absence žáků zůstává na nízké úrovni, neomluvené hodiny nebyly zaznamenány. Přesto po ukončení 4. ročníku nižšího gymnázia ojediněle žáci odcházejí. Odchody se dlouhodobě pohybují kolem 10 %."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje služby odpovídající velikosti školy včetně kariérového poradenství",
+      "Podpůrná opatření realizována podle doporučení poradenských zařízení, pravidelně vyhodnocována",
+      "Pozice školní asistentky financována z dotačních prostředků",
+      "Elektronická schránka důvěry pro žáky, adaptační kurzy, besedy s odborníky"
+    ],
+    "safety_climate": [
+      "Výuka probíhá v příjemném a vstřícném pracovním klimatu",
+      "Preventivní program zaměřený na předcházení rizikovému chování a včasnou intervenci",
+      "Aktivní peer program – žáci působí v prevenci nejen ve vlastní škole, ale i na ZŠ v regionu",
+      "Pravidelné třídnické hodiny, v případě potřeby za účasti výchovného poradce"
+    ],
+    "partnerships_practice": [
+      "Klíčová spolupráce s energetickou společností (podpora technického vzdělávání, Jaderná maturita)",
+      "Partnerství s Pedagogickou a Přírodovědeckou fakultou JU (projekt Provázející učitel, Den plný vědy)",
+      "Spolupráce se základními školami v regionu",
+      "Zapojení do charitativních a společenských aktivit v obci, jazykové zájezdy do Německa a Anglie"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je psán srozumitelně s minimem úřednických obratů. Drobné složitější formulace se vyskytují v popisu pedagogických metod, ale celkově je zpráva dobře čitelná pro rodiče.",
+    "uncertainty_notes": [
+      "Není zcela jasné, z jakých technických důvodů nejsou tělocvičny využívány a zda se plánuje jejich oprava",
+      "Chybí konkrétní informace o tom, jak škola pracuje s poznatky z dalšího vzdělávání pedagogů v praxi",
+      "Není specifikováno, jaké konkrétní kroky škola plánuje k posílení diferenciace výu

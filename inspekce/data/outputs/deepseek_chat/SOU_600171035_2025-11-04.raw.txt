@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "SOU_600171035_2025-11-04",
+  "school_profile": {
+    "school_type": "Střední odborná škola",
+    "inspection_period": "4. 11. 2025 až 7. 11. 2025",
+    "school_change_summary": "Zlepšení materiálních podmínek, vybudování nového centra pro simulaci technologií, zřízení školního poradenského pracoviště."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerská spolupráce",
+        "detail": "Škola spolupracuje s odbornými firmami a průmyslovými podniky.",
+        "evidence": "Spolupráce se Svazem energetiky ČR a desítkami výrobních podniků."
+      },
+      {
+        "tag": "Výsledky žáků",
+        "detail": "Žáci dosahují dobrých výsledků u maturitních a závěrečných zkoušek.",
+        "evidence": "Hrubá neúspěšnost u maturit v roce 2024 byla 2 % oproti celostátnímu průměru 13,7 %."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola má kvalitní odborné zázemí a nové centrum pro simulaci technologií.",
+        "evidence": "Vybudování ON-Voltage centra pro reálnou simulaci technologií."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pedagogické vedení",
+        "detail": "Rezervy v pedagogickém vedení a nedostatky v dokumentaci.",
+        "evidence": "Nejednotnost pedagogických postupů a omezené řízení kvality výuky."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Omezená podpora žáků se speciálními vzdělávacími potřebami.",
+        "evidence": "Podpůrná opatření byla realizována pouze v omezené míře."
+      },
+      {
+        "tag": "Metody výuky",
+        "detail": "Převažuje frontální výuka nad aktivními metodami.",
+        "evidence": "Frontální výuka byla realizována v 68 % sledovaných hodin."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje žáky se speciálními vzdělávacími potřebami?",
+      "Jaké jsou možnosti odborné praxe pro žáky?",
+      "Jaké jsou výsledky žáků u maturitních zkoušek?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o elektrotechniku a energetiku.",
+      "Žáci, kteří preferují praktickou výuku a odbornou praxi.",
+      "Žáci, kteří chtějí získat stipendium."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individuální podporu ve výuce.",
+      "Žáci, kteří preferují aktivní metody výuky.",
+      "Žáci, kteří mají zájem o širší spektrum oborů."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní odborné vzdělání v elektrotechnice a energetice s moderním vybavením a širokou partnerskou spoluprací. Žáci dosahují dobrých výsledků u maturitních a závěrečných zkoušek. Rezervy jsou v pedagogickém vedení a podpoře žáků se speciálními potřebami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírný nárůst neúspěšnosti",
+      "key_numbers": [
+        "2 % neúspěšnost v roce 2024",
+        "6,9 % neúspěšnost v roce 2025"
+      ],
+      "evidence": "Hrubá neúspěšnost u maturit v roce 2024 byla 2 % oproti celostátnímu průměru 13,7 %."
+    },
+    "absence": {
+      "trend": "Pokles absence",
+      "key_numbers": [
+        "173,21 hodin na žáka v roce 2023/2024",
+        "126,09 hodin na žáka v roce 2024/2025"
+      ],
+      "evidence": "Průměrná absence na žáka klesla o 27 % po zavedení limitu."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště",
+      "Preventivní program proti šikaně a záškoláctví",
+      "Kariérové poradenství"
+    ],
+    "safety_climate": [
+      "Dodržování bezpečnostních pravidel v odborném výcviku",
+      "Preventivní programy zaměřené na bezpečné chování online"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se Svazem energetiky ČR",
+      "Partnerské vztahy s desítkami výrobních podniků",
+      "Projekty financované z EU (Erasmus+, Jan Amos Komenský)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je přehledná, ale některé části jsou příliš detailní.",
+    "uncertainty_notes": [
+      "Není jasné, jak často jsou realizovány podpůrné opatření.",
+      "Chybí informace o konkrétních výsledcích žáků v soutěžích.",
+      "Není uvedeno, jak často probíhá další vzdělávání pedagogů."
+    ]
+  }
+}
+```

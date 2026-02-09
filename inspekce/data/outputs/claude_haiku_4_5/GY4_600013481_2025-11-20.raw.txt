@@ -2,54 +2,106 @@
 {
   "report_id": "GY4_600013481_2025-11-20",
   "school_profile": {
-    "school_type": "Gymnázium (osmileté a čtyřleté studium) se zaměřením na matematiku, příspěvková organizace",
+    "school_type": "Osmileté a čtyřleté gymnázium se zaměřením na matematiku",
     "inspection_period": "20.–21. listopadu 2025 a 24.–25. listopadu 2025",
-    "school_change_summary": "Nový ředitel (od srpna 2024) s ambiciózní koncepcí rozvoje. Škola se modernizuje: nové počítačové učebny, robotické pomůcky, částečná renovace budovy. Hlavní zaměření na změnu obsahu a způsobu vzdělávání včetně zavedení slovního hodnocení a diferencovaného studia."
+    "school_change_summary": "Nový ředitel od srpna 2024 s koncepcí rozvoje zaměřenou na změnu obsahu a způsobu vzdělávání. Probíhá postupná modernizace vybavení a budov."
   },
   "for_parents": {
     "strengths": [
       {
         "tag": "Výjimečné zahraniční zkušenosti",
-        "detail": "Projekt Erasmus+ umožňuje žákům i učitelům vyjíždět na jazykové vzdělávání a stínování do zahraničí (Německo, Finsko, Španělsko, Belgie). Tato praxe je svým rozsahem naprosto výjimečná.",
-        "evidence": "Škola vyniká v rámci zastoupení projektu ERASMUS+ (zaměřený jak na žáky, tak i učitele) možností vyjet na jazykové vzdělávání nebo stínování do zahraničí – tzv. skupinové mobility. Tato praxe je svým rozsahem naprosto výjimečná a má přímý dopad do jazykových a sociálních kompetencí žáků i profesních zkušeností učitelů."
+        "detail": "Projekt Erasmus+ umožňuje žákům i učitelům jazykové vzdělávání a stínování v zahraničí.",
+        "evidence": "Výměnné pobyty v Německu, Finsku, Španělsku, Belgii s přímým dopadem na jazykové a sociální kompetence."
       },
       {
         "tag": "Vynikající studijní výsledky",
-        "detail": "Více než 55 % žáků čtyřletého studia a více než 72 % žáků osmiletého studia prospívá s vyznamenáním. Téměř nulová neúspěšnost u maturit. Lepší výsledky než celorepublikový průměr.",
-        "evidence": "V posledních třech letech prospělo průměrně ve čtyřletém gymnáziu více jak 55 % žáků s vyznamenáním a v osmiletém studiu prospělo s vyznamenáním více jak 72 % žáků. V posledních třech letech vykazuje škola téměř nulovou hrubou neúspěšnost žáků u maturitní zkoušky."
+        "detail": "Dlouhodobě velmi dobré výsledky u maturit a vysoká úspěšnost absolventů na vysokých školách.",
+        "evidence": "Více než 55 % žáků čtyřletého studia a 72 % osmiletého studia prospívá s vyznamenáním."
       },
       {
-        "tag": "Soutěžní úspěchy",
-        "detail": "Žáci dosahují medailí na mezinárodních olympiádách (matematika, lingvistika, astronomie), vítězství v celostátních soutěžích a úspěchy v odborné činnosti.",
-        "evidence": "V loňském školním roce dosáhli žáci významných úspěchů např. v Mezinárodní matematické olympiádě (bronzová medaile), tři medaile na Středoevropské matematické olympiádě, bronzová medaile na Mezinárodní lingvistické olympiádě, stříbrná medaile na Mezinárodní astronomické olympiádě."
-      },
-      {
-        "tag": "Kvalitní výuka cizích jazyků",
-        "detail": "Výuka angličtiny, němčiny a ruštiny se vyznačuje velmi dobrou úrovní žáků, aktivním zapojením a cíleným využitím interaktivní tabule. Žáci pohotově reagují a úspěšně řeší problémové úlohy.",
-        "evidence": "Hodiny cizích jazyků (anglického, německého i ruského) se vyznačovaly velmi dobrou úrovní žáků, kteří pohotově reagovali, vhodně pracovali se slovní zásobou a úspěšně řešili problémové úlohy. Ve výuce byla patrná plynulá konverzace, aktivní zapojení a cílené využití interaktivní tabule."
-      },
-      {
-        "tag": "Nízká absence",
-        "detail": "Průměrná omluvená absence za poslední tři roky je 120 hodin na žáka. Neomluvenou absenci řeší škola zřídka.",
-        "evidence": "Průměrná omluvená absence za poslední tři roky je 120 hodin na žáka, neomluvenou absenci řeší škola zřídka."
-      },
-      {
-        "tag": "Aktivní školní parlament",
-        "detail": "Parlament má dvě sekce (osmileté a čtyřleté gymnázium), pravidelně se schází a předkládá náměty vedení. Ředitel se pravidelně účastní komunikace s vedením parlamentu.",
-        "evidence": "Školní parlament má na škole dvě sekce a to na osmiletém i čtyřletém gymnáziu, pravidelně se schází a předkládá náměty vedení školy. Je výbornou praxí, že se ředitel pravidelně účastní komunikace s vedením parlamentu."
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují výjimečných výsledků v mezinárodních a celostátních olympiádách.",
+        "evidence": "Bronzová medaile na Mezinárodní matematické olympiádě, tři medaile na Středoevropské matematické olympiádě."
       }
     ],
     "risks": [
       {
-        "tag": "Tradiční frontální výuka",
-        "detail": "Převládá tradiční frontální výuka (72 % hodin), skupinová práce jen v 15 % hodin. Žáci nejsou dostatečně vedeni k využívání různých informačních zdrojů ani ke kritickému myšlení.",
-        "evidence": "Převládala tradiční frontální výuka doplněná řízeným rozhovorem, která byla přítomna v 72 % hodin, zatímco skupinová výuka se uplatnila jen v 15 % hodin. Žáci nebyli systematicky vedeni k využívání rozmanitých informačních zdrojů, podpoře komunikativních dovedností ani dostatečně podněcováni ke kritickému myšlení."
-      },
-      {
-        "tag": "Chybí jednotná kritéria hodnocení",
-        "detail": "Pouze část vyučujících si v rámci předmětových komisí stanovuje jednotné postupy při hodnocení. Ostatní si je určují individuálně podle vlastních potřeb.",
-        "evidence": "Kritéria hodnocení nebyla v době inspekční činnosti sjednocena v rámci celé školy. Pouze část vyučujících si v rámci předmětových komisí stanovuje jednotné postupy při hodnocení, ostatní si je určují individuálně podle vlastních potřeb."
+        "tag": "Tradiční výuka bez dostatečné aktivizace",
+        "detail": "Převládá frontální výuka (72 % hodin), skupinová práce jen v 15 % hodin.",
+        "evidence": "Hospitační činnost zjistila málo aktivizujících metod a forem práce, omezené využití kooperativních strategií."
       },
       {
         "tag": "Nedostatečná podpora nadaných žáků",
-        "detail": "Ve sledované výuce nebyly nabíz
+        "detail": "Chybí systematický systém práce s talentovanými žáky a diferenciace podle nadání.",
+        "evidence": "Ve sledované výuce nebyly nabízeny aktivity s odlišnou mírou náročnosti pro nadané žáky."
+      },
+      {
+        "tag": "Vysoký tlak na výkon bez dostatečné péče",
+        "detail": "Žáci pociťují silný tlak na výkon, kterému se poradenské pracoviště věnuje okrajově.",
+        "evidence": "Školní psycholog pracuje jen jeden den v týdnu, chybí práce s celými třídami na wellbeing."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané a mimořádně nadané žáky v běžné výuce?",
+      "Jaké jsou plány na zvýšení počtu hodin školního psychologa a jeho práce s třídami?",
+      "Jak se škola vypořádává s vysokým tlakem na výkon, který žáci pociťují?"
+    ],
+    "who_school_fits": [
+      "Žáci s vysokými ambicemi a zájmem o studium na vysoké škole – výborné výsledky u maturit a příprava na vysokoškolské studium.",
+      "Jazykově nadaní žáci – projekt Erasmus+ a kvalitní výuka cizích jazyků s interaktivními metodami.",
+      "Žáci se zájmem o soutěže a olympiády – škola aktivně podporuje účast v mezinárodních a celostátních soutěžích."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciace – výuka je zatím málo přizpůsobena různým vzdělávacím potřebám.",
+      "Žáci se psychickými problémy nebo vysokou úzkostností – omezená kapacita školního psychologa a okrajová péče o wellbeing.",
+      "Žáci preferující aktivní, skupinovou práci – převládá tradiční frontální výuka s omezeným prostorem pro kooperativní učení."
+    ],
+    "plain_czech_summary": "Gymnázium Brno patří mezi nejlepší střední školy s výjimečnými výsledky u maturit a úspěchy v soutěžích. Projekt Erasmus+ nabízí žákům unikátní zahraniční zkušenosti. Nový ředitel postupně modernizuje školu. Hlavní výzvou je tradiční frontální výuka, která málo aktivizuje žáky a nedostatečně podporuje nadané. Vysoký tlak na výkon není dostatečně řešen školním psychologem. Škola je ideální pro ambiciózní žáky se zájmem o vysoké školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborný",
+      "key_numbers": [
+        "Téměř nulová hrubá neúspěšnost u maturitní zkoušky v posledních třech letech",
+        "Lepší výsledky než celorepublikový průměr ve společné části maturitní zkoušky",
+        "Vysoká úspěšnost absolventů při přechodu na vysoké školy"
+      ],
+      "evidence": "Škola vykazuje dlouhodobě velmi dobré výsledky u maturitní zkoušky a ve srovnání s celorepublikovým průměrem dosahují žáci lepších výsledků."
+    },
+    "absence": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "Průměrná omluvená absence 120 hodin na žáka za poslední tři roky",
+        "Neomluvenou absenci řeší škola zřídka",
+        "Pravidlo minimální docházky do jednotlivých předmětů stanovené školním řádem"
+      ],
+      "evidence": "Vedení školy sleduje výsledky a absenci, v případě negativních zjištění přijímá adekvátní opatření."
+    },
+    "support_services": [
+      "Dva výchovní poradci a dva metodici prevence (každý zaměřen na jeden stupeň)",
+      "Čtyři asistenti pedagoga na osmiletém gymnáziu",
+      "Školní psycholog pracující jeden den v týdnu (doporučuje se zvýšit úvazek)",
+      "Doučování a pedagogické konzultace pro žáky s rizikem neúspěchu"
+    ],
+    "safety_climate": [
+      "Převážná většina sledovaných hodin probíhala v atmosféře vzájemného respektu",
+      "Žáci dodržovali nastavená pravidla chování",
+      "V posledním školním roce řešeny jednotky případů kyberšikany, sebepoškozování a užívání návykových látek"
+    ],
+    "partnerships_practice": [
+      "Projekt Erasmus+ s partnerskými školami v Německu, Finsku, Španělsku, Belgii",
+      "Aktivní spolupráce s mnoha zahraničními školami",
+      "Školní parlament se dvěma sekcemi (osmileté a čtyřleté gymnázium) s pravidelným zasedáním"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však poměrně dlouhé a obsahují více technických termínů.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počet hodin, které věnuje školní psycholog jednotlivým žákům nebo třídám.",
+      "Není jasné, jak přesně se měří 'vysoký tlak na výkon' – vychází z dotazníků nebo rozhovorů, ale konkrétní čísla nejsou uvedena.",
+      "Doporučení jsou formulována obecně bez konkrétního časového plánu implementace."
+    ]
+  }
+}
+```

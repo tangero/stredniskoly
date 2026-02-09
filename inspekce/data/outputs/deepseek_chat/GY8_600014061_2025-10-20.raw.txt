@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600014061_2025-10-20",
+  "school_profile": {
+    "school_type": "Gymnázium a základní umělecká škola",
+    "inspection_period": "2025-10-20 až 2025-10-23",
+    "school_change_summary": "Generační obměna pedagogického sboru, zlepšení prostorových a materiálních podmínek, rekonstrukce podkroví a elektroinstalace."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "V posledních třech letech nulová neúspěšnost u maturit a 100% přijetí na vysoké školy.",
+        "evidence": "27 žáků maturovalo, 18 s vyznamenáním, 9 prospělo."
+      },
+      {
+        "tag": "Kvalitní výuka jazyků",
+        "detail": "Žáci dosahují vysoké jazykové úrovně a skládají mezinárodní zkoušky.",
+        "evidence": "Výuka vedena v cílovém jazyce, aktivní přístup žáků."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola poskytuje konzultace a doučování žákům se zhoršeným prospěchem.",
+        "evidence": "Pravidelné sledování a řešení neúspěšnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nerovnoměrná kvalita ZUŠ",
+        "detail": "Rozdíly v úrovni výuky mezi obory a nedostatečné metodické vedení.",
+        "evidence": "Fluktuace pedagogů, rozdílná docházka do kolektivní výuky."
+      },
+      {
+        "tag": "Nízká účast na některých předmětech",
+        "detail": "Vysoká absence v Interpretačním semináři a jiných předmětech ZUŠ.",
+        "evidence": "Polovina žáků nerozvíjí umělecké kompetence v plném rozsahu."
+      },
+      {
+        "tag": "Formální hodnocení v ZUŠ",
+        "detail": "Vyhodnocování hospitací v ZUŠ postrádá konstruktivní zpětnou vazbu.",
+        "evidence": "Chybí hlubší zaměření na profesní reflexi učitelů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje žáky se speciálními vzdělávacími potřebami?",
+      "Jaké jsou možnosti zapojení žáků do mezinárodních projektů?",
+      "Jaké jsou podmínky pro výuku tanečního oboru?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicemi studovat na vysoké škole.",
+      "Zájemci o jazykové vzdělání a mezinárodní zkoušky.",
+      "Talentované děti v hudebním a tanečním oboru."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují stabilní pedagogický tým v ZUŠ.",
+      "Rodiče, kteří očekávají jednotnou kvalitu výuky napříč obory ZUŠ.",
+      "Žáci s nízkou motivací pro pravidelné účasti na kolektivní výuce."
+    ],
+    "plain_czech_summary": "Gymnázium má výborné výsledky v maturitách a přijímacích řízeních na VŠ, podporuje jazykové vzdělání a účast v projektech. ZUŠ nabízí kvalitní taneční obor, ale výuka v hudebním a výtvarném oboru je nerovnoměrná kvůli fluktuaci pedagogů a rozdílné docházce žáků. Škola je vhodná pro ambiciózní žáky, ale rodiče by měli zvážit stabilitu výuky v ZUŠ."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vynikající",
+      "key_numbers": [
+        "0% neúspěšnost",
+        "66% žáků s vyznamenáním",
+        "100% přijetí na VŠ"
+      ],
+      "evidence": "27 maturantů, 18 s vyznamenáním, 9 prospělo."
+    },
+    "absence": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "107 hodin na žáka/rok",
+        "Ojedinělé nehodnocení",
+        "Minimální uvolnění z TV"
+      ],
+      "evidence": "Průměrná absence kolem 107 hodin za školní rok."
+    },
+    "support_services": [
+      "Výchovná poradkyně, psycholožka, metodička prevence",
+      "Plány pedagogické podpory",
+      "Konzultace a doučování"
+    ],
+    "safety_climate": [
+      "Dobře udržovaná budova",
+      "Venkovní hřiště",
+      "Ojedinělé kázeňské problémy"
+    ],
+    "partnerships_practice": [
+      "Erasmus+",
+      "Mezinárodní cena vévody z Edinburghu",
+      "British Council – Stronger Together"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je přehledná, ale některé části o ZUŠ jsou techničtější.",
+    "uncertainty_notes": [
+      "Není jasné, jak často se konají žákovské koncerty v ZUŠ.",
+      "Chybí detailní informace o podpoře žáků se speciálními potřebami v ZUŠ.",
+      "Nejsou uvedeny konkrétní jazykové zkoušky, které žáci skládají."
+    ]
+  }
+}
+```

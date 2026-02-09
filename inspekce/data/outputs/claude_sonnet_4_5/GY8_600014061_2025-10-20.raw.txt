@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600014061_2025-10-20",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium s integrovanou základní uměleckou školou (hudební, taneční, výtvarný obor)",
+    "inspection_period": "20. až 22. října 2025",
+    "school_change_summary": "Od poslední inspekce v roce 2021 proběhla generační obměna pedagogů, zlepšily se prostorové podmínky (rekonstrukce podkroví, nové učebny informatiky). Přetrvávají však nedostatky v řízení základní umělecké školy, zejména v metodické podpoře začínajících učitelů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vynikající maturitní výsledky",
+        "detail": "Nulová neúspěšnost u maturity, 100% přijetí na vysoké školy, někteří žáci studují v zahraničí.",
+        "evidence": "V posledních třech letech vykazuje škola nulovou hrubou neúspěšnost žáků. Žáci školy jsou ve sto procentech přijímáni na jimi vybrané vysoké školy."
+      },
+      {
+        "tag": "Kvalitní výuka a podpora žáků",
+        "detail": "Pestré metody výuky, efektivní školní poradenství, vstřícná komunikace rozvíjející sociální kompetence.",
+        "evidence": "Pestré výukové metody a formy včetně inspirativně zadávaných úloh podporují klíčové kompetence žáků. Otevřená a vstřícná komunikace všech účastníků vzdělávání podporuje rozvoj sociálních kompetencí."
+      },
+      {
+        "tag": "Úspěchy v soutěžích a projektech",
+        "detail": "Žáci pravidelně vyhrávají olympiády, debatní ligy a mezinárodní projekty (Erasmus+, cena vévody z Edinburghu).",
+        "evidence": "Žáci dlouhodobě dosahují významných úspěchů v řadě soutěží, olympiád a ve středoškolské odborné činnosti, a to na krajské i celostátní úrovni – např. Debatní liga, ekonomická olympiáda."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nerovnoměrná kvalita ZUŠ",
+        "detail": "V hudebním a výtvarném oboru chybí systematická metodická podpora začínajících učitelů.",
+        "evidence": "V základní umělecké škole chybí jasně vymezená struktura metodické podpory pro začínající učitele. Tato skutečnost se propisuje do výuky zejména hudebního a výtvarného oboru."
+      },
+      {
+        "tag": "Fluktuace pedagogů ZUŠ",
+        "detail": "Zvýšená fluktuace učitelů v uměleckých oborech ovlivňuje stabilitu výuky.",
+        "evidence": "Projevuje se zvýšená fluktuace pedagogů, která ovlivňuje úroveň vzdělávacího procesu."
+      },
+      {
+        "tag": "Rozdílná docházka do souborové hry",
+        "detail": "Polovina žáků má vysokou absenci v Interpretačním semináři, což omezuje rozvoj uměleckých kompetencí.",
+        "evidence": "Docházka do Interpretačního semináře vykazovala vysokou míru absence, čímž zhruba polovina žáků nerozvíjela umělecké kompetence v plném rozsahu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola konkrétně podporuje začínající učitele v základní umělecké škole a jaká opatření přijala k zajištění kvality výuky?",
+      "Jaké kroky podnikáte pro zlepšení docházky žáků do souborové hry a jak motivujete žáky k pravidelnější účasti?",
+      "Jak funguje spolupráce mezi gymnáziem a ZUŠ – mohou žáci gymnázia využívat umělecké vzdělávání a naopak?"
+    ],
+    "who_school_fits": [
+      "Ambiciózní žáky s cílem studovat na prestižních vysokých školách v ČR i zahraničí",
+      "Děti se zájmem o jazyky (angličtina, francouzština), přírodní vědy a debatování",
+      "Žáky hledající školu s aktivním žákovským parlamentem a mezinárodními projekty"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče očekávající stabilní a systematickou výuku ve všech oborech ZUŠ (zejména hudba, výtvarná výchova)",
+      "Žáci preferující menší školy – gymnázium má 240 žáků, ZUŠ 456 žáků",
+      "Rodiny hledající školu s vlastní jídelnou (stravování je zajištěno smluvně v jiné škole)"
+    ],
+    "plain_czech_summary": "Gymnázium ve Šlapanicích nabízí vynikající přípravu na vysokou školu – nulová neúspěšnost u maturity, všichni absolventi se dostávají na vybrané VŠ, někteří studují v zahraničí. Škola vyniká pestrou výukou, vstřícným přístupem a úspěchy žáků v soutěžích (debatní ligy, olympiády). Funguje zde aktivní žákovský parlament a kvalitní poradenství. Integrovaná základní umělecká škola má tři obory (hudba, tanec, výtvarná výchova), přičemž taneční obor dosahuje vynikajících výsledků. V hudebním a výtvarném oboru však přetrvávají problémy s fluktuací učitelů a chybí systematická metodická podpora začínajících pedagogů, což se místy odráží v kvalitě výuky. Škola prošla rekonstrukcí, má dobré materiální zázemí a nabízí mezinárodní projekty (Erasmus+)."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "stabilně vynikající",
+      "key_numbers": [
+        "0% neúspěšnost u maturity (poslední 3 roky)",
+        "67% žáků maturovalo s vyznamenáním (2024/25)",
+        "100% přijetí na vysoké školy"
+      ],
+      "evidence": "V posledních třech letech vykazuje škola nulovou hrubou neúspěšnost žáků. V loňském školním roce konalo maturitní zkoušku 27 žáků, z nich 18 prospělo s vyznamenáním a 9 prospělo."
+    },
+    "absence": {
+      "trend": "stabilní",
+      "key_numbers": [
+        "Průměrně 107 hodin na žáka za rok",
+        "82% žáků prospělo s vyznamenáním (2024/25)",
+        "Minimální počet kázeňských opatření (9 za rok)"
+      ],
+      "evidence": "Průměrná absence žáků se v posledních letech pohybuje kolem 107 hodin na žáka za školní rok. Za loňský školní rok bylo uděleno celkem 158 pochval a devět kázeňských opatření."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, psycholožka, metodička prevence",
+      "Plány pedagogické podpory pro žáky se speciálními vzdělávacími potřebami (5% žáků)",
+      "Konzultace a doučování pro žáky se zhoršeným prospěchem"
+    ],
+    "safety_climate": [
+      "Pracovní atmosféra, žáci respektují pravidla",
+      "Ojedinělé nežádoucí projevy (nadužívání digitálních technologií, nevhodné chování, kouření)",
+      "Preventivní programy zaměřené na šikanu, kyberšikanu, drogy a psychologické problémy"
+    ],
+    "partnerships_practice": [
+      "Mezinárodní programy: Erasmus+, Mezinárodní cena vévody z Edinburghu, British Council",
+      "Spolupráce s regionem: koncerty pro seniory, vánoční jarmarky, rozsvěcování stromů",
+      "Turistický klub Puchýř, badatelská výuka Dny bez lavic, Recyklohraní"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný a praktický, místy však obsahuje odborné termíny (např. 'artificiální hudba', 'korepetice'). Většina informací je jasně formulována pro rodiče.",
+    "uncertainty_notes": [
+      "Není zcela jasné, zda problémy v ZUŠ ovlivňují i žáky gymnázia nebo jde o oddělené části školy",
+      "Chybí konkrétní informace o počtu žáků na učitele a velikosti tříd",
+      "Není specifikováno, jak škola řeší vysokou absenci v Interpretačním semináři"
+    ]
+  }
+}
+```

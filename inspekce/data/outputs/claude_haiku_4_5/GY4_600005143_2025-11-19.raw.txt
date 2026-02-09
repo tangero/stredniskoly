@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a šestileté), Praha 4",
+    "inspection_period": "19. 11. 2025 – 22. 11. 2025 a 24. 11. 2025",
+    "school_change_summary": "Od inspekce v 2019 vzrostl zájem o školu, zlepšilo se materiálně-technické vybavení a postupně se modernizují výukové postupy. Škola si udržuje stabilní naplněnost (670 žáků v 22 třídách) a kvalitní výsledky vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné podmínky a vybavení",
+        "detail": "Moderní budova s dvěma tělocvičnami, posilnou, horolezeckou stěnou, botanickou zahradou, knihovnou a multifunkčním sálem.",
+        "evidence": "Rekonstrukce budovy, přístavba jídelny, modernizace učeben s interaktivními panely a notebooky."
+      },
+      {
+        "tag": "Jazykový profil a mezinárodní spolupráce",
+        "detail": "Posílená výuka cizích jazyků (angličtina, němčina, španělština, francouzština, řečtina, latina) s konverzacemi s rodilými mluvčími a zahraničními pobyty.",
+        "evidence": "Erasmus+ program, zahraniční mobility v 10+ zemích, 31 žáků skládá Deutsches Sprachdiplom II, 80 % žáků nahrazuje profilovou maturitu certifikátem."
+      },
+      {
+        "tag": "Podpora individuálních potřeb žáků",
+        "detail": "Komplexní péče školního psychologa, speciálního pedagoga a asistentů pro žáky se speciálními potřebami, talentované i zdravotně znevýhodněné.",
+        "evidence": "3 % žáků se speciálními vzdělávacími potřebami, 5 % s odlišným mateřským jazykem, asi 6 % s individuální organizací vzdělávání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejednotné hodnocení mezi předměty",
+        "detail": "Různá měřítka hodnocení vedou k rozdílné klasifikaci v některých předmětech (biologie, český jazyk, francouzština, chemie) podle konkrétního učitele.",
+        "evidence": "Vedení školy zaznamenalo odchylky a vnímá nutnost sjednocování hodnoticích postupů."
+      },
+      {
+        "tag": "Tradičnější přístup v části výuky",
+        "detail": "V některých hodinách přetrvává nižší aktivizace žáků, převaha frontální výuky a transmisivní předávání poznatků místo interaktivního učení.",
+        "evidence": "Inspekce zjistila méně efektivní didaktické postupy v menší části hodin s nízkou aktivizací žáků a jejich pasivitou."
+      },
+      {
+        "tag": "Slabší zpětná vazba a sebehodnocení",
+        "detail": "Formativní zpětná vazba a zapojení žáků do reflexe vlastního pokroku nejsou dostatečně uplatňovány.",
+        "evidence": "Méně účinná zpětná vazba k práci žáků, opomíjení vrstevnického hodnocení a vyhodnocení přínosu učení v závěru hodiny."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá jazyková příprava a jaké jsou možnosti získání mezinárodních certifikátů?",
+      "Jaké jsou kritéria pro přijetí do jednotlivých tříd a jak se vybírají uchazeči?",
+      "Jak škola podporuje žáky se speciálními vzdělávacími potřebami a jaké jsou zkušenosti s jejich integrací?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí posílenou výuku cizích jazyků a četné zahraniční pobyty.",
+      "Talentovaní a nadaní žáci – škola má systém podpory individuálního potenciálu a zapojuje žáky do soutěží a projektů.",
+      "Žáci s ambicí na vysokoškolské studium – vysoká úspěšnost absolventů při přijetí na české i zahraniční vysoké školy."
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní, interaktivní výuku – v některých předmětech stále převládá tradičnější přístup s nižší aktivizací.",
+      "Žáci potřebující jasné a jednotné kritéria hodnocení – mezi předměty existují rozdíly v přísnosti klasifikace.",
+      "Žáci se speciálními vzdělávacími potřebami – ačkoli je péče kvalitní, měli by si ověřit konkrétní podporu pro svou situaci."
+    ],
+    "plain_czech_summary": "Gymnázium na Vítězné pláni je prestižní školou s výborným vybavením, silným zaměřením na jazyky a mezinárodní spolupráci. Žáci dosahují výborných výsledků, zejména v angličtině a matematice. Škola má kvalitní podporu pro individuální potřeby žáků. Slabší stránkou je nejednotné hodnocení mezi předměty a v některých hodinách tradičnější přístup k výuce. Ideální pro ambiciózní žáky se zájmem o jazyky a vysokoškolské studium."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoké výsledky s rostoucím podílem vyznamenaných maturantů",
+      "key_numbers": [
+        "35–40 % maturantů prospělo s vyznamenáním v posledních třech letech",
+        "Neuspěli pouze jednotlivci (2024/2025: 2 žáci)",
+        "Lepší výsledky než republikový průměr v anglickém jazyce a matematice"
+      ],
+      "evidence": "Žáci šestiletého i čtyřletého gymnázia dosáhli v didaktických testech lepších výsledků než průměrná úspěšnost v celorepublikovém srovnání."
+    },
+    "absence": {
+      "trend": "Nízká absence a přijatelný počet zameškaných hodin",
+      "key_numbers": [
+        "Nižší počet ukládaných kázeňských opatření",
+        "Přijatelný počet zameškaných hodin",
+        "Zanedbatelná míra neomluvené absence"
+      ],
+      "evidence": "Nastavené preventivní mechanismy jsou převážně funkční, což se projevuje nízkými počty absence a kázeňských opatření."
+    },
+    "support_services": [
+      "Dvě školní psycholožky poskytující individuální i skupinovou péči",
+      "Výchovná poradkyně a metodik prevence",
+      "Dvě asistentky pedagoga s úvazkem speciálního pedagoga",
+      "Šest rodilých mluvčích pro jazykovou přípravu",
+      "Komplexní preventivně-podpůrná péče a kariérní poradenství"
+    ],
+    "safety_climate": [
+      "Elektronický a kamerový systém s celodenním personálním dohledem",
+      "Systematické adaptační a preventivní programy (adaptační kurzy, zdravý třídní kolektiv, primární prevence)",
+      "Úzká spolupráce poradenských pracovníků s třídními učiteli a vedením",
+      "Řešení rizikového chování podle závažnosti s využitím určených postupů"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola čtyř fakult Univerzity Karlovy",
+      "Jedinečná partnerská škola Národního muzea v Praze od 2023",
+      "Zahraniční partnerství v 10+ zemích (Řecko, Španělsko, SRN, Velká Británie, Rakousko, Dánsko, Itálie, Francie, Slovensko, USA, Kanada)",
+      "Program Erasmus+ s četným zapojením žáků a učitelů",
+      "Funkční spolupráce se zákonnými zástupci (spolek rodičů, Nadační fond)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, s konkrétními příklady a čísly. Slabší stránky jsou jasně identifikovány. Některé pasáže jsou však poměrně odborné a dlouhé.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje přesné procento žáků s jednotlivými typy speciálních potřeb mimo uvedené 3 % a 5 %.",
+      "Není jasné, jak přesně se liší klasifikace mezi jednotlivými učiteli v uvedených předmětech (biologie, český jazyk atd.).",
+      "Doporučení jsou formulována obecně bez konkrétního časového plánu implementace."
+    ]
+  }
+}
+```

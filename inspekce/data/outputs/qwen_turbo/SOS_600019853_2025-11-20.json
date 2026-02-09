@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T08:57:56.580462+00:00",
+  "run_finished_utc": "2026-02-09T08:58:28.530318+00:00",
+  "raw_file": "SOS_600019853_2025-11-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019853_2025-11-20",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola",
+      "inspection_period": "20. 11. − 21. 11. 2025 a 24. 11. 2025",
+      "school_change_summary": "Škola se zapojila do projektu pokusného ověřování stupňovitého propojení vybraných oborů vzdělání a zlepšily se materiální podmínky pro vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "spolupráce s partnery",
+          "detail": "Škola spolupracuje s mnoha partnery, což umožňuje žákům získávat praktické zkušenosti.",
+          "evidence": "Škola spolupracuje s širokým portfoliem zaměstnavatelů."
+        },
+        {
+          "tag": "školní aktivity",
+          "detail": "Rozmanité školní a mimoškolní aktivity podporují rozvoj klíčových kompetencí žáků.",
+          "evidence": "Školní aktivity podporují pozitivní klima a soudržnost žákovského kolektivu."
+        },
+        {
+          "tag": "praktické vyučování",
+          "detail": "Praktické vyučování probíhá na pracovištích smluvních partnerů a podporuje rozvoj odborných kompetencí.",
+          "evidence": "Praktické vyučování probíhá na pracovištích smluvních partnerů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "nedostatečná aktivizace žáků",
+          "detail": "Převážná část výuky se vyznačovala nedostatečnou aktivizací žáků.",
+          "evidence": "Převládající frontální forma práce a minimum příležitostí pro kritické myšlení."
+        },
+        {
+          "tag": "problémy s individuálními vzdělávacími plány",
+          "detail": "Některé žáky nebyly individuální vzdělávací plány včas zpracovány.",
+          "evidence": "Administrativní postup pro tvorbu plánů nebyl jednotný."
+        },
+        {
+          "tag": "vysoká absence",
+          "detail": "Nejvyšší absence byla v oboru ošetřovatel, kde i přes pokles přetrvává zvýšený podíl neomluvené absence.",
+          "evidence": "Neomluvená absence v oboru ošetřovatel činí téměř 5 %."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak se škola zapojuje do projektu pokusného ověřování stupňovitého propojení oborů?",
+        "Jaké jsou konkrétní metody, které škola používá pro zlepšení aktivizace žáků?",
+        "Jak škola zajišťuje včasné a kvalitní zpracování individuálních vzdělávacích plánů?"
+      ],
+      "who_school_fits": [
+        "Žákům, kteří chtějí získat praktické zkušenosti v oblasti zdravotnictví.",
+        "Žákům, kteří chtějí rozvíjet odborné kompetence prostřednictvím praktického vyučování.",
+        "Žákům, kteří se chtějí zapojit do různých školních aktivit a rozvíjet klíčové kompetence."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kteří mají potřebu individuální podpory a zpracování vzdělávacích plánů.",
+        "Žákům, kteří se vyznačují vysokou absencí nebo těžkostmi s docházkou.",
+        "Žákům, kteří potřebují více aktivizace a zapojení do výuky."
+      ],
+      "plain_czech_summary": "Škola má dobré spolupráce s partnery a rozmanité aktivity pro žáky. Však existují problémy s aktivizací žáků a zpracováním vzdělávacích plánů. Žákům s vysokou absencí by měla být poskytnuta podpora."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní",
+        "key_numbers": [
+          "2,14 průměrný prospěch",
+          "12 % žáků s vyznamenáním",
+          "3,8 % neúspěšnost u maturitní zkoušky"
+        ],
+        "evidence": "Průměrný prospěch žáků byl 2,14, neúspěšnost u maturitní zkoušky klesla na 3,8 %."
+      },
+      "absence": {
+        "trend": "Klesající",
+        "key_numbers": [
+          "176 hodin na žáka (2022/2023)",
+          "144 hodin na žáka (2024/2025)",
+          "5 % neomluvená absence v oboru ošetřovatel"
+        ],
+        "evidence": "Absence klesla o pětinu, neomluvená absence v oboru ošetřovatel činí téměř 5 %."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště bylo personálně posíleno.",
+        "Škola uplatňuje vlastní systém identifikace žáků s potřebou podpory.",
+        "Kariérní poradenství probíhá na velmi dobré úrovni."
+      ],
+      "safety_climate": [
+        "Škola má stanovené postupy pro podchycení nežádoucího chování žáků.",
+        "Svolávány jsou výchovné komise, jejichž průběh je dokumentován.",
+        "Druhý metodik prevence koordinuje žákovský peer program."
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování probíhá na pracovištích smluvních partnerů.",
+        "Škola má dlouholetou spolupráci s partnerskou školou v Německu.",
+        "Žáci se zapojují do projektů s místními zdravotnickými zařízeními."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 3,
+      "czech_clarity_reason": "Zpráva obsahuje jasná tvrzení, ale některé detaily byly stručnější.",
+      "uncertainty_notes": [
+        "Není jasné, jakým způsobem škola zlepšila výuku v souladu s doporučeními inspekce.",
+        "Nejsou uvedeny konkrétní kroky, které škola přijala k odstranění nedostatků.",
+        "Není jasné, jakým způsobem škola zajišťuje včasné zpracování individuálních vzdělávacích plánů."
+      ]
+    }
+  }
+}

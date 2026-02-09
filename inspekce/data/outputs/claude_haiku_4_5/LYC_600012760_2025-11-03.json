@@ -1,0 +1,119 @@
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T09:04:07.203560+00:00",
+  "run_finished_utc": "2026-02-09T09:04:34.162711+00:00",
+  "raw_file": "LYC_600012760_2025-11-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600012760_2025-11-03",
+    "school_profile": {
+      "school_type": "Gymnázium a Letecká střední odborná škola (8letý obor Gymnázium, 4letý obor Technické lyceum)",
+      "inspection_period": "3. až 5. listopadu 2025",
+      "school_change_summary": "Škola má 12 tříd (160 žáků gymnázia, 93 žáků technického lycea), nový ředitel pokračuje druhým rokem v naplňování koncepčního směru zaměřeného na stabilizaci zájmu žáků a zlepšování podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky a chování",
+          "detail": "Všichni žáci prospěli, čtvrtina s vyznamenáním, minimální výchovná opatření a absence (110 hodin na žáka za rok).",
+          "evidence": "Školní rok 2024/2025: všichni žáci úspěšní u maturity, tři neomluvené hodiny celkem."
+        },
+        {
+          "tag": "Bohatá mimoškolní nabídka",
+          "detail": "27 volnočasových kroužků, sportovní aktivity, mezinárodní programy (DoFe, Cambridge zkoušky, CTM).",
+          "evidence": "Cca 150 žáků v kroužcích, čtyři žáci složili Cambridge B2 First v posledních třech letech."
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Nově vybavené učebny, laboratoř biologie, polytechnická učebna s laserovým plotrem, rekonstruovaný domov mládeže.",
+          "evidence": "Průběžné rekonstrukce a obnovy, esteticky podnětná výzdoba, motivační modely pro technické obory."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší práce s konkrétními cíli hodin",
+          "detail": "Učitelé často nestanovují jasné vzdělávací cíle zaměřené na pokrok jednotlivého žáka a neevaluují jejich naplnění.",
+          "evidence": "Inspektoři zaznamenali, že závěrečné vyhodnocení cílů nebylo příliš časté, učitelé se spíše ptali, zda je vše jasné."
+        },
+        {
+          "tag": "Málo individualizované výuky",
+          "detail": "Chybí diferenciace podle schopností a zájmů žáků, minimální sebehodnocení a vrstevnické hodnocení.",
+          "evidence": "Nebylo zaznamenáno zadávání úloh s rozdílnou obtížností ani vnitřní diferenciace podle pokroku žáka."
+        },
+        {
+          "tag": "Nerovnoměrné vzdělávání učitelů",
+          "detail": "Několik učitelů se v posledních letech výrazněji nezapojilo do dalšího vzdělávání pedagogických pracovníků.",
+          "evidence": "Individuální zapojování v DVPP je nerovnoměrné, ačkoli škola podporuje vzdělávání v prioritních oblastech."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s individuálními cíli žáků a jak jim poskytuje zpětnou vazbu k jejich pokroku?",
+        "Jaké možnosti má škola pro žáky s vyšším potenciálem – jak se jim nabízí rozšířená výuka?",
+        "Jak funguje domov mládeže a jaké jsou podmínky ubytování pro žáky ze vzdálenějších míst?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o letectví a technické obory – škola má nadregionální pověst a kvalitní vybavení",
+        "Aktivní žáci hledající bohatou mimoškolní nabídku – 27 kroužků, sportovní aktivity, mezinárodní programy",
+        "Žáci z vzdálenějších míst – domov mládeže s moderním vybavením a podporou učení"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnou individuální podporu a jasné cíle – škola pracuje na zlepšení v této oblasti",
+        "Nadaní žáci hledající maximální výzvu – diferenciace je zatím omezená, ačkoli existují volitelné semináře",
+        "Žáci vyžadující intenzivní formativní zpětnou vazbu – toto je identifikovaná slabá stránka školy"
+      ],
+      "plain_czech_summary": "Gymnázium a Letecká střední odborná škola v Moravské Třebové je dobře vedená škola s výborným zázemím a bohatou nabídkou aktivit. Žáci dosahují dobrých výsledků, chování je vzorné a absence minimální. Škola má moderní vybavení a pečuje o osobní rozvoj žáků. Inspektoři však upozorňují, že by měla více pracovat s konkrétními cíli jednotlivých hodin a více individualizovat výuku podle schopností žáků. Některé učitele by měla více motivovat k dalšímu vzdělávání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – všichni žáci úspěšní",
+        "key_numbers": [
+          "100% úspěšnost u maturity po podzimním termínu 2024/2025",
+          "4 žáci složili Cambridge B2 First v posledních třech letech",
+          "Průměrný prospěch 1,8–2,1 v jednotlivých třídách"
+        ],
+        "evidence": "Všichni žáci oboru Technické lyceum složili maturitní zkoušku s obhajobou maturitní práce, čtvrtina všech žáků prospěla s vyznamenáním."
+      },
+      "absence": {
+        "trend": "Velmi nízká – pod průměrem",
+        "key_numbers": [
+          "Necelých 110 zameškaných hodin na žáka za školní rok 2024/2025",
+          "Celkem 3 neomluvené hodiny za celou školu",
+          "Opakovaně nízký počet výchovných opatření"
+        ],
+        "evidence": "Nízká absence a minimální výchovná opatření svědčí o pozitivním vlivu preventivních programů a vícedenních kurzů."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní a školní metodičkou prevence",
+        "Nově zavedená psycholožka spolupracující s výchovnou poradkyní a metodičkou prevence",
+        "Asistentka pedagoga pro žáky se speciálními vzdělávacími potřebami (4 žáci)",
+        "Konzultační hodiny s výchovnou poradkyní (minimálně 1 hodina týdně, flexibilně dle potřeb)",
+        "Preventivní programy: Rizika kyberšikany, Bezpečnost silničního provozu, Dušeprostor"
+      ],
+      "safety_climate": [
+        "Vstřícný přístup učitelů k žákům, pozitivní a partnerské pracovní klima ve třídách",
+        "Dodržování pravidel vzájemné komunikace mezi vedením, žáky a vyučujícími",
+        "Klidná atmosféra podporující individuální přístup ke vzdělávání",
+        "Vícedenní kurzy (adaptační kurz, teambuilding) přispívající k bezpečnosti a soudržnosti",
+        "Schránka důvěry (využívána vzácně, žáci preferují osobní kontakt)"
+      ],
+      "partnerships_practice": [
+        "Domov pro seniory, dům dětí a mládeže, pedagogicko-psychologická poradna",
+        "Městská policie, technické muzeum, letiště Brno",
+        "Firmy pro odbornou praxi žáků Technického lycea (4týdenní praxe ve 3. ročníku)",
+        "Odborníci z praxe zapojení do výuky technických předmětů",
+        "Integrovaná střední škola Moravská Třebová (stravování a pronájem prostor domova mládeže)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s příklady. Některé pasáže jsou však technicky náročnější (např. popis metodiky výuky), ale pro rodiče jsou klíčové informace dostupné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent učitelů se nezapojilo do dalšího vzdělávání – údaj je pouze kvalitativní ('několik')",
+        "Není jasné, jak konkrétně se liší kvalita výuky mezi jednotlivými učiteli – inspektoři hodnotili obecně",
+        "Chybí informace o počtu žáků, kteří využívají služby výchovné poradkyně a psycholožky"
+      ]
+    }
+  }
+}

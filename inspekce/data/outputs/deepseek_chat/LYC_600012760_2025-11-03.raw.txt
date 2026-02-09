@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "school_profile": {
+    "school_type": "Gymnázium a Letecká střední odborná škola",
+    "inspection_period": "3. až 5. 11. 2025",
+    "school_change_summary": "Nový ředitel pokračuje v naplňování koncepce, stabilizaci zájmu žáků a modernizaci podmínek."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Technické lyceum",
+        "detail": "Výrazný nadregionální zájem o obor vzdělání 78-42-M/01 Technické lyceum.",
+        "evidence": "Škola zaznamenává vysoký zájem o tento obor, přesahující kapacitu."
+      },
+      {
+        "tag": "Volnočasové aktivity",
+        "detail": "Široká nabídka kroužků a sportovních aktivit pro žáky.",
+        "evidence": "Škola organizuje 27 volnočasových kroužků, zapojeno je cca 150 žáků."
+      },
+      {
+        "tag": "Domov mládeže",
+        "detail": "Velmi dobré materiální podmínky a přátelské klima v domově mládeže.",
+        "evidence": "Prostory jsou rekonstruované a modernizované, vytvářejí rodinné prostředí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Formativní zpětná vazba",
+        "detail": "Nízká míra práce s vzdělávacími cíli zaměřenými na žáka a jejich vyhodnocení.",
+        "evidence": "Učitelé často nevyhodnocují naplnění cílů hodiny, chybí sebehodnocení žáků."
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Minimální diferenciace výuky podle schopností a zájmů žáků.",
+        "evidence": "Výuka je často frontální, chybí úkoly s rozdílnou obtížností."
+      },
+      {
+        "tag": "Další vzdělávání učitelů",
+        "detail": "Nerovnoměrné zapojení učitelů do dalšího vzdělávání.",
+        "evidence": "Několik učitelů se v posledních letech výrazně nezapojilo."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje žáky v sebehodnocení a formativní zpětné vazbě?",
+      "Jaké konkrétní aktivity nabízí škola pro nadané žáky?",
+      "Jak řeší škola kapacitní problémy domova mládeže?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o technické obory, zejména letectví.",
+      "Žáci hledající školu s širokou nabídkou volnočasových aktivit.",
+      "Žáci, kteří ocení menší třídy a individuální přístup."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují výrazně individuální přístup a diferenciaci výuky.",
+      "Žáci, kteří preferují výuku s důrazem na sebehodnocení a vrstevnické hodnocení.",
+      "Žáci z větších vzdáleností, kteří potřebují ubytování (kapacita domova mládeže je omezená)."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní technické vzdělání s nadregionálním zájmem, širokou nabídkou kroužků a dobrým zázemím v domově mládeže. Naopak by mohla více pracovat s formativní zpětnou vazbou a diferenciací výuky. Vhodná pro žáky se zájmem o technické obory a aktivní volnočasové aktivity."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "Všichni žáci úspěšně složili maturitu v roce 2024/2025.",
+        "4 žáci složili Cambridge zkoušku B2 First (nahrazuje státní maturitu z angličtiny).",
+        "Průměrný prospěch v rozmezí 1,8 až 2,1."
+      ],
+      "evidence": "Výroční zpráva o činnosti školy za školní rok 2024/2025."
+    },
+    "absence": {
+      "trend": "Nízká",
+      "key_numbers": [
+        "Průměrná absence 110 zameškaných hodin na žáka za rok.",
+        "Pouze 3 neomluvené hodiny celkem.",
+        "Nízký počet výchovných opatření."
+      ],
+      "evidence": "Školní matrika a výroční zpráva."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (výchovná poradkyně, metodička prevence, psycholožka).",
+      "Asistentka pedagoga pro žáky se speciálními potřebami.",
+      "Pravidelné konzultační hodiny a operativní podpora žáků."
+    ],
+    "safety_climate": [
+      "Pozitivní a partnerské klima ve třídách.",
+      "Nízký počet výchovných opatření (převažují pochvaly).",
+      "Preventivní programy (kyberšikana, bezpečnost silničního provozu)."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s technickými muzei, letištěm Brno, domovem pro seniory.",
+      "Odborné praxe žáků v reálném prostředí firem.",
+      "Účast v mezinárodních programech (DoFe, Centrum pro talentovanou mládež)."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je přehledná, ale některé části jsou formulovány úřednickým stylem.",
+    "uncertainty_notes": [
+      "Není jasné, jak škola konkrétně řeší kapacitní problémy domova mládeže.",
+      "Chybí detailnější informace o podpoře nadaných žáků.",
+      "Není uvedeno, jak často jsou zapojováni odborníci z praxe do výuky."
+    ]
+  }
+}
+```

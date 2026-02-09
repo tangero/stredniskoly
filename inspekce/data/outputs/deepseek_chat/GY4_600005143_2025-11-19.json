@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "model_id": "deepseek_chat",
+  "run_started_utc": "2026-02-09T08:49:34.539350+00:00",
+  "run_finished_utc": "2026-02-09T08:50:30.347691+00:00",
+  "raw_file": "GY4_600005143_2025-11-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600005143_2025-11-19",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a šestileté)",
+      "inspection_period": "19. 11. 2025 – 24. 11. 2025",
+      "school_change_summary": "Od poslední inspekce se zlepšilo materiální vybavení a modernizace výuky, ale přetrvává tradiční přístup v části hodin."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní jazykové vzdělávání",
+          "detail": "Škola nabízí výuku 6 cizích jazyků včetně možnosti mezinárodních certifikátů.",
+          "evidence": "Němčina posílena pro DSD II, 80 % maturantů nahrazuje zkoušku certifikátem."
+        },
+        {
+          "tag": "Vynikající materiální vybavení",
+          "detail": "Moderní učebny, laboratoře, sportovní areál a relaxační zóny pro žáky.",
+          "evidence": "Rekonstrukce budovy, nová botanická zahrada, dvě tělocvičny a horolezecká stěna."
+        },
+        {
+          "tag": "Podpora nadaných i znevýhodněných",
+          "detail": "Individuální plány, asistenti a psychologové pomáhají žákům s potřebami.",
+          "evidence": "3 % žáků se SVP, 5 % s OMJ, 6 % talentovaných má úpravy výuky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nerovnoměrné hodnocení",
+          "detail": "Kritéria známkování se liší mezi učiteli stejného předmětu.",
+          "evidence": "Biologie, ČJ a francouzština mají rozdílné požadavky dle pedagoga."
+        },
+        {
+          "tag": "Méně aktivní výuka",
+          "detail": "Někteří učitelé málo zařazují moderní metody a skupinovou práci.",
+          "evidence": "Inspekce zaznamenala frontální výuku s nízkou interakcí žáků."
+        },
+        {
+          "tag": "Omezená zpětná vazba",
+          "detail": "Žáci nemají vždy prostor pro sebehodnocení nebo diskusi o cílech hodiny.",
+          "evidence": "Málo reflexe výuky v závěru hodin, chybí vrstevnické hodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s odlišným mateřským jazykem?",
+        "Jaké možnosti mají studenti pro výměnné pobyty v zahraničí?",
+        "Jak řešíte rozdíly v přístupu a hodnocení mezi učiteli téhož předmětu?"
+      ],
+      "who_school_fits": [
+        "Nadaní žáci se zájmem o přírodovědné/technické obory a jazyky.",
+        "Studenti motivovaní k mezinárodním certifikátům (němčina/angličtina).",
+        "Rodiny oceňující bezpečné prostředí a individuální přístup."
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující stabilní kritéria hodnocení napříč předměty.",
+        "Studenti vyžadující výrazně inovativní výukové metody.",
+        "Ti, kdo preferují menší kolektivy (třídy jsou naplněné na 92 %)."
+      ],
+      "plain_czech_summary": "Gymnázium nabízí špičkové jazykové a přírodovědné vzdělávání s výborným zázemím. Má stabilní výsledky, ale některé hodiny jsou tradiční a známkování není vždy jednotné. Hodí se pro aktivní žáky, kteří chtějí mezinárodní certifikáty nebo vědecké projekty."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní úspěšnost",
+        "key_numbers": [
+          "35–40 % maturantů s vyznamenáním",
+          "80 % nahrazuje jazykovou zkoušku certifikátem",
+          "2 neúspěšní žáci v roce 2025"
+        ],
+        "evidence": "Didaktické testy nad republikovým průměrem, profilová část mírně slabší."
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "Zanedbatelné neomluvené hodiny",
+          "Většina žáků uzavřela klasifikaci v termínu"
+        ],
+        "evidence": "Fungující prevence a včasné řešení problémů."
+      },
+      "support_services": [
+        "2 psycholožky, 2 asistentky pedagoga",
+        "Individuální plány a jazyková intervence",
+        "Doučování a předmaturitní soustředění"
+      ],
+      "safety_climate": [
+        "Elektronický a kamerový systém",
+        "Adaptační kurzy a prevence šikany",
+        "Nízký počet kázeňských opatření"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola 4 fakult UK",
+        "Partneři v 10+ zemích (Erasmus+)",
+        "Spolupráce s Národním muzeem"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je strukturovaná, ale obsahuje odborné termíny (např. 'transmisivní výuka').",
+      "uncertainty_notes": [
+        "Není jasné, kolik učitelů přesně používá tradiční metody.",
+        "Chybí detailní srovnání úspěšnosti 4letého vs. 6letého studia.",
+        "Neuvádí se konkrétní počet žáků v kroužcích/mimoškolních aktivitách."
+      ]
+    }
+  }
+}

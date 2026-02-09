@@ -1,0 +1,100 @@
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "school_profile": {
+    "school_type": "Gymnázium a Letecká střední odborná škola",
+    "inspection_period": "3. až 5. 11. 2025",
+    "school_change_summary": "Škola má stabilní zájem a výrazně nadregionální zájem o obor Technické lyceum."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Zajímavé obory",
+        "detail": "Škola poskytuje široké spektrum vzdělávacích programů.",
+        "evidence": "Škola nabízí obory s maturitní zkouškou a technické lyceum."
+      },
+      {
+        "tag": "Dobré podmínky",
+        "detail": "Materiální vybavení školy je moderní a vhodné pro výuku.",
+        "evidence": "Rekonstrukce laboratoří a vybavení tříd byly provedeny."
+      },
+      {
+        "tag": "Široké aktivity",
+        "detail": "Škola má mnoho volnočasových aktivit pro žáky.",
+        "evidence": "Nabízí sportovní kroužky, projekty a kroužky, které obohacují život žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Výuka je málo rozdělena podle schopností žáků.",
+        "evidence": "Není dostatečně zaznamenána diferenciace ve výuce."
+      },
+      {
+        "tag": "Méně formální správa",
+        "detail": "Některé úkoly a odpovědnosti byly stanoveny spíše neformálně.",
+        "evidence": "Předmětové komise měly některé úkoly stanoveny neformálně."
+      },
+      {
+        "tag": "Nedostatečné sebehodnocení",
+        "detail": "Žáci málo hodnotí svou výuku a svůj pokrok.",
+        "evidence": "Sebehodnocení žáků bylo výjimečné."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké obory jsou v škole dostupné?",
+      "Jaké materiální podmínky škola nabízí?",
+      "Jaké aktivity se škola zúčastňuje?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří mají zájem o technické obory jako letectví.",
+      "Žáci, kteří chtějí využít široké spektrum volnočasových aktivit.",
+      "Žáci, kteří hledají školu s moderním vybavením a výukou."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují větší diferenciaci ve výuce.",
+      "Žáci, kteří potřebují více sebehodnocení a spolupráci se spolužáky.",
+      "Žáci, kteří hledají větší formální řízení a závaznosti."
+    ],
+    "plain_czech_summary": "Škola nabízí technické obory s moderním vybavením a širokým spektrem aktivit. Výuka má výhody, ale existuje prostor pro zlepšení v diferenciaci a sebehodnocení žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "25 % žáků prospělo s vyznamenáním",
+        "Všichni žáci složili maturitu",
+        "4 žáci složili Cambridge zkoušku B2"
+      ],
+      "evidence": "Ve školním roce 2024/2025 prospělo s vyznamenáním přibližně čtvrtina žáků."
+    },
+    "absence": {
+      "trend": "Nízká",
+      "key_numbers": [
+        "Průměrná absence: 110 hodin na žáka",
+        "Tři neomluvené hodiny"
+      ],
+      "evidence": "Nízká absence žáků ve školním roce 2024/2025."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a metodičkou prevence.",
+      "Školní poradenské pracoviště se zahrnuje i žáky se speciálními vzdělávacími potřebami."
+    ],
+    "safety_climate": [
+      "Domov mládeže je rekonstruovaný a modernizovaný.",
+      "Škola vytváří pozitivní klima a spolupráci mezi žáky a pedagogy."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s místními organizacemi, jako jsou domov pro seniory nebo městská policie.",
+      "Škola má významnou spolupráci s letištěm a technickým muzeem."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasná, ale některé části jsou trochu složité.",
+    "uncertainty_notes": [
+      "Není plně jasné, jakým způsobem škola řeší individuální potřeby žáků.",
+      "Doplňkové informace o výuce mohou být výhodné.",
+      "Není přesně popsáno, jak se škola věnuje žákům se speciálními potřebami."
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "report_id": "SOU_600013171_2025-10-13",
+  "model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T08:59:23.055285+00:00",
+  "run_finished_utc": "2026-02-09T08:59:44.204395+00:00",
+  "raw_file": "SOU_600013171_2025-10-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600013171_2025-10-13",
+    "school_profile": {
+      "school_type": "Střední škola gastronomická a technická",
+      "inspection_period": "13. až 15. 10. 2025",
+      "school_change_summary": "Počet žáků se zvýšil o téměř 100, činnost školní jídelny byla pozastavena."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s podniky",
+          "detail": "Škola spolupracuje s podniky, což umožňuje žákům získat odborné dovednosti.",
+          "evidence": "Škola spolupracuje s podnikatelskými subjekty."
+        },
+        {
+          "tag": "Praktické výuky",
+          "detail": "Žáci mají možnost získávat odborné zkušenosti v reálném pracovním prostředí.",
+          "evidence": "Praktické výuky probíhají na pracovištích smluvních partnerů."
+        },
+        {
+          "tag": "Dobrá výsledky žáků",
+          "detail": "Žáci dosahují dobrých výsledků v soutěžích a spolupracují s jinými školami.",
+          "evidence": "Žáci úspěšně zastupují školu v soutěžích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná metodická podpora",
+          "detail": "Učitelé s krátkou praxí a bez požadovaného vzdělání potřebují více podpory.",
+          "evidence": "Učitelé potřebují metodickou i didaktickou podporu."
+        },
+        {
+          "tag": "Omezená aktivizace žáků",
+          "detail": "V teoretické výuce chybí aktivizace žáků a různorodé metody.",
+          "evidence": "Většina hodin je frontální a neaktivizuje žáky."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Nejsou zohledněny různé potřeby žáků s různým nadáním a studijními schopnostmi.",
+          "evidence": "Není zaznamenána diference v zadávaných úkolech."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká je podpora pro učitele s krátkou praxí?",
+        "Jak se škola zajistí, že výuka bude aktivizovat žáky?",
+        "Jak se řeší potřeby žáků s různým nadáním?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří se zajímají o gastronomii a technické obory.",
+        "Žáci, kteří chtějí získat praktické zkušenosti.",
+        "Žáci, kteří preferují školní jídelnu a domov mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s nízkou motivací k učení.",
+        "Žáci, kteří potřebují individuální podporu.",
+        "Žáci, kteří mají potíže s výukou v teoretické části."
+      ],
+      "plain_czech_summary": "Škola má dobré vztahy s podniky a poskytuje praktické výuky, ale potřebuje zlepšit podporu učitelů a aktivizaci žáků. Počet žáků roste, ale školní jídelna je pozastavena."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní",
+        "key_numbers": [
+          "15 žáků maturitní zkoušku vykonalo",
+          "2 žáci neuspěli"
+        ],
+        "evidence": "Maturitní zkoušku vykonalo 15 žáků, z nichž 2 neuspěli."
+      },
+      "absence": {
+        "trend": "Nízká",
+        "key_numbers": [
+          "Neomluvená absence je ojedinělá"
+        ],
+        "evidence": "Neomluvená absence je ojedinělá."
+      },
+      "support_services": [
+        "Výchovná poradna",
+        "Metodička prevence",
+        "Kariérová poradna"
+      ],
+      "safety_climate": [
+        "Dobré pravidla pro chování žáků",
+        "Žáci dodržují nastavená pravidla",
+        "Klima v domově mládeže je pozitivní"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s podniky pro odborný výcvik",
+        "Zahraniční stáže pro některé žáky",
+        "Spolupráce se základními školami"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 3,
+      "czech_clarity_reason": "Text je srozumitelný, ale některé části jsou složité a nejednoznačné.",
+      "uncertainty_notes": [
+        "Není jasné, jakým způsobem škola plánuje zlepšit podporu učitelů.",
+        "Nejsou přesně definovaly metody pro aktivizaci žáků.",
+        "Není jasné, jak se řeší potřeby žáků se speciálními vzdělávacími potřebami."
+      ]
+    }
+  }
+}
