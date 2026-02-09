@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T08:37:25.769214+00:00",
+  "run_finished_utc": "2026-02-09T08:37:54.388724+00:00",
+  "raw_file": "GY4_600005143_2025-11-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600005143_2025-11-19",
+    "school_profile": {
+      "school_type": "Čtyřleté a šestileté gymnázium s posílenou němčinou v některých třídách",
+      "inspection_period": "19. 11. 2025 – 24. 11. 2025",
+      "school_change_summary": "Od 2019 vzrostl zájem o školu, zlepšilo se vybavení a modernizace výuky, ale přetrvávají nedostatky v aktivizačních metodách a řízení hodnocení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní podmínky",
+          "detail": "Ředitel aktivně získává zdroje pro výuku, mimoškolní aktivity a služby.",
+          "evidence": "aktivní přístup ředitele školy k získávání i využívání finančních, personálních a materiálních zdrojů vytváří kvalitní podmínky"
+        },
+        {
+          "tag": "Silná jazyková příprava",
+          "detail": "Široká nabídka jazyků s certifikáty a zahraničními programy rozvíjí kompetence.",
+          "evidence": "širší nabídkou cizích jazyků... přípravou na složení mezinárodních certifikovaných zkoušek"
+        },
+        {
+          "tag": "Zapojení žáků",
+          "detail": "Žáci aktivně participují na chodu školy a rozšiřujících aktivitách.",
+          "evidence": "účinná participace žáků na chodu školy a jejich četné zapojování do projektů a rozšiřujících vzdělávacích aktivit"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Aktivizační metody",
+          "detail": "V některých hodinách nízká míra aktivace žáků.",
+          "evidence": "nižší míra využívání aktivizačních metod a forem při koncipování i realizaci výuky v některých vyučovacích hodinách"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Méně formativního hodnocení a reflexe pokroku.",
+          "evidence": "méně časté uplatňování formativní zpětné vazby k práci žáků a jejich zapojení do evaluace vlastního učebního pokroku"
+        },
+        {
+          "tag": "Sjednocení hodnocení",
+          "detail": "Nejednotné kritéria v některých předmětech.",
+          "evidence": "méně účinné pedagogické řízení v oblasti sjednocování hodnoticích postupů v některých předmětech"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často hospitujete hodiny a sdílíte zkušenosti pro modernější výuku?",
+        "Jak sjednocujete kritéria hodnocení mezi učiteli?",
+        "Jak podporujete aktivitu a týmovou práci žáků na hodinách?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a zahraniční stáže",
+        "Nadaní žáci hledající profilaci a mimoškolní aktivity",
+        "Rodiny oceňující kvalitní vybavení a stabilní výsledky"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující hodně interaktivní výuku",
+        "Ti, kde je klíčové jednotné hodnocení napříč učiteli",
+        "Méně motivovaní žáci kvůli tradičním hodinám"
+      ],
+      "plain_czech_summary": "Škola má super vybavení, silné jazyky s certifikáty, zahraničními výjezdy a dobré maturity – 35-40% s vyznamenáním, lepší než průměr v AJ a matice. Ředitel zajišťuje zdroje, žáci jsou zapojení. Ale v některých hodinách málo aktivních metod, formativního hodnocení a jednotných kritérií. Ideál pro jazykově založené a nadané děti, méně pro ty co chtějí pořád akci na každé hodině."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní, lepší než průměr v AJ a matematice",
+        "key_numbers": [
+          "35-40% s vyznamenáním",
+          "80% nahrazuje profil cizím certifikátem",
+          "31 žáků DSD II v 2024/25"
+        ],
+        "evidence": "prospělo s vyznamenáním v rozmezí 35−40 % maturantů... Stabilně 80 % žáků nahrazuje profilovou část... v didaktických testech... lepších výsledků než průměr"
+      },
+      "absence": {
+        "trend": "Nízký a přijatelný",
+        "key_numbers": [
+          "přijatelný počet zameškaných hodin",
+          "zanedbatelná neomluvená absence"
+        ],
+        "evidence": "přijatelný počet zameškaných hodin a zanedbatelná míra neomluvené absence"
+      },
+      "support_services": [
+        "2 psycholožky",
+        "2 asistentky pedagoga/speciální pedagog",
+        "výchovná poradkyně, metodik prevence"
+      ],
+      "safety_climate": [
+        "Nízký počet kázeňských opatření",
+        "kamerový systém a dohled",
+        "preventivní programy proti rizikům"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola UK",
+        "Partnerská Národního muzea",
+        "Zahraniční mobily Erasmus+"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je strukturovaná s jasnými závěry, ale plná úředních termínů.",
+      "uncertainty_notes": [
+        "Žádné přesné čísla absence nebo srovnání prospěchu",
+        "Trend maturity stabilní, ale bez dlouhodobých čísel",
+        "Podpora sociálně znevýhodněných zmíněna, bez procent"
+      ]
+    }
+  }
+}

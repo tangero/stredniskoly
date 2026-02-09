@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T08:39:03.570079+00:00",
+  "run_finished_utc": "2026-02-09T08:39:49.456200+00:00",
+  "raw_file": "SOS_600019853_2025-11-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019853_2025-11-20",
+    "school_profile": {
+      "school_type": "Zdravotnická střední škola s obory praktická sestra (maturita), sociální činnost (nástavba maturita) a ošetřovatel (výuční list)",
+      "inspection_period": "2025-11-20 až 2025-11-25",
+      "school_change_summary": "Škola modernizovala odborné učebny, zapojila se do projektu propojení oborů H/M/N a je téměř plná (199 žáků z max kapacity)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Silná praxe u partnerů",
+          "detail": "Žáci získávají reálné zkušenosti na pracovištích mnoha zaměstnavatelů.",
+          "evidence": "Všestranná spolupráce školy s mnoha partnery umožňuje žákům získávat potřebné praktické zkušenosti."
+        },
+        {
+          "tag": "Rozmanité aktivity",
+          "detail": "Školní a mimoškolní akce rozvíjejí dovednosti a svařují kolektiv.",
+          "evidence": "Rozmanité školní a mimoškolní aktivity podporují rozvoj klíčových kompetencí žáků."
+        },
+        {
+          "tag": "Dobré kariérní poradenství",
+          "detail": "Propojení s firmami pomáhá žákům plánovat budoucnost.",
+          "evidence": "Kariérní poradenství na velmi dobré úrovni, propojení se zaměstnavateli usnadňuje orientaci."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní teoretická výuka",
+          "detail": "Převažuje frontální výklad, žáci málo aktivní.",
+          "evidence": "Převážná část výuky se vyznačovala nedostatečnou aktivizací žáků, převládající frontální forma."
+        },
+        {
+          "tag": "Rezervy v řízení",
+          "detail": "Nedostatky v kontrole a programech přetrvávají.",
+          "evidence": "Řízení vykazuje nižší účinnost, rezervy v kontrolní činnosti k právním předpisům."
+        },
+        {
+          "tag": "Málo individualizace",
+          "detail": "Výuka málo přizpůsobená různým úrovním žáků.",
+          "evidence": "Malá míra individualizace, nedostatek diferenciace a sebehodnocení žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak zlepšíte aktivitu žáků v teoretické výuce?",
+        "Jak podporujete žáky se speciálními potřebami, např. individuální plány?",
+        "Proč je absence vysoká v oboru ošetřovatel a jak ji řešíte?"
+      ],
+      "who_school_fits": [
+        "Žáky milující praxi v zdravotnictví a sociálce.",
+        "Motivované, které chtějí pomáhat lidem.",
+        "Ty, co oceňují exkurze a výměnné pobyty v Německu."
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující hodně individuální přístup ve výuce.",
+        "Slabší v cizích jazycích, hlavně pro sociální činnost.",
+        "Ti s rizikem nepravidelné docházky."
+      ],
+      "plain_czech_summary": "Škola v Brně-Líšni je plná, má moderní učebny a super praxi u partnerů, což žáky připraví na práci. Teoretická výuka je často nudná a pasivní, maturita se zlepšuje u sester (3,8% neúspěch 2025), ale u sociálky je špatná (30%). Absence klesla, ale v ošetřovatel stále vysoká. Dobré poradenství a prevence šikany. Hodí se pro praktičáky do zdravotnictví, opatrní být s individualizací."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se u praktických sester, problémy u sociální činnosti.",
+        "key_numbers": [
+          "Praktická sestra: neúspěšnost 3,8 % (2025)",
+          "Sociální činnost: 30 % (2025)",
+          "Ošetřovatel: závěrečka 100 % úspěšnost"
+        ],
+        "evidence": "Hrubá neúspěšnost praktická sestra klesá: 20 % (2023), 13 % (2024), 3,8 % (2025); sociální činnost 30 % (2025)."
+      },
+      "absence": {
+        "trend": "Klesající.",
+        "key_numbers": [
+          "Celkem 144 hodin/žáka (2024/25)",
+          "Sníženo o pětinu z 176 hodin",
+          "Ošetřovatel: neomluvená ~5 %"
+        ],
+        "evidence": "Absence se snížila o pětinu ze 176 na 144 hodin/žáka; nejvyšší v ošetřovatel s neomluvenou 5 %."
+      },
+      "support_services": [
+        "Posílené poradenské pracoviště se speciální pedagožkou a kariérní poradkyní",
+        "Prevence šikany, peer program a výchovné komise"
+      ],
+      "safety_climate": [
+        "Postupy proti šikaně, kyberšikaně a záškoláctví",
+        "Zajištění bezpečnosti žáků a OZZ"
+      ],
+      "partnerships_practice": [
+        "Široké portfolio zdravotnických pracovišť pro praxi",
+        "Výměnné pobyty v Německu",
+        "Spolupráce se ZŠ na zdravovědném dni"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je strukturovaný a srozumitelný i pro laika.",
+      "uncertainty_notes": [
+        "Maturitní data jen pro uzavřené roky, ne pro probíhající.",
+        "Absence podrobně jen pro ošetřovatel.",
+        "Žádná data o SŠÚČ nebo dlouhodobé trendy neprospívajících."
+      ]
+    }
+  }
+}

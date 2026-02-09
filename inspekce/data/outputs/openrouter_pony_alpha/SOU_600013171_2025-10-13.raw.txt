@@ -1,0 +1,102 @@
+{
+  "report_id": "SOU_600013171_2025-10-13",
+  "school_profile": {
+    "school_type": "SOU",
+    "inspection_period": "2025-10-13 až 2025-10-17",
+    "school_change_summary": "Škola zaznamenala výrazný nárůst počtu žáků o téměř 100 od minulé inspekce a částečnou obměnu pedagogického sboru, zároveň došlo k pozastavení činnosti školní jídelny-výdejny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a uplatnění",
+        "detail": "Škola nabízí kvalitní praktickou výuku na reálných pracovištích a zahraniční stáže.",
+        "evidence": "„Velmi dobrá spolupráce se sociálními partnery... poskytuje žákům prostor k získávání odborných zkušeností z reálného pracovního prostředí.“"
+      },
+      {
+        "tag": "Klima a bezpečnost",
+        "detail": "Ve škole i domově mládeže panuje přátelské a bezpečné prostředí.",
+        "evidence": "„Výuka zpravidla vládla klidná pracovní atmosféra, žáci dodržovali nastavená pravidla.“"
+      },
+      {
+        "tag": "Úspěšnost absolventů",
+        "detail": "Většina žáků úspěšně dokončí studium a složí závěrečné zkoušky.",
+        "evidence": "„V posledním školním roce u závěrečných zkoušek neuspěl pouze jeden žák z 58. Maturitní zkoušku vykonalo 15 žáků, z nich dva neuspěli.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita výuky",
+        "detail": "Část výuky vede nekvalifikovaní učitelé s metodickými nedostatky.",
+        "evidence": "„Vedení školy daří najít kvalifikované učitele jen na některé předměty... vyučovací hodiny vykazovaly metodické a didaktické nedostatky.“"
+      },
+      {
+        "tag": "Pasivita žáků",
+        "detail": "V teoretické výuce převažuje pasivní přijímání informací bez aktivizace.",
+        "evidence": "„Převažovala frontální forma výuky... žáci se většiny hodin zúčastnili pasivně, do sešitů si zaznamenávali nadiktované nové učivo.“"
+      },
+      {
+        "tag": "Nerovnost v absenci",
+        "detail": "Zatímco teoretická výuka má dobrou docházku, v praktické výuce přetrvává záškoláctví.",
+        "evidence": "„V praktické výuce se škole tolik nedaří a záškoláctví spojené s neomluvenou absenci stále přetrvává.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola metodicky podporuje nekvalifikované nebo začínající učitele, aby zajistila kvalitu výuky?",
+      "Jakým způsobem jsou řešeny problémy s neomluvenou absencí v praktické výuce?",
+      "Jaké konkrétní možnosti zahraničních stáží nabízíte pro jednotlivé obory?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří se chtějí učit řemeslo v reálném provozu a získat kontakt na zaměstnavatele.",
+      "Pro studenty hledající menší školu s rodinnou atmosférou a zázemím domova mládeže.",
+      "Pro zájemce o gastronomii a technické obory, kteří preferují praktické dovednosti."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty očekávající moderní, interaktivní metody výuky v teoretických předmětech.",
+      "Pro žáky se speciálními vzdělávacími potřebami vyžadujícími výraznou individualizaci.",
+      "Pro ty, kteří mají tendence k záškoláctví, zejména v praktických částech výuky."
+    ],
+    "plain_czech_summary": "Střední škola v Žamberku zažívá růst počtu žáků a nabízí silné zázemí pro praktickou výuku v reálných firmách, což je velká výhoda pro uplatnění v oboru. Pro rodiče je důležité vědět, že škola bojuje s nedostatkem kvalifikovaných učitelů, což se odráží na nižší kvalitě teoretické výuky, kde žáci často jen pasivně poslouchají. Přestože je neomluvená absence v teorii nízká, v praktickém vyučování nadále přetrvává. Škola poskytuje bezpečné prostředí a domov mládeže s rodinnou atmosférou, chybí však větší podpora pro talentované žáky i ty s potřebami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírně nadprůměrná neúspěšnost",
+      "key_numbers": [
+        "15 žáků u maturity",
+        "2 žáci neuspěli",
+        "Úspěšnost cca 87 %"
+      ],
+      "evidence": "„Maturitní zkoušku vykonalo 15 žáků, z nich dva neuspěli.“"
+    },
+    "absence": {
+      "trend": "Rozdílná podle typu výuky",
+      "key_numbers": [
+        "Teorie: nízká neomluvená absence",
+        "Praxe: přetrvává záškoláctví",
+        "Důsledná evidence absence"
+      ],
+      "evidence": "„Napříč obory vzdělání je absence žáků v teoretické výuce nízká... v praktické výuce... záškoláctví spojené s neomluvenou absenci stále přetrvává.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (výchovná poradkyně, metodička prevence, kariérová poradkyně).",
+      "Podpora adaptace žáků 1. ročníků.",
+      "Spolupráce vychovatelů domova mládeže s učiteli při řešení problémů."
+    ],
+    "safety_climate": [
+      "Klidná pracovní atmosféra ve výuce.",
+      "Jasná pravidla pro používání mobilních telefonů.",
+      "Důraz na bezpečnost a hygienu v odborném výcviku."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s firmami v regionu a zahraničními partnery.",
+      "Možnost zahraničních stáží pro vybrané obory.",
+      "Propojení výuky s profesními organizacemi (cechy, asociace)."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a rizika, ačkoliv místy používá standardní inspekční terminologii (např. 'formativní hodnocení').",
+    "uncertainty_notes": [
+      "Není jasné, zda 'pozastavení činnosti školní jídelny' znamená, že se žáci stravují jinde, nebo nemají obědy."
+    ]
+  }
+}

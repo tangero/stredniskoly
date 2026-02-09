@@ -1,0 +1,98 @@
+{
+  "report_id": "GY8_600014061_2025-10-20",
+  "school_profile": {
+    "school_type": "Gymnázium a základní umělecká škola",
+    "inspection_period": "20. 10. 2025 − 22. 10. 2025",
+    "school_change_summary": "Od roku 2021 došlo k generační obměně pedagogů, zlepšily se prostorové podmínky rekonstrukcí podkroví a vznikly dvě nové učebny informatiky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné studijní výsledky",
+        "detail": "Škola dosahuje dlouhodobě vynikajících výsledků, všichni žáci jsou přijímáni na vysoké školy a nikdo nekončí maturitu neúspěšně.",
+        "evidence": "V posledních třech letech vykazuje škola nulovou hrubou neúspěšnost žáků. Žáci školy jsou ve sto procentech přijímáni na jimi vybrané vysoké školy."
+      },
+      {
+        "tag": "Kvalitní příprava na budoucnost",
+        "detail": "Výuka efektivně rozvíjí klíčové kompetence, kritické myšlení a jazykové dovednosti, což potvrzují i úspěchy v mezinárodních projektech a soutěžích.",
+        "evidence": "Pestré výukové metody a formy včetně inspirativně zadávaných úloh podporují klíčové kompetence žáků. Žáci prokazují výbornou úroveň jazykových dovedností."
+      },
+      {
+        "tag": "Vstřícné prostředí a podpora",
+        "detail": "Škola klade důraz na otevřenou komunikaci, wellbeing a efektivní poradenské služby, které pomáhají řešit i ojedinělé kázeňské či osobní problémy.",
+        "evidence": "Otevřená a vstřícná komunikace všech účastníků vzdělávání podporuje rozvoj sociálních kompetencí žáků. Školní poradenské pracoviště poskytuje efektivně služby."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nerovnoměrná kvalita na umělecké škole",
+        "detail": "Řízení a metodická podpora v základní umělecké škole má nedostatky, což se odráží v rozdílné kvalitě výuky a fluktuaci začínajících učitelů.",
+        "evidence": "V základní umělecké škole není koordinovaný mechanismus pro efektivní přenos zkušeností a metodické vedení začínajících učitelů."
+      },
+      {
+        "tag": "Nízká docházka do kolektivní výuky",
+        "detail": "Žáci hudebního oboru často absenceují v předmětech kolektivní praxe, což snižuje kvalitu jejich uměleckého rozvoje.",
+        "evidence": "Docházka do Interpretačního semináře vykazovala vysokou míru absence, čímž zhruba polovina žáků nerozvíjela umělecké kompetence v plném rozsahu."
+      },
+      {
+        "tag": "Absence externího srovnání výsledků",
+        "detail": "Gymnázium nevyužívá systematicky externí testování, takže objektivní srovnání úrovně žáků s jinými školami může být obtížnější.",
+        "evidence": "Externí metody testování úrovně vzdělávacích výsledků žáků škola systematicky nevyužívá."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola reaguje na zjištěné nedostatky v docházce žáků do kolektivní výuky na umělecké škole?",
+      "Jakým způsobem škola objektivně porovnává výsledky svých žáků s výsledky žáků jiných gymnázií?",
+      "Jak konkrétně funguje systém podpory začínajících učitelů na základní umělecké škole?"
+    ],
+    "who_school_fits": [
+      "Pro ambiciózní žáky, kteří cílí na vysoké školy a očekávají vysokou úroveň výuky a jazykové přípravy.",
+      "Pro žáky, kterým vyhovuje otevřené, podporující prostředí a možnost zapojit se do bohaté nabídky soutěží a projektů.",
+      "Pro zájemce o umělecké vzdělání se zaměřením na tanec, kde je prokazatelně vysoká kvalita výuky."
+    ],
+    "who_should_be_cautious": [
+      "Pro rodiče, kteří zvažují umělecké vzdělání v hudebním či výtvarném oboru a očekávají zcela jednotnou kvalitu výuky napříč všemi pracovišti.",
+      "Pro žáky, kteří potřebují silný systém kontroly a sjednocených metodických postupů i v nepovinných uměleckých předmětech."
+    ],
+    "plain_czech_summary": "Gymnázium ve Šlapanicích dosahuje vynikajících výsledků. Všichni žáci maturovali úspěšně a jsou přijímáni na vysoké školy. Výuka je kvalitní, pestrá a podporuje kritické myšlení i jazyky. Pro rodiče je důležité vědět, že škola nabízí skvělé zázemí a vstřícné prostředí. Slabinou je řízení připojené umělecké školy, kde chybí systémová podpora začínajících učitelů a kolísá docházka do některých předmětů. Pokud hledáte školu s vysokou akademickou úrovní a rodinnou atmosférou, je to dobrá volba. U uměleckého zaměření doporučuji ověřit konkrétního pedagoga a obor."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborná, dlouhodobě stabilní s nulovou neúspěšností.",
+      "key_numbers": [
+        "0 % neúspěšných u maturity za poslední 3 roky",
+        "27 maturujících žáků v loňském roce",
+        "18 z nich prospělo s vyznamenáním"
+      ],
+      "evidence": "V posledních třech letech vykazuje škola nulovou hrubou neúspěšnost žáků. Z nich 18 prospělo s vyznamenáním a 9 prospělo."
+    },
+    "absence": {
+      "trend": "Stabilní, mírně nadprůměrná, škola ji monitoruje.",
+      "key_numbers": [
+        "cca 107 hodin absence na žáka za rok",
+        "Vysoká absence v Interpretačním semináři (cca 50 % žáků)"
+      ],
+      "evidence": "Průměrná absence žáků se v posledních letech pohybuje kolem 107 hodin na žáka za školní rok. Docházka do Interpretačního semináře vykazovala vysokou míru absence."
+    },
+    "support_services": [
+      "Fungující školní poradenské pracoviště (psycholožka, výchovná poradkyně, prevence).",
+      "Individuální konzultace a doučování pro žáky se zhoršeným prospěchem.",
+      "Programy prevence zaměřené na šikanu, kyberšikanu a digitální technologie."
+    ],
+    "safety_climate": [
+      "Vzájemná komunikace je otevřená a vstřícná mezi žáky i učiteli.",
+      "Kázeňské problémy jsou ojedinělé, převažují pochvaly (158 pochval vs. 9 kázeňských opatření).",
+      "Pracovní atmosféra ve výuce je pozitivní a podporuje spolupráci."
+    ],
+    "partnerships_practice": [
+      "Aktivní zapojení do mezinárodních projektů (Erasmus+, Duka z Edinburghu).",
+      "Spolupráce s regionem (akce pro seniory, městské akce).",
+      "Účast v soutěžích a olympiádách s úspěchy na krajské i celostátní úrovni."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán srozumitelně, klíčová data jsou jasně uvedena v závěru a v textu nejsou nejasnosti, které by bránily porozumění.",
+    "uncertainty_notes": []
+  }
+}

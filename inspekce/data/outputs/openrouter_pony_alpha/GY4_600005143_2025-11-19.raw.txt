@@ -1,0 +1,99 @@
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "school_profile": {
+    "school_type": "Gymnázium s všeobecným zaměřením (čtyřleté a šestileté).",
+    "inspection_period": "19. 11. 2025 − 22. 11. 2025 a 24. 11. 2025",
+    "school_change_summary": "Od roku 2019 výrazně vzrostl zájem o studium i kapacita školy, došlo k rozsáhlé modernizaci areálu a zlepšení materiálního vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky a jazyky",
+        "detail": "Žáci dosahují nadprůměrných výsledků v maturitách a škola nabízí široké jazykové možnosti včetně mezinárodních certifikátů.",
+        "evidence": "Žáci dosahují lepších výsledků, než je průměrná úspěšnost v celorepublikovém srovnání; 80 % žáků nahrazuje profilovou zkoušku certifikátem."
+      },
+      {
+        "tag": "Kvalitní zázemí a podpora",
+        "detail": "Škola disponuje modernizovaným areálem, skvělým sportovním vybavením a komplexním poradenským pracovištěm.",
+        "evidence": "Modernizace učeben, botanická zahrada, dvě tělocvičny, posilovna; komplexní péče dvou školních psycholožek a asistentek."
+      },
+      {
+        "tag": "Aktivní mezinárodní spolupráce",
+        "detail": "Škola je fakultní školou UK a partnerskou školou Národního muzea, žáci se zapojují do zahraničních výjezdů.",
+        "evidence": "Fakultní škola Přírodovědecké, Filozofické, Matematicko-fyzikální a 1. lékařské fakulty UK; partnerská škola Národního muzea."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekonzistentní hodnocení",
+        "detail": "Kritéria hodnocení nejsou v některých předmětech jednotná, což vede k rozdílné přísnosti učitelů.",
+        "evidence": "Nejednotná měřítka se promítají v rozdílné nebo přísnější klasifikaci v některých předmětech vzhledem ke konkrétnímu učiteli."
+      },
+      {
+        "tag": "Zastaralé výukové metody",
+        "detail": "Část výuky stále probíhá tradičním způsobem s minimem aktivizace žáků a nedostatečnou zpětnou vazbou.",
+        "evidence": "V části vyučování přetrvává tradicionalistické pojetí vzdělávání s nižší mírou aktivizace žáků; méně účinná zpětná vazba."
+      },
+      {
+        "tag": "Nevyužitý potenciál výuky",
+        "detail": "V některých hodinách převažuje frontální výklad bez zapojení žáků, a to i v malých skupinách.",
+        "evidence": "Převaha frontální formy výuky; v některých případech nebyl využit potenciál malého počtu žáků pro rozvoj interaktivních dovedností."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola zajišťuje jednotnost hodnocení u různých učitelů v rámci jednoho předmětu?",
+      "Jakým způsobem pedagogové využívají moderní aktivizační metody a formativní hodnocení v běžných hodinách?",
+      "Jaké konkrétní možnosti individuální podpory nabízí školní poradenské pracoviště pro žáky s potřebami?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří chtějí dosáhnout vysoké jazykové úrovně a získat mezinárodní certifikáty.",
+      "Pro žáky, kteří očekávají silnou přípravu na VŠ a využití nabídky volitelných předmětů.",
+      "Pro zájemce o bohatou mimoškolní činnost, zahraniční výjezdy a sportovní aktivity."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří potřebují velmi individuální přístup a moderní interaktivní styl výuky v každé hodině.",
+      "Pro rodiče, pro které je klíčová absolutní objektivita a srovnatelnost klasifikace napříč třídami.",
+      "Pro studenty, kteří preferují čistě praktické činnosti před teoretickým přenosem znalostí."
+    ],
+    "plain_czech_summary": "Gymnázium Na Vítězné pláni je stabilní a žádaná škola s nadprůměrnými studijními výsledky a vynikajícím jazykovým zázemím. Nabízí moderní prostory, silnou podporu psycholožek a širokou nabídku volitelných předmětů. Rizikem je nejednotné hodnocení učitelů a setrvávání tradičních výukových metod bez dostatečné aktivizace žáků. Škola je vhodná pro ambiciózní studenty, kteří chtějí úspěšně složit maturitu a certifikáty."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nadprůměrná úspěšnost ve společné části, stabilní úspěšnost v profilové části.",
+      "key_numbers": [
+        "35−40 % maturantů prospělo s vyznamenáním",
+        "80 % žáků nahrazuje profilovou zkoušku certifikátem",
+        "31 žáků získalo Deutsches Sprachdiplom II"
+      ],
+      "evidence": "Žáci dosáhli lepších výsledků, než je průměrná úspěšnost dané skupiny oborů v celorepublikovém srovnání."
+    },
+    "absence": {
+      "trend": "Přijatelná míra absence, zanedbatelná neomluvená absence.",
+      "key_numbers": [
+        "Nižší počet ukládaných kázeňských opatření",
+        "Zanedbatelná míra neomluvené absence"
+      ],
+      "evidence": "Nastavené preventivní mechanismy jsou převážně funkční, což dokládá i nižší počet ukládaných kázeňských opatření."
+    },
+    "support_services": [
+      "Dvě školní psycholožky a dvě asistentky pedagoga se specializací.",
+      "Kariérní poradenství a prevence rizikového chování.",
+      "Individuální vzdělávací plány a jazyková podpora pro cizince."
+    ],
+    "safety_climate": [
+      "Funkční elektronický a kamerový systém s celodenním dohledem.",
+      "Systematické adaptační a preventivní programy.",
+      "Účinná spolupráce třídních učitelů s poradenským pracovištěm."
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Přírodovědecké, Filozofické, Matematicko-fyzikální a 1. lékařské fakulty UK.",
+      "Partnerská škola Národního muzea v Praze.",
+      "Zapojení do zahraničních mobilit (Erasmus+) v 10 zemích."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán spisovnou češtinou, je srozumitelný a logicky členěný.",
+    "uncertainty_notes": []
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-09T08:19:15.717331+00:00",
+  "run_finished_utc": "2026-02-09T08:20:59.486297+00:00",
+  "raw_file": "GY8_600008029_2025-10-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008029_2025-10-21",
+    "school_profile": {
+      "school_type": "Gymnázium s osmiletým cyklem",
+      "inspection_period": "21. 10. 2025 − 23. 10. 2025",
+      "school_change_summary": "V roce 2024 nastoupil nový zástupce ředitele a pedagogický sbor prochází generační obměnou; probíhá modernizace budovy a IT infrastruktury."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky a vzdělávání",
+          "detail": "Výuka jazyků probíhá v cílovém jazyce a je podpořena lektorem rodilým mluvčím.",
+          "evidence": "Výuka cizích jazyků probíhala převážně v cílovém jazyce... Výrazným obohacením jazykového vzdělávání je účast rodilé mluvčí."
+        },
+        {
+          "tag": "Komunita a bezpečí",
+          "detail": "Škola má fungující peer programy a bezpečné klima podporované třídnickými hodinami.",
+          "evidence": "Významnou součástí činnosti školy jsou vrstevnické iniciativy žáků... významně přispívají k rozvoji bezpečného školního prostředí."
+        },
+        {
+          "tag": "Výsledky a soutěže",
+          "detail": "Žáci dosahují nadprůměrných výsledků v maturitních předmětech a úspěšně se umisťují v soutěžích.",
+          "evidence": "Ve zkušebním roce 2025 dosáhla v některých předmětech (matematika, německý jazyk) škola nadprůměrných výsledků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Rozdílová výuka",
+          "detail": "Učitelé příliš nerespektují rozdílné schopnosti žáků a nenabízejí jim diferencované úkoly.",
+          "evidence": "Ve většině sledovaných hodin chyběla diferenciace vzdělávacích cílů... která by umožňovala plné využití vzdělávacího potenciálu žáků."
+        },
+        {
+          "tag": "Prostorové podmínky",
+          "detail": "Škola nemá funkční tělocvičnu a chybí prostor pro setkávání větší komunity.",
+          "evidence": "Dvě menší tělocvičny v budově školy nejsou z technických důvodů využívány. Škole také chybí odpovídající prostory pro setkávání širší školní komunity."
+        },
+        {
+          "tag": "Rutinní metody",
+          "detail": "Výuka je často stereotypní, s převahou výkladu učitele a bez aktivního zapojení žáků.",
+          "evidence": "Hodiny s převažujícím výkladem... neposkytovaly žákům dostatek možností pro jejich aktivitu a rozvoj komunikativních dovedností."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé rozvíjí talentované žáky, pokud ve výuce chybí diferenciace úkolů?",
+        "Jak škola řeší absenci vlastní tělocvičny a jak to ovlivňuje volnočasové aktivity v zimě?",
+        "Jaké konkrétní projekty zajišťuje spolupráce s energetickou společností a univerzitou?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří preferují menší školu s rodinnou atmosférou a dobrými vztahy mezi ročníky.",
+        "Pro zájemce o přírodní vědy a techniku, kteří chtějí využít spolupráce s partnery v regionu.",
+        "Pro studenty, kteří chtějí aktivně tvořit dění ve škole skrze studentský parlament a peer aktivity."
+      ],
+      "who_should_be_cautious": [
+        "Pro vysoce nadané žáky, kteří vyžadují individuální přístup a náročnější úkoly.",
+        "Pro studenty očekávající moderní, interaktivní výuku bohatou na digitální technologie.",
+        "Pro rodiče, pro které je kvalitní sportovní zázemí přímo v areálu školy prioritou."
+      ],
+      "plain_czech_summary": "Gymnázium v Týně nad Vltavou je menší škola s rodinnou atmosférou, která prochází generační obměnou a modernizací. Žáci dosahují nadprůměrných studijních výsledků, zejména v jazycích a matematice, a oceňují bezpečné prostředí a vrstevnickou podporu. Slabinou je stereotypní výuka, která dostatečně nerozvíjí talentované žáky, a chybějící tělocvična. Škola je vhodná pro studenty, kteří hledají komunitní zázemí a nevyžadují náročnou individualizaci studia."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou dlouhodobě srovnatelné s průměrem, v roce 2025 byly v některých předmětech nadprůměrné.",
+        "key_numbers": [
+          "Nadprůměrné výsledky v matematice a německém jazyce (2025)",
+          "Pět žáků nahradilo maturitu z jazyka certifikátem",
+          "Jeden žák konal opravnou zkoušku"
+        ],
+        "evidence": "Výsledky maturitních zkoušek jsou dlouhodobě srovnatelné s celostátním průměrem... Ve zkušebním roce 2025 dosáhla v některých předmětech škola nadprůměrných výsledků."
+      },
+      "absence": {
+        "trend": "Nízká absence bez neomluvených hodin.",
+        "key_numbers": [
+          "Nulové množství neomluvených hodin",
+          "Nízká celková absence"
+        ],
+        "evidence": "Absence žáků zůstává na nízké úrovni, neomluvené hodiny nebyly zaznamenány."
+      },
+      "support_services": [
+        "Fungující školní poradenské pracoviště a kariérové poradenství.",
+        "Realizace preventivního programu a třídnických hodin.",
+        "Elektronická schránka důvěry a aktivní peer program."
+      ],
+      "safety_climate": [
+        "Příjemné a vstřícné pracovní klima ve výuce.",
+        "Významný přínos vrstevnických iniciativ pro bezpečné prostředí.",
+        "Pravidelné adaptační kurzy a besedy s odborníky."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s energetickou společností (technické vzdělávání, Jaderná maturita).",
+        "Partnerství s Jihočeskou univerzitou (projekt Provázející učitel, Den plný vědy).",
+        "Aktivity v obci a spolupráce se základními školami v regionu."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a obsahuje konkrétní příklady i data. Místy obsahuje standardní školskou terminologii (např. 'formativní hodnocení', 'diferenciace'), která může být pro laika méně srozumitelná, ale kontext je vždy jasný.",
+      "uncertainty_notes": [
+        "V textu chybí přesné procento úspěšnosti u maturity, pouze obecné srovnání s průměrem.",
+        "Není upřesněno, jak konkrétně probíhá 'generační obměna' sboru a jak ovlivňuje stabilitu výuky.",
+        "Chybí detailnější statistiky o počtu žáků přijímaných na VŠ (pouze 'škola sleduje úspěšnost')."
+      ]
+    }
+  }
+}

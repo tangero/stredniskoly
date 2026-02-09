@@ -1,0 +1,108 @@
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T08:41:58.490714+00:00",
+  "run_finished_utc": "2026-02-09T08:42:26.999268+00:00",
+  "raw_file": "LYC_691004048_2025-10-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_691004048_2025-10-22",
+    "school_profile": {
+      "school_type": "Gymnázium, Pedagogické lyceum a Předškolní pedagogika",
+      "inspection_period": "22. 10. – 24. 10. 2025",
+      "school_change_summary": "Odstranila nedostatky v SVP pedagogiky, přijala opatření proti vysoké absenci a ke zlepšení maturit, nastavila hodnocení praxe."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Přátelské klima",
+          "detail": "Škola vytváří psychicky bezpečné prostředí díky vstřícným pedagogům.",
+          "evidence": "Vstřícný přístup pedagogů... příznivé sociální klima ve škole. (3.2)"
+        },
+        {
+          "tag": "Dobrá praxe",
+          "detail": "Učební praxe v pedagogice je dobře organizovaná s podporou a hodnocením.",
+          "evidence": "Učební praxe... na smluvních pracovištích... individuální podpora praktikantům."
+        },
+        {
+          "tag": "Podpora učitelů",
+          "detail": "Začínající učitelé mají systematickou podporu od zkušených kolegů.",
+          "evidence": "Účinná podpora tří začínajících učitelů... systematicky uvádějícími učiteli."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Podprůměrné maturity",
+          "detail": "Maturitní výsledky jsou dlouhodobě pod republikovým průměrem.",
+          "evidence": "Žáci... dosahují dlouhodobě podprůměrných výsledků u maturitních zkoušek. (5.2)"
+        },
+        {
+          "tag": "Málo diferenciace",
+          "detail": "Výuka často nezohledňuje rozdíly v úrovni žáků.",
+          "evidence": "Absence diferenciace probíraného učiva... rozdíly v úrovni schopností žáků. (4.3)"
+        },
+        {
+          "tag": "Nesoulad hodnocení",
+          "detail": "Průběžné hodnocení neodpovídá finálním výsledkům.",
+          "evidence": "Nesoulad mezi hodnocením výsledků žáků v průběhu... a výsledky při ukončování stále trvá."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak plánujete zlepšit maturitní výsledky?",
+        "Jak řešíte rozdíly v úrovni žáků ve výuce?",
+        "Jaké jsou aktuální míry absence a jak je snižujete?"
+      ],
+      "who_school_fits": [
+        "Žákům hledajícím přátelské prostředí s důrazem na pohodu.",
+        "Zájemcům o pedagogiku s praxí v mateřských školách.",
+        "Talentovaným sportovcům s individuální podporou absence."
+      ],
+      "who_should_be_cautious": [
+        "Ambiciózním žákům cílícím na vysoké maturitní skóre.",
+        "Žákům potřebujícím silnou diferenciovanou výuku.",
+        "Těm s rizikem nepravidelné docházky."
+      ],
+      "plain_czech_summary": "Škola má super atmosféru, vstřícný tým a dobré praxe pro pedagogy. Žáci se cítí bezpečně, je tu školní parlament a prevence šikany. Ale maturity jsou podprůměrné, výuka málo přizpůsobená úrovni a průběžné známky neodpovídají finálním. Škola přijala opatření ke zlepšení, sleduje je. Hodí se pro klidné prostředí, ne pro top výsledky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě podprůměrné, přijata opatření ke zlepšení.",
+        "key_numbers": [
+          "podprůměrné v republice",
+          "někteří selhávají navzdory dobrým průběžným výsledkům"
+        ],
+        "evidence": "Žáci dlouhodobě nedosahují příliš dobrých výsledků u maturit... převážně podprůměrné."
+      },
+      "absence": {
+        "trend": "Dříve vysoká, přijata opatření ke snižování.",
+        "key_numbers": [
+          "zpřísněny podmínky individuální podpory",
+          "pokles počtu žáků s navýšenou absencí"
+        ],
+        "evidence": "Systémová opatření ke snižování vysoké absence žáků."
+      },
+      "support_services": [
+        "Stabilní školní poradenské pracoviště s poradcem a metodičkou",
+        "Preventivní programy proti šikaně a kyberšikaně"
+      ],
+      "safety_climate": [
+        "Příznivé sociální klima a psychické bezpečí",
+        "Vstřícný přístup pedagogů, partnerské vztahy"
+      ],
+      "partnerships_practice": [
+        "Smluvní pracoviště pro praxi v ZŠ, MŠ, družinách",
+        "Erasmus+ výměny se Španělskem, workshop v Rumunsku"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, ale má odborné termíny a dlouhé věty.",
+      "uncertainty_notes": [
+        "Žádné konkrétní čísla k maturitním úspěšnostem.",
+        "Bez kvantifikace absence nebo trendů.",
+        "Chybí data o testováních ČŠI."
+      ]
+    }
+  }
+}

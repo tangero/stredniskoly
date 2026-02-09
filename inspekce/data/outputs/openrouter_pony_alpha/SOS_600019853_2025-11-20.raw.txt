@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "school_profile": {
+    "school_type": "Církevní střední zdravotnická škola nabízející obory Praktická sestra, Sociální činnost a Ošetřovatel.",
+    "inspection_period": "20. 11. − 21. 11. 2025 a 24. 11. 2025",
+    "school_change_summary": "Škola modernizovala odborné učebny a posílila poradenské pracoviště, kapacita je téměř plně využita."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a uplatnění",
+        "detail": "Škola má širokou síť partnerů, což žákům zajišťuje kvalitní praxi a lepší uplatnění po škole.",
+        "evidence": "Všestranná spolupráce s mnoha partnery umožňuje získávat praktické zkušenosti a zvyšovat uplatnitelnost."
+      },
+      {
+        "tag": "Vybavení a klima",
+        "detail": "Moderní odborné učebny a bohaté akce přispívají k dobrému klimatu a rozvoji dovedností.",
+        "evidence": "Materiální podmínny se zlepšily modernizací odborných učeben; aktivity posilují soudržnost kolektivu."
+      },
+      {
+        "tag": "Poradenství",
+        "detail": "Rozšířené poradenské pracoviště nabízí žákům kvalitní podporu při řešení problémů i volbě kariéry.",
+        "evidence": "Školní poradenské pracoviště bylo personálně posíleno, kariérní poradenství je na velmi dobré úrovni."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Ve většině hodin převažuje frontální výklad, žáci jsou pasivní a málo diskutují.",
+        "evidence": "V téměř 80 % vyučování převažovala frontální forma, nebyly vytvořeny podmínky pro diskusi."
+      },
+      {
+        "tag": "Nedostatečná podpora",
+        "detail": "Škola neefektivně podporuje talentované žáky a ty s individuálními plány.",
+        "evidence": "Rezervy v práci s nadanými žáky; individuální vzdělávací plány nebyly včas zpracovány."
+      },
+      {
+        "tag": "Studijní úspěšnost",
+        "detail": "V nástavbovém oboru je vysoké procento neúspěšných u maturity a předčasných odchodů.",
+        "evidence": "V oboru sociální činnost je úspěšnost ukončení studia 43 %, vysoká neúspěšnost u maturity."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé aktivizují žáky v teoretických předmětech, aby nebyli jen pasivními posluchači?",
+      "Jak škola zajistí, že žáci s individuálními plány dostanou podporu včas a v potřebném rozsahu?",
+      "Jaká opatření škola zavádí pro zlepšení úspěšnosti u maturity v oboru Sociální činnost?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří se chtějí uplatnit ve zdravotnictví nebo sociálních službách a oceňují široké možnosti praxe.",
+      "Žáci, kterým vyhovuje křesťanské prostředí a důraz na etický přístup k pacientům.",
+      "Studenti, kteří chtějí získat výuční list během studia na maturitním oboru (praktická sestra)."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnou podporu v cizích jazycích, zejména pokud plánují studovat Sociální činnost.",
+      "Studenti očekávající moderní, interaktivní metody výuky v každé hodině.",
+      "Uchazeči s vysokou absencí, neboť škola bojuje se záškoláctvím a přísněji hodnotí docházku."
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola Evangelické akademie v Brnu nabízí kvalitní přípravu na povolání díky moderním učebnám a výborné spolupráci s partnery při praxích. Škola klade důraz na etiku a křesťanské hodnoty. Slabší stránkou je tradiční styl výuky, kde žáci často jen poslouchají výklad a málo spolupracují. Pozor si dejte na obor Sociální činnost, kde je vysoký počet neúspěšných u maturity. Škola dobře pečuje o žáky s potřebou podpory, ale musí zlepšit práci s individuálními plány a nadanými žáky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se v oboru Praktická sestra, naopak problematická v oboru Sociální činnost.",
+      "key_numbers": [
+        "Praktická sestra: neúspěšnost u maturity klesla na 3,8 % (2025).",
+        "Sociální činnost: neúspěšnost u maturity 30 % (2025), celková úspěšnost studia 43 %.",
+        "Ošetřovatel: 100 % úspěšnost u závěrečné zkoušky."
+      ],
+      "evidence": "Hrubá neúspěšnost u maturity v oboru praktická sestra klesá, v oboru sociální činnost byla zaznamenána zvýšená."
+    },
+    "absence": {
+      "trend": "Celková absence klesá, ale v oboru Ošetřovatel přetrvává vysoká neomluvená absence.",
+      "key_numbers": [
+        "Celková absence snížena o pětinu na 144 hodin na žáka.",
+        "Obor Ošetřovatel: téměř 5 % neomluvené absence.",
+        "Zaveden limit zameškaných hodin pro hodnocení žáka."
+      ],
+      "evidence": "Celková absence se snížila, v oboru ošetřovatel přetrvává zvýšený podíl neomluvené absence."
+    },
+    "support_services": [
+      "Personálně posílené školní poradenské pracoviště (výchovná poradkyně, metodici prevence, speciální pedagog).",
+      "Kariérní poradenství propojené se zaměstnavateli.",
+      "Systém identifikace žáků s potřebou podpory včetně cizinců."
+    ],
+    "safety_climate": [
+      "Pozitivní klima budované společnými akcemi a peer programem.",
+      "Zvýšený výskyt rizikových jevů (šikana, kyberšikana, záškoláctví) je systematicky řešen.",
+      "Výchovné komise a podrobná dokumentace řešení problémů."
+    ],
+    "partnerships_practice": [
+      "Široké portfolio sociálních partnerů pro praktické vyučování.",
+      "Spolupráce se základními školami (zdravovědný den).",
+      "Výměnné pobyty s partnerskou školou v Německu."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, terminologie je vysvětlena, jen některé pasáže o řízení školy jsou složitější.",
+    "uncertainty_notes": [
+      "Nejasná míra individualizace ve výuce pro běžného žáka bez SVP.",
+      "Konkrétní podoba 'aktivizačních metod' v českém jazyce versus jiných předmětech."
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-09T08:14:54.545338+00:00",
+  "run_finished_utc": "2026-02-09T08:16:32.229037+00:00",
+  "raw_file": "GY4_600013481_2025-11-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600013481_2025-11-20",
+    "school_profile": {
+      "school_type": "Gymnázium s osmiletým a čtyřletým všeobecným studiem, včetně matematických tříd.",
+      "inspection_period": "20. – 21. 11. 2025 a 24. – 25. 11. 2025",
+      "school_change_summary": "Od srpna 2024 školu vede nový ředitel, který připravil koncepci rozvoje zaměřenou na modernizaci výuky a zavedení slovního hodnocení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Škola dosahuje dlouhodobě vynikajících výsledků u maturity a v soutěžích, téměř bez neúspěšných žáků.",
+          "evidence": "V posledních třech letech vykazuje škola téměř nulovou hrubou neúspěšnost žáků u maturitní zkoušky."
+        },
+        {
+          "tag": "Mezinárodní aktivity",
+          "detail": "Výjimečný projekt Erasmus+ umožňuje žákům i učitelům cesty na stáže a vzdělávání do zahraničí.",
+          "evidence": "Tato praxe je svým rozsahem naprosto výjimečná a má přímý dopad do jazykových a sociálních kompetencí žáků."
+        },
+        {
+          "tag": "Jazyková úroveň",
+          "detail": "Výuka cizích jazyků je na velmi vysoké úrovni s důrazem na konverzaci a aktivní zapojení.",
+          "evidence": "Hodiny cizích jazyků se vyznačovaly velmi dobrou úrovní žáků... plynulá konverzace, aktivní zapojení."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Necílená podpora talentů",
+          "detail": "Škola nemá nastavený systematický systém pro práci s nadanými žáky a ve výuce chybí diferenciace.",
+          "evidence": "Ve výuce se však diferenciace vzhledem k nadání žáků neprojevila... nebyly žákům nabízeny aktivity podporující jejich individuální rozvoj."
+        },
+        {
+          "tag": "Nejednotné hodnocení",
+          "detail": "Kritéria hodnocení si určuje každý učitel po svém, což může vést k nejednotnosti mezi předměty.",
+          "evidence": "Pravidla hodnocení si většina pedagogů stanovuje individuálně, podle vlastních potřeb."
+        },
+        {
+          "tag": "Psychologická podpora",
+          "detail": "Školní psycholožka je přítomna pouze jeden den v týdnu, což nemusí stačit při tlaku na výkon.",
+          "evidence": "Školní psycholožka pracuje na škole pouze jeden den v týdnu... na žáky doléhá silný tlak na výkon."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola rozvíjí žáky s nadáním přímo v běžných hodinách?",
+        "Plánuje škola zvýšit úvazek školního psychologa vzhledem k tlaku na výkon?",
+        "Jakým způsobem se nové vedení chystá sjednotit kritéria hodnocení napříč předměty?"
+      ],
+      "who_school_fits": [
+        "Samostatní žáci, kteří cílí na prestižní vysoké školy a zvládají silný tlak na výkon.",
+        "Studenti s zájmem o mezinárodní zkušenosti a aktivní cestování v rámci Erasmus+.",
+        "Žáci, kteří vynikají v cizích jazycích nebo v matematice a chtějí se věnovat soutěžím."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují častější psychologickou podporu nebo pomalejší pracovní tempo.",
+        "Studenti vyžadující pestré, moderní metody výuky nad rámec tradičního frontálního výkladu.",
+        "Rodiče očekávající zavedený systém individuální péče o talentované děti v každé hodině."
+      ],
+      "plain_czech_summary": "Gymnázium Brno na třídě Kapitána Jaroše nabízí kvalitní vzdělání s vynikajícími výsledky u maturity a širokou nabídkou mezinárodních aktivit Erasmus+. Výuka cizích jazyků je na vysoké úrovni. Školu však nově řídí ředitel, který teprve hledá cesty k modernizaci. Inspekce upozorňuje, že výuka je často tradiční a nezohledňuje individuální potřeby nadaných žáků. Chybí také jednotná pravidla hodnocení a dostatečná psychologická podpora vzhledem k tlaku na výkon. Pro ambiciózní studenty je škola skvělou volbou, ale vyžaduje samostatnost."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborná",
+        "key_numbers": [
+          "Téměř nulová neúspěšnost u maturity za 3 roky",
+          "55 % žáků 4letého studia s vyznamenáním",
+          "72 % žáků 8letého studia s vyznamenáním"
+        ],
+        "evidence": "V posledních třech letech vykazuje škola téměř nulovou hrubou neúspěšnost žáků u maturitní zkoušky."
+      },
+      "absence": {
+        "trend": "Průměrná",
+        "key_numbers": [
+          "Průměrně 120 hodin omluvené absence na žáka",
+          "Neomluvená absence řešena zřídka",
+          "Minimální docházka stanovena školním řádem"
+        ],
+        "evidence": "Průměrná omluvená absence za poslední tři roky je 120 hodin na žáka, neomluvenou absenci řeší škola zřídka."
+      },
+      "support_services": [
+        "Dva výchovní poradci a dva metodici prevence (zvlášť pro 4leté a 8leté studium)",
+        "Čtyři asistenti pedagoga působí pouze na osmiletém gymnáziu",
+        "Školní psycholožka k dispozici 1 den v týdnu"
+      ],
+      "safety_climate": [
+        "Výuka probíhá v atmosféře vzájemného respektu",
+        "Řešeny jednotky případů kyberšikany a sebepoškozování",
+        "Silný tlak na výkon může negativně působit na duševní zdraví"
+      ],
+      "partnerships_practice": [
+        "Aktivní zapojení do projektu Erasmus+ (Německo, Finsko, Španělsko, Belgie)",
+        "Spolupráce se zahraničními školami na jazykovém vzdělávání",
+        "Účast v soutěžích a projektech (DofE, SOČ, Olympiády)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje vyvážený pohled na silné a slabé stránky. Obsahuje konkrétní data i kontext.",
+      "uncertainty_notes": [
+        "Nejasná míra efektivity asistentů pedagoga ve výuce (inspekce zmiňuje neefektivní zapojení v jedné hodině).",
+        "Není specifikováno, jak konkrétně probíhá 'hledání účelných cest' novým vedením v praxi.",
+        "Chybí detailnější rozbor příčin 'silného tlaku na výkon', který žáci pociťují."
+      ]
+    }
+  }
+}

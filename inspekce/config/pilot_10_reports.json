@@ -1,0 +1,124 @@
+{
+  "reports": [
+    {
+      "report_id": "GY4_600013481_2025-11-20",
+      "redizo": "600013481",
+      "school_type": "GY4",
+      "school_name": "Gymnázium Brno, třída Kapitána Jaroše, příspěvková organizace",
+      "city": "Brno",
+      "inspection_from": "2025-11-20",
+      "inspection_to": "2025-11-25",
+      "source_url": "https://portal.csicr.cz/Files/Get/93b9a46791934e5d8f0d28cc822af73e",
+      "pdf_file": "GY4_600013481_2025-11-20.pdf",
+      "text_file": "GY4_600013481_2025-11-20.txt"
+    },
+    {
+      "report_id": "GY4_600005143_2025-11-19",
+      "redizo": "600005143",
+      "school_type": "GY4",
+      "school_name": "Gymnázium, Praha 4, Na Vítězné pláni 1160",
+      "city": "Praha",
+      "inspection_from": "2025-11-19",
+      "inspection_to": "2025-11-24",
+      "source_url": "https://portal.csicr.cz/Files/Get/d914b6a0a25740a892f912fd663bfdfd",
+      "pdf_file": "GY4_600005143_2025-11-19.pdf",
+      "text_file": "GY4_600005143_2025-11-19.txt"
+    },
+    {
+      "report_id": "GY8_600008029_2025-10-21",
+      "redizo": "600008029",
+      "school_type": "GY8",
+      "school_name": "Gymnázium, Týn nad Vltavou, Havlíčkova 13",
+      "city": "Týn nad Vltavou",
+      "inspection_from": "2025-10-21",
+      "inspection_to": "2025-10-24",
+      "source_url": "https://portal.csicr.cz/Files/Get/cbd85d222de748c1ae361736626d9791",
+      "pdf_file": "GY8_600008029_2025-10-21.pdf",
+      "text_file": "GY8_600008029_2025-10-21.txt"
+    },
+    {
+      "report_id": "GY8_600014061_2025-10-20",
+      "redizo": "600014061",
+      "school_type": "GY8",
+      "school_name": "Gymnázium a základní umělecká škola Šlapanice, příspěvková organizace",
+      "city": "Šlapanice",
+      "inspection_from": "2025-10-20",
+      "inspection_to": "2025-10-23",
+      "source_url": "https://portal.csicr.cz/Files/Get/dec40b3aa52a4b31811874f359411486",
+      "pdf_file": "GY8_600014061_2025-10-20.pdf",
+      "text_file": "GY8_600014061_2025-10-20.txt"
+    },
+    {
+      "report_id": "SOS_600019853_2025-11-20",
+      "redizo": "600019853",
+      "school_type": "SOS",
+      "school_name": "Střední zdravotnická škola Evangelické akademie",
+      "city": "Brno",
+      "inspection_from": "2025-11-20",
+      "inspection_to": "2025-11-25",
+      "source_url": "https://portal.csicr.cz/Files/Get/2a078a3178d54d4f90ce6edd3b533510",
+      "pdf_file": "SOS_600019853_2025-11-20.pdf",
+      "text_file": "SOS_600019853_2025-11-20.txt"
+    },
+    {
+      "report_id": "SOS_600171361_2025-11-12",
+      "redizo": "600171361",
+      "school_type": "SOS",
+      "school_name": "Střední škola gastronomie a služeb, Přerov, Šířava 7",
+      "city": "Přerov",
+      "inspection_from": "2025-11-12",
+      "inspection_to": "2025-11-17",
+      "source_url": "https://portal.csicr.cz/Files/Get/8c3dcbe3d9ac46d1a165f8d979a49325",
+      "pdf_file": "SOS_600171361_2025-11-12.pdf",
+      "text_file": "SOS_600171361_2025-11-12.txt"
+    },
+    {
+      "report_id": "SOU_600171035_2025-11-04",
+      "redizo": "600171035",
+      "school_type": "SOU",
+      "school_name": "Střední škola elektrotechnická a energetická Sokolnice, příspěvková organizace",
+      "city": "Sokolnice",
+      "inspection_from": "2025-11-04",
+      "inspection_to": "2025-11-07",
+      "source_url": "https://portal.csicr.cz/Files/Get/4b209c5abb0a4ec58820bd0723ad059f",
+      "pdf_file": "SOU_600171035_2025-11-04.pdf",
+      "text_file": "SOU_600171035_2025-11-04.txt"
+    },
+    {
+      "report_id": "SOU_600013171_2025-10-13",
+      "redizo": "600013171",
+      "school_type": "SOU",
+      "school_name": "Střední škola gastronomická a technická Žamberk",
+      "city": "Žamberk",
+      "inspection_from": "2025-10-13",
+      "inspection_to": "2025-10-17",
+      "source_url": "https://portal.csicr.cz/Files/Get/087935a4899e4557b36a6bf424d68760",
+      "pdf_file": "SOU_600013171_2025-10-13.pdf",
+      "text_file": "SOU_600013171_2025-10-13.txt"
+    },
+    {
+      "report_id": "LYC_600012760_2025-11-03",
+      "redizo": "600012760",
+      "school_type": "LYC",
+      "school_name": "Gymnázium a Letecká střední odborná škola Moravská Třebová",
+      "city": "Moravská Třebová",
+      "inspection_from": "2025-11-03",
+      "inspection_to": "2025-11-06",
+      "source_url": "https://portal.csicr.cz/Files/Get/837d43f1cdff40579bc4d2bb9915f6a5",
+      "pdf_file": "LYC_600012760_2025-11-03.pdf",
+      "text_file": "LYC_600012760_2025-11-03.txt"
+    },
+    {
+      "report_id": "LYC_691004048_2025-10-22",
+      "redizo": "691004048",
+      "school_type": "LYC",
+      "school_name": "Střední škola Sion High School, Hradec Králové",
+      "city": "Hradec Králové",
+      "inspection_from": "2025-10-22",
+      "inspection_to": "2025-10-24",
+      "source_url": "https://portal.csicr.cz/Files/Get/046a9139af0d427c94393b9bb684a7c6",
+      "pdf_file": "LYC_691004048_2025-10-22.pdf",
+      "text_file": "LYC_691004048_2025-10-22.txt"
+    }
+  ]
+}

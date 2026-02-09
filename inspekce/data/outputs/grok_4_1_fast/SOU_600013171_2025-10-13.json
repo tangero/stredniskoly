@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600013171_2025-10-13",
+  "model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T08:40:55.999497+00:00",
+  "run_finished_utc": "2026-02-09T08:41:25.441024+00:00",
+  "raw_file": "SOU_600013171_2025-10-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600013171_2025-10-13",
+    "school_profile": {
+      "school_type": "Střední škola s gastronomickými, obchodními a technickými obory (kuchař, cukrář, obchodník, truhlář, instalatér, obráběč kovů)",
+      "inspection_period": "13. až 15. 10. 2025",
+      "school_change_summary": "Nárůst žáků o téměř 100 na 272, pozastavení školní jídelny, částečná obměna učitelů kvůli rostoucímu počtu žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Silná praxe",
+          "detail": "Škola má skvělou spolupráci s firmami, kde žáci získávají reálné zkušenosti a sociální dovednosti.",
+          "evidence": "„spolupráce školy s podnikatelskými subjekty umožňující realizaci praxe a zprostředkování žákům získání širokého spektra odborných dovedností“"
+        },
+        {
+          "tag": "Dobré výsledky zkoušek",
+          "detail": "Žáci úspěšně zvládají závěrečné zkoušky i maturitu s minimem neúspěchů.",
+          "evidence": "„u závěrečných zkoušek neuspěl pouze jeden žák z 58. Maturitní zkoušku vykonalo 15 žáků, z nich dva neuspěli.“"
+        },
+        {
+          "tag": "Kvalitní domov mládeže",
+          "detail": "Domov vytváří přátelské prostředí s podporou učení a spoustou aktivit.",
+          "evidence": "„pro ubytované je vytvářeno pozitivní přátelské klima nahrazující rodinné prostředí, vychovatelé zajišťují podporu žáků k učení.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatek kvalifikovaných učitelů",
+          "detail": "Někteří učitelé bez specializace potřebují více podpory, což vede k chybám ve výuce.",
+          "evidence": "„nedostatečná metodická a didaktická podpora učitelů s krátkou praxí a bez požadovaného vzdělání a specializace“"
+        },
+        {
+          "tag": "Jednotvárná teoretická výuka",
+          "detail": "Hodiny jsou často frontální bez aktivizace a diferenciace pro různé potřeby žáků.",
+          "evidence": "„přetrvávající menší pestrost metod a forem práce v teoretické výuce, chybějící aktivizace a malá podpora kooperativních metod“"
+        },
+        {
+          "tag": "Problémy s absencí v praxi",
+          "detail": "V odborném výcviku přetrvává neomluvená absence navzdory dobré docházce v teorii.",
+          "evidence": "„v praktické výuce se škole tolik nedaří a záškoláctví spojené s neomluvenou absencí stále přetrvává.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak podporujete učitele bez plné kvalifikace a začátečníky?",
+        "Jak řešíte absenci žáků během praktického výcviku?",
+        "Jak diferenciujete výuku pro žáky s různými schopnostmi?"
+      ],
+      "who_school_fits": [
+        "Žáci do praktických oborů, kteří chtějí hodně praxe u firem",
+        "Děti z vzdálenějších míst díky domovu mládeže",
+        "Uchazeči o 3- či 4leté obory s maturitou v gastronomii nebo technice"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče očekávající aktivní, pestrou teoretickou výuku",
+        "Žáci potřebující silnou diferenciace kvůli SVP nebo nadání",
+        "Ti, kteří mají problémy s pravidelnou docházkou v praxi"
+      ],
+      "plain_czech_summary": "Škola roste, má 272 žáků v oborech jako kuchařství, truhlářství nebo obchod. Silná je praxe u firem a dobré výsledky zkoušek (57/58 ZZ, 13/15 maturit). Domov mládeže je super. Slabiny: jednotvárná teorie bez aktivizace, někteří učitelé bez kvalifikace, absence v praxi. Hodí se pro praktické typy, opatrní ti chtějící moderní výuku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dobrá úspěšnost v posledním roce",
+        "key_numbers": [
+          "15 žáků skládalo",
+          "13 úspěšných (86,7 %)",
+          "2 neúspěšní"
+        ],
+        "evidence": "„Maturitní zkoušku vykonalo 15 žáků, z nich dva neuspěli.“"
+      },
+      "absence": {
+        "trend": "Nízká v teorii, přetrvává v praxi",
+        "key_numbers": [
+          "Nízká neomluvená v teorii",
+          "Problémy se záškoláctvím v praxi",
+          "Důsledná evidence"
+        ],
+        "evidence": "„absence žáků v teoretické výuce nízká, neomluvená jen ojedinělá... v praktické výuce... záškoláctví spojené s neomluvenou absencí stále přetrvává.“"
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodička prevence, kariérové poradenství",
+        "Podpora pro 25 žáků se SVP a 26 s odlišným MJ",
+        "Preventivní program s evaluací"
+      ],
+      "safety_climate": [
+        "Klidná atmosféra ve výuce",
+        "Dodržování hygieny a BOZ v praxi",
+        "Včasné řešení rizik, nízký počet kázeňských opatření"
+      ],
+      "partnerships_practice": [
+        "Pracoviště u firem pro odborný výcvik",
+        "Zahraniční stáže pro některé obory",
+        "Spolupráce s asociacemi (kuchaři, instalatéři)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, ale někde dlouhé věty a úřední fráze snižují čitelnost.",
+      "uncertainty_notes": [
+        "Žádné přesné čísla absence nebo dlouhodobý trend maturit.",
+        "Není specifikováno, kolik žáků v domově.",
+        "Počet nekvalifikovaných učitelů neuveden."
+      ]
+    }
+  }
+}

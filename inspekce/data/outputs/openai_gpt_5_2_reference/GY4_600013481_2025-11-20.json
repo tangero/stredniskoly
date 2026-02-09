@@ -1,0 +1,10 @@
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "model_id": "openai_gpt_5_2_reference",
+  "run_started_utc": "2026-02-09T07:46:50.056136+00:00",
+  "run_finished_utc": "2026-02-09T07:47:25.344174+00:00",
+  "raw_file": "GY4_600013481_2025-11-20.raw.txt",
+  "call_error": null,
+  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
+  "parsed_output": null
+}

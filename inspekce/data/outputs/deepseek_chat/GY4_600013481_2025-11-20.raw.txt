@@ -1,0 +1,97 @@
+```json
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "school_profile": {
+    "school_type": "Gymnázium",
+    "inspection_period": "20. – 21. 11. 2025 a 24. – 25. 11. 2025",
+    "school_change_summary": "Došlo ke změně na vedoucím pracovním místě ředitele školy. Zlepšení materiálních podmínek, nové počítačové učebny, pořízení robotických pomůcek a částečná renovace budovy na Příční ulici."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Erasmus+",
+        "detail": "Škola efektivně využívá projekt Erasmus+, který umožňuje žákům i pedagogům absolvovat jazykové vzdělávání a profesní stínování na partnerských školách v zahraničí.",
+        "evidence": "Tato zkušenost přispívá k rozvoji sociálních a komunikativních dovedností žáků a k profesnímu růstu pedagogů."
+      },
+      {
+        "tag": "Studijní úspěšnost",
+        "detail": "Škola systematicky podporuje studijní úspěšnost žáků, což potvrzují dlouhodobě velmi dobré výsledky u maturitní zkoušky.",
+        "evidence": "V posledních třech letech vykazuje škola téměř nulovou hrubou neúspěšnost žáků u maturitní zkoušky."
+      },
+      {
+        "tag": "Soutěže a projekty",
+        "detail": "Žáci školy dosahují velmi dobrých výsledků v soutěžích a vzdělávacích projektech.",
+        "evidence": "V posledním školním roce dosáhli žáci významných úspěchů např. v Mezinárodní matematické olympiádě a dalších soutěžích."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Hodnocení",
+        "detail": "Kritéria hodnocení nebyla v době inspekční činnosti sjednocena v rámci celé školy.",
+        "evidence": "Pouze část vyučujících si v rámci předmětových komisí stanovuje jednotné postupy při hodnocení."
+      },
+      {
+        "tag": "Výuka",
+        "detail": "Žáci nebyli systematicky vedeni k využívání rozmanitých informačních zdrojů a podpoře kritického myšlení.",
+        "evidence": "Menší zastoupení kooperativních forem práce v hodinách omezovalo plné využití jejich učebního potenciálu."
+      },
+      {
+        "tag": "Individuální rozvoj",
+        "detail": "Ve sledované výuce nebyly žákům nabízeny aktivity podporující jejich individuální rozvoj a nadání.",
+        "evidence": "Učitelé neměli připraveny úkoly s odlišnou mírou náročnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje nadané žáky?",
+      "Jaké jsou možnosti zahraničních výjezdů pro žáky?",
+      "Jaké jsou výsledky maturitních zkoušek v posledních letech?"
+    ],
+    "who_school_fits": [
+      "Žáci s vysokou motivací ke studiu.",
+      "Žáci se zájmem o matematiku a přírodní vědy.",
+      "Žáci, kteří chtějí získat zahraniční zkušenosti."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální podpory.",
+      "Žáci, kteří preferují méně tradiční metody výuky."
+    ],
+    "plain_czech_summary": "Gymnázium Brno, třída Kapitána Jaroše, je prestižní škola s výbornými výsledky u maturitních zkoušek a úspěchy v soutěžích. Škola nabízí možnosti zahraničních výjezdů a podporuje jazykové vzdělávání. Nicméně, některé oblasti jako hodnocení žáků a individuální podpora nadaných žáků potřebují zlepšení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborné výsledky",
+      "key_numbers": [
+        "Téměř nulová hrubá neúspěšnost u maturitní zkoušky v posledních třech letech."
+      ],
+      "evidence": "Ve srovnání s celorepublikovým průměrem dosahují žáci školy ve společné části maturitních zkoušek lepších výsledků."
+    },
+    "absence": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "Průměrná omluvená absence za poslední tři roky je 120 hodin na žáka."
+      ],
+      "evidence": "Neomluvenou absenci řeší škola zřídka."
+    },
+    "support_services": [
+      "Dva výchovní poradci a dva metodici prevence.",
+      "Školní psycholožka pracuje jeden den v týdnu."
+    ],
+    "safety_climate": [
+      "Žáci dodržují nastavená pravidla chování.",
+      "Škola řešila jednotky případů kyberšikany, sebepoškozování a užívání návykových látek."
+    ],
+    "partnerships_practice": [
+      "Aktivní spolupráce s partnery z mnoha, nejen zahraničních škol.",
+      "Projekt Erasmus+ umožňuje výměnné pobyty žáků i učitelů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je dobře strukturovaná a obsahuje relevantní informace, ale některé části jsou formulovány příliš formálně.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně škola plánuje zlepšit podporu nadaných žáků.",
+      "Chybí detailnější informace o plánovaných změnách v hodnocení žáků."
+    ]
+  }
+}
+```

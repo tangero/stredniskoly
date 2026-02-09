@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-09T08:29:10.385082+00:00",
+  "run_finished_utc": "2026-02-09T08:30:48.791878+00:00",
+  "raw_file": "LYC_600012760_2025-11-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600012760_2025-11-03",
+    "school_profile": {
+      "school_type": "Gymnázium (8leté) a Technické lyceum",
+      "inspection_period": "3. až 5. 11. 2025",
+      "school_change_summary": "Nové vedení školy stabilizuje provoz a modernizuje vybavení, zájem o studium roste."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní zázemí a aktivity",
+          "detail": "Škola nabízí modernizované prostory, širokou nabídku kroužků a kvalitní domov mládeže.",
+          "evidence": "„Velmi dobré materiální podmínky domova mládeže“, „celkem škola organizuje 27 volnočasových kroužků“."
+        },
+        {
+          "tag": "Příznivé klima a bezpečnost",
+          "detail": "Panuje zde vstřícná atmosféra, nízká absence a minimální problémy s chováním.",
+          "evidence": "„Opakovaně nízký počet výchovných opatření“, „pozitivní a partnerské pracovní klima“."
+        },
+        {
+          "tag": "Odborná úroveň Technického lycea",
+          "detail": "Učitelé odborných předmětů jsou dobří specialisté s vazbou na praxi.",
+          "evidence": "„Hospitované vyučovací hodiny odborných předmětů... se vyznačovaly dobrou odborností“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zastaralé vyučovací metody",
+          "detail": "Výuka je často frontální bez diferenciace podle schopností jednotlivců.",
+          "evidence": "„Nebylo téměř zaznamenáno zadávání činností nebo úloh s rozdílnou obtížností“."
+        },
+        {
+          "tag": "Chybějící zpětná vazba",
+          "detail": "Učitelé málo využívají sebehodnocení žáků a jasné vzdělávací cíle hodin.",
+          "evidence": "„Sebehodnocení žáků... bylo výjimečné“, „nedokázali... získat efektivní zpětnou vazbu“."
+        },
+        {
+          "tag": "Nerovnoměrné vzdělávání učitelů",
+          "detail": "Část pedagogů se dlouhodobě nezapojila do dalšího profesního rozvoje.",
+          "evidence": "„Individuální zapojování učitelů v dalším vzdělávání... je ale nerovnoměrné“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé pracují s rozdílnými schopnostmi žáků v rámci jedné hodiny?",
+        "Jakým způsobem žáci dostávají zpětnou vazbu o svém pokroku, kromě známek?",
+        "Které odborné učebny a prostory domova mládeže byly v poslední době modernizovány?"
+      ],
+      "who_school_fits": [
+        "Pro zájemce o letectví a techniku (Technické lyceum) s možností odborných praxí.",
+        "Pro žáky, kteří hledají bohatý volnočasový program a sportovní vyžití.",
+        "Pro studenty z většího dojížďkového okruhu, kteří potřebují kvalitní ubytování."
+      ],
+      "who_should_be_cautious": [
+        "Pro talentované žáky, kteří vyžadují individuální přístup a náročnější výzvy.",
+        "Pro studenty preferující moderní, interaktivní formy výuky před klasickým výkladem.",
+        "Pro rodiče, kteří kladou důraz na rozvoj měkkých dovedností a sebehodnocení dětí."
+      ],
+      "plain_czech_summary": "Škola má výbornou pověst v oblasti technického vzdělávání a volnočasových aktivit, což potvrzuje i nadregionální zájem o studium. Vedení školy vytvořilo bezpečné prostředí s moderním zázemím a novou biologickou laboratoří. Slabinou je tradiční styl výuky, který málo respektuje individuální rozdíly mezi žáky a nevyužívá moderní metody zpětné vazby. Pro rodiče je klíčové zvážit, zda jejich dítě vyznává spíše sportovní a kroužkové aktivity, nebo potřebuje intenzivní akademickou podporu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "stabilní",
+        "key_numbers": [
+          "100 % úspěšnost u maturity (podzim 2025)",
+          "cca 25 % žáků prospělo s vyznamenáním",
+          "4 žáci složili Cambridge zkoušku B2"
+        ],
+        "evidence": "„Při maturitní zkoušce... byli ve školním roce 2024/2025 všichni žáci po podzimním termínu úspěšní“."
+      },
+      "absence": {
+        "trend": "velmi nízká",
+        "key_numbers": [
+          "necelých 110 zameškaných hodin na žáka",
+          "pouze 3 neomluvené hodiny celkem",
+          "nízký počet snížených známek z chování"
+        ],
+        "evidence": "„Poměrně nízká průměrná absence žáků (v loňském školním roce necelých 110 zameškaných hodin na žáka)“."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (výchovná poradkyně, metodička prevence, psycholožka)",
+        "Asistent pedagoga pro žáky se speciálními potřebami",
+        "Nabídka doučování a konzultačních hodin"
+      ],
+      "safety_climate": [
+        "Vstřícný přístup učitelů a partnerské klima",
+        "Většinou nižší počet žáků ve třídě podporuje individuální přístup",
+        "Fungující systém prevence rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s firmami při odborné praxi (Technické lyceum)",
+        "Exkurze na letiště a do technických muzeí",
+        "Programy pro talentovanou mládež (Centrum pro talentovanou mládež, DoFe)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a negativa, a obsahuje konkrétní data o prospěchu a absenci.",
+      "uncertainty_notes": [
+        "Nejasné, zda 'nerovnoměrné vzdělávání učitelů' znamená konkrétní počet pedagogů nebo jejich klíčové předměty.",
+        "Chybí upřesnění, jak konkrétně probíhá 'neformální' podpora žáků se speciálními potřebami.",
+        "Není uvedeno, zda 'nové směrování' hospitační činnosti již přineslo konkrétní výsledky."
+      ]
+    }
+  }
+}

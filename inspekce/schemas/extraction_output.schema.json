@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CSI Extraction Output",
+  "type": "object",
+  "required": [
+    "report_id",
+    "school_profile",
+    "for_parents",
+    "hard_facts",
+    "model_self_check"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string"
+    },
+    "school_profile": {
+      "type": "object",
+      "required": [
+        "school_type",
+        "inspection_period",
+        "school_change_summary"
+      ],
+      "properties": {
+        "school_type": {
+          "type": "string"
+        },
+        "inspection_period": {
+          "type": "string"
+        },
+        "school_change_summary": {
+          "type": "string"
+        }
+      }
+    },
+    "for_parents": {
+      "type": "object",
+      "required": [
+        "strengths",
+        "risks",
+        "questions_for_open_day",
+        "plain_czech_summary"
+      ],
+      "properties": {
+        "strengths": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "tag",
+              "detail",
+              "evidence"
+            ],
+            "properties": {
+              "tag": {
+                "type": "string"
+              },
+              "detail": {
+                "type": "string"
+              },
+              "evidence": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "tag",
+              "detail",
+              "evidence"
+            ],
+            "properties": {
+              "tag": {
+                "type": "string"
+              },
+              "detail": {
+                "type": "string"
+              },
+              "evidence": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "questions_for_open_day": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "who_school_fits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "who_should_be_cautious": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "plain_czech_summary": {
+          "type": "string"
+        }
+      }
+    },
+    "hard_facts": {
+      "type": "object",
+      "required": [
+        "maturita",
+        "absence",
+        "support_services",
+        "safety_climate",
+        "partnerships_practice"
+      ],
+      "properties": {
+        "maturita": {
+          "type": "object",
+          "required": [
+            "trend",
+            "key_numbers",
+            "evidence"
+          ],
+          "properties": {
+            "trend": {
+              "type": "string"
+            },
+            "key_numbers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "evidence": {
+              "type": "string"
+            }
+          }
+        },
+        "absence": {
+          "type": "object",
+          "required": [
+            "trend",
+            "key_numbers",
+            "evidence"
+          ],
+          "properties": {
+            "trend": {
+              "type": "string"
+            },
+            "key_numbers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "evidence": {
+              "type": "string"
+            }
+          }
+        },
+        "support_services": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "safety_climate": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "partnerships_practice": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "model_self_check": {
+      "type": "object",
+      "required": [
+        "czech_clarity_score_1_5",
+        "czech_clarity_reason",
+        "uncertainty_notes"
+      ],
+      "properties": {
+        "czech_clarity_score_1_5": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "czech_clarity_reason": {
+          "type": "string"
+        },
+        "uncertainty_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

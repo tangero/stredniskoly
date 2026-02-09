@@ -1,0 +1,56 @@
+```json
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium s rozšířenou profilací na matematiku, 723 žáků ve 24 třídách",
+    "inspection_period": "20. – 25. listopadu 2025",
+    "school_change_summary": "V roce 2024 nastoupil nový ředitel, který přinesl koncepci zaměřenou na proměnu obsahu i způsobu vzdělávání. Škola prošla materiálním dovybavením (nové počítačové učebny, robotické pomůcky, částečná renovace budovy). Přes ambiciózní plány zatím chybí systematická práce s talentovanými žáky a širší využití aktivizujících metod výuky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Mezinárodní zkušenosti",
+        "detail": "Výjimečně rozsáhlé zapojení do programu Erasmus+ umožňuje žákům i učitelům jazykové pobyty a stínování na zahraničních školách (Německo, Finsko, Španělsko, Belgie).",
+        "evidence": "„Dlouhodobě efektivní využívání projektu Erasmus+ umožňuje žákům i pedagogům absolvovat jazykové vzdělávání a profesní stínování na partnerských školách v zahraničí. Tato zkušenost přispívá k rozvoji sociálních a komunikativních dovedností žáků.""
+      },
+      {
+        "tag": "Výborné studijní výsledky",
+        "detail": "Žáci dosahují vynikajících výsledků u maturity (téměř nulová neúspěšnost), vysoká úspěšnost při přijímání na VŠ a nadprůměrné výsledky oproti celostátnímu průměru.",
+        "evidence": "„V posledních třech letech vykazuje škola téměř nulovou hrubou neúspěšnost žáků u maturitní zkoušky. Ve srovnání s celorepublikovým průměrem dosahují žáci školy ve společné části v posledních třech letech u maturitních zkoušek lepších výsledků.""
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci pravidelně získávají medaile na mezinárodních olympiádách (matematika, lingvistika, astronomie) a vynikají v celostátních kolech předmětových soutěží.",
+        "evidence": "„V posledním školním roce dosáhli žáci významných úspěchů např. v Mezinárodní matematické olympiádě (bronzová medaile), tři medaile na Středoevropské matematické olympiádě, bronzová medaile na Mezinárodní lingvistické olympiádě, stříbrná medaile na Mezinárodní astronomické olympiádě.""
+      },
+      {
+        "tag": "Kvalitní výuka jazyků",
+        "detail": "Výuka cizích jazyků (angličtina, němčina, ruština) je na velmi dobré úrovni s plynulou konverzací, aktivním zapojením žáků a efektivním využitím moderních metod.",
+        "evidence": "„Hodiny cizích jazyků (anglického, německého i ruského) se vyznačovaly velmi dobrou úrovní žáků, kteří pohotově reagovali, vhodně pracovali se slovní zásobou a úspěšně řešili problémové úlohy. Ve výuce byla patrná plynulá konverzace, aktivní zapojení.""
+      },
+      {
+        "tag": "Fungující školní parlament",
+        "detail": "Aktivní školní parlament se podílí na organizaci školního života a ředitel se pravidelně účastní komunikace s jeho vedením.",
+        "evidence": "„Školní parlament má na škole dvě sekce a to na osmiletém i čtyřletém gymnáziu, pravidelně se schází a předkládá náměty vedení školy... je výbornou praxí, že se ředitel pravidelně účastní komunikace s vedením parlamentu.""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Tradiční výuka bez diferenciace",
+        "detail": "V 72 % hodin převládá frontální výuka, chybí úkoly různé náročnosti pro nadané žáky a aktivity podporující jejich individuální rozvoj.",
+        "evidence": "„Převládala tradiční frontální výuka doplněná řízeným rozhovorem, která byla přítomna v 72 % hodin... Ve sledované výuce nebyly žákům nabízeny aktivity podporující jejich individuální rozvoj a nadání, neboť učitelé neměli připraveny úkoly s odlišnou mírou náročnosti.""
+      },
+      {
+        "tag": "Tlak na výkon",
+        "detail": "Žáci pociťují silný tlak na výkon, kterému se poradenské pracoviště zatím věnuje spíše okrajově. Školní psycholožka pracuje jen jeden den týdně.",
+        "evidence": "„Na základě dotazníkového šetření a uskutečněných rozhovorů je patrné, že na žáky doléhá silný tlak na výkon, kterému se poradenské pracoviště zatím věnuje spíše okrajově. Přitom by si prostředí školy zasloužilo vyšší úvazek školního psychologa.""
+      },
+      {
+        "tag": "Nejednotné hodnocení",
+        "detail": "Většina učitelů si stanovuje kritéria hodnocení individuálně, chybí jednotný systém v rámci předmětových komisí.",
+        "evidence": "„Kritéria hodnocení nebyla v době inspekční činnosti sjednocena v rámci celé školy. Pouze část vyučujících si v rámci předmětových komisí stanovuje jednotné postupy při hodnocení, ostatní si je určují individuálně podle vlastních potřeb.""
+      },
+      {
+        "tag": "Nedostatečná podpora nadaných",
+        "detail": "Škola nemá vytvořen systematický program pro práce s talentovanými žáky, přestože jich má diagnostikováno pouze 1,2 %.",
+        "evidence": "„Ve škole dosud není vytvořen ani systematicky využíván ucelený systém podpory práce s talentovanými žáky... Na škole je diagnostikováno 1,2 % žáků s na

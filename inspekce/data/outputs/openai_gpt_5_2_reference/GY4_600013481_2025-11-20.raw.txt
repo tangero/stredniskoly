@@ -1,0 +1,58 @@
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté i osmileté) s možností rozšířené profilace na matematiku.",
+    "inspection_period": "2025-11-20 až 2025-11-25",
+    "school_change_summary": "Škola má nového ředitele a je v rozjezdu změn: „Došlo ke změně na vedoucím pracovním místě ředitele školy.“ Současně se zlepšilo vybavení a prostory („Zlepšení materiálních podmínek, nové počítačové učebny… a částečná renovace budovy na Příční ulici.“). Inspekce ale zároveň říká, že zatím chybí ucelená práce s talentovanými a ve výuce se málo využívají aktivizující metody („Ve škole dosud není vytvořen ani systematicky využíván ucelený systém podpory práce s talentovanými žáky… Stále se dostatečně nevyužívá možnosti zařazování aktivizujících metod…“)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Erasmus+ a zahraniční zkušenosti",
+        "detail": "Škola patří mezi nadstandardně aktivní v Erasmu (žáci i učitelé), což se promítá do jazyků i soft skills.",
+        "evidence": "„Dlouhodobě efektivní využívání projektu Erasmus+… naprosto výjimečná… přímý dopad do jazykových a sociálních kompetencí žáků…“"
+      },
+      {
+        "tag": "Studijní výsledky a maturita",
+        "detail": "Dlouhodobě výborné výsledky, téměř nulová neúspěšnost u maturity a výsledky lepší než průměr ČR.",
+        "evidence": "„Výsledky vzdělávání žáků mají dlouhodobě výbornou úroveň…“ + „téměř nulovou hrubou neúspěšnost žáků u maturitní zkoušky“ + „lepší výsledky oproti celorepublikovému průměru.“"
+      },
+      {
+        "tag": "Soutěže a olympiády (silní nadaní žáci)",
+        "detail": "Škola má špičkové výsledky v soutěžích (matematika, lingvistika, astronomie aj.), což je dobrý signál pro studijně ambiciózní děti.",
+        "evidence": "„dosáhli žáci významných úspěchů např. v Mezinárodní matematické olympiádě (bronzová medaile)…“"
+      },
+      {
+        "tag": "Silná výuka cizích jazyků",
+        "detail": "V jazycích inspekce popisuje velmi dobrou úroveň žáků, aktivní zapojení a smysluplnou práci ve dvojicích/skupinách.",
+        "evidence": "„Hodiny cizích jazyků… se vyznačovaly velmi dobrou úrovní žáků… plynulá konverzace, aktivní zapojení…“"
+      },
+      {
+        "tag": "Respektující klima ve výuce",
+        "detail": "Ve většině navštívených hodin probíhala výuka v klidné a respektující atmosféře.",
+        "evidence": "„převážná většina sledovaných hodin probíhala v atmosféře vzájemného respektu“"
+      },
+      {
+        "tag": "Studentský parlament má reálný vliv",
+        "detail": "Parlament je aktivní a vedení školy s ním pravidelně komunikuje.",
+        "evidence": "„Školní parlament… pravidelně se schází a předkládá náměty vedení školy… výbornou praxí, že se ředitel pravidelně účastní komunikace“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejednotné hodnocení (známky/bodování, různé přístupy)",
+        "detail": "Hodnocení může působit nevyrovnaně podle učitele a předmětu; to je důležité řešit před nástupem (co přesně platí a kde).",
+        "evidence": "„Kritéria hodnocení nebyla… sjednocena… ostatní si je určují individuálně“"
+      },
+      {
+        "tag": "Výuka často frontální, méně spolupráce a kritického myšlení",
+        "detail": "Inspekce popisuje převahu frontální výuky a menší rozvoj kritického myšlení, komunikace a práce se zdroji.",
+        "evidence": "„frontální výuka… v 72 % hodin“ + „Žáci nebyli systematicky vedeni k využívání rozmanitých informačních zdrojů… ani… ke kritickému myšlení.“"
+      },
+      {
+        "tag": "Málo diferenciace a podpory nadání přímo ve výuce",
+        "detail": "I když škola má nadané žáky a špičkové soutěžní výsledky, inspekce v běžné výuce nenašla dost práce s různou náročností úkolů.",
+        "evidence": "„Ve sledované výuce nebyly žákům nabízeny aktivity podporující jejich individuální rozvoj a nadání… úkoly s odlišnou mírou náročnosti.“"
+      },
+      {
+        "tag": "Wellbeing a tlak na výkon (psycholog jen 1

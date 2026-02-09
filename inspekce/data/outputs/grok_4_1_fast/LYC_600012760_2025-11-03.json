@@ -1,0 +1,106 @@
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T08:41:25.443933+00:00",
+  "run_finished_utc": "2026-02-09T08:41:58.488876+00:00",
+  "raw_file": "LYC_600012760_2025-11-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600012760_2025-11-03",
+    "school_profile": {
+      "school_type": "Gymnázium a technické lyceum s leteckým zaměřením",
+      "inspection_period": "2025-11-03 až 2025-11-06",
+      "school_change_summary": "Navýšení počtu žáků, stabilizace zájmu, nový ředitel druhý rok naplňuje plán rozvoje."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vysoký zájem o lyceum",
+          "detail": "Škola přitahuje žáky z širokého okolí na technické lyceum.",
+          "evidence": "Výrazně nadregionální zájem žáků o obor 78-42-M/01 Technické lyceum (1.1)"
+        },
+        {
+          "tag": "Moderní domov mládeže",
+          "detail": "Prostory domova jsou rekonstruované a podnětné pro ubytované.",
+          "evidence": "Velmi dobré materiální podmínky domova mládeže (2.4)"
+        },
+        {
+          "tag": "Široká nabídka aktivit",
+          "detail": "Škola organizuje 27 kroužků včetně sportovních kurzů jako parašutismus.",
+          "evidence": "Velká šíře volnočasových aktivit pro žáky (1.4)"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Méně práce s cíli na žáka",
+          "detail": "Učitelé méně stanovují a vyhodnocují cíle zaměřené na pokrok žáka.",
+          "evidence": "Nižší míra práce se vzdělávacími cíli zaměřenými na žáka (4.3)"
+        },
+        {
+          "tag": "Nedostatek diferenciace",
+          "detail": "Výuka se málo přizpůsobuje úrovni a zájmům žáků, včetně nadaných.",
+          "evidence": "Malá míra diferenciace ve výuce (6.2)"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak často učitelé stanovují konkrétní cíle pro pokrok každého žáka?",
+        "Jak škola plánuje zlepšit diferenciace pro nadané žáky?",
+        "Jak řešíte přeplněný domov mládeže?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o letectví a techniku",
+        "Ti, kteří chtějí gymnázium s množstvím kroužků",
+        "Děti z dálky díky domovu mládeže"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující silnou individuální podporu",
+        "Nadaní bez extra výzev ve třídě",
+        "Ti očekávající časté sebehodnocení"
+      ],
+      "plain_czech_summary": "Škola nabízí gymnázium a letecké lyceum s úspěšnou maturitou (100 % v 2024/25) a nízkou absencí. Silné: velký zájem o lyceum, super domov, 27 kroužků včetně parašutismu. Slabiny: málo personalizovaných cílů a diferenciace ve výuce. Hodí se pro fanoušky techniky, opatrní nadaní. Navštivte dny dveří a zeptejte se na plány zlepšení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Všichni úspěšní, příznivé výsledky",
+        "key_numbers": [
+          "100 % úspěšnost 2024/25",
+          "Čtvrtina s vyznamenáním"
+        ],
+        "evidence": "všichni žáci po podzimním termínu úspěšní"
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "110 zameškaných hodin/žák",
+          "3 neomluvené hodiny"
+        ],
+        "evidence": "necelých 110 zameškaných hodin na žáka, celkem tři neomluvené hodiny"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště",
+        "Výchovná poradkyně",
+        "Asistentka pedagoga"
+      ],
+      "safety_climate": [
+        "Nízký počet výchovných opatření",
+        "Klidná partnerská atmosféra",
+        "Preventivní programy"
+      ],
+      "partnerships_practice": [
+        "Odborné praxe v firmách",
+        "Exkurze na letiště",
+        "Spolupráce s partnery"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je přehledná, ale úřední termíny ji mírně ztěžují.",
+      "uncertainty_notes": [
+        "Data výsledků z 2024/25",
+        "Inspekce proběhla v listopadu 2025",
+        "Škola plánuje zlepšení podle doporučení"
+      ]
+    }
+  }
+}

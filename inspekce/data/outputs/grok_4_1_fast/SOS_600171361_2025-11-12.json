@@ -1,0 +1,108 @@
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T08:39:49.460537+00:00",
+  "run_finished_utc": "2026-02-09T08:40:31.533506+00:00",
+  "raw_file": "SOS_600171361_2025-11-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600171361_2025-11-12",
+    "school_profile": {
+      "school_type": "Střední škola s obory gastronomie a služeb (Cukrář, Prodavač, Kuchař-číšník, Kadeřník, Hotelnictví, Kosmetické služby, Podnikání).",
+      "inspection_period": "2025-11-12 až 2025-11-17",
+      "school_change_summary": "Od minulé inspekce zlepšeno materiální vybavení (IT učebna, kadeřnický salón) a některé aspekty výuky. „Od poslední inspekční činnosti došlo k částečnému zlepšení v oblasti průběhu výukového procesu.“"
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Silná praxe a partnerství",
+          "detail": "Škola spolupracuje s firmami a zahraničí, žáci jezdí na stáže.",
+          "evidence": "„Spolupráce s tuzemskými i zahraničními partnery... Každoročně se významný počet žáků... účastní zahraničních pracovních pobytů.“"
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Dobré zázemí pro odbornou výuku odpovídá trendům.",
+          "evidence": "„nová počítačová učebna, nový kadeřnický salón... Materiální vybavení pro odborné vzdělávání odpovídá současným trendům.“"
+        },
+        {
+          "tag": "Příznivé klima",
+          "detail": "Pravidelně sledují atmosféru a mají silnou prevenci.",
+          "evidence": "„Vedení školy pravidelně monitoruje celkové klima školy pomocí dotazníkových šetření... přispívá k jeho dlouhodobému zlepšování.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší maturity",
+          "detail": "Společná část maturity horší než průměr, sestupný trend.",
+          "evidence": "„Výsledky ve společné části maturitní zkoušky měly... spíše sestupnou tendenci... horších výsledků, než činil republikový průměr.“"
+        },
+        {
+          "tag": "Špatná analýza výsledků",
+          "detail": "Málo hloubkové vyhodnocení a opatření k zlepšení.",
+          "evidence": "„Škola nedostatečně analyzuje data získaná z interní evaluace výsledků vzdělávání žáků.“"
+        },
+        {
+          "tag": "Chybí individualizace",
+          "detail": "Nedostatek podpory pro žáky se speciálními potřebami a nadané.",
+          "evidence": "„nejsou dosud dostatečně uplatňovány individualizované metody... pro žáky se speciálními vzdělávacími potřebami nebo žáky nadané.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak plánujete zlepšit úspěšnost ve společné části maturity?",
+        "Jak podporujete žáky se speciálními potřebami v běžné výuce?",
+        "Kolik žáků reálně jede ročně na zahraniční stáž?"
+      ],
+      "who_school_fits": [
+        "Žáci do gastronomických oborů milující praxi a soutěže.",
+        "Ti, co chtějí moderní vybavení a zahraniční stáže.",
+        "Praktičtí studenti zaměření na služby a hotelnictví."
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující silnou individuální podporu.",
+        "Nadaní žáci bez dostatku obohacujících úkolů.",
+        "Ti, kteří potřebují top výsledky v maturity."
+      ],
+      "plain_czech_summary": "Škola vyniká praxí, partnerstvími včetně zahraničí a moderním vybavením pro gastronomie a služby. Klima je příznivé díky prevenci a monitoringu. Slabina jsou výsledky ve společné maturitě (např. 39% neúspěšnost v Podnikání 2025), málo analýzy výsledků a podpora jednotlivců. Hodí se pro praktičáky, opatrní ti s speciálními potřebami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Sestupný v posledních 3 letech ve společné části, horší než rep. průměr; lepší v profilové.",
+        "key_numbers": [
+          "Podnikání 2025: 39,3% neúspěšnost",
+          "Hotelnictví 2025: 26,1% neúspěšnost",
+          "Kosmetické služby 2025: 22,7% neúspěšnost"
+        ],
+        "evidence": "„Podnikání... z 24,1 % na 39,3 %. Hotelnictví... na 26,1 %. Kosmetické služby... na 22,7 %.“"
+      },
+      "absence": {
+        "trend": "Není specifikován",
+        "key_numbers": [],
+        "evidence": "„statistické vyhodnocení prospěchu, chování a absence žáků“ – bez číselných údajů."
+      },
+      "support_services": [
+        "Tým: 2 výchovní poradci, psycholožka, speciální pedagožka, kariérní poradenství.",
+        "Spolupráce mezi nimi není plně efektivní."
+      ],
+      "safety_climate": [
+        "Pravidelné dotazníky na klima.",
+        "Silná prevence rizikového chování programy.",
+        "Bezpečné prostředí díky monitoringu."
+      ],
+      "partnerships_practice": [
+        "S firmami, profesními organizacemi, zahraničí.",
+        "Pracoviště v Přerově, Prostějově.",
+        "Zahraniční pobyty pro gastronomii."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, ale dlouhé věty a odborné termíny ho činí místy složitějším.",
+      "uncertainty_notes": [
+        "Žádné čísla o absencích nebo prospěšnosti.",
+        "Maturitní data jen pro 3 obory.",
+        "Žádné srovnání závěrečných zkoušek s průměrem."
+      ]
+    }
+  }
+}

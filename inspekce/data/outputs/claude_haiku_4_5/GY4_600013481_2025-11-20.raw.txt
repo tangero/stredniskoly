@@ -1,0 +1,55 @@
+```json
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "school_profile": {
+    "school_type": "Gymnázium (osmileté a čtyřleté studium) se zaměřením na matematiku, příspěvková organizace",
+    "inspection_period": "20.–21. listopadu 2025 a 24.–25. listopadu 2025",
+    "school_change_summary": "Nový ředitel (od srpna 2024) s ambiciózní koncepcí rozvoje. Škola se modernizuje: nové počítačové učebny, robotické pomůcky, částečná renovace budovy. Hlavní zaměření na změnu obsahu a způsobu vzdělávání včetně zavedení slovního hodnocení a diferencovaného studia."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výjimečné zahraniční zkušenosti",
+        "detail": "Projekt Erasmus+ umožňuje žákům i učitelům vyjíždět na jazykové vzdělávání a stínování do zahraničí (Německo, Finsko, Španělsko, Belgie). Tato praxe je svým rozsahem naprosto výjimečná.",
+        "evidence": "Škola vyniká v rámci zastoupení projektu ERASMUS+ (zaměřený jak na žáky, tak i učitele) možností vyjet na jazykové vzdělávání nebo stínování do zahraničí – tzv. skupinové mobility. Tato praxe je svým rozsahem naprosto výjimečná a má přímý dopad do jazykových a sociálních kompetencí žáků i profesních zkušeností učitelů."
+      },
+      {
+        "tag": "Vynikající studijní výsledky",
+        "detail": "Více než 55 % žáků čtyřletého studia a více než 72 % žáků osmiletého studia prospívá s vyznamenáním. Téměř nulová neúspěšnost u maturit. Lepší výsledky než celorepublikový průměr.",
+        "evidence": "V posledních třech letech prospělo průměrně ve čtyřletém gymnáziu více jak 55 % žáků s vyznamenáním a v osmiletém studiu prospělo s vyznamenáním více jak 72 % žáků. V posledních třech letech vykazuje škola téměř nulovou hrubou neúspěšnost žáků u maturitní zkoušky."
+      },
+      {
+        "tag": "Soutěžní úspěchy",
+        "detail": "Žáci dosahují medailí na mezinárodních olympiádách (matematika, lingvistika, astronomie), vítězství v celostátních soutěžích a úspěchy v odborné činnosti.",
+        "evidence": "V loňském školním roce dosáhli žáci významných úspěchů např. v Mezinárodní matematické olympiádě (bronzová medaile), tři medaile na Středoevropské matematické olympiádě, bronzová medaile na Mezinárodní lingvistické olympiádě, stříbrná medaile na Mezinárodní astronomické olympiádě."
+      },
+      {
+        "tag": "Kvalitní výuka cizích jazyků",
+        "detail": "Výuka angličtiny, němčiny a ruštiny se vyznačuje velmi dobrou úrovní žáků, aktivním zapojením a cíleným využitím interaktivní tabule. Žáci pohotově reagují a úspěšně řeší problémové úlohy.",
+        "evidence": "Hodiny cizích jazyků (anglického, německého i ruského) se vyznačovaly velmi dobrou úrovní žáků, kteří pohotově reagovali, vhodně pracovali se slovní zásobou a úspěšně řešili problémové úlohy. Ve výuce byla patrná plynulá konverzace, aktivní zapojení a cílené využití interaktivní tabule."
+      },
+      {
+        "tag": "Nízká absence",
+        "detail": "Průměrná omluvená absence za poslední tři roky je 120 hodin na žáka. Neomluvenou absenci řeší škola zřídka.",
+        "evidence": "Průměrná omluvená absence za poslední tři roky je 120 hodin na žáka, neomluvenou absenci řeší škola zřídka."
+      },
+      {
+        "tag": "Aktivní školní parlament",
+        "detail": "Parlament má dvě sekce (osmileté a čtyřleté gymnázium), pravidelně se schází a předkládá náměty vedení. Ředitel se pravidelně účastní komunikace s vedením parlamentu.",
+        "evidence": "Školní parlament má na škole dvě sekce a to na osmiletém i čtyřletém gymnáziu, pravidelně se schází a předkládá náměty vedení školy. Je výbornou praxí, že se ředitel pravidelně účastní komunikace s vedením parlamentu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Tradiční frontální výuka",
+        "detail": "Převládá tradiční frontální výuka (72 % hodin), skupinová práce jen v 15 % hodin. Žáci nejsou dostatečně vedeni k využívání různých informačních zdrojů ani ke kritickému myšlení.",
+        "evidence": "Převládala tradiční frontální výuka doplněná řízeným rozhovorem, která byla přítomna v 72 % hodin, zatímco skupinová výuka se uplatnila jen v 15 % hodin. Žáci nebyli systematicky vedeni k využívání rozmanitých informačních zdrojů, podpoře komunikativních dovedností ani dostatečně podněcováni ke kritickému myšlení."
+      },
+      {
+        "tag": "Chybí jednotná kritéria hodnocení",
+        "detail": "Pouze část vyučujících si v rámci předmětových komisí stanovuje jednotné postupy při hodnocení. Ostatní si je určují individuálně podle vlastních potřeb.",
+        "evidence": "Kritéria hodnocení nebyla v době inspekční činnosti sjednocena v rámci celé školy. Pouze část vyučujících si v rámci předmětových komisí stanovuje jednotné postupy při hodnocení, ostatní si je určují individuálně podle vlastních potřeb."
+      },
+      {
+        "tag": "Nedostatečná podpora nadaných žáků",
+        "detail": "Ve sledované výuce nebyly nabíz

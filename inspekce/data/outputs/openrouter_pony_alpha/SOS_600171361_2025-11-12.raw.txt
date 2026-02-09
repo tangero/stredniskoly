@@ -1,0 +1,102 @@
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "school_profile": {
+    "school_type": "Střední odborná škola s gastronomickým a službovým zaměřením (výuční list i maturita).",
+    "inspection_period": "12. − 14. 11. 2025",
+    "school_change_summary": "Škola vybudovala nové prostory (IT učebna, kadeřnický salón) a částečně zkvalitnila průběh výuky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Silné zázemí a spolupráce s partnery připravují žáky na praxi.",
+        "evidence": "„Spolupráce s tuzemskými i zahraničními partnery... přispívá k jejich kvalitní přípravě na budoucí povolání.“"
+      },
+      {
+        "tag": "Vybavení",
+        "detail": "Nové prostory a technika odpovídají současným trendům.",
+        "evidence": "„Materiální vybavení pro odborné vzdělávání odpovídá současným trendům... nová počítačová učebna, nový kadeřnický salón.“"
+      },
+      {
+        "tag": "Klima",
+        "detail": "Škola klade důraz na bezpečné a příjemné prostředí.",
+        "evidence": "„Vedení školy pravidelně monitoruje celkové klima školy... činnost školní metodičky prevence významně přispívá k bezpečnému prostředí.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturita",
+        "detail": "Klesající úspěšnost u společné části maturit je alarmující.",
+        "evidence": "„Výsledky ve společné části maturitní zkoušky měly v období posledních tří let spíše sestupnou tendenci... horších výsledků, než činil republikový průměr.“"
+      },
+      {
+        "tag": "Hodnocení žáků",
+        "detail": "Žáci dostávají málo zpětné vazby pro svůj další rozvoj.",
+        "evidence": "„Formativní hodnocení reflektující individuální pokrok... se objevovalo jen ojediněle. Sebehodnocení a vzájemné hodnocení žáků nebylo součástí výuky.“"
+      },
+      {
+        "tag": "Podpora odlišností",
+        "detail": "Nedostatečná péče o talentované děti i žáky s potřebami.",
+        "evidence": "„Nedostatečná diferenciace výuky... nepodporuje dostatečné využívání potenciálu pro rozvoj vzdělávacího pokroku žáků... a žáků nadaných.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola reaguje na vysokou neúspěšnost u společné části maturitních zkoušek?",
+      "Jakým způsobem učitelé poskytují zpětnou vazbu, aby žáci věděli, co zlepšit?",
+      "Jak škola individuálně pracuje s nadanými žáky nebo žáky s obtížemi?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří chtějí získat silné praktické dovednosti a odbornost v gastronomii či službách.",
+      "Pro ty, kdo chtějí využít moderně vybavené odborné učebny a zapojit se do soutěží.",
+      "Pro studenty, kteří preferují školu s bezpečným klimatem a zahraničními pobyty."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří plánují studovat obor Podnikání (zde vysoká neúspěšnost u maturity).",
+      "Pro žáky, kteří potřebují intenzivní individuální podporu nebo náročnější teoretickou přípravu.",
+      "Pro ty, kteří očekávají propracovaný systém sebehodnocení a formativní zpětnou vazbu."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní odbornou přípravu v gastronomii a službách s moderním vybavením a skvělými kontakty na praxi. Pro rodiče je však varovným signálem výrazný pokles úspěšnosti u společné části maturitních zkoušek pod celorepublikový průměr. Škola také nedostatečně pracuje s individuálními potřebami žáků a chybí jí hlubší analýza výsledků. Pro prakticky založené studenty je škola dobrou volbou, u maturitních oborů je třeba zvážit rizika."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně negativní (sestupný) trend úspěšnosti ve společné části.",
+      "key_numbers": [
+        "Podnikání: neúspěšnost vzrostla z 24,1 % (2024) na 39,3 % (2025).",
+        "Hotelnictví: neúspěšnost vzrostla z 4,2 % (2023) na 26,1 % (2025).",
+        "Kosmetické služby: neúspěšnost vzrostla z 4,8 % (2023) na 22,7 % (2025)."
+      ],
+      "evidence": "„Výsledky ve společné části maturitní zkoušky měly v období posledních tří let spíše sestupnou tendenci.“"
+    },
+    "absence": {
+      "trend": "Neuvedeno (záznamy se zaměřují převážně na statistické vyhodnocení).",
+      "key_numbers": [
+        "Statistické vyhodnocení absence probíhá."
+      ],
+      "evidence": "„Záznamy z těchto jednání se však zaměřují převážně na statistické vyhodnocení... absence žáků.“"
+    },
+    "support_services": [
+      "Tým: 2 výchovní poradci, prevence, psycholožka, speciální pedagožka.",
+      "Spolupráce v týmu není efektivně nastavena.",
+      "Kariérové poradenství funguje dobře."
+    ],
+    "safety_climate": [
+      "Pravidelné dotazníkové šetření klimatu.",
+      "Efektivní systém prevence rizikového chování.",
+      "Příznivé prostředí podporované adaptačními programy."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s profesními organizacemi a zahraničními partnery.",
+      "Významný počet žáků na zahraničních pracovních pobytech.",
+      "Propojení teoretického vzdělávání s praxí je zajištěno."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozdělený a poskytuje konkrétní číselné důkazy o neúspěšnosti maturity.",
+    "uncertainty_notes": [
+      "Absence konkrétních dat o celkové docházce (jen že se sleduje).",
+      "Není specifikováno, o jaké 'spolupráce se soukromými firmami' přesně jde.",
+      "Nejasná míra 'částečného zlepšení' průběhu výuky bez detailnějšího popisu."
+    ]
+  }
+}

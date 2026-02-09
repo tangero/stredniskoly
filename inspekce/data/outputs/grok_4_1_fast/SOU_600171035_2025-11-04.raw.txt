@@ -1,0 +1,100 @@
+{
+  "report_id": "SOU_600171035_2025-11-04",
+  "school_profile": {
+    "school_type": "Elektrotechnická střední škola s maturitním oborem mechanik elektrotechnik (specializace silnoproud a IT) a tříletými obory elektrikář-silnoproud, elektromechanik, autoelektrikář.",
+    "inspection_period": "2025-11-04 až 2025-11-07",
+    "school_change_summary": "Nový ředitel od 2023, zlepšení materiálů včetně nového centra pro simulaci energetiky, zřízení poradenského pracoviště, ale stále nedostatky v školním řádu a vzdělávacích programech."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Silná spolupráce s firmami",
+        "detail": "Škola reaguje na trendy v energetice díky partnerstvím a projektům.",
+        "evidence": "Škola pružně reaguje na aktuální trendy... prostřednictvím rozsáhlé partnerské spolupráce s odbornými firmami."
+      },
+      {
+        "tag": "Dobré výsledky u zkoušek",
+        "detail": "Žáci mají lepší úspěšnost u maturit a výučních listů než celostátní průměr.",
+        "evidence": "Dobré a stabilní výsledky žáků u maturitní a závěrečné zkoušky v porovnání s celostátními údaji."
+      },
+      {
+        "tag": "Kvalitní odborná výuka",
+        "detail": "Odborné předměty a výcvik jsou na vysoké úrovni s praktickými prvky.",
+        "evidence": "Odborné teoretické předměty a odborný výcvik dosahovaly vysoké úrovně odbornosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé vedení kvality",
+        "detail": "Nedostatky v dokumentech a vedení vedou k nejednotným postupům.",
+        "evidence": "Rezervy v pedagogickém vedení a nedostatky ve vedení dokumentace se projevují v nejednotnosti."
+      },
+      {
+        "tag": "Málo aktivní výuka",
+        "detail": "Převažuje frontální výuka, žáci jsou málo zapojeni a bez diferenciace.",
+        "evidence": "Učitelé jen omezeně poskytovali podporu... převažovala aktivita učitele nad aktivitou žáků."
+      },
+      {
+        "tag": "Omezená podpora žákům",
+        "detail": "Podpora speciálním potřebám a nadaným je částečná.",
+        "evidence": "Diferencovaný přístup... byl využíván jen minimálně."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak často probíhají náslechy lekcí a jak pomáhají zlepšovat výuku?",
+      "Jak škola podporuje žáky se speciálními potřebami v praxi?",
+      "Jaké stipendia a praxe nabízíte a jak funguje domov mládeže?"
+    ],
+    "who_school_fits": [
+      "Žáky se zájmem o elektrotechniku a energetiku, kteří chtějí praxi v firmách.",
+      "Motivované žáky, co mají rádi praktickou výuku a soutěže.",
+      "Ty, kteří hledají školu s domovem mládeže a stipendii."
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující hodně individuální podpory nebo diferenciace.",
+      "Nadaní žáci bez systematické podpory.",
+      "Ti, kteří preferují aktivní, nefrontální výuku."
+    ],
+    "plain_czech_summary": "Škola je silná v odborné elektrotechnické přípravě s dobrými výsledky u maturit (2% neúspěšnost v 2024 vs. průměr 13,7%) a poklesem absence o 27%. Má super partnerství s firmami, stipendia a domov mládeže. Slabiny jsou v dokumentech, málo aktivní výuce a podpoře speciálních potřeb. Hodí se pro praktičáky do elektro, opatrní ti s individuálními potřebami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně lepší než celostátní průměr pro obory, mírný nárůst neúspěšnosti v 2025.",
+      "key_numbers": [
+        "2024: 2% hrubá neúspěšnost (průměr 13,7%)",
+        "2025: 6,9% hrubá neúspěšnost"
+      ],
+      "evidence": "V roce 2024 činila hrubá neúspěšnost žáků školy 2 %, zatímco celostátní průměr... 13,7 %. V roce 2025 došlo k mírnému nárůstu na 6,9 %."
+    },
+    "absence": {
+      "trend": "Výrazný pokles po zavedení limitu absence.",
+      "key_numbers": [
+        "2023/24: 173,21 hodin na žáka",
+        "2024/25: 126,09 hodin na žáka (-27%)"
+      ],
+      "evidence": "Ve školním roce 2023/2024... 173,21 hodin, ...2024/2025 klesla na 126,09 hodin, tedy o 47,12 hodin... snížení přibližně o 27 %."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s programem prevence.",
+      "Stipendia školní, zřizovatele a firem.",
+      "Domov mládeže pro 124 žáků s volnočasovými aktivitami."
+    ],
+    "safety_climate": [
+      "Přátelské klima, prevence šikany a kyberšikany.",
+      "Důraz na bezpečnost v dílnách a ochranné pomůcky."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s firmami na praxi a projektech.",
+      "Soutěže jako České ručičky, EU projekty Erasmus+."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je strukturovaná a srozumitelná, ale obsahuje hodně úředního jazyka a odkazů na kritéria.",
+    "uncertainty_notes": [
+      "Data maturit 2025 možná předběžná.",
+      "Žádné detailní údaje o nadaných žácích.",
+      "Absence jen celková, ne podle oborů."
+    ]
+  }
+}

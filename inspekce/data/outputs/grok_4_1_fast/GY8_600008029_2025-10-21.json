@@ -1,0 +1,115 @@
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T08:37:54.393318+00:00",
+  "run_finished_utc": "2026-02-09T08:38:27.845708+00:00",
+  "raw_file": "GY8_600008029_2025-10-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008029_2025-10-21",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium",
+      "inspection_period": "21. 10. 2025 – 23. 10. 2025",
+      "school_change_summary": "Nový zástupce ředitele, rekonstrukce prostor, obnova kabinetů, nové webové stránky a IT vybavení včetně robotických stavebnic."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Silná spolupráce s partnery",
+          "detail": "Škola spolupracuje s energetickou firmou a univerzitou, což obohacuje výuku.",
+          "evidence": "Klíčovým partnerem je energetická společnost... spolupráce s Pedagogickou a Přírodovědeckou fakultou Jihočeské univerzity."
+        },
+        {
+          "tag": "Podpora sociálních dovedností",
+          "detail": "Peer aktivity mezi žáky posilují sebevědomí a prevenci rizik.",
+          "evidence": "Škola posiluje pozitivní sebepojetí... peer aktivit probíhajících na škole mezi žáky jednotlivých ročníků."
+        },
+        {
+          "tag": "Úspěšní žáci v soutěžích",
+          "detail": "Žáci získávají ceny v olympiádách a soutěžích.",
+          "evidence": "1. místo v kategorii E... krajského kola fyzikální olympiády... 3. místo v kategorii malba."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Chybí diferenciace ve výuce",
+          "detail": "Výuka nezohledňuje individuální potenciál žáků.",
+          "evidence": "Ve výuce byla pouze výjimečně uplatněna diferenciace ve výuce s ohledem na potenciál jednotlivých žáků. (4.3)"
+        },
+        {
+          "tag": "Problém s tělocvičnou",
+          "detail": "Nefunkční tělocvičny nutí žáky dojíždět do haly.",
+          "evidence": "Absence funkční tělocvičny limituje... žáci docházejí na výuku tělesné výchovy do městské sportovní haly."
+        },
+        {
+          "tag": "Hospitace bez plného efektu",
+          "detail": "Zjištění z hospitací se nedostatečně promítají do zlepšení.",
+          "evidence": "Případná zjištění se do konkrétních kroků ke zkvalitnění výuky plně nepromítají."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak řešíte výuku tělesné výchovy bez funkční tělocvičny?",
+        "Jak podporujete různé potřeby žáků ve výuce?",
+        "Jaké jsou přesné výsledky maturity a plány na zlepšení?"
+      ],
+      "who_school_fits": [
+        "Žákům z venkova s vazbou na místní komunitu",
+        "Zájemcům o jazyky, vědu a soutěže",
+        "Motivovaným žákům do malé školy s peer podporou"
+      ],
+      "who_should_be_cautious": [
+        "Sportovcům kvůli dojíždění na tělocvičnu",
+        "Žákům potřebujícím silnou individuální diferenciace",
+        "Těm, kteří hledají velkou školu s aulou"
+      ],
+      "plain_czech_summary": "Malé venkovské gymnázium s 204 žáky má silnou komunitu, dobré maturity srovnatelné s průměrem a úspěchy v soutěžích. Žáci mají nízkou absenci, prospívají všichni. Slabiny: špatná tělocvična, málo diferenciace ve výuce. Spolupracuje s firmami a uni, nabízí peer aktivity a výlety. Hodí se motivovaným z venkova, opatrní sportovci."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě srovnatelné s průměrem, nadprůměr v mat a němčině 2025",
+        "key_numbers": [
+          "Nadprůměr v matematice a němčině 2025",
+          "5 žáků nahradilo zkoušku certifikátem",
+          "1 opravná zkouška úspěšně složena"
+        ],
+        "evidence": "Výsledky maturitních zkoušek jsou dlouhodobě srovnatelné s celostátním průměrem... dosáhla v některých předmětech nadprůměrných výsledků."
+      },
+      "absence": {
+        "trend": "Nízká absence, bez neomluvených hodin",
+        "key_numbers": [
+          "2 neprospěli v 1. pololetí 2024/25",
+          "Na konci roku prospěli všichni",
+          "Odchody po 4. ročníku cca 10 %"
+        ],
+        "evidence": "Absence žáků zůstává na nízké úrovni, neomluvené hodiny nebyly zaznamenány."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště",
+        "Kariérové poradenství",
+        "Elektronická schránka důvěry",
+        "Peer program proti rizikům"
+      ],
+      "safety_climate": [
+        "Peer iniciativy v prevenci rizik",
+        "Třídní hodiny s poradcem",
+        "Adaptační kurzy a besedy"
+      ],
+      "partnerships_practice": [
+        "Energetická společnost",
+        "Jihočeská univerzita",
+        "ZŠ v regionu",
+        "Absolventi s workshopy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a strukturovaná, ale má drobné překlepy jako 'sledovanýc h'.",
+      "uncertainty_notes": [
+        "Žádné přesné procenta pro výsledky maturity.",
+        "Nízká absence bez kvantifikace hodin.",
+        "Odchody 10 % po 4. ročníku neupřesněny."
+      ]
+    }
+  }
+}

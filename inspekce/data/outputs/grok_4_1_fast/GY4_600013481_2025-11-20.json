@@ -1,0 +1,111 @@
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T08:37:02.926212+00:00",
+  "run_finished_utc": "2026-02-09T08:37:25.755352+00:00",
+  "raw_file": "GY4_600013481_2025-11-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600013481_2025-11-20",
+    "school_profile": {
+      "school_type": "Gymnázium – osmileté a čtyřleté se zaměřením na matematiku",
+      "inspection_period": "20. – 21. 11. 2025 a 24. – 25. 11. 2025",
+      "school_change_summary": "Nový ředitel od 2024 s koncepcí rozvoje, zlepšení materiálů, nové učebny a renovace budovy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Mezinárodní mobily",
+          "detail": "Žáci a učitelé jezdí do zahraničí na jazykové pobyty a stínování díky Erasmus+.",
+          "evidence": "Efektivní využívání projektu Erasmus+ umožňuje žákům i pedagogům absolvovat jazykové vzdělávání v zahraničí."
+        },
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci mají dlouhodobě skvělou úspěšnost v maturitě a přechodu na VŠ.",
+          "evidence": "Dlouhodobě velmi dobré výsledky u maturitní zkoušky i vysoká úspěšnost absolventů při přechodu na vysoké školy."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci získávají medaile v olympiádách jako matematická nebo lingvistická.",
+          "evidence": "Bronzová medaile v Mezinárodní matematické olympiádě, medaile v dalších olympiádách."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotné hodnocení",
+          "detail": "Kritéria hodnocení nejsou sjednocená ve všech předmětových komisích.",
+          "evidence": "Kritéria hodnocení nebyla sjednocena v rámci celé školy, pouze část vyučujících si stanovuje jednotné postupy."
+        },
+        {
+          "tag": "Tradiční výuka",
+          "detail": "Převáží frontální metody, málo skupinové práce a kritického myšlení.",
+          "evidence": "Převládala tradiční frontální výuka v 72 % hodin, skupinová jen v 15 %."
+        },
+        {
+          "tag": "Slabá podpora nadaných",
+          "detail": "Nedostatečné aktivity pro individuální rozvoj talentů ve výuce.",
+          "evidence": "Ve sledované výuce nebyly žákům nabízeny aktivity podporující individuální rozvoj a nadání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak sjednocujete kritéria hodnocení v předmětech?",
+        "Jak podporujete nadané žáky a diferenciujete výuku?",
+        "Jak často je psycholožka dostupná a řešíte tlak na výkon?"
+      ],
+      "who_school_fits": [
+        "Motivovaní žáci milující soutěže a olympiády",
+        "Ti, kteří chtějí matematickou profilaci a jazyky",
+        "Rodiny oceňující zahraniční mobily Erasmus+"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující silnou individuální podporu",
+        "Ty, kteří preferují aktivní skupinovou výuku",
+        "Rodice hledající denní psychosociální péči"
+      ],
+      "plain_czech_summary": "Škola má výborné výsledky v maturitě a soutěžích, silný Erasmus+ pro zahraniční pobyty. Žáci jsou úspěšní, absence nízká. Slabiny: tradiční výuka s málo aktivizací, nejednotné hodnocení, slabší podpora nadaných a psychosociálních potřeb. Nový ředitel zlepšuje podmínky. Hodí se pro ambiciózní žáky do soutěží, opatrní buďte s potřebou diferenciace."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborný, téměř nulová neúspěšnost, lepší než celorepublikový průměr",
+        "key_numbers": [
+          "Téměř 100 % úspěšnost poslední 3 roky",
+          ">55 % vyznamenání v čtyřletém",
+          ">72 % vyznamenání v osmiletém"
+        ],
+        "evidence": "V posledních třech letech téměř nulovou hrubou neúspěšnost... lepších výsledků oproti celorepublikovému průměru."
+      },
+      "absence": {
+        "trend": "Nízká, hlavně omluvená, neomluvená zřídka",
+        "key_numbers": [
+          "120 hodin omluvená na žáka za 3 roky"
+        ],
+        "evidence": "Průměrná omluvená absence za poslední tři roky je 120 hodin na žáka, neomluvenou absenci řeší škola zřídka."
+      },
+      "support_services": [
+        "2 výchovní poradci",
+        "2 metodici prevence",
+        "4 asistenti pedagoga na osmiletém",
+        "Školní psycholožka 1 den v týdnu"
+      ],
+      "safety_climate": [
+        "Silný tlak na výkon u žáků",
+        "Jednotky případů kyberšikany, sebepoškozování, drog",
+        "Prevence duševního zdraví a rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Erasmus+ skupinové mobily do zahraničí",
+        "Výměny s Německem, Finskem, Španělskem",
+        "Mezinárodní projekty a stínování"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, ale odborné termíny a dlouhé věty ji částečně ztěžují.",
+      "uncertainty_notes": [
+        "Chybí přesná čísla k neomluvené absenci.",
+        "Žádné konkrétní trendy maturitních bodů."
+      ]
+    }
+  }
+}

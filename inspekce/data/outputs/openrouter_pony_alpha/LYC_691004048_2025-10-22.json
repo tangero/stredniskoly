@@ -1,0 +1,107 @@
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-09T08:30:48.796890+00:00",
+  "run_finished_utc": "2026-02-09T08:32:11.282152+00:00",
+  "raw_file": "LYC_691004048_2025-10-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_691004048_2025-10-22",
+    "school_profile": {
+      "school_type": "Soukromá střední škola (školská právnická osoba) s gymnáziem a pedagogickými obory.",
+      "inspection_period": "22. − 24. 10. 2025",
+      "school_change_summary": "Škola odstranila formální nedostatky ve školním programu a přijala opatření ke snížení absence a zlepšení maturitních výsledků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola se vyznačuje vstřícným přístupem a vytváří psychicky bezpečné sociální klima.",
+          "evidence": "Vstřícný přístup pracovníků školy významně přispívá k pocitu psychického bezpečí."
+        },
+        {
+          "tag": "Podpora začínajících",
+          "detail": "Noví učitelé dostávají systematickou podporu od zkušených kolegů i vedení.",
+          "evidence": "Účinná podpora tří začínajících učitelů je realizována systematicky uvádějícími učiteli."
+        },
+        {
+          "tag": "Rozvoj talentů",
+          "detail": "Nadaní sportovci a umělci mohou čerpat individuální podporu a navýšenou absenci.",
+          "evidence": "Žáky talentované škola podporuje a umožňuje jim navýšit procento povolené absence."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Podprůměrné maturity",
+          "detail": "Žáci dosahují dlouhodobě horších výsledků u maturit než jiné školy.",
+          "evidence": "Žáci dosahují dlouhodobě podprůměrných výsledků u maturitních zkoušek."
+        },
+        {
+          "tag": "Nerozlišená výuka",
+          "detail": "Výuka nezohledňuje individuální schopnosti žáků, všichni dělají to samé.",
+          "evidence": "Hlavním nedostatkem byla absence diferenciace probíraného učiva zohledňující rozdíly ve schopnostech žáků."
+        },
+        {
+          "tag": "Málo samostatnosti",
+          "detail": "Žáci málo pracují s technologiemi a rozvíjejí kritické myšlení.",
+          "evidence": "Žáci sami digitální technologie téměř nepoužívali, což se projevilo omezeným rozvojem kritického myšlení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně nová opatření (zpřísnění klasifikace, postupové zkoušky) pomohou zlepšit výsledky u maturity?",
+        "Jak škola diferencuje výuku, aby zaujala jak nadanější žáky, tak ty, kteří potřebují pomoc?",
+        "Jaké konkrétní aktivity zařazujete do výuky, aby žáci aktivně používali digitální technologie?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kterým vyhovuje přátelská atmosféra a individuální přístup pedagogů.",
+        "Pro talentované sportovce nebo umělce, kteří potřebují flexibilní režim studia.",
+        "Pro zájemce o pedagogické obory s dobře nastaveným systémem praxí."
+      ],
+      "who_should_be_cautious": [
+        "Pro žály, kteří potřebují intelektuální výzvy a náročnější diferencované úkoly.",
+        "Pokud je pro vás prioritou dlouhodobě vysoká úspěšnost a průměr u maturitních zkoušek.",
+        "Pro ty, kteří očekávají intenzivní práci s moderními technologiemi přímo ve výuce."
+      ],
+      "plain_czech_summary": "Škola nabízí velmi vstřícné a bezpečné prostředí, což potvrzují i inspektoři. Pedagogové si pomáhají a nové kolegy dobře zaškolují. Velkým varovným signálem jsou však dlouhodobě podprůměrné výsledky u maturit, které škola nyní řeší zpřísněním hodnocení a novými zkouškami. Výuka je podle inspekce často stereotypní, nezohledňuje rozdílné schopnosti žáků a málo využívá moderní technologie. Škola může být dobrou volbou pro studenty hledající podporu a přátelskou komunitu, ale rodiče by měli bedlivě sledovat, zda nová opatření skutečně zvednou studijní výsledky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Klesající / Podprůměrné",
+        "key_numbers": [
+          "Výsledky dlouhodobě podprůměrné v celorepublikovém srovnání.",
+          "Někteří žáci neúspěšní i přes dobré známky v průběhu studia."
+        ],
+        "evidence": "Žáci školy napříč všemi obory dosahují dlouhodobě podprůměrných výsledků u maturitních zkoušek."
+      },
+      "absence": {
+        "trend": "Stabilizovaný / Řešený",
+        "key_numbers": [
+          "Škola přijala systémová opatření ke snižování vysoké absence.",
+          "Počet individuálních plánů s navýšenou absencí v roce 2025/2026 poklesl."
+        ],
+        "evidence": "Škola přijala opatření ke snižování vysoké absence žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště je stabilní a systematicky vede dokumentaci.",
+        "Individuální vzdělávací podpora primárně pro nadané sportovce a zdravotně znevýhodněné."
+      ],
+      "safety_climate": [
+        "Vstřícný a respektující přístup pracovníků přispívá k psychickému bezpečí.",
+        "Významná role školního parlamentu a prevence rizikového chování."
+      ],
+      "partnerships_practice": [
+        "Rozvoj spolupráce v rámci projektu Erasmus (výjezdy do Španělska, Rumunska).",
+        "Dobře zajištěná učební praxe na smluvních pracovištích pro pedagogické obory."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky a obsahuje konkrétní důkazy. Místy užívá standardní pedagogickou terminologii (diferenciace, formativní hodnocení).",
+      "uncertainty_notes": [
+        "Nejasná míra efektivity nově zavedených opatření na zlepšení maturitních výsledků (až 110 slov).",
+        "Chybí konkrétní číselné údaje o procentu úspěšnosti u maturity v předchozích letech."
+      ]
+    }
+  }
+}

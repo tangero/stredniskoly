@@ -1,0 +1,107 @@
+{
+  "report_id": "GY8_600014061_2025-10-20",
+  "model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T08:38:27.848895+00:00",
+  "run_finished_utc": "2026-02-09T08:39:03.568193+00:00",
+  "raw_file": "GY8_600014061_2025-10-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014061_2025-10-20",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium s základní uměleckou školou",
+      "inspection_period": "20. 10. 2025 − 22. 10. 2025",
+      "school_change_summary": "Od 2021 zlepšeny prostory rekonstrukcí podkroví a elektroinstalace, generační obměna pedagogů, nové vybavení pro ZUŠ, ale v ZUŠ přetrvávají nedostatky ve vedení a fluktuaci."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci mají nulovou neúspěšnost u maturity a všichni se dostanou na VŠ.",
+          "evidence": "V posledních třech letech nulovou hrubou neúspěšnost; 82 % s vyznamenáním loňském; sto procentech přijímáni na VŠ."
+        },
+        {
+          "tag": "Kvalitní výuka",
+          "detail": "Pestré metody podporují klíčové kompetence a komunikaci.",
+          "evidence": "Pestré výukové metody a formy včetně inspirativně zadávaných úloh podporují klíčové kompetence žáků."
+        },
+        {
+          "tag": "Silné vedení gymnázia",
+          "detail": "Řízení je efektivní s hospitacemi a podporou začátečníků.",
+          "evidence": "Na gymnáziu je řízení systematické a efektivní; hospitační činnost plánovitě s vyhodnocením."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence",
+          "detail": "Žáci chybí průměrně 107 hodin za rok.",
+          "evidence": "Průměrná absence žáků se v posledních letech pohybuje kolem 107 hodin na žáka za školní rok."
+        },
+        {
+          "tag": "Problémy v ZUŠ",
+          "detail": "Fluktuace pedagogů v hudebním a výtvarném oboru snižuje kvalitu.",
+          "evidence": "Zvýšená fluktuace pedagogů ovlivňuje úroveň vzdělávacího procesu v hudebním a výtvarném oboru."
+        },
+        {
+          "tag": "Nedostatečná kontrola v ZUŠ",
+          "detail": "Chybí systém podpory pro začátečníky a koordinace.",
+          "evidence": "Nedostatečná kontrolní činnost v ZUŠ má dopad na rozdílnou koncepci předmětů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak řešíte vysokou absenci žáků?",
+        "Jaké jsou plány na stabilizaci pedagogů v ZUŠ?",
+        "Jak podporujete začínající učitele?"
+      ],
+      "who_school_fits": [
+        "Motivovaní žáci s dobrými výsledky a zájmem o soutěže.",
+        "Rodiny hledající gymnázium s uměleckým zázemím a projekty.",
+        "Žáci, kteří chtějí taneční obor ZUŠ."
+      ],
+      "who_should_be_cautious": [
+        "Žáci závislí na kvalitní hudební nebo výtvarné výuce kvůli fluktuaci.",
+        "Rodiny citlivé na absence a nižší disciplínu.",
+        "Žáci potřebující striktní metodickou podporu v umění."
+      ],
+      "plain_czech_summary": "Gymnázium má super výsledky: 0% propadnutí u maturity poslední 3 roky, 82% s vyznamenáním, všichni na VŠ. Výuka pestrá, atmosféra dobrá, úspěchy v olympiádách a Erasmus+. ZUŠ má problémy s fluktuací v hudbě a výtvaru, ale tanec je výborný. Absence 107 hodin/žák/rok. Ideál pro motivované děti, opatrně pro ty do umění."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborný a stabilní",
+        "key_numbers": [
+          "0% neúspěšnost poslední 3 roky",
+          "82% s vyznamenáním loňském",
+          "100% přijetí na VŠ"
+        ],
+        "evidence": "V posledních třech letech nulovou hrubou neúspěšnost; prospělo s vyznamenáním 82 % žáků; sto procentech přijímáni na VŠ."
+      },
+      "absence": {
+        "trend": "Stabilní kolem průměru",
+        "key_numbers": [
+          "107 hodin/žák/rok"
+        ],
+        "evidence": "Průměrná absence žáků se v posledních letech pohybuje kolem 107 hodin na žáka za školní rok."
+      },
+      "support_services": [
+        "Poradenské pracoviště: výchovná poradkyně, psycholožka, metodička prevence.",
+        "Plány podpory pro SVP, prevence šikany a drog."
+      ],
+      "safety_climate": [
+        "Ojedinělé špatné chování, 158 pochval vs. 9 kázeňských opatření.",
+        "Prevence na šikanu, kyberšikanu, drogy."
+      ],
+      "partnerships_practice": [
+        "Erasmus+, olympiády, debaty, regionální akce.",
+        "Projekty jako Mezinárodní cena vévody z Edinburghu."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je strukturovaná, s jasnými závěry a citacemi.",
+      "uncertainty_notes": [
+        "Data hlavně o gymnáziu, ZUŠ vedlejší.",
+        "Žádné číselné trendy absence mimo průměr."
+      ]
+    }
+  }
+}

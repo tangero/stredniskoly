@@ -1,0 +1,103 @@
+{
+  "report_id": "SOU_600171035_2025-11-04",
+  "school_profile": {
+    "school_type": "SOU",
+    "inspection_period": "2025-11-04 až 2025-11-07",
+    "school_change_summary": "Od roku 2023 školu vede nový ředitel, který zpracoval koncepci rozvoje, došlo k částečné obměně pedagogického sboru a výraznému zlepšení materiálního vybavení včetně nového simulačního centra."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky vzdělávání",
+        "detail": "Škola dosahuje dlouhodobě nadprůměrných výsledků u maturitních a závěrečných zkoušek ve srovnání s celostátním průměrem.",
+        "evidence": "„Žáci školy dlouhodobě dosahují dobrých výsledků... hrubá neúspěšnost žáků školy 2 %, zatímco celostátní průměr... dosáhl 13,7 %.“"
+      },
+      {
+        "tag": "Odborné zázemí",
+        "detail": "Škola disponuje kvalitním a moderně se rozvíjejícím technickým vybavením s podporou odborných firem.",
+        "evidence": "„Vybudování nového centra pro reálnou simulaci technologií v energetice... materiální vybavení odpovídalo nárokům příslušných oborů.“"
+      },
+      {
+        "tag": "Partnerské vztahy",
+        "detail": "Silné propojení s průmyslovými podniky a profesními asociacemi zajišťuje relevanci výuky pro trh práce.",
+        "evidence": "„Partnerství s desítkami výrobních podniků a firem... umožňují žákům získávat odbornou praxi... a zajišťují i odborné vzdělávání zaměstnanců firem.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita výuky",
+        "detail": "Převažuje frontální výuka s malým zapojením žáků a nedostatečným rozvojem samostatného myšlení.",
+        "evidence": "„Převažovala aktivita učitele nad aktivitou žáků, což vedlo k jejich menšímu zapojení, omezenému rozvoji samostatného myšlení.“"
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Podpůrná opatření pro žáky se speciálními potřebami jsou ve výuce realizována pouze omezeně.",
+        "evidence": "„Realizace podpůrných opatření byla zaznamenána pouze v omezené míře... diferencovaný přístup ve výuce byl využíván jen minimálně.“"
+      },
+      {
+        "tag": "Dokumentace",
+        "detail": "V základních dokumentech školy přetrvávají nedostatky, které nebyly odstraněny.",
+        "evidence": "„Přetrvávají nedostatky v obsahu základních dokumentů školy jako jsou školní řád a školní vzdělávací programy.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé ve výuce využívají moderní technologie a aktivizující metody, aby žáci nebyli pouze pasivními posluchači?",
+      "Jakým způsobem škola zajišťuje individuální podporu pro žáky s různými vzdělávacími potřebami přímo v hodinách?",
+      "Jaké konkrétní firmy umožňují žákům odbornou praxi a jak často na ni dochází?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří se chtějí uplatnit v technických oborech a očekávají kvalitní odbornou přípravu s vazbou na praxi.",
+      "Pro zájemce o elektrotechniku a energetiku, kteří ocení moderní vybavení školních dílen a center.",
+      "Pro studenty, kteří potřebují ubytování a hledají školu s kvalitně fungujícím domovem mládeže a volnočasovými aktivitami."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří preferují moderní, interaktivní a skupinové formy výuky před tradiční frontální výukou.",
+      "Pro studenty se speciálními vzdělávacími potřebami vyžadujícími intenzivní individuální podporu přímo ve výuce.",
+      "Pro rodiče, kteří vyžadují bezchybnou administrativní transparentnost a aktuálnost školních předpisů."
+    ],
+    "plain_czech_summary": "Škola je skvělou volbou pro technicky nadšené studenty, kterým nabízí nadprůměrnou úroveň odborného vzdělávání, moderní vybavení včetně unikátního simulačního centra a silné vazby na zaměstnavatele. Výsledky u maturity a závěrečných zkoušek jsou dlouhodobě nadprůměrné. Slabším místem zůstává převažující styl výuky, který je spíše tradiční a méně zapojuje žáky do aktivní práce. Přestože škola zřídila poradenské pracoviště, podpora žáků se speciálními potřebami ve výuce zatím není plně systémová. Rodiče by měli zvážit, zda jejich dítě vyznává spíše samostatný styl učení nebo potřebuje silné vedení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Lepší než celostátní průměr s mírnými fluktuacemi",
+      "key_numbers": [
+        "Hrubá neúspěšnost 2024: 2 %",
+        "Hrubá neúspěšnost 2025: 6,9 %",
+        "Celostátní průměr neúspěšnosti: 13,7 %"
+      ],
+      "evidence": "„V roce 2024 činila hrubá neúspěšnost žáků školy 2 %, zatímco celostátní průměr... dosáhl 13,7 %. V roce 2025 došlo k mírnému nárůstu... na 6,9 %.“"
+    },
+    "absence": {
+      "trend": "Výrazný pokles po zavedení limitu absence",
+      "key_numbers": [
+        "Pokles z 173,21 hod na 126,09 hod/žák",
+        "Snížení o cca 27 %",
+        "Opatření zavedeno v roce 2024/2025"
+      ],
+      "evidence": "„Ve školním roce 2023/2024 činila celková absence na žáka 173,21 hodin... ve školním roce 2024/2025 klesla na 126,09 hodin... snížení přibližně o 27 %.“"
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště a preventivní program.",
+      "Systém prevence šikany a kyberšikany.",
+      "Kariérové poradenství na požadované úrovni."
+    ],
+    "safety_climate": [
+      "Přátelské a podporující sociální klima ve třídách.",
+      "Důsledné dodržování bezpečnostních pravidel v odborném výcviku.",
+      "Aktivní Žákovský parlament podávající podněty vedení."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se Svazem energetiky a desítkami firem.",
+      "Účast na mezinárodních projektech (vodíkové technologie).",
+      "Možnost produktivní práce a odborné praxe pro žáky."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, jasně člení pozitiva a nedostatky a obsahuje konkrétní data podložená citacemi.",
+    "uncertainty_notes": [
+      "Nejasné, zda nedostatky ve školním řádu mají přímý dopad na rodiče a žáky.",
+      "Chybí bližší specifikace, jak konkrétně vypadá 'omezená míra' realizace podpůrných opatření."
+    ]
+  }
+}
