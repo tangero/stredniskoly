@@ -52,8 +52,8 @@ function normalizeMinBodyScore(minBody?: number): number {
   if (typeof minBody !== 'number' || !Number.isFinite(minBody) || minBody <= 0) {
     return 0;
   }
-  // Historicky jsou minima v rozsahu 0-200 (součet ČJ+MA), v UI pracujeme se škálou 0-100.
-  return minBody > 100 ? Math.round(minBody / 2) : Math.round(minBody);
+  // Data v schools_data.json jsou v % škále (0-200), převádíme na skutečné body (0-100).
+  return Math.round(minBody / 2);
 }
 
 function deduplicateById(schools: School[]): School[] {
@@ -192,7 +192,7 @@ export async function GET(request: NextRequest) {
           delka_studia: s.delka_studia,
           slug: getSchoolSlug(s, slugContext),
           min_body_2025: normalizeMinBodyScore(s.min_body),
-          jpz_min: s.jpz_min_actual || s.min_body || 0,
+          jpz_min: s.jpz_min_actual || normalizeMinBodyScore(s.min_body),
           index_poptavky_2025: s.index_poptavky || 0,
         }));
 
@@ -261,7 +261,7 @@ export async function GET(request: NextRequest) {
         delka_studia: s.delka_studia,
         slug: getSchoolSlug(s, slugContext),
         min_body_2025: normalizeMinBodyScore(s.min_body),
-        jpz_min: s.jpz_min_actual || s.min_body || 0,
+        jpz_min: s.jpz_min_actual || normalizeMinBodyScore(s.min_body),
         index_poptavky_2025: s.index_poptavky || 0,
       }))
       .sort((a, b) => {
