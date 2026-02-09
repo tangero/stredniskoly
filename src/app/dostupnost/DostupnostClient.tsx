@@ -390,38 +390,60 @@ export function DostupnostClient() {
 
   return (
     <div className="space-y-6">
-      {/* Upozornění na omezenou dostupnost dat */}
+      {/* Upozornění na dostupnost dat */}
       <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 md:p-5">
         <div className="flex gap-3">
           <span className="text-amber-600 text-xl shrink-0">&#9888;</span>
           <div className="text-sm text-amber-900">
-            <p className="font-semibold mb-1">MHD data máme pouze pro vybraná města</p>
+            <p className="font-semibold mb-1">Pokrytí MHD se liší podle regionu</p>
             <p>
-              Celostátní jízdní řád (GTFS) obsahuje všechny meziměstské spoje (autobusy a vlaky),
-              ale městskou hromadnou dopravu (MHD) pouze pro {' '}
-              <strong>15 měst</strong>. Pokud vaše město není v seznamu níže,
-              vyhledávání najde pouze zastávky meziměstské dopravy ve vašem okolí.
+              Data o jízdních řádech čerpáme z{' '}
+              <a
+                href="https://github.com/tangero/jizdni-rady-czech-republic/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline font-medium"
+              >
+                tangero/jizdni-rady-czech-republic
+              </a>
+              . Pokrytí městské dopravy není všude stejné, proto níže uvádíme
+              aktuální výběr měst s největším pokrytím.
             </p>
             <details className="mt-2">
               <summary className="cursor-pointer font-medium text-amber-800 hover:text-amber-900">
                 Zobrazit města s MHD daty
               </summary>
               <div className="mt-2 grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-0.5 text-amber-800">
-                <span>Praha <span className="text-amber-600">(DPP)</span></span>
-                <span>Brno <span className="text-amber-600">(DPMB)</span></span>
-                <span>Ostrava <span className="text-amber-600">(DPO)</span></span>
-                <span>Plzeň <span className="text-amber-600">(PMDP)</span></span>
-                <span>Olomouc <span className="text-amber-600">(DPMO)</span></span>
-                <span>Liberec <span className="text-amber-600">(DPMLJ)</span></span>
-                <span>Č. Budějovice <span className="text-amber-600">(DPMCB)</span></span>
-                <span>Ústí n. L. <span className="text-amber-600">(DPMUL)</span></span>
-                <span>Karlovy Vary <span className="text-amber-600">(DPKV)</span></span>
-                <span>Jihlava <span className="text-amber-600">(DPMJ)</span></span>
-                <span>Děčín <span className="text-amber-600">(DPMDAS)</span></span>
-                <span>Most a Litvínov <span className="text-amber-600">(DPMOST)</span></span>
-                <span>Chomutov <span className="text-amber-600">(DPCHJ)</span></span>
-                <span>Opava <span className="text-amber-600">(MDPO)</span></span>
-                <span>Teplice <span className="text-amber-600">(MDT)</span></span>
+                <span>Praha</span>
+                <span>Brno</span>
+                <span>Ostrava</span>
+                <span>Plzeň</span>
+                <span>Ústí nad Labem</span>
+                <span>Děčín</span>
+                <span>Teplice</span>
+                <span>Karlovy Vary</span>
+                <span>Chomutov</span>
+                <span>Příbram</span>
+                <span>Kladno</span>
+                <span>Zlín</span>
+                <span>Klatovy</span>
+                <span>Beroun</span>
+                <span>Kutná Hora</span>
+                <span>Hodonín</span>
+                <span>Břeclav</span>
+                <span>Znojmo</span>
+                <span>Kroměříž</span>
+                <span>Uherské Hradiště</span>
+                <span>Uherský Brod</span>
+                <span>Kralupy nad Vltavou</span>
+                <span>Brandýs n. L. - Stará Boleslav</span>
+                <span>Mělník</span>
+                <span>Nymburk</span>
+                <span>Kolín</span>
+                <span>Mladá Boleslav</span>
+                <span>Vsetín</span>
+                <span>Varnsdorf</span>
+                <span>Liberec</span>
               </div>
             </details>
           </div>

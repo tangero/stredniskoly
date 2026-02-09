@@ -20,6 +20,16 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '2.3.1',
+    date: '9. 2. 2026',
+    title: 'Aktualizace pokrytí MHD na stránce dostupnosti',
+    changes: [
+      { type: 'improve', text: 'Sekce „Zobrazit města s MHD daty" aktualizována podle aktuálních dat v transit grafu' },
+      { type: 'improve', text: 'Původní fixní výčet měst nahrazen aktuálním výběrem měst s největším pokrytím' },
+      { type: 'improve', text: 'Doplněn zdroj jízdních řádů: github.com/tangero/jizdni-rady-czech-republic' },
+    ],
+  },
+  {
     version: '2.3.0',
     date: '8. 2. 2026',
     title: 'Bug report widget, UX dopravních informací a zarovnání tabulek',
