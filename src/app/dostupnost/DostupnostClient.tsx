@@ -260,13 +260,13 @@ export function DostupnostClient() {
         params.set('q', query); params.set('limit', '12');
         const response = await fetch(`/api/dostupnost/stop-suggest?${params.toString()}`, { signal: controller.signal });
         if (!isCurrent) return;
-        if (!response.ok) { setSuggestLoading(false); return; }
+        if (!response.ok) { setSuggestLoading(false); setError('Nepodařilo se načíst zastávky. Zkuste to znovu.'); return; }
         const payload = await response.json() as { suggestions?: StopSuggestion[]; totalFound?: number };
         if (!isCurrent) return;
         const items = Array.isArray(payload.suggestions) ? payload.suggestions : [];
         setSuggestions(items); setSuggestionsTotal(payload.totalFound ?? items.length);
         setHighlightIndex(-1); setShowDropdown(items.length > 0); setSuggestLoading(false);
-      } catch { if (isCurrent) setSuggestLoading(false); }
+      } catch (err) { if (isCurrent && !(err instanceof Error && err.name === 'AbortError')) { setSuggestLoading(false); setError('Nepodařilo se načíst zastávky. Zkuste to znovu.'); } else if (isCurrent) { setSuggestLoading(false); } }
     }, 150);
     return () => { isCurrent = false; controller.abort(); window.clearTimeout(timer); };
   }, [stopQuery, selectedStop]);
@@ -289,8 +289,11 @@ export function DostupnostClient() {
         body: JSON.stringify({ stopId: params.stopId, maxMinutes: params.maxMinutes, typFilter: params.typFilter, page: params.page }),
         signal: abortRef.current.signal,
       });
+      if (!response.ok) {
+        const payload = await response.json().catch(() => null);
+        setError(payload?.error ?? 'Nepodařilo se načíst data.'); setResult(null); if (params.clearSelection) setSelectedSimulatorIds([]); return;
+      }
       const payload = await response.json();
-      if (!response.ok) { setError(payload?.error ?? 'Nepodařilo se načíst data.'); setResult(null); if (params.clearSelection) setSelectedSimulatorIds([]); return; }
       setResult(payload as SearchResponse);
       setLastSearch({ stopId: params.stopId, maxMinutes: params.maxMinutes, typFilter: params.typFilter });
       if (params.clearSelection) setSelectedSimulatorIds([]);
