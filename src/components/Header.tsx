@@ -11,6 +11,7 @@ interface SearchResult {
   obec: string;
   kraj: string;
   slug: string;
+  delka_studia?: number;
 }
 
 interface Kraj {
@@ -304,7 +305,7 @@ export function Header() {
               {searchResults.length > 0 && (
                 <div>
                   <div className="px-4 py-2 text-xs font-semibold text-slate-500 bg-slate-50 uppercase tracking-wide">
-                    Školy
+                    Školy a obory
                   </div>
                   {searchResults.map((school) => (
                     <Link
@@ -316,8 +317,20 @@ export function Header() {
                         setSearchQuery('');
                       }}
                     >
-                      <div className="font-medium text-slate-900">{highlightMatch(school.nazev, searchQuery)}</div>
-                      <div className="text-sm text-slate-600">{highlightMatch(school.obor, searchQuery)}</div>
+                      <div className="font-medium text-slate-900">
+                        {highlightMatch(school.nazev, searchQuery)}
+                        {school.obor && (
+                          <>
+                            <span className="text-slate-400 mx-1.5">•</span>
+                            <span className="text-slate-700 font-normal">
+                              {highlightMatch(school.obor, searchQuery)}
+                              {school.delka_studia && (
+                                <span className="text-slate-500 text-sm ml-1">({school.delka_studia}leté)</span>
+                              )}
+                            </span>
+                          </>
+                        )}
+                      </div>
                       <div className="text-xs text-slate-400 mt-0.5">{school.obec} • {school.kraj}</div>
                     </Link>
                   ))}
