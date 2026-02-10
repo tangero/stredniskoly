@@ -19,7 +19,7 @@ export function Header() {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-white shadow-md" style={{ height: '72px' }}>
+      <nav className="bg-white shadow-md relative z-50" style={{ height: '72px' }}>
         <div className="max-w-6xl mx-auto px-6 lg:px-10 h-full flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0">
