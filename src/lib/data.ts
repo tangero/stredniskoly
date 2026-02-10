@@ -1209,8 +1209,7 @@ async function getNationalStats() {
  */
 export async function getSchoolDifficultyProfile(
   schoolId: string,
-  schoolType: string,
-  minBody: number
+  schoolType: string
 ): Promise<SchoolDifficultyProfile | null> {
   const stats = await getExtendedSchoolStats(schoolId);
   if (!stats || stats.cj_prumer === 0 || stats.ma_prumer === 0) {
@@ -1385,7 +1384,7 @@ export async function getInspectionExtractions(): Promise<Record<string, Inspect
     const schools = extractionsData.schools || {};
 
     // Načíst report URLs z production_reports.json (volitelně)
-    let reportUrls: Record<string, string> = {};
+    const reportUrls: Record<string, string> = {};
     try {
       const reportsPath = path.join(process.cwd(), 'inspekce', 'config', 'production_reports.json');
       const reportsRaw = await fs.readFile(reportsPath, 'utf-8');
@@ -1461,7 +1460,8 @@ export async function getInspectionExtractions(): Promise<Record<string, Inspect
       // Seřadit od nejnovější, odstranit model_id z výstupu
       const deduped = Array.from(byDate.values())
         .sort((a, b) => b.date.localeCompare(a.date))
-        .map(({ model_id: _, ...rest }) => rest);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        .map(({ model_id: _modelId, ...rest }) => rest);
 
       if (deduped.length > 0) {
         result[redizo] = deduped;

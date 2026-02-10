@@ -54,14 +54,15 @@ export function Header() {
 
   // Vyhledávání s debounce
   useEffect(() => {
-    if (!searchQuery || searchQuery.length < 2) {
-      setSearchResults([]);
-      setIsSearchOpen(false);
-      return;
-    }
-
-    setIsLoading(true);
     const timeoutId = setTimeout(() => {
+      if (!searchQuery || searchQuery.length < 2) {
+        setSearchResults([]);
+        setIsSearchOpen(false);
+        setIsLoading(false);
+        return;
+      }
+
+      setIsLoading(true);
       fetch(`/api/schools/search?search=${encodeURIComponent(searchQuery)}&limit=10`)
         .then(res => res.json())
         .then(data => {

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { SchoolDetail, RelatedSchool, getSchoolTypeFullName } from '@/types/school';
+import { SchoolDetail, RelatedSchool } from '@/types/school';
 
 // Info tooltip komponenta - exportujeme pro použití v jiných komponentách
 interface InfoTooltipProps {
@@ -1880,7 +1880,7 @@ export function CohortDistribution({ cohorts }: CohortDistributionProps) {
         </div>
         {/* Legenda - jen významné kohorty */}
         <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs">
-          {significantCohorts.slice(0, 5).map(({ idx, count, pct }) => (
+          {significantCohorts.slice(0, 5).map(({ idx, pct }) => (
             <div key={idx} className="flex items-center">
               <div className={`w-3 h-3 rounded ${COHORT_CONFIG[idx].color} mr-1`} />
               <span className={COHORT_CONFIG[idx].textColor}>{COHORT_CONFIG[idx].short}</span>

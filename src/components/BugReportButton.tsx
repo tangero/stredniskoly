@@ -211,7 +211,7 @@ export default function BugReportButton() {
                         </li>
                       </ul>
                       <p className="text-blue-700 mt-3 pt-2 border-t border-blue-200">
-                        <strong>Příklad:</strong> „Škola ukazuje 71 bodů, ale po rozkliknutí ČJ 22 + MA 11 = 33. Čekal jsem stejné číslo."
+                        <strong>Příklad:</strong> &quot;Škola ukazuje 71 bodů, ale po rozkliknutí ČJ 22 + MA 11 = 33. Čekal jsem stejné číslo.&quot;
                       </p>
                       <p className="text-blue-600 mt-2 text-[11px]">
                         ℹ️ URL stránky, zařízení a čas sbíráme automaticky

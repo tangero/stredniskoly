@@ -730,7 +730,7 @@ export function SimulatorClient() {
           <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl">
             <p className="text-sm text-amber-900">
               <strong>💡 Extra kritéria:</strong> Některé školy hodnotí i prospěch, olympiády nebo jiné úspěchy.
-              Pokud vidíte číslo ve formátu "min 33 (+38)", znamená to: <strong>33 bodů z JPZ testů + 38 bodů za extra kritéria = 71 bodů celkem</strong>.
+              Pokud vidíte číslo ve formátu &quot;min 33 (+38)&quot;, znamená to: <strong>33 bodů z JPZ testů + 38 bodů za extra kritéria = 71 bodů celkem</strong>.
               Simulátor počítá s celkovým minimem, ale zobrazuje i rozdělení.
             </p>
           </div>

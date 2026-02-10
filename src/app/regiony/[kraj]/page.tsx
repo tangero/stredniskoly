@@ -5,7 +5,6 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { RegionSchoolsTable } from '@/components/RegionSchoolsTable';
 import { getAllKraje, getSchoolsByKraj, getRegionStats, getExtendedSchoolStatsForSchools, getTrendDataForSchools, ExtendedSchoolStats, YearlyTrendData } from '@/lib/data';
-import { krajNames } from '@/types/school';
 
 interface Props {
   params: Promise<{ kraj: string }>;

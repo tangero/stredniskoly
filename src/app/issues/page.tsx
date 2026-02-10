@@ -129,7 +129,7 @@ export default async function IssuesPage() {
                   1
                 </div>
                 <div>
-                  <strong>Automatické vytvoření:</strong> Každé hlášení se automaticky vytvoří jako GitHub Issue s labelem "bug-report"
+                  <strong>Automatické vytvoření:</strong> Každé hlášení se automaticky vytvoří jako GitHub Issue s labelem &quot;bug-report&quot;
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -274,7 +274,7 @@ export default async function IssuesPage() {
                 Zatím nejsou žádné nahlášené chyby!
               </h2>
               <p className="text-gray-600">
-                Pokud narazíte na problém, klikněte na plovoucí tlačítko "Nahlásit chybu" v pravém dolním rohu.
+                Pokud narazíte na problém, klikněte na plovoucí tlačítko &quot;Nahlásit chybu&quot; v pravém dolním rohu.
               </p>
             </div>
           )}

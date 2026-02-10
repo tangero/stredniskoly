@@ -2,6 +2,25 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+// Typy
+interface School {
+  id: string;
+  cj_min?: number;
+  ma_min?: number;
+  count?: number;
+  [key: string]: unknown;
+}
+
+interface SchoolsData {
+  [year: string]: School[];
+}
+
+interface SchoolAnalysis {
+  schools?: {
+    [schoolId: string]: unknown;
+  };
+}
+
 // Rate limiting - jednoduchá in-memory implementace
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minuta
@@ -26,7 +45,7 @@ function checkRateLimit(ip: string): boolean {
 
 // Validace ID - povolené znaky: čísla, pomlčky, podtržítka, lomítka, písmena
 // Formát: XXXXXXXXX_XX-XX-X/XX nebo XXXXXXXXX_XX-XX-X/XX_zaměření
-const VALID_ID_PATTERN = /^[0-9]{9}_[0-9]{2}-[0-9]{2}-[A-Z]\/[0-9]{2}(_[A-Za-z0-9áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ_\-,\s]+)?$/;
+// const VALID_ID_PATTERN = /^[0-9]{9}_[0-9]{2}-[0-9]{2}-[A-Z]\/[0-9]{2}(_[A-Za-z0-9áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ_\-,\s]+)?$/;
 
 function isValidSchoolId(id: string): boolean {
   // Základní kontroly
@@ -80,25 +99,25 @@ interface SchoolDetail {
 }
 
 // Cache pro schools_data
-let schoolsCache: any = null;
-let schoolAnalysisCache: any = null;
+let schoolsCache: SchoolsData | null = null;
+let schoolAnalysisCache: SchoolAnalysis | null = null;
 
-async function getSchoolsData() {
+async function getSchoolsData(): Promise<SchoolsData> {
   if (schoolsCache) return schoolsCache;
 
   const filePath = path.join(process.cwd(), 'public', 'schools_data.json');
   const data = await fs.readFile(filePath, 'utf-8');
-  schoolsCache = JSON.parse(data);
+  schoolsCache = JSON.parse(data) as SchoolsData;
   return schoolsCache;
 }
 
-async function getSchoolAnalysis() {
+async function getSchoolAnalysis(): Promise<SchoolAnalysis | null> {
   if (schoolAnalysisCache) return schoolAnalysisCache;
 
   try {
     const filePath = path.join(process.cwd(), 'public', 'school_analysis.json');
     const data = await fs.readFile(filePath, 'utf-8');
-    schoolAnalysisCache = JSON.parse(data);
+    schoolAnalysisCache = JSON.parse(data) as SchoolAnalysis;
     return schoolAnalysisCache;
   } catch {
     return null;
@@ -136,11 +155,11 @@ async function getSchoolDetailFile(schoolId: string) {
   }
 }
 
-function calculateDifficultyProfile(school: any, allSchools: any[]) {
+function calculateDifficultyProfile(school: School, allSchools: School[]) {
   // Data jsou v % škále, převádíme na skutečné body (dělíme 2)
-  const getJpz = (s: any) => ((s.cj_min || 0) + (s.ma_min || 0)) / 2;
-  const getCj = (s: any) => (s.cj_min || 0) / 2;
-  const getMa = (s: any) => (s.ma_min || 0) / 2;
+  const getJpz = (s: School) => ((s.cj_min || 0) + (s.ma_min || 0)) / 2;
+  const getCj = (s: School) => (s.cj_min || 0) / 2;
+  const getMa = (s: School) => (s.ma_min || 0) / 2;
 
   const jpzMin = getJpz(school);
   if (!jpzMin) return null;
@@ -225,7 +244,7 @@ export async function GET(
     const year = schoolsData['2025'] ? '2025' : '2024';
     const schools = schoolsData[year] || [];
 
-    const school = schools.find((s: any) => s.id === id);
+    const school = schools.find((s: School) => s.id === id);
     if (!school) {
       return NextResponse.json({ error: 'School not found' }, { status: 404 });
     }
@@ -241,15 +260,15 @@ export async function GET(
     const difficultyProfile = calculateDifficultyProfile(school, schools);
 
     // Konkurenční školy - agregace ze všech priorit
-    let competingSchools: any[] = [];
+    let competingSchools: School[] = [];
     if (detailFile) {
       // Mapa pro agregaci škol
-      const schoolMap = new Map<string, { count: number; school: any }>();
+      const schoolMap = new Map<string, { count: number; school: School }>();
 
       // Pomocná funkce pro přidání škol do mapy
-      const addSchools = (schools: any[]) => {
+      const addSchools = (schools: School[]) => {
         if (!Array.isArray(schools)) return;
-        schools.forEach((s: any) => {
+        schools.forEach((s: School) => {
           if (s.id === id) return; // Přeskočit sebe sama
           const existing = schoolMap.get(s.id);
           if (existing) {

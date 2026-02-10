@@ -90,7 +90,7 @@ function MinBodyTrend({ trend }: { trend: YearlyTrendData | null }) {
 }
 
 // Helper pro délku studia badge
-function StudyLengthBadge({ typ, delka }: { typ: string; delka: number }) {
+function StudyLengthBadge({ delka }: { delka: number }) {
   const colors: Record<number, string> = {
     4: 'bg-blue-100 text-blue-800',
     6: 'bg-blue-100 text-blue-800',
@@ -372,7 +372,7 @@ export default async function SchoolDetailPage({ params }: Props) {
     pageInfo.type === 'zamereni'
       ? getExtendedStatsForProgram(program.id)
       : getExtendedSchoolStats(school.id),
-    getSchoolDifficultyProfile(school.id, school.typ, program.min_body),
+    getSchoolDifficultyProfile(school.id, school.typ),
     getTrendDataForProgram(program.id),
     getCSIDataByRedizo(redizo),
     getExtractionsByRedizo(redizo),

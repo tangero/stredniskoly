@@ -8,13 +8,13 @@
  * a vytváří přehled pro každou školu.
  */
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
 const CSV_URL = 'https://opendata.csicr.cz/Transformation/Download/137';
 const OUTPUT_FILE = path.join(__dirname, '../public/csi_inspections.json');
-const TEMP_CSV = path.join(__dirname, '../data/csi/inspections.csv');
 
 /**
  * Stáhne CSV soubor z URL
@@ -63,7 +63,7 @@ function parseCSVLine(line) {
  */
 function processCSV(csvData) {
   const lines = csvData.split('\n');
-  const headers = parseCSVLine(lines[0]);
+  // const headers = parseCSVLine(lines[0]); // unused
 
   // Mapa: REDIZO -> array of inspections
   const inspectionsByRedizo = new Map();

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { getSchoolPageType, getSchoolOverview, getExtractionsByRedizo, getCSIDataByRedizo } from '@/lib/data';
+import { getSchoolPageType, getExtractionsByRedizo } from '@/lib/data';
 import { createSlug } from '@/lib/utils';
 import { krajNames, InspectionExtraction } from '@/types/school';
 
