@@ -1,10 +1,28 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
+interface SearchResult {
+  id: string;
+  nazev: string;
+  obor: string;
+  zamereni?: string;
+  obec: string;
+  kraj: string;
+  slug: string;
+}
 
 export function Header() {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [suggestions, setSuggestions] = useState<SearchResult[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [highlightIndex, setHighlightIndex] = useState(-1);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const abortRef = useRef<AbortController | null>(null);
 
   const navLinks = [
     { href: '/simulator', label: 'Simulátor' },
@@ -15,6 +33,60 @@ export function Header() {
     { href: '/jak-funguje-prijimani', label: 'Jak to funguje?' },
     { href: '/issues', label: 'Nahlášené chyby' },
   ];
+
+  // Debounced API search
+  useEffect(() => {
+    const q = searchQuery.trim();
+    if (q.length < 2) { setSuggestions([]); setShowSuggestions(false); return; }
+    abortRef.current?.abort();
+    abortRef.current = new AbortController();
+    const controller = abortRef.current;
+    const timer = setTimeout(async () => {
+      try {
+        const params = new URLSearchParams({ search: q, limit: '8' });
+        const res = await fetch(`/api/schools/search?${params}`, { signal: controller.signal });
+        if (!res.ok) return;
+        const data = await res.json();
+        setSuggestions(data.schools || []);
+        setShowSuggestions(true);
+        setHighlightIndex(-1);
+      } catch {}
+    }, 200);
+    return () => { clearTimeout(timer); controller.abort(); };
+  }, [searchQuery]);
+
+  // Close on click outside
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) setShowSuggestions(false);
+    }
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  const handleSearchSubmit = useCallback((e?: React.FormEvent) => {
+    e?.preventDefault();
+    const q = searchQuery.trim();
+    if (!q) return;
+    setShowSuggestions(false);
+    router.push(`/skoly?search=${encodeURIComponent(q)}`);
+  }, [searchQuery, router]);
+
+  const handleSearchKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (!showSuggestions || suggestions.length === 0) {
+      if (e.key === 'Enter') handleSearchSubmit();
+      return;
+    }
+    if (e.key === 'ArrowDown') { e.preventDefault(); setHighlightIndex(i => Math.min(i + 1, suggestions.length - 1)); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); setHighlightIndex(i => Math.max(i - 1, 0)); }
+    else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (highlightIndex >= 0 && suggestions[highlightIndex]) {
+        setShowSuggestions(false);
+        router.push(`/skola/${suggestions[highlightIndex].slug}`);
+      } else { handleSearchSubmit(); }
+    } else if (e.key === 'Escape') { setShowSuggestions(false); }
+  }, [showSuggestions, suggestions, highlightIndex, handleSearchSubmit, router]);
 
   return (
     <>
@@ -109,11 +181,15 @@ export function Header() {
       </nav>
 
       {/* Search bar */}
-      <div style={{ backgroundColor: '#003688' }} className="py-3.5">
-        <div className="max-w-3xl mx-auto px-4">
-          <div className="flex w-full">
+      <div style={{ backgroundColor: '#003688' }} className="py-3.5 relative z-40">
+        <div className="max-w-3xl mx-auto px-4" ref={searchRef}>
+          <form onSubmit={handleSearchSubmit} className="flex w-full relative">
             <input
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => { if (suggestions.length > 0) setShowSuggestions(true); }}
+              onKeyDown={handleSearchKeyDown}
               placeholder="Hledej školu, obor, město nebo kraj..."
               className="hs-search flex-1 px-4 py-2.5 border-none outline-none"
               style={{
@@ -124,6 +200,7 @@ export function Header() {
               }}
             />
             <button
+              type="submit"
               className="px-6 py-2.5 text-white font-semibold text-sm uppercase tracking-wide cursor-pointer border-none shrink-0"
               style={{
                 backgroundColor: '#0074e4',
@@ -133,7 +210,23 @@ export function Header() {
             >
               Hledat
             </button>
-          </div>
+          </form>
+          {showSuggestions && suggestions.length > 0 && (
+            <div className="absolute left-4 right-4 mt-1 bg-white rounded-lg shadow-xl border border-slate-200 overflow-hidden max-h-[400px] overflow-y-auto z-50">
+              {suggestions.map((s, idx) => (
+                <Link
+                  key={s.id}
+                  href={`/skola/${s.slug}`}
+                  onClick={() => setShowSuggestions(false)}
+                  className={`block px-4 py-3 no-underline hover:bg-blue-50 ${idx === highlightIndex ? 'bg-blue-50' : ''}`}
+                >
+                  <div className="font-medium text-slate-900">{s.nazev}</div>
+                  <div className="text-sm text-slate-600">{s.obor}{s.zamereni ? ` - ${s.zamereni}` : ''}</div>
+                  <div className="text-xs text-slate-400">{s.obec} • {s.kraj}</div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </>
