@@ -1,41 +1,44 @@
-# Integrace dat ČŠI (Česká školní inspekce)
+# Integrace dat CSI (Ceska skolni inspekce)
 
-## Přehled
+## Prehled
 
-Aplikace zobrazuje inspekční zprávy z České školní inspekce pro každou školu. Data jsou načítána z otevřených dat ČŠI a automaticky propojována podle REDIZO identifikátoru.
+Aplikace zobrazuje inspekce z Ceske skolni inspekce na dvou urovnich:
 
-## Kde se to zobrazuje na webu
+1. **Kompaktni shrnutí** na strance skoly (`/skola/[slug]`) — AI-extrahovane shrnutí nejnovejsi inspekce, tagy silnych stranek/rizik
+2. **Detailni stranka** (`/skola/[slug]/inspekce`) — plne shrnutí vsech inspekci vcetne fakt, doporuceni a odkazu na PDF
 
-- **Stránka:** detail školy (`/skola/[slug]`)
-- **Umístění:** sekce **„Inspekční zprávy ČŠI“** pod blokem Kontakt a CTA
-- **Podmínka zobrazení:** sekce se renderuje pouze pokud má škola alespoň 1 záznam v `public/csi_inspections.json`
+Data pochazi ze dvou zdroju:
+- **CSI Open Data** (`public/csi_inspections.json`) — metadata inspekcí (data, PDF odkazy)
+- **AI extrakce** (`data/inspection_extractions.json`) — strojove zpracovane shrnutí z PDF zprav
 
-## Zdroj dat
+## Architektura
 
-- **URL:** https://opendata.csicr.cz/DataSet/Detail/69
-- **Formát:** CSV, JSON, XML
-- **Aktualizace:** Čtvrtletně
-- **Rozsah:** Posledních 10 let (od září 2012)
-
-## Struktura dat
-
-### CSV Dataset
-```csv
-REDIZO, Jmeno, DatumOd, DatumDo, LinkIZ, PortalLink
+```
+CSI Open Data (CSV)                    Inspekci PDF zpravy
+       |                                       |
+  process-csi-data.js                  inspekce/scripts/run_extraction.py
+       |                                       |
+  public/csi_inspections.json          data/inspection_extractions.json
+       |                                       |
+       +------ src/lib/data.ts ----------------+
+                     |
+          +----------+----------+
+          |                     |
+  InspectionSummary      inspekce/page.tsx
+  (kompaktni box)        (detailni stranka)
 ```
 
-- **REDIZO**: Resortní identifikátor školy (9 číslic)
-- **Jmeno**: Název školy
-- **DatumOd/DatumDo**: Období inspekce
-- **LinkIZ**: URL na PDF zprávu
-- **PortalLink**: URL na profil školy v InspIS PORTÁL
+## Datove soubory
 
-### Zpracovaný JSON
+### public/csi_inspections.json (git tracked)
+
+Metadata inspekcí z CSI Open Data. Pouziva se jako fallback pro skoly bez AI extrakce.
+
 ```json
 {
   "600012345": {
     "redizo": "600012345",
-    "jmeno": "Gymnázium XY",
+    "jmeno": "Gymnazium XY",
     "inspections": [
       {
         "dateFrom": "2023-05-01T00:00:00.0000000",
@@ -50,98 +53,214 @@ REDIZO, Jmeno, DatumOd, DatumDo, LinkIZ, PortalLink
 }
 ```
 
-## Použití
+Aktualizace: `npm run update:csi`
 
-### Aktualizace dat
+### data/inspection_extractions.json (git tracked)
 
-```bash
-# Stáhnout a zpracovat nejnovější data z ČŠI
-npm run update:csi
-```
+AI-extrahovana data z inspekci PDF zprav. **Musi byt v `data/`, ne v `public/`** — soubor se cte jen server-side pri buildu/renderovani, neni urcen pro klienta. Umisteni v `public/` by zpusobilo prekroceni Vercel deployment limitu 75 MB.
 
-Tento příkaz:
-1. Stáhne CSV soubor z OpenData portálu ČŠI
-2. Zpracuje a agreguje data podle REDIZO
-3. Vytvoří `public/csi_inspections.json`
-
-### Načtení dat v kódu
-
-```typescript
-import { getCSIDataByRedizo } from '@/lib/data';
-
-// Načíst inspekční zprávy pro školu
-const csiData = await getCSIDataByRedizo('600012345');
-
-if (csiData) {
-  console.log(`Škola má ${csiData.inspectionCount} inspekcí`);
-  console.log(`Poslední inspekce: ${csiData.lastInspectionDate}`);
+Struktura:
+```json
+{
+  "schools": {
+    "600012345": [
+      {
+        "report_id": "GY8_600012345_2024-12-04",
+        "inspection_from": "2024-12-04",
+        "inspection_to": "2024-12-09",
+        "model_id": "claude_haiku_4_5",
+        "parsed_output": {
+          "for_parents": {
+            "plain_czech_summary": "Gymnazium nabizi kvalitni...",
+            "strengths": [{ "tag": "Jazykova vyuka", "detail": "...", "evidence": "..." }],
+            "risks": [{ "tag": "Frontalni vyuka", "detail": "...", "evidence": "..." }],
+            "who_school_fits": ["Zaci se zajmem o jazyky..."],
+            "who_should_be_cautious": ["Zaci preferujici individualni pristup..."],
+            "questions_for_open_day": ["Jak je organizovana vyuka..."]
+          },
+          "hard_facts": {
+            "maturita": { "trend": "...", "key_numbers": ["..."], "evidence": "..." },
+            "absence": { "trend": "...", "key_numbers": ["..."] },
+            "support_services": ["Skolni psycholog", "..."],
+            "safety_climate": ["Pozitivni klima", "..."],
+            "partnerships_practice": ["Mezinarodni spoluprace", "..."]
+          },
+          "school_profile": {
+            "school_type": "GY8",
+            "inspection_period": "4.-6. a 9. prosince 2024",
+            "school_change_summary": "Od posledni inspekce..."
+          }
+        }
+      }
+    ]
+  }
 }
 ```
 
-### Komponenty
+Generovani: `python3 inspekce/scripts/run_extraction.py` (pouziva AI modely k extrakci z PDF)
 
-#### SchoolInspections
-Zobrazuje kompletní seznam inspekčních zpráv pro školu.
+### inspekce/config/production_reports.json (git tracked)
 
-```tsx
-import { SchoolInspections } from '@/components/SchoolInspections';
+Mapovani report_id na source_url (PDF odkaz). Pouziva se pro doplneni odkazu na originalní zpravu.
 
-<SchoolInspections csiData={csiData} />
+```json
+{
+  "reports": [
+    {
+      "report_id": "GY8_600012345_2024-12-04",
+      "redizo": "600012345",
+      "source_url": "https://portal.csicr.cz/Files/Get/..."
+    }
+  ]
+}
 ```
 
-#### InspectionBadge
-Kompaktní badge pro zobrazení v seznamech.
+## Komponenty a stranky
 
-```tsx
-import { InspectionBadge } from '@/components/SchoolInspections';
+### InspectionSummary (`src/components/InspectionSummary.tsx`)
 
-<InspectionBadge csiData={csiData} />
+Client komponenta — kompaktni blok "Co zjistila inspekce" na strance skoly.
+
+**Props:**
+```typescript
+interface InspectionSummaryProps {
+  extractions: InspectionExtraction[];
+  csiData: CSISchoolData | null;
+  schoolSlug: string;  // overview slug pro link na /inspekce
+}
 ```
 
-## Jak to funguje
+**Chovani:**
+- Pokud `extractions.length > 0`: zobrazí AI shrnutí (1 odstavec), max 3 zelene tagy silnych stranek, max 3 oranzove tagy rizik, odkaz na detailni stranku
+- Pokud jen `csiData`: fallback — datum inspekce + PDF odkaz
+- Pokud nic: nezobrazi se
 
-1. **Skript `process-csi-data.js`:**
-   - Stáhne CSV z OpenData portálu
-   - Seskupí záznamy podle REDIZO
-   - Seřadí inspekce od nejnovější
-   - Uloží agregovaná data do JSON
+### Detailni stranka (`src/app/skola/[slug]/inspekce/page.tsx`)
 
-2. **Funkce v `lib/data.ts`:**
-   - `getCSIData()` - načte celý dataset
-   - `getCSIDataByRedizo()` - vrátí data pro konkrétní školu
-   - `wasInspectedRecently()` - kontrola, zda byla škola nedávno inspekována
-   - `getInspectionBadgeText()` - generuje text pro badge
+Server komponenta — plny detail vsech inspekci skoly.
 
-3. **Zobrazení na webu:**
-   - Sekce "Inspekční zprávy ČŠI" na stránce školy
-   - Seznam všech inspekcí s odkazy na PDF
-   - Datum poslední inspekce
-   - Odkaz na profil školy v ČŠI portálu
+**Renderovani:** Dynamicke (on-demand), NE staticke. Duvod: 836 pre-renderovanych inspekci HTML stranek spolu s 4752 strankami skol prekracovalo Vercel deployment limit 75 MB.
 
-## Mapování na soubory
+**Obsah:**
+- Nejnovejsi inspekce vzdy rozbalena (bez `<details>`)
+- Starsi inspekce sbalene v `<details>` panelu
+- Pro kazdou inspekci: shrnutí, kontext skoly, silne stranky, rizika, komu skola sedi, kdo by mel zvazit, otazky na den otevrenych dveri, fakta ze zpravy, odkaz na PDF
+- AI disclaimer
 
-- `scripts/process-csi-data.js` – stažení CSV z OpenData ČŠI a transformace do JSON
-- `public/csi_inspections.json` – vygenerovaný dataset pro runtime
-- `src/types/school.ts` – TypeScript typy pro ČŠI data
-- `src/lib/data.ts` – načítání dat a helper funkce (`getCSIData*`, badge helpery)
-- `src/components/SchoolInspections.tsx` – UI komponenta se seznamem inspekcí a odkazy
-- `src/app/skola/[slug]/page.tsx` – napojení komponenty na detail školy
+### Badge v hlavicce skoly
+
+Na strance skoly (`/skola/[slug]`) se v hlavicce vedle category badge ("Vyvazena") zobrazi tlacitko "Co si o skole mysli Skolska inspekce?" s odkazem na `/skola/[slug]/inspekce`. Zobrazuje se jen pokud `extractions.length > 0`.
+
+## Funkce v data.ts
+
+```typescript
+// CSI metadata
+getCSIData(): Promise<CSIDataset>
+getCSIDataByRedizo(redizo: string): Promise<CSISchoolData | null>
+
+// AI extrakce
+getInspectionExtractions(): Promise<Record<string, InspectionExtraction[]>>
+getExtractionsByRedizo(redizo: string): Promise<InspectionExtraction[]>
+```
+
+`getInspectionExtractions()`:
+- Nacte `data/inspection_extractions.json` (NE z `public/`)
+- Nacte `inspekce/config/production_reports.json` pro doplneni source_url
+- Filtruje zaznamy bez `plain_czech_summary`
+- Deduplikuje per datum inspekce (preferuje claude model)
+- Seradi od nejnovejsi
+- Cachuje v module-level promenne
+
+## Typy (src/types/school.ts)
+
+```typescript
+interface InspectionStrengthTag {
+  tag: string;
+  detail: string;
+  evidence?: string;
+}
+
+interface InspectionExtraction {
+  report_id: string;
+  source_url: string;
+  date: string;
+  date_to: string;
+  plain_czech_summary: string;
+  strengths: InspectionStrengthTag[];
+  risks: InspectionStrengthTag[];
+  who_school_fits: string[];
+  who_should_be_cautious: string[];
+  questions_for_open_day: string[];
+  hard_facts: Record<string, unknown>;  // mixed types: objects, arrays, strings
+  school_profile: {
+    school_type?: string;
+    inspection_period?: string;
+    school_change_summary?: string;
+  };
+}
+```
+
+`hard_facts` ma tri mozne tvary hodnot:
+- **Objekt** s `trend`, `key_numbers[]`, `evidence` (maturita, absence)
+- **Pole stringu** (support_services, safety_climate, partnerships_practice)
+- **Prosty string**
+
+Komponenta `HardFactValue` v inspekce/page.tsx resi vsechny tri tvary.
+
+## Mapovani na soubory
+
+| Soubor | Ucel |
+|---|---|
+| `public/csi_inspections.json` | CSI metadata (data, PDF linky) — git tracked |
+| `data/inspection_extractions.json` | AI extrakce — git tracked, NE v public/ |
+| `inspekce/config/production_reports.json` | Mapovani report_id → source_url |
+| `inspekce/config/production_models.json` | Konfigurace AI modelu pro extrakci |
+| `inspekce/scripts/run_extraction.py` | Hlavni skript pro AI extrakci z PDF |
+| `inspekce/scripts/extract_texts.py` | Extrakce textu z PDF |
+| `inspekce/scripts/generate_city_page.py` | Generator staticke HTML stranky (docs/) |
+| `scripts/process-csi-data.js` | Stazeni a zpracovani CSI Open Data |
+| `src/types/school.ts` | TypeScript typy |
+| `src/lib/data.ts` | Data loading funkce |
+| `src/components/InspectionSummary.tsx` | Kompaktni inspekce box (client) |
+| `src/app/skola/[slug]/inspekce/page.tsx` | Detailni inspekce stranka (server, dynamic) |
+| `src/app/skola/[slug]/page.tsx` | Hlavni stranka skoly — napojeni |
+
+## Dulezite omezeni
+
+### Vercel deployment limit (75 MB)
+
+- `inspection_extractions.json` NESMI byt v `public/` — kopiroval by se do deployment output
+- Inspekce stranky NESMI mit `generateStaticParams` — 836 HTML stranek prekracuje limit
+- Oba problemy byly vyreseny: soubor v `data/`, stranky renderovane dynamicky
+
+### Deduplikace
+
+Pokud existuje vice modelu pro stejnou inspekci (stejne datum), preferuje se claude model. Implementovano v `getInspectionExtractions()`.
+
+### AI disclaimer
+
+Na obou urovnich (kompaktni box i detailni stranka) je upozorneni, ze shrnutí bylo vytvoreno automaticky pomoci AI a muze obsahovat nepresnosti.
 
 ## Statistiky
 
-- **Celkem škol v datasetu:** ~9 564
-- **Celkem inspekcí:** ~14 925
-- **Střední školy a gymnázia:** ~1 532 inspekcí
+- **Skol s AI extrakci:** 849
+- **Celkem inspekci (extrakce):** 922
+- **Skol s CSI metadaty:** ~9 564
+- **Celkem inspekci (metadata):** ~14 925
 
-## Budoucí vylepšení
+## Aktualizace dat
 
-- [ ] Automatická aktualizace (GitHub Actions / cron)
-- [ ] NLP analýza PDF zpráv pro extrakci klíčových zjištění
-- [ ] Agregované skóre kvality na základě zjištění
-- [ ] Filtrování škol podle výsledků inspekce
-- [ ] Badge v seznamu škol
-- [ ] Timeline vizualizace historie inspekcí
+```bash
+# 1. Aktualizovat CSI metadata (ctvrtletne)
+npm run update:csi
+
+# 2. Spustit AI extrakci pro nove inspekce
+cd inspekce && python3 scripts/run_extraction.py
+
+# 3. Soubor data/inspection_extractions.json commitnout
+git add data/inspection_extractions.json && git commit -m "Update inspection extractions"
+```
 
 ## Licence dat
 
-Data jsou poskytována Českou školní inspekcí jako otevřená data a jsou publikována podle § 174 zákona č. 561/2004 Sb., o předškolním, základním, středním, vyšším odborném a jiném vzdělávání (školský zákon).
+Data CSI jsou poskytovana Ceskou skolni inspekci jako otevrena data podle § 174 zakona c. 561/2004 Sb. AI shrnutí jsou odvozena dila vytvorena automatickym zpracovanim inspekci zprav.
