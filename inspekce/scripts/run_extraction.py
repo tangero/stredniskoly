@@ -2,6 +2,10 @@
 import argparse
 import json
 import pathlib
+import sys
+import time
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 
 from llm_client import call_model, extract_json_object, load_models_config
@@ -72,6 +76,68 @@ def build_user_prompt(report: dict, source_text: str) -> str:
     )
 
 
+def process_report(report, model_cfg, model_id, system_prompt, texts_dir, model_out_dir, force):
+    json_path = model_out_dir / f"{report['report_id']}.json"
+    if json_path.exists() and not force:
+        try:
+            existing = json.loads(json_path.read_text(encoding="utf-8"))
+        except Exception:
+            existing = None
+        if existing and existing.get("parse_error") is None and existing.get("parsed_output") is not None:
+            return report["report_id"], "skip", 0.0
+
+    text_path = texts_dir / report["text_file"]
+    if not text_path.exists():
+        return report["report_id"], "missing_text", 0.0
+
+    source_text = read_text(text_path)
+    user_prompt = build_user_prompt(report, source_text)
+    t0 = time.monotonic()
+    run_started = datetime.now(timezone.utc).isoformat()
+    call_error = None
+    raw_response = ""
+    try:
+        raw_response = call_model(model_cfg, system_prompt, user_prompt)
+    except Exception as error:
+        call_error = str(error)
+    run_finished = datetime.now(timezone.utc).isoformat()
+    elapsed = time.monotonic() - t0
+
+    raw_path = model_out_dir / f"{report['report_id']}.raw.txt"
+    try:
+        raw_path.write_text(raw_response, encoding="utf-8")
+    except OSError:
+        pass
+
+    parsed = None
+    parse_error = None
+    if call_error is None:
+        try:
+            parsed = extract_json_object(raw_response)
+        except Exception as error:
+            parse_error = str(error)
+    else:
+        parse_error = call_error
+
+    payload = {
+        "report_id": report["report_id"],
+        "model_id": model_id,
+        "run_started_utc": run_started,
+        "run_finished_utc": run_finished,
+        "raw_file": raw_path.name,
+        "call_error": call_error,
+        "parse_error": parse_error,
+        "parsed_output": parsed
+    }
+    try:
+        json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    except OSError as error:
+        return report["report_id"], "error", elapsed
+
+    status = "error" if (call_error or parse_error) else "ok"
+    return report["report_id"], status, elapsed
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", default="config/pilot_10_reports.json")
@@ -81,6 +147,7 @@ def main():
     parser.add_argument("--outputs-dir", default="data/outputs")
     parser.add_argument("--model-ids", default="")
     parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
@@ -101,61 +168,77 @@ def main():
     if args.limit > 0:
         reports = reports[:args.limit]
 
+    workers = max(1, args.workers)
+
     for model_id in selected_ids:
         model_cfg = model_index[model_id]
         model_out_dir = outputs_dir / model_id
         model_out_dir.mkdir(parents=True, exist_ok=True)
-        print(f"Model: {model_id}")
-        for report in reports:
-            json_path = model_out_dir / f"{report['report_id']}.json"
-            if json_path.exists() and not args.force:
-                try:
-                    existing = json.loads(json_path.read_text(encoding="utf-8"))
-                except Exception:
-                    existing = None
-                if existing and existing.get("parse_error") is None and existing.get("parsed_output") is not None:
-                    print(f"  -> {report['report_id']} skip(existing_success)")
-                    continue
 
-            text_path = texts_dir / report["text_file"]
-            if not text_path.exists():
-                raise FileNotFoundError(f"Chybí text: {text_path}")
-            source_text = read_text(text_path)
-            user_prompt = build_user_prompt(report, source_text)
-            run_started = datetime.now(timezone.utc).isoformat()
-            call_error = None
-            raw_response = ""
-            try:
-                raw_response = call_model(model_cfg, system_prompt, user_prompt)
-            except Exception as error:
-                call_error = str(error)
-            run_finished = datetime.now(timezone.utc).isoformat()
+        total = len(reports)
+        print(f"Model: {model_id} | Zpráv: {total} | Workers: {workers}")
 
-            raw_path = model_out_dir / f"{report['report_id']}.raw.txt"
-            raw_path.write_text(raw_response, encoding="utf-8")
+        if workers == 1:
+            done = 0
+            ok_count = 0
+            err_count = 0
+            skip_count = 0
+            for report in reports:
+                rid, status, elapsed = process_report(
+                    report, model_cfg, model_id, system_prompt, texts_dir, model_out_dir, args.force
+                )
+                done += 1
+                if status == "skip":
+                    skip_count += 1
+                elif status == "ok":
+                    ok_count += 1
+                    print(f"  [{done}/{total}] {rid} OK ({elapsed:.1f}s)")
+                elif status == "missing_text":
+                    err_count += 1
+                    print(f"  [{done}/{total}] {rid} MISSING TEXT")
+                else:
+                    err_count += 1
+                    print(f"  [{done}/{total}] {rid} ERROR ({elapsed:.1f}s)")
+            if skip_count:
+                print(f"  Přeskočeno (hotové): {skip_count}")
+            print(f"  Hotovo: ok={ok_count} err={err_count} skip={skip_count}")
+        else:
+            counter = {"done": 0, "ok": 0, "err": 0, "skip": 0}
+            lock = threading.Lock()
 
-            parsed = None
-            parse_error = None
-            if call_error is None:
-                try:
-                    parsed = extract_json_object(raw_response)
-                except Exception as error:
-                    parse_error = str(error)
-            else:
-                parse_error = call_error
+            def on_done(future):
+                rid, status, elapsed = future.result()
+                with lock:
+                    counter["done"] += 1
+                    n = counter["done"]
+                    if status == "skip":
+                        counter["skip"] += 1
+                    elif status == "ok":
+                        counter["ok"] += 1
+                        print(f"  [{n}/{total}] {rid} OK ({elapsed:.1f}s)")
+                    elif status == "missing_text":
+                        counter["err"] += 1
+                        print(f"  [{n}/{total}] {rid} MISSING TEXT")
+                    else:
+                        counter["err"] += 1
+                        print(f"  [{n}/{total}] {rid} ERROR ({elapsed:.1f}s)")
+                    sys.stdout.flush()
 
-            payload = {
-                "report_id": report["report_id"],
-                "model_id": model_id,
-                "run_started_utc": run_started,
-                "run_finished_utc": run_finished,
-                "raw_file": raw_path.name,
-                "call_error": call_error,
-                "parse_error": parse_error,
-                "parsed_output": parsed
-            }
-            json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-            print(f"  -> {report['report_id']} call_error={bool(call_error)} parse_error={bool(parse_error)}")
+            with ThreadPoolExecutor(max_workers=workers) as pool:
+                futures = []
+                for report in reports:
+                    f = pool.submit(
+                        process_report,
+                        report, model_cfg, model_id, system_prompt, texts_dir, model_out_dir, args.force
+                    )
+                    f.add_done_callback(on_done)
+                    futures.append(f)
+                for f in futures:
+                    f.result()
+
+            if counter["skip"]:
+                print(f"  Přeskočeno (hotové): {counter['skip']}")
+            print(f"  Hotovo: ok={counter['ok']} err={counter['err']} skip={counter['skip']}")
 
 
 if __name__ == "__main__":

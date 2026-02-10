@@ -228,3 +228,29 @@ export interface CSISchoolData {
 export interface CSIDataset {
   [redizo: string]: CSISchoolData;
 }
+
+// Typy pro AI-extrahovaná data z inspekčních zpráv
+export interface InspectionStrengthTag {
+  tag: string;
+  detail: string;
+  evidence?: string;
+}
+
+export interface InspectionExtraction {
+  report_id: string;
+  source_url: string;
+  date: string;
+  date_to: string;
+  plain_czech_summary: string;
+  strengths: InspectionStrengthTag[];
+  risks: InspectionStrengthTag[];
+  who_school_fits: string[];
+  who_should_be_cautious: string[];
+  questions_for_open_day: string[];
+  hard_facts: Record<string, unknown>;
+  school_profile: {
+    school_type?: string;
+    inspection_period?: string;
+    school_change_summary?: string;
+  };
+}

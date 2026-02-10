@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
-import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData } from '@/types/school';
+import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData, InspectionExtraction } from '@/types/school';
 import { createSlug, createKrajSlug, extractRedizo } from './utils';
 
 const dataDir = path.join(process.cwd(), 'public');
@@ -1362,4 +1362,124 @@ export function getInspectionBadgeText(csiData: CSISchoolData | null): string | 
   if (yearsDiff <= 5) return `${csiData.inspectionCount}× inspekce za 10 let`;
 
   return `${csiData.inspectionCount}× inspekce`;
+}
+
+// ============================================================================
+// AI-extrahovaná inspekční data
+// ============================================================================
+
+// Cache pro extrakce inspekčních zpráv
+let extractionsCache: Record<string, InspectionExtraction[]> | null = null;
+
+/**
+ * Načte a zpracuje inspection_extractions.json + production_reports.json
+ * Vrátí mapu redizo -> deduplikované InspectionExtraction[] (nejnovější první)
+ */
+export async function getInspectionExtractions(): Promise<Record<string, InspectionExtraction[]>> {
+  if (extractionsCache) return extractionsCache;
+
+  try {
+    const extractionsPath = path.join(dataDir, 'inspection_extractions.json');
+    const extractionsRaw = await fs.readFile(extractionsPath, 'utf-8');
+    const extractionsData = JSON.parse(extractionsRaw);
+    const schools = extractionsData.schools || {};
+
+    // Načíst report URLs z production_reports.json (volitelně)
+    let reportUrls: Record<string, string> = {};
+    try {
+      const reportsPath = path.join(process.cwd(), 'inspekce', 'config', 'production_reports.json');
+      const reportsRaw = await fs.readFile(reportsPath, 'utf-8');
+      const reportsData = JSON.parse(reportsRaw);
+      for (const r of (reportsData.reports || [])) {
+        if (r.report_id && r.source_url) {
+          reportUrls[r.report_id] = r.source_url;
+        }
+      }
+    } catch {
+      // production_reports.json nemusí existovat
+    }
+
+    const result: Record<string, InspectionExtraction[]> = {};
+
+    for (const [redizo, inspections] of Object.entries(schools)) {
+      const inspList = inspections as Array<{
+        report_id: string;
+        inspection_from: string;
+        inspection_to: string;
+        model_id: string;
+        parsed_output: {
+          for_parents?: {
+            plain_czech_summary?: string;
+            strengths?: Array<{ tag: string; detail: string; evidence?: string }>;
+            risks?: Array<{ tag: string; detail: string; evidence?: string }>;
+            who_school_fits?: string[];
+            who_should_be_cautious?: string[];
+            questions_for_open_day?: string[];
+          };
+          hard_facts?: Record<string, string>;
+          school_profile?: {
+            school_type?: string;
+            inspection_period?: string;
+            school_change_summary?: string;
+          };
+        };
+      }>;
+
+      // Mapovat na InspectionExtraction
+      const mapped: (InspectionExtraction & { model_id: string })[] = inspList
+        .filter(insp => insp.parsed_output?.for_parents?.plain_czech_summary)
+        .map(insp => {
+          const fp = insp.parsed_output.for_parents!;
+          return {
+            report_id: insp.report_id,
+            source_url: reportUrls[insp.report_id] || '',
+            date: insp.inspection_from || '',
+            date_to: insp.inspection_to || '',
+            plain_czech_summary: fp.plain_czech_summary || '',
+            strengths: fp.strengths || [],
+            risks: fp.risks || [],
+            who_school_fits: fp.who_school_fits || [],
+            who_should_be_cautious: fp.who_should_be_cautious || [],
+            questions_for_open_day: fp.questions_for_open_day || [],
+            hard_facts: insp.parsed_output.hard_facts || {},
+            school_profile: insp.parsed_output.school_profile || {},
+            model_id: insp.model_id || '',
+          };
+        });
+
+      // Deduplikovat per datum inspekce (preferovat claude model)
+      const byDate = new Map<string, InspectionExtraction & { model_id: string }>();
+      for (const item of mapped) {
+        const existing = byDate.get(item.date);
+        if (!existing) {
+          byDate.set(item.date, item);
+        } else if (item.model_id.includes('claude') && !existing.model_id.includes('claude')) {
+          byDate.set(item.date, item);
+        }
+      }
+
+      // Seřadit od nejnovější, odstranit model_id z výstupu
+      const deduped = Array.from(byDate.values())
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .map(({ model_id: _, ...rest }) => rest);
+
+      if (deduped.length > 0) {
+        result[redizo] = deduped;
+      }
+    }
+
+    extractionsCache = result;
+    return result;
+  } catch (error) {
+    console.error('Chyba při načítání inspekčních extrakcí:', error);
+    return {};
+  }
+}
+
+/**
+ * Získá AI-extrahovaná inspekční data pro školu podle REDIZO
+ */
+export async function getExtractionsByRedizo(redizo: string): Promise<InspectionExtraction[]> {
+  const all = await getInspectionExtractions();
+  return all[redizo] || [];
 }

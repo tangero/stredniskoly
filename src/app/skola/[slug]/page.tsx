@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution, ProgramTabs } from '@/components/SchoolDetailClient';
-import { SchoolInspections } from '@/components/SchoolInspections';
-import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo } from '@/lib/data';
+import { InspectionSummary } from '@/components/InspectionSummary';
+import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo } from '@/lib/data';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
@@ -205,8 +205,11 @@ export default async function SchoolDetailPage({ params }: Props) {
     const overview = await getSchoolOverview(redizo);
     if (!overview) notFound();
 
-    // Načíst data ČŠI
-    const csiData = await getCSIDataByRedizo(redizo);
+    // Načíst data ČŠI a AI extrakce
+    const [csiData, extractions] = await Promise.all([
+      getCSIDataByRedizo(redizo),
+      getExtractionsByRedizo(redizo),
+    ]);
 
     // Seřadit programy podle min_body (nejobtížnější první)
     const sortedPrograms = [...overview.programs].sort((a, b) => b.min_body - a.min_body);
@@ -262,6 +265,16 @@ export default async function SchoolDetailPage({ params }: Props) {
                 <span>•</span>
                 <span>{sortedPrograms.length} {sortedPrograms.length === 1 ? 'obor' : sortedPrograms.length < 5 ? 'obory' : 'oborů'}</span>
               </div>
+              {extractions.length > 0 && (
+                <div className="mt-4">
+                  <Link
+                    href={`/skola/${redizo}-${createSlug(overview.nazev)}/inspekce`}
+                    className="inline-block px-4 py-1 rounded-full text-sm font-medium bg-white/20 text-white hover:bg-white/30 transition-colors"
+                  >
+                    Co si o škole myslí Školská inspekce?
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
 
@@ -307,6 +320,13 @@ export default async function SchoolDetailPage({ params }: Props) {
               })}
             </div>
 
+            {/* Inspekce ČŠI */}
+            <InspectionSummary
+              extractions={extractions}
+              csiData={csiData}
+              schoolSlug={`${redizo}-${createSlug(overview.nazev)}`}
+            />
+
             {/* Kontakt */}
             <div className="bg-white p-6 rounded-xl shadow-sm mb-8">
               <h2 className="text-xl font-semibold mb-4">Kontakt</h2>
@@ -327,9 +347,6 @@ export default async function SchoolDetailPage({ params }: Props) {
                 Vyzkoušet v simulátoru
               </Link>
             </div>
-
-            {/* Inspekční zprávy ČŠI */}
-            <SchoolInspections csiData={csiData} />
           </div>
         </main>
 
@@ -349,7 +366,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   const category = categoryColors[school.category_code];
 
   // Načíst další data - pro zaměření použít specifickou funkci
-  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData] = await Promise.all([
+  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData, extractions] = await Promise.all([
     getProgramsByRedizo(redizo),
     getSchoolDetail(program.id),
     pageInfo.type === 'zamereni'
@@ -358,6 +375,7 @@ export default async function SchoolDetailPage({ params }: Props) {
     getSchoolDifficultyProfile(school.id, school.typ, program.min_body),
     getTrendDataForProgram(program.id),
     getCSIDataByRedizo(redizo),
+    getExtractionsByRedizo(redizo),
   ]);
 
   // Připravit data pro ProgramTabs
@@ -470,6 +488,14 @@ export default async function SchoolDetailPage({ params }: Props) {
               <span className={`inline-block px-4 py-1 rounded-full text-sm font-medium ${category.bg} ${category.text}`}>
                 {categoryLabels[school.category_code]}
               </span>
+              {extractions.length > 0 && (
+                <Link
+                  href={`/skola/${overviewSlug}/inspekce`}
+                  className="inline-block px-4 py-1 rounded-full text-sm font-medium bg-white/20 text-white hover:bg-white/30 transition-colors"
+                >
+                  Co si o škole myslí Školská inspekce?
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -668,6 +694,13 @@ export default async function SchoolDetailPage({ params }: Props) {
             </p>
           </div>
 
+          {/* Inspekce ČŠI */}
+          <InspectionSummary
+            extractions={extractions}
+            csiData={csiData}
+            schoolSlug={overviewSlug}
+          />
+
           {/* Adresa */}
           <div className="bg-white p-6 rounded-xl shadow-sm mb-8">
             <h2 className="text-xl font-semibold mb-4">Kontakt</h2>
@@ -688,9 +721,6 @@ export default async function SchoolDetailPage({ params }: Props) {
               Vyzkoušet v simulátoru
             </Link>
           </div>
-
-          {/* Inspekční zprávy ČŠI */}
-          <SchoolInspections csiData={csiData} />
         </div>
       </main>
 

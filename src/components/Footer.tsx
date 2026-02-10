@@ -63,7 +63,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm list-none p-0">
               <li>
                 <Link href="/changelog" className="no-underline" style={{ color: '#0074e4' }}>
-                  Changelog (v2.1.0)
+                  Changelog (v2.4.0)
                 </Link>
               </li>
               <li>

@@ -16,12 +16,16 @@ def ensure_pdftotext():
         raise RuntimeError("Chybí binárka pdftotext v PATH.")
 
 
-def extract_text(pdf_path: pathlib.Path, text_path: pathlib.Path):
+def extract_text(pdf_path: pathlib.Path, text_path: pathlib.Path) -> bool:
+    """Returns True on success, False on pdftotext failure."""
     text_path.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run(
+    result = subprocess.run(
         ["pdftotext", "-layout", str(pdf_path), str(text_path)],
-        check=True
+        capture_output=True,
     )
+    if result.returncode != 0:
+        return False
+    return True
 
 
 def main():
@@ -42,6 +46,7 @@ def main():
     index_rows = []
     converted = 0
     skipped = 0
+    errors = 0
 
     for report in reports:
         pdf_path = reports_dir / report["pdf_file"]
@@ -51,7 +56,11 @@ def main():
         if text_path.exists() and not args.force:
             skipped += 1
         else:
-            extract_text(pdf_path, text_path)
+            ok = extract_text(pdf_path, text_path)
+            if not ok:
+                errors += 1
+                print(f"CHYBA pdftotext: {pdf_path.name} - přeskakuji")
+                continue
             converted += 1
         text = text_path.read_text(encoding="utf-8", errors="ignore")
         words = len(text.split())
@@ -72,7 +81,7 @@ def main():
     )
     print(
         json.dumps(
-            {"converted": converted, "skipped_existing": skipped, "index": str(index_path)},
+            {"converted": converted, "skipped_existing": skipped, "errors": errors, "index": str(index_path)},
             ensure_ascii=False
         )
     )

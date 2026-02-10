@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-02-10
+
+### AI shrnutí inspekčních zpráv ČŠI na detailu školy (v2.4.0)
+
+- Nový kompaktní blok **„Co zjistila inspekce"** na stránce školy s AI shrnutím nejnovější inspekční zprávy, tagy silných stránek a rizik
+- Nová samostatná stránka **`/skola/[slug]/inspekce`** s podrobným shrnutím všech inspekčních zpráv školy (836 stránek)
+- Zobrazení: shrnutí pro rodiče, silné stránky, rizika, komu škola sedí, kdo by měl zvážit, otázky na den otevřených dveří, fakta ze zprávy (maturita, absence, podpůrné služby atd.)
+- Tlačítko **„Co si o škole myslí Školská inspekce?"** v hlavičce školy s odkazem na detail inspekce
+- Nejnovější inspekce vždy plně rozbalená, starší inspekce sbalené v `<details>` panelu
+- Školy bez AI extrakce zobrazí fallback s datem a odkazem na PDF zprávu
+- Nová komponenta `InspectionSummary` (client) pro kompaktní inspekční box
+- Nové funkce v `data.ts`: `getInspectionExtractions()`, `getExtractionsByRedizo()`
+- Nové typy: `InspectionExtraction`, `InspectionStrengthTag`
+- AI disclaimer na obou úrovních (kompaktní box i detail)
+
 ## 2026-02-09
 
 ### Dostupnost: rozlišení duplicitních zastávek v našeptávači

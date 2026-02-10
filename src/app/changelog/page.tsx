@@ -20,6 +20,20 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '2.4.0',
+    date: '10. 2. 2026',
+    title: 'AI shrnutí inspekčních zpráv ČŠI na detailu školy',
+    changes: [
+      { type: 'new', text: 'Kompaktní blok „Co zjistila inspekce" na stránce školy — shrnutí, silné stránky a rizika z AI analýzy inspekční zprávy' },
+      { type: 'new', text: 'Samostatná stránka /skola/[slug]/inspekce s podrobným shrnutím všech inspekčních zpráv školy (836 stránek)' },
+      { type: 'new', text: 'Zobrazení: shrnutí pro rodiče, silné stránky, rizika, komu škola sedí, otázky na den otevřených dveří, fakta ze zprávy' },
+      { type: 'new', text: 'Tlačítko „Co si o škole myslí Školská inspekce?" v hlavičce školy s odkazem na detail inspekce' },
+      { type: 'improve', text: 'Nejnovější inspekce vždy rozbalená, starší sbalené v rozbalovacím panelu' },
+      { type: 'improve', text: 'Školy bez AI extrakce zobrazí fallback s datem inspekce a odkazem na PDF' },
+      { type: 'improve', text: 'AI disclaimer upozorňující na automatické zpracování inspekční zprávy' },
+    ],
+  },
+  {
     version: '2.3.1',
     date: '9. 2. 2026',
     title: 'Aktualizace pokrytí MHD na stránce dostupnosti',
