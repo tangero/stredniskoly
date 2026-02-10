@@ -1,10 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
+interface SearchResult {
+  id: string;
+  nazev: string;
+  obor: string;
+  obec: string;
+  kraj: string;
+  slug: string;
+}
+
+interface Kraj {
+  kod: string;
+  nazev: string;
+}
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [kraje, setKraje] = useState<Kraj[]>([]);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const searchDropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const navLinks = [
     { href: '/simulator', label: 'Simulátor' },
@@ -15,6 +38,112 @@ export function Header() {
     { href: '/jak-funguje-prijimani', label: 'Jak to funguje?' },
     { href: '/issues', label: 'Nahlášené chyby' },
   ];
+
+  // Načíst seznam krajů
+  useEffect(() => {
+    fetch('/api/schools/search?krajeOnly=1')
+      .then(res => res.json())
+      .then(data => {
+        if (data.kraje) {
+          setKraje(data.kraje);
+        }
+      })
+      .catch(err => console.error('Chyba při načítání krajů:', err));
+  }, []);
+
+  // Vyhledávání s debounce
+  useEffect(() => {
+    if (!searchQuery || searchQuery.length < 2) {
+      setSearchResults([]);
+      setIsSearchOpen(false);
+      return;
+    }
+
+    setIsLoading(true);
+    const timeoutId = setTimeout(() => {
+      fetch(`/api/schools/search?search=${encodeURIComponent(searchQuery)}&limit=10`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.schools) {
+            setSearchResults(data.schools);
+            setIsSearchOpen(true);
+          }
+        })
+        .catch(err => console.error('Chyba při vyhledávání:', err))
+        .finally(() => setIsLoading(false));
+    }, 300);
+
+    return () => clearTimeout(timeoutId);
+  }, [searchQuery]);
+
+  // Zavřít dropdown při kliknutí mimo
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        searchDropdownRef.current &&
+        !searchDropdownRef.current.contains(event.target as Node) &&
+        searchInputRef.current &&
+        !searchInputRef.current.contains(event.target as Node)
+      ) {
+        setIsSearchOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Normalizace textu pro porovnání
+  const normalizeText = (text: string) => {
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+  };
+
+  // Filtrovat kraje podle hledání
+  const matchedKraje = useMemo(() => {
+    if (!searchQuery || searchQuery.length < 2) return [];
+    const q = normalizeText(searchQuery);
+    return kraje
+      .filter(k => {
+        const nazev = normalizeText(k.nazev);
+        return nazev.includes(q);
+      })
+      .slice(0, 3);
+  }, [searchQuery, kraje]);
+
+  // Zvýraznění hledaného textu
+  const highlightMatch = (text: string, query: string) => {
+    if (!query) return text;
+    const q = normalizeText(query);
+    const textNorm = normalizeText(text);
+    const index = textNorm.indexOf(q);
+    if (index === -1) return text;
+
+    return (
+      <>
+        {text.slice(0, index)}
+        <mark className="bg-yellow-200 text-yellow-900">{text.slice(index, index + query.length)}</mark>
+        {text.slice(index + query.length)}
+      </>
+    );
+  };
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      router.push(`/skoly?search=${encodeURIComponent(searchQuery)}`);
+      setIsSearchOpen(false);
+      setSearchQuery('');
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    } else if (e.key === 'Escape') {
+      setIsSearchOpen(false);
+    }
+  };
 
   return (
     <>
@@ -110,10 +239,15 @@ export function Header() {
 
       {/* Search bar */}
       <div style={{ backgroundColor: '#003688' }} className="py-3.5">
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-3xl mx-auto px-4 relative">
           <div className="flex w-full">
             <input
+              ref={searchInputRef}
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => searchQuery.length >= 2 && setIsSearchOpen(true)}
+              onKeyDown={handleKeyDown}
               placeholder="Hledej školu, obor, město nebo kraj..."
               className="hs-search flex-1 px-4 py-2.5 border-none outline-none"
               style={{
@@ -124,16 +258,81 @@ export function Header() {
               }}
             />
             <button
-              className="px-6 py-2.5 text-white font-semibold text-sm uppercase tracking-wide cursor-pointer border-none shrink-0"
+              onClick={handleSearch}
+              disabled={!searchQuery.trim()}
+              className="px-6 py-2.5 text-white font-semibold text-sm uppercase tracking-wide cursor-pointer border-none shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
                 backgroundColor: '#0074e4',
                 borderRadius: '0 4px 4px 0',
                 letterSpacing: '1px',
               }}
             >
-              Hledat
+              {isLoading ? 'Hledám...' : 'Hledat'}
             </button>
           </div>
+
+          {/* Dropdown s výsledky */}
+          {isSearchOpen && searchQuery.length >= 2 && (searchResults.length > 0 || matchedKraje.length > 0) && (
+            <div
+              ref={searchDropdownRef}
+              className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-slate-200 overflow-hidden max-h-[400px] overflow-y-auto"
+            >
+              {/* Kraje */}
+              {matchedKraje.length > 0 && (
+                <div>
+                  <div className="px-4 py-2 text-xs font-semibold text-slate-500 bg-slate-50 uppercase tracking-wide">
+                    Kraje
+                  </div>
+                  {matchedKraje.map((kraj) => (
+                    <Link
+                      key={kraj.kod}
+                      href={`/regiony/${normalizeText(kraj.nazev).replace(/\s+/g, '-')}`}
+                      className="block px-4 py-3 hover:bg-blue-50 no-underline"
+                      onClick={() => {
+                        setIsSearchOpen(false);
+                        setSearchQuery('');
+                      }}
+                    >
+                      <div className="font-medium text-slate-900">{highlightMatch(kraj.nazev, searchQuery)} kraj</div>
+                      <div className="text-xs text-slate-400">Zobrazit všechny školy v kraji</div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              {/* Školy */}
+              {searchResults.length > 0 && (
+                <div>
+                  <div className="px-4 py-2 text-xs font-semibold text-slate-500 bg-slate-50 uppercase tracking-wide">
+                    Školy
+                  </div>
+                  {searchResults.map((school) => (
+                    <Link
+                      key={school.id}
+                      href={`/skola/${school.slug}`}
+                      className="block px-4 py-3 hover:bg-blue-50 no-underline"
+                      onClick={() => {
+                        setIsSearchOpen(false);
+                        setSearchQuery('');
+                      }}
+                    >
+                      <div className="font-medium text-slate-900">{highlightMatch(school.nazev, searchQuery)}</div>
+                      <div className="text-sm text-slate-600">{highlightMatch(school.obor, searchQuery)}</div>
+                      <div className="text-xs text-slate-400 mt-0.5">{school.obec} • {school.kraj}</div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Žádné výsledky */}
+          {isSearchOpen && searchQuery.length >= 2 && !isLoading && searchResults.length === 0 && matchedKraje.length === 0 && (
+            <div className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-slate-200 p-6 text-center">
+              <div className="text-slate-400 text-lg mb-2">Nic nenalezeno</div>
+              <div className="text-sm text-slate-500">Zkuste jiný výraz nebo zkontrolujte pravopis</div>
+            </div>
+          )}
         </div>
       </div>
     </>
