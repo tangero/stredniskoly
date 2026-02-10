@@ -1379,7 +1379,7 @@ export async function getInspectionExtractions(): Promise<Record<string, Inspect
   if (extractionsCache) return extractionsCache;
 
   try {
-    const extractionsPath = path.join(dataDir, 'inspection_extractions.json');
+    const extractionsPath = path.join(process.cwd(), 'data', 'inspection_extractions.json');
     const extractionsRaw = await fs.readFile(extractionsPath, 'utf-8');
     const extractionsData = JSON.parse(extractionsRaw);
     const schools = extractionsData.schools || {};
