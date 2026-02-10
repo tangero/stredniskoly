@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { getSchoolPageType, getSchoolOverview, getExtractionsByRedizo, getCSIDataByRedizo, getInspectionExtractions, getAllSchools } from '@/lib/data';
+import { getSchoolPageType, getSchoolOverview, getExtractionsByRedizo, getCSIDataByRedizo } from '@/lib/data';
 import { createSlug } from '@/lib/utils';
 import { krajNames, InspectionExtraction } from '@/types/school';
 
@@ -11,28 +11,9 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-// Generovat statické stránky jen pro školy s AI extrakcemi (overview slugy)
-export async function generateStaticParams() {
-  const schools = await getAllSchools();
-  const extractions = await getInspectionExtractions();
-
-  // Seskupit školy podle REDIZO, generovat jen overview slug
-  const seen = new Set<string>();
-  const slugs: { slug: string }[] = [];
-
-  for (const school of schools) {
-    const redizo = school.id.split('_')[0];
-    if (seen.has(redizo)) continue;
-    seen.add(redizo);
-
-    if (extractions[redizo] && extractions[redizo].length > 0) {
-      const overviewSlug = `${redizo}-${createSlug(school.nazev)}`;
-      slugs.push({ slug: overviewSlug });
-    }
-  }
-
-  return slugs;
-}
+// Stránky inspekce se renderují on-demand (ne při buildu),
+// aby nepřekročily Vercel deployment size limit (75 MB).
+// Po prvním požadavku se cachují.
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
