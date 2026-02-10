@@ -8,8 +8,10 @@ export default function BugReportButton() {
   const [state, setState] = useState<FormState>('idle');
   const [description, setDescription] = useState('');
   const [email, setEmail] = useState('');
+  const [website, setWebsite] = useState(''); // Honeypot field
   const [errorMessage, setErrorMessage] = useState('');
   const [showTips, setShowTips] = useState(false);
+  const [issueUrl, setIssueUrl] = useState('');
 
   const buttonRef = useRef<HTMLButtonElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -71,6 +73,7 @@ export default function BugReportButton() {
         body: JSON.stringify({
           description: trimmed,
           email: email.trim() || undefined,
+          website: website, // Honeypot field
           url: window.location.href,
           userAgent: navigator.userAgent,
           viewport: `${window.innerWidth}x${window.innerHeight}`,
@@ -79,6 +82,10 @@ export default function BugReportButton() {
       });
 
       if (res.ok) {
+        const data = await res.json();
+        if (data.issueUrl) {
+          setIssueUrl(data.issueUrl);
+        }
         setState('success');
       } else {
         const data = await res.json().catch(() => ({}));
@@ -136,9 +143,31 @@ export default function BugReportButton() {
             <h2 className="mb-4 text-lg font-bold text-gray-900">Nahlásit chybu</h2>
 
             {state === 'success' ? (
-              <p className="rounded-lg bg-green-50 p-4 text-green-800">
-                Děkujeme za hlášení! Chybu se pokusíme co nejdříve opravit.
-              </p>
+              <div className="rounded-lg bg-green-50 p-4 space-y-3">
+                <p className="text-green-800 font-medium flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Děkujeme za hlášení!
+                </p>
+                <p className="text-sm text-green-700">
+                  Chybu se pokusíme co nejdříve opravit. Pokud jste zadali e-mail, budeme vás informovat o průběhu opravy.
+                </p>
+                <div className="text-xs text-green-600 bg-green-100 rounded px-3 py-2">
+                  <p className="font-medium mb-1">🤖 Automatická oprava</p>
+                  <p>Pokud je problém jednoduchý, náš AI bot se pokusí o automatickou opravu během několika minut.</p>
+                </div>
+                {issueUrl && (
+                  <a
+                    href={issueUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-green-700 hover:text-green-900 underline block"
+                  >
+                    Sledovat hlášení na GitHubu →
+                  </a>
+                )}
+              </div>
             ) : (
               <>
                 {/* Pokyny pro kvalitní bug report */}
@@ -192,6 +221,18 @@ export default function BugReportButton() {
                 </div>
 
                 <form onSubmit={handleSubmit}>
+                {/* Honeypot field - hidden from normal users */}
+                <div style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
+                  <input
+                    type="text"
+                    name="website"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 <label className="mb-1 block text-sm font-medium text-gray-700" htmlFor="bug-description">
                   Popis chyby <span className="text-red-500">*</span>
                 </label>

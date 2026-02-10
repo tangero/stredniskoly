@@ -1,0 +1,109 @@
+name: Auto-Fix Issues
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  validate-and-fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    # Spustit jen pokud má label 'bug-report' nebo 'auto-fix'
+    if: |
+      contains(github.event.issue.labels.*.name, 'bug-report') ||
+      contains(github.event.issue.labels.*.name, 'auto-fix')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Validate issue
+        id: validate
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          # Připravit issue data pro validaci
+          cat > /tmp/issue.json <<EOF
+          {
+            "title": "${{ github.event.issue.title }}",
+            "body": $(echo '${{ github.event.issue.body }}' | jq -Rs .),
+            "url": "${{ github.event.issue.body }}"
+          }
+          EOF
+
+          # Spustit validaci
+          python .github/scripts/validate_issue.py < /tmp/issue.json > /tmp/validation.json
+
+          # Načíst výsledek
+          cat /tmp/validation.json
+
+          # Export pro další kroky
+          echo "valid=$(jq -r .valid /tmp/validation.json)" >> $GITHUB_OUTPUT
+          echo "auto_fix=$(jq -r .auto_fix_eligible /tmp/validation.json)" >> $GITHUB_OUTPUT
+          echo "reason=$(jq -r .reason /tmp/validation.json)" >> $GITHUB_OUTPUT
+
+      - name: Close invalid issue
+        if: steps.validate.outputs.valid == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue close ${{ github.event.issue.number }} \
+            --reason "not planned" \
+            --comment "❌ **Issue byl automaticky zavřen**
+
+Důvod: ${{ steps.validate.outputs.reason }}
+
+Pokud si myslíte, že je toto chyba, kontaktujte prosím maintainera."
+
+      - name: Add auto-fix label
+        if: |
+          steps.validate.outputs.valid == 'true' &&
+          steps.validate.outputs.auto_fix == 'true' &&
+          !contains(github.event.issue.labels.*.name, 'auto-fix')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue edit ${{ github.event.issue.number }} --add-label "auto-fix"
+
+      - name: Run auto-fix
+        if: |
+          steps.validate.outputs.valid == 'true' &&
+          steps.validate.outputs.auto_fix == 'true'
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          # Nastavit git
+          git config --global user.name "Claude Bot"
+          git config --global user.email "claude-bot@prijimackynaskolu.cz"
+
+          # Spustit auto-fix
+          python .github/scripts/auto_fix_issue.py ${{ github.event.issue.number }}
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "⚠️ **Automatická oprava selhala**
+
+Maintainer bude muset opravu provést ručně. Děkujeme za trpělivost!"
