@@ -95,15 +95,19 @@ class AutoFixer:
 
         return 'https://www.prijimackynaskolu.cz/'
 
-    def call_claude(self, issue, files_content):
+    def call_claude(self, issue, files_content, custom_prompt=None):
         """Zavolat Claude přes OpenRouter"""
-        # Sestavit kontext
-        files_text = "\n\n".join([
-            f"### {path}\n```tsx\n{content}\n```"
-            for path, content in files_content.items()
-        ])
+        # Pokud je zadán custom prompt, použij ho
+        if custom_prompt:
+            prompt = custom_prompt
+        else:
+            # Sestavit kontext
+            files_text = "\n\n".join([
+                f"### {path}\n```tsx\n{content}\n```"
+                for path, content in files_content.items()
+            ])
 
-        prompt = f"""Oprav tento bug na webu přijímačky na školu (Next.js + React + TypeScript).
+            prompt = f"""Oprav tento bug na webu přijímačky na školu (Next.js + React + TypeScript).
 
 **Issue #{self.issue_number}: {issue['title']}**
 
@@ -147,16 +151,16 @@ Vysvětli co bylo opraveno a proč to funguje.
                     "X-Title": "Stredniskoly Auto-Fixer"
                 },
                 json={
-                    "model": "anthropic/claude-sonnet-4.5",
+                    "model": "z-ai/glm-4.7",
                     "messages": [{"role": "user", "content": prompt}],
                     "max_tokens": 8000,
                     "temperature": 0.3,
-                    # Fallback na jiné modely pokud Claude není dostupný
+                    # Fallback na jiné modely pokud GLM není dostupný
                     "route": "fallback",
                     "models": [
+                        "z-ai/glm-4.7",
                         "anthropic/claude-sonnet-4.5",
-                        "anthropic/claude-3.5-sonnet",
-                        "openai/gpt-4-turbo"
+                        "anthropic/claude-3.5-sonnet"
                     ]
                 },
                 timeout=120
@@ -220,7 +224,7 @@ Fixes #{self.issue_number}
 
 {explanation[:500]}
 
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"""
+Co-Authored-By: GLM-4.7 AI <noreply@prijimackynaskolu.cz>"""
 
         subprocess.run(['git', 'commit', '-m', commit_message], check=True)
 
@@ -254,7 +258,7 @@ Prosím otestujte tuto opravu před mergnutím:
 - [ ] Ověřit, že oprava řeší původní problém
 
 ---
-🤖 Tuto opravu vytvořil AI agent pomocí Claude Sonnet 4.5.
+🤖 Tuto opravu vytvořil AI agent pomocí GLM-4.7.
 Pokud najdete problém, zavřete tento PR a opravte ručně.
 """
 
