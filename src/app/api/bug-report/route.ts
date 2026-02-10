@@ -65,41 +65,95 @@ function detectSpam(text: string): boolean {
 }
 
 async function sendEmailNotification(email: string, issueUrl: string, issueNumber: number) {
-  // TODO: Implementovat email notifikaci
-  // Možnosti: SendGrid, Resend, Mailgun, nebo vlastní SMTP
-  // Pro produkci doporučuji Resend (https://resend.com)
-
-  console.log(`📧 Would send email to ${email} about issue #${issueNumber}: ${issueUrl}`);
-
-  // Příklad s Resend API:
-  /*
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
-  if (RESEND_API_KEY && email) {
-    try {
-      await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${RESEND_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: 'noreply@prijimackynaskolu.cz',
-          to: email,
-          subject: 'Vaše nahlášení chyby bylo přijato',
-          html: `
-            <h2>Děkujeme za nahlášení chyby!</h2>
-            <p>Vaše hlášení bylo zaznamenáno jako issue #${issueNumber}.</p>
-            <p>Můžete sledovat průběh opravy zde: <a href="${issueUrl}">${issueUrl}</a></p>
-            <p>Jakmile bude chyba opravena, budeme vás informovat.</p>
-            <p>Tým Přijímačky na školu</p>
-          `,
-        }),
-      });
-    } catch (error) {
-      console.error('Email notification failed:', error);
-    }
+
+  if (!RESEND_API_KEY) {
+    console.log(`📧 Would send email to ${email} about issue #${issueNumber} (RESEND_API_KEY not set)`);
+    return;
   }
-  */
+
+  if (!email) {
+    return;
+  }
+
+  try {
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'Přijímačky na školu <noreply@prijimackynaskolu.cz>',
+        to: email,
+        subject: '✅ Vaše nahlášení chyby bylo přijato',
+        html: `
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+              body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #28313b; }
+              .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+              .header { background: linear-gradient(135deg, #0074e4 0%, #0056b3 100%); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
+              .content { background: #ffffff; padding: 30px; border: 1px solid #e0e6ed; border-top: none; border-radius: 0 0 8px 8px; }
+              .button { display: inline-block; background: #0074e4; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; margin: 15px 0; }
+              .info-box { background: #e7f3ff; border-left: 4px solid #0074e4; padding: 15px; margin: 20px 0; border-radius: 4px; }
+              .footer { text-align: center; padding: 20px; color: #818c99; font-size: 14px; }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <div class="header">
+                <h1 style="margin: 0; font-size: 24px;">🎉 Děkujeme za nahlášení!</h1>
+              </div>
+
+              <div class="content">
+                <p>Dobrý den,</p>
+
+                <p>Vaše hlášení chyby bylo úspěšně přijato a zaznamenáno jako <strong>issue #${issueNumber}</strong>.</p>
+
+                <div class="info-box">
+                  <strong>🤖 Automatická oprava</strong><br>
+                  Pokud je problém jednoduchý, náš AI bot se pokusí o automatickou opravu během několika minut.
+                  V opačném případě se na to podíváme ručně.
+                </div>
+
+                <p>Můžete sledovat průběh opravy na GitHubu:</p>
+
+                <div style="text-align: center;">
+                  <a href="${issueUrl}" class="button">Sledovat opravu</a>
+                </div>
+
+                <p>Jakmile bude chyba opravena a nasazena do produkce, budeme vás informovat dalším emailem.</p>
+
+                <p style="margin-top: 30px;">
+                  S pozdravem,<br>
+                  <strong>Tým Přijímačky na školu</strong>
+                </p>
+              </div>
+
+              <div class="footer">
+                <p>Tento email byl odeslán automaticky. Prosím neodpovídejte na něj.</p>
+                <p><a href="https://www.prijimackynaskolu.cz" style="color: #0074e4;">prijimackynaskolu.cz</a></p>
+              </div>
+            </div>
+          </body>
+          </html>
+        `,
+      }),
+    });
+
+    if (response.ok) {
+      console.log(`✅ Email sent to ${email} for issue #${issueNumber}`);
+    } else {
+      const errorText = await response.text();
+      console.error(`❌ Failed to send email: ${response.status} - ${errorText}`);
+    }
+  } catch (error) {
+    console.error('❌ Email notification error:', error);
+  }
 }
 
 export async function POST(request: NextRequest) {
