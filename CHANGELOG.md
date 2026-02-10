@@ -1,150 +1,97 @@
 # Changelog
 
-## 2026-02-10
+Všechny podstatné změny v projektu jsou dokumentovány v tomto souboru.
+Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 
-### AI shrnutí inspekčních zpráv ČŠI na detailu školy (v2.4.0)
+## [Unreleased]
 
-- Nový kompaktní blok **„Co zjistila inspekce"** na stránce školy s AI shrnutím nejnovější inspekční zprávy, tagy silných stránek a rizik
-- Nová samostatná stránka **`/skola/[slug]/inspekce`** s podrobným shrnutím všech inspekčních zpráv školy (836 stránek)
-- Zobrazení: shrnutí pro rodiče, silné stránky, rizika, komu škola sedí, kdo by měl zvážit, otázky na den otevřených dveří, fakta ze zprávy (maturita, absence, podpůrné služby atd.)
-- Tlačítko **„Co si o škole myslí Školská inspekce?"** v hlavičce školy s odkazem na detail inspekce
-- Nejnovější inspekce vždy plně rozbalená, starší inspekce sbalené v `<details>` panelu
-- Školy bez AI extrakce zobrazí fallback s datem a odkazem na PDF zprávu
-- Nová komponenta `InspectionSummary` (client) pro kompaktní inspekční box
-- Nové funkce v `data.ts`: `getInspectionExtractions()`, `getExtractionsByRedizo()`
-- Nové typy: `InspectionExtraction`, `InspectionStrengthTag`
-- AI disclaimer na obou úrovních (kompaktní box i detail)
+### Přidáno
 
-## 2026-02-09
+### Změněno
 
-### Dostupnost: rozlišení duplicitních zastávek v našeptávači
+### Opraveno
 
-- V API `GET /api/dostupnost/stop-suggest` přidán disambiguační kontext pro zastávky se stejným názvem
-- Pro stejné názvy (např. `Újezd`) se nyní zobrazí doplňující lokalita:
-  - primárně kraj/region podle identifikátorů zastávky (např. `IDPK` = Plzeňský kraj, `IDZK` = Zlínský kraj, `PID` = Praha + Středočeský kraj),
-  - fallback na souřadnice, pokud kraj nelze jednoznačně určit z ID
-- Frontend v `DostupnostClient` nově zobrazuje v dropdownu druhý řádek s kontextem a stejný kontext i u potvrzené vybrané zastávky
-- Upřesněno řazení návrhů při shodách (stabilnější pořadí) a doplněna ARIA vazba `combobox` → `listbox`
+## [0.2.0] — 2026-02-10
 
-### Integrace inspekčních zpráv ČŠI na detailu školy
+### Přidáno
+- **Autonomní auto-fix systém** — automatické opravy bug reportů pomocí GitHub Actions a AI (Claude/GLM-4.7 přes OpenRouter)
+  - AI validace před vytvořením issue (spam detection, rate limiting, honeypot)
+  - Automatická analýza problému a vytvoření opravy
+  - Iterativní workflow s testováním a feedback loop (až 3 pokusy)
+  - Draft PR s možností review před mergnutím
+  - Email notifikace přes Resend API
+- **AI shrnutí inspekčních zpráv ČŠI** — automaticky generovaná shrnutí z inspekčních zpráv zobrazená na detailu školy (v2.4.0)
+  - Extrakce klíčových bodů z PDF zpráv pomocí AI
+  - Nová samostatná stránka `/skola/[slug]/inspekce` s podrobným shrnutím všech inspekčních zpráv
+  - Zobrazení shrnutí pro rodiče, silné stránky, rizika, fakta ze zprávy
+  - Tlačítko „Co si o škole myslí Školská inspekce?" v hlavičce školy
+  - Deduplikace a agregace dat podle REDIZO
+  - Optimalizace velikosti dat (7.1 MB → 5.0 MB)
+- **Stránka /issues** — přehled všech bug reportů s filtry a statistikami
+- **Clicky.com analytics** — integrace sledování návštěvnosti
 
-- Přidána nová sekce **„Inspekční zprávy ČŠI“** na detail školy (`/skola/[slug]`) pro přehled školy i detail oboru/zaměření
-- Přidána komponenta `SchoolInspections` s:
-  - přehledem všech dostupných inspekcí školy,
-  - odkazy na PDF inspekční zprávy,
-  - odkazem na profil školy v InspIS PORTÁL
-- Rozšířen datový model o typy `CSIInspection`, `CSISchoolData`, `CSIDataset`
-- Do `src/lib/data.ts` přidány funkce pro práci s ČŠI daty:
-  - `getCSIData()`
-  - `getCSIDataByRedizo()`
-  - `wasInspectedRecently()`
-  - `getInspectionBadgeText()`
-- Přidán skript `scripts/process-csi-data.js` a npm příkaz `npm run update:csi` pro stažení a zpracování otevřených dat ČŠI
-- Přidán dataset `public/csi_inspections.json` (agregace podle REDIZO)
-- Doplněna dokumentace integrace v `docs/CSI_INTEGRATION.md`
+### Změněno
+- **Model pro auto-opravy** — změna z Claude Sonnet 4.5 na GLM-4.7 (z-ai/glm-4.7)
+- **Inspekční stránky** — renderování on-demand místo statického
+- **Bug report formulář** — vylepšené pokyny pro kvalitní hlášení chyb
+- **Dekódování zastávek** — adaptivní limity pro velké soubory
 
-## 2026-02-04
+### Opraveno
+- **Vyhledávání v horním menu** — nefunkční search a autocomplete nyní plně funkční
+  - Zobrazení názvu programu i délky studia
+  - Debounce 300ms pro lepší UX
+- **Hamburger menu na mobilu** — již není překryté search barem
+- **Zdvojení minimálních bodů** — normalizeMinBodyScore vždy správně dělí body dvěma
+- **Error handling** — oprava chyb při načítání MHD zastávek
+- **Clicky.com tracking** — správná inicializace s HTTPS protokolem
+- **CSP** — Content Security Policy pro Clicky.com analytics
+- **Lint errors** — oprava 36 lint errors (any types → konkrétní typy, unused variables, setState v effectu)
 
-### Bezpečnostní audit a optimalizace
+## [0.1.0] — 2026-02-09
 
-**Kritické bezpečnostní opravy:**
-- **Path Traversal ochrana** v API `/api/school-details/[id]` - validace ID, kontrola nebezpečných sekvencí (`..`, `./`, `~`)
-- **Input validace** - regex pattern pro validní school ID formát
-- **Path resolution check** - ověření, že výsledná cesta zůstává v povoleném adresáři
+### Přidáno
+- **Rozlišení duplicitních zastávek** — disambiguační kontext pro zastávky se stejným názvem v našeptávači dostupnosti
+  - Zobrazení kraje/regionu podle identifikátorů zastávky
+  - Fallback na souřadnice, pokud kraj nelze určit z ID
+- **Integrace inspekčních zpráv ČŠI** — nová sekce „Inspekční zprávy ČŠI" na detailu školy
+  - Přehled všech dostupných inspekcí školy
+  - Odkazy na PDF inspekční zprávy
+  - Odkaz na profil školy v InspIS PORTÁL
+  - Skript `npm run update:csi` pro stažení a zpracování otevřených dat ČŠI
 
-**High priority opravy:**
-- **Security headers** přidány do `next.config.ts`:
-  - Content-Security-Policy (CSP)
-  - Strict-Transport-Security (HSTS)
-  - X-Frame-Options (clickjacking ochrana)
-  - X-Content-Type-Options
-  - X-XSS-Protection
-  - Referrer-Policy
-  - Permissions-Policy
-- **Rate limiting** - max 100 požadavků za minutu na IP adresu pro API
-- **X-Powered-By header** skryt
+### Bezpečnost
+- **Path Traversal ochrana** — validace ID, kontrola nebezpečných sekvencí v API `/api/school-details/[id]`
+- **Security headers** — CSP, HSTS, X-Frame-Options, X-Content-Type-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy
+- **Rate limiting** — max 100 požadavků za minutu na IP adresu
 
-**Optimalizace bandwidth (Vercel Pro):**
-- **Nové API** `/api/schools/search` pro server-side filtrování škol
-- **Eliminace 5.1 MB JSON fetche** - simulátor nyní stahuje pouze relevantní data (typicky <50 KB)
-- **Cache headers** pro statická data (24h cache, 7 dnů stale-while-revalidate)
-- **Debounced search** - API se volá až po dokončení psaní (300ms delay)
-- **Odhadovaná úspora**: ~51 GB/měsíc při 10 000 unikátních návštěvnících simulátoru
+### Optimalizace
+- **Server-side filtrování škol** — nové API `/api/schools/search` eliminuje 5.1 MB JSON fetche
+  - Simulátor nyní stahuje pouze relevantní data (typicky <50 KB)
+  - Odhadovaná úspora: ~51 GB/měsíc při 10 000 unikátních návštěvnících
+- **Cache headers** — 24h cache, 7 dnů stale-while-revalidate pro statická data
+- **Debounced search** — API se volá až po dokončení psaní (300ms delay)
 
-**Vyhledávání škol:**
-- **Aliasy pro PORG pobočky** - vyhledávání "PORG Libeň", "PORG Ostrava", "Nový PORG" funguje správně
-- Nová sekce "Pobočky škol" ve výsledcích hledání
+### Změněno
+- **Nová struktura stránek škol** — Přehled + Detail oborů
+  - `/skola/{redizo}-{nazev}` - Přehled školy s kartami všech oborů/zaměření
+  - `/skola/{redizo}-{nazev}-{obor}` - Detail oboru s konkrétními statistikami
+  - `/skola/{redizo}-{nazev}-{obor}-{zamereni}` - Detail zaměření s vlastními daty
+- **Navigace mezi obory** — horizontální taby s kapacitou a minimálními body
+- **Plné české názvy** — místo zkratek (GY4 → „Čtyřleté gymnázium", atd.)
+- **Vyhledávání škol** — aliasy pro PORG pobočky (Libeň, Ostrava, Nový PORG)
 
-### Nová struktura stránek škol: Přehled + Detail oborů
-
-Kompletní přepracování struktury URL a stránek škol:
-
-**Nová struktura URL:**
-- `/skola/{redizo}-{nazev}` - **Přehled školy** s kartami všech oborů/zaměření
-- `/skola/{redizo}-{nazev}-{obor}` - **Detail oboru** s konkrétními statistikami
-- `/skola/{redizo}-{nazev}-{obor}-{zamereni}` - **Detail zaměření** s vlastními daty
-
-**Stránka přehledu školy:**
-- Základní kontaktní informace o škole
-- Karty všech oborů a zaměření s porovnáním:
-  - Min. body pro přijetí
-  - Kapacita
-  - Index poptávky
-  - Počet přihlášek / přijatých
-- Celkové statistiky školy
-
-**Stránka detailu oboru/zaměření:**
-- Konkrétní statistiky pro daný obor nebo zaměření
-- Navigační taby pro přepnutí na jiný obor/zaměření
-- Odkaz zpět na přehled školy v breadcrumbs
-- Každé zaměření má vlastní data (např. Gymnázium Arabská - Programování má 160 bodů, Přírodní vědy 172 bodů)
-
-**Příklad:**
-- Gymnázium Arabská (`/skola/600005682-gymnazium-arabska`) - přehled 3 zaměření
-  - Humanitní vědy: 60 míst, min. 136 bodů
-  - Programování: 30 míst, min. 158 bodů
-  - Přírodní vědy: 60 míst, min. 154 bodů
-
-### Nová stránka: Jak vybrat školu a uspět u přijímaček
-
-- **Nová stránka:** `/jak-vybrat-skolu` - komplexní průvodce pro uchazeče
-  - Osvědčené strategie pro výběr tří priorit na přihlášce
+### Přidáno
+- **Stránka /jak-vybrat-skolu** — komplexní průvodce pro uchazeče
+  - Osvědčené strategie pro výběr tří priorit
   - Tipy na přípravu na jednotné přijímací zkoušky
-  - Jak vybrat správný profil školy (technická vs. humanitní)
+  - Jak vybrat správný profil školy
   - Praktické rady pro den zkoušky
-  - Odkazy na užitečné zdroje (TAU CERMAT, To-DAS.cz, CERMAT)
-- **Hlavní stránka:** Výrazný odkaz na průvodce přidán do HERO sekce
 
-### Navigace oborů na detailu školy
+### Opraveno
+- **Duplicitní URL** — školy s více programy se stejným názvem ale různou délkou studia mají unikátní URL
+  - Např. `/skola/600004589-gymnazium-jana-nerudy-hellichova-gymnazium-4lete` a `...-6lete`
 
-- **Nová funkce:** Přidána navigace mezi obory školy pomocí horizontálních tabů
-  - Všechny taby jsou klikatelné a vedou na samostatné stránky
-  - Aktivní obor je vizuálně zvýrazněn (hvězdička, indigo podtržení)
-  - Každý tab zobrazuje kapacitu a minimální body pro přijetí
+---
 
-- **Vylepšení:** Plné české názvy typů škol místo zkratek
-  - GY4 -> "Čtyřleté gymnázium"
-  - GY6 -> "Šestileté gymnázium"
-  - GY8 -> "Osmileté gymnázium"
-  - SOŠ -> "Střední odborná škola"
-  - SOU -> "Střední odborné učiliště"
-  - LYC -> "Lyceum"
-
-### Oprava duplicitních URL pro programy se stejným názvem
-
-- **Bug fix:** Školy s více programy se stejným názvem ale různou délkou studia nyní mají unikátní URL
-  - Např. Gymnázium Jana Nerudy má 4leté i 6leté gymnázium
-  - Dříve: obě generovaly stejnou URL `/skola/600004589-gymnazium-jana-nerudy-hellichova-gymnazium`
-  - Nyní: `/skola/600004589-gymnazium-jana-nerudy-hellichova-gymnazium-4lete` a `...-6lete`
-- **Rozpoznávání stránek:** Funkce `getSchoolPageType()` správně rozpoznává slugy s délkou studia
-- **Generování odkazů:** Všechny odkazy v tabech a kartách programů používají správné unikátní URL
-
-### Technické změny
-
-- Nový typ stránky `SchoolPageType` (overview/program/zamereni) v `data.ts`
-- Nová funkce `getSchoolPageType()` pro rozpoznání typu stránky podle slugu
-- Nová funkce `getSchoolOverview()` pro načtení dat přehledu školy
-- Nová funkce `getExtendedStatsForProgram()` pro načtení statistik konkrétního zaměření
-- Rozšířená funkce `generateAllSlugs()` generuje slugy pro přehledy, obory i zaměření
-- Funkce `createSlug()` nyní podporuje čtvrtý argument (`delkaStudia`) pro rozlišení duplicitních názvů
-- Celkový počet generovaných stránek vzrostl z ~2250 na ~4480
+[0.2.0]: https://github.com/tangero/stredniskoly/releases/tag/v0.2.0
+[0.1.0]: https://github.com/tangero/stredniskoly/releases/tag/v0.1.0
