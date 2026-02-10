@@ -1,0 +1,92 @@
+name: Auto-Fix Issues (Iterative)
+
+# Tento workflow je VOLITELNÝ - použít jen pro složitější issues
+# Spustit ručně přes workflow_dispatch nebo s labelem 'auto-fix-iterative'
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to fix'
+        required: true
+        type: number
+      max_attempts:
+        description: 'Maximum attempts (default: 3)'
+        required: false
+        type: number
+        default: 3
+
+  issues:
+    types: [labeled]
+
+jobs:
+  iterative-fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    # Spustit jen pokud má label 'auto-fix-iterative' nebo je workflow_dispatch
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.issue.labels.*.name, 'auto-fix-iterative')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          pip install requests
+
+      - name: Run iterative auto-fix
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          git config --global user.name "Claude Bot"
+          git config --global user.email "claude-bot@prijimackynaskolu.cz"
+
+          # Určit issue number
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            ISSUE_NUM="${{ github.event.inputs.issue_number }}"
+            MAX_ATTEMPTS="${{ github.event.inputs.max_attempts }}"
+          else
+            ISSUE_NUM="${{ github.event.issue.number }}"
+            MAX_ATTEMPTS="3"
+          fi
+
+          # Spustit iterativní auto-fix
+          python .github/scripts/auto_fix_iterative.py "$ISSUE_NUM" "$MAX_ATTEMPTS"
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_NUM="${{ github.event.issue.number }}"
+          if [ -n "$ISSUE_NUM" ]; then
+            gh issue comment "$ISSUE_NUM" \
+              --body "⚠️ **Iterativní auto-fix selhal po všech pokusech**
+
+Problém je pravděpodobně příliš složitý pro automatickou opravu. Maintainer provede opravu ručně."
+          fi
