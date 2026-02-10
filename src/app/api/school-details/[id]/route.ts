@@ -5,9 +5,27 @@ import path from 'path';
 // Typy
 interface School {
   id: string;
+  nazev?: string;
+  obor?: string;
+  obec?: string;
   cj_min?: number;
   ma_min?: number;
+  cj_prumer?: number;
+  ma_prumer?: number;
+  min_body?: number;
   count?: number;
+  overlap_count?: number;
+  overlap_pct?: number;
+  pct?: number;
+  priority_counts?: number[];
+  prihlasky_priority?: number[];
+  prijati_priority?: number[];
+  total_applicants?: number;
+  prihlasky?: number;
+  index_poptavky?: number;
+  obtiznost?: number;
+  kapacita?: number;
+  prijati?: number;
   [key: string]: unknown;
 }
 
@@ -15,9 +33,18 @@ interface SchoolsData {
   [year: string]: School[];
 }
 
+interface SchoolAnalysisData {
+  cj_min?: number;
+  ma_min?: number;
+  cj_prumer?: number;
+  ma_prumer?: number;
+  prihlasky_priority?: number[];
+  prijati_priority?: number[];
+}
+
 interface SchoolAnalysis {
   schools?: {
-    [schoolId: string]: unknown;
+    [schoolId: string]: SchoolAnalysisData;
   };
 }
 
@@ -260,7 +287,14 @@ export async function GET(
     const difficultyProfile = calculateDifficultyProfile(school, schools);
 
     // Konkurenční školy - agregace ze všech priorit
-    let competingSchools: School[] = [];
+    let competingSchools: Array<{
+      id: string;
+      nazev: string;
+      obor: string;
+      obec: string;
+      overlap_count: number;
+      overlap_pct: number;
+    }> = [];
     if (detailFile) {
       // Mapa pro agregaci škol
       const schoolMap = new Map<string, { count: number; school: School }>();

@@ -154,7 +154,7 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend }: {
               {getSchoolTypeFullName(program.typ, program.obor)}
             </p>
           </div>
-          <StudyLengthBadge typ={program.typ} delka={program.delka_studia} />
+          <StudyLengthBadge delka={program.delka_studia} />
         </div>
 
         <div className="grid grid-cols-3 gap-4 mt-4">
@@ -470,7 +470,7 @@ export default async function SchoolDetailPage({ params }: Props) {
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex flex-wrap items-start gap-4 mb-4">
               <h1 className="text-2xl md:text-4xl font-bold">{school.nazev}</h1>
-              <StudyLengthBadge typ={program.typ} delka={program.delka_studia} />
+              <StudyLengthBadge delka={program.delka_studia} />
             </div>
             <p className="text-lg md:text-xl opacity-90 mb-4">
               {displayOborName}
