@@ -83,10 +83,16 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          ISSUE_NUM="${{ github.event.issue.number }}"
-          if [ -n "$ISSUE_NUM" ]; then
-            gh issue comment "$ISSUE_NUM" \
-              --body "⚠️ **Iterativní auto-fix selhal po všech pokusech**
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            ISSUE_NUM="${{ github.event.inputs.issue_number }}"
+          else
+            ISSUE_NUM="${{ github.event.issue.number }}"
+          fi
 
-Problém je pravděpodobně příliš složitý pro automatickou opravu. Maintainer provede opravu ručně."
+          if [ -n "$ISSUE_NUM" ]; then
+            MSG="WARNING: Iterative auto-fix failed after all attempts.
+
+The issue is likely too complex for automatic repair. A maintainer will fix it manually."
+            gh issue comment "$ISSUE_NUM" \
+              --body "$MSG"
           fi
