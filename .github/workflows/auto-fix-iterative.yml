@@ -90,9 +90,7 @@ jobs:
           fi
 
           if [ -n "$ISSUE_NUM" ]; then
-            MSG="WARNING: Iterative auto-fix failed after all attempts.
-
-The issue is likely too complex for automatic repair. A maintainer will fix it manually."
+            MSG="WARNING: Iterative auto-fix failed after all attempts.\n\nThe issue is likely too complex for automatic repair. A maintainer will fix it manually."
             gh issue comment "$ISSUE_NUM" \
               --body "$MSG"
           fi
