@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 export function Footer() {
@@ -18,28 +20,9 @@ export function Footer() {
             <a href="mailto:patrick@zandl.cz" className="text-sm no-underline mt-1 inline-block" style={{ color: '#0074e4' }}>
               patrick@zandl.cz
             </a> | <a href='https://www.vibecoding.cz'>Vibecoding.cz</a>
-
-            {/* Logo Hlídače státu */}
-            <div className="mt-4 pt-3" style={{ borderTop: '1px solid #e0e6ed' }}>
-              <a
-                href="https://www.hlidacstatu.cz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block transition-opacity hover:opacity-80"
-                aria-label="Hlídač státu"
-              >
-                <img
-                  src="https://www.hlidacstatu.cz/content/hlidacloga/Hlidac-statu-ctverec-norm.svg"
-                  alt="Logo Hlídač státu"
-                  width="48"
-                  height="48"
-                  className="rounded"
-                />
-              </a>
-              <p className="text-xs mt-2" style={{ color: '#818c99' }}>
-                Pro hlášení chyb použijte prosím tlačítko Hlásit chybu vpravo dole
-              </p>
-            </div>
+            <p className="text-xs mt-3" style={{ color: '#818c99' }}>
+              Pro hlášení chyb použijte prosím tlačítko vpravo dole
+            </p>
           </div>
 
           {/* Sloupec 2 */}
@@ -102,19 +85,30 @@ export function Footer() {
           <p className="text-xs" style={{ color: '#818c99' }}>
             Stránka slouží pouze k orientačním účelům. Skutečné výsledky záleží hlavně na výsledcích žáka. | Data z let 2024-2025 | &copy; {new Date().getFullYear()}
           </p>
-          <div className="flex items-center gap-2">
-            <span className="text-xs" style={{ color: '#818c99' }}>Projekt</span>
+          <div className="flex items-center gap-3">
             <a
               href="https://www.hlidacstatu.cz"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold no-underline px-2 py-1 rounded"
+              className="inline-block transition-opacity hover:opacity-80"
+              aria-label="Hlídač státu"
+            >
+              <img
+                src="https://www.hlidacstatu.cz/content/hlidacloga/Hlidac-statu-ctverec-norm.svg"
+                alt="Logo Hlídač státu"
+                width="32"
+                height="32"
+                className="rounded"
+              />
+            </a>
+            <a
+              href="https://www.hlidacstatu.cz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold no-underline px-3 py-1.5 rounded"
               style={{ color: '#0074e4', border: '1px solid #0074e4' }}
             >
-              <svg width="14" height="14" viewBox="0 0 40 40" fill="none">
-                <path d="M20 4L4 16H10V34H18V25H22V34H30V16H36L20 4Z" fill="#0074e4" />
-              </svg>
-              Hlídače státu
+              Projekt Hlídače státu
             </a>
           </div>
         </div>
