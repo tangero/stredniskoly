@@ -71,8 +71,22 @@ jobs:
     needs: refresh
     if: needs.refresh.outputs.changed == 'true' || github.event.inputs.force_email == 'true'
     steps:
+      - name: Check mail secrets
+        id: mail_check
+        env:
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          NOTIFICATION_EMAIL: ${{ secrets.NOTIFICATION_EMAIL }}
+        run: |
+          if [ -n "$MAIL_USERNAME" ] && [ -n "$MAIL_PASSWORD" ] && [ -n "$NOTIFICATION_EMAIL" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Mail secrets are not fully configured; skipping email send."
+          fi
+
       - name: Send email notification
-        if: ${{ secrets.MAIL_USERNAME != '' && secrets.MAIL_PASSWORD != '' && secrets.NOTIFICATION_EMAIL != '' }}
+        if: steps.mail_check.outputs.enabled == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -95,8 +109,22 @@ jobs:
     needs: refresh
     if: ${{ always() && needs.refresh.result == 'failure' }}
     steps:
+      - name: Check mail secrets
+        id: mail_check
+        env:
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          NOTIFICATION_EMAIL: ${{ secrets.NOTIFICATION_EMAIL }}
+        run: |
+          if [ -n "$MAIL_USERNAME" ] && [ -n "$MAIL_PASSWORD" ] && [ -n "$NOTIFICATION_EMAIL" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Mail secrets are not fully configured; skipping email send."
+          fi
+
       - name: Send failure email
-        if: ${{ secrets.MAIL_USERNAME != '' && secrets.MAIL_PASSWORD != '' && secrets.NOTIFICATION_EMAIL != '' }}
+        if: steps.mail_check.outputs.enabled == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
