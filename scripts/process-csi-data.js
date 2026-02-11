@@ -105,6 +105,10 @@ function findInsensitiveKey(obj, candidates) {
   return null;
 }
 
+function isObject(value) {
+  return value !== null && typeof value === 'object' && !Array.isArray(value);
+}
+
 function normalizeReport(rec) {
   return {
     dateFrom: normalizeString(rec.dateFrom),
@@ -199,19 +203,54 @@ function parseJsonPayload(jsonText) {
   const parsed = JSON.parse(jsonText);
   let rows = [];
 
-  if (Array.isArray(parsed)) rows = parsed;
-  if (parsed && Array.isArray(parsed.data)) rows = parsed.data;
-  if (parsed && Array.isArray(parsed.items)) rows = parsed.items;
+  // Case 1: Already a map keyed by REDIZO-like ids.
+  if (isObject(parsed) && !Array.isArray(parsed)) {
+    const entries = Object.entries(parsed);
+    const looksLikeMap = entries.length > 0 && entries.every(([k, v]) =>
+      /^\d+$/.test(k) && isObject(v) && (Array.isArray(v.inspections) || v.redizo)
+    );
+    if (looksLikeMap) {
+      const normalized = {};
+      for (const [redizo, school] of entries) {
+        const inspections = sortReports((school.inspections || []).map((r) => ({
+          dateFrom: normalizeString(r.dateFrom || r.datumOd || r.date_from || ''),
+          dateTo: normalizeString(r.dateTo || r.datumDo || r.date_to || ''),
+          reportUrl: normalizeString(r.reportUrl || r.linkIZ || r.report_url || ''),
+          portalUrl: normalizeString(r.portalUrl || r.portalLink || r.portal_url || ''),
+        })));
+        normalized[redizo] = {
+          redizo,
+          jmeno: normalizeString(school.jmeno || school.nazev || school.school_name || ''),
+          inspections,
+          inspectionCount: inspections.length,
+          lastInspectionDate: inspections[0] ? inspections[0].dateFrom : null,
+        };
+      }
+      return normalized;
+    }
+  }
 
-  if (!Array.isArray(rows)) return {};
+  // Case 2: Array at known container paths.
+  const candidates = [parsed];
+  if (isObject(parsed)) {
+    candidates.push(parsed.data, parsed.items, parsed.value, parsed.result, parsed.results, parsed.dataset);
+  }
+  for (const c of candidates) {
+    if (Array.isArray(c) && c.length > 0) {
+      rows = c;
+      break;
+    }
+  }
+
+  if (!Array.isArray(rows) || rows.length === 0) return {};
 
   const records = rows.map((row) => {
-    const redizoK = findInsensitiveKey(row, ['redizo']);
-    const jmenoK = findInsensitiveKey(row, ['jmeno', 'nazev_skoly', 'nazevskoly', 'school_name']);
-    const dateFromK = findInsensitiveKey(row, ['datefrom', 'date_from', 'datum_od', 'datumod']);
-    const dateToK = findInsensitiveKey(row, ['dateto', 'date_to', 'datum_do', 'datumdo']);
-    const reportK = findInsensitiveKey(row, ['reporturl', 'report_url', 'link_iz', 'odkaz_na_zpravu', 'pdf_url']);
-    const portalK = findInsensitiveKey(row, ['portalurl', 'portal_url', 'portal_link', 'odkaz_na_portal']);
+    const redizoK = findInsensitiveKey(row, ['redizo', 'REDIZO']);
+    const jmenoK = findInsensitiveKey(row, ['jmeno', 'Jmeno', 'nazev_skoly', 'nazevskoly', 'school_name']);
+    const dateFromK = findInsensitiveKey(row, ['datefrom', 'date_from', 'datum_od', 'datumod', 'DatumOd']);
+    const dateToK = findInsensitiveKey(row, ['dateto', 'date_to', 'datum_do', 'datumdo', 'DatumDo']);
+    const reportK = findInsensitiveKey(row, ['reporturl', 'report_url', 'link_iz', 'odkaz_na_zpravu', 'pdf_url', 'LinkIZ']);
+    const portalK = findInsensitiveKey(row, ['portalurl', 'portal_url', 'portal_link', 'odkaz_na_portal', 'PortalLink']);
 
     return {
       redizo: redizoK ? row[redizoK] : '',
@@ -224,6 +263,23 @@ function parseJsonPayload(jsonText) {
   });
 
   return normalizeDatasetByRedizo(records);
+}
+
+function assertDatasetNotSuspicious(previousData, nextData) {
+  const prevCount = Object.keys(previousData || {}).length;
+  const nextCount = Object.keys(nextData || {}).length;
+
+  if (nextCount === 0) {
+    throw new Error('Safety guard: parsed dataset is empty, refusing to overwrite current CSI data.');
+  }
+
+  // Prevent destructive updates due to parser/schema mismatch.
+  if (prevCount >= 500 && nextCount < Math.floor(prevCount * 0.7)) {
+    throw new Error(
+      `Safety guard: school count dropped too much (${prevCount} -> ${nextCount}). ` +
+      'Likely source format change; aborting update.'
+    );
+  }
 }
 
 async function resolveDatasetDownloadUrl(detailUrl) {
@@ -398,6 +454,8 @@ async function main() {
     }
 
     const previousData = readCurrentDatasetIfExists();
+    assertDatasetNotSuspicious(previousData, processed);
+
     const previousHash = sha256(JSON.stringify(previousData));
     const nextHash = sha256(JSON.stringify(processed));
 
