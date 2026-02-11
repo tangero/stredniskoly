@@ -19,6 +19,19 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '2.4.1',
+    date: '11. 2. 2026',
+    title: 'Opravy dopravní dostupnosti a UI patičky',
+    changes: [
+      { type: 'fix', text: 'Oprava filtrovací podmínky dojezdového času — školy s časem přesně 30 min se nyní zobrazí při limitu 30 min (zaokrouhlování před porovnáním)' },
+      { type: 'fix', text: 'Reálnější výpočet pěší vzdálenosti — rychlost 4 km/h + koeficient 1,3× pro reálnou trasu (místo 5 km/h přímá čára)' },
+      { type: 'new', text: '"Near miss" počítadlo — zobrazuje počet škol v čase +5 minut pod výsledky s tlačítkem pro rozšíření limitu' },
+      { type: 'new', text: 'Logo Hlídače státu (48×48px) přidáno do patičky s odkazem na www.hlidacstatu.cz' },
+      { type: 'fix', text: 'Opravena kolize tlačítek — tlačítko "Nahlásit chybu" posunuto vlevo (80px mezera od pravého okraje)' },
+      { type: 'improve', text: 'Aktualizovaná dokumentace výpočtu chůze (rychlost 4 km/h, koeficient trasy 1,3×)' },
+    ],
+  },
+  {
     version: '2.4.0',
     date: '10. 2. 2026',
     title: 'AI shrnutí inspekčních zpráv ČŠI na detailu školy',
