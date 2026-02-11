@@ -1,0 +1,17 @@
+{
+  "versions": [
+    {
+      "version_id": "2026-02-11T19-53-17-290Z",
+      "file": "data/csi_snapshots/csi_inspections_2026-02-11T19-53-17-290Z.json",
+      "valid_from": "2026-02-11T19:53:17.290Z",
+      "valid_to": null,
+      "source_download_url": "https://opendata.csicr.cz/Transformation/Download/139",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "stats": {
+        "schools": 0,
+        "inspections": 0
+      }
+    }
+  ],
+  "current_version_id": "2026-02-11T19-53-17-290Z"
+}
