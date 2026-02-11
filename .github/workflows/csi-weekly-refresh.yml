@@ -210,12 +210,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ needs.refresh.outputs.pr_url }}
+          REVIEW_BODY: ${{ steps.llm.outputs.review }}
         run: |
           if [ -z "$PR_URL" ]; then
             echo "No PR URL, skipping comment."
             exit 0
           fi
-          gh pr comment "$PR_URL" --body "${{ steps.llm.outputs.review }}" || true
+          printf "%s\n" "$REVIEW_BODY" > /tmp/csi_llm_review.md
+          gh pr comment "$PR_URL" --body-file /tmp/csi_llm_review.md || true
 
   notify-success:
     runs-on: ubuntu-latest
