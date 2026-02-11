@@ -11,7 +11,22 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'bug-report')
 
     steps:
+      - name: Check mail secrets
+        id: mail_check
+        env:
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          NOTIFICATION_EMAIL: ${{ secrets.NOTIFICATION_EMAIL }}
+        run: |
+          if [ -n "$MAIL_USERNAME" ] && [ -n "$MAIL_PASSWORD" ] && [ -n "$NOTIFICATION_EMAIL" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Mail secrets are not fully configured; skipping email send."
+          fi
+
       - name: Poslat email notifikaci
+        if: steps.mail_check.outputs.enabled == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           # SMTP server (použij Gmail, Outlook, nebo vlastní SMTP)
@@ -25,7 +40,7 @@ jobs:
           # Email detaily
           subject: "[Bug Report] Nový issue #${{ github.event.issue.number }}"
           to: ${{ secrets.NOTIFICATION_EMAIL }}
-          from: GitHub Issues Bot
+          from: ${{ secrets.MAIL_USERNAME }}
 
           # Tělo emailu
           body: |
