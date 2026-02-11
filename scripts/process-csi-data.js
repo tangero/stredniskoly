@@ -122,6 +122,41 @@ function sortReports(reports) {
   return reports.slice().sort((a, b) => new Date(b.dateFrom) - new Date(a.dateFrom));
 }
 
+function buildSchoolMeta(school) {
+  return {
+    redizo: normalizeString(school?.redizo),
+    jmeno: normalizeString(school?.jmeno),
+    inspectionCount: Number(school?.inspectionCount || 0),
+    lastInspectionDate: normalizeString(school?.lastInspectionDate || ''),
+  };
+}
+
+function inspectionKey(report) {
+  return `${report.dateFrom}|${report.dateTo}|${report.reportUrl}|${report.portalUrl}`;
+}
+
+function buildInspectionSignature(school) {
+  const keys = (school?.inspections || []).map(inspectionKey).sort();
+  return sha256(JSON.stringify(keys));
+}
+
+function pickFieldChanges(prevSchool, nextSchool) {
+  const prevMeta = buildSchoolMeta(prevSchool);
+  const nextMeta = buildSchoolMeta(nextSchool);
+  const keys = ['jmeno', 'inspectionCount', 'lastInspectionDate'];
+  const changes = [];
+  for (const key of keys) {
+    if (String(prevMeta[key] || '') !== String(nextMeta[key] || '')) {
+      changes.push({
+        field: key,
+        before: prevMeta[key],
+        after: nextMeta[key],
+      });
+    }
+  }
+  return changes;
+}
+
 function normalizeDatasetByRedizo(records) {
   const grouped = new Map();
 
@@ -320,6 +355,12 @@ function buildDiff(previousData, nextData) {
   const addedSchools = [];
   const removedSchools = [];
   const changedSchools = [];
+  const changedByType = {
+    inspections_only: 0,
+    metadata_only: 0,
+    inspections_and_metadata: 0,
+    unknown: 0,
+  };
 
   for (const redizo of nextKeys) {
     if (!prevKeys.has(redizo)) addedSchools.push(redizo);
@@ -337,14 +378,23 @@ function buildDiff(previousData, nextData) {
     const nextHash = sha256(JSON.stringify(next));
     if (prevHash === nextHash) continue;
 
-    const prevSet = new Set((prev.inspections || []).map((r) => `${r.dateFrom}|${r.dateTo}|${r.reportUrl}|${r.portalUrl}`));
-    const nextSet = new Set((next.inspections || []).map((r) => `${r.dateFrom}|${r.dateTo}|${r.reportUrl}|${r.portalUrl}`));
+    const prevSet = new Set((prev.inspections || []).map(inspectionKey));
+    const nextSet = new Set((next.inspections || []).map(inspectionKey));
 
     const addedInspections = [];
     const removedInspections = [];
 
     for (const k of nextSet) if (!prevSet.has(k)) addedInspections.push(k);
     for (const k of prevSet) if (!nextSet.has(k)) removedInspections.push(k);
+
+    const fieldChanges = pickFieldChanges(prev, next);
+    const inspectionsChanged = addedInspections.length > 0 || removedInspections.length > 0;
+    const metadataChanged = fieldChanges.length > 0;
+    let changeType = 'unknown';
+    if (inspectionsChanged && metadataChanged) changeType = 'inspections_and_metadata';
+    else if (inspectionsChanged) changeType = 'inspections_only';
+    else if (metadataChanged) changeType = 'metadata_only';
+    changedByType[changeType] += 1;
 
     changedSchools.push({
       redizo,
@@ -353,6 +403,12 @@ function buildDiff(previousData, nextData) {
       inspection_count_after: next.inspectionCount || 0,
       added_inspections: addedInspections.length,
       removed_inspections: removedInspections.length,
+      change_type: changeType,
+      field_changes: fieldChanges,
+      added_inspections_sample: addedInspections.slice(0, 5),
+      removed_inspections_sample: removedInspections.slice(0, 5),
+      inspection_signature_before: buildInspectionSignature(prev),
+      inspection_signature_after: buildInspectionSignature(next),
     });
   }
 
@@ -362,6 +418,7 @@ function buildDiff(previousData, nextData) {
       schools_added: addedSchools.length,
       schools_removed: removedSchools.length,
       schools_changed: changedSchools.length,
+      changed_by_type: changedByType,
     },
     added_schools: addedSchools,
     removed_schools: removedSchools,

@@ -148,7 +148,9 @@ jobs:
             'Posuď bezpečnost merge tohoto CSI refresh PR. ' +
             'Vrať sekce: 1) Verdikt (SAFE TO MERGE / REVIEW NEEDED), ' +
             '2) Rizika, 3) Checklist před merge (max 8 bodů), 4) Krátké odůvodnění. ' +
-            'Buď konkrétní podle diff dat.\n\n' +
+            'Buď konkrétní podle diff dat. ' +
+            'Povinně rozliš, zda jde o metadata-only změny (field_changes) nebo změny inspekcí ' +
+            '(added/removed inspections, signature diff). Uveď 3 konkrétní REDIZO příklady.\n\n' +
             JSON.stringify(input, null, 2);
 
           function postJson(url, body) {
