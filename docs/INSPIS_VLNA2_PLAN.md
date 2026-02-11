@@ -3,6 +3,14 @@
 **Datum:** 11. 2. 2026  
 **Vstupní podmínka:** nasazená stabilní VLNA 1
 
+## Aktuální stav implementace
+
+- [x] Rozšířené mapování VLNA 2 v `scripts/import-inspis-data.js`
+- [x] Rozšířené typy VLNA 2 v `src/types/inspis.ts`
+- [x] Rozšířené UI bloky v `src/components/school-profile/SchoolInfoSection.tsx`
+- [x] Přegenerovaný dataset `data/inspis_school_profiles.json`
+- [ ] UX iterace (taby/modální detail) podle uživatelského testu
+
 ## Gate kritéria před startem
 
 - Coverage VLNA 1 dat >= 50 %

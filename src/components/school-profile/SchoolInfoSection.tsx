@@ -16,6 +16,23 @@ function renderList(values: string[] | null): string {
   return values.join(', ');
 }
 
+function hasWave2Data(data: SchoolInspisData): boolean {
+  return Boolean(
+    (data.specificke_akce && data.specificke_akce.length > 0) ||
+    (data.zajmove_cinnosti && data.zajmove_cinnosti.length > 0) ||
+    (data.sportovni_kurzy && data.sportovni_kurzy.length > 0) ||
+    (data.mezinarodni_spoluprace && data.mezinarodni_spoluprace.length > 0) ||
+    data.evropske_projekty !== null ||
+    (data.podpory_zaku && data.podpory_zaku.length > 0) ||
+    (data.pritomnost_specialistu && data.pritomnost_specialistu.length > 0) ||
+    data.skolni_parlament !== null ||
+    data.stipendium !== null ||
+    (data.spoluprace_s_firmami && data.spoluprace_s_firmami.length > 0) ||
+    (data.certifikaty && data.certifikaty.length > 0) ||
+    (data.nabidka_dalsiho_vzdelavani && data.nabidka_dalsiho_vzdelavani.length > 0)
+  );
+}
+
 export function SchoolInfoSection({ data }: { data: SchoolInspisData }) {
   return (
     <section className="bg-white p-6 rounded-xl shadow-sm mb-8">
@@ -77,6 +94,41 @@ export function SchoolInfoSection({ data }: { data: SchoolInspisData }) {
           <div className="text-sm text-slate-700"><strong>Umístění:</strong> {data.umisteni_v_obci || 'Neuvedeno'}</div>
         </div>
       </div>
+
+      {hasWave2Data(data) && (
+        <div className="mt-6 border-t border-slate-200 pt-6">
+          <h3 className="text-lg font-semibold text-slate-900 mb-4">Rozšířené informace</h3>
+          <div className="grid lg:grid-cols-2 gap-4">
+            <div className="border border-slate-100 rounded-lg p-4">
+              <h4 className="font-medium text-slate-900 mb-2">Aktivity</h4>
+              <div className="text-sm text-slate-700"><strong>Specifické akce:</strong> {renderList(data.specificke_akce)}</div>
+              <div className="text-sm text-slate-700"><strong>Zájmové činnosti:</strong> {renderList(data.zajmove_cinnosti)}</div>
+              <div className="text-sm text-slate-700"><strong>Sportovní kurzy:</strong> {renderList(data.sportovni_kurzy)}</div>
+            </div>
+
+            <div className="border border-slate-100 rounded-lg p-4">
+              <h4 className="font-medium text-slate-900 mb-2">Mezinárodní spolupráce</h4>
+              <div className="text-sm text-slate-700"><strong>Spolupráce:</strong> {renderList(data.mezinarodni_spoluprace)}</div>
+              <div className="text-sm text-slate-700"><strong>Evropské projekty:</strong> {yesNo(data.evropske_projekty)}</div>
+            </div>
+
+            <div className="border border-slate-100 rounded-lg p-4">
+              <h4 className="font-medium text-slate-900 mb-2">Podpora žáků</h4>
+              <div className="text-sm text-slate-700"><strong>Formy podpory:</strong> {renderList(data.podpory_zaku)}</div>
+              <div className="text-sm text-slate-700"><strong>Specialisté:</strong> {renderList(data.pritomnost_specialistu)}</div>
+              <div className="text-sm text-slate-700"><strong>Školní parlament:</strong> {yesNo(data.skolni_parlament)}</div>
+              <div className="text-sm text-slate-700"><strong>Stipendium:</strong> {yesNo(data.stipendium)}</div>
+            </div>
+
+            <div className="border border-slate-100 rounded-lg p-4">
+              <h4 className="font-medium text-slate-900 mb-2">Spolupráce a certifikace</h4>
+              <div className="text-sm text-slate-700"><strong>Spolupráce s firmami:</strong> {renderList(data.spoluprace_s_firmami)}</div>
+              <div className="text-sm text-slate-700"><strong>Certifikáty:</strong> {renderList(data.certifikaty)}</div>
+              <div className="text-sm text-slate-700"><strong>Další vzdělávání:</strong> {renderList(data.nabidka_dalsiho_vzdelavani)}</div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

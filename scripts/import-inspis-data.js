@@ -41,6 +41,20 @@ const QUESTION_MAPPING = {
   'Linka MHD nebo integrované dopravy': { field: 'linka_mhd', type: 'single' },
   'Nejbližší zastávka veřejné dopravy (v metrech)': { field: 'nejblizsi_zastavka_m', type: 'number' },
   'Umístění školy v obci': { field: 'umisteni_v_obci', type: 'single' },
+
+  // VLNA 2
+  'Specifické akce školy (pravidelné)': { field: 'specificke_akce', type: 'array' },
+  'Zájmové činnosti': { field: 'zajmove_cinnosti', type: 'array' },
+  'Specifické formy výuky tělesné výchovy - sportovní kurzy': { field: 'sportovni_kurzy', type: 'array' },
+  'Mezinárodní spolupráce': { field: 'mezinarodni_spoluprace', type: 'array' },
+  'Zapojení do evropských projektů': { field: 'evropske_projekty', type: 'boolean' },
+  'Specifické formy podpory žákům': { field: 'podpory_zaku', type: 'array' },
+  'Přítomnost specialistů': { field: 'pritomnost_specialistu', type: 'array' },
+  'Školní parlament': { field: 'skolni_parlament', type: 'boolean' },
+  'Stipendium': { field: 'stipendium', type: 'boolean' },
+  'Spolupráce s firmami': { field: 'spoluprace_s_firmami', type: 'array' },
+  'Certifikáty škol': { field: 'certifikaty', type: 'array' },
+  'Nabídka dalšího vzdělávání': { field: 'nabidka_dalsiho_vzdelavani', type: 'array' },
 };
 
 function normalizeQuestion(value) {
@@ -120,6 +134,19 @@ function createEmptySchool(redizo) {
     linka_mhd: null,
     nejblizsi_zastavka_m: null,
     umisteni_v_obci: null,
+
+    specificke_akce: null,
+    zajmove_cinnosti: null,
+    sportovni_kurzy: null,
+    mezinarodni_spoluprace: null,
+    evropske_projekty: null,
+    podpory_zaku: null,
+    pritomnost_specialistu: null,
+    skolni_parlament: null,
+    stipendium: null,
+    spoluprace_s_firmami: null,
+    certifikaty: null,
+    nabidka_dalsiho_vzdelavani: null,
     completeness_pct: 0,
   };
 }
@@ -138,6 +165,9 @@ function calculateCompleteness(data) {
     'vyuka_jazyku', 'clil_metoda', 'clil_jazyky', 'vyuziti_internetu_ve_vyuce',
     'odborne_ucebny', 'prostory_telocvik', 'pristup_k_pc',
     'bezbariery_pristup', 'dopravni_dostupnost', 'linka_mhd', 'nejblizsi_zastavka_m', 'umisteni_v_obci',
+    'specificke_akce', 'zajmove_cinnosti', 'sportovni_kurzy', 'mezinarodni_spoluprace', 'evropske_projekty',
+    'podpory_zaku', 'pritomnost_specialistu', 'skolni_parlament', 'stipendium',
+    'spoluprace_s_firmami', 'certifikaty', 'nabidka_dalsiho_vzdelavani',
   ];
 
   const filled = keys.filter((k) => isFilled(data[k])).length;

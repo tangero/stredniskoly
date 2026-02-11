@@ -27,6 +27,20 @@ export interface SchoolInspisData {
   nejblizsi_zastavka_m: number | null;
   umisteni_v_obci: string | null;
 
+  // VLNA 2
+  specificke_akce: string[] | null;
+  zajmove_cinnosti: string[] | null;
+  sportovni_kurzy: string[] | null;
+  mezinarodni_spoluprace: string[] | null;
+  evropske_projekty: boolean | null;
+  podpory_zaku: string[] | null;
+  pritomnost_specialistu: string[] | null;
+  skolni_parlament: boolean | null;
+  stipendium: boolean | null;
+  spoluprace_s_firmami: string[] | null;
+  certifikaty: string[] | null;
+  nabidka_dalsiho_vzdelavani: string[] | null;
+
   completeness_pct: number;
 }
 
