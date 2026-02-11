@@ -13,12 +13,9 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-// Generování statických cest pro všechny školy
-export async function generateStaticParams() {
-  const { generateAllSlugs } = await import('@/lib/data');
-  const slugs = await generateAllSlugs();
-  return slugs;
-}
+// On-demand rendering s ISR cache (24h) místo statické generace všech ~10 000 stránek při buildu
+export const revalidate = 86400;
+export const dynamicParams = true;
 
 // Dynamické SEO metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

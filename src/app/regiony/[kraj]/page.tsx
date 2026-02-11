@@ -12,10 +12,9 @@ interface Props {
   searchParams: Promise<{ delka?: string }>;
 }
 
-export async function generateStaticParams() {
-  const kraje = await getAllKraje();
-  return kraje.map((k) => ({ kraj: k.slug }));
-}
+// On-demand rendering s ISR cache (24h) místo statické generace
+export const revalidate = 86400;
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { kraj: krajSlug } = await params;
