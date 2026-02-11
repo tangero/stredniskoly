@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "model_id": "openai_gpt_5_2_reference",
+  "run_started_utc": "2026-02-09T11:31:02.338441+00:00",
+  "run_finished_utc": "2026-02-09T11:31:53.020147+00:00",
+  "raw_file": "SOS_600019853_2025-11-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019853_2025-11-20",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola (denní studium): Praktická sestra (maturita), Sociální činnost – nástavba (maturita), Ošetřovatel (výuční list).",
+      "inspection_period": "2025-11-20 až 2025-11-25",
+      "school_change_summary": "Škola modernizovala odborné učebny, posílila poradenský tým a nabízí průchodnost mezi obory, ale výuka se podle inspekce od roku 2022 výrazně nezlepšila a škola je téměř na maximu kapacity."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe a uplatnitelnost",
+          "detail": "Díky široké síti partnerů mají žáci hodně praxe a lepší šanci na uplatnění.",
+          "evidence": "„spolupráce… s širokým portfoliem zaměstnavatelů… praktické zkušenosti… zvyšovat svou uplatnitelnost“"
+        },
+        {
+          "tag": "Pravidla hodnocení jsou srozumitelná",
+          "detail": "Hodnocení je sjednocené napříč předměty a rodiče se v něm lépe vyznají.",
+          "evidence": "„jednotná směrnice… společný postup… četnost a váhy… transparentnosti“"
+        },
+        {
+          "tag": "Praktická výuka u partnerů (formativní přístup)",
+          "detail": "Na praxích u smluvních partnerů dostávají žáci průběžnou zpětnou vazbu a vedou se k sebehodnocení.",
+          "evidence": "„Velmi dobře… podpořeno formativní hodnocení… žáci jsou vedeni… k sebehodnocení“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Převaha frontální výuky a pasivita",
+          "detail": "V teoretické výuce často dominuje výklad a méně prostoru pro aktivní práci a kritické myšlení.",
+          "evidence": "„v téměř 80 %… převažovala frontální forma práce… rozvoj kritického myšlení… nebyly… vytvořeny“"
+        },
+        {
+          "tag": "Záškoláctví a rizika šikany",
+          "detail": "I přes prevenci přetrvává dlouhodobě záškoláctví a jako riziko se uvádí i šikana a kyberšikana.",
+          "evidence": "„přetrvávají dlouhodobě problémy se záškoláctvím… zvýšenou… šikana, kyberšikana“"
+        },
+        {
+          "tag": "Nerovnoměrná kvalita a jednotnost praktické výuky ve škole",
+          "detail": "V některých školních praktických hodinách chyběla aktivizace a objevila se nejednotnost postupů mezi skupinami.",
+          "evidence": "„v části hodin… chyběla aktivizace… nejednotnost v ošetřovatelských postupech“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola konkrétně změní teoretickou výuku, když „v téměř 80 %… převažovala frontální forma práce“?",
+        "Co přesně dělá škola pro omezení záškoláctví a rizik šikany, když „přetrvávají dlouhodobě problémy se záškoláctvím“?",
+        "Jak škola sjednotí ošetřovatelské postupy a kvalitu školní praxe, když byla zjištěna „nejednotnost v ošetřovatelských postupech“?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří chtějí hodně praxe a kontakt se zdravotnickým prostředím díky „významná část praktického vyučování… u smluvních partnerů“.",
+        "Pro ty, kterým vyhovuje jasný systém známkování a testů, protože je „vydána jednotná směrnice“ k hodnocení.",
+        "Pro žáky, kteří ocení školní akce a projekty, protože „rozmanité školní a mimoškolní aktivity podporují rozvoj klíčových kompetencí“."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří potřebují hodně interaktivní a diskusní výuku, protože „převažovala frontální forma práce“ a diskuse byla často slabá.",
+        "Pro žáky se sklonem k vyšší absenci, protože škola řeší „dlouhodobě problémy se záškoláctvím“ a u ošetřovatele je i „neomluvená absence (téměř 5 %)“.",
+        "Pro rodiče, kteří očekávají velmi jednotnou kvalitu školní praktické výuky, protože se objevila „nejednotnost v ošetřovatelských postupech“."
+      ],
+      "plain_czech_summary": "Škola má silné propojení s praxí a hodně partnerů, takže žáci získávají zkušenosti v reálných zařízeních. Hodnocení je nově sjednocené a pro rodiče přehlednější. Slabší stránkou je teoretická výuka: často převažuje výklad a méně se rozvíjí samostatná práce, kritické myšlení a sebehodnocení. Dlouhodobě se řeší záškoláctví a jako riziko se zmiňuje i šikana/kyberšikana. U praktické sestry se výsledky maturity zlepšují, ale nástavbová sociální činnost má nižší úspěšnost a potíže hlavně v cizím jazyce."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Praktická sestra se zlepšuje, sociální činnost má vyšší neúspěšnost (hlavně cizí jazyk).",
+        "key_numbers": [
+          "Praktická sestra: hrubá neúspěšnost 20 % (2023) → 13 % (2024) → 3,8 % (2025)",
+          "Sociální činnost: hrubá neúspěšnost 46 % (2024) a 30 % (2025)",
+          "Sociální činnost: celková úspěšnost ukončení studia 43 %"
+        ],
+        "evidence": "„Hrubá neúspěšnost… klesá… 20 %… 13 %… 3,8 %“; „sociální činnost… 46 %… 30 %… z cizího jazyka“"
+      },
+      "absence": {
+        "trend": "Celková absence klesá, ale u ošetřovatele zůstává vyšší neomluvená absence.",
+        "key_numbers": [
+          "Absence: 176 hodin/žák (2022/2023) → 144 hodin/žák (2024/2025)",
+          "Pokles „o zhruba pětinu“",
+          "Ošetřovatel: neomluvená absence „téměř 5 %“"
+        ],
+        "evidence": "„snížila… ze 176… na 144 hodin“; „zvýšený podíl neomluvené absence (téměř 5 %)“"
+      },
+      "support_services": [
+        "Poradenské pracoviště je posílené a role jsou rozdělené: „výchovné poradkyně… dva metodici… speciální pedagožka a kariérová poradkyně“.",
+        "Kariérové poradenství je velmi silné: „Kariérní poradenství probíhá na velmi dobré úrovni… propojení se zaměstnavateli“.",
+        "Peer program prevence: „koordinuje žákovský peer program… proškolení členové“."
+      ],
+      "safety_climate": [
+        "V hodinách byl klid a respekt: „výuka nebyla narušována žádnými kázeňskými problémy“.",
+        "Rizika: „šikana, kyberšikana a další formy netolerantního chování“.",
+        "Škola má postupy k řešení: „daří… včas podchytit a efektivně řešit… vedeny podrobné záznamy“."
+      ],
+      "partnerships_practice": [
+        "Praxe na pracovištích partnerů: „významná část praktického vyučování… na pracovištích smluvních partnerů“.",
+        "Spolupráce se ZŠ v okolí: „organizaci zdravovědného dne… z oblasti první pomoci“.",
+        "Zahraniční zkušenost: „dlouholetá spolupráce… v Německu… výměnné pobyty žáků“."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Shrnutí drží se textu zprávy, má praktické dopady pro rodiče a každé hlavní tvrzení je opřené krátkou citací.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní počty předčasných odchodů, jen že „dochází k předčasnému ukončování studia“.",
+        "Zpráva neříká, jak přesně často a v jaké podobě probíhá šikana; uvádí ji jako „zvýšenou rizikovou oblast“.",
+        "Zpráva neobsahuje detailní srovnání výsledků školy s krajem/republikou, jen vlastní časové řady."
+      ]
+    }
+  }
+}

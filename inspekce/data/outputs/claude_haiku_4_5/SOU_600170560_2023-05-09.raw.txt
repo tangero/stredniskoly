@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOU_600170560_2023-05-09",
+  "school_profile": {
+    "school_type": "Střední škola řemesel a služeb (SOU) v Děčíně, poskytující vzdělání s výučním listem a maturitní zkouškou",
+    "inspection_period": "9. května až 15. května 2023",
+    "school_change_summary": "Škola utlumuje obory Gastronomie a Ekonomika a podnikání. Pokračuje v oborech Fotograf, Kosmetické služby a Podnikání. Vedení škola prioritizuje propagaci a přijímání žáků s lepšími předpoklady."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní pedagogický tým",
+        "detail": "Všech 11 pedagogů vyučujících maturitní předměty má příslušnou kvalifikaci, nově posílena výuka angličtiny.",
+        "evidence": "Inspektoři zaznamenali pozitivní změnu v hodinách anglického jazyka v denní formě vzdělávání."
+      },
+      {
+        "tag": "Rozšířené poradenské služby",
+        "detail": "Škola má školní psycholožku, sociální pedagožku, výchovnou poradkyni a metodičku prevence, které efektivně spolupracují.",
+        "evidence": "Školní poradenské pracoviště se rozšířilo o pozici školní psycholožky a sociální pedagožky."
+      },
+      {
+        "tag": "Individuální podpora ohrožených žáků",
+        "detail": "Škola nabízí doučování, konzultace a online podporu, zejména pro přípravu na maturitu.",
+        "evidence": "Žákům jsou nabízeny individuální konzultace a doučování, která jsou pro dálkovou formu realizována také online."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Velmi vysoká neúspěšnost u maturit",
+        "detail": "Obor Podnikání dosahuje 63 % neúspěšnosti (průměr ČR 37 %), ostatní obory také výrazně nad průměrem.",
+        "evidence": "V oboru Podnikání 63 % neúspěšnosti v roce 2022, v Fotografii 40 %, v Kosmetických službách 50 %."
+      },
+      {
+        "tag": "Nízký podíl absolventů v řádné době",
+        "detail": "V oboru Podnikání pouze 20-40 % žáků úspěšně skončí v předepsané době, v dálkové formě pod 15 %.",
+        "evidence": "Nízký podíl žáků oboru Podnikání, kteří úspěšně dokončí studium v době stanovené rámcovým programem."
+      },
+      {
+        "tag": "Slabá kvalita výuky v některých předmětech",
+        "detail": "Zejména v angličtině a matematice chybí diferenciace, formativní zpětná vazba a ověřování dosažení cílů.",
+        "evidence": "Pedagogové nevyužívají diferenciaci obsahu, nevytvářejí příležitosti pro sebehodnocení a nevěnují dostatek pozornosti formativní zpětné vazbě."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomáhá žákům oboru Podnikání, když má 63 % neúspěšnost u maturit? Jaká opatření se chystají?",
+      "Jaké jsou konkrétní kritéria přijetí do jednotlivých oborů a jak se liší od loňska?",
+      "Jak se škola vypořádá s doporučením inspekce na výmaz oboru Podnikání?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními předpoklady v oborech Fotograf a Kosmetické služby, kde jsou výsledky stabilnější",
+      "Žáci, kteří potřebují individuální péči a podporu – škola má kvalitní poradenské služby",
+      "Žáci v dálkové formě vzdělávání, kde je online podpora dostupná"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími studijními předpoklady – škola dlouhodobě nedokáže připravit takové žáky na úspěšné zvládnutí maturit",
+      "Uchazeči do oboru Podnikání – inspekce doporučuje jeho výmaz z důvodu velmi vysoké neúspěšnosti",
+      "Žáci, kteří potřebují kvalitní výuku angličtiny a matematiky – zde inspektoři zaznamenali nedostatky v diferenciaci a zpětné vazbě"
+    ],
+    "plain_czech_summary": "Střední škola řemesel a služeb v Děčíně má kvalitní pedagogy a dobré poradenské služby, ale dlouhodobě selhává v přípravě žáků na maturitní zkoušky. Obor Podnikání má 63 % neúspěšnosti (průměr je 37 %), a inspekce doporučuje jeho zrušení. Výuka v některých předmětech postrádá individuální přístup a zpětnou vazbu. Škola je vhodná pro žáky s dobrými předpoklady v oborech Fotograf a Kosmetické služby, ale slabší žáci zde mají vysoké riziko neúspěchu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě podprůměrné výsledky, bez zlepšení navzdory opatřením",
+      "key_numbers": [
+        "Podnikání: 63 % neúspěšnosti v 2022 (ČR 37 %)",
+        "Fotograf: 40 % v 2022 (ČR 23 %), ale 0 % v 2021",
+        "Kosmetické služby: 50 % v 2020 (ČR 23 %)"
+      ],
+      "evidence": "Vysokou neúspěšnost škola zaznamenala především v oboru Podnikání – 40 % v 2020, 36 % v 2021 a 63 % v 2022."
+    },
+    "absence": {
+      "trend": "Vysoká míra předčasných odchodů ze vzdělávání",
+      "key_numbers": [
+        "Podnikání denní forma: 20-40 % úspěšných absolventů v řádné době",
+        "Podnikání dálková forma: pod 15 % úspěšných absolventů",
+        "Fotograf: 20-70 % (kolísavé)"
+      ],
+      "evidence": "Nízký podíl žáků, kteří nastoupili do 1. ročníku a úspěšně dokončili studium v době stanovené rámcovým programem."
+    },
+    "support_services": [
+      "Školní psycholožka a sociální pedagožka (nově přidány)",
+      "Výchovná poradkyně a metodička prevence",
+      "Individuální konzultace a doučování, včetně online formy",
+      "Plány pedagogické podpory pro žáky se speciálními vzdělávacími potřebami"
+    ],
+    "safety_climate": [
+      "Ve sledovaných hodinách panovala vstřícná pracovní atmosféra založená na vzájemné důvěře a respektu",
+      "Školní řád je stanoven a vymáhán"
+    ],
+    "partnerships_practice": [
+      "Spolupráce výchovné poradkyně s třídními učiteli na identifikaci ohrožených žáků",
+      "Pravidelné konzultace s jednotlivými žáky ohledně jejich podpory",
+      "Zapojení učitelů v předmětových komisích do analýzy výsledků a navrhování opatření"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a fakticky bohatá, ale místy technická. Hlavní zjištění jsou jasná: velmi vysoká neúspěšnost u maturit, slabá kvalita výuky v některých předmětech, doporučení na výmaz oboru Podnikání.",
+    "uncertainty_notes": [
+      "Není jasné, zda se situace v oborech Fotograf a Kosmetické služby zlepšila, nebo zda jsou výsledky stále kolísavé",
+      "Není specifikováno, jaké konkrétní opatření škola přijala na základě inspekce z roku 2020",
+      "Chybí informace o tom, jak se změní přijímací kritéria pro školní rok 2023/2024 v praxi"
+    ]
+  }
+}
+```

@@ -1,0 +1,99 @@
+{
+  "report_id": "SOS_600011348_2021-11-23",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola",
+    "inspection_period": "23. 11. 2021 − 26. 11. 2021",
+    "school_change_summary": "Od poslední inspekce se podařilo harmonizovat činnost obou sloučených středisek a zlepšily se výsledky vzdělávání žáků maturitních oborů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a praxe",
+        "detail": "Škola nabízí nadstandardní materiální podmínky pro odborný výcvik, které odpovídají současným požadavkům praxe.",
+        "evidence": "„V místě poskytovaného vzdělávání Výstupní jsou podmínky pro výuku odborných předmětů a praktického vyučování nadstandardní.“"
+      },
+      {
+        "tag": "Uplatnění absolventů",
+        "detail": "Škola drží certifikát prokazující kvalitní přípravu na trh práce a intenzivně spolupracuje s partnery.",
+        "evidence": "„Je vítězem a držitelem titulu ‚Doporučeno zaměstnavateli‘ (2014 - 2021)…“"
+      },
+      {
+        "tag": "Výsledky u maturity",
+        "detail": "Většina oborů dosahuje nadprůměrných úspěšností u maturitní zkoušky ve srovnání s republikou.",
+        "evidence": "„Úspěšnost žáků u maturitní zkoušky byla v roce 2020 u oborů… vyšší nebo srovnatelná s danou skupinou oborů v rámci republiky.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Výuka probíhá převážně frontální formou bez dostatečného zapojení a aktivizace žáků.",
+        "evidence": "„Výuka byla vedena převážně tradičními postupy, nejčastěji frontálně vedeným řízeným rozhovorem… chyběla vhodná aktivizace žáků.“"
+      },
+      {
+        "tag": "Nedostatečná individualizace",
+        "detail": "Učitelé příliš nerozlišují potřeby jednotlivých žáků, všichni plní stejné úkoly.",
+        "evidence": "„Všichni žáci plnili obsahově, typem, rozsahem i náročnosti shodné úkoly.“"
+      },
+      {
+        "tag": "Slabá zpětná vazba",
+        "detail": "Ve výuce chybí efektivní hodnocení, které by žákům pomohlo se dále rozvíjet.",
+        "evidence": "„Efektivní sebehodnocení a prvky formativního hodnocení byly ve sledované výuce zaznamenány zcela výjimečně.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé aktivizují žáky během hodin, aby se výuka neobešla bez frontálního výkladu?",
+      "Jakým způsobem škola podporuje žáky se specifickými vzdělávacími potřebami, aby byli úspěšní?",
+      "V jakých konkrétních firmách mohou žáci absolvovat odbornou praxi?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří chtějí získat silný odborný základ a praktické dovednosti v technických oborech.",
+      "Pro ty, kdo očekávají dobrou vybavenost školy a moderní technologie ve výuce.",
+      "Pro studenty, kteří preferují tradiční výuku a jsou schopni samostatně se motivovat."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří vyžadují individuální přístup a častou zpětnou vazbu od učitelů.",
+      "Pro studenty, kteří potřebují aktivní a interaktivní formy výuky, nikoli jen přednášky.",
+      "Pro rodiče dětí se speciálními vzdělávacími potřebami, pokud očekávají intenzivní diferenciaci ve výuce."
+    ],
+    "plain_czech_summary": "Střední průmyslová škola v Resslově ulici je technicky velmi dobře vybavená a spolupracuje s řadou zaměstnavatelů, což žákům zajišťuje kvalitní přípravu na povolání a nadprůměrné výsledky u maturity. Pro rodiče je však varovným signálem, že výuka probíhá spíše tradičním, pasivním stylem s minimem aktivizace žáků a individuálního přístupu. Pokud vaše dítě potřebuje k učení silnou motivaci od učitele nebo specifický přístup, může zde narazit. Pro samostatné studenty se zájmem o techniku je ale škola solidní volbou."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Obor IT: 100 % úspěšnost (2020)",
+        "Obor Elektrotechnika: 97,1 % úspěšnost (2020)",
+        "Obor Strojírenství: 98 % úspěšnost (2020)"
+      ],
+      "evidence": "„Úspěšnost žáků u maturitní zkoušky byla v roce 2020 u oborů… vyšší nebo srovnatelná s danou skupinou oborů v rámci republiky.“"
+    },
+    "absence": {
+      "trend": "Nehodnoceno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní statistiky o absenci žáků."
+    },
+    "support_services": [
+      "Výchovné poradkyně a metodici prevence na obou pracovištích.",
+      "Individuální a skupinové konzultace pro žáky.",
+      "Adaptační programy pro prváky a třídní akce pro kolektivy."
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra ve školních dílnách podporuje učení.",
+      "Problémy s chováním jsou řešeny bezodkladně, což minimalizuje jejich výskyt."
+    ],
+    "partnerships_practice": [
+      "Strategické partnerství s firmami pro realizaci odborného výcviku.",
+      "Titul „Doporučeno zaměstnavateli“ potvrzuje kvalitu přípravy.",
+      "Mezinárodní projekty (Erasmus, Finsko, Portugalsko, Německo)."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje dostatek konkrétních příkladů z výuky i výsledků.",
+    "uncertainty_notes": [
+      "Chybí jakékoliv údaje o neomluvené absenci nebo kázěnských problémech.",
+      "Není specifikováno, o jaké konkrétní firmy jde v rámci partnerské spolupráce.",
+      "Nejsou uvedeny žádné statistiky o přijímacím řízení či počtu přihlášek na VŠ."
+    ]
+  }
+}

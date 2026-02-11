@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600017478_2023-02-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:48:30.802487+00:00",
+  "run_finished_utc": "2026-02-09T16:48:51.125863+00:00",
+  "raw_file": "GY8_600017478_2023-02-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600017478_2023-02-07",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium",
+      "inspection_period": "7. února 2023 až 10. února 2023",
+      "school_change_summary": "Od poslední inspekce v 2013/2014 došlo k modernizaci přírodovědného vzdělávání, zavedení IT technologií, vybudování posilovny a workoutového hřiště, zřízení pozice školního psychologa a koordinátora pro nadané žáky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Z 89 maturujících žáků jich 51 složilo zkoušku s vyznamenáním, 31 s průměrem 1,0.",
+          "evidence": "51 z 89 maturantů s vyznamenáním, 31 s průměrem 1,0, někteří studenti dosáhli 100% skóre."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Škola má moderní učebny, digitální technologie, posilovnu, workoutové hřiště a přírodní zahradu.",
+          "evidence": "Vedení školy aktivně získává finanční prostředky na inovaci a modernizaci odborných učeben."
+        },
+        {
+          "tag": "Silná podpora nadaných žáků",
+          "detail": "Žáci úspěšně reprezentují školu v soutěžích na krajské, národní i nadnárodní úrovni.",
+          "evidence": "16x krajské 1.–3. místo, 19x národní úroveň, dlouhodobě kvalitní výsledky v přírodovědných a matematických soutěžích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učitelé ne vždy přizpůsobují úkoly individuálním schopnostem žáků.",
+          "evidence": "Dílčím nedostatkem bylo chybějící diferencovaný přístup formou zadávání úkolů rozdílného rozsahu nebo obtížnosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky se slabším prospěchem a jak fungují konzultace s učiteli?",
+        "Jaké jsou možnosti volitelných seminářů v posledních dvou ročnících a jak se volba profilace provádí?",
+        "Jak škola zajišťuje individuální přístup k žákům s různými schopnostmi v jednotlivých předmětech?"
+      ],
+      "who_school_fits": [
+        "Talentovaní a motivovaní žáci, kteří chtějí dosáhnout vysokých výsledků a pokračovat na vysoké škole",
+        "Žáci zajímající se o přírodní vědy, matematiku a jazyky – zde má škola nejsilnější zázemí",
+        "Žáci, kteří oceňují kvalitní materiální vybavení a moderní přístup k výuce"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabším prospěchem – ačkoli škola poskytuje podporu, důraz je na výborné výsledky",
+        "Žáci, kteří potřebují více individualizovaného přístupu – diferenciace výuky není dosud plně rozvinuta"
+      ],
+      "plain_czech_summary": "Gymnázium Olgy Havlové je prestižní škola s výbornou pověstí. Žáci dosahují skvělých výsledků maturit (97 % pokračuje na vysoké škole), úspěšně se účastní soutěží a mají přístup k modernímu vybavení. Škola má stabilní tým pedagogů a podporuje nadané žáky. Jedinou slabší stránkou je, že ne všichni učitelé dostatečně přizpůsobují výuku individuálním schopnostem žáků. Ideální pro ambiciózní studenty."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě vysoká a stabilní úspěšnost",
+        "key_numbers": [
+          "51 z 89 maturantů s vyznamenáním",
+          "31 žáků s průměrem 1,0",
+          "Někteří studenti dosáhli 100% skóre ve všech předmětech"
+        ],
+        "evidence": "Ve společné i profilové části maturitní zkoušky škola vykazuje vysokou úspěšnost v meziročním srovnání s výbornou úrovní."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Žáci se zvýšenou absencí byli vedením školy cíleně sledováni"
+        ],
+        "evidence": "Škola efektivně uplatňuje strategii sledování žáků se slabším prospěchem a zvýšenou absencí."
+      },
+      "support_services": [
+        "Školní psycholožka poskytuje individuální konzultace a kariérové poradenství",
+        "Výchovná poradkyně poskytuje systematickou péči o žáky se speciálními vzdělávacími potřebami",
+        "Koordinátor pro nadané žáky",
+        "Konzultace u jednotlivých učitelů (aktivně využívány žáky)"
+      ],
+      "safety_climate": [
+        "Příjemné pracovní klima podporující vstřícnou komunikaci",
+        "Žáci dodržují nastavená pravidla chování, výuka není narušována kázeňskými problémy",
+        "Škola pravidelně vyhodnocuje bezpečnostní rizika a přijímá adekvátní opatření",
+        "Jasná pravidla postupu pro případy rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami (Ostravská univerzita, VŠB-TU Ostrava, Univerzita Palackého)",
+        "Partnerství s organizacemi podporujícími vědu (Knihovna Václava Havla, PROXIMA, Nadační fond NABLA)",
+        "Spolupráce s humanitární organizací Člověk v tísni",
+        "Projekt Erasmus+",
+        "Zapojení do projektu Otevřená věda Akademie věd ČR"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi podrobná, jasně strukturovaná a obsahuje konkrétní příklady. Všechna tvrzení jsou podpořena evidencí z textu. Informace jsou srozumitelné a prakticky využitelné pro rodiče.",
+      "uncertainty_notes": [
+        "Absence není v textu detailně specifikována – není jasné, jaké jsou konkrétní údaje o absenci žáků",
+        "Počet žáků se speciálními vzdělávacími potřebami je malý (14), ale není jasné, jak se s nimi pracuje v běžných třídách"
+      ]
+    }
+  }
+}

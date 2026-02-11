@@ -1,0 +1,32 @@
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T12:10:02.881046+00:00",
+  "run_finished_utc": "2026-02-09T12:10:35.168256+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"LYC_600012760_2025-11-03\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 3,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 5,\n  \"critical_issues\": [\n    \"Tvrzení o „stabilním zájmu“ o školu/obor není ve zprávě doloženo jako fakt (zpráva uvádí, že koncepce směřuje ke stabilizaci zájmu; jako silnou stránku uvádí nadregionální zájem o technické lyceum).\",\n    \"„Široké spektrum vzdělávacích programů“ je nadsázka: ve zdroji jsou jen 2 obory (osmileté gymnázium a technické lyceum).\",\n    \"U „maturita: trend Stabilní“ jde o nepodloženou interpretaci trendu – zpráva uvádí konkrétní výsledky za 2024/2025, ne trend v čase.\",\n    \"Formulace „škola s moderním vybavením a výukou“ je částečně nepodložená: modernizace vybavení ano, ale „moderní výuka“ není závěrem zprávy (naopak je popsaná převaha frontální výuky a slabiny ve formativní práci).\",\n    \"Část „kdo má být opatrný – potřebuje více spolupráce se spolužáky“ není ve zprávě výslovně uvedena jako problém (zpráva mluví o minimálním sebehodnocení a vrstevnickém hodnocení, ne o obecně nedostatečné spolupráci).\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené hlavní silné stránky ze „Závěrů“: nadregionální zájem o technické lyceum, velmi dobré podmínky domova mládeže, široká nabídka volnočasových aktivit.\",\n    \"Správně zachycené hlavní slabé stránky ze „Závěrů“: malá diferenciace výuky, nízký důraz na sebehodnocení/vrstevnické hodnocení a slabší práce s cíli a formativní zpětnou vazbou.\",\n    \"Uvedená klíčová čísla k výsledkům (cca 1/4 s vyznamenáním, všichni úspěšní u maturity po podzimním termínu, 4× Cambridge B2) a k absenci (necelých 110 hodin, 3 neomluvené) odpovídají zdroji.\",\n    \"Zmínka o školním poradenském pracovišti (výchovná poradkyně, metodička prevence) a o spolupracích (letiště, technické muzeum, městská policie, domov pro seniory) je v souladu se zprávou.\"\n  ],\n  \"one_line_verdict\": \"Shrnutí je převážně věrné a pro rodiče použitelné, ale místy přidává nepodložené interpretace (zejména „trend/stabilita“, „široké spektrum“ a „moderní výuka“) a vynechává část důležitých detailů ze zprávy.\"\n}",
+  "judge_output": {
+    "report_id": "LYC_600012760_2025-11-03",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 3,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 5,
+    "critical_issues": [
+      "Tvrzení o „stabilním zájmu“ o školu/obor není ve zprávě doloženo jako fakt (zpráva uvádí, že koncepce směřuje ke stabilizaci zájmu; jako silnou stránku uvádí nadregionální zájem o technické lyceum).",
+      "„Široké spektrum vzdělávacích programů“ je nadsázka: ve zdroji jsou jen 2 obory (osmileté gymnázium a technické lyceum).",
+      "U „maturita: trend Stabilní“ jde o nepodloženou interpretaci trendu – zpráva uvádí konkrétní výsledky za 2024/2025, ne trend v čase.",
+      "Formulace „škola s moderním vybavením a výukou“ je částečně nepodložená: modernizace vybavení ano, ale „moderní výuka“ není závěrem zprávy (naopak je popsaná převaha frontální výuky a slabiny ve formativní práci).",
+      "Část „kdo má být opatrný – potřebuje více spolupráce se spolužáky“ není ve zprávě výslovně uvedena jako problém (zpráva mluví o minimálním sebehodnocení a vrstevnickém hodnocení, ne o obecně nedostatečné spolupráci)."
+    ],
+    "best_points": [
+      "Správně zachycené hlavní silné stránky ze „Závěrů“: nadregionální zájem o technické lyceum, velmi dobré podmínky domova mládeže, široká nabídka volnočasových aktivit.",
+      "Správně zachycené hlavní slabé stránky ze „Závěrů“: malá diferenciace výuky, nízký důraz na sebehodnocení/vrstevnické hodnocení a slabší práce s cíli a formativní zpětnou vazbou.",
+      "Uvedená klíčová čísla k výsledkům (cca 1/4 s vyznamenáním, všichni úspěšní u maturity po podzimním termínu, 4× Cambridge B2) a k absenci (necelých 110 hodin, 3 neomluvené) odpovídají zdroji.",
+      "Zmínka o školním poradenském pracovišti (výchovná poradkyně, metodička prevence) a o spolupracích (letiště, technické muzeum, městská policie, domov pro seniory) je v souladu se zprávou."
+    ],
+    "one_line_verdict": "Shrnutí je převážně věrné a pro rodiče použitelné, ale místy přidává nepodložené interpretace (zejména „trend/stabilita“, „široké spektrum“ a „moderní výuka“) a vynechává část důležitých detailů ze zprávy."
+  }
+}

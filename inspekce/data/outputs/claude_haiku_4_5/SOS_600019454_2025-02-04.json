@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600019454_2025-02-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:02:25.036194+00:00",
+  "run_finished_utc": "2026-02-09T16:02:52.612050+00:00",
+  "raw_file": "SOS_600019454_2025-02-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019454_2025-02-04",
+    "school_profile": {
+      "school_type": "Církevní střední zdravotnická škola Jana Pavla II., obor Praktická sestra (denní čtyřleté a zkrácené dvouleté dálkové studium)",
+      "inspection_period": "4. 2. 2025 – 7. 2. 2025",
+      "school_change_summary": "Od inspekce 2020: mírný nárůst žáků na 235 (max. 300), výrazná obměna pedagogů (70%), zvýšen podíl žáků s odlišným mateřským jazykem (15%), ukončeno vzdělávání v oboru Sociální činnost, nové výukové prostory v Thomayerově nemocnici."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava na vysoké úrovni",
+          "detail": "Žáci pracují s moderními didaktickými pomůckami (figuríny, simulátory) a reálným zdravotnickým vybavením na skutečných pracovištích nemocnic.",
+          "evidence": "Praktické vyučování probíhá na velmi vysoké odborné úrovni s jasným vymezením úkolů a návazností na reálnou praxi."
+        },
+        {
+          "tag": "Výrazné zlepšení výsledků maturit",
+          "detail": "Žáci dosahují lepších výsledků v maturitní zkoušce než v minulosti, v anglickém jazyce lepší než celorepublikový průměr.",
+          "evidence": "Došlo k výraznému zlepšení výsledků v obou částech zkoušky, více než polovina žáků úspěšně využila jazykové certifikáty."
+        },
+        {
+          "tag": "Silná podpora žáků se speciálními potřebami",
+          "detail": "Více než 40 % žáků se speciálními potřebami a tři čtvrtiny žáků s odlišným mateřským jazykem prospívají se srovnatelným nebo lepším průměrem.",
+          "evidence": "Účinnost poskytovaných podpůrných opatření se zvýšila a pozitivně se promítla do výsledků v průběhu i při uzavírání studia."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotná kvalita výuky v některých předmětech",
+          "detail": "V části hodin převažuje činnost učitele, chybí aktivizující metody, žáci mají málo prostoru pro ústní projev a diskusi.",
+          "evidence": "Převaha činnosti na straně učitele a nízká míra využití aktivizujících metod se projevovala jednotvárností výuky a nižší motivací žáků."
+        },
+        {
+          "tag": "Nedostatečná diferenciace pro nadanější žáky",
+          "detail": "Chybí obsahově náročnější úkoly a modelové příklady pro žáky s vyššími předpoklady a zájmem o obor.",
+          "evidence": "Absence zařazování obsahově náročnějších či diferencovaných úkolů, opomíjení zadávání modelových úloh didaktického testu."
+        },
+        {
+          "tag": "Slabší výsledky v některých testech ČŠI",
+          "detail": "Žáci dosahují podprůměrných výsledků v moderních dějinách a čtenářské gramotnosti.",
+          "evidence": "V externím testování ČŠI dosáhli žáci školy spíše podprůměrných výsledků v oblasti moderních dějin a čtenářské gramotnosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se připravují žáci na maturitní zkoušku během studia a jaké jsou výsledky v jednotlivých předmětech?",
+        "Jaké jsou možnosti podpory pro žáky s odlišným mateřským jazykem a jak dlouho trvá jejich adaptace?",
+        "Jak se škola vypořádává s tím, že v některých hodinách chybí aktivnější zapojení žáků – plánuje se to zlepšit?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zájmem o zdravotnický obor, kteří chtějí praktickou přípravu na vysoké úrovni s moderním vybavením",
+        "Žáci, kteří potřebují podporu a individuální péči – škola má kvalitní systém podpůrných opatření a školní psycholožku",
+        "Žáci z ciziny nebo s odlišným mateřským jazykem – škola má zkušenosti a nabízí jazykovou podporu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří preferují aktivní, interaktivní výuku – v některých předmětech je výuka více tradičního typu",
+        "Nadaní žáci hledající výrazně náročnější obsah – diferenciace pro ně není vždy dostatečná",
+        "Žáci, kteří se potřebují orientovat v moderních dějinách – zde škola vykazuje slabší výsledky"
+      ],
+      "plain_czech_summary": "Církevní střední zdravotnická škola na Ječné je kvalitní zdravotnická škola se silným zaměřením na praktickou přípravu. Žáci pracují s moderním vybavením a na skutečných pracovištích nemocnic. Výsledky maturit se výrazně zlepšily a škola dobře podporuje žáky se speciálními potřebami. Slabší stránkou je, že v některých hodinách chybí aktivnější zapojení žáků a diferenciace pro nadanější studenty. Škola se snaží tyto problémy řešit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "V denní formě neprospěli jen jednotlivci (oproti minulosti)",
+          "V anglickém jazyce lepší výsledky než celorepublikový průměr",
+          "Více než polovina žáků úspěšně využila jazykové certifikáty (C1, B2)"
+        ],
+        "evidence": "Došlo k výraznému zlepšení výsledků v obou částech zkoušky, škola dosáhla lepších výsledků než v minulosti a v anglickém jazyce lepších než celorepublikový průměr."
+      },
+      "absence": {
+        "trend": "Výrazné snížení",
+        "key_numbers": [
+          "Průměrně asi 60 zameškaných hodin na žáka za pololetí",
+          "Neomluvenou absenci vykázali pouze jednotlivci",
+          "Nízký podíl uložených kázeňských opatření"
+        ],
+        "evidence": "Jednotně nastavené výchovné postupy vedly k výraznějšímu snížení absence, důsledné sledování důvodů nepřítomnosti a stanovení minimální hranice povinné docházky."
+      },
+      "support_services": [
+        "Školní psycholožka – individuální konzultace, práce s třídními kolektivy, relaxační techniky",
+        "Výchovné poradkyně a metodička prevence – kariérní péče a podpora",
+        "Doučování (individuální i skupinové), čeština pro cizince, semináře k maturitním předmětům",
+        "Primární prevence – programy zaměřené na bezpečnost v kyberprostoru, krizová intervence"
+      ],
+      "safety_climate": [
+        "Jednotně nastavené výchovné postupy a důsledné sledování pravidel",
+        "Nízký podíl kázeňských opatření za přestupky",
+        "Hodnocení sníženým stupněm z chování bylo výjimečné",
+        "Elektronicky zabezpečený vstup a stálá služba u vchodu",
+        "Pravidelná sociometrická šetření a adaptační kurzy"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se zdravotnickými zařízeními – praktické vyučování na skutečných pracovištích",
+        "Fakultní škola Pedagogické fakulty Univerzity Karlovy v Praze",
+        "Spolupráce s Univerzitou Palackého v Olomouci a Univerzitou J. E. Purkyně v Ústí nad Labem",
+        "Centrum pro vydávání jazykových certifikátů",
+        "Charitativní projekty a podpůrné aktivity sociálních a zdravotnických zařízení"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však dlouhé a složitě strukturované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, které konkrétní předměty mají problém s aktivizačními metodami – rodiče si mohou myslet, že jde o všechny",
+        "Není jasné, jak dlouho trvá, než se žáci s OMJ adaptují na úroveň ostatních žáků",
+        "Chybí informace o tom, jaké konkrétní opatření škola plánuje přijmout k řešení zjištěných nedostatků"
+      ]
+    }
+  }
+}

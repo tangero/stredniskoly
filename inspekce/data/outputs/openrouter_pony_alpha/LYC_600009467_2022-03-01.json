@@ -1,0 +1,111 @@
+{
+  "report_id": "LYC_600009467_2022-03-01",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:15:50.548520+00:00",
+  "run_finished_utc": "2026-02-10T07:16:53.764120+00:00",
+  "raw_file": "LYC_600009467_2022-03-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600009467_2022-03-01",
+    "school_profile": {
+      "school_type": "Střední škola s maturitními obory (Informační technologie, Logistické a finanční služby) a učebním oborem (Manipulant poštovního provozu).",
+      "inspection_period": "1. 3. 2022 − 3. 3. 2022",
+      "school_change_summary": "Od poslední inspekce vzrostl počet integrovaných žáků a žáků s odlišným mateřským jazykem, kapacita domova mládeže se zvýšila o 20 lůžek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná výuka",
+          "detail": "Výuka odborných předmětů probíhá na velmi dobré úrovni s důrazem na propojení teorie a praxe.",
+          "evidence": "„Organizace výuky byla na velmi dobré úrovni, hodiny měly spád, byly názorné a cílené na propojování teorie s praxí.“"
+        },
+        {
+          "tag": "Vybavení a projekty",
+          "detail": "Škola disponuje moderním vybavením a úspěšně se zapojuje do evropských projektů.",
+          "evidence": "„Z evropských zdrojů... byla ve škole provedena rekonstrukce a modernizace výukových prostor včetně nákupu materiálního vybavení učeben.“"
+        },
+        {
+          "tag": "Klima a vztahy",
+          "detail": "Ve škole panuje přátelská atmosféra a příznivé vztahy mezi žáky a učiteli.",
+          "evidence": "„Příznivé vztahy mezi žáky i učiteli projevující se v přátelské pracovní atmosféře.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturita (Logistika)",
+          "detail": "V oboru Logistické a finanční služby je vysoké procento neúspěšných u maturity.",
+          "evidence": "„Výsledky maturitní zkoušky se v posledních třech letech zhoršily především v oboru... Logistické a finanční služby, kde... neuspělo 25% žáků.“"
+        },
+        {
+          "tag": "Pasivní výuka",
+          "detail": "V mnoha předmětech převažují pasivní formy výuky bez dostatečné diferenciace pro nadané žáky.",
+          "evidence": "„Převažovaly frontální formy pasivního získávání vědomostí metodou výkladu... nižší míra diferenciace především ve vztahu k nadaným žákům.“"
+        },
+        {
+          "tag": "Absence a prospěch",
+          "detail": "Škola bojuje s vysokou neomluvenou absencí a celkovým zhoršováním studijních výsledků.",
+          "evidence": "„Trend zhoršujících se výsledků vzdělávání a vysoké procento žáků s neomluvenou absencí.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky v oboru Logistické a finanční služby, aby úspěšně složili maturitu?",
+        "Jaké metody mimo frontální výklad využívají učitelé k aktivnímu zapojení žáků všeobecných předmětů?",
+        "Jaká opatření škola přijímá k řešení vysoké neomluvené absence žáků?"
+      ],
+      "who_school_fits": [
+        "Žákům, které zajímá odborná praxe a práce s moderními technologiemi v IT.",
+        "Studentům, kteří preferují přátelské a bezpečné prostředí s dobrou prevencí rizik.",
+        "Žákům, kteří oceňují možnost ubytování v modernizovaném domově mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Uchazečům o obor Logistické a finanční služby kvůli vysokému riziku neúspěchu u maturity.",
+        "Nadaným žákům, kteří vyžadují individuální přístup a náročnější výuku všeobecných předmětů.",
+        "Žákům s nižší motivací ke studiu, kteří potřebují intenzivní podporu doučování."
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní odbornou výuku zaměřenou na praxi a moderní vybavení, zejména v oblasti IT. Pro rodiče je varovným signálem vysoká neúspěšnost u maturity v oboru Logistické a finanční služby (až 25 %). Celkově škola bojuje s pasivními formami výuky a rostoucí absencí žáků. Naopak oceňuje bezpečné prostředí, dobré vztahy a fungující poradenské služby. Pro ambitiózní studenty IT je škola dobrou volbou, u finančních oborů je třeba opatrnosti."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se (zejména v oboru Logistické a finanční služby).",
+        "key_numbers": [
+          "25 % neúspěšných u maturity v oboru Logistické a finanční služby (2019/2020).",
+          "1,8 – 1,9 % neúspěšnosti v oboru Informační technologie.",
+          "5,7 % celkového počtu neprospívajících žáků u maturity (minulý rok)."
+        ],
+        "evidence": "„Výsledky maturitní zkoušky se v posledních třech letech zhoršily... neuspělo 25% žáků.“"
+      },
+      "absence": {
+        "trend": "Zvyšující se (včetně neomluvené absence).",
+        "key_numbers": [
+          "Vysoké procento žáků s neomluvenou absencí (konkrétní čísla neuvedena)."
+        ],
+        "evidence": "„Zvýšil se počet neomluvené absence u žáků... vysoké procento žáků s neomluvenou absencí.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (výchovná poradkyně, metodička prevence, kariérová poradkyně).",
+        "Individuální konzultace a nabízené doučování.",
+        "Péče o žáky se SVP (40 žáků) a OMJ (23 žáků)."
+      ],
+      "safety_climate": [
+        "Prostředí je celkově bezpečné, vstupy zabezpečené čipem a kamerovým systémem.",
+        "Příznivé mezilidské vztahy a přátelská pracovní atmosféra.",
+        "Důraz na monitoring školní atmosféry a prevenci rizikového chování."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vnějšími sociálními partnery (např. Povodí Vltavy).",
+        "Zahraniční praxe žáků zajišťované kariérovou poradkyní.",
+        "Účast na projektech financovaných z evropských fondů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje konkrétní data i kontext. Obsahuje odborné termíny, které jsou v kontextu srozumitelné.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní procentuální číslo neomluvené absence, pouze ji hodnotí jako vysokou.",
+        "Chybí bližší specifikace příčin neúspěchu v oboru Logistické a finanční služby.",
+        "Není zcela jasné, jak je řešena diferenciace výuky pro nadané žáky v běžných hodinách."
+      ]
+    }
+  }
+}

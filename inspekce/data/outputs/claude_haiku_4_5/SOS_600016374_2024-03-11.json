@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600016374_2024-03-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:23:11.304698+00:00",
+  "run_finished_utc": "2026-02-09T16:23:35.614091+00:00",
+  "raw_file": "SOS_600016374_2024-03-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600016374_2024-03-11",
+    "school_profile": {
+      "school_type": "Střední škola informačních technologií, s.r.o. (soukromá)",
+      "inspection_period": "11. března 2024 až 14. března 2024",
+      "school_change_summary": "Od poslední inspekce (2017/2018) došlo k inovaci vzdělávacích programů, zlepšení materiálních podmínek, personální obměně a rozšíření spolupráce s partnery. Škola nyní vzdělává 358 žáků ve dvou oborech s maturitou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jasná vize a kvalitní vedení",
+          "detail": "Ředitel má promyšlenou koncepci, která se transparentně odráží v činnosti školy a jejíž naplňování je pravidelně vyhodnocováno.",
+          "evidence": "Koncepční cíle jsou reálné, komplexní a vycházejí z aktuálního stavu školy."
+        },
+        {
+          "tag": "Moderní vybavení a praktická příprava",
+          "detail": "Škola investuje do nových učeben, digitálních pomůcek a spolupráce s firmami, která umožňuje praktické stáže a exkurze.",
+          "evidence": "Vybudovány dvě multifunkční učebny, modernizovány učebny IT a grafiky, žáci získávají certifikáty CISCO a ECDL."
+        },
+        {
+          "tag": "Podpora a péče o žáky",
+          "detail": "Škola poskytuje individuální doučování, konzultace s psycholožkou a vytváří pozitivní klima pro rozvoj.",
+          "evidence": "Anketní šetření ukázalo velmi pozitivní vnímání prosociálních vztahů, jsou zavedeny adaptační kurzy a schránka důvěry."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší příprava na maturitu z češtiny",
+          "detail": "V posledních dvou letech se výsledky z českého jazyka v celorepublikovém srovnění zlepšily jen částečně, přestože škola zavedla dělenou hodinu.",
+          "evidence": "Ve školním roce 2022/2023 neprospěli tři žáci z IT oboru, opatření se doposud plně neprojevila."
+        },
+        {
+          "tag": "Vyšší počet úrazů než průměr",
+          "detail": "Míra úrazovosti je vyšší než celorepublikový průměr, zejména v tělesné výchově a při sportovních aktivitách.",
+          "evidence": "Vedení provádí analýzu úrazovosti, ale věnuje jí zatím nedostatečnou pozornost."
+        },
+        {
+          "tag": "Málo individualizované výuky",
+          "detail": "Žáci pracují na stejných úkolech bez ohledu na své schopnosti, chybí jim příležitost rozvíjet svůj potenciál.",
+          "evidence": "Diferenciace výuky je zařazována jen výjimečně, sebereflexe žáků zcela chybí nebo je formální."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola připravuje žáky na maturitu z českého jazyka a jaké jsou plány na zlepšení výsledků?",
+        "Jaké bezpečnostní opatření škola zavádí, aby snížila počet úrazů při sportovních aktivitách?",
+        "Jak učitelé přizpůsobují výuku jednotlivým žákům s různými schopnostmi a jak žáci sami hodnotí svůj pokrok?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o IT, programování a počítačové sítě, kteří chtějí získat mezinárodní certifikáty (CISCO, ECDL).",
+        "Studenti zaměření na grafiku a obalovou techniku s ambicí pracovat v kreativních oborech.",
+        "Žáci, kteří si cení moderního vybavení, praktické výuky a úzké spolupráce se skutečnými firmami."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuální péče a diferenciované úkoly – škola je zatím zařazuje jen výjimečně.",
+        "Studenti se slabšími výsledky z češtiny – přestože škola zavádí opatření, výsledky se zlepšují pomalu.",
+        "Žáci se zdravotními omezeními v tělesné výchově – vzhledem k vyšší míře úrazů by měli být zvlášť chráněni."
+      ],
+      "plain_czech_summary": "Střední škola informačních technologií v Frýdku-Místku je moderní soukromá škola s jasnou vizí a kvalitním vedením. Nabízí dva obory s maturitou (IT a obalová technika) s důrazem na praktickou přípravu a mezinárodní certifikáty. Škola má dobré vybavení, spolupracuje s firmami a vytváří podporující prostředí. Slabší stránkou je individualizace výuky a příprava na maturitu z češtiny. Počet úrazů je vyšší než průměr."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – matematika a cizí jazyk výborně, čeština slabší",
+        "key_numbers": [
+          "IT obor: 100% úspěšnost z matematiky a cizího jazyka, 3 neúspěšní z češtiny",
+          "Obalová technika: 100% z matematiky a češtiny, 1 neúspěšný z cizího jazyka",
+          "Cca 85% žáků získá certifikáty ECDL"
+        ],
+        "evidence": "Výsledky školního roku 2022/2023 jsou analyzovány v předmětových komisích, ale účinnost opatření se doposud plně neprojevila v celorepublikovém srovnění."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněna",
+        "key_numbers": [],
+        "evidence": "Zpráva se absence věnuje minimálně, údaje nejsou dostupné."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s externí psycholožkou",
+        "Individuální doučování a konzultace pro žáky se studijními problémy",
+        "Prospěchové stipendium na podporu zlepšování výsledků",
+        "Schránka důvěry (včetně on-line verze)",
+        "Adaptační kurzy pro nové třídní kolektivy"
+      ],
+      "safety_climate": [
+        "Míra úrazovosti vyšší než celorepublikový průměr, zejména v tělesné výchově a sportu",
+        "Pravidelné poučování žáků o bezpečnosti a požární prevenci",
+        "Vedení provádí analýzu úrazovosti",
+        "Anketní šetření ukázalo velmi pozitivní vnímání prosociálních vztahů",
+        "Negativní projevy v chování jsou řešeny důsledně a bezodkladně"
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce s partnerskými firmami umožňující praktické vyučování, stáže a exkurze",
+        "Program CISCO pro žáky IT oboru (certifikovaná školení v počítačových sítích)",
+        "Moduly ECDL pro oba obory (cca 85% žáků získá certifikáty)",
+        "Programy IBM Academy a Academy MikroTik pro prohlubování kompetencí",
+        "Příprava na mezinárodní jazykové zkoušky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Absence údajů o absenci a některé obecnější formulace snižují jasnost.",
+      "uncertainty_notes": [
+        "Absence není zmíněna – není jasné, jak je na škole řešena.",
+        "Konkrétní počty žáků se speciálními potřebami (46) nejsou dále analyzovány.",
+        "Není jasné, jak se školní stravování (zajišťované externí jídelnou) podílí na spokojenosti žáků."
+      ]
+    }
+  }
+}

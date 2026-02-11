@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600170462_2024-11-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:10:28.345925+00:00",
+  "run_finished_utc": "2026-02-09T16:10:52.569884+00:00",
+  "raw_file": "SOS_600170462_2024-11-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170462_2024-11-04",
+    "school_profile": {
+      "school_type": "Integrovaná střední škola (střední škola, domov mládeže, školní jídelna)",
+      "inspection_period": "4. až 8. listopadu 2024",
+      "school_change_summary": "Největší střední škola v Karlovarském kraji. Od roku 2020 sloučena se Střední zemědělskou školou Dalovice. Vzdělává 1046 žáků v 21 oborech (6 maturitních, 15 nematuritních). Nový ředitel od 2019 reorganizoval strukturu řízení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka na vysoké úrovni",
+          "detail": "Praktické vyučování využívá efektivní metody, příjemnou atmosféru a reálné pracovní prostředí, kde žáci získávají odborné kompetence.",
+          "evidence": "Efektivní využití dovednostních, praktických a aktivizujících metod vedlo k vysoké kvalitě praktického vyučování."
+        },
+        {
+          "tag": "Spolupráce se zaměstnavateli",
+          "detail": "Škola má rozsáhlou síť partnerů doma i v zahraničí, část praktické výuky probíhá přímo u zaměstnavatelů.",
+          "evidence": "Spolupráce se sociálními partnery umožňuje žákům získat zkušenosti v reálném pracovním prostředí."
+        },
+        {
+          "tag": "Flexibilní oborová nabídka",
+          "detail": "Horizontální a vertikální prostupnost mezi obory umožňuje žákům změnit směr studia bez opuštění školy.",
+          "evidence": "Promyšlená oborová struktura umožňuje žákům v případě neúspěchu setrvávat ve vzdělávání."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Průměrně čtyři týdny omluvené a jeden den neomluvené absence na žáka ročně; 20+ žáků v každém pololetí s absencí přesahující 350 hodin.",
+          "evidence": "Ve školním roce 2023/2024 škola evidovala téměř 141 000 hodin absence, z toho přes 5 000 neomluvené."
+        },
+        {
+          "tag": "Slabé výsledky v maturitě",
+          "detail": "Výrazně horší výsledky než průměr v ČR, zejména v oborech Ekonomika a podnikání (66,7% neúspěšnosti vs. 11,8% v ČR).",
+          "evidence": "Hrubá neúspěšnost v maturitě je s výjimkou Houslařství výrazně horší než průměr v příslušné skupině oborů."
+        },
+        {
+          "tag": "Nedostatečná individuální podpora",
+          "detail": "Formální přístup k podpoře žáků se speciálními potřebami; asistenti pedagoga pracují izolovaně bez efektivní spolupráce s učiteli.",
+          "evidence": "Realizace podpůrných opatření má převážně formální charakter s minimálním dopadem do výuky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky pro prospěch?",
+        "Jaké metody používáte k individuální podpoře žáků, kteří mají potíže s učením?",
+        "Proč jsou výsledky v maturitě z matematiky a německého jazyka tak nízké a co se s tím dělá?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla, kteří se lépe učí praxí než teorií",
+        "Žáci, kteří chtějí po škole přímo pracovat; škola má dobré kontakty se zaměstnavateli",
+        "Žáci, kteří potřebují flexibilitu; mohou změnit obor bez opuštění školy"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími znalostmi z matematiky a jazyků; škola v těchto předmětech dosahuje podprůměrných výsledků",
+        "Žáci, kteří potřebují intenzivní individuální podporu; systém podpory je formální a neefektivní",
+        "Žáci s tendencí k absencím; škola si s tímto problémem dlouhodobě neví rady"
+      ],
+      "plain_czech_summary": "ISŠ Cheb je největší střední školou v kraji s kvalitní praktickou výukou a dobrými kontakty na zaměstnavatele. Silná je flexibilita oborů. Problémy jsou v teorii: slabé výsledky v maturitě, vysoká absence žáků a formální přístup k individuální podpoře. Výuka v teoretických předmětech často postrádá aktivitu žáků. Škola se potýká s nedostatečnou koordinací mezi jednotlivými pracovišti a slabou komunikací."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazně negativní",
+        "key_numbers": [
+          "Ekonomika a podnikání: 66,7% neúspěšnosti (vs. 11,8% v ČR)",
+          "Agropodnikání: 36,4% neúspěšnosti (vs. 12,4% v ČR)",
+          "Pouze Uměleckořemeslná stavba hudebních nástrojů dosahuje průměru"
+        ],
+        "evidence": "Výsledky vyjádřené hrubou neúspěšností jsou s výjimkou Houslařství výrazně horší než průměr v ČR."
+      },
+      "absence": {
+        "trend": "Kritický dlouhodobý problém",
+        "key_numbers": [
+          "141 000 hodin absence za rok (2023/2024)",
+          "5 000+ hodin neomluvené absence",
+          "Průměrně 4 týdny omluvené + 1 den neomluvené absence na žáka"
+        ],
+        "evidence": "Vysoká absence je závažným problémem, který negativně ovlivňuje úspěšnost a kterému se škole nedaří dlouhodobě čelit."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: pouze 2 pedagogové (výchovný poradce, metodik prevence) – nedostatečné",
+        "Individuální vzdělávací plány: zpracovány formálně, často bez požadovaných náležitostí",
+        "Asistenti pedagoga: pracují izolovaně, bez efektivní spolupráce s učiteli"
+      ],
+      "safety_climate": [
+        "Bezpečnostní riziko: časté přesuny žáků mezi budovami, budovy zůstávají otevřené",
+        "Domov mládeže: nový kamerový systém a zabezpečení vstupy čipy zvyšují bezpečnost",
+        "Kázeňská opatření: 552 za rok vs. 51 pochval (2023/2024) – negativní poměr"
+      ],
+      "partnerships_practice": [
+        "Rozsáhlá síť sociálních partnerů doma i v zahraničí",
+        "Část praktické výuky probíhá na pracovištích smluvních partnerů",
+        "Exkurze, besedy, odborné konference a firemní prezentace pro žáky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale velmi obsáhlá. Klíčové problémy jsou jasně identifikovány (absence, slabé výsledky v maturitě, formální přístup k podpoře). Silné stránky jsou také zřejmé (praktická výuka, partnerství). Některé pasáže jsou technické a pro laika složitější.",
+      "uncertainty_notes": [
+        "Není jasné, zda vysoká absence souvisí spíše s motivací žáků nebo s nedostatečným vymáháním pravidel",
+        "Není specifikováno, jaké konkrétní opatření škola plánuje přijmout v příštích měsících",
+        "Chybí srovnání s jinými školami v kraji – není jasné, zda jsou problémy typické nebo specifické"
+      ]
+    }
+  }
+}

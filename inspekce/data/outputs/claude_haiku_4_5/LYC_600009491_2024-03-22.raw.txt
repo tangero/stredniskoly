@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600009491_2024-03-22",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola a Střední průmyslová škola elektrotechnická",
+    "inspection_period": "22. března až 9. dubna 2024",
+    "school_change_summary": "Od prosince 2022 nový ředitel. Nová zástupkyně pro VOŠ (srpen 2022) a pro nepedagogiku (červen 2023). Počet žáků vzrostl o 245. Zlepšily se materiálně-technické podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola má trvalou spolupráci s technologickými firmami, kde žáci získávají kompetence v reálném pracovním prostředí.",
+        "evidence": "Spolupráce s předními technologickými společnostmi, odborné exkurze a praxe, absolventům se daří najít zaměstnání u partnerů."
+      },
+      {
+        "tag": "Kvalitní vybavení",
+        "detail": "Moderní laboratoře, dílny a specializované učebny umožňují propojovat teorii s praxí a seznamovat žáky s nejnovějšími trendy.",
+        "evidence": "Průběžná modernizace zařízení, část přístrojového vybavení na výborné úrovni, kvalitní materiálně technické zázemí."
+      },
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "V profilové části maturitní zkoušky dosahují žáci všech oborů dlouhodobě velmi dobrých výsledků.",
+        "evidence": "V roce 2023 dosáhli žáci u maturitní zkoušky celkově velmi dobrých výsledků, výsledky odpovídají studijním předpokladům."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoký odpad studentů VOŠ",
+        "detail": "Téměř polovina studentů předčasně ukončí vzdělávání, zejména během prvního ročníku.",
+        "evidence": "Školní rok 2021/2022: 50% úbytek, 2022/2023: 40% úbytek. Důvody: nezájem o obor, nezvládnutí učiva, snaha získat statut studenta."
+      },
+      {
+        "tag": "Bezpečnostní riziko v domově mládeže",
+        "detail": "Jeden zaměstnanec má na starosti přibližně 150 žáků a studentů v nočním provozu.",
+        "evidence": "Bezpečnostní riziko bylo shledáno při zajištění nočního provozu v domově mládeže."
+      },
+      {
+        "tag": "Nedostatky v dokumentaci",
+        "detail": "Školní vzdělávací program není v souladu s rámcovými vzdělávacími programy, zejména chybí přírodovědné vzdělávání v minimálním rozsahu.",
+        "evidence": "Zjištěn nesoulad obsahu ŠVP s RVP v mnoha oblastech, neposkytování přírodovědného vzdělávání v předepsaném minimálním rozsahu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší vysoký počet studentů, kteří předčasně ukončí studium na VOŠ? Jaké má plány na zlepšení?",
+      "Jaké jsou konkrétní možnosti praktické přípravy a spolupráce s firmami pro jednotlivé obory?",
+      "Jak škola podporuje žáky se speciálními vzdělávacími potřebami a jaké má zkušenosti s jejich úspěšností?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o elektrotechniku, IT a technické obory s ambicí pracovat v moderních technologických firmách",
+      "Studenti, kteří chtějí kombinovat teoretické vzdělání s praktickou přípravou v reálném pracovním prostředí",
+      "Nadaní žáci, kterým se škola věnuje prostřednictvím soutěží, olympiád a rozšiřujících aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o VOŠ bez jasné představy o oboru – vysoký počet studentů studium nedokončí",
+      "Žáci s nižšími studijními předpoklady – průběžné výsledky jsou dlouhodobě spíše průměrné",
+      "Studenti, kteří potřebují intenzivní individuální podporu – školní poradenské pracoviště má rezervy v nastavení"
+    ],
+    "plain_czech_summary": "Elektrotechnická škola v Plzni je moderní zařízení s kvalitním vybavením a silnými vazbami na průmysl. Žáci střední školy dosahují výborných výsledků u maturit a získávají praktické zkušenosti v reálných firmách. Problémem je vysoký odpad studentů vyšší odborné školy (40–50 %), zejména v prvním ročníku. Škola má také rezervy v dokumentaci a v řízení školního klimatu. Vhodná pro technicky nadané žáky s jasným zaměřením na praxi."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi dobrý",
+      "key_numbers": [
+        "V profilové části maturitní zkoušky dosahují žáci všech oborů dlouhodobě velmi dobrých výsledků",
+        "Výsledky žáků u maturitní zkoušky odpovídají jejich studijním předpokladům a hodnocení v průběhu vzdělávání",
+        "Ve školním roce 2022/2023 získala SŠ výborné hodnocení v čtenářské a finanční gramotnosti"
+      ],
+      "evidence": "V roce 2023 (jarní a podzimní období) dosáhli žáci velmi dobrých výsledků. Výsledky jsou dlouhodobě stabilní a velmi dobré."
+    },
+    "absence": {
+      "trend": "Není v textu specifikován",
+      "key_numbers": [
+        "Absence není v inspekční zprávě detailně analyzována"
+      ],
+      "evidence": "Text se zaměřuje na prospěch a chování, absence je zmíněna jen v kontextu statistických vyhodnocení v pedagogické radě."
+    },
+    "support_services": [
+      "Pět výchovných poradkyň (jedna zároveň kariérová poradkyně) a jedna metodička prevence",
+      "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami",
+      "Doučování a individuální konzultace pro žáky s rizikem školního neúspěchu",
+      "Minimální preventivní program zaměřený na prevenci rizikového chování",
+      "Spolupráce s Policií ČR, městskou policií a školskými poradenskými zařízeními"
+    ],
+    "safety_climate": [
+      "Všichni aktéři vzdělávání jsou pravidelně seznamováni s bezpečnostními pravidly na začátku roku a během akcí",
+      "Vchody všech budov jsou zabezpečeny, dohledy jsou vykonávány",
+      "Bezpečnostní riziko v domově mládeže: jeden zaměstnanec má na starosti cca 150 žáků a studentů v nočním provozu",
+      "Nedostatečně vyhodnocená rizika v oblasti bezpečnosti žáků v domově mládeže"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s partnerskou školou v německém městě Cham (výměna žáků, hospitace pedagogů, odborné stáže)",
+      "Projekt Erasmus+ umožňující odborné praxe v zahraničí (Španělsko, Irsko, Rakousko)",
+      "Síťová akademie Cisco – ve školním roce 2022/2023 bylo zapojeno více než 250 žáků a studentů",
+      "Místní centrum DofE (Mezinárodní cena vévody z Edinburghu) – šest studentů již získalo ocenění",
+      "Spolupráce s technologickým parkem a předními technologickými společnostmi na praktické přípravě"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky. Obsahuje konkrétní příklady a čísla. Některé pasáže jsou však delší a složitější (např. hodnocení průběhu vzdělávání), což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Absence není v textu detailně analyzována – není jasné, zda je problém nebo ne",
+      "Školní klima je zmíněno jako oblast ke zlepšení, ale konkrétní problémy nejsou podrobně popsány",
+      "Financování je zmíněno jako stabilní, ale konkrétní čísla nejsou uvedena"
+    ]
+  }
+}
+```

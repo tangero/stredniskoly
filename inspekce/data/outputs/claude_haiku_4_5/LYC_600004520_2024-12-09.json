@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_600004520_2024-12-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:06:32.452634+00:00",
+  "run_finished_utc": "2026-02-09T16:06:59.675431+00:00",
+  "raw_file": "LYC_600004520_2024-12-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600004520_2024-12-09",
+    "school_profile": {
+      "school_type": "Obchodní akademie (střední škola s maturitou) - obory Obchodní akademie, Ekonomické lyceum a Informační technologie",
+      "inspection_period": "9. 12. 2024 – 12. 12. 2024",
+      "school_change_summary": "Od inspekce v 2018 vzrostl počet žáků na 573 ve 20 třídách. Škola kontinuálně rozvíjí koncepci kvalitního odborného vzdělávání a systematicky zlepšuje materiálně technické podmínky (renovace budovy, nové tělocvičny, moderní vybavení)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Škola má zrekonstruované tělocvičny, moderní učebny s IT vybavením včetně 3D tiskáren, novou jídelnu a bezpečnostní systém.",
+          "evidence": "Od minulé inspekce došlo k výrazné obnově materiálních podmínek včetně průběžné renovace historické budovy."
+        },
+        {
+          "tag": "Jazykové vzdělávání",
+          "detail": "Cílená podpora jazyků s nabídkou angličtiny, němčiny, ruštiny, zahraniční výjezdy a projekty e-Twinning.",
+          "evidence": "Zvyšující se podíl žáků využívá náhradu profilové zkoušky mezinárodním jazykovým certifikátem."
+        },
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Praktická příprava v reálných firmách, projekty, exkurze a práce ve fiktivních firmách s veletržní prezentací.",
+          "evidence": "Systémová podpora rozvoje odborných kompetencí propojováním teoretických poznatků s jejich využitím v praxi."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotná kvalita výuky",
+          "detail": "Někteří učitelé používají zastaralý přístup založený na výkladu učitele, který vede k pasivitě žáků.",
+          "evidence": "U některých vyučujících přetrvává tradicionalistické pojetí výuky, která dostatečně nepodporuje aktivitu žáků."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "V části hodin chybí přizpůsobení úloh různým schopnostem žáků a jejich individuálním potřebám.",
+          "evidence": "Nízká míra diferenciace zadávaných úloh dostatečně nepodporovala rozdílné pracovní tempo a individuální možnosti žáků."
+        },
+        {
+          "tag": "Absence a chování",
+          "detail": "Absence a pozdní příchody jsou nejčastěji řešeným problémem, přijatá opatření nemají vždy očekávanou účinnost.",
+          "evidence": "Aplikovaná opatření nemají v některých případech na snížení absencí očekávanou účinnost."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s absencí nebo chováním? Jaké jsou účinné motivační nástroje?",
+        "Jak se liší přístup jednotlivých učitelů k výuce a jak škola zajišťuje jednotnou kvalitu výuky?",
+        "Jaké jsou konkrétní možnosti pro nadané žáky a jak se jim věnuje individuální péče?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o obchod, ekonomiku a IT, kteří chtějí kvalitní praktickou přípravu v reálných firmách",
+        "Studenti s ambicí na vysokou školu – škola má vysokou úspěšnost u maturit a absolventů pokračujících v terciárním vzdělávání",
+        "Jazykově nadaní žáci – škola nabízí bohatou podporu cizích jazyků a mezinárodní certifikáty"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – v některých hodinách chybí přizpůsobení různým schopnostem",
+        "Studenti s tendencí na absence – škola má problémy s účinností opatření na snížení absencí",
+        "Žáci preferující aktivní, interaktivní výuku – část učitelů stále používá tradičnější frontální přístup"
+      ],
+      "plain_czech_summary": "Obchodní akademie Dušní je etablovaná škola v centru Prahy s 70letou tradicí. Nabízí kvalitní odborné vzdělávání s důrazem na jazyky a praxi v reálných firmách. Vybavení je moderní a prostředí příjemné. Hlavní výzvou je nejednotná kvalita výuky – někteří učitelé používají zastaralé metody, chybí diferenciace pro různě schopné žáky. Absence a chování jsou problematické. Maturitní výsledky jsou dobré, absolventi se dobře uplatňují."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně dobrý",
+        "key_numbers": [
+          "Neúspěšnost cca 6 %",
+          "S vyznamenáním prospělo téměř 15 %",
+          "Cca 2–3 žáci nekonali nebo byli neúspěšní"
+        ],
+        "evidence": "Výsledky u maturitní zkoušky odpovídaly průběžným výsledkům během studia, pozitivní důsledek koncepčně pojaté výuky cizích jazyků."
+      },
+      "absence": {
+        "trend": "Problematický",
+        "key_numbers": [
+          "Absence a pozdní příchody jsou nejčastěji řešeným problémem",
+          "Přibližně třetinový počet pochval ve srovnání s kázeňskými opatřeními"
+        ],
+        "evidence": "Aplikovaná opatření nemají v některých případech na snížení absencí očekávanou účinnost, vedou k ukládání kázeňských opatření."
+      },
+      "support_services": [
+        "Školní psycholožka – individuální konzultace, pomoc se stresem a osobními problémy",
+        "Výchovná poradkyně – metodická podpora pedagogům, řešení vzdělávacích problémů",
+        "Speciální podpora pro žáky s potřebou podpůrných opatření a odlišným mateřským jazykem"
+      ],
+      "safety_climate": [
+        "Ve sledovaném období se ve škole nevyskytly závažné problémy v chování žáků",
+        "Elektronický a kamerový systém spolu s recepcí přispívají k vyšší bezpečnosti",
+        "Podchycené výchovné a studijní obtíže byly převážně řešeny jednáním s učitelem a rodiči"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s četnými sociálními partnery zajišťuje vazbu teoretického vzdělávání na praxi",
+        "Praktická odborná příprava probíhá ve smluvních pracovištích v reálných firmách a institucích",
+        "Fakultní cvičná škola Vysoké školy ekonomické v Praze"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Silné a slabé stránky jsou jasně vymezeny. Mírně snižuje srozumitelnost pro rodiče vysoký podíl odborné terminologie a dlouhé věty.",
+      "uncertainty_notes": [
+        "Přesné číslo žáků s absencí není uvedeno, pouze kvalitativní popis problému",
+        "Konkrétní počet učitelů s tradicionalistickým přístupem není specifikován",
+        "Detaily o finančních podmínkách a stipendiích nejsou v textu obsaženy"
+      ]
+    }
+  }
+}

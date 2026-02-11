@@ -1,0 +1,109 @@
+{
+  "report_id": "SOS_600020231_2022-03-07",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:12:24.039079+00:00",
+  "run_finished_utc": "2026-02-10T07:13:21.429954+00:00",
+  "raw_file": "SOS_600020231_2022-03-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600020231_2022-03-07",
+    "school_profile": {
+      "school_type": "Soukromá střední škola a vyšší odborná škola",
+      "inspection_period": "7. 3. 2022 − 9. 3. 2022",
+      "school_change_summary": "Střední škola má plně naplněnou kapacitu, zatímco zájem o vyšší odbornou školu dlouhodobě klesá."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola systematicky spolupracuje s firmami a odborníky z praxe, což zvyšuje uplatnitelnost absolventů.",
+          "evidence": "Spolupráce s místními firmami... umožňuje žákům poznávat reálné pracovní prostředí."
+        },
+        {
+          "tag": "Kvalitní zázemí",
+          "detail": "Škola disponuje moderním vybavením včetně nových počítačových učeben a rozhlasového studia.",
+          "evidence": "Škola má k dispozici kvalitní materiální zázemí, které průběžně modernizuje."
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Škola nabízí konzultace a využívá motivační systém školného podle studijních výsledků.",
+          "evidence": "Žákům nabídla možnost individuálních a skupinových konzultací... výše školného závislá na vzdělávacích výsledcích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zastaralé metody výuky",
+          "detail": "Výuka je často frontální bez dostatku aktivizujících metod a formativního hodnocení.",
+          "evidence": "Ve většině hodin převažovala frontální výuka... absence hodnocení pokroku snižovala účinnost vzdělávacího procesu."
+        },
+        {
+          "tag": "Nízká úspěšnost maturity",
+          "detail": "V oboru Obchodní akademie dosáhla škola nižší úspěšnosti u maturit než srovnatelné školy.",
+          "evidence": "V oboru obchodní akademie [škola dosáhla] nižší úspěšnosti než stejné skupiny oborů."
+        },
+        {
+          "tag": "Problematická docházka",
+          "detail": "Nejčastější příčinou neúspěchu žáků je vysoká absence, kterou se nedaří plně řešit.",
+          "evidence": "Nejčastější příčinou neúspěšnosti žáků je vysoká absence... opatření mají pouze omezené účinky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola motivuje pedagogy k používání moderních aktivizujících metod výuky?",
+        "Jaká opatření škola přijímá k řešení vysoké absence a jak rodičům pomáhá?",
+        "Proč byly výsledky maturity na Obchodní akademii horší než jinde a jak se to plánuje zlepšit?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí získat praktické zkušenosti a kontakty na zaměstnavatele už během studia.",
+        "Pro žáky, kteří potřebují individuální přístup a konzultace k dobruání učiva.",
+        "Pro zájemce o obor Mediální komunikace a žurnalistika na vyšší odborné škole."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří preferují moderní interaktivní formy výuky před tradičním výkladem.",
+        "Pro žáky se sklonem k vyšší absenci, protože škola má s tímto problémem omezené účinky opatření.",
+        "Pro uchazeče o obor Obchodní akademie vzhledem k horším výsledkům maturit."
+      ],
+      "plain_czech_summary": "Soukromá škola s plnou kapacitou a skvělým technickým vybavením klade velký důraz na propojení výuky s praxí a zaměstnavateli. Nabízí individuální konzultace a motivační systém odměňující dobré studijní výsledky nižším školným. Slabinou je převažující tradiční frontální styl výuky a absence efektivního hodnocení pokroku žáků. Škola bojuje s vysokou absencí a v jednom oboru vykázala horší výsledky maturit než je standard. Pro aktivní studenty je však díky vazbám na trh práce dobrou volbou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený (průměrná úspěšnost vs. podprůměrná v jednom oboru)",
+        "key_numbers": [
+          "Obor Logistické a finanční služby: srovnatelná úspěšnost",
+          "Obor Obchodní akademie: nižší úspěšnost než průměr",
+          "Škola dosud neprovedla systematičtější analýzu příčin"
+        ],
+        "evidence": "V oboru logistické a finanční služby srovnatelné úspěšnosti a v oboru obchodní akademie nižší úspěšnosti."
+      },
+      "absence": {
+        "trend": "Vysoká a problematická",
+        "key_numbers": [
+          "Nejčastější příčina neúspěšnosti žáků",
+          "Opatření školy mají omezené účinky",
+          "Spolupráce s metodikem prevence a třídními učiteli"
+        ],
+        "evidence": "Nejčastější příčinou neúspěšnosti žáků je vysoká absence... u dlouhodobě neprospívajících žáků mají tato opatření pouze omezené účinky."
+      },
+      "support_services": [
+        "Individuální a skupinové konzultace pro žáky",
+        "Podpora asistenta pedagoga pro žáky se SVP",
+        "Motivační systém snižující školné podle prospěchu"
+      ],
+      "safety_climate": [
+        "Příjemné pracovní prostředí a kultivované vztahy",
+        "Elektronický zabezpečený vstup do budovy",
+        "Respektující přístup vyučujících k žákům"
+      ],
+      "partnerships_practice": [
+        "Externí odborníci z praxe vyučují odborné předměty",
+        "Systematická spolupráce s regionálními zaměstnavateli",
+        "Realizace souvislých praxí u místních firem"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán ve srozumitelné češtině, má jasnou strukturu a explicitně vyjmenovává silné a slabé stránky i konkrétní důkazy.",
+      "uncertainty_notes": []
+    }
+  }
+}

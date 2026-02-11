@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOU_600008941_2025-01-07",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště s 11 obory vzdělání (7 učebních oborů s výučním listem, 4 maturitní obory)",
+    "inspection_period": "7. 1. 2025 – 9. 1. 2025",
+    "school_change_summary": "Škola prošla významnou obnovou materiálně technických podmínek. Realizovala opatření z předchozí inspekce (např. výmaz oboru Podnikání). Snížila neúspěšnost u maturit, ale přetrvává problém s německým jazykem."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie a praxe",
+        "detail": "Výuka kombinuje školní dílny s moderním vybavením a praxi na pracovištích partnerských firem, což připravuje žáky přímo na trh práce.",
+        "evidence": "Praktický výcvik realizován v dílnách školy i na smluvních pracovištích profesních partnerů s odpovídající odbornou úrovní."
+      },
+      {
+        "tag": "Výborné materiální podmínky",
+        "detail": "Škola má moderně vybavené učebny, odborné dílny s vysokým standardem techniky a dostačující sportovní zázemí.",
+        "evidence": "Realizované rekonstrukce a úpravy v posledních letech přispěly k vytvoření velmi dobrých podmínek pro výuku."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují vynikajících výsledků v profesně zaměřených soutěžích na celorepublikové úrovni.",
+        "evidence": "Umístění na 1. a 2. místě v celostátním kole soutěže KOVO Junior, laureát soutěže České ručičky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky z německého jazyka",
+        "detail": "Vysoká neúspěšnost žáků u maturitní zkoušky z německého jazyka – v roce 2024 neuspělo 75 % zkoušejících.",
+        "evidence": "Z osmi žáků si zvolilo zkoušku z německého jazyka, uspěli jen tři. Přetrvává nesoulad mezi průběžným hodnocením a výsledky testů."
+      },
+      {
+        "tag": "Předčasné odchody ze vzdělávání",
+        "detail": "Přestože škola řeší tento problém, nedaří se mu úplně eliminovat – ve školním roce 2023/2024 odešlo 31 žáků.",
+        "evidence": "Důvody: přestup, nezájem o obor nebo slabý prospěch. Jen tři žáci požádali o opakování."
+      },
+      {
+        "tag": "Omezená nabídka volnočasových aktivit",
+        "detail": "Na domově mládeže ve Stodu chybí rozmanitější nabídka volnočasových aktivit pro ubytované žáky.",
+        "evidence": "Prostor pro rozmanitější nabídku volnočasových aktivit zůstává na DM ve Stodu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší problém s neúspěšností v německém jazyce a jaká opatření už zavedla?",
+      "Jaké jsou možnosti ubytování na domově mládeže a jak vypadá denní režim pro ubytované žáky?",
+      "Jak se škola podílí na přípravě žáků do soutěží a jaké jsou šance pro nadané žáky?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s přímým uplatněním na trhu práce – škola má silné vazby s firmami a partnery.",
+      "Talentovaní žáci zaměření na odborné soutěže – škola je aktivně podporuje a dosahují výborných výsledků.",
+      "Žáci se speciálními vzdělávacími potřebami – škola má funkční systém podpory a individuálních vzdělávacích plánů."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší motivací – škola řeší předčasné odchody, ale problém se jí nedaří úplně eliminovat.",
+      "Zájemci o německý jazyk – výsledky maturit z tohoto jazyka jsou dlouhodobě slabé (75% neúspěšnost v 2024).",
+      "Žáci preferující bohatou nabídku volnočasových aktivit – zejména na domově mládeže ve Stodu je nabídka omezená."
+    ],
+    "plain_czech_summary": "Domažlická střední odborná učiliště je moderně vybavená škola s 604 žáky v 11 oborech. Silnou stránkou je propojení teorie s praxí na pracovištích partnerských firem a úspěchy v soutěžích. Materiální podmínky jsou velmi dobré. Hlavním problémem zůstává vysoká neúspěšnost v německém jazyce (75 % v 2024) a určitý počet předčasných odchodů. Škola má funkční systém podpory pro žáky se speciálními potřebami a efektivní poradenské služby."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se, ale s výjimkou německého jazyka",
+      "key_numbers": [
+        "Hrubá neúspěšnost v německém jazyce 2024: 75 % (3 z 8 žáků uspěli)",
+        "Zlepšení v češtině a angličtině ve srovnání s roky 2023–2024",
+        "Bez přihlášení k maturitě z matematiky"
+      ],
+      "evidence": "Hrubá neúspěšnost se zlepšila v češtině a angličtině, ale přetrvává vyšší neúspěšnost v německém jazyce. Příčiny: nesoulad průběžného hodnocení a testů, někteří žáci nebyli zařazeni do němčiny jako prvního jazyka."
+    },
+    "absence": {
+      "trend": "Zvládaná účinnými opatřeními",
+      "key_numbers": [
+        "Absence řešena bezodkladně s žákem nebo zákonnými zástupci",
+        "Výchovná a kázeňská opatření projednávána v pedagogické radě"
+      ],
+      "evidence": "Škole se daří zvládat míru absence žáků účinnými opatřeními, zejména bezodkladným řešením s žákem nebo zákonnými zástupci."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovními poradci, metodiky prevence, kariérovými poradci a školní psycholožkou",
+      "Individuální konzultace a doučování pro žáky ohrožené školním neúspěchem",
+      "Spolupráce s externí sociální pedagožkou poskytující konzultace žákům i rodičům",
+      "Adaptační kurz a přednášky o rizikovém chování pro nastupující žáky",
+      "Služby školní psycholožky formou poradenství, edukace a podpory"
+    ],
+    "safety_climate": [
+      "Bezpečnostní předpisy důsledně dodržovány v teoretické i praktické výuce",
+      "Budovy zabezpečeny proti vstupu neoprávněných osob",
+      "Při pozorování odborného výcviku nebylo zaznamenáno porušení bezpečnostních nebo hygienických předpisů",
+      "Prevence sociálně patologických jevů systematicky zajišťována školním poradenským pracovištěm"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s profesními svazy a subjekty umožňující reagovat na potřeby trhu práce",
+      "Smluvní partneři pro realizaci odborného výcviku – formální náležitosti dodržovány",
+      "Výměna zkušeností s domácími i zahraničními školami",
+      "Spolupráce se základními školami – polytechnická výchova",
+      "Intenzivní spolupráce s firmami a hospodářskou komorou v regionu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Hlavní zjištění jsou jasně formulována. Některé pasáže jsou však poměrně dlouhé a obsahují odborný jazyk, který by mohl být pro laické rodiče méně přístupný.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků, kteří opustili školu v jednotlivých oborech – údaj 31 žáků je celkový.",
+      "Není jasné, jaké konkrétní opatření škola již zavedla k řešení problému s německým jazykem – zmíněno jen 'cílené zaměření na nácvik dovedností'.",
+      "Chybí informace o počtu žáků, kteří se uplatňují v praxi versus pokračují v dalším studiu – zmíněno jen 'většina' a 'menší počet'."
+    ]
+  }
+}
+```

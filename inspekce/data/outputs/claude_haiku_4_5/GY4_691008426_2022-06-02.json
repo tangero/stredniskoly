@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_691008426_2022-06-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:02:01.948943+00:00",
+  "run_finished_utc": "2026-02-09T17:02:25.532258+00:00",
+  "raw_file": "GY4_691008426_2022-06-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691008426_2022-06-02",
+    "school_profile": {
+      "school_type": "Základní škola a gymnázium (čtyřleté), obecně prospěšná společnost",
+      "inspection_period": "2. 6. 2022 – 7. 6. 2022",
+      "school_change_summary": "Od inspekce v 2017 vzrostl počet žáků a tříd, přibyla pozice ředitele a zástupců. Škola se rozšířila o čtyřleté gymnázium. Přetrvává nízká kvalifikovanost pedagogů a jejich vyšší fluktuace."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Příznivá atmosféra",
+          "detail": "Přátelská, respektující prostředí se vzájemnou důvěrou a empatickým přístupem pedagogů.",
+          "evidence": "Společným znakem hospitovaných hodin je přátelská, respektující atmosféra, vzájemná důvěra, vstřícná komunikace a empatický přístup pedagogů k žákům."
+        },
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci dosahují stabilně velmi dobrých výsledků, všichni prospívají, nadprůměrné výsledky v externím testování.",
+          "evidence": "Ve sledovaném období tří školních roků dosahovali žáci na obou stupních stabilně velmi dobrých výsledků, prospěli všichni žáci. Dosáhli nadprůměrných výsledků při národním srovnávání."
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Škola se zaměřuje na komplexní rozvoj osobnosti s respektem k individuálním možnostem a potřebám žáků.",
+          "evidence": "Vzdělávání ve škole se zaměřuje na komplexní rozvoj osobnosti žáků s respektem k jejich individuálním možnostem a potřebám."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "Jen 58 % pedagogů má potřebnou kvalifikaci, na prvním stupni téměř všichni bez kvalifikace.",
+          "evidence": "Nízká míra kvalifikovanosti vyučujících (58 %, na prvním stupni téměř všichni vyučující bez potřebné kvalifikace) se negativně projevila v části zhlédnutých hodin."
+        },
+        {
+          "tag": "Vysoká fluktuace učitelů",
+          "detail": "Pedagogický sbor není stabilizován, z 24 učitelů jich 8 působí ve škole prvním rokem.",
+          "evidence": "Pedagogický sbor není stabilizován, což nevytváří vhodné podmínky k zajištění kontinuity. Ze 24 učitelů jich 8 působí ve škole prvním rokem."
+        },
+        {
+          "tag": "Slabá kontrola kvality výuky",
+          "detail": "Kontrolní systém není dostatečně funkční, hospitační závěry postrádají konkrétní doporučení a metodickou pomoc.",
+          "evidence": "Nastavený kontrolní systém není dostatečně funkční. Závěry z hospitační činnosti postrádají konkrétní doporučení včetně metodické pomoci jednotlivým vyučujícím."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaký je konkrétní plán na zvýšení kvalifikace učitelů, zejména na prvním stupni?",
+        "Jak škola řeší vysokou fluktuaci pedagogů a jak to ovlivňuje kontinuitu vzdělávání?",
+        "Jaké konkrétní kroky podniká vedení k zlepšení kontroly a kvality výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci, kterým vyhovuje menší kolektiv a individuální přístup s důrazem na osobnostní rozvoj",
+        "Rodiny hledající školu s příznivou atmosférou a empatickým přístupem pedagogů",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola nabízí podporu a individuální vzdělávací plány"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kterým záleží na vysoké kvalifikaci a stabilitě pedagogického sboru",
+        "Žáci vyžadující intenzivní práci s moderními metodami a aktivizujícími formami výuky",
+        "Rodiny očekávající kvalitní vybavení pro přírodovědné předměty a moderní didaktickou techniku"
+      ],
+      "plain_czech_summary": "Heřmánek je malá škola s příznivou atmosférou a velmi dobrými výsledky žáků. Silnou stránkou je individuální přístup a péče o každého žáka. Hlavní problémy jsou nekvalifikovaní učitelé (zejména na prvním stupni), vysoká fluktuace pedagogů a slabá kontrola kvality výuky. Škola také postrádá moderní vybavení a prostorové možnosti. Vhodná pro rodiče, kterým vyhovuje menší kolektiv a osobnostní rozvoj, ale méně vhodná pro ty, kteří očekávají vysokou kvalifikaci učitelů a moderní vyuku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze určit – čtyřleté gymnázium se v inspekčním období nevyučovalo",
+        "key_numbers": [
+          "Čtyřleté gymnázium bylo otevřeno, ale v aktuálním školním roce se zde nevzděláva žádný žák"
+        ],
+        "evidence": "Škola se rozšířila o obor čtyřletého gymnázia, ve kterém se však v aktuálním školním roce nevzdělávali žádní žáci."
+      },
+      "absence": {
+        "trend": "Minimální absence",
+        "key_numbers": [
+          "Absence žáků je minimální při přechodu z prvního na druhý stupeň",
+          "Výchovná opatření jsou udělována minimálně"
+        ],
+        "evidence": "Při přechodu žáků z prvního na druhý stupeň nedochází k žádným výrazným změnám v prospěchu žáků, absence žáků je minimální."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště se speciální pedagožkou a výchovnou poradkyní",
+        "Prvotní pedagogická diagnostika a individuální vzdělávací plány pro žáky s potřebou podpůrných opatření",
+        "Asistenti pedagoga pro podporu žáků se speciálními vzdělávacími potřebami",
+        "Pravidelná setkávání učitelů prvního stupně a konzultace pro pedagogy a zákonné zástupce"
+      ],
+      "safety_climate": [
+        "Školní preventivní strategie zaměřená na vytváření příznivého sociálního klimatu",
+        "Malé kolektivy tříd umožňují zachytit sociálně patologické jevy v zárodku",
+        "Spolupráce se Skautským institutem v rámci práce s třídními kolektivy",
+        "Postupy podle stanovených pravidel v případě rizikového chování žáků"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Jednotou českých skautů v prevenci a práci s třídami",
+        "Komunikace se školskými poradenskými zařízeními při nastavování podpůrných opatření",
+        "Funkční model komunikace se vzdělavateli individuálně vzdělávaných žáků prostřednictvím elektronického informačního systému"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a jasně strukturovaná. Obsahuje konkrétní citace a příklady. Slabší je pouze v některých technických pasážích o organizaci.",
+      "uncertainty_notes": [
+        "Není jasné, jak se konkrétně uplatňuje Montessori pedagogika a metoda prof. Hejného, inspektoři konstatují, že chybí využití příslušných pomůcek",
+        "Není specifikováno, jaké konkrétní online aplikace se používají pro procvičování",
+        "Chybí detailní informace o počtu žáků v individuálním vzdělávání a jejich výsledcích"
+      ]
+    }
+  }
+}

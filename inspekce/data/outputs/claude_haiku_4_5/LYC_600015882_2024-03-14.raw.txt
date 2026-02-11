@@ -1,0 +1,96 @@
+```json
+{
+  "report_id": "LYC_600015882_2024-03-14",
+  "school_profile": {
+    "school_type": "Střední škola gastronomická (obory Cukrář, Kuchař-číšník, Gastronomie) se střediskem volného času",
+    "inspection_period": "14.–19. března 2024",
+    "school_change_summary": "Od roku 2018 škola provozuje středisko volného času (276 účastníků). Proběhla rekonstrukce cvičné kuchyně s degustační místností. Škola vzdělává 196 žáků, z toho 38 se speciálními vzdělávacími potřebami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výjimečné výsledky a prestiž",
+        "detail": "Žáci pravidelně vítězí v celorepublikových soutěžích (Trophée Mille, Kuchař Vysočiny Junior) a servírují pro prezidenta republiky.",
+        "evidence": "Každý rok umístění mezi prvními třemi v celorepublickém srovnání, postup do mezinárodního finále v Remeši."
+      },
+      {
+        "tag": "Kvalitní praktická příprava",
+        "detail": "Odborný výcvik probíhá v příjemné tvůrčí atmosféře s moderním vybavením a propojením teorie s reálnou praxí.",
+        "evidence": "Rekonstruovaná cvičná kuchyně, nové trendy v oborech, individuální přístup včetně žáků se speciálními potřebami."
+      },
+      {
+        "tag": "Komplexní podpora žáků",
+        "detail": "Škola systematicky sleduje výsledky od 1. ročníku pomocí komplexních zkoušek a nabízí doučování, osobní pohovory a poradenství.",
+        "evidence": "Maturity nanečisto, analýza příčin neúspěšnosti, školní poradenské pracoviště s jasně vymezenými náplněmi."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace v teoretické výuce",
+        "detail": "V některých hodinách chybí přizpůsobení výuky individuálním potřebám a schopnostem jednotlivých žáků.",
+        "evidence": "Inspektoři zaznamenali pouze nižší míru diferenciace činností vedoucí k rozvoji znalostí vzhledem k potenciálu žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje teoretickou výuku jednotlivým žákům s různými schopnostmi?",
+      "Jaké jsou možnosti zapojení do mezinárodních projektů a zahraničních partnerství?",
+      "Jak probíhá příprava na závěrečné zkoušky a jaké jsou výsledky v posledních letech?"
+    ],
+    "who_school_fits": [
+      "Talentovaní žáci se zájmem o gastronomii, kteří chtějí reprezentovat školu v soutěžích",
+      "Žáci se speciálními vzdělávacími potřebami (škola má zkušenosti a podporu)",
+      "Prakticky zaměření žáci, kterým vyhovuje kombinace teorie a kvalitního odborného výcviku"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnou individuální diferenciaci v teoretických předmětech",
+      "Žáci s nižší motivací (škola klade důraz na aktivní zapojení a samostatnost)"
+    ],
+    "plain_czech_summary": "Jde o velmi kvalitní gastronomickou školu s výjimečnými výsledky. Žáci pravidelně vítězí v celorepublických soutěžích a získávají prestižní příležitosti. Praktická příprava je na vysoké úrovni s moderním vybavením. Škola má dobrou podporu pro žáky se speciálními potřebami. Jedinou slabší stránkou je, že v teoretické výuce by mohla více přizpůsobovat učivo individuálním potřebám jednotlivých žáků. Ideální pro talentované a prakticky zaměřené žáky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "Žáci dosahují velmi dobrých výsledků u maturitních a závěrečných zkoušek",
+        "Maturity nanečisto od 1. ročníku tříletých oborů"
+      ],
+      "evidence": "Efektivní realizace komplexních zkoušek a maturity nanečisto s cílem předcházet neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje konkrétní údaje o absence žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s jasně vymezenými pracovními náplněmi",
+      "Doučování a osobní pohovory pro žáky s nedostatky",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+      "Školní metodička prevence s koncepční prací na prevenci rizikového chování",
+      "Školní informační systém pro podporu žáků se speciálními potřebami"
+    ],
+    "safety_climate": [
+      "Etický kodex školy vedoucí k osvojování lidských hodnot a tolerance",
+      "Příjemná a podnětná atmosféra v hodinách i při odborném výcviku",
+      "Vysoká míra sounáležitosti pedagogů i žáků se školou",
+      "Demokratický způsob řízení založený na partnerské spolupráci",
+      "Koncepční prevence rizikového chování s jasně stanovenými postupy v krizovém plánu"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se špičkovými odborníky a širokými partnery včetně zahraničních",
+      "Stálá inovace v oblasti spolupráce s externími pracovníky",
+      "Zapojení do projektů vedoucích ke zkvalitňování podmínek vzdělávání",
+      "Spolupráce s firmami zajišťující sortiment zboží a pořádání tematických akcí",
+      "Úspěšná prezentace v projektu Jak se dělá dobrá škola"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk s konkrétními příklady. Silné a slabé stránky jsou jasně odděleny. Doporučení je konkrétní a měřitelné.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je problém nebo je nízká.",
+      "Konkrétní procenta úspěšnosti u maturit nejsou uvedena, pouze kvalitativní hodnocení.",
+      "Počet absolventů a jejich uplatnění na trhu práce není specifikován."
+    ]
+  }
+}
+```

@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600013715_2022-03-30",
+  "school_profile": {
+    "school_type": "Střední škola zaměřená na bezpečnostně právní činnost s rozšířenou výukou tělesné výchovy",
+    "inspection_period": "30. března až 1. dubna 2022",
+    "school_change_summary": "Počet žáků se zvýšil o 8 % na 241 žáků v 8 třídách. Zlepšil se elektronický výukový systém a rozšířila se spolupráce s Policií ČR."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Hrubá neúspěšnost v maturitě byla jen 2 % a dlouhodobě patří mezi nejlepší v republice.",
+        "evidence": "Ve školním roce 2020/2021 hrubá neúspěšnost činila jen 2 %. Dosahované výsledky jsou na velmi dobré úrovni."
+      },
+      {
+        "tag": "Moderní vzdělávací technologie",
+        "detail": "Škola efektivně využívá vlastní elektronický vzdělávací prostor, který žákům umožňuje sledovat vlastní pokrok.",
+        "evidence": "Efektivní využívání školního elektronického vzdělávacího prostoru umožňuje žákům sledovat a hodnotit vlastní pokrok."
+      },
+      {
+        "tag": "Praktické propojení s praxí",
+        "detail": "Výuka je doplňována projekty, exkurzemi a workshopy s partnery jako Policie ČR a vysokými školami.",
+        "evidence": "Škola ve spolupráci se svými partnery pravidelně doplňuje výuku vhodnými školními i mimoškolními akcemi."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná práce s informacemi",
+        "detail": "Žáci nejsou dostatečně vedeni k vyhledávání a zpracování informací z různých zdrojů.",
+        "evidence": "V převážné části výuky nebyli žáci cíleně vedeni k vyhledávání a zpracování informací z různých zdrojů."
+      },
+      {
+        "tag": "Slabá reflexe vzdělávacích cílů",
+        "detail": "Učitelé málo zapojují žáky do vyhodnocování naplnění cílů a nevedou je k sebereflexi.",
+        "evidence": "Vyučující věnovali menší pozornost vyhodnocování naplňování vzdělávacích cílů a nevedli žáky k sebereflexi."
+      },
+      {
+        "tag": "Chybějící vlastní tělocvična",
+        "detail": "Tělesná výuka probíhá v pronajatých zařízeních, což není optimální pro organizaci.",
+        "evidence": "Pro výuku tělesné a speciální tělesné výchovy škola nedisponuje vlastními prostory, realizuje ji ve smluvně zajištěných zařízeních."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se žáci připravují na vysoké školy a jaké jsou jejich možnosti pokračování v dalším studiu?",
+      "Jaké jsou podmínky pro žáky se speciálními vzdělávacími potřebami a jak je škola podporuje?",
+      "Jak funguje elektronický vzdělávací prostor a jak jej mohou žáci využívat mimo vyučování?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o bezpečnost, právo a veřejný pořádek s ambicí pracovat v Policii ČR nebo podobných institucích",
+      "Fyzicky zdatní žáci, kterým vyhovuje rozšířená tělesná výchova a speciální fyzická příprava",
+      "Motivovaní žáci, kteří chtějí kvalitní přípravu na vysokou školu s velmi dobrými výsledky maturit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní podporu v samostatné práci s informacemi a digitálními zdroji",
+      "Žáci se zdravotními omezeními, kterým by mohla chybět vlastní tělocvična na školním pozemku",
+      "Žáci preferující čistě teoretické vzdělání bez praktické orientace a propojení s praxí"
+    ],
+    "plain_czech_summary": "Bezpečnostně právní akademie je kvalitní střední škola se zaměřením na bezpečnost a právo. Žáci dosahují výborných výsledků v maturitě (jen 2 % neúspěšnosti) a škola je mezi nejlepšími v republice. Silnou stránkou je propojení výuky s praxí přes partnery jako Policie ČR a vysoké školy. Škola má moderní elektronický systém pro učení. Slabší je práce s informačními zdroji a reflexe vlastního učení. Tělesná výuka probíhá v pronajatých zařízeních. Vhodná pro motivované žáky zajímající se o bezpečnost a veřejný pořádek."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Hrubá neúspěšnost 2 % ve školním roce 2020/2021",
+        "Výsledky dlouhodobě na velmi dobré úrovni v porovnání s průměrem v republice",
+        "Zlepšující se úroveň v posledních třech letech"
+      ],
+      "evidence": "Ve školním roce 2020/2021 činila hrubá neúspěšnost jen 2 %. Dosahované výsledky jsou dlouhodobě na velmi dobré úrovni v porovnání s průměrnou úrovní ostatních škol."
+    },
+    "absence": {
+      "trend": "Zvýšená neomluvená absence",
+      "key_numbers": [
+        "Zvýšená neomluvená absence v loňském školním roce",
+        "Absence vyplynula z důsledného sledování přítomnosti při distančním vzdělávání"
+      ],
+      "evidence": "V loňském školním roce byla zaznamenána zvýšená neomluvená absence, která vyplynula z důsledného sledování přítomnosti žáků při distančním vzdělávání."
+    },
+    "support_services": [
+      "Výchovná poradkyně zajišťuje kariérové poradenství na vysoké úrovni s úzkou spoluprací s vysokými školami a zaměstnavateli",
+      "Školní psycholožka poskytuje pravidelné intervence osobně nebo distančně",
+      "Školní metodička prevence se zaměřuje na práci s třídním kolektivem a prevenci šikany",
+      "36 žáků se speciálními vzdělávacími potřebami je monitorováno a podporováno"
+    ],
+    "safety_climate": [
+      "Příjemné pracovní klima a partnerské vztahy učitelů a žáků s vzájemným respektem",
+      "Žáci prokazují dobré sociální dovednosti a přirozeně spolupracují",
+      "Žákovský parlament vytváří dobré podmínky pro řešení problémů",
+      "Důsledné dodržování nastavených pravidel chování"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce s Policií ČR, Celní správou ČR a komerčními subjekty v oblasti bezpečnosti",
+      "Žáci absolvují odborné stáže na pracovištích partnerů",
+      "Spolupráce s Fakultou sportovních studií Masarykovy univerzity na inovaci studijního programu",
+      "Dobrovolnická činnost v domově seniorů",
+      "Absolventi se školou spolupracují a pomáhají při náborových akcích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však dlouhé a složitě strukturované, což mírně snižuje srozumitelnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků s jednotlivými stupni prospěchu, pouze obecné tvrzení o zlepšování",
+      "Chybí konkrétní data o počtu žáků, kteří pokračují na vysokých školách versus vstupují na trh práce",
+      "Není jasné, jak velký je podíl žáků, kteří využívají doučování nebo individuální konzultace"
+    ]
+  }
+}
+```

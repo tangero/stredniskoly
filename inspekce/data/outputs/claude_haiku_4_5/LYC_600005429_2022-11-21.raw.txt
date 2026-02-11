@@ -1,0 +1,102 @@
+```json
+{
+  "report_id": "LYC_600005429_2022-11-21",
+  "school_profile": {
+    "school_type": "Střední odborná škola a Vyšší odborná škola sociální práce s církevním zaměřením",
+    "inspection_period": "21. listopadu až 23. listopadu 2022",
+    "school_change_summary": "Od poslední inspekce v roce 2013 byla otevřena kombinovaná forma studia v oboru Sociální činnost se zaměřením na prostředí etnických minorit. Škola si udržuje vysoký standard odborného vzdělávání se 208 žáky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemné prostředí",
+        "detail": "Vysoká míra empatie, vstřícný a respektující přístup pedagogů k žákům s pozitivní pracovní atmosférou.",
+        "evidence": "\"příznivá vzdělávací atmosféra, vysoká míra empatie, vstřícný a respektující přístup pedagogů k žákům\""
+      },
+      {
+        "tag": "Kvalitní poradenství",
+        "detail": "Komplexní poradenské služby zajišťují psycholožka, speciální pedagožka, sociální pedagog a školní kaplan.",
+        "evidence": "\"Aplikovaný systém poradenských služeb umožňuje rovný přístup ke vzdělávání všem žákům\""
+      },
+      {
+        "tag": "Praktická příprava",
+        "detail": "Úzké propojení teorie s praxí prostřednictvím dlouhodobé spolupráce se sociálními partnery a praktickými cvičeními.",
+        "evidence": "\"Úzké propojení teoretické výuky s nácvikem a procvičováním praktických dovedností se pozitivně odrazilo na kvalitě\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezené prostory",
+        "detail": "Škola sídlí v přebudovaném objektu s nedostatečným místem, pronajímá tělocvičnu a využívá učebny sousední školy.",
+        "evidence": "\"Nedostatečné prostorové podmínky pro vzdělávání jsou pro školu limitujícím faktorem a omezují její další perspektivní rozvoj\""
+      },
+      {
+        "tag": "Slabší výsledky v češtině",
+        "detail": "Žáci oboru Sociální činnost dosahují nižších výsledků v maturitě z českého jazyka než průměr v republice.",
+        "evidence": "\"Výsledky žáků oboru Sociální činnost ve společné části maturitní zkoušky v předmětu český jazyk v letech 2020 a 2022 dosahovaly nižší úrovně\""
+      },
+      {
+        "tag": "Méně moderní výuka",
+        "detail": "Nízké využívání informačních technologií, diferenciace a kooperativních metod, převažuje frontální výuka.",
+        "evidence": "\"nízká míra využívání různých informačních zdrojů při výuce, menší míra diferenciace vzdělávání\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší nedostatek prostoru a jak to ovlivňuje kvalitu výuky tělesné výchovy?",
+      "Jaké konkrétní kroky podniká škola na zlepšení výsledků z českého jazyka?",
+      "Jak se škola připravuje na modernizaci výuky s využitím digitálních technologií?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o sociální práci a práci s lidmi v ohrožených lokalitách",
+      "Budoucí pedagogové a asistenti pedagogů s vnitřní motivací pro vzdělávání",
+      "Studenti, kteří oceňují osobnostní rozvoj a hodnoty založené na víře a etice"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní podporu v češtině a literatuře",
+      "Studenti preferující moderní digitální metody výuky a online vzdělávání",
+      "Žáci vyžadující speciální prostorové vybavení (např. kvalitní tělocvičnu na místě)"
+    ],
+    "plain_czech_summary": "Evangelická akademie je kvalitní střední škola se zaměřením na sociální práci a pedagogiku. Silnými stránkami jsou příjemné prostředí, kvalitní poradenství a praktická příprava. Absolventi sociální práce úspěšně nastupují do praxe, pedagogové pokračují na vysokých školách. Slabší jsou výsledky z českého jazyka, modernizace výuky a prostorové podmínky. Škola je vhodná pro motivované studenty se zájmem o sociální obory a osobnostní rozvoj."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s dobrými výsledky, ale s rozdíly mezi obory",
+      "key_numbers": [
+        "Přibližně pětina žáků prospěla s vyznamenáním",
+        "Neprospěli pouze jednotlivci",
+        "Nižší výsledky v češtině v letech 2020 a 2022 oproti republice"
+      ],
+      "evidence": "\"Ve sledovaném období tří školních let v maturitní zkoušce prospěla s vyznamenáním přibližně pětina žáků, neprospěli pouze jednotlivci\""
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence věnuje minimálně, zaměřuje se na prospěch a chování"
+    },
+    "support_services": [
+      "Školní psycholožka, speciální pedagožka, metodička prevence, sociální pedagog a školní kaplan",
+      "Individuální konzultace a doučování pro žáky se speciálními potřebami",
+      "Poradna pro žáky ze sociálně znevýhodněného prostředí vedená sociálním pedagogem"
+    ],
+    "safety_climate": [
+      "Vzájemný respekt a tolerance mezi žáky a pedagogy",
+      "Otevřený přístup pedagogů k žákům podporující prevenci sociálně patologických jevů",
+      "Nastavený systém primární prevence umožňující včasné podchycení negativních jevů"
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce se subjekty realizujícími odbornou praxi studentů",
+      "Některé partnery nabízejí absolventům možnost následného zaměstnání",
+      "Více než polovina absolventů Sociální činnosti nastupuje do praxe v pečovatelských a sociálních službách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale obsahuje řadu odborných termínů a dlouhých vět. Pro rodiče bez pedagogického vzdělání by byla některá místa méně jasná. Pozitivní je jasné oddělení silných a slabých stránek.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, nelze posoudit problematiku školní docházky",
+      "Konkrétní počty žáků s prospěchovými problémy nejsou uvedeny",
+      "Detailní analýza výsledků jednotlivých předmětů chybí, kromě českého jazyka"
+    ]
+  }
+}
+```

@@ -1,0 +1,120 @@
+{
+  "report_id": "GY8_600008347_2023-11-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:33:49.296294+00:00",
+  "run_finished_utc": "2026-02-09T16:34:14.755242+00:00",
+  "raw_file": "GY8_600008347_2023-11-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008347_2023-11-21",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté), střední vzdělání",
+      "inspection_period": "21. listopadu až 23. listopadu 2023",
+      "school_change_summary": "Od roku 2018 se daří zvyšovat naplněnost tříd, modernizovat učební pomůcky a budovat novou infrastrukturu. Probíhá generační obměna pedagogického sboru. Škola efektivně využívá dotace EU na rozvoj digitálních technologií a podporu žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Digitální vybavení a inovace",
+          "detail": "Nadstandardní digitální infrastruktura včetně školní internetové televize G-one, kde žáci sami tvoří digitální obsahy.",
+          "evidence": "Škola má účelně využívanou digitální infrastrukturu pro administraci, výuku i mimoškolní činnost."
+        },
+        {
+          "tag": "Bohatá nabídka aktivit",
+          "detail": "Rozmanitá volitelná předměta, mimoškolní kluby, projektové dny a soutěže podporují všestranný rozvoj žáků.",
+          "evidence": "Žáci dosahují výborných umístění v předmětových soutěžích a olympiádách, včetně vítězství v Czech Rocket Challenge."
+        },
+        {
+          "tag": "Výborné výsledky a klima",
+          "detail": "Všichni žáci prospěli, téměř polovina s vyznamenáním, nízké absence, žádné snížené známky z chování.",
+          "evidence": "Maturitní výsledky jsou dlouhodobě na velmi dobré úrovni, srovnatelné s průměrem gymnázií v ČR."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita žáků ve výuce",
+          "detail": "Výuka je často frontální bez dostatečné aktivizace žáků, chybí diferenciace podle individuálních potřeb.",
+          "evidence": "Žáci byli reálně aktivizováni jen v části hodin, převažovaly pro všechny stejné kognitivní cíle."
+        },
+        {
+          "tag": "Slabá zpětná vazba",
+          "detail": "Učitelé málo využívají formativní hodnocení a sebehodnocení žáků, chybí ověření naplnění cílů na konci hodin.",
+          "evidence": "Pedagogové hodinu jen formálně shrnuli, formativní zpětná vazba o zvládnutí učiva chyběla."
+        },
+        {
+          "tag": "Absence školního psychologa",
+          "detail": "Chybí školní psycholog, který byl přínosem v diagnostice žáků se speciálními potřebami a adaptačních kurzech.",
+          "evidence": "Pracovníci poradenského pracoviště pociťují absenci školního psychologa jako nevýhodu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zvýšit aktivitu žáků ve výuce a více využívat skupinovou práci a badatelský přístup?",
+        "Jaké jsou plány na řešení zhoršených vztahů mezi žáky v některých třídách a jak se to projevuje v praxi?",
+        "Kdy bude zahájena přístavba odborných učeben a jak to zlepší podmínky pro výuku?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o technické obory a digitální technologie, kterým se věnuje nadstandardní pozornost",
+        "Motivovaní a nadaní žáci, kterým škola nabízí bohatou nabídku soutěží, olympiád a zájmových klubů",
+        "Žáci plánující vysokoškolské studium, protože většina absolventů pokračuje v terciárním vzdělání"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuálního přístupu a diferenciované výuky, protože ta není v dostatečné míře",
+        "Žáci se speciálními vzdělávacími potřebami, kterým chybí podpora školního psychologa",
+        "Žáci, kteří se lépe učí aktivní metodou a samostatným vyhledáváním informací, protože výuka je spíše frontální"
+      ],
+      "plain_czech_summary": "Gymnázium v Dačicích je dobře vedená škola s výborným vybavením a výsledky. Žáci dosahují skvělých výsledků na maturitě a v soutěžích. Škola nabízí zajímavé aktivity a digitální technologie. Hlavní slabinou je, že výuka je často pasivní – žáci poslouchají spíše než aby sami aktivně pracovali. Chybí také individuální přístup a zpětná vazba. Škola by měla více podporovat samostatné myšlení a kreativitu žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě velmi dobrý",
+        "key_numbers": [
+          "Výsledky srovnatelné s průměrem gymnázií v ČR",
+          "Neúspěch zaznamenán ojediněle",
+          "Většina absolventů pokračuje ve vysokoškolském studiu"
+        ],
+        "evidence": "Výsledky maturitních zkoušek jsou dlouhodobě na velmi dobré úrovni a jsou srovnatelné s průměrem gymnázií v České republice."
+      },
+      "absence": {
+        "trend": "Velmi nízký výskyt",
+        "key_numbers": [
+          "Počet zameškaných hodin včetně neomluvených je nízký",
+          "Ojedinělé neomluvené absence jsou nejčastějším důvodem pro kázeňská opatření",
+          "Žádné snížené známky z chování ve školním roce 2022/2023"
+        ],
+        "evidence": "Počet zameškaných hodin, včetně hodin neomluvených, je ve škole nízký. Snížené známky z chování škola nezaznamenala."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence zajišťují poradenské služby",
+        "Karierová poradkyně podporuje orientaci v dalším studiu",
+        "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+        "Adaptační kurzy pro prvňáky a primaně zaměřené na spolupráci a respekt",
+        "Schránka důvěry v elektronické i fyzické podobě"
+      ],
+      "safety_climate": [
+        "Nízký výskyt rizikového chování žáků",
+        "Efektivní řešení ojedinělých případů",
+        "Škola vnímá jako aktuální problém zhoršené vztahy mezi žáky v některých třídách",
+        "Řada preventivních přednášek a projektů na podporu kladných vztahů",
+        "Schránka důvěry poměrně často využívána"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zřizovatelem a regionálními partnery",
+        "Partnerství s místními organizacemi na rozvoj čtenářské gramotnosti a kulturního vyžití",
+        "Spolupráce s největším zaměstnavatelem ve městě na propagaci uplatnění absolventů",
+        "Spolupráce s vysokými školami na informacích o nárocích návazného studia",
+        "Partnerství s Mensa ČR na testování IQ a logické olympiádě",
+        "Spolupráce s Britským centrem na mezinárodní jazykové zkoušky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a citace z dokumentů. Slabiny jsou jasně formulovány s odkazem na konkrétní oblasti výuky. Mírně snižuje srozumitelnost pro laiky technický jazyk a odborné termíny.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje přesné procento žáků s vyznamenáním (uvedeno 'téměř polovina'), což by bylo užitečné pro rodiče",
+        "Není jasné, jak dlouho trvá absence školního psychologa a jaké jsou plány na jeho nahrazení",
+        "Konkrétní počty žáků v jednotlivých třídách nejsou uvedeny, pouze celkový počet 276 žáků ve 12 třídách"
+      ]
+    }
+  }
+}

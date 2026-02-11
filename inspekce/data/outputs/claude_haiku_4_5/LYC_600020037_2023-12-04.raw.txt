@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "LYC_600020037_2023-12-04",
+  "school_profile": {
+    "school_type": "Střední škola s maturitními obory: Zdravotnické lyceum, Ekonomické lyceum, Obchodní akademie, Informační technologie, Veřejnosprávní činnost a Praktická sestra",
+    "inspection_period": "4. 12. 2023 – 8. 12. 2023",
+    "school_change_summary": "Od září 2022 nová ředitelka, zavedení oboru Praktická sestra s mezistupněm Ošetřovatel, počet žáků klesl o 10 % (nyní 712 žáků), obory Zdravotnický asistent a Podnikání zrušeny pro nízký zájem"
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní propojení teorie s praxí",
+        "detail": "Škola poskytuje odborné vzdělání založené na účelném propojení teoretických znalostí s praktickou výukou na reálných pracovištích.",
+        "evidence": "Souvislá odborná praxe na pracovištích nemocnice, městského úřadu, okresního soudu a místních firem"
+      },
+      {
+        "tag": "Silná spolupráce s partnery",
+        "detail": "Intenzivní spolupráce s externími organizacemi podporuje rozvoj odbornosti a kvalitní přípravu na budoucí povolání.",
+        "evidence": "Partneři zajišťují odborné praxe, účastní se výuky, organizují vzdělávací akce a workshopy"
+      },
+      {
+        "tag": "Projektové aktivity a zahraniční mobility",
+        "detail": "Škola aktivně vyhledává projektové příležitosti, které rozvíjejí kompetence a praktické dovednosti žáků.",
+        "evidence": "Erasmus+, 3týdenní odborné stáže v zahraničí, jazykově-metodické kurzy pedagogů"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky u maturit",
+        "detail": "Žáci dosahují horších výsledků v některých předmětech maturitní zkoušky než je celorepublikový průměr.",
+        "evidence": "Horší průměr v češtině (Obchodní akademie, IT) a cizím jazyce (Lyceum, OA, Praktická sestra) v letech 2020–2023"
+      },
+      {
+        "tag": "Nedostatečné individualizace výuky",
+        "detail": "Chybí diferenciace úkolů pro nadané žáky a ty se speciálními potřebami, málo sebehodnocení a reflexe.",
+        "evidence": "Učitelé pracují se všemi žáky stejnými metodami a tempem, chybí závěrečné shrnutí a vyhodnocení hodin"
+      },
+      {
+        "tag": "Slabé internetové připojení",
+        "detail": "Nekvalitní připojení k internetu ztěžuje využívání informačních zdrojů ve výuce.",
+        "evidence": "Inspekce doporučuje zvýšit konektivitu a rychlost připojení"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s češtinou nebo cizím jazykem na maturitě?",
+      "Jaké jsou možnosti individuálního přístupu k nadaným žákům a jak se jejich potenciál rozvíjí?",
+      "Jak funguje doučování a jaké jsou výsledky těchto podporných programů?"
+    ],
+    "who_school_fits": [
+      "Žáci zainteresovaní na zdravotnických oborech – největší zájem a kvalitní vybavení",
+      "Studenti s ambicí na zahraniční praxi a jazykový rozvoj – aktivní Erasmus+ program",
+      "Žáci, kteří preferují praktickou výuku a propojení s reálným pracovním světem"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v češtině a cizích jazycích – maturitní výsledky jsou pod průměrem",
+      "Studenti, kteří potřebují individuální přístup a diferenciovanou výuku – škola ji zatím nedostatečně poskytuje",
+      "Žáci závislí na kvalitním internetovém připojení – připojení je nekvalitní"
+    ],
+    "plain_czech_summary": "Mendelova střední škola v Novém Jičíně je kvalitní zdravotnickou a ekonomickou školou se silným zaměřením na praxi. Žáci se učí přímo na pracovištích nemocnic a úřadů, cestují na stáže do zahraničí a mají možnost se zlepšovat v jazycích. Vedení školy je aktivní a podporuje učitele. Slabší stránkou jsou výsledky maturit v češtině a jazycích – zde škola zaostává za průměrem. Výuka by mohla více individualizovat přístup k jednotlivým žákům. Připojení k internetu je problematické."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Horší než celorepublikový průměr v některých předmětech",
+      "key_numbers": [
+        "Horší průměr v češtině (OA, IT) v letech 2020/21 a 2021/22",
+        "Horší průměr v cizím jazyce (Lyceum, OA, Praktická sestra) v letech 2021/22 a 2022/23",
+        "Horší průměr v cizím jazyce (Praktická sestra) v roce 2020/21"
+      ],
+      "evidence": "Výsledky maturitních zkoušek jsou analyzovány v předmětových komisích, přijata opatření na zvýšení úspěšnosti"
+    },
+    "absence": {
+      "trend": "Nízká a dlouhodobě zvládaná",
+      "key_numbers": [
+        "87 hodin za rok na žáka v průměru"
+      ],
+      "evidence": "Škola dlouhodobě dobře zvládá míru absence žáků"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovní poradci, školní metodici prevence, asistentka pedagoga, psycholog",
+      "Doučování v českém jazyce, matematice a odborných předmětech",
+      "Evaluační testy pro zjištění úrovně zvládnutí didaktického testu",
+      "Adaptační kurzy na začátku studia",
+      "Rozdělení do skupin anglického jazyka a matematiky podle pokročilosti"
+    ],
+    "safety_climate": [
+      "Vedení klade důraz na vytváření pozitivních a respektujících vztahů mezi všemi účastníky",
+      "Seznámení s riziky a poučení v oblasti bezpečnosti, ochrany zdraví a požární prevence",
+      "Identifikace rizik v praktickém vyučování, používání osobních ochranných pomůcek",
+      "Rozbor úrazovosti – zvýšená úrazovost souvisí s důsledností evidence úrazů v tělesné výchově",
+      "Prevence rizikového chování řešena v rámci týmu školního poradenského pracoviště"
+    ],
+    "partnerships_practice": [
+      "Nemocnice v Novém Jičíně – odborná praxe zdravotnických oborů",
+      "Městský úřad – praxe pro veřejnosprávní činnost",
+      "Okresní soud – praxe pro právní obory",
+      "Místní firmy – praxe pro ekonomické obory",
+      "Erasmus+ – zahraniční mobility žáků a pedagogů",
+      "Složky Integrovaného záchranného sboru, Český červený kříž – vzdělávací akce",
+      "Základní a mateřské školy – kurzy první pomoci"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a obsahují úřednickou terminologii, která by mohla být pro rodiče méně srozumitelná.",
+    "uncertainty_notes": [
+      "Konkrétní počty žáků s vyznamenáním (28 %) a neprospívajících (1,6 %) nejsou jasně vztaženy k jednotlivým oborům",
+      "Není jasné, které konkrétní obory mají horší výsledky maturit – údaje jsou agregované",
+      "Chybí informace o počtu žáků, kteří se účastní doučování a jaké jsou jeho výsledky"
+    ]
+  }
+}
+```

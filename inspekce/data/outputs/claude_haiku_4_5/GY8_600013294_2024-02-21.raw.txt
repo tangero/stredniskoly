@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY8_600013294_2024-02-21",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium (471 žáků v 16 třídách)",
+    "inspection_period": "21. února až 23. února 2024",
+    "school_change_summary": "Od poslední inspekce došlo ke zlepšení materiálních podmínek (renovace, nové vybavení) a rozšíření nabídky mimoškolních aktivit."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství a mezinárodní spolupráce",
+        "detail": "Škola má akreditaci ERASMUS+ 2023–2028, realizuje výměnné pobyty do Amsterdamu a Izraele, což rozvíjí jazykové a kulturní kompetence žáků.",
+        "evidence": "Kooperace s vysokými školami a zahraničními partnery přispívá k vysoké úrovni vzdělávání."
+      },
+      {
+        "tag": "Péče o nadané žáky",
+        "detail": "Škola vytváří velmi dobré podmínky pro vzdělávání nadaných žáků ve výuce i mimo ni s podporou koordinátorky nadání.",
+        "evidence": "Žáci dosahují výborných výsledků v soutěžích a olympiádách v okresních i vyšších kolech."
+      },
+      {
+        "tag": "Pozitivní školní klima",
+        "detail": "Studentský parlament má reálný vliv na chod školy, pochvaly převyšují kázeňská opatření.",
+        "evidence": "Žáci se aktivně podílejí na chodu školy a rozvíjejí sociální dovednosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost u maturit z volitelných předmětů",
+        "detail": "Škola zatím nenašla řešení pro zlepšení výsledků u některých volitelných předmětů profilové části maturitní zkoušky.",
+        "evidence": "Neúspěšnost se za poslední tři roky týkala téměř výhradně volitelných předmětů."
+      },
+      {
+        "tag": "Organizace sportovně nadaných žáků",
+        "detail": "Byl zjištěn drobný nedostatek v organizaci vzdělávání některých sportovně nadaných žáků.",
+        "evidence": "Inspekce doporučuje upravit organizaci v souladu s platnou legislativou."
+      },
+      {
+        "tag": "Nejednotný přístup k formativnímu hodnocení",
+        "detail": "Prvky formativního hodnocení a práce se vzdělávacími cíli nejsou využívány konzistentně ve všech hodinách.",
+        "evidence": "Pedagogové je využívali jen v některých hodinách."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají zájem o volitelné předměty u maturitní zkoušky?",
+      "Jaké jsou možnosti účasti na zahraničních výměnách a jak se vybírají žáci?",
+      "Jak funguje podpora pro nadané žáky a jak se identifikují?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci (ERASMUS+, výměnné pobyty)",
+      "Nadaní a talentovaní žáci, kterým škola nabízí rozmanitou mimoškolní činnost",
+      "Žáci, kterým vyhovuje aktivní školní klima s participací studentského parlamentu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky z volitelných předmětů – škola zatím hledá řešení pro jejich podporu",
+      "Sportovně nadaní žáci – organizace jejich vzdělávání není zcela optimální",
+      "Žáci, kteří potřebují více individuálního přístupu k formativnímu hodnocení"
+    ],
+    "plain_czech_summary": "Gymnázium v Boskovicích je kvalitní školou s výborným klimatem a silným zaměřením na nadané žáky. Nabízí bohaté mimoškolní aktivity, mezinárodní spolupráci a podporu osobnostního rozvoje. Maturitní výsledky jsou dlouhodobě výborné. Drobné nedostatky se týkají organizace sportovně nadaných žáků a nejednotného přístupu k formativnímu hodnocení. Škola má jasnou vizi a aktivní vedení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborná úroveň",
+      "key_numbers": [
+        "Nízká neúspěšnost u maturitní zkoušky",
+        "Neúspěšnost se za poslední tři roky týkala téměř výhradně volitelných předmětů",
+        "Výsledky vykazují výbornou úroveň ve srovnění se školami stejné oborové skupiny"
+      ],
+      "evidence": "Celkové výsledky u maturitních zkoušek vykazují dlouhodobě výbornou úroveň v porovnání s celorepublikovou úrovní."
+    },
+    "absence": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "Žáci s vyšší neomluveno u absencí se v průběhu posledních tří školních let nevyskytují",
+        "Žáci se sníženým stupněm z chování se nevyskytují"
+      ],
+      "evidence": "Množství udělených pochval převyšuje počet udělených kázeňských opatření."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psycholožkou zajišťuje výchovné poradenství a prevenci",
+      "Doučování pro žáky ohrožené školním neúspěchem",
+      "Seminář pro rodiče o efektivním učení vedený školní psycholožkou"
+    ],
+    "safety_climate": [
+      "Adekvátní pozornost věnována zajištění bezpečnosti a ochraně zdraví",
+      "Drobné úrazy vznikají především v hodinách tělesné výchovy",
+      "Pozitivní klima podporované adaptačními kurzy a třídnickými hodinami"
+    ],
+    "partnerships_practice": [
+      "Akreditace ERASMUS+ 2023–2028 pro výjezdy žáků a pedagogů",
+      "Opakované výměnné pobyty v Amsterdamu a spolupráce s partnerskou školou v Izraeli",
+      "Spolupráce s řadou vysokých škol a zákonnými zástupci"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi podrobná, jasně strukturovaná a obsahuje konkrétní příklady. Všechna tvrzení jsou opřena o dokumenty a pozorování inspektorů. Informace jsou srozumitelné pro rodiče bez odborného vzdělání.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků v jednotlivých oborech nadání (uvedeno jen 3 % nadaných)",
+      "Nejsou uvedeny konkrétní výsledky maturit v procentech, pouze kvalitativní hodnocení",
+      "Není jasné, kolik žáků se účastní jednotlivých mimoškolních aktivit"
+    ]
+  }
+}
+```

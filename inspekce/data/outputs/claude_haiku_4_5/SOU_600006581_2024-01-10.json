@@ -1,0 +1,117 @@
+{
+  "report_id": "SOU_600006581_2024-01-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:30:07.215519+00:00",
+  "run_finished_utc": "2026-02-09T16:30:33.751670+00:00",
+  "raw_file": "SOU_600006581_2024-01-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600006581_2024-01-10",
+    "school_profile": {
+      "school_type": "Střední škola gastronomie s obory: Kuchař–číšník, Cukrář (výuční list), Gastronomie a Podnikání (maturita)",
+      "inspection_period": "10.–12. ledna 2024 a 15. ledna 2024",
+      "school_change_summary": "Od poslední inspekce (2016) vzrostl počet žáků o 27 % na 802 žáků v 33 třídách. Škola změnila název (od 1. 2. 2023), zavedla program Gastronomie PLUS a výrazně modernizovala vybavení. Zhoršily se však výsledky maturitní zkoušky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Špičkové odborné vzdělání",
+          "detail": "Škola je držitelem certifikátu Asociace kuchařů a cukrářů ČR a čestného uznání od Hospodářské komory ČR.",
+          "evidence": "Opakovaně získává certifikáty za kvalitu odborného vzdělávání v gastronomii."
+        },
+        {
+          "tag": "Moderní vybavení a prostory",
+          "detail": "Nové učebny, kabinety, cvičné kuchyně, cukrárna, kavárna s nejmodernějšími zařízeními a technologiemi.",
+          "evidence": "Rozšíření wifi-sítě, obnova hardwaru, softwaru a didaktických pomůcek v souladu s trendy oboru."
+        },
+        {
+          "tag": "Silné propojení s praxí",
+          "detail": "Praktické vyučování probíhá u smluvních partnerů v reálném prostředí významných hotelů a restaurací.",
+          "evidence": "Žáci se zapojují do činnosti školní jídelny, kavárny a cukrárny; více jak tři čtvrtiny absolventů se uplatňují v oboru."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky maturitní zkoušky",
+          "detail": "Hrubá neúspěšnost při maturitě je v celostátním srovnání vyšší, zejména v českém jazyce.",
+          "evidence": "Gastronomie: pokles z 32 % na 25 %, Podnikání: z 42 % na 30 % – stále výrazně nad průměrem."
+        },
+        {
+          "tag": "Nejednotný přístup v některých předmětech",
+          "detail": "Ne všichni učitelé respektují nastavené parametry hodnocení, což vede k rozdílnému hodnocení v některých všeobecně vzdělávacích předmětech.",
+          "evidence": "Vedení školy přijímá opatření, ale jejich uplatňování není konzistentní."
+        },
+        {
+          "tag": "Slabší výuka některých všeobecných předmětů",
+          "detail": "V části hodin převládá frontální výuka s nízkou mírou aktivizujících metod a diferenciace.",
+          "evidence": "Chybí závěry hodin, sebehodnocení žáků a přizpůsobení tempa pro nadanější žáky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se škola snaží zlepšit výsledky žáků z českého jazyka na maturitě?",
+        "Jaké jsou možnosti doučování a individuální podpory pro žáky, kteří mají potíže s teoretickými předměty?",
+        "Jak se liší výuka v oborech s výučním listem od oborů s maturitou a jaké jsou jejich výhody?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o gastronomii, kuchařství a cukrářství, kteří chtějí praktické vzdělání s moderním vybavením",
+        "Talentovaní žáci, kteří se chtějí zapojit do odborných soutěží a získat zkušenosti v reálných provozech",
+        "Žáci, kteří preferují praktické vyučování a propojení teorie s reálnou praxí"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se chystají na maturitu a potřebují silné základy v češtině a matematice – výsledky v těchto předmětech jsou slabší",
+        "Žáci, kteří potřebují individualizovanou výuku a aktivizující metody – v některých hodinách všeobecných předmětů je výuka méně diferencovaná",
+        "Žáci s ambicí na vysokou školu – maturitní obory mají vyšší neúspěšnost, zejména v českém jazyce"
+      ],
+      "plain_czech_summary": "Střední škola gastronomie je moderní, dobře vybavená škola se skvělou reputací v oboru. Žáci se učí v reálném prostředí restaurací a hotelů, což je velká výhoda. Škola má kvalitní pedagogy a podporuje talentované žáky. Problém je s výsledky maturitní zkoušky, zejména z češtiny – více než čtvrtina žáků neuspěje. Některé všeobecné předměty jsou vyučovány méně aktivně. Pokud vás zajímá praktické vzdělání v gastronomii, je to skvělá volba. Pokud chcete maturitu s vysokými výsledky, měli byste si ověřit podporu v teoretických předmětech."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršení od poslední inspekce (2016)",
+        "key_numbers": [
+          "Gastronomie: hrubá neúspěšnost 25 % (pokles z 32 %)",
+          "Podnikání: hrubá neúspěšnost 30 % (pokles z 42 %)",
+          "V celostátním srovnání stále výrazně vyšší než průměr"
+        ],
+        "evidence": "Dlouhodobě horších výsledků dosahují žáci v českém jazyce ve společné i profilové části zkoušky."
+      },
+      "absence": {
+        "trend": "Mírný pokles, minimální neomluvená absence",
+        "key_numbers": [
+          "Celkový počet zameškaných hodin mírně vyšší než u škol stejného typu",
+          "Důsledný přístup k omlouvání absence",
+          "Minimální počet neomluvené absence"
+        ],
+        "evidence": "Systematická práce třídních učitelů se odrazila v mírném poklesu absence ve sledovaném období."
+      },
+      "support_services": [
+        "Školní psycholožka a výchovná poradkyně s cílenou podporou žáků se speciálními vzdělávacími potřebami",
+        "Plány pedagogické podpory pro identifikované žáky",
+        "Doučování a konzultace, výuka češtiny pro žáky-cizince",
+        "Kariérové poradenství integrované do odborné výuky"
+      ],
+      "safety_climate": [
+        "Elektronicky zabezpečený vstup se stálou službou na vrátnici",
+        "Nastavená pravidla komunikace a chování s jednotným přístupem pedagogů",
+        "Funkční preventivní mechanismy pro včasné odhalení rizikového chování",
+        "Preventivní program zaměřený na bezpečné chování a zdravý životní styl"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá kooperace s odbornými svazy, asociacemi a regionálními firmami",
+        "Praktické vyučování u smluvních partnerů v reálném prostředí hotelů a restaurací",
+        "Zapojení do celostátního projektu 'Kulinářské umění'",
+        "Fakultní škola České zemědělské univerzity v Praze",
+        "Polytechnická hnízda pro podporu žáků základních škol"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více technických termínů, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala na zlepšení výsledků maturitní zkoušky.",
+        "Není jasné, kolik procent žáků s OMJ jsou ukrajinští uprchlíci a jak to ovlivňuje jejich výsledky.",
+        "Chybí informace o tom, jak dlouho trvá, než se opatření vedení školy projeví v lepších výsledcích."
+      ]
+    }
+  }
+}

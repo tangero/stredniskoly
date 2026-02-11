@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600005321_2023-03-07",
+  "school_profile": {
+    "school_type": "Metropolitní odborná umělecká střední škola Praha 4 – soukromá škola s.r.o. Nabízí čtyřletý obor Kosmetické služby s maturitou a tříleté učební obory (Kadeřník, Vlásenkář a maskér, Rekondiční a sportovní masér) plus dvouletá nástavbová studia.",
+    "inspection_period": "7. března 2023 až 10. března 2023",
+    "school_change_summary": "Od inspekce v 2017: rozšíření nabídky oborů, nová ředitelka (od 2018), výrazná obměna pedagogického sboru (přibližně 50 % za 2 roky), zvýšení počtu žáků na 389 (97 % kapacity). Zlepšila se úspěšnost v maturitních oborech a materiální vybavení. Přetrvávají: vysoká absence žáků, nestabilita pedagogů, nižší účinnost kontrolních mechanismů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní praktická příprava",
+        "detail": "Učitelé praktického vyučování s odborností a profesním přístupem efektivně rozvíjejí praktické dovednosti žáků ve vlastních provozovnách a u sociálních partnerů.",
+        "evidence": "Odbornost a profesní přístup vyučujících významně přispívají k rozvoji odborných kompetencí žáků."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola má dataprojektory, interaktivní tabule, Wi-Fi, vlastní provozovny s moderním zařízením, tělocvičnu a relaxační prostory.",
+        "evidence": "Ve všech učebnách jsou nainstalovány dataprojektory, velkoplošné obrazovky s počítačem nebo interaktivní tabule."
+      },
+      {
+        "tag": "Úspěchy v maturitách",
+        "detail": "Žáci nástavbových oborů dosahují výrazně lepších výsledků – v Uměleckých řemeslných pracích 71 % úspěšnosti, v Vlasové kosmetice 50 %.",
+        "evidence": "Hrubá neúspěšnost ve společné části MZ byla výrazně nižší než průměr v ČR."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Žáci průměrně chybí 246 hodin ročně (včetně 23 hodin neomluvených), což se promítá do nehodnocených žáků a zkoušek v náhradních termínech.",
+        "evidence": "Ve školním roce 2021/2022 dosáhla absence v průměru 246 hodin na žáka včetně neomluvené (23 hodin)."
+      },
+      {
+        "tag": "Nestabilní pedagogický sbor",
+        "detail": "Vysoká fluktuace učitelů (50 % obměny za 2 roky), 43 % vyučujících nemá požadovanou kvalifikaci, chybí systematická metodická podpora nových pedagogů.",
+        "evidence": "Výrazné personální změny, obměna přibližně poloviny pedagogického sboru za poslední dva roky, s tím spjatá vysoká míra fluktuace pedagogů."
+      },
+      {
+        "tag": "Nižší kvalita teoretické výuky",
+        "detail": "Převažuje frontální výuka s málo aktivizačními metodami, nízké využití didaktické techniky, chybí formativní hodnocení a sebehodnocení žáků.",
+        "evidence": "Nízká míra aktivizace žáků, převaha frontální výuky, nízká frekvence využití didaktické techniky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků? Jaká opatření jsou zavedena a jak se jejich účinnost sleduje?",
+      "Jak probíhá adaptace a metodická podpora pro nové učitele, zvláště když 43 % pedagogů nemá požadovanou kvalifikaci?",
+      "Jaké konkrétní kroky škola podniká, aby zvýšila využití aktivizačních metod a moderních technologií ve výuce teoretických předmětů?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické obory (kadeřnictví, kosmetiku, masáž) – zde je výuka kvalitní a propojená s praxí.",
+      "Talentovaní žáci v oborech, kde škola nabízí práci s renomovanými odborníky a účast v soutěžích.",
+      "Žáci z Středočeského kraje – škola má dobrou dopravní dostupnost (40 % žáků z regionu)."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují strukturovanou a jednotnou výuku – kvalita teoretických předmětů je nejednotná, chybí systematické metodické vedení.",
+      "Žáci vyžadující důsledné vedení a jasná pravidla – inspekce zjistila nejednotný přístup učitelů k vymáhání pravidel chování.",
+      "Žáci se speciálními vzdělávacími potřebami – jejich podpůrná opatření nejsou včas aktualizována a jejich účinnost se neověřuje."
+    ],
+    "plain_czech_summary": "Metropolitní odborná umělecká střední škola je zaměřena na praktické obory (kosmetika, kadeřnictví, masáž). Silnou stránkou je kvalitní praktická výuka s moderním vybavením a dobrými výsledky v maturitách. Slabinou je vysoká absence žáků (246 hodin ročně), nestabilní pedagogický sbor (50 % obměny za 2 roky) a nižší kvalita teoretické výuky s málo aktivizačními metodami. Škola je vhodná pro talentované žáky v praktických oborech, ale méně pro ty, kteří potřebují strukturovanou teoretickou přípravu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní trend v nástavbových oborech – výrazné zlepšení od poslední inspekce.",
+      "key_numbers": [
+        "Umělecké řemeslné práce: 71 % úspěšnosti (přijatí žáci, kteří studium zakončili)",
+        "Vlasová kosmetika: 50 % úspěšnosti",
+        "Více než třetina žáků prospívá s vyznamenáním v oborech Vlasová kosmetika a Umělecké řemeslné práce"
+      ],
+      "evidence": "Hrubá neúspěšnost ve společné části MZ byla výrazně nižší než průměr v ČR. Profilové zkoušky složili všichni žáci."
+    },
+    "absence": {
+      "trend": "Negativní – vysoká absence přetrvává od poslední inspekce, nepodařilo se ji snížit.",
+      "key_numbers": [
+        "Průměr 246 hodin zameškaných na žáka ročně (2021/2022)",
+        "23 hodin neomluvené absence na žáka ročně",
+        "11 % žáků má sníženou známku za chování"
+      ],
+      "evidence": "Od posledního inspekčního hodnocení se nepodařilo snížit vysoký počet zameškaných hodin. Vysoká absence se promítá do větší podílu nehodnocených žáků."
+    },
+    "support_services": [
+      "Poradenské služby zajišťuje ředitelka ve spolupráci se zástupcem ředitelky a koordinátorem prevence",
+      "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami (ale nejsou včas aktualizována)",
+      "Dobrovolné doučování pro žáky s odlišným mateřským jazykem (1 hodina týdně) a komunitní setkávání rodičů",
+      "Osobní konzultace, doučování, vypracované studijní materiály, možnost opravy výsledků v odborném výcviku"
+    ],
+    "safety_climate": [
+      "Budova zajištěna kamerami a čipovým systémem",
+      "Nedostatky v jednotnosti vymáhání pravidel chování – nejednotný postup vyučujících",
+      "Nevhodné projevy některých žáků ve výuce (pozdní příchody, odchody v průběhu vyučování)",
+      "Pozitivní pracovní atmosféra v praktickém vyučování, vzájemně respektující přístup"
+    ],
+    "partnerships_practice": [
+      "Systematická spolupráce s profesními partnery (kadeřnické salony, rehabilitační zařízení, divadla)",
+      "Praktické vyučování realizováno ve vlastních provozovnách a na smluvních pracovištích sociálních partnerů",
+      "Semináře, školení, přednášky od odborníků z praxe pro rozvoj kompetencí žáků",
+      "Žáci se podílejí na prezentaci nabídky školy a účastí na festivalech a veletrzích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a jasně strukturovaná. Obsahuje konkrétní čísla, citace z dokumentů a jasné oddělení silných a slabých stránek. Některé pasáže jsou však dlouhé a úřednicky formulované, což mírně snižuje srozumitelnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní 'nevhodné projevy žáků' jsou myšleny – zůstává vágní.",
+      "Není jasné, jak přesně se měří 'účinnost' podpůrných opatření pro žáky se SVP.",
+      "Chybí informace o tom, kolik žáků konkrétně má problémy s chováním a absencí (procenta nejsou uvedena)."
+    ]
+  }
+}
+```

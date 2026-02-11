@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600015092_2021-10-04",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:33:12.551780+00:00",
+  "run_finished_utc": "2026-02-10T08:34:25.857488+00:00",
+  "raw_file": "SOU_600015092_2021-10-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600015092_2021-10-04",
+    "school_profile": {
+      "school_type": "Střední škola hotelová a služeb s obory gastronomie, hotelnictví, cestovního ruchu, pekařství, cukrářství a jezdectví.",
+      "inspection_period": "4. až 7. 10. 2021",
+      "school_change_summary": "Škola od roku 2018 nově nabízí dálkové nástavbové studium a obor Stravovací služby, naopak ruší obor Gastronomie. Počet žáků dlouhodobě klesá."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vybavení praxe",
+          "detail": "Škola má nadstandardně vybavené odborné učebny pro pekaře a cukráře, včetně nových technologií.",
+          "evidence": "Nadstandardním vybavením disponuje pekařské a cukrářské zázemí. Pořízení technologického vybavení umožnilo žákům... komplexní zvládnutí obsluhy strojů."
+        },
+        {
+          "tag": "Ubytování",
+          "detail": "Domov mládeže nabízí kvalitní zázemí pro studium v nově zrekonstruovaných prostorách.",
+          "evidence": "Domov mládeže poskytuje všem ubytovaným žákům vhodné podmínky... převážně v nově zrekonstruovaných prostorách, které jsou podnětně upraveny ke studiu."
+        },
+        {
+          "tag": "Příprava budoucích profesí",
+          "detail": "Praktická výuka u smluvních partnerů efektivně připravuje žáky na uplatnění v oboru.",
+          "evidence": "Obsah, rozsah a podmínky... umožňuje žákům osvojování i prohlubování zejména odborných dovedností, které jsou následně uplatnitelné úspěšnými absolventy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Maturanti v posledních letech dosahují podprůměrných výsledků, zejména v jazycích, a často neuspívají.",
+          "evidence": "V porovnání s průměrnou úrovní výsledků žáků ostatních škol... měly tyto výsledky podprůměrnou úroveň. Nadpoloviční část maturantů dosahovala nedostatečného výkonu."
+        },
+        {
+          "tag": "Neomluvená absence",
+          "detail": "Škola má vážný problém s vysokou neomluvenou docházkou, zejména u výučních oborů.",
+          "evidence": "Nejzávažnější výskyt četnosti neomluvené absence připadl na žáky tříletých oborů... v průměru na jednoho z nich připadla neomluvená nepřítomnost... více jak dvěma vyučovacím týdnům."
+        },
+        {
+          "tag": "Kvalita teoretické výuky",
+          "detail": "Vyučování v teoretických předmětech je pasivní, nezaujme žáky a neumožňuje individuální přístup.",
+          "evidence": "Převažovala frontální výuka... pasivním příjmem informací žáky. Zvolené organizační formy i využívané metody neposkytovaly všem žákům prostor pro projevení vlastní iniciativy."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s docházkou, aby včas odmaturovali?",
+        "Vzhledem k podprůměrným výsledkům v jazycích, jak škola zlepšuje přípravu na státní maturitu?",
+        "Jakým způsobem je zajištěna bezpečnost a prevence úrazů u oboru jezdec a chovatel koní?"
+      ],
+      "who_school_fits": [
+        "Uchazeči o prakticky zaměřené obory pekař a cukrář, kde je kvalitní vybavení a uplatnění.",
+        "Žáci, kteří preferují individuální přístup v menších kolektivech speciálních tříd.",
+        "Zájemci o obor jezdectví, kteří jsou ochotni akceptovat fyzickou náročnost a specifika výuky."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří plánují studovat maturitní obory a potřebují silnou přípravu na vysokou školu.",
+        "Studenti s rizikem slabší motivace či problémů s docházkou (hrozba předčasných odchodů).",
+        "Uchazeči o obor kuchař-číšník, který vykazuje vyšší neúspěšnost a kolísavé výsledky."
+      ],
+      "plain_czech_summary": "Inspekce potvrdila, že škola má vynikající vybavení pro praktickou výuku v gastronomii a kvalitní domov mládeže. Na druhou stranu varuje před velmi špatnými studijními výsledky maturitních oborů a extrémně vysokou neomluvenou absencí, kterou se škole nedaří řešit. Teoretická výuka je často nudná a pasivní. Pro pekaře a cukráře je škola dobrou volbou, ale u maturitních oborů je třeba zvážit kvalitu přípravy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý až klesající s výrazným neúspěchem v posledním roce.",
+        "key_numbers": [
+          "Podprůměrné výsledky oproti ČR v českém i cizím jazyce (2019).",
+          "Více než polovina maturantů dosahuje nedostatečného výkonu v českém jazyce.",
+          "Kolísavá míra neúspěšnosti u nástavbového studia."
+        ],
+        "evidence": "V porovnání s průměrnou úrovní výsledků žáků ostatních škol... měly tyto výsledky podprůměrnou úroveň. Nadpoloviční část maturantů dosahovala nedostatečného výkonu."
+      },
+      "absence": {
+        "trend": "Vysoká a dlouhodobě neřešená neomluvená absence.",
+        "key_numbers": [
+          "Neomluvená absence u výučních listů přes 2 týdny na žáka ročně.",
+          "Neomluvená absence u maturitních oborů přes půl týdne na žáka.",
+          "Významný výskyt absence i u žáků se speciálními potřebami."
+        ],
+        "evidence": "Nejzávažnější výskyt četnosti neomluvené absence připadl na žáky tříletých oborů... odpovídající více jak dvěma vyučovacím týdnům."
+      },
+      "support_services": [
+        "Fungující školní poradenské pracoviště a kariérní poradenství.",
+        "Individuální vzdělávací plány pro žáky se speciálními potřebami.",
+        "Slabá efektivita prevence rizikového chování a absence motivace žáků."
+      ],
+      "safety_climate": [
+        "Účinné řešení šikany a kyberšikany, ale selhání v prevenci kouření.",
+        "Nedostatečná analýza úrazovosti v jezdectví (chybějící prevence).",
+        "Nedostatek pohybových aktivit pro kompenzaci fyzické zátěže praxe."
+      ],
+      "partnerships_practice": [
+        "Kvalitní spolupráce se smluvními partnery pro odbornou praxi.",
+        "Možnost zahraničních stáží pro obor hotelnictví a cestovní ruch.",
+        "Úspěšná reprezentace v soutěžích (cukrář, pekař, florista)."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, byť místy zasažen úřednickým stylem. Hlavní myšlenky a fakta jsou jasně oddělena v závěru, což usnadňuje orientaci.",
+      "uncertainty_notes": [
+        "Přesné procento úspěšnosti u maturity není uvedeno, pouze slovní popis 'nadpoloviční část neúspěšných'.",
+        "Nejasné důvody pro 'nevyužití potenciálu pedagogického sboru' - text je velmi obecný.",
+        "Chybí konkrétní data o počtu žáků v jednotlivých oborech, pouze celkový součet."
+      ]
+    }
+  }
+}

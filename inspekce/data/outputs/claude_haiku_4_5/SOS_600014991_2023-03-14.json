@@ -1,0 +1,109 @@
+{
+  "report_id": "SOS_600014991_2023-03-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:44:57.795227+00:00",
+  "run_finished_utc": "2026-02-09T16:45:19.906870+00:00",
+  "raw_file": "SOS_600014991_2023-03-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600014991_2023-03-14",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola pedagogická a sociální + Střední pedagogická škola",
+      "inspection_period": "14. března 2023 až 17. března 2023",
+      "school_change_summary": "Škola zavedla nový obor vzdělání (75-31-N/03 Předškolní a mimoškolní pedagogika), vybudovala metodické centrum pro polytechnickou a přírodovědnou gramotnost a modernizovala materiální vybavení včetně učeben a tělocvičny."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Všichni žáci přihlášení k maturitě ji úspěšně vykonali, téměř polovina s vyznamenáním, výsledky výrazně vyšší než na podobných školách.",
+          "evidence": "Všichni žáci přihlášení k maturitní zkoušce tuto zkoušku následně úspěšně vykonali, téměř polovina žáků prospěla s vyznamenáním."
+        },
+        {
+          "tag": "Kvalitní odborné vzdělání",
+          "detail": "Vzdělávání v odborných předmětech je velmi dobře připraveno s efektivním využitím názorných pomůcek a propojením teorie s praxí.",
+          "evidence": "Vzdělávání v odborných předmětech bylo velmi dobře připraveno, sdělené výukové cíle byly konkrétní a přiměřené."
+        },
+        {
+          "tag": "Silná podpora slabších žáků",
+          "detail": "Škola systematicky podporuje žáky se slabším prospěchem formou doučování a individuální péče.",
+          "evidence": "Žáci se slabším prospěchem byli ve škole evidováni, všem těmto žákům byla věnována potřebná systematická podpora formou doučování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Bezbariérový přístup",
+          "detail": "Škola nemá zajištěn bezbariérový vstup, což omezuje přístup imobilních žáků a studentů.",
+          "evidence": "Zabezpečení bezbariérového vstupu do školy pro zvýšení kvality vzdělávání imobilních žáků a studentů."
+        },
+        {
+          "tag": "Podpora nadaných žáků",
+          "detail": "Inspekce doporučuje zaměřit se na identifikaci a podporu nadaných žáků a studentů.",
+          "evidence": "Zaměřit se na identifikaci a následnou podporu nadaných žáků a studentů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s nadanými žáky a jaké má pro ně speciální programy?",
+        "Jaké jsou plány na řešení bezbariérového přístupu do budovy?",
+        "Jak se škola připravuje na změny v maturitní zkoušce a jak to ovlivňuje výuku?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí kvalitní přípravu na maturitu s vysokou úspěšností",
+        "Budoucí pedagogové a sociální pracovníci, kterým vyhovuje praktická orientace výuky",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje cílenou podporu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s mobilitními problémy, protože vstup do budovy není bezbariérový",
+        "Žáci, kteří potřebují speciální podporu pro nadané, která není zatím dostatečně rozvinuta"
+      ],
+      "plain_czech_summary": "Jde o kvalitní pedagogickou školu s výbornou pověstí. Žáci zde dosahují skvělých výsledků u maturit – všichni ji zvládnou a skoro polovina s vyznamenáním. Výuka je praktická a dobře připravená, učitelé se věnují každému žákovi. Škola má moderní vybavení a metodické centrum pro praxi. Slabší žáci dostávají doučování. Jediný problém: budova není přístupná pro vozíčkáře. Škola by měla více podporovat nadané žáky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborný - všichni žáci úspěšní, výsledky výrazně vyšší než na podobných školách",
+        "key_numbers": [
+          "100% úspěšnost žáků u maturitní zkoušky",
+          "Přibližně 50% žáků prospělo s vyznamenáním",
+          "Výsledky výrazně vyšší než na středních školách obdobného typu"
+        ],
+        "evidence": "Všichni žáci přihlášení k maturitní zkoušce tuto zkoušku následně úspěšně vykonali, téměř polovina žáků prospěla s vyznamenáním. Ve srovnání s výsledky středních škol obdobného typu byla úspěšnost žáků při zkoušce výrazně vyšší."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště v účinné spolupráci s vedením školy",
+        "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami (8 žáků a 8 studentů s 1.-2. stupněm podpůrného opatření)",
+        "Doučování pro žáky se slabším prospěchem",
+        "Adaptační pobyty pro žáky prvního ročníku",
+        "Prevence sociálně patologických jevů a vzdělávací akce"
+      ],
+      "safety_climate": [
+        "Vedení školy věnuje cílenou pozornost zajištění bezpečnosti žáků a studentů",
+        "Rizika jsou pravidelně vyhodnocována s následným přijímáním opatření ke zlepšení",
+        "Sociometrická šetření pomáhají budovat pozitivní a bezpečné klima ve třídách",
+        "Pozitivní partnerský vztah mezi pedagogy a žáky podporuje příjemnou pracovní atmosféru"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s městem Kroměříž a sociálními partnery",
+        "Spolupráce se školami různých stupňů vzdělávání (mateřské až vysoké školy)",
+        "Stáže pedagogů u budoucích zaměstnavatelů žáků",
+        "Mezinárodní spolupráce související s mobilitou žáků a vyučujících",
+        "Spolupráce s odborníky z praxe při vzdělávání ve vyšší odborné škole",
+        "Metodické centrum s přímou účastí dětí a pedagogů z mateřských škol"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi podrobná, jasně strukturovaná a obsahuje konkrétní příklady. Všechna tvrzení jsou podpořena důkazy z textu. Informace jsou srozumitelné a relevantní pro rodiče.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna, nelze posoudit trend",
+        "Počet žáků se speciálními potřebami (16 celkem) je malý, není jasné, jak se to vyvíjelo v čase",
+        "Bezbariérový přístup je zmíněn jako slabá stránka, ale není jasné, jaké jsou konkrétní plány na řešení"
+      ]
+    }
+  }
+}

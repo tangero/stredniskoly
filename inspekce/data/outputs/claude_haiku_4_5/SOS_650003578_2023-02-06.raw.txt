@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOS_650003578_2023-02-06",
+  "school_profile": {
+    "school_type": "Střední škola veřejnoprávní, obor Bezpečnostně právní činnost (denní forma) a Bezpečnostní služby (dálková forma)",
+    "inspection_period": "6. až 8. února 2023",
+    "school_change_summary": "Škola přijala účinná opatření z předchozí inspekce. Zavedla sdílení zkušeností mezi pedagogy, zintenzivnila práci s výsledky, zlepšila materiální podmínky a rozšířila využívání IT. Počet žáků v hlavním oboru vzrostl."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vedení a klima",
+        "detail": "Ředitelka vytváří vstřícné prostředí s otevřenou komunikací mezi všemi účastníky vzdělávání.",
+        "evidence": "Řízení školy s důrazem na rozvíjení pozitivního klimatu vytváří podmínky pro účinné naplňování koncepčních záměrů."
+      },
+      {
+        "tag": "Partnerství a praxe",
+        "detail": "Škola úzce spolupracuje se složkami záchranného systému, soudy a věznicí, což podporuje praktické vzdělání.",
+        "evidence": "Spolupráce se složkami integrovaného záchranného systému, vazební věznicí v Olomouci a Okresním soudem v Prostějově."
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Funkční systém podpory žáků se speciálními potřebami a prevence rizikového chování.",
+        "evidence": "Školní poradenské pracoviště garantuje systematickou podporu, realizuje adaptační pobyty a pestrou škálu preventivních aktivit."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Metody výuky",
+        "detail": "Převažuje frontální výuka bez dostatečné aktivizace žáků a diferenciace pro talentované.",
+        "evidence": "Nedostatečná pestrost forem a metod vedla k nerovnoměrnému zapojení žáků, metody kritického myšlení se vyskytly výjimečně."
+      },
+      {
+        "tag": "Maturitní úspěšnost",
+        "detail": "Hrubá neúspěšnost u maturity se pohybuje v rozmezí 13–25 % za poslední tři roky.",
+        "evidence": "Hrubá neúspěšnost u maturitní zkoušky se v posledních třech letech pohybovala v intervalu 13 - 25 %."
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Sebehodnocení a vzájemné hodnocení žáků nejsou dostatečně zařazovány do výuky.",
+        "evidence": "Vzájemné hodnocení a sebehodnocení žáků také nebylo vždy zařazeno, motivační shrnutí probíhalo výjimečně se zapojením žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje talentované žáky v jejich oboru? Jaké jsou možnosti jejich rozvoje?",
+      "Jaké jsou výsledky doučování z českého jazyka, matematiky a angličtiny? Kolik žáků se ho účastní?",
+      "Jak probíhá příprava na maturitu a jaké jsou konkrétní kroky ke zlepšení úspěšnosti?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o bezpečnostně právní činnost a práci v záchranném systému",
+      "Studenti, kteří si cení praktické výuky a spolupráce se skutečnými institucemi",
+      "Žáci, kterým vyhovuje stabilní prostředí s jasným vedením a podporou"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní, interaktivní a skupinovou výuku – zde převažuje frontální přístup",
+      "Talentovaní studenti hledající rozšířené výzvy – diferenciace není dostatečná",
+      "Žáci, kteří potřebují časté zpětné vazby a sebehodnocení – to není systematicky zařazováno"
+    ],
+    "plain_czech_summary": "TRIVIS je střední škola zaměřená na bezpečnostně právní činnost s 242 žáky. Má silné vedení, dobré vztahy s institucemi (policie, soudy, věznice) a funkční podporu pro žáky se speciálními potřebami. Výuka je odborně kvalitní, ale převažuje frontální metoda. Maturitní úspěšnost se pohybuje kolem 75–87 %. Škola by měla více aktivizovat žáky, podporovat kritické myšlení a lépe diferencovat výuku pro talentované studenty."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s prostorem pro zlepšení",
+      "key_numbers": [
+        "Hrubá neúspěšnost 13–25 % za poslední tři roky",
+        "Úspěšnost tedy 75–87 %",
+        "Škola organizuje skupinové doučování z ČJ, matematiky, angličtiny a práva"
+      ],
+      "evidence": "Vedení školy analyzuje příčiny neúspěšnosti a realizuje kroky vedoucí ke zlepšení, např. organizuje skupinové doučování pro žáky maturitních ročníků."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Údaj není v inspekční zprávě uveden"
+      ],
+      "evidence": "Inspekční zpráva se absence věnuje pouze obecně v kontextu školního řádu a chování žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště vedené výchovnou poradkyní a metodičkou prevence (ředitelkou)",
+      "Podpora žáků se speciálními vzdělávacími potřebami s mapováním a začleňováním podpůrných opatření",
+      "Kariérové poradenství s informacemi o vysokých školách a spoluprací s místním úřadem práce",
+      "Prevence rizikového chování prostřednictvím adaptačních pobytů, kurzů přežití a projektových dnů",
+      "Spolupráce s pedagogicko-psychologickou poradnou a neziskovým sektorem"
+    ],
+    "safety_climate": [
+      "Pozitivní pracovní atmosféra ve vyučovacích hodinách s dodržováním pravidel komunikace",
+      "Zdvořilé chování a přátelské vystupování žáků zaznamenáno i během inspekce",
+      "Wellbeing školy patrný v kmenových třídách a na chodbách",
+      "Úzká spolupráce s Policií ČR, městskou policií a organizacemi v oblasti řešení šikany a zneužívání návykových látek",
+      "Systematická práce s třídním kolektivem jako součást školního klimatu"
+    ],
+    "partnerships_practice": [
+      "Součinnost se složkami integrovaného záchranného systému",
+      "Spolupráce s vazební věznicí v Olomouci a Okresním soudem v Prostějově",
+      "Intenzivní spolupráce se zřizovatelem a ostatními školami stejného zřizovatele",
+      "Partnerství s pedagogicko-psychologickou poradnou",
+      "Spolupráce s místním úřadem práce a vysokými školami",
+      "Aktivní propagace a spolupráce se základními školami v okolí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně rozlišuje silné stránky a oblasti k zlepšení. Konkrétní citace a příklady usnadňují pochopení. Mírně snižuje skóre absence dat o absenci a některých kvantitativních ukazatelích.",
+    "uncertainty_notes": [
+      "Absence není v textu specifikována – není jasné, jaké jsou absence žáků a jak se vyvíjejí",
+      "Počet žáků se speciálními vzdělávacími potřebami není uveden – není jasné, jak velký je tento segment",
+      "Detailní výsledky jednotlivých předmětů nejsou v textu – pouze obecné tvrzení o souladu s očekávanými výstupy"
+    ]
+  }
+}
+```

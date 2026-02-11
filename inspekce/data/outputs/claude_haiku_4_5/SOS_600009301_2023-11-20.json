@@ -1,0 +1,119 @@
+{
+  "report_id": "SOS_600009301_2023-11-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:34:05.372798+00:00",
+  "run_finished_utc": "2026-02-09T16:34:35.910325+00:00",
+  "raw_file": "SOS_600009301_2023-11-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009301_2023-11-20",
+    "school_profile": {
+      "school_type": "Střední škola logistická, příspěvková organizace. Nabízí 2 maturitní obory (Logistické a finanční služby, Provoz a ekonomika dopravy) a 1 učební obor (Operátor skladování).",
+      "inspection_period": "20. až 22. listopadu 2023",
+      "school_change_summary": "Od inspekce v 2017: nový ředitel (od září 2023), nárůst žáků o 10 %, počet žáků se speciálními potřebami vzrostl z 24 na 43 (o 80 %). Zlepšeny materiální podmínky – bezbariérové přízemí, nová IT vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola efektivně propojuje teorii s praxí prostřednictvím praktického vyučování u smluvních partnerů a získala ocenění 'Škola doporučená zaměstnavateli'.",
+          "evidence": "Praktické vyučování na reálných pracovištích, dlouhodobá spolupráce se zaměstnavateli, ocenění v roce 2022, 2019, 2018, 2017."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci úspěšně reprezentují školu v krajských, regionálních i republikových soutěžích a olympiádách.",
+          "evidence": "Vítězství v soutěži Logistik junior, druhé místo v republikov. kole SOČ, třetí místo v Soutěži odborných dovedností České pošty."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola zajišťuje fyzické i psychické bezpečí prostřednictvím kamerového systému, čipového vstupu a individualizované pomoci žákům.",
+          "evidence": "Kamerový a čipový systém, poradenské služby, pravidla postupu pro rizikové chování, preventivní aktivity."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka v teoretických předmětech",
+          "detail": "Převažuje frontální výuka bez dostatečné interakce, chybí aktivizační metody a práce s různými informačními zdroji.",
+          "evidence": "'Výklad nové látky bez výraznější interakce vedl k pasivitě většiny žáků.' Aktivizační metody zařazovány 'pouze ojediněle'."
+        },
+        {
+          "tag": "Nedostatečné sebehodnocení žáků",
+          "detail": "Žáci jen zřídka dostávají prostor pro vzájemné hodnocení a sebereflexi jako součást odpovědnosti za vlastní učení.",
+          "evidence": "'Vyučující pouze sporadicky vytvářeli žákům prostor pro vzájemné vrstevnické hodnocení a sebehodnocení.'"
+        },
+        {
+          "tag": "Problémy s individuálními vzdělávacími plány",
+          "detail": "Plány pro žáky se speciálními potřebami jsou někdy vypracovány na celou dobu studia bez konkrétní úpravy ročně, komunikace s poradenskými zařízeními není dostatečně intenzivní.",
+          "evidence": "Vyhodnocování IVP je 'spíše formální záležitostí bez konkretizace naplňování stanovených priorit'."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola rozvíjí u žáků kritické myšlení a práci s informacemi? Jaké metody používá?",
+        "Jak funguje podpora pro žáky se speciálními vzdělávacími potřebami? Jak se upravuje obsah učiva podle jejich schopností?",
+        "Jaké jsou konkrétní výsledky žáků v maturitních zkouškách a jak se škola zaměřuje na slabší oblasti (čtenářská gramotnost)?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na logistiku a dopravu, kteří chtějí praktické zkušenosti a přímou spolupráci se zaměstnavateli.",
+        "Talentovaní žáci, kteří se chtějí zapojit do soutěží a reprezentovat školu na krajské či republikové úrovni.",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individualizovanou podporu a poradenské služby."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více interaktivní a skupinové výuky – v teoretických předmětech převažuje frontální přístup.",
+        "Žáci, kteří se lépe učí prostřednictvím sebereflexi a vlastního hodnocení – tyto prvky jsou v hodinách zařazovány jen ojediněle.",
+        "Žáci se speciálními potřebami, jejichž zákonní zástupci nebudou aktivně komunikovat se školou – efektivita podpory závisí na intenzitě spolupráce."
+      ],
+      "plain_czech_summary": "Střední škola logistická v Dalovicích je moderní odborná škola se silným zaměřením na praxi. Žáci se učí přímo u firem a dosahují dobrých výsledků v maturitách a soutěžích. Škola má bezpečné prostředí a podporuje talentované žáky. Slabší stránkou je, že teoretická výuka je často pasivní – učitelé více vysvětlují, žáci méně diskutují a sami se nehodnotí. Škola pracuje na zlepšení těchto oblastí. Vhodná pro prakticky zaměřené žáky, kteří chtějí získat zkušenosti pro budoucí práci."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi dobrý – v posledních dvou letech vysoká úspěšnost",
+        "key_numbers": [
+          "2021/2022: 100 % úspěšnosti v profilové i společné části",
+          "2022/2023: 100 % v profilové části, 96,5 % v společné části (2 z 57 neuspěli v cizím jazyce)",
+          "Neúspěšnost 3,5 % je mírně vyšší než průměr ČR (2,8 %)"
+        ],
+        "evidence": "'Ve školním roce 2021/2022 uspěli všichni žáci... v roce následujícím uspěli všichni žáci v profilové části, ve společné části dva žáci z 57 neuspěli.'"
+      },
+      "absence": {
+        "trend": "Absence je jednou z hlavních příčin neúspěchu",
+        "key_numbers": [
+          "Vysoká absence identifikována jako nejčastější příčina neprospěchu",
+          "Na konci 2022/2023: 4 žáci neprospěli a ukončili vzdělávání",
+          "Příčiny: vysoká absence, ztráta motivace, neplnění povinností"
+        ],
+        "evidence": "'Nejčastějším příčinou dle vyhodnocení školy je vysoká absence, ztráta motivace a neplnění povinností.'"
+      },
+      "support_services": [
+        "Výchovná poradkyně zajišťující kariérové poradenství a metodiku prevence",
+        "Speciální pedagog zajišťující podporu žáků se speciálními potřebami a metodiku prevence",
+        "Konzultace a doučování od vyučujících (využívání závisí na motivaci žáků)",
+        "Individualizovaná pomoc a poradenské služby pro psychické bezpečí"
+      ],
+      "safety_climate": [
+        "Fyzické bezpečí: kamerový a čipový systém při vstupu/odchodu",
+        "Psychické bezpečí: individualizovaná pomoc, poradenské služby, pravidla pro rizikové chování",
+        "Prevence: sociometrické šetření v 1. ročnících, kohezní pobyty, třídnické hodiny",
+        "Pozitivní zjištění: počet pochval vyšší než počet kázeňských opatření",
+        "Pravidelná analýza příčin úrazů a přijímání opatření"
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování realizováno na pracovištích smluvních partnerů (firmy)",
+        "Spolupráce se zaměstnavateli, profesními svazy a vysokými školami",
+        "Exkurze, přednášky, projektový týden, stáže pro učitele",
+        "Ocenění 'Škola doporučená zaměstnavateli' (2022, 2019, 2018, 2017)",
+        "Diamantový certifikát v projektu 'Finančně gramotná škola'",
+        "Mezinárodní projekty a programy (CLIL, Ekoškola)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s důkazy. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak dlouho trvá doučování a jaké jsou jeho výsledky – závisí na 'osobní zodpovědnosti' žáků.",
+        "Není jasné, kolik žáků se speciálními potřebami skutečně dostává doporučenou podporu – komunikace se poradenskými zařízeními není 'dostatečně intenzivní'.",
+        "Absence je zmíněna jako problém, ale chybí konkrétní čísla o míře absence jednotlivých žáků."
+      ]
+    }
+  }
+}

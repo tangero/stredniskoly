@@ -1,0 +1,101 @@
+{
+  "report_id": "GY4_600008924_2021-11-23",
+  "school_profile": {
+    "school_type": "Soukromá SOŠ a Gymnázium",
+    "inspection_period": "23. 11. − 24. 11. 2021",
+    "school_change_summary": "Od roku 2019 došlo ke změně zřizovatele, škola rozšířila nabídku oborů a zkvalitnila materiální zázemí pro obor Kominík."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Škola nabízí vstřícné a bezpečné prostředí s rodinnou atmosférou a bez výskytu šikany.",
+        "evidence": "Společným znakem... bylo nastavení vstřícné komunikace a bezpečného prostředí... nebyly dosud zjištěny známky šikany."
+      },
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Výuka odborných předmětů a kominíků je účelně propojena s reálnou praxí a firmami.",
+        "evidence": "Výuka odborných předmětů propojovala teoretické znalosti s praxí... promyšlená spolupráce s firmami."
+      },
+      {
+        "tag": "Zlepšení maturit",
+        "detail": "Díky přijatým opatřením se snížila neúspěšnost žáků u společné části maturitní zkoušky.",
+        "evidence": "Míra neúspěšnosti žáků ve společné části maturitní zkoušky v posledním maturitním období snížila."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Převládá frontální výuka, chybí aktivizační metody, kooperace žáků a moderní pomůcky.",
+        "evidence": "V hodinách převládala frontální výuka... Nejsou zařazovány ani demonstrační a žákovské pokusy."
+      },
+      {
+        "tag": "Necílená výuka",
+        "detail": "Hodiny často postrádají jasné cíle, shrnutí učiva a individuální přístup k žákům.",
+        "evidence": "V úvodu hodin chybělo stanovení cíle... nebyl vytvářen dostatek prostoru pro shrnutí."
+      },
+      {
+        "tag": "Nestabilní sbor",
+        "detail": "Pedagogický sbor není stabilizovaný a chybí systematická zpětná vazba od vedení.",
+        "evidence": "Průběžně dochází ke změnám ve složení pedagogického sboru, zatím se jej nepodařilo stabilizovat."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola využívá malý počet žáků ve třídách k individuálnímu přístupu a diferenciaci výuky?",
+      "Jakým způsobem jsou spojovány hodiny pro různé obory vzdělání a jak je zajištěna jejich náročnost?",
+      "Jaká konkrétní vybavení a pomůcky škola používá pro výuku přírodovědných předmětů a pokusů?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří preferují menší školu s rodinnou atmosférou a osobním přístupem.",
+      "Pro uchazeče o obor Kominík, kde je kvalitní materiální zázemí a napojení na praxi.",
+      "Pro studenty, kteří potřebují klidné a bezpečné prostředí bez sociálně patologických jevů."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří očekávají moderní, interaktivní a týmovou formu výuky.",
+      "Pro žáky se speciálními vzdělávacími potřebami vyžadujícími výraznou individualizaci.",
+      "Pokud hledáte školu se stabilizovaným a zkušeným pedagogickým sborem."
+    ],
+    "plain_czech_summary": "Inspekce potvrdila, že se jedná o malou školu s bezpečným a vstřícným prostředím, kde se žáci cítí dobře. Škola úspěšně zvládá výuku odborného oboru Kominík ve spolupráci s firmami a zlepšila výsledky u maturit. Slabinou je tradiční styl výuky, kde žáci jsou spíše pasivní, chybí spolupráce ve dvojicích či skupinách a hodiny nemají vždy jasný cíl. Vedení školy by mělo intenzivněji podporovat učitele v používání moderních metod a zlepšit kontrolu kvality výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se (pokles neúspěšnosti)",
+      "key_numbers": [
+        "Výsledky ve společné části maturitní zkoušky jsou průměrné.",
+        "Míra neúspěšnosti žáků v posledním období klesla."
+      ],
+      "evidence": "Ve společné části maturitní zkoušky jsou... výsledky žáků školy v celorepublikovém srovnání průměrné. Míra neúspěšnosti... se snížila."
+    },
+    "absence": {
+      "trend": "Neuvedeno",
+      "key_numbers": [
+        "Škola důsledně sleduje docházku."
+      ],
+      "evidence": "Školou přijatá opatření (např. důsledné sledování docházky...) jsou účinná."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence v jedné osobě.",
+      "Spolupráce s úřadem práce a školskými poradenskými zařízeními.",
+      "Doučování žáků ohrožených školním neúspěchem (např. angličtina, matematika)."
+    ],
+    "safety_climate": [
+      "Vstřícná komunikace a bezpečné prostředí.",
+      "Žádné zranění od školního roku 2018/2019.",
+      "Nezjištěny známky šikany, záškoláctví či závislostí."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Policií ČR, hasiči a zdravotnickou záchrannou službou.",
+      "Odborníci z praxe vyučují odborné předměty.",
+      "Charitativní sbírky a pomoc handicapovaným ve spolupráci s občanskými sdruženími."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení silné a slabé stránky a obsahuje konkrétní doporučení i kontext školy.",
+    "uncertainty_notes": [
+      "Chybí konkrétní číselné údaje o procentuální úspěšnosti u maturit.",
+      "Není uveden konkrétní počet žáků ve třídách či spojených ročnících.",
+      "Nejsou specifikovány konkrétní změny ve složení pedagogického sboru."
+    ]
+  }
+}

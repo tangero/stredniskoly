@@ -1,0 +1,117 @@
+{
+  "report_id": "LYC_600009696_2023-12-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:31:47.148268+00:00",
+  "run_finished_utc": "2026-02-09T16:32:14.509515+00:00",
+  "raw_file": "LYC_600009696_2023-12-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600009696_2023-12-07",
+    "school_profile": {
+      "school_type": "Střední škola s obory: Hotelnictví (4 roky, maturita), Cestovní ruch (4 roky, maturita), Kuchař-číšník (3 roky, výuční list) a nástavbové studium Podnikání",
+      "inspection_period": "7. 12. a 11.–13. 12. 2023",
+      "school_change_summary": "Od inspekce v 2017: počet žáků vzrostl z 109 na 291, tříd z 8 na 18. Modernizována výuková kuchyně. Nové vedení na pozici zástupkyň ředitelky. Od září 2023 výuka některých odborných předmětů v cizích jazycích."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola má trvalou spolupráci s externími partnery, kde žáci získávají kompetence v reálném pracovním prostředí.",
+          "evidence": "Odborný výcvik na smluvních pracovištích, školní jídelna a bistro jako učební prostředí."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola systematicky modernizuje učebny a investuje do kvalitní techniky a didaktických pomůcek.",
+          "evidence": "Plně funkční a estetické prostředí, kvalitní ICT, audiovizuální a didaktické pomůcky, vlastní tělocvična."
+        },
+        {
+          "tag": "Bezpečnost a prevence",
+          "detail": "Propracovaná preventivní strategie s důrazem na otevřenou komunikaci a řešení rizikového chování.",
+          "evidence": "Uzavřené vstupy, čipový přístup, jasná pravidla, úspěšné řešení absence, adaptační kurzy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní vyučování",
+          "detail": "Část výuky využívá málo aktivizujících metod, chybí formativní hodnocení a sebereflexi žáků.",
+          "evidence": "Hospitace ukázaly frontální výuku bez závěrů hodin, chybí vzájemné hodnocení a sebehodnocení žáků."
+        },
+        {
+          "tag": "Slabší výsledky v češtině a angličtině",
+          "detail": "Výrazně nižší úspěšnost v didaktickém testu z českého a anglického jazyka u oboru Podnikání.",
+          "evidence": "Míra úspěšnosti se výrazně liší mezi obory, zejména v oboru Podnikání jsou výsledky problematické."
+        },
+        {
+          "tag": "Chybí diferenciace",
+          "detail": "Výuka není přizpůsobena rozdílným znalostem a schopnostem jednotlivých žáků.",
+          "evidence": "Nebyla zaznamenána diferenciace výuky vzhledem k projevovaným rozdílným znalostem nebo schopnostem."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zlepšit výsledky z českého a anglického jazyka u oboru Podnikání?",
+        "Jaké konkrétní aktivizující metody a formy práce budou zavedeny do výuky?",
+        "Jak se škola vypořádá s individuálními rozdíly mezi žáky při výuce?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zájmem o gastronomii, hotelnictví nebo cestovní ruch, kteří chtějí praktické dovednosti",
+        "Studenti, kteří se chtějí učit v moderně vybaveném prostředí s přímou vazbou na praxi",
+        "Žáci, kterým vyhovuje bezpečné prostředí se silnou prevencí a jasně nastavenými pravidly"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími znalostmi češtiny a angličtiny, kteří potřebují intenzivnější podporu v těchto předmětech",
+        "Studenti, kteří preferují aktivní, interaktivní výuku s časými zpětnými vazbami a sebereflexí",
+        "Žáci s různorodými učebními styly, kteří potřebují individualizovaný přístup a diferenciaci"
+      ],
+      "plain_czech_summary": "Akademie hotelnictví je moderní škola se silným zaměřením na praxi. Žáci se učí v nově vybaveném prostředí a pracují přímo v školní jídelně a bistrech. Škola má dobrou bezpečnost a prevenci. Slabší stránkou je, že část výuky je příliš pasivní – chybí aktivizující metody a zpětná vazba. Výsledky z češtiny a angličtiny u některých oborů nejsou ideální. Škola to ví a chce to zlepšit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky odpovídají studijním předpokladům, ale s výrazným rozdílem mezi obory",
+        "key_numbers": [
+          "Žáci jsou úspěšnější v profilové části (odborné kompetence)",
+          "Výrazně nižší úspěšnost v češtině a angličtině u oboru Podnikání",
+          "Míra úspěšnosti se výrazně liší mezi jednotlivými obory"
+        ],
+        "evidence": "Pozitivní zjištění: žáci jsou úspěšnější v profilové části. Problematické: výsledky z českého jazyka a anglického jazyka (didaktický test) u oboru Podnikání."
+      },
+      "absence": {
+        "trend": "Úspěšně řešena díky vhodně nastaveným pravidlům",
+        "key_numbers": [
+          "Škola má jasná pravidla pro řešení absence",
+          "Důsledné uplatňování pravidel",
+          "Úspěšné řešení vysoké a neomluveného absence"
+        ],
+        "evidence": "Díky vhodně nastaveným pravidlům, v případě absence žáků a jejich důslednému uplatňování, se škole daří úspěšně řešit problémy spojené s vysokou či neomluvenou absencí."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, školní metodička prevence, kariérová poradkyně",
+        "Plány pedagogické podpory pro 11 žáků se speciálními vzdělávacími potřebami",
+        "Řešení problémů žáků ve spolupráci s pedagogy a zákonnými zástupci"
+      ],
+      "safety_climate": [
+        "Vstupy do školy trvale uzavřeny, žáci vstupují pomocí čipu",
+        "Žáci jsou prokazatelně seznamováni se zásadami bezpečnosti",
+        "Propracovaná a účinně nastavená preventivní strategie",
+        "Důraz na otevřenou komunikaci se žáky a spolupráci se zákonnými zástupci",
+        "Systematická pozornost vývoji sociálních vztahů ve třídách"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s profesními svazy a subjekty reagujícími na potřeby trhu práce",
+        "Smluvní partneři pro odborný výcvik a praxi",
+        "Projekt ERASMUS se dvěma zahraničními školami (Německo, Slovensko) – čtrnáctidenní mobilita žáků",
+        "Spolupráce se vysokými, středními a základními školami, hospodářskou komorou",
+        "Certifikované kurzy: barmanský, baristický, sommelierský, cukrářský, foodstyling"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však technické a vyžadují znalost školské terminologie.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní procenta úspěšnosti u maturit – pouze kvalitativní popis",
+        "Počet žáků se speciálními potřebami (11) není kontextualizován vůči celkovému počtu (291)",
+        "Není jasné, jak dlouho trvá výuka v cizích jazycích a jaký je její rozsah"
+      ]
+    }
+  }
+}

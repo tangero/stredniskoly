@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_651023572_2022-11-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:56:34.329101+00:00",
+  "run_finished_utc": "2026-02-09T16:56:59.159655+00:00",
+  "raw_file": "SOS_651023572_2022-11-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_651023572_2022-11-21",
+    "school_profile": {
+      "school_type": "Střední škola obchodu, služeb a řemesel s jazykovou školou; 730 žáků v 31 třídách",
+      "inspection_period": "21. listopadu až 24. listopadu 2022",
+      "school_change_summary": "Od roku 2019 nový ředitel, generační obměna pedagogů, rozšíření poradenského pracoviště, modernizace materiálního vybavení, nárůst počtu žáků"
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava na povolání",
+          "detail": "Kvalitní odborný výcvik v moderně vybavených dílnách a gastronomických provozech s vysokou úspěšností absolventů na trhu práce.",
+          "evidence": "Žáci obsluhovali summit Evropského politického společenství na Pražském hradě; dlouhodobě velmi vysoká úspěšnost závěrečných zkoušek"
+        },
+        {
+          "tag": "Silné partnerství se zaměstnavateli",
+          "detail": "Intenzivní spolupráce s firmami a profesními svazy podporuje rozvoj odborných kompetencí a uplatnitelnost absolventů.",
+          "evidence": "Praxe v reálném prostředí firem včetně špičkových gastronomických pracovišť; zapojení v Národní soustavě kvalifikací"
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Rozšířené poradenské pracoviště s psychologem, kariérovým poradcem a asistenty zajišťuje individuální péči.",
+          "evidence": "Školní poradenské pracoviště zajišťuje služby v rozsahu odpovídajícím velikosti školy; doučovací aktivity a individuální konzultace"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Škola vykazuje poměrně vysoký počet zameškaných hodin včetně neomluvených, což je nejčastější příčinou předčasných odchodů.",
+          "evidence": "Neomluvené absence jsou nejčastějším důvodem pro kázeňská opatření; přes cílené preventivní aktivity se nedaří zlepšovat docházku"
+        },
+        {
+          "tag": "Pasivní vyučovací metody",
+          "detail": "Ve větší části hodin převažuje frontální výuka, která neposkytuje žákům dostatek prostoru pro aktivní zapojení a rozvoj kritického myšlení.",
+          "evidence": "Ve větší části hodin převažovala frontální výuka kombinovaná se samostatnou prací; vyučujícím se nedařilo podporovat tvůrčí a kritické myšlení"
+        },
+        {
+          "tag": "Slabé vyhodnocování výsledků",
+          "detail": "Chybí systematické rozbory výsledků a sebehodnocení žáků, což snižuje možnost přijmout cílená opatření ke zlepšení.",
+          "evidence": "Podrobné a systematické rozbory nejsou realizovány; žáci nebyli vedeni k sebehodnocení a vzájemnému hodnocení"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a předčasné odchody ze vzdělávání?",
+        "Jaké konkrétní metody aktivního učení se používají v jednotlivých předmětech?",
+        "Jak se škola připravuje na změny v metodách vyučování a formativním hodnocení?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory (gastronomie, automechanika, instalatérství) s podporou kvalitního vybavení a praxe u zaměstnavatelů",
+        "Žáci potřebující individuální podporu a poradenství díky rozšířenému poradenském týmu",
+        "Žáci s ambicí pracovat v gastronomii nebo cestovním ruchu s možností účasti na prestižních akcích"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absencím – škola zatím nenašla účinné řešení tohoto problému",
+        "Žáci preferující aktivní a interaktivní výuku – v teoretických předmětech převažuje frontální přístup",
+        "Žáci s nižším studijním potenciálem – absence systematického vyhodnocování výsledků může ztížit jejich podporu"
+      ],
+      "plain_czech_summary": "Škola je moderně vybavená a dobře spolupracuje se zaměstnavateli, což vede k vysoké úspěšnosti absolventů na trhu práce. Silnou stránkou je kvalitní odborný výcvik a rozšířené poradenské služby. Hlavní problémy jsou vysoká absence žáků, pasivní vyučovací metody v teoretických předmětech a nedostatečné vyhodnocování výsledků. Škola se snaží zlepšovat, ale v některých oblastech zatím nenašla účinná řešení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní v klíčových předmětech",
+        "key_numbers": [
+          "Vyšší úspěšnost v češtině a matematice v oborech informační služby a veřejnosprávní činnost",
+          "Vyšší úspěšnost v angličtině v oborech hotelnictví a ekonomika",
+          "Vyšší hrubá neúspěšnost v jedné třídě v anglickém jazyce (12 žáků)"
+        ],
+        "evidence": "Ve školním roce 2021/2022 dosáhla škola prokazatelně vyšší úspěšnosti v předmětech český jazyk a literatura a matematika; zaznamenala vyšší neúspěšnost v anglickém jazyce v jedné třídě"
+      },
+      "absence": {
+        "trend": "Negativní – vysoká a neřešená",
+        "key_numbers": [
+          "Poměrně vysoký počet zameškaných hodin",
+          "Vysoký počet neomluvených absencí",
+          "Absence je nejčastější příčinou předčasných odchodů ze vzdělávání"
+        ],
+        "evidence": "Škola vykazuje poměrně vysoký počet zameškaných hodin, včetně hodin neomluvených; přes řadu cílených preventivních aktivit se škole nedaří zlepšovat docházku"
+      },
+      "support_services": [
+        "Výchovný poradce, metodik prevence, školní psycholog, kariérový poradce, školní asistentka",
+        "Doučovací aktivity a individuální konzultace pro žáky ohrožené školním neúspěchem",
+        "Žákovská portfolia v oborech s maturitní zkouškou pro sebereflexí a zhodnocení kompetencí"
+      ],
+      "safety_climate": [
+        "Bezpečnost posílena instalací elektronického zabezpečení vchodu do budovy",
+        "Personální zajištění vchodu do budovy školy a domova mládeže",
+        "Pravidelný adaptační kurz pro žáky prvního ročníku posiluje zdravé vztahy v kolektivu"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá kvalitní spolupráce se zaměstnavateli a profesními svazy",
+        "Praxe v reálném prostředí firem včetně špičkových gastronomických pracovišť",
+        "Spolupráce se Slezskou univerzitou v Opavě – konzultační středisko celoživotního vzdělávání",
+        "Autorizovaná osoba u gastronomických oborů – realizace zkoušek v Národní soustavě kvalifikací"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Hlavní zjištění jsou jasně identifikována, ačkoli některé pasáže jsou detailnější než pro rodiče nutné.",
+      "uncertainty_notes": [
+        "Není jasné, jaké konkrétní opatření škola plánuje proti absencím – zpráva pouze konstatuje, že dosavadní přístupy nefungují",
+        "Chybí informace o tom, jak se změní vyučovací metody – jsou pouze doporučení inspekce, ne konkrétní plán",
+        "Není specifikováno, jak se bude vyhodnocovat účinnost nových opatření"
+      ]
+    }
+  }
+}

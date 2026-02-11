@@ -1,0 +1,112 @@
+{
+  "report_id": "SOU_600170993_2022-03-07",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:12:35.980377+00:00",
+  "run_finished_utc": "2026-02-10T07:13:56.863719+00:00",
+  "raw_file": "SOU_600170993_2022-03-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600170993_2022-03-07",
+    "school_profile": {
+      "school_type": "Střední škola technická s teoretickým a praktickým vyučováním, domovem mládeže a školní jídelnou.",
+      "inspection_period": "7. až 10. 3. 2022",
+      "school_change_summary": "Škola prošla kompletní výměnou vedení a třetiny pedagogického sboru v posledních třech letech, název školy byl upraven k 1. 9. 2020."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Praktická výuka v odborném výcviku probíhá na dobré úrovni s důrazem na individuální přístup a bezpečnost.",
+          "evidence": "Vesměs byl odborný výcvik dobře organizačně zajištěn... vhodné byly instruktážní ukázky... individuální přístup učitelů."
+        },
+        {
+          "tag": "Zázemí a vybavení",
+          "detail": "Škola disponuje kvalitním technickým vybavením a prostory byly v poslední době rekonstruovány.",
+          "evidence": "Rekonstruovala... prostory, využila prostředky na nákup výukových pomůcek (svářečky, 3D tiskárny, kolový traktor)."
+        },
+        {
+          "tag": "Partnerské vazby",
+          "detail": "Fungující spolupráce s firmami zajišťuje žákům kvalitní praxi a uplatnění.",
+          "evidence": "Systém spolupráce školy se smluvními partnery... je nastavený a funkční... žáci získávali... potřebné kompetence."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nestabilita a řízení",
+          "detail": "Velká fluktuace pedagogů a nekvalifikovanost nových učitelů negativně ovlivňují kvalitu výuky.",
+          "evidence": "Výrazná obměna pedagogického kolektivu... do důležitých rolí byli jmenováni i učitelé s minimální praxí nebo bez odborné kvalifikace."
+        },
+        {
+          "tag": "Problémy s klasifikací",
+          "detail": "Nefunkční kontrolní systém vede k vysokému počtu žáků bez klasifikace a k nejednotnému hodnocení.",
+          "evidence": "69 žáků neklasifikováno... 313 případů klasifikace k doplnění... několik desítek žáků bylo... nehodnoceno."
+        },
+        {
+          "tag": "Kvalita teoretické výuky",
+          "detail": "Výuka je často pasivní, učitelé jen přednáší a chybí aktivní zapojení žáků.",
+          "evidence": "Žáci byli převážně jen pasivními příjemci informací... učitelé jen četli nebo diktovali... účelnost... byla problematická."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší současný nedostatek kvalifikovaných učitelů teoretických předmětů a jak podporuje nové kolegy?",
+        "Jaká konkrétní opatření byla přijata ke snížení vysokého počtu neklasifikovaných žáků a neúspěšnosti u opravných zkoušek?",
+        "Jak škola zajišťuje, aby hodnocení žáků bylo jednotné a spravedlivé napříč všemi předměty?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří se chtějí vyučit technickým řemeslným oborům a upřednostňují praktickou přípravu před teorií.",
+        "Žáci, kteří oceňují dobré materiální zázemí, moderní stroje a možnost získat řidičský či svářečský průkaz.",
+        "Studenti, kteří potřebují ubytování v domově mládeže s příjemným zázemím a bohatou volnočasovou nabídkou."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří plánují studovat nástavbové studium, kde byla zjištěna vysoká neúspěšnost u maturity.",
+        "Studenti očekávající moderní a interaktivní metody výuky i v teoretických předmětech.",
+        "Rodiče, kteří vyžadují stabilitu pedagogického sboru a transparentní systém hodnocení."
+      ],
+      "plain_czech_summary": "Technická škola prošla v posledních letech velkými změnami ve vedení i učitelském sboru, což se negativně podepsalo na kvalitě řízení a teoretické výuky. Inspekce zaznamenala vysoký podíl nekvalifikovaných učitelů a pasivní metody výuky, kde žáci jen opisují prezentace. Velkým problémem je nefunkční systém hodnocení, kvůli kterému desítky žáků nebyly klasifikovány. Naopak velmi dobrou úroveň má odborný výcvik a praktická výuka, která je dobře vybavená a zajištěná ve spolupráci s firmami. Škola nabízí kvalitní zázemí pro zájemce o řemeslo, ale potýká se s problémy v oblasti teoretického studia a stability kolektivu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vysoká neúspěšnost, zejména v nástavbovém studiu.",
+        "key_numbers": [
+          "Hrubá neúspěšnost u maturity cca 25 % (2021)",
+          "Neúspěšnost v nástavbovém oboru Provozní technika",
+          "Neúspěšnost u opravných zkoušek 40 %"
+        ],
+        "evidence": "Hrubá neúspěšnost... činila přibližně 25 %. Na neúspěšnosti se podíleli výhradně žáci nástavbového oboru."
+      },
+      "absence": {
+        "trend": "Vysoká absence, výrazný podíl neomluvených hodin.",
+        "key_numbers": [
+          "756 hodin neomluvené absence",
+          "Vysoká absence i zdravotních důvodů",
+          "Více než dvě desítky žáků s neomluvenou absencí"
+        ],
+        "evidence": "Absence žáků... byla poměrně vysoká... vysoké byly rovněž neomluvené absence (756 hodin u více než dvou desítek žáků)."
+      },
+      "support_services": [
+        "Výchovné poradenství a prevence zajišťována, ale formálně a s nedostatečnou provázaností.",
+        "Škola pořádá adaptační kurzy pro první ročníky.",
+        "Funguje domov mládeže s volnočasovými aktivitami (keramika, sport)."
+      ],
+      "safety_climate": [
+        "Klidná atmosféra ve výuce daná spíše pasivitou žáků.",
+        "Nedůvěra mezi zaměstnanci a vůči vedení školy.",
+        "V odborném výcviku bezpečnost zajištěna a dbáno na zásady."
+      ],
+      "partnerships_practice": [
+        "Funkční systém praxe u smluvních partnerů (např. IVECO).",
+        "Možnost získat řidičský a svářečský průkaz během studia.",
+        "Spolupráce s firmou Škoda Auto a Univerzitou Hradec Králové."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně rozdělená a konstatování jsou podložená konkrétními příklady. Jedinou komplikací je odborná terminologie spojená s popisem chyb ve vnitřních kontrolních mechanismech školy.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní počty nekvalifikovaných učitelů, pouze procentní vyjádření obměny sboru.",
+        "Není zcela jasné, jaký je aktuální stav zajištění výuky tělesné výchovy po skončení inspekce."
+      ]
+    }
+  }
+}

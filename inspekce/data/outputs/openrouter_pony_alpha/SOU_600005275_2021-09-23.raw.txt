@@ -1,0 +1,103 @@
+{
+  "report_id": "SOU_600005275_2021-09-23",
+  "school_profile": {
+    "school_type": "Soukromá střední škola (s.r.o.) nabízející vzdělání s výučním listem i maturitou.",
+    "inspection_period": "23. 9. 2021 − 24. 9. 2021, 29. 9. 2021 − 30. 9. 2021",
+    "school_change_summary": "Škola se přestěhovala do nových prostor VŠE a omezila nabídku oborů (končí Kadeřník, Kuchař-číšník)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe",
+        "detail": "Škola úspěšně propojuje teorii s praxí a využívá odborníky z reálného prostředí.",
+        "evidence": "„Kvalitu odborného výcviku kladně ovlivňuje erudice pedagogů... propojení teoretických znalostí s jejich využitím v praxi.“"
+      },
+      {
+        "tag": "Prostředí",
+        "detail": "V listopadu 2020 se škola přestěhovala do moderních prostor Vysoké školy ekonomické.",
+        "evidence": "„Škola sídlí od listopadu 2020 v moderních pronajatých prostorách Vysoké školy ekonomické.“"
+      },
+      {
+        "tag": "Umění",
+        "detail": "V oboru Grafický design probíhá kvalitní výuka podporující tvořivost a invenci žáků.",
+        "evidence": "„V oboru Grafický design zvolené vzdělávací strategie účinně podpořily rozvoj odborných kompetencí i jejich invenci.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost",
+        "detail": "Velká část žáků nedokončí studium včas nebo neúspěšně, zejména v oboru Cestovní ruch.",
+        "evidence": "„Přibližně 10 % žáků oboru Cestovní ruch... ukončilo úspěšně vzdělávání složením maturitní zkoušky.“"
+      },
+      {
+        "tag": "Absence",
+        "detail": "Škola bojuje s vysokou absencí, kterou se nedaří efektivně řešit, a to vede k neúspěchu.",
+        "evidence": "„Vysoký počet zameškaných hodin často vedl k předčasnému ukončení studia... nedostatečně eliminovat vyšší absenci.“"
+      },
+      {
+        "tag": "Kvalita výuky",
+        "detail": "Běžná výuka je často monotónní, bez moderních pomůcek a nebere ohled na individuální úroveň žáků.",
+        "evidence": "„Převládala frontální výuka... chyběla efektivní práce s textem... nebyly využity příležitosti k diferenciaci učebních úloh.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají studijní potíže nebo jazykovou bariéru?",
+      "Jaká je statistika úspěšnosti dokončení studia v konkrétním oboru za poslední tři roky?",
+      "Jakými aktivními metodami učitelé zajišťují, že výuka není jen pasivním poslechem?"
+    ],
+    "who_school_fits": [
+      "Talentovaní uchazeči o obor Grafický design, kde je silná úroveň výuky a 100% úspěšnost maturantů.",
+      "Samostatní žáci, kteří nevyžadují intenzivní individuální podporu nebo diferenciované úkoly.",
+      "Prakticky orientovaní studenti, kterým vyhovuje propojení výuky s reálným provozem."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o obor Cestovní ruch, který má kriticky nízkou úspěšnost absolventů (cca 10 %).",
+      "Žáci, kteří potřebují systematickou podporu při učení nebo mají specifické vzdělávací potřeby.",
+      "Studenti, kteří mají tendenci k vyšší absenci, neboť škola nemá tento problém pod kontrolou."
+    ],
+    "plain_czech_summary": "Škola nabízí zajímavé obory v moderních prostorách VŠE a v oboru Grafický design dosahuje vynikajících výsledků. Pozor si dejte na obor Cestovní ruch, kde úspěšně odmaturovalo jen asi 10 % žáků nástupního ročníku. Celkově škola bojuje s vysokou absencí a předčasnými odchody studentů. Výuka je tradiční, učitelé málo využívají moderní technologie nebo aktivní zapojení žáků. Pokud hledáte kvalitní uměleckou přípravu, je to dobrá volba, ale u všeobecnějších oborů buďte opatrní."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Klesající úspěšnost v některých oborech, vysoká neúspěšnost v ČJL.",
+      "key_numbers": [
+        "Pouze cca 10 % žáků oboru Cestovní ruch úspěšně složilo maturitu.",
+        "Hrubá neúspěšnost u maturity je nad celorepublikovým průměrem (vyjma Grafického designu).",
+        "Nejméně se dařilo uspět v didaktickém testu z českého jazyka a literatury."
+      ],
+      "evidence": "„Ve všech oborech, vyjma oboru Grafický design, nad průměrem hrubé neúspěšnosti... nejméně se dařilo žákům uspět v didaktickém testu z českého jazyka.“"
+    },
+    "absence": {
+      "trend": "Vysoká a rostoucí absence, která vede k neúspěchu ve studiu.",
+      "key_numbers": [
+        "Vysoký počet zameškaných hodin často vedl k předčasnému ukončení studia.",
+        "Absence je vyšší zejména v nematuritních oborech.",
+        "Opatření ke snížení absence nejsou dostatečně účinná."
+      ],
+      "evidence": "„Nedaří dostatečně eliminovat vyšší absenci žáků ve výuce... vysoký počet zameškaných hodin často vedl k předčasnému ukončení studia.“"
+    },
+    "support_services": [
+      "Individuální přístup výchovné poradkyně v prostředí malé školy.",
+      "Adaptační proces pro prváky (kurzy, exkurze).",
+      "Nesystematická podpora žáků-cizinců s jazykovou bariérou."
+    ],
+    "safety_climate": [
+      "Vstřícná pracovní atmosféra ve většině hodin.",
+      "Zajištěný elektronický vstup do budovy.",
+      "Nedůsledné řešení rizikového chování a záškoláctví."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery při praktickém vyučování.",
+      "Využívání odborníků z praxe ve výuce.",
+      "Nájem prostor a zařízení od VŠE a MČ Praha."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozdělený a klade důraz na konkrétní čísla a srovnání, i když používá odborné termíny.",
+    "uncertainty_notes": [
+      "Přesné procento neúspěšnosti u maturity není uvedeno pro všechny obory, pouze srovnání s průměrem.",
+      "Nejasná míra zapojení žáků-cizinců do běžné výuky mimo zmínku o nesystematické podpoře."
+    ]
+  }
+}

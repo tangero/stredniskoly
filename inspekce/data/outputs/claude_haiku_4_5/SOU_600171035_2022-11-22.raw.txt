@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600171035_2022-11-22",
+  "school_profile": {
+    "school_type": "Střední škola elektrotechnická a energetická s domovem mládeže a školní jídelnou",
+    "inspection_period": "22. listopadu až 24. listopadu 2022",
+    "school_change_summary": "Škola realizovala rozsáhlé investice: Energocentrum, školící středisko On Voltage center, polygon Baby polygon. Vybavila učebny didaktickou technikou a vybudovala víceúčelové venkovní hřiště. Počet žáků dosáhl téměř nejvyššího povoleného limitu (391 žáků)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Špičková odborná vybavenost",
+        "detail": "Škola disponuje Energocentrem, školícím střediskem a polygony, které ji řadí mezi expertní vzdělávací centra v ČR.",
+        "evidence": "\"Energocentrum (hala ve které je zabudovaná veškerá technika potřebná pro práci s obnovitelnými zdroji)\""
+      },
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "V letech 2020–2022 byli neúspěšní pouze 2,4 % žáků v češtině, ostatní předměty zvládli všichni.",
+        "evidence": "\"Z celkového počtu 164 žáků konajících v tomto období maturitní zkoušku pouze čtyři žáci, tj. 2,4 %, byli neúspěšní\""
+      },
+      {
+        "tag": "Kvalitní domov mládeže",
+        "detail": "Domov nabízí pestrou nabídku volnočasových aktivit, posilovnu, knihovnu, keramickou dílnu a motivuje k sociálním kompetencím.",
+        "evidence": "\"Domov mládeže zajišťuje ubytovaným žákům kvalitní podmínky pro bydlení, přípravu na vzdělávání i realizaci volnočasových aktivit\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá komunikace o speciálních potřebách",
+        "detail": "Výchovný poradce sdílí pouze stručné výtahy z doporučení školských poradenských zařízení, čímž se pedagogům nedostávají kompletní informace.",
+        "evidence": "\"výchovný poradce sdílí pouze velmi stručný výtah z těchto doporučení, čímž se k vyučujícím nedostávají kompletní informace\""
+      },
+      {
+        "tag": "Pasivní přístup v teoretické výuce",
+        "detail": "Převládá frontální výuka bez aktivního zapojení žáků, chybí diferenciace obsahu a práce s kritickým myšlením.",
+        "evidence": "\"Výuka byla vedená převážně frontálním způsobem... Formy výuky ve skupinách či dvojicích byly zařazovány výjimečně\""
+      },
+      {
+        "tag": "Nesystémová prevence školního neúspěchu",
+        "detail": "Strategie je pouze obecná bez konkrétních postupů. Minimální zájem o nabízené doučování a konzultace.",
+        "evidence": "\"Strategii předcházení školní neúspěšnosti má škola zpracovanou pouze v obecné rovině, bez specifikace konkrétních postupů\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s žáky se speciálními vzdělávacími potřebami a jak jsou jejich potřeby komunikovány učitelům?",
+      "Jaké jsou možnosti individuálního doučování a jak se škola snaží motivovat žáky k jeho využívání?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a aktivního zapojení žáků v teoretických předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o elektrotechniku a energetiku, kteří chtějí praktické dovednosti a špičkové vybavení",
+      "Studenti z jiných regionů, kterým vyhovuje kvalitní domov mládeže s bohatou nabídkou volnočasových aktivit",
+      "Talentovaní žáci, kteří se chtějí zapojit do odborných soutěží a získat mezinárodní zkušenosti"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – komunikace jejich potřeb mezi školou a učiteli není optimální",
+      "Žáci, kteří potřebují aktivní a interaktivní výuku – teoretické předměty jsou vedeny převážně frontálně",
+      "Žáci ohrožení školním neúspěchem – prevence není dostatečně systémová a individuální podpora není efektivně nabízena"
+    ],
+    "plain_czech_summary": "Střední škola elektrotechnická v Sokolnici je moderní zařízení se špičkovým vybavením pro odbornou výuku. Žáci dosahují výborných výsledků v maturitách a soutěžích. Domov mládeže nabízí kvalitní zázemí. Slabinou je pasivní přístup v teoretické výuce, kde převládá frontální výuka bez aktivního zapojení žáků. Problematická je také komunikace o speciálních potřebách žáků mezi poradenským pracovištěm a učiteli. Prevence školního neúspěchu není dostatečně systémová."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – výrazně lepší výsledky než průměr",
+      "key_numbers": [
+        "2,4 % neúspěšných v češtině (4 z 164 žáků v 2020–2022)",
+        "100 % úspěšnost v angličtině a matematice",
+        "100 % úspěšnost v profilové části maturit"
+      ],
+      "evidence": "\"Žáci maturitního oboru vykazovali za poslední tři školní roky ve společné i profilové části maturitní zkoušky podstatně lepší výsledky než žáci stejné skupiny oborů z jiných škol\""
+    },
+    "absence": {
+      "trend": "Pozitivní – nízké hodnoty díky včasné individuální intervenci",
+      "key_numbers": [
+        "187 hodin na žáka za rok 2021/2022",
+        "Neomluvenost cca 1,4 hodiny na žáka",
+        "Minimální výskyt neomluvené absence"
+      ],
+      "evidence": "\"Díky včasnému individuálnímu řešení případů zvýšené, popř. neomluvené absence se ji daří udržovat na nižších hodnotách\""
+    },
+    "support_services": [
+      "Výchovný poradce (zároveň zástupce ředitele) – funguje s nedostatky v komunikaci",
+      "Školní metodička prevence – dobře zajišťuje preventivní aktivity",
+      "Lektor češtiny a pedagog se znalostí srbského jazyka pro zahraniční žáky",
+      "Doučování a individuální konzultace pro neprospívající žáky (minimální zájem)"
+    ],
+    "safety_climate": [
+      "Pozitivní atmosféra založená na vzájemném respektu ve všech sledovaných hodinách",
+      "Minimální výskyt sociálně patologických jevů díky prevenci a volnočasovým aktivitám",
+      "Domov mládeže efektivně prevence rizikového chování",
+      "Správné dodržování zásad bezpečnosti práce v odborném výcviku"
+    ],
+    "partnerships_practice": [
+      "Rozsáhlá spolupráce se zahraničními partnery (např. srbská partnerská škola)",
+      "Smluvní partneři pro produktivní práci žáků na reálných zakázkách",
+      "Spolupráce s neziskovými organizacemi a orgány veřejné správy v prevenci",
+      "Partnerství s domovy mládeže v Jihomoravském kraji a celé ČR pro výměnu zkušeností"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Silné a slabé stránky jsou jasně identifikovány s konkrétními příklady. Některé pasáže jsou však technicky náročnější (např. popis systému poradenských služeb).",
+    "uncertainty_notes": [
+      "Není jasné, jak přesně se liší kvalita teoretické a praktické výuky – praktická výuka je chválena, teoretická kritizována",
+      "Počet žáků se speciálními potřebami (45) není kontextualizován – není jasné, zda je to vysoké či nízké číslo",
+      "Není specifikováno, jaké konkrétní opatření by měla škola přijmout pro zlepšení komunikace o speciálních potřebách"
+    ]
+  }
+}
+```

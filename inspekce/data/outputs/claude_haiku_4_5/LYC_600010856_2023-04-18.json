@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_600010856_2023-04-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:42:09.578012+00:00",
+  "run_finished_utc": "2026-02-09T16:42:36.707036+00:00",
+  "raw_file": "LYC_600010856_2023-04-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600010856_2023-04-18",
+    "school_profile": {
+      "school_type": "Soukromá střední odborná škola a střední odborné učiliště (SOŠ a SOU)",
+      "inspection_period": "18. 4. 2023 – 21. 4. 2023",
+      "school_change_summary": "Od poslední inspekce v 2017 došlo ke změně vedení (nový ředitel a zástupkyně). Škola zavedla nový obor Kombinované lyceum od 2022/2023. Pedagogický sbor se rozšířil a částečně obměnil."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Projektová činnost a partnerství",
+          "detail": "Škola se účelně zapojuje do bohaté projektové činnosti a spolupracuje se zaměstnavateli a profesními skupinami.",
+          "evidence": "Realizuje projekty na podporu inkluzivního vzdělávání, prevence rizikového chování a kariérového poradenství."
+        },
+        {
+          "tag": "Kvalita výuky v denní formě",
+          "detail": "Opatření pro zvýšení úspěšnosti jsou účinná v denní formě vzdělávání.",
+          "evidence": "Zvýšená hodinová dotace, volitelné semináře, výuka v menších skupinách, postupové zkoušky."
+        },
+        {
+          "tag": "Podpora začínajících učitelů",
+          "detail": "Nově příchozím pedagogům je poskytována cílená podpora.",
+          "evidence": "Mentoring, individuální plány rozvoje, vzájemné hospitace, metodická podpora."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kritické výsledky v oboru Podnikání",
+          "detail": "Obor Podnikání vykazuje velmi nízkou úspěšnost, zejména v distanční a dálkové formě.",
+          "evidence": "V distanční formě oboru Podnikání 2022: pouze 8,3 % žáků úspěšně dokončilo studium (1 z 12)."
+        },
+        {
+          "tag": "Nízký podíl absolventů v maturitních oborech",
+          "detail": "Jen malá část žáků, kteří nastoupí do 1. ročníku, úspěšně studium dokončí.",
+          "evidence": "V maturitním ročníku 2022 pouze 32,9 % žáků úspěšně dokončilo vzdělání v předepsané době."
+        },
+        {
+          "tag": "Nedostatečná diferenciace ve výuce",
+          "detail": "Učitelé málo využívají úlohy různé obtížnosti pro individuální rozvoj žáků.",
+          "evidence": "Inspekce zjistila ojediné využívání diferenciace a nedostatečnou podporu kritického myšlení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření škola zavádí pro zlepšení výsledků v oboru Podnikání, zejména v distanční formě?",
+        "Jak škola podporuje žáky, kteří mají nižší vstupní úroveň znalostí a jak jim pomáhá dosáhnout úspěchu?",
+        "Jaké jsou konkrétní výsledky školy v maturitních oborech (Ekonomika a podnikání, Hotelnictví, Cestovní ruch, Kombinované lyceum) z hlediska procenta absolventů?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktické obory (Kadeřnictví, Kuchař-číšník, Prodavač) v denní formě, kde škola dosahuje dobrých výsledků.",
+        "Motivovaní uchazeči do Kombinovaného lycea, kde škola ověřuje minimální úroveň angličtiny a motivaci.",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individualizovanou podporu a plány pedagogické podpory."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o obor Podnikání v distanční a dálkové formě – inspekce doporučuje jeho zrušení kvůli velmi nízké úspěšnosti (8,3 %).",
+        "Žáci s nižšími studijními předpoklady, kteří se hlásí do maturitních oborů – škola přijímá všechny bez ohledu na předpoklady.",
+        "Uchazeči, kteří potřebují intenzivní individuální podporu – kapacity doučování mohou být omezené."
+      ],
+      "plain_czech_summary": "Soukromá podřipská SOŠ a SOU v Roudnici nad Labem je školou s kvalitní výukou v denní formě, zejména v praktických oborech. Má dobrou podporu pro začínající učitele a realizuje zajímavé projekty. Hlavní problém je obor Podnikání, zejména v distanční formě, kde skončí úspěšně jen malá část žáků. Inspekce doporučuje jeho zrušení. Škola by měla více pracovat s diferenciací výuky a rozvojem kritického myšlení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Klesající úspěšnost, zejména v oboru Podnikání; zlepšení v češtině",
+        "key_numbers": [
+          "Obor Podnikání 2022: 40 % hrubá neúspěšnost (ČR 37,2 %)",
+          "Český jazyk 2022: 20 % neúspěšnost (2021: 14,3 %, ČR 2022: 24,3 %)",
+          "Podíl absolventů v maturitním ročníku 2022: pouze 32,9 %"
+        ],
+        "evidence": "Inspekce sledovala hrubou neúspěšnost (poměr neúspěšných k přihlášeným) v letech 2020–2022. Nejhorší je distanční forma oboru Podnikání s 8,3 % úspěšností."
+      },
+      "absence": {
+        "trend": "Není v textu zprávy specifikován",
+        "key_numbers": [],
+        "evidence": "Zpráva se zaměřuje na výsledky vzdělávání, ne na absence."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně (kariérový poradce), speciální pedagožka, školní psycholožka, metodička prevence",
+        "Individuální konzultace a doučování realizované učiteli jednotlivých předmětů",
+        "Plány pedagogické podpory pro žáky se speciálními vzdělávacími potřebami",
+        "Adaptační pobytový kurz pro první ročníky"
+      ],
+      "safety_climate": [
+        "Vztahy v třídních kolektivech jsou pravidelně analyzovány při třídnických hodinách",
+        "Signály rizikového chování jsou vyhodnocovány metodičkou prevence",
+        "Adaptační kurz přispívá k dobré atmosféře a pozitivním vztahům mezi žáky a třídními učiteli",
+        "Primární prevence realizuje škola prostřednictvím konzultačních hodin a individuálního poradenství"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zaměstnavateli a profesními skupinami pro naplňování profilu absolventa",
+        "Projekt EDISON 2022 se zahraničními studenty",
+        "Spolupráce se žákovským parlamentem na organizaci workshopů pro základní školy",
+        "Zapojování do charitativních akcí na podporu sociálních kompetencí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní data. Hlavní zjištění jsou jasná: kvalitní výuka v denní formě, ale kritické problémy v oboru Podnikání. Některé pasáže jsou však více úřednické.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, zda je to problém nebo ne.",
+        "Konkrétní počty žáků v jednotlivých oborech nejsou všechny uvedeny.",
+        "Výsledky v cizích jazycích jsou popsány jako 'srovnatelné či nižší', ale přesné procenta nejsou všude uvedena."
+      ]
+    }
+  }
+}

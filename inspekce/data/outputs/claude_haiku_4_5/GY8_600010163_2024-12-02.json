@@ -1,0 +1,116 @@
+{
+  "report_id": "GY8_600010163_2024-12-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:07:25.525942+00:00",
+  "run_finished_utc": "2026-02-09T16:07:50.963814+00:00",
+  "raw_file": "GY8_600010163_2024-12-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600010163_2024-12-02",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium v denní formě vzdělávání",
+      "inspection_period": "2. 12. 2024 – 4. 12. 2024",
+      "school_change_summary": "Škola stabilizovala pedagogický sbor, zvýšila kvalifikovanost učitelů a vybudovala nové odborné učebny. Příznivá atmosféra pro vzdělávání přetrvává."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce se světem",
+          "detail": "Škola má rozsáhlou síť partnerství se sociálními partnery a zahraničními školami, což rozvíjí jazykové kompetence žáků.",
+          "evidence": "Výměnné pobyty, společné projekty a soutěže účelně přispívají k rozvoji klíčových kompetencí."
+        },
+        {
+          "tag": "Motivace a výsledky",
+          "detail": "Klasifikační týdny dvakrát ročně motivují žáky k dosahování dobrých výsledků.",
+          "evidence": "Obvykle všichni žáci prospívají, v roce 2024 neuspěl pouze jeden žák v didaktickém testu z matematiky."
+        },
+        {
+          "tag": "Volný čas a osobnostní rozvoj",
+          "detail": "Akademie příslibu nabízí 44 zájmových útvarů, které rozvíjejí nadání a zájmy žáků.",
+          "evidence": "Účelné propojení školy s Akademií přispívá k rozvoji osobností a studijní úspěšnosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Individualizace výuky",
+          "detail": "Všichni žáci plní stejné úkoly bez možnosti vybírat si zadání podle svých schopností.",
+          "evidence": "Diferenciace vzdělávacího obsahu zohledňuje kognitivní schopnosti jen v malé míře."
+        },
+        {
+          "tag": "Kritické myšlení",
+          "detail": "Pedagogové méně pracují s informačními zdroji a nepodporují dostatečně kritické myšlení.",
+          "evidence": "Pedagogové nepravidelně zařazují práci s informačními zdroji a metody rozvíjející kritické myšlení."
+        },
+        {
+          "tag": "Formativní hodnocení",
+          "detail": "Formativní hodnocení se využívá jen minimálně, chybí zpětná vazba podporující rozvoj každého žáka.",
+          "evidence": "Jen někteří učitelé ověřují dosažení cíle a rozvíjejí sebereflexi žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi a jak mohou rodiče podporovat učení doma?",
+        "Jaké konkrétní metody používáte k rozvoji kritického myšlení a práce s informačními zdroji?",
+        "Jak funguje systém doučování a individuálních konzultací a pro koho je určen?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení kvalitního vzdělání v křesťanském prostředí s důrazem na osobnostní rozvoj",
+        "Děti zajímající se o sport, umění nebo vědu – Akademie příslibu nabízí 44 zájmových útvarů",
+        "Žáci s ambicemi na vysokou školu – škola má osvědčený systém přípravy na maturitu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnou individualizaci a diferenciaci – výuka je zatím více jednotná",
+        "Děti, které se učí lépe prací s různými zdroji a kritickým myšlením – tyto metody se zatím využívají méně",
+        "Žáci vyžadující časté formativní zpětnou vazbu – ta se v hodinách využívá jen částečně"
+      ],
+      "plain_czech_summary": "Gymnázium Varnsdorf je kvalitní škola s příznivou atmosférou, stabilním pedagogickým sborem a bohatou nabídkou volnočasových aktivit. Žáci dosahují dobrých výsledků a mají podporu při přípravě na vysokou školu. Silnou stránkou je spolupráce se zahraničními školami a rozsáhlá síť partnerství. Škola by měla více pracovat na individualizaci výuky, rozvoji kritického myšlení a používání formativního hodnocení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi dobrý – konzistentně vysoká úspěšnost",
+        "key_numbers": [
+          "Obvykle všichni žáci úspěšní nejpozději po podzimním zkušebním termínu",
+          "Ve zkušebním období 2024 neuspěl pouze 1 žák v didaktickém testu z matematiky"
+        ],
+        "evidence": "Účinná podpora při přípravě na maturitu v rámci běžných hodin a volitelných seminářů."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [
+          "Informace nejsou v inspekční zprávě dostupné"
+        ],
+        "evidence": "Zpráva se absence nezabývá."
+      },
+      "support_services": [
+        "Výchovná poradkyně zajišťuje kariérové poradenství a podporu při výběru dalšího studijního zaměření",
+        "Speciální pedagožka poskytuje podporu žákům se speciálními vzdělávacími potřebami a metodickou podporu učitelům",
+        "Metodička prevence zajišťuje primární prevenci rizikového chování",
+        "Doučování a individuální konzultace dostupné pro všechny zájemce",
+        "Školní stipendium v odůvodněných případech"
+      ],
+      "safety_climate": [
+        "Přátelská pracovní atmosféra, žáci se zapojují bez obav z chyby",
+        "Systematická práce na prevenci – třídnické hodiny, mediační týmy, peer mediátoři",
+        "Aklimatizační pobyty pro první ročníky, sportovní kurzy a projektové aktivity",
+        "Program DoFe pro rozvoj osobního potenciálu a prosociálních dovedností",
+        "Pravidelné zjišťování kvality vzájemných vztahů"
+      ],
+      "partnerships_practice": [
+        "Rozsáhlá síť sociálních partnerů a zahraničních škol",
+        "Výměnné pobyty žáků a společné projekty",
+        "Stáže na Juniorské Univerzitě Karlově",
+        "Dlouhodobá účast v programu DoFe",
+        "Spolupráce s Akademií příslibu na volnočasových aktivitách"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní číselné údaje o absencích a některé detaily o výsledcích testů.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, jaká je situace s docházkou žáků",
+        "Nejsou uvedeny konkrétní výsledky externího testování – pouze zmínka o 'dobrých výsledcích'",
+        "Počet žáků se speciálními vzdělávacími potřebami (13) a nadaných (3) je malý – není jasné, zda je to reprezentativní"
+      ]
+    }
+  }
+}

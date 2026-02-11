@@ -1,0 +1,117 @@
+{
+  "report_id": "LYC_691010366_2025-02-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:44:14.964162+00:00",
+  "run_finished_utc": "2026-02-09T13:44:40.619831+00:00",
+  "raw_file": "LYC_691010366_2025-02-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_691010366_2025-02-25",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická (soukromá, s.r.o.)",
+      "inspection_period": "25. února 2025 až 28. února 2025",
+      "school_change_summary": "Od poslední inspekce v roce 2019 škola rozšířila místa vzdělávání na Český Těšín a Přerov. Počet žáků a studentů se postupně zvyšuje. Od roku 2025 je nová ředitelka. Škola se zapojila do pilotního projektu propojení oborů vzdělání v zdravotnictví."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické dovednosti",
+          "detail": "Výuka na pracovištích partnerů je dobře zorganizovaná, žáci získávají kvalitní praktické dovednosti s důrazem na bezpečnost a zpětnou vazbu.",
+          "evidence": "Praktické vyučování probíhalo na pracovištích smluvních partnerů a bylo dobře zorganizované. Bezpečnost a ochrana zdraví při práci žáků byla důsledně dodržována."
+        },
+        {
+          "tag": "Sociální a charitativní angažovanost",
+          "detail": "Škola aktivně rozvíjí sociální kompetence žáků prostřednictvím projektů, charitativních akcí a prezentačních aktivit.",
+          "evidence": "Žáci a studenti aktivně připravují projektové dny pro děti mateřských a základních škol, participují na charitativních projektech (Krabice od bot, ADRA)."
+        },
+        {
+          "tag": "Psychosociální podpora",
+          "detail": "Škola poskytuje odbornou psychosociální podporu žákům při zvládání problémových situací v praktickém vyučování.",
+          "evidence": "Velkým pozitivem je intervence psychosociální podpory pro žáky a studenty zdravotnických škol, kde odborníci z praxe poskytují pomoc."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotné poradenské služby",
+          "detail": "Školní poradenské pracoviště není jednotně nastaveno – v Ostravě chybí jasné kompetence a efektivní spolupráce mezi členy.",
+          "evidence": "Ve škole v Ostravě nebyly jasně vymezené kompetence tohoto pracoviště. Není účelně nastavena spolupráce a komunikace mezi jednotlivými členy."
+        },
+        {
+          "tag": "Pasivní přístup k výuce",
+          "detail": "Výuka se příliš opírá o výklad učitele, žáci pracují s jedním zdrojem a málo se rozvíjí jejich kritické myšlení a samostatnost.",
+          "evidence": "Nejčastější formou výuky byl výklad učitele. Žákům byly často předkládány hotové informace a většinou pracovali pouze s jedním zdrojem."
+        },
+        {
+          "tag": "Slabá diferenciace a podpora",
+          "detail": "Učitelé málo přizpůsobují výuku individuálním potřebám žáků, chybí formativní hodnocení a práce se speciálními potřebami.",
+          "evidence": "Diferenciace podle individuálních potřeb žáků nebo zadávání úloh odlišné kognitivní náročnosti nebylo učiteli ve výuce aplikováno."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky se slabším prospěchem a jak funguje doučování?",
+        "Jaké jsou konkrétní plány na zlepšení jednotnosti poradenských služeb mezi jednotlivými místy školy?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a samostatného vyhledávání informací u žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí praktické zdravotnické vzdělání s důrazem na reálné dovednosti a bezpečnost",
+        "Studenti zainteresovaní v sociálním angažování a charitativní činnosti",
+        "Žáci, kteří se chtějí zapojit do sportovních a odborných soutěží na regionální a celorepublikové úrovni"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku – v teoretických předmětech se to nedostatečně uplatňuje",
+        "Studenti vyšší odborné školy, kterým chybí jednotná podpora školního poradenského pracoviště",
+        "Žáci, kteří se učí lépe aktivní metodou a diskusí – převažuje zde výklad učitele"
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní praktické zdravotnické vzdělání s důrazem na bezpečnost a reálné dovednosti. Žáci se zapojují do charitativních projektů a soutěží. Silnou stránkou je psychosociální podpora. Slabinou je pasivnější přístup k teoretické výuce – málo se rozvíjí kritické myšlení a samostatnost. Poradenské služby nejsou jednotně nastaveny. Škola pracuje na zlepšení těchto oblastí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní vysoká úspěšnost",
+        "key_numbers": [
+          "90% úspěšnost v češtině a angličtině (2022/2023 a 2023/2024)",
+          "Výsledky v profilové části srovnatelné s celorepublikovým průměrem zdravotnických oborů",
+          "Lepší výsledky u oboru Zdravotnické lyceum"
+        ],
+        "evidence": "Ve školních letech 2022/2023 a 2023/2024 vykazovali žáci 90% úspěšnost v předmětech Český jazyk a literatura i zkušebním předmětu Anglický jazyk."
+      },
+      "absence": {
+        "trend": "Velmi nízká neomluvená absence, vysoká omluvená absence",
+        "key_numbers": [
+          "Průměr omluvených hodin na žáka: 54,92",
+          "Neomluvené hodiny: téměř nebyly",
+          "Podíl neprospívajících žáků: kolem 1 %"
+        ],
+        "evidence": "Neomluvené hodiny byly zaznamenány a řešeny kázeňskými opatřeními, průměr omluvených hodin na žáka byl 54,92 a neomluvené hodiny téměř nebyly."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště na všech místech poskytovaného vzdělávání – ale s rozdílnou úrovní podpory",
+        "Psychosociální podpora od odborníků z praxe pro žáky zdravotnických oborů",
+        "Doučování a individuální konzultace pro žáky se slabším prospěchem",
+        "Kroužek přípravy k přijímacím zkouškám z biologie a chemie",
+        "Kariérové poradenství se spoluprací se sociálními partnery"
+      ],
+      "safety_climate": [
+        "Bezpečnost a ochrana zdraví jsou důsledně dodržovány při praktickém vyučování",
+        "Zvýšená úrazovost souvisí s důsledností evidence a výpadkem pravidelného pohybu žáků",
+        "Převážná část úrazů zaznamenána v hodinách tělesné výchovy nebo při praktickém vyučování",
+        "Doporučeno zpracovávat rozbor školní úrazovosti a rozšířit osvětu o prevenci úrazů"
+      ],
+      "partnerships_practice": [
+        "Efektivní spolupráce se sociálními partnery podporuje rozvoj odborných kompetencí",
+        "Praktické vyučování probíhá na pracovištích smluvních partnerů",
+        "Zpětná vazba od sociálních partnerů slouží k objektivizaci dosažených výsledků",
+        "Řetězec škol AGEL vytvořil vlastní systém prezentace a propagace"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Zjištění jsou konkrétní a opřená o pozorování. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři (např. popis akreditovaných programů).",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o počtu žáků se speciálními vzdělávacími potřebami – pouze zmínku o nárůstu",
+        "Není jasné, jaké konkrétní inovativní metody škola plánuje zavést – doporučení jsou obecná",
+        "Chybí informace o počtu a kvalifikaci školitelů v praktickém vyučování"
+      ]
+    }
+  }
+}

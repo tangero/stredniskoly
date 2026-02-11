@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600005569_2022-04-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:04:59.313234+00:00",
+  "run_finished_utc": "2026-02-09T17:05:24.430513+00:00",
+  "raw_file": "SOS_600005569_2022-04-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600005569_2022-04-05",
+    "school_profile": {
+      "school_type": "Střední škola dostihového sportu a jezdectví s domovem mládeže. Nabízí obory: Chovatelství (maturita), Jezdec a chovatel koní (výuční list), Trenérství dostihových koní (maturita).",
+      "inspection_period": "5. 4. 2022 – 11. 4. 2022",
+      "school_change_summary": "Od poslední inspekce v 2015 prošla škola rozsáhlou rekonstrukcí a přístavbou (2016–2017). Počet žáků vzrostl o 9 % na 220 žáků v 10 třídách. Domov mládeže ubytovává 66 žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jedinečné zaměření",
+          "detail": "Škola je v ČR jedinou se zaměřením na dostihový sport a jezdectví s umístěním u závodiště Chuchle.",
+          "evidence": "Trenérství dostihových koní má v celorepublikovém měřítku výlučné postavení."
+        },
+        {
+          "tag": "Propojení teorie a praxe",
+          "detail": "Dlouhodobá spolupráce se sociálními partnery zajišťuje praktické vyučování na reálných pracovištích.",
+          "evidence": "Dlouhodobá kooperace s profesními svazy vytváří nezbytnou vazbu mezi teoretickým vzděláváním a praxí."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Budova a domov mládeže jsou po rekonstrukci s moderním vybavením včetně odborné učebny jezdectví.",
+          "evidence": "Všechny prostory jsou moderní a nově vybavené, škola disponuje dostatečným počtem kmenových tříd."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Zhruba pětina žáků není hodnocena nebo neprospívá kvůli vysoké absenci, zejména v 2. a 3. ročníku.",
+          "evidence": "Ve 1. pololetí 2021/22 průměr 124 hodin absence na žáka. Přestože škola přijala opatření, jejich účinnost je pouze částečná."
+        },
+        {
+          "tag": "Předčasné ukončování studia",
+          "detail": "Zhruba polovina žáků předčasně ukončuje studium kvůli fyzické náročnosti oborů.",
+          "evidence": "Náročnost odborného výcviku a péče o koně kladou velké nároky na fyzickou zdatnost."
+        },
+        {
+          "tag": "Slabší výsledky dálkového studia",
+          "detail": "Maturitní zkoušky v dálkové formě mají výrazně horší úspěšnost než denní forma.",
+          "evidence": "U dálkové formy v průměru uspěla polovina žáků, zatímco denní forma dosahuje srovnatelné úspěšnosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká je fyzická příprava a zdravotní požadavky pro přijetí do jednotlivých oborů?",
+        "Jak škola řeší vysokou absenci a co dělá pro žáky, kteří mají problémy s docházkou?",
+        "Jaké jsou konkrétní možnosti zaměstnání absolventů a jak škola podporuje jejich kariérní rozvoj?"
+      ],
+      "who_school_fits": [
+        "Žáci s vášní pro koně, jezdectví a dostihový sport, kteří jsou fyzicky zdatní a motivovaní.",
+        "Uchazeči, kteří chtějí kombinovat teoretické vzdělání s praktickou praxí na reálných pracovištích.",
+        "Žáci, kteří si chtějí vybudovat kariéru v unikátním oboru bez konkurence jiných českých škol."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se zdravotními problémy nebo nižší fyzickou zdatností – obory jsou fyzicky velmi náročné.",
+        "Uchazeči, kteří mají problémy s docházkou – absence je zde kritickým problémem.",
+        "Žáci v dálkové formě studia – výsledky maturitní zkoušky jsou zde výrazně horší."
+      ],
+      "plain_czech_summary": "Jde o velmi specifickou školu zaměřenou na dostihový sport a jezdectví, která nemá v ČR konkurenci. Má moderní vybavení, kvalitní pedagogy a skvělé propojení s praxí. Absolventi se uplatňují po celém světě. Hlavní problém je vysoká absence žáků a předčasné odchody ze studia kvůli fyzické náročnosti. Škola je vhodná pro motivované žáky s vášní pro koně, ale vyžaduje vysokou fyzickou zdatnost a spolehlivost."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Denní forma srovnatelná s průměrem, dálková forma výrazně horší",
+        "key_numbers": [
+          "Denní studium: srovnatelná úspěšnost jako školy dané skupiny oborů",
+          "Dálková forma: v průměru uspěla polovina žáků",
+          "Závěrečná zkouška: 100% úspěšnost všech žáků"
+        ],
+        "evidence": "Z analýzy výsledků ve společné a profilové části maturitní zkoušky vyplývá srovnatelná úspěšnost u denního studia, ale výrazně horší výsledky u dálkové formy."
+      },
+      "absence": {
+        "trend": "Vysoká a problematická, částečně se daří snižovat",
+        "key_numbers": [
+          "2020/21 (distanční výuka): 73 omluvených hodin na žáka za rok",
+          "2021/22 1. pololetí: 124 omluvených hodin na žáka za pololetí",
+          "Zhruba pětina žáků není hodnocena nebo neprospívá"
+        ],
+        "evidence": "Problémovým jevem zůstává zvýšená absence žáků, která se promítá do větší podílu nehodnocených či neprospívajících žáků."
+      },
+      "support_services": [
+        "Školský poradenský tým (výchovná poradkyně, metodička primární prevence)",
+        "Individualizace pro žáky se speciálními vzdělávacími potřebami a s odlišným mateřským jazykem",
+        "Doučování a konzultace prostřednictvím projektů (Šablony II, Erasmus+)",
+        "Vychovatelé domova mládeže podporují přípravu a samostudium"
+      ],
+      "safety_climate": [
+        "Celodenní přítomnost nepedagogického pracovníka u vstupu do školy",
+        "Elektronicky zabezpečený vstup do prostor školy",
+        "Funkční školní preventivní strategie včetně adaptačních pobytů pro prvňáky",
+        "Účinný systém ukládání výchovných opatření"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá kooperace s profesními svazy v dostihovém sportu",
+        "Praktické vyučování na smluvních pracovištích a závodišti Velká Chuchle",
+        "Projekt Erasmus+ zajišťující odborné stáže a výjezdy žáků",
+        "80 % jezdců a žokejů v dostihovém sportu jsou nebo byli žáky školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní čísla, citace a doklady. Slabší je pouze v tom, že některé pasáže jsou dlouhé a úřednické, což může ztížit orientaci rodičům.",
+      "uncertainty_notes": [
+        "Není jasné, jaké jsou přesné zdravotní a fyzické požadavky pro přijetí – zpráva zmiňuje ověření fyzické zdatnosti, ale nespecifikuje kritéria.",
+        "Chybí informace o tom, jak přesně škola řeší vysokou absenci – opatření jsou zmíněna, ale jejich konkrétní podobu není jasné.",
+        "Není jasné, zda se vysoká absence týká všech žáků rovnoměrně nebo jen určitých skupin (např. starších ročníků)."
+      ]
+    }
+  }
+}

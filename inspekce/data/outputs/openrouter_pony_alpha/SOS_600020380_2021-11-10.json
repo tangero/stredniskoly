@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600020380_2021-11-10",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:19:40.278755+00:00",
+  "run_finished_utc": "2026-02-10T08:20:47.435879+00:00",
+  "raw_file": "SOS_600020380_2021-11-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600020380_2021-11-10",
+    "school_profile": {
+      "school_type": "Střední škola (Obchodní akademie) a Vyšší odborná škola",
+      "inspection_period": "10. − 12. 11. 2021",
+      "school_change_summary": "Škola modernizovala prostory a zaměřila se na zahraniční obchod a cestovní ruch, ale vyšší odborná škola bojuje s klesajícím zájmem a docházkou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky",
+          "detail": "Výuka cizích jazyků probíhá na vysoké úrovni v široké nabídce včetně číštiny a mezinárodních certifikátů.",
+          "evidence": "Vzdělávání v cizích jazycích má v obchodní akademii tradičně vysokou úroveň. V nabídce... anglický, německý, španělský, italský a ruský jazyk... čínský jazyk."
+        },
+        {
+          "tag": "Prostředí",
+          "detail": "Škola prošla technickou modernizací a nabízí nadprůměrné vybavení včetně nových prostor pro žáky.",
+          "evidence": "Proběhlo opláštění budovy, instalace výtahu... prostory jsou nadprůměrně vybaveny průběžně obnovovanou didaktickou a výpočetní technikou."
+        },
+        {
+          "tag": "Uplatnění",
+          "detail": "Absolventi mají stabilní uplatnitelnost na trhu práce a škola jim umožňuje získat odborné kompetence.",
+          "evidence": "Uplatnitelnost absolventů obchodní akademie i VOŠ na trhu práce je stabilní... různé subjekty se obracejí na školu s konkrétními požadavky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Docházka VOŠ",
+          "detail": "Na vyšší odborné škole je kriticky nízká reálná docházka studentů do výuky, což snižuje její efektivitu.",
+          "evidence": "Negativním zjištěním byla vysoká absence studentů v jednotlivých hodinách, která dosahovala až 80 % zapsaných."
+        },
+        {
+          "tag": "Metodika",
+          "detail": "Převažuje frontální způsob výuky a hodiny často postrádají smysluplné shrnutí a zpětnou vazbu.",
+          "evidence": "Celkově převládal frontální způsob výuky... v závěru... méně často vyhodnocení stanoveného vzdělávacího cíle a jen ojediněle hodnocení hodiny z pohledu žáků."
+        },
+        {
+          "tag": "Koncepce",
+          "detail": "Škola nemá účinnou strategii pro řešení nízké účasti studentů VOŠ a jejich předčasných odchodů.",
+          "evidence": "Škola dosud nevytvořila účinnou strategii, která by vedla k zamezení využívání formálního postavení studentů VOŠ... aniž by... docházeli."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola pracuje s individuálními vzdělávacími plány a jak konkrétně podporuje žáky se speciálními potřebami?",
+        "Jaké konkrétní aktivity a projekty (Erasmus+) jsou k dispozici pro rozvoj jazykových dovedností žáků?",
+        "Jakým způsobem vyučující zajišťují zpětnou vazbu a hodnocení cílů hodiny, aby výuka nebyla pouze frontální?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí získat silné jazykové kompetence a chtějí využívat mezinárodní výměny.",
+        "Pro žáky, kteří očekávají moderní prostředí a vybavení školy v centru města.",
+        "Pro ty, kteří se chtějí dále vzdělávat v ekonomických oborech a uplatnit se v praxi."
+      ],
+      "who_should_be_cautious": [
+        "Pro uchazeče o VOŠ, kteří preferují klasické denní studium s plnou docházkou a interakcí s kolegy.",
+        "Pro studenty, kteří potřebují pestřejší a méně frontální metody výuky.",
+        "Pro ty, kteří očekávají vlastní školní jídelnu přímo v budově."
+      ],
+      "plain_czech_summary": "Obchodní akademie v Jablonci nad Nisou nabízí nadprůměrné vybavení a vynikající úroveň výuky cizích jazyků, což potvrzuje i zájem o mezinárodní výměny. Pro rodiče je důležité vědět, že škola je bezpečná a vede žáky k úspěchu v soutěžích i v maturitních zkouškách. Rizikem je především vyšší odborná škola, kde se potýkají s extrémně nízkou docházkou studentů a nedostatečnou strategií pro řešení tohoto problému. Výuka na střední škole je kvalitní, ale místy příliš tradiční a frontální."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nadprůměrná úspěšnost",
+        "key_numbers": [
+          "Hrubá neúspěšnost nižší než průměr oboru",
+          "Ve společné části úspěšnější než ostatní školy v ČR",
+          "Průměrný prospěch žáků 1,96"
+        ],
+        "evidence": "Ve společné části maturitní zkoušky je škola v dané skupině oborů dlouhodobě úspěšnější než ostatní školy v České republice."
+      },
+      "absence": {
+        "trend": "Extrémně vysoká absence na VOŠ",
+        "key_numbers": [
+          "Až 80 % absence v hodinách VOŠ",
+          "Ve 3. ročníku VOŠ studuje jen 13 studentů",
+          "Podíl neprospívajících na SŠ pod 3 %"
+        ],
+        "evidence": "Negativním zjištěním byla vysoká absence studentů v jednotlivých hodinách, která dosahovala až 80 % zapsaných."
+      },
+      "support_services": [
+        "Školní psycholožka na částečný úvazek",
+        "Výchovná poradkyně a metodička prevence",
+        "Individuální psychologická pomoc a kariérové poradenství"
+      ],
+      "safety_climate": [
+        "Systém protiúrazové prevence nastaven efektivně",
+        "Elektronické zámky a videotelefon na vchodech",
+        "Žáci pravidelně seznamováni s pravidly bezpečnosti"
+      ],
+      "partnerships_practice": [
+        "Program Erasmus+ pro stáže a mobility",
+        "Spolupráce s odborníky z praxe při absolutoriích",
+        "Spolek Společnost přátel OA při organizaci akcí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, terminologie je vysvětlena a klíčová tvrzení jsou podložena fakty.",
+      "uncertainty_notes": [
+        "Nejasná definice 'zvláštního studijního režimu' ve školním řádu VOŠ.",
+        "Chybí detailnější data o konkrétních výsledcích v jednotlivých předmětech.",
+        "Není zcela jasné, jak škola konkrétně řeší propast mezi počtem přijatých a reálně docházejících studentů VOŠ."
+      ]
+    }
+  }
+}

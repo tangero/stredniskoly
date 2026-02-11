@@ -1,0 +1,109 @@
+{
+  "report_id": "GY4_691013489_2021-06-01",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:36:27.429894+00:00",
+  "run_finished_utc": "2026-02-10T08:37:16.311181+00:00",
+  "raw_file": "GY4_691013489_2021-06-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691013489_2021-06-01",
+    "school_profile": {
+      "school_type": "Soukromé gymnázium se zaměřením na ICT, cizí jazyky a tělesnou výchovu.",
+      "inspection_period": "1. 6. 2021 − 3. 6. 2021",
+      "school_change_summary": "Škola vznikla 1. 9. 2020, v době inspekce fungoval teprve první rok."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Moderní výuka",
+          "detail": "Výuka probíhá v blocích a projektech, moderní technologie jsou běžnou součástí výuky.",
+          "evidence": "„Výuka v blocích podporuje pochopení učiva v širších souvislostech... Moderní technologie byly běžnou součástí výuky.“"
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Malé třídy a systém hodnocení umožňují sledovat individuální pokrok každého žáka.",
+          "evidence": "„Zavedené mapy učebního pokroku žáků... umožňují sledovat individuální pokrok každého žáka.“"
+        },
+        {
+          "tag": "Odborníci z praxe",
+          "detail": "Škola spolupracuje s technologickými firmami a zapojuje odborníky do výuky.",
+          "evidence": "„Příkladem jsou navázané partnerské vztahy s předními technologickými firmami... zapojení odborníků z praxe.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "Polovina učitelů nesplňuje předpoklad odborné kvalifikace, další vzdělávání není koncepční.",
+          "evidence": "„Předpoklad odborné kvalifikace nesplňují 3 vyučující... DVPP však vychází především ze zájmu pedagogů.“"
+        },
+        {
+          "tag": "Pasivita žáků",
+          "detail": "Převažující frontální výuka a málo prostoru pro ústní projev mohou vést k pasivitě.",
+          "evidence": "„Ve vzdělávání převládala frontální forma vyučování... což v některých případech k vedlo k pasivitě části žáků.“"
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Úkoly se neliší podle potřeb žáků, studijní potenciál jednotlivců není plně využit.",
+          "evidence": "„Chyběla diferenciace úkolů s ohledem na vzdělávací potřeby žáků, studijní potenciál jednotlivců tak nebyl vždy efektivně využit.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola systémově řeší doplnění kvalifikace učitelů, kteří ji momentálně nemají?",
+        "Jakým způsobem jsou ve výuce uplatňovány aktivizační metody, aby se předešlo pasivitě žáků?",
+        "Jak škola zajišťuje diferenciaci výuky pro talentované žáky nebo žáky s odlišnými potřebami?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, které zajímají moderní technologie a jejich praktické využití.",
+        "Pro ty, kteří potřebují individuální přístup a menší kolektiv.",
+        "Pro studenty, kteří preferují učení v souvislostech a projektech před biflováním."
+      ],
+      "who_should_be_cautious": [
+        "Pro rodiče, kteří vyžadují plně kvalifikovaný pedagogický sbor hned od začátku.",
+        "Pro žáky, kteří potřebují prostor pro vlastní aktivní ústní projev.",
+        "Pokud vyhovuje spíše tradiční formální styl výuky bez experimentů."
+      ],
+      "plain_czech_summary": "1. IT Gymnázium je nová soukromá škola s rodinnou atmosférou, malými třídami a silným zaměřením na IT a projektovou výuku. Děti zde mají k dispozici moderní vybavení a individuální zpětnou vazbu. Hlavním rizikem je, že polovina učitelů nemá formální kvalifikaci a výuka někdy připouští pasivitu žáků. Škola je vhodná pro technicky založené studenty, kteří potřebují osobní přístup, ale rodiče by měli sledovat, jak škola řeší kvalifikaci pedagogů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Není hodnoceno (škola teprve v 1. ročníku).",
+        "key_numbers": [
+          "Škola vznikla 1. 9. 2020.",
+          "Vzdělávání zakončené maturitní zkouškou.",
+          "V 1. ročníku 29 žáků."
+        ],
+        "evidence": "„Právnická osona... vykonává činnost střední školy... od 1. 9. 2020. Poskytuje vzdělávání zakončené maturitní zkouškou.“"
+      },
+      "absence": {
+        "trend": "Nulová neomluvená absence.",
+        "key_numbers": [
+          "Nulová neomluvená absence.",
+          "Celkem 29 žáků.",
+          "Denní forma vzdělávání."
+        ],
+        "evidence": "„Celkové výsledky vzdělávání jsou příznivé včetně nulové neomluvené absence.“"
+      },
+      "support_services": [
+        "Kvalifikovaný asistent pedagoga.",
+        "Předmět vuelta pro rozvoj kompetencí a sebereflexi.",
+        "Tripartitní jednání (žák-rodič-učitel)."
+      ],
+      "safety_climate": [
+        "Přátelská a respektující atmosféra.",
+        "Demokratický styl řízení.",
+        "Zabezpečený vstup do objektu."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s předními technologickými firmami.",
+        "Zapojení odborníků z praxe do výuky.",
+        "Spolupráce s organizací AFS (mezikulturní pobyty)."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán srozumitelně, klíčová tvrzení jsou jasná a podložená kontextem.",
+      "uncertainty_notes": []
+    }
+  }
+}

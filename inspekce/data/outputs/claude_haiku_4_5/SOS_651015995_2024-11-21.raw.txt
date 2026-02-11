@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_651015995_2024-11-21",
+  "school_profile": {
+    "school_type": "Střední odborná škola s obory Multimediální tvorba a Ekonomika a podnikání, ukončené maturitní zkouškou",
+    "inspection_period": "21. listopadu 2024 až 26. listopadu 2024",
+    "school_change_summary": "Od inspekce v roce 2019 se zvýšil počet žáků na 406, došlo k obměně pedagogického sboru, zlepšily se výsledky vzdělávání a byla postavena nová budova s tělocvičnou a odbornými ateliéry."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické zaměření a uplatnitelnost",
+        "detail": "Škola má výbornou spolupráci s filmovými společnostmi, reklamními agenturami a dalšími profesními partnery, což zajišťuje, že absolventi jsou připraveni na trh práce.",
+        "evidence": "\"Systematická spolupráce s profesními partnery, např. filmové a televizní společnosti, grafická studia, reklamní agentury zajišťuje nezbytnou zpětnou vazbu pro odborné vzdělávání.\""
+      },
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Všichni žáci uspěli u maturitní zkoušky, více než čtvrtina s vyznamenáním, a výsledky v češtině a angličtině jsou výrazně vyšší než průměr v republice.",
+        "evidence": "\"Ve sledovaném období posledních dvou školních let všichni žáci u maturitní zkoušky uspěli, více než čtvrtina žáků prospěla s vyznamenáním.\""
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola má novou budovu s odbornými ateliéry, kvalitní techniku pro fotografii a filmovou tvorbu, wifi v celé škole a bezpečnostní systém.",
+        "evidence": "\"Od minulé inspekční činnosti byla zrealizována výstavba nové budovy školy s tělocvičnou, odbornými ateliéry a sociálním zázemím.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Někdy málo efektivní teoretická výuka",
+        "detail": "V části teoretických hodin chybělo dostatečné shrnutí učiva na konci hodiny a prostor pro sebereflexi žáků.",
+        "evidence": "\"V menší části teoretické výuky chybělo efektivní časové a organizační rozvržení činností a prostor pro efektivní shrnutí a fixaci poznatků.\""
+      },
+      {
+        "tag": "Nerovnoměrné zapojení žáků",
+        "detail": "Někdy učitelé reagují především na podněty spolupracujících žáků, čímž ostatní žáci dostávají méně zpětné vazby.",
+        "evidence": "\"Učitelé se často obraceli ke třídě jako celku a reagovali zejména na podněty spolupracujících žáků. Poskytovaná zpětná vazba tak nebyla pro všechny žáky dostatečná.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s teoretickými předměty?",
+      "Jaké jsou konkrétní příklady úspěšného uplatnění vašich absolventů v kreativním průmyslu?",
+      "Jak se škola podílí na přípravě žáků na maturitní zkoušku a jaké jsou vaše výsledky?"
+    ],
+    "who_school_fits": [
+      "Žáci s talentem a zájmem o fotografii, film, grafiku, design nebo umění, kteří chtějí praktické vzdělání",
+      "Studenti, kteří si chtějí vybrat ze čtyř různých zaměření v rámci oborů a postupně se specializovat",
+      "Žáci z Prahy i okolí (třetina studentů dojíždí ze Středočeského kraje), kteří hledají moderní vybavení a kvalitní výuku"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují čistě teoretické vzdělání bez praktické složky",
+      "Studenti, kteří potřebují více individuální pozornosti v teoretických předmětech a méně se zapojují do diskusí",
+      "Uchazeči bez zájmu o umělecké obory nebo bez prokázaného talentu (přijímání je na základě talentové zkoušky)"
+    ],
+    "plain_czech_summary": "Jde o moderní a prestižní školu zaměřenou na kreativní průmysl. Má výborné vybavení, kvalitní učitele a skvělé výsledky u maturity. Všichni žáci uspěli, více než čtvrtina s vyznamenáním. Škola úzce spolupracuje s filmovými společnostmi a agenturami, takže absolventi se snadno uplatňují. Jediným slabším místem je, že v některých teoretických hodinách chybí lepší shrnutí učiva a více individuální pozornosti všem žákům. Ideální pro talentované studenty s vášní pro fotografii, film nebo design."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení od inspekce v roce 2019",
+      "key_numbers": [
+        "100 % úspěšnost všech žáků u maturitní zkoušky v posledních dvou letech",
+        "Více než 25 % žáků prospělo s vyznamenáním",
+        "Výsledky v češtině a angličtině výrazně vyšší než celorepublikový průměr"
+      ],
+      "evidence": "\"Ve sledovaném období posledních dvou školních let všichni žáci u maturitní zkoušky uspěli, více než čtvrtina žáků prospěla s vyznamenáním. Úspěšnost žáků byla ve sledovaném období v dílčích zkouškách společné části maturitní zkoušky výrazně vyšší, než je průměrná úspěšnost.\""
+    },
+    "absence": {
+      "trend": "Výrazné zlepšení od inspekce v roce 2019",
+      "key_numbers": [
+        "Snížení z 200 hodin na zhruba 80 hodin absence na žáka",
+        "Neomluvená absence snížena na necelé 2 hodiny na žáka",
+        "98 % žáků mělo uzavřenou klasifikaci do 30. 6. v roce 2023/2024"
+      ],
+      "evidence": "\"Pozitivním zjištěním je, že od posledního inspekčního hodnocení došlo nejenom k výraznému snížení podílu neprospívajících žáků, ale také k nárůstu podílu žáků s uzavřenou klasifikací do 30. 6. (98 % ve školním roce 2023/2024) a snížení průměrného počtu 200 hodin absence na žáka na zhruba 80 hodin na žáka.\""
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní psycholožka a metodička prevence pracují úzce se třídními učiteli",
+      "Doučování a individuální konzultace pro žáky se studijními potížemi",
+      "Podpora žáků se speciálními vzdělávacími potřebami (13 % žáků) a žáků s odlišným mateřským jazykem podle doporučení školského poradenského zařízení",
+      "Sportovní kurzy, poznávací zájezdy a tematické přednášky na podporu motivace"
+    ],
+    "safety_climate": [
+      "Čipový a kamerový systém pro bezpečnost",
+      "Důraz na dodržování pravidel a bezpečnosti práce v dílnách a ateliérech",
+      "Pravidelné sledování a vyhodnocování úrazovosti s přijímáním preventivních opatření",
+      "Příjemná atmosféra, vzájemně respektující přístup učitele a žáků"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s filmovými a televizními společnostmi, grafickými studiemi a reklamními agenturami",
+      "Partnerství s Ministerstvem obrany ČR",
+      "Konstruktivní spolupráce s městskou částí a zákonnými zástupci žáků",
+      "Účast v národních a mezinárodních projektech, výstavách v pražských galeriích a soutěžích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné stránky, slabé stránky a doporučení. Informace jsou relevantní pro rodiče a snadno pochopitelné.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o ceně školného nebo finančních podmínkách studia",
+      "Chybí detailní informace o tom, jak přesně probíhá talentová zkouška pro přijetí",
+      "Není jasné, jaké jsou konkrétní platy a pracovní podmínky absolventů po absolvování"
+    ]
+  }
+}
+```

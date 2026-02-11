@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_600017079_2025-10-13",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola a Střední odborné učiliště",
+    "inspection_period": "13. až 15. října 2025",
+    "school_change_summary": "Škola nyní využívá pouze jednu budovu domova mládeže místo dvou. Vzdělává 324 žáků, z toho 20 se speciálními vzdělávacími potřebami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola má rozvinutou síť partnerství s firmami a byla opakovaně oceněna jako \"Škola doporučená zaměstnavateli\".",
+        "evidence": "Sdružení zaměstnavatelů školu opakovaně vyhodnotilo jako doporučenou zaměstnavateli."
+      },
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Praktické vyučování probíhá v dobře vybavených dílnách s propojením teorie a praxe.",
+        "evidence": "Žáci pracují na reálných zakázkách a rozvíjejí odborné i sociální kompetence."
+      },
+      {
+        "tag": "Domov mládeže",
+        "detail": "Škola nabízí ubytování s pestrou škálou odpočinkových, kulturních a sportovních aktivit.",
+        "evidence": "Činnost domova mládeže vhodně navazuje na vzdělávací proces školy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita teoretické výuky",
+        "detail": "Výuka často postrádá moderní metody, aktivizační prvky a individuální přístup k žákům.",
+        "evidence": "Inspektoři zaznamenali nedostatečné využívání formativního hodnocení a kritického myšlení."
+      },
+      {
+        "tag": "Absence žáků",
+        "detail": "Zvýšená absence je nejčastější příčinou školního neúspěchu, přijatá opatření nejsou dostatečně účinná.",
+        "evidence": "Škola přijímá opatření, ale jejich efektivita zůstává omezená."
+      },
+      {
+        "tag": "Neplnění předchozích doporučení",
+        "detail": "Škola se nedaří naplňovat opatření přijatá během poslední inspekce z roku 2022.",
+        "evidence": "Dílčí rezervy v metodickém vedení se opakovaně objevují od minulé inspekční činnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší problém zvýšené absence žáků a jaké jsou výsledky těchto opatření?",
+      "Jaké plány má škola na modernizaci teoretické výuky a zavedení aktivnějších vyučovacích metod?",
+      "Jak se škola vypořádá s poznatkem inspektorů o nevhodném chování jednoho učitele během výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na technické obory a praktické dovednosti, kteří se chtějí připravit na konkrétní profesi",
+      "Studenti, kteří preferují praktickou výuku a spolupráci s reálnými firmami",
+      "Žáci z regionu, kteří potřebují ubytování a chcete jim poskytnout komplexní péči"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, jejichž děti potřebují individuální přístup a diferenciovanou výuku – ta není systematicky uplatňována",
+      "Žáci se speciálními vzdělávacími potřebami – podpůrná opatření nejsou v hospitacích vedením systematicky sledována",
+      "Studenti, kteří se spoléhají na moderní vyučovací metody a aktivní učení – teoretická výuka postrádá inovativní přístupy"
+    ],
+    "plain_czech_summary": "Škola SPŠ a SOU Uničov je zaměřena na technické obory a má dobré vazby s firmami. Praktická výuka je kvalitní a žáci se připravují na reálné pracovní situace. Domov mládeže nabízí bohatý program. Problém je v teoretické výuce – chybí moderní metody, individuální přístup a aktivní učení. Inspektoři také upozornili na vysokou absenci žáků a na to, že škola neplnila doporučení z předchozí inspekce. Vedení školy by mělo lépe kontrolovat kvalitu výuky a zavádět nové přístupy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neuvedeno konkrétně",
+      "key_numbers": [
+        "Škola sleduje výsledky maturitních zkoušek a pravidelně je statisticky vyhodnocuje",
+        "Výsledky jsou analyzovány na úrovni předmětových komisí a pedagogických rad"
+      ],
+      "evidence": "Zpětnou vazbu o kvalitě vzdělávání poskytují výsledky žáků u maturitních zkoušek, externí hodnoticí nástroje škola nevyužívá."
+    },
+    "absence": {
+      "trend": "Zvýšená absence je problém",
+      "key_numbers": [
+        "Absence je nejčastější příčinou školního neúspěchu",
+        "Škola přijímá opatření, ale jejich efektivita zůstává omezená"
+      ],
+      "evidence": "Významným faktorem ovlivňujícím výsledky žáků je zvýšená absence, která bývá nejčastější příčinou jejich školního neúspěchu."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně, školní metodička prevence, kariérová poradkyně a školní psycholožka",
+      "Individuální konzultace a doučování pro žáky s rizikem neúspěchu",
+      "Školní psycholožka zatím není plně funkčně začleněna – působí zároveň jako vedoucí školní jídelny"
+    ],
+    "safety_climate": [
+      "Při hospitaci zaznamenáno nevhodné chování učitele, který používal vulgární výrazy",
+      "Rizikové chování žáků je řešeno ve spolupráci se zákonnými zástupci",
+      "Škola nevytváří dostatečné podmínky pro příjemné a bezpečné prostředí pro psychohygienický vývoj žáků"
+    ],
+    "partnerships_practice": [
+      "Rozvinutá síť partnerství s firmami – škola byla opakovaně oceněna jako \"Škola doporučená zaměstnavateli\"",
+      "Spolupráce s Hospodářskou komorou České republiky a školskou radou",
+      "Zapojení do mezinárodních projektů (Erasmus+) pro rozvoj jazykových a sociálních kompetencí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, obsahuje konkrétní příklady a citace. Struktura je logická, ale některé pasáže jsou technicky náročnější. Hlavní zjištění jsou jasně oddělena v sekcích Silné stránky a Slabé stránky.",
+    "uncertainty_notes": [
+      "Konkrétní čísla o výsledcích maturit nejsou v textu uvedena, pouze obecné tvrzení o sledování",
+      "Není jasné, jak přesně se měří efektivita opatření proti absenci",
+      "Chybí konkrétní příklady z matematiky a dalších předmětů, které by ilustrovaly problémy"
+    ]
+  }
+}
+```

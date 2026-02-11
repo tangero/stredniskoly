@@ -1,0 +1,30 @@
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T12:10:35.171960+00:00",
+  "run_finished_utc": "2026-02-09T12:10:58.533052+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"LYC_691004048_2025-10-22\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 3,\n  \"critical_issues\": [\n    \"Část „hard_facts/absence“ není opřená o zdroj: zpráva neuvádí „stabilní úroveň absence“ ani žádná čísla/trend, pouze že škola přijala systémová opatření ke snižování vysoké absence.\",\n    \"V „hard_facts/maturita“ je formulace „Zlepšení od roku 2025/2026“ zavádějící: zdroj uvádí, že od 2025/2026 byla přijata opatření ke zlepšení výsledků, ne že už ke zlepšení prokazatelně došlo.\",\n    \"Tvrzení „Bezpečné prostředí pro žáky“ je zobecněné: zdroj jasně podporuje psychické bezpečí/pozitivní klima a vedení BOZ dokumentace, ale nehodnotí obecně „bezpečné prostředí“ ve smyslu celkové bezpečnosti.\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené silné stránky: vstřícný a respektující přístup, pozitivní vztahy a příznivé sociální klima/psychické bezpečí.\",\n    \"Správně převzaté slabé stránky: nízká diferenciace výuky a dlouhodobě podprůměrné výsledky u maturit (včetně zmínky, že někteří žáci selhávají navzdory dobrým průběžným výsledkům).\",\n    \"Dobře podaná část o učební praxi: jednotný systém hodnocení v praxi a portfolio (pedagogický deník) odpovídají zdroji.\",\n    \"Užitečné otázky pro den otevřených dveří navazují na doporučení inspekce (kritické myšlení, diferenciace, opatření k maturitě).\"\n  ],\n  \"one_line_verdict\": \"Shrnutí je z velké části věrné a pro rodiče praktické, ale obsahuje několik neprokázaných/zkreslujících tvrzení (zejména o absenci a domnělém zlepšení maturitních výsledků od 2025/2026).\"\n}",
+  "judge_output": {
+    "report_id": "LYC_691004048_2025-10-22",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 3,
+    "critical_issues": [
+      "Část „hard_facts/absence“ není opřená o zdroj: zpráva neuvádí „stabilní úroveň absence“ ani žádná čísla/trend, pouze že škola přijala systémová opatření ke snižování vysoké absence.",
+      "V „hard_facts/maturita“ je formulace „Zlepšení od roku 2025/2026“ zavádějící: zdroj uvádí, že od 2025/2026 byla přijata opatření ke zlepšení výsledků, ne že už ke zlepšení prokazatelně došlo.",
+      "Tvrzení „Bezpečné prostředí pro žáky“ je zobecněné: zdroj jasně podporuje psychické bezpečí/pozitivní klima a vedení BOZ dokumentace, ale nehodnotí obecně „bezpečné prostředí“ ve smyslu celkové bezpečnosti."
+    ],
+    "best_points": [
+      "Správně zachycené silné stránky: vstřícný a respektující přístup, pozitivní vztahy a příznivé sociální klima/psychické bezpečí.",
+      "Správně převzaté slabé stránky: nízká diferenciace výuky a dlouhodobě podprůměrné výsledky u maturit (včetně zmínky, že někteří žáci selhávají navzdory dobrým průběžným výsledkům).",
+      "Dobře podaná část o učební praxi: jednotný systém hodnocení v praxi a portfolio (pedagogický deník) odpovídají zdroji.",
+      "Užitečné otázky pro den otevřených dveří navazují na doporučení inspekce (kritické myšlení, diferenciace, opatření k maturitě)."
+    ],
+    "one_line_verdict": "Shrnutí je z velké části věrné a pro rodiče praktické, ale obsahuje několik neprokázaných/zkreslujících tvrzení (zejména o absenci a domnělém zlepšení maturitních výsledků od 2025/2026)."
+  }
+}

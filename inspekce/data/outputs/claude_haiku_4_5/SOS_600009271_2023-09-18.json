@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600009271_2023-09-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:38:43.572466+00:00",
+  "run_finished_utc": "2026-02-09T16:39:10.808018+00:00",
+  "raw_file": "SOS_600009271_2023-09-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009271_2023-09-18",
+    "school_profile": {
+      "school_type": "Střední lesnická škola s domovem mládeže, školní jídelnou a hospodářstvím",
+      "inspection_period": "18. 9. 2023 – 21. 9. 2023",
+      "school_change_summary": "Od roku 2018 došlo k výraznému zlepšení materiálního vybavení pro praktické vyučování. Škola restrukturalizovala obory, přidala Zahradníka a Zahradnické práce. Přetrvávají nedostatky v koordinaci vzdělávacích programů a práci se žáky se speciálními potřebami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vyučování na vysoké úrovni",
+          "detail": "Škola má moderní vybavení, 3D učebnu se simulátory, nové dílny a skleník. Žáci pracují s technologií, kterou budou používat v praxi.",
+          "evidence": "Nová školní pracoviště pro Lesní mechanizátora a skleník pro Zahradníka umožňují velmi dobrou úroveň praktického vyučování."
+        },
+        {
+          "tag": "Silné kariérové poradenství",
+          "detail": "Škola má funkční systém, který pomáhá žákům najít vhodné pracovní a studijní možnosti. Mnoho absolventů pokračuje na vysokých školách.",
+          "evidence": "Velká část žáků denního studia maturitního oboru pokračuje ve vzdělávání na vysokých školách s lesnickým zaměřením."
+        },
+        {
+          "tag": "Bohatá mimoškolní činnost",
+          "detail": "Domov mládeže nabízí různé kroužky a aktivity, které rozvíjejí sociální a odborné kompetence žáků.",
+          "evidence": "Domovu mládeže se daří prostřednictvím širokého spektra nabízených aktivit a kroužků rozvíjet osobnost žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Problémy s kvalitou výuky",
+          "detail": "Výuka často postrádá aktivní zapojení žáků, chybí diferenciace podle jejich potřeb. Učitelé často jen předávají hotové informace.",
+          "evidence": "Vyučující jen ojediněle využívali metody podporující aktivitu žáků. Ve výuce je jen velmi málo využívána diferenciace."
+        },
+        {
+          "tag": "Vysoká absence a neúspěšnost",
+          "detail": "Více než 50 % žáků je ohroženo školním neúspěchem. Absence a nízká motivace jsou hlavní problémy, které se nedaří řešit.",
+          "evidence": "Škola eviduje vysoký podíl žáků ohrožených školním neúspěchem (více než 50 %). Neúspěšnost souvisí s nízkou motivací a vysokou absencí."
+        },
+        {
+          "tag": "Slabé výsledky v dálkovém studiu",
+          "detail": "Dálkové studium Lesnictví je dlouhodobě neefektivní. Ze žáků, kteří nastoupili v 2019/2020, nikdo neuspěl u maturitní zkoušky.",
+          "evidence": "Ze žáků prvního ročníku 2019/2020 neukončil úspěšně studium maturitní zkouškou v roce 2023 žádný z nich."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci a nízkou motivaci žáků? Jaká opatření jsou účinná?",
+        "Jaké jsou výsledky maturitní zkoušky v posledních letech a jak se liší mezi jednotlivými obory?",
+        "Jak je zajištěna individuální péče a diferenciace výuky pro žáky s různými schopnostmi?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktické obory s lesnickým zaměřením, kteří se chtějí učit moderní technologií",
+        "Žáci, kteří potřebují ubytování a strukturovaný denní režim v domově mládeže",
+        "Žáci, kteří mají jasnou představu o budoucím povolání a chtějí se připravit na vysokou školu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabší motivací ke studiu – škola zatím nenašla účinná řešení pro zvýšení motivace",
+        "Žáci, kteří studují v dálkové formě – dlouhodobě nízké výsledky a vysoká fluktuace",
+        "Žáci s matematickými problémy – nejslabší výsledky jsou v matematice na maturitě"
+      ],
+      "plain_czech_summary": "Střední lesnická škola v Žlutici je jediná v kraji se zaměřením na lesnictví. Má moderní vybavení a dobré praktické vyučování. Silné stránky jsou kariérové poradenství a mimoškolní aktivity. Hlavní problémy: vysoká absence žáků, nízká motivace, slabá kvalita teoretické výuky a neefektivní dálkové studium. Výuka často chybí aktivní zapojení žáků. Škola se potýká s problémy v řízení a koordinaci vzdělávacích programů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšení v posledních letech, ale stále problémy",
+        "key_numbers": [
+          "Hrubá neúspěšnost v roce 2022: 18 %, v roce 2023: 30 %",
+          "Matematika: nejnižší úspěšnost, hlásí se jen malý počet žáků",
+          "Dálkové studium: 0 % úspěšnosti ze žáků 2019/2020"
+        ],
+        "evidence": "Hrubá neúspěšnost se snížila z cca 50 % v 2018 na 18 % v 2022 a 30 % v 2023. V dálkovém studiu přetrvává vysoký podíl neúspěšnosti."
+      },
+      "absence": {
+        "trend": "Částečné zlepšení, ale stále vysoká",
+        "key_numbers": [
+          "Více než 50 % žáků ohroženo školním neúspěchem",
+          "Vysoký podíl žáků konajících doplňující zkoušky z důvodu absence",
+          "V minulém roce se podařilo snížit neomluvené absence"
+        ],
+        "evidence": "Absence a nízká motivace jsou hlavní příčiny neúspěchu. Pozitivní zjištění: podařilo se snížit objem neomluvené absence."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště – ale členové ne vždy spolupracují efektivně",
+        "Asistentka pedagoga v maturitním oboru od 2023/2024",
+        "Doučování a individuální konzultace – částečně přispívají ke zlepšení"
+      ],
+      "safety_climate": [
+        "Vysoká úrazovost, zejména v tělesné výchově – přijatá opatření nejsou účinná",
+        "Kamerový a čipový systém omezující vstup cizím osobám",
+        "Riziko: ranní služba v domově mládeže zajištěna jen jedním vychovatelem"
+      ],
+      "partnerships_practice": [
+        "Aktivní budování sítě sociálních partnerů – regionální zaměstnavatelé, profesní komory",
+        "Praktické vyučování na pracovištích fyzických a právnických osob",
+        "Exkurze, besedy a spolupráce na tvorbě odborných materiálů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná. Jasně identifikuje silné stránky (praktické vyučování, partnerství) a slabé stránky (kvalita výuky, absence, řízení). Konkrétní čísla a příklady podporují závěry. Mírně snižuje srozumitelnost vysoký objem technických detailů.",
+      "uncertainty_notes": [
+        "Není jasné, jaké konkrétní opatření škola již přijala na základě doporučení z roku 2018",
+        "Chybí detailnější informace o tom, jak se liší kvalita výuky mezi jednotlivými učiteli a obory",
+        "Není specifikováno, jaké konkrétní strategie budou implementovány v oblasti gramotností"
+      ]
+    }
+  }
+}

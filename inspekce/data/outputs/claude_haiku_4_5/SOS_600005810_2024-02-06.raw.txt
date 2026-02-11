@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600005810_2024-02-06",
+  "school_profile": {
+    "school_type": "Střední odborná škola civilního letectví, Praha – Ruzyně",
+    "inspection_period": "6. února 2024 až 9. února 2024",
+    "school_change_summary": "Od inspekce v roce 2017 si škola udržuje stabilní počet tříd a žáků (353 žáků v 17 třídách). Zvýšila se kvalifikace pedagogů, obnovilo se materiální vybavení a zlepšily se výsledky vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava na vysoké úrovni",
+        "detail": "Škola nabízí nadstandardní podmínky pro praktické vyučování s vlastními dílnami, letadly a simulátorem Boeing 737 NG.",
+        "evidence": "Letoun Aero L-29 Delfín, letadlo Z–142 Zlín a vlastnoručně vyrobený letecký simulátor Boeing 737 NG vytvářejí prostředí odpovídající reálné praxi."
+      },
+      {
+        "tag": "Výborné výsledky u maturit",
+        "detail": "Žáci dosahují lepších až výrazně lepších výsledků než průměr v celostátním srovnání, zejména v jazycích a matematice.",
+        "evidence": "Dlouhodobě dosahují žáci v didaktických testech ve společné části maturitní zkoušky vždy lepších až výrazně lepších výsledků v jazycích i matematice."
+      },
+      {
+        "tag": "Spolupráce s leteckým průmyslem",
+        "detail": "Škola má dlouhodobé partnerství se sociálními partnery z civilního letectví, což zvyšuje uplatnitelnost absolventů.",
+        "evidence": "Dlouhodobá spolupráce s četnými partnery z oblasti civilního letectví přispívá k profesní uplatnitelnosti absolventů na trhu práce."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší podpora žáků s odlišným mateřským jazykem",
+        "detail": "Škola nemá vytvořen jednotný systém podpory pro žáky s OMJ, jejich výsledky jsou horší než u ostatních.",
+        "evidence": "Poradenské služby nejsou zajišťovány systematicky v oblasti vzdělávání žáků s OMJ, jejich výsledky jsou spíše horší v porovnání se žáky intaktními."
+      },
+      {
+        "tag": "Nejednotné hodnocení žáků",
+        "detail": "Ne všichni učitelé respektují stanovená kritéria průběžného hodnocení, což vede k odchylkám v hodnocení.",
+        "evidence": "Ne všichni vyučující respektují stanovená kritéria průběžného hodnocení, což se promítá v odchylkách v hodnocení žáků v některých předmětech."
+      },
+      {
+        "tag": "Rozdíly v kvalitě teoretické výuky",
+        "detail": "Část hodin teoretických předmětů má metodické nedostatky – málo aktivizujících metod, slabá diferenciace a chybí závěry hodin.",
+        "evidence": "Převaha frontální formy výuky s dominancí učitele vedla k nedostatečnému zapojení žáků do vzdělávání, nižší míra využití aktivizujících metod."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají angličtinu nebo matematiku jako slabší předmět?",
+      "Jaké jsou konkrétní možnosti uplatnění absolventů v leteckém průmyslu a jak škola s partnery spolupracuje na jejich umístění?",
+      "Jak se liší výuka mezi jednotlivými obory (Letecký mechanik, Mechanik elektrotechnik, Ekonomika a podnikání) a proč mají žáci Leteckého mechanika horší výsledky?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o letectví a technické obory, kteří chtějí praktickou přípravu na vysoké úrovni",
+      "Studenti, kteří se chtějí uplalit na trhu práce hned po maturitě nebo pokračovat v terciárním vzdělávání",
+      "Žáci s dobrými výsledky v matematice a jazycích, kteří si chtějí ověřit své znalosti u maturit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s odlišným mateřským jazykem – škola nemá jednotný systém jejich podpory",
+      "Studenti, kteří potřebují individuální přístup a diferenciovanou výuku – část teoretických předmětů ji nemá dostatečně",
+      "Žáci oboru Letecký mechanik – dosahují horších výsledků než ostatní obory"
+    ],
+    "plain_czech_summary": "Škola je špičková v praktické přípravě a výsledcích u maturit. Má skvělé vybavení, spolupracuje s leteckým průmyslem a absolventi se uplatňují. Slabší stránkou je podpora žáků s odlišným mateřským jazykem a část teoretické výuky, kde chybí aktivnější metody. Učitelé nejsou vždy jednotní v hodnocení. Ideální pro technicky nadané studenty se zájmem o letectví."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborný – dlouhodobě lepší až výrazně lepší výsledky než průměr",
+      "key_numbers": [
+        "Třetina žáků prospěla s vyznamenáním při ukončování vzdělávání",
+        "Téměř všichni žáci uspěli u maturitní zkoušky",
+        "Nejméně čtyři pětiny žáků úspěšně dokončily řádný cyklus vzdělávání"
+      ],
+      "evidence": "V celostátním srovnání dosahují žáci v didaktických testech ve společné části maturitní zkoušky vždy lepších až výrazně lepších výsledků v jazycích i matematice."
+    },
+    "absence": {
+      "trend": "Nízká míra absence s pozitivním dopadem",
+      "key_numbers": [
+        "Nízká míra absence se pozitivně promítá do celkového hodnocení žáků"
+      ],
+      "evidence": "Nízká míra absence se pozitivně promítá do celkového hodnocení žáků, které je v průběhu vzdělávání stabilní."
+    },
+    "support_services": [
+      "Výchovné poradenství a prevence – koordinátorka pracuje úzce s vedením a učiteli",
+      "Školní preventivní strategie s mechanismy pro řešení výchovně vzdělávacích problémů",
+      "Adaptační a sportovní kurzy, práce s třídními kolektivy, tematicky zaměřené přednášky",
+      "Individuální řešení rizikových jevů výchovnými komisemi",
+      "Chybí: jednotný systém podpory žáků s odlišným mateřským jazykem"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra založená na partnerském přístupu učitelů k žákům",
+      "Vzájemný respekt a nastavená pravidla komunikace a chování",
+      "Jednotný přístup pedagogického sboru k vytváření pozitivních vztahů",
+      "Bezpečnost a ochrana zdraví dodržovány v praktickém vyučování",
+      "Vstup do školy zabezpečen kamerovým a elektronickým systémem"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s četnými sociálními partnery z civilního letectví",
+      "Praktické vyučování na smluvních pracovištích sociálních partnerů",
+      "Efektivně nastavený systém rotace žáků na odborných pracovištích",
+      "Poloha na okraji areálu mezinárodního letiště v Praze umožňuje praktickou výuku v reálném provozu",
+      "Téměř tři čtvrtiny absolventů pokračují v terciárním vzdělávání, ostatní nacházejí okamžité uplatnění v oboru"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale obsahuje řadu odborných termínů a dlouhých vět. Pro rodiče by byla užitečná ještě jednodušší shrnutí.",
+    "uncertainty_notes": [
+      "Přesné procento žáků s OMJ není uvedeno (jen 'necelá 2 %'), takže není jasné, jak velká je tato skupina",
+      "Není specifikováno, které konkrétní předměty mají metodické nedostatky – jen obecně 'část hodin'",
+      "Není jasné, jak dlouho trvá, než se přijatá opatření projeví v kvalitě výuky"
+    ]
+  }
+}
+```

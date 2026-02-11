@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600006450_2023-03-15",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:44:51.949806+00:00",
+  "run_finished_utc": "2026-02-09T16:45:19.727022+00:00",
+  "raw_file": "SOS_600006450_2023-03-15.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006450_2023-03-15",
+    "school_profile": {
+      "school_type": "Střední škola s maturitní zkouškou, obory Cestovní ruch a Multimediální tvorba, denní forma",
+      "inspection_period": "15. března 2023 až 20. března 2023",
+      "school_change_summary": "Od inspekce v roce 2016 se počet žáků zvýšil z původního stavu na 195 žáků v 8 třídách. Rozšířila se nabídka oborů (přidána Multimediální tvorba), zvýšil se počet pedagogů na 32 a zkvalitnily se prostorové podmínky (nová učebna grafického designu, výtvarný a filmový atelier)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní odborné vzdělání",
+          "detail": "Žáci dosahují výborných výsledků v maturitě, zejména v anglickém jazyce a profilové části zkoušky, což odpovídá kvalitě praktického vzdělávání.",
+          "evidence": "Dlouhodobě dosahují žáci obou oborů výborných výsledků v anglickém jazyce a v profilové části maturitní zkoušky."
+        },
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Škola vytváří bezpečné prostředí s nízkým počtem kázeňských opatření a bez neomluvených hodin.",
+          "evidence": "Ve sledovaném období nebyl žádný žák hodnocen sníženým stupněm z chování, počet uložených kázeňských opatření byl nízký."
+        },
+        {
+          "tag": "Praktické dovednosti a uplatnění",
+          "detail": "Absolventi se úspěšně uplatňují na trhu práce nebo pokračují v terciárním studiu.",
+          "evidence": "Přibližně třetina nastupuje do praxe, další pokračují v navazujícím terciárním studiu, zejména v ekonomických a uměleckých oborech."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zvýšená absence žáků",
+          "detail": "Některé třídy mají problém se zvýšenou absencí, přestože škola uplatňuje preventivní postupy.",
+          "evidence": "Ve školním roce 2021/2022 v průměru 190 zameškaných hodin na žáka a v prvním pololetí 2022/2023 okolo 93 omluvených hodin."
+        },
+        {
+          "tag": "Chybějící školní psycholog",
+          "detail": "Škola reflektuje nárůst psychických obtíží žáků v postcovidovém období a potřebu periodické psychologické péče.",
+          "evidence": "Vzhledem k identifikovanému nárůstu psychických obtíží žáků škola reflektuje potřebu zajištění periodické psychologické péče."
+        },
+        {
+          "tag": "Nejednotná kvalita výuky",
+          "detail": "V některých hodinách se vyskytují metodické nedostatky, zejména v časové organizaci a vyhodnocování.",
+          "evidence": "Méně efektivní časová organizace činností s opomíjením vyhodnocení práce žáků a splnění vzdělávacího cíle v závěru vyučovací hodiny."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší problém zvýšené absence v některých třídách a jaké jsou výsledky těchto opatření?",
+        "Plánuje škola v blízké budoucnosti zaměstnat školního psychologa, aby lépe podporovala duševní zdraví žáků?",
+        "Jaké jsou konkrétní výsledky absolventů v zaměstnání a na vysokých školách?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o cestovní ruch, jazykové dovednosti a praktické zkušenosti v cestovním průmyslu",
+        "Talentovaní studenti v multimediální tvorbě, grafickém designu a uměleckých oborech",
+        "Žáci, kteří si cení kvalitního praktického vzdělání a osobního přístupu v menší škole"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absencím – škola má problém se zvýšenou absencí v některých třídách",
+        "Žáci s psychickými problémy – chybí zde školní psycholog, pouze externí spolupráce",
+        "Žáci vyžadující intenzivní individuální podporu – škola má pouze jednu výchovnou poradkyni"
+      ],
+      "plain_czech_summary": "Střední škola ARCUS je kvalitní soukromá škola s dvěma obory: Cestovní ruch a Multimediální tvorba. Silnými stránkami jsou výborné výsledky v maturitě, bezpečné prostředí a praktické dovednosti absolventů. Žáci se úspěšně uplatňují v praxi nebo na vysokých školách. Problémem je zvýšená absence v některých třídách a chybějící školní psycholog. Výuka je převážně kvalitní, ale někdy chybí lepší časová organizace hodin. Škola je vhodná pro talentované studenty v uměleckých oborech a cestovním ruchu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborné výsledky",
+        "key_numbers": [
+          "Výborné výsledky v anglickém jazyce u obou oborů",
+          "Dlouhodobá úspěšnost v profilové části maturitní zkoušky",
+          "Nižší úspěšnost v češtině v uměleckém oboru v letech 2020–2021 (důsledek distanční výuky)"
+        ],
+        "evidence": "Dlouhodobě dosahují žáci obou oborů výborných výsledků v anglickém jazyce a v profilové části maturitní zkoušky, což odpovídá kvalitě odborného vzdělávání."
+      },
+      "absence": {
+        "trend": "Zvýšená absence v některých třídách",
+        "key_numbers": [
+          "Školní rok 2021/2022: průměr 190 zameškaných hodin na žáka",
+          "Pololetí 2022/2023: okolo 93 omluvených hodin",
+          "Neomluvené hodiny: nebyly zaznamenány"
+        ],
+        "evidence": "Přijatá opatření jsou účinná pouze částečně. Škola uplatňuje důsledné zjišťování příčin a preventivní práci, ale problém přetrvává."
+      },
+      "support_services": [
+        "Výchovná poradkyně s pozicí metodičky prevence (koordinuje podpůrná opatření)",
+        "Spolupráce s externími odbornými pracovišti a oblastní pedagogicko-psychologickou poradnou",
+        "Individuální konzultace, podpůrné elektronické materiály, navýšení časové dotace v hlavních předmětech"
+      ],
+      "safety_climate": [
+        "Bezpečné vzdělávací prostředí potvrzené výstupy z dotazníkových šetření žáků a rodičů",
+        "Žádný žák nebyl hodnocen sníženým stupněm z chování",
+        "Nízký počet kázeňských opatření, žádné neomluvené hodiny",
+        "Kamerový systém na chodbách a elektronické zajištění vstupu do budovy"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se sociálními partnery zajišťující vazbu teoretického vzdělání na praxi",
+        "Zapojení odborníků z praxe a výkonných umělců do výuky",
+        "Kariérní poradenství s využitím sociálních partnerů a sdílením zkušeností absolventů",
+        "Praktická cvičení z přírodovědných předmětů v partnerském gymnáziu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Některé pasáže jsou však poměrně dlouhé a složitě strukturované (zejména v části o průběhu vzdělávání), což mírně snižuje jasnost.",
+      "uncertainty_notes": [
+        "Přesné číslo žáků se speciálními vzdělávacími potřebami je uvedeno jako 'přibližně 12 %', což není přesné",
+        "Konkrétní počet pedagogů bez kvalifikace není uveden, pouze procento (78 % má předpoklady odborné způsobilosti)",
+        "Detailní analýza příčin zvýšené absence není v textu obsažena"
+      ]
+    }
+  }
+}

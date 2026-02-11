@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600020266_2024-12-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:06:32.143031+00:00",
+  "run_finished_utc": "2026-02-09T16:06:59.475441+00:00",
+  "raw_file": "SOS_600020266_2024-12-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600020266_2024-12-10",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola a Vyšší odborná škola se čtyřletými obory Elektrotechnika a Informační technologie",
+      "inspection_period": "10. 12. 2024 − 13. 12. 2024",
+      "school_change_summary": "Škola si udržuje dobré renomé a stabilně vysoký zájem uchazečů. Došlo ke změně na postu zástupkyně pro všeobecné předměty. Pedagogický sbor prochází postupnou generační obměnou. Vybavení odborných učeben a laboratoří bylo modernizováno."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola intenzivně spolupracuje s renomovanými firmami (Rhode & Schwarz Vimperk, ČEZ) a vysokými školami (ČVUT Praha, ZČU Plzeň), což žákům dává reálný vhled do budoucího povolání.",
+          "evidence": "Praxe v reálném prostředí firem přispívá ke kvalitní přípravě žáků na budoucí povolání."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola má nadstandardní materiální zázemí s novým vybavením laboratoří, odborných učeben a počítačové techniky.",
+          "evidence": "Nové vybavení laboratoří a počítačové techniky bylo pořízeno v souladu s nejnovějšími trendy."
+        },
+        {
+          "tag": "Péče o slabší žáky",
+          "detail": "Škola efektivně minimalizuje školní neúspěch prostřednictvím vstupních testů, konzultací a práce s výsledky maturit.",
+          "evidence": "Počet neomluvených hodin je nízký, škole se daří minimalizovat absenci žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo individualizované výuky",
+          "detail": "Výuka se příliš spoléhá na frontální výklad, chybí diferenciace úkolů podle schopností jednotlivých žáků.",
+          "evidence": "Diferenciace a gradace úkolů nebyly ve výuce zaznamenány, prvky formativního hodnocení byly uplatněny ojediněle."
+        },
+        {
+          "tag": "Nedostatek aktivních metod",
+          "detail": "Žáci jsou pasivnější, převažuje samostatná práce na pracovních listech místo skupinové práce a diskusí.",
+          "evidence": "Ve výuce převažovala frontální výuka s výkladem učitele, pestřejší hodiny byly zaznamenány jen v humanitním vzdělávání."
+        },
+        {
+          "tag": "Časové problémy v hodinách",
+          "detail": "Některé hodiny nemají dostatek času na závěrečné zhodnocení a reflexi pokroku žáků.",
+          "evidence": "Dílčí nedostatky se objevily v časovém rozvržení sledovaných hodin, často nebyl v závěru vytvořen prostor pro zhodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá spolupráce s firmami Rhode & Schwarz a ČEZ? Mohou si žáci vyzkoušet práci v jejich závodech?",
+        "Jaké jsou konkrétní výsledky žáků v soutěžích a jak se škola podílí na jejich přípravě?",
+        "Jak se škola zaměřuje na individuální potřeby žáků, kteří se učí pomaleji nebo mají jiný styl učení?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o elektrotechniku a IT, kteří chtějí praktické zkušenosti a kontakty v průmyslu",
+        "Talentovaní žáci, kterým se daří v soutěžích a chtějí se dále rozvíjet v odborných projektech",
+        "Žáci, kteří potřebují podporu a péči – škola má efektivní systém na prevenci neúspěchu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se učí lépe v interaktivním prostředí se skupinovou prací – výuka je spíše frontální",
+        "Žáci s různorodými schopnostmi v jedné třídě – diferenciace úkolů není dostatečná",
+        "Žáci, kteří potřebují více zpětné vazby a reflexe – formativní hodnocení se používá jen ojediněle"
+      ],
+      "plain_czech_summary": "SPŠ a VOŠ Karla Čapka v Písku je kvalitní průmyslová škola s výborným vybavením a silnými vazbami na průmysl. Žáci se učí v moderních laboratořích a mají možnost pracovat s renomovanými firmami. Škola se dobře stará o žáky, kteří by mohli neuspět. Slabší stránkou je, že výuka není dostatečně přizpůsobena jednotlivým žákům a spoléhá spíše na frontální výuku. Škola by měla více pracovat s individuálními rozdíly mezi žáky a více je zapojovat do aktivní práce."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní na úrovni republikového průměru",
+        "key_numbers": [
+          "Celková úspěšnost žáků u maturitních zkoušek se pohybuje na úrovni republikového průměru",
+          "Žáci opakovaně dosahují vynikajících úspěchů v odborných soutěžích na celostátní úrovni"
+        ],
+        "evidence": "Systematické sledování výsledků a přijímaná opatření umožňují škole cíleně zlepšovat kvalitu výuky."
+      },
+      "absence": {
+        "trend": "Velmi nízká",
+        "key_numbers": [
+          "Počet neomluvených hodin je nízký",
+          "Škole se dlouhodobě daří minimalizovat absenci žáků"
+        ],
+        "evidence": "Prevence rizikového chování a adaptační kurzy pro první ročníky přispívají k nízkému počtu absencí."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence s jasně vymezenými kompetencemi a efektivní spoluprací",
+        "Péče o žáky se speciálními vzdělávacími potřebami a žáky s odlišným mateřským jazykem",
+        "Intervence psychologa z pedagogicko-psychologické poradny v případě potřeby",
+        "Adaptační kurzy pro první ročníky na podporu vytváření zdravých vztahů"
+      ],
+      "safety_climate": [
+        "Klidná a respektující pracovní atmosféra ve sledovaných hodinách",
+        "Prevence rizikového chování je prioritou školy s aplikovaným plánem primárně preventivních aktivit",
+        "Žáci dodržují zásady bezpečnosti a ochrany zdraví při praktickém vyučování"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s vysokými školami: ČVUT Praha, ZČU Plzeň",
+        "Spolupráce se stěžejními regionálními a nadregionálními smluvními partnery: Rhode & Schwarz Vimperk, ČEZ a.s. Praha",
+        "Praxe v reálném prostředí firem včetně partnerských zahraničních závodů",
+        "Spolupráce se základními školami na podporu zájmu o technické vzdělávání",
+        "Efektivně nastavená podpora žáků se sportovním nadáním ve spolupráci s partnerskými sportovními kluby"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a citace. Jediným omezením je, že některé údaje (např. přesné počty v soutěžích) nejsou uvedeny číselně.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní počty žáků, kteří neprospěli nebo měli problémy – pouze obecně mluví o minimalizaci",
+        "Nejsou uvedeny konkrétní výsledky maturitních zkoušek po jednotlivých předmětech",
+        "Počet žáků se speciálními potřebami není specifikován"
+      ]
+    }
+  }
+}

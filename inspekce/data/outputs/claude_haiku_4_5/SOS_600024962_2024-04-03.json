@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600024962_2024-04-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:20:05.055426+00:00",
+  "run_finished_utc": "2026-02-09T16:20:30.106715+00:00",
+  "raw_file": "SOS_600024962_2024-04-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600024962_2024-04-03",
+    "school_profile": {
+      "school_type": "Mateřská škola, základní škola a střední škola Gellnerka Brno (speciální škola pro děti a žáky se sluchovým postižením a dalšími poruchami)",
+      "inspection_period": "3.–5. 4. a 8. 4. 2024",
+      "school_change_summary": "Škola vznikla v roce 2017 sloučením tří institucí. Od roku 2021 do prosince 2023 odešlo 22 pedagogů (40 % sboru). Počty dětí a žáků se zvýšily v MŠ, ZŠ a družině, ve SŠ naopak poklesly."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Individuální přístup pedagogů",
+          "detail": "Učitelé a vychovatelky pracují s empatií a zohledňují speciální potřeby každého dítěte.",
+          "evidence": "Inspektoři pozorovali podporující pedagogický styl a citlivý individuální přístup v mateřské a základní škole."
+        },
+        {
+          "tag": "Kvalitní speciální péče v MŠ",
+          "detail": "Mateřská škola má funkční systém diagnostiky a individuálních plánů rozvoje dětí.",
+          "evidence": "Děti dosahují výsledků odpovídajících jejich možnostem; sociální dovednosti jsou na velmi dobré úrovni."
+        },
+        {
+          "tag": "Úspěšnost v přijímacích zkouškách",
+          "detail": "Žáci základní školy mají 100% úspěšnost při přijímání na střední školy.",
+          "evidence": "Škola efektivně podporuje žáky ohrožené neúspěchem prostřednictvím školního poradenského pracoviště."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé řízení školy",
+          "detail": "Ředitel má autoritativní styl, deleguje kompetence, ale sám nekontroluje kvalitu a neplní své úkoly.",
+          "evidence": "Webové stránky nejsou aktualizovány od roku 2022; stěžejní dokumenty nejsou v souladu se zákony."
+        },
+        {
+          "tag": "Nekvalifikovaní pedagogové",
+          "detail": "Třetina pedagogů nemá odbornou kvalifikaci pro svou práci; ve školní družině žádná vychovatelka nemá požadované vzdělání.",
+          "evidence": "Vysoká nekvalifikovanost má negativní dopad na kvalitu vzdělávání pozorovanou při inspekčních hospitacích."
+        },
+        {
+          "tag": "Špatné materiální podmínky",
+          "detail": "Třídy jsou malé, zastaralé, chybí moderní pomůcky; hřiště je zchátralé a nebezpečné.",
+          "evidence": "Prostorové podmínky základní školy jsou na hranici únosnosti; chybí interaktivní tabule, robotické hračky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky podnikne vedení školy na zlepšení kvalifikace pedagogů, zejména v oblasti českého znakového jazyka?",
+        "Jaký je plán na modernizaci učeben a pořízení digitálních pomůcek pro lepší zrakovou hygienu žáků?",
+        "Jak bude škola řešit problém nedostatečného prostoru v základní škole a zlepšit podmínky ve školní družině?"
+      ],
+      "who_school_fits": [
+        "Děti a žáci se sluchovým postižením, kterým škola nabízí speciální podporu a prostředí přizpůsobené jejich potřebám",
+        "Žáci s vážnými poruchami řeči a vývojovými poruchami, pro které má škola odborné poradenské centrum",
+        "Rodiny, které oceňují individuální přístup pedagogů a podporu při překonávání školních obtíží"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají moderní vybavení tříd a kvalitní materiální podmínky – ty jsou zastaralé a nedostatečné",
+        "Žáci 4. ročníku střední školy připravující se na maturitu – jsou vzděláváni společně se 3. ročníkem, což snižuje jejich přípravu",
+        "Rodiny, které potřebují kvalitní komunikaci v českém znakovém jazyce – ne všichni pedagogové jej ovládají dostatečně"
+      ],
+      "plain_czech_summary": "Gellnerka je speciální škola pro děti se sluchovým postižením a dalšími poruchami. Její silnou stránkou je individuální a empatický přístup pedagogů, zejména v mateřské škole. Děti dosahují dobrých výsledků a sociálních dovedností. Velkým problémem je však slabé řízení ředitele – neplní své úkoly, nekontroluje kvalitu, a třetina pedagogů nemá potřebnou kvalifikaci. Materiální podmínky jsou zastaralé, prostory malé a hřiště nebezpečné. Škola potřebuje urgentní zlepšení v řízení, kvalifikaci pedagogů a modernizaci vybavení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pokles úspěšnosti v profilové části maturitní zkoušky",
+        "key_numbers": [
+          "Čistá a hrubá úspěšnost cca 80 % za poslední dva roky",
+          "Neúspěšnost v profilové části: 14,3 % (2023), 25 % (2024)",
+          "Úspěšnost v učebních oborech: 100 %"
+        ],
+        "evidence": "Pokles je způsoben nevhodnou organizací výuky – maturitní předmět se vyučuje ve skupině se 3. ročníkem, což oslabuje přípravu 4. ročníku."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Není dostupné"
+        ],
+        "evidence": "Inspekční zpráva se absencí podrobně nezabývá."
+      },
+      "support_services": [
+        "Speciálně pedagogické centrum poskytuje diagnostiku, poradenství a metodickou podporu pro děti se sluchovým postižením",
+        "Školní poradenské pracoviště s psycholožkou, výchovným poradcem a metodičkou prevence",
+        "Individuální doučování pro žáky ohrožené neúspěchem; v základní škole se neprospívající žáci nevyskytují"
+      ],
+      "safety_climate": [
+        "Škola má Preventivní program a Strategii předcházení rizikového chování a šikaně",
+        "Kázeňská opatření převládají nad pochvalami, což má malý motivační vliv",
+        "Metodička prevence organizuje preventivní aktivity, ale řešení rizikového chování je ponecháno spíše na intuici pedagogů"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami s pedagogickými obory a organizacemi zabývajícími se sluchovými vadami",
+        "Partnerství se školskými poradenskými zařízeními pro vzdělávání žáků se sluchovým a zrakovým postižením",
+        "Zapojení do celorepublikových soutěží (IT pro neslyšící, dopravní výchova, výtvarné soutěže, sportovní hry neslyšících)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, ale obsahuje řadu technických termínů a právních odkazů. Pro rodiče bez pedagogického vzdělání by některé pasáže byly obtížnější. Hlavní zjištění jsou však jasně formulována.",
+      "uncertainty_notes": [
+        "Absence není v textu detailně popsána – není jasné, jaké jsou konkrétní problémy s docházkou",
+        "Počty nekvalifikovaných pedagogů nejsou přesně specifikovány pro každou součást školy",
+        "Konkrétní plány vedení na nápravy nejsou v textu uvedeny – jsou pouze doporučení inspekce"
+      ]
+    }
+  }
+}

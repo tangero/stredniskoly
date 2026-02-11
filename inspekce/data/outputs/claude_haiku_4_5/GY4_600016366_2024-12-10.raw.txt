@@ -1,0 +1,99 @@
+```json
+{
+  "report_id": "GY4_600016366_2024-12-10",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium (obor 79-41-K/41)",
+    "inspection_period": "10. 12. 2024 – 12. 12. 2024",
+    "school_change_summary": "Od inspekce v roce 2019 se počet žáků zvýšil o 37 % na 145 žáků v šesti třídách. Výrazně se zlepšily digitální technologie a materiální podmínky školy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jasná vize a strategie",
+        "detail": "Ředitelka má promyšlené cíle rozvoje školy zaměřené na zvyšování přírodních, humanitních a technických kompetencí, které se úspěšně naplňují.",
+        "evidence": "Koncepce rozvoje na pětileté období vychází z analýzy podmínek a je úspěšně evaluována."
+      },
+      {
+        "tag": "Moderní výuka s technologiemi",
+        "detail": "Všechny učebny mají dotykové tabule, učitelé využívají digitální technologie, umělou inteligenci a aktivizující metody.",
+        "evidence": "Výuka probíhá s vysokou mírou aktivního zapojení žáků, práce ve skupinách a s různými zdroji informací."
+      },
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Žáci dosahují lepších výsledků než průměr v České republice, v posledních dvou letech 100% úspěšnost.",
+        "evidence": "Všichni absolventi 2023/2024 pokračují v dalším studiu na vysokých školách."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená zahraniční spolupráce",
+        "detail": "Škola nabízí pouze krátkodobé edukační zájezdy, chybí dlouhodobější studijní programy a stáže v zahraničí.",
+        "evidence": "Inspekce doporučuje navázat spolupráci se zahraničními partnery na úrovni stáží nebo studijních programů."
+      },
+      {
+        "tag": "Chybějící specializace poradců",
+        "detail": "Výchovná poradkyně a metodik prevence nemají specializační studium v těchto oborech.",
+        "evidence": "Doporučení: zajistit specializační studium v oblasti výchovného poradenství."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké jsou konkrétní plány na rozšíření zahraniční spolupráce a studijních pobytů v zahraničí?",
+      "Jak škola podporuje nadané žáky a jaké má pro ně speciální programy?",
+      "Jaké volitelné předměty si mohou žáci vybrat a jak se liší nabídka v jednotlivých ročnících?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí na vysokou školu – 100 % absolventů pokračuje v dalším studiu",
+      "Nadaní a talentovaní žáci – škola vytváří podmínky pro mezinárodní certifikáty od 2. ročníku",
+      "Žáci preferující moderní výuku – digitální technologie a aktivizující metody jsou součástí všech hodin"
+    ],
+    "who_should_be_cautious": [
+      "Žáci hledající intenzivní zahraniční zkušenosti – nabídka je zatím omezena na krátkodobé zájezdy",
+      "Žáci se speciálními vzdělávacími potřebami – podpora je zajištěna, ale počet takových žáků je malý (2 žáci)",
+      "Žáci s nižší motivací – škola se zaměřuje na aktivní zapojení a vysoké nároky"
+    ],
+    "plain_czech_summary": "Gymnázium EDUCAnet je dobře řízená škola s jasnou strategií a moderním přístupem k výuce. Žáci dosahují výborných výsledků, zejména u maturit, a všichni pokračují na vysokých školách. Škola investuje do digitálních technologií, podporuje nadané žáky a vytváří příznivé prostředí. Hlavní slabinou je omezená zahraniční spolupráce. Vhodná pro ambiciózní žáky připravující se na vysokou školu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "Lepší výsledky než průměr oboru v ČR",
+        "100% úspěšnost v r. 2022/2023 a 2023/2024",
+        "100% absolventů pokračuje na vysokých školách"
+      ],
+      "evidence": "Žáci dosahují lepších výsledků u společné části maturitní zkoušky než je průměr stejného oboru vzdělání v České republice."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace nejsou v inspekční zprávě dostupné"
+      ],
+      "evidence": "Zpráva se nezabývá absencí žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodik prevence (od roku 2023)",
+      "Pedagogická podpora pro žáky se speciálními vzdělávacími potřebami a žáky s odlišným mateřským jazykem",
+      "Anonymní schránka důvěry a individuální konzultace s pracovníky školního poradenského pracoviště"
+    ],
+    "safety_climate": [
+      "Primární prevence a podpora proti sociálně patologickým jevům probíhá systematicky",
+      "Adaptační pobyty prvních ročníků posilují zdravé klima v třídních kolektivech",
+      "Negativní projevy chování jsou řešeny bezodkladně se spoluprací se zákonnými zástupci"
+    ],
+    "partnerships_practice": [
+      "Síť škol EDUCAnet – spolupráce v zavádění nových metod, řešení problémů a zlepšování prostředí",
+      "Spolupráce s Ostravskou univerzitou a Karlovou univerzitou – odborné přednášky a semináře",
+      "Partnerství se základními, středními a vysokými školami při prezentaci školy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, bez zbytečného úřednického stylu. Informace jsou jasně strukturované a snadno pochopitelné pro rodiče bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – nelze posoudit trend absence žáků",
+      "Počet žáků se speciálními potřebami je velmi malý (2 žáci) – nelze posoudit kvalitu podpory na větším vzorku",
+      "Zahraniční spolupráce je označena jako slabá stránka, ale konkrétní plány na zlepšení nejsou detailně popsány"
+    ]
+  }
+}
+```

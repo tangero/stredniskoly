@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY4_691007039_2024-11-04",
+  "school_profile": {
+    "school_type": "Základní škola a gymnázium (soukromá, s.r.o.)",
+    "inspection_period": "4. listopadu 2024 až 7. listopadu 2024",
+    "school_change_summary": "Od inspekce v roce 2016 se počet žáků zvýšil na 140 (využití 60 % kapacity), byla zahájena výuka na druhém stupni a od roku 2024/2025 běží výuka na gymnáziu. Škola se rozrostla z jednoho stupně na komplexní vzdělávací instituci."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Škola efektivně rozvíjí jazykové dovednosti metodou CLIL a pomocí rodilých mluvčích, žáci dosahují výborných výsledků v testech anglického jazyka.",
+        "evidence": "Efektivní naplňování profilace školy v oblasti jazykového vzdělávání realizací výukové metody CLIL"
+      },
+      {
+        "tag": "Bezpečné a přátelské prostředí",
+        "detail": "Škola podporuje osobnostní a sociální rozvoj žáků, buduje pozitivní vztahy a minimalizuje sociálně patologické jevy.",
+        "evidence": "Podpora osobnostního a sociálního rozvoje žáků, utváření pozitivních vztahů v třídních kolektivech"
+      },
+      {
+        "tag": "Vybavení a prostory",
+        "detail": "Moderní učebny, laboratoř, ICT třída, Montessori herny, školní zahrada a střešní terasy pro výuku i relaxaci.",
+        "evidence": "Výrazné zkvalitňování a efektivní využití prostorových i materiálně technických podmínek"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalifikace učitelů",
+        "detail": "Téměř třetina pedagogů nemá požadovanou odbornou kvalifikaci, což se negativně projevuje v kvalitě výuky.",
+        "evidence": "Nízká míra kvalifikovanosti pedagogického sboru ovlivňuje kvalitu vzdělávání"
+      },
+      {
+        "tag": "Kontrola kvality výuky",
+        "detail": "Hospitační činnost není dostatečně efektivní, chybí konkrétní doporučení pro zlepšení výuky.",
+        "evidence": "Kontrolní činnost vedení školy není dostatečně efektivní vzhledem ke zkvalitňování vzdělávacího procesu"
+      },
+      {
+        "tag": "Informace o pokrocích žáků",
+        "detail": "Na prvním stupni chybí jednotný systém informování rodičů o průběžných výsledcích vzdělávání.",
+        "evidence": "Nastavený způsob seznamování s průběžným hodnocením na prvním stupni neposkytuje vždy aktuální informace"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s nekvalifikovanými učiteli a jaký je plán na jejich kvalifikaci?",
+      "Jaký je jednotný systém informování rodičů o pokrocích dětí na prvním stupni?",
+      "Jak se škola připravuje na nový gymnázijní program a jaké jsou zkušenosti prvních studentů?"
+    ],
+    "who_school_fits": [
+      "Děti se zájmem o jazyky – škola má silný důraz na angličtinu a metodu CLIL",
+      "Žáci potřebující bezpečné, přátelské prostředí s důrazem na sociální rozvoj",
+      "Rodiny hledající menší školu s individuálním přístupem a kvalitním vybavením"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kterým záleží na vysoké kvalifikaci všech učitelů – třetina pedagogů nemá požadovanou kvalifikaci",
+      "Rodiny potřebující pravidelné a detailní informace o pokrocích na prvním stupni – systém není jednotný",
+      "Žáci vyžadující intenzivní dohled nad kvalitou výuky – hospitační činnost má nedostatky"
+    ],
+    "plain_czech_summary": "Livingston je menší soukromá škola v Praze s moderním vybavením a silným zaměřením na jazykové vzdělávání. Děti se učí v přátelském, bezpečném prostředí s důrazem na sociální rozvoj. Škola má však problémy: téměř třetina učitelů nemá potřebnou kvalifikaci, kontrola kvality výuky není dostatečná a na prvním stupni chybí jednotný systém informování rodičů. Vhodná pro děti se zájmem o jazyky a rodinný přístup, ale rodiče by měli být opatrní ohledně kvalifikace pedagogů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze určit – gymnázium bylo zahájeno až v roce 2024/2025",
+      "key_numbers": [
+        "Gymnázium spuštěno od školního roku 2024/2025",
+        "Dosud nejsou dostupné výsledky maturit"
+      ],
+      "evidence": "Od školního roku 2024/2025 je realizována výuka na gymnáziu"
+    },
+    "absence": {
+      "trend": "Není v textu zmíněna",
+      "key_numbers": [
+        "Údaje o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Inspekční zpráva se absencí nezabývá"
+    },
+    "support_services": [
+      "Školní psycholog poskytující individuální práci se žáky s výchovnými obtížemi",
+      "Poradenský tým pro žáky se speciálními vzdělávacími potřebami a OMJ",
+      "Doučování a individualizované úlohy pro domácí přípravu při prospěchových výkyvech",
+      "Tripartitní jednání učitel-rodič-žák při potřebě"
+    ],
+    "safety_climate": [
+      "Minimální výskyt vztahových problémů a sociálně patologických jevů",
+      "Funkčně nastavená preventivní strategie s pravidelným monitorováním vztahů ve třídách",
+      "Bezproblémové chování žáků a slušné vystupování zaznamenané v hospitovaných hodinách",
+      "Pestrá nabídka mimoškolních aktivit a kroužků jako prevence negativních jevů"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se Sdružením soukromých škol Čech, Moravy a Slezska",
+      "Efektivní spolupráce se zákonnými zástupci žáků a se zřizovatelem",
+      "Participace rodičů na dění ve škole – rodičovské kavárny, besídky, semináře",
+      "Spolupráce s třídními učiteli na preventivní strategii a monitorování"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány. Chybí však konkrétní číselné údaje o absenci, prospěchu a výsledcích maturit (ty ale nejsou relevantní, protože gymnázium právě začíná).",
+    "uncertainty_notes": [
+      "Gymnázium bylo zahájeno teprve v roce 2024/2025, takže nejsou dostupné výsledky maturit ani dlouhodobé zkušenosti",
+      "Inspekční zpráva se nezabývá absencí žáků – není jasné, zda je to problém nebo ne",
+      "Konkrétní procento nekvalifikovaných učitelů není uvedeno, jen že jde o 'téměř třetinu'"
+    ]
+  }
+}
+```

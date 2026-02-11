@@ -1,0 +1,10 @@
+{
+  "report_id": "SOS_600017079_2022-03-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:06:20.792954+00:00",
+  "run_finished_utc": "2026-02-09T17:06:23.105856+00:00",
+  "raw_file": "SOS_600017079_2022-03-10.raw.txt",
+  "call_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402}}",
+  "parse_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"Insufficient credits. Add more using https://openrouter.ai/settings/credits\",\"code\":402}}",
+  "parsed_output": null
+}

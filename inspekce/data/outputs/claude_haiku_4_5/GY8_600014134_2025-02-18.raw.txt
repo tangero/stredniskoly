@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY8_600014134_2025-02-18",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté studium), příspěvková organizace",
+    "inspection_period": "18. února 2025 až 20. února 2025",
+    "school_change_summary": "Počet žáků vzrostl o 13 % na 338 žáků ve 12 třídách. Zlepšily se materiální podmínky a vybavení. Zvýšil se počet žáků se speciálními vzdělávacími potřebami (cca 7 %)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství a kariérové vedení",
+        "detail": "Škola aktivně vyhledává partnery (vysoké školy, firmy, instituce), což umožňuje odborné stáže a exkurze a pomáhá žákům lépe se rozhodovat o budoucnosti.",
+        "evidence": "Dlouhodobě přínosná spolupráce s vysokými školami, základními školami, odbornými institucemi a firmami."
+      },
+      {
+        "tag": "Vedení a řízení školy",
+        "detail": "Vedení má promyšlený systém interní evaluace a systematicky vyhodnocuje vzdělávací proces ve všech oblastech.",
+        "evidence": "Hospitační činnost s individuální zpětnou vazbou, pravidelné porady, efektivní kontrolní systém."
+      },
+      {
+        "tag": "Prostředí a bezpečnost",
+        "detail": "Škola postupně modernizuje vybavení a vytváří estetické, podnětné a bezpečné prostředí pro učení.",
+        "evidence": "Renovace prostor, moderní didaktická technika, odpočinková místa, zajištění bezpečnosti a psychického bezpečí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivita žáků ve výuce",
+        "detail": "Žáci nemají vždy dostatek příležitostí aktivně se zapojit do činností a klást otázky, což vede k jejich pasivitě.",
+        "evidence": "Ve sledovaných hodinách panovala pozitivní atmosféra, ale žáci ne vždy měli možnost se aktivně zapojit."
+      },
+      {
+        "tag": "Omezená diferenciace výuky",
+        "detail": "Všichni žáci plní stejné úkoly se shodnou náročností, což nerespektuje individuální předpoklady a nadání.",
+        "evidence": "Vzdělávací strategie ojediněle odrážely individuální předpoklady žáků, omezená nabídka úloh s vyšší náročností."
+      },
+      {
+        "tag": "Zvýšená úrazovost",
+        "detail": "V posledních třech letech škola eviduje zvýšené množství úrazů, převážně v tělesné výchově.",
+        "evidence": "Vedení provádí rozbor úrazovosti a přijímá opatření, ale ke zlepšení by přispělo snížení rizikových situací."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jak se liší výuka pro ně od ostatních?",
+      "Jaké jsou konkrétní opatření na snížení úrazovosti v tělesné výchově?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a komunikačních dovedností žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí kvalitní přípravu na vysokou školu – dlouhodobě dosahují velmi dobrých výsledků (průměr nižší než 1,5 u osmiletého studia, 57 % s vyznamenáním).",
+      "Nadaní žáci – škola je aktivně podporuje v soutěžích a olympiádách na všech úrovních.",
+      "Žáci zajímající se o jazyky – výborné výsledky v jazykových soutěžích a certifikátech (Cambridge, First Certificate)."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální pozornosti a diferenciované úkoly – výuka je často frontální se shodnou náročností pro všechny.",
+      "Žáci se zdravotními problémy – zvýšená úrazovost v tělesné výchově vyžaduje zvýšenou opatrnost.",
+      "Žáci, kteří se hůře adaptují na vysoké nároky – přestože je podpora dostupná, přechod ze základní školy je náročný."
+    ],
+    "plain_czech_summary": "Gymnázium T.G. Masaryka je kvalitní střední škola s velmi dobrými výsledky. Silné stránky: aktivní vedení, partnerství s vysokými školami a firmami, moderní vybavení, podpora nadaných žáků. Slabé stránky: výuka je často frontální bez dostatečné diferenciace, žáci nemají vždy prostor pro aktivní zapojení a rozvoj kritického myšlení. Zvýšená úrazovost v tělesné výchově. Vhodná pro ambiciózní žáky připravující se na vysokou školu, zejména zájemce o jazyky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírně horší než celorepublikový průměr, ale stále velmi dobrý",
+      "key_numbers": [
+        "Hrubá neúspěšnost čtyřleté gymnázia: 10,2 % (poslední 3 roky)",
+        "Hrubá neúspěšnost osmiletého gymnázia: 4,5 % (poslední 3 roky)",
+        "Žáci dosahují dobrých výsledků ve výběrovém testování ČŠI"
+      ],
+      "evidence": "V posledních třech letech vykazuje škola průměrnou hrubou neúspěšnost 10,2 % u čtyřletého a 4,5 % u osmiletého gymnázia."
+    },
+    "absence": {
+      "trend": "Velmi nízká, škola má efektivní systém kontroly",
+      "key_numbers": [
+        "Omluvená absence osmiletého studia: 131 hodin na žáka",
+        "Omluvená absence čtyřletého studia: 159 hodin na žáka",
+        "Neomluvenou absenci škola v posledních třech letech téměř nevykazuje"
+      ],
+      "evidence": "K omezení absence přispívá pravidlo minimální docházky do jednotlivých vyučovacích předmětů."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se školní psycholožkou, metodičkou prevence a výchovnou poradkyní",
+      "Doučování a pedagogické konzultace pro žáky s rizikem školního neúspěchu",
+      "Individuální vzdělávací plány pro nadané žáky a aktivní sportovce",
+      "Metodická pomoc pro začínající pedagogy prostřednictvím uvádějícího učitele"
+    ],
+    "safety_climate": [
+      "Psychické bezpečí žáků i pedagogů zajištěno",
+      "Zvýšené množství úrazů v posledních třech letech, převážně v tělesné výchově",
+      "Vedení provádí rozbor úrazovosti a přijímá opatření (zvýšené proškolování žáků)",
+      "Doporučení: snížit rizikové situace při volbě aktivit v tělesné výchově"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s vysokými školami (Mendelova univerzita, Centrum pro talentovanou mládež, Mensa ČR)",
+      "Partnerství se základními školami v regionu",
+      "Spolupráce s odbornými a regionálními institucemi (CHKO Pálava, Dům přírody Pálavy)",
+      "Projekty s francouzskou partnerskou školou La Germinière Rouillon (Erasmus+)",
+      "Spolupráce s firmami umožňující odborné stáže a exkurze"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Některé pasáže jsou však delší a složitější, což mírně snižuje jasnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počet úrazů ani jejich závažnost – pouze uvádí 'zvýšené množství'.",
+      "Není jasné, jak přesně se liší výuka mezi jednotlivými předměty – některé jsou popsány detailněji než jiné.",
+      "Chybí konkrétní čísla o počtu žáků s speciálními vzdělávacími potřebami a jejich typu podpory."
+    ]
+  }
+}
+```

@@ -1,0 +1,112 @@
+{
+  "report_id": "SOU_600015289_2024-12-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:07:30.806815+00:00",
+  "run_finished_utc": "2026-02-09T16:07:55.851147+00:00",
+  "raw_file": "SOU_600015289_2024-12-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600015289_2024-12-02",
+    "school_profile": {
+      "school_type": "Střední odborná škola s maturitními obory (Kosmetické služby, Gastronomie, Podnikání) a nematuritními obory (Cukrář, Řezník-uzenář, Kuchař-číšník, Prodavač, Ošetřovatel, Výrobce kožedělného zboží)",
+      "inspection_period": "2. až 6. prosince 2024",
+      "school_change_summary": "Od poslední inspekce došlo k navýšení počtu žáků a tříd, zlepšení materiálních podmínek a inovaci vzdělávací nabídky. Škola se však nedaří zavádět účinná opatření ke zlepšení výsledků v maturitní zkoušce."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické dovednosti a spolupráce s firmami",
+          "detail": "Škola má efektivní partnerství se zaměstnavateli a propojuje teoretické a praktické vyučování, což rozvíjí klíčové kompetence žáků.",
+          "evidence": "Významná spolupráce se zaměstnavateli v oblasti externích odborných praxí, řada navázaných partnerství s firmami."
+        },
+        {
+          "tag": "Úspěch v nematuritních oborech",
+          "detail": "Žáci v oborech s výučním listem dosahují velmi dobrých výsledků při závěrečných zkouškách.",
+          "evidence": "Z 182 žáků konajících závěrečnou zkoušku neuspělo pouze 11, což je výrazný úspěch."
+        },
+        {
+          "tag": "Materiální vybavení a projekty",
+          "detail": "Škola aktivně vyhledává financování a zlepšuje materiální podmínky pro výuku.",
+          "evidence": "Vedení školy je aktivní v projektové činnosti, účelně využívá zdroje ke zkvalitňování podmínek."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v maturitě",
+          "detail": "Výsledky v maturitní zkoušce jsou pod průměrem republiky, zejména v předmětech společné části.",
+          "evidence": "V oboru Podnikání hrubá neúspěšnost 33 % (2024), Gastronomie 33 %, Kosmetické služby 12 %. Horší než celorepublikový průměr."
+        },
+        {
+          "tag": "Nízká kvalita teoretické výuky",
+          "detail": "Výuka se opírá především o frontální metody, chybí kritické myšlení, skupinová práce a diferenciace.",
+          "evidence": "Pestré metody práce se vyskytly výjimečně, převažuje předávání hotových informací, diferenciace vzdělávacího obsahu chybí."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Přestože absence klesá, stále je vysoká a škola ji považuje za hlavní příčinu neúspěchu.",
+          "evidence": "Ve školním roce 2023/2024 průměrná absence 91 hodin na žáka, v roce 2021/2022 byla 123 hodin."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky ohrožené školní neúspěšností v předmětech maturitní zkoušky (matematika, čeština, angličtina)?",
+        "Jaké metody používáte k motivaci žáků a jak řešíte vysokou absenci?",
+        "Jak se liší přístup k výuce v nematuritních oborech (kde jsou výsledky dobré) a v maturitních oborech (kde jsou slabší)?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla – v nematuritních oborech (Kuchař, Cukrář, Prodavač) dosahují výborných výsledků.",
+        "Žáci s jasným profesním zaměřením v gastronomii, kosmetice nebo podnikání, kteří preferují praktickou výuku.",
+        "Žáci, kterým vyhovuje spolupráce se skutečnými zaměstnavateli a získávání praktických zkušeností."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnou podporu v matematice, češtině a angličtině – výsledky v těchto předmětech jsou slabé.",
+        "Žáci s tendencí k absenci – škola sice pracuje na snižování absence, ale stále je vysoká.",
+        "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – inspekce zjistila, že diferenciace chybí."
+      ],
+      "plain_czech_summary": "Střední odborná škola v Prostějově je silná v praktické výuce a nematuritních oborech, kde žáci dosahují výborných výsledků. Má dobré vybavení a spolupracuje se zaměstnavateli. Problém je v teoretické výuce a výsledcích maturitní zkoušky, které jsou pod průměrem. Výuka se opírá především o frontální metody bez dostatečné diferenciace. Vysoká absence žáků je dalším problémem. Škola se snaží situaci zlepšit, ale dosavadní opatření nejsou dostatečně účinná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s částečným zlepšením v některých oborech, ale stále pod průměrem republiky",
+        "key_numbers": [
+          "Obor Podnikání: hrubá neúspěšnost 33 % (2024), v roce 2022 byla 73 %",
+          "Obor Gastronomie: hrubá neúspěšnost 33 % (2024), v roce 2022 byla 43 %",
+          "Obor Kosmetické služby: hrubá neúspěšnost 12 % (2024), v roce 2022 byla 33 %"
+        ],
+        "evidence": "Výsledky ve společné části maturitní zkoušky jsou horší než celorepublikový průměr v roce 2023 a 2024. V profilové části dosahují žáci srovnatelných výsledků s průměrem."
+      },
+      "absence": {
+        "trend": "Pozitivní – postupný pokles",
+        "key_numbers": [
+          "Školní rok 2021/2022: 123 hodin na žáka",
+          "Školní rok 2022/2023: 94 hodin na žáka",
+          "Školní rok 2023/2024: 91 hodin na žáka"
+        ],
+        "evidence": "Klesající trend zaznamenán i u oborů s maturitní zkouškou. Škola klade důraz na systematickou práci třídních učitelů a spolupráci s praktickými lékaři."
+      },
+      "support_services": [
+        "Výchovná poradkyně zaměřená na péči o žáky se speciálními vzdělávacími potřebami",
+        "Školní metodička prevence realizující preventivní programy a besedy",
+        "Kariérová poradkyně podporující profesní orientaci žáků"
+      ],
+      "safety_climate": [
+        "Hodnocené vyučovací hodiny probíhaly v příznivé pracovní atmosféře, žáci dodržovali pravidla komunikace",
+        "Prevence rizikového chování je plně v kompetenci metodičky prevence, která posiluje individuální vztahy mezi žáky"
+      ],
+      "partnerships_practice": [
+        "Efektivní spolupráce se zaměstnavateli v oblasti externích odborných praxí",
+        "Řada navázaných partnerství s firmami zabezpečujícími odborné praxe",
+        "Členství v odborných organizacích a asociacích přispívající k rozvoji odborných kompetencí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní data. Některé pasáže jsou však dlouhé a složitě strukturované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola plánuje zavést k zlepšení výsledků v maturitě.",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými učiteli a obory.",
+        "Chybí informace o tom, jak se škola vypořádá s doporučením podat návrh na výmaz oboru Podnikání."
+      ]
+    }
+  }
+}

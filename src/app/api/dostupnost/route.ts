@@ -69,8 +69,10 @@ type SearchRequest = {
 };
 
 const PAGE_SIZE = 50;
-const WALK_SPEED_KMPH = 5.0;
+const WALK_SPEED_KMPH = 4.0; // Běžná rychlost chůze
+const WALK_ROUTE_MULTIPLIER = 1.3; // Koeficient pro převod vzdušné čáry na reálnou trasu (budovy, zatáčky)
 const MAX_WALK_DISTANCE_KM = 1.5;
+const NEAR_MISS_EXTRA_MINUTES = 5; // Kolik minut navíc zobrazit v "near miss" počítadle
 
 let graphCache: TransitGraphData | null = null;
 let schoolLocationsCache: SchoolLocationsData | null = null;
@@ -557,9 +559,10 @@ export async function POST(request: NextRequest) {
 
       for (const { groupKey, distanceKm } of nearbySchools) {
         if (distanceKm > MAX_WALK_DISTANCE_KM) continue;
-        const walkMin = (distanceKm / WALK_SPEED_KMPH) * 60;
+        const walkMin = (distanceKm * WALK_ROUTE_MULTIPLIER / WALK_SPEED_KMPH) * 60;
         const totalMin = transitMin + walkMin;
-        if (totalMin > maxMinutes) continue;
+        // Porovnáváme zaokrouhlenou hodnotu, aby zobrazené časy odpovídaly filtru
+        if (Math.round(totalMin) > maxMinutes) continue;
 
         const existing = bestSchoolTimes.get(groupKey);
         if (!existing || totalMin < existing.totalMinutes) {
@@ -580,6 +583,7 @@ export async function POST(request: NextRequest) {
 
     phaseStart = Date.now();
     const reachableSchools: Array<Record<string, unknown>> = [];
+    let nearMissCount = 0;
 
     for (const [groupKey, timing] of bestSchoolTimes) {
       const school = schoolsMap.get(groupKey);
@@ -588,29 +592,38 @@ export async function POST(request: NextRequest) {
       // Apply typ filter
       if (typFilter && !school.typy.some((t) => t === typFilter)) continue;
 
-      const schoolSlug = `${school.redizo}-${createSlug(school.nazevRaw || school.nazev)}`;
-      reachableSchools.push({
-        redizo: school.redizo,
-        nazev: school.nazev,
-        adresa: school.adresa,
-        obec: school.obec,
-        kraj: school.kraj,
-        typy: school.typy,
-        estimatedMinutes: Math.round(timing.totalMinutes),
-        stopName: timing.stopName,
-        transitMinutes: Math.round(timing.transitMinutes),
-        walkMinutes: Math.round(timing.walkMinutes),
-        waitMinutes: Math.round(timing.waitMinutes),
-        transfers: timing.transfers,
-        usedLines: timing.usedRoutes,
-        admissionBand: getDifficultyBand(school.difficultyScore, difficultyThresholdsCache),
-        obory: school.obory,
-        programs: school.programs,
-        minBodyMin: school.minBodyMin,
-        difficultyScore: school.difficultyScore !== null ? roundToOne(school.difficultyScore) : null,
-        schoolUrl: `/skola/${schoolSlug}`,
-        simulatorSchoolId: school.simulatorSchoolId,
-      });
+      const totalMinutesRounded = Math.round(timing.totalMinutes);
+
+      // Školy v limitu - přidat do výsledků
+      if (totalMinutesRounded <= maxMinutes) {
+        const schoolSlug = `${school.redizo}-${createSlug(school.nazevRaw || school.nazev)}`;
+        reachableSchools.push({
+          redizo: school.redizo,
+          nazev: school.nazev,
+          adresa: school.adresa,
+          obec: school.obec,
+          kraj: school.kraj,
+          typy: school.typy,
+          estimatedMinutes: totalMinutesRounded,
+          stopName: timing.stopName,
+          transitMinutes: Math.round(timing.transitMinutes),
+          walkMinutes: Math.round(timing.walkMinutes),
+          waitMinutes: Math.round(timing.waitMinutes),
+          transfers: timing.transfers,
+          usedLines: timing.usedRoutes,
+          admissionBand: getDifficultyBand(school.difficultyScore, difficultyThresholdsCache),
+          obory: school.obory,
+          programs: school.programs,
+          minBodyMin: school.minBodyMin,
+          difficultyScore: school.difficultyScore !== null ? roundToOne(school.difficultyScore) : null,
+          schoolUrl: `/skola/${schoolSlug}`,
+          simulatorSchoolId: school.simulatorSchoolId,
+        });
+      }
+      // Školy těsně za limitem - spočítat pro "near miss" info
+      else if (totalMinutesRounded <= maxMinutes + NEAR_MISS_EXTRA_MINUTES) {
+        nearMissCount++;
+      }
     }
 
     reachableSchools.sort((a, b) => {
@@ -651,6 +664,10 @@ export async function POST(request: NextRequest) {
         hasNext: page < totalPages,
         hasPrev: page > 1,
       },
+      nearMiss: nearMissCount > 0 ? {
+        count: nearMissCount,
+        extraMinutes: NEAR_MISS_EXTRA_MINUTES,
+      } : null,
       legends: {
         admissionThresholds: difficultyThresholdsCache,
       },
@@ -664,7 +681,7 @@ export async function POST(request: NextRequest) {
           'Hrany grafu obsahují informace o linkách, čas zahrnuje jízdní dobu + čekání na spoj + přestupní penalizaci.',
           `Čekání na spoj = headway/2 (max ${MAX_WAIT} min), přestupní penalizace = ${TRANSFER_PENALTY} min.`,
           'Headway linek je odvozen z pondělního ranního profilu 7:00–8:00.',
-          'Chůze ze zastávky ke škole je počítána rychlostí 5 km/h, max 1,5 km.',
+          `Chůze ze zastávky ke škole: rychlost ${WALK_SPEED_KMPH} km/h, koeficient trasy ${WALK_ROUTE_MULTIPLIER}× (zohledňuje budovy a zatáčky), max ${MAX_WALK_DISTANCE_KM} km.`,
           'Pro přesnější výsledky doporučujeme ověřit konkrétní spojení na spojenka.cz.',
         ],
       },

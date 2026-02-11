@@ -1,0 +1,104 @@
+{
+  "report_id": "GY8_600013057_2022-01-18",
+  "school_profile": {
+    "school_type": "Gymnázium",
+    "inspection_period": "18. až 20. 1. 2022",
+    "school_change_summary": "Škola postupně zlepšuje materiálně technické podmínky (nové laboratoře, IT) a udržuje kvalitu vzdělávání i škálu aktivit."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky",
+        "detail": "Žáci dosahují velmi dobrých výsledků včetně maturit a úspěšně se umisťují na vysokých školách.",
+        "evidence": "„velmi dobré ročníkové výsledky vzdělávání žáků včetně výsledků maturitních zkoušek podporující úspěšné uplatnění absolventů v dalším vzdělávání“"
+      },
+      {
+        "tag": "Profilace",
+        "detail": "Široká nabídka volitelných předmětů a seminářů umožňuje žákům specializaci podle zájmů.",
+        "evidence": "„Široká paleta volitelných předmětů... předměty multimédia, programování, deskriptivní geometrie, latina, dramatická výchova nebo sportovní hry“"
+      },
+      {
+        "tag": "Partnerská spolupráce",
+        "detail": "Škola nabízí bohatou projektovou činnost a spolupracuje s firmami a univerzitami v regionu.",
+        "evidence": "„bohatá projektová činnost školy a četné mnohostranné formy partnerské spolupráce s místními a regionálními organizacemi“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Metody výuky",
+        "detail": "Ve výuce převažuje frontální styl bez diferenciace pro nadané či slabší žáky.",
+        "evidence": "„Ve většině hodin převažovala frontální výuka... zvolené vzdělávací strategie... postrádaly účelnou diferenciaci a individualizaci výuky“"
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Učitelé často nevěnují prostor závěrečnému shrnutí a hodnocení splnění cílů hodiny.",
+        "evidence": "„vyučující nevěnovali dostatečný časový prostor závěrečnému shrnutí a hodnocení hodiny, s efektivní zpětnou vazbou žákům“"
+      },
+      {
+        "tag": "Řízení kvality",
+        "detail": "Vedení školy nesystematicky sleduje průběh výuky prostřednictvím hospitací.",
+        "evidence": "„průběh vzdělávání např. v rámci kontrolní nebo hospitační činnosti systematicky sledován není“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje individuální rozvoj nadaných dětí v rámci běžných hodin?",
+      "Jakým způsobem pedagogové poskytují žákům zpětnou vazbu na konci hodin?",
+      "Využívají učitelé vzájemné hospitace pro sdílení dobré praxe?"
+    ],
+    "who_school_fits": [
+      "Samostatní žáci, kteří dobře zvládají tradiční frontální výuku a předávání znalostí.",
+      "Uchazeči plánující studium na VŠ, kteří ocení širokou nabídku seminářů na přípravu.",
+      "Žáci, kteří chtějí být aktivní v projektech, soutěžích a bohatém mimoškolním dění."
+    ],
+    "who_should_be_cautious": [
+      "Žáci vyžadující individuální přístup nebo specifické metody výuky pro svůj rozvoj.",
+      "Rodiče očekávající moderní interaktivní metody a skupinovou práci ve většině hodin.",
+      "Žáci, kteří potřebují častou a průběžnou zpětnou vazbu od učitelů."
+    ],
+    "plain_czech_summary": "Gymnázium nabízí stabilní prostředí s velmi dobrými studijními výsledky a širokou nabídkou seminářů pro přípravu na VŠ. Prostorové a materiální podmínky se zlepšují. Slabinou je tradiční styl výuky, který chybí individualizaci a moderním metodám. Výuka probíhá v klidné atmosféře, ale chybí efektivní zpětná vazba a sebehodnocení. Škola má silné zázemí v regionálních projektech a mimoškolních aktivitách."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrá, stabilní úroveň.",
+      "key_numbers": [
+        "290 žáků",
+        "4 žáci se SVP",
+        "2 obory vzdělání (4leté a 8leté)"
+      ],
+      "evidence": "„většina žáků má velmi dobré nebo výborné výsledky, a to včetně maturitní zkoušky“"
+    },
+    "absence": {
+      "trend": "Spíše nižší, neomluvená je řešena.",
+      "key_numbers": [
+        "neuvedeno konkrétní číslo",
+        "neomluvená absence sledována",
+        "převažují pochvaly"
+      ],
+      "evidence": "„Absence žáků ve výuce je spíše nižší, neomluvená absence je sledována a vyhodnocována“"
+    },
+    "support_services": [
+      "Výchovné a kariérové poradenství zajišťuje kvalifikovaná učitelka.",
+      "Funguje žákovský parlament.",
+      "Škola nabízí doučování pro zmírnění důsledků distanční výuky."
+    ],
+    "safety_climate": [
+      "Vstřícný přístup učitelů a klidná pracovní atmosféra.",
+      "Nízká míra rizikového chování žáků.",
+      "Adaptační kurzy pro první ročníky podporují vztahy."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s městem Lanškroun a firmami (Contipro).",
+      "Spolupráce s univerzitami (Pardubice, Č. Budějovice).",
+      "Účast v projektech Globe a AMAVET."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení silné a slabé stránky. Obsahuje standardní pedagogické termíny (diferenciace, formativní zpětná vazba), které mohou být laikům méně srozumitelné, ale kontext je jasný.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní číselné údaje o neomluvené absenci, pouze kvalitativní hodnocení 'spíše nižší'.",
+      "Neobsahuje detailní statistiku úspěšnosti u maturit či přijímacích řízení na VŠ, pouze obecné hodnocení 'velmi dobré'.",
+      "Není zcela jasné, jak je řešena individualizace pro 4 žáky se SVP, když výuka celkově postrádá diferenciaci."
+    ]
+  }
+}

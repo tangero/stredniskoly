@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600010422_2022-03-29",
+  "school_profile": {
+    "school_type": "Střední uměleckoprůmyslová škola sklářská se zaměřením na sklářsko-designérské a chemicko-technologické obory, s domovem mládeže",
+    "inspection_period": "29. března až 1. dubna 2022",
+    "school_change_summary": "Od poslední inspekce v 2017 roste zájem uchazečů o studium. Od školního roku 2021/2022 je nabízeno nové zaměření Nanotechnologie a polymery. Vedení školy se změnilo v lednu 2020, nový ředitel aktivně stabilizuje pedagogický sbor a rozvíjí školu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výjimečné praktické vzdělání",
+        "detail": "Škola disponuje vlastní sklářskou hutí a moderně vybaveným komplexem laboratoří, výstupy žáků dosahují velmi vysoké výtvarné a řemeslné úrovně.",
+        "evidence": "\"Škola disponuje vlastní sklářskou hutí a pokrývá téměř všechny horké i studené techniky uměleckého zpracování skla.\""
+      },
+      {
+        "tag": "Silné sociální partnerství",
+        "detail": "Dlouhodobá spolupráce s firmami, muzei a univerzitami (Univerzita Pardubice) umožňuje propojení teorie s praxí a podporuje konkurenceschopnost absolventů.",
+        "evidence": "\"Dlouhodobá spolupráce se sociálními partnery přispívá k úzkému propojení teoretické složky vzdělávání s praktickou.\""
+      },
+      {
+        "tag": "Úspěchy žáků v soutěžích",
+        "detail": "Řada žáků dosahuje mimořádných úspěchů na regionální, republikové i mezinárodní úrovni (Master of Crystal 2020, Talente 2021 München).",
+        "evidence": "\"Řada z nich dosahuje mimořádných úspěchů na regionální, republikové i mezinárodní úrovni.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Zastaralé vybavení dílen a ubytování",
+        "detail": "Materiální a technické vybavení dílenských provozů a domova mládeže je funkční, ale neodpovídá současným potřebám a situaci v průmyslu.",
+        "evidence": "\"Vybavení zastaralé. Přestože je udržované a funkční, neodpovídá současným potřebám a aktuální situaci v průmyslovém sektoru.\""
+      },
+      {
+        "tag": "Slabší výsledky v maturitě u sklářských oborů",
+        "detail": "Úspěšnost žáků sklářsko-designerských oborů je v České republice mírně podprůměrná, 18,5 % žáků neuspělo.",
+        "evidence": "\"U sklářsko-designerských oborů získalo vyznamenání 30 % žáků, naproti tomu neúspěšných žáků bylo 18,5 %.\""
+      },
+      {
+        "tag": "Omezené sebehodnocení žáků",
+        "detail": "Škola má rezervy ve využívání sebehodnocení a vrstevnického hodnocení jako prostředků podporujících učení.",
+        "evidence": "\"Minimálně probíhalo hodnocení žákovského výkonu učitelem, sebehodnocení nebo vzájemné hodnocení žáků.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké jsou konkrétní plány na modernizaci vybavení dílen a domova mládeže?",
+      "Jak se škola připravuje na zlepšení výsledků maturitní zkoušky u sklářských oborů?",
+      "Jaké jsou možnosti ubytování v domově mládeže a jaké jsou podmínky pro přijetí?"
+    ],
+    "who_school_fits": [
+      "Talentovaní žáci se zájmem o sklářství, design a umělecké řemeslo s vůlí pracovat prakticky",
+      "Zájemci o chemii a technologie s ambicí na vysokoškolské studium (60 % absolventů pokračuje na VŠ)",
+      "Žáci hledající propojení teoretického a praktického vzdělání s podporou individuálního rozvoje"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují nejmodernější technické vybavení – dílenské vybavení je funkční, ale zastaralé",
+      "Uchazeči o sklářsko-designérské obory by měli počítat s nižší úspěšností v maturitě (18,5 % neuspěje)",
+      "Žáci vyžadující intenzivní individuální podporu v matematice a cizích jazycích – zde jsou rezervy"
+    ],
+    "plain_czech_summary": "Jde o prestižní školu s více než stoletou tradicí, která nabízí unikátní praktické vzdělání v sklářství, designu a chemii. Silné stránky: vlastní sklářská huť, moderní laboratoře, úspěchy v mezinárodních soutěžích, silné vazby s průmyslem. Slabiny: zastaralé vybavení dílen a ubytování, nižší úspěšnost v maturitě u sklářských oborů (18,5 % neuspěje). Vhodná pro talentované žáky se zájmem o praktickou práci a vysokoškolské studium. Nový ředitel od 2020 aktivně školu rozvíjí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý s problémy u sklářských oborů",
+      "key_numbers": [
+        "Sklářsko-designérské obory: 30 % s vyznamenáním, 18,5 % neúspěšných (2020/2021)",
+        "Chemicko-technologické obory: 44 % s vyznamenáním, pouze 1 neúspěšný žák (2020/2021)",
+        "Sklářské obory jsou v ČR mírně podprůměrné, chemické obory kolísavé v cizím jazyce a nižší v matematice"
+      ],
+      "evidence": "\"Ve školním roce 2020/2021 získalo 44 % žáků chemicko-technologických oborů vyznamenání u maturitní zkoušky, ostatní prospěli s výjimkou jediného žáka. U sklářsko-designerských oborů získalo vyznamenání 30 % žáků, naproti tomu neúspěšných žáků bylo 18,5 %.\""
+    },
+    "absence": {
+      "trend": "Kontrolovaná, neomluvené absence řešeny",
+      "key_numbers": [
+        "10 % žáků mělo neomluvené hodiny (2020/2021)",
+        "6 žáků dostalo sníženou známku z chování",
+        "Škola důsledně uplatňuje pravidla pro hodnocení"
+      ],
+      "evidence": "\"Neomluvené hodiny byly ve školním roce 2020/2021 zaznamenány u 10 % žáků, snížená známka z chování byla udělena 6 žákům.\""
+    },
+    "support_services": [
+      "Výchovné poradenství a prevence rizikového chování (od 2021/2022 perspektivní pedagog)",
+      "Doučování v matematice, češtině a angličtině v domově mládeže",
+      "Individuální vzdělávací plány pro 6 žáků se speciálními potřebami, plány pedagogické podpory pro 5 žáků",
+      "Adaptační kurzy pro prvňáky, konzultace a individuální přístup v praktické výuce"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti díky odpovědnému přístupu pedagogů k bezpečnosti",
+      "Analýza rizik zpracována, bezpečnostní pravidla v školním řádu a provozních řádech",
+      "Elektronický systém zabezpečení vstupních prostor proti vniknutí cizích osob",
+      "Spolupráce s Policií ČR v prevenci kyberšikany"
+    ],
+    "partnerships_practice": [
+      "Univerzita Pardubice – tvorba ŠVP, realizace odborných praxí",
+      "Muzeum skla a bižuterie v Jablonci, Městské muzeum v Železném Brodu",
+      "Krajská hospodářská komora, festival Skleněné městečko",
+      "Svaz výrobců skla a bižuterie – účast na módních přehlídkách a veletrzích",
+      "Klub sklářské školy v Železném Brodě"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní čísla a citace. Silné a slabé stránky jsou jasně identifikovány. Mírně snižuje srozumitelnost vysoký podíl odborné terminologie a dlouhé věty.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní plány na modernizaci vybavení – není jasné, zda jsou již v přípravě",
+      "Není jasné, jaké konkrétní opatření škola plánuje na zlepšení výsledků maturitní zkoušky u sklářských oborů",
+      "Chybí informace o počtu žáků s poruchami učení nebo zdravotním postižením mimo speciální vzdělávací potřeby"
+    ]
+  }
+}
+```

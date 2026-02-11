@@ -1,0 +1,10 @@
+{
+  "report_id": "GY8_600005054_2022-01-20",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:18:00.358718+00:00",
+  "run_finished_utc": "2026-02-10T08:00:40.706099+00:00",
+  "raw_file": "GY8_600005054_2022-01-20.raw.txt",
+  "call_error": "The read operation timed out",
+  "parse_error": "The read operation timed out",
+  "parsed_output": null
+}

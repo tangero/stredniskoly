@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600170691_2024-02-12",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola stavební a Střední odborná škola stavební a technická",
+    "inspection_period": "12. 2. 2024 − 15. 2. 2024",
+    "school_change_summary": "Škola se postupně modernizuje. Materiální podmínky pro odborné vzdělávání jsou na velmi dobré úrovni. Problémy přetrvávají v metodické podpoře pedagogů a kvalitě výuky, zejména v matematice na maturitě."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka na vysoké úrovni",
+        "detail": "Vlastní dílny s moderním vybavením (CNC stroje, robotika, 3D tisk) odpovídají trendům na trhu práce.",
+        "evidence": "Kvalita a množství strojního vybavení je na velmi dobré úrovni, praktické dovednosti jsou účelně rozvíjeny."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují velmi dobrých výsledků zejména v odborných soutěžích na republikové úrovni.",
+        "evidence": "Úspěšná reprezentace žáků velmi dobře podporuje rozvoj jejich odborných a sociálních kompetencí."
+      },
+      {
+        "tag": "Spolupráce s firmami",
+        "detail": "Škola má bohaté partnerství s odbornými firmami, které podporují výuku a uplatnění absolventů.",
+        "evidence": "Efektivní spolupráce s odbornými firmami směřuje k těsnějšímu propojení výuky s praxí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky v matematice na maturitě",
+        "detail": "Hrubá neúspěšnost v matematice je výrazně vyšší než průměr ČR (např. Stavebnictví 21,4 % vs. 6,2 % v ČR roku 2023).",
+        "evidence": "Nejvyšší míru hrubé neúspěšnosti zaznamenala škola ve zkušebním předmětu matematika."
+      },
+      {
+        "tag": "Nedostatečná diferenciace ve výuce",
+        "detail": "Učitelé málo přizpůsobují výuku individuálním potřebám žáků, zejména těch se speciálními vzdělávacími potřebami.",
+        "evidence": "V žádné hodině nebyla zaznamenána diferenciace vzdělávacího obsahu, individualizace byla ojediněle."
+      },
+      {
+        "tag": "Málo aktivní metody výuky",
+        "detail": "Pedagogové převážně používají výklad a řízený rozhovor, málo zapojují žáky aktivně do procesu.",
+        "evidence": "Pedagogové v nízké míře využívají aktivizační metody a formy práce, což vede k částečné pasivitě žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší slabé výsledky v matematice na maturitě? Jaké jsou plány na zlepšení?",
+      "Jak jsou podporováni žáci se speciálními vzdělávacími potřebami? Jaké mají k dispozici individuální přístupy?",
+      "Jaké jsou možnosti doučování a individuálních konzultací pro žáky, kteří zaostávají?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a odborné obory (stavebnictví, automechanika, elektrikářství, truhlářství)",
+      "Talentovaní žáci v odborných oborech, kteří se chtějí prosazovat v soutěžích",
+      "Žáci, kterým vyhovuje propojení teorie s praxí a učení v reálném pracovním prostředí"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími matematickými dovednostmi, pokud plánují obor zakončený maturitou (vysoké riziko neúspěchu)",
+      "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku (škola to zatím málo nabízí)",
+      "Žáci, kteří se lépe učí aktivními metodami a diskusí (výuka je spíše tradičnější)"
+    ],
+    "plain_czech_summary": "Škola je silná v praktické výuce a má moderní vybavení dílen. Žáci dosahují dobrých výsledků v odborných soutěžích a mají dobré vyhlídky na uplatnění. Problém je v matematice na maturitě, kde jsou výsledky slabší než v celé republice. Výuka není dostatečně přizpůsobena individuálním potřebám žáků a učitelé málo používají aktivní metody. Škola pracuje na zlepšení, ale rodiče by měli vědět o těchto výzvách."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Profilová část velmi dobrá, společná část slabá, zejména matematika",
+      "key_numbers": [
+        "Profilová část: neuspěl pouze 1 z 63 žáků (2022-2023)",
+        "Matematika Stavebnictví: 21,4 % hrubé neúspěšnosti (2023) vs. 6,2 % v ČR",
+        "Matematika Mechanik seřizovač: 38,9 % hrubé neúspěšnosti (2023) vs. 14,8 % v ČR"
+      ],
+      "evidence": "Ve společné části maturitní zkoušky z matematiky vykazuje škola opakovaně slabé výsledky. Škola zavedla seminář z češtiny a matematická cvičení."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva se nezabývá absencí žáků."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně a metodička prevence (od letošního roku také sociální pedagožka)",
+      "Kariérové poradenství pro všechny žáky",
+      "Doučování a individuální konzultace pro žáky s nedostatky",
+      "Adaptační programy pro prvňáky zaměřené na prevenci rizikového chování",
+      "Sociometrická šetření, sportovní kurzy, odborné exkurze"
+    ],
+    "safety_climate": [
+      "Atmosféra založená na vzájemném respektu v hodinách",
+      "Metodička prevence řeší záškoláctví, závislosti, šikanu a kyberšikanu bezodkladně",
+      "Jakékoliv náznaky problémového chování jsou řešeny bezodkladně, což přispívá k jejich minimalizaci",
+      "Školní řád a vnitřní řád domova mládeže jsou zavedeny"
+    ],
+    "partnerships_practice": [
+      "Bohaté partnerství s odbornými firmami, které participují na praktické výuce",
+      "Praktická výuka realizována i v zahraničí",
+      "Velké podniky podporují školu finančně a umožňují uplatnění absolventů",
+      "Efektivní zapojení do projektové činnosti",
+      "Vlastní svářecí škola pro výuku sváření v rozsahu k získání svářečského oprávnění"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní data. Některé pasáže jsou však úřednicky formulované a pro laika obtížně srozumitelné (např. kódy kritérií, právní odkazy). Hlavní zjištění jsou jasná.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, nelze posoudit trend absence žáků",
+      "Počet žáků v jednotlivých oborech není detailně rozepsán, pouze celkový počet 709 žáků",
+      "Konkrétní počty žáků, kteří neuspěli v závěrečné zkoušce, nejsou uvedeny (jen 93 % úspěšnost)"
+    ]
+  }
+}
+```

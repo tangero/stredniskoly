@@ -1,0 +1,117 @@
+{
+  "report_id": "GY4_600013693_2023-11-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:33:57.433668+00:00",
+  "run_finished_utc": "2026-02-09T16:34:23.311069+00:00",
+  "raw_file": "GY4_600013693_2023-11-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600013693_2023-11-21",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté, obor 79-41-K/41)",
+      "inspection_period": "21. listopadu až 23. listopadu 2023",
+      "school_change_summary": "Škola se přestěhovala na nové místo, počet tříd a žáků výrazně vzrostl (240 žáků v 9 třídách). Od školního roku 2023/2024 provozuje vlastní školní jídelnu-výdejnu. Nová ředitelka převzala vedení v roce 2022."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jasná vize a strategie",
+          "detail": "Škola má srozumitelný a realistický plán rozvoje na období 2023–2029, který se daří naplňovat.",
+          "evidence": "Strategický plán formuluje cíle ve všech oblastech vzdělávání srozumitelně a reálně, vize je sdílená pedagogickým sborem."
+        },
+        {
+          "tag": "Rozvoj klíčových kompetencí",
+          "detail": "Bloková výuka jednou měsíčně systematicky rozvíjí sociální, komunikativní a personální kompetence žáků.",
+          "evidence": "V blokové výuce jsou efektivně rozvíjeny klíčové kompetence, součástí jsou individuální rozhovory s formativním charakterem."
+        },
+        {
+          "tag": "Podnětné prostředí",
+          "detail": "Škola má netradiční učebny (fotoateliér, dramatická výchova), odpočinková místa a knihovnu podporující kvalitní vzdělávání.",
+          "evidence": "Prostory jsou esteticky mimořádně podnětné a pozitivně přispívají ke zlepšování klimatu školy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Chybí školní psycholog",
+          "detail": "Počet žáků s psychickými potížemi roste, ale škola nemá vlastního psychologa ani externí spolupráci.",
+          "evidence": "Škola aktuálně nedisponuje školním psychologem ani nemá navázánu spolupráci s externistou, což ji hendikepuje v plné podpoře."
+        },
+        {
+          "tag": "Nižší úspěšnost u maturity",
+          "detail": "Hrubá neúspěšnost u maturitní zkoušky činila cca 6 %, což je nižší než celorepublikový průměr.",
+          "evidence": "Úspěšnost žáků při ukončování vzdělání byla v posledních dvou letech nižší než celorepublikový průměr."
+        },
+        {
+          "tag": "Nedostatečná diferenciace pro nadané",
+          "detail": "Nadaní žáci nebo ti se zvýšeným zájmem nemají dostatek rozšiřujících aktivit, plní často stejné úlohy jako ostatní.",
+          "evidence": "Diferenciace výuky byla využita zhruba v pětině sledovaných hodin, v ostatních plnili většinou stejné úlohy."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky podniká škola na zlepšení úspěšnosti u maturitní zkoušky, zejména v češtině a matematice?",
+        "Plánuje škola zaměstnat školního psychologa nebo navázat externí spolupráci pro žáky s psychickými potížemi?",
+        "Jak škola zajišťuje individuální rozvoj nadaných žáků a těch se zvýšeným zájmem o jednotlivé předměty?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení osobnostního rozvoje a klíčových kompetencí (komunikace, spolupráce, kritické myšlení)",
+        "Studenti se zájmem o umění, mediální výchovu a netradičnější předměty (dramatika, rétorika, mediální výchova)",
+        "Žáci s průměrnými až dobrými výsledky, kterým vyhovuje strukturovaná podpora a individuální konzultace"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s psychickými potížemi – škola nemá vlastního psychologa a doporučuje pouze externí konzultace",
+        "Nadaní žáci nebo ti se zvýšeným zájmem – mohou postrádět dostatečně náročné rozšiřující aktivity",
+        "Žáci s vyšším rizikem neúspěchu u maturity – přestože škola zavádí opatření, úspěšnost je stále pod průměrem"
+      ],
+      "plain_czech_summary": "Gymnázium Mojmírovo náměstí je moderní soukromá škola s jasnou vizí a kvalitním vedením. Silnou stránkou je osobnostní rozvoj žáků prostřednictvím blokové výuky a podnětné prostředí s netradiční vybavením. Škola aktivně pracuje na zlepšování výsledků a snižování absence. Hlavní výzvou zůstává nižší úspěšnost u maturity a chybějící psychologická podpora. Škola je vhodná pro žáky, kterým vyhovuje moderní přístup k vzdělávání a osobnostnímu rozvoji."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírně negativní – pod celorepublikovým průměrem",
+        "key_numbers": [
+          "Hrubá neúspěšnost cca 6 %",
+          "Nižší úspěšnost než celorepublikový průměr v posledních dvou letech",
+          "Škola zavádí opatření (úpravy výuky češtiny a matematiky, srovnávací testování)"
+        ],
+        "evidence": "Úspěšnost žáků při ukončování vzdělání byla v posledních dvou letech nižší než celorepublikový průměr. Škola důvody neúspěchu analyzuje a přijímá vhodná opatření."
+      },
+      "absence": {
+        "trend": "Pozitivní – výrazné zlepšení",
+        "key_numbers": [
+          "Snížení zameškaných hodin o 20 % za poslední rok",
+          "Vedení školy důsledně analyzuje příčiny absence",
+          "Zlepšování se projevuje v pozvolném zlepšování výsledků vzdělávání"
+        ],
+        "evidence": "Počet zameškaných hodin žáků se za poslední rok snížil o 20 %, což se projevuje v pozvolném zlepšování celkových výsledků vzdělávání."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště – funkčně a účelně nastaveno",
+        "Kariérové poradenství – důraz v prvních dvou ročnících",
+        "Doučování a pedagogické konzultace pro žáky s rizikem neúspěchu",
+        "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami",
+        "Chybí: školní psycholog (doporučeno jako opatření)"
+      ],
+      "safety_climate": [
+        "Vstřícná a pracovní atmosféra ve vyučovacích hodinách",
+        "Žádné zaznamenané kázeňské problémy během inspekce",
+        "Pozitivní školní klima podporované odpočinkovými místy a klimatizací",
+        "Studentský parlament posilující občanské kompetence a pozitivní klima"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobě efektivní využívání partnerství pro zvyšování kvality vzdělávání",
+        "Získávání finančních prostředků z různých zdrojů",
+        "Účelné využívání prostředků pro zlepšování kvality vzdělávání",
+        "Spolupráce v rámci oborových skupin na vyhodnocování ŠVP a přípravě aktivit"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasnou strukturou. Obsahuje specifické údaje o počtech žáků, procentech absence a konkrétní popis aktivit. Mírně snižuje srozumitelnost akademičtější jazyk v některých pasážích.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik konkrétně žáků má psychické potíže – pouze uvádí, že počet roste",
+        "Není jasné, jaké konkrétní opatření škola přijala na zlepšení maturitních výsledků – jsou zmíněny pouze obecné úpravy",
+        "Chybí informace o tom, jak dlouho trvá absence školního psychologa a zda je jeho zřízení v plánu"
+      ]
+    }
+  }
+}

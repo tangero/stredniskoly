@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600012514_2025-02-25",
+  "school_profile": {
+    "school_type": "Střední odborná škola a střední odborné učiliště zaměřené na gastronomii, hotelnictví a veřejnosprávní činnost",
+    "inspection_period": "25. až 27. února 2025",
+    "school_change_summary": "Škola zaznamenala nárůst počtu žáků o téměř 17 % od poslední inspekce v roce 2021 (nyní 379 žáků v 16 třídách). Došlo k obsazení nové pozice zástupce ředitele pro teoretické vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemná atmosféra a chování žáků",
+        "detail": "Škola vytváří vstřícné prostředí se slušným profesionálním chováním většiny žáků.",
+        "evidence": "Inspektoři zaznamenali příjemnou atmosféru bez kázeňských problémů, zejména v odborném výcviku."
+      },
+      {
+        "tag": "Výborný odborný výcvik",
+        "detail": "Praktická výuka v gastronomii probíhá v reálném prostředí se smluvními partnery a školní kuchyní.",
+        "evidence": "Všichni žáci absolvují výcvik na minimálně dvou různých pracovištích, instruktoři podněcují zájem o obor."
+      },
+      {
+        "tag": "Spolupráce se zaměstnavateli",
+        "detail": "Škola má výborné vztahy se sociálními partnery, což podporuje vzdělávání v reálném gastronomickém provozu.",
+        "evidence": "Dobrý výběr smluvních pracovišť a zpětnovazební činnost vedení vytváří výborné podmínky pro praxi."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší zpětná vazba učitelům",
+        "detail": "Vedení školy poskytuje učitelům málo cílené formativní zpětné vazby k jejich výuce.",
+        "evidence": "Inspektoři doporučují vymezovat cíleněji příležitosti ke zlepšení výuky v rámci hospitační činnosti."
+      },
+      {
+        "tag": "Málo individualizované výuky",
+        "detail": "Učitelé nedostatečně diferencují náročnost úloh pro nadanější žáky a málo využívají zpětnou vazbu od žáků.",
+        "evidence": "Všichni žáci pracují stejným tempem bez ohledu na rozdílné vzdělávací potřeby, závěry hodin se málo využívají."
+      },
+      {
+        "tag": "Omezené prostorové možnosti",
+        "detail": "Pronájem budovy limituje rozvoj školy, chybí volné učebny pro dělení výuky nebo odpočinek žáků.",
+        "evidence": "Prostorové podmínky jsou vzhledem k pronájmu budovy limitující pro další možnosti rozvoje."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně vedení školy podporuje učitele v zlepšování jejich výuky? Jaké jsou konkrétní příklady formativní zpětné vazby?",
+      "Jak se škola vypořádává s nedostatkem prostoru a jak to ovlivňuje možnosti individualizované výuky?",
+      "Jaké jsou konkrétní plány na podporu nadaných žáků a jejich rozvoj během studia?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o gastronomii, kuchařství a číšnické služby, kteří chtějí praktickou výuku v reálném prostředí",
+      "Studenti zaměření na hotelnictví a podnikání s ambicí získat maturitu a Europass pro práci v Evropě",
+      "Žáci, kteří si cení příjemné atmosféry, slušného chování vrstevníků a vstřícného přístupu školy"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s vyšším učebním potenciálem, kterým chybí dostatečná individualizace a výzvy v teoretických předmětech",
+      "Studenti, kteří potřebují intenzivní podporu v matematice a jazykách – výuka není dostatečně aktivizující",
+      "Žáci prvních ročníků oborů s výučním listem – vykazují vyšší neúspěšnost (cca 13 %), zejména kvůli náročnosti přechodu"
+    ],
+    "plain_czech_summary": "Labská SOŠ je kvalitní gastronomická škola s příjemnou atmosférou a výborným praktickým výcvikem v reálném prostředí. Silné stránky jsou slušné chování žáků, velmi dobrá úroveň odborného výcviku a spolupráce se zaměstnavateli. Slabší je individualizace výuky – učitelé málo diferencují úlohy pro nadanější žáky a nedostatečně využívají zpětnou vazbu. Vedení by mělo více podporovat učitele v zlepšování jejich práce. Prostorové omezení budovy brání dalšímu rozvoji."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dobrá úspěšnost s postupným zlepšováním",
+      "key_numbers": [
+        "Maturita 2024: 56 přihlášených, 7 neuspělo (12,5 %)",
+        "Cukrář: všichni prospěli, 3 s vyznamenáním",
+        "Kuchař-číšník: 21 žáků, 3 neuspěli"
+      ],
+      "evidence": "Úspěšnost žáků u maturitní zkoušky v roce 2024 byla dobrá, počty neúspěšných byly nízké zejména v maturitních oborech."
+    },
+    "absence": {
+      "trend": "Monitorovaná, řešená individuálně",
+      "key_numbers": [
+        "Vysoká absence jednoho žáka vedla k přijetí opatření",
+        "Škola sleduje narůstající počet žáků se záškoláctví"
+      ],
+      "evidence": "Vysoká omluvená absence byla důvodem pro přijetí opatření pro zabezpečení odborné praxe na jiném pracovišti."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodik prevence s odpovídající kvalifikací",
+      "Speciální pedagožka pro podporu žáků v rámci projektu Dlouhodobého záměru Pardubického kraje",
+      "Funkční školní poradenské pracoviště operativně řešící rizikové případy",
+      "Preventivní program zaměřený na kouření, psychické obtíže a záškoláctví"
+    ],
+    "safety_climate": [
+      "Nízká míra kázeňských opatření, ojediněle jsou žáci hodnoceni sníženým stupněm z chování",
+      "Příjemná atmosféra bez kázeňských problémů v odborném výcviku",
+      "Škola monitoruje klima ve třídách prostřednictvím adaptačních a evaluačních dotazníků"
+    ],
+    "partnerships_practice": [
+      "Dobrý výběr smluvních pracovišť – všichni žáci absolvují výcvik na minimálně dvou různých detašovaných pracovištích",
+      "Výborná komunikace se sociálními partnery a zpětnovazební činnost vedení",
+      "Žáci získávají Europass (18 žáků mělo zahraniční mobilitu v loňském roce)",
+      "Odměňování žáků za produktivní práci podle vypracované vnitřní směrnice"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s příslušnými doklady. Některé pasáže jsou však technicky náročnější (kritéria, kódy), ale pro rodiče jsou relevantní části jasné.",
+    "uncertainty_notes": [
+      "Přesné číslo žáků se speciálními vzdělávacími potřebami (38) není kontextově vysvětleno – není jasné, jak se to projevuje v běžné výuce",
+      "Nespecifikuje se, jaké konkrétní 'psychické obtíže' škola sleduje a jak je řeší",
+      "Není jasné, jak se škola vypořádává s 29 žáky s odlišným mateřským jazykem – jaká je jim poskytnuta podpora"
+    ]
+  }
+}
+```

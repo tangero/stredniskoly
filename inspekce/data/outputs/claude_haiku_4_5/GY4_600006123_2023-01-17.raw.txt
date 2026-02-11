@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY4_600006123_2023-01-17",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola se dvěma obory: Geodézie a katastr nemovitostí (180 žáků v 8 třídách) a čtyřleté Gymnázium se zaměřením na geografii (50 žáků ve 2 třídách)",
+    "inspection_period": "17. 1. 2023 – 20. 1. 2023",
+    "school_change_summary": "Od inspekce v roce 2015 došlo ke změně vedení (nový ředitel od 2017), otevření nového gymnáziálního oboru (2021/2022), výrazné zlepšení materiálního vybavení a rozšíření poradenských služeb o školní psycholožku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné vzdělání na vysoké úrovni",
+        "detail": "Praktická odborná příprava vykazuje výbornou úroveň s účelným využitím moderní techniky a vedením žáků k samostatnosti.",
+        "evidence": "Téměř všechny hospitované hodiny praktické přípravy byly organizačně a pedagogicky dobře zvládnuté."
+      },
+      {
+        "tag": "Výborné výsledky u maturit",
+        "detail": "Hrubá neúspěšnost u maturitní zkoušky je nižší než průměr v příslušné skupině oborů.",
+        "evidence": "V maturitním roce 2022 nejlépe uspěli žáci v anglickém jazyce, v profilové části dosahují dlouhodobě velmi dobrých výsledků."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola disponuje plně vybaveným učebnami, odbornými laboratořemi, jazykovými učebnami a kvalitním sportovním zázemím.",
+        "evidence": "Od poslední inspekce došlo k výraznému zlepšení vybavení včetně klimatizace, osvětlení, nového nábytku a IT technologií."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejednotná kvalita teoretické výuky",
+        "detail": "Část hodin má nižší efektivitu kvůli převaze frontální výuky, nedostatečné diferenciaci a malé aktivizaci žáků.",
+        "evidence": "V některých hodinách převaha frontální formy s dominancí učitele vedla k nedostatečnému zapojení žáků a jednotvárnosti výuky."
+      },
+      {
+        "tag": "Slabší motivační systém",
+        "detail": "Kázeňská opatření převyšují počet pochval a ocenění, což může snižovat motivaci žáků.",
+        "evidence": "Nastavený systém výchovných opatření vykazuje spíše restriktivní charakter, škola v menší míře uplatňovala posilování motivace."
+      },
+      {
+        "tag": "Omezené prostory pro další rozvoj",
+        "detail": "Sdílení budovy s dalším školským subjektem snižuje počet kmenových učeben a představuje riziko pro otevření dalšího ročníku gymnázia.",
+        "evidence": "Počet kmenových učeben je snížen v důsledku společného sdílení prostor, což představuje riziko pro perspektivní rozvoj školy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jaké soutěže či projekty jim nabízí?",
+      "Jaké jsou možnosti uplatnění absolventů na trhu práce a jaké jsou vazby se zaměstnavateli?",
+      "Jak se škola vypořádává s omezeným prostorem a plánuje-li rozšíření kapacity pro gymnázium?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o geodézii, kartografii a geomatiku, kteří chtějí praktické odborné vzdělání s vysokou úrovní",
+      "Studenti zainteresovaní na geografii a přírodních vědách, kteří si chtějí vybrat kvalitní gymnázium",
+      "Žáci, kterým vyhovuje menší škola s individuálním přístupem a moderním vybavením"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více motivace a pozitivního posilování – systém je spíše restriktivní",
+      "Studenti preferující velmi aktivní a interaktivní výuku – část hodin je stále frontálního typu",
+      "Žáci se speciálními vzdělávacími potřebami – asistent pedagoga vyžaduje lepší koordinaci s učiteli"
+    ],
+    "plain_czech_summary": "Škola SPŠ zeměměřická a Gymnázium Praha je kvalitní odborná střední škola s výborným vybavením a silným zaměřením na praktické dovednosti. Absolventi dosahují velmi dobrých výsledků u maturit a mají vysokou uplatnitelnost. Vedení školy je aktivní a koncepční. Slabší stránkou je nejednotná kvalita teoretické výuky v některých hodinách a spíše restriktivní přístup k motivaci žáků. Prostorové omezení může bránit dalšímu rozvoji gymnázia."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – výsledky jsou dlouhodobě velmi dobré",
+      "key_numbers": [
+        "Hrubá neúspěšnost nižší než průměr v příslušné skupině oborů",
+        "V maturitním roce 2022 nejlépe v anglickém jazyce",
+        "Profilová část: dlouhodobě velmi dobré výsledky"
+      ],
+      "evidence": "Výsledky vzdělávání při ukončování maturitní zkouškou byly ve sledovaném období velmi dobré, hrubá neúspěšnost nižší než celorepublikový průměr."
+    },
+    "absence": {
+      "trend": "Pozitivní – nízké absence",
+      "key_numbers": [
+        "Nižší průměrný počet zameškaných hodin na žáka",
+        "Nízký počet neomluvených hodin na žáka",
+        "Důsledný přístup k nastavením pravidlům"
+      ],
+      "evidence": "Důsledný přístup v uplatňování nastavených pravidel a systematická práce třídních učitelů se odráží v nižším průměrném počtu zameškaných hodin."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodik primární prevence",
+      "Nově posíleno o pozici školní psycholožky",
+      "Individuální podpora pro 18 žáků se speciálními vzdělávacími potřebami",
+      "Pravidelná výuka českého jazyka pro 25 žáků s odlišným mateřským jazykem",
+      "Standardně nastavené kariérové poradenství"
+    ],
+    "safety_climate": [
+      "Velmi nízký výskyt rizikového chování",
+      "Funkční preventivní mechanismy založené na komplexním průběžném monitoringu",
+      "Adaptační a harmonizační kurzy pro zvládnutí nároků studia",
+      "Rozmanité mimoškolní aktivity podporující prosociální vazby",
+      "Elektronický systém zabezpečení přístupu do budovy"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Přírodovědecké fakulty UK",
+      "Přidružený člen Asociace podnikatelů v geomatice",
+      "Dlouhodobá spolupráce s četnými sociálními partnery zajišťujícími vazbu na praxi",
+      "Kooperace s vysokými školami pro inovaci obsahu učiva a rozvoj praktických dovedností"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasným oddělením silných a slabých stránek. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání.",
+    "uncertainty_notes": [
+      "Přesné procento nekvalifikovaných učitelů není uvedeno, jen přibližně 30 %",
+      "Konkrétní čísla o počtu pochval vs. kázeňských opatření nejsou v textu specifikována",
+      "Účinnost nově přijatých opatření k motivaci nelze zatím zhodnotit kvůli krátké době jejich účinnosti"
+    ]
+  }
+}
+```

@@ -1,0 +1,116 @@
+{
+  "report_id": "SOU_600170900_2024-03-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:21:56.373483+00:00",
+  "run_finished_utc": "2026-02-09T16:22:24.083182+00:00",
+  "raw_file": "SOU_600170900_2024-03-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600170900_2024-03-19",
+    "school_profile": {
+      "school_type": "Integrovaná střední škola (ISŠ) se zaměřením na autooborové obory, domovem mládeže a školní jídelnou",
+      "inspection_period": "19. března až 22. března 2024",
+      "school_change_summary": "Škola se transformovala z původně zemědělské na instituci zaměřenou na autooborové vzdělání. Od poslední inspekce rozšířila nabídku o obory Operátor skladování a Strojník silničních strojů, vybudovala centrum odborného vzdělávání (2018)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělání na vysoké úrovni",
+          "detail": "Odborný výcvik se vyznačuje vysokou odbornou úrovní, velmi dobrou organizací a efektivní spoluprací se smluvními partnery.",
+          "evidence": "Sledovaný odborný výcvik se 'vyznačoval vysokou odbornou úrovní a velmi dobrou organizací' s 'oboustrannými respektem'."
+        },
+        {
+          "tag": "Výborné uplatnění absolventů",
+          "detail": "Absolventi se bez problémů uplatňují na trhu práce, mnozí si předjednávají zaměstnání již během výcviku.",
+          "evidence": "'Všeobecný nedostatek kvalifikovaných pracovníků vytváří příznivé podmínky pro bezproblémové uplatnění absolventů'."
+        },
+        {
+          "tag": "Moderní vybavení a prostory",
+          "detail": "Nadstandardní materiální podmínky, včetně centra odborného vzdělávání, odpovídají současným potřebám průmyslu.",
+          "evidence": "'Prostorové podmínky a materiální vybavení pro odborný výcvik jsou nadstandardní'."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v maturitě (Autotronik)",
+          "detail": "Obor Autotronik dosahuje v celorepublikovém srovnání horších výsledků v češtině a cizím jazyce než průměr.",
+          "evidence": "V češtině 20,3 % neúspěšnosti (průměr ČR 11,9 %), v cizím jazyce 13,4 % (průměr ČR 8,4 %)."
+        },
+        {
+          "tag": "Absence žáků",
+          "detail": "Vysoká absence žáků souvisí se školní neúspěšností; průměrně 156,4 zameškaných hodin na žáka za rok.",
+          "evidence": "'Míra školní neúspěšnosti žáků souvisí s mírou jejich absence při vyučování'."
+        },
+        {
+          "tag": "Omezená pestrost výukových metod",
+          "detail": "Teoretická výuka se opírá především o frontální výuku, kooperativní formy se vyskytují jen ojediněle.",
+          "evidence": "'Převažovala frontální výuka doplňovaná samostatnou prací žáků. Kooperativní vzdělávací formy se vyskytovaly pouze ojediněle'."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší vysokou absenci žáků a jaká opatření zavádí pro zlepšení docházky?",
+        "Jaké konkrétní kroky podniká obor Autotronik na zlepšení výsledků v češtině a cizím jazyce?",
+        "Jak se škola zaměřuje na rozvoj komunikačních dovedností a verbálního projevu žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktické řemeslo a autooborové obory s jasnou představou budoucího povolání",
+        "Studenti, kteří se lépe učí praxí a potřebují propojení teorie s reálnou výrobní sférou",
+        "Žáci hledající bezproblémové uplatnění na trhu práce hned po absolvování"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími jazykovými dovednostmi, pokud zvažují maturitní obor Autotronik",
+        "Studenti s tendencí k vyšší absenci, protože absence přímo ovlivňuje školní úspěch",
+        "Žáci preferující teoretické vzdělání a méně praktické zaměření"
+      ],
+      "plain_czech_summary": "ISŠ Vysoké nad Jizerou je kvalitní odborná škola se silným zaměřením na autooborové vzdělání. Vyniká výborným praktickým vyučováním, moderním vybavením a skvělým uplatněním absolventů na trhu práce. Vedení školy je zkušené a dlouhodobě stabilní. Slabší stránkou jsou výsledky v maturitě u oboru Autotronik a vysoká absence žáků. Teoretická výuka by mohla být pestřejší a více zaměřená na komunikační dovednosti. Škola je vhodná pro prakticky zaměřené žáky s jasným profesním cílem."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený: Obor Logistické a finanční služby dosahuje nadprůměrných výsledků, obor Autotronik zaostává. Meziročně se zlepšily výsledky v češtině a cizím jazyce o 7 %, v matematice o 21 %.",
+        "key_numbers": [
+          "Logistika: čeština 8,8 % neúspěšnosti (ČR 24,7 %), cizí jazyk 11,5 % (ČR 24,9 %), matematika 28,6 % (ČR 47,6 %)",
+          "Autotronik: čeština 20,3 % (ČR 11,9 %), cizí jazyk 13,4 % (ČR 8,4 %), matematika 28,6 % (ČR 28,7 %)",
+          "Meziročně pokles neúspěšnosti v češtině a cizím jazyce o 7 %, v matematice o 21 %"
+        ],
+        "evidence": "Analýza výsledků maturitní zkoušky ze školních let 2021/2022 a 2022/2023 v celorepublikovém srovnání."
+      },
+      "absence": {
+        "trend": "Pozitivní: Absence se meziročně snížila, ale zůstává vysoká. Absence přímo ovlivňuje školní neúspěšnost.",
+        "key_numbers": [
+          "Průměr 156,4 zameškaných hodin na žáka ve školním roce 2022/2023",
+          "Pokles z předchozích 184,3 hodin meziročně",
+          "7 % žáků neprospělo, 4 % prospělo s vyznamenáním"
+        ],
+        "evidence": "'Průměrný počet zameškaných hodin na žáka se ve školním roce 2022/2023 podařilo meziročně snížit z 184,3 na 156,4'."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: metodička prevence a tři výchovní poradci s vysokou mírou odbornosti a empatie",
+        "Speciální pedagog poskytující poradenskou pomoc kolegům",
+        "Podpůrná opatření prvního stupně pro kompenzaci mírných vzdělávacích obtíží",
+        "Adaptační kurzy pro žáky prvních ročníků ve spolupráci s externími partnery"
+      ],
+      "safety_climate": [
+        "Bezpečnost a ochrana zdraví je jednou z priorit školy",
+        "Zaměstnanci vnímají BOZ žáků intuitivně, učitelé odborného výcviku jsou velmi dobře obeznámeni s bezpečnostními riziky",
+        "Obecné podmínky BOZ jsou stanoveny ve školním řádu a řádech jednotlivých pracovišť",
+        "Prostor ke zlepšení: důsledné uplatňování identifikace a eliminace bezpečnostních rizik i v ostatních prostorách školy"
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce se sociálními partnery a smluvními pracovišti pro praktické vyučování",
+        "Konzultace s profesními svazy a zaměstnavateli při revizích školních vzdělávacích programů",
+        "Zahraniční odborné stáže (např. Slovensko, Polsko)",
+        "Odborníci z praxe se podílejí na závěrečných a maturitních zkouškách a vzdělávání žáků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní čísla a citace. Některé pasáže jsou však poměrně dlouhé a obsahují odborný jazyk, který by mohl být pro laické rodiče méně přístupný.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní opatření, která škola již přijala na zlepšení výsledků v maturitě u oboru Autotronik",
+        "Není jasné, jaké konkrétní metody škola používá k řešení absence žáků",
+        "Chybí informace o počtu žáků, kteří se účastní jednotlivých podporujících programů"
+      ]
+    }
+  }
+}

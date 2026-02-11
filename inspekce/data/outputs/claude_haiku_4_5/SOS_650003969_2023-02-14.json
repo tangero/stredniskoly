@@ -1,0 +1,117 @@
+{
+  "report_id": "SOS_650003969_2023-02-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:47:35.883158+00:00",
+  "run_finished_utc": "2026-02-09T16:48:03.446619+00:00",
+  "raw_file": "SOS_650003969_2023-02-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_650003969_2023-02-14",
+    "school_profile": {
+      "school_type": "Střední škola veřejnoprávní, obory: Bezpečnostně právní činnost (4 roky, denní forma) a Bezpečnostní služby (3 roky, dálková forma)",
+      "inspection_period": "14.–16. února 2023",
+      "school_change_summary": "Od inspekce v roce 2014 došlo k výrazné personální obměně pedagogů i vedení. Zlepšila se vybavenost IT. Přetrvávají rezervy v didaktice výuky a práci se žáky se speciálními potřebami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola aktivně spolupracuje se sociálními partnery a složkami záchranného systému, což efektivně propojuje teorii s praxí.",
+          "evidence": "Odborná praxe je realizována každý rok, ve čtvrtém ročníku jako souvislá praxe u sociálních partnerů."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola vytváří bezpečné prostředí s nízkými počty úrazů pod celostátním průměrem.",
+          "evidence": "Monitoring vstupu, video zvonky, kamerový systém, důsledné poučování žáků o bezpečnosti."
+        },
+        {
+          "tag": "Prevence rizikového chování",
+          "detail": "Efektivní systém prevence záškoláctví a rizikových projevů chování s zapojením rodičů.",
+          "evidence": "Ředitelka nastavila preventivní postup, účelně jsou zapojeni zákonní zástupci."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v matematice",
+          "detail": "Ve školním roce 2021/2022 mělo 90 % žáků neúspěch v matematice na maturitě, pouze 1 z 10 uspěl.",
+          "evidence": "Výsledky maturitní zkoušky 2021/2022 ukazují neúspěšnost cca dvakrát vyšší než průměr v ČR."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Vysoké počty zameškaných hodin jsou dlouhodobým problémem, který ohrožuje školní neúspěch.",
+          "evidence": "Absence je nejčastěji řešeným problémem s dopadem na výsledky vzdělávání."
+        },
+        {
+          "tag": "Slabá podpora žáků se speciálními potřebami",
+          "detail": "Systém podpory žáků se speciálními vzdělávacími potřebami není funkční, některým chybí potřebná podpora.",
+          "evidence": "Žákovi s individuálním vzdělávacím plánem škola potřebnou podporu neposkytuje."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+        "Jakou podporu dostávají žáci slabší v matematice a proč se výsledky v tomto předmětu tak zhoršily?",
+        "Jak škola pracuje se žáky se speciálními vzdělávacími potřebami a jakou jim poskytuje individuální podporu?"
+      ],
+      "who_school_fits": [
+        "Žáci zajímající se o bezpečnostní obory a práci v záchranném systému, kteří si cení praktické výuky",
+        "Studenti, kteří se dobře učí z přímé zkušenosti a spolupráce se sociálními partnery",
+        "Žáci, kterým vyhovuje menší škola s osobnějším přístupem a jasným zaměřením"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími matematickými dovednostmi – výsledky v matematice jsou problematické",
+        "Studenti, kteří potřebují intenzivní individuální podporu nebo mají speciální vzdělávací potřeby",
+        "Žáci v dálkové formě – vysoký podíl odchodů (cca 22,5 % v roce 2022/2023) kvůli časové náročnosti"
+      ],
+      "plain_czech_summary": "TRIVIS je střední škola zaměřená na bezpečnostní obory s dobrým propojením teorie a praxe. Silnými stránkami jsou spolupráce se sociálními partnery a bezpečné prostředí. Hlavní problémy: velmi slabé výsledky v matematice (90 % neúspěchu), vysoká absence žáků a nedostatečná podpora žáků se speciálními potřebami. Škola má nové vedení a pedagogy, ale stále pracuje na zlepšení výuky a individuálního přístupu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se, zejména v matematice",
+        "key_numbers": [
+          "2020/2021 – nástavbový obor: 15 z 16 žáků úspěšně",
+          "2021/2022 – čtyřletý obor: neúspěšnost v matematice 90 %, v češtině a cizím jazyce srovnatelné s předchozím rokem",
+          "Neúspěšnost v matematice cca 2× vyšší než průměr v ČR"
+        ],
+        "evidence": "Výsledky maturitní zkoušky 2020/2021 a 2021/2022, analýza výsledků v jednotlivých předmětech."
+      },
+      "absence": {
+        "trend": "Vysoká, dlouhodobě problematická",
+        "key_numbers": [
+          "Vysoké počty zameškaných hodin jsou nejčastěji řešeným problémem",
+          "Dálkové studium: cca 22,5 % žáků v roce 2022/2023 (důvod: časová náročnost a ztráta motivace)",
+          "Neúspěšnost v ročníkových výsledcích se mírně snížila, u dálkového studia o cca 15 %"
+        ],
+        "evidence": "Absence je identifikována jako významný faktor negativně ovlivňující výsledky vzdělávání."
+      },
+      "support_services": [
+        "Výchovné poradenství – efektivní v kariérovém poradenství, zejména pro denní formu",
+        "Školní metodik prevence – zaměřen na prevenci rizikových projevů chování",
+        "Individuální konzultace a doučování – standardně nabízeny, využívány jen některými žáky",
+        "Podpora žáků se SVP – není zcela funkční, chybí metodická podpora pedagogů"
+      ],
+      "safety_climate": [
+        "Bezpečné prostředí s video zvonky a kamerovým systémem",
+        "Školní úrazovost pod celostátním průměrem",
+        "Důsledné poučování žáků o bezpečnosti a ochraně zdraví",
+        "Efektivní mechanismy a strategie práce s rizikový chováním",
+        "Přátelské klima a vzájemný respekt mezi všemi aktéry"
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce se sociálními partnery a složkami integrovaného záchranného systému",
+        "Odborná praxe v každém ročníku (1 týden), ve 4. ročníku souvislá praxe",
+        "Plán odborné praxe jako živý dokument, aktualizovaný podle možností partnerů",
+        "Riziko: nedodržení obsahu praxe dle ŠVP a nejednotné vyhodnocování praxí jednotlivých žáků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Některé pasáže jsou však složitější (např. popis systému řízení), ale pro rodiče jsou nejdůležitější informace jasně vyčleněny v závěrech.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola přijala na základě doporučení inspekce",
+        "Chybí informace o počtu pedagogů bez potřebné kvalifikace v odborných předmětech",
+        "Není jasné, jak se vyvíjely výsledky v jednotlivých předmětech v průběhu let (pouze srovnání 2020/2021 a 2021/2022)"
+      ]
+    }
+  }
+}

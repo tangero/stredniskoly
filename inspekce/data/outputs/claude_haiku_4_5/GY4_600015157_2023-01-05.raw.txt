@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY4_600015157_2023-01-05",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium s všeobecným zaměřením, včetně sportovní přípravy",
+    "inspection_period": "5.–9. ledna 2023",
+    "school_change_summary": "Od poslední inspekce došlo ke změně ředitele a zlepšení materiálních podmínek. Škola má 658 žáků ve 24 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vstřícné prostředí a pozitivní klima",
+        "detail": "Škola vytváří prosociální vztahy mezi žáky a pedagogy s bezpečnou atmosférou.",
+        "evidence": "Inspektoři zaznamenali pozitivní pracovní a bezpečnou sociální atmosféru ve všech hodnocených hodinách."
+      },
+      {
+        "tag": "Silné partnerství a spolupráce",
+        "detail": "Škola efektivně spolupracuje se zřizovatelem, sportovními kluby, vysokými školami a institucemi v regionu.",
+        "evidence": "Nadstandardní spolupráce s Univerzitou Palackého, městem Prostějov a tradičními mezinárodními projekty Erasmus+."
+      },
+      {
+        "tag": "Kvalitní příprava na vysoké školy",
+        "detail": "Většina absolventů je přijata k dalšímu studiu na vysokých školách různého zaměření.",
+        "evidence": "Škola dlouhodobě sleduje úspěšnost u maturit a přijetí absolventů na vysoké školy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená aktivizace žáků ve výuce",
+        "detail": "Výuka je převážně založena na tradičních postupech s převahou frontálního vyučování bez dostatku interaktivních metod.",
+        "evidence": "Inspektoři zjistili nižší míru kooperativních aktivit, omezené využívání vzájemného hodnocení a nedostatek motivačních shrnutí hodin."
+      },
+      {
+        "tag": "Nedostatečná podpora nadaných žáků",
+        "detail": "Škola nemá funkční strategii pro cílené vyhledávání a práci s nadanými žáky.",
+        "evidence": "Nadaným žákům byly zřídka vytvářeny další příležitosti pro rozvoj jejich schopností a talentu."
+      },
+      {
+        "tag": "Slabá kontrola metodických prvků výuky",
+        "detail": "Systém hospitační činnosti není dostatečně zaměřen na vyhodnocování výukových metod a forem.",
+        "evidence": "Inspektoři doporučili více zaměřit hospitační činnost na metodické prvky a aktivně zapojit ostatní pedagogy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jaké má pro ně speciální programy?",
+      "Jaké metody výuky používáte k aktivizaci žáků a rozvoji jejich kritického myšlení?",
+      "Jak funguje poradenská služba a jakou podporu poskytuje žákům se speciálními potřebami?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří se chystají na vysoké školy a chtějí kvalitní přípravu s podporou mezinárodní spolupráce",
+      "Sportovně nadaní žáci, kterým škola nabízí speciální čtyřletý program se sportovní přípravou",
+      "Žáci zajímající se o jazykové vzdělání, protože škola nabízí výuku některých předmětů v angličtině"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a skupinové formy výuky – škola zatím převážně používá tradiční frontální vyučování",
+      "Mimořádně nadaní žáci, kterým škola nemá systematickou strategii pro jejich rozvoj",
+      "Žáci se speciálními vzdělávacími potřebami – chybí kontrolní systém hospitací zaměřený na jejich podporu přímo ve třídě"
+    ],
+    "plain_czech_summary": "Gymnázium Jiřího Wolkera je stabilní škola s dobrým klimatem a silnými partnerskými vztahy. Žáci dosahují dobrých výsledků a jsou úspěšně přijímáni na vysoké školy. Škola nabízí sportovní zaměření a mezinárodní spolupráci. Hlavní výzvou je modernizace výukových metod – inspektoři zjistili, že výuka je stále převážně tradiční s málo interaktivními prvky. Chybí také systematická podpora nadaných žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s vysokou úspěšností",
+      "key_numbers": [
+        "Ojedinělé neúspěchy u dílčích zkoušek",
+        "Žáci obvykle úspěšně skládají v náhradním termínu",
+        "Výsledky dlouhodobě sledovány a vyhodnocovány"
+      ],
+      "evidence": "Škola dlouhodobě a systematicky sleduje úspěšnost u maturitní zkoušky. Pokud dochází k ojedinělému neúspěchu, žáci obvykle úspěšně skládají v náhradním termínu."
+    },
+    "absence": {
+      "trend": "Nízká absence",
+      "key_numbers": [
+        "Škola se nepotýká s vysokou absencí žáků"
+      ],
+      "evidence": "Na dosahované výsledky vzdělávání pozitivně působí to, že se škola nepotýká s vysokou absencí žáků ve vyučování."
+    },
+    "support_services": [
+      "Výchovná poradkyně – péče o žáky se speciálními vzdělávacími potřebami",
+      "Školní psycholožka a psychoterapeutka – řeší psychické problémy žáků",
+      "Školní metodista prevence – prevence rizikového chování",
+      "Doučování a konzultace pro žáky s rizikem neúspěchu"
+    ],
+    "safety_climate": [
+      "Pravidelné vyhledávání bezpečnostních rizik a identifikace problémů",
+      "Spolupráce s odborně způsobilou osobou na bezpečnost",
+      "Revize a opatření k odstranění nedostatků",
+      "Výchova ke zdraví a zdravý životní styl integrován do výuky"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sportovními organizacemi a kluby pro realizaci sportovního zaměření",
+      "Partnerství s Univerzitou Palackého v Olomouci",
+      "Nadstandardní spolupráce s městem Prostějov",
+      "Projekty Erasmus+ pro rozvoj jazykových a sociálních kompetencí",
+      "Rodičovské sdružení pomáhá organizačně a finančně"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však delší a obsahují více odborné terminologie.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta nebo čísla týkající se výsledků maturit – pouze kvalitativní popis",
+      "Není jasné, kolik procent hodin bylo inspektory hodnoceno a jak reprezentativní vzorek je",
+      "Chybí konkrétní data o počtu nadaných žáků a jejich výsledcích v soutěžích"
+    ]
+  }
+}
+```

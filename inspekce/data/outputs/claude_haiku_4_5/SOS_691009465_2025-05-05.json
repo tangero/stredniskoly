@@ -1,0 +1,109 @@
+{
+  "report_id": "SOS_691009465_2025-05-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:36:18.254461+00:00",
+  "run_finished_utc": "2026-02-09T13:36:40.672347+00:00",
+  "raw_file": "SOS_691009465_2025-05-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_691009465_2025-05-05",
+    "school_profile": {
+      "school_type": "Soukromá střední škola zemědělská s.r.o., vzdělávající v oborech Rostlinolékařství, Chovatelství a Zemědělec-farmář",
+      "inspection_period": "5. až 12. května 2025",
+      "school_change_summary": "Nový ředitel vytvořil koncepci rozvoje 2024–2028. Počet žáků výrazně stoupl na 89 celkem. Zkvalitnilo se laboratorní vybavení a zemědělské stroje."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Silné partnerství s praxí",
+          "detail": "Dlouhodobá spolupráce s AGRO 2000 s.r.o. a dalšími zemědělskými podniky zvyšuje kvalitu výuky a uplatnění absolventů.",
+          "evidence": "Strategickými partnery jsou AGRO 2000, Agrární komora, vysoké školy a vědecké ústavy."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola investovala do laboratorního vybavení a zemědělských strojů pro praktickou výuku.",
+          "evidence": "Zkvalitnění materiálních podmínek s pozitivním dopadem na výuku v odborných předmětech."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola nabízí doučování, individuální konzultace a má výchovnou poradkyni pro kariérové vedení.",
+          "evidence": "Při ohrožení školním neúspěchem škola kontaktuje zákonné zástupce a nastavuje podpůrná opatření."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší matematika u maturity",
+          "detail": "Výsledky v didaktickém testu z matematiky jsou pod průměrem ČR, přijatá opatření zatím nejsou zcela efektivní.",
+          "evidence": "Neúspěšnost v matematice: 28,7 %, 35,4 % a 22,1 % v posledních třech letech."
+        },
+        {
+          "tag": "Málo aktivní výuka",
+          "detail": "Převládá frontální výuka s řídícím rozhovorem, žáci nemají dost prostoru pro vlastní vyjadřování a aktivní zapojení.",
+          "evidence": "Odpovědi žáků byly často velmi stručné, chyběl prostor k souvislému mluvenému projevu."
+        },
+        {
+          "tag": "Slabší hodnocení v hodinách",
+          "detail": "Učitelé málo pracují se vzdělávacími cíli, chybí efektivní sebehodnocení a vzájemné hodnocení žáků.",
+          "evidence": "Vzdělávací cíle nebyly vždy dobře stanoveny, na konci hodiny docházelo k nedostatečnému zhodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší slabší výsledky v matematice? Jaké nové metody nebo doučování nabízí?",
+        "Jak se praktická výuka na farmách a pracovištích organizuje a jak jsou žáci vedeni k samostatné práci?",
+        "Jaké jsou konkrétní možnosti pro žáky se speciálními vzdělávacími potřebami a jak je škola podporuje?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o zemědělství a praktickou práci, kteří chtějí studovat v moderně vybaveném prostředí s reálnými partnery.",
+        "Studenti, kteří si cení osobního přístupu pedagogů a malého počtu žáků ve třídě (89 žáků celkem).",
+        "Žáci, kteří chtějí pokračovat v zemědělských oborech na vysoké škole nebo se uplalit v praxi."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabší matematikou – škola má problémy s výukou matematiky a výsledky nejsou zatím lepší.",
+        "Studenti, kteří potřebují více interaktivní a diskusní výuku – zde převládá frontální přístup.",
+        "Žáci, kteří se rádi vyjadřují a diskutují – výuka jim nedává dost prostoru pro vlastní projev."
+      ],
+      "plain_czech_summary": "Jde o malou soukromou zemědělskou střední školu s 89 žáky v Pozďatíně. Má dobré spojení s praxí a moderní vybavení. Učitelé jsou vstřícní a škola se stará o slabší žáky. Problém je, že výuka je moc frontální – žáci málo mluví a aktivně se neúčastní. Matematika není silná stránka. Škola se snaží zlepšit, ale změny teprve probíhají."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Slabý trend v matematice, stabilní v ostatních oblastech",
+        "key_numbers": [
+          "Matematika: neúspěšnost 28,7 %, 35,4 %, 22,1 % v posledních třech letech",
+          "Závěrečná zkouška 2022/2023: 7 žáků, 1 neprospěl",
+          "Závěrečná zkouška 2023/2024: 11 žáků, 1 neprospěl"
+        ],
+        "evidence": "Nejslabší výsledky v didaktickém testu z matematiky, přijatá opatření zatím nejsou zcela efektivní."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence v pravidelném kontaktu s třídními učiteli",
+        "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+        "Kariérové poradenství – výchovná poradkyně aktivně pomáhá při výběru pracovního uplatnění"
+      ],
+      "safety_climate": [
+        "Vstřícný přístup pedagogů k žákům, dodržování pravidel komunikace",
+        "Pozitivní a podporující klima ve třídách",
+        "Podpora kritického myšlení žáků a průběžné poskytování zpětné vazby"
+      ],
+      "partnerships_practice": [
+        "AGRO 2000 s.r.o. – strategický partner",
+        "Zemědělské subjekty: Družstvo vlastníků půdy Ametyst, Kooperace a.s., Zemědělské družstvo Pooslaví",
+        "Agrární komora, Zemědělský svaz, vysoké školy, Ústav biologie obratlovců AV ČR"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však úřednicky formulované a pro laika obtížnější.",
+      "uncertainty_notes": [
+        "Praktická výuka nebyla inspektory navštívena kvůli veterinárním opatřením – nelze posoudit kvalitu praktické výuky.",
+        "Opatření přijatá na zlepšení matematiky nejsou detailně popsána – není jasné, co konkrétně škola dělá.",
+        "Není jasné, jak se konkrétně liší výuka v jednotlivých oborech (Rostlinolékařství vs. Chovatelství)."
+      ]
+    }
+  }
+}

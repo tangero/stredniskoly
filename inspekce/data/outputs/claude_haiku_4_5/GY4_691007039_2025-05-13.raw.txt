@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY4_691007039_2025-05-13",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium (střední škola) v rámci ZŠ a gymnázia Livingston s.r.o., součást sítě Cambridge International Education",
+    "inspection_period": "13. května 2025 až 15. května 2025",
+    "school_change_summary": "Škola od 1. 9. 2024 nově vykonává činnost střední školy. V prvním ročníku se vzdělávalo 8 žáků, maximální kapacita je 120 žáků. Od třetího ročníku mohou žáci skládat českou maturitu i mezinárodní zkoušku IB."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní digitální výuka",
+        "detail": "Jednotná elektronická platforma umožňuje efektivní vzdělávání, zpětnou vazbu a komunikaci všech účastníků.",
+        "evidence": "Platforma vytváří prostor pro poskytování účelné zpětné vazby a reaguje na individuální pokrok žáka."
+      },
+      {
+        "tag": "Jazykový rozvoj",
+        "detail": "Metoda CLIL (výuka předmětů v angličtině) cíleně podporuje jazykové kompetence žáků.",
+        "evidence": "Matematika, přírodovědné předměty a výtvarná výchova se vyučují v angličtině s mezinárodní certifikací."
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Škola se zaměřuje na osobnostní rozvoj každého žáka podle jeho potenciálu a potřeb.",
+        "evidence": "Vedení klade důraz na vytváření bezpečného a podnětného prostředí, spolupráci pedagogů a individuální podporu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Personální kapacita vedení",
+        "detail": "Absence dalšího pracovníka ve vedení gymnázia klade na ředitele zvýšené nároky.",
+        "evidence": "Nepřítomnost dalšího vedoucího pracovníka se částečně projevila nepřehledností dokumentace a nepřesnými informacemi na webu."
+      },
+      {
+        "tag": "Prostorové omezení",
+        "detail": "Stávající prostory jsou limitující pro budoucí naplnění plánované kapacity gymnázia.",
+        "evidence": "Prostorové a materiálně technické zázemí je limitující v případě naplnění plánované kapacity 120 žáků."
+      },
+      {
+        "tag": "Nejednotnost v závěrech hodin",
+        "detail": "V některých hodinách chybí ověření splnění vzdělávacího cíle a reflexe výuky.",
+        "evidence": "V menší míře vytvářeli pedagogové prostor pro společné shrnutí poznatků či sebereflexi žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá příprava na mezinárodní zkoušku IB a jaké jsou úspěšnosti žáků?",
+      "Jaké jsou plány na rozšíření kapacity a zlepšení prostorového vybavení gymnázia?",
+      "Jak škola řeší individuální podporu žáků s různými studijními předpoklady a jak funguje doučování?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o kvalitní jazykové vzdělání a mezinárodní certifikace (Cambridge, IB)",
+      "Motivovaní studenti, kteří si chtějí připravit cestu na vysoké školy v Česku i zahraničí",
+      "Žáci, kterým vyhovuje individuální přístup a moderní digitální výuka s flexibilní podporou"
+    ],
+    "who_should_be_cautious": [
+      "Rodiny, které preferují tradiční výuku bez digitálních platforem a anglického jazyka v předmětech",
+      "Žáci s výraznějšími poruchami učení, kteří by potřebovali intenzivnější speciální podporu (ve škole je zatím jen jeden žák se speciálními potřebami)",
+      "Rodiny, které hledají školu s dlouhodobě stabilizovanou kapacitou a vyzkoušeným systémem (gymnázium je velmi nové, teprve od září 2024)"
+    ]
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neznámý – škola je příliš nová",
+      "key_numbers": [
+        "Prvních 8 žáků v prvním ročníku (školní rok 2024/2025)",
+        "Maximální kapacita: 120 žáků",
+        "Od třetího ročníku možnost české maturity i mezinárodní zkoušky IB"
+      ],
+      "evidence": "Gymnázium bylo zřízeno od 1. 9. 2024. Maturitní výsledky nejsou k dispozici, první maturanti budou v roce 2028."
+    },
+    "absence": {
+      "trend": "Nízká absence",
+      "key_numbers": [
+        "Všichni žáci v prvním pololetí 2024/2025 prospěli",
+        "Vyšší omluvená absence jednotlivců je způsobena zdravotními důvody"
+      ],
+      "evidence": "Z analýzy průběžných výsledků prvního pololetí vyplývá, že všichni žáci prospěli bez problémů s docházkou."
+    },
+    "support_services": [
+      "Školní psycholožka a speciální pedagožka",
+      "Výchovný poradce zajišťující informační, podpůrné a preventivní služby",
+      "Doučování českého jazyka pro žáky s odlišným mateřským jazykem",
+      "Kroužek na podporu čtenářské gramotnosti",
+      "Individuální konzultace a tripartitní jednání se zákonnými zástupci"
+    ],
+    "safety_climate": [
+      "Stálá služba a zabezpečený vstup do budovy",
+      "Funkční preventivní strategie – snížené známky za chování nebyly uděleny",
+      "Systematicky podporovaný adaptační proces žáků (adaptační týden, dílčí aktivity)",
+      "Činnosti zaměřené na rozvoj emočně sociálních dovedností a budování pozitivních vztahů",
+      "Vedení žáků k bezpečné práci v digitálním prostředí a vědomí plagiátorství"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem na vytváření organizačního a materiálně-technického zázemí",
+      "Spolupráce s vysokými školami a zahraničními středními školami",
+      "Součást sítě Cambridge International Education s přístupem k britské metodice",
+      "Stravování zajištěno ve spolupráci se smluvním partnerem"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní poznatky. Některé pasáže jsou však složitější a úřednické. Hlavní informace pro rodiče jsou jasné, ale vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Maturitní výsledky nejsou k dispozici – gymnázium existuje teprve od září 2024, první maturanti budou v roce 2028",
+      "Dlouhodobá stabilita školy není ověřena – jedná se o velmi nové zařízení s malým počtem žáků",
+      "Kvalita IB programu není ověřena – škola je v procesu autorizace IB programu"
+    ]
+  }
+}
+```

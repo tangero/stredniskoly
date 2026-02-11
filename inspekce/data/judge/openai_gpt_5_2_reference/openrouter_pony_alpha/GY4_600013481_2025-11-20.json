@@ -1,0 +1,31 @@
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-09T12:10:58.538225+00:00",
+  "run_finished_utc": "2026-02-09T12:11:32.038784+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY4_600013481_2025-11-20\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 4,\n  \"critical_issues\": [\n    \"Formulace „včetně matematických tříd“ není ve zdroji doložena; zpráva mluví o rozšířené profilaci se zaměřením na matematiku, ne o samostatných „matematických třídách“.\",\n    \"Tvrzení o cílení na „prestižní vysoké školy“ není ve zdroji; doložena je vysoká úspěšnost přechodu na VŠ obecně.\",\n    \"„Aktivní cestování“ v rámci Erasmus+ je nadsazené/nespecifikované; zdroj popisuje mobility (jazykové vzdělávání, stínování), nikoli frekvenci či povahu jako „aktivní cestování“.\",\n    \"Část výstupu je hodnotově/marketingově formulovaná („skvělá volba“ apod.); nejde o fakt ze zprávy, i když navazuje na zjištění.\"\n  ],\n  \"best_points\": [\n    \"Správně převzaté klíčové závěry inspekce: velmi dobré výsledky (maturita, vyznamenání, soutěže) a mimořádně silný Erasmus+.\",\n    \"Dobře zachycené slabé stránky: nesjednocená kritéria hodnocení, převaha frontální výuky a nízká podpora individuálního rozvoje/nadání ve výuce.\",\n    \"Užitečná konkretizace pro rodiče včetně otázek na den otevřených dveří (psycholog, hodnocení, podpora nadaných).\",\n    \"Číselné údaje o vyznamenání a absenci odpovídají zdroji (55 % / 72 %, 120 hodin).\"\n  ],\n  \"one_line_verdict\": \"Výstup je z velké části věrný a pro rodiče prakticky použitelný, ale obsahuje několik nadsazených či nedoložených formulací (zejména „matematické třídy“ a „prestižní VŠ“).\"\n}",
+  "judge_output": {
+    "report_id": "GY4_600013481_2025-11-20",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 4,
+    "critical_issues": [
+      "Formulace „včetně matematických tříd“ není ve zdroji doložena; zpráva mluví o rozšířené profilaci se zaměřením na matematiku, ne o samostatných „matematických třídách“.",
+      "Tvrzení o cílení na „prestižní vysoké školy“ není ve zdroji; doložena je vysoká úspěšnost přechodu na VŠ obecně.",
+      "„Aktivní cestování“ v rámci Erasmus+ je nadsazené/nespecifikované; zdroj popisuje mobility (jazykové vzdělávání, stínování), nikoli frekvenci či povahu jako „aktivní cestování“.",
+      "Část výstupu je hodnotově/marketingově formulovaná („skvělá volba“ apod.); nejde o fakt ze zprávy, i když navazuje na zjištění."
+    ],
+    "best_points": [
+      "Správně převzaté klíčové závěry inspekce: velmi dobré výsledky (maturita, vyznamenání, soutěže) a mimořádně silný Erasmus+.",
+      "Dobře zachycené slabé stránky: nesjednocená kritéria hodnocení, převaha frontální výuky a nízká podpora individuálního rozvoje/nadání ve výuce.",
+      "Užitečná konkretizace pro rodiče včetně otázek na den otevřených dveří (psycholog, hodnocení, podpora nadaných).",
+      "Číselné údaje o vyznamenání a absenci odpovídají zdroji (55 % / 72 %, 120 hodin)."
+    ],
+    "one_line_verdict": "Výstup je z velké části věrný a pro rodiče prakticky použitelný, ale obsahuje několik nadsazených či nedoložených formulací (zejména „matematické třídy“ a „prestižní VŠ“)."
+  }
+}

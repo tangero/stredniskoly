@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600011852_2022-01-05",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:07:29.974972+00:00",
+  "run_finished_utc": "2026-02-10T08:08:26.185855+00:00",
+  "raw_file": "GY8_600011852_2022-01-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600011852_2022-01-05",
+    "school_profile": {
+      "school_type": "Gymnázium a tři obory učiliště (výrobce potravin, elektrikář, truhlář)",
+      "inspection_period": "5. až 7. a 10. 1. 2022",
+      "school_change_summary": "Škola v posledních letech rozšířila nabídku o tři obory s výučním listem, strategie gymnázia je ale spíše statická bez inovací."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Žáci gymnázia dosahují tradičně výborných výsledků u maturitní zkoušky.",
+          "evidence": "„Tradičně výborných výsledků dosahují žáci gymnázia také při absolvování maturitních zkoušek, a to jak ve společné, tak i v profilové části.“"
+        },
+        {
+          "tag": "Jazyková úroveň",
+          "detail": "Výuka cizích jazyků probíhá v cílovém jazyce a žáci prokazují velmi dobrou úroveň.",
+          "evidence": "„Přínosem bylo vedení výuky ve vyučovaném jazyce, žáci prokazovali obvykle velmi dobrou znalost jazyka i rozvoj své komunikativní kompetence.“"
+        },
+        {
+          "tag": "Praktická příprava",
+          "detail": "Učňovské obory využívají funkční spolupráci s partnery a reálná pracoviště.",
+          "evidence": "„Žáci při odborném výcviku na pracovišti u smluvního partnera získávají potřebné kompetence, a to s přidanou hodnotou vzdělávání v reálném prostředí.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zastaralé metody",
+          "detail": "Výuka převažuje frontální forma bez diferenciace pro nadané či slabší žáky.",
+          "evidence": "„Ve sledovaných hodinách převládala frontální forma výuky... Individuální přístup vyučujících k žákům s nadáním... nebyl zaznamenán.“"
+        },
+        {
+          "tag": "Nedostatečný dohled",
+          "detail": "Vedení školy nesleduje systematicky kvalitu výuky a nevede hospitace.",
+          "evidence": "„Hospitační činnost vedení školy... zpravidla neprobíhá, zaznamenány byly pouze hospitace u některých začínajících pedagogů.“"
+        },
+        {
+          "tag": "Chybějící vybavení",
+          "detail": "Pro nové obory (truhlář, elektrikář) chybí dostatek vlastních pomůcek a prostor.",
+          "evidence": "„Ve škole zatím není vytvořeno takové zázemí... nejsou vytvořeny např. odborné kabinety... dostatečné a druhově různorodé množství oborově zaměřených... pomůcek.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola reaguje na zjištění, že chybí diferenciace výuky pro žáky s různými potřebami?",
+        "Jaké konkrétní vybavení a prostory pro praktickou výuku již škola pořídila pro nové obory?",
+        "Jak vedení školy garantuje kvalitu výuky, pokud neprovádí systematické hospitace?"
+      ],
+      "who_school_fits": [
+        "Samostatní žáci, kteří preferují tradiční přednáškový styl výuky.",
+        "Uchazeči o studium na VŠ, kteří očekávají silnou přípravu k maturitě.",
+        "Žáci s zájmem o učební obory, kteří hledají reálnou praxi v provozech partnerů."
+      ],
+      "who_should_be_cautious": [
+        "Žáci vyžadující individuální přístup nebo specifické metody výuky.",
+        "Talentovaní žáci, kteří potřebují větší míru samostatné práce a kooperace.",
+        "Rodiny očekávající moderní didaktické vybavení nových učeben (elektro/truhlář)."
+      ],
+      "plain_czech_summary": "Gymnázium ve škole funguje na tradiční bázi s vynikajícími výsledky u maturity a silnou jazykovou výukou. Pro rodiče je varovným signálem, že vedení školy prakticky nekontroluje kvalitu výuky a pedagogové využívají málo moderních metod. Výuka je často pasivní, bez skupinové práce a individuálního přístupu k nadaným či slabším žákům. Škola nově otevřela učební obory, ale zatím nemá dostatek vlastního vybavení a spoléhá na externí partnery."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Trvale výborné",
+        "key_numbers": [
+          "Tradičně výborné výsledky maturit",
+          "Úspěch ve společné i profilové části",
+          "Dva žáci v celostátních kolech soutěží"
+        ],
+        "evidence": "„Tradičně výborných výsledků dosahují žáci gymnázia také při absolvování maturitních zkoušek, a to jak ve společné, tak i v profilové části.“"
+      },
+      "absence": {
+        "trend": "Bez nápaditosti",
+        "key_numbers": [
+          "Neomluvená absence ojedinělá",
+          "Počet absencí nebyl výrazně vyšší",
+          "Výchovná opatření využívána v menší míře"
+        ],
+        "evidence": "„Počet absencí žáků ve výuce nebyl výrazně vyšší, neomluvená absence byla spíše ojedinělá.“"
+      },
+      "support_services": [
+        "Fungující výchovné poradenství a primární prevence (besedy, adaptační kurzy).",
+        "Podpora přípravy na VŠ (spolupráce s univerzitami).",
+        "Žáci se SVP (12 evidovaných) nemají zajištěnou individuální podporu přímo ve výuce."
+      ],
+      "safety_climate": [
+        "Klima ve třídách je příznivé díky menším počtům žáků.",
+        "Nízký výskyt sociálně patologických jevů.",
+        "Výchovná opatření převažují pozitivní (pochvaly)."
+      ],
+      "partnerships_practice": [
+        "Silné partnerství s městem Hlinsko a univerzitami.",
+        "Klíčová spolupráce se smluvními partnery pro odborný výcvik (potraviny).",
+        "Absolventi učebních oborů často získávají práci přímo u partnerů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně rozdělený a klade důraz na hodnocení managementu i výuky. Odhaluje konkrétní systémové chyby (chybějící hospitace), které jsou pro rodiče užitečným varováním.",
+      "uncertainty_notes": [
+        "Nejsou uvedeny konkrétní procentuální výsledky maturit, pouze slovní hodnocení 'výborné'.",
+        "Chybí upřesnění, jaké konkrétní pomůcky pro nové obory chybí (uvádí jen obecně 'modely, stroje').",
+        "Není jasné, zda nízká naplněnost tříd ovlivňuje finanční stabilitu školy."
+      ]
+    }
+  }
+}

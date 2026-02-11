@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_651014646_2021-11-10",
+  "school_profile": {
+    "school_type": "Soukromá střední škola poskytující vzdělání v oboru Bezpečnostně právní činnost.",
+    "inspection_period": "10. 11. − 12. 11. 2021",
+    "school_change_summary": "Od roku 2014 se výrazně zvýšil počet žáků (z 151 na 225), obměnilo se vedení i materiální zázemí, ale přetrvávají nedostatky v metodice výuky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné výsledky",
+        "detail": "Žáci dosahují opakovaně vynikajících výsledků v celostátních soutěžích ve svém oboru.",
+        "evidence": "Žáci školy se dlouhodobě aktivně účastní odborných soutěží, výborných výsledků dosahují opakovaně..."
+      },
+      {
+        "tag": "Zázemí a partnerství",
+        "detail": "Škola modernizovala vybavení pro odbornou výuku a úzce spolupracuje s Policií ČR.",
+        "evidence": "Došlo k obměně vybavení školy ICT technikou... partnerství s Krajským a oblastním ředitelstvím Policie ČR."
+      },
+      {
+        "tag": "Jazyková výuka",
+        "detail": "V anglickém jazyce probíhá kvalitní výuka zaměřená na komunikaci a přípravu k maturitě.",
+        "evidence": "V hodinách anglického jazyka byla výuka vedena komunikativní formou... systematicky pracuje s výsledky... s ohledem na získání úrovně B1."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nestabilita učitelů",
+        "detail": "Častá výměna učitelů všeobecných předmětů ohrožuje kvalitní přípravu na maturitu.",
+        "evidence": "Pedagogický sbor není dlouhodobě stabilizovaný... ohrožuje kontinuitu... přípravu žáků ke společné části maturitní zkoušky."
+      },
+      {
+        "tag": "Nezajištěná praxe",
+        "detail": "Odborná praxe nemá jasná pravidla a nebyla zajištěna pro všechny žáky.",
+        "evidence": "Odborná praxe... nebyla koncepčně zajištěna... Škola upřednostnila některé žáky... nebyly vedeny deníky žáků."
+      },
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Výuka je často pasivní, učitelé málo zapojují žáky a neposkytují dostatečnou zpětnou vazbu.",
+        "evidence": "Převažující frontální výuka... vede k nízké míře zapojení žáků... Pedagogové neposkytují žákům dostatečnou a kvalitní zpětnou vazbu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola zajišťuje stabilitu učitelského sboru, zejména u maturitních předmětů?",
+      "Jaká jsou konkrétní kritéria a podmínky pro absolvování povinné odborné praxe?",
+      "Jakým způsobem škola řeší bezpečnostní rizika spojená s volným vstupem do areálu školy?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří chtějí nastoupit k policii nebo do bezpečnostních složek a očekávají kvalitní odbornou přípravu.",
+      "Samostatní studenti, kteří nepotřebují intenzivní vedení a zpětnou vazbu od učitelů.",
+      "Žáci, kteří chtějí aktivně reprezentovat školu v odborných soutěžích a projektech."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individuální přístup nebo mají speciální vzdělávací potřeby.",
+      "Studenti očekávající moderní, interaktivní metody výuky i v běžných předmětech.",
+      "Uchazeči, kteří vyžadují garantovanou a kvalitně vedenou odbornou praxi u všech partnerů."
+    ],
+    "plain_czech_summary": "Škola se zaměřuje na bezpečnostně právní obory a má silné vazby na policii. Potěší vylepšeným technickým vybavením a úspěchy žáků v odborných soutěžích. Pozor byste si měli dát na časté změny učitelů všeobecných předmětů, což může ztížit přípravu na maturitu. Inspekce také kritizovala nezajímavou formu výuky a špatnou organizaci praxí. Pro aktivní studenty se zájmem o profesi je škola vhodná, slabším žákům může chybět podpora."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou stabilní, ale škola neanalyzuje úspěšnost absolventů.",
+      "key_numbers": [
+        "69 maturantů v roce 2021",
+        "4 žáci u maturity neuspěli",
+        "16 žáků maturovalo s vyznamenáním"
+      ],
+      "evidence": "Z celkového počtu 69 žáků konajících MZ... prospělo s vyznamenáním 16 žáků, 47 žáků prospělo, 4 žáci nebyli u MZ úspěšní."
+    },
+    "absence": {
+      "trend": "Nehodnoceno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje specifické údaje o absence ani jejím vývoji."
+    },
+    "support_services": [
+      "Poradenské služby (výchovný poradce, prevence) jsou zajišťovány, ale jejich činnost není systematicky provázaná.",
+      "Cílená práce se žáky se speciálními potřebami ve výuce zaznamenána nebyla.",
+      "Kariérové poradenství využívá besed s policií a armádou."
+    ],
+    "safety_climate": [
+      "Škola nemá zajištěn areál a budovu proti vstupu nepovolaných osob.",
+      "Klima školy není vedením cíleně zjišťováno, chybí žákovský parlament.",
+      "Mezi žáky a učiteli panuje respektující vztah a žáci jsou ukáznění."
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce s Policií ČR a armádou pro odbornou výuku a besedy.",
+      "Odborná praxe není koncepčně zajištěna, chybí dokumentace a rovnost přístupu.",
+      "Škola využívá evropské projekty pro doučování a rozvoj žáků."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně rozděluje silné a slabé stránky a poskytuje konkrétní čísla i citace. Jedinou nevýhodou je absence dat o absence.",
+    "uncertainty_notes": [
+      "Chybí jakékoliv statistiky o absence žáků.",
+      "Není uveden konkrétní počet žáků se speciálními potřebami.",
+      "Nejasná míra fluktuace učitelů (pouze 'dlouhodobě nestabilní')."
+    ]
+  }
+}

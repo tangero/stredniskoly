@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600013511_2024-03-13",
+  "school_profile": {
+    "school_type": "Střední odborná škola zaměřená na knihkupecké a nakladatelské činnosti (obor 66-43-M/01), provozovaná jako obecně prospěšná společnost",
+    "inspection_period": "13. března 2024 až 15. března 2024",
+    "school_change_summary": "Počet žáků se snížil (75 v denní, 58 v dálkové formě k 30. 9. 2023). Přetrvává vysoká fluktuace pedagogů. Došlo ke změnám v personálním složení školního poradenského pracoviště. Vedení školy se snaží o zlepšení materiálních podmínek a stabilizaci sboru, ale ne všechny cíle se daří plnit."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické propojení teorie s realitou",
+        "detail": "Žáci efektivně propojují teoretické znalosti s vlastními zkušenostmi a prokazují zájem o zvolený obor.",
+        "evidence": "Ve sledované výuce žáci propojovali zkušenosti z reálného života s teoretickými poznatky (4.4)"
+      },
+      {
+        "tag": "Kvalitní vybavení a digitální technologie",
+        "detail": "Učebny jsou vybaveny digitálními technologiemi, které učitelé aktivně využívají.",
+        "evidence": "Učebny jsou vybaveny digitálními technologiemi, které většina učitelů využila pro zefektivnění vzdělávacího procesu"
+      },
+      {
+        "tag": "Spolupráce s partnery v oboru",
+        "detail": "Škola spolupracuje s brněnskými i mimobrněnskými knihkupectvími, nakladatelstvími a knihovnami.",
+        "evidence": "Škola spolupracuje s brněnskými i mimobrněnskými knihkupectvími, nakladatelstvími, antikvariáty a knihovnami"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Průměrná absence činila 140 hodin na žáka za školní rok 2022/2023, z toho asi 10,3 % neomluvené.",
+        "evidence": "Ve školním roce 2022/2023 činila průměrně 140 hodin na žáka za školní rok. Neomluvená absence se podílela zaokrouhleně asi 10,3 %"
+      },
+      {
+        "tag": "Nestabilní pedagogický sbor",
+        "detail": "Časté odchody a příchody učitelů negativně ovlivňují kvalitu vzdělávání a kontinuitu výuky.",
+        "evidence": "Dochází k časté fluktuaci pedagogů. Koncepční úkol stabilizace pedagogického sboru se do doby inspekční činnosti nepodařilo splnit"
+      },
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "Hrubá neúspěšnost při maturitě byla v roce 2022 až 47,1 %, v roce 2023 24 %. Žádný žák v roce 2022/2023 neprospěl s vyznamenáním.",
+        "evidence": "V roce 2021 činila 26,8 %, v roce 2022 pak 47,1 % a v roce 2023 24 %. Ve školním roce 2022/2023 nebyl žák, který by prospěl s vyznamenáním"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky pro jejich prospěch?",
+      "Jaké konkrétní kroky podniká vedení školy na stabilizaci pedagogického sboru a jak to ovlivní kvalitu výuky?",
+      "Jak se škola připravuje na maturitní zkoušky a jaké má výsledky v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o knihkupectví, nakladatelství a práci s knihami, kteří si chtějí osvojit praktické dovednosti v oboru",
+      "Studenti, kteří se lépe učí propojením teorie s praktickou činností a reálnými příklady",
+      "Žáci, kteří preferují menší školu s individuálnějším přístupem a možností spolupráce s partnery v oboru"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují vysokou strukturu a jasné vedení – vedení školy má rezervy v organizaci a kontrole",
+      "Studenti se speciálními vzdělávacími potřebami – informace o nich se mezi učiteli nepředávají efektivně",
+      "Žáci, kteří potřebují individuální přístup a diferenciaci – ve výuce chybí přizpůsobení úkolů individuálním potřebám"
+    ],
+    "plain_czech_summary": "Střední škola KNIH je malá odborná škola zaměřená na knihkupectví a nakladatelství. Její silnou stránkou je propojení teorie s praxí a spolupráce s partnery v oboru. Slabinou je vysoká absence žáků (140 hodin ročně), nestabilní pedagogický sbor a slabé výsledky maturit. Vedení školy má rezervy v organizaci a kontrole. Škola je vhodná pro motivované žáky se zájmem o obor, ale rodiče by měli věnovat pozornost vysoké absenci a fluktuaci učitelů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi nestabilní s tendencí spíše klesající. Hrubá neúspěšnost kolísá, ale dlouhodobě se snižuje.",
+      "key_numbers": [
+        "2021: 26,8 % hrubé neúspěšnosti",
+        "2022: 47,1 % hrubé neúspěšnosti",
+        "2023: 24 % hrubé neúspěšnosti"
+      ],
+      "evidence": "Vyšší hrubá neúspěšnost byla v těchto letech velmi rozkolísaná. Při pohledu zpětně na další předchozí školní roky je však tendence hrubé neúspěšnosti žáků spíše klesající"
+    },
+    "absence": {
+      "trend": "Vysoká a problematická. Absence je jednou z hlavních příčin školní neúspěšnosti.",
+      "key_numbers": [
+        "Průměr 140 hodin na žáka za školní rok 2022/2023",
+        "Neomluvená absence: cca 10,3 % z celkové absence",
+        "Důsledek: předčasné ukončování vzdělávání a přestupy na jiné školy"
+      ],
+      "evidence": "Jednou z hlavních příčin školní neúspěšnosti je celkem vysoká absence. Ve školním roce 2022/2023 činila průměrně 140 hodin na žáka za školní rok"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: 2 výchovné poradkyně (pro denní a dálkové studium), metodička prevence rizikových jevů",
+      "Ředitelka zastává funkci kariérního poradce a metodika pro práci s nadanými žáky",
+      "Prevence sociálně patologických jevů: teambuildingy, workshopy, besedy s odborníky",
+      "Podpora žákům ohroženým neúspěchem: konzultace s vyučujícími"
+    ],
+    "safety_climate": [
+      "Téměř ve všech hospitovaných hodinách žáci respektovali dohodnutá pravidla a výuka probíhala v pracovní atmosféře",
+      "Kázeňská opatření a pochvaly jsou využívány adekvátně a rovnoměrně",
+      "Elektronická schránka důvěry existuje, ale není žáky využívána"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s brněnskými i mimobrněnskými knihkupectvími, nakladatelstvími, antikvariáty a knihovnami",
+      "Organizování odborné praxe, realizace exkurzí a projektů",
+      "Návštěvy památek a výstav"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní údaje. Hlavní problémy jsou jasně identifikovány (absence, fluktuace pedagogů, slabé výsledky maturit, rezervy v řízení). Pozitiva jsou také zmíněna. Připomínky ředitelky částečně objasňují situaci s ověřováním výsledků.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně se absence projevuje u jednotlivých žáků a zda existuje individuální plán řešení",
+      "Chybí informace o tom, jaké konkrétní opatření škola přijala po inspekci a jak se situace zlepšila",
+      "Není zřejmé, zda vysoká absence souvisí s kvalitou výuky nebo s jinými faktory (např. dálkové studium, pracující studenti)"
+    ]
+  }
+}
+```

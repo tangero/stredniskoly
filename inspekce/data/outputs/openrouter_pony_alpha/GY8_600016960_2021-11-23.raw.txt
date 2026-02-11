@@ -1,0 +1,100 @@
+{
+  "report_id": "GY8_600016960_2021-11-23",
+  "school_profile": {
+    "school_type": "Gymnázium s osmiletým a čtyřletým studijním cyklem",
+    "inspection_period": "23. − 25. 11. 2021",
+    "school_change_summary": "Od poslední inspekce došlo zejména ke zlepšení materiálních podmínek pro vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Klima",
+        "detail": "Ve škole panuje vstřícné prostředí s pozitivním klimatem a prosociálními vztahy.",
+        "evidence": "Vytvoření vstřícného prostředí ve škole s pozitivním klimatem projevujícím se v žádoucích prosociálních vztazích."
+      },
+      {
+        "tag": "Vybavení",
+        "detail": "Škola má dostatek prostor i vybavení a postupně je modernizuje.",
+        "evidence": "Škola disponuje dostatečným množstvím vybavených kmenových i odborných učeben... dochází k postupné obnově jejího vybavení."
+      },
+      {
+        "tag": "Výchovné předměty",
+        "detail": "Výuka výchovných předmětů je na vysoké úrovni a rozvíjí i postoje žáků.",
+        "evidence": "Vysokou úroveň prokazovalo vzdělávání v předmětech výchovného zaměření... věnována pozornost rovněž kultivování a prohlubování postojů žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Metody výuky",
+        "detail": "Výuka je často tradiční, učitelé málo využívají skupinovou práci a moderní metody.",
+        "evidence": "Výuka... byla většinou založena na uplatňování tradičních pedagogických postupů... Kooperativní aktivity... byly zařazeny v nižší míře."
+      },
+      {
+        "tag": "Individualizace",
+        "detail": "Učitelé příliš nerozlišují úkoly podle schopností jednotlivých žáků.",
+        "evidence": "V převážné části sledovaných hodin... vyučující nediferencovali a neindividualizovali učivo podle různé úrovně učebních schopností."
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Žáci dostávají málo prostoru k sebehodnocení a chybí motivační shrnutí na konci hodin.",
+        "evidence": "Téměř vůbec pak nebylo uplatňováno sebehodnocení a vzájemné hodnocení žáků... v závěru vyučovacích hodin... scházelo motivační shrnutí."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé využívají moderní metody a skupinovou práci ve výuce?",
+      "Jakým způsobem škola zajišťuje, aby se rychlejší žáci nenudili a pomalejší stíhali?",
+      "Jak funguje spolupráce mezi školní psycholožkou, výchovnou poradkyní a metodikem prevence?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří preferují tradiční výuku s důrazem na vědomosti a přípravu na VŠ.",
+      "Pro rodiče hledající školu s bezpečným a vstřícným sociálním klimatem.",
+      "Pro talenty v uměleckých a sportovních oborech, kterým vyhovuje kvalitní výuka výchov."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří vyžadují aktivní, projektové vyučování a častou skupinovou práci.",
+      "Pro žáky se specifickými vzdělávacími potřebami vyžadující silnou individualizaci výuky.",
+      "Pro ty, kteří očekávají častou a detailní zpětnou vazbu včetně sebehodnocení."
+    ],
+    "plain_czech_summary": "Gymnázium v Uničově nabízí stabilní a bezpečné prostředí s kvalitním materiálním vybavením. Výuka je odborná, ale spíše tradiční, s menším důrazem na skupinovou práci a individualizaci. Škola má skvělou úroveň ve výchovných předmětech a fungující prevenci rizikového chování. Slabším místem je málo rozvinuté sebehodnocení žáků a uzavírání hodin. Pro rodiče je důležité, že škola efektivně komunikuje a zohledňuje podněty žáků i rodičů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "310 žáků ve 12 třídách",
+        "28 učitelů",
+        "14 žáků se SVP"
+      ],
+      "evidence": "V posledních třech letech vykazovaly celkové výsledky vzdělávání žáků i úspěšnost u maturitních zkoušek srovnatelnou úroveň."
+    },
+    "absence": {
+      "trend": "Nehodnoceno",
+      "key_numbers": [],
+      "evidence": "Text neuvádí konkrétní data o absenci ani její trend."
+    },
+    "support_services": [
+      "Škola má školní psycholožku, výchovnou poradkyni a metodika prevence.",
+      "Žáci mohou anonymně využívat schránku důvěry.",
+      "Škola nabízí doučování žákům ohroženým školním neúspěchem."
+    ],
+    "safety_climate": [
+      "Nízká míra rizikového chování žáků.",
+      "Klima školy je pozitivní s prosociálními vztahy.",
+      "Žáci jsou poučováni o bezpečnosti a zdraví."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Univerzitou Palackého v Olomouci.",
+      "Rozvíjená mezinárodní spolupráce.",
+      "Aktivní rodičovské sdružení pomáhá škole finančně i organizačně."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně člení silné a slabé stránky a obsahuje konkrétní doporučení. Jazyk je úřednický, ale srozumitelný.",
+    "uncertainty_notes": [
+      "Absence konkrétních číselných dat o úspěšnosti u maturity (pouze 'srovnatelná úroveň').",
+      "Nejasná míra individualizace pro nadané žáky (text uvádí 'omezené využití').",
+      "Chybí detailnější popis toho, jak škola konkrétně zajišťuje prevenci neúspěchu."
+    ]
+  }
+}

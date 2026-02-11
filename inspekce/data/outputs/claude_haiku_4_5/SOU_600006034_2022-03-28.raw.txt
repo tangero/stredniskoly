@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOU_600006034_2022-03-28",
+  "school_profile": {
+    "school_type": "Soukromá střední škola gastronomie s.r.o. – čtyřletý obor Gastronomie (maturita), dvouletá nástavba Gastronomie a Podnikání, tříletý obor Kuchař–číšník",
+    "inspection_period": "28. března až 31. března 2022",
+    "school_change_summary": "Od inspekce v 2017 vzrostl počet žáků v maturitních oborech na 113 žáků (z 220 celkem). Materiální vybavení se částečně zlepšilo (dataprojektory, interaktivní tabule, notebooky). Přetrvávají však problémy s kontrolou kvality výuky, vysokou absencí žáků a neúspěšností v maturitě."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemná atmosféra a malé třídy",
+        "detail": "Nižší počty žáků ve třídách vytvářejí pozitivní klima pro učení.",
+        "evidence": "Nižší počty žáků ve třídách vytvářejí pozitivní klima."
+      },
+      {
+        "tag": "Kvalitní výuka češtiny",
+        "detail": "Výuka českého jazyka má jasnou strukturu, efektivně připravuje na maturitu a rozvíjí klíčové kompetence.",
+        "evidence": "Vyznačovaly se jasnou strukturou a definovaným cílem, účelně podporovala přípravu žáků k MZ."
+      },
+      {
+        "tag": "Zlepšená technická vybavení",
+        "detail": "Škola pořídila dataprojektory, interaktivní tabule a notebooky pro podporu výuky.",
+        "evidence": "Během distanční výuky byly učebny vybaveny dataprojektorem a interaktivními tabulemi."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Velmi vysoká neúspěšnost v maturitě",
+        "detail": "V čtyřletém oboru Gastronomie dosahuje 50 % hrubé neúspěšnosti (v ČR jen 15 %), zejména v cizích jazycích.",
+        "evidence": "Hrubá neúspěšnost se mírně zlepšila z 60 % na 50 %, ale v ČR jen 15 %."
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Neúspěšní žáci mají výrazně vyšší absenci (120 hodin ročně), která se negativně promítá do výsledků.",
+        "evidence": "Roční absence žáků se zvýšila až na 120 zameškaných hodin, úzká souvislost s podprůměrnými výsledky."
+      },
+      {
+        "tag": "Slabá výuka cizích jazyků",
+        "detail": "Převažuje frontální výuka bez dostatečného prostoru pro mluvený projev, chybí příprava na test.",
+        "evidence": "Nevytvářeli dostatečný prostor pro samostatný ústní projev, chyběla efektivní práce s textem."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké má opatření pro motivaci k docházce?",
+      "Jaké má škola plány na zlepšení výuky cizích jazyků, když jsou výsledky v maturitě velmi slabé?",
+      "Jak se škola vypořádá s tím, že přijímá téměř všechny uchazeče bez ohledu na jejich vstupní úroveň?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří mají zájem o gastronomii a jsou motivováni praktickou výukou v oboru",
+      "Studenti, kteří si cení malých tříd a osobnějšího přístupu učitelů",
+      "Uchazeči, kteří jsou schopni samostatně se připravovat na maturitu, protože škola neposkytuje dostatečnou podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v češtině a cizích jazycích – mají vysoké riziko neúspěchu v maturitě",
+      "Studenti, kteří potřebují intenzivní podporu a dohled – škola nemá systémový přístup k péči o ohrožené žáky",
+      "Rodiče, kteří očekávají kvalitní přípravu na společnou část maturitní zkoušky – výuka cizích jazyků je slabá"
+    ],
+    "plain_czech_summary": "Soukromá střední škola gastronomie v Praze nabízí vzdělání v gastronomii a příbuzných oborech. Pozitiva: malé třídy, příjemná atmosféra, kvalitní výuka češtiny. Vážné problémy: 50 % žáků neuspěje v maturitě (v ČR jen 15 %), vysoká absence žáků, slabá výuka cizích jazyků. Škola přijímá téměř všechny uchazeče bez ohledu na jejich schopnosti. Chybí jí systémová podpora slabších žáků a kvalitní příprava na maturitu. Vhodná spíše pro motivované studenty, kteří si umí sami připravit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě vysoká neúspěšnost, mírné zlepšení v čtyřletém oboru, ale stále výrazně horší než v ČR",
+      "key_numbers": [
+        "Čtyřletý obor Gastronomie: 50 % hrubá neúspěšnost (2020/2021), v ČR 15 %",
+        "Nástavba denní forma: výrazně lepší výsledky než v ČR",
+        "Dálková forma nástavby: 80 % neúspěšnosti v Gastronomii (2018/2019), 92 % v Podnikání"
+      ],
+      "evidence": "Hrubá neúspěšnost se mírně zlepšila z 60 % na 50 %, ale ve srovnání se skupinou oborů v ČR se výrazně zhoršila."
+    },
+    "absence": {
+      "trend": "Vysoká a problematická, zejména u neúspěšných žáků; mírné zlepšení v neomluvené absenci",
+      "key_numbers": [
+        "Prezenční výuka 2021/2022: 120 zameškaných hodin na žáka ročně",
+        "Prezenční výuka 2018/2019: 111 hodin absence na žáka",
+        "Distanční výuka: absence nižší až o 87 %"
+      ],
+      "evidence": "Úzká souvislost mezi vysokou absencí žáků a jejich podprůměrnými výsledky u MZ. Neúspěšní žáci mají obvykle výrazně vyšší absenci."
+    ],
+    "support_services": [
+      "Školní poradenské pracoviště vedené ředitelkou – komunikuje s učiteli, ale neplnění podpůrných opatření není sledováno",
+      "Individuální konzultace nabízené učiteli – žáci je však téměř nevyužívají",
+      "Strategie předcházení školní neúspěšnosti – existuje, ale zcela neodpovídá vzdělávacím potřebám žáků"
+    ],
+    "safety_climate": [
+      "Škola dbá na zajištění bezpečného prostředí, vyhodnocuje bezpečnostní rizika",
+      "Přijata opatření k odstranění rizik, např. zabezpečení vstupu školy"
+    ],
+    "partnerships_practice": [
+      "Komunikace se zákonnými zástupci probíhá pouze neformálně, bez konkrétních závěrů a opatření",
+      "Škola komunikuje se školskými poradenskými zařízeními, ale neplnění jejich doporučení není sledováno"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní čísla, citace z pozorování hodin a analýzu výsledků. Všechna tvrzení jsou podložena důkazy. Srozumitelná i pro rodiče bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Není jasné, jak přesně škola ověřuje kritérium 'motivace uchazeče' při přijímání",
+      "Chybí informace o tom, jaké konkrétní opatření škola přijala po předchozí inspekci v 2017",
+      "Není specifikováno, jaké konkrétní 'inovativní metody' by měla škola zavést"
+    ]
+  }
+}
+```

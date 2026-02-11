@@ -1,0 +1,100 @@
+{
+  "report_id": "GY8_600010325_2021-10-19",
+  "school_profile": {
+    "school_type": "Gymnázium a střední odborná škola",
+    "inspection_period": "19. 10. 2021 − 22. 10. 2021",
+    "school_change_summary": "Od školního roku 2020/2021 došlo ke změně na pozici ředitele školy. Výrazně se zlepšily materiálně-technické podmínky vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a prostředí",
+        "detail": "Škola prošla kompletní rekonstrukcí a nabízí nové, moderní prostředí s digitálními technologiemi.",
+        "evidence": "V uplynulém školním roce byla dokončena kompletní rekonstrukce školní budovy. Nové školní prostředí... je dostatečně vybavené digitálními technologiemi."
+      },
+      {
+        "tag": "Jazyky a aktivity",
+        "detail": "Výuka jazyků využívá moderní metody a škola nabízí bohaté aktivity včetně mezinárodních projektů.",
+        "evidence": "Využívání moderních trendů ve výuce jazyků účinně podporuje rozvoj komunikačních dovedností žáků."
+      },
+      {
+        "tag": "Praxe a uplatnění",
+        "detail": "Škola intenzivně propojuje teorii s praxí díky spolupráci s mnoha partnery.",
+        "evidence": "Daří se naplňovat záměr intenzivního propojování teoretické výuky s praxí... četnou spoluprací se sociálními partnery."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost u maturity",
+        "detail": "Žáci některých oborů dosahují výrazně horších výsledků u maturity než republikový průměr.",
+        "evidence": "Přetrvává vyšší neúspěšnost žáků při ukončování vzdělávání ve společné části maturitní zkoušky... horších výsledků než je republikový průměr."
+      },
+      {
+        "tag": "Chybějící analýza výsledků",
+        "detail": "Škola neanalyzuje příčiny neúspěchu u maturity a neřeší cíleně nedostatky žáků.",
+        "evidence": "Komplexní analýza, která by se zabývala příčinami horších výsledků... realizována není. Nejsou přijímána opatření... ke konkrétním nedostatkům."
+      },
+      {
+        "tag": "Nerozlišená výuka",
+        "detail": "Výuka v přírodovědných a odborných předmětech se neadaptuje na individuální potřeby žáků.",
+        "evidence": "Diferenciace dle individuálních potřeb jednotlivců využita nebyla. Obsahová diferenciace výuky... uplatněna nebyla."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola reaguje na vysokou neúspěšnost žáků v maturitních předmětech a jaká opatření plánuje?",
+      "Jakým způsobem pedagogové rozlišují výuku pro studenty s různou úrovní znalostí v náročnějších předmětech?",
+      "Pokud mám zájem o obor Sociální činnost, jaká je aktuální úspěšnost absolventů u maturity?"
+    ],
+    "who_school_fits": [
+      "Studentům, kteří oceňují moderní, zrekonstruované prostředí a vybavení digitálními technologiemi.",
+      "Žákům, kterým vyhovuje bohatá nabídka mimoškolních aktivit, soutěží a mezinárodních projektů.",
+      "Pro zájemce o obor Sociální činnost, kteří chtějí získat praktické zkušenosti v rámci mnoha partnerských institucí."
+    ],
+    "who_should_be_cautious": [
+      "Uchazečům o čtyřletý obor Gymnázia, pokud je pro ně klíčová vysoká jistota úspěchu u maturity bez nutnosti intenzivní domácí přípravy.",
+      "Studentům, kteří vyžadují silný individuální přístup a přizpůsobení tempa výuky jejich potřebám.",
+      "Zájemcům o obor Sociální činnost vzhledem k dlouhodobě vysoké neúspěšnosti v maturitních zkouškách."
+    ],
+    "plain_czech_summary": "Škola v Klášterci nad Ohří prošla pod vedením nového ředitele kompletní rekonstrukcí a nabízí moderní prostředí. Chlubí se bohatou nabídkou aktivit a skvělou úrovní výuky cizích jazyků. Pozor by si však rodiče měli dát na výsledky maturity. U čtyřletého gymnázia a oboru Sociální činnost je neúspěšnost ve společné části maturity výrazně vyšší než je celorepublikový průměr. Inspekce rovněž kritizuje, že škola dostatečně neanalyzuje příčiny těchto špatných výsledků a ve výuce nebere příliš ohled na individuální potřeby jednotlivých žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Negativní (výrazně nadprůměrná neúspěšnost)",
+      "key_numbers": [
+        "Neúspěšnost v angličtině (8leté gymnázium 2020): 11,8 % (průměr ČR 0,6 %).",
+        "Neúspěšnost v angličtině (Sociální činnost 2021): 28,6 % (průměr ČR 6,9 %).",
+        "Neúspěšnost v češtině (Sociální činnost 2021): 18,2 % (průměr ČR 5,4 %)."
+      ],
+      "evidence": "Neúspěšnost žáků ve společné části maturitní zkoušky je... dlouhodobě... výrazně vyšší, než průměrná neúspěšnost ve skupině oborů v rámci České republiky."
+    },
+    "absence": {
+      "trend": "Nehodnoceno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní údaje o absence ani její trendu."
+    },
+    "support_services": [
+      "Individuální konzultace a doučování pro žáky ohrožené neúspěchem.",
+      "Odborná pomoc s profesní orientací pro vyšší ročníky.",
+      "Spolupráce s poradenskými zařízeními při péči o žáky se speciálními potřebami."
+    ],
+    "safety_climate": [
+      "Dobrá atmosféra v třídních kolektivech podpořená četnými aktivitami.",
+      "Fungující Žákovský parlament umožňující žákům se vyjadřovat ke chodu školy.",
+      "Realizace preventivních programů (Cesta, Desatero prevence)."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s léčebnami, nemocnicemi a domovy seniorů (praxe).",
+      "Dlouhodobý Česko-holandský projekt a partnerství se školou v Německu.",
+      "Spolupráce s Metropolitní univerzitou na jazykových workshopech."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky. Obsahuje srovnání s republikovým průměrem, které je pro laika velmi názorné.",
+    "uncertainty_notes": [
+      "Chybí vysvětlení, proč je 4letý obor úspěšnější u maturity než 8letý, když má celkově horší výsledky.",
+      "Není jasné, zda vysoká neúspěšnost u maturity je důsledkem náročnosti školy nebo kvality výuky.",
+      "Zpráva neuvádí konkrétní data o počtu žáků v jednotlivých ročnících pro lepší kontext statistik."
+    ]
+  }
+}

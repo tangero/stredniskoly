@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600006051_2022-03-02",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:13:21.449669+00:00",
+  "run_finished_utc": "2026-02-10T07:14:32.425741+00:00",
+  "raw_file": "SOS_600006051_2022-03-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006051_2022-03-02",
+    "school_profile": {
+      "school_type": "Soukromá střední a vyšší odborná škola",
+      "inspection_period": "2. 3. – 3. 3. 2022 a 7. 3. − 8. 3. 2022",
+      "school_change_summary": "Škola od roku 2014 výrazně roste (nárůst žáků i tříd), změnila vedení a zlepšila materiální vybavení i výsledky u maturity v hlavním oboru."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Výuka je silně propojena s policejní praxí a využívá zkušené odborníky.",
+          "evidence": "Výrazné propojení teoretické odborné výuky i praktické přípravy s reálnými situacemi z policejní praxe."
+        },
+        {
+          "tag": "Vybavení a prostředí",
+          "detail": "Škola nabízí moderní odborné učebny, střelnici a kvalitní zázemí.",
+          "evidence": "Škola disponuje dostatečným množstvím kmenových tříd... odborné učebny kriminalistiky, prostory pro výuku sebeobrany a střeleckou přípravu."
+        },
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Studenti hlavního oboru dosahují nadprůměrných výsledků u maturitní zkoušky.",
+          "evidence": "V oboru Bezpečnostně právní činnost žáci dosáhli... lepších výsledků, než je průměr v dané skupině oborů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Část hodin je stereotypní s malou aktivitou žáků a nedostatečnou podporou jejich nadání.",
+          "evidence": "Nízká míra metodické a didaktické propracovanosti výuky s malou aktivizací žáků... méně efektivní podpora žáků... podle celého spektra nadání."
+        },
+        {
+          "tag": "Jazyky a gramotnost",
+          "detail": "Škola má rezervy v rozvoji cizích jazyků, čtení a kritického myšlení.",
+          "evidence": "Nižší míra rozvoje čtenářské gramotnosti, kritického myšlení... včetně interaktivních řečových dovedností v cizích jazycích."
+        },
+        {
+          "tag": "Řízení a podpora",
+          "detail": "S rostoucím počtem žáků nezvládá vedení systematicky řešit problémy a podporovat učitele.",
+          "evidence": "Stávající organizační struktura školy však tyto změny v dostatečné míře nereflektuje... méně koncepční a účinné pedagogické řízení školy."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola zajišťuje, aby byla výuka zajímavá a ne jen frontální přednáška?",
+        "Jakým způsobem je podporováno studium cizích jazyků a příprava na jejich maturitu?",
+        "Jak škola řeší individuální potřeby žáků vzhledem k nárůstu počtu studentů?"
+      ],
+      "who_school_fits": [
+        "Pro uchazeče, kteří se vážně připravují na kariéru v policii, vězení či krizovém řízení.",
+        "Pro studenty, kteří očekávají kázeň a pořádek srovnatelný se složkami.",
+        "Pro ty, kteří preferují menší soukromou školu s nadstandardním vybavením."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří vyžadují silnou individuální podporu nebo mají specifické vzdělávací potřeby.",
+        "Pro ty, kteří očekávají moderní interaktivní metody výuky v každém předmětu.",
+        "Pro zájemce o nástavbové dálkové studium, kde se výsledky zhoršují."
+      ],
+      "plain_czech_summary": "TRIVIS je soukromá škola s jasným zaměřením na bezpečnostní obory. Hlavní výhodou je úzké propojení s praxí a nadprůměrné výsledky u maturity v oboru Bezpečnostně právní činnost. Škola má skvělé vybavení včetně střelnice. Rizikem je stereotypní výuka v některých předmětech a slabší podpora individuálních potřeb žáků. Nástavbové studium vykazuje horší výsledky. Škola je vhodná pro cílevědomé uchazeče o profesi v ozbrojených složkách, méně pro ty, kdo potřebují intenzivní individuální péči."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se (hlavní obor), horší (nástavbový obor)",
+        "key_numbers": [
+          "Lepší výsledky než průměr oboru (Bezpečnostně právní činnost)",
+          "Nižší hrubá neúspěšnost u maturity (hlavní obor)",
+          "Zvýšená neúspěšnost v nástavbovém dálkovém studiu"
+        ],
+        "evidence": "V oboru Bezpečnostně právní činnost žáci dosáhli... lepších výsledků, než je průměr... V nástavbovém oboru... se výsledky vzdělávání žáků zhoršily."
+      },
+      "absence": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Cca 98 % žáků má uzavřenu klasifikaci k 30. 6.",
+          "Zlepšení docházky a snížení absence",
+          "Zvýšený počet necvičících žáků v TV"
+        ],
+        "evidence": "Ve sledovaném období došlo ke zlepšení docházky žáků i snížení míry jejich absence, přibližně 98 % má uzavřeno u klasifikací k 30. 6."
+      },
+      "support_services": [
+        "Výchovné poradenství a prevence (zástupkyně ředitele)",
+        "Potřeba posílení pozice školního psychologa",
+        "Kariérní poradenství na dobré úrovni"
+      ],
+      "safety_climate": [
+        "Důraz na bezpečnost a kázeň (charakteristika školy)",
+        "Funkční preventivní mechanismy",
+        "Řešení problémů přes výchovné komise a podmínečná vyloučení"
+      ],
+      "partnerships_practice": [
+        "Memoranda s Policií ČR",
+        "Praxe na pracovištích smluvních partnerů",
+        "Propojení s oborovými školami a neziskovým sektorem"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně člení klady a zápory a obsahuje konkrétní data. Odborné termíny jsou vysvětleny kontextem.",
+      "uncertainty_notes": [
+        "Neuvedeno přesné procento neúspěšnosti u maturity, pouze srovnání s průměrem.",
+        "Chybí konkrétní data o počtu hodin individuální podpory pro žáky se SVP.",
+        "Není jasné, jaký přesně je důvod zhoršených výsledků v nástavbovém studiu."
+      ]
+    }
+  }
+}

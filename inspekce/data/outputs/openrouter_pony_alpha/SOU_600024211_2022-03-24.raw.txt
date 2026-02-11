@@ -1,0 +1,103 @@
+{
+  "report_id": "SOU_600024211_2022-03-24",
+  "school_profile": {
+    "school_type": "Střední průmyslová, odborná a základní škola s velkým počtem žáků se SVP.",
+    "inspection_period": "24. - 25. a 28. - 29. března 2022",
+    "school_change_summary": "Škola vznikla sloučením v roce 2018, od srpna 2021 ji vede nová ředitelka, která zlepšila materiální vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a praxe",
+        "detail": "Škola má moderní vybavení odborných učeben a dílen a skvěle propojuje teorii s praxí.",
+        "evidence": "Výuka probíhá v učebnách s moderní technikou a CNC stroji, účelné partnerství zajišťuje odbornou praxi."
+      },
+      {
+        "tag": "Uplatnění absolventů",
+        "detail": "Absolventi technických oborů nemají problém najít práci v regionu.",
+        "evidence": "Absolventi mají dobré uplatnění v praxi, škola dostává dobré reference např. z blízkého automobilového závodu."
+      },
+      {
+        "tag": "Výsledky u výučních listů",
+        "detail": "Žáci v oborech s výučním listem dosahují velmi dobrých výsledků u závěrečných zkoušek.",
+        "evidence": "Podíl žáků, kteří u závěrečné zkoušky prospěli s vyznamenáním, se zvýšil z 19 % na 35 %."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká úspěšnost u maturity",
+        "detail": "Výsledky u maturity jsou dlouhodobě špatné, často horší než republikový průměr.",
+        "evidence": "Výsledky ve společné části MZ byly často horší než průměr, 27 % žáků neprospělo."
+      },
+      {
+        "tag": "Nekvalifikovaní učitelé",
+        "detail": "Třetina pedagogů nemá odbornou kvalifikaci, což škodí kvalitě výuky.",
+        "evidence": "Třetina z celkového počtu pedagogických pracovníků je bez odborné kvalifikace, v ZŠ je to 67 %."
+      },
+      {
+        "tag": "Zastaralé metody výuky",
+        "detail": "Výuka je často nudná, frontální a neumožňuje studentům aktivně se zapojit.",
+        "evidence": "Vyučující využívali téměř vždy frontální výuku, docházelo k malé míře aktivizace žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomůže mému dítěti, pokud bude mít potíže s učivem, aby neprospělo u maturity?",
+      "Kdo bude učit mé dítě v hlavních předmětech a má tento učitel odpovídající kvalifikaci?",
+      "Jakým způsobem škola motivuje studenty k aktivnímu zapojení do výuky mimo tradiční výklad?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří se chtějí naučit řemeslo a chtějí uplatnění v technických oborech.",
+      "Pro žáčky, kteří oceňují moderní vybavení dílen a možnost odborné praxe.",
+      "Pro ty, kteří preferují menší nároky na teoretické vzdělávání a chtějí získat výuční list."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří cílí na kvalitní složení maturity a další vysokoškolské studium.",
+      "Pro rodiče, kterým záleží na tom, aby výuku vedli plně kvalifikovaní pedagogové.",
+      "Pro žáky, kteří potřebují aktivní a moderní styl výuky namísto pasivního poslouchání."
+    ],
+    "plain_czech_summary": "Škola nabízí širokou škálu oborů se skvělým technickým vybavením a vazbou na praxi, což žákům výučních listů zajišťuje dobré uplatnění. Varovným signálem je však velmi nízká úspěšnost u maturitních zkoušek a fakt, že škola přijímá všechny uchazeče bez výběru. Zásadním nedostatkem je vysoký podíl nekvalifikovaných učitelů a převažující pasivní styl výuky. Pro řemeslníky je škola dobrou volbou, pro maturanty je riziková."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně negativní",
+      "key_numbers": [
+        "27 % žáků u maturity neprospělo (školní rok 2020/2021)",
+        "Výsledky často horší než celorepublikový průměr",
+        "Největší neúspěšnost v předmětech Matematika a Český jazyk"
+      ],
+      "evidence": "Výsledky žáků ve společné části MZ byly často horší, než činí průměr, 27 % žáků neprospělo."
+    },
+    "absence": {
+      "trend": "Bez přímé vazby na neúspěšnost, ale vyskytují se slovní agrese a absence.",
+      "key_numbers": [
+        "Přibližně 6 % žáků má snížený stupeň chování",
+        "Absence není hlavní příčinou neúspěchu",
+        "Meziročně počet úrazů klesá"
+      ],
+      "evidence": "Mezi výsledky vzdělávání a změnami v podílu absence žáků není přímá vazba, největšími problémy jsou slovní agrese a absence."
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště a kvalitní prevence rizikového chování.",
+      "Projekt Do praxe bez bariér pro zvýšení zaměstnatelnosti absolventů.",
+      "Služby domova mládeže a internátu s individuálními plány pro žáky."
+    ],
+    "safety_climate": [
+      "Systém prevence rizikového chování je nastaven kvalitně a efektivně.",
+      "Výuka probíhá v příjemné atmosféře, žáci respektují pravidla.",
+      "V ZŠ se však vyskytují kázeňské problémy a slovní agrese."
+    ],
+    "partnerships_practice": [
+      "Účelné partnerství s regionálními firmami zajišťuje kvalitní odbornou praxi.",
+      "Absolventi často nastupují do zaměstnání přímo u partnerů školy.",
+      "Škola je dlouhodobě zapojena do projektu na podporu zaměstnatelnosti."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěry jsou výstižné.",
+    "uncertainty_notes": [
+      "Není zcela jasné, jak konkrétně probíhá příprava na maturitu, když chybí kurzy a maturity nanečisto.",
+      "Text zmiňuje zlepšení materiálních podmínek, ale popis prostředí ZŠ jako 'strohého' působí rozporuplně."
+    ]
+  }
+}

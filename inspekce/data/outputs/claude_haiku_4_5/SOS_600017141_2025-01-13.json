@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600017141_2025-01-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:05:45.097654+00:00",
+  "run_finished_utc": "2026-02-09T16:06:10.519888+00:00",
+  "raw_file": "SOS_600017141_2025-01-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017141_2025-01-13",
+    "school_profile": {
+      "school_type": "Střední odborná škola (soukromá, s.r.o.) s obory Veřejnosprávní činnost a Informační služby",
+      "inspection_period": "13.–15. ledna 2025",
+      "school_change_summary": "Změna ředitelky v roce 2024, modernizace mediálního ateliéru a rekonstrukce budov. Zlepšila se úspěšnost u maturit (neúspěšnost 10–12 %, průměr republiky)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola systematicky organizuje učební praxe na pracovištích partnerských institucí a firem, čímž otevírá žákům lepší perspektivu budoucího pracovního uplatnění.",
+          "evidence": "Cílená spolupráce s partnery zajišťujícími rozvoj odborných kompetencí žáků."
+        },
+        {
+          "tag": "Pozitivní školní klima",
+          "detail": "Vedení vytváří podporující prostředí s partnerským přístupem učitelů, vstřícností a důvěrou, což příznivě ovlivňuje průběh vzdělávání.",
+          "evidence": "Vedení školy cíleně vytváří podporující prostředí a příznivé klima."
+        },
+        {
+          "tag": "Péče o žáky se speciálními potřebami",
+          "detail": "Škola aktivně identifikuje žáky se speciálními potřebami a ve spolupráci se školskými poradenskými zařízeními nastavuje odpovídající podpůrná opatření.",
+          "evidence": "Přenos informací o těchto žácích v rámci kolektivu pedagogů je plně funkční."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená interaktivita ve výuce",
+          "detail": "Převažuje frontální výuka s nedostatečnou pestrostí forem a metod, chybí práce v malých skupinách a diskusní prvky rozvíjející komunikaci.",
+          "evidence": "Nedostatečná pestrost forem a metod výuky vedla k monotónnosti a nerovnoměrnému zapojení žáků."
+        },
+        {
+          "tag": "Slabé využití digitálních nástrojů",
+          "detail": "Projekční technika se používá spíše k pasivní prezentaci, chybí interaktivní software a práce žáků s různými informačními zdroji.",
+          "evidence": "Jen částečně bylo sledováno efektivní využívání didaktické techniky a interaktivního softwaru."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Škola čelí zvýšené omluvené průměrné absenci žáků, která negativně ovlivňuje dosahované vzdělávací výsledky.",
+          "evidence": "Dosahované výsledky vzdělávání jsou určitou měrou zatíženy zvýšenou omluvnou absencí žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhají učební praxe a s kterými firmami škola spolupracuje?",
+        "Jaké jsou plány na zvýšení interaktivity ve výuce a lepší využití digitálních nástrojů?",
+        "Jak škola řeší vysokou absenci žáků a jaké jsou důvody?"
+      ],
+      "who_school_fits": [
+        "Žáci zainteresovaní na praktickém vzdělání s vazbou na reálný pracovní trh",
+        "Studenti, kterým vyhovuje menší škola s osobnějším přístupem a dobrým klimatem",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje cílenou podporu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující moderní interaktivní výuku s digitálními technologiemi",
+        "Studenti, kteří potřebují intenzivní rozvoj kritického myšlení a práce s informacemi",
+        "Rodiny, které vyžadují vysokou docházku a důsledné sledování absence"
+      ],
+      "plain_czech_summary": "Soukromá střední odborná škola v Olomouci nabízí kvalitní praktické vzdělání s dobrým propojením s pracovním trhem. Silnými stránkami jsou pozitivní školní klima, péče o žáky se speciálními potřebami a spolupráce s partnerskými firmami. Slabší je interaktivita výuky, využití digitálních nástrojů a práce s informačními zdroji. Škola se potýká s vyšší absencí žáků. Úspěšnost u maturit se zlepšila na průměr republiky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Hrubá školní neúspěšnost 10–12 %",
+          "Dosažena úroveň průměrných hodnot dané skupiny oborů v republice",
+          "Zlepšení od poslední inspekce v roce 2022"
+        ],
+        "evidence": "Z analýzy výsledků je zřejmé, že se zlepšila hrubá školní neúspěšnost a svými hodnotami se dostala na úroveň průměrných hodnot."
+      },
+      "absence": {
+        "trend": "Zvýšená",
+        "key_numbers": [
+          "Zvýšená omluvená průměrná absence žáků",
+          "Negativně ovlivňuje dosahované vzdělávací výsledky"
+        ],
+        "evidence": "Škola čelí zvýšené omluvené průměrné absenci žáků, která zatížuje dosahované výsledky vzdělávání."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje poradenské a konzultační služby učitelům, žákům a zákonným zástupcům",
+        "Péče o žáky s potřebou podpůrných opatření, nadané žáky a žáky s odlišným mateřským jazykem",
+        "Kariérové poradenství zaměřené na orientaci na trhu práce a možnosti dalšího studia",
+        "Individuální konzultace a doučování pro žáky s rizikem školní neúspěšnosti",
+        "Primární prevence rizikového chování prostřednictvím besed, přednášek a preventivních programů"
+      ],
+      "safety_climate": [
+        "Bezpečnost zajišťována na základě školního řádu a dalších dokumentů",
+        "Celodenní přítomnost nepedagogického pracovníka u vstupu do školy",
+        "Systematická organizace dohledů pedagogických pracovníků v areálu",
+        "Seznamování s riziky a poučení žáků zahrnuty do celého vzdělávacího procesu",
+        "Pozitivní pracovní a sociální atmosféra, partnerský přístup vyučujících"
+      ],
+      "partnerships_practice": [
+        "Cílená spolupráce s partnery zajišťujícími rozvoj odborných kompetencí žáků",
+        "Organizování souvislých učebních praxí na pracovištích širokého spektra smluvních partnerských institucí a firem",
+        "Partneři z řad státní správy i soukromé sféry",
+        "Spolupráce se školskou radou a Spolkem rodičů (převážně na formální úrovni)",
+        "Bez zahraničních partnerských projektů v aktuálním školním roce"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Některé pasáže jsou však delší a obsahují více úřednické terminologie, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Konkrétní počty žáků s absencí nejsou uvedeny, pouze kvalitativní popis 'zvýšené omluvené absence'",
+        "Detaily o finančních podmínkách a školném nejsou v textu specifikovány",
+        "Důvody vysoké absence nejsou v textu vysvětleny"
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY8_600010511_2023-05-22",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium poskytující všeobecné vzdělání",
+    "inspection_period": "22.–25. května 2023",
+    "school_change_summary": "Škola si dlouhodobě udržuje stabilní počet žáků (213 žáků v osmi třídách, 89 % kapacity). Pokračuje postupná obnova materiálního vybavení, zejména v přírodovědných laboratořích a IT. Dlouhodobou slabinou zůstává absence vlastní tělocvičny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a klima",
+        "detail": "Ředitel efektivně řídí školu s jasnou koncepcí, mezi učiteli a žáky panuje vzájemný respekt a vstřícná atmosféra.",
+        "evidence": "Vedení školy \"účelně a promyšleně naplňuje základní zaměření školy na kvalitní a moderní všeobecné gymnaziální vzdělávání v podmínkách školy tzv. rodinného typu s příznivým vnitřním klimatem\"."
+      },
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Žáci dosahují velmi vysoké úspěšnosti u maturitních zkoušek, v některých letech 100 % úspěšnost.",
+        "evidence": "\"V posledních třech školních letech dosahovala škola průměrné hrubé neúspěšnosti 2,6 %. V letech 2020 a 2022 uspěli všichni ke zkoušce přihlášení žáci.\""
+      },
+      {
+        "tag": "Moderní vybavení a aktivity",
+        "detail": "Škola investuje do nových technologií, laboratoří a nabízí pestrý program včetně projektů Erasmus+ a charitativních akcí.",
+        "evidence": "\"Podařilo se výrazně zkvalitnit a modernizovat podmínky pro výuku přírodovědných předmětů včetně dobře vybavených laboratoří, proběhla obnova výpočetní techniky, přibyly digitální učební pomůcky.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Učitelé často pracují se všemi žáky stejně, chybí cílená podpora nadaných studentů v běžné výuce.",
+        "evidence": "\"Žáci vesměs řešili úlohy stejné kognitivní náročnosti, diferenciace učiva ani cílená podpora talentovaných žáků zaznamenána nebyla.\""
+      },
+      {
+        "tag": "Málo formativního hodnocení",
+        "detail": "Učitelé se zaměřují především na známkování, méně na zpětnou vazbu, kterou by žáci mohli využít k učení se.",
+        "evidence": "\"Prvky formativního hodnocení využitelného pro další učení se objevovaly pouze ojediněle. Ve většině hospitovaných hodin bylo zhodnocení dosažených cílů využito jen v menší míře.\""
+      },
+      {
+        "tag": "Chybí vlastní sportovní zařízení",
+        "detail": "Škola nemá vlastní tělocvičnu ani venkovní hřiště, což komplikuje rozvrh hodin a zvyšuje náklady.",
+        "evidence": "\"Dlouhodobou slabou stránkou školy je absence vlastní tělocvičny a venkovních sportovišť. Výuku tělesné výchovy škola zajišťuje pronájmem sportovišť smluvních partnerů.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky v běžné výuce? Existují speciální programy nebo třídy?",
+      "Jaké jsou plány na vybudování vlastní tělocvičny nebo sportovního hřiště?",
+      "Jak se škola zaměřuje na formativní hodnocení a zpětnou vazbu pro žáky?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a zájmem o všeobecné vzdělání v příjemném prostředí",
+      "Studenti, kterým vyhovuje stabilní, rodinné prostředí s jasným řádem a podporou osobnostního rozvoje",
+      "Žáci zajímající se o vědecké soutěže, projekty Erasmus+ a společensky prospěšné aktivity"
+    ],
+    "who_should_be_cautious": [
+      "Nadaní žáci, kteří potřebují individuální výzvu a diferenciovanou výuku (škola to zatím systematicky nenabízí)",
+      "Žáci se speciálními vzdělávacími potřebami (škola je podporuje, ale není bezbariérová)",
+      "Sportovci, kterým chybí vlastní tělocvična a hřiště na místě"
+    ],
+    "plain_czech_summary": "Gymnázium v Frýdlantu je kvalitní školou s příjemným klimatem a výbornými výsledky maturit. Vedení je promyšlené, učitelé jsou kvalifikovaní a škola investuje do moderního vybavení. Žáci se zapojují do zajímavých projektů a charitativních akcí. Slabinou je, že výuka není dostatečně přizpůsobena jednotlivým žákům – nadaní žáci nemají speciální podporu a učitelé málo používají zpětnou vazbu pro učení. Chybí také vlastní tělocvična."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi vysoká úspěšnost, stabilní v čase",
+      "key_numbers": [
+        "Průměrná neúspěšnost společné části: 2,6 % za tři roky",
+        "V letech 2020 a 2022: 100 % úspěšnost",
+        "Neúspěšnost profilové části: 1,3 % za tři roky"
+      ],
+      "evidence": "\"V posledních třech školních letech dosahovala škola průměrné hrubé neúspěšnosti 2,6 %. V letech 2020 a 2022 uspěli ve společné části maturitní zkoušky všichni ke zkoušce přihlášení žáci.\""
+    },
+    "absence": {
+      "trend": "Není v textu zmíněn",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje údaje o absence žáků."
+    },
+    "support_services": [
+      "Výchovné poradenství se speciálním zaměřením na žáky se speciálními vzdělávacími potřebami",
+      "Konzultační hodiny a doučování pro žáky s horšími výsledky",
+      "Individuální vzdělávací plány pro žáky s psychickými problémy",
+      "Adaptační výjezdové aktivity pro nové žáky"
+    ],
+    "safety_climate": [
+      "Funkční pedagogický dohled a elektronické zabezpečení vchodu",
+      "Systematická prevence rizikového chování s důrazem na aktuální problémy",
+      "Řešení problémů formou rozhovorů a výchovných komisí",
+      "Nově vybudované bezbariérové WC, ale škola není plně bezbariérová"
+    ],
+    "partnerships_practice": [
+      "Pronájem sportovišť u smluvních partnerů ve městě",
+      "Projekty Erasmus+ a Školy – vyslanci Evropského parlamentu",
+      "Program JA Studentská firma pro rozvoj podnikatelských dovedností",
+      "Charitativní aktivity (Paměti národa, Kameny zmizelých, Charitativní běh)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné stránky, slabiny a doporučení. Některé pasáže jsou však delší a obsahují více odborné termíny, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Absence není zmíněna – není jasné, zda je to problém nebo ne",
+      "Počet pedagogů (21) a jejich kvalifikace jsou zmíněny, ale bez konkrétních procent",
+      "Finanční situace školy není detailně popsána, jen zmínka o výnosech z pronájmu"
+    ]
+  }
+}
+```

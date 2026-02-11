@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_600020053_2023-01-16",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola, Vyšší odborná škola zdravotnická, Jazyková škola s právem státní jazykové zkoušky, domov mládeže a školní jídelna",
+    "inspection_period": "16. ledna až 7. února 2023",
+    "school_change_summary": "Od poslední inspekce došlo ke změně skladby zdravotnických oborů a pozitivním změnám v materiálním rozvoji školy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola má rozsáhlou síť partnerství s organizacemi zajišťujícími praktické vyučování, což pozitivně podporuje kvalitu odborného vzdělávání.",
+        "evidence": "Partnerská spolupráce pozitivně podporuje kvalitu odborného vzdělávání, významný je zejména přínos spolupráce s partnery pro propojení teorie s praxí."
+      },
+      {
+        "tag": "Systematické sledování výsledků",
+        "detail": "Škola průběžně vyhodnocuje výsledky vzdělávání a navrhuje účinná opatření ke zlepšení prospěchu žáků.",
+        "evidence": "Škola průběžně sleduje a vyhodnocuje výsledky vzdělávání žáků a studentů s využitím vhodných evaluačních nástrojů, systematicky navrhuje a přijímá účinná opatření."
+      },
+      {
+        "tag": "Kvalitní poradenské služby",
+        "detail": "Školní poradenské pracoviště poskytuje komplexní podporu včetně speciálního pedagoga a školního psychologa.",
+        "evidence": "Je tvořeno výchovnou poradkyní a kariérovou poradkyní v jedné osobě, školní metodičkou prevence, speciální pedagožkou a školním psychologem."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Žáci na střední škole pracují převážně na stejných úkolech se shodnou obtížností, nadaní žáci nemají dostatek příležitostí pro rozvoj.",
+        "evidence": "Žáci pracovali převážně na stejných úkolech se shodnou mírou obtížnosti, což vedlo k nižší efektivitě výuky jako takové. Nadaným žákům byly zřídka vytvářeny další příležitosti."
+      },
+      {
+        "tag": "Slabé využívání sebehodnocení",
+        "detail": "V části vyučovacích hodin chybí sebehodnocení a vzájemné hodnocení práce žáků, což omezuje rozvoj jejich sociálních kompetencí.",
+        "evidence": "V části sledovaných vyučovacích hodin chybělo sebehodnocení a vzájemné hodnocení práce žáků, nebylo tak využito tohoto nástroje k dotváření zpětné vazby."
+      },
+      {
+        "tag": "Nedostatečná kontrola domova mládeže",
+        "detail": "Realizace plánů a běžných činností domova mládeže není zcela důsledně kontrolována a vyhodnocována vedením školy.",
+        "evidence": "Realizace těchto plánů i některých běžných činností není zcela důsledně vedením školy kontrolována a vyhodnocována."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje nadané a talentované žáky? Existují pro ně speciální programy nebo individuální přístup?",
+      "Jaké jsou konkrétní partnerské organizace, kde žáci absolvují praktickou výuku, a jak se vybírají?",
+      "Jak se škola vypořádá s doporučením inspekce na lepší diferenciaci výuky a více sebehodnocení?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na zdravotnické obory, kteří si cení propojení teorie s praxí v reálných zdravotnických zařízeních",
+      "Studenti vyšší odborné školy hledající kvalitní teoretickou přípravu s moderním vybavením a laboratořemi",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje komplexní podporu prostřednictvím kvalitního poradenského pracoviště"
+    ],
+    "who_should_be_cautious": [
+      "Nadaní a talentovaní žáci, kterým škola zatím nedostává dostatek individualizované výuky a výzev",
+      "Žáci preferující aktivní a interaktivní vyuku, protože převažuje frontální výuka s omezeným využitím moderních metod",
+      "Rodiče, kteří očekávají intenzivní kontrolu a vyhodnocování činností domova mládeže"
+    ],
+    "plain_czech_summary": "Jde o kvalitní zdravotnickou školu s dobrým propojením teorie a praxe díky partnerství s nemocnicemi a zdravotnickými zařízeními. Škola systematicky sleduje výsledky a má kvalitní poradenské služby. Slabší stránkou je nedostatečná diferenciace výuky na střední škole – nadaní žáci nemají dost příležitostí k rozvoji a všichni žáci pracují na stejných úkolech. Inspekce také upozorňuje na málo sebehodnocení a vzájemného hodnocení žáků. Domov mládeže není dostatečně kontrolován."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní bez závažnějších odchylek",
+      "key_numbers": [
+        "Výsledky vzdělávání ve srovnání za uplynulé školní roky nevykazovaly v jednotlivých vyučovacích předmětech závažnější odchylky",
+        "Žáci se aktivně zapojují do soutěží a olympiád na okresní, regionální, krajské i celostátní úrovni"
+      ],
+      "evidence": "Zpětnou vazbou pro školu je také úspěšnost žáků u maturitních zkoušek, a to nejen v uplynulém školním roce, a v soutěžích."
+    },
+    "absence": {
+      "trend": "Problém se skrytým záškolástvím",
+      "key_numbers": [
+        "Nejčastěji se jedná o absenci s podezřením na skryté záškoláctví"
+      ],
+      "evidence": "Případné výchovné problémy se většinou daří podchytit a řešit v počátcích důsledným mapováním stavu v jednotlivých kolektivech žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně a kariérová poradkyně (v jedné osobě) – poradenská činnost zaměřená na integraci žáků se speciálními vzdělávacími potřebami",
+      "Školní metodička prevence – koordinace činností v oblasti rizikového chování a realizace preventivních aktivit",
+      "Speciální pedagožka a školní psycholog – individuální konzultace a metodická podpora pedagogů"
+    ],
+    "safety_climate": [
+      "Zdvořilé chování a přátelské vystupování žáků a studentů bylo zaznamenáno pozorováním během inspekce",
+      "Systematická práce s třídním kolektivem se odráží ve školním klimatu, wellbeing je patrný v kmenových třídách a relaxačních zónách",
+      "Úzká spolupráce s místními organizacemi, Policií ČR a neziskovým sektorem v oblasti prevence šikany a zneužívání návykových látek",
+      "Evidence udělování výchovných opatření ukazuje převahu pochval a ocenění nad kázeňskými opatřeními"
+    ],
+    "partnerships_practice": [
+      "Rozsáhlá síť partnerství s organizacemi zajišťujícími praktické vyučování a odbornou praxi",
+      "Praktická výuka probíhá ve školních laboratořích a na smluvních externích pracovištích, zejména v partnerských zdravotnických zařízeních",
+      "Spolupráce s vysokými školami – absolventi projevují zájem o další vzdělávání a škola sleduje jejich přijetí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však delší a obsahují více odborné terminologie, která by mohla být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o úspěšnosti u maturit nebo procenta absencí, pouze kvalitativní hodnocení",
+      "Není jasné, jak konkrétně se liší výuka mezi jednotlivými třídami a obory",
+      "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami a jejich úspěšnosti"
+    ]
+  }
+}
+```

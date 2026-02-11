@@ -1,0 +1,123 @@
+{
+  "report_id": "SOS_600010368_2025-05-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:35:35.359929+00:00",
+  "run_finished_utc": "2026-02-09T13:36:05.766524+00:00",
+  "raw_file": "SOS_600010368_2025-05-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600010368_2025-05-12",
+    "school_profile": {
+      "school_type": "Střední škola technická, gastronomická a automobilní s domovem mládeže a internátem",
+      "inspection_period": "12. 5. 2025 − 16. 5. 2025",
+      "school_change_summary": "Od září 2024 nová ředitelka, která navázala na předchozí směřování. Posílena organizační struktura vedením, zřízena pozice zástupkyně pro školní poradenské pracoviště. Ukončeno vzdělávání v oborech Agropodnikání a Podnikání v dálkové formě."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava na povolání",
+          "detail": "Škola má rozsáhlou síť sociálních partnerů a nadstandardní vybavení pro odborné vzdělávání, které efektivně připravuje žáky na uplatnění v praxi.",
+          "evidence": "Spolupráce se zaměstnavateli, kurzy (svářečský, řidičský, gastro), prezentace dovedností na regionálních akcích."
+        },
+        {
+          "tag": "Kvalitní péče o ubytované žáky",
+          "detail": "Domovy mládeže nabízejí pestrou škálu volnočasových aktivit a efektivně naplňují výchovně vzdělávací úlohy.",
+          "evidence": "Sportovní kroužky, besedy, vycházky, mezigenerační setkávání se seniory, deskové hry a zábavné akce."
+        },
+        {
+          "tag": "Podpora žáků se speciálními potřebami",
+          "detail": "Efektivní systém poradenských služeb s výchovnými poradkyněmi na každém pracovišti a novou sociální pedagožkou.",
+          "evidence": "Individuální přizpůsobování úkolů, sdílené elektronické prostředí, efektivní komunikace s rodinami."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky maturit",
+          "detail": "Škola dlouhodobě dosahuje výrazně vyšší neúspěšnosti u maturitní zkoušky než je republikový průměr.",
+          "evidence": "Obor Podnikání 2024: škola 47,8 %, ČR 23,8 %; Hotelnictví: škola 25 %, ČR 8,7 %."
+        },
+        {
+          "tag": "Nedostatečná kvalita výuky všeobecných předmětů",
+          "detail": "Přetrvávají nedostatky zjištěné při předchozích inspekčních činnostech: málo diferenciace, slabá zpětná vazba, nízká podpora kooperativních kompetencí.",
+          "evidence": "Inspektoři zaznamenali frontální výuku, pasivní žáky, heslovité odpovědi bez argumentace, ojediněle formativní hodnocení."
+        },
+        {
+          "tag": "Problémy s komunikací a klimatem",
+          "detail": "Někteří pedagogové se obávají vyjádřit nesouhlas s vedením, část žáků nemohou otevřeně vyslovit nesouhlas s učiteli.",
+          "evidence": "Žákovská samospráva není zřízena, rozpory nejsou řešeny, chybí prostor pro sebehodnocení žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zlepšit výsledky maturitní zkoušky? Jaká opatření jsou v koncepci rozvoje?",
+        "Jak se liší příprava na maturitu mezi jednotlivými pracovišti a jak se to řeší?",
+        "Jak mohou žáci a rodiče komunikovat problémy se školou, když není zřízena žákovská samospráva?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory (mechanika, gastronomie, zemědělství, stavebnictví) – zde je výuka kvalitní a vybavení nadstandardní.",
+        "Žáci, kteří potřebují individuální péči a podporu – škola má funkční systém poradenských služeb a sociální pedagožku.",
+        "Žáci z vyloučených lokalit a ze sociálně znevýhodněného prostředí – škola má zkušenosti a efektivní programy."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se chystají na maturitu v oborech Podnikání, Hotelnictví nebo Mechanik seřizovač – zde jsou dlouhodobě slabé výsledky.",
+        "Žáci, kteří potřebují kvalitní výuku všeobecných předmětů (čeština, cizí jazyky, matematika) – zde přetrvávají nedostatky.",
+        "Žáci, kteří se lépe učí v interaktivním prostředí – výuka je převážně frontální s málo diferenciace."
+      ],
+      "plain_czech_summary": "Škola je dobrá pro praktické obory – má skvělé vybavení, partnery v praxi a kvalitní výuku odborných předmětů. Péče o ubytované žáky je na vysoké úrovni. Problém je s maturitní zkouškou – výsledky jsou dlouhodobě horší než v celé republice. Výuka všeobecných předmětů má nedostatky: málo aktivních metod, málo individuálního přístupu, slabá zpětná vazba. Vedení školy si problém uvědomuje, ale nemá konkrétní plán na zlepšení. Komunikace mezi žáky, učiteli a vedením není otevřená."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě podprůměrné výsledky bez zlepšení",
+        "key_numbers": [
+          "Obor Podnikání 2024: 47,8 % neúspěšnosti (ČR 23,8 %)",
+          "Obor Hotelnictví 2024: 25 % neúspěšnosti (ČR 8,7 %)",
+          "Obor Mechanik seřizovač 2024: 15,4 % neúspěšnosti (ČR 10,6 %)"
+        ],
+        "evidence": "V oboru Podnikání v denní formě 2024: do 1. ročníku nastoupilo 35 žáků, maturitní zkoušku úspěšně vykonalo pouze 10 (29 %)."
+      },
+      "absence": {
+        "trend": "Vysoká absence, zavedeno nové opatření s mírným efektem",
+        "key_numbers": [
+          "Zavedeno \"úřední omlouvání\" v letošním školním roce",
+          "Po vyhodnocení prvního pololetí: mírné snížení zameškaných hodin"
+        ],
+        "evidence": "Škola v letošním školním roce přijala opatření ke snížení vysoké absence a skrytého záškoláctví."
+      },
+      "support_services": [
+        "Výchovný a kariérový poradce na každém pracovišti",
+        "Nová sociální pedagožka pro práci se žáky ze sociálně znevýhodněného prostředí",
+        "Metodika prevence na každém pracovišti",
+        "Diagnostické testy v anglickém jazyce na začátku 1. ročníku",
+        "Doučování a individuální podpora pro žáky ohrožené neúspěšností",
+        "Kariérové poradenství s profesními portfolii a analýzou uplatnitelnosti"
+      ],
+      "safety_climate": [
+        "Pravidelné adaptační programy pro první ročníky mapující klima tříd",
+        "Dotazníkové šetření školního klimatu s následným zařazováním aktivit",
+        "Semináře pro pedagogy na zlepšení přístupu k žákům s menší psychickou odolností",
+        "Účinné postupy pro řešení rizikového chování",
+        "Primární prevence zaměřená na zdravý životní styl a smysluplné využívání volného času",
+        "Ale: Někteří pedagogové se obávají vyjádřit nesouhlas, část žáků nemohou otevřeně vyslovit nesouhlas s učiteli"
+      ],
+      "partnerships_practice": [
+        "Rozsáhlá síť sociálních partnerů – spolupráce se zaměstnavateli na odborném výcviku",
+        "Besedy, přednášky a stáže učitelů pro profesní růst",
+        "Kurzy pro žáky (svářečský, řidičský, gastro)",
+        "Dny otevřených dveří a projektové dny pro základní školy",
+        "Prezentace dovedností na soutěžích a regionálních akcích",
+        "Spolupráce s městem Kadaň na vzdělávání z vyloučených lokalit",
+        "Rauty a obsluha na akcích regionálních firem",
+        "Spolupráce s profesními organizacemi a úřadem práce"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní data. Hlavní problémy jsou jasně identifikovány (slabé maturitní výsledky, nedostatky ve výuce všeobecných předmětů, komunikační problémy). Silné stránky jsou také konkrétní (praktická příprava, péče o ubytované žáky, poradenské služby). Některé pasáže jsou technické, ale pro rodiče jsou důležité informace dostupné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o počtu žáků v jednotlivých oborech maturitních, takže není jasné, jak velký je problém s maturitou relativně.",
+        "Není jasné, jaké konkrétní kroky vedení školy plánuje na zlepšení maturitních výsledků – zpráva jen konstatuje, že kroky nejsou formulovány.",
+        "Chybí informace o tom, jak se liší kvalita výuky mezi jednotlivými pracovišti (Pražská, Cihlářská, Kadaň, Jirkov) – je to důležité pro rodiče vybírající si místo studia."
+      ]
+    }
+  }
+}

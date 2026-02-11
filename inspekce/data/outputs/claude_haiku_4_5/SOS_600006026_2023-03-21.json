@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600006026_2023-03-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:44:01.726227+00:00",
+  "run_finished_utc": "2026-02-09T16:44:32.113991+00:00",
+  "raw_file": "SOS_600006026_2023-03-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006026_2023-03-21",
+    "school_profile": {
+      "school_type": "Soukromá střední škola DANAÉ - vzdělávání zakončené maturitní zkouškou v oborech Podnikání (2leté), Veřejnosprávní činnost a Obchodní akademie (4leté) v denní, kombinované a distanční formě",
+      "inspection_period": "21. března až 27. března 2023",
+      "school_change_summary": "Od poslední inspekce v roce 2020 se počet žáků téměř zdvojnásobil na 209 studentů. Od září 2022 škola obnovila denní formu studia. Přestože ředitelka zavedla opatření (více konzultací, motivační rozhovory, zvýšená frekvence klasifikace), výsledky u maturit se nezlepšily."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Pozitivní vztahy a atmosféra",
+          "detail": "Výuka je vedena na základě partnerského přístupu učitelů k žákům s vzájemným respektem a jednotným přístupem pedagogů.",
+          "evidence": "Pracovní atmosféra založená na partnerském přístupu a vzájemném respektu přispívá k vytváření pozitivních vztahů."
+        },
+        {
+          "tag": "Kvalitní vybavení",
+          "detail": "Škola má dostatečné materiální podmínky včetně učeben s audiovizuální technikou, wi-fi, šatní skříňky a odpočinkové zóny.",
+          "evidence": "Škola disponuje dostatečným počtem učeben, wi-fi připojením, uzamykatelnými skříňkami a odpočinkovými zónami."
+        },
+        {
+          "tag": "Kvalitní výuka češtiny",
+          "detail": "Výuka českého jazyka má jasnou strukturu, efektivně rozvíjí čtenářské kompetence a systematicky vede k literárnímu kontextu.",
+          "evidence": "Vyučující vhodně kombinují frontální výuku se skupinovou prací, žáci efektivně pracují s textem a jsou vedeni k uvažování v souvislostech."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Velmi vysoká neúspěšnost u maturit",
+          "detail": "Hrubá neúspěšnost ve společné části maturitní zkoušky je několikanásobně vyšší než průměr v ČR - např. v Podnikání 79 % vs. 37 % v ČR.",
+          "evidence": "Ve dvouletém oboru Podnikání se zvýšila z 17 % v 2020 na 79 % v 2022, v ČR 37 %. V Obchodní akademii 86 % vs. 9 % v ČR."
+        },
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "Pět z 19 pedagogů není kvalifikovaných, čtyři z deseti učitelů společné části maturit nesplňují odborné předpoklady.",
+          "evidence": "Přes polovinu vyučovaných hodin v prvním ročníku denní formy zajišťuje nekvalifikovaný začínající vyučující."
+        },
+        {
+          "tag": "Slabá výuka cizích jazyků v denní formě",
+          "detail": "Výuka anglického jazyka v denní formě převažuje výkladem gramatiky v češtině bez dostatečného rozvoje komunikativních dovedností.",
+          "evidence": "Výuka vedena převážně frontálně v českém jazyce, chybí efektivní práce s textem a procvičování řečových dovedností."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní opatření škola zavedla po inspekci k zlepšení výsledků u maturit, zejména v matematice a cizích jazycích?",
+        "Jak škola řeší fluktuaci pedagogických pracovníků v denní formě a zajišťuje kontinuitu výuky?",
+        "Jaký je systém podpory pro žáky s odlišným mateřským jazykem a jak se liší jejich výsledky od ostatních?"
+      ],
+      "who_school_fits": [
+        "Dospělí studenti, kteří si chtějí doplnit střední vzdělání v kombinované nebo distanční formě a mají silnou vnitřní motivaci",
+        "Žáci, kteří si cení osobního přístupu a partnerských vztahů se učiteli",
+        "Studenti, kteří preferují flexibilní formu studia mimo denní docházku"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, jejichž děti potřebují intenzivní přípravu k maturitě - úspěšnost školy je výrazně pod průměrem",
+        "Žáci s potřebou speciální podpory nebo odlišným mateřským jazykem - systém podpory není dostatečně nastavený",
+        "Studenti v denní formě - kvalita výuky je ovlivněna vysokou fluktuací učitelů a nedostatečnou kvalifikací pedagogů"
+      ],
+      "plain_czech_summary": "Soukromá střední škola DANAÉ nabízí vzdělání v kombinované, distanční a denní formě. Silnými stránkami jsou pozitivní atmosféra, dobré vybavení a kvalitní výuka češtiny. Hlavním problémem je velmi vysoká neúspěšnost u maturit - v některých oborech neuspěje až 86 % studentů, což je několikanásobně více než průměr v ČR. Škola má také problémy s kvalifikací učitelů a fluktuací pedagogů. Rodiče by měli pečlivě zvážit, zda je tato škola vhodná pro přípravu k maturitě."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Negativní - výsledky se nezlepšily, hrubá neúspěšnost zůstává několikanásobně vyšší než průměr ČR",
+        "key_numbers": [
+          "Podnikání kombinovaná forma: 79 % neúspěšnosti v 2022 (ČR 37 %)",
+          "Obchodní akademie distanční forma: 86 % neúspěšnosti v 2022 (ČR 9 %)",
+          "Veřejnosprávní činnost kombinovaná forma: 63 % neúspěšnosti v 2022 (ČR 14 %)"
+        ],
+        "evidence": "Od minulé inspekce se výsledky nezlepšily. Hrubá neúspěšnost byla v celorepublikovém srovnění vždy několikanásobně vyšší."
+      },
+      "absence": {
+        "trend": "Zvýšená absence v kombinované formě, neomluvené hodiny v ostatních formách zanedbatelné",
+        "key_numbers": [
+          "Žáci kombinovaného studia vykazují celkově vyšší absenci",
+          "Pokles žáků s uzavřenou klasifikací ze 84 % na 38 % za tři roky",
+          "Zvýšil se počet neprospívajících žáků"
+        ],
+        "evidence": "Výsledky vzdělávání žáků ovlivňuje míra jejich absence. Negativním jevem je, že žáci v distanční a kombinované formě jsou často nehodnoceni za pololetí."
+      },
+      "support_services": [
+        "Poradenské služby nejsou zajišťovány systematicky",
+        "Nefunkčně nastavený systém identifikace žáků se speciálními vzdělávacími potřebami - pedagogové nejsou informováni o podpůrných opatřeních",
+        "Chybí jednotný systém podpory žáků s odlišným mateřským jazykem, přestože jejich počet výrazně vzrostl"
+      ],
+      "safety_climate": [
+        "Kázeňské problémy v denním studiu jsou řešeny intervencí třídní učitelky, výchovnými jednáními a opatřeními",
+        "Kázeňská opatření nejsou vždy důsledně ukládána podle nastavených pravidel",
+        "Nastavená a dodržovaná pravidla komunikace a chování přispívají k vytváření pozitivních vztahů"
+      ],
+      "partnerships_practice": [
+        "Škola spolupracuje pouze s pracovišti, kde je realizována souvislá odborná praxe žáků",
+        "Zákonní zástupci žáků se podílejí na chodu školy prostřednictvím školské rady",
+        "Stravování zajištěno ve spolupráci se smluvním partnerem, tělocvična smluvně zajištěna"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Hlavní problémy jsou jasně identifikovány (vysoká neúspěšnost u maturit, nekvalifikovaní učitelé, slabá podpora žáků). Některé pasáže jsou technicky náročnější, ale celkově je obsah pro rodiče pochopitelný.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření ředitelka přijala po inspekci - pouze uvádí, že přijatá opatření nebyla účinná",
+        "Chybí informace o tom, jak se liší kvalita výuky mezi jednotlivými učiteli a obory",
+        "Není jasné, zda vysoká neúspěšnost je způsobena kvalitou výuky nebo výběrem studentů s nižší motivací"
+      ]
+    }
+  }
+}

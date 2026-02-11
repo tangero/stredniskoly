@@ -1,0 +1,116 @@
+{
+  "report_id": "GY6_600015033_2025-06-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:34:40.340469+00:00",
+  "run_finished_utc": "2026-02-09T13:35:04.691643+00:00",
+  "raw_file": "GY6_600015033_2025-06-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600015033_2025-06-03",
+    "school_profile": {
+      "school_type": "Arcibiskupské gymnázium (čtyřleté a šestileté studium)",
+      "inspection_period": "3. 6. 2025 – 6. 6. 2025",
+      "school_change_summary": "Škola zaznamenala nárůst počtu žáků (cca o 30), rozšíření školního poradenského pracoviště o školního psychologa a speciálního pedagoga, výrazné zkvalitnění materiálních podmínek včetně rekonstrukcí budov a modernizace techniky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné jazykové výsledky",
+          "detail": "Žáci dosahují vynikajících výsledků zejména v cizích jazycích, které jsou podporovány projekty a zahraničními pobyty.",
+          "evidence": "Vynikajících výsledků dosahují žáci zejména ve společné části maturitní zkoušky z cizích jazyků."
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Škola má nadstandardní materiální podmínky s nově vybudovanou knihovnou, studovnou, venkovní učebnou a renovovaným školním dvorem.",
+          "evidence": "Vynaložené finanční prostředky výrazně zhodnotily technický stav budov a zlepšily zázemí školy."
+        },
+        {
+          "tag": "Stabilní úspěch u maturity",
+          "detail": "Dlouhodobě kvalitní výsledky maturitní zkoušky s minimální neúspěšností.",
+          "evidence": "Ze 111 maturujících žáků jich 63 prospělo s vyznamenáním, 42 prospělo a 6 neprospělo."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotný přístup učitelů k výuce",
+          "detail": "Mezi učiteli je výrazný rozdíl v kvalitě výuky a počtu absolvovaných vzdělávacích akcí.",
+          "evidence": "Mezi jednotlivými vyučujícími je patrný výrazný rozdíl v množství absolvovaných aktivit DVPP."
+        },
+        {
+          "tag": "Chybí systematická zpětná vazba",
+          "detail": "Doporučení ke zlepšení vyučovacího procesu nejsou dostatečně systematická a cílená.",
+          "evidence": "Doporučení ke zlepšení vyučovacího procesu jsou však pro další práci méně systematická."
+        },
+        {
+          "tag": "Moderní metody nejsou všude využívány",
+          "detail": "V některých hodinách chybí závěrečné zhodnocení, shrnutí látky a vedení žáků k reflexi cílů.",
+          "evidence": "Často chybělo závěrečné zhodnocení nebo shrnutí probírané látky, žáci nebyli vedeni k vyhodnocování vzdělávacího cíle."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jaké má pro ně speciální programy?",
+        "Jaké jsou možnosti doučování a individuální podpory pro žáky s obtížemi?",
+        "Jak se škola podílí na mezinárodních projektech a jaké jsou výhody pro studenty?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola má silné jazykové výsledky a aktivně podporuje zahraniční pobyty.",
+        "Nadaní a motivovaní žáci – škola nabízí bohatou nabídku volitelných seminářů a aktivit pro rozvoj talentu.",
+        "Žáci hledající kvalitní zázemí a podporu – domov mládeže a školní poradenské pracoviště poskytují komplexní péči."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují konzistentní přístup všech učitelů – kvalita výuky se mezi předměty a učiteli liší.",
+        "Žáci vyžadující jasné shrnutí a reflexi učiva – ne všechny hodiny mají kvalitní závěr a vyhodnocení cílů.",
+        "Žáci s nižší motivací – škola je zaměřena na nadprůměrné studenty, přestože má podporu pro slabší žáky."
+      ],
+      "plain_czech_summary": "Arcibiskupské gymnázium je prestižní školou s výborným vybavením a silnými výsledky, zejména v cizích jazycích. Nabízí bohatou nabídku aktivit a kvalitní péči v domově mládeže. Maturitní výsledky jsou dlouhodobě velmi dobré. Slabší stránkou je nejednotnost přístupu učitelů – někteří využívají moderní metody, jiní méně. Škola by měla více dbát na systematickou zpětnou vazbu a jednotný standard výuky. Vhodná pro ambiciózní a nadané žáky, zejména zájemce o jazyky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoký",
+        "key_numbers": [
+          "63 žáků s vyznamenáním z 111 maturantů (56,8 %)",
+          "42 žáků prospělo (37,8 %)",
+          "6 žáků neprospělo (5,4 %)",
+          "Minimální hrubá neúspěšnost v posledních třech letech"
+        ],
+        "evidence": "Výsledky maturitních zkoušek jsou dlouhodobě kvalitní. V posledních třech letech vykazuje škola minimální hrubou neúspěšnost žáků u maturitní zkoušky."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje konkrétní údaje o absence žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní, školním psychologem, speciálním pedagogem, poradkyní pro nadané žáky, kariérovou poradkyní a sociálním pedagogem",
+        "Individuální doučování a vrstevnické doučování",
+        "Speciální program pro žáky s obtížemi ve vzdělávání",
+        "Adaptační pobyty pro prvňáky a pravidelné třídnické hodiny",
+        "Krizová intervence a diagnostická šetření"
+      ],
+      "safety_climate": [
+        "Systematické upozorňování žáků na rizika a bezpečné chování",
+        "Funkčně nastavený systém prevence rizikového chování v domově mládeže",
+        "Preventivní strategie zaměřená na bezpečné prostředí a pozitivní klima",
+        "Školitel bezpečnosti práce v laboratořích",
+        "Pastorační působení podporující křesťanské hodnoty"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami a Akademií věd ČR",
+        "Mezinárodní projekty a výměnné pobyty",
+        "Partnerství s charitativními a sociálními institucemi",
+        "Dlouhodobé vztahy se zahraničními školami",
+        "Úzká spolupráce se zřizovatelem (Arcibiskupství olomoucké)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však delší a složitější, zejména v části o hodnocení průběhu vzdělávání. Struktura je logická a dobře organizovaná.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, zda je to silná stránka nebo se jednoduše neměřila.",
+        "Konkrétní počty žáků se speciálními vzdělávacími potřebami (24) nejsou v kontextu celkového počtu žáků (534) dostatečně interpretovány.",
+        "Zpráva neobsahuje informace o finančních výdajích na vzdělávání nebo porovnání s jinými školami."
+      ]
+    }
+  }
+}

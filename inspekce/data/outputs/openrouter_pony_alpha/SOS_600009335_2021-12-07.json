@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600009335_2021-12-07",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:10:47.293546+00:00",
+  "run_finished_utc": "2026-02-10T08:11:50.743584+00:00",
+  "raw_file": "SOS_600009335_2021-12-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009335_2021-12-07",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola s odborným učilištěm (maturitní i učební obory)",
+      "inspection_period": "7. 12. − 9. 12. 2021",
+      "school_change_summary": "Od 1. 9. 2020 řídí školu nový ředitel jmenovaný v konkurzním řízení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola úzce spolupracuje s firmami v regionu a žáci pracují na reálných zakázkách.",
+          "evidence": "„Žáci plnili úkoly většinou na vozidlech zákazníků formou produktivní práce.“"
+        },
+        {
+          "tag": "Vybavení školy",
+          "detail": "Škola má moderní dílny a odborné učebny, které odpovídají současným trendům.",
+          "evidence": "„Školní dílny s velmi dobrým standardem technického vybavení umožňují žákům kvalitní přípravu na budoucí povolání.“"
+        },
+        {
+          "tag": "Jazyková výuka",
+          "detail": "Výuka cizích jazyků je dobře strukturovaná a využívá efektivní formy práce.",
+          "evidence": "„Sledované hodiny se vyznačovaly promyšlenou strukturou a byly založené na velmi dobré organizaci, v níž byla hojně a účelně využita párová forma práce.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Někteří učitelé nerespektují doporučení vedení a výuka je příliš frontální bez diferenciace.",
+          "evidence": "„Metodická doporučení někteří vyučující neaplikují do výuky, což se projevuje v rozdílné úrovni vyučovacích hodin.“"
+        },
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Žáci maturitních oborů dosahují horších výsledků v didaktických testech z češtiny a angličtiny.",
+          "evidence": "„Problematické jsou zejména výsledky z českého jazyka a anglického jazyka (didaktický test), kdy byla... zaznamenána nižší úspěšnost.“"
+        },
+        {
+          "tag": "Absence a podpora",
+          "detail": "Škola má nedostatečnou strategii pro řešení neúspěchu a vysoké absence.",
+          "evidence": "„Chybějící zpracování strategie předcházení školní neúspěšnosti žáků... nedůsledným uplatňováním nastavených pravidel souvisejících s omlouváním absence.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola zajišťuje, aby všichni učitelé využívali moderní metody výuky a ne pouze frontální výuku?",
+        "Jaká konkrétní opatření škola zavádí pro zlepšení výsledků žáků v didaktických testech u maturit?",
+        "Jak vypadá systém péče o žáky s vysokou absencí nebo studijními problémy?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří se chtějí učit řemeslo a uplatnit se v technických oborech (zejména automechanik).",
+        "Pro zájemce o techniku, kterým vyhovuje dobře vybavené prostředí a přístup k moderním technologiím.",
+        "Pro studenty, kteří oceňují možnost získat zkušenosti přímo na reálných projektech a ve firmách."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří potřebují silný individuální přístup nebo mají specifické vzdělávací potřeby.",
+        "Pro ty, kteří plánují studovat ekonomii a očekávají stejně silné výsledky jako v technických oborech.",
+        "Pro žáky s tendencí k vyšší absenci, protože systém prevence nemusí být dostatečně účinný."
+      ],
+      "plain_czech_summary": "Střední průmyslová škola v Klatovech nabízí zejména technické obory s vynikajícím materiálním zázemím a úzkou vazbou na praxi. Žáci učebních oborů jsou velmi úspěšní a připravují se na reálné zakázky. Naopak u maturitních oborů vykazují výsledky v didaktických testech (čeština, angličtina) kolísavou úroveň. Nové vedení školy aktivně modernizuje vybavení, ale potýká se s problémy v kvalitě výuky, kde přetrvává tradiční frontální styl a neefektivní práce s chybou. Škola má rezervy v systémové podpoře ohrožených žáků a řešení absence."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý",
+        "key_numbers": [
+          "97 % úspěšnost u závěrečných zkoušek (výuční list)",
+          "Nižší úspěšnost v didaktických testech (ČJ, AJ) u maturitních oborů",
+          "Lepší výsledky v profilové (odborné) části maturitní zkoušky"
+        ],
+        "evidence": "„Žáci oborů vzdělání s výučním listem dosahují velmi dobrých výsledků... problematické jsou zejména výsledky z českého jazyka a anglického jazyka (didaktický test).“"
+      },
+      "absence": {
+        "trend": "Problémový",
+        "key_numbers": [
+          "Nedůsledné omlouvání absence",
+          "Chybějící analýza příčin neomluvené absence",
+          "Individuální opatření nemají vždy požadovaný efekt"
+        ],
+        "evidence": "„Méně jsou analyzovány příčiny vysoké a neomluvené absence žáků. Řešení tohoto problému je rovněž ovlivňováno nedůsledným uplatňováním nastavených pravidel.“"
+      },
+      "support_services": [
+        "Funkční proces uvádění začínajících učitelů",
+        "Spolupráce s firmami na odborném výcviku",
+        "Domov mládeže nabízí zájmové aktivity a přípravu na vyučování"
+      ],
+      "safety_climate": [
+        "Nízký výskyt negativních jevů (šikana, závislosti)",
+        "Důraz na primární prevenci a zdravý životní styl",
+        "Zabezpečení budov proti vstupu neoprávněných osob"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s regionálními firmami",
+        "Realizace odborného výcviku na vozidlech zákazníků",
+        "Spolupráce s fakultami a komorami na propagaci techniky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, ale místy používá standardní pedagogickou terminologii (formativní hodnocení, produktivní práce), kterou laik nemusí plně chápat.",
+      "uncertainty_notes": [
+        "Nejsou uvedena konkrétní číselná data o neomluvené absence, pouze obecné hodnocení.",
+        "Chybí přesné procento úspěšnosti u maturitní zkoušky, pouze se hovoří o kolísavé úrovni.",
+        "Není jasné, jaké konkrétní obory jsou zasaženy nižšími výsledky v jazycích, hovoří se o 'části oborů'."
+      ]
+    }
+  }
+}

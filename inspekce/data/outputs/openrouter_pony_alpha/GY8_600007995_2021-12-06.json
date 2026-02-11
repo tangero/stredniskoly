@@ -1,0 +1,109 @@
+{
+  "report_id": "GY8_600007995_2021-12-06",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:12:37.175696+00:00",
+  "run_finished_utc": "2026-02-10T08:13:35.961878+00:00",
+  "raw_file": "GY8_600007995_2021-12-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007995_2021-12-06",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté)",
+      "inspection_period": "6. 12. 2021 − 9. 12. 2021",
+      "school_change_summary": "Došlo ke změnám ve vedení, zřízení pozice školního psychologa a generační obměně sboru. Škola se zaměřuje na digitalizaci a zvýšila nabídku volnočasových aktivit."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Nabídka a aktivity",
+          "detail": "Škola nabízí širokou škálu volitelných předmětů a zájmových aktivit pro rozvoj žáků.",
+          "evidence": "„Široká nabídka volitelných předmětů a zájmových činností systematicky podporuje rozvoj specifických zájmů a nadání žáků.“"
+        },
+        {
+          "tag": "Partnerská spolupráce",
+          "detail": "Kvalitní spolupráce s vysokými školami a zahraničními partnery obohacuje výuku.",
+          "evidence": "„Rozsáhlá a kvalitní spolupráce školy s mnoha externími partnery významně posiluje rozvoj odbornosti, jazykových a sociálních dovedností žáků.“"
+        },
+        {
+          "tag": "Výukové metody",
+          "detail": "Učitelé efektivně využívají digitální technologie a moderní metody ve výuce.",
+          "evidence": "„Samozřejmostí bylo aktivní využívání digitálních technologií... vyučující zvyšovali efektivitu vyučovacího procesu a podporovali zájem žáků.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Hodnocení žáků",
+          "detail": "Ve výuce chybí prvky formativního hodnocení a sebereflexe, což snižuje efektivitu učení.",
+          "evidence": "„Prvky formativního hodnocení včetně sebehodnocení a vzájemného hodnocení se však ve sledovaných hodinách vyskytly pouze výjimečně.“"
+        },
+        {
+          "tag": "Výsledky v matematice",
+          "detail": "Škola dlouhodobě dosahuje horších výsledků v matematice než srovnatelná gymnázia.",
+          "evidence": "„Podle zpráv Centra pro zjišťování výsledků vzdělávání je škola v předmětu matematika méně úspěšná než školy dané skupiny oboru vzdělání v posledních čtyřech letech.“"
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Úkoly se často neliší podle schopností jednotlivých žáků.",
+          "evidence": "„Zpravidla však nedocházelo k diferenciaci zadávaných úkolů s ohledem na rozvoj individuálního potenciálu žáků.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola reaguje na dlouhodobě horší výsledky v maturitní matematice oproti průměru?",
+        "Jakým způsobem učitelé využívají formativní hodnocení k posunu žáků?",
+        "Jak probíhá příprava začínajících učitelů na vedení hodin a práci s třídou?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří hledí na širokou nabídku volnočasových a zájmových aktivit.",
+        "Pro samostatné studenty, kteří dobře reagují na digitální formy výuky.",
+        "Pro talenty, kteří chtějí spolupracovat s VŠ a podílet se na projektech."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří potřebují individuální přístup a diferenciované úkoly.",
+        "Pro studenty se slabšími studijními návyky, kteří potřebují častou zpětnou vazbu.",
+        "Pokud je pro vás klíčová excelentní úroveň výuky matematiky."
+      ],
+      "plain_czech_summary": "Gymnázium nabízí bohatý volnočasový program a silné zázemí pro talentované žáky díky spolupráci s vysokými školami. Výuka je moderní, využívá digitální technologie a mobilní telefony. Slabinou je nižší úroveň formativního hodnocení a dlouhodobě horší výsledky v matematice oproti jiným gymnáziím. Škola nedostatečně analyzuje příčiny neúspěchu a má rezervy v individuálním přístupu. Pro ambiciózní a samostatné žáky je však volba vhodná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou velmi dobré, ale v matematice podprůměrné oproti gymnáziím.",
+        "key_numbers": [
+          "57 % maturantů prospělo s vyznamenáním",
+          "2,1 % žáků neprospělo v profilové části",
+          "Průměrné skóre z matematiky 61,9 %"
+        ],
+        "evidence": "„Dvě třídy však průměru gymnázií v České republice nedosáhly... škola v předmětu matematika méně úspěšná než školy dané skupiny oboru vzdělání.“"
+      },
+      "absence": {
+        "trend": "Neuvedeno",
+        "key_numbers": [],
+        "evidence": "Zpráva neuvádí konkrétní data o absenci žáků."
+      },
+      "support_services": [
+        "Zřízena pozice školního psychologa.",
+        "Funkční systém adaptace a podpory žáků při přechodu na gymnázium.",
+        "Hodiny doučování financované z tzv. šablon pro méně úspěšné žáky."
+      ],
+      "safety_climate": [
+        "Vyučující vytvářejí pozitivní třídní klima a přistupují k žákům s respektem.",
+        "Stabilně nízká míra úrazovosti díky zabezpečení vstupu a pravidlům.",
+        "Komunikace mezi žáky a učiteli probíhá zdvořilým a přátelským způsobem."
+      ],
+      "partnerships_practice": [
+        "Efektivní vztahy s partnerskými vysokými školami a akademickými pracovišti.",
+        "Reciproční vztahy se zahraničními školami a účast v mezinárodních projektech.",
+        "Spolupráce s jazykovými institucemi a neziskovými organizacemi."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně rozdělený a poskytuje dostatek kontextu. Obsahuje odborné termíny (formativní hodnocení, diferenciace), které jsou však vysvětleny kontextem.",
+      "uncertainty_notes": [
+        "Chybí konkrétní data o neomluvené absenci.",
+        "Není blíže specifikováno, které dvě třídy selhaly v matematice.",
+        "Nejasná míra využití externího testování pro interní potřeby."
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600016862_2025-02-12",
+  "school_profile": {
+    "school_type": "Střední škola podnikatelská (soukromá, s.r.o.)",
+    "inspection_period": "12. února 2025 až 14. února 2025",
+    "school_change_summary": "Od inspekce v 2017/2018 vzrostl počet žáků ze 110 na 173. Škola inovuje vzdělávací programy podle potřeb trhu práce. Ve vedení přibylo druhé zástupce ředitele."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a komunikace",
+        "detail": "Ředitel vede školu od roku 1992, vytváří příznivé pracovní klima a podporuje konstruktivní komunikaci se všemi aktéry.",
+        "evidence": "Anketní šetření ukázalo velmi pozitivní vnímání prosociálních vztahů."
+      },
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Žáci oborů Obchodní akademie a Podnikání dosahují dlouhodobě lepších výsledků než průměr ČR.",
+        "evidence": "V roce 2024 dosáhli 100% úspěšnosti v oborech Ekonomika a podnikání a Obchodní akademie."
+      },
+      {
+        "tag": "Praktická výuka s odborníky",
+        "detail": "Škola zapojuje odborníky z praxe, kteří přenášejí reálné zkušenosti do výuky.",
+        "evidence": "Žáci absolvují praktické vyučování v reálném pracovním prostředí u profesních partnerů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence některých žáků",
+        "detail": "Přetrvává vyšší absence u části žáků navzdory systémovým opatřením.",
+        "evidence": "Ve školním roce 2023/2024 škola evidovala žáky s vyšší absencí a školní neúspěšností."
+      },
+      {
+        "tag": "Omezená interaktivita výuky",
+        "detail": "Převažuje frontální výuka s málo prostorem pro diskusi a kooperativní činnosti.",
+        "evidence": "Minimálně byly využívány kooperativní činnosti podporující týmovou spolupráci."
+      },
+      {
+        "tag": "Chybí sebehodnocení žáků",
+        "detail": "Žáci se málo učí sami sebe hodnotit a reflektovat svůj pokrok.",
+        "evidence": "Sebehodnocení žáků bylo nevyužíváno jako součást vyhodnocení dosažení cílů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje se žáky, kteří mají vyšší absenci? Jaké jsou výsledky těchto opatření?",
+      "Jaké jsou možnosti individuálního přístupu a diferencované výuky pro žáky s různými schopnostmi?",
+      "Jak se škola připravuje na změny v metodách výuky, aby více zapojila žáky do aktivního učení?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na obchod, ekonomiku a podnikání, kteří chtějí praktické znalosti",
+      "Studenti, kteří si cení kvalitního vedení a pozitivního školního klimatu",
+      "Uchazeči, kteří se chystají na maturitu a chtějí vysokou úspěšnost"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k vyšší absenci – škola má systém, ale problém přetrvává",
+      "Studenti, kteří potřebují více interaktivní a skupinové učení – výuka je spíše frontální",
+      "Uchazeči, kteří se chtějí učit kritickému myšlení a práci s různými zdroji – to není silná stránka"
+    ],
+    "plain_czech_summary": "Střední škola podnikatelská v Klimkovicích je soukromá škola s dobrým vedením a pozitivním klimatem. Žáci dosahují výborných výsledků u maturity, zejména v oborech Obchodní akademie a Podnikání. Škola spolupracuje s odborníky z praxe, což je plus. Slabší stránkou je, že výuka je spíše tradiční (frontální), málo se využívá skupinové učení a sebehodnocení žáků. Některé žáky trápí vyšší absence. Škola je vhodná pro studenty zaměřené na ekonomiku a podnikání, kteří chtějí praktické znalosti a dobré výsledky u maturity."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – dlouhodobě lepší výsledky než průměr ČR",
+      "key_numbers": [
+        "100% úspěšnost v oborech Ekonomika a podnikání a Obchodní akademie v roce 2024",
+        "Obor Podnikání nástavbové studium: neprospěl 1 žák z cizího jazyka, v češtině vyšší než průměr ČR"
+      ],
+      "evidence": "Ve společné části maturitní zkoušky jsou výsledky žáků Obchodní akademie a Podnikání dlouhodobě lepší než průměr ČR."
+    },
+    "absence": {
+      "trend": "Mírný pokles, ale přetrvávají problémy",
+      "key_numbers": [
+        "Mírný pokles absence mezi školními roky 2022/2023 a 2023/2024",
+        "Ve školním roce 2024/2025 opakuje ročník 7 % žáků denní a dálkové formy"
+      ],
+      "evidence": "I přes systémově nastavenou podporu škola evidovala ve školním roce 2023/2024 žáky s vyšší absencí."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje poradenské a konzultační služby žákům i zákonným zástupcům",
+      "Skupinové doučování a individuální konzultace s pedagogy",
+      "Online výukové materiály a cvičné testy pro žáky s vyšší absencí",
+      "Prospěchové stipendium pro motivaci dobrých studijních výsledků"
+    ],
+    "safety_climate": [
+      "Míra úrazovosti je nižší než celorepublikový průměr",
+      "Výskyt rizikového chování je nízký",
+      "Škola má jasně nastavené postupy pro řešení signálů rizikového chování",
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s profesními partnery umožňuje žákům absolvovat praktické vyučování v reálném pracovním prostředí",
+      "Zapojení odborníků z praxe do výuky odborných předmětů",
+      "Smluvně zajištěná výuka tělesné výchovy v tělocvičně základní školy a místní sokolovně"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, obsahuje konkrétní fakta a čísla. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou více odborné, ale celkově je text pro rodiče pochopitelný.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jak přesně se měří absence – není jasné, zda jde o počet hodin nebo dní",
+      "Není uvedeno, kolik procent žáků má prospěchové stipendium nebo jaké jsou jeho výše",
+      "Chybí informace o tom, jak dlouho trvá doučování a kolik žáků ho využívá"
+    ]
+  }
+}
+```

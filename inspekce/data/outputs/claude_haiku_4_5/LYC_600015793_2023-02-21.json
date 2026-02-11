@@ -1,0 +1,118 @@
+{
+  "report_id": "LYC_600015793_2023-02-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:46:39.149677+00:00",
+  "run_finished_utc": "2026-02-09T16:47:09.495093+00:00",
+  "raw_file": "LYC_600015793_2023-02-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600015793_2023-02-21",
+    "school_profile": {
+      "school_type": "Střední škola dopravy, obchodu a služeb (14 oborů: 9 tříletých s výučním listem, 4 čtyřleté s maturitou, 1 nástavbové studium)",
+      "inspection_period": "21. února až 24. února 2023",
+      "school_change_summary": "Od inspekce v roce 2015 se oborová nabídka částečně změnila, některé čtyřleté obory škola již nerealizuje, nově nabízí Sociální činnost. Počet žáků mírně poklesl (o 14 % od roku 2014), ale v posledních třech letech se zvyšuje. Ke dni 30. 9. 2022 bylo ve škole 569 žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná praxe na úrovni",
+          "detail": "Výborné podmínky pro odborný výcvik s moderním vybavením simulujícím reálné firemní prostředí, kde žáci získávají dovednosti odpovídající současným technologiím.",
+          "evidence": "Vybavení dílen a odborných učeben dobře simulovalo reálné firemní prostředí, žáci plnili praktické úkoly v přiměřené náročnosti."
+        },
+        {
+          "tag": "Partnerství s praxí",
+          "detail": "Škola má funkční spolupráci se zaměstnavateli a odborníky z praxe, kteří se zapojují do výuky a stáží, včetně mezinárodních výjezdů.",
+          "evidence": "Od roku 2021 vyjelo více než 50 žáků na odbornou praxi k zahraničním zaměstnavatelům, pedagogové činnosti stínují."
+        },
+        {
+          "tag": "Poradenské služby",
+          "detail": "Školní poradenské pracoviště aktivně řeší problémy žáků, poskytuje podporu při orientaci v dalším studiu a profesní volbě.",
+          "evidence": "ŠPP se často setkává a aktivně řeší problémy žáků, kvalitně zajišťuje karierové poradenství."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Absence dosáhla v loňském roce 192 hodin na žáka, v prvním pololetí letošního roku je nehodnoceno až 13 % žáků, zejména z tříletých oborů.",
+          "evidence": "Opatření přijatá školou se neprojevila jako dostatečně účinná, někteří žáci vykazují nadále velmi vysokou absenci."
+        },
+        {
+          "tag": "Slabé výsledky maturit",
+          "detail": "Úspěšnost u maturitní zkoušky se zhoršuje, v roce 2022 neprospělo nebo nekonalo zkoušku 36 % žáků, u nástavbového studia Podnikání až 53 %.",
+          "evidence": "V roce 2022 nekonalo nebo neprospělo téměř 36 % žáků, což je o 20 % více než v roce 2021."
+        },
+        {
+          "tag": "Pasivní výuka v teorii",
+          "detail": "Převažuje frontální forma výuky bez aktivního zapojení žáků, chybí skupinové práce a rozvoj kritického myšlení.",
+          "evidence": "Převažovala frontální forma výuky, žáci byli aktivizováni často jen řízeným rozhovorem, skupinové formy výuky zařazovány nebyly."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+        "Jaké konkrétní kroky podniká škola ke zlepšení výsledků maturitní zkoušky, zejména v oboru Podnikání?",
+        "Jak se škola zaměřuje na rozvoj klíčových kompetencí a kritického myšlení v teoretické výuce?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou činnost a odborný výcvik s moderním vybavením a reálným firemním prostředím",
+        "Studenti, kteří chtějí získat zkušenosti v zahraničí a pracovat s mezinárodními partnery",
+        "Žáci, kteří potřebují individuální podporu a poradenství při volbě budoucího povolání"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absencím – škola má problém s motivací k pravidelné docházce",
+        "Uchazeči o čtyřleté obory s maturitou, zejména Podnikání – výsledky maturit se zhoršují",
+        "Studenti, kteří preferují aktivní a interaktivní výuku – teoretické vyučování je spíše pasivní"
+      ],
+      "plain_czech_summary": "Střední škola dopravy v Moravském Krumlově nabízí kvalitní odborný výcvik s moderním vybavením a funkční spoluprací se zaměstnavateli. Silnou stránkou je propojení s praxí a mezinárodní výjezdy. Problémem je vysoká absence žáků, která negativně ovlivňuje jejich výsledky, a zhoršující se úspěšnost u maturitní zkoušky. Teoretická výuka je spíše pasivní, chybí aktivní zapojení žáků a rozvoj jejich klíčových kompetencí. Škola má dobré poradenské služby a domov mládeže."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se",
+        "key_numbers": [
+          "2022: 36 % neprospělo nebo nekonalo zkoušku (nárůst o 20 % oproti 2021)",
+          "Nástavbové studium Podnikání: 53 % neúspěšných v roce 2022",
+          "Tříleté obory: všichni žáci uspěli v závěrečné zkoušce v loňském roce"
+        ],
+        "evidence": "V roce 2022 nekonalo nebo u maturitní zkoušky neprospělo téměř 36 % žáků, což je o 20 % více než v předchozím roce 2021."
+      },
+      "absence": {
+        "trend": "Vysoká a problematická",
+        "key_numbers": [
+          "Loňský rok: 192 hodin na žáka",
+          "Průměr za tři roky: 139 hodin na žáka (neomluveno 18 hodin)",
+          "Letošní rok (1. pololetí): nehodnoceno 13 % žáků, z toho 82 % z tříletých oborů"
+        ],
+        "evidence": "Celková absence za tři poslední uzavřené školní roky činila průměrně 139 hodin na žáka. Opatření přijatá školou se neprojevila jako dostatečně účinná."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s aktivním řešením problémů žáků",
+        "Pravidelné doučování vedené učiteli pro menší skupiny žáků",
+        "Konzultace mimo vyučování pro dorovnání neznalostí",
+        "Prevence rizikového chování prostřednictvím přednášek a cílených aktivit",
+        "Karierové poradenství a spolupráce s úřady práce"
+      ],
+      "safety_climate": [
+        "Při praktickém vyučování je kladen důraz na dodržování bezpečnostních a hygienických pravidel",
+        "Ve vyučovacích hodinách nejsou zaznamenány žádné kázeňské problémy",
+        "Domov mládeže zajišťuje kvalitní podmínky pro bydlení a bezpečnost ubytovaných žáků",
+        "Škola má nastavená jasná pravidla pro řešení rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Funkční součinnost se zaměstnavateli na smluvních pracovištích pro praktické vyučování",
+        "Mezinárodní spolupráce – od roku 2021 vyjelo více než 50 žáků na odbornou praxi",
+        "Spolupráce se základními školami prostřednictvím vzdělávacích kroužků",
+        "Zapojení do projektů Jihomoravského kraje s výměnou zkušeností mezi pedagogy",
+        "Aktivní komunikace se zřizovatelem a zaměstnavateli o dlouhodobých cílech"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní údaje. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků v jednotlivých oborech, pouze celkový počet 569 žáků",
+        "Chybí detailní informace o tom, jaké konkrétní opatření škola přijala k řešení absence a jejich účinnost",
+        "Není jasné, jaké konkrétní inovativní metody škola plánuje zavádět v budoucnosti"
+      ]
+    }
+  }
+}

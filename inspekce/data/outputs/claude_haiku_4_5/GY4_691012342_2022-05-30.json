@@ -1,0 +1,114 @@
+{
+  "report_id": "GY4_691012342_2022-05-30",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:02:51.005315+00:00",
+  "run_finished_utc": "2026-02-09T17:03:16.416764+00:00",
+  "raw_file": "GY4_691012342_2022-05-30.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691012342_2022-05-30",
+    "school_profile": {
+      "school_type": "Soukromá střední škola (gymnázium) - ScioŠkola Žižkov, Prokopova 100/16, Praha 3",
+      "inspection_period": "30. května až 1. června 2022",
+      "school_change_summary": "Od poslední inspekce v 2019 se škola rozšířila o obor Gymnázium (od září 2021), počet žáků vzrostl na 173 (z toho 39 v gymnáziu), přibylo pedagogů a změnilo se místo vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Inovativní přístup k výuce",
+          "detail": "Škola používá moderní metody podporující kritické myšlení, kooperativní práci a osobnostní rozvoj žáků.",
+          "evidence": "Průvodci 'zdařile uplatňovali inovativní vyučovací metody' a 'nejčastěji využívané kooperativní formy práce podporovaly týmovou spolupráci'."
+        },
+        {
+          "tag": "Zapojení žáků do chodu školy",
+          "detail": "Žáci se aktivně podílejí na rozhodování a provozu školy, což zvyšuje jejich motivaci a odpovědnost.",
+          "evidence": "'Žáci se významnou měrou zapojují do chodu a provozu školy, např. spravují část rozpočtu školy, starají se o propagaci a marketing instituce'."
+        },
+        {
+          "tag": "Individuální podpora a mentoring",
+          "detail": "Každý žák má mentora a pravidelné individuální rozhovory zaměřené na reflexi pokroku a řešení problémů.",
+          "evidence": "'Pravidelné online individuální rozhovory s mentorem' a 'společně se žákem reflektovat jeho studijní úspěchy či obtíže'."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoké nároky na adaptaci",
+          "detail": "Kombinovaný model (online + expedice) vyžaduje od žáků zvýšenou samostatnost a disciplínu.",
+          "evidence": "'Specifická organizace vzdělávání klade zvýšené nároky na adaptaci žáků a včasné podchycení případných studijních problémů'."
+        },
+        {
+          "tag": "Dva pedagogové bez kvalifikace",
+          "detail": "Mezi 8 pedagogy v gymnáziu dva nesplňují kvalifikační předpoklady.",
+          "evidence": "'Kvalifikační předpoklady nesplňují dva pedagogové'."
+        },
+        {
+          "tag": "Ojedinělé problémy s jazykovou kulturou",
+          "detail": "Někdy se ve výuce objevuje nespisovný jazyk a nižší jazyková kultura bez ohledu na situaci.",
+          "evidence": "'Neformální způsob vyjadřování některých žáků a průvodců se ve výuce projevoval nižší mírou jazykové kultury bez ohledu na komunikační situaci'."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak probíhá adaptace nových žáků na kombinovaný model online a expedičního vzdělávání?",
+        "Jaké jsou konkrétní kritéria pro výběr mentora a jak se zajišťuje kvalita mentorských vztahů?",
+        "Jak se řeší situace, když žák zaostává nebo má problémy s online výukou?"
+      ],
+      "who_school_fits": [
+        "Samostatní a motivovaní žáci, kteří se chtějí aktivně podílet na chodu školy a mají zájem o inovativní přístup k učení",
+        "Žáci, kteří preferují menší skupiny a individuální přístup před tradičním frontálním vyučováním",
+        "Rodiny z celé České republiky, které hledají alternativu k běžnému gymnáziu a jsou ochotny investovat do vzdělání"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více struktury, jasných pravidel a tradičnějšího způsobu výuky",
+        "Rodiny bez dostatečného technického vybavení (počítač, internet) nebo bez možnosti podpory při online výuce",
+        "Žáci se zdravotními problémy nebo tělesným postižením, které by mohly být problematické při expedicích"
+      ],
+      "plain_czech_summary": "ScioŠkola Žižkov je inovativní soukromá střední škola s netradiční kombinovanou výukou: tři až čtyři týdny online a jeden týden na expedicích. Inspektoři ocenili moderní přístup, zapojení žáků do rozhodování a individuální mentoring. Výuka je kvalitní, žáci se učí kriticky myslet a spolupracovat. Škola má však vysoké nároky na samostatnost a disciplínu žáků. Drobné problémy jsou ojedinělé předimenzované činnosti a někdy nižší jazyková kultura. Vhodná pro motivované žáky z celé republiky, kteří chtějí netradičnější vzdělání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze určit - obor Gymnázium byl zahájen v září 2021, první maturitní zkoušky budou až v roce 2024",
+        "key_numbers": [
+          "39 žáků v oboru Gymnázium k termínu inspekce (květen 2022)",
+          "173 žáků celkem ve škole",
+          "8 pedagogů v gymnáziu"
+        ],
+        "evidence": "Obor vzdělání Gymnázium je realizován 'od 1. 9. 2021' a je součástí pokusného ověřování MŠMT."
+      },
+      "absence": {
+        "trend": "Zpráva neobsahuje konkrétní údaje o absenci",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se zaměřuje na kvalitu výuky a podmínky vzdělávání, absence není zmíněna."
+      },
+      "support_services": [
+        "Školní psycholožka (součást pedagogického týmu)",
+        "Výchovná poradkyně a metodika prevence",
+        "Mentorský systém - každý žák má vybraného průvodce jako mentora",
+        "Individuální konzultace a online rozhovory s mentorem",
+        "Spolupráce se školskými poradenskými zařízeními"
+      ],
+      "safety_climate": [
+        "Otevřené přátelské prostředí s konstruktivní komunikací a vzájemným respektem",
+        "Partnerský přístup mezi všemi aktéry vzdělávání",
+        "Příjemná pracovní atmosféra v online výuce",
+        "Funkční strategie prevence sociálně patologických jevů",
+        "Systém včasného rozpoznání negativních jevů a poskytování podpory"
+      ],
+      "partnerships_practice": [
+        "Stálý kontakt se zákonnými zástupci žáků včetně tripartitních schůzek",
+        "Kooperace se zřizovatelem (www.scio.cz, s.r.o.) v oblasti financí, materiálu a personálu",
+        "Spolupráce s českými a zahraničními alternativními školami (Španělsko, Francie, Polsko, Německo)",
+        "Sdílení zkušeností při realizaci vzdělávací nabídky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však poměrně dlouhé a složitě strukturované (např. popis hodnocení). Termíny jako 'průvodce' místo učitele mohou být pro rodiče neznámé.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o výsledcích maturitní zkoušky, protože obor Gymnázium je příliš nový (první maturanti až 2024)",
+        "Nejasné, jak se řeší kvalifikace dvou pedagogů bez předepsaného vzdělání - zda se plánuje jejich doplnění",
+        "Chybí informace o finančních nákladech na vzdělání a o tom, jak se liší od běžného gymnázia"
+      ]
+    }
+  }
+}

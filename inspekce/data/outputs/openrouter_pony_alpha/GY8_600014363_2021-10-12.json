@@ -1,0 +1,109 @@
+{
+  "report_id": "GY8_600014363_2021-10-12",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:28:37.498202+00:00",
+  "run_finished_utc": "2026-02-10T08:29:38.514595+00:00",
+  "raw_file": "GY8_600014363_2021-10-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014363_2021-10-12",
+    "school_profile": {
+      "school_type": "Gymnázium",
+      "inspection_period": "12. 10. 2021 − 15. 10. 2021",
+      "school_change_summary": "Škola se zaměřuje na modernizaci materiální podpory přírodovědného a jazykového vzdělávání a aktivně se zapojuje do mezinárodních projektů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Škola dosahuje dlouhodobě výborných výsledků u maturitní zkoušky, kdy ve společné části vždy prospěli všichni žáci.",
+          "evidence": "Ve společné části maturitní zkoušky vždy prospěli všichni žáci konající tuto zkoušku... výsledky výbornou úroveň."
+        },
+        {
+          "tag": "Vybavení školy",
+          "detail": "Díky aktivnímu získávání grantů má škola velmi kvalitní materiální podmínky a moderní vybavení učeben.",
+          "evidence": "Škola má pro svoji činnost velmi kvalitní materiální podmínky... modernizaci odborných učeben... digitálními demonstračními učebními pomůckami."
+        },
+        {
+          "tag": "Spolupráce s VŠ",
+          "detail": "Žáci mají možnost účastnit se seminářů a cvičení na vysokých školách, což jim pomáhá s profesním směřováním.",
+          "evidence": "Pro žáky byla velmi přínosná spolupráce především s vysokými školami... zapojovali do seminářů, odborných přednášek a laboratorních cvičení."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Hospitační činnost",
+          "detail": "Vedení školy by mělo intenzivněji provádět kontrolní činnost v obdobích mezi pravidelnými hodnoceními pedagogů.",
+          "evidence": "Malý důraz, však vedení školy klade na hospitační činnost v období mezi výše uvedeným hodnocením."
+        },
+        {
+          "tag": "Kvalita výuky dějepisu",
+          "detail": "Kvalita výuky dějepisu je nerovnoměrná a u některých pedagogů je hodnocena jako méně efektivní.",
+          "evidence": "Výuka dějepisu měla odlišnou kvalitu u jednotlivých pedagogů. U některých převládal neúčelný a náročný výklad."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Poskytování zpětné vazby žákům v závěru hodin bylo v mnoha případech spíše formální.",
+          "evidence": "Poskytování zpětné vazby k výkonům žáků v závěrečné fázi výuky bylo většinou formální."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola zajišťuje jednotnou kvalitu výuky v předmětech, kde inspekce zjistila rozdíly (např. dějepis)?",
+        "Jak konkrétně probíhá individuální příprava na maturitu a jaké jsou statistiky úspěšnosti?",
+        "Jaké konkrétní projekty a spolupráce s VŠ jsou aktuálně dostupné pro žáky?"
+      ],
+      "who_school_fits": [
+        "Pro studenty cílicí na vysoké školy, zejména technického a přírodovědného zaměření.",
+        "Pro žáky, kteří chtějí aktivně zapojovat do vědomostních soutěží a odborných aktivit.",
+        "Pro studenty hledající školu se silným mezinárodním zaměřením a jazykovou podporou."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní a pravidelnou zpětnou vazbu od učitelů v každé hodině.",
+        "Rodiče, kteří očekávají zcela jednotný styl výuky napříč všemi pedagogy.",
+        "Uchazeči, kteří preferují spíše pasivní formy výuky před aktivní diskuzí a projekty."
+      ],
+      "plain_czech_summary": "Gymnázium Zlín - Lesní čtvrť je škola s excelentními studijními výsledky a velmi dobrým materiálním vybavením. Inspekce vyzdvihuje zejména vysokou úspěšnost u maturit a kvalitní spolupráci s vysokými školami. Pro rodiče je důležité vědět, že vedení školy by mělo zlepšit kontrolu kvality výuky v běžném provozu a že úroveň některých hodin (např. dějepis) kolísá. Celkově jde o kvalitní školu s jasnou vizí a podporou talentovaných žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborná úroveň",
+        "key_numbers": [
+          "100% úspěšnost ve společné části",
+          "Pouze jednotky procent neúspěšných v profilové části",
+          "Výsledky nad průměrem ČR"
+        ],
+        "evidence": "Ve společné části maturitní zkoušky vždy prospěli všichni žáci... v porovnání s průměrnou úrovní výsledků žáků ostatních škol... výbornou úroveň."
+      },
+      "absence": {
+        "trend": "Sledována u rizikových žáků",
+        "key_numbers": [
+          "Evidence žáků se zvýšenou absencí",
+          "Cílená podpora formou konzultací",
+          "Zlepšení klasifikace u většiny podporovaných"
+        ],
+        "evidence": "Žáci se slabším prospěchem a zvýšenou absencí byli ve škole evidováni... poskytována základní podpora formou konzultací... projevilo se u většiny z nich zlepšenou klasifikací."
+      },
+      "support_services": [
+        "Školní psycholožka poskytuje individuální konzultace a metodickou podporu třídním učitelům.",
+        "Výchovná poradkyně zajišťuje péči o žáky se SVP a metodicky podporuje pedagogy.",
+        "Funguje systém prevence rizikového chování s jasnými pravidly."
+      ],
+      "safety_climate": [
+        "Prostředí školy je estetické a podnětné.",
+        "Vedení klade důraz na bezpečnost a pravidelně vyhodnocuje rizika.",
+        "Žáci jsou poučeni o bezpečném chování."
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce s domácími i zahraničními partnery.",
+        "Významná spolupráce s vysokými školami (semináře, laboratoře).",
+        "Zapojení do mezinárodních projektů a výměnných pobytů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán ve srozumitelné češtině, inspekční zpráva je dobře strukturovaná a závěry jsou jasné.",
+      "uncertainty_notes": []
+    }
+  }
+}

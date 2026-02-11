@@ -1,0 +1,31 @@
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T12:19:58.157189+00:00",
+  "run_finished_utc": "2026-02-09T12:20:30.899013+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"LYC_691004048_2025-10-22\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Místy dochází k zobecnění nad rámec zdroje (např. odstranění nedostatků v ŠVP je ve zprávě doloženo konkrétně pro obor 75-31-M/01, ne obecně pro všechny ŠVP).\",\n    \"Doplněn je profil „pro budoucí sociální pracovníky“, který ve zdrojové inspekční zprávě není opřen o žádné tvrzení ani obor.\",\n    \"Nejsou zachyceny některé pro rodiče důležité slabiny/doporučení ze zprávy: minimální práce s chybou ve výuce, chybějící formativní rozměr zpětné vazby, nedostatečné (jen ústní) vyhodnocování podpůrných opatření, přetrvávající nesoulad mezi průběžným a závěrečným hodnocením a také že vzájemné hospitace učitelů nejsou systematické.\",\n    \"Část formulací může vyznít silněji než zdroj (např. „žáci nepoužívají digitální technologie“ – ve zprávě je přesněji, že je téměř nepoužívali sami žáci, zatímco učitelé je často využívali k prezentaci).\"\n  ],\n  \"best_points\": [\n    \"Dobře vystihuje hlavní silnou stránku: respektující přístup pracovníků a psychické bezpečí/příznivé klima (v souladu se závěry inspekce).\",\n    \"Přesně přebírá klíčové slabiny: nízká diferenciace, málo sebehodnocení/vrstevnického hodnocení, omezený rozvoj kritického myšlení a dlouhodobě podprůměrné výsledky u maturit (včetně zmínky o testováních ČŠI).\",\n    \"Správně popisuje učební praxi (jednotný systém hodnocení, pedagogické deníky/portfolio, individuální podpora při praxi).\",\n    \"Užitečně převádí zjištění do rodičovsky čitelných „rizik“ a otázek na den otevřených dveří.\"\n  ],\n  \"one_line_verdict\": \"Většinou věrné a pro rodiče praktické shrnutí, ale s několika ne zcela podloženými doplňky a s vynecháním několika důležitých zjištění a doporučení z inspekční zprávy.\"\n}",
+  "judge_output": {
+    "report_id": "LYC_691004048_2025-10-22",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "Místy dochází k zobecnění nad rámec zdroje (např. odstranění nedostatků v ŠVP je ve zprávě doloženo konkrétně pro obor 75-31-M/01, ne obecně pro všechny ŠVP).",
+      "Doplněn je profil „pro budoucí sociální pracovníky“, který ve zdrojové inspekční zprávě není opřen o žádné tvrzení ani obor.",
+      "Nejsou zachyceny některé pro rodiče důležité slabiny/doporučení ze zprávy: minimální práce s chybou ve výuce, chybějící formativní rozměr zpětné vazby, nedostatečné (jen ústní) vyhodnocování podpůrných opatření, přetrvávající nesoulad mezi průběžným a závěrečným hodnocením a také že vzájemné hospitace učitelů nejsou systematické.",
+      "Část formulací může vyznít silněji než zdroj (např. „žáci nepoužívají digitální technologie“ – ve zprávě je přesněji, že je téměř nepoužívali sami žáci, zatímco učitelé je často využívali k prezentaci)."
+    ],
+    "best_points": [
+      "Dobře vystihuje hlavní silnou stránku: respektující přístup pracovníků a psychické bezpečí/příznivé klima (v souladu se závěry inspekce).",
+      "Přesně přebírá klíčové slabiny: nízká diferenciace, málo sebehodnocení/vrstevnického hodnocení, omezený rozvoj kritického myšlení a dlouhodobě podprůměrné výsledky u maturit (včetně zmínky o testováních ČŠI).",
+      "Správně popisuje učební praxi (jednotný systém hodnocení, pedagogické deníky/portfolio, individuální podpora při praxi).",
+      "Užitečně převádí zjištění do rodičovsky čitelných „rizik“ a otázek na den otevřených dveří."
+    ],
+    "one_line_verdict": "Většinou věrné a pro rodiče praktické shrnutí, ale s několika ne zcela podloženými doplňky a s vynecháním několika důležitých zjištění a doporučení z inspekční zprávy."
+  }
+}

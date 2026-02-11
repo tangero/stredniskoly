@@ -1,0 +1,115 @@
+{
+  "report_id": "GY8_600015211_2024-01-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:28:40.085245+00:00",
+  "run_finished_utc": "2026-02-09T16:29:05.172774+00:00",
+  "raw_file": "GY8_600015211_2024-01-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600015211_2024-01-23",
+    "school_profile": {
+      "school_type": "Cyrilometodějské gymnázium se základní školou a mateřskou školou",
+      "inspection_period": "23. až 25. ledna 2024",
+      "school_change_summary": "Od poslední inspekce vzrostl počet žáků, rozšířilo se školní poradenské pracoviště o psychology a speciální pedagoga, zlepšily se materiální podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečné a vstřícné prostředí",
+          "detail": "Vzdělávání probíhá v respektujícím a bezpečném sociálním prostředí s pozitivním pedagogickým stylem.",
+          "evidence": "Zdvořilé chování a přátelské vystupování žáků bylo zaznamenáno i během inspekce."
+        },
+        {
+          "tag": "Výborné studijní výsledky",
+          "detail": "Více než 60 % žáků prospívá s vyznamenáním, všichni absolventi gymnázia byli přijati na vysoké školy.",
+          "evidence": "Maturitní zkoušky 2022/23: všichni uspěli, průměr 1,15 v profilové části."
+        },
+        {
+          "tag": "Bohatá nabídka aktivit a podpory",
+          "detail": "Školní klub a středisko volného času nabízí pestrý program, poradenské služby zahrnují psychology a speciální pedagoga.",
+          "evidence": "Žáci se účastní olympiád, získávají mezinárodní jazykové certifikáty, existuje Francouzské divadlo."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezené sebehodnocení žáků",
+          "detail": "Žáci nedostávají dostatek příležitostí k sebereflexi a vzájemnému hodnocení svých výsledků.",
+          "evidence": "V závěru hodin žáci nedostávali odpovídající prostor k sebehodnocení a vzájemnému hodnocení."
+        },
+        {
+          "tag": "Málo aktivizujících metod v přírodovědě",
+          "detail": "Výuka přírodovědných předmětů využívá převážně frontální formu bez dostatku badatelských aktivit.",
+          "evidence": "Didaktické postupy s analýzou dat a experimentováním se objevovaly ojediněle."
+        },
+        {
+          "tag": "Slabší monitoring mateřské školy",
+          "detail": "Ředitel monitoruje mateřskou školu jen sporadickými vhledy, což omezuje efektivní kontrolu kvality.",
+          "evidence": "Kontrolní činnost si ředitel ponechal v kompetenci, ale vhledy jsou pouze sporadické."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se žáci podílejí na hodnocení svých výsledků a jak se učí z chyb?",
+        "Jaké jsou možnosti pro nadané žáky – existují pro ně speciální programy nebo rozšířené výzvy?",
+        "Jak probíhá komunikace se zákonnými zástupci o pokroku dítěte mimo třídní schůzky?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí na vysokou školu – škola má prokázaný úspěch v přijímacích řízeních",
+        "Děti zajímající se o jazyky – silný program v angličtině, němčině a francouzštině s certifikáty",
+        "Žáci hledající bezpečné a podporující prostředí – škola klade důraz na prosociální chování a empatii"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuálního vedení v sebehodnocení – škola se na to teprve zaměřuje",
+        "Děti preferující praktické a experimentální učení v přírodovědě – zde převažuje frontální výuka",
+        "Rodiny hledající velmi individualizovaný přístup v mateřské škole – monitoring je zatím omezený"
+      ],
+      "plain_czech_summary": "Cyrilometodějské gymnázium je kvalitní školou s výborným sociálním klimatem a vysokými studijními výsledky. Žáci se cítí bezpečně, více než 60 % prospívá s vyznamenáním a absolventi jsou úspěšní na vysokých školách. Škola nabízí bohatý program včetně jazykových certifikátů a účasti v olympiádách. Slabší stránkou je, že žáci nemají dostatek příležitostí k sebehodnocení a v přírodovědě se používá málo aktivizujících metod. Mateřská škola je kvalitní, ale ředitel ji monitoruje jen sporadicky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi pozitivní",
+        "key_numbers": [
+          "Všichni žáci posledního ročníku 2022/23 konali maturitu v řádném termínu",
+          "100 % úspěšnost v části společné",
+          "Průměr 1,15 v profilové části maturitní zkoušky"
+        ],
+        "evidence": "Všichni absolventi gymnázia byli přijati ke studiu na vysokých školách."
+      },
+      "absence": {
+        "trend": "Velmi nízká",
+        "key_numbers": [
+          "Minimální neomluvené absence",
+          "Více než 60 % žáků prospívá s vyznamenáním"
+        ],
+        "evidence": "Vysoké procento pochval a minimální neomluvené absence jsou důsledkem motivačního budování postojů."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: 2 výchovné poradkyně, 2 školní metodici prevence, školní kaplan, školní psycholog, školní speciální pedagožka",
+        "Podpora žáků se speciálními vzdělávacími potřebami: 15 žáků v ZŠ a 13 na gymnáziu s přiznanými podpůrnými opatřeními",
+        "Kariérové poradenství a sledování úspěšnosti absolventů"
+      ],
+      "safety_climate": [
+        "Vstřícné, respektující a bezpečné sociální prostředí",
+        "Pozitivní pedagogický styl podporující prosociální chování",
+        "Důsledná osvěta a vedení k vzájemnému respektu a slušnému chování",
+        "Zdvořilé chování a přátelské vystupování žáků zaznamenáno během inspekce"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zákonnými zástupci prostřednictvím elektronické komunikace, třídních schůzek a osobních setkání",
+        "Partnerství se základními školami ve městě a okolí",
+        "Zahraniční partnerství se středními školami pro rozvoj jazykových kompetencí",
+        "Spolupráce s místními organizacemi v oblasti sociálních služeb",
+        "Účast žáků na exkurzích a týdenních kariérních praxích ve firmách"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny s konkrétními příklady. Některé pasáže jsou však úřednicky formulované a vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků v jednotlivých třídách gymnázia a základní školy v čase inspekce",
+        "Chybí konkrétní data o počtu žáků s jednotlivými stupni podpůrných opatření",
+        "Není jasné, jaké konkrétní jazykové certifikáty žáci získávají (B2/C1 v kterých jazycích)"
+      ]
+    }
+  }
+}

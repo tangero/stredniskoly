@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600024938_2024-12-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:07:50.967818+00:00",
+  "run_finished_utc": "2026-02-09T16:08:14.835556+00:00",
+  "raw_file": "GY8_600024938_2024-12-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600024938_2024-12-02",
+    "school_profile": {
+      "school_type": "Soukromá základní škola s mateřskou školou, gymnáziem a školní družinou",
+      "inspection_period": "2. prosince až 4. prosince 2024",
+      "school_change_summary": "Od ledna 2023 se zlepšilo pedagogické vedení, personální obsazení a materiální podmínky. Nový ředitel zavádí promyšlenou strategii rozvoje školy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Individuální přístup a motivace",
+          "detail": "Výuka zohledňuje vzdělávací předpoklady každého žáka a motivuje je k učení.",
+          "evidence": "Všichni žáci v posledních dvou letech prospěli s vyznamenáním, bez neprospívajících."
+        },
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Respektující vztahy mezi pedagogy a žáky, dodržování pravidel, minimální výskyt problémů.",
+          "evidence": "Škola v posledním období nezaznamenala výskyt závažnějšího rizikového chování žáků."
+        },
+        {
+          "tag": "Kvalitní vybavení a prostory",
+          "detail": "Moderně vybavené třídy s dataprojektory, interaktivními tabulemi, relaxačními zónami.",
+          "evidence": "Prostorné třídy jsou esteticky vyzdobeny, vytváří podnětné prostředí pro učení."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo diferenciace ve výuce",
+          "detail": "Žáci často dostávají stejné úkoly bez přizpůsobení jejich schopnostem.",
+          "evidence": "Ve sledované výuce téměř nedocházelo k diferenciaci vzdělávacího obsahu a výukových cílů."
+        },
+        {
+          "tag": "Slabé využití digitálních technologií",
+          "detail": "Počítače a dostupné technologie nejsou systematicky začleňovány do výuky.",
+          "evidence": "Digitální technologii žáci využili ojediněle, nejsou přirozeně začleňovány do výuky."
+        },
+        {
+          "tag": "Nedostatečný rozvoj kritického myšlení",
+          "detail": "Žáci málo pracují s různými informačními zdroji a samostatně s nimi.",
+          "evidence": "Žáci zřídka využili jiné informační zdroje k vyhledávání, což nerozvíjelo jejich kritické myšlení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně přizpůsobujete výuku jednotlivým žákům s různými schopnostmi?",
+        "Jaké plány máte na zvýšení používání počítačů a digitálních nástrojů ve výuce?",
+        "Jak se školní družina propojuje s výukou v základní škole?"
+      ],
+      "who_school_fits": [
+        "Žáci, kterým vyhovuje malá třída a individuální pozornost učitele",
+        "Rodiny hledající bezpečné prostředí s důrazem na respektující komunikaci",
+        "Děti se speciálními vzdělávacími potřebami, které mají k dispozici speciální pedagoga"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více výzev a diferenciované úkoly podle svých schopností",
+        "Rodiny, které kladou důraz na moderní digitální vzdělávání a práci s technologií",
+        "Žáci, kteří se učí lépe z různých zdrojů a potřebují více samostatné práce s informacemi"
+      ],
+      "plain_czech_summary": "AKADEMIA je soukromá základní škola v Brně s velmi dobrými výsledky. Všichni žáci prospívají s vyznamenáním. Škola nabízí bezpečné prostředí, kvalitní vybavení a individuální přístup. Silnou stránkou je respektující komunikace a stabilní pedagogický sbor. Slabší je diferenciace výuky – všichni žáci dostávají stejné úkoly. Počítače se využívají málo. Škola se zlepšila od poslední inspekce v lednu 2023."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Není relevantní pro základní školu",
+        "key_numbers": [],
+        "evidence": "Inspekce se týkala základní školy a školní družiny, ne gymnázia."
+      },
+      "absence": {
+        "trend": "Velmi dobrý - minimální absence",
+        "key_numbers": [
+          "Neprospívající žáci nebo žáci s neomluvenou absencí se nevyskytli",
+          "V případě vyššího počtu zameškaných hodin škola spolupracovala se zákonnými zástupci"
+        ],
+        "evidence": "Všichni žáci dosahovali velmi dobrých celkových výsledků, téměř všichni prospěli s vyznamenáním."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště vedené školní psycholožkou",
+        "Výchovná poradkyně, speciální pedagožka a sociální pedagožka",
+        "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+        "Speciálně pedagogická péče jako předmět"
+      ],
+      "safety_climate": [
+        "Škola v posledním období nezaznamenala výskyt závažnějšího rizikového chování žáků",
+        "Neformální prevence je součástí nastavené strategie vzájemných vztahů",
+        "Preventivní strategie zaměřena na zapojování rodin do komunitního života",
+        "Důraz na rozvíjení prosociálního chování žáků"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zákonnými zástupci při řešení absence",
+        "Zapojení do projektů Ovoce a zelenina do škol a Mléko do škol",
+        "Členství v Sdružení soukromých škol Čech, Moravy a Slezska",
+        "Zapojení do občanského dění v lokalitě",
+        "Pronájem tělocvičny od Salesiánského střediska mládeže"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní poznatky z inspekce, ale místy používá odborný jazyk. Hlavní zjištění jsou jasně oddělena v sekcích silných a slabých stránek.",
+      "uncertainty_notes": [
+        "Zpráva se zaměřuje na základní školu a školní družinu, ne na gymnázium - pro uchazeče o střední vzdělání je relevance omezená",
+        "Konkrétní počty žáků v jednotlivých třídách nejsou uvedeny, pouze celkový počet 43 žáků v pěti třídách",
+        "Nejsou uvedeny konkrétní výsledky testů nebo srovnání s jinými školami"
+      ]
+    }
+  }
+}

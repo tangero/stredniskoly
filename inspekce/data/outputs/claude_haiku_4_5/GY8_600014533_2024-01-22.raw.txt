@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY8_600014533_2024-01-22",
+  "school_profile": {
+    "school_type": "Gymnázium a střední zdravotnická škola (čtyřleté a osmileté gymnázium, obor Praktická sestra)",
+    "inspection_period": "22. 1. 2024 – 25. 1. 2024",
+    "school_change_summary": "Škola se zapojila do projektu propojení oborů H, M, N, který umožňuje žákům praktické sestry získat výuční list ošetřovatele. Rozšířila spolupráci s partnery a stala se fakultní školou Přírodovědecké fakulty Univerzity Palackého."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Všichni žáci gymnázia složili maturitu úspěšně, praktické sestry dosahují průměrné neúspěšnosti 4,2 %.",
+        "evidence": "V posledních třech letech všichni žáci oboru gymnázia složili maturitní zkoušku úspěšně."
+      },
+      {
+        "tag": "Rozvoj nadání a zájmů",
+        "detail": "Škola cíleně vyhledává nadané žáky a zapojuje je do projektů, soutěží a olympiád s velmi dobrými výsledky.",
+        "evidence": "Přes 7 % žáků je zapojeno do projektu Own Way, žáci dosahují velmi dobrých výsledků v soutěžích."
+      },
+      {
+        "tag": "Kvalitní pedagogický sbor",
+        "detail": "Vysoce kvalifikovaní učitelé s odborností pro své předměty, efektivní spolupráce v komisích.",
+        "evidence": "Výuku zajišťují kvalifikovaní pedagogové s odborností pro předměty, které vyučují."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná aktivizace žáků",
+        "detail": "V části výuky dominuje frontální forma s převažující aktivitou učitele, málo příležitostí pro skupinovou práci.",
+        "evidence": "V části sledovaného vyučování dominovala frontální forma výuky a metoda výkladu s převažující aktivitou učitele."
+      },
+      {
+        "tag": "Slabá sebereflexi žáků",
+        "detail": "Žáci nejsou vedeni k účelné sebereflexi vlastní práce a vyhodnocování naplnění vzdělávacích cílů.",
+        "evidence": "Žáci nebyli vedeni k účelné sebereflexi práce a vlastního pokroku, sebehodnocení se vztahovalo více na prožitek."
+      },
+      {
+        "tag": "Problémy v praktické výuce",
+        "detail": "Žáci jsou vedeni k provádění výkonů, které nenáleží do činností praktické sestry a nejsou v učebním plánu.",
+        "evidence": "Žáci byli vedeni také k provádění výkonů, které nenáleží do činností praktické sestry a nejsou obsahem ŠVP."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s nadanými žáky a jaké má pro ně speciální programy?",
+      "Jaké jsou výsledky absolventů v přijímacích řízeních na vysoké školy?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a samostatného myšlení žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí na vysokou školu – výborné výsledky maturit a vysoký podíl absolventů pokračujících v dalším studiu",
+      "Nadaní žáci – škola má propracovaný systém pro jejich vyhledávání a rozvoj",
+      "Zájemci o zdravotnické obory – kvalitní praktická výuka s partnerskými zdravotnickými zařízeními"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní a interaktivní výuku – v části hodin převládá frontální forma s nižší aktivitou žáků",
+      "Žáci potřebující více individuálního přístupu – diferenciace výuky se uplatňuje jen ojediněle",
+      "Žáci se speciálními vzdělávacími potřebami – někdy nemají pedagogové potřebné informace o jejich potřebách"
+    ],
+    "plain_czech_summary": "Klvaňovo gymnázium je kvalitní střední škola s výborným renomé. Žáci dosahují skvělých výsledků u maturit a pokračují v dalším studiu. Škola má kvalitní pedagogy a vytváří příležitosti pro rozvoj nadání. Slabší stránkou je, že v některých hodinách převládá tradiční frontální výuka s nižší aktivitou žáků. Škola by měla více zaměřit pozornost na rozvoj kritického myšlení a samostatnosti žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborný",
+      "key_numbers": [
+        "100 % úspěšnost u gymnázia v posledních třech letech",
+        "4,2 % průměrná neúspěšnost u praktické sestry",
+        "Výsledky výrazně nad průměrem ČR, zvláště v anglickém jazyce"
+      ],
+      "evidence": "V posledních třech letech všichni žáci oboru gymnázia složili maturitní zkoušku úspěšně. Žáci oboru praktická sestra dosahovali velmi dobrých výsledků, průměrná hrubá neúspěšnost činila 4,2 %."
+    },
+    "absence": {
+      "trend": "Pozitivní – absence se snižuje",
+      "key_numbers": [
+        "Snižující se absence žáků",
+        "Výskyt neomluvených hodin je spíše ojedinělý",
+        "Škola má nastavenu maximální hranici absence v předmětu"
+      ],
+      "evidence": "Dobré výsledky pozitivně ovlivňuje snižující se absence žáků, výskyt neomluvených zameškaných hodin je spíše ojedinělý."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psychologem a speciálními pedagogy",
+      "Individuální konzultace pedagogů a doučovací kroužky",
+      "Peer program nemocnice Kyjov pro žáky oboru praktická sestra",
+      "Kariérové poradenství a podpora při výběru seminářů",
+      "Vyškolení peer pracovníci z řad žáků"
+    ],
+    "safety_climate": [
+      "Porušování školního řádu řešeno ojediněle, zejména nevhodné chování vůči spolužákům",
+      "Minimální preventivní program pro školní rok 2023/2024",
+      "Strategie předcházení šikany",
+      "Vhodné materiální podmínky a bezpečnost žáků"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s organizacemi na pracovištích praktické praxe (lůžková a ambulantní péče)",
+      "Fakultní škola Přírodovědecké fakulty Univerzity Palackého v Olomouci",
+      "Erasmus+ pro mobilitu žáků a učitelů",
+      "Projekt pokusného ověřování stupňovitého propojení oborů H, M, N",
+      "Profesní síť Elixír do škol pro přírodovědné vzdělávání"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a citacemi. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více odborné termíny, které by mohly být pro laické rodiče méně srozumitelné.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků v jednotlivých oborech, pouze celkový počet 710 žáků",
+      "Nejsou uvedeny konkrétní procenta žáků s neomluvené absencí nebo počty neprospívajících",
+      "Chybí informace o počtu pedagogů a jejich kvalifikaci"
+    ]
+  }
+}
+```

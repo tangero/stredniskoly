@@ -1,0 +1,118 @@
+{
+  "report_id": "SOU_600018091_2023-10-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:36:38.301130+00:00",
+  "run_finished_utc": "2026-02-09T16:37:01.651286+00:00",
+  "raw_file": "SOU_600018091_2023-10-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600018091_2023-10-20",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola a Střední škola automobilní se zaměřením na automobilní obory (Autotronik, Mechanik opravář motorových vozidel, Autoelektrikář, Karosář, Autolakýrník) a vyšší odborné vzdělání v Diagnostice silničních vozidel",
+      "inspection_period": "20. až 25. října 2023",
+      "school_change_summary": "Došlo ke změně ředitele školy. Počet žáků středního vzdělání se zvýšil. Škola modernizovala zázemí pro praktickou výuku, zejména pro obor Autolakýrník."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné praktické vybavení",
+          "detail": "Škola má kvalitně vybavené dílny a moderní technologie pro praktickou výuku automobilních oborů.",
+          "evidence": "Prostřednictvím investičního projektu se podařilo škole modernizovat a vytvořit kvalitní zázemí pro praktickou odbornou výuku."
+        },
+        {
+          "tag": "Silné partnerství s praxí",
+          "detail": "Škola spolupracuje s řadou významných institucí a firem z regionu na odborných praxích a stážích.",
+          "evidence": "Při organizování akcí, především v oblasti zajištění odborných praxí a stáží, škola spolupracuje s řadou významných institucí a firem."
+        },
+        {
+          "tag": "Kvalitní výuka v oborech s maturitou",
+          "detail": "Výsledky maturitních zkoušek jsou stabilní bez významných odchylek, část absolventů pokračuje ve studiu na vysokých školách.",
+          "evidence": "Celkové výsledky vzdělávání u maturitních zkoušek jsou stabilní a neúspěšnost nevykazuje významné odchylky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá kvalita teoretické výuky",
+          "detail": "Převládá frontální výuka bez rozmanitých metod, chybí skupinová práce, diskuse a rozvoj kritického myšlení.",
+          "evidence": "Ve vyučovacích hodinách převládala frontální výuka, nebyly uplatňovány rozmanité organizační formy a metody výuky."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Vysoká omluvená i neomluvená absence je výrazným faktorem neúspěšnosti žáků, zejména u závěrečných zkoušek.",
+          "evidence": "Výraznou roli neúspěšnosti a zhoršeného prospěchu žáků je jejich vysoká omluvená i neomluvená absence."
+        },
+        {
+          "tag": "Slabá podpora žáků se speciálními potřebami",
+          "detail": "Doporučení školských poradenských zařízení nejsou efektivně uplatňována ve výuce, chybí individuální přístup.",
+          "evidence": "Individuální přístup vzhledem k žákům se speciálními vzdělávacími potřebami ve výuce nebyl vždy patrný."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší vysokou absenci žáků a jaké má konkrétní opatření pro zlepšení docházky?",
+        "Jaké konkrétní metody a formy výuky používáte v teoretických předmětech, aby byla výuka zajímavější a interaktivnější?",
+        "Jak škola podporuje žáky se speciálními vzdělávacími potřebami a jak jsou doporučení školských poradenských zařízení uplatňována v praxi?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou práci a ruční dovednosti, kteří se chtějí stát kvalifikovanými automechaniky nebo elektrikáři",
+        "Studenti vyšší odborné školy, kteří chtějí získat hlubší teoretické znalosti v diagnostice vozidel",
+        "Žáci, kteří se chtějí uplalit na trhu práce v automobilovém průmyslu s podporou kvalitního praktického vybavení"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní podporu v teoretických předmětech a interaktivní výuku, protože převládá frontální přístup",
+        "Žáci se speciálními vzdělávacími potřebami, protože individuální přístup není vždy zajištěn",
+        "Žáci s tendencí k absenci, protože vysoká absence výrazně ovlivňuje jejich úspěšnost"
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní praktickou přípravu v automobilních oborech s moderním vybavením a dobrými vazbami na praxi. Výsledky maturit jsou stabilní. Problémem je nízká kvalita teoretické výuky – převládá frontální výuka bez aktivizace žáků. Vysoká absence žáků negativně ovlivňuje jejich úspěšnost. Žáci se speciálními potřebami nejsou dostatečně podporováni. Vedení školy potřebuje zlepšit kontrolu kvality výuky a zavedení moderních vyučovacích metod."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní",
+        "key_numbers": [
+          "178 žáků v oboru s maturitní zkouškou",
+          "Neúspěšnost nevykazuje významné odchylky",
+          "Část absolventů pokračuje ve studiu na vysokých školách"
+        ],
+        "evidence": "Celkové výsledky vzdělávání u maturitních zkoušek jsou stabilní a neúspěšnost nevykazuje významné odchylky."
+      },
+      "absence": {
+        "trend": "Vysoká a problematická",
+        "key_numbers": [
+          "Vysoká omluvená absence",
+          "Vysoká neomluvená absence",
+          "Výrazný vliv na neúspěšnost žáků"
+        ],
+        "evidence": "Výraznou roli neúspěšnosti a zhoršeného prospěchu žáků je jejich vysoká omluvená i neomluvená absence."
+      },
+      "support_services": [
+        "Výchovný poradce (zároveň zástupce ředitele pro domov mládeže)",
+        "Školní metodik prevence",
+        "Spolupráce s pedagogicko-psychologickými poradnami",
+        "Domov mládeže s vychovateli"
+      ],
+      "safety_climate": [
+        "Domov mládeže poskytuje standardní ubytování",
+        "Vychovatelé podporují přípravu na vyučování a poskytují metodickou pomoc",
+        "Škola realizuje preventivní programy a besedy",
+        "Anonymní schránka důvěry pro připomínky žáků",
+        "Chybí systematické sledování školního klimatu"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s řadou významných institucí a firem z regionu",
+        "Zajištění odborných praxí a stáží pro žáky a studenty",
+        "Realizace edukačních programů zaměřených na elektromobilitu",
+        "Exkurze a naučné programy",
+        "Aktivity podporující zájem základních škol o technické obory"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více úřednického stylu, což mírně snižuje srozumitelnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o počtu žáků s absencí nebo jejich průměrné absenci v procentech",
+        "Nejsou uvedeny konkrétní výsledky maturitních zkoušek (procenta úspěšnosti)",
+        "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami a jejich konkrétních problémech"
+      ]
+    }
+  }
+}

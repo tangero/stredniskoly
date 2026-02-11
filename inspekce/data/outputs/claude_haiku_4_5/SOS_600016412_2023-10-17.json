@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600016412_2023-10-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:37:01.655782+00:00",
+  "run_finished_utc": "2026-02-09T16:37:25.906769+00:00",
+  "raw_file": "SOS_600016412_2023-10-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600016412_2023-10-17",
+    "school_profile": {
+      "school_type": "Soukromá střední odborná škola (SOŠ) s obory Sociální činnost a Veřejnosprávní činnost, denní i dálková forma",
+      "inspection_period": "17.–19. 10. 2023 a 23.–24. 10. 2023",
+      "school_change_summary": "Od inspekce v roce 2017 má kvalita činnosti sestupnou tendenci. Počet žáků se zvýšil o 82 % v denní a 81 % v dálkové formě, ale přetrvávají zásadní nedostatky v řízení a vzdělávání. Hrubá neúspěšnost u maturit stoupla z 26 % (2021) na 49 % (2023), vysoká absence žáků (102 hodin na žáka)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická orientace výuky",
+          "detail": "Část odborných předmětů vyučují praktici z oboru, kteří spojují teorii s reálnými situacemi a zkušenostmi.",
+          "evidence": "Učitelé jsou odborníky z praxe, teoretickou výuku doplňují zajímavostmi a zkušenostmi ze svého oboru."
+        },
+        {
+          "tag": "Zlepšující se vybavení",
+          "detail": "Škola kontinuálně modernizuje učebny, všechny třídy mají datové projektory a interaktivní pomůcky.",
+          "evidence": "Zapojení do projektů umožňuje kontinuální zlepšování materiálních podmínek včetně nákupu interaktivních projektorů."
+        },
+        {
+          "tag": "Přátelská atmosféra",
+          "detail": "Výuka probíhá v přátelské a vstřícné atmosféře vzájemného respektu.",
+          "evidence": "Byly vytvářeny příznivé podmínky pro vzdělávání v přátelské atmosféře."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Velmi vysoká neúspěšnost u maturit",
+          "detail": "Hrubá neúspěšnost stoupla z 26 % (2021) na 49 % (2023), což je dvojnásobek celorepublikového průměru (24,6 %).",
+          "evidence": "V roce 2023 dosáhla hrubá neúspěšnost 49 %, v ČR činila 24,6 %. Škola nepřijímá účinná opatření."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Žáci chybějí průměrně 102 hodin za rok, z toho 2,5 hodiny neomluvených.",
+          "evidence": "Vysoká absence žáků přetrvává, přijímaná opatření nejsou efektivní a nevedou ke zlepšení."
+        },
+        {
+          "tag": "Slabá kvalita pedagogického vedení",
+          "detail": "Ředitelka kumuluje funkce (vedení + výchovné poradenství), koncepce školy nemá konkrétní nástroje a termíny.",
+          "evidence": "Kumulace funkcí neumožňuje ředitelce věnovat se vedení pedagogického procesu. Koncepce bez konkrétních nástrojů k naplnění cílů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření škola přijala na zlepšení výsledků maturitních zkoušek, když neúspěšnost stoupla na 49 %?",
+        "Jak škola řeší vysokou absenci žáků (102 hodin ročně) a proč dosavadní opatření nefungují?",
+        "Jak jsou podporováni žáci se speciálními vzdělávacími potřebami, když někteří učitelé nejsou o jejich potřebách dostatečně informováni?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení praktické orientace a učení od odborníků z praxe v sociální a veřejnosprávní oblasti",
+        "Studenti, kteří se dobře motivují v přátelské atmosféře a potřebují individuální přístup",
+        "Žáci, kteří mají zájem o obory sociální činnosti nebo veřejnosprávní činnosti a chtějí se připravit na praxi"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří potřebují kvalitní přípravu na maturitu – neúspěšnost je dvojnásobná oproti průměru",
+        "Žáci se speciálními vzdělávacími potřebami – jejich podpora není systematická a učitelé nejsou dostatečně informováni",
+        "Studenti, kteří potřebují strukturované vedení a jasné cíle – řízení školy má zásadní nedostatky"
+      ],
+      "plain_czech_summary": "Soukromá SOŠ Frýdek-Místek nabízí prakticky orientovanou výuku od odborníků z praxe v přátelské atmosféře. Škola však čelí vážným problémům: maturitní neúspěšnost stoupla na 49 % (dvojnásobek průměru), žáci chybějí 102 hodin ročně a vedení školy má zásadní nedostatky v řízení. Inspekce zjistila, že se situace od roku 2017 zhoršuje. Doporučuje se opatrnost při výběru, zvláště pro žáky se speciálními potřebami a ty, kteří se připravují na maturitu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Klesající – hrubá neúspěšnost se zvyšuje",
+        "key_numbers": [
+          "2021: 26 % neúspěšnosti",
+          "2022: 40 % neúspěšnosti",
+          "2023: 49 % neúspěšnosti (celorepublikový průměr 24,6 %)"
+        ],
+        "evidence": "Výsledky žáků se nezlepšují a mají klesající tendenci. Škola vykazuje dlouhodobou neúspěšnost u společné části MZ a nepřijímá účinná opatření."
+      },
+      "absence": {
+        "trend": "Vysoká a přetrvávající",
+        "key_numbers": [
+          "102 hodin na žáka ročně",
+          "2,5 hodiny neomluvených absencí"
+        ],
+        "evidence": "Vysoká absence žáků přetrvává. Škola sice identifikuje žáky s vyšší absencí, ale přijímaná opatření nejsou efektivní."
+      },
+      "support_services": [
+        "Výchovné poradenství zajišťuje ředitelka (kumulace funkcí)",
+        "Školní metodik prevence je zaměstnán",
+        "Doučování nabízeno v některých předmětech",
+        "Služby nejsou zajišťovány systematicky – pedagogové nejsou dostatečně informováni o podpůrných opatřeních"
+      ],
+      "safety_climate": [
+        "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování a ochrany zdraví",
+        "Výuka probíhá v přátelské a vstřícné atmosféře vzájemného respektu",
+        "Program proti šikaně a preventivní strategie jsou nastaveny"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se sociálními partnery zajišťujícími praktickou výuku žáků",
+        "Partneři jsou v některých případech potenciálními zaměstnavateli absolventů",
+        "Spolupráce pouze s jednou místní střední školou (IT zaměření)",
+        "Smluvní zajištění tělovýchovných aktivit a školního stravování u jiného subjektu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní čísla a fakta. Jsou jasně identifikovány silné a slabé stránky. Některé pasáže jsou technické, ale celkově je text pro rodiče pochopitelný.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala na zlepšení situace od inspekce",
+        "Není jasné, zda se situace s absencí a neúspěšností týká obou oborů stejně nebo jen jednoho",
+        "Chybí informace o tom, jak se výsledky liší mezi denní a dálkovou formou vzdělávání"
+      ]
+    }
+  }
+}

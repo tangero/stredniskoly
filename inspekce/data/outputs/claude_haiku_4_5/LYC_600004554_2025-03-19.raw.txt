@@ -1,0 +1,101 @@
+```json
+{
+  "report_id": "LYC_600004554_2025-03-19",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola sdělovací techniky (SPŠ) s obory Technické lyceum, Telekomunikace a Multimediální tvorba",
+    "inspection_period": "19. března až 24. března 2025",
+    "school_change_summary": "Od inspekce v roce 2017 se zvýšil počet žáků na 680 (95 % kapacity), mírně vzrostl podíl žáků se speciálními potřebami. Ředitel dobudoval moderní internetovou síť, zvýšil estetičnost prostředí a zefektivnil podporu ohrožených žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Špičkové odborné vzdělání",
+        "detail": "Výuka v odborných předmětech dosahuje výborné úrovně s důrazem na nejnovější praktické poznatky a moderní techniku.",
+        "evidence": "Hospitované hodiny vykazovaly výbornou úroveň s účelným využíváním materiálně technického vybavení a rozvojem klíčových kompetencí."
+      },
+      {
+        "tag": "Silné výsledky u maturity",
+        "detail": "Hrubá neúspěšnost u maturity je srovnatelná nebo nižší než průměr v ČR, zejména v oboru Telekomunikace.",
+        "evidence": "V roce 2023 a 2024 byla neúspěšnost nižší než průměr oborové skupiny v ČR, 80 % žáků využívá jazykový certifikát."
+      },
+      {
+        "tag": "Bohaté mimoškolní aktivity",
+        "detail": "Škola nabízí rozmanitý program kroužků, projektů, soutěží a zahraničních výměn podporujících talent a osobnostní rozvoj.",
+        "evidence": "Žáci se zapojují do národních i mezinárodních projektů, výměnných pobytů v Belgii a prestižní soutěže Česká hlavička."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Někdy chybí závěr hodin",
+        "detail": "V části teoretické výuky chyběl prostor pro efektivní shrnutí poznatků a sebereflexi žáků.",
+        "evidence": "Pouze v menší části sledované teoretické výuky chyběl prostor pro efektivní shrnutí a fixaci poznatků, sebereflexi žáků či vzájemné žákovské hodnocení."
+      },
+      {
+        "tag": "Vysoká absence",
+        "detail": "Průměrně 110 hodin zameškaných za rok na žáka je poměrně vysoké číslo.",
+        "evidence": "Stabilní průměrný počet zameškaných hodin na žáka za rok dosahuje 110 hodin, téměř nulová je neomluvenost."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s prospěchem nebo chováním?",
+      "Jaké jsou možnosti zapojení do zahraničních výměn a jak se na ně žáci připravují?",
+      "Jak se škola připravuje na změny v maturitních zkouškách a jak to ovlivní výuku?"
+    ],
+    "who_school_fits": [
+      "Talentovaní žáci se zájmem o techniku, telekomunikace nebo audiovizuální tvorbu",
+      "Žáci, kteří chtějí kombinovat teoretické znalosti s praktickou přípravou a moderní technologiemi",
+      "Studenti z okolních regionů, kterým vyhovuje poloha v centru Prahy s dobrou dopravní dostupností"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižší motivací nebo tendencí k absencím (průměr 110 hodin za rok je vysoký)",
+      "Studenti, kteří potřebují více individuální péče a strukturovaného závěru hodin",
+      "Uchazeči bez zájmu o technické obory nebo bez základních znalostí v matematice a fyzice"
+    ],
+    "plain_czech_summary": "SPŠ sdělovací techniky je kvalitní škola s tradičním zaměřením na technické obory. Nabízí moderní vybavení, zkušené učitele a silné výsledky u maturity. Žáci se aktivně zapojují do projektů a soutěží. Hlavní slabinou je, že někdy chybí pořádný závěr vyučovacích hodin. Absence jsou poměrně vysoké. Škola se hodí pro talentované techniky, kteří chtějí kvalitní přípravu na vysokou školu nebo práci v oboru."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně velmi dobrý",
+      "key_numbers": [
+        "Hrubá neúspěšnost v roce 2023–2024 srovnatelná nebo nižší než průměr ČR",
+        "80 % žáků využívá jazykový certifikát v profilové části",
+        "Telekomunikace: 88 % žáků ukončilo řádný cyklus, Technické lyceum: 85 %, Multimediální tvorba: 80 %"
+      ],
+      "evidence": "V roce 2023 a 2024 byla neúspěšnost nižší než průměr oborové skupiny v ČR, nejúspěšnější byli žáci oboru Telekomunikace."
+    },
+    "absence": {
+      "trend": "Stabilní, ale vysoká",
+      "key_numbers": [
+        "Průměr 110 hodin zameškaných za rok na žáka",
+        "Téměř nulová neomluvenost",
+        "89–93 % žáků s uzavřenými klasifikacemi do 30. 6."
+      ],
+      "evidence": "Počet žáků s uzavřenými klasifikacemi se pohyboval mezi 89–93 %, stabilní je průměrný počet zameškaných hodin na žáka za rok."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní psycholožka a metodička prevence pracují v úzké spolupráci",
+      "Sportovní kurzy, seznamovací program 1. ročníku, tematicky zaměřené přednášky",
+      "Individuální vzdělávací plány pro žáky se speciálními potřebami, navýšení časového prostoru a úprava hodnocení"
+    ],
+    "safety_climate": [
+      "Příjemná atmosféra, vzájemně respektující přístup učitele a žáků",
+      "Dodržování nastavených pravidel práce a komunikace",
+      "Elektronicky zajištěné vstupy do obou budov, důraz na bezpečnost práce v odborných učebnách"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Elektrotechnické fakulty ČVUT a Přírodovědecké fakulty Univerzity Karlovy",
+      "Partnerské firmy zajišťují odborné praxe, technické vybavení a odborníky z praxe",
+      "Výměnné pobyty se školou v Belgii, zahraniční výjezdy a exteriérová cvičení"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi podrobná, jasně strukturovaná a obsahuje konkrétní údaje. Všechna tvrzení jsou podpořena citacemi z textu. Informace jsou srozumitelné a prakticky využitelné pro rodiče.",
+    "uncertainty_notes": [
+      "Absence 110 hodin za rok je vysoká, ale zpráva neobsahuje srovnání s průměrem jiných škol",
+      "Podíl žáků s vyznamenáním (14 %) není kontextualizován vůči ostatním školám",
+      "Konkrétní důvody vysoké absence nejsou v textu specifikovány"
+    ]
+  }
+}
+```

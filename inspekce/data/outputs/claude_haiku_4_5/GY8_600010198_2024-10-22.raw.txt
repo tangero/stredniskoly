@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY8_600010198_2024-10-22",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmiletého vzdělávací programy)",
+    "inspection_period": "22. 10. – 25. 10. 2024",
+    "school_change_summary": "Od poslední inspekce v 2019 se naplněnost zvýšila o 14,5 %. Nová zástupkyně ředitelky od září 2024. Poradenský tým posílen speciální pedagožkou. Zlepšeny prostorové a materiální podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Metodicky propracovaná výuka cizích jazyků s vysokou kvalitou mluveného projevu učitelů a výbornou úrovní znalostí žáků.",
+        "evidence": "Žáci dosahují vysoké úrovně jazykových znalostí a dovedností, škola připravuje na mezinárodně uznávané zkoušky."
+      },
+      {
+        "tag": "Soutěže a olympiády",
+        "detail": "Škola systematicky podporuje účast žáků v odborně zaměřených soutěžích s výborným úspěchem.",
+        "evidence": "Výborné umístění na krajské a republikové úrovni, zejména v cizích jazycích, informatice a sportu."
+      },
+      {
+        "tag": "Nabídka aktivit",
+        "detail": "Široké spektrum volitelných předmětů a nepovinných aktivit podporuje rozvoj talentu a zájmů.",
+        "evidence": "Exkurze, jazykové pobyty, workshopy, projekty a besedy s odborníky jsou pevnou součástí vzdělávání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivita žáků ve výuce",
+        "detail": "Nižší míra aktivizujících metod vedla v části hodin k pasivnímu přijímání informací.",
+        "evidence": "Převažuje frontální forma výuky, žáci často pasivně reprodukují informace předávané učiteli."
+      },
+      {
+        "tag": "Chybí reflexe a formativní hodnocení",
+        "detail": "Jen ojediněle se zařazuje reflexe vzdělávacího cíle a formativní hodnocení.",
+        "evidence": "Chybí ověření splnění vzdělávacího cíle, sebereflexe žáků a vrstevnické hodnocení."
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Škola má rezervy v přizpůsobení výuky různým schopnostem a zájmům žáků.",
+        "evidence": "Všichni žáci plnili stejné typy úkolů bez ohledu na jejich nadání a zájem."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s žáky, kteří mají potíže s matematikou? (Úspěšnost v matematice v posledních třech letech klesla.)",
+      "Jaké konkrétní změny plánuje škola v metodě výuky, aby více aktivizovala žáky?",
+      "Jak funguje poradenský tým a jak mohu jako rodič kontaktovat školní psycholožku nebo speciální pedagožku?"
+    ],
+    "who_school_fits": [
+      "Žáci s vysokými studijními předpoklady a motivací k učení – škola důsledně přijímá uchazeče s těmito vlastnostmi.",
+      "Zájemci o jazykové vzdělání – výuka cizích jazyků je na vysoké úrovni s přípravou na mezinárodní zkoušky.",
+      "Talentovaní žáci v soutěžích – škola aktivně podporuje účast v olympiádách a vědomostních soutěžích."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a praktické formy výuky – převažuje frontální výuka.",
+      "Žáci se slabšími předpoklady v matematice – úspěšnost v tomto předmětu v posledních třech letech klesá.",
+      "Žáci, kteří se lépe učí přizpůsobeným tempem – diferenciace výuky není dostatečně rozvinuta."
+    ],
+    "plain_czech_summary": "Gymnázium Děčín je kvalitní škola s výborným jazykovým vzděláním a silnou podporou talentovaných žáků v soutěžích. Vedení je stabilní a promyšlené, prostory jsou moderní. Hlavní výzvou je, že výuka stále spoléhá příliš na frontální výuku a chybí jí více aktivních metod, reflexe a přizpůsobení různým schopnostem žáků. Matematika je slabší oblast. Škola je vhodná pro motivované žáky s vysokými předpoklady."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vysoká úspěšnost s rostoucím podílem vyznamenání",
+      "key_numbers": [
+        "Společná část: 1 neprospěl z 99 žáků (2023/2024)",
+        "Profilová část: 10 neprospělo z 98 žáků, 7 z 9 uspělo v podzimě",
+        "Osmiletý program: 50,0 % s vyznamenáním, čtyřletý: 26,7 %"
+      ],
+      "evidence": "Vysoké nároky školy se odrážejí v kvalitě absolventů. Zlepšení v češtině a angličtině, pokles v matematice."
+    },
+    "absence": {
+      "trend": "Nízká absence díky důsledným pravidlům",
+      "key_numbers": [
+        "Zanedbatelný počet neprospívajících žáků",
+        "Škola předchází problémům s vysokou či neomluvenou absencí"
+      ],
+      "evidence": "Vhodně nastavená pravidla a jejich důsledné uplatňování v praxi."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, kariérová poradkyně, školní psycholožka, speciální pedagožka (od 2024/2025)",
+      "Konzultace s vyučujícími, skupinové doučování, online výuka pro dlouhodobě nemocné",
+      "Online schránka důvěry pro žáky (od 2023/2024)",
+      "Tandemová výuka speciální pedagožky s třídními učiteli"
+    ],
+    "safety_climate": [
+      "Pravidla přirozené a otevřené komunikace mezi žáky a učiteli",
+      "Nastavená pravidla pro hodnocení chování s důsledným uplatňováním",
+      "Výrazně převažují pochvaly za úspěchy a angažovanost",
+      "Studentská rada jako funkční nástroj žákovské samosprávy"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Přírodovědecké fakulty Univerzity Karlovy",
+      "Spolupráce s ČVUT v Děčíně a Univerzitou Jana Evangelisty Purkyně",
+      "Programy Erasmus+ a DofE – Mezinárodní cena vévody z Edinburghu",
+      "Soutěžní odpoledne 'Na den gymplákem' pro žáky základních škol",
+      "Spolupráce se školskými poradenskými zařízeními"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní údaje a citace. Slabší stránky jsou jasně pojmenovány, ale mohly by být konkrétnější v doporučeních pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jak konkrétně se matematika vyučuje a proč klesá úspěšnost – chybí detailnější analýza.",
+      "Není jasné, jak dlouho trvá, než se nová zástupkyně ředitelky a speciální pedagožka plně integrují do týmu.",
+      "Chybí informace o počtu žáků, kteří pokračují na vysokých školách versus vyšších odborných školách."
+    ]
+  }
+}
+```

@@ -1,0 +1,103 @@
+{
+  "report_id": "LYC_691008167_2021-05-31",
+  "school_profile": {
+    "school_type": "Soukromá střední škola (společnost s r.o.)",
+    "inspection_period": "31. 5. – 3. 6. 2021",
+    "school_change_summary": "Nově vzniklá škola, která v době inspekce vzdělávala pouze 12 žáků v oboru Pedagogické lyceum."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Demokratické prostředí",
+        "detail": "Škola klade důraz na sebeřízení, důvěru a aktivní zapojení žáků do chodu školy.",
+        "evidence": "„Subjekt efektivně naplňuje vizi vytvořit modelovou demokratickou školu... žáci se aktivně účastnili každodenních komunitních setkání.“"
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Díky malému počtu žáků a zázemí školního psychologa je zajištěna účinná podpora a bezpečné klima.",
+        "evidence": "„Charakter školy, malý počet žáků... vytvářejí vhodné podmínky... funkční poradenský systém úzce propojený s prevencí rizikového chování.“"
+      },
+      {
+        "tag": "Inovativní výuka",
+        "detail": "Výuka propojuje předměty a využívá metody kritického myšlení a tandemové vyučování.",
+        "evidence": "„Vyučování probíhá v heterogenních skupinách... metody byly efektivní a zaměřené k formování postojů žáků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné hodnocení",
+        "detail": "Chybí objektivní a písemné podklady pro hodnocení žáků, spoléhá se se na ústní zpětnou vazbu.",
+        "evidence": "„Nižší účinnost kontrolního a evaluačního systému vedla k nezajištění dostatečných podkladů pro objektivitu hodnocení.“"
+      },
+      {
+        "tag": "Nekontrola obsahu výuky",
+        "detail": "Není zajištěno, zda si žáci sami zvolený obsah splňuje minimální požadavky.",
+        "evidence": "„Systém evidence obsahu vzdělávání nezajišťuje kontrolu poskytování vzdělávání ve všech oblastech v minimálním rozsahu.“"
+      },
+      {
+        "tag": "Riziko pro méně samostatné",
+        "detail": "Systém vyžaduje vysokou míru autonomie, což může znevýhodnit žáky bez rozvinutých studijních návyků.",
+        "evidence": "„Rizikem... je, že žák s méně rozvinutou učební autonomií nedostává bezprostřední zpětnou vazbu.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola objektivně zjišťuje, zda žáci zvládli učivo v požadovaném rozsahu?",
+      "Jak funguje systém přechodu na třídníky, pokud žák nezvládá samořízené učení?",
+      "Jaká je konkrétní metodika hodnocení na vysvědčení a jak je zajištěna jeho objektivita?"
+    ],
+    "who_school_fits": [
+      "Samostatní žáci, kteří umí dobře organizovat svůj čas a učení.",
+      "Žáci hledající neformální, bezpečné prostředí a osobní přístup.",
+      "Zájemci o pedagogiku a sociální témata s potřebou tvořit pravidla komunity."
+    ],
+    "who_should_be_cautious": [
+      "Žáci vyžadující jasnou strukturu, pravidelné známky a přísný dohled.",
+      "Rodiče očekávající standardní formální způsoby hodnocení výsledků.",
+      "Žáci, kteří potřebují silnou vnější motivaci a častou kontrolu plnění povinností."
+    ],
+    "plain_czech_summary": "Škola funguje na principu demokratické komunity s důrazem na sebeřízení žáků a jejich spolurozhodování. Výuka je velmi individuální, probíhá ve skupinách a klade důraz na rozvoj sociálních dovedností a kritického myšlení. Inspekce však zaznamenala vážné nedostatky v systému hodnocení – chybí písemné podklady a objektivní kontrola plnění učiva. Pro aktivní a samostatné žáky je škola přínosem, pro méně samostatné může být styl výuky rizikovým. Škola je nová a malá (pouze 12 žáků)."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "N/A",
+      "key_numbers": [
+        "Obor vzdělání: Pedagogické lyceum",
+        "Počet žáků k inspekci: 12",
+        "První ročník provozu školy"
+      ],
+      "evidence": "„K 30. září 2020 vykazovala nově vzniklá škola osm žáků... k termínu zahájení inspekční činnosti bylo zapsáno 12 žáků.“"
+    },
+    "absence": {
+      "trend": "Nulová neomluvená absence",
+      "key_numbers": [
+        "0 neomluvených hodin",
+        "0 kázeňských opatření",
+        "Všech 8 žáků v 1. pololetí prospělo"
+      ],
+      "evidence": "„Všech osm žáků v prvním pololetí školního roku prospělo, žádný žák neměl neomluvené hodiny.“"
+    },
+    "support_services": [
+      "Školní psycholog (zajišťuje i výchovné poradenství)",
+      "Systém tripartit (žák-učitel-rodič)",
+      "Mentoring a supervize pedagogů"
+    ],
+    "safety_climate": [
+      "Bezpečné prostředí založené na důvěře",
+      "Nulová úrazovost",
+      "Řádný dohled nad žáky a zajištěný vstup do areálu"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zahraničními partnerskými školami",
+      "Propojení s českými inovativními školami",
+      "Využití prostor jiného subjektu pro TV"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně odděluje popisnou část od závěrů. Používá standardní pedagogické termíny, které v kontextu vysvětluje.",
+    "uncertainty_notes": [
+      "Vlastní hodnocení žáků metodou semaforu nemusí být rodičům srozumitelné bez hlubšího vysvětlení.",
+      "Míra 'studijní autonomie' je abstraktní pojem, jehož konkrétní podoba se může lišit."
+    ]
+  }
+}

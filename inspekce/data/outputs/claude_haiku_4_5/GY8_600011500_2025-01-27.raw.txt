@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "GY8_600011500_2025-01-27",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté obory)",
+    "inspection_period": "27. ledna až 3. února 2025",
+    "school_change_summary": "Škola prošla modernizací IT infrastruktury, zavedla nový předmět DIGI, zlepšila komunikaci přes sociální sítě a změnila pozici zástupce ředitele. Počet žáků zůstává stabilní (476 žáků celkem)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Od roku 2019 dosahují žáci nadprůměrných výsledků ve všech předmětech společné části maturitní zkoušky ve srovnání s gymnázii v ČR.",
+        "evidence": "\"nadprůměrných výsledků ve srovnění s gymnázii v České republice\""
+      },
+      {
+        "tag": "Moderní vybavení a technologie",
+        "detail": "Nová učebna informatiky, 3D tiskárny, microbity, lego roboti a střešní terasa pro výuku.",
+        "evidence": "\"3D tiskárny, microbity, lego roboti, nově vybudovanou učebnu informačních a komunikačních technologií\""
+      },
+      {
+        "tag": "Bohatá nabídka aktivit a partnerství",
+        "detail": "Zahraniční výměnné programy, spolupráce s partnerskými školami v Holandsku, Německu a Slovensku, besedy s absolventy.",
+        "evidence": "\"zahraniční výměnné programy a spolupráce s partnerskými školami v nizozemském Brille, německém Schriesheimu a slovenské Spišské Nové Vsi\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Pokročilejší formy diferenciace, kdy by vybraní žáci řešili jiná zadání, se neuplatňují.",
+        "evidence": "\"Pokročilejší formy diferenciace, kdy by vybraní žáci řešili jiná zadání... uplatňovány nebyly\""
+      },
+      {
+        "tag": "Slabá práce se zpětnou vazbou a sebehodnocením",
+        "detail": "Chybí vzájemné hodnocení žáků a nedostatečné využívání sebehodnocení.",
+        "evidence": "\"Přetrvává nedostatečné využívání sebehodnocení a vzájemného hodnocení žáků\""
+      },
+      {
+        "tag": "Problémy se školním stravováním",
+        "detail": "Žáci vyjádřili výhrady ke školnímu stravování zajišťovanému externím subjektem.",
+        "evidence": "\"významných výhrad ke školnímu stravování zajišťovanému externím subjektem\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s individuálními rozdíly mezi žáky v jednotlivých předmětech?",
+      "Jaké jsou konkrétní plány na zlepšení školního stravování?",
+      "Jak se žáci podílejí na rozhodování školy prostřednictvím Studentského parlamentu?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí na vysokou školu – 95 % absolventů pokračuje ve vysokoškolském studiu",
+      "Talentovaní žáci v jazycích – intenzivní podpora anglického jazyka a zahraniční výměny",
+      "Kreativní žáci – kvalitní výuka výtvarného projevu a nový předmět DIGI"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individualizovaný přístup – diferenciace výuky není dostatečná",
+      "Žáci, kterým vyhovuje více zpětné vazby a sebehodnocení – to se v hodinách nedostatečně praktikuje",
+      "Žáci se speciálními vzdělávacími potřebami – ačkoli je podpora zajištěna, měli by si ověřit konkrétní nabídku"
+    ],
+    "plain_czech_summary": "Gymnázium Havlíčkův Brod je kvalitní střední škola s výborným renomé. Žáci dosahují nadprůměrných výsledků u maturit a vysokého procenta úspěšnosti při přijetí na vysoké školy. Škola nabízí moderní vybavení, zahraniční výměny a bohatý program aktivit. Slabší stránkou je nedostatečná individualizace výuky a práce se zpětnou vazbou. Stravování zajišťuje externí subjekt, což vyvolává nespokojenost. Vhodná pro ambiciózní žáky s jasným směrem na vysokou školu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě vysoká úspěšnost",
+      "key_numbers": [
+        "Od roku 2019 nadprůměrné výsledky ve všech předmětech (čeština, matematika, cizí jazyk)",
+        "Kolem 95 % absolventů pokračuje ve vysokoškolském studiu",
+        "Žáci získávají ocenění v soutěžích okresní až mezinárodní úrovně"
+      ],
+      "evidence": "\"nadprůměrných výsledků ve srovnění s gymnázii v České republice\", \"Kolem 95 % absolventů pokračuje ve studiu na vysokých a vyšších odborných školách\""
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [
+        "Informace nejsou v inspekční zprávě dostupné"
+      ],
+      "evidence": "Absence není v textu řešena"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se třemi členy: výchovná poradkyně, metodička prevence, školní psycholožka",
+      "Individuální pomoc od školní psycholožky a práce s třídními kolektivy",
+      "Kariérové poradenství s testováním prostřednictvím externího subjektu",
+      "Podpora žáků se speciálními vzdělávacími potřebami přes školní informační systém"
+    ],
+    "safety_climate": [
+      "Koncepční prevence rizikového chování s různorodými aktivitami",
+      "Adaptační pobyty, lyžařské zájezdy, školní výlety a exkurze pro stmelování kolektivů",
+      "Ročně vyhodnocovaná činnost v oblasti prevence",
+      "Příznivá edukační atmosféra s partnerským vztahem mezi pedagogy a žáky"
+    ],
+    "partnerships_practice": [
+      "Zahraniční partnerství: Brille (Holandsko), Schrieshheim (Německo), Spišská Nová Ves (Slovensko)",
+      "Spolupráce s institucemi: Muzeum Vysočiny, Krajská knihovna Vysočiny, British Council, AZ centrum",
+      "Kontakt s okolními základními a středními školami v regionu",
+      "Aktivní Studentský parlament organizující přednášky, workshopy a regionální akce"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady. Silné a slabé stránky jsou jasně vymezeny. Absence dat o absencích a některé obecnější formulace snižují skóre o jeden bod.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je to problém nebo se neměřila",
+      "Konkrétní počty žáků s problémy nejsou uvedeny – není jasný rozsah problémů s diferenciací",
+      "Detaily o školním stravování nejsou rozvedeny – není jasné, co přesně žáky vadí"
+    ]
+  }
+}
+```

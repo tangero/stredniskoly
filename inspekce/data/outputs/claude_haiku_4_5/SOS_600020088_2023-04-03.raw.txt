@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_600020088_2023-04-03",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola s maturitními obory (Praktická sestra, Bezpečnostně právní činnost, Ortoticko-protetický technik) a výučním listem (Ošetřovatel)",
+    "inspection_period": "3. až 5. dubna 2023",
+    "school_change_summary": "Od roku 2019/2020 škola rozšířila nabídku o obor Ortoticko-protetický technik. Celkem 407 žáků v denní formě, z toho 33 se speciálními vzdělávacími potřebami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní praktická příprava",
+        "detail": "Praktická výuka ve zdravotnických zařízeních je dobře organizovaná, žáci pracují pod vedením zkušených učitelek a rozvíjejí komunikaci s pacienty.",
+        "evidence": "Praktická výuka realizovaná ve zdravotnickém zařízení byla dobře organizovaná a zajištěna na odděleních lůžkové péče."
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Škola vytváří příznivé klima s minimálním výskytem rizikového chování a nabízí komplexní poradenské služby.",
+        "evidence": "Účinnost zvolené strategie v těchto oblastech potvrzuje minimální výskyt rizikového chování."
+      },
+      {
+        "tag": "Partnerství a projekty",
+        "detail": "Efektivní spolupráce s vnějšími partnery a projektová činnost zlepšují materiální podmínky a odborné praxe.",
+        "evidence": "Efektivní spolupráce s vnějšími partnery společně se systematickým zapojováním školy do projektové činnosti přispívá ke zkvalitňování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Ve velké části hodin chybí přizpůsobení obsahu individuálním potřebám žáků a aktivní vyhledávání nadaných žáků.",
+        "evidence": "Ve velké části vyučovacích hodin nebyla vždy zřetelná diferenciace vzdělávacího obsahu zohledňující odlišné vzdělávací potřeby."
+      },
+      {
+        "tag": "Slabé formativní hodnocení",
+        "detail": "Chybí efektivní zpětná vazba na konci hodin a reflexe žáků o jejich pokroku.",
+        "evidence": "V závěru vyučovacích hodin byla žákům jen ojediněle poskytnuta efektivní formativní zpětná vazba."
+      },
+      {
+        "tag": "Omezené metody výuky",
+        "detail": "Převažuje frontální výuka, chybí skupinová práce a práce s různými informačními zdroji.",
+        "evidence": "Z organizačních forem výrazně převažovala frontální výuka, pouze ojediněle však byly zařazovány i formy výuky podporující vzájemnou spolupráci."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku individuálním potřebám jednotlivých žáků a jak pracuje s nadanými žáky?",
+      "Jaké konkrétní kroky škola podnikla po inspekci, aby zlepšila formativní hodnocení a zpětnou vazbu žákům?",
+      "Jak se v praxi uplatňují podpůrná opatření pro žáky se speciálními vzdělávacími potřebami přímo během výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí kvalitní praktickou přípravu ve zdravotnickém oboru s podporou zkušených pedagogů",
+      "Studenti, kterým vyhovuje strukturovaná výuka s jasně stanoveným cílem a dobrým materiálním zázemím",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola nabízí komplexní poradenské služby a podpůrná opatření"
+    ],
+    "who_should_be_cautious": [
+      "Nadaní a talentovaní žáci, kterým může chybět dostatečná výzva a individuální zpětná vazba",
+      "Žáci, kteří se učí lépe prostřednictvím skupinové práce a kooperativních metod, které nejsou dostatečně využívány",
+      "Studenti, kteří potřebují více samostatné práce s různými informačními zdroji a kritického myšlení"
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola v Hranicích nabízí kvalitní praktickou přípravu ve zdravotnických oborech v bezpečném a podporujícím prostředí. Silnou stránkou je spolupráce se zdravotnickými zařízeními a komplexní poradenské služby. Inspekce však upozornila na nedostatky v metodice výuky: chybí diferenciace podle individuálních potřeb žáků, efektivní zpětná vazba a pestřejší formy výuky. Škola by měla více využívat skupinovou práci, formativní hodnocení a práci s různými informačními zdroji."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neuvedeno konkrétně",
+      "key_numbers": [
+        "Obory s maturitní zkouškou: Praktická sestra (53-41-M/03), Bezpečnostně právní činnost (68-42-M/01), Ortoticko-protetický technik (53-44-M/01)"
+      ],
+      "evidence": "Důležitou zpětnou vazbou pro školu je úspěšnost žáků u maturitních zkoušek, v přijetí absolventů k dalšímu studiu."
+    },
+    "absence": {
+      "trend": "Pozitivní - škola aktivně řeší zvýšenou absenci",
+      "key_numbers": [
+        "Škola bezodkladně přijímá opatření na minimalizaci zvýšené absence žáků"
+      ],
+      "evidence": "Na dosahované výsledky vzdělávání pozitivně působí mj. fakt, že škola bezodkladně přijímá opatření na minimalizaci zvýšené absence žáků."
+    },
+    "support_services": [
+      "Školní psycholožka, výchovná poradkyně, školní metodička prevence, kariérní poradkyně",
+      "Metodické sdružení asistentů pedagoga pro sdílení zkušeností při práci s žáky s potřebou podpůrných opatření",
+      "Individuální konzultace a doučování pro žáky s rizikem školního neúspěchu"
+    ],
+    "safety_climate": [
+      "Minimální výskyt rizikového chování díky efektivní preventivní strategii",
+      "Adaptační pobyty pro žáky prvních ročníků k upevňování dobrých vztahů",
+      "Schránka důvěry a osobní kontakt s vyučujícími pro vyjádření se k dění ve škole",
+      "Zvýšená úrazovost v minulém roce - škola přijala opatření formou zdůrazňování bezpečnosti"
+    ],
+    "partnerships_practice": [
+      "Smluvní zdravotnická zařízení pro praktickou výuku a odborné praxe žáků",
+      "Smluvní zařízení sociální péče pro zajištění stáží",
+      "Projekty Erasmus+ zaměřené na jazykové vzdělávání",
+      "Celorepubliková spolupráce se školami a kurzy první pomoci pro základní školy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně identifikuje silné stránky i konkrétní nedostatky. Doporučení jsou praktická a měřitelná. Chybí pouze konkrétní číselné údaje o maturitních výsledcích.",
+    "uncertainty_notes": [
+      "Inspekce neuvádí konkrétní procenta úspěšnosti u maturitních zkoušek ani srovnání s předchozími lety",
+      "Není jasné, jak dlouho trvá, než se přijatá opatření projeví v praxi (inspekce zmiňuje, že dosud výrazněji nepřispívají)",
+      "Chybí informace o počtu žáků, kterým se podpůrná opatření skutečně efektivně uplatňují"
+    ]
+  }
+}
+```

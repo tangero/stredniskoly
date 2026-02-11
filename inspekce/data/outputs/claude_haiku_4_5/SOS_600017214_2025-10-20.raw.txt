@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "SOS_600017214_2025-10-20",
+  "school_profile": {
+    "school_type": "Střední odborná škola s obory Hotelnictví (denní forma) a Podnikání (dálková forma)",
+    "inspection_period": "20.–22. 10. 2025",
+    "school_change_summary": "Škola zvýšila počet žáků, modernizovala výukové prostory pro gastronomické obory, ale úspěšnost u maturitní zkoušky klesla."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola efektivně spolupracuje se sociálními partnery a zaměstnavateli, což žákům pomáhá získat odborné kompetence a připravuje je na pracovní uplatnění.",
+        "evidence": "Spolupráce s partnerskými firmami, exkurze u zaměstnavatelů, přednášky odborníků z praxe."
+      },
+      {
+        "tag": "Podpora žáků v obtížích",
+        "detail": "Škola má funkční poradenské pracoviště se školní psycholožkou, která pomáhá žákům s emocionální a sociální podporou.",
+        "evidence": "Personální obměna poradenského pracoviště, rozšíření o pozici školní psycholožky, adaptační kurzy pro prvňáky."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Nově vybavená odborná učebna pro gastronomické obory umožňuje praktickou výuku v reálném pracovním prostředí.",
+        "evidence": "Modernizace výukových prostor pro obor s gastronomickým zaměřením."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky u maturity",
+        "detail": "Výsledky maturitní zkoušky se zhoršují, zejména v češtině, cizích jazycích a matematice, často pod republikovým průměrem.",
+        "evidence": "V jarním 2025: z 12 žáků prospělo jen 4, osm neprospělo. Horší výsledky než průměr v Češtině a Matematice."
+      },
+      {
+        "tag": "Zastaralé prostory",
+        "detail": "Některé společné prostory vykazují známky opotřebení a materiální zastaralosti, což negativně ovlivňuje prostředí.",
+        "evidence": "Obnova materiálně technického zařízení se daří plnit pouze částečně, některé prostory jsou zastaralé."
+      },
+      {
+        "tag": "Pasivní vyučování",
+        "detail": "Výuka často spoléhá na frontální metody bez dostatečné diferenciace, skupinové práce a rozvoje kritického myšlení.",
+        "evidence": "Frontální výuka převažuje, kooperativní techniky jen v omezené míře, nedostatečná práce s různými informačními zdroji."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomáhá žákům, kteří mají problémy s maturitní zkouškou? Jaké jsou specifické přípravné kurzy?",
+      "Jaké jsou plány na modernizaci a údržbu starších prostor a učeben?",
+      "Jak se v hodinách uplatňuje skupinová práce a práce s různými zdroji informací?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na gastronomii a hotelnictví, kteří chtějí praktickou výuku v moderně vybaveném prostředí",
+      "Žáci, kteří potřebují individuální podporu a psychologickou pomoc – škola má kvalitní poradenské služby",
+      "Žáci, kteří se chtějí rychle uplalit v praxi – škola má silné vazby na zaměstnavatele"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s vyšší ambicí na vysokou školu – výsledky maturitní zkoušky jsou slabé a pod průměrem",
+      "Žáci, kteří potřebují moderní a kvalitní vybavení – některé prostory jsou zastaralé",
+      "Žáci, kteří se učí lépe aktivní metodou – výuka často používá pasivní frontální přístup"
+    ],
+    "plain_czech_summary": "SOŠ Uničov je prakticky zaměřená škola s dobrými vazbami na zaměstnavatele a kvalitní podporou pro žáky v obtížích. Modernizovala gastronomické učebny a má školní psycholožku. Problém je však v klesajících výsledcích maturitní zkoušky – v češtině, matematice a cizích jazycích jsou pod průměrem. Výuka často používá pasivní metody bez dostatečné skupinové práce. Některé prostory jsou zastaralé. Škola je vhodná pro žáky zaměřené na praxi, ale méně pro ty s ambicí na vysokou školu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršující se",
+      "key_numbers": [
+        "Jaro 2025: 1 prospěl s vyznamenáním, 3 prospěli, 8 neprospělo z 12 žáků",
+        "Podzim 2025: 2 prospěli, 5 neprospělo z 8 žáků",
+        "Výsledky v Češtině a Matematice pod republikovým průměrem"
+      ],
+      "evidence": "Výsledky ve společné části maturitní zkoušky měly zhoršující se tendenci. V Hotelnictví výrazně horší než průměr v Češtině, v Podnikání horší v Češtině, Cizím jazyce a Matematice."
+    },
+    "absence": {
+      "trend": "Není specifikován",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní údaje o absenci žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s jasně rozdělenými kompetencemi",
+      "Školní psycholožka pro emocionální a psychickou podporu",
+      "Adaptační kurzy pro prvňáky, programy primární prevence",
+      "Individuální konzultace pro žáky s rizikem neúspěchu",
+      "Anonymní schránka důvěry, Studentský parlament"
+    ],
+    "safety_climate": [
+      "Ve všech hodnocených vyučovacích hodinách převládala příznivá pracovní atmosféra bez nežádoucích projevů chování",
+      "Patrný byl vzájemný respekt mezi učiteli a žáky",
+      "Výchovné problémy řešeny průběžně ve spolupráci s třídními učiteli a zákonnými zástupci"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s partnerskými firmami pro praktické vyučování",
+      "Exkurze u zaměstnavatelů a přednášky odborníků z praxe",
+      "Partnerství s profesními sdruženími pro udržení kontaktu s praxí",
+      "Spolupráce se školskou radou a zřizovatelem"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Hlavní zjištění jsou zřetelná: silné stránky (praxe, podpora), slabé stránky (maturita, pasivní výuka, zastaralé prostory). Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o absenci žáků – není jasné, zda je to problém.",
+      "Není specifikováno, kolik procent žáků dosahuje vyznamenání nebo prospívá – pouze absolutní počty.",
+      "Není jasné, jaké konkrétní opatření škola již přijala na zlepšení výsledků maturitní zkoušky."
+    ]
+  }
+}
+```

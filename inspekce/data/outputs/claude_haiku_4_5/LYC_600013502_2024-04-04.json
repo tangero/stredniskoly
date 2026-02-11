@@ -1,0 +1,114 @@
+{
+  "report_id": "LYC_600013502_2024-04-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:19:49.968738+00:00",
+  "run_finished_utc": "2026-02-09T16:20:16.208226+00:00",
+  "raw_file": "LYC_600013502_2024-04-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600013502_2024-04-04",
+    "school_profile": {
+      "school_type": "Obchodní akademie a vyšší odborná škola (střední vzdělání s maturitou + vyšší odborné vzdělání)",
+      "inspection_period": "4.–9. dubna 2024",
+      "school_change_summary": "Škola prošla změnami: nový ředitel (od 2020), zrušeny některé obory na VOS, nárůst žáků na střední škole (+12 %), pokles studentů na VOS (-28 %), modernizace prostor."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Žáci dosahují dlouhodobě lepších výsledků v maturitní zkoušce než srovnatelné školy v ČR, úspěšnost 95–100 % podle oboru.",
+          "evidence": "Obor Informační služby: 100 % úspěšnost 2021–2023. Ekonomické lyceum: 93–100 %. Obchodní akademie: 95–97 %."
+        },
+        {
+          "tag": "Aktivní zapojení žáků",
+          "detail": "Žáci se účastní soutěží, projektů Erasmus+, mezinárodního programu DofE a dobrovolnických aktivit.",
+          "evidence": "Úspěchy v krajských a celostátních kolech soutěží, zahraniční stáže v Německu, program rozvoje osobnosti a psychické odolnosti."
+        },
+        {
+          "tag": "Kvalitní poradenské služby",
+          "detail": "Tým 5 odborníků (výchovný poradce, metodik prevence, 2 kariérové poradkyně, 2 psychologové) poskytuje systematickou podporu.",
+          "evidence": "Podpora žáků se speciálními potřebami, práce s nadanými žáky, prevence rizikového chování, elektronická schránka důvěry."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá komunikační výuka",
+          "detail": "Žáci nemají dostatek příležitostí rozvíjet komunikační dovednosti a kritické myšlení v běžné výuce.",
+          "evidence": "Inspektoři zjistili nižší míru aktivního zapojení žáků do diskusí a menší prostor pro prezentaci vlastních názorů."
+        },
+        {
+          "tag": "Chybí individualizace výuky",
+          "detail": "Učitelé nedostatečně přizpůsobují úkoly individuálním potřebám a možnostem jednotlivých žáků.",
+          "evidence": "V matematice žáci nemají vždy možnost vybírat si úlohy různé náročnosti; v některých předmětech chybí diferenciace."
+        },
+        {
+          "tag": "Absence nové strategie rozvoje",
+          "detail": "Koncepční dokumenty školy nedostatečně reflektují budoucí vývoj a chybí jasně definované priority na rok 2024 a dále.",
+          "evidence": "Inspektoři doporučují iniciovat proces tvorby nové strategie s jasně definovanými cíli a kroky k jejich naplnění."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje rozvoj komunikačních dovedností a kritického myšlení v jednotlivých předmětech?",
+        "Jaké jsou možnosti individuální podpory pro žáky s různými tempem učení a různými zájmy?",
+        "Jak se škola připravuje na budoucnost – jaké jsou plány rozvoje v příštích letech?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným cílem studovat ekonomii, obchod nebo sociální práci – škola má silné výsledky v těchto oborech",
+        "Aktivní žáci, kteří chtějí cestovat a rozvíjet se – program Erasmus+, DofE, zahraniční stáže",
+        "Žáci se speciálními potřebami – kvalitní poradenské služby a systematická podpora"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní individuální přístup – výuka není dostatečně diferencovaná",
+        "Žáci zaměření na rozvoj komunikačních dovedností – v běžné výuce je na to málo prostoru",
+        "Žáci hledající jasnou vizi budoucnosti – škola právě pracuje na nové strategii rozvoje"
+      ],
+      "plain_czech_summary": "Obchodní akademie v Brně je stabilní škola s výborným renomé v maturitách (95–100 % úspěšnost). Žáci se aktivně zapojují do soutěží, projektů a dobrovolnictví. Poradenské služby jsou na vysoké úrovni. Slabší stránkou je, že výuka není dostatečně zaměřena na komunikační dovednosti a kritické myšlení a chybí individualizace podle potřeb žáků. Škola právě pracuje na nové strategii rozvoje."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě stabilní a nadprůměrný",
+        "key_numbers": [
+          "Informační služby: 100 % úspěšnost (2021–2023)",
+          "Ekonomické lyceum: 93–100 % (propad v 2022: 93 %)",
+          "Obchodní akademie: 95–97 %"
+        ],
+        "evidence": "Škola dosahuje lepších výsledků než srovnatelné školy v ČR. Téměř všichni žáci, kteří nastoupí do 1. ročníku, obor úspěšně dokončí."
+      },
+      "absence": {
+        "trend": "Nízká a stabilní",
+        "key_numbers": [
+          "Omluvená absence: v některých třídách průměr 100 hodin na žáka za pololetí",
+          "Neomluvená absence: pouze jednotlivci, v posledních 2 letech prakticky nula",
+          "Absence se v posledních 3 letech téměř neměnila"
+        ],
+        "evidence": "Vyšší absence obvykle způsobena jednotlivci, které škola důsledně eviduje a s nimi pracuje."
+      },
+      "support_services": [
+        "Výchovný poradce, školní metodik prevence, 2 kariérové poradkyně, 2 školní psychologové",
+        "Podpora žáků se speciálními vzdělávacími potřebami (79 žáků = 6 %), podpora žáků s odlišným mateřským jazykem",
+        "Mentor pro nadané žáky, adaptační kurz pro 1. ročníky, elektronická schránka důvěry"
+      ],
+      "safety_climate": [
+        "Bezpečné prostředí – škola se odpovídajícím způsobem věnuje prevenci rizik",
+        "Aktivní práce školních psychologů – pravidelně vstupují do tříd v rámci třídnických hodin",
+        "Preventivní program vychází z evaluace a odpovídá aktuálním potřebám; program proti šikanování"
+      ],
+      "partnerships_practice": [
+        "Erasmus+ – zahraniční výjezdy pro rozvoj cizojazyčných dovedností a sociálních kompetencí",
+        "Partnerská škola v Německu – odborné stáže a jazykové zdokonalování",
+        "Mezinárodní program DofE (Cena vévody z Edinburghu) – osobnostní rozvoj, dobrovolnictví, skupinové expedice",
+        "Spolupráce s neziskovými organizacemi a charitativní aktivity"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a věcná, ale místy obsahuje úřednickou terminologii. Hlavní zjištění jsou jasná a podložená konkrétními údaji. Doporučení jsou srozumitelná.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak konkrétně se bude škola věnovat individualizaci výuky – jsou to jen doporučení",
+        "Chybí informace o tom, jak dlouho trvá nová strategie rozvoje a kdy bude hotova",
+        "Není jasné, zda nižší aktivita žáků v diskusích je problém výuky nebo charakteru žáků"
+      ]
+    }
+  }
+}

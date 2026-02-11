@@ -1,0 +1,116 @@
+{
+  "report_id": "SOU_600014461_2023-01-16",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:51:34.734187+00:00",
+  "run_finished_utc": "2026-02-09T16:51:59.842351+00:00",
+  "raw_file": "SOU_600014461_2023-01-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600014461_2023-01-16",
+    "school_profile": {
+      "school_type": "Střední škola gastronomie a obchodu (SOU) - příspěvková organizace",
+      "inspection_period": "16. až 20. ledna 2023",
+      "school_change_summary": "Nový ředitel od srpna 2018, výrazný nárůst počtu žáků (337 žáků v 21 třídách v r. 2022/23), významné zkvalitnění materiálních a prostorových podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava a propojení s praxí",
+          "detail": "Efektivní propojení teoretických poznatků s praktickými činnostmi, zejména u gastronomických oborů, s pracovními stážemi v zahraničí.",
+          "evidence": "Praktické vyučování vedeno na školních pracovištích i u smluvních partnerů s důrazem na reálné pracovní prostředí."
+        },
+        {
+          "tag": "Péče o žáky se speciálními potřebami",
+          "detail": "Kvalitní výuka v praktické škole komplexně podporující osobnostní rozvoj žáků se zdravotním postižením.",
+          "evidence": "Žáci praktické školy dosáhli významných úspěchů v kategorii speciálních škol na krajské úrovni."
+        },
+        {
+          "tag": "Partnerství a spolupráce",
+          "detail": "Dlouhodobá spolupráce se zřizovatelem, místními, regionálními i celorepublikovými organizacemi a zahraničními odborníky.",
+          "evidence": "Intenzivní spolupráce zajišťující rozvoj odborných kompetencí žáků v oblasti gastronomie a hotelového provozu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nekompletní závěry hodin",
+          "detail": "V závěrech vyučovacích hodin chybí efektivní shrnutí obsahu učiva a vzájemné hodnocení žáků.",
+          "evidence": "Ve velké míře v závěrech vyučovacích hodin chybělo efektivní závěrečné zhodnocení plnění cílů."
+        },
+        {
+          "tag": "Omezená diferenciace ve výuce",
+          "detail": "V matematice a přírodovědných předmětech se málo využívá diferenciace náročnosti úkolů.",
+          "evidence": "V malé míře byla využita diferenciace náročnosti zadávaných úkolů spolu s nabídkou možnosti výběru."
+        },
+        {
+          "tag": "Frontální výuka v některých předmětech",
+          "detail": "V češtině, občanské nauce a ekonomice převládá méně efektivní frontální výuka bez dostatečné aktivizace žáků.",
+          "evidence": "Ve vyučovacích hodinách českého jazyka převládala méně přínosná frontální výuka; v občanské nauce převládal málo efektivní výklad."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhají pracovní stáže v zahraničí a jaké jsou podmínky pro jejich absolvování?",
+        "Jakou podporu dostávají žáci se slabším prospěchem - kolik hodin doučování a jak jsou voleny předměty?",
+        "Jak se škola zaměřuje na rozvoj čtenářské gramotnosti a kritického myšlení žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou přípravu a gastronomii s ambicí pracovat v hotelových a restauračních zařízeních",
+        "Žáci se speciálními vzdělávacími potřebami, kterým je věnována individuální péče a citlivý přístup",
+        "Žáci hledající kvalitní odborné vzdělání s propojením teorie a praxe v řemeslných oborech"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující teoretické vzdělání bez praktické složky - škola se zaměřuje primárně na odbornou přípravu",
+        "Žáci s vysokými nároky na samostatnou práci a kritické myšlení - výuka někdy převládá frontální formou",
+        "Žáci potřebující intenzivní jazykovou přípravu - angličtina je silnější, ale není to hlavní zaměření školy"
+      ],
+      "plain_czech_summary": "Střední škola gastronomie a obchodu v Zíně je moderní odborná škola s kvalitní materiálně-technickou vybaveností. Silnou stránkou je propojení teorie s praxí, zejména v gastronomických oborech, a péče o žáky se speciálními potřebami. Škola má dobré výsledky v maturitních zkoušekách a závěrečných zkouškách. Slabší je někdy frontální forma výuky a chybí efektivní shrnutí učiva v závěrech hodin. Škola nabízí pracovní stáže v zahraničí a intenzivní spolupráci s praxí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se tendence v celostátním srovnání",
+        "key_numbers": [
+          "Čtyřleté studium Gastronomie: zpravidla zlepšující se výsledky v srovnání se školami stejného typu",
+          "Nástavbové studium Gastronomie: lepší výsledky než průměr ČR",
+          "Výjimka: školní rok 2019/2020 - mírně horší výsledky v profilové části a cizím jazyce"
+        ],
+        "evidence": "Vedení školy s výsledky maturitních zkoušek systematicky pracovalo, analyzovalo je a přijímalo účinná opatření k jejich zlepšení."
+      },
+      "absence": {
+        "trend": "Systematicky sledována a řešena",
+        "key_numbers": [
+          "Žáci se zvýšenou absencí byli ve škole evidováni",
+          "Poskytována dostatečná podpora formou konzultací a doučování",
+          "Vedení školy a pedagogičtí pracovníci se cíleně zabývali jejich problémy"
+        ],
+        "evidence": "Škola efektivně uplatňovala vlastní strategii, kdy žáci se slabším prospěchem a zvýšenou absencí byli cíleně podporováni."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště se třemi výchovnými poradkyněmi a školní psycholožkou",
+        "Doučování v jednotlivých předmětech a kroužky na podporu matematické gramotnosti",
+        "Spolupráce se školskými poradenskými zařízeními pro žáky se speciálními vzdělávacími potřebami (115 žáků identifikováno)"
+      ],
+      "safety_climate": [
+        "Účinně nastavený systém bezpečnosti a ochrany zdraví žáků",
+        "Pravidelné informace o bezpečnostních rizicích ve škole i mimo ni",
+        "Vhodné osobní ochranné pracovní prostředky při praktickém vyučování",
+        "Důsledné dodržování bezpečnosti a ochrany zdraví při práci žáků"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zřizovatelem (Zlínský kraj) - materiálně-technické zajištění a společné aktivity",
+        "Četné místní, regionální a celorepublikové profesní a sociální organizace",
+        "Spolupráce s českými a zahraničními odborníky z praxe",
+        "Smluvní partneři pro praktické vyučování v gastronomických oborech",
+        "Pracovní stáže v zahraničí pro žáky gastronomických oborů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však dlouhé a složitě strukturované, což mírně snižuje jasnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Přesné počty žáků v jednotlivých oborech nejsou uvedeny - známe jen celkový počet 337 žáků",
+        "Konkrétní procenta úspěšnosti u maturit a závěrečných zkoušek nejsou specifikována - pouze kvalitativní popis",
+        "Detaily o absenci (počet dní, procenta) nejsou v textu uvedeny"
+      ]
+    }
+  }
+}

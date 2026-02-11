@@ -1,0 +1,114 @@
+```json
+{
+  "report_id": "SOU_600016242_2025-03-18",
+  "school_profile": {
+    "school_type": "Střední škola gastronomie, oděvnictví a služeb (SOU) s maturitními obory (Oděvnictví, Gastronomie, Cestovní ruch, Kosmetické služby) a učebními obory (Pekař, Cukrář, Kuchař–číšník, Aranžér, Kadeřník, Operátor skladování)",
+    "inspection_period": "18.–21. března 2025",
+    "school_change_summary": "Od inspekce v roce 2018 přetrvávají problémy s nízkou úspěšností u maturit a vysokou absencí žáků. Pozitivně se rozvíjí partnerství, modernizuje se vybavení a nově působí školní psycholožka."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie a praxe",
+        "detail": "Škola efektivně kombinuje teoretické vyučování s praktickým odborným výcvikem v moderně vybavených pracovištích.",
+        "evidence": "Žáci se učí v reálném pracovním prostředí s moderními technologiemi, což zvyšuje jejich uplatnitelnost na trhu práce."
+      },
+      {
+        "tag": "Zahraniční stáže a projekty",
+        "detail": "Škola nabízí žákům zahraniční odborné stáže v rámci projektu Erasmus+ a aktivně se zapojuje do projektové činnosti.",
+        "evidence": "Stáže v zahraničí zlepšují jazykové znalosti a zvyšují atraktivitu oborů."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola cíleně podporuje rozvoj nadání zapojováním do soutěží a odborných aktivit, včetně organizace nadregionálních soutěží.",
+        "evidence": "Žáci úspěšně reprezentují školu v celostátních soutěžích (cukrářské, barmanské, sportovní, literární)."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká úspěšnost u maturit",
+        "detail": "Výsledky maturitní zkoušky mají kolísavou tendenci; v některých oborech dosahují žáci výrazně vyšší neúspěšnosti než celorepublikový průměr.",
+        "evidence": "Gastronomie 26,3 % neúspěšnosti, Kosmetické služby 42,9 % neúspěšnosti (oproti celorepublikovému průměru)."
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Zvýšená omluvená a neomluvená absence negativně ovlivňuje výsledky vzdělávání; přijatá opatření nejsou dostatečně efektivní.",
+        "evidence": "Problém přetrvává od inspekce v roce 2018 a škola hledá nové formy řešení."
+      },
+      {
+        "tag": "Omezená aktivizace ve výuce",
+        "detail": "Výuka často postrádá skupinové činnosti, práci s různými informačními zdroji a formativní hodnocení, což omezuje rozvoj kritického myšlení.",
+        "evidence": "Převažuje frontální výuka; chybí sebehodnocení a vzájemné hodnocení žáků; nedostatečné motivační shrnutí hodin."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola zavádí na snížení absence žáků a jak se jejich účinnost měří?",
+      "Jak se škola zaměřuje na zlepšení výsledků maturitní zkoušky, zejména v oborech Gastronomie a Kosmetické služby?",
+      "Jaké jsou konkrétní příklady skupinových projektů a práce s různými informačními zdroji v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a odborný výcvik v gastronomii, oděvnictví a službách, kteří se chtějí učit v reálném pracovním prostředí.",
+      "Talentovaní žáci, kterým škola nabízí účast v soutěžích a zahraničních stážích pro rozvoj svých schopností.",
+      "Žáci s individuálními vzdělávacími potřebami, kterým je poskytována podpora školního poradenského pracoviště (výchovná poradkyně, školní psycholožka, metodička prevence)."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní přípravu na maturitní zkoušku – výsledky v některých oborech jsou pod průměrem.",
+      "Žáci se sklonem k absenci – škola má problém s vysokou absencí a dosavadní opatření nejsou dostatečně účinná.",
+      "Žáci preferující samostatnou práci s různými zdroji a kritické myšlení – výuka se zaměřuje spíše na frontální formu a praktické dovednosti."
+    ],
+    "plain_czech_summary": "Střední škola v Frýdku-Místku je moderně vybavená a nabízí kvalitní propojení teorie s praxí. Žáci se učí v reálném pracovním prostředí a mají možnost zahraničních stáží. Silnou stránkou je podpora nadaných žáků a projektová činnost. Hlavní problémy jsou nízká úspěšnost u maturit (zejména v gastronomii a kosmetických službách) a vysoká absence žáků. Výuka by mohla více využívat skupinové činnosti a práci s různými zdroji informací. Škola má kvalitní poradenské služby včetně nové školní psycholožky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá tendence s problémy v některých oborech",
+      "key_numbers": [
+        "Gastronomie: 26,3 % neúspěšnosti (celorepublikový průměr nižší)",
+        "Kosmetické služby: 42,9 % neúspěšnosti (celorepublikový průměr nižší)",
+        "Závěrečná zkouška: 95 % úspěšnost v prvním termínu"
+      ],
+      "evidence": "Výsledky společné části maturitní zkoušky mají kolísavou tendenci; v méně úspěšných obdobích dosahují žáci výrazně vyšší neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Zvýšená absence (omluvená i neomluvená) přetrvávající od roku 2018",
+      "key_numbers": [
+        "Absence negativně ovlivňuje výsledky vzdělávání",
+        "Přijatá opatření nejsou příliš efektivní",
+        "Škola hledá další formy řešení"
+      ],
+      "evidence": "Škola se tímto nepříznivým jevem zabývá a přijímá opatření na minimalizaci, která však nejsou příliš efektivní."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně (kariérové poradenství), školní psycholožka (nově od poslední inspekce), školní metodička prevence",
+      "Doučování a individuální konzultace pro žáky s rizikem neúspěchu",
+      "Adaptační aktivity pro žáky na začátku školního roku",
+      "Systém prevence rizikových projevů chování s pravidelným vyhodnocováním",
+      "Schránka důvěry pro žáky"
+    ],
+    "safety_climate": [
+      "Příznivá pracovní atmosféra v hodnocených vyučovacích hodinách",
+      "Žáci dodržují pravidla komunikace, respektují postupy práce, bez problému se dotazují",
+      "Vedení školy má nastavena systémová pravidla pro dialog se žáky, zákonnými zástupci a pracovníky",
+      "Kladně hodnoceno pravidelné využívání adaptačních aktivit",
+      "Zaměření na vytváření pozitivního vztahu žáků k životnímu prostředí"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem (Moravskoslezský kraj) na modernizaci vybavení",
+      "Projekt Erasmus+ – zahraniční odborné stáže pro žáky",
+      "Partnerství s vysokými školami a vzdělávacími institucemi",
+      "Spolupráce s místními základními školami na environmentálních tématech",
+      "Spolupráce s dalšími středními odbornými školami na regionálních soutěžích",
+      "Zapojování odborníků z praxe do výuky prostřednictvím profesních kurzů",
+      "Organizace nadregionální cukrářské soutěže"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však více úřednické (zejména v části o řízení a kontrole), ale pro rodiče jsou nejdůležitější informace dostupné a pochopitelné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje přesné počty žáků s absencí nebo jejich podíl na celkovém počtu 567 žáků.",
+      "Není jasné, jaké konkrétní opatření škola dosud vyzkoušela na snížení absence a proč nebyla efektivní.",
+      "Chybí informace o tom, kolik procent žáků se účastní doučování nebo individuálních konzultací."
+    ]
+  }
+}
+```

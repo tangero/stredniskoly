@@ -61,6 +61,10 @@ type SearchResponse = {
     hasNext: boolean;
     hasPrev: boolean;
   };
+  nearMiss: {
+    count: number;
+    extraMinutes: number;
+  } | null;
   legends: {
     admissionThresholds: {
       veryLowMax: number;
@@ -472,7 +476,7 @@ export function DostupnostClient() {
               <li>Dijkstra routing na celostátním GTFS grafu (35 000+ zastávek)</li>
               <li>Zahrnujeme čekání na spoj (headway/2 z ranního profilu Po 7-8h)</li>
               <li>Přestupní penalizace 2 min za každý přestup</li>
-              <li>Chůze ke škole max 1,5 km rychlostí 5 km/h</li>
+              <li>Chůze ke škole max 1,5 km rychlostí 4 km/h (+ koeficient 1,3× pro reálnou trasu)</li>
               <li>Slouží jako odhad, ne přesný jízdní řád</li>
             </ul>
           </div>
@@ -784,6 +788,46 @@ export function DostupnostClient() {
               );
             })}
           </div>
+
+          {/* Near Miss Info */}
+          {result.nearMiss && result.nearMiss.count > 0 && (
+            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-4 md:p-5">
+              <div className="flex items-center justify-between gap-4 flex-wrap">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl shrink-0">⏰</span>
+                  <div className="min-w-0">
+                    <p className="font-semibold text-blue-900">
+                      Našli jsme ještě {result.nearMiss.count} {result.nearMiss.count === 1 ? 'školu' : result.nearMiss.count <= 4 ? 'školy' : 'škol'}
+                    </p>
+                    <p className="text-sm text-blue-700">
+                      V dojezdovém čase +{result.nearMiss.extraMinutes} minut (celkem {maxMinutes + result.nearMiss.extraMinutes} minut)
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const newMaxMinutes = maxMinutes + result.nearMiss!.extraMinutes;
+                    setMaxMinutes(newMaxMinutes);
+                    setMaxMinutesInput(String(newMaxMinutes));
+                    if (lastSearch) {
+                      runSearch({
+                        stopId: lastSearch.stopId,
+                        maxMinutes: newMaxMinutes,
+                        typFilter: lastSearch.typFilter,
+                        page: 1,
+                        clearSelection: false,
+                      });
+                    }
+                  }}
+                  disabled={loading}
+                  className="px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium shrink-0"
+                >
+                  Zobrazit
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* Pagination */}
           {result.pagination.totalPages > 1 && (

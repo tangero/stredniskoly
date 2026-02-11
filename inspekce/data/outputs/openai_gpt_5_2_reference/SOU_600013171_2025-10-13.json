@@ -1,0 +1,108 @@
+{
+  "report_id": "SOU_600013171_2025-10-13",
+  "model_id": "openai_gpt_5_2_reference",
+  "run_started_utc": "2026-02-09T11:33:05.507875+00:00",
+  "run_finished_utc": "2026-02-09T11:33:46.440643+00:00",
+  "raw_file": "SOU_600013171_2025-10-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600013171_2025-10-13",
+    "school_profile": {
+      "school_type": "SOU (učební obory i nástavby s maturitou)",
+      "inspection_period": "2025-10-13 až 2025-10-17 (na místě 13.–15. 10. 2025)",
+      "school_change_summary": "Škola má „výrazný nárůst počtu žáků“, pozastavila „činnost školní jídelny-výdejny“ a v teorii přetrvává „menší pestrost metod“ i „nedostatečná práce se vzdělávacím cílem“."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe u firem a reálné zkušenosti",
+          "detail": "Žáci mají silnou praxi díky partnerům a část z nich může jet i na zahraniční stáž.",
+          "evidence": "„spolupráce školy s podnikatelskými subjekty umožňující realizaci praxe“; „příležitost zúčastnit se zahraniční stáže“"
+        },
+        {
+          "tag": "Dobrá docházka v teorii a rychlé řešení problémů",
+          "detail": "V teoretické výuce je docházka popsaná jako dobrá a rizikové situace se daří řešit včas.",
+          "evidence": "„absence žáků v teoretické výuce nízká, neomluvená jen ojedinělá“; „daří včas zachytit a úspěšně řešit“"
+        },
+        {
+          "tag": "Domov mládeže s podporou učení",
+          "detail": "Domov mládeže má podle inspekce přátelské klima a vychovatelé žáky podporují v učení.",
+          "evidence": "„vytvářeno pozitivní přátelské klima“; „vychovatelé zajišťují podporu žáků k učení“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Teorie často málo aktivní a bez práce s cílem",
+          "detail": "V mnoha hodinách převažuje pasivní výuka a chybí práce s cílem i závěrečná zpětná vazba.",
+          "evidence": "„převažovala frontální forma“; „téměř vždy chybělo formativní hodnocení“; „absence reflexe v závěru hodin“"
+        },
+        {
+          "tag": "Nekvalifikovaní/nezkušení učitelé a metodické chyby",
+          "detail": "Škola zmiňuje potíže se sháněním kvalifikovaných učitelů a u části výuky byly i odborné chyby.",
+          "evidence": "„daří najít kvalifikované učitele jen na některé předměty“; „občas byly zaznamenány i odborné chyby“"
+        },
+        {
+          "tag": "Záškoláctví v praktické výuce",
+          "detail": "V praxi přetrvává problém s neomluvenou absencí, i když v teorii je situace lepší.",
+          "evidence": "„v praktické výuce… záškoláctví spojené s neomluvenou absencí stále přetrvává“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola konkrétně zlepší výuku, když inspekce píše „převažovala frontální forma“ a chybí „formativní hodnocení“?",
+        "Jak bude škola řešit kvalitu výuky u učitelů, když „daří najít kvalifikované učitele jen na některé předměty“?",
+        "Jaké jsou pravidla a podpora pro docházku na praxi, když v ní „záškoláctví… stále přetrvává“?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří chtějí hodně praxe ve firmách („umožňující realizaci praxe“).",
+        "Pro dojíždějící, kteří ocení ubytování a zázemí DM („domov mládeže… poskytuje ubytování“).",
+        "Pro žáky směřující do gastronomie/řemesel, kteří chtějí učit se v reálném provozu („získání… dovedností z reálného pracovního prostředí“)."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří potřebují velmi aktivní, pestrou výuku (inspekce uvádí „menší pestrost metod“).",
+        "Pro nadanější nebo rychlejší žáky, kteří potřebují diferenciaci (byla „minimální individualizace a diferenciace“).",
+        "Pro žáky se slabší disciplínou v praxi, protože tam „záškoláctví… stále přetrvává“."
+      ],
+      "plain_czech_summary": "Škola stojí silně na praxi: inspekce vyzdvihuje „spolupráci… umožňující realizaci praxe“ a někde i „zahraniční stáže“. V teoretické výuce ale často převládá „frontální forma“ a chybí práce s cílem i závěrečné vyhodnocení („téměř vždy chybělo formativní hodnocení“). V teorii je docházka „nízká“ a neomluvená jen „ojedinělá“, v praktické výuce však „záškoláctví… stále přetrvává“. Domov mládeže má „pozitivní přátelské klima“ a podporu k učení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Trend není v textu popsán, uveden je poslední rok.",
+        "key_numbers": [
+          "Maturita: 15 konalo, 2 neuspěli",
+          "Závěrečná zkouška: 58 konalo, 1 neuspěl"
+        ],
+        "evidence": "„Maturitní zkoušku vykonalo 15 žáků, z nich dva neuspěli… u závěrečných zkoušek neuspěl pouze jeden žák z 58.“"
+      },
+      "absence": {
+        "trend": "Nízká v teorii, problém přetrvává v praxi.",
+        "key_numbers": [],
+        "evidence": "„absence žáků v teoretické výuce nízká… Nicméně v praktické výuce… záškoláctví… stále přetrvává“"
+      },
+      "support_services": [
+        "Poradenství zajišťuje výchovná poradkyně a metodička prevence („absolvovaly specializační studium“).",
+        "Kariérová poradkyně doplňuje kvalifikaci („si specializaci doplňuje“).",
+        "Evidují SVP a spolupracují („evidenci žáků diagnostikovaných se speciálními vzdělávacími potřebami“)."
+      ],
+      "safety_climate": [
+        "V teorii byla „klidná pracovní atmosféra“ a žáci dodržovali pravidla („odkládání mobilních telefonů“).",
+        "Prevence je vyhodnocovaná a řešení situací včasné („daří včas zachytit a úspěšně řešit“).",
+        "Domov mládeže má „pozitivní přátelské klima“ a podporu k učení."
+      ],
+      "partnerships_practice": [
+        "Praxe u partnerů je hlavní silná stránka („spolupráce… umožňující realizaci praxe“).",
+        "Praxe probíhá i na pracovištích smluvních partnerů („sledován… na pracovištích smluvních partnerů“).",
+        "Některé obory mají možnost zahraniční stáže („příležitost zúčastnit se zahraniční stáže“)."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Shrnul jsem hlavně dopady na výuku, praxi, docházku a podporu žáků a každé tvrzení opřel o citaci.",
+      "uncertainty_notes": [
+        "Konec období inspekce je v metadatech 17. 10., ale „inspekční činnost na místě“ je 13.–15. 10. 2025.",
+        "U absence nejsou čísla, jen popis („nízká“ vs. „stále přetrvává“).",
+        "U maturity a ZZ není uveden vývoj v čase, pouze poslední rok."
+      ]
+    }
+  }
+}

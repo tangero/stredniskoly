@@ -1,0 +1,101 @@
+{
+  "report_id": "LYC_600008193_2021-10-11",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola, Střední průmyslová škola automobilní a technická s domovem mládeže",
+    "inspection_period": "11. 10. 2021 − 15. 10. 2021",
+    "school_change_summary": "Škola prochází modernizací zázemí, rozšířila kapacitu domova mládeže a nabídla nový obor vyššího odborného studia."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a uplatnění",
+        "detail": "Škola intenzivně spolupracuje s firmami a připravuje žáky na reálný trh práce.",
+        "evidence": "Intenzivní spolupráce se smluvními partnery... podílí se na kvalitní přípravě žáků a studentů na budoucí povolání."
+      },
+      {
+        "tag": "Vybavení školy",
+        "detail": "Žáci mají k dispozici moderní technologie pro odbornou výuku.",
+        "evidence": "Nadstandardní materiálně-technické zázemí pro praktickou výuku výrazně podporuje kvalitu vzdělávání."
+      },
+      {
+        "tag": "Úspěšnost maturantů",
+        "detail": "Maturitní zkoušky dopadají lépe než v jiných podobných školách.",
+        "evidence": "V posledních dvou letech se zvýšila celková úspěšnost žáků... v celorepublikovém srovnání dosáhla škola vyšší úspěšnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Ve škole převažuje frontální výuka, která některé žáky nudí.",
+        "evidence": "Ve většině sledovaných hodin převažovala frontální výuka... často neposkytoval žákům dostatečný prostor pro jejich aktivitu."
+      },
+      {
+        "tag": "Absence a prospěch",
+        "detail": "Škola má problém efektivně řešit vysokou absenci a neúspěšnost žáků.",
+        "evidence": "Méně jsou analyzovány příčiny vysoké a neomluvené absence... nedůsledné uplatňování nastavených pravidel."
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Učitelé ne vždy dokáží podpořit nadané žáky nebo ty s potřebami navíc.",
+        "evidence": "Podpora žáků se speciálními vzdělávacími potřebami a nadaných žáků... diferencovaným zadáváním úkolů však nebyla vždy patrná."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé ve výuce zajišťují, aby se žáci nenudili a byli aktivní?",
+      "Jak škola reaguje na neomluvenou absenci a jak rodičům pomáhá ji řešit?",
+      "Jaké konkrétní firmy umožňují žákům praxi a jak často na ni jezdí?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří se chtějí učit řemeslo a chtějí mít jistou práci v oboru.",
+      "Pro studenty, kteří oceňují moderní vybavení dílen a přístrojů.",
+      "Pro ty, kdo chtějí pokračovat na VOŠ a získat titul bakaláře ve zkráceném čase."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří potřebují silnou individuální motivaci a pestrou výuku.",
+      "Pro rodiče, kteří řeší problémy s docházkou dětí do školy.",
+      "Pro studenty, kteří očekávají důraz na rozvoj kritického myšlení v teoretických předmětech."
+    ],
+    "plain_czech_summary": "Škola je skvělou volbou pro získání technického řemesla a praktických zkušeností v moderních dílnách. Díky silnému napojení na firmy mají absolventi výborné uplatnění a maturitní výsledky nadprůměrné. Slabinou je tradiční styl teoretické výuky, který může vést k pasivitě žáků, a nedůsledné řešení absence. Pro ambiciózní studenty je výhodou možnost navazujícího studia na VOŠ přímo ve škole."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Vyšší úspěšnost než celorepublikový průměr",
+        "Zvýšená úspěšnost v posledních dvou letech"
+      ],
+      "evidence": "V posledních dvou letech se zvýšila celková úspěšnost žáků školy při ukončování vzdělávání státní maturitní zkouškou."
+    },
+    "absence": {
+      "trend": "Problematická",
+      "key_numbers": [
+        "Vysoká neomluvená absence",
+        "Nedůsledné uplatňování pravidel"
+      ],
+      "evidence": "Méně jsou analyzovány příčiny vysoké a neomluvené absence žáků. Řešení tohoto problému rovněž negativně ovlivňuje nedůsledné uplatňování nastavených pravidel."
+    },
+    "support_services": [
+      "Tým tří výchovných poradců a čtyř metodiků prevence",
+      "Spolupráce s poradenskými zařízeními pro žáky se SVP",
+      "Možnost ubytování v domově mládeže s kapacitou 95 míst"
+    ],
+    "safety_climate": [
+      "Funkční pravidla bezpečnosti a ochrany zdraví",
+      "Příjemná a vstřícná pracovní atmosféra ve sledovaných hodinách",
+      "Úspěšná prevence rizikového chování ve škole"
+    ],
+    "partnerships_practice": [
+      "Intenzivní spolupráce s regionálními i nadregionálními firmami",
+      "Praxe v reálném prostředí firem včetně zahraničních",
+      "Uznání předmětů pro bakalářské studium na VŠ"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozdělený a poskytuje konkrétní důkazy. Odborné termíny jsou vysvětleny kontextem.",
+    "uncertainty_notes": [
+      "Chybí přesné procento úspěšnosti u maturity, pouze srovnání s průměrem.",
+      "Není uveden konkrétní počet neomluvených hodin, pouze obecná zmínka o problému."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "report_id": "LYC_651040060_2021-06-10",
+  "school_profile": {
+    "school_type": "Soukromá školská právnická osoba (mateřská, základní i střední škola).",
+    "inspection_period": "10. 6. 2021 − 11. 6. 2021 a 14. 6. 2021 – 15. 6. 2021",
+    "school_change_summary": "Škola od září 2020 otevřela střední školu (obor Kombinované lyceum), zvětšila se a zrekonstruovala areál."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazyky a cizinci",
+        "detail": "Škola intenzivně využívá rodilé mluvčí pro výuku angličtiny napříč všemi stupni.",
+        "evidence": "Vysoká míra zapojení rodilých mluvčích... umožňuje efektivní rozvoj jejich jazykových i multikulturních kompetencí."
+      },
+      {
+        "tag": "Výukové metody",
+        "detail": "Výuka je vedena moderně, klade důraz na kritické myšlení a aktivní zapojení žáků.",
+        "evidence": "Využívání účinných vzdělávacích strategií umožňuje aktivní zapojení všech žáků... rozvíjí kritické myšlení."
+      },
+      {
+        "tag": "Klima a komunita",
+        "detail": "Ve škole panuje pozitivní, partnerské klima a silné společenství.",
+        "evidence": "Vedení školy klade velký důraz na utváření pozitivního školního klimata... Dvakrát ročně jsou umožněny návštěvy rodičů ve výuce."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Systém kontroly",
+        "detail": "Vedení školy má nedostatečně nastavený systém kontrol a hospitací.",
+        "evidence": "Kontrolní systém nastavený vedením školy není plně funkční... dílčí nedostatky byly zjištěny např. v implementaci legislativních požadavků."
+      },
+      {
+        "tag": "Zpětná vazba (SŠ)",
+        "detail": "Na střední škole chybí kvalitní zpětná vazba pro žáky o jejich učení.",
+        "evidence": "Dílčím nedostatkem výuky ve střední škole byla nižší míra poskytování zpětné vazby pro další učení žáků."
+      },
+      {
+        "tag": "Zahrada (MŠ)",
+        "detail": "Děti v mateřské škole tráví neoprávněně málo času venku.",
+        "evidence": "Délka pobytu venku je však neopodstatněně zkracována. Pedagogové plnohodnotně nevyužívají potenciál... školní zahrady."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola zajišťuje, aby i na nové střední škole dostávali studenti kvalitní zpětnou vazbu?",
+      "Jakým způsobem škola kontroluje kvalitu výuky u všech pedagogů, nejen u začátečníků?",
+      "Využívá škola učebny v přírodě nebo jak kompenzuje kratší pobyt dětí venku?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří chtějí dosáhnout vysoké úrovně angličtiny díky intenzivnímu kontaktu s rodilými mluvčími.",
+      "Pro rodiče hledající školu s rodinnou atmosférou a důrazem na pozitivní vztahy.",
+      "Pro studenty, kteří preferují aktivní výuku, práci v týmu a kritické myšlení nad memorováním."
+    ],
+    "who_should_be_cautious": [
+      "Pro rodiče, kteří vyžadují detailní pedagogickou diagnostiku pokroků dítěte v předškolním věku.",
+      "Pokud vám záleží na tom, aby škola měla dlouhodobě prověřené fungování středního stupně (SŠ je nová).",
+      "Pro rodiče, pro které je prioritou dlouhý pobyt dětí v mateřské škole venku každý den."
+    ],
+    "plain_czech_summary": "Monty School je soukromé zařízení s rodinnou atmosférou, které klade obrovský důraz na výuku angličtiny za pomoci rodilých mluvčích. Výuka je moderní, žáci jsou vedeni k samostatnosti a kritickému myšlení, což se odráží v jejich dobrých výsledcích. Škola nedávno otevřela střední školu (lyceum), kde však inspekce zaznamenala slabší zpětnou vazbu pro studenty. Slabším místem je také systém kontroly kvality vedením a v mateřské škole kratší pobyt venku. Celkově jde o školu s nadstandardním vybavením a silným společenstvím."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "N/A (škola teprve otevřela 1. ročník)",
+      "key_numbers": [
+        "Obor 78-42-M/06 Kombinované lyceum",
+        "Zahájení činnosti SŠ: 1. 9. 2020",
+        "10 žáků v 1. ročníku"
+      ],
+      "evidence": "Střední škola zahájila svou činnost ve školním roce 2020/2021 otevřením prvního ročníku."
+    },
+    "absence": {
+      "trend": "Neuvedeno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní data o absence ani její trendu."
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště (kariérové poradenství, SVP).",
+      "Spolupráce s Mensou ČR na identifikaci nadaných žáků.",
+      "Individuální logopedie a doučování formou „dokončovacích hodin“."
+    ],
+    "safety_climate": [
+      "Vstřícný a empatický přístup pedagogů, vzájemná tolerance.",
+      "Funkční systém primární prevence a krizový plán.",
+      "Minimalizace negativních projevů chování žáků."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s VŠB-TU Ostrava (program Zlepši si techniku).",
+      "Zapojení do programu „Cena vévody z Edinburghu“.",
+      "Spolupráce s rodiči na zajištění praxí pro studenty SŠ."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a pojmy jako 'hospitace' nebo 'individuální vzdělávací plán' jsou vysvětlovány kontextem.",
+    "uncertainty_notes": [
+      "Chybí informace o výsledcích maturity (škola je nová).",
+      "Nejsou uvedena konkrétní čísla o absence žáků.",
+      "Není jasné, jak konkrétně probíhá „dokončovací hodina“ (frekvence, rozsah)."
+    ]
+  }
+}

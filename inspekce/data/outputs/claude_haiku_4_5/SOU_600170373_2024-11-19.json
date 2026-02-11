@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600170373_2024-11-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:09:13.892437+00:00",
+  "run_finished_utc": "2026-02-09T16:09:40.422564+00:00",
+  "raw_file": "SOU_600170373_2024-11-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600170373_2024-11-19",
+    "school_profile": {
+      "school_type": "Střední škola s obory zakončenými maturitní zkouškou (Mechanik elektrotechnik, Obchodník) a výučním listem (Elektromechanik, Železničář, Prodavač), včetně domova mládeže",
+      "inspection_period": "19. listopadu 2024 až 21. listopadu 2024",
+      "school_change_summary": "Škola optimalizovala skladbu oborů, zvýšila počet žáků, modernizovala vybavení dílen a učeben, rozšířila školní poradenské pracoviště a počet spolupracujících firem. Vedení se věnuje profesnímu rozvoji pedagogů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Domov mládeže a volný čas",
+          "detail": "Pestrá nabídka zájmových aktivit v domově mládeže umožňuje smysluplné trávení volného času a efektivně předchází sociálně patologickým jevům.",
+          "evidence": "Domov mládeže nabízí oborově a sportovně zaměřené aktivity, čtenářský kroužek, filmové večery a dostatek osobního volna."
+        },
+        {
+          "tag": "Praktická příprava a spolupráce s praxí",
+          "detail": "Odborný výcvik efektivně propojuje teorii s praxí a vede žáky k samostatnosti a řešení pracovních problémů.",
+          "evidence": "Výcvik probíhá ve školních dílnách i u smluvních partnerů, žáci získávají praktické dovednosti a pracovní návyky."
+        },
+        {
+          "tag": "Výsledky maturit a uplatnění",
+          "detail": "Výsledky žáků v maturitní zkoušce jsou srovnatelné s celorepublikovým průměrem, většina absolventů se uplatňuje v praxi.",
+          "evidence": "V roce 2024 z dvaceti žáků jeden nekonal zkoušku a jeden neuspěl; absolventi se uplatňují přímo v praxi nebo pokračují na vysoké škole."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence a předčasné odchody",
+          "detail": "Zejména v prvním a druhém ročníku se vyskytují případy vysoké či neomluvené absence, která vede k nezvládnutí učiva a předčasným odchodům ze školy.",
+          "evidence": "Škola uvádí, že efektivním opatřením v těchto případech není ani změna oboru nebo opakování ročníku; školní strategie je málo účinná."
+        },
+        {
+          "tag": "Slabá podpora žáků v obtížích",
+          "detail": "Plány pedagogické podpory se nezpracovávají, individuální vzdělávací plány mají spíše formální charakter, doučování probíhá jen na individuální bázi.",
+          "evidence": "Inspekce doporučuje zkvalitnit práci poradenského pracoviště a zajistit cílené, pravidelné doučování s informováním rodičů."
+        },
+        {
+          "tag": "Pasivní metody výuky",
+          "detail": "Převládá frontální výuka s aktivitou především na straně učitele, chybí metody k aktivizaci žáků a rozvoji jejich spolupráce.",
+          "evidence": "Inspekce zjistila, že zřídka jsou zařazovány kooperativní činnosti, žáci nejsou vedeni k vyhledávání informací a kritickému myšlení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a co nabízí rodičům, jejichž dítě má problémy s docházkou?",
+        "Jaké jsou možnosti doučování a jak se o nich dozvídají rodiče a žáci?",
+        "Jak se škola připravuje na zavedení aktivnějších metod výuky a kdy by měly být vidět změny?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktické obory (elektrotechnika, železniční doprava, obchod) a schopností samostatné práce",
+        "Žáci, kteří potřebují strukturovaný domov mládeže s pestrými aktivitami a dohledem",
+        "Žáci, kteří se chtějí rychle uplalit v praxi nebo získat kvalifikaci s možností pokračování v maturitě"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabší vnitřní motivací k učení a tendencí k absenci – škola má málo účinné strategie pro jejich podporu",
+        "Žáci, kteří potřebují individuální přístup a aktivní vyučování – převládá zde frontální výuka",
+        "Žáci se speciálními vzdělávacími potřebami – jejich individuální plány mají spíše formální charakter"
+      ],
+      "plain_czech_summary": "Střední škola v Českých Velenicích nabízí kvalitní praktickou přípravu v oborech elektrotechnika, železniční dopravy a obchodu. Silnou stránkou je domov mládeže s pestrými aktivitami a efektivní propojení teorie s praxí. Výsledky maturit jsou dobré. Slabinou je vysoká absence některých žáků, kterým škola nedokáže dostatečně pomoci, a pasivní metody výuky. Rodiče by měli vědět, že škola pracuje na zlepšení, ale změny budou trvat čas."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – hrubá neúspěšnost se v uplynulých letech snížila",
+        "key_numbers": [
+          "Rok 2024: z 20 žáků 1 nekonal zkoušku, 1 neuspěl",
+          "Výsledky srovnatelné s celorepublikovým průměrem pro danou skupinu oborů"
+        ],
+        "evidence": "Inspekce konstatuje, že výsledky žáků ve srovnání s danou skupinou oborů za celou Českou republiku jsou srovnatelné."
+      },
+      "absence": {
+        "trend": "Negativní – přetrvávající problém zejména v 1. a 2. ročníku",
+        "key_numbers": [
+          "Vysoká či neomluvená absence vede k nezvládnutí učiva",
+          "Absence způsobuje předčasné odchody ze vzdělávání"
+        ],
+        "evidence": "Inspekce uvádí: 'Nadále však nastávají případy zejména v prvním a druhém ročníku, kdy žáci kvůli vysoké či neomluvené absenci nezvládají učivo.'"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní a metodičkou prevence",
+        "Doučování v hlavních teoretických předmětech na individuální bázi",
+        "Čtenářský kroužek a filmové večery zaměřené na podporu čtenářské gramotnosti",
+        "Přípravné kurzy k odborné zkoušce (Signalista, Výpravčí)"
+      ],
+      "safety_climate": [
+        "Výuka probíhala v příjemné klidné atmosféře s důvěrou a vzájemným respektem mezi všemi aktéry",
+        "Prevence rizikového chování je prioritou školy, zjištěné problémy jsou řešeny bez odkladu",
+        "Úzká spolupráce vychovatelů domova mládeže s třídními učiteli přispívá k prevenci rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s mnoha externími partnery v dopravě a strojírenství",
+        "Odborný výcvik probíhá u smluvních partnerů",
+        "Stipendijní pobídky partnerských subjektů motivují žáky",
+        "Ústní část závěrečné zkoušky se účastní odborník z praxe"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Slabiny jsou jasně identifikovány (absence, pasivní výuka, slabá podpora žáků). Silné stránky jsou dobře zdokumentovány. Některé pasáže jsou více odborné, ale pro rodiče jsou klíčové informace dostupné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje přesný počet žáků, kteří školu opustili kvůli absenci – údaj je kvalitativní",
+        "Není jasné, kolik procent žáků využívá doučování a jak je o něm informováno",
+        "Konkrétní plán na zavedení aktivnějších metod výuky není v textu uveden, pouze doporučení inspekce"
+      ]
+    }
+  }
+}

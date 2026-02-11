@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600014291_2024-03-18",
+  "school_profile": {
+    "school_type": "Střední škola polytechnická (dříve SOŠ a SOU) s domovem mládeže a jídelnou",
+    "inspection_period": "18. března až 21. března 2024",
+    "school_change_summary": "Škola změnila název 1. 9. 2023. Vzdělává 302 žáků v 7 oborech (2 maturitní, 5 učebních). Zlepšily se materiální podmínky, vybudováno Malířské centrum a další odborné učebny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství s firmami",
+        "detail": "Škola má silné vazby na profesní partnery, kteří poskytují praktickou výuku v reálných podmínkách a finančně podporují vybavení.",
+        "evidence": "Praktické vyučování v reálných podmínkách firem umožňuje žákům získat praktické odborné zkušenosti."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola aktivně získává prostředky na modernizaci a vybudování kvalitních výukových prostor, zejména pro praktickou výuku.",
+        "evidence": "Aktivní přístup vedení k získávání finančních prostředků z mimorozpočtových zdrojů má pozitivní dopad na modernizaci materiálového vybavení."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "V odborném výcviku jsou vytvářeny optimální podmínky pro rozvoj dovedností nadaných žáků.",
+        "evidence": "Školou uplatňovaná podpora nadaných žáků v odborném výcviku vytváří optimální podmínky pro úspěšný rozvoj jejich odborných dovedností."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence v IT oboru",
+        "detail": "Obor Informační technologie má výrazně vyšší absenci (83-104 hodin za pololetí) a horší výsledky u maturity (33,3 % neúspěšnosti).",
+        "evidence": "Absence v IT oboru byla téměř 83 hodin na žáka v 1. ročníku, ve 2. ročníku až 104 hodin za první pololetí."
+      },
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Ve větší části teoretických hodin chybí přizpůsobení výuky individuálním potřebám a nadání jednotlivých žáků.",
+        "evidence": "Ve větší části sledovaných teoretických hodin nebyla pozorována diferenciace vzdělávacích cílů s ohledem na individuální potřeby a nadání."
+      },
+      {
+        "tag": "Absence školního psychologa",
+        "detail": "Škola nemá školního psychologa, což je problém vzhledem k vyššímu počtu žáků s náročným chováním.",
+        "evidence": "Vzhledem k vyššímu počtu žáků s náročným chováním by pro práci školního poradenského pracoviště bylo přínosné zajištění pozice školního psychologa."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci v oboru Informační technologie a jaké má plány na zlepšení?",
+      "Jaké jsou plány na zřízení pozice školního psychologa a kdy by mohla být obsazena?",
+      "Jak se škola zaměřuje na individualizaci výuky v teoretických předmětech, zejména pro žáky s různými schopnostmi?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické obory (Malíř a lakýrník, Elektrikář, Strojní mechanik, Instalatér, Zedník) – zde škola dosahuje velmi dobrých výsledků",
+      "Žáci, kteří se chtějí zapojit do soutěží a projektů – škola nabízí bohatou nabídku",
+      "Žáci z jiných regionů – domov mládeže poskytuje kvalitní ubytování s podporou vzdělávání"
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o obor Informační technologie – vysoká absence a 33,3 % neúspěšnost u maturity naznačují, že obor je náročný a vyžaduje vysokou motivaci",
+      "Žáci s chováním vyžadujícím psychologickou podporu – absence školního psychologa může být limitující",
+      "Žáci, kteří potřebují individualizovaný přístup v teoretických předmětech – inspekce zjistila nedostatky v diferenciaci výuky"
+    ],
+    "plain_czech_summary": "Střední škola polytechnická Hustopeče je moderní školou s dobrým vybavením a silnými vazbami na firmy. Praktická výuka je na vysoké úrovni, zejména v oborech jako Malíř a lakýrník. Škola má kvalitní poradenské služby a domov mládeže. Slabinou je nedostatečná individualizace teoretické výuky a vysoká absence v IT oboru. Obor Informační technologie má 33 % neúspěšnost u maturity. Chybí školní psycholog. Škola je vhodná pro žáky zaměřené na praktické obory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – IT obor se zhoršuje, Veřejnosprávní činnost se zhoršila v roce 2023",
+      "key_numbers": [
+        "IT obor: 33,3 % hrubá neúspěšnost v roce 2023",
+        "Veřejnosprávní činnost: 22,2 % hrubá neúspěšnost v roce 2023 (vzrost z 0 %)",
+        "Závěrečné zkoušky: 0–3 % hrubá neúspěšnost, stabilní výsledky"
+      ],
+      "evidence": "Nejvyšší hrubou neúspěšnost vykázali žáci oboru Informační technologie (33,3 %). V oboru Veřejnosprávní činnost hrubá neúspěšnost v roce 2023 vzrostla z 0 % na 22,2 %."
+    },
+    "absence": {
+      "trend": "Vysoká a problematická, zejména v IT oboru",
+      "key_numbers": [
+        "Maturitní obory: 88 hodin/žáka (2022/23), zlepšení o 3 hodiny (2023/24)",
+        "Učební obory: 97 hodin/žáka (2022/23), zlepšení o 3 hodiny (2023/24)",
+        "IT obor 1. ročník: 83 hodin/žáka za pololetí; 2. ročník: 104 hodin/žáka"
+      ],
+      "evidence": "Absence žáků školy je v některých třídách a oborech vzdělání vyšší. Ve druhém pololetí 2022/23 činila průměrně 88 hodin na žáka maturitního oboru a 97 hodin na žáka učebního oboru."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se výchovnou poradkyní a školní metodičkou prevence",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+      "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+      "Adaptační kurz pro první ročníky, schránka důvěry"
+    ],
+    "safety_climate": [
+      "Prevence rizikového chování je vnímána jako nezbytná pro zdravé klima školy",
+      "Školní metodička prevence zajišťuje prostupnost informací mezi školou a domovem mládeže",
+      "Řešení problematického chování prostřednictvím tzv. pedagogické trojky se osvědčilo",
+      "Domov mládeže má efektivní systém předávání informací a včasného reagování na potřeby"
+    ],
+    "partnerships_practice": [
+      "Smluvní partneři poskytují praktickou výuku v reálných podmínkách firem",
+      "Firmy poskytují finanční prostředky na materiál a specializované pomůcky",
+      "Aktivní partnerství s rakouskou střední školou",
+      "Workshopy a přehlídky pořádané ve spolupráci se soukromými společnostmi",
+      "Průběžné přezkoušení žáků z tematických celků v průběhu odborného výcviku u partnerů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však dlouhé a složitě strukturované. Klíčové informace pro rodiče jsou rozptýleny v textu.",
+    "uncertainty_notes": [
+      "Není jasné, zda se absence v IT oboru týká všech žáků nebo jen některých – text naznačuje, že konkrétní žáci zvyšují absenci tříd",
+      "Není specifikováno, jaké konkrétní opatření škola plánuje na zlepšení diferenciace výuky",
+      "Chybí informace o tom, jak dlouho trvá, než se zlepšení v absenci projeví na výsledcích maturity"
+    ]
+  }
+}
+```

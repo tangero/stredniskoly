@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600020398_2025-03-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:41:46.303897+00:00",
+  "run_finished_utc": "2026-02-09T13:42:09.467646+00:00",
+  "raw_file": "LYC_600020398_2025-03-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600020398_2025-03-17",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola a Vyšší odborná škola",
+      "inspection_period": "17. března až 28. března 2025",
+      "school_change_summary": "Od 1. 7. 2023 sloučení dvou škol. Od školního roku 2023/2024 vzdělávání na dvou pracovištích (Masarykova a Tyršova). Celkem 1030 žáků ve 38 třídách, 9 studentů VOŠ."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "Žáci dosahují nadprůměrných výsledků v celorepublikovém srovnění, zejména v technických oborech.",
+          "evidence": "V oborové skupině ST1 nižší neúspěšnost (0,3 %) než celorepublikový průměr (2,3 %)."
+        },
+        {
+          "tag": "Moderní vybavení a technologie",
+          "detail": "Škola má nejnovější technologie, robotické vybavení, lasery a speciální učebny.",
+          "evidence": "Vícezdrojové financování umožňuje kvalitní realizaci vzdělávacích programů a modernizaci obou pracovišť."
+        },
+        {
+          "tag": "Nízká absence žáků",
+          "detail": "Žáci mají jednu z nejnižších absencí v regionu.",
+          "evidence": "Průměrně 47 hodin zameškaných za rok (2022/2023), podprůměrná i po sloučení."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita v některých hodinách",
+          "detail": "V části teoretických hodin chybí aktivní zapojení žáků a zpětná vazba.",
+          "evidence": "Předávání hotových poznatků s méně pestrými metodami vedlo k nerovnoměrnému zapojení žáků."
+        },
+        {
+          "tag": "Nízký zájem o vyšší odborné studium",
+          "detail": "Přetrvává nízký zájem uchazečů o kombinované studium ve VOŠ.",
+          "evidence": "I přes vysokou míru uplatnitelnosti absolventů na trhu práce přetrvává od roku 2019 nízký zájem."
+        },
+        {
+          "tag": "Chybějící diferenciace v některých hodinách",
+          "detail": "Výuka se ne vždy přizpůsobuje různým schopnostem jednotlivých žáků.",
+          "evidence": "Scházela diferenciace učiva a předkládaných úloh zohledňující míru schopností žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky v teoretických předmětech?",
+        "Jaké jsou možnosti zapojení do zahraničních stáží a projektů Erasmus+?",
+        "Jak se škola vypořádala se sloučením a jak to ovlivnilo kvalitu výuky na obou pracovištích?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o technické obory (strojírenství, elektrotechnika, IT) s dobrými studijními předpoklady",
+        "Studenti, kteří chtějí moderní vybavení a praktickou přípravu s reálným dopadem na trh práce",
+        "Žáci zainteresovaní v mezinárodní spolupráci a zahraničních stážích"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuální podpory a diferenciované přístupy v teoretických předmětech",
+        "Uchazeči o vyšší odborné vzdělání (VOŠ) – zájem je nízký, přestože absolventi mají dobré uplatnění",
+        "Žáci, kteří se lépe učí aktivní metodou – v některých hodinách převládá pasivní přístup"
+      ],
+      "plain_czech_summary": "Liberecká průmyslová škola je moderní instituce s výborným technickým vybavením a nadprůměrnými výsledky u maturity. Žáci se učí v příznivém klimatu s podporou sociálních partnerů a bohatou nabídkou kroužků. Absence je nízká. Slabší stránkou je, že v některých hodinách chybí aktivní zapojení žáků a diferenciace podle jejich schopností. Škola se úspěšně vypořádala se sloučením dvou institucí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nadprůměrné výsledky stabilní v posledních dvou letech",
+        "key_numbers": [
+          "ST1 obory: 0,3 % čistá neúspěšnost (ČR 2,3 %)",
+          "ST2 obory: 2,4 % čistá neúspěšnost (ČR 6,1 %)",
+          "Lycea: 1,8 % čistá neúspěšnost (ČR 1,8 %)"
+        ],
+        "evidence": "Žáci školy dosahují v celorepublikovém srovnění nižší míry neúspěšnosti ve společné části maturitní zkoušky."
+      },
+      "absence": {
+        "trend": "Nízká a podprůměrná v regionu, mírný nárůst po sloučení",
+        "key_numbers": [
+          "2022/2023: 47 hodin na žáka za rok",
+          "2023/2024: 40–67 hodin dle ročníku",
+          "Podprůměrná ve srovnění s obdobnými školami v regionu"
+        ],
+        "evidence": "Příznivé vzdělávací výsledky žáků souvisí s relativně nízkou mírou jejich absence."
+      },
+      "support_services": [
+        "Dva výchovní poradci, tři metodici prevence, jeden školní psycholog",
+        "Pravidelné porady a konzultace, sdílení informací přes školní IS",
+        "Podpůrná opatření prvního stupně pro kompenzaci mírných vzdělávacích obtíží",
+        "Schránka důvěry pro žáky"
+      ],
+      "safety_climate": [
+        "Analýza rizik v oblasti bezpečnosti a ochrany zdraví s následujícími opatřeními",
+        "Elektronický systém v přístupových prostorech",
+        "Bezbariérové areály obou pracovišť (výtahy)",
+        "Evidence a zpracování záznamů o úrazech žáků"
+      ],
+      "partnerships_practice": [
+        "Aktivní dialog se sociálními partnery a regionálními zaměstnavateli",
+        "Konzultační fóra, kulaté stoly a setkávání se zástupci firem",
+        "Smlouvy o zajištění odborné praxe u zaměstnavatelů",
+        "Projekty Erasmus+ a VET Mobility se zahraničními stážemi (Španělsko, Irsko)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelnou češtinou s jasnou strukturou. Všechna tvrzení jsou podpořena konkrétními údaji a citacemi. Informace jsou relevantní pro rodiče a snadno pochopitelné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o počtu žáků s speciálními vzdělávacími potřebami v jednotlivých oborech",
+        "Chybí detailní informace o konkrétních metodách diferenciace, které škola plánuje zavést",
+        "Není jasné, jaké konkrétní kroky škola podnikne k zvýšení zájmu o VOŠ"
+      ]
+    }
+  }
+}

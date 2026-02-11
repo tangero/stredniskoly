@@ -1,0 +1,118 @@
+{
+  "report_id": "GY4_600006514_2024-03-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:22:45.245821+00:00",
+  "run_finished_utc": "2026-02-09T16:23:15.103493+00:00",
+  "raw_file": "GY4_600006514_2024-03-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600006514_2024-03-12",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola elektrotechnická a gymnázium (SPŠ + gymnázium)",
+      "inspection_period": "12. března 2024 až 15. března 2024",
+      "school_change_summary": "Od poslední inspekce v roce 2017 došlo k částečné obměně vzdělávací nabídky. Zrušen obor Technické lyceum, otevřen nový obor Gymnázium (od 1. 9. 2023). Počet žáků vzrostl na 505 (v 17 třídách), naplněnost školy je 94 % z maxima 540 žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "Žáci dosahují dlouhodobě velmi dobrých výsledků. Ve společné části maturity téměř všichni uspějí, v anglickém jazyce jsou výrazně lepší než průměr ČR.",
+          "evidence": "\"téměř všichni konající žáci obou oborů, pouze dva žáci nesložili didaktický test z českého jazyka\" a \"až výrazně lepších v anglickém jazyce\""
+        },
+        {
+          "tag": "Silná odborná příprava",
+          "detail": "Škola efektivně propojuje teorii s praxí prostřednictvím spolupráce se sociálními partnery, zahraničními stážemi a certifikacemi.",
+          "evidence": "\"efektivní spolupráce se sociálními partnery podporující užší sepětí výuky s praxí a uspěšné naplnění profilu absolventa\""
+        },
+        {
+          "tag": "Kvalitní zázemí a bezpečnost",
+          "detail": "Moderní vybavení, sportovní areál, knihovna, počítačové učebny. Elektronický a kamerový systém zajišťuje bezpečnost.",
+          "evidence": "\"nadstandardní jsou podmínky pro tělovýchovné i zájmové aktivity (víceúčelový sportovní areál, dvě tělocvičny, lezecká stěna, posilovna)\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotný přístup k aktivizaci žáků",
+          "detail": "V některých hodinách chybí kooperativní formy práce a aktivizující metody, převažuje transmisivní výuka.",
+          "evidence": "\"nižší míra využití aktivizujících metod a kooperativních forem práce v části výuky\""
+        },
+        {
+          "tag": "Nedostatečná individuální diferenciace",
+          "detail": "Část pedagogů nedostatečně přizpůsobuje obsah jednotlivým potřebám žáků a neposkytuje dostatek formativní zpětné vazby.",
+          "evidence": "\"nedostatečná diferenciace vzdělávacího obsahu podle individuálních vzdělávacích potřeb žáků a méně časté využívání formativní zpětné vazby\""
+        },
+        {
+          "tag": "Vysoký počet žáků ve třídách",
+          "detail": "Třídy jsou obsazeny až na limit (540 žáků celkem), což může komplikovat individuální péči.",
+          "evidence": "\"Nejvyšší povolený počet žáků (540) byl využit z 94 %\" a \"Vysoký počet žáků ve třídách byl částečně kompenzován dělenými hodinami\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s matematikou nebo cizími jazyky? Jaké jsou možnosti doučování?",
+        "Jaké jsou reálné vyhlídky absolventů na trhu práce a jak škola spolupracuje se zaměstnavateli?",
+        "Jak se liší přístup k výuce mezi jednotlivými učiteli a jak si mohu ověřit kvalitu výuky v konkrétním oboru?"
+      ],
+      "who_school_fits": [
+        "Talentovaní žáci se zájmem o elektrotechniku, IT nebo všeobecné vzdělání – škola má silný program pro nadané a nabízí certifikace",
+        "Žáci, kteří chtějí praktické znalosti propojené s teorií – škola intenzivně spolupracuje s průmyslem a nabízí zahraniční stáže",
+        "Žáci, kterým vyhovuje strukturované prostředí s jasným zaměřením – škola má jasně nastavené cíle a systematickou podporu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a časté zpětné vazby – část pedagogů tímto způsobem nepracuje",
+        "Žáci se speciálními vzdělávacími potřebami – škola přijímá především žáky s nižším stupněm podpory kvůli náročnosti studia",
+        "Žáci, kteří se lépe učí aktivní metodou a kooperací – v některých hodinách převažuje tradiční výuka"
+      ],
+      "plain_czech_summary": "Jde o kvalitní průmyslovou školu s gymnáziem v Praze, která má výborné výsledky u maturity a silné propojení s praxí. Žáci se učí moderní technologie a získávají certifikáty. Zázemí je nadstandardní. Hlavní slabinou je, že ne všichni učitelé používají moderní aktivizující metody a individuální přístup. Škola je vhodná pro talentované a motivované žáky, méně pro ty, kteří potřebují více individuální péče."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – výsledky se meziročně zlepšují",
+        "key_numbers": [
+          "Téměř 100 % úspěšnost ve společné části maturity (pouze 2 žáci nesložili test z češtiny)",
+          "Přibližně 20 % žáků prospělo s vyznamenáním",
+          "30 % žáků si volí matematiku a všichni uspějí, třetina z nich složí i vyšší úroveň"
+        ],
+        "evidence": "\"ve sledovaném období posledních dvou školních let uspěli ve společné části maturitní zkoušky téměř všichni konající žáci\" a \"téměř pětina žáků prospěla s vyznamenáním\""
+      },
+      "absence": {
+        "trend": "Stabilně nízká – preventivní systém funguje",
+        "key_numbers": [
+          "Přijatelný počet zameškaných hodin",
+          "Stabilně nízká míra neomluvené absence",
+          "V prvním pololetí 2023/2024 pouze 1 žák se sníženým stupněm z chování"
+        ],
+        "evidence": "\"nastavené preventivní mechanismy jsou převážně funkční, o čemž ve sledovaném období svědčí přijatelný počet zameškaných hodin i stabilně nízká míra neomluvené absence\""
+      },
+      "support_services": [
+        "Školní psycholožka, výchovná poradkyně a metodička prevence s příslušným vzděláním",
+        "Adaptační a sportovní kurzy, zahraniční pobyty, kroužky",
+        "Individuální doučování a konzultace, skupinové doučování",
+        "Programy psychologické pomoci a antistresové techniky pro maturanty",
+        "Kariérní poradenství a Den s vysokými školami a zaměstnavateli"
+      ],
+      "safety_climate": [
+        "Elektronický a kamerový systém u vchodu",
+        "Vrátnice u vchodu do budovy",
+        "Funkční preventivní mechanismy proti sociopatologickým jevům",
+        "Nízká míra výchovných opatření – v roce 2021/2022 převažovaly pochvaly"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Elektrotechnické fakulty a Fakulty biomedicínského inženýrství ČVUT v Praze",
+        "Spolupráce se sociálními partnery na odborné praxi a kurzech",
+        "Zahraniční stáže v rámci programu Erasmus+",
+        "Partnerská zahraniční škola pro mezinárodní projekty",
+        "Program e-Twinning pro mezinárodní projekty v angličtině"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však velmi dlouhé a složitě strukturované (zejména v části o průběhu vzdělávání), což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent hodin má problém s aktivizací – je to 10 % nebo 50 % výuky?",
+        "Není jasné, zda se problém s diferenciací týká všech oborů stejně nebo jen některých",
+        "Chybí konkrétní počty žáků, kteří se vzdělávají se speciálními potřebami (uvedeno jen 10 %)"
+      ]
+    }
+  }
+}

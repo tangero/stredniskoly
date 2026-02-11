@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600020363_2023-03-28",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola a Vyšší odborná škola (SPŠ a VOŠ)",
+    "inspection_period": "28. března až 31. března 2023",
+    "school_change_summary": "Škola rozšířila vzdělávací nabídku o specializaci Technický management a pokračuje v modernizaci materiálně technických podmínek."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Bohatá projektová činnost a spolupráce s odbornými firmami zajišťují, že výuka odpovídá aktuálním požadavkům trhu práce.",
+        "evidence": "\"Zapojení školy do bohaté projektové činnosti, aktivní a smysluplná spolupráce s odbornými firmami\""
+      },
+      {
+        "tag": "Moderní vybavení a technologie",
+        "detail": "Škola disponuje nadstandardním vybavením včetně robotiky, 3D tisku, moderních laboratoří a dílen odpovídajících praxi.",
+        "evidence": "\"Materiální vybavení pro všechny vzdělávací oblasti jsou na nadstandardní úrovni\" s \"lineárním robotem\" a \"moderním centrem 3D tisku\""
+      },
+      {
+        "tag": "Úspěchy v maturitě a jazykách",
+        "detail": "Výborné výsledky v cizích jazycích a matematice, 80 % absolventů pokračuje na vysokých školách.",
+        "evidence": "\"Ve zkušebních obdobích 2020-2022 neuspěl pouze jeden žák\" v cizích jazycích a matematice"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Výuka není dostatečně přizpůsobena individuálním potřebám žáků, což brání jejich plnému rozvoji.",
+        "evidence": "\"Chybějící diferenciace vzdělávacího obsahu neumožňovala žákům naplno využít individuální vzdělávací potenciál\""
+      },
+      {
+        "tag": "Málo formativního hodnocení",
+        "detail": "Pedagogové málo využívají zpětnou vazbu o naplnění vzdělávacích cílů na konci hodin.",
+        "evidence": "\"Formativní hodnocení ve většině navštívených hodin pedagogové nevyužívali\""
+      },
+      {
+        "tag": "Přírodovědné předměty",
+        "detail": "V přírodovědných předmětech převažuje frontální výuka s minimálním zapojením aktivizujících prvků.",
+        "evidence": "\"V přírodovědných předmětech převažovala frontální výuka s minimálním zařazováním aktivizujících prvků\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku individuálním potřebám jednotlivých žáků?",
+      "Jaké jsou možnosti zapojení do mezinárodních projektů a jazykových certifikací?",
+      "Jak probíhá spolupráce se zaměstnavateli a jaké jsou šance na praxi během studia?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o technické obory a praktickou výuku s moderním vybavením",
+      "Talentovaní studenti, kterým se věnuje individuální péče a příprava na soutěže",
+      "Žáci plánující vysokoškolské studium, zejména na elektrotechnických fakultách"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující intenzivní individuální podporu a diferenciovanou výuku",
+      "Studenti, kteří se lépe učí aktivizujícími metodami a skupinovou prací",
+      "Žáci s nižší motivací, kterým chybí dostatečná zpětná vazba o jejich pokroku"
+    ],
+    "plain_czech_summary": "Jde o kvalitní průmyslovou školu s vynikajícím vybavením a silným propojením s praxí. Absolventi jsou úspěšní v maturitě a na vysokých školách. Škola má aktivní poradenské služby a bohatý mimoškolní program. Slabší stránkou je, že výuka není vždy dostatečně přizpůsobena individuálním potřebám žáků a chybí jí více aktivizujících metod. Vhodná pro talentované technicky zaměřené studenty."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborné výsledky, zejména v cizích jazycích a matematice",
+      "key_numbers": [
+        "Pouze 1 neúspěšný žák v cizích jazycích a matematice (2020-2022)",
+        "7 neúspěšných žáků z 331 v češtině",
+        "Přibližně 80 % absolventů pokračuje na vysokých školách"
+      ],
+      "evidence": "\"Vynikajících výsledků dosahují žáci školy ve společné části maturitní zkoušky z předmětů cizí jazyk a matematika\""
+    },
+    "absence": {
+      "trend": "Informace nejsou v textu dostupné",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje údaje o absenci žáků"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: 2 výchovné poradkyně, metodička prevence, sociální pedagožka",
+      "Individuální konzultace a skupinové doučování pro žáky ohrožené školním neúspěchem",
+      "Kariérové poradenství s aktivní spoluprací s úřadem práce",
+      "Preventivní aktivity: třídnické hodiny, adaptační pobyty, sportovní kurzy, projekt \"Si třída\"",
+      "Testování SCATE v angličtině (1. a 3. ročník) a příprava na Cambridge English"
+    ],
+    "safety_climate": [
+      "Příznivá atmosféra vytvářená otevřenou komunikací vedení",
+      "Efektivní řešení problémů s nevhodným chováním bez zbytečného odkladu",
+      "Aktivní školní parlament podílející se na chodu školy",
+      "Systematická práce na posilování prosociálních vztahů v třídních kolektivech",
+      "Relaxační místnost k dispozici žákům"
+    ],
+    "partnerships_practice": [
+      "Zdařilá a funkční spolupráce se širokým spektrem sociálních partnerů",
+      "Sociální partneři podporují realizaci odborné praxe, odborných kurzů a exkurzí",
+      "Partnerství s Evropským centrem jazykových zkoušek a Jazykovou školou",
+      "Program Erasmus pro profesní rozvoj pedagogů a mezinárodní mobilitu žáků",
+      "Zapojení do programu eTwinning a CLIL (obsahově a jazykově integrované učení)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní čísla o absenci a některé údaje jsou obecnější.",
+    "uncertainty_notes": [
+      "Absence údajů o školní absenci a její trendu",
+      "Nejsou uvedeny konkrétní počty žáků v jednotlivých oborech",
+      "Chybí informace o počtu neúspěšných žáků v profilových zkouškách"
+    ]
+  }
+}
+```

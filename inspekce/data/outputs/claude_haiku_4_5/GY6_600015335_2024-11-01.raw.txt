@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY6_600015335_2024-11-01",
+  "school_profile": {
+    "school_type": "Gymnázium a Střední odborná škola",
+    "inspection_period": "1. listopadu až 7. listopadu 2024",
+    "school_change_summary": "Škola dlouhodobě zlepšuje materiální podmínky prostřednictvím projektů. Má 159 žáků na gymnáziu a 154 na SOŠ. Vedení pracuje podle akčních plánů a postupně je naplňuje."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Praktické vyučování je vynikající – učitelé jasně vysvětlují cíle, důsledně učí bezpečnost a diferenciují požadavky podle schopností žáků.",
+        "evidence": "Vyučující v závěru vyučovacího dne účelně prováděli hodnocení a vytvořili prostor pro sebehodnocení žáků."
+      },
+      {
+        "tag": "Podpora a péče",
+        "detail": "Školní poradenské pracoviště funguje efektivně s psycholožkou, výchovnou poradkyní a metodičkou prevence.",
+        "evidence": "Úzká spolupráce vytváří empatické prostředí a vstřícný přístup k žákům."
+      },
+      {
+        "tag": "Partnerství a projekty",
+        "detail": "Škola aktivně spolupracuje se sociálními partnery, vysokými školami a mezinárodními programy jako DofE a Youth4Impact.",
+        "evidence": "Dlouhodobá spolupráce se sociálními partnery účelně podporuje rozvoj odborných a praktických kompetencí žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Angličtina na SOŠ",
+        "detail": "Žáci střední odborné školy dlouhodobě selhávají v anglickém jazyce u maturity – dosahují výrazně vyšší neúspěšnosti než republikový průměr.",
+        "evidence": "Ze 35 maturujících neprospělo šest žáků v didaktických testech. Opatření zatím nejsou plně účinná."
+      },
+      {
+        "tag": "Teoretická výuka",
+        "detail": "V běžných hodinách chybí individuální přístup k žákům podle jejich schopností a chybí sebehodnocení.",
+        "evidence": "Nedostatečná diferenciace výuky, absence cílů hodin a formativního hodnocení."
+      },
+      {
+        "tag": "Metodické sdílení",
+        "detail": "Předmětové komise řeší spíše organizační otázky než efektivní výukové strategie.",
+        "evidence": "Upřednostňují řešení organizačních otázek na úkor sdílení zkušeností s účinnými výukovými strategiemi."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší problémy s angličtinou u žáků SOŠ? Jaké nové metody chystá?",
+      "Jak se liší přístup k jednotlivým žákům v teoretické výuce – máte nějaký systém pro slabší a nadanější žáky?",
+      "Jaké jsou zkušenosti rodičů s doučováním a podporou při přípravě na maturitu?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí kvalitní praktickou přípravu a jasné vedení – praktické vyučování je na vysoké úrovni.",
+      "Studenti, kteří potřebují podporu a péči – školní poradenské pracoviště funguje velmi dobře.",
+      "Žáci zajímající se o mezinárodní projekty a osobnostní rozvoj – škola nabízí DofE, Youth4Impact a další programy."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší angličtinou na SOŠ – škola má dlouhodobý problém s výsledky v tomto předmětu.",
+      "Studenti, kteří potřebují individuální přístup v teoretické výuce – diferenciace není dostatečná.",
+      "Žáci, kteří se učí lépe s jasně stanovenými cíli a zpětnou vazbou – v hodinách to chybí."
+    ],
+    "plain_czech_summary": "Gymnázium a SOŠ v Moravských Budějovicích je dobře vedená škola s kvalitní praktickou výukou a podporou žáků. Má moderní vybavení a aktivně spolupracuje s partnery. Silnou stránkou je péče o osobnostní rozvoj a mezinárodní projekty. Slabinou je dlouhodobý problém s angličtinou u žáků SOŠ a nedostatečná individualizace teoretické výuky. Gymnázium dosahuje lepších výsledků než SOŠ."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Gymnázium výborné, SOŠ problematické",
+      "key_numbers": [
+        "Gymnázium: 27 z 27 maturantů úspěšní (100 %)",
+        "SOŠ: 29 z 35 maturantů úspěšní (87,86 %)",
+        "Angličtina SOŠ: 6 žáků neprospělo v testech, 3 v profilové části"
+      ],
+      "evidence": "Gymnázium dlouhodobě dosahuje lepšího než republikového průměru. SOŠ dosahuje výrazně vyšší neúspěšnosti v anglickém jazyce."
+    },
+    "absence": {
+      "trend": "Řešeno efektivně",
+      "key_numbers": [
+        "Vysoká a neomluvenost absence se daří řešit",
+        "Pravidla jsou důsledně uplatňována"
+      ],
+      "evidence": "Celkově se daří řešit problémy spojené s vysokou či neomluvenou absencí žáků díky vhodně nastaveným pravidlům."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psycholožkou, výchovnou poradkyní, metodičkou prevence a kariérovou poradkyní",
+      "Doučování, konzultace, zájmové kroužky, domov mládeže",
+      "Dvoudenní kurz metod učení pro všechny prvňáky",
+      "Spolupráce s nízkoprahovým zařízením STŘED, Občanskou poradnou a Městskou policií"
+    ],
+    "safety_climate": [
+      "Promyšlená péče vedení vytváří velmi dobré vzájemné vztahy mezi všemi účastníky",
+      "Strategie prevence sociálně patologických jevů zahrnuje adaptační kurzy a soustředění",
+      "Aktivní dlouhodobá spolupráce s institucemi zaměřenými na prevenci",
+      "Pochvaly převažují nad trestem, zaměřují se na úspěchy a angažovanost"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se skupinou ČEZ",
+      "Partnerství s Městskými úřady v Moravských Budějovicích a Třebíči",
+      "Spolupráce s vysokými školami, zejména Pedagogickou fakultou Masarykovy univerzity",
+      "Projekty s GMBproMB (spolek zaměřený na zlepšování života ve městě)",
+      "Mezinárodní programy: DofE (Mezinárodní cena vévody z Edinburgu), Youth4Impact"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a složitější.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola chystá na řešení problému s angličtinou – jen uvádí, že dosavadní nejsou účinná",
+      "Není jasné, jak dlouho trvá problém s angličtinou a zda se situace zhoršuje či zlepšuje",
+      "Chybí informace o počtu žáků v jednotlivých třídách a jejich složení"
+    ]
+  }
+}
+```

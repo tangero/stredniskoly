@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600011429_2023-11-20",
+  "school_profile": {
+    "school_type": "Střední škola obchodu, řemesel, služeb a Základní škola",
+    "inspection_period": "20. 11. 2023 − 24. 11. 2023",
+    "school_change_summary": "Škola rozšířila poradenské služby o speciální pedagožku v ZŠ a sociální pedagožku v SŠ. Přestoupila z oboru Pekař na obor Sociální činnost. Výrazně zlepšila výsledky maturit: hrubá neúspěšnost klesla z 66 % (2018) na 26 % (jaro 2023) a 8 % (podzim 2023)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické dovednosti",
+        "detail": "Žáci získávají velmi dobré odborné dovednosti, což dokazují úspěchy v soutěžích na republikové úrovni.",
+        "evidence": "\"úspěchy v soutěžích na republikové úrovni, veřejnost je může posuzovat při prezentaci na různých akcích\""
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Škola nabízí doučování, individuální konzultace a výukové materiály pro žáky s problémy.",
+        "evidence": "\"žákům je nabízeno doučování a individuální konzultace u pedagoga, kterého si mohou sami vybrat\""
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Mezi učiteli a žáky je patrná vzájemná důvěra a vstřícný přístup pedagogů pozitivně ovlivňuje klima.",
+        "evidence": "\"mezi učiteli a žáky byla patrná vzájemná důvěra. Klima příznivě ovlivňovalo dodržování nastavených pravidel\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Učitelé málo používají aktivizační metody, žáci často jen poslouchají a pracují individuálně.",
+        "evidence": "\"Pedagogové v nízké míře využívají aktivizační a kooperativní metody a formy práce, což vede k pasivitě žáků\""
+      },
+      {
+        "tag": "Absence individuálního přístupu",
+        "detail": "Učitelé nerozlišují mezi silnějšími a slabšími žáky, všichni dělají stejné úkoly.",
+        "evidence": "\"Diferenciace učiva dle různé kognitivní náročnosti s ohledem na potenciál jednotlivých žáků využita nebyla\""
+      },
+      {
+        "tag": "Vysoká absence",
+        "detail": "Přestože škola podniká opatření, vysoký počet žáků se sociálními problémy chybí často.",
+        "evidence": "\"vysoký počet žáků s nízkým socioekonomickým zázemím efektivní jen v části případů\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé přizpůsobují výuku různě schopným žákům v jedné třídě?",
+      "Jaké jsou výsledky doučování a jak se měří jeho efektivita?",
+      "Jak se škola vypořádává s vysokou absencí a co mohou dělat rodiče?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické dovednosti a konkrétní povolání (kuchař, prodavač, cukrář, řezník)",
+      "Děti se speciálními potřebami, které potřebují individualizovaný přístup a podporu",
+      "Žáci z méně majetných rodin, kterým škola nabízí doučování a sociální podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se učí lépe v interaktivní a skupinové práci – výuka je spíše frontální",
+      "Nadaní žáci, kterým se nemusí věnovat dostatek pozornosti kvůli absenci diferenciace",
+      "Rodiny s problémy s docházkou – škola má jen částečný vliv na vysokou absenci"
+    ],
+    "plain_czech_summary": "Škola je zaměřená na praktické vzdělání v oborech jako kuchař, prodavač nebo cukrář. Má dobré vybavení, učitelé jsou odborníci ve svých oborech a žáci se učí užitečné dovednosti. Výsledky maturit se výrazně zlepšily. Škola se stará o slabší žáky a nabízí jim pomoc. Problém je, že výuka je často pasivní – učitelé málo používají skupinovou práci a neberou ohled na to, že každý žák je jiný. Vysoká absence některých žáků zůstává problémem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "Hrubá neúspěšnost 2018: 66 %",
+        "Hrubá neúspěšnost jaro 2023: 26 %",
+        "Hrubá neúspěšnost podzim 2023: 8 %"
+      ],
+      "evidence": "\"hrubá neúspěšnost školy (podíl žáků, kteří nekonali zkoušku nebo neuspěli) ve společné části maturitní zkoušky výrazně nižší (26 %) než při předchozí inspekční činnosti v roce 2018 (66 %)\""
+    },
+    "absence": {
+      "trend": "Vysoká, částečně řešená",
+      "key_numbers": [
+        "Vysoký počet žáků s nízkým socioekonomickým statusem",
+        "Opatření jsou efektivní jen v části případů"
+      ],
+      "evidence": "\"četnými opatřeními (intenzivní osobní komunikace se žáky a rodiči, spolupráce s orgánem sociálně právní ochrany dětí) snaží předcházet vysoké absenci, avšak přijímaná opatření jsou vzhledem k vysokému počtu žáků s nízkým socioekonomickým zázemím efektivní jen v části případů\""
+    },
+    "support_services": [
+      "Základní škola: 2 výchovné poradkyně, metodik prevence, speciální pedagožka",
+      "Střední škola: 2 výchovné poradkyně, 2 metodičky prevence, sociální pedagožka",
+      "Doučování, individuální konzultace, asistenti pedagoga v domácím prostředí"
+    ],
+    "safety_climate": [
+      "Vstřícný a respektující přístup pedagogů k žákům",
+      "Vzájemná důvěra mezi učiteli a žáky",
+      "Příznivá atmosféra podporující učení",
+      "Adaptační programy pro prvňáky zaměřené na prosociální vztahy"
+    ],
+    "partnerships_practice": [
+      "Četná spolupráce se zaměstnavateli včetně zahraničních partnerů",
+      "Stáže žáků u zaměstnavatelů",
+      "Spolupráce s orgánem sociálně právní ochrany dětí, policií, střediskem výchovné péče",
+      "Zahraniční výměnné pobyty"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a srozumitelná. Obsahuje konkrétní čísla, citace z pozorování hodin a jasné závěry. Slabší stránky jsou jasně pojmenovány. Jediný problém je místy úřednický jazyk, ale pro rodiče je obsah pochopitelný.",
+    "uncertainty_notes": [
+      "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými obory (např. mezi praktickými a teoretickými)",
+      "Chybí informace o tom, kolik procent žáků základní školy pokračuje do střední školy na této škole",
+      "Není specifikováno, jaké konkrétní obory mají nejlepší a nejhorší výsledky maturit"
+    ]
+  }
+}
+```

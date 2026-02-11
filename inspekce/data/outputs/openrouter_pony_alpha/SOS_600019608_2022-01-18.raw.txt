@@ -1,0 +1,101 @@
+{
+  "report_id": "SOS_600019608_2022-01-18",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola",
+    "inspection_period": "18. 1. 2022 − 20. 1. 2022",
+    "school_change_summary": "Škola se zaměřuje na obor Praktická sestra, který mírně roste, zatímco obor Sociální činnost nebyl pro nezájem otevřen."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Škola má silné partnerství s nemocnicemi a záchranáři, což zajišťuje kvalitní praxi.",
+        "evidence": "Intenzivní spolupráce se smluvními partnery... podílí se na kvalitní přípravě žáků na budoucí povolání."
+      },
+      {
+        "tag": "Vzdělávání učitelů",
+        "detail": "Pedagogové se systematicky vzdělávají a zkušenosti efektivně přenášejí do výuky.",
+        "evidence": "Další vzdělávání pedagogických pracovníků je systematické... Má pozitivní dopad do výuky."
+      },
+      {
+        "tag": "Klima a vedení",
+        "detail": "Škola je stabilně vedena, má funkční komunikaci s žáky a bezpečné prostředí.",
+        "evidence": "Profesionální jednání mají pozitivní dopad na velmi dobré školní klima."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "V minulých letech měli žáci velké problémy s úspěšností u maturit, zejména v jazycích.",
+        "evidence": "V letech 2019–2020 vykazovala škola nižší míru úspěšnosti žáků... zpravidla v cizích jazycích."
+      },
+      {
+        "tag": "Pasivní výuka",
+        "detail": "V některých hodinách teoretických předmětů žáci pouze pasivně přijímají informace.",
+        "evidence": "Zvolené metody práce... v části hodin vedly k pasivnímu přejímání informací."
+      },
+      {
+        "tag": "Prospěch školy",
+        "detail": "Průměrný prospěch školy je spíše slabší a jen malá část žáků prospívá s vyznamenáním.",
+        "evidence": "Průměrný prospěch školy... dosahoval hodnoty 1,9 a je tedy spíše slabší."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žaky v přípravě na povinné didaktické testy z cizích jazyků u maturity?",
+      "Jakým způsobem jsou využívány tablety a moderní technologie přímo ve výuce teoretických předmětů?",
+      "Jaká konkrétní opatření škola přijala ke zlepšení studijních výsledků od roku 2020?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří hledají kvalitní odbornou přípravu a praxi v nemocničním prostředí.",
+      "Žáci, kterým vyhovuje rodinné prostředí menší školy se stabilním kolektivem.",
+      "Studenti, kteří chtějí být aktivní v dobrovolnických a komunitních projektech."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří plánují složit náročnou maturitu z cizího jazyka (historicky slabší výsledky).",
+      "Studenti preferující aktivní a projektovou výuku před klasickým frontálním vyučováním.",
+      "Uchazeči o obor Sociální činnost (škola ho v současnosti neotvírá)."
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola v Jindřichově Hradeci je stabilní zařízení s velmi dobrou odbornou úrovní a zázemím. Škola výborně připravuje žáky na praxi díky úzké spolupráci s nemocnicemi a záchranáři. Naopak slabší stránkou jsou historicky nízké výsledky u maturitních zkoušek, zejména v cizích jazycích, a celkově průměrný studijní prospěch. Výuka v teoretických předmětech může být někdy pasivní. Pro rodiče je důležité, že škola je bezpečná, vedení funguje a učitelé se dále vzdělávají."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení v roce 2021 po předchozích velmi špatných letech.",
+      "key_numbers": [
+        "Hrubá neúspěšnost 2021: 5 % (2 z 40 žáků).",
+        "Hrubá neúspěšnost 2019 (Sociální činnost): 72,5 %.",
+        "Třetina žáků maturovala v roce 2021 s vyznamenáním."
+      ],
+      "evidence": "V zkušebním roce 2021... hrubá neúspěšnost školy se významně zlepšila na 5 %."
+    },
+    "absence": {
+      "trend": "Dlouhodobě velmi dobrá, absence je pod kontrolou.",
+      "key_numbers": [
+        "Průměrná absence: 61 hodin ročně na žáka."
+      ],
+      "evidence": "Škola dobře zvládá míru absence žáků, která ve sledovaném období činila v průměru 61 hodin."
+    },
+    "support_services": [
+      "Fungující školní poradenské pracoviště (výchovná poradkyně, metodička prevence).",
+      "Doučování pro žáky ohrožené neúspěchem v češtině a angličtině.",
+      "Individuální plány dalšího vzdělávání pro pedagogy."
+    ],
+    "safety_climate": [
+      "Vedení školy dbá na vytváření bezpečného prostředí a prevenci rizik.",
+      "Pravidelná setkávání vedení s žákovským parlamentem.",
+      "Adaptační kurzy pro prváky podporující klima."
+    ],
+    "partnerships_practice": [
+      "Odborná praxe v Nemocnici Jindřichův Hradec a dalších jihočeských nemocnicích.",
+      "Spolupráce se zdravotnickou školou v dolnorakouském Zwettlu.",
+      "Akce s IZS a Červeným křížem (první pomoc)."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně rozdělená a klade důraz na konkrétní čísla a opatření. Jedinou komplikací je historický přehled starších oborů.",
+    "uncertainty_notes": [
+      "Nejasná budoucnost výuky německého jazyka (zmiňováno jako 'dobíhající').",
+      "Vliv opatření MŠMT (nekonání didaktických testů) na zlepšení maturitních výsledků v roce 2021."
+    ]
+  }
+}

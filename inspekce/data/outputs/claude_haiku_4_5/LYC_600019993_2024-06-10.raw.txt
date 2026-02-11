@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "LYC_600019993_2024-06-10",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická",
+    "inspection_period": "10.–13. 6. 2024",
+    "school_change_summary": "Vzdělávací obor Zdravotnický asistent byl postupně nahrazen oborem Praktická sestra. Materiální podmínky jsou soustavně modernizovány, včetně zrekonstruovaného zázemí v Nemocnici Nové Město na Moravě."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vedení a řízení",
+        "detail": "Ředitelka vykazuje vysokou úroveň manažerských dovedností s pozitivním dopadem na všechny oblasti fungování školy.",
+        "evidence": "Vysoká úroveň promyšleného manažerského řízení ředitelky má pozitivní dopad do fungování všech činností školy."
+      },
+      {
+        "tag": "Praktická příprava",
+        "detail": "Výborné podmínky pro praktické vyučování ve škole i v Nemocnici Nové Město na Moravě vedou ke kvalitní profesní přípravě.",
+        "evidence": "Zázemí bylo zrekonstruováno a poskytuje vysoký komfort. Praktické vyučování probíhá pod odborným dohledem s nadstandardní úrovní."
+      },
+      {
+        "tag": "Školní klima a podpora",
+        "detail": "Příznivá atmosféra školního prostředí podporuje dosahování cílů a prevenci rizikových jevů.",
+        "evidence": "Komplexní spolupráce učitelů a školního poradenského pracoviště vede k předcházení rizikovému chování a neúspěšnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Sebehodnocení a mluvený projev",
+        "detail": "Chybí dostatečné příležitosti pro sebehodnocení, vzájemné hodnocení a rozvoj mluveného projevu žáků.",
+        "evidence": "Až na výjimky chybělo vzájemné hodnocení a sebehodnocení žáků. Nebyl vytvářen dostatečný prostor pro rozvoj souvislého mluveného projevu."
+      },
+      {
+        "tag": "Vyhodnocování cílů hodin",
+        "detail": "V závěru vyučovacích hodin se cíle nevyhodnocují systematicky.",
+        "evidence": "Ve většině hodin byl na začátku stanoven cíl, méně často však docházelo k jejich vyhodnocení v závěru."
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Chybí dostatečná diferenciace činností s ohledem na studijní potenciál jednotlivých žáků.",
+        "evidence": "V některých hodinách chyběla diferenciace činností s ohledem na studijní potenciál jednotlivců."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje se žáky, kteří mají potíže s učením? Jaké konzultace a doučování nabízí?",
+      "Jaké jsou výsledky maturitní zkoušky v posledních třech letech a jak se srovnávají s republikovým průměrem?",
+      "Jak probíhá praktická výuka v Nemocnici Nové Město na Moravě a kolik času ji žáci věnují?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o zdravotnické povolání, kteří si cení kvalitní praktické přípravy a moderního vybavení.",
+      "Studenti, kteří prospívají v prostředí s podporou a individuálním přístupem ke svým potřebám.",
+      "Žáci, kteří se chtějí zapojit do projektů a soutěží s mezinárodním rozměrem (Erasmus+, DofE)."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více prostoru pro rozvoj mluveného projevu a sebevyjádření během výuky.",
+      "Studenti, kteří se lépe učí s jasně strukturovanými cíli a jejich vyhodnocením na konci každé hodiny.",
+      "Žáci se specifickými vzdělávacími potřebami, pokud by potřebovali více individualizované přístupy v teoretické výuce."
+    ],
+    "plain_czech_summary": "Škola je dobře vedená s výborným zázemím pro praktickou výuku zdravotnických oborů. Žáci se učí v příjemné atmosféře s podporou od učitelů a poradenských služeb. Výsledky maturit se zlepšují, zejména v češtině a angličtině. Škola nabízí zajímavé projekty a soutěže. Slabší stránkou je, že v hodinách chybí více příležitostí pro sebehodnocení žáků a rozvoj jejich mluveného projevu. Učitelé by měli více vyhodnocovat, zda se naplnily cíle jednotlivých hodin."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "V roce 2023 zlepšení ve společné části maturitní zkoušky oproti roku 2022",
+        "Obor 78-42-M/04 Zdravotnické lyceum dosahuje v češtině dlouhodobě výsledků nad republikovým průměrem",
+        "V profilové části maturitní zkoušky jsou téměř všichni žáci úspěšní"
+      ],
+      "evidence": "V roce 2023 došlo ke zlepšení výsledků ve společné části maturitní zkoušky oproti roku 2022, a to ve zkušebním předmětu anglický jazyk u obou vzdělávacích oborů střední školy."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní údaje o absenci žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště posílené speciální pedagožkou",
+      "Harmonizační dny pro první ročník",
+      "Preventivní programy a semináře během školního roku",
+      "Konzultace a doučování (nabízeno, ale ne všichni žáci je využívají)"
+    ],
+    "safety_climate": [
+      "Příznivá atmosféra školního prostředí jako výsledek komplexní spolupráce učitelů a poradenského pracoviště",
+      "Velmi dobrá spolupráce specializovaných pracovníků s pedagogickým týmem vede k předcházení rizikovému chování",
+      "Učitelé poskytují všeobecnou podporu a motivování žáků"
+    ],
+    "partnerships_practice": [
+      "Vynikající spolupráce s Nemocnicí v Novém Městě na Moravě – praktická výuka na nadstandardní úrovni",
+      "Projekt Erasmus+ – mobilita žáků a učitelů, kooperace se Střední zdravotnickou školou v Trnavě",
+      "Operační program J. A. Komenský – kooperace s univerzitou v polském Lešně",
+      "Projekt První pomoc do škol – žáci přispívají ke zvýšení povědomí v mateřských a základních školách",
+      "Exkurze na specializovaná pracoviště (Nemocnice Motol, Anatomický ústav Brno)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je napsána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o pozorování inspektorů. Doporučení jsou praktická a realizovatelná.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je to problém nebo ne.",
+      "Konkrétní počty žáků, kteří nevyužívají nabízené konzultace a doučování, nejsou uvedeny.",
+      "Dlouhodobé trendy v maturitních výsledcích jsou zmíněny jen částečně – dostupné jsou údaje jen za roky 2022–2023."
+    ]
+  }
+}
+```

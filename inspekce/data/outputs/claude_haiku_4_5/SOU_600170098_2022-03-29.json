@@ -1,0 +1,10 @@
+{
+  "report_id": "SOU_600170098_2022-03-29",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:05:45.524279+00:00",
+  "run_finished_utc": "2026-02-09T17:05:45.961827+00:00",
+  "raw_file": "SOU_600170098_2022-03-29.raw.txt",
+  "call_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 3200 tokens, but can only afford 2483. To increase, visit https://openrouter.ai/settings/credits and add more credits\",\"code\":402,\"metadata\":{\"provider_name\":null}},\"user_id\":\"user_2sOS2HmQoBbkXsZW2jGqr6gYIxw\"}",
+  "parse_error": "HTTP 402 Payment Required při volání https://openrouter.ai/api/v1/chat/completions. Odpověď: {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 3200 tokens, but can only afford 2483. To increase, visit https://openrouter.ai/settings/credits and add more credits\",\"code\":402,\"metadata\":{\"provider_name\":null}},\"user_id\":\"user_2sOS2HmQoBbkXsZW2jGqr6gYIxw\"}",
+  "parsed_output": null
+}

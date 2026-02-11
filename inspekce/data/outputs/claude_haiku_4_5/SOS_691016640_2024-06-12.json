@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_691016640_2024-06-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:14:54.499613+00:00",
+  "run_finished_utc": "2026-02-09T16:15:20.597074+00:00",
+  "raw_file": "SOS_691016640_2024-06-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_691016640_2024-06-12",
+    "school_profile": {
+      "school_type": "Obchodní akademie (obor vzdělání), denní forma, soukromá s.r.o.",
+      "inspection_period": "12. až 14. června 2024",
+      "school_change_summary": "Nově vzniklá škola od září 2023, vychází z modelu Obchodní akademie Praha. Nabízí výuku s anglickým jazykem a možností skládat anglický program vedle české maturity. Aktuálně 98 žáků ve 4 třídách (3× 1. ročník, 1× 2. ročník), kapacita 240 žáků naplněna z 41 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Kvalitní výuka odborných předmětů v angličtině s rodilými mluvčími a partnerstvím se zahraničními školami.",
+          "evidence": "Výuka odborných předmětů v anglickém jazyce probíhala v podnětném prostředí, vysoká úroveň komunikačních kompetencí žáků."
+        },
+        {
+          "tag": "Matematika",
+          "detail": "Výuka matematiky je velmi dobře organizovaná se systematickým výkladem a funkční zpětnou vazbou.",
+          "evidence": "Výuka matematiky byla organizačně zvládnutá velmi dobře, výklad veden systematicky a přehledně, žáci pracovali soustředěně."
+        },
+        {
+          "tag": "Podpora žáků v tísni",
+          "detail": "Škola identifikuje žáky v riziku a nabízí individuální konzultace, doučování a služby externí psycholožky.",
+          "evidence": "Škola identifikuje žáky s rizikem školního neúspěchu a poskytuje podporu v podobě individuálních konzultací a doučování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita výuky v některých předmětech",
+          "detail": "Převažuje frontální výuka bez dostatečné aktivizace žáků, chybí diferenciace podle jejich potřeb.",
+          "evidence": "Ve většině sledovaných hodin převažoval tradiční styl výuky založený na frontální práci. Diferenciace výuky nebyla využita."
+        },
+        {
+          "tag": "Slabá administrativa",
+          "detail": "Chyby v školním řádu, nejednotné informování rodičů o přijímacím řízení a nesprávné poplatky.",
+          "evidence": "Školní řád obsahoval chyby v nastavení výchovných opatření, informování zákonných zástupců bylo nejednotné a nesprávné."
+        },
+        {
+          "tag": "Nestabilní pedagogický sbor",
+          "detail": "Polovina učitelů má praxi jen 0,5–5 let, dva pedagogové nesplňují kvalifikační předpoklady, sbor není stabilizovaný.",
+          "evidence": "Polovina učitelů měla krátkou pedagogickou praxi od půl roku do pěti let. Sbor není zcela stabilizovaný."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá výuka v anglickém jazyce a jaké jsou možnosti skládat anglický program vedle české maturity?",
+        "Jaké jsou zkušenosti s doučováním a individuální podporou žáků, kteří mají potíže? Jak vysoká je skutečná účast žáků?",
+        "Jak se škola vypořádá s chybami v školním řádu a jak budou informování rodiče o přijímacím řízení a poplatcích?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazykové vzdělání a angličtinu, zejména ti, kteří chtějí skládat mezinárodní jazykové zkoušky.",
+        "Studenti, kteří prospívají v matematice a oceňují strukturovanou výuku s jasným postupem.",
+        "Cizinci a žáci s odlišným mateřským jazykem, kterým škola věnuje zvláštní pozornost a nabízí podporu."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovanou výuku a diferenciaci podle svých schopností – škola ji zatím nedostatečně nabízí.",
+        "Rodiny, které očekávají jasné a správné informace o administrativních záležitostech – škola má v tomto oblasti nedostatky.",
+        "Studenti, kteří se lépe učí aktivními metodami a skupinovou prací – převažuje zde tradiční frontální výuka."
+      ],
+      "plain_czech_summary": "Digital Academy je nová obchodní akademie v Kutné Hoře se zaměřením na angličtinu a mezinárodní program. Silné stránky: kvalitní výuka matematiky a angličtiny, podpora žáků v tísni, zahraniční partnerství. Slabiny: převažuje tradiční frontální výuka bez dostatečné aktivizace, chybí diferenciace podle potřeb žáků, administrativní chyby v informování rodičů a školním řádu, mladý a nestabilní pedagogický sbor. Vhodná pro jazykově nadané žáky, méně pro ty, kteří potřebují individualizovaný přístup."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze hodnotit – do inspekce bylo uzavřeno pouze první pololetí",
+        "key_numbers": [
+          "Škola nabízí českou maturitu a anglický program",
+          "Výuka odborných předmětů v angličtině s rodilými mluvčími"
+        ],
+        "evidence": "Celkové výsledky vzdělávání není možné hodnotit, protože do termínu inspekční činnosti bylo uzavřeno pouze první pololetí školního roku."
+      },
+      "absence": {
+        "trend": "Absence řešena bezodkladně vedením",
+        "key_numbers": [
+          "Absence žáků je monitorována a analyzována na pedagogické radě"
+        ],
+        "evidence": "Projevy rizikového chování, zejména absenci žáků řeší bezodkladně výkonná ředitelka ve spolupráci s třídními učiteli."
+      },
+      "support_services": [
+        "Individuální konzultace a doučování pro žáky s rizikem neúspěchu (minimální využívání)",
+        "Služby externí psycholožky komunikující v angličtině a němčině",
+        "Třídnické hodiny a předmět týmová spolupráce pro řešení problémů",
+        "Schránka důvěry pro anonymní hlášení problémů",
+        "Adaptační, vodácké a lyžařské kurzy pro budování vztahů v třídě"
+      ],
+      "safety_climate": [
+        "Pozitivní prostředí je cílem koncepce 2023–2028",
+        "Bezodkladné řešení rizikového chování (poškozování majetku, nepořádek)",
+        "Žáci se raději obracejí osobně na vedení a třídní učitele než na schránku důvěry",
+        "Nekonzistentní oslovování žáků (někteří křestním jménem, jiní příjmením) nepřispívá k přívětivé atmosféře"
+      ],
+      "partnerships_practice": [
+        "Efektivní spolupráce se zaměstnavateli na realizaci odborné praxe žáků",
+        "Partnerství se zahraničními školami v Itálii, Německu, Anglii, Irsku, Maďarsku a Španělsku",
+        "Výměnné pobyty žáků z partnerských škol v zahraničí",
+        "Získávání a vyhodnocování zpětné vazby o kvalitě odborné praxe"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však technicky náročné (např. popis kritérií) a pro laika obtížně pochopitelné. Praktické informace pro rodiče jsou jasné.",
+      "uncertainty_notes": [
+        "Výsledky maturity nelze posoudit – škola existuje teprve od září 2023 a do inspekce bylo uzavřeno jen první pololetí.",
+        "Skutečné využívání doučování a konzultací je minimální – není jasné, zda je to vinou nabídky nebo nezájmu žáků.",
+        "Dlouhodobá stabilita pedagogického sboru není jistá – polovina učitelů má krátkou praxi a sbor není stabilizovaný."
+      ]
+    }
+  }
+}

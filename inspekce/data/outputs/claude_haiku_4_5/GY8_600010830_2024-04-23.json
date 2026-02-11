@@ -1,0 +1,115 @@
+{
+  "report_id": "GY8_600010830_2024-04-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:18:00.280475+00:00",
+  "run_finished_utc": "2026-02-09T16:18:23.124077+00:00",
+  "raw_file": "GY8_600010830_2024-04-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600010830_2024-04-23",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřletý a osmiletý program), příspěvková organizace Ústeckého kraje",
+      "inspection_period": "23. až 25. dubna 2024",
+      "school_change_summary": "Nová ředitelka od března 2018 s jasnou vizí. Probíhá kompletní rekonstrukce budovy, výuka v pronajatých prostorách. Pedagogický sbor se postupně stabilizuje a začíná týmově spolupracovat."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání na vysoké úrovni",
+          "detail": "Škola aktivně podporuje jazykové kompetence včetně přípravy na mezinárodní certifikáty a výměnné pobyty v Německu, Francii a Belgii.",
+          "evidence": "Partnerství se školami v zahraničí, podpora certifikovaných zkoušek B2 a vyšší, program Erasmus+"
+        },
+        {
+          "tag": "Výjimečná podpora nadaných žáků",
+          "detail": "Škola systematicky rozvíjí talenty prostřednictvím projektů, soutěží a mezinárodních stáží.",
+          "evidence": "Projekty Otevřená věda, Centrum pro talentovanou mládež, AP zkoušky, účast v republikových soutěžích"
+        },
+        {
+          "tag": "Vynikající výsledky v maturitě",
+          "detail": "Všichni žáci v osmiletém programu roku 2023 uspěli, ve čtyřletém programu jeden žák maturitu nekonal.",
+          "evidence": "Výsledky v externím testování výborné, zejména v čtenářské gramotnosti a matematice"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná diferenciace ve výuce",
+          "detail": "Učitelé málo přizpůsobují úkoly individuálním schopnostem žáků, všichni řeší stejné příklady.",
+          "evidence": "Inspektoři zaznamenali, že žáci plnili úkoly stejné náročnosti, jen ojediněle vedeni dle kognitivních předpokladů"
+        },
+        {
+          "tag": "Slabá práce s informačními zdroji",
+          "detail": "Výuka se zaměřuje především na frontální výuku, chybí systematické cvičení v ověřování informací.",
+          "evidence": "Inspektoři zjistili, že pedagogové nesystematicky zařazují práci s informačními zdroji"
+        },
+        {
+          "tag": "Nedostatečný rozvoj hodnoticích dovedností",
+          "detail": "Žáci se málo učí sami hodnotit svůj pokrok a výsledky.",
+          "evidence": "Nedochází k systematickému vyhodnocování vzdělávacích cílů a individuálního pokroku"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé přizpůsobují výuku různě nadaným žákům v jedné třídě?",
+        "Jaké konkrétní projekty a soutěže mohou žáci absolvovat mimo povinnou výuku?",
+        "Jak se škola vypořádá s přestěhováním do nové budovy a jak to ovlivní výuku?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí výměnné pobyty a přípravu na certifikáty",
+        "Nadaní a talentovaní žáci – škola má systém podpory nadání a účasti v soutěžích",
+        "Žáci, kteří chtějí kvalitní přípravu na vysokou školu – výborné výsledky v maturitě a přípravné semináře"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a přizpůsobenou obtížnost – výuka není dostatečně diferencovaná",
+        "Žáci, kteří se učí lépe prací s různými zdroji – chybí systematická práce s informacemi",
+        "Žáci, kteří potřebují jasnou zpětnou vazbu o svém pokroku – hodnocení není dostatečně systematické"
+      ],
+      "plain_czech_summary": "Gymnázium Josefa Jungmanna je kvalitní škola se silným zaměřením na jazyky a podporu nadaných žáků. Výsledky v maturitě jsou výborné. Vedení je aktivní a pedagogové se postupně lépe spolupracují. Hlavní slabinou je, že výuka není dostatečně přizpůsobena individuálním potřebám žáků – všichni řeší stejné úkoly a chybí práce s různými informačními zdroji. Škola se aktuálně stěhuje do nové budovy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100% úspěšnost v osmiletém programu (2023)",
+          "Výborné výsledky v externím testování v čtenářské gramotnosti a matematice",
+          "Všichni žáci konající zkoušku uspěli"
+        ],
+        "evidence": "Ve zkušebním období 2023 uspěli všichni žáci, kteří maturitní zkoušku konali"
+      },
+      "absence": {
+        "trend": "Monitorovaná a řešená",
+        "key_numbers": [
+          "Třídní učitelé monitorují nárůst absence",
+          "Spolupráce se školním poradenským pracovištěm",
+          "Individuální jednání se žáky a zákonnými zástupci"
+        ],
+        "evidence": "Rizikový nárůst omluvené a neomluvené absence monitorují třídní učitelé a jednají se žáky"
+      },
+      "support_services": [
+        "Výchovná poradkyně, školní psycholožka, metodička prevence",
+        "Doučování a individuální konzultace, program Doučování s úsměvem",
+        "Kariérové poradenství, podpora žáků se speciálními vzdělávacími potřebami"
+      ],
+      "safety_climate": [
+        "Preventivní program aktualizovaný každoročně zaměřený na nejčastější hrozby",
+        "Virtuální schránka důvěry a dohodnuté konzultace s metodičkou prevence",
+        "Spolupráce s Centrem pro demokratické učení (CEDU) pro řešení vztahových problémů",
+        "Adaptační a stmelovací kurzy pro posílení koheze tříd"
+      ],
+      "partnerships_practice": [
+        "Partnerství se školami v Německu, Francii a Belgii – výměnné pobyty",
+        "Program Erasmus+ a AFS – mezinárodní pobyty",
+        "Centrum pro talentovanou mládež – AP zkoušky",
+        "Spolupráce se sociálními partnery v tuzemsku i zahraničí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní počty žáků se speciálními potřebami v jednotlivých třídách",
+        "Chybí informace o počtu učitelů a jejich kvalifikaci",
+        "Není jasné, jak dlouho bude výuka v pronajatých prostorách"
+      ]
+    }
+  }
+}

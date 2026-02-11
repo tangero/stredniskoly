@@ -1,0 +1,29 @@
+```json
+{
+  "report_id": "SOS_600016901_2023-03-06",
+  "school_profile": {
+    "school_type": "Střední odborná škola s.r.o. v Novém Jičíně. Nabízí obory s výučním listem (Prodavač, Reprodukční grafik) a s maturitou (Informační technologie, Ekonomika a podnikání, Cestovní ruch) plus nástavbové studium.",
+    "inspection_period": "6. března až 9. března 2023, doplněno 13. března 2023",
+    "school_change_summary": "Od inspekce v roce 2015/2016 došlo k výměně ředitele (od května 2019) a od 2018 má škola dva společníky. Materiální vybavení se zlepšuje kontinuálně, školní programy byly inovány."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Učitelé odborných předmětů jsou praktici z oboru, kteří zúročují své zkušenosti při výuce a praktickém vyučování.",
+        "evidence": "Část pedagogů jsou odborníci z praxe, vedení výuky ve vzájemných mezipředmětových souvislostech."
+      },
+      {
+        "tag": "Spolupráce se zaměstnavateli",
+        "detail": "Škola úzce spolupracuje se sociálními partnery, kteří jsou potenciálními zaměstnavateli absolventů.",
+        "evidence": "Odborné praxe žáků, fiktivní pracovní pohovory, výborné uplatnění absolventů na trhu práce."
+      },
+      {
+        "tag": "Mezinárodní projekty",
+        "detail": "Žáci získávají zkušenosti v zahraničí a rozvíjejí jazykové dovednosti.",
+        "evidence": "Erasmus+, OKAP II, zahraniční stáže, výměnné pobyty, spolupráce se školami ve Francii a Slovensku."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slab

@@ -1,0 +1,100 @@
+{
+  "report_id": "LYC_600171795_2021-12-08",
+  "school_profile": {
+    "school_type": "Soukromá vyšší odborná a střední odborná škola zdravotnického zaměření.",
+    "inspection_period": "8. – 10. 12. 2021",
+    "school_change_summary": "Školu několik měsíců vede nový ředitel, který plní koncepční plány a zdokonalil materiální zázemí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odbornost a vybavení",
+        "detail": "Škola má kvalitní materiální zázemí a úzce spolupracuje s profesními partnery.",
+        "evidence": "Podařilo se dosáhnout kvalitnějšího materiálního zázemí... spolupráce s profesními partnery, kteří zároveň tvoří poradní sbor školy."
+      },
+      {
+        "tag": "Atmosféra a vztahy",
+        "detail": "Ve výuce panuje vstřícná spolupráce a příjemná atmosféra.",
+        "evidence": "Společným rysem sledované výuky byla vstřícná spolupráce pedagogů s žáky a studenty a příjemná atmosféra."
+      },
+      {
+        "tag": "Uplatnění absolventů",
+        "detail": "Většina absolventů po škole nastupuje přímo do oboru.",
+        "evidence": "Převážná část absolventů školy po ukončení vzdělávání směřuje do praxe nebo již v oboru působí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nerozlišená výuka",
+        "detail": "Učitelé příliš nerespektují rozdílnou pokročilost žáků.",
+        "evidence": "Patrná rozdílná jazyková pokročilost některých žáků nebyla zohledněna vhodnou diferenciací zadaných úkolů."
+      },
+      {
+        "tag": "Chybějící zpětná vazba",
+        "detail": "Hodiny často postrádají závěrečné shrnutí a hodnocení pokroku.",
+        "evidence": "Většinou ale chybělo závěrečné shrnutí učiva s poskytnutím zpětné vazby žákům."
+      },
+      {
+        "tag": "Málo sebehodnocení",
+        "detail": "Žáci nejsou vedeni k tomu, aby sami hodnotili svou práci.",
+        "evidence": "Společným rysem hodin byla absence sebehodnocení žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak učitelé přizpůsobují výuku žákům s různou úrovní znalostí?",
+      "Jakým způsobem dostávají žáci na konci hodin zpětnou vazbu k práci?",
+      "Jak konkrétně škola využívá zpětnou vazbu od studentů a rodičů?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří chtějí nastoupit rovnou do zdravotnické praxe.",
+      "Studenti, kteří očekávají moderně vybavené odborné učebny a laboratoře.",
+      "Žáci, kterým vyhovuje vstřícný a otevřený přístup vyučujících."
+    ],
+    "who_should_be_cautious": [
+      "Studenti, kteří potřebují individuální přístup kvůli odlišnému tempu učení.",
+      "Uchazeči, kteří očekávají důraz na rozvoj mluveného projevu v cizích jazycích.",
+      "Žáci, kteří chtějí být vedeni k pravidelnému sebehodnocení."
+    ],
+    "plain_czech_summary": "FARMEKO je soukromá škola se silným zdravotnickým zaměřením a kvalitním vybavením. Uplatnění v oboru nachází většina absolventů, což podporuje i úzká spolupráce s nemocnicemi a partnery. Výuka probíhá v příjemné atmosféře, ale trpí nedostatkem individuálního přístupu k žákům. Častým nedostatkem je chybějící závěr hodin a málo prostoru pro sebehodnocení studentů. Nové vedení školy aktivně pracuje na dalším zlepšování studijních podmínek."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kladný",
+      "key_numbers": [
+        "Převážně nižší míra neúspěšnosti v celorepublikovém srovnání."
+      ],
+      "evidence": "U maturitní zkoušky dosahuje škola v celorepublikovém srovnání... převážně nižší míry neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Není uvedeno",
+      "key_numbers": [
+        "Data v textu zprávy chybí."
+      ],
+      "evidence": "Text zprávy neobsahuje konkrétní údaje o absence ani jejím trendu."
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště včetně psychologického poradenství.",
+      "Systém motivačních a prospěchových stipendií.",
+      "Elektronický systém pro sdílení informací s rodiči a žáky."
+    ],
+    "safety_climate": [
+      "Důraz na budování pozitivního klimatu a prevenci kyberšikany.",
+      "Vstřícná komunikace a důvěra mezi žáky a pedagogy.",
+      "Aktualizovaná strategie pro řešení školní neúspěšnosti."
+    ],
+    "partnerships_practice": [
+      "Účelná spolupráce s nemocnicemi, lékárnami a výzkumnými ústavy.",
+      "Profesní partneři tvoří poradní sbor školy.",
+      "Účast na odborných konferencích a projektech (např. Studentlab)."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje dostatek konkrétních příkladů hodnocených jevů.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní číselné údaje o neúspěšnosti u maturity, pouze srovnání.",
+      "Chybí jakékoliv informace o trendu nebo výši absence na škole.",
+      "Není specifikováno, jak často dochází na individuální doučování zmíněné v textu."
+    ]
+  }
+}

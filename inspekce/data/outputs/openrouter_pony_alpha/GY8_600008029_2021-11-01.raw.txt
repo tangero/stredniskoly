@@ -1,0 +1,101 @@
+{
+  "report_id": "GY8_600008029_2021-11-01",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium",
+    "inspection_period": "1. 11. 2021 − 3. 11. 2021",
+    "school_change_summary": "Škola modernizovala materiální podmínky a vybudovala výtah, zároveň se prohloubila spolupráce s místními partnery."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné maturitní výsledky",
+        "detail": "Škola dosahuje v českém jazyce výborných výsledků ve srovnání s ostatními gymnázii.",
+        "evidence": "Celkově dosahuje škola výborných výsledků ve společné části maturitní zkoušky předmětu český jazyk a literatura ve srovnání s osmiletými gymnázii ČR."
+      },
+      {
+        "tag": "Partnerská spolupráce",
+        "detail": "Spolupráce s partnery významně podporuje rozvoj sociálních kompetencí žáků.",
+        "evidence": "Kvalitní spolupráce školy se sociálními partnery významně podporuje rozvoj sociálních a personálních kompetencí žáků."
+      },
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Výuka cizích jazyků je na vysoké úrovni a škola získala rodilou mluvčí.",
+        "evidence": "Hospitované hodiny cizích jazyků byly vedeny v cílovém jazyce, nově se škole podařilo získat rodilou mluvčí pro výuku anglického jazyka."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Zastaralé vyučovací metody",
+        "detail": "V části výuky chybí moderní strategie a aktivní zapojení žáků.",
+        "evidence": "V části výuky nejsou zařazovány účinnější vzdělává strategie podporující aktivní učení žáků."
+      },
+      {
+        "tag": "Nedostatečná podpora nadání",
+        "detail": "Škola nevěnuje dostatek pozornosti systematické podpoře nadaných žáků.",
+        "evidence": "Menší pozornost je věnována systematické podpoře nadaných žáků ve výuce, včetně metodické pomoci pedagogům."
+      },
+      {
+        "tag": "Odchody žáků",
+        "detail": "Trvá problém s odchodem žáků ze čtvrtých ročníků na jiné školy.",
+        "evidence": "Pokračuje trend odchodu žáků z kvarty na jiné střední školy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje talentované žáky v rámci běžné výuky?",
+      "Jaká opatření škola přijala ke snížení odchodů žáků po kvartě?",
+      "V jakých předmětech se využívají moderní metody jako diskuze nebo projektová výuka?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří očekávají silné zázemí v českém jazyce a literatuře.",
+      "Pro žáky, kterým vyhovuje zapojení do charitativních a sociálních aktivit.",
+      "Pro zájemce o sport a pohybové aktivity podporované školou."
+    ],
+    "who_should_be_cautious": [
+      "Pro vysoce nadané žáky, kteří potřebují individuální přístup a náročnější úkoly.",
+      "Pro studenty, kteří preferují moderní interaktivní formy výuky před frontálním vyučováním.",
+      "Pokud máte obavy z možného odchodu části kolektivu po nižším gymnáziu."
+    ],
+    "plain_czech_summary": "Gymnázium v Týně nad Vltavou nabízí nadprůměrné výsledky v českém jazyce a silné sociální zázemí. Výuka cizích jazyků je kvalitní a škola aktivně podporuje sportovní a charitativní aktivity. Slabším místem je nedostatečné využívání moderních vyučovacích metod a nízká podpora pro nadané žáky. Rodiče by měli zvážit, zda škola dostatečně stimuluje jejich dítě, zejména v matematice a u talentovaných jedinců."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborné výsledky v češtině, mírně horší v matematice.",
+      "key_numbers": [
+        "Výborné výsledky v českém jazyce ve srovnání s osmiletými gymnázii ČR.",
+        "Mírně nižší úspěšnost v matematice."
+      ],
+      "evidence": "Celkově dosahuje škola výborných výsledků ve společné části maturitní zkoušky předmětu český jazyk a literatura."
+    },
+    "absence": {
+      "trend": "Nízká absence, minimální neomluvené hodiny.",
+      "key_numbers": [
+        "Průměr 33 zameškaných hodin na žáka za pololetí.",
+        "Pět neomluvených hodin celkem."
+      ],
+      "evidence": "Také počty zameškaných hodin jsou nízké (průměr na žáka činí 33 hodin za pololetí), pět neomluvených hodin."
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště a peer program prevence.",
+      "Nabídka zájmových útvarů pro osobnostní rozvoj.",
+      "Spolupráce s odbornými pracovišti při prevenci sociálně patologických jevů."
+    ],
+    "safety_climate": [
+      "Přátelská atmosféra a vzájemný respekt mezi vyučujícími a žáky.",
+      "Vzácný výskyt sociálně patologických jevů.",
+      "Funkční mechanismy prevence rizikového chování."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s městem Týn nad Vltavou a místními sdruženími.",
+      "Podpora technického vzdělávání od energetické společnosti.",
+      "Spolupráce s Jihočeskou univerzitou a sociálními zařízeními."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a negativa, používá běžnou slovní zásobu s minimem odborných pojmů.",
+    "uncertainty_notes": [
+      "Nejasná míra 'mírně nižší úspěšnosti' v matematice bez konkrétních čísel.",
+      "Chybí upřesnění, o jaké 'účinnější vzdělávací strategie' konkrétně jde."
+    ]
+  }
+}

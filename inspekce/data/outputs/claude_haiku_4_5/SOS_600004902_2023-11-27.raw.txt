@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600004902_2023-11-27",
+  "school_profile": {
+    "school_type": "Střední odborná škola sociální sv. Zdislavy, čtyřleté obory s maturitní zkouškou (Veřejnosprávní činnost, Sociální činnost)",
+    "inspection_period": "27. listopadu až 30. listopadu 2023",
+    "school_change_summary": "Od inspekce v roce 2016 vzrostl počet žáků o 23 % na 206 studentů. Došlo k výměně ředitelky a téměř poloviny pedagogického sboru. Škola zlepšila materiální vybavení a snížila absenci žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná praxe",
+        "detail": "Praktické vyučování probíhá na vysoké úrovni v reálném prostředí úřadů, pojišťoven a sociálních služeb.",
+        "evidence": "Žáci prokazují schopnost samostatně vykonávat zadané činnosti a aplikovat teoretické poznatky."
+      },
+      {
+        "tag": "Péče o slabší žáky",
+        "detail": "Škola systematicky podporuje žáky se speciálními potřebami, ze znevýhodněného prostředí a ohrožené neúspěchem.",
+        "evidence": "Poskytuje individuální přístup, doučování, konzultace a kompenzační pomůcky."
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Škola vytváří důvěryhodné a bezpečné prostředí s jasně nastavenými pravidly a preventivními mechanismy.",
+        "evidence": "Počet pochval výrazně převažuje nad kázeňskými opatřeními, minimální neomluvená absence."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní zkoušky",
+        "detail": "Hrubá neúspěšnost při maturitě je dlouhodobě vyšší než průměr v oboru, přestože se zlepšila z 32 % na 14 %.",
+        "evidence": "V celostátním srovnání v rámci skupiny stejných oborů zůstává neúspěšnost významně vyšší."
+      },
+      {
+        "tag": "Kvalita některých hodin",
+        "detail": "Část hodin všeobecně vzdělávacích předmětů má nižší kvalitu s převahou frontální výuky a málo aktivizace.",
+        "evidence": "Chybí diferenciace pro nadanější žáky, nedostatečná zpětná vazba, chybí závěry hodin."
+      },
+      {
+        "tag": "Prostorové limity",
+        "detail": "Prostorové podmínky jsou limitující vzhledem k rostoucímu počtu žáků a nedokončené rekonstrukci.",
+        "evidence": "Nedostatek místa pro odborné učebny určené pro profilové předměty."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola připravuje žáky na maturitní zkoušku, když je jejich úspěšnost nižší než průměr?",
+      "Jaké jsou plány na zlepšení prostorových podmínek a kdy bude rekonstrukce dokončena?",
+      "Jak se liší kvalita výuky mezi jednotlivými předměty a jak to ovlivní mého syna/dceru?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o sociální práci nebo veřejnou správu, kteří chtějí praktické zkušenosti v reálném prostředí",
+      "Studenti ze sociálně znevýhodněného prostředí, kterým škola poskytuje individuální podporu a péči",
+      "Žáci, kteří si cení bezpečného prostředí, jasných pravidel a pozitivních vztahů se učiteli"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s ambicí dosáhnout vysokých výsledků u maturitní zkoušky – úspěšnost je zde nižší než jinde",
+      "Nadaní studenti, kteří potřebují výrazně vyšší nároky – část hodin nemá dostatečnou diferenciaci",
+      "Rodiny, které očekávají moderní prostory – škola má prostorové limity a probíhá rekonstrukce"
+    ],
+    "plain_czech_summary": "Jde o kvalitní odbornou školu se silným zaměřením na praktickou přípravu v sociálních službách a veřejné správě. Škola se dobře stará o slabší žáky a vytváří bezpečné prostředí. Hlavní riziko je nižší úspěšnost u maturitní zkoušky – přestože se zlepšila, stále zaostává za průměrem. Část teoretických hodin by mohla být kvalitnější, zejména pro nadanější studenty. Prostory jsou limitované vzhledem k rostoucímu počtu žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se, ale stále podprůměrný",
+      "key_numbers": [
+        "Hrubá neúspěšnost klesla z 32 % na 14 % za poslední dva roky",
+        "Zůstává však významně vyšší než průměr v rámci skupiny stejných oborů",
+        "V profilové části MZ obvykle neuspějí jen jednotlivci"
+      ],
+      "evidence": "Úspěšní žáci se zlepšili v anglickém jazyce, v češtině zůstávají výsledky téměř stejné, z matematiky zkoušku nikdo neskládal."
+    },
+    "absence": {
+      "trend": "Výrazně se zlepšila",
+      "key_numbers": [
+        "Významný pokles počtu zameškaných hodin za poslední dva roky",
+        "Minimální počet hodin neomluvené absence",
+        "92 % žáků má uzavřenou klasifikaci k 30. 6."
+      ],
+      "evidence": "Důsledný přístup k omlouvání nepřítomnosti a systematická práce třídních učitelů se odrazily v minimálním počtu neomluvené absence."
+    },
+    "support_services": [
+      "Poradenský tým: výchovná poradkyně, koordinátorka primární prevence, školní psycholožka",
+      "Individuální přístup, doučování a konzultace pro žáky se speciálními potřebami",
+      "Výuka češtiny pro žáky-cizince, kariérové poradenství"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra založená na partnerském přístupu učitelů k žákům",
+      "Nastavená a dodržovaná pravidla komunikace a chování",
+      "Stálá služba u vstupu do školy přispívá k bezpečnosti žáků",
+      "Počet pochval výrazně převažuje nad kázeňskými opatřeními"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce s četnými sociálními partnery (úřady státní správy, pojišťovny, sociální služby)",
+      "Smluvní pracovní místa pro praktické vyučování v reálném prostředí",
+      "Rozšíření spektra odborných pracovišť vytváří vazbu mezi teorií a praxí",
+      "Spolupráce se zřizovateli škol přispívá k zlepšování materiálních podmínek"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více odborné terminologie.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola přijala na zlepšení maturitních výsledků – pouze uvádí, že byla přijata",
+      "Není jasné, zda se nižší úspěšnost u maturity týká obou oborů stejně nebo jen jednoho z nich",
+      "Chybí informace o tom, jak dlouho bude trvat rekonstrukce a jaké prostory budou přidány"
+    ]
+  }
+}
+```

@@ -1,0 +1,120 @@
+{
+  "report_id": "SOS_600019811_2022-11-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:56:44.982575+00:00",
+  "run_finished_utc": "2026-02-09T16:57:11.584651+00:00",
+  "raw_file": "SOS_600019811_2022-11-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019811_2022-11-14",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola s domovem mládeže a školní jídelnou",
+      "inspection_period": "14. až 16. listopadu 2022",
+      "school_change_summary": "Od poslední inspekce škola zavedla nový obor Praktická sestra, ukončila obor Zdravotnický asistent, zahájila obor Masér ve zdravotnictví a obnovila činnost domova mládeže. Počet žáků a učitelů se výrazně zvýšil."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vedení a řízení",
+          "detail": "Ředitel systematicky řídí školu s funkčními kontrolními mechanismy a pravidelným vyhodnocováním.",
+          "evidence": "Efektivní vedení školy, nastavení a realizace kontrolních mechanismů pro plánování a vyhodnocování"
+        },
+        {
+          "tag": "Vybavení a prostředí",
+          "detail": "Učebny a pracoviště jsou moderně vybavené a simulují reálné zdravotnické prostředí.",
+          "evidence": "Materiální podmínky pro vzdělávání podporující získání odborných kompetencí žáků"
+        },
+        {
+          "tag": "Praktická příprava",
+          "detail": "Praktické vyučování probíhá v kvalitně vybavených učebnách a na reálných pracovištích v nemocnicích.",
+          "evidence": "Zajištění a průběh praktického vyučování, čas praktických cvičení je velmi dobře využit"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Závěry hodin",
+          "detail": "Učitelé málo ověřují, zda žáci pochopili učivo a dosáhli cíle hodiny.",
+          "evidence": "Málo využívané závěry hodin k účelnému ověřování pochopení učiva žáky"
+        },
+        {
+          "tag": "Sebehodnocení žáků",
+          "detail": "Žáci se málo učí sami sebe hodnotit a vzájemně si dávat zpětnou vazbu.",
+          "evidence": "V malé míře bylo zařazeno vzájemné hodnocení nebo sebehodnocení"
+        },
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Chybí přizpůsobení úloh pro nadanější žáky i pro ty, kteří potřebují více času.",
+          "evidence": "Ve většině hodin chybělo využití diferenciace náročnosti úloh"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak se škola vypořádává s nárůstem počtu žáků a učitelů? Jsou všichni noví učitelé již kvalifikovaní?",
+        "Jaké jsou konkrétní možnosti praktické přípravy v nemocnicích a jak se žáci dostanou na tato pracoviště?",
+        "Jak škola podporuje žáky, kteří mají potíže s anglickým jazykem, když je to součást maturity?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí kvalitní praktickou přípravu v reálném zdravotnickém prostředí s moderním vybavením",
+        "Studenti z vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže se zajištěnou stravou",
+        "Žáci motivovaní k práci ve zdravotnictví, kteří oceňují přátelské klima a podporu od zkušených pedagogů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – škola na tom ještě pracuje",
+        "Studenti se slabší angličtinou – didaktický test z angličtiny činil žákům největší problémy",
+        "Žáci vyžadující více času na pochopení – některé učebny jsou stísněné a organizace výuky je náročná"
+      ],
+      "plain_czech_summary": "Střední zdravotnická škola v Svitavách je dobře vedená a moderně vybavená. Učitelé jsou zkušení a vytváří příjemné prostředí. Praktická příprava v nemocnicích je na vysoké úrovni. Škola se však musí zlepšit v tom, aby žáci lépe pochopili, co se naučili, a aby se více učili sami sebe hodnotit. Některé učebny jsou malé a výuka by mohla být více přizpůsobena různým tempům učení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neúspěšnost žáků v maturitě je relativně vysoká",
+        "key_numbers": [
+          "Neúspěšnost v oborech s maturitní zkouškou: přibližně 12 %",
+          "Největší problémy: didaktický test z anglického jazyka",
+          "Celková neprospěvavost na konci roku 2021/2022: 7 žáků (necelá 3 %)"
+        ],
+        "evidence": "Neúspěšnost žáků oboru vzdělání zakončených maturitní zkouškou činila přibližně 12 %. Problémy žákům činil nejvíce didaktický test z anglického jazyka."
+      },
+      "absence": {
+        "trend": "Absence je nízká, omluvená absence je standardní",
+        "key_numbers": [
+          "Absence žáků: spíše nízká",
+          "Neomluvená absence: ojedinělá"
+        ],
+        "evidence": "Absence žáků je spíše nízká, neomluvená absence ojedinělá."
+      },
+      "support_services": [
+        "Výchovné poradenství a prevence rizikového chování",
+        "Speciální pedagogická péče pro žáky s odlišným mateřským jazykem",
+        "Metodická podpora v inkluzivním vzdělávání a prevenci školní neúspěšnosti",
+        "Individuální konzultace pro žáky se zájmem",
+        "Minimální preventivní program vyhodnocovaný a upravovaný podle potřeb"
+      ],
+      "safety_climate": [
+        "Příjemná pracovní atmosféra podporující efektivitu vzdělávacího procesu",
+        "Vstřícný přístup učitelů k žákům",
+        "Pozitivně-motivační atmosféra vytvářená učiteli",
+        "Nízká míra rizikového chování žáků",
+        "Žákovská rada s pravidelnými setkáními pro projednávání otázek a návrhů"
+      ],
+      "partnerships_practice": [
+        "Svitavská nemocnice – praktické vyučování",
+        "Litomyšlská nemocnice – praktické vyučování",
+        "Zdravotnická záchranná služba Pardubického kraje",
+        "Český červený kříž",
+        "Město Svitavy",
+        "Základní školy – projektové aktivity (Zdravohrátky)",
+        "Obchodní akademie Svitavy – prostory pro výuku oboru Masér"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní údaje, citace z pozorování a jasné doporučení. Některé pasáže jsou však poměrně odborné a dlouhé, což mírně snižuje srozumitelnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Přesné číslo neúspěšnosti v maturitě je uvedeno jako 'přibližně 12 %' – není jasné, zda se jedná o všechny obory nebo jen některé",
+        "Zpráva nespecifikuje, kolik z šesti nových učitelů zatím nemá kvalifikaci a jak dlouho si ji budou doplňovat",
+        "Není jasné, jaké konkrétní problémy mají některé učebny všeobecných předmětů, které 'vyžadují modernizaci'"
+      ]
+    }
+  }
+}

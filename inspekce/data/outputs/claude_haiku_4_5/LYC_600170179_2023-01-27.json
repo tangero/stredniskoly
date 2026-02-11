@@ -1,0 +1,117 @@
+{
+  "report_id": "LYC_600170179_2023-01-27",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:48:59.958310+00:00",
+  "run_finished_utc": "2026-02-09T16:49:25.258076+00:00",
+  "raw_file": "LYC_600170179_2023-01-27.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600170179_2023-01-27",
+    "school_profile": {
+      "school_type": "Integrovaná střední škola (SPgŠ a SOŠ služeb) s domovem mládeže",
+      "inspection_period": "27. ledna až 31. ledna 2023",
+      "school_change_summary": "Škola prošla výraznou transformací: zefektivnila vzdělávací nabídku utlumením neperspektivních oborů (Ekonomika a podnikání, Obchodník), zvýšila počet žáků v perspektivních oborech (Předškolní pedagogika 146, Informační služby 100), podstatně zlepšila materiální podmínky a modernizovala učební prostory."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalita praktického vzdělání",
+          "detail": "Žáci oborů Cukrář, Pekař a Aranžér dosahují velmi dobrých praktických dovedností s 98% úspěšností u závěrečných zkoušek.",
+          "evidence": "V minulých třech školních rocích 98 % žáků vykonalo závěrečné zkoušky úspěšně, třetina prospěla s vyznamenáním."
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Škola systematicky investuje do nových učeben, digitální techniky a funkčních pracovních prostor.",
+          "evidence": "Od minulé inspekce došlo k podstatnému zlepšení materiálních podmínek díky efektivnímu využívání finančních prostředků."
+        },
+        {
+          "tag": "Motivující školní komunita",
+          "detail": "Škola pořádá mezioborové projekty a akce, které rozvíjejí klíčové kompetence a budují pozitivní vztahy mezi žáky.",
+          "evidence": "Promyšlené stmelující mezioborové a mezipředmětové aktivity přispívají k rozvoji klíčových kompetencí žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kolísavé výsledky maturit",
+          "detail": "Úspěšnost u maturitní zkoušky se pohybuje mezi 75–85 %, zejména obor Informační služby má slabší výsledky.",
+          "evidence": "Ve školním roce 2019/2020 MZ úspěšně složilo 85 % žáků, v dalších rocích úspěšnost klesla na tři čtvrtiny."
+        },
+        {
+          "tag": "Slabé výsledky v jazycích",
+          "detail": "Žáci mají problémy zejména s anglickým a českým jazykem, což se odráží i na maturitních zkoušках.",
+          "evidence": "Nejméně se žákům daří uspět zejména v anglickém a českém jazyce; výsledky kolísají kolem republikového průměru."
+        },
+        {
+          "tag": "Nedostatečná individualizace výuky",
+          "detail": "Učitelé málo přizpůsobují výuku individuálním schopnostem žáků, zejména v teoretických předmětech.",
+          "evidence": "Menší byla diferenciace výuky ve vztahu k individuálním schopnostem žáků; nízká míra diferenciace v teoretických předmětech."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s anglickým nebo českým jazykem?",
+        "Jaké jsou konkrétní plány na zlepšení výsledků u maturitní zkoušky, zejména v oboru Informační služby?",
+        "Jak se škola přizpůsobuje individuálním potřebám a schopnostem jednotlivých žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory (Cukrář, Pekař, Aranžér) – zde škola dosahuje výborných výsledků a nabízí kvalitní vybavení.",
+        "Zájemci o pedagogiku a práci s dětmi – obor Předškolní a mimoškolní pedagogika je stabilně nejúspěšnější.",
+        "Žáci, kteří si cení moderního prostředí a aktivního školního života – škola investuje do vybavení a pořádá zajímavé projekty."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s ambicí na vysokou úspěšnost u maturitní zkoušky – výsledky jsou kolísavé a nejsou garantovány.",
+        "Zájemci o obor Informační služby – tento obor má slabší výsledky u maturit než ostatní obory.",
+        "Žáci, kteří potřebují individuální přístup a přizpůsobenou výuku – škola tuto diferenciaci zatím nedostatečně poskytuje."
+      ],
+      "plain_czech_summary": "Škola se zaměřuje na praktické obory a pedagogiku, kde dosahuje velmi dobrých výsledků. Investuje do moderního vybavení a vytváří motivující prostředí. Hlavní slabinou jsou kolísavé výsledky u maturitní zkoušky a nedostatečná individualizace výuky v teoretických předmětech. Žáci mají problémy s jazyky. Škola je vhodná pro zájemce o praktické obory a pedagogiku, méně vhodná pro ty, kdo si cení vysoké úspěšnosti u maturit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s mírným poklesem",
+        "key_numbers": [
+          "2019/2020: 85 % úspěšnosti",
+          "2020/2021 a 2021/2022: cca 75 % úspěšnosti",
+          "Obor Informační služby: pětina žáků neuspěla u praktické maturitní zkoušky"
+        ],
+        "evidence": "Ve školním roce 2019/2020 MZ úspěšně složilo 85 % přihlášených žáků, v dalších školních rocích úspěšnost mírně klesla na tři čtvrtiny."
+      },
+      "absence": {
+        "trend": "Pozitivní – absence se nezvýšila",
+        "key_numbers": [
+          "Po obnovení prezenční výuky se počet zameškaných hodin nezvýšil",
+          "Škola efektivně řeší problémy s vyšší či neomluvenou absencí"
+        ],
+        "evidence": "Po obnovení prezenční výuky se škole podařilo motivovat žáky k účasti ve vzdělávání, počet zameškaných hodin se nezvýšil."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště pracuje převážně účelně, členové spolupracují a poskytují metodickou pomoc",
+        "Individuální konzultace a rozhovory pro ubytované v domově mládeže",
+        "Kariérové poradenství pro žáky posledních ročníků",
+        "Individuální prezenční nebo on-line konzultace pro žáky s rizikem školní neúspěšnosti"
+      ],
+      "safety_climate": [
+        "Bezpečnosti a ochraně zdraví je věnována pozornost stanovením pravidel a postupů",
+        "Žáci jsou prokazatelně poučováni o bezpečnosti",
+        "Daří se udržovat minimální míru úrazovosti",
+        "Výskyt negativních jevů byl v poslední době nízký",
+        "Preventivní systém je kvalitně nastaven na omezování forem rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Fungující vztahy se zřizovatelem (Středočeským krajem)",
+        "Spolupráce se sociálními partnery",
+        "Zapojování do kulturních akcí pro veřejnost",
+        "Rozvoj vztahů se zákonnými zástupci žáků",
+        "Školní pracoviště Karmelka a školní bistro pro rozvoj odborného nadání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Hlavní zjištění jsou jasně oddělena v sekcích. Některé pasáže jsou však poměrně dlouhé a obsahují více informací najednou, což mírně snižuje přehlednost.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola přijala na zlepšení diferenciace výuky – pouze uvádí, že se tímto zabývá.",
+        "Není jasné, jak se konkrétně liší výsledky mezi jednotlivými třídami či učiteli v rámci stejného oboru.",
+        "Chybí informace o tom, kolik žáků oboru Informační služby konkrétně neuspělo u praktické maturitní zkoušky v jednotlivých rocích."
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "LYC_600170632_2021-11-01",
+  "school_profile": {
+    "school_type": "Střední škola s maturitními i výučními obory",
+    "inspection_period": "1. 11. 2021 − 4. 11. 2021",
+    "school_change_summary": "Škola zlepšila materiální vybavení a síť partnerů, ale zhoršilo se řízení výuky a výsledky u maturity oproti minulé inspekci."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a uplatnění",
+        "detail": "Díky široké síti partnerů se daří účelně propojovat teorii s praxí a absolventi se dobře uplatňují.",
+        "evidence": "Dochází k účelnému propojování teorie s praxí... Absolventi se v praxi uplatňují velmi dobře."
+      },
+      {
+        "tag": "Vybavení školy",
+        "detail": "Škola disponuje dobrým materiálním vybavením včetně nových CNC strojů a technologií.",
+        "evidence": "Nové CNC stroje přispívají k rozvoji odborných kompetencí... ke zkvalitnění přispěla obnova digitálních technologií."
+      },
+      {
+        "tag": "Prostředí",
+        "detail": "Výuka probíhá v příjemné atmosféře a žáci se nebrání komunikaci s učiteli.",
+        "evidence": "Hospitované hodiny probíhaly v příjemné pracovní atmosféře, žáci bez obav odpovídali na otázky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Podprůměrné maturitní výsledky",
+        "detail": "Žáci maturitních oborů dosahují ve společné části zkoušek horších výsledků než průměr ČR.",
+        "evidence": "Žáci dosahují horších výsledků, než je republikový průměr... ve společné části maturitní zkoušky."
+      },
+      {
+        "tag": "Nefektivní výuka",
+        "detail": "Převažuje frontální způsob výuky, který vede k pasivitě žáků a neefektivnímu učení.",
+        "evidence": "Výuka odborných předmětů byla nejčastěji vedena frontálním způsobem, což vedlo k pasivitě některých žáků."
+      },
+      {
+        "tag": "Nedostatečná podpora",
+        "detail": "Škola neúčinně řeší vysokou absenci a předčasné odchody žáků ze studia.",
+        "evidence": "Nedaří se však vytvořit účinné mechanismy ke snížení vysoké absence žáků a jejich předčasných odchodů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola analyzuje neúspěšnost žáků u maturitní zkoušky a jaká opatření přijímá pro její snížení?",
+      "Jakým způsobem škola podporuje individuální potřeby žáků, když inspekce zaznamenala malou míru diferenciace ve výuce?",
+      "Jaká konkrétní opatření škola zavádí pro snížení vysoké absence a počtu předčasných odchodů ze studia?"
+    ],
+    "who_school_fits": [
+      "Pro žáty, kteří preferují tradiční frontální styl výuky a pasivní příjem informací.",
+      "Pro technicky nadšené žáky, kteří ocení nové CNC stroje a vazby na zaměstnavatele.",
+      "Pro žáky, kteří potřebují vstřícné prostředí a přímou podporu učitelů v malých kolektivech."
+    ],
+    "who_should_be_cautious": [
+      "Pro ambiciózní žáky, kteří očekávají nadprůměrné akademické výsledky a intenzivní přípravu na maturitu.",
+      "Pro žáky se specifickými vzdělávacími potřebami vyžadujícími individuální přístup a diferenciaci.",
+      "Pro žáky s rizikem vyšší absence nebo motivací, jelikož škola nemá efektivní mechanismy pro jejich udržení."
+    ],
+    "plain_czech_summary": "Škola nabízí širokou škálu oborů a vyniká v materiálním vybavení a napojení na praktickou sféru. Výuka probíhá v příjemném prostředí, ale žáci dosahují podprůměrných výsledků u maturity. Hlavním nedostatkem je převažující pasivní styl výuky a absence individuálního přístupu k žákům. Škola také nedostatečně řeší vysokou absenci a předčasné odchody ze studia. Pro rodiče je klíčové zvážit, zda škola dokáže zajistit dostatečnou akademickou přípravu a podporu pro jejich dítě."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Podprůměrné výsledky ve společné části, nadprůměrné v profilové části.",
+      "key_numbers": [
+        "Neúspěšnost ve strojírenství až 5x vyšší než průměr ČR.",
+        "Neúspěšnost na OA v češtině cca 3x vyšší než průměr ČR.",
+        "Většina oborů úspěšnější v profilové části než průměr ČR."
+      ],
+      "evidence": "Žáci dosahují horších výsledků, než je republikový průměr... ve společné části maturitní zkoušky."
+    },
+    "absence": {
+      "trend": "Vysoká absence a předčasné odchody ze studia.",
+      "key_numbers": [
+        "Pouze 25 z 39 žáků nematuritních oborů ukončilo studium řádně.",
+        "Neúspěšnost v oboru Strojní mechanik 33,3 % i po opravných termínech.",
+        "Absence žáků je hodnocena jako vysoká."
+      ],
+      "evidence": "Nedaří se však vytvořit účinné mechanismy ke snížení vysoké absence žáků a jejich předčasných odchodů."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně a metodici prevence na dvou pracovištích.",
+      "Adaptační pobyty pro první ročníky maturitních oborů.",
+      "Kariérové poradenství pro žáky posledních ročníků."
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra ve vyučovacích hodinách.",
+      "Minimální výskyt rizikového chování žáků.",
+      "Vstřícný přístup pedagogů motivující k zapojení."
+    ],
+    "partnerships_practice": [
+      "Široká síť sociálních partnerů pro odbornou praxi.",
+      "Realizace odborného výcviku přímo u zaměstnavatelů.",
+      "Podpora zahraniční spolupráce (v době inspekce pozastavena)."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, ale obsahuje standardní byrokratické fráze (např. 'účelně rozděleny', 'efektivně vedli').",
+    "uncertainty_notes": [
+      "Chybí přesné procentuální vyjádření absence, pouze kvalitativní hodnocení 'vysoká'.",
+      "Nejasné, které konkrétní obory jsou zahrnuty v 'dané skupině oborů' pro srovnání maturitních výsledků.",
+      "Nespecifikováno, zda 'noví učitelé bez kvalifikace' učí klíčové maturitní předměty."
+    ]
+  }
+}

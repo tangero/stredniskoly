@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600004929_2025-02-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:43:37.231911+00:00",
+  "run_finished_utc": "2026-02-09T13:44:01.295063+00:00",
+  "raw_file": "LYC_600004929_2025-02-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600004929_2025-02-25",
+    "school_profile": {
+      "school_type": "Obchodní akademie se zaměřením na ekonomické vzdělání a sportovní management, poskytující vzdělání v denní formě s maturitní zkouškou",
+      "inspection_period": "25. února až 28. února 2025",
+      "school_change_summary": "Od inspekce v roce 2018 vzrostl počet žáků na 509 (96 % kapacity), škola rozšířila síť profesních partnerů, zvýšila účinnost hospitační činnosti a aktualizovala vzdělávací programy. Zlepšily se výsledky vzdělávání a absence žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola systematicky propojuje teoretickou výuku s praktickými zkušenostmi prostřednictvím spolupráce s vysokými školami, zaměstnavateli, bankami a profesními asociacemi.",
+          "evidence": "Systematická spolupráce s profesními partnery zajišťuje sepětí teoretické výuky s praxí a inovaci obsahu učiva."
+        },
+        {
+          "tag": "Kvalitní pedagogický sbor",
+          "detail": "Škola má 47 plně kvalifikovaných pedagogů s dlouhodobými zkušenostmi, kteří se pravidelně vzdělávají a podporují nové kolegy.",
+          "evidence": "Stabilizovaný, odborně kvalifikovaný pedagogický sbor zajišťuje kontinuitu vzdělávání."
+        },
+        {
+          "tag": "Podpora sportovců a nadaných žáků",
+          "detail": "Škola vytváří vhodné podmínky pro vzdělávání aktivních sportovců (90 žáků) podle individuálních plánů a podporuje účast v soutěžích.",
+          "evidence": "Zaměřením na sportovní management škola vytváří vhodné podmínky pro vzdělávání aktivních sportovců."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Jednotvárnost výuky v některých hodinách",
+          "detail": "V menší části hodin chybí dostatečná pestrost metod a forem výuky, což vede k nižší dynamice a nerovnoměrnému zapojení žáků.",
+          "evidence": "Uplatňovaná škála metod a forem výuky byla ojediněle málo pestrá, což se projevovalo jednotvárností a nižší dynamikou vyučovací hodiny."
+        },
+        {
+          "tag": "Slabší výsledky v matematice u maturity",
+          "detail": "Úspěšnost žáků v matematice je výrazně nižší než průměr v celorepublikovém srovnání.",
+          "evidence": "U matematiky výrazněji nižší úspěšnost než je průměrná úspěšnost žáků daného oboru v celorepublikovém srovnění."
+        },
+        {
+          "tag": "Nedostatečná zpětná vazba a sebereflexi",
+          "detail": "Žáci jsou jen zřídka vedeni k posouzení kvality své práce a k sebereflexi vlastního výkonu.",
+          "evidence": "Žáci byli jen zřídka vedeni k objektivnímu posouzení kvality práce svých vrstevníků a k sebereflexi vlastního výkonu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje sportovce v jejich studiu a jak se jim daří skloubit sport se studiem?",
+        "Jaké jsou výsledky absolventů na vysokých školách a jak se jim daří na trhu práce?",
+        "Jak se škola zaměřuje na zlepšení výsledků v matematice, kde jsou výsledky pod průměrem?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o ekonomii, obchod a management, kteří chtějí propojit teorii s praxí",
+        "Aktivní sportovci, kterým škola nabízí individuální plány umožňující skloubení sportu se studiem",
+        "Žáci z Středočeského kraje, kterým umožňuje dobrá dopravní dostupnost dojíždění"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími předpoklady v matematice, kde jsou výsledky pod celorepublikovým průměrem",
+        "Žáci, kteří potřebují více interaktivní a pestrou výuku – v některých hodinách převažuje frontální forma",
+        "Žáci se speciálními vzdělávacími potřebami by měli ověřit konkrétní nabídku podpory"
+      ],
+      "plain_czech_summary": "Obchodní akademie na Kubelíkově je etablovaná škola s dlouhou tradicí v ekonomickém vzdělání. Má kvalitní pedagogický sbor, dobré vybavení a efektivně propojuje teorii s praxí. Zvlášť se hodí pro sportovce a žáky se zájmem o ekonomii. Pozitivní je, že se zlepšily výsledky a absence. Slabší stránkou je, že v některých hodinách chybí pestřejší výukové metody a výsledky v matematice jsou pod průměrem. Škola se zavázala tato témata řešit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zvýšená úspěšnost v profilové části, ale slabší výsledky v matematice",
+        "key_numbers": [
+          "Zvýšila se úspěšnost žáků u maturitní zkoušky",
+          "V matematice výrazně nižší úspěšnost než celorepublikový průměr",
+          "45 % žáků uplatňuje jazykové certifikáty v profilové části"
+        ],
+        "evidence": "Ve sledovaném období posledních tří let se zvýšila úspěšnost žáků u MZ, ale u matematiky výrazněji nižší než průměr."
+      },
+      "absence": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "Snížení průměrného počtu hodin absence na žáka",
+          "Odstranění neomluvené absence na žáka téměř na nulovou hodnotu",
+          "97 % žáků má uzavřenou klasifikaci ke 30. 6."
+        ],
+        "evidence": "Došlo ke snížení průměrného počtu hodin absence na žáka a odstranění neomluvené absence na žáka téměř na nulovou hodnotu."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s psychologickou, preventivní a inkluzivní péčí",
+        "Externí školní psycholožka poskytující metodickou pomoc pro práci se žáky se speciálními vzdělávacími potřebami",
+        "Adaptační a preventivní aktivity prolínající celým vzdělávacím cyklem",
+        "Individuální vzdělávací plány pro žáky se speciálními potřebami"
+      ],
+      "safety_climate": [
+        "Důraz na dodržování pravidel a bezpečné prostředí",
+        "Čipový systém a celodenní provoz recepce",
+        "Ojedinělé případy rizikových projevů řešeny individuálními výchovnými komisemi",
+        "Kázeňská opatření udělována v souladu se školním řádem"
+      ],
+      "partnerships_practice": [
+        "Vysoké školy – fakultní škola Vysoké školy ekonomické v Praze",
+        "Zaměstnavatelé, banky, pojišťovny a profesní asociace",
+        "Mezinárodní veletrh fiktivních firem – aktivní účast žáků",
+        "Spolupráce se středními školami – organizování odborných soutěží"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však psány úředním stylem, který může být pro rodiče méně srozumitelný. Klíčové informace jsou jasně identifikovatelné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počet hodin, v nichž chybí aktivizující metody – uvádí pouze 'menší část' a 'ojediněle'",
+        "Není jasné, jak velký je podíl hodin s jednotvárnou výukou – údaj je kvalitativní, ne kvantitativní",
+        "Konkrétní plány na zlepšení matematiky nejsou v textu detailně popsány, pouze obecná doporučení"
+      ]
+    }
+  }
+}

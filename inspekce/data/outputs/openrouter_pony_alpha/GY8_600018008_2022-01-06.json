@@ -1,0 +1,109 @@
+{
+  "report_id": "GY8_600018008_2022-01-06",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:07:00.189751+00:00",
+  "run_finished_utc": "2026-02-10T08:08:40.079818+00:00",
+  "raw_file": "GY8_600018008_2022-01-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600018008_2022-01-06",
+    "school_profile": {
+      "school_type": "Gymnázium s všeobecným zaměřením (čtyřleté a osmileté).",
+      "inspection_period": "6., 10. a 11. 1. 2022",
+      "school_change_summary": "Od poslední inspekce došlo zejména ke zlepšení materiálních podmínek pro vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Klima a vztahy",
+          "detail": "Ve škole panuje vstřícné prostředí s pozitivním klimatem a prosociálními vztahy.",
+          "evidence": "Vytvoření vstřícného prostředí ve škole s pozitivním klimatem projevujícím se v žádoucích prosociálních vztazích."
+        },
+        {
+          "tag": "Partnerská spolupráce",
+          "detail": "Škola výborně spolupracuje s rodiči, zřizovatelem i městem, což podporuje její chod.",
+          "evidence": "Intenzivní je také činnost rodičovského sdružení, které škole pomáhá zejména organizačně a finančně."
+        },
+        {
+          "tag": "Vybavení a prostředí",
+          "detail": "Škola disponuje vhodným materiálním zázemím a modernizuje vybavení včetně techniky.",
+          "evidence": "Pozornost ze strany vedení školy je věnována údržbě a modernizaci školní budovy, obnovován je žákovský nábytek."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zastaralé metody výuky",
+          "detail": "Výuka stále převažuje v tradiční frontální formě bez dostatku aktivizace žáků.",
+          "evidence": "Výuka byla většinou metodicky založena na uplatňování tradičních pedagogických postupů, kdy převažovalo frontálně vedené vyučování."
+        },
+        {
+          "tag": "Nedostatečná podpora nadaných a SVP",
+          "detail": "Škola neefektivně diferencuje výuku pro talentované žáky a žáky se speciálními potřebami.",
+          "evidence": "Omezené využití diferenciace učiva se projevilo v nižší míře konkrétní podpory vzdělávání žáků se speciálními vzdělávacími potřebami a žáků nadaných."
+        },
+        {
+          "tag": "Chybějící zpětná vazba",
+          "detail": "Ve výuce chybí sebehodnocení, vzájemné hodnocení a motivační shrnutí na konci hodin.",
+          "evidence": "V závěru většiny vyučovacích hodin scházelo motivační shrnutí... téměř vůbec pak nebylo uplatňováno sebehodnocení a vzájemné hodnocení žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé aktivizují žáky ve výuce, aby nedocházelo pouze k frontálnímu vyučování?",
+        "Jakým způsobem škola individuálně podporuje nadané žáky a ty, kteří potřebují pomoci s učivem?",
+        "Jak škola využívá nově získané materiální vybavení a digitální techniku k modernizaci výuky?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří preferují tradiční způsob výuky založený na frontálním vyučování a samostatné práci.",
+        "Pro rodiče, kteří hledají školu se silným vztahem k regionu, aktivním rodičovským sdružením a bezpečným klimatem.",
+        "Pro studenty, kteří chtějí studovat v modernizovaném prostředí s dostatečným jazykovým a přírodovědným zaměřením."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří vyžadují vysokou míru individuálního přístupu nebo mají specifické vzdělávací potřeby.",
+        "Pro studenty očekávající moderní aktivizující metody výuky, skupinovou práci a častou zpětnou vazbu.",
+        "Pro vysoce nadané žáky, kteří mohou v běžné výuce postrádat dostatek podnětů a náročnější úkoly."
+      ],
+      "plain_czech_summary": "Gymnázium ve Zábřehu nabízí vstřícné a bezpečné prostředí s kvalitním materiálním vybavením, které se v posledních letech zlepšilo. Škola klade důraz na přípravu k maturitě a dalšímu studiu, avšak inspekce upozorňuje na převahu tradičních, frontálních metod výuky. Slabším místem je nedostatečná podpora nadaných dětí a žáků se speciálními potřebami formou diferenciace učiva. Škola má výborné zázemí díky podpoře rodičů i zřizovatele, ale potřebuje posunout ve metodách práce směrem k větší aktivitě žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Škola sleduje úspěšnost u maturit jako zpětnou vazbu, konkrétní data nejsou v textu vyjádřena procentuelně.",
+        "key_numbers": [
+          "353 žáků ve 12 třídách",
+          "31 učitelů",
+          "2 studijní cykly (4letý a 8letý)"
+        ],
+        "evidence": "Zpětnou vazbou pro školu je i úspěšnost žáků u maturitních zkoušek nebo v přijetí absolventů na vysoké školy."
+      },
+      "absence": {
+        "trend": "Neuvedeno",
+        "key_numbers": [],
+        "evidence": "Text zprávy neobsahuje konkrétní údaje o absence ani její trendu."
+      },
+      "support_services": [
+        "Funguje školní poradenské pracoviště s výchovnou poradkyní a metodičkou prevence.",
+        "Škola nabízí doučování v rámci projektu Šablony a individuální konzultace.",
+        "Je zajištěna systematická kariérová poradenská činnost zaměřená na volbu vysoké školy."
+      ],
+      "safety_climate": [
+        "Vytvořeno vstřícné prostředí s pozitivním klimatem a prosociálními vztahy.",
+        "Nebyly řešeny případy závažných forem rizikového chování, preventivní strategie je účinná.",
+        "V tělesné výchově jsou důsledně dodržovány zásady bezpečnosti a fair play."
+      ],
+      "partnerships_practice": [
+        "Intenzivní spolupráce s rodičovským sdružením, které pomáhá finančně i organizačně.",
+        "Aktivní zapojení do dění ve městě a spolupráce s Univerzitou Palackého v Olomouci.",
+        "Dlouhodobé mezinárodní aktivity podporující rozvoj jazykových kompetencí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně členěná a terminologie je vysvětlena kontextově. Závěry a doporučení jsou explicitně vyjádřena.",
+      "uncertainty_notes": [
+        "Chybí konkrétní statistická data o úspěšnosti u maturity (procentuální úspěšnost).",
+        "Není uveden konkrétní trend nebo číselné vyjádření absence žáků.",
+        "Text 'Výuka byla většinou metodicky založena...' je obecná a může znamenat různou míru kvality v jednotlivých předmětech."
+      ]
+    }
+  }
+}

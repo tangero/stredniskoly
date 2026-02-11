@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600013201_2024-09-24",
+  "school_profile": {
+    "school_type": "Průmyslová střední škola s obory zakončenými maturitou (stavebnictví, strojírenství, geodézie) a učebními obory (nástrojař, elektrikář, strojní mechanik). Provozuje také domov mládeže a školní jídelnu.",
+    "inspection_period": "24. až 26. září 2024",
+    "school_change_summary": "Od poslední inspekce došlo k pozitivnímu vývoji: nárůst počtu žáků v maturitních oborech až o 30 %, zlepšení materiálních podmínek (nové dílny, rekonstrukce jídelny), snížení neúspěšnosti u maturit přibližně o třetinu a zlepšení personálního obsazení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola má funkční partnerství s firmami, které poskytují exkurze, praxe, přednášky o nových technologiích a poradenství.",
+        "evidence": "Veletrh pracovních příležitostí, memorandum s ČVUT Praha, dlouholetá spolupráce s fakultní školou v Ostravě."
+      },
+      {
+        "tag": "Výborné praktické vybavení",
+        "detail": "Školní dílny jsou velmi dobře vybaveny a vedeny odborně kvalifikovanými učiteli s dlouhodobou praxí.",
+        "evidence": "Výstavba nových dílen a odborných učeben, jejich materiální zázemí, nová školní jídelna-výdejna na Ústecké 36."
+      },
+      {
+        "tag": "Zlepšující se výsledky",
+        "detail": "Počet prospívajících s vyznamenáním se téměř zdvojnásobil, neúspěšnost u maturit se snížila o třetinu.",
+        "evidence": "Ve školním roce 2023/2024 prospělo s vyznamenáním 46 žáků (nárůst od minulé inspekce), hrubá neúspěšnost u maturit se snížila přibližně o třetinu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo individuálního přístupu v teoretické výuce",
+        "detail": "Učitelé často volí jednotné tempo bez ohledu na rozdílné učební potřeby žáků, chybí diferenciace úloh.",
+        "evidence": "Chybějící zohledňování individuálních vzdělávacích potřeb žáků diferencií náročnosti řešených úloh v teoretické výuce."
+      },
+      {
+        "tag": "Slabá zpětná vazba od žáků",
+        "detail": "Učitelé málo využívají sebehodnocení žáků a formativní hodnocení zaměřené na učební pokrok.",
+        "evidence": "Nízká míra účelnosti využívané zpětné vazby od žáků o jejich pochopení učiva v závěru hodin teoretické výuky."
+      },
+      {
+        "tag": "Omezená podpora nadaných žáků",
+        "detail": "Podpora rychlejších nebo nadaných žáků v teoretické výuce systematicky neprobíhá.",
+        "evidence": "Žáci pracují na stejných úkolech bez omezení času, rychlejší žáci prokazují výborné dovednosti, ale chybí cílená podpora."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se slabšími výsledky a jak funguje doučování?",
+      "Jaké jsou možnosti zapojení žáků do soutěží a jak se škola podílí na jejich přípravě?",
+      "Jak probíhá spolupráce s firmami a jaké jsou šance na získání praxe během studia?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a řemesla – škola má výborné vybavení a zkušené učitele v odborném výcviku.",
+      "Studenti z okolních obcí – škola nabízí ubytování v domově mládeže se čtyřmi výchovnými skupinami.",
+      "Žáci se zájmem o stavebnictví, strojírenství nebo geodézii – škola má dlouhodobé partnerství s firmami a vysokými školami v těchto oborech."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – teoretická výuka se zaměřuje spíše na frontální výklad.",
+      "Nadaní žáci hledající speciální podporu – systematická podpora nadaných žáků v teoretické výuce neprobíhá.",
+      "Žáci preferující aktivní a interaktivní vyuku – vzájemná spolupráce žáků je využívána v menší míře, převládá frontální forma."
+    ],
+    "plain_czech_summary": "Průmyslová střední škola Letohrad je stabilní a rozvíjející se školou s výborným vybavením pro praktickou výuku a funkční spoluprací s firmami. Výsledky žáků se zlepšují, zejména u maturitních zkoušek. Silnou stránkou je péče o začínající učitele a kvalitní odborný výcvik. Slabší je individualizace teoretické výuky a podpora nadaných žáků. Škola je vhodná pro prakticky zaměřené studenty, kteří ocení moderní dílny a kontakty s profesionály."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – hrubá neúspěšnost se snížila",
+      "key_numbers": [
+        "Snížení neúspěšnosti přibližně o třetinu v roce 2024 oproti minulé inspekci",
+        "46 žáků prospělo s vyznamenáním (nárůst téměř na dvojnásobek od minulé inspekce)",
+        "19 žáků neprospělo i po opravných zkouškách (srovnatelný stav)"
+      ],
+      "evidence": "Ve školním roce 2023/2024 se v ročníkových výsledcích nebyly zaznamenány negativní tendence, neúspěšných žáků byl nízký počet."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva se nezabývá absencí žáků."
+    },
+    "support_services": [
+      "Výchovné poradenství zajišťují dva výchovní poradci s požadovaným vzděláním, jeden je zároveň školní metodičkou prevence.",
+      "Doučovací aktivity a konzultace s jednotlivými učiteli pro žáky ohrožené školním neúspěchem.",
+      "Spolupráce se školskými poradenskými zařízeními pro žáky se speciálními vzdělávacími potřebami, podpůrná opatření nastavena podle doporučení.",
+      "Dvě školní metodičky prevence zajišťují prevenci rizikového chování, preventivní program je vyhodnocován a aktualizován ročně.",
+      "Adaptační a preventivní programy, třídnické hodiny, nově založená žákovská samospráva s elektronickou schránkou důvěry."
+    ],
+    "safety_climate": [
+      "Sledované hodiny teoretické výuky probíhaly velmi často v klidné pracovní atmosféře vytvářející příznivé podmínky pro vzdělávání.",
+      "Vstřícná a otevřená komunikace učitelů ve výuce podporující bezpečné prostředí pro vzdělávání žáků.",
+      "Učitelé odborného výcviku kladli důraz na dodržování pravidel bezpečného chování a používání ochranných pomůcek.",
+      "Škole se daří zachycovat projevy rizikového chování, řešit je a přijímat účinná opatření.",
+      "Domov mládeže má upravené, čisté a účelně zařízené prostory, vychovatelé pomáhají řešit případné problémy žáků."
+    ],
+    "partnerships_practice": [
+      "Velmi dobře funguje spolupráce s partnerskými firmami v oblasti odborných exkurzí, praxí žáků a organizovaných přednášek.",
+      "Funkční poradenství ze strany odborníků z praxe, nově realizovaný Veletrh pracovních příležitostí.",
+      "Dlouholetá spolupráce s fakultní školou v Ostravě (katedra geodézie a důlního měřictví), nově uzavřené memorandum s ČVUT Praha.",
+      "Stavební firmy finančně podporují zájmové aktivity (modelářský kroužek), Nadační fond školy podporuje mimoškolní aktivity.",
+      "Škola realizuje doplňkovou činnost: zeměměřičské práce, hostinskou činnost a svářečskou školu."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta, čísla a citace. Struktura je logická a zaměřená na praktické informace pro rodiče. Některé pasáže jsou však více odborné a formální.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, nelze posoudit trend absence žáků.",
+      "Konkrétní počty žáků se speciálními vzdělávacími potřebami (32) a s odlišným mateřským jazykem (12) jsou uvedeny, ale jejich úspěšnost není detailně rozvedena.",
+      "Výsledky závěrečných zkoušek jsou popsány jako 'tradičně velmi dobré', ale konkrétní čísla nejsou uvedena."
+    ]
+  }
+}
+```

@@ -1,0 +1,77 @@
+{
+  "report_id": "GY4_600011674_2023-01-11",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T06:59:26.079710+00:00",
+  "run_finished_utc": "2026-02-10T06:59:53.240845+00:00",
+  "raw_file": "GY4_600011674_2023-01-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600011674_2023-01-11",
+    "school_profile": {
+      "school_type": "Gymnázium",
+      "inspection_period": "2023-01-11 až 2023-01-13",
+      "school_change_summary": "Nebyl poskytnut zdrojový text zprávy pro analýzu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Není k dispozici",
+          "detail": "Bez zdrojového textu nelze určit silné stránky školy.",
+          "evidence": "Zdrojový text zprávy nebyl dodán."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Chybí data",
+          "detail": "Není možné identifikovat rizika bez textu inspekční zprávy.",
+          "evidence": "Zdrojový text zprávy nebyl dodán."
+        }
+      ],
+      "questions_for_open_day": [
+        "Mohu vidět aktuální inspekční zprávu ČŠI?"
+      ],
+      "who_school_fits": [
+        "Informace bude k dispozici po dodání textu zprávy."
+      ],
+      "who_should_be_cautious": [
+        "Informace bude k dispozici po dodání textu zprávy."
+      ],
+      "plain_czech_summary": "Pro analýzu této školy chybí zdrojový text inspekční zprávy. Prosím, vložte text zprávy, abych mohl připravit přehled silných stránek, rizik a doporučení pro rodiče. Bez textu nelze poskytnout relevantní informace o kvalitě výuky, atmosféře či výsledcích školy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neznámý",
+        "key_numbers": [
+          "Data nejsou k dispozici"
+        ],
+        "evidence": "Zdrojový text zprávy nebyl dodán."
+      },
+      "absence": {
+        "trend": "Neznámý",
+        "key_numbers": [
+          "Data nejsou k dispozici"
+        ],
+        "evidence": "Zdrojový text zprávy nebyl dodán."
+      },
+      "support_services": [
+        "Data nejsou k dispozici bez zdrojového textu."
+      ],
+      "safety_climate": [
+        "Data nejsou k dispozici bez zdrojového textu."
+      ],
+      "partnerships_practice": [
+        "Data nejsou k dispozici bez zdrojového textu."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 1,
+      "czech_clarity_reason": "Nebyl dodán žádný text k analýze, nelze hodnotit kvalitu jazyka ani obsahu zprávy.",
+      "uncertainty_notes": [
+        "Chybí zdrojový text inspekční zprávy.",
+        "Všechny výstupy jsou zástupné a čekají na vstupní data.",
+        "Report ID a metadata jsou převzaty z definice."
+      ]
+    }
+  }
+}

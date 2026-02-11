@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "SOU_600005381_2023-01-09",
+  "school_profile": {
+    "school_type": "Střední škola technická s domovem mládeže, příspěvková organizace",
+    "inspection_period": "9. 1. - 12. 1. 2023",
+    "school_change_summary": "Od inspekce v roce 2020 se zvýšil počet žáků na 1157 (96 % kapacity). Škola nabízí obory s výučním listem i s maturitou, včetně zkráceného studia. V maturitních oborech se vzdělává 353 žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Péče o žáky v krizi",
+        "detail": "Školní poradenské pracoviště poskytuje systematickou psychologickou, psychoterapeutickou a speciálně pedagogickou péči.",
+        "evidence": "Systematická individuální péče poskytovaná poradenským pracovištěm"
+      },
+      {
+        "tag": "Kvalita výuky češtiny",
+        "detail": "Výuka českého jazyka efektivně podporuje přípravu k maturitě s jasnou strukturou a ověřováním cílů.",
+        "evidence": "Vyučovací hodiny měly jasnou strukturu a definovaný cíl, jehož naplnění se dařilo ověřit"
+      },
+      {
+        "tag": "Angličtina s rodilými mluvčími",
+        "detail": "Zavedena výuka metropolitní angličtiny s rodilými mluvčími zaměřená na přípravu k maturitě.",
+        "evidence": "Metropolitní anglický jazyk vyučovaný rodilými mluvčími, zaměřený především na přípravu k MZ"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost v nástavbě",
+        "detail": "V nástavbových oborech přetrvává vysoká neúspěšnost u maturitní zkoušky, zejména v dálkové formě.",
+        "evidence": "Vyšší hrubá neúspěšnost žáků ve společné části MZ v nástavbových oborech, vysoká absence"
+      },
+      {
+        "tag": "Absence a předčasné odchody",
+        "detail": "Žáci nástavbového studia mají vysokou absenci (173-189 hodin ročně), což vede k předčasným odchodům.",
+        "evidence": "Absence žáků, kteří neuspěli, dosahovala 173 hodin na žáka ve čtyřletých a 189 hodin v nástavbě"
+      },
+      {
+        "tag": "Slabá matematika",
+        "detail": "Výuka matematiky má didaktické nedostatky, žáci nejsou vedeni k pečlivému řešení úloh a jsou nadhodnoceni.",
+        "evidence": "Žáci jsou v průběhu studia výrazně nadhodnoceni o tři až čtyři klasifikační stupně"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků nástavbového studia a co nabízí pro jejich motivaci?",
+      "Jaké jsou konkrétní výsledky v maturitě za poslední rok a jak se liší mezi jednotlivými obory?",
+      "Jak škola podporuje žáky v matematice, když inspekce zjistila didaktické nedostatky?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o technické obory s výučním listem, kde škola dosahuje lepších výsledků",
+      "Motivovaní žáci čtyřletých maturitních oborů, kteří mají lepší výsledky než v nástavbě",
+      "Žáci, kteří potřebují psychologickou podporu a péči poradenského pracoviště"
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o nástavbové studium v dálkové formě, kde jsou velmi vysoké neúspěšnosti (až 75-100 %)",
+      "Žáci se slabšími výsledky v matematice, protože výuka má zjištěné didaktické nedostatky",
+      "Žáci s tendencí k absencím, protože vysoká absence přímo souvisí s neúspěšností u maturitní zkoušky"
+    ],
+    "plain_czech_summary": "Akademie řemesel je technická střední škola s 1157 žáky. Silná je péče o žáky v krizi a výuka češtiny. Problém je vysoká neúspěšnost v nástavbových oborech (zejména v dálkové formě) a vysoká absence žáků. Matematika má didaktické nedostatky. Čtyřleté obory fungují lépe než nástavba. Škola přijala opatření, ale nejsou dostatečně účinná. Inspekce doporučuje utlumit některé nástavbové obory a zlepšit výuku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Negativní, zejména v nástavbových oborech",
+      "key_numbers": [
+        "Čtyřleté obory: hrubá neúspěšnost 33-48 % (ČR 17 %)",
+        "Nástavba dálková: hrubá neúspěšnost až 75-100 % (ČR 27 %)",
+        "Nástavba denní: hrubá neúspěšnost 20-30 %"
+      ],
+      "evidence": "Ve čtyřletých oborech v roce 2021/2022 hrubá neúspěšnost 48 % vs ČR 17 %. V dálkové Provozní elektrotechnice 100 % neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Vysoká, zejména v nástavbě",
+      "key_numbers": [
+        "Neúspěšní žáci čtyřleté: 173 hodin/rok",
+        "Neúspěšní žáci nástavby: 189 hodin/rok",
+        "Žáci, kteří zkoušku nekonali: 270 hodin (čtyřleté), 200 hodin (nástavba)"
+      ],
+      "evidence": "Ve školním roce 2021/2022 absence neúspěšných žáků dosahovala 173-189 hodin na žáka"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psychologickou, psychoterapeutickou a speciálně pedagogickou péčí",
+      "Krizová intervence",
+      "Strategie předcházení školní neúspěšnosti (existuje, ale není dostatečně účinná)"
+    ],
+    "safety_climate": [
+      "Výuka probíhá v přátelské atmosféře založené na vzájemném respektu",
+      "Učitelé podněcují žáky k plnění úkolů"
+    ],
+    "partnerships_practice": [
+      "Spolupráce učitelů v rámci předmětových oddělení pro všeobecné vzdělávání",
+      "Kontrola naplňování školních vzdělávacích programů",
+      "Organizační zajištění maturitní zkoušky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, ale je velmi dlouhá a místy opakující se. Klíčové informace pro rodiče jsou rozptýleny v textu.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, které konkrétní nástavbové obory mají nejhorší výsledky (pouze obecně hovoří o dálkové formě)",
+      "Není jasné, zda vysoká absence je příčinou nebo důsledkem neúspěšnosti",
+      "Chybí informace o tom, jak se škola chystá reagovat na doporučení inspekce"
+    ]
+  }
+}
+```

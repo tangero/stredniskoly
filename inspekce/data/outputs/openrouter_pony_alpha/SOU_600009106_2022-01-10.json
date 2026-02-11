@@ -1,0 +1,112 @@
+{
+  "report_id": "SOU_600009106_2022-01-10",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:04:43.107468+00:00",
+  "run_finished_utc": "2026-02-10T08:05:51.019350+00:00",
+  "raw_file": "SOU_600009106_2022-01-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600009106_2022-01-10",
+    "school_profile": {
+      "school_type": "SOU - obory gastronomie, služeb a kadeřnictví s výučním listem i maturitou",
+      "inspection_period": "10. − 13. 1. 2022",
+      "school_change_summary": "Škola od roku 2014 rozšířila nabídku oborů (kadeřník, cukrář), zrekonstruovala prostory a modernizovala vybavení pro praktické vyučování."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vybavení a praxe",
+          "detail": "Škola nabízí moderní cvičné provozy a kvalitní praxe u partnerů v reálném provozu.",
+          "evidence": "„Praktické vyučování pod vedením učitelů a instruktorů probíhá v malých skupinách... v reálném pracovním prostředí.“"
+        },
+        {
+          "tag": "Uplatnění absolventů",
+          "detail": "Absolventi učebních oborů nemají problém najít práci a jsou velmi úspěšní u závěrečných zkoušek.",
+          "evidence": "„Žáci v oborech s výučním listem... v předchozím roce byli úspěšní všichni žáci (123 žáků).“"
+        },
+        {
+          "tag": "Poradenské služby",
+          "detail": "Škola má kvalitně zajištěné psychologické a kariérní poradenství pro žáky.",
+          "evidence": "„Personální obsazení školního poradenského pracoviště... umožňuje poskytovat kvalitní poradenské služby.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nízká úspěšnost u maturity",
+          "detail": "Velká část studentů maturitních oborů neuspěje u závěrečných zkoušek, zejména v nástavbovém studiu.",
+          "evidence": "„V nástavbovém studiu byla neúspěšnost v roce 2019 37 %... v roce 2020 67 %.“"
+        },
+        {
+          "tag": "Zastaralá výuka teorie",
+          "detail": "Všeobecné předměty jsou vyučovány pasivně bez ohledu na individuální úroveň žáků.",
+          "evidence": "„Obecně převažovala méně účinná frontální forma výuky... diferenciace výuky... nebyla využívána cíleně.“"
+        },
+        {
+          "tag": "Časté odchody a absence",
+          "detail": "Škola bojuje s vysokou absencí a předčasnými odchody žáků ze studia.",
+          "evidence": "„Předčasné odchody ze vzdělávání jsou pro školu dlouhodobým problémem... vysoký objem absence žáků.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje studenty maturitních oborů, aby úspěšně složili státní maturity (zejména češtinu a matematiku)?",
+        "Jaké konkrétní formy nápravy a podpory nabízíte žákům s vysokou absencí nebo studijními problémy?",
+        "V jakých konkrétních firmách a pozicích mohou žáci absolvovat odbornou praxi?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří se chtějí naučit řemeslo a uplatnit se v gastru, kadeřnictví nebo službách (výuční list).",
+        "Pro žáky, kteří preferují malé kolektivy a individuální přístup při praktické výuce.",
+        "Pro ty, kdo chtějí studovat v moderně vybavených prostorách a využívat digitální technologie."
+      ],
+      "who_should_be_cautious": [
+        "Pro uchazeče o nástavbové maturitní studium kvůli vysokému riziku neúspěchu u maturity.",
+        "Pro žáky očekávající moderní a interaktivní formy výuky i v obecných předmětech (čeština, matematika).",
+        "Pro studenty se speciálními vzdělávacími potřebami vyžadující intenzivní podporu přímo v hodinách."
+      ],
+      "plain_czech_summary": "Škola je skvělou volbou pro získání řemeslného výučního listu v gastronomii či službách, kde dosahuje vynikajících výsledků a nabízí moderní zázemí. Varovným signálem je velmi nízká úspěšnost u maturitních zkoušek, zejména v nástavbovém studiu, a vysoký počet žáků, kteří školu předčasně opouštějí. Výuka teoretických předmětů je často pasivní a nevyužívá moderních metod. Rodiče by měli zvážit, zda je pro jejich dítě prioritou praktická průprava pro povolání, nebo akademické vzdělání zakončené maturitou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavá až negativní (vysoká neúspěšnost)",
+        "key_numbers": [
+          "Neúspěšnost v nástavbovém studiu v roce 2020: 67 %.",
+          "Neúspěšnost ve čtyřletém oboru v roce 2021: 24 %.",
+          "Pouze 31–50 % žáků čtyřletého oboru úspěšně dostuduje včas."
+        ],
+        "evidence": "„V posledním roce... byl podíl neúspěšných žáků školy ve srovnání s podílem neúspěšných žáků v ČR... vyšší.“"
+      },
+      "absence": {
+        "trend": "Zlepšující se (pokles odchodů), ale stále vysoká zátěž",
+        "key_numbers": [
+          "5 % žáků neprospělo, dalších cca 6 % vzdělání ukončilo.",
+          "16 žáků dostalo podmíněné vyloučení.",
+          "16 % žáků prospívá s vyznamenáním."
+        ],
+        "evidence": "„Předčasné odchody ze vzdělávání jsou pro školu dlouhodobým problémem... podíl těchto žáků se snížil.“"
+      },
+      "support_services": [
+        "Školní speciální pedagog a kariérní poradce.",
+        "Individuální vzdělávací plány pro žáky se SVP.",
+        "Adaptační výjezdy pro první ročníky."
+      ],
+      "safety_climate": [
+        "Kamerový systém a turnikety pro kontrolu příchodů.",
+        "Výrazný pokles počtu školních úrazů.",
+        "Nekázeň řešena domluvou, ale ne vždy důsledně."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s regionálními zaměstnavateli (restaurace, salony).",
+        "Praxe v malých skupinách s individuálním přístupem instruktorů.",
+        "Mezinárodní projekty (např. sasko-české pohraničí)."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně člení úspěchy (praxe, vybavení) a problémy (maturity, absence). Některé pasáže o vzdělávacích strategiích jsou obecnější.",
+      "uncertainty_notes": [
+        "Nejasné, zda problémy s maturity jsou důsledkem náročnosti školy nebo nízké kvality přípravy.",
+        "Není specifikováno, kolik žáků je přímo v jednotlivých oborech (jen celkové číslo)."
+      ]
+    }
+  }
+}

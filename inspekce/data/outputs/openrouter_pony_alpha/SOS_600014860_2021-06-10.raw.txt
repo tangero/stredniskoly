@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_600014860_2021-06-10",
+  "school_profile": {
+    "school_type": "Soukromá střední odborná škola",
+    "inspection_period": "10., 11. a 15. 6. 2021",
+    "school_change_summary": "Škola výrazně zlepšila materiální zázemí díky evropským projektům (nástavba budovy, nové učebny) a rozšířila nabídku oborů o včelaře."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Zázemí a vybavení",
+        "detail": "Škola získala nové odborné učebny, venkovní třídu a zlepšila ICT vybavení.",
+        "evidence": "„V přistaveném patru budovy školy vznikly nové odborné učebny... realizací venkovní učebny.“"
+      },
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Silné vazby na firmy a instituce zajišťují kvalitní odborné praxe a stáže.",
+        "evidence": "„Rozsáhlá spolupráce s profesními svazy a firmami... vede k účelnému propojení teoretického a praktického vzdělávání.“"
+      },
+      {
+        "tag": "Výsledky oboru Cestovní ruch",
+        "detail": "Žáci tohoto oboru dosahují nadprůměrných výsledků v českém i anglickém jazyce.",
+        "evidence": "„Opakovaně jsou výsledky žáků tohoto oboru... lepší než celostátní výsledky žáků stejné skupiny oborů.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky dálkového studia",
+        "detail": "Žáci dálkového studia mají výrazně horší výsledky u maturity z cizích jazyků.",
+        "evidence": "„Výrazně vyšší neúspěšnost žáků školy v cizím jazyce... se výrazným způsobem podílejí žáci dálkového studia.“"
+      },
+      {
+        "tag": "Nekonzistentní hodnocení",
+        "detail": "Klasifikace žáků v cizích jazycích neodpovídá výsledkům u maturitní zkoušky.",
+        "evidence": "„Hodnocení žáků není vhodně nastaveno a následně nekoresponduje s hodnocením u maturitní zkoušky.“"
+      },
+      {
+        "tag": "Absence a předčasné ukončení",
+        "detail": "Škola neúčinně řeší vysokou absenci u některých plnoletých žáků, což vede k odchodům.",
+        "evidence": "„Vysoký počet neomluvených hodin... škole se nepodařilo navázat funkční komunikaci s žáky.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky dálkového studia, aby úspěšně složili maturitu z cizího jazyka?",
+      "Jaká opatření škola zavádí, aby hodnocení v pololetí odpovídalo nárokům maturitní zkoušky?",
+      "Jak funguje systém komunikace s rodiči plnoletých žáků v případě problémů s docházkou?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o obor Cestovní ruch, kteří chtějí využít zahraniční praxe a nadprůměrnou podporu školy.",
+      "Studenti, kteří oceňují moderní prostředí, nové učebny a využití technologií ve výuce.",
+      "Žáci, kteří hledají obor s praktickým zaměřením a bohatou nabídkou exkurzí a stáží."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o dálkové studium (Předškolní a mimoškolní pedagogika), pokud mají slabší jazykové základy.",
+      "Žáci, kteří potřebují velmi striktní dohled nad docházkou a plněním povinností.",
+      "Studenti očekávající, že známky ve škole budou přesně odpovídat náročnosti státních maturit."
+    ],
+    "plain_czech_summary": "Soukromá škola v Jihlavě prošla pozitivním vývojem, vybudovala nové učebny a nabízí silné zastoupení praxe. Obor Cestovní ruch dosahuje vynikajících výsledků. Pozor by si měli dát zájemci o dálkové studium, kde jsou výsledky u maturity z cizích jazyků dlouhodobě špatné a škola zatím nenašla účinné řešení. Problémem je také neomluvená absence u části studentů. Škola je vhodná pro pragmatiky hledající uplatnění v oboru, méně pro ty, kdo potřebují konzistentní přípravu k maturitě ve všech typech studia."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený (dobré výsledky v denním studiu, špatné v dálkovém)",
+      "key_numbers": [
+        "Výsledky v oboru Cestovní ruch lepší než celostátní průměr",
+        "Výrazně vyšší neúspěšnost v cizích jazycích u dálkového studia",
+        "Disproporce mezi klasifikací a výsledky maturity"
+      ],
+      "evidence": "„Opakovaně jsou výsledky žáků tohoto oboru... lepší než celostátní výsledky... Výrazně vyšší neúspěšnost žáků školy v cizím jazyce... ve skupině oborů Veřejnosprávní činnost a Předškolní a mimoškolní pedagogika.“"
+    },
+    "absence": {
+      "trend": "Problémový segment (plnoletí žáci)",
+      "key_numbers": [
+        "Vysoký počet neomluvených hodin u plnoletých žáků",
+        "Předčasné ukončení studia u rizikových žáků",
+        "Neúčinná komunikace se zákonnými zástupci"
+      ],
+      "evidence": "„Mezi nejzávažnější patřily případy vysokého počtu neomluvených hodin... následně předčasně ukončili studium.“"
+    },
+    "support_services": [
+      "Doučování žáků formou kroužků (matematika, jazyky) financované z projektů",
+      "Individuální konzultace pro žáky dálkového studia",
+      "Funkční spolupráce s poradenskými zařízeními a prevence školní neúspěšnosti"
+    ],
+    "safety_climate": [
+      "Příjemná atmosféra ve výuce a ochota žáků spolupracovat",
+      "Funkční spolupráce s prevencí (Vrakbar Jihlava, Policie ČR)",
+      "Ojedinělé rizikové jevy řešené v posledních letech"
+    ],
+    "partnerships_practice": [
+      "Povinná zahraniční praxe pro obor Cestovní ruch",
+      "Spolupráce s Krajským úřadem, úřady práce a notáři pro obor Veřejnosprávní činnost",
+      "Odborná praxe v Mateřské škole Kvítek pro pedagogický obor"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky jednotlivých oborů a forem studia.",
+    "uncertainty_notes": [
+      "Nejsou uvedena konkrétní číselná data o procentu úspěšnosti u maturity, pouze slovní hodnocení.",
+      "Chybí přesný počet žáků s neomluvenou absencí, hovoří se pouze o 'ojedinělých případech'.",
+      "Není jasné, zda problémy s dokumentací měly vliv na žáky, nebo jde čistě o administrativní nedostatek."
+    ]
+  }
+}

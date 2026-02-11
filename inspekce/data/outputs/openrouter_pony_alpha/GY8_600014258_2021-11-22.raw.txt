@@ -1,0 +1,98 @@
+{
+  "report_id": "GY8_600014258_2021-11-22",
+  "school_profile": {
+    "school_type": "Gymnázium a Jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "22. 11. 2021 − 24. 11. 2021",
+    "school_change_summary": "Od poslední inspekce došlo ke změnám ve vedení školy, škola nově využívá školní informační systém a průběžně rekonstruuje prostory."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky vzdělávání",
+        "detail": "Škola dosahuje nadprůměrných výsledků v porovnání s ostatními školami a má velmi dobrou úroveň maturit.",
+        "evidence": "V porovnání s průměrnou úrovní výsledků žáků ostatních škol... dosahuje škola nadprůměrných výsledků."
+      },
+      {
+        "tag": "Jazyky a projekty",
+        "detail": "Díky zapojení do mezinárodních projektů mají žáci možnost zahraničních výletů a přípravy na jazykové zkoušky Cambridge.",
+        "evidence": "Škola získala pravidelný finanční příspěvek na zahraniční aktivity... umožňuje zájemcům... cvičné zkoušky Cambridge."
+      },
+      {
+        "tag": "Klima a podpora",
+        "detail": "Ve škole funguje studentský sněm a školní psycholožka, což přispívá k příjemnému klimatu a pomáhá žákům.",
+        "evidence": "Velké množství žáků využívá poradensko-terapeutických služeb... studentský sněm... má vliv na pozitivní školní klima."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Bezpečnost a stav budovy",
+        "detail": "Inspekce nalezla v historické budově riziková místa a zanedbané prostory, které nebyly vedením dostatečně kontrolovány.",
+        "evidence": "Některá místa v budově jako riziková ve vztahu k bezpečnosti... kontrolní systém vedení školy neidentifikoval bezpečnostní rizika."
+      },
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Učitelé nevěnují dostatek pozornosti rozdílným potřebám žáků, zejména těm nadaným.",
+        "evidence": "Výuce často chyběla nabídka náročnějších úkolů pro tyto žáky... ne ve všech případech se pedagogům daří diferencovat výuku."
+      },
+      {
+        "tag": "Nejasná pravidla výběru seminářů",
+        "detail": "Žáci mohou být nejistí ohledně toho, které volitelné předměty se otevřou, protože chybí jasná kritéria.",
+        "evidence": "Škola však nemá jasně stanovená kritéria pro otevírání těchto volitelných předmětů... způsobovat nejistotu žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola konkrétně řeší zjištěná bezpečnostní rizika a stav zanedbaných prostor v suterénu?",
+      "Jakým způsobem pedagogové individuálně přistupují k nadaným žákům, aby je dostatečně zatížili?",
+      "Má škola již nastavená jasná pravidla, která garantují otevření profilových seminářů?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří cílí na vysokou školu a oceňují širokou nabídku volitelných seminářů.",
+      "Pro žáky s zájmem o cizí jazyky a mezinárodní projekty (Erasmus, Cambridge zkoušky).",
+      "Pro ty, kdo hledají školu s pozitivním klimatem, aktivním studentským sněmem a podporou psycholožky."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče dětí se speciálními vzdělávacími potřebami kvůli nejasnému zapojení asistentů do výuky.",
+      "Žáci, kteří vyžadují silnou individuální podporu a diferenciaci náročných úkolů (nadaní).",
+      "Ty, pro které je estetický stav a moderní vybavení celé budovy (nejen vybraných prostor) prioritou."
+    ],
+    "plain_czech_summary": "Břeclavské gymnázium nabízí nadprůměrnou úroveň vzdělání a kvalitní přípravu na VŠ, což potvrzují maturitní výsledky. Škola má silné zázemí v jazycích a mezinárodních projektech. Prostorové podmínky jsou smíšené: část budovy je zrekonstruována, ale suterén a šatny jsou zanedbané a inspekce nalezla bezpečnostní nedostatky. Slabším místem je přístup k nadaným žákům a nevyužitý potenciál asistentů pedagoga. Celkově jde o školu s dobrou pověstí a zájmem uchazečů, která však musí řešit bezpečnost a nastavení jednotných pravidel."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "velmi dobrá úroveň",
+      "key_numbers": [
+        "nadprůměrné výsledky oproti ČR"
+      ],
+      "evidence": "Celkové výsledky maturitní zkoušky v posledních třech letech měly velmi dobrou úroveň."
+    },
+    "absence": {
+      "trend": "neuvedeno",
+      "key_numbers": [],
+      "evidence": "Zpráva neuvádí konkrétní data o absence."
+    },
+    "support_services": [
+      "Školní psycholožka (velmi vytížená po distanční výuce)",
+      "Dva výchovní poradci a metodička prevence",
+      "Studentský sněm podporující klima školy"
+    ],
+    "safety_climate": [
+      "Nalezena riziková místa ve vztahu k bezpečnosti a ochraně zdraví žáků",
+      "Kontrolní systém vedení tato rizika dříve neidentifikoval",
+      "Klima ve třídách podporováno adaptačními kurzy a preventivními programy"
+    ],
+    "partnerships_practice": [
+      "Aktivní zapojení do projektů Erasmus+ (zajištěno do roku 2027)",
+      "Spolupráce se základními a mateřskými školami v regionu (Setkání s vědou)",
+      "Možnost skládat cvičné zkoušky Cambridge (B2, C1)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a terminologie je vysvětlena nebo pochopitelná v kontextu.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní číselné údaje o neúspěšnosti u maturity, pouze obecné hodnocení 'velmi dobrá úroveň'.",
+      "Chybí přesné počty žáků ve třídách nebo detailní statistiky absence a prospěchu (např. průměr).",
+      "Není specifikováno, o jaká konkrétní bezpečnostní rizika se jedná, pouze se hovoří o 'některých místech'."
+    ]
+  }
+}

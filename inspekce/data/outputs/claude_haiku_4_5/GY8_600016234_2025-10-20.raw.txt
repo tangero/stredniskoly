@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY8_600016234_2025-10-20",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmiletého zaměření všeobecné a technické)",
+    "inspection_period": "20. 10. 2025 – 23. 10. 2025",
+    "school_change_summary": "Od inspekce v 2018/2019 došlo ke změně vedení, skladby oborů a obměně pedagogů. Nově poskytuje služby školního psychologa, zřídil školní parlament a aktualizoval vzdělávací programy. Zapojuje se v projektech Erasmus+, Učící se škola a OP JAK."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Projektová činnost a spolupráce",
+        "detail": "Škola aktivně spolupracuje se základními, středními a vysokými školami, město ji podporuje v realizaci projektů.",
+        "evidence": "Projekty Zlatá cihla, Fyzikální liga, Cihlička; podpora města Frýdek-Místek"
+      },
+      {
+        "tag": "Úspěchy žáků v soutěžích",
+        "detail": "Žáci dosahují výrazných úspěchů v sportovních, uměleckých a vědomostních soutěžích na národní i mezinárodní úrovni.",
+        "evidence": "Prvenství v olympiádě ruského jazyka, účast v ústředních kolech Logické olympiády"
+      },
+      {
+        "tag": "Maturitní úspěšnost",
+        "detail": "Všech 60 maturantů ve školním roce 2024/2025 úspěšně vykonalo maturitní zkoušku.",
+        "evidence": "100% úspěšnost u maturitní zkoušky"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká diferenciace výuky",
+        "detail": "Učitelé nepodporují žáky celého spektra nadání, chybí úlohy různé kognitivní náročnosti.",
+        "evidence": "Inspektoři zjistili, že diferenciace učiva je ojediněle začleňována do výuky"
+      },
+      {
+        "tag": "Pasivní přístup žáků k učení",
+        "detail": "Převládá frontální výuka s dominancí učitele, žáci přijímají informace převážně pasivně bez sebehodnocení.",
+        "evidence": "Chybí žákovské sebehodnocení a vrstevnické hodnocení podle kritérií"
+      },
+      {
+        "tag": "Mírné napětí ve vztazích",
+        "detail": "Část žáků vnímá ve vztahu k učitelům mírné napětí, zejména na vyšším gymnáziu je podpora méně rozvinutá.",
+        "evidence": "Dotazníkové šetření o školním klimatu; omezená komunikace mezi žáky a pedagogy"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje talentované žáky v humanitních oborech a jak se liší přístup od technických oborů?",
+      "Jaké konkrétní kroky podnikne škola na zlepšení komunikace mezi žáky a učiteli, zejména na vyšším gymnáziu?",
+      "Jak bude škola zavádět více skupinových aktivit a projektového vyučování, které inspektoři doporučili?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o technické obory a matematiku (58 % maturantů volilo matematiku v technickém oboru)",
+      "Aktivní žáci zajímající se o soutěže, projekty a mimoškolní aktivity (robotika, kroužky, charitativní akce)",
+      "Žáci, kterým vyhovuje tradičnější frontální výuka s důrazem na systematické vzdělání"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individuální přístup a diferenciovanou výuku podle svých schopností",
+      "Citliví žáci, kterým může vadit mírné napětí ve vztazích mezi žáky a učiteli",
+      "Žáci preferující interaktivní, skupinovou práci a moderní vyučovací metody"
+    ],
+    "plain_czech_summary": "Gymnázium Cihelní je stabilní škola s výbornými výsledky u maturit a aktivní účastí žáků v soutěžích. Silnou stránkou je projektová činnost a podpora města. Inspektoři však upozorňují na nízkou diferenciaci výuky – učitelé málo přizpůsobují výuku různým schopnostem žáků. Výuka je často pasivní, chybí skupinová práce a sebehodnocení žáků. Část žáků vnímá mírné napětí ve vztazích s učiteli. Škola má prostor pro zlepšení v oblasti interaktivnějších metod a lepší komunikace."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní vysoká úspěšnost",
+      "key_numbers": [
+        "100 % úspěšnost (60 z 60 maturantů)",
+        "58,3 % maturantů volilo matematiku v technickém oboru",
+        "Výborné výsledky v externí evaluaci (finanční, čtenářská gramotnost, fyzika, němčina)"
+      ],
+      "evidence": "Školní rok 2024/2025: všech 60 žáků úspěšně vykonalo maturitní zkoušku"
+    },
+    "absence": {
+      "trend": "Vzrůstající absence v druhém pololetí",
+      "key_numbers": [
+        "1. pololetí: 23 158 hodin (56 hodin na žáka)",
+        "2. pololetí: 24 757 hodin (59,5 hodin na žáka)",
+        "Neomluvená absence: 26 hodin za rok"
+      ],
+      "evidence": "Školní rok 2024/2025; absence vzrostla o 3,5 hodin na žáka"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, karierová poradkyně-metodička prevence",
+      "Interní psycholog se zapojuje do poradenských služeb",
+      "Adaptační pobyty pro nové třídní kolektivy",
+      "Tematické besedy a etické dílny ve spolupráci s externími partnery"
+    ],
+    "safety_climate": [
+      "31 úrazů zaznamenáno v školním roce 2024/2025",
+      "Pravidelné poučování žáků o bezpečnosti a ochraně zdraví",
+      "Zabezpečení realizováno poplachovým a tísňovým systémem",
+      "Doporučení: ochranná folie na prosklené vitríně u schodiště"
+    ],
+    "partnerships_practice": [
+      "Projekty: Erasmus+, Učící se škola, OP Jan Ámos Komenský",
+      "Spolupráce se základními, středními a vysokými školami (Zlatá cihla, Fyzikální liga, Cihlička)",
+      "Podpora města Frýdek-Místek v realizaci projektů",
+      "Charitativní aktivity: Bílá pastelka, Srdíčkový den"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelnou češtinou s jasnou strukturou. Obsahuje konkrétní příklady a čísla. Některé pasáže jsou však více odborné (kritéria, legislativa), ale pro rodiče jsou klíčové informace jasně odděleny.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jak konkrétně se bude škola věnovat talentovaným žákům v humanitních oborech – je to jen doporučení",
+      "Není jasné, jaké konkrétní kroky škola již podnikla na základě závěrů z inspekce 2018/2019",
+      "Detaily o 'mírném napětí' ve vztazích nejsou konkrétně popsány – není jasné, zda jde o izolované případy"
+    ]
+  }
+}
+```

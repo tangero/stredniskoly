@@ -1,0 +1,115 @@
+{
+  "report_id": "GY8_600015866_2023-04-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:43:15.175278+00:00",
+  "run_finished_utc": "2026-02-09T16:43:38.157424+00:00",
+  "raw_file": "GY8_600015866_2023-04-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600015866_2023-04-03",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium (347 žáků celkem, z toho 19 se speciálními vzdělávacími potřebami)",
+      "inspection_period": "3.–5. a 11. dubna 2023",
+      "school_change_summary": "Od poslední inspekce vybudováno nové venkovní hřiště, renovány učebny, modernizováno ICT vybavení a pořízeny výukové aplikace."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Motivace a angažovanost učitelů",
+          "detail": "Učitelé efektivně motivují žáky a udržují jejich pozornost po celou dobu výuky.",
+          "evidence": "Inspektoři pozorovali, že učitelé vedou výklad logicky a zajímavě, s využitím aktuálních souvislostí."
+        },
+        {
+          "tag": "Výborné výsledky v maturitě a soutěžích",
+          "detail": "Všichni maturanti jsou úspěšní, mnoho žáků dosahuje výborných výsledků v olympiádách a soutěžích.",
+          "evidence": "Všichni žáci maturitního ročníku byli úspěšní v obou částech maturity, kvalitní umístění v krajských i celostátních kolech."
+        },
+        {
+          "tag": "Partnerství a spolupráce",
+          "detail": "Škola efektivně spolupracuje s vysokými školami, ČEZ, městem a odbornými institucemi.",
+          "evidence": "Kooperace s VUT Brno, Univerzitou Palackého, pořádání seminářů a exkurzí, fakultní škola."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Tempo je řízeno podle průměrných žáků, nadaní nemají dost úkolů, slabší nemají čas pracovat s chybou.",
+          "evidence": "Obsahová diferenciace se zařazovala jen výjimečně, pohotovější žáci pracovali na dalších úkolech jen občas."
+        },
+        {
+          "tag": "Málo příležitostí pro sebehodnocení a komunikaci",
+          "detail": "Žáci nedostávají dostatek prostoru pro sebehodnocení, vzájemné hodnocení a souvislejší vyjádření.",
+          "evidence": "Absence formulace vzdělávacího cíle, v závěru hodin nebyla zhodnocena práce žáků, chyběl prostor pro souhrnné sebehodnocení."
+        },
+        {
+          "tag": "Rostoucí počet žáků s psychickými problémy",
+          "detail": "Setrvalým rizikem je zvyšující se počet žáků s psychickými problémy.",
+          "evidence": "Uvedeno jako setrvalé riziko v závěrech inspekce."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku nadaným žákům a těm, kteří potřebují více času?",
+        "Jaké má škola plány na zlepšení bezbariérového přístupu a modernizace zbývajících učeben?",
+        "Jak škola podporuje žáky s psychickými problémy a jaké má k dispozici služby?"
+      ],
+      "who_school_fits": [
+        "Ambiciózní žáci, kteří chtějí dosahovat výborných výsledků a účastnit se soutěží a olympiád",
+        "Žáci zajímající se o vědu a techniku, kteří mohou využít spolupráci se vysokými školami a ČEZ",
+        "Všestranně nadaní žáci, kterým vyhovuje bohatá nabídka volitelných předmětů a mimoškolních aktivit"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovanou výuku a více času na procvičování – diferenciace není dostatečná",
+        "Žáci se zdravotními problémy – škola zatím nemá plně bezbariérový přístup",
+        "Žáci s psychickými problémy – jejich počet roste a škola řeší tuto situaci"
+      ],
+      "plain_czech_summary": "Gymnázium Velké Meziříčí je kvalitní škola s motivovanými učiteli a výbornými výsledky. Žáci dosahují vysokých úspěchů v maturitě a soutěžích. Škola má dobré partnerství s vysokými školami a institucemi. Hlavní výzvou je lepší přizpůsobení výuky jednotlivým žákům – nadaní by měli více výzev, slabší více času. Chybí také více příležitostí pro sebehodnocení a komunikaci žáků. Rostoucí počet žáků s psychickými problémy je také věcí k pozornosti."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoký",
+        "key_numbers": [
+          "100% úspěšnost všech maturantů v obou částech maturity",
+          "Významná část žáků dosahuje výborných výsledků v anglickém jazyce",
+          "Mnozí žáci nahrazují profilovou zkoušku z cizího jazyka mezinárodním certifikátem"
+        ],
+        "evidence": "Všichni žáci maturitního ročníku byli úspěšní ve společné i profilové části maturity."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Údaj není v inspekční zprávě uveden"
+        ],
+        "evidence": "Inspekční zpráva se absence věnuje pouze v kontextu prevence a monitorování chování."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s účinným delegováním kompetencí",
+        "Výchovná poradkyně, která navštěvuje třídy a identifikuje problémy",
+        "Kooperace se školskými poradenskými zařízeními a externími centry prevence",
+        "Třídní učitelé a pedagogové aktivně monitorují chování a vzdělávací výkyvy"
+      ],
+      "safety_climate": [
+        "Pozitivní klima – pochvaly převažují nad kázeňskými opatřeními",
+        "Dotazníková šetření sledují klima ve třídách a zjišťují zpětnou vazbu žáků",
+        "Škola úspěšně eliminuje projevy verbální agrese díky spolupráci se zákonnými zástupci a důslednému přístupu",
+        "Žáci mají možnost vyjádřit se k navrhovaným postupům a navrhnout řešení"
+      ],
+      "partnerships_practice": [
+        "Ústav fyzikálního inženýrství VUT Brno – kooperace při výuce základů přírodních věd",
+        "Společnost ČEZ – finanční podpora, exkurze, Jaderná maturita",
+        "Město Velké Meziříčí – partnerství pro kulturní pořady a výstavy",
+        "Fakultní škola Přírodovědecké fakulty Univerzity Palackého v Olomouci",
+        "Jednotota českých matematiků a fyziků – semináře o filozofických otázkách"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a evidence. Slabší je pouze v oblasti absence a některých číselných údajů, které nejsou uvedeny.",
+      "uncertainty_notes": [
+        "Absence není v textu specifikována – není jasné, jaké jsou trendy v absence žáků",
+        "Počet žáků se speciálními vzdělávacími potřebami (19) je uveden, ale jejich konkrétní podpora není detailně popsána",
+        "Plány na řešení zjištěných nedostatků nejsou v textu specifikovány – škola má 14 dní na jejich předložení"
+      ]
+    }
+  }
+}

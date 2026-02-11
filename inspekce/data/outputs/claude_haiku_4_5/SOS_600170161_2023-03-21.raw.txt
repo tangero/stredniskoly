@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600170161_2023-03-21",
+  "school_profile": {
+    "school_type": "Integrovaná střední škola technická (příspěvková organizace)",
+    "inspection_period": "21.–24. března a 10. května 2023",
+    "school_change_summary": "Od inspekce v roce 2020 počet žáků vzrostl o 40 %, škola je naplněna z 83 %. Výrazně se zlepšily materiální podmínky. Škola převzala žáky nematuritních oborů z jiné školy a zahájila útlum dálkové formy vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vyučování",
+        "detail": "Efektivní spolupráce s partnerskými firmami, kvalitní vybavení dílen a motivující prostředí reálných pracovišť rozvíjí odborné kompetence žáků.",
+        "evidence": "Žáci pracují samostatně se zaujetím, dodržují bezpečnost, výsledky jsou kvalitní. Spolupráce s instruktory firem účinně snižuje absenci."
+      },
+      {
+        "tag": "Zlepšující se podmínky",
+        "detail": "Škola má nové vybavení učeben, digitální technologie a vybudovanou školní knihovnu.",
+        "evidence": "Pravidelně se obměňuje vybavení, doplňují se učební pomůcky a nástroje. Finanční prostředky jsou účelně využity."
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Žáci se speciálními vzdělávacími potřebami dosahují podobných výsledků jako ostatní díky účinné podpoře.",
+        "evidence": "Nabízí se individuální konzultace, doučování a diferencovaný přístup. Při aktivním zájmu se prospěch zpravidla zlepší."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší příprava přijatých žáků",
+        "detail": "Uchazeči do maturitních oborů mají často podprůměrné výsledky z jednotné přijímací zkoušky.",
+        "evidence": "Ve většině oborů v roce 2020 i 2022 byly výsledky v ČR podprůměrné. Škola zvýšila požadavky, ale problém přetrvává."
+      },
+      {
+        "tag": "Nízká úspěšnost u maturit",
+        "detail": "Zejména v dálkové formě nástavbového studia je vysoká neúspěšnost u maturitní zkoušky.",
+        "evidence": "V dálkové formě oboru Podnikání byla neúspěšnost 40–67 %, v denní formě 14–33 %. Škola má požádat o výmaz těchto oborů."
+      },
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Teoretická výuka je převážně frontální s málo aktivizací žáků, chybí skupinová práce a diskuse.",
+        "evidence": "Žáci jsou ukáznění, ale spíše pasivní. Skupinová práce či práce ve dvojicích se zvolily jen ojediněle."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola připravuje žáky na maturitní zkoušku? Jaké jsou výsledky v jednotlivých předmětech?",
+      "Jaké jsou možnosti doučování a konzultací? Jak moc je žáci využívají?",
+      "Jak škola řeší absenci a motivaci žáků, zejména v prvních ročnících?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením a zájmem o technické obory – praktické vyučování je na vysoké úrovni",
+      "Žáci se speciálními vzdělávacími potřebami – škola poskytuje účinnou podporu a diferencovaný přístup",
+      "Žáci z nematuritních oborů (Elektrikář, Strojní mechanik) – zde jsou lepší výsledky a nižší absence"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími studijními předpoklady – škola přijímá uchazeče s podprůměrnými výsledky z přijímacích zkoušek",
+      "Zájemci o dálkovou formu nástavbového studia – neúspěšnost je velmi vysoká (40–67 %), škola chce tyto obory zrušit",
+      "Žáci, kteří potřebují aktivní a interaktivní výuku – převládá frontální výuka s málo diskusí a skupinové práce"
+    ],
+    "plain_czech_summary": "Škola se dynamicky rozvíjí – počet žáků vzrostl o 40 %, zlepšily se podmínky a vybavení. Praktické vyučování je na vysoké úrovni díky spolupráci s firmami. Problém je nižší úspěšnost přijatých žáků a jejich slabší výsledky u maturit, zejména v dálkové formě. Teoretická výuka je spíše pasivní, chybí aktivizace a diskuse. Škola se snaží situaci zlepšit, ale výsledky jsou zatím jen částečné."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Částečně se daří zlepšovat, ale přetrvávají problémy zejména v dálkové formě",
+      "key_numbers": [
+        "Matematika: hrubá neúspěšnost téměř 50 %",
+        "Český jazyk: hrubá neúspěšnost cca 19 %",
+        "Cizí jazyk: hrubá neúspěšnost cca 23 %"
+      ],
+      "evidence": "V oboru Ekonomika a podnikání se neúspěšnost snížila z 57 % (2020) na 36 % (2022), ale je stále nadprůměrná. V dálkové formě nástavbového studia Podnikání byla neúspěšnost 40–67 % v jednotlivých letech."
+    },
+    "absence": {
+      "trend": "Pozitivní – absence se snižuje, ale přetrvávají problémy v některých skupinách",
+      "key_numbers": [
+        "Průměrná absence: mírně pod 170 hodin na žáka za rok",
+        "Neomluvená absence: cca 12 hodin na žáka za rok",
+        "Nadprůměrná absence: nematuritní obory a nástavbové studium"
+      ],
+      "evidence": "Od inspekce v roce 2020 se daří snižovat absenci včetně neomluvené. Nejhorší situace je v 1. ročníku nematuritních oborů a v dálkové formě nástavbového studia."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, metodika prevence, funkční kariérové poradenství",
+      "Podpora žáků s potřebou podpůrných oatření: včasná identifikace, informování vyučujících, spolupráce se školskými poradenskými zařízeními",
+      "Prevence rizikového chování: školní preventivní program zaměřený na bezpečné prostředí, prevenci šikany a kyberšikany"
+    ],
+    "safety_climate": [
+      "Úrazovost je nízká",
+      "Žáci jsou pravidelně seznamováni s bezpečnostními riziky a prevencí úrazů",
+      "Dohledy nad žáky jsou stanoveny a řádně vykonávány",
+      "Ve výuce odborného výcviku žáci dodržují pracovní postupy, pravidla bezpečnosti a ochrany zdraví"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s partnerskými firmami na realizaci odborného výcviku – funkční a dobře organizovaná",
+      "Smluvní partneři jsou podniky s kvalitním a moderním technickým vybavením",
+      "Spolupráce instruktorů firem s pověřeným pracovníkem školy – účinně snižuje neomluvenu absenci",
+      "Participace v programu Erasmus+ – výjezdy do zahraničí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, ale místy je složitá a úřednická. Hlavní zjištění jsou jasná, ale pro rodiče by byla užitečnější jednodušší shrnutí.",
+    "uncertainty_notes": [
+      "Dopad nového ŠVP oboru Ekonomika a podnikání na budoucí úspěšnost není zatím vidět – žáci podle něj ještě nematurovali",
+      "Počty žáků v některých oborech jsou velmi malé (např. Mechanik strojů: 4 maturanti), takže výsledky mohou být zkreslené",
+      "Není jasné, jak dlouho bude trvat, než se opatření ke zlepšení projeví v maturitních výsledcích"
+    ]
+  }
+}
+```

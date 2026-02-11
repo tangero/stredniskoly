@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600015718_2025-03-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:42:59.575277+00:00",
+  "run_finished_utc": "2026-02-09T13:43:28.980421+00:00",
+  "raw_file": "SOS_600015718_2025-03-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015718_2025-03-05",
+    "school_profile": {
+      "school_type": "Střední škola technická s 9 obory: 8 tříletých oborů s výučním listem (Autoelektrikář, Elektrikář silnoproud, Instalatér, Karosář, Obráběč kovů, Tesař, Truhlář, Zedník) a 1 čtyřletý obor s maturitou (Elektrotechnika)",
+      "inspection_period": "5. března 2025 až 7. března 2025",
+      "school_change_summary": "Škola se zaměřila na zlepšení materiálních podmínek: rekonstrukce tělocvičen, workoutové hřiště, robotická učebna, gravírovací laser. Vzdělávací výsledky se výrazně zlepšily – neprospěch klesl z 25 % (2019) na necelých 5 % (poslední 3 roky). Absence se snížila na 136 hodin na žáka ročně."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Moderní vybavení a infrastruktura",
+          "detail": "Škola investovala do nových pracovišť, robotické učebny, gravírovacího laseru a sportovního vybavení odpovídajícího současným trendům.",
+          "evidence": "Rekonstrukce tělocvičen, workoutové hřiště, nové didaktické technologie v odborných učebnách"
+        },
+        {
+          "tag": "Výrazné zlepšení výsledků",
+          "detail": "Neprospěch klesl z 25 % na necelých 5 %, absence se snížila na 136 hodin na žáka ročně.",
+          "evidence": "V posledních třech letech průměrně neprospělo necelých 5 % žáků, neomluvená absence činila jen necelé 1 %"
+        },
+        {
+          "tag": "Kvalitní poradenské služby",
+          "detail": "Efektivní podpora žáků se speciálními potřebami, cizinců a těch v riziku neúspěchu.",
+          "evidence": "Výchovná poradkyně a školní metodik prevence úzce spolupracují, plní funkci na dobré úrovni"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka v teoretických předmětech",
+          "detail": "Převažuje frontální výuka bez aktivního zapojení žáků, chybí diferenciace podle jejich potřeb.",
+          "evidence": "V převážné části hodin teoretického vyučování převládalo frontální pojetí bez aktivnějšího zapojení žáků"
+        },
+        {
+          "tag": "Nedostatečný rozvoj digitálních kompetencí",
+          "detail": "Žáci málo pracují s informacemi z různých zdrojů a sami nevyužívají digitální technologie.",
+          "evidence": "Žáci jen ojediněle vyhledávali a vyhodnocovali informace z různých zdrojů, nedostatečně využívali digitální technologie"
+        },
+        {
+          "tag": "Slabá podpora profesního rozvoje učitelů",
+          "detail": "Vzdělávání pedagogů se nezaměřuje na moderní vyučovací metody a didaktiku.",
+          "evidence": "Vzdělávací aktivity nebyly zaměřeny do oblasti didaktiky a využívání moderních postupů ve výuce"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zlepšit aktivitu žáků v teoretických hodinách a zavést více skupinové práce?",
+        "Jaké konkrétní kroky podnikne v dalším vzdělávání učitelů, aby se zaměřilo na moderní vyučovací metody?",
+        "Jak budou žáci vedeni k samostatnému vyhledávání informací a používání digitálních technologií?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory s jasnou představou o budoucím povolání – škola má kvalitní vybavení a spolupráci s partnery",
+        "Žáci se speciálními vzdělávacími potřebami – škola má efektivní poradenské služby a individuální podporu",
+        "Žáci, kterým vyhovuje strukturovaný přístup a jasné cíle – vedení školy má přehled o průběhu vzdělávání"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují aktivní a interaktivní výuku – teoretické předměty jsou vedeny převážně frontálně",
+        "Žáci se zájmem o rozvoj digitálních dovedností – škola zatím málo podporuje samostatné práci s technologiemi",
+        "Žáci s vyšší motivací pro samostudium – chybí vedení k vyhledávání informací z různých zdrojů"
+      ],
+      "plain_czech_summary": "Střední škola technická Znojmo se zaměřuje na praktické obory a postupně se zlepšuje. Výrazně se zlepšily výsledky žáků a snížila se absence. Škola má moderní vybavení a kvalitní poradenské služby. Slabinou je převážně pasivní teoretická výuka bez aktivního zapojení žáků a nedostatečný rozvoj digitálních kompetencí. Učitelé by měli více využívat skupinové práce a moderní metody. Škola je vhodná pro žáky zaměřené na praktické obory s jasnou profesní orientací."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírné zlepšování",
+        "key_numbers": [
+          "Hrubá neúspěšnost u maturitní zkoušky se postupně mírně zlepšovala, průměrně činila 10 %",
+          "V roce 2024 konalo maturitní zkoušku 12 žáků, všichni ji úspěšně složili",
+          "Obor Elektrotechnika má 99 žáků z celkových 346"
+        ],
+        "evidence": "Úspěšnost žáků čtyřletého oboru Elektrotechnika nevykazuje v posledních třech letech výraznější rozdíly"
+      },
+      "absence": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "Průměrná absence ve školním roce 2023/2024 činila 136 hodin na žáka",
+          "Neomluvená absence činila jen necelé 1 % z celkového počtu zameškaných hodin",
+          "Absence se v posledních třech letech stále snižovala"
+        ],
+        "evidence": "K úspěšnému snížení absence přispělo uplatňování pravidla školního řádu a důsledná práce třídních učitelů"
+      },
+      "support_services": [
+        "Výchovná poradkyně zajišťuje podporu žákům se speciálními vzdělávacími potřebami včetně tvorby plánů pedagogické podpory",
+        "Školní metodik prevence úzce spolupracuje s třídními učiteli a učiteli odborného výcviku",
+        "Kariérové poradenství zaměřené na informování o možnostech dalšího vzdělávání na vyšších odborných a vysokých školách",
+        "Podpora žáků s odlišným mateřským jazykem – 15 cizinců, 20 % žáků se speciálními potřebami"
+      ],
+      "safety_climate": [
+        "Bezpečnost žáků zajištěna pravidelným školením a vedením záznamů",
+        "Míra úrazovosti byla v předchozích letech pod republikovým průměrem, v posledním roce na průměrné úrovni",
+        "Nejčastěji řešenými problémy byly kouření a záškoláctví, méně často verbální agrese, šikana a kyberšikana",
+        "Škola iniciuje osobní jednání se žáky a jejich zákonnými zástupci, projednává situace na výchovných komisích"
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování je z části uskutečňováno na pracovištích smluvních partnerů",
+        "Spolupráce se specializovanými institucemi: policie, probační a mediační služba, městský úřad",
+        "Žáci oboru Elektrotechnika se účastní certifikovaného vzdělávacího programu pro práci se síťovými zařízeními",
+        "Žáci se pravidelně účastní odborných a vědomostních soutěží – v roce 2024 získali přední místa v mezinárodní soutěži Řemeslo skill"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními údaji a příklady. Jsou jasně odděleny silné stránky, slabiny a doporučení. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní obory jsou nejnáročnější a jaké jsou nejsnazší – pouze zmiňuje, že maturitní obor je studijně náročnější",
+        "Chybí informace o počtu učitelů bez požadované kvalifikace – je zmíněno jen, že 'část vyučujících nesplňuje požadavky'",
+        "Není jasné, jak dlouho trvá typické doučování a jaké jsou jeho výsledky"
+      ]
+    }
+  }
+}

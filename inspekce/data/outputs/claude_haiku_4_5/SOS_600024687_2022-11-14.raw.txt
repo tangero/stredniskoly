@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600024687_2022-11-14",
+  "school_profile": {
+    "school_type": "Střední škola (obchodní akademie, odborná a praktická škola) s interním, školní jídelnou a speciálně pedagogickým centrem",
+    "inspection_period": "14. listopadu 2022 až 6. ledna 2023",
+    "school_change_summary": "Od listopadu 2018 vede školu nová ředitelka, která provedla řadu organizačních změn. Škola rozšířila nabídku o obor Sociální činnost s maturitou, získala autorizaci pro profesní kvalifikaci a vybudovala cvičný byt pro žáky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Komplexní podpora žáků",
+        "detail": "Škola má propracovaný systém plánů podpory žáků s účastí všech relevantních pedagogů a samotných žáků.",
+        "evidence": "Plány podpory žáka se úspěšně realizují a vyhodnocují se v součinnosti všech příslušných pedagogů."
+      },
+      {
+        "tag": "Příprava na samostatný život",
+        "detail": "Tranzitní program zahrnuje cvičný byt a chráněnou dílnu pro nácvik praktických dovedností a pracovních návyků.",
+        "evidence": "Od roku 2022/2023 škola realizuje projekty cvičný byt a chráněná dílna v součinnosti se sociálním podnikem."
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Efektivní systém prevence rizikového chování s minimálním výskytem problémů a jejich včasným řešením.",
+        "evidence": "Spolupráce internátu, školy, psychoterapeuta a metodiků prevence vede k minimálnímu výskytu rizikových jevů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá zpětná vazba pro učitele",
+        "detail": "Vedení školy neprovádí systematické hospitace, zejména v teoretických předmětech, a neposkytuje dostatečnou zpětnou vazbu.",
+        "evidence": "Hospitační činnost vedení školy není téměř realizována v teoretických předmětech, v omezené míře probíhá v zájmových útvarech."
+      },
+      {
+        "tag": "Nedostatečný rozvoj samostatnosti žáků",
+        "detail": "Učitelé teoretických předmětů málo vedou žáky k sebehodnocení a nepoužívají dostatečně skupinové práce.",
+        "evidence": "Učitelé žáky nevedli k sebehodnocení své práce a vrstevnickému hodnocení, jen výjimečně jim poskytovali formativní zpětnou vazbu."
+      },
+      {
+        "tag": "Nefunkční kontrolní systém",
+        "detail": "Kontrola není dostatečná v oblastech školního stravování, vedení dokumentace a hospodaření s finančními prostředky.",
+        "evidence": "Kontrolní systém není funkční v oblastech školního stravování a vedení povinné dokumentace. Byla shledána porušení právních předpisů v hospodaření."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá příprava žáků v cvičném bytě a jak se jejich pokroky vyhodnocují?",
+      "Jaké jsou konkrétní výsledky žáků v profesní kvalifikaci a jak se jim daří na trhu práce?",
+      "Jak se škola vypořádala s nedostatky v kontrolním systému a hospodaření, které inspekce zjistila?"
+    ],
+    "who_school_fits": [
+      "Žáci s tělesným postižením a kombinací postižení, kteří potřebují komplexní podporu a přípravu na samostatný život",
+      "Rodiny hledající školu s interním ubytováním a celodenní péčí včetně zdravotnického dohledu",
+      "Žáci, kteří potřebují individualizovaný přístup a systematickou podporu při vzdělávání"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají vysokou úroveň zpětné vazby o kvalitě výuky teoretických předmětů",
+      "Žáci, kteří se lépe učí samostatnou prací a skupinovými projekty (v teoretických předmětech je jich málo)",
+      "Rodiny, které si kladou vysoké nároky na transparentnost hospodaření a kontrolu (byly zjištěny nedostatky)"
+    ],
+    "plain_czech_summary": "Jde o speciální střední školu zaměřenou na vzdělávání žáků s tělesným postižením. Její velkou silou je komplexní péče – ubytování, stravování, zdravotnický dohled a systematická příprava na samostatný život. Škola má dobré vztahy s partnery a nabízí pestré aktivity. Slabší stránkou je, že učitelé teoretických předmětů málo vedou žáky k samostatnosti a sebehodnocení. Inspekce také zjistila problémy s kontrolou hospodaření a dokumentace. Škola je vhodná pro žáky, kteří potřebují intenzivní podporu a péči."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nový obor – data nejsou dostupná",
+      "key_numbers": [
+        "Od roku 2021/2022 první úspěšní žáci získali osvědčení o zkoušce z profesní kvalifikace 63-033-H Pracovník v administrativě",
+        "Od roku 2022/2023 nový obor 75-41-M/01 Sociální činnost s maturitní zkouškou"
+      ],
+      "evidence": "Ve školním roce 2021/2022 získali první úspěšní žáci osvědčení o zkoušce z profesní kvalifikace, což jim rozšiřuje možnosti uplatnění."
+    },
+    "absence": {
+      "trend": "Data nejsou v textu dostupná",
+      "key_numbers": [
+        "Žáci jsou ubytováni v internátu po dobu školního roku s výjimkou prázdnin"
+      ],
+      "evidence": "Ubytování a celodenní stravování je žákům zajištěno v průběhu celého školního roku s výjimkou prázdnin a povinných odjezdů."
+    },
+    "support_services": [
+      "Speciálně pedagogické centrum poskytuje diagnostiku a poradenské služby 206 klientům",
+      "Školní poradenské pracoviště koordinuje podporu žáků se speciálními vzdělávacími potřebami",
+      "Psychoterapeutka poskytuje individuální konzultace a intervenční programy pro prevenci syndromu vyhoření",
+      "Kariérové poradenství zaměřené na individuální potřeby každého žáka"
+    ],
+    "safety_climate": [
+      "Atmosféra vzájemné důvěry, otevřenosti a respektu mezi všemi účastníky",
+      "Efektivní systém prevence rizikového chování s minimálním výskytem problémů",
+      "Systematické řešení nevhodného chování žáků s konkrétními kroky ke zlepšení",
+      "Asistenti pedagoga zajišťují odbornou péči a bezpečnost, zejména v hodinách s pohybovým zaměřením"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s místním rehabilitačním subjektem na léčebné procedury",
+      "Sportovní kluby pro hendikepované zajišťují sportovní vyžití",
+      "Firmy a instituce (Ergotep, Pro-Charitu, Filipa a.s.) pro odborné praxe a chráněnou dílnu",
+      "Zahraniční vzdělávací projekty (Anglie, Švédsko, Španělsko) pro rozvoj jazykových kompetencí",
+      "Partneři poskytující finanční podporu (Konto Bariéry, Nadační fond Emil, Nadace Olgy Havlové)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však úřednicky formulované a pro laika obtížně pochopitelné (např. popis diagnostických metod centra).",
+    "uncertainty_notes": [
+      "Konkrétní výsledky maturitních zkoušek nejsou v textu uvedeny – nejsou dostupné údaje o úspěšnosti",
+      "Absence dat o školní neúčasti – text se zaměřuje na interní péči, ale konkrétní čísla chybí",
+      "Detaily o finančních porušeních nejsou specifikovány – text pouze konstatuje, že byla zjištěna porušení"
+    ]
+  }
+}
+```

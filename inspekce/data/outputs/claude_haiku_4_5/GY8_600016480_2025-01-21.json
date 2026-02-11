@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600016480_2025-01-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:04:08.555185+00:00",
+  "run_finished_utc": "2026-02-09T16:04:30.809866+00:00",
+  "raw_file": "GY8_600016480_2025-01-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600016480_2025-01-21",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté), příspěvková organizace",
+      "inspection_period": "21. 1. 2025 – 24. 1. 2025",
+      "school_change_summary": "Od inspekce v 2019/2020 škola aktualizovala vzdělávací programy, zavedla inovativní předměty, získala akreditaci Erasmus+ a zlepšila materiální podmínky. Zaveden funkční systém profesního rozvoje pedagogů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky žáků",
+          "detail": "Ve školním roce 2023/2024 všichni žáci prospěli, 45 % s vyznamenáním. Úspěšnost v maturitě 100 %, 89 % absolventů pokračuje na vysokých školách.",
+          "evidence": "Všichni žáci prospěli, 45 % s vyznamenáním. 100% úspěšnost v maturitě 2023/2024."
+        },
+        {
+          "tag": "Kvalitní a inovativní výuka",
+          "detail": "Učitelé používají moderní metody, rozvíjejí kritické myšlení, praktické dovednosti a klíčové kompetence. Výuka je aktivní, s vysokým zapojením žáků.",
+          "evidence": "Sledovaná výuka se vyznačovala vysokou mírou rovnoměrného a aktivního zapojení žáků, činnostním učením a badatelskými prvky."
+        },
+        {
+          "tag": "Bohatá mimoškolní činnost",
+          "detail": "Žáci se zapojují do olympiád, soutěží, kroužků, adaptačních kurzů, dobrovolnické činnosti a mezinárodních projektů včetně Erasmus+.",
+          "evidence": "Vysoký počet žáků se zapojuje do školních kol olympiád a soutěží, úspěchy na národní úrovni, účast v Erasmus+ a Mezinárodní ceně vévody z Edinburghu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vyšší úrazovost než průměr",
+          "detail": "Míra úrazů je vyšší než celorepublikový průměr, zejména v tělesné výchově a při sportovních aktivitách.",
+          "evidence": "Vedení školy provádí analýzu úrazovosti, přesto je její míra vyšší než celorepublikový průměr."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Výuka není dostatečně přizpůsobena individuálním schopnostem žáků, chybí diferencované úlohy různé náročnosti.",
+          "evidence": "Dílčím nedostatkem sledované výuky byla jen výjimečná diferenciace podle individuálních schopností žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší prevenci úrazů v tělesné výchově a při sportovních aktivitách?",
+        "Jaké jsou možnosti individuální podpory pro žáky s různými schopnostmi a tempem učení?",
+        "Jak se škola podílí na přípravě žáků na mezinárodní jazykové zkoušky a jaké jsou výsledky?"
+      ],
+      "who_school_fits": [
+        "Talentovaní a motivovaní žáci, kteří chtějí kvalitní přípravu na vysokou školu",
+        "Žáci zajímající se o moderní vzdělání s praktickými dovednostmi a kritickým myšlením",
+        "Žáci s ambicí participovat na mezinárodních projektech a soutěžích"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se zdravotními omezeními v tělesné výchově (vzhledem k vyšší úrazovosti)",
+        "Žáci vyžadující intenzivní individuální přizpůsobení tempa a náročnosti výuky",
+        "Žáci, kteří preferují tradičnější přístup bez aktivního zapojení a skupinové práce"
+      ],
+      "plain_czech_summary": "Gymnázium v Karviné je kvalitní školou s promyšlenou strategií rozvoje. Učitelé jsou dobře vzdělávaní a používají moderní metody výuky. Žáci dosahují výborných výsledků – všichni prospívají, skoro polovina s vyznamenáním. Škola nabízí bohatou mimoškolní činnost a mezinárodní projekty. Hlavní slabinou je nižší diferenciace výuky pro žáky s různými schopnostmi a vyšší počet úrazů při sportu. Škola je vhodná pro ambiciózní žáky připravované na vysokou školu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní trend s nápravou",
+        "key_numbers": [
+          "100% úspěšnost v maturitě 2023/2024",
+          "Čeština a cizí jazyky dlouhodobě lepší než průměr ČR",
+          "89% absolventů pokračuje na vysokých školách"
+        ],
+        "evidence": "Ve školním roce 2023/2024 dosáhli žáci 100% úspěšnosti. V českém jazyce a cizím jazyce dlouhodobě lepší než průměr."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Informace o absenci nejsou v textu uvedeny"
+        ],
+        "evidence": "Zpráva se absencí nezabývá."
+      },
+      "support_services": [
+        "Školní psycholožka (externí) – pomoc s osobními problémy a nepříznivými situacemi",
+        "Školní poradenské pracoviště – poradenské a konzultační služby",
+        "Individuální konzultace s pedagogy a online doučování pro žáky se studijními obtížemi",
+        "Klub psychické pohody a schránka důvěry pro žáky",
+        "Adaptační kurzy pro žáky prvních ročníků"
+      ],
+      "safety_climate": [
+        "Žáci jsou pravidelně poučováni v bezpečnosti, ochraně zdraví a požární prevenci",
+        "Míra úrazovosti vyšší než celorepublikový průměr, zejména v tělesné výchově",
+        "Vedení provádí analýzu úrazovosti",
+        "Preventivní aktivity tematicky zaměřené na věkové skupiny",
+        "Škola je zapojena do on-line platformy Nenech to být"
+      ],
+      "partnerships_practice": [
+        "Erasmus+ – mezinárodní jazykové a metodické kurzy pro pedagogy, stínování v partnerských školách",
+        "Vysoké školy – vzdělávací aktivity pro žáky s hlubším zájmem, příprava na jazykové zkoušky",
+        "Organizace a instituce – prevence, kariérové poradenství, péče o žáky se speciálními potřebami",
+        "Projekt Školy – vyslanci Evropského parlamentu",
+        "Mezinárodní environmentální konference",
+        "Putovní výstava o Anně Frankové"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelnou češtinou s minimálním úřednickým stylem. Fakta jsou jasně uvedena s konkrétními čísly a příklady. Struktura je logická a snadno se v ní orientuje.",
+      "uncertainty_notes": [
+        "Absence dat o absenci žáků – zpráva se tímto aspektem nezabývá",
+        "Konkrétní opatření na snížení úrazovosti nejsou detailně popsána",
+        "Nejsou uvedeny konkrétní příklady diferencovaných úloh, které by měly být zavedeny"
+      ]
+    }
+  }
+}

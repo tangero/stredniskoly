@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600008231_2023-01-30",
+  "school_profile": {
+    "school_type": "Osmileté, čtyřleté a šestileté gymnázium s maturitní zkouškou",
+    "inspection_period": "30. ledna až 1. února 2023",
+    "school_change_summary": "Výrazný nárůst počtu žáků, nový zástupce ředitelky, částečná generační obměna pedagogů, rozsáhlá modernizace budovy a vybavení, zapojení do řady projektů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Stabilní výsledky u maturity",
+        "detail": "Dlouhodobě nejstabilnější výsledky v cizích jazycích, srovnatelné s republikovým průměrem, vyšší úspěšnost v matematice.",
+        "evidence": "Výsledky u maturitních zkoušek jsou dlouhodobě nejstabilnější v cizím jazyce, žáci dosáhli vyšší úspěšnosti v matematice."
+      },
+      {
+        "tag": "Výborné materiální podmínky",
+        "detail": "Moderně vybavená škola s digitálními technologiemi, vlastní domov mládeže a školní jídelna přímo v budově.",
+        "evidence": "Materiální podmínky školy jsou na velmi dobré úrovni, modernizované vybavení je adekvátně využíváno ve výuce."
+      },
+      {
+        "tag": "Podporující klima a prevence",
+        "detail": "Minimální rizikové chování, pochvaly převyšují kázeňská opatření, účinný preventivní program včetně adaptačního pobytu.",
+        "evidence": "Minimalizace rizikového chování žáků, snížené známky z chování nebyly v loňském roce využity."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejednotné vyučovací metody",
+        "detail": "Část učitelů nedostatečně využívá aktivní učení, diferenciaci a formativní hodnocení, což negativně ovlivňuje motivaci některých žáků.",
+        "evidence": "V části výuky chybí uplatňování efektivnějších vzdělávacích strategií, tato skutečnost u části žáků negativně ovlivňuje motivaci."
+      },
+      {
+        "tag": "Omezená individualizace",
+        "detail": "Pouze ojediněle jsou žákům zadávány úlohy různé náročnosti podle jejich nadání, kooperativní práce převážně jen v jazycích.",
+        "evidence": "Ojediněle vyučující zadávali žákům úlohy různého typu s ohledem na jejich odlišnou úroveň nadání."
+      },
+      {
+        "tag": "Neúplné sledování absolventů",
+        "detail": "Škola nemá systém pro získávání informací o dalším uplatnění absolventů.",
+        "evidence": "Systém pro získávání kompletních informací o dalším uplatnění absolventů škola zatím nemá."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro nadané žáky a jak se liší přístup v jednotlivých předmětech?",
+      "Jaké jsou zkušenosti s přechodem žáků na vysoké školy a jak škola podporuje jejich volbu oboru?",
+      "Jak se škola vypořádala s nárůstem počtu žáků a jak to ovlivnilo kvalitu výuky a péči o jednotlivce?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrým prospěchem a motivací ke studiu, kteří si chtějí připravit solidní základ pro vysokou školu",
+      "Talentovaní žáci v přírodovědných a humanitních oborech, kterým škola nabízí spolupráci s univerzitou",
+      "Žáci ze vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže s celodenním stravováním"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní individuální přístup a diferenciaci – část učitelů ji zatím nedostatečně poskytuje",
+      "Žáci s nižší motivací, kterým chybí dostatečně aktivizující a poutavé vyučovací metody",
+      "Žáci se speciálními vzdělávacími potřebami – podpora je poskytována, ale kapacita je omezená"
+    ],
+    "plain_czech_summary": "Gymnázium v Českém Krumlově je stabilní a dobře vybavená škola s dlouhodobě solidními výsledky u maturity, zejména v cizích jazycích. Má příznivé klima, účinnou prevenci a podporuje talentované žáky. Hlavní výzvou je, aby všichni učitelé více využívali moderní metody jako aktivní učení a individualizaci. Škola se snaží zlepšovat, ale v některých hodinách chybí dostatečná diferenciace a motivace pro všechny žáky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, srovnatelný s republikovým průměrem",
+      "key_numbers": [
+        "Vyšší úspěšnost v matematice než celorepublikový průměr",
+        "Nejstabilnější výsledky dlouhodobě v cizích jazycích",
+        "Srovnatelné výsledky v didaktickém testu z češtiny a literatury"
+      ],
+      "evidence": "Výsledky u maturitních zkoušek jsou dlouhodobě nejstabilnější v cizím jazyce. Žáci všech studijních oborů dosáhli ve společné části maturitní zkoušky z matematiky vyšší úspěšnosti."
+    },
+    "absence": {
+      "trend": "Velmi nízký počet neprospívajících žáků",
+      "key_numbers": [
+        "Přibližně třetina žáků prospívá s vyznamenáním",
+        "Velmi nízký počet neprospívajících žáků",
+        "Slabší prospěch nejčastěji souvisí s nižší motivací"
+      ],
+      "evidence": "Přibližně třetina žáků prospívá s vyznamenáním. Počet neprospívajících žáků je velmi nízký."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodik prevence na školním poradenském pracovišti",
+      "Osmi žákům poskytována podpůrná opatření druhého stupně, jedné žákyni třetího stupně s asistentkou",
+      "Spolupráce s externím speciálním pedagogem podle potřeby, individuální vzdělávací plány pro nadané a zdravotně handicapované žáky"
+    ],
+    "safety_climate": [
+      "Minimalizace rizikového chování žáků díky účinnému preventivnímu programu",
+      "Pochvaly vysoce převyšují počet kázeňských opatření, snížené známky z chování nebyly v loňském roce využity",
+      "Tradiční týdenní adaptační pobyt prvních ročníků stmeluje třídní kolektivy a podporuje prevenci"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Filozofické fakulty a Přírodovědecké fakulty Jihočeské univerzity",
+      "Spolupráce se základními školami na podporu zájmu o studium",
+      "Partnerství se zahraničními školami pro kulturní akce a rozvoj jazykových kompetencí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s příslušnými důkazy. Některé pasáže jsou však formulovány úřednicky a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní procenta neprospívajících žáků ani přesné počty žáků s jednotlivými stupni podpory",
+      "Chybí detailní informace o absenci a její trendech",
+      "Není jasné, jak se liší kvalita výuky mezi jednotlivými předměty a třídami"
+    ]
+  }
+}
+```

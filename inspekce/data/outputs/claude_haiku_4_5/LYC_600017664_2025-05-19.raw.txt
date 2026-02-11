@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_600017664_2025-05-19",
+  "school_profile": {
+    "school_type": "Střední odborná škola, s.r.o. (soukromá)",
+    "inspection_period": "19. 5. 2025 – 23. 5. 2025",
+    "school_change_summary": "Od inspekce v roce 2019 se stabilizoval počet žáků (487 v 29 třídách) a pedagogický sbor. Škola otevřela nový obor Oční optik. Postupně renovuje učebny a obnovuje vybavení odborných učeben."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná praxe a spolupráce s firmami",
+        "detail": "Praktické vyučování probíhá na školních pracovištích i u smluvních partnerů, což připravuje žáky na reálné pracovní prostředí.",
+        "evidence": "Škola klade důraz na propojení výuky s reálným pracovním prostředím, což přispívá k lepší připravenosti absolventů."
+      },
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Bilingvní výuka a příprava na mezinárodní certifikáty z angličtiny, kterou škola finančně podporuje.",
+        "evidence": "Bilingvní výuka vede k rozvoji jazykových kompetencí, úspěšným žákům škola zaplatí náklady na certifikát."
+      },
+      {
+        "tag": "Motivační prostředí a výsledky",
+        "detail": "Škola vytváří motivační prostředí s vlastními oceňovacími systémy a dosahuje stabilních výsledků.",
+        "evidence": "Ve školním roce 2023/2024 prospělo 40 % žáků s vyznamenáním, průměrný prospěch 1,7."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená variabilita výuky",
+        "detail": "Výuka se příliš opírá o výklad učitele, chybí skupinová práce a práce s více zdroji informací.",
+        "evidence": "Nejčastější formou byl výklad kombinovaný se samostatnou prací, skupinová práce byla zařazována jen zřídka."
+      },
+      {
+        "tag": "Slabá podpora kritického myšlení",
+        "detail": "Žáci pracují převážně s jedním zdrojem a nemají dostatek příležitostí rozvíjet kritické myšlení.",
+        "evidence": "Žákům byly často předkládány hotové informace, příležitosti pro interpretaci textu byly využívány ojediněle."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Výuka není dostatečně přizpůsobena individuálním schopnostem žáků, včetně nadaných a se speciálními potřebami.",
+        "evidence": "Diferenciace učiva a práce se žáky se speciálními vzdělávacími potřebami nebyla uplatňována v dostatečné míře."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje rozvoj kritického myšlení a čtenářské gramotnosti v jednotlivých předmětech?",
+      "Jaké jsou možnosti individuálního přístupu k nadaným žákům a jak se liší od standardní výuky?",
+      "Jak probíhá spolupráce se zaměstnavateli a jaké jsou šance na získání praxe během studia?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a odborné obory (zdravotnictví, optika, sociální práce, pedagogika)",
+      "Studenti, kteří chtějí zlepšit angličtinu a získat mezinárodní certifikát",
+      "Žáci, kterým vyhovuje stabilní prostředí s jasně nastavenými pravidly a motivačními systémy"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více samostatné práce s různými zdroji a rozvoj kritického myšlení",
+      "Studenti s nadáním, kteří mohou potřebovat větší intelektuální výzvu a individualizaci",
+      "Žáci preferující skupinové projekty a kolaborativní učení (skupinová práce je zařazována jen zřídka)"
+    ],
+    "plain_czech_summary": "AHOL je stabilní střední odborná škola s 487 žáky v Ostravě. Silné stránky: kvalitní praktické vyučování u partnerů, bilingvní výuka angličtiny, motivační prostředí. Slabiny: výuka se opírá především o výklad učitele, málo skupinové práce a práce s více zdroji, nedostatečná diferenciace. Výsledky jsou stabilní (40 % s vyznamenáním, 92 % úspěšnost u maturity). Škola je vhodná pro žáky zaměřené na praxi a jazyky, ale méně pro ty, kteří potřebují více samostatného kritického myšlení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní a dobrý",
+      "key_numbers": [
+        "Společná část: 92 % úspěšnost",
+        "Profilová část: 100 % úspěšnost",
+        "Jednotná závěrečná zkouška: 79 % s vyznamenáním"
+      ],
+      "evidence": "Ve školním roce 2023/2024 ve společné části maturitní zkoušky byla celková úspěšnost 92 %, v profilové části uspěli všichni žáci."
+    },
+    "absence": {
+      "trend": "Úspěšně snižovaná",
+      "key_numbers": [
+        "Průměr omluvených hodin na žáka: 160 hodin",
+        "Neomluvené hodiny: zaznamenány u 19 žáků",
+        "Podíl neprospívajících: kolem 1 %"
+      ],
+      "evidence": "Škola ukotvila pravidla pro optimální docházku ve školním řádu a pravidelným informováním zákonných zástupců o absenci ji úspěšně snižuje."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se věnuje žákům se speciálními vzdělávacími potřebami a prevenci sociálně patologických jevů",
+      "Kariérový poradce, speciální pedagog, sociální pedagog a koordinátor spolupráce se zaměstnavateli",
+      "Doučování a individuální konzultace pro žáky se slabším prospěchem, včetně letního doučování v srpnu"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti díky pozornosti vedení k úrazové prevenci",
+      "Pravidelné cvičné požární poplachy a seznamování žáků s riziky",
+      "Kamerový systém zajišťující vstupy do budovy",
+      "Jasně nastavená pravidla a postupy pro řešení rizikového chování"
+    ],
+    "partnerships_practice": [
+      "Praktické vyučování probíhá na školních pracovištích i u smluvních partnerů",
+      "Funkční spolupráce se sociálními partnery v regionu",
+      "Zpětná vazba od zaměstnavatelů, kde žáci realizují praktické vyučování",
+      "Spolupráce se zahraničními školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně identifikovány s konkrétními příklady. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu učitelů nebo jejich kvalifikaci, což by bylo relevantní pro rodiče",
+      "Chybí konkrétní informace o ceně školného a dalších poplatcích",
+      "Není jasné, jak konkrétně se liší výuka v jednotlivých oborech (zdravotnictví vs. pedagogika)"
+    ]
+  }
+}
+```

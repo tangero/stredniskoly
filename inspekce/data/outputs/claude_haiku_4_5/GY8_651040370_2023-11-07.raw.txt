@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY8_651040370_2023-11-07",
+  "school_profile": {
+    "school_type": "Soukromé osmileté gymnázium s jazykovým zaměřením, nabízí i mezinárodní maturitu (IB)",
+    "inspection_period": "7. listopadu 2023 až 9. listopadu 2023",
+    "school_change_summary": "Od poslední inspekce v 2016: změna zřizovatele a vedení, nárůst žáků (108 z 128 kapacity) a pedagogů (35 pracovníků). Nový ředitel od října 2018 zajistil kontinuitu. Výrazná personální obměna v pedagogickém sboru (14 nových učitelů)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání na vysoké úrovni",
+        "detail": "Povinná výuka dvou cizích jazyků od primy, třetí jazyk od tercie, výuka předmětů v angličtině, zahraniční pobyty a mezinárodní certifikace.",
+        "evidence": "Žáci dosahují nejlepších výsledků v anglickém jazyce u maturit, vysoká úspěšnost u mezinárodních zkoušek."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Zrekonstruované laboratoře, tělocvična, jazykové učebny, 3D tiskárna, iPady, knihovna a relaxační zázemí.",
+        "evidence": "Prioritou vedení je obnova materiálně technického vybavení v souladu s koncepcí školy."
+      },
+      {
+        "tag": "Výborné studijní výsledky",
+        "detail": "Více než polovina žáků prospěla s vyznamenáním, neprospěli pouze jednotlivci, stabilní výsledky při přechodu na vyšší gymnázium.",
+        "evidence": "Velmi dobrá úspěšnost u maturitních zkoušek, dlouhodobá úspěšnost absolventů na vysokých školách."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné formativní hodnocení",
+        "detail": "Žáci se málo zapojují do sebehodnocení a vzájemného hodnocení podle předem stanovených kritérií.",
+        "evidence": "Inspektoři zaznamenali ojediné uplatnění vzájemného hodnocení výkonu spolužáků podle kritérií."
+      },
+      {
+        "tag": "Nejednotná kvalita výuky",
+        "detail": "V některých hodinách nižší metodická propracovanost, převaha frontální výuky s nerovnoměrným zapojením žáků, monotematičnost.",
+        "evidence": "Kvalitu vzdělávání v malé části snižovaly dílčí metodické a didaktické nedostatky, ojediněle nižší míra pedagogických zkušeností."
+      },
+      {
+        "tag": "Slabá práce se závěry hodin",
+        "detail": "Někdy chybí efektivní shrnutí probraného učiva nebo ověření splnění vzdělávacího cíle.",
+        "evidence": "Práce se závěry hodin nebyla vždy účelná, v části výuky nebylo zařazeno efektivní shrnutí nebo zhodnocení cíle."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá příprava na mezinárodní maturitu (IB) a jaké jsou úspěšnosti absolventů?",
+      "Jaké jsou zkušenosti s adaptací nových žáků v primě a jak škola podporuje jejich začlenění?",
+      "Jak se škola vypořádává s personální obměnou v pedagogickém sboru a jak zajišťuje kvalitu výuky u nových učitelů?"
+    ],
+    "who_school_fits": [
+      "Žáci s vášní pro jazyky a mezinárodní vzdělání – škola nabízí intenzivní jazykový program s rodilými mluvčími.",
+      "Motivovaní a samostatní žáci – gymnázium očekává vysokou míru vlastní iniciativy a domácí přípravy.",
+      "Rodiny hledající prestižní vzdělání s možností mezinárodní maturity a přípravy na zahraniční univerzity."
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižší jazykovou vybaveností – přijímací zkoušky zahrnují angličtinu a osobní pohovor na jazykové vybavení.",
+      "Žáci potřebující více individuální podpory – vysoká náročnost a rychlé tempo mohou být náročné pro ty, kteří potřebují více času.",
+      "Rodiny očekávající nižší školné – jedná se o soukromou školu s vyšší cenou vzdělání."
+    ],
+    "plain_czech_summary": "DINO-HIGH SCHOOL je prestižní soukromé osmileté gymnázium s důrazem na jazykové vzdělání. Žáci dosahují výborných výsledků, zejména v cizích jazycích a u maturit. Škola má moderní vybavení, kvalitní pedagogy a nabízí mezinárodní maturitu. Hlavní výzvou je zajistit jednotnou kvalitu výuky u všech učitelů a více zapojit žáky do aktivního hodnocení svého pokroku. Vhodná pro motivované jazykově nadané žáky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrá úspěšnost, nejlepší výsledky v anglickém jazyce",
+      "key_numbers": [
+        "Nejlepší výsledky v anglickém jazyce v rámci společné části maturit",
+        "Profilová část maturit 2023 o něco méně úspěšná než společná část",
+        "Dlouhodobá úspěšnost absolventů na vysokých školách"
+      ],
+      "evidence": "Velmi dobrá úspěšnost u maturitních zkoušek koresponduje s výsledky během studia, absolvování mezinárodní maturity je ukazatelem kvalitativního rozvoje."
+    },
+    "absence": {
+      "trend": "Velmi nízká absence, výjimečně neomluvená absence",
+      "key_numbers": [
+        "Ve sledovaném období dva žáci hodnoceni sníženým stupněm z chování",
+        "Výjimečně neomluvená absence u zletilých jedinců",
+        "Jednotlivci neprospěli"
+      ],
+      "evidence": "Jednotně nastavená pravidla hodnocení chování jsou účinně uplatňována, systematická výchovně vzdělávací práce umožňuje včasnou identifikaci rizikových projevů."
+    },
+    "support_services": [
+      "Výchovné poradenství s personální změnou vytvořující vhodné podmínky pro kompletní poradenské služby",
+      "Individuální konzultace s vyučujícími v úzké spolupráci s třídními učiteli a zákonnými zástupci",
+      "Adaptační kurzy s aktualizovaným zaměřením na pozitivní vazby, efektivní učení a prosociální chování",
+      "Kariérní poradenství se spoluprací se vzdělávací společností pro výběr zahraničních univerzit",
+      "Podpora nadaných žáků prostřednictvím volitelných předmětů a mimoškolních aktivit"
+    ],
+    "safety_climate": [
+      "Důvěryhodné a bezpečné prostředí pro vzdělávání s řadou mimoškolních aktivit",
+      "Elektronický systém a recepce přispívají k vyšší bezpečnosti žáků",
+      "Tematické bloky zaměřené na prevenci sociálně patologických jevů",
+      "Třídnické hodiny umožňující cíleně pracovat s konkrétními problémy v třídním kolektivu",
+      "Povinné školní uniformy upevňují pocit sounáležitosti"
+    ],
+    "partnerships_practice": [
+      "Partnerské zahraniční školy podporující koncepční záměry a profil absolventa",
+      "Spolupráce se vzdělávací společností pro kariérní poradenství a přijímací řízení na zahraniční univerzity",
+      "Zapojení bývalých absolventů do kariérního poradenství",
+      "Rada rodičů aktivně spolupracující s vedením školy",
+      "Studentský parlament s měsíčními setkáními podporující charitativní aktivity"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a věcná, ale místy obsahuje úřednickou terminologii. Hlavní zjištění jsou jasná a podložená konkrétními příklady. Silné a slabé stránky jsou jasně vymezeny.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní počty žáků s speciálními vzdělávacími potřebami, pouze že jich je minimum a dosahují srovnatelných výsledků.",
+      "Chybí konkrétní čísla o počtu žáků s neomluvené absencí a jejich podíl na celkovém počtu.",
+      "Není jasné, kolik procent pedagogů má chybějící odbornou kvalifikaci a jak dlouho si ji doplňují."
+    ]
+  }
+}
+```

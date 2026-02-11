@@ -1,0 +1,9 @@
+Nemám k dispozici zdrojový text inspekční zprávy. Bez konkrétního obsahu zprávy nemohu vytvořit validní JSON analýzu.
+
+Prosím, poskytni **text inspekční zprávy** (nebo její relevantní části), abych mohl:
+- Extrahovat informace o silných stránkách školy
+- Identifikovat rizika a slabá místa
+- Analyzovat výsledky maturity a absence
+- Připravit praktické rady pro rodiče
+
+Jakmile mi text zprávy poskytnete, vrátím strukturovaný JSON přesně podle schématu s maximální srozumitelností pro rodiče uchazeče.

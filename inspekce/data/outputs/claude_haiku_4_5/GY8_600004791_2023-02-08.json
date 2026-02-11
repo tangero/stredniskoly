@@ -1,0 +1,119 @@
+{
+  "report_id": "GY8_600004791_2023-02-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:48:09.249331+00:00",
+  "run_finished_utc": "2026-02-09T16:48:33.997260+00:00",
+  "raw_file": "GY8_600004791_2023-02-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600004791_2023-02-08",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium s církevním zaměřením, otevřené i žákům bez vyznání",
+      "inspection_period": "8. února 2023 až 13. února 2023",
+      "school_change_summary": "Od poslední inspekce v 2015 došlo k personální obměně vedení, částečné generační výměně pedagogů a vytvoření mediačního týmu. Zlepšily se materiálně technické podmínky a rozšířily se partnerství s vysokými školami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Výborné výsledky v cizích jazycích s 90 % maturantů složivších mezinárodní certifikáty, z toho 60 % na úrovni C1.",
+          "evidence": "90 % maturantů využilo certifikované zkoušky, přibližně 60 % dosáhlo úrovně C1"
+        },
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Promyšlená příprava hodin s jasně definovanými cíli, propojením teorie s praxí a systematickým rozvojem kompetencí žáků.",
+          "evidence": "Převládaly metodicky a didakticky zdařilé hodiny s efektivním využitím času a interdisciplinárními přesahy"
+        },
+        {
+          "tag": "Úspěšnost absolventů",
+          "detail": "Dlouhodobě výborná úspěšnost při přijetí na české i zahraniční vysoké školy.",
+          "evidence": "Všichni žáci prospěli u maturit, více než polovina s vyznamenáním"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotné hodnocení",
+          "detail": "Mírné odchylky v hodnocení mezi třídami a předměty kvůli autonomii učitelů, která není dostatečně sjednocena.",
+          "evidence": "Vedení postupně přijímá opatření směřující ke sjednocení pravidel hodnocení na úrovni školy"
+        },
+        {
+          "tag": "Didaktické nedostatky",
+          "detail": "V některých hodinách chybí efektivní časová organizace, vstupní motivace nebo závěrečné shrnutí učiva.",
+          "evidence": "V třetině sledovaného vzdělávání pedagogové nevyužili didaktického závěru ke shrnutí probraného učiva"
+        },
+        {
+          "tag": "Omezený prostor pro mluvený projev",
+          "detail": "Při dělených hodinách se vytvářel prostor spíše pro procvičování než pro souvislejší ústní vyjádření žáků.",
+          "evidence": "Jen v malé míře vytvářeli prostor pro souvislejší mluvený projev žáků"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola zajišťuje individuální přístup k žákům s různými studijními tempy, když jsou třídy plné?",
+        "Jaké jsou konkrétní plány na sjednocení způsobu hodnocení mezi jednotlivými učiteli a předměty?",
+        "Jak se škola vypořádává s tím, že některé hodiny chybí závěrečné shrnutí a vyhodnocení?"
+      ],
+      "who_school_fits": [
+        "Nadaní žáci se zájmem o jazyky a kvalitní všeobecné vzdělání s důrazem na kritické myšlení",
+        "Žáci, kterým vyhovuje strukturované prostředí s jasně nastavenými pravidly a duchovní podporou",
+        "Ambiciózní studenti připravující se na vysokoškolské studium v Česku nebo zahraničí"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuálního času na ústní vyjádření a diskuzi (třídy jsou plné, dělené hodiny se zaměřují spíše na procvičování)",
+        "Rodiny, které si nejsou jisté církevním zaměřením školy (povinná výuka náboženské nauky a latiny)",
+        "Žáci se speciálními vzdělávacími potřebami (škola má jen 1 % žáků se speciálními potřebami, takže zkušenosti mohou být omezené)"
+      ],
+      "plain_czech_summary": "Arcibiskupské gymnázium je prestižní škola s výbornou pověstí. Nabízí kvalitní vzdělání se silným zaměřením na jazyky, kde maturanti dosahují nadprůměrných výsledků. Vedení je stabilní a profesionální, učitelé jsou motivovaní. Výuka je promyšlená a propojuje teorii s praxí. Slabší stránkou je nejednotné hodnocení mezi učiteli a v některých hodinách chybí efektivní závěry. Škola je vhodná pro nadané žáky připravené na náročné studium."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100 % prospěšnosti u maturit",
+          "Více než 50 % maturantů s vyznamenáním",
+          "90 % maturantů složilo mezinárodní jazykové certifikáty"
+        ],
+        "evidence": "Ve sledovaném období všichni žáci prospěli, z toho více než polovina s vyznamenáním. Nadprůměrné výsledky v didaktických testech z českého a cizích jazyků."
+      },
+      "absence": {
+        "trend": "Velmi nízký počet neomluvených hodin",
+        "key_numbers": [
+          "Zanedbatelný počet neomluvených hodin",
+          "Vysoké procento žáků s uzavřenou klasifikací do 30. 6.",
+          "Přiměřené množství uložených kázeňských opatření"
+        ],
+        "evidence": "Zanedbatelný počet neomluvených hodin a vysoké procento žáků s uzavřenou klasifikací do 30. 6. svědčí o funkčnosti preventivně vzdělávacích mechanismů"
+      },
+      "support_services": [
+        "Interní školní psycholožka zajišťující adaptaci žáků a psychologickou péči",
+        "Výchovný poradce, metodička prevence a kariérní koordinátor",
+        "Mediační tým pro řešení školních konfliktů",
+        "Doučování v rámci školního klubu",
+        "Individuální vzdělávací plány pro žáky se speciálními potřebami"
+      ],
+      "safety_climate": [
+        "Jasně nastavená pravidla chování a systém péče o žáky",
+        "Recepce s celodenním provozem a elektronický docházkový systém",
+        "Adaptační výjezdy a kurzy efektivního učení pro nové žáky",
+        "Spirituálně edukační programy vedené školním kaplanem",
+        "Omezení používání mobilních telefonů a prevence návykových látek"
+      ],
+      "partnerships_practice": [
+        "Status fakultní školy Přírodovědecké fakulty a Matematicko-fyzikální fakulty Univerzity Karlovy",
+        "Certifikované pracoviště pro mezinárodní jazykové zkoušky",
+        "Partnerství s Česko-německým fondem budoucnosti",
+        "Program Erasmus+ pro mobilitu žáků a pedagogů",
+        "Zahraniční partnerské školy a dlouhodobé studijní pobyty"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a obsahuje konkrétní údaje. Některé pasáže jsou však dlouhé a složitě strukturované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje přesný počet žáků se speciálními potřebami (pouze procenta), takže není jasné, jak zkušená je škola s jejich podporou",
+        "Není jasné, jak se konkrétně liší kvalita výuky mezi jednotlivými předměty a učiteli",
+        "Chybí informace o počtu žáků, kteří neuspěli v přijímacím řízení nebo odešli ze školy"
+      ]
+    }
+  }
+}

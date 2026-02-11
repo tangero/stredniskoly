@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600008274_2024-05-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:16:07.812543+00:00",
+  "run_finished_utc": "2026-02-09T16:16:34.941912+00:00",
+  "raw_file": "SOS_600008274_2024-05-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600008274_2024-05-22",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště s domovem mládeže a školní jídelnou",
+      "inspection_period": "22. května až 28. května 2024",
+      "school_change_summary": "Od poslední inspekce došlo k výrazné obměně pedagogického sboru. Počet žáků (320 ve 20 třídách) je stabilní, ale mění se jejich rozložení mezi obory. Škola se aktivně zapojila do projektů Erasmus+ a eTwinning. Materiální podmínky se průběžně modernizují – nové prostory pro gastronomii, rekonstrukce domova mládeže a jídelny."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Mezinárodní zkušenosti",
+          "detail": "Žáci se účastní výjezdů do zahraničí, stáží u zahraničních firem a programů Erasmus+ a eTwinning, což rozvíjí jejich jazykové dovednosti a osobnost.",
+          "evidence": "Pravidelné výjezdy žáků do zahraničí a stáže u zahraničních firem podporují rozvoj jazykové gramotnosti."
+        },
+        {
+          "tag": "Praktická příprava",
+          "detail": "Praktická výuka navazuje na teoretické vyučování a zaměřuje se na přípravu k závěrečným zkouškám s podporou učitelů.",
+          "evidence": "Praktická výuka byla zaměřena především na přípravu úspěšného zvládnutí závěrečné zkoušky."
+        },
+        {
+          "tag": "Domov mládeže",
+          "detail": "Kvalitní zázemí s pestrými aktivitami, které podporují osobnostní rozvoj a smysluplné trávení volného času.",
+          "evidence": "Pestrá nabídka zájmových aktivit, kterou žáci ve velké míře využívají, přispívá k rozvoji jejich nadání."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky maturit",
+          "detail": "V roce 2022/2023 uspělo pouze 63,6 % žáků. Zvlášť problematický je český jazyk (44,4 % neúspěšnosti u ekonomiky).",
+          "evidence": "Z 22 žáků uspělo 14, tj. 63,6 %. Nejslabší výsledky u oboru Ekonomika a podnikání v češtině."
+        },
+        {
+          "tag": "Vysoká absence",
+          "detail": "Škola se potýká s vyšší mírou absence včetně neomluvené, která je příčinou předčasného odchodu ze studia.",
+          "evidence": "Nízká motivace ke studiu a s tím spojená vysoká absence jsou příčinou předčasného odchodu ze studia."
+        },
+        {
+          "tag": "Nestabilní pedagogický sbor",
+          "detail": "Časté změny v pedagogickém sboru mohou ovlivnit kvalitu vzdělávání a dlouhodobou strategii rozvoje.",
+          "evidence": "Od poslední inspekce došlo k výrazné obměně pedagogického sboru."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké má plány na zlepšení?",
+        "Jaké jsou konkrétní důvody slabých výsledků v češtině u maturitní zkoušky a jak se to bude řešit?",
+        "Jak se škola vypořádává s fluktuací pedagogů a jak to ovlivňuje kvalitu výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktické obory (kuchař, elektrikář, zedník, prodavač) – zde vykazují dobrou úspěšnost",
+        "Žáci, kterým vyhovuje mezinárodní prostředí a cestování – škola nabízí Erasmus+ a zahraniční stáže",
+        "Žáci z regionu, kteří potřebují ubytování – kvalitní domov mládeže s aktivitami"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími studijními předpoklady v maturitních oborech – vysoká neúspěšnost (36,4 %)",
+        "Rodiny, které nemohou zajistit důsledný dohled nad docházkou – absence je přetrvávajícím problémem",
+        "Žáci, kteří potřebují intenzivní individuální podporu – školní poradenské pracoviště není dostatečně zaměřeno na maturitní obory"
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní praktickou přípravu a mezinárodní zkušenosti přes Erasmus+. Domov mládeže je dobře vybavený. Hlavní problémy: jen 63,6 % žáků uspěje u maturity, zvlášť v češtině. Vysoká absence žáků a jejich předčasné odchody ze studia. Pedagogický sbor se často mění. Inspekce kritizuje nedostatečnou analýzu příčin neúspěchu a formální přístup k řízení. Ředitel se s kritikou nesouhlasí a poukazuje na obtížnost získávání kvalifikovaných učitelů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Podprůměrné výsledky",
+        "key_numbers": [
+          "63,6 % úspěšnost (14 z 22 žáků v roce 2022/2023)",
+          "44,4 % neúspěšnost v češtině u oboru Ekonomika a podnikání",
+          "50 % neúspěšnost v profilové části u oboru Informační technologie"
+        ],
+        "evidence": "Výsledky se pohybují pod průměrem úspěšnosti při srovnání se stejnými skupinami oborů v ČR."
+      },
+      "absence": {
+        "trend": "Přetrvávající problém",
+        "key_numbers": [
+          "Vyšší míra absence včetně neomluvené",
+          "Neomluvená absence je příčinou předčasného odchodu ze studia",
+          "V některých oborech odchází až polovina žáků během studia"
+        ],
+        "evidence": "Přetrvávajícím problémem, který se škole nedaří řešit, je vyšší míra absence včetně neomluvené."
+      },
+      "support_services": [
+        "Výchovná poradkyně se zaměřuje především na žáky nematuritních oborů",
+        "Dvě školní metodičky prevence realizují preventivní aktivity",
+        "Školní poradenské centrum bylo vybudováno, ale není dostatečně zaměřeno na maturitní obory"
+      ],
+      "safety_climate": [
+        "Preventivní aktivity zaměřené na vytváření pozitivních vztahů mezi žáky",
+        "Spolupráce s Policií ČR a Odborem sociálně právní ochrany dětí",
+        "Domov mládeže nabízí odpočinkové a tematicky zaměřené aktivity"
+      ],
+      "partnerships_practice": [
+        "Efektivní spolupráce s regionálními externími partnery",
+        "Praxe v reálném prostředí firem zvyšuje uplatnitelnost absolventů",
+        "Dlouhodobá spolupráce s místními spolky a organizacemi",
+        "Projekty Erasmus+ a eTwinning s mezinárodními partnery"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 3,
+      "czech_clarity_reason": "Zpráva je podrobná a fakticky bohatá, ale obsahuje technické termíny a úřednický styl. Ředitel školy v připomínkách jasně vyjadřuje svůj nesouhlas s některými závěry, což naznačuje, že interpretace inspekce není jednoznačná. Některé kritiky jsou vágní (např. 'řada zásadních nedostatků' bez konkrétního výčtu).",
+      "uncertainty_notes": [
+        "Inspekce tvrdí 'řadu zásadních i dílčích nedostatků' v dokumentaci, ale konkrétní seznam není jasný – ředitel tvrdí, že byly během inspekce opraveny",
+        "Kritika 'nedůsledné aplikace legislativních změn' je vágní; ředitel argumentuje, že postupuje podle zákona a školního řádu",
+        "Počet žáků, kteří předčasně odcházejí ('až polovina'), není přesně specifikován"
+      ]
+    }
+  }
+}

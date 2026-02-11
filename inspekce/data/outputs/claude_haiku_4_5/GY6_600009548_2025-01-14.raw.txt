@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY6_600009548_2025-01-14",
+  "school_profile": {
+    "school_type": "Osmileté, šestileté a čtyřleté gymnázium s bilingvním programem (česko-španělským)",
+    "inspection_period": "14. 1. 2025 - 17. 1. 2025",
+    "school_change_summary": "Počet žáků vzrostl z 558 na 591 (20 tříd), došlo k částečné obměně pedagogického sboru a jmenování dvou nových zástupkyň ředitele od roku 2023/2024."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Mezinárodní spolupráce a jazykové vzdělání",
+        "detail": "Škola dlouhodobě spolupracuje se zahraničními školami ve Španělsku a Německu, žáci se účastní výměnných pobytů a projektů Erasmus+.",
+        "evidence": "Partnerství s IES Santa Isabel de Hungría v Jerezu a dalšími školami, certifikát eTwinningová škola 2023-2024."
+      },
+      {
+        "tag": "Výborné výsledky vzdělávání",
+        "detail": "Více než 40 % žáků prospívá s vyznamenáním, všichni žáci složili maturitu, více než 30 % s vyznamenáním.",
+        "evidence": "Školní rok 2023/2024 a dva předchozí roky, období 2022-2024 u maturit."
+      },
+      {
+        "tag": "Kvalitní materiální vybavení",
+        "detail": "Škola průběžně zlepšuje prostorové a materiální podmínky díky úspěšnému čerpání grantů a investiční podpoře zřizovatele.",
+        "evidence": "Nový venkovní sportovní areál, mobilní počítačová učebna, renovovaná školní kuchyně."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Školní klima a vztahy mezi žáky a učiteli",
+        "detail": "Více než polovina žáků necítí od pedagogů dostatečnou vstřícnost a obává se sdělit své názory bez obav z následků.",
+        "evidence": "Anketní šetření zadané ČŠI ve dvou třídách (Dotazník pro žáka gymnázia) prokázalo nedostatečný dopad dosavadních opatření."
+      },
+      {
+        "tag": "Pasivita žáků ve výuce",
+        "detail": "Výuka je dominantně vedena učitelem frontální metodou, žáci jsou spíše pasivními příjemci bez dostatečné interaktivity.",
+        "evidence": "Sledovaná výuka se vyznačovala dominantní rolí učitele, malou pestrostí metod a nízkou aktivitou žáků."
+      },
+      {
+        "tag": "Chybějící individualizace a diferenciace",
+        "detail": "Úkoly jsou zadávány jednotně bez ohledu na schopnosti žáků, chybí práce s cílem a formativní hodnocení.",
+        "evidence": "Ve sledované výuce nebyly zohledňovány individuální potřeby žáků, chyběla diferenciace a sebereflexi."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola plánuje zlepšit komunikaci mezi učiteli a žáky a vytvořit bezpečnější prostředí pro vyjadřování názorů?",
+      "Jaké konkrétní kroky podnikne škola, aby zvýšila aktivitu žáků ve výuce a snížila dominanci frontální výuky?",
+      "Jak bude škola individualizovat výuku a přizpůsobovat ji různým úrovním schopností žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazykové vzdělání a mezinárodní spolupráci, zejména o španělštinu a bilingvní program",
+      "Nadaní a motivovaní žáci, kteří si vedou dobře v tradičnějším stylu výuky s důrazem na znalosti",
+      "Rodiny hledající školu s kvalitním vybavením a dlouhodobou tradicí úspěšných výsledků"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a participativní výuku s aktivním zapojením do procesu učení",
+      "Žáci se speciálními vzdělávacími potřebami, pokud vyžadují více individualizovaného přístupu a diferenciace",
+      "Citliví žáci, kteří mohou být demotivováni pasivní rolí ve výuce a potřebují více pozitivní zpětné vazby"
+    ],
+    "plain_czech_summary": "Gymnázium Luďka Pika je prestižní škola s výbornými výsledky, silným zaměřením na jazykové vzdělání a mezinárodní spolupráci. Materiální podmínky jsou na vysoké úrovni. Hlavní výzvou je školní klima – žáci cítí nedostatek vstřícnosti od učitelů a obávají se vyjadřovat své názory. Výuka je často vedena tradičním způsobem s dominantní rolí učitele, chybí interaktivita a individualizace. Škola si je těchto problémů vědoma a pracuje na jejich řešení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "Všichni žáci složili maturitní zkoušku",
+        "Více než 30 % žáků složilo maturitu s vyznamenáním (2022-2024)",
+        "Vysoká úspěšnost absolventů v terciárním vzdělávání"
+      ],
+      "evidence": "V období 2022 až 2024 více než 30 % žáků složilo maturitní zkoušku s vyznamenáním, všichni prospěli."
+    },
+    "absence": {
+      "trend": "Nízká",
+      "key_numbers": [
+        "Neomluvená absence je nízká",
+        "Počet výchovných opatření je nízký",
+        "Počet snížených známek z chování je nízký"
+      ],
+      "evidence": "Neomluvená absence je nízká, stejně jako počet ukládaných výchovných opatření nebo snížených známek z chování."
+    },
+    "support_services": [
+      "Tři výchovné poradkyně (zároveň kariérové poradkyně), jedna z nich metodička prevence",
+      "Nově přidaná školní speciální pedagožka pro individuální konzultace",
+      "Funkční poradenské pracoviště s péčí o žáky se speciálními vzdělávacími potřebami a nadané žáky"
+    ],
+    "safety_climate": [
+      "Vedení školy přijalo opatření na zlepšení klimatu: externí dotazníkové šetření SCIO (říjen 2024), elektronická schránka důvěry",
+      "Seminář pro pedagogický sbor na správné pedagogické postupy a pozitivní komunikaci",
+      "Zaměření hospitační činnosti na přístup a chování pedagogů k žákům",
+      "Dosavadní opatření zatím nemají žádoucí dopad podle anketního šetření ČŠI"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se španělskými školami (IES Santa Isabel de Hungría v Jerezu, IES Isabel de Vilena ve Valencii)",
+      "Partnerství s německým Fraunhofer gymnáziem a novými vazbami se Theodor Storm Schule v Husumu",
+      "Spolupráce s Gymnáziem Federica García Lorcy v Bratislavě",
+      "Projekty Erasmus+ a eTwinning (certifikát eTwinningová škola 2023-2024)",
+      "Spolupráce s místními vzdělávacími institucemi a Západočeskou univerzitou v Plzni"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasnou strukturou. Hlavní zjištění jsou dobře zdokumentována citacemi. Některé pasáže jsou technicky náročnější, ale celkově je text pro rodiče pochopitelný.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje přesné procento žáků se speciálními vzdělávacími potřebami, které by bylo relevantní pro rodiče – uvedeno jen 34 žáků ze 591 (cca 5,7 %)",
+      "Chybí konkrétní informace o počtu a typu výchovných opatření – uvedeno jen, že je počet nízký",
+      "Není jasné, jak konkrétně se škola vypořádá s doporučeními inspekce v oblasti školního klimatu a interaktivity výuky"
+    ]
+  }
+}
+```

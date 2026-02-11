@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600007294_2025-03-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:41:19.852527+00:00",
+  "run_finished_utc": "2026-02-09T13:41:44.979740+00:00",
+  "raw_file": "SOS_600007294_2025-03-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600007294_2025-03-17",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště řemesel (SOŠ a SOU)",
+      "inspection_period": "17.–20. března 2025",
+      "school_change_summary": "Škola zvýšila počet žáků o jednu třetinu na 780 studentů. Zavedla nové obory (Mechanik elektrotechnik, Ošetřovatel), modernizovala technické zázemí a rekonstruovala odborné dílny. Vedení školy systematicky pracuje na koncepci vzdělávání reflektující požadavky trhu práce."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava na povolání",
+          "detail": "Odborný výcvik probíhá v kvalitně vybavených školních dílnách s propojením teorie a praxe, žáci pracují aktivně a bez prostojů.",
+          "evidence": "Výuka praktického vyučování zajišťuje kvalitní přípravu na výkon zvoleného povolání se systematickou přípravou a metodickým promyšlením."
+        },
+        {
+          "tag": "Mezinárodní zkušenosti",
+          "detail": "Žáci získávají stáže v zahraničí přes program Erasmus+, což posiluje jejich odborné a jazykové kompetence.",
+          "evidence": "Aktivní participace v mezinárodních projektech poskytuje žákům krátkodobé i dlouhodobé stáže v zahraničí."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Absolventi dosahují výrazných úspěchů v odborných soutěžích na regionální, celostátní i mezinárodní úrovni.",
+          "evidence": "Čerství absolventi opakovaně získali ocenění za vysokou úroveň dovedností v soutěži Hospodářské komory."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Problémy s chováním některých učitelů",
+          "detail": "Inspekce zjistila nevhodné jednání pedagogů, zejména v komunikaci se žáky, která postrádá vstřícnost a respekt.",
+          "evidence": "Vedení školy řešilo podnět týkající se neprofesionálního a nepřijatelného chování vyučujících, negativní dopad potvrdila inspekce."
+        },
+        {
+          "tag": "Slabé výsledky v maturitě",
+          "detail": "Hrubá neúspěšnost ve společné části maturitní zkoušky se zvýšila, zejména v oborech Podnikání (22,2 % na 38,1 %), Sociální činnost a Veřejnosprávní činnost.",
+          "evidence": "Zvýšená hrubá neúspěšnost naznačuje, že zvolené pedagogické postupy nedostatečně rozvíjejí motivaci žáků k učení."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Absence se zvýšila, průměrná omluvená absence v nematuritních oborech vzrostla ze 130 na 152 hodin za rok.",
+          "evidence": "Podíl žáků ohrožených školní neúspěšností dosahuje 33 %, zhoršení výsledků je často spojeno s vysokou absencí."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké má preventivní programy?",
+        "Jaké konkrétní kroky podnikla škola po inspekci v oblasti komunikace pedagogů se žáky?",
+        "Jak se škola zaměřuje na zlepšení výsledků v maturitní zkoušce, zejména v předmětech společné části?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla, kteří se chystají na konkrétní povolání",
+        "Studenti, kteří mají zájem o mezinárodní zkušenosti a stáže v zahraničí",
+        "Žáci motivovaní k účasti v odborných soutěžích a profesním rozvoji"
+      ],
+      "who_should_be_cautious": [
+        "Žáci citliví na kvalitu vztahu s učiteli – inspekce zaznamenala problémy s chováním některých pedagogů",
+        "Studenti potřebující intenzivní podporu v teoretických předmětech – výuka není vždy dostatečně diferenciovaná",
+        "Žáci s tendencí k absencím – vysoká absence koreluje se zhoršením prospěchu"
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní praktickou přípravu na řemesla a technické obory s moderním vybavením. Žáci se mohou zúčastnit mezinárodních projektů a soutěží. Inspekce však upozornila na problémy: některé pedagogy kritizuje za nevhodné chování, výsledky v maturitě se zhoršují a absence žáků roste. Teoretické předměty nejsou vždy vedeny aktivizujícím způsobem. Škola má co zlepšovat v komunikaci s žáky a motivaci k učení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se",
+        "key_numbers": [
+          "Hrubá neúspěšnost v oboru Podnikání vzrostla z 22,2 % na 38,1 %",
+          "V oborech Sociální činnost a Veřejnosprávní činnost se zvýšila na 21,7 % a 22,2 %",
+          "V oborech Mechanik elektrotechnik, Sociální činnost a Veřejnosprávní činnost prospěli všichni v obou rocích"
+        ],
+        "evidence": "Zvýšená hrubá neúspěšnost ve společné části MZ naznačuje, že zvolené pedagogické postupy nedostatečně rozvíjejí motivaci žáků."
+      },
+      "absence": {
+        "trend": "Rostoucí v nematuritních oborech",
+        "key_numbers": [
+          "Průměrná omluvená absence v nematuritních oborech vzrostla ze 130 na 152 hodin za rok",
+          "V maturitních oborech se absence snížila ze 160 na 125 hodin za rok",
+          "Podíl žáků ohrožených školní neúspěšností dosahuje 33 %"
+        ],
+        "evidence": "Zhoršení výsledků žáků je často spojeno s vysokou absencí, neomluvená absence je nízká."
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně, školní metodik prevence a speciální pedagog – koordinátor inkluze",
+        "Externí psycholožka a terapeutka",
+        "Doučování, individuální konzultace a bezplatné on-line doučování pro přípravu na maturitu",
+        "Adaptační aktivity v prvních ročnících a kariérové poradenství"
+      ],
+      "safety_climate": [
+        "Inspekce zjistila nevhodné jednání některých pedagogů s negativním dopadem na klima školy a pocit bezpečí žáků",
+        "Vedení školy řešilo podnět týkající se neprofesionálního chování vyučujících",
+        "Škola identifikuje rizikové chování v oblasti šikany a kyberšikany a spolupracuje s odborníky"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se sociálními partnery a významným zaměstnavateli v regionu",
+        "Zapojování externích odborníků do výuky a odborné přednášky",
+        "Doplňková činnost umožňující žákům získat další profesní kvalifikace",
+        "Participace v programu Erasmus+ s krátkodobými a dlouhodobými stážemi v zahraničí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Ředitel školy však v připomínkách zpochybňuje reprezentativnost některých závěrů a metodiku šetření, což naznačuje, že některé formulace mohly být interpretovány různě.",
+      "uncertainty_notes": [
+        "Ředitel školy rozporuje závěry o chování pedagogů, tvrdí, že vycházejí z příliš malého vzorku respondentů (tři třídy) a bez ověřovacího šetření",
+        "Inspekce a ředitel se liší v interpretaci počtu zástupců ředitele a názvu nově zavedených oborů",
+        "Ředitel poukazuje na úspěchy v Cambridge English Certificate, které inspekce nezohlednila, což může ovlivnit vnímání kvality jazykového vzdělávání"
+      ]
+    }
+  }
+}

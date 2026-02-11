@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600020151_2024-01-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:29:47.111538+00:00",
+  "run_finished_utc": "2026-02-09T16:30:15.088869+00:00",
+  "raw_file": "SOS_600020151_2024-01-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600020151_2024-01-11",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola a Střední průmyslová škola elektrotechnická",
+      "inspection_period": "11. ledna až 16. ledna a 13. února 2024",
+      "school_change_summary": "Od inspekce v roce 2017 vzrostla naplněnost školy. Ve střední škole se vzdělávalo 466 žáků v 14 třídách (97 % kapacity), ve VOŠ 41 studentů ve 3 skupinách (33 % kapacity). Škola ukončila dálkové vzdělávání ke školnímu roku 2022/2023."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava na vysoké úrovni",
+          "detail": "Všechny hospitované hodiny praktické odborné přípravy vykazovaly výbornou úroveň s účelným využitím vybavení a vysokou odborností pedagogů.",
+          "evidence": "Všechny hospitované hodiny praktické odborné přípravy ve SŠ a VOŠ vykazovaly výbornou úroveň, byly organizačně a pedagogicky dobře zvládnuté."
+        },
+        {
+          "tag": "Výborné výsledky u maturit",
+          "detail": "Úspěšnost žáků v maturitních zkouškách je srovnatelná nebo vyšší než celorepublikový průměr, zejména v anglickém jazyce.",
+          "evidence": "Úspěšnost žáků obou oborů byla ve sledovaném období srovnatelná či vyšší, než je průměrná úspěšnost v celorepublikovém srovnání."
+        },
+        {
+          "tag": "Kvalitní vedení a partnerství",
+          "detail": "Funkční systém řízení s jasnou strategií a rozsáhlými partnerskými vztahy s firmami a vysokými školami.",
+          "evidence": "Partnerské vztahy s vysokými školami, státními i soukromými firmami (PRE, ČEZ, ČSZE, Jablotron) podporují odborný růst žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Méně pestrá výuka teoretických předmětů",
+          "detail": "V části hodin chybí dostatečná pestrost metod a forem výuky, což vede k jednotvárnosti a nižší dynamice.",
+          "evidence": "Uplatňovaná škála metod a forem výuky byla méně pestrá, což se projevovalo jednotvárností a nižší dynamikou vyučovací hodiny."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Nižší míra přizpůsobení výuky individuálním potřebám žáků s různou úrovní znalostí.",
+          "evidence": "Nižší míra diferenciace zadávaných úloh v části hospitovaných hodin dostatečně nepodporovala odlišné pracovní tempo a individuální potřeby žáků."
+        },
+        {
+          "tag": "Slabší podpora čtenářské gramotnosti",
+          "detail": "Omezená práce na rozvoji kritického myšlení a čtenářské gramotnosti žáků.",
+          "evidence": "Podpora čtenářské gramotnosti včetně kritického myšlení je vhodnou příležitostí ke zlepšení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami? (Škola identifikuje 6 % žáků se speciálními potřebami a nabízí doučování a konzultace.)",
+        "Jaké jsou možnosti získání mezinárodních certifikátů a jazykových kvalifikací během studia?",
+        "Jak se škola podílí na přípravě žáků na vstup na vysoké školy a jaké jsou výsledky jejich přijetí?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o elektrotechniku a informační technologie s ambicí pracovat v moderních technologiích",
+        "Studenti, kteří chtějí kombinovat teoretické vzdělání s kvalitní praktickou přípravou a získat certifikáty (ECDL, Autodesk)",
+        "Nadaní žáci, kterým škola nabízí rozšiřující aktivity jako robotické soutěže, středoškolská odborná činnost a Energetická maturita"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující rozmanitější a dynamičtější formy výuky teoretických předmětů - část hodin je méně pestrá",
+        "Studenti s individuálními potřebami, kteří potřebují vysokou míru diferenciace - škola ji v některých hodinách nedostatečně uplatňuje",
+        "Žáci, kteří se lépe učí samostatným vyhledáváním informací - v části výuky je méně prostoru pro práci s různými zdroji"
+      ],
+      "plain_czech_summary": "Škola je kvalitní elektrotechnická instituce s výbornou praktickou přípravou a dobrými výsledky u maturit. Vedení je funkční, partnerství s firmami a vysokými školami jsou silné. Pedagogický sbor je erudovaný. Hlavní slabinou je, že v některých teoretických hodinách chybí pestrost metod a dostatečná diferenciace podle individuálních potřeb žáků. Škola by měla více pracovat na rozvoji čtenářské gramotnosti a kritického myšlení. Vhodná pro ambiciózní žáky zajímající se o technologie."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoká úspěšnost",
+        "key_numbers": [
+          "Úspěšnost srovnatelná nebo vyšší než celorepublikový průměr",
+          "Nejlepší výsledky v anglickém jazyce",
+          "Velmi dobré výsledky v profilové části (odborné předměty)"
+        ],
+        "evidence": "Úspěšnost žáků obou oborů byla ve sledovaném období v dílčích zkouškách společné části maturitní zkoušky srovnatelná či vyšší, než je průměrná úspěšnost v celorepublikovém srovnění."
+      },
+      "absence": {
+        "trend": "Velmi nízká absence",
+        "key_numbers": [
+          "Průměrně okolo 70 hodin zameškaných na žáka za pololetí",
+          "98-99 % žáků s uzavřenou klasifikací k 30. 6.",
+          "Stabilně vysoký podíl"
+        ],
+        "evidence": "Účinná motivace žáků se projevila nižším průměrným počtem zameškaných hodin na žáka (okolo 70 hodin za pololetí) a stabilně vysokým podílem žáků s uzavřenou klasifikací."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence pracující v úzké spolupráci s pedagogy",
+        "Doučování a individuální konzultace pro žáky se speciálními vzdělávacími potřebami (6 % žáků) a ohrožené školním neúspěchem",
+        "Adaptační a sportovní kurzy, tematicky zaměřené přednášky a sportovní aktivity",
+        "Kariérní poradenství zaměřené na profesní směřování žáků"
+      ],
+      "safety_climate": [
+        "Velmi nízký výskyt rizikového chování díky preventivním mechanismům",
+        "Příznivé pracovní klima založené na partnerském přístupu učitelů, kázni žáků a vzájemném respektu",
+        "Elektronický a kamerový systém spolu s recepcí přispívají k vyšší bezpečnosti žáků",
+        "Nastavená a dodržovaná pravidla komunikace a chování s jednotným přístupem pedagogů"
+      ],
+      "partnerships_practice": [
+        "Partnerství s vysokými školami (ČVUT - fakultní škola) a průmyslovými podniky (PRE, ČEZ, ČSZE, Jablotron, Autodesk, Inventi)",
+        "Spolupráce s profesními svazy (Hospodářská komora, Agrární komora, Svaz průmyslu a dopravy)",
+        "Aktivní členství v asociacích energetického a elektrotechnického vzdělávání",
+        "Mezinárodní projekty a stáže (Erasmus+) pro pedagogy a žáky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní údaje a citace. Některé pasáže jsou však poměrně dlouhé a složitě strukturované, což mírně snižuje přehlednost.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní procenta žáků s jednotlivými klasifikacemi v posledních třech letech, pouze uvádí rozmezí 17-18 % s vyznamenáním",
+        "Není jasné, které konkrétní teoretické předměty mají problém s pestrostí metod - zpráva mluví o 'části hodin'",
+        "Chybí konkrétní čísla o počtu žáků, kteří se účastní jednotlivých rozšiřujících aktivit a soutěží"
+      ]
+    }
+  }
+}

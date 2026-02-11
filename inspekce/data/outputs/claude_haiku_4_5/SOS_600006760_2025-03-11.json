@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600006760_2025-03-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:42:21.857047+00:00",
+  "run_finished_utc": "2026-02-09T13:42:49.987032+00:00",
+  "raw_file": "SOS_600006760_2025-03-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006760_2025-03-11",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště (SOŠ a SOU)",
+      "inspection_period": "11. března 2025 až 14. března 2025",
+      "school_change_summary": "Od inspekce v roce 2021 se zvýšil počet žáků zejména v maturitních oborech (nyní 315 žáků, naplněnost 47 %). Zlepšily se materiální podmínky pro praktické vyučování v gastronomických oborech a digitální vybavení. Přetrvává problém s neúspěšností ve společné části maturitní zkoušky v oboru Podnikání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola efektivně propojuje teoretické poznatky s praktickým vyučováním a dlouhodobě spolupracuje s kvalitními sociálními partnery.",
+          "evidence": "\"dlouhodobá spolupráce s kvalitními sociálními partnery, která umožňuje mj. systematický rozvoj praktických dovedností žáků\""
+        },
+        {
+          "tag": "Kvalita praktického vyučování",
+          "detail": "Praktické vyučování je dobře organizované, žáci jsou vedeni k efektivní spolupráci a kvalitnímu provedení práce.",
+          "evidence": "\"Odborný výcvik vhodně navazoval na teoretickou výuku a byl organizačně dobře zvládnutý. Dovednosti žáků byly účinně rozvíjeny\""
+        },
+        {
+          "tag": "Zlepšující se materiální vybavení",
+          "detail": "Postupně se zlepšují podmínky pro vzdělávání, zejména v gastronomických oborech a digitální technice.",
+          "evidence": "\"Materiální podmínky se postupně zlepšují např. v oblasti vybavení digitální technikou nebo zajištění praktického vyučování v gastronomických oborech\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence v maturitních oborech",
+          "detail": "V oboru Hotelnictví dosahuje absence přibližně 160 hodin na žáka ročně, v oboru Podnikání více než 170 hodin, což vede k neúspěchu a předčasnému odchodu.",
+          "evidence": "\"Ve školním roce 2023/2024 dosahovala v oboru Hotelnictví přibližně 160 hodin na žáka, v oboru Podnikání více než 170 hodin na žáka\""
+        },
+        {
+          "tag": "Neúspěšnost v maturitní zkoušce (Podnikání)",
+          "detail": "V oboru Podnikání je hrubá neúspěšnost ve společné části maturitní zkoušky dvojnásobně horší než průměr v oborové skupině (48 % vs. 24 %).",
+          "evidence": "\"Ve školním roce 2023/2024 došlo v oboru Podnikání k nárůstu hrubé neúspěšnosti (téměř 48 %), která tak byla dvojnásobně horší než průměr v oborové skupině\""
+        },
+        {
+          "tag": "Nízké zapojení žáků v teoretické výuce",
+          "detail": "V části teoretického vyučování se málo využívají aktivizující metody, což nedostatečně zapojuje všechny žáky do výuky.",
+          "evidence": "\"nižší využití aktivizujících metod a forem práce v části teoretického vyučování nepodpořilo dostatečně zapojení všech žáků do výuky\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků v maturitních oborech a jaké jsou výsledky těchto opatření?",
+        "Jaké individuální doučování a podporu nabízí škola žákům, kteří mají problémy s anglickým jazykem nebo matematikou?",
+        "Jak se škola vypořádává s tím, že v oboru Podnikání pouze třetina žáků úspěšně maturuje v předepsané době?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a gastronomické obory, kde je kvalita výuky vysoká",
+        "Studenti, kteří potřebují individuální přístup a jsou ochotni aktivně se zapojit do výuky",
+        "Uchazeči o obor Hotelnictví s dobrými výsledky, kde je úspěšnost vyšší než v Podnikání"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími studijními předpoklady v anglickém jazyce, zejména v oboru Podnikání",
+        "Studenti, kteří mají tendenci k absencím – vysoká absence vede k neúspěchu a odchodu ze školy",
+        "Uchazeči, kteří potřebují intenzivní podporu v teoretických předmětech (matematika, čeština)"
+      ],
+      "plain_czech_summary": "Škola je zaměřená na praktické vzdělávání v gastronomických a opravárenských oborech, kde dosahuje dobrých výsledků. Silnou stránkou je propojení teorie s praxí a kvalitní materiální vybavení. Hlavní problémy jsou vysoká absence žáků v maturitních oborech a zejména v oboru Podnikání velmi nízká úspěšnost v maturitní zkoušce (48 % neúspěšných). Teoretická výuka by měla více využívat aktivizující metody. Škola se těmito problémy zabývá a zavádí doučování."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nestabilní, v oboru Podnikání se zhoršuje",
+        "key_numbers": [
+          "Obor Hotelnictví 2023/2024: 14 % hrubá neúspěšnost (průměr ČR 9 %)",
+          "Obor Podnikání 2023/2024: 48 % hrubá neúspěšnost (průměr ČR 24 %)",
+          "Obor Podnikání 2022/2023: pouze 40 % žáků úspěšně maturovalo v předepsané době"
+        ],
+        "evidence": "\"Ve školním roce 2023/2024 všichni přihlášení žáci konali MZ, neuspěl jeden žák. Hrubá neúspěšnost se tak snížila na 14 %\" vs. \"Ve školním roce 2023/2024 došlo v oboru Podnikání k nárůstu hrubé neúspěšnosti (téměř 48 %)\""
+      },
+      "absence": {
+        "trend": "Zvyšující se v maturitních oborech",
+        "key_numbers": [
+          "Hotelnictví 2023/2024: přibližně 160 hodin na žáka ročně",
+          "Podnikání 2023/2024: více než 170 hodin na žáka ročně",
+          "Neomluvená absence se snížila díky důsledným opatřením"
+        ],
+        "evidence": "\"Ve školním roce 2023/2024 dosahovala v oboru Hotelnictví přibližně 160 hodin na žáka, v oboru Podnikání více než 170 hodin na žáka\" a \"vyšší neúčast ve výuce v denní formě byla zpravidla spojena s podprůměrnými výsledky\""
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodika prevence a speciální pedagožka v úzké spolupráci",
+        "Individualizované doučování v předmětech společné části maturitní zkoušky (od 2024/2025)",
+        "Skupinové doučování a cvičné didaktické testy v reálném čase a rozsahu",
+        "Podpora žáků se speciálními vzdělávacími potřebami (88 žáků) a s odlišným mateřským jazykem (22 žáků)"
+      ],
+      "safety_climate": [
+        "Škola dbá na zajišťování bezpečného prostředí a pravidelně poučuje žáky o bezpečnosti",
+        "Dbáno bylo na dodržování zásad bezpečné práce v praktickém vyučování",
+        "V hospitovaném teoretickém vzdělávání převládala pozitivní atmosféra s vstřícným přístupem učitelů"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s kvalitními sociálními partnery umožňuje systematický rozvoj praktických dovedností",
+        "Propojování teoretických poznatků s jejich využitím v praxi",
+        "Studentská firma v nástavbovém studiu podporuje týmovou spolupráci a argumentaci"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Jsou jasně identifikovány silné a slabé stránky. Některé pasáže jsou však poměrně dlouhé a obsahují úřednický jazyk, který by mohl být jednodušší pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření proti absenci jsou účinná a jaké ne",
+        "Není jasné, zda je vysoká absence způsobena zdravotními problémy, nezájmem nebo jinými faktory",
+        "Chybí informace o tom, kolik žáků oboru Podnikání předčasně opustilo vzdělávání v jednotlivých rocích"
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600012816_2024-04-22",
+  "school_profile": {
+    "school_type": "Integrovaná střední škola s domovem mládeže a školní jídelnou",
+    "inspection_period": "22. až 25. dubna 2024",
+    "school_change_summary": "Změna ředitelky školy. Nárůst žáků na 371 (téměř o 90 žáků oproti poslední inspekci). Ukončeno vzdělávání v oboru Stravovací a ubytovací služby. Rekonstrukce budovy pro obor Bezpečnostně právní činnost."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a řízení",
+        "detail": "Ředitelka systematicky monitoruje a vyhodnocuje práci školy s jasnou vizí moderní a přátelské školy.",
+        "evidence": "Vedení plánuje a vyhodnocuje fungování školy, hospitační činnost probíhá v dostatečné míře s konkrétními doporučeními."
+      },
+      {
+        "tag": "Výborné podmínky pro bezpečnostní obor",
+        "detail": "Moderně vybavené učebny pro střeleckou přípravu, kriminalistiku a bezpečnostní přípravu.",
+        "evidence": "Rekonstrukce a vybavení budovy 9. května s odborným zázemím pro obor 68-42-M/01 Bezpečnostně právní činnost."
+      },
+      {
+        "tag": "Přátelská atmosféra a podpora žáků",
+        "detail": "Učitelé přistupují k žákům s empatií, vhodně je motivují a pracují s jejich individuálními potřebami.",
+        "evidence": "Společným rysem všech sledovaných hodin byla klidná, přátelská a navzájem vstřícná atmosféra."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost v oboru Sociální činnost",
+        "detail": "Žáci tohoto oboru mají výrazně horší výsledky v maturitní zkoušce než srovnatelné obory v ČR.",
+        "evidence": "V roce 2023 dosáhla hrubá neúspěšnost ve společné části maturitní zkoušky bezmála 50 %."
+      },
+      {
+        "tag": "Vysoká neomluvená absence",
+        "detail": "Zejména u žáků oborů se závěrečnou zkouškou je absence velmi vysoká.",
+        "evidence": "Téměř 20 neomluvených hodin v průměru na žáka za druhé pololetí školního roku 2022/2023."
+      },
+      {
+        "tag": "Slabá internetová síť",
+        "detail": "Problémy s připojením na školní internet omezují efektivní využívání digitálních technologií.",
+        "evidence": "Občas byl problém s připojením na školní internet, žáci využívali vlastní mobilní telefony."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší vysokou neomluvenu absenci a jaká konkrétní opatření plánuje zavést?",
+      "Jaké jsou konkrétní důvody horších výsledků v maturitní zkoušce u oboru Sociální činnost a jak se to bude řešit?",
+      "Kdy se plánuje zlepšení školní internetové sítě pro lepší využívání digitálních technologií?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o bezpečnostně právní činnost – obor má výborné vybavení a zkušené učitele s praxí u bezpečnostních sborů.",
+      "Žáci gastronomických oborů – škola má moderně vybavené pracoviště se školní restaurací a dosahuje velmi dobrých výsledků v soutěžích.",
+      "Žáci, kterým vyhovuje přátelská a podporující atmosféra – škola klade důraz na bezpečné a příjemné prostředí."
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o obor Sociální činnost – výsledky v maturitní zkoušce jsou výrazně horší než u srovnatelných oborů v ČR.",
+      "Žáci, kteří potřebují intenzivní podporu v učení – diferenciace obtížnosti úloh je ojedinělá.",
+      "Rodiny, které očekávají moderní digitální vybavení – školní internetová síť má problémy s připojením."
+    ],
+    "plain_czech_summary": "Integrovaná střední škola v Moravské Třebové je dobře vedená s přátelskou atmosférou a kvalitním zázemím, zejména pro obor Bezpečnostně právní činnost. Učitelé jsou vstřícní a motivují žáky. Silnou stránkou je také praktická výuka v reálném prostředí. Problémem je vysoká neomluvená absence a výrazně horší výsledky v maturitní zkoušce u oboru Sociální činnost. Škola si je těchto problémů vědoma a pracuje na jejich řešení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dobrá úroveň s výjimkou oboru Sociální činnost",
+      "key_numbers": [
+        "13 % žáků absolvovalo ročník s vyznamenáním (2022/2023)",
+        "Neprospěli pouze 3 žáci z 278 v maturitních oborech",
+        "Obor Sociální činnost: hrubá neúspěšnost bezmála 50 % ve společné části maturitní zkoušky"
+      ],
+      "evidence": "Z celkového počtu 278 žáků v oborech s maturitní zkouškou absolvovalo ročník s vyznamenáním 13 %, neprospěli tři žáci."
+    },
+    "absence": {
+      "trend": "Vysoká neomluvená absence u oborů se závěrečnou zkouškou",
+      "key_numbers": [
+        "Téměř 20 neomluvených hodin v průměru na žáka za druhé pololetí 2022/2023",
+        "Výrazně vyšší absence v prvním pololetí než v druhém"
+      ],
+      "evidence": "Velmi vysoký počet neomluvených absencí žáků oborů vzdělání se závěrečnou zkouškou vypovídající o menší účinnosti preventivních opatření."
+    },
+    "support_services": [
+      "Výchovná poradkyně – systematicky eviduje žáky se speciálními vzdělávacími potřebami a spolupracuje se školskými poradenskými zařízeními",
+      "Metodička prevence – vychází z aktuálně platného preventivního programu a řeší výchovné problémy žáků",
+      "Domov mládeže – zajišťuje podporu učení, volný čas a osobní konzultace pro ubytované žáky"
+    ],
+    "safety_climate": [
+      "Pozitivní, partnerská a podporující atmosféra napříč celou školou",
+      "Škola chce být příjemným a bezpečným místem",
+      "Rizikové chování se daří podchytit již v jeho počátku a eliminovat závažné dopady"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery všech vyučovaných oborů na odpovídající úrovni",
+      "Odborná praxe u smluvních partnerů (Městská policie, Okresní soud, pečovatelské služby, domovy pro seniory)",
+      "Zahraniční odborná praxe v rámci projektu Erasmus+ (Německo, Francie, Anglie)",
+      "Spolupráce s Policií ČR, Vězeňskou službou ČR a Celní správou ČR"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné stránky a oblasti ke zlepšení. Doporučení jsou konkrétní a praktická.",
+    "uncertainty_notes": [
+      "Není jasné, jaké konkrétní opatření škola již přijala na řešení vysoké absence a rozdílů v klasifikaci mezi pololetími.",
+      "Chybí informace o tom, jak se bude řešit nižší objektivita hodnocení v oboru Sociální činnost.",
+      "Není specifikováno, kdy se plánuje zlepšení internetové sítě."
+    ]
+  }
+}
+```

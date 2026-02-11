@@ -1,0 +1,115 @@
+{
+  "report_id": "GY4_691017271_2025-06-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:34:16.194827+00:00",
+  "run_finished_utc": "2026-02-09T13:34:42.928340+00:00",
+  "raw_file": "GY4_691017271_2025-06-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691017271_2025-06-05",
+    "school_profile": {
+      "school_type": "Čtyřleté gymnázium v denní formě, soukromé (s.r.o.)",
+      "inspection_period": "5.–6. června a 9. června 2025",
+      "school_change_summary": "Škola funguje od 1. září 2024. K inspekci měla 34 žáků ve třech třídách, maximální kapacita je 160 žáků. Sídlí v pronajatých prostorech v Praze 3, vzdělávání realizuje v partnerství s dalšími institucemi."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělávání",
+          "detail": "Škola systematicky rozvíjí jazykové kompetence žáků rozdělením do skupin podle úrovně s možností přestupu a přípravou na mezinárodní certifikáty.",
+          "evidence": "Nastavený systém jazykového vzdělávání podporuje rozvoj jazykových kompetencí a funkčních gramotností."
+        },
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Vedení školy vytváří vstřícné prostředí s aktivní spoluprací pedagogů a žáků, důraz na individuální přístup a osobnostní rozvoj.",
+          "evidence": "Vedení vytváří vstřícné a respektující vzdělávací prostředí založené na aktivní spolupráci pedagogů a žáků."
+        },
+        {
+          "tag": "Kvalitní vybavení a podmínky",
+          "detail": "Nově zařízené učebny s multimediální technikou, knihovna, wifi, sportovní zařízení a odpovídající hygienické vybavení.",
+          "evidence": "Vícezdrojové financování a materiální podmínky jsou optimální pro realizaci výuky podle ŠVP."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotná kvalita výuky",
+          "detail": "V některých hodinách chybí efektivní časové rozvržení, aktivizující metody a kvalitní závěr hodiny pro reflexi.",
+          "evidence": "V části výuky méně efektivní časové a organizační rozvržení činností, nižší míra využití aktivizujících metod."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Některé hodiny nemají dostatečnou podporu pro nadanější žáky nebo žáky s vyššími studijními předpoklady.",
+          "evidence": "Nižší míra diferenciace výuky vzhledem ke vzdělávacím potřebám žáků s vyššími studijními předpoklady."
+        },
+        {
+          "tag": "Slabší zapojení žáků do hodnocení",
+          "detail": "Žáci nejsou dostatečně vedeni k sebehodnocení a vzájemnému hodnocení svého pokroku.",
+          "evidence": "Méně často byli žáci vedeni k sebehodnocení a vzájemnému hodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá příprava na mezinárodní zkoušky (Cambridge, IB) a jaké jsou úspěšnosti žáků?",
+        "Jaké jsou zkušenosti s individuálním přístupem k žákům s různými studijními potřebami a jak se škola vypořádává s nadanými žáky?",
+        "Jak se škola vypořádává s absencí vlastní laboratoře – jak probíhá praktická výuka přírodovědných předmětů?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazykové vzdělávání a mezinárodní certifikáty (Cambridge, IB)",
+        "Talentovaní žáci se sportovním nebo uměleckým zaměřením, kterým škola nabízí individuální přístup",
+        "Rodiny hledající bezpečné prostředí s důrazem na osobnostní rozvoj a spolupráci"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více struktury a jasných pravidel – kvalita výuky není zcela jednotná",
+        "Žáci s vyššími studijními předpoklady – v některých hodinách chybí dostatečná diferenciace",
+        "Rodiny, které preferují tradiční přístup – škola klade důraz na projekty, samostatnost a digitální prostředí"
+      ],
+      "plain_czech_summary": "Victoria High School je nová soukromá gymnázia v Praze s moderním vybavením a důrazem na jazykové vzdělávání a individuální přístup. Vedení školy vytváří vstřícné prostředí a pedagogové jsou kvalifikovaní. Inspekce však upozorňuje na nejednotnou kvalitu výuky – některé hodiny postrádají efektivní organizaci a aktivizující metody. Žáci nejsou dostatečně vedeni k sebehodnocení a v některých hodinách chybí diferenciace pro nadanější žáky. Škola má potenciál, ale potřebuje zlepšit konzistenci pedagogických přístupů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Škola se teprve připravuje na první maturitní zkoušky (kandidát Cambridge International Education, od 3. ročníku IB)",
+        "key_numbers": [
+          "Škola funguje od 1. 9. 2024",
+          "K inspekci měla 34 žáků ve třech třídách",
+          "Maximální kapacita 160 žáků"
+        ],
+        "evidence": "Gymnázium je kandidátskou školou pro vstup do Cambridge International Education, od třetího ročníku bude vzdělávání směřováno ke složení české maturitní zkoušky i IB."
+      },
+      "absence": {
+        "trend": "Nízká absence, vyšší omluvená absence některých žáků byla způsobena zdravotními důvody",
+        "key_numbers": [
+          "Všichni žáci v 1. pololetí 2024/2025 prospěli",
+          "Jednotlivci s vyznamenáním",
+          "Žáci bez snížených známek za chování"
+        ],
+        "evidence": "Vyšší omluvená absence některých žáků byla způsobena převážně zdravotními důvody, proto byli v některých předmětech nehodnoceni."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, školní metodička prevence, kariérová poradkyně",
+        "Individuální vzdělávací plány pro žáky se speciálními potřebami (3 žáci se speciálními vzdělávacími potřebami, 6 žáků s odlišným mateřským jazykem)",
+        "Doučování, možnost domácí přípravy ve škole, možnost doplnění či opravy výstupů"
+      ],
+      "safety_climate": [
+        "Stálá služba u vchodu do budovy a čipový systém pro vstup do prostor",
+        "Funkční preventivní strategie s důrazem na včasné odhalování rizikového chování",
+        "Adaptační třídenní pobyt a aktivity zaměřené na budování pozitivních vztahů v třídě",
+        "Nastavená a dodržovaná pravidla komunikace a chování s jednotným přístupem pedagogů"
+      ],
+      "partnerships_practice": [
+        "Partnerství se střední školou pro realizaci laboratorních cvičení přírodovědných předmětů",
+        "Smluvně zajištěná sportovní zařízení a víceúčelové hřiště",
+        "Spolupráce s partnerskými i zahraničními středními školami a odborníky z praxe",
+        "Kandidátství pro Cambridge International Education a program International Baccalaureate"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však velmi detailní a pro rodiče méně relevantní (např. popis pedagogických metod).",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o výsledcích maturit (škola je příliš nová), takže nelze posoudit dlouhodobou úspěšnost",
+        "Není jasné, jak se škola vypořádá s růstem počtu žáků – zatím má jen 34 žáků, maximální kapacita je 160",
+        "Doporučení inspekce naznačují, že kvalita výuky není zcela jednotná, ale není jasné, jak závažné jsou tyto problémy"
+      ]
+    }
+  }
+}

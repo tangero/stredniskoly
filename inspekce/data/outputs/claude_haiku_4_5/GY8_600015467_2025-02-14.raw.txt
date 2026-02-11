@@ -1,0 +1,96 @@
+```json
+{
+  "report_id": "GY8_600015467_2025-02-14",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium (928 žáků v 32 třídách)",
+    "inspection_period": "14. února 2025 a 18.–20. února 2025",
+    "school_change_summary": "Nový ředitel a zástupkyně ředitele. Modernizace IT systémů, audiovizuální techniky a materiálně-technických podmínek (renovace budov, akustické úpravy jazykových učeben, sportovních prostor). Pokračující aktivní projektová činnost."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné maturitní výsledky",
+        "detail": "Výsledky maturit patří mezi nejlepší v kraji, zejména v části společenské.",
+        "evidence": "Výsledky jsou \"na výborné úrovni\" a \"výrazně lepší ve srovnění s celorepublikovými výsledky\"."
+      },
+      {
+        "tag": "Bohaté mimoškolní aktivity",
+        "detail": "Žáci dosahují významných úspěchů v soutěžích a mají přístup k různým kroužkům.",
+        "evidence": "\"Dlouholetá čelní umístění v literárních, cizojazyčných, matematických a přírodovědných soutěžích\" na krajské a celostátní úrovni."
+      },
+      {
+        "tag": "Kvalitní podpora slabších žáků",
+        "detail": "Škola systematicky pomáhá žákům s problémy v učení.",
+        "evidence": "\"Konzultační hodiny a různé formy doučování\" pozitivně přispívají ke snižování školní neúspěšnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné využívání informačních zdrojů",
+        "detail": "Žáci nejsou dostatečně vedeni k samostatnému vyhledávání informací.",
+        "evidence": "\"V menší míře bylo využito vedení žáků k účelnému využívání různých informačních zdrojů.\""
+      },
+      {
+        "tag": "Chybějící závěrečné zhodnocení v některých předmětech",
+        "detail": "V dějepisu a cizích jazycích chybí reflexe žákovského pokroku na konci hodin.",
+        "evidence": "\"V závěru výuky dějepisu a cizích jazyků chybělo zhodnocení práce žáků.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se slabším prospěchem a jaké jsou dostupné formy doučování?",
+      "Jaké jsou možnosti zapojení do mezinárodních výměnných pobytů a jak se na nich podílejí žáci?",
+      "Jak se škola připravuje na změny v informatice a jak jsou aktualizovány školní vzdělávací programy?"
+    ],
+    "who_school_fits": [
+      "Ambiciózní žáci zaměření na vysokoškolské studium – výborné maturitní výsledky a příprava na vysoké školy",
+      "Žáci se zájmem o soutěže a vědomostní aktivity – bohatá nabídka soutěží a kroužků",
+      "Žáci s potřebou individuální podpory – systematická péče o slabší žáky a žáky se speciálními potřebami"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více vedení při samostatné práci – škola se zaměřuje na zlepšení v tomto směru",
+      "Žáci preferující praktické vzdělání – gymnázium je zaměřeno na teoretické vzdělání"
+    ],
+    "plain_czech_summary": "Gymnázium v Uherském Hradišti je kvalitní školou s výbornými výsledky u maturit a aktivním zapojením žáků do soutěží. Má dobré materiální podmínky, kvalitní pedagogy a podporuje slabší žáky. Inspekce ocenila dlouhodobou spolupráci s partnery a systematickou práci s výsledky. Jedinou oblastí ke zlepšení je více vést žáky k samostatnému vyhledávání informací. Škola je vhodná pro ambiciózní žáky směřující na vysoké školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborný",
+      "key_numbers": [
+        "Výsledky \"na výborné úrovni\" v posledních třech letech",
+        "Výsledky společenské části patří \"mezi nejlepší na úrovni kraje\"",
+        "Výrazně lepší než celorepublikové výsledky"
+      ],
+      "evidence": "Vedení školy se maturitními výsledky pravidelně zabývá, analyzuje je a provádí opatření k dalšímu zlepšení."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence věnuje pouze v kontextu bezpečnosti – žáci jsou informováni o bezpečnostních rizicích."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodista prevence a kariérový poradce pracují v efektivním týmu",
+      "Systematická podpora žáků se speciálními vzdělávacími potřebami prostřednictvím pedagogické intervence",
+      "Konzultační hodiny a doučování pro žáky se slabším prospěchem"
+    ],
+    "safety_climate": [
+      "Účinně nastavený systém bezpečnosti a ochrany zdraví",
+      "Pravidelné informace žákům o bezpečnostních rizicích ve škole a při sportovních aktivitách",
+      "Vedení žáků ke zdravému životnímu stylu a zdravé výživě"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s městem Uherské Hradiště – žáci se podílejí na kulturních a společenských akcích",
+      "Aktivní spolupráce se čtyřmi zahraničními partnerskými školami – pedagogické kurzy a skupinové/individuální mobility žáků",
+      "Oboustranně přínosná spolupráce se základními školami, sociálními partnery a vysokými školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk a konkrétní příklady. Všechna tvrzení jsou podpořena důkazy z textu.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – nelze posoudit trend či čísla",
+      "Konkrétní počty žáků se speciálními potřebami (18) a s odlišným mateřským jazykem (5) jsou uvedeny, ale bez trendu",
+      "Detailní data o prospěchu nejsou v textu dostupná"
+    ]
+  }
+}
+```

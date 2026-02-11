@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "SOS_600171272_2024-02-12",
+  "school_profile": {
+    "school_type": "Střední škola s obory vzdělání s výučním listem (Cukrář, Kuchař-číšník) a s maturitní zkouškou (Cestovní ruch, Gastronomie, Podnikání, Gastronomie nástavbové studium). Součástí je školní jídelna.",
+    "inspection_period": "12. února 2024 až 16. února 2024",
+    "school_change_summary": "Od poslední inspekce v 2015/2016 se rozšířila nabídka o obor Podnikání. V Gastronomii zavedla model umožňující získat výuční list i maturitu. Zavedla elektronické vedení dokumentace a žákovskou samosprávu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola efektivně propojuje teoretické vyučování s praktickým výcvikem díky funkční spolupráci pedagogů a tandemové výuce s odborníky z praxe.",
+        "evidence": "Tandemová výuka s odborníky z praxe přenáší praktické zkušenosti a nejnovější technologie do výuky."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Žáci se zapojují do četných aktivit včetně odborných soutěží, specializovaných klubů a mezinárodních projektů.",
+        "evidence": "Žáci úspěšně reprezentují školu v odborných soutěžích na regionální i celostátní úrovni, účastní se stáží v zahraničí."
+      },
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Dlouhodobá spolupráce s partnerskými firmami umožňuje odborný výcvik v reálném pracovním prostředí.",
+        "evidence": "Žáci absolvují odborný výcvik na pracovištích smluvních partnerů pod vedením instruktorů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky v nástavbovém studiu",
+        "detail": "Žáci oboru Gastronomie nástavbové studium mají výrazně nižší úspěšnost v maturitní zkoušce než celorepublikový průměr.",
+        "evidence": "Výrazně vyšší neúspěšnost v českém jazyce a cizím jazyce ve srovnání s celorepublikovým průměrem, trend se opakuje i v předchozích letech."
+      },
+      {
+        "tag": "Nedostatečné sebehodnocení žáků",
+        "detail": "V teoretické výuce chybí prostor pro sebereflexi žáků a vzájemné hodnocení, výuka není diferencovaná.",
+        "evidence": "Společným nedostatkem bylo chybějící sebehodnocení žáků jako součást ověření dosažení cíle, absence diferencovaných úloh."
+      },
+      {
+        "tag": "Omezený rozvoj kritického myšlení",
+        "detail": "Výuka se zaměřuje především na získávání znalostí, méně na rozvoj kritického myšlení a práci s různými zdroji.",
+        "evidence": "V nižší míře byly zařazovány aktivity rozvíjející kritické myšlení a samostatnou práci s informacemi z více zdrojů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje žáky nástavbového studia Gastronomie, kteří mají nižší úspěšnost v maturitě?",
+      "Jaké konkrétní opatření škola zavádí pro individuální sebehodnocení a vzájemné hodnocení žáků?",
+      "Jak se v praxi realizuje tandemová výuka s odborníky z praxe a v kterých oborech?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a odborný výcvik v reálném pracovním prostředí",
+      "Žáci, kteří se chtějí zapojit do bohaté mimoškolní nabídky a odborných soutěží",
+      "Zájemci o obory gastronomie, cestovního ruchu a podnikání s možností získat výuční list nebo maturitu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci plánující nástavbové studium Gastronomie by měli zvážit nižší úspěšnost v maturitě",
+      "Žáci preferující individualizovanou výuku s diferencovanými úkoly podle svých schopností",
+      "Žáci zaměření na rozvoj kritického myšlení a samostatné práce s informacemi"
+    ],
+    "plain_czech_summary": "Střední škola společného stravování v Ostravě je moderní školou zaměřenou na gastronomii, cestovní ruch a podnikání. Její velkou silou je propojení teoretické výuky s praxí a bohatá mimoškolní nabídka. Žáci se účastní odborných soutěží a stáží v zahraničí. Slabinou je nižší úspěšnost žáků nástavbového studia v maturitě a nedostatečné zaměření na sebehodnocení a kritické myšlení. Výuka je převážně frontální bez diferencování podle individuálních schopností."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený - Gastronomie a Cestovní ruch dosahují průměru nebo lepších výsledků, nástavbové studium Gastronomie výrazně zaostává",
+      "key_numbers": [
+        "Gastronomie: vyšší úspěšnost v češtině a cizím jazyce než průměr ČR",
+        "Cestovní ruch: vyšší v češtině, mírně nižší v cizím jazyce než průměr ČR",
+        "Nástavbové studium Gastronomie: výrazně nižší úspěšnost v obou předmětech"
+      ],
+      "evidence": "Ve školním roce 2022/2023 dosáhli žáci Gastronomie vyšší úspěšnosti než průměr v dané skupině oborů. Nástavbové studium vykazuje výrazně vyšší neúspěšnost, trend se opakuje i v předchozích letech."
+    },
+    "absence": {
+      "trend": "Pozitivní - postupný pokles",
+      "key_numbers": [
+        "Pozvolný pokles celkové míry absence na žáka",
+        "Pokles neomluvené absence na žáka",
+        "Trend pozorován v letech 2021/2022, 2022/2023 a prvním pololetí 2023/2024"
+      ],
+      "evidence": "Z porovnání absencí ve školních letech 2021/2022, 2022/2023 a prvního pololetí 2023/2024 je patrný pozvolný pokles celkové míry absence i neomluvené absence na žáka."
+    },
+    "support_services": [
+      "Školní psycholožka zajišťující podporu podle aktuálních zjištění",
+      "Kariérová poradkyně",
+      "Školní asistentka zajišťující podporu žákům s odlišným mateřským jazykem",
+      "Sociální pracovnice",
+      "Doučovací aktivity zajišťované jednotlivými učiteli"
+    ],
+    "safety_climate": [
+      "Vedení školy provádí analýzu úrazovosti",
+      "Žáci jsou opakovaně seznamováni s pravidly bezpečného chování a ochrany zdraví",
+      "Třídnické hodiny a adaptační aktivity pro nové kolektivy",
+      "Anonymní schránka důvěry v papírové i elektronické verzi",
+      "Výchovné komise řešící negativní projevy chování"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s partnerskými firmami umožňující odborný výcvik v reálném prostředí",
+      "Zpětná vazba od zaměstnavatelů na kvalitu dosahovaných výsledků",
+      "Exkurze, semináře, kurzy a přednášky ve spolupráci se zaměstnavateli",
+      "Aktivní zapojení pedagogů do činnosti profesních organizací",
+      "Tandemová výuka s odborníky z praxe"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o evidence. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků s vyznamenáním a neprospívajících v jednotlivých oborech",
+      "Chybí konkrétní data o absencích (např. průměrný počet hodin absence na žáka)",
+      "Není jasné, jaké konkrétní opatření škola již přijala na základě doporučení z předchozích inspekčních činností"
+    ]
+  }
+}
+```

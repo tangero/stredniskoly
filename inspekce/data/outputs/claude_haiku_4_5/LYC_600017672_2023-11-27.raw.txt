@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600017672_2023-11-27",
+  "school_profile": {
+    "school_type": "Obchodní akademie a Vyšší odborná škola sociální (střední škola + VOŠ)",
+    "inspection_period": "27. až 30. listopadu 2023",
+    "school_change_summary": "Od poslední inspekce v dubnu 2017 škola ukončila činnost domova mládeže. Od školního roku 2022/2023 má nového ředitele. Vybudovala venkovní sportovní hřiště pro tělesnou výchovu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a strategie",
+        "detail": "Ředitel vede školu účelně s jasným rozdělením zodpovědnosti a dobrou komunikací mezi všemi zaměstnanci.",
+        "evidence": "Řídicí procesy jsou účelně nastaveny, jednotlivé činnosti jsou pečlivě plánované a vyhodnocované."
+      },
+      {
+        "tag": "Výborná praktická výuka",
+        "detail": "Studenti VOŠ získávají praktické dovednosti v reálných sociálních zařízeních pod supervizí odborníků.",
+        "evidence": "Odborná praxe tvoří čtvrtinu hodinové dotace studia, studenti pracují s klienty a aplikují znalosti přímo v praxi."
+      },
+      {
+        "tag": "Silné výsledky maturit",
+        "detail": "Více než třetina žáků zvládla maturitu s vyznamenáním, obchodní akademie dosahuje nadprůměrných výsledků.",
+        "evidence": "Obchodní akademie dosáhla 4,9 % nad republikovými výsledky, neprospělo pouze 12 žáků po opravných termínech."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky ekonomického lycea",
+        "detail": "Žáci ekonomického lycea dosahují horších výsledků v maturitě, zejména z cizího jazyka.",
+        "evidence": "Ekonomické lyceum je 14,2 % pod republikovým průměrem, škola na tom aktivně pracuje."
+      },
+      {
+        "tag": "Nedostatečná diferenciace ve výuce",
+        "detail": "Učitelé ve střední škole málo přizpůsobují náročnost úloh různým schopnostem žáků, zejména nadaných.",
+        "evidence": "Chybí prvky diferenciace náročnosti zadávaných úloh, jednotné tempo pro všechny žáky."
+      },
+      {
+        "tag": "Slabá zpětná vazba od žáků",
+        "detail": "Učitelé málo využívají závěry hodin k získání zpětné vazby o účinnosti své výuky.",
+        "evidence": "Sebehodnocení a vzájemné hodnocení žáků zaznamenáno jen ojediněle, závěry hodin zpravidla nevyužívány."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky v teoretické výuce? Jsou pro ně připraveny náročnější úkoly?",
+      "Jaké konkrétní kroky podniká škola na zlepšení výsledků ekonomického lycea z cizích jazyků?",
+      "Jak se učitelé připravují na diferenciovanou výuku a jakou podporu v tom dostávají?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o obchod a ekonomii – obchodní akademie dosahuje výborných výsledků a nabízí až čtyři cizí jazyky",
+      "Studenti sociálních oborů – VOŠ sociální práce a sociální pedagogiky mají výbornou vybavenost a kontakty v sociálních službách",
+      "Žáci, kterým vyhovuje strukturovaný přístup a jasné vedení – škola má dobrou atmosféru a vstřícné učitele"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v cizích jazycích – ekonomické lyceum má problémy s jazykovou výukou",
+      "Nadaní žáci – ve střední škole chybí dostatečná diferenciace pro jejich rozvoj",
+      "Žáci, kteří potřebují individuální přístup – teoretická výuka je často vedena jednotným tempem pro všechny"
+    ],
+    "plain_czech_summary": "Škola je dobře vedená s jasnou strategií a kvalitním pedagogickým sborem. Střední škola dosahuje dobrých výsledků, obchodní akademie je nadprůměrná. Vyšší odborná škola sociální práce je výborná s praktickou orientací. Hlavní slabinou je nedostatečná diferenciace ve výuce – nadaní žáci nemají dostatek výzvy. Ekonomické lyceum má problémy s cizími jazyky. Škola na těchto problémech pracuje a hledá řešení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s výborným výsledkem obchodní akademie, slabší ekonomické lyceum",
+      "key_numbers": [
+        "Více než 35 % žáků zvládlo maturitu s vyznemenáním",
+        "Obchodní akademie: 4,9 % nad republikovým průměrem",
+        "Ekonomické lyceum: 14,2 % pod republikovým průměrem"
+      ],
+      "evidence": "Po opravných a náhradních termínech neprospělo 12 žáků. Průměrná neúspěšnost v profilové části za tři roky: necelých 9 %."
+    },
+    "absence": {
+      "trend": "Nízká absence svědčící o dobré motivaci žáků",
+      "key_numbers": [
+        "Absence žáků je nízká",
+        "Neomluvenou absenci řeší škola ojediněle"
+      ],
+      "evidence": "Nízká míra absence svědčí o účelné práci školy s motivací žáků ke studiu."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně a metodička prevence zajišťují poradenství a prevenci",
+      "Doučování nabízeno mimo výuku",
+      "Kariérové poradenství podporováno pravidelným jednáním vedení s poradkyněmi",
+      "Podpora žáků se speciálními vzdělávacími potřebami při ověřování výsledků"
+    ],
+    "safety_climate": [
+      "Vstřícná a otevřená komunikace učitelů podporující bezpečné prostředí",
+      "Minimální preventivní program aktuální a pomáhá předcházet rizikovým jevům",
+      "Problematické chování řešeno včas, je ojedinělé",
+      "Nízká míra kázeňských opatření"
+    ],
+    "partnerships_practice": [
+      "Rozsáhlá spolupráce se sociálními partnery pro realizaci praktické výuky",
+      "Členství v síti přidružených škol UNESCO a projektu Světová škola",
+      "Ambasadorská škola Evropského parlamentu",
+      "Spolupráce s profesními organizacemi a sociálními pracovišti",
+      "Zapojení do charitativních projektů a dobrovolnické činnosti"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou detailnější než potřebné pro rodiče, ale celkově je obsah dobře strukturovaný.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní kroky škola plánuje na zlepšení diferenciace ve výuce",
+      "Není jasné, jak dlouho trvá, než se zlepší výsledky ekonomického lycea z jazyků",
+      "Chybí informace o počtu žáků s vyznamenáním v jednotlivých oborech"
+    ]
+  }
+}
+```

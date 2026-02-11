@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "SOS_600026612_2024-02-14",
+  "school_profile": {
+    "school_type": "Střední škola, Základní škola a Mateřská škola prof. V. Vejdovského Olomouc – Hejčín (příspěvková organizace)",
+    "inspection_period": "14.–15. února a 14., 15., 18.–19. března 2024",
+    "school_change_summary": "Od minulé inspekce (2018) došlo k personální změně na pozici školního psychologa. Nový školní psycholog působí od září 2023. Vzdělávání již neprobíhá na adrese Táboritů 78/25 Bělidla."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemné prostředí",
+        "detail": "Mateřská a základní škola mají esteticky upravené, podnětné prostředí s výtvarnými pracemi dětí, což posiluje jejich pozitivní vztah ke vzdělávání.",
+        "evidence": "Prostředí bylo příjemné a esteticky upravené, vyzdobené výtvarnými pracemi dětí."
+      },
+      {
+        "tag": "Vstřícný přístup pedagogů",
+        "detail": "Učitelé a vychovatelé komunikují empaticky, nízké počty žáků ve třídách a podporující styl navozují příznivou atmosféru.",
+        "evidence": "Vstřícný přístup, empatická komunikace a nízké počty žáků ve třídách příznivě ovlivňují osobnostní a sociální rozvoj."
+      },
+      {
+        "tag": "Odborná péče pro speciální potřeby",
+        "detail": "Promyšlená vzdělávací nabídka a spolupráce pedagogů pozitivně ovlivňují účinnost vzdělávání dětí se speciálními vzdělávacími potřebami.",
+        "evidence": "Promyšlená vzdělávací nabídka a vzájemná spolupráce učitelek s asistentkou pedagoga výrazně pozitivně ovlivňuje účinnost vzdělávání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivní výuka",
+        "detail": "V některých třídách převažuje frontální výuka s nízkou mírou aktivizace žáků, chybí pestré metody a skupinová práce.",
+        "evidence": "Nedostatečná pestrost vzdělávacích metod a forem, práce ve dvojici a skupinové práce, nízká míra aktivizace žáků snižovala kvalitu výuky."
+      },
+      {
+        "tag": "Slabé školní klima",
+        "detail": "Škola neprovádí pravidelné dotazníkové šetření o školním klimatu a systematicky nevyhodnocuje zjištěný stav.",
+        "evidence": "Škola pravidelně neprovádí zjišťování školního klimatu, systematicky nevyhodnocuje zjištěný stav a nepřijímá náležitá opatření."
+      },
+      {
+        "tag": "Nedostatečná metodická podpora",
+        "detail": "Téměř polovina učitelů se nezúčastnila dalšího vzdělávání, chybí vzájemné hospitace a sdílení inovativních přístupů.",
+        "evidence": "Téměř polovina učitelů se žádného dalšího vzdělávání pedagogických pracovníků v aktuálním školním roce nezúčastnila."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s formativním hodnocením a jak se žáci podílejí na sebehodnocení?",
+      "Jaké metody používáte k aktivizaci žáků a jak často se v hodinách pracuje ve skupinách nebo dvojicích?",
+      "Jak škola zjišťuje a řeší problémy se školním klimatem a bezpečím žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje nadstandardní péči a individuální přístup",
+      "Děti a žáci, kteří potřebují empatický a podporující přístup v příjemném prostředí",
+      "Žáci se zrakovými vadami, kterým škola vytváří speciální podmínky a nabízí odbornou péči"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se lépe učí aktivní formou a potřebují pestré metody – zde převažuje frontální výuka",
+      "Nadaní žáci, kterým chybí dostatečná diferenciace a možnost vybírat si úlohy různé náročnosti",
+      "Žáci, kteří potřebují jasné informace o školním klimatu – škola jej systematicky nemonitoruje"
+    ],
+    "plain_czech_summary": "Škola nabízí příjemné prostředí a empatický přístup pedagogů, což je její velkou předností. Péče o děti se speciálními potřebami je na vysoké úrovni. Slabší stránkou je převaha frontální výuky s nízkou aktivizací žáků a nedostatek skupinové práce. Škola také neprovádí pravidelné šetření školního klimatu. Učitelé se málo vzdělávají a nesdílejí si inovativní přístupy. Střední škola má dobré výsledky u maturit, ale teoretická výuka potřebuje více interaktivity a praktických vazeb."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborný",
+      "key_numbers": [
+        "100% úspěšnost v maturitních zkouškách 2022/2023",
+        "Všichni žáci uspěli ve všech částech zkoušek",
+        "75% žáků prospělo s vyznamenáním"
+      ],
+      "evidence": "Výsledky žáků u maturitních zkoušek ve školním roce 2022/2023 v čisté úspěšnosti dopadly výborně. Všichni žáci uspěli."
+    },
+    "absence": {
+      "trend": "Neuvedeno",
+      "key_numbers": [
+        "Údaje o absenci nejsou v textu zprávě detailně analyzovány"
+      ],
+      "evidence": "Zpráva neobsahuje konkrétní údaje o trendu absence žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s nově přijatou školní psycholožkou od září 2023",
+      "Individuální logopedická péče pro děti v mateřské škole",
+      "Doučování všeobecně vzdělávacích i odborných předmětů v individuální nebo skupinové formě",
+      "Speciálně pedagogická péče a individuální tyflopedická péče v základní škole",
+      "Domov mládeže a internát s vychovateli podporujícími přípravu na vyučování"
+    ],
+    "safety_climate": [
+      "Při vyučování jsou dodržována nastavená komunikační pravidla",
+      "Ve výuce se nevyskytují kázeňské problémy ovlivňující průběh",
+      "Zřejmý je vzájemný přirozený respekt mezi učiteli a žáky",
+      "Atmosféra ve většině tříd je celkově pozitivní",
+      "Chybí však systematické zjišťování školního klimatu prostřednictvím dotazníků"
+    ],
+    "partnerships_practice": [
+      "Sportovně pohybové aktivity a testování tělesné zdatnosti",
+      "Edukační programy ekologického střediska Sluňákov",
+      "Spolupráce s Českým svazem ochránců přírody – sběrové dny",
+      "Dopravní výchova se dopravním hřištěm Semafor",
+      "Besedy s městskou policií a chovateli",
+      "Účast v recitačních a výtvarných soutěžích",
+      "Mezinárodní výtvarná soutěž pro děti se zrakovým postižením – škola získala ocenění"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelnou češtinou s jasnou strukturou. Obsahuje konkrétní příklady a citace z pozorování. Některé pasáže jsou však delší a složitější, což mírně snižuje srozumitelnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Absence není v textu detailně analyzována – není jasný trend ani konkrétní čísla",
+      "Webové stránky školy byly v průběhu inspekce rekonstruovány, takže informace o škole nemusely být aktuální",
+      "Údaje o úspěšnosti absolventů v dalším studiu jsou zjišťovány pouze neformálně"
+    ]
+  }
+}
+```

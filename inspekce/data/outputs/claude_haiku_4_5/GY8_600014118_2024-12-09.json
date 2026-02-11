@@ -1,0 +1,117 @@
+{
+  "report_id": "GY8_600014118_2024-12-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:06:59.677827+00:00",
+  "run_finished_utc": "2026-02-09T16:07:25.524123+00:00",
+  "raw_file": "GY8_600014118_2024-12-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014118_2024-12-09",
+    "school_profile": {
+      "school_type": "Městské víceleté gymnázium (osmileté), příspěvková organizace",
+      "inspection_period": "9. 12. 2024 – 11. 12. 2024",
+      "school_change_summary": "Nový ředitel ve vedení přes dva roky. Mírné zlepšení úrovně výuky ve využívání různých forem a metod. Přetrvávající velmi dobré výsledky vzdělávání žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "V posledních dvou letech všichni žáci, kteří se k maturitní zkoušce přihlásili, ji úspěšně vykonali.",
+          "evidence": "Dlouhodobě výborná úspěšnost při maturitní zkoušce, v loňském roce 121 z 194 žáků prospělo s vyznamenáním."
+        },
+        {
+          "tag": "Mezinárodní projekty a soutěže",
+          "detail": "Škola má akreditaci Erasmus+ a žáci dosahují dobrých výsledků v soutěžích až na krajské a celostátní úrovni.",
+          "evidence": "Opakovaně získaná akreditace Erasmus+, zahraniční vzdělávací výjezdy, účast v evropských projektech."
+        },
+        {
+          "tag": "Kvalitní poradenské služby",
+          "detail": "Školní poradenské pracoviště poskytuje efektivní péči žákům se speciálními potřebami a řeší i složité případy rizikového chování.",
+          "evidence": "Aktivní intervence v problematických třídních kolektivech, sociometrická šetření, preventivní programy a adaptační kurzy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezené prostorové podmínky",
+          "detail": "Učebna chemie a fyziky se používá jako kmenová třída, chybí optimální podmínky pro laboratorní cvičení.",
+          "evidence": "Třída se nemůže dělit na skupiny pro laboratorní práci, probíhají stavební práce na rozšíření odborných učeben."
+        },
+        {
+          "tag": "Slabá diferenciace pro nadané žáky",
+          "detail": "Nadaným žákům nejsou během výuky nabízeny kognitivně náročnější úkoly, cílená podpora je sledována jen v menší míře.",
+          "evidence": "V hospitovaných hodinách byla diferenciace učiva směrem k nadanějším žákům pozorována jen ojediněle."
+        },
+        {
+          "tag": "Zvýšená úrazovost",
+          "detail": "Škola eviduje zvýšené procento úrazů, převážně v tělesné výchově a na kurzech.",
+          "evidence": "Drobné úrazy způsobené především v tělesné výchově, na sportovních a adaptačních kurzech."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky během běžné výuky? Existují speciální programy nebo individuální plány?",
+        "Jaký je aktuální stav stavebních prací na rozšíření odborných učeben a kdy budou hotovy?",
+        "Jak se škola vypořádává se zvýšenou úrazovostí a jaká opatření zavádí?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí dosáhnout vysokých výsledků – škola má dlouhodobě výborné výsledky maturit a motivuje k soutěžím.",
+        "Zájemci o mezinárodní spolupráci a jazyky – Erasmus+ projekty a výjezdy do zahraničí jsou běžnou součástí.",
+        "Žáci se speciálními vzdělávacími potřebami – kvalitní poradenské pracoviště a individuální přístup."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se zájmem o praktické laboratorní práci v přírodovědných předmětech – prostorové podmínky jsou omezené.",
+        "Nadaní žáci hledající intenzivní individuální podporu – diferenciace učiva není zatím dostatečně rozvinuta.",
+        "Rodiče, kterým záleží na detailní komunikaci o pokroku dítěte – informace jsou spíše na statistické úrovni."
+      ],
+      "plain_czech_summary": "Gymnázium v Kloboukách je stabilní školou s výbornými výsledky maturit a aktivní účastí v mezinárodních projektech. Silnou stránkou je kvalitní poradenské pracoviště a motivace žáků k soutěžím. Slabší je diferenciace pro nadané žáky během výuky a omezené prostorové podmínky pro laboratorní práci. Škola řeší tyto problémy stavebními pracemi. Vhodná pro ambiciózní žáky, méně vhodná pro ty, kteří potřebují intenzivní individuální podporu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborný",
+        "key_numbers": [
+          "100% úspěšnost v posledních dvou letech",
+          "121 z 194 žáků prospělo s vyznamenáním v loňském roce",
+          "Pouze 1 žák neprospěl v loňském roce"
+        ],
+        "evidence": "V posledních dvou letech všichni žáci, kteří se k maturitní zkoušce přihlásili, ji úspěšně vykonali."
+      },
+      "absence": {
+        "trend": "Nízká, pod kontrolou",
+        "key_numbers": [
+          "Průměrná absence 150 hodin na žáka v loňském roce",
+          "Neomluvená absence je ojedinělý jev",
+          "Limit minimální docházky stanoven ve školním řádu"
+        ],
+        "evidence": "Škola zaznamenala ojedinělé případy vyšší absence, neomluvená absence je ojedinělý jev."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s psycholožkou a metodičkou prevence",
+        "Sociometrická šetření a cílené intervence v problematických třídách",
+        "Preventivní programy, adaptační kurzy a spolupráce s externími organizacemi",
+        "Podpora žáků se speciálními vzdělávacími potřebami (4,6 % žáků), nadaných a s odlišným mateřským jazykem"
+      ],
+      "safety_climate": [
+        "Zvýšené procento úrazovosti, převážně drobné úrazy v tělesné výchově a na kurzech",
+        "Preventivní proškolení pedagogů po každém úrazu",
+        "Výchovná opatření především formou pochvaly, kázeňská opatření ojedinělá",
+        "Aktivní školní parlament poskytující podněty vedení"
+      ],
+      "partnerships_practice": [
+        "Opakovaná akreditace v projektu Erasmus+ s organizací zahraničních výjezdů",
+        "Partnerství se zřizovatelem a institucemi v regionu",
+        "Soutěž pro základní školy Kloboucká pětka",
+        "Celoroční podíl žáků na akcích pro občany města",
+        "Speciální projekty: programovací výzvy ESA, Evropský den jazyků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Slabší je pouze v některých pasážích s úřednickým jazykem, ale celkově je pro rodiče dobře čitelná.",
+      "uncertainty_notes": [
+        "Není jasné, jak konkrétně se diferenciace pro nadané žáky realizuje v praxi mimo soutěže a olympiády.",
+        "Chybí informace o počtu pedagogů a jejich kvalifikaci.",
+        "Není specifikováno, kdy budou stavební práce na rozšíření učeben dokončeny."
+      ]
+    }
+  }
+}

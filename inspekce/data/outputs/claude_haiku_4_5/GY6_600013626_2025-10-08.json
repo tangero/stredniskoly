@@ -1,0 +1,113 @@
+{
+  "report_id": "GY6_600013626_2025-10-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:31:28.277857+00:00",
+  "run_finished_utc": "2026-02-09T13:31:51.113791+00:00",
+  "raw_file": "GY6_600013626_2025-10-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600013626_2025-10-08",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté, osmileté a šestileté s francouzštinou)",
+      "inspection_period": "8.–10. 10. 2025 a 13. 10. 2025",
+      "school_change_summary": "Od inspekce v 2021 došlo ke změně vedení (nový ředitel od srpna 2024). Zřízení žákovského parlamentu a posílení školního poradenského pracoviště o psycholožku. Postupná modernizace materiálního vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "65 % žáků prospívá s vyznamenáním, téměř všichni úspěšně složí maturitu (neúspěšnost 1,8 %).",
+          "evidence": "Průměrně 65 % s vyznamenáním, 35 % prospělo, maturitní neúspěšnost 1,8 %."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Komplexní prevence rizikového chování s jasným krizovým plánem a školní psycholožkou.",
+          "evidence": "Dlouhodobě se nevyskytují závažné projevy rizikového chování, spolupráce s odbornými institucemi."
+        },
+        {
+          "tag": "Rozvoj nadání",
+          "detail": "Vysoký počet žáků v soutěžích a olympiádách s vynikajícími výsledky, mezinárodní jazykové certifikáty.",
+          "evidence": "Opakovaně dosahují krajské či republikové úrovně, certifikáty až C1 a C2."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotné hodnocení",
+          "detail": "Učitelé hodnotí žáky podle vlastních kritérií bez sjednocení, chybí průběžné hodnocení v tělesné výchově.",
+          "evidence": "Postupy se mezi vyučujícími liší, v tělesné výchově nebylo hodnocení prováděno průběžně."
+        },
+        {
+          "tag": "Slabá diferenciace",
+          "detail": "Žáci řeší stejné příklady stejné náročnosti, chybí podpora pro různé úrovně schopností.",
+          "evidence": "Absence diferenciace nevytvářela vhodné podmínky pro maximální rozvoj jednotlivců."
+        },
+        {
+          "tag": "Organizační problémy",
+          "detail": "Blokovaná výuka zkracuje polední přestávku, což ovlivňuje kvalitu vzdělávání.",
+          "evidence": "Časté změny z blokové výuky vedou ke krácení polední přestávky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola zajišťuje individuální přístup k žákům s různými schopnostmi v jednotlivých předmětech?",
+        "Jaký je systém průběžného hodnocení a jak jsou rodiče informováni o pokroku svého dítěte?",
+        "Jak funguje podpora pro žáky, kteří mají potíže se učením, a jaké jsou možnosti konzultací?"
+      ],
+      "who_school_fits": [
+        "Motivovaní žáci s dobrými studijními výsledky, kteří chtějí studovat na vysoké škole",
+        "Žáci se zájmem o jazyky, zejména francouzštinu, s možností zahraničních pobytů",
+        "Nadaní žáci, kterým škola nabízí soutěže, olympiády a speciální projekty"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující individualizovanou výuku a silnější diferenciaci podle svých schopností",
+        "Rodiny, které vyžadují pravidelné a detailní informace o pokroku dítěte v jednotlivých předmětech",
+        "Žáci s výukovými problémy, kde chybí jednotný systém sledování poskytovaných podpůrných opatření"
+      ],
+      "plain_czech_summary": "Gymnázium Matyáše Lercha je prestižní škola s výborným renomé. Žáci dosahují skvělých výsledků, téměř všichni úspěšně složí maturitu a pokračují na vysokých školách. Škola nabízí bohatou nabídku aktivit, soutěží a zahraničních pobytů. Bezpečné prostředí zajišťuje školní psycholožka a prevence rizikového chování. Slabší stránkou je nejednotný přístup k hodnocení žáků a nedostatečná diferenciace výuky podle individuálních potřeb. Nový ředitel postupně zlepšuje materiální podmínky a zavádí změny."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi vysoká úspěšnost",
+        "key_numbers": [
+          "Neúspěšnost 1,8 % v posledních třech letech",
+          "Téměř všichni žáci maturitu úspěšně složili",
+          "Ojedinělý neúspěch v profilové části"
+        ],
+        "evidence": "Dlouhodobě se úspěšnost absolventů v přijímacích zkouškách na vysoké školy blíží 100 %."
+      },
+      "absence": {
+        "trend": "Meziročně srovnatelná, nízká",
+        "key_numbers": [
+          "Průměrně 130 zameškaných hodin na žáka za rok",
+          "Neomluvené hodiny cca 3 % z celkové absence",
+          "Neomluvenou absenci má obvykle jen několik jednotlivců"
+        ],
+        "evidence": "Absence je meziročně srovnatelná, podíl neomluvených hodin činil zhruba 3 %."
+      },
+      "support_services": [
+        "Školní psycholožka zajišťující diagnostiku, intervenci a poradenství",
+        "Výchovná poradkyně sledující žáky s potřebou podpůrných opatření",
+        "Individuální konzultace pro žáky ohrožené školním neúspěchem"
+      ],
+      "safety_climate": [
+        "Komplexní prevence rizikového chování s jasným krizovým plánem",
+        "Dlouhodobě se nevyskytují závažné projevy rizikového chování",
+        "Spolupráce s odbornými institucemi (Policie ČR, Městská policie, Podané ruce, Bílý kruh bezpečí)"
+      ],
+      "partnerships_practice": [
+        "Výměnné pobyty v zahraničí, zejména v Evropě",
+        "Spolupráce s vědeckými a vzdělávacími institucemi",
+        "Partnerství se školami v Evropě pro jazykové vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Slabší stránky jsou jasně identifikovány, ale některé pasáže jsou technicky náročné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje přesný počet žáků s podpůrnými opatřeními a jejich efektivitu",
+        "Chybí konkrétní data o počtu žáků v jednotlivých oborech (čtyřleté, osmileté, šestileté)",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými předměty a třídami"
+      ]
+    }
+  }
+}

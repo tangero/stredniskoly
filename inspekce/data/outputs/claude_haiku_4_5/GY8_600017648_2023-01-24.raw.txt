@@ -1,0 +1,101 @@
+```json
+{
+  "report_id": "GY8_600017648_2023-01-24",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium, příspěvková organizace",
+    "inspection_period": "24. 1. 2023 – 27. 1. 2023",
+    "school_change_summary": "Od inspekce v 2015/2016 vzrostl počet žáků ze 563 na 695 (v 24 třídách), učitelů z 47 na 60. Škola se zapojila do projektů, zlepšily se materiální podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Žáci dosahují velmi dobrých studijních výsledků, 95 % absolventů pokračuje na vysokých školách.",
+        "evidence": "Ve školním roce 2021/2022 prospěli všichni žáci, více než polovina s vyznamenáním. Stoprocentní úspěšnost u maturit 2018–2021."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Efektivní systém identifikace a rozvoje talentů s individuální podporou a účastí v soutěžích.",
+        "evidence": "106 žáků v databázi nadaných. Úspěchy v celostátních a mezinárodních soutěžích (Prezentiáda, olympiády, SOČ)."
+      },
+      {
+        "tag": "Kvalitní výuka",
+        "detail": "Učitelé používají aktivizující metody, skupinovou práci a praktické aplikace učiva.",
+        "evidence": "Výuka probíhala v příznivé atmosféře se vstřícným přístupem učitelů. Vysoká míra aktivního zapojení žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Sebehodnocení žáků",
+        "detail": "Žáci nejsou dostatečně vedeni k sebereflexi a vzájemnému hodnocení.",
+        "evidence": "Sebehodnocení a vzájemné hodnocení je ve výuce nadále uplatňováno jen ojediněle. Doporučení z minulé inspekce se doposud neprojevilo."
+      },
+      {
+        "tag": "Práce s informacemi",
+        "detail": "Omezená příležitost pro samostatné vyhledávání a porovnávání informací z více zdrojů.",
+        "evidence": "Jen v menší části výuky byl vytvářen prostor pro samostatné vyhledávání a vyhodnocení informací z více různých zdrojů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jaké jsou možnosti jejich zapojení do soutěží?",
+      "Jaké jsou podmínky pro žáky se speciálními vzdělávacími potřebami a jak je škola podporuje?",
+      "Jak se škola zaměřuje na rozvoj digitálních kompetencí a jaké technologie používá ve výuce?"
+    ],
+    "who_school_fits": [
+      "Nadaní a talentovaní žáci, kterým škola nabízí individuální podporu a účast v soutěžích",
+      "Žáci s ambicí pokračovat na vysoké škole – 95 % absolventů se zde uplatňuje",
+      "Žáci zajímající se o jazyky – výuka cizích jazyků se vyznačuje dynamickým střídáním činností"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více prostoru pro sebereflexi a vlastní hodnocení svého pokroku",
+      "Žáci preferující tradičnější přístup – škola klade důraz na skupinovou práci a aktivní zapojení",
+      "Žáci se specifickými potřebami mimo rámec speciálních vzdělávacích potřeb – podpora je zaměřena především na nadané"
+    ],
+    "plain_czech_summary": "Wichterlovo gymnázium je prestižní škola s velmi dobrými výsledky. Žáci dosahují výborných studijních výsledků a úspěchů v soutěžích. Škola má efektivní systém podpory nadaných žáků a nabízí kvalitní výuku s aktivním zapojením studentů. Učitelé používají moderní metody a praktické aplikace. Slabší stránkou je nedostatečné zaměření na sebehodnocení žáků a jejich samostatnou práci s informacemi. Škola se neustále zlepšuje a investuje do nového vybavení a technologií."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "Stoprocentní úspěšnost v letech 2018–2021",
+        "Lepší výsledky než průměr stejného oboru v ČR",
+        "95 % absolventů pokračuje na vysokých školách"
+      ],
+      "evidence": "U společné části maturitní zkoušky dosahovali žáci lepších výsledků než je průměr stejného oboru vzdělání v ČR. Ve školním roce 2018/2019 až 2020/2021 vykazovali žáci stoprocentní úspěšnost."
+    },
+    "absence": {
+      "trend": "Klesající úrazovost",
+      "key_numbers": [
+        "Úrazovost žáků má klesající tendenci"
+      ],
+      "evidence": "Vedení školy provádí rozbor úrazovosti a přijímá potřebná opatření. Žáci jsou pravidelně seznamováni s pravidly bezpečného chování."
+    },
+    "support_services": [
+      "Výchovná poradkyně a koordinátorka nadání v jedné osobě",
+      "Školní metodička prevence a kariérová poradkyně",
+      "Ředitel usiluje o rozšíření služeb o školního psychologa",
+      "Individuální a skupinové doučování pro žáky se studijními obtížemi"
+    ],
+    "safety_climate": [
+      "Příznivá pracovní atmosféra se vstřícným přístupem učitelů a vzájemným respektem",
+      "Negativní projevy chování řešeny bezodkladně ve spolupráci se zákonnými zástupci",
+      "Anonymní schránka důvěry pro žáky, upřednostňují však individuální konzultace"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s univerzitami – stáže s Karlovou univerzitou, badatelské pobyty",
+      "Zapojení do projektů s mobilností žáků a rozvojem jazykových dovedností",
+      "Partnerství v oblasti robotiky, environmentální výchovy a soutěží",
+      "Spolupráce se základními, středními a vysokými školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně identifikovány s konkrétními příklady. Některé pasáže jsou však dlouhé a úřednického stylu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o počtu žáků s absencí nebo jejich průměrné absence",
+      "Chybí konkrétní čísla o počtu žáků v jednotlivých volitelných předmětech",
+      "Není jasné, jaké konkrétní opatření byla přijata k naplnění doporučení z minulé inspekce"
+    ]
+  }
+}
+```

@@ -1,0 +1,103 @@
+{
+  "report_id": "SOU_600009238_2021-12-13",
+  "school_profile": {
+    "school_type": "Soukromá střední odborná škola (soukromá firma)",
+    "inspection_period": "13. − 15. 12. 2021",
+    "school_change_summary": "Od roku 2016, kdy se ředitel stal zřizovatelem, prošla škola modernizací a zdvojnásobila počet žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe u zaměstnavatelů",
+        "detail": "Praktická výuka probíhá v reálném firmách pod vedením instruktorů, kteří se intenzivně věnují maximálně třem žákům.",
+        "evidence": "„Instruktoři mají v průběhu praktického vyučování na starosti maximálně tři žáky, mohou se tak intenzivně věnovat individuálně každému žákovi.“"
+      },
+      {
+        "tag": "Úspěšnost u maturity",
+        "detail": "Všichni žáci oboru s maturitou (Autotronik) úspěšně složili maturitní zkoušku.",
+        "evidence": "„V maturitních zkouškách v témže období prospěli všichni žáci.“"
+      },
+      {
+        "tag": "Moderní prostředí",
+        "detail": "Budova školy byla zmodernizována a žáci pracují s moderními technologiemi odpovídajícími praxi.",
+        "evidence": "„Budova školy byla významně zmodernizována... žáci se seznamovali s moderními trendy ve svých oborech.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost v prvních ročnících",
+        "detail": "Pětina žáků (21 %) v prvním ročníku neprospěla a musela ročník opakovat.",
+        "evidence": "„Strategie není zatím úspěšná u žáků prvních ročníků, kdy v minulém školním roce 21 % žáků prvních ročníků neprospělo.“"
+      },
+      {
+        "tag": "Závažný problém s absencí",
+        "detail": "Škola eviduje vysoký počet neomluvených hodin (2165) a řešení absence je neefektivní.",
+        "evidence": "„Škola eviduje v minulém školním roce 2 165 neomluvených hodin... Postup školy neumožňuje těmto žákům možnost nápravy svého chování.“"
+      },
+      {
+        "tag": "Nekvalifikovaní učitelé",
+        "detail": "Polovina pedagogů nesplňuje kvalifikační předpoklady, zejména u odborných předmětů.",
+        "evidence": "„Polovina z kmenových pedagogických pracovníků školy nesplňuje kvalifikační předpoklady. Jedná se především o učitele odborných předmětů.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podpoří mé dítě, pokud bude mít v prvním ročníku studijní potíže, když nyní jich 21 % neprospěje?",
+      "Jaká jsou konkrétní pravidla pro řešení absence, aby nedošlo jen ke snížení známky z chování, ale k reálné nápravě?",
+      "Které odborné předměty vyučují nekvalifikovaní učitelé a jak škola zajišťuje jejich kvalitu?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří se chtějí učit řemeslo v reálném provozu a mít individuální přístup instruktora.",
+      "Pro ty, kteří se chtějí připravit na povolání v automobilovém, stavebním nebo elektrotechnickém odvětví.",
+      "Pro studenty, kteří preferují menší kolektiv a moderní prostředí dílen."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky se sklonem k záškoláctví nebo slabší motivací, protože systém prevence absence nefunguje dobře.",
+      "Pro uchazeče o obory s výučním listem, kde je riziko neúspěchu u závěrečných zkoušek (11 % neuspělo).",
+      "Pro studenty, kteří očekávají pestrou a moderní výuku i v teoretických předmětech (tam převažuje frontální výuka)."
+    ],
+    "plain_czech_summary": "Soukromá škola s moderním zázemím a vynikajícím systémem praxe u reálných zaměstnavatelů. Škola má ale vážný problém s neomluvenou absencí a vysokým počtem neprospívajících žáků v prvních ročnících (21 %). Ačkoliv maturanti dopadají dobře, u oborů s výučním listem je propadnost vyšší. Polovina učitelů teoretických předmětů nemá pedagogické vzdělání a výuka v hodinách je spíše tradiční a málo diferencovaná. Pro rodiče je klíčové zvážit, zda škola dokáže jejich dítě motivovat k docházce, kterou zatím neumí efektivně řešit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní / 100% úspěšnost",
+      "key_numbers": [
+        "100 % úspěšnost u maturity",
+        "Pouze 1 obor s maturitou (Autotronik)",
+        "63 žáků v oborech s maturitou"
+      ],
+      "evidence": "„V maturitních zkouškách v témže období prospěli všichni žáci.“"
+    },
+    "absence": {
+      "trend": "Vysoká a narůstající",
+      "key_numbers": [
+        "2 165 neomluvených hodin celkem",
+        "81 žáků s neomluvenou absencí",
+        "10 žáků se sníženým chováním"
+      ],
+      "evidence": "„Škola eviduje v minulém školním roce 2 165 neomluvených hodin, na kterých se podílelo celkem 81 žáků školy.“"
+    },
+    "support_services": [
+      "Funkční systém pro žáky se speciálními potřebami (16 žáků).",
+      "Individuální konzultace a doučování jako hlavní forma podpory.",
+      "Třídnické hodiny pro rozvoj sociálních dovedností."
+    ],
+    "safety_climate": [
+      "Žáci jsou bezpeční, atmosféra ve výuce je příjemná.",
+      "Škola řeší bezpečnost na pracovištích partnerů.",
+      "Kázeňské problémy se řeší spíše jen přes absenci."
+    ],
+    "partnerships_practice": [
+      "Desítky smluvních partnerů (servisy, firmy).",
+      "Partneři se podílejí na tvorbě vzdělávacích programů.",
+      "Žáci dostávají finanční odměnu za produktivní činnost."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky, konkrétní čísla (21 %, 2165 hodin) dávají jasný obraz o rizicích.",
+    "uncertainty_notes": [
+      "Není jasné, zda škola nabízí oběd přímo ve škole, nebo jen zprostředkovává stravování jinde.",
+      "Není uvedeno, jaké konkrétně jsou 'perspektivní studijní obory' mimo Autotronik, když ostatní maturitní obory nejsou vyučovány."
+    ]
+  }
+}

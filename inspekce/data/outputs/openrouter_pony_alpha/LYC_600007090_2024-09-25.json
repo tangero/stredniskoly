@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600007090_2024-09-25",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T06:57:51.680723+00:00",
+  "run_finished_utc": "2026-02-10T06:58:59.855860+00:00",
+  "raw_file": "LYC_600007090_2024-09-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600007090_2024-09-25",
+    "school_profile": {
+      "school_type": "Střední škola s ekonomickým zaměřením (Obchodní akademie, Ekonomika a podnikání, Ekonomické lyceum).",
+      "inspection_period": "25. − 27. 9. 2024",
+      "school_change_summary": "Škola prošla rekonstrukcí, rozšířila nabídku o obor Ekonomické lyceum a posílila poradenské služby (psycholog, kariérový poradce)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola efektivně propojuje teorii s praxí díky skvělé spolupráci s partnery a odbornými praxemi.",
+          "evidence": "„Významným přínosem... je kvalitní spolupráce se smluvními partnery... propojovat teoretické znalosti žáků s jejich praktickou aplikací.“"
+        },
+        {
+          "tag": "Vybavení a prostředí",
+          "detail": "Škola disponuje moderními učebnami, prostornou sportovní halou a prošla zdařilou rekonstrukcí.",
+          "evidence": "„V roce 2021 prošla budova školy zdařilou rekonstrukcí... Moderní, prostornou a funkčně vybavenou sportovní halu.“"
+        },
+        {
+          "tag": "Maturita z matematiky",
+          "detail": "Zavedení dělené výuky v matematice vedlo k tomu, že u maturity v posledních letech prospěli všichni.",
+          "evidence": "„Zefektivnit výukový proces... se pozitivně projevilo zlepšením výsledků... v níž... všichni konající zkoušku prospěli.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoké riziko neúspěchu",
+          "detail": "Až 40 % žáků je ohroženo školní neúspěšností a škola nemá účinnou strategii, jak tomu zabránit.",
+          "evidence": "„Vysoký, v průměru čtyřicetiprocentní, podíl žáků ohrožených školní neúspěšností... nižší účinností opatření.“"
+        },
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Výuka je často tradiční a frontální, učitelé dostatečně neaktivizují žáky k samostatné práci.",
+          "evidence": "„Učitelé byli ve výuce aktivní, avšak často nemotivovali žáky k vlastní aktivitě... převažující frontální výuka.“"
+        },
+        {
+          "tag": "Neúspěšnost na Obchodní akademii",
+          "detail": "U maturity na Obchodní akademii je neúspěšnost horší než je celorepublikový průměr.",
+          "evidence": "„V oboru Obchodní akademie byla hrubá neúspěšnost horší než celorepublikový průměr.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pomůže mému dítěti, pokud bude mít v průběhu studia problémy s prospěchem?",
+        "Jakým způsobem jsou ve výuce využívány moderní metody a skupinová práce místo tradičního přednášení?",
+        "Jaká je aktuální neúspěšnost u maturitní zkoušky v jednotlivých oborech?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí získat praktické zkušenosti a kontakty díky zavedenému systému odborných praxí.",
+        "Pro žáky, kteří preferují menší kolektivy v dělených hodinách matematiky a odborných předmětů.",
+        "Pro sportovně zaměřené studenty oceňující kvalitní sportovní zařízení a zaměření na sportovní management."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří potřebují silnou individuální podporu a motivaci, neboť systém prevence neúspěšnosti selhává.",
+        "Pro žáky, kteří očekávají moderní, interaktivní metody výuky a prostor pro vlastní iniciativu.",
+        "Pro uchazeče o obor Obchodní akademie, kde je riziko neúspěchu u maturity vyšší než jinde."
+      ],
+      "plain_czech_summary": "Obchodní akademie v Kolíně nabízí silné zázemí pro praktickou přípravu na trh práce a moderní prostory po rekonstrukci. Škola však zápasí s vysokým podílem studentů ohrožených neúspěchem (až 40 %) a neefektivním systémem pomoci jim. Výuka bývá pasivní a u maturity v hlavním oboru neúspěšnost převyšuje národní průměr. Pro ambiciózní studenty je tu dobrá příprava v matematice a odborných předmětech, ale riziko studijních potíží je nutné brát vážně."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený: v matematice 100% úspěšnost, ale v oboru Obchodní akademie horší výsledky než průměr ČR.",
+        "key_numbers": [
+          "40 % žáků ohroženo školní neúspěšností",
+          "8 % neprospívajících v oboru Obchodní akademie (růst)",
+          "Všichni prospěli u společné maturity z matematiky"
+        ],
+        "evidence": "„V oboru Obchodní akademie byla hrubá neúspěšnost horší než celorepublikový průměr... všichni konající zkoušku prospěli.“"
+      },
+      "absence": {
+        "trend": "Celková absence je vysoká a daří se ji snižovat jen nepatrně.",
+        "key_numbers": [
+          "Vysoká celková absence",
+          "Nepatrný pokles v posledních dvou letech",
+          "Nízká neomluvená absence"
+        ],
+        "evidence": "„Absence žáků ve výuce je vysoká, v posledních dvou školních letech se ji daří snižovat pouze nepatrně.“"
+      },
+      "support_services": [
+        "Školní psycholog a nově i kariérová poradkyně (od září 2024).",
+        "Výchovná poradkyně a školní metodička prevence.",
+        "Individuální vzdělávací plán pro 1 žáka se SVP."
+      ],
+      "safety_climate": [
+        "Nízká míra úrazovosti díky pravidelným školením.",
+        "Efektivní systém prevence rizikového chování a kázeňských opatření.",
+        "Snaha o posilování přátelských vztahů a vstřícného klimatu."
+      ],
+      "partnerships_practice": [
+        "Systematická spolupráce se smluvními partnery pro odborné praxe.",
+        "Zapojování externích odborníků do výuky a soutěží.",
+        "Úspěchy žáků v soutěžích (účetnictví, finanční gramotnost) na krajské i celostátní úrovni."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně rozdělená a klade důraz na praktické aspekty (praxe, výsledky). Jedinou komplikací je standardní úřednický jazyk.",
+      "uncertainty_notes": [
+        "Konkrétní číselná data o celkové neúspěšnosti u maturity nejsou uvedena, pouze srovnání s průměrem.",
+        "Není specifikováno, o jaké konkrétní 'moderní' metody se škola snaží zavést.",
+        "Chybí bližší informace o skladbě přijímaných žáků a jejich základní přípravě."
+      ]
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "report_id": "GY8_691000212_2021-11-18",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:17:49.823273+00:00",
+  "run_finished_utc": "2026-02-10T08:18:57.276181+00:00",
+  "raw_file": "GY8_691000212_2021-11-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_691000212_2021-11-18",
+    "school_profile": {
+      "school_type": "Soukromé gymnázium (čtyřleté, šestileté i osmileté) se zaměřením na mezinárodní vztahy a jazyky.",
+      "inspection_period": "18. 11. – 23. 11. 2021",
+      "school_change_summary": "Škola se od roku 2012 sloučila s dalšími gymnázii, zdvojnásobila počet žáků na 432 a změnila vedení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky",
+          "detail": "Škola klade důraz na komunikativní dovednosti a nabízí výuku včetně rodilých mluvčích a mezinárodních certifikátů.",
+          "evidence": "Jazykové kompetence jsou cíleně prohlubovány... výuky odborné angličtiny... a možnosti získat mezinárodní jazykový certifikát."
+        },
+        {
+          "tag": "Výsledky",
+          "detail": "Žáci dosahují velmi dobrých výsledků, jsou úspěšní na vysokých školách a v mezinárodních testech.",
+          "evidence": "Žáci pravidelně dosahují výborných výsledků... v přijímacím řízení na vysoké školy... jsou žáci úspěšní."
+        },
+        {
+          "tag": "Vztahy",
+          "detail": "Panuje zde příjemná atmosféra, škola efektivně řeší výchovné problémy a dbá na prevenci rizikového chování.",
+          "evidence": "Společným znakem... byla příjemná pracovní atmosféra... účinnost těchto opatření dokládá nízký výskyt těchto jevů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita ve výuce",
+          "detail": "V některých hodinách převažuje frontální výuka, která vede k pasivitě žáků a jednotvárnosti.",
+          "evidence": "Převládající frontální výuka... vedly k jednotvárnosti a malé dynamice, v důsledku tohoto byli někteří žáci pasivní."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Výuka málo respektuje individuální potřeby žáků, chybí úkoly rozdílné náročnosti pro nadané či potřebné žáky.",
+          "evidence": "Úkoly diferencované podle individuálních potřeb a nadání žáků se ve výuce vyskytovaly jen ojediněle."
+        },
+        {
+          "tag": "Chybějící reflexe",
+          "detail": "Hodiny často postrádají motivační úvod i závěrečné shrnutí, žáci nemají prostor pro sebehodnocení.",
+          "evidence": "V závěru hodin obvykle nebyl využit prostor ke shrnutí učiva... často byl opomíjeno sebehodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé individualizují výuku pro žáky s různými potřebami a nadáním?",
+        "Jakým způsobem je ve výuce zajištěn prostor pro sebehodnocení žáků a zpětnou vazbu?",
+        "Využívají se ve výuce jiné zdroje než učebnice, například odborné texty nebo digitální média?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí dosáhnout vysoké jazykové úrovně a získat mezinárodní certifikáty.",
+        "Pro žáky, kterým vyhovuje příjemné sociální klima a podpora v kolektivu.",
+        "Pro ty, kdo plánují studovat na VŠ humanitního nebo přírodovědného zaměření."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří vyžadují silně individualizovaný přístup a často střídání aktivit.",
+        "Pokud hledáte školu s důrazem na samostatnou práci s různými informačními zdroji.",
+        "Pro studenty, kteří potřebují častou a detailní zpětnou vazbu přímo v hodinách."
+      ],
+      "plain_czech_summary": "Gymnázium prošlo velkým rozvojem a nabízí silné zázemí pro studium jazyků a přípravu na VŠ. Výuka má často inovativní prvky a žáci dosahují výborných výsledků, včetně přijetí na vysoké školy. Inspekce však upozorňuje, že v některých hodinách převažuje pasivní styl výuky a chybí individuální přístup k nadání žáků. Škola má velmi dobrou atmosféru a efektivně fungující výchovné poradenství. Pro ambiciózní studenty se zájmem o jazyky a společenské dění je to zajímavá volba."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě stabilní a úspěšná, s vysokým podílem vyznamenání, zejména v osmiletém cyklu.",
+        "key_numbers": [
+          "Až 40 % žáků čtyřletého a 2/3 osmiletého gymnázia prospívají s vyznamenáním.",
+          "Všichni přihlášení žáci u maturitní zkoušky v roce 2021 prospěli.",
+          "Všichni žáci ve společné části maturit volí cizí jazyk."
+        ],
+        "evidence": "Žáci jsou u maturitních zkoušek dlouhodobě úspěšní... ve kterém všichni přihlášení žáci u maturitní zkoušky prospěli."
+      },
+      "absence": {
+        "trend": "Nízká absence odpovídající typu školy, neomluvenou absenci způsobují pouze jednotlivci.",
+        "key_numbers": [
+          "Přibližně 6 zameškaných hodin na žáka za školní rok.",
+          "Neomluvená absence je způsobena pouze jednotlivci.",
+          "Sníženým stupněm z chování byli žáci hodnoceni pouze ojediněle."
+        ],
+        "evidence": "Počet zameškaných hodin na žáka odpovídá typu školy (přibližně 6 hodin za školní rok)."
+      },
+      "support_services": [
+        "Efektivně fungující školní poradenské pracoviště (výchovná poradkyně, metodička prevence).",
+        "Individuální vzdělávací plány a podpora pro žáky se speciálními potřebami.",
+        "Kariérní poradenství včetně diagnostiky osobnostního profilu."
+      ],
+      "safety_climate": [
+        "Příjemná pracovní atmosféra a důvěra mezi žáky a učiteli.",
+        "Nízký výskyt rizikového chování díky funkční prevenci.",
+        "Fungující systém řešení výchovných problémů a pochval."
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zahraničními školami (Německo, Španělsko) a institucemi (British Council).",
+        "Partnerské vztahy s VŠ (VŠCHT, PřF a PedF UK).",
+        "Zapojení rodičů do chodu školy prostřednictvím školské rady a akcí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, závěry jasně shrnují klíčová zjištění a text neobsahuje významné nejednoznačnosti.",
+      "uncertainty_notes": []
+    }
+  }
+}

@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600024016_2024-11-04",
+  "school_profile": {
+    "school_type": "Komplexní vzdělávací instituce: VOŠ, SŠ, ZŠ, MŠ, internát, speciální pedagogické centrum zaměřené na vzdělávání dětí se speciálními vzdělávacími potřebami, zejména se sluchovým postižením",
+    "inspection_period": "4. listopadu až 8. listopadu 2024",
+    "school_change_summary": "Škola se dynamicky rozvíjí: od 2022 vzniklo Centrum komplexní odborné podpory, od 2021/2022 nové obory (Reprodukční grafik, Pekař), od 2017 VOŠ s obory tlumočnictví. Výrazně se zlepšily materiální podmínky (nová přístavba, rekonstrukce internátu, relaxační prostory). Škola získala Národní cenu kvality 2020 a cenu sociálních služeb Královéhradeckého kraje 2024."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výjimečná péče o děti se sluchovým postižením",
+        "detail": "Škola dlouhodobě systematicky vytváří vhodné podmínky včetně individualizované podpory k dosahování maximálního pokroku za účelem osobního a profesního uplatnění.",
+        "evidence": "Bilingvní program (český znakový jazyk + čeština), tlumočníci ČZJ ve výuce, komplexní péče od dětství do dospělosti."
+      },
+      {
+        "tag": "Kvalitní materiální vybavení a prostředí",
+        "detail": "Škola má velmi kvalitní materiální podmínky s moderní přístavbou, bezbariérovým přístupem, relaxačními kouty a speciálními pomůckami.",
+        "evidence": "Nový pavilon pro dřevařské obory, kompletně zrekonstruovaný internát, nadstandardně vybavené CKOP s diagnostickými a reedukačními pomůckami."
+      },
+      {
+        "tag": "Vstřícný a empatický přístup pedagogů",
+        "detail": "Pedagogové vytvářejí psychicky bezpečné prostředí s důrazem na individuální potřeby každého žáka.",
+        "evidence": "Hospitační zprávy dokumentují klidný, vstřícný přístup pedagogů, empatické vnímání situace třídy a operativní přizpůsobování výuky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky v některých třídách",
+        "detail": "V základní škole pro žáky s narušenou komunikační schopností chybí dostatečná diferenciace učiva podle individuálních potřeb žáků.",
+        "evidence": "Inspekce zjistila: 'Nedostatkem převážné většiny hospitovaných hodin byla absence diferenciace probíraného učiva nebo činností zohledňujících rozdílnou úroveň schopností.'"
+      },
+      {
+        "tag": "Málo kooperativních forem práce",
+        "detail": "Učitelé v ZŠ pro žáky s narušenou komunikační schopností málo využívají skupinové práce a spolupráci mezi žáky.",
+        "evidence": "Inspekce konstatuje: 'Učitelé málo a nedostatečně efektivně využívali kooperativní formy práce žáků, při kterých by měli žáci také možnost rozvíjet spolupráci.'"
+      },
+      {
+        "tag": "Slabší formativní hodnocení",
+        "detail": "Zpětná vazba od učitelů postrádá formativní charakter, který by měl vyšší motivační hodnotu pro žáky.",
+        "evidence": "Inspekce zjistila: 'Poskytovaná zpětná vazba ale postrádala formativní charakter, který by měl pro žáky vyšší výpovědní hodnotu o jejich pokroku.'"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky s různou mírou sluchového postižení a jak se liší přístup pro neslyšící a nedoslýchavé?",
+      "Jaké jsou výsledky absolventů v zaměstnání a jak škola podporuje jejich integraci na trh práce?",
+      "Jak funguje spolupráce mezi slyšícími a neslyšícími pedagogy a jak se to projevuje v kvalitě výuky?"
+    ],
+    "who_school_fits": [
+      "Děti a žáci se sluchovým postižením (neslyšící, nedoslýchaví, uživatelé kochleárních implantátů) hledající komplexní péči a vzdělání v přátelském prostředí",
+      "Žáci s poruchami řeči a vícečetným postižením, kteří potřebují speciální pedagogický přístup a individuální podporu",
+      "Studenti zajímající se o obory tlumočnictví českého znakového jazyka nebo pedagogické asistentství"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají vysokou úroveň diferenciace a kooperativního učení v základní škole pro žáky s narušenou komunikační schopností – zde inspekce zjistila nedostatky",
+      "Žáci, kteří potřebují silné formativní hodnocení a detailní zpětnou vazbu – v některých třídách to není dostatečně rozvinuto",
+      "Studenti VOŠ – v posledních dvou letech se zvýšil počet neprospívajících studentů (2023/2024: 2 ze 4 studentů neprospěli)"
+    ],
+    "plain_czech_summary": "Jde o výjimečnou školu zaměřenou na vzdělávání dětí se sluchovým postižením a dalšími speciálními potřebami. Její největší silou je empatický přístup pedagogů, kvalitní materiální vybavení a komplexní péče od předškolního věku až do dospělosti. Škola získala prestižní ocenění a dlouhodobě se rozvíjí. Inspekce však upozornila na nedostatky v diferenciaci výuky a formativním hodnocení v některých třídách základní školy. Přesto je to škola s jasnou vizí a vysokou profesionalitou."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – vysoká úspěšnost v profilové části, ale problémy se společnou částí",
+      "key_numbers": [
+        "2023/2024: 13 žáků u maturity, 3 s vyznamenáním, 7 prospělo, 3 neprospěli",
+        "2022/2023: 6 žáků u maturity, 1 s vyznamenáním, 5 prospělo",
+        "Závěrečné zkoušky (výuční listy): 2023/2024 22 žáků (5 s vyznamenáním, 17 prospělo)"
+      ],
+      "evidence": "Inspekce uvádí: 'Výsledky vzdělávání u společné části MZ výrazně ovlivňuje nízký počet žáků ukončujících studium, specifické složení žáků podle míry uzpůsobení podmínek.'"
+    },
+    "absence": {
+      "trend": "Není v textu explicitně uvedeno",
+      "key_numbers": [
+        "Není dostupné"
+      ],
+      "evidence": "Inspekční zpráva se absence věnuje minimálně, zaměřuje se spíše na kvalitu péče a vzdělávání."
+    },
+    "support_services": [
+      "Speciálně pedagogické centrum (SPC) s 1618 klienty z celé republiky – diagnostika, intervence, metodická podpora",
+      "Centrum komplexní odborné podpory (CKOP) – rané péče, logopedická péče, metodická podpora od 2022",
+      "Školní poradenské pracoviště (ŠPP) – kariérové poradenství, prevence sociálně patologických jevů, etická výchova",
+      "Individuální logopedická péče v ZŠ pro žáky s vadami řeči – depistáž na začátku roku, čtvrtletní vyhodnocování"
+    ],
+    "safety_climate": [
+      "Psychicky bezpečné prostředí – inspekce zaznamenala: 'pedagogové k žákům zaujímali respektující přístup a napomáhali vytvářet psychicky bezpečné prostředí, ve kterém se žáci neobávali chybovat'",
+      "Nastavená pravidla chování – 'Žáci dodržovali nastavená pravidla chování, s nimiž pedagogové funkčním způsobem pracovali'",
+      "Bezbariérová budova s osobním výtahem – fyzická bezpečnost a přístupnost"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Filozofické fakulty Univerzity Karlovy v Praze a Univerzity Hradec Králové – studenti vykonávají praxi",
+      "Mezinárodní projekt Spread the Sign (32 zemí) – vytváření slovníku znakových jazyků",
+      "Spolupráce s Gallaudetovou univerzitou ve Washingtonu – výuka cizích jazyků pro neslyšící",
+      "Partnerství se zdravotnickými zařízeními (Fakultní nemocnice, Centrum kochleárních implantací) a neziskovými organizacemi",
+      "Zaměstnavatelé a profesní organizace – příprava na praktické uplatnění"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a detailně, s konkrétními příklady a citacemi. Struktura je logická. Některé pasáže jsou však poměrně dlouhé a obsahují odborný jazyk, který by mohl být pro laické rodiče náročnější.",
+    "uncertainty_notes": [
+      "Absence dat není v textu explicitně zmíněna – není jasné, zda je to silná stránka nebo se inspekce tímto aspektem nezabývala",
+      "Počty neprospívajících studentů VOŠ se zvýšily, ale není jasné, zda je to trend nebo jednorázová situace",
+      "Některé slabé stránky jsou formulovány obecně ('nedostatek diferenciace') bez konkrétních čísel nebo procent"
+    ]
+  }
+}
+```

@@ -1,0 +1,94 @@
+{
+  "report_id": "GY8_600010295_2022-01-11",
+  "school_profile": {
+    "school_type": "Gymnázium s osmiletým a čtyřletým vzdělávacím programem",
+    "inspection_period": "11. 1. 2022 − 14. 1. 2022",
+    "school_change_summary": "Škola si dlouhodobě udržuje kvalitu vzdělávání a daří se ji modernizovat materiální vybavení díky projektům."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborná jazyková výuka",
+        "detail": "Výuka cizích jazyků má vysokou úroveň a žáci zde často úspěšně skládají mezinárodní zkoušku FCE.",
+        "evidence": "Výuka cizích jazyků se vyznačovala vysokou kvalitou... vysoký počet žáků, kteří... složí mezinárodní jazykovou zkoušku FCE."
+      },
+      {
+        "tag": "Příznivé klima a vztahy",
+        "detail": "Ve škole panuje otevřená komunikace a vzájemný respekt mezi vedením, učiteli a žáky.",
+        "evidence": "Otevřená komunikace ředitele školy... se odráží v příznivém prostředí pro vzdělávání."
+      },
+      {
+        "tag": "Široká nabídka aktivit",
+        "detail": "Škola nabízí množství volitelných předmětů, kroužků a zapojuje se do mezinárodních projektů.",
+        "evidence": "Bohatá projektová činnost školy... Četné aktivity nad rámec výuky... ovlivňují rozvoj klíčových kompetencí žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo skupinové práce",
+        "detail": "Výuka je často vedená frontálně a učitelé málo využívají kooperativní metody.",
+        "evidence": "Převaha frontální výuky a absence kooperativních metod... nedostatečně podporují aktivní zapojení žáků."
+      },
+      {
+        "tag": "Chybějící individualizace",
+        "detail": "Úkoly jsou zadávány všem stejně bez ohledu na individuální potřeby žáků.",
+        "evidence": "Chybějící diferenciace a individualizace v průběhu výuky dostatečně nezohledňují odlišné potřeby jednotlivců."
+      },
+      {
+        "tag": "Nedostatečná zpětná vazba",
+        "detail": "Ve výuce chybí závěrečné shrnutí cíle a prostor pro sebereflexi žáků.",
+        "evidence": "Absence reflexe vzdělávacích cílů v závěru výuky omezuje účinnou zpětnou vazbu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak učitelé ve výuce pracují s rozdílnými potřebami a nadáním jednotlivých žáků?",
+      "Jakým způsobem je ve výuce využívána skupinová práce a kooperace žáků?",
+      "Jak škola zajišťuje, aby si žáci na konci hodiny ověřili, zda pochopili probírané učivo?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří chtějí dosáhnout vysoké úrovně v cizích jazycích a chtějí skládat mezinárodní zkoušky.",
+      "Pro žáky, kteří preferují klidné a bezpečné prostředí s důrazem na kulturu chování.",
+      "Pro zájemce o přírodovědné obory, jelikož škola modernizovala laboratoře a klade na ně důraz."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří potřebují častější změnu forem práce a aktivní zapojení do skupinových aktivit.",
+      "Pro studenty vyžadující silnou individuální podporu a přizpůsobení tempa výuky svým potřebám."
+    ],
+    "plain_czech_summary": "Kadaňské gymnázium nabízí stabilní a kvalitní prostředí s vynikající úrovní jazykové výuky a širokou nabídkou mimoškolních aktivit. Výuka je ale často tradiční, učitelé málo využívají skupinovou práci a nezohledňují individuální potřeby žáků. Škola má modernizované odborné učebny a skvělé výsledky u maturit. Hodí se pro studenty, kteří vynikají v jazycích a preferují klidnou atmosféru, ale nemusí vyhovovat těm, kdo potřebují aktivnější a individuálnější přístup."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborná úspěšnost",
+      "key_numbers": [
+        "100 % úspěšnost ve společné části maturit (2020 i 2021)",
+        "Všichni přihlášení žáci úspěšně složili maturitní zkoušku (2021)"
+      ],
+      "evidence": "V roce 2021 maturitní zkoušku úspěšně složili všichni přihlášení žáci... 100% úspěšnost... zaznamenali žáci školy ve společné části."
+    },
+    "absence": {
+      "trend": "Nehodnoceno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní data o absence žáků."
+    },
+    "support_services": [
+      "Individuální psychologická intervence v akutních situacích",
+      "Konzultace a doučování pro žáky ohrožené neúspěchem",
+      "Kariérové poradenství a testy profesní orientace"
+    ],
+    "safety_climate": [
+      "Vstřícný přístup učitelů a klidná pracovní atmosféra",
+      "Realizace seznamovacích kurzů pro posílení kolektivu",
+      "Důraz na psychohygienu a prevenci rizikového chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Přírodovědeckou fakultou UJEP (fakultní škola)",
+      "Zahraniční projekty a výměnné pobyty (Erasmus+, Nizozemí, Německo)",
+      "Spolupráce s kulturními institucemi v regionu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, má jasnou strukturu a explicitně vyjmenovává silné a slabé stránky.",
+    "uncertainty_notes": []
+  }
+}

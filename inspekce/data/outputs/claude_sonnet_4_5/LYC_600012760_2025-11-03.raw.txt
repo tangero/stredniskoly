@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "school_profile": {
+    "school_type": "Gymnázium (osmileté) a Technické lyceum s leteckým zaměřením, s domovem mládeže",
+    "inspection_period": "3. až 5. listopadu 2025",
+    "school_change_summary": "Nový ředitel pokračuje druhým rokem ve stabilizaci školy, zlepšila se personální situace (přibyl druhý učitel odborných předmětů), proběhly rekonstrukce laboratoře biologie a polytechnické učebny. Škola rozšířila nabídku volnočasových aktivit a mezinárodních programů (DoFe, Centrum pro talentovanou mládež)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Letecké lyceum s nadregionálním zájmem",
+        "detail": "Technické lyceum s leteckým zaměřením přitahuje žáky z celého regionu.",
+        "evidence": "Výrazně nadregionální zájem žáků o obor vzdělání 78-42-M/01 Technické lyceum. Aktuální zájem žáků ze vzdálenějších míst o ubytování převyšuje kapacitu domova mládeže."
+      },
+      {
+        "tag": "Široká nabídka volnočasových aktivit",
+        "detail": "Škola nabízí 27 kroužků, sportovní kurzy včetně plachtařského a parašutistického výcviku.",
+        "evidence": "Celkem škola organizuje 27 volnočasových kroužků, v letošním školním roce je v nich zapojenou cca 150 žáků. Nabízí plachtařský či víceletý parašutistický výcvik."
+      },
+      {
+        "tag": "Vstřícné prostředí a nízká absence",
+        "detail": "Příznivá atmosféra, pozitivní vztahy mezi učiteli a žáky, nízká absence i výchovná opatření.",
+        "evidence": "Vstřícný přístup učitelů k žákům, pozitivní a partnerské pracovní klima ve třídách. Poměrně nízká průměrná absence žáků (v loňském školním roce necelých 110 zameškaných hodin na žáka)."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná práce se zpětnou vazbou",
+        "detail": "Učitelé málo vyhodnocují, co se žáci naučili, chybí sebehodnocení žáků.",
+        "evidence": "Zhodnocení celkového naplnění cílů s ohledem na učení žáků nebylo zatím stále ještě příliš časté. Sebehodnocení žáků vzhledem k jejich vlastnímu studijnímu pokroku bylo výjimečné."
+      },
+      {
+        "tag": "Minimální diferenciace výuky",
+        "detail": "Výuka není přizpůsobována různým úrovním žáků, nadaní nejsou dostatečně podporováni.",
+        "evidence": "Nebylo téměř zaznamenáno zadávání činností nebo úloh s rozdílnou obtížností ani vnitřní diferenciace činností ve třídě. Malá míra diferenciace za účelem maximálního využití studijního potenciálu žáků."
+      },
+      {
+        "tag": "Nerovnoměrné vzdělávání učitelů",
+        "detail": "Někteří učitelé se v posledních letech výrazněji nezapojili do dalšího vzdělávání.",
+        "evidence": "Individuální zapojování učitelů v dalším vzdělávání pedagogických pracovníků je ale nerovnoměrné, několik z nich se v posledních letech výrazněji nezapojilo."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola konkrétně podporuje nadané žáky nad rámec běžné výuky?",
+      "Jakým způsobem učitelé poskytují žákům zpětnou vazbu k jejich pokroku a jak zapojují žáky do sebehodnocení?",
+      "Jaké jsou konkrétní možnosti odborné praxe a spolupráce s leteckými firmami pro žáky technického lycea?"
+    ],
+    "who_school_fits": [
+      "Žáky se zájmem o letectví a techniku, kteří chtějí praktické zkušenosti v oboru",
+      "Studenty hledající školu s bohatým volnočasovým programem a sportovními aktivitami (plachtění, parašutismus)",
+      "Žáky z vzdálenějších míst, kteří ocení kvalitní domov mládeže s moderním zázemím"
+    ],
+    "who_should_be_cautious": [
+      "Nadané žáky očekávající systematickou podporu a individuální přístup ve výuce",
+      "Studenty, kteří potřebují pravidelnou strukturovanou zpětnou vazbu k svému učebnímu pokroku",
+      "Žáky vyžadující diferencovanou výuku přizpůsobenou jejich individuálním potřebám"
+    ],
+    "plain_czech_summary": "Škola nabízí osmileté gymnázium a technické lyceum se zaměřením na letectví, které přitahuje žáky z celého regionu. Vyniká vstřícným prostředím, moderním vybavením a širokou nabídkou volnočasových aktivit – od 27 kroužků po plachtařský a parašutistický výcvik. Žáci mají nízkou absenci a dobré studijní výsledky, všichni loni úspěšně zmaturovali. Domov mládeže je po rekonstrukci a má velký zájem. Slabinou je nedostatečná práce učitelů se zpětnou vazbou žákům a minimální diferenciace výuky podle schopností – nadaní žáci nejsou dostatečně podporováni. Někteří učitelé se málo vzdělávají. Škola má dobré zázemí a koncepci, ale měla by zlepšit metody výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "stabilní_pozitivní",
+      "key_numbers": [
+        "100% úspěšnost u maturitní zkoušky po podzimním termínu 2024/2025",
+        "4 žáci složili Cambridge zkoušku úrovně B2 First za poslední 3 roky",
+        "Průměrný prospěch napříč obory 1,8 až 2,1"
+      ],
+      "evidence": "Při maturitní zkoušce byli ve školním roce 2024/2025 všichni žáci po podzimním termínu úspěšní. Pozitivním zjištěním je, že čtyři žáci složili v posledních třech letech Cambridge zkoušku úrovně B2 First."
+    },
+    "absence": {
+      "trend": "nízká",
+      "key_numbers": [
+        "Necelých 110 zameškaných hodin na žáka za školní rok 2024/2025",
+        "Celkem 3 neomluvené hodiny za celou školu",
+        "Opakovaně nízký počet výchovných opatření"
+      ],
+      "evidence": "Poměrně nízká průměrná absence žáků (v loňském školním roce necelých 110 zameškaných hodin na žáka, celkem tři neomluvené hodiny). Opakovaně nízký počet výchovných opatření a snížených známek z chování."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a metodičkou prevence",
+      "Nově psycholožka ve škole",
+      "Asistentka pedagoga pro žáky se speciálními vzdělávacími potřebami (4 žáci)",
+      "Pravidelná konzultační hodina týdně, operativní pomoc dle potřeby",
+      "Preventivní programy (Rizika kyberšikany, Bezpečnost silničního provozu, Dušeprostor)"
+    ],
+    "safety_climate": [
+      "Vstřícný přístup učitelů, pozitivní a partnerské klima ve třídách",
+      "Dodržování pravidel vzájemné komunikace",
+      "Adaptační kurz, teambuilding pro nové žáky",
+      "Schránka důvěry (využívána vzácně, žáci preferují osobní kontakt)",
+      "Rozbíhá se činnost žákovské rady"
+    ],
+    "partnerships_practice": [
+      "Čtyřtýdenní odborná praxe žáků technického lycea ve firmách (3. ročník)",
+      "Spolupráce s letišti, technickým muzeem",
+      "Partnerství s domovem pro seniory, domem dětí a mládeže, PPP, městskou policií",
+      "Mezinárodní program DoFe (od 2022)",
+      "Centrum pro talentovanou mládež – studium v angličtině, mezinárodní zkoušky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný a praktický pro rodiče, místy obsahuje delší souvětí typická pro inspekční zprávy, ale celkově dobře čitelný.",
+    "uncertainty_notes": [
+      "Není zcela jasné, jak konkrétně probíhá podpora nadaných žáků mimo zmíněné mezinárodní programy",
+      "Chybí informace o konkrétních opatřeních, která škola plánuje k nápravě zjištěných nedostatků v diferenciaci výuky",
+      "Není specifikováno, kolik učitelů se nezapojuje do dalšího vzdělávání a jaká opatření vedení školy přijímá"
+    ]
+  }
+}
+```

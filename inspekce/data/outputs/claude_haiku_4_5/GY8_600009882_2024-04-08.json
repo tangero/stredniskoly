@@ -1,0 +1,115 @@
+{
+  "report_id": "GY8_600009882_2024-04-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:19:37.166449+00:00",
+  "run_finished_utc": "2026-02-09T16:20:04.292675+00:00",
+  "raw_file": "GY8_600009882_2024-04-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600009882_2024-04-08",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté, šestileté a osmileté) s Krajským vzdělávacím centrem",
+      "inspection_period": "8. 4. – 10. 4. 2024",
+      "school_change_summary": "Od 1. 1. 2020 sloučena s Gymnáziem Chodov, od 1. 2. 2024 ukončena výuka na odloučeném pracovišti v Chodově. Počet žáků klesl o 8 % od roku 2017, počet žáků se speciálními potřebami se zdvojnásobil."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Rozvoj nadání a talentů",
+          "detail": "Škola aktivně podporuje účast žáků v soutěžích, olympiádách a projektech, kde dosahují výborných výsledků na krajské i celostátní úrovni.",
+          "evidence": "Žáci reprezentují školu svými výbornými výsledky v soutěžích a olympiádách."
+        },
+        {
+          "tag": "Kariérové poradenství",
+          "detail": "Funkční systém zaměřený na individuální i skupinovou práci, kontakty s absolventy a vysokými školami.",
+          "evidence": "Projekt Studenti studentům, přednášky vysokoškoláků, semináře s Hospodářskou komorou."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola cíleně buduje psychické i fyzické bezpečí s dohledovou službou ve vestibulu a schránkami důvěry.",
+          "evidence": "Stálá dohledová služba, fyzické a elektronické schránky důvěry, poradenské pracoviště."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nízká kvalita vyuky v některých hodinách",
+          "detail": "Převažuje frontální výuka s omezeným využitím aktivních metod, práce s informacemi a kritickým myšlením.",
+          "evidence": "Inspektoři zjistili, že úlohy na vyhledávání a analýzu informací byly zařazeny jen v několika hodinách."
+        },
+        {
+          "tag": "Chybí individualizace výuky",
+          "detail": "Učitelé nenabízejí úlohy s různou náročností a málo diferencují nároky podle schopností žáků.",
+          "evidence": "Žáci nedostávají možnost volby úloh s odstupňovanou náročností."
+        },
+        {
+          "tag": "Slabší výsledky u maturity z matematiky",
+          "detail": "Hrubá neúspěšnost ve společné části maturity (2,7 % v 2023) je vyšší než průměr ČR (1,3 %), zejména kvůli matematice.",
+          "evidence": "Neúspěch převážně u maturitní zkoušky z matematiky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s matematikou? Jaké jsou dostupné konzultace a doučování?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a práce s informacemi ve výuce?",
+        "Jaké jsou konkrétní plány na obnovu žákovského parlamentu a zapojení žáků do rozhodování?"
+      ],
+      "who_school_fits": [
+        "Motivovaní žáci s dobrými předpoklady, kteří chtějí studovat na vysoké škole",
+        "Žáci se zájmem o vědu, techniku a přírodní vědy (Centrum aplikované techniky, projekt GymsoLes)",
+        "Talentovaní žáci v soutěžích a olympiádách, kterým škola poskytuje prostor pro rozvoj"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individualizované přístupy a diferenciovanou výuku podle svých schopností",
+        "Žáci se slabšími předpoklady v matematice (vzhledem k vyšší neúspěšnosti u maturity)",
+        "Žáci, kteří se lépe učí aktivními metodami a skupinovou prací (výuka je převážně frontální)"
+      ],
+      "plain_czech_summary": "Gymnázium Sokolov je kvalitní škola s dobrým zázemím a podporou nadaných žáků. Silné stránky: bezpečné prostředí, rozvoj talentů, kariérové poradenství a moderní vybavení (Centrum aplikované techniky, podcastové studio). Slabiny: výuka se opírá především o frontální metody bez dostatečné individualizace, málo se rozvíjí kritické myšlení a práce s informacemi. Výsledky u maturity z matematiky jsou horší než průměr. Škola je vhodná pro motivované žáky se zájmem o vysokoškolské studium, ale méně pro ty, kteří potřebují více individuálního přístupu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírně horší než průměr ČR, zejména v matematice",
+        "key_numbers": [
+          "Hrubá neúspěšnost 2023: 2,7 % (ČR: 1,3 %)",
+          "Hrubá neúspěšnost 2022: 6,1 % (ČR: 1,5 %)",
+          "Cca 40 % žáků prospělo s vyznamenáním (2022/2023)"
+        ],
+        "evidence": "Neúspěch převážně u maturitní zkoušky z matematiky, škola poskytuje konzultace a doučování."
+      },
+      "absence": {
+        "trend": "Škola přijímá opatření ke snížení absence",
+        "key_numbers": [
+          "Nejčastější důvod kázeňských opatření: neomluvená absence",
+          "Zavedena volitelná tělesná výchova vedoucí ke snížení absence v tomto předmětu"
+        ],
+        "evidence": "Vedení školy přesunulo agendu omlouvání na studijní oddělení, efektivita bude vyhodnocena na konci roku."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: psycholožka, speciální pedagog, kariérový poradce, sociální pedagog",
+        "Plány pedagogické podpory pro žáky s obtížemi (včetně speciálních vzdělávacích potřeb)",
+        "Konzultace a doučování v jednotlivých předmětech (závislé na motivaci žáků a časových možnostech učitelů)"
+      ],
+      "safety_climate": [
+        "Stálá dohledová služba ve vestibulu budovy",
+        "Fyzické a elektronické schránky důvěry pro žáky",
+        "Poučování žáků o rizicích na začátku a v průběhu roku",
+        "Adaptační kurzy pro 1. ročníky a preventivní třídní kruhy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami (přednášky, projekt Studenti studentům)",
+        "Projekt Medikem na gymplu se zřizovatelem",
+        "Seminář s Hospodářskou komorou",
+        "Zahraniční partnerská škola a poznávací zájezdy",
+        "Centrum aplikované techniky ve spolupráci s partnery"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Silné a slabé stránky jsou jasně vymezeny.",
+      "uncertainty_notes": [
+        "Efektivita některých opatření (např. přesun agend omlouvání) bude vyhodnocena až na konci školního roku, takže jejich dopad není zatím znám.",
+        "Zpráva nespecifikuje konkrétní počty žáků využívajících doučování nebo konzultace, pouze uvádí, že jejich využívání závisí na motivaci.",
+        "Absence záznamů o vyhodnocování individuálních vzdělávacích plánů ztěžuje sledování pokroku, ale není jasné, jak často k tomuto dochází."
+      ]
+    }
+  }
+}

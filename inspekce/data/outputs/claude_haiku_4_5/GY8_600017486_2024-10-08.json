@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600017486_2024-10-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:12:43.135941+00:00",
+  "run_finished_utc": "2026-02-09T16:13:12.820202+00:00",
+  "raw_file": "GY8_600017486_2024-10-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600017486_2024-10-08",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřletý obor 79-41-K/81)",
+      "inspection_period": "8. 10. 2024 – 11. 10. 2024",
+      "school_change_summary": "Od poslední inspekce (2018/2019) došlo k personálním změnám vedení, renovaci budovy a aktualizaci IT technologií. Částečně odstraněny nedostatky z minulé inspekce, ale přetrvávají problémy s diferenciací výuky a zpětnou vazbou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Projektová činnost a partnerství",
+          "detail": "Škola efektivně zapojuje žáky do projektů s vnějšími partnery (Erasmus+, Taiwan, Cambridge certifikáty), což rozvíjí jejich schopnosti a dovednosti.",
+          "evidence": "Projekty s taiwanskou školou, Erasmus+, cambridgeské zkoušky, soutěž Volgiáda pro základní školy."
+        },
+        {
+          "tag": "Mimoškolní aktivity a studentský život",
+          "detail": "Bohatá nabídka kroužků, studentská rada a kulturní akce vytváří prostor pro rozvoj komunikačních kompetencí a přátelských vztahů.",
+          "evidence": "Sportovní kroužky, čtenářský klub, astronomie, programování, pěvecký sbor, studentská rada s vlastním plánem akcí."
+        },
+        {
+          "tag": "Výsledky a příprava na vysokou školu",
+          "detail": "Žáci dosahují velmi dobrých výsledků, vysoká úspěšnost u maturity a kvalitní příprava na vysokoškolské studium.",
+          "evidence": "2023/2024: 100% úspěšnost v maturitě, 38,6% žáků s vyznamenáním, nabídka volitelných předmětů v posledních dvou letech."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nízká diferenciace ve výuce",
+          "detail": "Učitelé minimálně přizpůsobují úkoly individuálním schopnostem žáků, všichni pracují na stejných úkolech se stejnou obtížností.",
+          "evidence": "Inspektoři zaznamenali minimální diferenciaci, žáci pracují na stejných úkolech se shodnou mírou obtížnosti."
+        },
+        {
+          "tag": "Omezené aktivizační metody",
+          "detail": "Výuka je převážně frontální s řízeným rozhovorem, chybí skupinová práce, sebehodnocení a rozvoj kritického myšlení.",
+          "evidence": "Frontální forma s řízeným rozhovorem, ojediněle skupinová práce, minimální využívání vzájemného hodnocení a sebehodnocení."
+        },
+        {
+          "tag": "Problémy v pedagogickém sboru",
+          "detail": "Metodické orgány mají formální charakter, učitelé si nepředávají zkušenosti, chybí vzájemná podpora a pozitivní klima.",
+          "evidence": "Nepříznivé vnímání prosociálních vztahů potvrzeno dotazníkovým šetřením, metodické orgány nesdílejí zkušenosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku individuálním potřebám jednotlivých žáků? Jaké metody diferenciace používá?",
+        "Jaké jsou plány na zlepšení spolupráce mezi učiteli a vytváření pozitivnějšího klimatu v pedagogickém sboru?",
+        "Jak se škola vypořádala s vyšší mírou úrazovosti v tělovýchovných aktivitách a jaká preventivní opatření zavedla?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o projektové učení a mezinárodní spolupráci (Erasmus+, Taiwan, Cambridge certifikáty)",
+        "Aktivní žáci, kteří chtějí rozvíjet své schopnosti mimo vyuku (bohatá nabídka kroužků, studentská rada, kulturní akce)",
+        "Žáci s cílem studovat na vysoké škole (velmi dobrá příprava, vysoká úspěšnost u maturity, kontakty s vysokými školami)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovaný přístup a přizpůsobenou obtížnost úkolů (minimální diferenciace ve výuce)",
+        "Žáci, kteří se lépe učí aktivními metodami a skupinovou prací (převážně frontální výuka)",
+        "Žáci se speciálními vzdělávacími potřebami (poradenské pracoviště je zaměřeno na podporu, ale kvalita individuálního přístupu není jasná)"
+      ],
+      "plain_czech_summary": "Gymnázium Volgogradská je kvalitní škola s výbornými výsledky a bohatou nabídkou projektů a mimoškolních aktivit. Žáci dosahují vysoké úspěšnosti u maturity a mají skvělou přípravu na vysokou školu. Silnou stránkou je zapojení do mezinárodních projektů a studentský život. Hlavní slabinou je, že výuka je příliš frontální a nediferencovaná – učitelé málo přizpůsobují úkoly individuálním schopnostem žáků. Problémem je také nižší kvalita spolupráce mezi učiteli a formální charakter metodických schůzek."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi vysoká úspěšnost, bez negativního trendu",
+        "key_numbers": [
+          "2023/2024: 100% úspěšnost v maturitě (všichni přihlášení žáci úspěšní v společné části, v profilové části neuspěl 1 žák)",
+          "2022/2023: 100% úspěšnost v maturitě (společná i profilová část)",
+          "38,6% žáků s vyznamenáním (2023/2024), 46,6% (2022/2023)"
+        ],
+        "evidence": "Vysoká připravenost žáků, efektivní příprava v posledních ročnících, nabídka volitelných předmětů v přírodovědné i humanitní oblasti."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se absence věnuje minimálně, není uveden trend ani konkrétní čísla."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, školní metodička prevence, psycholožka",
+        "Podpora žáků se speciálními vzdělávacími potřebami (24 žáků, 3 na individuálním plánu)",
+        "Koordinátor pro nadané žáky, kontakty s vysokými školami a nadacemi (Proxima)",
+        "Adaptační kurzy pro nové žáky, teambuildingový výjezd pátého ročníku",
+        "Sportovní kurzy k upevňování pozitivních vztahů v třídách"
+      ],
+      "safety_climate": [
+        "Žáci jsou seznamováni se zásadami bezpečného chování a ochrany zdraví",
+        "Vyšší míra úrazovosti v porovnání s celorepubliko vým průměrem v předchozích letech, převážně při tělovýchovných aktivitách",
+        "Škola se dostatečně nezabývala rozborem úrazovosti a přijímáním opatření (opětovné poučování žáků)"
+      ],
+      "partnerships_practice": [
+        "Projekt s taiwanskou školou Hong Wen High School (výměna informací, videoprezentace)",
+        "Erasmus+ (krátkodobé pobyty žáků v evropských státech)",
+        "Cambridge certifikáty (spolupráce s externím partnerem)",
+        "Soutěž Volgiáda pro žáky 5. tříd základních škol (matematika, informatika)",
+        "Projekt Talentmanagement (materiální podpora)",
+        "Spolupráce se vysokými školami (přednášky, workshopy, informace pro žáky)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Hlavní zjištění jsou jasně formulována v sekcích Silné stránky a Slabé stránky. Některé pasáže jsou však delší a složitější (např. popis výuky), ale celkově je text dobře strukturován.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, zda je to problém nebo ne.",
+        "Konkrétní čísla o počtu žáků se speciálními potřebami jsou uvedena (24), ale kvalita jejich podpory není detailně popsána.",
+        "Školní klima mezi pedagogy je popsáno jako problematické, ale nejsou uvedena konkrétní čísla z dotazníkového šetření."
+      ]
+    }
+  }
+}

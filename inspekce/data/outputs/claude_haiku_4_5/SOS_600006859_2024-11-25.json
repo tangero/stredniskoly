@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600006859_2024-11-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:08:22.769978+00:00",
+  "run_finished_utc": "2026-02-09T16:08:50.169457+00:00",
+  "raw_file": "SOS_600006859_2024-11-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006859_2024-11-25",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště (SOŠ a SOU)",
+      "inspection_period": "25. až 29. listopadu 2024",
+      "school_change_summary": "Škola má 868 žáků (nárůst o 333 od roku 2018). Nový ředitel od 2023. Přestala vyučovat dálkovou formu Podnikání a denní formu Stavebnictví. Vybudována školní kavárna. Zlepšily se výsledky v nástavbovém oboru."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Flexibilita oborů",
+          "detail": "Žáci si mohou změnit obor vzdělání díky prostupnosti mezi tříletými nematuritními, maturitními a nástavbovými obory.",
+          "evidence": "Prostupnost mezi obory umožňuje vhodnou změnu vzdělání (6.1)"
+        },
+        {
+          "tag": "Praktické dovednosti",
+          "detail": "Žáci úspěšně zvládají praktické zkoušky a prokazují osvojení praktických dovedností.",
+          "evidence": "Výsledky v praktické zkoušce prokazují úspěšné osvojení dovedností, žáci uspívají v profesně orientovaných soutěžích"
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola klade důraz na bezpečnost a zdraví žáků s pravidelnými poučeními a vyhodnocováním příčin úrazů.",
+          "evidence": "Škola zajišťuje bezpečné a zdravé prostředí, pravidelně poučuje o bezpečnosti a ochrany zdraví"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Pouze polovina vyučovacích hodin je efektivní, druhá polovina trpí nízkou aktivizací žáků a frontální výukou.",
+          "evidence": "Efektivita hospitované teoretické výuky byla rozdílná, zdařilá byla pouze její polovina"
+        },
+        {
+          "tag": "Školní neúspěšnost",
+          "detail": "Vysoký podíl žáků ohrožených neúspěšností (70 % v maturitních oborech), mnoho opravných zkoušek a zkoušek v náhradním termínu.",
+          "evidence": "Vysoký podíl žáků ohrožených školní neúspěšností činil průměrně 70 %, nadměrné množství zkoušek v náhradním termínu"
+        },
+        {
+          "tag": "Absence žáků",
+          "detail": "Přestože absence klesla, stále je vysoká (150 hodin na žáka ročně), zejména neomluvená absence u některých žáků.",
+          "evidence": "Ve školním roce 2023/2024 absence činila 150 h na žáka, neomluvená cca 7 hodin na žáka"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s matematikou nebo českým jazykem?",
+        "Jaké jsou možnosti pro žáky, kteří se chtějí učit v malých skupinách nebo potřebují individuální přístup?",
+        "Jak škola řeší vysokou absenci a co se stane, když žák chybí bez omluvy?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí praktické vzdělání s možností získat kvalifikaci v řemeslech (truhlář, elektrikář, instalatér, kuchař)",
+        "Studenti, kteří si nejsou jisti oborem a chtějí si jej později změnit díky prostupnosti mezi obory",
+        "Žáci se zájmem o cestovní ruch, dopravu nebo podnikání s možností maturitní zkoušky"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v matematice – ta je nejčastější příčinou neprospěchu",
+        "Studenti, kteří potřebují intenzivní podporu a individuální přístup – škola má omezené kapacity",
+        "Žáci s tendencí k absenci – škola má problémy s prevencí záškoláctví"
+      ],
+      "plain_czech_summary": "SOŠ a SOU v Berouně je střední škola s 868 žáky, která nabízí jak praktické obory (truhlář, elektrikář, kuchař), tak maturitní obory (cestovní ruch, doprava). Silnou stránkou je praktická výuka a bezpečné prostředí. Problém je, že polovina vyučovacích hodin není dostatečně zajímavá a aktivizující. Mnoho žáků má problémy s matematikou a češtinou. Škola by měla více pracovat na tom, aby žáci neodpadávali ze vzdělání a lépe se učili."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírné zhoršení v posledních dvou letech, ale zlepšení v nástavbovém oboru",
+        "key_numbers": [
+          "Hrubá neúspěšnost 7 % (2022/23) a 21 % (2023/24)",
+          "Nástavbové obory: 9 % neúspěšnosti",
+          "Cestovní ruch: 23 % neúspěšnosti"
+        ],
+        "evidence": "Prospěch se mírně zhoršil, hrubá neúspěšnost činila průměrně 7 %, resp. 21 %. Zlepšily se výsledky nástavbového oboru."
+      },
+      "absence": {
+        "trend": "Pozitivní pokles, ale stále vysoká",
+        "key_numbers": [
+          "2022/23: 170 hodin na žáka (13 h neomluvených)",
+          "2023/24: 150 hodin na žáka (7 h neomluvených)",
+          "Maturitní obory: 130 hodin na žáka ročně"
+        ],
+        "evidence": "Absence činila více než 170 hodin na žáka, ve školním roce 2023/2024 se snížila na 150 h. Se snížením absence koresponduje snížení neprospěchu."
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně, dvě metodičky prevence a speciální pedagožka",
+        "Školní poradenské pracoviště s individuálními vzdělávacími plány",
+        "Kariérové poradenství ve spolupráci s úřadem práce",
+        "Prevence rizikového chování prostřednictvím besed a přednášek"
+      ],
+      "safety_climate": [
+        "Škola zajišťuje bezpečné a zdravé prostředí s pravidelnými poučeními",
+        "Vyhodnocování příčin úrazů a přijímání opatření",
+        "V domově mládeže jsou žáci vedeni k slušné komunikaci, minimální kázeňská opatření",
+        "Domovní rada poskytuje vedení domova podněty pro zlepšení"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se smluvními partnery pro praktické vyučování v reálných podmínkách",
+        "Instruktoři pracovišť jsou zapojeni do hodnocení žáků",
+        "Projekty a soutěže podporující environmentální vzdělávání",
+        "Pobytové stáže v rámci Erasmus+ pro rozvoj sociálních kompetencí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a obsahuje konkrétní čísla, ale místy je složitá a úřednická. Hlavní zjištění jsou jasná: polovina výuky není efektivní, vysoká absence a školní neúspěšnost, ale také pozitiva v praktické výuce.",
+      "uncertainty_notes": [
+        "Není jasné, jak přesně škola řeší vysoký podíl žáků ohrožených neúspěšností – zpráva kritizuje nízkou účinnost opatření, ale konkrétní plány nejsou uvedeny",
+        "Chybí informace o tom, kolik žáků školu předčasně opustí a z jakých důvodů",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými obory a učiteli"
+      ]
+    }
+  }
+}

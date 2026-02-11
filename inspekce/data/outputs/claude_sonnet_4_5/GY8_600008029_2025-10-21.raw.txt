@@ -2,104 +2,103 @@
 {
   "report_id": "GY8_600008029_2025-10-21",
   "school_profile": {
-    "school_type": "Osmiletý gymnázium v Týně nad Vltavou s 204 žáky v osmi třídách, denní forma vzdělávání s maturitou",
+    "school_type": "Osmiletý gymnázium v Týně nad Vltavou s 204 žáky v osmi třídách, denní forma vzdělávání s maturitní zkouškou.",
     "inspection_period": "21. 10. 2025 – 23. 10. 2025",
-    "school_change_summary": "V roce 2024 nastoupil nový zástupce ředitele, probíhá generační obměna pedagogů. Škola prošla rozsáhlou rekonstrukcí suterénních prostor a přízemí, vybudovala nové zázemí pro žáky a upravila venkovní plochy. Obnovila vybavení kabinetů a IT techniku včetně robotických stavebnic."
+    "school_change_summary": "V roce 2024 nastoupil nový zástupce ředitele, pokračuje generační obměna pedagogů. Proběhla rekonstrukce suterénních prostor a přízemí včetně nového zázemí pro žáky a úpravy venkovních ploch. Obnoveno vybavení kabinetů a IT technika, vytvořeny nové webové stránky a posílena prezentace na sociálních sítích."
   },
   "for_parents": {
     "strengths": [
       {
-        "tag": "Propojení s místní komunitou",
-        "detail": "Škola aktivně spolupracuje s obcí a energetickou společností, posiluje vztah žáků k místu, kde žijí.",
-        "evidence": "Spolupráce školy se sociálními partnery reflektuje význam sounáležitosti s obcí, podporuje vztah žáků k místu, kde žijí, a posiluje mezigenerační i sociální cítění."
+        "tag": "Spolupráce s obcí a partnery",
+        "detail": "Škola aktivně spolupracuje s energetickou společností, univerzitou a místní komunitou, což posiluje vztah žáků k regionu.",
+        "evidence": "„Spolupráce školy se sociálními partnery reflektuje význam sounáležitosti s obcí, podporuje vztah žáků k místu, kde žijí, a posiluje mezigenerační i sociální cítění.""
       },
       {
-        "tag": "Peer programy a osobnostní rozvoj",
-        "detail": "Starší žáci vedou mladší spolužáky, funguje studentský parlament a aktivní prevence rizikového chování.",
-        "evidence": "Škola posiluje pozitivní sebepojetí a sebevědomí žáků a podporuje rozvoj jejich sociálních a osobnostních kompetencí, včetně peer aktivit probíhajících na škole mezi žáky jednotlivých ročníků."
+        "tag": "Peer aktivity a osobnostní rozvoj",
+        "detail": "Starší žáci vedou mladší spolužáky, funguje studentský parlament a aktivní peer program prevence.",
+        "evidence": "„Škola posiluje pozitivní sebepojetí a sebevědomí žáků a podporuje rozvoj jejich sociálních a osobnostních kompetencí, včetně peer aktivit probíhajících na škole mezi žáky jednotlivých ročníků.""
       },
       {
-        "tag": "Nadprůměrné maturitní výsledky",
-        "detail": "V roce 2025 dosáhla škola v matematice a němčině nadprůměrných výsledků, pouze jeden žák konal opravnou zkoušku.",
-        "evidence": "Ve zkušebním roce 2025 dosáhla v některých předmětech (matematika, německý jazyk) škola nadprůměrných výsledků. Pouze jeden žák konal opravnou zkoušku z anglického jazyka."
+        "tag": "Výsledky maturit a soutěží",
+        "detail": "Maturitní výsledky jsou srovnatelné s celostátním průměrem, v matematice a němčině nadprůměrné, žáci úspěšní v soutěžích.",
+        "evidence": "„Výsledky maturitních zkoušek jsou dlouhodobě srovnatelné s celostátním průměrem škol stejného zaměření. Ve zkušebním roce 2025 dosáhla v některých předmětech (matematika, německý jazyk) škola nadprůměrných výsledků.""
       }
     ],
     "risks": [
       {
         "tag": "Chybějící diferenciace výuky",
-        "detail": "Výuka málo zohledňuje individuální potenciál jednotlivých žáků, chybí gradace úkolů podle schopností.",
-        "evidence": "Ve výuce byla pouze výjimečně uplatněna diferenciace ve výuce s ohledem na potenciál jednotlivých žáků. Chyběla diferenciace vzdělávacích cílů, např. formou gradace zadávaných úkolů."
+        "detail": "Výuka málo zohledňuje individuální potenciál žáků, úkoly nejsou gradovány podle schopností.",
+        "evidence": "„Ve výuce byla pouze výjimečně uplatněna diferenciace ve výuce s ohledem na potenciál jednotlivých žáků." „Ve většině sledovaných hodin chyběla diferenciace vzdělávacích cílů, např. formou gradace zadávaných úkolů.""
+      },
+      {
+        "tag": "Omezené využití moderních metod",
+        "detail": "Převažuje výklad učitele, málo prostoru pro aktivitu žáků, kritické myšlení a práci s IT.",
+        "evidence": "„Hodiny s převažujícím výkladem a vysvětlováním, popř. samostatnou prací, neposkytovaly žákům dostatek možností pro jejich aktivitu a rozvoj komunikativních dovedností." „aktivní práce žáků s IT technikou byla zaznamenána pouze v omezené míře""
       },
       {
         "tag": "Absence tělocvičny",
         "detail": "Dvě tělocvičny v budově nejsou využívány, žáci musí v zimě docházet do městské haly.",
-        "evidence": "Dvě menší tělocvičny v budově školy nejsou z technických důvodů využívány. Absence funkční tělocvičny limituje organizaci a výuku tělesné výchovy v zimním období."
-      },
-      {
-        "tag": "Nedostatečné využití formativního hodnocení",
-        "detail": "Učitelé málo využívají zpětnou vazbu s jasnými kritérii, která by žákům pomohla pochopit jejich pokrok.",
-        "evidence": "Zdařilé využití prvků formativního hodnocení bylo zaznamenáno méně často, neboť zpravidla chyběla kritéria, podle kterých by hodnocení probíhalo."
+        "evidence": "„Dvě menší tělocvičny v budově školy nejsou z technických důvodů využívány." „Absence funkční tělocvičny limituje organizaci a výuku tělesné výchovy v zimním období, neboť žáci docházejí na výuku tělesné výchovy do městské sportovní haly.""
       }
     ],
     "questions_for_open_day": [
-      "Jak škola konkrétně pracuje s nadanými žáky a jak diferencuje výuku podle jejich schopností?",
-      "Jaké jsou plány školy s opravou tělocvičen a jak to ovlivňuje výuku tělesné výchovy v zimních měsících?",
-      "Jakým způsobem škola zapojuje poznatky z dalšího vzdělávání pedagogů do každodenní výuky?"
+      "Jak škola konkrétně pracuje s nadanými žáky a jak přizpůsobuje výuku jejich individuálním potřebám?",
+      "Jaké kroky škola podniká k modernizaci výuky a většímu zapojení žáků do aktivních forem učení?",
+      "Kdy plánujete zprovoznit tělocvičny v budově školy a jak to ovlivní výuku tělesné výchovy?"
     ],
     "who_school_fits": [
-      "Žáky, kteří chtějí studovat v malém venkovském gymnáziu s rodinnou atmosférou a silným vztahem k místní komunitě",
-      "Studenty se zájmem o přírodní vědy, techniku a jazyky, kteří ocení spolupráci s univerzitou a energetickou společností",
-      "Děti, které oceňují peer aktivity, možnost zapojit se do studentského parlamentu a charitativních projektů v regionu"
+      "Žáky, kteří oceňují rodinné prostředí malé školy s úzkým propojením s místní komunitou",
+      "Studenty se zájmem o přírodní vědy, techniku a jazyky, kteří chtějí využít spolupráci s univerzitou a energetickou společností",
+      "Děti, které chtějí aktivně spoluvytvářet školní život prostřednictvím studentského parlamentu a peer programů"
     ],
     "who_should_be_cautious": [
-      "Žáci s výrazně nadprůměrným potenciálem, kteří potřebují systematickou diferenciaci a individuální přístup ve výuce",
-      "Studenti se silným zájmem o sport, kteří očekávají kvalitní zázemí pro tělesnou výchovu přímo v budově školy",
-      "Děti, které preferují moderní výukové metody s důrazem na kritické myšlení, práce s různými zdroji a aktivní využívání IT"
+      "Žáci s výrazně nadprůměrným potenciálem, kteří potřebují systematickou individuální podporu a náročnější úkoly",
+      "Studenti preferující moderní interaktivní výuku s důrazem na technologie a samostatnou práci s informacemi",
+      "Sportovně zaměření žáci očekávající kvalitní zázemí pro tělesnou výchovu přímo v budově školy"
     ],
-    "plain_czech_summary": "Gymnázium v Týně nad Vltavou je malá venkovská škola s 204 žáky, která nabízí rodinné prostředí a silné propojení s místní komunitou. Škola prošla rozsáhlou rekonstrukcí a má dobré materiální zázemí. Výrazným pozitivem jsou peer programy, kdy starší žáci vedou mladší, a spolupráce s energetickou společností i univerzitou. Maturitní výsledky jsou nadprůměrné, zejména v matematice a němčině. Slabinou je nedostatečná diferenciace výuky podle schopností žáků a chybějící funkční tělocvičny v budově. Výuka probíhá v příjemném klimatu, ale málo využívá moderní metody rozvíjející kritické myšlení. Škola je vhodná pro žáky hledající klidné prostředí s důrazem na komunitu, méně pro ty, kdo potřebují systematickou práci s nadáním."
+    "plain_czech_summary": "Gymnázium v Týně nad Vltavou je malá škola s rodinnou atmosférou a silným propojením s místní komunitou. Žáci dosahují dobrých výsledků u maturity i v soutěžích, funguje zde aktivní studentský parlament a peer program. Škola spolupracuje s univerzitou a energetickou firmou, což přináší zajímavé příležitosti.\n\nNa druhou stranu výuka často spoléhá na tradiční výklad, chybí individuální přístup k nadaným žákům a moderní metody se využívají málo. Problémem je také absence funkční tělocvičny – v zimě musí žáci docházet do městské haly. Škola prochází generační obměnou pedagogů a modernizací prostor, ale změny ve výuce zatím nejsou plně viditelné."
   },
   "hard_facts": {
     "maturita": {
-      "trend": "stabilní s nadprůměrnými výsledky",
+      "trend": "stabilní, v některých předmětech nadprůměrný",
       "key_numbers": [
-        "V roce 2025 nadprůměrné výsledky v matematice a německém jazyce",
-        "Pouze 1 žák konal opravnou zkoušku (anglický jazyk), úspěšně složil na podzim",
-        "5 žáků nahradilo maturitu z cizího jazyka certifikátem"
+        "Výsledky dlouhodobě srovnatelné s celostátním průměrem",
+        "V roce 2025 nadprůměr v matematice a němčině",
+        "Pouze 1 žák konal opravnou zkoušku (anglický jazyk, úspěšně složil)"
       ],
-      "evidence": "Výsledky maturitních zkoušek jsou dlouhodobě srovnatelné s celostátním průměrem škol stejného zaměření. Ve zkušebním roce 2025 dosáhla v některých předmětech (matematika, německý jazyk) škola nadprůměrných výsledků."
+      "evidence": "„Výsledky maturitních zkoušek jsou dlouhodobě srovnatelné s celostátním průměrem škol stejného zaměření. Ve zkušebním roce 2025 dosáhla v některých předmětech (matematika, německý jazyk) škola nadprůměrných výsledků. Pouze jeden žák konal opravnou zkoušku z anglického jazyka, kterou úspěšně složil v podzimním termínu.""
     },
     "absence": {
-      "trend": "velmi nízká",
+      "trend": "nízká, bez problémů",
       "key_numbers": [
-        "Absence žáků zůstává na nízké úrovni",
+        "Absence žáků na nízké úrovni",
         "Neomluvené hodiny nebyly zaznamenány",
-        "Cca 10 % žáků odchází po 4. ročníku na jiné školy"
+        "Minimální počet neprospívajících (1. pololetí 2024/2025: 2 žáci)"
       ],
-      "evidence": "Absence žáků zůstává na nízké úrovni, neomluvené hodiny nebyly zaznamenány. Přesto po ukončení 4. ročníku nižšího gymnázia ojediněle žáci odcházejí. Odchody se dlouhodobě pohybují kolem 10 %."
+      "evidence": "„Absence žáků zůstává na nízké úrovni, neomluvené hodiny nebyly zaznamenány." „Vyšší studijní potenciál žáků se odráží v minimálním počtu neprospívajících. V 1. pololetí školního roku 2024/2025 neprospěli pouze dva žáci, na konci školního roku prospěli všichni.""
     },
     "support_services": [
       "Školní poradenské pracoviště poskytuje služby odpovídající velikosti školy včetně kariérového poradenství",
-      "Podpůrná opatření realizována podle doporučení poradenských zařízení, pravidelně vyhodnocována",
-      "Pozice školní asistentky financována z dotačních prostředků",
-      "Elektronická schránka důvěry pro žáky, adaptační kurzy, besedy s odborníky"
+      "Podpůrná opatření realizována podle doporučení poradenských zařízení, účinnost pravidelně vyhodnocována",
+      "Adaptační kurzy, besedy s odborníky, projektové dny, elektronická schránka důvěry"
     ],
     "safety_climate": [
       "Výuka probíhá v příjemném a vstřícném pracovním klimatu",
-      "Preventivní program zaměřený na předcházení rizikovému chování a včasnou intervenci",
-      "Aktivní peer program – žáci působí v prevenci nejen ve vlastní škole, ale i na ZŠ v regionu",
-      "Pravidelné třídnické hodiny, v případě potřeby za účasti výchovného poradce"
+      "Fungující preventivní program zaměřený na rizikové chování, třídnické hodiny pravidelně",
+      "Aktivní peer program žáků působí i v základních školách regionu"
     ],
     "partnerships_practice": [
-      "Klíčová spolupráce s energetickou společností (podpora technického vzdělávání, Jaderná maturita)",
-      "Partnerství s Pedagogickou a Přírodovědeckou fakultou JU (projekt Provázející učitel, Den plný vědy)",
-      "Spolupráce se základními školami v regionu",
-      "Zapojení do charitativních a společenských aktivit v obci, jazykové zájezdy do Německa a Anglie"
+      "Klíčová spolupráce s energetickou společností (podpora technického vzdělávání, akce Jaderná maturita)",
+      "Spolupráce s Pedagogickou a Přírodovědeckou fakultou JU (projekt Provázející učitel, Den plný vědy)",
+      "Zapojení do charitativních a společenských aktivit v obci, spolupráce se základními školami v regionu"
     ]
   },
   "model_self_check": {
-    "czech_clarity_score_1_5": 4,
-    "czech_clarity_reason": "Text je psán srozumitelně s minimem úřednických obratů. Drobné složitější formulace se vyskytují v popisu pedagogických metod, ale celkově je zpráva dobře čitelná pro rodiče.",
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán srozumitelnou češtinou bez úřednického stylu, informace jsou strukturované a prakticky zaměřené pro rodiče.",
     "uncertainty_notes": [
-      "Není zcela jasné, z jakých technických důvodů nejsou tělocvičny využívány a zda se plánuje jejich oprava",
-      "Chybí konkrétní informace o tom, jak škola pracuje s poznatky z dalšího vzdělávání pedagogů v praxi",
-      "Není specifikováno, jaké konkrétní kroky škola plánuje k posílení diferenciace výu
+      "Zpráva neuvádí konkrétní počet pedagogů ani podrobnosti o jejich kvalifikaci",
+      "Chybí informace o kapacitě školy a počtu uchazečů na jedno místo",
+      "Není specifikováno, kdy budou tělocvičny zprovozněny ani zda je to vůbec v plánu"
+    ]
+  }

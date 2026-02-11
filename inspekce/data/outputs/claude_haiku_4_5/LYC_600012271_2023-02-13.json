@@ -1,0 +1,108 @@
+{
+  "report_id": "LYC_600012271_2023-02-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:47:44.822513+00:00",
+  "run_finished_utc": "2026-02-09T16:48:09.255096+00:00",
+  "raw_file": "LYC_600012271_2023-02-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600012271_2023-02-13",
+    "school_profile": {
+      "school_type": "Soukromá střední škola (lyceum) s obory Ekonomické lyceum a Cestovní ruch",
+      "inspection_period": "13. února až 15. února 2023",
+      "school_change_summary": "Od poslední inspekce se zlepšily materiální podmínky: nové šatny, sociální zařízení, žákovský nábytek, tabule s dataprojektory a přírodovědná laboratoř. Od školního roku 2022/2023 je nově obsazena pozice zástupkyně ředitelky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Mezinárodní spolupráce",
+          "detail": "Škola má dlouhodobou zahraniční spolupráci se školami v Nizozemí a Velké Británii, která umožňuje mobilitu žáků a vyučujících.",
+          "evidence": "Dlouhodobá zahraniční spolupráce se středními školami (Nizozemí, Velká Británie) umožňuje oboustrannou mobilitu."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Škola má nově vybavenou multimediální učebnu, přírodovědnou laboratoř a moderní učebny s interaktivními tabulemi.",
+          "evidence": "Multimediální učebna vybavena počítači, interaktivní tabulí s ozvučením a vizualizérem, přírodovědná laboratoř."
+        },
+        {
+          "tag": "Poradenské služby",
+          "detail": "Škola nabízí komplexní poradenství včetně kariérového poradenství, prevence a psychologické podpory.",
+          "evidence": "Poradenské služby zabezpečují výchovná poradkyně, metodik prevence a kariérový poradce s účelně rozdělenými kompetencemi."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nízká úspěšnost u maturity",
+          "detail": "V jarním období 2022 neuspělo 23 % žáků u maturitní zkoušky, což je výrazně vyšší než průměr.",
+          "evidence": "Hrubá neúspěšnost žáků u maturitních zkoušek v jarním zkušebním období 2022 byla 23 % (šest žáků z 26)."
+        },
+        {
+          "tag": "Pasivní přístup k výuce",
+          "detail": "Výuka je převážně vedena frontálně s výkladem učitele, žáci se málo aktivně zapojují do vyučovacího procesu.",
+          "evidence": "Převažovala frontální výuka vedená formou výkladu učitele, nízká míra aktivního zapojování žáků do výuky."
+        },
+        {
+          "tag": "Chybí dlouhodobá strategie",
+          "detail": "Škola nemá zpracovanou dlouhodobou koncepci s konkrétními cíli a časovým vymezením.",
+          "evidence": "Škola nemá zpracovanou dlouhodobou koncepci s časovým vymezením a konkrétními kroky k naplňování vytyčených cílů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola připravuje žáky na maturitní zkoušky, když je úspěšnost nižší než průměr?",
+        "Jaké konkrétní kroky podnikla škola po inspekci, aby zlepšila aktivní zapojení žáků do výuky?",
+        "Jak škola využívá digitální techniku v hodinách a plánuje ji zlepšit?"
+      ],
+      "who_school_fits": [
+        "Žáci zajímající se o ekonomii a cestovní ruch s podporou mezinárodních projektů",
+        "Studenti, kteří ocení kvalitní materiální vybavení a moderní učebny",
+        "Žáci, kteří potřebují individuální poradenství a psychologickou podporu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují aktivní a interaktivní výuku – škola se zaměřuje spíše na frontální výuku",
+        "Studenti se slabšími výsledky – chybí diferenciace a individualizace výuky",
+        "Žáci, kteří se chystají na maturitu – nižší úspěšnost u maturitních zkoušek vyžaduje zvýšenou přípravu"
+      ],
+      "plain_czech_summary": "ACADEMIA MERCURII je soukromá střední škola v Náchodě se 198 žáky. Má dobré materiální podmínky, kvalitní poradenské služby a mezinárodní spolupráci. Inspekce ale zjistila slabší stránky: nižší úspěšnost u maturity (23 % neúspěšných), převážně pasivní výuku bez aktivního zapojení žáků a chybějící dlouhodobou strategii. Škola má co zlepšovat v metodách výuky a individuální péči o žáky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Negativní – nižší úspěšnost než průměr",
+        "key_numbers": [
+          "23 % neúspěšnost v jarním období 2022 (6 z 26 žáků)",
+          "Vyšší počet opravných zkoušek během vzdělávání"
+        ],
+        "evidence": "Hrubá neúspěšnost žáků u maturitních zkoušek v jarním zkušebním období 2022 byla 23 %. Škola nesleduje průběžně úroveň dosahovaných výstupů."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se absence věnuje minimálně, nejsou uvedeny konkrétní údaje."
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodik prevence a kariérový poradce s účelně rozdělenými kompetencemi",
+        "Adaptační a sportovní kurzy, konzultace s pedagogicko-psychologickou poradnou",
+        "Systém konzultací pro žáky ohrožené školním neúspěchem a pro žáky s odlišným mateřským jazykem"
+      ],
+      "safety_climate": [
+        "Příjemné školní klima a vzájemný respekt pedagogů a žáků zaznamenány při hospitacích",
+        "Třídní učitelé věnují pozornost projevům rizikového chování v třídnických hodinách",
+        "Školní metodik prevence zjišťuje sociometrické měření atmosféry ve třídě"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá zahraniční spolupráce se školami v Nizozemí a Velké Británii",
+        "Členství v asociaci Junior Achievement (studentské firmy)",
+        "Testovací středisko ECDL, přidružená škola UNESCO, člen Klubu ekologické výchovy ČR"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní údaje. Hlavní zjištění jsou jasně identifikovatelná, ačkoli některé pasáže jsou detailnější než pro rodiče potřebné.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, jaká je absence žáků",
+        "Nejsou uvedeny konkrétní počty žáků s speciálními vzdělávacími potřebami",
+        "Chybí informace o počtu žáků, kteří prospěli s vyznamenáním v letošním roce (2022/2023)"
+      ]
+    }
+  }
+}

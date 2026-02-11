@@ -1,0 +1,115 @@
+{
+  "report_id": "GY8_600009360_2022-10-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:58:22.188417+00:00",
+  "run_finished_utc": "2026-02-09T16:58:45.036349+00:00",
+  "raw_file": "GY8_600009360_2022-10-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600009360_2022-10-19",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium v denní formě",
+      "inspection_period": "19. až 21. října 2022",
+      "school_change_summary": "Od inspekce v 2016 poklesla návštěvnost z 317 na 277 žáků. Škola vybudovala multifunkční sportovní hřiště a modernizovala okna a otopná tělesa."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečnost a přístup",
+          "detail": "Vstupy jsou trvale uzavřeny, žáci vstupují vlastním vchodem s identifikačním systémem (čipy, otisky prstů).",
+          "evidence": "Vstupy uzavřeny před cizími osobami, videotelefony u zvonků, identifikační systém s jednoznačnou detekcí."
+        },
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Výuka cizích jazyků v cílovém jazyce s rodilým mluvčím pro angličtinu a důrazem na mluvený projev.",
+          "evidence": "Tandém s rodilým mluvčím, aktivizující metody, rovnoměrný prostor všem řečovým dovednostem."
+        },
+        {
+          "tag": "Prevence problémů",
+          "detail": "Nízký výskyt rizikového chování, efektivní prevence a adaptační kurzy pro nové žáky.",
+          "evidence": "Dlouhodobě nízký výskyt rizikového chování, komplexní preventivní strategie, adaptační kurzy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zakončování hodin",
+          "detail": "Otázky na konci hodiny jsou často formální bez možnosti opětovného vysvětlení a chybí shrnutí učiva.",
+          "evidence": "Otázky pokládány formálně v závěru bez možnosti opětovného vysvětlení, chybí dostatečný čas na shrnutí."
+        },
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Minimální vnitřní diferenciace, což vede k prostojům rychlejších žáků.",
+          "evidence": "Minimálně organizována vnitřní diferenciace, ve třetině výuky vznikaly prostoje rychlejších žáků."
+        },
+        {
+          "tag": "Pokles počtu žáků",
+          "detail": "Dlouhodobý úbytek žáků čtyřletého oboru, kapacita školy není plně využita.",
+          "evidence": "Pokles z 317 na 277 žáků od roku 2016, doporučení řešit nabídkou internátního ubytování."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individuálně podporuje žáky s různými tempem učení?",
+        "Jaké jsou možnosti ubytování pro žáky dojíždějící ze vzdálenějších oblastí?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a reflexi vlastního učení?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazykové vzdělání a mezinárodní spolupráci (Erasmus+, partnerské školy v Bavorsku)",
+        "Nadaní žáci, kterým škola nabízí semináře a přípravu na olympiády a soutěže",
+        "Žáci s jasným záměrem studovat na vysoké škole"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující intenzivní individuální podporu a diferenciaci – škola ji minimálně poskytuje",
+        "Žáci z vzdálenějších oblastí bez možnosti internátního ubytování",
+        "Žáci, kteří potřebují více času na reflexi a shrnutí učiva"
+      ],
+      "plain_czech_summary": "Gymnázium v Sušici je bezpečná, dobře vedená škola s kvalitní výukou jazyků a efektivní prevencí problémů. Žáci dosahují dobrých výsledků (22 % vyznamenaných, jen 1,5 % neprospívajících). Škola se zaměřuje na přípravu ke studiu na vysokých školách a nabízí zajímavé mezinárodní projekty. Slabší stránkou je minimální diferenciace výuky a formální zakončování hodin. Škola zároveň řeší dlouhodobý pokles počtu žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – škola se dlouhodobě prezentuje zaměřením na přípravu ke studiu na vysoké škole",
+        "key_numbers": [
+          "22 % vyznamenaných žáků",
+          "1,50 % neprospívajících (druhé pololetí 2021/2022)",
+          "Většina žáků odchází studovat na vysoké školy různého zaměření"
+        ],
+        "evidence": "Škola systematicky sleduje výsledky přijímacího řízení na vysoké školy, žáci dosahují dobrých výsledků vzdělávání."
+      },
+      "absence": {
+        "trend": "Velmi pozitivní – neomluvené absence jsou výjimečné",
+        "key_numbers": [
+          "Neomluvené hodiny zaznamenány výjimečně",
+          "Efektivní řešení problémů s neomluvenou absencí"
+        ],
+        "evidence": "Vhodně nastavená pravidla pro hodnocení v případě absence a jejich důsledné uplatňování, rozdělení kompetencí výchovné poradkyně."
+      },
+      "support_services": [
+        "Výchovná poradkyně – zvládá studijní problémy, výběr dalšího studia a profesní uplatnění",
+        "Školní metodička prevence – spolupracuje na prevenci rizikového chování",
+        "Adaptační kurzy pro 1. ročníky – seznamování a budování vztahů v kolektivu"
+      ],
+      "safety_climate": [
+        "Trvale uzavřené vstupy do budovy s videotelefony",
+        "Identifikační systém pro vstup žáků (čipy, otisky prstů)",
+        "Pravidelné seznamování žáků se zásadami bezpečnosti (zápisy v třídních knihách)",
+        "Dlouhodobě nízký výskyt rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se dvěma partnerskými školami v Bavorsku – výměnné pobyty žáků a vyučujících",
+        "Spolupráce s místními firmami – poznávání reálného pracovního prostředí",
+        "Program Erasmus+ 'Gymnázium Sušice překračuje hranice'",
+        "Projekt Cena vévody z Edinburghu (DofE)",
+        "Spolupráce s mateřskými a základními školami – sportovní, kulturní a charitativní akce"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Slabší je pouze v některých technických pasážích o administrativě.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o výsledcích maturitní zkoušky – pouze kvalitativní hodnocení",
+        "Chybí detailní analýza příčin poklesu počtu žáků čtyřletého oboru",
+        "Není jasné, jak konkrétně se škola zaměřuje na žáky se speciálními vzdělávacími potřebami"
+      ]
+    }
+  }
+}

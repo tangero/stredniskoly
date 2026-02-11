@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOS_691000662_2024-01-08",
+  "school_profile": {
+    "school_type": "Střední odborná škola s 11 obory vzdělání (3 čtyřleté s maturitou, 8 tříletých s výučním listem)",
+    "inspection_period": "8. 1. 2024 – 11. 1. 2024",
+    "school_change_summary": "Vybavení dílen moderními přístroji, revitalizace prostor, dílčí personální změny. Počet žáků mírně roste (455 žáků v 28 třídách v r. 2023/2024)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka na vysoké úrovni",
+        "detail": "Odborný výcvik a učební praxe mají odpovídající odbornou úroveň s promyšlenou organizací a individuální podporou žáků.",
+        "evidence": "Žáci si systematicky osvojují technologické postupy, upevňují pracovní návyky a získávají smysl pro kvalitu a zodpovědnost."
+      },
+      {
+        "tag": "Spolupráce s průmyslem a partnery",
+        "detail": "Aktivní spolupráce s profesními svazy, externími partnery a zřizovatelem (Třinecké železárny) zajišťuje kvalitní podmínky pro odborné vzdělání.",
+        "evidence": "Projekty Erasmus+ (zahraniční stáže v Itálii, Maďarsku), příhraniční spolupráce s Polskem, moderní vybavení dílen."
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Škola nabízí dobrovolné konzultace, maturitní semináře a kroužky na rozvoj čtenářské gramotnosti.",
+        "evidence": "Žákům s rizikem neúspěchu je poskytována podpora, možnost přestupu do méně náročného oboru."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost u maturit",
+        "detail": "V posledních dvou letech se úspěšnost maturitní zkoušky pohybuje mezi 9,1–50 %, obor Provoz a ekonomika dopravy vykazuje výrazně horší výsledky.",
+        "evidence": "Na konci r. 2022/2023 neprospělo 27 % žáků. Nejhorší výsledky v oboru Provoz a ekonomika dopravy."
+      },
+      {
+        "tag": "Pasivní teoretická výuka",
+        "detail": "Výuka češtiny a společenských věd je příliš frontální s dominantní rolí učitele, chybí individuální přístup a propojení s praxí.",
+        "evidence": "Schází názornost, propojení s reálným životem, interaktivní metody. Žáci pasivně zaznamenávají textové podklady."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "V teoretické výuce se málo uplatňuje přizpůsobení učiva individuálním schopnostem žáků.",
+        "evidence": "Nižší míra diferenciace zadávaných úkolů podle individuálních schopností omezuje porozumění učiva."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola reaguje na vysokou neúspěšnost u maturitní zkoušky? Jaké nové opatření chystá?",
+      "Jak se liší výuka v jednotlivých oborech a jaké jsou reálné vyhlídky absolventů na trhu práce?",
+      "Jaké jsou konkrétní podmínky pro zahraniční stáže v projektu Erasmus+ a kolik žáků se jich účastní?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou práci a řemesla – odborný výcvik je na vysoké úrovni s moderním vybavením",
+      "Žáci s ambicí pracovat v průmyslu – přímá spolupráce se Třineckými železárnami a dalšími partnery",
+      "Žáci, kterým vyhovuje učení praxí – silná stránka školy je praktické vyučování s individuální podporou"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s cílem získat maturitu – vysoká neúspěšnost u maturitní zkoušky (9,1–50 %), zvlášť v oboru Provoz a ekonomika dopravy",
+      "Žáci preferující interaktivní a moderní výuku – teoretické předměty jsou vedeny tradičně frontální metodou",
+      "Žáci potřebující individuální přístup – diferenciace učiva není dostatečná, někteří žáci projevují minimální zájem"
+    ],
+    "plain_czech_summary": "Střední odborná škola Třinec je zaměřena na praktické vzdělání v technických a řemeslných oborech. Silnou stránkou je kvalitní odborný výcvik s moderním vybavením a spolupráce s průmyslem. Slabinou je vysoká neúspěšnost u maturitní zkoušky a pasivní teoretická výuka. Škola vhodně podporuje slabší žáky a nabízí zahraniční stáže. Rodiče by měli zvážit, zda jejich dítě preferuje praktickou práci nebo má ambici získat maturitu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Klesající – vysoká neúspěšnost v posledních dvou letech",
+      "key_numbers": [
+        "Hrubá úspěšnost 9,1–50 % (2021/2022 a 2022/2023)",
+        "Obor Provoz a ekonomika dopravy: výrazně nižší úspěšnost",
+        "Obor Elektrotechnika: výrazně lepší výsledky"
+      ],
+      "evidence": "V posledních dvou letech se hrubá úspěšnost pohybovala v rozmezí 9,1–50 %. Nejvyšší neúspěšnost vykazují žáci oboru Provoz a ekonomika dopravy."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Není dostupné"
+      ],
+      "evidence": "Zpráva se absence věnuje minimálně, zaměřuje se na neúspěšnost a prospěch."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s jasně vymezenými kompetencemi pracující na aktuálních problémech žáků",
+      "Dobrovolné individuální konzultace pro žáky s rizikem neúspěchu",
+      "Maturitní semináře a kroužek Čtenářská pětiminutovka na rozvoj čtenářské gramotnosti",
+      "Dvoudenní adaptační pobyt pro nástupní ročníky zaměřený na prevenci patologického chování",
+      "Možnost přestupu do méně náročného oboru",
+      "Slovní hodnocení pro obory Stravovací a ubytovací služby, Pečovatelské služby a Strojírenské práce"
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně poučováni a seznamováni s riziky",
+      "Při praktickém vyučování žáci používají vhodné osobní ochranné pracovní prostředky",
+      "Nedostatky zjištěny v administraci úrazů",
+      "Dbáno na upevňování zásad bezpečné práce a ochrany zdraví"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se Třineckými železárnami (zřizovatel) – strategie vývoje školy navázána na jejich potřeby",
+      "Projekty Erasmus+ – zahraniční stáže v Itálii a Maďarsku pro vybrané obory",
+      "Příhraniční spolupráce s polskou odbornou školou – výměna zkušeností pedagogů a žáků",
+      "Zapojení odborníků do výuky a závěrečných zkoušek",
+      "Akce Řemeslné hry – propagace technického vzdělání ve spolupráci se zřizovatelem a partnery",
+      "Soutěž Hydrogen horizon – dlouhodobě úspěšní žáci v národním finále"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Slabší stránky jsou jasně identifikovány (vysoká neúspěšnost u maturit, pasivní výuka, nedostatečná diferenciace). Silné stránky jsou podloženy příklady (praktická výuka, spolupráce s průmyslem). Některé údaje chybí (absence, konkrétní počty neúspěšných u maturit).",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je problém nebo ne",
+      "Konkrétní počty neúspěšných žáků u maturit nejsou uvedeny, jen procenta úspěšnosti",
+      "Není jasné, jak se liší výsledky mezi jednotlivými lety 2021/2022 a 2022/2023"
+    ]
+  }
+}
+```

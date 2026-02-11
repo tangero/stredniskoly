@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY4_600013421_2025-01-08",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium, příspěvková organizace",
+    "inspection_period": "8. 1. 2025 – 10. 1. 2025",
+    "school_change_summary": "Škola modernizuje vybavení (dotykové panely, 3D tiskárna, notebooky), zavedla školní informační systém a upravila prostředí (nastavitelný nábytek, relaxační zákoutí). Vedení efektivně deleguje kompetence a organizuje hospitace pro zkvalitnění výuky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné maturitní výsledky",
+        "detail": "Žáci dosahují dlouhodobě velmi dobrých výsledků při maturitě s průměrnou neúspěšností jen 1,5 % za poslední tři roky.",
+        "evidence": "Všichni žáci byli úspěšní s výjimkou 3,4 % v roce 2021/2022. Ve společné části maturitní zkoušky lepší výsledky než většina podobných škol."
+      },
+      {
+        "tag": "Kvalitní výuka češtiny a literatury",
+        "detail": "Hodiny vyznačují se metodickou vytříbeností, kvalitní aktivizací a zapojením žáků do hodnotících činností.",
+        "evidence": "Jasně definované cíle hodin, promyšlená práce s textem, badatelské úkoly a vrstevnická zpětná vazba vedou k prohloubení čtenářské gramotnosti."
+      },
+      {
+        "tag": "Peer program a školní klima",
+        "detail": "Vrstevnické preventivní aktivity podporují spolupráci, empatii a klíčové kompetence žáků.",
+        "evidence": "Peer tým vede metodik prevence, žáci procházejí ročním proškolením, pomáhají při akcích a pracují se samotnými žáky od adaptačních kurzů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace pro nadané žáky",
+        "detail": "V části výuky chybí cílená podpora nadanějších žáků a práce s více informačními zdroji.",
+        "evidence": "Nebyla účelně využívána diferenciace zadávaných úkolů. Méně efektivní byla podpora žáků nadaných přímo ve výuce."
+      },
+      {
+        "tag": "Stereotypní vyučovací metody",
+        "detail": "Část hodin používá frontální výuku, která neaktivizuje žáky dostatečně a nerozvinuje jejich tvořivé myšlení.",
+        "evidence": "Stereotypní didaktické postupy nevytvářely vhodné podmínky pro aktivní zapojení žáků. Výrazně převládala aktivita učitele."
+      },
+      {
+        "tag": "Rostoucí absence žáků",
+        "detail": "Absence se postupně zvyšuje a negativní trend se nepodařilo zvrátit navzdory sledování a opatřením.",
+        "evidence": "Ve školním roce 2023/2024 činila 149 hodin za rok (v 2021/2022 bylo 125 hodin). Školní neúspěch často souvisí s nepravidelnou docházkou."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a žáky se zvýšeným zájmem o jednotlivé předměty přímo během výuky?",
+      "Jaké konkrétní kroky podniká škola proti rostoucí absenci žáků a jak se to projevuje v praxi?",
+      "Jak jsou nastavena jednotná kritéria pro hodnocení v jednotlivých předmětech a jak se liší mezi učiteli?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a motivací – škola má velmi nízkou neúspěšnost (0,3 % neprospívajících) a výborné maturitní výsledky.",
+      "Zájemci o kvalitní výuku jazyků – zejména čeština, literatura a cizí jazyky jsou vyučovány metodicky vytříbeně s důrazem na komunikaci.",
+      "Žáci zajímající se o mimoškolní aktivity – škola nabízí bohatý program soutěží, exkurzí, divadelních představení, zahraničních zájezdů a peer program."
+    ],
+    "who_should_be_cautious": [
+      "Nadaní žáci – pokud potřebují intenzivní individuální podporu a diferenciované úkoly, mohou být v některých hodinách nedostatečně stimulováni.",
+      "Žáci s tendencí k absenci – škola sleduje docházku, ale negativní trend absence se nedaří zvrátit, což může vést k problémům se studiem.",
+      "Žáci preferující aktivní a interaktivní výuku – část hodin stále používá frontální výuku s převahou aktivity učitele."
+    ],
+    "plain_czech_summary": "Gymnázium Elgartova je kvalitní školou s výborným reputací v maturitních výsledcích (1,5 % neúspěšnosti). Silné stránky jsou zejména v češtině, literaturě a cizích jazycích, kde se používají moderní metody. Škola má bohatý mimoškolní program a fungující peer program. Slabší místa jsou v diferenciaci pro nadané žáky a rostoucí absenci. Část výuky stále používá tradičnější frontální přístup. Škola se modernizuje a má dobré vedení, ale měla by více pracovat na individualizaci výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně velmi dobrý",
+      "key_numbers": [
+        "Celková průměrná hrubá neúspěšnost 1,5 % za poslední tři roky",
+        "Ve školním roce 2021/2022 neuspělo 3,4 % v profilové části",
+        "Lepší výsledky než většina obdobných škol v ČR"
+      ],
+      "evidence": "Všichni žáci byli úspěšní s výjimkou školního roku 2021/2022. Výsledky si udržely velmi dobrou úroveň od poslední inspekční činnosti."
+    },
+    "absence": {
+      "trend": "Negativní – postupně se zvyšuje",
+      "key_numbers": [
+        "Školní rok 2023/2024: 149 hodin za rok",
+        "Školní rok 2021/2022: 125 hodin za rok",
+        "Zvýšení o 24 hodin za dva roky"
+      ],
+      "evidence": "Průměrná absence žáků se v uvedeném období postupně mírně zvyšovala. Škola docházku důsledně sleduje a vyhodnocuje, přesto se negativní trend nepodařilo doposud zvrátit."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se standardní organizací a personálním obsazením poskytuje poradenskou péči žákům se speciálními vzdělávacími potřebami, zákonným zástupcům a pedagogům",
+      "Školní psycholožka řeší převážně individuální požadavky žáků, okrajově se zabývá klimatem ve třídách",
+      "Metodik prevence vede žákovský peer tým s bohatým rozsahem činností včetně adaptačních kurzů prvních ročníků",
+      "Žáci s odlišným mateřským jazykem mají možnost individuálních konzultací s jednotlivými pedagogy"
+    ],
+    "safety_climate": [
+      "Počet úrazů se v posledním období významně nezvyšuje, jedná se převážně o drobné úrazy v tělesné výchově",
+      "Vedení školy se rozborem úrazovosti zabývá a nastavuje opatření pro snižování rizik",
+      "Žáci jsou pravidelně seznamováni s nastavenými pravidly pro zajišťování bezpečnosti a ochrany zdraví",
+      "Případy závažnějšího rizikového chování řešila škola ojediněle, sníženým stupněm z chování hodnotila žáky jen zcela výjimečně"
+    ],
+    "partnerships_practice": [
+      "Mezinárodní spolupráce s gymnázii v Rakousku, Německu a Maďarsku",
+      "Zahraniční poznávací a vzdělávací zájezdy do Anglie, Francie a Itálie",
+      "Spolupráce s městskou částí v oblasti dramatické výchovy – dvě divadelní představení v kině Sibiř",
+      "Autorská čtení osobností současné české literatury pořádaná každoročně napříč brněnskými gymnázii",
+      "Projekt Načase – žáci sami organizují přednášky na aktuální témata"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více odborné termíny, které mohou být pro laické rodiče méně přístupné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, kolik procent hodin bylo sledováno s problematickými metodami – jde o 'část' nebo 'převážná část'?",
+      "Není jasné, zda se absence týká všech žáků stejně nebo zda jsou to především určité skupiny",
+      "Chybí konkrétní příklady toho, jak by měla vypadat diferenciace pro nadané žáky v praxi"
+    ]
+  }
+}
+```

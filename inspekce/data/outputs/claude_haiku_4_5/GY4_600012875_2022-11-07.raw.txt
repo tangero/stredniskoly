@@ -1,0 +1,8 @@
+Nemám k dispozici zdrojový text inspekční zprávy. Bez konkrétního obsahu zprávy nemohu vytvořit validní JSON s faktickými informacemi.
+
+Prosím, poskytni text inspekční zprávy ČŠI pro Gymnázium Jiráskovo náměstí v Trutnově, aby jsem mohl:
+- Extrahovat skutečné údaje o kvalitě vzdělání
+- Identifikovat silné stránky a rizika
+- Poskytnout rodičům relevantní informace
+
+Jakmile mi text zprávy poskytnete, vrátím kompletní JSON analýzu podle zadaného schématu.

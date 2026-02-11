@@ -1,0 +1,102 @@
+{
+  "report_id": "LYC_600011011_2021-10-11",
+  "school_profile": {
+    "school_type": "Střední škola s ekonomickými, zemědělskými, ekologickými a technickými obory.",
+    "inspection_period": "11. 10. 2021 − 14. 10. 2021",
+    "school_change_summary": "Škola zlepšuje materiální podmínky a rozšiřuje síť partnerů, ale bojuje s neúčinnými opatřeními pro zlepšení maturitních výsledků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Škola má silné zázemí pro odborný výcvik a praxe díky partnerům.",
+        "evidence": "„Díky široké síti sociálních partnerů... se daří efektivně podporovat rozvoj odborných kompetencí žáků.“"
+      },
+      {
+        "tag": "Atmosféra",
+        "detail": "Výuka probíhá v příjemném prostředí založeném na vzájemném respektu.",
+        "evidence": "„Hospitované hodiny probíhaly v příjemné pracovní atmosféře založené na vzájemném respektu a důvěře.“"
+      },
+      {
+        "tag": "Mimoškolní aktivity",
+        "detail": "Škola nabízí širokou škálu aktivit pro rozvoj osobnosti žáků.",
+        "evidence": "„Četné aktivity nad rámec výuky podporují osobnostní rozvoj žáků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká maturitní úspěšnost",
+        "detail": "Některé obory vykazují výrazně horší výsledky u maturity než celorepublikový průměr.",
+        "evidence": "„Opatření přijímaná ke zlepšení výsledků žáků ve společné části maturitní zkoušky nejsou dostatečně účinná.“"
+      },
+      {
+        "tag": "Zastaralé vyučování",
+        "detail": "Ve výuce převažuje pasivní frontální styl bez individualizace.",
+        "evidence": "„Absence diferenciace a individualizace výuky... převaha frontální výuky vede k nízkému zapojení žáků.“"
+      },
+      {
+        "tag": "Slabá zpětná vazba",
+        "detail": "Žáci nedostávají dostatek informací pro zlepšení svého učení.",
+        "evidence": "„Žákům není poskytována formativní zpětná vazba podporující efektivitu učení.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola reaguje na špatné výsledky žáků u maturity v některých oborech?",
+      "Jakým způsobem pedagogové individualizují výuku pro žáky s různými potřebami?",
+      "Které metody výuky kromě frontálního výkladu škola běžně využívá?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o obor Elektromechanik, který vykazuje stabilní výsledky.",
+      "Studenti, kteří preferují učení z praxe a exkurzí před teorií.",
+      "Žáci, kterým vyhovuje příjemné sociální klima a respektující prostředí."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o obor Agropodnikání a Ekonomické lyceum kvůli riziku neúspěchu u maturity.",
+      "Studenti, kteří potřebují intenzivní individuální podporu ve výuce.",
+      "Žáci očekávající moderní, interaktivní formy výuky."
+    ],
+    "plain_czech_summary": "Škola v Žatci nabízí širokou paletu oborů a vyniká dobrou spoluprací s partnery, což žákům zajišťuje kvalitní praxi. Prostředí je přátelské a bezpečné. Pozor byste si měli dát na výsledky maturity, zejména na Ekonomickém lyceu a Agropodnikání, kde je neúspěšnost vyšší než jinde. Výuka často probíhá tradiční formou výkladu bez většího zapojení žáků. Pro technicky zaměřené (Elektromechanik) je škola bezpečnou volbou, u ekonomických oborů je třeba zvážit rizika."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá až negativní (závisí na oboru).",
+      "key_numbers": [
+        "Neúspěšnost na EL 20 % v roce 2020 (průměr ČR 3,9 %).",
+        "Neúspěšnost na Agropodnikání 35,3 % v roce 2020.",
+        "Všichni žáci EL uspěli v roce 2021."
+      ],
+      "evidence": "„Žáci oboru vzdělání Agropodnikání zaznamenali... výrazně větší neúspěšnost... v roce 2020 (35,3 % oproti 14,2 %).“"
+    },
+    "absence": {
+      "trend": "Není hodnoceno (text zmiňuje minimální rizikové chování).",
+      "key_numbers": [
+        "Minimální výskyt rizikového chování."
+      ],
+      "evidence": "„Vzhledem k minimálnímu výskytu rizikového chování žáků jsou preventivní aktivity přiměřeně účinné.“"
+    },
+    "support_services": [
+      "Výchovný poradce a metodik prevence pro žáky se SVP.",
+      "Individuální či skupinové konzultace při neúspěchu.",
+      "Adaptační pobyty pro první ročníky."
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra založená na respektu.",
+      "Žáci bez obav komunikují s učiteli.",
+      "Účinná primární prevence rizikového chování."
+    ],
+    "partnerships_practice": [
+      "Široká síť sociálních partnerů umožňující praxe a exkurze.",
+      "Spolupráce s externisty na certifikátech (jazyky, řidičák).",
+      "Propojení teoretických poznatků s praxí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky a konkrétní číselné údaje o neúspěšnosti jsou dobře čitelné.",
+    "uncertainty_notes": [
+      "Absence konkrétních dat o celkové docházce/absenci žáků.",
+      "Nejasná dlouhodobá stabilita oboru Ekologie a životní prostředí (pouze 5 žáků).",
+      "Míra zapojení žáků do distanční výuky je popsána slovně, bez přesných čísel."
+    ]
+  }
+}

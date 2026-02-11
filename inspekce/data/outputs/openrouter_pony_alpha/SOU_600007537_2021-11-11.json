@@ -1,0 +1,107 @@
+{
+  "report_id": "SOU_600007537_2021-11-11",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:18:23.088306+00:00",
+  "run_finished_utc": "2026-02-10T08:19:27.216042+00:00",
+  "raw_file": "SOU_600007537_2021-11-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600007537_2021-11-11",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště",
+      "inspection_period": "11., 12., 15. a 16. listopad 2021",
+      "school_change_summary": "Od roku 2015 se skladba oborů nezměnila, kapacita je dlouhodobě stabilní a zlepšilo se materiální vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Škola efektivně propojuje teorii s praxí a využívá dobře vybavené díly i smluvní partnery.",
+          "evidence": "„Intenzivní spolupráce učitelů teoretického a praktického vyučování se kladně projevuje ve výuce efektivním propojováním poznatků.“"
+        },
+        {
+          "tag": "Uplatnění absolventů",
+          "detail": "Díky spolupráci s firmami mají absolventi dobrý přístup na trh práce.",
+          "evidence": "„Absolventi školy se zapojují do pracovního procesu, firmy v regionu o ně projevují trvalý zájem.“"
+        },
+        {
+          "tag": "Úspěšnost u zkoušek",
+          "detail": "Většina žáků úspěšně složí závěrečné zkoušky a získá výuční list.",
+          "evidence": "„Závěrečnou zkoušku v oborech vzdělání s výučním listem v posledních třech školních rocích vykonalo úspěšně 91 % až 96 % žáků.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Velká absence a odchody",
+          "detail": "Mnoho žáků má vysokou absenci a první ročník končí předčasným odchodem.",
+          "evidence": "„V každém z posledních tří školních roků zanechalo vzdělávání nebo přestoupilo na jinou školu přibližně 12 % žáků.“"
+        },
+        {
+          "tag": "Zastaralé metody výuky",
+          "detail": "Výuka je často frontální bez zapojení žáků, což snižuje jejich zájem.",
+          "evidence": "„Ve třech čtvrtinách hodin teoretického vyučování však byla využita frontální organizace výuky, u níž byla míra zapojení žáků nízká.“"
+        },
+        {
+          "tag": "Chybí podpora slabším žákům",
+          "detail": "Škola nemá systém, jak předcházet neúspěchu a efektivně podporovat problémové žáky.",
+          "evidence": "„To se projevilo v absenci ucelené strategie předcházení školní neúspěšnosti.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola pracuje s žáky v prvním ročníku, aby se zabránilo jejich předčasným odchodům?",
+        "Jaké konkrétní metody využíváte k tomu, aby byla výuka zajímavější než jen frontální výklad?",
+        "Jakým způsobem škola řeší vysokou absenci a nabízí podporu žákům s prospěchovými problémy?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří se chtějí naučit konkrétní řemeslo a uplatnit se v regionu.",
+        "Pro ty, kteří preferují praktickou činnost v dílnách před teoretickou výukou.",
+        "Pro zájemce o obory jako instalatér, mechanik nebo opravář se zaměřením na praxi."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří potřebují silnou individuální podporu nebo mají studijní obtíže.",
+        "Pokud dítě očekává moderní interaktivní metody výuky a bohatý mimoškolní program.",
+        "Pro rodiče, kteří řeší problémy s absencí a potřebují po škole přísnější dohled."
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní praktickou přípravu v technických oborech a dobré vybavení dílen, což zajišťuje absolventům uplatnění na trhu práce. Slabší stránkou je tradiční styl výuky s malým zapojením žáků a absence systémové podpory pro ty, kteří mají studijní nebo kázeňské problémy. Rodiče by měli počítat s tím, že až 12 % žáků školu předčasně opouští, zejména v prvním ročníku. Škola je vhodná pro prakticky založené uchazeče, kteří chtějí získat výuční list."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "N/A (škola nabízí obory s výučním listem)",
+        "key_numbers": [
+          "Úspěšnost u závěrečných zkoušek: 91–96 %"
+        ],
+        "evidence": "„Závěrečnou zkoušku v oborech vzdělání s výučním listem v posledních třech školních rocích vykonalo úspěšně 91 % až 96 % žáků.“"
+      },
+      "absence": {
+        "trend": "Vysoká absence je dlouhodobý problém, vliv distanční výuky jen dočasný.",
+        "key_numbers": [
+          "Průměrně 175 zameškaných hodin na žáka (2018/19)",
+          "Zhruba desetina absence neomluvená",
+          "Snížený stupeň z chování má 10–15 % žáků"
+        ],
+        "evidence": "„Průměrný počet zameškaných hodin na jednoho žáka ve školním roce 2018/2019 byl 175 hodin, z toho zhruba desetina neomluvených.“"
+      },
+      "support_services": [
+        "Funkční kariérové poradenství a spolupráce se školami v zahraničí.",
+        "Částečně účelné školní poradenské pracoviště, chybí však ucelená strategie podpory."
+      ],
+      "safety_climate": [
+        "Prostředí je bezpečné, žáci jsou poučováni o pravidlech, úrazy mají klesající tendenci.",
+        "Atmosféra ve výuce je popisována jako příjemná a pracovní."
+      ],
+      "partnerships_practice": [
+        "Silná spolupráce s firmami v regionu a Škodou Mladá Boleslav zajišťuje kvalitní praxi.",
+        "Mezinárodní spolupráce s belgickou školou přispívá k rozvoji kompetencí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně strukturovaný a poskytuje konkrétní číselné údaje i srozumitelná doporučení.",
+      "uncertainty_notes": [
+        "Nejasné, jak konkrétně probíhá podpora žáků s částečnou jazykovou bariérou.",
+        "Chybí detailnější rozbor příčin vysoké neomluvené absence u konkrétních skupin žáků."
+      ]
+    }
+  }
+}

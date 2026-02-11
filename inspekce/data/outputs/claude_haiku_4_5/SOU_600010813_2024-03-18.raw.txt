@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "SOU_600010813_2024-03-18",
+  "school_profile": {
+    "school_type": "Střední odborná škola technická a zahradnická, příspěvková organizace",
+    "inspection_period": "18. března 2024 až 21. března 2024",
+    "school_change_summary": "Ředitel ve funkci od prosince 2019. Ukončeno vzdělávání v oboru Podnikání. Nově zřízeny pozice školního psychologa a sociálního pedagoga. Pedagogický sbor stabilizován s vyšší kvalifikací."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické dovednosti a certifikáty",
+        "detail": "Žáci získávají svářecí průkazy a řidičské průkazy na traktory a automobily přímo během studia.",
+        "evidence": "\"Škola umožňuje žákům v oborech Autotronik, Mechanik opravář motorových vozidel a Opravář zemědělských strojů získat svářecí průkaz a řidičský průkaz na traktor, osobní a nákladní automobil.\""
+      },
+      {
+        "tag": "Mezinárodní spolupráce a stáže",
+        "detail": "Žáci se účastní zahraničních stáží v programu Erasmus+ a různých náborových aktivit.",
+        "evidence": "\"Odborné zahraniční stáže v rámci programu Erasmus+, kterých se účastní žáci napříč všemi obory.\""
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Škola má výchovnou poradkyni, metodičku prevence, školního psychologa a sociálního pedagoga.",
+        "evidence": "\"Od letošního roku nově také školní psycholožka a sociální pedagožka. Nastavený systém poradenských služeb je funkční.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky u maturity",
+        "detail": "Dlouhodobě vysoká neúspěšnost při maturitní zkoušce, zejména v matematice a v profilové části.",
+        "evidence": "\"Přetrvávají slabé výsledky školy při ukončování vzdělávání maturitní zkouškou.\" V matematice \"uspěl průměrně každý druhý žák\"."
+      },
+      {
+        "tag": "Pasivní výuka v některých předmětech",
+        "detail": "Učitelé odborných předmětů málo používají aktivizační metody, žáci jsou často pasivními příjemci informací.",
+        "evidence": "\"Pedagogové především odborných předmětů využívají v nízké míře aktivizační metody a formy, což vede k pasivitě žáků v průběhu výuky.\""
+      },
+      {
+        "tag": "Nedostatečná individualizace",
+        "detail": "Diferenciace a individualizace podle potřeb jednotlivých žáků se v hodinách objevují jen ojediněle.",
+        "evidence": "\"Diferenciace a individualizace vzdělávacího obsahu podle kognitivních schopností jednotlivých žáků byla zaznamenána ojediněle.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola připravuje žáky na maturitní zkoušku z matematiky, když je úspěšnost v tomto předmětu nízká?",
+      "Jaké konkrétní opatření škola přijala po zjištění, že v profilové části maturity neuspěje více žáků než v části společné?",
+      "Jak se škola vypořádá s tím, že metodická podpora pedagogům není dostatečně účinná?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a řemesla, kteří chtějí získat certifikáty a průkazy během studia",
+      "Žáci z okolí, kteří mohou využít domov mládeže s vybavením (posilovna, internet, stolní tenis)",
+      "Žáci zajímající se o zahraniční stáže a mezinárodní spolupráci v rámci Erasmus+"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s ambicí dosáhnout vysokých výsledků u maturitní zkoušky, zejména z matematiky",
+      "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku podle svých schopností",
+      "Žáci, kteří se lépe učí aktivními metodami a interakcí se spolužáky"
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktickou přípravu s možností získat certifikáty a průkazy. Má dobré poradenské služby a mezinárodní spolupráci. Hlavní problém je dlouhodobě nízká úspěšnost u maturitní zkoušky, zejména z matematiky. Výuka v některých předmětech je pasivní a málo přizpůsobená individuálním potřebám žáků. Vedení školy se snaží situaci zlepšit, ale dosavadní opatření nejsou dostatečně účinná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě vysoká neúspěšnost, částečně se zlepšuje",
+      "key_numbers": [
+        "Aplikovaná chemie 2023: 16,7 % neúspěšnost (ČR 6,2 %)",
+        "Autotronik 2023: srovnatelné s průměrem ČR",
+        "Matematika: neuspěje průměrně každý druhý žák"
+      ],
+      "evidence": "\"V oboru Aplikovaná chemie v roce 2023 hrubá neúspěšnost opět klesla na 16,7 %, což však byl stále horší výsledek, než byl průměr v ČR (6,2 %).\""
+    },
+    "absence": {
+      "trend": "Postupně se snižuje, zejména v maturitních oborech",
+      "key_numbers": [
+        "Neomluvená absence v posledních třech školních rocích se nevyskytla",
+        "Korelace mezi vyšší absencí a horším prospěchem"
+      ],
+      "evidence": "\"V maturitních oborech se zejména důslednou prací třídních učitelů daří postupně absenci žáků snižovat, neomluvená absence se v posledních třech školních rocích nevyskytla.\""
+    },
+    "support_services": [
+      "Výchovná poradkyně, metodička prevence, školní psycholog, sociální pedagog",
+      "Individuální konzultace a skupinová doučování",
+      "Maturitní trénink simulující didaktické testy"
+    ],
+    "safety_climate": [
+      "Klidná pracovní atmosféra v hodinách",
+      "Efektivní systém primární prevence reagující na aktuální potřeby",
+      "Adaptační pobyty prvního ročníku pro vytváření vztahových pravidel"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery a zahraničními institucemi",
+      "Program Erasmus+ s odbornými zahraničními stážemi",
+      "Workshopy pro základní školy v školních dílnách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní data. Některé pasáže jsou však technické a obsahují úřednický jazyk, který by rodiče mohli hůře pochopit bez vysvětlení.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola přijala na základě zjištění inspekce po roce 2023",
+      "Není jasné, zda se výsledky v matematice týkají všech maturitních oborů nebo jen některých",
+      "Chybí informace o tom, jak se výsledky změnily po zvýšení požadavků na uchazeče v přijímacím řízení pro rok 2023/2024"
+    ]
+  }
+}
+```

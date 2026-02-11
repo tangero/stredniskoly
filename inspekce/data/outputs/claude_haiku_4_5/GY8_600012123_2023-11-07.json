@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600012123_2023-11-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:34:58.014940+00:00",
+  "run_finished_utc": "2026-02-09T16:35:22.136609+00:00",
+  "raw_file": "GY8_600012123_2023-11-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600012123_2023-11-07",
+    "school_profile": {
+      "school_type": "Gymnázium (osmileté a čtyřleté)",
+      "inspection_period": "7. 11. 2023 – 9. 11. 2023",
+      "school_change_summary": "Od inspekce v roce 2016 se výrazně zlepšily materiální a finanční podmínky, škola si udržuje stabilní počet žáků (344 v 12 třídách) a zefektivnila činnost poradenského pracoviště."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "96,2 % žáků úspěšně odmaturuje, 41,6 % prospívá s vyznamenáním.",
+          "evidence": "Ze 158 žáků přihlášených k MZ v letech 2021–2023 neodmaturovalo úspěšně pouze 3,8 %."
+        },
+        {
+          "tag": "Kvalitní vedení a organizace",
+          "detail": "Ředitel s dlouholeté zkušeností (od 2011) vytváří podnětné prostředí a systematicky naplňuje koncepci vzdělávání.",
+          "evidence": "Vedení školy je efektivně spolupracující tým s jasně vymezenými pravomocemi a cílenými hospitacemi."
+        },
+        {
+          "tag": "Bohaté mimoškolní aktivity",
+          "detail": "Škola podporuje soutěže, olympiády, projekty a charitativní akce pro všestranný rozvoj žáků.",
+          "evidence": "Úspěchy v celostátních soutěžích (Microsoft Office Arena, literární soutěž, Středoškolská odborná činnost)."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo ústního vyjadřování",
+          "detail": "Žáci nemají dostatek prostoru pro souvislejší ústní projev a kritické myšlení.",
+          "evidence": "Inspektoři zaznamenali malý prostor pro ústní vyjádření a absenci motivace k práci s informačními zdroji."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Výuka není dostatečně přizpůsobena rozdílným potřebám a tempům jednotlivých žáků.",
+          "evidence": "Nízká míra diferenciace a individualizace výuky, chybí přizpůsobení zadání podle obtížnosti."
+        },
+        {
+          "tag": "Méně skupinové práce",
+          "detail": "Kooperativní formy práce se využívají méně často, než by bylo vhodné.",
+          "evidence": "Inspektoři zaznamenali nižší míru využívání kooperativních forem práce v hodinách."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje rozvoj kritického myšlení a práce s různými informačními zdroji?",
+        "Jaké jsou možnosti individuálního přístupu k žákům s různými tempem učení?",
+        "Jak se škola připravuje na vysokoškolské studium v jednotlivých oborech?"
+      ],
+      "who_school_fits": [
+        "Ambiciózní žáci se zájmem o všeobecné vzdělání a vysokoškolské studium",
+        "Žáci, kteří prospívají v tradičnější výuce s důrazem na odborné znalosti",
+        "Talentovaní žáci zajímající se o soutěže, olympiády a mimoškolní aktivity"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuálního přístupu a diferenciace podle svého tempa",
+        "Žáci, kteří se lépe učí aktivní spoluúčastí a skupinovou prací",
+        "Žáci, kteří potřebují více podpory v rozvoji ústního vyjadřování a kritického myšlení"
+      ],
+      "plain_czech_summary": "Gymnázium Jaroslava Žáka je kvalitní škola s výborným vedením a velmi dobrými výsledky maturit (96 % úspěšnosti). Nabízí bohaté mimoškolní aktivity a moderní vybavení. Inspektoři ale upozornili, že v některých hodinách chybí dostatek prostoru pro ústní vyjadřování žáků, kritické myšlení a skupinovou práci. Výuka je někdy příliš zaměřena na předávání faktů. Škola by měla více podporovat samostatné uvažování a individuální přístup k žákům s různými potřebami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoká úspěšnost",
+        "key_numbers": [
+          "96,2 % žáků úspěšně odmaturuje (3,8 % neúspěšných)",
+          "41,6 % žáků prospívá s vyznamenáním",
+          "57,8 % žáků prospívá"
+        ],
+        "evidence": "Ze 158 žáků přihlášených k MZ v jarním zkušebním období 2021–2023 neodmaturovalo úspěšně pouze 3,8 %."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně poskytuje kariérové poradenství a podporu v řešení vzdělávacích problémů",
+        "Doučování v rámci projektu Šablony III (matematika, český jazyk, cizí jazyky, fyzika)",
+        "Individuální konzultace s vyučujícími v úzké spolupráci s třídními učiteli",
+        "Adaptační kurzy prvních ročníků zaměřené na pozitivní vazby a efektivní učení"
+      ],
+      "safety_climate": [
+        "Elektronický systém zabezpečuje vstup do budovy",
+        "Elektronická anonymní schránka důvěry pomáhá odhalit rizikové chování (šikana, nedorozumění)",
+        "Preventivní programy zaměřené na bezpečí v kyberprostoru a rizika návykových látek",
+        "Kniha úrazů vedena a kontrolována"
+      ],
+      "partnerships_practice": [
+        "Partnerství s akademickým prostředím (Farmaceutická fakulta UK, Vysoká škola chemickotechnologická)",
+        "Jazykové instituty (British Council, Goethe Institut) – přípravné centrum Cambridge English",
+        "Zahraniční škola v Polsku pro sdílení edukativních zkušeností",
+        "Kooperace s místními subjekty (Město Jaroměř, základní školy, Policie ČR, kulturní instituce)",
+        "Partnerství se softwarovou firmou pro rozvoj IT kompetencí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více odborné terminologie.",
+      "uncertainty_notes": [
+        "Absence údajů o počtu žáků se speciálními vzdělávacími potřebami (zmíněno pouze 6 % z maximálního počtu)",
+        "Chybí konkrétní čísla o absenci a disciplinárních problémech",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými předměty"
+      ]
+    }
+  }
+}

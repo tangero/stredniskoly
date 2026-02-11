@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600170241_2024-03-05",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola s obory: Informační technologie, Strojírenství, Elektrotechnika (s maturitou) a Elektrikář, Strojní mechanik (s výučním listem)",
+    "inspection_period": "5. března a 7.–8. března 2024",
+    "school_change_summary": "Počet žáků vzrostl o 10 % na 314 studentů (95% naplněnosti kapacity). Škola získala ocenění 'Škola doporučená zaměstnavateli'. Realizována plná bezbariérovost budovy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Mezinárodní spolupráce a projekty",
+        "detail": "Škola aktivně zapojuje žáky do programu Erasmus+ a mezinárodních projektů, které rozvíjejí odborné, jazykové a sociální kompetence.",
+        "evidence": "Žáci, absolventi i učitelé se účastní zahraničních stáží a praxí. Probíhá technický projekt s německými žáky na pinballových stolech."
+      },
+      {
+        "tag": "Špičkové vybavení a infrastruktura",
+        "detail": "Škola investuje do moderního technického vybavení, bezbariérového přístupu a kvalitně vybavených odborných učeben a dílen.",
+        "evidence": "Nadstandardní technické vybavení, plná bezbariérovost, špičkově vybavené učebny a laboratoře."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola systematicky rozvíjí nadané žáky prostřednictvím kroužků, soutěží a středoškolské odborné činnosti s úspěchy v celostátních kolech.",
+        "evidence": "Kroužky robotiky, mikropočítačů, grafiky. Žáci reprezentují školu v soutěžích s dobrými výsledky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Žáci tříletých oborů mají průměrně 104 zameškaných hodin za pololetí, u maturitních 61 hodin. Někteří mají i neomluvené absence.",
+        "evidence": "Absence je obzvlášť vysoká v nematuritních oborech. Řešeno snížením známky z chování."
+      },
+      {
+        "tag": "Vysoký podíl žáků ohrožených školní neúspěšností",
+        "detail": "Více než polovina žáků má na vysvědčení alespoň jednu dostatečnou známku, což signalizuje problémy s učením.",
+        "evidence": "Tento podíl přetrvává v posledních dvou školních letech v obou typech oborů."
+      },
+      {
+        "tag": "Slabší výsledky v maturitě (obor IT)",
+        "detail": "V oboru Informační technologie se hrubá neúspěšnost zhoršila z 20 % na 25 % mezi roky 2021/22 a 2022/23.",
+        "evidence": "Neúspěšnost v profilové části maturitní zkoušky je vyšší než u srovnatelných oborů v ČR."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a co nabízí rodičům jako podporu?",
+      "Jaké konkrétní kroky podniká škola pro žáky ohrožené školní neúspěšností, zejména v předmětech jako dějepis?",
+      "Jak se liší kvalita výuky mezi jednotlivými obory a jaké jsou reálné šance na úspěch v maturitě v oboru IT?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o techniku a IT, kteří chtějí kvalitní praktickou přípravu a mezinárodní zkušenosti",
+      "Nadaní žáci, kterým vyhovuje bohatá nabídka kroužků, soutěží a projektů",
+      "Žáci, kteří potřebují moderní vybavení a bezbariérový přístup"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v češtině a matematice – škola má problémy s podporou těchto předmětů",
+      "Žáci s tendencí k absencím – vysoká absence je problém, který škola řeší spíše trestem než podporou",
+      "Zájemci o obor IT – v posledních letech se zhoršuje úspěšnost v maturitě a někteří žáci odcházejí předčasně"
+    ],
+    "plain_czech_summary": "Rakovnická průmyslová škola je moderní zařízení s kvalitním vybavením a silným zaměřením na mezinárodní spolupráci. Výuka je však často pasivní, chybí aktivnější metody. Velkým problémem je vysoká absence žáků a velký podíl těch ohrožených neúspěšností. Obor IT má zhoršující se výsledky v maturitě. Škola je vhodná pro motivované technicky nadané žáky, ale slabší studenti zde mohou mít problémy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – společná část lepší než průměr, profilová část horší; obor IT se zhoršuje, ostatní obory se zlepšují",
+      "key_numbers": [
+        "Hrubá neúspěšnost společné části: mírně nižší než průměr ČR",
+        "Hrubá neúspěšnost profilové části: vyšší než u srovnatelných oborů",
+        "IT 2021/22: 20 % neúspěšnosti, 2022/23: 25 % neúspěšnosti"
+      ],
+      "evidence": "Celkově neprospělo vždy 14 % žáků. Elektrotechnika se zlepšila z 15,4 % na 8,3 %, Strojírenství z 20 % na 0 %."
+    },
+    "absence": {
+      "trend": "Vysoká a problematická, zejména v nižších ročnících a nematuritních oborech",
+      "key_numbers": [
+        "Tříleté obory: průměrně 104 zameškaných hodin na žáka za pololetí",
+        "Čtyřleté obory: průměrně 61 zameškaných hodin na žáka za pololetí",
+        "Nejnižší absence v závěrečných ročnících"
+      ],
+      "evidence": "Absence řešena snížením známky z chování. Chybí efektivní strategie předcházení školní neúspěšnosti."
+    },
+    "support_services": [
+      "Školní metodička prevence a výchovná poradkyně (obě kvalifikované)",
+      "Individuální doučování z českého jazyka pro žáky s odlišným mateřským jazykem",
+      "Kariérové poradenství prostřednictvím projektů se zástupci firem a úřadu práce",
+      "Nově: koordinátor podpory nadaných žáků a dvě kariérové poradkyně"
+    ],
+    "safety_climate": [
+      "Míra úrazovosti srovnatelná se školami stejného typu s klesající tendencí",
+      "Bezpečnost a ochrana zdraví řešeny vnitřními předpisy, žáci jsou prokazatelně poučováni",
+      "Kázeňské problémy se nevyskytují, počet pochval převyšuje počet kázeňských opatření"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s regionálními firmami, některé poskytují stipendia",
+      "Program Erasmus+ pro zahraniční stáže a praxe",
+      "Technický projekt s německými školami (pinballové stoly)",
+      "Volnočasová aktivita s anglickým lektorem (přestavba terénního automobilu)",
+      "Spolupráce se základními školami a vysokými školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, ale některé pasáže jsou složité a úřednické. Hlavní zjištění jsou jasná, ale pro rodiče by bylo užitečné více praktických příkladů.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně škola plánuje řešit vysokou absenci – zmíněno jen trestání, ne prevence",
+      "Chybí informace o tom, jak se liší kvalita výuky mezi jednotlivými učiteli a obory",
+      "Není specifikováno, jaké konkrétní opatření škola přijala na základě inspekce"
+    ]
+  }
+}
+```

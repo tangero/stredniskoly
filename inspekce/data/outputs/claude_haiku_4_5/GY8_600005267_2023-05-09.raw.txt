@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "GY8_600005267_2023-05-09",
+  "school_profile": {
+    "school_type": "Klasické gymnázium (osmiletý, šestiletý a čtyřletý program) se zaměřením na výuku anglického jazyka",
+    "inspection_period": "9. 5. 2023 – 12. 5. 2023 a 15. 5. 2023 – 16. 5. 2023",
+    "school_change_summary": "Od inspekce v 2017 došlo k více než stoprocentnímu nárůstu počtu žáků (nyní 528 žáků v 26 třídách). Škola se transformovala z rodinného typu na středně velké gymnázium. Utlumeno bylo vzdělávání v základní škole. Posíleno vedení a školní poradenské pracoviště."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Škola systematicky rozvíjí jazykové dovednosti žáků s možností mezinárodních certifikovaných zkoušek a zahraničních pobytů.",
+        "evidence": "10–15 % žáků získalo certifikát z mezinárodních jazykových zkoušek, žáci dosahují výborné úrovně v anglickém jazyce."
+      },
+      {
+        "tag": "Kvalitní pedagogické řízení",
+        "detail": "Funkční systém hodnocení kvality výuky prostřednictvím oborových komisí a hospitační činnosti s konkrétními doporučeními.",
+        "evidence": "Efektivní spolupráce učitelů v oborových komisích s pozitivním dopadem na vzdělávací proces a vzájemnou metodickou pomoc."
+      },
+      {
+        "tag": "Úspěšnost absolventů",
+        "detail": "Vysoká úspěšnost při přijetí na vysoké školy humanitního i přírodovědného zaměření.",
+        "evidence": "Maturitní výsledky: téměř všichni žáci uspěli, nejméně pětina s vyznamenáním, neprospěli pouze jednotlivci."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalifikace učitelů",
+        "detail": "26 % učitelů nesplňuje předpoklady odborné nebo pedagogické způsobilosti, přestože si doplňují vzdělání.",
+        "evidence": "Nízký věkový průměr přibližně poloviny vyučujících se odráží v nižší míře jejich kvalifikovanosti a stability."
+      },
+      {
+        "tag": "Formativní hodnocení",
+        "detail": "Učitelé v menší míře uplatňují formativní hodnocení a vedení žáků k sebereflexi.",
+        "evidence": "Jen výjimečně vedli žáci k sebereflexi nebo vzájemnému hodnocení podle předem známých kritérií."
+      },
+      {
+        "tag": "Komunikace se zákonnými zástupci",
+        "detail": "Potřeba otevřenějšího způsobu komunikace a konstruktivního dialogu s rodiči.",
+        "evidence": "Vedení školy se obvykle zabývá řešením závažnějších problémů na základě písemných dokladů, chybí pravidelná zpětná vazba."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá diferenciace výuky anglického jazyka a jaké jsou kritéria pro zařazení do jednotlivých skupin?",
+      "Jaké jsou zkušenosti s individuálními úpravami docházky pro žáky s mimoškolními aktivitami a jak se to projevuje na jejich výsledcích?",
+      "Jak se škola vypořádává s tím, že čtvrtina učitelů nemá plnou kvalifikaci, a jaký je plán na jejich stabilizaci?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazykové vzdělání a mezinárodní certifikáty, kteří chtějí studovat na vysokých školách",
+      "Nadaní žáci, kterým škola nabízí rozšiřující učivo a zapojení do soutěží a olympiád",
+      "Žáci s dobrými výsledky v základní škole, protože přijímací řízení je selektivní (jednotná zkouška z češtiny a matematiky)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – škola nabízí pouze nižší stupeň podpůrných opatření, nikoli individuální vzdělávací plány",
+      "Žáci, kteří potřebují více motivačního hodnocení a pochvaly – inspekce zjistila, že převažují kázeňská opatření",
+      "Žáci s nižší jazykovou úrovní – výuka je zaměřena na pokročilé jazykové dovednosti a certifikáty"
+    ],
+    "plain_czech_summary": "Klasické gymnázium Modřany je úspěšná škola se zaměřením na jazykové vzdělání. Žáci dosahují velmi dobrých výsledků, zejména v angličtině a při přijetí na vysoké školy. Škola má funkční systém řízení a kvalitní pedagogické vedení. Slabší stránkou je, že čtvrtina učitelů nemá plnou kvalifikaci a někteří učitelé málo používají formativní hodnocení. Komunikace s rodiči by mohla být otevřenější. Škola se rychle rozrůstá a hledá stabilitu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně velmi dobrý",
+      "key_numbers": [
+        "Téměř všichni žáci uspěli v maturitní zkoušce",
+        "Nejméně pětina s vyznamenáním",
+        "Neprospěli pouze 1–2 žáci za tři roky"
+      ],
+      "evidence": "Ve sledovaném období posledních tří školních let téměř všichni žáci konající maturitní zkoušku uspěli, z toho nejméně pětina s vyznamenáním."
+    },
+    "absence": {
+      "trend": "Velmi dobrý – výrazné zlepšení",
+      "key_numbers": [
+        "Průměrně okolo 70 hodin zameškaných na žáka za školní rok",
+        "Neomluvená absence dosahuje minimálních hodnot",
+        "Vykazují ji pouze jednotlivci"
+      ],
+      "evidence": "Od poslední inspekční činnosti došlo ke snížení počtu zameškaných hodin, neomluvená absence dosahovala minimálních hodnot."
+    },
+    "support_services": [
+      "Speciální pedagog (bez příslušného studia, doplňuje si vzdělání)",
+      "Výchovný poradce a metodika prevence",
+      "Školní poradenské pracoviště s podporou pro žáky se speciálními vzdělávacími potřebami a žáky s odlišným mateřským jazykem"
+    ],
+    "safety_climate": [
+      "75 % žáků vnímá školní klima pozitivně",
+      "Žádné výrazně negativní hodnocení nebylo zaznamenáno",
+      "Nastavené mechanismy k předcházení a řešení rizikového chování jsou převážně funkční"
+    ],
+    "partnerships_practice": [
+      "Partnerské vztahy se zahraničními školami a jazykovými instituty",
+      "Spolupráce s vysokými školami a vědeckými ústavy",
+      "Zapojení do projektů (Učitel naživo, Dějepis+)",
+      "Pravidelné mezinárodní jazykové pobyty a certifikované zkoušky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná. Obsahuje konkrétní čísla, citace a příklady. Slabší stránky jsou jasně pojmenovány. Některé pasáže jsou však dlouhé a úřednického stylu.",
+    "uncertainty_notes": [
+      "Není jasné, jak dlouho trvá, než si učitelé bez kvalifikace doplní vzdělání – zda měsíce nebo roky",
+      "Není specifikováno, jaké konkrétní vnitřní předpisy jsou zastaralé a jak moc to ovlivňuje chod školy",
+      "Počet žáků s individuálními úpravami docházky (11 %) a jejich dopad na výsledky není dostatečně analyzován"
+    ]
+  }
+}
+```

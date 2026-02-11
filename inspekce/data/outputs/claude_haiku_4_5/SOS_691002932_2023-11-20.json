@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_691002932_2023-11-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:34:30.786958+00:00",
+  "run_finished_utc": "2026-02-09T16:34:58.006134+00:00",
+  "raw_file": "SOS_691002932_2023-11-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_691002932_2023-11-20",
+    "school_profile": {
+      "school_type": "Střední škola hotelnictví a služeb a Vyšší odborná škola",
+      "inspection_period": "20. 11. 2023 − 24. 11. 2023",
+      "school_change_summary": "Od poslední inspekce (2017) došlo k renovaci budov, vytvoření nových odborných učeben, rozšíření projektové činnosti a nárůstu žáků se speciálními vzdělávacími potřebami. Střední škola má vzestupnou tendenci (749 žáků v 30 třídách), vyšší odborná škola zažívá úbytek studentů (43 studentů v 6 skupinách)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Výuka efektivně kombinuje teoretické poznatky se zkušenostmi z reálné praxe, což zvyšuje kvalitu odborné přípravy.",
+          "evidence": "Žáci aplikují znalosti v reálných situacích, škola má smlouvy s mnoha partnery na pracovištích."
+        },
+        {
+          "tag": "Silné partnerství a sítě",
+          "detail": "Dlouhodobá spolupráce s místními, regionálními a celorepublikovými profesními organizacemi podporuje rozvoj kompetencí.",
+          "evidence": "Škola je členem Asociace hotelových škol, CZESHA, Asociace kuchařů a cukrářů ČR a dalších."
+        },
+        {
+          "tag": "Osobnostní rozvoj žáků",
+          "detail": "Partnerský přístup pedagogů podporuje sociální a komunikační kompetence, zapojení do soutěží rozvíjí tvůrčí schopnosti.",
+          "evidence": "Žáci dosahují významných úspěchů v soutěžích, pracovní stáže v zahraničí, bohatá nabídka kroužků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá čtenářská a přírodovědná gramotnost",
+          "detail": "Žáci dosahují slabých a podprůměrných výsledků v testování čtenářské a přírodovědné gramotnosti.",
+          "evidence": "Ve srovnání s ostatními školami stejného typu měli žáci 1. a 2. ročníku podprůměrné výsledky."
+        },
+        {
+          "tag": "Vysoká neúspěšnost v oboru Podnikání",
+          "detail": "Obor dvouletého nástavbového studia vykazuje výrazně horší výsledky, zejména v češtině a angličtině.",
+          "evidence": "Neúspěšnost v češtině 52,2 %, v angličtině 60,9 %, padesátiprocentní úbytek studentů v průběhu prvního ročníku."
+        },
+        {
+          "tag": "Nedostatečný rozvoj kritického myšlení",
+          "detail": "Výuka se zaměřuje především na předávání hotových poznatků, chybí diferenciace a aktivizace žáků.",
+          "evidence": "Žáci pracují s jedním zdrojem informací, skupinová práce je ojediněla, sebehodnocení není dostatečně využíváno."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s problémy v češtině a matematice, které patří k předmětům s nejhorším prospěchem?",
+        "Jaké kroky podniká škola ke zlepšení výsledků v oboru Podnikání, kde je vysoká neúspěšnost?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a práci s různými zdroji informací?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou výuku a gastronomii, kteří se chtějí učit v reálném pracovním prostředí.",
+        "Studenti, kteří oceňují partnerský přístup pedagogů a chcete se rozvíjet sociálně a komunikačně.",
+        "Žáci se zájmem o zahraniční stáže a mezinárodní zkušenosti v hotelnictví a cestovním ruchu."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v češtině a matematice – škola má problémy s jejich podporou v teoretických předmětech.",
+        "Uchazeči o obor Podnikání – tento obor má vysokou neúspěšnost a padesátiprocentní úbytek studentů.",
+        "Žáci, kteří potřebují silný důraz na rozvoj kritického myšlení a samostatné vyhledávání informací."
+      ],
+      "plain_czech_summary": "Škola je silná v praktické výuce a propojení s praxí, má výborné partnerství s firmami a organizacemi. Žáci se rozvíjejí sociálně a získávají kvalitní odborné dovednosti. Slabinou je teoretická výuka – žáci mají podprůměrné výsledky v čtenářské a přírodovědné gramotnosti. Obor Podnikání má vážné problémy s vysokou neúspěšností. Škola by měla více zaměřit pozornost na rozvoj kritického myšlení a individuální podporu žáků v teoretických předmětech."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní s problémy v oboru Podnikání",
+        "key_numbers": [
+          "Cestovní ruch a Hotelnictví: neúspěšnost v češtině 13,4 %, v angličtině 7,4 %",
+          "Obor Podnikání: neúspěšnost v češtině 52,2 %, v angličtině 60,9 %",
+          "Jednotná závěrečná zkouška: průměrný prospěch 2,4, neprospěli 2 žáci"
+        ],
+        "evidence": "Výsledky maturitní zkoušky ve školním roce 2022/2023 ukazují výrazný rozdíl mezi obory."
+      },
+      "absence": {
+        "trend": "Zvýšená absence je rizikem pro výsledky",
+        "key_numbers": [
+          "Vysoký počet žáků s vysokým počtem zameškaných hodin je identifikován jako riziko",
+          "Neomluvená absence řešena kázeňskými opatřeními a pohovory se zákonnými zástupci"
+        ],
+        "evidence": "Školní poradenské pracoviště se dlouhodobě zabývá řešením zvýšené absence, postupy jsou stanoveny ve školním řádu."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště v optimálním složení se dvěma výchovnými poradkyněmi",
+        "Školní psycholožka poskytující metodickou podporu třídním učitelům a řešící individuální problémy",
+        "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+        "Motivační stipendia pro obory Řezník-uzenář, Výrobce potravin a Pekař",
+        "Domov mládeže s 110 ubytovanými žáky, volnočasové aktivity a prevence sociálně patologických jevů"
+      ],
+      "safety_climate": [
+        "Účinně nastavený systém bezpečnosti a ochrany zdraví žáků",
+        "Pravidelné informace o bezpečnostních rizicích ve škole i mimo ni",
+        "Vhodné osobní ochranné pracovní prostředky při praktickém vyučování",
+        "Důsledné dodržování bezpečnosti a ochrany zdraví při práci žáků",
+        "Efektivní zapojení ředitele do komunikace se žáky a zákonnými zástupci napomáhá snižování problémového chování"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s četnými místními, regionálními a celorepublikovými profesními a sociálními organizacemi",
+        "Členství v Asociaci hotelových škol, CZESHA, Asociaci kuchařů a cukrářů ČR, Asociaci učňovských zařízení a dalších",
+        "Praktické vyučování na školních pracovištích i u smluvních partnerů v reálném pracovním prostředí",
+        "Pracovní stáže v zahraničí pro žáky gastronomických oborů",
+        "Odborná školení s gastronomickým zaměřením (barmanský, baristický kurz)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní čísla, citace a jasné oddělení silných a slabých stránek. Některé pasáže jsou však poměrně dlouhé a obsahují úřednickou terminologii, která může být pro laické rodiče obtížnější.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní kroky škola již podnikla k řešení vysoké neúspěšnosti v oboru Podnikání.",
+        "Není jasné, jak efektivní je doučování – chybí údaje o počtu žáků, kterým je poskytováno, a o jeho výsledcích.",
+        "Zpráva zmiňuje, že realizace opatření doporučených poradenskými zařízeními závisí na přístupu jednotlivých pedagogů, ale nespecifikuje, jak se to řeší na úrovni vedení."
+      ]
+    }
+  }
+}

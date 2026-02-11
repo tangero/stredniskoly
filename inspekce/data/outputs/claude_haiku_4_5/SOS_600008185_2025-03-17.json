@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600008185_2025-03-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:41:34.678759+00:00",
+  "run_finished_utc": "2026-02-09T13:41:57.563000+00:00",
+  "raw_file": "SOS_600008185_2025-03-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600008185_2025-03-17",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola stavební s obory Stavebnictví a Geodézie a katastr nemovitostí",
+      "inspection_period": "17. března až 19. března 2025",
+      "school_change_summary": "Škola prochází postupnou generační obměnou pedagogů, posílila poradenský tým o dvě psycholožky, přesunula praktickou výuku do vlastního areálu a pokračuje v modernizaci materiálně-technického vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola intenzivně spolupracuje s odbornými partnery, kteří se podílejí na výuce a exkurzích, čímž žáci získávají nejnovější poznatky z oboru.",
+          "evidence": "Zapojení odborníků z praxe do procesu výuky, realizace přednášek a exkurzí."
+        },
+        {
+          "tag": "Mezinárodní zkušenosti",
+          "detail": "Žáci se účastní dlouhodobých pracovních stáží v zahraničí a projektů Erasmus+ zaměřených na rozvoj jazykových a sociálních kompetencí.",
+          "evidence": "Stáže ve Slovinsku, Lotyšsku, Švédsku, Irsku a Polsku; mobilita pedagogů a žáků v EU."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují vynikajících výsledků v odborně zaměřených soutěžích na republikové i mezinárodní úrovni.",
+          "evidence": "Opakované úspěchy, aktuálně 2. místo v mezinárodní soutěži Práce s grafickými programy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní přístup v teoretické výuce",
+          "detail": "Převažuje frontální výuka s výkladem, kde žáci často zůstávají pasivními příjemci informací bez aktivního zapojení.",
+          "evidence": "Hospitované hodiny ukazují převahu frontální výuky, méně kooperativních činností a řešení problémových úloh."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Chybí diferenciace výuky, zejména v předmětech všeobecně vzdělávacích, která by umožnila využít specifické zájmy a potenciál jednotlivých žáků.",
+          "evidence": "Diferencované zadávání úkolů bylo zaznamenáno výjimečně, podpora žáků se speciálními potřebami byla vzácná."
+        },
+        {
+          "tag": "Podmínky pro praktickou výuku",
+          "detail": "Praktická výuka probíhá v prostorách před rekonstrukcí, které nejsou optimální pro kvalitní vzdělávání.",
+          "evidence": "Přesun z pronajatých prostor do areálu školy zjednodušil organizaci, ale prostory čekají na rekonstrukci."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různými zájmy a schopnostmi?",
+        "Jaké jsou plány na rekonstrukci prostor pro praktické vyučování a kdy by měly být hotovy?",
+        "Jak se žáci mohou přihlásit na pracovní stáže v zahraničí a jaké jsou podmínky účasti?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o stavebnictví, geodézii a praktickou práci s podporou kvalitních odborníků z praxe",
+        "Motivovaní studenti, kteří chtějí získat mezinárodní zkušenosti a jazykové dovednosti",
+        "Talentovaní žáci zaměření na odborné soutěže a projekty s ambicí dosahovat výborných výsledků"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující interaktivní a skupinové formy výuky, protože převažuje frontální výuka s výkladem",
+        "Studenti se speciálními vzdělávacími potřebami, kterým chybí dostatečná individuální podpora a diferenciace",
+        "Žáci, kteří potřebují více času na praktické cvičení v kvalitních podmínkách, vzhledem k probíhající rekonstrukci"
+      ],
+      "plain_czech_summary": "Střední průmyslová škola stavební v Českých Budějovicích je kvalitní školou se silným zaměřením na praxi. Žáci se učí od odborníků z oboru, cestují do zahraničí a dosahují úspěchů v soutěžích. Škola má však rezervy v tom, jak učí teoretické předměty – často převažuje pasivní poslouchání místo aktivního zapojení žáků. Chybí také individuální přístup k různým typům studentů. Praktické prostory se právě rekonstruují."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně dobré výsledky s vysokou úspěšností",
+        "key_numbers": [
+          "Stavebnictví 2023/2024: 1 % neúspěšnost ve společné části",
+          "Geodézie a katastr nemovitostí: 100 % úspěšnost",
+          "Stabilně vysoký počet žáků hlásících se k maturitě z matematiky"
+        ],
+        "evidence": "Ve školním roce 2023/2024 byla čistá neúspěšnost u stavebnictví 1 %, u geodézie všichni žáci uspěli."
+      },
+      "absence": {
+        "trend": "Nízká úroveň zameškaných hodin",
+        "key_numbers": [
+          "Počet zameškaných hodin je udržován na nízké úrovni",
+          "Odchody ze vzdělávání jsou ojedinělé",
+          "Výskyt rizikového chování je minimální"
+        ],
+        "evidence": "Vhodně nastavená pravidla pro hodnocení absence a jejich důsledné uplatňování; výchovná opatření převážně pochvaly."
+      },
+      "support_services": [
+        "Školní poradenský tým: výchovná poradkyně, školní metodička prevence a dvě školní psycholožky",
+        "Individuální konzultace a doučování pro žáky ohrožené školním neúspěchem",
+        "Vstupní testy z matematiky a českého jazyka pro 1. ročníky k nastavení vhodných strategií"
+      ],
+      "safety_climate": [
+        "Respektující atmosféra v hodinách s důrazem na pozitivní vztahy mezi žáky",
+        "Adaptační kurzy a projekty zaměřené na prevenci rizikového chování",
+        "Nově vytvořený žákovský parlament přispívající k příznivému školnímu klimatu"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s odbornými partnery z praxe na přednáškách a exkurzích",
+        "Projekt Erasmus+ s mobilitou pedagogů a žáků v zemích EU",
+        "Fakultní škola Přírodovědecké fakulty Jihočeské univerzity; spolupráce s českými a slovenskými školami stejného zaměření"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s odkazem na konkrétní pozorování. Chybí však více číselných údajů o absenci a některé údaje jsou kvalitativní.",
+      "uncertainty_notes": [
+        "Přesné číslo zameškaných hodin není uvedeno, pouze konstatování 'nízké úrovně'",
+        "Počet žáků využívajících doučování není specifikován, pouze 'různá míra'",
+        "Konkrétní procento žáků se speciálními vzdělávacími potřebami není uvedeno"
+      ]
+    }
+  }
+}

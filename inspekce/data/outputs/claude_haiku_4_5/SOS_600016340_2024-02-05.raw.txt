@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600016340_2024-02-05",
+  "school_profile": {
+    "school_type": "Střední škola - Obchodní akademie, Veřejnosprávní činnost, Informační technologie (4leté obory s maturitou)",
+    "inspection_period": "5. února 2024 až 8. února 2024",
+    "school_change_summary": "Od inspekce v roce 2018 škola navýšila počet žáků a tříd z osmi na deset tříd. Obory jsou vyučovány podle inovovaných školních vzdělávacích programů od září 2022. Postupně se zlepšily materiální podmínky pro vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Výuka angličtiny je posílena rodilými mluvčími s vysokou aktivizací žáků a 100% úspěšností v mezinárodních certifikačních zkouškách.",
+        "evidence": "\"Výuka anglického jazyka je posílena rodilými mluvčími\" a \"z přihlášených žáků za poslední tři školní roky byla úspěšnost stoprocentní.\""
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Dlouhodobě dobré výsledky maturitní zkoušky s hrubou úspěšností kolem 90 procent.",
+        "evidence": "\"Dlouhodobě vykazuje škola dobré výsledky\" a \"se pohybovala tzv. hrubá úspěšnost u maturitní zkoušky cca 90 %.\""
+      },
+      {
+        "tag": "Praktická příprava",
+        "detail": "Kvalitní odborná praxe ve firmách s reálnou prací pro firmy a workshopy s odborníky z praxe.",
+        "evidence": "\"Žáci jsou kromě cvičných úloh zapojováni do reálné práce pro firmy\" a \"workshopů s odborníky z praxe.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Převažuje frontální výuka s dominantní rolí učitele, málo aktivizujících metod a kritického myšlení.",
+        "evidence": "\"Role učitelů byla ve většině sledované výuky dominantní a jejich aktivita převažovala nad aktivitami žáků.\""
+      },
+      {
+        "tag": "Slabá čtenářská gramotnost",
+        "detail": "V externím testování ČŠI 2022/2023 dosáhli žáci slabých výsledků v čtenářské gramotnosti.",
+        "evidence": "\"V externím testování České školní inspekce ve školním roce 2022/2023 zaměřeném na moderní dějiny a čtenářskou gramotnost dosáhli žáci slabých výsledků.\""
+      },
+      {
+        "tag": "Nedostatečná individualizace",
+        "detail": "Nízká míra diferenciace úloh a individuálního přístupu podle různé úrovně znalostí žáků.",
+        "evidence": "\"Nízká míra diferenciace zadávaných úloh a individualizace výuky vzhledem k různé úrovni znalostí a dovedností žáků.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s žáky, kteří mají problémy s čtenářskou gramotností? Jaké má připravené podpůrné programy?",
+      "Jaké jsou konkrétní plány na zavedení více interaktivních a aktivizujících metod výuky v jednotlivých předmětech?",
+      "Jak škola zajišťuje individuální přístup k žákům s různými schopnostmi a jak se liší výuka pro nadané a slabší žáky?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazykové vzdělávání a mezinárodní certifikáty - škola má silný program angličtiny s rodilými mluvčími",
+      "Studenti orientovaní na praktickou přípravu - kvalitní odborná praxe ve firmách a spolupráce s externími odborníky",
+      "Žáci s ambicí na vysokou maturitní úspěšnost - dlouhodobě dosahuje kolem 90 procent úspěšnosti"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní a interaktivní výuku - inspekce zjistila převahu frontální výuky s dominantní rolí učitele",
+      "Studenti se slabší čtenářskou gramotností - škola má problémy s výsledky v tomto oboru a teprve implementuje nápravná opatření",
+      "Žáci vyžadující individuální přístup - škola má nízkou míru diferenciace a individualizace výuky"
+    ],
+    "plain_czech_summary": "Třinecká obchodní akademie je soukromá střední škola se 220 žáky v deseti třídách. Její silné stránky jsou kvalitní jazykové vzdělávání s rodilými mluvčími, dobrá maturitní úspěšnost (90 %) a praktická příprava ve firmách. Slabší je tradiční přístup k výuce - převažuje frontální výuka bez dostatečné aktivizace žáků. Inspekce také upozornila na slabé výsledky v čtenářské gramotnosti a nedostatečnou individualizaci. Škola má plán na zlepšení, ale změny budou trvat čas."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně dobrý",
+      "key_numbers": [
+        "Hrubá úspěšnost cca 90 % v zkušebních obdobích 2022 a 2023",
+        "100% úspěšnost žáků v mezinárodních certifikačních zkouškách z angličtiny za poslední tři roky"
+      ],
+      "evidence": "\"se pohybovala tzv. hrubá úspěšnost u maturitní zkoušky cca 90 %\" a \"z přihlášených žáků za poslední tři školní roky byla úspěšnost stoprocentní.\""
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+    },
+    "support_services": [
+      "Výchovné poradenství zajišťované jednou osobou se specializačním studiem",
+      "Individuální konzultace a skupinové doučování pro žáky ohrožené neúspěšností",
+      "Asistentky pedagoga pro žáky se speciálními vzdělávacími potřebami (15 žáků)",
+      "Individuální vzdělávací plány pro tři žáky",
+      "Studentská rada a schránka důvěry pro řešení negativních projevů"
+    ],
+    "safety_climate": [
+      "Bezpečné prostředí v budově školy",
+      "Vstup do školy zabezpečen proti vniknutí cizích osob",
+      "Žáci prokazatelně poučováni o bezpečnosti a ochraně zdraví na počátku roku a před akcemi mimo školu",
+      "Opatření na snížení úrazovosti v tělesné výchově - rozcvičování, strečink, kruhový trénink, posilování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s četnými externími organizacemi a institucemi",
+      "Odborná praxe zajištěna ve smluvních pracovištích orientovaných podle oboru",
+      "Workshopy s odborníky z praxe podporující rozvoj odborností žáků",
+      "Projekt Erasmus+ s vzdělávacími a jazykovými mobilitami žáků a učitelů",
+      "Pedagogové pravidelně vyjíždějí do zahraničí na jazykově-metodické kurzy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Zjištění jsou konkrétní a opřená o pozorování. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna - není jasné, zda je problém nebo ne",
+      "Počet žáků se speciálními potřebami (15) není kontextualizován - není jasné, zda je to vysoké či nízké číslo",
+      "Konkrétní obsah nápravných opatření na čtenářskou gramotnost není detailně popsán"
+    ]
+  }
+}
+```

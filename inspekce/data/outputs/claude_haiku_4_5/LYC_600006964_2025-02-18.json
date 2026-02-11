@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600006964_2025-02-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:44:30.182904+00:00",
+  "run_finished_utc": "2026-02-09T13:44:57.913094+00:00",
+  "raw_file": "LYC_600006964_2025-02-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600006964_2025-02-18",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola stavební a Obchodní akademie (SPŠ stavební a OA)",
+      "inspection_period": "18.–20. února 2025",
+      "school_change_summary": "Od inspekce v roce 2019 se výrazně zvýšil počet žáků (nyní 563 ve 20 třídách, 78% naplněnost). Zlepšily se materiální podmínky, zejména v digitálních technologiích. Počet pedagogů vzrostl, personální obsazení se stabilizovalo. Evaluační činnost se zlepšila, klasifikační kritéria jsou přehlednější."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "V oborech Technické a Ekonomické lyceum dosahuje škola lepších výsledků než celorepublikový průměr, v lyceích získá maturitu přes 95 % žáků.",
+          "evidence": "Hrubá neúspěšnost ve společné části MZ nižší než republikový průměr v posledních pěti letech."
+        },
+        {
+          "tag": "Moderní vybavení a technologie",
+          "detail": "Škola investovala do virtuální učebny, 3D brýlí, nových počítačů a odpočinkových zón pro žáky.",
+          "evidence": "Materiální podmínky se výrazně zlepšily především v oblasti digitálních technologií."
+        },
+        {
+          "tag": "Nízká absence a dobrá disciplína",
+          "detail": "Neomluvená absence je velmi nízká (0,14 hodiny na žáka), kázeňských opatření je málo, pochval více.",
+          "evidence": "Neomluvená absence se snížila z 0,27 na 0,14 hodiny na žáka, počet pochval výrazně převyšuje kázeňská opatření."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výuka matematiky",
+          "detail": "Přibližně pětina žáků má v matematice slabý nebo nedostatečný prospěch.",
+          "evidence": "Ve skupině všeobecně vzdělávacích předmětů vykazují žáci slabý prospěch v matematice (cca pětina žáků)."
+        },
+        {
+          "tag": "Málo aktivního zapojení žáků",
+          "detail": "Ve třech čtvrtinách výuky chybí kooperativní formy, sebehodnocení a vrstevnické hodnocení, žáci nejsou vedeni k dialogu.",
+          "evidence": "Ve třech čtvrtinách výuky nebyly dostatečně zastoupeny kooperativní formy, sebehodnocení se vyskytovalo v nedostatečné míře."
+        },
+        {
+          "tag": "Nižší úspěšnost v oboru Stavebnictví",
+          "detail": "V tomto oboru je vyšší podíl neprospívajících (cca 6 %) a nižší úspěšnost u maturity.",
+          "evidence": "V oboru Stavebnictví cca 6 % neprospívajících, hrubá neúspěšnost u MZ mírně vyšší než celorepublikový průměr."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší slabší výsledky v matematice a jak podporuje žáky, kteří mají potíže?",
+        "Jaké konkrétní kroky podnikne škola, aby více zapojila žáky do aktivní výuky a diskusí?",
+        "Jak se liší příprava v jednotlivých oborech a jaké jsou reálné vyhlídky absolventů Stavebnictví na trhu práce?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o ekonomii, techniku nebo stavebnictví, kteří chtějí moderní vybavení a kvalitní přípravu na maturitu.",
+        "Studenti, kterým vyhovuje strukturovaný přístup s důrazem na praktické dovednosti a odborné znalosti.",
+        "Žáci, kteří oceňují nízkou absenci a dobrou disciplínu, stabilní prostředí bez kázeňských problémů."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími předpoklady v matematice by měli počítat s vyšší náročností a potřebou vlastního úsilí.",
+        "Studenti, kteří preferují aktivní, diskusní a kooperativní formu výuky, mohou být zklamáni převážně frontální výukou.",
+        "Uchazeči o obor Stavebnictví by měli zvážit nižší úspěšnost v tomto oboru a vyšší procento neprospívajících."
+      ],
+      "plain_czech_summary": "SPŠ stavební a Obchodní akademie v Kladně je stabilní střední školou s dobrými výsledky, zejména v lyceích. Škola se modernizuje, má nové technologie a nízkou absenci. Silnou stránkou je příprava na maturitu – v Ekonomickém a Technickém lyceu dosahuje lepších výsledků než průměr v republice. Slabší je matematika a aktivní zapojení žáků do výuky. Výuka je často frontální, chybí diskuse a sebehodnocení. Obor Stavebnictví má nižší úspěšnost. Škola je vhodná pro motivované žáky, kteří si poradí s méně interaktivní výukou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – výborné výsledky v lyceích, lepší než celorepublikový průměr",
+        "key_numbers": [
+          "Ekonomické a Technické lyceum: hrubá neúspěšnost nižší než republikový průměr v posledních 5 letech",
+          "Lycea: přes 95 % žáků získá maturitu v řádné době",
+          "Stavebnictví: hrubá neúspěšnost mírně vyšší než celorepublikový průměr ve 4 z 5 let"
+        ],
+        "evidence": "V období 2020–2024 byla hrubá neúspěšnost u Ekonomického a Technického lycea vždy nižší než republikový průměr. U Stavebnictví důvodem nekonání MZ pro neprospěch na konci maturitního ročníku."
+      },
+      "absence": {
+        "trend": "Pozitivní – neomluvená absence velmi nízká a klesající",
+        "key_numbers": [
+          "Celková absence 2023/2024: cca 122 hodin na žáka",
+          "Neomluvená absence 2023/2024: 0,14 hodiny na žáka (pokles z 0,27)",
+          "Neomluvená absence se u většiny žáků neopakuje v druhém pololetí"
+        ],
+        "evidence": "Neomluvená absence je nízká a meziročně se snížila. Vykazují ji jen jednotlivci, zpravidla nízký počet hodin. U většiny žáků je přechodnou záležitostí."
+      },
+      "support_services": [
+        "Tři kariéroví poradci (dva zároveň výchovní poradci, jeden školní metodik prevence)",
+        "Poradenství a konzultace pro žáky, zákonné zástupce a pedagogy",
+        "Správná identifikace rizikového chování s důrazem na prevenci",
+        "Domov mládeže s individuální podporou a zájmovými činnostmi (kulturní, rukodělné, sportovní)"
+      ],
+      "safety_climate": [
+        "Bezpečnost a ochrana zdraví: patřičná pozornost, stanovená pravidla a postupy, žáci jsou prokazatelně informováni",
+        "Vstup do budovy zabezpečen",
+        "Nízká míra úrazovosti, příčiny úrazů se vyhodnocují a přijímají se účinná opatření",
+        "Pozitivní klima: partnerský přístup vyučujících k žákům, ve všech hospitovaných hodinách nebyly kázeňské problémy"
+      ],
+      "partnerships_practice": [
+        "Aktivní účast v řadě projektů, které účinně podporují realizaci ŠVP",
+        "Zahraniční pobyty přispívající k rozvoji jazykových a sociálních kompetencí",
+        "Smlouvy o zajištění praktického vyučování",
+        "Návštěvy staveb propojující výuku s reálným průběhem stavebních prací"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Klíčové informace pro rodiče jsou jasně odděleny v sekcích o silných a slabých stránkách.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní projekty škola realizuje – pouze uvádí 'řadu projektů'.",
+        "Není jasné, jak dlouho trvá příprava na odstranění nedostatků (30 dní od marného uplynutí lhůty pro připomínky).",
+        "Chybí informace o počtu žáků v jednotlivých oborech, takže není zřejmé, jak reprezentativní jsou uvedené procenta."
+      ]
+    }
+  }
+}

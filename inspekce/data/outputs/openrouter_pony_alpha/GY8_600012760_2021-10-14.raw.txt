@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600012760_2021-10-14",
+  "school_profile": {
+    "school_type": "Gymnázium a Letecká střední odborná škola",
+    "inspection_period": "14. až 18. 10. 2021",
+    "school_change_summary": "Škola nedávno otevřela domov mládeže a nový obor Technické lyceum se zaměřením na letectví, čímž výrazně rozšířila své možnosti."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Atmosféra",
+        "detail": "Ve škole panuje přátelská a podporující atmosféra, která vzniká díku dobré komunikaci.",
+        "evidence": "Úroveň vzájemné komunikace [...] přispívá k vytváření příznivé atmosféry."
+      },
+      {
+        "tag": "Výsledky",
+        "detail": "Žáci dosahují dobrých výsledků u maturity a jsou úspěšní při přijímacích řízeních na VŠ.",
+        "evidence": "Ve společné i profilové části maturitní zkoušky dosahují žáci dobrých výsledků."
+      },
+      {
+        "tag": "Zázemí",
+        "detail": "Škola nabídka zajímavé kurzy (plachtařský výcvik) a má nově zrekonstruované prostory.",
+        "evidence": "Škola [...] zlepšila podmínky [...] vybudováním domova mládeže, laboratoří chemie a fyziky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vyučovací metody",
+        "detail": "Ve výuce chybí individuální přístup k nadaným žákům i těm slabším.",
+        "evidence": "Při výuce nebyla patrná diferenciace práce se žáky."
+      },
+      {
+        "tag": "Hodnocení cílů",
+        "detail": "Hodiny často postrádají závěrečné shrnutí, takže není jasné, zda žáci látce porozuměli.",
+        "evidence": "Ve struktuře většiny sledovaných hodin chybělo [...] ověřování naplnění stanovených cílů."
+      },
+      {
+        "tag": "Vedení školy",
+        "detail": "Kontrola výuky vedením školy není dostatečně účinná a plán rozvoje je zastaralý.",
+        "evidence": "Kontrolní činnost vedení školy [...] je méně účelná. Plán rozvoje [...] nereflektuje vývoj posledních let."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé ve výuce pracují s žáky, kteří mají rozdílnou úroveň znalostí?",
+      "Jakým způsobem učitelé na konci hodin ověřují, že žáci pochopili probírané učivo?",
+      "Jaké konkrétní aktivity nabízí nový domov mládeže pro studenty z vzdálenějších míst?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří hledají přátelské prostředí a podporu při studiu.",
+      "Pro zájemce o netradiční sportovní a letecké kurzy v rámci výuky.",
+      "Pro žáky, kteří plánují pokračovat na vysoké škole."
+    ],
+    "who_should_be_cautious": [
+      "Pro vysoce nadané studenty, kteří mohou vyžadovat individuální přístup a náročnější práci.",
+      "Pro rodiče, kteří očekávají moderní a efektivní systém kontroly kvality výuky.",
+      "Pro žáky, kteří potřebují pravidelnou a systematickou zpětnou vazbu na konci hodin."
+    ],
+    "plain_czech_summary": "Inspekce potvrdila, že se jedná o školu s dobrou atmosférou, kde si žáci a učitelé rozumí a maturitní výsledky jsou nadprůměrné. Škola nabízí zajímavé vybavení a kurzy (letecké), včetně nového domova mládeže. Slabinou je tradiční styl výuky, který nezohledňuje individuální potřeby nadaných ani slabších žáků. Často také chybí efektivní zpětná vazba přímo v hodinách. Vedení by mělo zlepšit kontrolu kvality výuky a aktualizovat svou vizi rozvoje."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní a úspěšná",
+      "key_numbers": [
+        "240 žáků celkem",
+        "11 tříd",
+        "4 žáci se SVP"
+      ],
+      "evidence": "Ve společné i profilové části maturitní zkoušky dosahují žáci dobrých výsledků."
+    },
+    "absence": {
+      "trend": "Bez výraznějších problémů",
+      "key_numbers": [
+        "Minimální počet žáků potřebujících podporu"
+      ],
+      "evidence": "Škola eviduje jen minimální počet žáků, kteří potřebují podporu v důsledku negativních dopadů distanční výuky."
+    },
+    "support_services": [
+      "Doučování z matematiky a českého jazyka",
+      "Třídnické hodiny zaměřené na vztahy",
+      "Nový domov mládeže"
+    ],
+    "safety_climate": [
+      "Program prevence šikany a kyberšikany",
+      "Příznivá atmosféra pro vzdělávání",
+      "Podpora zdravého životního stylu"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s městským úřadem a firmami",
+      "Účast na akcích Společnosti česko-německého porozumění",
+      "Spolupráce s místními základními školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, jasně odděluje popisnou a hodnotící část a používá přímou terminologii.",
+    "uncertainty_notes": [
+      "Nejsou uvedena konkrétní číselná data o úspěšnosti u maturity (procenta).",
+      "Chybí detailnější popis rozsahu aktivit nového domova mládeže.",
+      "Není specifikováno, o jaké 'další finanční prostředky' ze zdrojů kraje přesně jde."
+    ]
+  }
+}
+``

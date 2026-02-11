@@ -1,0 +1,117 @@
+{
+  "report_id": "LYC_600170136_2025-02-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:02:54.488565+00:00",
+  "run_finished_utc": "2026-02-09T16:03:18.725717+00:00",
+  "raw_file": "LYC_600170136_2025-02-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600170136_2025-02-03",
+    "school_profile": {
+      "school_type": "Střední odborná škola stavební a Střední odborné učiliště stavební",
+      "inspection_period": "3. až 7. února 2025",
+      "school_change_summary": "Škola rozšířila nabídku oborů (nové zaměření design interiéru v Stavebnictví), zvýšila počet žáků na 831 (96 % kapacity), zvýšila podíl kvalifikovaných pedagogů a zlepšila materiální podmínky. Všechna vzdělávání probíhá pouze v denní formě."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturit",
+          "detail": "Žáci dosahují nadprůměrných výsledků, obor Stavebnictví dlouhodobě překonává celostátní průměr.",
+          "evidence": "V oboru Mechanik instalatérských zařízení všichni žáci prospěli, v Stavebnictví hrubá neúspěšnost klesla z 10,6 % na 2,1 %."
+        },
+        {
+          "tag": "Kvalitní praktické vyučování",
+          "detail": "Žáci pracují s moderním vybavením, kvalitními nástroji a získávají dovednosti v reálném prostředí.",
+          "evidence": "Praktické vyučování je dobře připraveno, žáci pracují bez prostojů s účinnou zpětnou vazbou a individuální pomocí."
+        },
+        {
+          "tag": "Vysoká uplatnitelnost absolventů",
+          "detail": "Absolventi jsou po nich na trhu práce velmi poptáváni a úspěšně se uplatňují.",
+          "evidence": "Škola získává zpětnou vazbu od smluvních partnerů o úspěšném uplatnění absolventů v praxi."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Absence v maturitních oborech přesahuje 140–160 hodin ročně, v učňovských oborech průměrně 170 hodin.",
+          "evidence": "V Stavebnictví absence přesáhla 160 hodin na žáka za školní rok, v učňovských oborech 170 hodin."
+        },
+        {
+          "tag": "Problémy s jazyky a matematikou",
+          "detail": "Žáci mají obtíže zejména s anglickým a českým jazykem, matematikou a některými odbornými předměty.",
+          "evidence": "Analýza prospěchu ukazuje, že problémy činí zejména matematika a jazykové předměty."
+        },
+        {
+          "tag": "Málo aktivizující výuka",
+          "detail": "Učitelé málo vedou žáky k práci s informačními zdroji a rozvoji kritického myšlení, chybí kooperativní formy.",
+          "evidence": "Ve sledované výuce chyběl diferencovaný přístup, žáci měli málo příležitostí k dialogu a aktivnímu zapojení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší vysokou absenci žáků a jaké má preventivní opatření?",
+        "Jakou podporu poskytuje žákům s problémy v matematice a jazycích?",
+        "Jak se škola připravuje na změny v metodách výuky, aby více aktivizovala žáky?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla, kteří chtějí kvalitní odborné vzdělání s vysokou uplatnitelností",
+        "Studenti, kteří si chtějí vybudovat portfolio a získat zkušenosti v reálném pracovním prostředí",
+        "Žáci se zájmem o stavebnictví, instalatérství, elektrikářství a další technické obory"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s nižší motivací a tendencí k absenci – absence je zde výrazně vyšší než průměr",
+        "Studenti se slabšími jazykovými dovednostmi – výuka angličtiny a češtiny není dostatečně interaktivní",
+        "Žáci, kteří potřebují více individuálního přístupu – diferenciace v hodinách je minimální"
+      ],
+      "plain_czech_summary": "Stavební škola v Kolíně je kvalitní odborné učiliště se silným zaměřením na praktické dovednosti. Absolventi jsou na trhu práce velmi žádaní a výsledky u maturit jsou nadprůměrné. Škola má moderní vybavení a kvalitní pedagogy. Hlavní problémy jsou vysoká absence žáků, slabší výsledky v jazycích a matematice a málo aktivizující výuka. Škola je vhodná pro prakticky zaměřené žáky, kteří chtějí získat kvalifikaci v technických oborech."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "Stavebnictví: hrubá neúspěšnost klesla z 10,6 % na 2,1 %",
+          "Mechanik instalatérských zařízení: všichni žáci prospěli v roce 2023/2024",
+          "Podnikání: hrubá neúspěšnost ve společné části klesla z 13,0 % na 6,9 %"
+        ],
+        "evidence": "Výrazné zlepšení nastalo v oboru Mechanik, kde všichni žáci konající MZ prospěli. V Stavebnictví se neúspěšnost snížila z 10,6 % na 2,1 %."
+      },
+      "absence": {
+        "trend": "Nárůst absence",
+        "key_numbers": [
+          "Stavebnictví: 160+ hodin na žáka za školní rok",
+          "Mechanik instalatérských zařízení: 140+ hodin na žáka",
+          "Učňovské obory: průměrně 170 hodin na žáka v roce 2023/2024"
+        ],
+        "evidence": "Ve sledovaném období školních let 2022/2023 a 2023/2024 došlo k nárůstu absence. Neomluvená část absence je velmi nízká."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovným poradcem, metodikem prevence a kariérovým poradcem",
+        "Systém doučování a individuálních konzultací pro žáky ohrožené neúspěchem",
+        "Speciální podpora pro žáky se speciálními vzdělávacími potřebami (72 žáků) a žáky s odlišným mateřským jazykem (49 žáků)",
+        "Mentoring nových učitelů s inovativním souborem postupů"
+      ],
+      "safety_climate": [
+        "Prostory a vybavení jsou vyhodnocovány z hlediska bezpečnosti",
+        "Míra úrazovosti žáků se daří snižovat",
+        "Žáci dodržují zásady bezpečnosti a ochrany zdraví při praktickém vyučování",
+        "Vyšší výskyt projevů rizikového chování u žáků učňovských oborů je operativně řešen"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobé účinné zapojení do evropské mobility",
+        "Smlouvy o zajištění praktického vyučování se smluvními partnery",
+        "Spolupráce s profesními organizacemi a budoucími zaměstnavateli",
+        "Besedy s Úřadem práce a přednášky certifikovaných odborníků",
+        "Zpětná vazba od partnerů o uplatnění absolventů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní data, ale místy je psána úředním jazykem. Hlavní informace pro rodiče jsou jasné, ale vyžadují určitou interpretaci.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní metody škola plánuje zavést pro zvýšení aktivizace žáků",
+        "Není jasné, zda vysoká absence souvisí s kvalitou výuky nebo s jinými faktory",
+        "Chybí informace o tom, jak se liší kvalita výuky mezi jednotlivými učiteli"
+      ]
+    }
+  }
+}

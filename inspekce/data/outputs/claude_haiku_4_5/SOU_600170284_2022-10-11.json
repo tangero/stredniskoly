@@ -1,0 +1,49 @@
+{
+  "report_id": "SOU_600170284_2022-10-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:59:28.568163+00:00",
+  "run_finished_utc": "2026-02-09T16:59:33.272721+00:00",
+  "raw_file": "SOU_600170284_2022-10-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600170284_2022-10-11",
+    "school_profile": {
+      "school_type": "SOŠ a SOU (střední odborná škola a střední odborné učiliště)",
+      "inspection_period": "11. až 13. října 2022",
+      "school_change_summary": "Není k dispozici - dokument obsahuje pouze konverzní doložku bez obsahu inspekční zprávy"
+    },
+    "for_parents": {
+      "strengths": [],
+      "risks": [],
+      "questions_for_open_day": [],
+      "who_school_fits": [],
+      "who_should_be_cautious": [],
+      "plain_czech_summary": "Dodaný dokument je pouze konverzní doložkou potvrzující převod listinné podoby do elektronické formy. Neobsahuje faktický obsah inspekční zprávy, a proto nelze poskytnout analýzu silných stránek, rizik, výsledků nebo doporučení pro rodiče."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Není k dispozici",
+        "key_numbers": [],
+        "evidence": "Dokument neobsahuje data o maturitě"
+      },
+      "absence": {
+        "trend": "Není k dispozici",
+        "key_numbers": [],
+        "evidence": "Dokument neobsahuje data o absenci"
+      },
+      "support_services": [],
+      "safety_climate": [],
+      "partnerships_practice": []
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 1,
+      "czech_clarity_reason": "Dokument je pouze administrativní doložkou bez obsahu inspekční zprávy. Chybí všechny relevantní informace pro analýzu.",
+      "uncertainty_notes": [
+        "Dodaný text neobsahuje faktický obsah inspekční zprávy",
+        "Nelze ověřit kvalitu vzdělávání na škole",
+        "Chybí všechny údaje potřebné pro objektivní posouzení"
+      ]
+    }
+  }
+}

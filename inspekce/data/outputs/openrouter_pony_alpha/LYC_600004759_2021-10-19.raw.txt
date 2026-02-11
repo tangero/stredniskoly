@@ -1,0 +1,99 @@
+{
+  "report_id": "LYC_600004759_2021-10-19",
+  "school_profile": {
+    "school_type": "Střední odborná škola s ekonomickým zaměřením (Obchodní akademie a Ekonomické lyceum).",
+    "inspection_period": "19. 10. 2021 − 22. 10. 2021",
+    "school_change_summary": "Škola si od předchozí inspekce v roce 2012 udržuje velmi vysoký standard a systematicky zvyšuje úroveň materiálně-technického zázemí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Žáci dosahují v maturitních zkouškách lepších výsledků než průměr podobných škol a úspěšně se hlásí na VŠ.",
+        "evidence": "Úspěšnost školy celkově vyšší, než je průměrná úspěšnost škol dané skupiny oborů; 90 % absolventů přijímáno na VŠ."
+      },
+      {
+        "tag": "Kvalitní zázemí",
+        "detail": "Škola nabízí nadstandardní vybavení včetně moderních učeben, sálů a vlastní posilovny.",
+        "evidence": "Dostatečným počtem kmenových, odborných či specializovaných učeben s nejmodernějším technickým vybavením."
+      },
+      {
+        "tag": "Stabilní vedení",
+        "detail": "Dlouholetá ředitelka a kvalifikovaný sbor zajišťují funkční systém řízení a příznivé klima.",
+        "evidence": "Nadstandardní úroveň v oblasti řízení; vysoká míra odborné kvalifikace pedagogického sboru a jeho stabilita."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Zastaralé metody",
+        "detail": "Část učitelů upřednostňuje tradiční frontální výuku před moderními metodami.",
+        "evidence": "Někteří vyučující upřednostňují tradicionalistické pojetí vzdělávání, což vede k nerovnoměrnému zapojení žáků."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Škola ne vždy dostatečně respektuje individuální vzdělávací potřeby všech žáků.",
+        "evidence": "Menší míra diferenciace zadávaných úkolů s ohledem na vzdělávací potřeby žáků."
+      },
+      {
+        "tag": "Jazyková kultura",
+        "detail": "Učitelé někdy nevěnují dostatek pozornosti kvalitě ústního projevu žáků.",
+        "evidence": "Vyučující nevěnovali dostatečnou pozornost kultuře jazykového projevu žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje talentované žáky, pokud většina výuky probíhá frontálně?",
+      "Jak učitelé pracují s chybou a jak probíhá zpětná vazba v závěru hodin?",
+      "Jaké konkrétní možnosti studia na zahraničních univerzitách škola připravuje?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří chtějí pokračovat na ekonomických VŠ (90 % úspěšnost).",
+      "Pro žáky, kteří očekávají silnou jazykovou přípravu a mezinárodní projekty.",
+      "Pro ty, kteří hledají školu s moderním vybavením a dlouholetou tradicí."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří vyžadují plně individualizovaný přístup a moderní vyučovací metody.",
+      "Pro studenty, kteří mají problémy se soustředěním při převaze frontální výuky."
+    ],
+    "plain_czech_summary": "Škola s vynikající pověstí a dlouhou tradicí, která připravuje žáky především na vysokoškolské studium v ekonomických oborech. Nabízí nadstandardní technické vybavení a silné jazykové vzdělávání. Kvalitní vedení a stabilní sbor učitelů vytvářejí bezpečné prostředí. Slabinou může být tradiční styl výuky v některých předmětech a menší pozornost individuálním potřebám žáků. Celkově jde o školu s nadprůměrnými výsledky a funkčním systémem podpory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nadprůměrná úspěšnost",
+      "key_numbers": [
+        "90 % absolventů nastupuje na VŠ",
+        "Úspěšnost OA vyšší než průměr oboru",
+        "EL výsledky srovnatelné s průměrem"
+      ],
+      "evidence": "Žáci oboru Obchodní akademie dosahují výborných výsledků a žáci oboru Ekonomické lyceum výsledků srovnatelných."
+    },
+    "absence": {
+      "trend": "Nízká absence",
+      "key_numbers": [
+        "Nízký průměrný počet zameškaných hodin",
+        "Zanedbatelný počet neomluvených hodin",
+        "97 % žáků končí rok bez klasifikačních problémů"
+      ],
+      "evidence": "Nízký průměrný počet zameškaných hodin na žáka a zanedbatelný počet neomluvených hodin na žáka."
+    },
+    "support_services": [
+      "Funkční systém poradenských služeb včetně externí psycholožky.",
+      "Individuální konzultace a podpora pro žáky ohrožené neúspěchem.",
+      "Systematická péče o žáky s odlišným mateřským jazykem."
+    ],
+    "safety_climate": [
+      "Příznivé klima a respektující přístup pedagogů.",
+      "Funkční prevence sociálně patologických jevů.",
+      "Bezpečnost zajištěna elektronickým a kamerovým systémem."
+    ],
+    "partnerships_practice": [
+      "Status fakultní školy VŠE Praha.",
+      "Spolupráce s British Council a JA Czech.",
+      "Zahraniční výměnné pobyty (Německo, Španělsko, Itálie)."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, inspekční zpráva je logicky členěna a závěry jasně formulovány.",
+    "uncertainty_notes": []
+  }
+}

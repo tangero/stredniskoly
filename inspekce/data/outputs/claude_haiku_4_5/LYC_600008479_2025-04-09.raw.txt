@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "LYC_600008479_2025-04-09",
+  "school_profile": {
+    "school_type": "Střední zemědělská škola s maturitními obory (Agropodnikání, Chovatelství, Mechanizace) a učebními obory (Mechanik opravář, Jezdec, Instalatér, Zemědělec, Opravář strojů)",
+    "inspection_period": "9.–11. a 14. dubna 2025",
+    "school_change_summary": "Od inspekce v 2018 vzrostl počet žáků ze 424 na 556. Nový ředitel od srpna 2024 připravuje strategii rozvoje na 2025–2030 a buduje jednotný informační systém."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava do praxe",
+        "detail": "Velmi dobře vybavená střediska praktického vyučování s kvalifikovanými učiteli, kteří poskytují individuální podporu a zpětnou vazbu.",
+        "evidence": "Žáci pracují v menších skupinách, vykonávají práce pro školu i zákazníky, učitelé důsledně kontrolují bezpečnost a technologické postupy."
+      },
+      {
+        "tag": "Partnerství a projekty",
+        "detail": "Škola efektivně spolupracuje se zřizovatelem, zemědělskými podniky, účastní se Erasmus+ a mezinárodních výměn.",
+        "evidence": "Zapojení do projektů přispívá k rozvoji odborných kompetencí a posílení vazby s regionem."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují významných umístění v soutěžích na národní i celorepublikové úrovni.",
+        "evidence": "Škola systematicky podporuje účast žáků v soutěžích s dobrými výsledky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá teoretická výuka",
+        "detail": "Převažuje frontální výuka s diktováním, chybí aktivizační metody a zapojení žáků do procesu učení.",
+        "evidence": "Hospitace ukázaly, že žáci dostávají minimum příležitostí, chybí diferenciace a kooperace mezi žáky."
+      },
+      {
+        "tag": "Vysoká neúspěšnost u zkoušek",
+        "detail": "V prvním pololetí 2024/2025 neprospělo 16,5 % žáků, u závěrečné zkoušky 6,5–22,6 %, u maturitní 10,2–22,2 %.",
+        "evidence": "Obor Opravář zemědělských strojů má dlouhodobě vysokou neúspěšnost od roku 2018, kterou se škole nepodařilo vyřešit."
+      },
+      {
+        "tag": "Slabá podpora žáků v nouzi",
+        "detail": "Chybí systematická analýza příčin neúspěchu a účinná opatření; vychovatelé nejsou včas informováni o studijních problémech.",
+        "evidence": "Individuální pohovory ředitele a informování rodičů jsou pouze částečně účinné; kooperace mezi pedagogy a vychovateli není nastavena."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomáhá žákům, kteří mají problémy s matematikou nebo češtinou? Jaké má konzultační hodiny?",
+      "Jak se liší přístup učitelů v praktické a teoretické výuce? Proč je praktická výuka tak odlišná?",
+      "Jaké konkrétní kroky škola podnikla, aby zlepšila výsledky v oboru Opravář zemědělských strojů?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří se chtějí stát praktiky v zemědělství, chovu zvířat nebo opravách – praktická výuka je zde na vysoké úrovni.",
+      "Žáci, kteří se dobře učí praxí a potřebují vidět konkrétní aplikaci teorie – střídání teoretické a praktické výuky je vhodné.",
+      "Žáci, kteří se chtějí zapojit do soutěží a projektů – škola má dobré zázemí a podporu."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v češtině a matematice – teoretická výuka není dostatečně podporující a diferenciovaná.",
+      "Žáci, kteří potřebují aktivní zapojení do výuky – převažuje frontální výuka s minimálním prostorem pro samostatné myšlení.",
+      "Žáci se speciálními vzdělávacími potřebami – někteří učitelé si nejsou vědomi, že je mají ve třídě, podpůrná opatření se minimálně využívají."
+    ],
+    "plain_czech_summary": "Česká zemědělská akademie v Humpolci je kvalitní praktická škola s výborným vybavením a partnerskými vazbami. Žáci se zde dobře připravují na práci v zemědělství a řemeslech. Problém je v teoretické výuce – učitelé používají zastaralé metody, málo zapojují žáky a nerozlišují jejich potřeby. Výsledky u zkoušek jsou slabé, zvlášť v češtině a matematice. Škola ví o problémech, ale zatím je systematicky neřeší. Nový ředitel má plány na zlepšení, ale změny teprve začínají."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se v matematice, horší v češtině než celorepublikový průměr, nejlepší v angličtině",
+      "key_numbers": [
+        "Neúspěšnost 10,2–22,2 % za poslední čtyři roky",
+        "Matematika: snížení neúspěšnosti z 50 % na 25 % (max. 8 žáků si ji vybírá)",
+        "Český jazyk: 9,8 % neúspěšnosti (horší než průměr), angličtina: 0 % neúspěšnosti"
+      ],
+      "evidence": "Ve společné části maturitní zkoušky byla nejméně úspěšným předmětem matematika se zlepšující tendencí. V českém jazyce dosahují horších výsledků než celorepublikový průměr."
+    },
+    "absence": {
+      "trend": "Vysoká absence v prvním pololetí 2024/2025",
+      "key_numbers": [
+        "16,5 % žáků neprospělo nebo nebylo hodnoceno z důvodu vysoké absence",
+        "V oborech s maturitou: 11,6 % neúspěšných",
+        "V oborech se závěrečnou zkouškou: 22,0 % neúspěšných"
+      ],
+      "evidence": "V prvním pololetí aktuálního školního roku 2024/2025 alespoň z jednoho vyučovacího předmětu neprospělo nebo nebylo z důvodu vysoké absence hodnoceno celkem 16,5 % žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovný poradce, kariérní poradce, metodička prevence",
+      "Spolupráce se školskými poradenskými zařízeními v Jihlavě a Pelhřimově, Speciálně pedagogickým centrem",
+      "Adaptační kurzy pro prvňáky, konzultace se všemi pracovníky ŠPP, doučování mezi žáky"
+    ],
+    "safety_climate": [
+      "Funkčně nastavený minimální preventivní program a program proti šikanování",
+      "Řešení podezření na kyberšikanu ve spolupráci s Policií ČR",
+      "Domovy mládeže vedou žáky k plnění povinností a dodržování pravidel"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem (Kraj Vysočina) a okolními základními školami",
+      "Partnerství se zemědělskými podniky a firmami pro praktické vyučování",
+      "Projekt Erasmus+, výměnné pobyty s městem Ivanka pri Dunaji",
+      "Fakultní škola Přírodovědecké fakulty Univerzity Karlovy v Praze"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Některé pasáže jsou však složitější (např. popis kritérií), ale pro rodiče jsou klíčové informace jasně odděleny v závěrech a doporučeních.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní aktivitě v domovech mládeže mají 'minimální odezvu' – není jasné, které aktivity žáky nezajímají.",
+      "Není uvedeno, kolik procent žáků se SVP má podpůrná opatření a jak se skutečně využívají – údaj o 61 žácích se SVP není kontextualizován.",
+      "Chybí informace o tom, jak dlouho trvá, než se nový ředitel a jeho strategie projeví v konkrétních výsledcích."
+    ]
+  }
+}
+```

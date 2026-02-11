@@ -1,0 +1,104 @@
+{
+  "report_id": "LYC_600013839_2021-12-07",
+  "school_profile": {
+    "school_type": "Střední škola (Obchodní akademie, Ekonomické a Pedagogické lyceum)",
+    "inspection_period": "7. − 10. 12. 2021",
+    "school_change_summary": "Od roku 2013 vzrostl počet žáků v denní formě o 83 % na 363, škola zavedla jednotný informační systém a rozšířila pedagogický sbor."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Rozvoj praxe",
+        "detail": "Škola klade důležité na praktické dovednosti a propojení s reálným prostředím.",
+        "evidence": "Výuka odborných předmětů... teoretické učivo propojovali s praktickými zkušenostmi... a žáci si osvojují praktickou dovednost ovládání reálného účetního programu."
+      },
+      {
+        "tag": "Zlepšení poradenských služeb",
+        "detail": "Žáci se speciálními potřebami mají zajištěnou lepší podporu než v minulosti.",
+        "evidence": "Od poslední inspekční činnosti došlo ke zlepšení práce školního poradenského pracoviště... pedagogové o nich mají ucelený přehled."
+      },
+      {
+        "tag": "Zázemí a bezpečí",
+        "detail": "Škola má dobré materiální zázemí a dbá na bezpečnost žáků.",
+        "evidence": "Materiální podmínky školy se daří postupně zlepšovat... škola věnuje náležitou pozornost zajištění bezpečnosti a ochraně zdraví žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká úspěšnost u maturity",
+        "detail": "Téměř polovina žáků oboru Obchodní akademie maturitu neudělá.",
+        "evidence": "Výsledky žáků u maturitní zkoušky vykazovaly vysokou míru hrubé neúspěšnosti... průměrně 47 % u žáků denní formy vzdělávání oboru Obchodní akademie."
+      },
+      {
+        "tag": "Vysoká absence a odchod žáků",
+        "detail": "Žáci často chodí neomluveně a mnozí studium předčasně ukončují.",
+        "evidence": "Absence žáků byla opakovaně vysoká... značná je míra neomluvené absence... vysoký počet žáků, kteří své vzdělávání předčasně ukončují."
+      },
+      {
+        "tag": "Nefunkční systém pro sportovce",
+        "detail": "Žáci sportovního zaměření nemají jasné podmínky studia, což ohrožuje jejich výsledky.",
+        "evidence": "Chybělo jednotné nastavení a koordinování vzdělávání těchto žáků, což mělo nepříznivý dopad na jejich výsledky vzdělávání."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola reaguje na dlouhodobě špatné výsledky u maturit a jaká opatření plánuje zlepšit?",
+      "Jakým způsobem škola řeší vysokou neomluvenou absenci a zajišťuje, aby žáci studium dokončili?",
+      "Pokud je dítě sportovec, jak mu škola zajistí individuální plán, aby nezanedbal výuku?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří chtějí získat praktické dovednosti v ekonomických a účetních programech.",
+      "Studentům, kteří oceňují osobní přístup a zlepšené poradenské služby.",
+      "Uchazečům, kteří preferují menší školu s postupně modernizovaným vybavením."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kteří potřebují silnou motivaci a přísnější dohled nad docházkou.",
+      "Rodičům, pro nichž je prioritou vysoká statistická úspěšnost u maturitní zkoušky.",
+      "Sportovcům, pokud škola včas nepředloží jasně nastavený individuální vzdělávací plán."
+    ],
+    "plain_czech_summary": "Inspekce potvrdila, že škola má dobré zázemí a úspěšně rozvíjí praktické dovednosti žáků, zejména v účetnictví. Problémem je ale dlouhodobě nízká úspěšnost u maturit (až 47 % neúspěšnosti u OA) a vysoká absence, která vede k předčasným odchodům ze studia. Škola také neumí dobře systémově podpořit studenty-sportovce. Rodiče by měli zvážit, zda je škola schopna zajistit, že jejich dítě studium úspěšně dokončí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně negativní (dlouhodobě vysoká neúspěšnost)",
+      "key_numbers": [
+        "47 % hrubá neúspěšnost u OA (průměr 3 let)",
+        "27 % neúspěšnost u lyceí (průměr 3 let)",
+        "Pouze 38 % žáků (ročník 2017/18) úspěšně ukončilo studium maturitou"
+      ],
+      "evidence": "Úspěšnost žáků při ukončování vzdělání maturitní zkouškou je dlouhodobě nepříznivá... neúspěšnost žáků... dlouhodobě vyšší v porovnání s ostatními školami."
+    },
+    "absence": {
+      "trend": "Vysoká a rostoucí (výrazný problém)",
+      "key_numbers": [
+        "258 hodin průměrně na žáka (2018/19)",
+        "10 % neomluvená absence (minulý rok)",
+        "Vysoká absence hlavním důvodem neprospěchu"
+      ],
+      "evidence": "Absence žáků byla opakovaně vysoká... značná je míra neomluvené absence žáků... opatření přijatá v této oblasti nejsou účinná."
+    },
+    "support_services": [
+      "Zlepšená práce školního poradenského pracoviště a přehled o žácích se SVP.",
+      "Nabídka individuálních konzultací pro žáky s rizikem neúspěšnosti (bez pevně stanovené doby).",
+      "Nepovinné maturitní semináře pro žáků závěrečných ročníků."
+    ],
+    "safety_climate": [
+      "Klima ve vyučovacích hodinách je příznivé, bez vážnějších kázeňských problémů.",
+      "Škola se zaměřuje na prevenci kyberšikany a kriminality mládeže.",
+      "Nedostatečná aktivizace žáků a prostor pro jejich sebevyjádření ve výuce."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s partnery přispívá k rozvoji odborných kompetencí a uplatnění na trhu práce.",
+      "Žáci Pedagogického lycea absolvují praxi na reálných pracovištích škol a zařízení.",
+      "Využívání pronajatých sportovních areálů, avšak s organizačními problémy (krácení hodin)."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a negativa a obsahuje konkrétní data. Místy používá odbornější pedagogické termíny (např. 'hrubá neúspěšnost', 'diferenciace'), které nemusí být laikovi zcela jasné bez kontextu.",
+    "uncertainty_notes": [
+      "Vysoká absence může být částečně způsobena specifickým složením žáků, text však neuvádí detaily.",
+      "Neúspěšnost u maturity je srovnávána s 'ostatními školami ve skupině', není jasné, jak je tato skupina definována.",
+      "Text zmiňuje 'nevhodně nastavený systém' pro sportovce, ale neuvádí, zda jde o dlouhodobý nebo nový problém."
+    ]
+  }
+}

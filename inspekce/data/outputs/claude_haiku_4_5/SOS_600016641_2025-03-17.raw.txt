@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600016641_2025-03-17",
+  "school_profile": {
+    "school_type": "Střední škola - Hotelová škola a Obchodní akademie (obory Obchodní akademie a Hotelnictví, čtyřleté studium s maturitou)",
+    "inspection_period": "17. března 2025 až 19. března 2025",
+    "school_change_summary": "Od poslední inspekce v roce 2018 se počet žáků zdvojnásobil na 467 studentů. Škola se rozšířila o nová místa vzdělávání, modernizovala materiální zázemí a pokračuje v naplňování opatření z předchozí inspekce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Silné partnerství s praxí",
+        "detail": "Dlouhodobá spolupráce se sociálními partnery a asociacemi zajišťuje vazbu teoretického vzdělávání na praxi a zvyšuje konkurenceschopnost absolventů.",
+        "evidence": "Spolupráce s četnými sociálními partnery a asociacemi zajišťuje nezbytnou vazbu teoretického odborného vzdělávání na praxi."
+      },
+      {
+        "tag": "Bohaté mimoškolní aktivity",
+        "detail": "Žáci se zapojují do regionálních, celostátních i mezinárodních soutěží, odborných kurzů a kroužků zaměřených na jejich individuální zájmy.",
+        "evidence": "Žáci jsou připravováni na soutěže v barmanství, sommelierství, přípravě pokrmů, jazycích. Nabízeny jsou odborné kurzy a nepovinné kroužky."
+      },
+      {
+        "tag": "Kvalitní poradenský systém",
+        "detail": "Funkční poradenský systém včas identifikuje speciální vzdělávací potřeby a efektivně podporuje ohrožené žáky.",
+        "evidence": "Výchovná poradkyně zajišťuje metodickou podporu pedagogům a konkrétní řešení vzdělávacích problémů žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší kontrola dokumentace",
+        "detail": "Kontrolní systém není ve všech oblastech nastaven efektivně, zejména v aktualizaci dokumentace a organizaci praktického vyučování.",
+        "evidence": "Kontrolní systém nebyl ve všech oblastech nastaven efektivně. Doporučení zaměřit se na aktualizaci dokumentace a organizaci praktického vyučování."
+      },
+      {
+        "tag": "Nedostatečná práce s cílem hodiny",
+        "detail": "V některých hodinách chybí jasné zaměření na vzdělávací cíl a jeho ověření, zejména v závěru vyuky.",
+        "evidence": "V některých vyučovacích hodinách nebyla patrná účelná práce s cílem zaměřeným na žáka, v závěru hodin nedocházelo k ověření míry naplnění cíle."
+      },
+      {
+        "tag": "Omezená diferenciace ve výuce",
+        "detail": "Výuka není dostatečně přizpůsobena různým vzdělávacím potřebám žáků a chybí vedení k samostatnému hledání informací.",
+        "evidence": "Ve výuce nebyla využívána diferenciace ve vztahu k různým vzdělávacím potřebám a v menší míře byli žáci vedeni k samostatnému využívání informačních zdrojů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s žáky, kteří mají problémy s francouzštinou nebo matematikou, kde dosahují horších výsledků?",
+      "Jaké jsou konkrétní příklady spolupráce se zaměstnavateli a jak se tato praxe promítá do výuky?",
+      "Jak škola řeší vysoký počet omluvených hodin (92 za rok) a jaké jsou důvody absence?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o hotelnictví, gastronomii a obchod, kteří chtějí praktické dovednosti a vazbu na reálný trh práce",
+      "Studenti, kteří se chtějí zapojit do soutěží a projektů - škola aktivně podporuje talentované žáky",
+      "Žáci se speciálními vzdělávacími potřebami - škola má funkční poradenský systém a individuální přístup"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silné teoretické základy v matematice - jen ojediněle si ji volí jako maturitní předmět",
+      "Studenti vyžadující vysokou míru samostatné práce s informačními zdroji - ta se v hodinách objevuje ojediněle",
+      "Žáci s tendencí k absencím - průměr 92 omluvených hodin za rok je vysoký a škola řeší neomluvené hodiny kázeňskými opatřeními"
+    ],
+    "plain_czech_summary": "Hotelová škola v Havířově je dynamická instituce, která za poslední sedm let zdvojnásobila počet studentů a modernizovala své vybavení. Silnou stránkou je propojení s praxí a bohatá nabídka soutěží a kurzů. Žáci se učí v pozitivní atmosféře s dobrým poradenským systémem. Slabší jsou některé aspekty výuky - ne všechny hodiny mají jasný cíl a chybí diferenciace pro různé žáky. Škola je vhodná pro ty, kdo chtějí praktické vzdělání v hotelnictví a obchodu s reálnou vazbou na práci."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, výsledky odpovídají průběžným výsledkům během studia",
+      "key_numbers": [
+        "Celková hrubá úspěšnost přibližně 88 %",
+        "Horší výsledky u společné části maturitní zkoušky",
+        "Jen ojediněle si žáci volí matematiku jako maturitní předmět"
+      ],
+      "evidence": "Ve sledovaném období výsledky vzdělávání žáků u maturitní zkoušky odpovídaly průběžným výsledkům během celého studia. V průměru dosahovala celková hrubá úspěšnost přibližně 88 %."
+    },
+    "absence": {
+      "trend": "Zvýšená absence - řešena kázeňskými opatřeními",
+      "key_numbers": [
+        "Průměr 92 omluvených hodin na žáka za školní rok 2023/2024",
+        "Neomluvené hodiny se týkaly jedinců",
+        "Absence a pozdní příchody jsou nejčastěji řešené problémy"
+      ],
+      "evidence": "Průměrný počet omluvených hodin na žáka za školní rok 2023/2024 byl 92, z toho většinou v 1. pololetí. Absence a pozdní příchody patří mezi nejčastěji řešené problémy."
+    },
+    "support_services": [
+      "Výchovná poradkyně zajišťuje metodickou podporu pedagogům a řešení vzdělávacích problémů",
+      "Individuální konzultace a doučování pro žáky ohrožené školním neúspěchem",
+      "Podpora žáků se speciálními vzdělávacími potřebami a s odlišným mateřským jazykem (17 a 22 žáků)",
+      "Prevence sociálně patologických jevů založená na komplexním monitoringu rizikového chování"
+    ],
+    "safety_climate": [
+      "Pozitivní pracovní atmosféra založená na vzájemné důvěře a respektu",
+      "Nízká míra úrazovosti žáků díky důsledné prevenci",
+      "Žáci pravidelně seznamováni s bezpečnostními riziky a pravidly bezpečného chování",
+      "Důsledné dodržování zásad bezpečnosti a ochrany zdraví při praktickém cvičení"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se sociálními partnery a asociacemi zajišťuje vazbu teorie na praxi",
+      "Mezinárodní soutěž Havířovský korbel a akce Burčákfest",
+      "Spolupráce se soukromou jazykovou školou na Cambridge testech",
+      "Zapojení do charitativních akcí (dětský domov, psí útulna, pomoc při povodních)",
+      "Spolupráce s místním magistrátem na realizaci akcí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však více administrativní povahy. Klíčové informace pro rodiče jsou jasně identifikovatelné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní předměty jsou problematické - pouze zmiňuje český jazyk, němčinu a odborné předměty bez detailů",
+      "Není jasné, zda je vysoký počet omluvených hodin (92) normální pro tento typ školy nebo problém",
+      "Chybí informace o počtu žáků, kteří neprospěli (uvedeno max 9 %), a jejich důvodech"
+    ]
+  }
+}
+```

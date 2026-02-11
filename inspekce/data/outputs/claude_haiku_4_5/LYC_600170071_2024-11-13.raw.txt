@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600170071_2024-11-13",
+  "school_profile": {
+    "school_type": "Střední odborná škola s maturitou v oborech Provoz a ekonomika dopravy, Logistické a finanční služby, Ekonomika a podnikání",
+    "inspection_period": "13. listopadu až 18. listopadu 2024",
+    "school_change_summary": "Od inspekce v 2019 se počet žáků zvýšil o 31 % na 337 žáků. Škola prošla kompletní rekonstrukcí budovy, rozšířila nabídku oborů a navázala nová partnerství s logistickými a finančními firmami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické zkušenosti a kariérní perspektivy",
+        "detail": "Škola má funkční síť partnerů (poštovní, logistické, dopravní firmy, finanční instituce), kde žáci absolvují odborné praxe a získávají reálné pracovní zkušenosti.",
+        "evidence": "Partnerství se sociálními partnery rozvíjí odborné kompetence a podporuje profesní uplatnitelnost žáků."
+      },
+      {
+        "tag": "Moderní vybavení a technologie",
+        "detail": "Nově zrekonstruovaná budova s interaktivními tabulemi, počítačovými simulátory, 3D tiskárnami a specializovaným softwarem pro logistiku.",
+        "evidence": "Kompletní rekonstrukce budovy a obměna materiálního vybavení výrazně podporují efektivitu výuky."
+      },
+      {
+        "tag": "Zlepšující se výsledky a podpora žáků",
+        "detail": "Podíl neprospívajících žáků klesl z 12 % na 5 %, 88 % žáků má uzavřenou klasifikaci do 30. 6., všichni přihlášení žáci k maturitě uspěli.",
+        "evidence": "Výrazný posun ve výsledcích vzdělávání, zkvalitnění výuky a naplňování koncepce rozvoje školy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejednotný přístup k individuálním potřebám žáků",
+        "detail": "V části výuky chybí dostatečná diferenciace a individualizace s ohledem na různé studijní předpoklady a tempo práce žáků.",
+        "evidence": "Méně časté zapojování žáků do evaluačních aktivit, nižší míra diferenciace a omezené využívání vzájemného kriteriálního hodnocení."
+      },
+      {
+        "tag": "Nejednotná kvalita vyučovacích hodin",
+        "detail": "Přibližně třetina hodin má menší metodickou propracovanost a didaktické nedostatky.",
+        "evidence": "Zjištění z hospitační činnosti ukazují na omezené zapojení žáků do evaluačních aktivit a nedostatečnou obsahovou diferenciaci."
+      },
+      {
+        "tag": "Omezený rozvoj řečových dovedností v cizích jazycích",
+        "detail": "Výuka cizích jazyků se soustředí především na gramatiku a slovní zásobu, méně na interaktivní řečové dovednosti.",
+        "evidence": "Menší důraz na rozvoj interaktivních řečových dovedností a vytváření příležitostí pro souvislejší ústní projev."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku žákům s různými studijními předpoklady a tempem práce?",
+      "Jaké jsou konkrétní možnosti doučování a individuální podpory pro žáky, kteří si nevedou dobře?",
+      "Jak probíhá spolupráce s partnerskými firmami a jaké jsou šance na získání praxe během studia?"
+    ],
+    "who_school_fits": [
+      "Žáci zainteresovaní na praktickém vzdělání v logistice, dopravě a finančních službách s jasným cílem rychlého uplatnění na trhu práce",
+      "Studenti, kteří se chtějí připravit na konkrétní profesi s podporou moderní techniky a reálných pracovních zkušeností",
+      "Žáci, kteří potřebují strukturovaný přístup s jasně nastavenými pravidly a individuálním dohledem"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s výrazně odlišným tempem učení, kteří potřebují intenzivní individuální přístup – škola má v některých hodinách omezené možnosti diferenciace",
+      "Studenti zaměření na rozvoj řečových dovedností v cizích jazycích – výuka se více soustředí na gramatiku než na komunikaci",
+      "Žáci, kteří preferují více času na reflexi a vlastní hodnocení – část pedagogů méně zapojuje žáky do evaluačních aktivit"
+    ],
+    "plain_czech_summary": "Střední odborná škola logistiky a podnikání je moderní školou s dobrými výsledky. Žáci se učí v nově zrekonstruované budově s nejnovější technikou a mají možnost pracovat s reálnými partnery z logistiky a financí. Výsledky maturit se zlepšují a škola dobře podporuje žáky se speciálními potřebami. Slabší stránkou je, že ne všechny hodiny jsou stejně kvalitní a někdy chybí přizpůsobení výuky jednotlivým žákům. Škola je vhodná pro ty, kdo chtějí praktické vzdělání s jasným zaměřením na konkrétní profesi."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Ve školním roce 2023/2024 všichni přihlášení žáci k maturitě zkoušku konali a uspěli",
+        "Úspěšnost v češtině a angličtině srovnatelná nebo vyšší než celorepublikový průměr",
+        "64 % žáků úspěšně dokončilo řádný cyklus vzdělávání v roce 2023/2024"
+      ],
+      "evidence": "Výsledky žáků ve společné části MZ vykazují od posledního inspekčního hodnocení zlepšující se tendenci. Velmi dobré výsledky v profilové části vypovídají o kvalitním naplňování profilu absolventa."
+    },
+    "absence": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Průměrně 4 neomluvené hodiny na žáka za pololetí",
+        "88 % žáků má uzavřenou klasifikaci do 30. 6.",
+        "Snížení podílu neprospívajících žáků z 12 % na 5 %"
+      ],
+      "evidence": "Přijatá oatření ke snížení absence se pozitivně promítají v individuální úspěšnosti. Důslednější přístup třídních učitelů a včasná informovanost rodičů vedou k lepším výsledkům."
+    },
+    "support_services": [
+      "Školní psycholožka poskytující diagnostickou, terapeutickou a poradenskou pomoc",
+      "Individuální doučování a konzultace pro žáky s obtížemi",
+      "Adaptační proces pro žáky prvních ročníků s individuálním přístupem pedagogů",
+      "Virtuální učebna Kariérového poradenství s aktuálními informacemi o vysokých školách"
+    ],
+    "safety_climate": [
+      "Stálý dohled a bezpečnostní zařízení u vstupu do budovy",
+      "Školní preventivní strategie zohledňující potřeby školy a skladbu tříd",
+      "Besedy, semináře a spolupráce s externími organizacemi na prevenci rizikového chování",
+      "Přiměřený počet ukládaných kázeňských opatření svědčící o funkčnosti nastavených pravidel"
+    ],
+    "partnerships_practice": [
+      "Síť kvalitních odborných partnerů: poštovní a logistické společnosti, dopravní firmy, finanční instituce",
+      "Realizace části praktického vyučování na pracovištích smluvních partnerů",
+      "Inovace obsahu učiva a profesní růst pedagogů díky spolupráci s partnery",
+      "Větší část žáků nachází po absolvování studia uplatnění v odborných firmách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými pedagogy a předměty – zpráva mluví o 'části hodin' bez konkrétního procentuálního vymezení",
+      "Chybí informace o tom, jak se škola vypořádá s tím, že 36 % žáků nedokončí řádný cyklus vzdělávání (zejména ukrajinští žáci)",
+      "Není specifikováno, jaké konkrétní opatření škola přijme k řešení zjištěných slabých stránek v diferenciaci výuky"
+    ]
+  }
+}
+```

@@ -1,0 +1,49 @@
+{
+  "report_id": "SOU_600009408_2023-01-16",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:51:29.359993+00:00",
+  "run_finished_utc": "2026-02-09T16:51:34.636636+00:00",
+  "raw_file": "SOU_600009408_2023-01-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600009408_2023-01-16",
+    "school_profile": {
+      "school_type": "Střední odborná škola",
+      "inspection_period": "16.–19. ledna 2023",
+      "school_change_summary": "Zpráva není dostupná – dokument obsahuje pouze konverzní doložku bez obsahu inspekční zprávy."
+    },
+    "for_parents": {
+      "strengths": [],
+      "risks": [],
+      "questions_for_open_day": [],
+      "who_school_fits": [],
+      "who_should_be_cautious": [],
+      "plain_czech_summary": "Dodaný dokument je pouze technickou doložkou o převodu listinného dokumentu do elektronické podoby. Neobsahuje faktický obsah inspekční zprávy – chybí informace o kvalitě výuky, výsledcích maturit, bezpečnosti, či silných a slabých stránkách školy. Pro rozhodování o přijetí je nutné získat úplnou inspekční zprávu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nedostupné",
+        "key_numbers": [],
+        "evidence": "Obsah zprávy není k dispozici."
+      },
+      "absence": {
+        "trend": "Nedostupné",
+        "key_numbers": [],
+        "evidence": "Obsah zprávy není k dispozici."
+      },
+      "support_services": [],
+      "safety_climate": [],
+      "partnerships_practice": []
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 1,
+      "czech_clarity_reason": "Dokument obsahuje pouze administrativní doložku o konverzi. Chybí kompletní obsah inspekční zprávy nezbytný pro analýzu.",
+      "uncertainty_notes": [
+        "Není jasné, zda je obsah zprávy součástí dalších stran nebo dokumentů.",
+        "Nelze posoudit kvalitu školy bez faktického obsahu inspekční zprávy.",
+        "Doporučujeme kontaktovat ČŠI nebo školu pro úplný text zprávy."
+      ]
+    }
+  }
+}

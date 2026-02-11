@@ -1,0 +1,103 @@
+{
+  "report_id": "SOU_600006034_2022-03-28",
+  "school_profile": {
+    "school_type": "Soukromá střední škola gastronomie s.r.o.",
+    "inspection_period": "28. 3. − 31. 3. 2022",
+    "school_change_summary": "Od roku 2017 vzrostl počet žáků v maturitních oborech a zlepšily se materiální podmínky, avšak přetrvávají problémy s kontrolními mechanismy a vysokou absencí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Klima ve škole",
+        "detail": "Díky nižším počtům žáků ve třídách panuje příjemná atmosféra.",
+        "evidence": "Nižší počty žáků ve třídách vytvářejí pozitivní klima."
+      },
+      {
+        "tag": "Výuka českého jazyka",
+        "detail": "Hodiny jsou dobře strukturované a efektivně připravují na maturitu.",
+        "evidence": "Vyučovací hodiny se vyznačovaly jasnou strukturou... účelně podporovala přípravu žáků k MZ."
+      },
+      {
+        "tag": "Vybavení školy",
+        "detail": "Škola modernizovala vybavení, zejména digitální techniku a počítače.",
+        "evidence": "Materiální podmínky se... zlepšily zejména v oblasti využití digitální techniky... posílení počítačové."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost u maturity",
+        "detail": "Až polovina žáků čtyřletého oboru neuspěje ve společné části maturity.",
+        "evidence": "Hrubá neúspěšnost... ve sledovaném období... se sice mírně zlepšila... na 50 %... ale ve srovnání se skupinou oborů v ČR se výrazně zhoršila."
+      },
+      {
+        "tag": "Nekvalifikovaní učitelé jazyků",
+        "detail": "Výuka cizích jazyků je často zajišťována učiteli bez odborné kvalifikace.",
+        "evidence": "Převážná část výuky anglického a německého jazyka je i nadále zajištěna učiteli bez odborné kvalifikace."
+      },
+      {
+        "tag": "Zanedbaná příprava v nižších ročnících",
+        "detail": "Škola nepřipravuje žáky na maturitní testy systematicky po celou dobu studia.",
+        "evidence": "Chybí ale pravidelné zařazování typových úloh z didaktických testů do výuky v nižších ročnících."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola reaguje na vysokou neúspěšnost žáků ve společné části maturity?",
+      "Jakým způsobem jsou kontrolováni a podporováni učitelé cizích jazyků bez kvalifikace?",
+      "Jaká konkrétní opatření škola přijímá proti vysoké absenci žáků?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří preferují menší kolektivy a osobní přístup.",
+      "Studenti, kteří se chtějí specializovat na gastronomii a hodí se jim lepší vybavení v této oblasti.",
+      "Žáci, kteří jsou schopni se na maturity připravovat spíše sami."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnou systematickou podporu při přípravě na maturitní zkoušky.",
+      "Studenti plánující studovat dálkovou formu nástavbového studia (velmi špatné výsledky).",
+      "Uchazeči, kteří vyžadují výuku cizích jazyků vedenou zkušenými pedagogy."
+    ],
+    "plain_czech_summary": "Inspekce potvrdila, že škola má příjemné klima a dobrou úroveň výuky českého jazyka a matematiky. Velmi varovným zjištěním je však extrémně vysoká neúspěšnost u maturity (až 50 %), která je jedná z nejhorších v ČR. Problémem je nekvalifikovanost učitelů cizích jazyků a absence systematické přípravy na maturity v nižších ročnících. Škola také bojuje s vysokou absencí žáků. Rodiče by měli zvážit, zda je prostředí školy schopno zajistit úspěšné zakončení studia pro průměrného studenta."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Rostoucí neúspěšnost (ve srovnání s ČR)",
+      "key_numbers": [
+        "50 % hrubá neúspěšnost (2020/2021)",
+        "až 92 % neúspěšnost v dálkovém studiu (2018/2019)",
+        "15 % průměrná neúspěšnost v ČR (2020/2021)"
+      ],
+      "evidence": "Hrubá neúspěšnost... ve sledovaném období... se sice mírně zlepšila... na 50 %... ale ve srovnání se skupinou oborů v ČR se výrazně zhoršila."
+    },
+    "absence": {
+      "trend": "Vysoká a rostoucí (při prezenční výuce)",
+      "key_numbers": [
+        "cca 111 zameškaných hodin na žáka (2018/2019)",
+        "120 zameškaných hodin na žáka (1. pololetí 2021/2022)",
+        "až o 87 % nižší absence při distanční výuce"
+      ],
+      "evidence": "Ve školním roce 2018/2019... se roční absence žáků denního studia pohybovala kolem 111 vyučovacích hodin... v prvním pololetí školního roku 2021/2022... až na 120 zameškaných hodin."
+    },
+    "support_services": [
+      "Strategie prevence školní neúspěšnosti neodpovídá potřebám žáků.",
+      "Nabízené individuální konzultace žáci téměř nevyužívají.",
+      "Kontrola naplňování podpůrných opatření u žáků se SVP není pravidelná."
+    ],
+    "safety_climate": [
+      "Škola zajišťuje bezpečné prostředí a zpracovává hodnocení rizik.",
+      "Je zabezpečen vstup do školy.",
+      "Nižší počty žáků ve třídách přispívají k pozitivnímu klimatu."
+    ],
+    "partnerships_practice": [
+      "Komunikace s rodiči probíhá převážně neformálně a bez závěrů.",
+      "Škola nepřijímá dostatečná opatření na základě spolupráce s poradenskými zařízeními."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení problémy a důsledky, používá přímá data a srovnání.",
+    "uncertainty_notes": [
+      "Není zcela jasné, jak škola konkrétně ověřuje motivaci uchazečů o studium.",
+      "Zpráva neuvádí důvod, proč žáci nabízené konzultace nevyužívají.",
+      "Chybí detailnější rozbor příčin rozdílné kvality výuky v jednotlivých předmětech."
+    ]
+  }
+}

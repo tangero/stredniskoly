@@ -1,0 +1,119 @@
+{
+  "report_id": "GY8_600008835_2024-05-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:17:16.134244+00:00",
+  "run_finished_utc": "2026-02-09T16:17:41.627675+00:00",
+  "raw_file": "GY8_600008835_2024-05-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008835_2024-05-02",
+    "school_profile": {
+      "school_type": "Soukromé gymnázium (4, 6 a 8leté obory) a základní škola",
+      "inspection_period": "2. května až 13. května 2024",
+      "school_change_summary": "Vedení školy bylo rozšířeno o jednoho zástupce, škola získala akreditaci Erasmus+ do 2027, inovovala ŠVP a dokončila rekonstrukci budovy s modernizací vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Mezinárodní spolupráce a projekty",
+          "detail": "Škola má akreditaci Erasmus+ a aktivně realizuje výměnné programy, mezinárodní projekty a stáže pro žáky i učitele.",
+          "evidence": "Akreditace Erasmus+ 2020–2027, reciproční vzdělávací mobility, česko-rakouská spolupráce, mezinárodní soutěž Best in English."
+        },
+        {
+          "tag": "Jazykové vzdělávání a certifikáty",
+          "detail": "Škola systematicky připravuje žáky na mezinárodně uznávané jazykové certifikáty s vysokou úspěšností.",
+          "evidence": "Ve školním roce 2022/2023 získalo 21 žáků certifikát v angličtině a 5 v němčině, vlastní certifikované zkušební centrum."
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Škola má nově zrekonstruovanou budovu s dostatkem prostoru, modernizovanými učebnami a digitálními pomůckami.",
+          "evidence": "Dokončena rekonstrukce a přístavba budovy v roce 2023, mobilní počítačová učebna, notebooky, robotické pomůcky, elektronické učebnice."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená aktivizace žáků ve výuce",
+          "detail": "Převažuje frontální výuka, chybí dostatečně diferenciované úkoly a aktivity rozvíjející kritické myšlení a tvořivost.",
+          "evidence": "Inspektoři zaznamenali, že ve většině hodin plnili všichni žáci stejný typ úloh bez diferenciace kognitivní náročnosti."
+        },
+        {
+          "tag": "Kvalifikace školního poradenského týmu",
+          "detail": "Výchovné poradkyně a školní metodik prevence nemají absolvované odpovídající specializační studium.",
+          "evidence": "Žádný z pracovníků poradenského pracoviště neabsolvoval odpovídající specializační studium."
+        },
+        {
+          "tag": "Nedostatečné využívání informačních zdrojů",
+          "detail": "Žáci málo pracují s různými informačními zdroji, jejich interpretací a analýzou.",
+          "evidence": "Vyhledávání a využívání informací z různých zdrojů se ve sledovaných hodinách vyskytly méně často."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola diferenciuje výuku pro žáky s různými schopnostmi a jak podporuje kritické myšlení?",
+        "Jaké jsou konkrétní plány na zvyšování kvalifikace pedagogů školního poradenského pracoviště?",
+        "Jak se škola podílí na projektech Erasmus+ a jaké konkrétní příležitosti mají žáci k mezinárodním výměnám?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazykové vzdělávání a mezinárodní spolupráci – škola má vlastní certifikační centrum a aktivní Erasmus+ program.",
+        "Nadaní žáci – škola má koordinátora podpory nadání, spolupracuje s Mensou a pořádá speciální akce pro nadané.",
+        "Žáci preferující menší třídy a individuální přístup – soukromá škola s 207 žáky na střední škole nabízí osobnější péči."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více aktivizující a interaktivní výuku – inspektoři upozornili na převahu frontální výuky.",
+        "Rodiny s omezeným rozpočtem – soukromá škola znamená školné, ačkoli existuje stipendijní program.",
+        "Žáci s potřebou intenzivní speciální pedagogické péče – poradenský tým nemá všichni absolvované specializační studium."
+      ],
+      "plain_czech_summary": "Táborské soukromé gymnázium je dobře vedená škola s moderním vybavením a silným zaměřením na jazykové vzdělávání a mezinárodní projekty. Má akreditaci Erasmus+ a úspěšně připravuje žáky na jazykové certifikáty. Inspektoři ocenili kvalitní vedení, spolupráci s partnery a péči o nadané žáky. Doporučují však více aktivizující výuku s diferenciací a kritickým myšlením. Školní poradenský tým by měl doplnit kvalifikaci."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Srovnatelné s republikovým průměrem",
+        "key_numbers": [
+          "Výborné výsledky v testování čtenářské a finanční gramotnosti (2022/2023)",
+          "Český jazyk: dobré využití studijního potenciálu",
+          "Matematika: optimální využití studijního potenciálu"
+        ],
+        "evidence": "Výsledky testování ČŠI prokázaly, že studijní potenciál žáků je využíván dobře nebo optimálně. Celorepublikové srovnění vykazuje srovnatelné výsledky."
+      },
+      "absence": {
+        "trend": "Přiměřená",
+        "key_numbers": [
+          "Počet hodin omluvené absence je přiměřený",
+          "Nízký počet neprospívajících žáků",
+          "Počet pochval několikanásobně převyšuje počet kázeňských opatření"
+        ],
+        "evidence": "Třídní učitelé komunikují bez prodlení se zákonnými zástupci při vyšších absencích. Škola motivuje žáky velkým počtem pochval."
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně a školní metodik prevence (bez specializačního studia)",
+        "Péče o 32 žáků se speciálními vzdělávacími potřebami a 15 žáků s odlišným mateřským jazykem",
+        "Koordinátor podpory nadání se spoluprací s univerzitami a Mensou",
+        "Doučování žáků, adaptační kurzy a program etických dílen",
+        "Spolupráce s městskou knihovnou a divadlem"
+      ],
+      "safety_climate": [
+        "Pozitivní pracovní atmosféra v hodinách, vstřícný přístup učitelů",
+        "Žáci dodržují nastavená pravidla a ochotně plní úkoly",
+        "Systematické monitorování a vyhodnocování rizik v třídních kolektivech",
+        "Bezodkladná reakce na problémy, spolupráce se zákonnými zástupci a externími odborníky"
+      ],
+      "partnerships_practice": [
+        "Partnerské školy v zahraničí – výměnné programy a společné projekty",
+        "Erasmus+ akreditace (2020–2027) s recipročními mobilitami",
+        "Česko-rakouská spolupráce a mezinárodní projekt s environmentální tematikou",
+        "Evropské jazykové centrum v Českých Budějovicích – příprava na certifikáty",
+        "Spolupráce s Mensou, univerzitami a vysokými školami pro nadané žáky",
+        "Místní akční plán a zapojení do veřejného života města"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními fakty a čísly. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více administrativního jazyka.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní počty žáků, kteří neprospívají – pouze že je počet 'velmi nízký'",
+        "Chybí konkrétní data o výsledcích maturitní zkoušky (procenta úspěšnosti, průměrné známky)",
+        "Není jasné, kolik procent žáků se účastní mezinárodních projektů a certifikačních programů"
+      ]
+    }
+  }
+}

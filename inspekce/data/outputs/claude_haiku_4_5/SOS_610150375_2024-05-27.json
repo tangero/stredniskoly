@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_610150375_2024-05-27",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:15:52.392449+00:00",
+  "run_finished_utc": "2026-02-09T16:16:16.704859+00:00",
+  "raw_file": "SOS_610150375_2024-05-27.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_610150375_2024-05-27",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště",
+      "inspection_period": "27. 5. – 29. 5. 2024 a 31. 5. 2024",
+      "school_change_summary": "Škola změnila skladbu oborů: zrušila Dopravní prostředky a Obráběče kovů, přidala Autotronik a Cukrářství. Zrušila speciální třídy. Výsledky v maturitě se zlepšily, materiální vybavení se cíleně modernizuje."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s firmami",
+          "detail": "Škola má vynikající vztahy se sociálními partnery, kteří participují na praktické výuce a následném uplatnění absolventů.",
+          "evidence": "Spolupráce je na vynikající úrovni, efektivně přispívá k naplňování odborných kompetencí."
+        },
+        {
+          "tag": "Materiální vybavení",
+          "detail": "Dílny jsou velmi dobře vybavené a prostorné, prostředí pro teoretickou výuku je esteticky podnětné.",
+          "evidence": "Nadstandardní materiální podmínky výrazně přispívají k naplňování cílů vzdělávání."
+        },
+        {
+          "tag": "Podpora talentů",
+          "detail": "Žáci jsou motivováni k účasti v olympiádách a soutěžích, dosahují významných úspěchů i na republikové úrovni.",
+          "evidence": "Efektivní podpora talentovaných žáků posiluje všestranný rozvoj osobnosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v Sociální činnosti",
+          "detail": "V maturitní zkoušce obor Sociální činnost dosahuje horších výsledků než průměr ČR.",
+          "evidence": "Hrubá neúspěšnost v profilové části 2023: škola 20 %, ČR 6,7 %."
+        },
+        {
+          "tag": "Konflikty v kolektivu",
+          "detail": "Mezi pedagogy a vedením existují komplikované interpersonální vztahy, neshody nejsou řešeny.",
+          "evidence": "Někteří pedagogové uvedli, že nemohou bez obav rozporovat kroky vedení."
+        },
+        {
+          "tag": "Slabá diferenciace výuky",
+          "detail": "Pedagogové nepracují systematicky se vzdělávacími cíli a nerozlišují úkoly podle schopností žáků.",
+          "evidence": "Obsahová diferenciace byla uplatňována pouze ojediněle, formativní hodnocení minimálně."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší neshody mezi pedagogy a vedením, aby se zlepšila spolupráce?",
+        "Jaká opatření přijala škola pro zlepšení výsledků v maturitě oboru Sociální činnost?",
+        "Jak učitelé individualizují výuku podle schopností jednotlivých žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla – dílny jsou velmi dobře vybavené a výuka je na vysoké úrovni.",
+        "Talentovaní žáci – škola aktivně podporuje účast v soutěžích a olympiádách s úspěchy na republikové úrovni.",
+        "Žáci se speciálními potřebami – škola má funkční systém poradenských služeb a individuální vzdělávací plány."
+      ],
+      "who_should_be_cautious": [
+        "Zájemci o obor Sociální činnost – výsledky v maturitní zkoušce jsou dlouhodobě horší než průměr v ČR.",
+        "Žáci potřebující individuální přístup – diferenciace výuky není systematická a formativní hodnocení se používá minimálně.",
+        "Žáci, kteří potřebují řešit konflikty s učiteli – neshody mezi žáky a pedagogy nejsou efektivně řešeny."
+      ],
+      "plain_czech_summary": "Škola je moderně vybavená s vynikajícími vztahy s firmami, které zajišťují kvalitní praktickou výuku. Žáci dosahují dobrých výsledků v závěrečných zkoušках a úspěchů v soutěžích. Slabinou je obor Sociální činnost s horšími výsledky v maturitě a nedostatečná individualizace výuky. Mezi pedagogy a vedením existují konflikty, které nejsou řešeny. Škola se snaží zlepšovat, ale má rezervy v diferenciaci a práci se vzdělávacími cíli."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se, ale s výjimkou oboru Sociální činnost",
+        "key_numbers": [
+          "Provozní technika 2023: škola 3,3 % neúspěšnosti, ČR 22,3 %",
+          "Sociální činnost 2023: škola 25 % neúspěšnosti, ČR 10,9 %",
+          "Sociální činnost profilová část 2023: škola 20 %, ČR 6,7 %"
+        ],
+        "evidence": "Hrubá neúspěšnost se snížila, přesto Sociální činnost dosahuje horších výsledků než průměr ČR."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje údaje o absence žáků."
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně a metodik prevence zajišťují poradenské služby",
+        "Funkční systém sdílení informací s vyučujícími",
+        "Individuální vzdělávací plány pro žáky se speciálními potřebami",
+        "Doučování a individuální konzultace pro žáky s prospěchovými potížemi"
+      ],
+      "safety_climate": [
+        "Promyšlený systém primární prevence reagující na aktuální potřeby",
+        "Adaptační kurzy pro prvňáky, lyžařské kurzy, ozdravné pobyty",
+        "Výchovné komise aktivně spolupracují se zákonnými zástupci žáků",
+        "Rezerva: neshody mezi žáky a učiteli nejsou efektivně řešeny"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se sociálními partnery na velmi dobré úrovni",
+        "Firmy participují na realizaci praktické výuky a umožňují uplatnění absolventů",
+        "Efektivní zapojení do projektových aktivit a veřejné prezentace",
+        "Workshopy a školní projektové dny ve spolupráci se sociálními partnery"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní čísla a příklady. Slabinou je absence údajů o absence žáků a některé pasáže jsou formulovány úřednicky.",
+      "uncertainty_notes": [
+        "Absence údajů o absence žáků – není v textu zmíněna",
+        "Nejasné, jak konkrétně se řeší konflikty mezi pedagogy a vedením – text popisuje problém, ale ne řešení",
+        "Chybí informace o počtu žáků v jednotlivých oborech a jejich rozložení"
+      ]
+    }
+  }
+}

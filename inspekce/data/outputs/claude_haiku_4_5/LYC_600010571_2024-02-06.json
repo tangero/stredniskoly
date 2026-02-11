@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600010571_2024-02-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:27:22.911535+00:00",
+  "run_finished_utc": "2026-02-09T16:27:45.692350+00:00",
+  "raw_file": "LYC_600010571_2024-02-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600010571_2024-02-06",
+    "school_profile": {
+      "school_type": "Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky (střední škola)",
+      "inspection_period": "6. února 2024 až 8. února 2024",
+      "school_change_summary": "Nová ředitelka (druhý rok ve funkci) zavádí moderní trendy, přešla na nový operační systém MS Office a rozšiřuje zahraniční stáže. Škola vzdělává 485 žáků v 16 třídách ve třech maturitních oborech."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Od roku 2019 neuspěl ve společné části maturitní zkoušky pouze jeden žák z 547 maturujících.",
+          "evidence": "Dlouhodobě nadprůměrné výsledky ve všech zkušebních předmětech."
+        },
+        {
+          "tag": "Zahraniční zkušenosti",
+          "detail": "Škola aktivně podporuje zahraniční stáže, projekty Erasmus+ a dlouhodobé stáže v zahraničí.",
+          "evidence": "Nově zavedeny dlouhodobé stáže, žáci reprezentují školu na mezinárodních soutěžích."
+        },
+        {
+          "tag": "Kvalitní příprava na vysoké školy",
+          "detail": "Přibližně 80 % absolventů pokračuje v dalším studiu na českých vysokých školách.",
+          "evidence": "Nadstandardní sledování úspěšnosti absolventů, velmi dobrá příprava v ekonomických předmětech."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo samostatné práce žáků",
+          "detail": "Žáci málo vyhledávají informace sami, chybí jim sebehodnocení a vzájemné hodnocení.",
+          "evidence": "Inspektoři zaznamenali ojediněle sebehodnocení a vzájemné hodnocení žáků ve výuce."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Všichni žáci plnili stejné úkoly bez přizpůsobení jejich různým schopnostem a tempu.",
+          "evidence": "Učitelé nediferencovali práci s ohledem na odlišné vzdělávací možnosti a pracovní tempo."
+        },
+        {
+          "tag": "Omezené využití školního psychologa",
+          "detail": "Psycholog pracuje převážně individuálně, chybí mu skupinová práce a aktivnější zapojení.",
+          "evidence": "Škole neposkytuje skupinovou formu práce, např. mapování klimatu ve třídách."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola podporuje samostatné vyhledávání informací a kritické myšlení žáků?",
+        "Jaké jsou konkrétní možnosti zahraniční praxe a jak se do nich zapojují všichni žáci?",
+        "Jak se škola vypořádává s různými tempy učení jednotlivých žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o ekonomii, obchod a jazyky s dobrými studijními předpoklady",
+        "Ambiciózní studenti, kteří chtějí pokračovat na vysoké škole (80 % absolventů)",
+        "Žáci zainteresovaní na mezinárodní mobilitu a zahraničních zkušenostech"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuálního přístupu a diferenciované výuky",
+        "Studenti, kteří se lépe učí skupinovou prací a diskusí než frontální výukou",
+        "Žáci se slabšími studijními předpoklady (škola přijímá především velmi dobré studenty)"
+      ],
+      "plain_czech_summary": "Liberecká obchodní akademie je kvalitní střední škola se skvělými výsledky maturit a vysokou úspěšností absolventů na vysokých školách. Nová ředitelka modernizuje školu a rozšiřuje zahraniční možnosti. Silnou stránkou je příprava na vysokoškolské studium a jazykové vzdělání. Slabší je samostatná práce žáků a jejich sebehodnocení. Škola je vhodná pro ambiciózní studenty se zájmem o ekonomii a jazyky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nadprůměrný",
+        "key_numbers": [
+          "Od roku 2019 neuspěl pouze 1 žák z 547 maturujících",
+          "Výsledky nadprůměrné ve všech zkušebních předmětech",
+          "80 % absolventů pokračuje na vysokých školách"
+        ],
+        "evidence": "Cenná zpětná vazba z výsledků společné části maturitní zkoušky, srovnání v rámci republiky."
+      },
+      "absence": {
+        "trend": "Průměrná, neovlivňuje výsledky",
+        "key_numbers": [
+          "Omluvená absence žáků je průměrná"
+        ],
+        "evidence": "Absence výrazně neovlivňuje vzdělávací výsledky žáků."
+      },
+      "support_services": [
+        "Školní psycholog (od března 2023) - převážně individuální konzultace",
+        "Výchovný poradce - kariérové poradenství a prevence rizikového chování",
+        "Asistentka pedagoga - podpora žáků se speciálními vzdělávacími potřebami",
+        "Individuální vzdělávací plány pro 3 žáky se speciálními potřebami"
+      ],
+      "safety_climate": [
+        "Technicky zabezpečené vchody do objektu",
+        "Pravidelné instruktáže žáků a zaměstnanců",
+        "Každoročně organizovaný cvičný poplach",
+        "Preventivní strategie včetně tematických besed a programů",
+        "Včasná intervence při prvotních projevech rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá zahraniční spolupráce s odbornými firmami (od roku 2005)",
+        "Projekty Erasmus+ pro mobilitu žáků",
+        "Nově zavedené dlouhodobé zahraniční stáže",
+        "Projekt fiktivní firmy pro rozvoj podnikatelských kompetencí",
+        "Spolupráce s relevantními partnery na trhu práce"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní fakta, čísla a citace. Slabší je pouze v některých technických pasážích o kritériích inspekce.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak přesně se liší kvalita výuky mezi jednotlivými obory (Obchodní akademie, Veřejnosprávní činnost, Ekonomické lyceum)",
+        "Chybí detailnější informace o tom, jak škola řeší nižší zájem o matematiku v některých oborech",
+        "Není jasné, jak konkrétně se školní psycholog zapojuje do harmonizačních dnů"
+      ]
+    }
+  }
+}

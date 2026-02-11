@@ -1,0 +1,98 @@
+```json
+{
+  "report_id": "GY8_600015050_2025-11-12",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium",
+    "inspection_period": "12.–14. listopadu a 18. listopadu 2025",
+    "school_change_summary": "Od srpna 2024 nová ředitelka. Obměna pedagogického sboru, od října 2025 školní psycholog. Rozsáhlé investice do modernizace budovy a digitálního vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Výsledky maturitní zkoušky jsou na velmi dobré úrovni, lepší než celorepublikový průměr, zejména v biologii a dějepisu.",
+        "evidence": "Výsledky společné i profilové části maturitní zkoušky v posledních třech letech byly na velmi dobré úrovni."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola investovala do klimatizace, studovny, venkovního posezení a modernizace jídelny.",
+        "evidence": "Prostorové a materiální podmínky školy jsou na velmi dobré úrovni. Realizovány rozsáhlé investiční akce a revitalizace."
+      },
+      {
+        "tag": "Silná podpora digitálních kompetencí",
+        "detail": "Systematické rozvíjení digitální gramotnosti žáků i učitelů s cílem zvýšit jejich kompetence v oblasti digitálních technologií.",
+        "evidence": "Efektivní podpora a rozvoj využívání moderních digitálních technologií pro zkvalitnění výuky a informatického myšlení."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená diferenciace v hodinách",
+        "detail": "Žáci mají jen v malé míře možnost vybírat si úkoly různé obtížnosti během výuky.",
+        "evidence": "Pouze v malé míře měli žáci možnost výběru úkolů různé kognitivní náročnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se slabšími výsledky? Jaké konzultační hodiny a podpůrná opatření nabízí?",
+      "Jaké jsou zkušenosti absolventů se přijetím na vysoké školy? Máte data o jejich uplatnění?",
+      "Jak funguje spolupráce se školním psychologem, který byl přidán až v říjnu 2025?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí na vysokou školu – výborné výsledky maturit a silná příprava v klíčových předmětech",
+      "Děti zajímající se o digitální technologie a moderní přístupy k výuce",
+      "Žáci, kterým vyhovuje tradiční gymnáziální vzdělání s důrazem na jazyky a přírodní vědy"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující více individualizované úkoly různé obtížnosti – škola to zatím nabízí jen v omezené míře",
+      "Rodiny hledající školu s dlouhodobě etablovaným školním psychologem – pozice je nová (od října 2025)"
+    ],
+    "plain_czech_summary": "Gymnázium Ladislava Jaroše v Holešově je moderní, dobře vybavená škola s výborným vedením. Žáci dosahují nadstandardních výsledků v maturitách a soutěžích. Škola investuje do digitálních technologií a vytváří podnětné prostředí. Nová ředitelka (od srpna 2024) přinesla svěží přístup a strategické plánování. Jedinou slabší stránkou je omezená možnost žáků vybírat si úkoly různé obtížnosti během hodin. Ideální pro ambiciózní žáky směřující na vysoké školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborný – dlouhodobě nad celorepublikovým průměrem",
+      "key_numbers": [
+        "Výsledky lepší než celorepublikový průměr",
+        "Kvalitní výsledky zejména v biologii a dějepisu",
+        "Výsledky sledovány a analyzovány vedením školy"
+      ],
+      "evidence": "Výsledky společné i profilové části maturitní zkoušky v posledních třech letech byly na velmi dobré úrovni. Ve srovnání s celorepublikovými výsledky byla úspěšnost lepší."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se absencí nezabývá."
+    },
+    "support_services": [
+      "Konzultační hodiny jednotlivých pedagogů pro snižování školní neúspěšnosti",
+      "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami ve spolupráci se školskými poradenskými zařízeními",
+      "Školní poradenský tým poskytující metodickou podporu třídnickým hodinám",
+      "Školní psycholog (od října 2025)",
+      "Kariérové poradenství a prevence rizikového chování"
+    ],
+    "safety_climate": [
+      "Systém preventivních opatření v oblasti bezpečnosti a ochrany zdraví je funkční a pravidelně vyhodnocován",
+      "Škola důsledně dbá na dodržování bezpečnostních standardů a podporuje rozvoj kultury bezpečného chování",
+      "Přijatá opatření zajišťují fyzickou i psychickou bezpečnost žáků",
+      "Škola splnila podmínky pro standardní provoz digitální školy v oblasti bezpečného klimatu"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem (Zlínský kraj) na strategickém rozvoji",
+      "Partnerství s univerzitami, sportovními kluby, městskými institucemi a školami v Holešově",
+      "Program Erasmus+ – výměnné programy s českými i zahraničními školami",
+      "Spolupráce s absolventy při organizaci besed pro žáky",
+      "Spolupráce s externími organizacemi na prevenci společensky nežádoucích jevů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, bez zbytečného úřednického stylu. Informace jsou jasně strukturované a snadno pochopitelné pro rodiče bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – nelze posoudit trend absence žáků",
+      "Konkrétní počty žáků v soutěžích nejsou uvedeny – pouze kvalitativní popis úspěchů",
+      "Detaily o fungování nového školního psychologa chybí – pozice je příliš nová"
+    ]
+  }
+}
+```

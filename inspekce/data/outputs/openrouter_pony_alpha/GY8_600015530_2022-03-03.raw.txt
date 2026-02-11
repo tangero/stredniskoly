@@ -1,0 +1,100 @@
+{
+  "report_id": "GY8_600015530_2022-03-03",
+  "school_profile": {
+    "school_type": "Gymnázium",
+    "inspection_period": "3. - 4. 3. 2022 a 7. 3. - 8. 3. 2022",
+    "school_change_summary": "Od roku 2019 školu vede nový ředitel, který se zaměřil na modernizaci technického vybavení a zajistil stoprocentní kvalifikovanost pedagogů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky žáků",
+        "detail": "Žáci dosahují nadprůměrných výsledků v maturitních zkouškách a výborných úspěchů v soutěžích.",
+        "evidence": "Celkové výsledky žáků u maturitních zkoušek... byly v porovnění s celorepublikovým průměrem nadprůměrné. Žáci opakovaně prokazovali výborné výsledky ve Středoškolské odborné činnosti."
+      },
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Škola klade důraz na kvalitní výuku jazyků a mezinárodní spolupráci.",
+        "evidence": "Výměnné zahraniční pobyty... vedly žáky k rozvoji otevřenosti, tolerance a respektu vůči jiným kulturám. Každoroční obohacování výuky... konverzaci s rodilými mluvčími."
+      },
+      {
+        "tag": "Zázemí školy",
+        "detail": "Škola prošla rekonstrukcí a disponuje moderním vybavením včetně jídelny.",
+        "evidence": "Stavebními pracemi... modernizací vybavení učeben... se zvýšil komfort pro vzdělávání. Škola má k dispozici zmodernizovanou školní jídelnu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Ve výuce převažují frontální metody a chybí aktivizace žáků.",
+        "evidence": "Výuka ale postrádala pestřejší zapojení aktivizačních motivačních forem a metod, důraz na práci ve dvojicích či skupinách."
+      },
+      {
+        "tag": "Nedostatečná zpětná vazba",
+        "detail": "Hodiny často postrádají jasný závěr a shrnutí látky.",
+        "evidence": "Společným nedostatkem většiny sledované výuky byla absence efektivního závěru zaměřeného na shrnutí a upevnění poznatků."
+      },
+      {
+        "tag": "Slabá vnitřní kontrola",
+        "detail": "Vedení školy nevěnuje dostatek pozornosti kontrole a hodnocení kvality výuky.",
+        "evidence": "Menší pozornost byla věnována také kontrolní a hospitační činnosti. Záznamy... poskytovaly pouze minimální zpětnou vazbu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé motivují žáky k aktivní účasti během hodin, když inspekce častěji zaznamenala pasivní frontální výuku?",
+      "Jakým způsobem škola zajišťuje individuální přístup a diferenciaci výuky pro studenty s různými schopnostmi?",
+      "Jak vedení školy reaguje na zjištění, že chybí systémové vyhodnocování maturitních výsledků a inspekční zprávy?"
+    ],
+    "who_school_fits": [
+      "Samostatní žáci, kteří zvládnou učivo i bez intenzivní podpory a aktivizace ve výuce.",
+      "Studenti s zájmem o jazyky a účast na zahraničních pobytích a projektech.",
+      "Uchazeči, kteří oceňují moderní prostředí a nadprůměrné akademické výsledky školy."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují k učení pestřejší metody než je frontální výklad.",
+      "Studenti vyžadující častou a průběžnou zpětnou vazbu od vyučujících.",
+      "Rodiče očekávající intenzivní individuální přístup vzhledem k různým schopnostem dětí."
+    ],
+    "plain_czech_summary": "Gymnázium v Uherském Brodu nabízí nadprůměrné studijní výsledky a moderní zázemí po rekonstrukci. Škola vyniká v jazykovém vzdělávání a nabízí zahraniční pobyty. Slabší stránkou je tradiční styl výuky, kde chybí aktivní zapojení žáků a častější práce ve skupinách. Vedení by se mělo více zaměřit na kontrolu kvality výuky. Škola je vhodná pro samostatné studenty, kteří nezáleží jen na moderních vyučovacích metodách."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "nadprůměrný",
+      "key_numbers": [
+        "Výsledky nad celorepublikovým průměrem",
+        "Výjimka v roce 2018/2019 (horší výsledky v ČJL)"
+      ],
+      "evidence": "Celkové výsledky žáků u maturitních zkoušek od poslední inspekční činnosti byly v porovnání s celorepublikovým průměrem nadprůměrné."
+    },
+    "absence": {
+      "trend": "neuvedeno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní údaje o absence ani jejím trendu."
+    },
+    "support_services": [
+      "Poradenské služby na dobré úrovni",
+      "Podpora žáků se SVP v rámci stupňů podpůrných opatření",
+      "Adaptační pobyty pro první ročníky"
+    ],
+    "safety_climate": [
+      "Příjemná a klidná pracovní atmosféra ve výuce",
+      "Důraz na vyhodnocování bezpečnostních rizik",
+      "Vytvořené odpočinkové zóny pro relaxaci"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s českými i zahraničními školami",
+      "Účast na projektech a kulturních akcích města",
+      "Spolupráce se školskými poradenskými zařízeními"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje dostatek konkrétních příkladů pro ilustraci závěrů.",
+    "uncertainty_notes": [
+      "Chybí konkrétní data o neúspěšnosti nebo prospěchu žáků v číslech (procentech).",
+      "Není uveden počet žáků ve třídách nebo konkrétní statistika absence.",
+      "Informace o financování jsou obecné bez konkrétních částek."
+    ]
+  }
+}
+``End the code block to indicate the end of the JSON object.

@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600006760_2021-12-13",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:08:40.081610+00:00",
+  "run_finished_utc": "2026-02-10T08:10:14.464306+00:00",
+  "raw_file": "SOS_600006760_2021-12-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006760_2021-12-13",
+    "school_profile": {
+      "school_type": "Střední odborná škola a učiliště s maturitními obory Podnikání a Hotelnictví.",
+      "inspection_period": "13. − 15. prosince 2021",
+      "school_change_summary": "Škola zrušila problematický obor Gastronomie a zvýšila počet žáků v maturitních oborech, ale bojuje s jejich neúspěšností u maturity."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Zlepšení klimatu",
+          "detail": "Klesla neomluvená absence a škola řeší problémy s neúspěšností i přes personální změny.",
+          "evidence": "Dílčí pozitivní změnou... je snížení rozsahu neomluvené absence žáků maturitních oborů."
+        },
+        {
+          "tag": "Digitální vybavenost",
+          "detail": "Škola dobře vybavila žáky i učitele technikou pro distanční výuku a využívá ji i nyní.",
+          "evidence": "Během distanční výuky byla pořízena vhodná technika... Pedagogové účelně využívají digitálních technologie."
+        },
+        {
+          "tag": "Včasná podpora",
+          "detail": "Žáci se speciálními potřebami jsou včas identifikováni a dostávají podporu.",
+          "evidence": "K podpoře žáků se SVP přispívá jejich včasná identifikace a pravidelná spolupráce se školskými poradenskými zařízeními."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kolaps u maturity",
+          "detail": "Polovina žáků oboru Podnikání neudělala maturitu, výsledky jsou výrazně horší než republikový průměr.",
+          "evidence": "V roce 2020/2021... hrubá neúspěšnost žáků školy ve společné části MZ činila 50 %, v ČR byla cca 26 %."
+        },
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "Víc než třetinu výuky českého jazyka a většinu jazyků učí lektoři bez odborné kvalifikace.",
+          "evidence": "Převážná část výuky anglického a německého jazyka a více než třetina výuky českého jazyka... je zajištěna učiteli bez odborné kvalifikace."
+        },
+        {
+          "tag": "Klamné známky",
+          "detail": "Žáci mají dobré známky, ale u maturity nevědí, co je čeká, protože hodnocení není objektivní.",
+          "evidence": "Nadále tak přetrvává vysoká disproporce mezi dobrým hodnocením žáků v průběhu vzdělávání a jejich neúspěšností u MZ."
+        }
+      ],
+      "questions_for_open_day": [
+        "Kolik učitelů maturitních předmětů má plnou kvalifikaci a jak se škola vypořádala s jejich nedostatkem?",
+        "Jak konkrétně škola připravuje žáky na didaktické testy v průběhu celého studia, nejen v posledním ročníku?",
+        "Jaká je statistika úspěšnosti u maturity v oboru Hotelnictví, který teprve bude maturovat?"
+      ],
+      "who_school_fits": [
+        "Samostatným žákům, kteří nezklamou snadno a najdou si vlastní cestu k učení.",
+        "Uchazečům o obor Hotelnictví, kde je větší hodinová dotace jazyků a lepší výsledky.",
+        "Žákům, kteří potřebují flexibilní změnu oboru v případě neúspěchu (možnost přestupu na nematuritní obor)."
+      ],
+      "who_should_be_cautious": [
+        "Uchazečům o nástavbové studium Podnikání, kde je extrémně vysoká neúspěšnost u maturity.",
+        "Žákům, kteří potřebují intenzivní podporu učitele a kvalitní zpětnou vazbu o svých znalostech.",
+        "Studentům s horšími studijními návyky, kteří by mohli v distanční výuce ztroskotat."
+      ],
+      "plain_czech_summary": "Inspekce ukázala, že škola má vážný problém s výsledky u maturity, zejména v oboru Podnikání, kde neuspěla polovina žáků. Situaci komplikuje fakt, že výuku klíčových předmětů často zajišťují nekvalifikovaní učitelé a školní známky neodrážejí skutečné znalosti. Škola sice dobře zvládla technické zajištění výuky a snížila neomluvenou absenci, ale rodiče by měli být velmi ostražití ohledně kvality přípravy na státní zkoušky. Pro některé žáky může být útěchou možnost přestupu na jiný obor."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Rapidní zhoršení úspěšnosti v oboru Podnikání.",
+        "key_numbers": [
+          "50 % neúspěšnost u maturity v roce 2021 (obor Podnikání)",
+          "26 % neúspěšnost v ČR (srovnatelné obory)",
+          "31 % neúspěšnost v roce 2019 (škola)"
+        ],
+        "evidence": "V roce 2020/2021... hrubá neúspěšnost žáků školy ve společné části MZ činila 50 %, v ČR byla cca 26 %."
+      },
+      "absence": {
+        "trend": "Celková absence klesla vlivem distanční výuky, ale klesla i neomluvená absence.",
+        "key_numbers": [
+          "126 hodin na žáka (2018/19)",
+          "Snížení o 56 % (2020/21)",
+          "Snížen průměrný počet neomluvených hodin"
+        ],
+        "evidence": "V roce 2020/2021 pak o 56 %. Dílčí pozitivní změnou... je snížení rozsahu neomluvené absence."
+      },
+      "support_services": [
+        "Individuální a skupinové doučování pro předcházení neúspěchu.",
+        "Úzká spolupráce výchovné poradkyně s metodikem prevence a třídními učiteli.",
+        "Možnost změny oboru v případě vzdělávacích obtíží."
+      ],
+      "safety_climate": [
+        "Výuka probíhá v pozitivní atmosféře, žáci jsou ukáznění a respektují učitele.",
+        "Žáci s neomluvenou absencí mají často podprůměrný prospěch."
+      ],
+      "partnerships_practice": [
+        "Pravidelná spolupráce se školskými poradenskými zařízeními pro podporu žáků se SVP."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, ale obsahuje mnoho úředních frází a pasivních konstrukcí, které ztěžují rychlé pochopení hlavních problémů běžnému čtenáři.",
+      "uncertainty_notes": [
+        "Nejasná budoucnost oboru Podnikání - inspekce doporučuje jeho zrušení, pokud se neúspěšnost nezlepší.",
+        "Chybí data o úspěšnosti oboru Hotelnictví, který teprve bude maturovat.",
+        "Není zcela jasné, jak konkrétně škola implementovala 'obecná opatření' do jednotlivých předmětů."
+      ]
+    }
+  }
+}

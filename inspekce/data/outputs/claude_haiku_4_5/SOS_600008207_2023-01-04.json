@@ -1,0 +1,10 @@
+{
+  "report_id": "SOS_600008207_2023-01-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:52:59.638662+00:00",
+  "run_finished_utc": "2026-02-09T16:53:03.899965+00:00",
+  "raw_file": "SOS_600008207_2023-01-04.raw.txt",
+  "call_error": null,
+  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
+  "parsed_output": null
+}

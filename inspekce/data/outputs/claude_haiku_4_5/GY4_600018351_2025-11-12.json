@@ -1,0 +1,110 @@
+{
+  "report_id": "GY4_600018351_2025-11-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:28:42.941375+00:00",
+  "run_finished_utc": "2026-02-09T13:29:14.902665+00:00",
+  "raw_file": "GY4_600018351_2025-11-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600018351_2025-11-12",
+    "school_profile": {
+      "school_type": "Gymnázium (osmiletý a čtyřletý studijní cyklus, včetně varianty se sportovní přípravou)",
+      "inspection_period": "12. až 14. listopadu 2025",
+      "school_change_summary": "Od roku 2023 nová ředitelka zavedla plnou digitalizaci dokumentace a procesů. Škola efektivně realizuje opatření z předchozí inspekce, zejména v hospitační činnosti a zjišťování školního klimatu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Žáci dosahují nadprůměrné úspěšnosti v maturitních zkouškách ve všech předmětech (matematika, český jazyk, cizí jazyk) ve srovnání s celostátním průměrem.",
+          "evidence": "Výsledky žáků společné části maturitní zkoušky dlouhodobě vykazují nadprůměrnou úspěšnost."
+        },
+        {
+          "tag": "Moderní vybavení a prostory",
+          "detail": "Škola průběžně investuje do obnovy učeben, vybudovala workoutové hřiště a posilovnu, což zlepšuje podmínky pro výuku.",
+          "evidence": "Vedení školy se daří ve spolupráci se zřizovatelem zajišťovat rozsáhlou obnovu materiálně-technických podmínek."
+        },
+        {
+          "tag": "Mezinárodní spolupráce a soutěže",
+          "detail": "Žáci dosahují mimořádných úspěchů v mezinárodních soutěžích, zejména v robotice, a účastní se zahraničních vzdělávacích aktivit.",
+          "evidence": "Žáci školy opakovaně dosahují mimořádných úspěchů v mezinárodních soutěžích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá podpora žáků se speciálními potřebami",
+          "detail": "Kontrolní činnost vedení není dostatečně zaměřena na zajištění podmínek pro podpůrná opatření a vedení jejich dokumentace má dílčí nedostatky.",
+          "evidence": "Systém kontrolní činnosti není dostatečně zaměřen na zajištění podmínek pro podpůrná opatření."
+        },
+        {
+          "tag": "Omezené formativní hodnocení",
+          "detail": "Učitelé málo využívají sebehodnocení a vzájemné hodnocení žáků, chybí motivující zpětná vazba podporující další učení.",
+          "evidence": "Formativní hodnocení a reflexe vzdělávacího pokroku žáků byly využívány v omezené míře."
+        },
+        {
+          "tag": "Netransparentní systém hodnocení",
+          "detail": "Škola používá vážené hodnocení, ale není jasně zakotveno ve školním řádu, žáci jsou informováni neformálně.",
+          "evidence": "Školou uplatňovaný systém hodnocení není zcela transparentní."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami přímo ve výuce?",
+        "Jaké jsou jasné a transparentní zásady pro hodnocení výsledků vzdělávání, zejména pokud jde o vážené průměry?",
+        "Jak se učitelé zaměřují na formativní zpětnou vazbu a sebehodnocení žáků během hodin?"
+      ],
+      "who_school_fits": [
+        "Ambiciózní žáci zaměření na vysoké studijní výsledky a přípravu na vysoké školy",
+        "Žáci se zájmem o robotiku, techniku a mezinárodní spolupráci",
+        "Sportovně nadaní žáci (čtyřletý program se sportovní přípravou)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se speciálními vzdělávacími potřebami (dokumentace a podpora mají nedostatky)",
+        "Žáci, kteří potřebují intenzivní individuální zpětnou vazbu a motivaci",
+        "Žáci, kteří se lépe učí prostřednictvím sebehodnocení a reflexe (toto není dostatečně rozvinuto)"
+      ],
+      "plain_czech_summary": "Gymnázium v Jeseníku je kvalitní střední škola s výbornými výsledky maturit a moderním vybavením. Silné stránky: nadprůměrné výsledky v maturitách, investice do prostor, mezinárodní soutěže a robotika. Slabiny: nedostatečná podpora žáků se speciálními potřebami, málo formativního hodnocení a sebehodnocení žáků. Vhodná pro ambiciózní žáky, ale rodiče by měli zvážit, zda škola dostatečně podporuje individuální potřeby jejich dítěte."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nadprůměrný",
+        "key_numbers": [
+          "Nadprůměrná úspěšnost ve všech zkušebních předmětech (matematika, český jazyk, cizí jazyk)",
+          "Výsledky trvale překračují celostátní průměr pro danou skupinu oborů"
+        ],
+        "evidence": "Výsledky žáků společné části maturitní zkoušky ve srovnání s celostátním průměrem dlouhodobě vykazují nadprůměrnou úspěšnost."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Absence není v inspekční zprávě detailně analyzována"
+        ],
+        "evidence": "Zpráva se absence věnuje minimálně, není uvedena konkrétní data."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní a školním metodikem prevence",
+        "Primární prevence s on-line monitoringem třídních kolektivů",
+        "Adaptační kurzy pro prvňáky, projektová výuka, Studentská rada"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra, žáci dodržují pravidla komunikace",
+        "Prevence bezpečnostních rizik - žáci jsou průběžně poučováni o zásadách vhodného chování",
+        "Relaxační místa v budovách určená k odpočinku a setkávání žáků"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s místními institucemi, sportovními kluby a akademickou obcí",
+        "Skupinové mobility žáků a dlouhodobé studijní pobyty v zahraničí",
+        "Vzdělávací kurzy pro pedagogy a navázání nových mezinárodních partnerství"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o důkazy. Některé pasáže jsou však více úřednické (např. popis řízení školy), ale celkově je text pro rodiče pochopitelný.",
+      "uncertainty_notes": [
+        "Absence není v zprávě detailně analyzována - není jasné, zda je problém nebo ne",
+        "Konkrétní počty žáků se speciálními potřebami nejsou uvedeny",
+        "Není jasné, jak velký je problém s dokumentací podpůrných opatření v praxi"
+      ]
+    }
+  }
+}

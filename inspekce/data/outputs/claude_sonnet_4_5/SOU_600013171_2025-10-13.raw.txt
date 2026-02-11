@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOU_600013171_2025-10-13",
+  "school_profile": {
+    "school_type": "Střední odborná škola s gastronomickými a technickými obory, včetně domova mládeže",
+    "inspection_period": "13. až 15. října 2025",
+    "school_change_summary": "Škola zaznamenala výrazný nárůst žáků (o téměř 100 na celkových 272), pozastavila činnost školní jídelny-výdejny. Přetrvávají problémy s pestrostí výukových metod a nedostatečnou prací se vzdělávacími cíli v hodinách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s firmami",
+        "detail": "Žáci získávají praktické zkušenosti přímo v reálném pracovním prostředí u smluvních partnerů.",
+        "evidence": "„Velmi dobrá spolupráce se sociálními partnery v rámci praktického vyučování poskytuje žákům školy prostor k získávání odborných zkušeností z reálného pracovního prostředí.""
+      },
+      {
+        "tag": "Nízká absence",
+        "detail": "Škola úspěšně motivuje žáky k pravidelné docházce do teoretické výuky.",
+        "evidence": "„Napříč obory vzdělání je absence žáků v teoretické výuce nízká, neomluvená jen ojedinělá, což svědčí o nastavení pravidel a vhodné motivaci žáků.""
+      },
+      {
+        "tag": "Úspěšnost u zkoušek",
+        "detail": "Žáci dosahují velmi dobrých výsledků u závěrečných i maturitních zkoušek.",
+        "evidence": "„V posledním školním roce u závěrečných zkoušek neuspěl pouze jeden žák z 58. Maturitní zkoušku vykonalo 15 žáků, z nich dva neuspěli.""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovaní učitelé",
+        "detail": "Škole se nedaří získat kvalifikované učitele, což se projevuje v kvalitě výuky.",
+        "evidence": "„Přes veškeré úsilí se vedení školy daří najít kvalifikované učitele jen na některé předměty... vykazovaly metodické a didaktické nedostatky... občas byly zaznamenány i odborné chyby ve výkladu učitele.""
+      },
+      {
+        "tag": "Jednotvárná výuka",
+        "detail": "Převažuje frontální výuka s malým zapojením žáků do aktivit.",
+        "evidence": "„Převažovala frontální forma výuky s výkladem... žáci se většiny hodin zúčastnili pasivně, do sešitů si zaznamenávali nadiktované nové učivo... Jen občas byly využity skupinové a kooperativní činnosti.""
+      },
+      {
+        "tag": "Absence zpětné vazby",
+        "detail": "V hodinách chybí vyhodnocení, zda žáci pochopili učivo a dosáhli cíle.",
+        "evidence": "„V závěrech hodin téměř vždy chybělo formativní hodnocení... K samotnému vyhodnocení hodiny a úspěšnosti naplnění cíle nedocházelo, zpravidla chyběl i dostatek času a prostoru pro vyjádření vlastního názoru žáků.""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší nedostatek kvalifikovaných učitelů a jak podporuje ty nekvalifikované?",
+      "Jaké konkrétní firmy jsou vašimi partnery pro praxi a jaké možnosti mají žáci při výběru pracovišť?",
+      "Jak škola pracuje s žáky, kteří potřebují individuální přístup nebo naopak rychleji chápou?"
+    ],
+    "who_school_fits": [
+      "Žáky se zájmem o gastronomii nebo technické obory, kteří chtějí získat praktické zkušenosti přímo ve firmách",
+      "Studenty ze vzdálenějších míst – škola má domov mládeže s podporou při učení a přátelskou atmosférou",
+      "Žáky, kteří preferují spíše praktickou výuku před teoretickou a chtějí se rychle uplatnit na trhu práce"
+    ],
+    "who_should_be_cautious": [
+      "Žáky, kteří potřebují pestrou, aktivizující výuku a individuální přístup – ten ve škole zatím chybí",
+      "Studenty očekávající vysokou odbornou úroveň všech učitelů – škola má problémy s kvalifikací pedagogů",
+      "Žáky se speciálními vzdělávacími potřebami – podpora je formálně nastavena, ale v praxi nedostatečně realizována"
+    ],
+    "plain_czech_summary": "Škola nabízí gastronomické a technické obory s velmi dobrou spoluprací s firmami, kde žáci získávají praktické zkušenosti. Úspěšnost u zkoušek je vysoká a absence žáků nízká. Domov mládeže poskytuje kvalitní zázemí. Hlavním problémem je nedostatek kvalifikovaných učitelů, což se projevuje v kvalitě výuky – převažuje frontální výklad, žáci jsou málo aktivní, chybí zpětná vazba a individuální přístup. Škola nedostatečně podporuje žáky se speciálními potřebami i nadané. Vedení si je problémů vědomo, ale zatím se je nedaří systematicky řešit. Pro žáky zaměřené na praxi a rychlé uplatnění je škola vhodná, pro ty očekávající kvalitní teoretickou výuku méně."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "dobrý",
+      "key_numbers": [
+        "15 žáků konalo maturitu, 2 neuspěli (úspěšnost 87 %)",
+        "58 žáků konalo závěrečnou zkoušku, 1 neuspěl (úspěšnost 98 %)"
+      ],
+      "evidence": "„V posledním školním roce u závěrečných zkoušek neuspěl pouze jeden žák z 58. Maturitní zkoušku vykonalo 15 žáků, z nich dva neuspěli.""
+    },
+    "absence": {
+      "trend": "v teoretické výuce dobrý, v praktické horší",
+      "key_numbers": [
+        "V teoretické výuce nízká absence, neomluvená jen ojedinělá",
+        "V praktické výuce přetrvává záškoláctví a neomluvená absence"
+      ],
+      "evidence": "„Napříč obory vzdělání je absence žáků v teoretické výuce nízká, neomluvená jen ojedinělá... Nicméně v praktické výuce se škole tolik nedaří a záškoláctví spojené s neomluvenou absenci stále přetrvává.""
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence se specializačním studiem",
+      "Kariérová poradkyně (specializaci si doplňuje)",
+      "Evidence 25 žáků se speciálními vzdělávacími potřebami, ale nedostatečná realizace podpory ve výuce"
+    ],
+    "safety_climate": [
+      "Klidná pracovní atmosféra, žáci dodržují pravidla (např. odkládání mobilů)",
+      "Škola včas zachytává a úspěšně řeší rizikové situace mezi žáky",
+      "Preventivní program je pravidelně aktualizován a vyhodnocován"
+    ],
+    "partnerships_practice": [
+      "Velmi dobrá spolupráce s podnikatelskými subjekty pro realizaci praxe",
+      "Možnost zahraničních stáží v hlavním sídle firem pro některé obory",
+      "Spolupráce se základními školami, Průmyslovou SŠ Letohrad, polskou školou a profesními organizacemi (Asociace kuchařů a cukrářů, Cech topenářů aj.)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný a psaný pro rodiče, minimální úřednický styl. Drobné rezervy v délce některých vět.",
+    "uncertainty_notes": [
+      "Není zcela jasné, jak velký podíl učitelů je nekvalifikovaných – zpráva uvádí 'jen na některé předměty'",
+      "Chybí konkrétní informace o tom, které firmy jsou partnery školy pro praxi",
+      "Není specifikováno, jak škola konkrétně řeší problémy s kvalitou výuky nekvalifikovaných učitelů"
+    ]
+  }
+}
+```

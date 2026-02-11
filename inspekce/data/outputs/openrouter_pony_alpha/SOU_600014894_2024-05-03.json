@@ -1,0 +1,109 @@
+{
+  "report_id": "SOU_600014894_2024-05-03",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T06:58:06.385539+00:00",
+  "run_finished_utc": "2026-02-10T06:59:10.035844+00:00",
+  "raw_file": "SOU_600014894_2024-05-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600014894_2024-05-03",
+    "school_profile": {
+      "school_type": "Střední a vyšší odborná škola (ekonomické, zdravotnické a službové obory)",
+      "inspection_period": "3., 6. – 7. a 10. 5. 2024",
+      "school_change_summary": "Škola se transformovala ve stabilní konkurenceschopný subjekt s výrazným nárůstem zájemců o studium a zlepšeným materiálním vybavením."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola má velmi dobře zajištěnou spolupráci s firmami a žáci pracují v reálných podmínkách.",
+          "evidence": "„Jedná se o promyšlené a smysluplné zapojování žáků do produktivní činnosti, kdy žáci pracují v reálných podmínkách svého budoucího zaměstnání.“"
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola disponuje nadstandardním vybavením učeben a techniky nad rámec běžného standardu.",
+          "evidence": "„Vybavení školy moderní didaktickou a výpočetní technikou se výrazně zlepšilo... a úroveň přesahuje rámec běžného vybavení.“"
+        },
+        {
+          "tag": "Atmosféra a vztahy",
+          "detail": "Ve výuce panuje vstřícná atmosféra s partnerským přístupem učitelů k žákům.",
+          "evidence": "„Hospitovaná výuka... probíhala ve velmi vstřícné a respektující atmosféře. Oboustranně partnerský vztah... účelně podporoval efektivitu učebního procesu.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "V některých oborech se objevily výrazné neúspěchy u profilové zkoušky, které vyžadovaly nápravu.",
+          "evidence": "„...v jarním zkušebním období 2023... neprospělo téměř 38 % žáků [z českého jazyka]...“"
+        },
+        {
+          "tag": "Hodnocení ve výuce",
+          "detail": "Ve výuce chybí důsledné využívání sebehodnocení a vzájemného hodnocení žáků.",
+          "evidence": "„Dílčí rezervou je, že nebyla využita příležitost uplatnit po skončení skupinových činností vzájemné hodnocení.“"
+        },
+        {
+          "tag": "Individualizace",
+          "detail": "Učitelé věnují méně pozornosti diferenciaci výuky podle potenciálu jednotlivých žáků.",
+          "evidence": "„V nižší míře byla sledována diferenciace činností vedoucí k výraznějšímu rozvoji... vzhledem k potenciálu jednotlivých žáků.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola reaguje na neúspěch žáků u maturitní zkoušky a jaká doučování nabízí?",
+        "Jakým způsobem jsou žáci zapojováni do sebehodnocení a vzájemného hodnocení v hodinách?",
+        "Jaké konkrétní možnosti individuální odborné praxe u firem podle vlastního výběru škola nabízí?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří hledají silné propojení teorie s reálnou praxí a zahraničními stážemi.",
+        "Žáci, kteří oceňují moderní vybavení školy a digitální podporu výuky.",
+        "Studenti, kterým vyhovuje vstřícný partnerský přístup učitelů a podpora při soutěžích."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují výrazně individualizovaný přístup a tempo výuky šité na míru.",
+        "Uchazeči, kteří preferují tradiční metody hodnocení nad formativním a vzájemným hodnocením.",
+        "Studenti s obavami o studijní úspěšnost u profilové části maturitní zkoušky (ČJ)."
+      ],
+      "plain_czech_summary": "Inspekce potvrdila, že jihlavská škola nabízí nadstandardní vybavení a skvělé zázemí pro praktickou výuku v reálných firmách. Výuka probíhá v přátelské atmosféře a škola je velmi žádaná. Slabinou jsou kolísavé výsledky u maturity, kde škola musela řešit hromadný neúspěch, a menší důraz na individuální přístup k talentovanějším žákům. Pro rodiče je klíčové, že škola funguje stabilně a na problémy reaguje operativně, například zavedením doučování."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s nutnými nápravnými opatřeními",
+        "key_numbers": [
+          "38 % žáků jednoho ročníku neprospělo u profilové maturity z ČJ (jaro 2023)",
+          "Téměř všichni neúspěšní žáci úspěšně ukončili studium v podzimním termínu",
+          "Absolventi jsou úspěšnější u závěrečných zkoušek než u maturit"
+        ],
+        "evidence": "„...neprospělo téměř 38 % žáků... Přijatá opatření (např. doučování v průběhu prázdnin) vedla k úspěšnému ukončení studia téměř všech žáků...“"
+      },
+      "absence": {
+        "trend": "Důsledně monitorovaná a řešená",
+        "key_numbers": [
+          "Analýza příčin absence v součinnosti s poradenským pracovištěm",
+          "Realizace výchovných komisí",
+          "Spolupráce s lékaři a OSPOD"
+        ],
+        "evidence": "„Absence žáků je důsledně sledována. V součinnosti se školním poradenským pracovištěm jsou analyzovány příčiny a nastavována opatření...“"
+      },
+      "support_services": [
+        "Funkční školní poradenské pracoviště s pravidelnými poradami o žácích",
+        "Intenzivní podpora přípravy na soutěže (znalostní, dovednostní, sportovní)",
+        "Možnost složit mezinárodní zkoušku z angličtiny (Cambridge) přímo ve škole"
+      ],
+      "safety_climate": [
+        "Vstřícné a respektující atmosféra s partnerskými vztahy",
+        "Funkční školní preventivní strategie a reakce na vztahové problémy",
+        "Disciplinovanost žáků a dodržování bezpečnosti práce"
+      ],
+      "partnerships_practice": [
+        "Ročně cca 40 smluv s partnery na dlouhodobé praxe",
+        "Cca 350 smluv na individuální odbornou praxi mezi žáky a firmami",
+        "Možnost vykonávat praxi u firem podle vlastního výběru žáka"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán srozumitelným jazykem, má jasnou strukturu a explicitně vyjmenovává silné i slabé stránky s konkrétními příklady.",
+      "uncertainty_notes": []
+    }
+  }
+}

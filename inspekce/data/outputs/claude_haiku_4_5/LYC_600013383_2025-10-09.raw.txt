@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "LYC_600013383_2025-10-09",
+  "school_profile": {
+    "school_type": "Střední škola cestovního ruchu a gastronomie (soukromá, s.r.o.)",
+    "inspection_period": "9.–13. října 2025",
+    "school_change_summary": "Od inspekce v roce 2019 se počet žáků zvýšil o 68 % na 197 studentů. Škola rozšířila vedení o dva vedoucí učitele, zrekonstruovala třídy a odborné učebny, přidala nový obor Ekonomické lyceum a výrazně posílila spolupráci s profesními partnery."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Silné partnerství s praxí",
+        "detail": "Škola systematicky spolupracuje s profesními organizacemi a odbornými firmami, což přináší kvalitní praktické vzdělávání a reálné zkušenosti.",
+        "evidence": "Spolupráce s Asociací hotelů a restaurací ČR, Svazem výrobců vína, Národním vinařským centrem a finančními poradci."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola investuje do zlepšování materiálních podmínek, včetně rekonstrukcí tříd a nových odborných učeben.",
+        "evidence": "Nově zřízené odborné učebny umožňují propojení teorie s praxí, slavnostně otevřeny při 30. výročí školy."
+      },
+      {
+        "tag": "Praktické projekty a terénní výuka",
+        "detail": "Projekty jako 'Barmanské dny' a 'Okno do duše vína' propojují teorii s reálným prostředím a rozvíjejí profesní identitu.",
+        "evidence": "Žáci procházejí celým procesem výroby vína, komunikují se seniory, poznávají provoz dopravců a letiště."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejednotný přístup k výuce",
+        "detail": "Chybí formální předmětové komise a systematické sdílení osvědčených postupů mezi učiteli.",
+        "evidence": "Inspekce zjistila 'nejednotný přístup učitelů k výuce' a 'omezenou míru diferenciace' v hodinách."
+      },
+      {
+        "tag": "Kolísavé výsledky maturit",
+        "detail": "Úspěšnost maturitní zkoušky v oboru Cestovní ruch se výrazně mění – od 4,3 % neúspěšnosti na 26,6 %.",
+        "evidence": "Školní rok 2024/2025: 26,6 % neúspěšnosti; 2023/2024: 5,6 %; 2022/2023: 4,3 %."
+      },
+      {
+        "tag": "Nedostatečné vzdělávání učitelů",
+        "detail": "Učitelé se účastní dalšího vzdělávání ojediněle, plány profesního rozvoje neodpovídají potřebám školy.",
+        "evidence": "V předešlém školním roce se vzdělávání účastnilo jen několik pedagogů, témata vycházela z individuálních potřeb."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší kolísavé výsledky maturitních zkoušek a jaká konkrétní opatření zavádí pro zlepšení?",
+      "Jaký je systém mentorování a podpory pro nové učitele a jak dlouho trvá jejich adaptace?",
+      "Jak se škola zajímá o zpětnou vazbu od žáků a jejich rodičů a jak ji využívá ke zlepšování?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s propojením teorie a reálné praxe v cestovním ruchu, gastronomii nebo ekonomice.",
+      "Studenti, kteří se zajímají o osobnostní rozvoj, komunikační dovednosti a práci v týmu.",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje cílenou podporu školního poradenského týmu."
+    ],
+    "who_should_be_cautious": [
+      "Rodiny, které očekávají konzistentní vysokou úspěšnost v maturitách – výsledky se výrazně liší podle roku.",
+      "Žáci, kteří potřebují individualizovanou výuku a diferenciaci – inspekce zjistila nízkou míru diferenciace.",
+      "Studenti, kteří se spoléhají na systematické vzdělávání učitelů – další vzdělávání pedagogů probíhá ojediněle."
+    ],
+    "plain_czech_summary": "Škola se zaměřuje na praktické vzdělání v cestovním ruchu a gastronomii s dobrými vazbami na firmy a kvalitním vybavením. Silnou stránkou jsou projekty a terénní výuka, které žákům dávají reálné zkušenosti. Slabší je jednotnost přístupu učitelů, jejich vzdělávání a kolísavé výsledky maturit. Inspekce doporučuje zlepšit kontrolu výuky, systematičtější vzdělávání pedagogů a více diferenciace v hodinách."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nestabilní – výrazné výkyvy v úspěšnosti",
+      "key_numbers": [
+        "2021/2022: 23,1 % neúspěšnosti",
+        "2024/2025: 26,6 % neúspěšnosti",
+        "Obor Kuchař-číšník: 100 % úspěšnost od 2023/2024"
+      ],
+      "evidence": "Obor Cestovní ruch vykazuje 'určité výkyvy' s 'proměnlivými výsledky'; Kuchař-číšník má 'výborné' výsledky."
+    },
+    "absence": {
+      "trend": "Sestupný – zlepšuje se",
+      "key_numbers": [
+        "Průměr za 3 roky: 73 hodin na žáka",
+        "Neomluvená absence: jen jednotky žáků"
+      ],
+      "evidence": "Absence 'má sestupnou tendenci', neomluvená absence se 'týká jen jednotek žáků'."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s jasně vymezeným týmem (výchovný poradce, kariérní poradce, metodička prevence)",
+      "Ředitelka škola jako výchovná poradkyně pro žáky se speciálními vzdělávacími potřebami",
+      "Metodická podpora pedagogům a cílená pomoc žákům ohroženým školním neúspěchem"
+    ],
+    "safety_climate": [
+      "Traumatologický plán a krizový plán školy",
+      "Pravidelná školení v oblasti BOZP a první pomoci",
+      "Kniha úrazů vedená v souladu s předpisy"
+    ],
+    "partnerships_practice": [
+      "Asociace hotelů a restaurací ČR – pravidelné návštěvy odborných konferencí",
+      "Svaz výrobců vína na Slovensku a Národní vinařské centrum – inovace ve výuce",
+      "Vysoká škola – pedagogická praxe studentů a následné zaměstnávání",
+      "Finanční poradenská společnost – podpora výuky nového oboru Ekonomické lyceum"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více úřednického stylu, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Inspekční zpráva neobsahuje podrobné informace o kvalitě jednotlivých učitelů – hodnocení je spíše obecné.",
+      "Chybí konkrétní data o počtu žáků, kteří si vybírají jednotlivé obory, a jejich spokojenosti.",
+      "Není jasné, jak přesně se liší úroveň jednotlivých smluvních pracovišť pro odborný výcvik."
+    ]
+  }
+}
+```

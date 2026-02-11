@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600016803_2025-01-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:05:08.634584+00:00",
+  "run_finished_utc": "2026-02-09T16:05:38.933916+00:00",
+  "raw_file": "LYC_600016803_2025-01-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600016803_2025-01-14",
+    "school_profile": {
+      "school_type": "Střední škola ekonomicko-podnikatelská (o.p.s.) s obory: Strojní mechanik, Obchodní akademie, Ekonomické lyceum, Podnikání (nástavbové studium)",
+      "inspection_period": "14.–17. ledna a 30. ledna 2025",
+      "school_change_summary": "Škola zmodernizovala školní dílnu ve spolupráci s partnery, ale nedostatky z inspekce 2018 přetrvávají. Hlavní problém: vysoká neúspěšnost u maturit, zejména v oboru Podnikání, a neúčinná opatření vedení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola aktivně pracuje s místními firmami, kde žáci získávají praktické dovednosti a často se zde uplatňují po absolvování.",
+          "evidence": "Odborný výcvik probíhá na smluvních pracovištích s instruktory; škola upravuje programy podle potřeb zaměstnavatelů."
+        },
+        {
+          "tag": "Kvalitní odborný výcvik",
+          "detail": "Praktická výuka má odpovídající odbornou úroveň s důrazem na bezpečnost a pracovní návyky.",
+          "evidence": "Žáci Strojního mechanika jsou dlouhodobě úspěšní u závěrečné zkoušky; dostávají stipendia od partnerských organizací."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola nabízí individuální konzultace a spolupracuje se školskými poradenskými zařízeními.",
+          "evidence": "Výchovná poradkyně sleduje žáky s potřebou podpůrných opatření; nové třídy mají adaptační dny."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká neúspěšnost u maturit",
+          "detail": "V oboru Podnikání dosáhla neúspěšnost v roce 2024 až 60 % z češtiny a angličtiny (průměr ČR 15–18 %).",
+          "evidence": "Podíl úspěšnosti v Podnikání klesl z 100 % (2021/22) na 50 % (2023/24); opatření vedení nejsou účinná."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "30 % žáků mělo neomluvené absence; průměrná absence na žáka je 24–32 % ročně.",
+          "evidence": "Absence se podílí na neúspěšnosti; škola nemotivuje žáky k pravidelné docházce dostatečně účinně."
+        },
+        {
+          "tag": "Slabá kvalita výuky",
+          "detail": "Učitelé málo používají inovativní metody, diferenciaci a aktivní formy učení; chybí zpětná vazba.",
+          "evidence": "Výuka je převážně frontální; žáci minimálně pracují na různě obtížných úkolech; sebehodnocení je opomíjeno."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření škola přijala na zvýšení úspěšnosti u maturit, zejména v oboru Podnikání?",
+        "Jak škola řeší vysokou absenci a jak motivuje žáky k pravidelné docházce?",
+        "Jaké inovativní metody výuky a digitální nástroje škola v současnosti zavádí?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou práci a učňovské obory (Strojní mechanik) – zde má škola dlouhodobě dobré výsledky.",
+        "Žáci, kteří potřebují individuální podporu a poradenství – škola má výchovnou poradkyni a poradenské pracoviště.",
+        "Žáci se zájmem o spolupráci s místními firmami a rychlé uplatnění na trhu práce."
+      ],
+      "who_should_be_cautious": [
+        "Žáci plánující studium oboru Podnikání – vysoká neúspěšnost u maturit (50 % v roce 2023/24, 60 % v roce 2024).",
+        "Žáci, kteří potřebují kvalitní teoretickou přípravu a moderní výukové metody – výuka je převážně tradiční.",
+        "Žáci s tendencí k absencím – škola nemá účinný systém motivace k docházce."
+      ],
+      "plain_czech_summary": "Střední škola v Studénce má silné stránky v praktické výuce a spolupráci s firmami, zejména pro obor Strojní mechanik. Problém je vysoká neúspěšnost u maturit, zvlášť v oboru Podnikání (60 % neúspěšnosti v roce 2024). Absence žáků (30 % neomluvené) a tradiční výuka bez inovativních metod jsou další slabiny. Vedení školy přijímá opatření, ale nejsou dostatečně účinná. Vhodná pro prakticky zaměřené žáky, méně pro ty, kdo chtějí kvalitní teoretickou přípravu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Klesající, zejména v oboru Podnikání; ostatní obory horší než průměr ČR",
+        "key_numbers": [
+          "Podnikání 2024: 60 % neúspěšnosti z češtiny a angličtiny (průměr ČR 15–18 %)",
+          "Ostatní obory 2023–2024: 14–29 % neúspěšnosti (průměr ČR ~4 %)",
+          "Podnikání 2021/22: 100 % úspěšnosti → 2023/24: 50 % úspěšnosti"
+        ],
+        "evidence": "Hrubá neúspěšnost měřena jako podíl neúspěšných nebo nekonajících žáků k celkovému počtu přihlášených; profilová část úspěšná, společná část problematická."
+      },
+      "absence": {
+        "trend": "Vysoká a neměnná; opatření školy nejsou účinná",
+        "key_numbers": [
+          "30 % žáků mělo neomluvené absence v roce 2023/24",
+          "Průměrná absence na žáka: 24–32 % ročně (2021/22–2023/24)",
+          "Absence se podílí na neúspěšnosti při ukončování vzdělávání"
+        ],
+        "evidence": "Škola nepřijímá účinná opatření; nemotivuje žáky k pravidelné docházce; absence koreluje s prospěchem."
+      },
+      "support_services": [
+        "Výchovná poradkyně sleduje žáky se speciálními vzdělávacími potřebami (4 žáci identifikováni)",
+        "Kariérní poradenství s exkurzemi do místních firem a konzultacemi",
+        "Školní metodik prevence realizuje preventivní aktivity; adaptační dny pro nové třídy",
+        "Individuální konzultace učitelů, ale bez účinného systému pomoci při studijním neúspěchu"
+      ],
+      "safety_climate": [
+        "Příznivá atmosféra mezi vyučujícími a žáky s důrazem na respektování pravidel",
+        "Bezpečnost a ochrana zdraví: žáci pravidelně poučováni; na pracovištích dbáno na bezpečnost",
+        "Vstřícný a respektující přístup na pracovištích odborného výcviku"
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce s místními firmami na odborném výcviku a praxi",
+        "Školní dílna zmodernizována ve spolupráci s externími partnery",
+        "Úpravy školních vzdělávacích programů podle potřeb zaměstnavatelů",
+        "Žákovská rada; účast v městském parlamentu Studénky",
+        "Projekt 'Jiná kariéra' pro volbu další vzdělávací a pracovní kariéry"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, s konkrétními čísly a příklady. Jasně identifikuje silné a slabé stránky. Mírně sníženo pro místy technický jazyk a rozsáhlost textu.",
+      "uncertainty_notes": [
+        "Efektivita nově přijatých opatření (interní testování, zvýšená hospitační činnost) nebyla v čase inspekce měřitelná – není jasné, zda budou fungovat.",
+        "Zpráva nespecifikuje, jaké konkrétní inovativní metody by měly být zavedeny – doporučení jsou obecná.",
+        "Není jasné, zda vysoká absence souvisí s kvalitou výuky nebo s jinými faktory (sociální, zdravotní)."
+      ]
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "report_id": "GY8_600016773_2022-03-07",
+  "school_profile": {
+    "school_type": "Gymnázium M. Koperníka, Bílovec",
+    "inspection_period": "7. 3. 2022 − 10. 3. 2022",
+    "school_change_summary": "Od poslední inspekce prošla budova podstatnou modernizací a došlo ke změně ve vedení školy; škola rozvíjí podmínky pro moderní ekologickou výuku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky a úspěchy",
+        "detail": "Žáci dosahují vynikajících studijních výsledků a úspěšně reprezentují školu v soutěžích.",
+        "evidence": "Žáci dlouhodobě vykazují téměř 100 % úspěšnost u maturitních zkoušek... získávají ocenění na republikové úrovni."
+      },
+      {
+        "tag": "Materiální zázemí",
+        "detail": "Škola nabízí kvalitní prostředí díky modernizaci budovy a vybavení.",
+        "evidence": "Budova školy prošla podstatnou modernizací... učebny jsou vybaveny moderními didaktickými pomůckami."
+      },
+      {
+        "tag": "Klima a aktivity",
+        "detail": "Škola vytváří příznivé prostředí a bohatou nabídku mimoškolních aktivit.",
+        "evidence": "Škola vytváří příznivé klima... žákům nabízí četné volnočasové aktivity zaměřené na sport i vzdělávání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Zastaralé metody",
+        "detail": "Výuka často postrádá inovativní metody a dostatek prostoru pro aktivní zapojení žáků.",
+        "evidence": "Celkově výuka poskytovala žákům málo prostoru pro aktivizaci, rozvoj kritického myšlení... nebyly využívány prvky formativního hodnocení."
+      },
+      {
+        "tag": "Nedostatečná individualizace",
+        "detail": "Učitelé málo diferencují úkoly podle individuálních potřeb a schopností žáků.",
+        "evidence": "V malé míře učitelé uplatňovali individuální přístup a diferenciaci zadávaných úkolů podle schopností a potřeb žáků."
+      },
+      {
+        "tag": "Jazyková výuka",
+        "detail": "V hodinách cizích jazyků se objevuje jednotvárnost a málo prostoru pro samostatný projev.",
+        "evidence": "Některé hodiny byly věnovány pouze jedné z jazykových dovedností... v malé míře byla žákům poskytnuta příležitost k samostatnému projevu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje rozvoj kritického myšlení a aktivní zapojení žáků do výuky?",
+      "Jakým způsobem učitelé diferencují výuku pro žáky s různými schopnostmi?",
+      "Jaké konkrétní formy formativního hodnocení a sebehodnocení se ve výuce využívají?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří preferují tradiční frontální výuku a důraz na vědomosti.",
+      "Pro žáky se zájmem o ekologii a environmentální aktivity.",
+      "Pro talenty v oblasti matematiky a přírodních věd."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří vyžadují silnou individualizaci a diferenciaci výuky.",
+      "Pro studenty, kteří očekávají moderní aktivizující metody výuky nad rámec frontálního výkladu.",
+      "Pro rodiče hledající školu s důrazem na rozvoj komunikačních dovedností v českém jazyce."
+    ],
+    "plain_czech_summary": "Gymnázium v Bílovci nabízí kvalitní zázemí a vynikající studijní výsledky s téměř stoprocentní úspěšností u maturity. Škola má jasné vedení a příznivé klima, podporuje ekologické aktivity a úspěchy v soutěžích. Slabinou je však konzervativní styl výuky, který málo prostoru dává na aktivní zapojení žáků, kritické myšlení a individuální přístup. Pro ambiciózní studenty je skvělou volbou, pokud se smíří s tradičnějším pojetím výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoká úspěšnost",
+      "key_numbers": [
+        "Téměř 100 % úspěšnost u maturitních zkoušek",
+        "Více než 60 % žáků prospělo s vyznamenáním",
+        "Všichni žáci školy prospěli"
+      ],
+      "evidence": "Žáci dlouhodobě vykazují téměř 100 % úspěšnost u maturitních zkoušek... prospělo s vyznamenáním více než 60 % žáků."
+    },
+    "absence": {
+      "trend": "Nevyskytují se odchody",
+      "key_numbers": [
+        "Odchody žáků v průběhu vzdělávání se téměř nevyskytují"
+      ],
+      "evidence": "Odchody žáků v průběhu vzdělávání se téměř nevyskytují."
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště (psycholožka, výchovný poradce).",
+      "Pravidelné doučování pro žáky ohrožené neúspěchem.",
+      "Spolupráce s pedagogicko-psychologickou poradnou."
+    ],
+    "safety_climate": [
+      "Vážnější negativní jevy v chování žáků se v posledních třech letech nevyskytovaly.",
+      "Míra úrazovosti vykazuje mírně klesající tendenci.",
+      "Kázeňské problémy se ve výuce nevyskytovaly."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Univerzitou Palackého a Ostravskou univerzitou.",
+      "Spolupráce s Hnutím Brontosaurus na ekologických projektech.",
+      "Pořádání Mezinárodní matematické olympiády."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, má jasnou strukturu a explicitně vyjmenovává silné i slabé stránky s konkrétními důkazy.",
+    "uncertainty_notes": []
+  }
+}

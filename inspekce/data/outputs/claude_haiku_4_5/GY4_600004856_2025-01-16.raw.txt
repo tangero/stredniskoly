@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY4_600004856_2025-01-16",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola ekonomických studií, Gymnázium, Střední průmyslová škola potravinářských technologií a Střední odborná škola přírodovědná a veterinární",
+    "inspection_period": "16. 1. 2025 − 21. 1. 2025",
+    "school_change_summary": "Od inspekce v roce 2015 se zvýšil počet žáků a tříd, rozšířila se nabídka o gymnázium (od 2021), probíhá generační obměna pedagogů a došlo ke změně ředitele (2023). Škola si udržuje vysoký standard odborného vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava na nejvyšší úrovni",
+        "detail": "Výuka v laboratořích a dílnách vykazuje výbornou úroveň s efektivním využitím moderního vybavení a individuálním přístupem učitelů.",
+        "evidence": "Hospitované hodiny v předmětech odborné přípravy vykazovaly výbornou úroveň a účelné využívání materiálně technického vybavení."
+      },
+      {
+        "tag": "Silné jazykové vzdělávání",
+        "detail": "Žáci dosahují výrazně lepších výsledků v češtině a angličtině než průměr v celostátním srovnání, 65 % používá jazykové certifikáty.",
+        "evidence": "Ve všech skupinách srovnatelných oborů dosahovali žáci školy vždy výrazně lepších výsledků v českém a anglickém jazyce."
+      },
+      {
+        "tag": "Výborné podmínky pro učení",
+        "detail": "Škola disponuje minipivovarem, veterinární klinikou, specializovanými laboratořemi, Wi-Fi, dataprojektory a moderním vybavením.",
+        "evidence": "Instituce disponuje dostatečným počtem kmenovýc h i odborných učeben, specializovaných laboratoří a dílen pro praktické činnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdílná kvalita teoretické výuky",
+        "detail": "Část teoretických hodin trpí jednotvárností, chybí diferenciace úloh a prostor pro sebereflexi žáků.",
+        "evidence": "Scházející diferenciace zadávaných úloh dostatečně nepodporovala odlišné pracovní tempo a rozdílnou úroveň znalostí žáků."
+      },
+      {
+        "tag": "Slabá podpora žáků se speciálními potřebami",
+        "detail": "Více než polovina žáků se speciálními potřebami dosahuje horších výsledků než průměr třídy, podpora není vždy efektivní.",
+        "evidence": "Jejich podpora není vždy efektivní a průběžné vzdělávací výsledky jsou u více než poloviny z nich horší ve srovnání s průměrným prospěchem třídy."
+      },
+      {
+        "tag": "Omezená nabídka volitelných předmětů na gymnáziu",
+        "detail": "Volitelné předměty jsou zaměřeny pouze na ekonomické obory, což nedostatečně rozvíjí klíčové kompetence.",
+        "evidence": "Omezená nabídka volitelných předmětů u gymnaziálního vzdělávání zaměřená pouze na ekonomické předměty však dostatečně nerozvíjí klíčové kompetence absolventa gymnázia."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami a jak se jejich výsledky zlepšují během studia?",
+      "Jaké volitelné předměty plánuje škola přidat k gymnáziu mimo ekonomické zaměření?",
+      "Jak se škola zaměřuje na individualizaci výuky v teoretických předmětech, aby všichni žáci mohli dosáhnout svého potenciálu?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a potravinářství, kteří si cení kvalitního vybavení a odborné přípravy",
+      "Studenti s ambicí na jazykové vzdělávání – škola dosahuje výrazně lepších výsledků v češtině a angličtině",
+      "Žáci z Středočeského kraje hledající kvalitní střední vzdělání s dobrou dopravní dostupností"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – podpora není vždy efektivní a více než polovina dosahuje horších výsledků",
+      "Studenti, kteří potřebují individualizovaný přístup v teoretických předmětech – část výuky trpí jednotvárností",
+      "Zájemci o gymnázium s širokým spektrem volitelných předmětů – nabídka je omezena pouze na ekonomické obory"
+    ],
+    "plain_czech_summary": "Škola je kvalitní vzdělávací institucí se silným zaměřením na praktickou přípravu v potravinářství a veterinářství. Výuka v laboratořích a dílnách je na výborné úrovni, jazykové vzdělávání dosahuje nadprůměrných výsledků. Materiální vybavení je moderní a nadstandardní. Slabší stránkou je část teoretické výuky, která někdy postrádá individualizaci a diferenciaci. Žáci se speciálními potřebami nejsou dostatečně podporováni. Gymnázium má omezenou nabídku volitelných předmětů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborné výsledky, zlepšení v posledních dvou letech",
+      "key_numbers": [
+        "Čtvrtina žáků prospěla s vyznamenáním (denní studium)",
+        "65 % žáků uplatnilo jazykové certifikáty v profilové části",
+        "80 % žáků ukončí řádný cyklus vzdělávání"
+      ],
+      "evidence": "Při ukončování vzdělávání MZ dosahují žáci stabilně výborných výsledků. Ve sledovaném období dosahovali žáci v oboru srovnatelných nebo lepších výsledků."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence věnuje minimálně, zaměřuje se na prospěch a chování."
+    },
+    "support_services": [
+      "Výchovné poradkyně a metodičky prevence na obou místech poskytovaného vzdělání",
+      "Školní psycholožka a třídní učitelé",
+      "Spolupráce s organizací Streetwork pro sociální poradenství",
+      "Adaptační a sportovní kurzy, poznávací zájezdy, tematické přednášky"
+    ],
+    "safety_climate": [
+      "Příjemná atmosféra, vzájemně respektující přístup učitele a žáků",
+      "Dodržování nastavených pravidel práce a komunikace",
+      "Čipový a kamerový systém napomáhá bezpečnému prostředí",
+      "Důraz na dodržování zásad bezpečnosti práce v laboratořích a dílnách"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Vysoké školy chemicko-technologické a Přírodovědecké fakulty Univerzity Karlovy",
+      "Člen Českého svazu pivovarů a sladoven, Českého svazu zpracovatelů masa, Podnikatelského svazu pekařů a cukrářů",
+      "Spolupráce s výrobními podniky, výzkumnými ústavy, veterinární klinikou",
+      "Mezinárodní spolupráce a kooperace se školami v zahraničí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace z pozorování. Některé pasáže jsou však delší a obsahují více technických termínů, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, nelze posoudit trend absence žáků",
+      "Konkrétní počty žáků se speciálními potřebami nejsou uvedeny (jen procento ~13 %)",
+      "Detaily o dálkovém studiu jsou méně rozpracované než o denním studiu"
+    ]
+  }
+}
+```

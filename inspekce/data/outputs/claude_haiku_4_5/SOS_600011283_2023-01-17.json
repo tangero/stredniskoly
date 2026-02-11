@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600011283_2023-01-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:50:41.174755+00:00",
+  "run_finished_utc": "2026-02-09T16:51:05.120988+00:00",
+  "raw_file": "SOS_600011283_2023-01-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600011283_2023-01-17",
+    "school_profile": {
+      "school_type": "Střední škola stavební a strojní, příspěvková organizace",
+      "inspection_period": "17. 1. 2023 – 20. 1. 2023",
+      "school_change_summary": "Škola ukončila vzdělávání v oboru Podnikání a zaměřuje se na obor Elektrotechnika. Od inspekce v 2020 zavedla nové kontrolní mechanismy, zefektivnila předmětové komise a rozšířila knihovnu. Počet žáků v maturitních oborech klesl o 42 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Hospitované hodiny ukazují dobrou přípravu, aktivní zapojení žáků a účinnou podporu při učení.",
+          "evidence": "Vstřícná pracovní atmosféra, dobře připravená výuka, efektivní shrnutí a zpětná vazba."
+        },
+        {
+          "tag": "Profesní rozvoj učitelů",
+          "detail": "Učitelé se pravidelně vzdělávají v metodických aspektech a sdílejí zkušenosti.",
+          "evidence": "Vzájemné hospitace, sebehodnocení, vzdělávání v motivaci a formativním hodnocení."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola nabízí doučování, konzultace a možnost přestupu na učební obor.",
+          "evidence": "Individuální konzultace, doučování, prostupná oborová struktura."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky maturit",
+          "detail": "Žáci oboru Elektrotechnika dosahují výrazně podprůměrných výsledků v maturitě.",
+          "evidence": "Hrubá neúspěšnost 57 % (2020) a 41 % (2022), pod republikovým průměrem."
+        },
+        {
+          "tag": "Vysoká absence",
+          "detail": "Absence žáků negativně ovlivňuje jejich výsledky a schopnost složit maturitu.",
+          "evidence": "Průměrná absence žáka 4. ročníku 258 hodin ve školním roce 2021/2022."
+        },
+        {
+          "tag": "Rizikové přijímací řízení",
+          "detail": "Škola přijímá všechny uchazeče v dalších kolech bez ohledu na jejich předpoklady.",
+          "evidence": "Minimální hranice úspěšnosti pouze v 1. kole, ostatní uchazeči přijati až do naplnění kapacity."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky neomluvené absence?",
+        "Jaké jsou reálné šance na úspěšné složení maturitní zkoušky pro žáky s průměrnými studijními předpoklady?",
+        "Jak funguje systém doučování a individuální podpory pro žáky, kteří zaostávají?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními předpoklady a motivací, kteří se chystají na maturitu",
+        "Žáci, kteří preferují praktickou výuku a možnost přestupu na učební obor",
+        "Studenti, kteří si mohou dovolit aktivně se zapojit do výuky a pravidelně docházet"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími předpoklady z matematiky a češtiny – mají nižší šanci na úspěch",
+        "Žáci s tendencí k absenci – vysoká absence přímo souvisí s neúspěchem v maturitě",
+        "Rodiny, které očekávají vysokou úspěšnost v maturitě – výsledky jsou pod průměrem"
+      ],
+      "plain_czech_summary": "Střední škola stavební a strojní v Teplicích se snaží zlepšit kvalitu výuky a výsledky žáků. Učitelé jsou dobře připraveni a aktivně se vzdělávají. Výuka je zajímavá a podporuje zapojení žáků. Problém je však v tom, že žáci oboru Elektrotechnika dosahují slabých výsledků v maturitě – více než 40 % neuspěje. Vysoká absence žáků je jedním z hlavních důvodů. Škola přijímá i žáky se slabšími předpoklady, kterým pak nedokáže dostatečně pomoci. Rodiče by měli vědět, že úspěch v maturitě zde není zaručen."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Částečné zlepšení, ale nadále podprůměrné",
+        "key_numbers": [
+          "Hrubá neúspěšnost Elektrotechnika 2020: 57 %",
+          "Hrubá neúspěšnost Elektrotechnika 2022: 41 %",
+          "Podíl žáků, kteří neukončili studium v čase: 63 % (2022)"
+        ],
+        "evidence": "Výsledky jsou výrazně pod republikovým průměrem v dané skupině oborů, zejména v češtině a matematice."
+      },
+      "absence": {
+        "trend": "Vysoká absence s negativním dopadem",
+        "key_numbers": [
+          "Průměrná absence žáka 4. ročníku: 258 hodin (2021/2022)",
+          "Přímá souvislost mezi absencí a neúspěchem v maturitě"
+        ],
+        "evidence": "Absence je identifikována jako jeden z hlavních faktorů negativně ovlivňujících vzdělávací výsledky."
+      },
+      "support_services": [
+        "Doučování a individuální konzultace pro žáky ohrožené neprospěchem",
+        "Výchovné poradenství a prevence rizikového chování",
+        "Možnost přestupu na učební obor Elektrikář pro žáky dlouhodobě selhávající"
+      ],
+      "safety_climate": [
+        "Vstřícná pracovní atmosféra v hodinách, žáci bez obav vyjadřují názor",
+        "Důsledný přístup k omlouvání absence a sankcím podle školního řádu",
+        "Pravidelné vyhodnocování absence na úrovni vedení školy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s firmami – obor Elektrotechnika vychází vstříc poptávce po absolventech",
+        "Předmětové komise aktivně spolupracují a sdílejí pedagogické zkušenosti",
+        "Vzájemné hospitace pedagogů pro profesní rozvoj"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a fakticky bohatá. Hlavní zjištění jsou jasně identifikována (slabé výsledky maturit, vysoká absence, rizikové přijímací řízení). Praktické informace pro rodiče jsou obsaženy, ale vyžadují extrakci z odborného textu.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní data o počtu žáků, kteří úspěšně složili maturitu v jednotlivých předmětech – pouze procenta neúspěchu.",
+        "Není jasné, jaké konkrétní opatření škola přijala k řešení vysoké absence (pouze obecné zmínky o důslednosti).",
+        "Chybí informace o tom, jak se liší výsledky žáků přijatých v 1. kole vs. dalších kolech přijímacího řízení."
+      ]
+    }
+  }
+}

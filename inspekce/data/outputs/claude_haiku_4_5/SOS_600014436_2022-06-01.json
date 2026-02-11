@@ -1,0 +1,106 @@
+{
+  "report_id": "SOS_600014436_2022-06-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:02:25.241572+00:00",
+  "run_finished_utc": "2026-02-09T17:02:50.568297+00:00",
+  "raw_file": "SOS_600014436_2022-06-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600014436_2022-06-01",
+    "school_profile": {
+      "school_type": "Střední škola pedagogická a sociální (soukromá, s.r.o.)",
+      "inspection_period": "1. 6. až 2. 6. 2022, 6. 6. až 7. 6. 2022",
+      "school_change_summary": "Škola nabízí dva maturitní obory (Předškolní a mimoškolní pedagogika, Sociální činnost) a jeden tříletý obor (Ošetřovatel). Ve školním roce 2021/2022 studovalo 289 žáků (199 v denní formě, 90 v dálkové formě). Nový obor Ošetřovatel byl zaveden od 1. 9. 2014."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava a partnerství",
+          "detail": "Škola intenzivně spolupracuje se sociálními a zdravotnickými zařízeními, kde žáci získávají praktické zkušenosti přímo v praxi.",
+          "evidence": "Praktická výuka u partnerských zařízení je cíleně orientována na osobnostní rozvoj a efektivně propojuje teorii s praxí."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Výsledky maturitních zkoušek vykazují velmi dobrou úroveň s zlepšující se tendencí ve srovnání s celorepublikovým průměrem.",
+          "evidence": "V posledních dvou letech pozitivně přispělo posílení časové dotace maturitních předmětů a důsledný individuální přístup k žákům."
+        },
+        {
+          "tag": "Kvalitní pedagogický sbor",
+          "detail": "Stabilizovaný a odborně kvalifikovaný tým s účinnou metodickou podporou pro začínající učitele.",
+          "evidence": "Vedení školy cíleně plánuje další vzdělávání pedagogů a sdílení zkušeností mezi kolegy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v testech gramotnosti",
+          "detail": "Žáci dosahují nižší úspěšnosti v externí zkoušce informační a matematické gramotnosti než ostatní školy.",
+          "evidence": "Vzorek žáků dosahoval nižší úspěšnosti ve srovnání s ostatními zúčastněnými školami."
+        },
+        {
+          "tag": "Omezená aktivizace ve výuce cizích jazyků",
+          "detail": "Ve výuce angličtiny a němčiny převažuje samostatná a skupinová práce, málo se využívají aktivizační metody.",
+          "evidence": "Inspekce doporučuje zaměřit se na efektivní zařazování metod a forem podporujících aktivizaci a kreativitu žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá praktická výuka v sociálních a zdravotnických zařízeních a jak se na ní podílí všichni žáci?",
+        "Jaké konkrétní opatření škola přijala na základě nižších výsledků v testech matematické a informační gramotnosti?",
+        "Jak se škola připravuje na změny v maturitních zkouškách a jaké má plány na zlepšení výuky cizích jazyků?"
+      ],
+      "who_school_fits": [
+        "Zájemci o pedagogické obory s vášní pro práci s dětmi a mládeží, kteří ocení propojení teorie s praxí",
+        "Uchazeči o sociální činnost, kteří chtějí pracovat v sociálních a zdravotnických službách",
+        "Studenti, kteří si cení individuálního přístupu a konzultací s pedagogy"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více interaktivní a kreativní výuku cizích jazyků s více aktivizačními metodami",
+        "Uchazeči se slabšími základy v matematice a čtenářské gramotnosti, kteří by měli počítat s intenzivnější podporou",
+        "Studenti preferující čistě teoretické vzdělání bez praktické složky"
+      ],
+      "plain_czech_summary": "Jde o kvalitní soukromou střední školu zaměřenou na pedagogiku, sociální činnost a zdravotnictví. Silnou stránkou je úzká spolupráce se sociálními a zdravotnickými zařízeními, kde žáci získávají cenné praktické zkušenosti. Výsledky maturit jsou velmi dobré a zlepšují se. Pedagogický sbor je stabilní a kvalifikovaný. Slabší místo představují výsledky v testech matematické a informační gramotnosti a méně aktivizující výuka cizích jazyků. Škola nabízí podporu žákům v obtížích a vytváří příznivé pracovní klima."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se tendence",
+        "key_numbers": [
+          "Výsledky maturitních zkoušek vykazují velmi dobrou úroveň",
+          "V porovnání s celorepublikovým průměrem mají zlepšující se tendenci",
+          "Mimo rok 2017/2018 žáci dosáhli mírně horších výsledků v češtině a angličtině"
+        ],
+        "evidence": "Posílení časové dotace maturitních předmětů a důsledný individuální přístup pozitivně přispěly ke zlepšení výsledků v posledních dvou letech."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Zpráva se absence věnuje minimálně, zaměřuje se na výsledky a kvalitu výuky."
+      },
+      "support_services": [
+        "Výchovná poradkyně poskytující péči o žáky se speciálními vzdělávacími potřebami",
+        "Konzultační hodiny a doučování k maturitním zkouškám v češtině, angličtině a společenskovědních předmětech",
+        "Individuální konzultace realizované prezenčně i online",
+        "Volba nepovinných předmětů pro snížení neúspěšnosti"
+      ],
+      "safety_climate": [
+        "Škola se pravidelně zabývá vyhodnocováním bezpečnostních rizik a přijímá adekvátní opatření",
+        "Průběžně zajišťuje informovanost a poučení žáků k bezpečnému chování",
+        "Prostředí školy je čisté a estetické s důrazem na bezpečnost"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá oboustranně přínosná spolupráce s vnějšími sociálními partnery",
+        "Praktická výuka u partnerských sociálních a zdravotnických zařízení",
+        "Zapojení odborníků z praxe do výuky prostřednictvím projektové činnosti",
+        "Zahraniční pobyty se stážemi v mateřských školách a zdravotnických institucích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady. Silné a slabé stránky jsou jasně identifikovány. Doporučení jsou specifická a praktická. Rodiče získají jasný obraz o kvalitě školy.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna, nelze posoudit problém s docházkou",
+        "Konkrétní počty žáků se speciálními vzdělávacími potřebami (10 žáků) je nízký, ale není jasné, zda jde o reprezentativní vzorek",
+        "Výsledky v testech gramotnosti jsou popsány jako nižší, ale chybí konkrétní čísla pro srovnání"
+      ]
+    }
+  }
+}

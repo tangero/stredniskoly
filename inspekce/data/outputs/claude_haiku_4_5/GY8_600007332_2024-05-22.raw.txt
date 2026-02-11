@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600007332_2024-05-22",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium, příspěvková organizace",
+    "inspection_period": "22. května až 24. května 2024",
+    "school_change_summary": "Škola v roce 2022 ukončila obor Obchodní akademie pro nedostatek uchazečů a přijala nový název. Rozšířila nabídku čtyřletého gymnázia se zaměřením na přírodovědně-technické nebo společenskovědní obory. Do učebního plánu přidala povinný předmět seminární práce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vynikající výsledky",
+        "detail": "Žáci dosahují dlouhodobě výborných výsledků, vysoký podíl prospívajících s vyznamenáním (70–73 % na nižším stupni osmiletého gymnázia).",
+        "evidence": "Ve školním roce 2022/2023 na nižším stupni osmiletého gymnázia 73 %, na vyšším stupni 45 %, ve čtyřletém gymnáziu 40 %."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola má nadstandardní technické vybavení, venkovní učebnu, multifunkční hřiště a odpočinkové zóny pro žáky.",
+        "evidence": "Od inspekce v 2018 zajištěna bezbariérovost, vybudována venkovní učebna a multifunkční hřiště s outdoorovou posilovnou."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Škola podporuje nadané žáky prostřednictvím zájmových kroužků, soutěží a mezinárodních projektů Erasmus+.",
+        "evidence": "Žáci se zapojují do matematických, jazykových, sportovních soutěží a studijních stáží v zahraničí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená diferenciace ve výuce",
+        "detail": "Učitelé málo přizpůsobují úkoly žákům s různými schopnostmi, chybí dostatek problémových úloh vedoucích k kritickému myšlení.",
+        "evidence": "Jen ve třetině hodin byly zadávány problémové úlohy; vyučující málo diferencovali úkoly s ohledem na individuální možnosti žáků."
+      },
+      {
+        "tag": "Nedostatečné sebehodnocení žáků",
+        "detail": "Vrstevnické hodnocení a sebehodnocení nejsou běžně zařazovány do výuky, chybí zpětná vazba o naplnění cílů.",
+        "evidence": "Vrstevnické hodnocení či sebehodnocení nebylo většinou zařazováno ani po realizovaných aktivitách."
+      },
+      {
+        "tag": "Omezená práce s informačními zdroji",
+        "detail": "Žáci nejsou dostatečně vedeni k práci s různými informačními zdroji a jejich kritickému využívání.",
+        "evidence": "Ve společenskovědní výuce nebyli vedeni ve větší míře k práci s informačními zdroji."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jaké jsou možnosti jejich dalšího rozvoje?",
+      "Jaké jsou zkušenosti s přechodem žáků ze základní školy a jak probíhá adaptace nových studentů?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a práci s informacemi v digitálním věku?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a zájmem o kvalitní vzdělání s moderním přístupem",
+      "Nadaní žáci hledající podporu a možnosti rozvoje svých schopností",
+      "Studenti zajímající se o přírodovědně-technické nebo společenskovědní obory"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami (výuka není dostatečně přizpůsobena jejich potřebám)",
+      "Studenti, kteří potřebují více individuálního přístupu a diferenciované zadávání úkolů",
+      "Žáci, kteří se lépe učí prostřednictvím samostatné práce s různými zdroji informací"
+    ],
+    "plain_czech_summary": "Dvořákovo gymnázium je kvalitní školou s dlouhodobě vynikajícími výsledky. Žáci dosahují vysoké úspěšnosti v maturitě a přijímání na vysoké školy. Škola nabízí moderní vybavení, bohatou mimoškolní nabídku a podporuje nadané žáky. Vedení je stabilní a profesionální. Příležitostí ke zlepšení je více diferenciace ve výuce, zavedení sebehodnocení žáků a práce s různými informačními zdroji. Škola je vhodná pro ambiciózní studenty."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní trend s výrazným zlepšením",
+      "key_numbers": [
+        "Osmiletý obor: výsledky nad celorepublikovým průměrem v obou sledovaných letech",
+        "Čtyřletý obor: snížení neúspěšnosti z 3,2 % (2021/2022) na 0 % (2022/2023)",
+        "Vysoký podíl absolventů přijatých na zvolené vysoké školy"
+      ],
+      "evidence": "U čtyřletého oboru došlo k dalšímu snížení hrubé neúspěšnosti ve společné části maturitní zkoušky z 3,2 % na 0 %."
+    },
+    "absence": {
+      "trend": "Pozitivní trend v chování a kázeňské disciplíně",
+      "key_numbers": [
+        "Minimální počet kázeňských opatření ve třech sledovaných letech",
+        "Vysoký počet udělených pochval",
+        "Dlouhodobě uplatňovaná preventivní strategie"
+      ],
+      "evidence": "Ve třech sledovaných letech byl uložen minimální počet kázeňských opatření, naopak byl udělen vysoký počet pochval."
+    },
+    "support_services": [
+      "Školní psycholožka, výchovná poradkyně, školní metodička prevence, kariérová poradkyně",
+      "Doučování a konzultace pro žáky ohrožené školním neúspěchem a se speciálními vzdělávacími potřebami",
+      "Individuální přístup k nadaným žákům včetně vzdělávání v předmětu ve vyšším ročníku"
+    ],
+    "safety_climate": [
+      "Pozitivní pracovní atmosféra a partnerský přístup vyučujících k žákům",
+      "Žáci respektují nastavená pravidla práce a komunikace",
+      "Preventivní strategie vedoucí k předcházení rizikových jevů v chování"
+    ],
+    "partnerships_practice": [
+      "Partnerské vztahy s akademickými institucemi a vybranými českými gymnázii",
+      "Účast v mezinárodních projektech a programu Erasmus+",
+      "Spolupráce s partnery na exkurzích a kulturních akcích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však formulovány úřednickým jazykem, který by mohl být pro rodiče méně přístupný.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu žáků se speciálními vzdělávacími potřebami, kterým je výuka dostatečně přizpůsobena",
+      "Chybí konkrétní údaje o počtu žáků, kteří neprospěli nebo opakují ročník",
+      "Není jasné, jak se liší kvalita výuky mezi jednotlivými předměty a třídami"
+    ]
+  }
+}
+```

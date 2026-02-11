@@ -1,0 +1,112 @@
+{
+  "report_id": "GY6_600018148_2025-03-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:43:22.566881+00:00",
+  "run_finished_utc": "2026-02-09T13:43:48.423602+00:00",
+  "raw_file": "GY6_600018148_2025-03-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600018148_2025-03-04",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřletý a šestiletý obor), příspěvková organizace Zlínského kraje",
+      "inspection_period": "4. března 2025 až 7. března 2025",
+      "school_change_summary": "Škola postupně zlepšuje materiálně-technické podmínky (nové hřiště, modernizace kuchyně, digitalizace), rozšiřuje pedagogický sbor o asistenty a školního psychologa. Vzdělává 420 žáků v 14 třídách, z toho 11 se speciálními vzdělávacími potřebami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné maturitní výsledky",
+          "detail": "Všichni žáci prospěli v maturitě od roku 2022/2023, výsledky jsou nadprůměrné vůči celorepublikovému průměru, zejména v češtině a angličtině.",
+          "evidence": "Od školního roku 2022/2023 všichni žáci prospěli, ve školním roce 2023/2024 vzrostl počet žáků s vyznamenáním."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují čelních umístění v krajských, celostátních i mezinárodních soutěžích, zejména v přírodovědě a jazycích.",
+          "evidence": "Opakovaný zisk předních míst v soutěžích na mezinárodní úrovni především v oblasti fyziky a astrofyziky."
+        },
+        {
+          "tag": "Kvalitní pedagogický sbor",
+          "detail": "Stabilní, odborně kvalifikovaný tým s podporou asistentů pro žáky se speciálními potřebami a školního psychologa.",
+          "evidence": "Pedagogický sbor byl účelně rozšířen o asistenty pedagoga a pozici školního psychologa."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotná kvalita výuky matematiky a přírodovědných předmětů",
+          "detail": "Některé hodiny mají málo aktivizujících metod, převládá frontální výuka s opisováním, chybí práce s informačními zdroji.",
+          "evidence": "V některých hodinách převládala frontální výuka s minimálním využitím aktivizačních metod, efektivita rozsáhlého opisování byla méně přínosná."
+        },
+        {
+          "tag": "Chybí shrnutí a vyhodnocení na konci hodin",
+          "detail": "Většině sledovaných hodin chybí dostatečný čas na shrnutí učiva a vyhodnocení dosažení cílů.",
+          "evidence": "V závěrech většiny sledovaných hodin chyběl dostatečný časový prostor pro shrnutí obsahu učiva a vyhodnocení vzhledem ke stanoveným výukovým cílům."
+        },
+        {
+          "tag": "Omezené používání informačních zdrojů",
+          "detail": "Práce s různými informačními zdroji se objevuje jen okrajově, zejména ve fyzice.",
+          "evidence": "Začleňování práce žáků s různými informačními zdroji se objevilo pouze okrajově."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se liší výuka v čtyřletém a šestiletém oboru? Jaké jsou výhody jednoho či druhého?",
+        "Jakou podporu dostávají žáci, kteří mají potíže s matematikou nebo přírodovědou? Jsou k dispozici doučování nebo konzultace?",
+        "Jak se škola připravuje na změny v maturitní zkoušce a jak se to odráží v učebních plánech?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí studovat na vysoké škole – škola má tradici úspěšného přechodu absolventů na univerzity a pořádá besedy o studiu.",
+        "Talentovaní žáci v přírodovědách a jazycích – škola nabízí soutěže, semináře a mezinárodní výměny, kde mohou rozvíjet své nadání.",
+        "Žáci se speciálními vzdělávacími potřebami – škola má školního psychologa, asistenty pedagoga a systematickou podporu."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více praktické výuky a méně teoretické – gymnázium je zaměřeno na všeobecné vzdělání a přípravu na vysokou školu.",
+        "Žáci, kteří se lépe učí z různých zdrojů a aktivních metod – některé předměty (zejména fyzika) stále více spoléhají na frontální výuku.",
+        "Žáci, kteří potřebují více času na procvičování a individuální péči – dělení tříd existuje jen u maturitních předmětů."
+      ],
+      "plain_czech_summary": "Gymnázium Františka Palackého je kvalitní školou s výborným renomé. Žáci dosahují nadprůměrných výsledků v maturitě a vynikají v soutěžích, zejména v přírodovědě a jazycích. Škola má stabilní pedagogický sbor, dobré materiální vybavení a podporu pro žáky se speciálními potřebami. Inspekce upozorňuje na to, že některé hodiny (zejména matematika a fyzika) by mohly více využívat aktivní metody a práci s informačními zdroji. Také chybí lepší shrnutí a vyhodnocení cílů na konci hodin. Jde o tradiční gymnázium vhodné pro talentované žáky připravující se na vysokou školu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vzestupný – od roku 2022/2023 všichni žáci prospěli, v roce 2023/2024 vzrostl počet s vyznamenáním",
+        "key_numbers": [
+          "100% úspěšnost od školního roku 2022/2023",
+          "Nadprůměrné výsledky vůči celorepublikovému a krajskému průměru",
+          "Výborné výsledky zejména v češtině a angličtině"
+        ],
+        "evidence": "Od školního roku 2022/2023 všichni žáci ve společné i profilové části maturitní zkoušky prospěli, ve školním roce 2023/2024 vzrostl počet žáků s vyznamenáním."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Čtyřčlenný tým školního poradenství: výchovná a kariérová poradkyně, školní metodička prevence, školní psycholožka",
+        "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+        "Konzultace s jednotlivými vyučujícími pro žáky vyžadující podporu",
+        "Pedagogické intervence ve spolupráci se školskými poradenskými zařízeními"
+      ],
+      "safety_climate": [
+        "Nastavené preventivní mechanismy pro bezpečnost a ochranu zdraví jsou účinné a zabezpečují fyzickou ochranu žáků",
+        "Škola průběžně monitoruje projevy rizikového chování a realizuje vhodné preventivní aktivity",
+        "Výuka se vyznačuje příjemnou a vstřícnou pracovní atmosférou podporující dosahování cílů a vzájemný respekt"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s četnými sportovními, kulturními, vzdělávacími a sociálními organizacemi",
+        "Partnerství s tuzemskými školami od mateřských až po vysoké školy",
+        "Výměnné zahraniční pobyty s partnerskými školami a jazykové zájezdy",
+        "Dlouhodobá spolupráce s městem Valašské Meziříčí a obcí Krhová",
+        "Spolupráce se zřizovatelem (Zlínský kraj) a zákonnými zástupci žáků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, ale obsahuje místy dlouhé věty a úřednický styl. Hlavní informace jsou jasné, ale pro rodiče by mohly být některé pasáže konkrétnější.",
+      "uncertainty_notes": [
+        "Absence není zmíněna – není jasné, zda je to problém nebo zda škola nemá problémy s absencí.",
+        "Konkrétní počty žáků s vyznamenáním nejsou uvedeny – pouze zmínka o vzestupu.",
+        "Detaily o rozdílech mezi čtyřletým a šestiletým oborem nejsou v textu rozvedeny."
+      ]
+    }
+  }
+}

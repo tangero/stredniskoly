@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_600015572_2021-11-18",
+  "school_profile": {
+    "school_type": "Soukromé gymnázium, střední odborná škola a jazyková škola s právem státní jazykové zkoušky, s.r.o.",
+    "inspection_period": "18. 11., 19. 11. a 23. 11. 2021",
+    "school_change_summary": "Škola má od ledna 2020 nového zřizovatele a od září 2020 nové vedení, které se snaží obnovit denní formu vzdělávání po předchozím útlumu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výuka angličtiny",
+        "detail": "Výuka anglického jazyka probíhala na velmi dobré úrovni s využitím metody CLIL a formativního hodnocení.",
+        "evidence": "Rozvoj cizojazyčné gramotnosti v hodinách anglického jazyka byl na velmi dobré úrovni... Velkým pozitivem... je obsahově a jazykově integrované učení (CLIL)."
+      },
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Škola modernizovala učebny audiovizuální a interaktivní technikou a zlepšila podmínky pro distanční výuku.",
+        "evidence": "Prostředí školy je udržované, učebny byly dovybaveny audiovizuální a interaktivní technikou... Nový informační systém školy zabezpečuje... podmínky pro realizaci distanční výuky."
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "V profilujících odborných předmětech pedagogové uplatňovali diferencovaný přístup odpovídající schopnostem žáků.",
+        "evidence": "K žákům byl uplatňován diferencovaný přístup, který podporoval rozvoj schopností žáků... Tento přístup umožňoval žákům plnit úkoly odlišné náročnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost u maturity",
+        "detail": "Škola vykazovala v letech 2019 a 2020 neuspokojivou úspěšnost u maturitní zkoušky, zejména v českém jazyce.",
+        "evidence": "Škola v období dvou na sebe navazujících let 2019 a 2020 vykazovala neuspokojivou úspěšnost žáků u maturitní zkoušky... v případě českého jazyka... dosáhla více jak čtyřnásobku průměrné neúspěšnosti."
+      },
+      {
+        "tag": "Nekvalifikovaný vyučující",
+        "detail": "Výuka českého jazyka je dlouhodobě zajišťována pedagogem bez odborné kvalifikace, což snižuje její kvalitu.",
+        "evidence": "Ve výuce se negativně projevil fakt, že vyučující nemá odbernou způsobilost pro výuku českého jazyka a literatury... vedení školy prokázalo dlouhodobou marnou snahu o získání odborně kvalifikovaného pedagoga."
+      },
+      {
+        "tag": "Neúčinná podpora žáků",
+        "detail": "Opatření na podporu neprospívajících žáků nejsou dostatečná a škola nevyhodnocuje jejich účinnost.",
+        "evidence": "Přijímaná opatření k podpoře žáků se slabším prospěchem nebyla dostatečné účinná... škola nevyhodnocovala, zda zjištěné nedostatky... se podařilo následnou výukou odstranit."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola aktuálně řeší zajištění kvalifikovaného učitele pro výuku českého jazyka a literatury?",
+      "Jaká konkrétní systémová opatření byla přijata ke zlepšení výsledků žáků u maturitní zkoušky po roce 2020?",
+      "Jakým způsobem škola motivuje žáky v kombinovaném studiu k dokončení vzdělávání a snižuje jejich vysokou absenci?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří preferují individuální přístup v malých kolektivech denního studia.",
+      "Pro zájemce o rozšířenou výuku anglického jazyka včetně odborných předmětů v angličtině (CLIL).",
+      "Pro studenty, kteří oceňují moderní vybavení školy a kvalitní zázemí pro digitální vzdělávání."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří potřebují silnou podporu v českém jazyce a literatuře (chybí kvalifikovaný pedagog).",
+      "Pro uchazeče o kombinovanou formu studia, kde je vysoké riziko předčasných odchodů a neúspěšnosti.",
+      "Pro rodiče, kteří očekávají dlouhodobě stabilní výsledky školy bez výkyvů v kvalitě výuky."
+    ],
+    "plain_czech_summary": "Škola prochází od roku 2020 změnou vedení a zřizovatele, který se snaží obnovit denní výuku po předchozím útlumu. Pozitivem je moderní vybavení tříd a velmi kvalitní výuka angličtiny, kde vyučující skvěle motivují žáky. Naopak velkým rizikem je dlouhodobý problém s neúspěšností u maturit a absence kvalifikovaného učitele českého jazyka. Škola také bojuje s vysokou absencí a nedostatečnou motivací žáků, zejména v kombinovaném studiu. Pro rodiče je důležité sledovat, jak se škola vypořádá s nedostatkem pedagogů a zlepší systém podpory studentů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý (neúspěšnost v letech 2019/2020, zlepšení v roce 2021 u nových maturantů).",
+      "key_numbers": [
+        "Více než 4násobek průměrné neúspěšnosti v ČJL v roce 2020.",
+        "100% úspěšnost u nových maturantů v roce 2021.",
+        "Neúspěšnost přetrvává u opakujících maturantů."
+      ],
+      "evidence": "V případě českého jazyka... dosáhla více jak čtyřnásobku průměrné neúspěšnosti... V mimořádném termínu... roku 2021 škola dosáhla plné úspěšnosti v případě všech poprvé maturujících žáků."
+    },
+    "absence": {
+      "trend": "Vysoká a stoupající (zejména omluvená nepřítomnost).",
+      "key_numbers": [
+        "Vysoká omluvená nepřítomnost neprospívajících žáků.",
+        "Četné předčasné odchody a přerušení studia.",
+        "Neúčinná prevence absence."
+      ],
+      "evidence": "Škole se však stále nedaří snížit vysokou omluvenou nepřítomnost neprospívajících žáků ve výuce... četné předčasné odchody a přerušení studia žáků."
+    },
+    "support_services": [
+      "Individuální konzultace a doučování pro neprospívající žáky.",
+      "Spolupráce se školskými poradenskými zařízeními pro žáky se SVP.",
+      "Nový informační systém pro komunikaci s rodiči a žáky."
+    ],
+    "safety_climate": [
+      "Příjemné a klidné prostředí ve výuce denního studia.",
+      "Vhodná preventivní opatření proti neomluvené absenci a rizikovému chování.",
+      "Cílená informovanost žáků o bezpečnosti."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s firmami a organizacemi v regionu na odborné praxi.",
+      "Zapojení do kulturního a společenského života města Kunovice.",
+      "Úzká spolupráce se zřizovatelem a místními školami."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je psán srozumitelně, s výjimkou některých úřednických frází (např. 'přetrvávajícím problémem je také nízký počet žáků').",
+    "uncertainty_notes": [
+      "Nejasné, zda škola v současnosti přijímá žáky do gymnázia (text uvádí, že v době inspekce nevzdělávala).",
+      "Chybí přesné statistické údaje o počtu žáků v jednotlivých ročnících denního studia.",
+      "Není zcela jasné, jaké konkrétní 'systémové' změny nový zřizovatel přinesl."
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "report_id": "SOU_600013197_2022-12-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:54:12.399867+00:00",
+  "run_finished_utc": "2026-02-09T16:54:36.693378+00:00",
+  "raw_file": "SOU_600013197_2022-12-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600013197_2022-12-06",
+    "school_profile": {
+      "school_type": "Střední škola automobilní s domovem mládeže, školní jídelnou a jídelnou-výdejnou",
+      "inspection_period": "6. až 8. prosince 2022",
+      "school_change_summary": "Škola rozšířila nabídku oborů (přidán Autolakýrník) a od roku 2021/2022 nabízí kombinované studium. Průběžně se zlepšují materiální podmínky pro praktické vyučování."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné vybavení pro praxi",
+          "detail": "Materiální podmínky pro odborné vzdělávání jsou velmi dobré a umožňují kvalitní přípravu žáků pro reálnou praxi.",
+          "evidence": "\"Materiální podmínky zejména pro odborné vzdělávání jsou výborné a dále se průběžně zlepšují.\""
+        },
+        {
+          "tag": "Spolupráce s firmami",
+          "detail": "Škola má osvědčenou a dobře fungující spolupráci se smluvními partnery v automobilovém průmyslu.",
+          "evidence": "\"Velmi dobrá spolupráce se smluvními partnery v regionu\" podporuje kvalitní přípravu pro praxi."
+        },
+        {
+          "tag": "Bohatá mimoškolní činnost",
+          "detail": "Škola nabízí rozmanitou doplňkovou činnost včetně zahraničních stáží, sportovních akcí a projektů.",
+          "evidence": "\"Bohatá doplňková činnost školy rozšiřující možnosti pro vzdělávání žáků.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká neúspěšnost žáků",
+          "detail": "V prvním pololetí 2021/2022 mělo přibližně 28 % žáků známku nedostatečný, zejména z matematiky a odborných předmětů.",
+          "evidence": "\"Míra neúspěšných žáků velmi vysoká (přibližně 28 %)\" v prvním pololetí."
+        },
+        {
+          "tag": "Vysoké absence bez omluvy",
+          "detail": "Žáci mají vysoký počet neomluvených absencí, což činí přibližně 10 % všech zameškaných hodin.",
+          "evidence": "\"Vysoké počty neomluvených absencí žáků v teoretické i praktické výuce\" až \"tisíce neomluvených hodin.\""
+        },
+        {
+          "tag": "Slabá kvalita teoretické výuky",
+          "detail": "Výuka je převážně frontální bez aktivního zapojení žáků, chybí diferenciace pro různé potřeby a zpětná vazba.",
+          "evidence": "\"Výrazně převažovala frontální forma výuky s dominantní rolí učitele\" a \"chybějící diferenciace náročnosti úloh.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší vysoký počet neomluvených absencí a co nabízí žákům s rizikem neúspěchu?",
+        "Jaké konkrétní kroky podniká vedení školy na zlepšení výsledků u maturitních a závěrečných zkoušek?",
+        "Jak jsou učitelé podporováni v používání moderních aktivizačních metod výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci s praktickým zaměřením a zájmem o automobilový průmysl, kteří si cení kvalitního vybavení dílen",
+        "Studenti, kteří se chtějí zapojit do bohaté mimoškolní činnosti a zahraničních projektů",
+        "Žáci ze vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže se sportovním vyžitím"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v matematice a teoretických předmětech, kterým chybí individuální podpora",
+        "Studenti, kteří potřebují aktivní výuku s diskuzí a samostatným vyhledáváním informací",
+        "Žáci se speciálními vzdělávacími potřebami, kterým chybí cílená diferenciace a podpora učitelů"
+      ],
+      "plain_czech_summary": "Střední škola automobilní v Ústí nad Orlicí nabízí kvalitní praktické vyučování s výborným vybavením a spoluprací s firmami. Domov mládeže poskytuje podporu ubytovaným žákům. Problémem je vysoká neúspěšnost žáků (28 % v prvním pololetí), vysoké absence bez omluvy a převážně frontální teoretická výuka bez aktivního zapojení. Vedení školy má omezené hospitační činnosti a učitelům chybí podpora v moderních metodách. Maturitní zkoušky mají nízkou úspěšnost (6–18 %)."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nízká úspěšnost",
+        "key_numbers": [
+          "Úspěšnost 6–18 % u maturitních zkoušek",
+          "U čtyřletých oborů neúspěšní jednotlivci, u dvouletých a jednoletých kurzů výrazně vyšší počty neúspěšných",
+          "Vysoký počet žáků, kteří se k opravným zkouškám nedostavili"
+        ],
+        "evidence": "\"Celkově spíše nižší míra úspěšnosti žáků u maturitních i závěrečných zkoušek se pohybuje od 6 do 18 %.\""
+      },
+      "absence": {
+        "trend": "Kriticky vysoká",
+        "key_numbers": [
+          "Přibližně 10 % všech zameškaných hodin jsou neomluvené absence",
+          "Tisíce neomluvených hodin v obou pololetích 2021/2022",
+          "Škola nepřijala systémová opatření ke zlepšení"
+        ],
+        "evidence": "\"Vysoké počty neomluvených absencí žáků v teoretické i praktické výuce, v obou pololetích školního roku 2021/2022 se jednalo v souhrnu až o tisíce neomluvených hodin.\""
+      },
+      "support_services": [
+        "Výchovné poradenství zajišťují dva vyučující",
+        "Nabízeny jsou individuální konzultace a doučování (s minimálním zájmem žáků)",
+        "Primární prevence a adaptační kurzy, lyžařské výcviky, vodácké a cyklistické kurzy",
+        "Domov mládeže poskytuje podporu k učení a zdravému životnímu stylu"
+      ],
+      "safety_climate": [
+        "Sledované hodiny měly velmi klidnou atmosféru bez negativních projevů chování",
+        "V odborném výcviku žáci dodržují pravidla bezpečnosti správným používáním ochranných pomůcek",
+        "Domov mládeže vytváří pozitivní přátelské klima nahrazující rodinné prostředí"
+      ],
+      "partnerships_practice": [
+        "Osvědčená spolupráce se smluvními partnery v automobilovém průmyslu",
+        "Dobře zajištěn odborný výcvik instruktory na smluvních pracovištích",
+        "Spolupráce s profesními organizacemi a firmami zaměřenými na automobilový průmysl",
+        "Projekty Erasmus+, účast v soutěžích a akcích KAP"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně identifikuje silné stránky (praktické vyučování, spolupráce s firmami) a kritické problémy (vysoká neúspěšnost, absence, kvalita teoretické výuky). Doporučení jsou konkrétní a praktická.",
+      "uncertainty_notes": [
+        "Přesné číslo žáků se speciálními vzdělávacími potřebami (59) není jasně propojeno s analýzou jejich podpory",
+        "Není specifikováno, jaký konkrétní obsah chybí v pedagogickém vzdělávání učitelů",
+        "Údaje o úspěšnosti maturit jsou z výroční zprávy, ale není jasné, zda zahrnují všechny pokusy nebo jen první pokus"
+      ]
+    }
+  }
+}

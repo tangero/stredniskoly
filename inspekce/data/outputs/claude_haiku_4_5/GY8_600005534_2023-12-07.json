@@ -1,0 +1,117 @@
+{
+  "report_id": "GY8_600005534_2023-12-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:31:47.087926+00:00",
+  "run_finished_utc": "2026-02-09T16:32:14.338140+00:00",
+  "raw_file": "GY8_600005534_2023-12-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600005534_2023-12-07",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium s všeobecným vzděláním",
+      "inspection_period": "7. 12. 2023 – 12. 12. 2023",
+      "school_change_summary": "Od inspekce v 2016 vzrostl počet žáků na 657 v 24 třídách (91 % kapacity). Zlepšily se materiální podmínky, došlo k personální změně na pozici zástupce ředitele. Škola si udržuje velmi dobrou úroveň vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Všichni prvomaturanti prospěli, přibližně polovina s vyznamenáním. Nárůst žáků s vyznamenáním o 20 % od poslední inspekce.",
+          "evidence": "\"všichni prvomaturanti prospěli, přibližně polovina s vyznamenáním\" a \"nárůst počtu žáků prospívajících s vyznamenáním (nárůst v průměru o 20 %)\""
+        },
+        {
+          "tag": "Kvalitní sportovní vybavení",
+          "detail": "Škola disponuje plaveckým bazénem, atletickým areálem, dvěma tělocvičnami a tenisovými hřišti.",
+          "evidence": "\"kvalitní sportovní zázemí, včetně plaveckého bazénu, které účinně přispívá k rozvoji pohybových dovedností žáků\""
+        },
+        {
+          "tag": "Bohatá nabídka aktivit",
+          "detail": "Rozmanité volitelné semináře, rozšiřující vzdělávací aktivity, soutěže a olympiády na různých úrovních.",
+          "evidence": "\"rozmanité spektrum volitelných seminářů a rozšiřujících vzdělávacích aktivit\" a \"reprezentují školu v četných soutěžích a předmětových olympiádách\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Menší míra přizpůsobení úkolů různým schopnostem žáků, málo vzájemného hodnocení mezi žáky.",
+          "evidence": "\"menší míra obsahové a časové diferenciace výuky vzhledem k rozdílným vzdělávacím potřebám žáků, nižší míra zapojení žáků do evaluačních aktivit\""
+        },
+        {
+          "tag": "Digitální kompetence",
+          "detail": "Nedostatečná podpora rozvoje digitálních dovedností a kritického posuzování informací.",
+          "evidence": "\"menší míra podpory rozvoje digitálních kompetencí žáků, samostatného vyhledávání a kritického posuzování informací\""
+        },
+        {
+          "tag": "Aktivní zapojení žáků",
+          "detail": "V některých hodinách převládá frontální výuka s menší aktivitou žáků, chybí interaktivní prvky.",
+          "evidence": "\"v části hodin vyučující v menší míře zařazovali aktivizující a kooperativní formy a metody práce, což vedlo k nerovnoměrnému zapojení žáků\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje rozvoj digitálních dovedností a kritického myšlení žáků?",
+        "Jaké jsou možnosti individuálního přístupu k žákům s různými tempem učení?",
+        "Jak se škola připravuje na změny v maturitní zkoušce z matematiky, kde měla v roce 2023 výsledky pod průměrem?"
+      ],
+      "who_school_fits": [
+        "Talentovaní žáci s vysokým studijním potenciálem – škola přijímá jen 20 % uchazečů a nabízí rozšiřující učivo",
+        "Sportovně nadaní žáci – výjimečné sportovní zázemí s bazénem a atletickým areálem",
+        "Žáci se zájmem o jazyky – více než polovina absolventů získá certifikát C1–C2, stabilně nadstandardní výsledky z angličtiny"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující individuální přístup a diferenciaci – inspekce zjistila menší míru přizpůsobení výuky různým schopnostem",
+        "Žáci s potřebou aktivního zapojení – část hodin má převážně frontální výuku s menší interakcí",
+        "Žáci se slabšími základy z matematiky – v roce 2023 měla škola výsledky pod republikovým průměrem"
+      ],
+      "plain_czech_summary": "Gymnázium Jaroslava Heyrovského je prestižní škola s výborným zázemím a dlouhodobě skvělými výsledky. Přijímá jen nejlepší uchazeče a všichni absolventi prospějí. Nabízí bohaté sportovní a kulturní aktivity. Inspekce ale upozorňuje, že některé hodiny jsou příliš frontální a málo přizpůsobené různým schopnostem žáků. Škola by měla více podporovat digitální dovednosti a aktivní zapojení žáků do výuky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborné s jedním výkyvem",
+        "key_numbers": [
+          "100 % prospěšnost prvomaturantů",
+          "~50 % s vyznamenáním",
+          "Matematika 2023: pod republikovým průměrem (výjimka)"
+        ],
+        "evidence": "\"všichni prvomaturanti prospěli, přibližně polovina s vyznamenáním\" a \"V této zkoušce obvykle dosahují odpovídající úspěšnosti, s výjimkou výkyvu v roce 2023, kdy se výsledky pohybovaly pod republikovým průměrem\""
+      },
+      "absence": {
+        "trend": "Velmi nízká",
+        "key_numbers": [
+          "Nízká průměrná absence na žáka",
+          "Téměř nulová neomluvená absence",
+          "Vysoké procento žáků s uzavřenou klasifikací do 30. 6."
+        ],
+        "evidence": "\"nízká průměrná absence na žáka, téměř nulová neomluvená absence a vysoké procento žáků s uzavřenou klasifikací do 30. 6.\""
+      },
+      "support_services": [
+        "Školní poradenské centrum s výchovnou poradkyní",
+        "Adaptační a zážitkové kurzy, třídnické hodiny",
+        "Doučování a individuální konzultace",
+        "Individuální vzdělávací plány pro žáky s potřebou podpůrných opatření",
+        "Kariérové poradenství s testy profesní orientace"
+      ],
+      "safety_climate": [
+        "Nízký počet uložených kázeňských opatření",
+        "Ojedinělý výskyt snížené známky z chování",
+        "Kamerový systém a vrátnice s personálním obsazením",
+        "Efektivní prevence sociálně patologických jevů"
+      ],
+      "partnerships_practice": [
+        "Status fakultní školy Matematicko-fyzikální fakulty UK, Přírodovědecké fakulty UK a Fakulty tělesné výchovy a sportu UK",
+        "Spolupráce s vysokými školami a akademickými pracovišti",
+        "Mezinárodní projekty a spolupráce se školami v zahraničí",
+        "Partnerství s rodičovským grémiem a žákovskou radou"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Všechny klíčové informace jsou explicitně uvedeny s konkrétními čísly a citacemi. Silné a slabé stránky jsou jasně odděleny a srozumitelně formulovány.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik hodin bylo inspektory hospitováno, takže není jasné, jak reprezentativní jsou zjištění o kvalitě výuky",
+        "Není uvedeno, jaký je podíl žáků s potřebou podpůrných opatření, aby bylo možné lépe posoudit kvalitu jejich podpory",
+        "Výkyv v matematice v roce 2023 není detailně vysvětlen – není jasné, zda jde o jednorázový problém nebo trend"
+      ]
+    }
+  }
+}

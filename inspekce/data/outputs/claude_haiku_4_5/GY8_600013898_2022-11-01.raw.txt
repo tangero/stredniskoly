@@ -1,0 +1,10 @@
+Nemám k dispozici zdrojový text inspekční zprávy. Metadata obsahují pouze základní informace o inspekci (ID, REDIZO, typ, školu, město a období), ale chybí mi samotný obsah zprávy, ze kterého bych měl extrahovat informace o:
+
+- Silných stránkách a rizicích
+- Výsledcích maturity
+- Absenci studentů
+- Bezpečnostním klimatu
+- Podpůrných službách
+- Partnerstvích a praxi
+
+**Prosím, poskytni mi úplný text inspekční zprávy**, abych mohl vytvořit validní JSON analýzu podle zadaného schématu a pokynů.

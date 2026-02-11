@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600013413_2021-10-19",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:26:32.782473+00:00",
+  "run_finished_utc": "2026-02-10T08:27:42.610335+00:00",
+  "raw_file": "GY8_600013413_2021-10-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600013413_2021-10-19",
+    "school_profile": {
+      "school_type": "Gymnázium (osmileté)",
+      "inspection_period": "19. 10. 2021 − 21. 10. 2021",
+      "school_change_summary": "Od poslední inspekce v roce 2013 je počet žáků setrvalý, v roce 2020 byla uvedena do provozu nástavba pro výuku přírodovědných předmětů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci dosahují dlouhodobě vynikajících výsledků vzdělávání v průběhu studia i při maturitě.",
+          "evidence": "„V posledních třech letech byla hrubá úspěšnost žáků u této zkoušky [maturita] stoprocentní.“"
+        },
+        {
+          "tag": "Jazyky a zahraničí",
+          "detail": "Škola klade velký důraz na jazykovou výuku a mezinárodní spolupráci.",
+          "evidence": "„Škola se aktivně zapojuje do projektů umožňujících žákům pobyt na zahraničních stážích... každoročně část žáků získává mezinárodní jazykový certifikát.“"
+        },
+        {
+          "tag": "Přírodovědné zázemí",
+          "detail": "Pro rozvoj přírodovědné gramotnosti škola vytváří výborné materiální podmínky v nových laboratořích.",
+          "evidence": "„K realizaci... slouží nově moderně vybavené učebny a laboratoře, které vznikly vybudováním nástavby školy.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "V části hodin převládá frontální výuka bez dostatečného zapojení žáků.",
+          "evidence": "„V dalších sledovaných hodinách převládala frontální výuka... žáci nebyli cíleně vedeni k vyhledávání a kritickému zpracování informací.“"
+        },
+        {
+          "tag": "Nedostatečná podpora nadání",
+          "detail": "Škola nemá nastavený funkční systém vyhledávání a systematické péče o nadané žáky.",
+          "evidence": "„Škola nemá nastavený funkční systém vyhledávání žáků mimořádně nadaných... ve sledované výuce nebyla zřejmá diferenciace úkolů.“"
+        },
+        {
+          "tag": "Slabé vedení kvality",
+          "detail": "Vedení školy nevyužívá hospitace ke zlepšování kvality výuky.",
+          "evidence": "„Vedení školy nerealizuje hospitační činnost v dostatečné míře a... nepřijímá žádná opatření ani doporučení pro zlepšení úrovně vzdělávacího procesu.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola podporuje talentované žáky v nižších ročnících, kde inspekce zjistila nedostatky?",
+        "Jakým způsobem škola zajišťuje, aby výuka nebyla pouze frontální a žáci byli aktivně zapojeni?",
+        "Jaká konkrétní metodika slouží k identifikaci a podpoře žáků se speciálními vzdělávacími potřebami?"
+      ],
+      "who_school_fits": [
+        "Studentům, kteří chtějí dosáhnout excelentních výsledků u maturity a v jazykových certifikátech.",
+        "Žákům se zájmem o přírodovědné obory, kteří ocení moderní laboratoře a přírodní učebnu.",
+        "Studentům, kteří chtějí využívat široké možnosti zahraničních výjezdů a projektů."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kteří potřebují individuální přístup a aktivní formy výuky, nemusí vyhovovat převaha frontálního stylu.",
+        "Talentovaným žákům v nižším gymnáziu, kde nemusí být podpora jejich nadání dostatečná.",
+        "Rodičům, kteří očekávají systematickou zpětnou vazbu z kontroly výuky ze strany vedení školy."
+      ],
+      "plain_czech_summary": "Gymnázium v Řečkovicích nabízí velmi kvalitní prostředí pro studium přírodovědných předmětů a jazyků s možností zahraničních stáží. Výsledky žáků jsou vynikající a maturitní úspěšnost je stoprocentní. Slabinou je podle inspekce málo systematická podpora nadaných dětí a fakt, že vedení školy nekontroluje kvalitu výuky tak, aby vedla ke zlepšování. V některých hodinách převažuje pasivní styl výuky bez zapojení žáků. Škola tak může být ideální pro samostatné studenty, kteří využijí skvělé materiální zázemí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborná, dlouhodobě nadprůměrná",
+        "key_numbers": [
+          "100% úspěšnost u maturity (poslední 3 roky)",
+          "Výsledky nadprůměrné oproti jiným školám ve skupině oborů",
+          "Vysoký počet žáků s mezinárodním jazykovým certifikátem"
+        ],
+        "evidence": "„V posledních třech letech byla hrubá úspěšnost žáků u této zkoušky stoprocentní. V porovnání s ostatními školami... vykazuje škola dlouhodobě vyšší úroveň těchto výsledků.“"
+      },
+      "absence": {
+        "trend": "Není hodnoceno",
+        "key_numbers": [
+          "Chování nebylo u žádného žáka hodnoceno sníženou známkou (3 roky)",
+          "Neprospívající žáci se vyskytli spíše výjimečně (3 roky)"
+        ],
+        "evidence": "„Stejně tak chování nebylo u žádného žáka hodnoceno v tomto období sníženou známkou.“"
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně a školní metodik prevence",
+        "Kariérové poradenství včetně projektů (KaPoDaV)",
+        "Podpora neprospívajících formou individuálních konzultací"
+      ],
+      "safety_climate": [
+        "Bezpečné a příjemné prostředí",
+        "Respektování žáků na partnerské úrovni",
+        "Funkční žákovský parlament a školní časopis"
+      ],
+      "partnerships_practice": [
+        "Partnerství se zahraničními školami (Stuttgart, Kassel, Holandsko, Francie)",
+        "Spolupráce s VŠ a Akademií věd na ročníkových pracích",
+        "Pořádání soutěží a olympiád pro veřejnost"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně člení silné a slabé stránky a poskytuje konkrétní důkazy. Mírně snížené hodnocení jen pro úřednický styl v pasivních konstrukcích.",
+      "uncertainty_notes": [
+        "Inspekce kritizuje materiální podmínky pro tělovýchovu, ale neuvádí konkrétní detaily (chybění haly, nářadí?).",
+        "Není jasné, jak konkrétně probíhá „nahodilá“ identifikace nadaných žáků.",
+        "Zpráva zmiňuje „částečnou disproporci“ v koncepci školy, ale vysvětlení je velmi obecné."
+      ]
+    }
+  }
+}

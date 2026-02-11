@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600015891_2024-05-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:17:34.064277+00:00",
+  "run_finished_utc": "2026-02-09T16:18:00.276414+00:00",
+  "raw_file": "LYC_600015891_2024-05-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600015891_2024-05-02",
+    "school_profile": {
+      "school_type": "Agro-technická střední škola s domovem mládeže a školní jídelnou",
+      "inspection_period": "2.–3. a 6.–7. května 2024",
+      "school_change_summary": "Zrušena Vyšší odborná škola a internát. Vybudována odborná učebna zpracování zemědělských produktů. Škola nyní nabízí 8 oborů vzdělání (4 s maturitou, 3 s výučním listem, 1 speciální obor). Vzdělává 304 žáků, z toho 30 se speciálními vzdělávacími potřebami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Škola má dlouhodobou spolupráci s vnějšími partnery, která zvyšuje kvalitu vzdělávání a propojuje teorii s reálnou praxí.",
+          "evidence": "Dlouhodobá systematická spolupráce s vnějšími partnery zvyšující atraktivitu nabízených oborů."
+        },
+        {
+          "tag": "Praktické vyučování",
+          "detail": "Praktické vyučování probíhá v dobře vybavených střediscích s individuálním přístupem a zpětnou vazbou od kvalifikovaných učitelů.",
+          "evidence": "Hospitované učební dny byly názorné a aktivizující, žáci pracovali vlastním tempem s individuálním přístupem pedagoga."
+        },
+        {
+          "tag": "Materiální vybavení",
+          "detail": "Zkvalitnění prostorových a materiálních podmínek se pozitivně promítá do kvality odborného výcviku.",
+          "evidence": "Vybudování odborné učebny zpracování zemědělských produktů a rekonstrukce odloučeného pracoviště."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita teoretické výuky",
+          "detail": "V teoretických předmětech převládá pasivní přístup žáků, chybí skupinová práce, diferenciace a sebehodnocení.",
+          "evidence": "Méně se zapojovali do výuky, převládala aktivní role pedagogů. Všichni žáci plnili stejné úkoly bez diferenciace."
+        },
+        {
+          "tag": "Absence a motivace",
+          "detail": "Vyšší absence některých žáků a nízká motivace negativně ovlivňují vzdělávací výsledky.",
+          "evidence": "Přetrvávajícím problémem je vyšší absence některých žáků, jež se zatím nedaří plně eliminovat."
+        },
+        {
+          "tag": "Vzdělávání pedagogů",
+          "detail": "Nedostatečné další vzdělávání pedagogů se negativně projevilo v hospitovaných hodinách teoretické výuky.",
+          "evidence": "Další vzdělávání pedagogických pracovníků je nedostatečné, minimální četnost hospitací bez efektivní zpětné vazby."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší problém vyšší absence žáků a jaká opatření zavádí?",
+        "Jaké konkrétní metody používáte v teoretické výuce, aby se žáci více aktivně zapojovali?",
+        "Jak probíhá spolupráce s firmami a jaké jsou šance na zaměstnání absolventů?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla – praktické vyučování je na vysoké úrovni s individuálním přístupem",
+        "Žáci z rodin s nižší motivací – domov mládeže poskytuje kvalitní zázemí a podporu při adaptaci",
+        "Žáci se speciálními vzdělávacími potřebami – škola má funkčně nastavený preventivní program a školní poradenské pracoviště"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující aktivní teoretickou výuku – v teoretických předmětech převládá pasivní přístup a chybí diferenciace",
+        "Žáci potřebující silnou motivaci a podporu – absence a nízká motivace jsou přetrvávajícím problémem",
+        "Žáci s vyšší ambicí v češtině a angličtině – škola zaznamenala neúspěšnost některých žáků v didaktických testech z těchto předmětů"
+      ],
+      "plain_czech_summary": "Agro-technická střední škola v Bystřici nad Pernštejnem je moderní vzdělávací zařízení se silným zaměřením na praktickou přípravu. Praktické vyučování je na vysoké úrovni s dobrým vybavením a individuálním přístupem. Domov mládeže poskytuje kvalitní podporu. Hlavní slabinou je teoretická výuka, kde žáci pasivně poslouchají bez aktivního zapojení a diferenciace. Problémem zůstává vyšší absence některých žáků. Škola reaguje na zjištěné nedostatky a zavádí opatření."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní s pozitivními výsledky v profilové části",
+        "key_numbers": [
+          "134 žáků v oborech M ukončovaných maturitní zkouškou",
+          "Žáci jsou úspěšní v profilové části maturitní zkoušky",
+          "Neúspěšnost v didaktických testech z češtiny a angličtiny – škola zavedla doučování a konzultace"
+        ],
+        "evidence": "Výsledky maturitních zkoušek jsou srovnatelné s výsledky během studia a se školami podobného typu."
+      },
+      "absence": {
+        "trend": "Negativní – přetrvávající problém",
+        "key_numbers": [
+          "Vyšší absence některých žáků",
+          "Absence negativně ovlivňuje vzdělávací výsledky",
+          "Opatření se zatím nedaří plně eliminovat"
+        ],
+        "evidence": "Přetrvávajícím problémem je vyšší absence některých žáků, jež se zatím nedaří plně eliminovat."
+      },
+      "support_services": [
+        "Školní psycholožka, výchovná poradkyně a dva metodici prevence",
+        "Preventivní komise pravidelně zasedá a vyhodnocuje přijatá opatření",
+        "Funkčně nastavený minimální preventivní program a program proti šikanování",
+        "Adaptační kurz pro první ročníky",
+        "Doučování a konzultace pro žáky s problémy"
+      ],
+      "safety_climate": [
+        "Škola má funkčně nastavený program proti šikanování a postupovala v nedávném případě začínající šikany",
+        "Důraz na dodržování bezpečnostních předpisů a technologických postupů v praktickém vyučování",
+        "Nízký počet žáků ve třídách umožňuje individuální přístup a lepší kontrolu"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá systematická spolupráce s vnějšími partnery zvyšující atraktivitu oborů",
+        "Žáci vykonávají práce pro konkrétní zákazníky – propojení školního vzdělávání s reálnou praxí",
+        "Kariérové poradenství zajišťováno stážemi ve firmách a dny otevřených dveří vysokých škol",
+        "Spolupráce se školami včetně zahraničních"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s konkrétními příklady. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Konkrétní procenta nebo čísla absence nejsou uvedena – není jasné, jak vysoká absence je",
+        "Není specifikováno, kolik pedagogů absolvuje další vzdělávání a v jakých oblastech",
+        "Výsledky závěrečných zkoušek jsou popsány jako 'kolísavé' bez konkrétních čísel za více let"
+      ]
+    }
+  }
+}

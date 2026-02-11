@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY6_600017494_2024-02-26",
+  "school_profile": {
+    "school_type": "Gymnázium s bilingvním programem a jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "26. února až 29. února 2024",
+    "school_change_summary": "Škola se rozvíjí v souladu s doporučeními z roku 2017/2018. Modernizovány byly prostory (nové krytiny, vybavení kabinetů, biologie laboratoř), vytvořeny nové prostory pro wellbeing žáků (beach volejbal, workout). Vedení školy zaměřuje výuku na propojení teoretických poznatků s praktickým využitím a tvořivou výuku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Projektová činnost a mimoškolní aktivity",
+        "detail": "Škola systematicky rozvíjí schopnosti a dovednosti žáků prostřednictvím projektů (Tanzánie, Cena vévody z Edinburghu), soutěží, divadelních her a jazykových pobytů.",
+        "evidence": "Žáci dosahují výrazných úspěchů v SOČ, olympiádách a soutěžích na krajské a celostátní úrovni."
+      },
+      {
+        "tag": "Kvalitní pedagogický sbor",
+        "detail": "Vysoká odbornost učitelů zajišťuje kvalitní výuku, zejména v bilingvním oboru, dějepisu a cizích jazycích.",
+        "evidence": "Škola dosahuje celostátně nadprůměrné úspěšnosti v maturitní zkoušce."
+      },
+      {
+        "tag": "Osobnostní a sociální rozvoj",
+        "detail": "Zapojení do školních aktivit a školního parlamentu podporuje rozvoj komunikačních a organizačních dovedností.",
+        "evidence": "Aktivní školní parlament, charitativní akce, školní sbor a hudební kapela."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vyšší školní úrazovost",
+        "detail": "Škola vykazuje vyšší počet úrazů, zejména v tělesné výchově a při sportovních aktivitách.",
+        "evidence": "Inspekce doporučuje věnovat pozornost příčinám a okolnostem vzniku úrazů a přijímat adekvátní opatření."
+      },
+      {
+        "tag": "Nedostatečné sebehodnocení žáků",
+        "detail": "V hodinách chybí prostor pro sebereflexi žáků a formativní hodnocení jejich pokroku.",
+        "evidence": "Učitelé nezařazují metody sebehodnocení a vzájemného hodnocení, chybí shrnutí cílů v závěru hodin."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Chybí systematická identifikace a cílená podpora nadaných žáků v rámci vzdělávacího procesu.",
+        "evidence": "Inspekce doporučuje vytvořit systematickou identifikaci a podporu nadaným žákům."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola identifikuje a podporuje nadané žáky? Existují pro ně speciální programy nebo kroužky?",
+      "Jaká opatření škola přijala na snížení počtu školních úrazů v tělesné výchově a při sportovních aktivitách?",
+      "Jak se v hodinách zavádí sebehodnocení a formativní hodnocení? Jak se žáci dozvídají o svém pokroku?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky – škola nabízí kvalitní výuku anglického, německého, francouzského, italského a španělského jazyka s rodilými mluvčími.",
+      "Aktivní a tvořiví žáci – škola podporuje projektovou činnost, soutěže, divadelní představení a mimoškolní aktivity.",
+      "Žáci s ambicí na vysoké vzdělání – škola dosahuje nadprůměrné úspěšnosti v maturitě a připravuje žáky na studium na vysokých školách."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se zdravotními omezeními v tělesné výchově – vzhledem k vyšší úrazovosti by měli být opatrní při sportovních aktivitách.",
+      "Žáci, kteří potřebují více individuálního vedení a zpětné vazby – v hodinách chybí dostatečný prostor pro sebereflexi a formativní hodnocení.",
+      "Nadaní žáci bez speciální podpory – škola zatím nemá systematický program pro jejich identifikaci a rozvoj."
+    ],
+    "plain_czech_summary": "Gymnázium Hladnov je kvalitní škola se zaměřením na jazyky a bilingvní vzdělání. Silnými stránkami jsou odborný pedagogický sbor, bohatá nabídka mimoškolních aktivit a projektů, které rozvíjejí dovednosti žáků. Škola dosahuje nadprůměrné úspěšnosti v maturitě. Oblasti ke zlepšení jsou: vyšší školní úrazovost, nedostatečné sebehodnocení žáků v hodinách a chybějící systematická podpora nadaných žáků. Vedení školy je otevřené komunikaci a průběžně zlepšuje podmínky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – nadprůměrná úspěšnost",
+      "key_numbers": [
+        "Celostátně nadprůměrná úspěšnost v maturitní zkoušce",
+        "Žáci oboru Živé jazyky konají certifikované zkoušky z angličtiny",
+        "Součástí vzdělání v maturitním ročníku je ročníková práce v angličtině"
+      ],
+      "evidence": "Škola dosahuje stabilně velmi dobrých výsledků včetně ukončování vzdělávání maturitní zkouškou."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se absencí nezabývá."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště v optimálním složení – výchovná poradkyně, školní psycholog, školní metodik prevence",
+      "Podpora žáků se speciálními vzdělávacími potřebami a metodická pomoc vyučujícím",
+      "Kariérové poradenství pro žáky 3. a 4. ročníků",
+      "Preventivní akce k podpoře pozitivního sebevnímání a zdravého chování"
+    ],
+    "safety_climate": [
+      "Bezpečnost, požární prevence a ochrana zdraví jsou nedílnou součástí vzdělávání",
+      "Žáci jsou prokazatelně informováni na počátku a v průběhu školního roku",
+      "Vyšší školní úrazovost, zejména v tělesné výchově a při sportovních aktivitách",
+      "Škola disponuje bezbariérovým prostředím",
+      "Prostorové a materiální podmínky jsou na velmi dobré úrovni"
+    ],
+    "partnerships_practice": [
+      "Projekt Erasmus+ – jazykové pobyty a individuální mobility učitelů a žáků",
+      "Spolupráce s Českým rozhlasem – školní pěvecký sbor",
+      "Pořádání celostátního divadelního festivalu bilingvních gymnázií",
+      "Organizace celostátní soutěže ve španělském jazyce",
+      "Poznávací zájezdy do Velké Británie, Irska a Španělska",
+      "Sdružení rodičů a příznivců gymnázia Hladnov – finanční a materiální podpora"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní příklady a důkazy. Slabší je pouze v oblasti absence dat o absenci a v některých obecnějších formulacích.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o absenci žáků – není jasné, zda je absence problém či ne.",
+      "Není specifikováno, kolik žáků se účastní jednotlivých mimoškolních aktivit – není jasný rozsah jejich dostupnosti.",
+      "Počet nadaných žáků a jejich podpora není kvantifikován – není jasné, jak velký je tento problém."
+    ]
+  }
+}
+```

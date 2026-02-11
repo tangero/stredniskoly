@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600015513_2022-06-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:01:59.031336+00:00",
+  "run_finished_utc": "2026-02-09T17:02:25.237949+00:00",
+  "raw_file": "SOS_600015513_2022-06-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015513_2022-06-09",
+    "school_profile": {
+      "school_type": "Obchodní akademie, Vyšší odborná škola a Jazyková škola s právem státní jazykové zkoušky",
+      "inspection_period": "9. 6. – 10. 6., 13. 6. a 15. 6. 2022",
+      "school_change_summary": "Škola postupně modernizuje podmínky ke vzdělávání, podporuje odborný růst pedagogů a rozvíjí partnerství s firmami. Zkvalitnila materiální vybavení, rozšířila poradenské služby o psychologa a kariérového poradce."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná kvalita výuky",
+          "detail": "Učitelé odborných předmětů systematicky aktualizují učivo podle nejnovějších poznatků a propojují teorii s praktickými příklady z praxe.",
+          "evidence": "Vyučující odborných předmětů důsledně aktualizují probírané učivo v souladu s novinkami ve vzdělávacích oblastech."
+        },
+        {
+          "tag": "Silné partnerství s firmami",
+          "detail": "Škola má stabilní vztahy s externími partnery, kteří se podílejí na výuce a organizaci odborné praxe.",
+          "evidence": "Velmi dobrá spolupráce se sociálními partnery a firmami v regionu, zavedení aplikace pro efektivní organizaci praxí."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dlouhodobě dosahují výborných výsledků v odborných soutěžích a středoškolské odborné činnosti.",
+          "evidence": "Dlouhodobé úspěchy žáků ve středoškolské odborné činnosti a v odborných soutěžích na krajské i celostátní úrovni."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá zpětná vazba pro učitele",
+          "detail": "Systém hospitací neumožňuje vedení školy dostatečně reflektovat kvalitu výuky a poskytovat učitelům konstruktivní připomínky.",
+          "evidence": "Nastavení kontrolního a hospitačního systému neumožňuje řediteli dostatečně reflektovat vzdělávací proces a přijímat vhodná opatření."
+        },
+        {
+          "tag": "Málo aktivizujících metod",
+          "detail": "Ve výuce převládá frontální výuka, chybí skupinová práce a metody, které by motivovaly všechny žáky k aktivnímu zapojení.",
+          "evidence": "Méně časté zařazování aktivizačních metod a kooperačních činností, které žáky motivují k aktivní práci ve výuce."
+        },
+        {
+          "tag": "Slabší výsledky v IT oboru",
+          "detail": "Žáci oboru Informační technologie dosahují horších výsledků u maturity než republikový průměr, na rozdíl od oboru Obchodní akademie.",
+          "evidence": "V oboru Informační technologie byla za poslední 2 roky úspěšnost pod republikovým průměrem ve společné i profilové části zkoušky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se vedení školy chystá zlepšit výsledky žáků v oboru Informační technologie?",
+        "Jaké konkrétní metody a formy výuky se používají k aktivizaci všech žáků, zejména v nižších ročnících?",
+        "Jak funguje systém zpětné vazby pro učitele a jak se jejich výuka zlepšuje na základě hospitací?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na obchodní a ekonomické obory – obor Obchodní akademie dosahuje dlouhodobě nadprůměrných výsledků.",
+        "Studenti vyšší odborné školy – VOŠ má velmi dobré výsledky u absolutorií a rostoucí počet absolventů s vyznamenáním.",
+        "Žáci se zájmem o jazykové vzdělání – škola nabízí kvalitní výuku cizích jazyků s důrazem na konverzaci a reálie zemí."
+      ],
+      "who_should_be_cautious": [
+        "Žáci oboru Informační technologie – obor má slabší výsledky u maturity než je průměr, škola zatím nedokázala problém vyřešit.",
+        "Žáci, kteří potřebují více aktivizujících metod – výuka je často frontální, chybí skupinová práce a motivující činnosti.",
+        "Žáci nižších ročníků se školními problémy – podpora se intenzivně poskytuje především maturitním třídám."
+      ],
+      "plain_czech_summary": "Obchodní akademie v Uherském Hradišti je dobře vybavená škola se silným zaměřením na praxi. Učitelé odborných předmětů kvalitně propojují teorii s reálnými příklady a škola má výborné vztahy s firmami. Žáci oboru Obchodní akademie dosahují nadprůměrných výsledků u maturity. Slabší je obor Informační technologie. Výuka často používá frontální metody, chybí více skupinové práce. Vedení školy by mělo lépe sledovat kvalitu výuky a poskytovat učitelům zpětnou vazbu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Obchodní akademie nadprůměrná, Informační technologie podprůměrná",
+        "key_numbers": [
+          "Obchodní akademie: dlouhodobě mírně vyšší než republikový průměr",
+          "Informační technologie: za poslední 2 roky pod republikovým průměrem",
+          "Počet neprospívajících žáků se snížil na minimum"
+        ],
+        "evidence": "Úspěšnost žáků u maturitní zkoušky je v oboru Obchodní akademie dlouhodobě mírně vyšší, v oboru Informační technologie byla za poslední 2 roky úspěšnost pod republikovým průměrem."
+      },
+      "absence": {
+        "trend": "Nízká absence díky důsledným pravidlům",
+        "key_numbers": [
+          "Škole se daří úspěšně předcházet vysoké či neomluvené absenci"
+        ],
+        "evidence": "Díky vhodně nastaveným pravidlům pro hodnocení žáků a jejich důslednému uplatňování se škole daří úspěšně předcházet vysoké či neomluvené absenci."
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodička prevence, kariéroví poradci a školní psycholožka",
+        "Systematická péče o žáky se speciálními vzdělávacími potřebami",
+        "Metodická pomoc pedagogům v oblasti prevence a podpory"
+      ],
+      "safety_climate": [
+        "Prostředí školy je udržované a příjemné",
+        "Bezpečnost je pravidelně vyhodnocována a rizika se odstraňují",
+        "Žáci dostávají průběžné informace o bezpečném chování"
+      ],
+      "partnerships_practice": [
+        "Stabilní partnerské vztahy s firmami a institucemi v regionu",
+        "Zavedená aplikace pro efektivní organizaci odborné praxe",
+        "Externí partneři jsou zapojováni do aktivit a výuky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však delší a obsahují více odborné terminologie.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty hodin hospitací a jejich rozložení mezi jednotlivé předměty",
+        "Chybí konkrétní data o počtu žáků, kteří opustili studium v jednotlivých ročnících VOŠ",
+        "Není jasné, jaké konkrétní opatření škola přijala na základě zjištěných slabých stránek"
+      ]
+    }
+  }
+}

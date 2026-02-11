@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY6_600013472_2022-10-03",
+  "school_profile": {
+    "school_type": "Gymnázium se čtyřletým a šestiletým programem, zaměření na jazykové vzdělávání včetně metody CLIL",
+    "inspection_period": "3. 10. 2022 – 6. 10. 2022",
+    "school_change_summary": "Od poslední inspekce došlo ke změně vedení školy. Budova prochází rozsáhlou rekonstrukcí, která postupně zlepšuje materiální podmínky. Škola má 579 žáků v 19 třídách, z toho 21 se speciálními vzdělávacími potřebami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Výuka angličtiny, francouzštiny, němčiny a španělštiny s metodou CLIL umožňuje žákům komunikovat přirozeně v cizích jazycích.",
+        "evidence": "Žáci dosahují výborných umístění v jazykových olympiádách a soutěžích, přes 70 žáků složilo mezinárodní jazykové zkoušky."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola vytváří podmínky pro spolupráci s vysokými školami, motivuje účast na soutěžích a olympiádách.",
+        "evidence": "Řada žáků dosahuje výborných výsledků v mimoškolních aktivitách, mnozí se dostávají na zahraniční vysoké školy."
+      },
+      {
+        "tag": "Školní poradenství",
+        "detail": "Efektivní tým školního poradenského pracoviště včetně školního psychologa řeší studijní a osobní problémy žáků.",
+        "evidence": "Elektronická schránka důvěry je hojně využívána, sociálně patologické jevy se objevují jen výjimečně."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kontrola kvality výuky",
+        "detail": "Hospitační činnost vedení školy probíhá sporadicky a nahodile, což ztěžuje ověřování naplňování pedagogické vize.",
+        "evidence": "Vedení nemá možnost pružně reagovat na zjištěné nedostatky doporučeními ke zlepšení."
+      },
+      {
+        "tag": "Diferenciace pro nadané žáky",
+        "detail": "Učitelé málo diferencují výuku podle potřeb nadaných žáků, zejména rozsah a náročnost úkolů.",
+        "evidence": "Nadaní žáci neměli možnost vybírat z úloh odlišné kognitivní náročnosti."
+      },
+      {
+        "tag": "Fyzické podmínky",
+        "detail": "Některé učebny (zejména přírodovědných předmětů) neodpovídají současným požadavkům na moderní vzdělávání.",
+        "evidence": "Škola je mírně limitována zastaralým vybavením některých prostor."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá příprava na vysoké školy a jaké jsou výsledky přijetí absolventů na prestižní univerzity?",
+      "Jaké jsou možnosti individuálního přístupu k nadaným žákům a jak se liší od standardního programu?",
+      "Jak se škola vypořádává s probíhající rekonstrukcí budovy a kdy budou všechny prostory plně modernizovány?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazykové vzdělávání a komunikaci v cizích jazycích",
+      "Nadaní žáci, kteří chtějí studovat na vysokých školách doma i v zahraničí",
+      "Žáci s ambicí reprezentovat školu v soutěžích a olympiádách"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivnější individuální podporu v učení (škola se zaměřuje spíše na nadané)",
+      "Rodiny, které preferují nově vybavené a moderní prostory (budova je historická, rekonstrukce ještě není hotova)",
+      "Žáci se zdravotními nebo sociálními problémy vyžadujícími speciální péči (kapacita poradenství je omezená)"
+    ],
+    "plain_czech_summary": "Gymnázium na Slovanském náměstí je kvalitní brněnská škola se silným zaměřením na jazykové vzdělávání. Žáci dosahují výborných výsledků v jazykových soutěžích a mnoho absolventů se dostane na zahraniční vysoké školy. Škola má dobré vedení a podporuje nadané žáky. Slabší stránkou je nedostatečná kontrola kvality výuky vedením a málo individualizovaný přístup k nadaným žákům. Budova se postupně modernizuje, ale některé prostory jsou stále zastaralé."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoká úspěšnost",
+      "key_numbers": [
+        "Šestiletý obor: 100% hrubá úspěšnost",
+        "Čtyřletý obor: 2,4% průměrná neúspěšnost",
+        "Všichni přihlášení žáci šestiletého oboru zkoušku úspěšně vykonají"
+      ],
+      "evidence": "Hrubá úspěšnost žáků u maturitní zkoušky je v posledních letech v šestiletém oboru stoprocentní."
+    },
+    "absence": {
+      "trend": "Nízká míra sociálně patologických jevů",
+      "key_numbers": [
+        "Sociálně patologické jevy se v posledních letech objevují jen výjimečně",
+        "Elektronická schránka důvěry je hojně využívána"
+      ],
+      "evidence": "Jasně nastavená pravidla komunikace a účinná spolupráce pomáhají řešit problémy v počátečních stádiích."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psychologem",
+      "Individuální vzdělávací plány pro žáky se speciálními potřebami (21 žáků)",
+      "Elektronická schránka důvěry pro anonymní hlášení problémů",
+      "Kariérní poradenství a motivační přednášky",
+      "Podpora nadaných žáků prostřednictvím soutěží a studijních pobytů"
+    ],
+    "safety_climate": [
+      "Bezpečnost zajišťována důsledným plnění pravidel vedením školy",
+      "Krizový plán školy a minimální preventivní program",
+      "Pozitivní pracovní atmosféra v hodinách",
+      "Aktivní práce školního poradenství má pozitivní dopad na chování žáků"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s vysokými školami a Centrem talentované mládeže",
+      "Partnerství se zahraničními školami v Itálii a Řecku",
+      "Program The Duke of Edinburgh's international award",
+      "Spolupráce s brněnskými gymnázii a Jihomoravským centrem pro mezinárodní mobilitu",
+      "Zahraniční výjezdy do zemí Evropy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Silné a slabé stránky jsou jasně identifikovány. Mírně snižuje srozumitelnost pro rodiče technický jazyk a rozsáhlost textu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o počtu učitelů a jejich kvalifikaci (pouze zmínka o kvalitě sboru)",
+      "Chybí informace o finančních nákladech na vzdělávání a školném",
+      "Není jasné, jak dlouho bude trvat rekonstrukce budovy a jaký bude její dopad na výuku"
+    ]
+  }
+}
+```

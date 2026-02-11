@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_650075277_2023-11-23",
+  "school_profile": {
+    "school_type": "Střední škola gastronomie a hotelnictví (soukromá, s.r.o.)",
+    "inspection_period": "23. 11. 2023 – 16. 12. 2023",
+    "school_change_summary": "Nová ředitelka od ledna 2023. Rozšířena nabídka o obor Veřejnosprávní činnost. Změnilo se místo vzdělávání. Počet žáků maturitních oborů vzrostl na 190 (z 217 celkem)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické dovednosti a spolupráce s firmami",
+        "detail": "Kvalitní propojení teorie s praxí a dlouhodobá spolupráce se sociálními partnery efektivně rozvíjí odborné kompetence žáků.",
+        "evidence": "Praktické vyučování probíhá na vhodně zvolených pracovištích, instruktoři se věnují žákům individuálně a podporují jejich motivaci."
+      },
+      {
+        "tag": "Zlepšující se výsledky v denní formě",
+        "detail": "Ve školním roce 2022/2023 se výrazně zlepšily prospěchy žáků oboru Hotelnictví a absence se snížila o 20 %.",
+        "evidence": "Podíl žáků prospívajících s vyznamenáním se zvýšil přibližně dvojnásobně, více žáků (dvě třetiny) úspěšně ukončilo vzdělávání."
+      },
+      {
+        "tag": "Poradenské služby a prevence",
+        "detail": "Efektivní poradenské pracoviště poskytuje podporu žákům, jejich rodičům i pedagogům s důrazem na prevenci rizikového chování.",
+        "evidence": "Činnost zajišťují výchovná poradkyně, školní metodička prevence a kariérová poradkyně, které efektivně poskytují konzultace."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost v oboru Podnikání",
+        "detail": "Obor Podnikání (dálková forma) má výrazně horší výsledky v maturitě než průměr v ČR – hrubá neúspěšnost 53,3 % vs. průměr 29,9 %.",
+        "evidence": "Ve školních letech 2019/2020, 2021/2022 a 2022/2023 dosahovala hrubá neúspěšnost 50 %, 55,6 % a 53,3 %, nejčastěji v češtině a matematice."
+      },
+      {
+        "tag": "Slabá příprava uchazečů do oboru Podnikání",
+        "detail": "Uchazeči se do oboru Podnikání hlásí až v dalších kolech přijímacího řízení bez ověření vstupních předpokladů.",
+        "evidence": "Prakticky všichni uchazeči jsou přijímáni bez jednotné přijímací zkoušky, která by ověřila jejich připravenost."
+      },
+      {
+        "tag": "Nedostatečná aktivizace žáků ve výuce",
+        "detail": "Převažuje frontální výuka bez kooperativních forem, chybí diferenciace úkolů a sebehodnocení žáků.",
+        "evidence": "Jen ojediněle byla uplatněna diferenciace úkolů vzhledem k individuálním potřebám, chybí závěrečné shrnutí a ověření cílů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se škola snaží zlepšit výsledky žáků oboru Podnikání v maturitě? Jaká nová opatření byla zavedena?",
+      "Jaké jsou konkrétní požadavky na uchazeče do oboru Podnikání a jak se liší od ostatních oborů?",
+      "Jak škola podporuje slabší žáky a jak probíhá individuální přístup v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Zájemci o obory Hotelnictví a Veřejnosprávní činnost v denní formě – zde jsou vidět pozitivní trendy a zlepšující se výsledky.",
+      "Studenti, kteří chtějí kvalitní praktickou přípravu – škola má dobrou spolupráci s firmami a kvalitní praktické vyučování.",
+      "Žáci oboru Kuchař–číšník v dálkové formě – tento obor dosahuje velmi dobrých výsledků s vysokým podílem prospívajících s vyznamenáním."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči do oboru Podnikání v dálkové formě – tento obor má dlouhodobě vysokou neúspěšnost v maturitě (přes 50 %) a výrazně zaostává za celorepublikovým průměrem.",
+      "Žáci se slabšími předpoklady v češtině a matematice – právě v těchto předmětech mají žáci oboru Podnikání největší problémy.",
+      "Dospělí studenti v dálkové formě – škola má potíže s motivací těchto žáků k pokračování ve studiu a konání maturitní zkoušky."
+    ],
+    "plain_czech_summary": "Škola se zaměřuje na praktickou přípravu v gastronomii a hotelnictví. Obory Hotelnictví a Veřejnosprávní činnost v denní formě se zlepšují – žáci lépe prospívají a méně chybějí. Praktické vyučování je kvalitní. Problém je obor Podnikání v dálkové formě, kde více než polovina žáků neuspěje v maturitě. Výuka by mohla být interaktivnější a více zaměřená na aktivní zapojení žáků. Nová ředitelka (od ledna 2023) zavádí zlepšující se opatření."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Obor Hotelnictví se zlepšuje, obor Podnikání zůstává problematický",
+      "key_numbers": [
+        "Hotelnictví 2022/2023: hrubá neúspěšnost 16,7 % (průměr ČR 10,5 %)",
+        "Podnikání 2022/2023: hrubá neúspěšnost 53,3 % (průměr ČR 29,9 %)",
+        "Nejčastější selhání: český jazyk a literatura, matematika"
+      ],
+      "evidence": "Ve školním roce 2020/2021 v Hotelnictví uspěli všichni přihlášení žáci. V Podnikání se od předešlé inspekce nepodařilo výsledky dostatečně zlepšit."
+    },
+    "absence": {
+      "trend": "Pozitivní trend – absence se snižuje",
+      "key_numbers": [
+        "Hotelnictví 2022/2023: průměrná absence o 20 % nižší než v 2021/2022",
+        "Neomluvená absence: snížena důsledným uplatňováním opatření",
+        "Korelace: vyšší absence = podprůměrné výsledky a předčasný odchod"
+      ],
+      "evidence": "Důsledné uplatňování přijatých opatření proti záškoláctví se projevilo snížením průměrné neomluvené absence."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodička prevence a kariérová poradkyně – efektivně poskytují poradenství",
+      "Adaptační aktivity při zahájení vzdělávání a projektové dny na posilování vztahů v třídách",
+      "Srovnávací testy od ledna 2023 s vyšší četností pro posouzení úrovně znalostí v předmětech společné části MZ",
+      "Konzultace v dálkové formě – navýšen počet od školního roku 2023/2024"
+    ],
+    "safety_climate": [
+      "Škola dbá na zajišťování bezpečného prostředí a pravidelně poučuje žáky o dodržování pravidel bezpečnosti",
+      "Správně identifikuje projevy rizikového chování s důrazem na prevenci",
+      "Pozitivní atmosféra s převažujícím vstřícným přístupem učitelů k žákům"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se sociálními partnery – vhodně zvolená pracoviště pro praktické vyučování",
+      "Funkční systém spolupráce s instruktory a jejich zapojení do průběžného hodnocení žáků",
+      "V oboru Hotelnictví: komunikace mezi instruktory a žáky probíhá v anglickém jazyce, intenzivní zaměření na rozvoj odborných kompetencí",
+      "Systematická spolupráce vedení školy s instruktory a pravidelné získávání zpětné vazby"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, ale je velmi dlouhá a místy technická. Pro rodiče jsou nejdůležitější informace jasně identifikovatelné (výsledky maturit, absence, kvalita výuky), ale vyžadují určitou pozornost k vyhledání.",
+    "uncertainty_notes": [
+      "Zpráva se zaměřuje na obor Podnikání jako problematický, ale není zcela jasné, zda je to způsobeno kvalitou výuky nebo výběrem uchazečů – pravděpodobně kombinace obojího.",
+      "Údaje o prospěchu žáků oboru Podnikání v průběhu studia (vysoký podíl s vyznamenáním) vs. jejich neúspěšnost v maturitě naznačují systémový problém v hodnocení, ale není jasné, jak se to změní.",
+      "Není specifikováno, kolik žáků oboru Podnikání se skutečně hlásí a kolik je přijímáno – údaj 'prakticky všichni' je vágní."
+    ]
+  }
+}
+```

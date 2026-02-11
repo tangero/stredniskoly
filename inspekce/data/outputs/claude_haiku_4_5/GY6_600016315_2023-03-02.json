@@ -1,0 +1,118 @@
+{
+  "report_id": "GY6_600016315_2023-03-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:46:01.158392+00:00",
+  "run_finished_utc": "2026-02-09T16:46:24.968446+00:00",
+  "raw_file": "GY6_600016315_2023-03-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600016315_2023-03-02",
+    "school_profile": {
+      "school_type": "Gymnázium (šestileté), střední škola s 533 žáky v 18 třídách",
+      "inspection_period": "2. března až 7. března 2023",
+      "school_change_summary": "Od poslední inspekce v 2014/2015 se počet žáků zvýšil ze 464 na 533, došlo k výměně vedení a rozsáhlé rekonstrukci prostor. Škola se zapojila do nových programů včetně Mezinárodní ceny vévody z Edinburghu a zaměstnala školní psycholožku."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci dosahují stoprocentní úspěšnosti u maturit a 98 % pokračuje na vysokých školách.",
+          "evidence": "\"Při ukončování vzdělávání maturitní zkouškou vykazuje škola dlouhodobě stoprocentní úspěšnost žáků. V dalším studiu na vysokých školách pokračuje 98 % absolventů.\""
+        },
+        {
+          "tag": "Aktivní školní komunita",
+          "detail": "Silná žákovská samospráva organizuje školní akce a podporuje osobnostní rozvoj žáků.",
+          "evidence": "\"Žákovská samospráva iniciovala vydávání školního časopisu, zřídila funkční informační systém, organizuje charitativní akce a studentský ples.\""
+        },
+        {
+          "tag": "Kvalitní vybavení",
+          "detail": "Škola prošla rozsáhlou rekonstrukcí s moderním nábytkem, multimediální technikou a speciálními učebnami.",
+          "evidence": "\"Třídy byly vybaveny výškově nastavitelným nábytkem a multimediální technikou. Došlo k renovaci posluchárny, laboratoří a tělocvičny.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená interaktivita výuky",
+          "detail": "Převažuje frontální výuka, málo skupinové práce a sebehodnocení žáků.",
+          "evidence": "\"V průběhu vzdělávání převažovala frontálně vedená výuka. Chybějící sebehodnocení žáků jako součást ověření dosažení vzdělávacího cíle.\""
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Výuka není přizpůsobena individuálním schopnostem žáků, chybí úlohy různé obtížnosti.",
+          "evidence": "\"Výuka byla jen výjimečně diferencovaná podle individuálních schopností žáků např. zadáváním úkolů rozdílného rozsahu nebo obtížnosti.\""
+        },
+        {
+          "tag": "Slabá spolupráce pedagogů",
+          "detail": "Učitelé si málo navštěvují hodiny navzájem pro inspiraci a zlepšování kvality.",
+          "evidence": "\"Vzájemné hospitace k inspiraci ve využití efektivních výukových strategií však uplatňují jen v malé míře a s nízkým dopadem.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zavádět více skupinové práce a aktivního učení do výuky?",
+        "Jaké jsou možnosti individuálního přístupu k žákům s různými schopnostmi?",
+        "Jak se škola připravuje na nový školní vzdělávací program, který se tvoří?"
+      ],
+      "who_school_fits": [
+        "Ambiciózní žáci s dobrými studijními výsledky, kteří chtějí pokračovat na vysoké škole",
+        "Žáci zajímající se o jazykové vzdělání a mezinárodní výměny",
+        "Talentovaní žáci, kterým škola nabízí odborné stáže a účast v soutěžích"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se učí lépe prostřednictvím skupinové práce a diskuse než frontální výukou",
+        "Žáci s různorodými schopnostmi, kteří potřebují více individualizovaný přístup",
+        "Žáci, kteří se lépe učí praktickou činností a experimentováním než teoretickým výkladem"
+      ],
+      "plain_czech_summary": "Gymnázium Petra Bezruče je prestižní škola s výbornými výsledky – všichni žáci úspěšně maturují a 98 % pokračuje na vysokých školách. Škola má moderní vybavení, aktivní žákovskou samosprávu a bohatou nabídku mimoškolních aktivit. Slabší stránkou je převaha frontální výuky s málo skupinové práce a sebehodnocení. Výuka není dostatečně přizpůsobena individuálním schopnostem žáků. Škola se snaží tyto nedostatky řešit a zavádí nový vzdělávací program."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100% úspěšnost u maturitních zkoušek",
+          "98% absolventů pokračuje na vysokých školách",
+          "Výborné výsledky v externím testování"
+        ],
+        "evidence": "\"Při ukončování vzdělávání maturitní zkouškou vykazuje škola dlouhodobě stoprocentní úspěšnost žáků. V dalším studiu na vysokých školách pokračuje 98 % absolventů školního roku 2020/2021.\""
+      },
+      "absence": {
+        "trend": "Bez problémů",
+        "key_numbers": [
+          "Nejsou evidovány závažnější rizikové projevy chování",
+          "Neomluvená absence se nevyskytuje"
+        ],
+        "evidence": "\"Ve škole nejsou evidovány závažnější rizikové projevy chování žáků ani neomluvená absence.\""
+      },
+      "support_services": [
+        "Školní psycholožka (od ledna 2023)",
+        "Školní poradenské pracoviště s konzultacemi a porádenskými službami",
+        "Doučování a individuální konzultace pro žáky se studijními obtížemi",
+        "Podpora žáků s odlišným mateřským jazykem",
+        "Spolupráce s externími odborníky podle potřeby"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra se vzájemným respektem učitelů a žáků",
+        "Cílená primární prevence zaměřená na věkové skupiny",
+        "Adaptační kurzy pro žáky prvních ročníků",
+        "On-line schránka důvěry pro žáky",
+        "Průběžné vyhodnocování rizik v oblasti bezpečnosti a ochrany zdraví"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s organizacemi v oblasti prevence a kariérového poradenství",
+        "Partnerství se zahraniční školou pro výměnné pobyty",
+        "Odborné stáže na vysokých školách a ústavech Akademie věd",
+        "Zapojení rodilého mluvčího ve výuce cizích jazyků",
+        "Projekty umožňující financování vzdělávání pedagogů a doučování žáků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a citacemi. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více odborné termíny, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o počtu žáků s speciálními vzdělávacími potřebami v jednotlivých kategoriích (pouze zmínka o 11 žácích celkem).",
+        "Chybí informace o konkrétních výsledcích v jednotlivých předmětech nebo srovnání s národním průměrem.",
+        "Není jasné, jak konkrétně se škola chystá řešit zjištěné nedostatky v interaktivitě výuky."
+      ]
+    }
+  }
+}

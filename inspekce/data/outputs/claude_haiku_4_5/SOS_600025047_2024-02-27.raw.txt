@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600025047_2024-02-27",
+  "school_profile": {
+    "school_type": "Střední škola, základní škola a mateřská škola pro zdravotně znevýhodněné",
+    "inspection_period": "27. února až 1. března 2024",
+    "school_change_summary": "Škola rozšířila vedení o dva zástupce ředitelky a investovala do modernizace prostor (nová přístavba, multisenzorická místnost, rekonstrukce speciálně pedagogického centra)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Škola má elektronický bezpečnostní systém zajišťující bezpečný pohyb všech účastníků vzdělávání.",
+        "evidence": "Elektronický bezpečnostní systém školy vytváří bezpečné prostředí pro všechny účastníky vzdělávacího procesu."
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Pedagogové respektují individuální vzdělávací potřeby a poskytují empatickou podporu každému žákovi.",
+        "evidence": "Empatický, podporující a individuální přístup pedagogů příznivě ovlivňuje rozvoj osobnosti dětí a žáků."
+      },
+      {
+        "tag": "Kvalitní vybavení",
+        "detail": "Škola má moderní učebny, speciální pomůcky a prostory pro relaxaci a terapie.",
+        "evidence": "Materiální i prostorové podmínky školy jsou na velmi dobré úrovni s bezbariérovostí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší příprava na maturitu",
+        "detail": "Žáci oboru sociální činnost dosahují nejslabších výsledků u maturitní zkoušky.",
+        "evidence": "Nejslabších výsledků dosahují u maturitní zkoušky opakovaně žáci oboru sociální činnost."
+      },
+      {
+        "tag": "Málo digitálních technologií",
+        "detail": "V některých hodinách se digitální technologie využívají jen minimálně, což omezuje rozvoj digitálních kompetencí.",
+        "evidence": "V hospitovaných hodinách bylo zaznamenáno jen v malé míře využití digitálních technologií."
+      },
+      {
+        "tag": "Nedostatky v kontrole",
+        "detail": "Řídící činnost ve střední škole a kontrola v poradenském centru vykazují dílčí nedostatky.",
+        "evidence": "Řídící a kontrolní činnost ve středním vzdělávání vykazuje dílčí nedostatky s dopadem na vzdělávání žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola připravuje žáky oboru sociální činnost na maturitní zkoušku, když dosahují slabších výsledků?",
+      "Jaké digitální technologie se používají ve výuce a jak se rozvíjejí digitální kompetence žáků?",
+      "Jak funguje systém individuální podpory pro žáky, kteří mají potíže s učením?"
+    ],
+    "who_school_fits": [
+      "Žáci se zdravotním postižením (tělesným, zrakovým, sluchovým, mentálním) a poruchami učení",
+      "Rodiny hledající školu se speciálně pedagogickým přístupem a individuální péčí",
+      "Žáci, kteří potřebují bezpečné prostředí s jasnou strukturou a podporou"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků oboru sociální činnost by měli vědět o nižších úspěšnostech u maturit",
+      "Pokud chcete intenzivní výuku s moderními digitálními technologiemi, škola v tomto ještě zaostává",
+      "Žáci bez speciálních vzdělávacích potřeb zde nejsou primárně určeni"
+    ],
+    "plain_czech_summary": "Jde o kvalitní speciální školu s empatickým přístupem a moderním vybavením. Vedení je stabilní a koncepční. Silné stránky: bezpečí, individuální péče, spolupráce pedagogů. Slabiny: nižší úspěšnost u maturit v některých oborech, málo digitálních technologií ve výuce, dílčí nedostatky v kontrole. Škola se zapojuje do mezinárodních projektů a poskytuje metodickou podporu běžným školám."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Loňský rok: 11 z 12 žáků uspělo (90 %)",
+        "Obor sociální činnost: nejslabší výsledky",
+        "Úspěšnost u závěrečných zkoušek: 100 %"
+      ],
+      "evidence": "Maturitní zkoušku konalo v loňském školním roce celkem 12 žáků a z tohoto počtu 11 uspělo, což je přibližně 90 %."
+    },
+    "absence": {
+      "trend": "Nízká",
+      "key_numbers": [
+        "Neprospívající žáci se vyskytují v nízké míře",
+        "Vyšší neomluvená absence v nízké míře",
+        "Adekvátně řešeno se zákonnými zástupci"
+      ],
+      "evidence": "Ve středním odborném vzdělávání se v průběžném hodnocení žáci neprospívající a s vyšší neomluvená absencí objevují v posledních třech školních letech v nízké míře."
+    },
+    "support_services": [
+      "Tým školního poradenského pracoviště: 3 výchovné poradkyně, 2 metodici prevence, 1 školní psycholožka",
+      "Speciálně pedagogické centrum (SPC) poskytuje diagnostiku a metodickou podporu školám",
+      "Krizové intervence, podpůrné plány a plány pedagogické podpory pro žáky v obtížích"
+    ],
+    "safety_climate": [
+      "Elektronický bezpečnostní systém zajišťuje bezpečný pohyb všech osob",
+      "Preventivní program zaměřený na minimalizaci rizikového chování",
+      "Krizové plány a program proti šikanování",
+      "Empatický přístup pedagogů vytváří bezpečné učební prostředí"
+    ],
+    "partnerships_practice": [
+      "Zapojení do sítě Center metodické podpory Jihomoravského kraje",
+      "Mezinárodní spolupráce: projekt TaTaBooks (mluvící dotyková kniha), Sensus Library",
+      "Fakultní škola pro Masarykovu univerzitu a Univerzitu Palackého",
+      "Tranzitní programy (Agapo, Rytmus) pro přechod do zaměstnání",
+      "Spolupráce se ZŠ a MŠ logopedickou v Brně"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale místy obsahuje úřednický jazyk. Hlavní informace jsou jasné, ale pro rodiče by bylo užitečné více praktických příkladů.",
+    "uncertainty_notes": [
+      "Není jasné, jaké konkrétní digitální technologie se ve výuce používají a jaký je plán jejich rozšíření",
+      "Chybí informace o počtu žáků, kteří přestupují z maturitního oboru do učebního",
+      "Není specifikováno, jak dlouho trvá řešení nedostatků v kontrolní činnosti"
+    ]
+  }
+}
+```

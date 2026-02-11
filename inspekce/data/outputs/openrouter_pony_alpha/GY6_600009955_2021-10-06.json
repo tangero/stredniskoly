@@ -1,0 +1,112 @@
+{
+  "report_id": "GY6_600009955_2021-10-06",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:30:41.922993+00:00",
+  "run_finished_utc": "2026-02-10T08:32:23.194169+00:00",
+  "raw_file": "GY6_600009955_2021-10-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600009955_2021-10-06",
+    "school_profile": {
+      "school_type": "Gymnázium s délkou vzdělávání šest roků",
+      "inspection_period": "6. 10. − 7. 10. 2021",
+      "school_change_summary": "Od roku 2019 došlo ke změně vedení, výraznému zkvalitnění materiálního zázemí včetně nových tělocvičen a zavedení digitální platformy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Škola dosahuje vynikajících výsledků v maturitách i soutěžích, přičemž tři čtvrtiny žáků maturovaly s vyznamenáním.",
+          "evidence": "„Výsledky maturitní zkoušky jsou v posledních třech školních rocích na výborné úrovni... 75 % žáků studium s vyznamenáním.“"
+        },
+        {
+          "tag": "Individuální přístup a atmosféra",
+          "detail": "Ve škole panuje příznivá atmosféra založená na respektu, ředitelka řeší podněty žáků a podporuje jejich individuální zájmy.",
+          "evidence": "„Sounáležitost pedagogů i žáků se školou se projevuje příznivou atmosférou... ředitelka reflektuje návrhy žáků předložené školním parlamentem.“"
+        },
+        {
+          "tag": "Kvalitní zázemí a aktivity",
+          "detail": "Škola nabízí moderní vybavení, nové sportovní areály a širokou nabídku volnočasových aktivit pro rozvoj žáků.",
+          "evidence": "„K dispozici nově vybudované tělocvičny... široké spektrum školních aktivit, které přispívají k všestrannému rozvoji osobnosti žáků.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zastaralé vyučovací metody",
+          "detail": "Výuka je převážně frontální, učitelé málo využívají moderní metody, skupinovou práci a digitální techniku.",
+          "evidence": "„Ve vyučování převažovala frontální výuka... Podpora kooperace... byla zaznamenána pouze ojediněle.“"
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Učitelé příliš nerespektují individuální rozdíly mezi žáky a zadávají všem stejné úkoly.",
+          "evidence": "„Chyběla potřebná diferenciace zadávaných úkolů... snižuje účinnost vzdělávacího procesu u jednotlivých žáků.“"
+        },
+        {
+          "tag": "Chybějící zpětná vazba",
+          "detail": "Ve výuce chybí prostor pro sebehodnocení žáků a efektivní využití závěru hodin k reflexi.",
+          "evidence": "„V závěru hodin zpravidla chyběl prostor k reflexi žáků... pedagogové jen okrajově věnovali pozornost formativnímu hodnocení.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé ve výuce využívají digitální technologie a moderní pomůcky, když inspekce zjistila jejich malé využití?",
+        "Jakým způsobem škola zajišťuje individuální přístup a diferenciaci výuky pro žáky s různými studijními předpoklady?",
+        "Jaké konkrétní metodické kroky škola plánuje k posílení formativního hodnocení a sebereflexe žáků?"
+      ],
+      "who_school_fits": [
+        "Samostatní žáci, kteří jsou schopni efektivně absorbovat informace z frontální výuky.",
+        "Talentovaní jedinci, kteří chtějí dosahovat vynikajících výsledků v soutěžích a olympiádách.",
+        "Žáci, kteří očekávají kvalitní materiální zázemí a bohatou nabídku mimoškolních aktivit."
+      ],
+      "who_should_be_cautious": [
+        "Žáci vyžadující aktivní, studentsky vedenou výuku nebo častou skupinovou práci.",
+        "Rodiče očekávající intenzivní individuální přizpůsobení úkolů schopnostem dítěte.",
+        "Žáci, kteří potřebují častou a detailní zpětnou vazbu k vlastnímu učení a pokroku."
+      ],
+      "plain_czech_summary": "Gymnázium v Tachově je škola s vynikajícími studijními výsledky a kvalitním zázemím, kde panuje přátelská atmosféra. Většina žáků maturuje s vyznamenáním a škola skvěle funguje v péči o talentované studenty. Slabinou je tradiční styl výuky, který klade důraz na předávání informací učitelem, zatímco moderní metody, skupinová práce a využití technologií jsou na okraji. Pro aktivní a samostatné studenty je škola skvělou volbou, ale rodiče by měli vědět, že individuální přístup ve výuce má své limity."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborná úroveň s vysokým podílem vyznamenání",
+        "key_numbers": [
+          "75 % žáků ukončilo studium s vyznamenáním",
+          "Neúspěch u maturity je ojedinělý",
+          "Výsledky jsou stabilně na výborné úrovni poslední 3 roky"
+        ],
+        "evidence": "„Výsledky maturitní zkoušky jsou v posledních třech školních rocích na výborné úrovni... 75 % žáků studium s vyznamenáním.“"
+      },
+      "absence": {
+        "trend": "Nízká absence, rizikové chování je výjimečné",
+        "key_numbers": [
+          "K vyšší míře absence dochází výjimečně",
+          "Neomluvená absence je ojedinělá"
+        ],
+        "evidence": "„K vyšší míře absence, včetně neomluvené, dochází výjimečně.“"
+      },
+      "support_services": [
+        "Fungující školní parlament a vliv žáků na dění ve škole",
+        "Systém adaptace žáků prvního ročníku a prevence školní neúspěšnosti",
+        "Individuální konzultace a doučování pro přípravu k maturitě"
+      ],
+      "safety_climate": [
+        "Příznivá atmosféra založená na vzájemném respektu a sounáležitosti",
+        "Důsledné dodržování školního řádu a pravidel chování",
+        "Důraz na prevenci rizikového chování a monitoring školní atmosféry"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s externími subjekty na environmentálních aktivitách",
+        "Prezentace školy a výsledků vzdělávání veřejnosti a městu",
+        "Účast v projektech podporujících kvalitu vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěry a doporučení jsou konkrétní a dobře čitelná.",
+      "uncertainty_notes": [
+        "Nejasná míra využívání digitálních technologií žáky (zpráva uvádí 'ojediněle', ale i 'sdílené výukové prostředí').",
+        "Konkrétní číselné údaje o počtu žáků se SPPP nejsou v textu uvedeny, pouze obecná strategie.",
+        "Míra zapojení rodičů do komunikace přes elektronický systém je popsána funkčně, ale bez detailů o frekvenci využití."
+      ]
+    }
+  }
+}

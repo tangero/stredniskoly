@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600009963_2022-12-14",
+  "school_profile": {
+    "school_type": "Střední škola s obory: Mechanik opravář motorových vozidel, Opravář zemědělských strojů, Kuchař-číšník a navazující nástavbové studium Podnikání",
+    "inspection_period": "14.–16. prosince 2022",
+    "school_change_summary": "Od inspekce v 2017 vzrostl počet žáků o 42 na 198 žáků v 12 třídách. Byla jmenována zástupkyně ředitele. Přetrvávají problémy se stabilizací pedagogického sboru. Naplněnost školy je 49 %."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola vytváří velmi dobré předpoklady pro přímé uplatnění absolventů díky těsnému propojení teoretické výuky s praktickým vyučováním v reálném pracovním prostředí.",
+        "evidence": "Odborný výcvik probíhá na pracovištích partnerských firem, žáci plní úkoly na vozidlech zákazníků formou produktivní práce."
+      },
+      {
+        "tag": "Kvalitní odborný výcvik",
+        "detail": "Žáci si systematicky osvojují technologické postupy a normy nezbytné pro zdárné uplatnění v budoucí praxi.",
+        "evidence": "Odborný výcvik má odpovídající odbornou úroveň, žáci pracují se správnými nástroji a přístroji, nebylo zaznamenáno porušení bezpečnostních či hygienických předpisů."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují velmi dobrých výsledků v odborně zaměřených soutěžích na regionální i celorepublikové úrovni.",
+        "evidence": "Úspěchy dokládají velmi dobrou míru získaných odborných dovedností a znalostí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Škola se potýká s vysokým počtem zameškaných hodin – průměrně 197 hodin na žáka, z toho 16,8 neomluvených hodin (8,5 %).",
+        "evidence": "Opatření ve formě výchovných komisí a kázeňských opatření jsou většinou neúčinná. 17 % žáků má sníženou známku z chování."
+      },
+      {
+        "tag": "Nízká efektivita systému podpory",
+        "detail": "Škola se snaží eliminovat neúspěšnost především doučováním a individuálními konzultacemi, která se nejeví jako dostatečně účinná.",
+        "evidence": "Není realizován účinný systém analýzy výsledků ohrožených žáků s následným vyhodnocením opatření. Poradenské služby nejsou nastaveny zcela efektivně."
+      },
+      {
+        "tag": "Pasivní teoretická výuka",
+        "detail": "V teoretické výuce převažuje frontální výuka s dominantní rolí učitele, žáci jsou málo aktivní a chybí diferenciace výuky.",
+        "evidence": "Více než dvě třetiny hodin učitelé zhodnotili jen formálně nebo vůbec. Nejsou nabízeny aktivity odpovídající očekávanému vývoji žáka."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+      "Jaké konkrétní metody aktivní výuky používáte v teoretických předmětech a jak se liší od frontální výuky?",
+      "Jak škola podporuje žáky ohrožené školní neúspěšností a jaké jsou úspěšnosti těchto intervencí?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou výuku a získávání odborných dovedností v technických oborech",
+      "Studenti, kteří se chtějí rychle uplalit na trhu práce s konkrétní odbornou kvalifikací",
+      "Žáci, kteří prospívají v prostředí s jasnou strukturou a propojením teorie s reálnou praxí"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k absenci – škola má problémy s motivací a efektivitou řešení vysoké absence",
+      "Studenti potřebující individuální podporu a diferenciovanou výuku – teoretická výuka je převážně frontální bez přizpůsobení",
+      "Žáci v oboru Podnikání – tento obor vykazuje nejnižší míru efektivity a vysokou fluktuaci"
+    ],
+    "plain_czech_summary": "Střední škola v Boru je zaměřena na technické obory s důrazem na propojení teorie s praxí. Silnou stránkou je kvalitní odborný výcvik v partnerských firmách a úspěchy žáků v soutěžích. Hlavní problémy jsou vysoká absence žáků (průměrně 197 hodin na žáka), neúčinný systém podpory slabších žáků a pasivní teoretická výuka. Škola se potýká s fluktuací žáků a nízkou efektivitou oboru Podnikání. Vedení školy potřebuje zlepšit řízení pedagogických procesů a zavést aktivnější vyučovací metody."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nízká efektivita, zejména v oboru Podnikání",
+      "key_numbers": [
+        "27 zapsaných žáků v maturitním oboru Podnikání",
+        "2 žáci vzděláváni dle individuálních vzdělávacích plánů",
+        "Nízký podíl žáků, kteří úspěšně dokončí vzdělávání maturitní zkouškou"
+      ],
+      "evidence": "Nejnižší míru efektivity vykazuje obor vzdělání Podnikání. Jazyková obtížnost materiálů v anglickém jazyce je výrazně nižší než úroveň státní maturitní zkoušky."
+    },
+    "absence": {
+      "trend": "Kriticky vysoká, opatření jsou neúčinná",
+      "key_numbers": [
+        "Průměrně 197 hodin zameškaných na žáka",
+        "16,8 neomluvených hodin na žáka (8,5 %)",
+        "17 % žáků se sníženou známkou z chování"
+      ],
+      "evidence": "Opatření ve formě jednání výchovných komisí, spolupráce s orgány a kázeňských opatření jsou většinou neúčinná. Absence výrazně ovlivňuje školní neúspěšnost."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se dostatečně nevěnuje identifikaci žáků ohrožených školní neúspěšností",
+      "Výchovná poradkyně zajišťuje jednání se žáky a rodiči, ale naplňování doporučení je ponecháno na zodpovědnosti jednotlivých vyučujících",
+      "Doučování a individuální konzultace nejsou dostatečně účinná",
+      "Adaptační výjezdy prvních ročníků a třídnické hodiny přispívají k adaptaci a prosociálním vztahům"
+    ],
+    "safety_climate": [
+      "Podmínky pro zajištění bezpečnosti a ochrany zdraví jsou upraveny ve vnitřních předpisech",
+      "Žáci jsou poučováni o pravidlech bezpečného chování na začátku roku i v průběhu",
+      "Školní budovy byly zabezpečeny proti vniknutí neoprávněných osob",
+      "Při odborném výcviku nebylo zaznamenáno porušení bezpečnostních nebo hygienických předpisů"
+    ],
+    "partnerships_practice": [
+      "Trvalá spolupráce s externími partnery – firmami, na jejichž pracovištích probíhá odborný výcvik",
+      "Systematická spolupráce s profesními svazy umožňující zkvalitňovat činnost školy",
+      "Škola zvyšuje uplatnitelnost absolventů získáním odborné kvalifikace svářeče a jiných osvědčení",
+      "Organizace odborných exkurzí doplňujících odborné vzdělávání a propojujících teorii s praxí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné stránky, slabé stránky a doporučení. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o úspěšnosti maturitní zkoušky v jednotlivých letech – pouze kvalitativní popis",
+      "Není jasné, kolik žáků školu opustí během studia (fluktuace je zmíněna, ale bez konkrétních procent)",
+      "Chybí informace o počtu pedagogů a jejich kvalifikaci – pouze obecné tvrzení o kvalifikaci sboru"
+    ]
+  }
+}
+```

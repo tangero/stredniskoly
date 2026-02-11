@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_691005559_2023-02-15",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola elektrotechnická a Vyšší odborná škola",
+    "inspection_period": "15.–22. února 2023",
+    "school_change_summary": "Změna ředitele od roku 2019. Výrazně se snížila absence žáků. Stabilizovaly se personální podmínky a klima školy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a prostředí",
+        "detail": "Materiálně-technické vybavení pro odbornou výuku je velmi dobré a průběžně se zlepšuje.",
+        "evidence": "Učebny jsou dobře vybavené přístroji pro měření a praktickou výuku."
+      },
+      {
+        "tag": "Podpůrné klima",
+        "detail": "Učitelé mají vstřícný přístup a podporují zájem žáků o vzdělávání v klidné atmosféře.",
+        "evidence": "Pozitivní zjištění nižší míry kázeňských problémů a spíše ojedinělé případy neomluvených hodin."
+      },
+      {
+        "tag": "Praktické zkušenosti",
+        "detail": "Žáci získávají praxi v reálném prostředí u smluvních partnerů a od odborníků z praxe.",
+        "evidence": "Žáci se učí v reálném prostředí, pracují v týmu a získávají sociální kompetence."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Jednotná náročnost výuky",
+        "detail": "Chybí diferenciace úloh podle schopností žáků, zejména pro nadané.",
+        "evidence": "Zcela chyběly prvky diferenciace náročnosti zadávaných úloh ve sledované výuce."
+      },
+      {
+        "tag": "Pasivní metody výuky",
+        "detail": "Převládá frontální výuka s dominantní rolí učitele, málo skupinové práce.",
+        "evidence": "Stále přetrvávalo výrazné využívání frontální výuky, vzájemná spolupráce žáků byla ojediněle."
+      },
+      {
+        "tag": "Slabá příprava v nástavbě",
+        "detail": "V nástavbovém oboru Provozní elektrotechnika neuspěla přibližně polovina žáků.",
+        "evidence": "Neúspěšná byla přibližně polovina žáků posledního ročníku nástavbového oboru."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a přizpůsobuje jim náročnost úloh?",
+      "Jaké jsou konkrétní výsledky absolventů v zaměstnání a jak škola sleduje jejich kariéru?",
+      "Jak se škola vypořádá s probíhající rekonstrukcí a kdy budou všechny učebny plně k dispozici?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o elektrotechniku, IT a technické obory s praktickým zaměřením",
+      "Studenti, kteří se chtějí učit v reálném pracovním prostředí u partnerských firem",
+      "Žáci, kterým vyhovuje strukturovaná příprava na maturitu s podporou odborníků"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s různými učebními potřebami, kteří potřebují individualizovaný přístup a diferenciované úkoly",
+      "Studenti preferující aktivní skupinové metody a diskusní formy výuky",
+      "Uchazeči o nástavbový obor Provozní elektrotechnika – vysoká neúspěšnost (cca 50 %)"
+    ],
+    "plain_czech_summary": "Škola je dobře vybavená a nabízí kvalitní praktickou výuku v reálném prostředí. Učitelé jsou vstřícní a klima je podporující. Absence žáků se výrazně snížila. Slabinou je převaha frontální výuky a chybějící přizpůsobení úloh různým schopnostem žáků. Nástavbový obor má vysokou neúspěšnost. Škola je vhodná pro prakticky zaměřené žáky, ale méně pro ty, kteří preferují aktivní a individualizovaný přístup."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – hrubá neúspěšnost ve společné části do 10 % u většiny oborů",
+      "key_numbers": [
+        "Hrubá neúspěšnost ve společné části maturitní zkoušky 2022: do 10 % u většiny oborů",
+        "Nástavbový obor Provozní elektrotechnika: neúspěšnost cca 50 %",
+        "Závěrečné zkoušky: neúspěšnost pod 10 %"
+      ],
+      "evidence": "Také hrubá neúspěšnost ve společné části po podzimním termínu byla v roce 2022 u většiny oborů do 10 %."
+    },
+    "absence": {
+      "trend": "Výrazné zlepšení od poslední inspekce",
+      "key_numbers": [
+        "Absence se od minulé inspekce výrazně snížila",
+        "Nižší míra kázeňských problémů",
+        "Ojediněle řešeny neomluvené hodiny"
+      ],
+      "evidence": "Pozitivním zjištěním je účelný vliv přijatých opatření školy ke zlepšení docházky žáků, jejich absence se od minulé inspekce výrazně snížila."
+    },
+    "support_services": [
+      "Tři výchovné poradkyně, kariérová poradkyně a dva metodikové prevence",
+      "Speciální pedagogická podpora v češtině pro žáky-cizince a ukrajinské žáky",
+      "Školní psycholog poskytující metodickou podporu učitelům",
+      "Adaptační, lyžařské a sportovní kurzy pro budování vztahů v třídách"
+    ],
+    "safety_climate": [
+      "Spíše nižší míra problémů kázeňského charakteru",
+      "Ojediněle řešeny neomluvené hodiny a případy kyberšikany",
+      "Vstřícné podporující klima ve výuce podporující zájem žáků o vzdělávání",
+      "Stabilizované personální podmínky a klima školy"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery pro praktickou výuku",
+      "Odborníci z praxe vyučují ve střední i vyšší odborné škole",
+      "Smluvní partneři zajišťují odborný výcvik v reálném prostředí",
+      "Program Erasmus+ s jazykovými zájezdy a výjezdovými akcemi do zahraničí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Klíčové informace pro rodiče jsou jasně odděleny v závěrech.",
+    "uncertainty_notes": [
+      "Přesné číslo absence není uvedeno, pouze kvalitativní zlepšení",
+      "Konkrétní počty žáků se speciálními potřebami (66) nejsou kontextualizovány vůči celkovému počtu",
+      "Detaily o rekonstrukci na Karla IV. nejsou jasné – není znám harmonogram dokončení"
+    ]
+  }
+}
+```

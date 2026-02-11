@@ -1,0 +1,113 @@
+{
+  "report_id": "GY6_600013634_2025-03-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:40:14.696487+00:00",
+  "run_finished_utc": "2026-02-09T13:40:42.152195+00:00",
+  "raw_file": "GY6_600013634_2025-03-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600013634_2025-03-25",
+    "school_profile": {
+      "school_type": "Sportovní gymnázium se čtyřletým a šestiletým oborem, domovem mládeže a školní jídelnou",
+      "inspection_period": "25. března až 28. března 2025",
+      "school_change_summary": "Od poslední inspekce došlo k výrazným zlepšením: rozšíření vedení (nový zástupce pro IT), vybudování areálu Sportovních nadějí, rekonstrukce prostor, zvýšení počtu žáků na 444 a zlepšení výsledků vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Sportovní zázemí bez konkurence",
+          "detail": "Škola nabízí nadstandardní podmínky pro sportovní přípravu s vlastním areálem Sportovních nadějí a úzkou spoluprací se sportovními kluby.",
+          "evidence": "Areál Sportovních nadějí zprovozněn v lednu 2023, spolupráce se sportovními kluby a svazy zajišťuje odborné vedení."
+        },
+        {
+          "tag": "Digitální vzdělávání na vysoké úrovni",
+          "detail": "Moderní elektronický učební prostor umožňuje aktivní zapojení žáků během i mimo výuku.",
+          "evidence": "Digitální technologie efektivně využívány ve třetině hodin, elektronický prostor funkční a využívaný."
+        },
+        {
+          "tag": "Individuální přístup k žákům",
+          "detail": "Pedagogové zohledňují vzdělávací potřeby i sportovní aktivity, nabízejí konzultace a opravné testy.",
+          "evidence": "Termínované zkoušení pro reprezentanty, upravený limit absence na 50 %, v posledních dvou rocích žádný neprospívající žák."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Absence zůstává vysoká, přestože třetina je tvořena sportovní absencí a vyšším počtem hodin v plánu.",
+          "evidence": "Absence na srovnatelné úrovni v posledních letech, až třetina tvořena sportovní absencí a soutěžemi."
+        },
+        {
+          "tag": "Slabší výuka některých předmětů",
+          "detail": "V biologii a teorii sportovního tréninku převládá tradiční frontální výuka s omezeným zapojením všech žáků.",
+          "evidence": "Převážně tradiční forma výuky, minimální rozvoj klíčových kompetencí, ojediněle samostatné objevování poznatků."
+        },
+        {
+          "tag": "Nedostatečné poradenské služby",
+          "detail": "Chybí školní psycholog, poradenské pracoviště řeší spíše méně závažné problémy.",
+          "evidence": "Škola nemá školního psychologa, využívá externí služby; doporučení jmenovat vedoucího pracoviště a posílit tým."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá skloubení sportovního tréninku s běžnou výukou? Jaké jsou zkušenosti žáků s časovou zátěží?",
+        "Jaké jsou konkrétní kritéria pro zařazení do programu podpory reprezentantů a jak se liší požadavky na známky?",
+        "Jak škola řeší psychickou podporu žáků, kteří zažívají neúspěch ve sportu nebo ve škole?"
+      ],
+      "who_school_fits": [
+        "Sportovně nadaní žáci, kteří chtějí kombinovat vrcholový sport s kvalitním gymnaziálním vzděláním",
+        "Žáci s ambicí studovat na vysoké škole (97 % šestiletého gymnázia bylo přijato na VŠ)",
+        "Děti, které prospívají v digitálním prostředí a ocení moderní technologie ve výuce"
+      ],
+      "who_should_be_cautious": [
+        "Žáci bez sportovního zaměření – škola je primárně zaměřena na sportovce, běžní žáci mohou být v menšině",
+        "Rodiny obávající se vysoké absence – i když je sportovní, absence zůstává vysoká a může ovlivnit studijní výsledky",
+        "Žáci se psychickými problémy – chybí školní psycholog, externí podpora není vždy dostupná"
+      ],
+      "plain_czech_summary": "Sportovní gymnázium Ludvíka Daňka je unikátní školou v Jihomoravském kraji, která úspěšně kombinuje vrcholový sport s kvalitním vzděláním. Má výborné sportovní zázemí, moderní digitální vybavení a vstřícné pedagogy. Výsledky maturit se zlepšují, vysoká procenta žáků jsou přijímána na vysoké školy. Hlavní výzvou je vysoká absence a chybějící školní psycholog. Škola se hodí pro sportovně nadané žáky s ambicemi na vysokou školu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se tendence za poslední tři roky",
+        "key_numbers": [
+          "Ve školním roce 2023/2024 neprospěla pouze 1 žákyně v češtině",
+          "Rozdíl oproti průměru ČR se snížil na 0,2 desetiny",
+          "97 % žáků šestiletého gymnázia přijato na vysoké školy, 74 % čtyřletého"
+        ],
+        "evidence": "Výsledky maturitní zkoušky vykazují zlepšující se tendenci, rozdíl se postupně vyrovnává."
+      },
+      "absence": {
+        "trend": "Vysoká, ale stabilní v posledních letech",
+        "key_numbers": [
+          "Až třetina absence tvořena sportovní absencí",
+          "Vyšší počet týdenních hodin v plánu zvyšuje procento absence",
+          "Upravený limit absence 50 % pro reprezentanty"
+        ],
+        "evidence": "Absence zůstává na srovnatelné úrovni, druhým faktorem je zvýšený počet hodin v týdenním plánu."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence s podporou zástupkyně ředitele",
+        "Doučování z českého jazyka pro žáky s odlišným mateřským jazykem",
+        "Spolupráce se střediskem výchovné péče a sportovními kluby pro psychologickou podporu"
+      ],
+      "safety_climate": [
+        "Pozitivní školní klima podporované aktivním žákovským parlamentem",
+        "Množství pochval výrazně převyšuje počet kázeňských opatření",
+        "Metodička prevence organizuje aktivity na prevenci sociálně patologických jevů a vrstevnickou pomoc"
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce se sportovními kluby a svazy zajišťující odborné vedení",
+        "Partnerství s Fakultou sportovních studií Masarykovy univerzity",
+        "Projekty jako International Village a Lustiges Lernen rozvíjející jazykové a sociální kompetence"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Některé pasáže jsou však technické a vyžadují znalost školské terminologie.",
+      "uncertainty_notes": [
+        "Není jasné, jak přesně funguje 'termínované zkoušení' a jaké jsou jeho praktické dopady na studijní zátěž",
+        "Chybí konkrétní informace o počtu hodin jednotlivých předmětů a jejich rozložení v týdnu",
+        "Není specifikováno, jaké konkrétní sportovní obory jsou dostupné a jaké jsou nároky na jejich absolvování"
+      ]
+    }
+  }
+}

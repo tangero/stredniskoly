@@ -1,0 +1,111 @@
+{
+  "report_id": "SOU_600013171_2022-10-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:58:15.688105+00:00",
+  "run_finished_utc": "2026-02-09T16:58:40.486500+00:00",
+  "raw_file": "SOU_600013171_2022-10-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600013171_2022-10-20",
+    "school_profile": {
+      "school_type": "Střední škola gastronomická a technická (SOU) s domovem mládeže",
+      "inspection_period": "20.–24. října 2022",
+      "school_change_summary": "Od září 2021 změna názvu školy, ukončení oboru Podnikání, postupné zlepšování materiálně technických podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělání v reálném prostředí",
+          "detail": "Funkční spolupráce se smluvními partnery umožňuje žákům získávat kompetence v reálném pracovním prostředí s přidanou hodnotou.",
+          "evidence": "Žáci si rozvíjejí sociální a komunikativní kompetence, získávají představu o fungování firmy a svých možnostech uplatnění."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují velmi dobrých výsledků v odborných žákovských soutěžích.",
+          "evidence": "Škola se prezentuje na veřejnosti účastí v odborných soutěžích s velmi dobrými výsledky."
+        },
+        {
+          "tag": "Příznivé klima a malé třídy",
+          "detail": "Atmosféra založená na vzájemné důvěře a respektu s menšími počty žáků vytváří příznivé podmínky.",
+          "evidence": "Učitelé respektují pracovní tempo žáků, poskytují dostatek času a motivační hodnocení."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "Někteří učitelé zatím nesplňují kvalifikační požadavky, což se projevuje v didaktické oblasti.",
+          "evidence": "Kratší pedagogická praxe se částečně projevila v méně efektivní organizaci vyučovací hodiny a nedostatečném prostoru pro zapojení žáků."
+        },
+        {
+          "tag": "Slabá zpětná vazba v teoretické výuce",
+          "detail": "Závěry vyučovacích hodin nejsou účelně využívány k efektivní zpětné vazbě o dosažení vzdělávacího cíle.",
+          "evidence": "V menší části výuky přetrvává vzdělávání s nižším zastoupením efektivnějších metod a zpětnovazební systém je méně efektivní."
+        },
+        {
+          "tag": "Málo sebehodnocení žáků",
+          "detail": "Nízká míra využívání formativního hodnocení a vedení žáků k sebehodnocení a vzájemnému hodnocení.",
+          "evidence": "Pouze ojediněle učitelé umožňovali žákům vlastní nebo vzájemné hodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá spolupráce se smluvními partnery a jak se žáci dostávají na jejich pracoviště?",
+        "Jaké jsou možnosti doučování a podpory pro žáky, kteří mají problémy s učením?",
+        "Jak se škola vypořádala s nedostatečnou kvalifikací některých učitelů a jaký je plán na jejich vzdělávání?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří se chtějí učit prakticky a získat zkušenosti v reálném pracovním prostředí",
+        "Studenti zaměření na gastronomii, řemesla a technické obory s jasnou představou o budoucím povolání",
+        "Žáci, kteří potřebují menší třídy a individuální přístup učitelů"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, jejichž děti potřebují silnou teoretickou přípravu – část teoretické výuky má nižší efektivitu",
+        "Žáci, kteří se spoléhají na zpětnou vazbu a sebehodnocení – ty nejsou dostatečně rozvinuty",
+        "Studenti, kteří preferují moderní vyučovací metody – převažuje spíše frontální forma výuky"
+      ],
+      "plain_czech_summary": "Škola je zaměřená na praktické vzdělání v gastronomii a řemeslech s dobrou spoluprací s firmami. Žáci se učí v reálném pracovním prostředí a dosahují dobrých výsledků v soutěžích. Silnou stránkou je příznivé klima a malé třídy. Slabší je teoretická výuka, kde chybí efektivnější metody a zpětná vazba. Někteří učitelé zatím nejsou plně kvalifikovaní. Škola pracuje na zlepšení těchto oblastí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Údaje o maturitě nejsou v textu explicitně uvedeny",
+        "key_numbers": [
+          "Čtyřleté obory: Gastronomie a Obchodník (zakončeny maturitní zkouškou)",
+          "Tříleté obory: 6 oborů zakončených závěrečnou zkouškou"
+        ],
+        "evidence": "Hrubá neúspěšnost u závěrečné zkoušky byla přibližně jedna desetina přihlášených žáků."
+      },
+      "absence": {
+        "trend": "Údaje o absenci nejsou v textu uvedeny",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje informace o absenci žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence zajišťují školní poradenské služby",
+        "Individuální konzultace pro žáky a jejich zákonné zástupce",
+        "Doučování jako opatření ke snížení dopadů distanční výuky",
+        "Adaptační den pro žáky prvního ročníku ve spolupráci s poradenským zařízením"
+      ],
+      "safety_climate": [
+        "Atmosféra ve vyučovacích hodinách založena na vzájemné důvěře a respektu",
+        "Dbáno na upevňování zásad bezpečné práce a ochrany zdraví při odborném výcviku",
+        "Příjemná tvůrčí pracovní atmosféra mezi účastníky vzdělávání",
+        "Domov mládeže vytváří pozitivní přátelské klima nahrazující rodinné prostředí"
+      ],
+      "partnerships_practice": [
+        "Funkční systém spolupráce se smluvními partnery při zabezpečování odborného výcviku",
+        "Dlouholetá spolupráce se základními školami v regionu",
+        "Partnerství se spřátelenou polskou školou Zespół Szkół Nr2 Dzierżoniów",
+        "Spolupráce s Asociací kuchařů a cukrářů, Cechem topenářů a instalatérů, regionálními firmami"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní pozorování. Silné a slabé stránky jsou jasně identifikovány. Chybí však konkrétní číselné údaje o absenci a detailnější data o výsledcích maturit.",
+      "uncertainty_notes": [
+        "Trend výsledků maturit není uveden – není jasné, zda se zlepšuje či zhoršuje",
+        "Údaje o absenci žáků nejsou v textu obsaženy",
+        "Konkrétní počty nekvalifikovaných učitelů nejsou specifikovány"
+      ]
+    }
+  }
+}

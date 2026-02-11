@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600005593_2023-01-10",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium zaměřené na vzdělávání žáků s mimořádným intelektovým nadáním",
+    "inspection_period": "10. 1. 2023 – 13. 1. 2023",
+    "school_change_summary": "Od inspekce v roce 2015 došlo ke kvalitativnímu posunu: zvýšila se naplněnost na maximum (198 žáků v 8 třídách), vzrostl počet kvalifikovaných pedagogů (92 % splňuje předpoklady odborné způsobilosti), zlepšilo se vybavení digitálními technologiemi a výsledky žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Individuální přístup k nadaným žákům",
+        "detail": "Škola systematicky rozvíjí potenciál každého žáka prostřednictvím diferenciované výuky, volitelných předmětů a individuálních vzdělávacích strategií.",
+        "evidence": "Filozofie školy je založena na individuálním rozvoji vrozeného potenciálu v kombinaci s osobnostní a emocionální podporou."
+      },
+      {
+        "tag": "Výborné výsledky a úspěchy",
+        "detail": "69–75 % žáků prospívá s vyznamenáním, všichni maturanti prospěli, polovina s vyznamenáním, vysoká úspěšnost při přijetí na vysoké školy.",
+        "evidence": "Ve sledovaném období tří školních let prospělo s vyznamenáním v rozmezí 69 % - 75 % žáků, počet neprospívajících byl zanedbatelný."
+      },
+      {
+        "tag": "Kvalitní pedagogický sbor a vedení",
+        "detail": "Motivovaní učitelé s příznivou věkovou skladbou, systematické vzdělávání pedagogů, efektivní řízení zaměřené na kvalitu výuky.",
+        "evidence": "Vzrostl počet pedagogů, o více než 10 % se zvýšil podíl kvalifikovaných učitelů, vedení školy soustavně naplňuje koncepci rozvoje."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Jazyková kultura ve výuce",
+        "detail": "V některých hodinách byla zaznamenána nižší míra jazykové kultury a používání nespisovné češtiny.",
+        "evidence": "Vzhledem k typu školy učitelé v části vyučování věnovali menší pozornost své jazykové kultuře, případně korekci nespisovné češtiny."
+      },
+      {
+        "tag": "Zpětná vazba v některých hodinách",
+        "detail": "Ojedinělé případy méně efektivní zpětné vazby pro ověření pochopení zadání nebo míry osvojení učiva všemi žáky.",
+        "evidence": "Méně efektivní zpětná vazba pro ověření pochopení zadání úkolu nebo míry osvojení probraného učiva všemi žáky."
+      },
+      {
+        "tag": "Personální podpora v laboratorní výuce",
+        "detail": "Příležitost pro zlepšení představuje větší využívání personální podpory učitele při laboratorní výuce v heterogenních skupinách.",
+        "evidence": "Příležitost pro zlepšení představuje častější využívání personální podpory učitele při laboratorní výuce přírodovědných předmětů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak probíhá přijímací řízení a jaké jsou konkrétní kritéria pro přijetí? Jakou roli hrají IQ testy a jak se s nimi pracuje?",
+      "Jak škola podporuje žáky se speciálními vzdělávacími potřebami nebo s výrazně rozdílným tempem vývoje?",
+      "Jaké jsou konkrétní volitelné předměty a jak si je žáci vybírají? Jak se liší nabídka na nižším a vyšším stupni?"
+    ],
+    "who_school_fits": [
+      "Nadaní a mimořádně nadaní žáci, kteří si přejí individuální přístup a rozvoj svého potenciálu v přátelském prostředí",
+      "Žáci, kteří si cení kvalitní výuky s moderními metodami a možností volby zaměření (matematika, jazyky, vědy)",
+      "Rodiny hledající školu s důrazem na osobnostní rozvoj, psychologickou péči a prevenci problémů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci bez prokázaného vyššího intelektového nadání (IQ pod 130) – škola je primárně určena pro nadané",
+      "Rodiny, které preferují tradičnější přístup k výuce bez experimentování s novými metodami",
+      "Žáci, kteří potřebují více struktury a jasných pravidel – škola klade důraz na samostatnost a iniciativu"
+    ],
+    "plain_czech_summary": "Mensa gymnázium je úspěšná škola zaměřená na vzdělávání nadaných žáků. Nabízí individuální přístup, kvalitní pedagogy a moderní vybavení. Žáci dosahují výborných výsledků – 70 % prospívá s vyznamenáním, všichni maturanti uspěli. Škola poskytuje psychologickou péči a podporu podle potřeb každého žáka. Inspekce zjistila jen drobné nedostatky v jazykové kultuře některých hodin. Jde o perspektivní volbu pro nadané děti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazný nárůst úspěšnosti od poslední inspekce",
+      "key_numbers": [
+        "100 % žáků prospělo u maturitní zkoušky",
+        "50 % maturantů s vyznamenáním",
+        "Vysoká úspěšnost absolventů při přijetí na vysoké školy"
+      ],
+      "evidence": "Ve sledovaném období u maturitní zkoušky všichni žáci prospěli, z toho polovina s vyznamenáním. Systematická pedagogicko-psychologická podpora přispěla k výraznému nárůstu počtu žáků konajících maturitní zkoušku v řádném termínu."
+    },
+    "absence": {
+      "trend": "Výrazné snížení absence od poslední inspekce",
+      "key_numbers": [
+        "Minimální počet uložených kázeňských opatření",
+        "Ojedinělý výskyt snížené známky z chování",
+        "Významný nárůst počtu žáků s uzavřenou klasifikací k 30. 6."
+      ],
+      "evidence": "Od posledního inspekčního hodnocení došlo k výraznějšímu snížení absence žáků a k významném nárůstu počtu žáků s uzavřenou klasifikací k 30. 6."
+    },
+    "support_services": [
+      "Školní psychologové a speciální pedagogové (22 % nadaných a mimořádně nadaných žáků, 7 % se speciálními vzdělávacími potřebami)",
+      "Individuální vzdělávací strategie a podpůrná opatření podle doporučení školského poradenského zařízení",
+      "Pedagogicko-výchovný patronát členů poradenského týmu a pravidelná spolupráce s rodiči"
+    ],
+    "safety_climate": [
+      "Demokratický model řízení s jasně nastavenými standardy chování",
+      "Funkční strategie prevence sociálně patologických jevů",
+      "Vstupní elektronický systém pro větší bezpečnost žáků",
+      "Minimální počet kázeňských opatření a ojedinělý výskyt problémů s chováním"
+    ],
+    "partnerships_practice": [
+      "Partnerská škola Centra pro talentovanou mládež (CTM)",
+      "Spolupráce s vysokými školami a akademickými pracovišti",
+      "Úzká spolupráce se zřizovatelem – MENSOU České republiky",
+      "Partnerství s vědeckými pracovišti a kulturně vzdělávacími institucemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní čísla, citace z dokumentů a jasné závěry. Všechna tvrzení jsou podložena důkazy z textu. Informace jsou srozumitelné i pro rodiče bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o ceně školného nebo finančních nákladech na rodiče",
+      "Chybí konkrétní seznam volitelných předmětů a jejich dostupnosti",
+      "Není jasné, jak se liší vzdělávací program na nižším a vyšším stupni gymnázia"
+    ]
+  }
+}
+```

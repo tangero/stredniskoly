@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOU_600171035_2025-11-04",
+  "school_profile": {
+    "school_type": "Střední odborná škola zaměřená na elektrotechniku a energetiku s maturitními i učebními obory, domovem mládeže a školní jídelnou",
+    "inspection_period": "4. 11. 2025 – 6. 11. 2025",
+    "school_change_summary": "Nové vedení školy od roku 2023 přineslo zlepšení materiálních podmínek včetně vybudování moderního ON-Voltage centra pro simulaci energetických technologií. Zřízeno školní poradenské pracoviště. Částečná obměna pedagogického sboru. Přetrvávají nedostatky ve školním řádu a vzdělávacích programech."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola úzce spolupracuje s energetickými firmami a nabízí žákům reálnou praxi v moderně vybaveném centru.",
+        "evidence": "\"Škola pružně reaguje na aktuální trendy a požadavky vývoje v energetickém průmyslu prostřednictvím rozsáhlé partnerské spolupráce s odbornými firmami.\""
+      },
+      {
+        "tag": "Výsledky u zkoušek",
+        "detail": "Žáci dosahují stabilně lepších výsledků u maturit než celostátní průměr.",
+        "evidence": "\"V roce 2024 činila hrubá neúspěšnost žáků školy 2 %, zatímco celostátní průměr za skupinu oborů dosáhl 13,7 %.\""
+      },
+      {
+        "tag": "Podpora ubytovaných",
+        "detail": "Domov mládeže nabízí kvalitní zázemí s kroužky, posilovnou a systematickou podporou učení.",
+        "evidence": "\"Domov mládeže zajišťuje ubytovaným žákům odpovídající podmínky pro bydlení, přípravu na vzdělávání i realizaci volnočasových aktivit.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Frontální výuka",
+        "detail": "Ve většině hodin převládá výklad učitele, žáci jsou málo aktivní a samostatní.",
+        "evidence": "\"Frontální výuka, konkrétně v 68 % sledovaných hodin... převažovala aktivita učitele nad aktivitou žáků, což vedlo k jejich menšímu zapojení.\""
+      },
+      {
+        "tag": "Podpora žáků se SVP",
+        "detail": "Podpůrná opatření pro žáky se speciálními potřebami se ve výuce uplatňují jen omezeně.",
+        "evidence": "\"V hospitovaných hodinách však byla realizace podpůrných opatření zaznamenána pouze v omezené míře, a jejich dopad na kvalitu vzdělávání je proto zatím částečný.\""
+      },
+      {
+        "tag": "Řízení kvality",
+        "detail": "Vedení školy nedostatečně vyhodnocuje kvalitu výuky a chybí vzájemné náslechy učitelů.",
+        "evidence": "\"Z hospitačních záznamů však nevyplývají v případě potřeby návrhy na zlepšení kvality výuky. Zvýšení kvality výuky by pomohlo i zavedení vzájemných náslechů pedagogů.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomáhá žákům s učením a jak pracuje s těmi, kteří potřebují individuální přístup?",
+      "Jaké možnosti praxe a spolupráce s firmami nabízíte žákům v jednotlivých oborech?",
+      "Jak škola pracuje na zlepšení aktivních metod výuky a zapojení žáků do hodin?"
+    ],
+    "who_school_fits": [
+      "Žáky se zájmem o elektrotechniku a energetiku, kteří chtějí praktickou přípravu v moderně vybaveném prostředí",
+      "Studenty hledající školu s dobrými výsledky u maturit a úzkou spoluprací s firmami v oboru",
+      "Žáky ze vzdálenějších míst, kteří ocení kvalitní domov mládeže s volnočasovými aktivitami"
+    ],
+    "who_should_be_cautious": [
+      "Žáky, kteří potřebují individuální přístup a aktivní metody výuky – škola v tom má rezervy",
+      "Studenty se speciálními vzdělávacími potřebami – podpora je nastavena, ale v praxi se zatím plně neuplatňuje",
+      "Žáky hledající školu se silným důrazem na moderní didaktiku a samostatnou práci ve výuce"
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní odbornou přípravu v elektrotechnice a energetice s výborným propojením na praxi díky spolupráci s firmami a modernímu vybavení včetně simulačního centra. Žáci dosahují nadprůměrných výsledků u maturit a závěrečných zkoušek. Domov mládeže poskytuje dobré zázemí s volnočasovými aktivitami. Slabinou je převaha frontální výuky, kde žáci málo aktivně pracují. Podpora žáků se speciálními potřebami je formálně nastavena, ale v hodinách se zatím plně neuplatňuje. Vedení školy nedostatečně vyhodnocuje kvalitu výuky a chybí vzájemná inspirace mezi učiteli. Pro žáky zaměřené na technické obory s praxí jde o dobrou volbu, ale ti, kdo potřebují individuální přístup, by měli být opatrní."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "stabilně nadprůměrný",
+      "key_numbers": [
+        "Neúspěšnost 2 % v roce 2024 (celostátní průměr 13,7 %)",
+        "Mírný nárůst neúspěšnosti na 6,9 % v roce 2025",
+        "Průměrný prospěch 1,93–2,25 za poslední tři roky"
+      ],
+      "evidence": "\"V průběhu tří uzavřených let dosáhli u maturitní zkoušky ve srovnání se stejnou skupinou oborů na celostátní úrovni lepších výsledků.\""
+    },
+    "absence": {
+      "trend": "výrazné zlepšení",
+      "key_numbers": [
+        "Pokles z 173,21 hodin na žáka (2023/24) na 126,09 hodin (2024/25)",
+        "Snížení o 47 hodin na žáka (27 %)",
+        "Zavedení limitu absence pro hodnocení známkou"
+      ],
+      "evidence": "\"Po zavedení limitu ve školním roce 2024/2025 klesla na 126,09 hodin, tedy o 47,12 hodin na žáka, což představuje snížení přibližně o 27 %.\""
+    },
+    "support_services": [
+      "Zřízeno školní poradenské pracoviště s jasně vymezenými kompetencemi",
+      "Funkční preventivní program zaměřený na šikanu, kyberšikanu a záškoláctví (jednotky případů)",
+      "Kariérové poradenství ve spolupráci s výchovným poradcem a třídními učiteli"
+    ],
+    "safety_climate": [
+      "Přátelský a podporující přístup pedagogů k žákům",
+      "Příznivé sociální klima ve třídách",
+      "Důsledné dodržování bezpečnostních pravidel v odborném výcviku"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce se Svazem energetiky ČR a profesními asociacemi",
+      "Partnerství s desítkami výrobních podniků umožňující praxi a produktivní práci",
+      "Zapojení do projektů Erasmus+ a OP Jan Amos Komenský"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný a prakticky zaměřený. Drobné nejasnosti u některých formulací z původní zprávy, ale celkově dobře čitelné pro rodiče.",
+    "uncertainty_notes": [
+      "Není zcela jasné, jak rychle škola dokáže implementovat doporučení inspekce ohledně kvality výuky",
+      "Chybí konkrétní informace o úspěšnosti absolventů na trhu práce",
+      "Není specifikováno, jak velká část pedagogů nemá odbornou kvalifikaci"
+    ]
+  }
+}
+```

@@ -1,0 +1,10 @@
+{
+  "report_id": "SOU_600011143_2022-01-25",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:16:53.297167+00:00",
+  "run_finished_utc": "2026-02-10T08:00:40.930280+00:00",
+  "raw_file": "SOU_600011143_2022-01-25.raw.txt",
+  "call_error": "The read operation timed out",
+  "parse_error": "The read operation timed out",
+  "parsed_output": null
+}

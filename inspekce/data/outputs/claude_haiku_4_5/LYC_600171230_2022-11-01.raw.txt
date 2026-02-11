@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600171230_2022-11-01",
+  "school_profile": {
+    "school_type": "Střední škola s maturitními obory (Pedagogické lyceum, Sociální činnost, Kosmetické služby) a výučním listem (Kadeřník)",
+    "inspection_period": "1. listopadu 2022 až 4. listopadu 2022",
+    "school_change_summary": "Od poslední inspekce v 2015/2016 došlo k celkové rekonstrukci budovy, modernizaci odborných učeben a pracovišť. Škola přestala nabízet obory Podnikání (2018/2019) a Prodavač (2021/2022). Od 2022/2023 realizuje školní parlament."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a infrastruktura",
+        "detail": "Škola prošla rozsáhlou rekonstrukcí s nadstandartním vybavením, včetně moderních kadeřnických a kosmetických salonů s profesionálními technologiemi.",
+        "evidence": "Od poslední inspekce došlo k celkové rekonstrukci budovy, odborných učeben a pořízení moderního vybavení."
+      },
+      {
+        "tag": "Kvalitní odborný výcvik",
+        "detail": "Praktické vyučování v oborech Kadeřník a Kosmetické služby probíhá v profesionálním prostředí s kvalitní přípravou a individuálním přístupem.",
+        "evidence": "Výuka byla kvalitně připravená a dobře organizačně zvládnutá, žáci pracují se značkovou kosmetikou a moderním vybavením."
+      },
+      {
+        "tag": "Bohaté mimoškolní aktivity",
+        "detail": "Škola nabízí mezinárodní projekty, soutěže odborných dovedností, kulturní akce a humanitární činnosti.",
+        "evidence": "Žáci se zapojují do ERASMUS+, soutěží krásy, uměleckých přehlídek a dlouhodobě do Středoškolské odborné činnosti s výraznými úspěchy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Škola dlouhodobě vykazuje vysokou absenci, která není dostatečně řešena funkční strategií.",
+        "evidence": "Škola se dlouhodobě potýká s vysokou absencí, metodička prevence provádí analýzu, ale zatím není nastavena funkční strategie řešení."
+      },
+      {
+        "tag": "Slabší výsledky v češtině u maturity",
+        "detail": "V roce 2021/2022 neprospělo 15 žáků ze 74 u jednotné části maturitní zkoušky z českého jazyka.",
+        "evidence": "Patnáct žáků ze sedmdesáti čtyř neprospělo u jednotné části z českého jazyka, škola zvýšila počet hodin."
+      },
+      {
+        "tag": "Omezené inovativní metody výuky",
+        "detail": "Ve výuce chybí diferenciace, individualizace a moderní aktivizační metody, málo se pracuje s různými informačními zdroji.",
+        "evidence": "V některých předmětech se nedaří účelně aplikovat inovativní metody, ojediněle byly zařazovány aktivity k rozvoji kritického myšlení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+      "Jaké konkrétní kroky podniká škola na zlepšení výsledků v češtině u maturitní zkoušky?",
+      "Jak se škola chystá zavádět inovativní metody výuky a kdy by měly být vidět první výsledky?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a odborný výcvik (obory Kadeřník, Kosmetické služby)",
+      "Studenti s zájmem o sociální práci a pedagogiku s možností praxe v reálných institucích",
+      "Žáci, kterým vyhovuje bohaté mimoškolní a kulturní vyžití s mezinárodními projekty"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s tendencí k absencím – škola má problém s jejich motivací k docházce",
+      "Studenti, kteří potřebují individualizovanou výuku a diferenciaci – ve výuce se to zatím nedaří v dostatečné míře",
+      "Žáci se psychickými problémy – škola nemá školního psychologa, pouze poradenské služby"
+    ],
+    "plain_czech_summary": "Havířovská střední škola je moderně vybavená instituce se silným zaměřením na praktický odborný výcvik. Výuka v oborech Kadeřník a Kosmetické služby probíhá v profesionálním prostředí s kvalitním vedením. Škola nabízí bohaté mimoškolní aktivity a mezinárodní projekty. Hlavní problémy jsou vysoká absence žáků, slabší výsledky v češtině u maturity a nedostatečné využívání moderních vyučovacích metod. Škola má kvalitní vedení a partnery, ale potřebuje zlepšit motivaci žáků a inovovat přístup k výuce."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Problematický – zejména v češtině",
+      "key_numbers": [
+        "15 žáků ze 74 neprospělo v češtině (20 %)",
+        "3 žáci z 8 neprospěli v matematice (37,5 %)",
+        "1 žák z 27 neprospěl v oborech s závěrečnou zkouškou"
+      ],
+      "evidence": "Při ukončování školního roku 2021/2022 neprospěli u jednotné části z matematiky tři žáci z osmi a patnáct žáků ze sedmdesáti čtyř z českého jazyka."
+    },
+    "absence": {
+      "trend": "Dlouhodobě vysoká, bez funkční strategie řešení",
+      "key_numbers": [
+        "Škola se dlouhodobě potýká s vysokou absencí",
+        "Metodička prevence provádí analýzu rizikových žáků"
+      ],
+      "evidence": "Škola dlouhodobě vykazuje vysokou absenci žáků ve výuce, metodička prevence průběžně provádí analýzu rizikových žáků, ale zatím není nastavena funkční strategie řešení."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní pro žáky se speciálními vzdělávacími potřebami",
+      "Školní metodička prevence zaměřená na rizikové chování a jeho prevenci",
+      "Doučování v klíčových předmětech a kroužky na rozvoj čtenářské a matematické gramotnosti",
+      "Programy prevence patologických jevů a zlepšování klimatu v třídách"
+    ],
+    "safety_climate": [
+      "Bezpečnost a ochrana zdraví jsou součástí školního řádu a seznamování žáků s pravidly",
+      "Ve školním roce 2021/2022 byly zaznamenány projevy šikany, které byly bez odkladu řešeny s rodiči a Policií ČR",
+      "Škola zajistila intervenční program ve spolupráci s Centrem prevence v Havířově",
+      "Třídní učitelé nadále sledují vývoj v ohrožených kolektivech"
+    ],
+    "partnerships_practice": [
+      "Aktivní spolupráce s Magistrátem města Havířov a mnoha společnostmi",
+      "Partnerství se zahraničními školami na Slovensku a v Polsku",
+      "Smluvní partneři pro praktické vyučování (denní stacionáře, mateřské a základní školy)",
+      "Firmy dodávající kosmetické produkty poskytují odborné semináře",
+      "Klub přátel školy nabízí finanční a organizační podporu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však detailnější a méně přístupné laickému čtenáři (např. popis jednotlivých předmětů).",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje přesné procento absence – pouze uvádí, že je 'dlouhodobě vysoká'",
+      "Není jasné, jaké konkrétní opatření škola již přijala na řešení absence",
+      "Chybí informace o počtu žáků, kteří se vzdělávají podle individuálního vzdělávacího plánu (uvedeno jen '4 ze 20 se speciálními potřebami')"
+    ]
+  }
+}
+```

@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600013936_2022-11-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:55:23.749823+00:00",
+  "run_finished_utc": "2026-02-09T16:55:55.411388+00:00",
+  "raw_file": "LYC_600013936_2022-11-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600013936_2022-11-22",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola a Vyšší odborná škola",
+      "inspection_period": "22. 11. 2022 – 25. 11. 2022",
+      "school_change_summary": "Škola zmodernizovala laboratoře a praktické učebny. Dlouhodobě vysoký zájem o studium převyšuje kapacitu budovy. Počet žáků se speciálními vzdělávacími potřebami stoupá."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "Žáci dosahují dlouhodobě velmi dobrých výsledků při maturitní zkoušce s průměrnou neúspěšností jen kolem 2 %.",
+          "evidence": "V posledních třech letech hrubá neúspěšnost u společné části maturitní zkoušky činila zhruba 2 %."
+        },
+        {
+          "tag": "Kvalitní praktická příprava",
+          "detail": "Škola vytváří optimální podmínky pro odbornou praxi u smluvních partnerů včetně vysokých škol.",
+          "evidence": "Studenti vykonávají praxi na pracovištích smluvních partnerů, včetně VUT, kde získávají praktické znalosti."
+        },
+        {
+          "tag": "Moderní vybavení a laboratoře",
+          "detail": "Škola zmodernizovala laboratoře praktických cvičení včetně učebny virtuální reality a strojů pro obrábění.",
+          "evidence": "Vedení školy zmodernizovalo laboratoře (terminálová učebna, VR, automatizace, moderní stroje)."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo aktivní výuka v teorii",
+          "detail": "V teoretických hodinách převládá tradiční frontální výuka s nízkou aktivitou žáků bez diferenciace.",
+          "evidence": "V části teoretických hodin převládá tradiční výuka s nízkou aktivitou žáků bez diferenciace obsahu."
+        },
+        {
+          "tag": "Chybí sebehodnocení žáků",
+          "detail": "Žáci nejsou vedeni k sebehodnocení a vrstevnickému hodnocení podle vzdělávacích cílů.",
+          "evidence": "V závěrech hodin docházelo ke shrnutí jen ze strany pedagogů, sebehodnocení bylo minimální."
+        },
+        {
+          "tag": "Vysoký počet odpadů na VOŠ",
+          "detail": "Na vyšší odborné škole se dlouhodobě nedaří snížit počty studentů, kteří předčasně ukončují studium.",
+          "evidence": "V případě VOŠ se dlouhodobě nedaří snížit počty studentů, kteří předčasně ukončují vzdělávání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s náročným technickým vzděláním na začátku studia?",
+        "Jaké jsou možnosti doučování a individuální pomoci pro žáky s horším prospěchem?",
+        "Jak se škola snaží zvýšit aktivitu žáků v teoretických hodinách a zavádí nové vyučovací metody?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o technické obory a praktickou práci v dílnách a laboratořích",
+        "Studenti, kteří chtějí kvalitní přípravu na vysokou školu s velmi dobrými výsledky u maturity",
+        "Uchazeči zaměření na strojírenství, ekonomiku, design nebo IT s ambicí získat praktické dovednosti"
+      ],
+      "who_should_be_cautious": [
+        "Žáci bez zájmu o technické obory – škola se zaměřuje primárně na odborné technické vzdělávání",
+        "Studenti preferující spíše teoretickou výuku – v hodinách převládá frontální forma bez aktivního zapojení",
+        "Uchazeči, kteří potřebují intenzivní individuální podporu od začátku – škola eviduje riziko neúspěchu zejména na počátku studia"
+      ],
+      "plain_czech_summary": "SPŠ a VOŠ Sokolská je kvalitní technická škola s výbornou pověstí. Žáci dosahují velmi dobrých výsledků u maturity (jen 2% neúspěšnosti) a získávají praktické dovednosti v moderně vybavených laboratořích a u zaměstnavatelů. Škola má silné vedení a dobrou péči o žáky se speciálními potřebami. Slabší stránkou je tradiční výuka v teoretických hodinách s málo aktivním zapojením žáků. Škola by měla více rozvíjet aktivizující metody a sebehodnocení žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě velmi dobrý",
+        "key_numbers": [
+          "Průměrná hrubá neúspěšnost ~2 % v posledních třech letech",
+          "Vyšší úspěšnost než průměr škol ve stejné skupině oborů v ČR",
+          "Žáci dosahují horších výsledků při čtvrtletním hodnocení, ale počet neprospívajících klesá na vysvědčení"
+        ],
+        "evidence": "V posledních třech letech činila průměrná hrubá neúspěšnost žáků u společné části maturitní zkoušky jen zhruba 2 %."
+      },
+      "absence": {
+        "trend": "Dobře zvládnutá",
+        "key_numbers": [
+          "Škole se daří zajišťovat pravidelnou docházku žáků",
+          "Funkční pravidla a důsledná práce třídních učitelů"
+        ],
+        "evidence": "Škole se daří zajišťovat pravidelnou docházku žáků do školy, a to především nastavením funkčních pravidel a důslednou prací třídních učitelů."
+      },
+      "support_services": [
+        "Výchovná poradkyně poskytuje individuální konzultace včetně doučování",
+        "Speciální program pro žáky s psychickými potížemi ve spolupráci s organizací Podané ruce",
+        "Kariérní poradenství a podpora seberozvoje",
+        "Prevence sociálně-patologických jevů – ve škole se téměř nevyskytují závažnější projevy rizikového chování",
+        "Mentorství pro začínající pedagogy"
+      ],
+      "safety_climate": [
+        "Klidná pracovní atmosféra bez kázeňských problémů",
+        "Patřičná pozornost věnována bezpečnosti žáků a vhodným materiálním podmínkám",
+        "Efektivní prevence sociálně-patologických jevů"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s kvalitními výrobními podniky a zaměstnavateli",
+        "Partnerství s vysokými školami (VUT) na výzkumné a vývojové činnosti",
+        "Mezinárodní spolupráce s obcí Ybbsitz v Rakousku (14denní praxe žáků)",
+        "Spolupráce se sociálními partnery (transfuzní stanice, charita) pro rozvoj sociálních kompetencí",
+        "Centrum odborného vzdělávání pro strojírenství"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Slabší stránky jsou jasně pojmenovány, ale mohly by být více konkrétní v doporučeních.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní aktivizující metody by měla škola zavádět",
+        "Chybí informace o počtu pedagogů a jejich kvalifikaci",
+        "Není jasné, jak se liší výsledky mezi jednotlivými obory (strojírenství vs. ekonomika vs. design)"
+      ]
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600006107_2024-01-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:30:02.247263+00:00",
+  "run_finished_utc": "2026-02-09T16:30:28.854929+00:00",
+  "raw_file": "GY8_600006107_2024-01-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600006107_2024-01-10",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium v soukromém vlastnictví (o.p.s.) s více než třicetiletou tradicí",
+      "inspection_period": "10. 1. 2024 – 15. 1. 2024",
+      "school_change_summary": "Od inspekce v 2017: nová ředitelka (od 8/2018), druhá zástupkyně ředitelky, zvýšen podíl kvalifikovaných učitelů o 20 %, inovován školní vzdělávací program, zlepšeny materiální podmínky (nová laboratoř, počítačová pracovna, tablety)"
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Systematický rozvoj jazykových kompetencí s rodilými mluvčími, více než polovina žáků získá certifikát C1–C2 v angličtině.",
+          "evidence": "Více než 50 % žáků získalo certifikát C1–C2 v angličtině, 80 % dosáhlo min. B1 ve druhém jazyce"
+        },
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Dlouhodobě lepší výsledky než republikový průměr v češtině, cizích jazycích a matematice.",
+          "evidence": "50–65 % žáků s vyznamenáním, neprospěli pouze jednotlivci, lepší výsledky než průměr"
+        },
+        {
+          "tag": "Osobnostní rozvoj",
+          "detail": "Komorní prostředí s příznivou atmosférou, aktivní zapojení žáků do projektů, kroužků a školních akcí.",
+          "evidence": "Soustavné naplňování konceptu všestranného osobnostního rozvoje, 19 zájmových útvarů se 140 účastníky"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zvýšená úrazovost",
+          "detail": "Ve třech školních letech vykazovala škola zvýšenou míru úrazů, zejména u žáků nižšího gymnázia při sportovních činnostech.",
+          "evidence": "Převážná část úrazů se týkala nižšího gymnázia při sportovních a s nimi souvisejících činnostech"
+        },
+        {
+          "tag": "Kontrolní systém",
+          "detail": "Nedostatečná následná kontrola dodržování kurikulárních dokumentů, např. hodinová dotace tělesné výchovy nebo časové rozvržení učiva.",
+          "evidence": "Nižší efektivita kontrolního systému, nedodržení rozsahu týdenní hodinové dotace tělesné výchovy v jednom ročníku"
+        },
+        {
+          "tag": "Formativní hodnocení",
+          "detail": "Méně časté využívání sebereflexe žáků a vzájemného hodnocení podle kritérií, chybí didaktické závěry hodin.",
+          "evidence": "Jen v některých případech zařazena forma sebereflexe, přibližně v polovině vyučování chybí didaktický závěr"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření škola přijala ke snížení úrazovosti při sportovních aktivitách?",
+        "Jak škola zajišťuje individuální podporu žákům, kteří mají potíže s učením?",
+        "Jaké jsou možnosti zapojení rodičů do života školy a komunikace s vedením?"
+      ],
+      "who_school_fits": [
+        "Žáci s vyššími studijními dispozicemi a zájmem o jazykové vzdělání",
+        "Děti, které si cení osobnostního rozvoje a aktivit mimo vyuku (kroužky, projekty, cestování)",
+        "Rodiny hledající menší, komorní prostředí s příznivou atmosférou"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se zdravotním znevýhodněním nebo potřebou intenzivní péče (škola má omezené kapacity)",
+        "Rodiny, které preferují nižší školné – jedná se o soukromou školu s vyšší cenou",
+        "Žáci, kteří potřebují více individuálního vedení v oblasti sebereflexe a kritického myšlení"
+      ],
+      "plain_czech_summary": "Gymnázium J. Seiferta je kvalitní soukromá škola s dlouhou tradicí, která se zaměřuje na všestranný rozvoj osobnosti. Silné stránky: výborné výsledky maturit, systematické jazykové vzdělání (více než polovina žáků má certifikát C1–C2), příznivá atmosféra a bohatá nabídka kroužků. Slabé stránky: zvýšená úrazovost při sportu, nedostatečná kontrola dodržování učebních plánů a málo sebereflexe žáků. Vhodná pro talentované děti s zájmem o jazyky a osobnostní rozvoj."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborné výsledky, stabilní nebo rostoucí",
+        "key_numbers": [
+          "50–65 % žáků s vyznamenáním",
+          "Neprospěli pouze jednotlivci",
+          "Lepší výsledky než republikový průměr v češtině, cizích jazycích a matematice"
+        ],
+        "evidence": "Ve sledovaném období posledních tří školních let se počty vyznamenáných pohybovaly v rozmezí 50–65 %, neprospěli pouze jednotlivci"
+      },
+      "absence": {
+        "trend": "Velmi nízká absence, odpovídající typu školy",
+        "key_numbers": [
+          "Průměr 60 omluvených hodin za pololetí na žáka",
+          "Zanedbatelný výskyt neomluvené absence",
+          "1–2 % žáků v náhradním termínu"
+        ],
+        "evidence": "Počet zameškaných hodin na žáka odpovídá druhu školy (v průměru 60 omluvených hodin za pololetí), zanedbatelný výskyt neomluvené absence"
+      },
+      "support_services": [
+        "Výchovný poradce, metodička prevence a školní psycholožka",
+        "Individuální a vzájemné doučování, pravidelné konzultace",
+        "Adaptačně preventivní programy (zážitkové pobyty, environmentální a sportovní kurzy, etická výchova)"
+      ],
+      "safety_climate": [
+        "Oplocený areál, kamerový a elektronický docházkový systém",
+        "Zvýšená míra úrazovosti ve třech školních letech, zejména u nižšího gymnázia při sportu",
+        "Pružná reakce na rizikové situace, zajištění oken ve třídách"
+      ],
+      "partnerships_practice": [
+        "Partnerství se zahraničními školami a jazykovými instituty",
+        "Spolupráce s akademickou obcí a kulturně vzdělávacími institucemi",
+        "Mobilita učitelů v rámci projektů Erasmus+ a jazykových výměn"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a věcná, ale místy obsahuje úřednickou terminologii. Hlavní informace pro rodiče jsou jasné, ale vyžadují určitou pozornost k vyhledání.",
+      "uncertainty_notes": [
+        "Konkrétní opatření ke snížení úrazovosti nejsou v textu specifikována, pouze se uvádí, že jde o 'příležitost ke zlepšení'",
+        "Počet žáků se speciálními potřebami (4 %) je nízký, ale není jasné, zda je to důsledkem selekce nebo skutečně nižší potřeby",
+        "Školné není v textu uvedeno, rodičům chybí informace o ceně"
+      ]
+    }
+  }
+}

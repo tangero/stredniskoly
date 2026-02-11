@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600007499_2022-12-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:54:52.783040+00:00",
+  "run_finished_utc": "2026-02-09T16:55:17.222395+00:00",
+  "raw_file": "SOS_600007499_2022-12-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600007499_2022-12-01",
+    "school_profile": {
+      "school_type": "Střední škola podnikatelská HERMÉS MB s.r.o. – soukromá škola s oborem Obchodní akademie (4 roky) a nástavbovým studiem Provozní technika (2 roky)",
+      "inspection_period": "1., 6. a 7. prosince 2022",
+      "school_change_summary": "Od školního roku 2022/2023 se škola přestěhovala na nové místo. Počet žáků (96) a tříd (6) se výrazně nezměnil. Škola pořídila nové IT vybavení, ale jednu z dvou učeben informatiky měla k inspekci stále nefunkční."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Individuální přístup v malé škole",
+          "detail": "Nízký počet žáků umožňuje řešit osobní problémy každého studenta a předcházet vztahovým problémům.",
+          "evidence": "Atmosféra menší instituce se daří uplatňovat individuální přístup k žákům denní formy vzdělávání."
+        },
+        {
+          "tag": "Zlepšení výsledků maturit",
+          "detail": "V oboru Obchodní akademie všichni žáci uspěli v maturitní zkoušce, v Provozní technice byla neúspěšnost 16 % (pod průměrem ČR 28 %).",
+          "evidence": "V maturitním období 2022 se výsledky ve společné části MZ výrazně zlepšily v obou oborech."
+        },
+        {
+          "tag": "Bezpečnost a zdraví",
+          "detail": "Škola účinně seznamuje žáky s pravidly bezpečného chování, míra úrazovosti je minimální.",
+          "evidence": "Tato praxe je dostatečně účinná, míra školní úrazovosti je minimální."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "V oboru Obchodní akademie průměrná absence dosáhla více než 300 hodin na žáka za rok, neomluvená absence cca 70 hodin.",
+          "evidence": "Průměrná absence ve výuce ve školním roce 2021/2022 dosáhla více než 300 hodin na žáka."
+        },
+        {
+          "tag": "Učitelé bez kvalifikace",
+          "detail": "Výrazná většina učitelů, zejména v denní formě, nemá odbornou kvalifikaci pro vyučovaný předmět.",
+          "evidence": "Výrazná většina výuky je vedena učiteli bez odborné kvalifikace. Vysoká fluktuace zejména v angličtině a matematice."
+        },
+        {
+          "tag": "Nízká kvalita výuky",
+          "detail": "Výuka je převážně frontální, chybí aktivizace žáků, formativní hodnocení a diferenciace podle potřeb.",
+          "evidence": "Převaha frontální práce s dominantní rolí učitele nevedla k dostatečné aktivizaci žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky podniká škola na snížení absence žáků a jak řeší záškoláctví?",
+        "Jak se škola snaží získat učitele s odbornou kvalifikací a jak podporuje ty, kteří ji nemají?",
+        "Jaké jsou plány na zlepšení výuky – více skupinové práce, projektů a aktivního učení?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení individuálního přístupu a osobního kontaktu s učiteli v menší komunitě",
+        "Studenti, kteří jsou motivovaní a zvládají samostatnost – absence není řešena účinně",
+        "Uchazeči zajímající se o obchodní nebo technické obory s jasným cílem studovat"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabší motivací nebo tendencí k záškoláctví – škola nemá účinný systém prevence absence",
+        "Studenti potřebující strukturovanou a aktivní výuku – převažuje frontální přístup bez aktivizace",
+        "Cizinci s jazykovou bariérou – poradenská podpora v této oblasti je nedostatečná"
+      ],
+      "plain_czech_summary": "Soukromá střední škola v Mladé Boleslavi nabízí dva obory s maturitou. Silnou stránkou je individuální přístup v malé škole a zlepšující se výsledky maturit. Hlavní problémy: vysoká absence žáků (300+ hodin ročně), učitelé bez odborné kvalifikace, nízká kvalita výuky (převážně frontální bez aktivizace). Škola se snaží zlepšit situaci, ale systém prevence absence není účinný. Vhodná pro motivované studenty, riziko pro ty se slabší motivací."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení v maturitním období 2022",
+        "key_numbers": [
+          "Obchodní akademie: 100 % úspěšnost v MZ (jaro a podzim 2022)",
+          "Provozní technika: 16 % neúspěšnost (pod průměrem ČR 28 %)",
+          "Pouze necelá polovina žáků Obchodní akademie úspěšně ukončila studium v normální době"
+        ],
+        "evidence": "V oboru Obchodní akademie uspěli po jarním a podzimní termínu MZ všichni žáci. Opatření k snížení neúspěšnosti se projevila zlepšením výsledků."
+      },
+      "absence": {
+        "trend": "Vysoká a problematická, zejména v denní formě",
+        "key_numbers": [
+          "Průměrná absence: 300+ hodin na žáka za rok (Obchodní akademie)",
+          "Neomluvená absence: cca 70 hodin na žáka za rok",
+          "Vysoký počet zameškaných hodin vede k předčasnému ukončení studia"
+        ],
+        "evidence": "Průměrná absence ve výuce ve školním roce 2021/2022 dosáhla více než 300 hodin na žáka. Škola se nedaří uplatňovat účinná opatření k eliminaci neomluvené absence."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence – obě bez požadovaného studia, působí krátce",
+        "Doučování a individualizovaná podpora žákům ohroženým neúspěšností",
+        "Opakované zadávání typových didaktických testů a detailní rozbory s žáky"
+      ],
+      "safety_climate": [
+        "Minimální míra školní úrazovosti",
+        "Účinné seznamování žáků s pravidly bezpečného chování a ochrany zdraví",
+        "Adaptační dny, lyžařský kurz a sportovní soutěže podporují sociální klima"
+      ],
+      "partnerships_practice": [
+        "Nástavbové studium Provozní technika: využívání zkušeností žáků z praxe v technických provozech",
+        "Minimální zapojování žáků do vědomostních a odborných soutěží či projektových činností",
+        "Sdílení prostorů se Střední školou tradičních řemesel HERMÉS MB (stejný zřizovatel)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a fakticky bohatá. Hlavní zjištění jsou jasně identifikovatelná (absence, kvalifikace učitelů, kvalita výuky). Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace srozumitelné.",
+      "uncertainty_notes": [
+        "Není jasné, jak konkrétně se škola snaží řešit fluktuaci učitelů – pouze se uvádí, že ředitel 'aktivně usiluje'",
+        "Chybí konkrétní čísla o počtu učitelů bez kvalifikace (pouze 'výrazná většina')",
+        "Není specifikováno, jaké konkrétní elektronické výukové materiály jsou k dispozici"
+      ]
+    }
+  }
+}

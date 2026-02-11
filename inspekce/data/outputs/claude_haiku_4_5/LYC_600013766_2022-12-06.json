@@ -1,0 +1,124 @@
+{
+  "report_id": "LYC_600013766_2022-12-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:54:22.110574+00:00",
+  "run_finished_utc": "2026-02-09T16:54:52.774702+00:00",
+  "raw_file": "LYC_600013766_2022-12-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600013766_2022-12-06",
+    "school_profile": {
+      "school_type": "Střední škola s 7 obory ukončenými maturitou a 7 obory s výučním listem",
+      "inspection_period": "6. 12. 2022 – 12. 12. 2022",
+      "school_change_summary": "Pokles počtu žáků z důvodu demografického vývoje, rozšíření pracovišť (nová budova na ulici Česká), průběžné rekonstrukce a modernizace vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vyučování na špičkové úrovni",
+          "detail": "Kvalitně provázané pracovní činnosti s teoretickou přípravou, reálné pracovní prostředí, diferencovaný přístup k žákům.",
+          "evidence": "Pracovní operace v souladu s tematickým rozvržením, individuální podpora, oceňování snahy, pozitivní vztahy mezi učiteli a žáky."
+        },
+        {
+          "tag": "Výjimečné úspěchy v soutěžích",
+          "detail": "Žáci pravidelně vítězí v celostátních a mezinárodních odborných soutěžích.",
+          "evidence": "1. místo Trophée Bohemia Sekt 2022, Mistrovství ČR Řeznická sekyra 2022, Pekař roku 2022, tři 1. místa v soutěži aranžérů."
+        },
+        {
+          "tag": "Moderní materiální vybavení",
+          "detail": "Systematické zlepšování podmínek pro praktické vyučování, nová pracoviště, dvě tělocvičny a posilovny.",
+          "evidence": "Vícezdrojové financování, rozšíření o objekt na ulici Česká, průběžné rekonstrukce a instalace nových zařízení."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší diferenciace v teoretické výuce",
+          "detail": "Učitelé věnují menší pozornost individuálním vzdělávacím potřebám žáků v teoretických předmětech.",
+          "evidence": "Chybí diferenciace obsahu a úkolů, ne všechny podpůrné opatření jsou dostatečně viditelné, omezená práce s různými informačními zdroji."
+        },
+        {
+          "tag": "Vysoká neúspěšnost v oboru gastronomie",
+          "detail": "Obor gastronomie vykazuje průměrně 40,1 % hrubou neúspěšnost u maturitní zkoušky.",
+          "evidence": "Nejnižší úspěšnost ze všech oborů za poslední tři školní roky, oproti cestovnímu ruchu a hotelnictví s nejmenší neúspěšností."
+        },
+        {
+          "tag": "Nedostatečný rozvoj komunikačních dovedností",
+          "detail": "Málo důsledná podpora komunikačních dovedností, zejména v druhém cizím jazyce.",
+          "evidence": "Výuka německého jazyka vedena převážně v češtině s minimální aktivitou žáků, chybí cílená podpora komunikace."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola podporuje žáky ohrožené školním neúspěchem v oboru gastronomie a jaké má konkrétní plány na zlepšení?",
+        "Jaké jsou konkrétní možnosti doučování a individuální podpory pro žáky se speciálními vzdělávacími potřebami?",
+        "Jak se škola zaměřuje na rozvoj komunikačních dovedností, zejména v cizích jazycích?"
+      ],
+      "who_school_fits": [
+        "Žáci s praktickým zaměřením a zájmem o gastronomii, hotelnictví, cestovní ruch nebo služby – zde má škola nejlepší výsledky.",
+        "Talentovaní žáci se zájmem o soutěže a prezentaci svých dovedností – škola je pořadatelem prestižních soutěží.",
+        "Žáci se speciálními vzdělávacími potřebami – škola má kvalitní poradenské služby a systematickou podporu."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s ambicí studovat gastronomii – obor má výrazně vyšší neúspěšnost (40,1 %) než ostatní obory.",
+        "Žáci, kteří potřebují silnou individuální podporu v teoretických předmětech – diferenciace výuky není dostatečná.",
+        "Žáci se zájmem o rozvoj komunikačních dovedností v cizích jazycích – zejména němčina je vyučována s minimální aktivitou žáků."
+      ],
+      "plain_czech_summary": "Střední škola Charbulova je moderní zařízení se silným zaměřením na praktické vyučování. Žáci dosahují výjimečných úspěchů v odborných soutěžích a mají přístup k modernímu vybavení. Poradenské služby jsou na vysoké úrovni. Slabší stránkou je diferenciace teoretické výuky a vysoká neúspěšnost v oboru gastronomie. Škola by měla více pracovat na rozvoji komunikačních dovedností a individuálním přístupu v teoretických předmětech."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Rozdílný podle oboru – cestovní ruch a hotelnictví s nejnižší neúspěšností, gastronomie s nejvyšší",
+        "key_numbers": [
+          "Gastronomie: průměrně 40,1 % hrubá neúspěšnost za poslední 3 roky",
+          "Cestovní ruch a hotelnictví: nejmenší hrubá neúspěšnost",
+          "Celkové výsledky za poslední 3 roky srovnatelné"
+        ],
+        "evidence": "Úspěšnost liší podle oborů, nejmenší neúspěšnost u cestovního ruchu a hotelnictví, nejvyšší u gastronomie."
+      },
+      "absence": {
+        "trend": "Systematicky sledována a vyhodnocována",
+        "key_numbers": [
+          "Absence žáků je průběžně sledována třídními učiteli",
+          "Zákonnými zástupci informováni prostřednictvím elektronického systému",
+          "Podrobné analýzy absence vedeny v rámci pedagogické rady"
+        ],
+        "evidence": "Třídní učitelé prospěch i chování žáků průběžně sledují, v případě potřeby vyvolávají jednání se žáky a jejich zákonnými zástupci."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s jasně vymezeným rozsahem činnosti vedené speciální pedagožkou",
+        "Výchovné poradkyně zajišťují podpůrná opatření pro žáky se speciálními vzdělávacími potřebami",
+        "Školní psycholog zajišťuje krizovou intervenci a individuální terapeutickou péči",
+        "Kariérové poradenství zaměřené na další vzdělávání a uplatnění na trhu práce",
+        "Doučování pro žáky ohrožené školním neúspěchem",
+        "Speciální podpora pro cizince (výuka češtiny, doučování, školní asistentka)",
+        "Adaptační dny pro žáky s poruchou autistického spektra"
+      ],
+      "safety_climate": [
+        "Pozitivní atmosféra založená na vzájemném respektu v hodinách",
+        "Sledovaná výuka nebyla narušována kázeňskými problémy",
+        "Vedení školy klade důraz na budování otevřeného přátelského prostředí",
+        "Systematická prevence rizikového chování prostřednictvím preventivních seminářů a programů",
+        "Pozitivní vztahy mezi učiteli odborného výcviku a žáky",
+        "Důraz na bezpečné provádění pohybových činností v tělesné výchově"
+      ],
+      "partnerships_practice": [
+        "Nadstandardní partnerství s profesními svazy, asociacemi a společenstvy",
+        "Spolupráce s Hospodářskou komorou a profesními cechy na zajišťování zkoušek",
+        "Ocenění 'Škola roku 2022' od Asociace hotelů a restaurací ČR",
+        "Škola působí jako poradenské centrum a zajišťuje pedagogické praxe studentům vysokých škol",
+        "Zapojení do mezinárodního projektu Erasmus+",
+        "Vysoký počet smluvních pracovišť pro praktické vyučování",
+        "Pořádání celostátních odborných soutěží s mezinárodní účastí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní čísla, příklady a citace. Slabší stránky jsou jasně pojmenovány. Jediná nejasnost je v interpretaci některých trendů (např. co přesně znamená 'srovnatelné' výsledky).",
+      "uncertainty_notes": [
+        "Trend absence není explicitně uveden – není jasné, zda se absence zvyšuje či snižuje",
+        "Není specifikováno, kolik procent žáků využívá doučování nebo jaká je jeho efektivita",
+        "Nejasné, jak se liší úspěšnost mezi jednotlivými obory s maturitou (uvedeny jen cestovní ruch, hotelnictví a gastronomie)"
+      ]
+    }
+  }
+}

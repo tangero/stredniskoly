@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY4_600171728_2025-01-13",
+  "school_profile": {
+    "school_type": "Sportovní gymnázium s čtyřletým a osmiletým studiem, zaměřené na atletiku, lední hokej, volejbal, judo a plavání",
+    "inspection_period": "13. 1. − 16. 1. 2025",
+    "school_change_summary": "Počet žáků vzrostl na 682 (naplněnost 95 %). Došlo k částečné obměně pedagogického sboru a rozšíření týmu poradenských pracovníků. Zlepšily se materiální podmínky a výsledky v maturitní zkoušce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Sportovní výsledky",
+        "detail": "Žáci dosahují vysoké úspěšnosti v soutěžích na regionální i republikové úrovni.",
+        "evidence": "Řada žáků se umístila na předních pozicích v ČR i mezinárodních soutěžích."
+      },
+      {
+        "tag": "Kvalitní vedení a vybavení",
+        "detail": "Vedení školy systematicky zlepšuje materiální podmínky a personální zajištění vzdělávání.",
+        "evidence": "Zlepšily se digitální technologie a sportovně technické zázemí, trenéři jsou erudovaní."
+      },
+      {
+        "tag": "Kariérní úspěch absolventů",
+        "detail": "Přibližně 96 % absolventů pokračuje v terciárním vzdělávání.",
+        "evidence": "Často si volí obory se sportovním, medicínským nebo terapeutickým zaměřením."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky v přírodovědách",
+        "detail": "Žáci mají problémy zejména s chemií, matematikou a fyzikou.",
+        "evidence": "Ve fyzice 12 % žáků, v matematice 17 %, v chemii 28 % vykázalo dostatečný či nedostatečný prospěch."
+      },
+      {
+        "tag": "Nižší aktivizace ve výuce",
+        "detail": "Výuka se opírá především o frontální výuku a samostatnou práci, málo skupinové práce a diferenciace.",
+        "evidence": "Přetrvává nižší míra aktivizace žáků střídáním výukových forem a méně časté diferenciace úkolů."
+      },
+      {
+        "tag": "Vyšší absence u sportovců",
+        "detail": "Žáci se sportovní přípravou mají vyšší absenci kvůli účasti na sportovních akcích.",
+        "evidence": "Absence kolem 176 hodin na žáka ve srovnání se 125 hodinami v osmiletém oboru."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola zajišťuje individuální podporu žákům, kteří mají problémy s matematikou a chemií?",
+      "Jaké jsou konkrétní postupy při řešení problémů se vztahy mezi žáky (šikana, kyberšikana)?",
+      "Jak se škola vypořádává s vyšší absencí sportovců a jak to ovlivňuje jejich studijní výsledky?"
+    ],
+    "who_school_fits": [
+      "Talentovaní sportovci, kteří chtějí kombinovat vrcholový sport se kvalitním vzděláním",
+      "Žáci se zájmem o jazykové vzdělávání a mezinárodní mobilitu",
+      "Studenti, kteří si chtějí připravit cestu do terciárního vzdělávání s sportovním zaměřením"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími předpoklady v matematice a přírodovědách bez dodatečné podpory",
+      "Studenti, kteří potřebují více interaktivní a skupinové výuky pro lepší pochopení",
+      "Žáci s náročným chováním, kde škola teprve zavádí nové podporné mechanismy"
+    ],
+    "plain_czech_summary": "Sportovní gymnázium v Kladně je dobře vedená škola se silným zaměřením na sport. Žáci dosahují výborných výsledků v soutěžích a většina pokračuje v terciárním vzdělávání. Vedení školy aktivně zlepšuje podmínky. Slabší stránkou je výuka přírodovědných předmětů, kde mají žáci problémy, a nižší využívání aktivních výukových metod. Škola je vhodná pro talentované sportovce, ale žáci se slabšími předpoklady v matematice a chemii by měli počítat s dodatečnou pomocí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšení v posledních pěti letech",
+      "key_numbers": [
+        "Ve třech z pěti let (2020–2024) nižší neúspěšnost než průměr ČR",
+        "Ve zkoušce z cizího jazyka uspěli vždy všichni žáci",
+        "V profilové části MZ hrubá neúspěšnost 2–8 %"
+      ],
+      "evidence": "V posledních pěti maturitních obdobích se žáci zlepšili, ve dvou letech uspěli všichni přihlášení maturanti."
+    },
+    "absence": {
+      "trend": "Rozdílná podle oboru, vyšší u sportovců",
+      "key_numbers": [
+        "Osmiletý obor: cca 125 hodin na žáka",
+        "Čtyřletý obor bez sportovní přípravy: cca 146 hodin",
+        "Čtyřletý obor se sportovní přípravou: cca 176 hodin"
+      ],
+      "evidence": "Vyšší absence u sportovců je způsobena jejich uvolňováním k účasti na akcích sportovních klubů."
+    },
+    "support_services": [
+      "Školní psycholožka zajišťuje psychickou pohodu žáků a učitelů",
+      "Rozšířený tým poradenských pracovníků poskytuje kariérní poradenství a psychologickou pomoc",
+      "Fyzioterapeutické a masérské služby pro sportovce, možnost zapůjčení sportovního vybavení"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti, škola dbá na bezpečné prostředí",
+      "Neomluvená absence je zanedbatelná, pouze jednotlivé případy",
+      "Závažné kázeňské přestupky jsou řešeny podle školního řádu"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se sportovními kluby umožňuje rozvoj sportovního nadání",
+      "Partnerské vztahy s kulturně vzdělávacími institucemi a školami obdobného zaměření",
+      "Kooperace s odbornými pracovišti a externími subjekty v oblasti poradenských služeb"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a obsahuje konkrétní data. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Struktura je jasná, ale pro rodiče by mohla být některá čísla a procenta lépe zvýrazněna.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jak přesně se liší kvalita výuky mezi jednotlivými učiteli a předměty",
+      "Není jasné, jaké konkrétní opatření škola plánuje k zlepšení výuky přírodovědných předmětů",
+      "Účinnost nového monitoringu žáků ohrožených školním neúspěchem ještě nebyla vyhodnocena"
+    ]
+  }
+}
+```

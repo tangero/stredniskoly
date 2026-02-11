@@ -1,0 +1,117 @@
+{
+  "report_id": "SOU_600006034_2023-06-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:39:10.809036+00:00",
+  "run_finished_utc": "2026-02-09T16:39:38.931153+00:00",
+  "raw_file": "SOU_600006034_2023-06-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600006034_2023-06-06",
+    "school_profile": {
+      "school_type": "Soukromá střední škola gastronomie s.r.o. – obory: Kuchař-číšník (3 roky), Gastronomie (4 roky s maturitou), Podnikání (2 roky nástavbové studium)",
+      "inspection_period": "6. 6. 2023 – 9. 6. 2023",
+      "school_change_summary": "Škola odstranila zásadní nedostatky z předchozí inspekce 2022, zlepšily se výsledky v maturitě, posílila se poradenská služba a modernizovalo se vybavení. Pedagogové se více zaměřují na sjednocování hodnoticích kritérií a vyhodnocování výsledků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělávání v prestižních místech",
+          "detail": "Výuka probíhá v hotelech a restauracích s vysokou úrovní služeb, což vytváří optimální podmínky a motivuje žáky.",
+          "evidence": "Prostředí prestižních pražských hotelů a restaurací s moderním materiálním zázemím vytváří optimální podmínky."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci opakovaně dosahují výborných umístění na celorepublikových odborných soutěžích.",
+          "evidence": "Ocenění Mladý řemeslník roku 2022, Barman ČR CBA 2022 junior cocktail competition."
+        },
+        {
+          "tag": "Zlepšené výsledky v maturitě",
+          "detail": "Hrubá neúspěšnost v maturitě se snížila a odpovídá celorepublikovému průměru.",
+          "evidence": "Ve čtyřletém oboru Gastronomie hrubá neúspěšnost činila okolo 15 %, což přibližně odpovídá průměru."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní přístup v některých hodinách",
+          "detail": "Přibližně třetina teoretických hodin trpí nedostatečným střídáním forem výuky a nízkou mírou aktivizujících metod.",
+          "evidence": "Nedostatečné střídání výukových forem a nízká míra využití aktivizujících metod vedly k nerovnoměrnému zapojení žáků."
+        },
+        {
+          "tag": "Slabá komunikační praxe v angličtině",
+          "detail": "Žáci si upevňují gramatiku, ale málo cvičí skutečné komunikační situace.",
+          "evidence": "Jen v nízké míře měli možnost uplatnit své jazykové znalosti v komunikační situaci."
+        },
+        {
+          "tag": "Předčasné odchody ze vzdělávání",
+          "detail": "Přestože se absence snížila, nedaří se omezovat předčasné odchody žáků.",
+          "evidence": "I přes přijatá opatření se však nedaří omezovat předčasné odchody žáků ze vzdělávání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá praktické vyučování a jak jsou vybrána pracovní místa v hotelech a restauracích?",
+        "Jaké jsou možnosti doučování a individuální podpory pro žáky, kteří mají problémy s učením?",
+        "Jak se škola snaží snižovat předčasné odchody žáků a jaké má pro to mechanismy?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zájmem o gastronomii a pohostinství, kteří se chtějí učit v praxi",
+        "Motivovaní studenti, kteří si cení kvalitního praktického vybavení a moderních technologií",
+        "Žáci, kteří se chtějí zapojit do soutěží a rozvíjet své odborné dovednosti"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více interaktivní a aktivizující výuku – část hodin je stále pasivní",
+        "Studenti angličtiny, kteří se chtějí zaměřit na komunikaci – výuka se soustředí spíše na gramatiku",
+        "Žáci s rizikem předčasného odchodu – škola se s tímto problémem stále potýká"
+      ],
+      "plain_czech_summary": "Soukromá střední škola gastronomie je kvalitní školou se silným praktickým zaměřením. Žáci se učí v prestižních hotelech a restauracích, dosahují úspěchů v soutěžích a výsledky v maturitě se zlepšily. Škola má moderní vybavení a dobrou podporu. Slabší stránkou je, že část teoretických hodin je stále pasivní a chybí více interaktivních metod. Angličtina se zaměřuje spíše na gramatiku než na skutečnou komunikaci. Škola se také snaží řešit problém s předčasnými odchody žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Hrubá neúspěšnost ve čtyřletém oboru Gastronomie: okolo 15 % (odpovídá celorepublikovému průměru)",
+          "V oboru Podnikání (nástavbové): výsledky srovnatelné či lepší než průměr v ČR",
+          "Prospělo 94 % žáků v maturitních oborech ve školním roce 2021/2022"
+        ],
+        "evidence": "Přijatá opatření (opakované procvičování, doučování, předmaturitní semináře) se pozitivně projevila ve snížení hrubé neúspěšnosti."
+      },
+      "absence": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Snížení průměrné absence za 2. pololetí 2021/2022 a 1. pololetí 2022/2023",
+          "Postupné snižování neomluvené absence, zejména v nematuritním oboru"
+        ],
+        "evidence": "Důsledný přístup třídních učitelů, elektronický systém sledování docházky, včasná informovanost rodičů."
+      },
+      "support_services": [
+        "Výchovná poradkyně (nová pozice od poslední inspekce) v úzké spolupráci s ředitelkou",
+        "Třídnické hodiny a výchovná jednání se žáky",
+        "Spolupráce se školskými poradenskými zařízeními",
+        "Možnost přestupu na méně náročný obor",
+        "Předmaturitní semináře a podpůrné elektronické výukové materiály",
+        "Stipendijní program motivující žáky k lepším výsledkům"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra v hodinách, žáci dodržují pravidla komunikace s učiteli",
+        "Žáci respektují stanovené postupy práce",
+        "Dodržování technologických postupů, zásad bezpečnosti a ochrany zdraví je průběžně kontrolováno"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s četnými sociálními partnery zajišťující praktické vyučování",
+        "Praktické vyučování v prestižních pražských hotelech a restauracích",
+        "Odborné stáže na pracovištích sociálních partnerů",
+        "Specializované kurzy (barmanský, baristický, molekulární mixologie)",
+        "Úzká spolupráce s profesními organizacemi"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více odborné terminologie, která by mohla být pro laické rodiče méně přístupná.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje přesné procento žáků, kteří předčasně opustili vzdělávání – je uvedeno jen jako problém, který se nedaří řešit",
+        "Není jasné, kolik přesně hodin z celkového počtu trpí nedostatečným využitím aktivizujících metod (zmíněno jen 'přibližně třetina')",
+        "Chybí konkrétní data o počtu žáků, kteří využívají doučování nebo individuální podporu"
+      ]
+    }
+  }
+}

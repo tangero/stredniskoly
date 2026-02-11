@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600006000_2023-05-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:41:11.739072+00:00",
+  "run_finished_utc": "2026-02-09T16:41:36.273609+00:00",
+  "raw_file": "SOS_600006000_2023-05-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006000_2023-05-02",
+    "school_profile": {
+      "school_type": "Střední odborná škola sociální, o.p.s. (obecně prospěšná společnost)",
+      "inspection_period": "24. května až 26. května 2023 a 6. června až 7. června 2023",
+      "school_change_summary": "Od roku 2017 má kvalita činnosti školy sestupnou tendenci. V roce 2018 se škola přestěhovala na nové místo, kde se zhoršily materiální a prostorové podmínky. Obor Zdravotnický asistent se postupně utlumuje."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Sociální kompetence",
+          "detail": "Škola dobře rozvíjí sociální dovednosti žáků ve vztahu ke klientům na praktických pracovištích.",
+          "evidence": "Kladně lze hodnotit utváření sociálních kompetencí žáků ve vztahu ke klientům smluvních pracovišť."
+        },
+        {
+          "tag": "Český jazyk a literatura",
+          "detail": "Výuka českého jazyka byla vedena odborně správně s jasně formulovanými cíli.",
+          "evidence": "Výuka českého jazyka a literatury byla vedena odborně správně, obvykle jasně formulované téma a vzdělávací cíl."
+        },
+        {
+          "tag": "Profilová část maturity",
+          "detail": "Žáci obvykle uspějí v profilové části maturitní zkoušky.",
+          "evidence": "V profilové části žáci konající maturitní zkoušku obvykle uspějí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Průměrně 112 hodin zameškaných na žáka v denní formě, což vede k nehodnocení žáků.",
+          "evidence": "Zvýšená absence žáků se negativně promítá do počtu nehodnocených žáků v řádném termínu."
+        },
+        {
+          "tag": "Neúspěšnost u maturity",
+          "detail": "V dálkové formě dosahuje hrubá neúspěšnost až 80 %, v denní formě 33 % (národní průměr 14-15 %).",
+          "evidence": "V roce 2022 stoupla hrubá neúspěšnost na 33 % (v ČR 14 %), v dálkové formě 80 %."
+        },
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "Více než polovina pedagogů nesplňuje podmínky odborné kvalifikace, 82 % jsou externí učitelé.",
+          "evidence": "Více než polovina pedagogů nesplňuje podmínky odborné kvalifikace. Vysoký podíl externích pedagogů (82 %)."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření škola přijala na snížení absence žáků a zlepšení jejich motivace?",
+        "Jak se škola vypořádala s vysokou neúspěšností u maturitní zkoušky, zejména v matematice?",
+        "Jaké jsou plány na zvýšení kvalifikace pedagogů a jejich dalšího vzdělávání?"
+      ],
+      "who_school_fits": [
+        "Žáci s vůlí pracovat v sociálních službách a péči o lidi, kteří jsou motivováni a mají dobrou docházku",
+        "Uchazeči, kteří si chtějí ověřit své schopnosti v praktické péči o klienty",
+        "Studenti dálkové formy, kteří již pracují a hledají flexibilní vzdělání"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabší motivací – absence zde dosahuje průměru 112 hodin ročně a škola ji nedokáže řešit",
+        "Uchazeči, kteří potřebují kvalitní výuku matematiky – nikdo ji zde úspěšně u maturity nesložil",
+        "Zájemci o dálkové studium – polovina žáků studium nedokončí a úspěšnost u maturity je velmi nízká"
+      ],
+      "plain_czech_summary": "Sociální škola v Praze má vážné problémy. Učitelé nejsou dostatečně kvalifikovaní, absence žáků je vysoká a výsledky u maturity jsou špatné – zejména v dálkovém studiu. Škola se přestěhovala do horších prostor a nemá vhodné vybavení. Pozitivem je, že žáci se učí sociálním dovednostem. Vedení školy dlouhodobě nepřijímá účinná opatření na zlepšení. Rodiče by měli zvážit, zda je tato škola vhodná volbou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Sestupný – výrazné zhoršení od roku 2017",
+        "key_numbers": [
+          "Dálková forma 2020: 64 % neúspěšnosti (ČR 15 %)",
+          "Denní forma 2022: 33 % neúspěšnosti (ČR 14 %)",
+          "Jaro 2023: 80 % neúspěšnosti v dálkové formě"
+        ],
+        "evidence": "V roce 2020 činila hrubá neúspěšnost v dálkové formě 64 %, v roce 2022 stoupla na 67 %, v denní formě na 33 %."
+      },
+      "absence": {
+        "trend": "Vysoká a vzrůstající, zejména v denní formě",
+        "key_numbers": [
+          "Denní forma: průměr 112 hodin na žáka",
+          "Dálková forma: průměr 24 hodin na žáka",
+          "V 1. pololetí 2022/23: téměř polovina žáků bez řádné klasifikace"
+        ],
+        "evidence": "Škole se nedaří realizovat účinná opatření ke snížení počtu zameškaných hodin (v průměru 112 hodin na žáka)."
+      },
+      "support_services": [
+        "Výchovné poradenství zajišťuje ředitelka bez specializačního studia",
+        "Identifikace žáků se speciálními vzdělávacími potřebami (4 žáci) a s odlišným mateřským jazykem (4 žáci)",
+        "Individuální vzdělávací plány nejsou řádně vypracovány nebo chybí jejich náležitosti"
+      ],
+      "safety_climate": [
+        "Žáci na smluvních pracovištích nebyli prokazatelně poučováni o bezpečnosti a ochraně zdraví",
+        "Škola ani pracoviště nemají pracovní a kompenzační pomůcky",
+        "Nedostatečná kontrola bezpečnosti při praktickém vyučování"
+      ],
+      "partnerships_practice": [
+        "Jedinou partnery jsou smluvní pracoviště: speciální mateřská škola a chráněná dílna",
+        "Partnerství nezajišťuje zpětnou vazbu pro teoretické vzdělávání a inovaci obsahu",
+        "Praktické vyučování neumožňuje naplňovat odborné kompetence v přímé péči"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně dokumentuje konkrétní problémy s citacemi. Všechny klíčové údaje jsou opřeny o text. Některé pasáže jsou technické, ale pro rodiče jsou nejdůležitější informace srozumitelné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala po inspekci (má 60 dní na jejich zavedení)",
+        "Není jasné, zda se situace s kvalifikací učitelů od inspekce zlepšila",
+        "Chybí informace o tom, jak se škola vypořádala s doporučením inspekce"
+      ]
+    }
+  }
+}

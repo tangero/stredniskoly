@@ -1,0 +1,105 @@
+{
+  "report_id": "GY8_600013651_2022-03-22",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:04:10.592189+00:00",
+  "run_finished_utc": "2026-02-10T07:05:10.471985+00:00",
+  "raw_file": "GY8_600013651_2022-03-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600013651_2022-03-22",
+    "school_profile": {
+      "school_type": "Soukromé osmileté a čtyřleté gymnázium se silným uměleckým zaměřením (hudba, divadlo, výtvarné umění).",
+      "inspection_period": "22. 3. 2022 − 24. 3. 2022",
+      "school_change_summary": "Škola má nové vedení od roku 2020 a kapacita je zcela naplněna (200 žáků)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Umělecká profilace",
+          "detail": "Nabízí hluboké soustředění na hudbu, divadlo nebo výtvarné umění v rámci gymnaziálního studia.",
+          "evidence": "„Současně nabízí žákům uměleckou profilaci ve zvoleném hudebním, divadelním nebo výtvarném oboru.“"
+        },
+        {
+          "tag": "Jazyková úroveň",
+          "detail": "Výuka cizích jazyků je velmi kvalitní a efektivní.",
+          "evidence": "„V cizích jazycích... výuka byla vedena velmi fundovaně... Znalosti a dovednosti mnohých žáků byly na vysoké úrovni.“"
+        },
+        {
+          "tag": "Klima a bezpečí",
+          "detail": "Ve škole panuje přátelská atmosféra, která pomáhá předcházet problémům.",
+          "evidence": "„Umělecké zaměření školy a přátelské klima... přispívají k eliminaci nežádoucích jevů.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Prostorové nedostatky",
+          "detail": "Škola nemá vlastní tělocvičnu a některé prostory vyžadují lepší údržbu.",
+          "evidence": "„Slabou stránkou je málo udržované zázemí... a nepořádek v části školního dvora.“"
+        },
+        {
+          "tag": "Podpora nadaných",
+          "detail": "Systém podpory talentovaných žáků nemá po distanční výuce zcela nastavenou zpětnou vazbu.",
+          "evidence": "„Málo důsledném přístupu vyučujících při individualizaci výuky žáků se SVP včetně žáků nadaných...“"
+        },
+        {
+          "tag": "Výtvarná reflexe",
+          "detail": "Ve výtvarné výuce chybí hlubší rozbor prací a vedení žáků k sebereflexi.",
+          "evidence": "„V hodinách ale chyběla práce s rozborem obsahu výsledku výtvarné práce... Vedení ke kritickému myšlení... je velice opatrné.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola zajišťuje kvalitní zpětnou vazbu a individualizaci pro talentované žáky v běžných předmětech?",
+        "Jaké jsou aktuální plány na rekonstrukci dvora a zázemí školy?",
+        "Jak je organizována tělesná výchova vzhledem k absenci vlastní tělocvičny?"
+      ],
+      "who_school_fits": [
+        "Studenti s talentem a zájmem o hudbu, divadlo nebo výtvarné umění.",
+        "Žáci, kteří hledají přátelské a tvůrčí prostředí s rodinnou atmosférou.",
+        "Uchazeči, kteří chtějí pokračovat na uměleckých vysokých školách (JAMU, UMPRUM)."
+      ],
+      "who_should_be_cautious": [
+        "Žáci očekávající moderní kampus s vlastními sportovišti.",
+        "Studenti, kteří preferují silně teoretické zaměření před praktickou uměleckou tvorbou.",
+        "Rodiny, pro které je stav venkovních prostor a dvora prioritou."
+      ],
+      "plain_czech_summary": "Gymnázium nabízí unikátní kombinaci všeobecného studia s hlubokou uměleckou profilací, což se odráží v úspěších absolventů na uměleckých vysokých školách. Výuka jazyků a uměleckých předmětů je na vysoké úrovni a ve škole panuje bezpečné, přátelské klima. Mezi nevýhody patří chybějící vlastní tělocvična a potřebné zlepšení v údržbě některých prostor. Nové vedení od roku 2020 školu stabilizovalo s plně naplněnou kapacitou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborná úspěšnost, absolventi jsou velmi dobře připraveni na VŠ.",
+        "key_numbers": [
+          "Většina žáků studuje s vyznamenáním.",
+          "Vysoká úspěšnost přijímacích řízení na umělecké VŠ.",
+          "Ojedinělé neúspěchy u profilové části maturity."
+        ],
+        "evidence": "„Žáci jsou na konci studia velmi dobře připraveni na přijímací zkoušky do uměleckých oborů vysokých škol, proto jsou úspěšní.“"
+      },
+      "absence": {
+        "trend": "Neuvedeno",
+        "key_numbers": [],
+        "evidence": ""
+      },
+      "support_services": [
+        "Spolupráce s psychologem a krizovým intervenem dle potřeby.",
+        "Konzultace a doučování pro žáky s problémy ve studiu.",
+        "Spolupráce s pedagogicko-psychologickými poradnami."
+      ],
+      "safety_climate": [
+        "Přátelské klima eliminuje rizikové chování.",
+        "Dobře zpracovaný krizový plán prevence.",
+        "Po distanční výuce škola posiluje vztahy (kurzy, turnaje)."
+      ],
+      "partnerships_practice": [
+        "Výuka vybraných předmětů zajišťována smluvně ZUŠ P. Křížkovského.",
+        "Mezinárodní projekty na podporu jazykových kompetencí.",
+        "Spolupráce s rodiči a žákovským senátem."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán ve srozumitelné češtině, byť s úřednickými prvky. Struktura zpráv ČŠI je standardizovaná a dobře čitelná.",
+      "uncertainty_notes": []
+    }
+  }
+}

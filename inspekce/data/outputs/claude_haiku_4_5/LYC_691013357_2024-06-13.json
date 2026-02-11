@@ -1,0 +1,111 @@
+{
+  "report_id": "LYC_691013357_2024-06-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:14:40.407795+00:00",
+  "run_finished_utc": "2026-02-09T16:15:03.348616+00:00",
+  "raw_file": "LYC_691013357_2024-06-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_691013357_2024-06-13",
+    "school_profile": {
+      "school_type": "Montessori střední škola (SŠ) s připojenou základní a mateřskou školou",
+      "inspection_period": "13.–14. a 17. června 2024",
+      "school_change_summary": "Od září 2023 se škola rozšířila o střední vzdělávání v oboru Ekologie a životní prostředí. Zavedl se elektronický informační systém a zlepšily se materiální podmínky. Počet dětí a žáků se zvýšil."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Pozitivní školní klima",
+          "detail": "Jednotný přístup pedagogů vytváří přátelskou atmosféru založenou na otevřené komunikaci a osobní zodpovědnosti.",
+          "evidence": "Pozitivní pracovní klima je výsledkem jednotného přístupu pedagogických pracovníků."
+        },
+        {
+          "tag": "Montessori metody v praxi",
+          "detail": "Výuka využívá názorné pomůcky a specifický materiál, který podporuje samostatné vyvozování poznatků.",
+          "evidence": "Bloky humanitní i přírodovědné byly vzhledem k Montessori metodám efektivní."
+        },
+        {
+          "tag": "Individuální přístup k žákům",
+          "detail": "Pedagogové zohledňují osobní pracovní tempo a schopnosti každého žáka, vedou je k odpovědnosti a samostatnosti.",
+          "evidence": "Aktivity respektují individuální schopnosti žáků a podporují jejich iniciativu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá digitalizace v základní škole",
+          "detail": "Digitální technologie nejsou dostatečně využívány pro rozvoj informační gramotnosti.",
+          "evidence": "Digitální technologie v základní škole nejsou vždy efektivně využívány za účelem cíleného rozvoje."
+        },
+        {
+          "tag": "Chybí externí ověřování výsledků",
+          "detail": "Škola se nezapojuje z vlastní iniciativy do externích testů a srovnávání výsledků.",
+          "evidence": "Škole chybí ucelený systém externího ověřování výsledků vzdělávání žáků."
+        },
+        {
+          "tag": "Problémy v mateřské škole",
+          "detail": "Chybí systematické plánování vycházející ze školního programu a diagnostika není funkční.",
+          "evidence": "Záznamy pedagogické diagnostiky nejsou systematicky využívány k plánování vzdělávání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně budete zlepšovat digitální gramotnost v základní škole?",
+        "Jaké jsou výsledky vašich žáků v porovnání s ostatními školami?",
+        "Jak probíhá přechod žáků ze základní na střední školu?"
+      ],
+      "who_school_fits": [
+        "Rodiče, kteří chtějí alternativní přístup k vzdělávání založený na Montessori pedagogice",
+        "Žáci, kteří se lépe učí v klidném prostředí s individuálním tempem a svobodou volby",
+        "Rodiny hledající malou školu s osobním přístupem a úzkým kontaktem mezi všemi"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají silný důraz na digitální vzdělávání a moderní technologie",
+        "Žáci, kteří potřebují externí validaci svých výsledků a srovnání s ostatními školami",
+        "Rodiny, které preferují tradiční přístup k výuce a standardní hodnocení"
+      ],
+      "plain_czech_summary": "Montessori škola v Polné je malá, dobře řízená instituce s pozitivním klimatem a kvalitním pedagogickým sborem. Silnou stránkou je Montessori přístup s důrazem na individuální rozvoj a samostatnost žáků. Škola má však rezervy v digitálním vzdělávání a chybí jí externí ověřování výsledků. Mateřská škola potřebuje zlepšit diagnostiku a plánování. Střední obor Ekologie je nový, zatím bez dlouhodobých výsledků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nový obor, bez dlouhodobého srovnání",
+        "key_numbers": [
+          "6 žáků v maturitním oboru 16-1-M/01 Ekologie a životní prostředí",
+          "Obor otevřen ve školním roce 2023/2024",
+          "Škola provádí tzv. malé maturity s jasně stanovenými kritérii"
+        ],
+        "evidence": "Vzhledem ke skutečnosti, že obor byl otevřen v 2023/2024, nebylo zatím možné provést porovnání v delším časovém úseku."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+      },
+      "support_services": [
+        "Poradenské služby zajišťuje ředitelka školy",
+        "Spolupráce s externími subjekty: pedagogicko-psychologické poradny, speciálně pedagogická centra, Peer to peer",
+        "Efektivní realizace podpůrných opatření, individuálních vzdělávacích plánů a asistentů pedagoga",
+        "Prevence rizikového chování zařazením témat do předmětů a prostřednictvím besed"
+      ],
+      "safety_climate": [
+        "Díky malému kolektivu a úzkému kontaktu se škole daří předcházet výskytu rizikového chování",
+        "Škola pořádá tematické akce pro žáky a zákonné zástupce (např. vývojové potřeby adolescentů)",
+        "Pozitivní pracovní klima založené na otevřené komunikaci a osobní zodpovědnosti"
+      ],
+      "partnerships_practice": [
+        "Výrazná spolupráce s dalšími školami zaměřenými na Montessori pedagogiku",
+        "Profesní partneři pro obor Ekologie: Chaloupky, ZOO Jihlava, Profinit",
+        "Úspěšná spolupráce s Gymnáziem Jihlava",
+        "Sportovně poznávací putování, letní a zimní kurzy, plavecký a lyžařský výcvik"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní číselné údaje o výsledcích a absence.",
+      "uncertainty_notes": [
+        "Výsledky maturit nejsou dostupné, obor je příliš nový",
+        "Absence údajů o absence žáků a jejich trendu",
+        "Nejsou uvedeny konkrétní výsledky výběrového testování, jen zmínka o slabších výsledcích"
+      ]
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "report_id": "SOU_600012484_2024-03-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:21:30.869650+00:00",
+  "run_finished_utc": "2026-02-09T16:21:57.371165+00:00",
+  "raw_file": "SOU_600012484_2024-03-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600012484_2024-03-19",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště (SOU) s domovem mládeže a školní jídelnou",
+      "inspection_period": "19. března až 27. března 2024",
+      "school_change_summary": "Od poslední inspekce se zvýšil zájem uchazečů, což vedlo k nárůstu počtu žáků a vyšší naplněnosti kapacity. Zlepšily se materiální podmínky sportovišť a dílen, posílilo se IT zázemí. Mírně se zvýšila úspěšnost u maturitní zkoušky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka na vysoké úrovni",
+          "detail": "Učitelé odborného výcviku používají individuální přístup, diferencují úlohy podle schopností žáků a propojují praxi s teorií.",
+          "evidence": "Žáci pracují s odbornými výkresy, reálnými katalogy a jsou vedeni k bezpečnosti práce v reálném prostředí firem."
+        },
+        {
+          "tag": "Výborné materiální podmínky",
+          "detail": "Škola má nadstandardní vybavení dílen, moderní IT zázemí a dobré sportovní zařízení.",
+          "evidence": "Od minulé inspekce se výrazně zlepšily materiální podmínky školních sportovišť a odborných dílen, posíleno IT zázemí."
+        },
+        {
+          "tag": "Silné vazby na zaměstnavatele",
+          "detail": "Škola dlouhodobě spolupracuje se širokým portfoliem firem a je členem profesních sdružení.",
+          "evidence": "Zaměstnavatelé projevují značný zájem přijímat žáky na praxi nebo je přímo zaměstnat po ukončení studia."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v matematice",
+          "detail": "Přibližně dvě třetiny neúspěšných žáků jsou hodnoceni nedostatečně právě z matematiky.",
+          "evidence": "V aktuálním školním roce dosahuje míra neúspěšnosti v matematice výrazně vyšší hodnoty než v ostatních předmětech."
+        },
+        {
+          "tag": "Pasivní přístup v teoretické výuce",
+          "detail": "Učitelé převážně používají frontální výuku s výkladem, málo aktivizují žáky a nechybí jim formativní zpětná vazba.",
+          "evidence": "Kooperativní aktivity jsou využívány ojediněle, chybí skupinová práce a diskuze podporující kritické myšlení."
+        },
+        {
+          "tag": "Nedostatečná podpora žáků se speciálními potřebami",
+          "detail": "Metodická podpora učitelů při práci s těmito žáky je částečně omezena a není cíleně zaměřena.",
+          "evidence": "Výchovný poradce při hospitacích nezaměřuje pozornost cíleně na práci s žáky se speciálními potřebami."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší problém slabých výsledků v matematice a jaké nové metody plánuje zavést?",
+        "Jakou podporu dostávají žáci se speciálními vzdělávacími potřebami a jak je individuálně vedeni?",
+        "Jak se škola snaží aktivizovat žáky v teoretické výuce a rozvíjet jejich kritické myšlení?"
+      ],
+      "who_school_fits": [
+        "Žáci s praktickým zaměřením a zájmem o instalatérství, plynárenství nebo elektrotechniku – zde je výuka na vysoké úrovni",
+        "Žáci, kteří potřebují ubytování – domov mládeže je dobře vybavený a nabízí podporu při přípravě na výuku",
+        "Žáci, kteří chtějí po škole pracovat – silné vazby na zaměstnavatele zvyšují šance na zaměstnání"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími matematickými dovednostmi – škola zatím nemá účinné řešení pro zlepšení výsledků v tomto předmětu",
+        "Žáci, kteří potřebují aktivní a interaktivní výuku – teoretická výuka je spíše tradičního typu s převahou výkladu",
+        "Žáci se speciálními vzdělávacími potřebami – metodická podpora není dostatečně cílená a systematická"
+      ],
+      "plain_czech_summary": "Střední odborné učiliště plynárenské je kvalitní školou se silným zaměřením na praktickou výuku a dobrou spoluprací se zaměstnavateli. Žáci se učí na moderním vybavení a od zkušených učitelů. Problémem je slabší teoretická výuka, zejména v matematice, kde mají žáci horší výsledky. Učitelé by měli více aktivizovat žáky a používat různorodější metody. Škola také potřebuje lépe podporovat žáky se speciálními potřebami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírné zlepšení",
+        "key_numbers": [
+          "Hrubá neúspěšnost ve čtyřletém oboru: přibližně 32 %",
+          "Hrubá neúspěšnost v dvouletém nástavbovém oboru: přibližně 28 %",
+          "Úspěšnost se zvýšila proti zjištěním předchozí inspekce"
+        ],
+        "evidence": "Úspěšnost žáků u maturitní zkoušky ve školním roce 2022/2023 se mírně zvýšila oproti předchozí inspekční činnosti."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zajišťující výchovné poradenství a primární prevenci",
+        "Školní metodika prevence a výchovný poradce",
+        "Pravidelné konzultace a doučování pro žáky ohrožené školní neúspěšností",
+        "Cílené doučování v domově mládeže"
+      ],
+      "safety_climate": [
+        "Při odborném výcviku pedagogové uplatňují respektující a individuální přístup podporující bezpečnou atmosféru",
+        "Žáci jsou vedeni k bezpečnosti práce a šetření materiálem",
+        "Škola pořádá adaptační kurzy pro první ročníky"
+      ],
+      "partnerships_practice": [
+        "Škola je členem několika profesních sdružení",
+        "Dlouhodobá spolupráce se širokým portfoliem zaměstnavatelů a firem",
+        "Využívání odborníků z praxe a instruktorů ve firmách",
+        "Smlouvy o praktickém vyučování se smluvními partnery",
+        "Žáci třetího ročníku pracují produktivně v reálném prostředí firem"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však delší a složitější, zejména v části o řízení školy.",
+      "uncertainty_notes": [
+        "Přesné procento žáků se speciálními vzdělávacími potřebami není jasné – text uvádí 17 žáků, ale není jasné, kolik jich je v procentech",
+        "Konkrétní počty hodin doučování nebo konzultací nejsou specifikovány",
+        "Není jasné, jaké konkrétní matematické dovednosti jsou problematické"
+      ]
+    }
+  }
+}

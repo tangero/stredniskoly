@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOS_600171183_2024-10-14",
+  "school_profile": {
+    "school_type": "Střední škola s obory vzdělání zaměřenými na mechaniku, zemědělské stroje, dopravní prostředky a IT",
+    "inspection_period": "14. 10. 2024 – 17. 10. 2024",
+    "school_change_summary": "Od poslední inspekce se počet žáků zvýšil o více než 40 % na 287 žáků. Přibylo žáků se speciálními potřebami (39 žáků) a s odlišným mateřským jazykem (21 žáků). Zlepšily se materiální podmínky a modernizovaly se učebny a dílny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola úzce spolupracuje se sociálními partnery, kteří poskytují praxi v reálných provozech a podílejí se na výuce.",
+        "evidence": "Partneři umožňují žákům praxi v reálných provozech, poskytují učební pomůcky, podílejí se na besedách nebo odborných exkurzích."
+      },
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Teoretické znalosti jsou efektivně propojovány s praktickými dovednostmi, což žákům pomáhá lépe pochopit učivo.",
+        "evidence": "Velmi zřetelná byla efektivní snaha o účelné propojování teoretických znalostí s praktickými dovednostmi."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují výrazných úspěchů v odborně zaměřených soutěžích s vysokou náročností.",
+        "evidence": "Automechanik junior 1. místo, Horizon Hydrogen Grand Prix postoupili do finále, mistrovství ČR v robotice 3. místo."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky u maturity",
+        "detail": "Obor Dopravní prostředky vykazuje dlouhodobě vysokou neúspěšnost v maturitní zkoušce, zejména v češtině, matematice a cizím jazyce.",
+        "evidence": "V jarním období 2024 byla hrubá neúspěšnost 63,6 %. Žáci vykazují dlouhodobě neúspěšnost ve společné části maturitní zkoušky."
+      },
+      {
+        "tag": "Nedostatečná individuální podpora",
+        "detail": "Strategie pro řešení školní neúspěšnosti má pouze formální charakter bez konkrétních postupů.",
+        "evidence": "Strategie předcházení školní neúspěšnosti je nastavená pouze na formální úrovni. Chybí konkrétní nastavení jasně vymezených postupů."
+      },
+      {
+        "tag": "Absence a kázeň",
+        "detail": "Přestože je absence řešena, průměr neomluvených hodin na žáka je 4,2 a 7 % žáků ročník opakuje.",
+        "evidence": "Průměr omluvených hodin na žáka byl 88,24, neomluvených 4,2 hodin. Podíl žáků, kteří neprospěli, byl kolem 7 %."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola připravuje žáky oboru Dopravní prostředky na maturitní zkoušku, když mají dlouhodobě vysokou neúspěšnost?",
+      "Jaké konkrétní opatření škola zavádí pro žáky ohrožené školní neúspěšností a jak se jejich účinnost vyhodnocuje?",
+      "Jak funguje systém doučování a individuální podpory pro slabší žáky?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou práci a odborné dovednosti, kteří se chtějí učit v reálném pracovním prostředí",
+      "Talentovaní žáci zajímající se o robotiku, programování a moderní technologie – škola má úspěchy v soutěžích",
+      "Žáci ze Slovenska a s odlišným mateřským jazykem – škola má zkušenosti s jejich podporou"
+    ],
+    "who_should_be_cautious": [
+      "Žáci slabší v češtině, matematice a angličtině – obor Dopravní prostředky má vysokou neúspěšnost v maturitě",
+      "Žáci potřebující intenzivní individuální podporu – strategie pro neúspěšné žáky je zatím jen formální",
+      "Žáci s problémy s docházkou – absence není dostatečně řešena a přetrvávají neomluvené hodiny"
+    ],
+    "plain_czech_summary": "Jablunkovská střední škola je prakticky zaměřená s dobrými vazbami na firmy a moderní vybavením. Žáci se učí v reálných provozech a dosahují úspěchů v soutěžích. Problém je s maturitní zkouškou, zejména v oboru Dopravní prostředky, kde má vysokou neúspěšnost. Podpora slabších žáků je zatím jen formální. Škola se rozrostla o 40 % žáků a snaží se zvládat nové výzvy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírné zlepšení, ale dlouhodobě vysoká neúspěšnost v oboru Dopravní prostředky",
+      "key_numbers": [
+        "Obor Dopravní prostředky: 63,6 % neúspěšnosti v jarním období 2024",
+        "Obor IT: 100 % úspěšnost v prvním roce maturity (2023/2024)",
+        "Trend zlepšení ve srovnání s rokem 2021"
+      ],
+      "evidence": "V jarním zkušebním období v roce 2024 byla hrubá neúspěšnost 63,6 %, v podzimním zkušebním období uspěli všichni žáci. V oboru IT maturovali žáci poprvé, všichni úspěšně."
+    },
+    "absence": {
+      "trend": "Absence je řešena, ale přetrvávají neomluvené hodiny",
+      "key_numbers": [
+        "Průměr omluvených hodin na žáka: 88,24",
+        "Průměr neomluvených hodin na žáka: 4,2",
+        "13 žáků dostalo snížený stupeň z chování pro neomluvené absence"
+      ],
+      "evidence": "Neomluvené hodiny byly zaznamenány a řešeny kázeňskými opatřeními. Uplatnění sníženého stupně z chování bylo využito u 13 žáků z důvodu neomluvené absence."
+    },
+    "support_services": [
+      "Výchovná poradkyně aktivně vyhledává žáky s potřebou podpůrných opatření",
+      "Školní metodik prevence realizuje preventivní programy zaměřené na aktuální potřeby",
+      "Doučování a individuální konzultace pro žáky se slabším prospěchem",
+      "Kariérové poradenství pro poslední ročníky",
+      "Zájmové útvary: robotika, 3D tisk, RC modely, drony"
+    ],
+    "safety_climate": [
+      "Knihy úrazů vedeny na každém místě vzdělávání, ale dokumentace vykazuje nedostatky",
+      "Důraz na dodržování bezpečnostních předpisů v praktické výuce",
+      "Nebyly zaznamenány kázeňské problémy či narušování průběhu výuky",
+      "Adaptační dny pro nastupující žáky podporují zdravé vztahy v kolektivu"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s mnoha externími partnery na rozvoji kompetencí žáků",
+      "Projekt Erasmus+ s jazykovou a odbornou mobilitou žáků",
+      "Partnerství se školami na Slovensku a v Polsku",
+      "Spolupráce s centrem odborné přípravy ve Frýdku-Místku a Opavě",
+      "Praktická výuka realizována ve škole i na smluvních pracovištích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více odborné termíny.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jak přesně se měří účinnost opatření pro neúspěšné žáky",
+      "Není jasné, jaké konkrétní kroky škola podnikla na základě předchozí inspekce",
+      "Chybí informace o tom, jak se sleduje uplatnění absolventů na trhu práce"
+    ]
+  }
+}
+```

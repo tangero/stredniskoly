@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOU_600010686_2025-10-07",
+  "school_profile": {
+    "school_type": "Střední škola gastronomie a služeb, Liberec – obory s maturitní zkouškou (hotelnictví, gastronomie, kosmetické služby) a s výučním listem",
+    "inspection_period": "7.–9. 10. 2025",
+    "school_change_summary": "Od ledna 2022 vzrostl počet žáků o 15 % na 751 žáků v 28 třídách. Od srpna 2024 nová ředitelka. Od září 2025 přibyla školní psycholožka. Probíhá rekonstrukce pavilonu a výstavba nové školní jídelny. Nový kamerový a čipový bezpečnostní systém."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné podmínky a vybavení",
+        "detail": "Škola má moderní prostory, kvalitní materiální zázemí a školní provoz Centrum, který slouží jako reálný provoz služeb.",
+        "evidence": "Promyšlený systém řízení se promítá do velmi dobrých podmínek v oblasti materiální, personální a ekonomické."
+      },
+      {
+        "tag": "Praktická příprava na povolání",
+        "detail": "Praktické vyučování úspěšně připravuje absolventy na trh práce s propojením teorie a reálné praxe u partnerů.",
+        "evidence": "Obsah navazuje na požadavky z praxe a vhodně připravuje absolventy na jejich budoucí uplatnění."
+      },
+      {
+        "tag": "Odborný anglický jazyk",
+        "detail": "Všechny obory mají samostatný předmět odborného angličtiny, což zvyšuje konkurenceschopnost absolventů.",
+        "evidence": "Zařazení odborného anglického jazyka jako samostatného vyučovacího předmětu zvyšuje odborné jazykové a pracovní kompetence."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Ve školním roce 2024/2025 průměrně 201,4 zameškaných hodin na žáka, u oboru Kuchař–číšník až 231,4 hodin.",
+        "evidence": "Vyšší míra neomluvené absence se promítá do ukládání kázeňských opatření a sníženého stupně z chování."
+      },
+      {
+        "tag": "Kolísavé výsledky maturit",
+        "detail": "Úspěšnost u maturitní zkoušky se liší mezi lety a obory (2024/2025: 74–83,3 %), v celorepublikovém srovnění kolísavá.",
+        "evidence": "Ve školním roce 2024/2025 vykonalo maturitní zkoušku úspěšně 83,3 % žáků Gastronomie, 80 % Hotelnictví, 74 % Kosmetických služeb."
+      },
+      {
+        "tag": "Nižší aktivita žáků v teoretické výuce",
+        "detail": "V některých hodinách převažuje frontální výuka s dominantní rolí učitele, žáci se zapojují spíše pasivně.",
+        "evidence": "Využití méně pestrých metod vedlo k nižší míře aktivního zapojení žáků v části hospitovaných hodin teoretického vzdělávání."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší vysokou absenci žáků a jaká opatření zavádí pro zlepšení docházky?",
+      "Jaké konkrétní metody používáte k aktivizaci žáků v teoretické výuce a jak se to liší od praktického vyučování?",
+      "Jak se škola připravuje na maturitní zkoušky a jakou podporu poskytuje žákům, kteří mají problémy?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktickou přípravu na konkrétní povolání v gastronomii, hotelnictví, kadeřnictví nebo krejčovství s moderním vybavením",
+      "Studenti zaměření na jazykové kompetence – škola nabízí odborný anglický jazyk a další jazyky",
+      "Talentovaní žáci, kteří se chtějí zapojit do soutěží a přehlídek – škola podporuje jejich rozvoj"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k vyšší absenci – škola hlásí problém s vysokou absencí, zejména v oboru Kuchař–číšník",
+      "Studenti, kteří potřebují více interaktivní a aktivizující výuku – v teoretických předmětech převažuje frontální přístup",
+      "Uchazeči, kteří se spoléhají na vysokou úspěšnost u maturit – výsledky jsou kolísavé a v některých oborech nižší"
+    ],
+    "plain_czech_summary": "Střední škola gastronomie a služeb v Liberci je moderní, dobře vybavená škola se silným zaměřením na praktickou přípravu. Má kvalitní vedení, zkušené pedagogy a úspěšně propojuje teorii s praxí. Absolventi se dobře uplatňují na trhu práce. Slabší stránkou je vysoká absence žáků a kolísavé výsledky maturit. V teoretické výuce by mohlo být více interaktivních metod. Škola je vhodná pro ty, kdo chtějí praktické vzdělání v gastro a službách."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý – výsledky se liší mezi lety a obory, v celorepublikovém srovnění nejsou stabilní",
+      "key_numbers": [
+        "2024/2025: Gastronomie 83,3 %, Hotelnictví 80 %, Kosmetické služby 74 %",
+        "2023/2024: Hotelnictví 96,2 %, Gastronomie 88,9 %, Kosmetické služby 88,9 %",
+        "Část žáků skládá zkoušky v opravném termínu (20–25 %)"
+      ],
+      "evidence": "Úspěšnost žáků u maturitní zkoušky je v jednotlivých letech v rámci celorepublikového srovnění v dané skupině oborů kolísavá."
+    },
+    "absence": {
+      "trend": "Vzrůstající – po zlepšení v 2023/2024 opět vzrostla v 2024/2025",
+      "key_numbers": [
+        "2024/2025: průměr 201,4 zameškaných hodin na žáka (z toho 8,6 neomluvených)",
+        "Obor Kuchař–číšník: 231,4 hodin na žáka (z toho 19,9 neomluvených)",
+        "2023/2024: 99,5 omluvených a 4,9 neomluvených hodin na žáka"
+      ],
+      "evidence": "Rizikovým faktorem ohrožujícím úspěch žáků ve vzdělávání je vyšší míra absence, která se promítá do kázeňských opatření."
+    },
+    "support_services": [
+      "Školní psycholožka (nově od 2025/2026) – pomoc při prospěchovém selhávání a osobních problémech",
+      "Výchovná poradkyně a kariérová poradkyně – vedení při výběru studia a uplatnění na trhu práce",
+      "Metodička prevence – programy proti drogám, šikaně, kyberšikaně",
+      "Doučování a individuální konzultace zaměřené na přípravu maturitních předmětů"
+    ],
+    "safety_climate": [
+      "Bezpečnostní rizika jsou analyzována a přijímána opatření k jejich eliminaci",
+      "Úrazy žáků jsou evidovány a zpracovávány",
+      "Od 2025/2026 elektronický a kamerový systém na vstupních prostorech",
+      "Čipové zabezpečení vstupu na všech pracovištích",
+      "Bezpečnostní a hygienická pravidla jsou součástí výuky praktického vyučování"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s pestrou škálou sociálních partnerů v regionu",
+      "Projekt OA JAK – Krok k budoucnosti (interaktivní propojení zaměstnavatelů a škol)",
+      "Členství v Asociaci hotelových a gastronomických škol, Asociaci kadeřníků a kosmetičky, Asociaci kuchařů a cukrářů",
+      "Spolupráce se Státním zdravotním ústavem na osvětě zdravého stravování",
+      "Partnerství s Okresní hospodářskou komorou Liberec"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Není jasné, jaké konkrétní metody by měly být zavedeny pro zvýšení aktivity žáků – doporučení jsou spíše obecná",
+      "Příčiny vysoké absence nejsou v textu detailně analyzovány, pouze konstatovány",
+      "Není specifikováno, jak se budou výsledky maturit v budoucnu zlepšovat – chybí konkrétní plán"
+    ]
+  }
+}
+```

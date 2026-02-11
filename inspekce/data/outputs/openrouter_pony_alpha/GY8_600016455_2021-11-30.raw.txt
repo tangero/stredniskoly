@@ -1,0 +1,96 @@
+{
+  "report_id": "GY8_600016455_2021-11-30",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté)",
+    "inspection_period": "30. 11. 2021 − 2. 12. 2021",
+    "school_change_summary": "Od roku 2014 došlo k výraznému zlepšení materiálních podmínek, personální obměně vedení a elektronizaci třídních knih."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky",
+        "detail": "Škola dosahuje dlouhodobě vynikajících výsledků v maturitě a celostátních soutěžích.",
+        "evidence": "„Žáci školy vykazovali u maturitních zkoušek dlouhodobě stoprocentní úspěšnost... umístili na prvních místech např. v matematické... soutěži.“"
+      },
+      {
+        "tag": "Jazyky",
+        "detail": "Výuka cizích jazyků probíhá v kvalitním prostředí s rodilým mluvčím.",
+        "evidence": "„Vzdělávání probíhalo výhradně v cílových jazycích... zapojení rodilého mluvčího do výuky anglického jazyka.“"
+      },
+      {
+        "tag": "Rozvoj dovedností",
+        "detail": "Škola efektivně podporuje rozvoj komunikačních a sociálních dovedností žáků.",
+        "evidence": "„Zapojení žáků do četných školních a mimoškolních aktivit efektivně podporuje rozvoj jejich komunikačních... dovedností.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Hodnocení",
+        "detail": "Ve výuce chybí prostor pro sebehodnocení a vzájemné hodnocení žáků.",
+        "evidence": "„Společným dílčím nedostatkem... bylo nevyužívání sebehodnocení a vzájemného hodnocení žáků.“"
+      },
+      {
+        "tag": "Individualizace",
+        "detail": "Málo úkolů respektuje různé schopnosti a tempo jednotlivých žáků.",
+        "evidence": "„Pouze výjimečně byly zařazovány úlohy s rozdílným rozsahem nebo náročností.“"
+      },
+      {
+        "tag": "Bezbariérovost",
+        "detail": "Škola stále nemá bezbariérový přístup, což komplikuje situaci handicapovaných.",
+        "evidence": "„Návrhy na zlepšení stavu školy týkající se vybudování bezbariérového přístupu se doposud nepodařilo uskutečnit.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé individuálně přistupují k žákům s různou úrovní znalostí?",
+      "Jakým způsobem je ve výuce podporováno sebehodnocení a kritické myšlení žáků?",
+      "Plánuje škola v dohledné době řešit chybějící bezbariérový přístup?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří cílí na vysokoškolské studium a chtějí dosáhnout silných jazykových znalostí.",
+      "Pro žáky, kteří se chtějí zapojit do vědomostních soutěží a rozvíjet své talenty.",
+      "Pro rodiny hledající školu s bohatou nabídkou volitelných předmětů a kroužků."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří vyžadují výuku zaměřenou na samostatné hodnocení a kritické myšlení.",
+      "Pro studenty se specifickými vzdělávacími potřebami vyžadujícími bezbariérový přístup.",
+      "Pro ty, kdo preferují silně individualizovaný přístup a diferenciované úkoly."
+    ],
+    "plain_czech_summary": "Gymnázium v Bohumíně nabízí kvalitní přípravu na VŠ s důrazem na jazyky a skvělými studijními výsledky. Škola je dobře vybavená a žáci zde dosahují výborných úspěchů v soutěžích. Slabší stránkou je málo individuální přístup ve výuce a chybějící bezbariérový přístup. Pro ambiciózní studenty je to skvělá volba, ale rodiče dětí s potřebou specifické podpory by měli zvážit dostupnost prostředků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě stabilně vysoká",
+      "key_numbers": [
+        "100 % úspěšnost (dlouhodobě)",
+        "93 % pokračuje na VŠ",
+        "1 neúspěšný žák v roce 2020/2021"
+      ],
+      "evidence": "„Žáci školy vykazovali u maturitních zkoušek dlouhodobě stoprocentní úspěšnost... V dalším studiu na vysokých školách pokračuje 93 % absolventů.“"
+    },
+    "absence": {
+      "trend": "Není uvedeno",
+      "key_numbers": [],
+      "evidence": "Text neobsahuje specifické údaje o absence."
+    },
+    "support_services": [
+      "Individuální a skupinové doučování",
+      "Konzultace s pedagogy",
+      "Školní poradenské pracoviště"
+    ],
+    "safety_climate": [
+      "Minimální výskyt negativního chování",
+      "Funkční prevence a adaptační kurzy",
+      "Schránka důvěry a online platforma"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s polskou partnerskou školou",
+      "Přednášky a workshopy s Přírodovědeckou fakultou UP Olomouc",
+      "Mezigenerační projekt s domovy pro seniory"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, technické termíny jsou vysvětleny kontextem a struktura je logická.",
+    "uncertainty_notes": []
+  }
+}

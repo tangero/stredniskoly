@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "LYC_610451049_2023-03-20",
+  "school_profile": {
+    "school_type": "Střední odborná škola a Střední odborné učiliště s domovem mládeže a školní jídelnou",
+    "inspection_period": "20. až 22. března 2023",
+    "school_change_summary": "Počet žáků vzrostl o 20 % na celkem 490 žáků (258 v maturitních oborech, 232 v učebních oborech). Došlo k obměně pedagogického sboru, aktuálně 66 pedagogů. Zlepšily se materiální podmínky, zejména v ICT. Přetrvávají nedostatky v pedagogických metodách a podpoře kritického myšlení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické dovednosti a propojení s praxí",
+        "detail": "Škola účelně propojuje teorii s praxí zapojením odborníků z praxe do vyučování a má velmi dobrou spolupráci se zaměstnavateli.",
+        "evidence": "\"účelné propojování teorie s praxí mj. zapojením odborníků z praxe do vyučování\""
+      },
+      {
+        "tag": "Výborné výsledky závěrečných zkoušek",
+        "detail": "Žáci dosahují dlouhodobě vysoké úspěšnosti u závěrečných zkoušek, v posledních třech letech průměrně 96 % úspěšnosti.",
+        "evidence": "\"V minulých třech školních rocích jich průměrně 96 % vykonalo zkoušku úspěšně.\""
+      },
+      {
+        "tag": "Kvalitní odborný výcvik",
+        "detail": "Výuka odborného výcviku je efektivní, učitelé poskytují kvalitní zpětnou vazbu a motivují žáky k dodržování technologických postupů.",
+        "evidence": "\"Učitelé účelně vedli výuku v návaznosti na získané znalosti a dovednosti žáků, poskytovali žákům kvalitní zpětnou vazbu.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé průběžné výsledky a školní neúspěšnost",
+        "detail": "Ve většině tříd jsou žáci ohroženi školní neúspěšností, chybí strategie předcházení tomuto problému. V prvních ročnících neprospělo 7-12 % žáků.",
+        "evidence": "\"jsou ve většině tříd nematuritních i maturitních oborů žáci ohrožení školní neúspěšností\" a \"Chybějící strategie předcházení školní neúspěšnosti\""
+      },
+      {
+        "tag": "Málo aktivní vyučovací metody",
+        "detail": "Pouze v polovině hodin jsou využívány metody podporující činnostní učení a aktivní zapojení všech žáků. Chybí diferenciace a individualizace.",
+        "evidence": "\"Pouze v polovině sledovaných hodin však byly využity formy a metody práce, které dostatečně podporovaly činnostní učení\""
+      },
+      {
+        "tag": "Nízká podpora kritického myšlení",
+        "detail": "Učitelé často nepodněcují kritické myšlení žáků využitím různých informačních zdrojů, což přetrvává od minulé inspekce.",
+        "evidence": "\"Často však chybělo podněcování kritického myšlení využitím různých informačních zdrojů\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší problém školní neúspěšnosti v prvních ročnících, kde neprospěje 7-12 % žáků?",
+      "Jaké konkrétní kroky podniká škola k tomu, aby více hodin využívalo aktivní vyučovací metody a činnostní učení?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a práce s různými informačními zdroji?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a řemesla – škola má velmi dobré vybavení pro odborný výcvik a silné vazby s podniky",
+      "Žáci, kteří chtějí získat kvalitní praktické vzdělání s vysokou úspěšností u závěrečných zkoušek",
+      "Žáci se speciálními vzdělávacími potřebami – škola je identifikuje a poskytuje jim podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky ze základní školy – vysoký podíl žáků ohrožených školní neúspěšností v prvních ročnících",
+      "Žáci, kteří potřebují více aktivní a interaktivní výuku – převažují zde méně efektivní frontální metody",
+      "Žáci, kteří se chtějí rozvíjet v kritickém myšlení a analýze – toto není dostatečně podporováno"
+    ],
+    "plain_czech_summary": "Škola je zaměřena na praktické vzdělání s velmi dobrými výsledky u závěrečných zkoušek (96 % úspěšnosti). Má kvalitní vazby s podniky a odborníky z praxe. Hlavní problém je vysoký podíl žáků ohrožených školní neúspěšností v průběhu studia (7-12 % neprospívajících v prvních ročnících) a chybějící strategie k řešení tohoto problému. Výuka často využívá méně efektivní metody, chybí aktivní zapojení všech žáků a podpora kritického myšlení. Škola by měla zlepšit průběžné výsledky a modernizovat pedagogické přístupy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se – výsledky začaly stoupat v posledních dvou školních letech",
+      "key_numbers": [
+        "Technické lyceum: 92 % úspěšnosti",
+        "Veřejnosprávní činnost: 90 % úspěšnosti",
+        "Mechanizace a služby: 80 % úspěšnosti"
+      ],
+      "evidence": "\"Výsledky žáků u maturitní zkoušky byly od minulé inspekční činnosti v celorepublikovém srovnění kolísavé a začaly se zlepšovat v posledních dvou školních letech.\""
+    },
+    "absence": {
+      "trend": "Pozitivní – absence klesl a je nízký",
+      "key_numbers": [
+        "Podíl neomluveného selhání klesl oproti 2018/19",
+        "Počet zameškaných hodin na žáka se zvýšil o čtvrtinu oproti 2018/19"
+      ],
+      "evidence": "\"Podíl žáků s neomluvenou absencí i její rozsah ve školním roce 2021/2022 oproti školnímu roku 2018/19 klesl a byl celkově nízký\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se třemi pracovníky: výchovná poradkyně, školní metodička prevence a psycholožka",
+      "Doučování a individuální konzultace v prvních ročnících",
+      "Týdenní soustředění před závěrečnými zkouškami s procvičením praktických dovedností"
+    ],
+    "safety_climate": [
+      "Bezpečnosti a ochraně zdraví věnuje škola patřičnou pozornost a aktivně přijímá opatření ke snížení počtu úrazů",
+      "Systematická činnost školního poradenského pracoviště přispívá k eliminaci rizikových jevů",
+      "Škola se účinně zaměřuje na péči o duševní zdraví žáků a monitorování šikany a užívání návykových látek"
+    ],
+    "partnerships_practice": [
+      "Velmi dobrá dlouhodobá spolupráce se základními školami v rámci podpory technického vzdělávání",
+      "Spolupráce se Spolkem přátel odborné školy a institucemi a firmami města a regionu",
+      "Praktické vyučování probíhá na pracovištích zaměstnavatelů, kteří poskytují zpětnou vazbu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní údaje. Hlavní zjištění jsou jasně identifikovatelná, ačkoli některé pasáže jsou delší a komplexnější. Doporučení jsou konkrétní a praktická.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní pedagogické metody by měly být zavedeny – pouze obecně doporučuje 'pestré organizační formy'",
+      "Není jasné, jak dlouho trvá typická adaptace žáků prvních ročníků na středoškolské vzdělávání",
+      "Chybí informace o tom, kolik žáků konkrétně prospívá s vyznamenáním v jednotlivých oborech"
+    ]
+  }
+}
+```

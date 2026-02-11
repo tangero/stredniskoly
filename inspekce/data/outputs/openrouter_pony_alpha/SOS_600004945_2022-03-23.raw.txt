@@ -1,0 +1,99 @@
+{
+  "report_id": "SOS_600004945_2022-03-23",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola uměleckoprůmyslová a Střední uměleckoprůmyslová škola",
+    "inspection_period": "23. 3. 2022 − 28. 3. 2022",
+    "school_change_summary": "Škola si od poslední inspekce v roce 2014 udržuje velmi vysoký standard, modernizuje vybavení a mírně navýšila počet žáků i pedagogů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Praktická výuka v ateliérech a dílnách má výbornou úroveň a efektivně propojuje řemeslo s uměním.",
+        "evidence": "Všechny hospitované hodiny praktické odborné přípravy... vykazovaly výbornou úroveň... charakteristickým znakem bylo propojování praktické realizace s využitím teoretických postupů."
+      },
+      {
+        "tag": "Vybavení školy",
+        "detail": "Škola nabízí nadstandardní materiální a technické zázemí nad rámec běžného standardu.",
+        "evidence": "Vybavení jednotlivých oborů přesahuje běžný standard uměleckoprůmyslové školy... vedení školy průběžně zkvalitňuje materiálně technické zázemí."
+      },
+      {
+        "tag": "Atmosféra a podpora",
+        "detail": "Prostředí je kultivované a podporující, škola má vlastního psychologa a relaxační zóny.",
+        "evidence": "Vzdělávání probíhá v kultivovaném prostředí... žáci mají k dispozici relaxační a studijní zákoutí... zajištění školního psychologa pro potřebu péče o duševní zdraví."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Způsob výuky teorie",
+        "detail": "V některých teoretických předmětech převažuje pasivní frontální výuka bez dostatečné aktivizace žáků.",
+        "evidence": "Převaha frontální formy výuky a předávání hotových poznatků vedla k nedostatečnému zapojení žáků... projevovala se jednotvárností, nižší dynamikou."
+      },
+      {
+        "tag": "Hodnocení kvality výuky",
+        "detail": "Škola nemá plně funkční systém následné kontroly, který by ověřil zlepšení po kritice.",
+        "evidence": "V dostatečné míře není uplatněna následná kontrola k ověření účinnosti přijatých opatření... méně účinný systém následné kontroly."
+      },
+      {
+        "tag": "Kázeňský systém",
+        "detail": "Systém výchovných opatření působí spíše negativně, tresty převažují nad odměnami.",
+        "evidence": "Nastavený systém pro udělování výchovných opatření vykazuje spíše restriktivní charakter, kázeňská opatření převyšují počet udělených pochval."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje studenty, kteří mají talent, ale potřebují zlepšit studijní výsledky v teoretických předmětech?",
+      "V jakých oborech dochází k dělení tříd na skupiny pro lepší prospěch?",
+      "Jaké možnosti mám jako student se zapojit do zahraničních stáží (Erasmus+)?"
+    ],
+    "who_school_fits": [
+      "Talentovaní uchazeči, kteří chtějí spojit uměleckou tvorbu s řemeslnou zručností a získat hlubokou odbornou praxi.",
+      "Studenti, kteří očekávají nadstandardní technické vybavení dílen a ateliérů.",
+      "Uchazeči, kteří plánují pokračovat v terciárním vzdělávání na VŠ nebo VOŠ."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují moderní interaktivní metody výuky před tradičním výkladem a frontální výukou.",
+      "Studenti, kteří potřebují silný a neustálý motivační impulz v teoretických předmětech.",
+      "Uchazeči, kteří hledají spíše všeobecné akademické vzdělání než uměleckoprůmyslovou specializaci."
+    ],
+    "plain_czech_summary": "Tato škola je špička v oboru. Pokud vaše dítě touží po umělecké tvorbě a řemesle, dostane zde špičkové vybavení a zázemí. Výuka v dílnách je skvělá, ale u teoretických předmětů se může setkat s nudnější formou výuky. Škola je bezpečná, má psychologa a skvělé výsledky u maturity. Je to ideální volba pro talentované umělce, kteří chtějí být připraveni na profesní život nebo vysokou školu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s velmi dobrou úrovní v praktické části, vyznamenání získává téměř čtvrtina maturantů.",
+      "key_numbers": [
+        "Téměř 25 % maturantů prospívá s vyznamenáním",
+        "Neprospívajících v průměru do 10 %",
+        "Téměř 100 % žáků studium dokončí"
+      ],
+      "evidence": "Dlouhodobě téměř čtvrtina maturantů prospívá s vyznamenáním... Téměř sto procent žáků přijatých ke studiu dokončí vzdělání."
+    },
+    "absence": {
+      "trend": "Klesající míra absence včetně neomluvené díky funkčním preventivním mechanismům.",
+      "key_numbers": [
+        "Klesající míra absence",
+        "Klesající míra neomluvené absence"
+      ],
+      "evidence": "Funkčnost preventivních mechanismů dokládá klesající míra absence včetně neomluvené."
+    },
+    "support_services": [
+      "Školský poradenský tým včetně školní psycholožky",
+      "Individuální konzultace a doučování pro žáky ohrožené neúspěchem",
+      "Kohezní dny pro adaptaci prváků"
+    ],
+    "safety_climate": [
+      "Kultivované prostředí s kreativními instalacemi",
+      "Zabezpečený vstup do budovy (vrátnice, elektronický systém)",
+      "Pravidelná technická údržba pro bezpečnost při práci"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se sociálními partnery a odborníky z praxe",
+      "Zapojení do mezinárodních projektů (Erasmus+)",
+      "Spolupráce s muzei a účast na veletrzích vzdělání"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, ačkoliv místy používá úřednický styl. Význam je však jasný a jednoznačný.",
+    "uncertainty_notes": []
+  }
+}

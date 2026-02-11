@@ -1,0 +1,109 @@
+{
+  "report_id": "GY8_600010929_2022-01-11",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:03:16.854707+00:00",
+  "run_finished_utc": "2026-02-10T08:04:14.539505+00:00",
+  "raw_file": "GY8_600010929_2022-01-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600010929_2022-01-11",
+    "school_profile": {
+      "school_type": "Gymnázium s osmiletým a čtyřletým vzdělávacím programem.",
+      "inspection_period": "11. 1. 2022 − 14. 1. 2022",
+      "school_change_summary": "Škola vybudovala nové arboretum a venkovní prostory, intenzivněji začala pracovat s nadanými žáky a spolupracuje s Mensou ČR."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky",
+          "detail": "Výuka cizích jazyků je na velmi vysoké úrovni s využitím rodilých mluvčích a diferencovaných skupin.",
+          "evidence": "„Velmi kvalitní byl průběh výuky anglického jazyka... výuka s rodilými mluvčími... umožňují efektivní a pro žáky přínosnou výuku cizích jazyků.“"
+        },
+        {
+          "tag": "Výsledky",
+          "detail": "Škola dosahuje vynikajících výsledků u maturitní zkoušky a v předmětových soutěžích.",
+          "evidence": "„Výsledky žáků u maturitní zkoušky jsou dlouhodobě velmi dobré... Ve školním roce 2020/2021 neuspěl pouze jeden žák.“"
+        },
+        {
+          "tag": "Klima",
+          "detail": "Ve škole panuje příjemná atmosféra s partnerským vztahem mezi učiteli a žáky.",
+          "evidence": "„Společným znakem hospitovaných hodin bylo pozitivní klima, příjemná pracovní atmosféra a partnerský vztah mezi pedagogy a žáky.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Individualizace",
+          "detail": "Výuka neprobíhá diferencovaně, všichni žáci plní stejné úlohy bez ohledu na individuální potřeby.",
+          "evidence": "„Učitelé však nevyužívali obsahovou diferenciaci dle vzdělávacích potřeb jednotlivých žáků... Všichni žáci plnili stejné typy úloh.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Žáci dostávají málo formativní zpětné vazby, která by je posouvala dopředu.",
+          "evidence": "„Dílčím nedostatkem byla absence formativní zpětné vazby pro žáky a chybějící shrnutí učiva v závěrech některých vyučovacích hodin.“"
+        },
+        {
+          "tag": "Vybavení",
+          "detail": "Pro výuku fyziky a chemie chybí moderně vybavené odborné učebny a laboratoře.",
+          "evidence": "„Ve škole však chybí moderně vybavené odborné učebny i laboratoře pro výuku fyziky a chemie.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé individuálně přistupují k žákům s různou úrovní znalostí v rámci běžné hodiny?",
+        "Jakým způsobem škola zajišťuje moderní vybavení pro přírodovědné pokusy, když chybí laboratoře?",
+        "Jak funguje nově vzniklý Klub nadaných dětí a jak se do něj mohou žáci zapojit?"
+      ],
+      "who_school_fits": [
+        "Pro žály, kteří chtějí dosáhnout vynikajících jazykových znalostí a chtějí se učit v menších skupinách.",
+        "Pro studenty, kteří očekávají přátelské prostředí a podporu při přípravě na vysokoškolské studium.",
+        "Pro nadané žáky, kteří uvítají nové aktivity v rámci spolupráce s Mensou ČR."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří potřebují silný individuální přístup a přizpůsobení tempa výuky jejich potřebám.",
+        "Pro rodiče, kteří kladou důraz na moderní laboratorní vybavení pro přírodovědné předměty.",
+        "Pro studenty, kteří preferují častou a detailní zpětnou vazbu k průběžnému učení."
+      ],
+      "plain_czech_summary": "Gymnázium v Lounech nabízí velmi kvalitní jazykovou výuku s rodilými mluvčími a dosahuje skvělých maturitních výsledků. Škola má příjemné klima a podporuje nadané žáky. Slabinou je málo individuální přístup ve výuce, kde všichni plní stejné úkoly, a chybějící moderní laboratoře pro fyziku a chemii. Pokud hledáte školu s excelentními jazyky a dobrým studijním zázemím, je to vhodná volba, ale pro žáky vyžadující specifický přístup může být výuka náročná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou dlouhodobě velmi dobré s minimem neúspěšných žáků.",
+        "key_numbers": [
+          "Školní rok 2019/2020: 100% úspěšnost.",
+          "Školní rok 2020/2021: neuspěl pouze 1 žák.",
+          "Realizována pravidelná maturitní generálka."
+        ],
+        "evidence": "„Výsledky žáků u maturitní zkoušky jsou dlouhodobě velmi dobré... Ve školním roce 2020/2021 neuspěl pouze jeden žák.“"
+      },
+      "absence": {
+        "trend": "Neuvedeno",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje konkrétní data o absence žáků."
+      },
+      "support_services": [
+        "Výchovný poradce (kariérové poradenství).",
+        "Metodik prevence (prevence rizikového chování).",
+        "Koordinátor pro práci s nadanými žáky a Klub nadaných dětí."
+      ],
+      "safety_climate": [
+        "Pozitivní klima a příjemná pracovní atmosféra.",
+        "Partnerský vztah mezi pedagogy a žáky.",
+        "Efektivní preventivní aktivity, rizikové chování se řeší jen výjimečně."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Mensou ČR (testování, Klub nadaných dětí).",
+        "Spolupráce s městem Louny a Městskou knihovnou na vzdělávacím centru.",
+        "Partnerské školy v zahraničí i v tuzemsku."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěrečné shrnutí silných a slabých stránek je přehledné.",
+      "uncertainty_notes": [
+        "Absence konkrétních dat o prospěchu žáků v průběhu studia (kromě maturit).",
+        "Neuvedení konkrétních číselných údajů o absence.",
+        "Chybí detailnější popis toho, jak škola konkrétně řeší podporu žáků se speciálními vzdělávacími potřebami."
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600015611_2021-10-20",
+  "school_profile": {
+    "school_type": "SOU",
+    "inspection_period": "2021-10-20 až 2021-10-25",
+    "school_change_summary": "Škola prošla změnou vedení, zredukovala počet oborů a výrazně modernizovala materiální zázemí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a praxe",
+        "detail": "Škola disponuje špičkovým technickým vybavením a žáci jsou smysluplně zapojováni do reálného výrobního procesu.",
+        "evidence": "„Škola má pro vzdělávání velmi kvalitní materiální podmínky... žáci byli smysluplně začleňováni do výrobního procesu.“"
+      },
+      {
+        "tag": "Spolupráce se zaměstnavateli",
+        "detail": "Díky propojení se skupinou MESIT holding a dalšími partnery je škola schopna efektivně připravovat žáky na trh práce.",
+        "evidence": "„Oboustranně přínosná spolupráce se zřizovatelem a smluvními partnery školy.“"
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Praktická škola a žáci se speciálními potřebami mají zajištěnu vynikající individuální péči a přístup.",
+        "evidence": "„Přínosně uplatňovaný individuální přístup ze strany pedagogů zohledňující speciálně vzdělávací potřeby každého žáka praktické školy.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalitní teoretická výuka",
+        "detail": "Vyučování v teoretických předmětech je pasivní, jednotvárné a postrádá aktivizující metody.",
+        "evidence": "„Zvolené organizační formy a využívané metody byly jednotvárné a v mnoha směrech nepomáhaly naplnit cíle hodiny.“"
+      },
+      {
+        "tag": "Špatné studijní výsledky",
+        "detail": "Maturitní výsledky jsou dlouhodobě podprůměrné a škola neumí efektivně řešit neúspěšnost žáků.",
+        "evidence": "„V porovnání s průměrnou úrovní výsledků žáků ostatních škol... měly tyto výsledky podprůměrnou úroveň.“"
+      },
+      {
+        "tag": "Neúčinná podpora",
+        "detail": "Opatření na zlepšení prospěchu a snížení absence nefungují, což vede k odchodům žáků.",
+        "evidence": "„Přijímaná opatření k jejich podpoře nebyla dostatečně účinná... projevil se jejich největší úbytek u zámečníků.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola hodlá zlepšit metody výuky v teoretických předmětech, aby žáci nebyli pasivní?",
+      "Jaká konkrétní opatření se připravují pro zvrácení špatných výsledků u maturit?",
+      "Jak škola pracuje s žáky s vysokou absencí, aby nedošlo k předčasnému ukončení studia?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří se chtějí učit řemeslo a uplatnit se v technických profesích přímo v koncernu MESIT.",
+      "Žáci, kteří očekávají špičkové technické vybavení dílen a přístup k moderním technologiím.",
+      "Studenti se speciálními vzdělávacími potřebami hledající podpůrné prostředí (zejména Praktická škola)."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují kvalitní teoretické vzdělání a aktivní výukové metody před praktickou výrobou.",
+      "Studenti plánující další vysokoškolské studium v oblastech vyžadujících silný teoretický základ.",
+      "Uchazeči s rizikem slabší motivace nebo prospěchu, kterým běžná podpora nemusí stačit."
+    ],
+    "plain_czech_summary": "Škola je ideální volbou pro získání kvalitní řemeslné praxe díky výbornému vybavení a napojení na firmu MESIT. Naopak teoretická výuka a maturitní výsledky mají dlouhodobě problémy. Škola nabízí skvělé zázemí pro odborný rozvoj, ale rodiče by měli sledovat, jak škola řeší pasivitu ve výuce a podprůměrné studijní výsledky. Pro žáky se SVP je péče na velmi dobré úrovni."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý a podprůměrný",
+      "key_numbers": [
+        "Výsledky podprůměrné oproti ČR",
+        "Kolísavá míra neúspěšnosti",
+        "Značná část neúspěšných maturantů (2019)"
+      ],
+      "evidence": "„Ve společné i profilové části maturitní zkoušky... měly tyto výsledky podprůměrnou úroveň.“"
+    },
+    "absence": {
+      "trend": "Vysoká a neomluvená",
+      "key_numbers": [
+        "Vysoká absence",
+        "Vysoká neomluvená absence",
+        "Největší úbytek u zámečníků"
+      ],
+      "evidence": "„Přetrvávající vysoké absenci žáků ve výuce zejména neomluvené.“"
+    },
+    "support_services": [
+      "Fungující kariérové poradenství a adaptační dny.",
+      "Systematická péče o žáky se SVP (1.-4. stupeň).",
+      "Neúčinná opatření pro žáky s prospěchovými problémy."
+    ],
+    "safety_climate": [
+      "Prostředí je bezpečné, bez závažných sociálně patologických jevů.",
+      "Příjemné až rodinné klima v Praktické škole.",
+      "Klidná atmosféra ve všeobecně vzdělávacích předmětech."
+    ],
+    "partnerships_practice": [
+      "Úzká a efektivní spolupráce se zřizovatelem MESIT holding.",
+      "Praktická výuka probíhá přímo ve firmách koncernu.",
+      "Odborný výcvik je velmi dobře organizačně zajištěn."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky, používá přímou terminologii.",
+    "uncertainty_notes": [
+      "Nejasná konkrétní čísla procentuální úspěšnosti u maturit (pouze 'značná část', 'podprůměrná').",
+      "Chybí přesné počty žáků s neomluvenou absencí.",
+      "Neuvedena konkrétní čísla o počtu předčasných odchodů (pouze 'největší úbytek')."
+    ]
+  }
+}

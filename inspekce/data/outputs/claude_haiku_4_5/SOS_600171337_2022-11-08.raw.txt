@@ -1,0 +1,42 @@
+```json
+{
+  "report_id": "SOS_600171337_2022-11-08",
+  "school_profile": {
+    "school_type": "Střední škola elektrotechnická",
+    "inspection_period": "8.–10. listopadu 2022",
+    "school_change_summary": "Dokument je konverzí listinné zprávy do elektronické podoby. Zpráva byla vystavena Českou školní inspekcí."
+  },
+  "for_parents": {
+    "strengths": [],
+    "risks": [],
+    "questions_for_open_day": [],
+    "who_school_fits": [],
+    "who_should_be_cautious": [],
+    "plain_czech_summary": "Dostupný text obsahuje pouze technickou doložku o konverzi inspekční zprávy do elektronické podoby. Nejsou v něm obsaženy konkrétní zjištění inspekce týkající se kvality vzdělávání, bezpečnosti, výsledků maturit nebo dalších aspektů fungování školy. Pro získání relevantních informací je nutné nahlédnout do samotné inspekční zprávy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nedostupné",
+      "key_numbers": [],
+      "evidence": "Text neobsahuje údaje o maturitních výsledcích."
+    },
+    "absence": {
+      "trend": "Nedostupné",
+      "key_numbers": [],
+      "evidence": "Text neobsahuje údaje o absenci studentů."
+    },
+    "support_services": [],
+    "safety_climate": [],
+    "partnerships_practice": []
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 1,
+    "czech_clarity_reason": "Dostupný text je pouze technickou doložkou o konverzi dokumentu bez obsahu inspekční zprávy. Neobsahuje žádné informace o kvalitě vzdělávání, výsledcích nebo zjištěních inspekce.",
+    "uncertainty_notes": [
+      "Chybí samotný obsah inspekční zprávy s konkrétními zjištěními.",
+      "Není možné posoudit kvalitu školy bez faktických údajů z inspekce.",
+      "Text potvrzuje pouze existenci zprávy, nikoli její obsah."
+    ]
+  }
+}
+```

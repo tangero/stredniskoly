@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600171426_2023-04-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:42:37.197371+00:00",
+  "run_finished_utc": "2026-02-09T16:43:04.455885+00:00",
+  "raw_file": "SOS_600171426_2023-04-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600171426_2023-04-18",
+    "school_profile": {
+      "school_type": "Střední škola, základní škola a mateřská škola pro sluchově postižené",
+      "inspection_period": "18. 4. 2023 − 21. 4. 2023",
+      "school_change_summary": "Od inspekce v 2017 došlo k personálním změnám v širším vedení. Zkvalitnil se kontrolní systém v ZŠ a zlepšily se materiální podmínky, zejména vybavení moderní didaktickou technikou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Individuální přístup",
+          "detail": "Pedagogové citlivě a empaticky přistupují ke každému dítěti a žákovi s respektem k jejich možnostem.",
+          "evidence": "Empatický, individuální přístup pedagogů k dětem a žákům, diferenciace ve výuce vzhledem ke schopnostem."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola má kvalitní didaktickou techniku a speciální pomůcky pro sluchově postižené.",
+          "evidence": "Nově vybudovaná počítačová učebna, interaktivní tabule, dataprojektory, programy pro výuku řeči na počítači."
+        },
+        {
+          "tag": "Komplexní podpora",
+          "detail": "Škola poskytuje poradenské služby, logopedickou podporu a individuální vzdělávací plány.",
+          "evidence": "Výchovná poradkyně, školní psycholožky, speciální pedagožky, funkční spolupráce asistentů pedagoga s učiteli."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence",
+          "detail": "Přetrvává vysoká absence žáků, kterou škola řeší intenzivní spoluprací se zákonnými zástupci a institucemi.",
+          "evidence": "Negativním zjištěním je, že od předchozí inspekční činnosti přetrvává vysoká absenci žáků."
+        },
+        {
+          "tag": "Nedostatečná vizualizace v SŠ",
+          "detail": "V některých hodinách střední školy chybí dostatečná podpora názornosti výuky pro sluchově postižené.",
+          "evidence": "V části vzdělávání v SŠ byla zaznamenána menší podpora názornosti výuky a vizualizace probíraných témat."
+        },
+        {
+          "tag": "Slabší práce s informacemi",
+          "detail": "Žáci základní školy nejsou dostatečně vedeni k práci s různými informačními zdroji.",
+          "evidence": "Nedostatečné vedení žáků v ZŠ k práci s různými informačními zdroji při vyhledávání informací."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+        "Jaké speciální pomůcky a technologie používáte pro výuku sluchově postižených a jak se to liší mezi jednotlivými stupni?",
+        "Jak probíhá příprava žáků na vstup na trh práce a jaké jsou jejich možnosti uplatnění po absolvování?"
+      ],
+      "who_school_fits": [
+        "Děti a žáci se sluchovým postižením, kterým vyhovuje speciální přístup a bilingvní či orální metody vzdělávání",
+        "Žáci s logopedickými vadami a kombinovanými postižením, kteří potřebují individualizovanou péči",
+        "Studenti, kteří se chtějí naučit praktické dovednosti v oborech jako kuchařství, čalounictví, šití nebo mechanika"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kterým by vadila vysoká absence žáků a potřeba intenzivní spolupráce se školou na řešení docházky",
+        "Žáci, kteří potřebují více vizuálních pomůcek a názornosti – v některých hodinách SŠ to není dostatečné",
+        "Studenti, kteří se chtějí sami učit z různých zdrojů – škola na to zatím dostatečně netrénuje"
+      ],
+      "plain_czech_summary": "Jde o speciální školu pro sluchově postižené s dlouhou tradicí a promyšleným vedením. Silnou stránkou je empatický přístup pedagogů, kvalitní vybavení a komplexní podpora žáků. Škola nabízí vzdělání od mateřské školy až po střední odborné obory s praktickou výukou. Hlavní výzvou je vysoká absence žáků, kterou škola aktivně řeší. Některé hodiny střední školy by mohly mít více vizuálních pomůcek. Vhodná pro žáky se sluchovým postižením, kteří potřebují speciální přístup a individuální péči."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vzhledem k nízkým počtům žáků konajících maturitní zkoušky jsou výsledky významně ovlivňovány dílčím úspěchem či selháním jednotlivců.",
+        "key_numbers": [
+          "SŠ realizuje vzdělávání pro 123 žáků ve 31 třídách",
+          "Dlouhodobě velmi dobrých výsledků dosahují žáci při ukončování vzdělávání závěrečnou zkouškou"
+        ],
+        "evidence": "Výsledky vzdělávání žáků SŠ odpovídají jejich možnostem a schopnostem vzhledem k míře jejich postižení."
+      },
+      "absence": {
+        "trend": "Vysoká absence přetrvává od předchozí inspekce a je aktivně řešena školou.",
+        "key_numbers": [
+          "Negativním zjištěním je, že od předchozí inspekční činnosti přetrvává vysoká absenci žáků"
+        ],
+        "evidence": "Vedení školy intenzivně spolupracuje se zákonnými zástupci, školním psychologem, poradenskými zařízeními a OSPOD."
+      },
+      "support_services": [
+        "Speciálně pedagogické centrum (SPC) poskytuje diagnostiku a reedukaci specifických poruch učení",
+        "Školní poradenské pracoviště: výchovná poradkyně, školní koordinátorka prevence, dvě speciální pedagožky-logopedky, dvě školní psycholožky",
+        "Individuální vzdělávací plány pro žáky se souběžným postižením",
+        "Asistenti pedagoga pracují funkčně se všemi učiteli"
+      ],
+      "safety_climate": [
+        "Kázeňská opatření nebo snížený stupeň z chování byly ukládány ojediněle",
+        "Velmi nízký výskyt projevů problémového chování žáků",
+        "Školní preventivní strategie vychází z potřeb školy a zahrnuje besedy a spolupráci s externími organizacemi"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami s pedagogickými obory",
+        "Partnerství s odbornými organizacemi (foniatrická klinika, Klub České unie neslyšících)",
+        "Pravidelná spolupráce se školami stejného zaměření v ČR a Evropě (Bratislava, Berlín)",
+        "Praktické vyučování probíhá v reálných podmínkách smluvních pracovišť"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a fakty. Obsahuje jasné oddělení silných a slabých stránek. Některé pasáže jsou více odborné, ale celkově je text pro rodiče dobře pochopitelný.",
+      "uncertainty_notes": [
+        "Konkrétní procenta nebo čísla úspěšnosti u maturit nejsou uvedena, pouze kvalitativní popis",
+        "Rozsah absence není kvantifikován (kolik procent hodin žáci chybí)",
+        "Není jasné, jak dlouho trvá řešení absence a jaké jsou konkrétní výsledky opatření"
+      ]
+    }
+  }
+}

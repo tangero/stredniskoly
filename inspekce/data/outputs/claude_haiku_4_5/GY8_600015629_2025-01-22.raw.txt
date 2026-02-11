@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY8_600015629_2025-01-22",
+  "school_profile": {
+    "school_type": "Gymnázium (4leté a 8leté studium), Obchodní akademie, Praktická sestra",
+    "inspection_period": "22. 1. – 24. 1. a 27. 1. 2025",
+    "school_change_summary": "Nárůst počtu žáků o 19 % (587 v gymnaziálních oborech, 217 v ostatních), zvýšení tříd z 28 na 30. Výrazné zlepšení materiálních podmínek, vybudování bezbariérového přístupu, pilotní ověřování propojení zdravotnických oborů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky vzdělávání",
+        "detail": "Dlouhodobě velmi dobré průběžné i maturitní výsledky, zejména u gymnázia s téměř nulovou neúspěšností.",
+        "evidence": "U osmiletého gymnázia 89 % žáků s vyznamenáním, u čtyřletého 67 %. Hrubá neúspěšnost gymnázia u maturity téměř nulová."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola systematicky zlepšuje materiální podmínky s nadstandardním zázemím pro přírodovědné a zdravotnické předměty.",
+        "evidence": "Nové učebny fyziky, biologie, 3D tisk, Robotárna, bezbariérový přístup, výtah. Projekt spolufinancovaný EU."
+      },
+      {
+        "tag": "Bohatá spolupráce s partnery",
+        "detail": "Systematická spolupráce se zdravotnickými zařízeními, vysokými školami a zahraničními školami přispívá k praktické orientaci vzdělávání.",
+        "evidence": "Praktické vyučování u odborných oborů realizováno u smluvních partnerů. Programy Erasmus+, mezinárodní projekty."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší koordinace poradenských služeb",
+        "detail": "Rozsáhlý tým školního poradenského pracoviště (3 výchovní poradci, 2 metodici, psycholog) má problémy s jednotností postupů a komunikací.",
+        "evidence": "Výchovní poradci jako školní metodici prevence nedosahují jednotných postupů. Nedostatky v dokumentaci poradenského pracoviště."
+      },
+      {
+        "tag": "Omezené využití hospitační zpětné vazby",
+        "detail": "Vedení školy nedostatečně využívá výsledky hospitací k zlepšování vzdělávacího procesu na úrovni školy.",
+        "evidence": "Chybí sdílení poznatků z hospitací v pedagogické radě a předmětových komisích. Přijímaná opatření nejsou dosud plně účinná."
+      },
+      {
+        "tag": "Nedostatečné formativní hodnocení",
+        "detail": "Učitelé poskytují především průběžnou pochvalu, chybí hlubší formativní hodnocení podporující aktivní zapojení žáků.",
+        "evidence": "V části hodin chybělo zhodnocení dosažených vzdělávacích cílů s ohledem na individuální pokrok. Sebehodnocení jen velmi zřídka."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně funguje progresivní forma výuky v osmiletém gymnáziu (OZON) a jaké jsou její výhody oproti běžné výuce (GATE)?",
+      "Jaké jsou možnosti praktického vyučování pro obor Praktická sestra a jak probíhá spolupráce s Nemocnicí Vyškov?",
+      "Jak škola podporuje nadané žáky a jaké jsou možnosti jejich zapojení do soutěží a projektů?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a motivací k učení – škola má dlouhodobě vysoké nároky a výborné výsledky",
+      "Zájemci o zdravotnické obory – moderní vybavení, praktická výuka v reálném prostředí, pilotní program propojení oborů",
+      "Nadaní žáci – škola má systém podpory nadaných žáků, mentory a zapojuje je do soutěží a projektů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – poradenské služby mají problémy s jednotností postupů a vyhodnocováním účinnosti podpory",
+      "Žáci vyžadující individuální přístup – učitelé v menší míře vytvářejí prostor pro vyjadřování a kritické myšlení, frontální výuka převažuje",
+      "Žáci s nižší motivací – vysoké nároky školy a převážně frontální forma výuky nemusí vyhovovat všem typům žáků"
+    ],
+    "plain_czech_summary": "Gymnázium a SOŠZE Vyškov je kvalitní školou s dlouhodobě výborným vzděláváním, zejména v gymnaziálních oborech. Škola se dynamicky rozvíjí – počet žáků vzrostl o 19 %, zlepšilo se vybavení a prostředí. Silnými stránkami jsou výborné maturitní výsledky, moderní zázemí a spolupráce s partnery. Rezervy jsou v koordinaci poradenských služeb a v tom, že učitelé méně využívají aktivní formy výuky a formativní hodnocení. Škola je vhodná pro motivované žáky, zvláště zájemce o zdravotnické obory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi dobrý, s mírným zhoršením u obchodní akademie",
+      "key_numbers": [
+        "Gymnázium: hrubá neúspěšnost téměř nulová v posledních 3 letech",
+        "Obchodní akademie: 0 % (2022) → 8,3 % (2023) → 9,1 % (2024)",
+        "Praktická sestra: 27,3 % (2022) → 0 % (2023) → 17,9 % (2024)"
+      ],
+      "evidence": "Žáci gymnázia dosahují převážně lepších nebo jen mírně horších výsledků oproti celorepublikovému průměru. Horší výsledky jen v matematice 2023."
+    },
+    "absence": {
+      "trend": "Pozitivní – dlouhodobě klesající",
+      "key_numbers": [
+        "Gymnázia: průměrně 131 hodin/žáka/rok",
+        "Odborné vzdělávání: průměrně 129 hodin/žáka/rok",
+        "Neomluvená absence: zanedbatelná"
+      ],
+      "evidence": "Vývojově dochází u obou skupin ke snížení zameškaných omluvených hodin. Pravidlo minimální docházky do předmětů přispívá ke snižování absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: 3 výchovní poradci, 2 školní metodici prevence, 1 školní psycholog",
+      "Poradci pro volbu povolání, mentoři pro nadané žáky, mentorka pro žáky cizince",
+      "Doučování a pedagogické konzultace pro žáky s rizikem neúspěchu",
+      "Elektronická schránka důvěry (málo využívána)"
+    ],
+    "safety_climate": [
+      "Příjemná a motivující pracovní atmosféra, vzájemný respekt mezi učiteli a žáky",
+      "Nastavená pravidla komunikace jsou dodržována",
+      "Třídní učitelé hrají stěžejní roli v primární prevenci a sledování klimatu tříd",
+      "Individuální rozhovory třídních učitelů s rodiči v prvním pololetí"
+    ],
+    "partnerships_practice": [
+      "Profesní svazy, střední a vysoké školy, základní školy",
+      "Nemocnice Vyškov, lékařské ordinace, úřady státní správy, neziskové organizace",
+      "Praktické vyučování u odborných oborů realizováno u smluvních partnerů",
+      "Programy Erasmus+, mezinárodní spolupráce a výměna zkušeností"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jak přesně funguje 'progresivní forma' výuky v OZON třídách – rodiče by měli na open day konkrétně zeptat",
+      "Není jasné, jak se konkrétně řeší problémy s jednotností postupů v poradenském pracovišti – zda jsou již přijata opatření",
+      "Absence údajů o počtu žáků s vyznamenáním v obchodní akademii a praktické sestře v jednotlivých letech"
+    ]
+  }
+}
+```

@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600017125_2025-03-24",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:40:42.153862+00:00",
+  "run_finished_utc": "2026-02-09T13:41:11.949705+00:00",
+  "raw_file": "SOS_600017125_2025-03-24.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017125_2025-03-24",
+    "school_profile": {
+      "school_type": "Střední škola zemědělská a zahradnická poskytující vzdělání s maturitní zkouškou (Agropodnikání, Chovatelství, Zahradnictví, Podnikání) a s výučním listem (Zahradník, Jezdec, Opravář strojů, Prodavač, Umělecký kovář)",
+      "inspection_period": "24. až 27. března 2025",
+      "school_change_summary": "Od poslední inspekce (2019) škola zvýšila počet žáků, posílila školní poradenské pracoviště a zavedla školní přijímací zkoušky. Některá doporučená opatření však nebyla realizována. Od školního roku 2025/2026 již nenabízí obor Podnikání v dálkové formě."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Praktické vyučování je kvalitní, učitelé efektivně propojují teoretické znalosti s reálnou praxí a vedou žáky k rozvoji odborných dovedností.",
+          "evidence": "Praktické vyučování navazuje na odborné předměty, učitelé kladou důraz na technologické postupy a bezpečnost práce."
+        },
+        {
+          "tag": "Spolupráce s firmami a institucemi",
+          "detail": "Škola má účinné partnerství s externími subjekty, které podporuje rozvoj odborných kompetencí a mezinárodní mobilitu žáků.",
+          "evidence": "Spolupráce vede k rozvoji odborných znalostí, program Erasmus+ přispívá k rozvoji komunikativní kompetence."
+        },
+        {
+          "tag": "Výborné výsledky v nematuritních oborech",
+          "detail": "Žáci v oborech s výučním listem dosahují velmi dobrých výsledků při závěrečných zkouškách.",
+          "evidence": "Z 209 žáků konajících závěrečnou zkoušku v letech 2022–2024 neuspělo pouze pět."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v maturitě",
+          "detail": "Výsledky v maturitní zkoušce jsou horší než průměr v České republice, zejména v oboru Podnikání.",
+          "evidence": "V oboru Podnikání hrubá neúspěšnost dosáhla 55 % (2023), v ostatních oborech kolísá mezi 16–29 %."
+        },
+        {
+          "tag": "Pasivní přístup k výuce",
+          "detail": "Teoretická výuka je často vedena frontálně s dominantní rolí učitele, žáci mají málo příležitostí k aktivnímu učení.",
+          "evidence": "Chybí pestré metody, diferenciace, skupinová práce a práce s informačními zdroji; žáci jsou spíše pasivními příjemci."
+        },
+        {
+          "tag": "Absence a školní neúspěšnost",
+          "detail": "Škola se nedaří efektivně snižovat absenci, zejména u maturitních oborů, a přetrvává vyšší počet žáků ohrožených neúspěchem.",
+          "evidence": "Absence dosahuje nejvyšších hodnot u oboru Podnikání; přibližně 6,3 % žáků neprospělo."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky ohrožené školní neúspěšností v maturitních oborech a jaké jsou výsledky těchto opatření?",
+        "Jaké konkrétní kroky podnikne škola ke zlepšení výsledků v maturitní zkoušce, zejména v předmětech Matematika, Český jazyk a Anglický jazyk?",
+        "Jak se škola vypořádá s vysokou absencí žáků a jaké jsou důsledky pro jejich studijní výsledky?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a odborné vzdělání – škola má kvalitní praktické vyučování a výborné výsledky v nematuritních oborech.",
+        "Žáci z okolí Olomouce – škola nabízí ubytování v domově mládeže s 100% obsazeností a podporu při studijní přípravě.",
+        "Žáci se speciálními vzdělávacími potřebami – škola má posílené poradenské pracoviště a aktivně nastavuje podpůrná opatření."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s ambicí na vysokou úspěšnost v maturitní zkoušce – výsledky jsou pod průměrem České republiky, zejména v oborech Podnikání a v předmětech Matematika a Anglický jazyk.",
+        "Žáci vyžadující aktivní a inovativní výuku – teoretická výuka je převážně frontální s omezeným využitím moderních metod a diferenciace.",
+        "Žáci s tendencí k absencím – škola se nedaří efektivně snižovat absenci, která negativně ovlivňuje výsledky vzdělávání."
+      ],
+      "plain_czech_summary": "Střední škola zemědělská a zahradnická v Olomouci je zaměřená na praktické vzdělání v zemědělství a řemeslech. Její silnou stránkou je kvalitní praktické vyučování a výborné výsledky v oborech s výučním listem. Slabinou jsou výsledky v maturitní zkoušce, které zaostávají za celorepublikovým průměrem. Teoretická výuka je často pasivní, chybí diferenciace a moderní metody. Škola se také potýká s vysokou absencí žáků. Vhodná je pro žáky zaměřené na praxi, méně pak pro ty s vysokými ambicemi na maturitu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s tendencí ke zlepšení v některých oborech, ale stále pod průměrem ČR",
+        "key_numbers": [
+          "Obor Podnikání: hrubá neúspěšnost 55 % (2023) → 24 % (2024)",
+          "Ostatní obory: hrubá neúspěšnost 16–29 % (kolísavá)",
+          "Úspěšnost absolventů Podnikání denní forma: 43 % (2022) → 35 % (2023) → 70 % (2024)"
+        ],
+        "evidence": "Škola dosahuje ve společné i profilové části maturitní zkoušky horších výsledků než republikový průměr v dané skupině oborů."
+      },
+      "absence": {
+        "trend": "Vysoká, nedaří se ji snižovat, zejména u maturitních oborů",
+        "key_numbers": [
+          "Nejvyšší absence u oboru Podnikání",
+          "Absence ovlivňuje průběžné i celkové výsledky vzdělávání"
+        ],
+        "evidence": "Škole se nedaří efektivně snižovat absenci u žáků maturitních oborů."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, školní psycholožka, speciální pedagog, asistentka, kariérová poradkyně",
+        "Doučování a individuální konzultace pro žáky ohrožené neúspěchem",
+        "Adaptační pobyty pro prvňáky na posílení sociálních vazeb",
+        "Kariérové poradenství zaměřené na orientaci na trhu práce a vysoké školy"
+      ],
+      "safety_climate": [
+        "Výuka probíhá v klidné a příjemné atmosféře bez vyrušování a kázeňských problémů",
+        "Vzájemná komunikace mezi učiteli a žáky je otevřená a vstřícná",
+        "Vedení školy věnuje adekvátní pozornost podnětům a stížnostem žáků",
+        "Aktivní spolupráce při řešení rizikového chování (záškoláctví, nevhodné chování)"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s firmami a institucemi na zajištění praktického vyučování",
+        "Program Erasmus+ pro rozvoj komunikativní kompetence",
+        "Odborné a kulturní exkurze, výukové programy, přednášky a besedy",
+        "Spolupráce se školskými poradenskými zařízeními na nastavení podpůrných opatření"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Některé pasáže jsou však dlouhé a složitě strukturované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola přijala na základě předchozí inspekce (2019), pouze uvádí, že 'pouze některá' byla realizována.",
+        "Chybí informace o tom, jak se škola vypořádá s vysokou absencí – nejsou uvedena konkrétní čísla nebo plány řešení.",
+        "Není jasné, zda se výsledky v maturitě zlepšují dlouhodobě nebo jde jen o krátkodobé výkyvy."
+      ]
+    }
+  }
+}

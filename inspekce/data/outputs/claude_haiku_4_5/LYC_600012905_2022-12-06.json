@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_600012905_2022-12-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:54:08.214652+00:00",
+  "run_finished_utc": "2026-02-09T16:54:33.218968+00:00",
+  "raw_file": "LYC_600012905_2022-12-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600012905_2022-12-06",
+    "school_profile": {
+      "school_type": "Střední škola a vyšší odborná škola se zaměřením na lesnictví, ekologii a mechanizaci",
+      "inspection_period": "6. až 8. prosince 2022",
+      "school_change_summary": "Od roku 2019 nový ředitel, který systematicky zlepšuje materiální vybavení a stabilizuje pedagogický sbor. Počet uchazečů se zdvojnásobil díky aktivní prezentaci školy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Tradice a identifikace s oborem",
+          "detail": "Silná stavovská tradice a identifikace žáků s lesnictvím motivují k učení a vytváří pocit sounáležitosti.",
+          "evidence": "Dodržování tradic (stavovský pozdrav, pasování do cechu, Hubertská zábava) jsou prvky pozitivně ovlivňující motivaci."
+        },
+        {
+          "tag": "Špičkové vybavení a praktická příprava",
+          "detail": "Moderní těžební mechanizace, simulátory lesních strojů, interaktivní třídy a meteorologická stanice zajišťují kvalitní praktickou výuku.",
+          "evidence": "Nadstandardní podmínky pro odbornou výuku s pásovou pilou, digitálními průměrky a školním polesím."
+        },
+        {
+          "tag": "Mezinárodní spolupráce a jazykový rozvoj",
+          "detail": "Dlouhodobá výměna se školami v Rakousku, Slovensku, Finsku a Polsku rozvíjí odborné i jazykové kompetence.",
+          "evidence": "Oboustranná mobilita žáků a vyučujících umožňuje zdokonalování se v odborných znalostech a jazykové vybavenosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nižší úspěšnost u zkoušek",
+          "detail": "Ve školním roce 2021/2022 měli žáci problémy s maturitní a závěrečnou zkouškou, zejména v oboru Mechanizace.",
+          "evidence": "V Lesnictví neprospělo 4 z 38 žáků, v Mechanizaci 6 z 11 žáků, v Lesním mechanizátorství 10 z 23 žáků."
+        },
+        {
+          "tag": "Slabší pedagogické postupy v některých hodinách",
+          "detail": "Část vyučujících používá převážně frontální výuku bez dostatečné diferenciace a aktivního zapojení žáků.",
+          "evidence": "Zaznamenány didaktické nedostatky, nízká spoluúčast žáků, málo kooperativní práce a chybějící sebehodnocení."
+        },
+        {
+          "tag": "Nízká hospitační činnost vedení",
+          "detail": "Ředitel málo navštěvuje vyučovací hodiny a hospitační záznamy neobsahují konkrétní doporučení pro zlepšení.",
+          "evidence": "Míra hospitační činnosti vedení je velmi nízká, záznamy nejsou dostatečně konkrétní a bez doporučení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak se škola vypořádává s nižší úspěšností u maturitní zkoušky? Jaké konkrétní doučování nabízí?",
+        "Jak se liší přístup učitelů v jednotlivých třídách? Mohu vidět příklady dobré pedagogické praxe?",
+        "Jaké jsou konkrétní možnosti pro žáky, kteří mají problémy s učením nebo potřebují individuální přístup?"
+      ],
+      "who_school_fits": [
+        "Žáci s vášní pro lesnictví, přírodu a práci v terénu, kteří si cení praktické výuky a tradičních hodnot",
+        "Studenti, kteří chtějí získat kvalitní odborné dovednosti s moderním vybavením a mezinárodní zkušeností",
+        "Žáci, kteří se chtějí podílet na soutěžích a aktivitách s odborným zaměřením (střelba, myslivost, ekologie)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovaný přístup a diferenciaci – část učitelů ji zatím nedostatečně poskytuje",
+        "Studenti, kteří se spoléhají na intenzivní vedení a zpětnou vazbu – hospitační činnost vedení je nízká",
+        "Uchazeči, kteří mají problémy s teoretickými zkouškami – úspěšnost u maturity a závěrečných zkoušek je nižší"
+      ],
+      "plain_czech_summary": "Česká lesnická akademie je prestižní škola s bohatými tradicemi a špičkovým vybavením. Žáci se učí na moderních strojích a mají možnost studovat v zahraničí. Škola je velmi aktivní v soutěžích a akcích. Problém je nižší úspěšnost u maturitní zkoušky a to, že někteří učitelé používají zastaralé metody výuky bez dostatečného zapojení žáků. Vedení školy by mělo více navštěvovat vyučovací hodiny a dávat učitelům konkrétní doporučení na zlepšení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Klesající – nižší úspěšnost v roce 2021/2022",
+        "key_numbers": [
+          "Lesnictví: 4 neúspěšní z 38 žáků (10,5%)",
+          "Mechanizace a služby: 6 neúspěšných z 11 žáků (54,5%)",
+          "Ekologie: všech 5 žáků prospělo (100%)"
+        ],
+        "evidence": "Ve školním roce 2021/2022 zaznamenali žáci nižší úspěšnost u maturitní zkoušky. Vedení se zabývá vyšší neúspěšností v rámci pedagogické rady."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněn",
+        "key_numbers": [],
+        "evidence": "Zpráva se absence věnuje minimálně, fokus je na výsledky zkoušek a kvalitu výuky."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zajišťuje výchovné a kariérové poradenství",
+        "Doučování z vybraných předmětů (technologie, anglický jazyk, český jazyk) pro žáky ohrožené neúspěchem",
+        "Adaptační kurz pro prvňáky, lyžařský a turistický kurz pro vyšší ročníky",
+        "Prevence rizikového chování prostřednictvím školního řádu a preventivního programu"
+      ],
+      "safety_climate": [
+        "Vedení věnuje významnou pozornost bezpečnosti a ochraně zdraví žáků",
+        "Pravidelné proškolování a revize techniky používané při praktické výuce",
+        "Důsledný a empatický přístup vychovatelů v domově mládeže",
+        "Přátelské chování mezi žáky, bez nežádoucích projevů"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Lesy České republiky, Vojenské lesy a statky, KRNAP",
+        "Partnerství s univerzitami (Mendelova, Česká zemědělská, Univerzita Hradec Králové)",
+        "Zahraniční spolupráce se školami v Rakousku, Slovensku, Finsku a Polsku",
+        "Organizace akcí pro veřejnost (vánoční koncert v Klementinu, Olympiáda v češtině, lesnické soutěže)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Chybí však více konkrétních čísel o absenci a některé údaje jsou obecnější.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, jak je na škole situace s docházkou",
+        "Není specifikováno, kolik procent učitelů používá zastaralé metody – jde o 'část' vyučujících",
+        "Není jasné, jaké konkrétní opatření vedení přijalo na zlepšení úspěšnosti u zkoušek"
+      ]
+    }
+  }
+}

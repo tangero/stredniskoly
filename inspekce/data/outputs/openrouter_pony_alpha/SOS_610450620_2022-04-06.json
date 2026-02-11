@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_610450620_2022-04-06",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:00:27.747511+00:00",
+  "run_finished_utc": "2026-02-10T07:02:04.403769+00:00",
+  "raw_file": "SOS_610450620_2022-04-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_610450620_2022-04-06",
+    "school_profile": {
+      "school_type": "Střední odborná škola a učiliště s obory s výučním listem i maturitou.",
+      "inspection_period": "6. − 7. dubna 2022 a 11. − 12. dubna 2022",
+      "school_change_summary": "Od roku 2015 klesl zájem o studium, škola využívá jen 40 % kapacity a zrušila několik oborů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Škola účinně propojuje teorii s praxí a aktivně spolupracuje s partnery.",
+          "evidence": "„Společným rysem... bylo časté propojování teoretických poznatků s jejich využitím v praxi.“"
+        },
+        {
+          "tag": "Zázemí a bezpečnost",
+          "detail": "Škola má zlepšené materiální vybavení a dbá na bezpečnost při výcviku.",
+          "evidence": "„Zlepšilo se materiálně technické vybavení školy... značná pozornost [je věnována] prevenci úrazů.“"
+        },
+        {
+          "tag": "Uplatnění absolventů",
+          "detail": "Absolventi se dobře uplatňují na trhu práce díky spolupráci s firmami.",
+          "evidence": "„Dlouhodobá spolupráce s četnými sociálními partnery vytvářející podmínky pro lepší uplatnitelnost.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Neúspěšnost u maturity",
+          "detail": "Žáci maturitních oborů mají vysokou neúspěšnost ve společné části maturity.",
+          "evidence": "„Přetrvávající vysoká hrubá neúspěšnost žáků ve společné části maturitní zkoušky.“"
+        },
+        {
+          "tag": "Kvalita výuky jazyků",
+          "detail": "Výuku cizích jazyků a část matematiky zajišťují nekvalifikovaní učitelé.",
+          "evidence": "„Výuka cizích jazyků... a téměř čtvrtina výuky matematiky je zajištěna učiteli bez příslušné specializace.“"
+        },
+        {
+          "tag": "Absence a motivace",
+          "detail": "Škola neúčinně řeší vysokou absenci a nedostatečnou motivaci žáků.",
+          "evidence": "„Škola však nemá plně funkční systém k podchycování a řešení záškoláctví a vysoké absence.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky v přípravě na společnou část maturitní zkoušky?",
+        "Kdo bude učit mé dítě anglický jazyk a matematiku, a má na to kvalifikaci?",
+        "Jaká opatření škola zavádí proti vysoké absenci a předčasnému odchodu žáků?"
+      ],
+      "who_school_fits": [
+        "Uchazeči o řemeslné obory (kadeřník, kuchař, zedník), kde je silná odborná příprava.",
+        "Žáci, kteří chtějí získat praktické dovednosti a uplatnit se přímo v profesi.",
+        "Zájemci o obor Veřejnosprávní činnost, kteří jsou ochotni intenzivně doučovat se."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o nástavbové studium Podnikání, kde je extrémně nízká úspěšnost maturity.",
+        "Žáci, kteří potřebují silnou podporu školy při přípravě na společnou část maturity.",
+        "Studenti očekávající moderní aktivizující metody výuky v teoretických předmětech."
+      ],
+      "plain_czech_summary": "Inspekce potvrdila, že škola nabízí kvalitní odborný výcvik a dobré materiální zázemí, což žákům zajistí uplatnění v řemeslech. Velkým problémem je však velmi nízká úspěšnost u maturity, zejména v oboru Podnikání, a fakt, že výuku klíčových předmětů (jazyky, matematika) často zajišťují nekvalifikovaní učitelé. Škola také bojuje s vysokou absencí a nedostatečnou motivací žáků. Pro řemeslníky je škola dobrou volbou, pro maturitní obory je riziková."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vysoká neúspěšnost ve společné části maturity, zejména v oboru Podnikání.",
+        "key_numbers": [
+          "Neúspěšnost v oboru Veřejnosprávní činnost v roce 2020/2021 cca 20 %.",
+          "V oboru Podnikání uspěla v roce 2020/2021 pouze desetina žáků.",
+          "V didaktickém testu z matematiky neuspěl v hodnoceném období žádný žák."
+        ],
+        "evidence": "„Hrubá neúspěšnost... byla v tomto období téměř trojnásobně horší než výsledky žáků dané oborové skupiny v ČR.“"
+      },
+      "absence": {
+        "trend": "Výrazný nárůst absence i neomluvené absence po návratu z distanční výuky.",
+        "key_numbers": [
+          "Neomluvená absence v nematuritních oborech dvojnásobně vyšší než dříve.",
+          "Zvýšený podíl nehodnocených žáků v roce 2021/2022.",
+          "Vysoký podíl žáků předčasně ukončujících studium (zejména Podnikání)."
+        ],
+        "evidence": "„Míra neomluvené absence žáků... byla v nematuritních oborech až dvojnásobně vyšší než ve srovnatelných obdobích.“"
+      },
+      "support_services": [
+        "Funkční školní poradenské pracoviště (výchovná poradkyně, metodička prevence).",
+        "Adaptační kurz pro žáky prvních ročníků.",
+        "Nabídka doučování a elektronických materiálů (s částečnou účinností)."
+      ],
+      "safety_climate": [
+        "Značná pozornost věnovaná bezpečnosti a prevenci úrazů v odborném výcviku.",
+        "Pravidelné poučování žáků o bezpečnostních rizicích.",
+        "Zápisy o úrazech převážně lehčího charakteru (dílny, tělocvična)."
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce se sociálními partnery a firmami.",
+        "Realizace praktického vyučování na pracovištích smluvních partnerů.",
+        "Účast v profesních soutěžích a zahraničních výměnných pobytech."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně odděluje silné a slabé stránky a obsahuje konkrétní data o neúspěšnosti.",
+      "uncertainty_notes": [
+        "Nejasné, zda škola plánuje výraznější změny v přijímacím řízení pro zlepšení složení žáků.",
+        "Není specifikováno, jaké konkrétní kroky kromě doučování jsou plánovány pro záchranu oboru Podnikání."
+      ]
+    }
+  }
+}

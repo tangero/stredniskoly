@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600018334_2022-03-22",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:05:10.473859+00:00",
+  "run_finished_utc": "2026-02-10T07:06:28.170141+00:00",
+  "raw_file": "SOU_600018334_2022-03-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600018334_2022-03-22",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola s teoretickým i praktickým vyučováním, domovem mládeže a jídelnou.",
+      "inspection_period": "22. − 24. 3. 2022",
+      "school_change_summary": "Od roku 2016 došlo ke změně vedení, rozšíření nabídky o obory Informační technologie a Elektrikář a k modernizaci materiálního vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vybavení školy",
+          "detail": "Škola disponuje moderními učebnami a technologiemi, včetně 3D tiskáren, CNC strojů a simulátorů.",
+          "evidence": "Škola disponuje technicky kvalitně vybavenými i nově vybudovanými učebnami... 3D tiskárny, simulátory na drony."
+        },
+        {
+          "tag": "Uplatnění absolventů",
+          "detail": "Díky spolupráci s firmami a zahraničním stážím mají absolventi dobré předpoklady pro trh práce.",
+          "evidence": "Realizací mobility žáků v rámci zahraničních stáží... podporuje snahu o lepší uplatnitelnost absolventů."
+        },
+        {
+          "tag": "Praktická výuka",
+          "detail": "Odborný výcvik probíhá v kvalitně vybavených dílnách s důrazem na moderní technologie.",
+          "evidence": "V rámci zkvalitňování praktického vyučování jsou využívány moderní technologie (např. CNC stroje, virtuální trenažér)."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturita z češtiny",
+          "detail": "Žáci nástavbového oboru Provozní technika dosahují horších výsledků u maturity z češtiny.",
+          "evidence": "Problematické jsou výsledky společné části maturitní zkoušky z českého jazyka a literatury... nižší úspěšnost."
+        },
+        {
+          "tag": "Péče o talentované žáky",
+          "detail": "Ve výuce chybí individuální přístup k nadaným žákům, výuka je spíše průměrná.",
+          "evidence": "K diferenciaci vzdělávacího obsahu směrem k žákům rychlejším a talentovaným však nedocházelo téměř vůbec."
+        },
+        {
+          "tag": "Rozvoj kompetencí",
+          "detail": "Ve výuce chybí prostor pro sebehodnocení a vzájemné hodnocení žáků.",
+          "evidence": "Často chyběla příležitost pro sebehodnocení a vzájemné hodnocení... nerozvíjela jejich sociální kompetence."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola podporuje talentované žáky, aby se nenudili během běžných hodin?",
+        "Jak konkrétně škola pomáhá žákům s přípravou na společnou část maturitní zkoušky?",
+        "Jaké konkrétní firmy zajišťují odborné praxe a jak často na nich žáci jsou?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří se chtějí učit řemeslo nebo technický obor v moderně vybavených dílnách.",
+        "Pro zájemce o praktické zkušenosti ze zahraničí v rámci projektu Erasmus+.",
+        "Pro studenty, kteří oceňují technické vybavení jako 3D tiskárny a robotiku."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří plánují studovat obor Provozní technika a potřebují silnou podporu v češtině.",
+        "Pro nadané žáky, kteří vyžadují individuální náročnější práci nad rámec běžné výuky.",
+        "Pro rodiče, kteří kladou důraz na rozvoj měkkých dovedností a sebereflexi dětí."
+      ],
+      "plain_czech_summary": "Střední průmyslová škola Jeseník nabízí kvalitní technické vzdělání v moderně vybavených učebnách a dílnách. Škola klade velký důraz na praxi, spolupráci s firmami a zahraniční stáže, což žákům zajišťuje dobré uplatnění. Slabší stránkou je nižší úspěšnost u maturity z českého jazyka u některých oborů a nedostatečná podpora pro talentované žáky. Škola také méně rozvíjí sociální dovednosti a sebehodnocení. Celkově jde o dobře fungující školu s kvalitním vedením a materiálním zázemím."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený",
+        "key_numbers": [
+          "Nižší úspěšnost u maturity z ČJL v oboru Provozní technika.",
+          "Žáci jsou úspěšnější v profilové (odborné) části maturity.",
+          "Škola otevřela nepovinný seminář z českého jazyka pro zlepšení výsledků."
+        ],
+        "evidence": "Žáci jsou převážně úspěšnější v profilové části... Problematické jsou výsledky společné části maturitní zkoušky z českého jazyka."
+      },
+      "absence": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Častým důvodem výchovných komisí je zvýšená absence.",
+          "Škola důsledně plní primární preventivní program.",
+          "Daří se snižovat počet záškoláctví."
+        ],
+        "evidence": "Důsledným plněním nastaveného primárního programu se však škole daří snižovat počet tohoto negativního projevu chování."
+      },
+      "support_services": [
+        "Fungující školní poradenské pracoviště s podporou vedení.",
+        "Individuální konzultace a doučování pro žáky s rizikem neúspěchu.",
+        "Podpora žáků se SVP prostřednictvím asistentů pedagoga."
+      ],
+      "safety_climate": [
+        "Příznivé klima a bezpečné prostředí pro vzdělávání.",
+        "Důraz na prevenci rizikového chování a duševní pohodu žáků.",
+        "Adaptační aktivity pro žáky prvních ročníků."
+      ],
+      "partnerships_practice": [
+        "Aktivní zapojení do projektů (Erasmus+, ESF) a spolupráce s VŠ.",
+        "Externí praxe u partnerů z praxe a zahraniční stáže.",
+        "Spolupráce se zaměstnavateli při hledání uplatnění absolventů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje dostatek konkrétních příkladů i citací.",
+      "uncertainty_notes": [
+        "Chybí přesná číselná data o procentuální úspěšnosti u maturity.",
+        "Neuveden konkrétní počet žáků v jednotlivých oborech.",
+        "Chybí detailnější statistiky o absence (např. průměrná absence)."
+      ]
+    }
+  }
+}

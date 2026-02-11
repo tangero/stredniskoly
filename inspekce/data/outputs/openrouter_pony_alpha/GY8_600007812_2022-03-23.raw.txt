@@ -1,0 +1,17 @@
+{
+  "report_id": "GY8_600007812_2022-03-23",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté)",
+    "inspection_period": "23. - 25. 3. 2022",
+    "school_change_summary": "Oproti předchozí inspekci se zlepšily materiální podmínky a nedostatky byly odstraněny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky",
+        "detail": "Žáci dosahují vynikajících výsledků, téměř polovina prospívá s vyznamenáním a všichni maturují.",
+        "evidence": "„Žáci stabilně dosahují dobrých výsledků... průměrný prospěch 1,6 a téměř polovina z nich prospěla s vyznamenáním.“"
+      },
+      {
+        "tag": "Vybavení",
+        "detail

@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600012417_2025-03-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:41:05.497367+00:00",
+  "run_finished_utc": "2026-02-09T13:41:34.672843+00:00",
+  "raw_file": "SOS_600012417_2025-03-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600012417_2025-03-18",
+    "school_profile": {
+      "school_type": "Střední škola informatiky a ekonomie (soukromá, s.r.o.)",
+      "inspection_period": "18. března až 11. dubna 2025",
+      "school_change_summary": "Od inspekce v roce 2018 se zvýšil počet žáků denní formy vzdělávání i počet žáků celkově. Škola realizuje vzdělávání ve dvou propojených budovách s třemi odbornými učebnami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit (denní forma)",
+          "detail": "V roce 2024 všichni žáci denní formy úspěšně zvládli společnou i profilovou část maturitní zkoušky.",
+          "evidence": "Výsledky patří k nejlepším mezi technickými odbornými školami v ČR."
+        },
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Část odborných učitelů zároveň působí na vysokých školách, škola má dlouhodobou spolupráci se sociálními partnery.",
+          "evidence": "Efektivní sepětí vzdělávání s praxí, žáci absolvují stáže ve firmách a soutěže."
+        },
+        {
+          "tag": "Podpora nadaných žáků",
+          "detail": "Talentový program DELTA TopGun individuálně rozvíjí nadané žáky v programování čtvrtý rok.",
+          "evidence": "Žáci se umisťují na prvních místech v celorepublikových soutěžích (SOČ, Soutěž MŠMT)."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká neúspěšnost v kombinované formě",
+          "detail": "Ve školním roce 2023/2024 více než 40 % žáků kombinované formy neprospělo.",
+          "evidence": "Přibližně 22 % neúspěšnosti lze škola ovlivnit podporou; nejčastěji selhávají matematika a účetnictví."
+        },
+        {
+          "tag": "Slabá zpětná vazba pro učitele",
+          "detail": "Vedení školy poskytuje zpětnou vazbu učitelům spíše neformálně, zejména začínajícím kolegům.",
+          "evidence": "Nižší míra účelnosti poskytování zpětné vazby od vedení k průběhu vzdělávacího procesu."
+        },
+        {
+          "tag": "Pasivní přístup v některých hodinách",
+          "detail": "V části všeobecně vzdělávacích předmětů dominuje učitel jako jediný zdroj informací, žáci jsou pasivnější.",
+          "evidence": "Málo využívané závěry hodin k získání zpětné vazby od žáků a formativnímu zhodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky kombinované formy v samostudiu a jak často dostávají zpětnou vazbu mimo zkoušky?",
+        "Jaké jsou konkrétní důvody vysoké neúspěšnosti (40 %) v kombinované formě a co se plánuje změnit?",
+        "Jak se liší přístup k nadaným žákům v denní formě – jsou jim nabízeny rozšiřující aktivity i mimo programování?"
+      ],
+      "who_school_fits": [
+        "Talentovaní žáci se zájmem o IT a programování, kteří chtějí kvalitní přípravu na vysokou školu",
+        "Žáci s vyšším učebním potenciálem, kteří si chtějí vybrat zaměření (programování nebo grafika) podle svého zájmu",
+        "Pracující dospělí, kteří chtějí získat maturitu v ekonomice a podnikání (kombinovaná forma)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími předpoklady v matematice – inspekce doporučuje zlepšit diferenciaci a procvičování",
+        "Studenti kombinované formy bez silné vůle k samostudiu – vysoká neúspěšnost (40 %) signalizuje náročnost",
+        "Žáci, kteří potřebují intenzivní individuální podporu – vedení poskytuje zpětnou vazbu spíše neformálně"
+      ],
+      "plain_czech_summary": "DELTA je kvalitní IT škola s výbornými výsledky v denní formě (100% úspěšnost maturit). Silné stránky: propojení s praxí, podpora talentů, příjemné prostředí. Slabiny: vysoká neúspěšnost v kombinované formě (40 %), málo zpětné vazby pro učitele, pasivní přístup v některých hodinách. Vhodná pro nadané IT nadšence, méně pro slabší studenty. Kombinovaná forma je náročná a vyžaduje vysokou samostatnost."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vzestupný trend v denní formě, slabší výsledky v kombinované formě",
+        "key_numbers": [
+          "Denní forma 2024: 100% úspěšnost (všichni zvládli společnou i profilovou část)",
+          "Kombinovaná forma 2024: 6 z 38 žáků nesložilo zkoušku, hrubá neúspěšnost ~33 %",
+          "Denní forma 2023/24: třetina žáků s vyznamenáním, 45 % prvňáků s vyznamenáním"
+        ],
+        "evidence": "Výsledky denní formy patří k nejlepším mezi technickými odbornými školami v ČR. Kombinovaná forma srovnatelná s průměrem ČR pro obory SHP."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Informace o absenci nejsou v inspekční zprávě uvedeny"
+        ],
+        "evidence": "Zpráva se zaměřuje na výsledky a kvalitu výuky, ne na absence."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence zajišťují poradenské služby",
+        "Psycholožka dochází do školy pravidelně",
+        "Školní poradenské pracoviště operativně řeší rizikové případy chování a studijní problémy",
+        "Preventivní program mapuje situaci ve škole a organizuje adaptační kurzy pro první ročníky",
+        "Talentový program DELTA TopGun individuálně rozvíjí nadané žáky v programování"
+      ],
+      "safety_climate": [
+        "Příjemné pracovní klima s respektujícím a korektním přístupem učitelů",
+        "Otevřená komunikace žáků i učitelů, příjemné prostředí a vstřícný přístup",
+        "Školnímu poradenskému pracovišti se daří operativně řešit rizikové případy; škola jich nemá mnoho",
+        "Monitorování klimatu školy probíhá průběžně vzhledem k velikosti a nastavení komunikace"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se sociálními partnery (Unicorn, Microsoft, IBM, eBRÁNA, FOXCONN)",
+        "Nově zapojeni Kempelenův institut inteligentních technologií a společnost Wezeo v Bratislavě (25 žáků na měsíčních stážích)",
+        "Fakulty vysokých škol zaměřených na IT oponují maturitní projekty a zapojují se do vedení projektů",
+        "Žáci vedou čtyři kroužky základů programování pro základní školy a korespondenční seminář Pardubický hacker",
+        "Akreditace organizace pro program Erasmus+ pro vzdělávací mobilitu mládeže"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Některé pasáže jsou však technicky náročnější (např. popis kombinované formy), ale pro rodiče jsou klíčové informace jasně odděleny.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, zda je problém nebo se nesleduje",
+        "Konkrétní počty žáků se speciálními potřebami (23) nejsou dále analyzovány z hlediska jejich úspěšnosti",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými učiteli v denní formě (inspekce zmiňuje rozdíly)"
+      ]
+    }
+  }
+}

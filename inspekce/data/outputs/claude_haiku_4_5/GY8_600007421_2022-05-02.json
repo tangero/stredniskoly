@@ -1,0 +1,118 @@
+{
+  "report_id": "GY8_600007421_2022-05-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:03:43.388022+00:00",
+  "run_finished_utc": "2026-02-09T17:04:08.525470+00:00",
+  "raw_file": "GY8_600007421_2022-05-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007421_2022-05-02",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium",
+      "inspection_period": "2. května až 6. května 2022",
+      "school_change_summary": "Naplněnost školy vzrostla na 100 %. Nová ředitelka (v pozici od roku 2016) systematicky rozvíjí školu. Všechny nedostatky z předchozí inspekce byly odstraněny."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní pedagogický sbor",
+          "detail": "Stabilní, odborně kvalifikovaný tým učitelů vytváří příznivou vzdělávací atmosféru.",
+          "evidence": "Dlouhodobě stabilní pedagogický sbor, aktivní zapojení do projektů Šablony a Erasmus+."
+        },
+        {
+          "tag": "Efektivní vyučovací metody",
+          "detail": "Učitelé systematicky používají kooperativní práci, projektové vyučování a digitální techniku.",
+          "evidence": "Časté využití efektivních metod podporuje aktivní zapojení žáků do výuky."
+        },
+        {
+          "tag": "Výrazné zlepšení výsledků",
+          "detail": "Podíl žáků s vyznamenáním vzrostl z 40 % na více než 60 %, průměrný prospěch 1,4.",
+          "evidence": "V posledních třech školních rocích se výsledky postupně zlepšovaly."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Absence žáků po návratu do školy",
+          "detail": "Po obnovení prezenční výuky v roce 2021/2022 se absence zvýšila, zejména v osmiletém oboru.",
+          "evidence": "Nárůst absence je zřejmý zejména v osmiletém oboru po návratu k prezenční výuce."
+        },
+        {
+          "tag": "Slabší závěry hodin",
+          "detail": "Učitelé věnují málo pozornosti shrnutí učiva a vyhodnocení splnění cílů na konci hodin.",
+          "evidence": "V nízké míře věnována pozornost didaktickému závěru vyučovacích hodin."
+        },
+        {
+          "tag": "Rozdíl mezi osmiletým a čtyřletým oborem",
+          "detail": "Žáci osmiletého gymnázia jsou dlouhodobě úspěšnější než žáci čtyřletého oboru.",
+          "evidence": "Z mezioborového porovnání je zřejmé, že dlouhodobě jsou ve studiu úspěšnější žáci osmiletého gymnázia."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší zvýšenou absenci žáků po návratu k prezenční výuce?",
+        "Jaké konkrétní semináře a volitelné předměty nabízíte pro rozvoj individuálních zájmů?",
+        "Jak probíhá podpora žáků se speciálními vzdělávacími potřebami v běžných třídách?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními předpoklady, kteří chtějí kvalitní přípravu na vysokou školu",
+        "Děti zajímající se o projektové vyučování a mezinárodní spolupráci (Erasmus+)",
+        "Žáci, kterým vyhovuje systematický rozvoj matematické gramotnosti a kritického myšlení"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k vyšší absenci – škola řeší absence individuálně, ale nárůst je patrný",
+        "Uchazeči o čtyřleté gymnázium – tento obor má horší výsledky než osmiletý",
+        "Žáci potřebující intenzivnější individuální podporu – škola nabízí doučování, ale kapacita není specifikována"
+      ],
+      "plain_czech_summary": "Gymnázium v Mnichově Hradišti je dobře fungující střední škola s kvalitním pedagogickým sborem a moderními vyučovacími metodami. Výsledky žáků se výrazně zlepšily – více než 60 % absolventů prospívá s vyznamenáním. Škola aktivně využívá projektové vyučování, mezinárodní spolupráci a digitální techniku. Hlavní výzvou je zvýšená absence žáků po návratu k prezenční výuce a potřeba lepšího zakončování vyučovacích hodin. Osmiletý obor dosahuje lepších výsledků než čtyřletý."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "2018/2019: hrubá neúspěšnost výrazně vyšší než průměr republiky",
+          "2019/2020 a 2020/2021: 100 % úspěšnost všech žáků",
+          "Nejslabší výsledky v češtině a literatuře u čtyřletého oboru"
+        ],
+        "evidence": "Výsledky žáků při maturitní zkoušce se v období distančního vzdělávání podařilo výrazně zlepšit."
+      },
+      "absence": {
+        "trend": "Nejprve pokles, pak nárůst",
+        "key_numbers": [
+          "2019/2020: pokles o třetinu oproti 2018/2019",
+          "2020/2021: pokles o polovinu oproti 2018/2019",
+          "2021/2022: zvýšení absence po návratu k prezenční výuce"
+        ],
+        "evidence": "Po obnovení prezenční výuky ve školním roce 2021/2022 se absence zvýšila, zejména v osmiletém oboru."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s vylepšenými prostorovými podmínkami",
+        "Individuální online a prezenční konzultace, maturitní semináře",
+        "Doučování a online výukové materiály prostřednictvím platformy",
+        "Karierní poradenství pro volbu seminářů",
+        "Adaptační kurzy pro žáky prvních ročníků"
+      ],
+      "safety_climate": [
+        "Bezpečnosti věnována patřičná pozornost stanovením pravidel a postupů",
+        "Žáci jsou prokazatelně poučováni o bezpečnosti",
+        "Míra úrazovosti byla proměnlivá, škola aktivně přijímá opatření ke snížení",
+        "Nízký počet projevů rizikového chování, řešeno pohovorem se žákem či rodiči"
+      ],
+      "partnerships_practice": [
+        "Mezinárodní projekt Erasmus+ s výměnou zkušeností učitelů",
+        "Spolupráce se školami z různých evropských zemí",
+        "Partnerství se spolkem rodičů",
+        "Účast v komunitních akcích",
+        "Ekologické workshopy ve spolupráci s regionálními organizacemi"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní čísla a příklady. Slabší stránky jsou jasně pojmenovány, ale mohly by být konkrétnější v doporučeních.",
+      "uncertainty_notes": [
+        "Kapacita doučování není specifikována – není jasné, kolik žáků jej může využívat",
+        "Konkrétní počet žáků se speciálními potřebami (16) je uveden, ale detaily jejich podpory chybí",
+        "Nárůst absence v osmiletém oboru – nejsou uvedeny konkrétní příčiny ani plán řešení"
+      ]
+    }
+  }
+}

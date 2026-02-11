@@ -1,10 +1,116 @@
 {
   "report_id": "GY4_600013481_2025-11-20",
   "model_id": "claude_sonnet_4_5",
-  "run_started_utc": "2026-02-09T09:04:58.998529+00:00",
-  "run_finished_utc": "2026-02-09T09:06:11.142846+00:00",
+  "run_started_utc": "2026-02-09T11:19:35.340045+00:00",
+  "run_finished_utc": "2026-02-09T11:20:46.537536+00:00",
   "raw_file": "GY4_600013481_2025-11-20.raw.txt",
   "call_error": null,
-  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
-  "parsed_output": null
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600013481_2025-11-20",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium s rozšířenou profilací na matematiku, 723 žáků ve 24 třídách",
+      "inspection_period": "20. – 25. listopadu 2025",
+      "school_change_summary": "Nový ředitel od srpna 2024 přinesl koncepci zaměřenou na proměnu výuky a slovní hodnocení. Zlepšily se materiální podmínky (nové počítačové učebny, robotické pomůcky). Stále však chybí systematická práce s talentovanými žáky a aktivizující metody výuky nejsou dostatečně využívány."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Mezinárodní zkušenosti",
+          "detail": "Výjimečný rozsah zahraničních výměn pro žáky i učitele rozvíjí jazykové a sociální dovednosti.",
+          "evidence": "Dlouhodobě efektivní využívání projektu Erasmus+ umožňuje žákům i pedagogům absolvovat jazykové vzdělávání a profesní stínování na partnerských školách v zahraničí."
+        },
+        {
+          "tag": "Výborné studijní výsledky",
+          "detail": "Téměř nulová neúspěšnost u maturity, vysoká úspěšnost přijetí na VŠ.",
+          "evidence": "V posledních třech letech vykazuje škola téměř nulovou hrubou neúspěšnost žáků u maturitní zkoušky. Škole se daří systematicky podporovat studijní úspěšnost žáků."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci získávají medaile na mezinárodních olympiádách a vítězí v celostátních kolech.",
+          "evidence": "Bronzová medaile na Mezinárodní matematické olympiádě, tři medaile na Středoevropské matematické olympiádě, bronzová medaile na Mezinárodní lingvistické olympiádě, stříbrná medaile na Mezinárodní astronomické olympiádě."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Tradiční výuka",
+          "detail": "Převládá frontální výuka (72 %), málo skupinové práce a aktivizace žáků.",
+          "evidence": "Převládala tradiční frontální výuka doplněná řízeným rozhovorem, která byla přítomna v 72 % hodin, zatímco skupinová výuka se uplatnila jen v 15 % hodin."
+        },
+        {
+          "tag": "Tlak na výkon",
+          "detail": "Žáci pociťují silný tlak na výkon, školní psycholog pracuje jen jeden den týdně.",
+          "evidence": "Na základě dotazníkového šetření a uskutečněných rozhovorů je patrné, že na žáky doléhá silný tlak na výkon. Školní psycholožka pracuje na škole pouze jeden den v týdnu."
+        },
+        {
+          "tag": "Nedostatečná podpora nadání",
+          "detail": "Chybí systematická práce s talentovanými žáky, úkoly s různou náročností.",
+          "evidence": "Ve sledované výuce nebyly žákům nabízeny aktivity podporující jejich individuální rozvoj a nadání, neboť učitelé neměli připraveny úkoly s odlišnou mírou náročnosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola konkrétně pomáhá žákům zvládat tlak na výkon a stres? Plánujete navýšit úvazek školního psychologa?",
+        "Jakým způsobem škola diferencuje výuku pro nadané žáky? Nabízíte individuální studijní plány nebo pokročilé kurzy?",
+        "Jak probíhá hodnocení žáků – používáte známky, body, slovní hodnocení? Jsou kritéria jednotná napříč předměty?"
+      ],
+      "who_school_fits": [
+        "Studijně výkonné děti s ambicí na prestižní VŠ, které zvládají vysoké nároky",
+        "Žáky se zájmem o matematiku, přírodní vědy a jazyky s touhou po mezinárodních zkušenostech",
+        "Samostatné děti motivované soutěžemi a olympiádami, které hledají akademicky silné prostředí"
+      ],
+      "who_should_be_cautious": [
+        "Děti citlivé na stres a tlak na výkon, které potřebují intenzivnější psychologickou podporu",
+        "Žáci vyžadující individuální přístup a pestré vyučovací metody místo frontální výuky",
+        "Děti s potřebou výraznější diferenciace a systematické podpory nadání ve výuce"
+      ],
+      "plain_czech_summary": "Gymnázium Kapitána Jaroše je akademicky silná škola s výbornými studijními výsledky – téměř všichni maturují napoprvé a úspěšně se hlásí na VŠ. Žáci sbírají medaile na mezinárodních olympiádách a využívají výjimečné možnosti zahraničních výměn v rámci Erasmu. Nový ředitel přináší moderní vizi, ale ve výuce zatím převládá tradiční frontální styl (72 % hodin) s malým prostorem pro skupinovou práci a individuální rozvoj nadaných žáků. Žáci pociťují silný tlak na výkon, přičemž školní psycholog je k dispozici jen jeden den týdně. Hodnocení není jednotné – každý učitel má vlastní kritéria. Škola je ideální pro studijně výkonné děti s ambicemi, ale citlivější žáci mohou potřebovat větší podporu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborný, stabilní",
+        "key_numbers": [
+          "Téměř nulová hrubá neúspěšnost u maturitní zkoušky v posledních třech letech",
+          "Výsledky ve společné části nad celorepublikovým průměrem",
+          "Vysoká úspěšnost absolventů při přechodu na vysoké školy"
+        ],
+        "evidence": "V posledních třech letech vykazuje škola téměř nulovou hrubou neúspěšnost žáků u maturitní zkoušky. Ve srovnání s celorepublikovým průměrem dosahují žáci školy lepších výsledků."
+      },
+      "absence": {
+        "trend": "Nízká, kontrolovaná",
+        "key_numbers": [
+          "Průměrná omluvená absence 120 hodin na žáka za poslední tři roky",
+          "Neomluvená absence řešena zřídka",
+          "Školní řád stanovuje minimální docházku do jednotlivých předmětů"
+        ],
+        "evidence": "Průměrná omluvená absence za poslední tři roky je 120 hodin na žáka, neomluvenou absenci řeší škola zřídka. Ke snižování absence přispívá pravidlo minimální docházky."
+      },
+      "support_services": [
+        "Dva výchovní poradci a dva metodici prevence (pro čtyřleté a osmileté gymnázium)",
+        "Školní psycholožka pouze jeden den v týdnu, věnuje se hlavně individuálním případům",
+        "Čtyři asistenti pedagoga na osmiletém gymnáziu, jejich práce se teprve rozvíjí",
+        "Podpora žáků se speciálními vzdělávacími potřebami (7,2 % žáků) není optimálně nastavena"
+      ],
+      "safety_climate": [
+        "Převážná většina hodin probíhá v atmosféře vzájemného respektu",
+        "V loňském roce řešeny jednotky případů kyberšikany, sebepoškozování a užívání návykových látek",
+        "Žáci pociťují silný tlak na výkon, kterému se poradenské pracoviště věnuje okrajově",
+        "Preventivní programy zaměřené na duševní zdraví, adaptační kurzy pro první ročníky"
+      ],
+      "partnerships_practice": [
+        "Výjimečný rozsah projektu Erasmus+ – skupinové mobility do Německa, Finska, Španělska, Belgie",
+        "Program Mezinárodní cena vévody z Edinburghu (DofE) pro osobnostní rozvoj",
+        "Aktivní školní parlament se dvěma sekcemi, pravidelná komunikace s ředitelem",
+        "Rozšiřující aktivity: hudební festival, ples, vánoční koncert, charitativní sbírky, exkurze"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný a praktický pro rodiče. Mírně sníženo za občasné delší souvětí a nutnost zkrátit některé formulace pro maximální jasnost.",
+      "uncertainty_notes": [
+        "Není zcela jasné, jak konkrétně probíhá přechod na slovní hodnocení zmíněný v koncepci – zda je již implementováno nebo jen plánováno",
+        "Chybí informace o konkrétní kapacitě školy a přijímacím řízení – kolik uchazečů se hlásí na jedno místo",
+        "Není specifikováno, jaké konkrétní kroky škola podniká k řešení tlaku na výkon mimo individuální práci psycholožky"
+      ]
+    }
+  }
 }

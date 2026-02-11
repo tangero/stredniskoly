@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_600006697_2021-12-08",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:10:03.931441+00:00",
+  "run_finished_utc": "2026-02-10T08:11:06.175752+00:00",
+  "raw_file": "LYC_600006697_2021-12-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600006697_2021-12-08",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola s domovem mládeže",
+      "inspection_period": "8., 9., 13. a 14. prosince 2021",
+      "school_change_summary": "Počet žáků od roku 2018 stabilizoval, ale od poslední inspekce klesl o třetinu; kapacita je využita z 55 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní obory",
+          "detail": "Žáci stavebnictví a nábytkářské výroby dosahují nadprůměrných výsledků a škola zde poskytuje kvalitní přípravu.",
+          "evidence": "Žáci oborů Technické lyceum, Nábytkářská a dřebařská výroba a Stavebnictví... v rámci ČR... jsou jejich výsledky v českém i anglickém jazyce nadprůměrné."
+        },
+        {
+          "tag": "Praktická výuka",
+          "detail": "Škola úzce spolupracuje s firmami, zajišťuje exkurze a odborné praxe, což žáky připravuje na trh práce.",
+          "evidence": "Realizace odborné praxe maturitních oborů také u sociálních partnerů. Časté odborné přednášky a exkurze u firem rozvíjejí odborné kompetence žáků."
+        },
+        {
+          "tag": "Prostředí a vztahy",
+          "detail": "Ve výuce panuje pozitivní atmosféra, učitelé projevují o žáky zájem a dbají na bezpečnost.",
+          "evidence": "V hospitovaných hodinách byla zaznamenána pozitivní atmosféra a vzájemný respekt učitelů a žáků... všichni učitelé projevovali o žáky zájem."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturita ve strojírenství",
+          "detail": "Žáci oborů Strojírenství a Mechanik seřizovač mají dlouhodobě podprůměrné výsledky u maturitní zkoušky.",
+          "evidence": "Úspěšnost žáků oborů Strojírenství a Mechanik seřizovač ve společné části maturitní zkoušky je dlouhodobě v českém jazyce... pod průměrem ČR."
+        },
+        {
+          "tag": "Pasivní výuka",
+          "detail": "V mnoha hodinách převažuje frontální výuka, žáci jsou pasivní a nejsou vedeni ke kritickému myšlení.",
+          "evidence": "V polovině hodin vedených frontálně však byla míra zapojení žáků nízká... učitelé až na výjimky žáky dostatečně nevedli k práci s textem, ke kritickému myšlení."
+        },
+        {
+          "tag": "Nedostatečná podpora",
+          "detail": "Více než polovina čtvrťáků je ohrožena neúspěchem a škola nemá nastavený systém, jak jim efektivně pomoci.",
+          "evidence": "V průměru více než polovina žáků 4. ročníků je ohrožena školní neúspěšností... Školní poradenské pracoviště se touto oblastí systematicky nezabývá."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají v prvních ročnících problémy s matematikou nebo jazycy?",
+        "V jakých předmětech a jak často využíváte moderní aktivizační metody, aby žáci nejen pasivně poslouchali?",
+        "Jaké firmy z regionu zajišťují odbornou praxi pro jednotlivé obory?"
+      ],
+      "who_school_fits": [
+        "Uchazeči o obory Stavebnictví, Nábytkářská výroba a Technické lyceum, kde je výuka na vysoké úrovni.",
+        "Žáci, kteří preferují tradiční formy výuky a chtějí se dobře připravit na technické povolání nebo VŠ.",
+        "Studenti, kteří oceňují zázemí domova mládeže a pestrou nabídku volnočasových aktivit."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o obor Strojírenství nebo Mechanik seřizovač, kde je vyšší riziko neúspěchu u maturity.",
+        "Žáci, kteří vyžadují silný individuální přístup a moderní interaktivní metody výuky.",
+        "Studenti s většími obtížemi v českém jazyce nebo matematice, kde chybí systematická podpora."
+      ],
+      "plain_czech_summary": "Inspekce potvrdila, že škola nabízí vynikající podmínky pro obory Stavebnictví a Nábytkářská výroba, kde jsou žáci úspěšní a dobře připraveni na praxi. Naopak u oborů Strojírenství a Mechanik seřizovač trvá dlouhodobý problém s podprůměrnými výsledky u maturity. Celkově ve škole převažuje tradiční frontální výuka, která ne vždy dostatečně motivuje žáky k aktivní práci. Velkým nedostatkem je absence systémové podpory pro žáky ohrožené neúspěchem, kterých je ve vyšších ročnících přes polovina. Pro rodiče je klíčové vybrat si pro dítě obor, kde škola dosahuje stabilních výsledků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Rozdílný podle oboru",
+        "key_numbers": [
+          "98 % přihlášených koná maturitu",
+          "Více než 80 % žáků maturitních oborů dokončí studium",
+          "Výsledky strojírenství podprůměrné"
+        ],
+        "evidence": "Úspěšnost žáků oborů Strojírenství a Mechanik seřizovač... je dlouhodobě v českém jazyce... pod průměrem ČR."
+      },
+      "absence": {
+        "trend": "Nízká a klesající",
+        "key_numbers": [
+          "116 hodin na žáka (2018/19)",
+          "Neomluvená absence celkově nízká",
+          "Pokles vlivem distanční výuky"
+        ],
+        "evidence": "Absence se ve školním roce 2018/2019 pohybovala kolem 116 hodin na žáka... Podíl žáků s neomluvenou absencí i její rozsah byl celkově nízký."
+      },
+      "support_services": [
+        "Domov mládeže s volnočasovými programy",
+        "Kariérové poradenství",
+        "Konzultace a nově i doučování"
+      ],
+      "safety_climate": [
+        "Pozitivní atmosféra a respekt",
+        "Pokles počtu úrazů",
+        "Nutné obnovit revize elektrospotřebičů"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s firmami regionu",
+        "Odborné exkurze a přednášky",
+        "Praxe u sociálních partnerů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje úspěšné a problematické obory a identifikuje klíčová rizika pro žáky.",
+      "uncertainty_notes": [
+        "Neuvedena konkrétní čísla úspěšnosti u maturity v procentech, pouze srovnání s průměrem ČR.",
+        "Chybí bližší specifikace 'neúplného zajišťování poradenských služeb'."
+      ]
+    }
+  }
+}

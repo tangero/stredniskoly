@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY6_600011992_2025-09-30",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a šestileté vzdělání s maturitní zkouškou)",
+    "inspection_period": "30. září až 2. října 2025",
+    "school_change_summary": "Škola prošla kompletní rekonstrukcí s novou přístavbou, odbornými učebnami a bezbariérovou dostupností. Rozšířilo se školní poradenské pracoviště, vedení bylo posíleno druhým zástupcem ředitele. Nabídka volitelných předmětů se rozšířila a škola zavádí třídnické hodiny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Žáci dlouhodobě dosahují výborných výsledků u maturitních zkoušek i v celorepublikovém srovnění a jsou úspěšní v přijetí na vysoké školy.",
+        "evidence": "Žáci dosahují výborných výsledků u maturitních zkoušek, jsou úspěšní v přijímacím řízení na vysoké školy různorodého zaměření."
+      },
+      {
+        "tag": "Bohatá nabídka aktivit",
+        "detail": "Škola prostřednictvím spolupráce s vysokými školami, zahraničními partnery a dalšími institucemi nabízí žákům řadu příležitostí k prohlubování vědomostí a dovedností.",
+        "evidence": "Efektivně rozšiřuje a doplňuje svou vzdělávací nabídku prostřednictvím účelné spolupráce s řadou různorodých externích partnerů z regionu, republiky i ze zahraničí."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola má nové odborné učebny, digitální pomůcky (3D tiskárny, virtuální realitu, digitální mikroskopy) a bezbariérový přístup.",
+        "evidence": "Nová přístavba s odbornými učebnami, bezbariérovost, pořízení řady digitálních pomůcek, revitalizace školní zahrady."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní přístup k výuce",
+        "detail": "Učitelé často používají frontální výuku s dominantním postavením učitele, žáci mají málo příležitostí pro samostatnou práci a kritické myšlení.",
+        "evidence": "Převažovala frontální forma výuky, dominantní postavení učitele jako předkladatele hotových poznatků, značná míra pasivity žáků."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Všichni žáci pracují podle stejného zadání bez ohledu na jejich různé schopnosti a zájmy, chybí individualizace.",
+        "evidence": "Všichni žáci pracovali dle stejného zadání, individualizace na základě rozdílné vzdělávací úrovně a zájmu žáků se v hospitované výuce neobjevila."
+      },
+      {
+        "tag": "Slabá kontrola kvality",
+        "detail": "Vedení školy nemá dostatečný systém kontroly plnění úkolů a dodržování pravidel, což se projevilo v chybách v dokumentaci.",
+        "evidence": "Kontrolní mechanismy vedení školy nejsou dostatečné a funkční, zjištěna pochybení v povinně vedené dokumentaci."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje samostatné myšlení a kritické uvažování žáků v jednotlivých předmětech?",
+      "Jaké metody používají učitelé k diferenciaci výuky pro žáky s různými schopnostmi a zájmy?",
+      "Jak se škola zaměřuje na rozvoj dovedností a klíčových kompetencí, nejen na vědomosti?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o vysokoškolské vzdělání a studium na prestižních univerzitách",
+      "Studenti zainteresovaní v přírodovědných oborech a jazycích (škola má silné partnerství s fakultami a jazykovými institucemi)",
+      "Talentovaní žáci v matematice, fyzice a sportu, kterým škola nabízí speciální podporu a soutěže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a praktické vyučování – výuka je zaměřena spíše na vědomosti než na dovednosti",
+      "Studenti se speciálními vzdělávacími potřebami – diferenciace a individualizace nejsou dostatečně implementovány",
+      "Žáci, kteří se lépe učí samostatnou prací a experimentováním – frontální výuka je stále dominantní"
+    ],
+    "plain_czech_summary": "Lepařovo gymnázium je prestižní škola s výborným renomé v přípravě na vysoké školy. Má moderní vybavení, bohatou nabídku aktivit a silné partnerství s univerzitami. Výsledky maturit jsou dlouhodobě výborné. Hlavní slabinou je přístup k výuce – učitelé se zaměřují především na vědomosti, málo využívají aktivní metody a samostatnou práci žáků. Chybí také individualizace pro žáky s různými schopnostmi. Vedení školy potřebuje zlepšit kontrolu kvality a systematičnost v řízení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborné výsledky",
+      "key_numbers": [
+        "Výborné výsledky u maturitních zkoušek v celorepublikovém srovnění",
+        "Vysoká úspěšnost v přijímacím řízení na vysoké školy různorodého zaměření",
+        "Žáci dosahují významných úspěchů v předmětových a sportovních soutěžích na krajské a celostátní úrovni"
+      ],
+      "evidence": "Žáci školy dosahují dlouhodobě výborných výsledků jak u maturitních zkoušek, tak v přijímacím řízení na vysoké školy různorodého zaměření včetně škol s vysokou poptávkou."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Sjednocujícím kritériem je získání minimálního počtu známek s ohledem na týdenní hodinovou dotaci a stanovená hranice tolerované absence"
+      ],
+      "evidence": "Klasifikační řád obsahuje kritérium minimálního počtu známek s ohledem na tolerovanou absenci žáka za klasifikační období."
+    },
+    "support_services": [
+      "Školní psycholog a speciální pedagog (nově rozšířeno)",
+      "Sociální pedagog zaměřený na školní neúspěšnost",
+      "Školní metodik prevence",
+      "Pravidelné setkání s třídními učiteli pro metodickou podporu",
+      "Mapování kolektivu v prvních ročnících s následujícími cílenými programy"
+    ],
+    "safety_climate": [
+      "Partnerský přístup pedagogů k žákům a vzájemný respekt",
+      "Příjemná atmosféra ve třídách s přirozenou kázní žáků",
+      "Efektivní eliminace závažných rizikových jevů v chování žáků",
+      "Nové bezpečnostní prvky: čipy pro vstup do budovy a elektronické zajištění vchodů",
+      "Pozitivní školní klima podporované relaxačními a studijními kouty"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Přírodovědecké fakulty a Farmaceutické fakulty Univerzity Karlovy",
+      "Partnerská škola Univerzity Hradec Králové",
+      "Cambridge zkouškové centrum",
+      "Centrum pro talentovanou mládež",
+      "Výměnné programy se zahraničními školami",
+      "Spolupráce s místními firmami a spolkem rodičů a přátel školy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání, kde se kombinují pozitivní a negativní zjištění.",
+    "uncertainty_notes": [
+      "Absence není v textu konkrétně kvantifikována – nejsou uvedena čísla nebo trendy",
+      "Úspěšnost žáků v dalším studiu se nezjišťuje – chybí data o tom, jak si absolventi vedou na vysokých školách",
+      "Konkrétní počty žáků se speciálními vzdělávacími potřebami nejsou uvedeny"
+    ]
+  }
+}
+```

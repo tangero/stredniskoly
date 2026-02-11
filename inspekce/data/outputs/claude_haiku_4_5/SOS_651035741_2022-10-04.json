@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_651035741_2022-10-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:00:21.515228+00:00",
+  "run_finished_utc": "2026-02-09T17:00:47.510692+00:00",
+  "raw_file": "SOS_651035741_2022-10-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_651035741_2022-10-04",
+    "school_profile": {
+      "school_type": "Střední škola stavební s maturitní zkouškou, obor Stavebnictví (36-47-M/01) s dvěma zaměřeními: Architektura a pozemní stavitelství, Grafika a interiérový design",
+      "inspection_period": "4. až 6. října 2022",
+      "school_change_summary": "Od roku 2015 škola sídlí v pronajatých prostorách Na Vlčinci 16/3 v Olomouci. K inspekci se vzdělávalo 102 žáků ve čtyřech třídách, včetně 11 žáků se speciálními vzdělávacími potřebami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborná spolupráce s praxí",
+          "detail": "Škola má nadstandardní partnerství se sociálními partnery, kteří poskytují praktickou výuku a rozšiřují odborné dovednosti žáků.",
+          "evidence": "Vedení školy se aktivně podílí na prohlubování spolupráce s mnoha sociálními partnery, zvláště pak partnery pro realizaci odborné praxe."
+        },
+        {
+          "tag": "Příznivé školní klima",
+          "detail": "Vedení a pedagogové vytvářejí pozitivní atmosféru s přátelskou komunikací, což zvyšuje zájem žáků o vzdělávání.",
+          "evidence": "Vedení školy společně se všemi pedagogickými pracovníky vytváří příznivou atmosféru, pozitivně a přátelsky komunikuje s žáky."
+        },
+        {
+          "tag": "Nízká absence a kázeň",
+          "detail": "Škola se nepotýká s vysokou absencí a kázeňské problémy jsou minimální, převládají pochvaly.",
+          "evidence": "Škola se nepotýká s vysokou absencí žáků ve výuce. Počet kázeňských opatření není vysoký, převládají udělené pochvaly."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená variabilita výuky",
+          "detail": "Převažuje frontální forma výuky s pasivitou žáků, málo se používají skupinové práce, diskuze a aktivizující metody.",
+          "evidence": "Převažovala frontální forma výuky s dominantním postavením učitele. Jen v malé míře byly využity skupinové a kooperativní činnosti."
+        },
+        {
+          "tag": "Slabá podpora žáků se speciálními potřebami",
+          "detail": "Informace o žácích se speciálními potřebami se nedostatečně předávají učitelům a jejich podpora ve výuce není dostatečně diferencovaná.",
+          "evidence": "Jejich zprostředkování jednotlivým vyučujícím již zcela efektivně nastaveno není. Nepodařilo se doposud škole eliminovat nedostatky spojené s nedostatečnou diferenciací."
+        },
+        {
+          "tag": "Chybějící závěry hodin",
+          "detail": "Mnoho vyučovacích hodin postrádá motivační shrnutí, zhodnocení práce žáků a ověření dosažení cílů.",
+          "evidence": "Dílčím nedostatkem byly rovněž chybějící nebo velmi stručné závěry některých vyučovacích hodin, scházelo systematické ověřování naplnění cílů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami přímo během výuky?",
+        "Jaké jsou konkrétní příklady spolupráce se sociálními partnery a jak se praktická výuka propojuje s teoretickou výukou?",
+        "Jak se škola zaměřuje na rozvoj sociálních kompetencí a sebehodnocení žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří se zajímají o stavebnictví a chtějí praktické dovednosti s podporou zkušených pedagogů",
+        "Studenti, kteří si cení pozitivního školního klimatu a přátelské komunikace s učiteli",
+        "Žáci, kteří potřebují nízkou absenci a stabilní prostředí bez vysokých kázeňských problémů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se speciálními vzdělávacími potřebami, protože jejich podpora ve výuce není dostatečně diferencovaná",
+        "Studenti, kteří se učí lépe aktivní metodou a diskusí, protože převažuje frontální výuka",
+        "Žáci, kteří potřebují časté zpětné vazby a sebehodnocení, protože to není systematicky zařazováno"
+      ],
+      "plain_czech_summary": "Střední škola stavební HORSTAV v Olomouci poskytuje vzdělání v oboru stavebnictví se dvěma zaměřeními. Škola má silné stránky v praktické výuce díky partnerství se sociálními partnery a vytváří příznivé klima. Absence a kázeňské problémy jsou minimální. Slabší je variabilita vyučovacích metod – převažuje frontální výuka s pasivitou žáků. Problém je také v nedostatečné podpoře žáků se speciálními potřebami a chybějících závěrech hodin. Inspekce doporučuje zlepšit didaktické metody a lépe podporovat žáky s odlišnými potřebami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní bez významných odchylek",
+        "key_numbers": [
+          "Ve školním roce 2021/2022 nevykazovaly výsledky vzdělávání v jednotlivých předmětech významné odchylky",
+          "Škola zavedla semináře ze zkušebních předmětů společné části maturitní zkoušky"
+        ],
+        "evidence": "Na dosahované výsledky pozitivně působí nízká absence. Škola vhodně reagovala na předchozí výsledky úpravami v učebním plánu."
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "Škola se nepotýká s vysokou absencí žáků ve výuce"
+        ],
+        "evidence": "Nízká absence pozitivně ovlivňuje dosahované výsledky vzdělávání."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní a školní metodičkou prevence",
+        "Individuální vzdělávací strategie pro žáky se speciálními potřebami",
+        "Doučování a konzultační hodiny pro žáky s rizikem neúspěchu",
+        "Kariérové poradenství zaměřené na volbu povolání a vysokých škol",
+        "Preventivní programy včetně pobytových kurzů v 1.–3. ročníku"
+      ],
+      "safety_climate": [
+        "V aktuálním ani minulém školním roce škola neřešila žádný případ závažné formy rizikového chování",
+        "Účinná preventivní strategie s intervenčními nástroji (individuální pohovory, písemné záznamy postupů)",
+        "Témata primární prevence začleňována do vybraných předmětů a besed",
+        "Kulturní a sportovní akce mají preventivní charakter"
+      ],
+      "partnerships_practice": [
+        "Nadstandardní spolupráce se sociálními partnery pro realizaci odborné praxe",
+        "Souvislá odborná praxe v červnu u smluvních partnerů",
+        "Praktické činnosti v odborných učebnách s dataprojektorem a specializovaným softwarem",
+        "Vedení odborné rozpravy o vykonávané práci a zdůvodnění pracovního postupu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně identifikovány s důkazy. Doporučení jsou konkrétní a praktická. Mírně snižuje srozumitelnost technická terminologie a délka některých vět.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní procenta úspěšnosti u maturit ani podrobné statistiky absence",
+        "Není jasné, kolik procent vyučovacích hodin bylo hodnoceno jako kvalitní versus problematické",
+        "Chybí konkrétní počty žáků se speciálními potřebami a jejich konkrétní diagnózy"
+      ]
+    }
+  }
+}

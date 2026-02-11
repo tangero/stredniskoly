@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600017451_2023-10-31",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté), příspěvková organizace",
+    "inspection_period": "31. 10. 2023 – 3. 11. 2023",
+    "school_change_summary": "Od poslední inspekce (2015/2016) byla zřízena funkce koordinátora nadání, navázána spolupráce s Mensou ČR a realizovány projekty na zlepšení materiálních podmínek. Vybudováno školní hřiště, modernizovány jazykové učebny, fyzika a chemie. Rozšířeny digitální kompetence a informatika."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné studijní výsledky",
+        "detail": "Všichni žáci prospěli, více než polovina s vyznamenáním; 98 % absolventů pokračuje na vysokých školách.",
+        "evidence": "Ve školním roce 2022/2023 stoprocentní úspěšnost u maturit, jeden žák neprospěl."
+      },
+      {
+        "tag": "Práce s nadanými žáky",
+        "detail": "Škola identifikuje nadané žáky, nabízí speciální aktivity a úspěšně je motivuje k soutěžím.",
+        "evidence": "Nadaní žáci reprezentují školu na regionální, celostátní i mezinárodní úrovni; program Twin School s Izraelem."
+      },
+      {
+        "tag": "Kvalitní výuka s aktivním zapojením",
+        "detail": "Učitelé používají různorodé metody, skupinovou práci a praktické příklady.",
+        "evidence": "Hospitace potvrdily pozitivní pracovní atmosféru, účelné využívání IT a badatelsky orientované výuky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné sebehodnocení žáků",
+        "detail": "Žáci se málo učí sami sebe hodnotit a vzájemně si dávat zpětnou vazbu.",
+        "evidence": "Sebehodnocení zařazováno minimálně, chybí předem známá kritéria pro hodnocení."
+      },
+      {
+        "tag": "Zvýšená úrazovost",
+        "detail": "Úrazovost žáků je na zvýšené úrovni, související s rozšířenou tělesnou výchovou.",
+        "evidence": "Vedení provádí analýzu úrazovosti, ale přesto zůstává na zvýšené úrovni."
+      },
+      {
+        "tag": "Chybí diferenciace úloh",
+        "detail": "Škola dostatečně nevyužívá úlohy různého rozsahu a obtížnosti podle schopností žáků.",
+        "evidence": "Inspekce zjistila, že diferencované úkoly nejsou běžně zařazovány do výuky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s nadanými žáky a jaké má pro ně speciální programy?",
+      "Jaké volitelné předměty nabízíte a jak pomáháte žákům s jejich výběrem?",
+      "Jak se škola zaměřuje na prevenci úrazů při tělesné výchově a sportovních aktivitách?"
+    ],
+    "who_school_fits": [
+      "Nadaní žáci, kterým škola nabízí speciální programy, soutěže a spolupráci s univerzitami",
+      "Žáci se zájmem o kvalitní vzdělání s vysokou úspěšností u maturit a přijetí na vysoké školy",
+      "Aktivní žáci, kterým vyhovuje skupinová práce, projekty a mimoškolní aktivity"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se zdravotními problémy nebo obavy z úrazů – úrazovost je na zvýšené úrovni",
+      "Žáci, kteří potřebují více individuálního vedení a zpětné vazby – sebehodnocení není běžné",
+      "Žáci s velmi rozdílnými schopnostmi – diferenciace úloh není dostatečná"
+    ],
+    "plain_czech_summary": "Gymnázium v Ostravě-Hrabůvce je kvalitní škola s výbornými výsledky. Žáci dosahují vysokých studijních výsledků a úspěšně pokračují na vysokých školách. Škola dobře pracuje s nadanými žáky a nabízí pestrý program. Výuka je aktivní a používá moderní metody. Slabší stránkou je, že žáci se málo učí sami sebe hodnotit. Úrazovost je vyšší než běžně. Škola by měla více pracovat s individuálními rozdíly mezi žáky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoká úspěšnost",
+      "key_numbers": [
+        "Školní rok 2020/2021 a 2021/2022: 100% úspěšnost",
+        "Školní rok 2022/2023: 1 neprospěl z celkového počtu",
+        "98% absolventů pokračuje na vysokých školách"
+      ],
+      "evidence": "Zjištěné výsledky jsou analyzovány v předmětových komisích, příčiny neúspěchu jsou rozebírány a přijímána adekvátní opatření."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněna",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se nezabývá absencí žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se zaměřuje na podporu žáků se speciálními vzdělávacími potřebami",
+      "Individuální doučování a konzultace pro žáky se studijními obtížemi",
+      "Kariérové poradenství s individuálními konzultacemi a workshopy",
+      "Anonymní schránka důvěry a individuální rozhovory s pedagogy"
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování a ochrany zdraví",
+      "Vedení provádí analýzu úrazovosti a přijímá opatření",
+      "Úrazovost je na zvýšené úrovni, související s rozšířenou tělesnou výchovou",
+      "Krizový plán školy je vypracován"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se základními školami – nadaní žáci předávají znalosti v angličtině, biologii a fyzice",
+      "Projekt Math Exercise for You – učitelé matematiky vytvářejí elektronický portál",
+      "Twin School Ostrava-Petach Tikva – výměnný pobyt v Izraeli",
+      "Spolupráce s Mensou ČR a univerzitami na přednáškách a seminářích",
+      "Partnerství s organizacemi v oblasti prevence a charitativní činnosti"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní příklady a čísla. Silné a slabé stránky jsou jasně vymezeny. Doporučení jsou praktická a konkrétní.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – nelze posoudit trend absence žáků",
+      "Počet žáků se speciálními vzdělávacími potřebami je nízký (13 ze 588) – není jasné, zda je to reprezentativní",
+      "Úrazovost je popsána jako 'zvýšená', ale nejsou uvedena konkrétní čísla pro srovnání"
+    ]
+  }
+}
+```

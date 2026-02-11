@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600019632_2025-04-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:38:56.980107+00:00",
+  "run_finished_utc": "2026-02-09T13:39:22.375067+00:00",
+  "raw_file": "SOS_600019632_2025-04-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019632_2025-04-07",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a vyšší odborná škola (VOŠ) s domovem mládeže",
+      "inspection_period": "7. až 11. dubna 2025",
+      "school_change_summary": "Od inspekce v 2019 došlo k ustálení oborové struktury, stabilizaci pedagogického sboru a zlepšování materiálních podmínek. Škola se zapojila do pokusného ověřování stupňovitého propojení oboru Praktická sestra s výučním listem Ošetřovatel."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Praktické vyučování probíhá v reálném prostředí nemocnic s odborným dohledem a vytváří reálné představy o profesi.",
+          "evidence": "Žáci pracují pod dohledem učitelů na pracovištích smluvních partnerů v příjemné atmosféře."
+        },
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Efektivní partnerství se zdravotnickými zařízeními a sociálními organizacemi podporuje profesní orientaci.",
+          "evidence": "Škola dlouhodobě rozvíjí účinnou spolupráci se sociálními partnery pro zajištění praktické výuky."
+        },
+        {
+          "tag": "Výsledky VOŠ",
+          "detail": "Studenti vyšší odborné školy dosahují u absolutoria dlouhodobě velmi dobrých výsledků.",
+          "evidence": "Ve školním roce 2023/2024 prospělo s vyznamenáním 85 % studentů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Neúspěšnost u maturity",
+          "detail": "Výrazně vyšší neúspěšnost v maturitní zkoušce, zejména v cizích jazycích a matematice.",
+          "evidence": "V oboru Praktická sestra denní forma: 32,1 % neúspěšnosti (ČR průměr 9,7 %), v Sociální činnosti 4× vyšší než průměr."
+        },
+        {
+          "tag": "Kvalita výuky teoretických předmětů",
+          "detail": "Výuka často převažuje frontální formou bez diferenciace podle potřeb žáků, málo se pracuje s informacemi.",
+          "evidence": "Diferenciace vzdělávacího obsahu nebyla patrná, žáci plnili stejné úkoly se shodnou obtížností."
+        },
+        {
+          "tag": "Dálková forma studia",
+          "detail": "Vysoká neúspěšnost v dálkové formě, zejména v cizích jazycích, přestože žáci byli během studia hodnoceni dobře.",
+          "evidence": "V oboru Praktická sestra dálková forma: cca 60 % úspěšnosti v maturitě, neúspěšnost v cizích jazycích."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola připravuje žáky na maturitní zkoušku z matematiky a cizích jazyků, když jsou výsledky dlouhodobě slabé?",
+        "Jaké jsou konkrétní důvody vysoké neúspěšnosti v dálkové formě studia a jak se to řeší?",
+        "Jak se liší příprava v semináři z matematiky od běžné výuky a proč si ho volí tak málo žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zájmem o zdravotnické nebo sociální obory, kteří se chtějí učit v reálném prostředí nemocnic a sociálních služeb",
+        "Studenti VOŠ oboru Sociální práce, kde škola dosahuje velmi dobrých výsledků a absolventů si najímají zaměstnavatelé",
+        "Žáci, kteří preferují praktickou výuku a spolupráci s odbornými pracovníky z praxe"
+      ],
+      "who_should_be_cautious": [
+        "Žáci slabší v matematice a cizích jazycích – škola má dlouhodobě problémy s přípravou na tyto předměty v maturitě",
+        "Uchazeči o dálkovou formu studia – vysoká neúspěšnost a riziko předčasného ukončení studia",
+        "Žáci, kteří potřebují individualizovanou výuku – škola málo diferenciuje podle potřeb jednotlivých žáků"
+      ],
+      "plain_czech_summary": "Střední zdravotnická škola v Chebu je zaměřena na praktickou přípravu v reálném prostředí nemocnic. Silnou stránkou je spolupráce se zdravotnickými zařízeními a dobrá příprava na praxi. Problém je dlouhodobě vysoká neúspěšnost v maturitní zkoušce, zejména v matematice a cizích jazycích – výsledky jsou 3–4× horší než průměr v ČR. Teoretická výuka často probíhá frontálně bez přizpůsobení jednotlivým žákům. Dálková forma studia má vysokou neúspěšnost. Studenti VOŠ dosahují velmi dobrých výsledků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě negativní, bez zlepšení přes přijatá opatření",
+        "key_numbers": [
+          "Praktická sestra denní forma: 32,1 % hrubé neúspěšnosti (ČR 9,7 %)",
+          "Sociální činnost: 4× vyšší neúspěšnost než průměr ČR",
+          "Praktická sestra dálková forma: cca 60 % úspěšnosti v 2023/2024"
+        ],
+        "evidence": "Nejméně úspěšní žáci v cizích jazycích (dlouhodobý trend) a českém jazyce. Semináře zavedené jako opatření nejsou účinné."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněn",
+        "key_numbers": [],
+        "evidence": "Zpráva se absence nezabývá"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, školní metodička prevence, sociální pedagog",
+        "Karty žáků se speciálními vzdělávacími potřebami s pokyny pro pedagogy",
+        "Krizová intervence pro žáky s osobními problémy a konflikty",
+        "Kariérové poradenství pro poslední ročníky"
+      ],
+      "safety_climate": [
+        "Fyzické bezpečí posíleno čipovým a kamerovým systémem",
+        "Dílčí nedostatky v bezpečnosti v domově mládeže a budově Hradební",
+        "Pozitivní posun v práci s třídními kolektivy zvýšil psychické bezpečí",
+        "Setkání zástupců tříd s vedením školy 2–3× ročně na akcích 'Na rovinu'"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se zdravotnickými zařízeními pro praktické vyučování",
+        "Spolupráce se sociálními partnery na pracovištích praktického vyučování",
+        "Aktivní spolupráce s neziskovými organizacemi v sociální oblasti",
+        "Absolventi VOŠ spolupracují na výuce odborných předmětů a praxe"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Některé pasáže jsou však dlouhé a složitě strukturované, zejména v části o průběhu vzdělávání.",
+      "uncertainty_notes": [
+        "Není jasné, jaké konkrétní opatření škola přijala na základě předchozí inspekce v 2019 a proč nebyla účinná",
+        "Chybí detailní analýza příčin vysoké neúspěšnosti v maturitě – zda je to kvalita výuky, motivace žáků nebo nastavení systému",
+        "Není specifikováno, jak přesně se liší výuka v semináři od běžné výuky a proč je tak neúčinná"
+      ]
+    }
+  }
+}

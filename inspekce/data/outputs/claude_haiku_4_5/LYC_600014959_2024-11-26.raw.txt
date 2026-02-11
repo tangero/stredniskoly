@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "LYC_600014959_2024-11-26",
+  "school_profile": {
+    "school_type": "Obchodní akademie (střední škola) s obory Obchodní akademie a Informační technologie",
+    "inspection_period": "26. listopadu až 29. listopadu 2024",
+    "school_change_summary": "Škola prošla výrazným zlepšením: maturitní výsledky se zlepšily z podprůměrných (2019/2020) na nadprůměrné (2022/2023 a 2023/2024), modernizovaly se materiální podmínky, obnovil se pedagogický sbor a škola se aktivně zapojuje do projektů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné maturitní výsledky",
+        "detail": "Výsledky žáků jsou nyní lepší než celorepublikový průměr, z 108 maturujících neuspěli jen 4 žáci.",
+        "evidence": "\"ve školním roce 2022/2023 a v jarním zkušebním období školního roku 2023/2024 dosáhlo úrovně, kdy výsledky žáků školy byly vždy lepší než celorepublikové průměry\""
+      },
+      {
+        "tag": "Kvalitní poradenství a podpora",
+        "detail": "Tým výchovného poradce, metodika prevence a třídních učitelů pracuje efektivně a cíleně pomáhá žákům řešit vzdělávací obtíže.",
+        "evidence": "\"Tým tvořený výchovným poradcem, školním metodikem prevence, třídními učiteli, vedením školy a dalšími pedagogickými pracovníky, včetně asistentek pedagoga, pracoval velmi efektivně a koordinovaně\""
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola má nové digitální technologie, modernizované učebny a vybudované nové šatny pro žáky.",
+        "evidence": "\"Pořízení nových digitálních technologií výrazně přispělo k vytvoření optimálních podmínek pro využívání moderních výukových metod\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší rozvoj verbálních dovedností",
+        "detail": "Výuka se málo zaměřuje na to, aby žáci slovně interpretovali informace z různých zdrojů.",
+        "evidence": "\"menší důraz byl kladen na vyhledávání informací z více zdrojů a jejich interpretaci v rámci cílené diskuse nebo samostatného sdělení\""
+      },
+      {
+        "tag": "Nejednotná kvalita výuky",
+        "detail": "Zatímco jazyky a matematika jsou na vysoké úrovni, v přírodních vědách byla efektivita nižší.",
+        "evidence": "\"v hodinách základů přírodních věd byla efektivita výukových metod a forem nižší. Dosavadní znalosti a zkušenosti žáků nebyly dostatečně využívány\""
+      },
+      {
+        "tag": "Chybí ověření porozumění na konci hodin",
+        "detail": "V některých hodinách není dostatek času na ověření, zda žáci pochopili učivo.",
+        "evidence": "\"V závěru vyučovacích hodin však nebyl vždy dostatečný prostor věnován ověření zvládnutí a pochopení učiva\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením? Jaké jsou možnosti doučování?",
+      "Jaké jsou zkušenosti absolventů s nástupem na vysoké školy nebo na trh práce?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a schopnosti žáků argumentovat svůj názor?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí kvalitní přípravu na maturitu s nadprůměrnými výsledky",
+      "Zájemci o obchodní vzdělání nebo informační technologie s podporou moderních technologií",
+      "Žáci, kteří oceňují individuální péči a systematickou podporu při učení"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silný důraz na verbální komunikaci a argumentaci (škola se na to méně zaměřuje)",
+      "Zájemci o přírodní vědy (výuka v tomto oboru byla hodnocena jako méně efektivní)",
+      "Žáci, kteří se lépe učí diskusí a slovním sdělením (škola se na to zaměřuje méně)"
+    ],
+    "plain_czech_summary": "Obchodní akademie Kroměříž je dobře řízená škola s jasnou vizí a strategií. Její největší silou jsou výborné maturitní výsledky – žáci dosahují lepších výsledků než průměr v republice. Škola má kvalitní poradenský tým, moderní vybavení a podporuje osobnostní rozvoj žáků. Slabší stránkou je, že se málo zaměřuje na to, aby žáci sami interpretovali a vysvětlovali informace. Výuka jazyků a matematiky je na vysoké úrovni, ale přírodní vědy jsou slabší. Škola je vhodná pro žáky, kteří chtějí kvalitní přípravu na maturitu a oceňují individuální podporu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "2019/2020: podprůměrné výsledky (výrazně nižší než celorepublikový průměr)",
+        "2022/2023 a 2023/2024: výsledky lepší než celorepublikový průměr",
+        "Neuspělo pouze 4 žáci z 108 maturujících"
+      ],
+      "evidence": "\"Z podprůměrných výsledků, které byly v roce 2019/2020 výrazně nižší než celorepublikový průměr žáků ve stejné skupině oborů, se ve školním roce 2022/2023 a v jarním zkušebním období školního roku 2023/2024 dosáhlo úrovně, kdy výsledky žáků školy byly vždy lepší než celorepublikové průměry\""
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva se absence žáků nezabývá"
+    },
+    "support_services": [
+      "Výchovné poradenství a kariérové poradenství",
+      "Školní metodika prevence rizikového chování",
+      "Doučování pro žáky s potížemi",
+      "Pedagogické intervence pro žáky se speciálními vzdělávacími potřebami",
+      "Adaptační pobyty pro prvňáky",
+      "Spolupráce se školskými poradenskými zařízeními"
+    ],
+    "safety_climate": [
+      "Systematické upozorňování žáků na možná rizika",
+      "Pravidelné poučování o zásadách bezpečného chování",
+      "Podpora zdravého životního stylu a pohybových aktivit",
+      "Zdravé stravování v souladu se zásadami moderní výživy"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s firmami – sociální partneři poskytují podněty pro aktualizaci školních vzdělávacích programů",
+      "Zapojení do zahraničních projektů pro prohloubení znalostí v cizích jazycích",
+      "Projekty na modernizaci odborných učeben a rozvoj polytechnického vzdělávání",
+      "Setkávání s absolventy za účelem motivace současných žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však delší a složitější, což mírně snižuje jasnost. Chybí konkrétní čísla o absenci a některých dalších metrikách.",
+    "uncertainty_notes": [
+      "Absence žáků není v textu zmíněna – není jasné, zda je to problém nebo ne",
+      "Počet žáků se speciálními vzdělávacími potřebami je 15, ale není jasné, jak se to podílí na celkovém počtu 278 žáků",
+      "Konkrétní obsah slabé stránky (verbální interpretace) je trochu abstraktní – není zcela jasné, co přesně se očekává"
+    ]
+  }
+}
+```

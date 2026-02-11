@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY4_691006270_2022-05-17",
+  "school_profile": {
+    "school_type": "Základní škola a gymnázium (v inspekčním období pouze ZŠ)",
+    "inspection_period": "17. května 2022 až 19. května 2022",
+    "school_change_summary": "Škola zřízena v roce 2014 jako svobodná demokratická škola. Ve školním roce 2021/2022 došlo k výraznému nárůstu počtu žáků o téměř 60 % a ke změně názvu. Vzdělává 128 žáků, z toho 76 formou individuálního vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Sociální a komunikační rozvoj",
+        "detail": "Žáci se učí argumentovat, respektovat názory ostatních a vyjadřovat se před skupinou prostřednictvím sněmu a denních ranních setkání.",
+        "evidence": "Žáci při jednáních dokázali respektovat názor většiny a jejich projev byl spontánní a podpořen argumentací."
+      },
+      {
+        "tag": "Kvalitní poradenské služby",
+        "detail": "Školní psycholog a poradenské pracoviště efektivně pomáhají žákům s adaptací a motivací, včetně individuálního vedení.",
+        "evidence": "Přítomnost školního psychologa se jeví jako velmi účinná, členové ŠPP pravidelně předávají informace o vzdělávacích potřebách."
+      },
+      {
+        "tag": "Příjemné školní prostředí",
+        "detail": "Škola vytváří bezpečné a vstřícné prostředí s podporou terapeutického psa a důrazem na důvěru a partnerství.",
+        "evidence": "Hospitované výukové lekce probíhaly v příjemné, přátelské a vstřícné atmosféře."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká efektivita výuky",
+        "detail": "Žáci často neparticipují na připravených lekcích, preferují volné činnosti, a výukový čas není efektivně využíván pro osvojování znalostí.",
+        "evidence": "Žáci upřednostňovali volné činnosti podle vlastního zájmu, výukový čas proto často nebyl efektivně využíván."
+      },
+      {
+        "tag": "Slabá péče o čtení a psaní",
+        "detail": "Nedostatečný důraz na techniku čtení a psaní, pravopisné chyby se formativně nezpracovávají a mohou se fixovat.",
+        "evidence": "Dostupné písemné výstupy žáků obsahovaly řadu pravopisných chyb, s nimiž se formativně nepracovalo."
+      },
+      {
+        "tag": "Nedostatečná kontrola kvality",
+        "detail": "Vedení školy se zaměřuje především na organizaci, hospitační činnost cílí na pozitivní zjištění, ne na zkvalitnění vzdělávání.",
+        "evidence": "Kontrolní činnost vedení školy není dostatečně efektivní vzhledem ke zkvalitnění vzdělávacího procesu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola zajišťuje, aby všichni žáci, včetně těch méně motivovaných, skutečně participovali na výuce a ne jen na volných činnostech?",
+      "Jaký systém máte na podporu čtení a psaní, když inspekce upozornila na nedostatečný důraz v této oblasti?",
+      "Jak se škola vypořádá s tím, že někteří žáci opouštějí lekce dříve, než skončí?"
+    ],
+    "who_school_fits": [
+      "Děti, které jsou vnitřně motivované a schopné se samy rozhodovat o svém vzdělávání bez vnějšího tlaku",
+      "Žáci, kteří potřebují silnou sociální podporu a rozvoj komunikačních dovedností",
+      "Rodiny, které věří v alternativní přístup k vzdělávání založený na svobodě a důvěře"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají tradičnější přístup k výuce čtení, psaní a matematiky se systematickým nácvikem",
+      "Žáci, kteří potřebují více struktury, jasných cílů a pravidelné zpětné vazby od učitele",
+      "Rodiny, které se obávají, že svobodný přístup může vést k nedostatečnému zvládnutí základních dovedností"
+    ],
+    "plain_czech_summary": "Jde o alternativní svobodnou demokratickou školu s příjemným prostředím a silným zaměřením na sociální rozvoj. Žáci se učí komunikovat a rozhodovat se. Inspekce však upozornila na problémy: žáci často neparticipují na lekcích, preferují volné činnosti, a výuka není dostatečně efektivní. Chybí systematický nácvik čtení a psaní. Vedení školy by mělo více kontrolovat kvalitu vzdělávání. Škola je vhodná pro vnitřně motivované děti, ale rodiče by měli vědět, že tradiční předměty nejsou vyučovány klasickým způsobem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Není relevantní - v inspekčním období škola vykonávala pouze činnost základní školy",
+      "key_numbers": [
+        "Žáci jsou úspěšní u přijímacích zkoušek na střední školy",
+        "Pokračují ve vzdělávání na středních školách dle svého výběru"
+      ],
+      "evidence": "Škola nevyužívá externí hodnotící nástroje, ale jako nástroj zpětné vazby využívá úspěšnost svých žáků u přijímacích zkoušek."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Absence není v inspekční zprávě detailně řešena"
+      ],
+      "evidence": "Zpráva se nezabývá absencí žáků jako samostatným tématem."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště vedené školním psychologem",
+      "Individuální vedení žáků s adaptačními obtížemi",
+      "Lekce zaměřené na rozvoj učebních strategií a oslabených dílčích funkcí",
+      "Terapeutický pes jako součást podpory v zátěžových situacích"
+    ],
+    "safety_climate": [
+      "Filosofie školy je založena na důvěře, partnerství a samosprávě",
+      "Systém školních žákovských demokratických nástrojů efektivně řeší problematické chování",
+      "Minimální preventivní program je aplikován do běžných každodenních situací",
+      "Upozornění: Ne vždy jsou činnosti realizovány v souladu s odpovídajícím zajištěním bezpečnosti žáků"
+    ],
+    "partnerships_practice": [
+      "Škola je členem Asociace svobodných demokratických škol",
+      "Úzké vztahy se žáky, kteří se vrací na návštěvu a sdělují postřehy z dalšího vzdělávání",
+      "Školní stravování zajišťováno prostřednictvím smluvně sjednaného dodavatele"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Hlavní zjištění jsou jasná: silné stránky v sociálním rozvoji a poradenských službách, slabé stránky v efektivitě výuky a péči o základní dovednosti. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva se zaměřuje na základní školu; není jasné, zda by se zjištění vztahovala i na gymnázium, kdyby bylo v provozu",
+      "Konkrétní počty žáků s nižší účastí na lekcích nejsou uvedeny, pouze kvalitativní popis",
+      "Není specifikováno, jak dlouho trvá individuální vzdělávání a jaké jsou jeho výsledky"
+    ]
+  }
+}
+```

@@ -1,0 +1,101 @@
+```json
+{
+  "report_id": "GY8_600013758_2024-11-26",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté, šestileté a osmileté studium) s ekologickým zaměřením",
+    "inspection_period": "26. listopadu až 29. listopadu 2024",
+    "school_change_summary": "Škola se přestěhovala do nové, udržitelné budovy s moderním vybavením. Navýšila počet žáků na 317 ve 13 třídách. Zřídila pozici druhého zástupce ředitele a rozdělila funkci výchovného poradce a metodika prevence."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky a příprava na vysokou školu",
+        "detail": "Žáci dosahují srovnatelných a velmi dobrých výsledků, úspěšnost v maturitě je nad republikovým průměrem a vysoká je úspěšnost přijetí na preferované vysoké školy.",
+        "evidence": "Řada žáků prospívá s vyznamenáním, neprospívající žáci se nevyskytují."
+      },
+      {
+        "tag": "Moderní jazykové vzdělávání s rodilým mluvčím",
+        "detail": "Výuka cizích jazyků využívá virtuální realitu, umělou inteligenci a zahraniční výjezdy, což zvyšuje motivaci a digitální gramotnost.",
+        "evidence": "Pedagogy jsou promyšleně využívány moderní metody, virtuální prohlídky měst a efektivní digitální technologie."
+      },
+      {
+        "tag": "Bohaté mimoškolní aktivity a projekty",
+        "detail": "Škola nabízí studentské firmy, charitativní akce, sportovní kurzy, soutěže a olympiády s podporou individuálních předpokladů žáků.",
+        "evidence": "Žáci se zapojují do projektů Extra třída, JA Studentská firma, iKid a dosahují předních míst v prestižních soutěžích."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Diferenciace výuky není dostatečná",
+        "detail": "Přizpůsobení učiva podle potřeb jednotlivých žáků (nadaných i se speciálními potřebami) bylo pozorováno jen ojediněle.",
+        "evidence": "Inspekce doporučuje diferencovat učivo podle potřeb a schopností jednotlivých žáků."
+      },
+      {
+        "tag": "Tělesná výchova v pronajatém prostoru",
+        "detail": "Výuka tělesné výchovy probíhá v pronajatém prostoru mimo hlavní budovu, což může omezit dostupnost.",
+        "evidence": "Výuka tělesné výchovy je zajištěna v pronajaté nafukovací hale ZŠ Kamínky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku nadaným žákům a jak je podporuje v jejich rozvoji?",
+      "Jaké jsou konkrétní výsledky absolventů na vysokých školách a jak škola sleduje jejich další kariéru?",
+      "Jak funguje systém podpory pro žáky se speciálními vzdělávacími potřebami a jaké jsou dostupné služby?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí na vysokou školu a zájem o kvalitní přípravu na maturitu",
+      "Děti zajímající se o jazyky a mezinárodní spolupráci, včetně výjezdů do zahraničí",
+      "Žáci s ekologickým vědomím a zájmem o udržitelný rozvoj a společenskou odpovědnost"
+    ],
+    "who_should_be_cautious": [
+      "Žáci vyžadující intenzivní individuální přizpůsobení výuky (diferenciace není dostatečná)",
+      "Rodiny s omezeným rozpočtem (soukromá škola, školné není zmíněno, ale lze předpokládat vyšší náklady)",
+      "Žáci preferující tradičnější přístup k výuce bez projektů a experimentů"
+    ],
+    "plain_czech_summary": "EKO Gymnázium je moderní soukromá škola s novými prostory a ekologickým zaměřením. Nabízí kvalitní vzdělání s důrazem na jazyky, projekty a mimoškolní aktivity. Žáci dosahují výborných výsledků a úspěšně se dostávají na vysoké školy. Škola podporuje rozvoj osobnosti a společenské odpovědnosti. Slabší stránkou je nedostatečné přizpůsobení výuky individuálním potřebám jednotlivých žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoký",
+      "key_numbers": [
+        "Úspěšnost v maturitní zkoušce nad republikovým průměrem",
+        "Vysoká úspěšnost přijetí absolventů na preferované vysoké školy",
+        "Výsledky srovnatelné za poslední tři školní roky"
+      ],
+      "evidence": "Řada žáků prospívá s vyznamenáním, neprospívající žáci se nevyskytují."
+    },
+    "absence": {
+      "trend": "Velmi nízká",
+      "key_numbers": [
+        "Neomluvené hodiny se vyskytují velmi ojediněle",
+        "Vyšší absence je monitorována a řešena ve spolupráci s rodiči",
+        "Jen několik kázeňských opatření uděleno třídními učiteli"
+      ],
+      "evidence": "Výrazně více pochval za studijní výsledky a mimořádné úspěchy než kázeňských opatření."
+    },
+    "support_services": [
+      "Poradenské pracoviště vedené zástupkyní ředitele s metodičkou prevence a výchovnou poradkyní",
+      "Systém včasné podpory během vzdělávání zabraňující neprospěchu",
+      "Adaptační kurzy pro nově utvářející se kolektivy (prima, tercie, kvinta)"
+    ],
+    "safety_climate": [
+      "Funkční systém zajišťující bezpečnost a ochranu zdraví žáků",
+      "Vedení školy aktivně konzultuje a reaguje na nová nebezpečí",
+      "Krizový plán a preventivní program pro školní rok 2024/2025"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem na promyšleném koncepčním programu",
+      "Nadregionální spolupráce s řadou subjektů veřejné a soukromé sféry",
+      "Partnerství se zahraničními školami a vysokými školami v Brně"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je psána srozumitelnou češtinou s jasnou strukturou. Informace jsou konkrétní, opřené o pozorování inspektorů a dokumenty. Nejsou zde nejasnosti nebo vágní tvrzení.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí výši školného ani další finanční náklady pro rodiče",
+      "Chybí konkrétní počty žáků se speciálními vzdělávacími potřebami v jednotlivých třídách",
+      "Není jasné, jak přesně funguje diferenciace pro nadané žáky v praxi"
+    ]
+  }
+}
+```

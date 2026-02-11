@@ -1,0 +1,66 @@
+{
+  "report_id": "SOU_610250833_2024-04-22",
+  "school_profile": {
+    "school_type": "SOU",
+    "inspection_period": "2024-04-22 až 2024-04-26",
+    "school_change_summary": "Nebyl poskytnut zdrojový text zprávy, nelze určit změny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Nedostatek dat",
+        "detail": "Bez zdrojového textu nelze identifikovat silné stránky školy.",
+        "evidence": "Zdrojový text zprávy nebyl dodán."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Chybí podklady",
+        "detail": "Není možné vyhodnotit rizika bez obsahu inspekční zprávy.",
+        "evidence": "Zdrojový text zprávy nebyl dodán."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké jsou konkrétní výsledky studentů této školy v posledních letech?"
+    ],
+    "who_school_fits": [
+      "Zájemci, kteří si ověří aktuální stav školy přímo na dni otevřených dveří."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří rozhodují pouze na základě názorů třetích stran bez ověření faktů."
+    ],
+    "plain_czech_summary": "Nepodařilo se mi zpracovat vaši žádost, protože jste neposkytli zdrojový text inspekční zprávy. Bez něj nemohu analyzovat silné a slabé stránky školy, výsledky maturit ani klima na škole. Prosím, vložte text zprávy, abych mohl připravit smysluplné shrnutí pro rodiče."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neznámý",
+      "key_numbers": [
+        "Data nejsou k dispozici"
+      ],
+      "evidence": "Zdrojový text zprávy nebyl dodán."
+    },
+    "absence": {
+      "trend": "Neznámý",
+      "key_numbers": [
+        "Data nejsou k dispozici"
+      ],
+      "evidence": "Zdrojový text zprávy nebyl dodán."
+    },
+    "support_services": [
+      "Data nejsou k dispozici bez zdrojového textu."
+    ],
+    "safety_climate": [
+      "Data nejsou k dispozici bez zdrojového textu."
+    ],
+    "partnerships_practice": [
+      "Data nejsou k dispozici bez zdrojového textu."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "JSON je validní a zpráva je srozumitelná, ačkoli obsah chybí kvůli chybějícím vstupním datům.",
+    "uncertainty_notes": [
+      "Nebyl dodán zdrojový text zprávy pro analýzu."
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOU_691012512_2025-09-30",
+  "school_profile": {
+    "school_type": "Střední škola strojírenská a elektrotechnická, příspěvková organizace",
+    "inspection_period": "30. září až 2. října 2025",
+    "school_change_summary": "Škola funguje od 1. 7. 2018. Od roku 2022 se počet žáků zvýšil o 103 na současných 405 žáků. Postupně se modernizuje vybavení a probíhá rekonstrukce budovy pro odborný výcvik ve Vrchlabí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola velmi efektivně spolupracuje se sociálními a profesními partnery (Continental, Škoda Auto, Hospodářská komora), což žákům přináší kontakt s reálnou praxí a moderními technologiemi.",
+        "evidence": "Dlouhodobě aktivní spolupráce s firmami, náborové akce, odborníci z praxe ve výuce, doplňování vybavení."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola má velmi dobré materiální podmínky s moderně vybaveným odborným výcvikem a postupně se zlepšujícím zázemím.",
+        "evidence": "Nově rekonstruované a moderně vybavené budovy, vybavení učeben na velmi dobré úrovni, podpora zřizovatele a projekt IROP."
+      },
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Odborný výcvik má velmi dobrou kvalitativní úroveň s empatickými učiteli, kteří individuálně vedou žáky k praktickým dovednostem.",
+        "evidence": "Přátelská atmosféra, učitelé řeší chyby operativně, převažuje samostatná práce žáků na reálných úkolech."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní teoretická výuka",
+        "detail": "Teoretická výuka je často výkladového charakteru s dominantní úlohou učitele, žáci jsou spíše pasivními příjemci informací.",
+        "evidence": "Převažuje výuka s projekcí prezentace, málo kooperativních forem, nedostatek prostoru pro mluvený projev žáků."
+      },
+      {
+        "tag": "Vysoká absence a neprospěch",
+        "detail": "Dlouhodobý problém záškoláctví; v posledních dvou letech neprospělo 18–20 % žáků, průměrně 73–117 zameškaných hodin na žáka.",
+        "evidence": "Nízká motivace a vysoké absence jsou nejčastějšími příčinami neúspěchu; absence 30 % je tolerována."
+      },
+      {
+        "tag": "Slabá koncepce vzdělávání",
+        "detail": "Koncepce rozvoje školy nezahrnuje výchovně vzdělávací oblast a chybí jí systém autoevaluace pro sledování pokroku.",
+        "evidence": "Neidentifikují se podmínky pro dosažení cílů, nejsou specifikovány kroky a odpovědnost, proces řízení není systematický."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s vyšší absencí a jak řeší problém záškoláctví?",
+      "Jaké konkrétní moderní metody výuky se používají v teoretických předmětech a jak se to liší od tradičního výkladu?",
+      "Jak škola zajišťuje individuální přístup k nadaným žákům a žákům s pomalejším tempem?"
+    ],
+    "who_school_fits": [
+      "Prakticky zaměření žáci, kteří se chtějí naučit řemeslo a mají zájem o práci se stroji a zařízeními",
+      "Žáci, kteří se chtějí připravit na konkrétní profesi v automobilovém průmyslu nebo elektrotechnice",
+      "Motivovaní žáci, kteří si váží kvalitního vybavení a kontaktu s reálnými firmami"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší motivací a tendencí k absencím – škola má dlouhodobý problém se záškolátvím",
+      "Žáci preferující aktivní a interaktivní výuku – teoretické předměty jsou spíše tradičního charakteru",
+      "Nadaní žáci – výuka není dostatečně diferencovaná pro jejich potřeby"
+    ],
+    "plain_czech_summary": "Škola je moderně vybavená a velmi dobře spolupracuje s průmyslem, což je její velkou výhodou. Praktická výuka je kvalitní. Problém je v teoretické výuce, která je často pasivní a málo interaktivní. Dlouhodobě se potýká s vysokou absencí a neúspěchem žáků. Vedení školy by mělo lépe plánovat vzdělávací rozvoj a systematičtěji sledovat pokrok žáků. Vhodná pro prakticky zaměřené žáky, ale vyžaduje motivaci."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý – pokles z 86 % na 68 % úspěšnosti",
+      "key_numbers": [
+        "Školní rok 2023/2024: 86 % úspěšnosti u maturitní zkoušky",
+        "Školní rok 2024/2025: 68 % úspěšnosti u maturitní zkoušky",
+        "Neprospělo 10–14 % žáků oborů s maturitní zkouškou"
+      ],
+      "evidence": "Ve školním roce 2023/2024 uspělo cca 86 % žáků, zatímco ve 2024/2025 to bylo 68 %. V matematice a cizím jazyce byla úspěšnost lepší než republikový průměr."
+    },
+    "absence": {
+      "trend": "Vysoká a dlouhodobě problematická",
+      "key_numbers": [
+        "Průměr 73 hodin zameškaných na žáka oboru s maturitní zkouškou",
+        "Průměr 117 hodin zameškaných na žáka oboru s výučním listem",
+        "Tolerovaná absence 30 % ve výuce"
+      ],
+      "evidence": "Dlouhodobým problémem je záškoláctví a omlouvání absence. Škola žáky s vyšší absencí monitoruje z důvodu eliminace záškoláctví."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se výchovnými poradkyněmi a školními metodičkami prevence",
+      "Konzultace a doučování pro žáky ohrožené školním neúspěchem",
+      "Preventivní program zaměřený na závislosti a rizikové chování, adaptační pobyty, besedy"
+    ],
+    "safety_climate": [
+      "Partnerská a respektující atmosféra mezi vyučujícími a žáky",
+      "Žáci dodržují nastavená pravidla chování a práce",
+      "Při práci se stroji a zařízeními jsou dodržovány zásady BOZP, žáci vhodně používají osobní ochranné pomůcky"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s firmami Continental Automotive ČR, Škoda Auto ČR, Deprag CZ, Argo Hytos",
+      "Partnerství s Hospodářskou komorou ČR a vysokými školami (ČVUT Praha, Technická univerzita Liberec)",
+      "Smluvně zajištěná praktická výuka na odborných pracovištích pod vedením instruktorů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Klíčové informace pro rodiče jsou jasně identifikovatelné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní moderní metody by měly být zavedeny v teoretické výuce",
+      "Není jasné, jak dlouho trvá řešení problému se záškolátvím a jaká je úspěšnost dosavadních opatření",
+      "Chybí informace o tom, jak se liší kvalita výuky mezi jednotlivými obory"
+    ]
+  }
+}
+```

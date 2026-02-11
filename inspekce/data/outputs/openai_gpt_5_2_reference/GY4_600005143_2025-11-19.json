@@ -1,0 +1,109 @@
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "model_id": "openai_gpt_5_2_reference",
+  "run_started_utc": "2026-02-09T11:29:04.717536+00:00",
+  "run_finished_utc": "2026-02-09T11:29:47.700183+00:00",
+  "raw_file": "GY4_600005143_2025-11-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600005143_2025-11-19",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a šestileté, v části tříd posílená němčina s možností DSD II)",
+      "inspection_period": "2025-11-19 až 2025-11-24",
+      "school_change_summary": "Od roku 2019 vzrostl zájem o školu, zlepšilo se vybavení a zázemí, výuka se místy modernizuje, ale v části hodin zůstává spíš tradiční a méně aktivizující."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Silné zázemí a vybavení",
+          "detail": "Škola má velmi dobré materiální podmínky pro výuku, sport i zázemí žáků.",
+          "evidence": "„zlepšily se materiálně-technické podmínky“; „dvě tělocvičny, posilovna… sportovní areál“"
+        },
+        {
+          "tag": "Jazyky a mezinárodní příležitosti",
+          "detail": "Silná jazyková nabídka je podpořená mobilitami, rodilými mluvčími a certifikovanými zkouškami.",
+          "evidence": "„širší nabídkou cizích jazyků… rodilým mluvčím… mezinárodních certifikovaných zkoušek“"
+        },
+        {
+          "tag": "Podpora žáků a bezpečné prostředí",
+          "detail": "Škola má funkční podporu a prevenci a žákům nabízí psychologickou i studijní pomoc.",
+          "evidence": "„dvě školní psycholožky“; „konzultace, doučování“; „preventivní mechanismy jsou převážně funkční“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Ne všude aktivní výuka",
+          "detail": "V některých hodinách je výuka méně aktivizující a žáci jsou zapojeni nerovnoměrně.",
+          "evidence": "„přetrvává… nižší míra aktivizace žáků“; „převaha frontální formy výuky“"
+        },
+        {
+          "tag": "Slabší formativní zpětná vazba",
+          "detail": "Formativní hodnocení a práce s kritérii či reflexí pokroku se používá méně často.",
+          "evidence": "„méně časté uplatňování formativní zpětné vazby… evaluace vlastního… pokroku“"
+        },
+        {
+          "tag": "Nejednotné známkování mezi učiteli",
+          "detail": "V některých předmětech se liší náročnost hodnocení podle konkrétního učitele.",
+          "evidence": "„Nejednotná měřítka hodnocení“; „přísnější klasifikaci… biologie, český… chemie“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola sjednocuje kritéria známkování, aby se nelišila náročnost mezi učiteli? („Nejednotná měřítka hodnocení“)",
+        "Jak budete zvyšovat aktivizující metody a týmovou spolupráci v hodinách? („nižší míra využívání aktivizačních metod“)",
+        "Jak budou učitelé víc používat formativní zpětnou vazbu a sebehodnocení žáků? („méně časté uplatňování formativní zpětné vazby“)"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí silné jazyky, certifikáty a zahraniční výjezdy („mezinárodních certifikovaných zkoušek“, „zahraničních mobilit“).",
+        "Studijně motivovaní uchazeči mířící na VŠ („úspěšnost absolventů při přijetí k vysokoškolskému studiu“).",
+        "Žáci, kteří využijí volitelné předměty a bohaté aktivity mimo výuku („spektrum volitelných předmětů“, „bohatá mimoškolní činnost“)."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují ve všech předmětech moderní, vysoce interaktivní styl výuky („přetrvává tradicionalistické pojetí… nižší mírou aktivizace“).",
+        "Žáci citliví na rozdílnou náročnost známkování podle učitele („Nejednotná měřítka hodnocení“).",
+        "Žáci, kterým nevyhovuje převaha frontálního výkladu v části hodin („převaha frontální formy výuky“)."
+      ],
+      "plain_czech_summary": "Gymnázium má silné zázemí, dobré výsledky a výrazně jazykové zaměření včetně certifikátů a zahraničních mobilit. Funguje tu podpora žáků (psycholožky, doučování, prevence) a žáci se zapojují do projektů i chodu školy. Slabší stránkou je, že část výuky je stále spíš tradiční, s menší aktivizací a méně formativní zpětnou vazbou. Inspekce také upozorňuje na nejednotná kritéria známkování v některých předmětech."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi dobré výsledky; didaktické testy nad průměrem, profilová část spíš vyrovnaná až mírně slabší než průměr.",
+        "key_numbers": [
+          "35–40 % maturantů s vyznamenáním",
+          "2024/2025 neuspěli 2 žáci",
+          "80 % nahrazuje profilový jazyk mezinárodním certifikátem"
+        ],
+        "evidence": "„35−40 % maturantů“; „2024/2025 dva žáci“; „Stabilně 80 % žáků nahrazuje… certifikátem“"
+      },
+      "absence": {
+        "trend": "Absence je podle inspekce na přijatelné úrovni a neomluvená je zanedbatelná.",
+        "key_numbers": [],
+        "evidence": "„přijatelný počet zameškaných hodin a zanedbatelná míra neomluvené absence“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: „výchovná poradkyně, metodik prevence, dvě školní psycholožky“",
+        "Podpora ve výuce: „dvě asistentky pedagoga/speciální pedagog“",
+        "Studijní pomoc: „konzultace, doučování, elektronické výukové materiály“"
+      ],
+      "safety_climate": [
+        "Prevence a adaptace napříč studiem: „adaptační a preventivní programy… prolínají celým vzdělávacím cyklem“",
+        "Řešení rizikového chování podle postupů: „výchovná jednání, kázeňská opatření“",
+        "Zabezpečení vstupu: „elektronický a kamerový systém i celodenní personální dohled“"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola UK: „fakultní školou… Univerzity Karlovy“",
+        "Partner Národního muzea: „od roku 2023… partnerskou školou Národního muzea“",
+        "Zahraniční mobility včetně Erasmus+: „zapojení… do zahraničních mobilit… i do programu Erasmus+“"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Shrnutí je psané pro rodiče a drží se konkrétních zjištění inspekce, ale některé oblasti (např. absence) nemají v textu přesná čísla.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní čísla k absenci, jen slovní hodnocení („přijatelný počet… zanedbatelná…“).",
+        "Nejsou uvedeny detaily o konkrétních opatřeních ke sjednocení hodnocení, jen že vedení „vnímá nutnost“.",
+        "Míra rozdílů mezi předměty/učiteli v hodnocení není kvantifikovaná (jen příklady předmětů)."
+      ]
+    }
+  }
+}

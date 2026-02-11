@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOU_600007880_2024-03-25",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště s domovem mládeže, školní jídelnou",
+    "inspection_period": "25. března až 27. března 2024",
+    "school_change_summary": "Škola se zaměřuje na obory s maturitní zkouškou (Podnikání, Kosmetické služby, Operátor dřevařské výroby) a obory s výučním listem. Vzdělává 393 žáků. Hlavním problémem zůstává vysoká neúspěšnost v maturitní zkoušce přes přijatá opatření."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Snížená absence",
+        "detail": "Škola úspěšně snižuje počet zameškaných hodin díky podmínce maximálně 30 % absence v předmětu.",
+        "evidence": "V 1. pololetí 2022/2023 absence na žáka klesla z 163 na 94 hodin v denní formě."
+      },
+      {
+        "tag": "Kvalifikovaní učitelé",
+        "detail": "Učitelé českého jazyka, matematiky a literatury mají příslušnou odbornou kvalifikaci.",
+        "evidence": "Výuka předmětů společné části MZ je zajištěna odborně kvalifikovanými pedagogickými pracovníky."
+      },
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Škola má dostatek učebnic, slovníků, digitálních technologií a přístupu na internet.",
+        "evidence": "Učebny jsou vybaveny odpovídajícími digitálními technologiemi s přístupem na internet."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Velmi vysoká neúspěšnost v maturitě",
+        "detail": "Obor Kosmetické služby měl 50–62,5 % neúspěšnosti, Podnikání 42,9–47,8 %, což je výrazně nad průměrem ČR.",
+        "evidence": "Kosmetické služby: 62,5 % (2022) a 50,0 % (2023) vs. průměr ČR 21,2 % a 17 %."
+      },
+      {
+        "tag": "Nízké nároky na přijetí",
+        "detail": "Škola přijímá uchazeče bez odpovídajících studijních předpokladů a nedokáže jejich slabý potenciál kompenzovat.",
+        "evidence": "Kritéria přijímacího řízení se od poslední inspekce nezměnila, přetrvává přijímání bez předpokladů."
+      },
+      {
+        "tag": "Pasivní výuka bez diferenciace",
+        "detail": "Převažuje frontální výuka s dominantní rolí učitele, žáci plní stejné úkoly bez přizpůsobení jejich potřebám.",
+        "evidence": "Ve sledovaných hodinách převažovala frontální výuka, výuka nebyla diferenciována, chyběla zpětná vazba."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s českým jazykem nebo matematikou? Existují individuální plány?",
+      "Jaké jsou skutečné přijímací kritéria a jak se liší od kritérií na papíře? Jaký je průměrný prospěch přijatých žáků?",
+      "Jak se škola vypořádala s doporučením inspekce zrušit obor Podnikání v dálkové formě?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zaměřením na praktické obory s výučním listem (truhlář, tesař, mechanik), kde nejsou vysoké nároky na teoretické znalosti.",
+      "Žáci, kteří potřebují strukturovaný režim a kontrolu absence – škola má účinný systém sledování docházky.",
+      "Žáci, kteří si lépe osvojují znalosti v klidné atmosféře bez vysokého tlaku – učitelé jsou vstřícní a pracovní prostředí je klidné."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, jejichž děti chtějí maturitu – obory s maturitní zkouškou mají velmi vysokou neúspěšnost (50–62 %), zejména Kosmetické služby a Podnikání.",
+      "Žáci se slabšími předpoklady v češtině a matematice – škola je přijímá, ale nedokáže jim dostatečně pomoci (chybí individuální podpůrné plány).",
+      "Žáci v dálkové formě studia – zde je neúspěšnost ještě vyšší (32,7 % neprospívajících) a komunikativní dovednosti jsou slabé."
+    ],
+    "plain_czech_summary": "Střední odborné učiliště v Hluboši má dobré materiální podmínky a kvalifikované učitele, ale dlouhodobě selhává v přípravě žáků na maturitní zkoušku. Obory s maturitou mají neúspěšnost 50–62 %, což je dvojnásobek průměru v ČR. Škola přijímá žáky bez dostatečných předpokladů a nedokáže jim poskytnout individuální podporu. Výuka je pasivní, frontální, bez diferenciace. Inspekce doporučuje zrušit obor Podnikání a zásadně změnit přístup k výuce a přijímání žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě vysoká a stagnující neúspěšnost",
+      "key_numbers": [
+        "Kosmetické služby: 62,5 % (2022) a 50,0 % (2023) neúspěšnosti vs. průměr ČR 21,2 % a 17 %",
+        "Podnikání (dálka): 47,8 % (2022) a 42,9 % (2023) neúspěšnosti vs. průměr ČR 37,2 % a 29,9 %",
+        "Operátor dřevařské výroby: 30 % neúspěšnosti (2022) vs. průměr ČR 17,1 %"
+      ],
+      "evidence": "Hrubá neúspěšnost v jednotlivých oborech výrazně převyšuje průměr srovnatelných oborů v ČR. Nejhorší výsledky v českém jazyce (2022) a matematice (2023)."
+    },
+    "absence": {
+      "trend": "Pozitivní pokles",
+      "key_numbers": [
+        "1. pololetí 2021/2022: 163 hodin na žáka",
+        "1. pololetí 2022/2023: 94 hodin na žáka",
+        "Neomluvená absence: nízká, jen jednotlivci"
+      ],
+      "evidence": "Pokles zameškaných hodin na žáka v oborech s MZ v denní formě. Sjednocující kritérium: maximálně 30 % absence v předmětu za klasifikační období."
+    },
+    "support_services": [
+      "Strategie předcházení školní neúspěšnosti existuje, ale není dostatečně uplatňována – ve sledovaném období nebyl u žáků maturitních oborů realizován žádný podpůrný plán",
+      "Posílená výuka českého jazyka a literatury (o 1 hodinu v 3. ročníku, seminář v 4. ročníku)",
+      "Půlené třídy v 1. ročníku pro český jazyk a matematiku",
+      "Sbírky maturitních úloh a didaktických testů sdílené přes komunikační platformu"
+    ],
+    "safety_climate": [
+      "Klidná a vstřícná pracovní atmosféra v hodinách matematiky",
+      "Nízká míra neomluvené absence",
+      "Vedení školy se zaměřuje na kontrolu docházky a dodržování kritérií pro hodnocení"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s učiteli předmětů společné části MZ na přijímání opatření",
+      "Předmětová komise všeobecně vzdělávacích předmětů",
+      "Pedagogické rady vedené ve školních letech 2022/2023 a 2023/2024"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, citace a doklady. Slabé stránky jsou jasně formulovány. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace srozumitelné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, zda se doporučení zrušit obor Podnikání již realizovalo nebo je stále v přípravě.",
+      "Není jasné, jaké konkrétní opatření škola přijala po inspekci (zpráva je z dubna 2024, lhůta pro opatření byla 30 dní).",
+      "Chybí informace o tom, jak se výsledky změnily v následujícím školním roce 2023/2024."
+    ]
+  }
+}
+```

@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600013731_2025-10-15",
+  "school_profile": {
+    "school_type": "Střední odborná škola (SOŠ) s maturitní zkouškou",
+    "inspection_period": "15. 10. 2025 – 17. 10. 2025",
+    "school_change_summary": "Škola nově nabízí obor Pedagogické lyceum. Počet žáků se od roku 2022 zvýšil o 12 % na celkem 318 žáků (204 v denní, 114 v dálkové formě). Výrazně se zlepšily výsledky maturitní zkoušky – neúspěšnost klesla z 32 % na 11 %."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vedení a řízení",
+        "detail": "Ředitelka aktivně se vzdělává a systematicky zlepšuje chod školy, což se projevilo v kvalitativním posunu vzdělávání.",
+        "evidence": "Ředitelka se účastnila vzdělávacích akcí na management, marketing a bezpečnost; přijatá opatření byla převážně účinná."
+      },
+      {
+        "tag": "Osobnostní rozvoj",
+        "detail": "Škola nabízí bohatou nabídku aktivit a podporuje zapojení žáků do života školy prostřednictvím parlamentu, soutěží a projektů.",
+        "evidence": "Žáci se účastní studentských voleb, charitativních akcí, exkurzí; úspěšní žáci jsou oceňováni."
+      },
+      {
+        "tag": "Výsledky maturitní zkoušky",
+        "detail": "Výrazné zlepšení úspěšnosti žáků při maturitě díky zavedení nových metod a seminářů.",
+        "evidence": "Neúspěšnost ve společné části klesla z 32 % (2019-2021) na 11 % (2023-2025)."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individualizace výuky",
+        "detail": "Učitelé málo využívají diferenciaci úkolů podle schopností žáků, což omezuje jejich potenciál.",
+        "evidence": "Až na výjimky všichni žáci plnili stejné úkoly jednotné náročnosti; diferenciace nebyla zaznamenána."
+      },
+      {
+        "tag": "Vysoká absence",
+        "detail": "Absence žáků se pohybuje na vyšší úrovni, neomluvená absence vzrostla na 3,7 hodin na žáka za rok.",
+        "evidence": "Průměrná absence 172 hodin na žáka za školní rok; neomluvená absence vzrostla."
+      },
+      {
+        "tag": "Podmínky pro praktické vyučování",
+        "detail": "Prostory pro obor Sociální činnost jsou malé a omezují praktické činnosti žáků.",
+        "evidence": "Prostory svou velikostí a vybavením omezují realizaci odborných praktických činností."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi a jak se to projevuje v praxi?",
+      "Jaká opatření škola přijímá proti vysoké absenci a jak komunikuje se zákonnými zástupci?",
+      "Jak se škola chystá zlepšit materiální podmínky pro praktické vyučování v oboru Sociální činnost?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si cení osobnostního rozvoje a zapojení do školního života (parlament, soutěže, projekty)",
+      "Studenti oboru Obchodní akademie a Sociální činnost s podporou kariérového poradenství",
+      "Žáci, kteří potřebují motivační přístup a podporu při překonávání školních obtíží"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s vyšší absencí – škola sice situaci sleduje, ale absence zůstává na vyšší úrovni",
+      "Nadaní žáci mimo oblast pohybového nadání – podpora je zatím zaměřena převážně na sportovce",
+      "Žáci oboru Sociální činnost – praktické vyučování je omezeno nedostatečnými prostory"
+    ],
+    "plain_czech_summary": "SOŠ Morava je střední škola s pozitivním trendem. Ředitelka aktivně vede školu a výrazně se zlepšily výsledky maturitní zkoušky. Škola nabízí bohatý osobnostní rozvoj a podporu žákům. Hlavní slabinou je, že učitelé málo přizpůsobují výuku individuálním schopnostem žáků – všichni dělají stejné úkoly. Absence je vyšší než průměr. Prostory pro praktické vyučování v sociálních oborech jsou malé. Škola je vhodná pro žáky, kteří si cení aktivního zapojení do školního života."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "Neúspěšnost klesla z 32 % (2019-2021) na 11 % (2023-2025)",
+        "Zavedeny dvouúrovňové semináře z angličtiny",
+        "Zefektivněna výuka češtiny zaměřená na práci s textem"
+      ],
+      "evidence": "Průměrná hrubá neúspěšnost ve společné části maturitní zkoušky se výrazně zlepšila; v některých předmětech zůstává mírně vyšší než celorepublikový průměr."
+    },
+    "absence": {
+      "trend": "Vyšší úroveň, částečně zlepšující se",
+      "key_numbers": [
+        "Průměrná absence 172 hodin na žáka za školní rok",
+        "Neomluvená absence 3,7 hodin na žáka za poslední rok",
+        "Pokles zameškaných hodin v závěrečných ročnících"
+      ],
+      "evidence": "Absence je systematicky sledována; zvýšená pozornost věnována závěrečným ročníkům; zapojení do výzvy Aktivní Česko."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště koordinované výchovnou poradkyní se spolupracuje s kariérovou poradkyní a metodičkou prevence",
+      "Kariérové poradenství propojené s praktickým vyučováním",
+      "Preventivní programy a intervence v třídních kolektivech",
+      "Konzultace, sdílené prostředí s učebními materiály, opravy testů pro zlepšení hodnocení"
+    ],
+    "safety_climate": [
+      "Příjemné pracovní prostředí bez zaznamenávaných kázeňských problémů",
+      "Atmosféra důvěry, kde žáci bez obav vyjadřují názory a kladou dotazy",
+      "Nové relaxační koutky a venkovní odpočinková zóna pro žáky",
+      "Motivační přístup – více pochval než kázeňských opatření"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s mnoha organizacemi zajišťujícími praktické vyučování a pracovní uplatnění",
+      "Partnerství se základními, středními a vysokými školami",
+      "Výcvikový minikurz první pomoci s Českým červeným křížem",
+      "Dobrovolnická činnost žáků v sociálních zařízeních a charitativních sbírkách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však delší a obsahují více technických termínů, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jak přesně se liší kvalita výuky mezi jednotlivými učiteli – chybí konkrétní příklady problematických přístupů",
+      "Není jasné, jaké konkrétní předměty mají vyšší neúspěšnost u maturitní zkoušky než celorepublikový průměr",
+      "Chybí informace o tom, kolik procent žáků oboru Sociální činnost je omezeno nedostatečnými prostory"
+    ]
+  }
+}
+```

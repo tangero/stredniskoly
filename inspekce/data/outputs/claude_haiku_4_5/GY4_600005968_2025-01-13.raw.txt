@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY4_600005968_2025-01-13",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium s humanitním zaměřením v denní formě a všeobecně zaměřené v dálkové formě",
+    "inspection_period": "13. 1. 2025 – 16. 1. 2025",
+    "school_change_summary": "Od inspekce v 2016: nový ředitel (od srpna 2023), zkrácení dálkového studia z pěti na čtyři roky, výrazné zlepšení výsledků v denní formě, zvýšení podílu vyznamenaných žáků"
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Škola vytváří vstřícné, respektující prostředí s pozitivním pedagogickým stylem, který podporuje prosociální vztahy a rozvoj osobnosti žáků.",
+        "evidence": "Velmi nízký výskyt rizikového chování, komplexní preventivní mechanismy, důvěryhodné prostředí malé školy"
+      },
+      {
+        "tag": "Jazykové vzdělávání na vysoké úrovni",
+        "detail": "Systémově nastavené jazykové vzdělávání s nabídkou druhého cizího jazyka, zahraniční partnerskými školami a jazykovými pobyty.",
+        "evidence": "Výborné výsledky v čtenářské gramotnosti, srovnatelné nebo mírně lepší výsledky v českém a cizích jazycích než celoživotní průměr"
+      },
+      {
+        "tag": "Kvalitní vedení a stabilní tým",
+        "detail": "Nový ředitel s jasnou koncepcí rozvoje, 27 odborně kvalifikovaných učitelů, systematická adaptace nových pedagogů.",
+        "evidence": "Aktivní přístup vedení umožňuje naplňovat stanovené záměry, stabilní počet žáků a tříd, cílený profesní rozvoj"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoký počet předčasných odchodů v dálkovém studiu",
+        "detail": "Téměř polovina všech žáků přijatých ke vzdělávání v dálkovém studiu studium nedokončí (zvýšeno z 29 % v 2016).",
+        "evidence": "Negativní trend v dálkovém studiu, organizace vzdělávání a skladba tříd se promítá do zvyšujícího se předčasného ukončování"
+      },
+      {
+        "tag": "Slabší výsledky v matematice",
+        "detail": "Žáci, kteří si matematiku volí, dosahují výrazně horších výsledků než v jazycích.",
+        "evidence": "Výrazně horší výsledky v matematice v celostátním srovnění, matematiku si volí jen jednotlivci"
+      },
+      {
+        "tag": "Omezené aktivizační metody ve výuce",
+        "detail": "V části výuky se využívá omezené spektrum aktivizačních metod, málo se pracuje s kritickým myšlením a informačními zdroji.",
+        "evidence": "Dominující postavení učitele, menší pestrost metod, nedostatečné střídání činností, minimální využití formativního hodnocení"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola plánuje, aby snížila počet předčasných odchodů v dálkovém studiu?",
+      "Jak se škola zaměřuje na rozvoj matematických dovedností a proč jsou výsledky v matematice slabší?",
+      "Jaké konkrétní aktivizační metody a formy práce se používají ve výuce a jak se plánuje jejich rozšíření?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a humanitní obory – škola má systémově nastavené jazykové vzdělávání s vysokými výsledky",
+      "Talentovaní a nadaní žáci – škola vytváří vhodné podmínky pro podporu kreativity a individuálních zájmů (soutěže, olympiády, projekty)",
+      "Žáci, kteří potřebují bezpečné a podporující prostředí – malá škola s důvěryhodným klimatem a nízkým výskytem rizikového chování"
+    ],
+    "who_should_be_cautious": [
+      "Žáci v dálkovém studiu – vysoký podíl předčasných odchodů (téměř 50 %) naznačuje, že forma studia nemusí vyhovovat všem",
+      "Žáci se slabšími předpoklady v matematice – výrazně horší výsledky v matematice mohou být problém pro ty, kteří si ji volí",
+      "Žáci, kteří potřebují více individualizované přístupy – inspekce zjistila, že diferenciace úloh není dostatečná v části výuky"
+    ],
+    "plain_czech_summary": "Karlínské gymnázium je malá, tradičně zaměřená škola s kvalitním vedením a stabilním pedagogickým sborem. Silnou stránkou je bezpečné prostředí, výborné jazykové vzdělávání a podpora talentovaných žáků. Výsledky v denní formě se výrazně zlepšily. Slabinou je vysoký počet odchodů v dálkovém studiu (50 %), slabší výsledky v matematice a v některých hodinách omezené používání moderních vyučovacích metod. Škola je vhodná pro jazykově nadané žáky a ty, kteří hledají bezpečné prostředí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení v denní formě od inspekce 2016, vysoký podíl vyznamenaných žáků",
+      "key_numbers": [
+        "Denní forma: všichni konající žáci uspěli v společné části MZ, 40 % vyznamenaných žáků",
+        "Dálková forma: 1 žák neuspěl v matematice, 14 % vyznamenaných žáků",
+        "Profilová část: v denní formě neuspěl 1 žák, v dálkové 2 žáci"
+      ],
+      "evidence": "Srovnatelné nebo mírně lepší výsledky v českém a cizích jazycích, výrazně horší v matematice, kterou si volí jen jednotlivci"
+    },
+    "absence": {
+      "trend": "Vyšší průměrná omluvená absence na žáka",
+      "key_numbers": [
+        "Absence způsobena dlouhodobými zdravotními obtížemi některých jednotlivých žáků"
+      ],
+      "evidence": "Kázeňská opatření udělována uvážlivě, nikdo nebyl hodnocen sníženým stupněm z chování, převažují pochvaly"
+    },
+    "support_services": [
+      "Výchovná a kariérní poradkyně a školní metodička prevence v jedné osobě v úzké spolupráci s třídními učiteli",
+      "Systém adaptace žáků prvního ročníku (adaptační kurz, mimoškolní aktivity, monitoring rizik)",
+      "Podpora 17 žáků se speciálními vzdělávacími potřebami a 26 žáků s odlišným mateřským jazykem formou individuálního přístupu"
+    ],
+    "safety_climate": [
+      "Velmi nízký výskyt rizikového chování díky komplexním preventivním mechanismům",
+      "Celodenní přítomnost služby ve vrátnici a elektronický systém pro bezpečnost žáků",
+      "Preventivní aktivity zaměřené na adaptaci, duševní zdraví, zdravý životní styl, odolnost vůči násilí a šikanování"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Přírodovědecké fakulty Univerzity Karlovy",
+      "Partnerská škola Cambridge P.A.R.K.",
+      "Zahraniční partnerská škola pro jazykové vzdělávání a studijní jazykové pobyty"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními fakty a čísly. Slabinou je místy úřednický styl a složitější věty, ale hlavní zjištění jsou jasná.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty hodin, které byly hospitovány, a jaký byl jejich podíl s pozitivními vs. negativními zjištěními",
+      "Není jasné, zda vysoký počet odchodů v dálkovém studiu je způsoben kvalitou výuky nebo spíše náročností kombinace práce a studia",
+      "Chybí informace o tom, jak se škola konkrétně chystá řešit zjištěné nedostatky v diferenciaci a aktivizačních metodách"
+    ]
+  }
+}
+```

@@ -1,0 +1,113 @@
+{
+  "report_id": "GY6_600008533_2024-03-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:22:47.473979+00:00",
+  "run_finished_utc": "2026-02-09T16:23:11.301495+00:00",
+  "raw_file": "GY6_600008533_2024-03-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600008533_2024-03-12",
+    "school_profile": {
+      "school_type": "Gymnázium čtyřleté a šestileté, poskytující všeobecné vzdělání s přípravou na vysoké školy",
+      "inspection_period": "12. března 2024 až 14. března 2024",
+      "school_change_summary": "Škola prošla generační obměnou pedagogů, výrazně se zlepšily materiální podmínky včetně moderní přírodovědné laboratoře a digitálního vybavení. Počet žáků nejdříve poklesl, nyní se opět zvyšuje."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Výsledky ve společné části maturitních zkoušek jsou prokazatelně lepší než průměr stejných gymnázií v České republice.",
+          "evidence": "V roce 2022/2023 prospěli všichni žáci, z toho 40 % s vyznamenáním."
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Škola má novou přírodovědnou laboratoř, interaktivní tabule, chromebooky a sady na virtuální realitu.",
+          "evidence": "Velký kvalitativní posun zaznamenalo vybavení digitálními technologiemi, téměř všechny učebny mají interaktivní tabuli."
+        },
+        {
+          "tag": "Bezpečné a motivující prostředí",
+          "detail": "Nízký počet kázeňských opatření, žádný žák nebyl hodnocen sníženým stupněm z chování, průměrná absence je velmi nízká.",
+          "evidence": "Škola vykazuje nízký počet kázeňských opatření, neomluveným hodinám se vyskytují výjimečně."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka v některých hodinách",
+          "detail": "Část hodin je vedena frontální metodou s převažující aktivitou učitele, což vede k pasivnímu přejímání informací žáky.",
+          "evidence": "V některých hodinách frontální výuka nevytvářela prostor pro aktivní zapojení žáků a rozvoj jejich komunikativních dovedností."
+        },
+        {
+          "tag": "Slabé formativní hodnocení",
+          "detail": "Shrnutí hodin a sebehodnocení žáků chybí nebo probíhá jen formálně, prvky formativního hodnocení jsou zařazeny ojediněle.",
+          "evidence": "Shrnutí hodiny v závěru zcela chybělo nebo proběhlo jen formálně, prvky formativního hodnocení byly zařazeny ojediněle."
+        },
+        {
+          "tag": "Formální kontrolní činnost vedení",
+          "detail": "Kontrolní činnost je nastavená, ale její realizace je formální bez přijímání potřebných opatření a jejich vyhodnocování.",
+          "evidence": "Se zjištěními z četných hospitací vedení školy většinou dále nepracuje."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s nadanými žáky a jaké má pro ně speciální programy?",
+        "Jaké jsou zkušenosti s přípravou na vysoké školy a jaké vysoké školy absolventi nejčastěji studují?",
+        "Jak se škola vypořádala s doporučením inspekce na zlepšení aktivizujících metod ve výuce?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným cílem studovat na vysoké škole – škola má prokázaně lepší výsledky maturit než průměr",
+        "Motivovaní žáci zajímající se o jazyky – škola nabízí zahraniční stáže a zájezdy do anglicky a německy mluvících zemí",
+        "Žáci hledající bezpečné a podporující prostředí – nízká absence, minimální kázeňská opatření, funkční poradenské služby"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující interaktivní a aktivní výuku – část hodin je stále vedena tradičně frontální metodou",
+        "Žáci potřebující individuální zpětnou vazbu – formativní hodnocení není dostatečně rozvinuto",
+        "Žáci se specifickými potřebami – diferenciace úkolů je uplatňována výjimečně"
+      ],
+      "plain_czech_summary": "Gymnázium v Milevsku je kvalitní školou s výbornými výsledky maturit a moderním vybavením. Žáci jsou motivovaní, absence je nízká a bezpečnostní klima je dobré. Škola se zaměřuje na přípravu na vysoké školy a podporuje jazykové kompetence. Slabší stránkou je, že část výuky stále probíhá tradičně frontální metodou bez dostatečné aktivizace žáků. Inspekce doporučuje zlepšit formativní hodnocení a více využívat diferenciované úkoly."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – výsledky jsou prokazatelně lepší než průměr stejných gymnázií v ČR",
+        "key_numbers": [
+          "100 % prospělo v roce 2022/2023",
+          "40 % s vyznamenáním",
+          "Výsledky odpovídají průběžným studijním výsledkům"
+        ],
+        "evidence": "Celkové výsledky ve společné části maturitních zkoušek jsou ve srovnání se stejnými gymnaziálními obory v rámci celé České republiky prokazatelně lepší."
+      },
+      "absence": {
+        "trend": "Velmi nízká – svědčí o vysoké motivaci žáků",
+        "key_numbers": [
+          "Průměrná absence na jednoho žáka je nízká",
+          "Neomluveným hodinám se vyskytují výjimečně",
+          "Nula kázeňských opatření za chování v uzavřeném školním roce"
+        ],
+        "evidence": "Průměrná absence na jednoho žáka je nízká, neomluveným hodinám škola zaznamenává výjimečně, což dokládá vysokou motivovanost žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodik prevence zajišťují poradenské služby",
+        "Doučování v českém jazyce pro tři žáky s odlišným mateřským jazykem",
+        "Konzultace pro žáky se zhoršeným prospěchem, písemné informování zákonných zástupců"
+      ],
+      "safety_climate": [
+        "Nízký počet kázeňských opatření, v uzavřeném školním roce žádný žák nebyl hodnocen sníženým stupněm z chování",
+        "Efektivní aktivity k prevenci rizikového chování formou projektů, adaptačních kurzů a třídnických hodin",
+        "Velký počet udělovaných pochval motivačně působí na žáky"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zřizovatelem a vedením středních škol v kraji s výměnou zkušeností",
+        "Úzká spolupráce s městem a místními sportovními kluby pro realizaci tělesné výchovy",
+        "Spolupráce s vysokými školami a státními institucemi při zadávání a hodnocení maturitních prací"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak přesně se liší kvalita výuky mezi jednotlivými předměty a učiteli",
+        "Není jasné, jaký je konkrétní obsah zahraničních stáží učitelů cizích jazyků a jejich dopad na výuku",
+        "Chybí informace o tom, kolik žáků se účastní olympiád a jaké jsou jejich konkrétní úspěchy"
+      ]
+    }
+  }
+}

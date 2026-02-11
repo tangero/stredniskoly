@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600012093_2024-04-15",
+  "school_profile": {
+    "school_type": "Soukromá střední škola podnikatelská - ALTMAN, zaměřená na ekonomiku a podnikání",
+    "inspection_period": "15. 4. 2024 – 19. 4. 2024",
+    "school_change_summary": "Od inspekce v 2018: zlepšily se výsledky u maturit, snížila se absence žáků (z 120 na 93 hodin/žáka), naplněnost vzrostla z 50 % na 60 %."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné vzdělání s praktickou orientací",
+        "detail": "Škola nabízí profesní diferenciaci (firemní, finanční management, cestovní ruch, právní management) s odbornou praxí rozloženou do všech ročníků.",
+        "evidence": "Od 3. ročníku si žáci vybírají zaměření, praxe v rozsahu pěti dní ročně doplňovaná exkurzemi a diskusemi s odborníky."
+      },
+      {
+        "tag": "Příznivá školní atmosféra",
+        "detail": "Demokratické vedení založené na partnerské spolupráci, respektu a otevřené komunikaci vytváří pozitivní prostředí.",
+        "evidence": "Ředitelka uplatňuje koncept otevřeného vzdělávacího prostředí umožňující studium podle individuálních potřeb žáků."
+      },
+      {
+        "tag": "Motivace a podpora žáků",
+        "detail": "Škola oceňuje úspěšné žáky stipendii, organizuje soutěže a projekty, nabízí doučování a koučink.",
+        "evidence": "Projekt Učební styly, účast v Ekonomické olympiádě, program Mindfulness, minimální výskyt rizikových jevů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nepřehledný vzdělávací program",
+        "detail": "Školní vzdělávací program pro obor Podnikání není jasně rozpracován pro pedagogy, rodiče a partnery.",
+        "evidence": "Není zřejmé, jak jsou vzdělávací oblasti rozpracovány do učebních osnov jednotlivých předmětů."
+      },
+      {
+        "tag": "Nejednotné vyučovací metody",
+        "detail": "V části hodin převažuje frontální výuka s dominantní rolí učitele, málo se využívá skupinová práce a digitální technologie.",
+        "evidence": "V třetině hodin byly zaznamenány didaktické nedostatky, nízká míra diferenciace a individualizace výuky."
+      },
+      {
+        "tag": "Problémy s docházkou",
+        "detail": "Přestože se absence snížila, stále existuje problém s pozdními příchody žáků, který škola zatím neřeší zcela funkčně.",
+        "evidence": "Ve školním roce 2022/2023 průměr 93 zameškaných hodin na žáka, zvolený postup není zatím zcela funkční."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá odborná praxe a jak se hodnotí? Jaké firmy jsou partnery školy?",
+      "Jaké jsou konkrétní výsledky žáků u maturitní zkoušky v posledních třech letech?",
+      "Jak škola řeší individuální potřeby žáků s různými studijními předpoklady?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o ekonomiku, podnikání a management s jasnou představou o budoucí profesní dráze",
+      "Studenti, kteří si cení praktické orientace a spolupráce se skutečnými firmami",
+      "Žáci, kteří potřebují menší školu s individuálnějším přístupem (204 žáků, kapacita 60 %)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují vysokou míru diferenciace a individualizace – v části hodin ji škola poskytuje nedostatečně",
+      "Studenti, kteří se lépe učí aktivními metodami a skupinovou prací – frontální výuka je stále běžná",
+      "Žáci se slabší disciplínou – problémy s docházkou a pozdními příchody nejsou zcela vyřešeny"
+    ],
+    "plain_czech_summary": "Soukromá škola v Jičíně se zaměřuje na ekonomiku a podnikání s praktickou orientací. Silné stránky: kvalitní odborné vzdělání s profesní diferenciací, příznivá atmosféra, motivace žáků. Slabiny: nepřehledný vzdělávací program, nejednotné vyučovací metody (v části hodin převažuje frontální výuka), problémy s docházkou. Výsledky u maturit se zlepšily, absence se snížila. Škola je vhodná pro motivované žáky se zájmem o praxi."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – výsledky se zlepšily od inspekce v 2018",
+      "key_numbers": [
+        "2021/2022: Ekonomika – 100 % úspěšnost (10 žáků), Podnikání – 92 % (22 z 24)",
+        "2022/2023: Ekonomika – 88 % úspěšnost (14 prospělo, 3 s vyznamenáním, 2 neprospěli z 19), Podnikání – 94 % (18 prospělo, 2 s vyznamenáním, 1 neprospěl z 21)"
+      ],
+      "evidence": "Všech 10 žáků v 2021/2022 prospělo, v 2022/2023 88 % v Ekonomice a 94 % v Podnikání."
+    },
+    "absence": {
+      "trend": "Pozitivní – výrazné snížení",
+      "key_numbers": [
+        "Minulé roky: až 120 zameškaných hodin na žáka",
+        "2022/2023: 93 zameškaných hodin na žáka denního studia",
+        "Problém: vyšší míra pozdních příchodů"
+      ],
+      "evidence": "Absence se snížila, ale zůstává problém s pozdními příchody, který škola řeší opatřením ve školním řádu, zatím však ne zcela funkčně."
+    },
+    "support_services": [
+      "Výchovná poradkyně – spolupráce se školskými poradenskými zařízeními, podpora žáků se speciálními vzdělávacími potřebami",
+      "Školní metodik prevence – preventivní aktivity na předcházení rizikových jevů",
+      "Doučování a individuální konzultace pro žáky se školním neúspěchem",
+      "Program Mindfulness – podpora duševního zdraví žáků formou koučinku"
+    ],
+    "safety_climate": [
+      "Minimální výskyt rizikových jevů ve škole",
+      "Spolupráce s Policií ČR, Českým červeným křížem a Hasičským záchranným sborem",
+      "Prevence rizikových jevů je součástí výuky předmětů (základy společenských věd, právo, bezpečnostní výchova)",
+      "Vnitrofiremní vzdělávání pro žáky a pedagogy v oblastech bezpečného chování a první pomoci"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s firmami na odborné praxi (5 dní ročně v každém ročníku)",
+      "Partnerství s jazykovou školou v Turnově – příprava na mezinárodní jazykové certifikáty",
+      "Sdružení soukromých škol – členství v ECNAIS a MEOPS",
+      "Spolupráce s Městem Jičín na provozu dětského dopravního hřiště",
+      "Účast v celostátní Ekonomické olympiádě a soutěžích ve finanční gramotnosti"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní příklady a čísla. Slabší je pouze v některých technických pasážích o vzdělávacích programech.",
+    "uncertainty_notes": [
+      "Není jasné, jak přesně se hodnotí odborná praxe a jak se promítá do klasifikace – zpráva to kritizuje, ale konkrétní údaje chybí",
+      "Počet pedagogických pracovníků (14) se zdá nízký pro 204 žáků, ale není jasné, zda jde o ekvivalent na plný úvazek",
+      "Není specifikováno, jaké konkrétní digitální technologie škola má k dispozici a proč se nepoužívají efektivně"
+    ]
+  }
+}
+```

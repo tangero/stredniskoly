@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_600014754_2025-05-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:02:25.026501+00:00",
+  "run_finished_utc": "2026-02-09T16:02:56.453918+00:00",
+  "raw_file": "GY8_600014754_2025-05-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014754_2025-05-02",
+    "school_profile": {
+      "school_type": "Gymnázium a střední odborná škola (4 obory: Gymnázium 8tř., Gymnázium 4tř., Ekonomika a podnikání, Předškolní a mimoškolní pedagogika)",
+      "inspection_period": "2.–7. a 9. května 2025",
+      "school_change_summary": "Škola úspěšně zavedla nový obor Předškolní a mimoškolní pedagogika (druhý rok provozu), stabilizovala počet žáků v oboru Ekonomika a podnikání a došlo ke změnám na pozicích zástupců ředitele."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní vedení a plánování",
+          "detail": "Ředitelka školy plánovitě zvyšuje kvalitu řízení s využitím externích odborníků a evaluačních nástrojů.",
+          "evidence": "Vedení školy využívá posouzení efektivity procesů řízení odborníky externí firmy a do přípravy koncepce zapojuje pedagogy a žáky."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Žáci gymnázií dosahují lepších výsledků než celorepublikový průměr ve všech zkušebních předmětech.",
+          "evidence": "Obory 79-41-K/41 a 79-41-K/81 dosahují od roku 2019 výsledků lepších než celorepublikový průměr v oborové skupině gymnázií."
+        },
+        {
+          "tag": "Bohatá mimoškolní nabídka",
+          "detail": "Škola nabízí širokou paletu zájmových aktivit, projektů a soutěží, které rozvíjejí osobnosti žáků.",
+          "evidence": "Škola realizuje Literární cenu Otokara Březiny, Poeziomat, zahraniční výjezdy, projekty eTwinning a žáci dosahují výsledků na republikové a mezinárodní úrovni."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší matematika v ekonomickém oboru",
+          "detail": "Žáci oboru Ekonomika a podnikání dosahují od roku 2022 v matematice výsledků pod celorepublikovým průměrem.",
+          "evidence": "Matematiku si vybírá maximálně 3 žáci ročně; škola reaguje cílenou podporou, ale motivace k volbě semináře z matematiky není dostatečná."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Vyučující příliš nerespektují individuální studijní potenciál žáků v rámci diferencovaného přístupu.",
+          "evidence": "Diferenciace je omezena na práci vlastním tempem nebo dodatkovými úkoly; chybí účinnější formy reagující na aktuální schopnosti jednotlivců."
+        },
+        {
+          "tag": "Chybí vyhodnocování hospitací",
+          "detail": "Škola dosud systematicky nevyhodnocuje hospitační činnost a nepřijímá z ní opatření na úrovni celé školy.",
+          "evidence": "Vedení školy si pro splnění tohoto úkolu teprve vytvářelo adekvátní předpoklady v době inspekce."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky oboru Ekonomika a podnikání v matematice a proč není vyšší účast v semináři z matematiky?",
+        "Jaké konkrétní formy individuální péče nabízíte talentovaným žákům, kteří se nudí v běžné výuce?",
+        "Jak funguje kariérní poradenství a jaké jsou konkrétní výsledky v umístění absolventů na vysokých školách?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí na vysokou školu – gymnázia dosahují výborných výsledků maturit a vysoké úspěšnosti při přijetí na VŠ",
+        "Žáci zajímající se o jazyky – škola nabízí výuku v cílovém jazyce, rodilé mluvčí a přípravu na mezinárodní certifikáty",
+        "Všestranně nadaní žáci – bohatá nabídka projektů, soutěží, exkurzí a zájmových aktivit podporuje rozvoj talentu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci slabší v matematice v oboru Ekonomika a podnikání – zde jsou výsledky pod průměrem a podpora není zcela účinná",
+        "Žáci potřebující individualizovanou výuku – diferenciace je zatím omezená a nerespektuje dostatečně různé studijní potenciály",
+        "Žáci, kteří se potřebují přizpůsobit přísné akademické atmosféře – škola je zaměřena na výkon a vysoké standardy"
+      ],
+      "plain_czech_summary": "Gymnázium O. Březiny v Telči je dobře vedená škola s výborným akademickým výkonem. Žáci gymnázií dosahují lepších výsledků maturit než průměr v republice. Škola nabízí bohatou mimoškolní činnost, kvalitní kariérní poradenství a úspěšně připravuje žáky na vysoké školy. Slabší je obor Ekonomika a podnikání v matematice a diferenciace výuky podle individuálních potřeb žáků. Škola si je těchto problémů vědoma a pracuje na jejich řešení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – gymnázia dosahují výborných výsledků, ekonomika se zlepšuje",
+        "key_numbers": [
+          "Gymnázia 79-41-K/41 a 79-41-K/81: výsledky lepší než celorepublikový průměr od roku 2019 ve všech zkušebních předmětech",
+          "Ekonomika a podnikání: zlepšení v češtině a cizím jazyce, zhoršení v matematice od roku 2022 (pod průměrem)",
+          "Matematiku v ekonomice si vybírá maximálně 3 žáci ročně"
+        ],
+        "evidence": "Škola dosahuje od školního roku 2021/2022 výborného hodnocení ve všech oblastech výběrového zjišťování výsledků žáků."
+      },
+      "absence": {
+        "trend": "Není explicitně zmíněn v textu",
+        "key_numbers": [
+          "Není dostupné"
+        ],
+        "evidence": "Zpráva se absence věnuje pouze v kontextu prevence školního neprospěchu a podpory úspěšnosti."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s vhodným systémem podpory žáků se speciálními vzdělávacími potřebami",
+        "Kariérní poradenství na výborné úrovni s programy: Odborníci do škol, Absolventi do škol, Projekt-Poznej nemocnici, pohovory nanečisto, Career Day",
+        "Adaptační a sportovní kurzy, tematicky zaměřené přednášky a třídnické hodiny zaměřené na řešení problémů v třídních kolektivech"
+      ],
+      "safety_climate": [
+        "Všechny hospitované hodiny probíhaly v podnětné vzdělávací atmosféře s partnerským přístupem vyučujících",
+        "Žáci dodržují nastavená pravidla komunikace, respektují postupy práce a bez obav si žádají o pomoc",
+        "Školní preventivní strategie zohledňuje potřeby školy a umožňuje včasnou identifikaci problémů; nastavené mechanismy poskytují funkční systém při řešení výchovně vzdělávacích problémů"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se školami v regionu při zavádění nového oboru Předškolní a mimoškolní pedagogika",
+        "Partnerské vztahy s akademickou obcí, jazykovými a vzdělávacími institucemi na regionální i zahraniční úrovni",
+        "Projekt eTwinning se zahraniční partnerskou školou; rodilí mluvčí v hodinách cizích jazyků; zahraniční výjezdy a projekty (Rok ve Francii, Příběhy našich sousedů, Noc vědců)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Některé pasáže jsou však poměrně dlouhé a složitě strukturované (např. popis průběhu vzdělávání). Absence konkrétních čísel o absencích a některých dalších metrikách snižuje jasnost.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, jaká je absence žáků a jak se vyvíjí",
+        "Počet žáků v jednotlivých třídách není uveden – známe jen celkové počty v oborech",
+        "Konkrétní procenta úspěšnosti při přijetí na vysoké školy nejsou uvedena – pouze se zmiňuje 'vysoká úspěšnost'"
+      ]
+    }
+  }
+}

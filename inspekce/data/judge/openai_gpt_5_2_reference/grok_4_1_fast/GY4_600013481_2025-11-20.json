@@ -1,0 +1,28 @@
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T11:35:32.673321+00:00",
+  "run_finished_utc": "2026-02-09T11:36:14.468937+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY4_600013481_2025-11-20\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 1,\n  \"critical_issues\": [\n    \"Tvrzení/implikace „absence je nízká“ není ve zdroji výslovně hodnocena; zdroj uvádí pouze průměrnou omluvenou absenci 120 hodin na žáka za poslední tři roky a že neomluvenou řeší zřídka.\",\n    \"Drobné jazykové chyby/typo snižují profesionalitu (např. „Mezinárodní mobily“, „Rodice“).\"\n  ],\n  \"best_points\": [\n    \"Správně převzaté klíčové silné stránky ze závěrů inspekce: mimořádný rozsah Erasmus+ (skupinové mobility), dlouhodobě výborné výsledky u maturity a úspěšnost absolventů, výrazné úspěchy v olympiádách (včetně bronzu z Mezinárodní matematické olympiády).\",\n    \"Správně zachycené hlavní oblasti ke zlepšení: nejednotná kritéria hodnocení, převaha frontální výuky (72 %) a nízké zastoupení skupinové práce (15 %), nedostatečná podpora kritického myšlení a aktivit pro individuální rozvoj/nadání.\",\n    \"Užitečné pro rodiče: konkrétní otázky na den otevřených dveří a vybraná „tvrdá data“ (vyznamenání, maturitní neúspěšnost, absence, dostupnost psycholožky 1 den v týdnu, jednotky řešených rizikových jevů).\"\n  ],\n  \"one_line_verdict\": \"Většinově věrné a pro rodiče dobře použitelné shrnutí s klíčovými čísly i riziky, jen s drobným nepodloženým hodnotícím soudem o „nízké“ absenci a několika překlepy.\"\n}",
+  "judge_output": {
+    "report_id": "GY4_600013481_2025-11-20",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 1,
+    "critical_issues": [
+      "Tvrzení/implikace „absence je nízká“ není ve zdroji výslovně hodnocena; zdroj uvádí pouze průměrnou omluvenou absenci 120 hodin na žáka za poslední tři roky a že neomluvenou řeší zřídka.",
+      "Drobné jazykové chyby/typo snižují profesionalitu (např. „Mezinárodní mobily“, „Rodice“)."
+    ],
+    "best_points": [
+      "Správně převzaté klíčové silné stránky ze závěrů inspekce: mimořádný rozsah Erasmus+ (skupinové mobility), dlouhodobě výborné výsledky u maturity a úspěšnost absolventů, výrazné úspěchy v olympiádách (včetně bronzu z Mezinárodní matematické olympiády).",
+      "Správně zachycené hlavní oblasti ke zlepšení: nejednotná kritéria hodnocení, převaha frontální výuky (72 %) a nízké zastoupení skupinové práce (15 %), nedostatečná podpora kritického myšlení a aktivit pro individuální rozvoj/nadání.",
+      "Užitečné pro rodiče: konkrétní otázky na den otevřených dveří a vybraná „tvrdá data“ (vyznamenání, maturitní neúspěšnost, absence, dostupnost psycholožky 1 den v týdnu, jednotky řešených rizikových jevů)."
+    ],
+    "one_line_verdict": "Většinově věrné a pro rodiče dobře použitelné shrnutí s klíčovými čísly i riziky, jen s drobným nepodloženým hodnotícím soudem o „nízké“ absenci a několika překlepy."
+  }
+}

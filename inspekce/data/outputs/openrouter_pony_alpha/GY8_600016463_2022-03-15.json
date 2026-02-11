@@ -1,0 +1,107 @@
+{
+  "report_id": "GY8_600016463_2022-03-15",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:08:48.238909+00:00",
+  "run_finished_utc": "2026-02-10T07:10:31.480113+00:00",
+  "raw_file": "GY8_600016463_2022-03-15.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600016463_2022-03-15",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté)",
+      "inspection_period": "15. 3. 2022 − 18. 3. 2022",
+      "school_change_summary": "Od poslední inspekce došlo k výraznému zlepšení materiálních podmínek, částečné obměně sboru a posílení péče o psychické zdraví."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci dosahují nadprůměrných výsledků v maturitních zkouškách a 90 % pokračuje na vysokých školách.",
+          "evidence": "„Ve společné části maturitní zkoušky jsou výsledky žáků... dlouhodobě lepší než průměr... V dalším studiu na vysokých školách pokračuje 90 % absolventů.“"
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola nabízí novou sportovní halu, jazykové učebny a moderní technologie jako 3D tiskárny a drony.",
+          "evidence": "„Byla vybudována nová sportovní hala... multimediální učebny vybavené 3D tiskárnami, edukačními roboty a programovatelnými drony.“"
+        },
+        {
+          "tag": "Psychologická podpora",
+          "detail": "Škola účinně podporuje duševní zdraví prostřednictvím školní psycholožky a preventivních programů.",
+          "evidence": "„O individuální konzultace se školní psycholožkou... projevují žáci školy mimořádný zájem.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo aktivní výuka",
+          "detail": "Výuka je převážně frontální s nižším důrazem na kritické myšlení a samostatnou práci žáků.",
+          "evidence": "„Převažovala frontální výuka... V nižší míře byly zařazovány činnosti podporující kritické myšlení.“"
+        },
+        {
+          "tag": "Chybí sebehodnocení",
+          "detail": "Ve výuce chybí prostor pro sebehodnocení žáků a diferencované úkoly podle schopností.",
+          "evidence": "„Společným nedostatkem... bylo chybějící sebehodnocení a vzájemné hodnocení žáků... výuka diferencovaná... pouze výjimečně.“"
+        },
+        {
+          "tag": "Nevyužitý potenciál učitelů",
+          "detail": "Poznatky ze vzdělávání učitelů se do praxe promítají jen částečně bez cílené kontroly vedení.",
+          "evidence": "„Praktické využití... dovedností... se projevilo jen částečně... vedení školy cíleně neověřuje využití poznatků.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé využívají moderní technologie a 3D tiskárny v běžných hodinách?",
+        "Jakým způsobem škola podporuje žáky s různou úrovní nadání, pokud většina výuky není diferencovaná?",
+        "Kdy a jak mají žáci možnost sebehodnocení nebo zpětné vazby k průběhu hodiny?"
+      ],
+      "who_school_fits": [
+        "Studentům, kteří preferují kvalitní jazykovou výuku a mezinárodní projekty.",
+        "Žákům, kteří očekávají silnou podporu psychického zdraví a bezpečné klima.",
+        "Uchazečům, kteří chtějí studovat na moderně vybavené škole s novou sportovní halou."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kteří potřebují individuální přístup a výuku přizpůsobenou jejich tempu.",
+        "Studentům, kteří preferují aktivní, projektovou výuku před tradičním výkladem.",
+        "Rodičům, kteří očekávají systematické uplatňování moderních metod u všech učitelů."
+      ],
+      "plain_czech_summary": "Gymnázium Josefa Božka v Českém Těšíně nabízí nadprůměrné studijní výsledky a vynikající vybavení včetně nové sportovní haly a technologií. Škola klade velký důraz na psychickou pohodu žáků a nabízí služby školní psycholožky. Slabší stránkou je převaha tradiční frontální výuky a malý prostor pro individuální přístup nebo sebehodnocení žáků. Pro ambiciózní studenty je však silnou volbou s vysokou úspěšností při přijetí na VŠ."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nadprůměrné výsledky, 100% úspěšnost po zavedení opatření.",
+        "key_numbers": [
+          "90 % absolventů pokračuje na VŠ",
+          "66 % žáků prospělo s vyznamenáním",
+          "100 % úspěšnost u maturity"
+        ],
+        "evidence": "„Žáci každoročně vykazují při ukončování vzdělávání stoprocentní úspěšnost.“"
+      },
+      "absence": {
+        "trend": "Úrazovnost má mírně klesající tendenci, absence není explicitně hodnocena.",
+        "key_numbers": [
+          "Mírně klesající úrazovost"
+        ],
+        "evidence": "„Úrazovost žáků má mírně klesající tendenci, vedení školy provádí její rozbor.“"
+      },
+      "support_services": [
+        "Individuální konzultace se školní psycholožkou",
+        "Doučování a konzultace pro žáky s obtížemi",
+        "Spolupráce se Spolkem rodičů a externími partnery"
+      ],
+      "safety_climate": [
+        "Minimální výskyt rizikového chování",
+        "Pozitivní klima třídy podporované psycholožkou",
+        "Funkční on-line schránka důvěry"
+      ],
+      "partnerships_practice": [
+        "Výměnné pobyty s partnerskou školou ve Francii",
+        "Projekt Erasmus+ a mezinárodní spolupráce",
+        "Spolupráce s VŠ a Cambridge Exams Center"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje dostatek konkrétních příkladů pro vyplnění všech polí.",
+      "uncertainty_notes": []
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_600017141_2022-04-05",
+  "school_profile": {
+    "school_type": "Soukromá střední odborná škola",
+    "inspection_period": "5., 7. a 8. 4. 2022",
+    "school_change_summary": "Od poslední inspekce došlo ke zlepšení materiálních podmínek, částečné obměně pedagogického sboru a zavedení nového oboru Informační služby."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Práce s žáky",
+        "detail": "Nadstandardně fungující školní poradenské pracoviště aktivně vyhledává a řeší problémy žáků.",
+        "evidence": "Speciální pedagožka aktivně vyhledává žáky s rizikem školní neúspěšnosti, komunikuje a řeší jejich individuální potřeby."
+      },
+      {
+        "tag": "Vyučování",
+        "detail": "Výuka probíhá v příjemné atmosféře s důrazem na propojení teorie s praxí a reálným životem.",
+        "evidence": "Společným znakem hodnocených hodin byla příjemná pracovní atmosféra, výuka byla vedena věcně správně s využitím mezipředmětových vztahů."
+      },
+      {
+        "tag": "Zázemí",
+        "detail": "Škola efektivně řídí a zkvalitňuje materiální i personální podmínky včetně podpory začínajících učitelů.",
+        "evidence": "Vedení školy usiluje o zlepšování materiálního zázemí, novým pedagogům vytvořila optimální podmínky přidělením uvádějících učitelů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost v matematice",
+        "detail": "Žáci vykazují dlouhodobou neúspěšnost v předmětu Matematika, škola řeší opatření jen částečně.",
+        "evidence": "V posledních třech školních rocích vykazovali žáci neúspěšnost zejména ve vyučovacím předmětu Matematika."
+      },
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Převažuje frontální výuka, která neumožňuje dostatečnou týmovou spolupráci ani diferenciaci pro nadané či potřebné žáky.",
+        "evidence": "Převažovala frontální výuka, nedostatečná pestrost forem nevytvářela žákům příležitosti k týmové spolupráci."
+      },
+      {
+        "tag": "Chybějící analýza výsledků",
+        "detail": "Škola nepromyšleně nevyužívá data k nápravě chyb a zlepšování výuky.",
+        "evidence": "Výsledná data z interního testování nejsou dostatečně analyzována, nejsou stanovena jednotná kritéria pro hodnocení výsledků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s matematikou, a jaká je úspěšnost těchto opatření?",
+      "Využívají učitelé při výuce skupinovou práci a jiné aktivity, které podporují týmovou spolupráci?",
+      "Jakým způsobem škola individuálně přistupuje k talentovaným žákům a žákům se specifálními potřebami?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří očekávají vstřícnou podporu při řešení osobních či studijních problémů.",
+      "Pro zájemce o obory Veřejnosprávní činnost a Informační služby s důrazem na praktické využití.",
+      "Pro studenty, kterým vyhovuje tradičnější forma výuky s využitím moderních technologií."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří vyžadují silný důraz na matematické vzdělávání, zde může být riziko neúspěchu.",
+      "Pro studenty preferující aktivní, projektovou a týmovou výuku místo frontálního výkladu.",
+      "Pro rodiče očekávající detailní a proaktivní komunikaci školy o studijních výsledcích a jejich nápravě."
+    ],
+    "plain_czech_summary": "Soukromá škola nabízí obory Veřejnosprávní činnost a Informační služby v příjemném prostředí s nadstandardní podporou speciální pedagožky. Výuka je srozumitelná a propojená s praxí, ale převažují tradiční metody bez dostatečné spolupráce žáků. Pozor by si měli dát rodič dětí s problémy v matematice, kde je dlouhodobě vyšší neúspěšnost. Škola má rezervy v analýze výsledků a individuálním přístupu k nadaným i potřebným žákům."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírně negativní / Stagnující",
+      "key_numbers": [
+        "Neúspěšnost v předmětu Matematika",
+        "Poslední 3 školní roky",
+        "Zavedena doučování"
+      ],
+      "evidence": "V hodnoceném období posledních tří školních roků vykazovali žáci školy neúspěšnost zejména ve vyučovacím předmětu Matematika."
+    },
+    "absence": {
+      "trend": "Není specifikováno",
+      "key_numbers": [
+        "202 žáků denního studia",
+        "51 žáků dálkového studia",
+        "14 žáků s podpůrnými opatřeními"
+      ],
+      "evidence": "Vedení subjektu spolupracuje se zákonnými zástupci žáků zejména při řešení neomluvené absence."
+    },
+    "support_services": [
+      "Nadstandardně fungující školní poradenské pracoviště se speciální pedagožkou.",
+      "Kariérové poradenství zahrnující trh práce i další studium.",
+      "Individuální konzultace a doučování pro žáky s neúspěšností."
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra založená na otevřené komunikaci.",
+      "Minimální výskyt rizikového chování díky včasné intervenci.",
+      "Pravidelné vyhodnocování dotazníku na školní klima."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s úřady a institucemi při zajišťování odborné praxe.",
+      "Účast žáků v odborných soutěžích a konferencích.",
+      "Zapojení do projektu Michael na podporu odborné slovní zásoby."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a negativa, používá běžnou terminologii. Obsahuje dostatek konkrétních příkladů z výuky i řízení školy.",
+    "uncertainty_notes": [
+      "Nejasná míra neúspěšnosti u maturity (chybí konkrétní procenta).",
+      "Nespecifikovaná míra neomluvené absence a její vývoj.",
+      "Nejasná efektivita zavedených doučování (chybí vyhodnocení)."
+    ]
+  }
+}

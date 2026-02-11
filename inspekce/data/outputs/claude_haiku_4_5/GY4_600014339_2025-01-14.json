@@ -1,0 +1,116 @@
+{
+  "report_id": "GY4_600014339_2025-01-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:05:05.700234+00:00",
+  "run_finished_utc": "2026-02-09T16:05:33.162759+00:00",
+  "raw_file": "GY4_600014339_2025-01-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600014339_2025-01-14",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřletý maturitní obor)",
+      "inspection_period": "14. 1. 2025 – 17. 1. 2025",
+      "school_change_summary": "Od srpna 2024 nový ředitel a dva noví zástupci. Škola přestala vzdělávat v oboru Obchodní akademie. Probíhá modernizace prostor (šatny, relaxační místnost, sociální zázemí, ICT vybavení)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Úspěšnost u maturitních zkoušek je 100 % v posledních dvou letech, žáci se úspěšně hlásí na vysoké školy.",
+          "evidence": "Školní rok 2023/2024 a 2022/2023 byla úspěšnost 100 %, v roce 2021/2022 neprospěla pouze jedna žákyně."
+        },
+        {
+          "tag": "Kvalitní poradenství a podpora",
+          "detail": "Škola nabízí systematické poradenství, adaptační pobyty pro prvňáky a individuální konzultace k budoucím plánům.",
+          "evidence": "Poradenské služby zajišťují výchovná poradkyně a školní metodik prevence ve spolupráci s třídními učiteli."
+        },
+        {
+          "tag": "Aktivní zapojení v soutěžích",
+          "detail": "Žáci pravidelně uspívají v olympiádách a soutěžích, včetně mezinárodních zkoušek FCE z angličtiny.",
+          "evidence": "Nejlepší umístění v biologické, geologické olympiádě a soutěži ve finanční gramotnosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo hospitací a zpětné vazby",
+          "detail": "Vedení školy provádí málo hospitací, takže nemá dostatek informací o kvalitě výuky všech pedagogů.",
+          "evidence": "V době inspekce byl počet uskutečněných hospitací poměrně nízký, vedení nemělo dostatek poznatků o reálném stavu výuky."
+        },
+        {
+          "tag": "Slabší výuka cizích jazyků",
+          "detail": "Výuka cizích jazyků se zaměřuje především na gramatiku, chybí aktivní komunikace a práce s různými zdroji.",
+          "evidence": "Dominantně uplatňovaná frontální výuka umožňovala pouze částečné aktivní zapojení, verbální projev dostávali jen formou řízeného rozhovoru."
+        },
+        {
+          "tag": "Bezpečnost v chemické laboratoři",
+          "detail": "Při praktických činnostech v chemické laboratoři chybělo důsledné dodržování bezpečnostních pravidel.",
+          "evidence": "Inspekce doporučila revizi provozního řádu chemické laboratoře."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se škola zaměřuje na rozvoj komunikativních dovedností v cizích jazycích? Jaké metody používá?",
+        "Jaké jsou plány na zvýšení počtu hospitací a zpětné vazby pro pedagogy v příštích měsících?",
+        "Jak se škola připravuje na bezpečnost v chemické laboratoři a jaké jsou nové postupy?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí studovat na vysoké škole – škola má vysokou úspěšnost při přijímání na VŠ",
+        "Všestranně nadaní žáci – nabízí širokou nabídku seminářů a účast v soutěžích",
+        "Žáci se speciálními vzdělávacími potřebami – škola má asistentku pedagoga a podporu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se spoléhají na intenzivní komunikaci v cizích jazycích – výuka je zatím více zaměřena na gramatiku",
+        "Žáci, kteří potřebují více individuální zpětné vazby – vedení školy teprve zvyšuje počet hospitací",
+        "Žáci se zájmem o praktickou chemii – bezpečnostní postupy v laboratoři se právě upravují"
+      ],
+      "plain_czech_summary": "Gymnázium Valašské Klobouky je kvalitní školou s výbornou úspěšností u maturit (100 % v posledních dvou letech) a vysokým podílem žáků s vyznamenáním. Nabízí dobré poradenství, adaptační pobyty a podporu pro žáky se speciálními potřebami. Žáci úspěšně soutěží v olympiádách a hlásí se na vysoké školy. Nové vedení od srpna 2024 postupně zlepšuje podmínky. Slabší stránkou je výuka cizích jazyků (málo komunikace) a zatím nízký počet hospitací vedení. Škola se na tyto oblasti zaměřuje."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoká úspěšnost",
+        "key_numbers": [
+          "100 % úspěšnost v roce 2023/2024",
+          "100 % úspěšnost v roce 2022/2023",
+          "99,5 % úspěšnost v roce 2021/2022 (neprospěla 1 žákyně)"
+        ],
+        "evidence": "Žáci konají maturitu napříč vzdělávacími oblastmi, největší počet z základů společenských věd, dějepisu, chemie a biologie."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Informace o absenci nejsou v inspekční zprávě uvedeny"
+        ],
+        "evidence": "Zpráva se zaměřuje na výsledky a kvalitu výuky, ne na absenci žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodik prevence zajišťují cílenou podporu žákům a zákonným zástupcům",
+        "Adaptační pobyty pro žáky prvních ročníků na posílení vztahů v třídních kolektivech",
+        "Individuální konzultace se žáky zaměřené na budoucí studijní a kariérní plány",
+        "Kariérové poradenství ve spolupráci s odbornými organizacemi",
+        "Asistentka pedagoga pro žáky se speciálními vzdělávacími potřebami (6 žáků)"
+      ],
+      "safety_climate": [
+        "Účinně nastavený systém pro bezpečnost a ochranu zdraví žáků",
+        "Žáci dostávají pravidelné informace o bezpečnostních rizicích ve škole i mimo ni",
+        "Školní jídelna se dvěma druhy nabízených jídel s respektem k pestrostí a výživě",
+        "Pozorování: Nedostatečné dodržování bezpečnostních pravidel v chemické laboratoři"
+      ],
+      "partnerships_practice": [
+        "Funkční spolupráce se zřizovatelem, základními a středními školami, školskými poradenskými zařízeními",
+        "Vstřícná spolupráce s městem Valašské Klobouky a místními i regionálními zájmovými organizacemi",
+        "Dlouhodobá spolupráce se školami na Slovensku a v Německu – výměna poznatků a zkušeností",
+        "Žáci se podílejí na výstavách, koncertech, kulturních vystoupeních a charitativních sbírkách",
+        "Spolupráce se zájmovými a podnikatelskými organizacemi na autorských čteních a diskusních fórech"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však poměrně dlouhé a obsahují více technických termínů, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Absence dat o absenci žáků – zpráva se jí nezabývá, není jasné, zda je to problém či ne",
+        "Konkrétní počty hospitací nejsou uvedeny, pouze se říká, že byl počet 'poměrně nízký'",
+        "Nejsou specifikovány konkrétní plány vedení na řešení zjištěných slabých stránek"
+      ]
+    }
+  }
+}

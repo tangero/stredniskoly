@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600170012_2025-10-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:30:20.592924+00:00",
+  "run_finished_utc": "2026-02-09T13:30:47.181536+00:00",
+  "raw_file": "SOS_600170012_2025-10-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170012_2025-10-21",
+    "school_profile": {
+      "school_type": "Střední škola - Obchodní akademie s obory Obchodní akademie a Ekonomika a podnikání (zaměření Management sportovních zařízení)",
+      "inspection_period": "21. 10. 2025 - 24. 10. 2025",
+      "school_change_summary": "Od inspekce v roce 2020 se zvýšil počet tříd a žáků o pětinu (nyní 515 žáků v 18 třídách). Výrazně vzrostl počet žáků s odlišným mateřským jazykem (více než třikrát). Škola systematicky odstraňovala nedostatky v přípravě na maturitu a zlepšila formativní hodnocení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola efektivně propojuje teoretickou výuku s praktickými zkušenostmi prostřednictvím spolupráce se zaměstnavateli, bankami, státními úřady a sportovními kluby.",
+          "evidence": "Systematická spolupráce s profesními partnery zajišťuje sepětí teoretické výuky s praxí a rozvoj odborných dovedností."
+        },
+        {
+          "tag": "Kvalitní pedagogický sbor",
+          "detail": "Škola má stabilizovaný tým 45 plně kvalifikovaných pedagogů s dlouholeté zkušeností, kteří podporují nové učitele.",
+          "evidence": "Převaha zkušených a odborně způsobilých pedagogů zajišťuje kontinuitu vzdělávání a poskytují podporu nově začínajícím pedagogům."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Výrazně se zlepšily výsledky v maturitní zkoušce, třetina žáků prospívá s vyznamenáním, neprospívají pouze jednotlivci.",
+          "evidence": "Ve společné části MZ dosahují žáci výsledků nad průměrem v celorepublikovém srovnění, zvýšila se úspěšnost v češtině a angličtině."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná zpětná vazba v některých hodinách",
+          "detail": "V menší části teoretické výuky chyběl prostor pro efektivní hodnoticí zpětnou vazbu a vyhodnocení splnění vzdělávacího cíle.",
+          "evidence": "Inspektoři zjistili, že v některých hodinách nebyli žáci vedeni k sebereflexi a objektivnímu posouzení kvality práce vrstevníků."
+        },
+        {
+          "tag": "Jazyková kultura ve výuce",
+          "detail": "V některých sledovaných hodinách byla věnována menší pozornost jazykové kultuře a usměrňování úrovně mluveného projevu žáků.",
+          "evidence": "Inspektoři doporučují důsledněji dbát na jazykovou kulturu při vyučování a usměrňovat úroveň mluveného projevu."
+        },
+        {
+          "tag": "Vysoká absence v některých případech",
+          "detail": "Průměrně 63 hodin zameškaných na žáka za rok, ačkoli je to nízké číslo, může být problém pro některé studenty.",
+          "evidence": "Škola si udržuje nízký počet zameškaných hodin a téměř odstranila neomluvenou absenci."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá propojení teoretické výuky s praxí? Jaké jsou příklady projektů se zaměstnavateli?",
+        "Jaké volitelné předměty si mohou žáci vybrat a jak se liší nabídka pro jednotlivé obory?",
+        "Jak škola podporuje žáky, kteří mají potíže se studiem nebo absencí?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o ekonomii, obchod a management - škola má dlouholetou tradici a je fakultní školou VŠE",
+        "Sportovně talentovaní žáci - zaměření na management sportovních zařízení s individuálním přístupem",
+        "Žáci z okolních regionů - dobrá dopravní dostupnost, téměř polovina žáků dojíždí ze Středočeského kraje"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní individuální zpětnou vazbu a reflexi - v některých hodinách to není dostatečně zajištěno",
+        "Žáci se slabší jazykovou úrovní - ačkoli má škola nástroje pro podporu, je zde 13 % žáků s odlišným mateřským jazykem",
+        "Žáci s vyšší absencí - průměr 63 hodin zameškaných za rok může být problém pro ty, kteří potřebují více času na učení"
+      ],
+      "plain_czech_summary": "Obchodní akademie Holešovice je kvalitní střední škola s dlouholetou tradicí v ekonomickém vzdělání. Má zkušené učitele, dobré vybavení a výborné výsledky maturit. Škola efektivně propojuje teorii s praxí a podporuje různé typy žáků. Hlavní slabinou je, že v některých hodinách chybí dostatečná zpětná vazba od učitelů a prostor pro reflexi žáků. Škola je vhodná pro ambiciózní studenty se zájmem o ekonomii a management."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení od inspekce 2020",
+        "key_numbers": [
+          "Třetina žáků prospívá s vyznamenáním při ukončování studia",
+          "Výsledky v češtině a angličtině nad průměrem celorepublikového srovnění",
+          "90 % žáků Obchodní akademie a 87 % žáků zaměření Management sportovních zařízení ukončilo řádný cyklus"
+        ],
+        "evidence": "Výrazně se zlepšily výsledky vzdělávání žáků při ukončování vzdělávání, byla odstraněna neúspěšnost v celorepublikovém srovnění."
+      },
+      "absence": {
+        "trend": "Nízká a stabilní",
+        "key_numbers": [
+          "Průměr 63 hodin zameškaných na žáka za rok",
+          "Téměř odstranjena neomluveného absence",
+          "95 % žáků s uzavřenou klasifikací ke 30. 6. (vzestup z 85 %)"
+        ],
+        "evidence": "Škola si udržuje nízký počet zameškaných hodin a téměř odstranila neomluvenou absenci."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s psychologickou, preventivní a inkluzivní péčí",
+        "Podpora žáků se speciálními vzdělávacími potřebami (6 % žáků) a žáků s odlišným mateřským jazykem (13 % žáků)",
+        "Individuální konzultace, doučování a elektronické výukové materiály pro žáky ohrožené školním neúspěchem",
+        "Adaptační aktivity, sportovní kurzy a preventivní programy prolínající celým vzdělávacím cyklem"
+      ],
+      "safety_climate": [
+        "Důraz na dodržování pravidel a bezpečné prostředí",
+        "Elektronický systém a celodenní provoz recepce",
+        "Ojedinělé případy rizikových projevů chování řešeny v souladu se školním řádem",
+        "Dostatečná pozornost věnována motivačnímu hodnocení prostřednictvím pochval"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zaměstnavateli, bankami, státními úřady a sportovními kluby",
+        "Fakultní škola Vysoké školy ekonomické v Praze",
+        "Zahraniční pobyty a výjezdy pro prohlubování znalostí cizích jazyků",
+        "Účast v odborně zaměřených soutěžích a projektech"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk bez zbytečného úřednického stylu. Všechna důležitá zjištění jsou podpořena konkrétními příklady a čísly. Informace jsou snadno pochopitelné pro rodiče bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o počtu žáků, kteří neuspěli v maturitě v jednotlivých letech - pouze zmínka o třech žácích v matematice v roce 2023/2024",
+        "Není jasné, jaké konkrétní volitelné předměty se nabízejí - zpráva mluví o 'pestré nabídce' ale nespecifikuje",
+        "Chybí informace o počtu žáků, kteří pokračují na vysokých školách versus těch, kteří najdou zaměstnání - pouze 'většina' a 'zhruba čtvrtina'"
+      ]
+    }
+  }
+}

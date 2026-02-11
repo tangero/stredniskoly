@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOS_600020291_2023-02-13",
+  "school_profile": {
+    "school_type": "Střední rybářská škola a Vyšší odborná škola vodního hospodářství a ekologie",
+    "inspection_period": "13. února až 17. února 2023",
+    "school_change_summary": "Nové vedení od roku 2022 zavádí organizační změny, zlepšují se materiální podmínky, zavedeny elektronické třídní knihy a větší pozornost věnována domovu mládeže."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Výuka probíhá v moderně vybavené hale a u partnerských firem, žáci se seznamují s reálným pracovním prostředím.",
+        "evidence": "Praktická výuka ve školních zařízeních a u smluvních partnerských firem s kvalitním vybavením."
+      },
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Žáci dosahují vyšší úspěšnosti než průměr v celorepublikovém srovnání, zvláště v praktické části.",
+        "evidence": "Dlouhodobá vynikající úspěšnost v praktické části maturitní zkoušky, vyšší úspěšnost ve společné části."
+      },
+      {
+        "tag": "Bohaté mimoškolní aktivity",
+        "detail": "Domov mládeže nabízí pestrý program, zahraniční pobyty, soutěže a ekologické projekty.",
+        "evidence": "Pestrá nabídka kroužků, víkendové pobyty, účast na soutěžích a zahraničních pobytech."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Učitelé příliš spoléhají na frontální výuku s výkladem, málo prostoru pro aktivitu žáků.",
+        "evidence": "Frontální způsob výuky převažuje, neposkytuje dostatek prostoru pro aktivitu a kritické myšlení."
+      },
+      {
+        "tag": "Slabá zpětná vazba",
+        "detail": "Chybí hospitační činnost vedení, která by poskytovala pedagogům kvalitní zpětnou vazbu.",
+        "evidence": "Kontrolní systém se teprve tvoří, není zajištěna hospitační činnost vedení školy."
+      },
+      {
+        "tag": "Nižší zájem o VOŠ",
+        "detail": "Vyšší odborná škola zaznamenává pokles zájmu, první ročník se otevírá jen jednou za tři roky.",
+        "evidence": "Setrvalý pokles zájmu uchazečů o studium, pouze dálková forma."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá propojení teoretické výuky s praxí u partnerských firem?",
+      "Jaké jsou možnosti individuální podpory pro slabší žáky v teoretických předmětech?",
+      "Jak se domov mládeže podílí na řešení studijních problémů ubytovaných žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením a zájmem o rybářství a vodní hospodářství",
+      "Dojíždějící žáci, kterým vyhovuje kvalitní domov mládeže s bohatým programem",
+      "Motivovaní žáci, kteří chtějí dosáhnout dobrých výsledků v maturitě"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní, interaktivní výuku s diskusemi a skupinovou prací",
+      "Žáci, kteří potřebují individuální přístup a diferenciované úkoly přizpůsobené jejich tempu",
+      "Zájemci o vyšší odborné vzdělání (VOŠ) – nižší zájem a omezená nabídka"
+    ],
+    "plain_czech_summary": "Rybářská škola v Vodňanech je zaměřená na praktickou přípravu v moderně vybaveném prostředí. Žáci dosahují výborných výsledků v maturitách a mají bohaté mimoškolní aktivity. Domov mládeže poskytuje kvalitní zázemí. Hlavní slabinou je příliš pasivní teoretická výuka s málo prostoru pro aktivitu žáků. Vedení školy je nové a teprve buduje systém zpětné vazby pro učitele. Škola se hodí pro prakticky zaměřené žáky, ale méně pro ty, kteří preferují interaktivní výuku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – dlouhodobě nadprůměrné výsledky",
+      "key_numbers": [
+        "Vyšší úspěšnost než průměr v celorepublikovém srovnění",
+        "Matematika: trend postupného zvyšování úspěšnosti",
+        "Jazyky: vyrovnané nadprůměrné výsledky"
+      ],
+      "evidence": "V uzavřeném školním roce dosáhli žáci vyšší úspěšnosti ve všech zkušebních předmětech společné části."
+    },
+    "absence": {
+      "trend": "Velmi dobrý – nízká absence",
+      "key_numbers": [
+        "Výskyt neomluvené absence je nahodilý",
+        "Způsoben jen několika žáky",
+        "Počet pochval vysoce převyšuje kázeňská opatření"
+      ],
+      "evidence": "Škole se daří zvládat absenci včetně neomluvené díky úzké spolupráci s domovem mládeže."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s dokumentací",
+      "Individuální konzultace s vyučujícími pro žáky s neúspěchem",
+      "Podpůrná opatření dle doporučení pro žáky s potřebou speciální péče",
+      "Adaptační kurzy na počátku studia",
+      "Screeningové šetření k sociálnímu klimatu tříd"
+    ],
+    "safety_climate": [
+      "Nastavená pravidla zajišťování bezpečnosti a ochrany zdraví jsou funkční",
+      "Škola se adekvátním způsobem věnuje vytváření bezpečného prostředí a prevenci rizik",
+      "Domov mládeže se zaměřuje na prevenci rizikového chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s potenciálními zaměstnavateli v regionu",
+      "Praktická výuka u smluvních partnerských firem",
+      "Spolupráce s vysokými školami",
+      "Spolupráce se zahraničními školami – zahraniční pobyty",
+      "Spolupráce s institucemi zaměřenými na ekologickou výchovu",
+      "Fiktivní firma žáků realizující kulturní a osvětové akce s městem"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně rozlišuje silné a slabé stránky. Některé pasáže jsou však delší a obsahují více úřednického stylu, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Konkrétní počty neprospívajících žáků nejsou uvedeny, pouze že je počet velmi nízký",
+      "Není specifikováno, kolik procent hodin bylo hospitováno a jaké byly konkrétní výsledky",
+      "Chybí informace o počtu žáků s podpůrnými opatřeními a jejich úspěšnosti"
+    ]
+  }
+}
+```

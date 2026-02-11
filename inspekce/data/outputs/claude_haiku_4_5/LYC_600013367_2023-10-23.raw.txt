@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "LYC_600013367_2023-10-23",
+  "school_profile": {
+    "school_type": "Střední pedagogická škola s domovem mládeže a školní jídelnou, poskytující vzdělání v oborech Předškolní a mimoškolní pedagogika, Sociální činnost a Pedagogické lyceum",
+    "inspection_period": "23. 10. 2023 – 25. 10. 2023",
+    "school_change_summary": "Škola prošla změnou vedení, zavedla nový bezpečnostní systém, zlepšila materiální a prostorové podmínky (renovace podlah, nová výpočetní technika) a rozšířila školní poradenské pracoviště o školní psycholožku a poradce pro nadané žáky. Kapacita je naplněna ze 73 % (263 žáků v devíti třídách)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Profesní rozvoj učitelů",
+        "detail": "Škola systematicky podporuje vzdělávání pedagogů prostřednictvím portfolií, hospitací a analýzy dopadu na kvalitu výuky.",
+        "evidence": "Vedení školy porovnává absolvované vzdělávací akce s výsledky hospitací a autoevaluací pedagogů."
+      },
+      {
+        "tag": "Individuální podpora žáků",
+        "detail": "Kvalitní školní poradenské pracoviště s psycholožkou poskytuje komplexní podporu všem žákům včetně těch se speciálními potřebami.",
+        "evidence": "Školní psycholožka konzultuje s metodičkou prevence a výchovnou poradkyní potřeby žáků a realizuje preventivní programy."
+      },
+      {
+        "tag": "Bohaté partnerství a praktické zkušenosti",
+        "detail": "Škola spolupracuje s mnoha organizacemi a nabízí žákům praktické vyučování na reálných pracovištích.",
+        "evidence": "Smluvní partneři (mateřské školy, sociální služby) poskytují pracovní uplatnění absolventům v jejich oboru."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Výsledky maturit v sociální činnosti",
+        "detail": "V letech 2021/2022 až 2022/2023 byla úspěšnost u maturitních zkoušek v oboru sociální činnost nižší než celorepublikový průměr.",
+        "evidence": "Škola přijímá opatření v podobě přípravy k maturitní zkoušce pro čtvrté ročníky."
+      },
+      {
+        "tag": "Formální nedostatky v dokumentaci",
+        "detail": "Smlouvy se smluvními partnery pro praktické vyučování obsahují formální nedostatky.",
+        "evidence": "Inspekce doporučuje vyhotovení smluv dle aktuální legislativy."
+      },
+      {
+        "tag": "Organizace závěrů vyučovacích hodin",
+        "detail": "V některých hodinách nebyla optimální organizace závěrů a práce se vzdělávacími cíli.",
+        "evidence": "Inspekce doporučuje věnovat pozornost organizaci závěrů hodin ve všech vyučovacích jednotkách."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s maturitou, zejména v oboru sociální činnost?",
+      "Jaké jsou možnosti zapojení se do zájmových aktivit a jak se žáci mohou podílet na chodu školy?",
+      "Jak funguje domov mládeže a jaké jsou podmínky ubytování?"
+    ],
+    "who_school_fits": [
+      "Zájemci o pedagogické obory, kteří chtějí kvalitní přípravu na práci s dětmi a podporu v osobnostním rozvoji",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individualizovanou podporu",
+      "Nadaní žáci, kterým se dostává zvýšené pozornosti a možnosti rozvoje svých schopností"
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o obor sociální činnost by měli vědět, že výsledky maturit v tomto oboru jsou v poslední době pod celorepublikovým průměrem",
+      "Žáci, kteří potřebují intenzivní přípravu k maturitě, by měli počítat s dodatečnými hodinami přípravy",
+      "Uchazeči, kteří preferují menší školu – kapacita je naplněna ze 73 % a počet žáků se snížil"
+    ],
+    "plain_czech_summary": "Střední pedagogická škola v Boskovicích je dobře vedená instituce se silným zaměřením na profesní rozvoj učitelů a individuální podporu žáků. Nabízí kvalitní výuku s moderními metodami, bohaté partnerství s organizacemi a praktické zkušenosti. Domov mládeže poskytuje komfortní ubytování. Hlavní výzvou jsou nižší výsledky maturit v oboru sociální činnost a některé formální nedostatky v dokumentaci. Škola je vhodná pro zájemce o pedagogické obory, kteří oceňují personalizovaný přístup."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – v roce 2020/2021 došlo ke zlepšení, ale v letech 2021/2022 až 2022/2023 pokles v oboru sociální činnost",
+      "key_numbers": [
+        "Rok 2020/2021: zlepšení výsledků",
+        "Roky 2021/2022 až 2022/2023: nižší úspěšnost v sociální činnosti než celorepublikový průměr",
+        "Ostatní obory: srovnatelné nebo vyšší než celorepublikový průměr"
+      ],
+      "evidence": "V porovnání s celorepublikovou úrovní byla celková úspěšnost vyšší nebo srovnatelná, ale zejména v oboru sociální činnost vykázala nižší úroveň."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Údaj není v inspekční zprávě uveden"
+      ],
+      "evidence": "Inspekční zpráva se absence věnuje pouze v kontextu bezpečnosti – nižší index úrazovosti než celorepublikový průměr."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psycholožkou a poradcem pro nadané žáky",
+      "Individuální konzultace a doučování pro žáky ohrožené školním neúspěchem",
+      "Doučování v rámci Národního plánu obnovy",
+      "Kariérová poradkyně pro konzultace o dalším studiu a profesní dráze",
+      "Metodická podpora pedagogům při aplikaci psychologických a speciálně pedagogických poznatků"
+    ],
+    "safety_climate": [
+      "Nový bezpečnostní systém školy zavedený během inspekčního období",
+      "Nižší index úrazovosti v porovnání s celorepublikovým průměrem",
+      "Preventivní aktivity a programy proti rizikovému chování",
+      "Adaptační kurzy a výjezdové akce pro budování pozitivního klimatu",
+      "Pravidelné třídnické hodiny ve spolupráci třídních učitelů a školní psycholožky"
+    ],
+    "partnerships_practice": [
+      "Smluvní partneři: mateřské školy, základní školy, školní družiny, pracoviště sociálních služeb",
+      "Projekt Asistenti ve výuce angličtiny (Fulbright English Teaching Assistants)",
+      "Cambridge P.A.R.K. – partnerská škola",
+      "Senior centrum Boskovice a charitativní organizace pro dobrovolnickou činnost",
+      "Spolek rodičů Střední pedagogické školy Boskovice",
+      "Mateřské centrum Boskovice pro vedení kroužků",
+      "Filozofická fakulta – fakultní škola"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky, s jasnou strukturou. Obsahuje konkrétní příklady a evidence. Některé pasáže jsou však poměrně dlouhé a obsahují odbornou terminologii, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Inspekční zpráva neobsahuje konkrétní čísla o absenci žáků – údaj není uveden",
+      "Nejsou specifikovány konkrétní procenta úspěšnosti u maturit, pouze kvalitativní srovnání s celorepublikovým průměrem",
+      "Není jasné, jak dlouho trvá doučování a jaké jsou jeho konkrétní výsledky"
+    ]
+  }
+}
+```

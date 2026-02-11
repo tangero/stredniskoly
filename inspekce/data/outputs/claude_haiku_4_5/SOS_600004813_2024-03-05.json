@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600004813_2024-03-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:23:33.200451+00:00",
+  "run_finished_utc": "2026-02-09T16:23:58.762853+00:00",
+  "raw_file": "SOS_600004813_2024-03-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600004813_2024-03-05",
+    "school_profile": {
+      "school_type": "Obchodní akademie v distanční formě studia, čtyřletý obor, zakončený maturitní zkouškou",
+      "inspection_period": "5. března až 7. března 2024 a 19. března až 20. března 2024",
+      "school_change_summary": "Od poslední inspekce v 2018: nová ředitelka (od července 2022), zvýšen počet žáků o 15 %, zřízeno poradenské pracoviště, vydán nový školní vzdělávací program. Přetrvávají však problémy se systémem řízení a vysokou neúspěšností u maturit."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Elektronický systém komunikace",
+          "detail": "Jednotná platforma umožňuje sdílení materiálů, zpětnou vazbu a informace o průběhu studia.",
+          "evidence": "Jednotný elektronický systém umožňuje žákům i pedagogům sdílení výukových materiálů a vytváří prostor pro poskytování zpětné vazby."
+        },
+        {
+          "tag": "Poradenské služby",
+          "detail": "Škola má zřízené poradenské pracoviště s výchovnou poradkyní a metodičkou prevence.",
+          "evidence": "Na základě zjištění při posledním inspekčním hodnocení došlo ke zřízení poradenského pracoviště ve škole, nově byla ustanovena pozice výchovné poradkyně."
+        },
+        {
+          "tag": "Kvalita v odborných předmětech",
+          "detail": "V některých hodinách odborných předmětů jsou vhodně využívány mezipředmětové vztahy a propojení teorie s praxí.",
+          "evidence": "Pouze v části hodin odborných předmětů byly vhodně využity mezipředmětové vztahy i v širších souvislostech, propojení teoretického učiva s praktickými příklady."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Velmi vysoká neúspěšnost u maturit",
+          "detail": "Výsledky jsou dlouhodobě výrazně horší než průměr v ČR, v roce 2022 dosáhla neúspěšnost 55 % (průměr ČR 9,2 %).",
+          "evidence": "V roce 2020 činila hrubá neúspěšnost školy 38,5 % (v ČR 10,4 %), v roce 2022 55 % (v ČR 9,2 %), v roce 2023 34,6 % (v ČR 5,9 %)."
+        },
+        {
+          "tag": "Přijímání žáků bez ověření předpokladů",
+          "detail": "Škola přijímá všechny uchazeče bez ohledu na studijní předpoklady, často až do posledního ročníku (72 % v roce 2021/2022).",
+          "evidence": "Ke vzdělávání byli přijati všichni uchazeči bez ohledu na studijní předpoklady. Ve školním roce 2021/2022 bylo do maturitního ročníku přijato ke vzdělávání až 72 % nových žáků."
+        },
+        {
+          "tag": "Nízká kvalita výuky v klíčových předmětech",
+          "detail": "Výuka matematiky a cizích jazyků postrádá interaktivitu, diferenciaci a efektivní využití času; v matematice neuspěl žádný žák.",
+          "evidence": "Ve zkoušce z matematiky, k níž se ve společné části hlásili jen jednotlivci, neuspěl žádný žák. Část sledované výuky cizích jazyků nebyla vedena v cílovém jazyce."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pomáhá žákům, kteří se přihlásí až v posledním ročníku? Jaké má pro ně přípravné programy?",
+        "Jaké jsou konkrétní výsledky žáků v jednotlivých předmětech maturitní zkoušky za poslední rok a jak se škola snaží zlepšit zejména matematiku?",
+        "Jak probíhá individuální podpora žáků s odlišným mateřským jazykem a jak se ověřuje jejich znalost češtiny před přijetím?"
+      ],
+      "who_school_fits": [
+        "Dospělí studenti, kteří si potřebují vzdělání doplnit a mají zkušenosti z praxe, kterou mohou propojit s teorií",
+        "Žáci, kteří si potřebují sami řídit tempo studia a jsou schopni samostatné práce v distančním formátu",
+        "Studenti s konkrétním zájmem o obchodní obor, kteří mají silnou vnitřní motivaci"
+      ],
+      "who_should_be_cautious": [
+        "Mladí lidé bez zkušeností, kteří potřebují intenzivní podporu a strukturovanou výuku – distanční forma nemusí být vhodná",
+        "Žáci se slabšími studijními předpoklady – škola je přijímá bez ověření a výsledky jsou velmi špatné",
+        "Studenti s potřebou podpory v češtině nebo matematice – kvalita výuky těchto předmětů je podle inspekce nedostatečná"
+      ],
+      "plain_czech_summary": "Obchodní akademie nabízí distanční studium určené především dospělým. Má funkční elektronický systém a poradenské služby. Hlavní problém: velmi vysoká neúspěšnost u maturit (34–55 % neúspěšných oproti 6–10 % v ČR). Škola přijímá všechny uchazeče bez ověření předpokladů, často až do posledního ročníku. Inspekce kritizuje kvalitu výuky matematiky a cizích jazyků, nedostatek diferenciace a nízkou metodickou propracovanost. Vhodná spíše pro motivované dospělé se zkušenostmi, méně pro mladé bez podpory."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě velmi špatný, bez výrazného zlepšení",
+        "key_numbers": [
+          "2020: 38,5 % neúspěšných (ČR 10,4 %)",
+          "2022: 55 % neúspěšných (ČR 9,2 %)",
+          "2023: 34,6 % neúspěšných (ČR 5,9 %)"
+        ],
+        "evidence": "Od minulé inspekční činnosti se výsledky žáků školy u MZ nezlepšily, v celostátním srovnání v rámci stejné skupiny oborů vzdělání jsou dlouhodobě výrazně horší."
+      },
+      "absence": {
+        "trend": "Absence není vyhodnocována, sleduje se pouze práce v elektronickém systému",
+        "key_numbers": [
+          "Účast na konzultacích není povinná",
+          "Absence žáků není vyhodnocována"
+        ],
+        "evidence": "Účast žáků na většině prezenčních konzultací není povinná, absence žáků tudíž není vyhodnocována, je sledována pouze práce žáka a jeho komunikace s učitelem v elektronickém vzdělávacím systému."
+      },
+      "support_services": [
+        "Poradenské pracoviště se výchovnou poradkyní a metodičkou prevence (zřízeno nově)",
+        "Asistent pedagoga pro žáka se speciálními vzdělávacími potřebami",
+        "Elektronický systém pro komunikaci a zpětnou vazbu"
+      ],
+      "safety_climate": [
+        "Vstup do budovy zabezpečen elektronickým systémem a stálou službou",
+        "Škola sdílí prostory se Střední průmyslovou školou elektrotechnickou",
+        "Chybí koncepční strategie pro předcházení školní neúspěšnosti a šikaně"
+      ],
+      "partnerships_practice": [
+        "V rámci odborného vzdělávání neprobíhá žádná spolupráce se sociálními partnery",
+        "Škola nerealizuje odbornou praxi žáků (povinná součást vzdělávání)",
+        "Nerealizuje další vzdělávací aktivity (přednášky, besedy, exkurze, soutěže)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, citace a doklady. Jsou jasně identifikovány problémy (vysoká neúspěšnost, nízká kvalita výuky, přijímání bez ověření). Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace srozumitelné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, zda se situace od března 2024 zlepšila – jde o snímek z jednoho času",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými učiteli – některé předměty jsou hodnoceny lépe",
+        "Chybí informace o tom, jaké konkrétní opatření škola již přijala v reakci na inspekci"
+      ]
+    }
+  }
+}

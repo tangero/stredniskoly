@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "model_id": "claude_sonnet_4_5",
+  "run_started_utc": "2026-02-09T11:27:31.257257+00:00",
+  "run_finished_utc": "2026-02-09T11:28:33.929413+00:00",
+  "raw_file": "LYC_691004048_2025-10-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_691004048_2025-10-22",
+    "school_profile": {
+      "school_type": "Střední škola se zaměřením na pedagogiku a gymnázium (Předškolní a mimoškolní pedagogika, Pedagogické lyceum, Gymnázium)",
+      "inspection_period": "22.–24. října 2025",
+      "school_change_summary": "Škola přijala opatření ke zlepšení výsledků u maturit – zpřísnila hodnocení, zavedla postupové zkoušky a omezila individuální vzdělávací plány. Upravila systém hodnocení praxe a odstraněla formální nedostatky ve školním vzdělávacím programu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Příjemné klima a bezpečné prostředí",
+          "detail": "Vstřícní pedagogové vytvářejí atmosféru, kde se žáci nebojí chybovat a žádat o pomoc.",
+          "evidence": "\"Vstřícný přístup pedagogů i ostatních pracovníků školy k žákům... významně přispívají k pocitu psychického bezpečí a vytvářejí příznivé sociální klima.\""
+        },
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Učitelé často propojují učivo s praktickým životem a využívají mezipředmětové vztahy.",
+          "evidence": "\"Ve většině hodin učitelé velmi zdařile propojovali probírané učivo s praktickým životem, efektivně využívali mezipředmětové vztahy.\""
+        },
+        {
+          "tag": "Kvalitní vedení praxí",
+          "detail": "Praxe v mateřských školách a školních družinách je dobře organizovaná s individuální podporou.",
+          "evidence": "\"Při hospitované praxi byla zaznamenána individuální průběžná podpora praktikantům... respektující vztah mezi nimi. Většina žáků se aktivně zapojovala.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Dlouhodobě slabé výsledky u maturit",
+          "detail": "Žáci dosahují podprůměrných výsledků u maturitních zkoušek i přes dobré známky během studia.",
+          "evidence": "\"Žáci školy dlouhodobě nedosahují příliš dobrých výsledků u maturitní zkoušky... V celorepublikovém porovnání... jsou výsledky žáků... převážně podprůměrné.\""
+        },
+        {
+          "tag": "Málo individuálního přístupu ve výuce",
+          "detail": "Učitelé nedostatečně přizpůsobují náročnost úkolů schopnostem jednotlivých žáků.",
+          "evidence": "\"Hlavním nedostatkem převážné většiny hospitovaných hodin byla absence diferenciace probíraného učiva nebo činností, které by zohledňovaly rozdíly v úrovni schopností.\""
+        },
+        {
+          "tag": "Omezený rozvoj samostatnosti",
+          "detail": "Žáci málo pracují samostatně s informacemi, převládá frontální výuka.",
+          "evidence": "\"Jen v některých hodinách učitelé umožňovali žákům práci s různými zdroji informací a méně podněcovali samostatné objevování, bádání a formulování závěrů.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření škola přijala ke zlepšení výsledků u maturit a jak se projevují?",
+        "Jak škola podporuje žáky, kteří mají problémy s učivem, aby uspěli u maturity?",
+        "Jakým způsobem škola rozvíjí samostatnost žáků a jejich kritické myšlení?"
+      ],
+      "who_school_fits": [
+        "Žáky, kteří hledají přátelské prostředí s respektujícím přístupem pedagogů",
+        "Zájemce o pedagogickou praxi s možností vyzkoušet si práci v mateřských školách a družinách",
+        "Studenty, kteří ocení propojení teorie s praxí a aktivní zapojení do školního života"
+      ],
+      "who_should_be_cautious": [
+        "Žáky s ambicí dosáhnout nadprůměrných výsledků u maturit – škola má v této oblasti dlouhodobé problémy",
+        "Studenty, kteří potřebují individuální přístup a diferenciaci výuky podle svých schopností",
+        "Zájemce o rozvoj samostatného myšlení a práce s informacemi – tyto dovednosti škola rozvíjí nedostatečně"
+      ],
+      "plain_czech_summary": "Škola nabízí příjemné a bezpečné prostředí s vstřícnými pedagogy, kde se žáci nebojí chybovat. Silnou stránkou je propojení teorie s praxí, zejména v pedagogických oborech, kde žáci získávají zkušenosti v mateřských školách a družinách. Vedení školy aktivně pracuje na zlepšení – zpřísnilo hodnocení a zavedlo postupové zkoušky.\n\nVážným problémem jsou dlouhodobě podprůměrné výsledky u maturit, což kontrastuje s dobrými známkami během studia. Ve výuce převládá frontální vyučování s malým prostorem pro individuální přístup a rozvoj samostatnosti žáků. Učitelé málo využívají diferenciaci a žáci nedostatečně pracují s informacemi a rozvíjejí kritické myšlení. Škola je vhodná pro žáky hledající přátelské prostředí a praktické zkušenosti, méně pro ty s ambicí na výborné maturitní výsledky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "dlouhodobě podprůměrný, škola přijala opatření ke zlepšení",
+        "key_numbers": [
+          "Výsledky u maturit dlouhodobě podprůměrné v celorepublikovém srovnání",
+          "Nesoulad mezi dobrými známkami během studia a slabými výsledky u zkoušek",
+          "Od roku 2025/2026 zpřísněno hodnocení a zavedeny postupové zkoušky"
+        ],
+        "evidence": "\"Žáci školy dlouhodobě nedosahují příliš dobrých výsledků u maturitní zkoušky... V celorepublikovém porovnání s obory stejného typu jsou výsledky žáků v období několika předchozích let převážně podprůměrné.\""
+      },
+      "absence": {
+        "trend": "škola přijala opatření ke snížení vysoké absence",
+        "key_numbers": [
+          "Sjednocená hranice tolerované absence za klasifikační období",
+          "Zpřísněny podmínky pro individuální vzdělávací podporu",
+          "Pokles počtu žáků s individuální podporou ve školním roce 2025/2026"
+        ],
+        "evidence": "\"Od poslední inspekční činnosti odstranila ředitelka školy zjištěné nedostatky... přijala systémová opatření ke snižování vysoké absence žáků... zpřísnila škola podmínky pro povolení této podpory.\""
+      },
+      "support_services": [
+        "Stabilní školní poradenské pracoviště s výchovným poradcem a metodičkou prevence",
+        "Pravidelné měsíční schůzky ředitelky s výchovným poradcem k řešení neúspěšnosti žáků",
+        "Spolupráce s externími odborníky na prevenci šikany a rizikového chování"
+      ],
+      "safety_climate": [
+        "Vstřícný a respektující přístup pedagogů vytváří pocit psychického bezpečí",
+        "Pravidelná dotazníková šetření klimatu školy mezi žáky a rodiči",
+        "Aktivní školní parlament umožňující žákům ovlivňovat chod školy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se školami a školskými zařízeními pro realizaci praktického vyučování",
+        "Rozvíjející se zahraniční spolupráce v rámci Erasmus+ (Španělsko, Rumunsko)",
+        "Praxe v mateřských školách, základních školách a školních družinách podle ročníků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný a psaný pro rodiče, místy obsahuje odborné formulace z inspekční zprávy, ale celkově je dobře pochopitelný.",
+      "uncertainty_notes": [
+        "Není uvedeno přesné procento úspěšnosti u maturit ani konkrétní srovnání s jinými školami",
+        "Chybí informace o počtu žáků s podpůrnými opatřeními a jejich úspěšnosti",
+        "Není specifikováno, jak dlouho trvá problém s podprůměrnými výsledky u maturit"
+      ]
+    }
+  }
+}

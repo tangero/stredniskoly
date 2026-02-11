@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_650004639_2024-01-29",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:28:20.115734+00:00",
+  "run_finished_utc": "2026-02-09T16:28:44.134006+00:00",
+  "raw_file": "GY8_650004639_2024-01-29.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_650004639_2024-01-29",
+    "school_profile": {
+      "school_type": "Německá škola s.r.o. - zahraniční škola a gymnázium (7leté a 8leté studium)",
+      "inspection_period": "29. ledna až 1. února 2024",
+      "school_change_summary": "Od inspekce v 2016 došlo k výměně ředitele a mírnému poklesu počtu žáků (nyní 162 žáků v 10 třídách). Škola si udržuje velmi dobrou úroveň vzdělávání a zavedla projekt sebeřízeného učení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "Žáci dosahují lepších výsledků než republikový průměr v české části maturity a vysoké úspěšnosti při přijetí na vysoké školy.",
+          "evidence": "Výsledky z českého jazyka lepší než republikový průměr, vysoká úspěšnost absolventů při přijetí na VŠ"
+        },
+        {
+          "tag": "Kvalitní výuka a atmosféra",
+          "detail": "Hospitované hodiny byly metodicky zdařilé s příznivou pracovní atmosférou a aktivním zapojením žáků.",
+          "evidence": "Převládaly metodicky a didakticky zdařilé hodiny s jasně stanoveným cílem a efektivním využitím času"
+        },
+        {
+          "tag": "Mezinárodní spolupráce",
+          "detail": "Škola dlouhodobě rozvíjí partnerství s německými institucemi a zapojuje žáky do mezinárodních projektů.",
+          "evidence": "Spolupráce s Velvyslanectvím SRN, Goethe-Institutem, partnerskou školou v Lappersdorfu"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učitelé jen v menší míře přizpůsobují úkoly rozdílným schopnostem žáků a málo podporují nadané žáky.",
+          "evidence": "Výrazná časová či obsahová diferenciace nebyla příliš patrná, rozšiřující učivo jen ojediněle"
+        },
+        {
+          "tag": "Slabší rozvoj kritického myšlení",
+          "detail": "Výuka nedostatečně podporuje samostatné vyhledávání a kritické posuzování informací z různých zdrojů.",
+          "evidence": "Didaktické postupy nedostatečně podporovaly rozvoj samostatného vyhledávání a kritického posuzování informací"
+        },
+        {
+          "tag": "Nedostatečné shrnutí hodin",
+          "detail": "V závěru některých hodin nebyl prostor pro shrnutí učiva a ověření splnění vzdělávacího cíle.",
+          "evidence": "V závěru části vyučovacích hodin nebyl vytvořen prostor pro shrnutí a vyhodnocení splnění cíle"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jak se liší přístup k žákům s různými schopnostmi?",
+        "Jaké jsou konkrétní plány na zlepšení diferenciace výuky a rozvoje kritického myšlení?",
+        "Jak se škola vypořádává s tím, že je to náročné studium - jaká je podpora pro žáky v obtížích?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o němčinu a mezinárodní vzdělání - škola nabízí dvojjazyčné vzdělávání podle německých standardů",
+        "Motivovaní a samostatní žáci - škola klade důraz na sebeřízené učení a osobnostní rozvoj",
+        "Žáci s ambicí na vysokou školu - vysoká úspěšnost absolventů při přijetí na VŠ včetně zahraničních"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující individuální přístup a diferenciaci - výuka není dostatečně přizpůsobena různým tempům a schopnostem",
+        "Žáci se slabšími základy - přijímací řízení je náročné (zkouška z češtiny, matematiky, test z němčiny)",
+        "Žáci s poruchami učení - v gymnáziu se vzdělává jen velmi nízký počet žáků s potřebou podpůrných opatření"
+      ],
+      "plain_czech_summary": "Německá škola v Praze je prestižní gymnázium s dvojjazyčným vzděláním podle českých a německých standardů. Silné stránky: výborné výsledky u maturity, kvalitní výuka, mezinárodní spolupráce, moderní vybavení. Slabiny: výuka není dostatečně přizpůsobena různým schopnostem žáků, málo se rozvíjí kritické myšlení a samostatné vyhledávání informací. Vhodná pro motivované žáky se zájmem o jazyky a vysokoškolské studium."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoký a lepší než průměr",
+        "key_numbers": [
+          "Výsledky z českého jazyka lepší než republikový průměr",
+          "Vysoká úspěšnost absolventů při přijetí na vysoké školy",
+          "Stabilní výsledky bez výrazných výkyvů"
+        ],
+        "evidence": "Žáci dosahují ve srovnání s danou skupinou oborů lepších výsledků, než je republikový průměr"
+      },
+      "absence": {
+        "trend": "Nízká a odpovídající typu školy",
+        "key_numbers": [
+          "Průměr 45 hodin na žáka za pololetí",
+          "Zanedbatelný počet neomluvených hodin",
+          "99 % žáků s uzavřenou klasifikací k 30. 6."
+        ],
+        "evidence": "Vykázaná absence odpovídá druhu školy, počet neomluvených hodin byl zanedbatelný"
+      },
+      "support_services": [
+        "Efektivní spolupráce školního poradenského pracoviště se všemi pedagogy",
+        "Doučování nadanými žáky pro spolužáky potřebující podporu",
+        "Postup pro identifikaci žáků se speciálními vzdělávacími potřebami"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra a přirozené dodržování pravidel spolupráce",
+        "Elektronický systém a kamera u vstupu, personální dohled v recepci",
+        "Snížené známky z chování se vyskytují pouze ojediněle"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s Velvyslanectvím SRN v Praze a Goethe-Institutem",
+        "Partnerství se školou v Lappersdorfu a dalšími zahraničními školami",
+        "Aktivní zapojení žáků do mezinárodních projektů a soutěží"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně odděluje silné a slabé stránky. Některé pasáže jsou však poměrně odborné a dlouhé, což může být pro rodiče méně přístupné.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní počty žáků s poruchami učení nebo speciálními potřebami - pouze že je to velmi nízký počet",
+        "Není jasné, jak konkrétně se liší přístup mezi českými a německými učiteli v jednotlivých předmětech",
+        "Chybí informace o počtu žáků, kteří školu opustili nebo neprospěli"
+      ]
+    }
+  }
+}

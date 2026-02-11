@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600010007_2024-09-23",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium v denní formě studia",
+    "inspection_period": "23. září až 25. září 2024",
+    "school_change_summary": "Od srpna 2023 nová ředitelka. Významná obměna pedagogického sboru v posledním roce. Naplněnost roste: 212 žáků v 8 třídách (88 % kapacity)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné maturitní výsledky",
+        "detail": "Všichni žáci prospěli ve společné části maturity, dlouhodobě nadprůměrné výsledky v rámci republiky.",
+        "evidence": "\"Výsledky žáků ve společné části maturitní zkoušky jsou v rámci skupiny oborů v České republice dlouhodobě nadprůměrné.\""
+      },
+      {
+        "tag": "Aktivní zapojení v soutěžích",
+        "detail": "Škola úspěšně motivuje žáky k účasti v soutěžích a středoškolské odborné činnosti s úspěchy na krajské a celostátní úrovni.",
+        "evidence": "\"Ve školním roce 2023/2024 se krajské přehlídky středoškolské odborné činnosti se svou prací účastnilo sedm žáků, přičemž dva z nich obsadili první místo.\""
+      },
+      {
+        "tag": "Mezinárodní spolupráce",
+        "detail": "Dlouhodobá partnerství se školami v Německu a Švýcarsku, výměnné pobyty, projekty v Británii a Mezinárodní cena vévody z Edinburghu.",
+        "evidence": "\"Dlouhodobá spolupráce s partnerskými školami v Německu a ve Švýcarsku, které škola využívá k výměnným recipročním pobytům žáků.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá vedení školy",
+        "detail": "Nová ředitelka se zatím nepodařilo vytvořit efektivně spolupracující tým vedení a delegovat pravomoci na nižší stupně řízení.",
+        "evidence": "\"Dosud se jí však nepodařilo vytvořit efektivně spolupracující tým širšího vedení školy včetně delegování pravomocí a povinností.\""
+      },
+      {
+        "tag": "Pasivita žáků v některých hodinách",
+        "detail": "Část výuky využívá tradiční frontální metody s nižší mírou aktivizujících metod, což vede k pasivitě žáků.",
+        "evidence": "\"Nižší míra využití aktivizujících metod a forem práce vedla v části zhlédnuté výuky k pasivitě žáků.\""
+      },
+      {
+        "tag": "Chybí diferenciace podle nadání",
+        "detail": "Škola nemá dostatečně nastavenu diferenciaci výuky zaměřenou na podporu nadaných žáků podle jejich zájmů.",
+        "evidence": "\"Škola má rezervy ve využívání diferenciace výuky zaměřené na cílenou podporu žáků s ohledem na jejich nadání a zájem.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se nová ředitelka chystá zlepšit spolupráci vedení školy a delegování úkolů?",
+      "Jaké konkrétní kroky podnikne škola pro více individualizované učení podle nadání jednotlivých žáků?",
+      "Jak se škola vypořádá s tím, že polovina žáků oktávy přestupuje na jiné školy po 4. třídě?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a ambicí studovat na vysoké škole – škola má tradici úspěšných absolventů.",
+      "Děti se zájmem o jazyky a mezinárodní spolupráci – bohatá nabídka výměnných pobytů a partnerství.",
+      "Talentovaní žáci v soutěžích – škola aktivně podporuje středoškolskou odbornou činnost."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciace – část výuky je stále tradiční a frontální.",
+      "Rodiny hledající stabilní vedení – nová ředitelka teprve buduje tým a procesy nejsou plně ustálené.",
+      "Žáci, kteří by mohli mít problémy s absencí – poradenské služby jsou omezené kvůli kumulaci funkcí u vedení."
+    ],
+    "plain_czech_summary": "Gymnázium v Mimoni je kvalitní školou s tradičně výborným výsledky u maturity a aktivním zapojením žáků v soutěžích. Nabízí zajímavé mezinárodní programy a spolupráci s vysokými školami. Nová ředitelka postupně zlepšuje prostředí, ale zatím se jí nepodařilo vytvořit stabilní vedoucí tým. Část výuky je stále tradiční, chybí více individualizace podle nadání žáků. Poradenské služby jsou omezené. Vhodná pro ambiciózní žáky se zájmem o jazyky a vysokoškolské studium."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě nadprůměrný",
+      "key_numbers": [
+        "100 % úspěšnost ve společné části maturity v posledních třech letech",
+        "Jednotlivci neúspěšní v jarním termínu prospěli v podzimním opravném termínu"
+      ],
+      "evidence": "\"V posledních třech školních letech uspěli ve společné části všichni žáci. Dlouhodobá vysoká úspěšnost žáků u maturitní zkoušky je silnou stránkou školy.\""
+    },
+    "absence": {
+      "trend": "Velmi nízká, bezproblémová",
+      "key_numbers": [
+        "133 zameškaných hodin na žáka za rok",
+        "0,7 neomluvené hodiny na žáka za rok"
+      ],
+      "evidence": "\"Studijní výsledky žáků korespondují s relativně bezproblémovou mírou jejich absence. Ve stejném období připadlo na jednoho žáka v průměru 133 zameškaných vyučovacích hodin za rok.\""
+    },
+    "support_services": [
+      "Výchovná poradkyně (ředitelka) a metodička prevence (zástupkyně) – omezená kapacita kvůli kumulaci funkcí",
+      "Individuální konzultace pro žáky s vzdělávacími problémy",
+      "Podpora žáků se speciálními vzdělávacími potřebami podle doporučení poradenských zařízení",
+      "Adaptační kurzy pro primu a kvintu na začátku roku"
+    ],
+    "safety_climate": [
+      "Bezpečnost a ochrana zdraví jsou prioritou – analýza rizik a opatření k jejich eliminaci",
+      "Elektronický systém v přístupových prostorech",
+      "Školní řád a provozní řády odborných učeben, žáci seznamováni na začátku roku",
+      "Příjemná pracovní atmosféra, žáci dodržují pravidla, minimální problémy s chováním"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s partnerskými školami v Německu a Švýcarsku – výměnné pobyty",
+      "Pobytové zájezdy do Velké Británie se cestovními agenturami",
+      "Projekt Mezinárodní cena vévody z Edinburghu",
+      "Exkurze, stáže a spolupráce s vysokými školami, Akademií věd ČR a místními institucemi",
+      "Dlouhodobá podpora městem Mimoní"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními fakty a čísly. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou více odborné, ale celkově je text pro rodiče dobře pochopitelný.",
+    "uncertainty_notes": [
+      "Není jasné, jak dlouho bude trvat stabilizace vedení – zpráva nespecifikuje konkrétní časový plán",
+      "Počet žáků s odlišným mateřským jazykem (21) a se speciálními potřebami (9) je uvedeno, ale chybí informace o kvalitě jejich podpory",
+      "Není jasné, zda se nižší míra aktivizujících metod týká všech předmětů nebo jen některých"
+    ]
+  }
+}
+```

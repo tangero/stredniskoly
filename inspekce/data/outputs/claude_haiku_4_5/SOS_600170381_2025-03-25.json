@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600170381_2025-03-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:40:25.121730+00:00",
+  "run_finished_utc": "2026-02-09T13:40:51.592446+00:00",
+  "raw_file": "SOS_600170381_2025-03-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170381_2025-03-25",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště",
+      "inspection_period": "25. března až 27. března 2025",
+      "school_change_summary": "Od poslední inspekce se počet žáků téměř zdvojnásobil na 196 žáků v 11 třídách. Byla rozšířena nabídka oborů o zemědělce-farmáře. Probíhá generační obměna pedagogického sboru a modernizace materiálního vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní odborný výcvik",
+          "detail": "Praktická výuka má vysokou odbornou úroveň s důrazem na rozvoj praktických dovedností a bezpečnost.",
+          "evidence": "Vysoká profesní zkušenost pedagogů, vhodný pracovní oděv, dodržování bezpečnosti, motivační hodnocení výkonů."
+        },
+        {
+          "tag": "Bezpečné a vstřícné prostředí",
+          "detail": "Škola vytváří příjemné podmínky s respektující atmosférou a dodržováním pravidel.",
+          "evidence": "Vstřícná respektující atmosféra, trpělivost vyučujících, bezpečné podmínky pro všechny žáky."
+        },
+        {
+          "tag": "Bohatá nabídka aktivit a partnerství",
+          "detail": "Škola nabízí exkurze, charitativní akce, program Erasmus+ a spolupracuje s řadou odborných partnerů.",
+          "evidence": "Spolupráce s ZVVZ a.s., sociálními službami, zemědělskými a strojírenskými provozy, členství v komorách."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky u maturity z angličtiny",
+          "detail": "Dlouhodobě vyšší neúspěšnost v maturitní zkoušce, zejména z anglického jazyka, kde v roce 2024 neuspělo 5 z 11 žáků.",
+          "evidence": "Výuku anglického jazyka zajišťuje nekvalifikovaná vyučující, nízká náročnost úkolů, absence dialogu ve dvojicích."
+        },
+        {
+          "tag": "Vysoká absence a školní neúspěšnost",
+          "detail": "V 1. pololetí 2024/2025 neprospělo 22 žáků a 35 žáků je nehodnoceno, často vede k předčasnému odchodu.",
+          "evidence": "Nižší studijní potenciál, nedostatečná motivace, vysoká absence včetně neomluvené, nedůsledné uplatňování pravidel."
+        },
+        {
+          "tag": "Tradiční metody výuky bez aktivizace žáků",
+          "detail": "Převažuje učitelská aktivita, minimální skupinová práce, žáci nemají prostor pro kritické myšlení a sebehodnocení.",
+          "evidence": "Tradiční forma výuky, minimální aktivizace skupinovou prací, všichni žáci plnili stejné úkoly bez diferenciace."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou neúspěšnost z anglického jazyka u maturity a jaké má plány na zlepšení?",
+        "Jaké jsou konkrétní opatření proti vysoké absenci a předčasným odchodům ze studia?",
+        "Jak se škola zaměřuje na rozvoj komunikačních a kritických dovedností žáků v teoretické výuce?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory (truhlář, strojní mechanik, zemědělec) s dobrým zázemím v odborném výcviku",
+        "Studenti sociální činnosti, kteří ocení vstřícné prostředí a bohaté mimoškolní aktivity",
+        "Žáci, kteří potřebují individuální přístup a podporu při překonávání školních obtíží"
+      ],
+      "who_should_be_cautious": [
+        "Zájemci o maturitu s důrazem na jazykové dovednosti, zejména angličtinu – výuka není kvalifikovaná",
+        "Žáci s nižší vnitřní motivací a tendencí k absenci – škola má problémy s důsledným uplatňováním pravidel",
+        "Studenti, kteří potřebují aktivní a moderní vyučovací metody – výuka je spíše tradiční s nízkou aktivizací"
+      ],
+      "plain_czech_summary": "Milevská střední škola nabízí kvalitní praktickou přípravu v řemeslných a sociálních oborech v bezpečném prostředí. Silnou stránkou je odborný výcvik s zkušenými pedagogy a bohaté partnerství. Slabinou jsou výsledky maturity, zejména z angličtiny, vysoká absence žáků a tradiční vyučovací metody bez dostatečné aktivizace. Škola se rozrůstá a modernizuje, ale potřebuje zlepšit systém kontroly a práci s výsledky vzdělávání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě vyšší neúspěšnost převyšující republikový průměr",
+        "key_numbers": [
+          "V didaktickém testu z angličtiny 2024: 5 neúspěšných z 11 přihlášených",
+          "Menší neúspěšnost v testech z češtiny a matematiky",
+          "Lepší výsledky v oborech s výučním listem"
+        ],
+        "evidence": "Škola dlouhodobě vykazuje vyšší neúspěšnost u maturitních zkoušek. Opatření nabízející semináře z angličtiny a matematiky jsou zatím neúčinná."
+      },
+      "absence": {
+        "trend": "Vysoká absence včetně neomluvené, nedůsledné uplatňování pravidel",
+        "key_numbers": [
+          "1. pololetí 2024/2025: 22 žáků neprospělo",
+          "35 žáků je v předmětech nehodnoceno",
+          "Vysoká absence obvykle vede k předčasnému odchodu ze vzdělávání"
+        ],
+        "evidence": "Nižší studijní potenciál a nedostatečná vnitřní motivace se projevují vyšším počtem žáků, kteří neprospívají. Příčiny absence nejsou dostatečně analyzovány."
+      },
+      "support_services": [
+        "Tým poradenského pracoviště: výchovný poradce, školní metodik prevence, speciální pedagog",
+        "Identifikace žáků se speciálními vzdělávacími potřebami a iniciace vyšetření v poradenských zařízeních",
+        "Individuální opatření při zhoršení prospěchu, adaptační kurzy a projekty prevence rizikového chování"
+      ],
+      "safety_climate": [
+        "Vstřícná respektující atmosféra a dodržování nastavených pravidel vytváří příjemné a bezpečné podmínky",
+        "V odborném výcviku žáci dodržují zásady bezpečnosti a ochrany zdraví",
+        "Žákovský parlament zřízen v letošním školním roce pro rozvoj demokratického uspořádání"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s ZVVZ a.s. Milevsko, Sociálními službami města Milevska a dalšími zařízeními",
+        "Partnerství se strojírenskými, zemědělskými a truhlářskými provozy",
+        "Členství v Agrární komoře, Jihočeské hospodářské komoře a technickém konsorciu při VŠTE"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní čísla a citace. Některé pasáže jsou však delší a obsahují více odborné termíny, které mohou být pro laické rodiče méně přístupné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala na základě předchozích inspekčních zjištění",
+        "Chybí informace o počtu kvalifikovaných vs. nekvalifikovaných pedagogů v jednotlivých oborech",
+        "Není jasné, jaké jsou konkrétní plány vedení školy na řešení zjištěných nedostatků v příštích měsících"
+      ]
+    }
+  }
+}

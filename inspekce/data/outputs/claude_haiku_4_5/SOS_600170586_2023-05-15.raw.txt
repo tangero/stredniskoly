@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600170586_2023-05-15",
+  "school_profile": {
+    "school_type": "Střední odborná škola s maturitními a učebními obory (energetika, stavebnictví, obchod, zdravotnictví, bezpečnost)",
+    "inspection_period": "15. května až 19. května 2023",
+    "school_change_summary": "Nová ředitelka od ledna 2022 zaměřená na modernizaci podmínek, podporu pedagogů a zlepšování výsledků. Škola rozšířila nabídku o obor Ošetřovatel a připravuje Elektrotechniku. Celkem 1 063 žáků ve 45 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava na úrovni",
+        "detail": "Moderní dílny a vybavení odpovídají současným požadavkům, odborný výcvik veden profesionálně s důrazem na samostatnost žáků.",
+        "evidence": "Velmi dobré materiální a technické vybavení vytváří předpoklady pro úspěšné naplnění odborného profilu absolventa."
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Vstřícná atmosféra, respektující přístup učitelů, psychicky bezpečné prostředí, silná poradenská služba včetně školní psycholožky.",
+        "evidence": "Společným znakem hospitované výuky byla vstřícná a přátelská atmosféra, škola posílila poradenské pracoviště o školní psycholožku."
+      },
+      {
+        "tag": "Silné partnerství s praxí",
+        "detail": "Dlouhodobé vztahy s firmami a odbornými institucemi, učitelé jsou odborníci z praxe předávající bohaté zkušenosti.",
+        "evidence": "Erudice a praktické zkušenosti externích odborníků a široká síť partnerů efektivně přispívají k naplnění odborného profilu absolventa."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "Výrazně horší výsledky než republikový průměr, zejména v oborech Praktická sestra (40 % neúspěšnosti v profilu), Obchodní akademie (34 %) a Požární ochrana (31 %).",
+        "evidence": "Hrubá neúspěšnost v Praktické sestře 40 % (v republice 11 %), v Obchodní akademii 34 % (v republice 9 %)."
+      },
+      {
+        "tag": "Pasivní výuka bez aktivizace",
+        "detail": "Převaha frontální výuky, chybí diferenciace, individuální podpora a aktivizující metody, žáci málo pracují se zdroji informací.",
+        "evidence": "Část sledovaných hodin byla výrazně výkladová, chyběla vhodná aktivizace žáků, často chyběla diferenciace a individuální podpora."
+      },
+      {
+        "tag": "Nedostatečná zpětná vazba",
+        "detail": "Formativní hodnocení a sebehodnocení žáků jsou vzácné, chybí závěrečné shrnutí a zhodnocení přínosu výuky.",
+        "evidence": "Efektivní sebehodnocení a prvky formativního hodnocení byly ve sledované výuce zaznamenány zcela výjimečně."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou neúspěšnost v maturitních oborech, zejména v Praktické sestře a Obchodní akademii?",
+      "Jaké konkrétní kroky podniká škola k zavedení aktivizujících metod a individualizace výuky?",
+      "Jak funguje poradenská služba a jakou podporu dostávají žáci se školními potížemi?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou přípravu a učební obory s dobrým vybavením dílen a zkušenými instruktory",
+      "Žáci potřebující psychickou podporu a individuální péči – škola má školní psycholožku a silné poradenské služby",
+      "Žáci zajímající se o bezpečnostní obory – zde jsou lepší výsledky a kvalitní partnerství s institucemi"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků v oborech Praktická sestra, Obchodní akademie a Požární ochrana – zde jsou výrazně horší výsledky maturit než v republice",
+      "Žáci potřebující aktivní a interaktivní výuku – převažuje zde frontální výuka s nižší aktivizací",
+      "Žáci vyžadující individualizovaný přístup – inspekce zjistila nedostatek diferenciace a individuální podpory"
+    ],
+    "plain_czech_summary": "Chomutovská střední škola nabízí kvalitní praktickou přípravu v moderních dílnách a bezpečné prostředí s dobrou poradenskou péčí. Učitelé jsou zkušení odborníci z praxe. Problém je v maturitních oborech – výsledky jsou výrazně horší než v republice, zvlášť v Praktické sestře a Obchodní akademii. Výuka je často pasivní, chybí aktivizace žáků a individuální přístup. Škola pracuje na zlepšení, ale zatím bez viditelných výsledků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Negativní – horší než republikový průměr ve většině oborů",
+      "key_numbers": [
+        "Praktická sestra: 40 % neúspěšnosti v profilu (průměr 11 %), 43 % ve společné části (průměr 16 %)",
+        "Obchodní akademie: 34 % neúspěšnosti (průměr 9 %)",
+        "Požární ochrana: 31 % neúspěšnosti (průměr 13 %)"
+      ],
+      "evidence": "Výjimkou byl obor Bezpečnostně právní činnost s lepšími výsledky. Opatření z předchozí inspekce nejsou realizována."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence věnuje minimálně, fokus je na výsledky a kvalitu výuky."
+    },
+    "support_services": [
+      "Tři výchovné poradkyně koordinující vzdělávání žáků se speciálními potřebami",
+      "Školní psycholožka pomáhající se školní neúspěšností, organizací času, úzkostnými stavy a vztahovými problémy",
+      "Metodici prevence na každém pracovišti zajišťující primární prevenci",
+      "Peer programy, kde si žáci poskytují vzájemnou pomoc",
+      "Preventivní a intervenční programy ve spolupráci s odbornými institucemi"
+    ],
+    "safety_climate": [
+      "Vstřícná a přátelská atmosféra, respektující přístup učitelů",
+      "Psychicky bezpečné prostředí pro vzdělávání",
+      "Systematická práce školního poradenského pracoviště eliminující rizikové chování",
+      "Sociometrická šetření monitorující klima ve třídách",
+      "Adaptační programy v prvních a druhých ročnících"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobé partnerství s firmami realizujícími odbornou praxi žáků",
+      "Poradní sbor ředitelky pro bezpečnostní obory se zástupci Policie, Hasičů, Vězeňské služby, Probační a mediační služby",
+      "Spolupráce s úřadem práce a profesními organizacemi v kariérovém poradenství",
+      "Participace sociálních partnerů na realizaci odborné praxe"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně identifikuje silné stránky (praktická příprava, bezpečné prostředí) a slabé stránky (vysoká neúspěšnost v maturitách, pasivní výuka). Doporučení jsou konkrétní. Absence dat o absencích a některé obecnější formulace snižují skóre o jeden bod.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní procenta absence žáků ani jejich trend",
+      "Není jasné, jak se výsledky vyvíjely v čase – jsou to pouze data z roku 2022",
+      "Chybí informace o počtu žáků, kteří opustili školu nebo byli vyloučeni"
+    ]
+  }
+}
+```

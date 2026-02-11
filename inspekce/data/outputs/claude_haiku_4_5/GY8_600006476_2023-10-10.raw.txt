@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY8_600006476_2023-10-10",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium s církevním zaměřením (Křesťanské gymnázium)",
+    "inspection_period": "10. 10. 2023 – 13. 10. 2023",
+    "school_change_summary": "Od poslední inspekce v 2015 došlo k rozšíření osmiletého gymnázia, zvýšila se naplněnost na 526 žáků v 16 třídách, zlepšilo se vybavení IT a materiální zázemí, rozšířilo se poradenské pracoviště."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Všichni žáci prospěli, více než polovina až dvě třetiny maturovalo s vyznamenáním, nadprůměrné výsledky ve všech předmětech.",
+        "evidence": "Ve třech školních letech všichni žáci prospěli, více než polovina až dvě třetiny maturovalo s vyznamenáním."
+      },
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Metodicky zdařilá výuka cizích jazyků s rovnoměrným rozvojem řečových dovedností, vysoká úspěšnost v certifikátech.",
+        "evidence": "Více než 80 % žáků obdrželo německý jazykový diplom, polovina maturantů nahradila profilovou zkoušku mezinárodním certifikátem."
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Komunitní atmosféra s aktivním zapojením žáků a rodičů, nízká absence, málo kázeňských opatření.",
+        "evidence": "Stabilně vysoké procento žáků s uzavřenou klasifikací do 30. 6., nízká míra absence, přiměřené množství uložených kázeňských opatření."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individuální přístup v hodinách",
+        "detail": "V některých hodinách chybí dostatečná diferenciace a podpora podle individuálních potřeb jednotlivých žáků.",
+        "evidence": "Nižší míra zohledňování individuálních vzdělávacích potřeb žáků při plánování a realizaci části výuky."
+      },
+      {
+        "tag": "Málo aktivního zapojení žáků",
+        "detail": "Žáci se málo podílejí na vlastním hodnocení a reflexi svého pokroku, chybí sebereflexe.",
+        "evidence": "Méně časté zapojování žáků do evaluačních aktivit a využívání vzájemného kriteriálního hodnocení nebo sebereflexe."
+      },
+      {
+        "tag": "Omezený prostor pro mluvený projev",
+        "detail": "V některých hodinách nemají žáci dost příležitostí na delší ústní vyjádření.",
+        "evidence": "Menší prostor pro souvislejší ústní vyjádření žáků v některých vyučovacích hodinách."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku individuálním potřebám jednotlivých žáků, zejména těch, kteří potřebují více podpory?",
+      "Jaké jsou konkrétní příklady projektů a praktických aktivit, které žáci realizují během studia?",
+      "Jak se škola připravuje na změny v digitálních kompetencích a informatice, které jsou uvedeny jako strategický cíl?"
+    ],
+    "who_school_fits": [
+      "Žáci s vyššími studijními předpoklady a motivací k učení, kteří si chtějí rozvinout jazykové dovednosti.",
+      "Rodiny hledající školu s křesťanským zaměřením a důrazem na osobnostní rozvoj a hodnoty.",
+      "Žáci zajímající se o jazyky a mezinárodní certifikáty, včetně přípravy na vysoké školy."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní individuální podporu a diferenciaci – škola ji poskytuje, ale v menší míře.",
+      "Rodiny, které preferují školy s větším důrazem na samostatný mluvený projev a diskusi v hodinách.",
+      "Žáci bez zájmu o náboženství – ačkoli je škola otevřena všem, náboženství je povinné a je součástí školní kultury."
+    ],
+    "plain_czech_summary": "Křesťanské gymnázium je kvalitní škola s výborným renomé. Žáci dosahují skvělých výsledků u maturit a v mezinárodních jazykových testech. Prostředí je bezpečné a podporující, s aktivní účastí rodičů. Škola se zaměřuje na osobnostní rozvoj a křesťanské hodnoty. Slabší stránkou je, že ne všechny hodiny dostatečně zohledňují individuální potřeby jednotlivých žáků a žáci se málo podílejí na vlastním hodnocení svého pokroku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "100 % prospěšnost všech maturantů za tři roky",
+        "Více než 50–66 % maturantů s vyznamenáním",
+        "Nadprůměrné výsledky ve všech předmětech společné části"
+      ],
+      "evidence": "Ve sledovaném období tří školních let všichni žáci prospěli, více než polovina až dvě třetiny maturovalo s vyznamenáním."
+    },
+    "absence": {
+      "trend": "Nízká a stabilní",
+      "key_numbers": [
+        "Nízká míra absence",
+        "Stabilně vysoké procento žáků s uzavřenou klasifikací do 30. 6."
+      ],
+      "evidence": "Aplikovaný systém preventivně vzdělávacích mechanismů je funkční, o čemž svědčí nízká míra absence."
+    },
+    "support_services": [
+      "Školní psycholožka a sociální pedagog",
+      "Asistenti pedagoga pro žáky se speciálními potřebami",
+      "Školní kaplan zajišťující spirituální a preventivní programy",
+      "Doučování v rámci školního klubu",
+      "Kariérní poradenství s podporou bývalých absolventů"
+    ],
+    "safety_climate": [
+      "Kamerový systém a fyzický dohled u vstupu",
+      "Přiměřené množství kázeňských opatření",
+      "Příznivá pracovní atmosféra a přirozené dodržování pravidel",
+      "Preventivní a spirituální programy včetně adaptačních výjezdů"
+    ],
+    "partnerships_practice": [
+      "Partnerství se zřizovatelem (Arcibiskupství pražské)",
+      "Spolupráce s akademickými institucemi",
+      "Vztahy se zahraničními školami a zahraniční výjezdy",
+      "Kooperace se Spolkem rodičů",
+      "Certifikované pracoviště pro mezinárodní zkoušky z němčiny"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Slabší stránky jsou jasně identifikovány, ale doporučení by mohla být konkrétnější pro praktickou implementaci.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, kolik procent učitelů nemá požadovanou kvalifikaci – uvedeno jen '86 % splňuje předpoklady odborné způsobilosti'.",
+      "Chybí konkrétní údaje o počtu žáků se speciálními vzdělávacími potřebami a jejich výsledcích.",
+      "Není jasné, jak se liší výsledky mezi jednotlivými třídami nebo ročníky."
+    ]
+  }
+}
+```

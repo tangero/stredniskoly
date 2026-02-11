@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600170195_2024-03-18",
+  "school_profile": {
+    "school_type": "Střední odborná škola a Střední odborné učiliště",
+    "inspection_period": "18. až 21. března 2024",
+    "school_change_summary": "Od inspekce v 2017 počet žáků výrazně stoupl o třetinu na 598 žáků. Škola rozšířila nabídku o obor Strojírenské práce a zavedla nové zaměření Management volného času a sportu. Ukončila dálkové studium."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava na povolání",
+        "detail": "Výuka praktického vyučování umožňuje žákům dobrou profesní připravenost s kvalitním vedením odborníků a instruktorů.",
+        "evidence": "Žáci účinně aplikují poznatky, pracují pod vedením učitelů, jsou motivováni výsledky své práce."
+      },
+      {
+        "tag": "Moderní vybavení a prostory",
+        "detail": "Škola soustavně modernizuje materiální podmínky, zejména pro strojírenské a potravinářské obory.",
+        "evidence": "Výrazně se zlepšily materiální podmínky, dobře vybavené učebny s potřebným vybavením a pomůckami."
+      },
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola rozvíjí partnerství s profesními organizacemi a smluvními pracovišti pro praktické vzdělávání.",
+        "evidence": "Zjišťuje vhodné podmínky pro praktické vzdělávání a zapojení žáků do oborových soutěží."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Absence je kriticky vysoká, zejména v prvním ročníku, průměrně 140 hodin na žáka ročně.",
+        "evidence": "Absence činí přibližně 140 zameškaných hodin na žáka v nematuritních oborech, neomluvená absence 5 hodin ročně."
+      },
+      {
+        "tag": "Školní neúspěšnost a odchody",
+        "detail": "Minimálně desetina žáků neprospěje, přibližně desetina odchází ze školy během roku, zejména prvňáci.",
+        "evidence": "Přetrvává tendence, že minimálně desetina žáků neprospěje, polovinu odchodů tvoří žáci prvních ročníků."
+      },
+      {
+        "tag": "Slabé výsledky v maturitě",
+        "detail": "V maturitních oborech čtvrtina až pětina žáků neprospěje, v nástavbových oborech až 67 % neúspěšnost.",
+        "evidence": "Čtvrtina žáků 2021/2022 neprospěla, v 2022/2023 pětina. V oboru Podnikání 62,5 % neúspěšnost."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a co nabízí rodičům při problémech s docházkou?",
+      "Jaké má škola programy na podporu žáků v prvním ročníku, aby se snížily jejich odchody?",
+      "Jak se škola připravuje na maturitní zkoušky a jakou má úspěšnost v jednotlivých oborech?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením a zájmem o technické obory, kde je kvalitní vybavení a zkušení instruktoři.",
+      "Motivovaní žáci, kterým vyhovuje spolupráce se smluvními pracovišti a praktická příprava na povolání.",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola nabízí individualizovaný přístup a podporu."
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižší motivací a problémy s docházkou – škola má vysokou absenci a nedostatečné mechanismy prevence.",
+      "Uchazeči o maturitní obory – výsledky maturit jsou kolísavé a v některých oborech velmi slabé (až 67 % neúspěšnost).",
+      "Žáci, kteří potřebují individualizovanou výuku – inspekce zjistila minimální míru diferencovaného přístupu."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktickou přípravu s moderním vybavením a zkušenými instruktory, zejména v technických oborech. Silnou stránkou je spolupráce s praxí. Hlavní problémy jsou vysoká absence žáků (průměrně 140 hodin ročně), předčasné odchody ze školy a slabé výsledky v maturitě. Inspekce upozorňuje na nedostatečnou individualizaci výuky a chybějící systematickou strategii prevence školní neúspěšnosti. Škola se snaží zlepšit situaci, ale účinnost opatření zatím není dostatečná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý s rizikovými tendencemi",
+      "key_numbers": [
+        "2021/2022: 25 % žáků neprospělo",
+        "2022/2023: 20 % žáků neprospělo",
+        "Nástavbový obor Podnikání: 62,5 % neúspěšnost obě roky"
+      ],
+      "evidence": "Čtvrtina žáků na konci 2021/2022 neprospěla, v následujícím roce pětina. Nástavbové obory vykazují nejslabší výsledky."
+    },
+    "absence": {
+      "trend": "Vysoká a problematická",
+      "key_numbers": [
+        "Nematuritní obory: ~140 hodin na žáka ročně",
+        "Maturitní obory: snížení ze 160 na 130 hodin",
+        "Neomluvená absence: ~5 hodin na žáka ročně"
+      ],
+      "evidence": "Absence je nejvyšší v prvním ročníku. Přes zvýšené řešení se účinnost opatření neprojevuje dostatečně."
+    },
+    "support_services": [
+      "Výchovná poradkyně a kariérní poradkyně zajišťují poradenské služby",
+      "Školní metodik prevence spolupracuje s vedením a třídními učiteli",
+      "Doučování českého jazyka pro žáky s odlišným mateřským jazykem",
+      "Doučování v projektu Národního plánu obnovy pro žáky nematuritních oborů"
+    ],
+    "safety_climate": [
+      "Realizovaná opatření pro bezpečnost jsou účelná, míra úrazovosti se snižuje",
+      "Žákům jsou poskytovány osobní ochranné pracovní prostředky dle oboru",
+      "Zásady bezpečnosti práce jsou účinně dodržovány při praktickém vyučování",
+      "Preventivní strategie zaměřena na předcházení kyberšikaně a závislostem na sociálních sítích"
+    ],
+    "partnerships_practice": [
+      "Partnerství s profesními organizacemi a smluvními pracovišti pro praktické vzdělávání",
+      "Kooperace s obdobně zaměřenou školou v ČR a partnerskými školami v zahraničí",
+      "Zapojení žáků do vědomostních a dovednostních soutěží na různých úrovních",
+      "Kariérní poradenství s ověřeným zájmem zaměstnavatelů o absolventy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Hlavní zjištění jsou dobře oddělena na silné a slabé stránky. Číselné údaje jsou konkrétní. Mírně snižuje srozumitelnost odborná terminologie a dlouhé věty v některých pasážích.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola přijala na základě doporučení z inspekce 2017.",
+      "Chybí detailní informace o tom, jak se liší výsledky mezi jednotlivými obory v nematuritních třídách.",
+      "Není jasné, jaké konkrétní metody škola používá pro prevenci absence a jak je vyhodnocuje."
+    ]
+  }
+}
+```

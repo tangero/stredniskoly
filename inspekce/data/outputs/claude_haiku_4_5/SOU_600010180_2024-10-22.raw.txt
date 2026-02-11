@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOU_600010180_2024-10-22",
+  "school_profile": {
+    "school_type": "Střední odborná škola mediální grafiky a polygrafie s domovem mládeže",
+    "inspection_period": "22. 10. 2024 – 24. 10. 2024",
+    "school_change_summary": "Nový ředitel od srpna 2021 přinesl výrazný posun v strategickém plánování, modernizaci prostor a vybavení. Škola úspěšně naplňuje odborný profil absolventa, ale přetrvávají rezervy v kontrolní činnosti a některé nedostatky ve výuce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a praxe",
+        "detail": "Žáci se učí na nejmodernějších strojích a v prostředí, které simuluje skutečné pracovní podmínky.",
+        "evidence": "Nový tiskový stroj, zrekonstruovaný fotoateliér, vybavení odpovídá současným trendům trhu práce."
+      },
+      {
+        "tag": "Kvalitní pedagogický sbor",
+        "detail": "Učitelé jsou odborníci z praxe, kteří předávají své bohaté profesní zkušenosti.",
+        "evidence": "Stabilní sbor tvořený praktiky, pravidelná školení v odborném vzdělávání."
+      },
+      {
+        "tag": "Sportovní a kulturní rozvoj",
+        "detail": "Škola aktivně podporuje pohybové aktivity a kulturní vzdělání žáků.",
+        "evidence": "Školní posilovna, florbal, hokej, divadelní představení, školní časopis, besedy s pamětníky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Učitelé nerozlišují úkoly podle schopností jednotlivých žáků.",
+        "evidence": "Diferenciace vzdělávacího obsahu nebyla zaznamenána, žáci neměli možnost vybírat si zadání různé náročnosti."
+      },
+      {
+        "tag": "Slabá práce s informacemi a kritickým myšlením",
+        "detail": "Výuka se málo zaměřuje na to, aby žáci sami hledali a vyhodnocovali informace.",
+        "evidence": "Nedostatečný prostor věnován práci s informačními zdroji, rozvoj kritického myšlení jen ojediněle."
+      },
+      {
+        "tag": "Kontrolní mechanismy nejsou dostatečně účinné",
+        "detail": "Vedení školy neodhaluje včas všechny problémy v chodu školy.",
+        "evidence": "Kontrolní mechanismy nejsou zcela účinné ve včasném odhalení nedostatků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve výuce přizpůsobují učitelé různým schopnostem žáků? Jaké mají plány na zlepšení individualizace?",
+      "Jak se ve výuce rozvíjí kritické myšlení a práce s různými zdroji informací?",
+      "Jaké jsou konkrétní výsledky absolventů na pracovním trhu a v dalším studiu?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání v polygrafii, tisku a grafice s moderním vybavením",
+      "Studenti zainteresovaní na sportovních aktivitách a kulturním rozvoji",
+      "Žáci, kteří se chtějí učit od praktiků s bohatými zkušenostmi z oboru"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální podpory a přizpůsobení výuky svému tempu",
+      "Studenti, kteří se chtějí učit samostatně hledat a kriticky vyhodnocovat informace",
+      "Žáci se speciálními vzdělávacími potřebami (bez informace o kvalitě jejich podpory)"
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktické vzdělání v mediální grafice a polygrafii s moderním vybavením a zkušenými učiteli z praxe. Žáci se učí v reálném pracovním prostředí a mají bohaté možnosti sportovního a kulturního rozvoje. Slabinou je, že výuka není dostatečně přizpůsobena jednotlivým žákům a málo se zaměřuje na rozvoj kritického myšlení a samostatné hledání informací. Vedení školy má prostor na zlepšení kontroly kvality."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vysoká úspěšnost, srovnatelná nebo vyšší než republikový průměr",
+      "key_numbers": [
+        "Všichni žáci v oborech s výučním listem úspěšní (2023/2024)",
+        "Všichni tři žáci v maturitním oboru Tiskař úspěšní (2023)",
+        "V oboru Reprodukční grafik pro média neuspěli pouze 3 z 19 žáků"
+      ],
+      "evidence": "Ve zkušebním období 2023 byla úspěšnost školy ve všech částech maturitní zkoušky vyšší než v dané skupině oborů."
+    },
+    "absence": {
+      "trend": "Informace v textu nejsou dostupné",
+      "key_numbers": [
+        "Není uvedeno"
+      ],
+      "evidence": "Zpráva se absence nezabývá."
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodička prevence poskytují poradenské služby",
+      "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+      "Kariérové poradenství s aktivní spoluprací s úřadem práce a profesními organizacemi"
+    ],
+    "safety_climate": [
+      "Příznivé klima školy s důrazem na prosociální vztahy v třídních kolektivech",
+      "Účinné strategie prevence: třídnické hodiny, adaptační pobyty, školní výlety, sportovní kurzy",
+      "Případné problémy s nevhodným chováním řešeny bezodkladně"
+    ],
+    "partnerships_practice": [
+      "Partnerství s firmami participujícími na praktickém vyučování",
+      "Spolupráce s odbornými svazy, základními a středními školami",
+      "Spolupráce s místními sportovními kluby a dalšími organizacemi v regionu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, ale obsahuje řadu odborných termínů a dlouhých vět. Hlavní zjištění jsou jasná, ale vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, nelze posoudit trend či čísla",
+      "Počet žáků se speciálními potřebami (46) je vysoký, ale kvalita jejich podpory není detailně popsána",
+      "Konkrétní čísla o úspěšnosti absolventů na pracovním trhu nejsou uvedena"
+    ]
+  }
+}
+```

@@ -1,0 +1,118 @@
+{
+  "report_id": "GY6_600006140_2024-11-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:09:13.897195+00:00",
+  "run_finished_utc": "2026-02-09T16:09:39.397288+00:00",
+  "raw_file": "GY6_600006140_2024-11-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600006140_2024-11-18",
+    "school_profile": {
+      "school_type": "Anglické gymnázium (bilingvní) - šestiletý program s mezinárodní zkouškou IB a českou maturitou",
+      "inspection_period": "18. listopadu 2024 až 21. listopadu 2024",
+      "school_change_summary": "Od inspekce v 2019: stabilní počet žáků (362), částečná obměna pedagogů, nový předmět o českých reáliích, dočasný přesun do pronajatých prostor (od listopadu 2023) kvůli rekonstrukci hlavní budovy, zavedení mentorského programu a lepší digitální vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky žáků",
+          "detail": "Všichni žáci prospěli, polovina s vyznamenáním; výsledky v mezinárodní zkoušce IB dlouhodobě nad celosvětovým průměrem.",
+          "evidence": "\"všichni žáci prospěli, z toho až polovina žáků s vyznamenáním\" a \"výsledky v mezinárodním programu IB jsou dlouhodobě nad celosvětovým průměrem\""
+        },
+        {
+          "tag": "Kvalitní bilingvní vzdělání",
+          "detail": "Propojení britského a českého systému s rodilými mluvčími (více než tři čtvrtiny pedagogů) a individuální podporou každého žáka.",
+          "evidence": "\"více než tři čtvrtiny tvoří rodilí mluvčí s příslušnou předmětovou specializací\" a \"cílená péče o rozvoj individuálního potenciálu\""
+        },
+        {
+          "tag": "Úspěch absolventů",
+          "detail": "Asi 75 % absolventů pokračuje na prestižních zahraničních vysokých školách, zbývající na českých VŠ.",
+          "evidence": "\"absolventi gymnázia pokračují v terciárním vzdělávání převážně na prestižních zahraničních (asi 75 %) i českých vysokých školách\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Problematická organizace školního dne",
+          "detail": "Vyučovací hodiny trvají 60 minut bez správného zařazení přestávek, což porušuje psychohygienické zásady.",
+          "evidence": "\"nesprávná časová organizace školního dne nedostatečně respektuje psychohygienické zásady\" a \"nezařazení přestávek mezi některé vyučovací hodiny\""
+        },
+        {
+          "tag": "Nedostatečná péče o mladší žáky",
+          "detail": "V nižším stupni gymnázia se málo zohledňují věkové potřeby žáků (chybí relaxační aktivity, pohybové cviky).",
+          "evidence": "\"v části výuky nižší míra zohledňování věkových specifik a fyziologických potřeb žáků, zejména v nižším stupni gymnázia\""
+        },
+        {
+          "tag": "Chybí školní psycholog",
+          "detail": "Škola nemá kvalifikovaného psychologa pro péči o duševní zdraví žáků.",
+          "evidence": "\"zajistit školního psychologa pro odbornou psychologickou péči v gymnáziu\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně budou vyřešeny problémy s délkou vyučovací hodiny a přestávkami?",
+        "Jaké jsou plány na zlepšení komunikace s rodiči (třídní schůzky)?",
+        "Kdy bude škola mít vlastního psychologa a jak se nyní řeší psychické problémy žáků?"
+      ],
+      "who_school_fits": [
+        "Děti s nadáním na jazyky a mezinárodním přesahem, které chtějí studovat v zahraničí",
+        "Motivované žáky z různého sociálního prostředí (28 % pobírá stipendium)",
+        "Rodiny, které oceňují bilingvní vzdělání a britský vzdělávací systém"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří preferují tradičnější české vzdělávání a osobní komunikaci s učiteli",
+        "Rodiny s mladšími dětmi (nižší stupeň), které potřebují více pohybu a relaxace během dne",
+        "Žáci se závažnějšími psychickými problémy (chybí kvalifikovaný psycholog)"
+      ],
+      "plain_czech_summary": "The English College je prestižní bilingvní gymnázium s výborným jménem. Žáci dosahují skvělých výsledků, učitelé jsou kvalifikovaní a škola nabízí jedinečné propojení britského a českého vzdělání. Absolventi úspěšně pokračují na zahraničních univerzitách. Hlavní problémy: dlouhé vyučovací hodiny bez správných přestávek, málo pohybu pro mladší žáky a chybějící psycholog. Škola je vhodná pro nadané děti s ambicemi studovat v zahraničí, ale rodiče by měli počítat s netradičním přístupem k výuce a komunikaci."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Všichni přihlášení žáci k maturitní zkoušce uspěli",
+          "Průměrná úspěšnost didaktického testu v 5. ročníku: 78 %",
+          "Až dvě třetiny žáků skládá souběžně IB i českou maturitu"
+        ],
+        "evidence": "\"všichni přihlášení žáci k maturitní zkoušce uspěli a zároveň došlo ke zlepšení jejich výsledků ve společné části. Průměrná úspěšnost didaktického testu, který žáci konají v 5. ročníku, vzrostla až na 78 %\""
+      },
+      "absence": {
+        "trend": "Pokles",
+        "key_numbers": [
+          "Nízká míra absence ve výuce",
+          "Pokles průměrné absence žáků"
+        ],
+        "evidence": "\"účinnost uplatňovaných preventivních mechanismů se pozitivně projevuje mj. v nízké míře výskytu sociálně patologických jevů i v poklesu průměrné absence žáků ve výuce\""
+      },
+      "support_services": [
+        "Víceúrovňový systém poradenských služeb (zástupce ředitele pro péči, metodik prevence, koordinátor pro speciální potřeby, studijní poradci)",
+        "Mentorský program vrstevnické podpory",
+        "Individuální rozhovory třídního učitele s žáky",
+        "Kariérní poradenství s prezentacemi vysokých škol",
+        "Stipendijní programy (28 % žáků pobírá stipendium)"
+      ],
+      "safety_climate": [
+        "Elektronický vstupní systém v obou místech vzdělávání",
+        "Celodenní personální dohled v recepci",
+        "Praktický nácvik bezpečného přesunu žáků mezi budovami",
+        "Jasně nastavená pravidla školní kultury",
+        "Nízká míra sociálně patologických jevů"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s českými a zahraničními vzdělávacími institucemi",
+        "Akreditované středisko pro školení a praxi učitelů v síti britských mezinárodních škol",
+        "Jazykové výměny a pracovní stáže",
+        "Turnusová laboratorní cvičení na vysoké škole",
+        "Prezentace českých i zahraničních vysokých škol"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a věcná, ale místy obsahuje odborný jazyk. Hlavní problémy jsou jasně identifikovány (organizace dne, věkové potřeby, psycholog), silné stránky jsou konkrétní. Pro rodiče je srozumitelná, ačkoli by mohla být místy přístupnější.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak dlouho bude trvat dočasný přesun do pronajatých prostor (rekonstrukce hlavní budovy)",
+        "Není jasné, jaké konkrétní psychické problémy žáci mají a jak jsou nyní řešeny bez psychologa",
+        "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami a jejich konkrétní podpoře"
+      ]
+    }
+  }
+}

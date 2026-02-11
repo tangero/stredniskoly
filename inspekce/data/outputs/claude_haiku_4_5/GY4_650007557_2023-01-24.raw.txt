@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY4_650007557_2023-01-24",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřletý obor 79-41-K/41)",
+    "inspection_period": "24. 1. 2023 – 26. 1. 2023",
+    "school_change_summary": "Od poslední inspekce v 2014/2015 došlo ke změně ředitele. Budova prochází rozsáhlou rekonstrukcí, částečně je dokončena výstavba čtvrtého podlaží."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Ve školním roce 2021/2022 úspěšně ukončilo vzdělávání 100 % žáků v obou částech maturitní zkoušky.",
+        "evidence": "100 % úspěšnost v maturitě 2021/2022, dlouhodobě velmi vysoká úspěšnost"
+      },
+      {
+        "tag": "Příznivé klima a vztahy",
+        "detail": "Empatický přístup, vstřícná komunikace a vzájemný respekt mezi všemi účastníky vzdělávání.",
+        "evidence": "Nízký výskyt patologických jevů, aktivní mimoškolní program, týdenní neformální setkávání"
+      },
+      {
+        "tag": "Bohatý osobnostní rozvoj",
+        "detail": "Škola podporuje sociální, občanský a osobnostní rozvoj žáků prostřednictvím projektů, soutěží a charitativních aktivit.",
+        "evidence": "Erasmus+, výjezdy do USA, Indie, Nepálu, charitativní sbírky, hudební skupina"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Vyučující málo využívají diferenciaci podle potřeb jednotlivých žáků a nižší míru věnují individuální práci.",
+        "evidence": "Žákům zadávány úkoly stejné náročnosti bez výraznější diferenciace, ojediněle sebehodnocení"
+      },
+      {
+        "tag": "Slabá zpětná vazba v hodinách",
+        "detail": "Chybí systematické sebehodnocení žáků a formativní hodnocení, závěrečná shrnutí jsou formální.",
+        "evidence": "Nedostatečný prostor k sebehodnocení a vzájemnému hodnocení, formální závěrečná shrnutí bez zpětné vazby"
+      },
+      {
+        "tag": "Omezené prostorové možnosti",
+        "detail": "Tělesná výchova a laboratorní cvičení probíhají v pronajatých prostorách mimo budovu školy.",
+        "evidence": "Tělocvičny pronajaty od ZŠ a Sokolu, laboratorní cvičení v pronajatých učebnách"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku potřebám jednotlivých žáků s různými schopnostmi?",
+      "Jaké jsou plány na dokončení rekonstrukce budovy a kdy budou k dispozici vlastní tělocvična a laboratorní učebny?",
+      "Jak se škola připravuje na vysoké školy – jaké semináře a přípravné kurzy nabízí?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí studovat na vysoké škole – 100% úspěšnost v maturitě a bohatá příprava",
+      "Děti, kterým vyhovuje křesťanský přístup a důraz na osobnostní rozvoj",
+      "Žáci se zájmem o jazyky – nadstandardní výuka angličtiny s rodilými mluvčími, projekty v zahraničí"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální podpory a přizpůsobené tempo – výuka není dostatečně diferencovaná",
+      "Rodiny, které preferují vlastní tělocvičnu a laboratorní vybavení v budově – vše je pronajato",
+      "Žáci, kteří se lépe učí prostřednictvím sebehodnocení a reflexe – tomu není věnován dostatek prostoru"
+    ],
+    "plain_czech_summary": "Gymnázium BMA je kvalitní soukromá škola s výborným klimatem a 100% úspěšností v maturitě. Žáci se rozvíjejí nejen akademicky, ale i osobnostně – škola nabízí bohaté projekty, soutěže a charitativní aktivity. Silnou stránkou je empatický přístup učitelů a vstřícné prostředí. Slabší je individualizace výuky – učitelé málo přizpůsobují výuku jednotlivým žákům a nedostatečně využívají sebehodnocení. Praktickou nevýhodou je, že tělocvična a laboratorní cvičení probíhají mimo budovu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi vysoká úspěšnost, stabilní výborné výsledky",
+      "key_numbers": [
+        "100 % úspěšnost v 2021/2022 (společná i profilová část)",
+        "69 % žáků s vyznamenáním v 2020/2021",
+        "54 % žáků s vyznamenáním v 2021/2022"
+      ],
+      "evidence": "Úspěšně ukončilo vzdělávání 100 % žáků ve společné i profilové části maturitní zkoušky"
+    },
+    "absence": {
+      "trend": "Nízký výskyt patologických jevů",
+      "key_numbers": [
+        "Nízká míra úrazovosti",
+        "Nízký výskyt patologických jevů"
+      ],
+      "evidence": "Činnost školního poradenského pracoviště přispívá k nízkému výskytu patologických jevů"
+    },
+    "support_services": [
+      "Výchovná poradkyně – spravuje administrativu žáků se speciálními vzdělávacími potřebami, poskytuje podporu při realizaci podpůrných opatření",
+      "Školní metodik prevence – konzultuje program třídnických hodin zahrnující prevenci rizikového chování",
+      "Seminář na přípravu na vysoké školy – přírodovědné i humanitní semináře, nepovinné předměty (literární a obchodní angličtina)"
+    ],
+    "safety_climate": [
+      "Škola vyhodnocuje možná rizika a pravidelně poučuje žáky o prevenci úrazů",
+      "Nízká míra úrazovosti",
+      "Příznivé klima založené na empatickém přístupu a vzájemném respektu"
+    ],
+    "partnerships_practice": [
+      "Erasmus+ – spolupráce se šesti evropskými školami, výjezdy do Španělska a Řecka",
+      "Měsíční výjezd do USA – zdokonalování komunikačních dovedností",
+      "Charitativní projekty – výjezdy do Indie a Nepálu, sbírky na podporu ukrajinských uprchlíků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou technicky náročnější, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní počty žáků, kteří pokračují na vysokých školách – pouze 'většina absolventů'",
+      "Není jasné, jak dlouho trvá rekonstrukce budovy a kdy budou vlastní prostory pro tělocvičnu",
+      "Chybí informace o počtu učitelů a jejich kvalifikaci"
+    ]
+  }
+}
+```

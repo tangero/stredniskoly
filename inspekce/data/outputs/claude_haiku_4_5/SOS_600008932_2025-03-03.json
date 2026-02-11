@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600008932_2025-03-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:43:26.227669+00:00",
+  "run_finished_utc": "2026-02-09T13:43:56.695238+00:00",
+  "raw_file": "SOS_600008932_2025-03-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600008932_2025-03-03",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola, Obchodní akademie a Střední zdravotnická škola",
+      "inspection_period": "3. března až 6. března 2025",
+      "school_change_summary": "Od poslední inspekce přibylo 48 žáků střední školy, počet studentů VOŠ klesl o 11. Škola zkvalitnila organizaci výuky VOŠ podle modulů. Došlo k personální změně na pozici školní metodičky prevence."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Dlouhodobá spolupráce s nemocnicemi, sociálními službami a dalšími partnery umožňuje žákům získat dovednosti v reálném pracovním prostředí.",
+          "evidence": "Klíčovým prvkem zvyšujícím kvalitu vzdělávání je dlouhodobá spolupráce s externími partnery."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Učebny jsou vybaveny moderní technikou, výukovými modely a zdravotnickými pomůckami odpovídajícími standardům.",
+          "evidence": "Vzdělávání probíhá v estetickém prostředí učeben dostatečně vybavených potřebnou technikou."
+        },
+        {
+          "tag": "Odborní pedagogové z praxe",
+          "detail": "Vyučující jsou převážně lékaři a zdravotníci s bohatými praktickými zkušenostmi, což zajišťuje aktuální obsah výuky.",
+          "evidence": "Dlouhodobě se daří zaměstnávat externí odborníky z praxe, většinou lékaře s bohatými zkušenostmi."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Škola se potýká s vysokou mírou absence, která negativně ovlivňuje výsledky vzdělávání a je jednou z příčin zhoršování maturitních výsledků.",
+          "evidence": "Vysoká míra absence je jednou z možných příčin zhoršování výsledků. Počet zameškaných hodin se nedaří výrazněji snížit."
+        },
+        {
+          "tag": "Slabší výsledky maturit",
+          "detail": "Ve srovnání s republikou dosahuje škola horších výsledků, zejména v oboru Praktická sestra, kde došlo ke zhoršení v roce 2024.",
+          "evidence": "Při ukončování vzdělávání vykazuje škola v celorepublikovém srovnění horší výsledky. Ve zkušebním roce 2024 došlo ke zhoršení."
+        },
+        {
+          "tag": "Nízká kvalita pedagogické zpětné vazby",
+          "detail": "Učitelé se zaměřují především na známky, chybí jim diferenciace výuky a formativní hodnocení pokroku žáků.",
+          "evidence": "Zpětná vazba se zpravidla omezuje na sdělení známek. Pouze výjimečně je patrná snaha pedagogů výuku diferencovat."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+        "Jaké konkrétní kroky podniká škola na zlepšení výsledků maturitních zkoušek, zejména v oboru Praktická sestra?",
+        "Jak se učitelé zaměřují na individuální potřeby žáků a jak diferenciují výuku pro slabší a nadanější žáky?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí praktické vzdělání s přímou vazbou na reálný pracovní trh a učení od zkušených praktiků.",
+        "Studenti zdravotnických oborů, kteří ocení moderně vybavené učebny se zdravotnickými pomůckami a modely.",
+        "Žáci oboru Obchodní akademie a IT, kteří se chtějí zapojit do soutěží a získat praktické dovednosti v psaní na klávesnici."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími studijními předpoklady – škola má vysoký podíl žáků, kteří neúspěšně ukončují studium nebo opakují ročník.",
+        "Rodiny, které nemohou zajistit pravidelnou docházku – absence je vážný problém, který škola nedokáže dostatečně řešit.",
+        "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – inspekce zjistila, že toto není běžnou praxí."
+      ],
+      "plain_czech_summary": "Škola v Domažlicích nabízí kvalitní praktické vzdělání s vazbou na reálný pracovní trh. Silnou stránkou je spolupráce s nemocnicemi a sociálními službami, moderní vybavení a odborní pedagogové z praxe. Slabší jsou výsledky maturit, vysoká absence žáků a nedostatečná individuální péče. Inspektoři doporučují zintenzivnit hospitace, více využívat aktivizující metody výuky a zlepšit diferenciaci. Škola je vhodná pro prakticky zaměřené žáky, ale rodiče by měli věnovat pozornost absenci a kvalitě zpětné vazby."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se, zejména v oboru Praktická sestra",
+        "key_numbers": [
+          "Ve školním roce 2023/2024 z 75 přijatých žáků maturitní zkoušku konalo jen 65 a uspělo 60",
+          "Ve zkušebním roce 2024 došlo ke zhoršení výsledků v oboru Praktická sestra",
+          "Škola vykazuje horší výsledky než republikový průměr v porovnání se stejnými obory"
+        ],
+        "evidence": "Z původně přijatých 75 žáků ve školním roce 2020/2021 konalo maturitní zkoušku jen 65 žáků. Při ukončování vzdělávání vykazuje škola horší výsledky v celorepublikovém srovnění."
+      },
+      "absence": {
+        "trend": "Vysoká a neřešená",
+        "key_numbers": [
+          "Škola eviduje vysokou míru absence (omluvenou i neomluvené hodiny)",
+          "Neomluvené hodiny jsou hlavním důvodem ukládání kázeňských opatření",
+          "Absence je jednou z příčin zhoršování výsledků maturit"
+        ],
+        "evidence": "Škola přijímá opatření, využívá jednání se žáky i jejich zákonnými zástupci, přesto se nedaří počet zameškaných hodin výrazněji snížit."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence poskytují konzultace žákům, pedagogům a zákonným zástupcům",
+        "Doučování a individuální konzultace pro žáky s aktuálními vzdělávacími problémy",
+        "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami (4 žáci)",
+        "Spolupráce se školskými poradenskými zařízeními a externími odborníky",
+        "Preventivní programy a besedy zaměřené na rizikové chování"
+      ],
+      "safety_climate": [
+        "Všechny vchody budov jsou zabezpečeny a dohledy jsou vykonávány",
+        "Všichni aktéři vzdělávání jsou pravidelně seznamováni s bezpečnostními pokyny",
+        "Vychovatelé v domově mládeže přistupují k žákům empaticky a důsledně řeší porušení pravidel",
+        "Domov mládeže se nachází v provizorních prostorách z důvodu rekonstrukce"
+      ],
+      "partnerships_practice": [
+        "Nemocnice v Domažlicích a Stodu – odborná praxe zdravotnických oborů",
+        "Katastrální úřad, cestovní kanceláře, ordinace privátních lékařů – praxe oboru Obchodní akademie",
+        "Poskytovatelé sociálních služeb – praxe oboru Sociální práce",
+        "Hospodářská komora, úřad práce, městský úřad – doplnění vzdělávání",
+        "Zdravotně sociální fakulta Jihočeské univerzity, Metropolitní univerzita v Praze – spolupráce na VOŠ"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Některé pasáže jsou však složitější a obsahují úřednickou terminologii, která by mohla být pro rodiče méně přístupná.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků s absencí nebo procento neúspěšných žáků v jednotlivých oborech",
+        "Chybí informace o tom, jaké konkrétní opatření škola přijala na řešení absence a jaké byly jejich výsledky",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými obory a učiteli"
+      ]
+    }
+  }
+}

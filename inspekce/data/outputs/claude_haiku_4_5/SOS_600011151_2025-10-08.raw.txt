@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_600011151_2025-10-08",
+  "school_profile": {
+    "school_type": "Soukromá střední škola pro marketing a ekonomiku podnikání",
+    "inspection_period": "8. 10. 2025 – 10. 10. 2025",
+    "school_change_summary": "Škola se vyvíjí pozitivně. Materiální podmínky se zlepšují díky projektům, prezentace přitahuje uchazeče. Zavedeny účinné kontrolní mechanismy. Přetrvávají však nedostatky v diferenciaci výuky a rozvoji hodnoticích dovedností žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola aktivně spolupracuje se zaměstnavateli, kteří se podílejí na výuce a odborných praxích.",
+        "evidence": "Zapojení do projektové činnosti a smysluplná spolupráce s firmami usnadňují uplatnění absolventů."
+      },
+      {
+        "tag": "Kvalitní vybavení",
+        "detail": "Moderní učebny, audiovizuální technika a IT vybavení podporují kvalitní vzdělávání.",
+        "evidence": "Výborné materiální podmínky zejména pro odborné vzdělávání významně podporují naplňování cílů."
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Škola má promyšlený systém prevence a aktivně pracuje s třídními kolektivy.",
+        "evidence": "Partnerský přístup k žákům a množství aktivit pozitivně ovlivňují klima podporující učení."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individuální přístup",
+        "detail": "Učitelé nedostatečně přizpůsobují výuku schopnostem jednotlivých žáků.",
+        "evidence": "Diferenciace a individualizace vzdělávacího obsahu nebyla zaznamenána v žádné hodině."
+      },
+      {
+        "tag": "Hodnocení žáků",
+        "detail": "Chybí systematický rozvoj schopnosti žáků sebehodnocení a vzájemného hodnocení.",
+        "evidence": "K efektivní formě sebehodnocení nebo vzájemnému hodnocení žáci vedeni nebyli."
+      },
+      {
+        "tag": "Čtenářské dovednosti",
+        "detail": "Rozvoj čtenářské gramotnosti není dostatečně podporován v jednotlivých předmětech.",
+        "evidence": "Efektivní práce s textem, která by podporovala rozvoj čtenářských dovedností, pedagogové nezařadili."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku žákům s různými schopnostmi a tempem učení?",
+      "Jaké konkrétní projekty a spolupráce se firmami mohou žáci očekávat během studia?",
+      "Jak se škola zaměřuje na rozvoj čtenářských dovedností a kritického myšlení?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické vzdělání s vazbou na reálný trh práce",
+      "Studenti, kteří oceňují moderní vybavení a aktivní školní život",
+      "Uchazeči zajímající se o cestovní ruch, IT nebo sportovní management"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individuální přístup a přizpůsobení tempa výuky svým schopnostem",
+      "Studenti, kteří se spoléhají na detailní zpětnou vazbu a sebehodnocení",
+      "Uchazeči s nižší úrovní čtenářské gramotnosti, která není dostatečně rozvíjena"
+    ],
+    "plain_czech_summary": "Soukromá střední škola v Mostě nabízí kvalitní praktické vzdělání s moderním vybavením a vazbou na zaměstnavatele. Silnými stránkami jsou projektová činnost, bezpečné prostředí a dobré materiální podmínky. Slabší je individualizace výuky – učitelé nedostatečně přizpůsobují obsah jednotlivým žákům. Chybí také systematický rozvoj hodnoticích dovedností a čtenářské gramotnosti. Maturitní výsledky jsou v poslední době lepší než průměr ČR."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se, zejména v poslední zkušební periodě",
+      "key_numbers": [
+        "2024: hrubá neúspěšnost 10,2 % (ČR 8 %)",
+        "2025: hrubá neúspěšnost 16,9 % (ČR 22,9 %)",
+        "Cizí jazyk 2025: 1,7 % (ČR 7,3 %)"
+      ],
+      "evidence": "Ve zkušebním období 2025 byla hrubá neúspěšnost školy nižší než v ČR, zejména v cizím jazyce a profilové části."
+    },
+    "absence": {
+      "trend": "Aktivně řešena, sociální pedagožka pomáhá při vyšší absenci",
+      "key_numbers": [
+        "Není uvedeno konkrétní číslo"
+      ],
+      "evidence": "V případě vyšší absence sociální pedagožka pomáhá žákům najít příčiny a spolupracuje na jejich odstranění."
+    },
+    "support_services": [
+      "Výchovná poradkyně (metodička prevence, kariérová poradkyně)",
+      "Sociální pedagožka (nově zařazena, řeší osobní problémy žáků)",
+      "Individuální podpůrný program pro žáky ohrožené neúspěchem"
+    ],
+    "safety_climate": [
+      "Promyšlený systém primární prevence reagující na aktuální potřeby",
+      "Pravidelné adaptační pobyty prvních ročníků v zahraničí",
+      "Aktivní práce s třídními kolektivy a mapování třídního klimatu"
+    ],
+    "partnerships_practice": [
+      "Kooperace se zaměstnavateli na odborné praxe",
+      "Odborníci se zapojují do výuky prostřednictvím přednášek a besed",
+      "Spolupráce s úřadem práce, vysokými školami a profesními organizacemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Konkrétní počty žáků s absencí nejsou uvedeny, pouze kvalitativní popis řešení",
+      "Není jasné, jak dlouho trvá individuální podpůrný program a jaká je jeho úspěšnost",
+      "Chybí informace o počtu žáků, kteří se zúčastňují doučování a konzultací"
+    ]
+  }
+}
+```

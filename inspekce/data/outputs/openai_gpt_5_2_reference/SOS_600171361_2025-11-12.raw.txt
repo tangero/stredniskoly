@@ -1,0 +1,56 @@
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "school_profile": {
+    "school_type": "Střední škola s obory „s výučním listem“ i „s maturitní zkouškou“; součástí je „školní jídelna a školní jídelna – výdejna“.",
+    "inspection_period": "2025-11-12 až 2025-11-17 (na místě „12. − 14. 11. 2025“).",
+    "school_change_summary": "Od minulé inspekce je „částečné zlepšení v oblasti průběhu výukového procesu“ a vznikly „nová počítačová učebna“ a „kadeřnický salón“."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a partnerství (včetně zahraničí)",
+        "detail": "Škola má silné napojení na praxi přes tuzemské i zahraniční partnery a posílá žáky na zahraniční pobyty.",
+        "evidence": "„Spolupráce s tuzemskými i zahraničními partnery…“; „každoročně… účastní zahraničních pracovních pobytů“."
+      },
+      {
+        "tag": "Vybavení pro odborné obory",
+        "detail": "Pro odborný výcvik má škola moderní zázemí a průběžně ho zlepšuje.",
+        "evidence": "„Materiální vybavení… odpovídá současným trendům“; „nová počítačová učebna… kadeřnický salón“."
+      },
+      {
+        "tag": "Kvalita odborného výcviku",
+        "detail": "V odborném výcviku se dbá na bezpečnost, samostatnost a učení se z chyb.",
+        "evidence": "„Dodržovány… zásady bezpečnosti“; „Důležité místo… práce s chybou“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší zpětná vazba a kritické myšlení v teorii",
+        "detail": "V teoretické výuce se málo pracuje s formativním hodnocením, sebehodnocením a rozvojem kritického myšlení.",
+        "evidence": "„formativní hodnocení… ojediněle“, „Sebehodnocení… nebylo součástí výuky“, „kritické myšlení… omezeně“."
+      },
+      {
+        "tag": "Málo individualizace pro SVP i nadané",
+        "detail": "Diferenciace výuky a cílená podpora pro žáky se SVP i nadané není dostatečná.",
+        "evidence": "„Nedostatečná diferenciace výuky… žáků se speciálními… a žáků nadaných.“"
+      },
+      {
+        "tag": "Horší trend ve společné části maturity",
+        "detail": "Ve společné části maturity škola v posledních letech zhoršovala výsledky a v části období byla pod republikovým průměrem.",
+        "evidence": "„měly… sestupnou tendenci“; „Podnikání… z 24,1 % na 39,3 %“; „většinou horších… než… republikový průměr“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola zvedá výsledky ve společné části maturity (čeština, matematika/cizí jazyk) a jak měří, že opatření fungují?",
+      "Jak ve třídách reálně probíhá podpora pro žáky se SVP a zároveň rozvoj nadaných (diferencované úkoly, individuální cíle)?",
+      "Jak často a jakým způsobem žáci dostávají formativní zpětnou vazbu a prostor pro sebehodnocení/vzájemné hodnocení?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří chtějí hodně praxe a kontakt s oborem (gastronomie/služby) díky partnerům a pracovištím.",
+      "Pro žáky, kteří ocení možnost zahraničních pracovních pobytů hlavně v gastronomických oborech.",
+      "Pro ty, kterým vyhovuje pozitivní atmosféra ve výuce a důraz na prevenci rizikového chování."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují výrazně individuální vedení v teoretických předmětech (škola má „nedostatečnou diferenciaci výuky“).",
+      "Uchazeči, pro které je klíčová silná příprava na státní část maturity (ve „společné části… sestupná tendence“).",
+      "Žáci, kteří čekají hodně práce s kritickým myšlením a zdroji v běžné

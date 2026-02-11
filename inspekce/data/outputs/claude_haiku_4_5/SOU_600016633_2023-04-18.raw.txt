@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOU_600016633_2023-04-18",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště (SOU) – soukromá škola s.r.o.",
+    "inspection_period": "18. až 21. dubna 2023",
+    "school_change_summary": "Od inspekce v roce 2016 škola rozšířila nabídku oborů (přibyly mechanik opravář motorových vozidel, reprodukční grafik, grafik pro média), vypadly obory sklenář a nástrojář. Průběžně se modernizují materiálně-technické podmínky a ekonomické zázemí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava a spolupráce s firmami",
+        "detail": "Škola má dlouhodobě rozvíjené partnerství s hotely, restauracemi, stavebními a strojírenskými firmami, kde žáci absolvují praktickou výuku.",
+        "evidence": "\"Dlouhodobá spolupráce se sociálními partnery přispívá k úzkému propojení teoretické složky vzdělávání s praktickou\" a \"podporuje konkurenceschopnost absolventů a jejich uplatnění na trhu práce.\""
+      },
+      {
+        "tag": "Výborné výsledky u závěrečných zkoušek",
+        "detail": "Žáci oborů s výučním listem dosahují velmi dobrých výsledků – prospívá přibližně 95 % žáků.",
+        "evidence": "\"Žáci oborů vzdělání s výučním listem dosahují v posledních dvou školních letech velmi dobrých výsledků u závěrečných zkoušek, prospívá přibližně 95 % žáků.\""
+      },
+      {
+        "tag": "Moderní vybavení a technologie",
+        "detail": "Škola je průběžně vybavována nejnovějšími technologiemi, stroji a didaktickou technikou pro kvalitní praktickou výuku.",
+        "evidence": "\"Škola je průběžně vybavována nejnovějšími technologiemi a zařízeními, učebními pomůckami a didaktickou technikou.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo individualizované vyučování",
+        "detail": "Převažuje frontální výuka bez dostatečné diferenciace podle schopností jednotlivých žáků.",
+        "evidence": "\"Dané přístupy tak neumožňovaly diferenciaci a individualizaci výuky s přihlédnutím k rozdílným vzdělávacím potřebám jednotlivých žáků.\""
+      },
+      {
+        "tag": "Komunikační problémy mezi vedením a učiteli",
+        "detail": "V případě názorových rozdílů je vzájemná komunikace mezi učiteli a vedením náročnější.",
+        "evidence": "\"Z dotazníků zadaných inspekčním týmem učitelům vyplynulo, že v případě názorových rozdílů je vzájemná komunikace mezi učiteli a vedením náročnější.\""
+      },
+      {
+        "tag": "Slabší výsledky u maturit",
+        "detail": "Úspěšnost u maturitní zkoušky byla v roce 2020/2021 pouze 73 % (oproti 80 % celostátnímu průměru).",
+        "evidence": "\"Škola vykazovala ve školním roce 2020/2021 úspěšnost 73% u maturitní zkoušky v porovnání s 80% úspěšností v rámci skupiny oborů vzdělání celostátního průměru.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s maturitou? Jaké jsou dostupné doučovací programy?",
+      "Jaké jsou možnosti zaměstnání absolventů v oboru bezprostředně po ukončení studia?",
+      "Jak se škola vypořádává s vyšší absencí některých žáků a jaké jsou důsledky?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou výuku a řemesla – škola má výborné vybavení a spolupráci s reálnými pracovišti",
+      "Studenti oborů s výučním listem (kuchař, číšník, masér, svářeč) – zde dosahují nejlepších výsledků",
+      "Žáci, kteří se chtějí rychle uplalit na trhu práce – 35 % absolventů najde práci v oboru"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovanou výuku a více podpory – škola se zaměřuje spíše na frontální vyučování",
+      "Studenti maturitních oborů – výsledky maturit nejsou konzistentně vysoké (v roce 2020/2021 jen 73 %)",
+      "Žáci se slabší motivací – efektivita podpory je často ovlivněna mírou studijní motivace"
+    ],
+    "plain_czech_summary": "DAKOL je soukromé střední odborné učiliště se silným zaměřením na praktickou přípravu. Má výborné vybavení, moderní technologie a dlouhodobou spolupráci s firmami, kde žáci pracují na reálných projektech. Žáci oborů s výučním listem (kuchař, svářeč, masér) dosahují velmi dobrých výsledků – prospívá 95 %. Maturitní obory jsou slabší (73 % úspěšnosti v roce 2020/2021). Výuka je spíše frontální, bez individualizace. Mezi vedením a učiteli existují komunikační problémy. Škola je vhodná pro prakticky zaměřené žáky, kteří chtějí rychle na trh práce."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nestabilní – zlepšení v posledním roce, ale historicky slabší",
+      "key_numbers": [
+        "2020/2021: 73 % úspěšnosti (vs. 80 % celostátní průměr)",
+        "2021/2022: 100 % úspěšnosti (vs. 71 % celostátní průměr)",
+        "32 % žáků obdrželo vyznamenání u maturitní a závěrečné zkoušky"
+      ],
+      "evidence": "\"Škola vykazovala ve školním roce 2020/2021 úspěšnost 73% u maturitní zkoušky... V roce 2021/2022 byla úspěšnost žáků u maturitní zkoušky 100%.\""
+    },
+    "absence": {
+      "trend": "Vyšší absence u některých skupin žáků, nižší u maturitních oborů",
+      "key_numbers": [
+        "Nižší absence u žáků maturitních oborů",
+        "Vyšší míra neomluvené absence u ostatních žáků",
+        "Při vysoké absenci v předmětu koná žák komisionální přezkoušení"
+      ],
+      "evidence": "\"Nižší absence se vyskytuje u žáků maturitních oborů vzdělání. Vyšší míra neomluvené absence se promítá do důsledného ukládání kázeňských opatření.\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovným poradcem a metodikem prevence",
+      "Péče o žáky se speciálními vzdělávacími potřebami – spolupráce s pedagogicko-psychologickými poradnami",
+      "Doučování a individuální konzultace, zejména maturitních předmětů",
+      "Kariérové poradenství",
+      "Adaptační a zážitkové kurzy (lyžařský, cykloturistický), sportovní dny"
+    ],
+    "safety_climate": [
+      "Důraz na bezpečnost a ochranu zdraví v praktickém vyučování – nedílná součást výuky",
+      "Komplexní preventivní program zaměřený na aktuální témata a dlouhodobě realizované projekty",
+      "Motivační přístup učitelů – tolerantní a partnerský přístup k žákům převažuje",
+      "Jasně nastavená pravidla pro klasifikaci a chování"
+    ],
+    "partnerships_practice": [
+      "Hotely, restaurace a obchodní řetězce pro obory služeb",
+      "Strojírenské a stavební firmy pro technické obory",
+      "Praktická výuka probíhá na reálných pracovištích otevřených veřejnosti",
+      "Partneři poskytují výukové materiály, aktuální informace z oborů, přednášky odborníků",
+      "Členství školy v profesních sdruženích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Absence není kvantifikována konkrétními čísly – není jasné, jaká je průměrná absence v hodinách nebo procentech",
+      "Není specifikováno, kolik žáků má speciální vzdělávací potřeby a jak efektivní je jejich podpora v praxi",
+      "Údaje o následném uplatnění absolventů jsou z roku 2020/2021 – novější data nejsou k dispozici"
+    ]
+  }
+}
+```

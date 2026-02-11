@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "LYC_600011445_2023-10-16",
+  "school_profile": {
+    "school_type": "Obchodní akademie a jazyková škola s právem státní jazykové zkoušky (denní forma)",
+    "inspection_period": "16. 10. 2023 – 20. 10. 2023",
+    "school_change_summary": "V září 2023 se část školy přestěhovala do nové budovy na Velké Hradební. Škola nyní disponuje modernizovanými odbornými učebnami pro přírodovědné předměty, cizí jazyky a digitální technologie s postupnou digitalizací a konektivitou."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce se zaměstnavateli",
+        "detail": "Funkční systém spolupráce se sociálními partnery včetně zahraničních partnerů přispívá k získávání odborných kompetencí a jazykových dovedností žáků.",
+        "evidence": "Dlouhodobá spolupráce se sítí sociálních partnerů, členství v Radě Asociace obchodních akademií ČR, Erasmus+ praxe v zahraničí."
+      },
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Škola úspěšně motivuje žáky k získávání certifikátů a státních jazykových zkoušek.",
+        "evidence": "Vysoká kvalita jazykového vzdělávání dlouhodobě poskytovaná školou, efektivní výuka anglického jazyka vedená rodilým mluvčím."
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Poradenské služby jsou na velmi dobré úrovni s funkčním systémem adaptace žáků a prevence rizikového chování.",
+        "evidence": "Dvě výchovné poradkyně, dvě metodičky prevence, adaptační kurzy, peer program, minimalizace sociálně patologických jevů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Mezilidské vztahy na škole",
+        "detail": "Komplikované interpersonální vztahy mezi pedagogy a vedením nejsou systematicky řešeny.",
+        "evidence": "Pedagogové uvedli, že nemohou bez obav rozporovat kroky kolegů, neshody nejsou řešeny a nevedou ke zkvalitnění spolupráce."
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Výuka není dostatečně přizpůsobena individuálním potřebám žáků, chybí formativní hodnocení.",
+        "evidence": "V části hospitovaných hodin převládala frontální výuka bez diferenciace, pedagogové nevyužívali prvky formativního hodnocení."
+      },
+      {
+        "tag": "Kritické myšlení žáků",
+        "detail": "Pedagogové nedostatečně vedou žáky k využívání různých informačních zdrojů a rozvoji kritického myšlení.",
+        "evidence": "Práce s různými informačními zdroji byla zařazována sporadicky, pedagogové nepodporovali rozvoj kritického myšlení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s žáky, kteří mají různé tempo učení? Jaké metody diferenciace používáte?",
+      "Jak se řeší konflikty a neshody mezi učiteli a vedením? Jak to ovlivňuje atmosféru ve škole?",
+      "Jaké konkrétní dovednosti si žáci odnášejí z odborné praxe v zahraničí a jak se to projevuje v jejich budoucím uplatnění?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na jazyky a mezinárodní spolupráci – škola nabízí státní jazykové zkoušky a Erasmus+ praxe v zahraničí.",
+      "Žáci s ambicí v ekonomii a obchodu – funkční spolupráce se sociálními partnery a odborná praxe.",
+      "Žáci potřebující podporu a adaptaci – kvalitní poradenské služby a efektivní systém adaptace nových žáků."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovaný přístup a formativní zpětnou vazbu – škola se v tomto oblasti teprve zlepšuje.",
+      "Žáci, kteří se lépe učí pomocí různých zdrojů a kritického myšlení – výuka se zaměřuje spíše na frontální výuku.",
+      "Žáci citliví na školní klima – inspekce zaznamenala komplikované mezilidské vztahy mezi pedagogy a vedením."
+    ],
+    "plain_czech_summary": "Obchodní akademie v Ústí nad Labem je moderní škola se silným zaměřením na jazyky a spolupráci se zaměstnavateli. Nové prostory a vybavení jsou výborné. Žáci mají možnost absolvovat praxi v zahraničí a získat státní jazykové zkoušky. Poradenské služby fungují dobře. Slabší stránkou je, že výuka není vždy přizpůsobena individuálním potřebám žáků a chybí zpětná vazba. Mezi učiteli jsou napětí, která nejsou řešena."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – Obchodní akademie mírně horší, Ekonomické lyceum lepší než průměr ČR",
+      "key_numbers": [
+        "Obchodní akademie: 14 % neúspěšnost (ČR 13 %), 10,1 % nekonajících (ČR 5,4 %)",
+        "Ekonomické lyceum: 5 % neúspěšnost (ČR 8 %), 5,2 % nekonajících (ČR 3,3 %)"
+      ],
+      "evidence": "Jarní termín 2023: OA 99 přihlášených (4 neuspěli, 10 nekonalo), EL 58 přihlášených (0 neuspěli, 3 nekonala)."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně a dvě metodičky prevence",
+      "Individuální a skupinové konzultace pro žáky ohrožené školním neúspěchem",
+      "Adaptační kurzy a peer program pro nové žáky",
+      "Systematická prevence rizikového chování"
+    ],
+    "safety_climate": [
+      "Klidné a participující pracovní prostředí v hospitovaných hodinách",
+      "Vzájemná důvěra a příjemná atmosféra mezi žáky a učiteli",
+      "Komplikované mezilidské vztahy mezi pedagogy a vedením nejsou systematicky řešeny",
+      "Minimalizace sociálně patologických jevů díky prevenci"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se širší sítí sociálních partnerů",
+      "Členství v Radě Asociace obchodních akademií České republiky",
+      "Erasmus+ program – odborná praxe v Irsku, Německu, Španělsku",
+      "Mezinárodní spolupráce přispívající k rozvoji jazykových kompetencí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Některé pasáže jsou více odborné, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je problém nebo není sledována.",
+      "Konkrétní počty žáků se speciálními potřebami (32) a s odlišným mateřským jazykem (20) nejsou kontextualizovány – není jasné, zda je to vysoké či nízké číslo.",
+      "Zpráva nespecifikuje, jak dlouho trvá náprava mezilidských vztahů – není jasné, zda jde o dlouhodobý problém."
+    ]
+  }
+}
+```

@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_650069021_2022-12-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:54:33.370287+00:00",
+  "run_finished_utc": "2026-02-09T16:55:00.236635+00:00",
+  "raw_file": "SOS_650069021_2022-12-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_650069021_2022-12-05",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola s obory vzdělání s výučním listem (7 oborů) a s maturitní zkouškou (5 oborů) včetně nástavbového studia",
+      "inspection_period": "5. 12. 2022 – 9. 12. 2022",
+      "school_change_summary": "Od poslední inspekce (2017/2018) došlo ke změně ředitele, ukončení provozu domova mládeže (2019), změně zřizovatele (od 2020 jen VÍTKOVICE, a.s.), zahájení nového oboru IT (2021/2022) a modernizaci učeben s digitální technikou a 3D technologiemi."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola dlouhodobě spolupracuje se smluvními partnery, což zvyšuje kvalitu odborného vzdělávání a uplatnitelnost absolventů na trhu práce.",
+          "evidence": "Žáci absolvují exkurze do provozů firem, přednášky odborníků, mohou získat řidičský a svářečský průkaz během studia."
+        },
+        {
+          "tag": "Moderní vybavení a technologie",
+          "detail": "Škola postupně modernizuje učebny a dílny s 3D tiskárnami, robotickými stavebnicemi a laserovou gravírkou.",
+          "evidence": "Od minulé inspekce byly vybaveny odborné učebny digitální technikou a moderními pomůckami."
+        },
+        {
+          "tag": "Podpora nadaných žáků",
+          "detail": "Škola systematicky vyhledává a podporuje nadané žáky prostřednictvím mentorství a projektů.",
+          "evidence": "Žáci dosahují úspěchů na regionální, celostátní i mezinárodní úrovni (Mladý řemeslník roku, Kovo Junior)."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence a neúspěšnost",
+          "detail": "I přes nastavené postupy přetrvává zvýšená absence žáků a vyšší procento neúspěšnosti v některých oborech.",
+          "evidence": "V oborech s výučním listem se projevila zvýšená neúspěšnost, zejména u oboru Obráběč kovů (zhoršení o 29 %)."
+        },
+        {
+          "tag": "Nízká diferenciace ve výuce",
+          "detail": "Část pedagogů nedostatečně přizpůsobuje obsah a metody individuálním potřebám žáků.",
+          "evidence": "Nízká míra diferenciace zadávaných úloh v části hodin nepodporovala rozdílné pracovní tempo žáků."
+        },
+        {
+          "tag": "Slabá zpětná vazba a reflexe",
+          "detail": "Formativní hodnocení a sebehodnocení žáků se využívá jen minimálně.",
+          "evidence": "Zhodnocení hodiny učitelem probíhalo formálně, neposkytovalo žákům potřebnou zpětnou vazbu o zvládnutí učiva."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci a neúspěšnost žáků? Jaké jsou vaše konkrétní plány na zlepšení?",
+        "Jaké jsou možnosti individuálního přístupu v teoretické výuce, zejména v prvních ročnících?",
+        "Jak se škola vypořádává s výchovnými problémy a nevhodným chováním žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci s praktickým zaměřením a zájmem o technické obory, kteří chtějí propojit teorii s praxí u skutečných zaměstnavatelů",
+        "Nadaní žáci, kterým škola nabízí mentorství, projekty a příležitost reprezentovat školu na soutěžích",
+        "Žáci, kteří chtějí získat během studia praktické certifikáty (řidičský průkaz, svářečský průkaz)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absencím – škola má vysokou absenci a neúspěšnost, i přes snahu ji řešit",
+        "Žáci potřebující individuální přístup a diferenciovanou výuku – část pedagogů ji nedostatečně poskytuje",
+        "Žáci v oborech Obráběč kovů – zde se projevila zvýšená neúspěšnost (zhoršení o 29 %)"
+      ],
+      "plain_czech_summary": "Vítkovická SPŠ je moderní průmyslová škola s dobrým vybavením a silnými vazbami na průmysl. Žáci se učí v praxi u skutečných firem a mají šanci na zaměstnání hned po škole. Nadaní žáci mají podporu a úspěchy na soutěžích. Problém je vysoká absence a neúspěšnost některých žáků, kterou škola řeší, ale zatím bez plného úspěchu. Část výuky by mohla být individuálnější a lépe zpětnovazební."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "2021/2022: 91 % prospělo, 9 % neprospělo",
+          "2020/2021: 82 % prospělo, 18 % neprospělo",
+          "Nejlepší výsledky: obor Letecký mechanik"
+        ],
+        "evidence": "Ve školním roce 2021/2022 došlo ve srovnání s předchozími roky k výraznému zlepšení výsledků v jarním zkušebním období."
+      },
+      "absence": {
+        "trend": "Vysoká, přetrvávající problém",
+        "key_numbers": [
+          "Absence žáků je poměrně vysoká",
+          "Zvýšená absence přetrvává i přes nastavené postupy",
+          "Škola průběžně identifikuje žáky s vysokou absencí"
+        ],
+        "evidence": "I přes nastavené a uplatňované postupy práce s těmito žáky je absence žáků poměrně vysoká. Doporučení z minulé inspekce byla zohledněna (analýza příčin vysoké absence)."
+      },
+      "support_services": [
+        "Výchovná poradkyně, školní metodička prevence, koordinátor nadání, dva kariéroví poradci",
+        "Školní psycholog pro prevenci a eliminaci problémového chování",
+        "Motivačně-adaptační workshopy pro prvňáky, kariérové poradenství pro závěrečné ročníky",
+        "Individuální vzdělávací plány pro žáky se speciálními potřebami"
+      ],
+      "safety_climate": [
+        "Klesající míra úrazovosti díky prevenci a informacím o bezpečnosti",
+        "Zlepšené zabezpečení školy – oddělený vstup od komerční zóny, rozšířený kamerový systém",
+        "Systémová řešení výchovných problémů: třídnické hodiny, činnost školního psychologa, spolupráce s Policií ČR",
+        "Preventivní aktivity: adaptační dny, besedy s Policií, osvěta pedagogů"
+      ],
+      "partnerships_practice": [
+        "Intenzívní spolupráce se smluvními partnery při zajišťování praktického vyučování",
+        "Projekty: Vzdělávání pro všechny II, Talentcentrum VSPŠ, Erasmus+",
+        "Partnerství se základními školami: Talenty pro firmy, Rozvíjíme dovednosti pro život",
+        "Exkurze do provozů firem, přednášky odborníků z praxe, možnost získání řidičského a svářečského průkazu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však delší a více úřednické, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Přesné číslo absence není uvedeno – pouze kvalitativní popis 'poměrně vysoká'",
+        "Není jasné, jaké konkrétní opatření škola již přijala na základě doporučení z minulé inspekce",
+        "Počet žáků v jednotlivých oborech není detailně rozepsán"
+      ]
+    }
+  }
+}

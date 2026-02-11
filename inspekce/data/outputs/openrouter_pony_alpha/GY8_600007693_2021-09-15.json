@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_600007693_2021-09-15",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:34:25.862552+00:00",
+  "run_finished_utc": "2026-02-10T08:35:52.607755+00:00",
+  "raw_file": "GY8_600007693_2021-09-15.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007693_2021-09-15",
+    "school_profile": {
+      "school_type": "Gymnázium s osmiletým a čtyřletým oborem",
+      "inspection_period": "15. až 17. září 2021",
+      "school_change_summary": "Od srpna 2019 vede školu nová ředitelka, která úspěšně zvýšila počet žáků ve čtyřletém oboru a zlepšila atmosféru ve škole."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky a mezinárodní spolupráce",
+          "detail": "Škola klade důraz na cizí jazyky, nabízí latinu a využívá mezinárodních projektů.",
+          "evidence": "„Pokračují dlouhodobé priority školy v rozvoji cizojazyčné komunikace a navázané mezinárodní kontakty... v rámci projektů Erasmus+ a Edison.“"
+        },
+        {
+          "tag": "Výsledky a atmosféra",
+          "detail": "Žáci dosahují velmi dobrých studijních výsledků a v hodinách panuje pozitivní, přátelská atmosféra.",
+          "evidence": "„Téměř polovina žáků prospěla s vyznamenáním... Ve všech hospitovaných hodinách byla zaznamenána pozitivní atmosféra a vzájemný respekt.“"
+        },
+        {
+          "tag": "Absolventi",
+          "detail": "Škola připravuje žáky na VŠ studium, kam odchází drtivá většina absolventů.",
+          "evidence": "„Téměř všichni pokračují ve studiu na vysokých školách.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nediferencovaná výuka",
+          "detail": "Výuka není přizpůsobena individuálním potřebám, zejména u nadaných žáků.",
+          "evidence": "„Přetrvává problém s diferenciací vzdělávacího cíle... zejména ve vztahu k nadaným žákům.“"
+        },
+        {
+          "tag": "Slabá analýza výsledků",
+          "detail": "Vedení školy dostatečně neanalyzuje neúspěch u maturit a nereaguje na ně systémově.",
+          "evidence": "„Škola neprovádí analýzu příčin relativní neúspěšnosti žáků... a nepřijímá následně konkrétní systémová opatření.“"
+        },
+        {
+          "tag": "Personální nestabilita",
+          "detail": "Časté změny na částečné úvazky negativně ovlivňují organizaci výuky.",
+          "evidence": "„Pedagogický sbor je nadále nestabilní... tendence v zaměstnávání učitelů na částečný úvazek... způsobuje organizační problémy.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jakým způsobem diferencuje výuku v běžných hodinách?",
+        "Jaká systémová opatření škola přijímá k dlouhodobě horším výsledkům z českého jazyka u maturit?",
+        "Jak škola řeší personální stabilitu a kumulaci hodin v jednom dni způsobenou učiteli na částečné úvazky?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří chtějí pokračovat na vysokou školu a hledají přátelské prostředí.",
+        "Pro zájemce o jazyky a mezinárodní projekty.",
+        "Pro samostatné žáky, kteří nepotřebují silný individuální přístup."
+      ],
+      "who_should_be_cautious": [
+        "Rodičům nadaných dětí, kteří očekávají individuální přístup a práci s talentem.",
+        "Žákům, kteří potřebují silnou zpětnou vazbu a systematickou podporu v českém jazyce.",
+        "Pokud vám vadí neustálé změny ve vyučujících a nevyrovnaný rozvrh."
+      ],
+      "plain_czech_summary": "Gymnázium v Čelákovicích zažilo pod vedením nové ředitelky obrat k lepšímu, vyznačující se příjemnou atmosférou a rostoucí oblibou. Škola skvěle připravuje na VŠ a vyniká v jazycích. Hlavním rizikem je „šablona“ ve výuce, která nezohledňuje nadané žáky, a slabá analýza maturitních neúspěchů. Pro běžného studenta je to dobrá volba, ale rodiče talentů by se měli ptát na individuální přístup."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky v profilové části jsou vynikající, ve společné části horší v českém jazyce.",
+        "key_numbers": [
+          "Téměř 50 % žáků prospělo s vyznamenáním",
+          "30 % žáků maturuje z informatiky",
+          "Hrubá neúspěšnost stoupá na 10 % (1 žák)"
+        ],
+        "evidence": "„Ve společné části maturitní zkoušky jsou výsledky... v matematice v průměru dlouhodobě lepší... V českém jazyce jsou celkové výsledky žáků horší.“"
+      },
+      "absence": {
+        "trend": "Výrazný pokles absence v posledních dvou letech.",
+        "key_numbers": [
+          "Průměrně 50 hodin na žáka za rok",
+          "Neomluvená absence se téměř nevyskytla",
+          "Minimální počet kázeňských opatření"
+        ],
+        "evidence": "„Absence se v posledních dvou letech výrazně snížila průměrně na 50 hodin na žáka za rok.“"
+      },
+      "support_services": [
+        "Kvalitní kariérové poradenství a stáže na reálných pracovištích.",
+        "Funkční systém identifikace a podpory žáků ohrožených školní neúspěšností.",
+        "Individuální konzultace a doučování."
+      ],
+      "safety_climate": [
+        "Účinná prevence rizikového chování a bezpečnostní opatření.",
+        "Pozitivní vztahy a respekt mezi učiteli a žáky.",
+        "Fungující žákovská samospráva a adaptační kurzy."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s městem Čelákovice (jídelna, budova).",
+        "Mezinárodní projekty Erasmus+ a Edison.",
+        "Zapojení odborníků z praxe do výuky IT."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně rozdělená a konkrétní. Obsahuje vyvážený poměr pozitiv a negativ s jasnému důkazním materiálem.",
+      "uncertainty_notes": [
+        "Chybí upřesnění, jak konkrétně vypadá „nevhodná kumulace vyučovacích hodin“."
+      ]
+    }
+  }
+}

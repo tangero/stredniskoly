@@ -1,0 +1,117 @@
+{
+  "report_id": "SOS_600013731_2022-04-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:04:03.332877+00:00",
+  "run_finished_utc": "2026-02-09T17:04:30.726029+00:00",
+  "raw_file": "SOS_600013731_2022-04-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600013731_2022-04-12",
+    "school_profile": {
+      "school_type": "Střední odborná škola (SOŠ) - obecně prospěšná společnost",
+      "inspection_period": "12.–22. dubna 2022",
+      "school_change_summary": "Nová ředitelka (druhý rok v pozici), zrušen obor Obchodní akademie, nahrazen oborem Ekonomika a podnikání. Založen školní sportovní klub. Zlepšeny materiální podmínky (moderní učebny, vybavení didaktickou technikou)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná praxe a partnerství",
+          "detail": "Škola má bohatou síť sociálních partnerů a pořádá kvalitní odborné exkurze (např. u soudů, sociálních zařízení), což podporuje odborný růst žáků.",
+          "evidence": "Široká škála sociálních partnerů a bohaté portfolio exkurzí pořádané školou umožňuje odborný růst žáků."
+        },
+        {
+          "tag": "Angličtina na vysoké úrovni",
+          "detail": "Výuka anglického jazyka je výborně zajištěna s aktivním zapojením žáků a rozvojem komunikativních dovedností.",
+          "evidence": "V anglickém jazyce byla výborně zajištěná úroveň cizojazyčného prostředí. Žáci byli aktivní a ochotně plnili zadané úkoly."
+        },
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Menší škola s osobním přístupem k žákům, kvalitní poradenské služby a efektivní řešení problémů.",
+          "evidence": "Škola je menší velikosti, což se projevuje kladným vztahem k žákům i operativním přístupem k řešení jejich problémů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nízká úspěšnost u maturity",
+          "detail": "Dlouhodobě vysoká neúspěšnost v části maturity (průměr 32 % v posledních třech letech), částečné zlepšení až v loňském roce.",
+          "evidence": "Hrubá neúspěšnost ve společné části maturitní zkoušky pohybovala kolem 32 %. K částečnému zlepšení došlo až v loňském školním roce."
+        },
+        {
+          "tag": "Pasivní výuka a málo aktivit",
+          "detail": "Převažuje frontální výuka bez dostatečného zapojení žáků, chybí aktivizující metody a rozvoj kritického myšlení.",
+          "evidence": "V podstatné části sledovaných hodin převládala frontální výuka a žáci neměli dostatek příležitostí aktivního zapojení do vyučování."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Absence negativně ovlivňuje výsledky, na konci pololetí bylo nehodnoceno 9 % žáků denní a 20 % dálkové formy, opatření nejsou dostatečně účinná.",
+          "evidence": "Na konci prvního pololetí bylo nehodnoceno cca 9 % žáků denní formy a téměř 20 % žáků dálkové formy vzdělávání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+        "Jaké konkrétní kroky podniká škola ke zlepšení úspěšnosti žáků u maturitní zkoušky?",
+        "Jak se škola chystá zavádět více aktivních a interaktivních metod výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci zajímající se o sociální práci nebo veřejnosprávní činnost s podporou kvalitní odborné praxe",
+        "Studenti s dobrými jazykovými schopnostmi, zejména v angličtině",
+        "Žáci, kteří potřebují osobnější přístup a bezpečné prostředí menší školy"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k vyšší absenci – škola má problémy s jejím řešením",
+        "Studenti, kteří potřebují aktivní a interaktivní výuku – převažuje zde frontální přístup",
+        "Žáci se speciálními vzdělávacími potřebami – podpora není vždy efektivně realizována"
+      ],
+      "plain_czech_summary": "SOŠ Morava je menší škola se zaměřením na sociální činnost a veřejnosprávní činnost. Má kvalitní angličtinu, bohaté partnerství se sociálními zařízeními a osobnější přístup k žákům. Problémem je dlouhodobě nízká úspěšnost u maturity (32 % neúspěšných), vysoká absence žáků a převaha pasivní frontální výuky. Škola má novou ředitelku a postupně zlepšuje vybavení. Vhodná pro žáky, kteří si cení osobního přístupu a odborné praxe, ale měli by počítat s tím, že výuka není příliš interaktivní."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nízká, částečné zlepšení v posledním roce",
+        "key_numbers": [
+          "Průměr 32 % hrubé neúspěšnosti ve společné části za tři roky (2018/19–2020/21)",
+          "Profilová část: cca 11 % neúspěšnosti",
+          "Částečné zlepšení v roce 2020/2021"
+        ],
+        "evidence": "V průměru za tři poslední uzavřené školní roky se hrubá neúspěšnost ve společné části pohybovala kolem 32 %. K částečnému zlepšení došlo až v loňském školním roce 2020/2021."
+      },
+      "absence": {
+        "trend": "Vysoká, opatření nejsou dostatečně účinná",
+        "key_numbers": [
+          "Na konci 1. pololetí: 9 % nehodnocených žáků denní formy",
+          "Na konci 1. pololetí: 20 % nehodnocených žáků dálkové formy",
+          "Žáci s absencí nad 30 % mají možnost individuálního dozkoušení"
+        ],
+        "evidence": "Na konci prvního pololetí aktuálního školního roku bylo nehodnoceno cca 9 % žáků denní formy a téměř 20 % žáků dálkové formy. Opatření přijatá školou nejsou dostatečně účinná."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, kariérová poradkyně, metodička prevence",
+        "Péče o žáky se speciálními vzdělávacími potřebami (54 žáků, 18 s individuálním plánem)",
+        "Kariérová poradna pro rozhodování o dalším vzdělávání a profesní volbě",
+        "Preventivní program proti rizikovému chování"
+      ],
+      "safety_climate": [
+        "Bezpečné fyzické a psychické prostředí – škola dbá na bezpečí všech aktérů",
+        "Menší škola s kladným vztahem k žákům a operativním řešením problémů",
+        "Studentský parlament přispívá k otevřené komunikaci",
+        "Školní sportovní klub podporuje zdravý životní styl"
+      ],
+      "partnerships_practice": [
+        "Odborná praxe ve firmách prostřednictvím smluvních vztahů se sociálními partnery",
+        "Nadstandardní spolupráce se sociálními zařízeními",
+        "Odborné exkurze (např. u obecných soudů v Brně)",
+        "Projekt KAP JMK II 'Extra třída' – zkrášlování venkovního prostředí",
+        "Soutěž 'Firemní dny Jihomoravského kraje' – prezentace projektů budoucím zaměstnavatelům"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější (např. popis metodických postupů), ale pro rodiče jsou klíčové informace jasně identifikovatelné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola přijala po inspekci – jsou pouze doporučení inspektora",
+        "Není jasné, zda se nová ředitelka a její opatření již projevila v lepších výsledcích (zpráva je z května 2022)",
+        "Chybí informace o počtu pedagogů a jejich kvalifikaci"
+      ]
+    }
+  }
+}

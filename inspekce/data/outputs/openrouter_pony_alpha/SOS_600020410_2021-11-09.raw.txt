@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_600020410_2021-11-09",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola, střední škola a domov mládeže",
+    "inspection_period": "9. 11. 2021 − 12. 11. 2021",
+    "school_change_summary": "Škola výrazně posílila zájem o studium; celkový počet žáků střední školy vzrostl od roku 2014 o 37 % a v učebních oborech se více než ztrojnásobil."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a technologie",
+        "detail": "Škola nabízí špičkové technologické vybavení odborných učeben a dílen, které odpovídá moderním trendům.",
+        "evidence": "Materiální vybavení... dosahuje vynikající úrovně; škola renovovala dílny včetně CNC stroje a elektrolaboratoří."
+      },
+      {
+        "tag": "Uplatnění absolventů",
+        "detail": "Díky úzké vazbě na firmy mají žáci skvělou přípravu na praxi a často mají jistotu zaměstnání již během studia.",
+        "evidence": "Široká síť sociálních partnerů umožňuje efektivní realizaci praktického vyučování a získávání odborných kompetencí."
+      },
+      {
+        "tag": "Atmosféra a vedení",
+        "detail": "Ve škole panuje přátelská atmosféra a vedení školy jasně směřuje k modernizaci a rozvoji.",
+        "evidence": "Příznivé interpersonální vztahy... přispívají k příjemné studijní atmosféře; funkční systém řízení vychází z reálné koncepce."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Některé obory vykazují kolísavé a horší výsledky u maturitních zkoušek než je celorepublikový průměr.",
+        "evidence": "Žáci oboru Mechanik elektrotechnik měli v roce 2019 neúspěšnost v českém jazyce 33,3 %; u oboru IT je vysoká neúspěšnost u profilových zkoušek."
+      },
+      {
+        "tag": "Zastaralé vyučovací metody",
+        "detail": "Ve výuce převažuje frontální styl bez dostatečného přizpůsobení potřebám jednotlivých žáků.",
+        "evidence": "Nízká míra využití kooperativních metod, absence diferenciace a individualizace výuky dle vzdělávacích potřeb žáků."
+      },
+      {
+        "tag": "Jazyková výuka",
+        "detail": "Výuka angličtiny na střední škole nepodporuje dostatečně komunikaci mezi žáky.",
+        "evidence": "Výuka anglického jazyka jen zčásti podporovala produktivní řečové dovednosti... ojediněle také při vzájemné komunikaci mezi žáky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomáhá žákům s přípravou na státní maturitní zkoušku, zejména v českém jazyce?",
+      "V jakých firmách a jak často budou žáci absolvovat odbornou praxi?",
+      "Jaké moderní technologie a software budou moci žáci při výuce využívat?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří se chtějí učit řemeslo nebo design a chtějí být připraveni na reálný trh práce.",
+      "Pro ty, kteří očekávají moderní vybavení dílen a zapojení do skutečných projektů.",
+      "Pro studenty, kteří hledají školu s dobrou atmosférou a přístupným vedením."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří plánují studovat obor Informační technologie a cílí na bezproblémové složení maturitní zkoušky.",
+      "Pro žáky, kteří potřebují silnou podporu v českém jazyce pro složení státní maturity.",
+      "Pro ty, kdo preferují moderní interaktivní styl výuky před klasickým frontálním vyučováním."
+    ],
+    "plain_czech_summary": "Škola ve Štětí je technicky velmi dobře vybavená a má skvělé vazby na zaměstnavatele, což žákům zajišťuje kvalitní praxi a uplatnění. Největším problémem jsou horší výsledky u maturitních zkoušek v některých oborech a tradiční styl výuky, který málo respektuje individuální potřeby žáků. Pro prakticky zaměřené studenty je škola skvělou volbou, uchazeči o IT by měli zvážit náročnost studia."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý, s výraznější neúspěšností v některých oborech",
+      "key_numbers": [
+        "Neúspěšnost v ČJL u oboru Mechanik elektrotechnik 33,3 % (2019)",
+        "Neúspěšnost u profilových zkoušek v IT 16,1 % (2020)",
+        "100 % úspěšnost u závěrečných zkoušek v učebních oborech"
+      ],
+      "evidence": "Žáci oborů Obalová technika a Design interiéru dosahovali srovnatelných či lepších výsledků... žáci oboru IT vykazují zvýšenou míru neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Není uvedeno",
+      "key_numbers": [],
+      "evidence": "Zpráva neuvádí konkrétní data o absence, zmiňuje pouze prevenci záškoláctví."
+    },
+    "support_services": [
+      "Individuální konzultace pro přípravu k maturitě (využívané sporadicky)",
+      "Doučování z českého a anglického jazyka v rámci Národního plánu doučování",
+      "Možnost prostupu mezi obory (např. z výučního listu na maturitu)"
+    ],
+    "safety_climate": [
+      "Vstřícné a přátelské pracovní klima",
+      "Efektivní řešení problémového chování metodikem prevence",
+      "Zapojení žáků do dění školy prostřednictvím žákovského parlamentu"
+    ],
+    "partnerships_practice": [
+      "Široké portfolio smluvních pracovišť pro odbornou praxi",
+      "Spolupráce s firmami na obsahu výuky a modernizaci oborů (např. internet věcí)",
+      "Zapojení firem do vzdělávání pedagogů formou stáží a dílen"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a negativa, ale obsahuje určité množství odborných frází.",
+    "uncertainty_notes": [
+      "Absence konkrétních dat o celkové neúspěšnosti u maturity v roce 2021.",
+      "Nejasnost ohledně konkrétní podoby 'motivačního testu' pro uchazeče o IT.",
+      "Chybí detailnější popis podpory žáků se speciálními vzdělávacími potřebami."
+    ]
+  }
+}

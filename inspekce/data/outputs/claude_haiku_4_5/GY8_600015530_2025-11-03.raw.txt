@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "GY8_600015530_2025-11-03",
+  "school_profile": {
+    "school_type": "Gymnázium (4leté a 8leté studium) + Jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "3. 11. 2025 – 6. 11. 2025",
+    "school_change_summary": "Škola prochází postupnou a přirozenou obměnou pedagogického sboru bez negativního dopadu na kvalitu. Realizovány významné investice do modernizace areálu, které snížily energetickou náročnost a zlepšily materiálně-technické zázemí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky v soutěžích",
+        "detail": "Žáci opakovaně dosahují nejlepších výsledků v krajských a celostátních soutěžích, zejména v češtině, matematice, fyzice a programování.",
+        "evidence": "Dlouhodobě dobré výsledky v soutěžích na úrovni krajské i celostátní (5.3)"
+      },
+      {
+        "tag": "Nadprůměrné maturitní výsledky",
+        "detail": "Výsledky maturit jsou v porovnání s celorepublikovým průměrem nadprůměrné, přes 50 % žáků končí rok s vyznemenáním.",
+        "evidence": "Celkové výsledky žáků u maturitních zkoušek byly v porovnání s celorepublikovým průměrem nadprůměrné"
+      },
+      {
+        "tag": "Kvalitní materiální vybavení",
+        "detail": "Prostory a vybavení jsou na velmi dobré úrovni s moderními učebnami, sportovním zázemím a unikátním kroužkem včelařství.",
+        "evidence": "Prostorové a materiální podmínky školy jsou na velmi dobré úrovni. Nadstandardní je také materiální zázemí určené pro realizaci sportovních a pohybových aktivit"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá evaluace výuky",
+        "detail": "Hospitační činnost má formální charakter a poskytuje pedagogům jen minimální zpětnou vazbu pro zlepšení výuky.",
+        "evidence": "Záznamy z hospitační činnosti měly spíše formální charakter, pedagogům poskytovaly pouze minimální zpětnou vazbu"
+      },
+      {
+        "tag": "Nedostatečná práce s výsledky",
+        "detail": "Výsledky vzdělávání škola sice eviduje, ale dále je dostatečně nevyhodnocuje a nevyužívá k řízení kvality.",
+        "evidence": "Výsledky vzdělávání škola zpravidla jen evidovala, dále je však dostatečně nevyhodnocovala"
+      },
+      {
+        "tag": "Nejednotná kvalita výuky",
+        "detail": "Výuka v nižších ročnících postrádá pestré metody, chybí reflexe pokroku a závěrečné shrnutí hodin.",
+        "evidence": "V nižších ročnících se aktivně zapojovala jen menší část žáků, motivace a inovativní metody byly spíše výjimečné"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně vedení školy pracuje se zpětnou vazbou z hospitací a jak ji využívá k rozvoji učitelů?",
+      "Jaké konkrétní kroky škola podnikla po inspekci, aby zlepšila vyhodnocování výsledků žáků?",
+      "Jak se liší přístup k výuce v nižších a vyšších ročnících a co se dělá pro zvýšení aktivity žáků v nižších ročnících?"
+    ],
+    "who_school_fits": [
+      "Ambiciózní žáci zaměření na jazyky a vědomostní soutěže, kteří chtějí studovat na prestižních vysokých školách",
+      "Žáci s nadáním v matematice, přírodních vědách a programování, kde škola dosahuje nejlepších výsledků",
+      "Rodiny hledající kvalitní materiální vybavení a moderní prostředí s bohatou nabídkou mimoškolních aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní individuální podporu a zpětnou vazbu – výuka v nižších ročnících je méně personalizovaná",
+      "Žáci s nižší motivací, kterým chybí pestré a aktivizující metody výuky v některých předmětech",
+      "Rodiny, které očekávají, že škola bude systematicky pracovat s výsledky a průběžně je vyhodnocovat"
+    ],
+    "plain_czech_summary": "Gymnázium v Uherském Brodě je kvalitní školou s výborným materiálním vybavením a dlouhodobě nadprůměrnými výsledky v maturitách a soutěžích. Pedagogický sbor je plně kvalifikovaný a škola se věnuje péči o žáky se speciálními potřebami. Hlavní slabinou je nedostatečné vyhodnocování kvality výuky a práce s výsledky. Výuka v nižších ročnících postrádá pestré metody a aktivní zapojení všech žáků. Škola by měla zlepšit systém evaluace a více se zaměřit na individuální rozvoj každého žáka."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nadprůměrné výsledky s jednou výjimkou",
+      "key_numbers": [
+        "Nadprůměrné výsledky v porovnání s celorepublikovým průměrem",
+        "Výjimka: školní rok 2022/2023 s mírně horšími výsledky v matematice",
+        "Přes 50 % žáků končí rok s vyznamenáním"
+      ],
+      "evidence": "Celkové výsledky žáků u maturitních zkoušek od poslední inspekční činnosti byly v porovnání s celorepublikovým průměrem nadprůměrné"
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se absencí nezabývá"
+    },
+    "support_services": [
+      "Výchovný poradce a metodička prevence zajišťují poradenské služby na dobré úrovni",
+      "Žákům se speciálními vzdělávacími potřebami (16 žáků) je zajištěna adekvátní podpora včetně asistentů pedagoga",
+      "Kariérové poradenství cíleně napomáhá výběru volitelných předmětů a budoucímu profesnímu uplatnění",
+      "Škola organizuje adaptační kurzy a tematické besedy zaměřené na zdravé vztahy a wellbeing"
+    ],
+    "safety_climate": [
+      "Systém preventivních opatření v oblasti bezpečnosti a ochrany zdraví je funkční a pravidelně vyhodnocovaný",
+      "Přijatá opatření přispívají k zajištění fyzické i psychické bezpečnosti žáků",
+      "Škola důsledně dbá na dodržování bezpečnostních standardů a podporuje kulturu bezpečného chování",
+      "Prevencí sociálně patologických jevů se promyšleně zabývá metodička prevence s externími odborníky"
+    ],
+    "partnerships_practice": [
+      "Škola průběžně prohlubuje spolupráci s mnoha organizacemi, firmami a školami českými i zahraničními",
+      "Organizování zahraničních pobytů vede k rozvoji komunikačních dovedností v cizích jazycích",
+      "Aktivní zapojení do kulturních a společenských akcí a spolupráce s místními kulturními spolky",
+      "Efektivní využívání spolupráce se svými absolventy prostřednictvím besed o profesních cestách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však poměrně dlouhé a obsahují více kritických poznatků najednou, což může ztížit orientaci rodičům.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o absenci žáků, což je pro rodiče důležitá informace",
+      "Chybí konkrétní čísla o počtu žáků, kteří neprospěli v jednotlivých letech (zmíněno jen 5 žáků v roce 2022/2023)",
+      "Není jasné, jak konkrétně se liší kvalita výuky mezi jednotlivými učiteli a předměty"
+    ]
+  }
+}
+```

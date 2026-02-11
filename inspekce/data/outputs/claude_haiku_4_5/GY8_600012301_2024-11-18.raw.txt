@@ -1,0 +1,102 @@
+```json
+{
+  "report_id": "GY8_600012301_2024-11-18",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium",
+    "inspection_period": "18.–20. listopadu 2024",
+    "school_change_summary": "Počet žáků vzrostl o více než 10 % na 350 žáků ve 12 třídách. Škola zavádí nové předměty a projekty zaměřené na badatelskou výuku a praktické dovednosti."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Pestrá nabídka předmětů",
+        "detail": "Volitelné předměty odrážejí zájmy žáků a připravují je na vysoké školy, včetně nových seminářů jako Výchova k podnikavosti.",
+        "evidence": "Škola nabízí např. Politologii a mezinárodní vztahy, čtyři studentské firmy založené žáky."
+      },
+      {
+        "tag": "Aktivní školní parlament",
+        "detail": "Žáci se podílí na řešení problémů a organizaci akcí, což rozvíjí jejich demokratické principy.",
+        "evidence": "Parlament přináší návrhy na zlepšení, pomáhá při jejich realizaci a aktivně získává finance."
+      },
+      {
+        "tag": "Spolupráce s rodiči v prevenci",
+        "detail": "Škola pořádá setkání s přednáškami zaměřenými na prevenci rizikového chování.",
+        "evidence": "Metodička prevence a výchovná poradkyně úzce spolupracují, jsou pořádány adaptační a sportovní kursy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdíly v přístupu učitelů",
+        "detail": "Někteří učitelé používají převážně přednáškový styl bez aktivního zapojení žáků.",
+        "evidence": "Inspektoři zaznamenali hodiny vedené zkušeným pedagogem s pouze pasivní přítomností žáků."
+      },
+      {
+        "tag": "Málo zpětné vazby v hodinách",
+        "detail": "Učitelé málo pracují s cíli hodin a málo ověřují, zda žáci porozuměli učivu.",
+        "evidence": "Formativní zpětná vazba byla poskytnuta jen v malé části výuky, chybí sebereflexe žáků."
+      },
+      {
+        "tag": "Nízká diferenciace výuky",
+        "detail": "Nadanější a rychlejší žáci nemají dostatek individualizovaných úloh.",
+        "evidence": "Diferenciace úloh byla využívána ojediněle, přestože je příležitostí k zefektivnění výuky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadanější žáky v běžných hodinách? Existují pro ně speciální programy?",
+      "Jaké konkrétní kroky podnikne škola, aby všichni učitelé používali více aktivizujících metod výuky?",
+      "Jak se škola vypořádá s rozdíly v komunikačním stylu jednotlivých učitelů?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o rozmanitou nabídku volitelných předmětů a projektů (robotika, astronomie, podnikavost)",
+      "Děti, které se chcou aktivně podílet na životě školy a rozvíjet své vedení (školní parlament)",
+      "Žáci připravující se na vysoké školy, kteří ocení exkurze, Erasmus+ projekty a besedy s absolventy"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální pozornosti a zpětné vazby – ne všichni učitelé ji poskytují dostatečně",
+      "Nadanější a rychlejší žáci, kterým chybí dostatek diferenciovaných úloh přizpůsobených jejich tempu",
+      "Děti, které se lépe učí aktivní metodou – některé hodiny jsou stále vedeny převážně frontálně"
+    ],
+    "plain_czech_summary": "Gymnázium v Holici je dobře vedená škola s velmi dobrými výsledky maturit a testů. Nabízí zajímavé volitelné předměty a projekty, které motivují žáky. Silná je také spolupráce s rodiči a aktivní školní parlament. Hlavní výzvou je, že ne všichni učitelé používají stejně aktivizující metody – někteří stále učí převážně frontálně. Chybí také dostatek zpětné vazby žákům a individualizace pro nadanější studenty. Škola si je těchto problémů vědoma a pracuje na jejich řešení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobré výsledky potvrzené nezávislými testy",
+      "key_numbers": [
+        "16 žáků úspěšně složilo profilovou zkoušku z matematiky",
+        "28 žáků složilo Cambridge zkoušku B2 First místo státní části z angličtiny",
+        "Výsledky osmiletého oboru se významně neliší od čtyřletého"
+      ],
+      "evidence": "Celkové ročníkové výsledky jsou velmi dobré, pouze ojediněle postupují žáci až po doplnění odložené klasifikace."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva se absence věnuje minimálně, zaměřuje se na kvalitu výuky a výsledky."
+    },
+    "support_services": [
+      "Výchovné poradenství zaměřené na kariérové vedení a volbu volitelných předmětů",
+      "Podpora žáků se speciálními vzdělávacími potřebami (3 žáci) prostřednictvím individuálních vzdělávacích plánů",
+      "Nově budovaná systematická podpora nadaných žáků, metodička prevence s vlastním zázemím"
+    ],
+    "safety_climate": [
+      "Operativní řešení rizikového chování ve spolupráci s třídními učiteli, žáky a rodiči",
+      "Pravidelné adaptační a sportovní kursy přispívající ke zlepšení vztahů v třídách",
+      "Široká škála preventivních aktivit podporujících dlouhodobé i krátkodobé cíle prevence"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se sociálními partnery (vysoké školy, ekocentra)",
+      "Projekt Dotkni se vesmíru – žáci si sestrojili sondu a vypustili ji s meteorologickým balónem",
+      "Erasmus+ program s výjezdy žáků do zahraničí, besedy s absolventy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Slabé stránky jsou jasně pojmenovány, ale některé pasáže jsou složitější a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, jaká je absence žáků na škole",
+      "Počet učitelů a jejich kvalifikace nejsou specifikovány",
+      "Konkrétní čísla o výsledcích testů SCIO nebo jiných nezávislých testů nejsou uvedena"
+    ]
+  }
+}
+```

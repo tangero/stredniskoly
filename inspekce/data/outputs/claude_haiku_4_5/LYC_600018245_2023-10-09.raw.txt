@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "LYC_600018245_2023-10-09",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola strojnická (obory: Strojírenství, Ekonomika a podnikání)",
+    "inspection_period": "9. až 13. října 2023",
+    "school_change_summary": "Škola se vyvíjí pozitivně. Zvýšila úroveň materiálních podmínek díky projektům a digitalizaci. Výsledky maturit se zlepšují, zejména v oboru Strojírenství. Vedení cíleně podporuje rozvoj pedagogů a mezinárodní spolupráci."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky a příprava na maturitu",
+        "detail": "Výsledky maturitní zkoušky jsou na dobré úrovni, v oboru Strojírenství došlo k výraznému zlepšení.",
+        "evidence": "Vedení školy se pravidelně zabývá maturitními výsledky, analyzuje je a přijímá opatření k jejich zlepšení."
+      },
+      {
+        "tag": "Mezinárodní projekty a soutěže",
+        "detail": "Žáci se aktivně zapojují do národních a mezinárodních projektů s velmi dobrými výsledky.",
+        "evidence": "Žáci dosahují velmi dobrých umístění v cizojazyčných, matematických a odborných soutěžích na krajské a republikové úrovni."
+      },
+      {
+        "tag": "Kvalitní zázemí a bezpečnost",
+        "detail": "Škola má dobré materiální podmínky, čisté a vkusně upravené prostory, domov mládeže a kvalitní jídelnu.",
+        "evidence": "Vedení přistupuje k bezpečnosti zodpovědně, pravidelně vyhodnocuje rizika a modernizuje vybavení odborných učeben."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivní výuka odborných předmětů",
+        "detail": "Ve výuce odborných předmětů teoretického charakteru převažuje frontální výklad s málo aktivizačními metodami.",
+        "evidence": "Aktivizační metody se vyskytly pouze ojediněle, chybělo systematické vedení k uceleným odpovědím a argumentaci."
+      },
+      {
+        "tag": "Nedostatečná diferenciace úloh",
+        "detail": "Chybí možnost výběru úloh s různou náročností přizpůsobenou jednotlivým žákům.",
+        "evidence": "Vedení školy v malé míře sledovalo zařazování úloh rozdílné kognitivní náročnosti do výuky."
+      },
+      {
+        "tag": "Slabší rozvoj komunikativních dovedností",
+        "detail": "Podpora komunikativních dovedností ve výuce odborných předmětů je nízká.",
+        "evidence": "Chybělo systematické vedení k uceleným odpovědím a argumentaci v odborných předmětech."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola plánuje zvýšit aktivitu žáků ve výuce odborných předmětů?",
+      "Jaké jsou možnosti doučování a individuální podpory pro žáky s potížemi?",
+      "Jak se škola připravuje na maturitní zkoušku a jaké jsou výsledky v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří se zajímají o praktické dovednosti a chystají se do průmyslu nebo podnikání",
+      "Talentovaní žáci, kteří chtějí reprezentovat školu v soutěžích a projektech",
+      "Žáci, kteří potřebují kvalitní zázemí a podporu (domov mládeže, doučování, poradenství)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se učí lépe aktivní metodou a potřebují více interakce v hodinách",
+      "Žáci s různou úrovní schopností, kteří potřebují úlohy přizpůsobené jejich tempu",
+      "Žáci, kteří se chtějí rozvíjet v komunikativních dovednostech a argumentaci"
+    ],
+    "plain_czech_summary": "Střední průmyslová škola strojnická v Ústí je dobře vedená škola s kvalitním zázemím a rostoucími výsledky. Silnými stránkami jsou výsledky maturit, mezinárodní projekty a bezpečné prostředí. Slabší je aktivní přístup ve výuce odborných předmětů – učitelé často používají frontální výklad místo interaktivních metod. Škola také potřebuje lépe přizpůsobovat úlohy různým schopnostem žáků. Vedení je si těchto problémů vědomo a plánuje zlepšení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní trend, zejména v oboru Strojírenství",
+      "key_numbers": [
+        "Výsledky společné i profilové části maturitní zkoušky v posledních třech letech na dobré úrovni",
+        "Obor Strojírenství: výrazné zlepšení v obou částech maturitní zkoušky ve školním roce 2022/2023",
+        "Škola dosáhla srovnatelných výsledků s celorepublikovými v externím testování"
+      ],
+      "evidence": "Vedení školy se pravidelně zabývá maturitními výsledky, analyzuje je a každoročně zpracovává podrobnou analýzu s opatřeními k dalšímu zlepšení."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva se absencí žáků nezabývá."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně a metodička prevence",
+      "Kariérové poradenství: cílená pomoc při výběru budoucí profese",
+      "Doučování a konzultační hodiny: poskytovány všem zájemcům, zejména v odborných předmětech",
+      "Péče o žáky se speciálními vzdělávacími potřebami: včasná identifikace a spolupráce se školskými poradenskými zařízeními"
+    ],
+    "safety_climate": [
+      "Vedení školy přistupuje k bezpečnosti a ochraně zdraví zodpovědně",
+      "Pravidelné vyhodnocování rizik a přijímání opatření k jejich odstranění",
+      "Domov mládeže umožňuje kvalitní ubytování 44 žákům",
+      "Činnosti domova mládeže vytvářejí pozitivní klima podporující vzdělávání"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se školami různých stupňů vzdělávání (od mateřských až po vysoké školy)",
+      "Spolupráce s firmami a sociálními partnery",
+      "Kvalitní mezinárodní spolupráce: odborné stáže žáků a vyučujících v zahraničních firmách a školách",
+      "Účinná kooperace se zřizovatelem (Zlínský kraj) a zákonnými zástupci žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní příklady a důkazy. Slabší stránky jsou jasně identifikovány, ale mohly by být konkrétnější v doporučeních pro rodiče.",
+    "uncertainty_notes": [
+      "Absence není zmíněna – není jasné, zda je to problém nebo ne",
+      "Počet žáků se speciálními potřebami (10 ze 315) je nízký – není jasné, zda je to reprezentativní",
+      "Konkrétní procenta úspěšnosti u maturit nejsou uvedena, pouze kvalitativní hodnocení"
+    ]
+  }
+}
+```

@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600024938_2023-01-03",
+  "school_profile": {
+    "school_type": "Gymnázium (střední všeobecné vzdělání) s připojenou základní školou, mateřskou školou a speciálně pedagogickým centrem",
+    "inspection_period": "3. 1. 2023 – 5. 1. 2023",
+    "school_change_summary": "Od poslední inspekce (2015) škola rozšířila nabídku o základní vzdělání a zájmové vzdělávání. Postupně zlepšuje materiální podmínky. Inspekce zjistila zhoršení v oblasti řízení školy, zejména v základním vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Předškolní vzdělávání",
+        "detail": "Empatický přístup pedagogů, komunitní atmosféra, individuální přístup k rozvoji dětí, kvalitní pedagogická diagnostika.",
+        "evidence": "Věkově smíšené třídy podporují sociální učení, děti se cítí bezpečně, průběžné záznamy o vývoji každého dítěte."
+      },
+      {
+        "tag": "Výsledky vzdělávání",
+        "detail": "Stabilně velmi dobré výsledky v základní škole, dobré výsledky v maturitě, nízká absence, motivační systém výchovných opatření.",
+        "evidence": "Více než dvě třetiny žáků ZŠ prospívá s vyznamenáním, 38 % maturantů prospělo s vyznamenáním, absence spíše průměrná."
+      },
+      {
+        "tag": "Spolupráce se zákonnými zástupci",
+        "detail": "Otevřená komunikace, pravidelné informování rodičů, aktivní účast na školních akcích.",
+        "evidence": "Individuální konzultace, nástěnky, webové stránky, e-mailová komunikace, sociální sítě, účast rodičů na akcích."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita výuky v základní škole",
+        "detail": "Převaha frontální výuky, málo diferenciace, nedostatek aktivizačních metod, slabé využití digitálních technologií.",
+        "evidence": "Žáci ztráceli zájem během hodin, málo prostoru pro vlastní vyjadřování, všichni plnili stejné úkoly, slovní metody převažovaly."
+      },
+      {
+        "tag": "Kvalifikace pedagogů ZŠ",
+        "detail": "Některé učitelky základní školy nemají požadovanou odbornou kvalifikaci pro výuku na prvním stupni.",
+        "evidence": "Pouze 2 z 5 třídních učitelek prvního stupně splňovaly podmínku odborné kvalifikace, vedoucí učitelka ZŠ bez potřebné kvalifikace."
+      },
+      {
+        "tag": "Řízení a kontrola",
+        "detail": "Kontrolní činnost spíše formální, hospitační činnost nahodilá bez cílů, nedostatečná metodická podpora pedagogů.",
+        "evidence": "Výsledky hospitací nebyly analyzovány, zpětná vazba nebyla přínosná, nový učitel má podporu jen v prvním čtvrtletí."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola zajišťuje diferenciaci výuky pro žáky s různými schopnostmi a jak se to projevuje v běžné hodině?",
+      "Jaké konkrétní kroky škola podnikla po inspekci k zlepšení kvalifikace učitelek základní školy a jejich metodické podpory?",
+      "Jak se škola zaměřuje na rozvoj digitálních dovedností žáků a jak jsou digitální technologie běžně využívány ve výuce?"
+    ],
+    "who_school_fits": [
+      "Rodiče, kterým vyhovuje malý počet žáků ve třídách (6–10 v ZŠ, 14–21 v SŠ) a individuální přístup",
+      "Rodiny hledající kvalitní gymnázium s dlouhou tradicí a dobrými výsledky v maturitě",
+      "Rodiče dětí s tělesným postižením, kterým škola nabízí speciální péči a integraci"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají moderní a pestrou výuku s aktivním zapojením žáků – inspekce zjistila převahu frontální výuky",
+      "Rodiny, kterým záleží na intenzivním využívání digitálních technologií ve výuce – jejich využití bylo ojediněle",
+      "Rodiče žáků se speciálními vzdělávacími potřebami – doporučení poradenských zařízení nebyla vždy respektována"
+    ],
+    "plain_czech_summary": "AKADEMIA je dlouhodobě úspěšné gymnázium s kvalitními výsledky. Předškolní vzdělávání funguje velmi dobře. Problém je v základní škole: výuka je málo pestrou, chybí diferenciace a aktivní zapojení žáků. Některé učitelky nemají potřebnou kvalifikaci. Inspekce kritizuje i řízení – kontrola je spíše formální. Škola po inspekci změnila vedení a slibuje zlepšení. Doporučujeme se zeptat, jak konkrétně se situace zlepšila."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "38 % maturantů prospělo s vyznamenáním v loňském roce",
+        "Srovnatelná úroveň s průměrem ostatních škol v ČR",
+        "Neprospívající žáci se vyskytli ojediněle"
+      ],
+      "evidence": "Výsledky maturitní zkoušky v posledních třech letech vykazovaly srovnatelnou úroveň, úspěšnost je stabilní."
+    },
+    "absence": {
+      "trend": "Nízká",
+      "key_numbers": [
+        "Absence žáků spíše průměrná",
+        "Neomluvená absence se v posledním roce neobjevila",
+        "Škola absence sleduje"
+      ],
+      "evidence": "Počet zameškaných hodin je monitorován, absence je spíše průměrná bez výrazných problémů."
+    },
+    "support_services": [
+      "Speciálně pedagogické centrum (SPC) s jednou odbornou pracovnicí – školní psycholožkou",
+      "Poradenské služby včetně psychologické diagnostiky a doporučení podpůrných opatření",
+      "Kariérové poradenství s podporou při rozhodování o dalším studiu"
+    ],
+    "safety_climate": [
+      "Pozitivní klima ve škole podporované otevřenou komunikací vedení",
+      "Prevence rizikového chování se vyskytuje ojediněle",
+      "Škola organizuje aktivity podporující prevenci rizikového chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Masarykovou univerzitou (Dny vědy, přednášky, externí testování, fakultní škola)",
+      "Spolupráce se školskými poradenskými zařízeními a odbornými lékaři",
+      "Spolupráce s místními organizacemi a sponzory"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Inspekční zpráva je podrobná a srozumitelná, obsahuje konkrétní příklady. Připomínky školy a stanovisko inspekce jsou jasně strukturované. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně se situace v základní škole zlepšila po změně vedení v únoru 2023 – zpráva je z ledna",
+      "Rozsah problémů s kvalifikací pedagogů není zcela jasný – zda jde o izolovaný případ nebo systémový problém",
+      "Není specifikováno, které konkrétní třídy/předměty v SŠ měly problémy s diferenciací a digitálními technologiemi"
+    ]
+  }
+}
+```

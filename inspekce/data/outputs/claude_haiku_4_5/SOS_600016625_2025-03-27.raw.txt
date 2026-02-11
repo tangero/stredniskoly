@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600016625_2025-03-27",
+  "school_profile": {
+    "school_type": "Střední škola a Vyšší odborná škola (VOŠ) DAKOL, o.p.s. - vzdělávání v oborech s výučním listem (Ošetřovatel, Stravovací služby, Prodavačské práce, Strojírenství, Truhlářství, Zahradnictví) a maturitou (Hotelnictví, Předškolní pedagogika, Masér sportovní)",
+    "inspection_period": "27. března až 23. dubna 2025",
+    "school_change_summary": "Od inspekce v roce 2018/2019 došlo k výraznému navýšení počtu žáků (nyní 506 žáků). V inspekčním období nebylo realizováno vzdělávání ve vyšší odborné škole. Zjištění z předchozí inspekce byla zohledněna."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Učitelé s dlouholetou praxí motivují žáky individuální podporou a partnerským přístupem, rozvíjejí jejich sebevědomí a propojují teorii s praxí.",
+        "evidence": "Praktická výuka probíhá v souladu se systematickým rozvržením obsahu, učitelé dohlížejí na správnost a bezpečnost, rozvíjejí komunikativní a prosociální kompetence."
+      },
+      {
+        "tag": "Bohatá mimoškolní činnost",
+        "detail": "Žáci se zapojují do soutěží, exkurzí, zahraničních pobytů a projektů Erasmus+, což rozvíjí jejich odborné znalosti a zájem o obor.",
+        "evidence": "Škola pořádá sportovní akce, besedy s odborníky, gastronomické soutěže, divadelní festivaly a participuje na programu Erasmus+ s krátkodobými zahraničními pobyty."
+      },
+      {
+        "tag": "Systematická podpora slabších žáků",
+        "detail": "Škola má vypracovanou strategii předcházení školní neúspěšnosti a řešení předčasných odchodů, sleduje výsledky a poskytuje individuální konzultace.",
+        "evidence": "Pedagogové využívají standardní nástroje hodnocení, žáci jsou informováni průběžně, škola zavedla interní testování z českého jazyka a angličtiny."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená práce s informačními zdroji",
+        "detail": "Výuka málo rozvíjí schopnost žáků vyhledávat a vyhodnocovat informace z různých zdrojů.",
+        "evidence": "Inspekce zjistila, že k vyhledávání a vyhodnocení informací byli žáci vedeni v menší míře, což je označeno jako slabá stránka."
+      },
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Učitelé minimálně využívají diferencované úlohy přizpůsobené individuálním schopnostem jednotlivých žáků.",
+        "evidence": "V průběhu sledovaných hodin učitelé nevyužili příležitosti k zadávání diferencovaných úkolů podle individuálních potřeb žáků."
+      },
+      {
+        "tag": "Administrativní nedostatky v poradenství",
+        "detail": "Speciálně pedagogické centrum má nedostatky v dataci a evidenci žádostí o poradenské služby.",
+        "evidence": "V žádostech byly shledány nedostatky týkající se datace jednotlivých kroků péče a přehledného opatření datem přijetí požadavku."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením? Jaké jsou dostupné konzultace a individuální pomoc?",
+      "Jaké jsou možnosti zahraničních stáží a výměn v rámci Erasmus+? Jak se do nich mohou zapojit všichni žáci?",
+      "Jak škola zajišťuje bezpečnost a ochranu zdraví žáků při praktické výuce na externích pracovištích?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří se zajímají o praktické obory (strojírenství, truhlářství, gastronomii, zdravotnictví) a chtějí se učit od zkušených odborníků s dlouholetou praxí",
+      "Studenti, kteří si cení bohaté mimoškolní činnosti, soutěží a možnosti zahraničních pobytů",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola nabízí systematickou podporu a poradenské služby"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individualizované přístupy a diferencované úkoly - škola v tomto směru pracuje na zlepšení",
+      "Studenti, kteří se chtějí hluboce věnovat práci s informacemi a kritickému myšlení - výuka v tomto směru není dostatečně rozvinuta",
+      "Zájemci o vyšší odborné vzdělání - v inspekčním období nebyla VOŠ realizována"
+    ],
+    "plain_czech_summary": "Škola DAKOL v Petrovicích u Karviné je zaměřena na praktické obory a nabízí kvalitní výuku s důrazem na propojení teorie a praxe. Učitelé jsou odborníci se zkušenostmi a motivují žáky individuálním přístupem. Škola pořádá bohaté mimoškolní aktivity, soutěže a zahraničních pobytů. Má systém na podporu slabších žáků. Inspekce doporučuje více pracovat s informačními zdroji a individualizovat výuku podle potřeb jednotlivých žáků. Maturitní zkoušky mají vzestupný trend (90,2 % úspěšnosti v 2023/2024)."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vzestupný - zlepšení po slabším roce",
+      "key_numbers": [
+        "2022/2023: 77,7 % úspěšnost v společné části",
+        "2023/2024: 90,2 % úspěšnost v společné části, 94,1 % v profilové části"
+      ],
+      "evidence": "Škola sleduje a vyhodnocuje úspěšnost u maturitní zkoušky, zavedla interní testování z českého jazyka a angličtiny pro zlepšení výsledků."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Nejsou dostupné konkrétní údaje o absenci"
+      ],
+      "evidence": "Inspekční zpráva se absencí nezabývá, nebyly zaznamenány kázeňské problémy či narušování průběhu výuky."
+    },
+    "support_services": [
+      "Speciálně pedagogické centrum se dvěma psycholožkami a dvěma speciálními pedagogy poskytuje poradenskou podporu zejména žákům s mentálním postižením",
+      "Výchovné poradkyně na jednotlivých pracovištích sledují vzdělávání žáků se speciálními potřebami a pomáhají s psychickými problémy",
+      "Kariérový poradce organizuje exkurze do firem a nabízí odborné konzultace",
+      "Školní metodik prevence realizuje preventivní aktivity a adaptační dny pro nové třídy"
+    ],
+    "safety_climate": [
+      "Žáci jsou seznamováni se školním řádem a poučováni o pravidlech bezpečného chování",
+      "Vedení zpracovává rozbor školní úrazovosti a organizačními opatřeními v tělesné výchově eliminuje rizika",
+      "Vstupy do budov jsou zajištěny proti vniknutí neoprávněných osob",
+      "Při praktické výuce je zajištěna účelná organizace pracovních činností pod dohledem učitelů v souladu se systematickým rozvržením"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s místními středními a základními školami - učitelé absolvují náslechy a rozvíjejí spolupráci",
+      "Vzájemné náslechy učitelů v rámci školy na mezipředmětové bázi",
+      "Praktická výuka na smluvních pracovištích, kde se žáci seznamují s pracovním prostředím",
+      "Projekt Erasmus+ s krátkodobými vzdělávacími pobyty v zahraničí pro žáky i vyučující",
+      "Zkoušková centra pro cambridgeské jazykové zkoušky",
+      "Spolupráce s externími partnery na mimoškolních aktivitách a soutěžích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však více administrativní povahy a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Konkrétní údaje o absenci žáků nejsou v textu uvedeny - nelze posoudit trend absence",
+      "Počet žáků se speciálními vzdělávacími potřebami (86) je uveden, ale není jasné, jak se toto číslo vyvíjelo v čase",
+      "Inspekční zpráva se nezabývá finančním zajištěním školy a dostupností vzdělání pro různé sociální skupiny"
+    ]
+  }
+}
+```

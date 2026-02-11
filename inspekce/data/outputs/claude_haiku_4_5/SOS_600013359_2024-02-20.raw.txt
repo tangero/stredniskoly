@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600013359_2024-02-20",
+  "school_profile": {
+    "school_type": "Střední škola s devíti obory: čtyřletými s maturitou (Nábytkářská a dřevařská výroba, Stavebnictví, Výtvarné zpracování keramiky a porcelánu), tříletými s výučním listem (Elektrikář, Truhlář, Zedník, Prodavač, Umělecký keramik) a dvouletým nástavbovým oborem Podnikání. Součástí je domov mládeže a školní jídelna.",
+    "inspection_period": "20. února 2024 až 22. února 2024",
+    "school_change_summary": "Škola prošla personální obměnou školního poradenského pracoviště, výrazným zlepšením materiálních podmínek, rekonstrukcí budovy a zavedením žákovských portfolií a projektových týdnů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola intenzivně spolupracuje se smluvními partnery a zapojuje odborníky z praxe přímo do výuky.",
+        "evidence": "Intenzivní spolupráce se smluvními partnery včetně zapojení odborníků z praxe do výuky výrazně přispívají ke zvyšování kvality odborného vzdělávání."
+      },
+      {
+        "tag": "Rozvoj kompetencí",
+        "detail": "Škola nabízí bohatou škálu aktivit, projektů a soutěží pro rozvoj odborných i klíčových kompetencí žáků.",
+        "evidence": "Škola účinně podporuje rozvoj odborných a klíčových kompetencí žáků prostřednictvím různorodých aktivit nad rámec běžné výuky."
+      },
+      {
+        "tag": "Vedení a řízení",
+        "detail": "Ředitelka vytváří vhodné podmínky pro rozvoj školy a spolupráci všech aktérů vzdělávacího procesu.",
+        "evidence": "Pedagogické vedení vytváří vhodné podmínky pro další rozvoj školy a spolupráci všech aktérů vzdělávacího procesu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky v uměleckém oboru",
+        "detail": "Obor Výtvarné zpracování keramiky a porcelánu má opakovaně vyšší neúspěšnost u maturitní zkoušky.",
+        "evidence": "Hrubá neúspěšnost žáků tohoto oboru byla ve společné části maturitní zkoušky v roce 2023 téměř 38 %."
+      },
+      {
+        "tag": "Diferenciace ve výuce",
+        "detail": "Část hodin postrádá výraznější diferenciaci náročnosti úloh podle individuálních potřeb žáků.",
+        "evidence": "Většina sledovaných hodin postrádala výraznější diferenciaci náročnosti zadávaných úloh podle individuálních potřeb žáků."
+      },
+      {
+        "tag": "Sebereflexi žáků",
+        "detail": "Žáci nejsou dostatečně vedeni k sebereflexi vlastní práce a vyhodnocování naplnění vzdělávacích cílů.",
+        "evidence": "K sebereflexi vlastní práce žáci nebyli cíleně vedeni, k vyhodnocení cíle docházelo jen v části hodin."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší nižší úspěšnost žáků oboru Výtvarné zpracování keramiky a porcelánu u maturitní zkoušky?",
+      "Jaké konkrétní aktivity a projekty mohou žáci během studia absolvovat mimo běžnou výuku?",
+      "Jak funguje spolupráce se smluvními partnery a jak se praktické vyučování organizuje?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a odborné vzdělání s podporou moderních technologií a reálné praxe",
+      "Studenti, kteří se chtějí zapojit do bohaté nabídky projektů, soutěží a mimoškolních aktivit",
+      "Žáci z okolí, kteří mohou využít ubytování v domově mládeže a celodenní stravování"
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o obor Výtvarné zpracování keramiky a porcelánu by měli vědět o vyšší neúspěšnosti u maturitní zkoušky",
+      "Žáci, kteří potřebují intenzivní individuální podporu a diferenciaci výuky, by měli zvážit, zda je škola vhodná",
+      "Studenti s tendencí k absencím – škola důsledně sleduje docházku a má přísná pravidla"
+    ],
+    "plain_czech_summary": "Masarykova střední škola v Letovicích je moderní vzdělávací zařízení se silným zaměřením na praktické dovednosti a spolupráci s reálnými pracovišti. Škola nabízí devět oborů včetně unikátních uměleckých oborů keramiky. Výuka je kvalitní, pedagogové jsou vstřícní a motivují žáky. Silnou stránkou je bohatá nabídka projektů, soutěží a aktivit. Slabší je výuka oboru Výtvarné zpracování keramiky, kde mají žáci nižší úspěšnost u maturity. Škola má dobré podmínky, domov mládeže a jídelnu. Absence žáků se výrazně snížila."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se, s výjimkou uměleckého oboru",
+      "key_numbers": [
+        "Nábytkářská a dřevařská výroba: 100% úspěšnost v posledních dvou letech",
+        "Stavebnictví: 100% úspěšnost v posledních dvou letech",
+        "Výtvarné zpracování keramiky a porcelánu: 38% neúspěšnost v roce 2023"
+      ],
+      "evidence": "K výraznému posílení došlo u žáků oborů Nábytkářská a dřevařská výroba a Stavebnictví, kdy v posledních dvou letech všichni žáci složili úspěšně maturitní zkoušku."
+    },
+    "absence": {
+      "trend": "Výrazně se zlepšila",
+      "key_numbers": [
+        "Školní rok 2022/2023: 143 hodin absence na žáka za rok",
+        "Školní rok 2015/2016: 233 hodin absence na žáka za rok",
+        "Snížení o 90 hodin (38% pokles)"
+      ],
+      "evidence": "Ve školním řádu stanovila pravidla, která vedla k jejímu snížení. Ve školním roce 2022/2023 činila průměrná absence na žáka zhruba 143 hodin za školní rok."
+    },
+    "support_services": [
+      "Výchovný poradce, dva metodici prevence, školní psycholog",
+      "Kariérové poradenství",
+      "Plány pedagogické podpory a individuální vzdělávací plány pro žáky se speciálními potřebami"
+    ],
+    "safety_climate": [
+      "Snížení výskytu sociálně patologických jevů ve škole a domově mládeže",
+      "Efektivní komunikace mezi členy školního poradenského pracoviště na pravidelných schůzkách",
+      "Mapování vztahů ve třídách pomocí externího testování"
+    ],
+    "partnerships_practice": [
+      "Intenzivní spolupráce se smluvními partnery na praktickém vyučování",
+      "Zapojení odborníků z praxe do výuky",
+      "Mobilita žáků a učitelů prostřednictvím Erasmus+ programu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však psány úředním stylem, který může být pro rodiče méně srozumitelný. Klíčové informace jsou jasně identifikovatelné.",
+    "uncertainty_notes": [
+      "Počty žáků v oboru Výtvarné zpracování keramiky nejsou explicitně uvedeny, pouze poznámka o nízkých počtech",
+      "Konkrétní opatření pro zlepšení výuky v uměleckém oboru nejsou detailně popsána",
+      "Není jasné, jak se diferenciace výuky konkrétně realizuje v jednotlivých předmětech"
+    ]
+  }
+}
+```

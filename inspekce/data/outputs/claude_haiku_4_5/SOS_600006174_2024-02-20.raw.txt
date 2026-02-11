@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600006174_2024-02-20",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola informačních studií a Střední škola elektrotechniky, multimédií a informatiky",
+    "inspection_period": "20. 2. 2024 – 23. 2. 2024",
+    "school_change_summary": "Od roku 2017 došlo ke sloučení se jinou školou, rozšíření vzdělávací nabídky a výraznému nárůstu počtu žáků (556 ve SŠ) a studentů (131 ve VOŠ). Škola inovuje programy a zkvalitňuje materiální vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola systematicky propojuje teoretické poznatky s praktickou aplikací prostřednictvím kvalitní realizace praktického vyučování a projektových aktivit.",
+        "evidence": "Účinná podpora rozvoje odborných kompetencí žáků propojováním teoretických poznatků s využitím v praxi"
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola disponuje elektrotechnickými laboratořemi, učebnami programování, robotickou KUKA rukou, laboratořemi virtuální reality a 3D stereoskopické projekce.",
+        "evidence": "Nadstandardní činnost ředitelky při zajišťování finančních prostředků na rozvoj moderního materiálně technického zázemí"
+      },
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Úzká spolupráce s četnými sociálními partnery zajišťuje vazbu na reálný trh práce a zvyšuje uplatnitelnost absolventů.",
+        "evidence": "Přínosná spolupráce s četnými sociálními partnery vytvářející podmínky pro lepší uplatnitelnost absolventů"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejednotná kvalita teoretické výuky",
+        "detail": "Kvalita hodin se liší podle jednotlivých učitelů; v některých chybí aktivizační metody a formativní hodnocení.",
+        "evidence": "Sledované hodiny měly rozdílnou úroveň; v části chyběly prvky formativního hodnocení a reflexe pokroku žáků"
+      },
+      {
+        "tag": "Slabší výsledky v některých oborech",
+        "detail": "V oboru Mechanik elektrotechnik se výsledky maturitní zkoušky v roce 2023 zhoršily; v Bezpečnostních službách třetina žáků předčasně skončila.",
+        "evidence": "V oboru Mechanik elektrotechnik se výsledky žáků v roce 2023 zhoršily; v Bezpečnostních službách přibližně třetina žáků předčasně ukončila studium"
+      },
+      {
+        "tag": "Jazyková kultura",
+        "detail": "V části vyučování byla zaznamenána nižší jazyková kultura – užívání nespisovného jazyka některými žáky a učiteli.",
+        "evidence": "Negativním zjištěním je nižší míra jazykové kultury v části vyučování"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s matematikou nebo češtinou? Jaké jsou možnosti doučování?",
+      "Jaké jsou reálné šance na úspěšnost u maturitní zkoušky v jednotlivých oborech? Máte statistiky za poslední roky?",
+      "Jak škola zajišťuje bezpečnost a ochranu zdraví při práci v laboratořích a dílnách?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o elektrotechniku, informatiku a multimediální tvorbu, kteří chtějí kombinovat teorii s praxí",
+      "Studenti, kteří si cení moderního vybavení a kontaktu se sociálními partnery z praxe",
+      "Žáci, kteří chtějí pokračovat na vysoké škole – škola má dobré výsledky při přijetí ke studiu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími základy v matematice – v některých oborech je přijímací zkouška z matematiky",
+      "Studenti, kteří potřebují intenzivní individuální podporu – kvalita teoretické výuky se liší podle učitele",
+      "Zájemci o obor Bezpečnostní služby – v minulém roce měl vysoký podíl předčasných odchodů"
+    ],
+    "plain_czech_summary": "Jde o moderní odbornou školu s dobrým vybavením a silným propojením s praxí. Silné stránky: kvalitní praktická výuka, spolupráce se sociálními partnery, moderní laboratoře. Slabiny: kvalita teoretické výuky se liší podle učitele, v některých oborech slabší výsledky maturit. Škola má funkční poradenský systém a péči o žáky s potřebou podpory. Vhodná pro zájemce o technické obory, kteří chtějí praktické dovednosti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá úroveň s rozdíly mezi obory; v cizích jazycích stabilně dobré výsledky",
+      "key_numbers": [
+        "Obor Multimediální tvorba: hrubá neúspěšnost nižší nebo srovnatelná s republikovým průměrem",
+        "Obor Elektrotechnika: v roce 2022 nižší výsledky, v roce 2023 výrazné zlepšení",
+        "Obor Mechanik elektrotechnik: v roce 2023 zhoršení výsledků"
+      ],
+      "evidence": "Výsledky vykazovaly kolísavou úroveň; stabilně nejlepších výsledků dosahují žáci v cizích jazycích"
+    },
+    "absence": {
+      "trend": "Přijatelná úroveň; výrazný nárůst žáků s uzavřenou klasifikací do 30. 6.",
+      "key_numbers": [
+        "Přiměřený počet uložených kázeňských opatření",
+        "Přijatelné průměrné počty zameškaných hodin na žáka",
+        "Nárůst z 53 % (2016) na 94 % (2023) žáků s uzavřenou klasifikací do 30. 6."
+      ],
+      "evidence": "Nastavené preventivní mechanismy jsou převážně funkční; výrazný nárůst počtu žáků s uzavřenou klasifikací"
+    },
+    "support_services": [
+      "Nové školní poradenské pracoviště: výchovná poradkyně, speciální pedagožka, metodička prevence, školní psycholog, kariérový poradce",
+      "Komplexní psychologická, preventivní a inkluzivní péče; adaptační pobyty, sportovní kurzy, tematické programy",
+      "Péče o žáky se speciálními vzdělávacími potřebami (8 % žáků) a s odlišným mateřským jazykem (8 % žáků)"
+    ],
+    "safety_climate": [
+      "Příznivá pracovní atmosféra podporující učení; žáci dodržují pravidla komunikace",
+      "Elektronický docházkový a kamerový systém, vrátnice u vchodu",
+      "Správné dodržování bezpečnostních zásad a ochrany zdraví při práci v praktickém vyučování"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce s četnými sociálními partnery zajišťující vazbu teoretického vzdělávání na praxi",
+      "Škola je fakultní školou Fakulty elektrotechnické ČVUT",
+      "Členství v profesních svazech a asociacích; zahraniční odborné stáže a projekt Erasmus+"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Některé pasáže jsou však dlouhé a úřednicky formulované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, které konkrétní obory mají nejlepší uplatnitelnost absolventů na trhu práce",
+      "Chybí informace o počtu žáků, kteří neuspěli u závěrečných zkoušek v oboru s výučním listem (uvedena jen 100% úspěšnost)",
+      "Není jasné, jak se liší kvalita výuky mezi jednotlivými učiteli a jak se to promítá do výsledků"
+    ]
+  }
+}
+```

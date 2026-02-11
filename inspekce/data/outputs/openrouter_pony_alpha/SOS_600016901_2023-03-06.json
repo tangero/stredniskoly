@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600016901_2023-03-06",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T06:59:05.956974+00:00",
+  "run_finished_utc": "2026-02-10T07:00:49.957536+00:00",
+  "raw_file": "SOS_600016901_2023-03-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600016901_2023-03-06",
+    "school_profile": {
+      "school_type": "Soukromá střední odborná škola",
+      "inspection_period": "6. 3. 2023 − 9. 3. 2023, 13. 3. 2023",
+      "school_change_summary": "Od roku 2019 školu vede nový ředitel, materiální vybavení se postupně modernizuje a vzdělávací programy byly inovovány."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Uplatnění absolventů",
+          "detail": "Škola klade důraz na propojení teorie s praxí a spolupracuje s partnery, což žákům zajišťuje dobrou uplatnitelnost na trhu práce.",
+          "evidence": "Kvalitní přípravu žáků na budoucí povolání... podporuje spolupráce školy se sociálními partnery... Úspěšnost absolventů školy dokládá i jejich výborné uplatnění na trhu práce."
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Škola úspěšně vzdělává žáky se speciálními potřebami a nabízí jim kvalitní poradenské služby i doučování.",
+          "evidence": "Škola dlouhodobě vytváří dobré podmínky pro vzdělávání žáků se speciálními vzdělávacími potřebami... Je jim nabízena možnost konzultací a v některých předmětech doučování."
+        },
+        {
+          "tag": "Rozvojové projekty",
+          "detail": "Díky zapojení do projektů a spolupráci se zřizovatelem škola zlepšuje podmínky pro výuku.",
+          "evidence": "Zapojení školy do různých projektů umožňuje zlepšování materiálních podmínek pro vzdělávání s pozitivním dopadem na kvalitu vzdělávání žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Ve výuce převažuje frontální vyučování a učitelé málo využívají moderní metody, které by rozvíjely samostatnost žáků.",
+          "evidence": "Převládalo frontální vyučování... Nízká míra diferenciace a individualizace dostatečně nepodporovala rozdílné pracovní tempo a možnosti žáků."
+        },
+        {
+          "tag": "Nedostatečná zpětná vazba",
+          "detail": "Hodnocení žáků je často formální a neříká jim dost o tom, jak si vedou a co zlepšit.",
+          "evidence": "Zhodnocení výuky učitelem probíhalo v mnoha případech formálně, neposkytovalo žákům potřebnou zpětnou vazbu o míře zvládnutého učiva."
+        },
+        {
+          "tag": "Mírně rostoucí úrazovost",
+          "detail": "Přestože škola dbá na bezpečnost, míra úrazů mírně stoupá, zejména při sportu.",
+          "evidence": "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování... přesto míra úrazovosti mírně stoupá. K úrazům dochází převážně při sportovních a pohybových aktivitách."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé ve výuce podporují samostatné myšlení a práci žáků, když inspekce zaznamenala převahu frontálního vyučování?",
+        "Jakým způsobem škola zajišťuje, aby hodnocení žáků nebylo jen formální, ale dalo jim jasnou zpětnou vazbu pro další zlepšování?",
+        "Jaké konkrétní projekty nebo stáže v rámci spolupráce s firmami jsou pro můj obor k dispozici?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří hledají školu s dobrými kontakty na zaměstnavatele a silným zaměřením na praxi.",
+        "Pro žáky se speciálními vzdělávacími potřebami, kteří potřebují individuální podporu a pochopení.",
+        "Pro ty, kteří chtějí být součástí menší školy s rodinnou atmosférou a zapojením do dění ve městě."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří preferují moderní, interaktivní a týmovou formu výuky před tradičním přednášením.",
+        "Pro rodiče, kteří očekávají detailní a pravidelnou zpětnou vazbu o pokroku dítěte formou sebehodnocení.",
+        "Pro žáky, kteří očekávají špičkové vybavení všech učeben bez výjimek (modernizace je postupná)."
+      ],
+      "plain_czech_summary": "EDUCA je soukromá škola v Novém Jičíně, která nabízí obory s výučním listem i maturitou. Mezi její největší přednosti patří silné propojení s praxí a zaměstnavateli, což absolventům zajišťuje dobrou pozici na trhu práce. Škola také skvěle pečuje o žáky se speciálními potřebami a nabízí jim individuální podporu. Na druhou stranu inspekce upozornila na příliš tradiční styl výuky, kde převažuje přednášení před aktivní prací žáků, a na nedostatečnou zpětnou vazbu v hodnocení. Pro rodiče to znamená: škola zajistí dítěti profesní uplatnění a podporu, ale nemusí plně rozvíjet jeho samostatnost a kritické myšlení tak jako moderní gymnázia."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírně kolísavá (82-90 %)",
+        "key_numbers": [
+          "2022: 82 % úspěšnost ve společné části maturity",
+          "2021: 90 % úspěšnost ve společné části maturity",
+          "Cizí jazyk 2022: 90 % úspěšnost"
+        ],
+        "evidence": "V roce 2022 ve společné části maturitní zkoušky uspělo 82 % žáků... V roce 2021... uspělo 90 % žáků."
+      },
+      "absence": {
+        "trend": "Není uvedeno",
+        "key_numbers": [
+          "Škola průběžně identifikuje žáky s vyšší absencí"
+        ],
+        "evidence": "Škola průběžně identifikuje žáky s vyšší absencí... a individuálně zjišťuje příčiny těchto jevů."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence v jedné osobě",
+        "Externí psycholog",
+        "Nabídka konzultací a doučování pro ohrožené žáky"
+      ],
+      "safety_climate": [
+        "Příjemné a bezpečné prostředí podporující rozvoj žáků",
+        "Zajištěný volný vstup cizích osob do budovy",
+        "Mírně stoupající míra úrazovosti (zejména při sportu)"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s městem Nový Jičín a nemocnicí AGEL",
+        "Zahraniční stáže a výměnné pobyty (Francie, Slovensko)",
+        "Realizace praxe u smluvních partnerů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, jasně odděluje hodnocení podmínek, průběhu a výsledků a konkrétní závěry.",
+      "uncertainty_notes": [
+        "Absence konkrétních číselných dat o prospěchu žáků v průběhu studia (známky, prospěchová průměrnost).",
+        "Chybí detailnější statistika o úspěšnosti u maturity v jednotlivých povinných předmětech (např. čeština).",
+        "Nejasná míra a forma doučování (jak často, pro kolik žáků)."
+      ]
+    }
+  }
+}

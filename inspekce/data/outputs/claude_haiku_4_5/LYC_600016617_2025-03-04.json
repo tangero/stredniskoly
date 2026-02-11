@@ -1,0 +1,118 @@
+{
+  "report_id": "LYC_600016617_2025-03-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:43:11.503329+00:00",
+  "run_finished_utc": "2026-02-09T13:43:37.224998+00:00",
+  "raw_file": "LYC_600016617_2025-03-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600016617_2025-03-04",
+    "school_profile": {
+      "school_type": "Střední škola - Obchodní akademie s.r.o. (soukromá, s.r.o.)",
+      "inspection_period": "4. března 2025 až 6. března 2025",
+      "school_change_summary": "Od inspekce v 2018/2019 se počet žáků zvýšil z 94 na 315. Zlepšily se materiální podmínky (nové sportoviště, posilovna, tělocvična, učebny). Od 2024/2025 škola nabízí nový obor Ekonomické lyceum a má akreditaci Erasmus+."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní vedení a profesní rozvoj učitelů",
+          "detail": "Vedení poskytuje pedagogům účinnou zpětnou vazbu a vytváří příznivé podmínky pro jejich profesní rozvoj.",
+          "evidence": "Vedení školy se účastní zasedání školské rady, setkává se se zástupci školního parlamentu, organizuje interní workshopy a mentorské pohovory."
+        },
+        {
+          "tag": "Silné mezinárodní partnerství a projekty",
+          "detail": "Škola má funkční spolupráci s vnějšími partnery včetně Slezské univerzity, francouzské partnerské školy a sportovních klubů.",
+          "evidence": "Realizují se měsíční stáže ve Francii, projekty Erasmus+, vrstevnické učení v inovativním podnikání, odborné praxe v zahraničí."
+        },
+        {
+          "tag": "Výborné výsledky v cizích jazycích",
+          "detail": "Žáci dosahují dlouhodobě vysoké úspěšnosti v maturitní zkoušce z cizího jazyka.",
+          "evidence": "V roce 2024 dosáhli stoprocentní úspěšnosti v cizím jazyce, vyšší úspěšnosti než v českém jazyce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v češtině na maturitě",
+          "detail": "Žáci vykazují v celorepublikovém srovnání nižší úspěšnost v českém jazyce na maturitní zkoušce.",
+          "evidence": "V roce 2024 neprospěli dva žáci z češtiny. Účinnost dosavadních opatření se neprojevila v celorepublikovém srovnání."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Výuka není dostatečně přizpůsobena individuálním schopnostem žáků, chybí diferencované úlohy.",
+          "evidence": "Pouze výjimečně byla výuka diferencovaná podle individuálních schopností žáků, např. formou zadávání úkolů rozdílného rozsahu nebo obtížnosti."
+        },
+        {
+          "tag": "Málo sebehodnocení a vzájemného hodnocení",
+          "detail": "Žáci nejsou dostatečně vedeni k sebereflexi a vzájemnému hodnocení podle kritérií.",
+          "evidence": "V menší míře byl vytvářen prostor pro funkční sebehodnocení a vzájemné hodnocení žáků podle předem stanovených kritérií."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje slabší žáky v češtině, když mají nižší úspěšnost na maturitě?",
+        "Jaké jsou možnosti individuálního přístupu a doučování pro žáky s různými schopnostmi?",
+        "Jak se škola připravuje na přijetí nového oboru Ekonomické lyceum a jaké jsou zkušenosti v prvním ročníku?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o sport - škola nabízí obory Fotbalová akademie a Ekonomika a sport s trenérskou licencí FAČR C",
+        "Žáci se zájmem o jazyky - vysoká úspěšnost v cizích jazycích, příprava na mezinárodní zkoušky, zahraniční stáže",
+        "Žáci s ambicí na mezinárodní zkušenosti - projekty Erasmus+, stáže ve Francii, účast v mezinárodních projektech"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími dovednostmi v češtině - inspekce zjistila nižší úspěšnost v českém jazyce na maturitě",
+        "Žáci potřebující individuální přístup - výuka není dostatečně diferencovaná podle schopností",
+        "Žáci, kteří se lépe učí sebehodnocením - tato metoda není v učebně běžně používána"
+      ],
+      "plain_czech_summary": "Obchodní akademie je dynamicky se rozvíjející soukromá střední škola s 315 žáky. Silnými stránkami jsou kvalitní vedení, mezinárodní projekty a výborné výsledky v cizích jazycích. Škola investuje do materiálního vybavení a profesního rozvoje učitelů. Slabší je příprava v češtině na maturitě a individualizace výuky. Vhodná pro sportovce a jazykáře, méně vhodná pro žáky potřebující více individuálního přístupu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený - výborné výsledky v cizích jazycích, slabší v češtině",
+        "key_numbers": [
+          "100% úspěšnost v matematice a cizím jazyce (2024)",
+          "2 žáci neprospěli v češtině (2024)",
+          "Nižší úspěšnost v češtině v celorepublikovém srovnání"
+        ],
+        "evidence": "V roce 2024 dosáhli žáci stoprocentní úspěšnosti z matematiky a cizího jazyka. Z českého jazyka neprospěli dva žáci. Vyšší úspěšnosti dlouhodobě dosahují v cizím jazyce."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Není dostupné"
+        ],
+        "evidence": "Inspekční zpráva neobsahuje konkrétní údaje o absenci žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště - poradenské a konzultační služby pro žáky a zákonné zástupce",
+        "Sociální pedagog - od druhého pololetí 2024/2025, cílená práce s třídními kolektivy",
+        "Individuální doučování a konzultace pro žáky se studijními neúspěchy",
+        "On-line schránka důvěry pro žáky",
+        "Prospěchové stipendium pro zlepšování studijních výsledků"
+      ],
+      "safety_climate": [
+        "Pravidelné seznamování žáků s riziky a pravidly bezpečného chování",
+        "Cvičné požární poplachy a nácvik činností při mimořádných událostech",
+        "Pozornost úrazové prevenci - snižující se míra úrazovosti",
+        "Aktivní řešení negativních projevů v chování žáků ve spolupráci se zákonnými zástupci",
+        "Tematicky zaměřené preventivní aktivity vycházející ze zjištěných potřeb",
+        "Adaptační kurzy pro nové třídní kolektivy"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se sportovními kluby - odborníci přenášejí praktické zkušenosti",
+        "Spolupráce se Slezskou univerzitou v Opavě - vrstevnické učení v inovativním podnikání",
+        "Partnerská škola ve Francii - měsíční stáže žáků",
+        "Projekty Erasmus+ - profesní rozvoj pedagogů a odborné praxe žáků v zahraničí",
+        "Projektové výzvy - zdroj finančních dotací a inspirativních námětů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a evidence. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna - není jasné, jaká je situace s docházkou žáků",
+        "Konkrétní počty žáků se speciálními potřebami (21) a s odlišným mateřským jazykem (14) nejsou kontextualizovány - není jasné, jak se s nimi pracuje",
+        "Finanční situace školy není zmíněna - není jasné, jaké jsou poplatky nebo stipendia"
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T12:07:03.868949+00:00",
+  "run_finished_utc": "2026-02-09T12:07:40.508835+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY4_600005143_2025-11-19\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 3,\n  \"czech_clarity_score_1_5\": 3,\n  \"unsupported_claims_count\": 3,\n  \"critical_issues\": [\n    \"Tvrzení u maturity „výsledky … lepší než průměr“ je vůči zdroji zjednodušené: lepší než průměr jsou zejména didaktické testy společné části, ale profilová část je „vyrovnaná, nebo o něco horší než republikový průměr“.\",\n    \"Sekce „who_should_be_cautious“ obsahuje nedoložené/nevhodně formulované závěry o typech žáků (např. že škola nemusí vyhovovat žákům vyžadujícím více individuální přístup; zdroj naopak uvádí otevřené prostředí a funkční podporu dle potřeb).\",\n    \"Formulace „Žákům, kteří chtějí studovat v třídách s vysokou klasifikací“ je významově nejasná a ve zdroji pro ni není opora (a navíc je pro rodiče prakticky matoucí).\",\n    \"Neúplnost pro rodičovský use-case: chybí klíčové kontextové informace ze zprávy (počty žáků/tříd, nabídka jazyků včetně posílené NJ a DSD II jako profilace, výrazný nárůst zájmu od 2019, hlavní doporučení ČŠI, konkrétnější popis podpůrných opatření a prevence).\",\n    \"Čeština: dílčí gramatické a stylistické chyby snižují srozumitelnost (např. „Některé učitelé“, „Žákům zájemcům“, „nevýrazně používají“).\"\n  ],\n  \"best_points\": [\n    \"Správně uvedené období inspekční činnosti (19. 11. 2025 − 22. 11. 2025 a 24. 11. 2025).\",\n    \"Silné stránky a oblasti ke zlepšení dobře odpovídají závěrům ČŠI (aktivní ředitel a získávání zdrojů; praktické dovednosti; participace žáků; slabiny v aktivizačních metodách, formativní zpětné vazbě a sjednocování hodnocení).\",\n    \"Správně převzatá klíčová čísla k maturitě (35–40 % vyznamenání, 80 % náhrada certifikátem, 31 úspěšných DSD II ve 2024/2025).\",\n    \"Uvedení poradenského zajištění a bezpečnostních prvků je v souladu se zprávou (2 psycholožky, asistenti pedagoga; elektronický a kamerový systém, celodenní dohled).\",\n    \"Partnerství s Univerzitou Karlovou, Národním muzeem a zapojení do mobilit/Erasmus+ odpovídá zdroji.\"\n  ],\n  \"one_line_verdict\": \"Většina hlavních zjištění je převzatá věrně, ale výstup je pro rodiče jen středně užitečný kvůli neúplnosti, několika nedoloženým závěrům a zjednodušení interpretace výsledků maturity.\"\n}",
+  "judge_output": {
+    "report_id": "GY4_600005143_2025-11-19",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 3,
+    "czech_clarity_score_1_5": 3,
+    "unsupported_claims_count": 3,
+    "critical_issues": [
+      "Tvrzení u maturity „výsledky … lepší než průměr“ je vůči zdroji zjednodušené: lepší než průměr jsou zejména didaktické testy společné části, ale profilová část je „vyrovnaná, nebo o něco horší než republikový průměr“.",
+      "Sekce „who_should_be_cautious“ obsahuje nedoložené/nevhodně formulované závěry o typech žáků (např. že škola nemusí vyhovovat žákům vyžadujícím více individuální přístup; zdroj naopak uvádí otevřené prostředí a funkční podporu dle potřeb).",
+      "Formulace „Žákům, kteří chtějí studovat v třídách s vysokou klasifikací“ je významově nejasná a ve zdroji pro ni není opora (a navíc je pro rodiče prakticky matoucí).",
+      "Neúplnost pro rodičovský use-case: chybí klíčové kontextové informace ze zprávy (počty žáků/tříd, nabídka jazyků včetně posílené NJ a DSD II jako profilace, výrazný nárůst zájmu od 2019, hlavní doporučení ČŠI, konkrétnější popis podpůrných opatření a prevence).",
+      "Čeština: dílčí gramatické a stylistické chyby snižují srozumitelnost (např. „Některé učitelé“, „Žákům zájemcům“, „nevýrazně používají“)."
+    ],
+    "best_points": [
+      "Správně uvedené období inspekční činnosti (19. 11. 2025 − 22. 11. 2025 a 24. 11. 2025).",
+      "Silné stránky a oblasti ke zlepšení dobře odpovídají závěrům ČŠI (aktivní ředitel a získávání zdrojů; praktické dovednosti; participace žáků; slabiny v aktivizačních metodách, formativní zpětné vazbě a sjednocování hodnocení).",
+      "Správně převzatá klíčová čísla k maturitě (35–40 % vyznamenání, 80 % náhrada certifikátem, 31 úspěšných DSD II ve 2024/2025).",
+      "Uvedení poradenského zajištění a bezpečnostních prvků je v souladu se zprávou (2 psycholožky, asistenti pedagoga; elektronický a kamerový systém, celodenní dohled).",
+      "Partnerství s Univerzitou Karlovou, Národním muzeem a zapojení do mobilit/Erasmus+ odpovídá zdroji."
+    ],
+    "one_line_verdict": "Většina hlavních zjištění je převzatá věrně, ale výstup je pro rodiče jen středně užitečný kvůli neúplnosti, několika nedoloženým závěrům a zjednodušení interpretace výsledků maturity."
+  }
+}

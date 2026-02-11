@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600013847_2024-11-25",
+  "school_profile": {
+    "school_type": "Střední škola stavebních řemesel s domovem mládeže a jídelnou",
+    "inspection_period": "25. 11. 2024 – 28. 11. 2024",
+    "school_change_summary": "Od poslední inspekce došlo k nárůstu počtu žáků o 34 %, změně vedení (nový ředitel od srpna 2020), modernizaci učeben a založení Rady vzdělavatelů a zaměstnavatelů. Škola funguje jako centrum odborného vzdělávání pro stavebnictví."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické dovednosti a řemesla",
+        "detail": "Škola pořádá soutěže s celostátním významem a žáci pravidelně získávají přední umístění, což posiluje jejich odborné kompetence a prestiž řemesel.",
+        "evidence": "Tradice soutěží České ručičky a Mistři všedních dnů, zahraniční praxe v projektu Erasmus (Maďarsko, Španělsko)."
+      },
+      {
+        "tag": "Podpora žáků se speciálními potřebami",
+        "detail": "Kvalitní poradenské služby s vysokou personální úrovní zajišťují efektivní péči a koordinovanou podporu.",
+        "evidence": "Sociální pracovnice, dva výchovní poradci, dva školní metodici prevence; výchovná poradkyně sdílí klíčové informace s pedagogy."
+      },
+      {
+        "tag": "Moderní vybavení a infrastruktura",
+        "detail": "Průběžná modernizace učeben, kvalitní technické zázemí a nové odborné učebny podporují efektivní praktickou výuku.",
+        "evidence": "Vybudování a modernizace učeben pro odborné vzdělávání, elektronické učebnice, moderní projekční technika."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost u maturit",
+        "detail": "Nástavbové obory vykazují hrubou neúspěšnost 30–32 % u maturitní zkoušky, což je pod průměrem podobných škol.",
+        "evidence": "Obor Provozní technika 32 %, Nábytkářská a dřevařská výroba 30 %, Stavební provoz 50 % (2023)."
+      },
+      {
+        "tag": "Pasivní přístup v teoretické výuce",
+        "detail": "Část odborných předmětů se vyznačuje frontální výukou s převažující aktivitou učitelů, žáci zůstávají pasivní a pouze opisují prezentace.",
+        "evidence": "Chybí názorné učební pomůcky, samostatná práce se objevuje výjimečně, interakce žáků zůstává na nízké úrovni."
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Průměrná absence dosahuje 169–187 hodin za školní rok, což vede k nehodnocení přibližně 9 % žáků.",
+        "evidence": "Školní rok 2023/2024: 169 hodin na žáka, neomluvená absence ~3 %, vysoká míra nehodnocených žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s rizikem neúspěchu u maturitní zkoušky, zejména v nástavbových oborech?",
+      "Jaké konkrétní kroky podniká škola proti vysoké absenci a jak komunikuje s rodiči při problémech s docházkou?",
+      "Jak se škola snaží aktivizovat výuku teoretických předmětů a rozvíjet u žáků kritické myšlení?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické řemeslné obory a ruční práci, kteří se chtějí uplalit na trhu práce.",
+      "Žáci se speciálními vzdělávacími potřebami nebo s odlišným mateřským jazykem, kterým škola poskytuje cílenou podporu.",
+      "Žáci, kteří se chtějí zapojit do soutěží a mimoškolních aktivit zaměřených na rozvoj odborných dovedností."
+    ],
+    "who_should_be_cautious": [
+      "Žáci s ambicí dosáhnout vysokých výsledků u maturitní zkoušky, zejména v nástavbových oborech (vysoká neúspěšnost).",
+      "Žáci, kteří potřebují aktivní a interaktivní výuku s důrazem na samostatné myšlení a prezentace znalostí.",
+      "Žáci se sklonem k absencím – škola má vysokou průměrnou absenci a striktní pravidla pro hodnocení."
+    ],
+    "plain_czech_summary": "Škola je moderní střední odborná škola se silným zaměřením na stavebnictví a řemesla. Výhodou je kvalitní praktická výuka, podpora žáků se speciálními potřebami a pořádání prestižních soutěží. Riziky jsou vysoká neúspěšnost u maturit v některých oborech, pasivní přístup v teoretické výuce a vysoká absence žáků. Škola se hodí pro prakticky zaměřené žáky, ale měla by zlepšit přípravu na maturitní zkoušky a aktivizovat teoretickou výuku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírné zlepšení, ale stále pod průměrem v některých oborech",
+      "key_numbers": [
+        "Uměleckořemeslné zpracování dřeva: 23,9 % (2022–2023) → 5,6 % (2024)",
+        "Provozní technika: 32 % hrubá neúspěšnost (2023–2024)",
+        "Stavební provoz: 50 % hrubá neúspěšnost (2023)"
+      ],
+      "evidence": "Nástavbové obory vykazují vyšší míru neúspěšnosti oproti celorepublikovému průměru; nejlepší výsledky v oboru Uměleckořemeslné zpracování dřeva."
+    },
+    "absence": {
+      "trend": "Mírný pokles, ale stále vysoká",
+      "key_numbers": [
+        "Průměr 187 hodin na žáka za školní rok",
+        "Školní rok 2023/2024: 169 hodin na žáka",
+        "Neomluvená absence: ~3 %"
+      ],
+      "evidence": "Vysoká absence vedla k nehodnocení přibližně 9 % žáků; škola sleduje docházku a stanovuje pravidla pro hodnocení."
+    },
+    "support_services": [
+      "Sociální pracovnice koordinující poradenské pracoviště",
+      "Dva výchovní poradci (jeden se specializuje na žáky s odlišným mateřským jazykem)",
+      "Dva školní metodici prevence organizující preventivní aktivity",
+      "Intenzivní jazyková příprava pro žáky s odlišným mateřským jazykem",
+      "Kariérové poradenství a pomoc při výběru profesního uplatnění"
+    ],
+    "safety_climate": [
+      "Bezpečnostní aspekty zajištěny v praktickém vyučování",
+      "Dodržování pravidel bezpečnosti a používání ochranných pomůcek je nedílnou součástí výuky",
+      "Vedení školy operativně reaguje na vzniklé situace, ale mělo by věnovat větší pozornost systematickému vyhledávání a prevenci potenciálních rizik"
+    ],
+    "partnerships_practice": [
+      "Rada vzdělavatelů a zaměstnavatelů (založena červnu 2021) propojuje vzdělávací systém s potřebami trhu práce",
+      "Centrum odborného vzdělávání ve stavebnictví s partnerskými školami a firmami",
+      "Projekt Erasmus s praxí v zahraničí (Maďarsko, Španělsko)",
+      "Celoživotní vzdělávání – kvalifikační a rekvalifikační kurzy, svářečská škola, přípravné kurzy ke zkouškám profesních kvalifikací"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní čísla, citace a jasné závěry. Některé pasáže jsou však technicky náročnější (např. popis kritérií), ale pro rodiče jsou klíčové informace jasně odděleny.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala na základě předchozí inspekce z roku 2019.",
+      "Chybí informace o počtu učitelů a jejich kvalifikacích v jednotlivých oborech.",
+      "Není jasné, jak se liší výsledky mezi jednotlivými třídami v rámci stejného oboru."
+    ]
+  }
+}
+```

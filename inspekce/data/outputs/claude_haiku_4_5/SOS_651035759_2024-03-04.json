@@ -1,0 +1,117 @@
+{
+  "report_id": "SOS_651035759_2024-03-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:24:11.135973+00:00",
+  "run_finished_utc": "2026-02-09T16:24:44.756936+00:00",
+  "raw_file": "SOS_651035759_2024-03-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_651035759_2024-03-04",
+    "school_profile": {
+      "school_type": "Střední škola gastronomie, turismu a lázeňství s maturitními obory (Gastronomie, Hotelnictví, Cestovní ruch) a nematuritním oborem Kuchař-číšník",
+      "inspection_period": "4. března 2024 až 7. března 2024",
+      "school_change_summary": "Od inspekce v roce 2018 došlo ke kvalitativnímu posunu: zlepšily se materiální podmínky, zvýšil se počet žáků (z 38 % na 44 % kapacity), aktualizovaly se školní vzdělávací programy. Škola podala žádost o výmaz nástavbového oboru Gastronomie kvůli dlouhodobě vysoké neúspěšnosti."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Škola má výborné vztahy se zaměstnavateli, partnery a profesními organizacemi, což zvyšuje uplatnitelnost absolventů na trhu práce.",
+          "evidence": "Kvalitní výběr sociálních partnerů zajišťujících praxi, workshopy vedené odborníky z praxe, spolupráce s hotely Chateu Mcely a Grandhotel Pupp."
+        },
+        {
+          "tag": "Vybavení a prostředí",
+          "detail": "Moderní, esteticky příjemné prostředí s nadstandardním vybavením včetně laboratorní kuchyně a gastronomických učeben.",
+          "evidence": "Rekonstruovaná budova s přístavbou, multimediální a jazyková učebna, kvalitní zázemí pro odborné vyučování."
+        },
+        {
+          "tag": "Praktická výuka",
+          "detail": "Vysoká odbornost učitelů s praktickými zkušenostmi, efektivní propojení teorie s praxí, individuální přístup v praktickém vyučování.",
+          "evidence": "Učitelé komunikují na přiměřené úrovni, poskytují zpětnou vazbu, vedou žáky k samostatnosti a dodržování technologických postupů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence a neúspěšnost",
+          "detail": "Opatření proti vysoké absenci nejsou dostatečně účinná; průměrná absence 203 hodin na žáka, neomluvená absence u 27 % žáků.",
+          "evidence": "Neomluvenou absenci mělo 67 žáků. Opatření nebyla v hodnoceném období dostatečně účinná a nevedla k jejímu snížení."
+        },
+        {
+          "tag": "Slabé výsledky u maturity",
+          "detail": "Hrubá neúspěšnost u maturitní zkoušky v roce 2023 dosáhla 33–35 %, což je výrazně horší než celorepublikový průměr (13–19 %).",
+          "evidence": "V oborech Hotelnictví a Cestovní ruch 33,3 %, v Gastronomii 35,3 % neúspěšnosti. Průměr ČR byl 13,4 % a 19,2 %."
+        },
+        {
+          "tag": "Nízká diferenciace ve výuce",
+          "detail": "Teoretická výuka málo využívá individuální přístup, sebehodnocení a formativní hodnocení; učitel často jediným zdrojem informací.",
+          "evidence": "Nízká míra individualizace a diferenciace učiva. Absence sebehodnocení, ojedinělé využití formativního hodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření škola zavedla od školního roku 2023/2024 na podporu žáků ohrožených školním neúspěchem a jak se jejich účinnost měří?",
+        "Jak škola řeší vysokou absenci žáků a jakou roli hraje školní poradenské pracoviště v prevenci předčasného ukončení studia?",
+        "Jaké jsou konkrétní výsledky interního testování z češtiny a angličtiny, které škola zavedla pro přípravu na maturitu?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zájmem o gastronomii, hotelnictví nebo cestovní ruch, kteří chtějí kvalitní praktickou přípravu s moderním vybavením a kontakty na zaměstnavatele.",
+        "Talentovaní žáci, kterým vyhovuje individuální přístup v praktickém vyučování a kteří se chtějí zapojit do odborných soutěží.",
+        "Žáci, kteří preferují učení propojené s praxí a osobním mentorstvím od učitelů s bohatými pracovními zkušenostmi."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v češtině a angličtině – maturita z těchto předmětů je pro školu problematická (vysoká neúspěšnost).",
+        "Žáci, kteří potřebují intenzivní individuální podporu a diferenciaci – teoretická výuka není na to dostatečně zaměřena.",
+        "Žáci s tendencí k absencím – škola zatím nemá účinný systém na jejich motivaci a prevenci předčasného ukončení studia."
+      ],
+      "plain_czech_summary": "AHOL je moderní odborná škola s výborným vybavením a silnými vazbami na zaměstnavatele. Praktická výuka je na vysoké úrovni. Problém je však vysoká absence žáků (203 hodin průměrně) a slabé výsledky u maturity – v roce 2023 neuspělo 33–35 % žáků, zatímco průměr ČR je 13–19 %. Teoretická výuka málo individualizuje a diferenciuje. Škola přijala nová opatření od roku 2023/2024, ale jejich účinnost se teprve měří. Vhodná pro motivované žáky se zájmem o obor, méně vhodná pro ty, kteří potřebují intenzivní podporu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Negativní – vysoká neúspěšnost, horší než celorepublikový průměr, nejhorší výsledky v roce 2023",
+        "key_numbers": [
+          "Rok 2023: Hotelnictví a Cestovní ruch 33,3 % neúspěšnosti (průměr ČR 13,4 %), Gastronomie 35,3 % (průměr ČR 19,2 %)",
+          "Nástavbové studium Gastronomie: 2021–2022 cca 75 % neúspěšnosti (průměr ČR 28–40 %)",
+          "Ostatní obory 2020–2023: 16–35 % neúspěšnosti, obvykle horší než průměr skupiny oborů (11,8–23,5 %)"
+        ],
+        "evidence": "Neúspěšnost především v českém jazyce a cizích jazycích. Žáci profilovou část zvládají, selhávají v části společné. Škola podala žádost o výmaz nástavbového oboru."
+      },
+      "absence": {
+        "trend": "Vysoká a neřešená – opatření nejsou dostatečně účinná",
+        "key_numbers": [
+          "Průměrná absence: 203 hodin na žáka za poslední uzavřený školní rok",
+          "Neomluvená absence: 7 hodin na žáka, celkově 67 žáků (27 % z celkového počtu)",
+          "Opatření nebyla dostatečně účinná a nevedla k jejímu snížení"
+        ],
+        "evidence": "Škola má jednotně nastavenou strategii řešení neúspěšnosti, ale nedaří se jí motivovat část žáků k pravidelné docházce. Důsledkem je zhoršený prospěch a předčasné ukončení studia."
+      },
+      "support_services": [
+        "Výchovná poradkyně ve spolupráci s třídními učiteli sleduje vzdělávání žáků s potřebou podpůrných opatření",
+        "Kariérový poradce a koordinátor spolupráce se zaměstnavateli (financováno z projektů)",
+        "Individuální konzultace a doučování pro žáky se slabším prospěchem",
+        "Školní poradenské pracoviště řeší riziková chování (kyberšikana, návykové látky, kouření)"
+      ],
+      "safety_climate": [
+        "Míra úrazovosti vyšší než celorepublikový průměr, především v tělesné výchově a praktickém vyučování",
+        "Žáci jsou pravidelně poučováni o bezpečnosti, vedení provádí analýzu úrazovosti",
+        "Nedostatkem je nedodržení bezpečnostních pravidel (vhodný oděv a obutí) v tělesné výchově",
+        "Škola přijala opatření a opakovaně poučuje žáky o bezpečnosti"
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce se smluvními partnery zajišťujícími praxi žáků",
+        "Profesní sdružení a asociace participují na vzdělávání formou exkurzí, besed a workshopů",
+        "Partneři se účastní závěrečných a maturitních zkoušek",
+        "Spolupráce s ekologicky zaměřeným hotelem Chateu Mcely a Grandhotelem Pupp v Karlových Varech",
+        "Projekt Rozvoj odborné angličtiny na středních školách – výsledkem je zařazení předmětu do ŠVP"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a věcná, ale obsahuje řadu specifických údajů o absenci, maturitě a opatřeních. Hlavní zjištění jsou jasná: vysoká absence, slabé výsledky u maturity, nízká diferenciace ve výuce. Některé pasáže jsou však technické a vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Efektivita nových opatření od roku 2023/2024 (interní testování, zvýšená hospitační činnost) nebyla v době inspekce měřitelná – není jasné, zda budou účinná.",
+        "Zpráva nespecifikuje, jaké konkrétní metody škola používá k motivaci žáků s vysokou absencí – není jasné, proč dosavadní opatření selhávají.",
+        "Není jasné, zda nižší naplněnost školy (44 % kapacity) souvisí s pověstí vysoké neúspěšnosti u maturity nebo s jinými faktory."
+      ]
+    }
+  }
+}

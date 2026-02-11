@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOU_600171396_2023-12-04",
+  "school_profile": {
+    "school_type": "Střední škola technická s obory zaměřenými na mechaniku, elektrotechniku a zemědělské stroje",
+    "inspection_period": "4. až 6. prosince 2023",
+    "school_change_summary": "Škola pokračuje v modernizaci materiálních podmínek, udržuje partnerské vztahy s firmami a došlo k redukci počtu oborů vzdělání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vstřícné prostředí",
+        "detail": "Škola vytváří prosociální vztahy mezi žáky a pedagogy, které pozitivně podporují rozvoj osobnosti.",
+        "evidence": "Vytvoření vstřícného prostředí pro vzdělávání s žádoucími prosociálními vztahy."
+      },
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Spolupráce se sociálními partnery efektivně propojuje výuku s praktickou realitou a připravuje žáky na pracovní uplatnění.",
+        "evidence": "Spolupráce se sociálními partnery efektivně přispívá k sepětí výuky a praxe."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola systematicky modernizuje své materiální a technické podmínky s podporou zřizovatele a operačních programů.",
+        "evidence": "Vedení školy systematicky vyhodnocuje a usiluje o průběžné zkvalitňování podmínek."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená pestrost výuky",
+        "detail": "V teoretické výuce převažuje frontální forma, chybí dostatek skupinové práce a aktivizačních metod.",
+        "evidence": "Frontální výuka převažovala, jiné formy byly uplatňovány pouze v omezené míře."
+      },
+      {
+        "tag": "Nedostatečná individualizace",
+        "detail": "Učitelé málo přizpůsobují obsah a tempo výuky rozdílným schopnostem jednotlivých žáků.",
+        "evidence": "Malá míra obsahové a časové diferenciace výuky vzhledem k rozdílným vzdělávacím potřebám."
+      },
+      {
+        "tag": "Slabší zpětná vazba",
+        "detail": "Žáci dostávají především stručné hodnocení, chybí motivující formativní zpětná vazba a jejich zapojení do závěrečného shrnutí.",
+        "evidence": "Nižší míra využívání formativního hodnocení a reflexe vzdělávacího pokroku žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi a tempem učení?",
+      "Jaké metody a formy výuky učitelé nejčastěji používají v teoretických předmětech?",
+      "Jak škola zajišťuje, aby žáci pracovali s různými informačními zdroji a rozvíjeli kritické myšlení?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří se zajímají o praktické obory a chtějí se připravit na konkrétní profesi",
+      "Studenti, kteří si cení dobrých vztahů mezi žáky a učiteli a vstřícného prostředí",
+      "Uchazeči, kteří chtějí studovat v moderně vybavené škole s kontakty na firmy"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciované výuky podle svého tempa",
+      "Studenti, kteří preferují rozmanité výukové metody a skupinovou práci",
+      "Uchazeči, kteří se spoléhají na detailní zpětnou vazbu a reflexi svého pokroku"
+    ],
+    "plain_czech_summary": "Střední škola technická Mohelnice je dobře vybavená škola s dobrými vztahy mezi žáky a učiteli. Silnou stránkou je propojení výuky s praxí díky spolupráci s firmami. Škola však potřebuje zlepšit pestrost výukových metod – příliš se spoléhá na frontální výuku. Učitelé by měli více individualizovat výuku pro různě schopné žáky a lépe využívat skupinovou práci. Také by měli více motivovat žáky prostřednictvím kvalitní zpětné vazby."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, bez závažných odchylek",
+      "key_numbers": [
+        "233 žáků v 10 třídách (stav k 30. 9. 2023)",
+        "6 oborů vzdělání (2 s maturitou, 4 s výučním listem)"
+      ],
+      "evidence": "Ve školním roce 2022/2023 nevykazovaly výsledky vzdělávání v jednotlivých předmětech závažné vzájemné odchylky."
+    },
+    "absence": {
+      "trend": "Aktivně řešena",
+      "key_numbers": [
+        "Zvýšená absence je minimalizována bezodkladnými opatřeními"
+      ],
+      "evidence": "Škola bezodkladně přijímá opatření na minimalizaci zvýšené absence žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s kvalifikovanými pracovníky",
+      "Podpora žáků se speciálními vzdělávacími potřebami",
+      "Kariérové poradenství pro poslední ročníky",
+      "Individuální konzultace pro žáky s rizikem neúspěchu"
+    ],
+    "safety_climate": [
+      "Bezpečnost a ochrana zdraví zakotveny ve školním řádu",
+      "Primární prevence rizikového chování je součástí vzdělávacího procesu",
+      "Ojedinělé problémy jsou řešeny promptně v součinnosti se zákonnými zástupci",
+      "Dotazníkové šetření klimatu mezi pedagogy a žáky"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s partnerskými firmami pro praktické vyučování",
+      "Kontakty se základními školami v regionu",
+      "Členství v odborných profesních sdruženích",
+      "Kooperace s kulturními a tělovýchovnými institucemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o úspěšnosti u maturit nebo závěrečných zkoušek",
+      "Chybí informace o počtu žáků, kteří pokračují v dalším studiu nebo se úspěšně uplatňují v praxi",
+      "Není jasné, jak velký je podíl žáků, kteří potřebují speciální podporu"
+    ]
+  }
+}
+```

@@ -1,0 +1,11 @@
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "deepseek_chat",
+  "run_started_utc": "2026-02-09T11:41:01.812722+00:00",
+  "run_finished_utc": "2026-02-09T12:03:26.989439+00:00",
+  "call_error": "[Errno 54] Connection reset by peer",
+  "parse_error": "[Errno 54] Connection reset by peer",
+  "raw_response": "",
+  "judge_output": null
+}

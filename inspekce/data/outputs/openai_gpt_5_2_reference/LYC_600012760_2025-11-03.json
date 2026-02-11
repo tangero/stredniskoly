@@ -1,0 +1,10 @@
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "model_id": "openai_gpt_5_2_reference",
+  "run_started_utc": "2026-02-09T11:33:46.443952+00:00",
+  "run_finished_utc": "2026-02-09T11:34:29.282817+00:00",
+  "raw_file": "LYC_600012760_2025-11-03.raw.txt",
+  "call_error": null,
+  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
+  "parsed_output": null
+}

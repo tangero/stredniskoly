@@ -1,0 +1,11 @@
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T12:17:24.533188+00:00",
+  "run_finished_utc": "2026-02-09T12:18:02.373004+00:00",
+  "call_error": null,
+  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
+  "raw_response": "{\n  \"report_id\": \"SOS_600019853_2025-11-20\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported",
+  "judge_output": null
+}

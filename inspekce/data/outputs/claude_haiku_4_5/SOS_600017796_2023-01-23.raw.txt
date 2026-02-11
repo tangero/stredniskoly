@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOS_600017796_2023-01-23",
+  "school_profile": {
+    "school_type": "Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "23. až 25. ledna 2023",
+    "school_change_summary": "Od poslední inspekce došlo zejména ke zlepšení materiálních podmínek pro vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Pozitivní klima a vztahy",
+        "detail": "Škola vytváří vstřícné prostředí s pozitivním klimatem a žádoucími prosociálními vztahy mezi žáky a pedagogy.",
+        "evidence": "\"Vytvoření vstřícného prostředí ve škole s pozitivním klimatem projevujícím se v žádoucích prosociálních vztazích mezi žáky a pedagogy.\""
+      },
+      {
+        "tag": "Partnerství a spolupráce",
+        "detail": "Silné partnerské vztahy s firmami, institucemi a městem zlepšují kvalitu vzdělávání a materiální vybavení.",
+        "evidence": "\"Partnerská spolupráce pozitivně působící na kvalitu vzdělávání. Významný je zejména přínos partnerství pro zkvalitňování materiálních podmínek.\""
+      },
+      {
+        "tag": "Péče o různé skupiny žáků",
+        "detail": "Škola efektivně podporuje nadané žáky, žáky se speciálními potřebami a nabízí doučování ohrožených žáků.",
+        "evidence": "\"Vedení školy ve spolupráci s předmětovými sekcemi identifikuje žáky ohrožené školním neúspěchem a nabízí jim pomoc, která se jeví jako účinná.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená aktivizace žáků",
+        "detail": "Výuka je příliš zaměřena na frontální metody, chybí skupinová práce a diferenciace pro nadané žáky.",
+        "evidence": "\"V hodnocených vyučovacích hodinách převládala frontální výuka bez častějšího využití metod vedoucích k aktivizaci žáků či diferenciaci vzdělávacího obsahu.\""
+      },
+      {
+        "tag": "Slabá zpětná vazba a sebehodnocení",
+        "detail": "Žáci dostávají jen stručné hodnocení, chybí motivační shrnutí hodin a sebehodnocení žáků.",
+        "evidence": "\"Nedostatkem většiny vyučovacích hodin bylo chybějící sebehodnocení či vzájemné hodnocení žáků a časově omezené závěrečné shrnutí.\""
+      },
+      {
+        "tag": "Málo práce s informačními zdroji",
+        "detail": "Žáci málo pracují s různými informačními zdroji, což omezuje rozvoj kritického myšlení.",
+        "evidence": "\"Snaha o podporu kritického myšlení žáků však nebyla vždy dostatečně podpořena využitím jejich práce s různými informačními zdroji.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky? Jaké jsou jejich možnosti v soutěžích a projektech?",
+      "Jaké metody používáte k rozvoji kritického myšlení a samostatného uvažování žáků?",
+      "Jak se škola zaměřuje na digitalizaci výuky, zejména v odborných předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si cení pozitivního klimatu a dobrých vztahů mezi spolužáky a učiteli",
+      "Zájemci o obor obchodní akademie s možností volby zaměření (IT, management, zahraniční obchod)",
+      "Žáci, kteří potřebují podporu a doučování – škola má funkční systém péče o ohrožené žáky"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují aktivní, skupinovou a projektovou výuku – frontální metody zde převažují",
+      "Nadaní žáci, kterým chybí dostatek výzev a individuálního rozvoje v běžné výuce",
+      "Žáci, kteří se učí lépe s moderními technologiemi – digitalizace odborných předmětů je zatím omezená"
+    ],
+    "plain_czech_summary": "Obchodní akademie v Přerově je stabilní školou s příjemným klimatem a dobrými vztahy mezi žáky a učiteli. Silnou stránkou je spolupráce s partnery a péče o různé skupiny žáků. Inspekce ale upozorňuje na to, že výuka je příliš zaměřena na frontální metody a chybí aktivnější přístupy. Žáci by měli více pracovat ve skupinách, více se sebehodnotit a více pracovat s různými informačními zdroji. Škola by měla také více využívat digitální technologie v odborných předmětech."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní bez výrazných odchylek",
+      "key_numbers": [
+        "Ve školních letech 2021/2022 a 2022/2023 nevykazovaly výsledky vzdělávání výrazné vzájemné odchylky",
+        "Absolventi jsou přijímáni na vyšší odborné a vysoké školy"
+      ],
+      "evidence": "\"Ve školních letech 2021/2022 a 2022/2023 nevykazovaly výsledky vzdělávání žáků v jednotlivých vyučovacích předmětech výrazné vzájemné odchylky.\""
+    },
+    "absence": {
+      "trend": "Aktivně řešeno",
+      "key_numbers": [
+        "Škola bezodkladně přijímá opatření na minimalizaci zvýšené absence"
+      ],
+      "evidence": "\"Na dosahované výsledky vzdělávání pozitivně působí mj. fakt, že škola bezodkladně přijímá opatření na minimalizaci zvýšené absence žáků.\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s péčí o žáky se speciálními potřebami",
+      "Metodička podpory nadaných žáků, která vyhledává talentované žáky již v prvních ročnících",
+      "Kariérové poradenství zaměřené na orientaci na trhu práce",
+      "Doučování a konzultace pro žáky ohrožené školním neúspěchem",
+      "Adaptační kurzy pro prvňáky zaměřené na sociální kompetence"
+    ],
+    "safety_climate": [
+      "Bezpečnost a ochrana zdraví zajišťovány podle školního řádu",
+      "Prevence rizikového chování prolíná celým vzdělávacím procesem",
+      "Tematicky zaměřené besedy, přednášky a preventivní programy",
+      "Včasná intervence při prvotních projevech rizikového chování",
+      "Pravidelná dotazníková šetření zaměřená na klima třídy a školy",
+      "Ve všech hodnocených hodinách převládala příznivá pracovní atmosféra bez nežádoucích projevů chování"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá účast v projektu Erasmus+ se stážemi žáků v zahraničí",
+      "Spolupráce se sociálními partnery pro praktické vyučování",
+      "Vzájemné návštěvy učitelů v zahraničí pro výměnu zkušeností",
+      "Členství v odborných profesních sdruženích",
+      "Spolupráce se statutárním městem Přerov, základními a středními školami",
+      "Spolupráce s kulturními a tělovýchovnými institucemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Silné a slabé stránky jsou konkrétně popsány s příklady z pozorování. Doporučení jsou praktická a realizovatelná.",
+    "uncertainty_notes": [
+      "Inspekce neuvádí konkrétní procenta nebo počty žáků v jednotlivých kategoriích (nadaní, se speciálními potřebami, cizinci)",
+      "Chybí konkrétní data o úspěšnosti maturitních zkoušek a jejich vývoji v čase",
+      "Není jasné, jak se škola vypořádala s doporučeními z předchozí inspekce z roku 2016"
+    ]
+  }
+}
+```

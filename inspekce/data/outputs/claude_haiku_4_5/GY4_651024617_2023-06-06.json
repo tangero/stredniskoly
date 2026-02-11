@@ -1,0 +1,109 @@
+{
+  "report_id": "GY4_651024617_2023-06-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:39:27.742066+00:00",
+  "run_finished_utc": "2026-02-09T16:39:53.612155+00:00",
+  "raw_file": "GY4_651024617_2023-06-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_651024617_2023-06-06",
+    "school_profile": {
+      "school_type": "Gymnázium (střední škola) + Základní škola + Školní družina a klub, soukromá",
+      "inspection_period": "6.–9. června 2023",
+      "school_change_summary": "Od inspekce v červnu 2016 výrazně vzrostl počet žáků (ZŠ 396 žáků, SŠ 82 žáků), pedagogických pracovníků (80 osob) a zlepšily se materiální podmínky. Nová ředitelka od srpna 2021 zavádí inovativní přístup."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bilingvní vzdělání a jazyky",
+          "detail": "Škola úspěšně realizuje bilingvní koncepci s důrazem na rozvoj komunikativních dovedností v cizích jazycích.",
+          "evidence": "Žáci dosahují výborných výsledků v anglickém jazyce, třetina využívá mezinárodní certifikáty místo profilové zkoušky."
+        },
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Výrazné zlepšení úspěšnosti při maturitní zkoušce s lepšími výsledky než průměr gymnázií v republice.",
+          "evidence": "Ve školním roce 2022/2023 všichni žáci složili zkoušku v prvním termínu, třetina s vyznamenáním."
+        },
+        {
+          "tag": "Osobnostní rozvoj",
+          "detail": "Škola nabízí bohatou nabídku aktivit podporujících rozvoj talentů a zájmů žáků.",
+          "evidence": "Kulturní, jazykové, sportovní pobyty, debatní klub, projekt Mezinárodní ceny vévody z Edinburgu, žákovský parlament."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Sebehodnocení žáků",
+          "detail": "Učitelé málo vedou žáky k sebehodnocení a vrstevnickému hodnocení.",
+          "evidence": "Sebehodnocení se objevilo jen v pětině hospitovaných hodin na obou stupních školy."
+        },
+        {
+          "tag": "Diferenciace na 1. stupni ZŠ",
+          "detail": "Učitelé základní školy využívají v menší míře metody zohledňující individuální předpoklady žáků.",
+          "evidence": "Rozdíly mezi stupni – rozvíjení postojových cílů bylo patrné v polovině hodin 2. stupně, jen v pětině na 1. stupni."
+        },
+        {
+          "tag": "Kvalifikace zahraničních učitelů",
+          "detail": "Pouze čtvrtina zahraničních vyučujících má doloženou nostrifikaci dokladu o vzdělání.",
+          "evidence": "Téměř třetinu sboru tvoří zahraniční vyučující, ale kontrola kvalifikace není důsledná."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky v přípravě na mezinárodní jazykové certifikáty a jaké jsou náklady?",
+        "Jaké jsou podmínky pro nadané žáky a jak se liší jejich vzdělávání od standardního programu?",
+        "Jak škola řeší individuální potřeby žáků s různými předpoklady, zejména na prvním stupni?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní vzdělání – bilingvní přístup a vysoké výsledky v angličtině",
+        "Talentovaní a nadaní žáci – škola má systém podpory a nabízí rozmanité obohacující aktivity",
+        "Rodiny hledající kvalitní přípravu na vysoké školy – výborné výsledky maturit a sledování další vzdělávací cesty absolventů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující individuální přístup a sebehodnocení – na 1. stupni ZŠ je méně diferenciace a sebehodnocení",
+        "Rodiny s omezeným rozpočtem – soukromá škola s vyššími náklady, certifikáty a pobyty nejsou zdarma",
+        "Žáci s výraznými poruchami chování – přestože škola má systém prevence, není to její primární zaměření"
+      ],
+      "plain_czech_summary": "Sunny Canadian IS je soukromá bilingvní škola s výbornou reputací v jazycích a přípravě na vysoké školy. Nová ředitelka od roku 2021 zavádí inovativní přístupy. Silné stránky: výborné výsledky v angličtině, úspěšné maturitní zkoušky, bohatá nabídka aktivit pro talentované žáky. Slabiny: na prvním stupni ZŠ méně individuálního přístupu, málo sebehodnocení žáků. Vhodná pro jazykově nadané děti a ty, které chtějí studovat na vysokých školách."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "Školní rok 2022/2023: všichni žáci složili zkoušku v prvním termínu",
+          "Třetina maturantů s vyznamenáním",
+          "Lepší výsledky než průměr gymnázií v republice"
+        ],
+        "evidence": "Ve školním roce 2021/2022 vykázala lepší výsledky než průměr gymnázií. Ve 2022/2023 ji vykonali všichni žáci úspěšně již v prvním termínu, třetina s vyznamenáním."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se absence věnuje minimálně, není uvedena konkrétní data."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: speciální pedagožka, výchovná poradkyně, metodička prevence, poradkyně pro kariérové poradenství, školní psycholožka",
+        "Individuální vzdělávací plány pro 3 nadané žáky a 13 žáků SŠ z jiných závažných důvodů",
+        "Podpora 45 žáků se speciálními vzdělávacími potřebami, z nichž 11 má IVP"
+      ],
+      "safety_climate": [
+        "Minimální míra úrazovosti – škola věnuje bezpečnosti pozornost stanovením pravidel a postupů",
+        "Žáci jsou prokazatelně poučováni o bezpečnosti a ochraně zdraví",
+        "Efektivní systém prevence rizikového chování s besedami, exkurzemi a adaptačními aktivitami"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se školskou radou, vzdělávacími institucemi a podnikatelskými subjekty",
+        "Partnerství s tuzemskými a zahraničními subjekty podporující rozvoj vzdělávacího potenciálu",
+        "Zahraniční výjezdy a projekty jako Mezinárodní cena vévody z Edinburgu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Struktura je logická. Mírně snižuje srozumitelnost pro laiky vysoký podíl odborné terminologie (ŠVP, SVP, OMJ, IVP).",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, zda je to silná stránka nebo se neměřila",
+        "Počet žáků s problematickými předměty (fyzika, dějepis, čeština, matematika) není kvantifikován",
+        "Není jasné, jaké jsou konkrétní náklady na certifikáty a speciální aktivity pro rodiče"
+      ]
+    }
+  }
+}

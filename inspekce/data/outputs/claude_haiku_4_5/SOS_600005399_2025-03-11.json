@@ -1,0 +1,117 @@
+{
+  "report_id": "SOS_600005399_2025-03-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:42:15.914821+00:00",
+  "run_finished_utc": "2026-02-09T13:42:45.106093+00:00",
+  "raw_file": "SOS_600005399_2025-03-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600005399_2025-03-11",
+    "school_profile": {
+      "school_type": "Kombinovaná instituce: Mateřská škola, Základní škola (1.–9. ročník) a Střední odborná škola služeb (obory Veřejnosprávní činnost a Sociální činnost)",
+      "inspection_period": "11. března 2025 až 14. března 2025",
+      "school_change_summary": "Od inspekce v roce 2018 se počet žáků a tříd zvýšil. Vedení školy bylo posíleno o zástupkyni pro MŠ. Zlepšilo se materiálně-technické vybavení, zejména v odborných učebnách a IT technologiích."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní vedení a strategie",
+          "detail": "Ředitelka má dlouholeté zkušenosti a jasně formulovanou strategii rozvoje, kterou sdílí pedagogický sbor.",
+          "evidence": "Funkční systém řízení reflektuje potřeby polyfunkční instituce a vede k přijímání konkrétních opatření."
+        },
+        {
+          "tag": "Podpora žáků se speciálními potřebami",
+          "detail": "Škola má rozšířené poradenské centrum s psycholožkami a koordinátorem pro žáky-cizince.",
+          "evidence": "Efektivní podpora prostřednictvím včasné identifikace potřeb a dobře nastavených podpůrných opatření."
+        },
+        {
+          "tag": "Praktické dovednosti a praxe",
+          "detail": "Střední škola propojuje teorii s praxí a má kvalitní vybavení včetně cvičné kuchyňky a moderních učeben.",
+          "evidence": "Žákovská portfolia dokumentují vysokou úroveň praktických kompetencí a úspěšné absolvování praktické maturitní zkoušky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotná kvalita výuky",
+          "detail": "Některé hodiny mají méně efektivní časové rozložení, nižší míru aktivizujících metod a chybí závěrečné shrnutí.",
+          "evidence": "Monotematičnost a nepřiměřená délka činností vedou k nižší dynamice a poklesu zájmu žáků."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Pouze někteří učitelé diferencují úkoly podle tempa a schopností žáků.",
+          "evidence": "Absence diferenciace v části sledovaných hodin ZŠ i SŠ vzhledem k rozdílným předpokladům žáků."
+        },
+        {
+          "tag": "Fyzické podmínky v MŠ",
+          "detail": "Nedostatek dětských stolů a židlí odpovídajících velikosti nejmenších dětí.",
+          "evidence": "Vedlo k nestabilnímu sedu a omezení plného zaujetí všech dětí ve věkově smíšených třídách."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různým tempem učení a různými schopnostmi?",
+        "Jaké jsou výsledky absolventů střední školy na trhu práce a v dalším studiu?",
+        "Jak se škola vypořádává s nižšími výsledky v přírodovědné gramotnosti?"
+      ],
+      "who_school_fits": [
+        "Rodiny hledající komplexní vzdělání od MŠ přes ZŠ až na SŠ na jednom místě",
+        "Žáci se speciálními vzdělávacími potřebami nebo s odlišným mateřským jazykem, kteří potřebují systematickou podporu",
+        "Zájemci o praktické obory (Veřejnosprávní činnost, Sociální činnost) s důrazem na propojení teorie s praxí"
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, které očekávají jednotně vysokou kvalitu výuky ve všech hodinách – kvalita se liší podle učitele",
+        "Žáci vyžadující intenzivní individuální přístup – v některých třídách je frontální výuka stále převažující",
+        "Rodiny s nejmenšími dětmi v MŠ – fyzické vybavení není zcela přizpůsobeno jejich velikosti"
+      ],
+      "plain_czech_summary": "Škola Kavčí hory je unikátní kombinací tří typů škol s kvalitním vedením a jasnou strategií. Silné stránky: podpora žáků se speciálními potřebami, propojení teorie s praxí na střední škole, stabilní prospěch žáků. Slabé stránky: kvalita výuky se liší podle učitele, někdy chybí individualizace a efektivní závěry hodin. Fyzické vybavení MŠ není zcela přizpůsobeno nejmenším dětem. Škola je vhodná pro rodiny hledající komplexní vzdělání s podporou speciálních potřeb."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se tendence od roku 2018",
+        "key_numbers": [
+          "Podíl žáků konajících maturitní zkoušku se zvyšuje",
+          "V posledních třech školních letech neprospěli v MZ pouze jednotlivci",
+          "Úspěšnost v češtině a angličtině srovnatelná nebo mírně nižší než celorepublikový průměr"
+        ],
+        "evidence": "Výsledky žáků při ukončování vzdělávání SŠ vesměs korespondují s jejich hodnocením v průběhu studia."
+      },
+      "absence": {
+        "trend": "Nízká absence a nulová neomluvená absence",
+        "key_numbers": [
+          "Nízká absence na žáka",
+          "Nulová neomluvená absence",
+          "Podíl žáků SŠ s uzavřenou klasifikací do 30. 6. okolo 93 %"
+        ],
+        "evidence": "Dokladem systematické práce třídních učitelů a správně nastavených pravidel omlouvání."
+      },
+      "support_services": [
+        "Rozšířené Centrum poradenských služeb s dvěma školními psycholožkami",
+        "Koordinátor pro vzdělávání žáků-cizinců",
+        "Školní metodici prevence zajišťující pomoc při rizikových chováních a wellbeing žáků",
+        "Kariérové poradenství v 7. a 8. ročníku (předmět Svět práce)"
+      ],
+      "safety_climate": [
+        "Vstřícná atmosféra v průběhu vzdělávání s respektujícím přístupem vyučujících",
+        "Vrátnice s celodenním personálním obsazením u hlavního vchodu ZŠ",
+        "Elektronické zabezpečení vstupu do MŠ",
+        "Kontinuální naplňování preventivně výchovných cílů a posilování příznivého vzdělávacího prostředí"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Pedagogické, Husitské teologické a Přírodovědecké fakulty Univerzity Karlovy",
+        "Certifikace Světová škola (opakovaně obhájeno)",
+        "Spolupráce se soudy, obecními úřady, centry sociálních služeb, nadačními fondy",
+        "Program Erasmus+ pro rozvoj jazykových kompetencí",
+        "Informační a poradenské středisko při Úřadu práce hl. m. Prahy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasným strukturováním. Některé pasáže jsou však poměrně dlouhé a obsahují odbornou terminologii, která může být pro laické rodiče méně přístupná.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků s SVP a OMJ, pouze uvádí, že jejich výsledky jsou srovnatelné s průměrem třídy",
+        "Výsledky v matematice jsou zmíněny jen obecně (jednotlivci neuspěli), bez konkrétních čísel",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými učiteli – zpráva mluví o 'některých' bez konkrétního procenta"
+      ]
+    }
+  }
+}

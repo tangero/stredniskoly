@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY8_600007634_2022-12-09",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium (příspěvková organizace)",
+    "inspection_period": "9., 12., 13. a 14. prosince 2022",
+    "school_change_summary": "Škola pokračuje v rozsáhlé spolupráci se sociálními partnery a nabízí široký rozsah volitelných předmětů. Část nedostatků z předchozí inspekce byla odstraněna, ale přetrvává chybějící diferenciace učiva a individuální přístup k žákům."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné maturitní výsledky",
+        "detail": "Polovina žáků prospívá s vyznamenáním, škola dosahuje lepších výsledků než průměr gymnázií v republice.",
+        "evidence": "V předmětech společné části maturitní zkoušky škola vykazuje lepší výsledky než průměr gymnázií v republice."
+      },
+      {
+        "tag": "Rozsáhlá spolupráce s partnery",
+        "detail": "Efektivní partnerství s vysokými školami, Akademií věd a odbornými pracovišti rozvíjí klíčové kompetence žáků.",
+        "evidence": "Rozsáhlá stabilní a efektivní spolupráce se sociálními partnery přispívá k rozvoji klíčových kompetencí žáků."
+      },
+      {
+        "tag": "Kvalitní péče o nadané žáky",
+        "detail": "Žáci úspěšně postupují do krajských a celostátních kol soutěží, škola podporuje jejich zájmy v badatelských klubech.",
+        "evidence": "Řada nejzdařilejších prací úspěšně postupuje do krajských a celostátních kol Středoškolské odborné činnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Chybějící diferenciace ve výuce",
+        "detail": "Všichni žáci plnili stejné úkoly, individuální přístup k nadaným žákům nebyl patrný.",
+        "evidence": "Ve sledované výuce všichni žáci plnili stejné úkoly, diferenciace vzdělávacího obsahu nebyla patrná."
+      },
+      {
+        "tag": "Rostoucí absence žáků",
+        "detail": "Absence vzrostla ve srovnání se školním rokem 2018/2019, chybí průběžná analýza příčin.",
+        "evidence": "Ve školním roce 2021/2022 absence vzrostla. Chybí průběžná analýza příčin absence pro stanovení konkrétních opatření."
+      },
+      {
+        "tag": "Nedostatečná kontrola naplňování doporučení",
+        "detail": "Chybí pravidelné zaměření výchovného poradce na kontrolu naplňování doporučení pro žáky se speciálními potřebami.",
+        "evidence": "Chybí pravidelné zaměření činnosti výchovného poradce na kontrolu naplňování stanovených doporučení ve vyučovacích hodinách."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola diferencuje výuku pro nadané žáky přímo v hodinách?",
+      "Jaká opatření škola zavádí na snížení absence žáků?",
+      "Jak funguje spolupráce s vysokými školami a Akademií věd v praxi?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o vědu, výzkum a akademické vzdělání – škola má rozsáhlou spolupráci s vysokými školami a vědeckými institucemi",
+      "Talentovaní a nadaní žáci – škola nabízí bohatou nabídku seminářů a projektů, podporuje účast v soutěžích",
+      "Žáci s ambicí studovat na vysoké škole – téměř všichni absolventi pokračují ve vysokoškolském studiu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individualizovaný přístup – diferenciace učiva není dostatečná, všichni plnili stejné úkoly",
+      "Žáci s problémy s docházkou – absence roste a chybí systematická analýza příčin",
+      "Žáci se speciálními vzdělávacími potřebami – kontrola naplňování doporučení není pravidelná"
+    ],
+    "plain_czech_summary": "Gymnázium Bohumila Hrabala je kvalitní školou se silnými výsledky u maturit a rozsáhlou spoluprací s vysokými školami. Žáci dosahují výborných výsledků, zejména v přírodovědných a humanitních oborech. Škola má stabilní pedagogický sbor a nabízí bohatou nabídku volitelných předmětů. Hlavní výzvou je zavedení lepší diferenciace ve výuce pro nadané žáky a řešení rostoucí absence. Škola je vhodná pro ambiciózní žáky se zájmem o vysokoškolské vzdělání."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "Polovina žáků prospívá s vyznamenáním",
+        "Lepší výsledky než průměr gymnázií v republice v předmětech společné části",
+        "Více než polovina žáků v r. 2021/2022 nahradila profilovou zkoušku z cizího jazyka mezinárodním certifikátem"
+      ],
+      "evidence": "Dlouhodobě polovina žáků prospívá s vyznamenáním. V předmětech společné části maturitní zkoušky škola vykazuje lepší výsledky než průměr gymnázií v republice."
+    },
+    "absence": {
+      "trend": "Rostoucí",
+      "key_numbers": [
+        "Absence vzrostla ve srovnání se školním rokem 2018/2019",
+        "Chybí konkrétní data o výši absence",
+        "Absence není systematicky analyzována"
+      ],
+      "evidence": "V porovnání se školním rokem 2018/2019 (rok s plně prezenční výukou) ve školním roce 2021/2022 absence vzrostla. Chybí průběžná analýza příčin."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s péčí o žáky se speciálními vzdělávacími potřebami",
+      "Talent tým pro podporu nadaných žáků",
+      "Systematické doučování a individuální dopomoc pro žáky v obtížích",
+      "Podpora pro žáky s odlišným mateřským jazykem",
+      "Kariérové poradenství zaměřené na výběr vysokých škol"
+    ],
+    "safety_climate": [
+      "Systém prevence úrazů a bezpečnosti je funkční",
+      "Preventivní program školy obsahuje plánované akce, besedy a přednášky",
+      "Problémové chování žáků je ojedinělé a systematicky řešeno",
+      "Bezproblémová integrace žáků z odlišného jazykového a kulturního prostředí",
+      "Adaptační proces pro první ročníky včetně zahajovacího kurzu"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Akademií věd ČR a vysokými školami",
+      "Partnerství s odbornými pracovišti pro badatelské aktivity",
+      "Aktivní spolupráce se sociálními partnery a rodičovským sdružením",
+      "Výměna zkušeností s řediteli obdobných gymnázií",
+      "Zahraniční zájezdy a výměnné pobyty pro žáky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasně odděluje silné stránky od slabých míst. Doporučení jsou konkrétní a měřitelná. Mírně snižuje skóre administrativní jazyk v některých pasážích.",
+    "uncertainty_notes": [
+      "Konkrétní čísla absence nejsou uvedena, pouze trend",
+      "Není jasné, kolik hodin bylo inspektory hospitováno a jaké bylo jejich rozložení",
+      "Chybí konkrétní procenta žáků s jednotlivými typy speciálních potřeb"
+    ]
+  }
+}
+```

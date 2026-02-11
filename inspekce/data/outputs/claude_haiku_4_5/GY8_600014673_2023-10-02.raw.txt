@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY8_600014673_2023-10-02",
+  "school_profile": {
+    "school_type": "Gymnázium, obchodní akademie a jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "2. 10. 2023 − 4. 10. 2023",
+    "school_change_summary": "Nová ředitelka nastoupila ve školním roce 2021/2022. Počet žáků mírně vzrostl. Probíhá rekonstrukce budovy Legionářská a stavba výtahu pro bezbariérový přístup."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Digitální vzdělávání",
+        "detail": "Škola má moderní Google učebny, které efektivně využívají všichni aktéři vzdělávání a podporují studijní výsledky žáků.",
+        "evidence": "Škola aktivně využívá Google učebny jako účinnou studijní podporu a přispívá k rozvoji digitálních kompetencí."
+      },
+      {
+        "tag": "Podpora nových učitelů",
+        "detail": "Propracovaný systém přijímání pedagogů s funkčním adaptačním programem a mentorskou podporou.",
+        "evidence": "Škola má vypracovaný funkční a účinný adaptační program, který efektivně napomáhá vzájemné spolupráci pedagogických pracovníků."
+      },
+      {
+        "tag": "Úspěchy žáků",
+        "detail": "Žáci dosahují významných úspěchů v soutěžích, obchodní akademie měla 0% neúspěšnost u maturity v roce 2023.",
+        "evidence": "Obchodní akademie v roce 2023 dosáhla 0% hrubé neúspěšnosti u maturitní zkoušky, žáci získali první místo v celostátním kole."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Tělesná výchova bez tělocvičny",
+        "detail": "Výuka tělesné výchovy na pracovišti Legionářská probíhá na školním dvoře, což je z hlediska bezpečnosti rizikové.",
+        "evidence": "Tělocvična je v havarijním stavu, výuka probíhá na školním dvoře, který je z hlediska zajištění bezpečnosti a ochrany zdraví žáků rizikový."
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "V některých třídách byla průměrná absence vyšší než 180 hodin za školní rok, často souvisí s neprospěchem.",
+        "evidence": "Ve školním roce 2022/2023 byla v některých třídách průměrná absence žáků za školní rok vyšší než 180 hod."
+      },
+      {
+        "tag": "Stereotypní výuka",
+        "detail": "Převažuje frontální forma výuky bez dostatečného zapojení žáků do aktivních činností a rozvoje kritického myšlení.",
+        "evidence": "Pedagogové uplatňovali stereotypní pedagogické postupy a využívali převážně frontální formu výuky, chyběla podpora rozvoje kritického myšlení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší problém s absencí žáků a jaké jsou důsledky pro jejich hodnocení?",
+      "Kdy bude vyřešena situace s tělesnou výchovou – kdy se vrátí do vlastní tělocvičny?",
+      "Jaké konkrétní kroky škola podniká, aby více zapojila žáky do aktivní výuky místo frontálního vyučování?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky – škola má kvalitní výuku cizích jazyků s cizojazyčným prostředím a mezinárodními certifikacemi.",
+      "Nadaní žáci – škola podporuje nadané žáky individuálně a zapojuje je do olympiád a soutěží s úspěchy.",
+      "Žáci zajímající se o ekonomii – obchodní akademie dosahuje výborných výsledků s praktickou výukou přes školní bufet."
+    ],
+    "who_should_be_cautious": [
+      "Žáci s tendencí k absenci – vysoká absence přímo souvisí s neprospěchem a školou není důsledně řešena.",
+      "Žáci potřebující individuální přístup – diferenciace výuky není dostatečná, zejména pro žáky se speciálními potřebami.",
+      "Žáci v matematice – opakovaně horších výsledků dosahují žáci, kteří si zvolili matematiku v maturitě, přestože škola zvýšila hodinovou dotaci."
+    ],
+    "plain_czech_summary": "Gymnázium v Hodoníně je moderní školou s dobrým digitálním vybavením a úspěšnými žáky v soutěžích. Silnou stránkou je podpora nových učitelů a kvalitní jazykové vzdělávání. Hlavní problémy jsou zastaralé prostory (chybí tělocvična), vysoká absence žáků a převažující frontální výuka bez dostatečného zapojení žáků. Inspekce doporučuje více aktivních metod výuky a lepší individuální přístup k žákům."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, osciluje kolem celorepublikového průměru",
+      "key_numbers": [
+        "Obchodní akademie: 0% neúspěšnosti v roce 2023",
+        "Matematika: opakovaně horší výsledky",
+        "Poslední tři roky: stabilní výsledky"
+      ],
+      "evidence": "Výsledky žáků dosahované při ukončování vzdělání maturitní zkouškou v posledních třech letech oscilují kolem celorepublikového průměru. Velmi dobré výsledky dosahovali žáci oboru Obchodní akademie, v roce 2023 činila jejich hrubá neúspěšnost 0%."
+    },
+    "absence": {
+      "trend": "Zvýšená absence, zejména v některých třídách",
+      "key_numbers": [
+        "Některé třídy: průměr vyšší než 180 hodin za rok",
+        "Nízký počet neprospívajících: jednotky žáků",
+        "Absence často souvisí s neprospěchem"
+      ],
+      "evidence": "Škola opakovaně vykazuje vyšší počet zameškaných hodin žáků, ve školním roce 2022/2023 byla v některých třídách průměrná absence žáků za školní rok vyšší než 180 hod."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně pro obě pracoviště a jedna metodička prevence",
+      "Individuální vzdělávací plány pro žáky se speciálními potřebami",
+      "Doučování a individuální konzultace pro žáky s obtížemi",
+      "Podpora nadaných žáků (individuální podpora třem žákům)",
+      "Chybí školní psycholog – jeho funkci suplují ostatní pracovnice"
+    ],
+    "safety_climate": [
+      "Bezpečnostní riziko: výuka tělesné výchovy na školním dvoře bez tělocvičny",
+      "Škola důsledně řeší konfliktní situace ve spolupráci se zákonnými zástupci",
+      "Prevence rizikového chování je součástí preventivního programu",
+      "Žáci mají možnost využití schránky důvěry",
+      "Metodička prevence organizuje preventivní programy zaměřené na prevenci sociálně patologických jevů"
+    ],
+    "partnerships_practice": [
+      "Partnerství se školou v Norsku – výměnné pobyty žáků pro rozvoj cizojazyčných dovedností",
+      "Spolupráce s PdF MU Brno",
+      "Spolupráce se školskými poradenskými zařízeními",
+      "Spolupráce se sportovními organizacemi v regionu (pronájem prostor pro tělesnou výchovu)",
+      "Žákovský samosprávný orgán s pravidelnou komunikací s ředitelkou"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však technicky náročnější (např. popis pedagogických metod), ale pro rodiče jsou podstatné informace dostupné.",
+    "uncertainty_notes": [
+      "Není jasné, kdy přesně bude vyřešena situace s tělocvičnou – zpráva pouze uvádí, že probíhá rekonstrukce.",
+      "Počet žáků se speciálními potřebami (14 žáků) není kontextualizován – není jasné, zda je to vysoké či nízké číslo.",
+      "Není specifikováno, jaké konkrétní opatření škola přijala na zlepšení matematiky mimo zvýšení hodinové dotace."
+    ]
+  }
+}
+```

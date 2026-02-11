@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600008584_2022-03-01",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:15:47.747688+00:00",
+  "run_finished_utc": "2026-02-10T07:16:53.295832+00:00",
+  "raw_file": "SOS_600008584_2022-03-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600008584_2022-03-01",
+    "school_profile": {
+      "school_type": "Střední škola (čtyřletý obor Obchodní akademie)",
+      "inspection_period": "1. 3. 2022 − 3. 3. 2022",
+      "school_change_summary": "Škola dlouhodobě modernizuje materiální zázemí, prostory mají vysokou estetickou úroveň a pedagogický sbor je stabilizovaný."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky a praxe",
+          "detail": "Škola dosahuje velmi dobrých výsledků v anglickém jazyce a využívá fiktivní firmy pro kvalitnou přípravu na povolání.",
+          "evidence": "Žáci dosahují velmi dobrých výsledků v anglickém jazyce, zapojení do aktivit fiktivních firem přispívá k přípravě na povolání."
+        },
+        {
+          "tag": "Prostředí",
+          "detail": "Škola nabízí nadstandardní materiální podmínky včetně nové půdní vestavby, arboreta a muzea.",
+          "evidence": "Prostory školy mají vysokou estetickou úroveň, nová půdní vestavba, arboretum, muzeum vytvářejí příznivé prostředí."
+        },
+        {
+          "tag": "Partnerská spolupráce",
+          "detail": "Intenzivní spolupráce s partnery a vysokými školami studentům pomáhá v přípravě na další studium.",
+          "evidence": "Díky spolupráci s Ekonomickou fakultou mají absolventi informace o nárocích studia, spolupráce s partnery je stěžejní."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zastaralé metody",
+          "detail": "V teoretické výuce chybí moderní metody aktivního učení a formativní hodnocení, což snižuje motivaci.",
+          "evidence": "V části teoretické výuky nejsou dostatečně využívány metody aktivního učení, to negativně ovlivňuje motivaci žáků."
+        },
+        {
+          "tag": "Slabá matematika",
+          "detail": "Výsledky studentů v maturitní zkoušce z matematiky jsou v porovnání s jinými předměty horší.",
+          "evidence": "Méně úspěšní jsou žáci v předmětu matematika, aktuálně nejčastějším opatřením je doučování z tohoto předmětu."
+        },
+        {
+          "tag": "Neefektivní kontrola",
+          "detail": "Kontrola výuky vedením školy nemá vždy potřebný dopad na zlepšení kvality výuky.",
+          "evidence": "Kontrolní činnost vedení školy v pedagogické oblasti nemá potřebný dopad, není poskytována efektivní zpětná vazba."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje studenty, kteří mají potíže s matematikou?",
+        "Jaké moderní metody vyučující používají, aby výuka byla zajímavější než jen frontální výuka?",
+        "Jaké konkrétní výhody přináší status fakultní školy Jihočeské univerzity pro běžného studenta?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí uplatnit jazykové schopnosti a chtějí se na ně dobře připravit.",
+        "Pro zájemce o ekonomii a podnikání, kteří chtějí získat praktické zkušenosti ve fiktivních firmách.",
+        "Pro studenty hledající školu s kvalitním, moderním a estetickým prostředím."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří preferují pasivní styl učení a potřebují silný vnější motivační tlak.",
+        "Pokud je pro vás klíčová excelentní příprava zejména z matematiky bez nutnosti doučování.",
+        "Pro rodiče očekávající detailní a systematickou individuální podporu při studijních problémech."
+      ],
+      "plain_czech_summary": "Obchodní akademie v Písku nabízí nadstandardní materiální zázemí a velmi dobrou přípravu v jazycích a odborných předmětech. Škola výborně spolupracuje s partnery a využívá fiktivní firmy. Slabinou je tradiční styl výuky v teoretických předmětech a horší výsledky v matematice. Škola je vhodná pro motivované studenty s zájmem o ekonomii a jazyky, kteří ocení kvalitní prostředí a praktické zkušenosti."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní úspěšnost s vynikajícími výsledky v jazycích, ale rezervami v matematice.",
+        "key_numbers": [
+          "20 % studentů maturovalo v roce 2021 s vyznamenáním",
+          "Velmi dobré výsledky v anglickém jazyce",
+          "Méně úspěšní žáci v předmětu matematika"
+        ],
+        "evidence": "Výsledky v předmětech společné části maturitní zkoušky srovnatelné s obdobnými školami, v roce 2021 prospěla pětina žáků s vyznamenáním."
+      },
+      "absence": {
+        "trend": "Údaje o celkové absenci nejsou v textu uvedeny.",
+        "key_numbers": [
+          "Nejsou uvedena konkrétní čísla"
+        ],
+        "evidence": "Zpráva neuvádí konkrétní statistiky absence, zmiňuje pouze řešení zhoršení prospěchu a chování."
+      },
+      "support_services": [
+        "Funkční školní poradenské pracoviště a kariérové poradenství",
+        "Simulované výběrové řízení pro studenty čtvrtého ročníku",
+        "Doučování z matematiky a účetnictví pro ohrožené studenty"
+      ],
+      "safety_climate": [
+        "Přátelská atmosféra a vzájemný respekt mezi vyučujícími a žáky",
+        "Funkční pravidla bezpečnosti a ochrany zdraví",
+        "Adaptační kurzy a aktivity snižující rizikové jevy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Ekonomickou fakultou Jihočeské univerzity",
+        "Aktivity ve fiktivních firmách a účast na veletrzích",
+        "Výměnné pobyty a spolupráce s regionálními partnery"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně strukturovaný a poskytuje dostatek konkrétních příkladů pro vyplnění požadovaných polí.",
+      "uncertainty_notes": [
+        "Chybí konkrétní data o celkové absenci studentů.",
+        "Není blíže specifikována míra využití digitálních technologií v běžné výuce.",
+        "Text neuvádí konkrétní počty studentů úspěšných v přijímacím řízení na VŠ."
+      ]
+    }
+  }
+}

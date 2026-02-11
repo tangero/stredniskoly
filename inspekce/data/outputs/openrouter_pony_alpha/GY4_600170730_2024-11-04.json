@@ -1,0 +1,111 @@
+{
+  "report_id": "GY4_600170730_2024-11-04",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T06:57:51.680353+00:00",
+  "run_finished_utc": "2026-02-10T06:59:42.842315+00:00",
+  "raw_file": "GY4_600170730_2024-11-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600170730_2024-11-04",
+    "school_profile": {
+      "school_type": "Střední škola, vyšší odborná škola, domov mládeže a školní jídelna",
+      "inspection_period": "4.−7. 11. 2024",
+      "school_change_summary": "Škola změnila název, vizuální identitu a web, vybavila nové dílny a byla přijata do Asociace středních a vyšších odborných škol s výtvarnými a uměleckořemeslnými obory."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Pedagogové účinně podporují kreativitu a individuálně přistupují k žákům v dílnách.",
+          "evidence": "Vyučující velmi úspěšně podporovali kreativní činnosti žáků, ke každému bylo přistupováno individuálně."
+        },
+        {
+          "tag": "Prostředí a vybavení",
+          "detail": "Škola má estetické prostředí a nové technologie včetně 3D tiskáren a CNC strojů.",
+          "evidence": "Výtvarné práce přispívají k esteticky podnětnému prostředí, pořízení nového CNC stroje, mobilní sklářské pece."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Funguje systematické poradenství a úzká spolupráce s domovem mládeže při řešení problémů.",
+          "evidence": "Systematická činnost školního poradenského pracoviště, včetně zapojení vedoucí domova mládeže."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní zkoušky",
+          "detail": "Nízká úspěšnost u maturit, zejména v podzimních termínech a didaktických testech.",
+          "evidence": "Celkově škola nedosahuje republikového průměru, neúspěšnost v podzimním termínu MZ (2024 s 42,4 %)."
+        },
+        {
+          "tag": "Kvalita teoretické výuky",
+          "detail": "Běžná frontální výuka bez rozvíjení samostatného úsudku a zpětné vazby.",
+          "evidence": "Převažovala frontální výuka, závěry hodin nebyly účelně využity k sebehodnocení a vzájemnému hodnocení."
+        },
+        {
+          "tag": "Nerozlišování výuky",
+          "detail": "Škola nevyužívá potenciál nadaných ani slabších žáků v teoretických předmětech.",
+          "evidence": "Diferenciace učiva vzhledem k potenciálu jednotlivců byla uplatňována ojediněle."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola konkrétně zajišťuje přípravu na didaktické testy z češtiny a angličtiny, když běžná výuka nestačí?",
+        "Využívá škola diferencovanou výuku nebo dělení skupin i v jiných předmětech než cizích jazycích?",
+        "Jaké konkrétní výsledky dosahují žáci v online kurzech přípravy na maturitu zavedených minulý rok?"
+      ],
+      "who_school_fits": [
+        "Kreativní žáci s zájmem o umělecká řemesla a praktickou tvorbu.",
+        "Studenti, kteří očekávají individuální přístup a podporu v domově mládeže.",
+        "Uchazeči o obory, kde je kladen důraz na estetiku a propagaci (výtvarné práce)."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnou přípravu na společnou část maturitní zkoušky (didaktické testy).",
+        "Studenti preferující moderní interaktivní metody výuky před frontálním přednášením.",
+        "Uchazeči o vyšší odborné studium, pokud očekávají efektivní zapojení ve spojených ročnících."
+      ],
+      "plain_czech_summary": "Akademie Světlá nad Sázavou se profiluje jako škola s kvalitní praktickou výukou a silným výtvarným zaměřením. Rodiče ocení nové vybavení dílen a individuální přístup v praktických předmětech. Škola nabízí dobré zázemí a podporu žákům s psychickými obtížemi. Slabinou je nízká úspěšnost u maturitní zkoušky, kde škola dlouhodobě nevyužívá efektivní opatření. V teoretické výuce chybí moderní metody a individuální přístup k různým úrovním žáků. Pro prakticky zaměřené studenty je škola dobrou volbou, pro ty, kteří míří na vysokou školu přes maturitu, může být příprava nedostatečná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavé výsledky pod celostátním průměrem, vysoká neúspěšnost v opravných termínech.",
+        "key_numbers": [
+          "Úspěšnost v podzimním termínu MZ 2024 pouze 42,4 %.",
+          "Neúspěšnost se týká převážně didaktických testů z českého a anglického jazyka.",
+          "Závěrečné zkoušky vykazují stabilní výsledky kolem 80 %."
+        ],
+        "evidence": "Výsledky MZ jsou v průběhu posledních tří let kolísavé. Celkově škola nedosahuje republikového průměru."
+      },
+      "absence": {
+        "trend": "Není hodnoceno",
+        "key_numbers": [
+          "Není uvedeno"
+        ],
+        "evidence": "Zpráva neobsahuje konkrétní data o absence."
+      },
+      "support_services": [
+        "Systematická činnost školního poradenského pracoviště s metodikem prevence a kariérovým poradenstvím.",
+        "Spolupráce s Centrem duševního zdraví FOKUS Vysočina z důvodu nárůstu psychických problémů.",
+        "Relaxační zóny v areálu školy a adaptační pobyty pro žáky prvního ročníku."
+      ],
+      "safety_climate": [
+        "Příjemná atmosféra ve výuce a vstřícný postoj vedení školy k žákům.",
+        "Účelné využívání monitorování klimatu externími subjekty.",
+        "Důsledné řešení problémů v chování žáků ve spolupráci se zákonnými zástupci."
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s místními firmami formou workshopů.",
+        "Kooperace s Národním muzeem, VŠCHT Praha a dalšími institucemi.",
+        "Účast žáků v tuzemských i zahraničních soutěžích s vynikajícími umístěními."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně člení hodnocení podmínek, průběhu a výsledků. Závěry a doporučení jsou explicitně vyjádřena.",
+      "uncertainty_notes": [
+        "Absence konkrétních dat o celkové úspěšnosti žáků v jarním termínu maturit (pouze srovnání s průměrem).",
+        "Nejasnost ohledně efektivity nově zavedených opatření (online kurzy, dělení hodin) kvůli nedávné době realizace.",
+        "Chybí informace o celkové četnosti absence a prospěchu žáků."
+      ]
+    }
+  }
+}

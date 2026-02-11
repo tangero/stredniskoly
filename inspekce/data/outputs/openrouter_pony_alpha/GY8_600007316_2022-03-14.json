@@ -1,0 +1,110 @@
+{
+  "report_id": "GY8_600007316_2022-03-14",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:09:10.455843+00:00",
+  "run_finished_utc": "2026-02-10T07:10:23.211374+00:00",
+  "raw_file": "GY8_600007316_2022-03-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007316_2022-03-14",
+    "school_profile": {
+      "school_type": "Gymnázium s osmiletým a čtyřletým oborem",
+      "inspection_period": "14. − 16. března 2022",
+      "school_change_summary": "Škola od poslední inspekce zvýšila počet žáků na 85 % kapacity a výrazně zlepšila materiální podmínky včetně nové sportovní haly."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky",
+          "detail": "Výuka cizích jazyků je na vysoké úrovni a žáci v ní dosahují nadprůměrných výsledků v porovnání s republikou.",
+          "evidence": "Ve společné části maturitní zkoušky jsou výsledky v cizím jazyce v průměru dlouhodobě lepší, než je průměr stejného oboru vzdělání v republice."
+        },
+        {
+          "tag": "Prostředí",
+          "detail": "Škola nabízí kvalitní zázemí včetně nové sportovní haly a upravených prostor pro odpočinek či studium.",
+          "evidence": "Vznikla nová sportovní hala, relaxační a studijní kouty pro žáky, jezírko a přírodní zahrada a zlepšilo se vybavení v oblasti informačních technologií."
+        },
+        {
+          "tag": "Kompetence",
+          "detail": "Důraz na ročníkové práce a projekty efektivně rozvíjí dovednosti žáků přesahující běžnou výuku.",
+          "evidence": "K rozvoji klíčových kompetencí žáků účinně přispívají ročníkové práce, doporučované k účasti v přehlídkách Středoškolské odborné činnosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturita",
+          "detail": "Část žáků má problémy s úspěšným ukončením studia, zejména v náročnějším čtyřletém oboru.",
+          "evidence": "Hrubá neúspěšnost... se v posledních třech letech pohybuje mezi 2,9 až 5,2 %. Na níž se podílejí především žáci čtyřletého oboru vzdělání."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Žáci dostávají málo informací o tom, jak si skutečně vedou, což může vést k překvapivým neúspěchům u maturity.",
+          "evidence": "Polovina žáků, kteří konali v minulých třech letech opravnou maturitní zkoušku, nebyla z vyučovacího předmětu zkoušky na konci závěrečného ročníku hodnocena horším stupněm než dobrým."
+        },
+        {
+          "tag": "Výuka",
+          "detail": "Škola nepracuje dostatečně individuálně s nadanými dětmi ani s těmi, kteří mají potíže s učením.",
+          "evidence": "Malá diferenciace obsahu probíraného učiva ve vyučovacích hodinách vedla k méně účinné podpoře žáků nadaných i ohrožených školní neúspěšností."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola reaguje na fakt, že polovina žáků u opravné maturity nebyla ze třídy hodnocena špatně?",
+        "Jakým konkrétním způsobem učitelé zajišťují, aby výuka nebyla jen frontální přednáškou?",
+        "Jak škola systematicky pracuje s žáky, aby se předešlo neúspěchu u maturitní zkoušky?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí dosáhnout vynikajících výsledků v cizích jazycích a získat mezinárodní certifikáty.",
+        "Pro samostatné žáky, kteří nevyžadují častou zpětnou vazbu a intenzivní individuální podporu od učitelů.",
+        "Pro zájemce o aktivní zapojení do projektů, soutěží a bohatého společenského života školy."
+      ],
+      "who_should_be_cautious": [
+        "Pro uchazeče o čtyřletý obor, kde je statisticky vyšší riziko neúspěchu u maturitní zkoušky.",
+        "Pro žáky, kteří potřebují časté hodnocení a individuální přístup, aby se učivo dobře zvládlo.",
+        "Pro rodiče, kteří očekávají, že známky ve vysvědčení budou vždy přesně odpovídat znalostem nutným pro maturitu."
+      ],
+      "plain_czech_summary": "Gymnázium má v Mělníku dobrou pověst a moderní prostředí s novou halou a zahradou. Škola výborně učí cizí jazyky a nabízí spoustu projektů. Pozor si dejte na čtyřletý obor, kde je vyšší počet neúspěšných maturit. Slabinou je málo individuální přístupu a ne vždy upřímné známkování, takže dobré známky nemusí garantovat hladké složení maturity. Škola spíše předpokládá, že se žáci o sebe dokážou postarat sami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavá úspěšnost s výrazným podílem opravných zkoušek",
+        "key_numbers": [
+          "2,9 až 5,2 % hrubá neúspěšnost u maturity",
+          "15 % žáků konalo opravnou zkoušku",
+          "Více než 1/3 žáků maturuje s vyznamenáním"
+        ],
+        "evidence": "Dlouhodobě kolísavé jsou výsledky žáků při ukončování vzdělávání maturitní zkouškou... zároveň však 15 % žáků konalo v minulých třech letech opravnou zkoušku."
+      },
+      "absence": {
+        "trend": "Nízká a klesající",
+        "key_numbers": [
+          "cca 100 hodin na žáka (2018/19)",
+          "nízký podíl neomluvené absence"
+        ],
+        "evidence": "Absence žáků se ve školním roce 2018/2019 pohybovala kolem 100 hodin na žáka... podíl neomluvené absence je nízký."
+      },
+      "support_services": [
+        "Funkční školní poradenské pracoviště s psychologem",
+        "Podpora vzdělávání cizinců bez jazykové bariéry",
+        "Spolupráce se spolkem rodičů při zlepšování vybavení"
+      ],
+      "safety_climate": [
+        "Pozitivní atmosféra a vzájemný respekt mezi učiteli a žáky",
+        "Nízká míra úrazovosti",
+        "Počet pochval převyšuje počet kázeňských opatření"
+      ],
+      "partnerships_practice": [
+        "Aktivní zapojení do společenského života města",
+        "Spolupráce se středními a vysokými školami",
+        "Funkční studentská rada zohledňovaná vedením"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěry a doporučení explicitně vyjadřují klíční problémy (neobjektivní klasifikace, málo diferenciace).",
+      "uncertainty_notes": [
+        "Není zcela jasné, zda problémy s maturitou postihují i osmiletý obor, nebo jen čtyřletý, text je v tomto nejednoznačný (statistika se vztahuje k 'minulým třem letům' celkem)."
+      ]
+    }
+  }
+}

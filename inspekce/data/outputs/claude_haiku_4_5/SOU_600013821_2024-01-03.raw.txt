@@ -1,0 +1,115 @@
+```json
+{
+  "report_id": "SOU_600013821_2024-01-03",
+  "school_profile": {
+    "school_type": "Střední škola polytechnická (8 tříletých oborů s výučním listem, 3 čtyřleté obory s maturitou, 1 nástavbový obor)",
+    "inspection_period": "3. 1. – 5. 1. a 8. 1. 2024",
+    "school_change_summary": "Nové vedení školy, zřízení pozice školního psychologa, výrazný nárůst počtu žáků o 25 % (celkem 1097 žáků), modernizace učeben (3D tisk, instalatérské učebny, elektro učebny), rozšíření nabídky o nástavbový obor Podnikání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka na vysoké úrovni",
+        "detail": "Moderně vybavené dílny a učebny odpovídají aktuálním trendům, kvalitní propojení s reálnou praxí prostřednictvím smluvních partnerů.",
+        "evidence": "Materiální zázemí odborného výcviku má výbornou úroveň, učitelé mají jasně nastavená pravidla a vhodné metodické vedení."
+      },
+      {
+        "tag": "Péče o ubytované žáky",
+        "detail": "Domov mládeže nabízí kvalitní prostředí, rozmanitou nabídku volnočasových aktivit a podporu osobnostního rozvoje.",
+        "evidence": "Domov mládeže má nastavené optimální podmínky pro průběh a výsledky vzdělávání, přispívá k osobnostnímu rozvoji a sociálním kompetencím."
+      },
+      {
+        "tag": "Silné poradenské služby",
+        "detail": "Školní poradenské pracoviště poskytuje podporu žákům se speciálními potřebami, kariérové poradenství a psychologickou pomoc.",
+        "evidence": "Školní poradenské pracoviště zabezpečuje poskytování poradenských služeb na velmi dobré úrovni, nově zřízena pozice školního psychologa."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Zejména v oborech s výučním listem a zkráceném studiu dosahuje absence přes 200 hodin na žáka za rok, což vede k předčasnému ukončování vzdělávání.",
+        "evidence": "Ve školním roce 2022/2023 dosáhli žáci zkráceného studia a oborů Zedník, Truhlář, Montér více než 200 hodin absence na žáka za školní rok."
+      },
+      {
+        "tag": "Slabá teoretická výuka",
+        "detail": "Převažuje frontální výuka s málo aktivním zapojením žáků, nedostatečný rozvoj kritického myšlení a práce s informacemi.",
+        "evidence": "V převažující části teoretické výuky převládala frontální forma s předáváním hotových informací, žáci byli vedeni k využívání digitálních technologií minimálně."
+      },
+      {
+        "tag": "Nejednotné pravidla hodnocení",
+        "detail": "Předmětové komise nejsou dostatečně koordinovány, některé učitele podmiňují známku účastí na 'maturitní generálce', což neodpovídá školnímu řádu.",
+        "evidence": "Nedůsledné vedení činnosti předmětových komisí vedlo k větší složitosti a nejednotnosti systému hodnocení výsledků vzdělávání."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky pro jejich prospěch?",
+      "Jaké konkrétní metody používají učitelé teoretických předmětů k aktivnímu zapojení žáků do výuky?",
+      "Jak funguje systém doučování a individuální podpory pro žáky se slabšími výsledky?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a řemesla – praktická výuka je na vysoké úrovni s moderním vybavením",
+      "Žáci z jiných regionů – kvalitní domov mládeže s bohatou nabídkou aktivit a péčí o osobnostní rozvoj",
+      "Žáci se speciálními vzdělávacími potřebami – silné poradenské pracoviště a individuální podpora"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují aktivní a interaktivní výuku – teoretické předměty jsou vedeny převážně frontálně",
+      "Žáci s tendencí k absencím – vysoká absence v některých oborech vede k předčasnému ukončení vzdělávání",
+      "Žáci v nástavbovém oboru Podnikání – hrubá neúspěšnost u maturity dosahuje 32 %, absence je vysoká"
+    ],
+    "plain_czech_summary": "Škola je moderně vybavená polytechnika se silným zaměřením na praktickou výuku a kvalitní péčí o ubytované žáky. Praktické vyučování probíhá na vysoké úrovni s moderními dílnami a propojením s reálnou praxí. Poradenské služby jsou na velmi dobré úrovni. Hlavní slabinou je teoretická výuka, která je příliš frontální s málo aktivním zapojením žáků. Problémem je také vysoká absence v některých oborech a nejednotné pravidla hodnocení. Škola se snaží zlepšovat, ale v teoretické výuce je prostor pro změny."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý, s výrazným problémem v nástavbovém oboru Podnikání",
+      "key_numbers": [
+        "Nástavbový obor Podnikání: 57 % neúspěšnosti (2021), 29 % (2022), 32 % (2023)",
+        "Ostatní obory s maturitou: neúspěšnost 0–18 %, vývoj kolísavý",
+        "Závěrečné zkoušky: stabilní výsledky, neúspěšnost 0–3 %"
+      ],
+      "evidence": "Nejvyšší hrubou neúspěšnost vykazují žáci nástavbového oboru Podnikání, kde absence dosahuje 177–200 hodin na žáka za rok."
+    },
+    "absence": {
+      "trend": "Vysoká a problematická, zejména v oborech s výučním listem a zkráceném studiu",
+      "key_numbers": [
+        "Průměr školy 2022/2023: 167 hodin na žáka za rok",
+        "Zkrácené studium a obory (Zedník, Truhlář, Montér): přes 200 hodin na žáka za rok",
+        "Neomluvená absence: cca 5 % z celkové absence"
+      ],
+      "evidence": "Po ukončení distanční výuky se absence zvýšila z 139 hodin (2020/2021) na 190 hodin (2021/2022), v 2022/2023 poklesla na 167 hodin."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště na velmi dobré úrovni s výchovnou poradkyní jako součástí vedení",
+      "Nově zřízená pozice školního psychologa",
+      "Individuální podpora žáků se speciálními vzdělávacími potřebami (18 % žáků)",
+      "Doučování a individuální konzultace pro žáky ohrožené školní neúspěšností",
+      "Kariérové poradenství a diagnosticko-poradenská podpora",
+      "Podpora žáků s odlišným mateřským jazykem (37 žáků)"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra ve vyučovacích hodinách, žáci dodržují pravidla",
+      "Adaptační kurz pro první ročníky mimo školu s programem seznamovacích a sportovních aktivit",
+      "Relaxační prostory pro žáky ('akvárko'), schránka důvěry, konzultace s pedagogy",
+      "Prevence rizikového chování zajišťovaná školní metodičkou prevence",
+      "Žákovský parlament s širokým rozsahem působnosti podporující sociální a komunikativní kompetence",
+      "Domovní rada v domově mládeže zajišťující zdravé klima"
+    ],
+    "partnerships_practice": [
+      "Kvalitní partnerské vztahy se zaměstnavateli a profesními cechy, které se promítají do výuky",
+      "Část praktického vyučování probíhá na pracovištích smluvních partnerů s optimálními podmínkami",
+      "Pravidelná setkání vedení s řediteli středních škol v regionu",
+      "Fakultní škola Masarykovy univerzity",
+      "Spolupráce s Vysokým učením technickým v Brně a Mendelovou univerzitou",
+      "Zapojení do několika projektů na podporu vzdělávání"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně identifikovány s důkazy. Některé pasáže jsou však technicky náročnější (např. popis systému hodnocení), ale pro rodiče jsou nejdůležitější informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní 'aktivizační metody' by měly být zavedeny v teoretické výuce – jde o obecné doporučení",
+      "Není jasné, zda vysoká absence v některých oborech je důsledkem náročnosti oboru nebo jiných faktorů",
+      "Údaje o prospěchu jsou agregované – není jasné, jak se liší mezi jednotlivými obory a třídami"
+    ]
+  }
+}
+```

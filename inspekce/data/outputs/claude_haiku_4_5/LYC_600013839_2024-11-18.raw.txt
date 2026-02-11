@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "LYC_600013839_2024-11-18",
+  "school_profile": {
+    "school_type": "Střední škola - Obchodní akademie ELDO, o.p.s. (obecně prospěšná společnost)",
+    "inspection_period": "18. 11. 2024 - 20. 11. 2024",
+    "school_change_summary": "Škola prošla výraznou transformací: nová ředitelka od 2023/2024, posílené vedení o druhou zástupkyni, počet žáků vzrostl o 24 % na 450 žáků v 18 třídách. Rozšířena nabídka oborů o zaměření na marketingovou komunikaci. Zkvalitnění materiálního vybavení, zejména IT technologií."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Silné partnerství se firmami",
+        "detail": "Škola má dlouhodobou spolupráci se sociálními partnery a firmami v regionu, která zvyšuje odborné kompetence žáků.",
+        "evidence": "Pořádání soutěže v oblasti finanční gramotnosti pro základní školy, do níž se zapojilo 14 ZŠ."
+      },
+      {
+        "tag": "Aktivní zapojení žáků",
+        "detail": "Žáci se účastní mnoha odborných soutěží a aktivit, které rozvíjejí jejich osobnostní a komunikační kompetence.",
+        "evidence": "Soutěže: Zaúčtuj To!, ekonomická olympiáda, Business Point, výtvarné soutěže, školní kolo logických her."
+      },
+      {
+        "tag": "Zlepšující se výsledky maturit",
+        "detail": "Vedení školy systematicky pracuje na zvýšení úspěšnosti u maturitní zkoušky s viditelným efektem.",
+        "evidence": "Hrubá neúspěšnost u oboru management sportu poklesla z 50 % na 31 %, zlepšily se výsledky společné části."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky jednoho oboru",
+        "detail": "Obor pedagogické lyceum zaznamenal zhoršení - hrubá neúspěšnost vzrostla na 13,3 % oproti 0 % v předchozím roce.",
+        "evidence": "Všichni žáci byli úspěšní v předchozím roce, letos 13,3 % neprospělo u maturity."
+      },
+      {
+        "tag": "Omezená diferenciace ve výuce",
+        "detail": "Učitelé méně často zařazují kooperativní činnosti a individualizovanou výuku podle schopností žáků.",
+        "evidence": "Inspektoři zaznamenali ojediněle využitou diferenciaci výuky zohledňující individuální potřeby."
+      },
+      {
+        "tag": "Nový management bez dlouhodobého dokladu",
+        "detail": "Ředitelka a zástupkyně jsou ve funkcích krátkou dobu, dopad jejich hospitační činnosti na kvalitu výuky není dosud jasný.",
+        "evidence": "Ředitelka ve funkci od 2023/2024, nelze posoudit dopad na zkvalitnění výuky vzhledem ke krátké době."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s učením? Jaké jsou možnosti doučování a konzultací?",
+      "Jaké jsou plány na zlepšení výsledků oboru pedagogické lyceum, kde letos vzrostla neúspěšnost?",
+      "Jak škola pracuje s nadanými žáky a jaké má pro ně speciální programy?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o obchodní, ekonomické a pedagogické obory s ambicí se zapojit do soutěží a projektů",
+      "Studenti, kteří oceňují praktickou výuku a spolupráci se skutečnými firmami v regionu",
+      "Žáci, kterým vyhovuje aktivní školní prostředí s mnoha mimoškolními aktivitami a akcemi"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s výrazně slabšími výsledky - obor management sportu má stále vysokou neúspěšnost (31 %), i když se zlepšil",
+      "Studenti, kteří potřebují individualizovanou výuku - inspektoři zaznamenali omezené zařazování diferenciace",
+      "Zájemci o pedagogické lyceum - tento obor zaznamenal letos zhoršení výsledků maturit"
+    ],
+    "plain_czech_summary": "Obchodní akademie ELDO je dynamicky se rozvíjející střední škola s novým vedením, které systematicky zlepšuje podmínky a výsledky. Počet žáků vzrostl o čtvrtinu. Silnými stránkami jsou partnerství se firmami, aktivní zapojení žáků do soutěží a zlepšující se výsledky maturit. Slabší je diferenciace výuky a výsledky oboru pedagogické lyceum. Škola nabízí kvalitní praktickou výuku a moderní vybavení, ale žáci se slabšími výsledky by měli zvážit intenzivní podporu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Obor management sportu: hrubá neúspěšnost poklesla z 50 % na 31 %",
+        "Obor pedagogické lyceum: hrubá neúspěšnost vzrostla na 13,3 % (předchozí rok 0 %)",
+        "Zlepšily se výsledky společné části maturitní zkoušky"
+      ],
+      "evidence": "Vedení školy zavedlo předmaturitní didaktické testy, souhrnné ověřovací zkoušky, rozdělení žáků na skupiny ve čtvrtém ročníku a praktickou odbornou zkoušku nanečisto."
+    },
+    "absence": {
+      "trend": "Výrazně se zlepšující",
+      "key_numbers": [
+        "Průměr zameškaných hodin na žáka klesl z 258 hodin na 166 hodin",
+        "Výrazné snížení absence především u žáků čtvrtých ročníků",
+        "Důsledné dodržování stanovené hranice možné nepřítomnosti"
+      ],
+      "evidence": "Při minulé inspekci 258 hodin/žáka, ve školním roce 2023/2024 klesl na 166 hodin/žáka."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště koordinované zástupkyní ředitelky s výchovnou poradkyní a kariérovou poradkyní",
+      "Plány pedagogické podpory pro žáky s potřebou podpůrných opatření, pravidelně vyhodnocované",
+      "Nově koordinátorka pro práci s nadanými žáky (v začátcích)",
+      "Doučování a individuální konzultace s učiteli pro žáky ohrožené školním neúspěchem",
+      "Individuální vzdělávací plány pro sportovní reprezentanty"
+    ],
+    "safety_climate": [
+      "Pravidla pro prevenci sociálně-patologických jevů s metodičkou prevence",
+      "Preventivní aktivity zaměřené na eliminaci rizikového chování, posilování vztahů mezi žáky a vytváření vstřícného klimatu",
+      "Zapojení externích organizací do preventivních aktivit",
+      "Podíl udělených pochval převyšuje počet kázeňských opatření, což pozitivně ovlivňuje motivaci žáků",
+      "Bezpečné chování vedeno v tělesné výchově"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se školami různých stupňů (od MŠ po VŠ)",
+      "Spolupráce s firmami a sociálními partnery pro zvyšování odborných kompetencí",
+      "Organizace soutěže v oblasti finanční gramotnosti pro základní školy (14 ZŠ v prvním ročníku)",
+      "Praktické vyučování organizováno u řady partnerských subjektů na základě smluvních vztahů",
+      "Tělesná výchova realizována v externích sportovních zařízeních"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři (např. popis hospitační činnosti).",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně se poznatky z dalšího vzdělávání pedagogů promítají do kvality výuky - inspektoři to nemohli ověřit",
+      "Dopad nového vedení na kvalitu výuky nelze posoudit vzhledem ke krátké době jejich činnosti",
+      "Není specifikováno, proč se zhoršily výsledky oboru pedagogické lyceum"
+    ]
+  }
+}
+```

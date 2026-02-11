@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY8_600017923_2024-11-01",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium s všeobecným zaměřením, příprava na vysoké školy",
+    "inspection_period": "1.–5. listopadu 2024",
+    "school_change_summary": "Od poslední inspekce (2019) došlo zejména ke zlepšení materiálních podmínek. Škola má stabilizovaný pedagogický sbor a rozvíjí partnerské vztahy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Škola dosahuje nulové nebo téměř nulové neúspěšnosti u společné části maturitní zkoušky, což je lepší než celorepublikový průměr.",
+        "evidence": "\"nulovou hrubou neúspěšnost u společné části maturitní zkoušky\" a \"80% úspěšnost absolventů při přijetí na vysoké školy\""
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Škola vytváří vstřícné prostředí s dobrými vztahy mezi žáky a pedagogy, nízkou absencí a pozitivní motivací.",
+        "evidence": "\"Vytvoření vstřícného prostředí pro vzdělávání\" a \"škola se nepotýká s vysokou absencí žáků\""
+      },
+      {
+        "tag": "Moderní vybavení a péče o talenty",
+        "detail": "Postupně se modernizují učebny, pořizují nové pomůcky a škola podporuje účast nadaných žáků v soutěžích.",
+        "evidence": "\"Odborné i kmenové učebny jsou udržovány a postupně modernizovány\" a \"nejúspěšnější z nich reprezentují školu v okresních kolech\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Tradiční výuka bez aktivizace",
+        "detail": "Výuka se často opírá o frontální vyučování bez dostatku skupinové práce, diskusí a samostatného zkoumání žáků.",
+        "evidence": "\"převažovalo frontálně vedené vyučování\" a \"Kooperativní aktivity ve flexibilních skupinách byly zařazeny v nižší míře\""
+      },
+      {
+        "tag": "Slabá individualizace a diferenciace",
+        "detail": "Učitelé jen málo nabízejí různé úkoly podle schopností jednotlivých žáků a jejich tempa práce.",
+        "evidence": "\"Učitelé jen v malé míře nabízeli žákům odlišné úkoly s ohledem na jejich individuální možnosti\""
+      },
+      {
+        "tag": "Minimální formativní hodnocení",
+        "detail": "Chybí zpětná vazba od žáků o jejich pokroku a vzájemné hodnocení mezi spolužáky podle kritérií.",
+        "evidence": "\"Formativní hodnocení bylo využito minimálně\" a \"pouze ojediněle k rozvíjení schopnosti objektivního posouzení výkonu spolužáků\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky v jejich rozvoji během studia?",
+      "Jaké metody používáte k tomu, aby se žáci učili samostatně myslet a hledat informace?",
+      "Jak se škola snaží přizpůsobit výuku různým tempům a stylům učení jednotlivých žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si chtějí připravit solidní základ pro vysokou školu a mají zájem o všeobecné vzdělání",
+      "Motivovaní žáci, kteří se dobře učí z tradičního frontálního vyučování a jsou schopni samostatné práce",
+      "Talentovaní žáci, kteří se chtějí zapojit do soutěží a projektů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a skupinové práce k tomu, aby se učili efektivně",
+      "Žáci se speciálními vzdělávacími potřebami, protože individuální přístup není v praxi dostatečně sledován",
+      "Žáci, kteří se lépe učí experimentováním a vlastním objevováním, nikoliv předáváním hotových poznatků"
+    ],
+    "plain_czech_summary": "Gymnázium v Lipníku nad Bečvou je stabilní škola s výborným úspěchem u maturit (80 % absolventů na vysoké školy) a bezpečným prostředím. Má moderní vybavení a podporuje talentované žáky. Hlavní slabinou je tradiční výuka zaměřená na frontální vyučování bez dostatku skupinové práce, samostatného zkoumání a individuálního přístupu. Škola by měla více využívat aktivní metody, formativní hodnocení a diferenciaci podle potřeb jednotlivých žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "Nulová nebo téměř nulová neúspěšnost u společné části maturitní zkoušky",
+        "80 % úspěšnost absolventů při přijetí na vysoké školy",
+        "Lepší výsledky než celorepublikový průměr v oboru"
+      ],
+      "evidence": "\"škola vykazuje lepší výsledky ve srovnání s celorepublikovou průměrnou úspěšností\""
+    },
+    "absence": {
+      "trend": "Nízká absence",
+      "key_numbers": [
+        "Škola se nepotýká s vysokou absencí žáků"
+      ],
+      "evidence": "\"na dosahované výsledky vzdělávání pozitivně působí skutečnost, že se škola nepotýká s vysokou absencí žáků\""
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodička prevence a kariérová poradkyně",
+      "Individuální konzultace a doučování pro žáky s rizikem neúspěchu",
+      "Poradenské služby v rozsahu základního standardu"
+    ],
+    "safety_climate": [
+      "Bezpečná sociální atmosféra ve třídách",
+      "Seznamování s riziky a poučení v oblasti bezpečnosti zahrnuté do vzdělávání",
+      "Podpora správného tělesného a duševního vývoje"
+    ],
+    "partnerships_practice": [
+      "Dobré vztahy se zřizovatelem (město Lipník nad Bečvou)",
+      "Spolupráce se soukromými subjekty, orgány veřejné správy a školskými poradenskými zařízeními",
+      "Partnerství s kulturními a tělovýchovnými institucemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však dlouhé a složitě strukturované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků se speciálními vzdělávacími potřebami ani nadaných žáků",
+      "Chybí konkrétní příklady neúspěšných vyučovacích hodin, které by lépe ilustrovaly problém s tradičním přístupem",
+      "Není jasné, jak dlouho trvá doučování a jaké jsou jeho výsledky"
+    ]
+  }
+}
+```

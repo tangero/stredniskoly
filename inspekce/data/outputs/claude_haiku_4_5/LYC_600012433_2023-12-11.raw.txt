@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "LYC_600012433_2023-12-11",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola chemická (maturitní obory: Aplikovaná chemie, Bezpečnostně právní činnost, Požární ochrana; výuční obory: Kadeřník, Chemik)",
+    "inspection_period": "11. až 14. prosince 2023",
+    "school_change_summary": "Zlepšilo se materiální vybavení a rozšířila se podpora mezinárodních aktivit. Přetrvávají problémy s řídicími mechanismy a efektivitou závěrů vyučovacích hodin."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná kvalita výuky",
+        "detail": "Učitelé jsou kvalifikovaní, mnozí mají praktické zkušenosti z výroby, což přináší realistickou přípravu na povolání.",
+        "evidence": "Pedagogický sbor je kvalifikovaný, učitelé s výrobní praxí přinášejí praktické odborné zkušenosti."
+      },
+      {
+        "tag": "Bohatá mimoškolní činnost",
+        "detail": "Škola nabízí mezinárodní projekty (Erasmus+), soutěže, exkurze a zájmové kroužky rozšiřující vzdělání.",
+        "evidence": "Dlouholeté zkušenosti s Erasmus+, akreditace pro odborné vzdělávání, členství v mezinárodních sítích."
+      },
+      {
+        "tag": "Moderní materiální vybavení",
+        "detail": "Odborné učebny jsou vybaveny kvalitním laboratorním zařízením, přístroji a pomůckami pro praktickou výuku.",
+        "evidence": "Vedení školy modernizuje vybavení odborných učeben, disponuje velkým množstvím laboratorního vybavení."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Přetížení kapacity školy",
+        "detail": "Škola je naplněna na maximum (1098 žáků z 1100 povolených), což negativně ovlivňuje organizaci a wellbeing žáků.",
+        "evidence": "Řada žáků má výuku několikrát v týdnu do šestnácti hodin, chybí klidné prostory k relaxaci, dlouhé fronty v jídelně."
+      },
+      {
+        "tag": "Slabá zpětná vazba v hodinách",
+        "detail": "Závěry vyučovacích hodin jsou málo efektivní, chybí ověřování dosažení vzdělávacích cílů a formativní hodnocení.",
+        "evidence": "Formální závěry hodin byly málo efektivní, nedocházelo k cílenému ověřování účelnosti zvolených metod."
+      },
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Výuka není přizpůsobena různým schopnostem žáků, tempo a náročnost jsou jednotné pro všechny.",
+        "evidence": "Ve většině hodin nebyla účelně diferencována výuka, ani směrem k žákům nadanějším."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší přetížení kapacity a jak to ovlivňuje kvalitu výuky a wellbeing žáků?",
+      "Jaké konkrétní kroky podniká škola na zlepšení diferenciace výuky pro žáky s různými schopnostmi?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a samostatného vyhledávání informací žáky?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou přípravu v chemii, bezpečnosti nebo požární ochraně s podporou kvalitních odborníků",
+      "Studenti se zájmem o mezinárodní zkušenosti a jazykový rozvoj (Erasmus+, rodilí mluvčí)",
+      "Žáci, kteří prospívají v tradičnější frontální výuce s jasnou strukturou a odborným vedením"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individuální přístup a diferenciovanou výuku – škola ji zatím nedostatečně nabízí",
+      "Studenti, kteří se lépe učí aktivními metodami a skupinovou prací – převažuje frontální výuka",
+      "Žáci citliví na hluk a stres – škola je přetížená, chybí klidné prostory k relaxaci"
+    ],
+    "plain_czech_summary": "Střední průmyslová škola chemická v Pardubicích je moderně vybavená škola s kvalitními učiteli a bohatou nabídkou mezinárodních projektů. Žáci se zde dobře připravují na povolání v chemii, bezpečnosti a požární ochraně. Hlavní problém je přetížení – škola je naplněna na maximum, což negativně ovlivňuje organizaci a pohodu žáků. Výuka je často pasivní, chybí diferenciace podle schopností a efektivní zpětná vazba. Škola je vhodná pro motivované žáky zaměřené na praxi, ale méně pro ty, kteří potřebují individuální přístup."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s mírným problémem",
+      "key_numbers": [
+        "Hrubá neúspěšnost okolo 15 % ve školním roce 2022/2023",
+        "Přibližně 12 % žáků prospělo s vyznamenáním",
+        "Pouze jednotky žáků neprospěly (přibližně 5 % po opravných zkouškách)"
+      ],
+      "evidence": "Výsledky žáků lze celkově hodnotit jako příznivé, průměrný prospěch se pohyboval v rozmezí 1,7 do 2,5."
+    },
+    "absence": {
+      "trend": "Dobře sledovaná a řešená",
+      "key_numbers": [
+        "Škola účinně sleduje a vyhodnocuje docházku žáků",
+        "Důležitým nástrojem jsou přezkoušení jednotlivců k doplnění hodnocení při zvýšené absenci"
+      ],
+      "evidence": "Škola účinně sleduje a vyhodnocuje docházku žáků, včetně příčin jejich neomluvených absencí."
+    },
+    "support_services": [
+      "Tři výchovné poradkyně, čtyři metodičky prevence, speciální pedagožka a sociální pedagožka",
+      "Primární prevence a výchovné poradenství zajišťované školním poradenským pracovištěm",
+      "Adaptační pobyty zaměřené na budování vztahů a diagnostiku rizikového chování",
+      "Preventivní programy na základě analýzy aktuálních potřeb",
+      "Žákovský parlament s aktivní účastí na chodu školy"
+    ],
+    "safety_climate": [
+      "Pozitivní a partnerská komunikace mezi žáky a učiteli s dodržováním pravidel",
+      "Klidné pracovní prostředí během sledované výuky",
+      "Důraz na bezpečnost práce v odborném výcviku – seznamování s riziky a osobními ochrannými prostředky",
+      "Pozornost věnována podchycení rizik v chování žáků ihned při zahájení studia"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s mnoha sociálními partnery napříč obory vzdělání",
+      "Erasmus+ akreditace pro odborné vzdělávání s organizováním odborných stáží",
+      "Členství v několika mezinárodních a národních sítích a skupinách",
+      "Spolupráce s Policií ČR, Vězeňskou službou ČR a dalšími institucemi",
+      "Smluvní partneři pro realizaci odborného výcviku a učební praxe"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, jasně rozlišuje silné a slabé stránky. Některé pasáže jsou však technicky náročné a obsahují úřednickou terminologii, která může být pro rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Přesné číslo žáků s vyznamenáním je uvedeno jako 'přibližně 12 %' – není jasné, zda jde o zaokrouhlení",
+      "Neúspěšnost u závěrečných zkoušek (11 %) se týká pouze oboru s výučním listem, není jasné, jak se to vztahuje k maturitním oborům",
+      "Zpráva nespecifikuje, které konkrétní obory mají problémy s diferenciací výuky"
+    ]
+  }
+}
+```

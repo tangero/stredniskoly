@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY8_600013057_2025-05-05",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium (12 tříd, 307 žáků)",
+    "inspection_period": "5.–13. května 2025",
+    "school_change_summary": "Od února 2022 došlo ke změně vedení (nový ředitel a zástupce od srpna 2023), průběžné zlepšování prostorových a materiálních podmínek (rekonstrukce střechy, fasády, učeben)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Bezmála polovina žáků končí rok s vyznamenáním, maturitní výsledky stabilně lepší než průměr gymnázií v ČR.",
+        "evidence": "V r. 2024 všichni žáci absolvovali maturitu úspěšně, polovina s vyznamenáním."
+      },
+      {
+        "tag": "Kvalitní pedagogický sbor",
+        "detail": "Stabilizovaný a kvalifikovaný tým, pouze jeden učitel bez odborné kvalifikace, pedagogové se průběžně vzdělávají.",
+        "evidence": "Pedagogický sbor je po obměně vedení stabilizovaný, kvalifikovaný."
+      },
+      {
+        "tag": "Bohaté mimoškolní aktivity",
+        "detail": "Žáci se uplatňují v soutěžích, olympiádách, projektech a úspěšné činnosti divadelního souboru.",
+        "evidence": "Žáci reprezentují školu v sportovních soutěžích, olympiádách (Bobřík informatiky, Lingvistická olympiáda)."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní přístup žáků ve výuce",
+        "detail": "Převažuje dominantní role učitele, žáci jsou pasivními příjemci informací, chybí diskuse a sebevyjádření.",
+        "evidence": "Převažovala dominantní role učitele, kdy většina žáků byla pasivním příjemcem sdělovaných informací."
+      },
+      {
+        "tag": "Chybí individualizace výuky",
+        "detail": "Učitelé pracují se všemi žáky stejnými metodami a tempem bez ohledu na jejich potřeby a pokrok.",
+        "evidence": "Absence individualizace a diferenciace vzhledem ke vzdělávacím potřebám žáků a jejich učebnímu potenciálu."
+      },
+      {
+        "tag": "Slabá zpětná vazba a sebehodnocení",
+        "detail": "Chybí závěry hodin, žáci nedostávají zpětnou vazbu o naplnění cílů, minimálně se sebehodnotí.",
+        "evidence": "Zhodnocení průběhu hodiny s efektivní zpětnou vazbou žákům téměř ve všech závěrech hodin chybělo."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje individuální pokrok každého žáka, zvláště těch, kteří se učí pomaleji nebo rychleji?",
+      "Jaké metody používáte, aby žáci více spolupracovali ve skupinách a rozvíjeli své komunikační dovednosti?",
+      "Jak se žáci podílejí na hodnocení své práce a jak dostávají zpětnou vazbu o svém pokroku?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a motivací k učení – škola má vysoké nároky a výborné výsledky.",
+      "Děti zajímající se o umění a kulturu – aktivní divadelní soubor a projektové dny.",
+      "Žáci, kterým vyhovuje tradičnější přístup k výuce s důrazem na odborné znalosti."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a skupinové práce – výuka je spíše frontální.",
+      "Děti se speciálními vzdělávacími potřebami – chybí systematické sledování naplňování podpůrných opatření.",
+      "Žáci, kteří se učí pomaleji nebo potřebují více individuálního přístupu – diferenciace je minimální."
+    ],
+    "plain_czech_summary": "Gymnázium Lanškroun je stabilní škola s výbornými výsledky a kvalitním pedagogickým sborem. Žáci dosahují vysokých studijních výsledků a úspěšně se uplatňují na vysokých školách. Škola nabízí bohaté mimoškolní aktivity. Hlavní výzvou je modernizace vyučovacích metod – výuka je zatím příliš frontální, chybí skupinová práce, individualizace a aktivní zapojení žáků. Škola by měla více podporovat sebehodnocení a vzájemné učení se mezi pedagogy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní a nadprůměrný",
+      "key_numbers": [
+        "V r. 2024: 100 % úspěšnost, 50 % s vyznamenáním",
+        "Výsledky lepší než průměr gymnázií v ČR",
+        "Úspěšné uplatnění absolventů na vysokých školách"
+      ],
+      "evidence": "V roce 2024 všichni žáci absolvovali maturitní zkoušku úspěšně, polovina žáků s vyznamenáním."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Údaj není v inspekční zprávě uveden"
+      ],
+      "evidence": "Inspekční zpráva se absencí nezabývá."
+    },
+    "support_services": [
+      "Výchovná poradkyně (zároveň kariérová poradkyně) – práce se žáky se speciálními vzdělávacími potřebami",
+      "Školní metodik prevence – preventivní program, sledování školního klimatu",
+      "Podpůrná opatření pro 11 žáků, individuální vzdělávací plán pro 1 žáka se speciálními potřebami a 1 se sportovním nadáním"
+    ],
+    "safety_climate": [
+      "Školní metodik prevence sleduje školní a třídní klima za podpory počítačového programu",
+      "Adaptační kurzy (2 dny) pro budování vztahů v kolektivech",
+      "Relaxační prostor pro žáky ve vestibulu (bude modernizován)"
+    ],
+    "partnerships_practice": [
+      "Komunikace s poradenskými zařízeními ohledně žáků se speciálními potřebami",
+      "Projektové dny (např. dvoudenní projekt VODA)",
+      "Exkurze a den praktické aktivity"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, jaká je absence žáků.",
+      "Údaje o čtyřletém studiu jsou méně detailní – pouze zmínka, že 13 % žáků skončilo s vyznamenáním (oproti více než 50 % v osmiletém).",
+      "Konkrétní počty žáků se speciálními potřebami a jejich pokrok nejsou detailně popsány."
+    ]
+  }
+}
+```

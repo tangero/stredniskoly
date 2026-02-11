@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600016471_2022-10-04",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté studium), příspěvková organizace",
+    "inspection_period": "4. 10. 2022 – 7. 10. 2022",
+    "school_change_summary": "Škola si udržuje vysokou kvalitu vzdělávání v jazykové a přírodovědné oblasti. Od inspekce v 2014 se zlepšilo vybavení výpočetní a prezentační technikou. Nově zavedeny semináře digitální technika a psychologie, posílena výuka informatiky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "100 % žáků uspělo u maturitní zkoušky, výsledky dlouhodobě nadprůměrné.",
+        "evidence": "Ve školním roce 2021/2022 uspělo u maturitní zkoušky 100 % žáků, pořadí nadprůměrné."
+      },
+      {
+        "tag": "Bohatá mimoškolní činnost",
+        "detail": "Rozsáhlá spolupráce s vysokými školami, zahraničními partnery, olympiády a soutěže.",
+        "evidence": "Škola má tradičně rozsáhlou spolupráci s partnery, výsledky v olympiádách nadprůměrné."
+      },
+      {
+        "tag": "Bezpečné a příjemné prostředí",
+        "detail": "Čisté, esteticky příjemné prostředí s odpočinkovými prostory a elektronickým zabezpečením.",
+        "evidence": "Vzdělávání probíhá v čistém a esteticky příjemném prostředí, vstup zabezpečen elektronickým systémem."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní způsob výuky",
+        "detail": "Převažuje frontální výuka s málo prostorem pro aktivní učení a prezentaci žáků.",
+        "evidence": "Ve většině hodin převládala méně efektivní frontální organizace, chybělo vedení k prezentaci."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Málo podpory pro slabší žáky a rozvoje nadaných žáků podle jejich schopností.",
+        "evidence": "Diferenciace výuky byla vhodně uplatněna pouze v menší míře sledovaných hodin."
+      },
+      {
+        "tag": "Chybí žákovská samospráva",
+        "detail": "Žáci nemají možnost aktivně se podílet na rozhodování a tvorbě pravidel školy.",
+        "evidence": "Žákovská samospráva, která by nabídla příležitost aktivně se podílet na procesech, není ve škole."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje slabší žáky a jak se věnuje nadaným žákům?",
+      "Jaké jsou plány na zavedení žákovské samosprávy a aktivnějšího zapojení žáků?",
+      "Jak se škola chystá zlepšit interaktivitu výuky a zavést více skupinové práce?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o přírodní vědy a cizí jazyky – škola na to klade důraz",
+      "Motivovaní žáci schopní zvládat náročné studium – vysoké výsledky u maturity",
+      "Žáci zajímající se o mezinárodní spolupráci – výměnné pobyty se školami v zahraničí"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující interaktivní a skupinovou práci – výuka je spíše frontální",
+      "Žáci se speciálními vzdělávacími potřebami – podpora je zajištěna, ale je jich málo",
+      "Žáci hledající aktivní podíl na chodu školy – chybí žákovská samospráva"
+    ],
+    "plain_czech_summary": "Gymnázium v Havířově je kvalitní škola s dlouhou tradicí, která dosahuje výborných výsledků u maturity (100 % úspěšnost) a má bohatou mezinárodní spolupráci. Prostředí je bezpečné a příjemné. Hlavní slabinou je převážně pasivní frontální výuka s málo prostorem pro aktivní učení žáků. Škola by měla více podporovat diferenciaci výuky a zavést žákovskou samosprávu. Vhodná pro motivované žáky se zájmem o jazyky a přírodní vědy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "100 % úspěšnost v řádném a náhradním termínu (2021/2022)",
+        "Nadprůměrné pořadí žáků mezi všemi maturanty",
+        "Výsledky srovnatelné s průměrem gymnázií v ČR"
+      ],
+      "evidence": "Ve školním roce 2021/2022 uspělo u maturitní zkoušky 100 % žáků, pořadí nadprůměrné, výsledky dlouhodobě korespondují s úspěšností."
+    },
+    "absence": {
+      "trend": "Velmi nízká",
+      "key_numbers": [
+        "Průměr 60 omluvených hodin na žáka za rok",
+        "Počet pochval výrazně převyšuje výchovná opatření",
+        "Bez snížených známek z chování"
+      ],
+      "evidence": "Průměrný počet omluvených hodin na jednoho žáka v uplynulém školním roce činil 60 hodin, počet pochval vysoko přesahuje počet opatření."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovným poradcem a dvěma metodiky prevence",
+      "Jazykový systém podpory žáků cizinců s výukou českého jazyka",
+      "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami"
+    ],
+    "safety_climate": [
+      "Elektronické zabezpečení vstupu do budovy",
+      "Analýza bezpečnostních rizik a nastavená pravidla",
+      "Průběžné poučení o bezpečném chování před akcemi",
+      "Zařízení splňují bezpečnostní požadavky"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se školami na Slovensku, v Rumunsku, Polsku a Španělsku",
+      "Partnerství s vysokými školami pro seznámení s moderním vybavením",
+      "Součinnost se základními školami na rozvoji talentovaných žáků",
+      "Projekt DoFE – 10 žáků v Mezinárodní ceně vévody z Edinburghu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Silné a slabé stránky jsou jasně vymezeny. Chybí však více konkrétních čísel o počtu žáků s problémy a detailnější údaje o absenci.",
+    "uncertainty_notes": [
+      "Není jasné, jak velký je podíl žáků, kteří mají problémy s aktivním učením – zpráva mluví o 'nedostatečném' využití, ale bez procent",
+      "Počet žáků se speciálními potřebami (7) a cizinců (5) je velmi nízký – není jasné, zda je to reprezentativní vzorek",
+      "Chybí informace o počtu žáků, kteří neprospívají nebo mají horší známky"
+    ]
+  }
+}
+```

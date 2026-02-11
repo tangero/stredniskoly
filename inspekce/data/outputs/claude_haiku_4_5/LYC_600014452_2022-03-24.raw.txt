@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_600014452_2022-03-24",
+  "school_profile": {
+    "school_type": "Střední škola Baltaci s.r.o. – soukromá škola s 4 obory: 2 maturitní (Hotelnictví, Informační technologie), 1 výuční (Kuchař-číšník), 1 nástavbový (Podnikání)",
+    "inspection_period": "24.–25. března a 29.–30. března 2022",
+    "school_change_summary": "Škola prošla výraznou transformací: změna zřizovatele (2015), nové vedení (2019), obměna pedagogického sboru a výrazné zlepšení materiálního vybavení pro jazykové a odborné vzdělání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava v praxi",
+        "detail": "Škola efektivně využívá hotelové a stravovací služby zřizovatele pro praktickou přípravu žáků v oborech Hotelnictví a Kuchař-číšník.",
+        "evidence": "Žáci si rozvíjejí odborné kompetence pod vedením učitelů a instruktorů na pracovištích zřizovatele."
+      },
+      {
+        "tag": "Jasná vize a strategie",
+        "detail": "Škola má srozumitelně nastavenou vizi v Dlouhodobém plánu rozvoje na 2019–2025 s logicky rozčleněnými cíli.",
+        "evidence": "Vedení komunikuje strategii s pedagogy a rodiči, kteří se s ní identifikují a zapracovávají své podněty."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola má kvalitní technické zázemí, didaktické pomůcky a digitální technologie pro efektivní výuku.",
+        "evidence": "Zlepšily se podmínky pro jazykové vzdělání, odborný výcvik a práci s digitálními technologiemi."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky v IT oborech",
+        "detail": "Obor Informační technologie vykazuje zhoršující se výsledky maturit, které zaostávají za republikovým průměrem.",
+        "evidence": "Neuspěla více než čtvrtina žáků v profilové části maturitní zkoušky, výsledky se zhoršují."
+      },
+      {
+        "tag": "Nedostatečné aktivizační metody",
+        "detail": "Škola zatím jen v malé míře zařazuje do výuky moderní metody a formy, včetně prvků formativního hodnocení.",
+        "evidence": "Chybí spolupráce žáků při řešení úloh, nedostatečná práce se všemi žáky, chybí zhodnocení učiva na konci hodin."
+      },
+      {
+        "tag": "Nízká motivace slabších žáků",
+        "detail": "Nabízenou pomoc (doučování, konzultace) využívá pouze malá část dostatečně motivovaných žáků.",
+        "evidence": "Žáci se slabším prospěchem a zvýšenou absencí nejsou dostatečně motivováni k využívání podpory."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá praktická výuka v hotelech a restauracích? Jak často se žáci dostávají na pracovní místa?",
+      "Jaké konkrétní opatření škola zavedla pro zlepšení výsledků v oboru Informační technologie, kde se výsledky zhoršují?",
+      "Jak škola motivuje slabší žáky k využívání doučování a konzultací?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na hotelnictví a gastronomii – obor Hotelnictví má nejlepší výsledky a praktické zázemí",
+      "Žáci, kteří se učí lépe v praktickém prostředí – škola nabízí kvalitní odborný výcvik s moderním vybavením",
+      "Motivovaní žáci hledající jasnou strategii a strukturu – škola má dobře nastavené cíle a komunikaci s rodiči"
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o obor Informační technologie – výsledky maturit se zhoršují a zaostávají za průměrem",
+      "Žáci potřebující intenzivní podporu – škola nabízí doučování, ale využívá ho jen malá část žáků",
+      "Žáci preferující moderní interaktivní výuku – škola teprve zavádí aktivizační metody a formativní hodnocení"
+    ],
+    "plain_czech_summary": "Střední škola Baltaci je soukromá škola se zaměřením na hotelnictví a IT. Její největší silou je praktická příprava v oborech Hotelnictví a Kuchař-číšník, kde má kvalitní zázemí a výborné výsledky. Škola má jasnou vizi, moderní vybavení a dobrou komunikaci s rodiči. Slabinou je obor Informační technologie s klesajícími výsledky maturit. Škola také teprve zavádí moderní vyučovací metody a aktivizaci žáků. Vhodná pro motivované žáky zaměřené na praktickou přípravu v hotelnictví."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Rozdílný vývoj podle oboru: Hotelnictví se zlepšuje, Informační technologie se zhoršuje, Podnikání (dálka) zaostává",
+      "key_numbers": [
+        "Hotelnictví 2020/21: 100% úspěšnost",
+        "Informační technologie: více než 25% neúspěšných v profilové části",
+        "Podnikání (dálka): třetina neuspěla v angličtině"
+      ],
+      "evidence": "U Hotelnictví postupné zlepšování, u IT výrazné zaostávání za republikovým průměrem, u Podnikání zhoršení v posledních dvou letech."
+    },
+    "absence": {
+      "trend": "Škola systematicky identifikuje a sleduje žáky se zvýšenou absencí",
+      "key_numbers": [
+        "16 žáků se speciálními vzdělávacími potřebami",
+        "Žáci se slabším prospěchem a zvýšenou absencí jsou vedeni"
+      ],
+      "evidence": "Vedení školy a pedagogové se zabývají neúspěchy a problémy v učení, poskytují doučování a konzultace."
+    },
+    "support_services": [
+      "Metodička prevence a výchovná poradkyně na dobré úrovni",
+      "Adekvátní podpůrná opatření pro žáky se speciálními vzdělávacími potřebami (1.–2. stupeň)",
+      "Doučování a konzultace v jednotlivých předmětech, skupinové doučování pro maturující ročníky",
+      "Spolupráce se školskými poradenskými zařízeními"
+    ],
+    "safety_climate": [
+      "Prostředí školy je upravené, čisté a bezpečné",
+      "Vedení pravidelně vyhodnocuje bezpečnostní rizika a přijímá preventivní opatření",
+      "Žáci jsou průběžně informováni a poučováni o bezpečném chování ve škole i na pracovištích",
+      "Adaptační pobyty pro prvňáky přispívají k vytváření příznivého klimatu"
+    ],
+    "partnerships_practice": [
+      "Velmi dobrá spolupráce se zřizovatelem a jeho pracovišti pro praktickou výuku",
+      "Efektivní spolupráce se základními školami – oborově zaměřené soutěže a prezentace",
+      "Spolupráce se školami stejného zaměření v oblasti ukončování vzdělání a soutěží",
+      "Zapojení žáků do akcí pořádaných školou, zřizovatelem, dalšími organizacemi a městem Zlín"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné stránky a slabiny jsou jasně identifikovány. Některé pasáže jsou však administrativně husté a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Přesné počty žáků v jednotlivých oborech nejsou v přehledu uvedeny, pouze celkový počet 167 v denní formě",
+      "Konkrétní procenta neúspěšnosti v jednotlivých předmětech nejsou všude specifikována",
+      "Není jasné, jak se vyvíjely výsledky v posledních třech letech u oboru Kuchař-číšník (první zkoušky až 2020/21)"
+    ]
+  }
+}
+```

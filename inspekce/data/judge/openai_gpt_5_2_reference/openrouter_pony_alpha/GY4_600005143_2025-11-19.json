@@ -1,0 +1,29 @@
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-09T12:11:32.042526+00:00",
+  "run_finished_utc": "2026-02-09T12:11:58.089062+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY4_600005143_2025-11-19\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 5,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Tvrzení, že „výrazně vzrostla … kapacita školy“, není ve zdroji doloženo; zpráva naopak uvádí stabilní počet žáků a tříd a stabilní naplněnost (byť vzrostl zájem).\",\n    \"Údaj „Erasmus+ v 10 zemích“ neodpovídá zdroji: inspekční zpráva vyjmenovává více zemí (např. Řecko, Španělsko, SRN, VB, Rakousko, Dánsko, Itálie, Francie, Slovensko, USA, Kanada) a nefixuje počet na 10.\",\n    \"Formulace o „nadprůměrných výsledcích v maturitách“ je zjednodušující: nadprůměrné jsou zejména didaktické testy společné části, zatímco výsledky profilové části byly „vyrovnané, nebo o něco horší než republikový průměr“.\"\n  ],\n  \"best_points\": [\n    \"Dobře zachycené a zdrojem podložené klíčové silné stránky: materiální podmínky (sportoviště, modernizace), jazyková nabídka včetně DSD II a certifikátů, partnerské vazby (UK, Národní muzeum) a mobilitní aktivity.\",\n    \"Správně identifikované oblasti ke zlepšení z inspekce: nižší míra aktivizace v části výuky, převaha frontální výuky v některých hodinách, méně účinná zpětná vazba a nejednotná kritéria hodnocení.\",\n    \"Praktická struktura pro rodiče (silné stránky/rizika/otázky na den otevřených dveří), s většinou tvrzení opřenou o konkrétní pasáže zprávy.\"\n  ],\n  \"one_line_verdict\": \"Výstup je většinou věrný a pro rodiče užitečný, ale obsahuje několik konkrétně nepodložených údajů (kapacita, počet zemí Erasmus+) a místy zjednodušuje interpretaci maturitních výsledků.\"\n}",
+  "judge_output": {
+    "report_id": "GY4_600005143_2025-11-19",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 5,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "Tvrzení, že „výrazně vzrostla … kapacita školy“, není ve zdroji doloženo; zpráva naopak uvádí stabilní počet žáků a tříd a stabilní naplněnost (byť vzrostl zájem).",
+      "Údaj „Erasmus+ v 10 zemích“ neodpovídá zdroji: inspekční zpráva vyjmenovává více zemí (např. Řecko, Španělsko, SRN, VB, Rakousko, Dánsko, Itálie, Francie, Slovensko, USA, Kanada) a nefixuje počet na 10.",
+      "Formulace o „nadprůměrných výsledcích v maturitách“ je zjednodušující: nadprůměrné jsou zejména didaktické testy společné části, zatímco výsledky profilové části byly „vyrovnané, nebo o něco horší než republikový průměr“."
+    ],
+    "best_points": [
+      "Dobře zachycené a zdrojem podložené klíčové silné stránky: materiální podmínky (sportoviště, modernizace), jazyková nabídka včetně DSD II a certifikátů, partnerské vazby (UK, Národní muzeum) a mobilitní aktivity.",
+      "Správně identifikované oblasti ke zlepšení z inspekce: nižší míra aktivizace v části výuky, převaha frontální výuky v některých hodinách, méně účinná zpětná vazba a nejednotná kritéria hodnocení.",
+      "Praktická struktura pro rodiče (silné stránky/rizika/otázky na den otevřených dveří), s většinou tvrzení opřenou o konkrétní pasáže zprávy."
+    ],
+    "one_line_verdict": "Výstup je většinou věrný a pro rodiče užitečný, ale obsahuje několik konkrétně nepodložených údajů (kapacita, počet zemí Erasmus+) a místy zjednodušuje interpretaci maturitních výsledků."
+  }
+}

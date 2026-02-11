@@ -1,0 +1,49 @@
+{
+  "report_id": "SOU_610100530_2023-01-26",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:49:13.563425+00:00",
+  "run_finished_utc": "2026-02-09T16:49:21.190375+00:00",
+  "raw_file": "SOU_610100530_2023-01-26.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_610100530_2023-01-26",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola dopravní",
+      "inspection_period": "26. ledna až 31. ledna 2023",
+      "school_change_summary": "Dokument neobsahuje informace o změnách na škole."
+    },
+    "for_parents": {
+      "strengths": [],
+      "risks": [],
+      "questions_for_open_day": [],
+      "who_school_fits": [],
+      "who_should_be_cautious": [],
+      "plain_czech_summary": "Inspekční zpráva byla převedena do elektronické podoby. Původní listinný dokument obsahoval 9 stran. Konverzi provedla Česká školní inspekce dne 6. března 2023. Při převodu nedošlo ke ztrátě obsahu. Dokument je dostupný v centrální evidenci doložek."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Informace nejsou v dokumentu dostupné",
+        "key_numbers": [],
+        "evidence": "Dokument obsahuje pouze technické údaje o konverzi, ne obsah inspekce."
+      },
+      "absence": {
+        "trend": "Informace nejsou v dokumentu dostupné",
+        "key_numbers": [],
+        "evidence": "Dokument obsahuje pouze technické údaje o konverzi, ne obsah inspekce."
+      },
+      "support_services": [],
+      "safety_climate": [],
+      "partnerships_practice": []
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 1,
+      "czech_clarity_reason": "Dokument je pouze doložkou o konverzi. Neobsahuje skutečný obsah inspekční zprávy – chybí všechny relevantní informace o kvalitě vzdělávání, silných stránkách, rizicích a dalších aspektech školy.",
+      "uncertainty_notes": [
+        "Předaný text je pouze technickou doložkou, nikoliv samotnou inspekční zprávou",
+        "Skutečný obsah zprávy není v dodaném textu obsažen",
+        "Nelze poskytnout relevantní analýzu pro rodiče bez obsahu inspekce"
+      ]
+    }
+  }
+}

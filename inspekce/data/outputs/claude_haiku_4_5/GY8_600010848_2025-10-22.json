@@ -1,0 +1,118 @@
+{
+  "report_id": "GY8_600010848_2025-10-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:30:05.656458+00:00",
+  "run_finished_utc": "2026-02-09T13:30:29.942225+00:00",
+  "raw_file": "GY8_600010848_2025-10-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600010848_2025-10-22",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřletý a osmiletý program), příspěvková organizace",
+      "inspection_period": "22. 10. 2025 – 24. 10. 2025",
+      "school_change_summary": "Od července 2024 nová ředitelka, která zavedla projektové aktivity, mezinárodní spolupráci a rozšířila mimoškolní nabídku. Zlepšily se poradenské služby a příprava na maturitu, ale zhoršilo se školní klima v pedagogickém sboru."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělávání a mezinárodní spolupráce",
+          "detail": "Škola intenzivně připravuje žáky na certifikované jazykové zkoušky, někteří dosahují úrovně C1 či C2, a má partnerství se školou v Belgii.",
+          "evidence": "Žáci dosahují úrovně B2, C1 nebo C2 podle Evropského referenčního rámce."
+        },
+        {
+          "tag": "Vysoká úspěšnost u maturity",
+          "detail": "Všichni žáci osmiletého programu a všichni přihlášení žáci v roce 2025 uspěli u maturitní zkoušky.",
+          "evidence": "Zkušební období 2024: všichni osmiletého programu úspěšní, 2025: všichni přihlášení uspěli."
+        },
+        {
+          "tag": "Kvalitní poradenské služby a prevence",
+          "detail": "Školní poradenský tým systematicky podporuje žáky, realizuje preventivní programy a efektivně řeší rizikové chování.",
+          "evidence": "Od ledna 2025 pracuje speciální a sociální pedagožka, škola realizuje Program DofE a Patronství."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Napětí v pedagogickém sboru",
+          "detail": "Někteří učitelé se obávají rozporovat vedení, neshody nejsou řešeny a nevedou ke zlepšení spolupráce.",
+          "evidence": "Ředitelka si situaci uvědomuje a aktivně hledá řešení, ale cíl zlepšení klimatu se zatím plně nedosáhl."
+        },
+        {
+          "tag": "Málo individualizované výuky",
+          "detail": "Žáci zpravidla plnili úkoly stejné náročnosti bez ohledu na individuální schopnosti, diferenciace byla výjimečná.",
+          "evidence": "V hospitovaných hodinách byla diferenciace vzdělávacího obsahu využívána pouze výjimečně."
+        },
+        {
+          "tag": "Slabá práce s kritickým myšlením",
+          "detail": "Pedagogové nepravidelně zařazují práci s informačními zdroji a méně využívají metody podporující kritické myšlení.",
+          "evidence": "Inspekce identifikovala jako slabou stránku nedostatečnou práci s informačními zdroji a kritickým myšlením."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se škola snaží zlepšit komunikaci a vztahy v pedagogickém sboru?",
+        "Jaké konkrétní kroky podniká škola k individualizaci výuky a diferenciaci úkolů pro žáky s různými schopnostmi?",
+        "Jak se připravují žáci na práci s informačními zdroji a rozvojem kritického myšlení?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola má partnerství v zahraničí a intenzivně připravuje na certifikované zkoušky.",
+        "Nadaní a mimořádně nadaní žáci – škola je systematicky podporuje a motivuje k účasti v soutěžích a odborné činnosti.",
+        "Žáci, kteří potřebují kvalitní poradenství a podporu – školní poradenský tým je funkční a efektivní."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovanou výuku přizpůsobenou jejich tempu – diferenciace je zatím málo využívána.",
+        "Žáci, kteří se učí lépe samostatnou prací a kritickým myšlením – v některých předmětech převažuje frontální výklad.",
+        "Rodiny, které si cení otevřené komunikace se školou – v pedagogickém sboru jsou napětí, která se mohou projevit i v komunikaci se zákonnými zástupci."
+      ],
+      "plain_czech_summary": "Gymnázium v Roudnici nad Labem je kvalitní škola se silným zaměřením na jazykové vzdělávání a mezinárodní spolupráci. Žáci dosahují vysoké úspěšnosti u maturity a jsou motivováni k soutěžím. Poradenské služby fungují dobře. Hlavní výzvou je zlepšení klimatu v pedagogickém sboru a větší individualizace výuky. Škola si problémů je vědoma a aktivně na nich pracuje."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi vysoká úspěšnost",
+        "key_numbers": [
+          "Zkušební období 2024: všichni žáci osmiletého programu úspěšní, neuspěl 1 žák čtyřletého programu",
+          "Zkušební období 2025: všichni přihlášení žáci uspěli",
+          "Jazykové zkoušky: žáci dosahují úrovně B2, někteří C1 nebo C2"
+        ],
+        "evidence": "Vysoká úspěšnost školy je dokumentována výsledky maturitních zkoušek a certifikovaných jazykových zkoušek."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Velmi nízký počet žáků, kteří dělali opravné zkoušky nebo neprospěli"
+        ],
+        "evidence": "Efektivita poskytované podpory je dokumentována nízkým počtem neúspěšných žáků."
+      },
+      "support_services": [
+        "Výchovný poradce, školní metodička prevence, speciální a sociální pedagožka (od ledna 2025)",
+        "Individuální konzultace zaměřené na výběr volitelných předmětů a pomaturitní orientaci",
+        "Cílená individuální podpora ve výuce pro žáky s rizikem školního neúspěchu",
+        "Preventivní aktivity s akcentem na rozvoj zdravých návyků a psychohygieny",
+        "Program DofE zaměřený na osobní výzvy, dobrovolnictví a pohybové aktivity"
+      ],
+      "safety_climate": [
+        "Školní poradenský tým průběžně monitoruje signály rizikového chování",
+        "Nastavená pravidla postupu řešení rizikového chování",
+        "Systém primární prevence napomáhá eliminaci výskytu rizikového chování",
+        "Patronství – systém podpory mladších žáků staršími spolužáky",
+        "Třídnické hodiny, adaptační programy pro prvňáky, školní výlety a sportovní kurzy",
+        "Pozitivní ovlivňování přátelských vztahů mezi žáky"
+      ],
+      "partnerships_practice": [
+        "Partnerství se školou v Belgii se zaměřením na jazykové vzdělávání",
+        "Spolupráce s vysokými školami – gymnázium je Fakultní školou Přírodovědecké fakulty Univerzity Karlovy",
+        "Nově navázaná partnerství se základními a středními školami v regionu",
+        "Výměnné pobyty žáků a realizace společných projektů a soutěží",
+        "Zapojení žáků prostřednictvím školního parlamentu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní fakta, ale některé aspekty (např. absence, konkrétní čísla o klimatu) nejsou plně specifikovány. Hlavní zjištění jsou jasná a podložená.",
+      "uncertainty_notes": [
+        "Absence a jejich trend nejsou v textu specifikovány – nelze posoudit, zda je to problém.",
+        "Konkrétní čísla o počtu žáků se speciálními potřebami (20) a nadaných (3) jsou uvedena, ale bez trendu.",
+        "Školní klima je popsáno jako zhoršené, ale bez konkrétních číselných ukazatelů nebo průzkumů."
+      ]
+    }
+  }
+}

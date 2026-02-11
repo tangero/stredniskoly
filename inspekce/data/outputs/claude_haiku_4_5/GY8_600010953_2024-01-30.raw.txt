@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600010953_2024-01-30",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmiletý program)",
+    "inspection_period": "30. 1. 2024 – 1. 2. 2024",
+    "school_change_summary": "Škola vybudovala nové odborné učebny, zefektivnila podporu cizích jazyků a cíleně podporuje nadané žáky. Předchozí nedostatky byly odstraněny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Kvalitní výuka cizích jazyků s možností složit mezinárodní zkoušky Cambridge FCE a účastí v programu Erasmus+.",
+        "evidence": "Jazykové zkoušky Cambridge FCE, Erasmus+, metoda CLIL v hodinách"
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Aktivní vyhledávání a rozvoj talentu včetně účasti v středoškolské odborné činnosti na krajské i republikové úrovni.",
+        "evidence": "Úspěchy žáků ve středoškolské odborné činnosti, spolupráce s Centrem pro talentovanou mládež"
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Minimální výskyt rizikového chování a záškoláctví, efektivní prevence a podpora vztahů mezi žáky.",
+        "evidence": "Minimální výskyt rizikového chování, účinný systém primární prevence"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Práce s informačními zdroji",
+        "detail": "Žáci nejsou systematicky vedeni k práci s různými informačními zdroji a kritickému myšlení.",
+        "evidence": "Jen výjimečně pedagogové zařadili práci s různými informačními zdroji"
+      },
+      {
+        "tag": "Individualizace výuky",
+        "detail": "Diferenciace vzdělávací nabídky podle schopností žáků je zařazena jen výjimečně.",
+        "evidence": "Všichni žáci plnili obsahově i rozsahem náročnosti shodné úkoly"
+      },
+      {
+        "tag": "Formativní hodnocení",
+        "detail": "Zpětná vazba o pokroku žáků není poskytována dostatečně účinně.",
+        "evidence": "Formativní hodnocení bylo zařazováno ojediněle"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi?",
+      "Jaké konkrétní projekty Erasmus+ probíhají a jak se jich mohou žáci účastnit?",
+      "Jak se škola připravuje na odstranění zjištěných nedostatků v práci s informačními zdroji?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci",
+      "Nadaní a talentovaní žáci hledající podporu svého rozvoje",
+      "Žáci preferující bezpečné a podporující prostředí s dobrými vztahy"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individualizované přístupy a diferenciované úkoly",
+      "Žáci vyžadující intenzivnější zpětnou vazbu o svém pokroku",
+      "Žáci, kteří se učí lépe prací s různými informačními zdroji a kritickým myšlením"
+    ],
+    "plain_czech_summary": "Gymnázium v Žatci je kvalitní školou se silným zaměřením na jazykové vzdělání a podporu nadaných žáků. Má vynikající výsledky u maturit (100% úspěšnost v profilu 2023) a bezpečné prostředí. Inspekce však upozorňuje, že škola by měla více pracovat na individualizaci výuky, učit žáky pracovat s různými zdroji a rozvíjet jejich kritické myšlení. Pedagogům chybí dostatečná zpětná vazba o pokroku žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vynikající a stabilní",
+      "key_numbers": [
+        "100% úspěšnost v profilu 2023",
+        "Všichni žáci uspěli v společné části 2021-2023",
+        "2021-2022: neuspěl jen jeden žák v profilu"
+      ],
+      "evidence": "Ve zkušebních obdobích 2021-2023 uspěli všichni žáci v společné části, v roce 2023 100% úspěšnost v profilu"
+    },
+    "absence": {
+      "trend": "Velmi nízký výskyt",
+      "key_numbers": [
+        "Výjimečný výskyt záškoláctví",
+        "Minimální výskyt rizikového chování"
+      ],
+      "evidence": "O účinnosti nastaveného systému primární prevence svědčí minimální výskyt rizikového chování žáků včetně výjimečného výskytu záškoláctví"
+    },
+    "support_services": [
+      "Výchovná poradkyně zajišťuje efektivní karierové poradenství a informace o dalším studiu",
+      "Školní psycholožka a metodička prevence na velmi dobré úrovni",
+      "Žákovské doučování, kde starší žáci pomáhají mladším",
+      "Výuka FIE (Feuersteinovo instrumentální obohacování) na nižším gymnáziu"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra s oboustrannou důvěrou mezi učitelem a žákem",
+      "Velmi dobré prosociální vztahy a efektivní práce s třídními kolektivy",
+      "Adaptační pobyty pro nově nastupující žáky",
+      "Třídnické hodiny zaměřené na vztahová pravidla a dovednosti"
+    ],
+    "partnerships_practice": [
+      "Partnerství s tuzemskými i zahraničními školami",
+      "Program Erasmus+ podporující mezinárodní mobilitu",
+      "Certifikované středisko pro jazykové zkoušky Cambridge FCE",
+      "Spolupráce s Centrem pro talentovanou mládež"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně identifikovány s konkrétními příklady. Některé pasáže jsou však poměrně odborné a detailní.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků s speciálními potřebami v jednotlivých třídách",
+      "Chybí konkrétní data o počtu absence a záškoláctví (pouze kvalitativní popis)",
+      "Nejsou uvedeny konkrétní počty žáků, kteří se účastní jednotlivých podporujících programů"
+    ]
+  }
+}
+```

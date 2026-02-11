@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600008541_2023-03-07",
+  "school_profile": {
+    "school_type": "Gymnázium se třemi obory: čtyřleté, šestileté (s rozšířenou výukou francouzštiny) a osmileté studium",
+    "inspection_period": "7. března 2023 až 9. března 2023",
+    "school_change_summary": "Nový ředitel od roku 2018 postupně naplňuje koncepci podle modelu Kvalitní škola. Škola získala certifikát LabelFrancÉducation, zlepšila se komunikace mezi aktéry vzdělávání a od letošního roku zde působí školní psycholožka."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Škola dlouhodobě dosahuje velmi dobrých až výborných výsledků v maturitních zkouškách a testování.",
+        "evidence": "V osmiletém studiu výborné výsledky, téměř polovina žáků prospěla s vyznamenáním."
+      },
+      {
+        "tag": "Bohatá nabídka a projekty",
+        "detail": "Vzdělávání probíhá nejen ve vyučování, ale také prostřednictvím projektů, workshopů a exkurzí s mnoha partnery.",
+        "evidence": "Bohatá nabídka volitelných předmětů, mezipředmětové projekty, dlouhodobé pobyty v zahraničí."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Funkční poradenský tým včetně nové školní psycholožky poskytuje efektivní podporu všem žákům.",
+        "evidence": "Individuální vzdělávací plány, podpora nadaných žáků, prevence rizikového chování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Méně zpětné vazby pro učitele",
+        "detail": "Vedení školy provádí hospitace, ale vzhledem k velikosti sboru nejsou dostatečně časté.",
+        "evidence": "Menší četnost hospitací nepřináší zpětnou vazbu všem pedagogům."
+      },
+      {
+        "tag": "Chybí data o úspěchu absolventů",
+        "detail": "Škola systematicky nevyužívá informace o tom, jak si absolventi vedou na vysokých školách.",
+        "evidence": "Škole se zatím nedaří získat dostatečnou zpětnou vazbu o úspěšnosti absolventů na vysokých školách."
+      },
+      {
+        "tag": "Diferenciace ve výuce",
+        "detail": "Obsah výuky není vždy přizpůsoben individuálním potřebám jednotlivých žáků.",
+        "evidence": "Obsahová diferenciace výuky byla uplatněna jen ojediněle."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením, a jaké jsou možnosti individuální pomoci?",
+      "Jaké jsou zkušenosti absolventů se studiem na vysokých školách a jak je škola využívá pro zlepšování výuky?",
+      "Jak se liší přístup k výuce v šestiletém bilingvním programu a jaké jsou požadavky na úroveň francouzštiny při přijetí?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními předpoklady, kteří chtějí kvalitní přípravu na vysokou školu",
+      "Nadaní a talentovaní žáci, kterým vyhovuje bohatá nabídka projektů a soutěží",
+      "Zájemci o jazykové vzdělání, zejména o francouzštinu (šestileté studium s certifikátem LabelFrancÉducation)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní individuální podporu a diferenciaci – ta není vždy dostatečná",
+      "Žáci, kteří se lépe učí v menších skupinách – gymnázium je větší škola se 626 žáky",
+      "Zájemci o praktické vzdělání – gymnázium se zaměřuje na všeobecné vzdělání a přípravu na vysokou školu"
+    ],
+    "plain_czech_summary": "Gymnázium v Písku je kvalitní škola s výborným zázemím a dlouhodobě dobrými výsledky. Nový ředitel od roku 2018 postupně zlepšuje chod školy. Žáci se učí nejen v hodinách, ale také prostřednictvím projektů a spolupráce s partnery. Škola má funkční poradenský tým a nově i psycholožku. Inspektoři doporučují více individuálního přístupu ve výuce a lepší využívání dat o úspěchu absolventů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi dobrý až výborný",
+      "key_numbers": [
+        "V osmiletém studiu výborné výsledky",
+        "Výsledky odpovídají celorepublikovému srovnávání",
+        "Výsledné hodnocení koresponduje s průběžným hodnocením"
+      ],
+      "evidence": "Škola při celorepublikovém srovnávání dosahuje velmi dobrých, v osmiletém studiu výborných výsledků."
+    },
+    "absence": {
+      "trend": "Velmi nízký podíl neprospívajících žáků",
+      "key_numbers": [
+        "Téměř polovina žáků prospěla s vyznamenáním",
+        "Velmi nízký podíl neprospívajících žáků",
+        "626 žáků ve 22 třídách"
+      ],
+      "evidence": "Úspěšnost žáků je ovlivněna vysokou úrovní studijních předpokladů, podíl neprospívajících je velmi nízký."
+    },
+    "support_services": [
+      "Výchovný poradce, kariérová poradkyně, školní metodička prevence a školní psycholožka",
+      "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami",
+      "Podpora nadaných žáků v olympiádách a soutěžích"
+    ],
+    "safety_climate": [
+      "Pozitivní klima podporující učení s ohledem na studijní předpoklady žáků",
+      "Prevence rizikového chování formou projektů, adaptačních kurzů a třídnických hodin",
+      "Činnost školní psycholožky přispívá k vytváření bezpečného prostředí"
+    ],
+    "partnerships_practice": [
+      "Součást mezinárodní sítě frankofonních škol, certifikát LabelFrancÉducation",
+      "Dlouhodobé pobyty žáků na školách v zahraničí a studijní pobyty zahraničních studentů",
+      "Nadstandardně rozvinuté partnerské vztahy s mnoha subjekty"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o počtu hospitací nebo jejich frekvenci – není jasné, jak 'méně časté' jsou.",
+      "Chybí konkrétní příklady diferenciace ve výuce – není jasné, v kterých předmětech byla uplatněna.",
+      "Není specifikováno, kolik žáků má speciální vzdělávací potřeby a jak je konkrétně podporováno."
+    ]
+  }
+}
+```

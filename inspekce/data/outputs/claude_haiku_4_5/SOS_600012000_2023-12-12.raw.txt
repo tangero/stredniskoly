@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600012000_2023-12-12",
+  "school_profile": {
+    "school_type": "Střední obchodní akademie s maturitou, obory: Informační technologie a Obchodní akademie (se zaměřením na cestovní ruch nebo cizí jazyky)",
+    "inspection_period": "12. 12. 2023 – 14. 12. 2023",
+    "school_change_summary": "Od roku 2020 nový ředitel. Od 2022 působí školní psycholožka. Výrazně se zlepšily materiální podmínky: nové učebny, LED osvětlení, nová laboratoř IT, modernizace vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Učebny mají notebooky, interaktivní tabule, 3D tiskárny a robotické stavebnice.",
+        "evidence": "Škola disponuje digitálními technologiemi a vybudovala novou laboratoř informačních technologií."
+      },
+      {
+        "tag": "Odborná praxe a spolupráce s firmami",
+        "detail": "Žáci si ověřují znalosti v reálném pracovním prostředí, škola se umístila na 9. místě v soutěži Škola doporučená zaměstnavateli.",
+        "evidence": "Odborná praxe je realizována ve spolupráci se sociálními partnery podle jasně nastavených pravidel."
+      },
+      {
+        "tag": "Podpora nadaných žáků a jazykové certifikáty",
+        "detail": "Příprava na Cambridge English zkoušky (B1, B2, C1), účast v soutěžích zvyšuje konkurenceschopnost.",
+        "evidence": "V roce 2022 úspěšně absolvovalo mezinárodní zkoušku 20 žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká aktivita žáků ve výuce všeobecných předmětů",
+        "detail": "Převažuje frontální výuka, málo skupinové práce, žáci nejsou dostatečně zapojeni do rozhodování o své výuce.",
+        "evidence": "Zaznamenána byla nízká míra aktivního zapojování žáků do výuky a jejich vzájemné spolupráce."
+      },
+      {
+        "tag": "Chybí jednotná pravidla pro hodnocení",
+        "detail": "Škola nemá sjednocená pravidla pro známkování a nemá přehled o skutečné úrovni znalostí žáků.",
+        "evidence": "Nejsou jednotně nastavená pravidla hodnocení žáků včetně váhy známek v jednotlivých předmětech."
+      },
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Všichni žáci plní stejné úkoly bez ohledu na jejich individuální tempo a potřeby.",
+        "evidence": "Učitelé práci žáků nediferencovali s ohledem na jejich odlišné aktuální vzdělávací možnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se liší výuka v jednotlivých třídách a jak se přizpůsobuje různým tempům učení?",
+      "Jaké jsou konkrétní kritéria pro známkování a jak se váží jednotlivé testy a práce?",
+      "Jak se škola zaměřuje na aktivní zapojení žáků do výuky, zejména v předmětech jako čeština a matematika?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o IT, programování nebo počítačovou grafiku – obor nabízí volbu zaměření ve 3. a 4. ročníku",
+      "Studenti s ambicí získat mezinárodní jazykové certifikáty – Cambridge English a příprava od 1. ročníku",
+      "Žáci, kterým vyhovuje moderní vybavení a praktická výuka s vazbou na reálný pracovní svět"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku – inspekce zjistila, že se všichni učí stejným způsobem",
+      "Studenti preferující interaktivní a skupinovou práci – převažuje frontální výuka s řízeným rozhovorem",
+      "Žáci, kteří se lépe učí s jasně definovanými kritérii – chybí jednotná pravidla pro hodnocení"
+    ],
+    "plain_czech_summary": "Masarykova obchodní akademie v Jičíně je moderně vybavená škola s dobrými materiálními podmínkami a silným zaměřením na praxi. Žáci se připravují na Cambridge zkoušky a absolvují odborné praxe u skutečných zaměstnavatelů. Inspekce ale upozorňuje na slabší stránky: výuka všeobecných předmětů je příliš frontální, chybí individuální přístup k žákům a jednotná pravidla pro hodnocení. Škola by měla více zapojovat žáky do aktivní práce a lépe sledovat jejich skutečné znalosti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "V posledních třech letech srovnatelná úroveň výsledků",
+        "Úspěšnost u maturitních zkoušek na srovnatelné úrovni"
+      ],
+      "evidence": "V posledních třech letech vykazovaly celkové výsledky vzdělávání žáků i úspěšnost u maturitních zkoušek srovnatelnou úroveň."
+    },
+    "absence": {
+      "trend": "Monitorováno a řešeno",
+      "key_numbers": [
+        "Neomluvené hodiny a záškoláctví jsou prioritou prevence"
+      ],
+      "evidence": "Účinnost prevence rizikového chování (zejména neomluvené hodiny a záškoláctví) je pravidelně vyhodnocována a jsou přijímána následná opatření."
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodička prevence",
+      "Školní psycholožka (od roku 2022)",
+      "Online anonymní schránka důvěry pro žáky",
+      "Adaptační kurz pro 1. ročník",
+      "Preventivní programy: S tebou o tobě, Nehodou to začíná, Nevypusť duši"
+    ],
+    "safety_climate": [
+      "Příznivá pracovní atmosféra ve všech hospitovaných hodinách",
+      "Žáci byli ukáznění a respektovali pokyny vyučujících",
+      "Efektivní spolupráce s odbornými pracovišti při prevenci rizikového chování",
+      "Charitativní činnost žáků (Svačinárium, Adopce na dálku)"
+    ],
+    "partnerships_practice": [
+      "Hospodářská komora ČR",
+      "Technická univerzita Liberec",
+      "Univerzita Hradec Králové",
+      "Střední průmyslová škola Dvůr Králové nad Labem (sdílení dobré praxe)",
+      "Evropské centrum jazykových zkoušek (partnerská škola)",
+      "Cambridge English (oficiální přípravné centrum)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o prospěchu nebo neprospěchu – pouze konstatuje srovnatelnou úroveň",
+      "Není jasné, jak maturitní výsledky školy srovnit s ostatními školami v kraji",
+      "Chybí informace o počtu žáků, kteří neúspěšně absolvují maturitu"
+    ]
+  }
+}
+```

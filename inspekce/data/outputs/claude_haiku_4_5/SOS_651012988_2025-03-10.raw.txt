@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_651012988_2025-03-10",
+  "school_profile": {
+    "school_type": "Střední škola živnostenská (příspěvková organizace) s domovem mládeže a školní jídelnou",
+    "inspection_period": "10. až 13. března 2025",
+    "school_change_summary": "Od inspekce v roce 2019 se počet žáků zvýšil o více než třetinu na 745 žáků. Škola zmodernizovala praktické zázemí, posílila poradenské služby a upravila oborovou strukturu podle poptávky trhu práce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické dovednosti a reálná praxe",
+        "detail": "Praktické vyučování je kvalitně připravené s moderním vybavením odpovídajícím reálným provozům (kadeřnický salón, kosmetické služby, dřevozpracující dílny).",
+        "evidence": "Škola má 'moderně zařízené dřevozpracující dílny, kosmetický a kadeřnický salón, které korespondují s vybavením reálných provozů'."
+      },
+      {
+        "tag": "Úspěchy v soutěžích a projektech",
+        "detail": "Žáci dosahují vynikajících výsledků v profesně zaměřených soutěžích na celorepublikové úrovni a získávají zkušenosti v zahraničí.",
+        "evidence": "Žáci 'dosahují napříč všemi obory vynikajících výsledků i na celorepublikové úrovni' a 'získávají profesní zkušenosti i v zahraničí v rámci programu Eramus+'."
+      },
+      {
+        "tag": "Podpora žáků se speciálními potřebami",
+        "detail": "Škola má efektivní systém poradenských služeb zaměřený na všechny žáky s potřebou individuální podpory.",
+        "evidence": "Školní poradenské pracoviště 'rozsahem svých činností poskytuje účinnou podporu všem aktérům podílejícím se na vzdělávání'."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky u maturit",
+        "detail": "Výsledky v maturitní zkoušce jsou dlouhodobě horší než průměr v České republice, zvlášť v matematice a cizích jazycích.",
+        "evidence": "HN (hrubá neúspěšnost) se 'zpravidla nedosahují průměrné HN v ČR', v matematice byla 'čistá neúspěšnost na úrovni zhruba 60 %'."
+      },
+      {
+        "tag": "Vysoká absence a předčasné odchody",
+        "detail": "Přibližně desetina žáků ročně předčasně opustí vzdělávání, absence se nedaří snižovat.",
+        "evidence": "V posledních pěti letech 'průměrně desetina žáků školy ročně' odchází ze vzdělávání, 'nedaří se průměrnou absenci snižovat'."
+      },
+      {
+        "tag": "Problémy s hodnocením v prvním pololetí",
+        "detail": "Velký počet žáků zůstává nehodnocen na konci prvního pololetí, nemají tak informace o své připravenosti.",
+        "evidence": "Ve školním roce 2024/2025 'nebylo hodnoceno 35 % žáků' v oborech s maturitní zkouškou na konci 1. pololetí."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s matematikou nebo cizími jazyky? Jaké jsou dostupné doučovací programy?",
+      "Jaké jsou důvody vysoké absence a jak se s ní škola vypořádává? Jak komunikuje se zákonnými zástupci?",
+      "Jak se škola vypořádává s tím, že mnoho žáků zůstává nehodnoceno v prvním pololetí? Jak to ovlivňuje jejich motivaci?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a řemesla (gastronomie, kadeřnictví, kosmetika, truhlářství) – zde je výuka kvalitní a moderně vybavená.",
+      "Žáci, kteří se chtějí zapojit do soutěží a projektů – škola aktivně podporuje talentované žáky a nabízí celorepublikové i zahraniční příležitosti.",
+      "Žáci se speciálními vzdělávacími potřebami – škola má posílené poradenské služby a individuální přístup."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími předpoklady v matematice a cizích jazycích – výsledky v těchto předmětech jsou dlouhodobě podprůměrné.",
+      "Žáci z méně podporujícího domácího prostředí – přibližně polovina žáků nemá přiměřenou podporu vzdělávání doma, což zvyšuje riziko neúspěchu.",
+      "Žáci v oborech Vlasová kosmetika a Podnikání – tyto obory mají dlouhodobě vysokou neúspěšnost u maturit (33–100 %)."
+    ],
+    "plain_czech_summary": "Střední škola živnostenská v Sokolově je zaměřená na praktické obory (gastronomie, služby, řemesla). Silnou stránkou je kvalitní praktické vyučování s moderním vybavením a úspěchy v soutěžích. Slabinou jsou dlouhodobě podprůměrné výsledky v maturitní zkoušce, vysoká absence žáků a předčasné odchody ze studia. Škola se snaží situaci řešit, ale výsledky se zatím výrazně nezlepšují. Vhodná pro prakticky zaměřené žáky, méně vhodná pro ty, kteří potřebují silnou podporu v teoretických předmětech."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšení od roku 2022, ale stále podprůměrné",
+      "key_numbers": [
+        "HN (hrubá neúspěšnost) 2022: 45,1 %, 2023–2024: 34,6 %",
+        "Matematika: neúspěšnost ~60 % (17 žáků za 3 roky, 10 neuspělo)",
+        "Obor Vlasová kosmetika: HN 100 % (2022), 33,3 % (2023), 44,4 % (2024)"
+      ],
+      "evidence": "Výsledky se zlepšily snížením počtu žáků, kteří zkoušky nekonali, ale stále nedosahují průměru ČR v příslušných skupinách oborů."
+    },
+    "absence": {
+      "trend": "Vysoká a nelepší se",
+      "key_numbers": [
+        "Průměrně desetina žáků ročně předčasně opustí vzdělávání",
+        "Ve školním roce 2023/2024 nedokončila vzdělávání ani polovina žáků v oborech s maturitní zkouškou",
+        "Absence se nedaří snižovat navzdory opatřením"
+      ],
+      "evidence": "Vzdělávání je 'silně ovlivněno socioekonomickým statusem žáků', přibližně polovina nemá přiměřenou domácí podporu."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště posíleno o školního psychologa a sociálního pedagoga",
+      "Plány pedagogické podpory a individuální přístupy pro žáky se speciálními potřebami",
+      "Kariérové poradenství a sledování uplatnění absolventů na trhu práce",
+      "Prevence sociálně patologických jevů a adaptační aktivity pro prvňáky"
+    ],
+    "safety_climate": [
+      "Vstupy do budov zabezpečuje dohledová služba",
+      "Analýza příčin úrazů a opakované proškolování žáků a pedagogů v bezpečnosti",
+      "Pozitivní školní klima podporované vedením školy a žákovskými parlamenty",
+      "Řešení rizikového chování ve spolupráci se žáky a jejich zákonnými zástupci"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se smluvními pracovišti pro praktické vyučování v Sokolově, Kynšperku nad Ohří a Kraslicích",
+      "Pořádání profesně zaměřených akcí (Den řemesel) ve spolupráci se sociálními partnery",
+      "Program Erasmus+ pro získávání zahraničních zkušeností",
+      "Exkurze, besedy a odborné konference s partnery"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a obsahuje konkrétní data, ale je velmi dlouhá a místy opakující se. Pro rodiče by byla užitečnější stručnější verze se jasným shrnutím rizik a příležitostí.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření vedla ke zlepšení HN v maturitě – není jasné, zda jde o skutečné zlepšení kvality nebo jen o nižší počet zkoušejících.",
+      "Chybí informace o tom, jak dlouho trvá, než se přijatá opatření projeví v praxi – některá opatření jsou zmíněna jako 'systematická', ale bez konkrétních výsledků.",
+      "Není jasné, jaké konkrétní dovednosti si žáci odnášejí – zpráva se zaměřuje na problémy, méně na to, co si žáci skutečně naučí."
+    ]
+  }
+}
+```

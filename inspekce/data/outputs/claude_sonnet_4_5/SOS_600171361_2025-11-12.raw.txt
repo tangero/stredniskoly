@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "school_profile": {
+    "school_type": "Střední škola gastronomie a služeb s maturitními i výučními obory (kuchař-číšník, kadeřník, cukrář, prodavač, hotelnictví, kosmetické služby, podnikání)",
+    "inspection_period": "12.–14. listopadu 2025",
+    "school_change_summary": "Od poslední inspekce došlo k částečnému zlepšení výuky a k vybudování nových prostor (učebna IT, kadeřnický salón). Přetrvávají však problémy s formativním hodnocením, diferenciací výuky a analýzou výsledků žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola má silné partnerství s firmami a zahraničními školami, žáci jezdí na pracovní pobyty.",
+        "evidence": "„Spolupráce s tuzemskými i zahraničními partnery efektivním způsobem podporují rozvoj odbornosti žáků, napomáhají k jejich úspěchům v soutěžích""
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Nové učebny a salóny odpovídají současným trendům v gastronomii a službách.",
+        "evidence": "„Materiální vybavení pro odborné vzdělávání odpovídá současným trendům a zajišťuje tak kvalitní přípravu budoucích absolventů.""
+      },
+      {
+        "tag": "Pozitivní klima",
+        "detail": "Škola systematicky sleduje školní atmosféru a žáci se aktivně zapojují do výuky.",
+        "evidence": "„Vedení školy pravidelně monitoruje celkové klima školy pomocí dotazníkových šetření s cílem zajistit příznivé prostředí pro vzdělávací proces""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Klesající úspěšnost u maturity",
+        "detail": "Výsledky společné části maturit se za tři roky zhoršily, škola nedosahuje republikového průměru.",
+        "evidence": "„Výsledky ve společné části maturitní zkoušky měly v období posledních tří let spíše sestupnou tendenci. Hrubá neúspěšnost vzrostla v oboru Podnikání z 24,1 % na 39,3 %""
+      },
+      {
+        "tag": "Slabá podpora individuálních potřeb",
+        "detail": "Výuka málo zohledňuje nadané žáky i žáky se speciálními potřebami.",
+        "evidence": "„Nedostatečná diferenciace výuky vzhledem k individuálním možnostem žáků nepodporuje dostatečné využívání potenciálu pro rozvoj vzdělávacího pokroku žáků se speciálními vzdělávacími potřebami a žáků nadaných""
+      },
+      {
+        "tag": "Chybí analýza výsledků",
+        "detail": "Škola nevyhodnocuje podrobně, kde žáci chybují, a nepřijímá konkrétní opatření ke zlepšení.",
+        "evidence": "„Vyučující se omezují převážně na obecné vyhodnocení těchto prací na úrovni tříd, aniž by následovalo přijetí konkrétních opatření ke snižování chybovosti""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomáhá žákům, kteří mají problémy s maturitou z češtiny nebo matematiky?",
+      "Jakým způsobem škola přizpůsobuje výuku žákům s různými schopnostmi a tempem učení?",
+      "Jak škola vyhodnocuje úspěšnost absolventů na trhu práce a využívá to pro zlepšení výuky?"
+    ],
+    "who_school_fits": [
+      "Žáky se zájmem o gastronomii, kadeřnictví nebo kosmetiku, kteří chtějí praktickou přípravu s moderním vybavením",
+      "Studenty, kteří ocení zahraniční stáže a účast v odborných soutěžích",
+      "Ty, kdo preferují přátelskou atmosféru a aktivní zapojení do školního života"
+    ],
+    "who_should_be_cautious": [
+      "Žáky s ambicí na vysokoškolské studium, kteří potřebují silnou přípravu na maturitu z češtiny a matematiky",
+      "Studenty se speciálními vzdělávacími potřebami očekávající systematickou individuální podporu ve výuce",
+      "Ty, kdo vyžadují pravidelnou zpětnou vazbu o svém pokroku a detailní hodnocení své práce"
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní odbornou přípravu v gastronomii a službách s moderním vybavením a silnými vazbami na praxi. Žáci mají možnost zahraničních stáží a účasti v soutěžích. Atmosféra je přátelská a žáci se aktivně zapojují. Problémem je klesající úspěšnost u maturit – za tři roky se výsledky zhoršily a škola nedosahuje republikového průměru. Výuka málo zohledňuje individuální potřeby žáků, chybí formativní hodnocení a škola nedostatečně analyzuje, kde žáci chybují. Podpora žáků se speciálními potřebami není systematická. Pro budoucí kuchaře nebo kadeřníky s praktickým zaměřením dobrá volba, pro ambiciózní studenty směřující na vysokou školu méně vhodná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Klesající – za tři roky výrazné zhoršení, škola pod republikovým průměrem",
+      "key_numbers": [
+        "Podnikání: neúspěšnost vzrostla z 24,1 % (2024) na 39,3 % (2025)",
+        "Hotelnictví: neúspěšnost vzrostla z 4,2 % (2023) na 26,1 % (2025)",
+        "Kosmetické služby: neúspěšnost vzrostla z 4,8 % (2023) na 22,7 % (2025)"
+      ],
+      "evidence": "„Výsledky ve společné části maturitní zkoušky měly v období posledních tří let spíše sestupnou tendenci. Při srovnání výsledků školy s celostátními údaji bylo zjištěno, že dosahovala většinou horších výsledků, než činil republikový průměr""
+    },
+    "absence": {
+      "trend": "Není v inspekční zprávě detailně hodnocena",
+      "key_numbers": [
+        "Absence je sledována v rámci pedagogické rady",
+        "Konkrétní čísla nejsou ve zprávě uvedena"
+      ],
+      "evidence": "„Záznamy z těchto jednání se zaměřují převážně na statistické vyhodnocení prospěchu, chování a absence žáků""
+    },
+    "support_services": [
+      "Tým: 2 výchovní poradci, školní metodička prevence, psycholožka, speciální pedagožka",
+      "Problém: vzájemná spolupráce není efektivně nastavena, nejednotný postup při podpoře žáků",
+      "Doučování a konzultace dostupné, ale účinnost není systematicky vyhodnocována"
+    ],
+    "safety_climate": [
+      "Pravidelné dotazníkové šetření klimatu školy",
+      "Pozitivní pracovní atmosféra, žáci respektují pravidla",
+      "Široká nabídka preventivních programů proti rizikovému chování"
+    ],
+    "partnerships_practice": [
+      "Silná spolupráce s profesními organizacemi a zahraničními partnery",
+      "Pravidelné zahraniční pracovní pobyty žáků (zejména gastronomie)",
+      "Praktické vyučování na smluvních pracovištích v Přerově a Prostějově"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný a prakticky zaměřený. Mírné bodové snížení za občasné delší souvětí v citacích, které by mohly být ještě stručnější.",
+    "uncertainty_notes": [
+      "Absence: zpráva neuvádí konkrétní čísla ani trend, pouze zmínku o sledování",
+      "Počet žáků využívajících podpůrná opatření není specifikován",
+      "Není jasné, kolik žáků se účastní zahraničních pobytů (uvedeno 'významný počet')"
+    ]
+  }
+}
+```

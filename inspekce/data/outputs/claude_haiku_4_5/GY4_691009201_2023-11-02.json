@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_691009201_2023-11-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:35:43.273283+00:00",
+  "run_finished_utc": "2026-02-09T16:36:07.930969+00:00",
+  "raw_file": "GY4_691009201_2023-11-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691009201_2023-11-02",
+    "school_profile": {
+      "school_type": "Základní škola s družinou a jídelnou, 14 tříd, 368 žáků",
+      "inspection_period": "2.–6. listopadu 2023",
+      "school_change_summary": "Od poslední inspekce se počet žáků zvýšil téměř šestinásobně. Nový ředitel (5 let ve funkci) jasně stanovil strategii a vizi. Všechny nedostatky z předchozí inspekce byly účinně odstraněny."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vedení a strategie",
+          "detail": "Ředitel má jasnou vizi a efektivně deleguje pravomoci. Pedagogické rady jsou produktivní a vedou ke zkvalitnění výuky.",
+          "evidence": "Ředitel 'jasně formuluje konkrétní cíle, strategii k jejich dosažení' a 'účelně delegoval na zástupkyně'."
+        },
+        {
+          "tag": "Výuka angličtiny",
+          "detail": "Výuka je efektivní díky rodilým mluvčím a ranému začátku od prvního ročníku.",
+          "evidence": "'Žáci aktivně komunikovali s učiteli' a 'byli na pokročilé úrovni' díky 'působení rodilé mluvčí'."
+        },
+        {
+          "tag": "Spolupráce se zřizovatelem",
+          "detail": "Výrazně se zlepšily materiální podmínky – moderní vybavení, interaktivní tabule, cvičná kuchyně.",
+          "evidence": "'Materiální podmínky se od posledního inspekčního hodnocení výrazně zlepšily' a škola má 'kvalitní vybavení tříd'."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita výuky češtiny",
+          "detail": "Výuka je nerovnoměrná – někteří učitelé používají jen tradiční metody zaměřené na vědomosti, chybí diferenciace.",
+          "evidence": "'Kvalita výuky českého jazyka na druhém stupni byla kolísavá' a 'převládala frontální metoda vyučování'."
+        },
+        {
+          "tag": "Hodnocení individuálně vzdělávaných žáků",
+          "detail": "Systém hodnocení těchto žáků nemá oporu v pravidlech školního řádu a není vázán na očekávané výstupy.",
+          "evidence": "'Pololetní zkoušky se realizují výlučně formou rozpravy' a 'nemá potřebnou oporu v pravidlech hodnocení'."
+        },
+        {
+          "tag": "Kvalifikace učitelů",
+          "detail": "Šest z 31 učitelů nemá odbornou kvalifikaci, ačkoli ředitel se o zajištění kvalifikovaných pedagogů usiluje.",
+          "evidence": "'Šest nesplňuje odbornou kvalifikaci' a 'chybějící odborná kvalifikace nesnižovala kvalitu hospitovaného vzdělávání'."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se škola vypořádává s rozdílnými úrovněmi žáků v jednotlivých třídách? Jaké má zkušenosti se žáky se speciálními potřebami?",
+        "Jaké jsou plány na zlepšení kvality výuky českého jazyka a sjednocení přístupu učitelů?",
+        "Jak funguje komunikace se zákonnými zástupci a jak se mohou podílet na vzdělávání svých dětí?"
+      ],
+      "who_school_fits": [
+        "Žáci, kterým vyhovuje kvalitní výuka angličtiny s rodilými mluvčími a raným začátkem",
+        "Děti se speciálními vzdělávacími potřebami – škola má kvalifikovanou výchovnou poradkyni a metodickou podporu",
+        "Žáci zajímající se o projektové učení a mimoškolní aktivity – škola nabízí bohatý program včetně projektů a soutěží"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají jednotný a konzistentní přístup ve výuce českého jazyka – kvalita je nerovnoměrná",
+        "Žáci s individuálním vzděláváním – systém jejich hodnocení není dostatečně koncepčně zpracován",
+        "Rodiny, které preferují tradičnější metody výuky – škola klade důraz na aktivizaci a skupinovou práci"
+      ],
+      "plain_czech_summary": "Základní škola v Sulicích se dynamicky rozvíjí pod vedením nového ředitele. Silnými stránkami jsou kvalitní vedení, výborná výuka angličtiny a zlepšené materiální podmínky. Škola efektivně pracuje s žáky se speciálními potřebami a nabízí bohatý mimoškolní program. Slabší je kvalita výuky českého jazyka, která se liší mezi třídami, a systém hodnocení individuálně vzdělávaných žáků. Přesto jde o školu s jasnou vizí a pozitivním vývojem."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Není relevantní – jde o základní školu",
+        "key_numbers": [
+          "Není relevantní"
+        ],
+        "evidence": "Inspekční zpráva se týká základní školy, nikoli střední školy s maturitou."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Absence nejsou v textu zmíněny"
+        ],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+      },
+      "support_services": [
+        "Odborně kvalifikovaná výchovná poradkyně metodicky koordinuje podpůrná opatření",
+        "Odborně kvalifikovaná metodička prevence realizuje promyšlený program primární prevence",
+        "Čtyři asistentky pedagoga (tři s kvalifikací, jedna si ji doplňuje) podporují výuku",
+        "Školní parlament podporuje komunikaci a realizuje projekty"
+      ],
+      "safety_climate": [
+        "Systém prevence úrazů je funkční, žáci jsou průběžně seznamováni s bezpečným chováním",
+        "Kontrola osob vstupujících do budov byla zajištěna, dohledy nad žáky vykonávány",
+        "Vedení aktivně přijímá opatření ke snížení úrazovosti, zejména z hodin tělesné výchovy",
+        "Pochvaly převyšují počet výchovných opatření – pozitivní přístup k motivaci"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zřizovatelem (obec Sulice) – výrazné zlepšení materiálních podmínek",
+        "Partnerství se základní uměleckou školou TAKT na rozvoj hudebních dovedností",
+        "Spolupráce se španělskou školou v Malaze na jazykové kompetence",
+        "Spolupráce s tělovýchovnou jednotou ve Velkých Popovicích na sportovní dovednosti",
+        "Spolupráce se specializovanými organizacemi na preventivní programy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a citace. Některé pasáže jsou však technicky náročnější (např. popis hodnocení individuálně vzdělávaných žáků), ale celkově je text jasný a pro rodiče interpretovatelný.",
+      "uncertainty_notes": [
+        "Absence není zmíněna – není jasné, zda je to problém nebo ne",
+        "Konkrétní počty žáků s jednotlivými problémy nejsou vždy jasné (např. kolik žáků má jazykovou bariéru)",
+        "Výsledky externího testování pátého ročníku nejsou podrobně rozvedeny – není jasné, jak moc jsou 'mírně podprůměrné' výsledky v matematice problematické"
+      ]
+    }
+  }
+}

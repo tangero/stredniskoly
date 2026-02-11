@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600019624_2024-12-02",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola se čtyřletým denním studiem (obor Praktická sestra) a tříletým oborem Ošetřovatel",
+    "inspection_period": "2. 12. 2024 – 4. 12. 2024",
+    "school_change_summary": "Škola nahradila obor Zdravotnický asistent novým oborem Praktická sestra, rozšířila spolupráci s partnery mimo region (např. Všeobecná fakultní nemocnice Praha) a modernizuje materiální vybavení. Pedagogický sbor prochází generační obměnou."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava v reálném prostředí",
+        "detail": "Žáci získávají odborné kompetence přímo v místní nemocnici a dalších zdravotnických zařízeních jako dlouhodobém smluvním pracovišti.",
+        "evidence": "Škola rozvíjí intenzivní spolupráci s řadou sociálních partnerů, místní nemocnice je dlouholetým smluvním pracovištěm pro praktickou výuku."
+      },
+      {
+        "tag": "Moderní vybavení odborných učeben",
+        "detail": "Škola investuje do modernizace technického zázemí a digitálních zařízení v souladu s aktuálními požadavky praxe.",
+        "evidence": "Vybavení odborných učeben je v souladu se současnými požadavky praxe a pozitivně posiluje kvalitu odborného vzdělávání."
+      },
+      {
+        "tag": "Podpora žáků v obtížích",
+        "detail": "Škola nabízí doučování, individuální konzultace a možnost změny oboru či formy studia pro žáky se speciálními potřebami.",
+        "evidence": "Žákům škola nabízí doučování, individuální konzultace, popř. změnu oboru či formy vzdělávání, této možnosti využívá řada žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká míra předčasných odchodů",
+        "detail": "Přestože škola nabízí podporu, řada žáků studium přeruší nebo zanechá – v minulém roce 28 žáků, v aktuálním roce již 11.",
+        "evidence": "V uzavřeném školním roce přerušilo nebo zanechalo studium 28 žáků, v aktuálním školním roce k termínu inspekce zanechalo studium 11 žáků."
+      },
+      {
+        "tag": "Pasivní přístup v některých předmětech",
+        "detail": "V hodinách všeobecně vzdělávacích předmětů s převahou výkladu vedou zvolené metody k pasivnímu přejímání informací a menší aktivitě žáků.",
+        "evidence": "V hodinách s převahou výkladu a samostatné práce vedly zvolené metody práce u některých žáků k pasivnímu přejímání informací a menší aktivitě."
+      },
+      {
+        "tag": "Slabší výsledky dálkové formy studia",
+        "detail": "Žáci v dálkovém studiu dosahují nižší úspěšnosti u maturitní zkoušky než žáci denní formy.",
+        "evidence": "Přetrvává vyšší neúspěšnost žáků dálkové formy studia."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá praktická výuka v nemocnici a jak je zajištěna bezpečnost žáků?",
+      "Jaké jsou konkrétní důvody vysokého počtu žáků, kteří studium přeruší, a co se chystá změnit?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a aktivního zapojení žáků v teoretických předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o zdravotnické povolání, kteří se chtějí učit v praxi",
+      "Studenti, kteří potřebují individuální podporu a doučování",
+      "Uchazeči, kteří chtějí získat certifikát Cambridge English (B1 nebo B2)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují teoretické vzdělání bez praktické složky",
+      "Studenti, kteří potřebují intenzivní podporu v učení – vysoký počet odchodů naznačuje, že ne všichni zvládají nápor",
+      "Uchazeči o dálkové studium – výsledky jsou slabší než u denní formy"
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola v Táboře je zaměřena na praktickou přípravu budoucích zdravotnických pracovníků. Silnou stránkou je dlouhodobá spolupráce s nemocnicí a dalšími zdravotnickými zařízeními, kde žáci získávají reálné zkušenosti. Škola modernizuje vybavení a nabízí podporu žákům v obtížích. Problémem je však vysoký počet žáků, kteří studium přeruší, a v některých teoretických předmětech se používají pasivní metody výuky. Maturitní výsledky jsou průměrné, dálková forma studia dosahuje horších výsledků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšení v porovnání s předchozím rokem, ale dlouhodobě průměrné",
+      "key_numbers": [
+        "Hrubá míra neúspěšnosti se v roce 2024 zlepšila oproti předchozím výsledkům",
+        "Výsledky se pohybují kolem dlouhodobého průměru v dané skupině oborů v ČR",
+        "Vyšší neúspěšnost u dálkové formy studia"
+      ],
+      "evidence": "Sledovaná hrubá míra neúspěšnosti ve společné části maturitní zkoušky se v porovnání s výsledky zlepšila. Celkové výsledky se pohybují kolem dlouhodobého průměru."
+    },
+    "absence": {
+      "trend": "Zvládaná, počet pochval převažuje nad kázeňskými opatřeními",
+      "key_numbers": [
+        "Počet udělených pochval převažuje nad počtem uložených kázeňských opatření",
+        "Kázeňská opatření jsou ukládána převážně za neomluvené zameškané hodiny",
+        "Celkově se absenci daří zvládat"
+      ],
+      "evidence": "Počet udělených pochval převažuje nad počtem uložených kázeňských opatření, ta jsou ukládána převážně za neomluvené zameškané hodiny, celkově se absenci daří zvládat."
+    },
+    "support_services": [
+      "Výchovný poradce a školní metodička prevence systematicky spolupracují s třídními učiteli",
+      "Doučování a individuální konzultace pro žáky se speciálními vzdělávacími potřebami",
+      "Možnost změny oboru či formy vzdělávání v rámci prostupnosti vzdělávací nabídky"
+    ],
+    "safety_climate": [
+      "Vzdělávání probíhalo v příznivé atmosféře",
+      "Žáci jsou vedeni k důslednému dodržování zásad bezpečnosti a ochrany zdraví na smluvním pracovišti",
+      "Aktivity k prevenci rizikového chování jsou realizovány formou projektů, adaptačních programů a třídnických hodin"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s místní nemocnicí jako smluvním pracovištěm pro praktickou výuku",
+      "Spolupráce s dalšími místními i nadregionálními zdravotnickými a sociálními zařízeními",
+      "Nově navázaná spolupráce s nadregionálními pracovišti (např. Všeobecná fakultní nemocnice Praha) pro nepovinné týdenní stáže"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Některé pasáže jsou však formulovány úřednicky a vyžadují pozorné čtení. Chybí některé konkrétní číselné údaje (např. přesné procento úspěšnosti u maturity).",
+    "uncertainty_notes": [
+      "Zpráva neuvádí přesné procento úspěšnosti u maturitní zkoušky, pouze porovnání s předchozím rokem",
+      "Není jasné, jaké konkrétní opatření škola přijala na základě vysokého počtu odchodů",
+      "Chybí informace o tom, jak se škola zaměřuje na rozvoj kritického myšlení v teoretických předmětech"
+    ]
+  }
+}
+```

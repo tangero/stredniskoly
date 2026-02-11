@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600016552_2025-11-03",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola stavební, obor Stavebnictví se zaměřením na pozemní stavitelství, dopravní stavitelství, architekturu a design (4leté studium s maturitou)",
+    "inspection_period": "3.–4. listopadu 2025 a 6.–7. listopadu 2025",
+    "school_change_summary": "Od inspekce v roce 2019 došlo ke změně vedení (nový ředitel od srpna 2024), rozšíření poradenského pracoviště o školní psycholožku a výraznému zlepšení materiálního vybavení. Pedagogický sbor se obměňuje cíleným náborem odborníků z praxe."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a technologie",
+        "detail": "Škola průběžně modernizuje učebny, instaluje projektory, virtuální realitu a měřící zařízení podporující kvalitní odborné vzdělání.",
+        "evidence": "Materiální podmínky jsou průběžně zkvalitňovány a pozitivně ovlivňují kvalitu vzdělávání žáků."
+      },
+      {
+        "tag": "Úspěchy žáků v soutěžích",
+        "detail": "Žáci dosahují výrazných úspěchů na krajské i celostátní úrovni, včetně 1. místa v CzechSkills a 3. místa v Lize rozpočtářů.",
+        "evidence": "Škola systematicky podporuje rozvoj nadání a zájmů žáků prostřednictvím soutěží a akcí."
+      },
+      {
+        "tag": "Propojení s praxí a místní komunitou",
+        "detail": "Vedení aktivně rozvíjí spolupráci s odbornými firmami, vysokými školami a městem Havířov.",
+        "evidence": "Vedení školy vhodně rozvíjí sounáležitost s městem Havířov a aktivním zapojením žáků do komunitního života."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezené používání moderních vyučovacích metod",
+        "detail": "Výuka probíhá převážně frontálně, inovativní metody se objevují jen okrajově, přestože jsou v plánu dalšího vzdělávání.",
+        "evidence": "Ve sledované výuce se inovativní metody projevovaly spíše okrajově. Aktivizační metody byly uplatňovány spíše výjimečně."
+      },
+      {
+        "tag": "Slabá zpětná vazba a sebehodnocení",
+        "detail": "Formativní hodnocení a sebehodnocení žáků se využívají jen ojediněle, chybí reflexe vzdělávacích cílů.",
+        "evidence": "Zapojení žáků do reflexe vzdělávacích cílů bylo omezené. Formativní hodnocení a funkční sebehodnocení byly využívány pouze ojediněle."
+      },
+      {
+        "tag": "Komunikační problémy mezi učiteli a žáky",
+        "detail": "Část žáků vnímá komunikaci jako nedostatečnou, poukazuje na nízký respekt a vysoký tlak na výkon.",
+        "evidence": "Část žáků vnímá komunikaci jako nedostatečnou, poukazuje na nízkou míru respektu ze strany některých učitelů a výrazný tlak na výkon."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s žáky, kteří mají potíže s učením? Jaké má k dispozici podporu a doučování?",
+      "Jaké jsou plány na zvýšení interaktivních a skupinových metod výuky? Kdy se začnou více používat?",
+      "Jak se škola snaží zlepšit komunikaci mezi učiteli a žáky? Jaké jsou mechanismy pro řešení konfliktů?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o stavebnictví a technické obory, kteří chtějí kvalitní praktické vzdělání s moderním vybavením",
+      "Talentovaní žáci, kteří se chtějí zapojit do soutěží a reprezentovat školu na krajské a celostátní úrovni",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje cílenou podporu a dělené hodiny"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a skupinové formy výuky – škola se na nich zatím zaměřuje méně",
+      "Žáci s výukovými obtížemi, u kterých se problémy neidentifikují včas – systém včasného rozpoznání potřeb není dostatečně funkční",
+      "Žáci, kteří potřebují více osobního přístupu a otevřené komunikace s učiteli – inspekce zaznamenala prostor pro zlepšení v tomto směru"
+    ],
+    "plain_czech_summary": "SPŠ stavební v Havířově je moderně vybavená škola s dobrými výsledky v soutěžích a silným propojením s praxí. Vedení je aktivní a podporuje rozvoj žáků. Hlavní slabinou je, že výuka stále probíhá převážně tradičně, bez dostatku interaktivních metod. Žáci si stěžují na komunikaci s některými učiteli. Škola by měla více pracovat na včasném rozpoznání problémů u slabších žáků a na zlepšení zpětné vazby. Pro talentované žáky je to dobrá volba, pro ostatní je třeba počítat s tradičnějším přístupem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní s rezervami v systematičnosti podpory",
+      "key_numbers": [
+        "V roce 2025: 77 žáků skončilo maturitou, 21 s vyznamenáním, 3 neuspěli",
+        "Úspěšnost: 96 % (74 z 77 žáků)"
+      ],
+      "evidence": "Škola na výsledky reaguje doučováním, dělením hodin či konzultacemi, ale opatření nejsou realizována systematicky ani důsledně."
+    },
+    "absence": {
+      "trend": "Mírně se snižuje",
+      "key_numbers": [
+        "Celková neomluvená absence se mírně snížila ve školním roce 2024/2025"
+      ],
+      "evidence": "Absence je sledována, důtky jsou uděleny zejména za porušování školního řádu nebo neomluvenou absenci."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, školní metodik prevence, školní psycholožka (nově od 2025/2026)",
+      "Kariérové poradenství",
+      "Dělené hodiny pro individualizaci výuky",
+      "Doučování a individuální konzultace pro žáky s obtížemi"
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně poučováni o bezpečnosti a požární prevenci",
+      "Vedení vede knihu úrazů v souladu s vyhláškou",
+      "Míra úrazovosti je vyšší, většina úrazů vzniká ve výuce tělesné výchovy",
+      "Anketní šetření mezi žáky ukázalo prostor pro zlepšení v oblasti komunikace a respektu"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s odbornými firmami a institucemi na propojení výuky s praxí",
+      "Partnerství s vysokými školami",
+      "Spolupráce s místními školami na výměně pedagogických zkušeností a organizaci workshopů",
+      "Spolupráce s městem Havířov na podporu zájmového vzdělávání a zdravého životního stylu",
+      "Dny otevřených dveří pro žáky základních škol"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, kolik procent žáků má dlouhodobě nezlepšující se výsledky (zmíněna 'přibližně jedna šestina'), přesné číslo není uvedeno",
+      "Není jasné, jaké konkrétní inovativní metody jsou v plánu vzdělávání, pouze se uvádí, že se zaměřují na 'inovativní výukové a učební metody'",
+      "Detaily o komunikačních problémech mezi učiteli a žáky vycházejí z anketního šetření, ale počet respondentů a konkrétní procenta nejsou uvedeny"
+    ]
+  }
+}
+```

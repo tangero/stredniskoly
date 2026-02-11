@@ -1,0 +1,105 @@
+{
+  "report_id": "GY4_691006521_2022-01-25",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:16:53.768258+00:00",
+  "run_finished_utc": "2026-02-10T07:18:00.357815+00:00",
+  "raw_file": "GY4_691006521_2022-01-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691006521_2022-01-25",
+    "school_profile": {
+      "school_type": "Soukromé čtyřleté gymnázium",
+      "inspection_period": "25. 1., 1. 3. a 2. 3. 2022",
+      "school_change_summary": "Škola od roku 2014 stabilizovala své personální a materiální zázemí a v současnosti plní vzdělávací program ve všech ročnících."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Klima a vztahy",
+          "detail": "Škola vyniká komunitním charakterem, vzájemným respektem a funkčním systémem podpory žáků (patroni, ranní setkávání).",
+          "evidence": "„Komunitní charakter školy s propracovaným systémem podpory každého žáka přispívá k posilování pozitivních vzájemných vztahů.“"
+        },
+        {
+          "tag": "Výuka",
+          "detail": "Výuka má praktický přesah, klade důraz na přírodovědnou gramotnost a zapojení žáků do chodu školy.",
+          "evidence": "„Škola klade velký důraz na rozvoj přírodovědné gramotnosti žáků... praktická složka výuky probíhá v rámci terénních projektů, bádání či expedic.“"
+        },
+        {
+          "tag": "Výsledky",
+          "detail": "Žáci dosahují velmi dobrých studijních výsledků, které odpovídají známkám z klasifikace, a úspěšně končí maturitu.",
+          "evidence": "„Porovnáním celkových výsledků na konci školního roku s výsledky získanými u MZ bylo zjištěno, že jsou srovnatelné.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Učitelé příliš nerozlišují náročnost úkolů podle individuálních schopností žáků, všichni plní stejné úkoly.",
+          "evidence": "„Zadané úkoly většinou vyučující nediferencovali s ohledem na aktuální vzdělávací možnosti žáků, všichni žáci plnili stejné úkoly.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Ve výuce chybí častější využívání sebehodnocení, vrstevnického hodnocení a závěrečného shrnutí hodin.",
+          "evidence": "„V závěrečné fázi většiny hodin pedagogové výjimečně společně s žáky reflektovali probrané učivo... Škola nevyužívá systematicky sebehodnocení a vrstevnického hodnocení.“"
+        },
+        {
+          "tag": "Aktualita informací",
+          "detail": "Webové stránky školy nejsou vždy aktuální, což může matou uchazeče i rodiče.",
+          "evidence": "„Některá sdělení uvedená na webových stránkách, např. informace o konání a organizaci MZ v roce 2022, nebyla aktuální.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé přizpůsobují výuku žákům s různou úrovní znalostí v rámci jedné třídy?",
+        "Jakým způsobem funguje systém „patronů“ a jak pomáhá prvákům s nástupem do školy?",
+        "Jaké konkrétní exkurze a terénní projekty jsou součástí výuky přírodovědných předmětů?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kterým vyhovuje rodinné prostředí, otevřená komunikace a úzká spolupráce s učiteli.",
+        "Pro zájemce o hlubší vhled do přírodovědných oborů a praktické experimenty.",
+        "Pro studenty, kteří se chtějí podílet na dění ve škole a váží si komunitních vztahů."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří vyžadují výrazně individualizovaný přístup a odlišné úkoly podle svých specifických potřeb.",
+        "Pro rodiče, pro které je klíčová neustálá aktuálnost informací na webu školy.",
+        "Pro studenty preferující čistě teoretickou výuku bez většího důrazu na sociální aktivity a komunitu."
+      ],
+      "plain_czech_summary": "Hořické gymnázium je soukromá škola s rodinnou atmosférou a komunitním duchem. Klade velký důraz na vzájemné vztahy, podporu žáků a praktickou výuku, zejména v přírodovědných oblastech. Škola funguje dobře, žáci mají velmi dobré výsledky a úspěšně maturují. Slabším místem je méně diferencovaná výuka, kdy všichni žáci dostávají stejné úkoly bez ohledu na jejich individuální úroveň, a občasná neaktualizovanost webu. Škola je vhodná pro děti, které ocení osobní přístup a zapojení do školní komunity."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky u maturity jsou stabilní a srovnatelné s celkovým prospěchem žáků během roku.",
+        "key_numbers": [
+          "cca 47 % žáků maturovalo s vyznamenáním (2020 a 2021)",
+          "3 žáci z 34 neprospěli u maturity (2020 a 2021)",
+          "1 žák nekonal maturitu z důvodu nemoci"
+        ],
+        "evidence": "„Z celkového počtu 34 žáků přihlášených k MZ v jarních obdobích 2020 a 2021 prospělo s vyznamenáním u MZ vždy cca 47 % žáků.“"
+      },
+      "absence": {
+        "trend": "Neuvedeno",
+        "key_numbers": [],
+        "evidence": "Text neobsahuje konkrétní data o absence."
+      },
+      "support_services": [
+        "Individuální konzultace a doučování pro žáky s potřebou podpory.",
+        "Systém žákovských patronů (starší žáci pomáhají mladším).",
+        "Spolupráce s metodikem prevence a externími partnery při řešení rizikového chování."
+      ],
+      "safety_climate": [
+        "Minimální úrazovost díky systematické prevenci a vytváření podmínek pro bezpečí.",
+        "Bezpečné psychosociální prostředí založené na respektu a otevřené komunikaci.",
+        "Účinná prevence rizikového chování díky těsné spolupráci všech pedagogů."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Přírodovědeckou fakultou UK (vícedenní vzdělávací programy).",
+        "Využívání odborných pracovišť a laboratoří místních firem a vysokých škol.",
+        "Spolupráce s místními institucemi (knihovna, muzeum, SOS veselka) a školami."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán ve srozumitelné češtině, byť s úřednickými prvky, všechny klíčové informace jsou však z něj jasně čitelné.",
+      "uncertainty_notes": []
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "report_id": "LYC_600011739_2025-01-13",
+  "school_profile": {
+    "school_type": "neuvedeno",
+    "inspection_period": "13. 1. 2025 – 16. 1. 2025",
+    "school_change_summary": "Nebyl dodán žádný text zprávy, nelze určit změny."
+  },
+  "for_parents": {
+    "strengths": [],
+    "risks": [],
+    "questions_for_open_day": [],
+    "who_school_fits": [],
+    "who_should_be_cautious": [],
+    "plain_czech_summary": "Nebyl dodán žádný text inspekční zprávy k analýze. Proto nemohu poskytnout hodnocení školy ani praktické rady pro rodiče. Pro zpracování analýzy je nutné vložit zdrojový text zprávy ČŠI."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "neznámý",
+      "key_numbers": [],
+      "evidence": "Chybí zdrojový text zprávy."
+    },
+    "absence": {
+      "trend": "neznámý",
+      "key_numbers": [],
+      "evidence": "Chybí zdrojový text zprávy."
+    },
+    "support_services": [],
+    "safety_climate": [],
+    "partnerships_practice": []
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 1,
+    "czech_clarity_reason": "Bez zdrojového textu nelze vygenerovat smysluplný obsah, pouze prázdnou strukturu.",
+    "uncertainty_notes": [
+      "Zdrojový text zprávy nebyl dodán.",
+      "Všechny hodnoty jsou prázdné nebo výchozí.",
+      "Nelze ověřit žádná fakta o škole."
+    ]
+  }
+}

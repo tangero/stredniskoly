@@ -1,0 +1,98 @@
+{
+  "report_id": "GY8_600009327_2021-11-30",
+  "school_profile": {
+    "school_type": "Gymnázium",
+    "inspection_period": "2021-11-30 až 2021-12-02",
+    "school_change_summary": "Od roku 2014 vzrostl počet žáků z 621 na 655, došlo k obměně vedení a výraznému zlepšení materiálního zázemí včetně nových odborných učeben."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Žáci dosahují vynikajících výsledků v maturitních zkouškách a soutěžích.",
+        "evidence": "„Rozhodujícím ukazatelem... je jejich velmi dobrá úspěšnost u maturitních zkoušek. V maturitních obdobích 2019 – 2021 prospělo s vyznamenáním přibližně 45 % žáků.“"
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola disponuje novými, moderně vybavenými učebnami a technologiemi.",
+        "evidence": " „V nové půdní vestavbě byly vybudované a velmi moderně vybavené učebny elektrotechniky a robotiky... Všichni učitelé disponují tablety.“"
+      },
+      {
+        "tag": "Kvalitní vedení",
+        "detail": "Vedení školy efektivně řídí procesy a má jasnou vizi rozvoje.",
+        "evidence": "„Ředitel společně se svými dvěma zástupci tvoří spolupracující tým... Jeho vize přispívá k hodnotné realizaci všeobecného vzdělávání.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Bezpečnostní mezera",
+        "detail": "Chybí dohled nad žáky během polední přestávky a při přechodu na jídlo.",
+        "evidence": "„Ředitel určil dohled nad žáky o přestávkách... nestanovil však dohled o polední přestávce... ani při přechodu žáků... do zařízení školního stravování.“"
+      },
+      {
+        "tag": "Málo aktivních metod",
+        "detail": "Výuka je často frontální a nevede žáky k dostatečné samostatnosti.",
+        "evidence": "„Vyučující nejčastěji uplatňovali frontální formu výuky... Kooperativní formy práce... byly zařazovány minimálně.“"
+      },
+      {
+        "tag": "Chybí rozvoj kritického myšlení",
+        "detail": "Žáci mají málo prostoru pro diskuzi, analýzu a sebereflexi.",
+        "evidence": "„Žáci též nebyli dostatečně vedeni k rozvoji kritického myšlení... vést rozsáhlejší diskusi... interpretovat informace.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola zajišťuje bezpečnost žáků během polední přestávky a při přechodu ke stravování?",
+      "Jakým způsobem jsou ve výuce podporovány skupinová práce a kritické myšlení žáků?",
+      "Jak probíhá spolupráce třídních učitelů se školním poradenským pracovištěm?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří preferují tradiční, učitelem vedenou výuku s důrazem na vědomosti.",
+      "Pro technicky založené žáky s díky moderním učebnám robotiky a digitálních technologií.",
+      "Pro ctižádostivé žáky, kteří chtějí dosahovat vynikajících studijních výsledků."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří vyžadují silný důraz na samostatnou a skupinovou práci.",
+      "Pro rodiče, pro které je klíčová garantovaná bezpečnost v době polední pauzy.",
+      "Pro žády, kteří potřebují častou a systematickou zpětnou vazbu k vlastnímu učení."
+    ],
+    "plain_czech_summary": "Gymnázium v Klatovech nabízí kvalitní všeobecné vzdělání s vynikajícími výsledky u maturity a moderním technickým zázemím. Vedení školy funguje jako tým a má jasnou vizi. Rizikem je absence dohledu o polední pauze a převažující styl výuky, který nedostatečně rozvíjí kritické myšlení a spolupráci žáků. Pro rodiče je důležité zvážit, zda vyhovuje tradičnější pojetí výuky a zda je akceptovatelné řešení dohledu v poledne."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vynikající a stabilní úspěšnost.",
+      "key_numbers": [
+        "45 % žáků prospělo s vyznamenáním (2019-2021)",
+        "Neprospěli jen jednotlivci"
+      ],
+      "evidence": "„V maturitních obdobích 2019 – 2021 prospělo s vyznamenáním přibližně 45 % žáků, neprospěli jen jednotlivci.“"
+    },
+    "absence": {
+      "trend": "Nízká absence, důsledné řešení neomluvených hodin.",
+      "key_numbers": [
+        "Neomluvená absence v malé míře",
+        "Docházka je soustavná"
+      ],
+      "evidence": "„Docházka žáků do školy je soustavná. Neomluvená absence se vyskytuje v malé míře a je důsledně řešena.“"
+    },
+    "support_services": [
+      "Škola má poradenské pracoviště (výchovná poradkyně, metodik prevence).",
+      "Spolupráce s poradenskými zařízeními při složitějších případech.",
+      "Nutnost zlepšit informovanost učitelů o potřebách žáků."
+    ],
+    "safety_climate": [
+      "Budova je zabezpečena proti vniknutí cizích osob.",
+      "Žáci dodržují pravidla slušné komunikace.",
+      "Riziko: chybí dohled o polední přestávce a na přechodu do jídelny."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s technickými fakultami ZČU v Plzni.",
+      "Mezinárodní spolupráce s gymnáziem v Bavorsku.",
+      "Příprava na mezinárodně uznávané jazykové zkoušky."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a obsahuje konkrétní příklady i data.",
+    "uncertainty_notes": []
+  }
+}

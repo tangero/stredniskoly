@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_650071409_2023-10-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:38:10.572665+00:00",
+  "run_finished_utc": "2026-02-09T16:38:35.240979+00:00",
+  "raw_file": "SOS_650071409_2023-10-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_650071409_2023-10-03",
+    "school_profile": {
+      "school_type": "Střední odborná škola s čtyřmi maturitními obory (Informační technologie, Agropodnikání, Obchodní akademie, Operátor dřevařské a nábytkářské výroby) a domovem mládeže",
+      "inspection_period": "3. až 5. října 2023",
+      "school_change_summary": "Od poslední inspekce v 2015 došlo k nárůstu žáků o čtvrtinu (nyní 233 žáků), rozšíření nabídky oborů a zvýšení počtu ubytovaných žáků v domově mládeže o 38 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka v reálném prostředí",
+          "detail": "Obor Operátor dřevařské a nábytkářské výroby má vlastní moderně vybavenou dílnu v partnerské firmě, což rozvíjí odborné kompetence a pracovní zkušenosti.",
+          "evidence": "Škola má zřízené odloučené pracoviště v regionální partnerské firmě s moderně vybavenou dílnou."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci se aktivně zapojují do odborných soutěží, zejména v Agropodnikání dosahují opakovaně dobrých výsledků.",
+          "evidence": "V krajské soutěži v orbě obhájili první místo již podruhé, účastní se také soutěží v řezu révy vinné."
+        },
+        {
+          "tag": "Efektivní řešení absence",
+          "detail": "Škola má jasně nastavená pravidla a účinné postupy pro motivaci žáků k pravidelné docházce.",
+          "evidence": "Průměrná absence 73 hodin na žáka, neomluvená absence pouze 0,8 hodiny na žáka."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky z matematiky",
+          "detail": "Žáci dlouhodobě vykazují špatné výsledky v matematice na maturitě, hrubá neúspěšnost dosahuje 66,7 %.",
+          "evidence": "Ze společné části maturitní zkoušky z matematiky je hrubá neúspěšnost za sledované období 66,7 %."
+        },
+        {
+          "tag": "Pasivní přístup k výuce",
+          "detail": "Výuka je vedena převážně frontálně, žáci jsou pasivními příjemci informací bez dostatečné aktivizace a diferenciace.",
+          "evidence": "Individualizace a diferenciace výuky nebyla využívána, žáci nebyli dostatečně vedeni k samostatnému vyhledávání informací."
+        },
+        {
+          "tag": "Technický stav některých prostor",
+          "detail": "Tělocvična, šatny a školní dvůr jsou v špatném technickém stavu, což představuje bezpečnostní rizika.",
+          "evidence": "Zjištěn špatný technický stav tělocvičny a šaten, nevhodné uskladnění stavebních prostředků na školním dvoře."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje slabší žáky v matematice a jaké má plány na zlepšení jejich výsledků?",
+        "Jaké jsou plány na opravu tělocvičny a školního dvora a kdy by měly být realizovány?",
+        "Jak se škola chystá více aktivizovat žáky ve výuce a zavádět skupinovou práci a samostudium?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou výuku a práci s reálným materiálem, zejména v oboru Operátor dřevařské a nábytkářské výroby",
+        "Studenti se zájmem o zemědělství a agropodnikání, kteří se chtějí zapojit do soutěží a získat praktické zkušenosti",
+        "Žáci, kteří potřebují ubytování a podporu v domově mládeže s nabídkou volnočasových aktivit"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími matematickými dovednostmi, kterým se nedostává dostatečné individuální podpory",
+        "Studenti preferující aktivní a interaktivní výuku, protože převažuje frontální přístup",
+        "Žáci v oboru Informační technologie, který vykazuje horší výsledky na maturitě než srovnatelné obory jinde"
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní praktickou výuku, zejména v oboru dřevařství, kde má vlastní dílnu v partnerské firmě. Žáci se úspěšně zapojují do soutěží. Problémem je slabá výuka matematiky (66,7 % neúspěšnosti na maturitě) a pasivní přístup k výuce – učitelé používají převážně frontální metody bez dostatečné aktivizace žáků. Některé prostory školy (tělocvična, dvůr) jsou v špatném technickém stavu. Škola je vhodná pro prakticky zaměřené žáky, ale ti se slabší matematikou by měli zvážit podporu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Rozdílné výsledky podle oboru – matematika dlouhodobě slabá, některé obory se zlepšují",
+        "key_numbers": [
+          "12 % neúspěšných z 100 žáků v letech 2021–2023",
+          "66,7 % hrubá neúspěšnost v matematice",
+          "Obor Operátor dřevařské výroby: lepší výsledky než srovnatelné obory"
+        ],
+        "evidence": "Z celkového počtu 100 žáků konajících maturitní zkoušku v období 2021–2023 bylo 12 % neúspěšných. Ve společné části z matematiky je hrubá neúspěšnost 66,7 %."
+      },
+      "absence": {
+        "trend": "Velmi dobrý – nízká absence, efektivní motivace žáků",
+        "key_numbers": [
+          "Průměrná absence 73 hodin na žáka",
+          "Neomluvená absence pouze 0,8 hodiny na žáka",
+          "Několik případů individuální zvýšené absence řešeno"
+        ],
+        "evidence": "Průměrná absence na žáka v roce 2022/2023 dosáhla 73 hodin, neomluvenou absenci škola vykazuje v minimální výši cca 0,8 hodiny na žáka."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence zajišťují poradenské služby",
+        "Kariérové poradenství pro volbu dalšího studia a profesního uplatnění",
+        "Školní poradenské pracoviště s podporou žáků se speciálními vzdělávacími potřebami (cca 10 % žáků)"
+      ],
+      "safety_climate": [
+        "Bezpečnostní rizika v tělocvičně, šatnách a na školním dvoře – špatný technický stav",
+        "Domov mládeže v dvou stavebně oddělených budovách – nedostatečně upravená pravidla pohybu žáků",
+        "Vnitřní řád domova mládeže obsahoval duplicitní a protichůdné informace"
+      ],
+      "partnerships_practice": [
+        "Stabilní partnerství s firmami pro praktické vyučování, zejména pro obor Operátor dřevařské výroby",
+        "Odloučené pracoviště v moderně vybavené dílně partnerské nábytkářské firmy",
+        "Realizace exkurzí, účast na výstavách a soutěžích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, obsahuje konkrétní čísla a citace. Slabší je pouze v některých technických pasážích o řízení a kontrole.",
+      "uncertainty_notes": [
+        "Není jasné, jaké konkrétní kroky škola již podnikla na základě doporučení inspekce (zpráva je z října 2023)",
+        "Chybí informace o tom, jak se situace v domově mládeže změnila po doporučení revize vnitřního řádu",
+        "Není specifikováno, které konkrétní učitele se týká nedostatečné participace na vzdělávacích kurzech"
+      ]
+    }
+  }
+}

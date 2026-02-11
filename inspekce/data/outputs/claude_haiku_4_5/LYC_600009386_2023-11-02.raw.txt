@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "LYC_600009386_2023-11-02",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola, Obchodní akademie, Střední zdravotnická škola a Jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "2. listopadu až 13. listopadu 2023",
+    "school_change_summary": "Nový zástupce ředitelky pro střední zdravotnickou školu, navýšení počtu tříd o dvě (Zdravotnické lyceum, Obchodní akademie), rozsáhlá rekonstrukce pokojů v domově mládeže."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní materiální vybavení",
+        "detail": "Učebny jsou esteticky vybaveny moderní technikou a pravidelně se modernizují.",
+        "evidence": "Vzdělávání probíhá v estetickém prostředí učeben dostatečně vybavených potřebnou technikou."
+      },
+      {
+        "tag": "Bohatá nabídka mimoškolních aktivit",
+        "detail": "Škola nabízí projekty, soutěže, Erasmus+, první pomoc a dobrovolnické činnosti.",
+        "evidence": "Škola podporuje rozvoj odborných kompetencí zapojením do projektových činností a předmětových soutěží."
+      },
+      {
+        "tag": "Kvalitní domov mládeže",
+        "detail": "Vychovatelé přistupují empaticky, prostředí je vhodné pro odpočinek i přípravu do školy.",
+        "evidence": "Vychovatelé vytvářejí podnětné prostředí a důsledně řeší případné problémy komunikací."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Mnoho žáků zameškalo pětinu vyučovaných hodin, absence není účinně řešena.",
+        "evidence": "Vysoký je počet zameškaných hodin omluvených i neomluvených, škole se nedaří tuto absenci zvládat."
+      },
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "Zejména v oboru Praktická sestra došlo ke zhoršení výsledků v roce 2023.",
+        "evidence": "Ve zkušebním roce 2023 došlo ke zhoršení ve výsledcích maturitních zkoušek především v oboru Praktická sestra."
+      },
+      {
+        "tag": "Nedostatečná podpora slabších žáků",
+        "detail": "Poradenské služby nejsou efektivně nastaveny, doporučení nejsou důsledně naplňována.",
+        "evidence": "Spolupráce vedení s výchovnou poradkyní v identifikaci ohrožených žáků nejsou účelné."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky pro prospěch?",
+      "Jaké konkrétní opatření přijala škola po zhoršení výsledků maturit v roce 2023?",
+      "Jak funguje podpora pro žáky se studijními potížemi a jak se měří její účinnost?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si cení kvalitního materiálního vybavení a moderní techniky ve výuce",
+      "Studenti zajímající se o praktické obory s vazbou na reálný trh práce",
+      "Žáci, kteří potřebují ubytování a ocení empatický přístup vychovatelů v domově mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k absencím – škola nemá účinný systém jejich řešení",
+      "Studenti s nižšími studijními předpoklady – výuka je zaměřena spíše na znalosti než na individuální podporu",
+      "Žáci potřebující intenzivní poradenskou podporu – služby nejsou dostatečně efektivní"
+    ],
+    "plain_czech_summary": "Škola má dobré materiální podmínky a nabízí bohaté mimoškolní aktivity. Domov mládeže funguje kvalitně. Hlavní problémy jsou vysoká absence žáků, která není účinně řešena, slabé výsledky maturit zejména v zdravotnických oborech a nedostatečná individuální podpora slabších žáků. Výuka se zaměřuje především na znalosti, chybí rozvoj kritického myšlení a spolupráce. Vedení školy nemá jasnou koncepci zlepšování a poradenské služby nejsou efektivně nastaveny."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršující se",
+      "key_numbers": [
+        "Ve školním roce 2022/2023 prospěla s vyznamenáním desetina žáků",
+        "Ve zkušebním roce 2023 došlo ke zhoršení výsledků v oboru Praktická sestra",
+        "Horší výsledky než celorepublikový průměr v srovnatelných oborech"
+      ],
+      "evidence": "Ve zkušebním roce 2023 došlo ke zhoršení ve výsledcích maturitních zkoušek především v oboru Praktická sestra. Při ukončování vzdělávání vykazuje škola v celorepublikovém srovnání horší výsledky."
+    },
+    "absence": {
+      "trend": "Vysoká a neřešená",
+      "key_numbers": [
+        "Mnoho žáků zameškalo pětinu vyučovaných hodin",
+        "Žáci s vysokou absencí mají prospěchové potíže",
+        "Vysoká absence je jednou z příčin zhoršování výsledků"
+      ],
+      "evidence": "Vysoký je počet zameškaných hodin omluvených i neomluvených, v mnoha třídách se vyskytují žáci, kteří zameškali i pětinu vyučovaných hodin. Škole se nedaří tuto vysokou absenci zvládat přijetím účinných opatření."
+    },
+    "support_services": [
+      "Jedna výchovná poradkyně na pracovišti Obchodní akademie",
+      "Jedna školní metodička prevence na pracovišti Střední zdravotnické školy",
+      "Služby nejsou efektivní, doporučení nejsou důsledně naplňována"
+    ],
+    "safety_climate": [
+      "Všechny vchody budov jsou zabezpečeny a dohledy jsou vykonávány",
+      "Všichni aktéři vzdělávání jsou pravidelně seznamováni s bezpečnostními pokyny",
+      "V domově mládeže je nastavena péče o bezpečnost a dodržování pravidel"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Klatovskou nemocnicí, Charitou Klatovy, úřadem práce a hospodářskou komorou",
+      "Zapojení do programu Erasmus+ a dobrovolných státních zkoušek",
+      "Vzdělávací akce zaměřené na první pomoc a výchovu ke zdraví"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Hlavní problémy jsou jasně identifikovány s citacemi z textu. Některé pasáže jsou technické, ale celkově je obsah pro rodiče pochopitelný.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o počtu žáků s jednotlivými známkami, pouze obecné údaje o prospěchu",
+      "Příčiny zhoršení výsledků maturit nejsou jednoznačně určeny – škola je připisuje pandemii a studijním předpokladům",
+      "Konkrétní data o absenci nejsou uvedena v procentech, pouze kvalitativní popis"
+    ]
+  }
+}
+```

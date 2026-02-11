@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600006301_2023-02-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:47:08.681149+00:00",
+  "run_finished_utc": "2026-02-09T16:47:33.766048+00:00",
+  "raw_file": "SOS_600006301_2023-02-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006301_2023-02-14",
+    "school_profile": {
+      "school_type": "Soukromá střední odborná škola (SOŠ) zaměřená na cestovní ruch, denní forma vzdělávání",
+      "inspection_period": "14. února 2023 až 16. února 2023",
+      "school_change_summary": "Od inspekce v roce 2016 se škola přestěhovala do pronajatých prostor v budově ZŠ Generála Janouška. Výrazně vzrostla naplněnost (kolem 72 %), zlepšilo se vybavení a snížila se absence žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Rodinné prostředí",
+          "detail": "Škola vytváří atmosféru důvěry, otevřenosti a porozumění mezi všemi aktéry vzdělávání.",
+          "evidence": "Demokratický styl vedení, malá škola s každodenním kontaktem zaměstnanců zajišťuje obousměrný přenos informací."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Moderní učebny, Wi-Fi, didaktická technika, knihovna a učební pomůcky jsou žákům poskytovány zdarma.",
+          "evidence": "Všechny učebny zařízeny moderním nábytkem a didaktickou technikou, soustavně doplňovaný fond knihovny."
+        },
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Funkční partnerství se zaměstnavateli v cestovním ruchu (cestovní kanceláře, hotely, hrady) podporuje praktickou přípravu.",
+          "evidence": "Žáci vykonávají odbornou praxi u potenciálních zaměstnavatelů, partneři poskytují podněty pro aktualizaci obsahu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená metodická pestrost",
+          "detail": "V části hodin převažuje frontální výuka s malým využitím kooperativních metod a aktivizujících forem.",
+          "evidence": "Inspekční tým zaznamenal didaktické nedostatky, zejména malou pestrost metod vedoucí k nižší aktivizaci žáků."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Učitelé v menší míře přizpůsobují úkoly individuálním možnostem a tempům práce žáků.",
+          "evidence": "Učitelé jen v malé míře diferencovali zadávané úkoly s ohledem na žáky s odlišnými individuálními možnostmi."
+        },
+        {
+          "tag": "Slabší výsledky v čtenářské gramotnosti",
+          "detail": "Žáci druhého ročníku dosáhli v testu čtenářské gramotnosti podprůměrných výsledků.",
+          "evidence": "Ve výběrovém zjišťování ČŠI 2022/2023 žáci druhého ročníku v testu čtenářské gramotnosti podprůměrných výsledků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s žáky, kteří mají problémy s čtenářskou gramotností? Jaká opatření jsou zavedena?",
+        "Jaké jsou konkrétní příklady spolupráce se zaměstnavateli a jak se žáci podílejí na reálných projektech?",
+        "Jak škola podporuje žáky se speciálními vzdělávacími potřebami a s odlišným mateřským jazykem?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o cestovní ruch a turismus, kteří chtějí praktickou přípravu s reálnými partnery",
+        "Studenti, kterým vyhovuje rodinné prostředí a individuální přístup v menší škole",
+        "Žáci, kteří se chystají na vysokou školu nebo přímo do praxe v cestovním ruchu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více aktivizujících a interaktivních metod výuky a nesnášejí frontální výuku",
+        "Studenti se slabšími dovednostmi v čtenářské gramotnosti, kde škola dosahuje podprůměrných výsledků",
+        "Žáci, kteří potřebují silnou diferenciaci a individualizaci výuky podle svého tempa"
+      ],
+      "plain_czech_summary": "Soukromá SOŠ START je malá škola s rodinným charakterem zaměřená na cestovní ruch. Má kvalitní vybavení, funkční spolupráci se zaměstnavateli a nízkou absenci žáků. Silnou stránkou je praktická příprava a atmosféra důvěry. Slabší je metodická pestrost výuky – převažuje frontální přístup s menší aktivizací žáků. Škola také potřebuje zlepšit diferenciaci podle individuálních potřeb a více pracovat s čtenářskou gramotností."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní s pozitivním trendem v porovnání s průměrem, ale s výkyvem v profilové části",
+        "key_numbers": [
+          "Ve společné části maturitní zkoušky lepší výsledky než průměr dané skupiny oborů v ČR",
+          "Školní rok 2020/2021: výrazný negativní výkyv v profilové části (vliv distanční výuky)",
+          "Více než 10 % absolventů pokračuje v navazujícím vysokoškolském studiu"
+        ],
+        "evidence": "Ve sledovaném období tří školních let dosahovali žáci lepších výsledků v porovnání s průměrem dané skupiny oborů v rámci České republiky."
+      },
+      "absence": {
+        "trend": "Výrazně se snížila od poslední inspekce v roce 2016",
+        "key_numbers": [
+          "Průměrný počet zameškaných hodin na žáka: kolem 70 omluvených hodin za školní rok",
+          "Nulový počet neomluvených hodin",
+          "Nižší průměrný počet zameškaných hodin na žáka"
+        ],
+        "evidence": "Od posledního inspekčního hodnocení se výrazně snížila absence žáků ve výuce. Důsledný přístup v uplatňování nastavených pravidel se odráží v nižším průměrném počtu zameškaných hodin."
+      },
+      "support_services": [
+        "Systém poradenských služeb identifikuje potřeby žáků se speciálními vzdělávacími potřebami (6 žáků) a s odlišným mateřským jazykem (8 žáků)",
+        "Individuální podpora ve spolupráci s odborníky z poradenských zařízení",
+        "Adaptační kurzy a mimoškolní aktivity zaměřené na zvládnutí nároků středoškolského studia",
+        "Kariérní poradenství s informačním servisem o dalších možnostech studia a uplatnění"
+      ],
+      "safety_climate": [
+        "Velmi nízký výskyt rizikového chování dokumentující funkčnost preventivních mechanismů",
+        "Žáci respektují nastavená pravidla práce a komunikace s vyučujícími",
+        "Elektronický systém vstupu do budovy a recepce přispívají k bezpečnosti žáků a ochraně majetku"
+      ],
+      "partnerships_practice": [
+        "Aktivní dlouhodobá spolupráce se sociálními partnery v cestovním ruchu (cestovní kanceláře, agentury, informační centra, ubytovací a stravovací zařízení, hrady a zámky)",
+        "Žáci vykonávají odbornou praxi u potenciálních zaměstnavatelů",
+        "Partneři poskytují škole podněty pro aktualizaci obsahu vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní údaje, citace z hospitací a měřitelné výsledky. Slabší je pouze v některých technických pasážích o financování.",
+      "uncertainty_notes": [
+        "Počet žáků se speciálními potřebami (6) a s odlišným mateřským jazykem (8) není vztažen k celkovému počtu 100 žáků – není jasné, zda se jedná o překrývající se skupiny",
+        "Zpráva nespecifikuje, které konkrétní předměty mají problémy s metodickou pestrostí – není jasné, zda jde o všechny nebo jen některé",
+        "Není jasné, jaké konkrétní opatření byla přijata na zlepšení čtenářské gramotnosti a jaké jsou jejich výsledky"
+      ]
+    }
+  }
+}

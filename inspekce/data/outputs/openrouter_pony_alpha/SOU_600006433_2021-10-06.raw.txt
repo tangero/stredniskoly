@@ -1,0 +1,99 @@
+{
+  "report_id": "SOU_600006433_2021-10-06",
+  "school_profile": {
+    "school_type": "SOU",
+    "inspection_period": "2021-10-06 až 2021-10-11",
+    "school_change_summary": "Škola si od poslední inspekce v roce 2012 udržuje velmi vysoký standard odborného vzdělávání a modernizuje materiální zázemí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná úroveň",
+        "detail": "Praktické vyučování a souvislá praxe probíhají na velmi vysoké odborné úrovni díky úzkému sepětí teorie s praxí.",
+        "evidence": "Praktické vyučování i souvislá praxe probíhají v souladu s koncepcí školy na velmi vysoké odborné úrovni."
+      },
+      {
+        "tag": "Jedinečné obory",
+        "detail": "Škola nabízí unikátní obor Chovatel cizokrajných zvířat, který je v rámci Prahy výlučný.",
+        "evidence": "Obor Chovatel cizokrajných zvířat má v rámci pražského regionu i v celorepublikovém měřítku výlučné postavení."
+      },
+      {
+        "tag": "Zázemí a technologie",
+        "detail": "Škola disponuje moderním vybavením odborných pracovišť, včetně školní kuchyně a jídelny.",
+        "evidence": "Odborná pracoviště [...] jsou vybavena nejmodernějšími zařízeními a technologiemi."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "V teoretických předmětech převažuje frontální výuka a učitelé málo využívají aktivizující metody.",
+        "evidence": "V teoretickém vyučování preferovali učitelé frontální výuku [...] kooperativní formy práce byly využity pouze ojediněle."
+      },
+      {
+        "tag": "Nedostatečná motivace",
+        "detail": "Ve výuce často chybí vstupní motivace a závěrečné shrnutí pro fixaci učiva.",
+        "evidence": "V převážné části sledovaných hodin však učitelé opomíjeli účelnou vstupní motivaci [...] Chyběl závěr vyučovací hodiny."
+      },
+      {
+        "tag": "Nediferencovaný přístup",
+        "detail": "Výuka není dostatečně přizpůsobována individuálním potřebám žáků, zejména těch nadanějších.",
+        "evidence": "Často však nebyla výuka diferencována vzhledem k žákům nadanějším."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé u dětí podporují zájem o teoretické předměty, když inspekce zaznamenala málo aktivizujících metod?",
+      "Jakým způsobem škola zajišťuje, aby se i nadanější žáci v teoretické výuce nenudili a mohli rozvíjet svůj potenciál?",
+      "Jak vypadá systém rotace na odborných pracovištích a jak škola vybírá konkrétní firmy pro praxi?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o gastronomické obory, kteří chtějí pracovat s nejmodernějšími technologiemi v reálném provozu.",
+      "Milovníci zvířat, kteří chtějí využít jedinečnou možnost studia oboru Chovatel cizokrajných zvířat v Praze.",
+      "Žáci, kteří očekávají silnou podporu při hledání uplatnění na trhu práce a odborné stáže."
+    ],
+    "who_should_be_cautious": [
+      "Studenti, kteří preferují moderní interaktivní formy výuky před tradičním frontálním vyučováním.",
+      "Nadanější žáci, kteří mohou v nediferencované teoretické výuce postrádat dostatek výzev.",
+      "Uchazeči o nástavbové studium Podnikání, kde jsou výsledky horší než v ostatních oborech."
+    ],
+    "plain_czech_summary": "Škola v Čakovicích si udržuje vysokou úroveň především v odborném výcviku a gastronomii, kde žáci pracují s moderním vybavením. Nabízí i unikátní obor pro chovatele zvířat. Slabší stránkou je tradiční styl teoretické výuky, kde chybí moderní metody a individuální přístup k nadanějším žákům. Škola má skvělé zázemí, fungující bezpečnostní opatření a velmi dobrou stravu. Pro rodiče je klíčové, že škola efektivně připravuje žáky na povolání a trh práce, i když teoretická část výuky může být pro některé méně inspirativní."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Úspěšnost cca 90 %",
+        "Polovina s vyznamenáním",
+        "Zlepšení oproti minulému hodnocení"
+      ],
+      "evidence": "Od posledního inspekčního hodnocení školy došlo ke zlepšení výsledků žáků u maturitní zkoušky. Prospívá téměř 90 % maturujících, polovina všech žáků s vyznamenáním."
+    },
+    "absence": {
+      "trend": "Nízká míra neomluvené absence",
+      "key_numbers": [
+        "Snížené známky z chování ojediněle",
+        "Důvodem převážně neomluvená absence"
+      ],
+      "evidence": "Snížené známky z chování jsou udělovány ojediněle, převážně za neomluvenou absenci."
+    },
+    "support_services": [
+      "Školní psycholog pro potřeby žáků",
+      "Intenzivní výuka českého jazyka pro cizince",
+      "Systém doučování a konzultací (projekt Šablony II)"
+    ],
+    "safety_climate": [
+      "Stabilní nízká míra úrazovosti",
+      "Kamerový systém a služba nepedagogického pracovníka u vstupu",
+      "Příjemná pracovní atmosféra založená na vzájemném respektu"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá kooperace s odbornými svazy a asociacemi",
+      "Realizace praxe na smluvních pracovištích (ZOO, pet-centra, gastronomie)",
+      "Zahraniční stáže a projekty (Erasmus+, TANDEM)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a obsahuje konkrétní příklady i data.",
+    "uncertainty_notes": []
+  }
+}

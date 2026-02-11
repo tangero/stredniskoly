@@ -1,0 +1,93 @@
+```json
+{
+  "report_id": "SOS_600015076_2023-11-06",
+  "school_profile": {
+    "school_type": "Střední odborná škola veterinární s domovem mládeže a školní jídelnou",
+    "inspection_period": "6. listopadu 2023 až 9. listopadu 2023",
+    "school_change_summary": "Nové vedení od prosince 2018, zřízení pozice školního psychologa, výrazné zkvalitnění materiálně technických podmínek."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie a praxe",
+        "detail": "Škola propojuje teoretickou výuku s praktickými cvičeními v moderně vybavených laboratořích a pracovnách s nejnovějšími veterinárními přístroji.",
+        "evidence": "\"Efektivní teoretická příprava podpořená vysokou odborností učitelů se pozitivně odrazila na kvalitě vzdělávání.\""
+      },
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Přibližně třetina žáků prospívá s vyznamenáním, úspěšnost je výrazně vyšší než u podobných škol.",
+        "evidence": "\"Výsledky společné i profilové části maturitní zkoušky v posledních třech letech byly na velmi dobré úrovni.\""
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují čelních umístění v biologických olympiádách a celorepublikových odborných soutěžích.",
+        "evidence": "\"Výborných výsledků škola opakovaně dosahuje v prestižní celorepublikové odborné soutěži středních škol s veterinárním zaměřením.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace úloh",
+        "detail": "Výuka neobsahuje dostatečně úlohy různé obtížnosti přizpůsobené jednotlivým žákům.",
+        "evidence": "\"Minimálně se dařilo do výuky zařazovat úlohy rozdílné kognitivní náročnosti.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá propojení teoretické výuky s praxí v jednotlivých ročnících?",
+      "Jaké jsou možnosti doučování pro žáky s prospěchovými problémy?",
+      "Jak se škola připravuje na nové pojetí informatického vzdělávání?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o veterinářství a přírodní vědy, kteří chtějí kvalitní praktickou přípravu",
+      "Talentovaní žáci, kterým škola nabízí soutěže a rozvojové aktivity",
+      "Žáci ze vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovanou výuku s úlohami přesně na jejich úroveň",
+      "Žáci s výraznějšími prospěchovými problémy, kteří by potřebovali více diferencované přístupy"
+    ],
+    "plain_czech_summary": "Tauferova veterinární škola v Kroměříži je kvalitní střední odborná škola se silným zaměřením na propojení teorie a praxe. Žáci se učí na moderním vybavení a dosahují výborných výsledků u maturit i v soutěžích. Škola má dobré zázemí včetně domova mládeže. Jedinou slabší stránkou je, že výuka ne vždy dostatečně přizpůsobuje obtížnost úloh jednotlivým žákům. Škola je vhodná pro motivované žáky se zájmem o veterinářství."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi dobrý",
+      "key_numbers": [
+        "Přibližně třetina žáků prospívá s vyznamenáním",
+        "Úspěšnost výrazně vyšší než u škol obdobného typu",
+        "Výborné výsledky v posledních třech letech"
+      ],
+      "evidence": "\"Výsledky společné i profilové části maturitní zkoušky v posledních třech letech byly na velmi dobré úrovni.\""
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence nezabývá"
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodička prevence",
+      "Školní psycholožka s přínosnou podporou pedagogického procesu",
+      "Doučování pro žáky s prospěchovými problémy",
+      "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami (16 žáků s 1. a 2. stupněm)"
+    ],
+    "safety_climate": [
+      "Účinně nastavený systém pro bezpečnost a ochranu zdraví žáků",
+      "Pravidelné informace o bezpečnostních rizicích ve škole i mimo ni",
+      "Pozitivní klima podporující vzdělávání v domově mládeže"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s odbornými organizacemi a pracovišti, kde žáci vykonávají praxi",
+      "Mezinárodní spolupráce s partnerskými školami v zahraničí formou kurzů a stáží",
+      "Práce na vývoji e-modulu pro školení učitelů v oblasti environmentálního vzdělávání",
+      "Spolupráce se základními a vysokými školami, sociálními partnery a městem Kroměříž"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk bez zbytečného úřednického stylu. Konkrétní fakta jsou podpořena citacemi. Silné a slabé stránky jsou jasně vymezeny.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, nelze posoudit trend absence žáků",
+      "Konkrétní počty žáků s prospěchovými problémy nejsou uvedeny",
+      "Detailní informace o doučování (počet hodin, obsah) nejsou v textu"
+    ]
+  }
+}
+```

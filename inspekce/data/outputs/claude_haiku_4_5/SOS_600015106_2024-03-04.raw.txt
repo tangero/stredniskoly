@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600015106_2024-03-04",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola potravinářská a Střední průmyslová škola mlékárenská",
+    "inspection_period": "4. března 2024 až 7. března 2024",
+    "school_change_summary": "Nárůst počtu žáků střední školy, snižující se počet studentů vyšší odborné školy. Výrazné zkvalitnění materiálně technických podmínek a získání certifikace mlékárenské výroby."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie a praxe",
+        "detail": "Praktická výuka dosahuje velmi dobré úrovně s jasně stanovenými cíli a efektivním propojením s teoretickou výukou.",
+        "evidence": "Praktické vyučování bylo úzce propojeno s teoretickou výukou, což vedlo k podpoře rozvoje dovedností, vědomostí i postojů."
+      },
+      {
+        "tag": "Výborné výsledky u zkoušek",
+        "detail": "Maturitní výsledky jsou na velmi dobré úrovni, třetina žáků prospěla s vyznamenáním, u absolutoria všichni studenti uspěli.",
+        "evidence": "Výsledky u maturitní zkoušky v posledních třech letech byly na velmi dobré úrovni. Všichni studenti u absolutoria uspěli."
+      },
+      {
+        "tag": "Moderní vybavení a školní poloprovoz",
+        "detail": "Škola má certifikovanou školní mlékárnu a rozšířila výrobu o masné a pekárenské produkty a pivo.",
+        "evidence": "Kontinuálně se zvyšující úroveň materiálních podmínek umožňuje demonstrovat technologii výroby a analýzu mlékárenských produktů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné vyhledávání informací",
+        "detail": "Teoretická výuka málo zapojuje žáky do vyhledávání informací z různých zdrojů a forem.",
+        "evidence": "Minimálně se však dařilo do teoretické výuky zařazovat vyhledávání informací z různých zdrojů."
+      },
+      {
+        "tag": "Slabší výsledky v čtenářské gramotnosti",
+        "detail": "Při externím testování škola dosáhla mírně podprůměrných výsledků v čtenářské gramotnosti.",
+        "evidence": "Při testování v oblasti čtenářské gramotnosti škola dosáhla mírně podprůměrných výsledků ve srovnání s celorepublikovými."
+      },
+      {
+        "tag": "Chybějící tělocvična",
+        "detail": "Škola nemá vlastní tělocvičnu a musí využívat zařízení okolních škol.",
+        "evidence": "Škola nemá vlastní tělocvičnu, proto k výuce využívá tělocvičny blízkých škol a veřejná sportoviště."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se žáci připravují na maturitní zkoušky a jakou podporu dostávají při přípravě na profilové zkoušky?",
+      "Jaké jsou možnosti zapojení žáků do projektů a soutěží mimo běžnou výuku?",
+      "Jak škola zajišťuje bezpečnost žáků při praktické výuce v poloprovozu a laboratořích?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a technologické obory s jasným cílem pracovat v potravinářství",
+      "Studenti vyšší odborné školy hledající kvalitní praktickou přípravu s moderním vybavením",
+      "Žáci, kterým vyhovuje kombinace teoretické výuky s intenzivní praktickou přípravou v reálných výrobních podmínkách"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují samostatné vyhledávání informací a práci s různými zdroji, mohou být v teoretické výuce zklamáni",
+      "Studenti se slabší čtenářskou gramotností, kterým by měla být věnována zvýšená pozornost",
+      "Žáci vyžadující intenzivní tělesnou výchovu, protože škola nemá vlastní tělocvičnu"
+    ],
+    "plain_czech_summary": "Jde o kvalitní odbornou školu se silným zaměřením na praktickou přípravu v potravinářství. Výuka je dobře organizovaná, učitelé jsou odborně kvalifikovaní a vybavení je moderní. Maturitní výsledky jsou velmi dobré. Hlavní slabinou je, že teoretická výuka málo zapojuje žáky do vyhledávání informací z různých zdrojů. Škola také dosáhla podprůměrných výsledků v čtenářské gramotnosti. Chybí vlastní tělocvična."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stoupající, s výjimkou mírného zhoršení v cizím jazyce a profilové zkoušce",
+      "key_numbers": [
+        "Třetina žáků prospěla s vyznamenáním",
+        "V českém jazyce všichni žáci prospěli v posledních dvou letech",
+        "Mírné zhoršení v cizím jazyce a profilové zkoušce mezi lety 2020/2021 a 2022/2023"
+      ],
+      "evidence": "Výsledky u maturitní zkoušky v posledních třech letech byly na velmi dobré úrovni. Úspěšnost žáků v českém jazyce měla stoupající tendenci."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence žáků nezabývá"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště v účinné spolupráci s vedením školy",
+      "Systematická podpora žáků se speciálními vzdělávacími potřebami formou podpůrných opatření",
+      "Doučování pro žáky ohrožené školním neúspěchem",
+      "Kariérové poradenství v součinnosti s odbornými organizacemi a vysokými školami",
+      "Adaptační pobyty pro žáky prvních ročníků"
+    ],
+    "safety_climate": [
+      "Vedení školy se systematicky zaměřovalo na zajištění fyzické bezpečnosti žáků a studentů",
+      "Žáci byli průběžně poučováni o bezpečném chování a seznamováni s možnými riziky",
+      "Cílená pozornost byla věnována příznivému vnímání školního prostředí",
+      "Interiér i okolí školy bylo upravené, působící pozitivně na estetické cítění"
+    ],
+    "partnerships_practice": [
+      "Velmi přínosná spolupráce s firmami a vysokými školami při získávání přehledu o nových trendech a technologiích",
+      "Aktivní prezentace na veřejnosti, zejména při pořádání festivalu sýrů",
+      "Mezinárodní spolupráce se školou obdobného zaměření ve Francii",
+      "Velmi dobrá kooperace se zřizovatelem a zákonnými zástupci žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však formulovány úřednickým stylem, který může být pro rodiče méně přístupný.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, nelze posoudit trend absence žáků",
+      "Nejsou uvedeny konkrétní počty žáků s problémy v chování nebo disciplíně",
+      "Chybí informace o počtu žáků, kteří pokračují ve vysokoškolském vzdělání"
+    ]
+  }
+}
+```

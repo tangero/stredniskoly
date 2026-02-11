@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_600015751_2022-01-11",
+  "school_profile": {
+    "school_type": "Střední odborná škola s výučním listem a maturitou, domovem mládeže a školní jídelnou.",
+    "inspection_period": "2022-01-11 až 2022-04-20",
+    "school_change_summary": "Škola výrazně zlepšila materiální podmínky díky rekonstrukcím a modernizaci, zavedla elektronický informační systém a posunula kvalitu odborného výcviku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a prostředí",
+        "detail": "Rekonstrukce a modernizace vedly ke komplexnímu zlepšení prostředí, sociálního zařízení a vybavení odborných učeben.",
+        "evidence": "„Rekonstrukce a modernizace budov vedla ke kompletnímu zlepšení výukového prostředí... zkvalitnilo vybavení všech odborných učeben.“"
+      },
+      {
+        "tag": "Praktická příprava",
+        "detail": "Učitelé efektivně rozvíjí dovednosti žáků s ohledem na uplatnění na trhu práce v příjemné atmosféře.",
+        "evidence": "„Učitelé efektivně podporovali kompetence žáků... aby budoucí absolventi... úspěšně se uplatnili na trhu práce.“"
+      },
+      {
+        "tag": "Odborné soutěže",
+        "detail": "Škola aktivně motivuje žáky k účasti v odborných soutěžích, včetně těch mezinárodních.",
+        "evidence": "„Škola motivuje žáky k zapojení do mnoha odborných soutěží, a to i se zahraniční účastí... Žáci... dosahují velmi dobrých výsledků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost u maturity",
+        "detail": "Žáci maturitních oborů dosahují horších výsledků, zejména u nástavbového studia Podnikání je vysoká neúspěšnost.",
+        "evidence": "„Průměrná hrubá neúspěšnost... u oboru Agropodnikání 12,6 % a u dvouletého nástavbového oboru Podnikání 36,5 %.“"
+      },
+      {
+        "tag": "Zanedbávaná teorie",
+        "detail": "V teoretické výuce chybí moderní metody a diferenciace, převažuje frontální výuka bez aktivního zapojení žáků.",
+        "evidence": "„V teoretickém vyučování převažovala frontální výuka... diferenciace učiva... nevedla k dostatečné podpoře individuálního pokroku.“"
+      },
+      {
+        "tag": "Odchody a absence",
+        "detail": "Škola se potýká s vysokou neomluvenou absencí a předčasnými odchody žáků, zejména v oboru Podnikání.",
+        "evidence": "„Jednou z hlavních příčin školní neúspěšnosti je poměrně vysoká absence žáků, včetně vysoké neomluvené absence.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, aby úspěšně složili maturitní zkoušku, a jaká opatření fungují proti vysoké neúspěšnosti?",
+      "Jakým způsobem jsou využívány nově zrekonstruované odborné učebny a dílny v jednotlivých oborech?",
+      "Jak škola pracuje s žáky s vysokou absencí, aby předešla jejich předčasnému odchodu?"
+    ],
+    "who_school_fits": [
+      "Uchazečům o řemeslné obory (pekař, cukrář, zahradník), kteří chtějí získat kvalitní praktické dovednosti v moderních dílnách.",
+      "Žákům, kteří hledají školu se silným zaměřením na odborné soutěže a mimoškolní aktivity.",
+      "Studentům, kteří oceňují vstřícné pracovní prostředí a individuální přístup v praktické části výuky."
+    ],
+    "who_should_be_cautious": [
+      "Uchazečům o nástavbové studium oboru Podnikání kvůli velmi vysoké neúspěšnosti u maturity a vysoké absenci.",
+      "Žákům, kteří preferují moderní interaktivní metody výuky před tradiční frontální výukou v teoretických předmětech.",
+      "Studentům, kteří potřebují silnou motivaci k pravidelné docházce, neboť škola bojuje s vysokou neomluvenou absencí."
+    ],
+    "plain_czech_summary": "Škola nabízí širokou škálu oborů v modernizovaném prostředí s kvalitním technickým vybavením a důrazem na praktickou přípravu. Žáci se úspěšně zapojují do odborných soutěží. Slabinou je tradiční styl teoretické výuky a problematické výsledky u maturit, zejména na nástavbovém studiu Podnikání, kde je i vysoká absence. Pro řemeslníky je škola dobrou volbou, u maturitních oborů je třeba zvážit míru podpory studia."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Klesající / Rizikový",
+      "key_numbers": [
+        "Neúspěšnost u maturity v oboru Podnikání 36,5 %.",
+        "Neúspěšnost u maturity v oboru Agropodnikání 12,6 %.",
+        "Pouze 40 % žáků úspěšně ukončí vzdělávání maturitní zkouškou."
+      ],
+      "evidence": "„Průměrná hrubá neúspěšnost... byla za tři poslední školní roky u oboru Agropodnikání 12,6 % a u dvouletého nástavbového oboru Podnikání 36,5 %.“"
+    },
+    "absence": {
+      "trend": "Vysoká / Zhoršující se",
+      "key_numbers": [
+        "Neomluvená absence v oboru Podnikání přes 26 %.",
+        "Neomluvená absence ve výučních oborech 14,7 %.",
+        "Neomluvená absence v oboru Agropodnikání 2,6 %."
+      ],
+      "evidence": "„Ve školním roce 2020/2021 činila... neomluvená absence žáků oboru vzdělání Podnikání více než 26 % celkové absence.“"
+    },
+    "support_services": [
+      "Funkční systém péče o žáky se SVP a prevence rizikového chování.",
+      "Individuální podpora asistentů pedagoga ve výuce i na praktických pracovištích.",
+      "Adaptační programy pro nové kolektivy a aktivní spolupráce s rodiči."
+    ],
+    "safety_climate": [
+      "Výuka probíhá ve vstřícné pracovní atmosféře bez kázeňských problémů.",
+      "Pravidelné vyhodnocování úrazů vedlo k postupnému snižování jejich počtu.",
+      "Škola přijímá operativní opatření v případě projevů rizikového chování."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zaměstnavateli na smluvních pracovištích pro odborný výcvik.",
+      "Realizace mezinárodních projektů a partnerských vztahů.",
+      "Pořádání akcí pro veřejnost a školy z okolí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, terminologie je vysvětlena a kontext je jasný i pro laiky.",
+    "uncertainty_notes": []
+  }
+}

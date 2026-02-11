@@ -1,0 +1,103 @@
+{
+  "report_id": "SOU_600012824_2021-11-25",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště s teoretickým a praktickým vyučováním včetně domova mládeže.",
+    "inspection_period": "25., 26. a 30. 11. 2021",
+    "school_change_summary": "Škola nedávno zrušila obory Provozní technika, Klempíř a Prodavač a soustředí se na strojírenské obory."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Výborné zázemí pro odborný výcvik ve vlastních dílnách i reálném provozu firem.",
+        "evidence": "„Dobré materiálně technické podmínky pro konání praktického vyučování škola zajišťuje ve vlastních dílenských pracovištích a účelně využívá také pracoviště v reálném prostředí u smluvních partnerů.“"
+      },
+      {
+        "tag": "Spolupráce s firmami",
+        "detail": "Funkční systém spolupráce zajišťuje kvalitní praxi a stipendia pro žáky.",
+        "evidence": "„Funkční systém spolupráce školy se smluvními partnery... spoluprací s firmami, které pro žáky... nabízejí stipendium.“"
+      },
+      {
+        "tag": "Výsledky vzdělávání",
+        "detail": "Žáci dosahují velmi dobrých výsledků v angličtině a u výučních listů.",
+        "evidence": "„V předmětu anglický jazyk dosahují žáci školy opakovaně lepší výsledky v porovnání s celorepublikovými výsledky... v roce 2021 uspělo u zkoušek všech 45 žáků [s výučním listem].“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Převažuje frontální výuka, kde jsou žáci spíše pasivními příjemci informací.",
+        "evidence": "„Převažovala frontální výuka, s dominantním postavením učitele, který předával vesměs hotové poznatky.“"
+      },
+      {
+        "tag": "Nedostatečná zpětná vazba",
+        "detail": "Hodiny často končí bez shrnutí a ověření, zda žáci látku pochopili.",
+        "evidence": "„Prostor ke zlepšení je v chybějících nebo velmi stručných závěrech hodin... nedocházelo k ověřování naplnění stanovených cílů vzdělávání.“"
+      },
+      {
+        "tag": "Podpora žáků se SVP",
+        "detail": "Učitelé hůře přizpůsobují úkoly žákům se speciálními vzdělávacími potřebami.",
+        "evidence": "„Žákům se speciálními vzdělávacími potřebami nebylo vždy poskytováno žádoucí zohlednění... formou diferenciace úkolů.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé učí žáky aktivně diskutovat a pracovat v hodinách, když inspekce zaznamenala převahu frontální výuky?",
+      "Jak škola zajišťuje, aby na konci hodin žáci rozuměli probíranému tématu, když inspekce kritizovala absenci shrnutí?",
+      "Jakým způsobem se vychovatelé v domově mládeže podílejí na doučování žáků?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří se chtějí naučit řemeslo a uplatnit se ve strojírenství nebo jako instalatéři.",
+      "Pro studenty, kteří očekávají kvalitní praxi v reálných firmách a možnost získat stipendium.",
+      "Pro ty, kteří preferují menší školu s rodinným prostředím a vlastním domovem mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří potřebují silný individuální přístup kvůli specifickým vzdělávacím potřebám.",
+      "Pro žáky, kteří preferují moderní interaktivní metody výuky před tradičním výkladem.",
+      "Pro ty, kdo očekávají bohatou nabídku mimoškolních aktivit (vzhledem k omezené kapacitě domova mládeže)."
+    ],
+    "plain_czech_summary": "Střední odborné učiliště ve Svitavách nabízí kvalitní strojírenské a instalatérské obory s velmi dobrou praktickou přípravou a propojením s firmami, které často nabízejí stipendia. Škola dosahuje nadprůměrných výsledků v angličtině a u závěrečných zkoušek. Slabší stránkou je tradiční styl výuky, kde žáci příliš neprodiskutovávají téma, a chybějící shrnutí látky na konci hodin. Problémem může být i nedostatečná podpora pro žáky se speciálními potřebami. Škola prošla v roce 2021 změnou, kdy zrušila některé méně poptávané obory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený: vynikající výsledky z angličtiny, průměrné z češtiny a matematiky.",
+      "key_numbers": [
+        "V roce 2021 maturovalo 24 žáků.",
+        "7 žáků složilo maturitu s vyznamenáním.",
+        "2 žáci u maturity neuspěli."
+      ],
+      "evidence": "„V předmětu anglický jazyk dosahují žáci školy opakovaně lepší výsledky... Mírně horších výsledků... dosahují žáci u zkoušky z českého jazyka a matematiky.“"
+    },
+    "absence": {
+      "trend": "Škola řeší problém s vysokou a neomluvenou docházkou prostřednictvím výchovných komisí.",
+      "key_numbers": [
+        "Vysoká a neomluvená absence je nejčastějším výchovným problémem.",
+        "Problémy řeší výchovné komise."
+      ],
+      "evidence": "„Na řešení výchovných problémů, které se nejčastěji týkají vysoké a neomluvené absence, se účelně podílejí výchovné komise.“"
+    },
+    "support_services": [
+      "Individuální konzultace a doučování pro žáky ohrožené neúspěchem.",
+      "Spolupráce výchovné poradkyně se školskými poradenskými zařízeními.",
+      "Podpora ubytovaných žáků v domově mládeže při učení."
+    ],
+    "safety_climate": [
+      "Mezi účastníky vzdělávání panuje příjemná atmosféra a otevřená komunikace.",
+      "V praktickém vyučování je důraz na bezpečnost práce a ochranu zdraví.",
+      "V domově mládeže je vytvářeno přátelské klima nahrazující rodinné prostředí."
+    ],
+    "partnerships_practice": [
+      "Aktivní spolupráce s Krajskou hospodářskou komorou a firmami nabízejícími stipendia.",
+      "Využívání pracovišť smluvních partnerů pro produktivní činnosti žáků.",
+      "Pořádání projektových dnů a kroužků pro žáky základních škol."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěry a doporučení jsou explicitní a srozumitelná i pro laiky.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní číselné údaje o neomluvené absenci, pouze ji zmiňuje jako častý problém.",
+      "Není specifikováno, o jaké 'formální nedostatky v dokumentaci' se jednalo, které byly v průběhu inspekce odstraněny.",
+      "Chybí detailnější rozbor toho, jak konkrétně probíhá individualizace výuky pro žáky se SVP, kromě obecného konstatování nedostatků."
+    ]
+  }
+}

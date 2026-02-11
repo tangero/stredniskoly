@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600004643_2021-11-10",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:18:45.226282+00:00",
+  "run_finished_utc": "2026-02-10T08:19:40.267488+00:00",
+  "raw_file": "SOS_600004643_2021-11-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600004643_2021-11-10",
+    "school_profile": {
+      "school_type": "Vyšší odborná a Střední průmyslová škola dopravní",
+      "inspection_period": "10. 11. 2021 − 12. 11. 2021 a 15. 11. 2021",
+      "school_change_summary": "Škola dlouhodobě rozvíjí kvalitní odborné vzdělávání, výrazně se zlepšila kvalifikovanost pedagogického sboru i materiálně technické podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vybavení a technologie",
+          "detail": "Škola nabízí unikátní odborná pracoviště včetně simulátorů letadla, metra i vlaku.",
+          "evidence": "Ve výuce jsou efektivně využívána specializovaná pracoviště, např. učebna letecké dopravy se simulátory dopravního letadla."
+        },
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Díky silným partnerstvím mají žáci zajištěné odborné praxe a lepší uplatnění po škole.",
+          "evidence": "Příkladně rozvíjené partnerské vztahy jsou přínosné zejména pro zajištění odborných praxí žáků."
+        },
+        {
+          "tag": "Výsledky vzdělávání",
+          "detail": "Žáci dosahují nadprůměrných výsledků u maturit a úspěšně se uplatňují na trhu práce.",
+          "evidence": "V oboru Provoz a ekonomika dopravy žáci opakovaně dosahují lepších výsledků než je průměr; vysoká uplatnitelnost absolventů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nerovnoměrná kvalita výuky",
+          "detail": "Část hodin trpí metodickými nedostatky a nízkou aktivitou žáků.",
+          "evidence": "Účinnost výuky přibližně třetiny hospitovaných hodin snižovaly některé metodické a didaktické nedostatky."
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Ve výuce chybí častější diferenciace úkolů podle schopností jednotlivých žáků.",
+          "evidence": "Scházející diferenciace zadávaných úloh dostatečně nepodporovala odlišné pracovní tempo a individuální možnosti žáků."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Někteří učitelé nevyužívají dostatečně poznatky z kontrol k lepšímu vedení hodin.",
+          "evidence": "Nedaří se vždy aplikovat stanovená metodická opatření do výuky, chybí systematické sdílení poznatků z hospitační činnosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola zajišťuje, aby byla kvalita výuky srovnatelná u všech učitelů?",
+        "Jakým způsobem jsou individuálně podporováni žáci s různým tempem učení?",
+        "Které konkrétní firmy zajišťují odborné praxe pro daný obor?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí získat silnou odbornou kvalifikaci pro dopravní a logistické sektory.",
+        "Pro zájemce o technické obory s důrazem na moderní technologie a simulátory.",
+        "Pro žáky, kteří očekávají silnou podporu při hledání uplatnění na trhu práce."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří potřebují silný individuální přístup a přizpůsobené tempo výuky.",
+        "Pokud váš dítě preferuje aktivní a diskuzní formy výuky před tradičním přednášením.",
+        "Pro žáky, kteří by mohli být citliví na nerovnoměrnou úroveň pedagogického mistrovství."
+      ],
+      "plain_czech_summary": "Dopravní průmyslovka na Masné má vynikající pověst díky silnému propojení s praxí a špičkovému technickému vybavení, včetně unikátních simulátorů. Rodiče mohou spoléhat, že jejich děti získají solidní maturitu a uplatnění. Hlavním rizikem je, že ne všichni učitelé vyučují stejně kvalitně; v některých hodinách chybí moderní metody a individuální přístup k žákům. Škola je skvělou volbou pro technicky zaměřené studenty, kteří jsou ochotni akceptovat, že kvalita výuky může být u jednotlivých vyučujících odlišná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Lepší výsledky než průměr oboru",
+          "Nízká hrubá neúspěšnost",
+          "Malý počet neúspěšných žáků"
+        ],
+        "evidence": "Výsledky žáků při ukončování vzdělávání se ve všech oborech zlepšily; v oboru Provoz a ekonomika dopravy dosahují lepších výsledků než je průměr."
+      },
+      "absence": {
+        "trend": "Stabilní",
+        "key_numbers": [
+          "Zanedbatelné počty neomluvených hodin",
+          "Nízký podíl neúspěšných žáků",
+          "Vysoký podíl žáků s uzavřenou klasifikací"
+        ],
+        "evidence": "Zanedbatelné počty neomluvených hodin a nízký podíl neúspěšných žáků."
+      },
+      "support_services": [
+        "Individuální či skupinové konzultace a doučování",
+        "Spolupráce školních psycholožek s metodikem prevence",
+        "Prospěchová stipendia"
+      ],
+      "safety_climate": [
+        "Nízká míra úrazovosti",
+        "Kamerový a čipový systém zajišťuje bezpečnost",
+        "Efektivní prevence sociálně patologických jevů"
+      ],
+      "partnerships_practice": [
+        "Zajištění odborných praxí žáků",
+        "Poskytování studijních materiálů a učebních pomůcek",
+        "Inovace obsahu učiva v souladu s novými poznatky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje konkrétní příklady. Ojedinělé odborné termíny (např. 'hrubá neúspěšnost') jsou vysvětlovány kontextem.",
+      "uncertainty_notes": [
+        "Nejasná míra 'nerovnoměrného zapojení žáků' – zda jde o pasivitu většiny nebo jednotlivců.",
+        "Chybí konkrétní data o počtu hodin s 'metodickými nedostatky' přesahujícími třetinu.",
+        "Není specifikováno, jak 'často' dochází k předčasnému ukončení studia ve vyšších ročnících VOŠ."
+      ]
+    }
+  }
+}

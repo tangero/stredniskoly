@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600007472_2025-02-17",
+  "school_profile": {
+    "school_type": "Střední škola Spektrum Mladá Boleslav, s.r.o. – soukromá střední škola s obory Obchodní akademie (4leté), Podnikání a Sociální činnost (2leté nástavbové)",
+    "inspection_period": "17.–19. února a 21. února 2025",
+    "school_change_summary": "Od inspekce v 2018 výrazně vzrostl počet žáků (328 žáků, naplněnost 71 %), došlo ke změně místa vzdělávání i zřizovatele. Rozšířena nabídka o obor Sociální činnost. Zlepšilo se technické vybavení, zejména v digitálních technologiích."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní online vzdělávání",
+        "detail": "Škola efektivně kombinuje online výuku s prezenčním ověřováním znalostí a nabízí flexibilní kondice podle potřeb žáků.",
+        "evidence": "Uplatňovaná specifická organizace vzdělávání efektivně kombinuje on-line výuku a prezenční prověřování."
+      },
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Učitelé systematicky navazují výuku na reálné zkušenosti žáků a jejich budoucí profesi.",
+        "evidence": "Časté propojování teoretických znalostí žáků s jejich využitím v praxi účinně podporuje rozvoj jejich odborných kompetencí."
+      },
+      {
+        "tag": "Podpora žáků se speciálními potřebami",
+        "detail": "Efektivní individuální podpora se pozitivně odráží v jejich výsledcích, které často převyšují průměr třídy.",
+        "evidence": "Efektivní podpora žáků se SVP se pozitivně odráží zejména v jejich výsledcích, které v mnoha případech převyšují průměrnou úroveň."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost u maturity",
+        "detail": "V oborech Podnikání a Obchodní akademie je hrubá neúspěšnost (podíl neprospívajících nebo nekonajících) výrazně vyšší než průměr v ČR.",
+        "evidence": "V oboru Obchodní akademie 2023/2024 byla hrubá neúspěšnost 33 %, průměr v ČR jen 5 %. V Podnikání 45 % vs. 24 % v ČR."
+      },
+      {
+        "tag": "Nízký podíl absolventů",
+        "detail": "Jen malá část žáků úspěšně ukončí studium v předepsané době – v Obchodní akademii jen 12 % prvního ročníku.",
+        "evidence": "V oboru Obchodní akademie získalo MZ jen cca 12 % žáků příslušného prvního ročníku."
+      },
+      {
+        "tag": "Slabá výuka angličtiny",
+        "detail": "Výuka se zaměřuje na gramatiku bez komunikace, chybí interaktivní cvičení a diferenciace podle úrovně.",
+        "evidence": "Výuka výhradně v českém jazyce, bez vhodných on-line nástrojů pro rozvoj řečových dovedností a diferenciaci."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola přijala na základě vysoké neúspěšnosti u maturity v oborech Podnikání a Obchodní akademie?",
+      "Jak škola podporuje motivaci žáků k dokončení studia, když více než 60 % žáků v některých oborech neprospívá?",
+      "Jak se bude zlepšovat výuka angličtiny, aby žáci rozvíjeli komunikační dovednosti, ne jen gramatiku?"
+    ],
+    "who_school_fits": [
+      "Žáci se speciálními vzdělávacími potřebami – škola jim poskytuje efektivní individuální podporu s dobrými výsledky",
+      "Pracující dospělí – flexibilní kombinovaná forma s online výukou umožňuje skloubení se zaměstnáním",
+      "Žáci zaměření na praxi – obory Sociální činnost a Podnikání nabízejí kvalitní propojení teorie s reálným uplatněním"
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o Obchodní akademii – jen 12 % žáků úspěšně maturuje v předepsané době, vysoká neúspěšnost u maturity",
+      "Žáci bez silné vnitřní motivace – škola sice nabízí podporu, ale motivace zůstává problémem, zejména v Podnikání a Obchodní akademii",
+      "Zájemci o kvalitní výuku angličtiny – výuka se zaměřuje na gramatiku bez rozvoje komunikačních dovedností"
+    ],
+    "plain_czech_summary": "Škola Spektrum nabízí moderní online vzdělávání s dobrým propojením teorie a praxe. Podporuje žáky se speciálními potřebami a pracující dospělé. Silné jsou obory Sociální činnost a Podnikání v distanční formě. Velkým problémem je vysoká neúspěšnost u maturity v Obchodní akademii (jen 12 % absolventů) a Podnikání. Výuka angličtiny potřebuje zlepšení. Škola je vhodná pro motivované žáky a dospělé, méně pro ty, kteří potřebují silnější motivační podporu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Negativní trend v oborech Podnikání a Obchodní akademie, pozitivní v Sociální činnosti",
+      "key_numbers": [
+        "Obchodní akademie 2023/2024: hrubá neúspěšnost 33 % (průměr ČR 5 %), jen 12 % žáků získá maturitu v čase",
+        "Podnikání 2023/2024: hrubá neúspěšnost 45 % (průměr ČR 24 %), jen 23 % žáků získá maturitu v čase",
+        "Sociální činnost: hrubá neúspěšnost cca 23 % (průměr ČR cca 23 %), 36 % žáků získá maturitu v čase"
+      ],
+      "evidence": "Ve školním roce 2023/2024 v oboru Obchodní akademie byla hrubá neúspěšnost 33 %, v Podnikání 45 %. V Sociální činnosti se výsledky postupně zlepšovaly."
+    },
+    "absence": {
+      "trend": "Nižší účast žáků na výuce, zejména v online prostředí",
+      "key_numbers": [
+        "Specifika vzdělávání dospělých se projevila v nižším počtu žáků účastnících se výuky",
+        "Vysoký podíl žáků, kteří po přihlášení k maturitě nekonají (zejména v Podnikání a Obchodní akademii)",
+        "V některých hodinách se neúčastnilo všech žáků"
+      ],
+      "evidence": "Ve sledované výuce se projevila nižší účast žáků. V hodinách anglického jazyka v polovině hodin snižovalo efektivitu pomalé tempo práce."
+    },
+    "support_services": [
+      "Poradenská činnost zajišťovaná ředitelkou (dlouhodobá absence výchovné poradkyně)",
+      "Tutoriál při zahájení studia a systém virtuálních studoven pro vrstevnické učení",
+      "Individuální konzultace a rozložení zkoušek pro žáky se SVP",
+      "Prevence školního neúspěchu: konzultace, opravy pololetních zkoušek (Den Z), individualizované doučování v maturitním ročníku",
+      "Chybí důraznější zaměření na rizika digitálního prostředí (kyberšikana, digitální závislosti)"
+    ],
+    "safety_climate": [
+      "Realizace poradenské činnosti zaměřena na prevenci rizikového chování a podporu duševního zdraví",
+      "Partnerský přístup učitelů k žákům",
+      "Nedostatečné zaměření na specifická rizika online vzdělávání"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s kvalitními sociálními partnery přispívá k rozvoji odborných kompetencí",
+      "Absolventi se zpravidla úspěšně zapojují do pracovního procesu, někteří pokračují v dalším studiu",
+      "Kvalita maturitních prací dokládá efektivní rozvoj odborných kompetencí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní čísla a příklady. Hlavní problémy jsou jasně identifikovány (vysoká neúspěšnost u maturity, slabá angličtina). Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, zda vysoká neúspěšnost v Obchodní akademii souvisí s kvalitou výuky nebo s výběrem žáků (přijímání bez zkoušek)",
+      "Není jasné, jak dlouho chybí výchovná poradkyně a jak to ovlivňuje kvalitu poradenské činnosti",
+      "Chybí informace o tom, kolik žáků předčasně ukončí studium a z jakých důvodů"
+    ]
+  }
+}
+```

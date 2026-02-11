@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "GY4_600014479_2022-06-01",
+  "school_profile": {
+    "school_type": "Soukromá základní a mateřská škola ORBIS se zaměřením na rozšířenou výuku cizích jazyků, zejména angličtiny",
+    "inspection_period": "1. 6. 2022 – 3. 6. 2022",
+    "school_change_summary": "Od 1. 9. 2021 se škola stala součástí vzdělávacího komplexu ORBIS. Základní škola má 74 žáků v sedmi třídách, mateřská škola 36 dětí ve dvou třídách. Maximální počet žáků ve třídě je 15."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Intenzivní výuka angličtiny od 1. ročníku s rodilými mluvčími dosahuje vysoké úrovně komunikace.",
+        "evidence": "Žáci dosahují jazykové úrovně vyžadované standardizovanými mezinárodními zkouškami."
+      },
+      {
+        "tag": "Malé třídy",
+        "detail": "Maximálně 15 žáků ve třídě umožňuje individuální přístup učitelů.",
+        "evidence": "Díky nízkému počtu žáků je sledován individuální přístup k jednotlivým žákům."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Komfortní prostředí s interaktivními tabulemi, ateliérem, knihovnou a sportovním vybavením.",
+        "evidence": "Vybavenost školy je v oblasti ICT na velmi dobré úrovni, k dispozici je relaxační místnost a keramický kruh."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Práce s výsledky",
+        "detail": "Chybí systematické opatření na zlepšování zjištěných nedostatků u jednotlivých žáků.",
+        "evidence": "Nejsou stanoveny konkrétní postupy vedoucí ke zlepšování výsledků a kontrola jejich účinnosti."
+      },
+      {
+        "tag": "Hodnocení v mateřské škole",
+        "detail": "Průběžné hodnocení dětí postrádá podrobnější vyhodnocování pokroků pro další pedagogickou práci.",
+        "evidence": "Hodnocení obsahuje pouze formální závěry a faktická doporučení bez detailnější analýzy."
+      },
+      {
+        "tag": "Chybí externí testování",
+        "detail": "Základní škola se nezúčastňuje externího ověřování vědomostí.",
+        "evidence": "Externí ověřování a srovnávání úrovně vědomostí s jinými školami nebyla prozatím realizována."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje se žáky, kteří zaostávají za ostatními? Jaký má systém nápravy?",
+      "Jaké jsou výsledky žáků v mezinárodních jazykových zkouškách a kolik procent žáků je absolvuje?",
+      "Jak se škola zapojuje do externího testování a srovnávání s ostatními školami?"
+    ],
+    "who_school_fits": [
+      "Rodiny, které chtějí kvalitní výuku angličtiny s rodilými mluvčími od prvního ročníku",
+      "Děti, které prospívají v malých třídách s individuálním přístupem učitele",
+      "Žáci se speciálními vzdělávacími potřebami, kterým je poskytována podpora 1. a 2. stupně"
+    ],
+    "who_should_be_cautious": [
+      "Rodiny, které očekávají systematickou podporu při školních potížích – škola tuto oblast teprve rozvíjí",
+      "Žáci, kteří potřebují externí srovnání svých výsledků – škola se nezúčastňuje standardizovaného testování",
+      "Rodiny hledající tradiční české vzdělání – škola je silně zaměřena na bilingvní přístup"
+    ],
+    "plain_czech_summary": "ORBIS je moderní soukromá škola se silným zaměřením na angličtinu. Učí se zde 74 žáků v malých třídách s rodilými mluvčími. Prostředí je komfortní a dobře vybavené. Inspektoři chválí kvalitu jazykové výuky a individuální přístup. Upozorňují ale na slabinu: škola nemá dostatečný systém na pomoc žákům, kteří zaostávají. Také se neúčastní externího testování, takže není jasné, jak si stojí oproti jiným školám."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Není relevantní – zpráva se týká základní a mateřské školy, ne střední školy",
+      "key_numbers": [
+        "Základní škola: 74 žáků v 7 třídách",
+        "Maximálně 15 žáků ve třídě",
+        "10 žáků se speciálními vzdělávacími potřebami"
+      ],
+      "evidence": "Škola nevzdělávala žáky 7.–9. ročníku v inspekčním období."
+    },
+    "absence": {
+      "trend": "Nízká míra úrazovosti a dodržování pravidel",
+      "key_numbers": [
+        "Kultivované prostředí pozitivně formuje osobnost žáků",
+        "Nízká míra úrazovosti"
+      ],
+      "evidence": "Kultivované prostředí školy pozitivně formuje osobnost žáků, což se projevuje v dodržování nastavených pravidel chování i v nízké míře úrazovosti."
+    },
+    "support_services": [
+      "Pedagogická intervence pro žáky se speciálními vzdělávacími potřebami (podpůrná opatření 1. a 2. stupně)",
+      "Konzultační hodiny pro řešení nejasností v učivu",
+      "Spolupráce s logopedy a odbornými pracovníky",
+      "Supervize a metodická pomoc externího pracovníka pro pedagogy"
+    ],
+    "safety_climate": [
+      "Vstupní prostor zabezpečen elektronickým systémem a stálou službou recepce",
+      "Nízká míra úrazovosti díky kultivovanému prostředí",
+      "Dodržování pravidel chování a ohleduplné chování dětí"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s rodilými mluvčími v bilingvním vzdělávání",
+      "Spolupráce se zákonnými zástupci na řešení vzdělávacích obtíží",
+      "Partnerství s odbornými pracovníky (logopedie, speciální pedagogika)",
+      "Letní tábory se zapojením rodilých mluvčích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a jasně strukturovaná. Silné stránky a slabiny jsou jasně identifikovány. Některé pasáže jsou však úřednicky husté a obtížněji čitelné pro laiky.",
+    "uncertainty_notes": [
+      "Zpráva se zaměřuje na základní a mateřskou školu; střední škola není hodnocena",
+      "Chybí konkrétní čísla o výsledcích v mezinárodních jazykových zkouškách",
+      "Není jasné, jak se škola vypořádala s doporučeními inspektora od inspekce"
+    ]
+  }
+}
+```

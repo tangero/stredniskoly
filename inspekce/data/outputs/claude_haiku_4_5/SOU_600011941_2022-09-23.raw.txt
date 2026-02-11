@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "SOU_600011941_2022-09-23",
+  "school_profile": {
+    "school_type": "Střední odborná škola a Střední odborné učiliště technické se zaměřením na dřevozpracující a strojírenské obory",
+    "inspection_period": "23., 27. a 29. září 2022",
+    "school_change_summary": "Škola prochází postupnou modernizací materiálně-technických podmínek, zejména v dřevozpracujících oborech. Pedagogický sbor je stabilní s částečnou obměnou od poslední inspekce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní praktické vyučování",
+        "detail": "Odborný výcvik je dobře organizován s aktivním přístupem učitelů, jasně vymezenými úkoly a průběžnou zpětnou vazbou o kvalitě práce.",
+        "evidence": "Praktické vyučování vedeno bez zásadních odborných nedostatků, žáci získávají potřebné kompetence v reálném prostředí."
+      },
+      {
+        "tag": "Funkční spolupráce se zaměstnavateli",
+        "detail": "Systém spolupráce se smluvními partnery umožňuje efektivní realizaci praktického vzdělávání v reálném pracovním prostředí.",
+        "evidence": "Práce u partnerských firem motivuje žáky a umožňuje jim získat odborné, sociální i komunikativní kompetence."
+      },
+      {
+        "tag": "Mezinárodní zkušenosti",
+        "detail": "Škola je držitelem akreditace Erasmus+ a pořádá každoročně výjezdové akce do zahraničí.",
+        "evidence": "Žáci i učitelé získávají zkušenosti v daném oboru v zahraniční škole nebo u zahraničního zaměstnavatele."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturitní zkoušky",
+        "detail": "Hrubá neúspěšnost u maturitní zkoušky činila přibližně 40 %, s největšími problémy v didaktickém testu z češtiny.",
+        "evidence": "Neúspěšnost se nejvíce projevovala v didaktickém testu z českého jazyka, žáci volili převážně angličtinu."
+      },
+      {
+        "tag": "Nízké počty žáků v některých oborech",
+        "detail": "Některé obory mají kriticky nízké počty studentů, což může ohrožovat jejich udržitelnost.",
+        "evidence": "Např. v 1. ročníku oboru Operátor dřevařské výroby byl evidován jeden žák, ve 2. a 3. ročníku po dvou žácích."
+      },
+      {
+        "tag": "Nedostatečné využívání aktivních metod výuky",
+        "detail": "V teoretické výuce převažuje frontální přístup s dominantním postavením učitele, málo skupinových a kooperativních činností.",
+        "evidence": "Jen v malé míře byly využity skupinové a kooperativní činnosti, často převažovala frontální výuka s předáváním hotových poznatků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší nízké počty žáků v některých oborech a jaké jsou vyhlídky na jejich zachování?",
+      "Jaké konkrétní kroky podniká škola ke zlepšení výsledků maturitní zkoušky, zejména z češtiny?",
+      "Jak se škola zaměřuje na rozvoj aktivních metod výuky a formativního hodnocení v teoretické výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a ruční práci, kteří se lépe učí v reálném pracovním prostředí",
+      "Studenti, kteří chtějí získat mezinárodní zkušenosti a absolvovat stáž v zahraničí",
+      "Uchazeči z vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže se zajištěným stravováním"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v češtině, pokud plánují maturitní zkoušku – škola má problémy s výukou českého jazyka",
+      "Studenti, kteří preferují teoretickou výuku s aktivními metodami – převažuje zde frontální přístup",
+      "Uchazeči do oborů s velmi nízkými počty žáků, kde hrozí zrušení třídy nebo omezení výuky"
+    ],
+    "plain_czech_summary": "Třemošnická střední odborná škola je zaměřena na technické a dřevozpracující obory. Její silnou stránkou je kvalitní praktické vyučování v reálném pracovním prostředí a spolupráce se zaměstnavateli. Škola nabízí také mezinárodní zkušenosti přes program Erasmus+. Slabší jsou teoretické předměty, zejména čeština – maturitní zkoušku nezvládá asi 40 % žáků. Výuka se opírá spíše o frontální přístup než o aktivní metody. Některé obory mají kriticky nízké počty studentů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Negativní",
+      "key_numbers": [
+        "Hrubá neúspěšnost přibližně 40 %",
+        "Největší problémy v didaktickém testu z českého jazyka",
+        "Žáci volili převážně angličtinu ze společné části"
+      ],
+      "evidence": "Hrubá neúspěšnost žáků oboru s maturitní zkouškou činila přibližně 40 %, neúspěšnost se nejvíce projevovala v didaktickém testu z českého jazyka."
+    },
+    "absence": {
+      "trend": "Problematická",
+      "key_numbers": [
+        "Devět žáků 3. ročníku ukončilo vzdělávání předčasně",
+        "Další žáci neprospěli v důsledku vysokého množství zameškané výuky",
+        "Dopad karanténních opatření na docházku a plnění povinností"
+      ],
+      "evidence": "U oborů zakončených závěrečnou zkouškou škola zaznamenala výrazně negativní dopad karanténních opatření na docházku a plnění školních povinností."
+    },
+    "support_services": [
+      "Výchovné poradenství zajišťované výchovnou poradkyní s aktivní spoluprací se školskými poradenskými zařízeními",
+      "Doučování a individuální konzultace pro žáky ohrožené školní neúspěšností",
+      "Konzultace u školní psycholožky a kariérové poradkyně",
+      "Metodička prevence zpracovala preventivní program reflektující situaci ve škole",
+      "Adaptační kurz pro žáky prvních ročníků"
+    ],
+    "safety_climate": [
+      "Příznivé klima podporované pravidelnými poradami a neformálními setkáními pedagogů",
+      "Domov mládeže vytváří pozitivní přátelské klima nahrazující rodinné prostředí",
+      "Vychovatelé spolupracují s ostatními pedagogy a řeší problémy ubytovaných žáků",
+      "Škola se opakovaně zabývá docházkou, prospěchem a posilováním vztahů ve třídách",
+      "Prevence šikany, užívání návykových látek a dalších rizikových chování"
+    ],
+    "partnerships_practice": [
+      "Funkční systém spolupráce se smluvními partnery při zabezpečování odborného výcviku",
+      "Praktické vyučování prováděno s potřebným vybavením pod vedením učitelů nebo instruktorů partnerských firem",
+      "Zpětná vazba o výsledcích vzdělávání získávána z firem, stáží a od absolventů",
+      "Erasmus+ akreditace v oblasti odborného vzdělávání a přípravy na roky 2021-2027",
+      "Zřizovatel a partnerské firmy poskytují finanční prostředky na stipendia vybraným žákům"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní údaje a citace. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Přesné důvody nízké úspěšnosti v češtině nejsou v textu detailně vysvětleny – není jasné, zda jde o slabou výuku nebo nižší úroveň žáků",
+      "Není specifikováno, jak dlouho trvá modernizace materiálně-technických podmínek a kdy bude dokončena",
+      "Chybí informace o tom, jak se škola vypořádala s doporučeními z předchozí inspekce z roku 2016"
+    ]
+  }
+}
+```

@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_600008410_2025-05-15",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:35:08.714182+00:00",
+  "run_finished_utc": "2026-02-09T13:35:33.784358+00:00",
+  "raw_file": "GY8_600008410_2025-05-15.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008410_2025-05-15",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium",
+      "inspection_period": "15.–20. května 2025",
+      "school_change_summary": "Došlo ke změně na pozici ředitele školy a jeho zástupkyně. Počet žáků je stabilní (345 celkem). Škola prošla modernizací: nová výpočetní technika, učebna cizích jazyků, rekonstrukce laboratoří a tělocvičny, obměna nábytku."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní výuka a osobnostní rozvoj",
+          "detail": "Učitelé pracují s empatií, povzbuzují žáky a vedou je ke kritickému myšlení s důrazem na porozumění.",
+          "evidence": "Hospitované hodiny probíhaly v příznivé atmosféře s aktivním zapojením všech žáků a jejich soustředěním na práci."
+        },
+        {
+          "tag": "Úspěchy v soutěžích a projektech",
+          "detail": "Žáci dosahují výborných umístění v olympiádách a soutěžích, úspěšně se zapojují do mezinárodních projektů.",
+          "evidence": "Každoroční seznam úspěchů ve výročních zprávách, reprezentanti postupují do republikových kol."
+        },
+        {
+          "tag": "Pozitivní školní klima a prevence",
+          "detail": "Škola buduje vztahy ve třídách prostřednictvím adaptačních kurzů a promyšlené prevence rizikových jevů.",
+          "evidence": "Preventivní programy jsou pravidelně vyhodnocovány, pozitivní klima se projevuje v průběhu vzdělávání."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá kontrola a dokumentace",
+          "detail": "Nedůsledný kontrolní systém vedl k chybějícím hlášením o úrazech a nedostatkům v dokumentaci.",
+          "evidence": "Škola neexekutovala všechny povinné úkony, chyběly informace ve školním řádu."
+        },
+        {
+          "tag": "Nedostatečné závěry hodin",
+          "detail": "Chybí sebehodnocení, vzájemné hodnocení a závěrečné zhodnocení naplnění cíle hodin.",
+          "evidence": "Prvky závěru byly uplatněny jen v několika hodinách, což snižuje účinnost výuky."
+        },
+        {
+          "tag": "Formální vyhodnocování podpory",
+          "detail": "Efektivita práce se žáky se speciálními potřebami se vyhodnocuje pouze formálně bez sledování výsledků.",
+          "evidence": "Systém předávání informací je nastaven, ale chybí možnost sledování výsledků jednotlivých žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší individuální potřeby žáků se speciálními vzdělávacími potřebami a jak se vyhodnocuje efektivita jejich podpory?",
+        "Jaké jsou plány na zlepšení závěrů hodin – jak budou učitelé zavádět sebehodnocení a vzájemné hodnocení žáků?",
+        "Jak se škola vypořádala s nedostatky v kontrolní činnosti a dokumentaci zjištěnými inspekčním týmem?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí studovat na vysokých školách – škola je na to cílově připravuje",
+        "Talentovaní žáci v soutěžích a olympiádách – škola má tradici úspěchů",
+        "Žáci, kterým vyhovuje partnerský přístup učitelů a pozitivní školní klima"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se speciálními vzdělávacími potřebami – vyhodnocování jejich pokroku je pouze formální",
+        "Rodiny, které očekávají detailní zpětnou vazbu o pokroku – závěry hodin nejsou systematicky vedeny",
+        "Žáci, kteří potřebují jasné pravidla a důslednou kontrolu – systém kontroly není dostatečně systematický"
+      ],
+      "plain_czech_summary": "Gymnázium dr. A. Hrdličky je kvalitní školou se silným zaměřením na přípravu žáků na vysoké školy. Učitelé pracují s empatií, vedou žáky ke kritickému myšlení a škola má tradici úspěchů v soutěžích. Pozitivní je i školní klima a prevence. Inspekce však zjistila nedostatky v kontrolní činnosti a dokumentaci, chybí systematické závěry hodin a formální je vyhodnocování podpory žáků se speciálními potřebami. Škola má 30 dní na nápravu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Průměrná až mírně podprůměrná",
+        "key_numbers": [
+          "Úspěšnost ve společné části maturitní zkoušky průměrná nebo mírně podprůměrná v porovnání s celorepublikovými výsledky",
+          "Relativně nejúspěšnější žáci v matematice",
+          "Výborné výsledky ve výběrových zjišťováních 2022/2023"
+        ],
+        "evidence": "V hodnoceném období od minulé inspekce byla úspěšnost průměrná nebo mírně podprůměrná, v matematice relativně nejlepší."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Zpráva se absence věnuje pouze v kontextu kontrolních dní pro nahrazení zmeškané hodnocení."
+      },
+      "support_services": [
+        "Skupinové a individuální konzultace a doučování pro žáky ohrožené školním neúspěchem",
+        "Kontrolní dny na celoškolní úrovni pro nahrazení zmeškané hodnocení",
+        "Školní poradenské pracoviště s podporou žáků se speciálními vzdělávacími potřebami a nadaných žáků"
+      ],
+      "safety_climate": [
+        "Promyšlená prevence rizikových jevů propojená s výukou",
+        "Preventivní třídní programy formou besed a přednášek, pravidelně vyhodnocovány",
+        "Aktivity na budování vztahů ve třídách (adaptační a lyžařské kurzy)",
+        "Strategie klade důraz na budování pozitivního klimatu a vztahu mezi školou a zákonnými zástupci"
+      ],
+      "partnerships_practice": [
+        "Partnerství s francouzskou školou Lycée Charles de Gaulle v Chaumont",
+        "Spolupráce se zřizovatelem, místními základními školami a organizacemi (Městské kulturní středisko, Fokus Vysočina, Policie ČR)",
+        "Mezinárodní projekt DofE (Mezinárodní cena vévody z Edinburghu)",
+        "Participativní rozpočtování s Městem Humpolec"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Absence není v textu specifikována – není jasné, jaká je absence žáků a jak se vyvíjí",
+        "Konkrétní čísla maturitních výsledků nejsou uvedena – pouze kvalitativní popis",
+        "Není jasné, jak konkrétně se škola vypořádá s nedostatky v kontrolní činnosti v příštích 30 dnech"
+      ]
+    }
+  }
+}

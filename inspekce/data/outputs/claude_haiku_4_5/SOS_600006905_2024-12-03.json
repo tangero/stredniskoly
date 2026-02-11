@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600006905_2024-12-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:07:05.600108+00:00",
+  "run_finished_utc": "2026-02-09T16:07:30.805053+00:00",
+  "raw_file": "SOS_600006905_2024-12-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006905_2024-12-03",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola a Vyšší odborná škola",
+      "inspection_period": "3.–4. 12. a 9.–10. 12. 2024",
+      "school_change_summary": "Od září 2024 škola zrušila dálkovou formu Strojírenství na SŠ a denní formu na VOŠ. Počet žáků SŠ vzrostl (506 žáků, naplněnost 68%), počet studentů VOŠ klesl (12 studentů, naplněnost 8%)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola má dlouhodobou spolupráci s kvalitními zaměstnavateli v regionu, která zvyšuje uplatnitelnost žáků na trhu práce.",
+          "evidence": "\"Naplňování profilu absolventa SŠ účinně podporuje dlouhodobá spolupráce s kvalitními sociálními partnery\""
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola kontinuálně zlepšuje materiálně-technické zázemí, včetně nových učeben virtuální reality a digitálních technologií.",
+          "evidence": "\"Od předchozí inspekční činnosti byl rozšířen počet odborných učeben a laboratoří, např. o učebnu virtuální reality.\""
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola dbá na bezpečnost žáků s nízkou mírou úrazovosti a pravidelným poučováním o bezpečnosti.",
+          "evidence": "\"Škola dbá na zajišťování bezpečného prostředí pro žáky a studenty... Míra úrazovosti je nízká.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená aktivní výuka",
+          "detail": "V přibližně třetině hodin chybí dostatečné zapojení všech žáků, převažuje frontální výuka bez kooperativních forem.",
+          "evidence": "\"Chybějící širší škála a střídání aktivizujících výukových forem a metod tak v přibližně třetině hospitovaných hodin dostatečně nepodpořily zapojení všech žáků\""
+        },
+        {
+          "tag": "Slabší podpora speciálních potřeb",
+          "detail": "Žáci se speciálními vzdělávacími potřebami a s odlišným mateřským jazykem dosahují horších výsledků než průměr.",
+          "evidence": "\"Podpora žáků se speciálními vzdělávacími potřebami a s odlišným mateřským jazykem však přesto není vždy dostatečně účinná.\""
+        },
+        {
+          "tag": "Chybí školní psycholog",
+          "detail": "Vzhledem k občasným psychickým problémům žáků je žádoucí zajistit kvalifikovaného psychologa.",
+          "evidence": "\"Vzhledem k občasným projevům některých psychických problémů žáků je však žádoucí zvýšit kvalitu psychologické péče\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami a jak se jim daří v praxi?",
+        "Jaké jsou možnosti doučování a individuálních konzultací pro žáky, kteří zaostávají?",
+        "Jak se škola chystá zvýšit podíl aktivních výukových metod a zapojení všech žáků do výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a spolupráci se zaměstnavateli – škola má silné vazby s regionálními firmami",
+        "Studenti oboru Informační technologie – dosahují mírně lepších výsledků než ostatní obory",
+        "Žáci motivovaní moderní technikou – škola má nové učebny virtuální reality a digitální vybavení"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se speciálními vzdělávacími potřebami – jejich podpora není vždy dostatečně účinná",
+        "Žáci s odlišným mateřským jazykem – někteří mají jazykové bariéry a zaostávají za průměrem",
+        "Žáci preferující aktivní skupinové učení – v části teoretické výuky převažuje frontální přístup"
+      ],
+      "plain_czech_summary": "SPŠ a VOŠ Jana Palacha v Kladně je moderně vybavená škola se silnými vazbami na praxi a zaměstnavatele. Žáci se učí s digitálními technologiemi a mají možnost praktického uplatnění. Výsledky maturit jsou průměrné, absence klesá. Hlavní slabinou je, že v části teoretické výuky chybí aktivnější metody a zapojení všech žáků. Žáci se speciálními potřebami potřebují lepší podporu. Škole chybí školní psycholog."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní, kolem celorepublikového průměru",
+        "key_numbers": [
+          "Hrubá neúspěšnost 2020–2024: 1–10 % (nejlépe 2021)",
+          "Čistá neúspěšnost v češtině: ~4 %, v cizím jazyce: ~1 %",
+          "~80 % žáků získá maturitu ve standardní době"
+        ],
+        "evidence": "\"Výsledky žáků ve společné části maturitní zkoušky se v období let 2020–2024 pohybovaly kolem celorepublikového průměru... V profilové části MZ žáci dosahují dobrých výsledků, které v období let 2020–2024 byly vždy lepší než průměr ČR\""
+      },
+      "absence": {
+        "trend": "Pozitivní pokles",
+        "key_numbers": [
+          "2021/2022: ~150 hodin na žáka",
+          "2023/2024: ~124 hodin na žáka",
+          "Neomluvená absence: 0,4 h na žáka (pokles z 0,8 h)"
+        ],
+        "evidence": "\"Absence žáků se v posledních třech školních rocích snižovala... Neomluvená absence je dlouhodobě nízká a rovněž se snižovala\""
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence zajišťují poradenství a konzultace",
+        "Systém doučování a individuálních konzultací je dobře nastaven",
+        "Pedagogická intervence pro žáky se speciálními potřebami (asistentky pedagoga)"
+      ],
+      "safety_climate": [
+        "Nízká míra úrazovosti",
+        "Pravidelné poučování o bezpečnosti a ochraně zdraví",
+        "Ve školním roce 2023/2024 nebyly zaznamenány významné problémy v chování žáků"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s kvalitními sociálními partnery a zaměstnavateli v regionu",
+        "Stipendia a motivační programy pro žáky",
+        "Pravidelné zapojování externích odborníků do výuky a odborných přednášek",
+        "Exkurze a praktické uplatnění teoretických poznatků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje, ale je velmi obsáhlá a místy technicky zaměřená. Pro rodiče by byla srozumitelnější s více praktických příkladů.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počet hodin absence v jednotlivých měsících – údaje jsou pouze průměrné",
+        "Není jasné, kolik přesně žáků se speciálními potřebami dosahuje podprůměrných výsledků",
+        "Chybí informace o tom, jak dlouho trvá čekání na psychologa a jaké jsou alternativy"
+      ]
+    }
+  }
+}

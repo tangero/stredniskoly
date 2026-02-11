@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600017338_2024-02-06",
+  "school_profile": {
+    "school_type": "Střední škola průmyslová a umělecká (5 oborů: 2 technické, 3 umělecké)",
+    "inspection_period": "6. února 2024 až 9. února 2024",
+    "school_change_summary": "Od poslední inspekce vzrostl počet žáků o 15 % (nyní 387 žáků v 16 třídách) a pedagogů o 18 %. Probíhá postupná renovace budov. Ředitel školy je ve funkci od roku 2014."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Téměř 98 % žáků uspělo při maturitních zkouškách v roce 2023.",
+        "evidence": "Ve zkušebním roce 2023 uspělo při maturitních zkouškách téměř 98 % přihlášených žáků."
+      },
+      {
+        "tag": "Silná spolupráce s firmami a praxí",
+        "detail": "Škola má dlouhodobé partnerství s řadou firem, které umožňují reálnou praxi a projekty.",
+        "evidence": "Škola několikrát po sobě získala 1. místo mezi středními školami Moravskoslezského kraje 'Škola doporučená zaměstnavateli'."
+      },
+      {
+        "tag": "Úspěchy v soutěžích a certifikátech",
+        "detail": "Žáci dosahují vynikajících výsledků v národních i mezinárodních soutěžích a získávají jazykové certifikáty.",
+        "evidence": "19 žáků získalo certifikát FCE (B2) a 2 žáci CAE (C1). Úspěchy v Kybersoutěži, atletickém poháru, Design soutěži."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné prostory pro umělecké obory",
+        "detail": "V ateliérech se často vzdělávají dvě skupiny současně, chybí skladovací prostory, budovy trpí vlhkostí.",
+        "evidence": "Prostorové podmínky ve školních dílnách a v hlavní budově školy pro umělecké obory nejsou optimální. Naprosto chybí skladovací a archivační prostory."
+      },
+      {
+        "tag": "Slabší reflexe a sebehodnocení v hodinách",
+        "detail": "Učitelé se málo zaměřují na závěrečné zhodnocení hodin a zapojení žáků do vlastního hodnocení.",
+        "evidence": "Vyučující nevěnovali dostatečnou pozornost reflexi průběhu hodiny v jejím závěru, žáci se do hodnocení aktivně nezapojovali."
+      },
+      {
+        "tag": "Omezená práce s informacemi a kritickým myšlením",
+        "detail": "Žáci nejsou dostatečně vedeni k vyhledávání informací a kritickému myšlení.",
+        "evidence": "K vyhledávání, vyhodnocení a používání informací byli žáci systematicky vedeni spíše v odborném vzdělávání. Příležitosti pro podporu kritického myšlení byly využívány v menší míře."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní plány má škola na zlepšení prostorů pro umělecké obory? Kdy se počítá s renovací suterénu?",
+      "Jak se škola připravuje na řešení vlhkosti v budovách a jak to ovlivňuje výuku?",
+      "Jaké jsou konkrétní možnosti pro žáky získat praxi u partnerských firem během studia?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zaměřením na technické obory (IT, strojírenství) s podporou kvalitní praxe",
+      "Talentovaní umělci, kteří chtějí své dílo realizovat v reálných projektech pro firmy a neziskové organizace",
+      "Žáci motivovaní k soutěžím a získávání certifikátů (Cambridge, Autodesk)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci uměleckých oborů, kterým by mohly vadit omezené prostory a sdílení ateliérů s více skupinami",
+      "Žáci, kteří potřebují více individuálního přístupu a reflexe své práce v hodinách",
+      "Žáci, kteří se chtějí zaměřit především na teoretické vzdělání bez praktické složky"
+    ],
+    "plain_czech_summary": "Střední škola v Opavě je kvalitní vzdělávací zařízení se silným zaměřením na praxi a spolupráci s firmami. Žáci dosahují výborných výsledků u maturity (98 %) a úspěchů v soutěžích. Škola nabízí zajímavé umělecké a technické obory s reálnými projekty. Hlavní problémy jsou nedostatečné prostory pro umělecké obory a potřeba zlepšit reflexi v hodinách. Škola je vhodná pro motivované žáky, kteří chtějí praktické vzdělání."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoký",
+      "key_numbers": [
+        "98 % úspěšnost v roce 2023",
+        "Podíl žáků s vyznamenáním 20 %",
+        "Neprospívajících pouze 1,1 %"
+      ],
+      "evidence": "Ve zkušebním roce 2023 uspělo při maturitních zkouškách téměř 98 % přihlášených žáků. V uplynulém školním roce byl podíl žáků s vyznamenáním 20 %, neprospívajících 1,1 %."
+    },
+    "absence": {
+      "trend": "Přiměřená a zvládaná",
+      "key_numbers": [
+        "Neomluvené hodiny řešeny výjimečně",
+        "Absence je přiměřená"
+      ],
+      "evidence": "Škole se daří zvládat míru absence, která je přiměřená. Neomluvené hodiny byly zaznamenány a řešeny výchovnými či kázeňskými opatřeními spíše výjimečně."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště v optimálním složení s výchovnou poradkyní",
+      "Školní metodička prevence se zaměřuje na preventivní programy",
+      "Doučování organizované dle momentálních potřeb žáků",
+      "Kariérové poradenství pro žáky posledních ročníků",
+      "Adaptační kurzy pro nastupující žáky"
+    ],
+    "safety_climate": [
+      "Vedení školy systematicky usiluje o vytvoření vhodných podmínek pro psychické i fyzické bezpečí",
+      "Všechny úrazy jsou evidovány v knize úrazů",
+      "Žáci jsou seznamováni se školním řádem a pravidly bezpečného chování",
+      "Doporučeno zpracovávat analýzu školní úrazovosti a věnovat pozornost příčinám úrazů"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s řadou firem technického a uměleckého zaměření",
+      "Partneři umožňují praxi v reálných provozech, besedy a odborné exkurze",
+      "Žáci vytvářejí projekty pro reálné zadavatele (obaly, propagační materiály, interaktivní panely)",
+      "Spolupráce s institucemi pro vzdělávání dětí se speciálními potřebami",
+      "Ocenění 'Škola doporučená zaměstnavateli' a 'Škola podporující řemesla'"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Některé pasáže jsou však delší a složitější, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní termín dokončení renovace suterénu - závisí na investicích zřizovatele",
+      "Není jasné, jak dlouho trvá řešení vlhkosti budov a jaký je aktuální stav",
+      "Chybí konkrétní čísla o počtu žáků v jednotlivých oborech a jejich úspěšnosti"
+    ]
+  }
+}
+```

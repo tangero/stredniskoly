@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "LYC_600007065_2022-11-02",
+  "school_profile": {
+    "school_type": "Střední odborná škola a Střední odborné učiliště (SOŠ a SOU)",
+    "inspection_period": "2. až 7. listopadu 2022",
+    "school_change_summary": "Od září 2021 se škola stala nástupnickou organizací Integrované střední školy Stanislava Kubra. Vzdělává 353 žáků v maturitních oborech a 240 v tříletých oborech s výučním listem. Dochází k útlumu nástavbových oborů a optimalizaci nabídky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výrazné zlepšení výsledků",
+        "detail": "Průměrný prospěch žáků maturitních oborů se zlepšil na 1,6–1,9, podíl neprospívajících klesl na 3 % a přibližně pětina žáků prospívá s vyznamenáním.",
+        "evidence": "\"Průměrný prospěch žáků čtyřletých maturitních oborů se od minulé inspekční činnosti výrazně zlepšil.\""
+      },
+      {
+        "tag": "Kvalitní vedení a podpora žáků",
+        "detail": "Ředitel systematicky řídí školu s jasně definovanými pravidly, funguje poradenské pracoviště s psychologem, speciálními pedagogy a metodiky prevence.",
+        "evidence": "\"Ucelená podpora vedení školy se projevuje ve školním poradenském pracovišti, ve kterém efektivně spolupracují dvě výchovné poradkyně, dva školní metodici prevence...\""
+      },
+      {
+        "tag": "Zlepšené materiální podmínky",
+        "detail": "Kompletní rekonstrukce prostor, nákup pomůcek, obnova IT technologií a zvýšená kapacita školní jídelny pro praktický výcvik.",
+        "evidence": "\"V materiálních podmínkách došlo od minulé inspekční činnosti k výraznému zlepšení.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Ve školním roce 2021/2022 žáci průměrně zameškali 150 hodin, v oboru Kombinované lyceum až 200 hodin na žáka.",
+        "evidence": "\"Ve školním roce 2021/2022 činila absence žáků ve výuce průměrně cca 150 zameškaných hodin na žáka.\""
+      },
+      {
+        "tag": "Slabé výsledky v matematice",
+        "detail": "Matematika je nejproblematičtějším předmětem, žáci dosahují horších výsledků než je republikový průměr.",
+        "evidence": "\"Nejméně se žákům daří uspět zejména v matematice... Zkoušku z matematiky koná jen minimum žáků a mají horší výsledky než je republikový průměr.\""
+      },
+      {
+        "tag": "Nedostatečný rozvoj kritického myšlení",
+        "detail": "Učitelé málo vedou žáky k samostatnému vyhledávání informací, analýze textů a kritickému myšlení.",
+        "evidence": "\"Učitelé dostatečně nezařazovali možnost využívání různých informačních zdrojů k samostatnému vyhledávání, třídění a analyzování potřebných informací žáky.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké má preventivní programy?",
+      "Jaké speciální podpory nabízí pro žáky slabší v matematice?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a práce s informacemi?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s propojením teorie a praxe, zejména v oborech Sociální činnost, Aranžér nebo Kuchař–číšník",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální podporu a asistenty",
+      "Žáci, kteří oceňují kvalitní vedení, poradenské služby a podporu osobnostního rozvoje"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s tendencí k absenci – škola má problém s motivací žáků k účasti ve výuce",
+      "Žáci se slabšími matematickými schopnostmi – matematika je kritickým místem s horšími výsledky",
+      "Žáci, kteří potřebují intenzivní rozvoj samostatného myšlení a práce s informacemi – výuka je často frontální"
+    ],
+    "plain_czech_summary": "Kladno má kvalitní střední školu s dobrým vedením a výraznými zlepšeními. Prospěch žáků se zlepšil, méně jich neprospívá a více má vyznamenání. Škola má kvalitní poradenské služby a zlepšené prostory. Problém je vysoká absence žáků a slabé výsledky v matematice. Výuka je často frontální, málo se rozvíjí kritické myšlení. Vhodná pro praktické obory a žáky se speciálními potřebami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "Přibližně dvě třetiny žáků úspěšně složily maturitu v roce 2021/2022",
+        "Hrubá neúspěšnost v čtyřletých oborech dosahuje průměru celorepublikového srovnání",
+        "Nejlepší výsledky v angličtině, nejhorší v matematice a českém jazyce"
+      ],
+      "evidence": "\"Ve školním roce 2021/2022 úspěšně složily MZ přibližně dvě třetiny žáků maturitních oborů.\""
+    },
+    "absence": {
+      "trend": "Problematická",
+      "key_numbers": [
+        "Průměrně 150 zameškaných hodin na žáka v roce 2021/2022",
+        "Kombinované lyceum: 200 hodin na žáka",
+        "Nástavbové studium Podnikání: 180 hodin na žáka"
+      ],
+      "evidence": "\"Ve školním roce 2021/2022 činila absence žáků ve výuce průměrně cca 150 zameškaných hodin na žáka.\""
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně, dva školní metodici prevence, dva speciální pedagogové, školní psycholog",
+      "Koordinátor aktivní role asistentů pedagoga",
+      "Program primární prevence a kariérové poradenství s projektovými dny"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti, úrazy drobného charakteru",
+      "Příjemná pracovní atmosféra bez kázeňských problémů",
+      "Funkční školní parlament a schránka důvěry pro řešení problémů"
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce se smluvními pracovišti pro praktický výcvik",
+      "Funkční spolupráce se spolkem rodičů a přátel školy",
+      "Dlouhodobá spolupráce se zahraničními partnery – výměna pedagogů a mezinárodní stáže žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, citace a příklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však dlouhé a složitě strukturované, což snižuje srozumitelnost pro laiky.",
+    "uncertainty_notes": [
+      "Není jasné, zda absence 150 hodin znamená 150 hodin za rok nebo za semestr – text to nespecifikuje",
+      "Podíl žáků se speciálními potřebami (62 žáků) není vztažen k celkovému počtu, takže není jasné, jak velký je to procent",
+      "Není specifikováno, jaké konkrétní opatření ředitel přijal na základě zjištěných nedostatků"
+    ]
+  }
+}
+```

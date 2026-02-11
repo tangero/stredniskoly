@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_600014843_2023-10-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:37:24.997232+00:00",
+  "run_finished_utc": "2026-02-09T16:37:50.070377+00:00",
+  "raw_file": "LYC_600014843_2023-10-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600014843_2023-10-12",
+    "school_profile": {
+      "school_type": "Střední škola průmyslová, technická a automobilní se zaměřením na strojírenství, elektrotechniku, automobilní obory a IT",
+      "inspection_period": "12.–13. a 17.–18. října 2023",
+      "school_change_summary": "Nový ředitel zavedl nový organizační řád s delegováním kompetencí. Došlo k výraznému zlepšení materiálních podmínek. Škola má 1290 žáků, z toho 84 se speciálními vzdělávacími potřebami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka na vysoké úrovni",
+          "detail": "Odborný výcvik probíhá v dobře vybavených střediscích s propojením na reálné zakázky pro zákazníky.",
+          "evidence": "Pedagogové využívají vhodné metody a formy práce s důrazem na bezpečnost a technologické postupy."
+        },
+        {
+          "tag": "Silné partnerství a úspěchy v soutěžích",
+          "detail": "Dlouhodobá spolupráce s firmami, vysokými školami a zahraničními partnery zvyšuje kvalitu vzdělávání.",
+          "evidence": "Žáci dosáhli 1. místa v soutěži Autoopravář junior 23 (Automechanik, Karosář) a v soutěži Automobileum 23."
+        },
+        {
+          "tag": "Zlepšené materiální podmínky",
+          "detail": "Výrazné zlepšení vybavení se pozitivně promítá do kvality výchovně vzdělávací práce.",
+          "evidence": "Velmi zdařilé byly hodiny v počítačových učebnách, kde žáci pracovali s vysokým nasazením."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá teoretická výuka",
+          "detail": "V teoretických předmětech převažuje frontální výuka bez aktivizačních metod, chybí sebehodnocení a vzájemné hodnocení žáků.",
+          "evidence": "Zapojení žáků bylo spíše ojedinělé, chyběla skupinová práce a vzájemná spolupráce, což vedlo k pasivitě žáků."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Setrvalý problém, který se zatím nedaří plně eliminovat.",
+          "evidence": "Absence je vyšší než běžné a škola ji řeší pouze standardními preventivními opatřeními."
+        },
+        {
+          "tag": "Problémy se šikanou a chováním",
+          "detail": "Opakované nevhodné chování konkrétního žáka a podezření na šikanu nejsou dostatečně řešeny.",
+          "evidence": "Inspekce potvrdila, že přijímaná opatření nejsou účinná, přestože škola spolupracuje s Policií ČR a externími organizacemi."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá podpora žáků se speciálními vzdělávacími potřebami v jednotlivých předmětech?",
+        "Jaké konkrétní kroky škola podniká proti absenci a šikaně mezi žáky?",
+        "Jak se škola snaží zlepšit teoretickou výuku a více aktivizovat žáky v běžných předmětech?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktické obory (automechanika, elektrotechnika, strojírenství) – zde je výuka na vysoké úrovni",
+        "Žáci, kterým vyhovuje propojení školního vzdělávání s reálnou praxí a konkrétními projekty",
+        "Žáci, kteří se chtějí zapojit do mezinárodních projektů (Erasmus+) a soutěží"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnou podporu v teoretických předmětech – zde chybí aktivizační metody a zpětná vazba",
+        "Žáci se speciálními vzdělávacími potřebami – ne všichni pedagogové mají dostatek informací o jejich potřebách",
+        "Žáci, kteří mají problémy s chováním nebo jsou ohroženi šikanou – řešení těchto problémů není dostatečně účinné"
+      ],
+      "plain_czech_summary": "Škola je velkým centrem technického vzdělávání s výbornou praktickou výukou a silnými partnerskými vazbami. Žáci dosahují úspěchů v soutěžích a mají možnost pracovat na reálných projektech. Problém je v teoretické výuce, kde chybí aktivní zapojení žáků a zpětná vazba. Škola se potýká s vyšší absencí a nedostatečně řeší problémy se šikanou. Nový ředitel zavádí změny, ale jejich účinnost se teprve ukazuje."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšení na pracovišti automobilních oborů, slabé výsledky v dálkovém studiu",
+        "key_numbers": [
+          "Obor 64-41-L/51 (dálkové studium): míra předčasných odchodů 56,25 % (zlepšení z 90,48 %)",
+          "Společná část maturitní zkoušky v dálkovém studiu: hrubá neúspěšnost 66,7 % (rok 2021)"
+        ],
+        "evidence": "Zlepšení na automobilních oborech díky vyššímu studijnímu potenciálu přijímaných žáků a systematičtější přípravě."
+      },
+      "absence": {
+        "trend": "Vyšší absence, která se nedaří plně eliminovat",
+        "key_numbers": [
+          "Absence je charakterizována jako setrvalý problém"
+        ],
+        "evidence": "Škola realizuje prevenci sociálně patologických jevů, ale absence zůstává vyšší než běžné."
+      },
+      "support_services": [
+        "Školní psycholožka, výchovní poradci a metodici prevence ze tří pracovišť",
+        "Doučování, individuální konzultace a upravený způsob zadávání domácích úkolů",
+        "Adaptační kurzy v prvních ročnících, schránka důvěry (fyzická i online)",
+        "Spolupráce s Policií ČR, zdravotnickou záchrannou službou a Nízkoprahovým klubem Vrakbar"
+      ],
+      "safety_climate": [
+        "Převážná většina hodin probíhala v příjemné pracovní atmosféře, žáci dodržovali pravidla",
+        "Dlouhodobý problém s opakovaným nevhodným chováním konkrétního žáka a podezřením na šikanu",
+        "Přijímaná preventivní a následná opatření jsou nedostatečná a neúčinná"
+      ],
+      "partnerships_practice": [
+        "Akreditace Erasmus+ na období 2021–2027 s mobilitou žáků a učitelů",
+        "Partnerské školy na Slovensku a v Maďarsku",
+        "Spolupráce s firmami (např. Bosch Diesel) a program P-Tech",
+        "Produktivní práce žáků – výroba konkrétních výrobků pro konkrétní zákazníky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně vymezeny. Připomínky ředitele a stanovisko inspekce poskytují další kontext, ale některé kritiky zůstávají obecné (např. 'neznalost konkrétních žáků').",
+      "uncertainty_notes": [
+        "Inspekce neuvedla konkrétní příklady pedagogů, kteří neznají žáky se speciálními potřebami – ředitel si stěžuje na obecnost kritiky",
+        "Počet a závažnost incidentů šikany nejsou kvantifikovány, pouze se uvádí 'opakované podezření'",
+        "Není jasné, jak velký podíl pedagogů nesdílí novou vizi ředitele – popis zůstává vágní"
+      ]
+    }
+  }
+}

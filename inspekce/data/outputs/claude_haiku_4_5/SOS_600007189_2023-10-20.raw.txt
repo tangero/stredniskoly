@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600007189_2023-10-20",
+  "school_profile": {
+    "school_type": "Střední odborná škola informatiky a spojů a Střední odborné učiliště",
+    "inspection_period": "20. 10. a 23.–25. 10. 2023",
+    "school_change_summary": "Počet žáků vzrostl o 35 % na 515 (naplněnost 71 %). Výrazně se zlepšily vnitřní a vnější prostory. Rozšířil se poradenský tým o speciální pedagožku a kariérní poradkyni."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalita odborného vzdělávání",
+        "detail": "Koordinátoři spolupráce se sociálními partnery zajišťují odborné praxe, exkurze a přednášky odborníků, což zvyšuje připravenost žáků na praxi.",
+        "evidence": "Činnost koordinátorů zvyšuje kvalitu odborného vzdělávání a usnadňuje zavádění inovací do učiva."
+      },
+      {
+        "tag": "Zlepšené výsledky vzdělávání",
+        "detail": "Podíl žáků s vyznamenáním vzrostl z 2 % na 12 %, neprospívajících se snížil z 22 % na 3 %.",
+        "evidence": "Ve školním roce 2022/2023 se výrazně zvýšil podíl žáků prospívajících s vyznamenáním."
+      },
+      {
+        "tag": "Moderní vybavení a prostory",
+        "detail": "Škola investuje do digitálních technologií, modernizovaných učeben a nově zřízené relaxační místnosti.",
+        "evidence": "Soustavné zkvalitňování materiálních podmínek vytváří efektivní podmínky pro vzdělávání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky v češtině a angličtině u maturity",
+        "detail": "Žáci selhávají zejména v ústní zkoušce z češtiny a literatury, ačkoliv měli během roku dobré známky.",
+        "evidence": "Značný podíl neúspěšných v maturitě nebyl v průběhu vzdělávání klasifikován horším stupněm než dobrý."
+      },
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Učitelé málo přizpůsobují úkoly různým úrovním znalostí žáků, chybí sebehodnocení a vzájemné hodnocení.",
+        "evidence": "Chybí diferenciace obsahu učiva a úkolů v závislosti na dosavadních znalostech a dovednostech žáka."
+      },
+      {
+        "tag": "Slabší výsledky v oboru Mechanik elektrotechnik",
+        "detail": "Tento obor dosahuje nejhorších průběžných výsledků a nejvyšší absence žáků.",
+        "evidence": "Nejméně se daří zlepšovat úspěšnost žáků oboru Mechanik elektrotechnik."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola připravuje žáky na ústní zkoušky z češtiny a angličtiny u maturity, když se jejich výsledky liší od průběžných známek?",
+      "Jaké konkrétní opatření škola zavádí pro lepší diferenciaci výuky podle individuálních potřeb žáků?",
+      "Proč mají žáci oboru Mechanik elektrotechnik vyšší absenci a jak ji škola řeší?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o informatiku a IT – obor Informační technologie dosahuje nejlepších výsledků a kvalitní výuky.",
+      "Žáci, kterým vyhovuje praktické zaměření – škola nabízí kvalitní odborné praxe a spolupráci se zaměstnavateli.",
+      "Žáci z jiných měst – domov mládeže poskytuje ubytování s internetem a bohatou nabídkou volnočasových aktivit."
+    ],
+    "who_should_be_cautious": [
+      "Žáci slabší v češtině a angličtině – inspekce zjistila, že se jejich výsledky u maturity výrazně zhoršují, ačkoliv měli během roku dobré známky.",
+      "Žáci, kteří potřebují individuální přístup – škola zatím nedostatečně diferencuje výuku podle jejich potřeb.",
+      "Zájemci o obor Mechanik elektrotechnik – tento obor má nejnižší úspěšnost a problémy s absencí žáků."
+    ],
+    "plain_czech_summary": "Škola se výrazně zlepšila – počet žáků vzrostl, výsledky se lepší a prostory jsou moderní. Obor Informační technologie je velmi kvalitní. Hlavní problém: žáci selhávají u maturitní zkoušky z češtiny a angličtiny, ačkoliv měli během roku dobré známky. Inspekce také kritizuje, že učitelé málo přizpůsobují výuku jednotlivým žákům. Obor Mechanik elektrotechnik má nižší úspěšnost a vyšší absenci."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se, ale s problémy v profilové části",
+      "key_numbers": [
+        "Obory IT a Ekonomika: výsledky srovnatelné nebo lepší než celorepublikový průměr",
+        "Mechanik elektrotechnik: ve 2022/23 lepší než průměr po podzimním období",
+        "Vysoká disproporce: žáci neúspěšní v češtině/angličtině u maturity měli během roku známku dobrý nebo lepší"
+      ],
+      "evidence": "Výsledky žáků oboru IT a Ekonomika byly v posledních dvou rocích lepší nebo srovnatelné s průměrem. V oboru Mechanik elektrotechnik se úspěšnost zvýšila."
+    },
+    "absence": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Průměrná absence snížena ve všech maturitních oborech ve 2022/23",
+        "Obor Mechanik elektrotechnik: nejvyšší absence",
+        "Minimální počet žáků zanechávajících vzdělávání z důvodu absence"
+      ],
+      "evidence": "Důsledným uplatňováním pravidel školního řádu se podařilo snížit průměrnou absenci žáků ve vzdělávání."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovný poradce, speciální pedagožka, kariérní poradkyně, školní metodika prevence",
+      "Doučování včetně online platformy, konzultace pro žáky ohrožené neúspěchem",
+      "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami (30 žáků), systematická podpora pro žáky s jazykovou bariérou (24 žáků)",
+      "Domov mládeže: individuální konzultace, vedení k samostatnosti, podpora ve vzdělávání"
+    ],
+    "safety_climate": [
+      "Bezpečnostní rizika zapracována do vnitřních směrnic",
+      "Vstup do budovy zajištěn stálou službou ve vrátnici proti vstupu cizích osob",
+      "Pozitivní sociální klima podporováno pravidelným pořádáním žákovských turnajů",
+      "Minimální počet kázeňských opatření, převažuje udělování pochval"
+    ],
+    "partnerships_practice": [
+      "Partnerské vztahy s profesními organizacemi a smluvními pracovišti pro zajištění praxe",
+      "Dva koordinátoři spolupráce se sociálními partnery zajišťují odborné praxe, exkurze, přednášky odborníků",
+      "Možnost získat odborné certifikáty pro širší uplatnění v praxi",
+      "Zahraniční stáže a zájezdy pro rozvoj jazykových kompetencí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Hlavní zjištění jsou jasně formulována, ale některé pasáže jsou technicky náročné a dlouhé.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola již zavedla na zlepšení přípravy na ústní zkoušky z češtiny a angličtiny.",
+      "Chybí konkrétní čísla o počtu žáků s jazykovou bariérou, kteří v letošním roce potřebují podporu v češtině.",
+      "Není jasné, jak dlouho trvá, než se nová opatření projeví v maturitních výsledcích."
+    ]
+  }
+}
+```

@@ -1,0 +1,29 @@
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T12:15:59.699190+00:00",
+  "run_finished_utc": "2026-02-09T12:16:31.150139+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY4_600005143_2025-11-19\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Tvrzení, že škola je „prestižní“, není ve zdrojové inspekční zprávě výslovně doloženo (zpráva mluví o kvalitních výsledcích, podmínkách a nárůstu zájmu, ale nehodnotí prestiž).\",\n    \"Formulace o „rostoucím podílu vyznamenaných maturantů“ není přímo doložena: zdroj uvádí, že za poslední tři roky bylo 35–40 % maturantů s vyznamenáním (trend růstu u maturantů výslovně nezmiňuje), a že u celkových výsledků žáků se zvýšil podíl vyznamenaných (skoro polovina).\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené klíčové silné stránky ze zprávy: výrazné zlepšení materiálně-technických podmínek, kvalitní sportovní zázemí (2 tělocvičny, posilovna, horolezecké stěny), knihovna, multifunkční přednáškový sál, botanická zahrada/letní učebna.\",\n    \"Věrně popsaný jazykový profil včetně posílené němčiny a DSD II, široké nabídky jazyků, rodilých mluvčích, zahraničních mobilit a programu Erasmus+ včetně čísel (31 žáků DSD II, 80 % náhrada profilové zkoušky certifikátem).\",\n    \"Dobře identifikované slabé stránky odpovídající závěrům ČŠI: nejednotné hodnocení v některých předmětech, nižší míra aktivizačních metod v části výuky, slabší formativní zpětná vazba/sebehodnocení.\",\n    \"Užitečné pro rodiče: struktura „silné stránky / rizika / otázky na den otevřených dveří / pro koho se hodí“ je prakticky použitelná a většinou opřená o text zprávy.\"\n  ],\n  \"one_line_verdict\": \"Výstup je převážně věrný a pro rodiče dobře použitelný, ale obsahuje pár hodnotících/ trendových tvrzení nad rámec toho, co inspekční zpráva výslovně dokládá.\"\n}",
+  "judge_output": {
+    "report_id": "GY4_600005143_2025-11-19",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "Tvrzení, že škola je „prestižní“, není ve zdrojové inspekční zprávě výslovně doloženo (zpráva mluví o kvalitních výsledcích, podmínkách a nárůstu zájmu, ale nehodnotí prestiž).",
+      "Formulace o „rostoucím podílu vyznamenaných maturantů“ není přímo doložena: zdroj uvádí, že za poslední tři roky bylo 35–40 % maturantů s vyznamenáním (trend růstu u maturantů výslovně nezmiňuje), a že u celkových výsledků žáků se zvýšil podíl vyznamenaných (skoro polovina)."
+    ],
+    "best_points": [
+      "Správně zachycené klíčové silné stránky ze zprávy: výrazné zlepšení materiálně-technických podmínek, kvalitní sportovní zázemí (2 tělocvičny, posilovna, horolezecké stěny), knihovna, multifunkční přednáškový sál, botanická zahrada/letní učebna.",
+      "Věrně popsaný jazykový profil včetně posílené němčiny a DSD II, široké nabídky jazyků, rodilých mluvčích, zahraničních mobilit a programu Erasmus+ včetně čísel (31 žáků DSD II, 80 % náhrada profilové zkoušky certifikátem).",
+      "Dobře identifikované slabé stránky odpovídající závěrům ČŠI: nejednotné hodnocení v některých předmětech, nižší míra aktivizačních metod v části výuky, slabší formativní zpětná vazba/sebehodnocení.",
+      "Užitečné pro rodiče: struktura „silné stránky / rizika / otázky na den otevřených dveří / pro koho se hodí“ je prakticky použitelná a většinou opřená o text zprávy."
+    ],
+    "one_line_verdict": "Výstup je převážně věrný a pro rodiče dobře použitelný, ale obsahuje pár hodnotících/ trendových tvrzení nad rámec toho, co inspekční zpráva výslovně dokládá."
+  }
+}

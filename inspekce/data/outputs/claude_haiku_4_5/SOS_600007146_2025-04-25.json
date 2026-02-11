@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600007146_2025-04-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:36:40.673127+00:00",
+  "run_finished_utc": "2026-02-09T13:37:06.640232+00:00",
+  "raw_file": "SOS_600007146_2025-04-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600007146_2025-04-25",
+    "school_profile": {
+      "school_type": "Odborná střední škola (OSŠ) s obory zaměřenými na podnikání, mediální tvorbu, fotografii, požární ochranu a IT",
+      "inspection_period": "25. dubna až 2. května 2025",
+      "school_change_summary": "Od inspekce v 2018 se změnila vzdělávací nabídka, počet žáků vzrostl o více než třetinu na 232 žáků, proběhla rozsáhlá rekonstrukce budovy a modernizace vybavení. Výrazně se snížil počet žáků, kteří předčasně ukončili vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní vedení a klima",
+          "detail": "Ředitelka systematicky buduje příznivé školní klima a demokratický styl řízení s otevřenou komunikací.",
+          "evidence": "Ředitelka 'systematicky naplňuje koncepci zaměřenou na vytváření příznivého školního klimatu' a 'prosazuje demokratický styl řízení založený na přímé komunikaci'."
+        },
+        {
+          "tag": "Praktické zkušenosti a partnerství",
+          "detail": "Škola spolupracuje s kvalitními externími partnery a zahraničními školami, tandemová výuka s odborníky z praxe.",
+          "evidence": "'Dlouhodobá spolupráce školy s kvalitními externími partnery' a 'příležitostné zařazování tandemové výuky, při níž se na vzdělávání podílejí vedle učitelů rovněž odborníci z praxe'."
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Nové zvukařská kabina, průmyslový plotr, relaxační zóny a apidomek pro well-being žáků.",
+          "evidence": "Škola 'nově disponuje mj. zvukařskou kabinou, průmyslovým vysekávacím plotrem' a 'apidomek umístěný ve školní zahradě, který slouží k podpoře well-beingu žáků'."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Výuka nedostatečně zohledňuje individuální potřeby nadaných žáků a žáků se speciálními vzdělávacími potřebami.",
+          "evidence": "'Nedostatečné zohlednění individuálních potřeb, zejména u nadaných a u žáků se SVP, spolu s omezenou diferenciací úloh neumožňovalo plně rozvíjet jejich potenciál'."
+        },
+        {
+          "tag": "Absence žáků",
+          "detail": "Absence vzrostla z 143 hodin na 150 hodin na žáka, zvláště u třetích ročníků.",
+          "evidence": "'Průměrná absence činila ve školním roce 2022/2023 přibližně 143 hodin na žáka, v roce 2023/2024 vzrostla na 150 hodin. V obou letech došlo k výraznějšímu nárůstu absence u žáků ve třetím ročníku'."
+        },
+        {
+          "tag": "Výsledky v profilové části maturity",
+          "detail": "V roce 2024 byla hrubá neúspěšnost v profilové části maturity vyšší než průměr v oborech mimo Obalovou techniku.",
+          "evidence": "'Ve všech ostatních sledovaných oborech však byla hrubá neúspěšnost vyšší než u oborů obdobného zaměření v ČR'."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku individuálním potřebám nadaných žáků a žáků se speciálními vzdělávacími potřebami?",
+        "Jaké konkrétní kroky podniká škola proti rostoucí absenci, zejména u žáků třetího ročníku?",
+        "Jak se škola připravuje na zlepšení výsledků v profilové části maturitní zkoušky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktické dovednosti a propojení teorie s praxí díky spolupráci s externími partnery",
+        "Studenti uměleckých a mediálních oborů, kteří oceňují moderní vybavení a tvůrčí atmosféru",
+        "Žáci, kterým vyhovuje demokratické vedení školy a otevřená komunikace s vedením"
+      ],
+      "who_should_be_cautious": [
+        "Nadaní žáci, kteří potřebují vyšší diferenciaci a individuální přístup v hodinách",
+        "Žáci se speciálními vzdělávacími potřebami, pokud potřebují intenzivnější individuální podporu",
+        "Studenti, kteří mají problémy s matematikou a fyzikou, kde jsou nejčastější slabší výsledky"
+      ],
+      "plain_czech_summary": "Škola s 232 žáky v pěti oborech se vyznačuje kvalitním vedením, příznivým klimatem a moderním vybavením. Ředitelka systematicky buduje soudržný kolektiv a spolupracuje s externími partnery. Výuka je promyšlená a podporuje aktivní zapojení žáků. Výsledky jsou převážně dobré, maturita lepší než průměr. Hlavní výzvou je lepší přizpůsobení výuky individuálním potřebám žáků a rostoucí absence. Škola se zaměřuje na praktické dovednosti, tvůrčí rozvoj a občanské postoje."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Převážně pozitivní, lepší než celostátní průměr v části společné, slabší v profilové části",
+        "key_numbers": [
+          "2023: všichni žáci v oborech Obalová technika, Požární ochrana, Ekonomika a podnikání, IT uspěli v části společné",
+          "2024: všichni přihlášení žáci uspěli v části společné ve všech oborech kromě IT",
+          "Profilová část 2024: hrubá neúspěšnost vyšší než průměr ČR ve všech oborech mimo Obalovou techniku"
+        ],
+        "evidence": "V roce 2023 a 2024 'byly ve sledovaném období převážně lepší než celostátní průměr v příslušné skupině oborů' v části společné. V profilové části 2024 'byla hrubá neúspěšnost vyšší než u oborů obdobného zaměření v ČR'."
+      },
+      "absence": {
+        "trend": "Rostoucí, zejména u třetích ročníků",
+        "key_numbers": [
+          "2022/2023: 143 hodin na žáka",
+          "2023/2024: 150 hodin na žáka",
+          "Neomluvená absence: téměř nevyskytuje se"
+        ],
+        "evidence": "'Průměrná absence činila ve školním roce 2022/2023 přibližně 143 hodin na žáka, v roce 2023/2024 vzrostla na 150 hodin. V obou letech došlo k výraznějšímu nárůstu absence u žáků ve třetím ročníku'."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: vedoucí, kariérová poradkyně, speciální pedagožka, výchovná poradkyně",
+        "Dělená výuka v matematice do homogenních skupin podle úrovně znalostí",
+        "Podpůrné metody: myšlenkové mapy, formativní hodnocení, individuální konzultace"
+      ],
+      "safety_climate": [
+        "Nízká míra úrazovosti",
+        "Pravidelné poučování žáků o bezpečnosti a ochraně zdraví",
+        "Příznivé školní klima s respektujícím přístupem pedagogů"
+      ],
+      "partnerships_practice": [
+        "Dvoutýdenní výměnné stáže v Německu pro rozvoj profesní samostatnosti",
+        "Mezinárodní projekty se školami z Německa a Dánska",
+        "Tandemová výuka s odborníky z praxe",
+        "Spolupráce se stanicí hasičského záchranného sboru pro obor Požární ochrana"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelnou češtinou bez zbytečného úřednického stylu. Informace jsou jasně strukturované, konkrétní a podložené citacemi. Čtenář snadno pochopí silné stránky i rizika školy.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak dlouho trvá implementace formativního hodnocení a jaké jsou dosavadní výsledky",
+        "Není jasné, zda je rostoucí absence způsobena zdravotními problémy, nezájmem nebo jinými faktory",
+        "Chybí informace o konkrétních opatřeních, která škola plánuje na zlepšení diferenciace výuky"
+      ]
+    }
+  }
+}

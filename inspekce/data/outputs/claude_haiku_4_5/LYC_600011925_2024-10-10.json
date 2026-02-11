@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_600011925_2024-10-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:12:25.255180+00:00",
+  "run_finished_utc": "2026-02-09T16:12:49.685364+00:00",
+  "raw_file": "LYC_600011925_2024-10-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600011925_2024-10-10",
+    "school_profile": {
+      "school_type": "Střední pedagogické lyceum (Pedagogické lyceum s dvěma zaměřeními: humanitní studia, tělesná výchova a sport) + základní škola + školní družina",
+      "inspection_period": "10. 10. 2024 až 7. 11. 2024",
+      "school_change_summary": "Škola ukončila obor Hotelnictví. Pedagogické lyceum výrazně vzrostlo (215 žáků, +64 oproti minulé inspekci). Pedagogický sbor se rozrostl a obměnil. Vedení posílilo: jmenována zástupkyně pro základní školu, intenzivnější spolupráce vedení, lepší řízení pedagogických procesů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Prevence a chování",
+          "detail": "Žádný žák nemá snížený stupeň chování. Škola má bohaté preventivní aktivity a podporuje sociální rozvoj.",
+          "evidence": "Pozitivní bilance hodnocení chování, vysoká četnost preventivních aktivit přispívajících k osobnostně sociálnímu rozvoji."
+        },
+        {
+          "tag": "Partnerství a aktivity",
+          "detail": "Škola spolupracuje s mnoha externími partnery a pořádá zajímavé akce mimo školu (adaptační kurzy, sportovní soutěže, zahraniční výjezdy).",
+          "evidence": "Aktivní spolupráce s externími partnery, žáci střední školy dosahují velkých úspěchů ve sportovních kláních i na republikové úrovni."
+        },
+        {
+          "tag": "Jasné cíle výuky",
+          "detail": "Učitelé jasně stanovují, co by měli žáci na konci hodiny umět, což dobře rámuje vyučovací proces.",
+          "evidence": "Práce většiny pedagogů s cíli výuky, jasné a srozumitelné pojmenování výukových cílů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Rozdíl mezi 1. a 2. stupněm",
+          "detail": "Na 1. stupni prospívá s vyznamenáním 90 % žáků, na 2. stupni jen čtvrtina. Příčinou je náročnější styl výuky.",
+          "evidence": "Velký rozdíl mezi úspěšností na 1. a 2. stupni základní školy, vedení musí věnovat tomuto stavu pozornost."
+        },
+        {
+          "tag": "Slabá diferenciace",
+          "detail": "Nadanější a rychleji pracující žáci nemají úkoly s vyšší obtížností. Jejich potenciál není plně využit.",
+          "evidence": "Malá míra diferenciace výuky v základní i střední škole, chybějí úkoly s vyšší úrovní obtížnosti."
+        },
+        {
+          "tag": "Vzdělávání učitelů",
+          "detail": "Část učitelů se neúčastní dalšího vzdělávání. Někteří nemají dostatek zkušeností s podporou žáků se speciálními potřebami.",
+          "evidence": "Nízká účast části pedagogů na akcích dalšího vzdělávání, někteří se neúčastnili žádné vzdělávací akce."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadanější žáky? Jaké má pro ně speciální úkoly nebo programy?",
+        "Jak se liší přístup učitelů na 1. a 2. stupni a jak se to řeší, aby měli všichni žáci stejné šance na úspěch?",
+        "Jaké konkrétní vzdělávání absolvují učitelé, aby lépe pracovali se žáky se speciálními potřebami?"
+      ],
+      "who_school_fits": [
+        "Žáci, kterým vyhovuje aktivní přístup se spoustou akcí mimo školu a zaměřením na sport a sociální rozvoj",
+        "Žáci na 1. stupni základní školy, kde je vysoká úspěšnost a dobré vedení výuky",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje podporu a individuální pomoc"
+      ],
+      "who_should_be_cautious": [
+        "Nadanější a rychleji pracující žáci, kterým může chybět dostatečná výzva a pokročilejší úkoly",
+        "Žáci přecházející na 2. stupeň základní školy, kde je výrazný pokles úspěšnosti a náročnější styl výuky",
+        "Rodiny, které očekávají, že všichni učitelé budou mít stejnou úroveň zkušeností a vzdělání"
+      ],
+      "plain_czech_summary": "Bohemia je škola se silným zaměřením na sociální rozvoj, chování a aktivity mimo vyučování. Žáci jsou spokojení, chování je výborné. Problém je rozdíl mezi 1. stupněm (90 % s vyznamenáním) a 2. stupněm (jen 25 % s vyznamenáním). Nadanější žáci nemají dostatek výzvy. Část učitelů se nedostává na vzdělávání. Vedení se snaží situaci zlepšit, ale je to běh na dlouhou trať."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírně pozitivní - podíl neprospívajících se snížil, ale matematika je slabá",
+        "key_numbers": [
+          "36 maturantů v oboru Pedagogické lyceum",
+          "10 s vyznamenáním, 5 neuspělo",
+          "Matematika: 3 z 5 neuspěli"
+        ],
+        "evidence": "Maturitní zkoušku konalo 36 žáků, deset ji absolvovalo s vyznamenáním a pět neuspělo. Nejméně úspěšným předmětem byla matematika."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněna",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště - identifikuje rizikové chování, spolupracuje s třídními učiteli a rodiči",
+        "Asistenti pedagoga - pomáhají žákům se speciálními vzdělávacími potřebami (27 v ZŠ, 16 v SŠ)",
+        "Výchovná poradkyně - spolupracuje na eliminaci neúspěšných žáků se speciálními potřebami"
+      ],
+      "safety_climate": [
+        "Pozitivní bilance chování - žádný žák se sníženým stupněm chování",
+        "Bohaté preventivní aktivity v základní i střední škole",
+        "Přátelská a podporující atmosféra ve výuce střední školy",
+        "Zřízena relaxační místnost pro wellbeing žáků"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s mnoha externími partnery na podporu vzdělávacího procesu",
+        "Zahraniční výjezdy pro rozvoj cizojazyčné gramotnosti",
+        "Sportovní kurzy a adaptační programy",
+        "Zapojení zákonných zástupců do akcí školy",
+        "Spolupráce s odborníky z jiných institucí při řešení problémů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná. Jasně identifikuje silné stránky (prevence, partnerství, cíle výuky) a slabé stránky (diferenciace, vzdělávání učitelů). Praktické informace pro rodiče jsou jasné, ale některé údaje (absence, detailní výsledky testů) chybí.",
+      "uncertainty_notes": [
+        "Absence údajů o školní docházce a absence žáků - nelze posoudit tento aspekt",
+        "Nejsou uvedeny konkrétní výsledky externího testování - pouze zmínka, že byly 'spíše podprůměrné'",
+        "Není jasné, jak konkrétně se liší přístup učitelů na 1. a 2. stupni základní školy"
+      ]
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "report_id": "GY4_600010449_2021-10-08",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:29:56.305083+00:00",
+  "run_finished_utc": "2026-02-10T08:30:56.072423+00:00",
+  "raw_file": "GY4_600010449_2021-10-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600010449_2021-10-08",
+    "school_profile": {
+      "school_type": "Gymnázium",
+      "inspection_period": "8., 11.-12. 10. 2021",
+      "school_change_summary": "Škola ukončila osmiletý obor a plně se zaměřila na čtyřleté studium, přičemž počet žáků se od roku 2014 snížil o 14 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Maturita a VŠ",
+          "detail": "Škola dosahuje dlouhodobě vynikajících výsledků, všichni žáci maturují a drtivá většina odchází na vysoké školy.",
+          "evidence": "„100 % žáků uspělo u maturitní zkoušky“, „kolem 87 % absolventů pokračuje ve studiu na vysoké škole“."
+        },
+        {
+          "tag": "Jazyky a certifikáty",
+          "detail": "Výuka cizích jazyků je na vysoké úrovni a žáci mohou získat mezinárodní certifikáty přímo ve škole.",
+          "evidence": "„25 žáků využilo možnosti nahradit profilovou zkoušku z cizího jazyka certifikovanou zkouškou“."
+        },
+        {
+          "tag": "Vybavení a zázemí",
+          "detail": "Díky projektům škola modernizuje techniku i laboratoře a pro žáky vznikají nové prostory pro volný čas.",
+          "evidence": "„obměnila část výpočetní techniky“, „nově upravená studovna“, projekt „Studenťárny“."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zastaralé metody výuky",
+          "detail": "Výuka často spočívá v frontálním přednesu bez dostatečného zapojení žáků do diskuse nebo skupinové práce.",
+          "evidence": "„Převažovala frontální výuka... Jiné formy práce... byly uplatňovány jen ojediněle“."
+        },
+        {
+          "tag": "Nekonzistentní přístup učitelů",
+          "detail": "Inspekce zaznamenala případy, kdy se učitelé chovali k žákům nevhodně, a doporučila sjednotit přístup.",
+          "evidence": "„ojediněle se však vyskytly případy nevhodného jednání... Sjednotit osobností přístup všech vyučujících“."
+        },
+        {
+          "tag": "Chybějící zpětná vazba",
+          "detail": "Ve hodinách často chybí závěrečné shrnutí učiva a prostor pro sebehodnocení žáků.",
+          "evidence": "„Nedostatkem... byla absence závěrečného zhodnocení vyučovací jednotky... a nastavení autoevaluačního procesu u žáků“."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé diferencují výuku, aby podporovali jak nadané žáky, tak ty s obtížemi?",
+        "Jakým způsobem škola zajišťuje, aby všichni pedagogové dodržovali smluvní a respektující přístup k žákům?",
+        "Jaké konkrétní semináře a volitelné předměty jsou k dispozici pro zaměření na přírodovědné obory?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí pokračovat na vysoké škole, zejména technickém nebo přírodovědném směru.",
+        "Pro samostatné žáky, kteří dobře zvládají tradiční formy výuky a memorování látky.",
+        "Pro zájemce o cizí jazyky a mezinárodní certifikáty."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří vyžadují individuální přístup a moderní interaktivní metody výuky.",
+        "Pro studenty citlivé na nevyrovnanou komunikaci ze strany pedagogů.",
+        "Pro ty, kteří očekávají intenzivní skupinovou práci a projektové vyučování."
+      ],
+      "plain_czech_summary": "Gymnázium v Jablonci nad Nisou je stabilní školou s vynikajícími výsledky u maturity a vysokou úspěšností přijetí na VŠ. Škola klade důraz na přírodovědné předměty a jazyky, což podporuje i moderní vybavení laboratoří. Rizikem může být převaha tradičních výukových metod bez dostatečné diferenciace a občasný nevhodný přístup pedagogů. Pro ambiciózní studenty je však školou s kvalitním zázemím a jasnou vizí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vynikající",
+        "key_numbers": [
+          "100 % úspěšnost u maturity",
+          "87 % absolventů na VŠ",
+          "16 žáků skládalo rozšiřující matematiku"
+        ],
+        "evidence": "„100 % žáků uspělo u maturitní zkoušky“, „kolem 87 % absolventů pokračuje ve studiu na vysoké škole“."
+      },
+      "absence": {
+        "trend": "Nízká",
+        "key_numbers": [
+          "Průměrně 16 hodin na žáka"
+        ],
+        "evidence": "„Průměrný počet zameškaných hodin na jednoho žáka je nízký, v uplynulém školním roce činil 16 hodin“."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště",
+        "Kariérové poradenství",
+        "Metodička primární prevence"
+      ],
+      "safety_climate": [
+        "Vytváření bezpečného prostředí je prioritou",
+        "Nízký výskyt rizikového chování",
+        "Zabezpečené vstupy do budovy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Gymnasium Michelstadt (Německo)",
+        "Fakultní škola Přírodovědecké fakulty UK",
+        "Spolupráce s Technickou univerzitou Liberec"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje konkrétní příklady. Obsahuje minimum administrativního žargonu a dobře vysvětluje klíčová zjištění.",
+      "uncertainty_notes": [
+        "Nejasná míra podpory pro žáky se SVP v běžných hodinách mimo samostatnou práci."
+      ]
+    }
+  }
+}

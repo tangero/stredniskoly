@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_691014612_2024-06-04",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola (soukromá), obory: Strojírenství, Obráběč kovů, Strojní mechanik",
+    "inspection_period": "4. 6. 2024 – 7. 6. 2024",
+    "school_change_summary": "Škola založena 2021, výuka zahájena 2022/23. Nový ředitel od 2023/24. Aktuálně 96 žáků v 5 třídách (1.–2. ročník), z toho 6 se speciálními vzdělávacími potřebami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství s průmyslem",
+        "detail": "Škola má efektivní síť sociálních partnerů, která podporuje odborný rozvoj žáků a jejich přípravu na pracovní uplatnění.",
+        "evidence": "Síť partnerů obohatena o další subjekty; spolupráce při odborné praxi, stážích a exkurzích."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Žáci mají přístup k modernímu zázemí s technologiemi používanými v současné průmyslové praxi.",
+        "evidence": "Pět učeben, dvě počítačové učebny, výrobní haly zřizovatele s CNC programováním."
+      },
+      {
+        "tag": "Péče o slabší žáky",
+        "detail": "Škola včas identifikuje žáky ohrožené neúspěchem a poskytuje jim doučování a konzultace.",
+        "evidence": "Minulý rok pouze jeden žák neprospěl, ostatní prospěli, tři s vyznamenáním."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Pedagogové málo využívají diferenciaci a individuální přístup, což omezuje rozvoj potenciálu jednotlivých žáků.",
+        "evidence": "Žákům není nabízena možnost výběru diferencovaně zadávaných úloh dle jejich kognitivní vyspělosti."
+      },
+      {
+        "tag": "Slabé formativní hodnocení",
+        "detail": "Chybí pravidelná reflexe vzdělávacích cílů a formativní hodnocení, které by dávalo žákům zpětnou vazbu.",
+        "evidence": "Ve většině hodin nedochází k vyhodnocování vzdělávacích cílů a individuálního pokroku."
+      },
+      {
+        "tag": "Zkušenosti pedagogů",
+        "detail": "Někteří pedagogové nemají dostatečné pedagogické vzdělání, což se projevilo v didaktické stránce výuky.",
+        "evidence": "Nedostatek zkušeností a chybějící pedagogické vzdělání se částečně negativně projevilo v hospitacích."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi a jak se přizpůsobuje žákům se speciálními vzdělávacími potřebami?",
+      "Jaké konkrétní firmy jsou partnery školy a jak probíhá praktická výuka v jejich provozech?",
+      "Jak se škola vypořádává s tím, že někteří pedagogové nemají pedagogické vzdělání, a jaký je plán na jejich kvalifikaci?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání v moderním průmyslovém prostředí s přímou vazbou na reálné pracovní pozice",
+      "Talentovaní žáci, kterým vyhovuje malá škola s individuálnější péčí a motivací k soutěžím",
+      "Žáci, kteří potřebují podporu při učení – škola má funkční systém doučování a konzultací"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnou individualizaci a diferenciaci – pedagogové ji zatím málo využívají",
+      "Žáci, kteří se učí lépe s jasnou zpětnou vazbou – formativní hodnocení není systematické",
+      "Žáci, kteří preferují teoretičtější přístup – škola je zaměřena primárně na praktické dovednosti"
+    ],
+    "plain_czech_summary": "SPŠ Strojírna Litvínov je mladá soukromá škola (od 2021) s moderním vybavením a silnými vazbami na průmysl. Žáci se učí na reálných strojích a mají šanci na práci hned po škole. Škola dobře pečuje o slabší žáky. Problém je, že pedagogové málo přizpůsobují výuku jednotlivým žákům a chybí jim zpětná vazba o pokroku. Někteří učitelé nemají pedagogické vzdělání. Škola je vhodná pro prakticky zaměřené žáky, ale měla by zlepšit individuální přístup."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nedostupné v textu",
+      "key_numbers": [
+        "Škola vzdělává pouze 1. a 2. ročníky (96 žáků k 31. 3. 2024)",
+        "Maturitní zkoušky dosud neproběhly"
+      ],
+      "evidence": "Škola byla založena 2021, výuka zahájena 2022/23. Žáci jsou v 1. a 2. ročníku."
+    },
+    "absence": {
+      "trend": "Nízká absence",
+      "key_numbers": [
+        "Pouze ojedinělá absence žáků"
+      ],
+      "evidence": "Absence je výsledkem účinné komunikace mezi aktéry vzdělávání a pozitivní motivace pedagogů."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence zajišťují poradenské služby",
+      "Doučování a individuální či skupinové konzultace pro žáky ohrožené neúspěchem",
+      "Adaptační pobytové kurzy na začátku roku pro první ročníky"
+    ],
+    "safety_climate": [
+      "Činnost metodičky prevence zaměřena na prevenci záškoláctví, šikany a kyberšikany",
+      "Jakékoliv náznaky problémového chování řešeny bezodkladně",
+      "Vedení žáků ke zdravému životnímu stylu"
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce se sociálními partnery – firmy z regionu i mimo něj",
+      "Realizace odborné praxe a stáží v provozech partnerských firem",
+      "Zapojení odborníků z praxe do výuky odborných předmětů",
+      "Výuka CNC programování v hodinách teoretických předmětů a ve výrobních halách zřizovatele"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Chybí však konkrétní číselné údaje o výsledcích (např. procenta prospěchu, absence), což by zvýšilo transparentnost.",
+    "uncertainty_notes": [
+      "Maturitní výsledky nejsou dostupné – škola dosud nevypustila maturanty (1. absolventi budou v 2024/25)",
+      "Detailní údaje o absence nejsou kvantifikovány (pouze 'ojedinělá')",
+      "Není jasné, kolik pedagogů nemá pedagogické vzdělání a jaký je konkrétní plán jejich kvalifikace"
+    ]
+  }
+}
+```

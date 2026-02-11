@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600014029_2023-02-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:47:45.144169+00:00",
+  "run_finished_utc": "2026-02-09T16:48:09.247858+00:00",
+  "raw_file": "SOS_600014029_2023-02-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600014029_2023-02-13",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště (soukromá, s.r.o.)",
+      "inspection_period": "13. února 2023 až 15. února 2023",
+      "school_change_summary": "Od poslední inspekce v roce 2015 se počet žáků výrazně zvýšil na 332. Škola investovala do nových dílen, didaktických pomůcek a venkovních úprav. Ředitel působí od roku 2018."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Učitelé odborného výcviku poskytují vysoce kvalitní praktické vyučování s vysokou aktivitou žáků a propojením s reálnou praxí.",
+          "evidence": "Hospitované jednotky odborného výcviku vykazovaly vysokou odbornou i didaktickou úroveň s převažující aktivní činností žáků."
+        },
+        {
+          "tag": "Podpora speciálních potřeb",
+          "detail": "Škola má kvalitní poradenské služby včetně psychologa, kariérního poradce a koordinátora pro žáky s odlišným mateřským jazykem.",
+          "evidence": "Školní poradenské pracoviště zajišťuje péči o 67 žáků se speciálními vzdělávacími potřebami a 45 žáků s odlišným mateřským jazykem."
+        },
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola udržuje rozsáhlou síť sociálních partnerů a zapojuje žáky do charitativních aktivit a projektů osobnostního rozvoje.",
+          "evidence": "Spolupráce se širokým okruhem sociálních partnerů přispívá k optimálnímu rozvoji a posilování sociálních kompetencí žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Žáci chybějí průměrně 86 hodin za pololetí, což má negativní dopad na jejich výsledky a vedlo k 12 % předčasným odchodům.",
+          "evidence": "Ve školním roce 2021/2022 činila absence průměrně 209 hodin na žáka za rok, v prvním pololetí 2022/2023 to bylo 86 hodin."
+        },
+        {
+          "tag": "Nízké výsledky u maturity",
+          "detail": "Průměrně 25 % žáků neuspěje u maturitní zkoušky, v některých oborech až 38 % (Mechanik seřizovač).",
+          "evidence": "V posledních třech letech činila hrubá neúspěšnost u maturity průměrně 25 %, obor Ekonomika a podnikání 33 %, Mechanik seřizovač 38 %."
+        },
+        {
+          "tag": "Slabá teoretická výuka",
+          "detail": "Teoretické vyučování se zaměřuje především na výklad, málo rozvíjí kritické myšlení a klíčové kompetence žáků.",
+          "evidence": "Formy a metody práce v teoretickém vyučování nepodporovaly v potřebné míře aktivitu žáků a rozvoj klíčových kompetencí."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+        "Jaké jsou důvody vysoké neúspěšnosti u maturity v oborech Ekonomika a podnikání a Mechanik seřizovač?",
+        "Jak se škola snaží zlepšit kvalitu teoretické výuky a rozvoj klíčových kompetencí?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou činnost a odborný výcvik, kde je výuka na vysoké úrovni",
+        "Žáci s odlišným mateřským jazykem, kterým škola poskytuje cílenou podporu a přizpůsobené podmínky",
+        "Žáci, kteří potřebují individuální péči a psychologickou podporu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s tendencí k absenci – škola má vysoké absence a není jasné, jak efektivně je řeší",
+        "Žáci v oborech Ekonomika a podnikání a Mechanik seřizovač – mají vysokou neúspěšnost u maturity",
+        "Žáci, kteří potřebují kvalitní teoretickou výuku zaměřenou na kritické myšlení a samostatné řešení problémů"
+      ],
+      "plain_czech_summary": "Škola v Kuřimi je soukromá střední škola s 332 žáky. Silnou stránkou je praktická výuka a péče o žáky se speciálními potřebami. Problém je vysoká absence žáků (86 hodin za pololetí) a nízké výsledky u maturity (25 % neúspěšnosti). Teoretická výuka se zaměřuje spíše na výklad než na aktivní učení. Škola má kvalitní poradenské služby a spolupracuje s firmami. Vhodná pro žáky zaměřené na praxi, méně vhodná pro ty, kteří potřebují silnou teoretickou přípravu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nízký – průměrně 25 % neúspěšnosti, v některých oborech výrazně vyšší",
+        "key_numbers": [
+          "Průměrná hrubá neúspěšnost 25 % za poslední 3 roky",
+          "Obor Ekonomika a podnikání: 33 % neúspěšnosti",
+          "Obor Mechanik seřizovač: 38 % neúspěšnosti"
+        ],
+        "evidence": "V posledních třech letech neuspělo průměrně 25 % žáků u maturitní zkoušky, nejhorší výsledky v oborech Ekonomika a podnikání a Mechanik seřizovač."
+      },
+      "absence": {
+        "trend": "Vysoká a dlouhodobá – mírné zlepšení v letošním roce, ale stále problematická",
+        "key_numbers": [
+          "Školní rok 2021/2022: 209 hodin na žáka za rok",
+          "Školní rok 2022/2023 (1. pololetí): 86 hodin na žáka",
+          "12 % neomluvené absence ve školním roce 2021/2022"
+        ],
+        "evidence": "Žáci vykazují dlouhodobě vysokou absenci, která má negativní vliv na výsledky vzdělávání a vedla k 12 % předčasným odchodům za poslední 3 roky."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s dvěma výchovnými poradkyněmi, školním metodikem prevence, psychologickou a kariérní poradkyní",
+        "Koordinátorka pro žáky s odlišným mateřským jazykem",
+        "Doučování v rámci národního plánu obnovy a konzultační hodiny pro žáky s rizikem neúspěchu"
+      ],
+      "safety_climate": [
+        "Přátelská a příjemná pracovní atmosféra v hodinách",
+        "Problém: Krácení výuky tělesné výchovy a bezpečnostní riziko při přesunech žáků mimo areál školy",
+        "Prevence rizikového chování formou přednášek, besed a sportovních aktivit"
+      ],
+      "partnerships_practice": [
+        "Rozsáhlá síť sociálních partnerů pro odbornou praxi žáků",
+        "Spolupráce s charitativními organizacemi",
+        "Projekt Vévoda z Edinburghu a tvorba časopisu Zlobice ve spolupráci s městem Kuřim"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a věcná, obsahuje konkrétní čísla a citace. Některé pasáže jsou však dlouhé a složitě strukturované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Není jasné, proč se absence v letošním roce zlepšila – zda jde o trvalý trend nebo dočasné zlepšení",
+        "Chybí analýza příčin vysoké neúspěšnosti v konkrétních oborech – není jasné, zda jde o kvalitu výuky, motivaci žáků nebo výběr studentů",
+        "Není specifikováno, jak efektivní jsou dosavadní opatření na snižování absence – škola sama uvádí, že nepřinesla očekávané výsledky"
+      ]
+    }
+  }
+}

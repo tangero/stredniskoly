@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "LYC_600011925_2022-04-12",
+  "school_profile": {
+    "school_type": "Soukromá střední škola (Pedagogické lyceum, Hotelnictví) + základní škola + školní družina",
+    "inspection_period": "12. dubna až 6. května 2022",
+    "school_change_summary": "Základní vzdělávání se rozšířilo o druhý stupeň (nově 9 tříd se 128 žáky). Střední škola se přeorientovala na Pedagogické lyceum (151 žáků), obor Hotelnictví zaniká (12 zbývajících žáků). Pedagogický kolektiv se výrazně obměnil, zvýšila se kvalifikace učitelů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vstřícná atmosféra a komunikace",
+        "detail": "Ředitel uplatňuje empatický, demokratický styl řízení s důrazem na partnerskou komunikaci se zákonnými zástupci.",
+        "evidence": "Ředitel uplatňuje empatický, vstřícný, demokratický styl řízení školy s důrazem na partnerskou komunikaci."
+      },
+      {
+        "tag": "Kvalitní výuka na 1. stupni ZŠ",
+        "detail": "Učitelky na prvním stupni střídají frontální výuku se samostatnou prací a skupinovými aktivitami, které rozvíjejí spolupráci.",
+        "evidence": "Na 1. stupni byla pestřejší výuka, žákům nabízela aktivnější role, střídaly se frontální forma se samostatnou prací a skupinové aktivity."
+      },
+      {
+        "tag": "Malé třídy a individuální přístup",
+        "detail": "Důraz na nízké počty žáků ve třídách (do 16) a dobrou znalost jednotlivých žáků podporuje kvalitní péči.",
+        "evidence": "Kladen je důraz na nízké počty žáků ve třídách (do 16), dobrou znalost jednotlivých žáků a partnerský přístup."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá výuka na 2. stupni ZŠ",
+        "detail": "Učitelé ze střední školy na druhém stupni nezařazují kooperativní techniky, chybí diferenciace úkolů a formativní zpětná vazba.",
+        "evidence": "Na 2. stupni takové činnosti chyběly, vyučující kooperativní techniky nezařazovaly, chyběla diferenciace úkolů a formativní hodnocení."
+      },
+      {
+        "tag": "Vysoký podíl žáků v riziku na 2. stupni",
+        "detail": "Pouze 28 % žáků druhého stupně prospělo s vyznamenáním, vzrostl počet ohrožených školním neúspěchem.",
+        "evidence": "Na 2. stupni bylo prospívajících s vyznamenáním podstatně méně (28 %) a vzrostl počet žáků ohrožených školním neúspěchem."
+      },
+      {
+        "tag": "Nejednotná kvalita výuky v SŠ",
+        "detail": "Výuka převažuje frontální formou, chybí smysluplná motivace a propojení s praktickým životem, hodiny často končí bez závěru.",
+        "evidence": "Ve výuce převažovala frontální forma s výkladem učitele, ne vždy se dařilo žáky smysluplně motivovat, hodiny končily v přestávce."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší rozdíl v kvalitě výuky mezi 1. a 2. stupněm ZŠ a jaké má plány na zlepšení?",
+      "Jaké konkrétní opatření škola přijala na podporu žáků v riziku školního neúspěchu na 2. stupni?",
+      "Jak se škola vypořádá se změnou zaměření na Pedagogické lyceum a jak se to projeví v praxi a partnerstvích?"
+    ],
+    "who_school_fits": [
+      "Žáci prvního stupně ZŠ, kteří prospívají z aktivní výuky s prvky skupinové práce a individuálním přístupem",
+      "Studenti Pedagogického lycea, kteří chtějí studovat v menší škole s osobnějším přístupem",
+      "Rodiny, které oceňují nízké počty žáků ve třídách a vstřícný přístup vedení"
+    ],
+    "who_should_be_cautious": [
+      "Žáci druhého stupně ZŠ, zejména ti se speciálními vzdělávacími potřebami, kteří potřebují diferenciovanou výuku a silnější podporu",
+      "Rodiny, které očekávají jednotně kvalitní výuku na obou stupních ZŠ",
+      "Žáci, kteří potřebují aktivní, interaktivní vyučovací metody a formativní zpětnou vazbu"
+    ],
+    "plain_czech_summary": "Škola má silné základy na prvním stupni ZŠ s aktivní výukou a vstřícnou atmosférou. Druhý stupeň ZŠ ale trpí slabší kvalitou výuky a vysokým podílem žáků v riziku neúspěchu. Střední škola se přeorientovává na Pedagogické lyceum, ale systém řízení se tomu ještě plně nepřizpůsobil. Vedení školy je vstřícné, ale chybí mu dostatečné pravomoci pro efektivní řízení. Škola má dobré vybavení, ale musí zlepšit diferenciaci výuky a metodickou podporu učitelům."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený - Hotelnictví 100% úspěšnost, Pedagogické lyceum 86% úspěšnost",
+      "key_numbers": [
+        "Hotelnictví 2021: 9 žáků, všichni složili zkoušku, 1 s vyznamenáním",
+        "Pedagogické lyceum 2021: 21 přihlášených, 3 nesložili (14% neúspěšnost), 5 s vyznamenáním",
+        "Školní rok 2020/2021: 7 neprospívajících (5% z 136 žáků)"
+      ],
+      "evidence": "Žáci oboru Hotelnictví byli v roce 2021 úspěšní u maturitní zkoušky. Hrubá neúspěšnost Pedagogického lycea činila 14 %, maturitní zkoušku nesložili 3 žáci z 21 přihlášených."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně pro ZŠ i SŠ",
+      "Dvě školní metodičky prevence",
+      "Kariérové poradenství ve spolupráci s úřadem práce",
+      "Sociometrická šetření ve spolupráci s odbornými institucemi",
+      "Individuální řešení osobních problémů žáků",
+      "Národní plán doučování"
+    ],
+    "safety_climate": [
+      "Pedagogové usilují o vytváření příznivých vztahů mezi všemi účastníky vzdělávání",
+      "Žáci jsou vedeni k dodržování stanovených pravidel a zásad bezpečného chování",
+      "Škola úspěšně zachycuje a řeší rizikové chování (kyberšikana, agresivní chování) ve spolupráci s odbornými institucemi",
+      "Identifikované rizikové projevy byly vyhodnoceny jako mírného charakteru",
+      "Pozitivní bilance hodnocení chování žáků ZŠ odráží úspěšnou snahu školy"
+    ],
+    "partnerships_practice": [
+      "Výukové zájezdy do zahraničí v rámci programu Erasmus+ (hlavně Anglie)",
+      "Kurzy pro SŠ (barmanský, tejpovací, hotelový animátor)",
+      "Spolupráce s úřadem práce na kariérovém poradenství",
+      "Besedy se zástupci středních a vysokých škol",
+      "Návštěvy veletrhu škol",
+      "Spolupráce se školskými poradenskými zařízeními a středisky výchovné péče"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně identifikuje silné a slabé stránky. Některé pasáže jsou však složitější a vyžadují pozorné čtení (např. popis řídící struktury ZŠ).",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, nelze posoudit trend absence žáků",
+      "Konkrétní čísla o prospěchu na SŠ nejsou úplná - chybí data za školní rok 2021/2022",
+      "Není jasné, jak konkrétně se projevuje nedostatečná metodická pomoc při naplňování podpůrných opatření pro žáky se speciálními potřebami"
+    ]
+  }
+}
+```

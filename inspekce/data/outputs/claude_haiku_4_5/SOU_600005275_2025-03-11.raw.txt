@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600005275_2025-03-11",
+  "school_profile": {
+    "school_type": "Střední škola managementu a služeb s.r.o. – soukromá střední škola",
+    "inspection_period": "11. března 2025 až 14. března 2025",
+    "school_change_summary": "Od inspekce v 2021 se počet žáků zvýšil téměř o třetinu na 541 žáků. Škola změnila název, rozšířila vzdělávací nabídku a vybudovala nové učebny. Vzrostl podíl žáků s odlišným mateřským jazykem (21 %) a speciálními vzdělávacími potřebami (15 %)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vzdělání na vysoké úrovni",
+        "detail": "Odborné vyučování probíhá na velmi dobré úrovni s propojením teorie a praxe, což připravuje žáky na reálné uplatnění.",
+        "evidence": "Praktická část vzdělávání probíhá na velmi dobré odborné úrovni, umožňuje naplňování profilu absolventa a vytváří optimální předpoklady pro jejich uplatnění na trhu práce."
+      },
+      {
+        "tag": "Kvalitní materiální vybavení",
+        "detail": "Škola má moderně vybavené odborné učebny, ateliéry, dílny a salony s aktuální technikou.",
+        "evidence": "Škola disponuje dostatečným počtem kmenových i odborných učeben a specializovaných pracovišť, převážně vybavených audiovizuální technikou a mobilní digitální sestavou."
+      },
+      {
+        "tag": "Zlepšující se výsledky maturit",
+        "detail": "Od poslední inspekce se mírně zlepšily výsledky maturitní zkoušky a snížil se počet neprospívajících žáků.",
+        "evidence": "Výsledky žáků při ukončování studia MZ se od posledního inspekčního hodnocení mírně zlepšily, ve společné nebo profilové části zkoušky neprospěli jen jednotlivci."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá podpora žáků s odlišným mateřským jazykem",
+        "detail": "Přibližně 25 % žáků s OMJ neprospělo, chybí systémová jazyková příprava a včasné plány pedagogické podpory.",
+        "evidence": "Na úrovni školy schází systémová podpora žáků s OMJ k eliminaci jejich jazykové bariéry, např. soustavná jazyková příprava nebo včasné vypracování plánu pedagogické podpory."
+      },
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Učitelé málo využívají aktivizační metody a individuální přístup k žákům s různými schopnostmi.",
+        "evidence": "Nižší míra diferenciace teoretické výuky vzhledem k individuálním vzdělávacím potřebám žáků, odlišné nebo gradované úlohy nebyly využity, všichni žáci plnili stejné typy úloh."
+      },
+      {
+        "tag": "Slabé výsledky v gramotnosti",
+        "detail": "V externím testování ČŠI dosáhli žáci slabých výsledků v oblasti finanční a čtenářské gramotnosti.",
+        "evidence": "V externím testování ČŠI dosáhli žáci školy slabých výsledků v oblasti finanční a čtenářské gramotnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s odlišným mateřským jazykem? Nabízí jazykové kurzy nebo speciální třídy?",
+      "Jaké jsou možnosti individuálního přístupu v teoretické výuce? Jak se učitelé přizpůsobují různým tempům učení?",
+      "Jaké jsou výsledky absolventů na trhu práce a v terciárním vzdělávání? Máte kontakty na absolventy?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické obory (kosmetika, kadeřnictví, design, management) – škola má velmi dobré vybavení a zkušené odborníky z praxe.",
+      "Žáci, kteří chtějí pokračovat v terciárním vzdělávání – přibližně dvě třetiny absolventů pokračuje v navazujícím studiu.",
+      "Žáci s jasnou profesní orientací – škola nabízí kvalitní odborné vzdělání s přímou aplikací v praxi."
+    ],
+    "who_should_be_cautious": [
+      "Žáci s odlišným mateřským jazykem – 25 % z nich neprospělo, systémová podpora je nedostatečná.",
+      "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – teoretická výuka je často frontální bez přizpůsobení různým schopnostem.",
+      "Žáci se speciálními vzdělávacími potřebami – některé individuální vzdělávací plány nebyly vypracovány podle doporučení."
+    ],
+    "plain_czech_summary": "Škola je zaměřená na praktické obory a má velmi dobré vybavení. Silnou stránkou je propojení teorie s praxí a kvalitní odborné vyučování. Výsledky maturit se zlepšují. Problém je s podporou žáků s odlišným mateřským jazykem – čtvrtina z nich neprospívá. Teoretická výuka je často frontální bez dostatečné diferenciace. Škola se snaží zlepšovat, ale potřebuje více personálu v poradenství a lepší metodickou podporu učitelů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírné zlepšení",
+      "key_numbers": [
+        "5 % neprospívajících v maturitních oborech ve školním roce 2023/2024",
+        "Přibližně dvě třetiny žáků úspěšně složily maturitní zkoušku",
+        "Jednotlivci neprospěli ve společné nebo profilové části zkoušky"
+      ],
+      "evidence": "Výsledky žáků při ukončování studia MZ se od posledního inspekčního hodnocení mírně zlepšily, ve společné nebo profilové části zkoušky neprospěli jen jednotlivci."
+    },
+    "absence": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "Meziročně pokles zameškaných hodin na žáka",
+        "Snížení neomluvené absence",
+        "Důrazný požadavek na dokládání důvodů nepřítomnosti"
+      ],
+      "evidence": "Důrazný požadavek na dokládání důvodů nepřítomnosti žáků ve výuce se promítl v meziročním poklesu zameškaných hodin na žáka, včetně snížení neomluvené absence."
+    },
+    "support_services": [
+      "Výchovná poradkyně a sociální pedagožka",
+      "Nově stanovený metodik prevence",
+      "Kooperace s odbornými pracovišti a externími subjekty",
+      "Chybí: školní psycholog a systémová podpora žáků s OMJ"
+    ],
+    "safety_climate": [
+      "Elektronicky zabezpečený vstup do budovy a kamerový systém",
+      "Preventivní aktivity a třídnické hodiny s vymezenou náplní",
+      "Sociometrická šetření a intervenční programy",
+      "Problém: rozdílné hodnocení kázeňských přestupků v jednotlivých třídách, převaha kázeňských opatření nad pochvalami"
+    ],
+    "partnerships_practice": [
+      "Úzké sepětí s sociálními partnery pro praktické vzdělávání",
+      "Realizace učební a souvislé praxe u sociálních partnerů",
+      "Prezentace prací žáků v pražských galeriích a komunitních centrech",
+      "Kariérní dny a odborné soutěže pro profesní orientaci"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, jasně rozlišuje silné a slabé stránky. Konkrétní čísla a citace podporují tvrzení. Mírně snižuje srozumitelnost vysoký objem textu a odborná terminologie.",
+    "uncertainty_notes": [
+      "Přesný počet žáků s OMJ, kteří neprospěli, není uveden jako konkrétní číslo, pouze procento (25 %)",
+      "Není jasné, kolik konkrétně individuálních vzdělávacích plánů nebylo vypracováno (zmíněno 2 žáci)",
+      "Podrobné výsledky v jednotlivých předmětech nejsou dostupné, pouze obecné hodnocení"
+    ]
+  }
+}
+```

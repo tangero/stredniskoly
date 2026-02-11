@@ -1,0 +1,105 @@
+{
+  "report_id": "GY6_600013464_2021-12-08",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:10:14.468837+00:00",
+  "run_finished_utc": "2026-02-10T08:11:16.557184+00:00",
+  "raw_file": "GY6_600013464_2021-12-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600013464_2021-12-08",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a šestileté)",
+      "inspection_period": "8. 12. 2021 − 10. 12. 2021",
+      "school_change_summary": "Škola výrazně navýšila počet hodin a rozšířela nabídku volitelných seminářů, zlepšila materiální podmínky a ICT vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborná jazyková výuka",
+          "detail": "Škola klade důraz na kvalitní výuku jazyků včetně rodilých mluvčích a nabízí přípravu na mezinárodní zkoušky.",
+          "evidence": "Pozitivní přidanou hodnotu podpory cizojazyčných kompetencí měla výuka vedená rodilým mluvčím."
+        },
+        {
+          "tag": "Individuální přístup a podpora",
+          "detail": "Žáci mohou v případě nemoci přistupovat k výuce online, což zvyšuje efektivitu vzdělávání.",
+          "evidence": "Chybějící žáci aktivně využívali možnost připojit se do vyučovacích hodin on-line."
+        },
+        {
+          "tag": "Kvalitní přírodovědné vzdělávání",
+          "detail": "Dělení tříd na skupiny v přírodovědných předmětech umožňuje intenzivnější a kvalitnější výuku.",
+          "evidence": "Významným faktorem ovlivňujícím efektivitu a intenzitu výuky byl nízký počet žáků, kterého se škole podařilo dosáhnout dělením tříd."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Méně efektivní závěry hodin",
+          "detail": "Učitelé by měli lépe zvládat závěry vyučovacích hodin, aby byl výuka plynulejší a efektivnější.",
+          "evidence": "Méně efektivní byly z pohledu organizace pedagogického procesu zvládnuty závěry některých vyučovacích hodin."
+        },
+        {
+          "tag": "Nedostatečné kritické myšlení",
+          "detail": "Ve výuce chybí aktivity zaměřené na práci s více zdroji informací a jejich kritické hodnocení.",
+          "evidence": "Ve sledované výuce byly ojediněle realizovány aktivity vyžadující aktivní práci žáků s více zdroji informací a jejich následné kritické posouzení."
+        },
+        {
+          "tag": "Vyšší úrazovost",
+          "detail": "Škola zaznamenala v posledních letech vyšší míru úrazovosti, zejména při tělovýchovných aktivitách.",
+          "evidence": "Vyšší míra úrazovosti v posledních letech je způsobena především činnostmi při pohybových aktivitách."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola konkrétně podporuje rozvoj kritického myšlení a práci s informacemi u žáků?",
+        "Jakým způsobem škola zajišťuje bezpečnost žáků během tělovýchovných aktivit vzhledem k vyšší míře úrazovosti?",
+        "Jaké konkrétní semináře a volitelné předměty jsou nabízeny v rámci rozšířené nabídky?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří preferují individuální přístup a možnost hybridní výuky.",
+        "Pro talenty se zájmem o přírodní vědy a jazyky.",
+        "Pro žáky, kteří chtějí být vedeni k zodpovědnosti a samostatnosti."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří vyžadují silný důraz na kritické myšlení a práci s více zdroji informací.",
+        "Pro rodiče, které znepokojuje statistika úrazovosti na škole.",
+        "Pro studenty, kteří preferují tradiční metody výuky bez častého využívání digitálních technologií v matematice."
+      ],
+      "plain_czech_summary": "Gymnázium Brno, Křenová, nabízí kvalitní vzdělání s důrazem na jazyky a přírodní vědy, což je podpořeno dělením tříd a výukou s rodilými mluvčími. Škola klade důraz na individuální přístup a moderní technologie, včetně možnosti hybridní výuky. Mezi slabší stránky patří méně efektivní závěry hodin a občasný nedostatek aktivit zaměřených na kritické myšlení. Celkově škola působí jako stabilní a dobře řízená instituce s bohatou nabídkou seminářů a podporou mimoškolních aktivit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborné výsledky",
+        "key_numbers": [
+          "Neúspěšnost ve společné části maturitní zkoušky je sporadická.",
+          "Úspěšnost při opravných termínech je stoprocentní.",
+          "V externích testováních dosahují žáci dlouhodobě výborných výsledků."
+        ],
+        "evidence": "V posledních letech byli ve společné části maturitní zkoušky žáci neúspěšní jen sporadicky... V externích testováních dosahovali žáci v dlouhodobém horizontu výborných výsledků."
+      },
+      "absence": {
+        "trend": "Není uvedeno",
+        "key_numbers": [],
+        "evidence": "Text neobsahuje konkrétní údaje o absence."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (ŠPP) efektivně zajišťuje výchovné poradenství a prevenci rizikového chování.",
+        "Individuální konzultace s pedagogy a kariérovým poradcem.",
+        "Podpora žáků se speciálními vzdělávacími potřebami včetně asistentů pedagoga."
+      ],
+      "safety_climate": [
+        "Atmosféra vzájemného respektu a partnerský přístup mezi pedagogy a žáky.",
+        "Proaktivní přístup k vytváření pozitivních vztahů a klimatu ve třídách.",
+        "Pravidelné rozcvičení a kompenzační cvičení v rámci prevence úrazů."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s brněnskými univerzitami při zajištění pedagogických praxí.",
+        "Spolupráce s Nadačním fondem gymnázia pro podporu žákovských aktivit.",
+        "Aktivní zapojení Klubu absolventů a studentského parlamentu."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán srozumitelně, bez úřednického jazyka, a obsahuje jasné informace.",
+      "uncertainty_notes": []
+    }
+  }
+}

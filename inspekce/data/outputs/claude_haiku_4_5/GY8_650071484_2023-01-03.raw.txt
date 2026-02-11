@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_650071484_2023-01-03",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté studium), příspěvková organizace",
+    "inspection_period": "3. 1. 2023 – 5. 1. 2023",
+    "school_change_summary": "Zlepšily se materiální podmínky pro vzdělávání a bylo vybudováno kvalitní zázemí školního poradenského pracoviště s rozšířeným personálem."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Průměrná neúspěšnost u maturitní zkoušky je jen zhruba 1 % za poslední tři roky.",
+        "evidence": "\"jen zhruba 1 %\" neúspěšnosti u maturitní zkoušky v posledních třech letech"
+      },
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Vysoká odborná úroveň výuky jazyků s komplexním rozvojem jazykových kompetencí žáků.",
+        "evidence": "\"Vysoká odborná úroveň pedagogického vedení výuky\" v oblasti Jazyk a jazyková komunikace"
+      },
+      {
+        "tag": "Pozitivní školní klima",
+        "detail": "Škola aktivně podporuje dobré vztahy mezi všemi aktéry vzdělávání s pozitivním dopadem na osobnostní rozvoj.",
+        "evidence": "\"Škola aktivně podporuje utváření dobrých vzájemných vztahů mezi všemi aktéry vzdělávání\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá podpora nadaných žáků",
+        "detail": "Chybí systém identifikace a podpory nadaných žáků ve vzdělávání.",
+        "evidence": "\"V rámci činnosti školního poradenského pracoviště není nastaven systém identifikace žáků nadaných\""
+      },
+      {
+        "tag": "Nedostatečná diferenciace pro žáky se SVP",
+        "detail": "Podpůrná opatření nejsou vždy důsledně a efektivně uplatňována v praxi.",
+        "evidence": "\"podpůrná opatření však ne vždy důsledně a efektivně uplatňují\" a \"pouze ojediněle k cílené diferenciaci\""
+      },
+      {
+        "tag": "Bezpečnostní rezervy",
+        "detail": "Zvýšená úrazovost žáků a nedostatky v systému zajištění bezpečnosti a ochrany zdraví.",
+        "evidence": "\"zvýšená úrazovost žáků, nedostatcích zjištěných při fyzické prohlídce budovy a sportovního areálu\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jaké má plány na zlepšení v tomto směru?",
+      "Jaká opatření škola přijala na snížení počtu úrazů žáků?",
+      "Jak se škola vypořádá s nedostatečným vybavením pro praktická cvičení v přírodovědných předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a kvalitní jazykové vzdělání s mezinárodním přesahem",
+      "Studenti s dobrými studijními výsledky, kterým vyhovuje tradiční gymnáziální vzdělání",
+      "Žáci z širšího regionu (30+ obcí), kteří hledají kvalitní střední vzdělání s maturitou"
+    ],
+    "who_should_be_cautious": [
+      "Nadaní žáci, kteří potřebují cílenou podporu a individuální motivaci (chybí systém jejich identifikace)",
+      "Žáci se speciálními vzdělávacími potřebami, kde není vždy efektivně uplatňována diferenciace",
+      "Zájemci o praktickou výuku přírodovědných předmětů (chybí dostatečné prostorové vybavení)"
+    ],
+    "plain_czech_summary": "Gymnázium v Pavlovicích je kvalitní střední škola se skvělými výsledky maturit (jen 1% neúspěšnosti) a výborným jazykovým vzděláním. Škola má pozitivní klima a podporuje osobnostní rozvoj žáků. Zlepšily se materiální podmínky. Inspekce ale upozornila na rezervy: chybí systém podpory nadaných žáků, diferenciace pro žáky se speciálními potřebami není vždy efektivní a jsou bezpečnostní nedostatky. Škola na zjištěné problémy reagovala."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "Průměrná hrubá neúspěšnost ~1% za poslední 3 roky",
+        "Minimální neprospěch na konci klasifikačního období",
+        "Dva žáci dosáhli úrovně C1 v mezinárodní zkoušce"
+      ],
+      "evidence": "\"jen zhruba 1 %\" neúspěšnosti, \"Neprospěch žáků na konci klasifikačního období je minimální\""
+    },
+    "absence": {
+      "trend": "Monitorováno, zvýšená pozornost na rizikové žáky",
+      "key_numbers": [
+        "Zvýšená absence je sledována jako rizikový faktor",
+        "Škola adekvátně reaguje na identifikované případy"
+      ],
+      "evidence": "\"Zvýšená pozornost je věnována žákům s horším prospěchem nebo vyšší absencí\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psycholožkou v nových prostorech",
+      "Doučování v cizích jazycích, matematice a přírodovědě (národní plán obnovy)",
+      "Individuální a skupinové konzultace, pedagogická opatření pro žáky v riziku",
+      "Kariérové poradenství s podporou při volbě terciárního vzdělávání"
+    ],
+    "safety_climate": [
+      "Zvýšená úrazovost žáků – identifikován problém",
+      "Nedostatky zjištěné při fyzické prohlídce budovy a sportovního areálu",
+      "Rezervy v nastavení systému zajištění bezpečnosti a ochrany zdraví",
+      "Ředitel pružně reagoval na zjištěné nedostatky a přijímal opatření"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s vysokými školami (pedagogické praxe, testování studijních předpokladů)",
+      "Program Erasmus+ s individuálními a skupinovými výjezdy do zahraničí",
+      "Partnerství s organizacemi v regionu (kulturní programy, exkurze, sportovní soutěže)",
+      "Příhraniční spolupráce s gymnáziem Ladislava Novomeského v Senici"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Konkrétní počty úrazů nejsou uvedeny, pouze se hovoří o 'zvýšené úrazovosti'",
+      "Detaily o bezpečnostních nedostatcích nejsou plně specifikovány (jaké konkrétně nedostatky)",
+      "Není jasné, jaké konkrétní opatření škola přijala na snížení úrazovosti"
+    ]
+  }
+}
+```

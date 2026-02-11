@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600017290_2025-11-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:29:25.126650+00:00",
+  "run_finished_utc": "2026-02-09T13:29:51.423922+00:00",
+  "raw_file": "SOS_600017290_2025-11-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017290_2025-11-04",
+    "school_profile": {
+      "school_type": "Soukromá obchodní akademie (střední škola)",
+      "inspection_period": "4. listopadu 2025 až 6. listopadu 2025",
+      "school_change_summary": "Od 2019 se škola přestěhovala do nových prostor. Počet žáků v dálkové a distanční formě vzrostl z 50 na 159 (nárůst 218 %). Od 2021/2022 je nově zahájena denní forma oboru Sociální činnost. Školní poradenské pracoviště bylo rozšířeno o kariérovou poradkyni."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Inovativní vzdělávací programy",
+          "detail": "Škola průběžně aktualizuje programy podle potřeb trhu práce a zájmů žáků.",
+          "evidence": "Nový obor Sociální činnost s perspektivním programem, spolupráce se smluvními partnery v praxi."
+        },
+        {
+          "tag": "Bohatá mimoškolní činnost",
+          "detail": "Pestré aktivity rozvíjejí osobnostní a sociální kompetence žáků.",
+          "evidence": "Projekty jako 'Voláme motýly', adventní tvoření, charitativní sbírky, soutěže v souladu s profilací školy."
+        },
+        {
+          "tag": "Kvalitní podpora žáků",
+          "detail": "Systematická péče o žáky se speciálními potřebami a ohrožené školním neúspěchem.",
+          "evidence": "Individuální doučování, konzultace, on-line platforma pro dálkové studium, strategie předcházení neúspěšnosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v distanční formě",
+          "detail": "27 % žáků distanční formy neprospělo, převážně v prvním ročníku.",
+          "evidence": "2. pololetí 2024/2025: v distanční formě neprospělo 27 % žáků, oproti denní formě 3 %."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Výuka není dostatečně přizpůsobena různým schopnostem jednotlivých žáků.",
+          "evidence": "Inspekce zjistila, že diferenciace podle individuálních schopností pomocí úkolů různé obtížnosti se vyskytuje jen výjimečně."
+        },
+        {
+          "tag": "Omezená práce s informačními zdroji",
+          "detail": "Žáci se málo učí vyhledávat a kriticky hodnotit informace.",
+          "evidence": "Příležitosti pro práci s různými informačními zdroji byly využity pouze v části hodin."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky v distanční a dálkové formě, aby se snížila jejich neúspěšnost?",
+        "Jaké jsou podmínky pro tělesnou výchovu a jak se škola snaží zlepšit pronajatou tělocvičnu?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a práci s různými informačními zdroji?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na obchodní a ekonomické obory s jasným profesním cílem",
+        "Studenti, kteří oceňují praktickou výuku a spolupráci se sociálními partnery (např. domovy seniorů)",
+        "Dospělí v dálkové a distanční formě, kteří hledají flexibilní studium s on-line podporou"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s potřebou intenzivní individuální péče – diferenciace výuky není dostatečná",
+        "Studenti v distanční formě prvního ročníku – vysoká neúspěšnost (27 % neprospělo)",
+        "Žáci se slabší čtenářskou gramotností – inspekce zjistila slabou úroveň v tomto oboru"
+      ],
+      "plain_czech_summary": "Soukromá obchodní akademie v Opavě je funkční školou s jasnou vizí a inovativními programy. Silné stránky: kvalitní podpora žáků, bohatá mimoškolní činnost, nový obor Sociální činnost. Slabiny: žáci v distanční formě mají vysokou neúspěšnost (27 %), výuka není dostatečně přizpůsobena různým schopnostem, málo se pracuje s informačními zdroji. Škola má co zlepšovat, zejména v diferenciaci výuky a podpoře dálkových studentů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – některé obory dosahují lepších výsledků, jiné se zhoršily",
+        "key_numbers": [
+          "Nástavbový obor Podnikání: vyšší úspěšnost v češtině a matematice než celorepublikový průměr (2023/2024)",
+          "Obory Ekonomika a podnikání, Obchodní akademie: mírné zhoršení v češtině a cizím jazyce oproti 2022/2023",
+          "2025: 1 neprospěl v denní formě, 3 v distanční formě"
+        ],
+        "evidence": "Vedení školy a předmětové komise analyzují výsledky a přijímají opatření. Žáci si ověřují vědomosti maturitními testy nanečisto."
+      },
+      "absence": {
+        "trend": "Pozitivní – absence se snižuje",
+        "key_numbers": [
+          "Průměr 66 omluvených zameškaných hodin na žáka za 2. pololetí 2024/2025",
+          "Snížení počtu hodin ve srovnání s předešlým školním rokem"
+        ],
+        "evidence": "Škola sleduje chování žáků, oceňuje úspěchy a aktivní přístup. Mírně se snížil počet žáků, kteří předčasně ukončují studium."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, metodička prevence, kariérová poradkyně",
+        "Individuální doučování a konzultace pro ohrožené žáky",
+        "On-line platforma a diskusní fóra pro žáky dálkového a distančního studia",
+        "Prospěchová stipendia pro motivaci",
+        "Systematická podpora začínajících učitelů prostřednictvím uvádějícího učitele"
+      ],
+      "safety_climate": [
+        "Bezpečnost zajištěna v součinnosti s odborně způsobilými osobami v prevenci rizik a požární ochraně",
+        "Žáci seznamováni s pravidly bezpečného chování a ochrany zdraví",
+        "Vchody do budov zabezpečeny proti vniknutí cizích osob",
+        "Relaxační zóna pro žáky během přestávek",
+        "Pravidelné šetření klimatu tříd a školy pomocí dotazníků"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se smluvními partnery pro praktickou výuku oboru Sociální činnost (Denní stacionář Domovinka, domov seniorů)",
+        "Školní stravování zajišťováno externím právním subjektem",
+        "Tělesná výchova v pronajatých prostorách Volejbalového klubu Kylešovice",
+        "Spolupráce se školskými poradenskými zařízeními pro žáky se speciálními potřebami",
+        "Aktivní účast na charitativních sbírkách a komunitních projektech"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však administrativně husté a vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Konkrétní počty žáků v jednotlivých oborech nejsou uvedeny – není jasné, jak velké jsou jednotlivé studijní programy",
+        "Detaily o kvalitě pronajatých prostor pro tělesnou výchovu chybí – není jasné, jak vážný je tento problém",
+        "Není specifikováno, jaké konkrétní opatření škola přijala na základě zjištění o slabé čtenářské gramotnosti z roku 2022/2023"
+      ]
+    }
+  }
+}

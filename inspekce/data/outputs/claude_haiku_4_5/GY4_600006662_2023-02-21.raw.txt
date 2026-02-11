@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY4_600006662_2023-02-21",
+  "school_profile": {
+    "school_type": "Střední pedagogická škola (soukromá) - obory Předškolní a mimoškolní pedagogika, Pedagogické lyceum",
+    "inspection_period": "21. až 24. února 2023",
+    "school_change_summary": "Od inspekce v roce 2016 se počet žáků denního studia zvýšil o třetinu. Nová ředitelka od prosince 2021 zajistila kontinuitu řízení. Škola má 366 žáků (84 % kapacity), z toho 96 v dálkové formě."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Úspěšnost školy v maturitních zkouškách je srovnatelná nebo vyšší než průměr podobných oborů v ČR, 33-46 % žáků s vyznamenáním.",
+        "evidence": "Celkové počty vyznamenáných se pohybovaly v rozmezí 33 % - 46 %, úspěšnost byla srovnatelná nebo vyšší než průměr."
+      },
+      {
+        "tag": "Kvalitní vedení a tým",
+        "detail": "Efektivně spolupracující vedení s jasně vymezenými pravomocemi, otevřená komunikace a osobní odpovědnost pedagogů.",
+        "evidence": "Vedení školy tvoří efektivně spolupracující tým s jasně vymezenými pravomocemi a povinnostmi, založený na otevřené komunikaci."
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Velmi nízký výskyt rizikového chování, funkční preventivní mechanismy, pochvaly převažují nad kázeňskými opatřeními.",
+        "evidence": "Velmi nízký výskyt rizikového chování, ojedinělé případy jsou řešeny individuálně, pochvaly výrazně převažují nad kázeňskými opatřeními."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vyšší absence žáků",
+        "detail": "Přibližně 128 zameškaných hodin na žáka za školní rok, což je výrazně nad normou.",
+        "evidence": "Škole se nedaří eliminovat vyšší absenci žáků denního studia, přibližně 128 zameškaných hodin na žáka za školní rok."
+      },
+      {
+        "tag": "Slabší komunikační dovednosti",
+        "detail": "Žáci mají nižší úroveň souvislého mluveného projevu, komunikace je často stručná bez dostatečného prostoru pro vyjadřování.",
+        "evidence": "Vyučující nevytvářeli dostatečný prostor pro souvislejší vyjadřování žáků, většina komunikace žáků byla stručná."
+      },
+      {
+        "tag": "Nedostatečná individualizace",
+        "detail": "Nižší diferenciace úloh nerespektuje různé tempo práce a potřeby žáků, včetně nadaných.",
+        "evidence": "Nižší míra diferenciace zadávaných úloh dostatečně nepodporovala odlišné pracovní tempo a rozdílnou úroveň znalostí žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší problém vyšší absence? Jaké jsou sankce a motivační programy?",
+      "Jaké metody používáte na rozvoj komunikačních dovedností a veřejného vystupování?",
+      "Jak se přizpůsobuje výuka potřebám nadaných žáků a těch se speciálními vzdělávacími potřebami?"
+    ],
+    "who_school_fits": [
+      "Zájemci o pedagogické obory s jasnou představou o práci s dětmi a mládeží",
+      "Žáci, kterým vyhovuje humanitní a esteticko-výchovné zaměření s důrazem na praktickou přípravu",
+      "Studenti, kteří oceňují rodinnou atmosféru menší školy a individuální přístup pedagogů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k vyšší absenci - škola má problém s docházkou a bude vyžadovat důslednost",
+      "Studenti, kteří potřebují intenzivní rozvoj komunikačních dovedností - toto je slabší stránka školy",
+      "Žáci s velmi odlišným tempem učení - diferenciace výuky není dostatečná"
+    ],
+    "plain_czech_summary": "Střední pedagogická škola Futurum je menší soukromá škola s rodinnou atmosférou, která se zaměřuje na přípravu pedagogů. Má kvalitní vedení, velmi dobré výsledky u maturity a bezpečné prostředí. Žáci se učí v moderně vybavených třídách s podporou školního psychologa. Hlavní problémy jsou vyšší absence žáků a slabší rozvoj jejich komunikačních dovedností. Škola je vhodná pro motivované zájemce o pedagogiku, kteří si cení individuálního přístupu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoká úspěšnost",
+      "key_numbers": [
+        "33-46 % žáků s vyznamenáním",
+        "Úspěšnost srovnatelná nebo vyšší než průměr oborů v ČR",
+        "Téměř všichni přijatí žáci dokončí vzdělání v 4letém cyklu"
+      ],
+      "evidence": "Celkové počty vyznamenáných se pohybovaly v rozmezí 33 % - 46 %. Úspěšnost byla srovnatelná nebo vyšší než průměrná úspěšnost škol dané skupiny oborů v ČR."
+    },
+    "absence": {
+      "trend": "Problematická - vyšší než norma",
+      "key_numbers": [
+        "Přibližně 128 zameškaných hodin na žáka za školní rok",
+        "Neomluvená absence velmi nízká",
+        "Absence způsobena jednotlivci"
+      ],
+      "evidence": "Škole se nedaří eliminovat vyšší absenci žáků denního studia, přibližně 128 zameškaných hodin na žáka za školní rok. Neomluvená absence je velmi nízká."
+    },
+    "support_services": [
+      "Školní psycholožka (financována z projektů)",
+      "Výchovná poradkyně a metodička prevence",
+      "Dvojjazyčný asistent pedagoga pro žáky s odlišným mateřským jazykem",
+      "Školní poradenský tým v úzké spolupráci s třídními učiteli"
+    ],
+    "safety_climate": [
+      "Velmi nízký výskyt rizikového chování",
+      "Funkční preventivní mechanismy (adaptační kurzy, preventivní programy, workshopy)",
+      "Pochvaly výrazně převažují nad kázeňskými opatřeními",
+      "Ojedinělé rizikové jevy řešeny individuálně ve spolupráci s rodiči"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s mateřskými, základními a vysokými školami",
+      "Mezinárodní projekty Erasmus+ pro mobilitu žáků a učitelů",
+      "Partnerství s městskou částí Praha 15 a zřizovatelem",
+      "Četné veřejné aktivity (moderování akcí, školní časopis, hudební vystoupení, Pedagogická poema)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní čísla, citace z pozorování a jasné závěry. Slabší stránky jsou explicitně pojmenovány. Jediný nedostatek: některé údaje o absenci by mohly být konkrétnější (např. průměr za jednotlivé třídy).",
+    "uncertainty_notes": [
+      "Absence 128 hodin/rok - není jasné, zda je to průměr nebo součet; chybí srovnání s normou",
+      "Procento žáků s vyznamenáním (33-46 %) - není jasné, zda se jedná o všechny žáky nebo jen ty, kteří skončili s vyznamenáním",
+      "Kvalifikace pedagogů - 3 nekvalifikovaní z 31, ale není jasné, v kterých předmětech vyučují"
+    ]
+  }
+}
+```

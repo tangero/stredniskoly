@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600017061_2024-11-13",
+  "school_profile": {
+    "school_type": "Střední odborná škola obchodu a služeb (SOU) v Olomouci",
+    "inspection_period": "13. až 15. listopadu 2024",
+    "school_change_summary": "Od poslední inspekce (2019) škola obnovila nabídku oboru Gastronomie s maturitní zkouškou a ukončila dálkové a večerní studium. Nyní nabízí 4leté obory s maturitou, 2leté nástavbové studium a 3leté obory s výučním listem. Celkem 461 žáků ve 21 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola efektivně spolupracuje se sociálními partnery a firmami, čímž propojuje teoretickou výuku s profesní praxí a připravuje žáky na pracovní uplatnění.",
+        "evidence": "Spolupráce se sociálními partnery efektivně přispívá k užšímu sepětí teoretické výuky a praxe, účinně podporuje získávání odborných kompetencí."
+      },
+      {
+        "tag": "Mezinárodní zkušenosti",
+        "detail": "Škola aktivně realizuje zahraniční stáže a projekty, které rozvíjejí jazykové a sociální kompetence žáků.",
+        "evidence": "Dlouhodobá mezinárodní spolupráce, realizace mobilit žáků vedoucí k rozvoji jejich dobré uplatnitelnosti na trhu práce."
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Pedagogové mají vstřícný přístup k žákům, kteří se bez obav ptají a respektují nastavená pravidla.",
+        "evidence": "Partnerský přístup vyučujících k žákům založený na vstřícnosti a zájmu pedagogů o jejich vzdělávání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence a odchody ze studia",
+        "detail": "Přibližně 12 % žáků předčasně opustí studium za rok, opatření školy mají nízkou účinnost.",
+        "evidence": "Za školní rok 2023/2024 tak učinilo cca 12 % z celkového počtu žáků. Opatření vykazují poměrně nízkou účinnost."
+      },
+      {
+        "tag": "Omezená diferenciace výuky",
+        "detail": "Učitelé málo přizpůsobují výuku individuálním potřebám žáků, zejména těch se speciálními potřebami nebo nadaných.",
+        "evidence": "Malá míra obsahové a časové diferenciace výuky vzhledem k rozdílným vzdělávacím potřebám žáků."
+      },
+      {
+        "tag": "Monotónní vyučovací metody",
+        "detail": "Převažuje frontální výuka, chybí skupinové práce, diskuse a práce s různými informačními zdroji.",
+        "evidence": "Ve většině vyučovacích hodin nedostatečná pestrost forem a metod výuky vedla k monotónnosti a nerovnoměrnému zapojení žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje se žáky, kteří mají problémy s docházkou? Jaké jsou vaše zkušenosti se snižováním absence?",
+      "Jaké konkrétní projekty a stáže v zahraničí mohou žáci absolvovat během studia?",
+      "Jak se škola vypořádává s tím, že asi 12 % žáků studium nedokončí? Co se dá dělat preventivně?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s jasným zaměřením na konkrétní profesi (kuchař, cukrář, prodavač, kadeřník)",
+      "Studenti, kteří se zajímají o mezinárodní zkušenosti a zahraniční stáže",
+      "Žáci, kteří se lépe učí praxí a potřebují vidět přímou aplikaci znalostí v reálné práci"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší motivací nebo problémy s docházkou – škola má s touto skupinou nižší úspěšnost",
+      "Studenti se speciálními vzdělávacími potřebami – podpora je závislá na jednotlivých učitelích, není jednotná",
+      "Žáci, kteří potřebují individualizovaný přístup – výuka je často frontální bez diferenciace"
+    ],
+    "plain_czech_summary": "Škola je zaměřená na praktické vzdělání v oborech obchodu a služeb. Její silnou stránkou je propojení teorie s praxí přes spolupráci s firmami a zahraniční projekty. Pedagogové jsou vstřícní a vytvářejí bezpečné prostředí. Slabší je diferenciace výuky – učitelé málo přizpůsobují hodiny individuálním potřebám. Problém je také vysoká absence a odchody ze studia (12 % ročně). Výuka často používá jen frontální metody bez skupinových prací a diskusí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se, ale stále nad průměrem",
+      "key_numbers": [
+        "Hrubá neúspěšnost se v posledních třech letech zlepšila",
+        "Vždy jeden zkušební předmět přesahuje průměrné celostátní výsledky",
+        "Část absolventů pokračuje v dalším studiu (nástavbové, vysoké školy)"
+      ],
+      "evidence": "Hrubá neúspěšnost žáků u společné části maturitní zkoušky se v posledních třech letech celkově zlepšila, stále se však v daném školním roce vždy z jednoho zkušebního předmětu pohybuje v hodnotách přesahujících průměrné celostátní výsledky."
+    },
+    "absence": {
+      "trend": "Problematická, opatření mají nízkou účinnost",
+      "key_numbers": [
+        "Cca 12 % žáků předčasně opustí studium za rok",
+        "Vysoká omluvená i neomluvená absence",
+        "Opatření vykazují poměrně nízkou účinnost"
+      ],
+      "evidence": "Negativní vliv na výsledky vzdělávání žáků z důvodu jejich vysoké omluvené i neomluvené absence. Opatření však vykazují poměrně nízkou účinnost."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s kvalifikovaným týmem – péče o žáky s potřebou podpůrných oatření",
+      "Individuální konzultace a doučování pro žáky ohrožené školním neúspěchem",
+      "Adaptační kurzy pro prvňáky zaměřené na prevenci rizikových jevů",
+      "Kariérové poradenství a informační podpora při volbě dalšího studia"
+    ],
+    "safety_climate": [
+      "Bezpečnost a ochrana zdraví jsou součástí celého vzdělávacího procesu",
+      "Žáci respektují nastavená pravidla a komunikují bez obav s pedagogy",
+      "Škola realizuje preventivní programy a včasně intervuje při problémovém chování",
+      "Pravidelné adaptační kurzy pro rozvoj sociálních kompetencí a příznivého klimatu"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery a firmami pro praktické vyučování a získávání odborných kompetencí",
+      "Mezinárodní projekty a zahraniční stáže pro rozvoj jazykových a sociálních kompetencí",
+      "Kooperace s profesními organizacemi, kulturními a tělovýchovnými institucemi",
+      "Aktivní propagace služeb školy (aranžerské, kadeřnické, cukrářské služby)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Přesné procento žáků se speciálními vzdělávacími potřebami není uvedeno, jen že jsou ve škole přítomni",
+      "Konkrétní počty žáků, kteří pokračují v dalším studiu, nejsou specifikovány",
+      "Detaily o finančních prostředcích na vybavení nejsou veřejné"
+    ]
+  }
+}
+```

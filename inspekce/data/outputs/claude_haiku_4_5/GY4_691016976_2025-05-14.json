@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_691016976_2025-05-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:35:12.555817+00:00",
+  "run_finished_utc": "2026-02-09T13:35:35.357199+00:00",
+  "raw_file": "GY4_691016976_2025-05-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691016976_2025-05-14",
+    "school_profile": {
+      "school_type": "Čtyřleté gymnázium v denní formě, součást sítě ScioŠkol",
+      "inspection_period": "14. 5. 2025 – 16. 5. 2025",
+      "school_change_summary": "Škola funguje od září 2023, od roku 2024/2025 poskytuje vzdělání v čtyřletém gymnáziu. K inspekci měla 60 žáků ve třech třídách prvního a druhého ročníku. Ředitelka ve funkci od července 2024."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Participativní prostředí",
+          "detail": "Žáci mají nadstandardní možnost spolurozhodovat o chodu školy a aktivně se podílet na formulaci pravidel.",
+          "evidence": "Žáci mají nadstandardní možnost spolurozhodovat o chodu školy, aktivně se podílet na formulaci pravidel a koordinaci výukových aktivit."
+        },
+        {
+          "tag": "Individuální přístup a slovní hodnocení",
+          "detail": "Škola sleduje individuální pokrok každého žáka a používá slovní hodnocení místo známek.",
+          "evidence": "Systémové používání slovního hodnocení a pravidelné sebehodnocení žáků umožňuje stanovovat vlastní vzdělávací cíle."
+        },
+        {
+          "tag": "Praktické propojení výuky",
+          "detail": "Výuka je propojená s reálnou praxí a mezioborovým učením v kontextu aktuálních témat.",
+          "evidence": "Komplexní učení v mezipředmětových souvislostech a provázanost vzdělávacího obsahu s aktuálními tématy, problémy i reálnou praxí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Psychohygienické problémy",
+          "detail": "Dvouhodinové bloky bez přestávky porušují psychohygienické zásady.",
+          "evidence": "Stávající časová organizace vzdělávání ve dvouhodinových blocích nerespektuje psychohygienické zásady stanovené právními předpisy (absence přestávky)."
+        },
+        {
+          "tag": "Nejednotné vymáhání pravidel",
+          "detail": "Učitelé různě vyžadují dodržování pravidel (pozdní příchody, nepřipravené prostředí, konzumace jídla).",
+          "evidence": "Nejednotný přístup pedagogů se projevoval v rozdílném vyžadování nastavených pravidel, např. opakované pozdní příchody, nepřipravené studijní prostředí."
+        },
+        {
+          "tag": "Jazyková kultura",
+          "detail": "Žáci a někteří učitelé používají nespisovný jazyk při prezentacích.",
+          "evidence": "Neformální způsob vyjadřování některých žáků a učitelů se projevoval nízkou mírou jazykové kultury, používání nespisovného jazyka při prezentacích."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se budou řešit dvouhodinové bloky bez přestávky? Kdy se zavedou přestávky?",
+        "Jaké jsou konkrétní strategie přípravy na společnou část maturitní zkoušky a jak se budou ověřovat výstupy v maturitních předmětech?",
+        "Jak se bude zajišťovat jednotný přístup všech učitelů k vymáhání školních pravidel?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří preferují aktivní zapojení do rozhodování o chodu školy a individuální přístup",
+        "Studenti se zájmem o praktické propojení teorie s reálným světem a mezioborové učení",
+        "Žáci, kterým vyhovuje slovní hodnocení a sebehodnocení místo tradičních známek"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají přísné vymáhání disciplíny a jednotné pravidla – zde je přístup více liberální",
+        "Žáci, kteří potřebují jasné struktury a tradičnější formu výuky s přestávkami",
+        "Studenti, kteří se chystají na maturitu a potřebují intenzivní přípravu na standardizované testy"
+      ],
+      "plain_czech_summary": "ScioŠkola je mladá, inovativní střední škola s důrazem na participaci žáků a individuální přístup. Silné stránky: vstřícné prostředí, aktivní zapojení žáků, slovní hodnocení a sebehodnocení. Slabé stránky: dvouhodinové bloky bez přestávek porušují psychohygienické normy, nejednotné vymáhání pravidel, nižší jazyková kultura. Škola potřebuje zlepšit přípravu na maturitu a zajistit jednotný přístup pedagogů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Příprava na maturitu není dostatečně rozpracovaná",
+        "key_numbers": [
+          "Škola má pouze 1. a 2. ročník (žádní maturanti dosud)",
+          "70 % pedagogů splňuje kvalifikační předpoklady"
+        ],
+        "evidence": "Příležitost pro zlepšení představuje rozpracování konkrétních strategií přípravy žáků ke společné části maturitní zkoušky a ověřování jejich výstupů v hlavních maturitních předmětech."
+      },
+      "absence": {
+        "trend": "Absence je vysoká",
+        "key_numbers": [
+          "Průměr 60 omluvených hodin na žáka za pololetí 2024/2025"
+        ],
+        "evidence": "Náležitá pozornost je věnována i výši absence (za pololetí školního roku 2024/2025 v průměru 60 omluvených hodin na žáka)."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodik prevence",
+        "Externí školní psycholožka",
+        "Mentorská podpora a individuální vzdělávací plány pro žáky se speciálními potřebami",
+        "Tematické kurzy včetně bezpečnosti na sociálních sítích"
+      ],
+      "safety_climate": [
+        "Elektronické zabezpečení vstupu do budovy",
+        "Systém prevence sociopatologických jevů a podpory duševní pohody",
+        "Řešení výchovně vzdělávacích obtíží podle stanovených postupů",
+        "Dva žáci měli uplatněno podmíněné vyloučení ze studia za závažné přestupky"
+      ],
+      "partnerships_practice": [
+        "Partnerství se školami společného zřizovatele (základní škola, základní umělecká škola)",
+        "Spolupráce s neziskovými organizacemi a regionálními centry na environmentálních akcích",
+        "Laboratorní cvičení v partnerské střední škole",
+        "Rozvoj partnerství se zahraničními školami s alternativní nabídkou se teprve utváří"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale obsahuje řadu odborných termínů a dlouhých vět. Hlavní zjištění jsou jasná, ale vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Není jasné, jak dlouho budou trvat dvouhodinové bloky bez přestávek – inspekce to označila jako porušení, ale není zmíněn konkrétní termín nápravy",
+        "Absence 60 hodin za pololetí je vysoká, ale není jasné, zda je to běžné nebo problematické vzhledem k charakteru školy",
+        "Není specifikováno, jak se bude měřit úspěch přípravy na maturitu, protože škola zatím nemá maturanty"
+      ]
+    }
+  }
+}

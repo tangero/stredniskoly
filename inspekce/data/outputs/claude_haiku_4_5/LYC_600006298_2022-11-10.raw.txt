@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_600006298_2022-11-10",
+  "school_profile": {
+    "school_type": "Střední odborná škola hotelnictví a gastronomie (SČMSD Praha)",
+    "inspection_period": "10. listopadu až 30. listopadu 2022",
+    "school_change_summary": "Od inspekce v roce 2015 se počet žáků zvýšil téměř o dvě třetiny na 330 žáků. Došlo ke změně vedení (nová ředitelka od 2018) a výraznému zlepšení materiálního vybavení školy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vzdělávání na vysoké úrovni",
+        "detail": "Žáci se učí v reálném prostředí na moderních pracovištích s nejnovějšími technologiemi a postupy.",
+        "evidence": "Praktické vyučování probíhá na velmi vysoké odborné úrovni s úzkou spoluprací se sociálními partnery."
+      },
+      {
+        "tag": "Moderní vybavení a infrastruktura",
+        "detail": "Škola má nové učebny IT, multimediální učebnu, cvičné kuchyně s nejmodernějšími zařízeními a kvalitní wifi.",
+        "evidence": "Došlo k výraznému zlepšení materiálně technického zabezpečení, obměně didaktických pomůcek a vybavení."
+      },
+      {
+        "tag": "Podpora slabších žáků a těch se speciálními potřebami",
+        "detail": "Škola nabízí doučování, konzultace, možnost opravy prací a individuální péči.",
+        "evidence": "Výsledky žáků se SVP nebo s OMJ jsou srovnatelné s ostatními žáky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky v kombinované formě maturitních oborů",
+        "detail": "Žáci v kombinované formě mají vysokou absenci a dosahují výrazně horších výsledků než v denní formě.",
+        "evidence": "Hrubá neúspěšnost ve společné části maturitní zkoušky dosahuje až 33 %, v kombinované formě jsou výsledky výrazně horší."
+      },
+      {
+        "tag": "Nejednotná kvalita teoretické výuky",
+        "detail": "V některých hodinách chybí vstupní motivace, aktivizující metody a závěrečné shrnutí.",
+        "evidence": "V části sledovaných hodin se projevovala jednotvárnost, nižší dynamika a pasivní přístup žáků."
+      },
+      {
+        "tag": "Vysoká absence v kombinované formě",
+        "detail": "Absence žáků v kombinované formě negativně ovlivňuje jejich úspěšnost při ukončování studia.",
+        "evidence": "Preventivní mechanismy nejsou plně funkční, nedaří se snížit vysokou absenci v kombinované formě."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků v kombinované formě studia?",
+      "Jaké jsou konkrétní plány na zlepšení výsledků v teoretické výuce?",
+      "Jak se liší kvalita výuky mezi jednotlivými učiteli a jak se to řeší?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením, kteří se chtějí učit v reálném prostředí a mají zájem o gastronomii nebo hotelnictví",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální podporu",
+      "Motivovaní žáci v denní formě studia, kde dosahují lepších výsledků"
+    ],
+    "who_should_be_cautious": [
+      "Žáci zvažující kombinovanou formu studia maturitních oborů – mají vysokou absenci a horší výsledky",
+      "Žáci, kteří potřebují více strukturované a aktivizující teoretické vyučování",
+      "Žáci bez vlastní motivace – absence a neúspěch v kombinované formě jsou dlouhodobým problémem"
+    ],
+    "plain_czech_summary": "Škola je moderní odborné učiliště se silným zaměřením na praktické vzdělávání v gastronomii a hotelnictví. Má nové vybavení, kvalitní učitele a dobrou spolupráci s pracovišti. Žáci v denní formě dosahují dobrých výsledků. Problém je kombinovaná forma studia – tam mají žáci vysokou absenci a horší výsledky. Teoretická výuka není vždy dostatečně zajímavá a aktivizující. Škola dobře podporuje slabší žáky a ty se speciálními potřebami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Rozdílný trend podle formy studia: denní forma dosahuje dobrých výsledků, kombinovaná forma má dlouhodobě horší výsledky",
+      "key_numbers": [
+        "V denní formě prospělo až 93 % žáků v maturitních oborech",
+        "Hrubá neúspěšnost ve společné části maturitní zkoušky dosahuje nejvýše 33 %",
+        "V kombinované formě maturitních oborů dosahují žáci výrazně horších výsledků než v ČR průměru"
+      ],
+      "evidence": "Ve sledovaném období 2020/2021–2021/2022 v denní formě čtyřletých oborů prospělo až 93 % žáků. Žáci jsou výrazně úspěšnější v profilové části maturitní zkoušky."
+    },
+    "absence": {
+      "trend": "Vysoká absence v kombinované formě vzdělávání, která negativně ovlivňuje výsledky",
+      "key_numbers": [
+        "Vysoká absence v kombinované formě maturitních oborů",
+        "Preventivní mechanismy nejsou plně funkční"
+      ],
+      "evidence": "Uplatňované preventivní mechanismy nejsou plně funkční, nedaří se snížit vysokou absenci v kombinované formě vzdělávání."
+    },
+    "support_services": [
+      "Školský poradenský tým s koordinátory výchovného, kariérového poradenství a prevence",
+      "Individuální konzultace, doučování a možnost opravy písemných prací",
+      "Adaptační pobyty a aktivity pro žáky prvních ročníků",
+      "Výuka českého jazyka pro žáky s odlišným mateřským jazykem"
+    ],
+    "safety_climate": [
+      "Celodenní přítomnost nepedagogického pracovníka u vstupu do školy",
+      "Zabezpečený vstup a kamerový systém",
+      "Příjemná pracovní vzdělávací atmosféra založená na partnerském přístupu",
+      "Nastavená a dodržovaná pravidla komunikace a chování"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá kooperace s odbornými svazy, asociacemi a sociálními partnery",
+      "Praktické vyučování a souvislá praxe na smluvních pracovištích",
+      "Spolupráce se zřizovatelem na zlepšování materiálních podmínek",
+      "Zapojení do celostátního gastronomického projektu Kulinářské umění"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků, kteří neuspěli v kombinované formě – pouze uvádí, že skládají zkoušku jednotlivci a často neúspěšně",
+      "Není jasné, jaké konkrétní kroky škola plánuje na řešení vysoké absence v kombinované formě",
+      "Chybí informace o tom, jak dlouho trvá kombinovaná forma studia a jaké jsou konkrétní požadavky na žáky"
+    ]
+  }
+}
+```

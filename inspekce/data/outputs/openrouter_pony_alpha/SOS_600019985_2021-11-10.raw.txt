@@ -1,0 +1,99 @@
+{
+  "report_id": "SOS_600019985_2021-11-10",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola a vyšší odborná škola",
+    "inspection_period": "10. 11. − 12. 11. a 16. 11. 2021",
+    "school_change_summary": "Škola se zaměřuje na zlepšení materiálních podmínek a došlo ke změnám na pozicích zástupců ředitele."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola nabízí kvalitní odbornou praxi v Nemocnici Znojmo a možnost zahraničních stáží.",
+        "evidence": "„Významným partnerem školy je Nemocnice Znojmo... Důležitými partnery jsou města Retz a Ingolstadt v Rakousku...“"
+      },
+      {
+        "tag": "Atmosféra a vztahy",
+        "detail": "Ve výuce panuje přátelská atmosféra, pedagogové mají vstřícný přístup a podporují komunikaci.",
+        "evidence": "„Hodiny... se vyznačovaly příznivou pracovní a přátelskou atmosférou. Přístup pedagogů... byl vstřícný a tolerantní.“"
+      },
+      {
+        "tag": "Rozvoj kompetencí",
+        "detail": "Výuka směřuje k rozvoji osobnostních, odborných i jazykových dovedností studentů.",
+        "evidence": "„Ve výuce odborných předmětů jsou výrazně podporovány osobnostní, odborné a komunikační kompetence žáků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Dlouhodobě podprůměrná úspěšnost u maturitních zkoušek ve srovnání s republikou.",
+        "evidence": "„Celková úspěšnost žáků při ukončování jejich vzdělávání maturitní zkouškou je dlouhodobě podprůměrná...“"
+      },
+      {
+        "tag": "Práce s technologiemi",
+        "detail": "Ve všeobecných předmětech studenti málo využívají technologie a hledají informace jen v učebnicích.",
+        "evidence": "„Žáci a studenti s ní [didaktickou technikou] nepracovali a ani nevyhledávali informace z jiných zdrojů mimo učebnice.“"
+      },
+      {
+        "tag": "Motivace žáků",
+        "detail": "Škola má rezervy v motivaci žáků ohrožených neúspěchem k většímu studijnímu úsilí.",
+        "evidence": "„Ne vždy se daří tyto žáky motivovat. Ve sledovaných hodinách... jsou rezervy... v jejich motivaci k většímu studijnímu úsilí.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje studenty, kteří mají potíže s učením, aby úspěšně odmaturovali?",
+      "Jaké možnosti mám jako student využívat moderní technologie a internetové zdroje při výuce?",
+      "Jak probíhá spolupráce s Nemocnicí Znojmo a jak se mohu zapojit do zahraničních stáží?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří chtějí získat praktické dovednosti v ošetřovatelství a propojit teorii s reálnou praxí v nemocnici.",
+      "Studenti, kterým vyhovuje vstřícné prostředí a přímý kontakt s pacienty.",
+      "Zájemci o mezinárodní zkušenosti a rozvoj jazykových dovedností v rámci odborné praxe."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří očekávají intenzivní využívání digitálních technologií a online zdrojů ve všeobecných předmětech.",
+      "Studenti, kteří potřebují silnou individuální motivaci a vedení k překonání studijních obtíží.",
+      "Uchazeči, kteří preferují širší výběr oborů nad specializovaným zdravotnickým zaměřením."
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola ve Znojmě nabízí kvalitní přípravu na povolání v oblasti ošetřovatelství s důrazem na praxi v nemocnici a zahraniční stáže. Škola vyniká vstřícným přístupem učitelů a přátelskou atmosférou, která podporuje rozvoj komunikace a odborných dovedností. Mezi rizika patří dlouhodobě horší výsledky u maturitní zkoušky a nedostatečné využívání moderních technologií ve výuce. Pro rodiče je důležité, že škola aktivně hledá cesty ke zlepšení, například prostřednictvím doučování, ale u některých žáků se jí nedaří zvýšit motivaci. Škola je vhodná pro cílevědomé studenty s zájmem o zdravotnictví."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírný pokles (77 % v roce 2019, 85 % v roce 2020, 100 % v roce 2021 ve zkrácené podobě)",
+      "key_numbers": [
+        "77 % úspěšnost v roce 2019",
+        "85 % úspěšnost v roce 2020",
+        "100 % úspěšnost v roce 2021 (zkrácená podoba)"
+      ],
+      "evidence": "„V roce 2019 uspělo u maturitní zkoušky 77 % žáků a v roce 2020 85 % žáků... v loňském školním roce... 100 % uspělo.“"
+    },
+    "absence": {
+      "trend": "Neuvedeno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní data o absenci."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (výchovná poradkyně, metodička prevence, karierová poradkyně)",
+      "Systém doučování a osobních konzultací pro zmírnění dopadů distanční výuky",
+      "Individuální přístup k žákům se speciálními vzdělávacími potřebami a rozvoj nadaných žáků"
+    ],
+    "safety_climate": [
+      "Příznivá pracovní a přátelská atmosféra ve hodinách",
+      "Vstřícný a tolerantní přístup pedagogů",
+      "Aktivní zapojení žáků do chodu školy prostřednictvím školního parlamentu"
+    ],
+    "partnerships_practice": [
+      "Nemocnice Znojmo (hlavní partner pro odbornou praxi)",
+      "Zahraniční praxe v Rakousku (Retz, Ingolstadt) a Německu",
+      "Spolupráce s fakultními nemocnicemi v Praze a Brně"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je psán srozumitelně, terminologie je vysvětlena kontextem. Závěry a doporučení jsou jasná.",
+    "uncertainty_notes": [
+      "Absence konkrétních dat o neúspěšnosti žáků v jednotlivých letech (pouze procenta úspěšnosti).",
+      "Nejasná metodika hodnocení 'podprůměrnosti' maturitních výsledků vzhledem k celorepublikové úrovni."
+    ]
+  }
+}

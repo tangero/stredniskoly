@@ -1,0 +1,117 @@
+{
+  "report_id": "SOS_600170802_2025-06-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:33:58.958787+00:00",
+  "run_finished_utc": "2026-02-09T13:34:27.723861+00:00",
+  "raw_file": "SOS_600170802_2025-06-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170802_2025-06-09",
+    "school_profile": {
+      "school_type": "Střední škola gastronomie a služeb s obory: Truhlář, Kuchař-číšník, Cukrář, Pekař, Krejčí, Výrobce potravin–Sladovník-pivovarník (tříleté), Hotelnictví (čtyřleté), Podnikání (dvouletý nástavbový obor)",
+      "inspection_period": "9.–10. 6. 2025 a 12. 6. 2025",
+      "school_change_summary": "Od 2022 škola rozšířila výuku do Lázní Bělohrad, zaměstnala sociálního pedagoga, stala se školou pro jazykovou přípravu žáků s odlišným mateřským jazykem. Výrazně se zlepšilo vybavení: rekonstrukce odborných pracovišť, instalace výtahu pro bezbariérovost, modernizace cvičných kuchyní a dílen."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Škola efektivně spolupracuje s odbornými organizacemi a pracovišti, kde žáci získávají praktické zkušenosti v reálném prostředí.",
+          "evidence": "Kooperace s Asociací kuchařů, hotelů, pekařů a dalšími institucemi; Erasmus+ stáže v zahraničí."
+        },
+        {
+          "tag": "Materiální vybavení",
+          "detail": "Výborné podmínky pro výuku díky modernímu vybavení a rekonstrukcím financovaným z více zdrojů.",
+          "evidence": "Nové notebooky, modernizované cvičné kuchyně, dílny, výtah pro bezbariérovost, probíhající rekonstrukce v Lázních Bělohrad."
+        },
+        {
+          "tag": "Úspěchy žáků",
+          "detail": "Žáci dosahují významných ocenění v soutěžích a olympiádách na národní i mezinárodní úrovni.",
+          "evidence": "Řada medailových ocenění ze světových olympiád a pohárů; dvakrát ročně odměňování úspěšných žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka všeobecných předmětů",
+          "detail": "Převažuje frontální výuka s nízkou aktivitou žáků, chybí práce s informačními zdroji a kritické myšlení.",
+          "evidence": "Hospitace ukázaly nízkou míru aktivního zapojení žáků, sporadické zařazování objevování a experimentování."
+        },
+        {
+          "tag": "Slabé výsledky v testech",
+          "detail": "Škola dosahuje v externím testování slabších výsledků než průměr České republiky.",
+          "evidence": "Nižší výsledky v informační gramotnosti (2018/2019), čtenářské gramotnosti a moderních dějinách (2022/2023)."
+        },
+        {
+          "tag": "Kolísavé výsledky maturit",
+          "detail": "Úspěšnost u maturitní zkoušky se pohybuje mezi 10–28 % neúspěšností bez systematického řešení.",
+          "evidence": "2022: 28,6 % neúspěšnosti, 2023: 10 %, 2024: 17,6 %; škola se výsledky dále aktivně nezabývá."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s maturitní zkouškou? Jaké jsou dostupné přípravné kurzy?",
+        "Jaké jsou podmínky pro individuální konzultace s učiteli a jak jsou žáci motivováni k jejich využívání?",
+        "Jak škola pracuje s nadanými žáky a jak je identifikuje?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla – výuka odborného výcviku probíhá na vysoké úrovni s propojením teorie a praxe.",
+        "Žáci se zájmem o gastronomii, hotelnictví a služby – škola nabízí specializační kurzy (barmanský, baristický, carvingový) a mezinárodní stáže.",
+        "Žáci potřebující individuální péči – škola poskytuje podporu žákům se speciálními potřebami, z sociálně znevýhodného prostředí a ohrožených školním neúspěchem."
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující aktivní a inovativní výuku všeobecných předmětů – hospitace ukázaly převahu frontální výuky s nízkou aktivitou žáků.",
+        "Žáci se slabšími výsledky v testech čtenářské a informační gramotnosti – škola se těmito výsledky dále aktivně nezabývá.",
+        "Žáci s vyšokými ambicemi na maturitní zkoušku – výsledky jsou kolísavé a opatření nejsou plně funkční."
+      ],
+      "plain_czech_summary": "Střední škola gastronomie a služeb v Nové Pace je moderně vybavená škola se silným zaměřením na praktickou výuku a partnerství s odbornými institucemi. Žáci dosahují výborných výsledků v soutěžích a získávají kvalitní odborné dovednosti. Slabší stránkou je výuka všeobecných předmětů, kde převažuje pasivní frontální přístup bez dostatečné aktivizace žáků. Výsledky v externích testech jsou pod průměrem a maturitní zkoušky vykazují kolísavou úspěšnost. Škola by měla zlepšit metodiku výuky všeobecných předmětů a systematičtěji pracovat s výsledky vzdělávání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s postupným zlepšením",
+        "key_numbers": [
+          "2022: 28,6 % neúspěšnosti",
+          "2023: 10 % neúspěšnosti",
+          "2024: 17,6 % neúspěšnosti"
+        ],
+        "evidence": "Obor Hotelnictví vykazuje nestabilní výsledky v obou částech MZ; ve společné části nižší úspěšnost než republikový průměr v 2022 a 2024."
+      },
+      "absence": {
+        "trend": "Monitorovaná, ale bez detailních údajů",
+        "key_numbers": [
+          "Maximální tolerovaná absence: 30 % za klasifikační období",
+          "Výjimka obor Kuchař-číšník: 20 % absence"
+        ],
+        "evidence": "Škola monitoruje žáky s vyšší absencí na pedagogické radě; chybí zmínka o konkrétních přijímaných opatřeních."
+      },
+      "support_services": [
+        "Sociální pedagog (financován z mimorozpočtových zdrojů od 2022/2023)",
+        "Školní poradenský tým: výchovná poradkyně, školní metodička prevence, sociální pedagog",
+        "Individuální vzdělávací plány a plány pedagogické podpory pro žáky se speciálními potřebami",
+        "Jazyková příprava pro žáky s odlišným mateřským jazykem",
+        "Doučování žáků ohrožených školním neúspěchem"
+      ],
+      "safety_climate": [
+        "Příjemná pracovní atmosféra založená na partnerském přístupu učitelů a vzájemném respektu",
+        "Nastavené mechanismy a pravidla pro řešení výchovně vzdělávacích problémů",
+        "Adaptační a sportovní kurzy, preventivní programy posilující sounáležitost se školou",
+        "Řešení problémového chování v souladu se stanovenými pravidly"
+      ],
+      "partnerships_practice": [
+        "Erasmus+ program – odborné stáže v hotelech a turistických komplexech v Německu, Polsku, Slovensku",
+        "Gastronomické akce pro sociální partnery",
+        "Spolupráce se základními školami – soutěž 'Já už to umím'",
+        "Autorizace pro profesní kvalifikace ve všech oborech s výučním listem",
+        "Kurzy v Národní soustavě kvalifikací"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní údaje, citace a doporučení. Některé pasáže jsou však delší a obsahují více odborné termíny, které mohou být pro laické rodiče méně přístupné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty žáků s jednotlivými diagnózami nebo speciálními potřebami (zmíněno jen 18 žáků ze 495).",
+        "Chybí detailní údaje o absenci – není jasné, kolik procent žáků překračuje stanovenou hranici.",
+        "Nejsou uvedeny konkrétní výsledky interního testování 3. ročníků, pouze zmínka o jeho realizaci."
+      ]
+    }
+  }
+}

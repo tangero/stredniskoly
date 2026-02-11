@@ -1,0 +1,10 @@
+{
+  "report_id": "LYC_600007090_2024-09-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:14:02.365952+00:00",
+  "run_finished_utc": "2026-02-09T16:14:10.188184+00:00",
+  "raw_file": "LYC_600007090_2024-09-25.raw.txt",
+  "call_error": "IncompleteRead(198 bytes read)",
+  "parse_error": "IncompleteRead(198 bytes read)",
+  "parsed_output": null
+}

@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY4_600171752_2025-03-25",
+  "school_profile": {
+    "school_type": "Gymnázium, Střední odborná škola a Střední zdravotnická škola",
+    "inspection_period": "25.–31. března 2025",
+    "school_change_summary": "Od roku 2019/2020 škola nabízí nový obor Praktická sestra. V roce 2023/2024 posílila výuku češtiny a angličtiny. Od roku 2021/2022 má novou vedoucí domova mládeže."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Sportovní úspěchy",
+        "detail": "Žáci dosahují vynikajících výsledků na republikové a mezinárodní úrovni, včetně medailí z olympiád a světových pohárů.",
+        "evidence": "Biatlonistka vyhrála závod na Olympiádě mládeže, 20 medailí v Českém poháru, účast na Mistrovství světa."
+      },
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Gymnazisté dosahují lepších výsledků než celorepublikový průměr, všichni úspěšně složili maturitu.",
+        "evidence": "0 % neúspěšnosti v gymnaziálních oborech vs. celorepublikový průměr 0,1–0,9 %."
+      },
+      {
+        "tag": "Kvalitní vybavení",
+        "detail": "Škola má moderní učebny, laboratoře, dvě tělocvičny a přístup k dalším sportovním zařízením ve městě.",
+        "evidence": "Nové odborné učebny pro praktické sestry s nadstandardním vybavením, specializované učebny pro vědy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky v oboru Praktická sestra",
+        "detail": "Zdravotnické obory mají vyšší neúspěšnost v jazykových předmětech než celorepublikový průměr.",
+        "evidence": "Český jazyk 7 % vs. ČR 5,3 %, cizí jazyk 11,6 % vs. ČR 5,3 %."
+      },
+      {
+        "tag": "Málo aktivní výuka",
+        "detail": "Převažuje frontální výuka s nižším využitím aktivizačních metod, což vede k pasivitě některých žáků.",
+        "evidence": "V přírodovědných předmětech chyběla samostatná nebo skupinová činnost, převažovala frontální výuka."
+      },
+      {
+        "tag": "Nedostatečné formativní hodnocení",
+        "detail": "Učitelé málo pracují s cílem hodiny a chybí reflexe pokroku žáků během vyuky.",
+        "evidence": "Převažující absence průběžného formativního hodnocení, chybí společná i individuální reflexe."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s jazyky v oboru Praktická sestra?",
+      "Jaké konkrétní aktivizační metody a skupinové práce budou učitelé více využívat?",
+      "Jak se škola připravuje na zlepšení výsledků v maturitě u zdravotnických oborů?"
+    ],
+    "who_school_fits": [
+      "Talentovaní sportovci – škola má špičkový program se sportovní přípravou a výborné zázemí.",
+      "Žáci se zájmem o zdravotnické obory – praktická výuka v nemocnici, moderní vybavení, dobré uplatnění absolventů.",
+      "Ambiciózní studenti gymnázia – vysoká odborná úroveň, příprava na vysoké školy, vědomostní soutěže."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální podpory a aktivní výuky – škola zatím málo využívá diferenciaci.",
+      "Studenti oboru Praktická sestra se slabšími jazykovými dovednostmi – vyšší neúspěšnost v jazykových maturitách.",
+      "Žáci, kteří se lépe učí interaktivně – převažující frontální výuka nemusí vyhovovat všem stylům učení."
+    ],
+    "plain_czech_summary": "Gymnázium v Jilemnici je kvalitní škola se silným zaměřením na sport a zdravotnické obory. Gymnazisté dosahují výborných výsledků v maturitě a škola má špičkové sportovce. Vybavení je moderní a učitelé jsou kvalifikovaní. Slabší stránkou je, že výuka je často příliš frontální a málo se využívá aktivní učení a reflexe. Zdravotnické obory mají horší výsledky v jazykových předmětech. Škola by měla více pracovat s individuálním přístupem a různými metodami výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Gymnázia výborně, zdravotnické obory slabě v jazycích",
+      "key_numbers": [
+        "Gymnázia: 0 % neúspěšnosti (67 z 68 žáků úspěšně)",
+        "Praktická sestra – čeština: 7 % neúspěšnosti (vs. ČR 5,3 %)",
+        "Praktická sestra – cizí jazyk: 11,6 % neúspěšnosti (vs. ČR 5,3 %)"
+      ],
+      "evidence": "Z 68 gymnazistů konalo zkoušku 67, všichni úspěšně. Zdravotnické obory vykazují vyšší neúspěšnost v jazykových předmětech."
+    },
+    "absence": {
+      "trend": "Vyšší absence často souvisí se sportovními aktivitami",
+      "key_numbers": [
+        "Nejčastější kázeňská opatření: kouření a pozdní příchody",
+        "Absence často sportovně motivovaná"
+      ],
+      "evidence": "Jednání výchovné komise v posledních dvou letech proběhlo zcela výjimečně. Vyšší absence žáků často souvisí se sportovními aktivitami."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně a metodička prevence",
+      "Doučování a psychologické poradenství",
+      "Detašované pracoviště pedagogicko-psychologické poradny přímo v budově",
+      "Webová aplikace Nepanikař a schránka důvěry",
+      "Peer tutorské skupiny pro prevenci neúspěšnosti"
+    ],
+    "safety_climate": [
+      "Škola řeší aktuální problémy: homofobie, genderová identita, psychické obtíže, sebepoškozování, kyberšikana",
+      "Preventivní programy ve spolupráci s Policií ČR, Armádou ČR, organizacemi ACET a Maják",
+      "Adaptační dny a programy pro rozvoj vztahů ve třídách",
+      "Jednání výchovné komise byla v posledních dvou letech výjimečná"
+    ],
+    "partnerships_practice": [
+      "Zdravotnické zařízení MMN, a.s. (nemocnice Jilemnice) – praktická výuka a financování učeben",
+      "Vysoké školy – návštěvy absolventů, kariérní orientace",
+      "Sportovní svazy – organizace soutěží, příprava sportovců",
+      "Krkonošské centrum environmentálního vzdělávání – přednášky a dílny",
+      "Město Jilemnice a organizace Jilm – spolupráce na veřejných akcích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jak dlouho trvá adaptace nového vedoucího domova mládeže a jaké jsou konkrétní plány na zlepšení.",
+      "Není jasné, jaké konkrétní kroky škola podnikne k nápravě nižší úspěšnosti v jazykových maturitách zdravotnických oborů.",
+      "Chybí informace o počtu žáků, kteří opakují ročník nebo jsou v riziku školního neúspěchu."
+    ]
+  }
+}
+```

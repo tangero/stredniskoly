@@ -1,0 +1,8 @@
+Nemám k dispozici zdrojový text inspekční zprávy. Metadata obsahují pouze základní informace o škole (OA Pospíšilova v Hradci Králové, inspekce 13.–16. ledna 2025), ale chybí mi samotný obsah zprávy ČŠI.
+
+Abych mohl vrátit validní JSON analýzu podle požadovaného schématu, potřebuji:
+
+- **Obsah inspekční zprávy** – zjištění inspektorů, hodnocení kvality vzdělávání, údaje o výsledcích maturit, absenci, bezpečnosti, atd.
+- **Konkrétní citace** – abych mohl každé tvrzení opřít o text
+
+Prosím, **poskytni mi text inspekční zprávy** a vrátím ti detailní analýzu pro rodiče v přesně daném JSON formátu.

@@ -1,0 +1,116 @@
+{
+  "report_id": "SOU_600014649_2024-10-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:13:15.189396+00:00",
+  "run_finished_utc": "2026-02-09T16:13:41.277163+00:00",
+  "raw_file": "SOU_600014649_2024-10-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600014649_2024-10-02",
+    "school_profile": {
+      "school_type": "Střední škola polytechnická (SOU) s domovem mládeže a školní jídelnou",
+      "inspection_period": "2. 10. – 4. 10. a 7. 10. 2024",
+      "school_change_summary": "Sloučení dvou středních odborných škol v roce 2022 vedlo k nárůstu počtu žáků téměř o 100 %. Škola nyní vzdělává 886 žáků v 22 oborech na čtyřech místech v Kyjově. Probíhá realizace centra technicko-inovativního vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborné vzdělávání a praxe",
+          "detail": "Praktické vyučování odpovídá moderním trendům oborů s propojením na reálné pracoviště smluvních partnerů.",
+          "evidence": "Materiální podmínky pracovišť odpovídají nárokům oborů, žáci získávají dovednosti potřebné pro uplatnění v praxi."
+        },
+        {
+          "tag": "Podpora žáků v obtížích",
+          "detail": "Škola systematicky snižuje počet neprospívajících žáků a nabízí doučování a individuální konzultace.",
+          "evidence": "Podíl neprospívajících žáků se snížil z 10 % na 5 % mezi školními roky 2022/2023 a 2023/2024."
+        },
+        {
+          "tag": "Jazykové vzdělávání a zahraniční výjezdy",
+          "detail": "Každoroční měsíční pobyty v Itálii nebo Španělsku rozvíjejí jazykové kompetence a osobnostní růst.",
+          "evidence": "Výuka cizích jazyků je vedena s optimálním nastavením cizojazyčného prostředí a aktivizačními cvičeními."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita žáků v teoretické výuce",
+          "detail": "V některých předmětech převládá frontální výuka bez aktivního zapojení žáků do diskusí a prezentací.",
+          "evidence": "V matematice a informatice byla výuka jednotvárná, žáci odpovídali jen jednoslovně, chyběla kooperace."
+        },
+        {
+          "tag": "Nedostatečný rozvoj kritického myšlení",
+          "detail": "Žáci nejsou dostatečně vedeni k vyhledávání a vyhodnocování informací z různých zdrojů.",
+          "evidence": "V části teoretických předmětů měli žáci malý prostor k rozvoji klíčových kompetencí v oblasti informační gramotnosti."
+        },
+        {
+          "tag": "Kvalita praktické výuky u partnerů",
+          "detail": "V části praktického vyučování u smluvních partnerů nejsou důsledně dodržovány hygienicko-epidemiologické zásady.",
+          "evidence": "Některé chyby žáků nebyly důsledně korigovány, což nepodporovalo správné osvojení výkonů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se ve výuce teoretických předmětů rozvíjí kritické myšlení a práce s informacemi?",
+        "Jaké jsou konkrétní plány na zlepšení aktivního zapojení žáků v hodinách matematiky a informatiky?",
+        "Jak škola zajišťuje jednotné standardy kvality praktické výuky u všech smluvních partnerů?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla s jasnou představou o budoucím povolání",
+        "Studenti, kteří se chtějí zlepšit v cizích jazycích a mají zájem o zahraniční zkušenosti",
+        "Žáci, kteří potřebují individuální podporu a doučování – škola má systém pro jejich identifikaci a pomoc"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující aktivní, interaktivní výuku – v některých teoretických předmětech je výuka spíše pasivní",
+        "Studenti, kteří se spoléhají na samostatné vyhledávání a analýzu informací – toto není dostatečně rozvíjeno",
+        "Žáci s vyšší absencí – škola řeší absenci přísněji, vysoká absence může vést k výchovným opatřením"
+      ],
+      "plain_czech_summary": "Střední škola polytechnická Kyjov je moderní odborná škola se silným zaměřením na praktické dovednosti a propojení s reálnou praxí. Výborně funguje podpora žáků v obtížích a jazykové vzdělávání. Slabší stránkou je pasivita žáků v některých teoretických předmětech a nedostatečný rozvoj kritického myšlení. Škola se dynamicky rozvíjí po sloučení dvou institucí a investuje do modernizace vybavení. Vhodná pro žáky s jasným zaměřením na řemesla a praktické obory."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Klesající počet neúspěšných žáků, stabilní úspěšnost",
+        "key_numbers": [
+          "Průměrná úspěšnost 88,5 % v posledních třech letech",
+          "Počet neúspěšných žáků má klesající tendenci"
+        ],
+        "evidence": "Vedení školy pravidelně monitoruje a statisticky vyhodnocuje výsledky maturitních zkoušek za jarní a podzimní období."
+      },
+      "absence": {
+        "trend": "Klesající trend díky účinným postupům školy",
+        "key_numbers": [
+          "Nižší absence u tříletých oborů s výučním listem a nástavbového studia",
+          "Vyšší absence u tříletých oborů běžné formy a zkrácené formy studia"
+        ],
+        "evidence": "Škola má vhodně stanovená pravidla pro hodnocení a motivaci k pravidelné docházce, postupy jsou účinné."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště na velmi dobré úrovni s výchovnou poradkyní a zástupkyní ředitele",
+        "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+        "Doučování a individuální konzultace s učiteli pro žáky ohrožené školním neúspěchem",
+        "Individuální podpora školního psychologa (využívá cca 5 % žáků)",
+        "Schránky důvěry a konzultace s pedagogy"
+      ],
+      "safety_climate": [
+        "Tým školních metodiků prevence zajišťuje preventivní aktivity",
+        "Sociální pedagog a školní psycholog uplatňují odbornost v prevenci rizikového chování",
+        "Adaptační dny pro první ročníky se seznamovacími a sportovními aktivitami",
+        "Spolupráce s externími odborníky v případech vážného narušení vztahů",
+        "Během inspekce byla zjištěna problematická organizace v domově mládeže během rekonstrukce, kterou škola operativně řešila"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s profesními cechy a hospodářskou komorou",
+        "Praktické vyučování probíhá na pracovištích smluvních partnerů (Ošetřovatel, Pečovatelské služby)",
+        "Členství domova mládeže v Asociaci středoškolských klubů",
+        "Partnerství se Centrem služeb pro seniory, Městskou knihovnou, Domovem Horizont"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní příklady a evidence. Některé pasáže jsou však poměrně dlouhé a obsahují odbornou terminologii, která může být pro laické rodiče méně přístupná.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní procenta úspěšnosti v jednotlivých oborech – údaje jsou agregované",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými pedagogy v teoretických předmětech",
+        "Chybí informace o počtu žáků, kteří opustili školu předčasně, a důvodech jejich odchodu"
+      ]
+    }
+  }
+}

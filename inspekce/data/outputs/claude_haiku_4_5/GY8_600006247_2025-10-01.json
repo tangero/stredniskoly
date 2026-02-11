@@ -1,0 +1,116 @@
+{
+  "report_id": "GY8_600006247_2025-10-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:32:19.273001+00:00",
+  "run_finished_utc": "2026-02-09T13:32:44.598716+00:00",
+  "raw_file": "GY8_600006247_2025-10-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600006247_2025-10-01",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium s všeobecným vzděláním",
+      "inspection_period": "1. 10. 2025 – 3. 10. 2025 a 6. 10. 2025",
+      "school_change_summary": "Od inspekce v roce 2020 se zvýšila naplněnost na 95 % kapacity (624 žáků v 21 třídách), rozšířila se partnerská spolupráce s vysokými školami, modernizovalo se vybavení a posílilo se školní poradenské pracoviště."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Všichni maturanti prospěli, více než polovina s vyznamenáním; v češtině a matematice lepší výsledky než celorepublikový průměr.",
+          "evidence": "\"všichni žáci konající maturitní zkoušku prospěli, z toho více než polovina s vyznamenáním\""
+        },
+        {
+          "tag": "Kvalitní pedagogický sbor",
+          "detail": "Převážně kvalifikovaní učitelé s aktivním profesním rozvojem a vzájemnou podporou začínajících kolegů.",
+          "evidence": "\"převážně kvalifikovaný pedagogický sbor 59 pracovníků\" s \"reciproční spoluprací s vysokými školami\""
+        },
+        {
+          "tag": "Moderní vybavení a bezpečnost",
+          "detail": "Nové centra inovativního vzdělávání, robotické pomůcky, sportovní areál, elektronický kamerový systém a personální dohled.",
+          "evidence": "\"centra inovativního vzdělávání, robotické pomůcky, multifunkční venkovní pavilon, nová knihovna\" a \"elektronický a kamerový systém\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Méně skupinové práce v přírodovědě",
+          "detail": "Kooperativní formy práce jsou využívány především v jazykové komunikaci, v přírodovědných předmětech méně.",
+          "evidence": "\"Kooperace žáků prostřednictvím skupinové/týmové spolupráce byla využita převážně v oblasti jazykové komunikace, v naukových předmětech pak v menší míře\""
+        },
+        {
+          "tag": "Nedostatečné sebehodnocení žáků",
+          "detail": "Chybí vzájemné kriteriální hodnocení a sebereflexe žáků; převládá sumativní hodnocení bez motivačního ocenění.",
+          "evidence": "\"Převládala spíše sumativní forma hodnocení, motivační ocenění práce žáků bylo zaznamenáno méně často\""
+        },
+        {
+          "tag": "Rozdíly v hodnocení mezi učiteli",
+          "detail": "V některých předmětech přetrvávají odchylky v hodnocení žáků v závislosti na konkrétním učiteli.",
+          "evidence": "\"v některých předmětech přetrvávají odchylky v hodnocení žáků vzhledem ke konkrétnímu učiteli v dané třídě/skupině\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jaké jsou možnosti jejich dalšího rozvoje?",
+        "Jaké jsou zkušenosti s přijetím absolventů na vysoké školy a jak se škola podílí na jejich přípravě?",
+        "Jak se škola vypořádává s rozdíly v hodnocení mezi jednotlivými učiteli a jak to řeší?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními předpoklady a zájmem o všeobecné vzdělání s možností profilace",
+        "Nadaní a mimořádně nadaní žáci, kterým škola nabízí systémovou podporu a spolupráci s vysokými školami",
+        "Žáci zajímající se o jazyky – škola nabízí angličtinu, němčinu, francouzštinu a španělštinu s metodou CLIL"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří preferují více praktické a skupinové učení – v přírodovědných předmětech je skupinová práce méně využívána",
+        "Žáci, kteří potřebují více motivačního ocenění a zpětné vazby – škola se zaměřuje spíše na sumativní hodnocení",
+        "Žáci se speciálními vzdělávacími potřebami – přestože je péče zajištěna, tvoří jen 2 % žáků"
+      ],
+      "plain_czech_summary": "Gymnázium Litoměřická je kvalitní školou s výborným vybavením a zkušeným pedagogickým sborem. Žáci dosahují nadprůměrných výsledků, zvlášť v maturitách z češtiny a matematiky. Škola dobře podporuje nadané žáky a nabízí bohatou nabídku jazyků. Vedení školy systematicky zlepšuje podmínky a modernizuje výuku. Inspekce doporučuje více skupinové práce a lepší využívání sebehodnocení žáků. Celkově jde o stabilní a rozvíjející se gymnázium s dobrými vyhlídkami pro absolventy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vzestupný – úspěšnost se zvýšila v posledních dvou školních letech",
+        "key_numbers": [
+          "100 % prospěšnost maturantů",
+          "Více než 50 % s vyznamenáním",
+          "Lepší výsledky v češtině a matematice než celorepublikový průměr"
+        ],
+        "evidence": "\"Ve sledovaném období posledních dvou školních let 2023/2024 a 2024/2025 vzrostla úspěšnost žáků při ukončování studia, všichni žáci konající maturitní zkoušku prospěli\""
+      },
+      "absence": {
+        "trend": "Velmi nízký a stabilní počet absencí",
+        "key_numbers": [
+          "Stabilně nízký počet zameškaných hodin na žáka",
+          "Téměř všichni žáci mají uzavřenou klasifikaci k 30. 6.",
+          "Zanedbatelná výše neomluvené absence"
+        ],
+        "evidence": "\"Pozitivním zjištěním je stabilně nízký počet zameškaných hodin na žáka, přičemž téměř všichni žáci mají uzavřenou klasifikaci k 30. 6.\""
+      },
+      "support_services": [
+        "Výchovná poradkyně zvlášť pro nižší a vyšší gymnázium",
+        "Psychoterapeut na pracovišti",
+        "Systémová podpora nadaných a mimořádně nadaných žáků na základě pedagogické diagnostiky",
+        "Plány pedagogické podpory a individuální strategie pro žáky se speciálními potřebami"
+      ],
+      "safety_climate": [
+        "Nízký počet ukládaných kázeňských opatření",
+        "Ojedinělé hodnocení žáků sníženým stupněm z chování",
+        "Elektronický a kamerový systém s personálním dohledem při vstupu",
+        "Preventivní postupy k předcházení rizikovému chování prolínající celým cyklem"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Pedagogické, Přírodovědecké, Filozofické a Matematicko-fyzikální fakulty Univerzity Karlovy",
+        "Mezinárodní výměnné programy a jazykové pobyty",
+        "Stáže a propojení výuky s praxí",
+        "Spolupráce s odbornými pracovišti a vzdělávacími institucemi na regionální i zahraniční úrovni"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Důležité informace jsou jasně odděleny a opatřeny citacemi. Struktura je logická a snadno se v ní orientuje.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o počtu žáků se zdravotním znevýhodněním mimo speciální vzdělávací potřeby",
+        "Chybí konkrétní údaje o počtu žáků, kteří si volí jednotlivé volitelné předměty",
+        "Není specifikováno, jaké konkrétní rozdíly v hodnocení mezi učiteli byly zjištěny"
+      ]
+    }
+  }
+}

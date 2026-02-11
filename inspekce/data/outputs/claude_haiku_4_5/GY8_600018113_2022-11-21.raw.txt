@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY8_600018113_2022-11-21",
+  "school_profile": {
+    "school_type": "Masarykovo gymnázium se zdravotnickými obory a vyšší odbornou školou. Vzdělává 840 žáků a 136 studentů v pěti oborech: dvě gymnázia, Praktická sestra, Ošetřovatel a Diplomovaná všeobecná sestra.",
+    "inspection_period": "21. listopadu až 24. listopadu 2022",
+    "school_change_summary": "Zvyšující se počet žáků ve zdravotnických oborech. Zkvalitnění materiálních podmínek pro odbornou přípravu a zavedení moderních informačních technologií do výuky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky v soutěžích",
+        "detail": "Žáci dosahují čelních umístění v soutěžích na celostátní i mezinárodní úrovni, zejména v astronomii, literatuře a první pomoci.",
+        "evidence": "\"Mezi nejvýznamnější úspěchy patřila jejich čelní umístění v soutěžích zaměřených na astronomii, oblasti literatury a v poskytování první pomoci pořádaných na celostátní i mezinárodní úrovni.\""
+      },
+      {
+        "tag": "Velmi dobré maturitní výsledky",
+        "detail": "Výsledky maturit jsou dlouhodobě na velmi dobré úrovni, vyšší než u srovnatelných škol.",
+        "evidence": "\"Ve srovnání s výsledky ostatních středních škol obdobného typu byla úspěšnost žáků při zkoušce vyšší.\""
+      },
+      {
+        "tag": "Kvalitní podpora slabších žáků",
+        "detail": "Škola má velmi dobře nastavený systém podpory pro žáky ohrožené neúspěchem včetně doučování a konzultací.",
+        "evidence": "\"Systém podpory poskytované žákům ohroženým školním neúspěchem měla škola velmi dobře nastaven.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší rozvoj kritického myšlení",
+        "detail": "V teoretické výuce všeobecně vzdělávacích předmětů je méně vedení žáků k podpoře kritického myšlení.",
+        "evidence": "\"Zkvalitnění vedení žáků k podpoře kritického myšlení v teoretické výuce všeobecně vzdělávacích předmětů.\""
+      },
+      {
+        "tag": "Nedostatečná interpretace informací",
+        "detail": "Žáci málo pracují se slovní interpretací informací získaných z různých zdrojů.",
+        "evidence": "\"Zintenzívnit míru využívání slovní interpretace informací získaných z různých zdrojů žáky zejména v teoretické výuce.\""
+      },
+      {
+        "tag": "Nejednotné využívání diferenciace",
+        "detail": "Výběr úloh s odlišnou úrovní náročnosti není vždy efektivně využíván.",
+        "evidence": "\"Zaměřit se při hospitační činnosti na sledování efektivity využívání výběru úloh s odlišnou úrovní náročnosti.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá doučování a konzultace pro žáky se slabším prospěchem? Jaké jsou výsledky?",
+      "Jaké jsou možnosti zapojení do soutěží a projektů mimo vyučování?",
+      "Jak škola pracuje s moderními technologiemi ve výuce a jak jsou vybaveny učebny?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí kvalitní přípravu na vysokou školu s důrazem na odborné znalosti a praktické dovednosti",
+      "Zájemci o zdravotnické obory s možností získat praxi v nemocnicích a sociálních zařízeních",
+      "Talentovaní žáci, kteří se chtějí zapojit do vědomostních soutěží a odborné činnosti"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní rozvoj kritického myšlení a analýzy informací",
+      "Ti, kteří preferují více individualizovanou výuku s důrazem na diferenciaci",
+      "Žáci se slabšími základy, kteří by potřebovali více podpory v teoretických předmětech"
+    ],
+    "plain_czech_summary": "Masarykovo gymnázium je kvalitní škola s velmi dobrými výsledky v maturitách a soutěžích. Má zkušené učitele, moderní vybavení a dobrou péči o slabší žáky. Silná je zejména příprava v zdravotnických oborech s praktickou výukou v nemocnicích. Inspekce doporučuje více pozornosti věnovat rozvoji kritického myšlení a interpretaci informací v teoretické výuce. Škola se dlouhodobě vyvíjí pozitivně a zvyšuje počet žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi dobrý, s pozitivním vývojem",
+      "key_numbers": [
+        "Výsledky společné i profilové části maturitní zkoušky v posledních třech letech na velmi dobré úrovni",
+        "Úspěšnost vyšší než u srovnatelných středních škol",
+        "Všichni žáci přihlášení k maturitní zkoušce ji konali"
+      ],
+      "evidence": "\"Výsledky společné i profilové části maturitní zkoušky v posledních třech letech byly celkově na velmi dobré úrovni. Ve srovnání s výsledky ostatních středních škol obdobného typu byla úspěšnost žáků při zkoušce vyšší.\""
+    },
+    "absence": {
+      "trend": "Systematicky sledována a řešena",
+      "key_numbers": [
+        "Žáci se zvýšenou absencí jsou evidováni již v počáteční fázi",
+        "Absence je součástí systému včasné identifikace ohrožených žáků",
+        "Podpora je poskytována formou konzultací a doučování"
+      ],
+      "evidence": "\"Již v počáteční fázi vzdělávání byli žáci se slabším prospěchem a zvýšenou absencí ve škole evidováni, jejich neúspěchy a problémy v učení se vedení školy i pedagogičtí pracovníci cíleně zabývali.\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a školní psycholožkou",
+      "Individuální konzultace pro žáky, studenty a učitele",
+      "Doučování v jednotlivých předmětech a kroužek na podporu matematické gramotnosti",
+      "Metodická podpora pedagogům v práci s třídním kolektivem",
+      "Péče o žáky se speciálními vzdělávacími potřebami (35 žáků s podpůrnými opatřeními)"
+    ],
+    "safety_climate": [
+      "Bezpečnostní rizika jsou pravidelně vyhodnocována",
+      "Žáci a studenti jsou průběžně poučeni o bezpečném chování",
+      "Vytvořeny oddechové zóny pro relaxaci a setkávání se",
+      "Jasně nastavená pravidla a postupy pro řešení rizikového chování",
+      "Prostředí školy je estetické a podnětné"
+    ],
+    "partnerships_practice": [
+      "Mezinárodní spolupráce se středními školami na kvalitě životního prostředí",
+      "Dlouhodobá spolupráce s místními základními, mateřskými a středními školami v zdravotnické prevenci",
+      "Stěžejní partneři: nemocnice a zařízení sociálních služeb ve Vsetíně a Valašském Meziříčí",
+      "Spolupráce s městem Vsetín a místními neziskovými organizacemi",
+      "Žáci se podílí na kulturních akcích a charitativních aktivitách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a citace z pozorování. Některé pasáže jsou však velmi dlouhé a složitě strukturované, což mírně snižuje srozumitelnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní číselné údaje o procentech úspěšnosti u maturit nebo absence - pouze kvalitativní hodnocení",
+      "Není jasné, jak se vyvíjely výsledky v jednotlivých předmětech v čase",
+      "Chybí informace o počtu žáků, kteří opakují ročník nebo školu opouštějí"
+    ]
+  }
+}
+```

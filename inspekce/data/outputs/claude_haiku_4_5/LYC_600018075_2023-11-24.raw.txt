@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "LYC_600018075_2023-11-24",
+  "school_profile": {
+    "school_type": "Střední odborná škola s maturitní zkouškou, domovem mládeže a školní jídelnou",
+    "inspection_period": "24.–29. listopadu 2023",
+    "school_change_summary": "V roce 2023 došlo ke změně ředitele školy a posílení školního poradenského pracoviště o školní psycholožku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Mezinárodní spolupráce",
+        "detail": "Škola má tradičně bohatou spolupráci se zahraničními partnery, která podporuje rozvoj jazykových, sociálních a odborných kompetencí žáků.",
+        "evidence": "Intenzivní spolupráce se sociálními a zahraničními partnery podporují rozvoj odbornosti a úspěchy v soutěžích."
+      },
+      {
+        "tag": "Bezpečné a vstřícné prostředí",
+        "detail": "Škola vytváří bezpečné prostředí s pozitivním a tolerantním přístupem mezi všemi účastníky školního života.",
+        "evidence": "Pozitivní klima školy podporuje nadstandardní proenvironmentální úprava prostor a vstřícný přístup."
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Škola identifikuje žáky ohrožené neúspěchem a nabízí jim doučování a konzultace, která se jeví jako účinná.",
+        "evidence": "Bezodkladně přijímá opatření na minimalizaci zvýšené absence a nabízí podporu formou doučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezené moderní vyučovací metody",
+        "detail": "Výuka se opírá především o tradičních pedagogických postupy s převahou frontálního vyučování, bez dostatečné podpory kritického myšlení.",
+        "evidence": "Výuka převážně založena na tradičních postupech, frontálně vedené vyučování, jen ojediněle vedeni žáci k práci s různými informačními zdroji."
+      },
+      {
+        "tag": "Nedostatečná individualizace",
+        "detail": "Diferenciace a individualizace výuky téměř nejsou zaznamenány, nadaní žáci nemají dostatek příležitostí pro rozvoj.",
+        "evidence": "Individualizace a diferenciace výuky téměř nebyla zaznamenána, žákům s rychlejším tempem zřídka nabízeny další úkoly."
+      },
+      {
+        "tag": "Slabá zpětná vazba",
+        "detail": "Sebehodnocení, vzájemné hodnocení a formativní zpětná vazba jsou využívány jen sporadicky.",
+        "evidence": "Sebehodnocení a vzájemné hodnocení využito sporadicky, formativní zpětná vazba motivující k dalšímu učení výjimečně."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jaké má pro ně speciální programy?",
+      "Jaké jsou výsledky absolventů na vysokých školách a jejich uplatnění v praxi?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a práce s různými informačními zdroji?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o zemědělství, ekologii, cestovní ruch nebo veřejnosprávní činnost",
+      "Studenti, kteří si cení bezpečného a vstřícného prostředí s pozitivním klimatem",
+      "Žáci, kteří chtějí získat praktické dovednosti a připravit se na konkrétní povolání"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující moderní interaktivní metody a práci s technologiemi – výuka je spíše tradičnější",
+      "Nadaní a rychlejší žáci, kterým chybí dostatek výzev a individuálního rozvoje",
+      "Studenti, kteří potřebují intenzivní formativní zpětnou vazbu a sebehodnocení"
+    ],
+    "plain_czech_summary": "Střední odborná škola v Šumperku je stabilní institucí se solidním zázemím a bezpečným prostředím. Silnou stránkou je mezinárodní spolupráce a péče o slabší žáky. Škola však potřebuje zlepšit vyučovací metody – více moderních přístupů, lepší individualizaci výuky a formativní zpětnou vazbu. Výuka se opírá především o tradičnější postupy. Vhodná pro žáky, kteří chtějí praktickou přípravu na konkrétní povolání v zemědělství či cestovním ruchu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá tendence s pozitivním vývojem v posledních termínech",
+      "key_numbers": [
+        "Výsledky ve společné části maturitní zkoušky měly kolísavou tendenci",
+        "Pozitivní vývoj zaznamenán v posledních zkušebních termínech"
+      ],
+      "evidence": "Výsledky žáků u maturitní zkoušky jsou pravidelně analyzovány, škola navrhuje systémová opatření na zlepšení."
+    },
+    "absence": {
+      "trend": "Aktivně řešena a minimalizována",
+      "key_numbers": [
+        "Zvýšená absence je bezodkladně řešena"
+      ],
+      "evidence": "Škola bezodkladně přijímá opatření na minimalizaci zvýšené absence žáků, třídní učitelé se zaměřují na problémy v oblasti absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a asistentkou pedagoga",
+      "Školní psycholožka (posílení od roku 2023)",
+      "Doučování a konzultace pro žáky ohrožené školním neúspěchem",
+      "Domov mládeže s výchovnou činností a zájmovými aktivitami"
+    ],
+    "safety_climate": [
+      "Pozitivní pracovní a bezpečná sociální atmosféra ve vyučovacích hodinách",
+      "Vstřícný, pozitivní a tolerantní přístup mezi žáky, pedagogy a vedením",
+      "Důraz na vzájemný respekt, ohleduplnost a spolupráci",
+      "Preventivní program zaměřený na prevenci rizikového chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem (Olomoucký kraj) a školskou radou",
+      "Partnerství se středními a základními školami v regionu",
+      "Tradičně bohatá mezinárodní spolupráce",
+      "Komunikace se zákonnými zástupci žáků prostřednictvím elektronické formy a osobních setkání",
+      "Realizace edukačních akcí, exkurzí a naučných programů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky. Silné a slabé stránky jsou jasně vymezeny s odkazem na konkrétní oblasti. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Konkrétní počty žáků neúspěšných u maturity nejsou uvedeny, pouze trend",
+      "Není jasné, jaké konkrétní obory jsou nejpopulárnější nebo nejúspěšnější",
+      "Chybí informace o počtu absolventů pokračujících v dalším studiu versus vstupujících na trh práce"
+    ]
+  }
+}
+```

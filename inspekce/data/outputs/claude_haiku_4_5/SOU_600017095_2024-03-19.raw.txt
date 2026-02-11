@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOU_600017095_2024-03-19",
+  "school_profile": {
+    "school_type": "Střední škola polytechnická s domovem mládeže, školní jídelnou a tělovýchovným zařízením",
+    "inspection_period": "19. až 22. března 2024",
+    "school_change_summary": "Škola prošla výraznou generační obměnou pedagogického sboru v posledních dvou letech. Vedení podporuje začínající učitele a realizuje vzájemné hospitace. Postupně se zlepšují materiální podmínky pro vzdělávání, zejména v oblasti odborného výcviku s moderními technologiemi včetně virtuální reality."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola efektivně propojuje teoretické znalosti s praktickým výcvikem v moderně vybavených dílnách a učebnách.",
+        "evidence": "Učitelé odborného výcviku úspěšně rozvíjejí odborné kompetence žáků v souladu s tematickým rozvržením vzdělávacího obsahu."
+      },
+      {
+        "tag": "Partnerství a spolupráce",
+        "detail": "Škola aktivně spolupracuje s firmami, institucemi a univerzitou, což přispívá k rozvoji odborných znalostí.",
+        "evidence": "Spolupráce s malými i velkými firmami z regionu vede k rozvoji odborných znalostí a dovedností žáků i pedagogů."
+      },
+      {
+        "tag": "Podpora žáků v obtížích",
+        "detail": "Školní poradenské pracoviště poskytuje kvalitní služby pro žáky ohrožené neúspěchem a jejich rodiče.",
+        "evidence": "Tým kvalifikovaných pracovníků plánovitě zprostředkovává informace a vytváří podmínky pro systematické vzdělávání žáků se speciálními potřebami."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Absence zůstává dlouhodobě vysoká a opatření školy nejsou dostatečně účinná.",
+        "evidence": "Ve školním roce 2022/2023 byla absence 230 hodin na žáka za rok, v prvním pololetí 2023/2024 100 hodin za pololetí. Absence negativně ovlivňuje výsledky vzdělávání."
+      },
+      {
+        "tag": "Slabé výsledky u maturity",
+        "detail": "Zejména v nástavbových oborech roste neúspěšnost u společné části maturitní zkoušky.",
+        "evidence": "V oboru Stavební provoz hrubá neúspěšnost vzrostla ze 17 % v roce 2020 na 67 % v roce 2023. V oboru Nábytkářská výroba 57 % v roce 2023."
+      },
+      {
+        "tag": "Pasivní vyučování",
+        "detail": "Část vyučovacích hodin teoretického vyučování je vedena převážně frontálně bez aktivizace žáků.",
+        "evidence": "Nedostatečná pestrost metod vedla k nerovnoměrnému zapojení žáků a nevytvářela příležitosti k týmové spolupráci a diferenciaci."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola plánuje zavést proti vysoké absenci žáků? Jak budete motivovat žáky k docházce?",
+      "Jak se škola vypořádá se slabými výsledky u maturity v nástavbových oborech? Jaká je strategie pro zlepšení?",
+      "Jaké konkrétní změny v metodách výuky plánujete zavést, aby byla výuka více interaktivní a zaměřená na aktivitu žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s moderním vybavením a propojením teorie s praxí v dílnách",
+      "Studenti, kteří potřebují podporu a individuální péči – škola má kvalitní poradenské služby a domov mládeže",
+      "Zájemci o obory s výučním listem (tesař, truhlář, mechanik) – zde škola dosahuje lepších výsledků než u maturity"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků, kteří mají tendenci k absenci – vysoká absence je dlouhodobý problém a opatření nejsou účinná",
+      "Zájemci o nástavbové obory s maturitou (Stavební provoz, Nábytkářská výroba) – zde jsou vysoké procenta neúspěšnosti u maturity",
+      "Studenti, kteří potřebují aktivní a interaktivní výuku – část hodin je vedena převážně frontálně bez aktivizace žáků"
+    ],
+    "plain_czech_summary": "Střední škola polytechnická v Olomouci je moderní školou s dobrým vybavením a praktickou orientací. Silnou stránkou je propojení teorie s praxí, kvalitní poradenské služby a spolupráce s firmami. Hlavní problémy jsou vysoká absence žáků, která se nedaří snižovat, a slabé výsledky u maturity, zejména v nástavbových oborech. Část vyučování je stále vedena tradičně bez aktivizace žáků. Škola se snaží zlepšovat, ale výsledky zatím nejsou vidět."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavé s tendencí k zhoršení, zejména v nástavbových oborech",
+      "key_numbers": [
+        "Obor Stavební provoz: 17 % neúspěšnosti v 2020 → 67 % v 2023",
+        "Obor Nábytkářská výroba: 100 % neúspěšnosti v 2020 → 57 % v 2023",
+        "Obor Obchodník: 100 % úspěšnosti v 2021 → 44 % neúspěšnosti v 2023"
+      ],
+      "evidence": "Ve zkušebních obdobích 2020–2023 škola vykázala kolísavé výsledky se zvyšující neúspěšností ve společné části maturitní zkoušky, zejména v nástavbových oborech."
+    },
+    "absence": {
+      "trend": "Vysoká, mírně klesající, ale stále problematická",
+      "key_numbers": [
+        "2021/2022: 255 hodin na žáka za rok",
+        "2022/2023: 230 hodin na žáka za rok",
+        "2023/2024 (1. pololetí): 100 hodin na žáka za pololetí"
+      ],
+      "evidence": "Absence výrazně vzrostla po ukončení distanční výuky. V prvním pololetí 2023/2024 bylo nehodnoceno 10 % žáků z důvodu vysoké absence. Opatření školy nejsou dostatečně účinná."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s kvalifikovanými pracovníky (psycholog, speciální pedagog, sociální pedagog)",
+      "Domov mládeže s pestrými zájmovými aktivitami a podporou sebevzdělávání",
+      "Prevence rizikového chování prostřednictvím besed, přednášek a adaptačních kurzů"
+    ],
+    "safety_climate": [
+      "Škola klade důraz na vzájemný respekt a slušné chování žáků",
+      "Třídní učitelé pracují s třídou na problémech v oblasti absence a třídního klimatu",
+      "Intervenční programy zaměřené na zjištění třídního klimatu a rizikových jevů"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se základními školami ve městě a středními školami v kraji",
+      "Partnerství s Univerzitou Palackého v Olomouci",
+      "Spolupráce s řadou firem a institucí z regionu i celé republiky na praktickém vyučování"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla a fakta. Jsou jasně identifikovány silné a slabé stránky. Některé pasáže jsou však dlouhé a úřednicky formulované, což snižuje srozumitelnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola plánuje zavést v budoucnosti – pouze popisuje zjištěné problémy",
+      "Chybí srovnání s průměrem podobných škol v republice (kromě maturity v nástavbových oborech)",
+      "Není jasné, zda vysoká absence souvisí s kvalitou výuky nebo s jinými faktory (zdravotní, sociální)"
+    ]
+  }
+}
+```

@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOU_600015408_2024-10-04",
+  "school_profile": {
+    "school_type": "Střední škola řemesel a služeb s domovem mládeže a školní jídelnou",
+    "inspection_period": "4. až 9. října 2024",
+    "school_change_summary": "Nový ředitel od roku 2020, generační obměna pedagogického sboru, rekonstrukce prostor, obnovení oboru Podnikání od roku 2024/2025. Celkem 376 žáků, z toho 35 se speciálními vzdělávacími potřebami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka na vysoké úrovni",
+        "detail": "Vyučující praktického vyučování používají vhodné metody, individuální přístup a efektivní diferenciaci. Žáci pracují na reálných projektech pro konkrétní zákazníky.",
+        "evidence": "Žáci pracují se zájmem, dodržují bezpečnost a technologické postupy, vyrábí konkrétní výrobky pro domácnosti a firmy."
+      },
+      {
+        "tag": "Silná podpora žáků mimo výuku",
+        "detail": "Školní poradenské pracoviště, domov mládeže a kariérové poradenství fungují efektivně a komplexně.",
+        "evidence": "Úzká spolupráce s nízkoprahovým zařízením, prevence šikany, kariérové přednášky, návštěvy úřadu práce, bez rizikového chování ubytovaných."
+      },
+      {
+        "tag": "Kvalitní partnerství s praxí",
+        "detail": "Škola spolupracuje s firmami, Jadernou elektrárnou Dukovany a dalšími partnery na rozvoji odborných kompetencí.",
+        "evidence": "Praktické vyučování ve firmách, stáže na odborných pracovištích, exkurze, dovednostní soutěže s kvalitními umístěními."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky u maturit",
+        "detail": "Žáci dosahují horších výsledků v češtině, literatuře a matematice než je republikový průměr. Absence v praktické výuce snižuje úspěšnost.",
+        "evidence": "Neúspěšnost u závěrečné zkoušky se pohybuje od 10 % do 31 %. Opatření jsou jen částečně účinná."
+      },
+      {
+        "tag": "Teoretická výuka není dostatečně aktivní",
+        "detail": "Převažuje frontální výuka bez aktivizačních metod, chybí diferenciace a motivace žáků. Žáci nemají dostatek příležitostí k vlastnímu myšlení.",
+        "evidence": "Nízká diferenciace učiva, málo skupinové práce, absence sebehodnocení a zpětné vazby o zvládání tématu."
+      },
+      {
+        "tag": "Slabá podpora nových učitelů",
+        "detail": "Formální podpora začínajícím učitelům není zaměřena na rozvoj pedagogických kompetencí. Chybí kvalitní zpětná vazba z hospitací.",
+        "evidence": "Hospitační záznamy neobsahují dostatečně využitelnou zpětnou vazbu. Další vzdělávání se nezaměřuje na efektivní metody výuky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nové učitele v rozvoji jejich pedagogických dovedností?",
+      "Jaká opatření škola zavádí, aby se zlepšily výsledky žáků u maturitní zkoušky, zejména v češtině a matematice?",
+      "Jak se škola snaží zvýšit aktivitu žáků v teoretické výuce a motivovat je k lepším výsledkům?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou práci a řemesla, kteří se učí lépe činnostní formou",
+      "Studenti, kteří potřebují individuální přístup a podporu v domově mládeže",
+      "Uchazeči zajímající se o konkrétní obory (mechanika, elektrikářství, instalatérství, gastronomie, zdravotnictví)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší čtenářskou gramotností a matematickými dovednostmi, kterým se opatření školy zatím nedostatečně pomáhají",
+      "Studenti, kteří potřebují silnou teoretickou výuku s aktivními metodami a vysokou motivací",
+      "Uchazeči, kteří se spoléhají na kvalitní zpětnou vazbu a individuální mentoring od učitelů"
+    ],
+    "plain_czech_summary": "Škola je silná v praktické výuce a péči o žáky mimo vyučování. Vyučující praktického vyučování používají efektivní metody a žáci pracují na reálných projektech. Domov mládeže a poradenské služby fungují dobře. Problém je v teoretické výuce, která je příliš frontální a bez dostatečné aktivizace žáků. Výsledky u maturit nejsou dobré, zejména v češtině a matematice. Nové učitele škola dostatečně nepodporuje. Škola je vhodná pro prakticky zaměřené žáky, ale ti se slabšími teoretickými základy by měli být opatrní."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě horší než republikový průměr v češtině a matematice, lepší v angličtině",
+      "key_numbers": [
+        "Horší výsledky v češtině, literatuře a matematice než republikový průměr",
+        "Neúspěšnost u závěrečné zkoušky: 10 % (2021) až 31 % (2022, 2024)",
+        "Absence v praktické výuce je jednou z příčin neúspěchu"
+      ],
+      "evidence": "Škola vyhodnotila nedostatečnou čtenářskou gramotnost jako zdroj neúspěchu. Opatření (cvičná maturita, konzultace, nácvik úloh) jsou jen částečně účinná."
+    },
+    "absence": {
+      "trend": "Nedaří se snižovat absenci v praktickém vyučování",
+      "key_numbers": [
+        "Absence v praktické výuce je jednou z příčin neúspěchu žáků",
+        "Absence všech žáků se nedaří snižovat",
+        "Absence přispívá k neúspěchu při ukončování studia"
+      ],
+      "evidence": "Text uvádí: 'Nedaří se snižovat absenci všech žáků v praktickém vyučování, která je jednou z příčin jejich neúspěchu při ukončování studia.'"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, metodička prevence, speciální pedagožka, kariérová poradkyně",
+      "Domov mládeže s úzkou spoluprací s nízkoprahovým zařízením Střed",
+      "Kariérové poradenství: přednášky odborníků, exkurze do firem, návštěvy úřadu práce",
+      "Prevence negativních jevů: programy, přednášky (Policie ČR, Armáda ČR), včasné zachycení šikany"
+    ],
+    "safety_climate": [
+      "Klidná a přátelská atmosféra ve většině navštívených hodin",
+      "Efektivní řešení projevů šikany a kyberšikany s individuálním přístupem",
+      "V domově mládeže se od poslední inspekce nevyskytlo rizikové chování ubytovaných",
+      "Disciplinovanost žáků, dodržování technologických postupů a zásad bezpečnosti práce"
+    ],
+    "partnerships_practice": [
+      "Smluvní pracoviště pro praktické vyučování",
+      "Jaderná elektrárna Dukovany",
+      "Střední odborná škola Trenčín",
+      "Firmy pro realizaci části praktického vyučování",
+      "Úspěšní absolventi jako motivátoři",
+      "Nízkoprahové zařízení pro děti a mládež Střed"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků v jednotlivých oborech, pouze celkový počet 376 žáků",
+      "Chybí konkrétní procenta absence v praktické výuce",
+      "Není jasné, kolik procent hodin bylo hodnoceno jako kvalitní versus problematické"
+    ]
+  }
+}
+```

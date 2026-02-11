@@ -1,0 +1,79 @@
+{
+  "report_id": "GY6_600016943_2023-09-19",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T06:58:43.313085+00:00",
+  "run_finished_utc": "2026-02-10T06:59:05.953517+00:00",
+  "raw_file": "GY6_600016943_2023-09-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600016943_2023-09-19",
+    "school_profile": {
+      "school_type": "Gymnázium",
+      "inspection_period": "19. – 22. září 2023",
+      "school_change_summary": "Nebyla poskytnuta zdrojová data z inspekční zprávy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Není k dispozici",
+          "detail": "Bez zdrojového textu nelze identifikovat silné stránky školy.",
+          "evidence": "Zdrojový text zprávy nebyl dodán."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Není k dispozici",
+          "detail": "Bez zdrojového textu nelze identifikovat rizika.",
+          "evidence": "Zdrojový text zprávy nebyl dodán."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké jsou konkrétní výsledky studentů této školy u maturitních zkoušek?",
+        "Jak škola podporuje žáky s různými vzdělávacími potřebami?",
+        "Jaká je atmosféra ve škole a jak řešíte případné konflikty?"
+      ],
+      "who_school_fits": [
+        "Pro zájemce o všeobecné vzdělání s výhledem na VŠ studium."
+      ],
+      "who_should_be_cautious": [
+        "Pro rozhodnutí je nutné získat aktuální inspekční zprávu."
+      ],
+      "plain_czech_summary": "K této škole nebyl dodán text inspekční zprávy, takže nelze vyhodnotit její kvalitu ani specifika. Jde o gymnázium v Olomouci. Pro seriózní posouzení vhodnosti pro vaše dítě je nezbytné si vyžádat kompletní zprávu od České školní inspekce nebo přímo od školy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neznámý",
+        "key_numbers": [
+          "Data nejsou k dispozici"
+        ],
+        "evidence": "Chybí zdrojový text."
+      },
+      "absence": {
+        "trend": "Neznámý",
+        "key_numbers": [
+          "Data nejsou k dispozici"
+        ],
+        "evidence": "Chybí zdrojový text."
+      },
+      "support_services": [
+        "Nelze určit bez zdrojového textu."
+      ],
+      "safety_climate": [
+        "Nelze určit bez zdrojového textu."
+      ],
+      "partnerships_practice": [
+        "Nelze určit bez zdrojového textu."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 1,
+      "czech_clarity_reason": "Nebyl dodán žádný text zprávy k analýze, proto nelze vyplnit data ani ověřit fakta.",
+      "uncertainty_notes": [
+        "Chybí celý vstupní text inspekční zprávy.",
+        "Všechny vyplněné položky jsou pouze zástupné placeholdery.",
+        "Metadata o škole jsou převzata z hlavičky zadání, nikoliv z obsahu zprávy."
+      ]
+    }
+  }
+}

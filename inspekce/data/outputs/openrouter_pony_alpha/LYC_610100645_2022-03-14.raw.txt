@@ -1,0 +1,104 @@
+{
+  "report_id": "LYC_610100645_2022-03-14",
+  "school_profile": {
+    "school_type": "Velká střední škola s technickým a humanitním zaměřením.",
+    "inspection_period": "14. 3. 2022 − 17. 3. 2022",
+    "school_change_summary": "Proběhla rekonstrukce budovy a změna vedení, počet žáků klesl, nejsou otevírány některé obory."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výuka a praxe",
+        "detail": "Propojení teorie s praxí a fungující odborný výcvik ve firmách.",
+        "evidence": "Vedení odborného výcviku na smluvním pracovišti dochází k propojení výuky s výrobní praxí."
+      },
+      {
+        "tag": "Výsledky",
+        "detail": "Velmi vysoká úspěšnost u maturitních a závěrečných zkoušek.",
+        "evidence": "Neprospěl u maturity jeden žák ze 191 maturujících. U závěrečné zkoušky prospělo všech 71 žáků."
+      },
+      {
+        "tag": "Klima",
+        "detail": "Příznivé klima ve třídách a snížený výskyt problémových jevů.",
+        "evidence": "Významně se snížil počet udělených snížených známek z chování na 0,1 %."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vybavení",
+        "detail": "Zastaralé strojní vybavení pro technické obory neodpovídá moderní praxi.",
+        "evidence": "Uskutečnění plánů modernizace technického vybavení praktické výuky zatím zaostává."
+      },
+      {
+        "tag": "Výuka",
+        "detail": "Malá pozornost individuálním potřebám žáků a rozdílným úrovním.",
+        "evidence": "Diferenciace metod podle individuálního nadání žáků bylo méně četné, individualizace nebyla zaznamenána."
+      },
+      {
+        "tag": "Absence",
+        "detail": "Vyšší absence v některých třídách po distanční výuce.",
+        "evidence": "Škola se potýká s vyšší mírou absence v některých třídách humanitního zaměření."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola modernizuje dílny a stroje, aby odpovídaly současné úrovni technologií?",
+      "Jakým způsobem učitelé přizpůsobují výuku žákům s různými vzdělávacími potřebami?",
+      "Jaká opatření škola zavádí pro zvládání vyšší absence v některých oborech?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří hledají silné propojení teoretické výuky s reálnou praxí ve firmách.",
+      "Pro studenty, kteří oceňují příznivé a bezpečné klima ve škole.",
+      "Pro ty, kteří chtějí studovat v zrekonstruovaném prostředí s čistým hygienickým zázemím."
+    ],
+    "who_should_be_cautious": [
+      "Pro nadané žávy, kteří vyžadují silně individualizovaný přístup a náročnější výzvy.",
+      "Pro rodiče, kteří kladou důraz na nejmodernější technické vybavení dílen.",
+      "Pro žáky s většími studijními problémy, pokud potřebují intenzivní individuální podporu."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní přípravu do praxe s velmi vysokou úspěšností u maturity. Učitelé jsou odborníci, výuka probíhá v příjemném prostředí a rekonstruované budově. Slabinou je zastaralé technické vybavení dílen a malý důraz na individuální přístup k žákům. Po covidu škola řeší zvýšenou absenci v některých třídách. Pro většinu studentů je škola dobrou volbou, techničtí nadšenci by ale měli zkontrolovat stav vybavení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vysoká úspěšnost",
+      "key_numbers": [
+        "1 neprospělý z 191 maturujících",
+        "100 % úspěšnost u závěrečných zkoušek (71 žáků)",
+        "22 % žáků s vyznamenáním v maturitních oborech"
+      ],
+      "evidence": "Ve školním roce 2020/2021 neprospěl u maturity jeden žák ze 191 maturujících."
+    },
+    "absence": {
+      "trend": "Snížená neomluvená absence, zvýšená omluvená v některých třídách",
+      "key_numbers": [
+        "0,24 % neomluvené absence",
+        "Snížení snížených známek z chování na 0,1 %",
+        "Vyšší absence v humanitních třídách"
+      ],
+      "evidence": "Škole se podařilo snížit neomluvenou absenci... škola se potýká s vyšší mírou absence v některých třídách."
+    },
+    "support_services": [
+      "Dva výchovní poradci a dvě metodičky prevence",
+      "Kariérové poradenství a doučování pro ohrožené žáky",
+      "Adaptační programy pro prváky"
+    ],
+    "safety_climate": [
+      "Výrazný pokles snížených známek z chování (z 6 % na 0,1 %)",
+      "Důsledné řešení náznaků negativních jevů",
+      "Zabezpečená budova a dodržované dohledy nad žáky"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s firmami při zajištění odborného výcviku",
+      "Účast v projektu Podpora odborného vzdělávání v Plzeňském kraji",
+      "Prezentace školy na základních školách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, s výjimkou části o kontrolní činnosti a statistik absence, které vyžadují kontext.",
+    "uncertainty_notes": [
+      "Nejasná metodika vyhodnocování cílů kontrolní činnosti a její dopad na výuku.",
+      "Chybí upřesnění, o jaké konkrétní 'negativní jevy' ve vztazích jde.",
+      "Statistika absence je prezentována z různých let a kontextů, což mate."
+    ]
+  }
+}

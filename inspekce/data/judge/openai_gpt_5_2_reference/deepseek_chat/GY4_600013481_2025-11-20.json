@@ -1,0 +1,30 @@
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "deepseek_chat",
+  "run_started_utc": "2026-02-09T11:40:06.797880+00:00",
+  "run_finished_utc": "2026-02-09T11:40:29.183413+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY4_600013481_2025-11-20\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 3,\n  \"critical_issues\": [\n    \"Tvrzení „je prestižní škola“ není ve zdroji doložené (inspekce hodnotí výsledky jako výborné, ale pojem prestiž nepoužívá).\",\n    \"Sekce „who_school_fits“ obsahuje doporučení/zařazení (např. „žáci se zájmem o matematiku a přírodní vědy“, „žáci s vysokou motivací“), které není jako závěr inspekce explicitně uvedené; působí jako tvrzení odvozené mimo text.\",\n    \"Chybí důležité pro rodiče relevantní zjištění ze zdroje: tlak na výkon u žáků a doporučení posílit školního psychologa (vyšší úvazek, práce s třídami, wellbeing).\",\n    \"Chybí část podstatných systémových zjištění a doporučení: absence analýzy hospitační činnosti a následných opatření, kumulace funkcí u jednoho zástupce ředitele, doporučení k nastavení práce asistentů pedagoga.\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené silné stránky a slabé stránky přesně podle závěrů inspekce (Erasmus+, maturita, soutěže; nesjednocené hodnocení; nízká práce se zdroji/kritickým myšlením; nedostatečná diferenciace).\",\n    \"Správně uvedené konkrétní údaje ze zdroje (téměř nulová hrubá neúspěšnost u maturity; průměrná omluvená absence 120 hodin; psycholožka 1 den v týdnu; jednotky případů rizikového chování).\",\n    \"Text je přehledně strukturovaný a pro rodiče prakticky čitelný (oddělení silných stránek, rizik, faktů).\"\n  ],\n  \"one_line_verdict\": \"Většina klíčových závěrů je věrná zdroji a pro rodiče užitečně podaná, ale výstup vynechává několik podstatných zjištění (zejm. wellbeing/tlak na výkon a doporučení k psychologovi) a obsahuje pár nedoložených hodnotících či cílových tvrzení.\"\n}",
+  "judge_output": {
+    "report_id": "GY4_600013481_2025-11-20",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 3,
+    "critical_issues": [
+      "Tvrzení „je prestižní škola“ není ve zdroji doložené (inspekce hodnotí výsledky jako výborné, ale pojem prestiž nepoužívá).",
+      "Sekce „who_school_fits“ obsahuje doporučení/zařazení (např. „žáci se zájmem o matematiku a přírodní vědy“, „žáci s vysokou motivací“), které není jako závěr inspekce explicitně uvedené; působí jako tvrzení odvozené mimo text.",
+      "Chybí důležité pro rodiče relevantní zjištění ze zdroje: tlak na výkon u žáků a doporučení posílit školního psychologa (vyšší úvazek, práce s třídami, wellbeing).",
+      "Chybí část podstatných systémových zjištění a doporučení: absence analýzy hospitační činnosti a následných opatření, kumulace funkcí u jednoho zástupce ředitele, doporučení k nastavení práce asistentů pedagoga."
+    ],
+    "best_points": [
+      "Správně zachycené silné stránky a slabé stránky přesně podle závěrů inspekce (Erasmus+, maturita, soutěže; nesjednocené hodnocení; nízká práce se zdroji/kritickým myšlením; nedostatečná diferenciace).",
+      "Správně uvedené konkrétní údaje ze zdroje (téměř nulová hrubá neúspěšnost u maturity; průměrná omluvená absence 120 hodin; psycholožka 1 den v týdnu; jednotky případů rizikového chování).",
+      "Text je přehledně strukturovaný a pro rodiče prakticky čitelný (oddělení silných stránek, rizik, faktů)."
+    ],
+    "one_line_verdict": "Většina klíčových závěrů je věrná zdroji a pro rodiče užitečně podaná, ale výstup vynechává několik podstatných zjištění (zejm. wellbeing/tlak na výkon a doporučení k psychologovi) a obsahuje pár nedoložených hodnotících či cílových tvrzení."
+  }
+}

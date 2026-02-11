@@ -1,0 +1,102 @@
+{
+  "report_id": "LYC_600010571_2021-10-18",
+  "school_profile": {
+    "school_type": "Střední škola (obchodní akademie, veřejnosprávní činnost, ekonomické lyceum) a jazyková škola s právem státní jazykové zkoušky.",
+    "inspection_period": "18.−21. 10. 2021",
+    "school_change_summary": "Škola prošla v posledním desetiletí modernizací, snížil se věkový průměr pedagogů a zvýšila se genderová vyváženost."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vysoká úspěšnost",
+        "detail": "Kolem 80 % absolventů pokračuje ve studiu na vysokých školách a většina ostatních nachází dobré pracovní uplatnění.",
+        "evidence": "V posledních třech školních rocích pokračuje kolem 80 % absolventů školy ve studiu na vysokých školách."
+      },
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola nabízí odborné stáže v zahraničí i tuzemsku a spolupracuje s firmami při výuce ekonomických předmětů.",
+        "evidence": "Organizace odborné praxe... je založena na stabilních partnerských vztazích s firmami a institucemi v regionu."
+      },
+      {
+        "tag": "Kvalitní jazyková výuka",
+        "detail": "Žáci dosahují vysoké úrovně v cizích jazycích a mohou skládat státní jazykové zkoušky přímo ve škole.",
+        "evidence": "Česká školní inspekce pozitivně hodnotí vysokou úroveň jazykových dovedností žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Méně efektivní závěry hodin",
+        "detail": "Učitelé často nechávají málo prostoru pro společné shrnutí učiva a aktivní zapojení žáků na konci hodin.",
+        "evidence": "V závěru však zpravidla scházel větší prostor pro společné shrnutí a zhodnocení naplnění cíle."
+      },
+      {
+        "tag": "Omezené vybavení pro přírodovědné pokusy",
+        "detail": "Škola nemá specializované učebny pro fyziku a chemii a využívá externí zařízení pro demonstrace.",
+        "evidence": "Škola nemá specializované učebny pro výuku přírodovědných předmětů a disponuje pouze omezeným množstvím vlastního vybavení."
+      },
+      {
+        "tag": "Zastaralá dokumentace BOZP",
+        "detail": "Dokumentace k bezpečnosti a ochraně zdraví by měla být aktualizována v souladu s doporučením inspekce.",
+        "evidence": "Podmínky k zajištění bezpečnosti... další dokumentaci školy, kterou by bylo vhodné aktualizovat."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá spolupráce s firmami a jaké stáže jsou k dispozici pro mého potomka?",
+      "Jakým způsobem škola podporuje žáky, kteří mají potíže s náročnějšími ekonomicko-matematickými předměty?",
+      "Využívá škola pro výuku přírodovědných předmětů pouze prostory IQ Landie, nebo plánuje rozvoj vlastních laboratoří?"
+    ],
+    "who_school_fits": [
+      "Studenti, kteří chtějí pokračovat na ekonomicky zaměřené vysoké školy.",
+      "Žáci, které zajímá podnikání, ekonomie a práce v mezinárodním prostředí.",
+      "Studenti, kteří očekávají silnou jazykovou přípravu a možnost zahraničních stáží."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují přírodovědné obory s vlastními laboratořemi a experimenty.",
+      "Studenti, kteří potřebují velmi strukturovaný přístup s důrazem na samostatné shrnování látky na konci hodin.",
+      "Uchazeči, kteří vyžadují rozsáhlou podporu pro závažné speciální vzdělávací potřeby (škola má málo integrovaných žáků)."
+    ],
+    "plain_czech_summary": "Obchodní akademie v Liberci je škola s dlouholetou tradicí a vynikající pověstí, která připravuje žáky především na vysokoškolské studium. Její silnou stránkou je propojení teoretické výuky s praxí, zahraničními stážemi a rozsáhlá nabídka jazyků. Prostředí je moderní a bezpečné, žáci jsou motivovaní a úspěšní v soutěžích. Slabší stránkou může být absence vlastních specializovaných učeben pro přírodovědné předměty a občasný formální přístup k závěrům vyučovacích hodin. Pro ambiciózní studenty s zájmem o ekonomii a jazyky je však škola vynikající volbou."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vysoká a stabilní úspěšnost, v mnoha oborech nadprůměrná.",
+      "key_numbers": [
+        "90 % úspěšnost (111 z 111 žáků uspělo, 2 po opravných zkouškách)",
+        "80 % absolventů nastupuje na VŠ",
+        "47 % žáků je vyznamenáno"
+      ],
+      "evidence": "Ve školním roce 2020/2021 ze 111 žáků v jarním maturitním termínu uspělo 100... Úspěšnost žáků u maturitní zkoušky je zejména v oboru Ekonomické lyceum dlouhodobě vyšší, než je republikový průměr."
+    },
+    "absence": {
+      "trend": "Nízká absence a minimální kázeňské problémy.",
+      "key_numbers": [
+        "1 ředitelská důtka za rok",
+        "1 snížená známka z chování za rok",
+        "< 3 % neprospívajících žáků"
+      ],
+      "evidence": "Škole daří úspěšně předcházet vysoké či neomluvené absenci... za celý školní rok 2020/2021 byla udělena jedna ředitelská důtka a snížená známka z chování."
+    },
+    "support_services": [
+      "Výchovné poradenství a kariérové poradenství zajišťuje výchovná poradkyně.",
+      "Školní metodička prevence řeší prevenci rizikového chování a školní neúspěšnosti.",
+      "Nabídka doučování a diferencovaná zadání domácí přípravy pro žáky s potřebou podpory."
+    ],
+    "safety_climate": [
+      "Klášen důraz na bezpečné školní prostředí a zdravý životní styl.",
+      "Míra úrazovosti je pod celorepublikovým indexem.",
+      "Vstupní prostory jsou zabezpečeny elektronickým systémem."
+    ],
+    "partnerships_practice": [
+      "Aktivní spolupráce se sociálními a profesními partnery v regionu i zahraničí.",
+      "Zapojení do projektů Erasmus+ a systému evropských kreditů (ECVET).",
+      "Spolupráce s nadací Junior Achievement Czech a Domem zahraniční spolupráce."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán velmi srozumitelně, je logicky členěn a neobsahuje nepřesnosti ani extrémní úřednický jazyk.",
+    "uncertainty_notes": [
+      "Nebyly nalezeny žádné významné nejistoty v interpretaci textu zprávy."
+    ]
+  }
+}

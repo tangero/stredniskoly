@@ -1,0 +1,11 @@
+Nemám k dispozici zdrojový text inspekční zprávy. Bez konkrétního obsahu dokumentu nemohu vytvořit validní JSON analýzu.
+
+Prosím, poskytni text inspekční zprávy Slovanského gymnázia z Olomouce (GY6_600016943_2023-09-19), abych mohl:
+
+- Extrahovat informace o silných stránkách školy
+- Identifikovat rizika a výzvy
+- Analyzovat výsledky maturity a absenci
+- Připravit praktické rady pro rodiče
+- Vytvořit relevantní otázky na dny otevřených dveří
+
+Jakmile mi text zprávy poskytneš, vrátím kompletní JSON analýzu podle schématu.

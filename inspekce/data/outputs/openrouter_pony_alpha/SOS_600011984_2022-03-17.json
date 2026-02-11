@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600011984_2022-03-17",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:06:13.783630+00:00",
+  "run_finished_utc": "2026-02-10T07:07:20.106205+00:00",
+  "raw_file": "SOS_600011984_2022-03-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600011984_2022-03-17",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola s domovem mládeže",
+      "inspection_period": "17., 18. a 21. 3. 2022",
+      "school_change_summary": "Škola od minulé inspekce výrazně zlepšila materiální a technické podmínky, včetně modernizace dílen a domova mládeže."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vybavení a technologie",
+          "detail": "Škola disponuje moderním technickým vybavením odpovídajícím požadavkům zaměstnavatelů.",
+          "evidence": "Škola využívá dotace... na pořízení moderních technologií... z oblasti obrábění, které umožňují získat podmínky odpovídající stávajícím požadavkům ze strany zaměstnavatelů."
+        },
+        {
+          "tag": "Uplatnění absolventů",
+          "detail": "Díky aktivní spolupráci s partnery mají žáci dobré předpoklady pro uplatnění na trhu práce.",
+          "evidence": "Funkční systém spolupráce školy se sociálními partnery přispívající k dalšímu profesnímu uplatnění žáků."
+        },
+        {
+          "tag": "Výsledky vzdělávání",
+          "detail": "Žáci dosahují vysoké úspěšnosti u maturitních a závěrečných zkoušek.",
+          "evidence": "Úspěšnost žáků u maturitních nebo závěrečných zkoušek je vysoká, pouze jednotky žáků neuspěly ani v opravném podzimním termínu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Ve výuce převažuje frontální styl, kdy jsou žáci spíše pasivními příjemci informací.",
+          "evidence": "V mnoha hodinách převažovala frontální výuka, s dominantním postavením učitele, který předával vesměs hotové poznatky."
+        },
+        {
+          "tag": "Záškoláctví",
+          "detail": "Škola řeší alarmující výši neomluvené absence u významné části studentů.",
+          "evidence": "Negativním zjištěním ale byla v uvedeném období vysoká neomluvená absence, na níž se podílelo téměř 20 % žáků."
+        },
+        {
+          "tag": "Nedostatečná podpora",
+          "detail": "Ve výuce chybí individuální přístup k žákům s rozdílnými vzdělávacími potřebami.",
+          "evidence": "Realizace podpůrných opatření formou diferenciace úkolů žákům podle jejich individuálních schopností, nebyla ve sledované výuce zaznamenána."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé aktivizují žáky během teoretické výuky, aby nebyli jen pasivními posluchači?",
+        "Jaké konkrétní kroky škola podniká k řešení vysoké neomluvené absence studentů?",
+        "Jakým způsobem škola individuálně podporuje žáky, kteří mají s učivem potíže?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí získat praktické dovednosti na moderních strojích.",
+        "Pro žáky, kteří preferují jasná pravidla a tradiční formy výuky.",
+        "Pro ty, kteří hledají školu s dobrou pověstí u zaměstnavatelů v regionu."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří vyžadují silnou individuální podporu a diferencované úkoly.",
+        "Pro žáky se sklonem k záškoláctví nebo vyšší absencí.",
+        "Pro ty, kteří očekávají moderní interaktivní metody výuky v teoretických předmětech."
+      ],
+      "plain_czech_summary": "Střední průmyslová škola Chrudim nabízí kvalitní technické vzdělání na velmi dobře vybavených pracovištích a udržuje silné vazby na zaměstnavatele, což usnadňuje uplatnění absolventů. Vedení školy funguje stabilně a systematicky. Rizikem je převažující pasivní styl výuky a vysoká neomluvená absence, která postihuje pětinu žáků. Škola také nevyužívá dostatečně individuální přístup k žákům s odlišnými potřebami. Pro ambiciózního studenta je to dobrá volba, pokud je schopen samostatné práce a disciplíny."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vysoká úspěšnost",
+        "key_numbers": [
+          "Úspěšnost u maturit a závěrečných zkoušek je vysoká",
+          "necelých 8 % neprospívajících v maturitních oborech",
+          "přibližně 15 % neúspěšných v oborech s výučním listem"
+        ],
+        "evidence": "Úspěšnost žáků u maturitních nebo závěrečných zkoušek je vysoká, pouze jednotky žáků neuspěly ani v opravném podzimním termínu."
+      },
+      "absence": {
+        "trend": "Vysoká neomluvená absence",
+        "key_numbers": [
+          "Celková absence nebyla vysoká",
+          "téměř 20 % žáků se podílelo na neomluvené absenci",
+          "absence nebyla hlouběji analyzována"
+        ],
+        "evidence": "Negativním zjištěním ale byla v uvedeném období vysoká neomluvená absence, na níž se podílelo téměř 20 % žáků."
+      },
+      "support_services": [
+        "Výchovné poradenství a primární prevence zajišťována dvěma pracovníky",
+        "Adaptační kurzy pro první ročníky a pravidelné sportovní kurzy",
+        "Domov mládeže vytváří rodinné prostředí a podporuje žáky při učení"
+      ],
+      "safety_climate": [
+        "Mezi účastníky vzdělávání zřejmá tvůrčí pracovní atmosféra",
+        "Otevřená komunikace mezi vedením, žáky a pedagogy",
+        "Důraz na bezpečnou práci a ochranu zdraví v odborném výcviku"
+      ],
+      "partnerships_practice": [
+        "Opakovaně se škola umístila na předních místech v anketě Škola doporučená zaměstnavateli",
+        "Spolupráce s partnery umožňuje realizaci odborného výcviku a praxe",
+        "Aktivní zapojení do projektů (Erasmus+, Šablony II)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně člení pozitiva a negativa, ačkoliv některé pasáže o metodické podpoře jsou psány úřednickým jazykem.",
+      "uncertainty_notes": [
+        "Nejasná míra podpory nadaných žáků mimo období COVID (zpráva zmiňuje pouze omezení).",
+        "Není specifikováno, jak konkrétně probíhá adaptace nových učitelů kromě stanovení uvádějícího učitele.",
+        "Chybí detailnější rozbor úspěšnosti konkrétních oborů vzhledem k velikosti tříd."
+      ]
+    }
+  }
+}

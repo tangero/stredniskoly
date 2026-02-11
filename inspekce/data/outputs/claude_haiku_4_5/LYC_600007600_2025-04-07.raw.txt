@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "LYC_600007600_2025-04-07",
+  "school_profile": {
+    "school_type": "Střední zemědělská škola a Střední odborná škola (SZeŠ a SOŠ) s domovem mládeže a školní jídelnou",
+    "inspection_period": "7.–9. dubna 2025",
+    "school_change_summary": "Od školního roku 2023/2024 došlo k rozšíření nabídky znovuotevřením oboru Přírodovědné lyceum. V únoru 2024 nastoupil nový ředitel, který postupně zavádí mechanismy řízení a monitorování kvality. Došlo k výrazné personální obměně pedagogického sboru (devět učitelů v SŘ 2023/2024, další dva v SŘ 2024/2025)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Mezinárodní spolupráce",
+        "detail": "Dlouhodobá účast v projektech se školami ve Španělsku, Řecku a Itálii rozvíjí odborné kompetence, komunikační dovednosti a schopnost pracovat v multikulturním prostředí.",
+        "evidence": "Žáci se účastní výukových aktivit, jazykových kurzů a odborných stáží; učitelé navštěvují partnerské školy."
+      },
+      {
+        "tag": "Pozitivní motivace",
+        "detail": "Systematické oceňování výborných výsledků formou pochval a finančních odměn posiluje motivaci žáků.",
+        "evidence": "Počet pochval výrazně převyšuje počet kázeňských opatření; nízká absence (průměrně 110 hodin na žáka za rok)."
+      },
+      {
+        "tag": "Občanská angažovanost",
+        "detail": "Dobrovolnické aktivity a stabilní fungování žákovského parlamentu rozvíjejí odpovědnost a sociální citlivost.",
+        "evidence": "Žáci se zapojují do charitativních sbírek, spolupráce s domovem pro seniory a registrace dárců kostní dřeně."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoký počet ohrožených žáků",
+        "detail": "Výrazný problém představuje vysoký počet žáků s alespoň jednou známkou dostatečný; v Agropodnikání to je přibližně tři čtvrtiny všech žáků.",
+        "evidence": "Obtíže v matematice a českém jazyce přetrvávají od předchozí inspekce; chybí ucelená strategie prevence školního neúspěchu."
+      },
+      {
+        "tag": "Napjaté školní klima",
+        "detail": "Vnitřní klima je poznamenáno napětím z neujasněného způsobu řízení a komunikace vedení, která je některými žáky vnímána jako nátlaková.",
+        "evidence": "Žáci iniciovali petice; během zasedání parlamentu byl pokus o vyjádření názoru přerušen pedagogem způsobem nerespektujícím otevřenou diskusi."
+      },
+      {
+        "tag": "Slabá diferenciace výuky",
+        "detail": "Výuka chybí systematická diferenciace; úkoly neodrážejí rozdílné úrovně znalostí a schopností žáků.",
+        "evidence": "Sebehodnocení a vrstevnické hodnocení se téměř neuplatňují; cílená podpora nadaných žáků není nastavena."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysoký počet žáků ohrožených školním neúspěchem, zejména v matematice a češtině?",
+      "Jaké jsou plány vedení na zlepšení komunikace s pedagogy a žáky a jak budou žáci zapojeni do rozhodování?",
+      "Jak se škola vypořádává s fluktuací učitelů a jak zajišťuje kontinuitu výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o zemědělství, veterinářství a veřejnou správu s motivací k praktickému vzdělání",
+      "Žáci, kteří oceňují mezinárodní spolupráci a možnost účasti v zahraničních projektech",
+      "Žáci z regionu, kteří mohou využít ubytování v domově mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v matematice a češtině – škola nemá dostatečně systematickou podporu",
+      "Žáci, kteří potřebují stabilní a transparentní vedení – klima školy je napjaté a komunikace vedení není konzistentní",
+      "Žáci, kteří se chtějí aktivně podílet na chodu školy – participace na rozhodování není dostatečně podporována"
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní odborné vzdělání v zemědělských a veřejnosprávních oborech s mezinárodním rozměrem. Silnými stránkami jsou dobrovolnické aktivity, motivační systém a praktická výuka. Hlavní problémy: vysoký počet žáků ohrožených neúspěchem (zejména v matematice a češtině), napjaté školní klima způsobené komunikačními problémy vedení a nedostatečná diferenciace výuky. Nový ředitel zavádí změny, ale jejich účinnost zatím není zřejmá."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Rozdílné výsledky mezi obory; zhoršení v roce 2024",
+      "key_numbers": [
+        "Český jazyk: nulová hrubá neúspěšnost v Agropodnikání (2 po sobě jdoucí období)",
+        "Matematika: pouze čtvrtina žáků uspěla ve sledovaném období",
+        "Cizí jazyk: v roce 2023 srovnatelné nebo nižší neúspěšnosti než průměr ČR; v roce 2024 zhoršení ve všech oborech"
+      ],
+      "evidence": "Profilová část MZ: převážně dobré výsledky ve všech oborech, neúspěšnost ojediněle."
+    },
+    "absence": {
+      "trend": "Nízká absence",
+      "key_numbers": [
+        "Průměrně 110 hodin na žáka za rok"
+      ],
+      "evidence": "Pozitivní důsledek systematického oceňování a pozitivní motivace."
+    },
+    "support_services": [
+      "Školní poradenský tým: kvalifikovaná výchovná poradkyně, sociální pedagog, kariérový poradce",
+      "Individuální doučování českého jazyka pro žáky s odlišným mateřským jazykem",
+      "Konzultace a doučování jako hlavní forma podpory (chybí systematická strategie)"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti",
+      "Pravidelné poučování o bezpečnosti a ochraně zdraví",
+      "Dodržování pravidel slušného chování patrné v hospitované výuce i o přestávkách"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá partnerství se školami ve Španělsku, Řecku a Itálii",
+      "Mezinárodní projekty zaměřené na udržitelný rozvoj a ochranu přírody",
+      "Výměna zkušeností mezi učiteli a účast žáků na zahraničních stážích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Hlavní zjištění jsou jasně formulována. Ředitel podal připomínky, které inspekce detailně vyvrátila s konkrétními důkazy. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Ředitel zpochybňuje závěry o klimatu školy a požaduje konkrétní důkazy; inspekce odpověděla, že vychází z rozhovorů, e-mailů a podnětů, ale jednotlivé výpovědi nejsou zveřejňovány.",
+      "Není jasné, jak se situace vyvíjela po inspekci (březen–květen 2025); ředitel tvrdí, že zavádí zlepšení, ale jejich účinnost není ověřena.",
+      "Vysoký počet ohrožených žáků v Agropodnikání (75 %) je alarmující, ale není jasné, zda je to problém výuky nebo výběru žáků do oboru."
+    ]
+  }
+}
+```

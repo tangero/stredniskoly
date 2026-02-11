@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600018164_2023-09-21",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola stavební s 9 obory: 2 maturitní (Technická zařízení budov, Stavebnictví) a 7 s výučním listem (Instalatér, Klempíř, Malíř, Montér suchých staveb, Tesař, Truhlář, Zedník)",
+    "inspection_period": "21.–26. září 2023",
+    "school_change_summary": "Škola prošla výrazným zkvalitnění: nové moderní strojní vybavení v dílnách, nové ruční nářadí pro všechny obory, špičkové profesionální vybavení Hilti, zavedení předmětu BIM (Building Information Modeling) v oboru Stavebnictví, rekonstrukce domova mládeže s novými odbornými učebnami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné praktické vyučování",
+        "detail": "Praktická výuka probíhá na výborné úrovni se zkušenými pedagogy na moderně vybavených pracovištích, kde si žáci osvojují odborné dovednosti odpovídající požadavkům praxe.",
+        "evidence": "Praktické vyučování se vyznačovalo promyšlenou organizací, žáci pracovali převážně samostatně a prokazovali základní pracovní návyky."
+      },
+      {
+        "tag": "Stabilní a dobré výsledky maturit",
+        "detail": "Maturitní výsledky jsou dlouhodobě srovnatelné nebo lepší než celorepublikový průměr, v třech letech neuspělo jen 11 z 207 žáků.",
+        "evidence": "Ve školních letech 2020/2021, 2021/2022 a 2022/2023 neuspělo pouze 11 žáků z celkového počtu 207 žáků konajících maturitní zkoušku."
+      },
+      {
+        "tag": "Dlouhodobé úspěchy v soutěžích",
+        "detail": "Žáci se pravidelně umisťují na čelních místech v regionálních, celostátních i mezinárodních soutěžích zaměřených na odborné znalosti.",
+        "evidence": "Mezi významné dlouhodobé úspěchy patřila jejich pravidelná čelní umístění na celostátní i mezinárodní úrovni."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Škola zatím jen v malé míře zařazuje do výuky metody umožňující výběr úloh odlišné náročnosti podle schopností jednotlivých žáků.",
+        "evidence": "Škole se zatím jen v malé míře daří zařazovat do výuky metody a formy umožňující výběr úloh odlišné kognitivní náročnosti."
+      },
+      {
+        "tag": "Pasivita žáků v některých hodinách",
+        "detail": "Ve výuce učebních oborů převládá nepříliš efektivní výklad, většina žáků je během hodiny pasívní a není aktivně začleněna do procvičování.",
+        "evidence": "Ve výuce učebních oborů vzdělání převládal v jazyce českém nepříliš efektivní výklad učiva, většina žáků byla během hodiny pasívní."
+      },
+      {
+        "tag": "Chybějící shrnutí v některých hodinách",
+        "detail": "V závěru některých hodin chybí shrnutí obsahu učiva podporující další učení žáků, zejména v angličtině a češtině.",
+        "evidence": "V závěru hodiny chybělo shrnutí obsahu učiva podporující další učení žáků. Do závěrů výuky ale nebylo zařazeno shrnutí obsahu učiva."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola plánuje zavádět diferenciovanou výuku s úlohami různé náročnosti pro jednotlivé žáky?",
+      "Jaké jsou konkrétní výsledky absolventů v zaměstnání a jak škola sleduje jejich úspěchy?",
+      "Jak probíhá spolupráce s místními stavebními a dřevařskými firmami a jaké má praktické výhody pro žáky?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o stavebnictví, tesařství, truhlářství a další řemesla – praktická výuka je na výborné úrovni s moderním vybavením",
+      "Žáci, kteří se chtějí připravit na konkrétní profesi s vysokou šancí na uplatnění – škola má dlouhodobě dobré výsledky a kontakty s firmami",
+      "Žáci, kteří se chtějí účastnit soutěží a reprezentovat školu – škola má tradici úspěchů v regionálních i celostátních soutěžích"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovanou výuku přizpůsobenou jejich tempu – škola zatím málo pracuje s diferenciací podle schopností",
+      "Žáci, kteří se lépe učí aktivní participací – v některých hodinách převládá pasivní výklad bez dostatečného zapojení žáků",
+      "Žáci, kteří potřebují jasné shrnutí a strukturu učiva – v některých hodinách chybí závěrečné shrnutí podporující další učení"
+    ],
+    "plain_czech_summary": "Stavební průmyslovka ve Valašském Meziříčí je solidní školou se silným zaměřením na praktické dovednosti. Má moderně vybavené dílny, zkušené učitele a dlouhodobě dobré výsledky maturit i závěrečných zkoušek. Žáci se úspěšně umisťují v soutěžích a mají dobré vyhlídky na uplatnění. Slabší stránkou je, že výuka není vždy dostatečně přizpůsobena individuálním schopnostem žáků a někdy chybí aktivní zapojení studentů do hodin. Škola si je vědoma těchto problémů a plánuje je řešit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní a dobrá úroveň, srovnatelná nebo lepší než celorepublikový průměr",
+      "key_numbers": [
+        "207 žáků konajících maturitní zkoušku v třech letech (2020/21–2022/23)",
+        "11 neúspěšných žáků z 207 (5,3 % neprospěvavosti)",
+        "Výsledky vyrovnané u oborů Stavebnictví a Technická zařízení budov"
+      ],
+      "evidence": "Celkové výsledky maturitní zkoušky vykazovaly stabilní a dobrou úroveň, vždy srovnatelné s celorepublikovým průměrem nebo o úroveň lepší."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněna",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se dvěma výchovnými poradkyněmi a metodikem prevence",
+      "Systematická podpora formou podpůrných opatření pro 43 žáků se speciálními vzdělávacími potřebami (1.–2. stupeň)",
+      "Doučování pro žáky s potřebou podpůrných opatření",
+      "Kariérové poradenství s individuálními konzultacemi pro výběr pracovního uplatnění"
+    ],
+    "safety_climate": [
+      "Účinně nastavený systém bezpečnosti a ochrany zdraví žáků",
+      "Pravidelné informace žákům o bezpečnostních rizicích ve škole, dílnách a mimo školu",
+      "Vhodné osobní ochranné pracovní prostředky při práci v praktickém vyučování",
+      "Cílená prevence sociálně patologických jevů orientovaná na vytváření dobrých vztahů a pozitivního klimatu"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s četnými sociálními partnery – místními dřevařskými a stavebními firmami",
+      "Spolupráce s cechy a svazy v oboru",
+      "Spolupráce se základními a středními odbornými školami",
+      "Praktické vyučování na pracovištích smluvních partnerů (firem)",
+      "Setkávání se absolventy s cílem motivovat žáky pro profesní dráhu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady, čísla a citace. Slabší stránky jsou jasně identifikovány. Jediná nejasnost je absence dat o absenci žáků a chybějící detaily o některých aspektech.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje údaje o absenci žáků, což je důležitý indikátor kvality prostředí",
+      "Není jasné, jak velký je podíl žáků, kterým se dostává diferenciované výuky – údaj je pouze kvalitativní",
+      "Chybí informace o počtu a typu sankcí či problémů s chováním žáků"
+    ]
+  }
+}
+```

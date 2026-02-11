@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600007693_2025-11-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:28:23.182463+00:00",
+  "run_finished_utc": "2026-02-09T13:28:47.150793+00:00",
+  "raw_file": "GY8_600007693_2025-11-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007693_2025-11-14",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium",
+      "inspection_period": "14. 11. a 18.–19. 11. 2025",
+      "school_change_summary": "Počet žáků se zvýšil na 332 (214 v osmiletém, 118 v čtyřletém oboru). Došlo k reorganizaci vedení a částečné obměně pedagogického sboru. Založen spolek rodičů a posílena role žákovského parlamentu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky a motivace",
+          "detail": "Žáci dosahují velmi dobrých výsledků, zejména v maturitě – ve společné části všichni přihlášení žáci uspěli.",
+          "evidence": "Ve školním roce 2024/2025 hrubá neúspěšnost ve čtyřletém gymnáziu 3 %, v osmiletém 0 %."
+        },
+        {
+          "tag": "Praktické zkušenosti",
+          "detail": "Týdenní praxe maturantů a spolupráce s vysokými školami dávají žákům reálné zkušenosti z profesního a akademického prostředí.",
+          "evidence": "Ročníkové práce získaly ocenění v krajském kole a mezinárodní soutěži Eustory."
+        },
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Škola vytváří vstřícné vztahy, otevřenou komunikaci a nová relaxační místa pro studium i setkávání.",
+          "evidence": "Úrazovost na nízké úrovni, pochvaly převažují nad kázeňskými opatřeními."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená interaktivita ve výuce",
+          "detail": "Prostor pro aktivní zapojení žáků a vzájemnou komunikaci je ve výuce malý, kooperativní formy se používají ojediněle.",
+          "evidence": "Hospitační zpráva: 'prostor pro aktivní zapojení žáků a vzájemnou interakci byl většinou malý'."
+        },
+        {
+          "tag": "Slabá podpora nadaných žáků",
+          "detail": "Cílený rozvoj potenciálu nadaných žáků neprobíhá systematicky, podpora se objevuje jen ojediněle.",
+          "evidence": "Inspekční zpráva: 'u nichž neprobíhal cílený rozvoj jejich potenciálu'."
+        },
+        {
+          "tag": "Nedostatečné formativní hodnocení",
+          "detail": "Sebehodnocení a vrstevnické hodnocení se používají jen omezeně, což snižuje příležitosti žáků porozumět vlastnímu pokroku.",
+          "evidence": "Formativní hodnocení 'bylo uplatňováno jen omezeně', sebehodnocení mělo 'spíše formální podobu'."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky? Existují pro ně speciální programy nebo individuální plány?",
+        "Jaké moderní výukové metody a technologie se používají v jednotlivých předmětech?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a práce s informacemi z různých zdrojů?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními výsledky a motivací k učení – škola má vysoké nároky a podporuje studijní úspěch.",
+        "Zájemci o praktické zkušenosti a propojení teorie s praxí – týdenní praxe a spolupráce s vysokými školami.",
+        "Žáci, kterým vyhovuje tradičnější přístup k výuce s důrazem na znalosti a systematické opakování."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více interaktivní a skupinové práce – výuka je spíše frontální s omezeným prostorem pro komunikaci.",
+        "Nadaní žáci hledající cílený rozvoj svého potenciálu – podpora nadaných není systematická.",
+        "Žáci, kteří se lépe učí prostřednictvím sebehodnocení a reflexe – tyto prvky se používají jen omezeně."
+      ],
+      "plain_czech_summary": "Gymnázium v Čelákovicích je stabilní školou s velmi dobrými výsledky v maturitě a silným zaměřením na praktické zkušenosti. Žáci se zapojují do charitativních akcí a mezinárodních projektů. Silnou stránkou je péče vedení o vztahy a komfort žáků. Slabší je interaktivita ve výuce – hodiny jsou spíše frontální s malým prostorem pro skupinovou práci a kritické myšlení. Nadaní žáci nemají cílený rozvoj. Škola by měla více pracovat s moderními metodami a formativním hodnocením."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě lepší nebo srovnatelné s celostátním průměrem",
+        "key_numbers": [
+          "Společná část 2024/2025: čtyřleté gymnázium 3 % neúspěšnosti, osmiletý obor 0 %",
+          "Profilová část 2024/2025: 2 neúspěšní v čtyřletém, 0 v osmiletém",
+          "Posledních 5 let: všichni přihlášení žáci ve společné části uspěli (2021/2022–2023/2024)"
+        ],
+        "evidence": "Výsledky jsou v delším časovém horizontu srovnatelné nebo lepší než průměr v ČR v dané skupině oborů."
+      },
+      "absence": {
+        "trend": "Zvýšená absence v horních ročnících",
+        "key_numbers": [
+          "Průměrná absence 2024/2025: přibližně 145 hodin na žáka",
+          "Osmiletý obor: mírně nižší absence než čtyřletý",
+          "Vyšší absence zejména ve vyšších ročnících obou oborů"
+        ],
+        "evidence": "Na výši absence se podílí i žáci vzdělávající se podle IVP, včetně těch dlouhodobě v zahraničí."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence (obě se specializačním studiem)",
+        "Dvě školní asistentky (jedna v roli školní psycholožky bez kvalifikace)",
+        "Kariérový poradce zaměřený na volbu seminářů a pomaturitní cestu"
+      ],
+      "safety_climate": [
+        "Úrazovost udržována na nízké úrovni",
+        "Pochvaly převažují nad kázeňskými opatřeními",
+        "Jednotná a důsledná aplikace pravidel (zejména pro mobilní telefony)"
+      ],
+      "partnerships_practice": [
+        "Týdenní praxe maturantů v projektu se partnerskými gymnázii",
+        "Spolupráce s vysokými školami v přírodovědných a technických oborech",
+        "Výměnné pobyty s partnerskou školou v Maďarsku",
+        "Program Mezinárodní ceny vévody z Edinburghu (DofE) v regionální spolupráci"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Slabší stránky jsou jasně identifikovány. Některé pasáže jsou však technicky náročnější (např. popis hospitační činnosti).",
+      "uncertainty_notes": [
+        "Počet nekvalifikovaných učitelů (9 z 35) – není jasné, zda se jedná o dlouhodobý trend nebo přechodný stav.",
+        "Absence údajů o konkrétních počtech žáků s vyznamenáním ve čtyřletém oboru – uvedeno jen 'zhruba pětina'.",
+        "Detaily o kvalitě práce předmětových komisí jsou popsány jako 'rozdílná míra kooperace' bez konkrétních příkladů."
+      ]
+    }
+  }
+}

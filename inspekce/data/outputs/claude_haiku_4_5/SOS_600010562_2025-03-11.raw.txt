@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOS_600010562_2025-03-11",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola stavební s maturitní zkouškou, denní forma",
+    "inspection_period": "11. března 2025 až 13. března 2025",
+    "school_change_summary": "Škola se vyvíjí pozitivně. Zájem o obory kontinuálně roste (za 6 let o více než 25 %), probíhá modernizace softwaru a postupná rekonstrukce. Vedení je stabilní a funkční, pedagogický sbor převážně kvalifikovaný."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Praktické vyučování dosahuje velmi vysoké úrovně s účinným propojením na odborné teoretické vzdělávání.",
+        "evidence": "Výuka praktického charakteru se vyznačuje vysokou tvůrčí činností s individuálním přístupem a zpětnou vazbou."
+      },
+      {
+        "tag": "Sociální partneři a uplatnění",
+        "detail": "Široká síť stavebních firem a institucí podporuje osobnostní rozvoj a nabízí stipendia i pracovní uplatnění.",
+        "evidence": "Česká komora inženýrů, Svaz stavebních inženýrů a zaměstnavatelé nabízejí prospěchová stipendia a pracovní místa."
+      },
+      {
+        "tag": "Úspěchy žáků",
+        "detail": "Žáci dosahují výrazných úspěchů v soutěžích a sportu, přibližně 60 % pokračuje na vysokých školách.",
+        "evidence": "Vítězství v celostátních soutěžích, 6. místo v republikovém finále atletiky, úspěchy v soutěžích stavebních firem."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivita žáků v teoretické výuce",
+        "detail": "V některých hodinách je aktivita žáků nízká, převažuje frontální výuka s diktovaným zápisem.",
+        "evidence": "Někteří žáci pouze pasivně přejímali poznatky, chyběla diferenciace úkolů podle schopností."
+      },
+      {
+        "tag": "Slabá příprava na komunikaci",
+        "detail": "Žáci nemají dostatek příležitostí na samostatné verbální výstupy a prezentace.",
+        "evidence": "Jejich samostatné verbální výstupy, např. referáty a prezentace, se nevyskytly."
+      },
+      {
+        "tag": "Nedostatečné vzdělávání učitelů v moderních metodách",
+        "detail": "Plán vzdělávání se zaměřuje více na odbornost než na nové vyučovací metody a formy práce.",
+        "evidence": "Vzdělávání je více zaměřováno na zvyšování odbornosti a méně na nové metody a formy práce se žáky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve výuce využívají skupinové a kooperační formy práce? Mohu vidět příklad?",
+      "Jaké jsou možnosti mezinárodní spolupráce a jazykových pobytů pro žáky?",
+      "Jak se škola připravuje na to, aby žáci lépe komunikovali a prezentovali své nápady?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o stavebnictví, architekturu a geodézii s dobrými studijními předpoklady",
+      "Prakticky zaměření studenti, kteří se chtějí učit přímo v praxi a na reálných projektech",
+      "Talentovaní žáci zajímající se o soutěže a sportovní aktivity"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a skupinové formy výuky, mohou být v některých předmětech pasivní",
+      "Studenti se slabšími studijními předpoklady (škola přijímá převážně žáky s dobrými předpoklady)",
+      "Žáci se zájmem o mezinárodní zkušenosti (škola se teprve začíná zaměřovat na mezinárodní spolupráci)"
+    ],
+    "plain_czech_summary": "SPŠ stavební v Liberci je stabilní a rozvíjející se škola s rostoucím zájmem uchazečů. Silnou stránkou je propojení teoretické výuky s praxí a spolupráce se stavebními firmami. Vedení je funkční, učitelé kvalifikovaní. Slabinou je, že v některých teoretických hodinách jsou žáci pasivní a chybí jim příležitosti na prezentace a komunikaci. Škola by měla více investovat do moderních vyučovacích metod. Vhodná pro prakticky zaměřené studenty se zájmem o stavebnictví."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní - zvýšení úspěšnosti od poslední inspekce",
+      "key_numbers": [
+        "Jarní termín 2022/2023: 67,6 % úspěšnosti",
+        "Jarní termín 2023/2024: 64,5 % úspěšnosti",
+        "Po opravných termínech: 96 % úspěšnosti"
+      ],
+      "evidence": "Od poslední inspekční činnosti došlo ke zvýšení úspěšnosti žáků u maturitních zkoušek. S výjimkou matematiky jsou v celorepublikovém srovnání průměrní."
+    },
+    "absence": {
+      "trend": "Pozitivní - zlepšení",
+      "key_numbers": [
+        "2022/2023: 133,81 hodin na žáka (3,23 neomluvené)",
+        "2023/2024: 119,4 hodin na žáka (2,03 neomluvené)",
+        "V rámci srovnatelných škol průměrné hodnoty"
+      ],
+      "evidence": "Absence žáků ve výuce dosahuje v rámci srovnatelných škol průměrných hodnot s pozitivním trendem zlepšování."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovným poradcem a kariérovou poradkyní",
+      "Metodická podpora pedagogům a zákonným zástupcům",
+      "Individuální konzultace pro žáky nedosahující očekávaných výstupů",
+      "Adaptační kurzy v prvním ročníku a preventivní programy"
+    ],
+    "safety_climate": [
+      "Podmínky bezpečnosti a ochrany zdraví stanoveny ve školním řádu a provozních řádech",
+      "Žáci seznamováni s pravidly na začátku roku a průběžně",
+      "Úrazy evidovány a odškodňovány v rámci legislativních požadavků",
+      "Vstřícná a partnerská atmosféra s respektem k dodržování pravidel"
+    ],
+    "partnerships_practice": [
+      "Česká komora autorizovaných inženýrů a techniků ve výstavbě",
+      "Český svaz stavebních inženýrů",
+      "Svaz podnikatelů ve stavebnictví",
+      "Úzká spolupráce se zaměstnavateli nabízejícími uplatnění a stipendia",
+      "Vysoké učení technické v Brně (soutěž DEKTALENT)",
+      "Policie ČR a Komunitní centrum TULIPAN (prevence)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a věcná, obsahuje konkrétní čísla a citace. Některé pasáže jsou však složitější a úřednického stylu, což mírně snižuje srozumitelnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu učitelů bez kvalifikace - pouze zmínka, že si ji doplňují",
+      "Chybí konkrétní příklady moderních metod, které by škola měla zavádět",
+      "Není jasné, jaké konkrétní mezinárodní programy by měla škola zvažovat"
+    ]
+  }
+}
+```

@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600013243_2023-09-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:38:40.324798+00:00",
+  "run_finished_utc": "2026-02-09T16:39:05.381624+00:00",
+  "raw_file": "LYC_600013243_2023-09-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600013243_2023-09-19",
+    "school_profile": {
+      "school_type": "Obchodní akademie a Střední zdravotnická škola (3 čtyřleté obory: Praktická sestra, Obchodní akademie, Ekonomické lyceum)",
+      "inspection_period": "19. 9. 2023 – 22. 9. 2023",
+      "school_change_summary": "Od inspekce v 2016 vzrostl počet žáků o 26 %. Došlo ke změně ve vedení školy. Zefektivnil se informační systém. Výsledky u maturity se mírně zlepšily, zejména u Ekonomického lycea."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické zkušenosti a partnerství",
+          "detail": "Škola má dlouhodobou spolupráci se zdravotnickými zařízeními a dalšími partnery, což žákům umožňuje kvalitní odbornou praxi a uplatnění po škole.",
+          "evidence": "Spolupráce se smluvními partnery umožňuje realizaci praktického vyučování a nabízí absolventům pracovní uplatnění v oboru."
+        },
+        {
+          "tag": "Žákovská portfolia a osobnostní rozvoj",
+          "detail": "Všichni žáci vedou digitální portfolia, která mapují jejich cestu vzděláváním a podporují jejich sebereflezi a osobnostní růst.",
+          "evidence": "Škola byla oceněna hlavní cenou Národního pedagogického institutu za zavedení žákovských portfolií."
+        },
+        {
+          "tag": "Stabilní výsledky a podpora slabších žáků",
+          "detail": "Počet neprospívajících žáků je minimální, škola nabízí doučování a konzultace pro žáky v riziku neúspěchu.",
+          "evidence": "Vzdělávací výsledky za poslední tři roky jsou stabilní, realizuje se doučování v rámci Národního plánu obnovy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výuka cizích jazyků",
+          "detail": "V angličtině chybí dostatečné zapojení žáků do komunikace, aktivity podporující vzájemnou komunikaci jsou zařazovány méně často.",
+          "evidence": "V anglickém jazyce chybělo výraznější zapojení žáků, které by podpořilo jejich samostatné sebevědomé vyjadřování."
+        },
+        {
+          "tag": "Nedostatečná diferenciace ve výuce",
+          "detail": "Učitelé obvykle zadávají všem žákům stejné úlohy se stejnou náročností bez ohledu na jejich individuální schopnosti.",
+          "evidence": "Diferenciace výuky s ohledem na individuální potřeby nebyla většinou využita, všichni obvykle plnili shodné úlohy."
+        },
+        {
+          "tag": "Problémy u maturity v oboru Praktická sestra",
+          "detail": "Žáci tohoto oboru mají největší problémy při maturitní zkoušce, zejména v jarním termínu s průměrnou neúspěšností 13 %.",
+          "evidence": "Průměrná hrubá neúspěšnost žáků oboru Praktická sestra u maturitní zkoušky činila 13 %."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s angličtinou? Jaké jsou možnosti doučování?",
+        "Jak se liší příprava na maturitu v jednotlivých oborech, zvláště u Praktické sestry, kde je vyšší neúspěšnost?",
+        "Jaké jsou konkrétní příklady, jak se žákovská portfolia používají v praxi a jak pomáhají při přípravě na budoucnost?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí praktické vzdělání s reálným propojením na trh práce – škola má silné vazby se zaměstnavateli.",
+        "Žáci se zájmem o zdravotnické obory – kvalitní praktická příprava ve zdravotnických zařízeních.",
+        "Žáci, kteří potřebují individuální podporu – škola má školní psycholožku a poradenské služby."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabší angličtinou – výuka není dostatečně interaktivní a zaměřená na komunikaci.",
+        "Žáci oboru Praktická sestra – vyšší neúspěšnost u maturity, zvláště v jarním termínu.",
+        "Žáci, kteří potřebují individualizovanou výuku – učitelé často nepoužívají diferenciaci a všichni plní stejné úkoly."
+      ],
+      "plain_czech_summary": "Obchodní akademie v Blansku je stabilní střední škola s rostoucím počtem žáků. Silnými stránkami jsou praktické zkušenosti díky partnerství se zdravotnickými zařízeními, inovativní žákovská portfolia a podpora slabších žáků. Výsledky u maturity se zlepšují, zvláště u Ekonomického lycea. Slabší je výuka angličtiny a individualizace výuky – učitelé často nerespektují různé schopnosti žáků. Obor Praktická sestra má vyšší neúspěšnost u maturity. Škola je vhodná pro žáky, kteří chtějí praktické vzdělání s podporou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Postupné zlepšování, zejména u Ekonomického lycea",
+        "key_numbers": [
+          "Ekonomické lyceum: nulová hrubá neúspěšnost v posledních třech letech",
+          "Praktická sestra: průměrná hrubá neúspěšnost 13 %",
+          "Poslední tři roky: výsledky na průměrné nebo lepší úrovni než celorepublikový průměr"
+        ],
+        "evidence": "Výsledky žáků při ukončování maturitní zkouškou se postupně zlepšovaly. K výraznému zlepšení došlo u Ekonomického lycea, kde všichni žáci úspěšně ukončili vzdělání."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se absence věnuje minimálně, není uvedena konkrétní data."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s psycholožkou",
+        "Doučování v rámci Národního plánu obnovy",
+        "Konzultace s učiteli",
+        "Kariérové poradenství",
+        "Podpora žáků se speciálními vzdělávacími potřebami (7 žáků)"
+      ],
+      "safety_climate": [
+        "Bezbariérová budova se bezpečným propojením s jídelnou základní školy",
+        "Taktické cvičení Amok – útok aktivního střelce v součinnosti se záchranným systémem",
+        "Školní preventivní program",
+        "Krizový plán",
+        "Výchovná komise řešící problémové situace"
+      ],
+      "partnerships_practice": [
+        "Zdravotnická zařízení – praktická výuka oboru Praktická sestra",
+        "Projekt Erasmus+ – zahraniční odborná praxe",
+        "Senior centrum Blansko – dobrovolnická činnost žáků",
+        "Jihomoravské centrum pro mezinárodní mobilitu (JCMM)",
+        "Další střední školy – sdílení zkušeností se žákovskými portfolii",
+        "Základní školy v regionu – příprava na přijímací zkoušky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Slabší je pouze v oblasti absence, kde chybí konkrétní data. Struktura je logická a pro rodiče srozumitelná.",
+      "uncertainty_notes": [
+        "Absence – zpráva neobsahuje konkrétní údaje o absenci žáků, není jasné, zda je to problém či ne.",
+        "Počet žáků s odlišným mateřským jazykem – uvedeno jen 4 žáci, není jasné, jak se s nimi pracuje.",
+        "Detaily o neúspěšnosti v angličtině – není jasné, jak velký je to problém v procentech či počtech žáků."
+      ]
+    }
+  }
+}

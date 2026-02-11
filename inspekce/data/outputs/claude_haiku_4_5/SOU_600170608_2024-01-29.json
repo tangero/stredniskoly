@@ -1,0 +1,117 @@
+{
+  "report_id": "SOU_600170608_2024-01-29",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:28:15.656996+00:00",
+  "run_finished_utc": "2026-02-09T16:28:45.694621+00:00",
+  "raw_file": "SOU_600170608_2024-01-29.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600170608_2024-01-29",
+    "school_profile": {
+      "school_type": "Střední škola strojní, stavební a dopravní (SOU) s 14 obory vzdělání v denní formě",
+      "inspection_period": "29. 1. 2024 – 1. 2. 2024",
+      "school_change_summary": "Od poslední inspekce (2017) došlo k výrazným změnám: nový ředitel od 2022, změna názvu školy, zrušení domova mládeže a jídelny, nové obory (Klempíř), zrušené obory (Manipulant, Stavební práce), nové centrum odborného vzdělávání, modernizace prostor a vybavení, rostoucí zájem uchazečů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělávání",
+          "detail": "Odborný výcvik probíhá ve školních dílnách i na reálných pracovištích partnerských firem s důrazem na bezpečnost a propojení teorie s praxí.",
+          "evidence": "Žáci se učí na moderním vybavení, respektují pravidla bezpečnosti, získávají praktické dovednosti pod vedením zkušených učitelů."
+        },
+        {
+          "tag": "Angličtina",
+          "detail": "Výuka anglického jazyka je metodicky zdařilá a přináší nadprůměrné výsledky – všichni maturanti v posledních dvou letech uspěli.",
+          "evidence": "Hodiny vedeny v cizím jazyce, rozmanité formy výuky, důraz na praktické využití, všichni žáci čtyřletých oborů uspěli v maturitě."
+        },
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola má silnou síť partnerů z řad odborných firem, cechů a komor, kteří podporují výuku a nabízejí reálné pracovní místa.",
+          "evidence": "Partneři zajišťují materiál, odborníky, soutěže, exkurze a část praktického vyučování přímo na pracovištích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence",
+          "detail": "Žáci průměrně zameškaní 177 hodin za rok, což negativně ovlivňuje jejich výsledky a učení.",
+          "evidence": "Přijatá opatření jsou dosud neúčinná; v roce 2022/23 pokles o 23 hodin, ale stav zůstává problematický."
+        },
+        {
+          "tag": "Slabé výsledky v češtině",
+          "detail": "Neúspěšnost v maturitě z češtiny je výrazně nad průměrem – 10,2 % u čtyřletých oborů (průměr ČR 7,4 %), u dopravy 21 % (průměr 3,7 %).",
+          "evidence": "Nízké vyjadřovací schopnosti žáků, chybí vedení k argumentaci a čtenářské gramotnosti."
+        },
+        {
+          "tag": "Pasivní výuka teorie",
+          "detail": "V teoretických předmětech převažuje frontální výuka s jednosměrným přenosem informací, žáci jsou pasivní.",
+          "evidence": "Chybí diferenciace, skupinová práce, interaktivní metody; žáci jsou převážně pasivními příjemci informací."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké má plány na její snížení?",
+        "Jaké konkrétní kroky podniká škola ke zlepšení výsledků v češtině a matematice?",
+        "Jak se škola snaží aktivizovat žáky v teoretické výuce a jaké moderní metody používá?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a ruční práci – škola má vynikající vybavení dílen a zkušené instruktory.",
+        "Budoucí řemeslníci a technici – silné partnerství s firmami zajišťuje reálné pracovní uplatnění (98 % absolventů).",
+        "Studenti angličtiny – výuka je metodicky zdařilá s nadprůměrnými výsledky."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absencím – vysoká absence je dlouhodobý problém školy a opatření nejsou účinná.",
+        "Studenti orientovaní na teoretické předměty – výuka je tradičně frontální s málo aktivizujícími metodami.",
+        "Žáci potřebující podporu v češtině – výsledky v maturitě z češtiny jsou výrazně podprůměrné."
+      ],
+      "plain_czech_summary": "Jde o velkou technickou střední školu s 742 žáky v Liberci. Silné stránky: praktické vzdělávání na vysoké úrovni, angličtina, spolupráce s firmami, absolventi se dobře uplatňují. Slabiny: vysoká absence žáků (177 hodin ročně), slabé výsledky v češtině a matematice, pasivní teoretická výuka. Škola se rozvíjí pod novým vedením, modernizuje se, ale potřebuje zlepšit aktivizaci žáků a řešit absenci."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírné zlepšení, ale stále podprůměrné",
+        "key_numbers": [
+          "Celková neúspěšnost 46 % (2022/23), meziročně pokles z 50 %",
+          "Angličtina: 100 % úspěšnost v posledních dvou letech",
+          "Čeština: 10,2 % neúspěšnost (ČR 7,4 %), doprava 21 % (ČR 3,7 %)"
+        ],
+        "evidence": "Závěrečná zkouška: 82 % úspěšnosti v řádném termínu, po opravách 92 %. Matematiku volí jen jednotlivci (6 ze 179 žáků za 2 roky)."
+      },
+      "absence": {
+        "trend": "Vysoká, ale mírně klesající",
+        "key_numbers": [
+          "Průměr 177 zameškaných hodin na žáka za rok",
+          "Pokles o 23 hodin v roce 2022/23",
+          "Negativně ovlivňuje vzdělávací výsledky"
+        ],
+        "evidence": "Přijatá opatření jsou dosud neúčinná. Absence je dlouhodobě vysoká a představuje významný problém."
+      },
+      "support_services": [
+        "Výchovní poradci a metodici prevence na obou pracovištích teoretické výuky",
+        "Nepovinná výuka českého jazyka pro žáky s odlišným mateřským jazykem",
+        "Doučování pro žáky s rizikem neúspěchu (motivace je však nízká)",
+        "Fond na krytí finančních potřeb sociálně slabých žáků"
+      ],
+      "safety_climate": [
+        "Elektronické zabezpečení přístupu do budov proti nežádoucím osobám",
+        "Pravidelné školení žáků a zaměstnanců v bezpečnosti a ochraně zdraví",
+        "Při inspekci nebyla identifikována zjevná bezpečnostní rizika",
+        "Důsledné dodržování pravidel bezpečnosti práce v dílnách"
+      ],
+      "partnerships_practice": [
+        "Členství v Cechu topenářů a instalatérů ČR a Cechu obkladačů ČR",
+        "Centrum odborného vzdělávání Libereckého kraje od 2023/24",
+        "Svářečská škola a školící středisko svařování",
+        "Realizace praktického vyučování na reálných pracovištích partnerských firem",
+        "Partneři zajišťují odborníky na jednotné závěrečné zkoušky a soutěže"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, obsahuje konkrétní čísla a fakta. Slabší je v tom, že některé pasáže jsou příliš odborné a detailní pro běžného rodiče, ale hlavní informace jsou jasné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní plány školy na řešení absence – není jasné, jaká opatření budou přijata.",
+        "Chybí informace o tom, jak se škola snaží zlepšit výuku teoretických předmětů – nejsou uvedeny konkrétní kroky.",
+        "Není jasné, zda se výsledky v češtině a matematice zlepšují nebo zhoršují – trend není explicitně uveden."
+      ]
+    }
+  }
+}

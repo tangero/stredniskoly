@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600006689_2025-10-16",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:30:47.185935+00:00",
+  "run_finished_utc": "2026-02-09T13:31:18.485076+00:00",
+  "raw_file": "LYC_600006689_2025-10-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600006689_2025-10-16",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola a Střední zemědělská škola",
+      "inspection_period": "16.–17. 10. 2025, 20.–21. 10. 2025",
+      "school_change_summary": "Od inspekce v 2019 vzrostl počet žáků o třetinu na 562 (94% naplněnost). Rozšířena nabídka o obor Lyceum a program Veterinární asistent. Modernizovány prostory, zlepšeny materiální podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Škola systematicky rozvíjí cizojazyčné kompetence v odborném vzdělávání, což zvyšuje uplatnitelnost absolventů na trhu práce.",
+          "evidence": "Výuka vybraných předmětů v anglickině v oborech Přírodovědné lyceum a Veterinářství; zapojení do mezinárodních programů."
+        },
+        {
+          "tag": "Praktické dovednosti",
+          "detail": "Dlouhodobá spolupráce s profesními partnery umožňuje systematický rozvoj praktických dovedností a reálné studentské firmy.",
+          "evidence": "Funkční systém spolupráce pro odborné praxe; instruktoři zapojeni do hodnocení žáků; nácvik na školním statku a u partnerů."
+        },
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Výsledky v maturitní zkoušce se postupně zlepšují a jsou srovnatelné nebo lepší než celorepublikový průměr.",
+          "evidence": "Ve školním roce 2024/2025 v oborech Přírodovědné lyceum, Agropodnikání a Zahradnictví lepší než průměr ČR."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence v nematuritních oborech",
+          "detail": "Žáci nematuritních oborů mají vyšší absenci (cca 120 hodin na žáka) než maturitní obory (cca 95 hodin).",
+          "evidence": "Absence v nematuritních oborech je cca 120 hodin na žáka za školní rok 2024/2025."
+        },
+        {
+          "tag": "Nižší úspěšnost v nematuritních oborech",
+          "detail": "V nematuritních oborech je nižší podíl žáků s vyznamenáním (cca 4 %) a vyšší podíl neprospívajících (cca 15 %).",
+          "evidence": "Nejhůře si vedou žáci oboru Zahradník; v oborech Agropodnikání neprospělo cca 15 % žáků."
+        },
+        {
+          "tag": "Vysoká úrazovost",
+          "detail": "Škola vykazuje vyšší míru úrazovosti než republikový průměr kvůli praktickému vyučování.",
+          "evidence": "Vedení školy vyhodnocuje příčiny úrazů a přijímá opatření, ale riziko zůstává vyšší než průměr."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola podporuje žáky nematuritních oborů, kteří mají vyšší absenci a nižší úspěšnost?",
+        "Jaká konkrétní opatření přijímáte k bezpečnosti při praktickém vyučování, když je úrazovost vyšší než průměr?",
+        "Jak funguje psychologická podpora žáků, když školní psycholožka dlouhodobě chybí?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o zemědělství, zahradnictví a chov zvířat, kteří chtějí kombinovat teorii s praxí na školním statku.",
+        "Studenti zaměření na přírodní vědy a angličtinu – obor Přírodovědné lyceum má nejlepší výsledky a nabízí badatelské projekty.",
+        "Uchazeči, kteří chtějí získat praktické dovednosti a mezinárodní certifikáty v angličtině a IT."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s nižší motivací nebo tendencí k absenci – nematuritní obory mají vyšší absenci a nižší úspěšnost.",
+        "Studenti s psychickými obtížemi – psychologická podpora je omezená kvůli dlouhodobé nepřítomnosti školní psycholožky.",
+        "Žáci s jazykovou bariérou – škola má 16 žáků s odlišným mateřským jazykem a sledování jejich potřeb není dostatečně systematické."
+      ],
+      "plain_czech_summary": "Škola je dobře vedená, modernizuje se a nabízí kvalitní praktické vzdělání v zemědělství a přírodních vědách. Výsledky maturit se zlepšují a jsou na úrovni průměru. Silnou stránkou je propojení teorie s praxí a jazykové vzdělání. Pozor na vyšší absenci a nižší úspěšnost v nematuritních oborech, vyšší úrazovost a omezenou psychologickou podporu. Ideální pro motivované žáky se zájmem o zemědělství a přírodní vědy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – výsledky se postupně zlepšují",
+        "key_numbers": [
+          "Školní rok 2024/2025: v oborech Přírodovědné lyceum, Agropodnikání a Zahradnictví lepší než celorepublikový průměr",
+          "Přírodovědné lyceum: téměř třetina žáků s vyznamenáním, neprospěl jen jednotlivec",
+          "Cca 80 % žáků prvního ročníku úspěšně ukončí vzdělávání v normální době"
+        ],
+        "evidence": "Ve školním roce 2022/2023 byla hrubá neúspěšnost horší než průměr, ve 2024/2025 se zlepšila. V profilové části MZ dosáhli žáci ve všech oborech výsledků lepších nebo srovnatelných s celorepublikovým průměrem."
+      },
+      "absence": {
+        "trend": "Stabilní, ale rozdíly mezi obory",
+        "key_numbers": [
+          "Maturitní obory: cca 95 hodin na žáka za školní rok 2024/2025",
+          "Nematuritní obory: cca 120 hodin na žáka za školní rok 2024/2025",
+          "Neomluvená absence: minimální, vyskytuje se jen výjimečně"
+        ],
+        "evidence": "Absence se meziročně významně nezměnila. Pozitivní je minimální neomluvená absence."
+      },
+      "support_services": [
+        "Výchovný poradce, dvě školní metodičky prevence a speciální pedagožka",
+        "Koordinátorka pro nadané žáky – systematický rozvoj nadaných prostřednictvím ročníkových prací a mezinárodních programů",
+        "Elektronická schránka důvěry aktivně využívaná žáky; doučování a individuální konzultace pro žáky v neúspěchu",
+        "Omezená dostupnost psychologické podpory – školní psycholožka dlouhodobě nepřítomna"
+      ],
+      "safety_climate": [
+        "Škola dbá na bezpečné prostředí, pravidelně poučuje žáky o bezpečnosti a ochraně zdraví",
+        "Vyšší míra úrazovosti než republikový průměr kvůli praktickému vyučování – vedení vyhodnocuje příčiny a přijímá opatření",
+        "Preventivní činnost zaměřena na duševní zdraví, pozitivní vztahy a bezpečné klima; pravidelná dotazníková šetření",
+        "Adaptační program pro prvňáky, projektové akce, činnost výchovné komise; motivační systém výchovných opatření"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s četnými profesními a sociálními partnery umožňuje systematický rozvoj praktických dovedností",
+        "Funkční systém spolupráce pro realizaci odborných praxí; instruktoři zapojeni do hodnocení žáků",
+        "Zapojení do zahraniční mobility a mezinárodních programů; vedení reálných studentských firem",
+        "Spolupráce s vysokými školami a základními školami; organizace vzdělávacích akcí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní údaje. Některé pasáže jsou však technicky náročnější (např. popis kritérií inspekce), ale pro rodiče jsou nejdůležitější informace jasně odděleny a srozumitelné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počet úrazů ani jejich závažnost – pouze uvádí, že je vyšší než průměr.",
+        "Není jasné, jak dlouho školní psycholožka chybí a jaký je konkrétní plán na její náhradu.",
+        "Údaje o žácích s odlišným mateřským jazykem (16 žáků) nejsou podrobněji analyzovány – není jasné, v kterých oborech jsou a jaké mají konkrétní potřeby."
+      ]
+    }
+  }
+}

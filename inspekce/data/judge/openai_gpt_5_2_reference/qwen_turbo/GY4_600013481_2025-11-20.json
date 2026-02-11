@@ -1,0 +1,32 @@
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T12:06:37.299005+00:00",
+  "run_finished_utc": "2026-02-09T12:07:03.865223+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY4_600013481_2025-11-20\",\n  \"faithfulness_score_1_5\": 3,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 3,\n  \"czech_clarity_score_1_5\": 2,\n  \"unsupported_claims_count\": 4,\n  \"critical_issues\": [\n    \"Nepřesné vymezení období inspekce: zdroj uvádí 20.–21. 11. 2025 a 24.–25. 11. 2025, kandidát uvádí souvislé „2025-11-20 až 2025-11-25“.\",\n    \"Riziko „neefektivní spolupráce výchovného poradce“ není ve zdroji takto formulováno; zdroj mluví o kumulaci funkcí u zástupce a o neoptimálně nastavené práci s SVP/nadanými a činnosti asistentů, ne o „spolupráci s výchovným poradcem“ jako hlavním problémem.\",\n    \"Tvrzení, že opatrní by měli být žáci „kteří potřebují zvýšenou podporu v matematických a jazykových oborech“, nemá oporu; naopak zdroj popisuje velmi dobrou úroveň žáků v cizích jazycích a dobře připravenou výuku matematiky.\",\n    \"Hodnocení „absence: trend nízká“ je hodnotící závěr bez opory ve zdroji (zdroj uvádí číslo 120 hodin/žák a že neomluvenou absenci řeší zřídka, ale neoznačuje to explicitně jako „nízké“).\",\n    \"Čeština obsahuje více chyb a neobratností (např. „účastníctví“, „Je kritéria“, „nadané dětství“), což snižuje srozumitelnost pro rodiče.\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené klíčové silné stránky ze závěrů: Erasmus+ (jazykové vzdělávání a stínování), velmi dobré výsledky u maturity (včetně >55 % vyznamenání), a úspěchy v soutěžích/olympiádách.\",\n    \"Správně popsaný problém nesjednocených kritérií hodnocení (jen část učitelů má jednotné postupy v komisích).\",\n    \"Správně uvedené oslabení v práci s nadanými žáky v běžné výuce (chybějí úkoly s odlišnou mírou náročnosti).\",\n    \"Uvádí konkrétní číselné údaje ze zdroje (vyznamenání, absence 120 hodin, téměř nulová hrubá neúspěšnost u maturity).\"\n  ],\n  \"one_line_verdict\": \"Obsahově často vychází ze zdroje a rodičům dává základní obrázek o silných stránkách i části rizik, ale má několik nepodložených/zkreslených tvrzení a slabší jazykovou kvalitu.\"\n}",
+  "judge_output": {
+    "report_id": "GY4_600013481_2025-11-20",
+    "faithfulness_score_1_5": 3,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 3,
+    "czech_clarity_score_1_5": 2,
+    "unsupported_claims_count": 4,
+    "critical_issues": [
+      "Nepřesné vymezení období inspekce: zdroj uvádí 20.–21. 11. 2025 a 24.–25. 11. 2025, kandidát uvádí souvislé „2025-11-20 až 2025-11-25“.",
+      "Riziko „neefektivní spolupráce výchovného poradce“ není ve zdroji takto formulováno; zdroj mluví o kumulaci funkcí u zástupce a o neoptimálně nastavené práci s SVP/nadanými a činnosti asistentů, ne o „spolupráci s výchovným poradcem“ jako hlavním problémem.",
+      "Tvrzení, že opatrní by měli být žáci „kteří potřebují zvýšenou podporu v matematických a jazykových oborech“, nemá oporu; naopak zdroj popisuje velmi dobrou úroveň žáků v cizích jazycích a dobře připravenou výuku matematiky.",
+      "Hodnocení „absence: trend nízká“ je hodnotící závěr bez opory ve zdroji (zdroj uvádí číslo 120 hodin/žák a že neomluvenou absenci řeší zřídka, ale neoznačuje to explicitně jako „nízké“).",
+      "Čeština obsahuje více chyb a neobratností (např. „účastníctví“, „Je kritéria“, „nadané dětství“), což snižuje srozumitelnost pro rodiče."
+    ],
+    "best_points": [
+      "Správně zachycené klíčové silné stránky ze závěrů: Erasmus+ (jazykové vzdělávání a stínování), velmi dobré výsledky u maturity (včetně >55 % vyznamenání), a úspěchy v soutěžích/olympiádách.",
+      "Správně popsaný problém nesjednocených kritérií hodnocení (jen část učitelů má jednotné postupy v komisích).",
+      "Správně uvedené oslabení v práci s nadanými žáky v běžné výuce (chybějí úkoly s odlišnou mírou náročnosti).",
+      "Uvádí konkrétní číselné údaje ze zdroje (vyznamenání, absence 120 hodin, téměř nulová hrubá neúspěšnost u maturity)."
+    ],
+    "one_line_verdict": "Obsahově často vychází ze zdroje a rodičům dává základní obrázek o silných stránkách i části rizik, ale má několik nepodložených/zkreslených tvrzení a slabší jazykovou kvalitu."
+  }
+}

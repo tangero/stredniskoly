@@ -1,0 +1,116 @@
+{
+  "report_id": "GY4_600005542_2024-10-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:13:15.088034+00:00",
+  "run_finished_utc": "2026-02-09T16:13:39.182106+00:00",
+  "raw_file": "GY4_600005542_2024-10-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600005542_2024-10-03",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola a gymnázium s obory Informační technologie a Gymnázium",
+      "inspection_period": "3. 10. 2024 až 14. 10. 2024",
+      "school_change_summary": "Od inspekce v 2019 došlo k obměně oborů (Technické lyceum nahrazeno Gymnáziem), zvýšení počtu žáků na 698 v 21 třídách, rozšíření pedagogického sboru na 83 učitelů a zapojení do pilotního ověřování kombinovaného vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "Všichni přihlášení žáci uspěli u maturitní zkoušky, třetina s vyznamenáním, v angličtině nadprůměrné výsledky.",
+          "evidence": "\"všichni přihlášení žáci k maturitní zkoušce uspěli, přičemž třetina žáků prospěla s vyznamenáním\""
+        },
+        {
+          "tag": "Moderní vybavení a laboratoře",
+          "detail": "Špičkové technické zázemí včetně laboratoří VR, robotiky, kybernetické bezpečnosti, AI a dalších oborů.",
+          "evidence": "\"laboratoře virtuální a rozšířené reality, internetu věcí, robotiky, kybernetické bezpečnosti, multimédií, 3D tisku, televizní studio\""
+        },
+        {
+          "tag": "Aktivní zapojení žáků do chodu školy",
+          "detail": "Žáci se podílejí na rozhodování, vedou pracovní skupiny, pořádají akce a workshopy.",
+          "evidence": "\"žáci se např. společně s vedením školy a pedagogy účastní kulatých stolů, vedou různé pracovní skupiny, realizují osvětové besedy\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší řízení pedagogického procesu",
+          "detail": "Kontrolní mechanismy nejsou dostatečně účinné, kvalita výuky se liší, některé nedostatky se opakují.",
+          "evidence": "\"do systému řízení se nepodařilo zavést zcela účinné kontrolní mechanismy systematicky a objektivně sledující a hodnotící průběh\""
+        },
+        {
+          "tag": "Vysoký podíl nekvalifikovaných učitelů",
+          "detail": "25 pedagogů nesplňuje předpoklady odborné kvalifikace, 45 % učitelů má méně než 2 roky zkušeností.",
+          "evidence": "\"Předpoklady odborné kvalifikace nesplňovalo 25 pedagogů\", \"45 % působilo v organizaci na pozici učitele méně než 2 roky\""
+        },
+        {
+          "tag": "Nejednotná kvalita výuky",
+          "detail": "V části hodin chybí individualizace, diferenciace, formativní zpětná vazba a didaktické závěry.",
+          "evidence": "\"nevyužití diferenciace vzdělávacího obsahu, formativní zpětné vazby a ověření míry dosažení vzdělávacích cílů v části vyučovacích hodin\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola zajišťuje metodickou podporu začínajícím a nekvalifikovaným učitelům?",
+        "Jaké jsou konkrétní plány na zlepšení řízení pedagogických procesů a kontroly kvality výuky?",
+        "Jak se škola vypořádává s vysokým počtem žáků ve třídách a zajišťuje individuální péči?"
+      ],
+      "who_school_fits": [
+        "Talentovaní žáci se zájmem o IT, programování a moderní technologie, kteří chtějí studovat na vysoké škole",
+        "Žáci, kteří se chtějí aktivně podílet na chodu školy a rozvíjet své dovednosti v projektech",
+        "Studenti s ambicí získat mezinárodní certifikáty a zkušenosti v praxi"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující intenzivní individuální podporu a jasné struktury – kvalita výuky se liší podle učitele",
+        "Studenti preferující tradičnější přístup – škola experimentuje s novými metodami a kombinovaným vzděláváním",
+        "Žáci se speciálními vzdělávacími potřebami – chybí školní psycholog a systematické třídnické hodiny"
+      ],
+      "plain_czech_summary": "Smíchovská SPŠ a gymnázium je moderní škola s výborným technickým vybavením a úspěšnými absolventy. Žáci se aktivně podílejí na chodu školy a dosahují skvělých výsledků u maturity. Problém je v nejednotné kvalitě výuky – některé hodiny jsou výborné, jiné mají nedostatky v individualizaci a zpětné vazbě. Škola má také vysoký podíl mladých a nekvalifikovaných učitelů. Vedení školy potřebuje zlepšit kontrolu a řízení pedagogických procesů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100 % úspěšnost přihlášených žáků",
+          "33 % žáků s vyznamenáním",
+          "Nadprůměrné výsledky v angličtině"
+        ],
+        "evidence": "\"všichni přihlášení žáci k maturitní zkoušce uspěli, přičemž třetina žáků prospěla s vyznamenáním\""
+      },
+      "absence": {
+        "trend": "Nízká a stabilní",
+        "key_numbers": [
+          "Průměr 60 hodin zameškaných za pololetí na žáka",
+          "Nízká míra neomluvené absence",
+          "92–97 % žáků s uzavřenou klasifikací k 30. 6."
+        ],
+        "evidence": "\"stabilní počet zameškaných hodin (v průměru 60 hodin za pololetí na žáka), míra neomluvené absence je nízká\""
+      },
+      "support_services": [
+        "Výchovný poradce a metodika prevence (od 2023/2024 nový metodik bez specializačního studia)",
+        "Wellbeing centrum pro duševní a fyzické zdraví žáků",
+        "Kariérní poradenství a podpora profesního směřování",
+        "Pozice školního psychologa NENÍ obsazena"
+      ],
+      "safety_climate": [
+        "Elektronicky zajištěné vstupy do budovy a recepce s celodenním obsazením",
+        "Stabilní počet disciplinárních opatření, motivační přístup k hodnocení",
+        "Realizované preventivní programy v oblasti duševního zdraví a bezpečnosti",
+        "Nový nástroj socio mapování pro analýzu chování v třídách"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Fakulty elektrotechnické ČVUT a Pedagogické fakulty UK",
+        "Členství v odborných akademiích, profesních svazech a asociacích",
+        "Spolupráce se sociálními partnery zajišťující vazbu teorie na praxi",
+        "Projekty Erasmus+, zahraniční exkurze a výměnné stáže"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale místy obsahuje úřednickou terminologii. Hlavní zjištění jsou jasná: výborné výsledky, moderní vybavení, ale slabší řízení a nejednotná kvalita výuky.",
+      "uncertainty_notes": [
+        "Přesný počet hodin rušené výuky bez náhrady není uveden, jen zmínka o \"četnějším rušení\"",
+        "Konkrétní počet žáků se speciálními potřebami je přibližný (\"asi 2 %\")",
+        "Není jasné, jak dlouho bude trvat obsazení pozice školního psychologa"
+      ]
+    }
+  }
+}

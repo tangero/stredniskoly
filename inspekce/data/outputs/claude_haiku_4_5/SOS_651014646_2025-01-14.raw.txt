@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_651014646_2025-01-14",
+  "school_profile": {
+    "school_type": "Střední škola veřejnoprávní, obor Bezpečnostně právní činnost (68-42-M/01)",
+    "inspection_period": "14. 1. 2025 – 16. 1. 2025",
+    "school_change_summary": "Škola se stabilizovala, zlepšila se materiální vybavení a spolupráce se zřizovatelem. Přetrvávají nedostatky v diferenciaci výuky a hospitační činnosti vedení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná praxe a spolupráce",
+        "detail": "Škola má funkční partnerství s Policií ČR, Vězeňskou službou a dalšími institucemi, kde žáci získávají praktické zkušenosti.",
+        "evidence": "Projekt 'Ambasadoři do škol' a smlouvy o odborné praxi u sociálních partnerů"
+      },
+      {
+        "tag": "Příznivá atmosféra",
+        "detail": "Pedagogové jsou vstřícní, empatičtí a vytvářejí pozitivní vztah ke vzdělávání.",
+        "evidence": "Hospitační pozorování: 'Společným znakem byla vstřícná a přátelská atmosféra'"
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola má kvalitní učebnu kriminalistiky, multimediální obrazovky a elektronické zabezpečení.",
+        "evidence": "Rekonstrukce učeben, výměna dveří, vybavení velkoplošnými obrazovkami"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Žáci plní stejné úkoly bez ohledu na své schopnosti, chybí individuální přístup.",
+        "evidence": "'Chybějící diferenciace neumožňovala žákům naplno využít jejich individuální vzdělávací potenciál'"
+      },
+      {
+        "tag": "Kvalita hospitací",
+        "detail": "Vedení školy neposkytuje pedagogům dostatečnou zpětnou vazbu pro jejich rozvoj.",
+        "evidence": "'Hospitační záznamy nejsou zcela v souladu s plánem a zřídka obsahují doporučení'"
+      },
+      {
+        "tag": "Práce s informacemi",
+        "detail": "Žáci málo pracují s informačními zdroji a nejsou vedeni k kritickému myšlení.",
+        "evidence": "'Spíše ojediněle byl vytvořen prostor pro rozvoj kritického myšlení'"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku jednotlivým žákům s různými schopnostmi?",
+      "Jaké jsou konkrétní možnosti uplatnění absolventů a jak škola sleduje jejich kariéru?",
+      "Jak se škola zaměřuje na rozvoj digitálních dovedností a práce s informacemi?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o bezpečnostní obory a práci v policii, vězeňské službě nebo hasičství",
+      "Studenti, kteří si cení praktické výuky a spolupráce s reálnými institucemi",
+      "Žáci, kterým vyhovuje přátelská a podporující atmosféra"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individualizovanou výuku a více diferenciace podle svých schopností",
+      "Studenti, kteří se spoléhají na detailní zpětnou vazbu od učitelů pro svůj rozvoj",
+      "Žáci, kteří potřebují více práce s informačními zdroji a rozvojem kritického myšlení"
+    ],
+    "plain_czech_summary": "TRIVIS je soukromá střední škola zaměřená na bezpečnostně právní činnost s 243 žáky. Silnými stránkami jsou kvalitní spolupráce s policií a bezpečnostními sbory, moderní vybavení a příjemná atmosféra. Inspekce ale upozorňuje na nedostatky: výuka není dostatečně přizpůsobena jednotlivým žákům, chybí diferenciace, a vedení školy neposkytuje pedagogům dostatečnou zpětnou vazbu. Maturitní výsledky jsou dobré (30,9 % s vyznamenáním v 2023/24), absolventi se dobře uplatňují."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní trend s rostoucím podílem vyznamenání",
+      "key_numbers": [
+        "2021/22: 88,8 % úspěšnosti (24,4 % s vyznamenáním)",
+        "2023/24: 89,1 % úspěšnosti (30,9 % s vyznamenáním)",
+        "Dlouhodobý problém: nižší výsledky v matematice"
+      ],
+      "evidence": "Škola řeší matematiku individuálními konzultacemi a intenzivnější prací vyučujícího"
+    },
+    "absence": {
+      "trend": "Pozitivní – absence je řešena efektivně",
+      "key_numbers": [
+        "Neprospívající jsou zpravidla pouze jednotlivci",
+        "Prospělo s vyznamenáním v průměru 14,8 % žáků"
+      ],
+      "evidence": "'Díky vhodně nastaveným pravidlům pro hodnocení se škole daří úspěšně řešit problémy spojené s absencí'"
+    },
+    "support_services": [
+      "Výchovná poradkyně (ředitelka školy) – poradenská pomoc, metodická podpora",
+      "Tým poradenských pracovníků: metodik prevence, kariérový poradce",
+      "Výchovná komise pro řešení problémů",
+      "Kariérové poradenství se zástupci vysokých škol a úřadem práce"
+    ],
+    "safety_climate": [
+      "Primární prevence reaguje na aktuální potřeby školy",
+      "Adaptační programy pro prvňáky zaměřené na prosociální vztahy",
+      "Spolupráce se složkami integrovaného záchranného systému",
+      "Jasně nastavená pravidla pro hodnocení a kázeňská opatření"
+    ],
+    "partnerships_practice": [
+      "Policie ČR, Vězeňská služba ČR, Hasičský záchranný sbor",
+      "Krajský soud Hradec Králové, Česká obchodní inspekce",
+      "Obecní a městské úřady, neziskové organizace",
+      "Ministerstvo vnitra – dohoda o spolupráci s projektem 'Ambasadoři do škol'"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však složitější a obsahují úřednickou terminologii, která by mohla být pro rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, kolik žáků konkrétně má problémy s matematikou nebo jaké jsou jejich výsledky",
+      "Není jasné, jak dlouho trvá proces zlepšování diferenciace výuky a jaké konkrétní kroky škola plánuje",
+      "Chybí informace o počtu žáků, kteří potřebují speciální vzdělávací podporu"
+    ]
+  }
+}
+```

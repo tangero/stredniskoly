@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOU_600008509_2024-03-05",
+  "school_profile": {
+    "school_type": "Střední škola informatiky a cestovního ruchu (denní a kombinovaná forma)",
+    "inspection_period": "5. až 8. března 2024",
+    "school_change_summary": "Pokles žáků kombinovaného studia, nárůst denního studia. Neotevřeny obory Podnikání, Obchodník (distanční forma), Prodavač a Pedagogika pro asistenty. Celkem 438 žáků (181 v kombinované formě)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství a praxe",
+        "detail": "Dlouhodobá spolupráce se místními firmami a organizacemi zvyšuje kvalitu vzdělávání a praktické dovednosti žáků.",
+        "evidence": "Dlouhodobá spolupráce s místními i okolními firmami účinně podporuje propagaci nabízených oborů."
+      },
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Nové počítačové učebny, odborné učebny a revitalizovaná školní zahrada zlepšují podmínky výuky.",
+        "evidence": "Zřízením čtvrté počítačové učebny, odborných učeben a revitalizací školní zahrady."
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Praktické vyučování je promyšlené, efektivně organizované a zaměřené na rozvoj profesních dovedností.",
+        "evidence": "Činnosti vycházely z vědomostí teoretické výuky, důsledné dodržování technologických postupů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita teoretické výuky",
+        "detail": "Převažuje frontální výuka s malou aktivizací žáků, chybí diferenciace úkolů a sebehodnocení.",
+        "evidence": "Spíše frontální výuka doplněná řízeným rozhovorem s menší aktivizací žáků. Diferencovaná činnost zaznamenána pouze výjimečně."
+      },
+      {
+        "tag": "Kontrola opatření",
+        "detail": "Opatření přijatá na základě hospitací nejsou dále sledována a vyhodnocována.",
+        "evidence": "Z hospitační činnosti vyplývají opatření, jejichž realizace však není dále sledována a vyhodnocována."
+      },
+      {
+        "tag": "Absence žáků",
+        "detail": "Nepravidelná docházka je hlavní příčinou školního neúspěchu žáků.",
+        "evidence": "Častou příčinou neúspěchu žáků je nepravidelná školní docházka."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s diferenciací v hodinách teoretické výuky? Jaké metody používá pro aktivizaci všech žáků?",
+      "Jak škola řeší vysokou absenci žáků? Jaké konkrétní kroky podniká s rodiči a žáky?",
+      "Jak probíhá propojení teoretické a praktické výuky mezi jednotlivými obory?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou výuku a řemesla (kuchař-číšník, reprodukční grafik, spojový mechanik)",
+      "Studenti IT oborů, kteří ocení moderní vybavení a digitální technologie",
+      "Žáci, kteří se chystají na cestovní ruch a obchod s podporou firemních partnerství"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individuální přístup a diferenciovanou výuku – teoretické hodiny jsou spíše frontální",
+      "Studenti s problémy s docházkou – absence je zde vážným problémem",
+      "Žáci, kteří se spoléhají na sebehodnocení a reflexi – ty v hodinách chybí"
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktickou výuku s dobrým vybavením a silnými vazbami na firmy. Silnou stránkou je propojení různých oborů a motivace žáků. Slabší je teoretická výuka – převažuje frontální přístup bez dostatečné diferenciace. Inspektoři upozorňují na nedostatečné sebehodnocení žáků a na to, že opatření přijatá na základě hospitací nejsou dále sledována. Absence žáků zůstává problémem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Škola systematicky sleduje výsledky maturitní zkoušky a přijímá opatření",
+      "key_numbers": [
+        "Obor Podnikání v distanční formě měl nejvyšší míru neúspěšnosti",
+        "Škola realizuje maturity nanečisto pro motivaci žáků",
+        "Tento obor již není realizován"
+      ],
+      "evidence": "Sledována a vyhodnocována je úspěšnost žáků při ukončování vzdělávání maturitní zkouškou. Systémová opatření byla přijata v souvislosti s nejvyšší mírou neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Absence je identifikována jako hlavní příčina neúspěchu, škola přijala opatření",
+      "key_numbers": [
+        "Stanovení hranice minimální docházky do jednotlivých předmětů",
+        "Včasná jednání s žáky a zákonnými zástupci",
+        "Zvýšená kontrola žáků na smluvních pracovištích"
+      ],
+      "evidence": "Škola absenci žáků důsledně sleduje, přijala opatření k jejímu snížení. Stanovení hranice minimální docházky jsou účinnými nástroji pro motivaci."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, metodik prevence, sociální pedagog",
+      "Individuální konzultace se žáky a rodiči",
+      "Doučování žáků ohrožených školním neúspěchem",
+      "Systém podpory začínajících učitelů s uvádějícím učitelem na první dva roky"
+    ],
+    "safety_climate": [
+      "V hospitovaných hodinách byla příjemná atmosféra",
+      "Žáci aktivně komunikovali a bez obav pokládali dotazy",
+      "Žáci projevovali zájem o výuku"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s místními a okolními firmami",
+      "Intenzivní spolupráce s městem Humpolec a městským informačním centrem",
+      "Propojování praktického vyučování s ostatními vyučovanými obory",
+      "Zapojování talentovaných žáků do soutěží a certifikovaných jazykových zkoušek"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní zjištění. Slabší stránky jsou jasně identifikovány, ale chybí konkrétní číselné údaje o výsledcích maturit a absenci.",
+    "uncertainty_notes": [
+      "Nejsou uvedeny konkrétní procenta úspěšnosti maturitní zkoušky nebo míra absence",
+      "Není jasné, jak velký je problém s absencí v číslech",
+      "Chybí informace o počtu žáků v jednotlivých oborech a jejich výsledcích"
+    ]
+  }
+}
+```

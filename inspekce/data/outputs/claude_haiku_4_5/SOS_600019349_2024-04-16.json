@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600019349_2024-04-16",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:18:57.121028+00:00",
+  "run_finished_utc": "2026-02-09T16:19:23.207511+00:00",
+  "raw_file": "SOS_600019349_2024-04-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019349_2024-04-16",
+    "school_profile": {
+      "school_type": "Soukromá střední škola s.r.o. poskytující vzdělání v denní formě v 8 oborech (4 s maturitou, 2 s výučním listem, 2 nové obory)",
+      "inspection_period": "16.–19. dubna 2024",
+      "school_change_summary": "Od poslední inspekce (2019) škola rozšířila nabídku o obor Předškolní a mimoškolní pedagogika, vybudovala novou hudební učebnu s digitálními piány a moderní multimediální učebnu pro polytechnické vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola cíleně spolupracuje s profesními partnery a zaměstnavateli, což zajišťuje efektivní rozvoj praktických dovedností a přípravu na pracovní uplatnění.",
+          "evidence": "Subjekt cíleně spolupracuje s důležitými profesními a sociálními partnery zajišťujícími efektivní rozvoj teoretických znalostí a praktických dovedností žáků."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Škola disponuje moderními učebnami včetně nové multimediální učebny a hudební učebny s digitálními piány.",
+          "evidence": "Od minulé inspekční činnosti došlo k dalšímu zkvalitnění materiálně technického zázemí. Byla vybudována nová odborná učebna a moderní multimediální učebna."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola má kvalifikované školní poradenské pracoviště, které poskytuje doučování a individuální konzultace žákům ohroženým neúspěchem.",
+          "evidence": "Škola identifikuje žáky s rizikem školního neúspěchu, zajišťuje jim primární podporu, nabízí individuální konzultace a realizuje doučování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo aktivní výuka",
+          "detail": "Výuka se často opírá o frontální formu, chybí práce s různými informačními zdroji a moderní metody jako problémové vyučování.",
+          "evidence": "Výuku charakterizovaly převládající frontální forma vyučování, sporadické využití moderních metod, minimální vytváření prostoru pro sebehodnocení."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Učitelé ne vždy přizpůsobují obtížnost úkolů individuálním potřebám žáků, všichni plní stejné úkoly bez výraznější diferenciace.",
+          "evidence": "Všichni žáci většinou plnili úkoly se stejnou náročností jako ostatní, chyběl výraznější individuální přístup včetně diferenciace vzdělávacího obsahu."
+        },
+        {
+          "tag": "Překročené počty v praktickém vyučování",
+          "detail": "V některých skupinách odborného výcviku oboru Aranžér byly překročeny maximální počty žáků na učitele.",
+          "evidence": "Bylo zjištěno, že byly překročeny maximální počty žáků na učitele ve skupinách odborného výcviku druhého a třetího ročníku oboru Aranžér."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi? Jaké metody používá pro diferenciaci?",
+        "Jaké jsou konkrétní výsledky absolventů na trhu práce a jejich přijetí na vysoké školy?",
+        "Jak se škola vypořádá s překročenými počty žáků v praktickém vyučování oboru Aranžér?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí praktické vzdělání s vazbou na reálnou praxi a budoucí zaměstnání",
+        "Studenti zaměření na gastronomii, design, grafiku nebo pedagogiku, kde má škola kvalitní vybavení",
+        "Žáci, kteří potřebují podporu a doučování – škola má funkční poradenské pracoviště"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se učí lépe aktivními metodami a skupinovou prací – výuka je spíše tradiční a frontální",
+        "Nadaní žáci hledající výraznou individualizaci a obohacování obsahu – diferenciace není dostatečná",
+        "Studenti oboru Aranžér – skupiny jsou přeplnené, což může ovlivnit kvalitu praktického vyučování"
+      ],
+      "plain_czech_summary": "Moravská střední škola v Olomouci je soukromá instituce s 471 žáky v 19 třídách. Její silnou stránkou je propojení teorie s praxí díky spolupráci se zaměstnavateli a kvalitní materiální vybavení. Škola má funkční systém podpory slabších žáků. Slabinou je tradiční frontální výuka s málo aktivizujícími metodami a nedostatečná individualizace. Inspekce také zjistila překročené počty žáků v některých skupinách praktického vyučování. Škola je vhodná pro žáky orientované na praxi, ale méně pro ty, kteří preferují aktivní a individualizované vyučování."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neuvedeno konkrétně, ale škola vykazuje setrvalý zájem uchazečů a úspěšné uplatnění absolventů",
+        "key_numbers": [
+          "471 žáků v 19 třídách",
+          "4 obory s maturitní zkouškou",
+          "49 žáků se speciálními vzdělávacími potřebami"
+        ],
+        "evidence": "Dokladem úspěšně realizované koncepce rozvoje školy je především setrvalý zájem uchazečů o poskytovanou vzdělávací nabídku a úspěšné uplatňování absolventů školy na pracovním trhu."
+      },
+      "absence": {
+        "trend": "Absence jsou sledovány a analyzovány na pedagogické radě, nejsou uvedeny konkrétní problémy",
+        "key_numbers": [
+          "Absence jsou součástí analýzy na pedagogické radě",
+          "Mapování klimatu v třídních kolektivech"
+        ],
+        "evidence": "Výsledky vzdělávání žáků, jejich chování a absence na úrovni tříd jsou za jednotlivá klasifikační období podrobně analyzovány na jednáních pedagogické rady."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s kvalifikovanými pracovníky",
+        "Individuální konzultace a doučování pro žáky ohrozené neúspěchem",
+        "Kariérové poradenství zaměřené na orientaci na trhu práce",
+        "Primární prevence rizikového chování prostřednictvím besed a preventivních programů",
+        "Schránka důvěry pro vyjádření se k dění ve škole"
+      ],
+      "safety_climate": [
+        "Pozitivní pracovní atmosféra v hodnocených vyučovacích hodinách",
+        "Žáci dodržují pravidla komunikace a respektují stanovené postupy",
+        "Škola se v prevenci rizikového chování spoléhá na strategii stanovenou v programu poradenských služeb",
+        "Včasná intervence při prvotních projevech problémového chování formou individuálních pohovorů",
+        "Dotazníkové šetření mezi pedagogy a žáky pro sledování školního klimatu"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s profesními organizacemi a základními školami",
+        "Partnerství se středními školami s obdobným odborným zaměřením",
+        "Vazby na vysoké školy v Olomouci",
+        "Spolupráce se smluvními pracovišti a potenciálními zaměstnavateli",
+        "Zahraniční partnerství s výměnou zkušeností a odborných pracovních stáží"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní zjištění. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní číselné údaje o výsledcích maturit, absenci a prospěchu.",
+      "uncertainty_notes": [
+        "Inspekce neuvádí konkrétní procenta úspěšnosti u maturitních zkoušek ani srovnání s předchozími lety",
+        "Nejsou specifikovány konkrétní počty žáků v jednotlivých oborech ani jejich prospěch",
+        "Není jasné, jak dlouho trvá překročení počtů žáků v praktickém vyučování oboru Aranžér"
+      ]
+    }
+  }
+}

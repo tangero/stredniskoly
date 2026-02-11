@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600012808_2023-02-02",
+  "school_profile": {
+    "school_type": "Střední škola obchodní a služeb (SOU), soukromá, zřizovaná SČMSD",
+    "inspection_period": "2. až 10. února 2023",
+    "school_change_summary": "Škola se rozrostla: počet žáků vzrostl na 383 (nárůst o 90 žáků), průměr ve třídě stoupl z 10,2 na 15,3 žáků. Zlepšila se kvalifikace učitelů cizích jazyků, posílena příprava k maturitě. Utlumeny obory s vysokou neúspěšností v maturitě."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemná atmosféra a přístup učitelů",
+        "detail": "Všichni učitelé přistupují k žákům přátelsky v podporujícím prostředí.",
+        "evidence": "Inspektoři zaznamenali: 'příjemná, podporující, pracovní atmosféra, všichni učitelé přistupovali k žákům přátelsky'"
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Škola nabízí doučování, konzultace a možnost změny oboru pro ohrožené žáky.",
+        "evidence": "'žáci využívají doučování, podle zájmu také individuální konzultace' a 'možnost změny oboru vzdělání na jiný'"
+      },
+      {
+        "tag": "Zlepšená docházka",
+        "detail": "Průměrná absence poklesla o jeden týden na žáka, přestože trvala pandemie.",
+        "evidence": "'Průměrná absence za školní rok 2021/2022 poklesla o jeden týden na každého žáka'"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost v maturitě",
+        "detail": "Více než 40 % žáků neuspělo nebo nekonalo společnou část maturitní zkoušky, zvlášť v angličtině.",
+        "evidence": "'Hrubá neúspěšnost celkově činila více než 40 %, problémy měli žáci hlavně v anglickém jazyce'"
+      },
+      {
+        "tag": "Nekvalifikovaní učitelé v klíčových předmětech",
+        "detail": "Angličtinu vyučují dva nekvalifikovaní učitelé, češtinu a matematiku tři nekvalifikovaní pedagogové.",
+        "evidence": "'Ve čtyřletých oborech dále vyučují anglický jazyk nekvalifikovaný učitel' a 'Český jazyk a matematiku vyučují dva kvalifikovaní a tři zatím nekvalifikovaní'"
+      },
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Všichni žáci plní stejné úkoly bez přizpůsobení jejich individuálním schopnostem.",
+        "evidence": "'Žákům nebylo poskytováno žádoucí zohlednění vzdělávacích potřeb formou diferenciace úkolů'"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní kroky podniká škola, aby zlepšila úspěšnost v anglickém jazyce, kde měli žáci největší problémy?",
+      "Kolik procent učitelů společné části maturitní zkoušky má odbornou kvalifikaci a jaký je plán na doplnění kvalifikace zbývajících?",
+      "Jak škola řeší nedostatek učeben – je skutečně nutné, aby žáci trávili čas na chodbách?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří potřebují podporující prostředí a individuální přístup – škola nabízí doučování a konzultace",
+      "Zájemci o praktické obory (kadeřnictví, masáž, skladování) – zde má škola tradici a zkušenosti",
+      "Žáci, kterým vyhovuje menší škola s osobnějším přístupem – průměr 15 žáků ve třídě"
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o obor Obchodník – obor byl přeorientován a má nižší počet hodin maturitních předmětů",
+      "Žáci slabší v angličtině – více než polovina žáků neuspěla právě v tomto předmětu",
+      "Uchazeči, kteří potřebují kvalitní výuku od kvalifikovaných učitelů – v některých předmětech vyučují nekvalifikovaní pedagogové"
+    ],
+    "plain_czech_summary": "Polická obchodní škola se rozrostla a zlepšila podmínky. Učitelé jsou přátelští a žáci mají podporu. Ale jsou tu vážné problémy: více než 40 % žáků neuspěje v maturitě, zvlášť v angličtině. Některé předměty vyučují nekvalifikovaní učitelé. Škola se snaží zlepšit situaci, ale změny zatím nejsou dostatečné. Prostorově je škola na hranici možností."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršující se – vysoká neúspěšnost přetrvává navzdory opatřením",
+      "key_numbers": [
+        "Hrubá neúspěšnost více než 40 % (z 35 přihlášených neuspělo 9 z 27 konajících)",
+        "38 % neúspěšnosti v nástavbovém oboru Podnikání",
+        "Hlavní problém: anglický jazyk"
+      ],
+      "evidence": "'Z 35 žáků přihlášených v roce 2022 poprvé ke společné části maturitní zkoušky konalo tuto zkoušku 27, z nich 9 neuspělo' a 'Hrubá neúspěšnost celkově činila více než 40 %'"
+    },
+    "absence": {
+      "trend": "Zlepšující se – absence klesá",
+      "key_numbers": [
+        "Pokles o jeden týden na žáka v roce 2021/2022",
+        "Průměrně sedm zameškaných týdnů výuky (2021/2022)",
+        "Ojediněle se vyskytují neomluvené hodiny"
+      ],
+      "evidence": "'Počet omluvených vyučovacích hodin na žáka se od minulé inspekční činnosti snížil' a 'Průměrná absence poklesla o jeden týden na každého žáka'"
+    },
+    "support_services": [
+      "Doučování pro ohrožené žáky",
+      "Individuální konzultace podle zájmu",
+      "Školní poradenské pracoviště monitorující žáky v riziku",
+      "Možnost změny oboru na vhodnější pro žáka",
+      "Postupové (rekapitulační) testy pro ověření zvládnutí učiva"
+    ],
+    "safety_climate": [
+      "Příjemná, podporující atmosféra ve třídách",
+      "Přátelský přístup všech učitelů k žákům",
+      "Ojediněle se vyskytují problémy kázeňského charakteru",
+      "Důsledné omlouvání absence a uplatňování zpřísněných opatření"
+    ],
+    "partnerships_practice": [
+      "Ekonomické předměty vedeny v návaznosti na reálnou praxi",
+      "Učitelé ekonomických předmětů vedou podnětné diskuse s praktickými příklady",
+      "Žáci z vyšších ročníků monitorováni ohledně zájmu o nástavbové studium"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní čísla a příklady. Slabší je pouze v některých technických pasážích o oborech vzdělání.",
+    "uncertainty_notes": [
+      "Není jasné, zda se neúspěšnost v maturitě týká všech oborů stejně nebo jen některých – zpráva zmiňuje vysokou neúspěšnost v nástavbovém oboru Podnikání",
+      "Počet nekvalifikovaných učitelů není přesně specifikován – zpráva uvádí 'tři zatím nekvalifikovaní' bez jasného celkového počtu",
+      "Není jasné, jaké konkrétní opatření škola přijala k zlepšení výuky angličtiny – zpráva jen konstatuje problém"
+    ]
+  }
+}
+```

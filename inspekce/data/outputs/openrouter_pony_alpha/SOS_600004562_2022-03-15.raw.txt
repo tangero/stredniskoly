@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_600004562_2022-03-15",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola grafická a Střední průmyslová škola grafická",
+    "inspection_period": "15. 3. 2022 − 18. 3. 2022",
+    "school_change_summary": "Od roku 2013 vzrostla naplněnost na 97 %, proběhla generační obměna pedagogů a v roce 2017 změna ředitele."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborná odborná úroveň",
+        "detail": "Výuka v odborných předmětech a ateliérech má vynikající úroveň a rozvíjí talent žáků.",
+        "evidence": "Hospitované hodiny v předmětech odborné přípravy vykazovaly výbornou úroveň... rozvoj odborných kompetencí žáků."
+      },
+      {
+        "tag": "Kvalitní vybavení",
+        "detail": "Škola disponuje moderními učebnami, dílnami a průběžně obnovuje technické vybavení.",
+        "evidence": "Vybavení informační a komunikační technikou moderními didaktickými pomůckami... se průběžně obnovují a doplňují."
+      },
+      {
+        "tag": "Úspěšnost absolventů",
+        "detail": "Žáci dosahují velmi dobrých výsledků u maturity a uplatňují se na prestižních vysokých školách.",
+        "evidence": "Úspěšnost při přijetí na VOŠ a často i prestižní vysoké školy mj. UMPRUM, FAMU."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší teoretická výuka",
+        "detail": "Ve všeobecných předmětech převažuje pasivní frontální výuka s malou aktivizací žáků.",
+        "evidence": "Účinnost výuky přibližně třetiny hospitovaných hodin... snižovaly některé metodické a didaktické nedostatky."
+      },
+      {
+        "tag": "Chybějící ateliér",
+        "detail": "Pro výuku výtvarných předmětů, jako je kreslení, chybí vhodný ateliér.",
+        "evidence": "Škole však chybí ateliér pro realizaci výtvarných předmětů... výuka tak probíhá v méně vyhovujících učebnách."
+      },
+      {
+        "tag": "Prostorové riziko",
+        "detail": "Žáci musí přecházet mezi dvěma budovami v docházkové vzdálenosti.",
+        "evidence": "Určitou míru rizika však stále představují přechody žáků mezi budovami... způsobené náročnou organizací."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje metodickou přípravu učitelů všeobecných předmětů, aby byla výuka poutavější?",
+      "Jakým způsobem jsou řešeny bezpečnostní rizika spojená s častými přechody mezi budovami?",
+      "Plánuje škola řešení chybějícího ateliéru pro figurální kreslení?"
+    ],
+    "who_school_fits": [
+      "Tvořiví uchazeči s talentem pro výtvarné umění, grafiku a fotografii.",
+      "Studenti, kteří hledají kvalitní odbornou přípravu a uplatnění v kreativním průmyslu.",
+      "Žáci, kteří očekávají intenzivní přípravu na umělecké vysoké školy."
+    ],
+    "who_should_be_cautious": [
+      "Žáci očekávající vysoce interaktivní a moderní výuku i v teoretických předmětech.",
+      "Uchazeči, kteří by mohli mít problém s docházkou mezi dvěma budovami školy.",
+      "Studenti, kteří vyžadují silnou podporu při prospěchových potížích (efektivita podpory kolísá)."
+    ],
+    "plain_czech_summary": "Škola je velmi žádaná, s plnou kapacitou a skvělou pověstí v oboru grafiky a designu. Odborná výuka v ateliérech a dílnách je na špičkové úrovni a žáci zde dosahují výborných výsledků, včetně přijetí na prestižní vysoké školy. Pro rodiče je však důležité vědět, že kvalita výuky v obecných předmětech (dějepis, matematika atd.) za odbornou částí zaostává kvůli zastaralým metodám výuky. Škola také řeší prostorové limity, kdy chybí ateliér pro kreslení a žáci musí přecházet mezi dvěma budovami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně se zvýšil počet maturujících s vyznamenáním.",
+      "key_numbers": [
+        "Více než polovina maturantů s vyznamenáním (2020/2021)",
+        "Téměř 100 % žáků dokončí studium",
+        "Úspěšnost v jazycích vyšší než celorepublikový průměr"
+      ],
+      "evidence": "Ve sledovaném období... výrazně se zvýšil počet žáků maturujících s vyznamenáním (ve školním roce 2020/2022 více než polovina maturantů)."
+    },
+    "absence": {
+      "trend": "Snižující se počet neomluvených hodin.",
+      "key_numbers": [
+        "Průměrně 68 omluvených hodin na žáka",
+        "Počet neomluvených hodin téměř nulový",
+        "Přiměřená míra absence celkově"
+      ],
+      "evidence": "Přiměřená míra absence a snižující se počet neomluvených hodin (v 1. pololetí... počet neomluvených hodin na žáka byl téměř nulový)."
+    },
+    "support_services": [
+      "Individuální konzultace a maturitní semináře pro podporu ukončení studia.",
+      "Úprava podmínek pro žáky s podpůrnými opatřeními (více času, kompenzační pomůcky).",
+      "Přípravné kurzy pro talentové zkoušky."
+    ],
+    "safety_climate": [
+      "Příjemná atmosféra a vzájemný respekt mezi učiteli a žáky.",
+      "Standardní elektronické zabezpečení vstupu do budov.",
+      "Stabilní míra úrazovosti, rizika jsou vyhodnocována."
+    ],
+    "partnerships_practice": [
+      "Nadstandardní spolupráce s partnery pro zajištění praxí a materiální podpory.",
+      "Spolupráce s uměleckoprůmyslovými školami pro sdílení zkušeností.",
+      "Vlastní nakladatelská činnost a pořádání kurzů pro veřejnost."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, má jasnou strukturu a explicitně vyjmenovává silné i slabé stránky s konkrétními důkazy.",
+    "uncertainty_notes": []
+  }
+}

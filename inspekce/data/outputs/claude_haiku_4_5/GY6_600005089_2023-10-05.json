@@ -1,0 +1,115 @@
+{
+  "report_id": "GY6_600005089_2023-10-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:37:50.699978+00:00",
+  "run_finished_utc": "2026-02-09T16:38:14.925052+00:00",
+  "raw_file": "GY6_600005089_2023-10-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600005089_2023-10-05",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a šestileté studium), Praha 4, Postupická",
+      "inspection_period": "5. 10. 2023 – 10. 10. 2023",
+      "school_change_summary": "Od poslední inspekce v roce 2014 došlo ke změně vedení. Škola kontinuálně rozvíjí koncepci kvalitního gymnaziálního vzdělávání, výrazně zlepšila materiální vybavenost a digitalizaci. Udržuje stabilní počet 588 žáků ve 20 třídách."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalifikovaný tým učitelů",
+          "detail": "Všichni pedagogové jsou plně kvalifikovaní, včetně tří rodilých mluvčích cizích jazyků.",
+          "evidence": "Vzdělávání zajišťuje plně kvalifikovaný pedagogický sbor (46 pedagogů)."
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Škola má zrekonstruovanou tělocvičnu, relaxační centrum se saunou, keramický ateliér, počítače s Wi-Fi a moderní učebny.",
+          "evidence": "Od minulé inspekce došlo k výrazné obnově materiálních podmínek včetně rekonstrukce tělocvičny a obnovy kamerového systému."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Všichni žáci prospěli, dvě pětiny s vyznamenáním; 45 % maturantů složilo mezinárodní jazykový certifikát.",
+          "evidence": "Ve sledovaném období všichni žáci prospěli, z toho dvě pětiny s vyznamenáním."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotné hodnocení žáků",
+          "detail": "Četnost a váha známek nejsou jednotně nastaveny mezi učiteli.",
+          "evidence": "Četnost a váha známek není jednotně nastavena; nedostatečně zastoupené sebehodnocení a vzájemné hodnocení."
+        },
+        {
+          "tag": "Tradiční přístup některých učitelů",
+          "detail": "Část vyučujících stále používá převážně frontální výuku s nižší aktivizací žáků.",
+          "evidence": "V části vyučovacích předmětů přetrvává tradicionalistické pojetí výuky s nižší mírou aktivizace žáků."
+        },
+        {
+          "tag": "Slabá kontrola doporučení",
+          "detail": "Hospitační činnost postrádá následnou kontrolu, zda učitelé aplikují metodická doporučení.",
+          "evidence": "Schází jejich důsledná kontrola, což se projevuje rozdílnou úrovní výuky u některých vyučujících."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola zajišťuje jednotné hodnocení žáků mezi jednotlivými předměty a učiteli?",
+        "Jaké konkrétní metody aktivního učení používají učitelé a jak se to liší mezi jednotlivými předměty?",
+        "Jak škola podporuje žáky, kteří mají pomalejší tempo učení nebo se potřebují více času na pochopení látky?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí studovat na vysoké škole, zejména s zaměřením na matematiku a přírodní vědy (90 % absolventů se dostane na VŠ)",
+        "Jazykově nadaní žáci – škola nabízí tři cizí jazyky a přípravu na mezinárodní certifikáty",
+        "Všestranně rozvinutí žáci zajímající se o projekty, soutěže a mimoškolní aktivity"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující interaktivní a moderní výuku – část učitelů stále používá tradičnější přístupy",
+        "Žáci potřebující jasné a jednotné kritéria hodnocení – hodnocení není mezi učiteli jednotně nastaveno",
+        "Žáci s nižším tempem učení – škola nabízí individuální přístup, ale diferenciace v hodinách není dostatečná"
+      ],
+      "plain_czech_summary": "Gymnázium Postupická je prestižní škola s výbornou pověstí. Učitelé jsou kvalifikovaní, prostředí moderní a vybavené. Výsledky maturit jsou výborné – všichni žáci prospějí, mnozí s vyznamenáním. Škola podporuje jazyky a vědu. Slabší stránkou je, že někteří učitelé používají starší metody výuky s méně aktivním zapojením žáků. Hodnocení není mezi učiteli jednotné. Pokud hledáte kvalitní přípravu na vysokou školu, je to dobrá volba, ale počítejte s tím, že ne všechny hodiny budou interaktivní."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100 % prospěšnost (všichni žáci prospěli)",
+          "40 % maturantů s vyznamenáním",
+          "45 % maturantů složilo mezinárodní jazykový certifikát B2/C1"
+        ],
+        "evidence": "Ve sledovaném období všichni žáci prospěli, z toho dvě pětiny s vyznamenáním. Žáci dosahují výrazně vyšších výsledků ve srovnání s ČR."
+      },
+      "absence": {
+        "trend": "Velmi nízký výskyt rizikového chování",
+        "key_numbers": [
+          "Ojediněle se objevují neprospívající žáci",
+          "Téměř polovina žáků prospívá s vyznamenáním"
+        ],
+        "evidence": "Funkčnost preventivních mechanismů dokládá velmi nízký výskyt rizikového chování. Nastavené preventivní mechanismy přispívají k řešení problémů v jejich počátku."
+      },
+      "support_services": [
+        "Poradenské služby v úzké spolupráci s třídními učiteli",
+        "Individuální přístup pro žáky se speciálními vzdělávacími potřebami a ohrožené školním neúspěchem",
+        "Kariérové poradenství se sdílením profesních zkušeností bývalých absolventů",
+        "Adaptační kurzy a rozmanité mimoškolní aktivity"
+      ],
+      "safety_climate": [
+        "Elektronický a kamerový systém spolu s recepcí přispívají k vyšší bezpečnosti žáků",
+        "Velmi nízký výskyt rizikového chování",
+        "Žáci dodržují pravidla přirozené komunikace a respektují stanovené postupy práce"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s partnerskou zahraniční školou a vysokými školami",
+        "Zapojení do mezinárodních projektů (Best in English)",
+        "Akreditované pracoviště pro certifikát ECDL a mezinárodní jazykové zkoušky",
+        "Status fakultní školy Přírodovědecké fakulty Univerzity Karlovy",
+        "Dlouhodobá úspěšnost absolventů (90 %) při přijetí ke studiu na vysokých školách"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však velmi dlouhé a složitě strukturované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent hodin bylo hospitováno a jak reprezentativní vzorek to je",
+        "Není jasné, jak dlouho trvá, než se doporučení inspekce promítnou do praxe",
+        "Chybí konkrétní příklady tradičnějšího přístupu některých učitelů"
+      ]
+    }
+  }
+}

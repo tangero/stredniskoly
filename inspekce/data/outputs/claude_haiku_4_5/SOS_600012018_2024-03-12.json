@@ -1,0 +1,109 @@
+{
+  "report_id": "SOS_600012018_2024-03-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:22:49.075218+00:00",
+  "run_finished_utc": "2026-02-09T16:23:14.336385+00:00",
+  "raw_file": "SOS_600012018_2024-03-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600012018_2024-03-12",
+    "school_profile": {
+      "school_type": "Střední škola zahradnická s domovem mládeže a školní jídelnou",
+      "inspection_period": "12. března až 14. března 2024",
+      "school_change_summary": "Škola zvýšila naplněnost z 26 % na 48 %. V roce 2021 byl vymazán obor Podnikání. Opatření z předchozí inspekce (2019) nebyla převážně naplněna."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborné vzdělání",
+          "detail": "Praktická výuka dosahuje vysoké úrovně díky odborné erudici učitelů a jejich empatickému přístupu.",
+          "evidence": "Hospitovaná výuka vykazovala vysokou úroveň, žáci plnili úkoly svědomitě s vysokou mírou kreativity."
+        },
+        {
+          "tag": "Spolupráce se zaměstnavateli",
+          "detail": "Škola má výborně fungující spolupráci se sociálními partnery podporující odborné vzdělávání.",
+          "evidence": "Dlouhodobá kooperace s odbornými svazy, asociacemi a regionálními firmami vytváří vazbu mezi teorií a praxí."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují výborných výsledků v oborových soutěžích.",
+          "evidence": "1. místo v Zahradníkově roce (2022), 1. místo v Kopidlenském kvítku (2023)."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Katastrofální výsledky v maturitě",
+          "detail": "Dlouhodobě vysoká neúspěšnost ve společné části maturitní zkoušky, zejména z angličtiny a matematiky.",
+          "evidence": "V roce 2023 neuspělo 50 % žáků (7 z 14), z angličtiny 50 % (6 z 12), z matematiky 100 % (4 z 4)."
+        },
+        {
+          "tag": "Nekvalitní výuka teoretických předmětů",
+          "detail": "Převažuje neefektivní frontální výuka s pasivitou žáků, chybí diferenciace a aktivizační metody.",
+          "evidence": "V hodinách chyběly kooperativní metody, sebehodnocení, vrstevnické hodnocení a formativní hodnocení."
+        },
+        {
+          "tag": "Slabá příprava na maturitu",
+          "detail": "Žáci jsou hodnoceni lépe během studia než při maturitě, což ukazuje na nereálné známkování.",
+          "evidence": "V roce 2023 dva žáci s známkou dobrý neuspěli v matematice, šest neúspěšných z angličtiny mělo známku dobrý."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se škola chystá zlepšit výsledky v maturitní zkoušce, zejména z angličtiny a matematiky?",
+        "Jaké jsou plány na stabilizaci učitelů angličtiny a matematiky, když je vysoká fluktuace?",
+        "Jak se budou měnit kritéria přijímání, aby měli žáci lepší předpoklady pro maturitu?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a odborné vzdělání v zahradnictví a rybářství",
+        "Studenti, kteří chtějí získat kvalitní praktické zkušenosti a kontakty v oboru",
+        "Žáci, kteří potřebují ubytování a podporu v domě mládeže"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, jejichž děti plánují skládat maturitní zkoušku – výsledky jsou dlouhodobě velmi špatné",
+        "Žáci se slabšími znalostmi z angličtiny a matematiky – nejsou dostatečně připraveni",
+        "Studenti, kteří potřebují kvalitní teoretické vzdělání – výuka teoretických předmětů je neefektivní"
+      ],
+      "plain_czech_summary": "Střední škola zahradnická v Kopidlně je dobrá pro praktické vzdělání v zahradnictví. Žáci se učí od zkušených odborníků a mají skvělé kontakty v oboru. Ale pozor: pokud chce vaše dítě skládat maturitní zkoušku, je to riziko. Škola dlouhodobě selhává – v roce 2023 neuspělo 50 % žáků, z angličtiny a matematiky ještě hůř. Výuka teoretických předmětů je nudná a neefektivní. Učitelé se často mění. Škola slibuje zlepšení, ale dosud to neudělala."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě velmi špatný, bez zlepšení",
+        "key_numbers": [
+          "2023: 50 % neúspěšnosti (7 z 14 žáků), angličtina 50 % (6 z 12), matematika 100 % (4 z 4)",
+          "2022: 25 % neúspěšnosti (3 z 12 žáků)",
+          "2021: 50 % neúspěšnosti (4 z 8 žáků)"
+        ],
+        "evidence": "Hrubá neúspěšnost v roce 2023 byla 4,5krát vyšší než průměr v ČR. Všichni žáci selhali v matematice."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněn",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se nezabývá absencí žáků."
+      },
+      "support_services": [
+        "Individuální konzultace a doučování v českém jazyce, angličtině a matematice (velmi nízké využití)",
+        "Péče výchovné poradkyně pro žáky se speciálními vzdělávacími potřebami (není systematická)",
+        "Kariérové poradenství ve spolupráci se zaměstnavateli a úřadem práce"
+      ],
+      "safety_climate": [
+        "Problematika rizikového chování je vhodně zařazena do výuky a aktivit",
+        "Pedagogové průběžně sledují situaci v třídních kolektivech",
+        "Intervence ve spolupráci s Pedagogicko-psychologickou poradnou v Jičíně"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá kooperace s odbornými svazy, asociacemi a regionálními firmami",
+        "Spolupráce se zřizovatelem na projektové činnosti a financování",
+        "Partnerství s domem mládeže při Střední průmyslové škole ve Dvoře Králové nad Labem"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla. Hlavní problémy jsou jasně identifikovány (selhání v maturitě, nekvalitní výuka teoretických předmětů). Silné stránky (praktické vzdělání, spolupráce s partnery) jsou také zřejmé.",
+      "uncertainty_notes": [
+        "Absence není zmíněna – není jasné, zda je problém nebo ne",
+        "Není jasné, jaké konkrétní opatření škola již přijala po inspekci",
+        "Chybí informace o počtu učitelů a jejich kvalifikaci v jednotlivých předmětech"
+      ]
+    }
+  }
+}

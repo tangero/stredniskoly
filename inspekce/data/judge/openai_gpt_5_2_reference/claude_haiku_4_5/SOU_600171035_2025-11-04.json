@@ -1,0 +1,29 @@
+{
+  "report_id": "SOU_600171035_2025-11-04",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T12:18:33.499612+00:00",
+  "run_finished_utc": "2026-02-09T12:19:05.550466+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOU_600171035_2025-11-04\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Mírné nadsazení formulace o soutěžích: kandidát tvrdí, že žáci „pravidelně vítězí v odborných soutěžích“, zatímco zdroj uvádí „významné úspěchy“ a úspěšnou prezentaci v České ručičky, ale ne obecné pravidelné vítězství.\",\n    \"Tvrzení „Škola na tom ale pracuje“ (ve smyslu zlepšování podpory žáků se SVP/diferenciace) není ve zdroji výslovně doloženo; zpráva popisuje stav a doporučení, ne konkrétní probíhající nápravu v této oblasti.\",\n    \"Neúplnost vůči rodičovskému use-casu: chybí některé podstatné informace ze zprávy (např. problém velmi malé vnitřní tělocvičny, rezervy v pedagogickém vedení včetně absence vzájemných náslechů, chybějící DVPP v didaktice/kooperačních metodách, část o nejednoznačnosti/rezervách v hospitačních závěrech vedení).\"\n  ],\n  \"best_points\": [\n    \"Správně přebírá klíčová tvrdá data (maturita 2024: 2 % vs. 13,7 %, 2025: 6,9 %; průměrný prospěch 1,93–2,25; pokles absence 173,21 → 126,09 hodin, cca 27 %).\",\n    \"Dobře zachycuje hlavní silné stránky ze závěrů inspekce (partnerská spolupráce s firmami, modernizace a ON-Voltage centrum, stabilně dobré výsledky u zkoušek).\",\n    \"Praktická struktura pro rodiče (rizika + otázky na den otevřených dveří + pro koho se škola hodí / kdo má být opatrný) je použitelná a opřená o více částí zprávy.\"\n  ],\n  \"one_line_verdict\": \"Většinově věrné a pro rodiče užitečné shrnutí s dobrými čísly, ale s několika nedoloženými/lehce nadsazenými formulacemi a s vynecháním části důležitých zjištění inspekce.\"\n}",
+  "judge_output": {
+    "report_id": "SOU_600171035_2025-11-04",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "Mírné nadsazení formulace o soutěžích: kandidát tvrdí, že žáci „pravidelně vítězí v odborných soutěžích“, zatímco zdroj uvádí „významné úspěchy“ a úspěšnou prezentaci v České ručičky, ale ne obecné pravidelné vítězství.",
+      "Tvrzení „Škola na tom ale pracuje“ (ve smyslu zlepšování podpory žáků se SVP/diferenciace) není ve zdroji výslovně doloženo; zpráva popisuje stav a doporučení, ne konkrétní probíhající nápravu v této oblasti.",
+      "Neúplnost vůči rodičovskému use-casu: chybí některé podstatné informace ze zprávy (např. problém velmi malé vnitřní tělocvičny, rezervy v pedagogickém vedení včetně absence vzájemných náslechů, chybějící DVPP v didaktice/kooperačních metodách, část o nejednoznačnosti/rezervách v hospitačních závěrech vedení)."
+    ],
+    "best_points": [
+      "Správně přebírá klíčová tvrdá data (maturita 2024: 2 % vs. 13,7 %, 2025: 6,9 %; průměrný prospěch 1,93–2,25; pokles absence 173,21 → 126,09 hodin, cca 27 %).",
+      "Dobře zachycuje hlavní silné stránky ze závěrů inspekce (partnerská spolupráce s firmami, modernizace a ON-Voltage centrum, stabilně dobré výsledky u zkoušek).",
+      "Praktická struktura pro rodiče (rizika + otázky na den otevřených dveří + pro koho se škola hodí / kdo má být opatrný) je použitelná a opřená o více částí zprávy."
+    ],
+    "one_line_verdict": "Většinově věrné a pro rodiče užitečné shrnutí s dobrými čísly, ale s několika nedoloženými/lehce nadsazenými formulacemi a s vynecháním části důležitých zjištění inspekce."
+  }
+}

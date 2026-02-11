@@ -1,0 +1,101 @@
+```json
+{
+  "report_id": "GY8_600010538_2025-04-22",
+  "school_profile": {
+    "school_type": "Soukromé gymnázium (čtyřleté a osmiletý program)",
+    "inspection_period": "22. 4. – 25. 4. 2025",
+    "school_change_summary": "Naplněnost školy se od inspekce v roce 2021 zvýšila o 5,09 %. Aktuálně 289 žáků (97 ve čtyřletém, 192 v osmiletém programu). Zřízeno osm metodických orgánů (předmětových skupin)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky vzdělávání",
+        "detail": "Ve školním roce 2023/2024 prospělo 55 % žáků s vyznamenáním, škola neměla neprospívající žáky. Při maturitě 97 % úspěšnosti v řádném termínu.",
+        "evidence": "\"55 % žáků prospělo s vyznamenáním, škola neměla neprospívající žáky\" a \"97 % žáků v řádném termínu\""
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka a partnerství",
+        "detail": "Mezinárodní projekty (Erasmus+, DofE), divadelní soubor, soutěže, sportovní kurzy a spolupráce s vysokými školami.",
+        "evidence": "\"Gymnázium získalo ocenění Etwinning school label, dlouhodobě spolupracuje s partnerskou školou... Žáci a učitelé jsou aktivně zapojeni do projektu DofE\""
+      },
+      {
+        "tag": "Kvalitní podpora a péče o žáky",
+        "detail": "Funkční poradenské pracoviště (psycholog, výchovná poradkyně, metodička prevence) s individuálními konzultacemi a harmonizačními pobyty.",
+        "evidence": "\"Školní psycholog v rámci pravidelných konzultací realizuje individuální setkání s žáky... škola organizuje i harmonizační pobyty\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Rezervy v přizpůsobení výuky různým úrovním nadání a zájmů žáků, zejména pro méně úspěšné a nadané žáky.",
+        "evidence": "\"Příležitostí ke zlepšení je diferenciace učiva v průběhu výuky\" a \"Diferencovaná výuka nebyla zaznamenána\""
+      },
+      {
+        "tag": "Omezená kritická diskuse v některých předmětech",
+        "detail": "V přírodovědných předmětech chybí vedení žáků k diskusi a kritickému zpracování informací.",
+        "evidence": "\"Žáci nebyli vedeni k diskusi nad probíranými jevy a ke kritickému zpracování získaných informací\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku potřebám méně úspěšných a nadaných žáků?",
+      "Jaké jsou podmínky pro přijetí a jaké jsou průměrné známky přijatých žáků?",
+      "Jak se škola podílí na přípravě k vysokým školám a jaké jsou statistiky přijetí absolventů?"
+    ],
+    "who_school_fits": [
+      "Motivovaní žáci s dobrými studijními předpoklady, kteří chtějí kvalitní přípravu na vysokou školu",
+      "Žáci se zájmem o mezinárodní spolupráci, projekty a rozšiřující vzdělávací aktivity",
+      "Talentovaní žáci v jednotlivých oborech (jazyky, matematika, vědy, umění, sport)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s výrazně nižšími studijními předpoklady – škola přijímá uchazeče s vysokými předpoklady",
+      "Žáci, kteří potřebují individualizovanou výuku s větší diferenciací – inspekce upozorňuje na rezervy v tomto směru",
+      "Žáci, kteří preferují spíše praktické vzdělání – gymnázium je zaměřeno na teoretické všeobecné vzdělání"
+    ],
+    "plain_czech_summary": "Doctrina – Podještědské gymnázium je kvalitní soukromá škola s výborným renomé. Žáci dosahují skvělých výsledků, 55 % prospívá s vyznamenáním. Škola nabízí bohatou mimoškolní činnost, mezinárodní projekty a kvalitní podporu. Vedení je profesionální, učitelé jsou kvalifikovaní. Jediná výrazná slabina je nedostatečná diferenciace výuky pro různě nadané žáky. Škola je vhodná pro motivované žáky s dobrými předpoklady, kteří chtějí kvalitní přípravu na vysokou školu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně nadprůměrná úspěšnost",
+      "key_numbers": [
+        "2022/2023: 100 % v jarním termínu společné části, 12 % opravná zkouška v podzimě",
+        "2023/2024: 97 % v řádném termínu, 1 žák v podzimním termínu"
+      ],
+      "evidence": "\"Ve školním roce 2022/2023 uspěli v jarním termínu všichni žáci... Ve školním roce 2023/2024 uspělo 97 % žáků v řádném termínu\""
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků"
+    },
+    "support_services": [
+      "Školní psycholog s individuálními konzultacemi a mapováním třídních vztahů",
+      "Výchovná poradkyně a metodička prevence se zaměřením na duševní zdraví",
+      "Harmonizační pobyty pro rozvoj mezilidských vztahů a prevenci rizikového chování",
+      "Individuální konzultace pro včasnou identifikaci problémových oblastí",
+      "Kariérové poradenství s projektem Osobnost a spoluprací s úřadem práce"
+    ],
+    "safety_climate": [
+      "Elektronický systém zabezpečení vstupu do budovy",
+      "Analýza rizik v oblasti bezpečnosti a ochrany zdraví s přijatými opatřeními",
+      "Pozitivní edukační atmosféra s důrazem na kultivaci mezilidských vztahů",
+      "Funkční podpůrná síť pro žáky se speciálními vzdělávacími potřebami"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Přírodovědecké fakulty UK Praha a Farmaceutické fakulty UK Hradec Králové",
+      "Mezinárodní program Erasmus+ (Portugalsko, Španělsko, Finsko)",
+      "Partnerská škola Het Nieuwe Eemland – Gymnasium Amersfoort (Nizozemsko) a I.E.S. Santa Engracia",
+      "Projekt DofE – Cena vévody z Edinburghu",
+      "Spolupráce s Technickou univerzitou v Liberci a školskými poradenskými zařízeními"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, bez zbytečného úřednického stylu. Konkrétní fakta jsou podpořena citacemi. Struktura je logická a snadno se v ní orientuje.",
+    "uncertainty_notes": [
+      "Absence údajů o školní neúčasti a absence žáků – nejsou v textu zmíněny",
+      "Finanční aspekty – zpráva neobsahuje informace o školném nebo finančních podmínkách",
+      "Detailní porovnání s jinými gymnázii – zpráva zmiňuje pouze 'nadprůměrnost' bez konkrétních čísel"
+    ]
+  }
+}
+```

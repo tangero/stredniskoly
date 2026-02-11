@@ -1,0 +1,115 @@
+{
+  "report_id": "GY4_600004708_2025-01-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:03:46.077506+00:00",
+  "run_finished_utc": "2026-02-09T16:04:15.050702+00:00",
+  "raw_file": "GY4_600004708_2025-01-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600004708_2025-01-21",
+    "school_profile": {
+      "school_type": "Akademické gymnázium a Jazyková škola s právem státní jazykové zkoušky, čtyřletá denní forma studia",
+      "inspection_period": "21. 1. 2025 – 24. 1. 2025",
+      "school_change_summary": "Od roku 2017 došlo ke sloučení Akademického gymnázia s Jazykovou školou (2021), zvýšil se počet žáků na 456 (v 15 třídách), rozšířila se nabídka zaměření (přírodovědné/humanitní od 2024/2025) a zlepšilo se technické vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Všichni konající žáci uspěli, více než 40 % maturovalo s vyznamenáním, úspěšnost ve všech zkouškách srovnatelná nebo vyšší než republikový průměr.",
+          "evidence": "Nejlepších výsledků dosáhli žáci ve zkoušce z cizího jazyka, přibližně čtvrtina maturantů nahrazuje profilovou část mezinárodním certifikátem."
+        },
+        {
+          "tag": "Silná jazyková příprava",
+          "detail": "Nabídka pěti cizích jazyků, zahraniční pobyty, mezinárodní projekty a partnerství s vysokými školami.",
+          "evidence": "Žáci dosahují výborných výsledků v čtenářské, informační a finanční gramotnosti, úspěšnost v cizích jazycích odpovídá úrovni osmiletých gymnázií."
+        },
+        {
+          "tag": "Kvalitní materiální podmínky",
+          "detail": "Moderně vybavené laboratoře, počítačové pracovny, tělocvičny, hřiště, knihovna, bezpečnostní systém a bezbariérový přístup.",
+          "evidence": "Od poslední inspekce došlo ke zlepšení digitálního vybavení, modernizaci výukových prostor a zavedení elektronického zabezpečovacího systému."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Rozdílná kvalita výuky",
+          "detail": "Přibližně polovina hodin vykazuje metodické nedostatky, převahu frontální výuky a málo efektivní didaktické postupy.",
+          "evidence": "Charakteristickým rysem bylo rozdílné metodické propracování s přímým dopadem na aktivizaci žáků, některé hodiny se vyznačovaly jednotvárností a nižší interakcí."
+        },
+        {
+          "tag": "Málo formativního hodnocení",
+          "detail": "Formativní prvky hodnocení a reflexe vlastního pokroku žáků jsou uplatňovány výjimečně, chybí vrstevnické kriteriální hodnocení.",
+          "evidence": "Učitelé poskytují průběžnou zpětnou vazbu, ale formativní prvky s možností reflexe byly uplatněny výjimečně, i při vhodných příležitostech."
+        },
+        {
+          "tag": "Nízká frekvence hospitací",
+          "detail": "Vedení školy provádí hospitace především na podnět nebo u nových pedagogů, což neumožňuje soustavnější zpětnou vazbu.",
+          "evidence": "Přetrvává nízká četnost hospitační činnosti vedení školy, což v dostatečné míře neumožňuje poskytovat soustavnější zpětnou vazbu k práci učitelů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s matematikou nebo fyzikou? Jaké jsou dostupné konzultace a cvičení?",
+        "Jaké jsou zkušenosti absolventů se přijetím na vysoké školy? Máte statistiku úspěšnosti přijetí?",
+        "Jak se škola vypořádává s rozdílnými styly výuky jednotlivých učitelů? Existuje jednotný přístup k modernizaci vyučování?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí pět cizích jazyků, zahraniční pobyty a certifikáty.",
+        "Talentovaní žáci s ambicí na vysokou školu – výborné výsledky maturit a vysoká úspěšnost při přijetí na VŠ.",
+        "Žáci preferující strukturované prostředí s kvalitním vybavením – moderní laboratoře, počítačové pracovny, sportovní zázemí."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují aktivní a interaktivní výuku – část hodin je vedena tradičnějším způsobem s převahou frontální výuky.",
+        "Žáci se speciálními vzdělávacími potřebami – plán pedagogické podpory není systematicky vytvářen, pouze individuální konzultace.",
+        "Žáci s odlišným mateřským jazykem – ačkoli si vedou dobře, chybí jim systematická jazyková podpora prostřednictvím plánů pedagogické podpory."
+      ],
+      "plain_czech_summary": "Akademické gymnázium je prestižní školou s výborným renomé a tradici. Žáci dosahují skvělých výsledků maturit a úspěšně se dostávají na vysoké školy. Silnou stránkou je jazyková příprava a moderní vybavení. Slabší je kvalita výuky – přibližně polovina hodin trpí tradičnějšími metodami, málo se používá aktivní učení a formativní hodnocení. Vedení školy by mělo více kontrolovat a podporovat učitele v modernizaci výuky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100 % úspěšnost všech konajících žáků",
+          "Více než 40 % maturovalo s vyznamenáním",
+          "Úspěšnost ve všech zkouškách srovnatelná nebo vyšší než republikový průměr"
+        ],
+        "evidence": "Ve sledovaném období posledních dvou školních let všichni konající žáci uspěli, výsledky společné a profilové části jsou vyrovnané, nejlepších výsledků dosáhli žáci ve zkoušce z cizího jazyka."
+      },
+      "absence": {
+        "trend": "Velmi dobrý",
+        "key_numbers": [
+          "Zanedbatelný výskyt neomluvené absence",
+          "K 30. 6. má v průměru 95 % žáků uzavřenou klasifikaci",
+          "Počet zameškaných hodin na žáka odpovídá druhu školy"
+        ],
+        "evidence": "Nastavené preventivně podpůrné mechanismy jsou převážně funkční, o čemž svědčí přiměřený počet ukládaných kázeňských opatření a ojedinělé hodnocení sníženým stupněm z chování."
+      },
+      "support_services": [
+        "Školní psycholožka s konzultačními a kariérními službami, diagnostikou třídních vztahů",
+        "Výchovná poradkyně, metodička prevence a zástupkyně ředitele zajišťující komplexní péči",
+        "Systémové preventivně podpůrné programy: adaptační pobyty, ročníkové výjezdy, sportovní kurzy, maturitní trénink"
+      ],
+      "safety_climate": [
+        "Elektronický a kamerový systém se vrátnicí s celodenním obsazením",
+        "Bezbariérový přístup budovy",
+        "Přiměřený počet kázeňských opatření za méně závažné přestupky",
+        "Ojedinělé hodnocení žáků sníženým stupněm z chování"
+      ],
+      "partnerships_practice": [
+        "Partnerství s Přírodovědeckou a Filozofickou fakultou Univerzity Karlovy (fakultní škola)",
+        "Spolupráce s vysokými školami na rozvoji nadání a kariérním směřování",
+        "Zahraniční partnerství podporující výměnné pobyty a mezinárodní projekty",
+        "Spolupráce s Centrem pro talentovanou mládež"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však delší a obsahují více technických termínů, které mohou být pro laiky méně přístupné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik přesně hodin bylo hospitováno a jaké bylo rozdělení mezi jednotlivými předměty.",
+        "Chybí konkrétní počty žáků s odlišným mateřským jazykem v jednotlivých ročnících a jejich průměrné známky.",
+        "Není jasné, jaké konkrétní 'moderní metody' škola očekává, že by měli učitelé více používat."
+      ]
+    }
+  }
+}

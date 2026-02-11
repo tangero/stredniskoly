@@ -1,0 +1,109 @@
+{
+  "report_id": "GY8_600007766_2022-03-01",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:15:13.683581+00:00",
+  "run_finished_utc": "2026-02-10T07:16:52.519769+00:00",
+  "raw_file": "GY8_600007766_2022-03-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007766_2022-03-01",
+    "school_profile": {
+      "school_type": "Gymnázium s osmiletým a čtyřletým oborem",
+      "inspection_period": "1. − 3. března 2022",
+      "school_change_summary": "Od února 2021 školu vede nová ředitelka, která částečně odstranila nedostatky z minulé inspekce, ale problémy s aktivizací žáků přetrvávají."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Škola dosahuje dlouhodobě nadprůměrných výsledků maturit a všichni žáci ji úspěšně složí.",
+          "evidence": "Výsledky v českém jazyce a literatuře, cizím jazyce i v matematice v průměru dlouhodobě lepší než průměr stejného oboru v republice."
+        },
+        {
+          "tag": "Rozvoj talentu",
+          "detail": "Žáci píší kvalitní ročníkové práce a úspěšně se účastní soutěží.",
+          "evidence": "Povinnou součástí hodnocení... jsou kvalitní ročníkové práce. Daří se motivovat nadané žáky k úspěšné účasti ve vědomostních soutěžích."
+        },
+        {
+          "tag": "Atmosféra",
+          "detail": "Ve škole panuje pozitivní atmosféra, respekt a nízká úrazovost.",
+          "evidence": "Pozitivní atmosféra a vzájemný respekt učitelů a žáků. Míra úrazovosti je nízká."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Ve většině hodin chybí aktivizující formy výuky, což vede k pasivitě žáků.",
+          "evidence": "Absence aktivizujících forem výuky však vytvářela ve třech čtvrtinách hodin prostor pro pasivitu žáků."
+        },
+        {
+          "tag": "Nediferencovaná výuka",
+          "detail": "Učitelé nepřizpsobují výuku individuálním potřebám, všichni plní stejné úkoly.",
+          "evidence": "Ve většině hodin nediferencovali vzdělávací cíl... ve sledované výuce všichni žáci plnili stejné úkoly."
+        },
+        {
+          "tag": "Chybějící zpětná vazba",
+          "detail": "Hodiny často končí bez shrnutí učiva a sebehodnocení žáků.",
+          "evidence": "V závěru hodin se učitelé dostatečně nevěnovali shrnutí... a jen ojediněle využívali efektivní zpětnou vazbu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé diferencují výuku pro nadané žáky v rámci běžných hodin?",
+        "Jaké aktivační metody učitelé používají, aby předešli pasivitě žáků?",
+        "Jak škola podporuje sebehodnocení žáků na konci vyučovacích hodin?"
+      ],
+      "who_school_fits": [
+        "Samostatní žáci, kteří jsou schopni dobře zvládat frontální výuku a individuální přípravu.",
+        "Nadaní uchazeči, kteří chtějí dosahovat skvělých maturitních výsledků a úspěchů v soutěžích.",
+        "Žáci s zájmem o přírodovědné obory, kterým vyhovuje podpora školy v této oblasti."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří vyžadují pestřejší a interaktivnější metody výuky než frontální výklad.",
+        "Rodiče očekávající silnou individualizaci přístupu a diferencované úkoly v hodinách.",
+        "Žáci, kteří potřebují častou a systematickou zpětnou vazbu přímo během vyučování."
+      ],
+      "plain_czech_summary": "Gymnázium v Říčanech nabízí nadprůměrné akademické výsledky a bezpečné prostředí s vzájemným respektem. Škola je skvělou volbou pro nadané a samostatné studenty, zejména s zájmem o přírodní vědy, kteří cílí na úspěšnou maturitu. Rodiče by však měli vědět, že výuka má tendenci být tradiční a frontální. Inspekce upozorňuje na nedostatek aktivizujících metod a individuálního přístupu k nadaným žákům v hodinách. Pokud vaše dítě potřebuje k učení pestrost a interaktivitu, zjistěte, zda škola plánuje zlepšit tyto aspekty."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazně pozitivní",
+        "key_numbers": [
+          "100 % úspěšnost u maturity",
+          "Výsledky lepší než republikový průměr",
+          "Polovina žáků maturuje s vyznamenáním"
+        ],
+        "evidence": "Maturitní zkoušku v minulých třech letech vykonali úspěšně všichni žáci... výsledky... v průměru dlouhodobě lepší než průměr stejného oboru v republice."
+      },
+      "absence": {
+        "trend": "Nízká a klesající",
+        "key_numbers": [
+          "Cca 100 hodin na žáka (2018/19)",
+          "Neomluvená absence se téměř nevyskytla",
+          "Výrazný pokles v době distanční výuky"
+        ],
+        "evidence": "Absence žáků se ve školním roce 2018/2019 pohybovala kolem 100 hodin na žáka... neomluvená absence se téměř nevyskytla."
+      },
+      "support_services": [
+        "Funkční školní poradenské pracoviště",
+        "Individuální konzultace a doučování pro žáky",
+        "Mentorská podpora pro nové učitele"
+      ],
+      "safety_climate": [
+        "Nízká míra úrazovosti",
+        "Převažující pozitivní atmosféra a respekt",
+        "Fungující studentská rada a žákovský parlament"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s přírodovědeckou fakultou a Akademií věd",
+        "Zapojení do mezinárodního projektu Erasmus+",
+        "Aktivní spolupráce se spolkem rodičů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán ve srozumitelné češtině, má jasnou strukturu a explicitní závěry.",
+      "uncertainty_notes": []
+    }
+  }
+}

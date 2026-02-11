@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600009661_2025-11-01",
+  "school_profile": {
+    "school_type": "Střední škola - Obchodní akademie (denní a dálková forma)",
+    "inspection_period": "1. listopadu - 6. listopadu 2025",
+    "school_change_summary": "Od poslední inspekce v 2022 se počet žáků zvýšil ze 182 na 384. Došlo k obnově materiálně technických podmínek a změně školního poradenského pracoviště."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola má trvalou spolupráci s externími partnery, která žákům umožňuje získávat kompetence v reálném pracovním prostředí.",
+        "evidence": "Žáci absolvují odbornou praxi u spolupracujících firem a získávají zpětnou vazbu od nich."
+      },
+      {
+        "tag": "Školní klima",
+        "detail": "Pozitivní vztahy mezi pedagogy, žáky a rodiči vytváří podporující prostředí pro učení.",
+        "evidence": "Vedení školy systematicky usiluje o vytváření pozitivního třídního klimatu jako klíčového předpokladu pro motivaci žáků."
+      },
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Škola disponuje moderně vybaveným zázemím s dostatečným počtem odborných učeben a didaktickou technikou.",
+        "evidence": "Realizované úpravy v posledních letech přispěly k vytvoření velmi dobrých podmínek pro výuku."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence v dálkovém studiu",
+        "detail": "Žáci dálkové formy mají výrazně vyšší absenci, která koreluje s neúspěšností u maturity.",
+        "evidence": "V dálkovém studiu neprospělo 25 % žáků, v denním studiu jen 1 %. Neúspěch často koresponduje s vysokou absencí."
+      },
+      {
+        "tag": "Slabší výsledky u maturity",
+        "detail": "Hrubá neúspěšnost u maturity je v dálkovém studiu výrazně vyšší než v denním (33 % vs 11 % v roce 2025).",
+        "evidence": "V dálkovém studiu roku 2024 dosáhla hrubá neúspěšnost 63,6 %, v denním 20 %."
+      },
+      {
+        "tag": "Disproporce mezi průběžnými výsledky a maturitou",
+        "detail": "Žáci, kteří mají během studia dobré známky, často neuspějí u maturity, zejména v češtině.",
+        "evidence": "Zřejmá disproporce mezi dobrými výsledky v průběhu vzdělávání a úspěšností při ukončování."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků, zejména v dálkovém studiu?",
+      "Jaké jsou příčiny rozdílu mezi dobrými průběžnými výsledky a nižší úspěšností u maturity?",
+      "Jak se škola připravuje na změny v hodnocení, aby lépe odráželo připravenost na maturitu?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické zkušenosti - škola má silné vazby na firmy a praxi",
+      "Studenti, kterým vyhovuje denní forma studia s pravidelnou docházkou",
+      "Žáci zaměření na obchodní a ekonomické obory s ambicí pracovat v praxi"
+    ],
+    "who_should_be_cautious": [
+      "Studenti dálkové formy - vysoká absence a neúspěšnost u maturity (63,6 % v roce 2024)",
+      "Žáci, kteří se spoléhají na průběžné známky - nemusí odrážet připravenost na maturitu",
+      "Studenti, kteří potřebují intenzivní podporu v češtině a cizích jazycích"
+    ],
+    "plain_czech_summary": "Plzeňská obchodní akademie je soukromá střední škola s 384 žáky v denní i dálkovém studiu. Silnými stránkami jsou moderní vybavení, pozitivní klima a spolupráce s firmami. Žáci denního studia dosahují dobrých výsledků, ale v dálkovém studiu je vysoká absence a neúspěšnost u maturity. Problém je, že žáci s dobrými průběžnými známkami někdy neuspějí u maturity. Škola pracuje na zlepšení hodnocení a řešení absence."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vyšší hrubá neúspěšnost v dálkovém studiu, postupné zlepšování v denním studiu",
+      "key_numbers": [
+        "Denní forma 2025: 11 % hrubá neúspěšnost (1 nekonající + 8 neúspěšných z 79)",
+        "Dálková forma 2025: 33 % hrubá neúspěšnost (1 nekonající + 2 neúspěšní z 9)",
+        "Dálková forma 2024: 63,6 % hrubá neúspěšnost (1 nekonající + 6 neúspěšných z 11)"
+      ],
+      "evidence": "Žáci jsou úspěšnější v profilové části (odborné kompetence) než v části společné. Neúspěch koreluje s vysokou absencí."
+    },
+    "absence": {
+      "trend": "Vysoká absence zejména v dálkovém studiu, škola má nastavena pravidla pro řešení",
+      "key_numbers": [
+        "Dálková forma: 25 % neprospělo na konci roku (často zůstávají nehodnoceni)",
+        "Denní forma: cca 1 % neprospělo",
+        "Absence je hlavní příčinou neúspěchu u maturity"
+      ],
+      "evidence": "Díky vhodně nastaveným pravidlům pro hodnocení v případě absence se škole daří úspěšně řešit problémy spojené s vysokou absencí."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, školní metodička prevence, kariérová poradkyně",
+      "Kariérový a osobnostní rozvoj - nový předmět v závěrečném ročníku s prací na kompetenčních portfoliích",
+      "Adaptační kurzy pro 1. ročník, besedy, přednášky, exkurze, zahraniční zájezdy"
+    ],
+    "safety_climate": [
+      "Budova zajištěna proti neoprávněnému vstupu cizích osob",
+      "Žáci jsou pravidelně poučováni o pravidlech bezpečného chování (doloženo v třídních knihách)",
+      "Jasná pravidla pro řešení rizikového chování, témata prevence zařazena do výuky"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery umožňuje zapojovat odborníky z praxe do výuky",
+      "Žáci absolvují odbornou praxi u spolupracujících firem a získávají zpětnou vazbu",
+      "Škola pružně reaguje na aktuální potřeby trhu práce"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, ale některé pasáže jsou složitě strukturované. Hlavní zjištění jsou jasná: silné stránky (klima, vybavení, praxe), slabé stránky (absence, disproporce mezi průběžnými výsledky a maturitou).",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní příčiny vysoké absence v dálkovém studiu - zda jde o pracovní vytížení, motivaci či organizační problémy",
+      "Není jasné, jaké konkrétní opatření škola plánuje na zlepšení hodnocení tak, aby lépe odráželo připravenost na maturitu",
+      "Chybí informace o počtu žáků se speciálními potřebami a jak je škola podporuje"
+    ]
+  }
+}
+```

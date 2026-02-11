@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_600007502_2023-04-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:42:40.259434+00:00",
+  "run_finished_utc": "2026-02-09T16:43:03.243960+00:00",
+  "raw_file": "GY8_600007502_2023-04-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007502_2023-04-17",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium s všeobecným zaměřením",
+      "inspection_period": "17. až 21. dubna 2023",
+      "school_change_summary": "V srpnu 2022 nastoupil nový ředitel. Škola zahájila rozsáhlou rekonstrukci budovy a modernizovala vybavení technologiemi. Doporučení z minulé inspekce (2015) se podařilo pouze částečně naplnit."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné maturitní výsledky",
+          "detail": "Podíl neúspěšných žáků u maturity je nižší než průměr gymnázií v republice, třetina prospívá s vyznamenáním.",
+          "evidence": "Dlouhodobě lepší výsledky než průměr v českém jazyce, cizích jazycích a matematice."
+        },
+        {
+          "tag": "Kvalitní jazykové vzdělání",
+          "detail": "Škola nabízí širokou nabídku volitelných aktivit a konverzací v cizích jazycích s podporou rodilých mluvčích.",
+          "evidence": "Čtvrtina žáků si volí nahradit profilovou zkoušku mezinárodním certifikátem z angličtiny."
+        },
+        {
+          "tag": "Komplexní podpora rozvoje žáků",
+          "detail": "Škola efektivně podporuje klíčové kompetence přes volitelné semináře, školní poradenství a dobrovolnické aktivity.",
+          "evidence": "Žáci se zapojují do mezinárodního programu Cena vévody z Edinburghu a studentského parlamentu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná diferenciace ve výuce",
+          "detail": "Učitelé málo přizpůsobují obsah a metody schopnostem jednotlivých žáků, zejména nadaní žáci nejsou dostatečně podporováni.",
+          "evidence": "Frontální výuka převládá ve dvou třetinách hodin, skupinová práce jen v třetině, diferenciace obsahu téměř chybí."
+        },
+        {
+          "tag": "Slabé formativní hodnocení",
+          "detail": "Závěry hodin postrádají efektivní shrnutí a ověření zvládnutí látky, chybí sebehodnocení a vrstevnické hodnocení.",
+          "evidence": "Škola výrazněji nepokročila v zařazování formativního hodnocení a sebehodnocení žáků."
+        },
+        {
+          "tag": "Nedokončené individuální plány",
+          "detail": "Ředitel povolil 12 žákům vzdělávání podle IVP z jiných závažných důvodů, ale škola je nevypracovala.",
+          "evidence": "Zjištěn dílčí nedostatek v řídicím a kontrolním systému."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku nadaným žákům a jak je motivuje k dalšímu rozvoji?",
+        "Jaké konkrétní kroky podnikne škola k zlepšení diferenciace obsahu a metod ve výuce?",
+        "Jak probíhá sebehodnocení žáků a jak se využívá zpětná vazba v jednotlivých předmětech?"
+      ],
+      "who_school_fits": [
+        "Motivovaní žáci s dobrým prospěchem, kteří se chystají na vysokou školu",
+        "Žáci se zájmem o jazykové vzdělání a mezinárodní projekty",
+        "Žáci, kterým vyhovuje tradiční přístup s důrazem na frontální výuku a samostatnou práci"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuálního přístupu a diferenciované metody výuky",
+        "Nadaní žáci, pokud očekávají intenzivnější podporu a rozmanitější organizační formy",
+        "Žáci se speciálními vzdělávacími potřebami, pokud jejich IVP není řádně vypracován"
+      ],
+      "plain_czech_summary": "Gymnázium Dr. Josefa Pekaře je prestižní škola s výborným renomé. Žáci dosahují velmi dobrých výsledků u maturity a v jazykových testech. Škola nabízí kvalitní vzdělání s důrazem na přípravu na vysokou školu. Má funkční poradenské služby a podporuje rozvoj nadání. Hlavní slabinou je málo variabilní výuka – učitelé spoléhají především na frontální výuku a málo přizpůsobují obsah jednotlivým žákům. Chybí také efektivní sebehodnocení žáků. Nový ředitel pracuje na zlepšení, ale některá doporučení z minulé inspekce ještě nejsou naplněna."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi dobrý",
+        "key_numbers": [
+          "Podíl neúspěšných nižší než průměr gymnázií v republice",
+          "Třetina žáků prospívá s vyznamenáním",
+          "Šestina žáků skládá úspěšně rozšiřující matematiku"
+        ],
+        "evidence": "V dílčích zkouškách společné části (čeština, cizí jazyk, matematika) dlouhodobě lepší výsledky než průměr."
+      },
+      "absence": {
+        "trend": "Minimální",
+        "key_numbers": [
+          "Minimální podíl žáků s neomluvenou absencí"
+        ],
+        "evidence": "Systém preventivních aktivit je účinně nastaven, kázeňské problémy jsou ojedinělé."
+      },
+      "support_services": [
+        "Výchovná poradkyně, školní psycholog a školní metodik prevence pracují systematicky",
+        "Individuální konzultace a doučování pro žáky ohrožené neúspěšností",
+        "Funkční kariérové poradenství – téměř všichni absolventi pokračují na vysokých školách"
+      ],
+      "safety_climate": [
+        "Míra úrazovosti je dlouhodobě nízká",
+        "Kázeňská opatření jsou minimální, počet pochval výrazně převyšuje počet opatření",
+        "Pravidla a mechanismy prevence rizikového chování jsou srozumitelně nastaveny"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami na vzdělávacích akcích a vedení maturitních prací",
+        "Dlouhodobý partner ŠKODA Mladá Boleslav",
+        "Zapojení do mezinárodních projektů a programu Cena vévody z Edinburghu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a věcná, jasně identifikuje silné stránky i slabiny. Doporučení jsou konkrétní. Některé pasáže jsou však technicky náročné a vyžadují znalost školské terminologie.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak přesně se měří 'frontální výuka' a jaký je přesný podíl skupinové práce v jednotlivých předmětech",
+        "Není jasné, jaké konkrétní kroky nový ředitel již podnikl k naplnění doporučení z roku 2015",
+        "Chybí informace o počtu žáků, kterým byla skutečně vypracována pedagogická podpora"
+      ]
+    }
+  }
+}

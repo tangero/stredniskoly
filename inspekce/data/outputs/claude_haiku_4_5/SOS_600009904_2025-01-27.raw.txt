@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600009904_2025-01-27",
+  "school_profile": {
+    "school_type": "Soukromá obchodní akademie s dvěma maturitními obory: Obchodní akademie (187 žáků) a Podnikání v dálkové formě (29 žáků). Celkem 216 žáků, z toho 10 se speciálními vzdělávacími potřebami.",
+    "inspection_period": "27. až 29. ledna 2025",
+    "school_change_summary": "Od inspekce v 2019 došlo k výraznému nárůstu počtu žáků denního studia. Škola rozšířila nabídku o tři specializace (moderní asistentka, sportovní management, IT). Od 2023/24 má kariérového poradce. Vybudovala nové prostory včetně počítačové učebny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Pozitivní klima",
+        "detail": "Škola systematicky buduje pozitivní atmosféru prostřednictvím adaptačních výjezdů, sociometrických šetření a dotazníků.",
+        "evidence": "Žáci 1. ročníku se účastní adaptačních výjezdů, ve 2. ročníku probíhá sociometrické šetření s následnou individuální prací."
+      },
+      {
+        "tag": "Rozšíření nabídky",
+        "detail": "Denní forma má tři atraktivní specializace, které si žáci volí podle zájmu od 2. ročníku.",
+        "evidence": "Obor Obchodní akademie nabízí zaměření: moderní asistentka, sportovní management, informační technologie."
+      },
+      {
+        "tag": "Kariérové poradenství",
+        "detail": "Škola má kariérového poradce, který vede individuální rozhovory a testování profesních možností.",
+        "evidence": "Kariérový poradce realizuje individuální rozhovory se žáky 3. a 4. ročníku a vede statistiku další vzdělávací dráhy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoké předčasné odchody v dálkovém studiu",
+        "detail": "Zejména v 1. ročníku dálkového studia odchází mnoho žáků, škola příčiny neanalyzuje.",
+        "evidence": "Škola neanalyzuje důvody předčasných odchodů ze vzdělávání zejména dálkového studia, ani nenastavila systém podpory."
+      },
+      {
+        "tag": "Slabá kvalita dálkového vzdělávání",
+        "detail": "Výuka v dálkovém studiu je vedena frontálně, často jsou spojeni žáci různých ročníků a oborů, chybí diferenciace.",
+        "evidence": "V hodinách všeobecně vzdělávacích předmětů jsou společně žáci různých ročníků i oborů, nedochází k naplňování odlišného učiva."
+      },
+      {
+        "tag": "Nedostatečná individualizace v denní formě",
+        "detail": "Výuka nerespektuje různé vzdělávací potřeby žáků, chybí diferenciace a sebehodnocení.",
+        "evidence": "Ve výuce není využívána diferenciace ve vztahu k různým vzdělávacím potřebám, vyučující nevytvářeli prostor pro sebehodnocení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky dálkového studia, aby nezačali předčasně odcházet? Jaký je podíl těch, kteří studia nedokončí?",
+      "Jak se liší kvalita výuky mezi jednotlivými specializacemi (moderní asistentka, sportovní management, IT) a jak si vybrat tu správnou?",
+      "Jaké jsou konkrétní výsledky maturit za poslední roky a jak se škola snaží zlepšit úspěšnost v cizích jazycích?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si chtějí vybrat ze tří zajímavých specializací a hledají prakticky zaměřené vzdělání s dobrým klimatem.",
+      "Studenti denní formy, kterým vyhovuje menší soukromá škola s individuálnějším přístupem a adaptačními programy.",
+      "Pracující dospělí, kteří chtějí dálkové studium, pokud jsou motivovaní a zvládnou vyšší míru samostudia."
+    ],
+    "who_should_be_cautious": [
+      "Žáci dálkového studia – vysoký podíl předčasných odchodů, zejména v 1. ročníku, a slabší podpora než v denní formě.",
+      "Žáci se slabšími znalostmi z cizích jazyků – vysoký podíl neprospívajících z jazyků, zejména v dálkovém studiu.",
+      "Žáci, kteří potřebují individualizovanou výuku – škola zatím málo diferenciuje podle potřeb jednotlivých žáků."
+    ],
+    "plain_czech_summary": "Soukromá obchodní akademie v Sokolově je malá škola s 216 žáky, která se zaměřuje na denní a dálkové studium. Denní forma se rozvinula a nabízí tři zajímavé specializace. Škola má dobré klima a snaží se budovat pozitivní atmosféru. Hlavní problém je dálkové studium – mnoho žáků v něm předčasně skončí, zejména v prvním roce. Výuka není dostatečně přizpůsobena jednotlivým žákům a chybí jim podpora. Kvalita výuky se liší podle předmětu a formy studia."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nejasný – inspekce analyzuje výsledky pouze z hlediska úspěšnosti, bez hledání příčin neúspěchu",
+      "key_numbers": [
+        "187 žáků v oboru Obchodní akademie (154 denní forma, 33 dálková forma)",
+        "29 žáků v oboru Podnikání (dálková forma)",
+        "Vysoký podíl neprospívajících z cizích jazyků, zejména v dálkovém studiu"
+      ],
+      "evidence": "Maturitní výsledky analyzuje z hlediska úspěšnosti žáků, v případě neúspěchu však nehledá příčiny v průběhu studia."
+    },
+    "absence": {
+      "trend": "Vysoká absence, zejména v dálkovém studiu",
+      "key_numbers": [
+        "V 1. pololetí více než polovina žáků nehodnocena z důvodu vysoké absence",
+        "Vysoký podíl žáků uvolněných z tělesné výchovy (zejména aktivní sportovci)"
+      ],
+      "evidence": "Škola pravidelně eviduje v 1. pololetí více než polovinu žáků nehodnocených z důvodu vysoké absence z některých předmětů."
+    },
+    "support_services": [
+      "Kariérový poradce (od 2023/24) – individuální rozhovory se žáky 3. a 4. ročníku, testování profesních možností",
+      "Výchovný poradce – monitoring podpůrných opatření pro žáky se speciálními vzdělávacími potřebami",
+      "Doučování pro žáky denní formy, seminář z českého jazyka na podporu čtenářské gramotnosti",
+      "Metodik prevence – monitoring rizikového chování",
+      "Stipendia za výborný prospěch nebo nízkou absenci"
+    ],
+    "safety_climate": [
+      "Škola má vytvořený systém pro zjišťování a budování pozitivního klimatu",
+      "Adaptační výjezdy pro 1. ročník zaměřené na tvorbu pozitivního klimatu",
+      "Sociometrické šetření ve 2. ročníku s následnou individuální prací",
+      "Pravidelné dotazníkové šetření pro žáky, výsledky se vyhodnocují a přijímají se opatření",
+      "Poznávací mimoškolní akce, účast žáků na jednání studentského zastupitelstva"
+    ],
+    "partnerships_practice": [
+      "Škola se aktivně zapojuje do rozvojových programů",
+      "Využívá rozvojové programy na zajištění kariérového poradce",
+      "Rozvojové programy slouží k dalšímu vzdělávání pedagogů a podpoře mimoškolních aktivit"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, ale obsahuje řadu technických termínů a úřednických formulací. Hlavní zjištění jsou jasná, ale pro rodiče by byla užitečnější konkrétnější čísla o úspěšnosti maturit a počtech odpadlíků.",
+    "uncertainty_notes": [
+      "Inspekce neuvádí konkrétní procenta úspěšnosti maturit ani trendy v čase – pouze konstatuje, že výsledky analyzuje bez hledání příčin",
+      "Počet žáků, kteří předčasně skončí v dálkovém studiu, není kvantifikován – pouze se uvádí 'vysoký podíl'",
+      "Kvalita výuky v jednotlivých specializacích není podrobně rozlišena – hodnocení je spíše obecné"
+    ]
+  }
+}
+```

@@ -1,0 +1,111 @@
+{
+  "report_id": "LYC_610250523_2021-10-19",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:27:04.512092+00:00",
+  "run_finished_utc": "2026-02-10T08:28:03.694197+00:00",
+  "raw_file": "LYC_610250523_2021-10-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_610250523_2021-10-19",
+    "school_profile": {
+      "school_type": "Střední odborná škola s domovem mládeže",
+      "inspection_period": "19. – 25. 10. 2021",
+      "school_change_summary": "Škola zaznamenala mírný nárůst počtu žáků, zlepšila materiální podmínky a zavedla systém Edookit."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Škola nabízí kvalitní odborný výcvik na dobře vybavených pracovištích a ve spolupráci s firmami.",
+          "evidence": "Odborný výcvik probíhá v dobře vybaveném středisku... a na smluvních pracovištích firem."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola účinně předchází závažným sociálním problémům a buduje dobré vztahy v kolektivech.",
+          "evidence": "Závažné problémy šikany nebo kyberšikany v posledních třech školních letech škola neřešila."
+        },
+        {
+          "tag": "Ekologický přístup",
+          "detail": "Žáci jsou systematicky vedeni k zapojování do ekologických aktivit a péči o prostředí.",
+          "evidence": "Žáci jsou vhodně a účinně vedeni k zapojování do ekologických aktivit."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kolísavá úspěšnost u maturity",
+          "detail": "Výsledky u maturity se pohybují většinou pod celostátním průměrem a v loňsk roce klesly.",
+          "evidence": "Výsledky žáků u MZ... většinou pod průměrem škol podobného typu... s 61% úspěšností došlo ke zhoršení."
+        },
+        {
+          "tag": "Nefektivní výukové metody",
+          "detail": "Ve výuce převažuje frontální styl bez pestřejších aktivit a diferenciace pro různé žáky.",
+          "evidence": "Převažovala frontální výuka... Příliš se nevyskytovalo střídání činností... nízká míra diferencovaného přístupu."
+        },
+        {
+          "tag": "Nedostatečná analýza výsledků",
+          "detail": "Škola sumarizuje výsledky, ale chybí hlubší analýza příčin neúspěchů a nápravná opatření.",
+          "evidence": "Převažovala sumarizace nad analýzou výsledků... chybí systematická analýza příčin neúspěchu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením, aby úspěšně složili maturitu?",
+        "V jakých konkrétních firmách a jak často probíhá odborná praxe v mém oboru?",
+        "Jakým způsobem pedagogové zajišťují, aby byla výuka pestrá a zajímavá pro všechny žáky?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří se chtějí učit řemeslo a uplatnit se v praxi (úspěšnost u závěrečných zkoušek je vysoká).",
+        "Pro zájemce o ekologii a environmentalistiku (škola nabízí mnoho aktivit v této oblasti).",
+        "Pro studenty, kteří preferují menší školu s rodinnou atmosférou a zázemím domova mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří plánují studovat nástavbové studium (zdejší výsledky maturit byly horší).",
+        "Pro žáky, kteří vyžadují silnou podporu při studiu (chybí systematická kontrola podpůrných opatření).",
+        "Pro studenty, kteří očekávají moderní a pestré vyučovací metody ve všech předmětech."
+      ],
+      "plain_czech_summary": "Střední odborná škola v Novém Městě na Moravě nabízí kvalitní praktickou přípravu v řadě oborů, o čemž svědčí i velmi dobré výsledky u závěrečných zkoušek. Škola je bezpečným prostředím bez vážnějších projevů šikany a klade důraz na ekologické aktivity. Slabší stránkou je kolísavá úspěšnost u maturitních zkoušek, která se v posledním roce pohybovala pod průměrem. Inspekce rovněž kritizovala málo pestré vyučovací metody a nedostatečnou analýzu studijních výsledků, což může ztěžovat řešení problémů jednotlivých žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý, s poklesem v posledním roce",
+        "key_numbers": [
+          "61 % úspěšnost (2021)",
+          "81 % úspěšnost (2020)",
+          "Výsledky pod průměrem podobných škol"
+        ],
+        "evidence": "Výsledky žáků u MZ... většinou pod průměrem škol podobného typu... s 61% úspěšností došlo ke zhoršení."
+      },
+      "absence": {
+        "trend": "Problémový segment bez efektivního řešení",
+        "key_numbers": [
+          "Žáci nehodnocení v závěru roku",
+          "Nefektivní nastavená opatření"
+        ],
+        "evidence": "Zavedeny jsou postupy při řešení vyšší absence, jejich efektivita ale není vždy účinná."
+      },
+      "support_services": [
+        "Funkční školní poradenské pracoviště (dvě výchovné poradkyně).",
+        "Možnost doučování a konzultací pro žáky.",
+        "Zájmové aktivity a podpora na domově mládeže."
+      ],
+      "safety_climate": [
+        "Žádné závažné případy šikany či kyberšikany za poslední 3 roky.",
+        "Pořádání adaptačních pobytů pro posílení kolektivu.",
+        "Promyšlená prevence rizikového chování."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s firmami jako České dráhy, ICOM, České lesy.",
+        "Odborný výcvik v Petrovicích a na smluvních pracovištích.",
+        "Zahraniční spolupráce se školami v Nizozemí a Velké Británii."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, jasně odděluje hodnocení podmínek, průběhu a výsledků a konkrétní závěry.",
+      "uncertainty_notes": [
+        "Neuveden konkrétní počet žáků, kteří nebyli hodnoceni kvůli absenci.",
+        "Chybí bližší specifikace 'neobvyklých forem sebehodnocení' u cizích jazyků."
+      ]
+    }
+  }
+}

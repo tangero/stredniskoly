@@ -1,0 +1,111 @@
+{
+  "report_id": "LYC_600016099_2024-02-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:25:46.690358+00:00",
+  "run_finished_utc": "2026-02-09T16:26:11.005606+00:00",
+  "raw_file": "LYC_600016099_2024-02-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600016099_2024-02-19",
+    "school_profile": {
+      "school_type": "Střední pedagogická škola a Střední zdravotnická škola (SPgŠ a SZdŠ), Krnov",
+      "inspection_period": "19. února 2024 až 22. února 2024",
+      "school_change_summary": "Od poslední inspekce v roce 2017 počet žáků vzrostl o 16 procent. Nový ředitel od srpna 2022. Od školního roku 2023/2024 posíleno školní poradenské pracoviště o psychologa. Domov mládeže není provozován od roku 2021."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Aktivní učení a diskuse",
+          "detail": "Škola výrazně podporuje aktivní učení, vyjadřování vlastního názoru a diskusi v teoretické i praktické výuce.",
+          "evidence": "\"Výrazná podpora aktivního učení, vyslovení vlastního názoru a diskuze v teoretickém i praktickém vyučování.\""
+        },
+        {
+          "tag": "Podpora začínajících učitelů",
+          "detail": "Kvalitní a systematická podpora profesního rozvoje nových pedagogů prostřednictvím vypracovaného programu.",
+          "evidence": "\"Kvalitní systematická podpora profesního rozvoje začínajících učitelů.\""
+        },
+        {
+          "tag": "Bohatá mimoškolní činnost",
+          "detail": "Škola nabízí rozmanitou škálu projektů, divadelních představení, sportovních kurzů a charitativních akcí.",
+          "evidence": "\"Škola podporuje osobnostní a sociální rozvoj žáků jejich zapojením do bohaté škály školních i mimoškolních projektů.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejasná činnost poradenského pracoviště",
+          "detail": "Rozdělení kompetencí jednotlivých členů školního poradenského pracoviště není dostatečně transparentní a žáci neví, na koho se obrátit.",
+          "evidence": "\"Rozdělení kompetencí jednotlivých členů školního poradenského pracoviště i konkrétní nabídka pomoci žákům není dostatečně transparentní.\""
+        },
+        {
+          "tag": "Slabší výsledky v některých oborech",
+          "detail": "Obor Praktická sestra vykazuje horší výsledky u maturitní zkoušky ve srovnání s Pedagogickým lycem.",
+          "evidence": "\"Nejlepších výsledků dosahují žáci oboru Pedagogické lyceum, horší výsledky jsou evidovány u žáků v oboru Praktická sestra.\""
+        },
+        {
+          "tag": "Nedostatečná individualizace výuky",
+          "detail": "Učitelé málo nabízejí úlohy různé obtížnosti; všichni žáci pracují na stejných úkolech bez ohledu na jejich schopnosti.",
+          "evidence": "\"V hospitovaných hodinách nebyly zadávány obsahově gradované úlohy, všichni žáci pracovali na stejných úkolech se stejnou mírou obtížnosti.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně funguje školní poradenské pracoviště a jak se na něj mohou obrátit žáci a rodiče?",
+        "Jaká opatření škola přijala pro zlepšení výsledků maturitní zkoušky v oboru Praktická sestra?",
+        "Jak škola individualizuje výuku pro žáky s různými schopnostmi a jak pracuje se žáky se speciálními vzdělávacími potřebami?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí pracovat s dětmi (pedagogické obory) – škola má dlouhodobě dobré výsledky v oboru Pedagogické lyceum",
+        "Žáci zainteresovaní na zdravotnických oborech – škola má kvalitní vybavení a propojení s praxí",
+        "Aktivní žáci, kteří se chtějí zapojit do projektů, divadla, sportu a společenského dění"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – škola zatím málo nabízí úlohy různé obtížnosti",
+        "Žáci, kteří se obávají zdravotnických oborů – obor Praktická sestra má slabší výsledky u maturity",
+        "Žáci, kteří potřebují jasné informace o poradenských službách – činnost poradenského pracoviště není dostatečně transparentní"
+      ],
+      "plain_czech_summary": "Jde o kvalitní střední školu s dobrým vedením a zkušeným pedagogickým sborem. Silné stránky: aktivní výuka, podpora začínajících učitelů, bohatá mimoškolní činnost. Slabiny: nejasná činnost poradenského pracoviště, slabší výsledky v oboru Praktická sestra, málo individualizované úkoly. Škola se snaží zlepšovat a reaguje na doporučení inspekce. Vhodná pro aktivní žáky zajímající se o pedagogiku nebo zdravotnictví."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě dobré výsledky s rozdíly mezi obory",
+        "key_numbers": [
+          "Hrubá úspěšnost 60–100 % v maturitních obdobích 2022 a 2023",
+          "Pedagogické lyceum: nejlepší výsledky",
+          "Praktická sestra: horší výsledky"
+        ],
+        "evidence": "\"Ve sledovaném období (zkušební maturitní období 2022 a 2023) se pohybovala tzv. hrubá úspěšnost u maturitní zkoušky v rozmezí 60 - 100 %.\""
+      },
+      "absence": {
+        "trend": "Není v textu explicitně uvedeno",
+        "key_numbers": [
+          "Informace o absence nejsou v inspekční zprávě obsaženy"
+        ],
+        "evidence": "Zpráva se absence nezabývá."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence – poskytují komplexní poradenské služby",
+        "Psycholožka – nabízí individuální konzultace (počet žáků vyhledávajících pomoc se zvýšil)",
+        "Podpůrná opatření pro 33 žáků se speciálními vzdělávacími potřebami (1.–4. stupeň), 5 žáků s individuálním vzdělávacím plánem"
+      ],
+      "safety_climate": [
+        "Příjemné pracovní klima založené na vzájemném respektu a důvěře mezi aktéry vzdělávacího procesu",
+        "Pedagogové podporují otevřenou komunikaci a žáci bez obav pokládají otázky",
+        "Zvýšená úrazovost souvisí s důsledností evidence úrazů a praktickým vyučováním; žáci používají ochranné pomůcky"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se smluvními pracovišti pro odbornou praxi (zdravotnická a sociální zařízení)",
+        "Partnerství s vnějšími subjekty: oblastní metodik prevence, neziskové organizace, zdravotní ústav, zřizovatel",
+        "Projekty s městem Krnov (Putování ke studánce, Den Země), spolupráce s městskou knihovnou (Počteníčko/Bookstart)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však dlouhé a složitě strukturované, což mírně snižuje jasnost.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, zda je problém nebo se jednoduše nemonitoruje",
+        "Konkrétní počty žáků s jednotlivými stupni podpůrných opatření nejsou rozepsány",
+        "Detailní analýza příčin slabších výsledků v oboru Praktická sestra chybí"
+      ]
+    }
+  }
+}

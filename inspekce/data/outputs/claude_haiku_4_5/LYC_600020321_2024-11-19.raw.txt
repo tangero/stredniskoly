@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_600020321_2024-11-19",
+  "school_profile": {
+    "school_type": "Obchodní akademie a Ekonomické lyceum (střední vzdělání s maturitní zkouškou)",
+    "inspection_period": "19. listopadu 2024 až 21. listopadu 2024",
+    "school_change_summary": "Škola se zaměřila na odstranění nedostatků z minulé inspekce. Vyšší odborná škola ukončila činnost, rozšířila se spolupráce se zahraničními partnery a zvýšila se úspěšnost maturitní zkoušky. Škola získala titul Fakultní škola Ekonomické fakulty Jihočeské univerzity."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání a mezinárodní projekty",
+        "detail": "Škola intenzivně rozvíjí jazykové dovednosti žáků prostřednictvím projektů ERASMUS+, eTwinningu a zahraničních stáží.",
+        "evidence": "31 žáků v roce 2024 nahradilo maturitu z cizího jazyka certifikátem Cambridge English B1/B2."
+      },
+      {
+        "tag": "Vysoká úspěšnost u maturitní zkoušky",
+        "detail": "Škola dosahuje stoprocentní úspěšnosti v běžné části maturitní zkoušky a překonává celorepublikový průměr.",
+        "evidence": "Ve zkušebních letech 2023 a 2024 stoprocentní úspěšnost v běžné části maturitní zkoušky."
+      },
+      {
+        "tag": "Podpora slabších žáků a prevence odchodů",
+        "detail": "Efektivní systém péče o žáky s problémy v učení a nízký počet neprospívajících žáků.",
+        "evidence": "Individuální konzultace, online materiály a činnost výchovné poradkyně přispívají k nízkému počtu neprospívajících žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivních metod ve výuce",
+        "detail": "Převažují frontální činnosti, chybí skupinová práce, diskuse a problémové učení, což vede k pasivnímu přejímání informací.",
+        "evidence": "Hospitované hodiny ukazují, že efektivní skupinová práce byla využita v menší míře, diferencované zadání ojediněle."
+      },
+      {
+        "tag": "Nedostatečné individuální přizpůsobení výuky",
+        "detail": "Všichni žáci zpravidla plní stejné úkoly bez ohledu na jejich schopnosti, formativní hodnocení se používá ojediněle.",
+        "evidence": "Diferencované zadání s ohledem na studijní předpoklady bylo využito ojediněle, prvky formativního hodnocení ojediněle."
+      },
+      {
+        "tag": "Slabší vybavení pro přírodovědné předměty",
+        "detail": "Přetrvávají nedostatky v zajištění učebních pomůcek pro výuku přírodovědných předmětů.",
+        "evidence": "Dílčí nedostatky přetrvávají v zajištění učebních pomůcek pro výuku přírodovědných předmětů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola plánuje zvýšit podíl aktivních metod ve výuce a skupinové práce?",
+      "Jaké konkrétní podpory se dostane žákům, kteří mají různé tempo učení nebo různé schopnosti?",
+      "Jak se škola chystá zlepšit vybavení pro výuku přírodovědných předmětů?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí projekty ERASMUS+, zahraniční stáže a certifikáty Cambridge.",
+      "Žáci, kteří potřebují podporu a individuální přístup – škola má efektivní systém péče o slabší žáky a nízký počet neprospívajících.",
+      "Žáci s ambicí na vysokou úspěšnost u maturity – škola dosahuje stoprocentní úspěšnosti v běžné části maturitní zkoušky."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se učí lépe aktivní metodou a skupinovou prací – ve výuce převažují frontální činnosti a samostatná práce.",
+      "Žáci se zájmem o přírodovědné předměty – vybavení pro tyto předměty není optimální.",
+      "Žáci, kteří potřebují časté zpětnou vazbu a formativní hodnocení – tyto prvky se používají ojediněle."
+    ],
+    "plain_czech_summary": "Obchodní akademie v Táboře je stabilní školou s vysokou úspěšností u maturity a silným zaměřením na jazykové vzdělání. Žáci se mohou účastnit mezinárodních projektů a zahraničních stáží. Škola dobře podporuje slabší žáky. Hlavní slabinou je, že výuka často probíhá tradičním způsobem bez dostatku skupinové práce a aktivních metod. Žáci s různými schopnostmi dostávají stejné úkoly. Vybavení pro přírodovědné předměty není ideální."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – úspěšnost se postupně zvyšuje",
+      "key_numbers": [
+        "100% úspěšnost v běžné části maturitní zkoušky v letech 2023 a 2024",
+        "31 žáků v roce 2024 s certifikátem Cambridge English místo maturitní zkoušky",
+        "7 žáků v minulém roce s certifikátem psaní na klávesnici"
+      ],
+      "evidence": "Škola dosahuje v celorepublikovém srovnění vyšší úspěšnosti než stejné skupiny oborů. Důraz na jazykovou gramotnost se odráží v počtu certifikátů."
+    },
+    "absence": {
+      "trend": "Nízké absence – ojediněle se vyskytuje záškoláctví",
+      "key_numbers": [
+        "Nízký počet neprospívajících žáků",
+        "Ojediněle se vyskytující závažnější problémy jako záškoláctví"
+      ],
+      "evidence": "Výsledkem realizovaných opatření je nízký počet neprospívajících žáků. Ojediněle se vyskytující závažnější problémy jsou příhodně řešeny."
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodika prevence poskytují dlouhodobě efektivní poradenské služby",
+      "Individuální konzultace a online prostředí s uloženými výukovými materiály pro cílenou přípravu",
+      "Systém podpory začínajících učitelů s dvouletým adaptačním plánem",
+      "Elektronická schránka důvěry a komunitní kruhy pro řešení problémů"
+    ],
+    "safety_climate": [
+      "Klidná pracovní atmosféra v hodinách, respektující komunikace mezi učiteli a žáky",
+      "Funkční výchovná opatření s převahou pochval nad kázeňskými opatřeními",
+      "Dlouhodobě ověřené aktivity prevence rizikového chování realizované se zahraničními odborníky",
+      "Vstřícný přístup pedagogů a aktivity studentské rady přispívají ke zlepšování školního klimatu"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá účast v ERASMUS+ a eTwinningu s intenzivní spoluprací se zahraničními školami",
+      "Spolupráce s řadou regionálních smluvních partnerů pro odbornou praxi žáků",
+      "Titul Fakultní škola Ekonomické fakulty Jihočeské univerzity (od 2022)",
+      "Vzájemné vztahy s Ekonomickou fakultou Jihočeské univerzity a dalšími školami stejného zaměření"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a obsahuje konkrétní údaje. Slabiny jsou jasně identifikovány (málo aktivních metod, nedostatečná diferenciace, vybavení). Silné stránky jsou podpořeny čísly (100% úspěšnost, 31 certifikátů). Některé pasáže jsou však úřednicky formulované.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní počty žáků se speciálními vzdělávacími potřebami ani rozsah jejich podpory.",
+      "Chybí informace o počtu a typu soutěží, v nichž žáci dosahují úspěchů.",
+      "Není jasné, jak se liší kvalita výuky mezi jednotlivými předměty a obory."
+    ]
+  }
+}
+```

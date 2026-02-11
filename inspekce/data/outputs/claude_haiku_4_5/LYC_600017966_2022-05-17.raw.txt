@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600017966_2022-05-17",
+  "school_profile": {
+    "school_type": "Waldorfská střední škola, čtyřletý obor Kombinované lyceum",
+    "inspection_period": "17.–19. května 2022",
+    "school_change_summary": "Škola zahájila činnost 1. 9. 2021 v nově vybudovaných prostorách. V inspekčním období měla jednu třídu s 27 žáky (včetně jednoho se speciálními potřebami). Pedagogický sbor se postupně doplňuje s důrazem na waldorfskou kvalifikaci."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Přátelská atmosféra",
+        "detail": "Výuka probíhá v empatickém, vstřícném prostředí s uvolněnou komunikací mezi učiteli a žáky.",
+        "evidence": "Společným znakem hodnocených hodin byla přátelská pracovní atmosféra a empatický přístup vyučujících."
+      },
+      {
+        "tag": "Péče o osobnostní rozvoj",
+        "detail": "Škola se zaměřuje na celistvý rozvoj osobnosti bez úzké specializace, s důrazem na vnitřní motivaci.",
+        "evidence": "Vzdělávací cíle vycházejí ze základního konceptu waldorfské pedagogiky, kterým je celostní rozvoj osobnosti žáka."
+      },
+      {
+        "tag": "Aktivní partnerství s rodiči",
+        "detail": "Rodiče se podílí na chodu školy, kulturních a sportovních akcích, je navázána průběžná aktivní spolupráce.",
+        "evidence": "Škola vytváří nadstandardní podmínky pro spolupráci se zákonnými zástupci žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná práce s cíli hodin",
+        "detail": "Ve většině hodin chybí jasně stanovený vzdělávací cíl a jeho vyhodnocení, chybí sebereflexi žáků.",
+        "evidence": "Ve většině hodnocených vyučovacích hodin chyběl v úvodu jasně stanoven vzdělávací cíl, v závěru nebylo patrné shrnutí."
+      },
+      {
+        "tag": "Nízká kvalifikace některých učitelů",
+        "detail": "Část pedagogů má krátkou praxi a nedokončené waldorfské semináře, což negativně ovlivňuje kvalitu výuky.",
+        "evidence": "Krátká doba pedagogické praxe a nedokončené studium seminářů waldorfské pedagogiky měly negativní vliv na kvalitu vzdělávání."
+      },
+      {
+        "tag": "Neúplné vybavení odborných učeben",
+        "detail": "Některé odborné učebny (šicí a rukodělná dílna) ještě nejsou plně vybaveny odpovídajícími přístroji.",
+        "evidence": "Část odborných učeben ještě nebyla ke dni inspekční činnosti plně zařízena odpovídajícími přístroji a nástroji."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá waldorfský trojkrok v jednotlivých hodinách a jak se liší od běžné výuky?",
+      "Jaké konkrétní waldorfské semináře absolvují vaši učitelé a jak dlouho trvá jejich kvalifikace?",
+      "Jak se budou rozšiřovat odborné učebny a kdy budou plně vybaveny?"
+    ],
+    "who_school_fits": [
+      "Žáci, kterým vyhovuje holistický přístup k vzdělávání bez úzké specializace a důraz na osobnostní rozvoj",
+      "Rodiny, které chtějí aktivně participovat na chodu školy a jsou ochotny se zapojit do školních aktivit",
+      "Žáci, kteří prospívají v přátelském, empatickém prostředí s důrazem na vnitřní motivaci"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají tradiční přístup k výuce s jasně definovanými cíli a měřitelnými výsledky",
+      "Žáci, kteří potřebují strukturovanou zpětnou vazbu a jasné vyhodnocování svého pokroku",
+      "Rodiny, které nemají čas nebo zájem participovat na školních aktivitách a akcích"
+    ],
+    "plain_czech_summary": "Waldorfská střední škola v Olomouci je nová škola (od září 2021) s jednou třídou 27 žáků. Silnou stránkou je přátelská atmosféra, empatický přístup učitelů a aktivní zapojení rodičů. Škola se zaměřuje na osobnostní rozvoj bez úzké specializace. Slabinou je, že některé hodiny postrádají jasně definované cíle a jejich vyhodnocení. Část učitelů má krátkou praxi a nedokončené waldorfské vzdělání. Některé odborné učebny nejsou plně vybaveny. Inspekce doporučuje zlepšit strukturu waldorfské výuky a práci s cíli hodin."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze určit",
+      "key_numbers": [
+        "Škola funguje od 1. 9. 2021",
+        "V inspekčním období pouze 1. ročník",
+        "Žádné maturitní výsledky zatím nejsou k dispozici"
+      ],
+      "evidence": "Škola je nově zřízena, v inspekčním období měla pouze jednu třídu prvního ročníku."
+    },
+    "absence": {
+      "trend": "Není zmíněna",
+      "key_numbers": [
+        "Údaje o absenci nejsou v textu uvedeny"
+      ],
+      "evidence": "Inspekční zpráva se absencí nezabývá."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psycholožkou",
+      "Péče o žáky se speciálními vzdělávacími potřebami",
+      "Prevence rizikových jevů a výchovné poradenství",
+      "Adaptační, lyžařský a zeměměřičský kurz"
+    ],
+    "safety_climate": [
+      "Waldorfská pedagogika minimalizuje vznik rizikového chování svou povahou",
+      "Třídní schůzky a školní akce pro vyhodnocování klimatu",
+      "Besedy s vnějšími partnery na společenská témata",
+      "Preventivní programy proti společensko-patologickým jevům",
+      "Primární řešení problémů na úrovni osobních kontaktů"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Asociací waldorfských škol ČR",
+      "Mentorování zkušeným waldorfským pedagogem",
+      "Setkávání učitelů s pedagogy jiných waldorfských škol",
+      "Aktivní zapojení rodičů do chodu školy a kulturních akcí",
+      "Partnerství s vnějšími partnery pro besedy a přednášky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady. Silné a slabé stránky jsou jasně identifikovány. Chybí však konkrétní číselné údaje o výsledcích (maturita, absence), což je dáno tím, že škola je velmi nová.",
+    "uncertainty_notes": [
+      "Nelze posoudit dlouhodobé trendy, protože škola funguje teprve od září 2021",
+      "Maturitní výsledky nejsou k dispozici, protože první ročník ještě nematuruje",
+      "Údaje o absenci nejsou v textu zmíněny"
+    ]
+  }
+}
+```

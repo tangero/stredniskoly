@@ -1,0 +1,115 @@
+{
+  "report_id": "LYC_600099296_2024-02-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:26:36.236082+00:00",
+  "run_finished_utc": "2026-02-09T16:27:02.233071+00:00",
+  "raw_file": "LYC_600099296_2024-02-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600099296_2024-02-13",
+    "school_profile": {
+      "school_type": "Waldorfská základní a střední škola (lyceum) - kombinované lyceum v humanitním a přírodovědném zaměření",
+      "inspection_period": "13. února 2024 až 15. února 2024",
+      "school_change_summary": "Od poslední inspekce došlo ke změně ředitelky (od roku 2021). Mírně se zvýšila aprobovanost učitelů, ale přetrvávají některé dílčí problémy z předchozího inspekčního hodnocení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výjimečné jazykové vzdělávání",
+          "detail": "Hodinám dominuje cílový jazyk, jsou dynamické a rozvíjejí všechny jazykové kompetence.",
+          "evidence": "Hospitované hodiny probíhaly striktně v cílovém jazyce, byly promyšlené a dynamické."
+        },
+        {
+          "tag": "Silná estetická výchova",
+          "detail": "Prakticky zaměřené umělecko-řemeslné předměty komplexně rozvíjejí znalosti, dovednosti i osobnost žáků.",
+          "evidence": "Silnou stránku školy představuje prakticky zaměřená estetická výchova a vyučovací předměty s umělecko-řemeslným obsahem."
+        },
+        {
+          "tag": "Nadprůměrné výsledky maturit",
+          "detail": "Ve všech třech zkušebních předmětech společné části maturitní zkoušky dosahují žáci dlouhodobě nadprůměrné úspěšnosti.",
+          "evidence": "Ve všech třech zkušebních předmětech je čistá úspěšnost žáků školy dlouhodobě nadprůměrná."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Chybí odborné učebny pro přírodovědné předměty",
+          "detail": "Absence kvalitních laboratoří a odborných učeben limituje praktické přírodovědné vzdělávání v lyceu.",
+          "evidence": "Pro realizaci přírodovědného vzdělávání (zejména v lyceu) je limitující absence odborných učeben. Zpracované záměry na rekonstrukci zůstávají nerealizované."
+        },
+        {
+          "tag": "Málo digitálních technologií ve výuce",
+          "detail": "Škola nedostatečně využívá digitální nástroje a neučí žáky systematicky pracovat s informačními zdroji.",
+          "evidence": "Nižší míra využití digitální techniky a absence práce s různými informačními zdroji ve výuce."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "V SŠ průměrně 179 zameškaných hodin na žáka za rok, chybí systematická analýza příčin.",
+          "evidence": "Ve školním roce 2022/2023 činila průměrná absence na žáka 179 zameškaných hodin v SŠ."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků v lyceu a jaké jsou příčiny?",
+        "Jaké jsou plány na vybudování odborných učeben pro přírodovědné předměty?",
+        "Jak se škola chystá více integrovat digitální technologie do výuky?"
+      ],
+      "who_school_fits": [
+        "Děti s vlohou pro umění, řemesla a kreativní činnosti - škola má výjimečné zázemí a kvalitní pedagogy v těchto oborech",
+        "Žáci se zájmem o jazykové vzdělávání - výuka cizích jazyků od prvního ročníku s vysokou kvalitou",
+        "Talentovaní studenti připravující se na vysokou školu - 80 % absolventů lycea je přijato na VŠ"
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, které kladou důraz na přírodovědné a technické vzdělávání - chybí odborné učebny a aktivit v těchto oborech je méně",
+        "Žáci, kteří potřebují intenzivní práci s digitálními technologiemi - škola je v tomto směru pozadu",
+        "Rodiny, které si cení soutěžení a olympiád - škola cíleně odmítá podporovat účast v předmětových soutěžích"
+      ],
+      "plain_czech_summary": "Waldorfská škola v Semilech je kvalitní vzdělávací instituce se silným zaměřením na umělecko-řemeslné vzdělávání a jazyky. Žáci dosahují nadprůměrných výsledků v maturitách a úspěšně pokračují na vysokých školách. Pozitivem je pozitivní školní klima, participace rodičů a kvalitní pedagogický sbor. Slabinou je absence moderních přírodovědných učeben, nižší využití digitálních technologií a vysoká absence žáků v lyceu. Škola není vhodná pro ty, kdo hledají tradiční konkurenční prostředí nebo intenzivní přírodovědné vzdělávání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nadprůměrná úspěšnost",
+        "key_numbers": [
+          "23 % absolventů s vyznamenáním",
+          "75 % absolventů prospělo",
+          "Necelé 2 % neprospělo",
+          "V posledních třech letech neprospěl pouze jeden žák"
+        ],
+        "evidence": "Ve všech třech zkušebních předmětech je čistá úspěšnost žáků školy dlouhodobě nadprůměrná. V posledních třech zkušebních letech neprospěl po souhrnném započítání pouze jeden žák."
+      },
+      "absence": {
+        "trend": "Vysoká absence v SŠ, bez systematické analýzy",
+        "key_numbers": [
+          "ZŠ: 103 zameškaných hodin na žáka za rok",
+          "SŠ: 179 zameškaných hodin na žáka za rok",
+          "Neomluvená absence: 0 %"
+        ],
+        "evidence": "Ve školním roce 2022/2023 činila průměrná absence na žáka 103 hodin v ZŠ a 179 hodin v SŠ. Prostor ke zlepšení nabízí systematické sledování a analýza příčin absence."
+      },
+      "support_services": [
+        "Dva týmy poradenských služeb (pro ZŠ a lyceum) s výchovními poradci, školními metodiky prevence a speciálním pedagogem",
+        "Individuální konzultace a doučování pro žáky s rizikem studijního neprospěchu",
+        "Spolupráce se školskými poradenskými zařízeními a aplikace jejich doporučení"
+      ],
+      "safety_climate": [
+        "Nízký výskyt závažného negativního chování žáků",
+        "Ojedinělé problémy ve vztazích mezi žáky se řeší v počátcích",
+        "Přetrvávající bezpečnostní rizika: absence ergonomicky vhodného nábytku ve dvou třídách na prvním stupni"
+      ],
+      "partnerships_practice": [
+        "Bilaterální spolupráce s německou Waldorfschule Seewalde",
+        "Partnerství s místními organizacemi: Pojizerská galerie, SOKA Semily, Gymnázium Ivana Olbrachta",
+        "Realizace odborných prací v sociálních zařízeních (domovy důchodců, dětský domov)",
+        "Spolupráce v rámci Asociace waldorfských škol"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři (např. popis waldorfské pedagogiky, kritéria hodnocení).",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní důvody vysoké absence v lyceu - nejsou jasné, zda jde o nemoci, nezájem nebo jiné faktory",
+        "Není jasné, jak dlouho trvá absence odborných učeben - záměry na rekonstrukci jsou zmíněny jako nerealizované, ale bez časového rámce",
+        "Chybí informace o tom, jak konkrétně se škola snaží řešit nižší míru diferenciace v lyceu"
+      ]
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600008436_2023-12-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:31:22.440017+00:00",
+  "run_finished_utc": "2026-02-09T16:31:47.147189+00:00",
+  "raw_file": "GY8_600008436_2023-12-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008436_2023-12-11",
+    "school_profile": {
+      "school_type": "Gymnázium a Obchodní akademie (čtyřleté a osmileté gymnázium, obchodní akademie, ekonomické lyceum)",
+      "inspection_period": "11.–12. a 14.–15. prosince 2023",
+      "school_change_summary": "Počet žáků v gymnaziálních oborech je stabilní (211 a 224 žáků), počet žáků v odborném vzdělávání se zvyšuje. Ekonomické lyceum si za tři roky téměř zdvojnásobilo počet studentů (116 žáků)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Moderní vybavení a technologie",
+          "detail": "Škola postupně modernizuje své prostory včetně nové multimediální učebny s 3D tiskem, počítačových učeben a badatelského centra.",
+          "evidence": "Rekonstrukce hřiště, nová multimediální učebna, dovybavení přírodovědných laboratoří."
+        },
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Kvalitní spojení výuky s reálnými situacemi a zkušenostmi žáků, zejména v odborných předmětech.",
+          "evidence": "Exkurze, dvoutýdenní praxe v třetím ročníku, spolupráce s odborníky z praxe, mezinárodní certifikáty ECDL."
+        },
+        {
+          "tag": "Vstřícný přístup pedagogů",
+          "detail": "Učitelé vedou výuku se zaujetím a vytvářejí atmosféru, kde se žáci nebojí vyjádřit svůj názor.",
+          "evidence": "Hospitace potvrdily vstřícnou pracovní atmosféru a aktivní přístup žáků k výuce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá diferenciace ve výuce",
+          "detail": "Učitelé jen zřídka přizpůsobují výuku různým schopnostem jednotlivých žáků.",
+          "evidence": "Sporadicky uplatněn diferencovaný přístup, chybí sebehodnocení a vzájemné hodnocení žáků."
+        },
+        {
+          "tag": "Nedostatečná práce se cíli hodin",
+          "detail": "Vzdělávací cíle hodin nejsou jasně formulovány nebo chybí jejich vyhodnocení na konci hodiny.",
+          "evidence": "Ve většině sledovaných hodin nebyl formulován vzdělávací cíl nebo byl nahrazen jen stručnou informací."
+        },
+        {
+          "tag": "Málo skupinové práce",
+          "detail": "Kooperace žáků ve skupinách se vyskytuje jen výjimečně.",
+          "evidence": "Výjimečně byla zaznamenána kooperace žáků ve skupinách, chybělo sebehodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku žákům s různými schopnostmi a tempem učení?",
+        "Jaké jsou konkrétní výsledky maturit a přijetí na vysoké školy za poslední tři roky?",
+        "Jak funguje systém doučování a jaké jsou jeho výsledky?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí kvalitní přípravu na vysokou školu – vysoké procento absolventů je přijato k vysokoškolskému studiu.",
+        "Zájemci o praktické dovednosti a propojení teorie s praxí – škola nabízí exkurze, stáže a spolupráci s firmami.",
+        "Studenti zajímající se o jazyky – škola podporuje jazykové nadání, nabízí Cambridge certifikáty a zahraniční výjezdy."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a jasné cíle – diferenciace a práce se cíli hodin nejsou dostatečné.",
+        "Studenti, kteří se lépe učí skupinově – skupinová práce se vyskytuje jen výjimečně.",
+        "Žáci, kteří potřebují více zpětné vazby – zpětná vazba od vedení je spíše formálního charakteru."
+      ],
+      "plain_czech_summary": "Gymnázium a Obchodní akademie v Pelhřimově je dobře vedená škola s moderním vybavením a kvalitní nabídkou. Učitelé jsou vstřícní a výuka je propojená s praxí. Žáci dosahují dobrých výsledků a vysoké procento jich pokračuje na vysokých školách. Inspekce ale upozornila na slabší diferenciaci ve výuce, nedostatečnou práci se cíli hodin a málo skupinové práce. Škola by měla více přizpůsobovat výuku jednotlivým žákům a více zapojovat skupinové aktivity."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě stabilní",
+        "key_numbers": [
+          "Vysoké procento absolventů přijatých k vysokoškolskému studiu",
+          "Výborné a nadprůměrné výsledky v externím testování",
+          "Stabilní výsledky v gymnaziálních i negymnaziálních oborech"
+        ],
+        "evidence": "Výsledky maturitních zkoušek jsou dlouhodobě stabilní. V externím testování žáci dosahují výborných a nadprůměrných výsledků."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+      },
+      "support_services": [
+        "Výchovní poradci a metodici prevence sdílí informace o žácích a nastavují vhodnou podporu",
+        "Systém doučování s zapojením žáků navzájem si doučujících",
+        "Pedagogicko-psychologická poradna – spolupráce na realizaci podpůrných opatření",
+        "Školní psycholog – cíl zajistit včasnou psychosociální intervenci",
+        "Adaptační kurzy a workshopy s tématy duševního zdraví"
+      ],
+      "safety_climate": [
+        "Systém kontroly bezpečnosti žáků na chodbách je nastaven a monitorován vedením",
+        "Postupy podle stanovených pravidel při výskytu rizikového chování",
+        "Zapojení zákonných zástupců do řešení problémů",
+        "Vstřícný individuální přístup většiny vyučujících k žákům pozitivně ovlivňuje prevenci sociálně patologických jevů"
+      ],
+      "partnerships_practice": [
+        "Partnerství s jazykovou školou Cambridge P.A.R.K. – možnost složit mezinárodní jazykové zkoušky",
+        "Akreditované testovací středisko ECDL/ICDL pro digitální certifikáty",
+        "Spolupráce s vysokými školami na zkvalitnění vzdělávací nabídky",
+        "Exkurze a stáže ve výrobních podnicích, sociálních službách, úřadech a obchodních společnostech",
+        "Projekt Zpět na jedna – bezplatné doučování žáků základních škol vedené žáky střední školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní číselné údaje o absenci a podrobnější data o maturitách.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, zda je to problém nebo se jednoduše nehodnotilo.",
+        "Zpráva neobsahuje konkrétní procenta úspěšnosti maturit nebo počty přijatých na vysoké školy.",
+        "Není jasné, jak dlouho trvá proces zlepšování diferenciace a skupinové práce."
+      ]
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600005674_2023-01-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:52:14.567499+00:00",
+  "run_finished_utc": "2026-02-09T16:52:38.030594+00:00",
+  "raw_file": "SOS_600005674_2023-01-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600005674_2023-01-09",
+    "school_profile": {
+      "school_type": "Střední odborná škola s maturitními obory Veřejnosprávní činnost a Sociální činnost",
+      "inspection_period": "9. ledna 2023 až 12. ledna 2023",
+      "school_change_summary": "Od inspekce v roce 2015 vzrostla naplněnost na 95 %, počet žáků na 473 v 16 třídách. Došlo k personální změně ředitelky, rozšíření vzdělávací nabídky a zlepšení materiálních podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "Přibližně čtvrtina žáků dlouhodobě maturuje s vyznamenáním, neprospívající se objevují jen výjimečně.",
+          "evidence": "V českém jazyce a cizích jazycích dosahují lepších výsledků než republikový průměr."
+        },
+        {
+          "tag": "Komplexní rozvoj osobnosti",
+          "detail": "Škola nabízí bohaté rozšiřující aktivity, exkurze, zahraniční výměny a soutěže.",
+          "evidence": "Žáci se aktivně zapojují do soutěží a dosahují úspěchů na regionální i celostátní úrovni."
+        },
+        {
+          "tag": "Kvalitní vedení a stabilní tým",
+          "detail": "Ředitelka má jasnou vizi, pedagogů je 43 a jsou téměř plně kvalifikováni.",
+          "evidence": "Vedení systematicky monitoruje všechny oblasti pedagogických procesů a podporuje profesní růst učitelů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učitelé jen málo přizpůsobují úkoly rozdílným schopnostem a tempům žáků.",
+          "evidence": "Výrazná časová či obsahová diferenciace nebyla ve výuce příliš patrná, nadaní žáci nejsou dostatečně podporováni."
+        },
+        {
+          "tag": "Slabší zapojení žáků do hodnocení",
+          "detail": "Žáci se málo podílejí na vzájemném kriteriálním hodnocení a sebereflexi.",
+          "evidence": "Učitelé jen zřídka vedli žáky ke vzájemnému kriteriálnímu hodnocení, ani když se přímo nabízelo."
+        },
+        {
+          "tag": "Některé méně efektivní vyučovací hodiny",
+          "detail": "Část hodin vykazuje pasivitu žáků, neefektivní časové rozvržení a nižší jazykovou kulturu.",
+          "evidence": "Dominující postavení učitele a menší pestrost metod vedla k nerovnoměrnému zapojení žáků do výuky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku potřebám nadaných žáků a těch, kteří potřebují více podpory?",
+        "Jaké jsou konkrétní příklady zahraniční spolupráce a jak se jí mohou účastnit studenti?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a sebehodnocení u studentů?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o právní, sociální a veřejnosprávní obory s ambicí na vysokou školu (75 % pokračuje v terciárním vzdělávání)",
+        "Studenti, kteří si cení kvalitní výuky cizích jazyků a českého jazyka s nadprůměrnými výsledky",
+        "Žáci hledající bohaté mimoškolní aktivity, soutěže a mezinárodní zkušenosti"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s individuálními vzdělávacími potřebami, kteří potřebují více personalizované přístupy a diferenciaci",
+        "Studenti, kteří se lépe učí aktivní participací a vzájemným učením se od spolužáků",
+        "Žáci, kteří potřebují více zpětné vazby a reflexe svého pokroku během studia"
+      ],
+      "plain_czech_summary": "Střední odborná škola Drtinova je dobře vedená instituce s výborným renomé v maturitních zkoušcích, zejména v češtině a cizích jazycích. Nabízí komplexní rozvoj osobnosti skrze projekty a zahraniční spolupráci. Vedení je stabilní a učitelé kvalifikovaní. Hlavní výzvou je lepší přizpůsobení výuky rozdílným potřebám žáků a větší zapojení studentů do vlastního hodnocení. Škola je vhodná pro ambiciózní studenty se zájmem o právní a sociální obory."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborný",
+        "key_numbers": [
+          "Přibližně 25 % žáků maturuje s vyznamenáním",
+          "Neprospívající se objevují jen výjimečně",
+          "Lepší výsledky než republikový průměr v češtině a cizích jazycích"
+        ],
+        "evidence": "Ve sledovaném období dosáhli žáci ve srovnání s danou skupinou oborů lepších výsledků než je republikový průměr."
+      },
+      "absence": {
+        "trend": "Pozitivní - vysoká docházka",
+        "key_numbers": [
+          "98 % žáků mělo uzavřenou klasifikaci do 30. 6.",
+          "99 % žáků prospělo v celkovém hodnocení",
+          "Více než třetina s vyznamenáním"
+        ],
+        "evidence": "Ve sledovaném období tří školních let přesahoval podíl žáků s uzavřenou klasifikací do 30. 6. 98 %."
+      },
+      "support_services": [
+        "Poradenský tým s výchovným poradcem a metodikou prevence",
+        "Adaptační workshop pro prvňáky a pravidelné pobytové akce (adaptační, sportovní kurzy)",
+        "Kariérní poradenství se specializovanými programy a odbornými stážemi"
+      ],
+      "safety_climate": [
+        "Elektronický docházkový systém a vrátnice u vchodu",
+        "Vedení klade velký důraz na sledování a vyhodnocování klimatu školy",
+        "Motivační efekt pochval převažuje nad kázeňskými opatřeními"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Pedagogické fakulty Univerzity Karlovy",
+        "Exkluzivní spolupráce s Metropolitní univerzitou Praha",
+        "Řada sociálních partnerů zajišťujících vazbu teoretického vzdělávání na praxi"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s příklady. Chybí však více konkrétních čísel o absencích a chování žáků.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní procento žáků s podpůrnými opatřeními nebo speciálními vzdělávacími potřebami",
+        "Nejsou uvedeny konkrétní údaje o počtu kázeňských opatření nebo problémů s chováním",
+        "Chybí informace o počtu žáků, kteří nepostupují do vyšších ročníků"
+      ]
+    }
+  }
+}

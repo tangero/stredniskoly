@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_600016595_2025-05-05",
+  "school_profile": {
+    "school_type": "Střední škola - Obchodní akademie (čtyřletý obor 63-41-M/02)",
+    "inspection_period": "5. května 2025 a 12.–14. května 2025",
+    "school_change_summary": "Od inspekce v roce 2018 se počet žáků zvýšil o 32 % na 117 žáků ve čtyřech třídách. Škola zavedla spolupráci s externím psychologem a zohlednila doporučení z předchozí inspekce týkající se rozmanitosti výukových metod."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní výuka s praktickým zaměřením",
+        "detail": "Učitelé používají rozmanité metody a formy vzdělávání, které podporují aktivní přístup a praktické dovednosti žáků.",
+        "evidence": "Hospitace potvrdily pozitivní atmosféru, promyšlenou přípravu a účelné metody s kombinací frontální výuky a skupinové práce."
+      },
+      {
+        "tag": "Rozvoj osobnostních kompetencí",
+        "detail": "Škola aktivně motivuje žáky k účasti na soutěžích a aktivitách mimo výuku, které rozvíjejí jejich odborné a komunikační dovednosti.",
+        "evidence": "Žáci se účastní předmětových a odborných soutěží, workshopů a projektů zaměřených na volnočasové aktivity a prevenci rizik."
+      },
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "V roce 2024 dosáhli žáci stoprocentní úspěšnosti v češtině, matematice a cizím jazyce, se zlepšením v češtině oproti roku 2023.",
+        "evidence": "Výsledky maturitní zkoušky 2024 ukazují 100% úspěšnost ve společné části zkoušky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Žáci obvykle pracují na úkolech se stejnou mírou obtížnosti, diferencované úlohy se objevují jen ojediněle.",
+        "evidence": "Inspektoři zaznamenali, že funkční přístupy umožňující diferenciaci byly patrné pouze ojediněle, zejména pro žáky se speciálními potřebami."
+      },
+      {
+        "tag": "Omezená spolupráce mezi učiteli",
+        "detail": "Pedagogové systematicky nevyužívají vzájemné hospitace jako nástroj sdílení dobré praxe a profesního rozvoje.",
+        "evidence": "Inspekce zjistila, že méně prostoru je vytvářeno pro efektivní spolupráci pedagogů v rámci inspirace výukovými metodami."
+      },
+      {
+        "tag": "Nejednotný přístup k cílům výuky",
+        "detail": "Učitelé pracují s tématem hodiny, ale méně často s vymezením cíle a jeho vyhodnocením.",
+        "evidence": "Závěrečné shrnutí bylo zařazeno ve většině hodin, ale míra zapojení žáků do procesu se lišila."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku potřebám žáků se speciálními vzdělávacími potřebami a nadaných žáků?",
+      "Jaké jsou možnosti pro žáky, kteří mají problémy s učením – nabízí škola doučování nebo individuální konzultace?",
+      "Jak se škola podílí na přípravě žáků na budoucí pracovní uplatnění – jsou součástí studia praxe v reálných firmách?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s orientací na obchod a administrativu s možností pokračování na vysoké škole",
+      "Motivovaní žáci, kteří se chtějí zapojit do soutěží a mimoškolních aktivit rozvíjejících jejich odborné dovednosti",
+      "Žáci, kteří oceňují stabilní prostředí s jasně nastavenými pravidly a podporou od zkušené vedení"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – podpůrná opatření nejsou konzistentně uplatňována ve všech hodinách",
+      "Žáci, kteří potřebují individualizovaný přístup – výuka je často zaměřena na skupinu se stejnou mírou obtížnosti",
+      "Žáci, kteří se učí lépe prostřednictvím diskuse a práce s různými zdroji – těmto aktivitám je věnován menší prostor"
+    ],
+    "plain_czech_summary": "Moravskoslezská obchodní akademie je stabilní střední škola s rostoucím počtem žáků a kvalitní výukou zaměřenou na praktické dovednosti. Učitelé používají rozmanité metody a žáci dosahují výborných výsledků u maturity. Škola aktivně podporuje mimoškolní aktivity a spolupracuje s externím psychologem. Slabší stránkou je nedostatečná individualizace výuky pro žáky s různými potřebami a omezená spolupráce mezi učiteli. Škola je vhodná pro motivované žáky, kteří chtějí praktické vzdělání v oboru obchodní akademie."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "100% úspěšnost v češtině, matematice a cizím jazyce v roce 2024",
+        "Zlepšení výsledků z českého jazyka oproti roku 2023",
+        "17 % žáků prospělo s vyznamenáním ve školním roce 2023/2024"
+      ],
+      "evidence": "V roce 2024 dosáhli žáci stoprocentní úspěšnosti ve společné části maturitní zkoušky, došlo ke zlepšení z českého jazyka."
+    },
+    "absence": {
+      "trend": "Systematicky sledována",
+      "key_numbers": [
+        "Absence je jedním z preventivních opatření ke zvýšení úspěšnosti žáků"
+      ],
+      "evidence": "Škola systematicky sleduje absenci jako nástroj prevence školní neúspěšnosti."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště vedené ředitelkou zaměřené na péči o žáky se speciálními potřebami",
+      "Spolupráce s externím psychologem poskytujícím podporu žákům s psychickými obtížemi a problémy v kolektivu",
+      "Kariérové poradenství a aktivity v rámci primární prevence"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti díky pozornosti věnované úrazové prevenci",
+      "Žáci jsou pravidelně seznamováni s riziky a pravidly bezpečného chování",
+      "Pozitivní atmosféra založená na vzájemné důvěře a respektu mezi učiteli a žáky"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s regionálními institucemi a firmami zaměřená na přednášky a odborné exkurze",
+      "Příprava workshopů pro žáky základních škol v oblasti finanční gramotnosti",
+      "Společné projekty s organizacemi na volnočasové aktivity a prevenci sociálně patologických jevů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasně strukturovanými závěry. Obsahuje specifické údaje o výsledcích a doporučeních. Mírně snižuje skóre administrativní jazyk v některých pasážích.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o počtu žáků s jednotlivými speciálními potřebami a jejich úspěšnosti",
+      "Chybí detailní informace o obsahu a frekvenci spolupráce s externím psychologem",
+      "Není jasné, jaké konkrétní diferencované úlohy by měly být zařazeny do výuky"
+    ]
+  }
+}
+```

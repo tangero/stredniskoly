@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "LYC_600019519_2024-04-09",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická",
+    "inspection_period": "9. až 12. dubna 2024",
+    "school_change_summary": "Od poslední inspekce (2018) se zdvojnásobil počet žáků na 466. Škola zavedla nový obor Praktická sestra místo Zdravotnického asistenta. Obor Sociální činnost byl utlumen. Nově se realizuje obor Ošetřovatel ve všech třech ročnících. Počet studentů VOŠ zůstává přibližně stejný (67 studentů)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní odborná výuka",
+        "detail": "Učitelé odborných předmětů vhodně propojují teorii s praxí a používají moderní metody výuky s digitálními technologiemi.",
+        "evidence": "Inspektoři zaznamenali efektivní skupinovou práci, diskuse s kritickým myšlením a kvalitní pomůcky v nové odborné učebně."
+      },
+      {
+        "tag": "Spolupráce s nemocnicemi",
+        "detail": "Praktická příprava probíhá v reálném prostředí zdravotnických zařízení s individuálním přístupem.",
+        "evidence": "Žáci pracují s přiměřeným počtem pacientů, výkony jsou komentovány a poskytuje se cenná zpětná vazba."
+      },
+      {
+        "tag": "Zahraniční mobility a projekty",
+        "detail": "Škola dlouhodobě podporuje studijní pobyty a výměnné programy pro rozvoj jazykových a odborných kompetencí.",
+        "evidence": "Žáci všech oborů vyjíždějí na zahraniční stáže a projekty zvyšující konkurenceschopnost na trhu práce."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "Obor Zdravotnické lyceum má horší výsledky maturitní zkoušky než republikový průměr, zejména v profilové části.",
+        "evidence": "V roce 2023 byla hrubá neúspěšnost horší než průměr v dané oborové skupině. Nejobtížnější jsou chemie, biologie a fyzika."
+      },
+      {
+        "tag": "Rostoucí počet žáků v riziku",
+        "detail": "Podíl žáků ohrožených školní neúspěšností (s dostatečnými známkami) se zvyšuje, zejména v 3. a 4. ročníku.",
+        "evidence": "U Zdravotnického lycea se podíl zvýšil z 27 % na 32 %. U Praktické sestry je ohroženo více než třetina žáků."
+      },
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Učitelé málo využívají diferenciaci a individualizaci s ohledem na různé vzdělávací potřeby a pracovní tempo žáků.",
+        "evidence": "Inspektoři zaznamenali ojediné uplatnění diferencovaných činností a minimální zařazování individualizovaných zadání."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola přijala po slabých výsledcích maturit v roce 2023 a jak se projevila v letošním roce?",
+      "Jak škola individuálně podporuje žáky, kteří mají potíže s přírodovědnými předměty (chemie, fyzika, biologie)?",
+      "Jaké jsou konkrétní možnosti propojení studia na střední škole s navazujícím studiem na VOŠ nebo vysoké škole?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o zdravotnické povolání, kteří chtějí praktickou přípravu v reálném prostředí nemocnic",
+      "Motivovaní žáci, kteří se chtějí zapojit do mezinárodních projektů a zahraničních stáží",
+      "Žáci, kteří preferují obory s vysokou poptávkou na trhu práce a jistotou uplatnění"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v přírodovědných předmětech, kteří by měli počítat s vyšší náročností studia",
+      "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – škola ji zatím málo nabízí",
+      "Žáci, kteří se chystají na maturitu v oboru Zdravotnické lyceum – výsledky jsou pod průměrem"
+    ],
+    "plain_czech_summary": "Škola je moderní zdravotnická instituce s kvalitní praktickou výukou v nemocnicích a dobrými mezinárodními projekty. Silnou stránkou je propojení teorie s praxí a motivace žáků. Problém je však slabší úspěšnost u maturit, zejména v oboru Zdravotnické lyceum, a rostoucí počet žáků v riziku neúspěchu. Škola by měla více individualizovat výuku a zaměřit se na podporu v přírodovědných předmětech. Vhodná pro motivované žáky se zájmem o zdravotnictví."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý s částečným zlepšením, ale přetrvávajícími problémy",
+      "key_numbers": [
+        "Zdravotnické lyceum 2023: hrubá neúspěšnost horší než republikový průměr",
+        "Praktická sestra 2023: zlepšení, hrubá neúspěšnost nižší než průměr",
+        "Sociální činnost 2023: 57% hrubá neúspěšnost (4 z 7 žáků neprospěli)"
+      ],
+      "evidence": "V roce 2022 byly výsledky horší než průměr. V roce 2023 se Praktická sestra zlepšila, ale Zdravotnické lyceum zůstává pod průměrem. Nejproblematičtější je obor Sociální činnost."
+    },
+    "absence": {
+      "trend": "Pozitivní – absence se snižují",
+      "key_numbers": [
+        "Průměr 122 hodin zameškaných na žáka v roce 2022/2023",
+        "Minimální počet neomluvených hodin",
+        "Meziročně se snížil průměrný počet zameškaných hodin"
+      ],
+      "evidence": "Škola se daří motivovat žáky k řádné školní docházce. Chování žáků je téměř bezproblémové, pouze necelé procento bylo klasifikováno sníženým stupněm."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a metodičkou prevence",
+      "Nově zřízené funkce kariérového poradce a koordinátora spolupráce se zaměstnavateli",
+      "Systematické doučování českého jazyka pro žáky s jazykovou bariérou",
+      "Peer programy – pomoc starších žáků mladším",
+      "Pravidelné třídnické hodiny zaměřené na zlepšování klimatu tříd",
+      "Adaptační kurzy a sportovní výlety"
+    ],
+    "safety_climate": [
+      "Ředitelka správně nastavila pravidla bezpečnosti a seznámila s nimi všechny účastníky",
+      "Vedení se pravidelně zabývá rozborem úrazovosti s důrazem na opakované poučování",
+      "Index úrazovosti byl vyšší než průměr v letech 2019/2020 a 2020/2021, ale výrazně se snížil v roce 2022/2023",
+      "Chování žáků je téměř bezproblémové"
+    ],
+    "partnerships_practice": [
+      "Oboustranně přínosná spolupráce s odděleními nemocnic pro praktickou přípravu",
+      "Škola systematicky rozšiřuje zahraniční spolupráci",
+      "Aktivní zapojení do života města a projektů se základními školami",
+      "Spolupráce s úřadem práce a zdravotnickými zařízeními pro kariérové poradenství",
+      "Dlouhodobá participace ve výměnném programu podpory odborných praxí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní data, ale místy je úřednicky stylizovaná. Hlavní zjištění jsou jasná: silné stránky v praktické výuce a mezinárodní mobilitě, slabé stránky v maturitních výsledcích a individualizaci výuky.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní procento žáků se speciálními vzdělávacími potřebami, kteří prospívají – pouze uvádí, že jich je 42",
+      "Není jasné, jak se výsledky maturit v roce 2024 vyvíjejí po přijatých opatřeních – zpráva je z dubna 2024",
+      "Chybí informace o počtu žáků, kteří opakují ročník nebo školu opouštějí"
+    ]
+  }
+}
+```

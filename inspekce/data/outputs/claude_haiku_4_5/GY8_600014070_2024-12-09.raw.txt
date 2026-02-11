@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY8_600014070_2024-12-09",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté obory), příspěvková organizace",
+    "inspection_period": "9. 12. 2024 – 11. 12. 2024",
+    "school_change_summary": "Proběhly personální změny na vedoucích pracovních místech zástupců ředitelky. Škola získala akreditaci programu Erasmus+."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Demokratické zapojení žáků",
+        "detail": "Studentský parlament aktivně participuje na životě školy a organizuje vlastní akce.",
+        "evidence": "Vedení školy podporuje činnost parlamentu, pravidelně se setkává se zástupci a konstruktivně reaguje na jejich návrhy."
+      },
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Dlouhodobě stoprocentní úspěšnost ve společné části maturitní zkoušky.",
+        "evidence": "V letech 2022–2024 dosáhli žáci stoprocentní úspěšnosti ve společné části, hrubá neúspěšnost srovnatelná nebo lepší než průměr ČR."
+      },
+      {
+        "tag": "Bohatá nabídka aktivit",
+        "detail": "Škola realizuje široké spektrum školních a mimoškolních aktivit pro rozvoj nadání a zájmů.",
+        "evidence": "Soutěže, olympiády, projekty, exkurze, divadelní přehlídky, program DofE, Erasmus+, středoškolská odborná činnost."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Učitelé málo využívají diferenciaci – všichni žáci řeší stejné úkoly bez ohledu na jejich schopnosti.",
+        "evidence": "V převážné části hospitovaných hodin se projevily nedostatky v individualizaci; chyběla možnost vybírat si úkoly různé náročnosti."
+      },
+      {
+        "tag": "Slabá reflexe žáků",
+        "detail": "Žáci nejsou vedeni k zamyšlení se nad vlastním učením a dosažením cílů.",
+        "evidence": "Jen v nízké míře byli žáci vedeni k reflektování průběhu výuky ve vztahu ke svému vlastnímu učení."
+      },
+      {
+        "tag": "Zastaralé prostory a vybavení",
+        "detail": "Některé učebny a vybavení neodpovídají moderním trendům; výuka v několika budovách není optimální.",
+        "evidence": "Některé prostory a vybavení jsou zastaralé; prostor pro relaxaci a studijní přípravu není dostatečný."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jak se liší přístup k nim od ostatních?",
+      "Jaké jsou plány na zlepšení materiálních podmínek a sjednocení výuky do jedné budovy?",
+      "Jak se škola zaměřuje na individuální potřeby žáků s různými schopnostmi v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí kvalitní přípravu na vysokou školu – výborné výsledky maturit a tradice úspěchu",
+      "Nadaní a motivovaní žáci – bohatá nabídka soutěží, olympiád a projektů pro rozvoj talentu",
+      "Žáci se zájmem o jazyky – kvalitní výuka cizích jazyků, příprava na mezinárodní zkoušky, program Erasmus+"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciované úkoly – škola to zatím nedostatečně nabízí",
+      "Žáci, kteří se lépe učí reflexí a sebehodnocením – toto není v hodinách dostatečně rozvíjeno",
+      "Rodiny, kterým vadí rozptýlenost výuky do více budov a chybějící prostor pro relaxaci"
+    ],
+    "plain_czech_summary": "Gymnázium Tišnov je kvalitní střední škola s dlouhodobě výborným prospěchem a stoprocentní úspěšností maturit. Nabízí bohatý program aktivit, podporuje nadané žáky a má funkční systém péče o studenty. Hlavní slabinou je nedostatečná individualizace výuky – učitelé málo diferencují úkoly podle schopností žáků a málo je vedou k reflexi vlastního učení. Prostory jsou rozptýleny do více budov a některé vybavení je zastaralé. Škola je vhodná pro motivované žáky se zájmem o kvalitní vzdělání."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborný",
+      "key_numbers": [
+        "100% úspěšnost ve společné části maturitní zkoušky v letech 2022–2024",
+        "Hrubá neúspěšnost srovnatelná nebo lepší než průměr obdobných škol v ČR",
+        "V roce 2024 neuspěli dva žáci čtyřletého oboru v profilové části"
+      ],
+      "evidence": "V letech 2022 až 2024 dosáhli žáci školy ve společné části maturitní zkoušky stoprocentní úspěšnosti. V profilové části došlo k mírnému zhoršení v roce 2024."
+    },
+    "absence": {
+      "trend": "Pozitivní – postupné snižování",
+      "key_numbers": [
+        "2023/2024: 107 hodin na žáka za rok",
+        "2021/2022: 142 hodin na žáka za rok",
+        "Neomluvená absence zanedbatelná"
+      ],
+      "evidence": "Průměrná absence na jednoho žáka se ve sledovaném období postupně snižovala. Ke snižování absence přispívá pravidlo minimální docházky do jednotlivých předmětů."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště vedené zástupkyní ředitelky s pěti dalšími pedagogy",
+      "Výchovná poradkyně pro speciální vzdělávací potřeby a nadané žáky",
+      "Kariérové poradenství od začátku studia zaměřené na sebepoznání a profesní orientaci",
+      "Individuální konzultace s vyučujícími a vzdělávací akce pro první ročníky na techniky efektivního učení",
+      "Prevence rizikového chování – adaptační kurzy, animátoři, třídnické hodiny"
+    ],
+    "safety_climate": [
+      "Případy rizikového chování se v posledních letech vyskytly pouze u jednotek žáků",
+      "Třídní učitelé ve spolupráci se školní psycholožkou a metodičkou prevence průběžně mapují a reflektují stav klimatu tříd",
+      "Zapojení proškolených žáků – animátorů – na budování zdravých vztahů",
+      "V hospitovaných hodinách byla patrná příjemná pracovní atmosféra, partnerský přístup a vzájemný respekt"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s městem Tišnov na kulturních a slavnostních akcích",
+      "Partnerství se středními a vysokými školami a organizacemi zaměřenými na rozvoj talentu",
+      "Akreditace v projektu Erasmus+ – vyjezdy žáků a učitelů do zahraničí",
+      "Aktivní sdružení rodičů a přátel finančně podporující ocenění žáků a realizaci akcí",
+      "Spolupráce s organizacemi v rámci primární prevence"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk bez zbytečného úřednického stylu. Konkrétní zjištění jsou podpořena citacemi a čísly. Silné a slabé stránky jsou jasně odděleny a snadné k pochopení.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu žáků s vyznamenáním v jednotlivých letech – uvedeno pouze průměrně 46 %",
+      "Chybí konkrétní počty žáků v jednotlivých třídách a jejich věkové rozložení",
+      "Není specifikováno, které konkrétní předměty mají problémy s individualizací"
+    ]
+  }
+}
+```

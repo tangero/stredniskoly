@@ -1,0 +1,109 @@
+{
+  "report_id": "SOU_600014487_2023-10-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:36:11.397887+00:00",
+  "run_finished_utc": "2026-02-09T16:36:39.107891+00:00",
+  "raw_file": "SOU_600014487_2023-10-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600014487_2023-10-23",
+    "school_profile": {
+      "school_type": "Střední škola oděvní a služeb (SOU) s domem mládeže a školní jídelnou",
+      "inspection_period": "23. 10. – 25. 10. a 30. 10. 2023",
+      "school_change_summary": "Od 1. 2. 2023 nová ředitelka. Škola utlumila obor Podnikání (nástavbové studium) a zkvalitnila materiální vybavení pro odborný výcvik."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Soutěžní úspěchy",
+          "detail": "Žáci dlouhodobě dosahují čelních umístění v matematických, literárních a odborných soutěžích na krajské, celostátní i mezinárodní úrovni.",
+          "evidence": "\"Mezi významné úspěchy patřila jejich čelní umístění v matematické, literární a recitační soutěži pořádané na krajské úrovni.\""
+        },
+        {
+          "tag": "Kvalitní odborný výcvik",
+          "detail": "Výuka v odborném výcviku probíhá na kvalitní úrovni pod vedením zkušených pedagogů ve specializovaných pracovištích s příjemnou pracovní atmosférou.",
+          "evidence": "\"Výuka v odborném výcviku probíhala na kvalitní úrovni pod vedením zkušených pedagogů ve specializovaných pracovištích školy.\""
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola průběžně modernizuje odborné učebny a doplňuje je moderní přístrojovou technikou odpovídající budoucímu uplatnění na trhu práce.",
+          "evidence": "\"Kvalitativní změnou v materiálních podmínkách byla modernizace vybavení odborných učeben především ve vazbě na budoucí uplatnění žáků na trhu práce.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v testech",
+          "detail": "Při externím ověřování znalostí (informační, přírodovědná a čtenářská gramotnost) škola dosáhla slabších výsledků než celorepublikový průměr.",
+          "evidence": "\"Při kterém škola dosáhla ve srovnání s celorepublikovými výsledky celkově slabších výsledků.\""
+        },
+        {
+          "tag": "Nedostatečná diferenciace úloh",
+          "detail": "Vedení školy méně sleduje zařazování úloh s různou náročností odpovídající individuálnímu vývoji jednotlivých žáků.",
+          "evidence": "\"Méně se dařilo vedení školy sledovat zařazování úloh rozdílné kognitivní náročnosti do výuky.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s žáky, kteří mají problémy s matematikou nebo přírodovědou? Jaké má doučování a konzultační hodiny?",
+        "Jaké jsou konkrétní výsledky absolventů na trhu práce? Kolik procent jich najde práci v oboru?",
+        "Jak škola zajišťuje individuální přístup k žákům s různými schopnostmi během výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktické obory (krejčí, kadeřník, kosmetické služby, fotograf) s motivací k soutěžení a rozvoji odborných dovedností",
+        "Studenti, kteří si cení kvalitního vybavení a moderních technologií v odborných učebnách",
+        "Žáci, kterým vyhovuje domov mládeže a komplexní péče včetně doučování a poradenských služeb"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v matematice a přírodovědě – škola má slabší výsledky v těchto oblastech než průměr",
+        "Studenti, kteří potřebují individualizovanou výuku s úlohami přesně přizpůsobenými jejich úrovni – toto je identifikovaná slabina školy",
+        "Zájemci o obor Podnikání – tento obor škola utlumila"
+      ],
+      "plain_czech_summary": "Vizovická střední škola oděvní a služeb je stabilní instituce se silným zaměřením na praktickou přípravu v oborech krejčí, kadeřník, kosmetické služby a fotograf. Žáci dosahují výborných výsledků v soutěžích a maturitních zkouškách z odborných předmětů. Škola má moderní vybavení a kvalitní pedagogy. Slabší stránkou jsou výsledky v matematice a přírodovědě, kde dosahuje pod průměrem. Vedení také méně dbá na individualizaci úloh podle schopností jednotlivých žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Postupně se zlepšující, zejména v posledních třech letech",
+        "key_numbers": [
+          "Vlasová kosmetika (nástavba): ve 2022/2023 výrazně lepší než celorepublikový průměr",
+          "Fotograf a Kosmetické služby: výrazně vyšší úspěšnost v profilové části než srovnatelné školy",
+          "Český jazyk a cizí jazyky: výrazný pozitivní posun v posledních třech letech"
+        ],
+        "evidence": "\"Ve školním roce 2022/2023 došlo ke zlepšení a výsledky ve společné části maturitní zkoušky v porovnání s celorepublikovými byly výrazně lepší.\""
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně a metodička prevence v efektivní spolupráci s vedením",
+        "Doučování a konzultační hodiny pro všechny zájemce",
+        "Školní asistentka pomáhající žákům prvních ročníků a ubytovaným žákům",
+        "Kariérové poradenství podporující výběr pracovního uplatnění",
+        "Podpůrná opatření pro 33 žáků se speciálními vzdělávacími potřebami"
+      ],
+      "safety_climate": [
+        "Vedení přistupuje k bezpečnosti a ochraně zdraví zodpovědně, pravidelně vyhodnocuje rizika",
+        "Žáci jsou průběžně upozorňováni na zásady bezpečného chování a používání ochranných pomůcek",
+        "Zvláštní pozornost věnována bezpečnosti při praktických činnostech a odborném výcviku",
+        "Škola věnuje dostatečnou pozornost prevenci sociálně patologických jevů"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá a vzájemně přínosná spolupráce s městem Vizovice a četnými sociálními partnery",
+        "Kooperace se školami stejného zaměření a profesními organizacemi",
+        "Účinná kooperace se zřizovatelem (Zlínský kraj) a zákonnými zástupci",
+        "Efektivní mezinárodní spolupráce související s mobilitou žáků a vyučujících",
+        "Systém pro zjišťování uplatnění absolventů a jeho využívání pro rozvoj školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však delší a složitější, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Absence není zmíněna – není jasné, zda je to problém nebo ne",
+        "Konkrétní počty žáků s problémy v matematice a přírodovědě nejsou uvedeny",
+        "Není jasné, jak konkrétně se projevuje nedostatečná diferenciace úloh v praxi"
+      ]
+    }
+  }
+}

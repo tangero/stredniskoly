@@ -1,0 +1,100 @@
+{
+  "report_id": "LYC_600018083_2021-11-23",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola a Střední průmyslová škola",
+    "inspection_period": "23. − 25. 11. 2021",
+    "school_change_summary": "Došlo ke změně ředitele školy a k modernizaci odborných učeben a pomůcek."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení školy",
+        "detail": "Výuka probíhá v modernizovaných odborných učebnách, dílnách a laboratořích, všechny třídy mají dataprojektory a internet.",
+        "evidence": "Všechny učebny jsou vybaveny dataprojektory a přístupem na internet. V době od poslední inspekční činnosti došlo ke zlepšení materiálních podmínek."
+      },
+      {
+        "tag": "Partnerské spolupráce",
+        "detail": "Škola efektivně spolupracuje s firmami, což zajišťuje kvalitní praktické vyučování a uplatnění absolventů.",
+        "evidence": "Škola cíleně a efektivně spolupuje s důležitými profesními a sociálními partnery zajištujícími rozvoj teoretických znalostí a praktických dovedností."
+      },
+      {
+        "tag": "Klima a komunikace",
+        "detail": "Ve škole vládne příznivé pracovní klima, studenti jsou vedeni k respektu a vedení školy řeší podněty studentské rady.",
+        "evidence": "Ve sledovaných vyučovacích hodinách vládlo příznivé pracovní klima založené na přirozené autoritě vyučujících. Neformálním orgánem je studentská rada."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Problémy domova mládeže",
+        "detail": "Ubytovací zařízení je opotřebované a vykazuje bezpečnostní rizika, která nebyla dostatečně řešena.",
+        "evidence": "Prostory domova mládeže vykazují značnou opotřebovanost a bezpečnostní rizika. Ředitel školy dostatečně nevyhodnotil všechna rizika."
+      },
+      {
+        "tag": "Nerozlišená výuka",
+        "detail": "Výuka často nezohledňuje individuální potřeby žáků, všichni pracují na stejných úkolech bez rozdílu obtížnosti.",
+        "evidence": "Ve vyučovacích hodinách nebyla vždy zřetelná diferenciace a individualizace vzdělávacího obsahu. Žáci pracovali převážně na stejných úkolech."
+      },
+      {
+        "tag": "Méně efektivní metody",
+        "detail": "Ve výuce chybí častější sebehodnocení žáků a závěrečná shrnutí vyučovacích hodin, což snižuje jejich motivaci.",
+        "evidence": "Závěry většiny vyučovacích hodin teoretické výuky postrádají motivační shrnutí a zhodnocení práce žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro nadané žáky nebo pro žáky s potížemi v učení?",
+      "Jaká bezpečnostní opatření byla přijata k odstranění závad zjištěných na domově mládeže?",
+      "Jaké konkrétní firmy zajišťují odbornou praxi pro jednotlivé obory?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří se chtějí uplatnit v technických oborech a IT a preferují silné zastoupení praxe.",
+      "Pro studenty, kteří oceňují moderní vybavení odborných učeben a technické podpory výuky.",
+      "Pro rodiče hledající školu s funkčním vztahem k regionálním zaměstnavatelům."
+    ],
+    "who_should_be_cautious": [
+      "Pro rodiče žáků se speciálními vzdělávacími potřebami, pokud očekávají intenzivní individuální podporu přímo ve výuce.",
+      "Pro zájemce o ubytování v domově mládeže z důvodu jeho zastaralého stavu a bezpečnostních rizik.",
+      "Pro žáky, kteří potřebují silnou motivační zpětnou vazbu a hodnocení vlastního pokroku."
+    ],
+    "plain_czech_summary": "Technická škola s moderním vybavením a dobrou vazbou na praxi nabízí kvalitní přípravu na povolání. Výuka je ale nastavena spíše tradičně a málo rozlišuje mezi nadanějšími a slabšími žáky. Pokud uvažujete o ubytování, prověřte aktuální stav domova mládeže, který inspekce hodnotila kriticky pro opotřebovanost a bezpečnostní nedostatky. Škola má nové vedení, které pokračuje v modernizaci zázemí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kladný",
+      "key_numbers": [
+        "Úspěšnost žáků u maturitních zkoušek je sledována jako zpětná vazba školy."
+      ],
+      "evidence": "Zpětnou vazbou pro školu je také úspěšnost žáků u maturitních zkoušek, a to nejen v uplynulém školním roce."
+    },
+    "absence": {
+      "trend": "Není hodnoceno",
+      "key_numbers": [
+        "Konzultace jsou využívány při řešení neomluvené absence."
+      ],
+      "evidence": "Účelně jsou také využívány konzultace pro žáky a zákonné zástupce, a to zejména při řešení zvýšené či neomluvené absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště zajišťuje výchovné poradenství a primární prevenci.",
+      "Individuální konzultace pro žáky se školní neúspěšností.",
+      "Adaptační kurzy pro žáky 1. ročníků."
+    ],
+    "safety_climate": [
+      "Ve výuce panuje korektní komunikace bez projevů šikany.",
+      "V domově mládeže byly zjištěny bezpečnostní riziky prostor.",
+      "Žáci jsou pravidelně seznamováni s bezpečnostními riziky."
+    ],
+    "partnerships_practice": [
+      "Aktivní spolupráce s firmami na zajištění praktického vyučování.",
+      "Účast v projektech zaměřených na polytechnické vzdělávání.",
+      "Studentské firmy se podílejí na propagaci školy."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěry a doporučení jsou explicitně vyjmenována.",
+    "uncertainty_notes": [
+      "Chybí konkrétní číselná data o úspěšnosti u maturity, pouze obecné konstatování.",
+      "Není uveden konkrétní počet žáků se speciálními potřebami ani druh podpůrných opatření.",
+      "Nejsou specifikována konkrétní bezpečnostní rizika v domově mládeže, pouze obecná zmínka."
+    ]
+  }
+}

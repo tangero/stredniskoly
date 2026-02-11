@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600171124_2024-10-18",
+  "school_profile": {
+    "school_type": "Střední škola - Centrum odborné přípravy technické (technické obory s maturitou a výučním listem)",
+    "inspection_period": "18. 10. 2024 a 22.–24. 10. 2024",
+    "school_change_summary": "Škola rozšířila poradenské služby o školního psychologa, zvýšila počet žáků na 695, zkvalitnila materiální vybavení pro odborné předměty a praktické vyučování. Od 2023/2024 je akreditovaným střediskem pro ECDL/ICDL Insights a partnerem skupiny ČEZ."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Soutěžní úspěchy",
+        "detail": "Žáci dlouhodobě dosahují čelních umístění v soutěžích na krajské, národní i mezinárodní úrovni, zejména v oborech Mechanik elektrotechnik, Autotronik a Autoelektrikář.",
+        "evidence": "Dlouhodobě mezi nejvýznamnější úspěchy patří pravidelná čelní umístění v soutěžích pořádaných na krajské, národní i mezinárodní úrovni."
+      },
+      {
+        "tag": "Kvalitní praktické vyučování",
+        "detail": "Praktické vyučování je organizováno s účelně zvolenými metodami, žáci jsou vedeni k přesnosti a pečlivosti, komunikují v příjemné atmosféře.",
+        "evidence": "Při práci s nástroji a zařízeními byli systematicky vedeni k přesnosti a pečlivosti, ukázněně a zodpovědně plnili pracovní úkoly."
+      },
+      {
+        "tag": "Podpora žáků v obtížích",
+        "detail": "Školní poradenské pracoviště cíleně pomáhá žákům se speciálními potřebami, ohrožením školním neúspěchem a nabízí doučování.",
+        "evidence": "Školní poradenské pracoviště cíleně a ve velké míře úspěšně pomáhalo žákům i jejich zákonným zástupcům při řešení vzdělávacích a výchovných obtíží."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky v angličtině",
+        "detail": "U čtyřletých oborů došlo ke zhoršení výsledků maturitní zkoušky z angličtiny, zejména v oboru Autotronik.",
+        "evidence": "U čtyřletých oborů vzdělání došlo u této zkoušky ke zhoršení výsledků. Důvodem zhoršení výsledků byla zejména vyšší neúspěšnost žáků oboru vzdělání Autotronik."
+      },
+      {
+        "tag": "Podprůměrné výsledky v gramotnosti",
+        "detail": "Při testování finanční a čtenářské gramotnosti škola dosáhla podprůměrných výsledků ve srovnání s celorepublikovými.",
+        "evidence": "Při kterém škola dosáhla podprůměrných výsledků ve srovnění s výsledky celorepublikovými."
+      },
+      {
+        "tag": "Omezená diferenciace v teoretické výuce",
+        "detail": "Chybí možnost žáků vybírat si úlohy s různou náročností, což omezuje individuální rozvoj.",
+        "evidence": "Společným nedostatkem většiny výuky všeobecně vzdělávacích i odborných předmětů byla chybějící možnost žáků vybírat si z úloh odlišné kognitivní náročnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší zhoršené výsledky v angličtině u čtyřletých oborů a co se změní v přípravě na maturitu?",
+      "Jaké jsou konkrétní možnosti doučování a individuální podpory pro žáky, kteří mají problémy s učením?",
+      "Jak se škola připravuje na nové trendy v elektromobilitě a jak to ovlivňuje výuku v jednotlivých oborech?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a ruční práci – škola má velmi dobré podmínky pro praktické vyučování a kvalitní vybavení.",
+      "Talentovaní žáci v technických oborech – škola podporuje účast v soutěžích a má tradici úspěchů.",
+      "Žáci se speciálními vzdělávacími potřebami – škola má kvalitní poradenské služby a asistenty pedagoga."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší angličtinou – výsledky v tomto předmětu jsou u čtyřletých oborů horší, příprava na maturitu není optimální.",
+      "Žáci orientovaní na teoretické vzdělání – škola se zaměřuje primárně na technické obory s důrazem na praktiku.",
+      "Žáci vyžadující vysokou diferenciaci úloh – teoretická výuka zatím nenabízí dostatek úloh s různou náročností."
+    ],
+    "plain_czech_summary": "Střední škola v Kroměříži je moderní technické učiliště se 695 žáky. Silnými stránkami jsou kvalitní praktické vyučování, úspěchy v soutěžích a dobrá podpora žáků v obtížích. Matematika a čeština se zlepšují, ale angličtina u čtyřletých oborů slábne. Škola má nové vybavení a spolupracuje s firmami. Slabší je diferenciace úloh v teoretické výuce a propojování předmětů. Vhodná pro prakticky zaměřené žáky, méně pro ty, kteří potřebují individualizovanou teoretickou výuku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – matematika a čeština se zlepšují, angličtina u čtyřletých oborů se zhoršuje",
+      "key_numbers": [
+        "Matematika: výsledky lepší než celorepublikový průměr",
+        "Čeština a literatura: zvýšená úspěšnost u obou typů oborů",
+        "Angličtina u čtyřletých oborů: zhoršení, zejména v oboru Autotronik"
+      ],
+      "evidence": "V anglickém jazyce u žáků nástavbového studia byly výsledky na dobré úrovni. U čtyřletých oborů došlo ke zhoršení výsledků. V českém jazyce a literatuře došlo ke zvýšení žákovské úspěšnosti. Výrazně se zlepšila také úspěšnost žáků u maturitní zkoušky z matematiky."
+    },
+    "absence": {
+      "trend": "Není v textu explicitně uvedeno",
+      "key_numbers": [
+        "Nejsou dostupné konkrétní údaje o absenci"
+      ],
+      "evidence": "Text se zabývá motivačními rozhovory se žáky ohroženými školním neúspěchem či vyšší absencí, ale konkrétní čísla nejsou uvedena."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovný poradce, školní metodika prevence, studijní a kariérová poradkyně, externí školní psycholog",
+      "Doučování a individuální konzultace napříč všemi předměty",
+      "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami včetně asistentské pomoci",
+      "Speciální podpora pro žáky s odlišným mateřským jazykem"
+    ],
+    "safety_climate": [
+      "Účinně nastavený systém bezpečnosti a ochrany zdraví žáků",
+      "Žáci jsou pravidelně informováni o bezpečnostních rizicích ve škole i mimo ni",
+      "Velmi dobré vzájemné vztahy mezi vyučujícími a žáky, příjemná pracovní atmosféra",
+      "Kvalitní systematická preventivní práce s třídními kolektivy"
+    ],
+    "partnerships_practice": [
+      "Stěžejní partneři: firmy a podniky zajišťující praktické vyučování",
+      "Spolupráce s místními základními školami a sociálními partnery",
+      "Partnerství se středními školami v regionu v oblasti robotiky, strojírenství a autotroniky",
+      "Město Kroměříž – žáci se podílejí na společensko-kulturních akcích",
+      "Skupina ČEZ – partnerská škola od 2023/2024",
+      "Projekt podporující výchovu servisních techniků domácích spotřebičů (od 2024/2025)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní informace o silných a slabých stránkách. Jsou jasně identifikovány oblasti ke zlepšení. Chybí však konkrétní čísla o absenci a některé údaje jsou formulovány obecně.",
+    "uncertainty_notes": [
+      "Absence – text neobsahuje konkrétní údaje o počtu absencí nebo jejich trendu",
+      "Počet žáků se SVP (50) není kontextualizován vůči celkovému počtu (695) – není jasné, zda je to vysoký či nízký podíl",
+      "Konkrétní výsledky testů finanční a čtenářské gramotnosti nejsou uvedeny, pouze že jsou podprůměrné"
+    ]
+  }
+}
+```

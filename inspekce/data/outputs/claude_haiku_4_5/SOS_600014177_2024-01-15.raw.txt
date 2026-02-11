@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600014177_2024-01-15",
+  "school_profile": {
+    "school_type": "Střední vinařská škola (příspěvková organizace) s domovem mládeže a školní jídelnou",
+    "inspection_period": "15. 1. 2024 – 17. 1. 2024",
+    "school_change_summary": "Škola prošla změnami ve vedení a rozšířila prostory pro odborné vzdělávání. Počet žáků vzrostl o 77 % oproti roku 2018/2019, nyní 308 žáků v denní formě. Obory se zaměřily na vinařství, vinohradnictví a vinařskou turistiku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a prostory",
+        "detail": "Škola má kvalitní a moderní materiální vybavení pro praktické vyučování včetně nového kombajnu a modernizovaných učeben s digitálními technologiemi.",
+        "evidence": "Vedení školy se zaměřilo na zkvalitnění materiálních podmínek, pořídila nový kombajn a modernizovala budovy."
+      },
+      {
+        "tag": "Silné praktické vzdělávání",
+        "detail": "Praktická výuka je výborně propojena s teorií, žáci získávají odborné znalosti a dovednosti na školních pracovištích s individuálním přístupem učitelů.",
+        "evidence": "Účelně byly propojovány znalosti žáků s jejich praktickými dovednostmi, učitelé poskytovali průběžnou zpětnou vazbu."
+      },
+      {
+        "tag": "Úspěchy v závěrečných zkouškách",
+        "detail": "Výsledky maturitní zkoušky se zlepšují, hrubá neúspěšnost klesla o 4 procentní body. Učební obory mají výborné výsledky s 2% neúspěšností.",
+        "evidence": "Ve školním roce 2021/2022 neprospělo 23 % žáků, v letošním roce se snížilo na 19 %. Závěrečné zkoušky: za tři roky neprospěl pouze jeden žák."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Škola se dlouhodobě potýká s vysokou absencí, zejména u tříletých oborů a nástavbového studia, přestože se situace zlepšuje.",
+        "evidence": "Ve školním roce 2021/2022 průměrná absence 194 hodin na žáka, v 2022/2023 poklesla na 169 hodin. Nejvyšší absenci vykazují tříleté obory."
+      },
+      {
+        "tag": "Slabší teoretická výuka",
+        "detail": "Teoretické předměty jsou vedeny převážně frontální formou s málo aktivizačních metod, což vede k pasivitě žáků a nízké podpoře kritického myšlení.",
+        "evidence": "V části výuky dominovala frontální forma s předáváním hotových informací, nízká byla podpora rozvoje klíčových kompetencí a kritického myšlení."
+      },
+      {
+        "tag": "Nejednotné hodnocení v češtině",
+        "detail": "Výsledky v českém jazyce vykazují odlišnou úroveň hodnocení mezi třídami, přijatá opatření se zatím neprojevila.",
+        "evidence": "Průběžné výsledky vzdělávání v českém jazyce vykazují odlišnou úroveň hodnocení mezi jednotlivými třídami."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky pro jejich prospěch?",
+      "Jaké konkrétní aktivizační metody plánuje škola zavést do teoretické výuky v příštích měsících?",
+      "Jak funguje přestup mezi obory a jaké jsou podmínky pro přechod z učebního oboru do maturitního?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou práci a odborné dovednosti v zemědělství, vinařství a zahradnictví",
+      "Studenti, kteří chtějí kvalitní praktické vzdělávání s moderním vybavením a propojením s reálnou praxí",
+      "Žáci z regionu, kterým vyhovuje ubytování v domově mládeže a komplexní péče o vzdělávání"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k absencím – škola má dlouhodobý problém s vysokou absencí, zejména v tříletých oborech",
+      "Studenti preferující aktivní a interaktivní výuku – teoretické předměty jsou vedeny spíše tradičně frontální formou",
+      "Zájemci o studium v nástavbovém oboru – dlouhodobě vykazuje vysokou neúspěšnost u maturitní zkoušky"
+    ],
+    "plain_czech_summary": "Střední vinařská škola v Valticích je moderně vybavená škola se silným zaměřením na praktické vzdělávání v zemědělství a vinařství. Výsledky v závěrečných zkouškách se zlepšují, zejména v učebních oborech. Škola má kvalitní domov mládeže a aktivně spolupracuje s partnery v regionu. Hlavní výzvou zůstává vysoká absence žáků a potřeba zkvalitnit teoretickou výuku pomocí aktivnějších metod. Škola je vhodná pro prakticky zaměřené studenty, kteří si cení moderního vybavení a individuálního přístupu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Hrubá neúspěšnost 2021/2022: 23 % žáků čtyřletých oborů",
+        "Hrubá neúspěšnost 2023/2024: 19 % (pokles o 4 procentní body)",
+        "Nástavbové studium 2022/2023: pokles neúspěšnosti o 31 % oproti 2021/2022"
+      ],
+      "evidence": "Ve školním roce 2021/2022 nekonalo maturitní zkoušku nebo u ní neprospělo 23 % žáků čtyřletých oborů, v letošním školním roce se hrubá neúspěšnost snížila o čtyři procentní body."
+    },
+    "absence": {
+      "trend": "Zlepšující se, ale stále vysoká",
+      "key_numbers": [
+        "2021/2022: 194 hodin na žáka za školní rok",
+        "2022/2023: 169 hodin na žáka za školní rok",
+        "Pokles neomluvenosti v posledním roce"
+      ],
+      "evidence": "Škola se dlouhodobě potýká s problémem vysoké absence žáků. Ve školním roce 2021/2022 průměrná absence dosáhla 194 hodin na žáka za školní rok. Ve školním roce 2022/2023 došlo k poklesu průměrné absence na 169 hodin na žáka."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psycholožkou, výchovnou poradkyní a metodičkou prevence",
+      "Individuální konzultace pro žáky s výukovými obtížemi a opravné termíny",
+      "Kariérové poradenství včetně přednášek na Zahradnické fakultě Mendelovy univerzity",
+      "Preventivní program 'Bezpečně na vinařce' zaměřený na prevenci rizikového chování"
+    ],
+    "safety_climate": [
+      "Škola věnuje velkou pozornost prevenci rizikového chování žáků a reaguje na celospolečenské i individuální problémy",
+      "Školní psycholožka realizuje individuální konzultace a pomáhá s řešením problémů třídních kolektivů",
+      "Školní metodička prevence se podílí na organizaci aktivit zaměřených na upevňování dobrých vztahů mezi žáky",
+      "Efektivita preventivních aktivit je průběžně vyhodnocována"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se čtyřmi zahraničními školami (Slovensko, Francie) s zapojením žáků a pedagogů",
+      "Partnerství s firmami poskytujícími finanční prostředky, věcné dary, slevy a techniku",
+      "Účast žáků na regionálních a mezinárodních oborových soutěžích (soutěž mladých someliérů v Paříži)",
+      "Spolupráce s Centrem odborné přípravy a Centrem odborného vzdělávání na zkvalitnění vybavení"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní důvody vysoké absence (zdravotní, sociální, motivační) – rodiče by měli na otevřeném dni upřesnit",
+      "Není jasné, jak konkrétně se škola chystá zlepšit teoretickou výuku – doporučení jsou obecná",
+      "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami v jednotlivých oborech"
+    ]
+  }
+}
+```

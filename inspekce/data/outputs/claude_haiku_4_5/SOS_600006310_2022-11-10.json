@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600006310_2022-11-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:57:11.588997+00:00",
+  "run_finished_utc": "2026-02-09T16:57:41.647673+00:00",
+  "raw_file": "SOS_600006310_2022-11-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600006310_2022-11-10",
+    "school_profile": {
+      "school_type": "Soukromá střední a základní škola s obory: Informační technologie, Ekonomika a podnikání, Cestovní ruch, Grafický design, Podnikání (nástavbové)",
+      "inspection_period": "10. listopadu až 15. listopadu 2022",
+      "school_change_summary": "Od inspekce v 2016 se škola přestěhovala, výrazně navýšila počet žáků (572 ve SŠ, 54 v ZŠ) a tříd. Vedení zlepšuje materiální zázemí, ale přetrvávají problémy s řízením pedagogického procesu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečné a příjemné prostředí",
+          "detail": "Škola má nízkou úrazovost, čipový a kamerový systém, bezpečnostní pravidla jsou účinně vynucována.",
+          "evidence": "Důraz na dodržování pravidel, čipový a kamerový systém, celodenní provoz recepce napomáhá k bezpečnému prostředí. Míra úrazovosti dosahuje nízké úrovně."
+        },
+        {
+          "tag": "Dobrá vybavenost",
+          "detail": "Moderní technické vybavení, dataprojektory ve všech třídách, wifi, kvalitní učebny a ateliéry.",
+          "evidence": "Ve všech učebnách jsou nainstalovány dataprojektory a počítače, v celé škole je k dispozici wifi připojení. Škola disponuje dostatečným počtem kmenových a odborných učeben."
+        },
+        {
+          "tag": "Příznivá atmosféra",
+          "detail": "Vzájemně vstřícný přístup učitelů a žáků pozitivně ovlivňuje průběh vzdělávání.",
+          "evidence": "Většina sledovaných hodin se vyznačovala vzájemně vstřícným přístupem vyučujících i žáků, který pozitivně ovlivňoval průběh vzdělávání."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoký podíl předčasných odchodů",
+          "detail": "Polovina žáků poslední čtyřletého cyklu nedokončila vzdělávání, v IT oboru až 70 procent.",
+          "evidence": "Poslední čtyřletý cyklus vzdělávání nedokončila ve všech oborech polovina žáků a v oboru Informační technologie dokonce 70 % žáků."
+        },
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "Třetina vyučujících nesplňuje podmínky odborné kvalifikace, v ZŠ až 80 procent.",
+          "evidence": "Podmínky odborné kvalifikace nesplňuje třetina vyučujících. Nekvalifikovanost vyučujících v ZŠ (80 %) a malá pedagogická zkušenost se projevily zásadními nedostatky."
+        },
+        {
+          "tag": "Slabá kvalita výuky",
+          "detail": "Převažuje frontální výuka, málo aktivizace žáků, chybí diferenciace podle potřeb, nedostatečné formativní hodnocení.",
+          "evidence": "V hospitovaných hodinách převažovala frontální výuka. Učitelé nediferencovali obsah vzdělávání s ohledem na aktuální schopnosti nebo vzdělávací potřeby jednotlivých žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší vysoký podíl žáků, kteří předčasně ukončují vzdělávání? Jaká konkrétní opatření zavádí?",
+        "Jaký je plán na zvýšení kvalifikace učitelů, zejména v základní škole?",
+        "Jak se škola vypořádává s jazykovou bariérou žáků s odlišným mateřským jazykem?"
+      ],
+      "who_school_fits": [
+        "Žáci z oborů Cestovní ruch a Ekonomika a podnikání, kde dosahují lepších výsledků než průměr",
+        "Žáci, kterým vyhovuje praktická orientace vzdělávání a odborné praxe u partnerů",
+        "Rodiny hledající bezpečné prostředí s moderní technikou a jasně nastavenými pravidly"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s nižšími schopnostmi nebo se speciálními vzdělávacími potřebami – chybí jim dostatečná individuální podpora",
+        "Žáci s odlišným mateřským jazykem – nejsou dostatečně podporováni při výuce",
+        "Zájemci o obor Grafický design – výuka postrádá odbornou koncepci a zpětnou vazbu"
+      ],
+      "plain_czech_summary": "Škola je bezpečná, moderně vybavená a má příjemnou atmosféru. Problém je vysoký podíl žáků, kteří předčasně skončí (až 70 % v IT). Kvalita výuky se liší – převažuje nudná frontální výuka bez aktivizace. Třetina učitelů není kvalifikovaná, zejména v základní škole. Žáci se speciálními potřebami nebo cizinci nedostávají dostatečnou podporu. Nejlepší jsou obory Cestovní ruch a Ekonomika."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – profilová část lepší, společná část horší než průměr",
+        "key_numbers": [
+          "Cestovní ruch a Ekonomika: lepší než průměr skupiny oborů",
+          "Společná část: nižší úspěšnost než průměr skupiny oborů",
+          "Nástavbové studium Podnikání: podprůměrné v obou částech"
+        ],
+        "evidence": "Z analýzy výsledků žáků ve společné části maturitní zkoušky vyplývá, že v hodnoceném období byla úspěšnost školy celkově nižší, než je průměrná úspěšnost škol dané skupiny oborů."
+      },
+      "absence": {
+        "trend": "Zlepšení – absence se snížila na polovinu",
+        "key_numbers": [
+          "Přibližně 100 hodin absence na žáka (oproti předchozímu inspekčnímu zjištění)",
+          "Absence ve SŠ se podařilo snížit na polovinu"
+        ],
+        "evidence": "Absenci žáků ve SŠ, oproti poslednímu inspekčnímu zjištění, se podařilo snížit na polovinu (přibližně 100 hodin na žáka)."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s psychologem – identifikuje potřeby žáků se SVP a OMJ",
+        "Výuka češtiny pro cizince – podpora žáků s odlišným mateřským jazykem",
+        "Individuální vzdělávací plány – pro žáky se speciálními potřebami"
+      ],
+      "safety_climate": [
+        "Nízká úrazovost",
+        "Čipový a kamerový systém",
+        "Celodenní provoz recepce",
+        "Nízký výskyt rizikových projevů chování",
+        "Účinně ukládaná výchovná opatření"
+      ],
+      "partnerships_practice": [
+        "Rozšířená síť sociálních partnerů pro odborné praxe",
+        "Spolupráce se zřizovatelem na zlepšování materiálního zázemí",
+        "Spolupráce s dalšími školami zřizovatele"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně identifikuje problémy i silné stránky. Obsahuje konkrétní čísla a citace. Mírně sníženo pro místy technický jazyk inspekce.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o výsledcích maturit (procenta úspěšnosti), pouze kvalitativní srovnání",
+        "Není jasné, kolik přesně žáků s OMJ škola má a jaké jsou jejich konkrétní výsledky",
+        "Chybí informace o počtu žáků, kteří prospívají s vyznamenáním ve SŠ (uvedeno jen 'zhruba 10 %')"
+      ]
+    }
+  }
+}

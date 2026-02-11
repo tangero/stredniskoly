@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "SOS_600010112_2023-04-25",
+  "school_profile": {
+    "school_type": "Střední odborná škola s maturitní zkouškou (denní forma) a nástavbové studium (kombinovaná forma)",
+    "inspection_period": "25.–27. dubna 2023",
+    "school_change_summary": "Od roku 2019/2020 přešla na dvouleté kombinované nástavbové studium. Počet žáků vzrostl o cca 40 %. V roce 2022 dosáhla nadprůměrných výsledků v maturitní zkoušce oproti průměru ČR."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Silné vedení a řízení",
+        "detail": "Ředitelka prokazuje výborné manažerské znalosti a má jasné priority zaměřené na praktické uplatnění absolventů.",
+        "evidence": "Efektivní řízení je založené na koncepční práci ve všech oblastech školy s propracovanými zpětnovazebními mechanismy."
+      },
+      {
+        "tag": "Výborné výsledky v maturitě",
+        "detail": "V roce 2022 byly výsledky žáků ve společné i profilové části maturitní zkoušky nadprůměrné oproti průměru ČR.",
+        "evidence": "Neúspěšnost klesla z 23 % (2020/2021) na 17 % (2021/2022). Škola nabízí doučování v rámci projektu ŠABLONY II."
+      },
+      {
+        "tag": "Praktické propojení teorie a praxe",
+        "detail": "Teoretické vzdělávání je účelně propojeno s odborným výcvikem a reálným pracovištěm.",
+        "evidence": "Praktické vyučování probíhá ve školní restauraci s důrazem na budoucí uplatnění. Odborná praxe od třetího ročníku u zaměstnavatelů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné aktivizační metody",
+        "detail": "Výuka cizích jazyků byla málo efektivní, chyběly simulace přirozených komunikačních situací a prostor pro vzájemnou komunikaci.",
+        "evidence": "Důraz byl kladen na procvičování gramatických struktur v izolovaných větách bez komunikačních situací."
+      },
+      {
+        "tag": "Chybí sebehodnocení žáků",
+        "detail": "Žáci nebyli cíleně vedeni k hodnocení vlastního pokroku ve vztahu k jejich možnostem.",
+        "evidence": "S výjimkou praktického vyučování byla zaznamenána jen výjimečně vzájemné hodnocení či sebehodnocení žáků."
+      },
+      {
+        "tag": "Rezervy v diferenciaci",
+        "detail": "Cílená diferenciace podle schopností žáků byla zaznamenána ojediněle, zejména v matematice.",
+        "evidence": "V matematice byla diferenciace pouze v počtu úloh, nikoli v jejich obtížnosti. Samostatná práce a skupinová výuka byly využívány v menší míře."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s cizími jazyky? Jaké jsou možnosti doučování?",
+      "Jaké jsou konkrétní výsledky absolventů na trhu práce a jak škola sleduje jejich uplatnění?",
+      "Jak se škola vypořádává s tím, že nemá vlastní tělocvičnu? Jaké jsou možnosti sportovního vyžití?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické uplatnění v hotelnictví, gastronomii a bezpečnostních službách",
+      "Studenti, kteří chtějí kombinovat teorii s reálnou praxí u zaměstnavatelů",
+      "Uchazeči zajímající se o mezinárodní mobilitu a projekty Erasmus+ (Španělsko, Velká Británie)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími jazykovými dovednostmi – výuka cizích jazyků byla hodnocena jako málo efektivní",
+      "Studenti, kteří potřebují individuální přístup a diferenciaci – škola má rezervy v tomto směru",
+      "Žáci, kteří se lépe učí aktivními metodami – škola využívá převážně frontální výuku"
+    ],
+    "plain_czech_summary": "Euroškola Česká Lípa je dobře řízená střední škola s jasným zaměřením na praktické uplatnění absolventů. Silnými stránkami jsou výborné výsledky v maturitě (nadprůměrné oproti ČR), propojení teorie s praxí a spolupráce se zaměstnavateli. Žáci se úspěšně účastní odborných soutěží. Slabší je výuka cizích jazyků a chybí větší využití aktivizačních metod. Škola nemá vlastní tělocvičnu, ale nabízí sportovní kurzy. Vhodná pro prakticky zaměřené studenty."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se – výrazný nárůst úspěšnosti v roce 2022",
+      "key_numbers": [
+        "2021/2022: 17 % neúspěšných (10 žáků z 58)",
+        "2020/2021: 23 % neúspěšných",
+        "2022: nadprůměrné výsledky oproti průměru ČR"
+      ],
+      "evidence": "V roce 2022 byla úspěšnost žáků ve společné i profilové části maturitní zkoušky významně vyšší než republikový průměr, kromě matematiky."
+    },
+    "absence": {
+      "trend": "Nízká absence – důsledně monitorována",
+      "key_numbers": [
+        "Neomluvená absence je neprodleně řešena",
+        "Počet neprospívajících žáků pod 5 % v posledních třech letech"
+      ],
+      "evidence": "Docházku důsledně monitorují třídní učitelé, neomluvená absence je řešena osobní intervencí u zletilých či se zákonnými zástupci."
+    },
+    "support_services": [
+      "Výchovné poradenství a metodická podpora pro žáky se speciálními vzdělávacími potřebami (10 žáků s podporou)",
+      "Doučování v rámci projektu ŠABLONY II v předmětech: český jazyk, anglický a německý jazyk, ekonomika a účetnictví",
+      "Konzultační hodiny s ředitelkou školy pro potenciální uchazeče (jednou týdně)"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti žáků – bezpečnostní rizika jsou neustále identifikována a odstraňována",
+      "Vstupní zabezpečovací systém zvyšuje bezpečnost účastníků vzdělávání",
+      "Žáci jsou účelně poučováni o bezpečnosti a ochraně zdraví na začátku roku a průběžně"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zaměstnavateli – odborná praxe od třetího ročníku s nabídkou pracovních příležitostí",
+      "Projekty Erasmus+ s partnery ve Španělsku a Velké Británii, mobilita žáků i pedagogů",
+      "Partnerství s Policií ČR, Vězeňskou službou, Hasičským záchranným sborem – pracovní nabídky absolventům"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však více úřednické (např. popis organizační struktury), ale pro rodiče jsou relevantní informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků s odlišným mateřským jazykem v jednotlivých třídách – uvedeno jen celkově 19 žáků",
+      "Chybí detailní informace o kvalitě výuky matematiky – zmíněn jen jeden neúspěšný žák v maturitě",
+      "Není jasné, jak konkrétně se škola vypořádává s nedostatky v aktivizačních metodách – doporučení jsou obecná"
+    ]
+  }
+}
+```

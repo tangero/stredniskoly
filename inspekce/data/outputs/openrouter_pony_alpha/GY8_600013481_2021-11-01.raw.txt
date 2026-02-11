@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600013481_2021-11-01",
+  "school_profile": {
+    "school_type": "Gymnázium (osmileté i čtyřleté)",
+    "inspection_period": "1. až 4. 11. 2021",
+    "school_change_summary": "Od roku 2013 zůstává počet žáků stabilní, škola je naplněna na 98 %, personálně byla zajištěna plná odborná kvalifikovanost sboru a rozšířeny poradenské služby o externího psychologa."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky",
+        "detail": "Škola dosahuje dlouhodobě vynikajících výsledků v maturitních zkouškách i v národních soutěžích.",
+        "evidence": "Žáci dosahovali ve společné i profilové části maturitní zkoušky 100% úspěšnost... v národních i mezinárodních kolech předmětových olympiád dosahují vynikajících výsledků."
+      },
+      {
+        "tag": "Prostředí",
+        "detail": "Škola nabízí bezpečné prostředí, kvalitní zázemí a efektivní prevenci sociálně patologických jevů.",
+        "evidence": "Škola má nastavený účinný systém prevence... šikany... obě budovy školy jsou dobře udržované, žáci často využívají odpočinkové a studijní kouty."
+      },
+      {
+        "tag": "Zázemí",
+        "detail": "Díky aktivnímu získávání grantů má škola velmi dobré materiální a finanční podmínky.",
+        "evidence": "Vedení školy aktivně vyhledává i jiné finanční zdroje... významné jsou například projekty na podporu matematické gramotnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Výuka",
+        "detail": "Vyučování převažuje frontální formou bez dostatečného zapojení žáků do diskusí a skupinové práce.",
+        "evidence": "Frontální výuka převažovala nad ostatními formami... nedostatečná byla podpora vzájemné komunikace, diskuse na dané téma, mezi žáky navzájem."
+      },
+      {
+        "tag": "Talent",
+        "detail": "Systém péče o nadané žáky není nastaven jednotně a chybí individuální přístup.",
+        "evidence": "Systém práce s nadanými žáky není vedením školy jednotně nastaven... diferenciace učiva s ohledem na podpůrná opatření či nadání žáků byla uplatněna minimálně."
+      },
+      {
+        "tag": "Hodnocení",
+        "detail": "Ve výuce chybí formativní zpětná vazba, která by žákům pomohla zlepšovat jejich výkon.",
+        "evidence": "Zpětná vazba žákům formou zhodnocení jejich přístupu k práci... byla zcela nedostatečná, využití formativního hodnocení není nastaveno."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola zajišťuje systémovou podporu pro nadané děti, aby se nenudily ve standardní výuce?",
+      "Jakým způsobem pedagogové poskytují zpětnou vazbu, aby žáci věděli, jak zlepšit své výsledky?",
+      "Využívají učitelé při výuce moderní aktivizující metody a práci v týmu, nebo převažuje přednáška?"
+    ],
+    "who_school_fits": [
+      "Samostatní žáci, kteří jsou schopni se dobře připravit na náročné maturitní zkoušky.",
+      "Talentovaní soutěživí jedinci, kteří chtějí reprezentovat školu v olympiádách.",
+      "Žáci, kterým vyhovuje tradičnější pojetí výuky s důrazem na vědomosti."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří vyžadují častou individuální pozornost a zpětnou vazbu od učitele.",
+      "Rodiče očekávající moderní interaktivní metody výuky a skupinovou práci ve většině předmětů.",
+      "Extrémně nadaní žáci, kteří potřebují specificky upravený vzdělávací plán."
+    ],
+    "plain_czech_summary": "Gymnázium na Kpt. Jaroše je stabilní a velmi úspěšná škola s vynikajícími výsledky u maturit a v soutěžích. Pro rodiče je důležité vědět, že výuka probíhá spíše tradiční frontální formou a chybí zde jednotný systém péče o nadané žáky. Škola má skvělé zázemí a bezpečné prostředí, ale méně prostoru se věnuje moderním metodám a formativnímu hodnocení. Hodí se pro samostatné studenty, kteří jsou schopni se učit i bez neustálého vedení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborná",
+      "key_numbers": [
+        "100 % úspěšnost",
+        "Nadprůměrné výsledky",
+        "Minimální neúspěšnost"
+      ],
+      "evidence": "V posledních třech letech dosahovali žáci školy ve společné i profilové části maturitní zkoušky 100% úspěšnost."
+    },
+    "absence": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "Meziročně srovnatelná",
+        "Minimální neomluvená"
+      ],
+      "evidence": "Absence žáků je meziročně srovnatelná. Výskyt neomluvených zameškaných hodin byl minimální."
+    },
+    "support_services": [
+      "Externí psycholog pro řešení krizových situací a osobních problémů.",
+      "Výchovní poradci na obou pracovištích (efektivita je však snížena kumulací funkcí).",
+      "Schránka SOS a webový systém pro kariérní plánování."
+    ],
+    "safety_climate": [
+      "Příjemné pracovní klima a vzájemná důvěra.",
+      "Účinný systém prevence šikany a kyberšikany.",
+      "Rizikové chování se řeší v počátečních stádiích."
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce s fakultami vysokých škol.",
+      "Spolupráce se SCIO, CERMAT a JCMM.",
+      "Partnerské školy v zahraničí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a negativa, používá běžnou češtinu bez zbytečného krkolomného úřednického jazyka, některé pasáže jsou ale stylisticky složitější.",
+    "uncertainty_notes": [
+      "Není specifikováno, kolik přesně žáků má individuální vzdělávací plán.",
+      "Chybí konkrétní data o počtu hodin věnovaných poradenským službám.",
+      "Není jasné, jak často se realizují projekty financované z EU."
+    ]
+  }
+}

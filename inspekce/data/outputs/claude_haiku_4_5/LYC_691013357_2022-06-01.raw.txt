@@ -1,0 +1,102 @@
+```json
+{
+  "report_id": "LYC_691013357_2022-06-01",
+  "school_profile": {
+    "school_type": "Montessori mateřská škola, základní škola a školní družina",
+    "inspection_period": "1. až 6. června 2022",
+    "school_change_summary": "Nová ředitelka pokračuje v budování Montessori systému. Otevřena mateřská škola (od 9/2021), počet žáků ZŠ vzrostl z 14 na 61. Škola se přestěhovala do nového areálu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné emoční prostředí",
+        "detail": "Učitelé vytvářejí vstřícnou atmosféru s vysokou mírou tolerance a důvěry, která podporuje psychosociální bezpečí dětí.",
+        "evidence": "Inspektoři pozorovali klidné vystupování pedagogů vedoucí děti k vzájemnému respektu a ohleduplnosti."
+      },
+      {
+        "tag": "Montessori metodika v praxi",
+        "detail": "Speciálně vybavené třídy s Montessori pomůckami umožňují dětem svobodnou volbu, rozvoj samostatnosti a soustředění.",
+        "evidence": "Třídy jsou vybaveny kvalitními specifickými Montessori pomůckami, děti mají k nim volný přístup."
+      },
+      {
+        "tag": "Kvalitní příprava na vyšší vzdělávání",
+        "detail": "Úzká spolupráce mezi mateřskou a základní školou zajišťuje bezproblémovou sociální adaptaci dětí.",
+        "evidence": "Promyšlená spolupráce umožňuje širší a bezproblémovou sociální adaptaci dětí v základní škole."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Chybí klidné místo v třídách",
+        "detail": "Žáci nemají vhodné místo k vstřebávání nových emocí a prožívání pocitů během vyuky.",
+        "evidence": "Pedagogové respektovali potřebu žáka vstřebat nové poznatky v ústraní, ale vhodné místo nebylo vytvořeno."
+      },
+      {
+        "tag": "Absence herních prvků na zahradě",
+        "detail": "Školní zahrada postrádá herní prvky pro rozvoj fyzické obratnosti a pohybové zdatnosti dětí.",
+        "evidence": "Na zahradě školy nejsou instalovány žádné herní prvky pro rozvoj fyzické obratnosti."
+      },
+      {
+        "tag": "Chybí mentorská podpora",
+        "detail": "Škola si zatím nevybrala mentora pro Montessori pedagogiku, přestože by to bylo přínosné.",
+        "evidence": "Svou mentorku si škola zatím nevybrala, přestože spolupráce s mentorem je zvláště přínosná."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá přechod dětí z mateřské do základní školy a jak se děti adaptují?",
+      "Jaké konkrétní Montessori pomůcky používáte a jak se liší od běžné výuky?",
+      "Jak budete řešit chybějící klidné místo v třídách a kdy jej plánujete vytvořit?"
+    ],
+    "who_school_fits": [
+      "Rodiče hledající alternativní vzdělávání založené na samostatnosti a sebereflexi dítěte",
+      "Rodiny, kterým vyhovuje slovní hodnocení místo známek a individuální přístup",
+      "Děti, které se lépe učí v přirozeném, motivujícím prostředí s volbou činností"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří preferují tradiční systém s klasickým známkováním a strukturovanou výuku",
+      "Děti s potřebou více fyzické aktivity a sportovního vyžití (chybí herní prvky na zahradě)",
+      "Rodiny, které hledají školu s rozvinutou infrastrukturou (nový areál je stále ve výstavbě)"
+    ],
+    "plain_czech_summary": "Montessori škola v Polné je mladá, dynamicky se rozvíjející instituce s jasnou vizí. Inspektoři ocenili bezpečné emoční prostředí, kvalitní Montessori vybavení tříd a efektivní spolupráci mezi mateřskou a základní školou. Pedagogové jsou vstřícní a vedou děti k samostatnosti a sebereflexi. Hlavní nedostatky jsou praktické: chybí klidné místo v třídách pro vstřebávání emocí a herní prvky na zahradě. Škola splňuje podmínky pro dotace a má dobré jméno na veřejnosti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Není relevantní",
+      "key_numbers": [
+        "Škola je základní a mateřská, nemá střední vzdělání"
+      ],
+      "evidence": "Inspekční zpráva se týká mateřské a základní školy, ne střední školy s maturitou."
+    },
+    "absence": {
+      "trend": "Není specifikováno",
+      "key_numbers": [
+        "Zpráva neobsahuje konkrétní údaje o absenci"
+      ],
+      "evidence": "Inspekční zpráva se nezabývá absencí žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s efektivní činností a provázanou informovaností",
+      "Asistentka pedagoga pro dítě se čtvrtým stupněm podpory",
+      "Primární prevence rizikového chování prolínající celým vzdělávacím procesem"
+    ],
+    "safety_climate": [
+      "Bezpečné psychosociální prostředí vytvářené klidným vystupováním pedagogů",
+      "Důsledné vedení dětí k vzájemnému respektu a ohleduplnosti",
+      "Úzký kontakt a spolupráce všech účastníků vzdělávání eliminující rizikové chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s domem dětí a mládeže a Židovskou obcí v Polné",
+      "Bohatá spolupráce s mezinárodní Montessori komunitou",
+      "Úzká součinnost školní družiny se základní školou v organizaci společných aktivit"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi podrobná, jasně strukturovaná a obsahuje konkrétní příklady z pozorování. Všechna tvrzení jsou opřena o evidence z inspekční činnosti. Jazyk je srozumitelný a bez zbytečného úřednického stylu.",
+    "uncertainty_notes": [
+      "Zpráva se týká základní a mateřské školy, ne střední školy - metadata uvádějí typ LYC (lyceum), což je nekonzistence",
+      "Nejsou uvedeny konkrétní výsledky testů nebo měřitelné ukazatele výkonu žáků",
+      "Chybí informace o počtu pedagogů, jejich kvalifikaci a zkušenostech s Montessori metodou"
+    ]
+  }
+}
+```

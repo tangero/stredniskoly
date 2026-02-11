@@ -1,0 +1,107 @@
+{
+  "report_id": "SOS_600008118_2022-03-14",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:09:37.402140+00:00",
+  "run_finished_utc": "2026-02-10T07:10:27.244609+00:00",
+  "raw_file": "SOS_600008118_2022-03-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600008118_2022-03-14",
+    "school_profile": {
+      "school_type": "Soukromá střední škola s maturitou zaměřená na IT a bezpečnostně právní činnost.",
+      "inspection_period": "14. 3. 2022 − 16. 3. 2022",
+      "school_change_summary": "Škola změnila právní formu na zapsaný ústav a inovovala učivo v oboru Informační technologie, například v oblasti robotiky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odbornost z praxe",
+          "detail": "Škola využívá silné partnerství s Policií ČR a odborníky z praxe.",
+          "evidence": "Intenzivní partnerství školy se složkami rezortu vnitra... se odráží v kvalitě vzdělávání."
+        },
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci dosahují velmi dobrého prospěchu a úspěšnosti u maturity.",
+          "evidence": "Průměrný prospěch školy... dosahoval hodnoty 1,61... míru úspěšnosti žáků... srovnatelnou se školami obdobného zaměření."
+        },
+        {
+          "tag": "Klima a bezpečnost",
+          "detail": "Škola klade velký důraz na zdravé klima a prevenci rizikového chování.",
+          "evidence": "Prioritou jsou... zdravé školní klima... prevence rizikového chování je úspěšná... odráží se i v jejich nižší absenci."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "V některých předmětech převládá frontální výuka bez aktivizace žáků.",
+          "evidence": "V některých předmětech jsou málo zastoupeny aktivizující formy a metody školní práce."
+        },
+        {
+          "tag": "Slabá kontrola kvality",
+          "detail": "Nedostatečná hospitační činnost neposkytuje učitelům dostatečnou zpětnou vazbu.",
+          "evidence": "Malá četnost hospitační činnosti neposkytuje potřebnou zpětnou vazbu všem vyučujícím."
+        },
+        {
+          "tag": "Chybějící analýzy",
+          "detail": "Škola podrobně neanalyzuje výsledky maturit pro další zlepšení výuky.",
+          "evidence": "Údaje o celkových i dílčích výsledcích... nejsou analyzovány."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola využívá spolupráci s Policií ČR při výuce?",
+        "Jaké aktivity škola organizuje pro rozvoj týmové spolupráce žáků?",
+        "Jakým způsobem škola individuálně podporuje žáky s různou úrovní znalostí?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří chtějí studovat v malém kolektivu na škole s rodinnou atmosférou.",
+        "Pro zájemce o práci v bezpečnostních složkách nebo v IT s důrazem na praxi.",
+        "Pro studenty, kteří očekávají důraz na kázeň a fyzickou přípravu."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří preferují moderní interaktivní a skupinové formy výuky před frontální výukou.",
+        "Pro ty, kteří potřebují výrazně individuální přístup kvůli odlišnému tempu učení."
+      ],
+      "plain_czech_summary": "Škola nabízí studium se silným zaměřením na praxi díky spolupráci s Policií ČR a odborníky z rezortu vnitra. Žáci dosahují vynikajících studijních výsledků (průměr 1,61) a škola má velmi dobrou úroveň bezpečí a klimatu. Rizikem může být tradičnější styl výuky, kde chybí více aktivizujících metod, a nízká míra vzájemných hospitací mezi učiteli. Škola je vhodná pro žáky, kteří hledají odborné zaměření s jasnými pravidly a důrazem na kázeň."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní",
+        "key_numbers": [
+          "Úspěšnost srovnatelná s podobnými školami",
+          "Průměrný prospěch 1,61",
+          "40 % žáků prospělo s vyznamenáním"
+        ],
+        "evidence": "Vyznamenáním prospělo 40 % žáků... míru úspěšnosti žáků... srovnatelnou se školami obdobného oborového zaměření."
+      },
+      "absence": {
+        "trend": "Nízká",
+        "key_numbers": [
+          "Dlouhodobě dobře zvládaná",
+          "Odráží úspěšnou prevenci rizik"
+        ],
+        "evidence": "Škola dobře zvládá míru absence žáků... prevence rizikového chování... se odráží i v jejich nižší absenci."
+      },
+      "support_services": [
+        "Fungující školní poradenské pracoviště (výchovná poradkyně, metodik prevence).",
+        "Kariérové poradenství podpořené z projektů EU.",
+        "Účinná spolupráce s rodiči při řešení problémů."
+      ],
+      "safety_climate": [
+        "Zdravé školní klima je prioritou vedení.",
+        "Úspěšná prevence rizikového chování.",
+        "Respektující přístup pedagogů a vysoká míra kázně žáků."
+      ],
+      "partnerships_practice": [
+        "Intenzivní spolupráce se složkami rezortu vnitra (Policie ČR).",
+        "Realizace praktického vyučování u smluvních partnerů.",
+        "Pořádání profesních soutěží pro jiné školy i policii."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán spisovnou češtinou, je srozumitelný a logicky členěný.",
+      "uncertainty_notes": []
+    }
+  }
+}

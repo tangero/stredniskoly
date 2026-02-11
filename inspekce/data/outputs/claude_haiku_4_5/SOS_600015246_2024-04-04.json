@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600015246_2024-04-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:20:04.297357+00:00",
+  "run_finished_utc": "2026-02-09T16:20:28.880558+00:00",
+  "raw_file": "SOS_600015246_2024-04-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015246_2024-04-04",
+    "school_profile": {
+      "school_type": "Střední odborná škola (SOŠ) s maturitní zkouškou, obor Ekonomika a podnikání v různých zaměřeních",
+      "inspection_period": "4.–8. dubna 2024",
+      "school_change_summary": "Od poslední inspekce škola rozšířila nabídku o zaměření Animátor volného času, posílila školní poradenské pracoviště a pokračuje v modernizaci materiálních podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola má funkční partnerství se zaměstnavateli a organizuje zahraniční stáže v rámci projektů Erasmus+, což žákům dává reálný vhled do budoucího povolání.",
+          "evidence": "Spolupráce se sociálními partnery efektivně podporuje získávání odborných kompetencí a přípravu na pracovní uplatnění."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Hrubá neúspěšnost v maturitách je hluboko pod průměrem ČR, všichni žáci nakonec zkoušku zvládnou.",
+          "evidence": "Hrubá neúspěšnost se pohybuje hluboce pod průměrem ČR za skupinu oborů."
+        },
+        {
+          "tag": "Poradenské služby",
+          "detail": "Škola má posílené poradenské pracoviště s výchovnou poradkyní, školní psycholožkou a metodičkou prevence.",
+          "evidence": "Tým pracovníků systémově zajišťuje poradenské služby žákům, jejich zákonným zástupcům i vyučujícím."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezené metody výuky",
+          "detail": "Učitelé často používají jen frontální výuku, chybí skupinové práce a aktivizační prvky, které by rozvíjely týmové dovednosti.",
+          "evidence": "Frontální výuka výrazně převažovala, jiné formy podporující kooperativní techniky byly uplatňovány pouze v omezené míře."
+        },
+        {
+          "tag": "Slabé hodnocení pokroku",
+          "detail": "Učitelé málo využívají zpětnou vazbu, sebehodnocení a reflexi, chybí motivační shrnutí hodin.",
+          "evidence": "Nižší míra využívání formativního hodnocení, často chyběla příležitost pro sebehodnocení a vzájemné hodnocení žáků."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Nadaní žáci nedostávají dostatečně náročnější úkoly, všichni pracují stejně bez ohledu na své schopnosti.",
+          "evidence": "Malá míra obsahové a časové diferenciace výuky vzhledem k rozdílným vzdělávacím potřebám žáků, zejména talentovaným."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhají zahraniční stáže a jaké firmy se na nich podílejí?",
+        "Jakou podporu dostávají nadaní žáci a jak se liší jejich výuka od ostatních?",
+        "Jak se škola připravuje na změny v metodách výuky, které inspekce doporučila?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí praktické zkušenosti a kontakty v oboru – škola má silné vazby na firmy",
+        "Studenti zainteresovaní v cestovním ruchu, marketingu nebo podnikání – obor je zaměřený na praxi",
+        "Žáci, kteří potřebují podporu – poradenské pracoviště je dobře vybavené"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se učí lépe v interaktivním prostředí – výuka je zatím spíše tradiční",
+        "Nadaní studenti, kteří potřebují větší výzvu – diferenciace není dostatečná",
+        "Žáci, kteří se učí z různých zdrojů – práce s informacemi není dostatečně rozvíjena"
+      ],
+      "plain_czech_summary": "Škola je solidní střední odborná škola s výborným propojením s praxí a vysokými výsledky maturit. Žáci se učí v moderně vybavených prostorách a mají přístup k zahraničním stážím. Slabší stránkou je výuka – učitelé používají hlavně tradiční frontální metody bez dostatečné zpětné vazby a skupinové práce. Nadaní žáci nedostávají dostatečně náročné úkoly. Inspekce doporučila více aktivizace a lepší hodnocení pokroku žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – výsledky dlouhodobě nad průměrem",
+        "key_numbers": [
+          "Hrubá neúspěšnost hluboko pod průměrem ČR",
+          "Všichni žáci, kteří se nezúčastnili jarního termínu, byli úspěšní v termínu následujícím"
+        ],
+        "evidence": "Na dobré průběžné hodnocení vzdělávání navazuje vysoká kvalita výsledků maturitních zkoušek."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně",
+        "Školní psycholožka",
+        "Školní metodička prevence",
+        "Zástupkyně ředitele pro mimořádně nadané žáky",
+        "Doučování a individuální konzultace pro žáky s rizikem neúspěchu"
+      ],
+      "safety_climate": [
+        "Ve všech hodnocených vyučovacích hodinách převládala příznivá pracovní atmosféra",
+        "Komunikace mezi vyučujícími a žáky probíhala korektně bez nežádoucích projevů chování",
+        "Škola realizuje adaptační kurzy pro prvňáky zaměřené na prevenci konfliktů",
+        "Problémy řeší především osobními pohovory, včasná intervence při prvních projevech problémů"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zaměstnavateli na externích praktických stážích",
+        "Projekty Erasmus+ s organizací zahraničních odborných stáží",
+        "Projekty Smart School a další vzdělávací iniciativy",
+        "Zapojení odborníků z praxe do výuky",
+        "Partnerství s firmami zajišťujícími praktické stáže"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, ale obsahuje řadu odborných termínů a dlouhých vět typických pro úřední styl. Hlavní zjištění jsou jasná, ale vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Konkrétní počty žáků v jednotlivých zaměřeních nejsou uvedeny",
+        "Nejsou specifikovány konkrétní firmy, se kterými škola spolupracuje",
+        "Chybí údaje o počtu žáků, kteří se zúčastňují zahraničních stáží"
+      ]
+    }
+  }
+}

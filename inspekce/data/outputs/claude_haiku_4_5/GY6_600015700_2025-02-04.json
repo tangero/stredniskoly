@@ -1,0 +1,118 @@
+{
+  "report_id": "GY6_600015700_2025-02-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:02:25.036549+00:00",
+  "run_finished_utc": "2026-02-09T16:02:54.486757+00:00",
+  "raw_file": "GY6_600015700_2025-02-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600015700_2025-02-04",
+    "school_profile": {
+      "school_type": "Gymnázium Dr. Karla Polesného Znojmo – příspěvková organizace. Poskytuje vzdělávání ve třech oborech: čtyřleté, osmileté a šestileté (dvojjazyčné) gymnázium.",
+      "inspection_period": "4. února 2025 až 7. února 2025",
+      "school_change_summary": "Škola zaznamenala nárůst počtu žáků o 16 % (nyní 710 žáků, využití kapacity 84 %). Rozšířila poradenské služby o školní psycholožku. Realizovala modernizaci budovy (okna, dveře, osvětlení) a pořídila notebooky, ale některé prostory stále působí zastarale."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné studijní výsledky",
+          "detail": "Průměrný prospěch nižší než 2,0 ve všech oborech, pouze 1,33 % neprospívajících žáků, 57 % žáků osmiletého gymnázia s vyznamenáním.",
+          "evidence": "Poslední tři roky: nulová hrubá neúspěšnost u maturity na osmiletém a šestiletém gymnáziu, lepší výsledky než celorepublikový průměr."
+        },
+        {
+          "tag": "Jazykové vzdělání na vysoké úrovni",
+          "detail": "Široká nabídka volitelných jazyků, příprava na mezinárodní zkoušky (Cambridge, Rakouský jazykový diplom), výměnné pobyty v zahraničí.",
+          "evidence": "Žáci šestiletého gymnázia úspěšně skládají Rakouský jazykový diplom, systematická příprava na Cambridge English B1–C2."
+        },
+        {
+          "tag": "Bohaté mimoškolní aktivity",
+          "detail": "Úspěchy v soutěžích, olympiádách, projektech, sportovních akcích a kulturních aktivitách, vysoká úspěšnost při přijetí na vysoké školy (95 % ročně).",
+          "evidence": "Krajská kola olympiád, druhé místo dívčího volejbalového družstva v celostátním kole, pěvecký sbor, English Workshop s rodilými mluvčími."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá kontrola a dokumentace",
+          "detail": "Nedostatečně efektivní kontrolní systém, nejasnosti v školních vzdělávacích programech, chyby v dokumentaci žáků se speciálními potřebami a nadaných žáků.",
+          "evidence": "Elektronický informační systém nefunguje dostatečně efektivně, nedostatky v individuálních vzdělávacích plánech mohly ovlivnit financování."
+        },
+        {
+          "tag": "Nejednotný přístup k výuce",
+          "detail": "Jen výjimečně je výuka diferencována podle schopností žáků, chybí dostatečná aktivizace v některých hodinách, zejména v přírodovědě a společenskovědě.",
+          "evidence": "Převažuje frontální výuka, kooperativní formy se využívají ojediněle, chybí prostor pro shrnutí a hodnocení na konci hodin."
+        },
+        {
+          "tag": "Zvýšený počet úrazů",
+          "detail": "V posledním období došlo ke zvýšení počtu úrazů, převážně drobných při sportovních aktivitách.",
+          "evidence": "Škola věnuje zvýšenou pozornost prevenci a vyhodnocování rizik při tělesné výchově."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro nadané žáky a jak se liší přístup mezi jednotlivými předměty?",
+        "Jaké jsou zkušenosti s bezpečností při sportovních aktivitách a jaká konkrétní opatření škola zavedla po zvýšení počtu úrazů?",
+        "Jak funguje elektronický informační systém pro komunikaci s rodiči a jak se řeší případné problémy s jeho fungováním?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními výsledky a motivací k učení – škola nabízí kvalitní vzdělání a vysoké nároky.",
+        "Zájemci o jazykové vzdělání – zejména ti, kteří chtějí získat mezinárodní certifikáty a zkušenost se zahraničím.",
+        "Aktivní žáci zajímající se o soutěže, projekty a mimoškolní aktivity – škola je podporuje a nabízí bohaté příležitosti."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se speciálními vzdělávacími potřebami – dokumentace jejich podpory má nedostatky, individuální plány nejsou vždy kvalitně zpracovány.",
+        "Žáci, kteří potřebují více individualizované přístupy – výuka není vždy diferencována podle jejich schopností a potřeb.",
+        "Rodiny, které preferují nižší nároky – gymnázium je zaměřeno na výborné výsledky a aktivní zapojení do školního života."
+      ],
+      "plain_czech_summary": "Gymnázium Dr. Karla Polesného je prestižní škola s výbornými studijními výsledky a bohatou nabídkou jazykového vzdělání. Žáci dosahují lepších výsledků než průměr v republice a mají vysokou úspěšnost při přijetí na vysoké školy. Škola podporuje mimoškolní aktivity a mezinárodní spolupráci. Slabší stránkou je nedostatečná individualizace výuky a problémy s dokumentací žáků se speciálními potřebami. Vhodná pro motivované žáky se zájmem o jazyky a soutěže."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný, bez zhoršování",
+        "key_numbers": [
+          "Nulová hrubá neúspěšnost u osmiletého a šestiletého gymnázia v posledních třech letech",
+          "Čtyřleté gymnázium: nulová neúspěšnost v 2023 a 2024, pouze 1,1 % v 2022",
+          "Lepší výsledky než celorepublikový průměr (s výjimkou matematiky v 2022)"
+        ],
+        "evidence": "Poslední tři roky: žáci dosahují vynikající úrovně, 95 % ročně přijato na vysoké školy."
+      },
+      "absence": {
+        "trend": "Mírně klesající",
+        "key_numbers": [
+          "Průměrná omluvená absence: 117 hodin na žáka za školní rok",
+          "Nulová neomluvenost v posledních třech letech",
+          "Pravidlo minimální docházky do jednotlivých předmětů přispívá ke snižování absence"
+        ],
+        "evidence": "Škola v posledních třech letech nezaznamenala žádnou neomluvenou absenci."
+      },
+      "support_services": [
+        "Výchovná poradkyně, školní metodička prevence a školní psycholožka (druhý rok)",
+        "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami a nadané žáky",
+        "Podpora českého jazyka pro žáky s odlišným mateřským jazykem (12 žáků)",
+        "Kariérové poradenství a podpora při rozhodování o dalším vzdělávání",
+        "Preventivní programy zaměřené na primární i sekundární prevenci"
+      ],
+      "safety_climate": [
+        "Zvýšení počtu úrazů v posledním období, převážně drobných při sportovních aktivitách",
+        "Zvýšená pozornost věnována prevenci a vyhodnocování rizik při tělesné výchově",
+        "Pozitivní a podnětná atmosféra ve vyučovacích hodinách, žáci respektují pravidla",
+        "Tradičními adaptačními kurzy podporovány zdravé vztahy v třídních kolektivech"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Rakouským ministerstvem školství (personální a materiální podpora pro dvojjazyčnou výuku)",
+        "Partnerské školy v Rakousku, Holandsku, Itálii a Německu – obnovena spolupráce na předcovidové úrovni",
+        "Projekty Erasmus+ s podporou mobility žáků a pedagogů",
+        "Partnerství s Masarykovou univerzitou, Farmaceutickou fakultou UK, ČEZ, městem Znojmo a charitativními organizacemi",
+        "Program Mezinárodní cena vévody z Edinburghu (DofE) pro rozvoj občanských kompetencí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta s číselnými údaji. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více technických termínů, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní nejasnosti a neaktuální informace byly zjištěny v školních vzdělávacích programech – rodičům by pomohly konkrétní příklady.",
+        "Není jasné, jak přesně se projevují nedostatky v dokumentaci žáků se speciálními potřebami v praxi – jaký je dopad na kvalitu jejich podpory.",
+        "Počet úrazů není uveden konkrétně – není jasné, zda jde o jednotky nebo desítky incidentů za rok."
+      ]
+    }
+  }
+}

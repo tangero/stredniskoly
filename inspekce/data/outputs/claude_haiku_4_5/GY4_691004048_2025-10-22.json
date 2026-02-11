@@ -1,0 +1,117 @@
+{
+  "report_id": "GY4_691004048_2025-10-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:30:09.868832+00:00",
+  "run_finished_utc": "2026-02-09T13:30:39.902731+00:00",
+  "raw_file": "GY4_691004048_2025-10-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691004048_2025-10-22",
+    "school_profile": {
+      "school_type": "Střední škola se třemi obory: Předškolní a mimoškolní pedagogika (117 žáků), Pedagogické lyceum (56 žáků), Gymnázium (67 žáků). Celkem 240 žáků v denní formě.",
+      "inspection_period": "22. až 24. října 2025",
+      "school_change_summary": "Škola odstranila zjištěné nedostatky z minulé inspekce, zavedla nový systém hodnocení praxe a přijala opatření ke zvýšení úspěšnosti u maturit. Vedení se snaží o stabilizaci pedagogického sboru a zlepšení výsledků žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečné a přátelské prostředí",
+          "detail": "Pedagogové vytvářejí psychicky bezpečné prostředí, kde se žáci neobávají chybovat a žádat o pomoc.",
+          "evidence": "Vstřícný přístup pedagogů a pozitivní vztahy mezi všemi aktéry vzdělávání vytváří příznivé sociální klima."
+        },
+        {
+          "tag": "Praktická výuka a praxe",
+          "detail": "Učební praxe je kvalitně organizována s individuální podporou studentů a rozvojem praktických dovedností.",
+          "evidence": "Nový jednotný systém hodnocení praxe, pedagogický deník-portfolio, hospitační a projektová činnost."
+        },
+        {
+          "tag": "Aktivní školní komunita",
+          "detail": "Žáci se mohou zapojit do školního parlamentu a řady soutěží, které rozvíjejí jejich osobnostní růst.",
+          "evidence": "Školní parlament je nedílnou součástí života školy, žáci se účastní vědomostních a dovednostních soutěží."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky u maturit",
+          "detail": "Žáci dlouhodobě dosahují podprůměrných výsledků u maturitních zkoušek v celorepublikovém porovnání.",
+          "evidence": "Výsledky v období několika předchozích let jsou převážně podprůměrné, někteří žáci selhávají i s dobrými výsledky během studia."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učitelé málo přizpůsobují náročnost úloh rozdílným schopnostem žáků a nevedou je k sebehodnocení.",
+          "evidence": "Absence diferenciace probíraného učiva, minimální práce s chybou, chybí vyhodnocování vzdělávacího cíle na konci hodin."
+        },
+        {
+          "tag": "Omezený rozvoj kritického myšlení",
+          "detail": "Žáci málo pracují s různými informačními zdroji a nejsou dostatečně vedeni k samostatnému bádání.",
+          "evidence": "Převážně frontální forma výuky, žáci sami téměř nepoužívají digitální technologie, chybí problémové úlohy."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření jste zavedli na začátku školního roku 2025/2026 ke zlepšení výsledků u maturit a jak je budete vyhodnocovat?",
+        "Jak učitelé pracují s rozdílnými schopnostmi žáků v jednotlivých třídách a jak je vedou k sebehodnocení?",
+        "Jaké jsou vaše zkušenosti s nově zavedenými postupovými zkouškami a jak se projevují na výsledcích žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení bezpečného a podporujícího prostředí s respektujícím přístupem pedagogů.",
+        "Studenti oboru Předškolní a mimoškolní pedagogika, kteří chtějí kvalitní praktickou přípravu s individuální podporou.",
+        "Talentovaní žáci ve sportu, umění či jiných oblastech, kterým škola umožňuje individuální vzdělávací podporu."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní přípravu na maturitu – výsledky školy jsou dlouhodobě podprůměrné.",
+        "Studenti, kteří se učí lépe s diferencovanou výukou přizpůsobenou jejich schopnostem – škola v tomto směru pracuje na zlepšení.",
+        "Žáci, kteří se rozvíjejí lépe prostřednictvím samostatné práce a kritického myšlení – výuka je zatím převážně frontální."
+      ],
+      "plain_czech_summary": "Sion High School je škola s příjemným a bezpečným prostředím, kde se žáci cítí podporováni. Pedagogové jsou vstřícní a vytváří dobré vztahy. Praktická výuka je kvalitní, zvlášť pro obor Předškolní pedagogika. Hlavní problém je dlouhodobě podprůměrná úspěšnost u maturit. Škola na tom pracuje – zavedla zpřísnění hodnocení a postupové zkoušky. Výuka by mohla být více diferencovaná a měla by více rozvíjet kritické myšlení žáků. Vhodná pro ty, kdo si cení bezpečného prostředí, ale kandidáti na vysoké školy by měli zvážit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě podprůměrné výsledky, ale od září 2025 přijata opatření ke zlepšení",
+        "key_numbers": [
+          "Výsledky v celorepublikovém porovnání jsou převážně podprůměrné",
+          "Někteří žáci selhávají i navzdory dobrým výsledkům během studia",
+          "Od školního roku 2025/2026 zavedeny postupové zkoušky ve stěžejních předmětech"
+        ],
+        "evidence": "Žáci nedosahují příliš dobrých výsledků u maturitní zkoušky ve společné ani profilové části. Škola zpřísnila procentuální hranice klasifikace a sjednotila váhy známek."
+      },
+      "absence": {
+        "trend": "Vysoká absence řešena systémovými opatřeními",
+        "key_numbers": [
+          "Absence byla identifikována jako problém v minulé inspekci",
+          "Škola přijala opatření ke snižování vysoké absence",
+          "Individuální vzdělávací podpora (s vyšší tolerancí absence) je nyní primárně pro nadané sportovce a žáky se zdravotním znevýhodněním"
+        ],
+        "evidence": "Vedení školy zpřísnilo podmínky pro povolení individuální vzdělávací podpory, počet žáků s touto podporou poklesl."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovným poradcem a metodičkou prevence – personálně stabilní",
+        "Systematické schůzky ŠPP s písemnými zápisy a konkrétními opatřeními",
+        "Spolupráce s externími odborníky na preventivní programy (zdravé vztahy, prevence šikany, kyberšikany)",
+        "Měsíční schůzky ředitelky s výchovným poradcem na řešení školní neúspěšnosti"
+      ],
+      "safety_climate": [
+        "Vstřícný a respektující přístup pracovníků školy k žákům",
+        "Psychicky bezpečné prostředí, kde se žáci neobávají chybovat",
+        "Pozitivní vzájemné vztahy mezi zaměstnanci a úzká spolupráce všech aktérů",
+        "Dlouhodobý důraz na vytváření pozitivního klimatu a rozvoj sociálních dovedností",
+        "Pravidelná dotazníková šetření klimatu školy a tříd se zohledňováním návrhů"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se školami a školskými zařízeními, kde se realizuje praktické vyučování",
+        "Projekt Erasmus – plánovaná výměna učitelů a žáků se Španělskem",
+        "Workshop na umělou inteligenci v Rumunsku (1 pedagog a 3 žáci)",
+        "Postupný rozvoj zahraniční spolupráce"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasným oddělením silných a slabých stránek. Doporučení jsou praktická. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Konkrétní čísla o úspěšnosti u maturit nejsou v textu uvedena – pouze kvalitativní popis 'podprůměrné'",
+        "Efektivita nově zavedených opatření (zpřísnění hodnocení, postupové zkoušky) není dosud vyhodnocena – jsou příliš nová",
+        "Není jasné, jak konkrétně se bude vyhodnocovat plnění doporučení inspekce v příštích měsících"
+      ]
+    }
+  }
+}

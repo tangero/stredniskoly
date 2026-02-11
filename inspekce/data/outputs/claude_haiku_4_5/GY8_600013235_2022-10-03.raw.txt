@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY8_600013235_2022-10-03",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté)",
+    "inspection_period": "3., 4. a 10. 10. 2022",
+    "school_change_summary": "Od poslední inspekce v 2014 se zvyšoval počet žáků čtyřletého gymnázia, počet osmiletého se snižoval. V posledních třech letech se počet stabilizoval na 233 žácích (čtyřleté) a 239 žácích (osmileté). Nově navázána partnerství se školou v Německu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit a přijetí na VŠ",
+        "detail": "Žáci dosahují dlouhodobě velmi dobrých výsledků, jejich úspěšnost při maturitě je nad celorepublikovým průměrem.",
+        "evidence": "V posledních třech letech minimální počet neprospívajících, ve školním roce 2021/2022 přijato 94 % žáků na vysoké školy."
+      },
+      {
+        "tag": "Kvalitní poradenské služby a podpora",
+        "detail": "Škola nabízí komplexní kariérové poradenství, psychologickou podporu a prevenci rizikového chování.",
+        "evidence": "Tři výchovné poradkyně, školní psycholožka, speciální kariérový program, projekt Moje portfolio."
+      },
+      {
+        "tag": "Bohatá mimoškolní činnost",
+        "detail": "Žáci se mohou zapojit do mnoha zájmových klubů, soutěží a charitativních akcí.",
+        "evidence": "Matematický kroužek, eko-kroužek, školní sbor Perličky, charitativní akce Marta, debatní soutěže."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Učitelé v hospitovaných hodinách neaplikovali diferenciaci podle schopností žáků, všichni plnili stejné úkoly.",
+        "evidence": "Diferenciace výuky nebyla v dostatečné míře uplatňována, chyběla podpora nadaných žáků a žáků se SVP."
+      },
+      {
+        "tag": "Slabá efektivita systému hodnocení učitelů",
+        "detail": "Systém vyhodnocování pedagogické práce nemá dostatečný dopad na zlepšování kvality výuky.",
+        "evidence": "Hospitační činnost odhalila dílčí nedostatky, které nejsou vždy účinně řešeny."
+      },
+      {
+        "tag": "Omezené využití aktivních metod výuky",
+        "detail": "Převažuje frontální výuka, žáci méně pracují v týmech a mají málo příležitostí k sebehodnocení.",
+        "evidence": "Frontální výuka kombinovaná se samostatnou prací, méně kooperativních činností, ojediněle sebehodnocení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku potřebám jednotlivých žáků, zejména těch nadaných nebo se speciálními potřebami?",
+      "Jaké konkrétní kroky podnikne škola k zavedení více aktivních a kooperativních metod výuky?",
+      "Jak se budou učitelé vzdělávat v oblasti individualizace a formativního hodnocení?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí studovat na vysoké škole – škola má prokázanou úspěšnost v přípravě na vysokoškolské studium",
+      "Nadaní žáci – škola nabízí bohatou nabídku zájmových klubů a podporu v soutěžích",
+      "Žáci zajímající se o mezinárodní spolupráci – nově navázaná partnerství s německou školou umožňují výměnné pobyty"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individuální přístup a diferenciovanou výuku – inspekce zjistila nedostatky v tomto směru",
+      "Žáci se speciálními vzdělávacími potřebami – jejich podpora v hodinách nebyla zřetelná",
+      "Žáci preferující aktivní a kooperativní formy učení – převažuje frontální výuka"
+    ],
+    "plain_czech_summary": "Gymnázium Blansko je kvalitní škola s výborným renomé. Žáci dosahují skvělých výsledků u maturit a přijímání na vysoké školy. Škola nabízí bohatou mimoškolní činnost, kvalitní poradenství a podporu nadaných žáků. Inspekce však upozornila na slabiny: výuka není dostatečně přizpůsobena individuálním potřebám žáků, chybí aktivnější metody a sebehodnocení. Učitelé se liší v profesním rozvoji. Škola má prostor pro zlepšení v kvalitě vyučovacího procesu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi dobrý, stabilní na vysoké úrovni",
+      "key_numbers": [
+        "Minimální počet neprospívajících žáků v posledních třech letech",
+        "Výsledky opakovaně nad celorepublikovým průměrem",
+        "Vysoká úspěšnost při přijímání na vysoké školy (94 % v 2021/2022, 100 % u osmiletého gymnázia)"
+      ],
+      "evidence": "Žáci dosahují dlouhodobě velmi dobrých výsledků vzdělávání, v porovnání s ostatními školami jsou jejich výsledky opakovaně nad celorepublikovým průměrem."
+    },
+    "absence": {
+      "trend": "Pozitivní trend v chování žáků",
+      "key_numbers": [
+        "Ve školním roce 2021/2022 nebyl žákům za chování udělen žádný snížený stupeň",
+        "Vysoký počet pochval za chování",
+        "Žádné závažnější projevy rizikového chování"
+      ],
+      "evidence": "Preventivní strategie školy je funkční a patrný je trend pozitivní motivace při hodnocení chování žáků."
+    },
+    "support_services": [
+      "Tři výchovné poradkyně, metodička prevence, školní psycholožka",
+      "Individuální konzultace s psycholožkou pro osobní potíže, zvládání stresu, kariérní směřování",
+      "Doučovací kluby, pedagogické konzultace, spolupráce se zákonnými zástupci",
+      "Speciální kariérový program s testovacími nástroji a individuálními pohovory",
+      "Projekt Moje portfolio pro kariérní profilaci"
+    ],
+    "safety_climate": [
+      "Pozitivní klima podporováno adaptačními kurzy prvních ročníků",
+      "Pravidelné třídnické hodiny a preventivní programy",
+      "Absence závažnějších projevů rizikového chování",
+      "Bezpečnost žáků průběžně vyhodnocována a zlepšována",
+      "Vhodně zajištěna bezpečnost v tělesné výchově"
+    ],
+    "partnerships_practice": [
+      "Partnerství s vysokoškolskými a výzkumnými pracovišti",
+      "Součinnost s Centrem talentované mládeže",
+      "Spolupráce s místním podnikem na odborných exkurzích",
+      "Nové partnerství se školou v Německu – výměnné pobyty žáků",
+      "Aktivní Spolek rodičů podporující školní aktivity"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky. Obsahuje jasné závěry, silné stránky a slabé stránky. Některé pasáže jsou však poměrně dlouhé a obsahují odbornou terminologii, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o počtu hodin hospitací nebo procentu hodin s nedostatky, pouze kvalitativní popis.",
+      "Není jasné, jak velký je podíl učitelů, kteří se pravidelně vzdělávají versus těch, kteří ne.",
+      "Chybí informace o konkrétních plánech a termínech nápravy zjištěných nedostatků."
+    ]
+  }
+}
+```

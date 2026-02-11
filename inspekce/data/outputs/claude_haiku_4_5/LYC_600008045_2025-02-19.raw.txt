@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "LYC_600008045_2025-02-19",
+  "school_profile": {
+    "school_type": "Střední škola s maturitní zkouškou (Obchodní akademie a Ekonomické lyceum)",
+    "inspection_period": "19. února 2025 až 21. února 2025",
+    "school_change_summary": "Škola aktualizovala vzdělávací programy, zavedla předmět obchodní angličtina a zlepšila výsledky z matematiky na maturitě. Postupně se obměňuje pedagogický sbor a zlepšují se materiální podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a budoucí uplatnění",
+        "detail": "Škola efektivně spolupracuje se smluvními partnery a přináší do výuky odborníky z praxe, což žáky připravuje na budoucí povolání.",
+        "evidence": "Cíleně vyhledává vhodné firmy pro odbornou praxi a odborníky s aktuálními tématy zvyšujícími připravenost žáků."
+      },
+      {
+        "tag": "Matematika – zlepšení",
+        "detail": "Od poslední inspekce se výrazně zlepšily výsledky maturitní zkoušky z matematiky.",
+        "evidence": "Ve školním roce 2023/2024 uspěli v matematice všichni přihlášení žáci z obou oborů vzdělávání."
+      },
+      {
+        "tag": "Nízká absence a motivace",
+        "detail": "Škola udržuje počet zameškaných hodin na nízké úrovni a uděluje četné motivační pochvaly.",
+        "evidence": "Počet neprospívajících žáků je nízký, škola nabízí doučovací aktivity a individuální konzultace."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pravidla nejsou jasná",
+        "detail": "Školní řád obsahuje informace v rozporu se zákonem a chybí pravidla pro kázeňská opatření.",
+        "evidence": "Absence jasných pravidel vytváří prostor pro nerovný přístup při řešení interních záležitostí."
+      },
+      {
+        "tag": "Výuka není dost aktivní",
+        "detail": "Ve výuce převažuje frontální výuka s řízeným rozhovorem, chybí aktivizující metody a diferenciace.",
+        "evidence": "Cílené aktivizující metody byly zaznamenány jen v části sledovaných hodin, diferencovaná výuka nebyla zaznamená."
+      },
+      {
+        "tag": "Formativní hodnocení chybí",
+        "detail": "Prvky formativního hodnocení podporující vlastní učení jsou zařazovány jen ojediněle.",
+        "evidence": "Sebehodnocení žáků a vrstevnické hodnocení dle kritérií bylo zařazováno sporadicky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá spolupráce se smluvními partnery a jak často se do výuky zapojují odborníci z praxe?",
+      "Jaké konkrétní kroky škola plánuje pro zavedení aktivnějších vyučovacích metod a diferenciace ve výuce?",
+      "Jak se škola vypořádá s nejasnostmi v školním řádu a jak budou nastavena pravidla pro kázeňská opatření?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří se zajímají o obchod a ekonomii a chtějí se připravit na praktické uplatnění v oboru",
+      "Studenti, kteří potřebují podporu při přípravě na maturitu a oceňují doučovací aktivity",
+      "Žáci se zájmem o mezinárodní spolupráci a jazykové vzdělávání (e-Twinning projekty)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovanou výuku a diferenciaci podle svých schopností – ta není dostatečně uplatňována",
+      "Studenti, kteří se učí lépe aktivními metodami a diskusí – výuka je spíše frontální",
+      "Žáci vyžadující jasná a konzistentní pravidla – školní řád má nedostatky a není v souladu se zákonem"
+    ],
+    "plain_czech_summary": "Obchodní akademie v Českých Budějovicích je škola zaměřená na praktickou přípravu žáků. Její silnou stránkou je spolupráce s firmami a odborníky z praxe, nízká absence a zlepšené výsledky z matematiky. Slabší je aktivita ve výuce – převažuje frontální výuka bez dostatečné diferenciace. Škola také potřebuje vyjasnit svá pravidla, která nejsou v souladu se zákonem. Vhodná pro prakticky zaměřené studenty, méně pro ty, kteří potřebují individuální přístup."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – výrazné zlepšení v matematice",
+      "key_numbers": [
+        "Školní rok 2023/2024: 100% úspěšnost v matematice (všichni přihlášení žáci)",
+        "36 žáků využilo možnost nahradit profilovou část maturitní zkoušky z cizího jazyka",
+        "Předchozí roky: opakovaně vyšší míra neúspěšnosti v matematice"
+      ],
+      "evidence": "Vedení školy přijalo účinná opatření, která vedla k úspěchu všech žáků v matematice a ostatních předmětech."
+    },
+    "absence": {
+      "trend": "Pozitivní – nízká úroveň",
+      "key_numbers": [
+        "Počet zameškaných hodin je na nízké úrovni",
+        "Počet neprospívajících žáků je nízký",
+        "Četné motivační pochvaly uděleny v souladu se školním řádem"
+      ],
+      "evidence": "Škola efektivně udržuje nízkou absenci a nabízí doučovací aktivity pro ohrožené žáky."
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodička prevence (tým školního poradenského pracoviště)",
+      "Doučovací aktivity a individuální konzultace pro žáky ohrožené školním neúspěchem",
+      "Školní asistentka (financováno z externích zdrojů)",
+      "Adaptační kurzy a projektové dny zaměřené na prevenci rizikového chování"
+    ],
+    "safety_climate": [
+      "Aktivity k prevenci rizikového chování realizovány formou projektů a adaptačních kurzů",
+      "Zaměření na vytváření pozitivních vztahů mezi žáky a eliminaci nežádoucího chování",
+      "Kázeňská opatření používána v minimální míře, chybí nastavená pravidla",
+      "Žákovský parlament aktivně participuje na prezentaci školy"
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce se smluvními firmami pro odbornou praxi žáků",
+      "Zapojení odborníků z praxe do výuky s aktuálními tématy",
+      "Spolupráce se základními a vysokými školami v rámci projektů a soutěží",
+      "Projekt e-Twinning – aktivní spolupráce se zahraničními školami",
+      "Vyhledávání nových pedagogů prostřednictvím vysokých škol"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však složitější (např. popis problémů s anglickým jazykem a SERRJ), ale pro rodiče jsou klíčové informace jasně identifikovatelné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků v jednotlivých oborech ani podrobné statistiky absence",
+      "Není jasné, jak velký je podíl hodin s aktivizujícími metodami – pouze se uvádí, že byly 'jen v části' hodin",
+      "Chybí informace o počtu pedagogů a jejich kvalifikaci, pouze se zmiňuje 'postupná generační obměna'"
+    ]
+  }
+}
+```

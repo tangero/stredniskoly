@@ -1,0 +1,117 @@
+{
+  "report_id": "GY8_600007308_2023-01-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:52:33.844131+00:00",
+  "run_finished_utc": "2026-02-09T16:52:58.749471+00:00",
+  "raw_file": "GY8_600007308_2023-01-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007308_2023-01-06",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium (Gymnázium Františka Palackého, Neratovice)",
+      "inspection_period": "6.–10. ledna 2023",
+      "school_change_summary": "Škola zlepšila vybavení IT, částečně odstranila nedostatky z předchozí inspekce. Přetrvávají problémy v kontrolní činnosti vedení a aktivizaci žáků ve výuce."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "V posledních třech letech prospěli všichni žáci závěrečných ročníků, v letech 2020/21 a 2021/22 téměř polovina s vyznamenáním.",
+          "evidence": "Výsledky v češtině a cizích jazycích dlouhodobě lepší než průměr gymnázií v republice."
+        },
+        {
+          "tag": "Komplexní podpora žáků",
+          "detail": "Škola nabízí adaptační kurzy, kariérové poradenství, psychologa a individuální konzultace.",
+          "evidence": "Ucelený program adaptační podpory a spolupráce s absolventy účelně rozvíjejí klíčové kompetence."
+        },
+        {
+          "tag": "Motivovaní a úspěšní žáci",
+          "detail": "Žáci se aktivně účastní vědomostních soutěží, olympiád a školních projektů.",
+          "evidence": "Vysoký zájem uchazečů, více než polovina prospívá s vyznamenáním, téměř všichni pokračují na vysokých školách."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá diferenciace pro nadané žáky",
+          "detail": "Učitelé v hodinách všem žákům zadávají stejné úkoly bez přizpůsobení náročnosti.",
+          "evidence": "Diferenciace vzdělávacího obsahu byla vhodně uplatněna pouze v desetině hodin."
+        },
+        {
+          "tag": "Nedostatečná zpětná vazba",
+          "detail": "Učitelé se jen ojediněle věnují shrnutí učiva a efektivní zpětné vazbě.",
+          "evidence": "Nižší zpětná vazba vedla k nesystematickému získávání informací o zvládnutí učiva všemi žáky."
+        },
+        {
+          "tag": "Problémy s docházkou",
+          "detail": "Po návratu k prezenční výuce se žáky nedaří vždy motivovat k účasti.",
+          "evidence": "Chybí průběžná analýza příčin absence jednotlivých žáků ve spolupráci se všemi pedagogy."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s nadanými žáky během běžné výuky? Existují speciální programy nebo individuální přístupy?",
+        "Jaké jsou konkrétní výsledky žáků v jednotlivých předmětech a jak se škola vypořádává s případnými slabšími oblastmi?",
+        "Jak škola řeší problém absence a motivace žáků po návratu k prezenční výuce?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními výsledky a motivací dosahovat vysokých cílů",
+        "Talentovaní žáci v soutěžích a olympiádách, kterým škola nabízí podporu",
+        "Žáci, kterým vyhovuje tradiční gymnaziální vzdělání s důrazem na přírodovědné a humanitní obory"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovanou výuku a diferenciaci – škola ji zatím nedostatečně poskytuje",
+        "Žáci se slabší motivací nebo problémy s docházkou – škola má problémy s jejich motivací",
+        "Žáci, kteří se učí lépe prostřednictvím aktivních a kooperativních metod – ve výuce převládá frontální forma"
+      ],
+      "plain_czech_summary": "Gymnázium Františka Palackého je kvalitní školou s výbornými výsledky maturit a motivovanými žáky. Nabízí komplexní podporu včetně kariérového poradenství a psychologa. Silnou stránkou je vysoký zájem uchazečů a úspěch absolventů na vysokých školách. Slabší je individualizace výuky, zejména pro nadané žáky, a zpětná vazba od učitelů. Škola má také problémy s motivací žáků k docházce po návratu k prezenční výuce. Vhodná pro ambiciózní žáky, méně pro ty, kteří potřebují více individuálního přístupu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – zlepšení od předchozí inspekce",
+        "key_numbers": [
+          "100 % úspěšnost v posledních třech letech",
+          "Téměř 50 % žáků s vyznamenáním v letech 2020/21 a 2021/22",
+          "Výsledky v češtině a cizích jazycích dlouhodobě lepší než průměr gymnázií v republice"
+        ],
+        "evidence": "Maturitní zkoušku v minulých třech letech vykonali úspěšně všichni žáci závěrečných ročníků."
+      },
+      "absence": {
+        "trend": "Problematický – zvýšená absence po návratu k prezenční výuce",
+        "key_numbers": [
+          "Chybí konkrétní čísla absence v textu",
+          "Žáky se nedaří vždy motivovat k účasti ve vzdělávání",
+          "Absence je řešena bez systematické analýzy příčin"
+        ],
+        "evidence": "Po obnovení prezenční výuky se žáky nedaří vždy motivovat k účasti ve vzdělávání. Chybí průběžná analýza příčin absence."
+      },
+      "support_services": [
+        "Školní psycholog – účelně využíván",
+        "Kariérový poradce – poskytuje funkční kariérové poradenství",
+        "Individuální konzultace a doučování pro žáky ohrožené neúspěšností",
+        "Školní poradenský tým s podrobně rozpracovaným systémem poradenské pomoci"
+      ],
+      "safety_climate": [
+        "Minimální míra úrazovosti – škola věnuje bezpečnosti pozornost stanovením pravidel a postupů",
+        "Žáci jsou prokazatelně poučováni o bezpečnosti a ochraně zdraví",
+        "Kvalitně nastaven preventivní systém na omezování všech forem rizikového chování",
+        "Problémové chování je ojedinělé a systematicky řešeno"
+      ],
+      "partnerships_practice": [
+        "Fungující vztahy se zřizovatelem (Středočeský kraj)",
+        "Spolupráce s partnerskými základními školami",
+        "Partnerství se zahraničními středními školami a projekty Erasmus+",
+        "Spolupráce s kulturními institucemi",
+        "Systematické vztahy s absolventy v rámci kariérového poradenství"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Chybí konkrétní čísla k absenci a některé údaje jsou vyjádřeny kvalitativně.",
+      "uncertainty_notes": [
+        "Konkrétní počty žáků s absencí nejsou uvedeny – pouze kvalitativní popis problému",
+        "Není jasné, jak přesně se liší výuka v jednotlivých předmětech – některé jsou popsány detailně, jiné méně",
+        "Chybí informace o počtu nadaných žáků a jejich konkrétních úspěších v soutěžích"
+      ]
+    }
+  }
+}

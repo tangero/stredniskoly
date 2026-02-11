@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600019713_2024-02-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:25:45.170321+00:00",
+  "run_finished_utc": "2026-02-09T16:26:09.787610+00:00",
+  "raw_file": "SOS_600019713_2024-02-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019713_2024-02-20",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická",
+      "inspection_period": "20. února 2024 až 23. února 2024",
+      "school_change_summary": "Od školního roku 2021/2022 rozšířena nabídka o obor Diplomovaný zdravotní laborant. Školní rok 2023/2024 je posledním rokem výuky oboru Praktická sestra na pracovišti v České Lípě."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní pedagogický tým",
+          "detail": "Stabilní sbor profesionálů s vysokou odbornou kvalifikací, včetně praktiků z oboru, kteří propojují teorii s praxí.",
+          "evidence": "Vedení školy se opírá o podrobnou koncepci rozvoje a průběžně hodnotí práci pedagogů na základě hospitační činnosti."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Vysoká úspěšnost u maturitní zkoušky (88,6 % ve společné části, 95,7 % v profilové části v podzimním termínu 2023).",
+          "evidence": "Žáci jsou dobře připraveni, neprospívajících je minimum (cca 3 %), téměř 16 % prospívá s vyznamenáním."
+        },
+        {
+          "tag": "Péče o psychické zdraví",
+          "detail": "Komplexní poradenské služby s vysokou mírou odbornosti, empatie a otevřenosti, včetně speciální pedagožky.",
+          "evidence": "Výchovná poradkyně aktivně spolupracuje se všemi aktéry, metodička prevence zajišťuje rozmanité adaptační a preventivní aktivity."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Absence studentů VOŠZ",
+          "detail": "U studentů vyšší odborné školy byla zaznamenána vyšší absence, přestože to zatím neovlivnilo výsledky.",
+          "evidence": "Škola přijímá opatření ke snížení absence, ale dosavadní opatření nejsou zcela účinná."
+        },
+        {
+          "tag": "Bezpečnostní rizika",
+          "detail": "Škola vyhledává a analyzuje bezpečnostní rizika, ale je nutné důsledněji přijímat opatření k jejich eliminaci.",
+          "evidence": "Zaměstnanci vnímají bezpečnost intuitivně, chybí však systematičtější přístup k aktuálním rizikům."
+        },
+        {
+          "tag": "Prostorová kapacita",
+          "detail": "Nedostatečná kapacita budovy na Kostelní 9 vyžaduje částečné využívání prostor sousední střední školy.",
+          "evidence": "Např. výuka psychologie se částečně odehrává v prostorách Střední průmyslové školy stavební."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vyšší absenci studentů VOŠZ a jaká opatření jsou plánována?",
+        "Jaké jsou možnosti ubytování v domově mládeže a jaké služby poskytuje?",
+        "Jak probíhá propojení teoretické výuky s praktickou praxí ve zdravotnických zařízeních?"
+      ],
+      "who_school_fits": [
+        "Motivovaní uchazeči se zájmem o zdravotnické obory, kteří mají dobré studijní předpoklady a chtějí kvalitní přípravu na praxi.",
+        "Žáci hledající stabilní prostředí s podporou psychického zdraví a péčí o osobnostní rozvoj.",
+        "Studenti, kteří chtějí pokračovat na vysokou školu – 80 % absolventů studuje na VŠ."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími studijními předpoklady – škola vybírá uchazeče s převážně velmi dobrými předpoklady díky vysoké poptávce.",
+        "Studenti, kteří potřebují intenzivní individuální péči – kapacita školských služeb může být limitovaná.",
+        "Uchazeči bez jasného zájmu o zdravotnické obory – přijímací řízení je selektivní a zaměřené na motivované kandidáty."
+      ],
+      "plain_czech_summary": "Jde o kvalitní zdravotnickou školu s velmi dobrými výsledky maturit (95,7 % v profilové části) a stabilním pedagogickým sborem. Škola se zaměřuje na propojení teorie s praxí a péči o psychické zdraví žáků. Silnou stránkou je spolupráce se zdravotnickými zařízeními a vysoká úspěšnost absolventů na vysokých školách (80 %). Pozornost si zaslouží vyšší absence u studentů VOŠZ a potřeba zlepšit bezpečnostní opatření. Prostorová kapacita je na hranici možností."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoké výsledky",
+        "key_numbers": [
+          "88,6 % úspěšnost ve společné části (podzim 2023)",
+          "95,7 % úspěšnost v profilové části (podzim 2023)",
+          "Téměř 16 % absolventů prospívá s vyznamenáním"
+        ],
+        "evidence": "Dobrou úroveň vzdělávání maturitního oboru dokládá úspěšnost u maturitní zkoušky po podzimním termínu v roce 2023."
+      },
+      "absence": {
+        "trend": "Zvýšená absence u studentů VOŠZ",
+        "key_numbers": [
+          "Vyšší absence zaznamenána u studentů VOŠZ",
+          "Vzdělávací výsledky nejsou negativně ovlivněny",
+          "Opatření zatím nejsou zcela účinná"
+        ],
+        "evidence": "U studentů byla zaznamenána vyšší absence, vzdělávací výsledky ale nebyly tímto negativním faktorem ovlivněny."
+      },
+      "support_services": [
+        "Výchovná poradkyně s vysokou mírou odbornosti a empatie",
+        "Metodička prevence zajišťující adaptační a preventivní aktivity",
+        "Speciální pedagožka poskytující podporu při vzdělávacích obtížích",
+        "Schránka důvěry pro žáky a studenty",
+        "Konzultace a pomoc při volbě studijního stylu pro žáky v riziku neprospěchu"
+      ],
+      "safety_climate": [
+        "Podmínky bezpečnosti stanoveny ve školním řádu a řádech jednotlivých pracovišť",
+        "Žáci a studenti seznamováni s bezpečnostními postupy na začátku roku a průběžně",
+        "Vstupní prostory zajištěny proti vniknutí cizí osoby",
+        "Škola vyhledává a analyzuje bezpečnostní rizika, ale je nutné důsledněji přijímat opatření k jejich eliminaci"
+      ],
+      "partnerships_practice": [
+        "Efektivní spolupráce se smluvními partnery pro zajištění praktické výuky",
+        "Krajská nemocnice Liberec, a.s. jako významný partner podílející se na tvorbě koncepčních záměrů",
+        "Pestrá škála zdravotnických a sociálních zařízení poskytujících různorodá prostředí pro vzdělávání",
+        "Odborníci z praxe zapojeni do výuky a absolutorií",
+        "Sledování oborových vývojových trendů a úprava vzdělávacích programů v součinnosti se sociálními partnery"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní údaje a citace. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty studentů s absencí nebo jejich podíl na celkovém počtu.",
+        "Není jasné, jaká konkrétní bezpečnostní rizika škola identifikovala a jaká opatření konkrétně chybí.",
+        "Údaje o absenci u VOŠZ nejsou kvantifikovány – není jasné, zda jde o 5 % nebo 50 % studentů."
+      ]
+    }
+  }
+}

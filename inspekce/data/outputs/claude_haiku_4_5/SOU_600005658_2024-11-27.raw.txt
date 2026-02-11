@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOU_600005658_2024-11-27",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola dopravní (akciová společnost) - obory s maturitou (IT, Doprava, Autotronik, Mechanik elektrotechnik) a výučním listem (automechanika, elektrikářství, stavba vozidel)",
+    "inspection_period": "27. listopadu až 3. prosince 2024",
+    "school_change_summary": "Od inspekce 2020: nový ředitel (od 7/2022), rozšíření vedení o zástupce pro odborný výcvik, nárůst žáků o 27 % na 1386 studentů, obměna čtvrtiny pedagogů, modernizace učeben a dílen, nové poradenské služby. Škola je od 2023/24 fakultní školou ČVUT."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná kvalita výuky",
+        "detail": "Praktické vyučování probíhá na velmi vysoké úrovni s moderní technikou, cvičnými panely a automobily odpovídajícími reálné praxi.",
+        "evidence": "\"Praktické vyučování i související praxe žáků probíhají v souladu s koncepcí školy na školních pracovištích i u sociálních partnerů na velmi vysoké odborné úrovni.\""
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Efektivní systém prevence neúspěchu s doučováním, konzultacemi a možností změny oboru během studia.",
+        "evidence": "\"Systém podpory žáků ohrožených školním neúspěchem se zaměřuje na předcházení jejich selhávání... cíleně zaměřené nabídky konzultací a doučování.\""
+      },
+      {
+        "tag": "Kariérní uplatnění",
+        "detail": "Převážná většina absolventů nastupuje přímo do praxe, získávají průmyslové certifikáty (řidičské průkazy, svářečské průkazy, EUROPAS).",
+        "evidence": "\"Převážná většina absolventů nastupuje přímo do praxe na jejich pracoviště... Žáci školy často získávají profesní průmyslové certifikáty.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky v matematice",
+        "detail": "V celostátním srovnání dosahují žáci horších výsledků v matematice než v češtině a cizích jazycích.",
+        "evidence": "\"V českém jazyce jsou obvykle výsledky srovnatelné, v matematice horší.\""
+      },
+      {
+        "tag": "Vysoká neúspěšnost v dálkovém studiu",
+        "detail": "V nástavbových oborech dálkové formy dosahuje neúspěšnost až 75 %, což je výrazně vyšší než celorepublikový průměr 23,8 %.",
+        "evidence": "\"Hrubá neúspěšnost... dosahovala až 75 %. V celostátním srovnání v dané skupině oborů tak byla výrazně vyšší (v ČR 23,8 %).\""
+      },
+      {
+        "tag": "Nejednotnost výuky",
+        "detail": "V některých hodinách chybí aktivizující metody, diferenciace pro nadané žáky a efektivní zpětná vazba.",
+        "evidence": "\"Nízká míra využití aktivizujících metod a forem se projevovala jednotvárností výuky... Výuka byla pouze ojediněle vhodně diferencována.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s matematikou? Nabízíte speciální přípravné kurzy?",
+      "Jaké jsou vaše zkušenosti s uplatněním absolventů v praxi? Máte kontakty na zaměstnavatele, kteří najímají vaše absolventy?",
+      "Jak se liší výuka v jednotlivých třídách - používají všichni učitelé stejné moderní metody nebo se to liší?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o technické obory a praktickou práci - škola má výborné vybavení a zkušené učitele z praxe",
+      "Studenti, kteří chtějí po škole ihned pracovat - vysoký podíl absolventů nastupuje přímo do zaměstnání s certifikáty",
+      "Žáci potřebující individuální podporu - škola má psychologa, speciálního pedagoga a systém doučování"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší matematikou - inspekce upozorňuje na horší výsledky v matematice oproti celorepublickému průměru",
+      "Zájemci o dálkové studium nástavbových oborů - neúspěšnost dosahuje až 75 %, což je velmi vysoké číslo",
+      "Studenti preferující teoretické vzdělání - škola je zaměřena primárně na praktickou přípravu a technické obory"
+    ],
+    "plain_czech_summary": "Střední průmyslová škola dopravní je moderní technická škola s výborným vybavením a zkušenými učiteli. Silnou stránkou je praktická výuka a příprava na reálné pracovní pozice - absolventi se uplatňují přímo v praxi. Škola má dobrou podporu pro slabší žáky. Slabší je výuka matematiky a vysoká neúspěšnost v dálkovém studiu. Některé hodiny postrádají aktivnější metody výuky. Vhodná pro technicky nadané žáky, kteří chtějí praktickou přípravu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení od inspekce 2020",
+      "key_numbers": [
+        "Až 15 % žáků prospělo s vyznamenáním",
+        "Přibližně 15 % neprospělo",
+        "Ve společné části maturitní zkoušky neuspěli pouze jednotlivci"
+      ],
+      "evidence": "\"Od posledního inspekčního hodnocení došlo k výraznému zlepšení výsledků žáků ve společné části maturitní zkoušky, ve sledovaném období neuspěli pouze jednotlivci.\""
+    },
+    "absence": {
+      "trend": "Zlepšení - snížení průměrné omluvené absence",
+      "key_numbers": [
+        "Ke 30. 6. řádně ukončilo ročník téměř 90 % všech žáků",
+        "Pouze jednotlivci předčasně skončili z důvodu neprospěchu",
+        "Snížil se počet nehodnocených a neprospívajících žáků"
+      ],
+      "evidence": "\"Všechny tyto kroky vedly postupně k zefektivnění preventivních mechanismů... což se promítlo ve zlepšení jejich výsledků vzdělávání i chování, mj. i v celkovém snížení průměrné omluvené absence na žáka.\""
+    },
+    "support_services": [
+      "Školní psycholog, speciální pedagog, dva výchovní poradci, školní metodik prevence",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami (8 % žáků)",
+      "Doučování, konzultace, adaptační pobyty, sportovní kurzy, kariérové poradenství"
+    ],
+    "safety_climate": [
+      "Elektronicky zabezpečené vstupy na všechna vzdělávací místa, kamerový systém",
+      "Stálá služba na vrátnici",
+      "Jednotný přístup pedagogů k vytváření pozitivních vztahů a dodržování pravidel",
+      "Výchovná opatření ukládána uvážlivě, převažuje motivační efekt pochval"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se zřizovatelem (Dopravní podnik hl. m. Prahy) - žáci pracují na reálných projektech",
+      "Fakultní škola ČVUT od 2023/24 - spolupráce na vzdělávacích akcích a prezentacích",
+      "Sociální partneři a profesní svazy - implementace nových poznatků do výuky",
+      "Zahraniční partnerská škola - výměnné pobyty a jazykové vzdělávání"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní čísla a citace. Slabší je pouze v některých technických pasážích o organizaci vzdělávání.",
+    "uncertainty_notes": [
+      "Není jasné, jak se liší kvalita výuky mezi jednotlivými učiteli - inspekce zmiňuje, že ne všichni respektují doporučení z hospitací",
+      "Chybí konkrétní čísla o počtu žáků s jednotlivými diagnózami speciálních vzdělávacích potřeb",
+      "Není specifikováno, které konkrétní obory mají nejlepší a nejhorší výsledky"
+    ]
+  }
+}
+```

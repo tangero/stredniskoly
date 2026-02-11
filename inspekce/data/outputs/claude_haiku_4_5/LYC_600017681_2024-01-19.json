@@ -1,0 +1,120 @@
+{
+  "report_id": "LYC_600017681_2024-01-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:29:08.329642+00:00",
+  "run_finished_utc": "2026-02-09T16:29:35.046844+00:00",
+  "raw_file": "LYC_600017681_2024-01-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600017681_2024-01-19",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola stavební (SPŠ stavební), příspěvková organizace",
+      "inspection_period": "19. ledna 2024 až 24. ledna 2024",
+      "school_change_summary": "Od poslední inspekce došlo ke změně vedení školy (ředitelka působí od 2021). Počet žáků roste, v roce 2023/2024 bylo 506 žáků ve 20 třídách. Škola se zapojuje do projektů (Jan Amos Komenský, ERASMUS+, DofE) a spolupracuje s mnoha sociálními partnery."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělávání",
+          "detail": "Žáci jsou systematicky vedeni k rozvoji komunikačních dovedností a motivováni k mezinárodním jazykovým zkouškám.",
+          "evidence": "Kvalitní cizojazyčné prostředí, didaktické hry s digitálními technologiemi, vysoká motivace k certifikátům."
+        },
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Firmy poskytují vzorníky, nástroje a zařízení; výuka propojuje teorii s reálnou praxí.",
+          "evidence": "Sociální partneři podporují odborné kompetence, žáci aplikují znalosti v reálných situacích."
+        },
+        {
+          "tag": "Úspěchy absolventů",
+          "detail": "90 % absolventů pokračuje ve studiu na vysokých školách, žáci dosahují dobrých výsledků v soutěžích.",
+          "evidence": "Dlouhodobě dobrá úspěšnost u maturit (průměrně 7 % neúspěšnosti), vysoký počet pochval."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kontrola praktického vyučování",
+          "detail": "Vnitřní kontrolní systém není efektivně nastaven v oblasti praktického vyučování a tvorby portfolií.",
+          "evidence": "Inspekce zjistila nedostatečné nastavení pravidel pro kontrolu a využití žákovských portfolií."
+        },
+        {
+          "tag": "Zpětná vazba a sebehodnocení",
+          "detail": "Závěry hodin jsou často jen formální, sebehodnocení a vrstevnické hodnocení se využívají málo.",
+          "evidence": "Žáci se do hodnocení hodiny aktivně nezapojují, chybí reflexe průběhu vyuky."
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Diferenciace učiva podle potřeb žáků se ve výuce objevuje jen v malé míře.",
+          "evidence": "Učitelé věnují málo pozornosti úlohám s rozdílnou kognitivní náročností."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky ohrožené školním neúspěchem a jaké má doučování?",
+        "Jaké jsou možnosti účasti na mezinárodních jazykových zkouškách a jak je škola podporuje?",
+        "Jak probíhá praktické vyučování a jaké jsou podmínky v dílnách a na stavbách?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o stavebnictví, geodézii nebo technické obory s praktickým zaměřením",
+        "Studenti motivovaní k jazykům a mezinárodním zkouškám (Cambridge, TOEFL apod.)",
+        "Talentovaní žáci, kteří se chtějí účastnit soutěží a projektů (90 % pokračuje na vysokých školách)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnější individuální podporu a diferenciaci – škola ji zatím poskytuje jen v omezené míře",
+        "Studenti, kteří se spoléhají na detailní zpětnou vazbu a sebehodnocení – ty jsou v hodinách málo využívány",
+        "Žáci s vyšší absencí – průměrně 66 zameškaných hodin za rok, škola řeší neomluvené absence kázeňskými opatřeními"
+      ],
+      "plain_czech_summary": "SPŠ stavební v Ostravě je kvalitní stavební škola s dobrými výsledky. Silné stránky: jazykové vzdělávání, propojení s praxí, vysoká úspěšnost absolventů (90 % na vysoké školy). Slabiny: kontrola praktického vyučování, málo sebehodnocení žáků, nedostatečná individualizace výuky. Škola má kvalitní vedení, dobré zázemí a aktivně se zapojuje do projektů. Vhodná pro talentované studenty se zájmem o stavebnictví a jazyky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě dobrý, stabilní",
+        "key_numbers": [
+          "Průměrná hrubá neúspěšnost 7 % v posledních třech letech",
+          "Průměrně 20 % žáků prospělo s vyznamenáním",
+          "Průměrně 4 % žáků neprospělo"
+        ],
+        "evidence": "Škola dosahuje dlouhodobě dobrých výsledků, předmětové komise analyzují výsledky a nastavují opatření."
+      },
+      "absence": {
+        "trend": "Zvýšená absence, kterou škola řeší",
+        "key_numbers": [
+          "Průměrně 66 zameškaných hodin na žáka za rok",
+          "Neomluvená absence řešena kázeňskými opatřeními",
+          "Školní poradenské pracoviště se dlouhodobě zabývá řešením zvýšené absence"
+        ],
+        "evidence": "Škola sleduje chování žáků, oceňuje úspěchy a přijímá opatření k posílení kázně."
+      },
+      "support_services": [
+        "Výchovná poradkyně s pravidelným kontaktem na žáky, individuální konzultace nad rámec hodin",
+        "Školní metodik prevence spolupracující se všemi pedagogy a třídními učiteli",
+        "Doučování pro vybrané předměty, individuální konzultace od učitelů",
+        "Kariérové poradenství se zaměřením na volbu povolání a uplatnění v praxi",
+        "Podpora žáků se speciálními vzdělávacími potřebami (39 žáků, podpůrná opatření 1.–5. stupně)"
+      ],
+      "safety_climate": [
+        "Vedení školy systematicky usiluje o vytvoření vhodných podmínek pro psychické i fyzické bezpečí",
+        "Škola pravidelně organizuje různorodé aktivity, venkovní hřiště a atrium pro přestávky",
+        "Ke školním úrazům dochází zejména v tělesné výchově a sportovních aktivitách, škola provádí analýzu úrazů",
+        "Žádné zaznamenané kázeňské problémy ani narušování průběhu hodin během inspekce",
+        "Vysoký počet udělovaných pochval, pozitivní motivace k dosahování úspěšnosti"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s firmami: poskytování vzorníků, nástrojů, zařízení, organizování soutěží",
+        "Projekt Jan Amos Komenský (vzdělávání zaměstnanců, inovativní vzdělávání)",
+        "ERASMUS+ (mobilita čtyř učitelů odborných předmětů v Itálii a Španělsku)",
+        "Program DofE (Mezinárodní cena vévody z Edinburghu) od roku 2015",
+        "Spolupráce se sociálními partnery a vzdělávacími institucemi, zapojení do vysokoškolských projektů",
+        "Rodilý mluvčí pro výuku angličtiny (financováno zřizovatelem)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky. Obsahuje konkrétní příklady, čísla a citace. Struktura je logická a pro rodiče srozumitelná. Mírně snižuje skóre úřednický styl některých pasáží a absence jednoduchého shrnutí na začátku.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala na základě doporučení z minulé inspekce",
+        "Chybí informace o počtu učitelů a jejich kvalifikaci v jednotlivých oborech",
+        "Není jasné, jak dlouho trvá praktické vyučování a jaké jsou konkrétní podmínky v dílnách"
+      ]
+    }
+  }
+}

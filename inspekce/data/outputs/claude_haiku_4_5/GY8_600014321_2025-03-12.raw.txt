@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600014321_2025-03-12",
+  "school_profile": {
+    "school_type": "Gymnázium Jana Pivečky a Střední odborná škola (kombinovaná střední škola s gymnaziálním a odborným vzděláním)",
+    "inspection_period": "12.–18. března 2025",
+    "school_change_summary": "Škola zlepšila materiálně technické podmínky, zejména v digitalizaci a strojním vybavení. Od roku 2023 má novou učebnu chemie. Přestala vzdělávat žáky v oboru Obráběč kovů z důvodu nízkého zájmu. Žáci nyní vydávají vlastní školní časopis."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky v soutěžích",
+        "detail": "Žáci se umisťují na předních místech v krajských a celorepublikových soutěžích, zejména v matematice, fyzice, informatice a strojírenství.",
+        "evidence": "Žák vyhrál soutěž v programování CNC strojů na Mezinárodním strojírenském veletrhu v Brně."
+      },
+      {
+        "tag": "Stabilní maturitní výsledky",
+        "detail": "Výsledky maturit jsou dlouhodobě na velmi dobré úrovni, ve školním roce 2023/2024 všichni žáci uspěli a překročili celorepublikový průměr.",
+        "evidence": "Všichni žáci složili maturitní zkoušku s výsledky nad celorepublikovým průměrem v roce 2023/2024."
+      },
+      {
+        "tag": "Kvalitní odborný výcvik",
+        "detail": "Praktické vyučování probíhá v moderně vybavených školních pracovištích s úzkou spoluprací s firmami a přípravou na profesní praxi.",
+        "evidence": "Odborný výcvik je vybaven moderními technologiemi a odpovídá reálné praxi."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Chybí reflexe na konci hodin",
+        "detail": "V mnoha hodinách chybí shrnutí cílů a vyhodnocení pokroku žáků, což brání jejich sebereflexe.",
+        "evidence": "Ve výuce společenských věd, němčiny a přírodovědných předmětů chybělo patřičné vyhodnocení a zakončení."
+      },
+      {
+        "tag": "Nízká aktivita žáků v některých předmětech",
+        "detail": "V odborných předmětech a fyzice na gymnáziu nejsou všichni žáci dostatečně zapojeni do výuky.",
+        "evidence": "Ve výuce fyziky v gymnaziálním oboru chyběly aktivizační činnosti; v odborných předmětech se ne všichni žáci zapojili."
+      },
+      {
+        "tag": "Slabý rozvoj komunikačních dovedností",
+        "detail": "V přírodovědných a odborných předmětech se málo rozvíjejí komunikační schopnosti žáků.",
+        "evidence": "V přírodovědných předmětech chybělo aktivnější zapojování žáků do výuky podporující komunikaci."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje se žáky, kteří mají slabší prospěch? Jaké jsou dostupné konzultační hodiny a doučování?",
+      "Jaké jsou možnosti účasti v mezinárodních projektech typu Erasmus+ a jak se žáci mohou zapojit do soutěží?",
+      "Jak škola zajišťuje bezpečnost a ochranu zdraví při praktickém vyučování v odborných oborech?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí dosahovat výborných výsledků a účastnit se vědomostních soutěží",
+      "Zájemci o technické a strojírenské obory s moderním vybavením a spoluprací s firmami",
+      "Studenti, kteří ocení bohatou nabídku aktivit, projektů a mezinárodních mobilit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální pozornosti a jasné zpětné vazby – některé hodiny postrádají reflexi pokroku",
+      "Studenti, kteří se lépe učí aktivní participací – v některých předmětech je výuka převážně frontální",
+      "Zájemci o předměty, kde se málo rozvíjejí komunikační dovednosti (přírodovědné a odborné předměty)"
+    ],
+    "plain_czech_summary": "Gymnázium Jana Pivečky a SOŠ je kvalitní střední škola se stabilními výsledky a výborným zázemím. Žáci dosahují skvělých výsledků v soutěžích a maturitách. Škola má dobré vedení, moderní vybavení a bohatou nabídku aktivit. Slabší stránkou je, že v některých hodinách chybí reflexe pokroku žáků a ne všichni jsou dostatečně aktivní. Vhodná pro ambiciózní studenty, zejména zájemce o technické obory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně velmi dobrý, s postupným zlepšením",
+      "key_numbers": [
+        "Školní rok 2023/2024: všichni žáci uspěli, výsledky nad celorepublikovým průměrem",
+        "Obor Podnikání: zlepšení z podprůměru (2021/2022) na 100% úspěšnost (2023/2024)",
+        "Obor Mechanik seřizovač: z podprůměru (2021/2022) na 100% úspěšnost (2023/2024)"
+      ],
+      "evidence": "Nejlepších výsledků dosáhli žáci ve školním roce 2023/2024, kdy složili všichni maturitní zkoušku s výsledky nad celorepublikovým průměrem."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněn",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná a kariérová poradkyně, školní metodika prevence, školní psycholog",
+      "Doučování a konzultační hodiny pro žáky se slabším prospěchem",
+      "Pedagogické intervence a podpůrná opatření pro žáky se speciálními vzdělávacími potřebami (25 žáků s přiznanými opatřeními)",
+      "Dvě asistentky pedagoga pro podporu žáků se SVP",
+      "Kariérové poradenství s cílenou podporou při výběru budoucího zaměření"
+    ],
+    "safety_climate": [
+      "Účinně nastavený systém bezpečnosti a ochrany zdraví žáků",
+      "Pravidelné informace o bezpečnostních rizicích ve škole i mimo ni",
+      "Vhodné osobní ochranné pracovní prostředky při praktickém vyučování",
+      "Dodržování zásad BOZP zajištěno, výuka pečlivě připravena",
+      "Systematická prevence rizikového chování a nežádoucích jevů"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s odbornými pracovišti a firmami pro odborné zaměření žáků",
+      "Erasmus+ mobility v gymnaziálním a odborném vzdělávání (stáže v rakouském Wolfsbergu)",
+      "Spolupráce s fakultními vysokými školami a vyslaneckou školou Evropského parlamentu",
+      "Partnerství s Nadací Jana Pivečky na vzdělávacích a kulturních aktivitách",
+      "Kooperace s městem Slavičín a zřizovatelem (Zlínský kraj)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání. Struktura je logická a pro rodiče srozumitelná.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je problém nebo se jednoduše nehodnotila",
+      "Počet žáků s odlišným mateřským jazykem (8) a individuálním plánem (1) je zmíněn, ale bez kontextu jejich podpory",
+      "Konkrétní počty žáků v jednotlivých oborech nejsou uvedeny, pouze celkový počet 523 žáků ve 25 třídách"
+    ]
+  }
+}
+```

@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY4_600005933_2025-11-04",
+  "school_profile": {
+    "school_type": "Gymnázium, čtyřleté denní studium, všeobecné zaměření",
+    "inspection_period": "4. 11. 2025 – 7. 11. 2025",
+    "school_change_summary": "Od inspekce v roce 2020 vzrostl počet žáků na 521 (v 17 třídách), škola získala status fakultní školy UK a ČVUT, došlo k výrazné modernizaci materiálních podmínek (laboratoře, LED osvětlení, workoutové hřiště, IT vybavení)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Systémově nastavená jazyková příprava s rodilými mluvčími, zahraničními pobyty a certifikáty dosahuje výborných výsledků – 90–100 % úspěšnosti v anglickém jazyce.",
+        "evidence": "Žáci dosahují úspěšnosti v rozmezí 90–100 % v pilotním ověřování CERMAT v anglickém jazyce."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Aktivní vyhledávání talentů, individuální podpora a motivace vedou k úspěchům v soutěžích a olympiádách.",
+        "evidence": "Škola má pozici koordinátora nadání, úspěchy v různých soutěžích a olympiádách, nejen v cizích jazycích, ale i v technických a humanitních oborech."
+      },
+      {
+        "tag": "Vysokoškolská úspěšnost",
+        "detail": "Více než 90 % absolventů je přijato ke studiu na vysokých školách různého zaměření.",
+        "evidence": "Stálá úspěšnost absolventů gymnázia (více než 90 %) při přijetí ke studiu na vysokých školách."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nižší aktivizace žáků v některých hodinách",
+        "detail": "V části vyučovacích hodin dominuje učitel, chybí dostatek skupinových činností a samostatné práce žáků.",
+        "evidence": "V některých vyučovacích hodinách nižší míra aktivizace žáků a jejich zapojení do vzdělávacího procesu."
+      },
+      {
+        "tag": "Nedostatečné formativní hodnocení",
+        "detail": "Závěry hodin nejsou vždy vyhodnocovány se žáky, chybí evaluace učebního pokroku.",
+        "evidence": "V části vyučovacích hodin méně efektivní využívání didaktických závěrů s aktivním zapojením žáků do evaluace."
+      },
+      {
+        "tag": "Omezená práce s informačními zdroji",
+        "detail": "Žáci nemají dostatek příležitostí k samostatnému vyhledávání a kritickému myšlení.",
+        "evidence": "Menší četnost zařazování kooperativních činností nebo samostatné práce žáků s různými informačními zdroji."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se slabšími výsledky v matematice a jak probíhá příprava na maturitu?",
+      "Jaké jsou možnosti individuálního přístupu pro žáky s odlišným tempem práce a jak se to projevuje v praxi?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a práci s informacemi v digitálním věku?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí výuku druhého cizího jazyka, konverzace s rodilými mluvčími a zahraniční pobyty.",
+      "Talentovaní a nadaní žáci – škola má systém na jejich vyhledávání, individuální podporu a motivaci k dosažení výsledků.",
+      "Žáci s ambicí na vysokoškolské studium – více než 90 % absolventů je přijato na vysoké školy, škola se dlouhodobě věnuje jejich přípravě."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a skupinové výuky – v některých hodinách převažuje frontální přístup.",
+      "Žáci, kteří se učí lépe prostřednictvím praktických činností a experimentování – část výuky se zaměřuje spíše na teoretické poznatky.",
+      "Žáci se specifickými poruchami učení – ačkoli škola poskytuje podporu, měli byste si ověřit konkrétní možnosti pro váš případ."
+    ],
+    "plain_czech_summary": "Gymnázium U Libeňského zámku je kvalitní školou s dlouhou tradicí, která se zaměřuje na všestranný rozvoj žáků. Silné stránky: výborné jazykové vzdělávání, podpora nadaných žáků, vysoká úspěšnost u maturit a přijetí na vysoké školy. Oblasti ke zlepšení: v některých hodinách by mělo být více aktivit pro žáky, lépe by se mělo využívat formativní hodnocení a práce s informačními zdroji. Škola je vhodná pro ambiciózní žáky se zájmem o jazyky a vysokoškolské studium."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – zlepšení oproti minulé inspekci",
+      "key_numbers": [
+        "Matematika: všichni žáci uspěli (oproti minulé inspekci výrazné zlepšení)",
+        "36–40 % žáků prospělo s vyznamenáním",
+        "Anglický jazyk: cca 92 % průměrné skóre"
+      ],
+      "evidence": "Oproti minulé inspekční činnosti došlo k výraznému zlepšení žáků ve společné části maturitní zkoušky v matematice, v níž všichni žáci uspěli. Zvýšil se počet žáků s vyznamenáním na 36–40 %."
+    },
+    "absence": {
+      "trend": "Pozitivní – snížení absence",
+      "key_numbers": [
+        "Snížení omluvených hodin na žáka o cca 10 %",
+        "Cca 113 hodin na žáka v posledních dvou letech",
+        "Téměř všichni žáci řádně ukončují ročník"
+      ],
+      "evidence": "V analyzovaném období poslední dvou školních let došlo ke snížení počtu omluvených hodin na žáka přibližně o 10 %, tj. cca 113 hodin na žáka."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s pozicí koordinátora nadání",
+      "Individuální podpora pro 22 žáků se speciálními vzdělávacími potřebami",
+      "Podpora pro 19 žáků s odlišným mateřským jazykem",
+      "Socioemoční výchova formou workshopů pro první ročníky",
+      "Kariérové poradenství včetně sdílení zkušeností absolventů"
+    ],
+    "safety_climate": [
+      "Velmi nízký výskyt rizikového chování díky preventivním mechanismům",
+      "Elektronický a kamerový systém s recepcí pro bezpečnost žáků",
+      "Komplexní monitoring a vzdělávání v tématech souvisejících s chováním v rizikových situacích",
+      "Motivační hodnocení – pochvaly převažují nad kázeňskými opatřeními"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Pedagogické a Přírodovědecké fakulty UK a Elektrotechnické fakulty ČVUT",
+      "Partnerské gymnázium v Popradu (Slovensko)",
+      "Spolupráce s Akademií věd a Univerzitou Karlovou",
+      "Erasmus+ program a zahraniční jazykové pobyty",
+      "Laboratorní cvičení s vysokými školami",
+      "Konstruktivní vztahy se zřizovatelem a Spolkem rodičů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje, ale místy je psána úřednickým jazykem. Hlavní informace pro rodiče jsou jasné, ale vyžadují určitou interpretaci.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků s jednotlivými typy podpory (pouze celkový počet 22 žáků se SVP).",
+      "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými předměty a třídami.",
+      "Chybí informace o počtu žáků, kteří předčasně ukončili studium (uvedeno pouze 'konstantně nízký počet')."
+    ]
+  }
+}
+```

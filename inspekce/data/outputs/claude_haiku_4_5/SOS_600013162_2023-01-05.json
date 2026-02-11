@@ -1,0 +1,119 @@
+{
+  "report_id": "SOS_600013162_2023-01-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:52:38.034917+00:00",
+  "run_finished_utc": "2026-02-09T16:53:08.146118+00:00",
+  "raw_file": "SOS_600013162_2023-01-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600013162_2023-01-05",
+    "school_profile": {
+      "school_type": "Střední škola technická a dopravní s domovem mládeže a školní jídelnou. Nabízí 5 čtyřletých oborů s maturitou (elektrotechnika, doprava, IT, dřevařství, elektromechanika) a 3 tříleté obory s výučním listem.",
+      "inspection_period": "5.–10. ledna 2023",
+      "school_change_summary": "Nový ředitel od roku 2017. Počet žáků výrazně vzrostl na 761 (559 v maturitních oborech, 202 v tříletých). Ukončena činnost vyšší odborné školy. Rekonstruovány odborné učebny a prostory domova mládeže. Škola získala ocenění Škola doporučená zaměstnavateli (2021) a TES AWARD 2022."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka v reálném prostředí",
+          "detail": "Žáci se učí přímo u smluvních partnerů, kde získávají technické dovednosti a sociální kompetence v autentickém pracovním prostředí.",
+          "evidence": "Praktické vyučování vedeno smysluplně s efektivním využitím času, žáci získávají zpětnou vazbu a rozvíjejí si reálnou představu o fungování firmy."
+        },
+        {
+          "tag": "Výborné materiální podmínky",
+          "detail": "Škola má moderně vybavené učebny, vlastní pracoviště a průběžně investuje do technologií.",
+          "evidence": "Prostorové, materiální i finanční podmínky umožňují realizaci vzdělávání. Byly rekonstruovány odborné učebny a pořízeny mobilní digitální technologie."
+        },
+        {
+          "tag": "Silná podpora slabších žáků",
+          "detail": "Škola nabízí doučování, speciální třídy se sníženým počtem žáků a práci asistentů pedagoga.",
+          "evidence": "Dva asistenti pedagoga, výuka ve třídě se sníženým počtem žáků podle doporučení poradenského zařízení, doučování pro ohrožené žáky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Rozdílná kvalita teoretické výuky",
+          "detail": "Učitelé se liší v tom, jak aktivně zapojují žáky – někteří používají moderní metody, jiní převážně frontální výuku.",
+          "evidence": "Převažující výrazné rozdíly v účelném využívání aktivizačních metod práce mezi učiteli teoretické výuky."
+        },
+        {
+          "tag": "Slabší výsledky v matematice",
+          "detail": "Matematika je nejproblematičtějším předmětem – žáci v ní nejčastěji neprospívají.",
+          "evidence": "Od minulé inspekce přetrvává nejhorší pololetní nebo ročníkové hodnocení žáků v matematice. Škola navýšila počet hodin českého jazyka, ale matematika zůstává problémem."
+        },
+        {
+          "tag": "Chybí individualizace výuky",
+          "detail": "Učitelé málo přizpůsobují úkoly různým schopnostem žáků, zejména nadaným chybí větší výzva.",
+          "evidence": "Vůbec nebyla využívána diferenciace výuky v případě rozdílných potřeb žáků včetně nadaných."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se učitelé připravují na výuku a jak si vyměňují zkušenosti? Probíhají mezi nimi vzájemné hospitace?",
+        "Jaká opatření škola plánuje, aby zlepšila výsledky v matematice? Nabízí speciální podporu pro nadané žáky?",
+        "Jak se liší přístup jednotlivých učitelů k výuce a jak si mohu ověřit, že můj syn/dcera bude mít kvalitního učitele?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří se chtějí učit prakticky a vidět přímou aplikaci znalostí v reálném pracovním prostředí.",
+        "Studenti se speciálními vzdělávacími potřebami, kterým škola nabízí individuální podporu a asistenci.",
+        "Mladí lidé zajímající se o technické obory, dopravní sektor nebo IT s ambicí získat kvalifikaci a zkušenost od zaměstnavatelů."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnou individuální podporu v matematice – škola má s tímto předmětem dlouhodobé problémy.",
+        "Studenti, kteří se lépe učí aktivní diskusí a kooperací – část učitelů stále preferuje tradiční frontální výuku.",
+        "Nadaní žáci hledající větší intelektuální výzvu – škola zatím málo diferencuje úkoly pro různé úrovně schopností."
+      ],
+      "plain_czech_summary": "Střední škola technická a dopravní v České Třebové je moderně vybavená škola se silným zaměřením na praktickou výuku u skutečných zaměstnavatelů. Žáci se učí v reálném pracovním prostředí, což jim dává výhodu na trhu práce. Škola dobře podporuje slabší žáky a ty se speciálními potřebami. Hlavní výzvou je rozdílná kvalita teoretické výuky mezi učiteli a dlouhodobě slabší výsledky v matematice. Škola se snaží zlepšovat, ale individualizace výuky pro nadané žáky zatím není dostatečná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dobrá úspěšnost s výrazným rozdílem mezi obory",
+        "key_numbers": [
+          "Celková neúspěšnost okolo 10 %",
+          "Obory s výučním listem: neúspěšnost 2,6 % (velmi nízká)",
+          "Maturitní obory: výrazně se liší podle jednotlivých oborů"
+        ],
+        "evidence": "Úspěšnost žáků u maturitních nebo závěrečných zkoušek je dobrá, celkově se míra neúspěšných žáků pohybuje okolo 10 %."
+      },
+      "absence": {
+        "trend": "Pozitivní – nízká absence bez výrazného záškoláctví",
+        "key_numbers": [
+          "Neomluvené hodiny měli zpravidla jednotlivci",
+          "Pozitivní tendence měla nižší míra absencí žáků ve výuce"
+        ],
+        "evidence": "Pozitivní tendence měla nižší míra absencí žáků ve výuce, která neměla znaky výraznějšího záškoláctví."
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně a metodička prevence",
+        "Školní psycholog jako platný člen poradenského pracoviště",
+        "Dva asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+        "Doučování pro žáky ohrožené školní neúspěšností",
+        "Třídy se sníženým počtem žáků podle doporučení poradenského zařízení"
+      ],
+      "safety_climate": [
+        "Příjemná tvůrčí pracovní atmosféra v praktickém vyučování",
+        "Klidná pracovní atmosféra v teoretické výuce",
+        "Pozitivní přátelské klima v domově mládeže nahrazující rodinné prostředí",
+        "Důraz na bezpečnost práce a ochranu zdraví v praktickém vyučování",
+        "Minimální problémy kázeňského charakteru řešené poradenským pracovištěm"
+      ],
+      "partnerships_practice": [
+        "Funkční systém spolupráce se smluvními partnery pro praktické vyučování",
+        "Partnerství s Univerzitou Pardubice, Hospodářskou komorou, Sdružením železničních nákladních dopravců",
+        "Realizace Železniční akademie s možností získat odborné osvědčení a licence",
+        "Akreditace v rámci Erasmus+ s výjezdovými akcemi do zahraničí",
+        "Spolupráce se základními školami a projekty polytechnického vzdělávání",
+        "Zapojení do projektů JA Studentská Firma, Social Innovation Relay, soutěž kybernetické bezpečnosti"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Chybí jasné číselné údaje o některých klíčových metrikách (např. přesný počet neúspěšných v jednotlivých oborech).",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, které konkrétní obory mají horší výsledky u maturity – pouze uvádí 'výrazně se liší podle jednotlivých oborů'.",
+        "Není jasné, kolik procent učitelů používá aktivní metody versus frontální výuku – pouze se uvádí 'převažující rozdíly'.",
+        "Chybí informace o tom, jak se škola vypořádala s doporučeními z předchozí inspekce – není jasné, zda se situace zlepšila či zhoršila."
+      ]
+    }
+  }
+}

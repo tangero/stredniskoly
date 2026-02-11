@@ -1,0 +1,100 @@
+{
+  "report_id": "GY8_600007570_2021-11-29",
+  "school_profile": {
+    "school_type": "osmileté gymnázium a odborná škola (Multimediální tvorba, Scénická a výstavní tvorba)",
+    "inspection_period": "29. 11. − 1. 12. 2021",
+    "school_change_summary": "Škola výrazně roste (z 109 na 290 žáků) a rozšířila vzdělávací nabídku o nové umělecké obory."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a praxe",
+        "detail": "Škola nabízí špičkové technické zázemí včetně televizního studia a propojuje výuku s reálnou praxí.",
+        "evidence": "„Žáci efektivně využívali... televizní studio... Učitelé vhodně využívali propojení s praxí.“"
+      },
+      {
+        "tag": "Výsledky maturit",
+        "detail": "Absolventi odborných oborů dosahují vynikajících výsledků u maturitní zkoušky.",
+        "evidence": "„Velmi pozitivní je, že ji konali vždy všichni přihlášení žáci a uspělo v ní 95 % z nich.“"
+      },
+      {
+        "tag": "Klima a podpora",
+        "detail": "Ve škole panuje přátelská atmosféra a funguje zde kvalitní poradenské pracoviště.",
+        "evidence": " „Hodiny probíhaly v přátelské atmosféře... Odborně kvalifikovaní členové školního poradenského pracoviště.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Méně náročná výuka",
+        "detail": "Výuka na gymnáziu nemusí dostatečně stimulovat nadané žáky.",
+        "evidence": "„Vyučovací hodiny však byly méně diferencované s ohledem na potřeby nadaných žáků v gymnáziu.“"
+      },
+      {
+        "tag": "Slabší výsledky v ČJL",
+        "detail": "Žáci dosahují horších výsledků v didaktických testech z českého jazyka než ve škole.",
+        "evidence": "„Případná neúspěšnost je tvořena převážně výsledky žáků v didaktickém testu z českého jazyka a literatury.“"
+      },
+      {
+        "tag": "Absence v závěru",
+        "detail": "U maturitních ročníků se opakovaně objevuje zvýšená absence.",
+        "evidence": "„Opakovaně se však vyšší absence objevuje vždy v závěrečném ročníku, a to až u třetiny žáků.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola individuálně pracuje s nadanými žáky na gymnáziu?",
+      "Jakým způsobem se škola snaží zlepšit výsledky žáků v maturitních testech z češtiny?",
+      "Jaká konkrétní opatření škola používá proti vysoké absenci v maturitních ročnících?"
+    ],
+    "who_school_fits": [
+      "Kreativním žákům s zájmem o multimédia, film nebo výtvarné umění.",
+      "Studentům, kteří oceňují moderní vybavení a propojení s praxí.",
+      "Žákům, kterým vyhovuje přátelské prostředí a individuální přístup."
+    ],
+    "who_should_be_cautious": [
+      "Nadaným žákům, kteří vyžadují náročnější a diferencovanou výuku.",
+      "Pokud je pro vás klíčová excelentní příprava na společnou část maturit z češtiny.",
+      "Rodičům, kteří řeší problém s docházkou dětí v posledním ročníku."
+    ],
+    "plain_czech_summary": "EKO Gymnázium a SOŠ v Poděbradech je dynamicky se rozvíjející škola se silným zaměřením na umění a média. Nabízí špičkové vybavení (ateliéry, TV studio) a výuku vedenou odborníky z praxe, což se odráží v excelentních výsledcích u maturit v odborných předmětech. Pro rodiče je důležité vědět, že škola má skvělé klima a zázemí pro podporu žáků. Slabinou může být méně diferencovaná výuka pro nadané studenty gymnázia a horší výsledky v maturitních testech z českého jazyka. Škola také řeší zvýšenou absenci v závěrečných ročnících."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vysoká úspěšnost v profilové části, průměrné výsledky ve společné části (zejména ČJL).",
+      "key_numbers": [
+        "95 % úspěšnost u maturity",
+        "Všichni přihlášení se zúčastnili",
+        "Výsledky ČJL kolem průměru"
+      ],
+      "evidence": "„uspělo v ní 95 % z nich... neúspěšnost je tvořena převážně výsledky žáků v didaktickém testu z českého jazyka“"
+    },
+    "absence": {
+      "trend": "Celkově klesající (ovlivněno distanční výukou), ale problémová v maturitních ročnících.",
+      "key_numbers": [
+        "140 hodin na žáka (2018/19)",
+        "Pokles na 2/3 v dalších letech",
+        "Až 1/3 absence v závěrečných ročnících"
+      ],
+      "evidence": "„absence se ve školním roce 2018/2019 pohybovala kolem 140 hodin... v závěrečném ročníku, a to až u třetiny žáků.“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (psycholožka, speciální pedagožka).",
+      "Dysklub pro žáky se SVP.",
+      "Kariérové poradenství a adaptace."
+    ],
+    "safety_climate": [
+      "Přátelská atmosféra a partnerské vztahy.",
+      "Relaxační místnost a komunitní kruhy.",
+      "Závažnější projevy nevhodného chování se nevyskytly."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s firmami a experty z praxe.",
+      "Zahraniční výměnné pobyty.",
+      "Exkurze a stáže pro žáky i učitele."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a všechny klíčové informace jsou přímo uvedeny.",
+    "uncertainty_notes": []
+  }
+}

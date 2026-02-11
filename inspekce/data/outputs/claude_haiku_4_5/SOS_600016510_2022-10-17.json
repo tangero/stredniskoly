@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600016510_2022-10-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:58:45.037353+00:00",
+  "run_finished_utc": "2026-02-09T16:59:09.387192+00:00",
+  "raw_file": "SOS_600016510_2022-10-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600016510_2022-10-17",
+    "school_profile": {
+      "school_type": "Střední škola polytechnická s obory: výuční listy (Strojní mechanik, Elektrikář, Elektromechanik), maturita (Elektrotechnika, Mechanik strojů, Mechanik elektrotechnik) a nástavbové vzdělání",
+      "inspection_period": "17. 10. 2022 – 20. 10. 2022",
+      "school_change_summary": "Od roku 2016 škola postupně obnovuje materiálně-technické zázemí v souladu s trendy (automatizace, robotika). Od 1. 1. 2021 změnila název na Střední škola polytechnická. Od 1. 9. 2021 se zapojila do projektu kombinovaného vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Moderní vybavení a technologie",
+          "detail": "Škola průběžně modernizuje učebny a vybavení, nabízí témata o alternativních zdrojích, elektromobilitě a digitální technice.",
+          "evidence": "Komplexní modernizace učeben a inovace školních vzdělávacích programů činí školu vysoce atraktivní."
+        },
+        {
+          "tag": "Silné partnerství se zaměstnavateli",
+          "detail": "Systematická spolupráce se smluvními partnery zajišťuje vazbu teorie na praxi a rozvoj praktických dovedností.",
+          "evidence": "Kvalitní spolupráce s profesními partnery pozitivně ovlivňuje rozvoj odborných kompetencí žáků."
+        },
+        {
+          "tag": "Výborné uplatnění absolventů",
+          "detail": "Absolventi dosahují velmi dobrého uplatnění na trhu práce a úspěšně pokračují v terciárním vzdělání.",
+          "evidence": "Kvalitu odborného vzdělávání dokládá velmi dobré uplatnění absolventů na trhu práce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v matematice",
+          "detail": "Dlouhodobě nižší úspěšnost v matematice na maturitě, přestože škola nabízí doučování a konzultace.",
+          "evidence": "Škola vykazuje opakovaně dlouhodobě procentuálně horší úspěšnost v matematice než školy obdobného zaměření."
+        },
+        {
+          "tag": "Nedostatečný rozvoj kritického myšlení",
+          "detail": "Výuka se zaměřuje především na frontální formu, chybí úlohy různé náročnosti a prostor pro kreativitu.",
+          "evidence": "Pedagogové v nižší míře podporují rozvoj kritického myšlení, systematicky nezařazují úlohy odlišné kognitivní náročnosti."
+        },
+        {
+          "tag": "Slabá spolupráce mezi učiteli",
+          "detail": "Mezi předmětovými komisemi chybí systematická výměna zkušeností vedoucí k podpoře úspěšnosti žáků.",
+          "evidence": "Spolupráce učitelů je málo efektivní, nedochází k systematické výměně zkušeností mezi pedagogy."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s matematikou? Jaké jsou výsledky doučování?",
+        "Jaké jsou konkrétní příklady projektů a soutěží, do kterých se žáci zapojují? Jak často se konají?",
+        "Jak probíhá praktická výuka u partnerských firem? Jak dlouho trvá a jaké jsou podmínky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o technické obory a praktickou práci, kteří chtějí získat kvalifikaci s dobrým uplatněním na trhu",
+        "Studenti, kteří si chtějí vyzkoušet kombinaci výučního listu a maturity (komplementární obory)",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální podporu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími matematickými dovednostmi – škola má dlouhodobě nižší úspěšnost v matematice na maturitě",
+        "Studenti, kteří preferují aktivní diskusi a skupinové práce – výuka je převážně frontální s omezenou komunikací",
+        "Zájemci o obory Mechanik strojů a zařízení – tyto obory mají minimální počty žáků (4–12 ve skupině)"
+      ],
+      "plain_czech_summary": "Polytechnická škola v Havířově je moderní technické učiliště s dobrým vybavením a silnými vazbami na průmysl. Absolventi se velmi dobře uplatňují na trhu práce. Škola nabízí kombinaci výučního listu a maturity. Silnou stránkou je individuální přístup k žákům se speciálními potřebami. Slabinou je dlouhodobě nižší úspěšnost v matematice a výuka zaměřená spíše na frontální formu bez dostatečného rozvoje kritického myšlení. Učitelé by měli více spolupracovat na zvyšování kvality výuky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Srovnatelné s předchozími roky, ale s problémy v matematice",
+        "key_numbers": [
+          "2,87 % žáků prospělo s vyznamenáním",
+          "11,8 % žáků neprospělo",
+          "5 z 49 žáků neuspělo v společné části maturitní zkoušky"
+        ],
+        "evidence": "Ve školním roce 2021/2022 jsou výsledky srovnatelné s roky 2020/2021 a 2019/2020. V češtině a angličtině lepší než celorepublikový průměr, v matematice dlouhodobě horší."
+      },
+      "absence": {
+        "trend": "Zlepšující se díky krajským stipendiím",
+        "key_numbers": [
+          "Zavedení krajských stipendií pro vybrané obory přispělo ke snížení neomluvené absence"
+        ],
+        "evidence": "Stipendia pro obory Mechanik strojů, Elektromechanik a Elektrikář – silnoproud pozitivně ovlivnila docházku."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, dva kariéroví poradci, dva metodici prevence",
+        "Kariérové poradenství pro výběr profesního uplatnění nebo navazujícího studia",
+        "Dlouhodobá preventivní strategie zaměřená na předcházení rizikových jevů"
+      ],
+      "safety_climate": [
+        "Bezpečné a vstřícné prostředí s vypracovaným systémem seznámení žáků s bezpečnostními pravidly",
+        "Periodické školení k bezpečnosti a ochraně zdraví při práci na odborném výcviku",
+        "Trvalá pozornost bezpečnosti s průběžným vyhodnocováním rizik"
+      ],
+      "partnerships_practice": [
+        "Systematická spolupráce se smluvními partnery zajišťuje vazbu teorie na praxi",
+        "Přeshraniční spolupráce se slovenskou školou v oblasti automatizace a robotizace",
+        "Spolupráce s partnerskými školami propaguje polytechnické vzdělání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však dlouhé a složitě strukturované, což snižuje srozumitelnost pro laiky.",
+      "uncertainty_notes": [
+        "Počet žáků v jednotlivých oborech není přesně specifikován – známe jen celkový počet 380 žáků",
+        "Konkrétní výsledky doučování v matematice nejsou uvedeny – není jasné, proč opatření nevedla k zlepšení",
+        "Detaily o kombinovaném vzdělávání (Microsoft Teams) jsou minimální – není jasné, jak se projekt vyvíjí"
+      ]
+    }
+  }
+}

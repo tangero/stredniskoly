@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "GY4_600009122_2023-04-14",
+  "school_profile": {
+    "school_type": "Střední pedagogická škola, gymnázium a vyšší odborná škola",
+    "inspection_period": "14. až 21. dubna 2023",
+    "school_change_summary": "Od inspekce v 2016 vzrostl počet žáků o třetinu (nyní 587 žáků v 19 třídách). Škola přidala obor vyššího odborného vzdělání a zvýšila počet tříd v oboru Předškolní pedagogika. Zřídila školní poradenské pracoviště a systém podpory žáků se speciálními potřebami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava v reálném prostředí",
+        "detail": "Škola má funkční spolupráci se sociálními partnery (mateřské školy, stacionáře, charita), kde žáci realizují odborné a učební praxe a získávají praktické dovednosti.",
+        "evidence": "Spolupráce se sociálními partnery umožňuje žákům aplikovat vědomosti v reálném pracovním prostředí."
+      },
+      {
+        "tag": "Kvalitní výsledky maturit",
+        "detail": "Ve školním roce 2021/2022 uspělo u maturitních zkoušek 95 % žáků, čtvrtina s vyznamenáním.",
+        "evidence": "Žáci všech oborů dosahují dlouhodobě vyšší průměrné úspěšnosti ve srovnění se stejnou skupinou oborů v ČR."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola aktivně podporuje účast žáků v soutěžích a soutěžních přehlídkách s celorepublikovou působností.",
+        "evidence": "Zapojením do soutěží škola podporuje rozvoj tvůrčích schopností a nadání žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá kvalita teoretické výuky",
+        "detail": "Převažuje frontální výuka s dominantní rolí učitele, která nepodporuje rozvoj kritického myšlení a klíčových kompetencí.",
+        "evidence": "Žákům byly předkládány hotové poznatky, pracovali s jedním zdrojem informací, chyběla skupinová práce a reflexe."
+      },
+      {
+        "tag": "Nejednotný systém podpory slabších žáků",
+        "detail": "Škola nemá jednotnou strategii pro podporu žáků ohrožených neúspěchem; opatření závisí na jednotlivých učitelích.",
+        "evidence": "Nejčastější podporou je doučování, chybí systematický přístup k žákům s vysokou absencí nebo nehodnocením."
+      },
+      {
+        "tag": "Problémy s organizační strukturou",
+        "detail": "Organizační struktura neodpovídá velikosti a složitosti školy, chybí efektivní kontrolní mechanismy.",
+        "evidence": "Nedostatečná koordinace oborů, nesystematická práce s výsledky vzdělávání, formální činnost předmětových komisí."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s učením nebo vysokou absenci?",
+      "Jaké jsou podmínky pro žáky, kteří se věnují vrcholovému sportu – jak se slaďuje trénink se studiem?",
+      "Jak se v hodinách teoretických předmětů rozvíjí kritické myšlení a samostatné myšlení žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na pedagogické obory (předškolní pedagogika, sociální činnost) – mají kvalitní praktickou přípravu v reálných zařízeních",
+      "Nadaní a tvořiví žáci – škola podporuje účast v soutěžích a má vybavení pro dramatickou, hudební a výtvarnou výchovu",
+      "Žáci se speciálními vzdělávacími potřebami – škola má zřízené poradenské pracoviště a systém podpory"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují aktivní a interaktivní výuku – teoretické předměty jsou vedeny převážně frontálně s dominantní rolí učitele",
+      "Žáci oboru Gymnázium a Sociální činnost – dosahují horších výsledků, téměř čtyři pětiny neprospívajících pochází z těchto oborů",
+      "Žáci s tendencí na vyšší absenci – škola toleruje vyšší absenci sportovců, ale nemá jednotná pravidla pro individuální podporu"
+    ],
+    "plain_czech_summary": "Škola je zaměřená na pedagogické obory a nabízí kvalitní praktickou přípravu v reálných zařízeních. Maturitní výsledky jsou dobré (95 % úspěšnosti). Silnou stránkou je spolupráce se sociálními partnery a podpora nadaných žáků v soutěžích. Slabinou je převažující frontální výuka v teoretických předmětech, která málo rozvíjí kritické myšlení. Chybí jednotný systém podpory slabších žáků a efektivní organizační struktura. Obory Gymnázium a Sociální činnost mají horší výsledky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoká úspěšnost",
+      "key_numbers": [
+        "95 % žáků uspělo u maturitních zkoušek v r. 2021/2022",
+        "Čtvrtina prospěla s vyznamenáním",
+        "Obor Sociální činnost: 4 neprospěli ze 17 žáků"
+      ],
+      "evidence": "Žáci všech oborů dosahují dlouhodobě vyšší průměrné úspěšnosti ve srovnění se stejnou skupinou oborů v České republice."
+    },
+    "absence": {
+      "trend": "Problematická u některých skupin",
+      "key_numbers": [
+        "Vysoký počet nehodnocených žáků v některých pololetích",
+        "V 1. pololetí 2021/2022 až šestina žáků 3. ročníku nehodnocena",
+        "Nejvíce nehodnocených z tělesné výchovy v oboru Gymnázium"
+      ],
+      "evidence": "Příčinou byla neúčast na výuce z důvodů časové kolize s tréninkovým plánem. Škola zpřísnila podmínky, ale problém částečně přetrvává."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se výchovným poradcem a metodikem prevence",
+      "Systém přenosu informací o žácích se speciálními vzdělávacími potřebami",
+      "Doučování a individuální konzultace pro slabší žáky",
+      "Motivační stipendia pro žáky podporovaných oborů"
+    ],
+    "safety_climate": [
+      "Pozitivní přístup k chování žáků – více pochval než kázeňských opatření",
+      "Důsledné řešení problémového chování ve spolupráci se žáky a zákonnými zástupci",
+      "Žákovský parlament se podílí na organizaci akcí a může ovlivňovat vnitřní pravidla"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s mateřskými školami, stacionáři, nízkoprahovými zařízeními, charitou a speciálními školami",
+      "Realizace odborných a učebních praxí na pracovištích smluvních partnerů",
+      "Funkční kariérové poradenství se sociálními partnery"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s příklady. Některé pasáže jsou technicky náročnější, ale celkově je text pro rodiče čitelný.",
+    "uncertainty_notes": [
+      "Vyšší odborné vzdělání je nové (od 2022/2023), proto chybí dlouhodobé údaje o jeho kvalitě a úspěšnosti absolventů",
+      "Konkrétní počty neprospívajících žáků nejsou uvedeny pro všechny obory, pouze procento cca 3 %",
+      "Není jasné, jak konkrétně se liší kvalita výuky mezi jednotlivými učiteli v teoretických předmětech"
+    ]
+  }
+}
+```

@@ -1,0 +1,109 @@
+{
+  "report_id": "SOS_651036232_2022-12-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:53:30.367630+00:00",
+  "run_finished_utc": "2026-02-09T16:53:55.299426+00:00",
+  "raw_file": "SOS_651036232_2022-12-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_651036232_2022-12-13",
+    "school_profile": {
+      "school_type": "Střední škola veřejnoprávní a Vyšší odborná škola bezpečnosti silniční dopravy",
+      "inspection_period": "13. až 16. prosince 2022",
+      "school_change_summary": "Došlo ke změnám v personálním obsazení u obou zástupců ředitele, byly zkvalitněny materiální podmínky výuky včetně nové učebny výpočetní techniky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola úspěšně propojuje teoretické vědomosti s jejich aplikací v praktickém životě a dlouhodobě spolupracuje s odborníky z praxe.",
+          "evidence": "Dlouhodobá spolupráce s odborníky z praxe se projevuje v kontaktu školy s aktuální situací v oblastech, kde budou žáci a studenti působit."
+        },
+        {
+          "tag": "Pestrá nabídka aktivit",
+          "detail": "Škola nabízí rozmanitý program kurzů a zážitkových aktivit doplňujících výuku (adaptační kurz, vojenský kurz, vodácký kurz, lyžařský výcvik).",
+          "evidence": "Škola připravuje celou řadu kurzů a zážitkových aktivit v duchu hesla 'Zažij školu jinak'."
+        },
+        {
+          "tag": "Vysoká úspěšnost maturit",
+          "detail": "Škola dosáhla 87,5% úspěšnosti u maturitních zkoušek, studenti vyšší odborné školy uspěli ze 100%.",
+          "evidence": "Ve školním roce 2021/2022 škola dosáhla celkově 87,5% úspěšnosti u maturitních zkoušek, ze studentů vyšší odborné školy denního a kombinovaného studia uspělo 100%."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá diferenciace ve výuce",
+          "detail": "Učitelé málo uplatňují diferencovaný přístup k jednotlivým žákům přímo během hodin, pouze nabízejí další úkoly nadanějším.",
+          "evidence": "Méně často byl uplatněn diferencovaný přístup, byl omezen pouze na případné výzvy k plnění dalších úkolů pro pohotovější jedince."
+        },
+        {
+          "tag": "Nejasné cíle hodin",
+          "detail": "Učitelé často neformulují konkrétní cíl hodiny, pouze sdělí téma, což ztěžuje následné hodnocení.",
+          "evidence": "Většinou nebyl konkrétně stanoven cíl hodiny, byl nahrazován pouhým sdělením tématu učiva."
+        },
+        {
+          "tag": "Nedostatečné sebehodnocení",
+          "detail": "Na konci hodin chybí nebo je velmi stručné zhodnocení a sebehodnocení žáků.",
+          "evidence": "V závěru vyučovacích hodin se proto nemohli vyučující odkázat na splnění cíle, zhodnocení a sebehodnocení chybělo nebo bylo velmi stručné a obecné."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku potřebám jednotlivých žáků s různými schopnostmi?",
+        "Jaké jsou konkrétní příklady spolupráce se zaměstnavateli a jak se to odráží v praxi studentů?",
+        "Jak škola řeší podporu žáků, kteří mají potíže s učením nebo jsou ohroženi školním neúspěchem?"
+      ],
+      "who_school_fits": [
+        "Žáci zajímající se o bezpečnost a právní vědy s ambicí pracovat v tomto oboru",
+        "Studenti, kteří si cení praktického vzdělání a spolupráce s odborníky z praxe",
+        "Mladí lidé, kteří se chtějí účastnit zajímavých kurzů a zážitkových aktivit mimo běžnou výuku"
+      ],
+      "who_should_be_cautious": [
+        "Žáci vyžadující individuální přístup a diferenciovanou výuku mohou být zklamáni omezením tohoto přístupu",
+        "Studenti, kteří potřebují jasně definované cíle a strukturované zpětné vazby, mohou mít problémy",
+        "Žáci se speciálními vzdělávacími potřebami by měli ověřit rozsah dostupné podpory"
+      ],
+      "plain_czech_summary": "TRIVIS je střední a vyšší odborná škola zaměřená na bezpečnost a právní vědy v Jihlavě. Škola vyniká vysokou úspěšností maturit (87,5%), propojením teorie s praxí a bohatou nabídkou aktivit. Inspekce ocenila spolupráci s odborníky a kvalitní materiální vybavení. Slabší stránkou je málo diferencovaná výuka a nejasné formulování cílů hodin. Škola je vhodná pro motivované žáky zajímající se o daný obor a ochotné se aktivně zapojit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní",
+        "key_numbers": [
+          "87,5% úspěšnost u maturitních zkoušek ve školním roce 2021/2022",
+          "100% úspěšnost studentů vyšší odborné školy denního a kombinovaného studia",
+          "289 žáků ve střední škole, 86 studentů ve vyšší odborné škole"
+        ],
+        "evidence": "Ve školním roce 2021/2022 škola dosáhla celkově 87,5% úspěšnosti u maturitních zkoušek. Ze studentů vyšší odborné školy denního a kombinovaného studia uspělo 100%."
+      },
+      "absence": {
+        "trend": "Neuvedeno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje konkrétní údaje o absenci žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště pracující se žáky se speciálními vzdělávacími potřebami",
+        "Vlastní seznam žáků ohrožených školním neúspěchem s navrhovanými opatřeními",
+        "Pravidelné vyhodnocování efektivnosti opatření a jejich úpravy podle potřeby"
+      ],
+      "safety_climate": [
+        "Škola zachytila případ nevhodného chování s prvky šikany a důsledně jej řešila",
+        "Aktuálně nemá poznatky o pokračování problému",
+        "Prevence rizikového chování je integrována do výuky a doplňována zážitkovými aktivitami"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s osmi školami společného zřizovatele na zlepšení kvality výuky",
+        "Promyšlená organizace odborné praxe v individuální a skupinové formě",
+        "Smluvní partneři vybíráni s ohledem na zaměření školy a aktuální situaci v oboru"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky. Silné a slabé stránky jsou jasně identifikovány. Chybí však konkrétní údaje o absenci a některé aspekty nejsou dostatečně detailní.",
+      "uncertainty_notes": [
+        "Inspekční zpráva neobsahuje údaje o absenci žáků, což je důležitý indikátor kvality prostředí",
+        "Není jasné, jak konkrétně se diferencovaný přístup uplatňuje v praxi mimo pozorované hodiny",
+        "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami a rozsahu jejich podpory"
+      ]
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "report_id": "SOS_600005356_2023-11-28",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:32:43.312518+00:00",
+  "run_finished_utc": "2026-02-09T16:33:11.314194+00:00",
+  "raw_file": "SOS_600005356_2023-11-28.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600005356_2023-11-28",
+    "school_profile": {
+      "school_type": "Střední škola Podnikatelská akademie, s.r.o. – čtyřletý obor Ekonomika a podnikání zakončený maturitou",
+      "inspection_period": "28. listopadu až 30. listopadu 2023",
+      "school_change_summary": "Od inspekce v roce 2016 došlo k mírnému nárůstu počtu žáků (159 žáků v pěti třídách). Kvalita výuky ekonomických předmětů se zkvalitnila, škola obnovila materiální vybavení a vybudovala jazykovou učebnu a multimediální studovnu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné materiální podmínky",
+          "detail": "Škola má moderní učebny s interaktivními tabulemi, mobilní počítačovou učebnu, jazykovou učebnu a multimediální studovnu.",
+          "evidence": "Nadstandardní materiální a finanční podmínky, pravidelná obnova vybavení didaktickými pomůckami a moderní technikou."
+        },
+        {
+          "tag": "Stabilní a zkušený pedagogický sbor",
+          "detail": "Učitelé mají dlouhodobou praxi a předávají zkušenosti mladším kolegům, novým pedagogům je poskytována systematická podpora.",
+          "evidence": "Stabilizovaný pedagogický sbor, převážně kvalifikovaní vyučující s delší pedagogickou praxí."
+        },
+        {
+          "tag": "Motivující prostředí pro studium",
+          "detail": "Škola nabízí soutěže, certifikované zkoušky z angličtiny, bezplatné kurzy řidičského oprávnění pro nejlepší žáky a mezipředmětové projekty.",
+          "evidence": "Vedení školy cíleně vytváří motivační prostředí, žáci dosahují velmi dobrých výsledků v soutěžích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v češtině na maturitě",
+          "detail": "Žáci dosahují horších výsledků v českém jazyce a literatuře než je celorepublikový průměr, zejména žáci s odlišným mateřským jazykem.",
+          "evidence": "Nižší míra úspěšnosti ve společné části maturitní zkoušky z českého jazyka a literatury, analýzou zjištěno, že se na neúspěšnosti podílejí především žáci s odlišným mateřským jazykem."
+        },
+        {
+          "tag": "Nedostatečná podpora žáků s jiným mateřským jazykem",
+          "detail": "Přestože ředitelka přijímá opatření jako individuální konzultace, není tato podpora dostatečná.",
+          "evidence": "Nízká míra podpory žáků s odlišným mateřským jazykem, chybí diferenciace úkolů a účinná podpora v českém jazyce."
+        },
+        {
+          "tag": "Problémy s absencí žáků",
+          "detail": "Pozdní příchody a absence patří mezi nejčastěji řešené problémy vedoucí k ukládání kázeňských opatření, vyšší absence je i u maturantů.",
+          "evidence": "Pozornost věnována vyšší absenci žáků, pozdní příchody a absence patří mezi nejčastěji řešené problémy."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s odlišným mateřským jazykem v češtině? Existují speciální semináře nebo individuální konzultace?",
+        "Jaké konkrétní opatření škola přijímá proti vysoké absenci žáků a jak komunikuje s rodiči?",
+        "Jak se škola zaměřuje na přípravu žáků na společnou část maturitní zkoušky z českého jazyka?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o ekonomii a podnikání, kteří chtějí studovat v moderním prostředí s kvalitním vybavením",
+        "Motivovaní žáci, kterým vyhovuje malá rodinná škola s příznivou atmosférou a individuálním přístupem",
+        "Žáci, kteří se chtějí zapojit do soutěží a projektů a mají ambici pokračovat na vysoké škole"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s odlišným mateřským jazykem by měli zvážit, zda je podpora v češtině dostatečná pro jejich potřeby",
+        "Žáci se sklonem k absencím, protože škola řeší absence jako jeden z hlavních problémů",
+        "Žáci, kteří potřebují intenzivní individuální podporu v českém jazyce a literatuře"
+      ],
+      "plain_czech_summary": "Podnikatelská akademie je malá soukromá střední škola s výborným materiálním vybavením a stabilním pedagogickým sborem. Silnou stránkou je motivující prostředí a kvalitní výuka odborných ekonomických předmětů. Hlavní problém je slabší příprava na maturitu z češtiny, zejména pro žáky s jiným mateřským jazykem. Škola také řeší vyšší absenci žáků. Vhodná pro motivované žáky se zájmem o ekonomii, ale žáci s problémy v češtině by měli zvážit, zda je podpora dostatečná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní vývoj – snížení celkové neúspěšnosti, ve školním roce 2022/2023 všichni přihlášení žáci zkoušku konali",
+        "key_numbers": [
+          "Velmi dobré výsledky v cizích jazycích",
+          "Horší výsledky v českém jazyce a literatuře než celorepublikový průměr",
+          "Velmi dobré výsledky v profilové části maturitní zkoušky"
+        ],
+        "evidence": "Výsledky vzdělávání u maturitní zkoušky za poslední tři školní roky odpovídaly průběžným výsledkům. Na neúspěšnosti v českém jazyce se podílejí především žáci s odlišným mateřským jazykem."
+      },
+      "absence": {
+        "trend": "Negativní – vyšší absence je zřejmá i u žáků maturitního ročníku",
+        "key_numbers": [
+          "Pozdní příchody a absence patří mezi nejčastěji řešené problémy",
+          "Vedou k ukládání kázeňských opatření",
+          "Vyšší absence u maturantů"
+        ],
+        "evidence": "Pozornost je věnována vyšší absenci žáků. Pozdní příchody a absence žáků patří mezi nejčastěji řešené problémy."
+      },
+      "support_services": [
+        "Funkční systém poradenských služeb – výchovná poradkyně a metodik prevence sociálně patologických jevů",
+        "Včasná identifikace žáků s potřebou podpůrných opatření a spolupráce se zákonnými zástupci",
+        "Preventivní program zaměřený na bezpečné chování, zdravý životní styl a pozitivní mezilidské vztahy",
+        "Individuální konzultace pro žáky s odlišným mateřským jazykem (ale inspekce hodnotí jako nedostatečné)"
+      ],
+      "safety_climate": [
+        "Velmi nízký výskyt různých forem rizikového chování",
+        "Nastavené funkční preventivní mechanismy umožňují včas odhalovat a zachycovat rizikové chování",
+        "Pravidelné zjišťování sociálního klimatu ve třídách",
+        "Příznivé vzdělávací klima malé rodinné školy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se školskými poradenskými zařízeními",
+        "Spolupráce s Metropolitní univerzitou Praha",
+        "Přednášky odborníků z praxe",
+        "Exkurze a návštěvy divadel",
+        "Realizace mezipředmětových projektů (Green Day, Business Day)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o důkazy. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Inspekční zpráva neuvádí konkrétní procenta neúspěšnosti u maturitní zkoušky, pouze kvalitativní popis",
+        "Není jasné, kolik přesně žáků s odlišným mateřským jazykem škola má a jak velký je jejich podíl",
+        "Konkrétní počet absencí a jejich trend nejsou v číslech vyjádřeny"
+      ]
+    }
+  }
+}

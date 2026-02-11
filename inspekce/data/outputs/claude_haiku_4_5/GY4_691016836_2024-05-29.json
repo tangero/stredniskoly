@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_691016836_2024-05-29",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:15:45.396955+00:00",
+  "run_finished_utc": "2026-02-09T16:16:07.809573+00:00",
+  "raw_file": "GY4_691016836_2024-05-29.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691016836_2024-05-29",
+    "school_profile": {
+      "school_type": "Čtyřleté gymnázium s všeobecným vzděláním v denní formě",
+      "inspection_period": "29. května až 31. května 2024",
+      "school_change_summary": "Škola funguje od 1. září 2023. K inspekci měla 48 žáků ve dvou třídách prvního ročníku. Sídlí v pronajatých prostorech v Praze 3, spolupracuje s partnerskými subjekty na sportovních a uměleckých aktivitách."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Digitální vzdělávání",
+          "detail": "Jednotná elektronická platforma poskytuje žákům sdílené materiály, interaktivní cvičení a prostor pro zpětnou vazbu.",
+          "evidence": "Všichni žáci využívají notebooky a mobilní telefony, zpracovávají digitální obsahy a vytvářejí vlastní výstupy."
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Pedagogové vedou každého žáka k samostatnému pokroku s důrazem na sebehodnocení a sebereflexi.",
+          "evidence": "Tandemová výuka, konzultace, doučování a možnost opravy výstupů pro žáky ohrožené neúspěchem."
+        },
+        {
+          "tag": "Pozitivní klima",
+          "detail": "Partnerský přístup pedagogů a důsledné dodržování pravidel vytváří příjemnou pracovní atmosféru.",
+          "evidence": "Všechny sledované hodiny měly příjemnou atmosféru založenou na vzájemném partnerském přístupu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezené přírodovědné vybavení",
+          "detail": "Škola nemá vlastní laboratoře ani odborné učebny pro přírodní vědy.",
+          "evidence": "Materiálně technické zázemí pro výuku přírodovědných předmětů je limitující, didaktické pomůcky omezené."
+        },
+        {
+          "tag": "Vyšší absence žáků",
+          "detail": "Někteří žáci mají zvýšenou omluvenou absenci, převážně z důvodu nemoci.",
+          "evidence": "Neprospívající žáci měli obvykle zvýšenou omluvenou absenci, škola s nimi individuálně pracuje."
+        },
+        {
+          "tag": "Nový subjekt",
+          "detail": "Škola existuje teprve od září 2023, takže chybí dlouhodobé zkušenosti a data.",
+          "evidence": "Instituce vykonává činnost od 1. 9. 2023, inspekce proběhla v prvním roce provozu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně budete řešit nedostatek vlastních laboratoří a odborných učeben pro přírodní vědy?",
+        "Jaké máte plány na rozšíření materiálního vybavení v příštích letech?",
+        "Jak se budete věnovat žákům s vyšší absencí a jak jim pomáháte dohonit zmeškané učivo?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení individuálního přístupu a moderního digitálního vzdělávání",
+        "Motivovaní studenti, kteří chtějí studovat v malých třídách s osobnějším kontaktem na učitele",
+        "Žáci zajímající se o humanitní obory, kde je vybavení dostatečné"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se zájmem o experimentální přírodní vědy a chemii – vybavení je omezené",
+        "Rodiny, které potřebují dlouhodobě ověřené tradice a historii školy",
+        "Žáci s tendencí k vyšší absenci – škola sleduje absence a reaguje na ně"
+      ],
+      "plain_czech_summary": "Gymnázium KUDYKAMPUS je nová soukromá škola s moderním přístupem k výuce. Silnými stránkami jsou digitální platforma, individuální péče o žáky a pozitivní klima. Slabinou je omezené vybavení pro přírodní vědy – chybí laboratoře a odborné učebny. Škola funguje teprve od září 2023, takže jde o nový projekt. Inspektoři oceňují kvalitu pedagogů a jejich přístup, ale doporučují zlepšit materiální vybavení a řešit vyšší absenci žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze určit – škola existuje teprve od září 2023, žáci jsou v prvním ročníku",
+        "key_numbers": [
+          "48 žáků ve dvou třídách prvního ročníku",
+          "Nejméně dvě třídy naplněny pro školní rok 2024/2025"
+        ],
+        "evidence": "Škola dosud neměla žádné maturitní zkoušky. Koncepčním záměrem je postupné otevírání dalších tříd."
+      },
+      "absence": {
+        "trend": "Zvýšená absence u některých žáků, převážně z důvodu nemoci",
+        "key_numbers": [
+          "Šest žáků neprospělo v prvním pololetí 2023/2024",
+          "Neprospívající žáci měli obvykle zvýšenou omluvenou absenci"
+        ],
+        "evidence": "Škola s těmito žáky individuálně pracuje a poskytuje zvýšenou podporu prostřednictvím digitální platformy."
+      },
+      "support_services": [
+        "Školní psycholožka, výchovná poradkyně a metodička prevence pracují v úzké spolupráci s vedením",
+        "Individuální přístup ve výuce, konzultace a doučování pro žáky ohrožené neúspěchem",
+        "Jeden žák se speciálními vzdělávacími potřebami a šest žáků s odlišným mateřským jazykem bez jazykové bariéry"
+      ],
+      "safety_climate": [
+        "Čipový systém a zabezpečený vstup do budovy zvyšují bezpečnost žáků",
+        "Preventivní strategie se promítá do hodnocení chování – snížené známky nejsou udělovány",
+        "Tematické přednášky a preventivní programy vytvářejí příznivé sociální klima"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami a odborníky z praxe",
+        "Smluvně zajištěná tělocvična a víceúčelové hřiště pro tělesnou výchovu",
+        "Pronajatý ateliér pro výtvarnou výchovu",
+        "Veřejná jídelna v budově školy pro stravování žáků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a citace z pozorování. Jediným omezením je, že se jedná o velmi novou školu bez dlouhodobých dat o výsledcích.",
+      "uncertainty_notes": [
+        "Nelze posoudit dlouhodobou kvalitu – škola funguje teprve 9 měsíců",
+        "Chybí data o maturitních výsledcích a jejich trendech",
+        "Absence údajů o úspěšnosti absolventů na vysokých školách"
+      ]
+    }
+  }
+}

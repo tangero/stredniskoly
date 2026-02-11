@@ -1,0 +1,107 @@
+{
+  "report_id": "SOS_600007499_2022-03-01",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:14:32.435667+00:00",
+  "run_finished_utc": "2026-02-10T07:15:47.736536+00:00",
+  "raw_file": "SOS_600007499_2022-03-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600007499_2022-03-01",
+    "school_profile": {
+      "school_type": "Soukromá střední škola poskytující vzdělání v oborech Obchodní akademie (denní) a Provozní technika (kombinovaná).",
+      "inspection_period": "1. − 3. března 2022",
+      "school_change_summary": "Od roku 2019 se snížil počet žáků i tříd, v září 2020 došlo ke změně ve vedení školy a zlepšilo se digitální vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Klima a bezpečnost",
+          "detail": "V malé instituci se daří eliminovat rizikové chování a zlepšovat sociální klima.",
+          "evidence": "V atmosféře menší instituce se daří eliminovat rizikové chování žáků."
+        },
+        {
+          "tag": "Výuka cizích jazyků",
+          "detail": "Výuka cizích jazyků probíhá důsledně v cílovém jazyce s využitím techniky.",
+          "evidence": "Přínosem pro žáky bylo důsledné vedení výuky v příslušném cizím jazyce."
+        },
+        {
+          "tag": "Digitální vybavení",
+          "detail": "Škola investovala do digitálních technologií pro podporu distanční výuky.",
+          "evidence": "Škola zlepšila vybavení digitální technikou... v souvislosti se zajišťováním... distančního vzdělávání."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Extrémní neúspěšnost u maturity",
+          "detail": "Většina žáků neuspěje ve společné části maturity, výsledky jsou několikanásobně horší než průměr.",
+          "evidence": "Hrubá neúspěšnost žáků... ve společné části MZ vždy několikanásobně horší než průměr... v rámci ČR."
+        },
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "Většinu výuky klíčových předmětů zajišťují učitelé bez odborné kvalifikace.",
+          "evidence": "Výrazná většina výuky těchto předmětů... je vedena učiteli bez odborné kvalifikace."
+        },
+        {
+          "tag": "Závadná absence a fluktuace",
+          "detail": "Škola neřeší efektivně vysokou absenci a neomluvené hodiny, žáci často předčasně odcházejí.",
+          "evidence": "Systém dlouhodobě selhává v podchycování a řešení záškoláctví a vysoké absence... neomluvené absence... přibližně 25 h na žáka."
+        }
+      ],
+      "questions_for_open_day": [
+        "Kolik procent žáků v loňském roce úspěšně složilo společnou část maturitní zkoušky na první pokus?",
+        "Kdo bude učit mé dítě český jazyk a matematiku, a má tento učitel příslušnou kvalifikaci?",
+        "Jak škola konkrétně řeší vysokou absenci žáků a zameškané hodiny?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří potřebují velmi tolerantní prostředí s nízkými nároky na studijní výsledky.",
+        "Žáci, kteří chtějí studovat v malém kolektivu s důrazem na individuální přístup.",
+        "Pro zájemce o kombinované nástavbové studium, kteří jsou schopni samostatně učení."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří mají ambice bez problémů složit státní maturitu a pokračovat na VŠ.",
+        "Rodiče, kteří očekávají kvalifikovaný pedagogický dohled a efektivní nápravu problémů.",
+        "Studenti se specifickými vzdělávacími potřebami, které škola momentálně nezajišťuje."
+      ],
+      "plain_czech_summary": "Inspekce odhalila na škole vážné problémy. Ačkoliv je prostředí bezpečné a vybavení se zlepšilo, většina žáků neuspěje u společné části maturity a výsledky jsou jedny z nejhorších v ČR. Výuku klíčových předmětů často zajišťují nekvalifikovaní učitelé a škola nedokáže účinně řešit vysokou absenci žáků. Rodiče by měli zvážit, zda škola dokáže zajistit kvalitní přípravu k maturitě, když inspekce opakovaně nachází stejné nedostatky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazně negativní",
+        "key_numbers": [
+          "Hrubá neúspěšnost u maturity v roce 2020 dosáhla téměř 70 %.",
+          "Neúspěšnost je dlouhodobě několikanásobně vyšší než republikový průměr.",
+          "V roce 2020 neuspěla v českém jazyce téměř polovina žáků."
+        ],
+        "evidence": "V oboru Obchodní akademie... hrubá neúspěšnost... vždy několikanásobně horší než průměr... v rámci ČR."
+      },
+      "absence": {
+        "trend": "Vysoká a stoupající",
+        "key_numbers": [
+          "Průměrná absence v 1. pololetí 2021/2022 je cca 160 hodin na žáka.",
+          "Neomluvená absence činí přibližně 25 hodin na žáka.",
+          "Téměř třetina žáků není v pololetí hodnocena."
+        ],
+        "evidence": "Průměrná absence přibližně 160 h na žáka... neomluvené absence... přibližně 25 h na žáka."
+      },
+      "support_services": [
+        "Funkci výchovného poradce a metodika prevence vykonávají pracovníci bez specializačního studia.",
+        "Nastavený systém dlouhodobě selhává v podchycování a řešení záškoláctví.",
+        "Doučování a individuální konzultace byly žákům nabízeny nepravidelně."
+      ],
+      "safety_climate": [
+        "V atmosféře menší instituce se daří eliminovat rizikové chování žáků.",
+        "Adaptační dny a lyžařský kurz přispívají ke zlepšení sociálního klimatu."
+      ],
+      "partnerships_practice": [
+        "Škola přijímá dlouhodobě všechny uchazeče bez ohledu na studijní předpoklady.",
+        "Výrazný podíl žáků přichází přestupem z jiné školy, včetně přestupů do maturitního ročníku."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 1,
+      "czech_clarity_reason": "Text je psán standardním úředním jazykem, je srozumitelný a obsahuje jasná data a závěry.",
+      "uncertainty_notes": []
+    }
+  }
+}

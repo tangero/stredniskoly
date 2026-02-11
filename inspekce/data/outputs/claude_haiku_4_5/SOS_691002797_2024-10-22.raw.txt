@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_691002797_2024-10-22",
+  "school_profile": {
+    "school_type": "Střední škola zahradnická a technická s domovem mládeže a školní jídelnou. Vyučuje obory s výučním listem (Zahradník, Opravář lesnických strojů, Zahradnické práce) a obory s maturitou (Zahradnictví, Scénická a výstavní tvorba, Mechanizace a služby, Chovatel cizokrajných zvířat).",
+    "inspection_period": "22. až 24. října 2024",
+    "school_change_summary": "Škola má nadregionální působnost s 861 žáky, z toho 166 se speciálními vzdělávacími potřebami. Postupně se zlepšuje materiální zabezpečení, zejména v oblasti odborného vybavení pro některé obory."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Mezinárodní spolupráce a partnerství",
+        "detail": "Škola nabízí bohaté zahraniční aktivity včetně pracovních stáží v Holandsku a Slovinsku, což žákům rozšiřuje odborné dovednosti.",
+        "evidence": "Erasmus+ projekt, mezinárodní soutěže a burzy, četné mezinárodní aktivity školy"
+      },
+      {
+        "tag": "Bezpečné a vstřícné prostředí",
+        "detail": "Učitelé vytvářejí přátelské a bezpečné prostředí s otevřenou komunikací, kde se žáci nebojí chybovat.",
+        "evidence": "Velmi vysoká odborná úroveň praktického vyučování, empatie a respekt vůči žákům"
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují výborných umístění v celostátních i mezinárodních soutěžích, zejména v zahradnických a technických oborech.",
+        "evidence": "Lipová ratolest, Zlatý pohár ve svařování, Mistrovství ČR v orbě"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Zastaralé vybavení technických oborů",
+        "detail": "Strojní vybavení dílen neodpovídá reálnému pracovnímu prostředí a nesleduje nové technologie.",
+        "evidence": "Strojní vybavení je zastaralé, mělo by být obnoveno a modernizováno"
+      },
+      {
+        "tag": "Málo individualizované vyučování",
+        "detail": "Výuka často probíhá v jednotném tempu bez dostatečné diferenciace pro nadané či pomalejší žáky.",
+        "evidence": "Pouze část hodin využívá širší portfolio metod, málo zohledňování individuálních potřeb diferenciací"
+      },
+      {
+        "tag": "Nejednotné podmínky v domově mládeže",
+        "detail": "Mezi jednotlivými budovami domova mládeže jsou značné rozdíly v kvalitě materiálního vybavení.",
+        "evidence": "Značné rozdíly v kvalitě materiálního vybavení mezi jednotlivými budovami domova mládeže"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní plány má škola na modernizaci strojního vybavení pro technické obory?",
+      "Jak se škola zaměřuje na individualizaci výuky pro nadané a pomalejší žáky?",
+      "Jaké jsou podmínky ubytování v domově mládeže a jak se liší mezi jednotlivými budovami?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o zahradnictví, floristiku a chovatelství – obory mají výborné vybavení a tradici úspěchů",
+      "Žáci, kteří chtějí získat praktické zkušenosti a pracovat v bezpečném, vstřícném prostředí",
+      "Žáci ze vzdálenějších míst – škola nabízí kvalitní ubytování v domově mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci technických oborů, kteří očekávají moderní vybavení odpovídající současným trendům – vybavení dílen je zastaralé",
+      "Žáci, kteří potřebují silnou individualizaci a diferenciaci – výuka často probíhá v jednotném tempu",
+      "Žáci, kteří se spoléhají na sebehodnocení a reflexi – tyto prvky nejsou systematicky zařazovány"
+    ],
+    "plain_czech_summary": "Střední škola zahradnická a technická v Litomyšli je kvalitní školou se silným zaměřením na praktické vzdělání. Žáci dosahují výborných výsledků v soutěžích a mají přístup k mezinárodním stážím. Prostředí je bezpečné a vstřícné. Hlavní slabinou je zastaralé vybavení technických dílen a málo individualizovaná výuka v teoretických předmětech. Škola postupně zlepšuje své podmínky a má dobré vedení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, bez negativních tendencí",
+      "key_numbers": [
+        "Úspěšnost u maturitní zkoušky odpovídá celorepublikovému srovnění",
+        "43 neúspěšných žáků ve školním roce 2023/2024",
+        "Nízký počet neúspěšných žáků srovnatelný napříč obory"
+      ],
+      "evidence": "V ročníkových výsledcích nebyly zaznamenány negativní tendence, úspěšnost odpovídá obvyklým výsledkům"
+    },
+    "absence": {
+      "trend": "Absence je identifikovaným rizikem pro školní neúspěch",
+      "key_numbers": [
+        "Ohrožení školním neúspěchem se týká spíše žáků s neomluvenou absencí",
+        "Žáci se speciálními vzdělávacími potřebami nejsou ohroženou skupinou"
+      ],
+      "evidence": "Pracovníci školního poradenského pracoviště řeší problémy s absencí, výchovní poradci sledují průběh vzdělávání"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se scházejí a řeší problémy a potřeby žáků",
+      "Výchovní poradci sledují žáky s potřebou podpory a zaměřují se na práci s nimi v hodinách",
+      "Asistentky pedagoga účelně napomáhají žákům se stanovenými podpůrnými opatřeními",
+      "Adaptační kurzy pro první ročníky na podporu vztahů v třídním kolektivu",
+      "Preventivní témata jsou přirozenou součástí vzdělávacího obsahu"
+    ],
+    "safety_climate": [
+      "Velmi otevřená komunikace mezi učiteli a žáky a žáky navzájem",
+      "Učitelé vedli žáky k dodržování pravidel bezpečnosti při práci a vhodnému používání ochranných pomůcek",
+      "Vstřícná respektující pracovní atmosféra přispívá k utváření pozitivního a příjemného učebního prostředí",
+      "Žáci se nebojí vyjádřit svůj názor a nebát se chybovat"
+    ],
+    "partnerships_practice": [
+      "Velký počet spolupracujících tuzemských profesních a sociálních partnerů",
+      "Erasmus+ projekt – pracovní stáže v Holandsku a Slovinsku",
+      "Projekty Zelená učebna a Školní přírodní zahrada",
+      "Mezinárodní soutěže a burzy v zahradnických a technických oborech",
+      "Svářečské kurzy a školní výstavy pro veřejnost"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a citace. Struktura je logická, ale některé pasáže jsou technicky náročnější. Pro rodiče jsou klíčové informace jasně identifikovatelné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní procenta úspěšnosti u maturit – pouze uvádí, že odpovídají celorepublikovému průměru",
+      "Není jasné, jaký je konkrétní časový plán na modernizaci technického vybavení",
+      "Formální charakter činnosti žákovského parlamentu není detailně vysvětlen"
+    ]
+  }
+}
+```

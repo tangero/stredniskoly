@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600014053_2023-12-12",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté studium) s rozšířenou výukou jazyků",
+    "inspection_period": "12. 12. 2023 – 14. 12. 2023",
+    "school_change_summary": "Od poslední inspekce došlo k rozšíření nabídky o třídy se zaměřením na rozšířenou výuku jazyků, zřízení studentského parlamentu a zlepšení materiálních podmínek. Škola si udržuje stabilní počet 365 žáků v 16 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Ve společné části maturitní zkoušky dosáhli žáci 100% úspěšnosti v letech 2021–2023.",
+        "evidence": "Dlouhodobě výborné výsledky vzdělávání žáků při ukončování maturitní zkouškou"
+      },
+      {
+        "tag": "Bohatá mezinárodní spolupráce",
+        "detail": "Škola má akreditaci Erasmus+ a organizuje zahraniční vzdělávací výjezdy, výměnné programy a přijímá zahraniční studenty.",
+        "evidence": "Dlouhodobá spolupráce se sociálními partnery v zahraničí efektivně přispívá k osobnostnímu rozvoji žáků"
+      },
+      {
+        "tag": "Nízká absence a vysoká motivace",
+        "detail": "Ve školním roce 2022/2023 dosáhla absence pouze 108 hodin na žáka za rok s téměř nulovou neomluvenou absencí.",
+        "evidence": "Poměrně nízké počty zameškaných vyučovacích hodin ve srovnání s jinými školami"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rezervy v bezpečnosti a dohledu",
+        "detail": "Systém bezpečnosti má v některých oblastech rezervy, zejména v zajištění dohledu nad žáky.",
+        "evidence": "Rezervy v identifikaci možných rizik především v zajištění dohledu nad žáky"
+      },
+      {
+        "tag": "Nejednotná aplikace podpory pro žáky se speciálními potřebami",
+        "detail": "Při hospitacích bylo zjištěno, že učitelé ne vždy uplatňovali podpůrná opatření v plném rozsahu.",
+        "evidence": "Učitelé měli obecný přehled o žácích se SVP a ne vždy uplatňovali podpůrná oatření v plném rozsahu"
+      },
+      {
+        "tag": "Menší důraz na komunikační dovednosti",
+        "detail": "V některých hodinách chyběla práce s cílem hodiny a rozvoj komunikačních dovedností žáků.",
+        "evidence": "Menší pozornost věnována v některých hodinách práci s cílem hodiny a rozvoji komunikačních dovedností"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami a jak jsou podpůrná opatření aplikována v jednotlivých předmětech?",
+      "Jaké jsou konkrétní kritéria pro přijetí do nové třídy s rozšířenou výukou cizích jazyků a jak se liší od běžného gymnázia?",
+      "Jak škola zajišťuje bezpečnost žáků v prostorách školy a jaké jsou konkrétní opatření pro dohled?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a zájmem o jazyky – škola má rozšířenou výuku cizích jazyků a dlouhodobě dosahuje výborných výsledků v jazykových předmětech",
+      "Talentovaní a nadaní žáci – škola má školní psycholožku a poradkyni pro nadané žáky, individuálně je podporuje a motivuje k účasti v soutěžích",
+      "Žáci se zájmem o mezinárodní spolupráci a cestování – škola má akreditaci Erasmus+ a organizuje řadu zahraničních vzdělávacích výjezdů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – inspekce zjistila, že podpůrná oatření nejsou vždy aplikována v plném rozsahu",
+      "Žáci vyžadující intenzivnější individuální přístup – převažuje frontální výuka, diferenciace podle schopností není vždy dostatečná",
+      "Žáci s potřebou silného dohledu a jasných bezpečnostních pravidel – systém bezpečnosti má rezervy v identifikaci rizik"
+    ],
+    "plain_czech_summary": "Gymnázium Jana Blahoslava je kvalitní střední škola s výborným renomé. Žáci dosahují skvělých výsledků u maturity (100% úspěšnost v poslední době) a škola nabízí bohatou mezinárodní spolupráci. Absence je nízká, klima ve škole pozitivní. Škola má však rezervy v zajištění bezpečnosti a dohledu, a ne všichni učitelé konzistentně aplikují podporu pro žáky se speciálními potřebami. Výuka se někdy příliš zaměřuje na frontální metody bez dostatečného rozvoje komunikačních dovedností."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborný",
+      "key_numbers": [
+        "100% úspěšnost ve společné části maturitní zkoušky v letech 2021–2023",
+        "Hrubá neúspěšnost 3,3 % v roce 2021 a 8,3 % v roce 2022",
+        "V roce 2021 neuspěl 1 žák, v roce 2022 dva žáci v profilové části"
+      ],
+      "evidence": "Úspěšnost žáků při ukončování vzdělávání maturitní zkouškou je dlouhodobě výborná"
+    },
+    "absence": {
+      "trend": "Velmi nízká a stabilní",
+      "key_numbers": [
+        "Školní rok 2022/2023: 108 hodin na žáka za rok",
+        "Školní rok 2021/2022: 129 hodin na žáka za rok",
+        "Nulová absence během distanční výuky 2020/2021"
+      ],
+      "evidence": "Ve srovnání s jinými školami se jedná o poměrně nízké počty zameškaných vyučovacích hodin"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní, školní psycholožkou a poradkyní pro nadané žáky",
+      "Péče o žáky se speciálními vzdělávacími potřebami – 38 žáků má podpůrná opatření prvního až třetího stupně",
+      "Kariérové poradenství a prevence rizikového chování s metodičkou prevence"
+    ],
+    "safety_climate": [
+      "Systém bezpečnosti je nastaven, ale má rezervy v identifikaci možných rizik a zajištění dohledu",
+      "Opatření k předcházení úrazů jsou účinná a pozitivně ovlivňují míru úrazovosti",
+      "Pozitivní pracovní atmosféra ve všech sledovaných vyučovacích hodinách bez kázeňských problémů"
+    ],
+    "partnerships_practice": [
+      "Partnerství s Masarykovou univerzitou, VUT Brno a Mendelovou univerzitou",
+      "Spolupráce se Skupinou ČEZ a Jadernou elektrárnou Dukovany – žáci získávají Jadernou maturitu",
+      "Erasmus+ akreditace umožňující zahraniční vzdělávací výjezdy a přijímání zahraničních studentů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Všechna tvrzení jsou opřena o konkrétní údaje a citace. Slabé stránky jsou jasně identifikovány, ale mohly by být formulovány ještě konkrétněji pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní 'rezervy v dohledu' byly zjištěny – chybí příklady situací",
+      "Není jasné, jak často a v jakém rozsahu učitelé neaplikují podpůrná opatření – zda jde o systematický problém",
+      "Doporučení pro zlepšení jsou obecná a není jasné, jaké konkrétní kroky škola již podnikla"
+    ]
+  }
+}
+```

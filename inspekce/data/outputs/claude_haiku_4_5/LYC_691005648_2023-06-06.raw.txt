@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "LYC_691005648_2023-06-06",
+  "school_profile": {
+    "school_type": "Waldorfská základní a střední škola (Kombinované lyceum)",
+    "inspection_period": "6. 6. 2023 - 8. 6. 2023",
+    "school_change_summary": "Ve školním roce 2022/2023 škola zahájila vzdělávání v prvním ročníku střední školy a rozšířila školní poradenské pracoviště o školní psycholožku a speciální pedagožku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní pedagogický tým",
+        "detail": "Učitelé se pravidelně vzdělávají a vzájemně si poskytují podporu, péče o začínající pedagogy je účelně nastavena.",
+        "evidence": "Více než třicet společných vzdělávacích akcí ročně, systematické setkávání pedagogů."
+      },
+      {
+        "tag": "Komplexní podpora žáků",
+        "detail": "Školní poradenské pracoviště s psycholožkou a speciální pedagožkou poskytuje cílenou pomoc přímo v třídách.",
+        "evidence": "Četné konzultace učitelů se speciální pedagožkou, sledování tříd a jednotlivců s návrhy opatření."
+      },
+      {
+        "tag": "Příznivé školní klima",
+        "detail": "Žáci jsou vedeni k toleranci, respektu a prosociálnímu chování v atmosféře otevřené komunikace.",
+        "evidence": "Dotazníkové šetření ČŠI potvrdilo dostatečnou pozitivní názorovou shodu mezi všemi aktéry."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovaní učitelé na prvním stupni",
+        "detail": "Žádný z pedagogů prvního stupně nemá příslušné vzdělání, což se projevilo v části výuky neadekvátními postupy.",
+        "evidence": "Absence splnění kvalifikačních předpokladů se projevila v didaktických postupech některých hodin."
+      },
+      {
+        "tag": "Omezená diferenciace výuky",
+        "detail": "Učitelé se pouze částečně věnují cílené diferenciaci podle schopností žáků a práci s kritickým myšlením.",
+        "evidence": "Vyhledávání a zpracování informací s podněcováním kritického myšlení bylo zaznamenáno ojediněle."
+      },
+      {
+        "tag": "Slabší sebehodnocení žáků",
+        "detail": "Závěrečné hodnocení výuky pedagogem nebo sebehodnocení žáků bylo zařazeno výjimečně.",
+        "evidence": "Systematické vedení žáků ke schopnosti posoudit kvalitu své práce chybí."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší nedostatek kvalifikovaných učitelů prvního stupně a jaký je plán na jejich získání?",
+      "Jaké konkrétní metody používáte pro rozvoj kritického myšlení a diferenciaci výuky podle individuálních schopností?",
+      "Jak probíhá komunikace se zákonnými zástupci a jak často se mohou účastnit konzultačních týdnů?"
+    ],
+    "who_school_fits": [
+      "Žáci, kterým vyhovuje holistický přístup k vzdělávání s důrazem na osobnostní rozvoj a umělecké aktivity",
+      "Rodiny hledající alternativu k tradičnímu vzdělávání s důrazem na sociální kompetence a toleranci",
+      "Žáci se speciálními vzdělávacími potřebami, kteří mohou profitovat z individualizovaného přístupu a podpory asistentů"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají intenzivní přípravu na standardní testy a srovnávání s vrstevníky (škola záměrně srovnávání nepoužívá)",
+      "Žáci potřebující silnější strukturu a jasné kritérium hodnocení (škola používá slovní hodnocení bez známek)",
+      "Rodiny, kterým chybí dostatečné vzdělání učitelů prvního stupně (kvalifikační problém přetrvává)"
+    ],
+    "plain_czech_summary": "Waldorfská škola Dobromysl je etablovaná instituce s kvalitním pedagogickým týmem, který se neustále vzdělává. Silnou stránkou je příznivé klima, komplexní podpora žáků a zaměření na osobnostní rozvoj. Hlavní slabinou je, že učitelé prvního stupně nemají příslušné vzdělání, což se projevilo v některých hodinách. Škola by měla více pracovat na diferenciaci výuky a rozvoji kritického myšlení žáků. Vhodná pro rodiny hledající alternativní přístup k vzdělávání."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní - střední škola právě začíná",
+      "key_numbers": [
+        "24 žáků v prvním ročníku střední školy",
+        "Všech 12 žáků 9. třídy ZŠ (2021/2022) bylo přijato do maturitních oborů",
+        "Výborná úroveň v českém jazyce a matematice (externí hodnocení 2021/2022)"
+      ],
+      "evidence": "Střední škola byla zahájená v roce 2022/2023, všichni absolventi základní školy pokračují v maturitních oborech."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní údaje o absence žáků."
+    },
+    "support_services": [
+      "Školní psycholožka a speciální pedagožka (od 2022/2023)",
+      "Výchovná poradkyně, metodička prevence a kariérová poradkyně",
+      "12 asistentů pedagoga koordinovaných jednou z asistentek",
+      "Konzultační týdny pro rodiče (2x ročně)"
+    ],
+    "safety_climate": [
+      "Budova zabezpečena proti neoprávněnému vstupu cizích osob",
+      "Důraz na prevenci sociálně patologických jevů a prosociální chování",
+      "Systém mezitřídního partnerství starších žáků s mladšími",
+      "Spolupráce s externími odborníky (Diakonie ČCE) v oblasti prevence"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s ostatními waldorfskými školami v ČR",
+      "Partnerství s Křesťanskou pedagogicko-psychologickou poradnou Plzeň",
+      "Spolupráce s Filozofickou fakultou ZČU v Plzni",
+      "Projekt s plzeňskou hvězdárnou (Mobilní planetárium)",
+      "Účast v soutěžích (Pangea, Olympiáda pátých tříd waldorfských škol)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a evidence. Některé pasáže jsou však poměrně dlouhé a odborné, což může být pro laické rodiče náročnější.",
+    "uncertainty_notes": [
+      "Absence konkrétních údajů o počtu žáků s problémovým chováním nebo disciplinárními problémy",
+      "Chybí informace o prospěšnosti žáků v jednotlivých předmětech a jejich průměrných výsledcích",
+      "Není jasné, jak dlouho trvá problém s nekvalifikovanými učiteli prvního stupně a jaké jsou konkrétní plány na řešení"
+    ]
+  }
+}
+```

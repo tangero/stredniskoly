@@ -1,0 +1,10 @@
+{
+  "report_id": "GY8_600005984_2022-01-12",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:02:34.243425+00:00",
+  "run_finished_utc": "2026-02-10T08:04:39.541398+00:00",
+  "raw_file": "GY8_600005984_2022-01-12.raw.txt",
+  "call_error": "'choices'",
+  "parse_error": "'choices'",
+  "parsed_output": null
+}

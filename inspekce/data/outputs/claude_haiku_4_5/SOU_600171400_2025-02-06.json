@@ -1,0 +1,117 @@
+{
+  "report_id": "SOU_600171400_2025-02-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:46:06.848131+00:00",
+  "run_finished_utc": "2026-02-09T13:46:34.396176+00:00",
+  "raw_file": "SOU_600171400_2025-02-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600171400_2025-02-06",
+    "school_profile": {
+      "school_type": "Integrovaná střední škola (ISŠ) s domovem mládeže a školní jídelnou",
+      "inspection_period": "6.–7. února 2025 a 11.–12. února 2025",
+      "school_change_summary": "Škola změnila název, aktivně využívá externí psycholožku a získala finanční prostředky na modernizaci materiálních podmínek včetně domova mládeže a tělocvičny."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Moderní vybavení a praktická příprava",
+          "detail": "Škola má novou učebnu robotiky a školní kavárnu, které propojují teorii s reálnou praxí a připravují žáky na profesní život.",
+          "evidence": "Učebna robotiky poskytuje zázemí pro programování a moderní technologie; kavárna umožňuje praktické zkušenosti v reálném provozu."
+        },
+        {
+          "tag": "Silné výsledky v praktických oborech",
+          "detail": "Jednotné závěrečné zkoušky dosahují velmi dobré úrovně s neprospěchem pouze 5 z 210 žáků.",
+          "evidence": "Ze 210 žáků konajících závěrečné zkoušky neprospělo pouze 5 žáků ve sledovaném období."
+        },
+        {
+          "tag": "Komplexní podpora žáků",
+          "detail": "Čtyřčlenný tým poradenských služeb poskytuje systematickou podporu včetně prevence rizikového chování a kariérového poradenství.",
+          "evidence": "Tým tvořený výchovnou poradkyní, metodičkou prevence, kariérovou poradkyní a koordinátorkou pro inkluzi spolupracuje s externí psycholožkou."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky maturit v technických oborech",
+          "detail": "Úspěšnost maturitních zkoušek v technických oborech dlouhodobě zůstává pod celorepublikovým průměrem.",
+          "evidence": "Z 114 žáků konajících maturitní zkoušku neuspělo 18 žáků; technické obory vykazují dlouhodobě nižší úspěšnost."
+        },
+        {
+          "tag": "Pasivní přístup v některých hodinách",
+          "detail": "V řadě hodin převažuje frontální výuka s opisováním bez aktivního zapojení žáků, zejména v nástavbovém studiu.",
+          "evidence": "Znalosti žáků prvního ročníku nástavbového studia byly velmi slabé; rozsáhlé opisování zápisů bylo neefektivní."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Žákům nejsou nabízeny aktivity umožňující dosahování náročnějších ani jednodušších cílů podle jejich schopností.",
+          "evidence": "Inspekce zjistila, že v rámci diferenciace nebyly žákům nabízeny aktivity s různou náročností."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola využívá robotickou učebnu a kavárnu v přípravě žáků na praxi?",
+        "Jaká opatření škola přijala na zlepšení výsledků maturit v technických oborech?",
+        "Jak se liší přístup k výuce mezi jednotlivými učiteli a jak se to řeší?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory (gastronomie, strojírenství, elektrotechnika) s podporou moderního vybavení",
+        "Žáci, kteří potřebují individuální péči a podporu – škola má funkční poradenské služby",
+        "Žáci hledající propojení teorie s reálnou praxí v moderně vybavených školních pracovištích"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s vyšší ambicí na maturitu v technických oborech – výsledky jsou dlouhodobě pod průměrem",
+        "Žáci, kteří se učí lépe aktivní metodou – v některých hodinách převažuje pasivní frontální výuka",
+        "Žáci v nástavbovém studiu – inspekce zaznamenala velmi slabé znalosti a pasivní přístup"
+      ],
+      "plain_czech_summary": "Škola je moderně vybavená s novou robotickou učebnou a kavárnou, kde se žáci učí prakticky. Výsledky v praktických oborech jsou velmi dobré, ale maturita v technických oborech je slabší než průměr. Škola má dobrou podporu pro žáky, ale v některých hodinách učitelé používají zastaralé metody – žáci jen opisují místo aby aktivně pracovali. Nejlépe se tu učí ti, kteří chtějí praktické obory a potřebují individuální péči."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nestabilní – výrazné rozdíly mezi obory",
+        "key_numbers": [
+          "Nástavbové studium podnikání: 100% úspěšnost v 2023/2024 (zlepšení z předchozích let)",
+          "Technické obory: dlouhodobě pod celorepublikovým průměrem",
+          "Celkem 18 neúspěšných z 114 žáků (15,8% neúspěšnost)"
+        ],
+        "evidence": "V nástavbovém studiu došlo k výraznému zlepšení – všichni žáci uspěli v 2023/2024. Technické obory zůstávají pod průměrem."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Informace o absenci nejsou v inspekční zprávě uvedeny"
+        ],
+        "evidence": "Zpráva se absencí nezabývá."
+      },
+      "support_services": [
+        "Čtyřčlenný tým poradenských služeb: výchovná poradkyně, metodička prevence, kariérová poradkyně, koordinátorka pro inkluzi",
+        "Spolupráce s externí psycholožkou",
+        "Konzultační hodiny jednotlivých pedagogů pro žáky ohrozené školním neúspěchem",
+        "Individuální péče pro žáky se speciálními vzdělávacími potřebami (84 žáků s podpůrnými opatřeními)",
+        "Podpora pro 32 žáků s odlišným mateřským jazykem"
+      ],
+      "safety_climate": [
+        "Účinně nastavený systém pro zajištění bezpečnosti a ochrany zdraví žáků",
+        "Pravidelné informace o rizicích ve školním prostředí i mimo školu",
+        "Vybavení žáků osobními ochrannými pracovními prostředky při praktickém vyučování",
+        "Systematické monitorování rizikového chování a preventivní aktivity",
+        "Důraz na hygienické normy, bezpečnost práce a systém HACCP v odborném výcviku"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobé partnerství se smluvními pracovišti umožňuje praktické vyučování v reálném pracovním prostředí",
+        "Spolupráce s úřady práce, Městským úřadem a Krajským úřadem Zlínského kraje",
+        "Zastoupení v Krajském centru dalšího profesního vzdělávání",
+        "Aktivní spolupráce s odborníky z praxe a absolventy na besedách a projektových dnech",
+        "Zapojení do projektu KEV (environmentální výchova)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady, ale obsahuje místy odborný jazyk. Hlavní zjištění jsou jasná, ale detaily o absenci a některých metrikách chybí.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, jak je na škole situace s docházkou",
+        "Nejsou uvedeny konkrétní počty žáků v jednotlivých oborech, pouze celkový počet 463 žáků",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými učiteli a jaké jsou konkrétní plány na zlepšení"
+      ]
+    }
+  }
+}

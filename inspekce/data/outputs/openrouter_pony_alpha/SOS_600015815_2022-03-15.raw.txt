@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_600015815_2022-03-15",
+  "school_profile": {
+    "school_type": "Soukromá střední škola (SOU a SOŠ) s družstevním zřizovatelem, nabízející učební i maturitní obory.",
+    "inspection_period": "15. 3. 2022 − 18. 3. 2022",
+    "school_change_summary": "Škola rozšířila vzdělávací nabídku o nová zaměření a investovala do zkvalitnění materiálních podmínek a prostředí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava a vybavení",
+        "detail": "Škola má kvalitní vybavení a funkční spolupráci s partnery při zajišťování praxe.",
+        "evidence": "Škola získala titul Škola roku 2014... za příkladnou přípravu žáků pro budoucí profesi."
+      },
+      {
+        "tag": "Prostředí a klima",
+        "detail": "Prostředí školy je estetické, podnětné a podporuje příznivé klima pro vzdělávání.",
+        "evidence": "Vedení školy věnuje systematickou pozornost vytváření estetického a podnětného prostředí."
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Školní poradenské pracoviště efektivně řeší problémy žáků a prevenci rizikového chování.",
+        "evidence": "Efektivní práce školního poradenského pracoviště má pozitivní dopad na snížení počtu případů rizikového chování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká úspěšnost u maturity",
+        "detail": "Výsledky u maturity jsou dlouhodobě horší než celostátní průměr v daných oborech.",
+        "evidence": "Úspěšnost žáků většiny oborů zakončených maturitní zkouškou byla nižší v porovnání s ostatními školami... za celou Českou republiku."
+      },
+      {
+        "tag": "Vysoká absence a předčasné odchody",
+        "detail": "Neúspěch žáků často souvisí s vysokou absencí a předčasným ukončováním studia.",
+        "evidence": "V mnoha případech neuspokojivé výsledky žáků negativně ovlivňuje jejich nepravidelná školní docházka."
+      },
+      {
+        "tag": "Nefungující systém podpory slabších",
+        "detail": "Péče o žáky s rizikem neúspěchu nemá jasnou strategii a neefektivně se vyhodnocuje.",
+        "evidence": "Pouze preventivní postup školy v oblasti péče o žáky s rizikem neúspěchu není optimálně nastaven, chybí konkrétní strategie."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s žáky, kteří mají problémy s prospěchem nebo docházkou, aby zabránila jejich předčasnému odchodu?",
+      "Jaká jsou konkrétní data o úspěšnosti žáků u maturitní zkoušky v tomto konkrétním oboru za poslední roky?",
+      "V jakých firmách a na jakých pozicích mohou žáci absolvovat povinnou praxi?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o obor cestovní ruch, kde škola dosahuje dlouhodobě lepších výsledků.",
+      "Žáci, kteří očekávají silnou praktickou přípravu a zapojení do reálných zakázek a projektů.",
+      "Studenti, kterým vyhovuje moderní, esteticky upravené školní prostředí."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o nástavbové studium (obor Podnikání), který má dlouhodobě nejnižší úspěšnost.",
+      "Žáci se studijními problémy, kteří potřebují systematickou a individuální podporu.",
+      "Studenti, kteří sami aktivně nevyhledávají pomoc, jelikož škola je motivuje k využití konzultací málo."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktickou přípravu a moderní prostředí, což potvrzuje i ocenění Škola roku. Skvěle funguje také psychologické poradenství a prevence šikany. Pozor si musíte dát na výsledky u maturity, které jsou v mnoha oborech podprůměrné. Problémem je také vysoká absence žáků a fakt, že škola dosud nedokázala efektivně nastavit systém, jak pomáhat slabším studentům k lepším výsledkům."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně záporný (dlouhodobě podprůměrná úspěšnost ve srovnání s ČR).",
+      "key_numbers": [
+        "Nižší úspěšnost u maturity ve většině oborů než je republikový průměr.",
+        "Nejméně úspěšní jsou žáci nástavbového oboru podnikání.",
+        "Naopak lepších výsledků dosahují žáci oboru cestovní ruch."
+      ],
+      "evidence": "Výsledky žáků při ukončování vzdělávání maturitní zkouškou jsou dlouhodobě na nižší úrovni."
+    },
+    "absence": {
+      "trend": "Negativní (vysoká absence negativně ovlivňuje prospěch a dokončení studia).",
+      "key_numbers": [
+        "Vysoký počet žáků, kteří své vzdělávání předčasně ukončují.",
+        "Nepravidelná školní docházka negativně ovlivňuje výsledky v mnoha případech.",
+        "Absence je systematicky sledována a řešena, ale opatření nemají výraznější dopad."
+      ],
+      "evidence": "V mnoha případech neuspokojivé výsledky žáků negativně ovlivňuje jejich nepravidelná školní docházka."
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště (ŠPP) spolupracující s třídními učiteli.",
+      "Adaptační kurzy pro první ročníky pro podporu klimatu ve třídách.",
+      "Doučování realizované v rámci národního plánu i vlastními aktivitami školy."
+    ],
+    "safety_climate": [
+      "Jasně nastavená pravidla komunikace a efektivní řešení sociálně-patologických jevů.",
+      "Vytváření estetického a podnětného prostředí podporujícího příznivé klima.",
+      "Žáci dodržují pravidla, ve výuce nebyly zjištěny kázeňské problémy."
+    ],
+    "partnerships_practice": [
+      "Titul Škola roku 2014 od Asociace hotelů a restaurací za přípravu na profesi.",
+      "Realizace praktického vyučování na reálných pracovištích smluvních partnerů.",
+      "Zapojení odborníků z praxe do výuky formou přednášek, besed a kurzů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozdělený a klade důraz na praktické informace. Místy obsahuje úřednické fráze ('soustavně sleduje a vyhodnocuje'), které ale nepřekážejí porozumění hlavním myšlenkám.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procentuální úspěšnost u maturity, pouze srovnání s průměrem ČR.",
+      "Chybí přesná data o počtu žáků s neomluvenou absencí, pouze obecné konstatování o vysoké míře.",
+      "Není specifikováno, o jaká 'nová zaměření' stávajících oborů se konkrétně jedná."
+    ]
+  }
+}

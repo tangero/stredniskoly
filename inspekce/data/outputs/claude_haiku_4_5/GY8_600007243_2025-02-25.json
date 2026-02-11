@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600007243_2025-02-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:43:48.427556+00:00",
+  "run_finished_utc": "2026-02-09T13:44:14.959730+00:00",
+  "raw_file": "GY8_600007243_2025-02-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007243_2025-02-25",
+    "school_profile": {
+      "school_type": "Gymnázium a Střední odborná škola pedagogická (čtyřleté a osmileté gymnázium, pedagogické lyceum, předškolní a mimoškolní pedagogika)",
+      "inspection_period": "25. až 27. února 2025",
+      "school_change_summary": "Škola prošla výraznou generační obměnou pedagogů, rozsáhlou rekonstrukcí budovy a modernizací vybavení. Naplněnost 96 %, výrazně vzrostl zájem o studium, zejména v pedagogickém lyceu a osmileté gymnáziu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky vzdělání",
+          "detail": "Přibližně třetina žáků prospívá s vyznamenáním, maturitní zkoušky dosahují vysoké úspěšnosti, zejména v pedagogickém lyceu.",
+          "evidence": "Ve školních letech 2022/2023 a 2023/2024 prospěla s vyznamenáním přibližně třetina žáků na pedagogickém lyceu a osmileté gymnáziu."
+        },
+        {
+          "tag": "Bohatý kulturní a společenský život",
+          "detail": "Pěvecký sbor, dramatický kroužek a peer skupiny aktivně rozvíjejí tvořivost a odpovědnost žáků.",
+          "evidence": "Pěvecký sbor pořádá adventní setkání s charitativním přesahem a vystupuje na městských akcích a festivalech."
+        },
+        {
+          "tag": "Kvalitní pedagogická příprava",
+          "detail": "Systém praktické přípravy ve spolupráci se mateřskými školami s důrazem na metodiku a odbornost.",
+          "evidence": "Pedagogové odborných předmětů vytvořili pilotní program metodické podpory učitelek mateřských škol a vychovatelek školních družin."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Problémy s přístupem některých učitelů",
+          "detail": "Některé vyučující nejsou vždy respektující a spravedliví v komunikaci se žáky, vedení škola řešila stížnosti.",
+          "evidence": "Vedení se zaměřuje na řešení podnětů souvisejících se stížnostmi na neprofesionální chování několika vyučujících, potvrzují to i výsledky dotazníkového šetření."
+        },
+        {
+          "tag": "Nedostatečná individualizace výuky",
+          "detail": "Pedagogové nezohledňují dostatečně individuální potřeby žáků, zejména nadaných, jejichž potenciál zůstává nevyužitý.",
+          "evidence": "Pedagogové při plánování a realizaci výuky nezohledňují dostatečně individuální potřeby zejména nadaných žáků, jejichž potenciál zůstával nevyužitý."
+        },
+        {
+          "tag": "Málo interaktivní výuka",
+          "detail": "Převažuje frontální výuka s nízkým zastoupením interaktivních forem, aktivní zapojení žáků jen v polovině hodin.",
+          "evidence": "Převažovala frontální výuka s nízkým zastoupením interaktivních forem práce. Aktivní zapojení žáků bylo zaznamenáno přibližně v polovině hospitovaných hodin."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší problémy s neprofesionálním chováním některých učitelů a jaké jsou záruky zlepšení?",
+        "Jaké konkrétní kroky podniká škola pro individualizaci výuky a podporu nadaných žáků?",
+        "Jak se škola snaží zvýšit podíl interaktivních a skupinových forem výuky místo frontální výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o pedagogické obory a práci s dětmi – škola má kvalitní praktickou přípravu a úzkou spolupráci se mateřskými školami",
+        "Talentovaní žáci v přírodovědných a společenskovědních oborech – škola má tradici úspěchů v olympiádách a soutěžích",
+        "Žáci s hlubším zájmem o hudbu a dramatiku – kvalitní výuka s metodikou a bohatý kulturní program"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a podporu – škola zatím nedostatečně zohledňuje individuální potřeby v plánování výuky",
+        "Žáci citliví na komunikační styl učitelů – některé vyučující nejsou vždy respektující a spravedliví",
+        "Žáci preferující interaktivní a skupinové formy práce – převažuje frontální výuka s nízkým zastoupením aktivních forem"
+      ],
+      "plain_czech_summary": "Gymnázium v Čáslavi je kvalitní školou s výborným prospěchem žáků a bohatým kulturním životem. Žáci dosahují vysokých výsledků v maturitě a soutěžích. Škola má moderní vybavení a kvalitní pedagogickou přípravu pro budoucí učitele. Problém je v tom, že někteří učitelé nejsou vždy respektující, výuka je často frontální bez aktivního zapojení žáků a individuální potřeby nejsou dostatečně zohledňovány. Vedení školy si je těchto problémů vědomo a pracuje na jejich řešení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vysoká úspěšnost ve společné části, rozdíly v profilové části mezi obory",
+        "key_numbers": [
+          "Pedagogické lyceum: výrazně lepší výsledky než srovnatelné obory v obou letech",
+          "Předškolní a mimoškolní pedagogika: nulová hrubá neúspěšnost v profilové části 2022/2023, nárůst v 2023/2024",
+          "Čtyřleté a osmileté gymnázium: všichni přihlášení úspěšně složili v obou letech"
+        ],
+        "evidence": "Výsledky maturitní zkoušky dokládají vysokou úspěšnost žáků ve společné části, zatímco v profilové části jsou patrné rozdíly mezi jednotlivými obory."
+      },
+      "absence": {
+        "trend": "Pozitivní trend poklesu absence",
+        "key_numbers": [
+          "2022/2023: průměrně 125 hodin zameškaných na žáka",
+          "2023/2024: pokles na 106 hodin na žáka",
+          "Neomluvená absence: výjimečný výskyt"
+        ],
+        "evidence": "Průměrný počet zameškaných hodin na žáka činil ve školním roce 2022/2023 přibližně 125 hodin, v následujícím roce 2023/2024 poklesl na 106 hodin."
+      },
+      "support_services": [
+        "Výchovná poradkyně, kariérová poradkyně, školní metodik prevence a školní psycholožka pracující na základě vyhodnocovaných plánů",
+        "Kvalitní identifikace rizikového chování s důrazem na prevenci",
+        "Podpora žáků se speciálními vzdělávacími potřebami (27 žáků, z toho 5 s IVP)"
+      ],
+      "safety_climate": [
+        "Vysoký počet pochval, minimální kázeňská opatření v obou sledovaných letech",
+        "Systematická prevence rizikového jednání a vytváření bezpečného prostředí",
+        "Individuální řešení nevhodného jednání ve spolupráci s třídními učiteli a rodiči"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se smluvními mateřskými školami pro pedagogickou praxi",
+        "Pilotní program metodické podpory učitelek mateřských škol a vychovatelek školních družin",
+        "Konzultace s pedagogy a učitelkami mateřských škol podporující efektivní aplikaci dovedností"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však dlouhé a složitě strukturované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní jména učitelů s problémy v komunikaci, není jasné, jak rozsáhlý je problém",
+        "Není jasné, jaké konkrétní opatření vedení školy již přijalo a jaké jsou jejich výsledky",
+        "Chybí informace o tom, jak dlouho trvá řešení problémů s etickým kodexem a jaké je aktuální stav"
+      ]
+    }
+  }
+}

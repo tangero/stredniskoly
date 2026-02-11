@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "LYC_600020282_2023-03-20",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola sociální a Střední pedagogická škola (VOŠ + SPgŠ)",
+    "inspection_period": "20. března až 22. března 2023",
+    "school_change_summary": "Nová zástupkyně ředitele, noví zaměstnanci (ekonomka, školník). Pedagogický sbor dlouhodobě stabilizovaný. Pokračující modernizace materiálního vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Špičková odbornost pedagogů",
+        "detail": "Učitelé mají bohatou lektorskou a publikační činnost, zejména v dramatické a výtvarné výchově, což výrazně zvyšuje kvalitu přípravy budoucích pedagogů.",
+        "evidence": "\"Vysoká erudovanost pedagogických pracovníků s pestrou lektorskou a publikační činností\""
+      },
+      {
+        "tag": "Výborné sociální a osobnostní rozvoje",
+        "detail": "Domov mládeže nabízí pestrou nabídku aktivit, které efektivně prevují rizikové chování a podporují osobnostní rozvoj.",
+        "evidence": "\"Široká nabídka výchovně-vzdělávacích aktivit v domově mládeže významně posiluje prevenci sociálně patologických jevů\""
+      },
+      {
+        "tag": "Vysoké výsledky v maturitě",
+        "detail": "Obor Předškolní pedagogika dosáhl 96% úspěšnosti v maturitě, absolventské práce vykazují vysokou odbornou úroveň.",
+        "evidence": "\"U maturitních zkoušek ve školním roce 2021/2022 škola vykázala vysokou úspěšnost žáků v oboru Předškolní a mimoškolní pedagogika (96 %)\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky v cizích jazycích",
+        "detail": "Obor Pedagogické lyceum dosáhl jen 70% úspěšnosti v maturitě, zejména v cizích jazycích horší než průměr.",
+        "evidence": "\"Žáci oboru Pedagogické lyceum dosáhli nižší úspěšnosti (70 %). V celorepublikovém srovnání... vyšší míry neúspěšnosti, a sice v předmětu cizí jazyk\""
+      },
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "V obecně vzdělávacích předmětech chybí dostatečná podpora žáků s různými schopnostmi a rozvoj kritického myšlení.",
+        "evidence": "\"Cílená podpora žáků s různými dispozicemi... byla ve všeobecně vzdělávacích předmětech zaznamenána v nízké míře\""
+      },
+      {
+        "tag": "Rostoucí absence ve vyšších ročnících",
+        "detail": "Počet zameškaných hodin se zvyšuje ve třetím a čtvrtém ročníku, škola nepřijímá účinná opatření.",
+        "evidence": "\"Počet zameškaných hodin se mírně zvyšuje ve třetím a čtvrtém ročníku, škola k tomuto jevu nepřijímá účinná opatření\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s horší úrovní angličtiny, když je to slabé místo v maturitě?",
+      "Jaké konkrétní kroky plánuje škola proti rostoucí absenci ve vyšších ročnících?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení v obecně vzdělávacích předmětech?"
+    ],
+    "who_school_fits": [
+      "Zájemci o pedagogické obory s vášní pro práci s dětmi a osobnostní rozvoj",
+      "Studenti se zájmem o dramatickou, výtvarnou a hudební výchovu",
+      "Kandidáti, kteří oceňují kvalitní domov mládeže s bohatou nabídkou volnočasových aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Studenti se slabší angličtinou – obor Pedagogické lyceum má problémy s cizími jazyky",
+      "Kandidáti, kteří potřebují intenzivní individuální podporu v obecně vzdělávacích předmětech",
+      "Zájemci o obory mimo pedagogiku – škola se zaměřuje primárně na pedagogické obory"
+    ],
+    "plain_czech_summary": "Škola v Prachticích je kvalitní pedagogická instituce se silnými stránkami v dramatické a výtvarné výchově. Učitelé jsou velmi erudovaní a věnují se osobnostnímu rozvoji žáků. Domov mládeže nabízí výborné podmínky a aktivně prevuje rizikové chování. Výsledky v maturitě jsou dobré, zvlášť v oboru Předškolní pedagogika (96 %). Slabší je obor Pedagogické lyceum (70 %), zejména v cizích jazycích. Inspekce upozorňuje na nedostatečnou diferenciaci výuky a rostoucí absenci ve vyšších ročnících. Škola by měla více pracovat na efektivnějších vzdělávacích strategiích."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Rozdílný podle oboru – Předškolní pedagogika výborná, Pedagogické lyceum slabší",
+      "key_numbers": [
+        "Předškolní a mimoškolní pedagogika: 96% úspěšnost",
+        "Pedagogické lyceum: 70% úspěšnost",
+        "Vyšší odborná škola: velmi vysoká úspěšnost v absolutoriích"
+      ],
+      "evidence": "\"U maturitních zkoušek ve školním roce 2021/2022 škola vykázala vysokou úspěšnost žáků v oboru Předškolní a mimoškolní pedagogika (96 %). Žáci oboru Pedagogické lyceum dosáhli nižší úspěšnosti (70 %)\""
+    },
+    "absence": {
+      "trend": "Rostoucí absence ve vyšších ročnících, minimální neomluvenost",
+      "key_numbers": [
+        "Absence se zvyšuje ve 3. a 4. ročníku",
+        "Téměř nulová neomluvenost",
+        "Minimální počet kázeňských opatření"
+      ],
+      "evidence": "\"Počet zameškaných hodin se mírně zvyšuje ve třetím a čtvrtém ročníku, škola k tomuto jevu nepřijímá účinná opatření. Oproti tomu škola téměř nevykazuje neomluvenou absenci\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (výchovná poradkyně, metodička prevence)",
+      "Individuální konzultace a podpora žáků s rizikem neúspěchu",
+      "Vychovatelé v domově mládeží poskytují metodickou pomoc a poradenství"
+    ],
+    "safety_climate": [
+      "Příjemná a vstřícná pracovní atmosféra ve třídách",
+      "Partnerský přístup pedagogů podporuje sociální a komunikační kompetence",
+      "Efektivní prevence sociálně patologických jevů prostřednictvím domova mládeže"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s místní mateřskou školou při odborných praxích",
+      "Partnerství se zahraničními školami a regionálními institucemi",
+      "Výměnné pobyty žáků podporující jazykové a sociální kompetence"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou dobře identifikovány. Některé pasáže jsou však poměrně odborné a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Není jasné, jaké konkrétní opatření škola plánuje proti rostoucí absenci – zpráva jen konstatuje problém",
+      "Chybí konkrétní čísla o počtu žáků s různými speciálními potřebami a jejich podporě",
+      "Není specifikováno, jak přesně se budou zlepšovat výsledky v cizích jazycích"
+    ]
+  }
+}
+```

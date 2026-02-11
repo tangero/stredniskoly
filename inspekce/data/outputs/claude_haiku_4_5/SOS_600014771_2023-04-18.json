@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600014771_2023-04-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:42:26.766137+00:00",
+  "run_finished_utc": "2026-02-09T16:42:48.750743+00:00",
+  "raw_file": "SOS_600014771_2023-04-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600014771_2023-04-18",
+    "school_profile": {
+      "school_type": "Střední odborná škola sociální s domovem mládeže",
+      "inspection_period": "18.–20. dubna 2023",
+      "school_change_summary": "Nová ředitelka (1. rok ve funkci), zkvalitnění IT infrastruktury, vybavení učebny zdravotní nauky. Počet žáků stoupá, v osmi třídách oboru Sociální činnost studuje 209 žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Poradenské služby",
+          "detail": "Efektivní systém práce školního poradenského pracoviště s důsledným sledováním potřeb žáků.",
+          "evidence": "Výchovná poradkyně poskytuje přehledné informace o žácích a systematicky spolupracuje s metodičkou prevence."
+        },
+        {
+          "tag": "Vztahy ve škole",
+          "detail": "Pozitivní vztah mezi učiteli a žáky, příjemná atmosféra v hodinách, žáci projevují aktivní zájem.",
+          "evidence": "Všechny hospitované hodiny probíhaly v příjemné atmosféře, pedagogové žáky povzbuzovali a motivovali."
+        },
+        {
+          "tag": "Domov mládeže",
+          "detail": "Kvalitní zázemí pro ubytované žáky s účinnými pravidly a bez rizikového chování.",
+          "evidence": "Od poslední inspekce se nevyskytlo žádné rizikové chování, zařízení má nastavena účinná pravidla."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotný přístup učitelů",
+          "detail": "Vyučující nejsou jednotní v používání efektivních vzdělávacích strategií, chybí diferenciace.",
+          "evidence": "Ředitelka se snaží získat ke spolupráci pedagogy, kteří nejsou nakloněni změnám, dochází k nejednotnému přístupu."
+        },
+        {
+          "tag": "Slabé výsledky z angličtiny",
+          "detail": "Žáci setrvale vykazují vysokou neúspěšnost při maturitě z anglického jazyka.",
+          "evidence": "Škola přistoupila ke změně programu – zrušila druhý cizí jazyk a zavedla konverzaci v angličtině s rodilým mluvčím."
+        },
+        {
+          "tag": "Nedostatečná tělocvična",
+          "detail": "Tělocvična nemá dostatečné rozměry pro kvalitní výuku tělesné výchovy.",
+          "evidence": "Problém s tělocvičnou, která nemá dostatečné rozměry pro kvalitní výuku, dále přetrvává."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou neúspěšnost žáků z anglického jazyka na maturitě?",
+        "Jaké jsou plány na zlepšení vybavení tělocvičny?",
+        "Jak se nová ředitelka snaží sjednotit přístup učitelů k výuce?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí pracovat v sociálních oborech a potřebují kvalitní poradenské služby",
+        "Studenti z ekonomicky slabšího prostředí – škola zprostředkovává finanční podporu",
+        "Žáci zajímající se o zahraniční spolupráci a praxe v zahraničí (Polsko, Německo, Anglie)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovanou výuku – chybí diferenciace v hodinách",
+        "Studenti se slabšími jazykovými dovednostmi – vysoká neúspěšnost z angličtiny",
+        "Žáci vyžadující kvalitní tělesnou výchovu – tělocvična má omezené rozměry"
+      ],
+      "plain_czech_summary": "Sociální škola v Jihlavě je stabilní zařízení s dobrými vztahy mezi učiteli a žáky. Domov mládeže funguje bez problémů. Nová ředitelka se snaží zlepšit kvalitu výuky, ale učitelé nejsou jednotní v přístupu. Hlavní problém: žáci selhávají z angličtiny na maturitě, chybí individualizovaná výuka a aktivní metody. Škola reaguje – zrušila druhý jazyk a najala rodilého mluvčího. Tělocvična je malá. Poradenské služby fungují dobře."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Problematický – vysoká neúspěšnost",
+        "key_numbers": [
+          "Setrvale vysoká neúspěšnost z anglického jazyka",
+          "Občasná neúspěšnost z češtiny a matematiky"
+        ],
+        "evidence": "Žáci školy setrvale vykazují vysokou neúspěšnost při skládání maturitní zkoušky z anglického jazyka, občas z českého jazyka a literatury a matematiky."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje konkrétní údaje o absenci žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně s přehlednými informacemi o žácích s potřebou podpůrných opatření",
+        "Metodička prevence v systematické spolupráci s pedagogy a vedením",
+        "Doučování v maturitních předmětech (s problémem motivace žáků)"
+      ],
+      "safety_climate": [
+        "V domově mládeže se od poslední inspekce nevyskytlo žádné rizikové chování",
+        "Občasný výskyt projevů šikany se daří včas odhalit a řešit individuálně",
+        "Účinná pravidla a mechanismy v domově mládeže"
+      ],
+      "partnerships_practice": [
+        "Zahraniční spolupráce se školou v Polsku",
+        "Souvislá odborná praxe v domově pro handicapované v Německu",
+        "Projekt Erasmus+ s Domem zahraniční spolupráce",
+        "Úzká spolupráce s Denním a týdenním stacionářem Jihlava a Charitou Jihlava",
+        "Dobrovolnická činnost s F Point – práce s ukrajinskými dětmi"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Konkrétní zjištění jsou podpořena příklady. Slabší je absence číselných údajů o absenci a detailnějších statistik maturitních výsledků.",
+      "uncertainty_notes": [
+        "Přesné procento neúspěšnosti z maturit není uvedeno – pouze kvalitativní popis 'setrvale vysoká'",
+        "Počet žáků, kteří se účastní doučování, není specifikován",
+        "Konkrétní počet incidentů šikany není uveden"
+      ]
+    }
+  }
+}

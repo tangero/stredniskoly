@@ -1,0 +1,49 @@
+{
+  "report_id": "SOS_600015874_2025-04-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:37:06.645892+00:00",
+  "run_finished_utc": "2026-02-09T13:37:12.251251+00:00",
+  "raw_file": "SOS_600015874_2025-04-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015874_2025-04-23",
+    "school_profile": {
+      "school_type": "Nelze určit z poskytnutého textu",
+      "inspection_period": "23. až 29. dubna 2025",
+      "school_change_summary": "Dokument obsahuje pouze konverzní doložku, obsah inspekční zprávy není dostupný"
+    },
+    "for_parents": {
+      "strengths": [],
+      "risks": [],
+      "questions_for_open_day": [],
+      "who_school_fits": [],
+      "who_should_be_cautious": [],
+      "plain_czech_summary": "Poskytnutý dokument je pouze technickou doložkou o převodu listinného dokumentu do elektronické podoby. Neobsahuje obsah inspekční zprávy, kterou by bylo možné analyzovat. Pro získání informací o kvalitě školy, silných stránkách a rizicích je nutné mít k dispozici samotnou inspekční zprávu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nedostupné",
+        "key_numbers": [],
+        "evidence": "Obsah zprávy není v dokumentu přítomen"
+      },
+      "absence": {
+        "trend": "Nedostupné",
+        "key_numbers": [],
+        "evidence": "Obsah zprávy není v dokumentu přítomen"
+      },
+      "support_services": [],
+      "safety_climate": [],
+      "partnerships_practice": []
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 1,
+      "czech_clarity_reason": "Dokument obsahuje pouze administrativní doložku o konverzi. Chybí obsah inspekční zprávy nezbytný pro analýzu.",
+      "uncertainty_notes": [
+        "Není dostupný obsah inspekční zprávy",
+        "Nelze identifikovat typ školy ani obor vzdělání",
+        "Chybí všechny faktické údaje o kvalitě vzdělávání"
+      ]
+    }
+  }
+}

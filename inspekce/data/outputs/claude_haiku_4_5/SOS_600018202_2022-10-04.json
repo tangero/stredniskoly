@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600018202_2022-10-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:00:16.697767+00:00",
+  "run_finished_utc": "2026-02-09T17:00:40.255611+00:00",
+  "raw_file": "SOS_600018202_2022-10-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600018202_2022-10-04",
+    "school_profile": {
+      "school_type": "Střední škola zemědělská a přírodovědná s domovem mládeže a školním hospodářstvím",
+      "inspection_period": "4. 10. 2022 – 7. 10. 2022",
+      "school_change_summary": "Počet žáků stoupá ve všech oborech. Škola zkvalitnila materiálně-technické podmínky, ale má vážné problémy s řízením, komunikací vedení a kvalitou výuky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné vybavení pro praxi",
+          "detail": "Škola má moderní dílny, botanickou zahradu a vlastní hospodářství, kde se žáci učí v reálných podmínkách zemědělství.",
+          "evidence": "Školní hospodářství umožňuje praktickou výuku v reálných podmínkách chovu zvířat a péče o hospodářství."
+        },
+        {
+          "tag": "Praktická výuka na vysoké úrovni",
+          "detail": "Praktické vyučování je dobře organizované, žáci pracují se zájmem a zodpovědně plní úkoly.",
+          "evidence": "Žáci pracovali se zájmem, zodpovědně plnili stanovené úkoly, respektovali nastavená pravidla bezpečnosti."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují velmi dobrých výsledků v soutěžích zaměřených na biologii, ekologii a zemědělství.",
+          "evidence": "Žáci se zapojovali do vědomostních soutěží, ve kterých dosahovali velmi dobrých výsledků na regionální i celostátní úrovni."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zhoršující se maturitní výsledky",
+          "detail": "Výsledky maturit se od roku 2019 zhoršují, zejména v oboru Agropodnikání jsou výrazně pod průměrem.",
+          "evidence": "V roce 2021 byly celkové výsledky horší než u ostatních škol stejné skupiny oborů v ČR. U Agropodnikání se počet neprospívajících zvyšuje."
+        },
+        {
+          "tag": "Slabá kvalita běžné výuky",
+          "detail": "Výuka je převážně frontální, chybí aktivizační metody, diferenciace a zapojení žáků do procesu učení.",
+          "evidence": "Ve většině sledovaných hodin převládal frontální způsob výuky s ojedinělým zařazením aktivizujících metod, chybělo jasné stanovení cílů."
+        },
+        {
+          "tag": "Problémy s vedením a komunikací",
+          "detail": "Ředitel nedostatečně komunikuje s vedením a pedagogy, chybí jednotný systém řízení a zpětná vazba.",
+          "evidence": "Ředitel o strategických záměrech nedostatečně komunikuje s vedením a pedagogy, část z nich není ztotožněna s cíli."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s matematikou a češtinou na maturitě?",
+        "Jaký je poměr frontální výuky a aktivních metod, které zapojují žáky do učení?",
+        "Jak se škola vypořádává s vysokou fluktuací učitelů a jak to ovlivňuje kvalitu výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří se zajímají o zemědělství, chov zvířat a přírodní vědy a chtějí se učit v praxi",
+        "Studenti, kteří prospívají v praktických činnostech a mají radi práci s technologiemi a zvířaty",
+        "Žáci z oboru Ekologie a životní prostředí, který má lepší výsledky než Agropodnikání"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří potřebují silnou podporu v teoretických předmětech, zejména v matematice a češtině",
+        "Studenti, kteří preferují moderní interaktivní výuku s aktivním zapojením – zde převládá tradiční frontální přístup",
+        "Uchazeči o obor Agropodnikání, který má výrazně horší výsledky maturit než obor Ekologie"
+      ],
+      "plain_czech_summary": "Škola nabízí výborné podmínky pro praktickou výuku zemědělství a přírodních věd. Žáci se učí na moderním vybavení a v reálném hospodářství. Problém je v kvalitě běžné výuky – převládá tradiční frontální přístup bez aktivního zapojení žáků. Maturitní výsledky se zhoršují, obzvlášť v oboru Agropodnikání. Vedení školy má problémy s komunikací a řízením. Pokud vás zajímá praktická příprava v zemědělství, je to dobrá volba. Pokud ale chcete kvalitní teoretickou přípravu, zvažte to."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se",
+        "key_numbers": [
+          "2019: lepší než průměr ČR",
+          "2021: horší než průměr ČR",
+          "Agropodnikání: počet neprospívajících se zvyšuje"
+        ],
+        "evidence": "V roce 2019 byly výsledky lepší než u ostatních škol, v roce 2021 horší. U Agropodnikání se počet neprospívajících v matematice a češtině zvyšuje."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Není dostupné"
+        ],
+        "evidence": "Zpráva se absencí žáků nezabývá."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodik prevence poskytují poradenství",
+        "Žáci se speciálními vzdělávacími potřebami (34 žáků) dostávají podpůrná opatření 1.–3. stupně",
+        "Doučování a volitelné semináře z matematiky a angličtiny (ale jejich efektivita je nízká)"
+      ],
+      "safety_climate": [
+        "Žáci jsou průběžně upozorňováni na bezpečnostní rizika a poučováni o bezpečném chování",
+        "Vedení školy stanovilo řadu opatření k prevenci rizik, ale nedostatečně vyhodnotilo riziko úrazu z nerovností asfaltového povrchu"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zemědělskými školami v ČR a SR umožňuje porovnávání dovedností",
+        "Partnerství s vysokými školami zaměřenými na agropodnikání, ekologii a přírodní vědy",
+        "Členství ve spolcích a svazech zaměřených na zemědělství, chov a ekologii"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Kritika je jasně formulována, ale místy je text složitý a úřednický. Praktické informace pro rodiče nejsou explicitně odděleny.",
+      "uncertainty_notes": [
+        "Absence dat o školních absencích – není jasné, jak je to se záškoláním",
+        "Nejsou uvedeny konkrétní počty učitelů bez pedagogického vzdělání",
+        "Chybí informace o počtu žáků, kteří využívají doučování"
+      ]
+    }
+  }
+}

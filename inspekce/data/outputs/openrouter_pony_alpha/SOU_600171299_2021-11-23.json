@@ -1,0 +1,112 @@
+{
+  "report_id": "SOU_600171299_2021-11-23",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:16:39.389493+00:00",
+  "run_finished_utc": "2026-02-10T08:17:49.817024+00:00",
+  "raw_file": "SOU_600171299_2021-11-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600171299_2021-11-23",
+    "school_profile": {
+      "school_type": "Střední odborná škola s teoretickým a praktickým vyučováním (maturitní i učební obory)",
+      "inspection_period": "23. 11. 2021 − 26. 11. 2021",
+      "school_change_summary": "Škola modernizuje budovy a od roku 2022 otevírá nový obor Rekondiční a sportovní masér."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Odborný výcvik probíhá na moderním vybavení v reálných provozovnách (salonech) pro zákazníky.",
+          "evidence": "Školní pracoviště jsou vybavena moderními technologiemi... fungují také jako provozovny pro zákazníky z řad veřejnosti."
+        },
+        {
+          "tag": "Klima a bezpečí",
+          "detail": "Škola má příjemné pracovní klima a účinně řeší rizikové chování, což podporuje dobré vztahy.",
+          "evidence": "Všechny realizované programy byly cíleně zaměřeny... škole dobře dařilo předcházet negativním projevům chování žáků."
+        },
+        {
+          "tag": "Partnerské vztahy",
+          "detail": "Spolupráce s odborníky z praxe a zahraniční stáže zvyšují uplatnitelnost absolventů.",
+          "evidence": "Zapojení oborníků z praxe... zvyšuje efektivitu vzdělávání... žáci mají příležitost získávat zkušenosti i na stážích v zahraničí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nefunkční náprava neúspěchu",
+          "detail": "Škola nevyužívá výsledky maturit k nápravě a chybí jí strategie pro žáky s vysokou absencí.",
+          "evidence": "Výsledky maturitních zkoušek... se nepromítají do stanovení úkolů... chybějící strategii práce s žáky s vysokou mírou zameškané výuky."
+        },
+        {
+          "tag": "Zastaralé vyučování",
+          "detail": "V teoretických předmětech převažuje pasivní výuka bez individuálního přístupu k talentovanějším žákům.",
+          "evidence": "Uplatňovaná škála metod a forem výuky byla méně pestrá... chyběla diferenciace výuky vzhledem k vzdělávacím možnostem jednotlivých žáků."
+        },
+        {
+          "tag": "Riziko nástavbového studia",
+          "detail": "Vysoká neúspěšnost u maturit v nástavbovém oboru Podnikání může ohrozit získání diplomu.",
+          "evidence": "Nejvyšší [neúspěšnost] byla v nástavbovém oboru vzdělání Podnikání... kde celkově neuspělo více než 30 % žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola reaguje na vysokou neúspěšnost u maturit v oboru Podnikání a jak pomáhá studentům?",
+        "Jaké konkrétní metody používají učitelé v teoretických předmětech, aby žáci nebyli pasivní?",
+        "Jak funguje systém individuální péče o žáky s častou absencí, aby nezanedchali povinnosti?"
+      ],
+      "who_school_fits": [
+        "Uchazeči o řemeslné a službové obory (kadeřník, masér, kosmetička), kteří chtějí kvalitní praxi.",
+        "Studenti, kteří oceňují otevřenou atmosféru, týmové akce a podporu výchovných poradců.",
+        "Zájemci o obor Ekonomika a podnikání, který má stoprocentní úspěšnost u maturit."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o nástavbové studium Podnikání kvůli vysokému riziku neúspěchu u maturit.",
+        "Studenti, kteří vyžadují silnou individuální podporu ve výuce teoretických předmětů.",
+        "Žáci se sklonem k vysoké absenci, protože škola nemá nastavenou funkční strategii nápravy."
+      ],
+      "plain_czech_summary": "Škola nabízí širokou škálu oborů se silným důrazem na odborný výcvik v moderních provozovnách, což žákům zajišťuje dobrou praxi. Vyznačuje se příjemným klimatem a funkční prevencí šikany. Slabinou je pasivní styl výuky v teoretických předmětech a neefektivní řešení školní neúspěšnosti, zejména v oboru Podnikání, kde neuspěje více než 30 % maturantů. Škola vhodně spojuje vzdělávání s trhem práce, ale rodiče by měli sledovat prospěch a absenci dětí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavá, s výrazným problémem v nástavbovém studiu.",
+        "key_numbers": [
+          "Celková neúspěšnost u maturit: 17,1 %",
+          "Neúspěšnost v oboru Podnikání: > 30 %",
+          "Úspěšnost v oboru Ekonomika a podnikání: 100 %"
+        ],
+        "evidence": "Neúspěšnost žáků u maturitní zkoušky činila za celou školu 17,1 %. Nejvyšší byla v nástavbovém oboru... Podnikání... více než 30 % žáků."
+      },
+      "absence": {
+        "trend": "Škola řeší projevy problémového chování, ale chybí jí systematická strategie pro žáky ohrožené neúspěchem.",
+        "key_numbers": [
+          "Celkový počet žáků: 926",
+          "Počet žáků se SVP: 50",
+          "Závažnější případy řešeny individuálně (př. záškoláctví)"
+        ],
+        "evidence": "Vzhledem k chybějící strategii práce s žáky s vysokou mírou zameškané výuky... nejsou vzdělávací činnosti... systematicky koordinované."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (výchovní poradci, prevence, kariérové poradenství, psycholog).",
+        "Nabídka doučování a individuálních konzultací pro žáky s výukovými obtížemi.",
+        "Adaptační dny a třídnické hodiny pro začlenění žáků."
+      ],
+      "safety_climate": [
+        "Příjemné pracovní klima ve všech sledovaných hodinách.",
+        "Účinná prevence rizikového chování a včasné řešení problémů.",
+        "Respektující vztahy mezi učiteli a žáky."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s profesními svazy a odborníky z praxe při výuce a zkouškách.",
+        "Stáže v zahraničí (Erasmus+, Slovensko).",
+        "Praktická výuka na smluvních pracovištích (např. úřady, provozní pracoviště)."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěry jsou dobře strukturované. Jedinou komplikací je delší text v části Hodnocení průběhu vzdělávání.",
+      "uncertainty_notes": [
+        "Nejasné, zda rozdílná kvalita poradenského pracoviště znamená horší péči na jednom z míst.",
+        "Chybí upřesnění, o jaká 'efektivní opatření' by škola měla rozšířit plány předmětových komisí."
+      ]
+    }
+  }
+}

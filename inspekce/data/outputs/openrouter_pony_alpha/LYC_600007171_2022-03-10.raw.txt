@@ -1,0 +1,103 @@
+{
+  "report_id": "LYC_600007171_2022-03-10",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola strojírenská a Jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "10., 11. a 14. března 2022",
+    "school_change_summary": "Od minulé inspekce došlo k výmazu nevyužívaných oborů, snížení kapacity a jmenování nového ředitele."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a praxe",
+        "detail": "Škola má velmi dobře vybavené dílny a moderní technologie jako 3D tisk a CNC.",
+        "evidence": "Výuka probíhá ve velmi dobře vybavených školních dílnách. Nově byla zařízena odborná učebna pro 3D tisk, CNC laboratoř."
+      },
+      {
+        "tag": "Uplatnění absolventů",
+        "detail": "Absolventi mají bezproblémové uplatnění na trhu práce a často pokračují na VŠ.",
+        "evidence": "Všichni najdou dobré uplatnění ve svém oboru na trhu práce. Třetina jich pokračuje na vysokých školách."
+      },
+      {
+        "tag": "Atmosféra a bezpečnost",
+        "detail": "Výuka probíhá v příjemné atmosféře a škola klade důraz na bezpečnost žáků.",
+        "evidence": "Sledovaná výuka... probíhala v převážně příjemné atmosféře. Efektivní je zajištění bezpečnosti žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná podpora v nouzi",
+        "detail": "Selhává systém prevence neúspěchu a adaptace prváků, což vede k odchodům žáků.",
+        "evidence": "Projevila se v horší adaptaci žáků prvních ročníků... předčasně ukončilo vzdělávání... sedm z prvních ročníků."
+      },
+      {
+        "tag": "Zastaralé vyučování",
+        "detail": "Výuka je často frontální bez diferenciace, což nezapojuje všechny žáky.",
+        "evidence": "V převládající frontální organizaci vyučování... ne vždy se dařilo zapojovat všechny žáky aktivně do výuky."
+      },
+      {
+        "tag": "Řízení a organizace",
+        "detail": "Vyskytly se chyby v rozvrhu a chybí hlubší analýza výsledků žáků.",
+        "evidence": "V kontrolním systému se ale vyskytly dílčí nedostatky v nesprávně sestaveném rozvrhu vyučovacích hodin."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky prvního ročníku, aby se vyhnuli problémům s učivem a odchodu ze školy?",
+      "Jakým způsobem vyučující ve třídách upravují výuku pro různé úrovně žáků, aby se neztráceli?",
+      "Jak škola pracuje s výsledky maturit a opravných zkoušek pro zlepšení kvality výuky?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří chtějí získat silné praktické dovednosti a kvalifikaci (svářeč, strojař) s jistotou uplatnění.",
+      "Pro technicky nadané žáky, kteří ocení moderní vybavení dílen a nové technologie (3D tisk, CNC).",
+      "Pro ty, kdo preferují menší školu s rodinnějším prostředím a přímým přístupem vedení."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří potřebují silný individuální přístup nebo mají studijní problémy, může být současná podpora nedostatečná.",
+      "Pro studenty, kteří očekávají moderní, interaktivní metody výuky a práci v týmu místo klasického frontálního vyučování.",
+      "Pro rodiče, kteří vyžadují perfektní organizační zázemí a bezchybné rozvrhy."
+    ],
+    "plain_czech_summary": "Škola se zaměřuje na strojírenství s vynikajícím technickým vybavením a dílnami, což zaručuje absolventům dobrou práci. Výuka probíhá v příjemné atmosféře, ale je často tradiční a málo diferencovaná. Velkým rizikem je vysoký počet žáků, kteří v prvním ročníku neuspějí nebo školu opustí, což souvisí s nedostatečnou podporou začátečníků. Nové vedení se snaží školu zlepšit, ale zatím chybí systémová opatření pro snížení neúspěšnosti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý, v posledním roce lepší než průměr, ale dlouhodobě horší matematika.",
+      "key_numbers": [
+        "Průměrný prospěch maturitního oboru dlouhodobě 2,30",
+        "Všichni žáci v loňském roce u maturitní zkoušky prospěli",
+        "Třetina absolventů pokračuje na VŠ"
+      ],
+      "evidence": "Všichni žáci v loňském školním roce u maturitní zkoušky prospěli... V matematice dosahovali žáci... horších výsledků."
+    },
+    "absence": {
+      "trend": "Relativně nízká, neomluvená téměř nulová.",
+      "key_numbers": [
+        "55 hodin (2018/19) až 74 hodin (2020/21) na žáka",
+        "Neomluvená absence se téměř nevyskytla"
+      ],
+      "evidence": "Absence žáků je relativně nízká... Neomluvená absence se téměř nevyskytla."
+    },
+    "support_services": [
+      "Kumulace funkcí metodika prevence a výchovného poradce v jedné osobě (zástupkyně ředitele).",
+      "Nabídka individuálních konzultací a nově organizované doučování pro maturity.",
+      "Adaptační kurz pro vzájemné poznávání žáků napříč obory."
+    ],
+    "safety_climate": [
+      "Příjemná atmosféra ve výuce a efektivní zajištění bezpečnosti.",
+      "Počet pochval převažuje nad kázeňskými opatřeními.",
+      "Řešení rizikového chování často formí snížené klasifikace."
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce s regionálními firmami a zřizovatelem (stipendia).",
+      "Zahájení spolupráce se zahraničními školami a projekt Erasmus+.",
+      "Využití lektorů z řad žáků pro vedení zájmových kroužků."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a rizika. Obsahuje dostatek konkrétních dat (počty žáků, prospěch, absence) pro objektivní hodnocení.",
+    "uncertainty_notes": [
+      "Chybí upřesnění, jaké konkrétní obory byly vymazány, jen se uvádí, že k tomu došlo.",
+      "Není jasné, zda 'snížená klasifikace' u rizikového chování znamená snížení známky z chování nebo známky z předmětu.",
+      "Text zmiňuje 'chybně nastavený rozvrh', ale neuvádí, v čem konkrétně spočívala chyba (kolize, dírky)."
+    ]
+  }
+}

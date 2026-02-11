@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOU_600170594_2023-01-09",
+  "school_profile": {
+    "school_type": "Střední škola a Mateřská škola, Liberec, Na Bojišti – příspěvková organizace",
+    "inspection_period": "9. až 11. ledna 2023",
+    "school_change_summary": "Škola se postupně zaměřuje na elektromobilitu a fotovoltaické panely. Byla vybudována nová specializovaná dílna na opravy motocyklů. V roce 2021/2022 zahájilo činnost Zařízení pro další vzdělávání pedagogických pracovníků. Došlo k rekonstrukci budovy (zateplení vnější omítky)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Špičková praktická výuka",
+        "detail": "Škola disponuje moderními specializovanými dílnami s nejnovějším vybavením, včetně cvičného výtahu pro elektromechaniky a reálných vozů od výrobců pro automobilové obory.",
+        "evidence": "Kvalita odborného výcviku je podporována využíváním širokého spektra moderních technologií, což se příznivě odráží v dobré uplatnitelnosti absolventů na trhu práce."
+      },
+      {
+        "tag": "Spolupráce se sociálními partnery",
+        "detail": "Škola úzce spolupracuje s profesními svazy a značkovými autoservisy, kde se žáci vzdělávají v reálném pracovním prostředí.",
+        "evidence": "Průběžně rozvíjená spolupráce se sociálními partnery přispívá k naplňování profilu absolventa a zpestření vzdělávací nabídky."
+      },
+      {
+        "tag": "Kvalitní vedení a management",
+        "detail": "Ředitel školy uplatňuje dlouhodobé odborné zkušenosti a opírá se o komunikaci se zřizovatelem a znalost vývoje v průmyslových oborech.",
+        "evidence": "Kvalitně a přehledně zpracovaná koncepce rozvoje školy jasně vytyčuje úkoly, které jsou konkretizovány, vyhodnocovány a upravovány na základě potřeb instituce."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká úspěšnost u maturit",
+        "detail": "Výsledky žáků u maturitní zkoušky jsou dlouhodobě nepříznivé a v celostátním srovnání podprůměrné.",
+        "evidence": "Úspěšnost žáků školy u MZ je v celostátním srovnání podprůměrná. Přes přijímaná opatření jsou celkové výsledky žáků dlouhodobě nepříliš příznivé."
+      },
+      {
+        "tag": "Vysoká absence a předčasné odchody",
+        "detail": "Žáci mají poměrně vysokou absenci ve vyučování a vysoký je počet předčasných odchodů ze vzdělávání, zejména v nástavbovém studiu.",
+        "evidence": "Jednou z příčin neúspěšnosti žáků je jejich poměrně vysoká absence ve vyučování prohloubená ještě důsledky distanční výuky v nedávném období."
+      },
+      {
+        "tag": "Omezené používání moderních vyučovacích metod",
+        "detail": "Ve výuce dominuje frontální forma, aktivizující metody a diferenciace jsou využívány jen ojediněle.",
+        "evidence": "Ve většině hodnocených hodin dominovala frontální forma výuky, ojediněle doplněná skupinovým vyučováním. Diferenciace a individualizace výuky probíhala jen výjimečně."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní opatření škola zavádí, aby zvýšila úspěšnost žáků u maturitní zkoušky?",
+      "Jak škola řeší vysokou absenci žáků a co nabízí těm, kteří jsou ohroženi neprospěchem?",
+      "Jaké jsou konkrétní příklady spolupráce se sociálními partnery a jak se to odráží v praxi žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o technické obory, zejména strojírenství, elektrotechniku a automobilový průmysl",
+      "Studenti, kteří se chtějí učit v reálném pracovním prostředí a mají praktické zaměření",
+      "Žáci, kteří si cení kvalitního materiálního vybavení a moderních technologií ve výuce"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k vyšší absenci nebo s problémy s motivací – škola má dlouhodobě nižší úspěšnost u maturit",
+      "Studenti, kteří preferují aktivní a interaktivní vyučování – dominuje zde frontální forma výuky",
+      "Žáci s potřebou individuálního přístupu a diferenciace – ta se v hodinách uplatňuje jen ojediněle"
+    ],
+    "plain_czech_summary": "Škola se zaměřuje na technické obory s výborným praktickým vybavením a reálnou praxí v autoservisech. Ředitel školu dobře vede a spolupracuje se sociálními partnery. Problém je nízká úspěšnost u maturit a vysoká absence žáků. Výuka často používá jen frontální metody bez aktivního zapojení studentů. Mateřská škola funguje velmi dobře s příjemnou atmosférou. Pokud máte dítě se zájmem o techniku a praktickou práci, je to dobrá volba, ale počítejte s tím, že škola potřebuje zlepšit teoretickou přípravu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě nepříznivý, podprůměrný v celostátním srovnění",
+      "key_numbers": [
+        "Úspěšnost u maturitní zkoušky je v celostátním srovnění podprůměrná",
+        "V tříletých učebních oborech uspěje v jarním řádném termínu okolo 80 %",
+        "V opravných zkouškách pak jen asi polovina zúčastněných"
+      ],
+      "evidence": "Přes přijímaná opatření jsou celkové výsledky žáků dlouhodobě nepříliš příznivé. Úspěšnost žáků školy u MZ je v celostátním srovnění podprůměrná."
+    },
+    "absence": {
+      "trend": "Vysoká, zhoršená důsledky distanční výuky",
+      "key_numbers": [
+        "Poměrně vysoká absence ve vyučování",
+        "Vysoký počet předčasných odchodů ze vzdělávání",
+        "Výrazněji se projevuje zejména v nástavbovém studiu"
+      ],
+      "evidence": "Jednou z příčin neúspěšnosti žáků je jejich poměrně vysoká absence ve vyučování prohloubená ještě důsledky distanční výuky v nedávném období."
+    },
+    "support_services": [
+      "Výchovné poradenství zajišťuje zkušená a plně kvalifikovaná výchovná poradkyně",
+      "Systém kariérového poradenství se postupně zavádí",
+      "Nabídka individuálních konzultací a doučování pro žáky ohrožené školním neúspěchem",
+      "Možnost přestupu z maturitního oboru na obor tříletý",
+      "Metodička prevence zajišťuje preventivní program"
+    ],
+    "safety_climate": [
+      "Nastavená pravidla a pokyny k bezpečnosti jsou na jednotlivých pracovištích odborného výcviku důsledně dodržována",
+      "Škola se snaží důsledně a bez odkladu řešit různé projevy rizikového chování žáků",
+      "Každoročně řeší incidenty různého typu (záškoláctví, kouření, vztahové problémy)",
+      "Dvoudenní harmonizační dny na začátku studia podporují zapojení žáků do chodu školy"
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje se sociálními partnery na úpravách školních vzdělávacích programů",
+      "Velká část odborného výcviku se uskutečňuje v soukromých značkových autoservisech",
+      "Žáci se vzdělávají v reálném pracovním prostředí",
+      "Škola je členem řady profesních svazů a asociací",
+      "Spolupráce se školskými poradenskými zařízeními a institucemi (Police ČR)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více odborné terminologie, která by mohla být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní počty žáků, kteří předčasně opustili vzdělávání – pouze že je to vysoký počet",
+      "Chybí konkrétní data o počtu incidentů a jejich typech, které škola řeší",
+      "Není jasné, jaké konkrétní opatření škola přijala k zvýšení úspěšnosti u maturit a jaké byly jejich výsledky"
+    ]
+  }
+}
+```

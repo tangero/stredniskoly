@@ -1,0 +1,117 @@
+{
+  "report_id": "LYC_600025021_2025-04-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:39:05.477754+00:00",
+  "run_finished_utc": "2026-02-09T13:39:33.181105+00:00",
+  "raw_file": "LYC_600025021_2025-04-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600025021_2025-04-07",
+    "school_profile": {
+      "school_type": "Střední škola se speciálními vzdělávacími potřebami (SVP), internátem a školní jídelnou",
+      "inspection_period": "7.–10. dubna a 2. května 2025",
+      "school_change_summary": "Počet žáků mírně klesl ze 112 na 101 (88 % kapacity). Od školního roku 2025/2026 škola zahajuje nový obor Pedagogické lyceum. Materiální podmínky se postupně zlepšují díky projektům (zateplení, výměna oken, elektrického vedení)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní odborný výcvik",
+          "detail": "Učitelé odborného výcviku efektivně propojují teorii s praxí a motivují žáky k profesnímu rozvoji.",
+          "evidence": "Žáci získávají praktické dovednosti v gastronomii a obchodu, které jsou užitečné pro jejich budoucí kariéru."
+        },
+        {
+          "tag": "Moderní internát",
+          "detail": "Zrekonstruované prostory a vybavení internátu poskytují bezpečné a podnětné prostředí.",
+          "evidence": "Internát aktivně podporuje osobnostní rozvoj, volnočasové aktivity a projekty žáků se speciálními potřebami."
+        },
+        {
+          "tag": "Praktické zkušenosti",
+          "detail": "Žáci se učí v reálných podmínkách – cvičné kuchyňky, kavárna, smluvní partneři.",
+          "evidence": "Příprava pokrmů mezinárodních kuchyní a nápojů zvyšuje jejich šanci na úspěšné uplatnění na trhu práce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Průměrná absence dosahuje 356 hodin na žáka za rok s rostoucí tendencí.",
+          "evidence": "Zákonní zástupci nejsou včas informováni o nepřítomnosti. Škola nemá elektronický systém pro evidenci absence."
+        },
+        {
+          "tag": "Nízké úspěšnosti u maturity",
+          "detail": "Z maturitních oborů úspěšně skončilo jen 44 % žáků, kteří nastoupili do prvního ročníku.",
+          "evidence": "Ze 16 žáků uspělo u maturitní zkoušky pouze 7. Neprospělo 16 % žáků, 16 % nebylo klasifikováno."
+        },
+        {
+          "tag": "Slabá komunikace se školou",
+          "detail": "Chybí jednotný systém informování rodičů o výchovných opatřeních a prospěchu.",
+          "evidence": "V elektronickém systému nebylo v minulém roce evidováno žádné výchovné opatření, přestože škola je udělovala."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jak budete informováni o nepřítomnosti vašeho dítěte?",
+        "Jaké konkrétní kroky škola podnikla pro zvýšení úspěšnosti u maturitní zkoušky po loňských 44 %?",
+        "Jak funguje komunikace mezi školou a rodiči – jak budete informováni o prospěchu a chování vašeho dítěte?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o gastronomii nebo obchod, kteří se učí lépe praktickou formou",
+        "Žáci se speciálními vzdělávacími potřebami, kterým vyhovuje menší třída a individuální přístup",
+        "Žáci, kteří potřebují ubytování – internát má dobré podmínky a podporu"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají vysokou úspěšnost u maturity – škola má problémy s dokončením studia",
+        "Žáci, kteří potřebují jasné pravidla a jednotný přístup – škola má problémy s jednotným hodnocením",
+        "Rodiny, které potřebují pravidelnou komunikaci se školou – informační systém není funkční"
+      ],
+      "plain_czech_summary": "Střední škola Gemini je zaměřena na žáky se speciálními potřebami a nabízí kvalitní praktický výcvik v gastronomii a obchodu. Internát má dobré podmínky. Hlavní problémy: vysoká absence žáků (356 hodin ročně), nízká úspěšnost u maturity (44 %), slabá komunikace s rodiči a nejednotný systém hodnocení. Škola se snaží zlepšovat, ale dosavadní opatření nejsou dostatečně účinná. Vhodná pro žáky, kterým vyhovuje praktická výuka a menší skupiny."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšení od poslední inspekce, ale stále nízké absolutní čísla",
+        "key_numbers": [
+          "44 % úspěšnosti (7 z 16 žáků)",
+          "62 % úspěšnosti v tříletých oborech (5 z 8 žáků)",
+          "Zvýšení neprospívajících žáků o 2 procentní body na 16 %"
+        ],
+        "evidence": "Škola zavedla maturitní zkoušky na nečisto. Přesto z maturitních oborů úspěšně skončilo jen 44 % nastoupivších žáků."
+      },
+      "absence": {
+        "trend": "Rostoucí tendence za poslední tři roky",
+        "key_numbers": [
+          "356 hodin na žáka za poslední školní rok",
+          "Vyšší absence v oboru Veřejnosprávní činnost než v gastronomii",
+          "16 % žáků neklasifikováno ve druhém pololetí"
+        ],
+        "evidence": "Škola nemá elektronický systém pro evidenci absence. Zákonní zástupci nejsou včas informováni. Absence se vyhodnocuje jen obecně na pedagogické radě."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně (zároveň speciální pedagog a kariérová poradkyně), školní metodik prevence",
+        "Individuální vzdělávací plány pro žáky s psychickými obtížemi – zpracovány velmi obecně bez konkrétních údajů",
+        "Asistenti pedagoga – jejich činnost není dostatečně efektivní a intenzivní",
+        "Spolupráce s Pedagogicko-psychologickou poradnou Brno a Policií ČR"
+      ],
+      "safety_climate": [
+        "Internát: bezpečné a kvalitní prostředí s dobrou mobilitou pro žáky se SVP",
+        "Tělesná výchova: vedena nekvalifikovanou učitelkou bez správné struktury a vedení",
+        "Venkovní areál: zjištěno místo se stavebním řešením snižujícím bezpečnost",
+        "Bezpečnostní a hygienické pravidla jsou v praktickém vyučování důsledně dodržovány"
+      ],
+      "partnerships_practice": [
+        "Erasmus+: spolupráce se speciálními školami v zahraničí",
+        "AGAPO, o.p.s.: pomoc při pracovním uplatnění lidí se zdravotním znevýhodněním",
+        "Centrum léčivých rostlin při lékařské fakultě: semináře pro gastronomické obory",
+        "Praktické vyučování: smluvní partneři v oboru Prodavač",
+        "Praxe studentů pedagogické fakulty"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, používá konkrétní čísla a příklady. Slabší je pouze v některých technických pasážích o systémech a procesech.",
+      "uncertainty_notes": [
+        "Není jasné, jaké konkrétní kroky škola plánuje pro zvýšení úspěšnosti u maturity",
+        "Chybí informace o tom, jak dlouho trvá absence v elektronickém systému",
+        "Není specifikováno, jaké konkrétní opatření budou zavedena pro řešení absence"
+      ]
+    }
+  }
+}

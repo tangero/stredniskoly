@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_600008851_2024-05-15",
+  "school_profile": {
+    "school_type": "Střední odborná škola s maturitní zkouškou (4 obory) + domov mládeže",
+    "inspection_period": "15. 5. 2024 – 20. 5. 2024",
+    "school_change_summary": "Počet žáků vzrostl na 266 v 12 třídách, pedagogický sbor se rozšířil a prochází generační obměnou, škola modernizuje vybavení a plánuje přístavbu domova mládeže."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola efektivně spolupracuje se zaměstnavateli a vysokými školami, což zvyšuje uplatnitelnost absolventů.",
+        "evidence": "Poradní sbor ředitele spojuje školní vzdělání s praxí, fakultní škola univerzit."
+      },
+      {
+        "tag": "Zahraniční zkušenosti",
+        "detail": "Dlouhodobá spolupráce se zahraničními školami rozvíjí jazykové a sociální kompetence žáků.",
+        "evidence": "Zahraniční pobyty, výměna zkušeností, rozvoj občanských kompetencí."
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Nízká absence, minimální kázeňská opatření, vysoký počet pochval motivuje žáky k učení.",
+        "evidence": "Jeden neúspěšný žák, 20 % s vyznamenáním, efektivní preventivní aktivity."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Učitelé málo využívají aktivizující metody, převažuje frontální výuka bez dostatku prostoru pro spolupráci.",
+        "evidence": "Frontální výuka kombinovaná se samostatnou prací, málo tvůrčího a kritického myšlení."
+      },
+      {
+        "tag": "Chybí individuální přístup",
+        "detail": "Úkoly nejsou dostatečně diferencovány podle různých schopností a tempa žáků.",
+        "evidence": "Nízká míra diferenciace zadávaných úkolů, nedostatečný rozvoj potenciálu jednotlivce."
+      },
+      {
+        "tag": "Kapacita domova mládeže",
+        "detail": "Se vzrůstajícím počtem žáků se kapacita domova mládeže stává nedostačující.",
+        "evidence": "Ubytováno 140 žáků, vedení plánuje přístavbu v stadiu studie."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se učitelé připravují na výuku s ohledem na různé schopnosti žáků?",
+      "Jaké jsou zkušenosti absolventů s uplatněním na trhu práce?",
+      "Jak funguje spolupráce mezi školou a domovem mládeže při řešení studijních problémů?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o ekologii, potravinářství a přírodní vědy s podporou praxe",
+      "Studenti, kteří chtějí získat zahraniční zkušenosti a jazykové dovednosti",
+      "Žáci z okolí, kteří mohou využít ubytování v domově mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní, skupinové a tvůrčí formy výuky (převažuje frontální výuka)",
+      "Studenti s různorodými schopnostmi, kteří potřebují silnější individualizaci",
+      "Žáci vyžadující intenzivnější podporu v sebehodnocení a kritickém myšlení"
+    ],
+    "plain_czech_summary": "Škola v Blatském sídlišti je stabilní zařízení s dobrými vazbami na praxi a zahraniční partnery. Žáci se učí v bezpečném prostředí s nízkou absencí a motivací. Hlavní slabinou je, že výuka je často pasivní – učitelé málo využívají skupinové práce a tvůrčí úkoly. Úkoly nejsou dostatečně přizpůsobeny různým schopnostem žáků. Domov mládeže je přeplnený a čeká se na přístavbu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, s rozdíly mezi obory",
+      "key_numbers": [
+        "1 neúspěšný žák na konci 2. pololetí",
+        "20 % žáků prospělo s vyznamenáním",
+        "Nejlepší výsledky u oboru Přírodovědné lyceum"
+      ],
+      "evidence": "Výsledky odpovídají studijnímu potenciálu žáků, některé obory dosahují nadprůměrných, jiné podprůměrných výsledků."
+    },
+    "absence": {
+      "trend": "Nízká a dobře kontrolovaná",
+      "key_numbers": [
+        "Poměrně nízká absence",
+        "Minimální neomluvenost",
+        "Zapříčiněna jednotlivci"
+      ],
+      "evidence": "Efektivita preventivních aktivit a účinná spolupráce s rodinou a domovem mládeže."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště zajišťuje služby odpovídající velikosti školy",
+      "Podpůrná opatření v souladu s doporučeními školských poradenských zařízení",
+      "Preventivní program zaměřený na rozpoznání rizikového chování a včasnou intervenci"
+    ],
+    "safety_climate": [
+      "Klidná pracovní atmosféra v hodinách",
+      "Respektující a vstřícný přístup pedagogů",
+      "Žáci zodpovědně plní úkoly a dodržují pravidla",
+      "Ojedinělé ukládání kázeňských opatření, vysoký počet pochval"
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce s organizacemi zaměstnavatelů",
+      "Fakultní škola Přírodovědecké fakulty UK a JU, cvičná škola ČZU",
+      "Dlouhodobá spolupráce se zahraničními školami formou projektů a stáží",
+      "Poradní sbor ředitele spojuje školní vzdělání s praxí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně rozlišuje silné a slabé stránky. Konkrétní čísla a příklady jsou dostupné. Mírně snižuje srozumitelnost odborná terminologie (formativní hodnocení, diferenciace) bez vysvětlení.",
+    "uncertainty_notes": [
+      "Není jasné, jak přesně se měří 'nízká míra diferenciace' – chybí konkrétní procenta nebo počty hodin",
+      "Výsledky maturit nejsou uvedeny v absolutních číslech, pouze kvalitativně",
+      "Není specifikováno, kolik procent žáků využívá domov mládeže a jak se to změní po přístavbě"
+    ]
+  }
+}
+```

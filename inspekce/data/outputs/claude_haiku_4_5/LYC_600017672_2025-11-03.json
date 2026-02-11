@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600017672_2025-11-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:29:51.431018+00:00",
+  "run_finished_utc": "2026-02-09T13:30:20.586044+00:00",
+  "raw_file": "LYC_600017672_2025-11-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600017672_2025-11-03",
+    "school_profile": {
+      "school_type": "Obchodní akademie a Vyšší odborná škola sociálně právní (střední a terciární vzdělání)",
+      "inspection_period": "3. listopadu 2025 až 7. listopadu 2025",
+      "school_change_summary": "Nový ředitel od roku 2024, inovován program Ekonomického lycea, postupné modernizace budov. Vyšší odborná škola zařazena do vyhlášky č. 414/2024 Sb. (od 1. 1. 2026), což zajišťuje absolventům uznání zkoušek zvláštní odborné způsobilosti v sociální oblasti."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jasná vize a stabilní vedení",
+          "detail": "Nový ředitel má bohaté zkušenosti a nastavil otevřenou komunikaci s pedagogy. Strategie rozvoje je promyšleně zaměřena na kvalitu vzdělávání a propojení střední a vyšší školy.",
+          "evidence": "Ředitel rozdělil kompetence mezi tři zástupce, funguje systém porad a pedagogických rad."
+        },
+        {
+          "tag": "Silné partnerství se praxí",
+          "detail": "Dlouhodobá spolupráce se sociálními partnery zajišťuje vazbu teorie na praxi a zvyšuje konkurenceschopnost absolventů.",
+          "evidence": "Škola pořádá mezinárodní konference, veletrhy a aktivně zapojuje žáky do charitativních akcí."
+        },
+        {
+          "tag": "Podpora nadaných žáků",
+          "detail": "Žáci se úspěšně zapojují do soutěží a projektů. Čtyři žákyně získaly zlatou úroveň Mezinárodní ceny vévody z Edinburghu.",
+          "evidence": "Fiktivní firma školy zvítězila v kategorii nejlepší e-shop na Mezinárodním veletrhu v Košicích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá práce s učebními cíli",
+          "detail": "V některých hodinách chybí jasné zaměření na cíl a ověření jeho naplnění. Žáci nejsou vedeni k sebehodnocení.",
+          "evidence": "Inspektoři zaznamenali, že závěrečné shrnutí chybí a formativní hodnocení není realizováno."
+        },
+        {
+          "tag": "Málo samostatné práce s informacemi",
+          "detail": "Žáci a studenti nejsou dostatečně vedeni k vyhledávání a třídění informací z různých zdrojů.",
+          "evidence": "Samostatná práce s informačními zdroji se objevovala ojediněle, studenti nejsou vedeni k samostatnému využívání zdrojů."
+        },
+        {
+          "tag": "Mírné zhoršení maturitních výsledků",
+          "detail": "V roce 2024/2025 se výsledky maturit mírně zhoršily oproti předchozím letům, zejména v společné části.",
+          "evidence": "Celková hrubá úspěšnost činí přibližně 63 %, matematiku si volí jen ojediněle."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s individuálními vzdělávacími potřebami žáků v jednotlivých třídách?",
+        "Jaké jsou konkrétní plány na zlepšení výsledků maturitní zkoušky, zejména v matematice a společné části?",
+        "Jak se škola vypořádá s absencí domova mládeže (využíván pro ukrajinské uprchlíky od března 2022)?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o obchod, ekonomii a veřejnosprávní činnost, kteří oceňují propojení teorie s praxí",
+        "Studenti sociální práce a sociální pedagogiky, kterým vyhovuje blokový systém výuky a příprava na konkrétní profesi",
+        "Nadaní žáci a studenti, kteří se chtějí zapojit do soutěží, projektů a mezinárodních aktivit"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní individuální vedení a jasně definované cíle – škola na tom stále pracuje",
+        "Studenti, kteří preferují samostatné vyhledávání informací – toto není dostatečně rozvíjeno",
+        "Zájemci o matematiku – výsledky v tomto předmětu jsou slabší a matematiku si volí málo žáků"
+      ],
+      "plain_czech_summary": "Obchodní akademie v Ostravě je stabilní školou s novým vedením, které má jasnou vizi. Silné stránky: kvalitní vedení, spolupráce s praxí, podpora nadaných žáků. Slabiny: učitelé nedostatečně pracují s cíli hodin a nevedou žáky k samostatnému vyhledávání informací. Maturitní výsledky se mírně zhoršily. Škola je vhodná pro žáky zajímající se o obchod a sociální práci, ale měla by zlepšit práci s učebními cíli a kritickým myšlením."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírný pokles v roce 2024/2025 oproti předchozím letům",
+        "key_numbers": [
+          "Celková hrubá úspěšnost přibližně 63 %",
+          "Horší výsledky v společné části maturitní zkoušky",
+          "Matematiku si volí jen ojediněle"
+        ],
+        "evidence": "Ve sledovaném období výsledky odpovídaly průběžným výsledkům. V roce 2024/2025 se výsledky mírně zhoršily, škola hledá příčiny a nabízí doučování a semináře."
+      },
+      "absence": {
+        "trend": "Pokles absence ve druhém pololetí 2024/2025",
+        "key_numbers": [
+          "Průměrná absence žáka 48,10 omluvených hodin za rok",
+          "Neomluvené hodiny se vyskytly pouze u jednotlivců",
+          "Absence řešena dle nastavených postupů"
+        ],
+        "evidence": "Neomluvené hodiny byly zaznamenány a řešeny. Ve druhém pololetí došlo k poklesu celkové absence."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zaměřené na speciální vzdělávací potřeby a prevenci sociálně patologických jevů",
+        "Individuální konzultace a doučování pro žáky ohrožené školním neúspěchem",
+        "Metodická podpora pedagogům od výchovných poradenkyň"
+      ],
+      "safety_climate": [
+        "Bezpečnost zajištěna v součinnosti s osobami odbornými v prevenci rizik a požární ochraně",
+        "Účinnost preventivních mechanismů pravidelně vyhodnocována",
+        "Školní klima monitorováno externí společností, výsledky systematicky zpracovávány"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se četnými sociálními partnery a asociacemi",
+        "Fakultní škola Ostravské univerzity a Vysoké školy báňské",
+        "Zapojení do Sítě přidružených škol UNESCO a programu Světová škola"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, bez zbytečného úřednického stylu. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však delší a obsahují více informací najednou, což mírně snižuje přehlednost.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o počtu žáků s vyznamenáním v jednotlivých letech – pouze obecné tvrzení '19 % žáků prospělo s vyznamenáním'",
+        "Příčiny zhoršení maturitních výsledků nejsou konkrétně specifikovány, pouze se uvádí, že škola je analyzuje",
+        "Není jasné, jak konkrétně se škola vypořádá s doporučeními inspekce z roku 2023 – uvedeno jen 'částečně naplňovány'"
+      ]
+    }
+  }
+}

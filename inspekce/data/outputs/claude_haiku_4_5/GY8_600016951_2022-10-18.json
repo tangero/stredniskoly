@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600016951_2022-10-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:58:37.749927+00:00",
+  "run_finished_utc": "2026-02-09T16:59:04.717249+00:00",
+  "raw_file": "GY8_600016951_2022-10-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600016951_2022-10-18",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium s všeobecným zaměřením, příprava na vysoké školy",
+      "inspection_period": "18.–20. října 2022",
+      "school_change_summary": "Od poslední inspekce došlo zejména ke zlepšení materiálních podmínek pro vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Pozitivní školní klima",
+          "detail": "Vstřícné prostředí se zdravými vztahy mezi žáky a pedagogy, minimální kázeňské problémy.",
+          "evidence": "Výrazně převládají udělené pochvaly, počet kázeňských opatření je ojedinělý."
+        },
+        {
+          "tag": "Kvalitní výuka jazyků",
+          "detail": "Důraz na gramatiku, slovní zásobu a výslovnost s vysokou úspěšností v mezinárodních zkouškách.",
+          "evidence": "Vysoké úspěšnosti dosahují žáci při mezinárodních jazykových zkouškách."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Škola dosahuje velmi dobrých výsledků v didaktických testech společné části maturitní zkoušky.",
+          "evidence": "Velmi dobré výsledky nejen v rámci Olomouckého kraje."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená individualizace výuky",
+          "detail": "Nadaní žáci dostávají málo příležitostí k rozvoji, chybí diferenciace obsahu.",
+          "evidence": "Nadaným žákům byly zřídka vytvářeny další vhodné příležitosti pro jejich rozvoj."
+        },
+        {
+          "tag": "Málo práce s informačními zdroji",
+          "detail": "Žáci málo pracují s různými zdroji, což omezuje rozvoj kritického myšlení.",
+          "evidence": "Jen v minimální míře žáci využívali různé informační zdroje."
+        },
+        {
+          "tag": "Chybí strategie pro ohrožené žáky",
+          "detail": "Není vypracován jednotný postup podpory pro žáky s rizikem školního neúspěchu.",
+          "evidence": "V dokumentaci školy chybí strategie k zajištění jednotného postupu a podpory žákům ohroženým školním neúspěchem."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky? Jaké jsou možnosti jejich rozvoje?",
+        "Jak se učí žáci pracovat s různými informačními zdroji a rozvinout kritické myšlení?",
+        "Jaké jsou konkrétní postupy, když má žák problémy s učením nebo chováním?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními výsledky a motivací na vysokou školu",
+        "Děti, kterým vyhovuje tradiční frontální výuka s aktivizačními prvky",
+        "Zájemci o kvalitní jazykové vzdělání a mezinárodní certifikáty"
+      ],
+      "who_should_be_cautious": [
+        "Nadaní žáci, kteří potřebují intenzivnější individuální rozvoj a výzvy",
+        "Žáci s poruchami učení nebo chováním, pokud potřebují jasný a jednotný systém podpory",
+        "Děti, které se učí lépe pomocí samostatného výzkumu a práce s různými zdroji"
+      ],
+      "plain_czech_summary": "Gymnázium v Šternberku je kvalitní střední škola s velmi dobrými výsledky v maturitách a jazykách. Má příjemné prostředí, stabilní tým učitelů a efektivní řízení. Výuka je profesionální, ale spíše tradičnější. Hlavní slabinou je, že nadaní žáci nedostávají dost příležitostí k rozvoji a žáci málo pracují s různými informačními zdroji. Chybí také jasná strategie pro žáky s problémy v učení. Škola je vhodná pro motivované žáky se zájmem o vysokou školu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi dobrý",
+        "key_numbers": [
+          "Velmi dobré výsledky v didaktických testech společné části maturitní zkoušky",
+          "Vysoká úspěšnost v mezinárodních jazykových zkouškách",
+          "Bez závažných vzájemných odchylek mezi předměty v roce 2021/2022"
+        ],
+        "evidence": "Škola dosahuje nejen v rámci Olomouckého kraje velmi dobrých výsledků v didaktických testech."
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "Škola se nepotýká s vysokou absencí žáků ve vyučování"
+        ],
+        "evidence": "Na dosahované výsledky vzdělávání pozitivně působí fakt, že se škola nepotýká s vysokou absencí."
+      },
+      "support_services": [
+        "Školní psycholožka doplňuje standardní poradenské pracoviště",
+        "Péče o žáky se speciálními vzdělávacími potřebami s odpovídajícími podpůrnými opatřeními",
+        "Individuální konzultace a doučování pro žáky s rizikem neúspěchu",
+        "Vyhledávání a rozvoj nadaných žáků prostřednictvím zájmových útvarů a soutěží"
+      ],
+      "safety_climate": [
+        "Vstřícné prostředí s pozitivním klimatem a žádoucími prosociálními vztahy",
+        "Minimální počet kázeňských opatření, výrazně převládají pochvaly",
+        "Čisté, vkusně upravené prostory splňující podmínky bezpečného prostředí",
+        "Pravidelná dotazníková šetření klimatu třídy jako podklad pro preventivní aktivity"
+      ],
+      "partnerships_practice": [
+        "Partnerská spolupráce se zřizovatelem (Olomoucký kraj) a školskou radou",
+        "Účinná komunikace se zákonnými zástupci žáků prostřednictvím elektronické formy a osobních setkání",
+        "Nadstandardní spolupráce s městem Šternberk, místními organizacemi a Univerzitou Palackého",
+        "Aktivní činnost rodičovského sdružení s organizační a finanční podporou"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní citace a evidence. Některé pasáže jsou však dlouhé a úřednické, což mírně snižuje srozumitelnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní počty nadaných žáků nebo podíl žáků se speciálními potřebami",
+        "Chybí konkrétní čísla o absenci (procenta nebo počty hodin)",
+        "Není jasné, jak velký je podíl hodin s diferenciací versus bez ní"
+      ]
+    }
+  }
+}
