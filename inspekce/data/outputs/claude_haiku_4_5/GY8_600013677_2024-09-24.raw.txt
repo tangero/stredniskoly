@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "GY8_600013677_2024-09-24",
+  "school_profile": {
+    "school_type": "Soukromé gymnázium (čtyřleté a osmileté studium) se zaměřením na cizí jazyky",
+    "inspection_period": "24. 9. 2024 – 27. 9. 2024",
+    "school_change_summary": "Škola zaznamenala nárůst počtu žáků o 11 % na 396 studentů. Došlo k rekonstrukci historické budovy, zavedení virtuální reality a umělé inteligence do výuky. Školní poradenské pracoviště bylo rozšířeno o pozici školního psychologa."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Škola systematicky podporuje rozvoj jazykových kompetencí s možností získat certifikáty na úrovni B1, B2, někdy i C1 během studia.",
+        "evidence": "Spolupráce s jazykovými školami, zájezdy do zahraničí, podpora certifikací."
+      },
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Neúspěšnost u maturitní zkoušky za poslední tři roky je minimální, nižší než průměr v republice.",
+        "evidence": "Dlouhodobě stabilní a velmi dobré výsledky vzdělávání, úspěšnost při přijímacím řízení na vysoké školy."
+      },
+      {
+        "tag": "Kvalitní materiální podmínky",
+        "detail": "Zrekonstruovaná budova, moderní technologická infrastruktura včetně virtuální reality a umělé inteligence.",
+        "evidence": "Multimediální učebna, nový nábytek, výměna oken se zvukovou izolací, partnerství s Masarykovou univerzitou."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Bezpečnost na sportovištích",
+        "detail": "Škola neměla adekvátní systém kontroly bezpečnosti na pronajatém hřišti, kde byly zjištěny neukotvené branky.",
+        "evidence": "Inspektoři zjistili neukotvené branky; škola reagovala až vizuální kontrolou před hodinou, ne preventivně."
+      },
+      {
+        "tag": "Bezpečnost v budově",
+        "detail": "Žáci opakovaně sedají na okenní parapety navzdory zákazu ve školním řádu, což představuje riziko pádu.",
+        "evidence": "Inspektoři byli přítomni situacím, kdy pedagogové žáky opakovaně napomínali; zákaz není funkční."
+      },
+      {
+        "tag": "Slabší práce s nadanými žáky",
+        "detail": "Cílené vyhledávání a práce s nadanými žáky v hodinách nebyla pozorována, ačkoli mají možnosti mimo výuku.",
+        "evidence": "Nadaní žáci se zapojují do soutěží a olympiád, ale specifická práce v hodinách chybí."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola zajišťuje bezpečnost na pronajatých sportovištích a jak komunikuje s jejich provozovateli?",
+      "Jaké konkrétní kroky podnikla škola po inspekci k řešení bezpečnosti na parapetu (např. instalace zábradlí)?",
+      "Jak se škola zaměřuje na individuální práci s nadanými žáky přímo během hodin?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí kvalitní jazykové vzdělání s certifikáty a zahraničními zájezdy.",
+      "Ambiciózní studenti cílící na vysoké školy – výborné výsledky maturit a vysoká úspěšnost při přijímacím řízení.",
+      "Žáci hledající moderní technologické vybavení – virtuální realita, umělá inteligence a digitální infrastruktura."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kterým záleží na maximální bezpečnosti – škola má rezervy v systému zajištění bezpečnosti, zejména na pronajatých sportovištích.",
+      "Žáci potřebující intenzivní individuální podporu – formativní hodnocení se využívá jen ojediněle, cílená práce se SVP není konzistentní.",
+      "Žáci s potřebou relaxačních zón – škola nemá z prostorových důvodů vyhrazené odpočinkové prostory pro přestávky."
+    ],
+    "plain_czech_summary": "Moravské gymnázium je kvalitní soukromá škola se silným zaměřením na jazyky a moderní technologie. Žáci dosahují výborných výsledků u maturit a úspěšně se hlásí na vysoké školy. Výuka je vedena promyšleně s dobrým klimatem. Škola má však rezervy v bezpečnosti – zejména na pronajatých sportovištích a v budově (parapety). Formativní hodnocení se využívá málo a práce s nadanými žáky v hodinách chybí. Vhodná pro ambiciózní studenty zaměřené na jazyky a vysokoškolské studium."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "Neúspěšnost nižší než průměr republiky za poslední 3 roky",
+        "Vysoká úspěšnost při přijímacím řízení na vysoké školy doma i v zahraničí"
+      ],
+      "evidence": "Dlouhodobě stabilní a velmi dobré výsledky vzdělávání, minimální neúspěšnost u maturitní zkoušky."
+    },
+    "absence": {
+      "trend": "Velmi nízká",
+      "key_numbers": [
+        "Neomluvené hodiny se vyskytují velmi sporadicky"
+      ],
+      "evidence": "Minimální výchovné problémy, účinné řešení prostřednictvím rozhovorů se zákonnými zástupci."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: metodika prevence, výchovný poradce, školní psycholog (nově od tohoto roku)",
+      "Kariérní poradenství formou sdílených informací a osobních konzultací",
+      "Individuální konzultace s vyučujícími pro žáky ohrožené školním neúspěchem"
+    ],
+    "safety_climate": [
+      "Prevence sociálně patologických jevů zajišťována preventivními programy, adaptačními dny a pobyty",
+      "Anonymní schránka důvěry (fyzická i elektronická) s adekvátním nakládáním s informacemi",
+      "Rezervy v systému zajištění bezpečnosti: nevyhodnocená rizika na parapetech, neukotvené branky na pronajatém hřišti"
+    ],
+    "partnerships_practice": [
+      "Brněnské vysoké školy, Fakultní nemocnice Brno, síť UNESCO škol, jazyková škola PARK, Österreich Institut Brno",
+      "Masarykova univerzita – partnerství pro odborné učebny přírodovědných předmětů",
+      "Jazykové školy a instituce pro podporu certifikací (B1, B2, C1)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Silné a slabé stránky jsou jasně vymezeny. Doporučení jsou konkrétní. Mírně snižuje srozumitelnost technická terminologie a rozsáhlé pasáže o metodice.",
+    "uncertainty_notes": [
+      "Školní řád zakazuje sezení na parapetech, ale inspektoři pozorovali, že se žáci opakovaně napomínají – není jasné, jak dlouho trvá, než se chování změní.",
+      "Výchovný poradce je v pozici krátce a neabsolvoval specializační vzdělávání – není jasné, jak to ovlivňuje kvalitu péče o žáky se SVP.",
+      "Formativní hodnocení se využívá ojediněle – není specifikováno, v kterých předmětech a ročnících je situace nejhorší."
+    ]
+  }
+}
+```

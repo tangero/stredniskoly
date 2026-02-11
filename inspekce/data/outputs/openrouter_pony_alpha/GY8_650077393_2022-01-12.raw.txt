@@ -1,0 +1,102 @@
+{
+  "report_id": "GY8_650077393_2022-01-12",
+  "school_profile": {
+    "school_type": "Soukromá škola nabízející gymnázium (čtyřleté i osmileté) a tři typy lyceí (pedagogické, zdravotnické, přírodovědné).",
+    "inspection_period": "12. − 14. 1. a 17. 1. 2022",
+    "school_change_summary": "Škola od roku 2015 výrazně zlepšila materiální vybavení, otevřela přírodovědné lyceum a rozšířila počet žáků na 410."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a prostředí",
+        "detail": "Škola nabízí moderní prostory včetně nové biochemické laboratoře a odborných učeben.",
+        "evidence": "Kmenové učebny doplňuje nová moderně vybavená biochemická laboratoř, odborná učebna zdravotnických předmětů, dvě počítačové učebny a dvě tělocvičny."
+      },
+      {
+        "tag": "Praktická příprava",
+        "detail": "Výuka je úzce propojena s praxí a reálným životem díky spolupráci s firmami.",
+        "evidence": "Účelné využití aktivizujících situačních metod vztahující se k reálným situacím každodenního života a profesní praxi."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Funguje zde efektivní systém doučování a poradenských služeb pro žáky s neúspěchem.",
+        "evidence": "Pro žáky se školním neúspěchem je zajišťováno individuální doučování formou konzultací a pedagogické intervence."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Úspěšnost u společné části maturity je výrazně nižší než celostátní průměr.",
+        "evidence": "U společné části maturitní zkoušky... zaznamenala škola v oboru Gymnázium... 96,4% úspěšnost, avšak celostátní průměr činí 99,3 %."
+      },
+      {
+        "tag": "Hodnocení ve výuce",
+        "detail": "Ve výuce chybí častější zpětná vazba a prostor pro sebehodnocení žáků.",
+        "evidence": "Zjištěným nedostatkem ve výuce byla rovněž často chybějící zpětná vazba na práci žáků... Prostor pro sebehodnocení... nebyl dostatečný."
+      },
+      {
+        "tag": "Vzdělávání učitelů",
+        "detail": "Méně pozornosti se věnuje dalšímu vzdělávání pedagogů, zejména v klíčových předmětech.",
+        "evidence": "Nižší pozornost je věnována dalšímu vzdělávání pedagogických pracovníků... Další vzdělávání... dostatečně nezohledňuje potřeby školy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, aby dosáhli alespoň průměrných výsledků u společné části maturity?",
+      "Jakým způsobem vyučující poskytují žákům zpětnou vazbu prostě k učení, nikoliv jen známkování?",
+      "Jaké konkrétní firmy zajišťují odbornou praxi pro žáky lyceí?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří očekávají individuální přístup a potřebují podporu formou doučování.",
+      "Pro zájemce o odborné vzdělávání s důrazem na praxi v moderních laboratořích.",
+      "Pro rodiče hledající školu s bezpečným prostředím a funkční prevencí rizikového chování."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří potřebují silnou motivaci a formativní hodnocení od učitelů.",
+      "Pokud je pro vás prioritou vysoká úspěšnost u společné části maturitní zkoušky nad rámec základních metrik.",
+      "Pro studenty, kteří preferují samostatné učení bez časté zpětné vazby od vyučujících."
+    ],
+    "plain_czech_summary": "Soukromá škola IUVENTAS nabízí širokou nabídku oborů od gymnázia po lycea a vyniká moderním vybavením, včetně nových laboratoří. Klade velký důraz na bezpečí, klima ve třídách a praktickou výuku propojenou s firmami. Slabinou jsou podprůměrné výsledky u společné části maturity a nedostatečná zpětná vazba ve výuce. Škola ale poskytuje účinné doučování pro žáky s neúspěchem. Celkově jde o školu s dobrým zázemím, která by se měla více zaměřit na kvalitu hodnocení a přípravu na státní maturity."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stagnace / Mírný pokles",
+      "key_numbers": [
+        "Gymnázium: 96,4% úspěšnost (celostátní průměr 99,3%)",
+        "Lycea: 88% úspěšnost (celostátní průměr 97%)",
+        "46% žáků gymnázia prospělo s vyznamenáním"
+      ],
+      "evidence": "U společné části maturitní zkoušky... zaznamenala škola v oboru vzdělání Gymnázium... 96,4% úspěšnost... V oborech... lyceum činila úspěšnost... 88 %."
+    },
+    "absence": {
+      "trend": "Není uvedeno",
+      "key_numbers": [
+        "Není uvedeno"
+      ],
+      "evidence": "Text zprávy neobsahuje specifické údaje o absence ani jejím trendu."
+    },
+    "support_services": [
+      "Individuální doučování a pedagogická intervence",
+      "Výchovné poradenství a kariérové poradenství",
+      "Spolupráce s Policií ČR a pedagogicko-psychologickou poradnou"
+    ],
+    "safety_climate": [
+      "Ve škole je vytvořeno bezpečné prostředí pro vzdělávání žáků",
+      "Výskyt negativních jevů v chování žáků škola nezaznamenala",
+      "Vstupy do budovy jsou zabezpečeny elektronickým ovládáním dveří"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s regionálními firmami a organizacemi zajišťujícími odbornou praxi",
+      "Exkurze a besedy doplňující běžnou výuku",
+      "Aktivní zapojení do programů pro seniory a charitativních sbírek"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, ale místy používá standardní byrokratický slovník (např. 'koncepční záměry', 'pedagogická intervence'). Většina oddílů je jasná a srozumitelná.",
+    "uncertainty_notes": [
+      "Absence konkrétních dat o neúspěšnosti u maturity (kolik žáků neuspělo).",
+      "Chybí detailnější popis 'nižší pozornosti' dalšímu vzdělávání učitelů.",
+      "Nejasná míra 'podprůměrného výsledku' v testování informační gramotnosti."
+    ]
+  }
+}

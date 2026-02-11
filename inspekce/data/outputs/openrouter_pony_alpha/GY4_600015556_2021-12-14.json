@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_600015556_2021-12-14",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:08:26.191355+00:00",
+  "run_finished_utc": "2026-02-10T08:09:48.349166+00:00",
+  "raw_file": "GY4_600015556_2021-12-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600015556_2021-12-14",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Gymnázium s více pracovišti nabízející vzdělání v technických, zemědělských, ekonomických oborech a na gymnáziu.",
+      "inspection_period": "14. 12. 2021 − 17. 12. 2021",
+      "school_change_summary": "Škola se zaměřuje na technické a přírodovědné obory, modernizuje vybavení pro strojírenství a agrotechniku a optimalizuje nabídku studijních oborů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky a mezinárodní spolupráce",
+          "detail": "Škola klade velký důraz na výuku cizích jazyků a aktivně zapojuje žáky do mezinárodních projektů Erasmus+.",
+          "evidence": "Škola klade důraz na výuku cizích jazyků... dlouhodobé aktivní zapojení školy do Programu Erasmus+."
+        },
+        {
+          "tag": "Vybavení školy",
+          "detail": "Škola disponuje moderním vybavením pro strojírenské obory a unikátní digitální technikou pro precizní zemědělství.",
+          "evidence": "Modernizací dílen... získala kvalitní a atraktivní zázemí... nově zřízena učebna precizního zemědělství."
+        },
+        {
+          "tag": "Sportovní úspěchy",
+          "detail": "Žáci dosahují vynikajících výsledků v soutěžích, včetně reprezentace ČR ve futsalu.",
+          "evidence": "Výborné výsledky žáků ve sportovních soutěžích na mezinárodní, republikové a regionální úrovni."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Prostorové podmínky truhlářů",
+          "detail": "Prostory pro obor Truhlář neumožňují plně realizovat učební plán a představují bezpečnostní riziko.",
+          "evidence": "Prostorové rozmístění strojů neumožňuje zvládnout veškerý obsah učiva... nevhodné prostorové podmínky."
+        },
+        {
+          "tag": "Neúčinná prevence rizikového chování",
+          "detail": "U technických oborů se nedaří vést žáky k dodržování pravidel a škola preferuje kázeňská opatření před prevencí.",
+          "evidence": "Nedaří se jí naplňovat zejména vedení žáků technických oborů... zvýšené pozornosti využívání kázeňských opatření."
+        },
+        {
+          "tag": "Nekvalitní výuka odborných předmětů",
+          "detail": "Ve strojírenských oborech převažuje pasivní frontální výuka bez jasných cílů a efektivního hodnocení.",
+          "evidence": "Ve většině hodin strojírenského zaměření scházela promyšlená struktura... zvolené organizační formy byly jednotvárné."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola konkrétně řeší prostorové a bezpečnostní problémy v dílnách pro obor Truhlář?",
+        "Jaká konkrétní motivační opatření (mimo kázeňských) škola používá pro žáky technických oborů?",
+        "Jakým způsobem jsou individuálně podporováni žáci s různou úrovní znalostí v odborných předmětech?"
+      ],
+      "who_school_fits": [
+        "Pro sportovně talentované žáky, kterým škola umožňuje skloubit studium s kariérou (sportovní management).",
+        "Pro žáky se zájmem o cizí jazyky a cestování, kteří chtějí využívat mezinárodních projektů.",
+        "Pro zájemce o strojírenství a zemědělství, kteří ocení moderní vybavení dílen a technologií."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o obor Truhlář kvůli nevyhovujícím prostorovým podmínkám dílen.",
+        "Žáci, kteří potřebují silnou individuální podporu a motivaci v technických oborech.",
+        "Rodiny, které hodlají využívat služeb domova mládeže (nejednotná kvalita služeb)."
+      ],
+      "plain_czech_summary": "Škola nabízí širokou škálu oborů od gymnázia po učební řemesla s velmi dobrými jazykovými a sportovními výsledky. Silnou stránkou je moderní vybavení pro strojaře a zemědělce a mezinárodní projekty. Naopak vážným nedostatkem jsou nevyhovující prostory pro obor Truhlář a neefektivní přístup k prevenci kázeňských problémů u technických oborů. Výuka v některých odborných předmětech je pasivní a nezaujme všechny žáky. Rodiče sportovců a zájemců o techniku ocení vybavenost, ale měli by zvážit kvalitu prostředí a individuální přístup v konkrétních oborech."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se výsledky u většiny oborů, gymnázium si dlouhodobě udržuje vysokou úroveň.",
+        "key_numbers": [
+          "Gymnázium: dlouhodobě vysoká úspěšnost, výsledky nad průměrem ČR.",
+          "Stavebnictví a Agropodnikání: výrazné zlepšení, v roce 2021 téměř 100% úspěšnost.",
+          "Profilová část: 5 neúspěšných u Stavebnictví a 1 u Ekonomiky (2020/2021)."
+        ],
+        "evidence": "Žáci gymnaziálního oboru... dlouhodobě vykazovali vysokou úspěšnost... výsledky žáků ostatních škol... velmi dobrou úroveň."
+      },
+      "absence": {
+        "trend": "Nevyjadřuje se k celkové tendenci, ale škola evidenci vede.",
+        "key_numbers": [
+          "Škola má přehlednou evidenci žáků se zvýšenou absencí.",
+          "Žáci tříletých oborů málo využívají nabízené konzultace.",
+          "Zjištěnými neúspěchy... se vedení školy... zabývali."
+        ],
+        "evidence": "Školou uplatňovaný přístup umožňuje přehlednou evidenci žáků se slabším prospěchem a zvýšenou absencí."
+      },
+      "support_services": [
+        "Poskytování poradenských služeb (výchovné poradenství, prevence, psychologie).",
+        "Možnost úpravy organizace vzdělávání pro 76 aktivních sportovců.",
+        "Nabídka doučování a konzultací, která je však málo využívaná žáky učebních oborů."
+      ],
+      "safety_climate": [
+        "Prostředí bez zjevných bezpečnostních rizik, s pravidelnou prevencí.",
+        "Výrazný problém s dodržováním pravidel a kázní u technických oborů.",
+        "Nedostatečná efektivita prevence rizikového chování, preference represí."
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce se sociálními partnery a zaměstnavci v regionu.",
+        "Dlouhodobé partnerské vztahy se školami v Německu, Itálii a Francii.",
+        "Spolupráce s vysokými školami formou odborných přednášek pro žáky."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně členěná a obsahuje konkrétní příklady z výuky i výsledků. Jedinou komplikací je větší množství oborů vzdělání, což může matoucí pro rodiče, kteří se zajímají jen o jeden konkrétní.",
+      "uncertainty_notes": [
+        "Chybí přesná číselná data o celkové neúspěšnosti u maturity v procentech za všechny roky.",
+        "Není jasná konkrétní podoba 'nevhodných prostorových podmínek' pro truhláře (pouze obecná zmínka).",
+        "Zpráva neuvádí konkrétní počty žáků v jednotlivých oborech, pouze celkový součet."
+      ]
+    }
+  }
+}

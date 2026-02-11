@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600010210_2024-04-02",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola, Střední průmyslová škola a Střední odborná škola",
+    "inspection_period": "2. 4. 2024 − 5. 4. 2024",
+    "school_change_summary": "Škola se od roku 2010 řadí mezi největší v Ústeckém kraji s deseti pracovišti. Od školního roku 2023/2024 nepřijímá uchazeče do nástavbového oboru Podnikání. Vedení řeší dlouhodobé problémy vysoké absence a podprůměrných výsledků maturit."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vyučování",
+        "detail": "Kvalitní praktická výuka úspěšně připravuje absolventy na trh práce s vazbou na požadavky z praxe.",
+        "evidence": "Praktické vyučování úspěšně naplňuje cíle odborného vzdělávání s vhodnou přípravou na budoucí uplatnění."
+      },
+      {
+        "tag": "Sociální partneři",
+        "detail": "Rozsáhlá síť podniků a firem podporuje kvalitu odborného vzdělávání a osobnostní rozvoj žáků.",
+        "evidence": "Sociální partneři zapojení do poradního sboru pomáhají při praktickém vyučování a úpravách vzdělávacích programů."
+      },
+      {
+        "tag": "Programování v IT",
+        "detail": "Výuka programování je na vysoké úrovni s důrazem na algoritmy a kreativní aplikace.",
+        "evidence": "Silná stránka školy je promyšlená organizace a vysoká úroveň výuky předmětu programování v oboru Informační technologie."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Přes zlepšení v prvním pololetí 2023/2024 zůstává absence kritickým problémem vedoucím k předčasným odchodům.",
+        "evidence": "Ve školních letech 2021/2022 a 2022/2023 připadlo na jednoho žáka více než 250 zameškaných hodin za rok."
+      },
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "V některých oborech jsou výsledky společné části maturitní zkoušky výrazně pod celorepublikovým průměrem.",
+        "evidence": "Podnikání: škola 41,7 % neúspěšnosti v češtině, ČR 21,6 %; cizí jazyk 45,5 % vs. ČR 21,2 %."
+      },
+      {
+        "tag": "Nízká kvalifikace učitelů",
+        "detail": "Část pedagogů nemá předmětovou specializaci, zejména v cizích jazycích a matematice.",
+        "evidence": "U vyučujících všeobecně vzdělávacích předmětů je kvalifikovanost pouze 61 %, v matematice 63 %."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola přijala na snížení absence žáků a jak je monitoruje?",
+      "Jak se škola vypořádává s nízkou kvalifikací učitelů v cizích jazycích a matematice?",
+      "Jaké jsou konkrétní důvody slabých výsledků v maturitě z češtiny a cizích jazyků v některých oborech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické obory s vazbou na reálné pracovní prostředí a firmy",
+      "Studenti zaměření na informační technologie a programování s kvalitní výukou",
+      "Žáci, kterým vyhovuje péče školního poradenského pracoviště a domova mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s tendencí k absenci – škola má historicky vysoké absence a problémy s jejich řešením",
+      "Uchazeči do oborů Podnikání, Masér, Veřejnosprávní činnost – zde jsou nejhorší výsledky maturit",
+      "Žáci potřebující silnou podporu v češtině a cizích jazycích – zde je nižší kvalifikace učitelů"
+    ],
+    "plain_czech_summary": "Škola je velké zařízení s dobrými praktickými obory a silnými vazbami na firmy. Silná je výuka programování a praktické vyučování. Hlavní problémy: vysoká absence žáků, slabé výsledky v maturitě z češtiny a cizích jazyků v některých oborech, nižší kvalifikace části učitelů. Vedení se snaží situaci zlepšit, ale výsledky jsou zatím částečné. Vhodné pro žáky orientované na praxi, méně vhodné pro ty, kteří potřebují intenzivní podporu v teoretických předmětech."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Částečné zlepšení, ale stále podprůměrné výsledky v některých oborech",
+      "key_numbers": [
+        "Česština 2022/2023: hrubá neúspěšnost 17,6 % (2021/2022: 23,3 %)",
+        "Cizí jazyk 2022/2023: 18,8 % (2021/2022: 23,8 %)",
+        "Podnikání: 41,7 % neúspěšnosti v češtině vs. ČR 21,6 %"
+      ],
+      "evidence": "V meziročním srovnání došlo ke snížení hrubé neúspěšnosti, ale v některých oborech zůstávají výsledky výrazně nad celorepublikovým průměrem."
+    },
+    "absence": {
+      "trend": "Pozitivní posun v prvním pololetí 2023/2024, ale dlouhodobě kritická",
+      "key_numbers": [
+        "2021/2022 a 2022/2023: více než 250 zameškaných hodin na žáka za rok",
+        "Pokles v 1. pololetí 2023/2024: o 8,9 % meziročně",
+        "Mariánská ulice: pokles o 13,1 % s nejlepšími výsledky maturit"
+      ],
+      "evidence": "Vedení si kontrolu docházky stanovilo jako prioritu od začátku 2023/2024. Dílčí hodnoty naznačují pozitivní posun, ale dlouhodobě jde o kritický problém."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: 2 výchovné poradkyně, metodička prevence, sociální pedagožka, školní psycholožka",
+      "Individuální konzultace a doučování pro žáky ohrožené neúspěchem",
+      "Sociometrické šetření klimatu tříd v závěru prvního pololetí"
+    ],
+    "safety_climate": [
+      "Všechny navštívené hodiny probíhaly v klidné pracovní atmosféře bez významných kázeňských problémů",
+      "Domov mládeže: aktivní zapojení ubytovaných žáků do volnočasových aktivit podporuje zdravé psychosociální klima",
+      "Praktické vyučování: žáci uvědoměle dodržují zásady bezpečnosti a ochrany zdraví"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce s řadou podniků a odborných firem pro praktické vyučování",
+      "Sociální partneři v poradním sboru ředitele pomáhají s úpravami vzdělávacích programů",
+      "Burza absolventů pořádaná školou s nabídkou zaměstnaneckých pozic",
+      "Pokusné ověřování alternativní zkoušky profilové části maturitní zkoušky formou komplexní absolventské práce"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, ale místy je složitá a úřednická. Hlavní zjištění jsou jasná: vysoká absence, slabé maturitní výsledky v některých oborech, nízká kvalifikace části učitelů. Pozitiva jsou také zřejmá: praktická výuka, sociální partneři, programování.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření vedení přijalo na zlepšení výsledků maturit – jen že se výsledky projednávají",
+      "Není jasné, jak dlouho bude trvat, než se absence vrátí na normální úroveň – zatím jen dílčí zlepšení",
+      "Chybí informace o tom, zda se zvýší kvalifikace učitelů v cizích jazycích a matematice"
+    ]
+  }
+}
+```

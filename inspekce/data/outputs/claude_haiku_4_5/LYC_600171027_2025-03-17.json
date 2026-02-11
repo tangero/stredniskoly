@@ -1,0 +1,117 @@
+{
+  "report_id": "LYC_600171027_2025-03-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:41:57.565858+00:00",
+  "run_finished_utc": "2026-02-09T13:42:21.848259+00:00",
+  "raw_file": "LYC_600171027_2025-03-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600171027_2025-03-17",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola s 7 maturitními obory (Ekonomika a podnikání, Sociální činnost, Technické lyceum, Průmyslová ekologie, Informační technologie, Mechanik elektrotechnik, Elektrotechnika) a 2 obory s výučním listem",
+      "inspection_period": "17. března až 20. března 2025",
+      "school_change_summary": "Nový ředitel od července 2021, obměna zástupců ředitele, zahájení nového oboru Technické lyceum, digitalizace agend, modernizace budov a vybavení"
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Hrubá neúspěšnost u maturitní zkoušky v roce 2024 byla 0–7,8 % podle oboru, což je lepší než celorepublikový průměr.",
+          "evidence": "V roce 2024 hrubá neúspěšnost činila 0–7,8 % podle oboru, v roce 2018 to bylo 24 %"
+        },
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Žáci získávají praktické zkušenosti prostřednictvím stáží, exkurzí a přednášek od odborníků z firem.",
+          "evidence": "Škola úzce spolupracuje s partnery z praxe, žáci získávají cenné zkušenosti a jasnější představu o budoucí profesi"
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Efektivní systém prevence školní neúspěšnosti s doučováním, konzultacemi a individuální podporou.",
+          "evidence": "V loňském školním roce neprospělo pouze 1 % žáků, průměrně za tři roky 2 %"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Napětí v pedagogickém sboru",
+          "detail": "Část učitelů nesouhlasí s novými procesy vedení a vnímá je jako administrativní zátěž, což negativně ovlivňuje školní klima.",
+          "evidence": "Klima školy bylo poznamenáno napětím mezi vedením a částí učitelů, kteří postrádali motivaci k přijetí nových řídicích procesů"
+        },
+        {
+          "tag": "Nedostatky v praktické výuce",
+          "detail": "Problémy s organizací odborného výcviku a nedodržováním délky odborné praxe u některých žáků.",
+          "evidence": "Zjištěny dílčí nedostatky v organizaci odborného výcviku a v dodržování délky odborné praxe vykonávané na pracovišti"
+        },
+        {
+          "tag": "Omezená práce s informacemi",
+          "detail": "V některých hodinách chybí práce s různými zdroji informací a digitálními nástroji, což omezuje kritické myšlení žáků.",
+          "evidence": "Omezená práce s informačními zdroji – žáci si nevyhledávali ani neověřovali informace"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší napětí v pedagogickém sboru a jak to ovlivňuje kvalitu výuky?",
+        "Jaké konkrétní opatření škola přijala na zlepšení organizace praktického vyučování?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a práce s informacemi v jednotlivých předmětech?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí kvalitní přípravu na maturitu s velmi dobrými výsledky",
+        "Zájemci o praktické obory s možností získat zkušenosti přímo v průmyslu a firmách",
+        "Žáci, kteří potřebují individuální podporu a doučování – škola má efektivní systém prevence neúspěchu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnou motivaci a pozitivní školní klima – část učitelů je demotivovaná",
+        "Zájemci o obory s praktickou výukou – existují problémy s organizací odborného výcviku",
+        "Žáci, kteří se spoléhají na rozvoj kritického myšlení a práce s různými zdroji – to není konzistentně zavedeno"
+      ],
+      "plain_czech_summary": "Škola dosahuje výborných výsledků u maturit a má dobrou spolupráci s firmami. Žáci se učí prakticky a získávají reálné zkušenosti. Slabší žáci mají podporu. Problém je, že část učitelů není spokojená s novými procesy vedení, což ovlivňuje atmosféru. V praktické výuce jsou organizační problémy. Některé hodiny postrádají práci s informacemi a digitálními nástroji. Celkově je to dobrá škola s výborným výstupem, ale s vnitřními napětími."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "Hrubá neúspěšnost 2024: 0–7,8 % podle oboru (lepší než celorepublikový průměr)",
+          "Průměr za 3 roky: ~6 % neúspěšnosti (v roce 2018 bylo 24 %)",
+          "Společná část maturitní zkoušky 2024: 2 % hrubá neúspěšnost"
+        ],
+        "evidence": "V roce 2024 byly výsledky srovnatelné ve všech maturitních oborech, hrubá neúspěšnost se pohybovala v rozmezí od 0 % do 7,8 %"
+      },
+      "absence": {
+        "trend": "Postupné snižování",
+        "key_numbers": [
+          "Školní rok 2023/2024: 122 hodin na žáka",
+          "Neomluvená absence: dlouhodobě nižší než 0,4 % z celkového počtu zameškaných hodin"
+        ],
+        "evidence": "Absence žáků se v posledních třech letech postupně snižovala, neomluvená absence je dlouhodobě nízká"
+      },
+      "support_services": [
+        "Školní psycholog a speciální pedagog",
+        "Doučování a konzultace pro zaostávající žáky",
+        "Vrstevnické doučování (nový projekt)",
+        "Workshopy na rozvoj studijních dovedností",
+        "Kariérové poradenství a sledování profesní dráhy absolventů"
+      ],
+      "safety_climate": [
+        "Žádná zjevná bezpečnostní rizika zjištěna",
+        "Elektronická schránka důvěry pro hlášení problémů",
+        "Prevence rizikového chování zaměřená na kyberšikanu, drogy, alkohol, sebepoškozování",
+        "Výchovné komise a osobní pohovory při řešení problémů"
+      ],
+      "partnerships_practice": [
+        "Koordinace Centra odborného vzdělávání v IT",
+        "Spolupráce s firmami prostřednictvím workshopů, přednášek a exkurzí",
+        "Program Erasmus+ pro zahraniční stáže žáků",
+        "Partnerství se zahraničními vzdělávacími institucemi",
+        "Zapojení odborníků do výuky a přípravy na maturitu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní čísla a příklady. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik přesně učitelů je demotivovaných – pouze zmiňuje 'menší část' a 'někteří'",
+        "Není jasné, jak dlouho trvá napětí v pedagogickém sboru a zda se situace zlepšuje",
+        "Konkrétní počet žáků, kterým chybí délka odborné praxe, není uveden"
+      ]
+    }
+  }
+}

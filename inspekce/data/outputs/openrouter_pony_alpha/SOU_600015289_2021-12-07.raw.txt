@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600015289_2021-12-07",
+  "school_profile": {
+    "school_type": "Střední odborná škola",
+    "inspection_period": "7. až 10. 12. 2021",
+    "school_change_summary": "Škola rozšířila nabídku o obor Ošetřovatel a navyšuje počet žáků, ale realizovala pouze část opatření z předchozí inspekce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie a praxe",
+        "detail": "Škola efektivně propojuje teoretickou výuku s odborným výcvikem a zapojuje odborníky z praxe.",
+        "evidence": "„Účinná podpora odborných kompetencí žáků prostřednictvím efektivního propojování teoretické a praktické výuky.“"
+      },
+      {
+        "tag": "Úspěšnost u výučního listu",
+        "detail": "Žáci v oborech ukončených výučním listem dosahují velmi dobrých výsledků u závěrečných zkoušek.",
+        "evidence": "„Výsledky žáků při ukončování vzdělávání závěrečnou zkouškou byly celkově na dobré úrovni... neprospělo 4,4 %.“"
+      },
+      {
+        "tag": "Partnerská spolupráce",
+        "detail": "Škola aktivně spolupracuje s firmami a zapojuje se do projektů zlepšujících vybavení.",
+        "evidence": "„Efektivní spolupráce s vnějšími partnery... přispívá ke zkvalitňování materiálních podmínek vzdělávání.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost u maturity",
+        "detail": "Žáci maturitních oborů mají dlouhodobě vysokou neúspěšnost ve společné části maturity, zejména z matematiky.",
+        "evidence": "„Nejvyšší neúspěšnost vykazují žáci... stabilně v didaktickém testu z matematiky.“"
+      },
+      {
+        "tag": "Bezpečnost a dohled",
+        "detail": "Inspekce zaznamenala nedostatky v zajištění bezpečnosti a ochrany zdraví při výuce.",
+        "evidence": "„Byl zaznamenán nedostatek v oblasti zajištění bezpečnosti a ochrany zdraví při výuce.“"
+      },
+      {
+        "tag": "Nefungující podpora",
+        "detail": "Výuka není dostatečně diferencována pro žáky se speciálními potřebami ani pro nadané žáky.",
+        "evidence": "„Diferenciace výuky směrem k žákům se speciálními vzdělávacími potřebami nebyla vždy zajištěna.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomáhá žákům připravit se na náročnou společnou část maturitní zkoušky, zejména z matematiky?",
+      "Jaká bezpečnostní opatření byla přijata po zjištění nedostatků při inspekci v prosinci 2021?",
+      "Využívá škola moderní metody a techniku ve výuce, nebo převažuje tradiční frontální vyučování?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o obory s výučním listem (např. číšník, kuchař, cukrář), kde je vysoká úspěšnost.",
+      "Žáci, kteří chtějí získat praktické dovednosti a navázat kontakt se zaměstnavateli v regionu.",
+      "Studenti, kteří preferují menší školu s postupně se zlepšujícím materiálním zázemím."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o maturitní obory (Kosmetické služby, Podnikání) kvůli vysokému riziku neúspěchu u maturity.",
+      "Žáci se specifickými vzdělávacími potřebami, kterým může škola stále nedostatečně přizpůsobovat výuku.",
+      "Studenti očekávající moderní digitální výuku, neboť využití techniky je v některých předmětech nízké."
+    ],
+    "plain_czech_summary": "Škola nabízí širokou paletu oborů, z nichž ty ukončené výučním listem fungují výborně a žáci jsou velmi úspěšní. Naopak u maturitních oborů čelí škola dlouhodobým problémům, zejména vysokou neúspěšností u maturitní zkoušky z matematiky. Vedení školy sice přijalo některá opatření, ale inspekce kritizuje nedostatečnou kontrolní činnost a bezpečnostní nedostatky. Výuka je spíše tradiční, bez většího využití moderních technologií. Pro rodiče je klíčové zvážit, zda je pro jejich dítě akceptovatelné riziko složité maturity výměnou za kvalitní praktickou přípravu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá, ale stále vysoká neúspěšnost v testech z matematiky; míra úspěšnosti v celkovém ukončení studia roste.",
+      "key_numbers": [
+        "Neúspěšnost v matematice je dlouhodobě nejvyšší.",
+        "Obor Podnikání: neúspěšnost klesla z 83 % (2018) na 33 % (2021).",
+        "Obor Kosmetické služby: neúspěšnost kolísala, v roce 2021 byla 6 %."
+      ],
+      "evidence": "„Hrubá neúspěšnost žáků oboru vzdělání Podnikání... v roce 2018 činila 83 %... v roce 2021... 33 %.“"
+    },
+    "absence": {
+      "trend": "Škola má sjednocený systém evidence a řešení absence, ale data o konkrétní výši nejsou v textu uvedena.",
+      "key_numbers": [
+        "Evidence žáků s vysokou absencí je vedena.",
+        "Sjednocené postupy třídních učitelů.",
+        "Řešení na jednáních výchovné komise."
+      ],
+      "evidence": "„Škole se tak podařilo sjednotit postupy třídních učitelů při omlouvání absence.“"
+    },
+    "support_services": [
+      "Funguje školní poradenské centrum (výchovná poradkyně, metodička prevence).",
+      "Realizována „Strategie pro předcházení neúspěšnosti“ a doučování.",
+      "Individuální konzultace a intervenční programy pro zjištění třídního klimatu."
+    ],
+    "safety_climate": [
+      "Zaznamenány nedostatky v zajištění bezpečnosti a ochrany zdraví při výuce.",
+      "Nedostatečná kontrolní činnost vedení nad plněním povinností pedagogů.",
+      "V klimatu panuje příjemná atmosféra, žáci se nebrání diskusi."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s řadou podniků při zajišťování odborné praxe.",
+      "Využívání odborníků z praxe přímo ve výuce.",
+      "Účast v projektech na podporu polytechnického vzdělávání a gramotností."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a rizika. Jedinou nejistotou je chybějící konkrétní data o celkové neúspěšnosti maturity (uvádí se jen hrubá neúspěšnost dílčích testů) a konkrétní povaha bezpečnostních nedostatků.",
+    "uncertainty_notes": [
+      "Nejasná konkrétní podoba „nedostatků v oblasti zajištění bezpečnosti“.",
+      "Chybí srovnání úspěšnosti maturity s celostátním průměrem pro dané obory.",
+      "Není uveden konkrétní počet hodin doučování či jejich dopad na výsledky."
+    ]
+  }
+}

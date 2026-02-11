@@ -1,0 +1,49 @@
+{
+  "report_id": "SOS_600008371_2022-12-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:54:28.529741+00:00",
+  "run_finished_utc": "2026-02-09T16:54:33.367862+00:00",
+  "raw_file": "SOS_600008371_2022-12-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600008371_2022-12-05",
+    "school_profile": {
+      "school_type": "Informace o typu školy nejsou v textu dostupné",
+      "inspection_period": "5. až 8. prosince 2022",
+      "school_change_summary": "Zpráva obsahuje pouze technickou doložku o konverzi dokumentu, obsah inspekční zprávy není dostupný"
+    },
+    "for_parents": {
+      "strengths": [],
+      "risks": [],
+      "questions_for_open_day": [],
+      "who_school_fits": [],
+      "who_should_be_cautious": [],
+      "plain_czech_summary": "Dodaný text obsahuje pouze technickou doložku České školní inspekce o převodu listinného dokumentu do elektronické podoby. Vlastní obsah inspekční zprávy OA Vrchlického v Třeboni není v textu obsažen. Pro analýzu kvality školy je nutné poskytnout úplný text inspekční zprávy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Údaje nejsou dostupné",
+        "key_numbers": [],
+        "evidence": "Text neobsahuje informace o maturitě"
+      },
+      "absence": {
+        "trend": "Údaje nejsou dostupné",
+        "key_numbers": [],
+        "evidence": "Text neobsahuje informace o absenci"
+      },
+      "support_services": [],
+      "safety_climate": [],
+      "partnerships_practice": []
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 1,
+      "czech_clarity_reason": "Dodaný text je pouze technickou doložkou o konverzi dokumentu, neobsahuje žádný obsah inspekční zprávy",
+      "uncertainty_notes": [
+        "Chybí vlastní text inspekční zprávy",
+        "Nelze provést analýzu bez obsahu zprávy",
+        "Požadavek na úplný dokument inspekční zprávy"
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_691006989_2021-06-16",
+  "school_profile": {
+    "school_type": "Soukromá střední škola",
+    "inspection_period": "16. 6. 2021 − 18. 6. 2021, 21. 6. 2021",
+    "school_change_summary": "Škola odstranila zásadní nedostatky z roku 2019 a zlepšila výsledky u maturity, ale jen částečně plánu pro distanční výuku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola efektivně propojuje teorii s praxí díky síti partnerů, což zvyšuje uplatnění absolventů.",
+        "evidence": "Přínosná spolupráce se sociálními partnery přispívá... ke zvyšování jejich uplatnění na trhu práce."
+      },
+      {
+        "tag": "Zlepšení maturity",
+        "detail": "Opatření jako doučování vedla ke snížení neúspěšnosti u společné části maturity.",
+        "evidence": "Přijatá opatření... se pozitivně projevila ve snížení hrubé neúspěšnosti žáků ve společné části MZ."
+      },
+      {
+        "tag": "Výuka odborných předmětů",
+        "detail": "Odborné předměty jsou vyučovány kvalitně, s využitím moderních metod a pomůcek.",
+        "evidence": "Kvalita výuky teoretických odborných předmětů je i nadále pozitivně ovlivňována erudicí pedagogů... Využití inovativních metod."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká úspěšnost studia",
+        "detail": "Pouze čtvrtina žáků v maturitním oboru ukončí studium včas úspěšně.",
+        "evidence": "Ve školním roce 2019/2020 tak pouze přibližně jedna čtvrtina žáků... ukončila vzdělávání složením maturitní zkoušky."
+      },
+      {
+        "tag": "Slabá výuka češtiny",
+        "detail": "Výuka českého jazyka a literatury se nedaří dostatečně zlepšit a je málo efektivní.",
+        "evidence": "Kvalitu výuky českého jazyka a literatury se však nepodařilo dostatečně zlepšit."
+      },
+      {
+        "tag": "Nerovnováha v přijímacím řízení",
+        "detail": "Škola přijímá i uchazeče s nižšími studijními předpoklady bez stanovené minimální hranice.",
+        "evidence": "Minimální hranice úspěšnosti nebyla stanovena. Ke vzdělávání byli... přijati rovněž zájemci s nižší mírou studijních předpokladů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, aby dokončili studium včas a neodcházeli před maturitou?",
+      "Jaké nové metody zavádí škola ve výuce českého jazyka pro zlepšení výsledků u maturity?",
+      "Jakým způsobem je zajištěna individuální podpora pro žáky s nižšími studijními předpoklady?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří se chtějí učit praktický obor s dobrým uplatněním na trhu práce.",
+      "Studenti, kteří očekávají silnou podporu v odborných předmětech a propojení teorie s praxí.",
+      "Žáci, kteří potřebují individuální přístup v menší škole."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči, kteří mají slabší studijní předpoklady a míří na maturitu bez jasné podpory.",
+      "Studenti očekávající vysokou kvalitu výuky všeobecných předmětů, zejména českého jazyka.",
+      "Žáci, kteří potřebují silnou motivaci pro pravidelnou docházku."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní odborné vzdělání se silným propojením praxe a teorie, což žákům zajišťuje dobré uplatnění. Zlepšila se úspěšnost u maturity a odstranila se řada předchozích nedostatků. Rizikem zůstává velmi nízký podíl žáků, kteří maturitu složí včas (pouze čtvrtina), a slabší kvalita výuky českého jazyka. Škola přijímá i studenty se slabším prospěchem, ale podpora cizinců je jen částečně účinná. Pro prakticky zaměřené žáky je škola dobrou volbou, pro náročnější studium všeobecných předmětů je třeba zvážit její současné slabiny."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se (hrubá neúspěšnost klesla, ale stále odpovídá průměru)",
+      "key_numbers": [
+        "Hrubá neúspěšnost u společné části MZ 18 % (2019/2020)",
+        "Pouze cca 25 % žáků ukončilo studium maturitou včas (2019/2020)",
+        "Všichni žáci uspěli u profilové části MZ"
+      ],
+      "evidence": "Hrubá neúspěšnost žáků... činila ve společné části MZ 18 %... pouze přibližně jedna čtvrtina žáků... ukončila vzdělávání složením maturitní zkoušky."
+    },
+    "absence": {
+      "trend": "Mírně klesající (počet zameškaných hodin i neomluvená absence)",
+      "key_numbers": [
+        "Mírné snížení počtu zameškaných hodin na žáka (2019/2020)",
+        "Pokračující trend snižování absence (1. pololetí 2020/2021)",
+        "Postupné snižování neomluvené absence, zejména v nematuritních oborech"
+      ],
+      "evidence": "Vedla k mírnému snížení počtu zameškaných hodin na žáka... Tento trend pokračoval i v období 1. pololetí... postupné snižování neomluvené absence."
+    },
+    "support_services": [
+      "Individuální vzdělávací plány a pedagogická intervence pro žáky se SVP",
+      "Spolupráce s externí školní psycholožkou a výchovná jednání",
+      "Projekt doučování žáků-cizinců z českého a anglického jazyka i matematiky"
+    ],
+    "safety_climate": [
+      "Zvýšení bezpečnosti zajištěno elektronickým a kamerovým systémem",
+      "Žáci dodržují zásady bezpečné práce při praktickém vyučování",
+      "Potřeba zvýšeného pedagogického působení na dodržování pravidel komunikace po návratu do školy"
+    ],
+    "partnerships_practice": [
+      "Rozšířená síť smluvních partnerů pro praktické vyučování",
+      "Zapojení žáků do zahradnických prací v komunitním volnočasovém centru",
+      "Účast žáků v odborných soutěžích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a rizika, používá běžný jazyk s minimem odborných zkratek.",
+    "uncertainty_notes": [
+      "Není zcela jasné, jak konkrétně vypadá 'nižší míra studijních předpokladů' u přijímaných žáků.",
+      "Chybí upřesnění, jaké 'mimořádné podmínky' konkrétně bránily plné realizaci plánu zlepšení.",
+      "Není specifikováno, zda 'nižší zaměření hospitační činnosti' znamená žádnou nebo jen malou kontrolu."
+    ]
+  }
+}

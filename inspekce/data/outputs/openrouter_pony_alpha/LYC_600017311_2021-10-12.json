@@ -1,0 +1,111 @@
+{
+  "report_id": "LYC_600017311_2021-10-12",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:28:48.792602+00:00",
+  "run_finished_utc": "2026-02-10T08:29:57.877186+00:00",
+  "raw_file": "LYC_600017311_2021-10-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600017311_2021-10-12",
+    "school_profile": {
+      "school_type": "Střední škola zemědělská a Vyšší odborná škola s domovem mládeže",
+      "inspection_period": "12. 10. 2021 − 15. 10. 2021",
+      "school_change_summary": "Škola si udržuje plnou kapacitu a modernizuje materiální zázemí, v současnosti však netrvá zájem o studium na vyšší odborné škole, jejíž provoz je utlumován."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola nabízí vysoce nadstandardní podmínky pro praktické vyučování v reálných firmách a na školním statku.",
+          "evidence": "Podmínky pro praktické vyučování jsou vysoce nadstandardní... Žáci oboru vzdělání chemik operátor praktické činnosti vykonávají na pracovištích společnosti TEVA."
+        },
+        {
+          "tag": "Jazykové a profesní zkušenosti",
+          "detail": "Žáci mohou získat cenné zkušenosti z každoročních zahraničních praxí.",
+          "evidence": "Nedílnou součástí výuky jsou každoroční zahraniční praxe žáků střední školy, která je značným přínosem."
+        },
+        {
+          "tag": "Vybavení školy",
+          "detail": "Materiálně technické zázemí se daří průběžně zkvalitňovat, včetně moderní zemědělské techniky.",
+          "evidence": "Materiálně technické zázemí školy se daří průběžně zkvalitňovat a modernizovat včetně vybavení zemědělskou technikou."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zastaralé metody výuky",
+          "detail": "V teoretické výuce převažuje frontální styl bez dostatku aktivizace žáků.",
+          "evidence": "Ve výuce hospitovaných odborných předmětů střední školy převažovala frontální výuka... Úzké spektrum používaných forem a metod výuky."
+        },
+        {
+          "tag": "Chybějící zpětná vazba",
+          "detail": "Učitelé často nevěnují prostor sebehodnocení či vzájemnému hodnocení žáků.",
+          "evidence": "Dílčím nedostatkem části výuky byla absence zpětné vazby pro žáky... a zejména nedostatečný prostor pro jejich sebehodnocení."
+        },
+        {
+          "tag": "Utlumování VOŠ",
+          "detail": "Vyšší odborná škola již nepřijímá nové studenty z důvodu malého zájmu.",
+          "evidence": "V posledních dvou letech škola do vyššího odborného vzdělávání studenty nepřijímá vzhledem k malému zájmů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá spolupráce se Školním statkem a firmou TEVA při praktické výuce?",
+        "Jaké metody využíváte k tomu, abyste učitelům pomohli zmodernizovat styl výuky mimo pouhý výklad?",
+        "Jaké jsou možnosti zahraničních pobytů pro mé dítě v rámci studia?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří se chtějí uplatnit v zemědělství, chemii nebo ochraně krajiny a preferují praxi.",
+        "Pro žáky, kteří očekávají zázemí moderně vybavených laboratoří a zemědělské techniky.",
+        "Pro zájemce o ubytování v domově mládeže, který nabízí kvalitní volnočasové aktivity."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří preferují moderní interaktivní formy výuky před tradičním frontálním vyučováním.",
+        "Pro ty, kteří očekávají častou a systematickou zpětnou vazbu a sebehodnocení.",
+        "Pro zájemce o studium na vyšší odborné škole, která je v utlumování."
+      ],
+      "plain_czech_summary": "Masarykova střední škola v Opavě nabízí vynikající zázemí pro odbornou výuku, zejména v zemědělských a chemických oborech, díky úzké spolupráci s praxí (TEVA, Školní statek) a zahraničním stážím. Škola je plně naplněná a moderně vybavená. Slabší stránkou je tradiční styl teoretické výuky, který postrádá aktivizaci žáků a prostor pro jejich sebehodnocení. Pro prakticky zaměřené studenty je škola skvělou volbou, náročnější studenty může zklamat absence inovativních metod."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní",
+        "key_numbers": [
+          "129 z 386 žáků maturitních oborů prospělo s vyznamenáním",
+          "5 žáků maturitních oborů neprospělo",
+          "18 z 64 žáků u závěrečné zkoušky prospělo s vyznamenáním"
+        ],
+        "evidence": "V oborech vzdělání s maturitní zkouškou... z celkového počtu 386 žáků prospělo s vyznamenáním 129 žáků, neprospělo 5 žáků."
+      },
+      "absence": {
+        "trend": "Nehodnoceno",
+        "key_numbers": [
+          "Z textu nejsou dostupná konkrétní data o neomluvené absenci"
+        ],
+        "evidence": "Text zprávy neuvádí konkrétní číselné údaje o absenci, pouze zmiňuje řešení výchovných problémů."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (výchovná poradkyně, metodička prevence)",
+        "Doučování žáků ohrožených neúspěchem",
+        "Individuální konzultace po distanční výuce"
+      ],
+      "safety_climate": [
+        "Veškeré náznaky rizikového chování jsou bezodkladně řešeny",
+        "Klima ve výuce je vstřícné, žáci respektují vyučující i navzájem",
+        "V domově mládeže je zajištěn kvalitní program volného času"
+      ],
+      "partnerships_practice": [
+        "Příkladná spolupráce se Školním statkem Opava (praktická i teoretická výuka)",
+        "Spolupráce s TEVA Czech Industries s.r.o. (praxe pro chemiky)",
+        "Odborné stáže učitelů ve firmách a mezinárodní výměnné pobyty"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře členitá, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěry shrnují klíčové body přehledně.",
+      "uncertainty_notes": [
+        "Absence konkrétních dat o neomluvené absenci žáků.",
+        "Nejasná míra pokrytí distanční výuky a její dopady na konkrétní obory.",
+        "Chybí detailnější rozpis úspěšnosti maturitních zkoušek podle jednotlivých předmětů."
+      ]
+    }
+  }
+}

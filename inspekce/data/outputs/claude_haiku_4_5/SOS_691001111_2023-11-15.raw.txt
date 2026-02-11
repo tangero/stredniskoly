@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_691001111_2023-11-15",
+  "school_profile": {
+    "school_type": "Střední obchodní akademie se zaměřením na ekonomiku, podnikání a cizí jazyky (anglický a německý)",
+    "inspection_period": "15. listopadu 2023 až 21. listopadu 2023",
+    "school_change_summary": "Od inspekce v roce 2016 se počet žáků zvýšil na 311 (maximální kapacita plně využita), škola změnila místo vzdělávání a zredukovala nabídku na jeden obor s čtyřmi zaměřeními: sportovní management, logistika a mezinárodní obchodní operace, leadership, daně a účetnictví."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola sídlí v nově vybudovaných prostorách s nejmodernější technikou, včetně specializovaného softwaru pro účetnictví a digitálních učeben.",
+        "evidence": "Interiér je nově vybudován, vybaven nejmodernější ICT technikou, čisté a podnětné prostředí."
+      },
+      {
+        "tag": "Silné jazykové vzdělání",
+        "detail": "Žáci si volí a úspěšně skládají zkoušky z cizích jazyků, často si je nahrazují jazykovými certifikáty.",
+        "evidence": "Téměř všichni žáci maturitních ročníků úspěšně absolvují zkoušku z cizího jazyka, převážně anglického."
+      },
+      {
+        "tag": "Podpora výkonnostních sportovců",
+        "detail": "Škola vytváří optimální podmínky pro vzdělávání žáků věnujících se výkonnostnímu sportu prostřednictvím zaměření sportovní management.",
+        "evidence": "Kooperace se sportovním klubem AC Sparta fotbal a.s., vzdělávání tělesné výchovy zajištěno ve smluvních prostorách SK Hradčany."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky z češtiny na maturitě",
+        "detail": "Přestože došlo k poklesu z 28 % na 10 %, škola stále vykazuje vyšší míru neúspěšnosti v češtině než srovnatelné školy.",
+        "evidence": "Dlouhodobě vyšší míra hrubé neúspěšnosti ve společné části z českého jazyka, i po zlepšení stále vyšší než ve školách stejného typu."
+      },
+      {
+        "tag": "Nedostatky v metodice výuky všeobecných předmětů",
+        "detail": "Převaha frontální výuky, nedostatečná diferenciace, málo práce s texty a informačními zdroji, zejména v češtině a literatuře.",
+        "evidence": "Převaha předávání hotových poznatků, neefektivní časové rozvržení, chybí efektivní práce se závěrem hodiny a sebereflexi žáků."
+      },
+      {
+        "tag": "Omezená metodická podpora učitelů",
+        "detail": "Vedení školy se v nižší míře věnuje následné metodické podpoře jednotlivých vyučujících po hospitacích.",
+        "evidence": "Systém hospitací poskytuje zpětnou vazbu, ale vedení se v nižší míře věnuje následné metodické podpoře."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s žáky, kteří mají potíže s češtinou? Jaké má plány na zlepšení výsledků z maturitní zkoušky z českého jazyka?",
+      "Jak je zajištěna individuální péče pro nadané žáky a jak se liší výuka pro žáky s různými tempem učení?",
+      "Jaké konkrétní metody a formy výuky se používají v jednotlivých předmětech a jak se liší výuka v odborných a všeobecných předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o ekonomiku, obchod a jazyky, kteří chtějí získat kvalitní jazykové vzdělání v angličtině a němčině",
+      "Výkonnostní sportovci, kteří potřebují flexibilní vzdělání slaďující sport a studium, zejména v zaměření sportovní management",
+      "Žáci, kteří preferují prakticky zaměřené vzdělání s moderní technikou a reálnými příklady z praxe"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími předpoklady v češtině a literatuře, protože výuka těchto předmětů má identifikované nedostatky v metodice",
+      "Žáci, kteří potřebují více individuální péče a diferenciované přístupy, protože výuka není vždy dostatečně přizpůsobena různým tempům učení",
+      "Žáci, kteří se lépe učí interaktivními a aktivizačními metodami, protože převažuje frontální forma výuky"
+    ],
+    "plain_czech_summary": "Obchodní akademie nabízí kvalitní vzdělání v ekonomice s důrazem na jazyky a podporu sportovců. Moderní vybavení a zahraniční partnerství jsou výhodou. Slabší stránkou je výuka českého jazyka a literatury, kde převažuje tradiční frontální přístup. Výsledky z maturitní zkoušky z češtiny jsou stále horší než na srovnatelných školách. Škola by měla více pracovat na aktivizačních metodách a individuální péči o žáky s různými potřebami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní trend v odborných předmětech, problematický trend v češtině",
+      "key_numbers": [
+        "Cizí jazyk: téměř 100 % úspěšnost, matematika: úspěšnost jen jednotlivců, ale lepší než v srovnatelné skupině",
+        "Čeština: pokles neúspěšnosti z 28 % na 10 %, ale stále vyšší než ve školách stejného typu",
+        "Odborné předměty: výjimečně neuspějí jednotlivci"
+      ],
+      "evidence": "Žáci si volí a vždy úspěšně absolvují zkoušku z cizího jazyka. Ve společné části z českého jazyka dlouhodobě vyšší míra neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Velmi dobrý - absence není problém",
+      "key_numbers": [
+        "Celková průměrná neomluvená absence na žáka je zanedbatelná",
+        "Vyšší omluvená absence jednotlivců se promítá do uzavírání pololetní klasifikace"
+      ],
+      "evidence": "Snížené známky z chování byly udělovány jen výjimečně převážně v souvislosti s vyšší neomluvenou absencí."
+    },
+    "support_services": [
+      "Výchovný poradce (zástupce ředitelky) zajišťuje diagnostiku žáků, kariérní poradenství a prevenci problémů",
+      "Individuální vzdělávací plány pro mimořádně nadané žáky, zejména sportovce",
+      "Podpora žáků se speciálními vzdělávacími potřebami a bezproblémové začleňování žáků-cizinců",
+      "Adaptační kurzy pro první ročníky a program prevence rizikového chování"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra, učitelé i žáci dodržují nastavená pravidla",
+      "Nevyskytují se kázeňské problémy, motivačně udělené pochvaly výrazně převažují nad kázeňskými opatřeními",
+      "Bezpečnost u vstupu do budovy zajištěna elektronicky včetně celodenní recepce",
+      "Vedení průběžně sleduje klima školy pomocí dotazníků a přijímá opatření"
+    ],
+    "partnerships_practice": [
+      "Cílená spolupráce se zahraničními školami a program Erasmus+ umožňuje žákům praxi v zahraničí",
+      "Kooperace s Koordinačním centrem česko-německých výměn mládeže pro jazykové certifikáty",
+      "Partnerství se sportovním klubem AC Sparta fotbal a.s. pro zaměření sportovní management",
+      "Zapojení rodilých mluvčí do výuky cizích jazyků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a srozumitelná. Jasně identifikuje silné stránky (moderní vybavení, jazykové vzdělání, podpora sportovců) a slabé stránky (metodika výuky češtiny, nedostatečná diferenciace, málo aktivizačních metod). Konkrétní čísla a citace podporují tvrzení. Mírně snižuje skóre pouze vysoká míra odborného stylu v některých pasážích.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků s prospěchem s vyznamenáním v jednotlivých ročnících, pouze uvádí 40 % v průměru",
+      "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými učiteli v rámci všeobecných předmětů",
+      "Chybí informace o počtu žáků, kteří pokračují v terciárním vzdělávání - uvedeno jen 'nejméně třetina'"
+    ]
+  }
+}
+```

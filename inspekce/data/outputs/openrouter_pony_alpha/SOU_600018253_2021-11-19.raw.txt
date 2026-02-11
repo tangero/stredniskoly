@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600018253_2021-11-19",
+  "school_profile": {
+    "school_type": "Střední odborná škola s maturitními i učebními obory",
+    "inspection_period": "19. 11, 23. 11. - 24. 11. a 26. 11. 2021",
+    "school_change_summary": "Od srpna 2018 školu vede nový ředitel, kterému se podařilo zkvalitnit materiální podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná spolupráce",
+        "detail": "Škola výborně spolupracuje s firmami, což žákům zajišťuje kvalitní praxi a uplatnění.",
+        "evidence": "Účelné a oboustranně přínosné partnerské vztahy se zaměstnavateli... vytvářející podmínky pro lepší uplatnitelnost absolventů."
+      },
+      {
+        "tag": "Poradenství",
+        "detail": "Škola nabízí nadstandartní poradenské služby včetně školní psycholožky a kariérového poradenství.",
+        "evidence": "Nadstandartní úroveň poskytování školních poradenských a konzultačních služeb v oblasti výchovného poradenství."
+      },
+      {
+        "tag": "Výsledky vzdělávání",
+        "detail": "Škola efektivně pracuje na zlepšování výsledků, zejména v českém jazyce a u závěrečných zkoušek.",
+        "evidence": "Kvalitní práce s výsledky vzdělávání, včetně vyhodnocování a přijímání účinných opatření."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita výuky jazyků",
+        "detail": "V učebních oborech je výuka angličtiny hodnocena jako jednotvárná a nepodnětná.",
+        "evidence": "V učňovských oborech... výuka působila jednotvárně a nepodněcovala žáky v zájmu o probíraný obsah učiva."
+      },
+      {
+        "tag": "Rozdílná náročnost",
+        "detail": "Ve výuce chybí práce s úlohami různé náročnosti pro žáky s odlišnými znalostmi.",
+        "evidence": "Vzhledem k velmi rozdílným znalostem žáků chybělo ve výuce využití práce s úkoly odlišných kognitivních náročností."
+      },
+      {
+        "tag": "Pasivita žáků",
+        "detail": "V některých odborných předmětech převažuje pasivita žáků a frontální výuka.",
+        "evidence": "V některých případech převládala pasivita žáků a v užitých vyučovacích metodách byl aktivní především učitel."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s rozdílnou úrovní znalostí v rámci jedné třídy?",
+      "Jaké metody používá škola k zajištění zajímavé výuky cizích jazyků v učebních oborech?",
+      "Jaké možnosti doučování nebo konzultací škola nabízí před maturitními a závěrečnými zkouškami?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří chtějí získat praktické dovednosti v moderních dílnách a na smluvních pracovištích.",
+      "Pro zájemce o obory Gastronomie, Cukrář nebo Instalatér, kde škola dosahuje vynikajících výsledků.",
+      "Pro žáky, kteří potřebují silnou podporu poradenského týmu při studiu a volbě povolání."
+    ],
+    "who_should_be_cautious": [
+      "Pro žály očekávající vysoce interaktivní a skupinovou výuku v učebních oborech.",
+      "Pro rodiče, kteří vyžadují, aby výuka reagovala na individuální rozdíly ve znalostech žáků.",
+      "Pro žáky, kteří preferují samostatnou práci s informačními zdroji před frontální výukou."
+    ],
+    "plain_czech_summary": "Škola nabízí širokou škálu oborů od řemesel po ekonomii a gastronomii. Velkým plusem je skvělá spolupráce s firmami a zázemí školních dílen, což žákům zajišťuje dobrou přípravu na praxi. Škola také velmi dobře pečuje o žáky s různými potřebami díky silnému poradenskému týmu. Výsledky u maturity a závěrečných zkoušek se díky úsilí školy zlepšují. Slabinou může být někdejší jednotvárnost výuky jazyků v učebních oborech a méně prostoru pro práci s rozdílnou náročností pro nadanější či slabší žáky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky se zlepšují, zejména v českém jazyce a angličtině.",
+      "key_numbers": [
+        "V roce 2020/2021 neuspělo u maturity z češtiny jen 5 z 52 žáků.",
+        "Výsledky z angličtiny výrazně převyšují celorepublikový průměr.",
+        "V profilové části maturity neuspěl pouze 1 žák z 52."
+      ],
+      "evidence": "Ve školním roce 2020/2021 neuspělo pouze 5 žáků z 52 žáků konajících zkoušku společné části maturitní zkoušky."
+    },
+    "absence": {
+      "trend": "Škola úspěšně bojuje s absencí, zejména díky preventivní strategii.",
+      "key_numbers": [
+        "Žáci se zvýšenou absencí jsou evidováni a podporováni.",
+        "V době distanční výuky se podařilo žáky aktivně zapojit.",
+        "Škola efektivně předcházela obtížím při přechodu žáků ze ZŠ."
+      ],
+      "evidence": "Díky tomu, se i v době distanční výuky podařilo škole aktivně zapojovat žáků, kterým v počátku distančního vzdělávání vznikala velká absence."
+    },
+    "support_services": [
+      "Výchovné poradenství na výborné úrovni",
+      "Metodik prevence a školní psycholožka",
+      "Kariérové poradenství a podpora cizinců"
+    ],
+    "safety_climate": [
+      "Jasně nastavená pravidla bezpečnosti ve školním řádu",
+      "Příjemné školní klima a prevence rizikového chování",
+      "Žáci pravidelně informováni o bezpečnostních rizicích"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se smluvními partnery pro odborný výcvik",
+      "Podpora polytechnického vzdělávání pro ZŠ a MŠ",
+      "Zahraniční spolupráce se školou stejného zaměření"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, jasně člení hodnocení podmínek, průběhu a výsledků. Používá standardní odbornou terminologii, která je v kontextu srozumitelná.",
+    "uncertainty_notes": [
+      "Chybí přesnější data o celkové neúspěšnosti u maturity v předchozích letech pro lepší srovnání trendu.",
+      "Není specifikováno, kolik žáků konkrétně využilo nabízených konzultací.",
+      "Zpráva zmiňuje 'některé hodiny' s nedostatky, ale neurčuje jejich přesný podíl."
+    ]
+  }
+}

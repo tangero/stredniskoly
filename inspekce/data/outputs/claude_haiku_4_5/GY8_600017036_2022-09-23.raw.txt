@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600017036_2022-09-23",
+  "school_profile": {
+    "school_type": "Církevní gymnázium s osmileté a čtyřleté studiem, zaměření všeobecné",
+    "inspection_period": "23.–27. září 2022",
+    "school_change_summary": "Došlo ke změně ředitele a zlepšení materiálních podmínek. Škola stabilizovala pedagogický sbor (30 učitelů, 5 asistentů) a má 280 žáků ve 12 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Pozitivní klima",
+        "detail": "Škola vytváří vstřícné prostředí s dobrými vztahy mezi žáky a pedagogy.",
+        "evidence": "Pozitivní pracovní a bezpečná sociální atmosféra, minimální kázeňská opatření, převládají pochvaly."
+      },
+      {
+        "tag": "Moderní technologie",
+        "detail": "Intenzivní podpora rozvoje digitálních kompetencí žáků.",
+        "evidence": "Žáci pracují s tablety, učebny vybaveny počítačovou a projekční technikou, inovativní přístup k výuce."
+      },
+      {
+        "tag": "Péče o výsledky",
+        "detail": "Škola systematicky sleduje a vyhodnocuje výsledky vzdělávání.",
+        "evidence": "Pravidelné vyhodnocování na pedagogické radě, přijetí účinných opatření ke zlepšení, nízká absence žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená diferenciace",
+        "detail": "Učitelé málo přizpůsobují výuku individuálním potřebám žáků.",
+        "evidence": "Nadaní žáci nemají dostatek příležitostí k rozvoji, žáci se speciálními potřebami nejsou vždy dostatečně podporováni individuálně."
+      },
+      {
+        "tag": "Práce se zdroji",
+        "detail": "Žáci málo pracují s různými informačními zdroji.",
+        "evidence": "Omezené využívání různých zdrojů, nižší rozvoj kritického myšlení žáků."
+      },
+      {
+        "tag": "Formativní zpětná vazba",
+        "detail": "Učitelé poskytují méně účinné zpětné vazby motivující k dalšímu učení.",
+        "evidence": "Pozitivní hodnocení je časté, ale chybí reflektování individuálního pokroku žáka."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku nadaným žákům a jak je podporuje v jejich rozvoji?",
+      "Jaké konkrétní metody používáte na rozvoj kritického myšlení a práce s různými zdroji informací?",
+      "Jak probíhá individuální podpora žáků se speciálními vzdělávacími potřebami během běžné výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si cení pozitivního a klidného školního prostředí bez stresu",
+      "Rodiny hledající školu s důrazem na moderní technologie a digitální gramotnost",
+      "Žáci připravující se na vysoké školy s jasným zaměřením na akademické studium"
+    ],
+    "who_should_be_cautious": [
+      "Nadaní žáci, kteří potřebují intenzivnější individuální výzvy a rozšiřující se učivo",
+      "Žáci se speciálními vzdělávacími potřebami, pokud potřebují více individualizovaného přístupu během výuky",
+      "Žáci, kteří se učí lépe s různorodými zdroji a metodami – zde je výuka spíše tradiční"
+    ]
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nejsou uvedeny konkrétní trendy, ale škola sleduje úspěšnost u maturitních zkoušek",
+      "key_numbers": [
+        "Výsledky maturitních zkoušek v jarním a podzimním zkušebním období roku 2022 byly vyhodnocovány",
+        "Škola nemá vysokou absenci, což pozitivně působí na výsledky"
+      ],
+      "evidence": "Zpráva zmiňuje vyhodnocování výsledků maturitních zkoušek a úspěšnost absolventů v přijetí na vysoké školy jako zpětnou vazbu."
+    },
+    "absence": {
+      "trend": "Nízká absence",
+      "key_numbers": [
+        "Škola se nepotýká s vysokou absencí žáků ve vyučování"
+      ],
+      "evidence": "Na dosahované výsledky vzdělávání pozitivně působí skutečnost, že se škola nepotýká s vysokou absencí."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psycholožkou a ředitelkou jako koordinátory",
+      "Individuální vzdělávací strategie pro žáky se speciálními potřebami",
+      "Konzultační hodiny jednotlivých vyučujících a doučování",
+      "Kariérové poradenství zaměřené na vysoké a vyšší odborné školy",
+      "Adaptační pobytové kurzy pro nižší gymnázium zaměřené na prevenci"
+    ],
+    "safety_climate": [
+      "Pozitivní pracovní a bezpečná sociální atmosféra ve všech hodnocených hodinách",
+      "Minimální počet kázeňských opatření, převládají pochvaly",
+      "Závažné formy rizikového chování se téměř nevyskytují",
+      "Důsledné sledování třídního klimatu třídními učiteli",
+      "Prostory školy splňují podmínky bezpečného školního a pracovního prostředí"
+    ],
+    "partnerships_practice": [
+      "Partnerská spolupráce se zřizovatelem (Bailiva Čechy, Morava a Slezsko)",
+      "Spolupráce s Univerzitou Palackého Olomouc",
+      "Spolupráce se Statutárním městem Olomouc",
+      "Mezinárodní spolupráce",
+      "Aktivní komunikace se zákonnými zástupci žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní číselné údaje o maturitě a absenci, což by zvýšilo transparentnost.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta úspěšnosti u maturitní zkoušky ani srovnání s předchozími lety",
+      "Počet žáků se speciálními potřebami a nadaných není specifikován",
+      "Není jasné, jak velký je podíl žáků, kteří pokračují na vysokých školách"
+    ]
+  }
+}
+```

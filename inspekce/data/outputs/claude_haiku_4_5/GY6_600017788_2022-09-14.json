@@ -1,0 +1,114 @@
+{
+  "report_id": "GY6_600017788_2022-09-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:01:39.114863+00:00",
+  "run_finished_utc": "2026-02-09T17:02:01.944785+00:00",
+  "raw_file": "GY6_600017788_2022-09-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600017788_2022-09-14",
+    "school_profile": {
+      "school_type": "Gymnázium s šestiletým a čtyřletým studijním cyklem, zaměření všeobecné",
+      "inspection_period": "14.–16. září 2022",
+      "school_change_summary": "Od srpna 2021 nový ředitel, který zavedl novou koncepci zaměřenou na modernizaci vyučovacího procesu a vybavení školy. Nový školní vzdělávací program vychází z těchto cílů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Příznivé školní klima",
+          "detail": "Partnerská a vstřícná komunikace pedagogů s žáky založená na respektu pozitivně ovlivňuje kvalitu vzdělávání.",
+          "evidence": "Příznivé školní klima společně s partnerskou a vstřícnou komunikací pedagogických pracovníků s žáky."
+        },
+        {
+          "tag": "Sledování výsledků",
+          "detail": "Škola průběžně vyhodnocuje výsledky žáků a systematicky přijímá opatření ke zlepšení jejich prospěchu.",
+          "evidence": "Škola průběžně sleduje a vyhodnocuje výsledky vzdělávání žáků s využitím vhodných evaluačních nástrojů."
+        },
+        {
+          "tag": "Nízká absence",
+          "detail": "Škola se nepotýká s vysokou absencí žáků, což pozitivně ovlivňuje dosahované výsledky.",
+          "evidence": "Škola se nepotýká s vysokou absencí žáků ve vyučování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená diferenciace výuky",
+          "detail": "Frontální výuka neumožňuje dostatečnou diferenciaci, žáci pracují na identických úkolech se stejnou obtížností.",
+          "evidence": "Uplatňovaná frontální výuka neumožňovala výraznější diferenciaci učiva, žáci tak pracovali většinou na identických úkolech."
+        },
+        {
+          "tag": "Chybí zpětná vazba a sebehodnocení",
+          "detail": "Závěry vyučovacích hodin postrádají motivační shrnutí a sebehodnocení žáků, což omezuje rozvoj jejich kompetencí.",
+          "evidence": "V závěru většiny vyučovacích hodin scházelo motivační shrnutí, téměř vůbec nebylo uplatňováno sebehodnocení a vzájemné hodnocení žáků."
+        },
+        {
+          "tag": "Omezená podpora nadaných žáků",
+          "detail": "Nadaným žákům jsou zřídka vytvářeny další příležitosti pro jejich rozvoj a talent.",
+          "evidence": "Nadaným žákům byly zřídka vytvářeny další vhodné příležitosti pro jejich rozvoj."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zlepšit diferenciaci výuky a individuální přístup k žákům s různými schopnostmi?",
+        "Jaké konkrétní kroky podnikla škola po inspekci k zavedení sebehodnocení a zpětné vazby v hodinách?",
+        "Jak škola podporuje nadané žáky a jaké má pro ně speciální programy?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení příjemného školního klimatu a korektní komunikace s učiteli",
+        "Studenti se zájmem o vysokoškolské vzdělání, kterým škola poskytuje kvalitní přípravu na maturitu",
+        "Žáci s různými speciálními potřebami, kterým škola nabízí individuální podporu a doučování"
+      ],
+      "who_should_be_cautious": [
+        "Nadaní žáci, kteří potřebují výrazně více výzev a individuálního rozvoje svých schopností",
+        "Žáci, kteří se učí lépe aktivními metodami a skupinovou prací než tradičním frontálním vyučováním",
+        "Studenti, kteří potřebují časté a detailní zpětnou vazbu o svém pokroku"
+      ],
+      "plain_czech_summary": "Gymnázium v Hranicích je stabilní škola s příjemným klimatem a kvalitní péčí o žáky. Nový ředitel zavádí modernizaci. Silné stránky: nízká absence, sledování výsledků, podpora slabších žáků. Slabiny: výuka je příliš frontální bez dostatečné diferenciace, chybí sebehodnocení žáků a motivační shrnutí hodin, nadaní žáci nemají dost výzev. Škola pracuje na zlepšení těchto oblastí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní, bez závažných odchylek",
+        "key_numbers": [
+          "274 žáků v 12 třídách",
+          "Výsledky vzdělávání v jednotlivých předmětech bez závažných vzájemných odchylek (2021/2022)"
+        ],
+        "evidence": "Ve školním roce 2021/2022 nevykazovaly výsledky vzdělávání žáků v jednotlivých vyučovacích předmětech závažné vzájemné odchylky."
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "Škola se nepotýká s vysokou absencí"
+        ],
+        "evidence": "Na dosahované výsledky vzdělávání pozitivně působí skutečnost, že se škola nepotýká s vysokou absencí žáků ve vyučování."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště se zaměřením na žáky se speciálními vzdělávacími potřebami",
+        "Doučování a individuální konzultace pro žáky s rizikem neúspěchu",
+        "Kariérní poradenství s návštěvami veletrhů vysokých škol a dnů otevřených dveří",
+        "Metodika prevence s Minimálním preventivním programem"
+      ],
+      "safety_climate": [
+        "Příznivé školní klima s partnerskou komunikací pedagogů a žáků",
+        "Korektní komunikace mezi vyučujícími a žáky",
+        "Studentský parlament aktivně participující na zlepšování klimatu školy",
+        "Podpora správného vývoje a společensky odpovědného chování žáků"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zřizovatelem (Olomoucký kraj) a školskou radou",
+        "Partnerství se základními školami v okolí",
+        "Spolupráce s městem Hranice, místními organizacemi a spolky",
+        "Partnerství s Univerzitou Palackého Olomouc a Domem dětí a mládeže",
+        "Aktivní rodičovské sdružení poskytující organizační a finanční podporu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky. Jsou jasně identifikovány silné stránky, slabiny a konkrétní doporučení. Některé pasáže jsou však delší a obsahují více odborné terminologie, která by mohla být pro laické rodiče méně přístupná.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o úspěšnosti maturit nebo přijetí absolventů na vysoké školy, pouze obecné tvrzení o sledování těchto údajů",
+        "Není jasné, jak konkrétně se projevily absolvované kurzy pedagogů v praxi, pouze se uvádí, že se zatím jen částečně projevily",
+        "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami a jejich konkrétní podpora"
+      ]
+    }
+  }
+}

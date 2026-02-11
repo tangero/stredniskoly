@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600016846_2023-04-25",
+  "school_profile": {
+    "school_type": "Střední škola technická a zemědělská s maturitní zkouškou a výučním listem",
+    "inspection_period": "25. 4. 2023 − 28. 4. 2023",
+    "school_change_summary": "Nová ředitelka od srpna 2022 vypracovala koncepci rozvoje školy. Došlo k modernizaci učeben, revitalizaci budov a rozšíření vozového parku. Opatření z minulé inspekce (2015/2016) nebyla plně realizována."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství se zaměstnavateli",
+        "detail": "Škola spolupracuje s více než padesáti firmami, což zvyšuje uplatnitelnost absolventů na trhu práce.",
+        "evidence": "\"Vysoce odborné a oboustranně přínosné partnerské vztahy se zaměstnavateli se promítají do kvality odborného vzdělávání\""
+      },
+      {
+        "tag": "Mezinárodní zkušenosti",
+        "detail": "Program Erasmus+ umožňuje žákům odborné stáže v zahraničí a učitelům zvyšování kvalifikace.",
+        "evidence": "\"Celkem ve školním roce 2021/2022 získalo zahraniční pracovní a odborné zkušenosti 30 žáků\""
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují výrazných úspěchů v odborných soutěžích a sportovních akcích.",
+        "evidence": "\"Mistrovství ČR truhlářů 1. místo v celorepublikovém kole, 1. místo ve středoškolských hrách v kopané\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízké výsledky z matematiky",
+        "detail": "Při maturitě z matematiky uspělo pouze 25 % žáků, což je výrazně pod průměrem.",
+        "evidence": "\"z matematiky konalo osm žáků a úspěšně vykonali pouze dva žáci, tzn. čistá úspěšnost činila 25 %\""
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Přetrvává vysoká míra absence, která negativně ovlivňuje vzdělávací výsledky.",
+        "evidence": "\"Stále přetrvává vysoká míra absence žáků a nižší míra jejich vnitřní motivace\""
+      },
+      {
+        "tag": "Slabá komunikace mezi pedagogy a žáky",
+        "detail": "Dotazníkové šetření odhalilo narušení vztahů mezi žáky a pedagogy.",
+        "evidence": "\"Z analýzy výsledků šetření vyplynuly prvky narušení složek týkajících se vztahů mezi žáky a pedagogy\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší vysokou absenci žáků a jaké jsou konkrétní opatření?",
+      "Jakou podporu nabízí žákům, kteří mají potíže s matematikou?",
+      "Jak probíhá komunikace mezi pedagogy a žáky a jak se škola snaží zlepšit jejich vztahy?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a technické obory s podporou zaměstnavatelů",
+      "Studenti, kteří chtějí získat mezinárodní zkušenosti prostřednictvím programu Erasmus+",
+      "Talentovaní žáci v technických, stavebních a zemědělských oborech, kteří se chtějí prosazovat v soutěžích"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími matematickými dovednostmi, protože úspěšnost z matematiky je velmi nízká",
+      "Studenti, kteří potřebují intenzivní individuální podporu a komunikaci s učiteli",
+      "Žáci s tendencí k absenci, protože škola má problémy s motivací a docházkou"
+    ],
+    "plain_czech_summary": "Škola je moderně vybavená technická a zemědělská střední škola s výbornou spoluprací se zaměstnavateli a možností mezinárodních stáží. Žáci dosahují pěkných výsledků v praktické výuce a soutěžích. Slabinou jsou nízké výsledky z matematiky (25 % úspěšnost), vysoká absence žáků a problémy v komunikaci mezi pedagogy a žáky. Teoretická výuka by potřebovala modernější metody. Škola je vhodná pro prakticky zaměřené studenty, ale žáci se slabšími matematickými dovednostmi by měli počítat s větší náročností."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nerovnoměrné výsledky – vysoká úspěšnost v češtině a angličtině, kriticky nízká v matematice",
+      "key_numbers": [
+        "Čeština: 87,7 % úspěšnost (64 z 73 žáků)",
+        "Matematika: 25 % úspěšnost (2 z 8 žáků)",
+        "Angličtina: 80 % úspěšnost (44 z 50 žáků)"
+      ],
+      "evidence": "\"ve společné části maturitní zkoušky z českého jazyka... čistá úspěšnost činila 87,7 %, z matematiky... 25 %, z anglického jazyka... 80 %\""
+    },
+    "absence": {
+      "trend": "Vysoká absence přetrvává a negativně ovlivňuje výsledky",
+      "key_numbers": [
+        "Odchody ze školy: 2,48 % v letošním školním roce",
+        "Snížená známka z chování: 13 žáků v 2021/2022, 6 žáků v 1. pololetí 2022/2023"
+      ],
+      "evidence": "\"Stále přetrvává vysoká míra absence žáků a nižší míra jejich vnitřní motivace, jež negativně ovlivňují vzdělávací výsledky\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: 2 výchovní poradci (jeden je zároveň kariérový poradce a metodik prevence)",
+      "Nabídka doučování, dělení hodin a individuálních konzultací ze všech vyučovacích předmětů",
+      "Identifikace žáků ohrožených školní neúspěšností ve spolupráci s předmětovými komisemi"
+    ],
+    "safety_climate": [
+      "Zvýšená úrazovost související s důsledností evidence a výpadkem pravidelného pohybu žáků",
+      "Žáci jsou seznamováni s pravidly bezpečného chování a ochrany zdraví",
+      "Doporučení: zaměřit se na zpracování rozboru školní úrazovosti a osvětu zaměřenou na předcházení úrazů"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s více než 50 strojírenskými, zemědělskými, stavebními a zpracovatelskými podniky",
+      "Dva podniky mají statut školního závodu přiznaný Ministerstvem zemědělství ČR",
+      "Fakultní škola Přírodovědecké fakulty Univerzity Palackého Olomouc",
+      "Program Erasmus+ s financováním do roku 2027",
+      "Projektové dny a soutěže pro žáky základních škol (Přehlídka technických profesí)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní data. Hlavní zjištění jsou jasná, ale některé pasáže jsou delší a složitější. Praktické informace pro rodiče jsou obsaženy spíše implicitně.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní inovativní metody by měly být zavedeny v teoretické výuce",
+      "Není jasné, jak dlouho trvá řešení absence a jaké jsou konkrétní výsledky dosavadních opatření",
+      "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami a jejich úspěšnosti"
+    ]
+  }
+}
+```

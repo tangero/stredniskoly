@@ -1,0 +1,29 @@
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T12:16:31.152646+00:00",
+  "run_finished_utc": "2026-02-09T12:17:01.882266+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY8_600008029_2025-10-21\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 1,\n  \"critical_issues\": [\n    \"Chybné časové tvrzení: kandidát uvádí, že „v září 2025 nastoupil nový zástupce ředitele“, zatímco zdroj uvádí nástup nového zástupce v roce 2024 (resp. ve školním roce 2024/2025).\",\n    \"Místy lehce nadsazená generalizace („výuka často probíhá formou výkladu“) – zdroj popisuje, že některé sledované hodiny byly převážně výkladové, ale nevymezuje to jako dominantní pro veškerou výuku.\"\n  ],\n  \"best_points\": [\n    \"Věcně správně zachycené klíčové silné stránky ze závěrů inspekce (spolupráce se sociálními partnery/obcí, peer aktivity a rozvoj kompetencí).\",\n    \"Správně identifikovaná hlavní slabá stránka: nedostatečná diferenciace ve většině sledovaných hodin.\",\n    \"Dobře použité „tvrdé“ údaje z části o výsledcích (maturita: 1 opravná zkouška, 5 nahrazení jazykové maturity certifikátem, vyrovnaná volba M vs CJ; absence: bez neomluvených hodin; odchody po 4. ročníku cca 10 %).\",\n    \"Prakticky užitečné pro rodiče: jasně popsané dopady nefunkčních tělocvičen a chybějících prostor pro setkávání komunity + navazující otázky na den otevřených dveří.\"\n  ],\n  \"one_line_verdict\": \"Shrnutí je z větší části věrné a pro rodiče dobře použitelné, ale obsahuje jednu faktickou nepřesnost (datum nástupu zástupce ředitele) a pár mírně zjednodušujících zobecnění.\"\n}",
+  "judge_output": {
+    "report_id": "GY8_600008029_2025-10-21",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 1,
+    "critical_issues": [
+      "Chybné časové tvrzení: kandidát uvádí, že „v září 2025 nastoupil nový zástupce ředitele“, zatímco zdroj uvádí nástup nového zástupce v roce 2024 (resp. ve školním roce 2024/2025).",
+      "Místy lehce nadsazená generalizace („výuka často probíhá formou výkladu“) – zdroj popisuje, že některé sledované hodiny byly převážně výkladové, ale nevymezuje to jako dominantní pro veškerou výuku."
+    ],
+    "best_points": [
+      "Věcně správně zachycené klíčové silné stránky ze závěrů inspekce (spolupráce se sociálními partnery/obcí, peer aktivity a rozvoj kompetencí).",
+      "Správně identifikovaná hlavní slabá stránka: nedostatečná diferenciace ve většině sledovaných hodin.",
+      "Dobře použité „tvrdé“ údaje z části o výsledcích (maturita: 1 opravná zkouška, 5 nahrazení jazykové maturity certifikátem, vyrovnaná volba M vs CJ; absence: bez neomluvených hodin; odchody po 4. ročníku cca 10 %).",
+      "Prakticky užitečné pro rodiče: jasně popsané dopady nefunkčních tělocvičen a chybějících prostor pro setkávání komunity + navazující otázky na den otevřených dveří."
+    ],
+    "one_line_verdict": "Shrnutí je z větší části věrné a pro rodiče dobře použitelné, ale obsahuje jednu faktickou nepřesnost (datum nástupu zástupce ředitele) a pár mírně zjednodušujících zobecnění."
+  }
+}

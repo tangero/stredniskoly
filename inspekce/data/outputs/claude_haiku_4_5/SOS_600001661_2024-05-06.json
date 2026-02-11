@@ -1,0 +1,100 @@
+{
+  "report_id": "SOS_600001661_2024-05-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:16:42.157353+00:00",
+  "run_finished_utc": "2026-02-09T16:17:02.921088+00:00",
+  "raw_file": "SOS_600001661_2024-05-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600001661_2024-05-06",
+    "school_profile": {
+      "school_type": "Střední škola - obor Informační technologie (18-20-M/01), čtyřletý denní studijní program",
+      "inspection_period": "6.–7. května 2024 a 9. května 2024",
+      "school_change_summary": "Od školního roku 2023/2024 pokračuje škola pod novým názvem v činnosti střední školy s novým oborem vzdělání a zpracovaným školním vzdělávacím programem."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní personál a odborná příprava",
+          "detail": "Výuka je zajištěna kvalifikovanými pedagogy doplněnými o odborníky z praxe a rodilé mluvčí.",
+          "evidence": "Pedagogický sbor je vhodně doplněn o odborníky z praxe a rodilé mluvčí."
+        },
+        {
+          "tag": "Moderní vybavení a spolupráce s univerzitou",
+          "detail": "Výuka probíhá v moderně vybavených učebnách, převážně v laboratořích Univerzity Tomáše Bati.",
+          "evidence": "Vzdělávání v odborných předmětech se uskutečňuje v odborných učebnách s moderním technologickým vybavením."
+        },
+        {
+          "tag": "Individuální přístup k žákům",
+          "detail": "Škola má jasnou strategii pro nadané žáky a poskytuje podporu žákům se speciálními potřebami.",
+          "evidence": "Pro nadané žáky má škola jasně stanovenou strategii, kterou účinně uzpůsobuje potřebám každého žáka."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nekompletní vyhodnocování cílů výuky",
+          "detail": "V některých hodinách chybí závěrečné zhodnocení, zda žáci dosáhli stanovených vzdělávacích cílů.",
+          "evidence": "V některých případech chybělo závěrečné zhodnocení dosažení cílů, které by reflektovalo individuální učení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá spolupráce s Univerzitou Tomáše Bati a jaké má výhody pro naše studenty?",
+        "Jaké jsou možnosti mezinárodní spolupráce a výměnných pobytů v zahraničí?",
+        "Jak se škola zaměřuje na rozvoj digitálních kompetencí a jaké software programy žáci používají?"
+      ],
+      "who_school_fits": [
+        "Zájemci o informační technologie s ambicí pracovat s moderními technologiemi a cloudovými aplikacemi",
+        "Žáci, kterým vyhovuje individuální přístup a podpora jejich nadání",
+        "Studenti, kteří chtějí studovat v prostředí s mezinárodní spoluprací a kontakty na praxi"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více času na zpracování informací a jasné shrnutí toho, co se naučili",
+        "Uchazeči bez zájmu o anglický jazyk (je základním prostředkem pro osvojování odborných kompetencí)"
+      ],
+      "plain_czech_summary": "Academic School je relativně nová střední škola zaměřená na informační technologie. Má kvalitní pedagogy, moderní vybavení a užitečnou spolupráci s univerzitou. Všichni žáci prospěli. Silnou stránkou je individuální přístup a podpora nadaných žáků. Jedinou slabší stránkou je, že v některých hodinách chybí jasné shrnutí toho, co se žáci naučili. Škola je vhodná pro zájemce o IT s ambicí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze určit - škola má pouze žáky 1. a 2. ročníku",
+        "key_numbers": [
+          "30 žáků celkem",
+          "1. a 2. ročník",
+          "Všichni žáci prospěli"
+        ],
+        "evidence": "Ve škole jsou aktuálně vzděláváni pouze žáci 1. a 2. ročníku. Všichni žáci prospěli."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Speciální pedagožka zajišťuje metodickou a informační podporu žákům se speciálními vzdělávacími potřebami",
+        "Individuální konzultace pro předcházení studijnímu neúspěchu",
+        "Spolupráce se školskými poradenskými zařízeními",
+        "Plán rozvoje pro nadané žáky a cizince"
+      ],
+      "safety_climate": [
+        "Škola sleduje projevy rizikového chování a realizuje opatření k budování zdravého přátelského klimatu",
+        "Bezpečnost prostředí je zajištěna prováděnými opatřeními a kontrolami",
+        "Žáci jsou průběžně poučováni o bezpečném chování a seznamováni s možnými riziky"
+      ],
+      "partnerships_practice": [
+        "Velmi přínosná spolupráce s Fakultou logistiky a krizového řízení Univerzity Tomáše Bati (participace na tvorbě školního vzdělávacího programu, poskytování odborných učeben)",
+        "Mezinárodní spolupráce se středními školami zaměřená na rozvoj cizojazyčných komunikačních dovedností",
+        "Spolupráce s odbornými firmami a institucemi",
+        "Využívání stravovacích služeb Menzy University Tomáše Bati"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní informace o silných stránkách a oblastech ke zlepšení. Chybí však údaje o absenci, maturitních výsledcích a konkrétních číslech o prospěchu.",
+      "uncertainty_notes": [
+        "Nelze posoudit kvalitu výuky v maturitních ročnících - škola má zatím pouze 1. a 2. ročník",
+        "Není jasné, jak se bude škola vyvíjet v příštích letech, když budou mít první absolventy",
+        "Chybí informace o počtu přijatých uchazečů a jejich úspěšnosti v přijímacím řízení"
+      ]
+    }
+  }
+}

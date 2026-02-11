@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY4_691015805_2023-06-13",
+  "school_profile": {
+    "school_type": "Základní škola s alternativním přístupem (svobodná demokratická škola) + školní družina",
+    "inspection_period": "13.–14. června 2023",
+    "school_change_summary": "Škola vznikla 1. 9. 2022 jako nová alternativní základní škola. V inspekční době měla 50 žáků v běžné výuce (včetně 5 se speciálními potřebami) a 30 žáků na individuálním vzdělávání. Všech 50 žáků navštěvovalo školní družinu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jasná vzdělávací koncepce",
+        "detail": "Škola má vymezenou vizi svobodné demokratické školy, kterou všichni aktéři sdílejí a naplňují.",
+        "evidence": "Škola má jasně vymezenou koncepci rozvoje, kterou aktéři vzdělávání sdílejí."
+      },
+      {
+        "tag": "Výborné materiální podmínky",
+        "detail": "Tematicky vybavené učebny, pronajatá sportovní zařízení a bezpečné prostředí podporují učení.",
+        "evidence": "Velmi dobré materiální podmínky, tematicky koncipované učebny podnětně vybavené."
+      },
+      {
+        "tag": "Pozitivní školní klima",
+        "detail": "Partnerské vztahy a respektující komunikace vytvářejí příznivé prostředí pro rozvoj sociálních dovedností.",
+        "evidence": "Partnerské vzájemné vztahy a respektující komunikace jsou pro žáky pozitivním vzorem."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovanost pedagogů",
+        "detail": "Část pedagogického týmu nemá požadovanou kvalifikaci, chybí cílená metodická podpora a evaluace jejich práce.",
+        "evidence": "V týmu převažují pracovníci bez požadované kvalifikace, schází cílená metodická podpora."
+      },
+      {
+        "tag": "Slabá motivace některých žáků",
+        "detail": "Organizace výuky některé žáky nevedla k aktivnímu zapojení; místo učiva si volili volné činnosti.",
+        "evidence": "Některé žáky se učitelům nepodařilo vhodně motivovat, upřednostnili volné činnosti."
+      },
+      {
+        "tag": "Chybějící systém hodnocení pokroku",
+        "detail": "Škola nemá jednotný systém pro evidenci dosahování očekávaných výstupů jednotlivých žáků.",
+        "evidence": "Škola nemá jednotný systém pro evidenci dosahování očekávaných výstupů a pokroku."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola motivuje žáky, kteří se nezajímají o nabízené učivo, aby se aktivně zapojili do vzdělávání?",
+      "Jaký systém máte pro sledování pokroku jednotlivých žáků a jak se to projevuje na vysvědčení?",
+      "Jak se škola vypořádává s vysokou omluvovanou absencí, kterou inspekce zmínila?"
+    ],
+    "who_school_fits": [
+      "Děti, které se lépe učí v prostředí s individuálním přístupem a svobodou rozhodování o vlastním učení",
+      "Žáci, kteří potřebují rozvoj sociálních a komunikativních dovedností v pozitivním klimatu",
+      "Rodiny, které sdílejí filozofii svobodné demokratické školy a alternativního vzdělávání"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají tradiční systém hodnocení a jasné měřítko pokroku (škola hodnotí slovně bez standardních kritérií)",
+      "Žáci, kteří potřebují více struktury, jasných cílů a pravidelné zpětné vazby k práci",
+      "Rodiny, které si nejsou jisté, zda jejich dítě bude samo motivované k učení bez vnějšího tlaku"
+    ],
+    "plain_czech_summary": "Nová alternativní základní škola Arktur v Trboušanech se zaměřuje na svobodné demokratické vzdělávání s důrazem na osobnostní rozvoj a kreativitu. Má výborné materiální podmínky a pozitivní školní klima. Inspekce však upozornila na problémy: část pedagogů nemá potřebnou kvalifikaci, chybí cílená metodická podpora, některé žáky se nepodařilo dostatečně motivovat a škola nemá jednotný systém pro sledování pokroku žáků. Škola je vhodná pro rodiny věřící v alternativní vzdělávání, ale rodiče by měli počítat s méně tradičním přístupem k hodnocení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Není relevantní – jedná se o základní školu",
+      "key_numbers": [
+        "Škola funguje od 1. 9. 2022 (první rok provozu)",
+        "V 1. pololetí všichni žáci prospěli s vyznamenáním nebo prospěli"
+      ],
+      "evidence": "V prvním pololetí fungování školy všichni žáci prospěli s vyznamenáním nebo prospěli."
+    },
+    "absence": {
+      "trend": "Vysoká omluvená absence je identifikovaným problémem",
+      "key_numbers": [
+        "Vysoká omluvená absence je řešena na tripartitních setkáních rodič–učitel–žák"
+      ],
+      "evidence": "Vzdělávací a výchovné problémy se řeší na tripartitních setkáních, častým tématem je vysoká omluvená absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: ředitelka (výchovná poradkyně), školní metodička prevence, speciální pedagožka",
+      "Podpora asistenty pedagoga pro žáky se speciálními potřebami",
+      "Spolupráce s externí psycholožkou na realizaci programů pro žáky",
+      "Minimální preventivní program zpracovaný podle potřeb školy"
+    ],
+    "safety_climate": [
+      "Prostory jsou průběžně monitorovány z hlediska bezpečnosti a ochrany zdraví",
+      "Bezpečné a příjemné prostředí uzpůsobené alternativním postupům",
+      "Strategie předcházení šikany a krizový plán řešení",
+      "Žáci se chovali ohleduplně a dodržovali nastavená pravidla"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se školskými poradenskými zařízeními na konzultacích podpůrných opatření",
+      "Otevřená komunikace se zákonnými zástupci (osobní kontakt, rodičovské kruhy, tripartita, sociální sítě)",
+      "Kooperace se zřizovatelem (Vila Verde, z. s.)",
+      "Zapojení do místního dění (tematické jarmarky, besedy, komunitní zahrada)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však technicky náročnější (např. popis systému hodnocení), ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o absenci – pouze zmínku, že je 'vysoká' a řeší se na tripartitách",
+      "Není jasné, kolik pedagogů přesně nemá kvalifikaci a v jakých předmětech",
+      "Chybí informace o tom, jak dlouho trvá adaptace nových žáků na alternativní přístup"
+    ]
+  }
+}
+```

@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "LYC_600013669_2024-01-03",
+  "school_profile": {
+    "school_type": "Střední odborná škola (soukromá, obecně prospěšná společnost)",
+    "inspection_period": "3. 1. 2024 – 5. 1. 2024",
+    "school_change_summary": "Škola zaznamenala výrazný nárůst počtu žáků o 123 % v denní formě studia. Zlepšily se materiální podmínky díky přestěhování do nové budovy na Hudcově. Škola nabízí obory Informační technologie a Ekonomické lyceum s celkem 156 žáky v 8 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Digitální vzdělání na vysoké úrovni",
+        "detail": "Všechny třídy mají dataprojektory, učitelé notebooky, žáci běžně pracují s vlastními telefony a aplikacemi včetně umělé inteligence.",
+        "evidence": "Ve všech učebnách jsou dataprojektory, všichni vyučující mají notebooky, žáci běžně využívají digitální technologie."
+      },
+      {
+        "tag": "Silné vedení a profesní rozvoj učitelů",
+        "detail": "Ředitel má jasnou vizi, učitelé se pravidelně vzdělávají a získané poznatky uplatňují ve výuce.",
+        "evidence": "Ředitel vycházel ze SWOT analýzy, pedagogové aktivně identifikují vzdělávací potřeby a účastní se vzdělávacích aktivit."
+      },
+      {
+        "tag": "Kvalitní podpora žáků se speciálními potřebami",
+        "detail": "Efektivní poradenské služby včetně plánů pedagogické podpory a individuálních vzdělávacích plánů.",
+        "evidence": "Všem žákům se SVP je poskytována efektivní podpora, pracovnice poradenského pracoviště se setkávají v intervalu tří měsíců."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Nepravidelná docházka je hlavní příčinou školního neúspěchu, průměrně 170 hodin absence na žáka za rok.",
+        "evidence": "Absence žáků je důsledně sledována, škola přijala opatření k jejímu snížení, ale zůstává problémem."
+      },
+      {
+        "tag": "Slabší práce s individuálními rozdíly",
+        "detail": "Úkoly mají pro všechny stejnou náročnost bez ohledu na individuální potřeby, málo diferenciace.",
+        "evidence": "Zadávané úkoly měly pro všechny stejnou kognitivní náročnost bez ohledu na individuální potřeby žáků."
+      },
+      {
+        "tag": "Neúspěšnost u maturitní zkoušky",
+        "detail": "Průměrně 12–16 % žáků maturitní zkoušku nevykonalo úspěšně, často v profilové části.",
+        "evidence": "V posledních třech letech hrubá neúspěšnost činila průměrně 16 %, nyní se snížila na 12 %."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky pro studium?",
+      "Jaké jsou možnosti individuální podpory pro žáky, kteří si potřebují procvičit učivo nebo se chtějí posunout dál?",
+      "Jak se škola připravuje na maturitní zkoušku a jaké jsou výsledky v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o IT a digitální technologie – obor Informační technologie má velmi dobrou úroveň výuky s moderním vybavením.",
+      "Studenti s ambicí na ekonomii – obor Ekonomické lyceum propojuje znalosti s ekonomickou praxí a diskusí.",
+      "Žáci se speciálními potřebami – škola má kvalitní poradenské služby a individuální podporu."
+    ],
+    "who_should_be_cautious": [
+      "Žáci s tendencí k absenci – škola sice sleduje docházku, ale absence zůstává hlavním problémem úspěchu.",
+      "Studenti, kteří potřebují více individuálního přístupu – úkoly nejsou dostatečně diferencované podle schopností.",
+      "Kandidáti na maturitu v profilových předmětech – 12–16 % žáků maturitní zkoušku nezvládne, zejména v profilové části."
+    ],
+    "plain_czech_summary": "Škola EDUCAnet je moderní střední odborná škola s výborným digitálním vybavením a kvalitním vedením. Učitelé se pravidelně vzdělávají a uplatňují nové metody. Silnou stránkou je podpora žáků se speciálními potřebami. Hlavní problémy: vysoká absence žáků, nedostatečná diferenciace úkolů podle schopností a neúspěšnost některých žáků u maturitní zkoušky. Škola na tyto problémy reaguje, ale zlepšení trvá."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se – hrubá neúspěšnost klesla z průměru 16 % na 12 % po zavedení postupových zkoušek.",
+      "key_numbers": [
+        "Průměrná hrubá neúspěšnost v posledních třech letech: 16 %",
+        "Aktuální hrubá neúspěšnost: 12 %",
+        "Nejčastější důvod neúspěchu: neprospěch v profilové části"
+      ],
+      "evidence": "Škola zavedla postupové zkoušky v určených ročnících k motivaci žáků k průběžné přípravě, opatření přispělo ke zlepšení."
+    },
+    "absence": {
+      "trend": "Stabilizovaná, ale vysoká – v posledních dvou letech se ustálila na průměru 170 hodin na žáka za rok.",
+      "key_numbers": [
+        "Průměrná absence: 170 hodin na jednoho žáka za rok",
+        "Absence je hlavní příčinou školního neúspěchu",
+        "Škola přijala opatření: hranice minimální docházky, jednání s žáky a rodiči"
+      ],
+      "evidence": "Absence žáků je důsledně sledována, škola stanovila hranici minimální docházky do jednotlivých předmětů a aktivně pracuje s poradenským pracovištěm."
+    },
+    "support_services": [
+      "Výchovná poradkyně, metodička prevence a sociální pedagožka zajišťují poradenské služby",
+      "Plány pedagogické podpory na základě vlastní diagnostiky aktuálních potřeb",
+      "Individuální vzdělávací plány pro žáky, kteří o ně žádají",
+      "Adaptační pobyty pro žáky prvních ročníků k posílení zdravého klimatu",
+      "Primární prevence sociálně patologických jevů"
+    ],
+    "safety_climate": [
+      "Příjemná, klidná atmosféra ve všech vyučovacích hodinách",
+      "Žáci dodržují nastavená pravidla",
+      "Konstruktivní komunikace mezi vedením, pedagogy, žáky a rodiči",
+      "Krizový plán a program primární prevence"
+    ],
+    "partnerships_practice": [
+      "Celé praktické vyučování probíhá u smluvních partnerů",
+      "Zapojení odborníků z praxe do výuky",
+      "Sdílení profesních zkušeností absolventy školy",
+      "Síť škol EDUCAnet – pravidelné sdílení zkušeností a dobré praxe mezi řediteli a pedagogy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a úřednicky formulované, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola přijala k řešení absence – jsou zmíněny obecné kroky, ale chybí konkrétní výsledky.",
+      "Není jasné, jak dlouho trvá, než se zlepšení v diferenciaci úkolů projeví v praxi – doporučení je formulováno, ale bez časového rámce.",
+      "Počet žáků s neprospěchem (necelá 4 %) je uveden jen pro jeden rok – trend není jasný."
+    ]
+  }
+}
+```

@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_691000565_2022-05-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:03:19.549367+00:00",
+  "run_finished_utc": "2026-02-09T17:03:43.531680+00:00",
+  "raw_file": "GY4_691000565_2022-05-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691000565_2022-05-18",
+    "school_profile": {
+      "school_type": "Gymnázium, základní škola a mateřská škola Hello s.r.o. (soukromá, s.r.o.)",
+      "inspection_period": "18.–20. května 2022 a 23.–24. května 2022",
+      "school_change_summary": "Od poslední inspekce v 2013/2014 došlo k výrazné transformaci: nová ředitelka od 2017, modernizovaná budova se stavbou nového patra pro gymnázium, počet žáků vzrostl z 124 na 300, rozšířily se všechny stupně vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělávání",
+          "detail": "Intenzivní výuka angličtiny s rodilými mluvčími na všech stupních, bilingvní výuka a jazykové výjezdy do zahraničí.",
+          "evidence": "Vysoká míra zapojení rodilých mluvčích umožňuje efektivní rozvoj jazykových i multikulturních kompetencí."
+        },
+        {
+          "tag": "Výsledky a úspěšnost",
+          "detail": "Žáci dosahují stabilně velmi dobrých výsledků, v posledních třech letech se výrazně zlepšily výsledky u maturitní zkoušky.",
+          "evidence": "Celkově žáci dosahují ve vzdělávání stabilně velmi dobrých výsledků, v posledních třech letech se výrazně zlepšily i výsledky žáků u maturitní zkoušky."
+        },
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Pozitivní školní klima s prosociálními vztahy, minimální úrazovostí a efektivní prevencí negativních jevů.",
+          "evidence": "Vážnější negativní jevy v chování žáků se v posledních třech školních letech nevyskytovaly."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Formativní hodnocení",
+          "detail": "Škola se snaží zavádět formativní hodnocení, ale zatím se zcela nedaří aplikovat získané poznatky v praxi.",
+          "evidence": "V základní a střední škole se zatím zcela nedaří ve větší míře využívat formativní hodnocení, sebehodnocení žáků a vzájemné hodnocení."
+        },
+        {
+          "tag": "Diferenciace v mateřské škole",
+          "detail": "Vzdělávací nabídka v mateřské škole není dostatečně přizpůsobena individuálním potřebám jednotlivých dětí.",
+          "evidence": "Vzdělávací nabídka a cíle vzdělávání v mateřské škole nejsou v potřebném rozsahu diferencovány podle individuálních vzdělávacích potřeb dětí."
+        },
+        {
+          "tag": "Fluktuace pedagogů",
+          "detail": "Časté obměny pedagogického sboru narušují dlouhodobou a systémovou práci vedení školy.",
+          "evidence": "Dlouhodobou a systémovou práci však narušují časté obměny pedagogického sboru."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá výuka s rodilými mluvčími a jaké jazykové certifikáty mohou žáci získat?",
+        "Jaké je zaměření volitelných předmětů a kroužků v jednotlivých ročnících?",
+        "Jak škola pracuje se žáky se speciálními vzdělávacími potřebami a jakou podporu jim poskytuje?"
+      ],
+      "who_school_fits": [
+        "Děti a žáci se zájmem o jazykové vzdělávání a multikulturní kompetence",
+        "Žáci s vyšší motivací a schopností samostatné práce, kterým vyhovuje aktivní učení",
+        "Rodiny hledající menší třídy s individuálním přístupem a podporou nadaných žáků"
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, které preferují tradičnější přístup k hodnocení bez formativního prvku",
+        "Žáci s potřebou více struktury a jasných pravidel v hodnocení jejich pokroku",
+        "Rodiny, kterým záleží na dlouhodobé stabilitě pedagogického sboru"
+      ],
+      "plain_czech_summary": "Gymnázium Hello v Ostravě je moderní soukromá škola s důrazem na jazykové vzdělávání. Žáci dosahují velmi dobrých výsledků, učí se v malých třídách s individuálním přístupem a mají možnost pracovat s rodilými mluvčími. Škola vytváří bezpečné a podporující prostředí. Slabší stránkou je zatím nedostatečné využívání formativního hodnocení a individualizace v mateřské škole. Vhodná pro motivované žáky zajímající se o jazyky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "V posledních třech letech se výrazně zlepšily výsledky žáků u maturitní zkoušky",
+          "Absolventi pokračují ve studiu na vysokých školách"
+        ],
+        "evidence": "V posledních třech letech se výrazně zlepšily i výsledky žáků u maturitní zkoušky."
+      },
+      "absence": {
+        "trend": "Minimální",
+        "key_numbers": [
+          "Odchody žáků v průběhu vzdělávání se téměř nevyskytují"
+        ],
+        "evidence": "Odchody žáků v průběhu vzdělávání se téměř nevyskytují."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje poradenské a konzultační služby v oblasti kariérového poradenství",
+        "Péče o žáky se speciálními vzdělávacími potřebami s individuální podporou",
+        "Systém primární prevence a krizový plán pro rizikové jevy",
+        "Mentoring pro začínající učitele"
+      ],
+      "safety_climate": [
+        "Minimální úrazovost díky systematické úrazové prevenci a poučení žáků",
+        "Vážnější negativní jevy v chování se v posledních třech letech nevyskytovaly",
+        "Funkčně nastavený krizový plán a systém primární prevence"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s VŠB-TU, Centrem pro talentovanou mládež, Czechitas",
+        "Partnerství s Mensou České republiky pro identifikaci nadaných žáků",
+        "Spolupráce se sociálními partnery v oblasti kariérového poradenství a primární prevence",
+        "Zapojení zákonných zástupců do výuky podle jejich odbornosti"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však dlouhé a úřednicky formulované, což mírně snižuje srozumitelnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o úspěšnosti u maturitní zkoušky (procenta, průměry), pouze kvalitativní zlepšení",
+        "Není jasné, jak velký je podíl žáků se speciálními vzdělávacími potřebami v jednotlivých třídách",
+        "Chybí informace o počtu a typu kroužků v základní škole"
+      ]
+    }
+  }
+}

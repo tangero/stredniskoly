@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_610250523_2025-03-24",
+  "school_profile": {
+    "school_type": "Střední odborná škola s domovem mládeže a školní jídelnou",
+    "inspection_period": "24.–27. března 2025",
+    "school_change_summary": "Výrazná obměna pedagogického sboru, nový obor Pedagogické lyceum od 2024/2025, rostoucí počet žáků (508 celkem)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Ekologické aktivity",
+        "detail": "Žáci se dlouhodobě zapojují do ekologických projektů s pozitivním dopadem na osobnostní vývoj.",
+        "evidence": "Aktivity jako Ukliďme Česko, CO2 liga s celorepublikovými úspěchy."
+      },
+      {
+        "tag": "Spolupráce s partnery",
+        "detail": "Efektivní partnerství s firmami a organizacemi podporuje profesní přípravu žáků.",
+        "evidence": "Promyšlená spolupráce se zaměstnavateli pozitivně ovlivňuje profesní růst a seberealizaci."
+      },
+      {
+        "tag": "Praktická výuka",
+        "detail": "Praktické vyučování má jasné cíle, žáci dostávají zpětnou vazbu a prokazují vysokou samostatnost.",
+        "evidence": "Praktické činnosti navazují na teoretickou přípravu s efektivní spoluprací."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "Výrazný nesoulad mezi dobrými známkami během studia a horšími výsledky u maturitní zkoušky.",
+        "evidence": "Hrubá neúspěšnost u Podnikání 39,7 % (denní forma), u Dopravy 26,8 %, pod průměrem v cizích jazycích."
+      },
+      {
+        "tag": "Vysoká fluktuace v dálkovém studiu",
+        "detail": "Obor Podnikání v dálkové formě má velmi nízkou efektivitu s vysokým počtem předčasných ukončení.",
+        "evidence": "Z 31 žáků jen 8 úspěšně skončilo (26% úspěšnost), až polovina odchází v prvním ročníku."
+      },
+      {
+        "tag": "Nejednotné vyučování",
+        "detail": "Část hodin používá pasivní frontální přístup bez aktivizačních metod a diferenciace.",
+        "evidence": "Chybí aktivizační metody, tvořivé myšlení, diferenciace úkolů podle potenciálu žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší rozdíl mezi dobrými známkami a slabšími výsledky maturit, zejména v cizích jazycích?",
+      "Jaké má škola plány na zlepšení úspěšnosti oboru Podnikání, kde je neúspěšnost 40 %?",
+      "Jak se liší kvalita výuky mezi jednotlivými učiteli a jak se to řeší?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o praktické obory (instalatér, tesař, truhlář, zedník, lesní mechanizátor, železničář, ošetřovatel) – ty mají dobré výsledky.",
+      "Žáci s potřebou podpory – škola nabízí doučování, konzultace a speciální opatření.",
+      "Žáci zajímající se o ekologické projekty a mimoškolní aktivity – bohatá nabídka kroužků a akcí."
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o obor Podnikání, zvlášť v dálkové formě – jen 26 % žáků úspěšně skončí.",
+      "Žáci slabší v cizích jazycích – škola má opakovaně podprůměrné výsledky v angličtině u maturit.",
+      "Žáci bez silné vnitřní motivace – absence je vysoká (101 hodin ročně) a často vede k neprospěchu."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktickou výuku a bohatý mimoškolní program. Silné jsou obory bez maturity a ekologické aktivity. Hlavní problém: žáci mají dobré známky, ale selhávají u maturitní zkoušky, zvlášť v cizích jazycích a oboru Podnikání. Dálkové studium Podnikání je neúčinné – jen čtvrtina žáků skončí. Vyučování není jednotné – někteří učitelé používají moderní metody, jiní zastaralé frontální přístup. Absence je vysoká a často vede k neprospěchu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě podprůměrné výsledky ve společné části, výrazný pokles v posledních letech u některých oborů",
+      "key_numbers": [
+        "Ekonomika a podnikání: 21,1 % neúspěšnosti",
+        "Doprava: 26,8 % neúspěšnosti",
+        "Podnikání denní forma: 39,7 % neúspěšnosti"
+      ],
+      "evidence": "Analýza 2021–2024 ukazuje opakovaně podprůměrné výsledky v cizích jazycích a střídavě ve všech zkušebních předmětech."
+    },
+    "absence": {
+      "trend": "Postupné snižování, ale stále vysoké, zejména u tříletých oborů",
+      "key_numbers": [
+        "2023/2024: 101 hodin na žáka",
+        "2021/2022: 133 hodin na žáka",
+        "Nástavbový obor: výrazné snížení v loňském roce"
+      ],
+      "evidence": "Absence je často příčinou neprospěchu nebo nehodnocení. V 1. pololetí 2024/2025 pětina žáků nehodnocena kvůli absenci."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a metodičkou prevence",
+      "Doučování, konzultace, digitální aplikace na procvičování, sdílení učebních materiálů",
+      "Stipendia jako motivační pobídka",
+      "Adaptační programy pro nové třídy, kariérové poradenství"
+    ],
+    "safety_climate": [
+      "Školní preventivní strategie zaměřená na zdravý životní styl a předcházení vztahových problémů",
+      "Schopnost zachytit a řešit projevy rizikového chování",
+      "Domov mládeže s vychovateli podporujícími vzájemnou pomoc žáků"
+    ],
+    "partnerships_practice": [
+      "Funkční spolupráce se zaměstnavateli a sociálními partnery",
+      "Partnerství s firmami a neziskovými organizacemi",
+      "Spolupráce s řadou škol včetně zahraničních",
+      "Smlouvy o praktickém vyučování (s nedostatky v náležitostech)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a věcná, ale místy technická. Hlavní zjištění jsou jasná: slabé maturitní výsledky, vysoká absence, nejednotná kvalita výuky. Pozitiva jsou konkrétní (praktická výuka, ekologické projekty). Doporučení jsou konstruktivní.",
+    "uncertainty_notes": [
+      "Není jasné, zda se plánuje zrušit obor Podnikání v dálkové formě – inspekce to doporučuje, ale není rozhodnutí",
+      "Chybí konkrétní čísla o kvalitě jednotlivých učitelů – jen obecné tvrzení o rozdílné efektivitě",
+      "Není zmíněno, jak se liší výsledky mezi jednotlivými třídami téhož oboru"
+    ]
+  }
+}
+```

@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY8_600007081_2023-05-29",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium",
+    "inspection_period": "29. až 31. května 2023",
+    "school_change_summary": "Rozsáhlá rekonstrukce budovy, revitalizace venkovních prostor, nové odborné učebny, zlepšené vybavení digitálními technologiemi. Část nedostatků z minulé inspekce byla odstraněna."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Žáci dlouhodobě dosahují velmi dobrých výsledků u maturitních zkoušek, více než polovina s vyznamenáním.",
+        "evidence": "Všichni žáci (až na jednu výjimku) úspěšně složili maturitu v posledních třech letech."
+      },
+      {
+        "tag": "Kvalitní výuka cizích jazyků",
+        "detail": "Výuka je vedena v daném jazyce s komunikativními aktivitami a soutěžemi.",
+        "evidence": "Žáci velmi dobře rozumí obtížnějším obratům, aktivně spolupracují, 40 % využívá mezinárodní certifikáty."
+      },
+      {
+        "tag": "Bezpečné a motivující prostředí",
+        "detail": "Nízký počet rizikového chování, minimální neomluvenou absence, více pochval než kázeňských opatření.",
+        "evidence": "Cílená prevence se odráží v nízkém počtu případů rizikového chování řešených pohovorem."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo skupinové práce",
+        "detail": "Frontální výuka převládá, skupinová práce jen ve třetině hodin, chybí prostor pro analýzu informací.",
+        "evidence": "Jen ve třetině hodin byla zařazena skupinová práce, zcela minimálně práce ve dvojici."
+      },
+      {
+        "tag": "Slabá diferenciace výuky",
+        "detail": "Učitelé nevytvářejí dostatečný prostor pro žáky s různými schopnostmi, zejména nadané.",
+        "evidence": "Pouze v necelé desetině hodin si žáci mohli vybírat z úloh různé kognitivní náročnosti."
+      },
+      {
+        "tag": "Problémy v matematice a fyzice",
+        "detail": "Přetrvávající selhávání strategie předcházení neúspěšnosti v těchto předmětech.",
+        "evidence": "Více než dvě třetiny žáků s prospěchovými problémy selhávají právě v matematice a fyzice."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s matematikou nebo fyzikou?",
+      "Jaké jsou možnosti individuálního přístupu a doučování pro nadané žáky?",
+      "Jak se škola chystá zvýšit podíl skupinové práce a projektového vyučování?"
+    ],
+    "who_school_fits": [
+      "Motivovaní žáci se zájmem o kvalitní vzdělání a přípravu na vysokou školu",
+      "Žáci se zájmem o cizí jazyky a mezinárodní spolupráci",
+      "Žáci, kterým vyhovuje tradičnější frontální výuka s důrazem na teoretické znalosti"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími předpoklady v matematice a fyzice, kteří potřebují intenzivnější podporu",
+      "Žáci preferující praktickou, projektovou a skupinovou práci",
+      "Žáci se speciálními vzdělávacími potřebami (škola má zkušenosti, ale diferenciace je slabá)"
+    ],
+    "plain_czech_summary": "Gymnázium v Kolíně je kvalitní školou s výborným zázemím a velmi dobrými výsledky u maturity. Silnou stránkou je výuka cizích jazyků a bezpečné prostředí. Inspekce ale upozorňuje na to, že výuka je příliš frontální a chybí skupinová práce. Učitelé málo přizpůsobují výuku individuálním potřebám žáků, zejména nadaných. Problémem zůstává podpora žáků v matematice a fyzice. Škola má 45 dní na to, aby se těmito problémy zabývala."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně velmi dobrý",
+      "key_numbers": [
+        "Všichni žáci (až na jednu výjimku) úspěšně složili maturitu v posledních třech letech",
+        "Více než polovina s vyznamenáním",
+        "Lepší výsledky než průměr v republice v českém jazyce, cizím jazyce i matematice"
+      ],
+      "evidence": "Škola dlouhodobě vykazuje lepší výsledky v dílčích zkouškách společné části než průměr v příslušné skupině oborů."
+    },
+    "absence": {
+      "trend": "Velmi nízká",
+      "key_numbers": [
+        "Minimální podíl žáků s neomluvenou absencí",
+        "Převažující počet pochval nad kázeňskými opatřeními"
+      ],
+      "evidence": "Cílená průběžně realizovaná prevence se odráží v nízkém počtu případů rizikového chování."
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodička prevence (zároveň kariérní poradkyně)",
+      "Individuální konzultace a doučování pro žáky ohrožené neúspěšností",
+      "Spolupráce s externími odborníky"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti, účinná opatření k zajištění bezpečnosti",
+      "Nízký počet případů rizikového chování řešených pohovorem se žákem či jednáním s rodiči",
+      "Vhodně nastavený adaptační proces pro první ročníky"
+    ],
+    "partnerships_practice": [
+      "Partnerství se zástupci města (majitel budovy) a Sdružením rodičů a přátel gymnázia",
+      "Dlouhodobá spolupráce s vysokou školou a partnerskou zahraniční školou",
+      "Výměnné pobyty, zahraniční zájezdy, divadelní představení v anglickém jazyce"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní údaje, citace z pozorování a jasné závěry. Některé pasáže jsou však poměrně odborné a dlouhé, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní předměty jsou problematické mimo matematiku a fyziku",
+      "Chybí informace o počtu žáků, kteří neprospěli nebo měli prospěchové problémy (pouze procenta)",
+      "Není jasné, jak dlouho trvá doučování a jaké jsou jeho výsledky"
+    ]
+  }
+}
+```

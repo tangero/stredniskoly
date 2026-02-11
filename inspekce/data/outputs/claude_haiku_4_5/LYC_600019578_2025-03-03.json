@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600019578_2025-03-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:43:28.984000+00:00",
+  "run_finished_utc": "2026-02-09T13:44:01.294663+00:00",
+  "raw_file": "LYC_600019578_2025-03-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600019578_2025-03-03",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická",
+      "inspection_period": "3. března 2025 až 6. března 2025",
+      "school_change_summary": "Škola otevřela nový obor Diplomovaná dentální hygienistka, dokončila rekonstrukci půdních prostor, modernizovala IT učebnu a laboratoře, zřídila ordinaci zubního lékaře pro praxi studentů a zahájila realizaci simulačního centra pro výuku první pomoci."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Moderní vybavení a prostory",
+          "detail": "Škola má velmi dobré materiální a technické podmínky s moderně vybavenými učebnami, včetně virtuální reality pro resuscitaci a regeneračního centra.",
+          "evidence": "Škola realizuje činnost v komplexu dvou budov s dostatečným počtem kmenových i moderně vybavených jazykových učeben, učeben výpočetní techniky a odborných učeben."
+        },
+        {
+          "tag": "Silná spolupráce s praxí",
+          "detail": "Výuka je úzce propojena s reálnou zdravotnickou praxí prostřednictvím partnerských nemocnic a zdravotnických zařízení.",
+          "evidence": "Nejznamnějšími partnery jsou krajská Nemocnice České Budějovice, Nemocnice Prachatice, Nemocnice Strakonice a mnoho dalších zdravotnických zařízení zajišťujících praktický výcvik."
+        },
+        {
+          "tag": "Kvalitní poradenské služby",
+          "detail": "Komplexní tým školního poradenského pracoviště poskytuje podporu všem žákům včetně těch se speciálními potřebami.",
+          "evidence": "Poradenské pracoviště tvořené výchovnou poradkyní, kariérní poradkyní, metodičkou prevence a školní psycholožkou zajišťuje kvalitní podporu na všech pracovištích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní přístup v teoretické výuce",
+          "detail": "Výuka je vedena spíše tradičním frontálním způsobem bez dostatku aktivizačních prvků a spolupráce mezi žáky.",
+          "evidence": "Vyučovací metody nenabízely obvykle dostatek aktivizačních prvků s možností vzájemné spolupráce, což vedlo k pasivitě některých žáků."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učitelé málo přizpůsobují výuku individuálním schopnostem a tempu jednotlivých žáků.",
+          "evidence": "Nízká míra diferenciace zadávaných úkolů vzhledem k odlišnému pracovnímu tempu žáků a nestejné úrovni jejich studijních předpokladů."
+        },
+        {
+          "tag": "Vysoký odpad studentů na VOŠ",
+          "detail": "Vyšší odborná škola zaznamenává poměrně vysoké procento předčasných odchodů ze studia, zejména v prvním ročníku.",
+          "evidence": "K největšímu úbytku studentů dochází v prvním ročníku, příčinou je zejména náročnost zvoleného oboru či neschopnost skloubit studium s pracovním a osobním životem."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zvýšit aktivní zapojení žáků v teoretické výuce a jaké nové metody zavádí?",
+        "Jaká podpora je dostupná pro studenty vyšší odborné školy, kteří mají potíže skloubit studium s prací?",
+        "Jak se liší výuka a výsledky mezi hlavní školou v Českých Budějovicích a detašovanými pracovišti v Prachaticích a Strakonicích?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí kvalitní praktickou přípravu v moderně vybavených učebnách s přímou vazbou na zdravotnická zařízení",
+        "Studenti zaměření na zdravotnické obory, kteří si cení úzké spolupráce s nemocnicemi a reálnou praxí",
+        "Žáci se zájmem o mezinárodní mobilitu a jazykové certifikáty (program Erasmus+, certifikáty angličtiny)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří preferují aktivní, interaktivní výuku s prvky skupinové práce a diskusí (v teoretické výuce převažuje frontální přednášková forma)",
+        "Studenti vyšší odborné školy, kteří nemohou věnovat studiu dostatek času vedle práce (vysoký podíl odchodů v 1. ročníku)",
+        "Žáci s pomalejším tempem učení, kteří potřebují individualizovaný přístup (diferenciace není dostatečně využívána)"
+      ],
+      "plain_czech_summary": "Jde o kvalitní zdravotnickou školu s výborným vybavením a silnými vazbami na nemocnice. Výuka praktických dovedností je na vysoké úrovni. Slabší stránkou je teoretická výuka, která je vedena tradičním způsobem bez dostatku aktivních metod a individuálního přístupu. Vyšší odborná škola má problém s vysokým počtem studentů, kteří odejdou v prvním roce. Škola si je těchto problémů vědoma a pracuje na jejich řešení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní, srovnatelný s celorepublikovým průměrem",
+        "key_numbers": [
+          "Obor zdravotnické lyceum dosahuje dlouhodobě výrazně lepších výsledků než ostatní obory",
+          "Nejmenší úspěšnost je v předmětu matematika",
+          "21 žáků si v minulém školním roce nahradilo profilovou maturitní zkoušku z jazyka mezinárodním certifikátem (B1-C1)"
+        ],
+        "evidence": "Výsledky maturitních zkoušek jsou u všech oborů srovnatelné s celorepublikovým průměrem, u oboru zdravotnické lyceum mírně lepší."
+      },
+      "absence": {
+        "trend": "Neinformováno v textu",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+      },
+      "support_services": [
+        "Školní psycholožka poskytující konzultace a spolupráci na realizaci podpůrných opatření",
+        "Výchovná poradkyně a kariérní poradkyně zajišťující poradenské služby",
+        "Metodička prevence zaměřená na prevenci rizikového chování",
+        "Dvě asistentky pedagoga pro žáky s vyšším stupněm podpůrných opatření",
+        "Doučovací hodiny pro žáky ohrožené školním neúspěchem a matematiku",
+        "Adaptační kurzy pro prvňáky"
+      ],
+      "safety_climate": [
+        "Klidná a přátelská pracovní atmosféra se vzájemným respektujícím přístupem bez kázeňských problémů",
+        "Minimální výskyt rizikového chování díky efektivní primární prevenci",
+        "Účinná spolupráce s externími odborníky z pedagogicko-psychologické poradny",
+        "Pravidelné adaptační kurzy na podporu vytváření zdravých vzájemných vztahů"
+      ],
+      "partnerships_practice": [
+        "Krajská Nemocnice České Budějovice, Nemocnice Prachatice, Nemocnice Strakonice a další zdravotnická zařízení zajišťující praktický výcvik",
+        "Centra sociálních služeb ve městě a regionu",
+        "Magistrát Města České Budějovice (projekt na zlepšení podmínek handicapovaných)",
+        "Přírodovědná fakulta Jihočeské Univerzity (přednášky, exkurze, vědecké projekty)",
+        "Program Erasmus+ umožňující výměnné pobyty pedagogů a žáků v evropských zemích",
+        "Partnerské firmy poskytující dary na soutěže a vybavení"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však delší a obsahují více odborné termíny, které mohou být pro laiky méně přístupné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o absenci žáků, což je důležitý indikátor kvality školního prostředí",
+        "Chybí informace o počtu žáků, kteří opakují ročník, a o jejich podílu na celkovém počtu",
+        "Není jasné, jaké konkrétní aktivizační metody škola plánuje zavést v odpovědi na doporučení inspekce"
+      ]
+    }
+  }
+}

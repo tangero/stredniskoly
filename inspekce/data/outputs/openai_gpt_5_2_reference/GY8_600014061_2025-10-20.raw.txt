@@ -1,0 +1,101 @@
+{
+  "report_id": "GY8_600014061_2025-10-20",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium (79-41-K/81) + základní umělecká škola (hudební, taneční, výtvarný obor)",
+    "inspection_period": "2025-10-20 až 2025-10-23",
+    "school_change_summary": "Od 2021 proběhla generační obměna učitelů a zlepšily se prostory i vybavení (podkroví, elektro, nové učebny informatiky), zároveň v ZUŠ přetrvávají slabiny v řízení; poradenské pracoviště se zlepšilo."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky a maturita",
+        "detail": "Škola má dlouhodobě velmi silné výsledky, včetně maturity a přijetí na VŠ.",
+        "evidence": "„v posledních třech letech… na výborné úrovni“; „nulovou hrubou neúspěšnost“; „ve sto procentech přijímáni… na… vysoké školy“"
+      },
+      {
+        "tag": "Kvalitní výuka a aktivní metody",
+        "detail": "Ve výuce se často pracuje aktivně, v souvislostech a s kooperací, což rozvíjí kompetence.",
+        "evidence": "„Pestré didaktické metody“; „kooperativních forem výuky“; „propojovali témata s praktickými zkušenostmi“"
+      },
+      {
+        "tag": "Podpora žáků a dobré klima",
+        "detail": "Poradenské služby a komunikace ve škole podporují bezpečí a pohodu žáků.",
+        "evidence": "„Školní poradenské pracoviště poskytuje efektivně služby“; „nežádoucích projevů… spíše ojedinělé“; „otevřené, vstřícné komunikace“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "ZUŠ: slabší řízení a kontrola",
+        "detail": "V základní umělecké škole není řízení a hospitace dost důsledná, což vede k rozdílům v kvalitě výuky.",
+        "evidence": "„systém není plně funkční“; „Vyhodnocování hospitací je… formální“; „přetrvávají nedostatky… nesystémové“"
+      },
+      {
+        "tag": "ZUŠ: vyšší fluktuace učitelů",
+        "detail": "V hudebním a výtvarném oboru ZUŠ je zvýšená fluktuace, která může narušovat kontinuitu.",
+        "evidence": "„zvýšená fluktuace pedagogů, která ovlivňuje úroveň vzdělávacího procesu“"
+      },
+      {
+        "tag": "ZUŠ: nepravidelná docházka v kolektivní praxi",
+        "detail": "U části kolektivních předmětů v hudebním oboru ZUŠ je vysoká absence, takže někteří žáci nerozvíjí vše naplno.",
+        "evidence": "„Interpretační… vykazovala vysokou míru absence“; „zhruba polovina žáků nerozvíjela… v plném rozsahu“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší „zvýšenou fluktuaci pedagogů“ v hudebním a výtvarném oboru ZUŠ a jak zajistí kontinuitu výuky?",
+      "Co se konkrétně změní v ZUŠ, aby „vyhodnocování hospitací“ nebylo jen formální a vedlo ke zlepšení práce učitelů?",
+      "Jak škola omezí „vysokou míru absence“ v Interpretačním semináři a co to znamená pro povinnosti a motivaci žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci mířící na vysokou školu, kterým vyhovují vysoké nároky a dlouhodobě výborné výsledky.",
+      "Děti, které baví projekty, soutěže a aktivity nad rámec (Erasmus+, DofE, olympiády).",
+      "Zájemci o taneční obor ZUŠ, kde inspekce popisuje výborné vedení a výsledky."
+    ],
+    "who_should_be_cautious": [
+      "Rodiny, které chtějí v hudebním/výtvarném oboru ZUŠ stabilní učitelský tým (inspekce zmiňuje fluktuaci).",
+      "Děti, které potřebují velmi jednotné a systematické vedení napříč ZUŠ pracovišti (inspekce popisuje rozdíly).",
+      "Žáci ZUŠ, kteří neradi dochází do kolektivních předmětů; u některých je popsaná vysoká absence."
+    ],
+    "plain_czech_summary": "Gymnázium ve Šlapanicích má podle inspekce velmi silné výsledky: všichni maturanti uspěli a škola uvádí 100% přijetí na zvolenou VŠ. Výuka je pestrá, často aktivní a v dobré atmosféře; funguje i poradenský tým. Zároveň inspekce upozorňuje na slabší řízení v základní umělecké škole: hospitace a metodická podpora nejsou dost systematické, v hudebním a výtvarném oboru je vyšší fluktuace a v některých kolektivních předmětech velká absence. Taneční obor ZUŠ vychází velmi dobře."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborné výsledky, bez neúspěchu v posledních 3 letech.",
+      "key_numbers": [
+        "0 % hrubá neúspěšnost (poslední 3 roky)",
+        "27 maturantů (loňský školní rok)",
+        "18 s vyznamenáním, 9 prospělo"
+      ],
+      "evidence": "„v posledních třech letech… nulovou hrubou neúspěšnost“; „maturitní zkoušku 27 žáků… 18… vyznamenáním a 9 prospělo“"
+    },
+    "absence": {
+      "trend": "Průměr je stabilně kolem stejné hodnoty; škola řeší zvýšení spíš ojediněle.",
+      "key_numbers": [
+        "průměrná absence cca 107 hodin/žák/rok"
+      ],
+      "evidence": "„Průměrná absence… kolem 107 hodin na žáka za školní rok“; „zvýšení absence (vyskytují se ojediněle)“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, psycholožka, metodička prevence („tým pracuje ve složení…“).",
+      "Pravidelné plány pedagogické podpory a jejich vyhodnocování („vyhodnocování je pravidelné“).",
+      "Krizové plány a prevence (šikana, kyberšikana, drogy, psychické potíže) („dobře zpracované krizové plány“)."
+    ],
+    "safety_climate": [
+      "Ve výuce byla pracovní atmosféra a žáci respektovali pravidla („panovala pracovní atmosféra… respektovali stanovená pravidla“).",
+      "Rizikové chování se objevuje spíše výjimečně („nežádoucích projevů… spíše ojedinělé“).",
+      "Minimum kázeňských opatření („kázeňská opatření jsou udělována minimálně… devět“)."
+    ],
+    "partnerships_practice": [
+      "Mezinárodní a rozvojové programy: Erasmus+, DofE, British Council („Erasmus+… DofE… British Council“).",
+      "Projekty a veřejné akce v regionu (jarmarky, koncerty pro seniory, Noc kostelů) („tematických akcí… koncerty pro seniory… Noc kostelů“).",
+      "Charitativní a komunitní zapojení („Adventní naděje pro Milánka“, ZUŠ Open) („charitativní akce… ZUŠ Open“)."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Shrnul jsem dopady na žáky a rodiče a oddělil gymnázium vs. ZUŠ; citace jsou krátké a přímo z textu.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí srovnání s jinými školami ani výsledky externího testování („Externí metody… systematicky nevyužívá“).",
+      "U ZUŠ nejsou uvedena konkrétní čísla fluktuace učitelů ani přesná data absence v jednotlivých předmětech (jen popis „vysokou míru absence“)."
+    ]
+  }
+}

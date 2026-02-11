@@ -1,0 +1,115 @@
+```json
+{
+  "report_id": "GY8_600001431_2025-02-11",
+  "school_profile": {
+    "school_type": "Biskupské gymnázium se základní školou a mateřskou školou (čtyřletý a osmiletý program)",
+    "inspection_period": "11. února 2025 až 14. února 2025",
+    "school_change_summary": "Škola pokračuje v rozvoji jako komunitní instituce s důrazem na etickou výchovu a osobnostní rozvoj. Eviduje zvýšený zájem o vzdělávání, zejména v prvním ročníku základní školy. Pokračuje funkční spolupráce se zřizovatelem a projektová činnost."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Škola vytváří psychicky bezpečné prostředí s empatickým přístupem pedagogů a účinným systémem poradenských služeb včetně nové terapeutky.",
+        "evidence": "Vstřícná atmosféra, respektující přístup učitelů, nadstandardní poradenské služby s výchovnou poradkyní, speciální pedagožkou a terapeutkou."
+      },
+      {
+        "tag": "Kvalitní mimoškolní aktivity",
+        "detail": "Bohatá nabídka zájmových útvarů a volnočasových aktivit podporuje rozvoj talentu a smysluplné využití volného času.",
+        "evidence": "21 zájmových útvarů se 193 účastníky, školní družina, školní klub, sportovní kurzy, charitativní projekty a badatelské tábory."
+      },
+      {
+        "tag": "Silné výsledky v maturitě",
+        "detail": "Všichni žáci, kteří se k maturitě přihlásili, ji konali; v letech 2023 a 2024 neuspěli pouze dva žáci.",
+        "evidence": "Pozitivní trend v maturitních výsledcích, účinná podpora formou volitelných seminářů a konzultací."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší rozvoj hodnoticích dovedností",
+        "detail": "Chybí systematická reflexe vzdělávacích cílů a rozvoj schopnosti žáků sebehodnocení, zejména na druhém stupni a v gymnáziu.",
+        "evidence": "Nedostatečná reflexe naplnění cílů, minimální formativní hodnocení, ojediněle vedení k sebehodnocení."
+      },
+      {
+        "tag": "Omezená diferenciace ve výuce",
+        "detail": "Přestože škola má žáky s různými potřebami, diferenciace vzdělávacího obsahu se objevuje jen ojediněle.",
+        "evidence": "Zadávané úkoly mají pro všechny stejnou obtížnost, minimální využití diferenciace dle kognitivních dovedností."
+      },
+      {
+        "tag": "Nedostatečný rozvoj kritického myšlení",
+        "detail": "Práce s různými informačními zdroji a metody podporující kritické myšlení nejsou pravidelně zařazovány.",
+        "evidence": "Digitální technika používána především k prezentaci, jen v některých hodinách úlohy vyžadující ověřování z různých zdrojů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje rozvoj kritického myšlení a práci s informacemi v jednotlivých předmětech?",
+      "Jaké konkrétní metody používáte pro diferenciaci výuky podle individuálních potřeb žáků?",
+      "Jak se v praxi uplatňuje formativní hodnocení a jak se žáci učí sebehodnocení?"
+    ],
+    "who_school_fits": [
+      "Žáci, kterým vyhovuje tradiční přístup s důrazem na etickou výchovu a osobnostní rozvoj",
+      "Děti se speciálními vzdělávacími potřebami, které ocení nadstandardní poradenské služby a individuální podporu",
+      "Talentovaní a nadaní žáci, kterým škola nabízí bohatou nabídku soutěží, olympiád a badatelských aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnější zaměření na rozvoj kritického myšlení a samostatného vyhledávání informací",
+      "Děti s různorodými potřebami, které mohou v některých hodinách chybět dostatečná diferenciace obsahu",
+      "Žáci, kteří se učí lépe prostřednictvím sebehodnocení a reflexe – zde je prostor pro zlepšení"
+    ],
+    "plain_czech_summary": "Biskupské gymnázium je stabilní školou s kvalitním zázemím a bezpečným prostředím. Silné stránky: výborné poradenské služby, bohatá mimoškolní nabídka, dobré maturitní výsledky. Slabší místa: chybí systematická reflexe cílů výuky, omezená diferenciace podle potřeb žáků, méně se rozvíjí kritické myšlení. Škola je vhodná pro děti, kterým vyhovuje tradiční přístup s důrazem na osobnostní rozvoj a etiku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s pozitivním trendem",
+      "key_numbers": [
+        "100% žáků, kteří se přihlásili, maturitu konali",
+        "Pouze 2 neúspěšní žáci v roce 2023 a 2024",
+        "Výsledky horší než průměr ČR v dané skupině oborů"
+      ],
+      "evidence": "Všichni přihlášení žáci maturitu konali, v zkušebním období 2023 i 2024 neuspěli vždy pouze dva žáci."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Nízký počet žáků, kteří na konci roku neprospějí"
+      ],
+      "evidence": "Efektivita doučování a peer učení se projevuje v nízkém počtu neprospívajících žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně",
+      "Čtyři školní metodici prevence",
+      "Speciální pedagožka",
+      "Nová terapeutka pro psychické problémy",
+      "Relaxační místnost pro žáky",
+      "Doučování a individuální konzultace",
+      "Peer učení"
+    ],
+    "safety_climate": [
+      "Vstřícná atmosféra s empatickým přístupem pedagogů",
+      "Psychicky bezpečné prostředí pro učení",
+      "Příznivé klima školy podporované prosociálními vztahy",
+      "Kvalitně zpracované krizové plány známé všem pedagogům",
+      "Bezodkladné řešení problémů s nevhodným chováním",
+      "Pravidelné třídnické hodiny a adaptační pobyty"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem (Biskupství litoměřické)",
+      "Kooperace s Univerzitou Jana Evangelisty Purkyně (přednášky, badatelské tábory)",
+      "Spolupráce s úřadem práce a profesními organizacemi",
+      "Návštěvy škol a studijních veletrhů",
+      "Spolupráce se základní uměleckou školou (program Nástrojníček)",
+      "Zapojení do charitativních projektů",
+      "Participace v projektové činnosti pro získávání finančních prostředků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasnou strukturou. Obsahuje specifické údaje o počtech žáků, aktivitách a výsledcích. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Absence konkrétních čísel o prospěchu a neprospěchu žáků v základní škole",
+      "Chybí srovnání výsledků matematické gramotnosti s národním průměrem",
+      "Není jasné, jak přesně se liší výsledky gymnázia od průměru ČR (pouze 'horší')"
+    ]
+  }
+}
+```

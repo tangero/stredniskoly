@@ -1,0 +1,119 @@
+{
+  "report_id": "SOS_600170039_2024-09-26",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:14:01.592933+00:00",
+  "run_finished_utc": "2026-02-09T16:14:35.803044+00:00",
+  "raw_file": "SOS_600170039_2024-09-26.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170039_2024-09-26",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola s čtyřletými obory zakončenými maturitní zkouškou: Informační technologie, Elektrotechnika a Strojírenství",
+      "inspection_period": "26. září 2024 až 4. listopadu 2024",
+      "school_change_summary": "Od inspekce v 2018: nový ředitel (od února 2023), rozšíření vedení o dva zástupce, zrušen domov mládeže, ukončeny obory Dopravní prostředky a Telekomunikace, počet žáků vzrostl o 15 % na 606 žáků v 21 třídách, maximální kapacita zvýšena na 720 žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Špičková odborná příprava",
+          "detail": "Praktická výuka probíhá v moderních laboratořích a dílnách s nejnovějším vybavením (CAD, CAM, CNC stroje, robotika), která napodobují reálná pracoviště.",
+          "evidence": "Sledovaná výuka probíhala účelně formou praktických cvičení v odborných laboratořích s moderní počítačovou technikou a odpovídajícím strojovým vybavením."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Žáci dosahují výrazně lepších výsledků v cizích jazycích, v češtině a matematice jsou obvykle srovnatelné nebo lepší než celorepublikový průměr.",
+          "evidence": "Ve sledovaném období 20–28 % žáků prospělo s vyznamenáním, neprospělo nejvýše 8 %. Ve společné části maturitní zkoušky uspěli všichni konající žáci."
+        },
+        {
+          "tag": "Bohaté mimoškolní aktivity",
+          "detail": "Žáci se zapojují do odborných soutěží na celorepublikové a mezinárodní úrovni, získávají průmyslové certifikáty a účastní se zahraničních stáží.",
+          "evidence": "Žáci školy velmi často obsazují první příčky v soutěžích jako Jablotron Cup, Enersol, AustrianSkills nebo Robotex. Přibližně tři čtvrtiny absolventů studují v terciárním vzdělávání."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "Počet nekvalifikovaných učitelů se zdvojnásobil na 24, převážně u odborných předmětů s kratší praxí, ačkoli si doplňují kvalifikaci.",
+          "evidence": "Počet nekvalifikovaných učitelů se oproti předchozí inspekční činnosti téměř zdvojnásobil (24), jedná se však převážně o vyučující odborných předmětů."
+        },
+        {
+          "tag": "Nejednotné vyučovací metody",
+          "detail": "V některých hodinách chybí dostatečná diferenciace pro nadanější žáky, méně se využívají aktivizační metody a závěrečné shrnutí.",
+          "evidence": "V části vyučovacích hodin byla zaznamenána nižší míra diferenciace výuky vzhledem k žákům s větším zájmem nebo rychlejším tempem práce."
+        },
+        {
+          "tag": "Přetížení poradenských služeb",
+          "detail": "Výchovná poradkyně kumuluje funkci metodičky prevence, což je vzhledem k nárůstu žáků s potřebou podpory (10 % se speciálními potřebami) neudržitelné.",
+          "evidence": "Vzhledem k počtu žáků s potřebou podpory by bylo vhodné personálně oddělit funkce metodičky prevence a výchovné poradkyně."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadanější žáky v jejich rozvoji? Existují speciální programy nebo třídy?",
+        "Jaké jsou možnosti doučování a individuální podpory pro žáky, kteří si nevedou dobře?",
+        "Jak se škola vypořádává s nárůstem počtu nekvalifikovaných učitelů a jak zajišťuje jejich kvalitu výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o techniku, IT, elektrotechniku nebo strojírenství, kteří chtějí praktickou přípravu na vysoké úrovni",
+        "Talentovaní žáci, kteří se chtějí zapojit do odborných soutěží a projektů na celorepublikové či mezinárodní úrovni",
+        "Žáci, kteří chtějí získat průmyslové certifikáty a jazykové kvalifikace zvyšující jejich konkurenceschopnost na trhu práce"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s výraznějšími učebními potížemi – poradenské služby jsou přetížené a funkce nejsou dostatečně odděleny",
+        "Žáci, kteří potřebují individualizovaný přístup – v některých hodinách chybí diferenciace pro různé úrovně",
+        "Žáci, kteří preferují více aktivizačních metod – část vyučujících stále preferuje frontální výuku"
+      ],
+      "plain_czech_summary": "Střední průmyslová škola na Proseku je moderní technická škola s výborným vybavením a kvalitní odbornou přípravou. Žáci dosahují nadprůměrných výsledků v maturitách, zejména v cizích jazycích, a úspěšně se uplatňují v odborných soutěžích. Škola má funkční vedení, bohaté partnerství s firmami a nabízí mimoškolní aktivity. Slabší stránkou je nárůst nekvalifikovaných učitelů a nejednotné vyučovací metody – některé hodiny postrádají dostatečnou diferenciaci a aktivizaci. Poradenské služby jsou přetížené."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení od inspekce 2018",
+        "key_numbers": [
+          "20–28 % žáků s vyznamenáním",
+          "Maximálně 8 % neprospívajících",
+          "100 % úspěšnost ve společné části maturitní zkoušky"
+        ],
+        "evidence": "Ve sledovaném období dvou školních let 2022/2023 a 2023/2024 prospělo s vyznamenáním až 17 % žáků, neprospěly nejvýše 4 % žáků. Ve společné části maturitní zkoušky uspěli všichni konající žáci."
+      },
+      "absence": {
+        "trend": "Výrazný pokles neomluvené absence",
+        "key_numbers": [
+          "Pokles počtu žáků s neomluvenou absencí",
+          "Pouze 2 žáci vyloučeni ze studia za neomluvenou absenci v posledních dvou letech",
+          "Více jak 93 % žáků řádně ukončilo ročník"
+        ],
+        "evidence": "Pokles počtu žáků s neomluvenou absencí, výrazný nárůst ocenění žáků pochvalami. V posledních dvou školních letech nebyl žádný žák hodnocen sníženým stupněm z chování."
+      },
+      "support_services": [
+        "Školní psycholožka poskytující individuální konzultace a zprostředkování odborné pomoci",
+        "Asistent pedagoga pro žáky se speciálními vzdělávacími potřebami",
+        "Druhá výchovná poradkyně (od školního roku 2024/2025) a metodička prevence",
+        "Doučování a konzultace pro žáky v obtížích",
+        "Plány pedagogické podpory pro žáky s dlouhodobými zdravotními problémy"
+      ],
+      "safety_climate": [
+        "Elektronicky zabezpečený vstup do školy se stálou službou na vrátnici",
+        "Jednotné výchovné působení učitelů se promítá v dodržování nastavených pravidel",
+        "Preventivní programy primární prevence prolínající celým vzdělávacím cyklem",
+        "Řešení výchovně vzdělávacích obtíží stanovenými preventivními postupy ve spolupráci s odbornými pracovišti",
+        "Kázeňská opatření uplatňována uvážlivě podle závažnosti přestupku"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s četnými sociálními partnery a odbornými firmami",
+        "Zahraniční odborné stáže a výměnné pobyty pro žáky",
+        "Zapojení v projektech na krajské, republikové a mezinárodní úrovni",
+        "Prosecký kariérový den s modelovými pracovními pohovory",
+        "Partnerství s autorizovaným centrem pro vydávání jazykových certifikátů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje, ale místy je psána úřednickým stylem. Hlavní informace pro rodiče jsou jasné, ale vyžadují určitou interpretaci.",
+      "uncertainty_notes": [
+        "Přesný počet žáků s potřebou podpůrných oatření není uveden jako konkrétní číslo, pouze procenta (10 % se speciálními potřebami, 3 % s odlišným mateřským jazykem)",
+        "Není jasné, kolik z 24 nekvalifikovaných učitelů si skutečně doplňuje kvalifikaci a jaký je jejich podíl na celkovém počtu pedagogů (60)",
+        "Konkrétní počet hodin s nedostatky v diferenciaci a aktivizaci není specifikován, pouze se uvádí 'část' a 'ojediněle'"
+      ]
+    }
+  }
+}

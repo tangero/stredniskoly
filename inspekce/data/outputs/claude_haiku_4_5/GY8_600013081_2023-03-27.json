@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600013081_2023-03-27",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:43:57.648745+00:00",
+  "run_finished_utc": "2026-02-09T16:44:22.451687+00:00",
+  "raw_file": "GY8_600013081_2023-03-27.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600013081_2023-03-27",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmiletého oboru), střední škola",
+      "inspection_period": "27. až 29. března 2023",
+      "school_change_summary": "Od minulé inspekce došlo ke změně ředitele a stabilizaci pedagogického sboru. Materiální podmínky se průběžně zlepšují díky dotacím."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "45 % žáků osmiletého gymnázia a 39 % čtyřletého gymnázia prospělo s vyznamenáním, 42 % maturantů v roce 2022 s vyznamenáním.",
+          "evidence": "Školní rok 2021/2022: velmi nízká míra neomluvené absence, pochvaly převyšují výchovná opatření."
+        },
+        {
+          "tag": "Soutěže a projekty",
+          "detail": "Žáci dosahují výborných výsledků v krajských i republikových soutěžích, jedna žákyně postoupila do vědecko-technické soutěže v USA.",
+          "evidence": "Soutěže z fyziky, chemie, zeměpisu, dějepisu; projekt Regeneron ISEF, FYBICH, Quantum MeetUP."
+        },
+        {
+          "tag": "Materiální vybavení",
+          "detail": "Prostorové a materiálně technické podmínky jsou velmi dobré a průběžně se zlepšují.",
+          "evidence": "Nové vybavení digitální technikou, rekonstrukce učeben přírodovědných předmětů díky dotacím."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá diferenciace ve výuce",
+          "detail": "Chybí úlohy v rozdílné náročnosti, což omezuje rozvoj nadaných žáků a podporu slabších studentů.",
+          "evidence": "Inspektoři zaznamenali jednotné tempo a náročnost pro všechny, chyběly prvky diferenciace."
+        },
+        {
+          "tag": "Pasivní přístup žáků",
+          "detail": "Dominuje frontální výuka s pasivním sledováním, málo samostatné práce a kooperativních prvků.",
+          "evidence": "Časté pasivity žáků, minimální aktivní zapojení, málo diskusí podporujících kritické myšlení."
+        },
+        {
+          "tag": "Slabá podpora speciálních potřeb",
+          "detail": "Žáci se speciálními vzdělávacími potřebami dostávají podporu ojediněle, dokumentace není přehledná.",
+          "evidence": "Individuální vzdělávací plány nejsou srozumitelně rozpracované, metodická podpora učitelů chybí."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky v jednotlivých předmětech a nabízí jim výzvy?",
+        "Jaké jsou plány na zlepšení aktivního zapojení žáků do výuky a rozvoj jejich kritického myšlení?",
+        "Jak se škola chystá zlepšit podporu žáků se speciálními vzdělávacími potřebami?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními výsledky a motivací k učení – škola má tradici výborných výsledků.",
+        "Talentovaní žáci zajímající se o vědu a soutěže – aktivní účast v olympiádách a projektech.",
+        "Rodiny hledající kvalitní materiální vybavení a moderní technologie – velmi dobré podmínky."
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující individuální přístup a diferenciovanou výuku – škola má problémy s přizpůsobením náročnosti.",
+        "Žáci se speciálními vzdělávacími potřebami – podpora je ojediněle a dokumentace není přehledná.",
+        "Žáci preferující aktivní a diskusní formy výuky – dominuje frontální výuka s pasivním sledováním."
+      ],
+      "plain_czech_summary": "Gymnázium Žamberk je kvalitní školou s výbornými výsledky maturit a soutěžích. Má moderní vybavení a stabilní pedagogický sbor. Hlavní slabinou je výuka – příliš často dominuje frontální přístup s pasivními žáky. Chybí diferenciace úloh pro nadané i slabší studenty. Podpora žáků se speciálními potřebami je nedostatečná. Inspekce doporučuje více aktivních metod, lepší individuální přístup a zlepšení hospitační činnosti učitelů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi dobrý",
+        "key_numbers": [
+          "42 % maturantů v roce 2022 prospělo s vyznamenáním",
+          "Pouze 1 žák neprospěl ani v podzimním termínu",
+          "Výborné výsledky jak v části společné, tak profil ové"
+        ],
+        "evidence": "Rok 2022: 42 % s vyznamenáním, pouze jeden neprospěl v obou termínech."
+      },
+      "absence": {
+        "trend": "Velmi nízká",
+        "key_numbers": [
+          "Velmi nízká míra neomluvené absence žáků",
+          "Neomluvené hodiny spojené s rizikem záškoláctví byly spíše ojedinělé"
+        ],
+        "evidence": "Pozitivní zjištění: neomluvené absence se vyskytovaly zejména u plnoletých žáků."
+      },
+      "support_services": [
+        "Výchovné poradenství zajišťuje učitelka se specializačním studiem",
+        "Konzultace a doučování pro žáky ohrožené školní neúspěšností",
+        "Minimální preventivní program vyhodnocovaný pravidelně, strategie proti šikaně a kyberšikaně"
+      ],
+      "safety_climate": [
+        "Nízká míra výskytu šikany, kyberšikany a patologických jevů",
+        "Pochvaly za vynikající studijní výsledky převyšují výchovná opatření",
+        "Klidná pracovní atmosféra ve sledovaných hodinách"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Univerzitou Palackého v Olomouci (Quantum MeetUP, středoškolská odborná činnost)",
+        "Partnerství s Ústavem jaderné fyziky AV ČR a Contipro a.s.",
+        "Fakultní škola Přírodovědecké fakulty Univerzity Karlovy (bez realizovaných aktivit)",
+        "Organizace jazykové FCE zkoušky Cambridge Exam, roční pobyty žáků v USA"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně odděluje silné stránky od slabých míst. Konkrétní příklady z výuky a čísla jsou dobře dokumentovány. Doporučení jsou praktická a konkrétní.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak přesně se liší kvalita výuky mezi jednotlivými učiteli – jsou to jen obecné pozorování.",
+        "Chybí informace o počtu a typu žáků se speciálními potřebami a jejich konkrétních problémech.",
+        "Není jasné, jaké konkrétní digitální technologie škola má a jak je využívá v jednotlivých předmětech."
+      ]
+    }
+  }
+}

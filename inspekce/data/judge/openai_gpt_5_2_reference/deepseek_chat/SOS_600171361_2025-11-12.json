@@ -1,0 +1,31 @@
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "deepseek_chat",
+  "run_started_utc": "2026-02-09T12:04:26.140921+00:00",
+  "run_finished_utc": "2026-02-09T12:04:53.299978+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOS_600171361_2025-11-12\",\n  \"faithfulness_score_1_5\": 3,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 3,\n  \"critical_issues\": [\n    \"Chybný údaj o délce inspekční činnosti na místě: kandidát uvádí 12.–17. 11. 2025, zdroj uvádí 12.–14. 11. 2025.\",\n    \"Tvrzení/implikace o 'žácích, kteří mají problémy s kritickým myšlením' není ve zdroji doloženo; zpráva říká, že škola méně důsledně rozvíjí kritické myšlení (je to slabina výuky), ne že určitá skupina žáků má tento problém.\",\n    \"Tvrzení, že škola se hodí pro žáky, kteří 'plánují pracovat v zahraničí', není ve zdroji přímo doloženo (doloženy jsou zahraniční pracovní pobyty/stáže, nikoli vazba na budoucí práci v zahraničí).\",\n    \"Některé formulace o nedostatečné podpoře SVP/nadaných jsou podány příliš plošně: ve zdroji je to slabina zejména v teoretické výuce, zatímco v odborném výcviku inspekce naopak popisuje zohledňování individuálních potřeb.\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené silné stránky školy dle závěrů inspekce: spolupráce s (i zahraničními) partnery a materiální vybavení odpovídající trendům.\",\n    \"Správně popsané klíčové slabiny výuky: omezené formativní hodnocení, sebehodnocení a vzájemné hodnocení, omezená práce s externími zdroji a kritické myšlení, nedostatečná diferenciace směrem k SVP/nadaným.\",\n    \"Správně převzatá hlavní data k maturitě (sestupná tendence a konkrétní hrubá neúspěšnost 2025: Podnikání 39,3 %, Hotelnictví 26,1 %, Kosmetické služby 22,7 %).\",\n    \"Užitečná struktura pro rodiče (silné stránky / rizika / otázky na den otevřených dveří) a v zásadě srozumitelná čeština.\"\n  ],\n  \"one_line_verdict\": \"Shrnutí je pro rodiče prakticky použitelné a většinou věrné, ale obsahuje chybný termín inspekce a několik nedoložených/zkreslujících zobecnění, zároveň opomíjí část důležitých zjištění (např. profilová část maturit, poradenský tým a jeho slabiny, silné stránky odborného výcviku).\"\n}",
+  "judge_output": {
+    "report_id": "SOS_600171361_2025-11-12",
+    "faithfulness_score_1_5": 3,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 3,
+    "critical_issues": [
+      "Chybný údaj o délce inspekční činnosti na místě: kandidát uvádí 12.–17. 11. 2025, zdroj uvádí 12.–14. 11. 2025.",
+      "Tvrzení/implikace o 'žácích, kteří mají problémy s kritickým myšlením' není ve zdroji doloženo; zpráva říká, že škola méně důsledně rozvíjí kritické myšlení (je to slabina výuky), ne že určitá skupina žáků má tento problém.",
+      "Tvrzení, že škola se hodí pro žáky, kteří 'plánují pracovat v zahraničí', není ve zdroji přímo doloženo (doloženy jsou zahraniční pracovní pobyty/stáže, nikoli vazba na budoucí práci v zahraničí).",
+      "Některé formulace o nedostatečné podpoře SVP/nadaných jsou podány příliš plošně: ve zdroji je to slabina zejména v teoretické výuce, zatímco v odborném výcviku inspekce naopak popisuje zohledňování individuálních potřeb."
+    ],
+    "best_points": [
+      "Správně zachycené silné stránky školy dle závěrů inspekce: spolupráce s (i zahraničními) partnery a materiální vybavení odpovídající trendům.",
+      "Správně popsané klíčové slabiny výuky: omezené formativní hodnocení, sebehodnocení a vzájemné hodnocení, omezená práce s externími zdroji a kritické myšlení, nedostatečná diferenciace směrem k SVP/nadaným.",
+      "Správně převzatá hlavní data k maturitě (sestupná tendence a konkrétní hrubá neúspěšnost 2025: Podnikání 39,3 %, Hotelnictví 26,1 %, Kosmetické služby 22,7 %).",
+      "Užitečná struktura pro rodiče (silné stránky / rizika / otázky na den otevřených dveří) a v zásadě srozumitelná čeština."
+    ],
+    "one_line_verdict": "Shrnutí je pro rodiče prakticky použitelné a většinou věrné, ale obsahuje chybný termín inspekce a několik nedoložených/zkreslujících zobecnění, zároveň opomíjí část důležitých zjištění (např. profilová část maturit, poradenský tým a jeho slabiny, silné stránky odborného výcviku)."
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "report_id": "GY8_600014941_2022-03-17",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté)",
+    "inspection_period": "17. − 18. 3. a 21. − 22. 3. 2022",
+    "school_change_summary": "Škola zaznamenala výrazný nárůst zájmu uchazečů o studium (dvojnásobek až trojnásobek) a rozšířila poradenské služby o školního psychologa."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky vzdělávání",
+        "detail": "Žáci dosahují dlouhodobě výborných výsledků v maturitních zkouškách a testech gramotností, kdy překonávají celorepublikový průměr.",
+        "evidence": "„výbornou úroveň... v porovnání s průměrnou úrovní výsledků žáků ostatních škol... dlouhodobě dosahovali značně lepšího hodnocení“"
+      },
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Díky modernizaci má škola kvalitní vybavení učeben, laboratoří a informačních technologií.",
+        "evidence": "„Modernizací vybavení učeben, laboratoří, rozšířením a zkvalitněním informačních a komunikačních technologií se výrazně zvýšil uživatelský komfort“"
+      },
+      {
+        "tag": "Individuální podpora",
+        "detail": "Škola systematicky sleduje žáky s horšími výsledky a nabízí jim účinnou individuální podporu.",
+        "evidence": "„žáci projevující se byť jen dílčími zhoršenými výsledky... byli systematicky sledováni a individuálně podporováni... projevilo se zlepšenou klasifikací“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivizujících metod",
+        "detail": "Ve výuce převažuje frontální výuka učitele, chybí častější využití aktivizujících metod a diskuzí.",
+        "evidence": "„převažovala frontálně vedená výuka založená na výkladu učitele... pouze minimálně byly využity aktivizující metody a formy“"
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Učitelé málo differentiated výuku podle schopností jednotlivých žáků, zejména v nedělených hodinách.",
+        "evidence": "„pouze ojediněle byl cíleně podporován rozvoj potenciálu jednotlivých žáků možností výběru z úloh odlišné kognitivní náročnosti“"
+      },
+      {
+        "tag": "Formální zpětná vazba",
+        "detail": "Hodiny končí povětšinou formálním shrnutím bez hlubšího zhodnocení pokroku žáků.",
+        "evidence": "„v závěru většiny sledovaných vyučovacích hodin proběhlo povětšinou formální shrnutí obsahu učiva... bez využití možného zhodnocení dosaženého pokroku“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé ve výuce využívají aktivizující metody a prostor pro diskuzi žáků?",
+      "Jakým způsobem škola diferencuje nároky ve výuce pro talentované žáky a pro žáky s potřebou pomalejšího tempa?",
+      "Jak škola pracuje s výsledky maturitních testů k odstranění konkrétních nedostatků ve znalostech žáků?"
+    ],
+    "who_school_fits": [
+      "Pro samostatné žáky, kteří dobře zvládají tradiční frontální výuku a jsou motivování k vysokým výkonům.",
+      "Pro žáky, kteří chtějí dosáhnout vynikajících výsledků v přírodovědných a matematických předmětech.",
+      "Pro rodiče hledající školu s moderním vybavením odborných učeben a silným poradenským týmem."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří potřebují k učení více diskuse, skupinové práce a interaktivních metod.",
+      "Pro žáky, kteří vyžadují výuku silně individualizovanou dle jejich specifických schopností.",
+      "Pro rodiče, kteří očekávají, že škola bude systematicky rozvíjet měkké dovednosti skrze projektovou výuku."
+    ],
+    "plain_czech_summary": "Gymnázium Kroměříž je škola s vynikajícími studijními výsledky a vysokým zájmem uchazečů. Žáci zde dosahují nadprůměrných výsledků v maturitách a soutěžích, což potvrzuje kvalitu výuky. Prostor pro zlepšení vidí inspekce v metodách výuky, kde převažuje tradiční výklad učitele před aktivní prací žáků, a v individualizaci výuky pro žáky s různými potřebami. Škola má moderní vybavení a fungující systém individuální podpory pro žáky s horšími známkami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborná úroveň s vysokou úspěšností",
+      "key_numbers": [
+        "Všichni přihlášení žáci konali společnou část maturitní zkoušky.",
+        "V matematice vždy všichni přihlášení prospěli.",
+        "Výsledky mají „výbornou úroveň“ v porovnání s ostatními školami."
+      ],
+      "evidence": "„škola v meziročním srovnání dlouhodobě vykazovala vysokou úspěšnost žáků u maturitní zkoušky... výbornou úroveň“"
+    },
+    "absence": {
+      "trend": "Nehodnoceno (inspekce se zaměřila na zhoršené výsledky po distanční výuce)",
+      "key_numbers": [
+        "Identifikováni žáci s dílčími zhoršenými výsledky po distanční výuce.",
+        "Převažující většina sledovaných žáků se zlepšila po zásahu školy."
+      ],
+      "evidence": "„žáci projevující se byť jen dílčími zhoršenými výsledky... byli systematicky sledováni... projevilo se zlepšenou klasifikací“"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště rozšířené o školního psychologa.",
+      "Individuální konzultace s učiteli pro přípravu na maturitu.",
+      "Cílená podpora žáků se speciálními vzdělávacími potřebami (8 žáků)."
+    ],
+    "safety_climate": [
+      "Prostředí školy je čisté, upravené a bezpečnostní rizika jsou pravidelně vyhodnocována.",
+      "Škola má jasná pravidla pro řešení rizikového chování.",
+      "Mezi žáky a učiteli převažuje neformální a otevřená komunikace."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se školskými poradenskými zařízeními.",
+      "Využívání veřejných sportovišť města Kroměříže.",
+      "Stravování zajišťují jídelny partnerských škol."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, byť s úřednickou terminologií, která však nepřekáží porozumění hlavním myšlenkám.",
+    "uncertainty_notes": []
+  }
+}

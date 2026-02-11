@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600170641_2022-04-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:05:03.097335+00:00",
+  "run_finished_utc": "2026-02-09T17:05:31.200093+00:00",
+  "raw_file": "SOS_600170641_2022-04-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170641_2022-04-05",
+    "school_profile": {
+      "school_type": "Střední škola technická s domovem mládeže a školní jídelnou",
+      "inspection_period": "5. 4. 2022 − 8. 4. 2022",
+      "school_change_summary": "Nová ředitelka od září 2020. Škola ukončila vzdělávání v některých oborech a požádala o jejich výmaz z rejstříku. Proběhla rozsáhlá rekonstrukce dílen s modernizací technického vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vyučování",
+          "detail": "Velmi dobré prostorové a materiální podmínky s nadstandardním vybavením pro strojní obory a odpovídajícím vybavením pro bezpečnostně právní činnost.",
+          "evidence": "Rozsáhlá rekonstrukce dílen, modernizace technického vybavení, doplnění pomůcek pro sebeobranu."
+        },
+        {
+          "tag": "Partnerství se zaměstnavateli",
+          "detail": "Promyšlená síť sociálních partnerů včetně Policie ČR podporuje rozvoj odborných kompetencí a motivaci žáků.",
+          "evidence": "Uzavřená memoranda o spolupráci, aktivní spolupráce s profesními partnery, krátkodobé akce a exkurze."
+        },
+        {
+          "tag": "Odborná praxe",
+          "detail": "Kvalitní realizace odborné praxe v reálných pracovních podmínkách s kompletní dokumentací.",
+          "evidence": "Praxe probíhá v požadovaném rozsahu a obsahu, žáci vedou průkaznou dokumentaci s hodnocením."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita teoretické výuky",
+          "detail": "Převaha frontální výuky bez diferenciace, málo aktivizačních metod, chybí zpětná vazba o naplnění cílů.",
+          "evidence": "Hospitační zjištění: tradiční frontální styl, pasivita žáků, monotónnost, absence klíčových kompetencí."
+        },
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Vysoká neúspěšnost v některých oborech, zejména Ekonomika a podnikání (31,8 % v 2021), bez účinných opatření.",
+          "evidence": "V cizím jazyce 46,7 % neúspěšnosti oproti 4,9 % v ČR, v češtině 41,2 % oproti 8,6 % v ČR."
+        },
+        {
+          "tag": "Bezpečnost a řízení",
+          "detail": "Střelecký výcvik probíhal s jinými zbraněmi než uvedeno v programu, autoritativní styl vedení, nefunkční kontrolní systém.",
+          "evidence": "Střelba z dlouhé kulové zbraně místo vzduchové, pedagogové nemohou bez obav rozporovat vedení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s matematikou a češtinou před maturitou?",
+        "Jaké jsou plány na zlepšení kvalifikace učitelů odborných předmětů v oboru Bezpečnostně právní činnost?",
+        "Jak se škola vypořádala s problémy ze střeleckého výcviku a jak zajišťuje bezpečnost při praktickém vyučování?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory (strojní mechanik, elektrikář, truhlář, instalatér) – zde je výuka kvalitní a vybavení nadstandardní.",
+        "Žáci oboru Bezpečnostně právní činnost s jasným profesním zaměřením – mají podporu od Policie ČR a motivační akce.",
+        "Žáci, kteří potřebují individuální přístup v praktickém vyučování – učitelé odborného výcviku se věnují instruktáži a diferenciaci."
+      ],
+      "who_should_be_cautious": [
+        "Žáci oboru Ekonomika a podnikání – dosahují výrazně horších výsledků v maturitě než průměr v ČR, zejména v češtině a cizích jazycích.",
+        "Žáci, kteří potřebují aktivní a interaktivní výuku – převažuje zde frontální styl s pasivitou žáků.",
+        "Žáci se speciálními vzdělávacími potřebami – individualizace a diferenciace jsou v hodinách jen ojediněle."
+      ],
+      "plain_czech_summary": "Střední škola technická v Mostě má výborné podmínky pro praktické vyučování a dobré partnerství se zaměstnavateli. Problém je v teoretické výuce – učitelé používají hlavně frontální metody bez aktivizace žáků. Výsledky v maturitě jsou slabé, zvlášť v oborech Ekonomika a podnikání. Vedení školy je autoritativní, kontrolní systém nefunkční. Bezpečnost byla ohrožena při střeleckém výcviku. Škola je vhodná pro prakticky zaměřené žáky, ale teoretická příprava potřebuje zlepšení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – zlepšení v Bezpečnostně právní činnosti, zhoršení v Ekonomice a podnikání",
+        "key_numbers": [
+          "Bezpečnostně právní činnost: 29,5 % neúspěšnosti (2019) → 7,2 % (2021)",
+          "Ekonomika a podnikání: 61,2 % neúspěšnosti (2020) → 31,8 % (2021)",
+          "Podnikání: 77,8 % neúspěšnosti (2020)"
+        ],
+        "evidence": "Analýza výsledků maturitních zkoušek 2019–2021. V cizím jazyce měli žáci Ekonomiky 46,7 % neúspěšnosti oproti 4,9 % v ČR."
+      },
+      "absence": {
+        "trend": "Vysoká – 11 % pokles počtu žáků během roku, vysoká míra předčasných odchodů",
+        "key_numbers": [
+          "11 % pokles počtu žáků během školního roku",
+          "Vysoká míra neomluvené absence",
+          "Značný počet žáků ukončil vzdělávání z důvodu nezájmu"
+        ],
+        "evidence": "Škola se potýká s vysokou mírou předčasných odchodů, zejména z důvodu dlouhodobé neomluvené absence a nezájmu o studium."
+      },
+      "support_services": [
+        "Tři výchovné poradkyně a dvě školní metodičky prevence – ale bez jasného programu poradenských služeb",
+        "Individuální konzultace pro žáky ohrozené neúspěšností, skupinové doučování v angličtině, matematice a odborných předmětech",
+        "Kariérové poradenství – vhodně pomáhá při výběru další profesní cesty"
+      ],
+      "safety_climate": [
+        "Autoritativní styl řízení ředitelky negativně ovlivňuje interpersonální vztahy a komunikaci",
+        "Pedagogové nemohou bez obav rozporovat kroky vedení, neshody nejsou řešeny",
+        "Střelecký výcvik probíhal s jinými zbraněmi než uvedeno v programu – významné riziko pro bezpečnost"
+      ],
+      "partnerships_practice": [
+        "Promyšlená síť sociálních partnerů rozšiřovaná na základě memorand o spolupráci",
+        "Aktivní spolupráce s Policií ČR na rozvoji kompetencí v oboru Bezpečnostně právní činnost",
+        "Spolupráce s Univerzitou J. E. Purkyně a základními školami na propojování vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně identifikuje silné a slabé stránky. Konkrétní čísla a příklady jsou uvedeny. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+      "uncertainty_notes": [
+        "Není jasné, zda se kvalifikace učitelů odborných předmětů v Bezpečnostně právní činnosti od inspekce zlepšila (67 % splňujících požadavky je stále nízké).",
+        "Není specifikováno, jaké konkrétní opatření škola přijala po předchozí inspekci v lednu 2020.",
+        "Chybí informace o počtu žáků, kteří opustili školu v průběhu roku, a jejich důvody."
+      ]
+    }
+  }
+}

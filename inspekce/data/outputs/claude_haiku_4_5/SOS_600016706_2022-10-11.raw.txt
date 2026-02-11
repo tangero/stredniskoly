@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600016706_2022-10-11",
+  "school_profile": {
+    "school_type": "Střední odborná škola ochrany osob a majetku (soukromá), obor Bezpečnostně právní činnost",
+    "inspection_period": "11. 10. 2022 – 14. 10. 2022",
+    "school_change_summary": "Od poslední inspekce (2014/2015) došlo ke změně zřizovatele, úpravě vzdělávacího programu, rozšíření mezinárodních projektů Erasmus+, digitalizaci školy a modernizaci materiálního vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná výuka a praktické zkušenosti",
+        "detail": "Učitelé odborných předmětů mají dlouholeté zkušenosti a efektivně předávají praktické znalosti v bezpečnostně právní oblasti.",
+        "evidence": "Hospitované hodiny se vyznačovaly vysokou aktivitou žáků a smysluplnou diskusí při řešení úloh."
+      },
+      {
+        "tag": "Partnerství a kariérní perspektivy",
+        "detail": "Škola má systematické vztahy s Policií ČR, hasiči, Červeným křížem a budoucími zaměstnavateli, kteří nabízejí odborné stáže.",
+        "evidence": "Absolventi se školou často spolupracují a škola zajišťuje profesní kvalifikaci Strážný."
+      },
+      {
+        "tag": "Bezpečnost a zdraví",
+        "detail": "Speciální tělesná výchova (sebeobrana) je na nadstandardní úrovni s vynikajícím materiálním vybavením.",
+        "evidence": "Forenzní laboratoř a tělocvičny na všech místech poskytovaného vzdělávání jsou vhodně vybaveny."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky v češtině na maturitě",
+        "detail": "Dlouhodobě nejméně úspěšným maturitním předmětem je český jazyk a literatura ve srovnání s republikovým průměrem.",
+        "evidence": "Škola zavedla semináře jako opatření, která se zatím jeví jako účinná, ale problém přetrvává."
+      },
+      {
+        "tag": "Vysoká absence a neúspěšnost",
+        "detail": "Výsledky klasifikace se pohybují od 5 % do 18 % neúspěšných žáků, negativně ovlivněno covidovými opatřeními.",
+        "evidence": "Maturitní zkoušky vykazují zhoršení s podílem neprospívajících 1,5 % až 9 %."
+      },
+      {
+        "tag": "Nadprůměrná úrazovost",
+        "detail": "Index úrazovosti má mírně klesající tendenci, ale stále vykazuje nadprůměrné hodnoty vzhledem k fyzické náročnosti oboru.",
+        "evidence": "Vedení si stav uvědomuje a zpracovává analýzu úrazovosti pro všechny pedagogy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci a podporuje žáky ohrožené školním neúspěchem?",
+      "Jaké jsou konkrétní výsledky zavedených seminářů na zlepšení výsledků v češtině?",
+      "Jak se škola zaměřuje na prevenci úrazů a jaké jsou bezpečnostní opatření během speciální tělesné výchovy?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o bezpečnostní profesi a budoucí práci v Policii ČR, hasičství nebo bezpečnostních agenturách",
+      "Studenti, kteří se lépe učí praktickou formou a mají zájem o propojení teorie s praxí",
+      "Žáci se zájmem o mezinárodní spolupráci a projekty Erasmus+ (jazykové dovednosti)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v češtině – škola má dlouhodobě problémy s výukou tohoto předmětu",
+      "Studenti s tendencí k absencím – vysoká absence negativně ovlivňuje prospěch",
+      "Žáci se zdravotními omezeními – obor je fyzicky náročný s nadprůměrnou úrazovostí"
+    ],
+    "plain_czech_summary": "Škola je zaměřená na bezpečnostně právní vzdělání s dobrými vazbami na Policii ČR a praktické partnery. Silnou stránkou je odborná výuka od zkušených pedagogů a nadstandardní vybavení pro speciální tělesnou výchovu. Slabší je výuka obecně vzdělávacích předmětů, zejména češtiny, kde škola dlouhodobě zaostává za republikovým průměrem. Problémem je také vyšší absence a úrazovost. Škola se snaží situaci zlepšovat, ale výsledky nejsou zatím viditelné."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršující se",
+      "key_numbers": [
+        "Podíl neprospívajících: 1,5 % až 9 %",
+        "Český jazyk: dlouhodobě nejméně úspěšný předmět",
+        "Semináře zavedeny jako opatření, zatím se jeví účinná"
+      ],
+      "evidence": "Výsledky maturitních zkoušek vykazují zhoršení, zejména v češtině ve srovnání s průměrnými republikovými výsledky."
+    },
+    "absence": {
+      "trend": "Vysoká, negativně ovlivňující prospěch",
+      "key_numbers": [
+        "Neúspěšnost žáků: 5 % až 18 %",
+        "Negativní vliv covidových opatření a doznívající situace",
+        "22 žáků dostalo snížené známky z chování za neomluvenou absenci (z 355 žáků)"
+      ],
+      "evidence": "Vysoká míra neúspěšnosti byla negativně ovlivněna zejména vysokou absencí v době covidových opatření."
+    },
+    "support_services": [
+      "Tři výchovné poradkyně, z nichž dvě jsou školní metodičky prevence",
+      "Kariérové poradenství ve spolupráci s vysokými školami a zaměstnavateli",
+      "Doučování a skupinové i individuální konzultace pro žáky ohrožené neúspěchem",
+      "Výchovná komise pro řešení problémů"
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně poučováni o bezpečnosti a ochraně zdraví",
+      "Knihy úrazů vedeny na každém pracovišti, index úrazovosti má mírně klesající tendenci",
+      "Nadprůměrné hodnoty úrazovosti vzhledem k fyzické náročnosti oboru",
+      "Přednášky na téma ochrany zdraví"
+    ],
+    "partnerships_practice": [
+      "Policie ČR, Městská policie, Hasičský záchranný sbor Karviná, Český červený kříž",
+      "Pedagogicko-psychologická poradna, vysoké školy příslušného zaměření",
+      "Vazební věznice, Národní protidrogové centrum, Báňská záchranná služba, bezpečnostní agentury",
+      "Projekty Erasmus+ v roli koordinátora (čtyři projekty ve školním roce 2021/2022)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady z hospitací a jasně identifikuje silné i slabé stránky. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Konkrétní čísla o úrazovosti nejsou uvedena, pouze kvalitativní popis 'nadprůměrné hodnoty'",
+      "Není jasné, jak se konkrétně zlepšily výsledky po zavedení seminářů – zpráva říká 'zatím se jeví jako účinná'",
+      "Detaily o rozdílech mezi jednotlivými místy poskytovaného vzdělávání (Karviná, Ostrava, Zlín) nejsou dostatečně rozvedeny"
+    ]
+  }
+}
+```

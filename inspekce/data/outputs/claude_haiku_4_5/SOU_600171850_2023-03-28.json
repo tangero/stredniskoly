@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600171850_2023-03-28",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:43:51.823303+00:00",
+  "run_finished_utc": "2026-02-09T16:44:19.734538+00:00",
+  "raw_file": "SOU_600171850_2023-03-28.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600171850_2023-03-28",
+    "school_profile": {
+      "school_type": "Integrovaná střední škola automobilní (ISŠ) - poskytuje vzdělání v 8 oborech, z toho 3 s maturitou, 3 s výučním listem a 2 nástavbová studia",
+      "inspection_period": "28. března až 31. března 2023",
+      "school_change_summary": "Od poslední inspekce došlo k rozšíření vzdělávací nabídky o nová zaměření oborů. Škola má 963 žáků (k 30. 9. 2022), z toho 18 % se speciálními vzdělávacími potřebami. Postupně se buduje celorepublikové vzdělávací centrum v autooborech."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Unikátní oborová nabídka",
+          "detail": "Škola nabízí jedinečnou nabídku autooborů v ČR s neustálou inovací vzdělávacího obsahu.",
+          "evidence": "\"Svou strukturou jde o jedinečnou nabídku autooborů v ČR\" a \"Jedinečná nabídka oborů vzdělání v dopravním a automobilovém průmyslu, kterou škola neustále a aktivně inovuje\""
+        },
+        {
+          "tag": "Kvalitní praktická výuka",
+          "detail": "Odborný výcvik probíhá na školních pracovištích i u smluvních partnerů s moderními technologiemi a rozvojem sociálních kompetencí.",
+          "evidence": "\"Některá vybraná pracoviště poskytovala žákům nadstandardní prostředí vybavené nejmodernějšími technologiemi. Kromě odborných kompetencí byly ve výuce rozvíjeny zejména kompetence komunikativní, sociální a personální.\""
+        },
+        {
+          "tag": "Silné partnerství",
+          "detail": "Funkční spolupráce s profesními partnery doma i v zahraničí podporuje získávání odborných i sociálních kompetencí.",
+          "evidence": "\"Funkční spolupráce s profesními partnery doma i v zahraničí podporuje získávání odborných i sociálních kompetencí žáků\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Problémy s docházkou",
+          "detail": "Přetrvávající problém pozdních příchodů a absencí žáků, přestože škola přijímá opatření, která dosud nepřinesla očekávané výsledky.",
+          "evidence": "\"Přetrvávající charakter a nastavená opatření nejsou dostatečně účinná u všech žáků\" a \"Často byla první třetina hodin narušována pozdními příchody žáků\""
+        },
+        {
+          "tag": "Nízká úspěšnost u maturit",
+          "detail": "Hrubá neúspěšnost u maturitní zkoušky se pohybuje kolem 35 %, u nástavbových oborů až 50 %.",
+          "evidence": "\"Hrubá neúspěšnost žáků se pohybuje kolem 35 %, je však ovlivněna žáky nástavbových oborů, kteří vykazují v posledních letech neúspěšnost kolem 50 %\""
+        },
+        {
+          "tag": "Nejednotné hodnocení",
+          "detail": "Pravidla pro hodnocení nejsou jasně nastavena, což vede k rozdílnému přístupu mezi učiteli.",
+          "evidence": "\"Učitelé hodnotí dosahované výsledky vzdělávání žáků podle pravidel ve školním řádu, která však nejsou jasně nastavena, což vede k rozdílnému přístupu a nejednotnosti v hodnocení\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší problém pozdních příchodů a absencí žáků? Jaká nová opatření plánuje zavést?",
+        "Jaké jsou důvody vysoké neúspěšnosti u maturitní zkoušky, zejména v oborech autotronik a nástavbových studiích?",
+        "Jak škola podporuje žáky se speciálními vzdělávacími potřebami v běžné výuce? Jaké jsou konkrétní příklady diferenciace?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zájmem o automobilový průmysl a praktickou práci - škola nabízí nejmodernější technologie a reálné pracovní prostředí",
+        "Talentovaní žáci v oborech - škola podporuje účast v tuzemských i zahraničních soutěžích s dobrými výsledky",
+        "Žáci, kteří chtějí získat praktické dovednosti a sociální kompetence - výuka rozvíjí komunikaci, zodpovědnost a profesionalitu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s problémy s docházkou a disciplínou - škola má přetrvávající problémy s pozdními příchody a absencemi",
+        "Žáci v oborech autotronik a nástavbových studiích - vykazují výrazně vyšší neúspěšnost u závěrečných a maturitních zkoušek",
+        "Žáci se speciálními vzdělávacími potřebami - inspekce zjistila nedostatečnou diferenciaci výuky pro tyto žáky"
+      ],
+      "plain_czech_summary": "ISŠ automobilní v Brně je unikátní školou s nejširší nabídkou autooborů v ČR. Silnou stránkou je kvalitní praktická výuka s moderní technikou a funkční partnerství s průmyslem. Škola dobře podporuje nadané žáky v soutěžích. Slabinou jsou přetrvávající problémy s docházkou žáků a vysoká neúspěšnost u maturit (35 %), zejména v některých oborech. Pravidla pro hodnocení nejsou jasně nastavena a diferenciace pro žáky se speciálními potřebami je nedostatečná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavá s vysokou neúspěšností",
+        "key_numbers": [
+          "Hrubá neúspěšnost kolem 35 % v posledních třech letech",
+          "Neúspěšnost u nástavbových oborů kolem 50 %",
+          "Denní formy mají neúspěšnost kolem 30 %"
+        ],
+        "evidence": "\"Úspěšnost žáků při ukončování vzdělávání maturitní zkouškou je v posledních třech letech kolísavá, hrubá neúspěšnost žáků se pohybuje kolem 35 %\""
+      },
+      "absence": {
+        "trend": "Přetrvávající problém bez zlepšení",
+        "key_numbers": [
+          "Ve školním roce 2021/2022 mělo neomluvenou absenci 196 žáků",
+          "Průměr 17,1 hodin neomluvené absence na žáka",
+          "Pozdní příchody narušují první třetinu hodin"
+        ],
+        "evidence": "\"Přestože vedení školy přijímá opatření ke zlepšení pravidelné docházky žáků do školy, nepřinesla dosud očekávané výsledky\""
+      },
+      "support_services": [
+        "Školní psycholožka, výchovná poradkyně a školní metodička prevence zajišťují poradenské služby",
+        "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami",
+        "Elektronická schránka důvěry pro žáky a rodiče"
+      ],
+      "safety_climate": [
+        "Počet úrazů se v posledním období významně nezvyšuje, převážně drobné úrazy při praktické výuce",
+        "Škola řeší případy rizikového chování (agresivita, šikana, kyberšikana, užívání návykových látek)",
+        "Minimální preventivní program zaměřený na kyberkriminalitu, šikanu a vztahy v kolektivu"
+      ],
+      "partnerships_practice": [
+        "Rozsáhlý okruh partnerů z automobilového průmyslu umožňuje zlepšování materiálních podmínek",
+        "Někteří partneři vyhlašují stipendijní programy pro žáky",
+        "Škola aktivně působí v odborných svazech a cechů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, obsahuje konkrétní čísla a citace. Některé pasáže jsou však složitější a obsahují více technických termínů. Struktura je logická a pro rodiče srozumitelná.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola plánuje zavést proti absencím a pozdním příchodům",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými obory a učiteli",
+        "Chybí informace o tom, jak se škola vypořádá s doporučeními inspekce"
+      ]
+    }
+  }
+}

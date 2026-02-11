@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600017320_2025-10-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:31:59.993088+00:00",
+  "run_finished_utc": "2026-02-09T13:32:19.271974+00:00",
+  "raw_file": "GY8_600017320_2025-10-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600017320_2025-10-06",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté obory), příspěvková organizace",
+      "inspection_period": "6. až 9. října 2025",
+      "school_change_summary": "Škola prošla výraznou renovací budovy a moderním dovybavením odborných učeben. Počet žáků (611) zůstává dlouhodobě stabilní."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Žáci dlouhodobě dosahují nadprůměrných výsledků při maturitní zkoušce.",
+          "evidence": "Zjištěno při inspekční činnosti, potvrzeno dlouhodobým trendem."
+        },
+        {
+          "tag": "Kvalitní pedagogický sbor",
+          "detail": "Učitelé aktivně spolupracují, sdílí poznatky a uplatňují je ve výuce s cílem zvyšovat kvalitu vzdělávání.",
+          "evidence": "Hospitační činnost zaznamenala pestrou škálu metod, tandemovou výuku a efektivní propojování teorie s praxí."
+        },
+        {
+          "tag": "Bohaté mimoškolní aktivity",
+          "detail": "Žáci se zapojují do soutěží, projektů a kroužků, kde dosahují významných úspěchů i na celostátní úrovni.",
+          "evidence": "Olympiády, Středoškolská odborná činnost, Erasmus+, DofE, robotika, debatní kroužek a další."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Komunikace vedení se učiteli",
+          "detail": "Některé aspekty komunikace mezi vedením školy a pedagogy nejsou vždy vnímány pozitivně.",
+          "evidence": "Dotazníkové šetření České školní inspekce odhalilo nedostatky v komunikaci (kritérium 2.2)."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jaké jsou podmínky pro získání Statusu aktivního studenta?",
+        "Jaké jsou možnosti doučování a konzultací pro žáky, kteří si potřebují učivo procvičit?",
+        "Jak probíhá spolupráce se základními školami a jaké jsou možnosti přechodu na gymnázium?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí dosáhnout vysokých výsledků a pokračovat ve studiu na vysoké škole",
+        "Nadaní žáci hledající prostor pro rozvoj svých talentů a účast v soutěžích",
+        "Studenti zajímající se o mezinárodní projekty a výměny (Erasmus+, exkurze do EU)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci vyžadující intenzivnější individuální podporu (škola má omezené kapacity doučování)"
+      ],
+      "plain_czech_summary": "Mendelovo gymnázium je kvalitní střední škola s dlouhodobě nadprůměrnými výsledky maturit. Učitelé používají moderní metody výuky, podporují aktivní zapojení žáků a nabízejí bohaté mimoškolní aktivity. Prostory jsou nově zrekonstruované a moderně vybavené. Jedinou slabší stránkou je komunikace mezi vedením a pedagogy, kterou škola řeší. Ideální volba pro ambiciózní žáky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nadprůměrné výsledky",
+        "key_numbers": [
+          "611 žáků celkem",
+          "376 žáků v čtyřletém oboru",
+          "235 žáků v osmiletem oboru"
+        ],
+        "evidence": "Žáci školy dlouhodobě dosahují velmi dobrých výsledků při ukončování studia maturitní zkouškou."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se absence věnuje, ale konkrétní data nejsou uvedena."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s dvěma psycholožkami",
+        "Individuální a skupinové doučování",
+        "Konzultace s pedagogy",
+        "Kariérové poradenství",
+        "Podpora žáků se speciálními vzdělávacími potřebami (22 žáků)",
+        "Status aktivního studenta pro nadané žáky"
+      ],
+      "safety_climate": [
+        "Vstupy do školy zabezpečeny proti vniknutí cizích osob",
+        "Kamerový systém monitorující prostory",
+        "Pravidelné seznamování žáků s pravidly bezpečného chování",
+        "Preventivní program na téma kybernetické bezpečnosti"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se základními školami (soutěže, jednodenní studium, projekt Elixír do škol)",
+        "Partnerství s vysokými školami",
+        "Projekty Erasmus+ s evropskými školami",
+        "Spolupráce s místními organizacemi a městem",
+        "Exkurze do institucí Evropské unie (Brusel, Štrasburk)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, bez zbytečného úřednického stylu. Informace jsou jasně strukturované a snadno pochopitelné pro rodiče.",
+      "uncertainty_notes": [
+        "Konkrétní procenta nebo čísla úspěšnosti maturit nejsou uvedena, pouze kvalitativní popis.",
+        "Absence údajů o školní docházce a počtu žáků se speciálními vzdělávacími potřebami je minimální (22 žáků).",
+        "Detaily o komunikačních problémech mezi vedením a učiteli nejsou konkretizovány."
+      ]
+    }
+  }
+}

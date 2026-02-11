@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "LYC_691000107_2023-01-17",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola a Střední průmyslová škola (VOŠ a SPŠ)",
+    "inspection_period": "17. 1. − 19. 1. 2023",
+    "school_change_summary": "Od roku 2021/2022 škola nerealizuje vyšší odborné vzdělávání v oborech Automobilová diagnostika a servis a Firemní ekonomika. Proběhla rozsáhlá rekonstrukce budov s výrazným zkvalitnění materiálně technického vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a technologie",
+        "detail": "Škola průběžně zkvalitňuje materiální podmínky s moderně vybavenými odbornými učebnami, dílnami s CNC stroji, robotiky a CAD/CAM systémy.",
+        "evidence": "Škola disponuje učebnami výpočetní techniky, jazykovými učebnami a dílnami vybavené moderními stroji odpovídajícími současným trendům."
+      },
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Odborný výcvik probíhá na vysoké úrovni s důrazem na samostatnou práci žáků a okamžitou zpětnou vazbu.",
+        "evidence": "Učitelé vedli žáky k samostatné práci, plnění úkolů hodnotili průběžně, poskytovali prostor pro vlastní řešení a obhájení názoru."
+      },
+      {
+        "tag": "Spolupráce s průmyslem",
+        "detail": "Škola úzce spolupracuje s více než 60 partnerskými firmami, které poskytují praktické zkušenosti a aktuální informace z oboru.",
+        "evidence": "Partneři umožňují realizaci odborné výuky a praxe, poskytují výukové materiály, školení a konzultace pedagogům."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní přístup v teoretické výuce",
+        "detail": "Žáci nejsou dostatečně aktivně zapojeni do teoretických hodin, převažuje frontální výuka vedená výkladem učitele.",
+        "evidence": "Ve většině hodin nebyli žáci aktivně zapojováni, komunikoval jen malý počet žáků, jejich verbální projev byl převážně stručný."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Učitelé nedostatečně přizpůsobují úkoly různému tempu a schopnostem žáků, všichni dostávají stejné zadání.",
+        "evidence": "Negativem byla nedostatečná diferenciace zadávaných úkolů s ohledem na odlišné pracovní tempo žáků a jejich vzdělávací možnosti."
+      },
+      {
+        "tag": "Slabé hodnocení a zpětná vazba",
+        "detail": "Chybí formativní hodnocení, sebehodnocení a vzájemné hodnocení žáků podle předem známých pravidel.",
+        "evidence": "Byla zaznamenána absence zhodnocení společné práce žáků učitelem a formativní hodnocení nebylo realizováno."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje aktivní zapojení žáků do teoretické výuky a rozvoj jejich komunikativních dovedností?",
+      "Jaké má škola plány na zlepšení diferenciace výuky pro žáky s různými schopnostmi a tempem učení?",
+      "Jak škola ověřuje, zda výsledky žáků v průběhu studia odpovídají jejich výsledkům u závěrečných zkoušek?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou činnost a ruční práci, kteří se učí lépe v dílnách a na reálných projektech",
+      "Studenti, kteří mají zájem o technické obory a chcete, aby měli přímý kontakt s moderní technologií a průmyslem",
+      "Žáci, kteří potřebují strukturovaný přístup s jasným propojením teorie a praxe"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se učí lépe aktivní diskusí a samostatným bádáním – teoretická výuka zde není zaměřena na kritické myšlení",
+      "Studenti s různými tempem učení – škola nedostatečně diferencuje výuku podle individuálních potřeb",
+      "Žáci, kteří potřebují časté a detailní zpětnou vazbu – formativní hodnocení není standardní praxí"
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktickou výuku s moderním vybavením a silnými vazbami na průmysl. Odborný výcvik je na vysoké úrovni. Problém je v teoretické výuce, kde žáci nejsou dostatečně aktivní, chybí diferenciace podle schopností a formativní hodnocení. Škola také nemá mechanismy na ověřování, zda žáci dosahují cílů stanovených v programech. Vhodná pro prakticky zaměřené žáky, ale teoretické předměty by se měly zlepšit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Slabší výsledky v maturitní zkoušce",
+      "key_numbers": [
+        "10,9 % neúspěšnosti ve společné části MZ (5 žáků ze 46)",
+        "19,2 % neúspěšnosti u závěrečné zkoušky (10 žáků z 52)",
+        "8,9 % žáků prospělo s vyznamenáním"
+      ],
+      "evidence": "Ve školním roce 2021/2022 hrubá neúspěšnost v jarním zkušebním období 2022 byla 10,9 % u MZ a 19,2 % u závěrečné zkoušky."
+    },
+    "absence": {
+      "trend": "Vysoká absence negativně ovlivňuje úspěšnost",
+      "key_numbers": [
+        "Vysoká absence ve vyučování patří k významným projevům nežádoucího chování",
+        "Škola postupně snižuje výskyt neomluvené absence"
+      ],
+      "evidence": "K významným projevům nežádoucího chování žáků patří vysoká absence, která negativně ovlivňuje úspěšnost žáků při vzdělávání."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně (jedna pro maturitní obory, jedna pro obory s VL)",
+      "Speciální pedagožka poskytující podporu žákům s odlišným mateřským jazykem a speciálními vzdělávacími potřebami",
+      "Školní metodička prevence",
+      "Intenzivní doučování z českého jazyka jako druhého jazyka (5 hodin týdně)",
+      "Doučování žáků ohrožených školním neúspěchem v rámci projektů Šablony III a Národního plánu obnovy"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra, kázeň a vzájemný respekt všech aktérů vzdělávání",
+      "Systematické řešení projevů rizikového chování prostřednictvím třídních učitelů a školního poradenského pracoviště",
+      "Adaptační a sportovní kurzy, preventivní programy ve spolupráci se střediskem volného času",
+      "Besedy s odborníky a Policií ČR",
+      "Domov mládeže s pozorností věnovanou prevenci nežádoucích projevů chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s více než 60 partnerskými firmami pokrývajícími všechny studijní obory",
+      "Praktická výuka a odborný výcvik na smluvním pracovišti ŠKODA AUTO a.s., pobočný závod Kvasiny",
+      "Exkurze a výměnné stáže ve firmách",
+      "Besedy s odborníky z praxe",
+      "Partneři poskytují výukové materiály, učební pomůcky a odborná školení pedagogům"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s konkrétními příklady. Některé pasáže jsou delší a více úřednické, ale celkově je obsah pro rodiče pochopitelný.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o počtu žáků, kteří prospěli s vyznamenáním v jednotlivých oborech v roce 2022/2023",
+      "Chybí informace o tom, jak se škola konkrétně chystá řešit zjištěné nedostatky v teoretické výuce",
+      "Není jasné, jaké konkrétní opatření škola přijala v reakci na inspekční zjištění"
+    ]
+  }
+}
+```

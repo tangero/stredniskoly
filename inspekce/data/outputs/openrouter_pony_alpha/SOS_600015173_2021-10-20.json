@@ -1,0 +1,107 @@
+{
+  "report_id": "SOS_600015173_2021-10-20",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:25:17.109452+00:00",
+  "run_finished_utc": "2026-02-10T08:26:32.779822+00:00",
+  "raw_file": "SOS_600015173_2021-10-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015173_2021-10-20",
+    "school_profile": {
+      "school_type": "Střední odborná škola - Obchodní akademie",
+      "inspection_period": "20. − 22. 10. 2021",
+      "school_change_summary": "Škola postupně zlepšuje podmínky pro vzdělávání s přispěním zřizovatele a pružně inovuje vzdělávací programy podle potřeb trhu práce."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odbornost a uplatnění",
+          "detail": "Výuka v odborných předmětech je na vysoké úrovni a směřuje k praktickému uplatnění.",
+          "evidence": "V průběhu vzdělávání odborných předmětů se projevovala vysoká úroveň vyučujících... učitelé vhodně zařazovali mezipředmětové vazby."
+        },
+        {
+          "tag": "Projekty a zahraničí",
+          "detail": "Škola nabízí zajímavé projekty a zahraniční stáže, které rozvíjí dovednosti žáků.",
+          "evidence": "Také pracovní stáže u zahraničních partnerů v rámci mezinárodního projektu (Erasmus+) motivují žáky ke studiu."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola aktivně pomáhá žákům ohroženým neúspěchem prostřednictvím doučování a konzultací.",
+          "evidence": "Škola identifikuje žáky s rizikem školního neúspěchu... pravidelně realizuje doučování v rámci projektu Šablony."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Ve výuce převažuje frontální styl, kde jsou žáci pasivní a technika se nevyužívá.",
+          "evidence": "Ve všech hodnocených vyučovacích hodinách dominovala frontální forma výuky... audiovizuální technika však ve většině... zůstala nevyužita."
+        },
+        {
+          "tag": "Chybějící diferenciace",
+          "detail": "Výuka není dostatečně přizpůsobena individuálním potřebám a schopnostem jednotlivých žáků.",
+          "evidence": "Často chyběla diferenciace výuky vzhledem ke schopnostem a potřebám žáků."
+        },
+        {
+          "tag": "Nedostatečná zpětná vazba",
+          "detail": "Žáci dostávají málo prostoru k sebehodnocení a nejsou vedeni k sebereflexi.",
+          "evidence": "Nedostatky... byly identifikovány v nezařazování sebehodnocení a vzájemného hodnocení aktivit žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola využívá moderní technologie a audiovizuální techniku v běžných hodinách?",
+        "Jakým způsobem učitelé rozlišují náročnost úkolů pro nadané žáky a pro žáky s potřebou podpory?",
+        "Jak často jsou žáci vedeni k vzájemnému hodnocení a sebereflexi svých výsledků?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí získat silný odborný základ pro uplatnění v ekonomice a podnikání.",
+        "Pro zájemce o mezinárodní zkušenosti a účast v zahraničních projektech Erasmus+.",
+        "Pro žáky, kteří preferují tradiční výuku vedenou autoritativním stylem."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří vyžadují pestrost výuky, skupinovou práci a vysokou míru vlastní aktivity.",
+        "Pro žáky, kteří potřebují silnou individuální podporu a přizpůsobení tempa výuky jejich schopnostem.",
+        "Pro rodiče očekávající intenzivní využívání digitálních technologií ve všech předmětech."
+      ],
+      "plain_czech_summary": "Obchodní akademie v Prostějově nabízí kvalitní odbornou přípravu s důrazem na praxi a mezinárodní projekty, které žáky motivují. Škola má nastavené systémy pro podporu žáků s obtížemi a úspěšně se rozvíjí. Slabinou je však zastaralý styl výuky, kde převažuje pasivní poslouchání před aktivní prací, a nedostatečné využívání moderních technologií. Výuka často nezohledňuje individuální rozdíly mezi žáky. Pro rodiče to znamená, že dítě získá dobré odborné znalosti, ale nemusí rozvíjet dostatek měkkých dovedností či samostatnosti."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní",
+        "key_numbers": [
+          "Úspěšnost srovnatelná za poslední tři roky"
+        ],
+        "evidence": "V posledních třech letech vykazovaly celkové výsledky vzdělávání žáků i úspěšnost u maturitních zkoušek srovnatelnou úroveň."
+      },
+      "absence": {
+        "trend": "Nehodnoceno",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje konkrétní data o absence žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (výchovná poradkyně, metodik prevence)",
+        "Doučování v rámci projektu Šablony",
+        "Individuální konzultace pro ohrožené žáky"
+      ],
+      "safety_climate": [
+        "Pravidelné třídnické hodiny pro dialog mezi učiteli a žáky",
+        "Důraz na vytváření příznivého sociálního klimatu",
+        "Prevence sociálně patologických jevů ve spolupráci s externími subjekty"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se smluvními partnery pro praktické vyučování",
+        "Mezinárodní projekty Erasmus+ a e-Twinning",
+        "Exkurze u zaměstnavatelů a přednášky odborníků z praxe"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně rozdělený do sekcí a používá běžnou češtinu, ačkoliv místy obsahuje standardní odbornou terminologii (např. 'frontální forma výuky').",
+      "uncertainty_notes": [
+        "Chybí konkrétní číselné údaje o procentuální úspěšnosti u maturity.",
+        "Není uvedena konkrétní míra absence ani její vývoj.",
+        "Chybí detailnější popis 'dílčích nedostatků v metodickém vedení'."
+      ]
+    }
+  }
+}

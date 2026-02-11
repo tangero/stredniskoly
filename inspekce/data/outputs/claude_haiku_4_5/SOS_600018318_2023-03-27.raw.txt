@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600018318_2023-03-27",
+  "school_profile": {
+    "school_type": "Střední škola gastronomie, farmářství a služeb s domovem mládeže a školní jídelnou",
+    "inspection_period": "27. března až 30. března 2023",
+    "school_change_summary": "Škola rozšířila nabídku oborů o Maséra ve zdravotnictví (od 2021/22), zrušila obor Gastronomie. Celkově 284 žáků, z toho 23 se speciálními potřebami. Provedena rekonstrukce domova mládeže v Jeseníku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Výuka odborného výcviku je velmi dobře provázána s teoretickou přípravou, s moderním vybavením a reálným pracovním prostředím.",
+        "evidence": "Technologická vybavení jednotlivých pracovišť jsou na velmi dobré úrovni a umožňují nácvik s moderním zařízením."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují tradičně dobrých výsledků v gastronomických a potravinářských oborech, škola organizuje regionální i celostátní kola soutěží.",
+        "evidence": "Tradičně dobrých výsledků dosahují žáci zejména gastronomických a potravinářských oborů vzdělání."
+      },
+      {
+        "tag": "Péče o žáky",
+        "detail": "Domovy mládeže nabízejí promyšlené činnosti, zdravotní osvětu a prevenci rizikového chování s dostatečným prostorem pro přípravu i volno.",
+        "evidence": "Plánování těchto činností je promyšlené, přihlíží k potřebám a zájmům jednotlivých žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "Obor Podnikání vykazuje velmi vysokou neúspěšnost u maturitní zkoušky, zejména z matematiky (100% neúspěšnost v některých letech).",
+        "evidence": "V roce 2020 hrubá neúspěšnost 75 %, v roce 2022 60 %, proti celorepublikovému průměru 25,5 %."
+      },
+      {
+        "tag": "Nedostatky v bezpečnosti",
+        "detail": "Inspekce zjistila nedostatky v zajištění bezpečnosti a ochrany zdraví žáků a v oblasti školního stravování.",
+        "evidence": "Během inspekční činnosti byly zaznamenány nedostatky v řídicí a kontrolní činnosti vedení školy."
+      },
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Převládá frontální výuka bez dostatečné aktivizace žáků, chybí diferenciace pro nadané a žáky se speciálními potřebami.",
+        "evidence": "Nedostatečná pestrost uplatňovaných forem a metod výuky vedla k nerovnoměrnému zapojení žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola přijala k zlepšení výsledků maturitní zkoušky z matematiky a češtiny?",
+      "Jak škola zajišťuje bezpečnost a ochranu zdraví žáků v praktické výuce a v domovech mládeže?",
+      "Jaké metody výuky používají učitelé k aktivizaci žáků a jak se liší přístup k nadaným žákům?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické obory (kuchař, cukrář, zahradník, zemědělec) – zde škola dosahuje velmi dobrých výsledků",
+      "Žáci, kteří potřebují individuální péči a podporu – škola má dobře nastavený systém poradenských služeb",
+      "Žáci bydlící mimo Jeseník – škola nabízí kvalitní ubytování v domovech mládeže s pestrými aktivitami"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s ambicí studovat obor Podnikání – vysoká neúspěšnost u maturitní zkoušky (60-75 %), inspekce doporučuje zvážit zrušení tohoto oboru",
+      "Žáci, kteří potřebují aktivní a interaktivní výuku – převládá zde frontální výuka s omezeným zapojením žáků",
+      "Žáci se speciálními vzdělávacími potřebami – diferenciace výuky není vždy dostatečná"
+    ],
+    "plain_czech_summary": "Střední škola v Jeseníku je známá kvalitní praktickou přípravou v gastronomických a zemědělských oborech. Žáci zde získávají dovednosti na moderním vybavení a dosahují dobrých výsledků v soutěžích. Domovy mládeže nabízejí péči a aktivity. Problém je obor Podnikání s velmi vysokou neúspěšností u maturit (60-75 % proti průměru 25 %). Inspekce také kritizuje pasivní výuku a zjistila nedostatky v bezpečnosti. Škola by měla zlepšit metody výuky a zvážit zrušení problematického oboru."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý s vysokou neúspěšností v oboru Podnikání, zejména z matematiky",
+      "key_numbers": [
+        "Obor Podnikání: 75 % neúspěšnost (2020), 21,4 % (2021), 60 % (2022)",
+        "Matematika: 100 % neúspěšnost (s výjimkou 2021)",
+        "Český jazyk: 37,1 % průměrná hrubá neúspěšnost"
+      ],
+      "evidence": "Hrubá neúspěšnost v roce 2020 činila 75 %, celorepublikový průměr 31,30 %. V roce 2022 vzrostla na 60 % při celorepublikovém průměru 25,50 %."
+    },
+    "absence": {
+      "trend": "Škola má systém monitorování a řešení absence",
+      "key_numbers": [
+        "Třídní učitelé pracují s vysokou absencí na třídních hodinách",
+        "Vedeny písemné záznamy z pohovorů se žáky a zákonnými zástupci"
+      ],
+      "evidence": "Škole se podařilo sjednotit postupy třídních učitelů při omlouvání absence a práci s žáky s vysokou absencí."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a metodičkou prevence",
+      "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+      "Strategie předcházení školní neúspěšnosti zaměřená na pozitivní motivaci",
+      "Intervační programy ke zjištění třídního klimatu a rizikových jevů"
+    ],
+    "safety_climate": [
+      "Inspekce zjistila nedostatky v zajištění bezpečnosti a ochrany zdraví žáků",
+      "Domovy mládeže spolupracují se školou při řešení kázeňských přestupků",
+      "Realizovány preventivní aktivity zaměřené na rizikové projevy chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s řadou firem z regionu pro praktickou výuku a rozvoj odborných dovedností",
+      "Dlouholetá mezinárodní spolupráce podporující jazykovou gramotnost",
+      "Projektová činnost a vlastní činnost jako zdroj financování rozvoje"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Některé pasáže jsou však dlouhé a úřednické, zejména v části o průběhu vzdělávání.",
+    "uncertainty_notes": [
+      "Není jasné, zda se nedostatky v bezpečnosti týkají všech pracovišť nebo jen některých",
+      "Není specifikováno, jaké konkrétní opatření škola již přijala k řešení vysoké neúspěšnosti u maturit",
+      "Chybí informace o počtu žáků v jednotlivých oborech a jejich úspěšnosti v závěrečných zkouškách"
+    ]
+  }
+}
+```

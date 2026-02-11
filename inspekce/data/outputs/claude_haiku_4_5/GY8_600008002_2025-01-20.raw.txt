@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY8_600008002_2025-01-20",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium se zaměřením na matematiku a přírodovědné předměty",
+    "inspection_period": "20. 1. 2025 − 23. 1. 2025",
+    "school_change_summary": "Škola se zaměřila na modernizaci výuky, zkvalitňování materiálních podmínek a spolupráci s externími partnery. Založen studentský parlament, vydáván školní časopis, rozšířena materiálně-technická vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky v maturitě",
+        "detail": "Žáci dosahují nadprůměrných výsledků v porovnání se školami v kraji i republice, zejména v anglickině (96,9 % osmiletého studia) a matematice (89,4 % osmiletého studia).",
+        "evidence": "Ve školním roce 2023/2024 dosáhli žáci osmiletého studia v anglickině průměrný skór 96,9 %."
+      },
+      {
+        "tag": "Bohatá nabídka aktivit mimo vyuku",
+        "detail": "Škola podporuje účast v soutěžích, olympiádách, projektu Erasmus+, Cena vévody z Edinburghu a charitativních aktivitách.",
+        "evidence": "Žáci dosahují výborných výsledků na krajské, celostátní i mezinárodní úrovni, např. 1. místo v Jihočeském kraji v Best in English."
+      },
+      {
+        "tag": "Silné partnerství s vysokými školami a vědeckými institucemi",
+        "detail": "Dlouhodobá spolupráce s Jihočeskou univerzitou, Biologickým centrem Akademie věd ČR a technickými firmami.",
+        "evidence": "Uskutečňují se stáže žáků, odborné přednášky a workshopy, které umožňují rozvíjet specifické nadání žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace ve výuce",
+        "detail": "Ve většině hodin chybí přizpůsobení úkolů různým schopnostem žáků, což neumožňuje plně využít jejich potenciál.",
+        "evidence": "Ve většině hodin chyběla diferenciace zadávaných úkolů, která by umožňovala plné využití vzdělávacího potenciálu žáků."
+      },
+      {
+        "tag": "Slabší rozvoj čtenářské gramotnosti",
+        "detail": "V některých hodinách nebyla věnována dostatečná pozornost čtenářské gramotnosti a práci s různými zdroji informací.",
+        "evidence": "V některých sledovaných hodinách také nebyla věnována dostatečná pozornost rozvoji čtenářské gramotnosti."
+      },
+      {
+        "tag": "Nevhodné časové rozvržení některých hodin",
+        "detail": "Část hodin postrádá závěrečné shrnutí učiva a zhodnocení dosažených cílů.",
+        "evidence": "V části hodin bylo zaznamenáno nevhodné časové rozvržení, které mělo za následek absenci závěrečného shrnutí."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku různým schopnostem a zájmům jednotlivých žáků?",
+      "Jaké jsou možnosti zapojení do mezinárodních projektů a výměnných pobytů?",
+      "Jak škola podporuje žáky, kteří mají zájem o konkrétní obor (např. medicínu, právo, techniku)?"
+    ],
+    "who_school_fits": [
+      "Talentovaní žáci se zájmem o matematiku a přírodovědné předměty, kteří chtějí studovat na vysoké škole",
+      "Žáci motivovaní k intenzivnímu studiu a účasti v soutěžích a olympiádách",
+      "Žáci se zájmem o mezinárodní spolupráci a rozvoj jazykových dovedností"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciované úkoly podle svého tempa",
+      "Žáci se slabšími studijními předpoklady, kterým by vyhovovala méně náročná škola",
+      "Žáci se zdravotním znevýhodněním, kteří by potřebovali více speciálních služeb"
+    ],
+    "plain_czech_summary": "Gymnázium v Jírovcově patří mezi nejlepší střední školy v kraji. Žáci dosahují výborných výsledků v maturitě, zejména v anglickině a matematice. Škola nabízí bohatý program mimo vyuku – soutěže, zahraniční výjezdy, projekty. Vedení školy se věnuje profesnímu rozvoji učitelů a vytváří příznivé prostředí. Hlavní výzvou je lepší přizpůsobení výuky různým schopnostem žáků a rozvoj čtenářské gramotnosti. Ideální pro talentované žáky připravené na náročné studium."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě nadprůměrné výsledky v porovnání se školami daného oboru v kraji i republice",
+      "key_numbers": [
+        "Anglický jazyk osmiletého studia: 96,9 % průměrný skór",
+        "Anglický jazyk čtyřletého studia: 95,3 % průměrný skór",
+        "Matematika osmiletého studia: 89,4 % průměrný skór"
+      ],
+      "evidence": "Ve školním roce 2023/2024 dosáhli žáci osmiletého studia v didaktických testech z anglického jazyka průměrný skór 96,9 %."
+    },
+    "absence": {
+      "trend": "Nízká úroveň zameškávaných hodin",
+      "key_numbers": [
+        "Minimální výskyt rizikového chování",
+        "47 % žáků prospělo s vyznamenáním na konci školního roku 2023/2024"
+      ],
+      "evidence": "Díky vhodně nastaveným pravidlům pro hodnocení žáků v případě absence a jejich důslednému uplatňování se škole daří udržovat na nízké úrovni počet zameškáných hodin."
+    },
+    "support_services": [
+      "Školní poradenský tým: výchovná poradkyně, školní metodička prevence, školní psycholožka",
+      "Doučování a individuální konzultace pro žáky s menší úspěšností",
+      "Individuální podpora pro mimořádně nadané žáky formou akcelerace vzdělávání"
+    ],
+    "safety_climate": [
+      "Respektující komunikace mezi žáky a pedagogy s dodržováním nastavených pravidel",
+      "Studentský parlament přispívá k vytváření příznivého školního klimatu",
+      "Minimální výskyt rizikového chování, výchovná opatření převážně pochvaly za reprezentaci"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s Jihočeskou univerzitou a Biologickým centrem Akademie věd ČR",
+      "Partnerství s technickými firmami a regionálními subjekty",
+      "Reciproční vztahy s partnerskými zahraničními školami a účast v mezinárodních projektech"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní čísla, citace a příklady. Všechna tvrzení jsou podložena důkazy z textu. Jazyk je srozumitelný a bez zbytečného úřednického stylu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu žáků se speciálními vzdělávacími potřebami (kromě zmínky o třech mimořádně nadaných žácích)",
+      "Chybí detailní informace o konkrétních opatřeních, která škola přijala na základě doporučení z předchozí inspekce",
+      "Není jasné, jak přesně se diferenciace bude implementovat v jednotlivých předmětech"
+    ]
+  }
+}
+```

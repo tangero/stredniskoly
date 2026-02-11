@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_610451219_2023-12-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:32:43.211212+00:00",
+  "run_finished_utc": "2026-02-09T16:33:06.549148+00:00",
+  "raw_file": "GY8_610451219_2023-12-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_610451219_2023-12-01",
+    "school_profile": {
+      "school_type": "Osmileté klasické gymnázium (soukromé)",
+      "inspection_period": "1. 12. a 4.–6. 12. 2023",
+      "school_change_summary": "Škola má 231 žáků (66% naplněnosti) v devíti třídách. Počet žáků mírně klesá podle záměru vedení. V roce 2023 byl jmenován nový zástupce ředitelky. Škola postupně zlepšuje materiální podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Všichni žáci (až na jednu výjimku ze zdravotních důvodů) úspěšně skončí maturitní zkoušku, téměř polovina s vyznamenáním.",
+          "evidence": "Dlouhodobě lepší výsledky než průměr v republice, řada žáků s průměrem 1,00."
+        },
+        {
+          "tag": "Motivovaní a zodpovědní žáci",
+          "detail": "Škola přijímá motivované uchazeče, žáci dosahují průměru 1,453 a 1,389 v posledních dvou letech.",
+          "evidence": "Více než polovina žáků prospěla s vyznamenáním, v primě přes 80 % žáků."
+        },
+        {
+          "tag": "Rozvoj jazykových dovedností",
+          "detail": "Škola systematicky rozvíjí cizojazyk prostřednictvím výměnných pobytů, exkurzí a mezinárodních certifikátů.",
+          "evidence": "Zhruba 30 % žáků nahradilo profilovou zkoušku mezinárodním certifikátem z angličtiny."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo individualizované výuky",
+          "detail": "Výuka není dostatečně přizpůsobena rozdílným potřebám a tempům jednotlivých žáků.",
+          "evidence": "Inspektoři zjistili nízkou míru diferenciace učiva a málo využívané formativní hodnocení."
+        },
+        {
+          "tag": "Omezené metody výuky",
+          "detail": "Převažuje strukturovaný výklad, chybí práce s různými informačními zdroji a inovativní metody.",
+          "evidence": "Pouze ojediněle byly zařazeny inovativní metody, chybějící prvek byla práce s různými informačními zdroji."
+        },
+        {
+          "tag": "Absence v horních ročnících",
+          "detail": "Zatímco v nižších ročnících je docházka dobrá, ve vyšších se počet zameškaných hodin zvyšuje.",
+          "evidence": "Škole se daří motivovat žáky k docházce v nižších ročnících, ve vyšších se absence zvyšuje."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku potřebám nadaných žáků a těch, kteří potřebují více času?",
+        "Jaké nové metody výuky plánuje škola zavádět, aby více zapojila žáky do práce s informačními zdroji?",
+        "Jak se škola snaží zvýšit docházku a motivaci žáků v horních ročnících?"
+      ],
+      "who_school_fits": [
+        "Motivovaní žáci s dobrými výsledky, kteří chtějí kvalitní přípravu na vysokou školu",
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci",
+        "Žáci, kterým vyhovuje tradiční přístup k výuce s důrazem na strukturovaný výklad"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuální podpory a různorodé výukové metody",
+        "Žáci s odlišným pracovním tempem, kterým chybí diferenciace učiva",
+        "Žáci, kteří se lépe učí prostřednictvím inovativních metod a práce s různými zdroji"
+      ],
+      "plain_czech_summary": "Masarykovo klasické gymnázium v Říčanech je prestižní soukromá škola se skvělými výsledky maturit a motivovanými žáky. Vedení je zkušené a stabilní. Silnou stránkou je dlouhodobý rozvoj jazykových dovedností a příprava na vysoké školy. Slabší je individualizace výuky – inspektoři upozornili, že výuka není dostatečně přizpůsobena rozdílným potřebám žáků a chybí inovativní metody. Absence se zvyšuje v horních ročnících."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi dobrý",
+        "key_numbers": [
+          "Všichni žáci úspěšně skončí maturitu (až na jednu výjimku ze zdravotních důvodů v 2022/23)",
+          "Téměř polovina žáků s vyznamenáním, řada s průměrem 1,00",
+          "Dlouhodobě lepší výsledky než průměr v republice"
+        ],
+        "evidence": "Ve školním roce 2021/2022 a 2022/2023 zhruba 30 % žáků využilo mezinárodní certifikát z angličtiny místo profilové zkoušky."
+      },
+      "absence": {
+        "trend": "Meziročně se zlepšila, ale s rozdíly mezi ročníky",
+        "key_numbers": [
+          "Nižší ročníky: dobrá motivace k docházce",
+          "Vyšší ročníky: zvyšující se počet zameškaných hodin",
+          "Žádný žák bez omluvené absence"
+        ],
+        "evidence": "Celková průměrná absence se meziročně zlepšila. Škola stanovila hranici zameškaných hodin a individuálně ji vyhodnocuje."
+      },
+      "support_services": [
+        "Kvalifikovaný výchovný poradce a školní metodista prevence – individuální konzultace s žáky a rodiči",
+        "Plány pedagogické podpory pro 4 žáky se speciálními vzdělávacími potřebami, pravidelně vyhodnocovány",
+        "Kariérové poradenství a přehled o úspěšnosti absolventů na vysokých školách"
+      ],
+      "safety_climate": [
+        "Nízký počet úrazů díky nastaveným opatřením a seznámení všech účastníků s bezpečnostními riziky",
+        "Velmi dobré chování žáků – žádný žák nebyl klasifikován sníženou známkou z chování",
+        "Počet pochval převyšuje uložená kázeňská opatření"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zřizovatelem – úzká a přínosná",
+        "Organizace zajišťující zahraniční studijní pobyty, jazyková škola, Mensa, Akademie věd ČR",
+        "Osvědčení lektoři pro preventivní program, projekt Frankofonie"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak přesně se liší absence v jednotlivých ročnících – pouze uvádí trend",
+        "Není jasné, kolik procent žáků má speciální vzdělávací potřeby (4 ze 231 = 1,7 %)",
+        "Doporučení inspektora na zlepšení jsou obecná – není jasné, jak konkrétně je škola implementuje"
+      ]
+    }
+  }
+}

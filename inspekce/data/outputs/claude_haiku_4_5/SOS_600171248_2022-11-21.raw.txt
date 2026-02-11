@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600171248_2022-11-21",
+  "school_profile": {
+    "school_type": "Střední škola techniky a služeb s obory vzdělání s výučním listem (9 oborů) a s maturitní zkouškou (4 obory)",
+    "inspection_period": "21. listopadu až 25. listopadu 2022",
+    "school_change_summary": "Od poslední inspekce v roce 2018 došlo k výrazné generační obměně 35 % pedagogického sboru, změně ředitelky (od srpna 2020) a modernizaci materiálně-technického vybavení včetně bezbariérového vstupu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vyučování na vysoké úrovni",
+        "detail": "Praktické vyučování se vyznačuje promyšlenou organizací, motivací žáků a postupným rozvojem jejich odborných kompetencí.",
+        "evidence": "Vyučující zdařile motivovali žáky a prohlubovali jejich zájem o zvolený obor, žáci si systematicky osvojovali technologické postupy."
+      },
+      {
+        "tag": "Silné partnerství se zaměstnavateli",
+        "detail": "Škola má vysoký počet sociálních partnerů, kteří účinně kooperují při rozvíjení praktických dovedností žáků na reálných pracovištích.",
+        "evidence": "Sociální partneři účinně kooperují se školou v souladu s požadavky trhu práce a při rozvíjení praktických dovedností žáků."
+      },
+      {
+        "tag": "Moderní vybavení a infrastruktura",
+        "detail": "Škola disponuje dostatečným počtem kmenových tříd, účelně vybavených odborných učeben a modernizovanou technologií.",
+        "evidence": "Byla modernizována učebna výpočetní techniky a jazykové učebny, proběhlo vybudování bezbariérového vstupu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá diferenciace výuky v teoretických předmětech",
+        "detail": "Výuka všeobecně vzdělávacích předmětů není přizpůsobena různé úrovni znalostí žáků a chybí formativní zpětná vazba.",
+        "evidence": "Výuka nebyla diferencována vzhledem k individuálním vzdělávacím potřebám, chybělo závěrečné zhodnocení splnění cíle."
+      },
+      {
+        "tag": "Problémy s angličtinou v nematuritních oborech",
+        "detail": "Výuka anglického jazyka v nematuritních oborech je vedena převážně frontální formou v češtině bez kooperativních prvků.",
+        "evidence": "Vyučujícím nematuritních oborů se nedařilo zařazovat vhodné kooperativní formy, chyběl cílený rozvoj komunikativních dovedností."
+      },
+      {
+        "tag": "Nízké výsledky v matematice na maturitě",
+        "detail": "Matematika vykazuje pouze 17% úspěšnost ze šesti maturujících žáků, přestože škola nabízí doučování.",
+        "evidence": "Škola vzhledem k nízkému počtu maturujících žáků z matematiky vykazuje 17% úspěšnost ze šesti žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje slabší žáky v teoretických předmětech a jaké má plány na zlepšení výuky angličtiny?",
+      "Jaké jsou konkrétní výsledky absolventů na trhu práce a jak dlouho trvá jejich uplatnění po absolvování?",
+      "Jak funguje systém doučování a individuální podpory pro žáky, kteří zaostávají?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením a zájmem o řemesla – praktické vyučování je na vysoké úrovni s moderním vybavením",
+      "Žáci z různého sociokulturního prostředí – škola si klade za cíl poskytovat vzdělávání celému spektru žáků",
+      "Žáci se speciálními vzdělávacími potřebami – škola má speciálního pedagoga a individuálně se k nim přistupuje"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnou podporu v teoretických předmětech – výuka není dostatečně diferencovaná",
+      "Žáci v nematuritních oborech s ambicí na kvalitní angličtinu – výuka je vedena převážně v češtině bez komunikativního přístupu",
+      "Žáci s matematickými problémy v maturitních oborech – úspěšnost je velmi nízká (17 %)"
+    ],
+    "plain_czech_summary": "Škola je silná v praktickém vyučování a má dobré vztahy se zaměstnavateli, což zvyšuje šance absolventů na trhu práce. Infrastruktura je moderní a přístupná. Hlavní slabinou je výuka teoretických předmětů, která není přizpůsobena různým schopnostem žáků a chybí jí aktivizující metody. Angličtina v nematuritních oborech se vyučuje málo efektivně. Matematika na maturitě má velmi nízkou úspěšnost. Škola je vhodná pro prakticky zaměřené žáky, ale teoreticky slabší žáci by měli počítat s větší náročností."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – vysoký podíl neprospívajících žáků",
+      "key_numbers": [
+        "17 % žáků prospělo s vyznamenáním",
+        "33 % žáků neprospělo",
+        "17 % úspěšnost v matematice (6 žáků)"
+      ],
+      "evidence": "Ve školním roce 2021/2022 prospělo s vyznamenáním 17 % žáků z 57 žáků, neprospělo 33 %. Matematika vykazuje 17% úspěšnost."
+    },
+    "absence": {
+      "trend": "Systematicky řešena, pozitivní přístup",
+      "key_numbers": [
+        "Vzájemná informovanost třídních učitelů a učitelů odborného výcviku o neomluvené absenci",
+        "Individuální výchovné programy pro žáky s rizikovým chováním"
+      ],
+      "evidence": "Škole se daří systematickým řešením rizikového chování žáků (školní neúspěch, zvýšená absence) formou spolupráce a individuálních výchovných programů."
+    },
+    "support_services": [
+      "Speciální pedagog zajišťující péči o žáky se speciálními vzdělávacími potřebami",
+      "Dvě výchovné poradkyně a metodik prevence",
+      "Školní poradenské pracoviště zaměřené na profesní orientaci a řešení výchovně vzdělávacích potřeb",
+      "Mentor pro individuální podporu žáka v osobním i studijním životě",
+      "Nabídka doučování a dobrovolných konzultací"
+    ],
+    "safety_climate": [
+      "Míra úrazovosti vykazuje mírně klesající tendenci",
+      "Žáci jsou průběžně upozorňováni na bezpečnostní rizika",
+      "Při praktickém vyučování žáci dodržují zásady bezpečnosti a ochrany zdraví",
+      "Škola vyhodnocuje možná rizika a nastavuje preventivní opatření"
+    ],
+    "partnerships_practice": [
+      "Vysoký počet sociálních partnerů kooperujících na odborném výcviku",
+      "Erasmus+ program umožňující zahraniční stáže v Rakousku nebo Itálii",
+      "Spolupráce s blízkými středními školami na výměně zkušeností",
+      "Tradiční akce Brána řemeslům otevřená pro základní a mateřské školy",
+      "Zapojení odborníků z praxe do výuky odborných předmětů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné stránky a slabiny. Některé pasáže jsou však delší a obsahují více odborné terminologie.",
+    "uncertainty_notes": [
+      "Počet žáků v maturitních oborech (57) je velmi malý, takže procenta mohou být zavádějící – 33 % neprospívajících znamená pouze 19 žáků",
+      "Zpráva nespecifikuje, zda se 33 % neprospívajících týká všech maturitních oborů nebo jen některých",
+      "Není jasné, jaké konkrétní opatření škola již přijala na základě doporučení z roku 2018"
+    ]
+  }
+}
+```

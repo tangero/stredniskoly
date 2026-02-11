@@ -1,0 +1,102 @@
+{
+  "report_id": "SOU_600013006_2022-04-05",
+  "school_profile": {
+    "school_type": "Střední průmyslová a odborná škola s domovem mládeže",
+    "inspection_period": "5. 4. − 8. 4. 2022",
+    "school_change_summary": "Škola nedávno otevřela nový obor Bezpečnostně právní činnost a rozšířila kapacity domova mládeže; naopak ukončila obor Hotelnictví."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a prostory",
+        "detail": "Škola nabízí nadstandardní materiální vybavení včetně nových laboratoří, sportovního zázemí a moderních učeben.",
+        "evidence": "Škola má nadstandardní prostorové podmínky... došlo k rekonstrukci laboratoří... vybudování Centra bezpečnostní přípravy."
+      },
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Žáci získávají cenné zkušenosti na odborné praxi u partnerů v regionu i v zahraničí.",
+        "evidence": "Organizace odborné praxe... je založena na stabilních partnerských vztazích... dvě skupiny žáků... odbornou praxi... v rámci projektu Erasmus+."
+      },
+      {
+        "tag": "Atmosféra a řízení",
+        "detail": "Ve škole panuje otevřené a vstřícné prostředí s efektivním systémem řízení.",
+        "evidence": "Systém řízení... je pozitivně ovlivněn otevřeným způsobem komunikace... výchovně vzdělávací činnost... zohledňuje potřeby i osobnost žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita nového oboru",
+        "detail": "U oboru Bezpečnostně právní činnost je nižší kvalita výuky kvůli nedostatečnému personálnímu zajištění.",
+        "evidence": "V nově vzniklém oboru... Bezpečnostně právní činnost byla zaznamenaná nižší kvalita... v důsledku nedostatečného personálního zajištění."
+      },
+      {
+        "tag": "Pasivita žáků",
+        "detail": "Ve výuce převažuje frontální styl, žáci jsou málo aktivní a spolupráce mezi nimi je minimální.",
+        "evidence": "Pouze v malé míře byla zařazena práce ve dvojicích... což vedlo k nízké míře aktivního zapojování žáků a jejich minimální vzájemné interakci."
+      },
+      {
+        "tag": "Maturita v některých oborech",
+        "detail": "V oboru Masér sportovní a rekondiční je vysoká neúspěšnost u maturitní zkoušky.",
+        "evidence": "Nejvyšší neúspěšnost byla zaznamená u žáků oboru... Masér sportovní a rekondiční... nevykonalo úspěšně... 8 žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší personální zajištění a kvalitu výuky v oboru Bezpečnostně právní činnost?",
+      "Jaké konkrétní metody využívají učitelé k tomu, aby žáci byli ve výuce více aktivní?",
+      "Jaká opatření škola přijímá ke zlepšení maturitních výsledků v oborech s vyšší neúspěšností?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o technické a chemické obory s důrazem na kvalitní vybavení a praxi.",
+      "Žáci, kteří očekávají širokou nabídku sportovních a volnočasových aktivit.",
+      "Studenti, kteří chtějí bydlet v moderně zrekonstruovaném domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o obor Bezpečnostně právní činnost kvůli aktuálním problémům s personálním zajištěním.",
+      "Žáci, kteří preferují moderní interaktivní formy výuky před tradičním výkladem.",
+      "Studenti oboru Masér sportovní a rekondiční vzhledem k vysokému riziku neúspěchu u maturity."
+    ],
+    "plain_czech_summary": "Inspekce potvrdila, že škola má vynikající vybavení, moderní prostory a funguje v příjemné atmosféře. Vedení školy a spolupráce s partnery jsou na vysoké úrovni. Slabinou je nový obor Bezpečnostně právní činnost, kde chybí kvalifikovaní učitelé, a celkově pasivní zapojení žáků do výuky. Rodiče dětí v oboru Masér by měli sledovat jejich studijní výsledky kvůli vysoké neúspěšnosti u maturity. Škola je vhodná pro technicky zaměřené studenty, u nových oborů je však třeba opatrnosti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený (vynikající výsledky v technických oborech, problematické v oboru Masér)",
+      "key_numbers": [
+        "Informační technologie a Aplikovaná chemie: 100 % úspěšnost (28 žáků).",
+        "Masér sportovní a rekondiční: 8 neúspěšných žáků z 28 přihlášených.",
+        "Celkem 578 žáků ve 23 třídách."
+      ],
+      "evidence": "Všech 28 žáků přihlášených k MZ vykonalo MZ úspěšně... Nejvyšší neúspěšnost... nevykonalo úspěšně... 8 žáků."
+    },
+    "absence": {
+      "trend": "Nehodnoceno (inspekce se zaměřila na jiné aspekty)",
+      "key_numbers": [
+        "Data o absenci nebyla v textu uvedena."
+      ],
+      "evidence": "Zpráva neobsahuje konkrétní statistiky absence."
+    },
+    "support_services": [
+      "Škola poskytuje doučování v rámci Národního plánu doučování i individuální konzultace.",
+      "Funguje zde školní psycholog a tři výchovné poradkyně.",
+      "Pro žáky se speciálními potřebami jsou k dispozici tři asistenti pedagoga."
+    ],
+    "safety_climate": [
+      "Vedení školy věnuje významnou pozornost zajištění bezpečného prostředí.",
+      "Kázeň ve třídách byla hodnocena jako velmi dobrá.",
+      "Prevence rizikového chování je zajištěna prostřednictvím kurzů a besed."
+    ],
+    "partnerships_practice": [
+      "Škola spolupracuje s firmami a institucemi v regionu na odborné praxi.",
+      "Realizuje zahraniční stáže v rámci projektu Erasmus+.",
+      "Spolupracuje s vysokými školami na inovaci obsahu učiva."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení silné a slabé stránky a obsahuje konkrétní příklady z výuky i vybavení.",
+    "uncertainty_notes": [
+      "Chybí bližší specifikace 'nižší kvality výuky' v oboru Bezpečnostně právní činnost mimo obecné popisy metod.",
+      "Není jasné, zda problémy s maturitou v oboru Masér jsou systémové nebo jednorázové.",
+      "Text se zmiňuje o 'kontrolní činnosti školního stravování' s prostorem pro zlepšení, ale neuvádí detaily."
+    ]
+  }
+}

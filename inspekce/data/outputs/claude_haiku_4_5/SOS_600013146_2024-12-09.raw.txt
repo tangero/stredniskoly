@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600013146_2024-12-09",
+  "school_profile": {
+    "school_type": "Střední škola zemědělská a veterinární s domovem mládeže a školní jídelnou",
+    "inspection_period": "9. až 12. prosince 2024",
+    "school_change_summary": "Od poslední inspekce vzrostl počet žáků na 344 ve 12 třídách, z toho 28 se speciálními vzdělávacími potřebami. Škola zlepšila materiální podmínky a zavádí tandemovou výuku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné vybavení pro praxi",
+        "detail": "Žáci mají přístup k moderním laboratořím, stájím s dojírnou, školní mlékárně a trenažérům zemědělské techniky přímo v areálu školy.",
+        "evidence": "Areál umožňuje celistvý proces od prvovýroby až po realizaci na trhu, tzv. od \"vidlí po vidličku\"."
+      },
+      {
+        "tag": "Velmi dobré výsledky maturit",
+        "detail": "Úspěšnost u maturitní zkoušky v roce 2024 byla vysoká, hrubá neúspěšnost do 5 % po podzimních termínech.",
+        "evidence": "Výsledky školy byly několik posledních let nad hranicí úspěšnosti v rámci celorepublikového srovnání."
+      },
+      {
+        "tag": "Kvalitní pedagogický sbor",
+        "detail": "Všichni učitelé (kromě jednoho na mateřské dovolené) mají potřebnou kvalifikaci, mnozí jsou odborníci z praxe.",
+        "evidence": "Řada z nich jsou gestoři odborných aktivit mimo školu, což vytváří velmi dobré personální podmínky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná zpětná vazba pro učitele",
+        "detail": "Poskytování funkční zpětné vazby učitelům k posílení jejich pedagogických dovedností není dostatečně účelné.",
+        "evidence": "Inspekce doporučuje vymezovat příležitosti ke zlepšení výuky v rámci hospitační činnosti."
+      },
+      {
+        "tag": "Málo individualizované učení",
+        "detail": "Diferenciace s ohledem na učební potenciál žáků není dostatečně využívána, všichni žáci pracují stejným tempem.",
+        "evidence": "Vyučující nedokáží přiměřeně zaměstnat a rozvíjet žáky se speciálními vzdělávacími potřebami podle jejich schopností."
+      },
+      {
+        "tag": "Slabší práce s informacemi",
+        "detail": "Žáci se málo učí vyhledávat, třídit a analyzovat informace z různých zdrojů.",
+        "evidence": "Práce s informacemi byla zaznamenána pouze ojediněle, chybí důraz na kritické myšlení a informační gramotnost."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá praktická výuka v areálu školy a jak se žáci podílejí na chodu školní mlékárny?",
+      "Jaké jsou možnosti doučování a individuální podpory pro žáky s rozdílnými schopnostmi?",
+      "Jak se škola připravuje na zavedení větší diferenciace a kooperativních aktivit ve výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením a zájmem o zemědělství, veterinářství nebo chov koní",
+      "Studenti, kteří chtějí získat praktické zkušenosti s moderními biotechnologiemi a technologiemi přesného zemědělství",
+      "Žáci z okolí, kteří mohou využít ubytování v domově mládeže a chtějí komplexní vzdělání s vysokou úspěšností u maturity"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální podpory a diferenciace – škola na tom stále pracuje",
+      "Studenti zaměření na teoretické vzdělání bez praktického zaměření – škola je silně orientovaná na praxi",
+      "Žáci, kteří se lépe učí kooperativně – frontální výuka je stále převažující metodou"
+    ],
+    "plain_czech_summary": "Střední škola zemědělská a veterinářství v Lanškrouně je moderní odborná škola s výborným vybavením a kvalitním pedagogickým sborem. Žáci dosahují vysokých výsledků u maturity a jsou dobře připraveni na praxi. Škola nabízí unikátní možnost učit se přímo v areálu se živými zvířaty a moderní technologií. Hlavní výzvou je zavádění více individualizované výuky a lepší práce s informacemi. Škola se aktivně snaží tyto oblasti zlepšovat."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě stabilní a velmi dobré výsledky",
+      "key_numbers": [
+        "Úspěšnost v roce 2024 vysoká",
+        "Hrubá neúspěšnost do 5 % po podzimních termínech",
+        "Výsledky nad celorepublikovým průměrem několik posledních let"
+      ],
+      "evidence": "Úspěšnější byli žáci ve společné části (zejména čeština a angličtina), v profilové části byla škola náročnější. Více než polovina absolventů pokračuje v dalším studiu."
+    },
+    "absence": {
+      "trend": "Nízká míra školní neúspěšnosti a stability žáků",
+      "key_numbers": [
+        "Minimum neúspěšných žáků po doplnění klasifikace",
+        "Velmi nízký počet žáků opakujících ročník",
+        "Příchody a odchody žáků jsou spíše výjimkou"
+      ],
+      "evidence": "Škola předchází riziku školní neúspěšnosti nabídkou doučování. Nízká byla i míra kázeňských opatření, jen ojediněle jsou žáci hodnoceni sníženým stupněm z chování."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s možností konzultací u externí psycholožky",
+      "Doučování pro žáky s problémy",
+      "Adaptační kurzy, lyžařský výcvik a sportovně-cyklistický kurz pro podporu vztahů v třídě",
+      "Pestrá nabídka kroužků (jezdecký, chovatelů skotu, kynologie, chovu králíků) předcházející rizikovému chování"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra většiny vyučovacích hodin",
+      "Dbání na upevňování zásad bezpečné práce a ochrany zdraví v praktickém vyučování",
+      "Vyšší počty pochval podporující motivaci žáků",
+      "Domov mládeže s úsilím vytvářet příznivé podmínky pro pobyt ubytovaných žáků"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s řadou zahraničních škol obdobného zaměření v rámci programu Erasmus+",
+      "Partnerství s profesními zemědělskými odbornými organizacemi (Zemědělský svaz ČR, Agrární komora)",
+      "Spolupráce s jednotlivými zemědělskými organizacemi",
+      "Nabídka zkoušek profesní kvalifikace a kurzů pro veřejnost (inseminace, cvičitel jezdectví, Dornovy metody)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a doklady. Jsou jasně odděleny silné stránky, slabé stránky a doporučení. Některé pasáže jsou však delší a obsahují více technických termínů, které mohou být pro laiky méně přístupné.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků v jednotlivých oborech pro školní rok 2024/2025, pouze zmínku o 344 žácích celkem",
+      "Nejsou uvedeny konkrétní procenta úspěšnosti v jednotlivých předmětech maturitní zkoušky",
+      "Chybí informace o počtu žáků, kteří pokračují v dalším studiu (zmínka pouze \"více než polovina\")"
+    ]
+  }
+}
+```

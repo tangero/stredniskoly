@@ -1,0 +1,102 @@
+```json
+{
+  "report_id": "SOS_600016587_2024-04-22",
+  "school_profile": {
+    "school_type": "Střední odborná škola, čtyřletý obor Informační technologie s maturitní zkouškou",
+    "inspection_period": "22. až 24. dubna 2024",
+    "school_change_summary": "Od roku 2021 nový zřizovatel (Webdevel s.r.o.), nová ředitelka. Rekonstrukce učeben, modernizace IT vybavení. Naplněnost školy vzrostla z 72,5 % na 85 % z maxima 131 žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola úzce spolupracuje s IT firmami na praktickém vyučování, tvorbě učebních plánů a zahraničních stážích přes ERASMUS+.",
+        "evidence": "Škola 'účelně spolupracuje s firmami zabývajícími se informačními technologiemi' a nabízí 'stáže žáků u zahraničních zaměstnavatelů'."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Čtyři počítačové učebny a jazyková učebna s audiovizuální technikou a aktuálním softwarem.",
+        "evidence": "Škola má 'osm účelně zařízených učeben, z nichž čtyři jsou počítačové' s 'modernizací prostředků informačních technologií'."
+      },
+      {
+        "tag": "Úspěšnost u maturity",
+        "detail": "Hrubá úspěšnost u maturitní zkoušky se pohybuje mezi 79–95 % v posledních třech letech.",
+        "evidence": "'Hrubá úspěšnost žáků u maturitní zkoušky se v posledních třech letech pohybovala mezi 79 - 95 %'."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalifikace učitelů",
+        "detail": "Pět z 12 učitelů nesplňuje zákonné požadavky na odbornou kvalifikaci, někteří si ji doplňují studiem.",
+        "evidence": "'Pět učitelů z 12 nesplňuje podmínky pro odbornou kvalifikaci' a 'nedostatek pedagogického vzdělání' se 'částečně negativně projevil v kvalitě sledované výuky'."
+      },
+      {
+        "tag": "Slabá výuka",
+        "detail": "Převažuje frontální výuka s nízkou aktivitou žáků, chybí diferenciace podle schopností a sebehodnocení.",
+        "evidence": "'Přibližně ve dvou třetinách sledované výuky převládala méně efektivní frontální forma' a 'pouze výjimečně byla využita diferenciace výuky'."
+      },
+      {
+        "tag": "Řízení školy",
+        "detail": "Ředitelka nemá zástupce, má vysoký počet vyučovacích hodin a kontrolní systém není plně funkční.",
+        "evidence": "'Ředitelkou nastavený kontrolní systém není zcela funkční' a 'Vzhledem k tomu, že ve škole není obsazena funkce zástupce ředitelky'."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak se škola vypořádává s tím, že pět učitelů nemá požadovanou kvalifikaci? Jaký je plán na jejich doplnění?",
+      "Jaké konkrétní kroky podnikne škola na zlepšení výuky, aby více žáků pracovalo v skupinách a rozvíjelo kritické myšlení?",
+      "Jak bude řešena absence zástupce ředitele a vysoká zátěž ředitelky?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o IT obor a budoucí kariéru v technologiích, kteří ocení praktické vazby na firmy",
+      "Studenti, kteří se dobře učí z přednášek a jsou schopni samostudia, protože převažuje frontální výuka",
+      "Žáci se speciálními potřebami, kterým škola nabízí asistenty pedagoga a individuální podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a skupinové učení – výuka je zatím málo zaměřena na kooperaci",
+      "Studenti vyžadující individuální přístup a diferenciaci – škola ji zatím málo uplatňuje",
+      "Rodiny, které očekávají silné vedení školy – chybí zástupce ředitele a kontrolní systém není optimální"
+    ],
+    "plain_czech_summary": "SOŠ NET OFFICE Orlová je soukromá IT škola s 111 žáky. Silné stránky: moderní vybavení, spolupráce s firmami, dobrá úspěšnost u maturity (79–95 %). Slabiny: pět z 12 učitelů nemá požadovanou kvalifikaci, výuka je převážně frontální bez skupinové práce, chybí diferenciace podle schopností. Ředitelka vede školu bez zástupce a má vysokou vyučovací zátěž. Inspekce doporučuje zlepšit řízení, kvalifikaci pedagogů a zavést aktivnější vyučovací metody."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně dobrý",
+      "key_numbers": [
+        "Hrubá úspěšnost 79–95 % v posledních třech letech",
+        "20 % žáků ukončilo ročník s vyznamenáním (2022/2023)",
+        "75 % žáků prospělo, 5 % neprospělo (2022/2023)"
+      ],
+      "evidence": "'Hrubá úspěšnost žáků u maturitní zkoušky se v posledních třech letech pohybovala mezi 79 - 95 %' a 'z výsledků žáků konajících maturitní zkoušku je patrná jejich dobrá připravenost'."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně zajišťující kariérové poradenství a metodiku prevence",
+      "Dvě asistentky pedagoga pro žáky se speciálními vzdělávacími potřebami",
+      "Doučování a individuální konzultace pro žáky s problémy"
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování a ochrany zdraví",
+      "Výuka probíhala v příznivé pracovní atmosféře se vstřícným přístupem pedagogů",
+      "Žáci dodržovali nastavená komunikační a organizační pravidla"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s IT firmami na praktickém vyučování a tvorbě ŠVP",
+      "Stáže žáků u zahraničních zaměstnavatelů v rámci ERASMUS+",
+      "Praktické vyučování od 2. ročníku na pracovištích smluvních partnerů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Slabiny jsou jasně identifikovány s citacemi. Chybí však více číselných údajů o absenci a některé aspekty nejsou detailně rozvedeny.",
+    "uncertainty_notes": [
+      "Inspekční zpráva neobsahuje údaje o absenci žáků, což je důležitý indikátor klimatu školy",
+      "Není jasné, jak dlouho trvá, než si učitelé doplní kvalifikaci, a jaký je konkrétní plán",
+      "Chybí informace o počtu žáků, kteří opakují ročník nebo školu opouštějí"
+    ]
+  }
+}
+```

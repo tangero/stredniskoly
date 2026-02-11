@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "SOS_600004830_2024-02-22",
+  "school_profile": {
+    "school_type": "Střední odborná škola s maturitní zkouškou (denní a kombinovaná forma)",
+    "inspection_period": "22. 2. 2024 – 27. 2. 2024",
+    "school_change_summary": "Od inspekce v 2017 vzrostl počet žáků na 428 v denním studiu. Došlo k obměně čtvrtiny pedagogického sboru. Škola modernizuje vybavení a odstraňuje některé dřívější nedostatky, ale část přetrvává."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Škola systematicky rozvíjí jazykové kompetence žáků výukou v angličtině, němčině, španělštině a ruštině včetně odborných předmětů v angličtině.",
+        "evidence": "Metodicky propracovaná výuka cizích jazyků s efektivním využitím aktivizačních forem a reálné komunikace."
+      },
+      {
+        "tag": "Profilace studia",
+        "detail": "Různá zaměření oborů umožňují žákům užší profilaci již od prvního ročníku podle jejich zájmů.",
+        "evidence": "Obchodní akademie, Ekonomika a podnikání, Management v reklamě a umění, Podnikatelský management."
+      },
+      {
+        "tag": "Péče o žáky",
+        "detail": "Funkční systém poradenské a preventivní péče s psychologickou podporou a individuálními konzultacemi.",
+        "evidence": "Metodička prevence zajišťuje účinné řešení individuálních problémů a sociometrická šetření."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita výuky v části hodin",
+        "detail": "V některých hodinách převažuje frontální výuka s málo aktivizujícími metodami, žáci nejsou dostatečně zapojeni.",
+        "evidence": "Nízká míra diferenciace, jednotvárnost výuky, malá motivace žáků, nedostatečné ověřování efektivity."
+      },
+      {
+        "tag": "Vysoká neúspěšnost v kombinované formě",
+        "detail": "V kombinovaném studiu oboru Podnikání neprospělo v prvním pololetí 2023/2024 až 92 % žáků.",
+        "evidence": "Vysoká absence v konzultačních hodinách, pouze 27 % žáků řádně dokončilo vzdělávací cyklus."
+      },
+      {
+        "tag": "Slabá metodická podpora učitelů",
+        "detail": "Hospitační činnost vedení školy chybí konkrétní doporučení a následné ověření zlepšení.",
+        "evidence": "Absence didaktických závěrů, nedostatečné zapojování žáků do evaluace, chybí metodická pomoc jednotlivým vyučujícím."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se slabšími výsledky a jak se liší přístup v jednotlivých oborech?",
+      "Jaké jsou důvody vysoké neúspěšnosti v kombinované formě studia a co se plánuje změnit?",
+      "Jak se škola vypořádává s tím, že v některých hodinách převažuje frontální výuka místo aktivního zapojení žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní komunikaci – škola nabízí kvalitní jazykové vzdělání s certifikáty.",
+      "Motivovaní žáci v denní formě – stabilní výsledky v maturitě, dobrá příprava na vysoké školy.",
+      "Žáci s individuálními potřebami – škola má systém péče o žáky se speciálními vzdělávacími potřebami a cizince."
+    ],
+    "who_should_be_cautious": [
+      "Žáci v kombinované formě studia – vysoká neúspěšnost (92 % neprospělo v 1. pololetí 2023/2024).",
+      "Žáci potřebující individuální přístup – v části výuky není dostatečná diferenciace podle jejich tempa a schopností.",
+      "Žáci se slabší jazykovou bariérou – podpora není vždy včas systémově nastavena."
+    ],
+    "plain_czech_summary": "Československá akademie obchodní je etablovaná škola s 150letou tradicí. Silná je v jazykách a nabízí kvalitní odborné vzdělání. Výsledky v maturitě jsou dobré, zejména v cizích jazycích. Problém je vysoká neúspěšnost v kombinované formě studia a v některých hodinách málo aktivní zapojení žáků. Vedení školy by mělo zlepšit metodickou podporu učitelů a diferenciaci výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní až pozitivní v denní formě, problematická v kombinované formě",
+      "key_numbers": [
+        "Téměř všichni žáci denních oborů uspěli v společné části MZ",
+        "Hrubá neúspěšnost v kombinované formě vyšší než celostátní průměr",
+        "Pouze 27 % žáků kombinované formy řádně dokončilo vzdělávací cyklus"
+      ],
+      "evidence": "Ve čtyřletých oborech neuspěli pouze jednotlivci. V cizích jazycích dosáhli výrazně lepších výsledků než průměr skupiny oborů."
+    },
+    "absence": {
+      "trend": "Mírné zlepšení v denní formě, vysoká absence v kombinované formě",
+      "key_numbers": [
+        "Nárůst počtu žáků s řádně uzavřenou klasifikací",
+        "Vysoká absence v konzultačních hodinách kombinované formy",
+        "V kombinované formě neprospělo 92 % žáků v 1. pololetí 2023/2024"
+      ],
+      "evidence": "Absence negativně ovlivňuje výsledky vzdělávání, zejména v kombinované formě studia."
+    },
+    "support_services": [
+      "Poradenská péče s psychologickou podporou a metodičkou prevence",
+      "Individuální konzultace a sociometrická šetření",
+      "Adaptační a tematické programy primární prevence (adaptační kurzy, projekt stylu učení)",
+      "Péče o žáky se speciálními vzdělávacími potřebami (cca 6 % žáků) podle doporučení školského poradenského zařízení",
+      "Podpora žáků s dlouhodobými zdravotními problémy a aktivních sportovců"
+    ],
+    "safety_climate": [
+      "Recepce a čipový systém vstupu do budovy",
+      "Kamerový systém",
+      "Vyvážený systém výchovných opatření s převahou pochval",
+      "Postupy řešení závažného chování (kyberšikana) ve spolupráci s příslušnými orgány",
+      "Žáci respektují dohodnutá pravidla práce a komunikace, jsou velmi ukáznění"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Fakulty financí a účetnictví VŠE Praha a Právnické fakulty UK Praha",
+      "Spolupráce s vysokými školami, zaměstnavateli, bankami, svazem účetních",
+      "Konstruktivní spolupráce se zřizovatelem (Hlavní město Praha)",
+      "Rada rodičů aktivně se zapojuje do chodu školy",
+      "Organizace regionálních odborných soutěží pro střední školy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však technicky náročnější (kritéria, kódy), ale pro rodiče jsou relevantní části srozumitelné.",
+    "uncertainty_notes": [
+      "Přesné důvody vysoké neúspěšnosti v kombinované formě nejsou v textu detailně vysvětleny – jde o absenci, motivaci, nebo kvalitu výuky?",
+      "Není jasné, jak velký je podíl žáků se speciálními potřebami a jak efektivní je jejich podpora v praxi.",
+      "Chybí informace o tom, jak se škola vypořádá s doporučeními inspekce – jaká konkrétní opatření již přijala."
+    ]
+  }
+}
+```

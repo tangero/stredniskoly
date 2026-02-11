@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOU_600005666_2024-02-26",
+  "school_profile": {
+    "school_type": "Gymnázium, střední odborná škola a Pražská taneční konzervatoř (soukromá, s.r.o.)",
+    "inspection_period": "26. února až 29. února 2024",
+    "school_change_summary": "Od inspekce v roce 2015 se zvýšil počet žáků v konzervatoři. Škola nabízí obory: Gymnázium, Obchodní akademie, Hotelnictví, Kosmetické služby a Tanec. Ve školním roce 2023/2024 měla 277 žáků střední školy a 77 žáků konzervatoře. Časté změny vedení (ředitel, zástupce) negativně ovlivnily kontinuitu vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výuka tance na vysoké úrovni",
+        "detail": "Pedagogové v tanci dosahují velmi dobrých výsledků díky své odbornosti, důsledné opravě chyb a profesionálnímu přístupu.",
+        "evidence": "Všichni žáci oboru Tanec ukončili studium absolutoriem. Pedagogové dbali na přesný metodický postup a průběžné hodnocení."
+      },
+      {
+        "tag": "Respektující přístup učitelů",
+        "detail": "Pedagogové vytvářejí pozitivní pracovní atmosféru a zohledňují specifika jednotlivých žáků.",
+        "evidence": "Společným rysem sledovaných hodin byl respektující přístup pedagogů a dodržování nastavených pravidel žáky."
+      },
+      {
+        "tag": "Kvalitní materiální vybavení",
+        "detail": "Škola má specializované učebny, cvičnou kuchyni, kosmetický salón, pět baletních sálů a moderní techniku.",
+        "evidence": "Budova poskytuje kultivované a esteticky podnětné prostředí. Pro všechny obory jsou k dispozici specializované učebny."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá podpora žáků s jiným mateřským jazykem",
+        "detail": "Systém podpory není dostatečný, což vede k předčasným odchodům těchto žáků ze studia.",
+        "evidence": "Vzdělávání často zanechávají také žáci s odlišným mateřským jazykem. Nastavený systém podpory není dostatečný."
+      },
+      {
+        "tag": "Vysoká fluktuace žáků v tanci",
+        "detail": "Vzhledem k vysoké náročnosti studia v oboru Tanec dokončí vzdělávání pouze třetina žáků.",
+        "evidence": "Vzhledem k vysoké náročnosti studia v oboru Tanec dokončí vzdělávání pouze třetina žáků, kteří zahájili vzdělávání v prvním ročníku."
+      },
+      {
+        "tag": "Slabá vybavení gymnázia",
+        "detail": "Gymnázium nemá optimální podmínky pro výuku přírodovědných předmětů – chybějí laboratoře a odborné učebny.",
+        "evidence": "Gymnázium nemá optimální podmínky pro výuku přírodovědných předmětů, neboť zde chybějí laboratoře a odborné učebny."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s jiným mateřským jazykem? Jaké jsou dostupné konzultace a intenzivní kurzy?",
+      "Jaké jsou důvody vysoké fluktuace v oboru Tanec a jak škola pomáhá žákům, kteří mají potíže?",
+      "Plánuje škola zlepšit vybavení gymnázia pro přírodovědné předměty (laboratoře, odborné učebny)?"
+    ],
+    "who_school_fits": [
+      "Zájemci o tanec s vážným záměrem studovat na vysoké úrovni – škola má kvalitní pedagogy a vybavení",
+      "Uchazeči do oborů Hotelnictví a Obchodní akademie – tyto obory mají dobré výsledky v maturitě",
+      "Žáci, kteří preferují menší třídy a individuální přístup – škola nabízí nízké počty žáků v některých skupinách"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s jiným mateřským jazykem – podpora není dostatečná a hrozí předčasný odchod ze studia",
+      "Zájemci o gymnázium – obor má nízké počty žáků a chybí vybavení pro přírodovědné předměty",
+      "Žáci v tanci bez vysoké fyzické a psychické odolnosti – obor je velmi náročný a skončí jej jen třetina"
+    ],
+    "plain_czech_summary": "Gymnázium v Praze-Řepech nabízí pestrou nabídku oborů. Silnou stránkou je výuka tance s kvalitními pedagogy a dobrými výsledky v maturitě. Škola má moderní vybavení a respektující přístup učitelů. Slabinou je nedostatečná podpora žáků s jiným mateřským jazykem, vysoká fluktuace v tanci a slabé vybavení gymnázia pro přírodovědné předměty. Vedení školy se potýká s důsledky časté obměny vedoucích pracovníků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s rozdíly mezi obory",
+      "key_numbers": [
+        "Hotelnictví a Tanec: 100% úspěšnost (všichni přihlášení žáci byli úspěšní)",
+        "Obchodní akademie a Kosmetické služby: neuspěli pouze jednotlivci (např. 2 žáci v cizím jazyce v OA roku 2021)",
+        "Tanec: všichni žáci ukončili studium absolutoriem"
+      ],
+      "evidence": "Ve sledovaném období 2020/2021 až 2022/2023 dosahovali nejlepších výsledků žáci oborů Hotelnictví a Tanec. V některých oborech se zkoušky konaly s velmi nízkými počty žáků."
+    },
+    "absence": {
+      "trend": "Nízký výskyt rizikových projevů chování",
+      "key_numbers": [
+        "Snížené známky z chování převážně za pozdní příchody a neomluvenou absenci",
+        "Motivační efekt pochval převažuje nad kázeňskými opatřeními",
+        "Menší třídní kolektivy napomáhají předcházení rizikovým jevům"
+      ],
+      "evidence": "Systém preventivních mechanismů je funkční, což dokládá nízký výskyt rizikových projevů chování."
+    },
+    "support_services": [
+      "Výchovný poradce zajišťuje koordinaci pedagogického působení a podporu žáků se speciálními vzdělávacími potřebami",
+      "Intenzivní výuka českého jazyka a konzultace pro žáky s odlišným mateřským jazykem (systém však není dostatečný)",
+      "Poradenské služby pro různé vzdělávací potřeby žáků"
+    ],
+    "safety_climate": [
+      "Kamerový systém monitorující okolí vchodu do budovy",
+      "Služba vrátného pro lepší zajištění bezpečnosti žáků",
+      "Nízký výskyt rizikových projevů chování a funkční systém prevence"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery při realizaci praktického vyučování",
+      "Zapojení do programu Erasmus+ – žáci absolvovali stáže v Turecku, na Slovensku a v Estonsku",
+      "Konstruktivní vztahy se zřizovatelem a školskou radou"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasným oddělením silných a slabých stránek. Některé pasáže jsou však technicky náročnější (kritéria, kódy), ale pro rodiče jsou relevantní části jasné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje přesné počty žáků, kteří předčasně opustili studium – uvádí jen kvalitativní popis",
+      "Není jasné, jaké konkrétní vzdělávací akce absolvovali učitelé – jsou zmíněny jen oblasti (cizí jazyky, přírodovědné předměty)",
+      "Chybí informace o tom, jak dlouho trvá typické studium v jednotlivých oborech a jaké jsou reálné šance na úspěch"
+    ]
+  }
+}
+```

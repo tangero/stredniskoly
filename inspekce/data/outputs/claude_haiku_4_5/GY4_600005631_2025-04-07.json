@@ -1,0 +1,49 @@
+{
+  "report_id": "GY4_600005631_2025-04-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:38:33.778150+00:00",
+  "run_finished_utc": "2026-02-09T13:38:38.232754+00:00",
+  "raw_file": "GY4_600005631_2025-04-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600005631_2025-04-07",
+    "school_profile": {
+      "school_type": "Hotelová škola a Gymnázium",
+      "inspection_period": "7.–10. dubna 2025",
+      "school_change_summary": "Dokument obsahuje pouze konverzní doložku bez obsahu inspekční zprávy."
+    },
+    "for_parents": {
+      "strengths": [],
+      "risks": [],
+      "questions_for_open_day": [],
+      "who_school_fits": [],
+      "who_should_be_cautious": [],
+      "plain_czech_summary": "K dispozici je pouze administrativní doložka o převodu dokumentu do elektronické podoby. Vlastní obsah inspekční zprávy není v dodaném textu obsažen. Pro získání informací o kvalitě vzdělání, výsledcích maturit, bezpečnosti a dalších aspektech školy je nutné požádat o úplný text zprávy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nedostupné",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje data o maturitě."
+      },
+      "absence": {
+        "trend": "Nedostupné",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje data o absenci."
+      },
+      "support_services": [],
+      "safety_climate": [],
+      "partnerships_practice": []
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 1,
+      "czech_clarity_reason": "Dodaný text je pouze konverzní doložka bez obsahu inspekční zprávy. Nelze analyzovat kvalitu školy.",
+      "uncertainty_notes": [
+        "Chybí vlastní obsah inspekční zprávy",
+        "Není možné posoudit silné stránky ani rizika školy",
+        "Analýza je nemožná bez faktického obsahu dokumentu"
+      ]
+    }
+  }
+}

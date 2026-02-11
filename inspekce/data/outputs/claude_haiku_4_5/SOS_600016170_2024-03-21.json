@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600016170_2024-03-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:21:10.311016+00:00",
+  "run_finished_utc": "2026-02-09T16:21:32.085580+00:00",
+  "raw_file": "SOS_600016170_2024-03-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600016170_2024-03-21",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola a Obchodní akademie (SPŠ a OA)",
+      "inspection_period": "21. března až 27. března 2024",
+      "school_change_summary": "Škola se rozvinula: přidán obor Elektrotechnika (od 2018/2019), pedagogický sbor vzrostl z 34 na 54 učitelů, proběhla modernizace učeben a sportovního areálu, navázána mezinárodní spolupráce."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečnost a klima",
+          "detail": "Škola aktivně vytváří bezpečné prostředí s kamerovým systémem, filtrováním osob u vstupu a oplocením areálu.",
+          "evidence": "Vedení školy usiluje o maximální zvýšení bezpečnosti žáků a zaměstnanců."
+        },
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Výuka je dobře připravená, učitelé systematicky motivují žáky k dosahování dobrých výsledků.",
+          "evidence": "Výuka byla promyšlená a dobře připravená v souladu s kurikulárními dokumenty."
+        },
+        {
+          "tag": "Praktické dovednosti",
+          "detail": "Škola efektivně propojuje teorii s praxí prostřednictvím projektů, exkurzí a zahraničních stáží.",
+          "evidence": "Cíleně zařazované rozšiřující vzdělávací aktivity účinně propojují teoretické poznatky s praxí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kritické myšlení",
+          "detail": "Ve výuce chybí dostatečné aktivity na rozvoj kritického myšlení a práce s různými informačními zdroji.",
+          "evidence": "Ve výuce jsou jen ojediněle nabízeny aktivity podporující práci s různými informačními zdroji."
+        },
+        {
+          "tag": "Domov mládeže",
+          "detail": "Ubytovací zařízení má zastaralý a opotřebený nábytek, který neodpovídá současným standardům.",
+          "evidence": "Pokoje jsou vybaveny starou a nesourodou sestavou nábytku, čalouněný nábytek působí mechanicky opotřebeným dojmem."
+        },
+        {
+          "tag": "Úrazovost",
+          "detail": "Míra úrazovosti je vyšší než celorepublikový průměr, zejména při tělesné výchově.",
+          "evidence": "Míra úrazovosti je vyšší než celorepublikový průměr. Důvodem jsou poranění v tělesné výchově."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola rozvíjí kritické myšlení a práci s informačními zdroji v jednotlivých předmětech?",
+        "Jaký je plán na modernizaci domova mládeže a kdy se počítá s jeho realizací?",
+        "Jak se škola snaží snižovat počet úrazů při tělesné výchově a pohybových aktivitách?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí kvalitní odborné vzdělání s propojením teorie a praxe v oborech IT, strojírenství, elektrotechniky nebo obchodu.",
+        "Talentovaní žáci zajímající se o soutěže a projekty – škola má úspěchy v SOČ a podporuje nadané žáky.",
+        "Žáci se speciálními vzdělávacími potřebami – škola poskytuje individuální podporu a podpůrná opatření."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní rozvoj kritického myšlení a samostatné vyhledávání informací – to není dostatečně zařazeno.",
+        "Ubytovaní žáci – domov mládeže má zastaralé vybavení a neodpovídá současným standardům.",
+        "Žáci se zdravotními omezeními v tělesné výchově – míra úrazovosti je vyšší než průměr."
+      ],
+      "plain_czech_summary": "SPŠ a OA Bruntál je dobře vedená škola s kvalitní výukou a bezpečným prostředím. Ředitel má jasnou vizi, učitelé jsou motivovaní a výuka je promyšlená. Škola úspěšně propojuje teorii s praxí a má vysokou úspěšnost u maturit (98,8 %). Slabší je rozvoj kritického myšlení a práce s informacemi. Domov mládeže potřebuje modernizaci. Úrazovost je vyšší než průměr."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi vysoká úspěšnost",
+        "key_numbers": [
+          "Čistá úspěšnost 98,8 % v jarním zkušebním období 2023",
+          "100% úspěšnost v oborech IT, Dopravní prostředky a Obchodní akademie",
+          "95,5% úspěšnost v oboru Strojírenství"
+        ],
+        "evidence": "Velmi dobrou úroveň dosažených kompetencí potvrzují výsledky žáků při ukončování vzdělávání maturitní zkouškou."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Informace o absenci nejsou v inspekční zprávě uvedeny"
+        ],
+        "evidence": "Zpráva se nezabývá absencí žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní a kariérovou poradkyní",
+        "Školní metodička prevence s pravidelnou spoluprací s pedagogicko-psychologickou poradnou",
+        "Systém podpůrných opatření pro 64 žáků se speciálními vzdělávacími potřebami (1.–3. stupeň)"
+      ],
+      "safety_climate": [
+        "Kamerový systém a filtrování osob u vstupu do budovy",
+        "Systém identifikačních karet ISIC/ITIC",
+        "Oplocení areálu",
+        "Pravidelné poučování žáků o bezpečnosti a ochraně zdraví",
+        "Míra úrazovosti vyšší než celorepublikový průměr"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se středními školami a školami v zahraničí",
+        "Kontakty se sociálními partnery a vzdělávacími institucemi",
+        "Zapojení do mnoha projektů s finančními dotacemi",
+        "Zahraniční stáže pro žáky",
+        "Účast v prestižní soutěži Středoškolská odborná činnost s pravidelnými úspěchy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelnou češtinou s jasnou strukturou. Všechna důležitá zjištění jsou konkrétní a podložená příklady. Silné a slabé stránky jsou jasně odděleny a snadné k pochopení.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, zda je problém nebo se prostě nehodnotila.",
+        "Konkrétní čísla o úrazovosti nejsou uvedena, pouze že je vyšší než průměr.",
+        "Plán na modernizaci domova mládeže není v textu zmíněn."
+      ]
+    }
+  }
+}

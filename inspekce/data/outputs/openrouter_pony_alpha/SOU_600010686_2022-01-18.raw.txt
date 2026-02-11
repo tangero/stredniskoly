@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600010686_2022-01-18",
+  "school_profile": {
+    "school_type": "Střední škola gastronomie a služeb",
+    "inspection_period": "18.−21. 1. 2022",
+    "school_change_summary": "Škola od roku 2018/2019 neposkytuje vzdělávání v nástavbovém studiu, počet žáků je v posledních letech stabilní."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Profesní příprava je na vysoké úrovni v moderních provozech otevřených veřejnosti.",
+        "evidence": "Profesní příprava žáků je na vysoké úrovni... praktické vyučování je realizováno v prostředí reálných provozoven."
+      },
+      {
+        "tag": "Vybavení školy",
+        "detail": "Škola disponuje moderním vybavením a technologiemi pro všechny obory.",
+        "evidence": "Škola je průběžně vybavována nejnovějšími technologiemi... pro realizaci praktického vyučování napříč všemi obory."
+      },
+      {
+        "tag": "Úspěšnost u zkoušek",
+        "detail": "Žáci s výučním listem dosahují dlouhodobě vynikajících výsledků u závěrečných zkoušek.",
+        "evidence": "Žáci oborů vzdělání s výučním listem dosahují dlouhodobě velmi dobrých výsledků... prospívá přibližně 95 % žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturita",
+        "detail": "Škola vykazuje vyšší neúspěšnost ve společné části maturitní zkoušky než je průměr.",
+        "evidence": "Škola vykazuje v posledních třech školních letech vyšší neúspěšnost... než je republikový průměr."
+      },
+      {
+        "tag": "Absence",
+        "detail": "Vysoká neomluvená absence negativně ovlivňuje výsledky vzdělávání.",
+        "evidence": "Dlouhodobým problémem... je vysoká absence žáků... neomluvené absence byly zaznamenány u téměř poloviny žáků."
+      },
+      {
+        "tag": "Výukové metody",
+        "detail": "V teoretické výuce převažuje frontální vyučování s menším zapojením žáků.",
+        "evidence": "Převládala frontální forma výuky... vedlo v některých hodinách k nerovnoměrnému zapojení žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje žáky v přípravě na společnou část maturitní zkoušky, kde jsou horší výsledky?",
+      "Jaká konkrétní opatření škola používá k řešení vysoké neomluvené absence?",
+      "Mohou žáci při teoretické výuce využívat více moderních metod a pomůcek než je frontální výuka?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří se chtějí naučit řemeslo a uplatnit se v gastronomii, kadeřnictví nebo krejčovství.",
+      "Pro žáky, kteří preferují praktickou výuku v reálných provozách před teoretickým studiem.",
+      "Pro ty, kteří chtějí získat speciální kurzy (barista, barman) a účastnit se odborných soutěží."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty slabší studijními předpoklady směřující k maturitě bez cílené podpory.",
+      "Pro žáky s tendencí k vyšší absenci, kterým hrozí neúspěch nebo předčasné ukončení.",
+      "Pro ty, kteří očekávají pestrou a interaktivní výuku i v teoretických předmětech."
+    ],
+    "plain_czech_summary": "Škola nabízí vynikající odbornou přípravu v moderních provozovnách (restaurace, salon) a vybavení, což žákům zajišťuje uplatnění v oboru. Slabinou je vyšší neúspěšnost u maturitních zkoušek a vysoká absence, která komplikuje studium. Výuka v teoretických předmětech bývá méně pestrá. Škola je vhodná pro prakticky založené uchazeče, o maturitní obory by měli zájemci uvažovat s ohledem na náročnost společných zkoušek."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Klesající / horší než průměr",
+      "key_numbers": [
+        "Průměrná neúspěšnost za 3 roky: 18 %",
+        "Neúspěšnost v roce 2020/2021: téměř 10 %",
+        "Vyznamenání v roce 2020/2021: pouze 3 žáci"
+      ],
+      "evidence": "Škola vykazuje v posledních třech školních letech vyšší neúspěšnost... než je republikový průměr."
+    },
+    "absence": {
+      "trend": "Vysoká a dlouhodobě problematická",
+      "key_numbers": [
+        "Průměrně 140 omluvených hodin na žáka",
+        "Průměrně 13 neomluvených hodin na žáka",
+        "Neomluvená absence u téměř poloviny žáků"
+      ],
+      "evidence": "Vysoká absence žáků... přesahovala průměrně 140 omluvených a 13 neomluvených hodin na žáka."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (2 výchovní poradci, metodik prevence)",
+      "Individuální konzultace a doučování pro žáky ohrožené neúspěchem",
+      "Kariérové poradenství"
+    ],
+    "safety_climate": [
+      "Příznivé pracovní klima s tolerantním partnerským přístupem učitelů",
+      "Zabezpečovací systém v celém areálu školy",
+      "Důsledné řešení neomluvené absence kázeňskými opatřeními"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s renomovanými hotely, restauracemi a řetězci",
+      "Praktické vyučování na smluvních pracovištích partnerů",
+      "Přerušená mezinárodní spolupráce kvůli pandemii"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, odborné termíny jsou vysvětleny kontextem, struktura je jasná.",
+    "uncertainty_notes": [
+      "Nejasné, zda se problém s maturitou týká všech oborů nebo jen specifických.",
+      "Chybí upřesnění, jak konkrétně probíhá 'produktivní práce' žáků a její podíl.",
+      "Není zcela jasné, jak jsou řešeny kázeňské problémy spojené s absencí u konkrétních žáků."
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600020525_2024-01-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:28:57.740020+00:00",
+  "run_finished_utc": "2026-02-09T16:29:23.426579+00:00",
+  "raw_file": "SOS_600020525_2024-01-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600020525_2024-01-22",
+    "school_profile": {
+      "school_type": "Střední škola podnikatelská a Vyšší odborná škola (s.r.o.)",
+      "inspection_period": "22. 1. 2024 – 25. 1. 2024",
+      "school_change_summary": "Výrazný nárůst žáků denního studia, rozšíření nabídky o sportovní management a trenérství, modernizace vybavení a digitálních technologií, stabilizace pedagogického sboru."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické propojení s praxí",
+          "detail": "Dlouhodobá kvalitní spolupráce se firmami v podnikání, cestovním ruchu a sportovními organizacemi zlepšuje uplatnitelnost absolventů.",
+          "evidence": "Spolupráce se středními a vysokými školami, profesními organizacemi a mezinárodní mobilita žáků."
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Nové počítačové učebny, sportovní zázemí a digitální technologie vytvářejí optimální podmínky pro výuku.",
+          "evidence": "Modernizace vybavení učeben, nové didaktické techniky, softwarové vybavení, nová počítačová učebna."
+        },
+        {
+          "tag": "Podpora slabších a nadaných žáků",
+          "detail": "Systematická péče o žáky se speciálními potřebami i mimořádně nadané prostřednictvím individuálních plánů a podpůrných opatření.",
+          "evidence": "13 žáků se vzdělávalo podle individuálně vzdělávacích plánů, cílená podpora a doučování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v angličtině",
+          "detail": "Úspěšnost v anglickém jazyce je nižší než celorepublikový průměr na maturitě.",
+          "evidence": "Výsledky v anglickém jazyce byly ve srovnání s republikovými výsledky nižší."
+        },
+        {
+          "tag": "Nedostatečný rozvoj komunikačních dovedností",
+          "detail": "V odborných předmětech chybí dostatek prostoru pro diskusi a argumentaci, frontální výuka omezuje interakci.",
+          "evidence": "Málo efektivní podpora rozvoje komunikačních dovedností v odborných předmětech ekonomického zaměření."
+        },
+        {
+          "tag": "Chybí diferenciace úloh podle náročnosti",
+          "detail": "Výuka neobsahuje možnost výběru úloh s různou kognitivní náročností pro různě schopné žáky.",
+          "evidence": "Absence možnosti výběru z úloh odlišné kognitivní náročnosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje rozvoj komunikačních dovedností v odborných předmětech?",
+        "Jaké jsou plány na zlepšení výsledků v anglickém jazyce?",
+        "Jak jsou v hodinách zohledňovány různé úrovně schopností žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci zainteresovaní na praktickém vzdělání s vazbou na reálný trh práce v podnikání a cestovním ruchu.",
+        "Sportovně nadaní žáci, kterým se věnuje speciální péče v nových oborech (sportovní management, trenérství).",
+        "Žáci se speciálními vzdělávacími potřebami, kterým je poskytována individuální podpora a péče."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s ambicí dosáhnout vysokých výsledků v anglickém jazyce by měli počítat s nižší úrovní než celorepublikový průměr.",
+        "Žáci, kteří potřebují více interaktivní výuku s diskusemi a argumentací, mohou být frustrováni frontální výukou.",
+        "Žáci vyžadující individualizovanou výuku s úlohami přesně na jejich úroveň mohou mít problém s jednotným přístupem."
+      ],
+      "plain_czech_summary": "Škola se dynamicky rozvíjí s rostoucím počtem žáků a moderním vybavením. Silnou stránkou je propojení s praxí a péče o nadané i slabší žáky. Inspektoři ale upozorňují na slabší výsledky v angličtině, nedostatečný rozvoj komunikačních dovedností v odborných předmětech a chybějící diferenciaci úloh podle náročnosti. Vedení školy má přijatá opatření na zlepšení, zejména v přípravě na maturitu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – velmi dobré výsledky v profilové části nástavbového studia, ale slabší v anglickém jazyce a zhoršení v profilové části čtyřletého oboru.",
+        "key_numbers": [
+          "Nástavbové studium: velmi dobré výsledky v češtině a profilové části",
+          "Čtyřletý obor: mírně nižší úspěšnost v češtině a angličtině než celorepublikový průměr",
+          "Výrazné zhoršení v profilové části čtyřletého oboru v roce 2022/2023"
+        ],
+        "evidence": "Výsledky v posledních třech letech v českém jazyce a profilové části nástavbového studia byly na velmi dobré úrovni. Úspěšnost v anglickém jazyce byla nižší. V profilové části došlo zejména v roce 2022/2023 k výraznému zhoršení."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Poradenské služby zajištěné v součinnosti s vedením a pedagogy",
+        "Individuální vzdělávací plány pro 13 žáků se speciálními potřebami a mimořádným nadáním",
+        "Doučování a konzultační hodiny pro žáky ohrozené školním neúspěchem",
+        "Adaptační pobyty pro žáky prvních ročníků na podporu sociální integrace",
+        "Kariérové poradenství zaměřené na zvýšení konkurenceschopnosti absolventů"
+      ],
+      "safety_climate": [
+        "Příjemná pracovní atmosféra spojená se vzájemným respektem a vstřícným přístupem",
+        "Systematické kontroly zajišťující bezpečnost prostředí a ochranu zdraví žáků",
+        "Průběžné poučování žáků o bezpečném chování a rizicích, zejména v souvislosti se sportovními aktivitami",
+        "Respektování nastavených pravidel žáky"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se středními a vysokými školami na místní i regionální úrovni",
+        "Efektivní spolupráce s firmami v cestovním ruchu, podnikání a sportovními organizacemi",
+        "Mezinárodní spolupráce související s mobilitou žáků a vyučujících",
+        "Účinná kooperace se zřizovatelem, zákonnými zástupci žáků a městy Zlín a Kroměříž",
+        "Partnerství v oblasti sportu umožňující využívání sportovní haly, atletického stadionu a bazénu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Některé pasáže jsou však poměrně dlouhé a obsahují více detailů, než by bylo nutné pro rodiče.",
+      "uncertainty_notes": [
+        "Absence údajů o počtu žáků, kteří neuspěli u maturitní zkoušky – není jasné, jak vysoká je skutečná úspěšnost.",
+        "Chybí konkrétní čísla o absenci žáků a jejich vlivu na výsledky.",
+        "Není jasné, jak se konkrétně zlepšily výsledky po přijatých opatřeních v roce 2023/2024."
+      ]
+    }
+  }
+}

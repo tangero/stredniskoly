@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600006654_2024-10-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:10:59.608856+00:00",
+  "run_finished_utc": "2026-02-09T16:11:25.813784+00:00",
+  "raw_file": "SOU_600006654_2024-10-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600006654_2024-10-22",
+    "school_profile": {
+      "school_type": "Střední škola mediální grafiky a tisku (soukromá, s.r.o.) s obory Reprodukční grafik pro média (Grafický design, Multimediální grafika) a učebními obory",
+      "inspection_period": "22. 10. 2024 – 25. 10. 2024",
+      "school_change_summary": "Od inspekce v 2017 došlo k výměně ředitele (2021), která zefektivnila strategie. Škola ukončila některé obory, zvýšila naplněnost na 95 % (394 žáků v 15 třídách), rozšířila počet žáků s OMJ a SVP. Modernizuje vybavení a síť odborných partnerů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná výuka na vysoké úrovni",
+          "detail": "Praktická příprava a odborný výcvik vykazují velmi dobrou úroveň s účelným využitím moderního vybavení a individuálním přístupem učitelů.",
+          "evidence": "Hospitované hodiny v odborné přípravě se vyznačovaly metodickou propracovaností a cíleným rozvojem potenciálu žáků."
+        },
+        {
+          "tag": "Výborné výsledky při maturitě",
+          "detail": "Výrazné zlepšení výsledků maturitní zkoušky od roku 2017, třetina žáků prospívá s vyznamenáním.",
+          "evidence": "Úspěšnost v češtině a angličtině srovnatelná nebo vyšší než celorepublikový průměr, velmi dobré výsledky v profilové části."
+        },
+        {
+          "tag": "Moderní vybavení a bezpečné prostředí",
+          "detail": "Škola disponuje kvalitním technickým zázemím, wifi, dataprojektory, speciální tiskové zařízení a důraz na bezpečnost.",
+          "evidence": "Vybavení je průběžně obnovováno, k dispozici je vlastní tělocvična, knihařská dílna a fotoateliér."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší diferenciace v teoretické výuce",
+          "detail": "Část teoretických hodin postrádá individualizaci úloh podle různých schopností a tempa žáků.",
+          "evidence": "Nízká míra diferenciace a individualizace teoretické výuky, učitelé se obraceli ke třídě jako celku bez dostatečné zpětné vazby pro jednotlivce."
+        },
+        {
+          "tag": "Méně efektivní kontrola kvality výuky",
+          "detail": "Hospitační činnost vedení školy má nízkou četnost a chybí konkrétní doporučení pro zlepšení.",
+          "evidence": "Absence konkrétních doporučení vedoucích ke zlepšení kvality vzdělávacího procesu a následného ověření posunu úrovně."
+        },
+        {
+          "tag": "Nižší výsledky v matematice",
+          "detail": "Úspěšnost žáků v matematice na maturitě je nižší než celorepublikový průměr.",
+          "evidence": "V předmětu matematika byla úspěšnost žáků nižší než průměrná úspěšnost v celorepublikovém srovnání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku žákům s různými schopnostmi a tempem práce, zejména v teoretických předmětech?",
+        "Jaké má škola plány na zlepšení výsledků v matematice a jak podporuje slabší žáky v tomto předmětu?",
+        "Jak probíhá spolupráce se sociálními partnery a jak se podílí na přípravě žáků na praxi a budoucí zaměstnání?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o grafiku, design a tisk s praktickým zaměřením – škola nabízí kvalitní odbornou přípravu s moderním vybavením",
+        "Talentovaní praktici, kteří se lépe učí činnostní formou – odborný výcvik je na vysoké úrovni s individuálním přístupem",
+        "Žáci z širšího okolí – dobrá dopravní dostupnost umožňuje studium i z Středočeského kraje"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující silnou individuální podporu v teoretických předmětech – část výuky postrádá dostatečnou diferenciaci",
+        "Žáci se slabšími matematickými schopnostmi – výsledky v matematice jsou pod průměrem",
+        "Žáci preferující čistě teoretické vzdělání bez praktické složky – škola je zaměřena na odborné praktické dovednosti"
+      ],
+      "plain_czech_summary": "Škola mediální grafiky a tisku je moderní zařízení se silným zaměřením na praktickou přípravu v oborech grafiky a tisku. Výuka odborných předmětů je na vysoké úrovni s kvalitním vybavením a zkušenými učiteli. Výsledky maturitní zkoušky se výrazně zlepšily. Slabší stránkou je diferenciace teoretické výuky – ne všichni žáci dostávají dostatečně přizpůsobenou podporu. Škola má dobré vztahy s firmami a pomáhá absolventům s uplatněním na trhu práce."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení od inspekce 2017",
+        "key_numbers": [
+          "Třetina žáků prospívá s vyznamenáním",
+          "Česština a angličtina: úspěšnost srovnatelná nebo vyšší než celorepublikový průměr",
+          "Matematika: úspěšnost nižší než celorepublikový průměr"
+        ],
+        "evidence": "Výsledky žáků při ukončování vzdělávání se od posledního inspekčního hodnocení výrazně zlepšily, velmi dobré výsledky v profilové části maturitní zkoušky."
+      },
+      "absence": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "Průměr neomluvených hodin na žáka: 0,5 hodin (2023/2024) vs. 9 hodin (2016/2017)",
+          "97 % žáků má uzavřenou klasifikaci do 30. 6. (2023/2024) vs. 87 % (2016/2017)",
+          "Podíl neprospívajících: 1 % (2023/2024) vs. 9 % (2016/2017)"
+        ],
+        "evidence": "Od posledního inspekčního hodnocení došlo k výraznému snížení podílu neprospívajících žáků a nárůstu podílu žáků s uzavřenou klasifikací."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence v úzké spolupráci s třídními učiteli",
+        "Individuální vzdělávací plány (IVP) pro žáky s potřebou podpůrných opatření (cca 15 % žáků)",
+        "Doučování, individuální konzultace, adaptační a sportovní kurzy, tematicky zaměřené přednášky"
+      ],
+      "safety_climate": [
+        "Příjemná atmosféra, vzájemně respektující přístup učitele a žáků",
+        "Dodržování nastavených pravidel práce a komunikace",
+        "Důraz na bezpečnost práce v odborných dílnách, kamerový systém a docházkový systém"
+      ],
+      "partnerships_practice": [
+        "Síť kvalitních odborných partnerů: grafická studia, reklamní agentury, vydavatelství, tiskárny",
+        "Zapojení do činnosti školské odborné skupiny Svazu polygrafických podnikatelů",
+        "Zhruba polovina absolventů nachází uplatnění v odborných firmách, třetina pokračuje v dalším studiu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní čísla a příklady. Slabší stránky jsou jasně identifikovány. Některé pasáže jsou však poměrně dlouhé a odborné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počet hodin doučování nebo počet žáků, kteří jej využívají",
+        "Není jasné, jak přesně se liší výsledky žáků s OMJ od ostatních – pouze se uvádí, že jazyková bariéra nebyla výrazná",
+        "Chybí informace o počtu a typu soutěží, v nichž se žáci účastní"
+      ]
+    }
+  }
+}

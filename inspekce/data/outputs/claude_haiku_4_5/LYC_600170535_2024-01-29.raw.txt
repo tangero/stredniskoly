@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600170535_2024-01-29",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola s domovem mládeže a školní jídelnou",
+    "inspection_period": "29. ledna až 31. ledna 2024",
+    "school_change_summary": "Od inspekce v roce 2017 došlo k pozitivnímu posunu v materiální oblasti. Od 1. 1. 2023 nová ředitelka. Změny v nabídce oborů: zrušeny Mechanik strojů a zařízení (2019) a Podnikání dálková forma (2022), přidány Technická zařízení budov (2019), Mechanik elektrotechnik a Elektromechanik pro zařízení a přístroje (2022)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola efektivně propojuje teoretické poznatky s praktickou aplikací a dlouhodobě spolupracuje s firmami v regionu.",
+        "evidence": "Dlouhodobá spolupráce se sociálními partnery podporuje rozvoj praktických dovedností žáků."
+      },
+      {
+        "tag": "Moderní vybavení a investice",
+        "detail": "Škola systematicky modernizuje odborná pracoviště a získává nové pomůcky prostřednictvím projektů.",
+        "evidence": "Školní dílny s velmi dobrým standardem technického vybavení umožňují kvalitní přípravu na budoucí povolání."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují velmi dobrých umístění v odborně zaměřených soutěžích a olympiádách.",
+        "evidence": "Škola systematicky a cíleně podporuje účast žáků v soutěžích, dosahují velmi dobrých umístění."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalifikace pedagogů",
+        "detail": "Téměř polovina pedagogického sboru není kvalifikovaná, pouze dva si vzdělání doplňují.",
+        "evidence": "Část řídících pravomocí delegovala ředitelka na své zástupce. Pouze dva učitelé si chybějící vzdělání doplňují."
+      },
+      {
+        "tag": "Nízká motivace žáků",
+        "detail": "Vnitřní motivace žáků pro dosahování lepších výsledků je často nízká, někteří řeší problémy absencí.",
+        "evidence": "Vnitřní motivace žáků pro dosahování co nejlepších výsledků je často nízká. Někteří hledají různé úniky formou absence."
+      },
+      {
+        "tag": "Slabé výsledky z angličtiny",
+        "detail": "Žáci dosahují nižší úspěšnosti v anglickém jazyce na maturitě ve srovnání s podobnými obory.",
+        "evidence": "Problematické jsou zejména výsledky z anglického jazyka (didaktický test), nižší úspěšnost ve srovnání s danou skupinou oborů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší nedostatek kvalifikovaných učitelů a jaký je plán na jejich doplnění?",
+      "Jaké konkrétní opatření škola zavádí pro zlepšení výuky angličtiny, kde jsou slabší výsledky?",
+      "Jak se škola snaží zvyšovat motivaci žáků, kteří mají tendenci řešit problémy absencí?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou výuku a budoucí povolání v technických oborech",
+      "Studenti, kteří se chtějí zapojit do soutěží a projektů s reálným dopadem",
+      "Žáci, kteří potřebují individuální přístup a podporu při učení (škola nabízí doučování a konzultace)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší motivací a tendencí k absencím – škola má problémy s jejich řešením",
+      "Studenti zaměření na jazykové vzdělání – výuka angličtiny vykazuje slabší výsledky",
+      "Žáci vyžadující vysokou kvalifikaci učitelů – téměř polovina pedagogů není kvalifikovaná"
+    ],
+    "plain_czech_summary": "Střední průmyslová škola v Tachově je moderně vybavená a dobře propojuje teorii s praxí. Žáci dosahují dobrých výsledků v praktických oborech a soutěžích. Hlavní problémy jsou nekvalifikovaní učitelé (polovina sboru), slabší výsledky z angličtiny a nízká motivace některých žáků. Škola má funkční systém podpory, ale potřebuje zlepšit kvalitu výuky a motivaci studentů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá úroveň s pozitivní tendencí v odborné části",
+      "key_numbers": [
+        "Výsledky v profilové části (odborné) jsou lepší než v části společné",
+        "Anglický jazyk: nižší úspěšnost ve srovnání s podobnými obory",
+        "Výsledky odpovídají studijním předpokladům žáků"
+      ],
+      "evidence": "Výsledky žáků u maturitní zkoušky vykazovaly kolísavou úroveň. Pozitivní: žáci jsou úspěšnější v profilové části. Problematické: nižší úspěšnost z angličtiny."
+    },
+    "absence": {
+      "trend": "Problematická, zejména neomluvená absence",
+      "key_numbers": [
+        "Absence řešena především jednáním se zákonnými zástupci",
+        "Nedůsledné uplatňování pravidel pro omlouvání absence",
+        "Někteří žáci řeší problémy absencí nebo přestupem na jinou školu"
+      ],
+      "evidence": "Méně jsou analyzovány příčiny vysoké a neomluvené absence. Řešení je ovlivňováno nedůsledným uplatňováním nastavených pravidel."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: odborná pomoc žákům se SVP, kariérové poradenství, prevence rizikového chování",
+      "Doučování v některých předmětech a individuální konzultace s vyučujícími",
+      "Adaptační kurzy pro žáky prvních ročníků",
+      "Spolupráce se školskými poradenskými zařízeními a dalšími organizacemi"
+    ],
+    "safety_climate": [
+      "Klidná přátelská atmosféra svědčící o vzájemném respektu vyučujících a žáků",
+      "Zásady bezpečného chování správně zakotveny ve vnitřních dokumentech",
+      "Při výuce v odborném výcviku nebylo zjištěno žádné porušování bezpečnosti",
+      "Domov mládeže: důsledné dodržování nastavených pravidel"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s firmami v regionu pro odborné praxe a výcvik",
+      "Projekt Erasmus+ s partnerskou školou v německém Bamberku",
+      "Exkurze a workshopy pro základní školy u smluvních partnerů",
+      "Kroužky robotiky a strojírenství, společné týmy v odborných soutěžích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace z pozorování. Některé pasáže jsou více odborné, ale celkově je dobře čitelná pro rodiče.",
+    "uncertainty_notes": [
+      "Přesné procento nekvalifikovaných učitelů není uvedeno, pouze 'téměř z poloviny'",
+      "Konkrétní čísla úspěšnosti u maturit nejsou v textu specifikována, pouze kvalitativní popis",
+      "Počet žáků s absencí a jejich podíl na celkovém počtu není uveden"
+    ]
+  }
+}
+```

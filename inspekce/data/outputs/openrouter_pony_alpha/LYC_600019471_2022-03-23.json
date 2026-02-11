@@ -1,0 +1,109 @@
+{
+  "report_id": "LYC_600019471_2022-03-23",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:03:40.414446+00:00",
+  "run_finished_utc": "2026-02-10T07:05:30.279896+00:00",
+  "raw_file": "LYC_600019471_2022-03-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600019471_2022-03-23",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola nabízející vzdělávání v oblasti zdravotnictví, sociálních služeb a bezpečnostně právní činnosti.",
+      "inspection_period": "23. 3. – 24. 3. 2022 a 28. 3. – 29. 3. 2022",
+      "school_change_summary": "Od roku 2014 se výrazně navýšil počet žáků a tříd, zlepšila se kvalifikovanost pedagogického sboru i materiální vybavení, škola je téměř plně naplněná."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe a uplatnění",
+          "detail": "Škola skvěle propojuje teorii s praxí díky úzké spolupráci s partnery a zajišťuje tak absolventům vynikající uplatnitelnost na trhu práce.",
+          "evidence": "Dlouhodobá účinná spolupráce se sociálními partnery... s následným velmi dobrým uplatněním absolventů."
+        },
+        {
+          "tag": "Vedení a atmosféra",
+          "detail": "Koncepční vedení školy vytváří kvalitní podmínky, stabilní kolektiv a příznivou pracovní atmosféru podporující učení.",
+          "evidence": "Efektivní řízení... příznivá pracovní atmosféra podporující učení."
+        },
+        {
+          "tag": "Odbornost vybavení",
+          "detail": "Praktická výuka probíhá na vysoké úrovni v moderně vybavených odborných učebnách za použití nadstandardních pomůcek.",
+          "evidence": "Sledované praktické vyučování bylo realizováno na výborné úrovni... nadstandardní materiální vybavení učeben."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita teoretické výuky",
+          "detail": "V části teoretických hodin převažuje pasivní výuka, učitelé málo zapojují žáky a neumožňují jim dostatečně rozvíjet kritické myšlení.",
+          "evidence": "Nedostatečné střídání výukových forem... vedly k nerovnoměrnému zapojení žáků do výuky a k jejich pasivnímu přístupu."
+        },
+        {
+          "tag": "Prostorové omezení",
+          "detail": "Kapacita budovy je limitujícím faktorem, což může omezovat další rozvoj školy nebo dělení tříd na skupiny.",
+          "evidence": "Prostorové možnosti školy stávají limitujícím faktorem pro další rozvoj instituce."
+        },
+        {
+          "tag": "Absence a odchody",
+          "detail": "Škola řeší zvýšenou absenci a předčasné odchody žáků, zejména v kombinovaném (večerním) studiu.",
+          "evidence": "K nejčastějším rizikovým jevům patří zvýšená absence žáků... předčasné odchody žáků ze studia."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší individuální potřeby žáků v teoretických předmětech, aby se vyhnula pasivní výuce?",
+        "Jaké konkrétní možnosti nabízí škola pro studenty se speciálními vzdělávacími potřebami nebo cizince?",
+        "Jak je řešeno dělení tříd na skupiny vzhledem k omezeným prostorovým možnostem školy?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří se chtějí uplatnit ve zdravotnictví, sociálních službách nebo bezpečnosti a očekávají kvalitní praktickou přípravu.",
+        "Studenti, kteří hledají školu s jasnou koncepcí, stabilním zázemím a širokou nabídkou mimoškolních aktivit.",
+        "Cizinci nebo žáci se specifickými potřebami, kteří vyžadují systémovou podporu a jazykovou intervenci."
+      ],
+      "who_should_be_cautious": [
+        "Studenti, kteří preferují moderní, interaktivní formy výuky nad tradičním frontálním vyučováním.",
+        "Uchazeči, kteří očekávají malou školu s neomezeným prostorem pro individuální rozvoj (škola je velká a plná).",
+        "Zájemci o večerní studium, kde je vyšší riziko předčasných odchodů a neúspěšnosti."
+      ],
+      "plain_czech_summary": "Střední zdravotnická škola na Ruské je stabilní a dobře řízená instituce s vynikající pověstí v oblasti odborné přípravy. Absolventi mají skvělé uplatnění díky provázanosti výuky s praxí. Škola je dobře vybavená a nabízí silné zázemí pro studenty i pedagogy. Rizikem je prostorové omezení a občasně pasivní styl výuky v teoretických předmětech. Pro ambiciózní studenty v oboru zdravotnictví a sociální péče je však jasnou volbou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky jsou stabilní a korespondují s průběžným hodnocením; v některých oborech (Bezpečnostně právní činnost) se zlepšují.",
+        "key_numbers": [
+          "70 % absolventů pokračuje v terciárním vzdělávání",
+          "Nejlepší výsledky ve společné části maturit dosahuje obor Zdravotnické lyceum",
+          "Žáci oboru Ošetřovatel dosahují dlouhodobě velmi dobrých výsledků"
+        ],
+        "evidence": "Výsledky žáků u maturitní zkoušky korespondují s jejich hodnocením v průběhu studia."
+      },
+      "absence": {
+        "trend": "Absence je řešena systematicky, výše je přiměřená typu školy, ale neomluvená absence patří mezi rizikové jevy.",
+        "key_numbers": [
+          "Přiměřená výše absence ve srovnání s daným typem školy",
+          "Zvýšená absence včetně neomluvené je nejčastějším rizikovým jevem",
+          "Efektivita vzdělávání ve večerní formě je částečně snížena předčasnými odchody"
+        ],
+        "evidence": "Účinnost uplatňovaných kroků... dokládá přiměřená výše absence i neomluvených hodin."
+      },
+      "support_services": [
+        "Funguje komplexní systém poradenských služeb a podpůrných opatření (asi 11 % žáků).",
+        "Škola nabízí jazykovou intervenci pro žáky-cizince (okolo 8 % žáků).",
+        "Je zajištěno doučování, krizová intervence a speciální podpora v oblasti paliativní péče."
+      ],
+      "safety_climate": [
+        "Ve škole panuje příznivá pracovní atmosféra a žáci respektují pravidla komunikace.",
+        "Vstup do budovy je zabezpečen elektronicky, recepcí a termokamerami.",
+        "Aktivně se pracuje na prevenci sociálně patologických jevů a vztahových problémů."
+      ],
+      "partnerships_practice": [
+        "Škola je fakultní školou VŠCHT a PedF UK.",
+        "Praktické vyučování je realizováno převážně na smluvních pracovištích sociálních partnerů.",
+        "Spolupráce s partnery umožňuje inovaci obsahu učiva v souladu s moderními trendy."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán ve srozumitelné češtině, byť s úřednickým nádechem. Všechna klíčová tvrzení jsou v textu explicitně uvedena a opatřena kontextem, což umožňuje jednoznačnou interpretaci.",
+      "uncertainty_notes": []
+    }
+  }
+}

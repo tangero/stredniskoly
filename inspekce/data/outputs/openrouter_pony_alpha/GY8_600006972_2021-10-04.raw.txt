@@ -1,0 +1,100 @@
+{
+  "report_id": "GY8_600006972_2021-10-04",
+  "school_profile": {
+    "school_type": "Gymnázium s osmiletým a čtyřletým oborem",
+    "inspection_period": "4. − 7. říjen 2021",
+    "school_change_summary": "Od předchozí inspekce se zlepšilo materiální vybavení a částečně se rozšířilo spektrum metod ve výuce, ale přetrvávají nedostatky v aktivizaci žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Škola dosahuje vynikajících výsledků v maturitních zkouškách a mezinárodních testech, přičemž všichni žáci maturitu úspěšně složí.",
+        "evidence": "„Maturitní zkoušku v minulých dvou letech vykonali úspěšně všichni žáci.“"
+      },
+      {
+        "tag": "Jazyky a přírodní vědy",
+        "detail": "Škola nabízí kvalitní vybavení a podporu pro talentované žáky zejména v oblasti cizích jazyků a přírodovědných předmětů.",
+        "evidence": "„Kvalitní materiální vybavení... vedou k výborným výsledkům žáků v přírodovědných předmětech.“"
+      },
+      {
+        "tag": "Atmosféra a bezpečí",
+        "detail": "Ve škole panuje pozitivní atmosféra, vzájemný respekt a minimální míra úrazovosti či rizikového chování.",
+        "evidence": "„V hospitovaných hodinách byla zaznamenána pozitivní atmosféra a vzájemný respekt učitelů a žáků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Ve většině hodin převažuje frontální výuka, kde je míra zapojení žáků nízká a závislá na osobnosti učitele.",
+        "evidence": "„Ve třech čtvrtinách hodin však byla využita frontální organizace výuky, u níž byla míra zapojení žáků nízká.“"
+      },
+      {
+        "tag": "Nedostatečná zpětná vazba",
+        "detail": "Učitelé často nevěnují dostatek shrnutí probraného učiva a nevyužívají efektivní zpětnou vazbu od žáků.",
+        "evidence": "„V závěru hodin se učitelé nedostatečně věnovali shrnutí... a jen ojediněle využívali efektivní zpětnou vazbu.“"
+      },
+      {
+        "tag": "Nediferencovaná výuka",
+        "detail": "Méně pozornosti je věnováno diferenciaci výuky a rozvíjení postojových cílů, což se týká i nadaných žáků.",
+        "evidence": "„Diferenciace výuky zejména ve vztahu k nadaným žákům byla vhodně uplatněna pouze ve třetině hodin.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola zajišťuje, aby se i v běžných hodinách zapojili všichni žáci, nejen ti aktivní?",
+      "Jakým způsobem učitelé poskytují žákům zpětnou vazbu a prostor pro sebehodnocení?",
+      "Jak škola diferencuje výuku v povinných předmětech pro studenty s různými zájmy a nadáním?"
+    ],
+    "who_school_fits": [
+      "Studenti s hlubším zájmem o přírodní vědy nebo cizí jazyky.",
+      "Samostatní žáci, kteří jsou schopni dobře zvládat frontální formu výuky.",
+      "Cílevědomí studenti, kteří aspirují na prestižní vysoké školy."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří vyžadují pestřejší a interaktivnější metody výuky než je frontální výklad.",
+      "Studenti očekávající intenzivní individuální přístup a častou zpětnou vazbu v hodinách.",
+      "Uchazeči, kteří nemají rádi tradiční pojetí výuky matematiky a přírodovědných předmětů."
+    ],
+    "plain_czech_summary": "Gymnázium na Kladně si udržuje vysokou prestiž a nabízí vynikající zázemí zejména pro milovníky přírodních věd a jazyků. Všichni žáci úspěšně maturovali a škola dosahuje nadprůměrných výsledků. Pro rodiče je však varovným signálem převažující styl výuky, který spoléhá na frontální přednášení, kde mohou někteří žáci zůstávat pasivní. Škola by měla zlepšit zapojení studentů do diskuzí a poskytování zpětné vazby. Pro ambiciózní a samostatné studenty je však volba vhodná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se (100% úspěšnost, rostoucí podíl vyznamenání)",
+      "key_numbers": [
+        "100% úspěšnost u maturity za poslední dva roky",
+        "60% žáků maturovalo s vyznamenáním (2020/2021)",
+        "Průměrný prospěch 1,5 v době distanční výuky"
+      ],
+      "evidence": "„Hrubá neúspěšnost... v posledních třech letech klesla ze 3 % na 0 %, maturitní zkoušku v minulých dvou letech vykonali úspěšně všichni žáci.“"
+    },
+    "absence": {
+      "trend": "Nízká a klesající",
+      "key_numbers": [
+        "cca 120 hodin na žáka (2018/2019)",
+        "pokles na 1/2 až 1/3 během distanční výuky",
+        "téměř nulová neomluvená absence"
+      ],
+      "evidence": "„Absence žáků se ve školním roce 2018/2019 pohybovala kolem 120 hodin na žáka... neomluvená absence se téměř nevyskytla.“"
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště (psycholožka, výchovná poradkyně, asistentka).",
+      "Individuální konzultace a doučování pro žáky ohrožené neúspěchem.",
+      "Kariérové poradenství a sledování uplatnění absolventů."
+    ],
+    "safety_climate": [
+      "Pozitivní atmosféra a vzájemný respekt mezi učiteli a žáky.",
+      "Minimální míra úrazovosti a téměř žádné rizikové chování.",
+      "Fungující studentský parlament a adaptační kurzy pro prváky."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s VŠ a odborníky z praxe (přednášky, kurzy).",
+      "Aktivní zapojení do společenského života města a spolupráce se zřizovatelem.",
+      "Účinná komunikace s rodičovskou veřejností."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán srozumitelně, klíčová data jsou jasně uvedena v textu a závěrech, neobsahuje nejednoznačné pasáže relevantní pro rodiče.",
+    "uncertainty_notes": []
+  }
+}

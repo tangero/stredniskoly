@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600012433_2025-10-15",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:30:49.883181+00:00",
+  "run_finished_utc": "2026-02-09T13:31:20.278999+00:00",
+  "raw_file": "LYC_600012433_2025-10-15.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600012433_2025-10-15",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola chemická (maturitní obory, nástavbové studium, učební obory)",
+      "inspection_period": "15. až 24. 10. 2025",
+      "school_change_summary": "Nové vedení školy (ředitelka ve druhém roce funkce), obměna vedoucích pracovníků, od září 2025 nový obor Lyceum, zhoršené klima školy s více podněty od žáků a rodičů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborná vybavení a partnerství",
+          "detail": "Nadstandardní vybavení odborných učeben, laboratoří a pracovišť; spolupráce s firmami jako Synthesia a Explosia, hasičskými sbory a zahraničními školami.",
+          "evidence": "\"nadstandardní je vybavení odborných učeben a pracovišť\"; \"na výborné úrovni je nastavení forem spolupráce s partnery\""
+        },
+        {
+          "tag": "Kvalitní praktické vzdělávání",
+          "detail": "Zejména v chemických oborech a požární ochraně žáci získávají praktické dovednosti s důsledným vedením bezpečnosti práce.",
+          "evidence": "\"Podmínky pro realizaci odborného vzdělávání oborů chemického zaměření jsou velmi dobré\"; \"Učitelé důsledně vedli žáky k dodržování bezpečnosti práce\""
+        },
+        {
+          "tag": "Poradenské služby",
+          "detail": "Školní poradenské pracoviště posíleno na 7 pracovníků včetně psycholožky; podpora nadaných žáků a prevence rizikového chování.",
+          "evidence": "\"kolektiv personálně posílen, aktuálně v něm působily tři výchovné poradkyně, dvě metodičky prevence\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zhoršené klima a komunikace",
+          "detail": "Zaznamenány zhoršené vztahy v pedagogickém sboru, mezi vedením a žáky/rodiči; nedostatečná komunikace o budoucnosti školy.",
+          "evidence": "\"Zaznamenány byly zhoršené vztahy nejen v pedagogickém sboru\"; \"V průběhu inspekční činnosti byly zaznamenány obavy zaměstnanců i žáků o budoucnost některých oborů\""
+        },
+        {
+          "tag": "Bezpečnostní rizika",
+          "detail": "Nebezpečný vstup cizích osob do budovy (boční vchody bez zabezpečení), nevyhovující dohled nad žáky v přestávkách.",
+          "evidence": "\"V době konání inspekční činnosti nebyla vyřešena rizika spojená se vstupem cizích osob do budovy školy\"; \"Nevyhovující bylo rovněž zajištění dohledů nad žáky v době přestávek\""
+        },
+        {
+          "tag": "Problémy s teoretickou výukou",
+          "detail": "Převaha frontální výuky, pasivní role žáků, chybí diferenciace pro nadané a slabší žáky, málo formativní zpětné vazby.",
+          "evidence": "\"Převládala frontální forma výuky\"; \"Diferenciace úkolů či individualizace vzdělávacích cílů obvykle nebyly\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší bezpečnost budovy a dohled nad žáky v přestávkách?",
+        "Jaké konkrétní kroky podnikne vedení k zlepšení komunikace se žáky a rodiči?",
+        "Jak se liší přístup jednotlivých učitelů k výuce a jak se to řeší?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti v chemii, požární ochraně nebo bezpečnostních oborech",
+        "Studenti, kteří se učí lépe v praktických situacích s reálnými partnery z praxe",
+        "Žáci s ambicí na mezinárodní spolupráci (ERASMUS+, partnerské školy v zahraničí)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující individuální přístup a diferenciovanou výuku (v teoretických předmětech je to slabé)",
+        "Rodiny, kterým záleží na stabilním vedení a jasné komunikaci (probíhá reorganizace)",
+        "Studenti oboru Bezpečnostně právní činnost (zjištěny nedostatky v naplňování programu)"
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní praktické vzdělávání s výborným vybavením a partnery z praxe, zejména v chemických a bezpečnostních oborech. Silné jsou poradenské služby a mezinárodní spolupráce. Problémy jsou v klimatu školy (zhoršené vztahy, nejasná komunikace), bezpečnosti budovy a teoretické výuce (málo aktivizace žáků, chybí individuální přístup). Nové vedení se teprve orientuje, doporučuje se sledovat, jak se situace vyvíjí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený: čtyřleté obory srovnatelné s průměrem, nástavbové obory horší",
+        "key_numbers": [
+          "Čtyřleté obory: 20-40% neúspěchu v jarním termínu, po opravách 3-6%",
+          "Nástavbové obory: 62% neúspěchu v jarním termínu 2024, 37% po opravách; 2025 16% po opravách",
+          "Obor Požární ochrana 2025: 40,7% neúspěchu v jarním termínu"
+        ],
+        "evidence": "\"Ve čtyřletých maturitních oborech v jarním termínu v letech 2024 a 2025 vysoké procento žáků neuspělo alespoň v jedné části zkoušky (pokaždé více než 20 % žáků)\""
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Není dostupné"
+        ],
+        "evidence": "Text se absence věnuje pouze v kontextu ověřovacích zkoušek (pravidlo při absenci přesahující 25%)"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: 3 výchovné poradkyně, 2 metodičky prevence, koordinátorka pro žáky s odlišným mateřským jazykem, 2 kariérové poradkyně, školní psycholožka",
+        "Doučování a individuální konzultace na přípravu maturitních předmětů",
+        "Prevence rizikového chování podle zpracovaného programu, on-line schránka důvěry"
+      ],
+      "safety_climate": [
+        "Riziko: Vstup cizích osob do budovy přes boční vchody bez zabezpečení",
+        "Riziko: Nevyhovující dohled nad žáky v přestávkách",
+        "Pozitivum: Důsledné vedení bezpečnosti práce v praktické výuce"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s průmyslovými partnery (Synthesia a.s., Explosia a.s.) pro chemické vzdělávání",
+        "Partnerství se Střední školou zemědělskou a veterinární Lanškroun (obor Požární ochrana)",
+        "Spolupráce s hasičskými záchrannými sbory více krajů",
+        "Mezinárodní partnerství: Německo, Nizozemsko, Finsko, Slovinsko (obor Bezpečnostně právní činnost)",
+        "Spolupráce s Policií ČR a bezpečnostními sbory na motivačních aktivitách"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, používá konkrétní příklady a citace. Struktura je logická. Některé pasáže jsou však dlouhé a složité (např. popis problémů s pravidly), což mírně snižuje srozumitelnost pro laiky.",
+      "uncertainty_notes": [
+        "Absence konkrétních čísel o neúspěšnosti v některých oborech (např. Lyceum je nový, není data)",
+        "Není jasné, jak přesně se měří 'klima školy' - inspekce se opírá o podněty, ale ne o systematické měření",
+        "Konkrétní počty žáků se speciálními potřebami (91) nejsou vztaženy k celkovému počtu (1089), aby bylo vidět procento"
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-09T12:14:34.385912+00:00",
+  "run_finished_utc": "2026-02-09T12:15:08.738044+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"LYC_600012760_2025-11-03\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 5,\n  \"unsupported_claims_count\": 5,\n  \"critical_issues\": [\n    \"Zobecnění „nadregionální zájem o studium roste“/„nadregionální zájem o studium“ není ve zdroji prokázáno pro školu obecně; inspekce uvádí nadregionální zájem konkrétně o obor 78-42-M/01 Technické lyceum.\",\n    \"Tvrzení o „trendu: stabilní“ u maturity není ve zdroji doloženo (zpráva uvádí stav/údaje, ne trend).\",\n    \"Formulace „100 % úspěšnost u maturity (podzim 2025)“ zpřesňuje datum, které zdroj výslovně neuvádí (zdroj: školní rok 2024/2025, úspěšní po podzimním termínu).\",\n    \"V souhrnu se objevuje tvrzení o „bezpečném prostředí“ – zdroj popisuje klima, prevenci a nízká výchovná opatření, ale explicitní hodnocení bezpečnosti prostředí takto neformuluje.\",\n    \"Závěrečné doporučení pro rodiče pracuje s pojmem „intenzivní akademická podpora“, který inspekční zpráva takto nepopisuje (uvádí např. konzultační hodinu, doučování, podporu k učení v domově mládeže).\"\n  ],\n  \"best_points\": [\n    \"Dobře zachycené klíčové silné stránky ze „Závěrů“ (materiální podmínky domova mládeže, široká šíře volnočasových aktivit, nadregionální zájem o Technické lyceum).\",\n    \"Přesně převzaté a rodičovsky srozumitelné hlavní slabiny výuky: málo práce s cíli, formativní zpětnou vazbou a (vnitřní) diferenciací; opřeno o citace.\",\n    \"Užitečná struktura pro rodiče (strengths/risks + otázky na den otevřených dveří) a konkrétní číselné údaje převzaté ze zprávy (absence, vyznamenání, Cambridge B2).\",\n    \"Jasná a čtivá čeština, logické členění.\"\n  ],\n  \"one_line_verdict\": \"Shrnutí je z většiny věrné a pro rodiče praktické, ale místy přidává nedoložené zobecnění (zejména „nadregionální zájem o studium“ mimo Technické lyceum) a pár tvrzení o trendech/bezpečí bez přímé opory ve zdroji.\"\n}",
+  "judge_output": {
+    "report_id": "LYC_600012760_2025-11-03",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 5,
+    "unsupported_claims_count": 5,
+    "critical_issues": [
+      "Zobecnění „nadregionální zájem o studium roste“/„nadregionální zájem o studium“ není ve zdroji prokázáno pro školu obecně; inspekce uvádí nadregionální zájem konkrétně o obor 78-42-M/01 Technické lyceum.",
+      "Tvrzení o „trendu: stabilní“ u maturity není ve zdroji doloženo (zpráva uvádí stav/údaje, ne trend).",
+      "Formulace „100 % úspěšnost u maturity (podzim 2025)“ zpřesňuje datum, které zdroj výslovně neuvádí (zdroj: školní rok 2024/2025, úspěšní po podzimním termínu).",
+      "V souhrnu se objevuje tvrzení o „bezpečném prostředí“ – zdroj popisuje klima, prevenci a nízká výchovná opatření, ale explicitní hodnocení bezpečnosti prostředí takto neformuluje.",
+      "Závěrečné doporučení pro rodiče pracuje s pojmem „intenzivní akademická podpora“, který inspekční zpráva takto nepopisuje (uvádí např. konzultační hodinu, doučování, podporu k učení v domově mládeže)."
+    ],
+    "best_points": [
+      "Dobře zachycené klíčové silné stránky ze „Závěrů“ (materiální podmínky domova mládeže, široká šíře volnočasových aktivit, nadregionální zájem o Technické lyceum).",
+      "Přesně převzaté a rodičovsky srozumitelné hlavní slabiny výuky: málo práce s cíli, formativní zpětnou vazbou a (vnitřní) diferenciací; opřeno o citace.",
+      "Užitečná struktura pro rodiče (strengths/risks + otázky na den otevřených dveří) a konkrétní číselné údaje převzaté ze zprávy (absence, vyznamenání, Cambridge B2).",
+      "Jasná a čtivá čeština, logické členění."
+    ],
+    "one_line_verdict": "Shrnutí je z většiny věrné a pro rodiče praktické, ale místy přidává nedoložené zobecnění (zejména „nadregionální zájem o studium“ mimo Technické lyceum) a pár tvrzení o trendech/bezpečí bez přímé opory ve zdroji."
+  }
+}

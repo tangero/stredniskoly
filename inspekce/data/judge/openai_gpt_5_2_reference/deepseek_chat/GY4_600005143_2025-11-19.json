@@ -1,0 +1,31 @@
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "deepseek_chat",
+  "run_started_utc": "2026-02-09T11:40:29.185680+00:00",
+  "run_finished_utc": "2026-02-09T11:41:01.807276+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY4_600005143_2025-11-19\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 5,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 4,\n  \"critical_issues\": [\n    \"Nepřesné datum inspekční činnosti: kandidát uvádí „19. 11. 2025 – 24. 11. 2025“, zdroj říká „19. 11. 2025 − 22. 11. 2025 a 24. 11. 2025“.\",\n    \"Tvrzení o „laboratořích“ není ve zdroji výslovně doloženo (zdroj mluví o modernizaci učebny biologie, laboratorních cvičeních a vybavení, ale neuvádí explicitně více laboratoří).\",\n    \"„Prevence šikany“ je uvedena jako fakt, ale ve zdroji je popsána obecná prevence rizikového chování a preventivní programy; šikana není výslovně zmíněna.\",\n    \"U absence je jako evidence uvedeno „fungující prevence a včasné řešení problémů“, což je nad rámec explicitních formulací zdroje (zdroj dokládá funkční mechanismy a výsledky – nízká neomluvená absence, přijatelný počet zameškaných hodin – ale neformuluje to takto přímo).\"\n  ],\n  \"best_points\": [\n    \"Dobře zachycené a zdrojem podložené slabé stránky: nižší míra aktivizace v části hodin, méně častá formativní zpětná vazba a sebehodnocení/vrstevnické hodnocení, nejednotnost hodnocení mezi učiteli.\",\n    \"Správně uvedené klíčové výsledky: 35–40 % maturantů s vyznamenáním, dva neúspěšní v r. 2024/2025, didaktické testy nad průměrem a profilová část spíše slabší, stabilně 80 % nahrazuje jazykovou část certifikátem.\",\n    \"Přesně popsané materiální a personální zázemí (rekonstrukce, botanická zahrada/letní učebna, sportoviště včetně horolezeckých stěn; 2 psycholožky a 2 asistentky pedagoga se zaměřením na speciální pedagogiku).\",\n    \"Užitečná struktura pro rodiče (silné stránky/risika/otázky na den otevřených dveří) odpovídající tématům ve zprávě.\"\n  ],\n  \"one_line_verdict\": \"Velmi použitelný rodičovský souhrn, převážně věrný zdroji, ale s několika nepřesnostmi a drobnými tvrzeními nad rámec textu (zejména termín inspekce, „prevence šikany“, „laboratoře“).\"\n}",
+  "judge_output": {
+    "report_id": "GY4_600005143_2025-11-19",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 5,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 4,
+    "critical_issues": [
+      "Nepřesné datum inspekční činnosti: kandidát uvádí „19. 11. 2025 – 24. 11. 2025“, zdroj říká „19. 11. 2025 − 22. 11. 2025 a 24. 11. 2025“.",
+      "Tvrzení o „laboratořích“ není ve zdroji výslovně doloženo (zdroj mluví o modernizaci učebny biologie, laboratorních cvičeních a vybavení, ale neuvádí explicitně více laboratoří).",
+      "„Prevence šikany“ je uvedena jako fakt, ale ve zdroji je popsána obecná prevence rizikového chování a preventivní programy; šikana není výslovně zmíněna.",
+      "U absence je jako evidence uvedeno „fungující prevence a včasné řešení problémů“, což je nad rámec explicitních formulací zdroje (zdroj dokládá funkční mechanismy a výsledky – nízká neomluvená absence, přijatelný počet zameškaných hodin – ale neformuluje to takto přímo)."
+    ],
+    "best_points": [
+      "Dobře zachycené a zdrojem podložené slabé stránky: nižší míra aktivizace v části hodin, méně častá formativní zpětná vazba a sebehodnocení/vrstevnické hodnocení, nejednotnost hodnocení mezi učiteli.",
+      "Správně uvedené klíčové výsledky: 35–40 % maturantů s vyznamenáním, dva neúspěšní v r. 2024/2025, didaktické testy nad průměrem a profilová část spíše slabší, stabilně 80 % nahrazuje jazykovou část certifikátem.",
+      "Přesně popsané materiální a personální zázemí (rekonstrukce, botanická zahrada/letní učebna, sportoviště včetně horolezeckých stěn; 2 psycholožky a 2 asistentky pedagoga se zaměřením na speciální pedagogiku).",
+      "Užitečná struktura pro rodiče (silné stránky/risika/otázky na den otevřených dveří) odpovídající tématům ve zprávě."
+    ],
+    "one_line_verdict": "Velmi použitelný rodičovský souhrn, převážně věrný zdroji, ale s několika nepřesnostmi a drobnými tvrzeními nad rámec textu (zejména termín inspekce, „prevence šikany“, „laboratoře“)."
+  }
+}

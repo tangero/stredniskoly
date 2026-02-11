@@ -1,0 +1,100 @@
+{
+  "report_id": "LYC_691013560_2021-06-02",
+  "school_profile": {
+    "school_type": "Soukromé lyceum (Kombinované lyceum)",
+    "inspection_period": "2. 6. 2021 − 4. 6. 2021",
+    "school_change_summary": "Škola vznikla v roce 2019 a v době inspekce měla pouze první ročník s deseti žáky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Individuální přístup",
+        "detail": "Škola klade důraz na individuální přístup a formativní hodnocení pokroku žáka.",
+        "evidence": "„Deklarovaný individuální přístup se promítá do všech oblastí... zejména do formativního způsobu hodnocení žáků.“"
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Vytváří se motivační a bezpečné prostředí, kde žáci aktivně spolurozhodují o chodu školy.",
+        "evidence": "„Utvářením bezpečného a motivačního vzdělávacího prostředí, aktivním přístupem žáků... a jejich odpovědností za proces učení.“"
+      },
+      {
+        "tag": "Rozvoj měkkých dovedností",
+        "detail": "Výuka podporuje kreativitu, sociální kompetence a týmovou spolupráci.",
+        "evidence": "„Uplatňování aktivizačních metod a forem výuky podporuje kreativitu a osobnostní rozvoj žáků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná vybavenost",
+        "detail": "Škola postrádá dostatek didaktických pomůcek, IT techniky a laboratoří pro přírodovědné předměty.",
+        "evidence": "„Nezbytné dovybavení materiálně technického zázemí v oblasti informačních technologií, didaktických pomůcek a přírodovědné laboratoře.“"
+      },
+      {
+        "tag": "Nízká kvalifikace učitelů",
+        "detail": "Část pedagogického sboru nesplňuje předpoklady odborné kvalifikace.",
+        "evidence": "„Tři pedagogičtí pracovníci nesplňují předpoklady odborné kvalifikace, nekvalifikovaní učitelé si doplňují požadované vzdělání studiem.“"
+      },
+      {
+        "tag": "Nedostatečná názornost",
+        "detail": "Ve výuce chybí efektivní využívání techniky a práce s různými zdroji informací.",
+        "evidence": "„Účinnost vzdělávacího procesu snižovala malá míra názornosti výuky. Scházelo účelné používání audiovizuální techniky... i učebnice.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola zajistí přípravu k maturitě vzhledem k chybějícímu střednědobému plánu?",
+      "Jaké konkrétní pomůcky a technologie budou k dispozici pro technické a přírodovědné zaměření?",
+      "Kolik učitelů je již plně kvalifikovaných a jak se jejich složení změní v dalších letech?"
+    ],
+    "who_school_fits": [
+      "Samostatní žáci, kteří preferují formativní hodnocení a sebehodnocení před známkováním.",
+      "Žáci hledající komunitní atmosféru malé školy a možnost ovlivnit dění ve škole.",
+      "Cizinci nebo žáci se specifickými potřebami vyžadující silnou individuální podporu."
+    ],
+    "who_should_be_cautious": [
+      "Žáci očekávající tradiční výuku s učebnicemi a silným důrazem na formální jazyk.",
+      "Uchazeči o technické nebo přírodovědné směry vzhledem k aktuálnímu nedostatku laboratoří a pomůcek.",
+      "Rodiče, pro které je klíčová plná kvalifikace všech vyučujících předmětů."
+    ],
+    "plain_czech_summary": "Naše lyceum je malá soukromá škola s komunitní atmosférou, která nabízí velmi individuální přístup. Výuka je založena na moderních metodách a formativním hodnocení bez důrazu na známky, což podporuje samostatnost a kreativitu. Škola ale vznikla teprve v roce 2019 a potýká se s nedostatkem vybavení (chybí laboratoře i moderní technika) a část učitelů nemá odbornou kvalifikaci. Pro žáky, kteří potřebují bezpečné prostředí a osobní přístup, je to vhodná volba, ale pro ty, kteří preferují tradiční vybavení a jistotu přípravy na maturitu, může být riziková."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "N/A (škola má zatím jen 1. ročník)",
+      "key_numbers": [
+        "0 absolventů (škola vznikla 2019)",
+        "Obor: Kombinované lyceum (78-42-M/06)",
+        "Zaměření: humanitní, přírodovědné, technické"
+      ],
+      "evidence": "„Koncepční záměry ale nejsou... rozpracovány na konkrétně definované cíle... např. koncept přípravy žáků ke zvládnutí maturitní zkoušky.“"
+    },
+    "absence": {
+      "trend": "Neuvedeno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní data o absenci."
+    },
+    "support_services": [
+      "Individuální konzultace a plánování učiva pro žáky s problémy.",
+      "Zapojení školní psycholožky a online konzultace.",
+      "Systém patronů (zkušení kolegové) pro podporu žáků i začínajících učitelů."
+    ],
+    "safety_climate": [
+      "Bezpečné a motivační prostředí.",
+      "Demokratický styl vedení a partnerská spolupráce.",
+      "Efektivní řešení rizikového chování s poradenskými pracovníky."
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce se zákonnými zástupci (tripartitní schůzky, webináře).",
+      "Sdílení prostor a zkušeností se základní školou Naše škola Praha.",
+      "Spolupráce s externími odborníky při řešení problémů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení silné a slabé stránky a dobře popisuje specifický hodnocení 'průvodců'.",
+    "uncertainty_notes": [
+      "Chybí informace o celkovém počtu žáků v roce inspekce (zmiňováno jen 10 v 1. ročníku).",
+      "Nejsou uvedeny konkrétní statistiky o úspěšnosti přijímacího řízení ani o neúspěšnosti.",
+      "Není jasné, jak škola konkrétně zajistí chybějící technické vybavení pro vyšší ročníky."
+    ]
+  }
+}

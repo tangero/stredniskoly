@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_600013774_2022-04-12",
+  "school_profile": {
+    "school_type": "Střední škola veterinární, obor 43-41-M/01 Veterinářství, denní forma",
+    "inspection_period": "12. 4. – 23. 5. 2022",
+    "school_change_summary": "Změnil se zřizovatel a název školy. Nový ředitel od ledna 2021. Počet žáků vzrostl o 43 % na 117 žáků ve 4 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní pedagogové",
+        "detail": "Učitelé mají odbornost pro vyučované předměty a dobře propojují teorii s praxí.",
+        "evidence": "Hospitační činnost potvrdila, že pedagogové \"dobře využili svoji odbornost, propojovali obsah vzdělávání s praxí a běžným životem\"."
+      },
+      {
+        "tag": "Příznivá pracovní atmosféra",
+        "detail": "Ve třídách panuje partnerský přístup bez výrazných kázeňských problémů.",
+        "evidence": "\"V převážné části hospitovaného teoretického vyučování panovala příznivá pracovní atmosféra. Žáci měli osvojená pravidla práce.\""
+      },
+      {
+        "tag": "Bohaté praktické zkušenosti",
+        "detail": "Žáci pracují na různých pracovištích a seznamují se s různými typy zvířat a činností.",
+        "evidence": "\"Škole se daří vytvářet široké portfolio smluvních partnerů, na jejichž pracovištích žáci absolvují odbornou praxi.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalitní školní vzdělávací program",
+        "detail": "Program nebyl srozumitelně zpracován a nebyl plně realizován, což omezilo vzdělávání.",
+        "evidence": "\"Školní vzdělávací program nebyl zpracován srozumitelně a kvalitně... jeho naplňování škola v plné míře nezajistila.\""
+      },
+      {
+        "tag": "Chybějící praktická výuka",
+        "detail": "Ve většině ročníků zcela chyběla pravidelná učební praxe, což snižuje rozvoj odborných dovedností.",
+        "evidence": "\"Praktické vyučování žáků škola nerealizovala v plném rozsahu, ve většině ročníků zcela chyběla výuka pravidelné učební praxe.\""
+      },
+      {
+        "tag": "Slabé poradenské služby",
+        "detail": "Výchovný poradce nemá potřebné vzdělání a není efektivně propojen se zbytkem školy.",
+        "evidence": "\"Výchovný poradce neabsolvoval studium pro výkon této specializované činnosti... Způsob spolupráce učitelů a třídních učitelů s výchovným poradcem není ve škole systémově nastaven.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá pravidelná učební praxe a na kterých pracovištích se žáci učí?",
+      "Jakou podporu dostávají žáci, kteří mají problémy se studiem nebo vysokou absenci?",
+      "Jak se škola vypořádala s nedostatky zjištěnými inspekční zprávou?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o práci se zvířaty a veterinářství, kteří se neobávají fyzické práce",
+      "Studenti, kteří se lépe učí v praktickém prostředí a potřebují propojení teorie s realitou",
+      "Žáci, kteří si cení partnerského přístupu učitelů a příznivé atmosféry ve třídě"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – podpora není dostatečně systematická",
+      "Studenti ohrožení školním neúspěchem – chybí jim doučování a preventivní program",
+      "Žáci potřebující individuální péči – výuka není dostatečně diferencovaná"
+    ],
+    "plain_czech_summary": "Škola veterinářství v Brně má zkušené učitele a příznivou atmosféru. Žáci získávají praktické zkušenosti na různých pracovištích. Ale inspekce zjistila vážné problémy: školní program není kvalitně zpracován, chybí pravidelná praktická výuka, a podpora pro slabší žáky je nedostatečná. Vedení školy má problémy s řízením a kontrolou. Škola musí tyto nedostatky do 15 dnů odstranit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, srovnatelný s ostatními školami",
+      "key_numbers": [
+        "Hrubá neúspěšnost 15 % v roce 2020/2021",
+        "Výsledky dlouhodobě srovnatelné s ostatními školami v téže skupině oborů"
+      ],
+      "evidence": "\"Dlouhodobě jsou tyto výsledky srovnatelné s výsledky žáků z ostatních škol ve stejné skupině oborů vzdělání za celou Českou republiku.\""
+    },
+    "absence": {
+      "trend": "Monitorovaná, řešená v součinnosti se zákonnými zástupci",
+      "key_numbers": [
+        "Pravidelná pozornost věnovaná absenci",
+        "Primární spolupráce se zákonnými zástupci při nárůstu absence"
+      ],
+      "evidence": "\"Pravidelnou pozornost věnuje škola absenci žáků, v případě jejího nárůstu primárně spolupracuje s jejich zákonnými zástupci.\""
+    },
+    "support_services": [
+      "Výchovný poradce (bez potřebného vzdělání pro tuto funkci)",
+      "Školní metodika prevence (vykonávána výchovným poradcem)",
+      "Konzultace s učiteli (bez formálního doučování)"
+    ],
+    "safety_climate": [
+      "Bezpečnost ohrožena při tělesné výchově – krácení hodin kvůli přepravě mezi místy",
+      "Nedostatečný časový prostor pro přepravu žáků mezi budovami",
+      "Škola nezohlednila specifické podmínky organizace výuky tělesné výchovy"
+    ],
+    "partnerships_practice": [
+      "Bohaté portfolio smluvních partnerů pro odbornou praxi",
+      "Spolupráce s vysokými školami a komerčními subjekty",
+      "Odborné exkurze a přednášky pro žáky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale obsahuje řadu technických termínů a dlouhých vět. Hlavní zjištění jsou jasná, ale pro laika by byla užitečná větší strukturace.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně se škola vypořádala s doporučeními inspekce po 15 dnech",
+      "Chybí informace o tom, zda se situace s praktickou výukou od inspekce zlepšila",
+      "Není specifikováno, jaké konkrétní nedostatky měl školní vzdělávací program"
+    ]
+  }
+}
+```

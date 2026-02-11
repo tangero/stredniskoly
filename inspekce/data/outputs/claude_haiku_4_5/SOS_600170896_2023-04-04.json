@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600170896_2023-04-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:43:06.112953+00:00",
+  "run_finished_utc": "2026-02-09T16:43:35.130397+00:00",
+  "raw_file": "SOS_600170896_2023-04-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170896_2023-04-04",
+    "school_profile": {
+      "school_type": "Střední škola s obory vzdělání s maturitní zkouškou (Požární ochrana), s výučním listem (7 oborů) a nástavbovým studiem",
+      "inspection_period": "4. 4. – 20. 4. 2023",
+      "school_change_summary": "Od poslední inspekce v 2019 vzrostl počet žáků o třetinu na 412 žáků. Škola změnila název na Střední škola, Semily. Výrazně se zlepšily materiální podmínky, zejména v praktickém vyučování a byla vybudována nová jídelna pro ubytované žáky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vyučování na vysoké úrovni",
+          "detail": "Praktické vyučování probíhá na velmi dobré úrovni s kvalitním propojením teorie a praxe v moderně vybavených dílnách.",
+          "evidence": "Praktické vyučování probíhalo na velmi dobré úrovni s efektivním využitím moderního technického vybavení a propojením teoretických znalostí s praktickými dovednostmi."
+        },
+        {
+          "tag": "Výborné výsledky v soutěžích",
+          "detail": "Žáci oboru Požární ochrana dosahují opakovaně prvních míst v republikových soutěžích v požárním sportu.",
+          "evidence": "Škola má opakovaně výborné výsledky žáků oboru Požární ochrana v republikových soutěžích v požárním sportu."
+        },
+        {
+          "tag": "Zlepšená docházka",
+          "detail": "Neomluvená absence se výrazně snížila, u maturitních oborů nepřesáhla 1 procento.",
+          "evidence": "Neomluvená absence u maturitních oborů nepřesáhla 1 % a u nematuritních oborů 5 % z celkové absence."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v dálkovém studiu",
+          "detail": "V dálkové formě nástavbového studia dosahuje hrubá neúspěšnost v maturitě cca 60 procent, což je výrazně vyšší než průměr v ČR.",
+          "evidence": "V dálkové formě hrubá neúspěšnost činila cca 60 % a byla výrazně vyšší než celorepublikový průměr."
+        },
+        {
+          "tag": "Nedostatečná příprava na maturitu",
+          "detail": "Dosavadní opatření (doučování, cvičné testy) nevedla k dostatečnému zvýšení úspěšnosti ve společné části maturitní zkoušky.",
+          "evidence": "Dosavadní dílčí opatření nevedla k dostatečnému zvýšení úspěšnosti žáků ve společné části MZ."
+        },
+        {
+          "tag": "Pasivní přístup v teoretické výuce",
+          "detail": "Ve výuce převažuje frontální výuka s nízkou aktivitou žáků, chybí sebehodnocení a vrstevnické hodnocení.",
+          "evidence": "Nízká byla četnost využití aktivizačních didaktických postupů ve výuce a chyběl prostor pro sebehodnocení a vzájemné vrstevnické hodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se škola připravuje na maturitní zkoušku a jaké má výsledky v jednotlivých předmětech?",
+        "Jaké jsou podmínky a výsledky v dálkovém studiu oboru Podnikání?",
+        "Jak se škola snaží aktivizovat žáky v teoretické výuce a rozvíjet jejich samostatnost?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory (truhlář, elektrikář, zedník, tesař, instalatér, obráběč kovů) – zde je výuka na vysoké úrovni",
+        "Žáci oboru Požární ochrana – mají nejlepší výsledky a podporu v soutěžích",
+        "Žáci se zájmem o pečovatelské služby – obor vykazuje dobré výsledky v závěrečných zkouškách"
+      ],
+      "who_should_be_cautious": [
+        "Žáci zvažující dálkové studium oboru Podnikání – neúspěšnost dosahuje 60 procent a mnoho žáků studium nedokončí",
+        "Žáci s vyšší absencí – ti mají výrazně horší prospěch a větší riziko neúspěchu u maturity",
+        "Žáci oboru Podnikání v denní formě – hrubá neúspěšnost v maturitě činila 34 procent"
+      ],
+      "plain_czech_summary": "Střední škola v Semily se zaměřuje na praktické obory a nabízí kvalitní výuku v dílnách. Silnou stránkou je praktické vyučování a výborné výsledky v soutěžích. Slabinou je příprava na maturitní zkoušku, zejména v dálkovém studiu, kde neúspěšnost dosahuje 60 procent. Teoretická výuka je příliš frontální s nízkou aktivitou žáků. Škola se snaží zlepšit situaci, ale dosavadní opatření nejsou dostatečná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neúspěšnost ve společné části maturitní zkoušky se liší podle oboru a formy studia. Obor Požární ochrana má lepší výsledky, dálkové studium má výrazně horší výsledky.",
+        "key_numbers": [
+          "Požární ochrana 2022: hrubá neúspěšnost cca 19 procent",
+          "Nástavbové studium denní forma 2022: cca 34 procent",
+          "Nástavbové studium dálková forma 2022: cca 60 procent"
+        ],
+        "evidence": "V roce 2022 u oboru Požární ochrana se na hrubé neúspěšnosti vyrovnaně podíleli žáci neúspěšní v zkoušce i žáci nekonající MZ pro neprospěch. V dálkové formě byla neúspěšnost tvořena zejména žáky zanechávajícími vzdělávání."
+      },
+      "absence": {
+        "trend": "Absence se výrazně snížila, zejména neomluvená absence. Nižší absence koreluje s lepším prospěchem.",
+        "key_numbers": [
+          "Nematuritní obory 2021/2022: cca 200 hodin na žáka",
+          "Maturitní obory 2021/2022: cca 160 hodin na žáka",
+          "Neomluvená absence maturitní obory: do 1 procenta"
+        ],
+        "evidence": "V maturitních oborech třídy s nižší než průměrnou absencí vykázaly lepší průměrný prospěch, vyšší podíl žáků prospívajících s vyznamenáním a minimální či nulový podíl neprospívajících."
+      },
+      "support_services": [
+        "Výchovná poradkyně efektivně koordinuje podporu žákům se speciálními vzdělávacími potřebami",
+        "Školní metodik prevence (nově v pozici) zajišťuje prevenci rizikového chování",
+        "Nabídka doučování a konzultací pro žáky, cvičné didaktické testy, dělení tříd na skupiny"
+      ],
+      "safety_climate": [
+        "Podmínky k zajištění bezpečnosti jsou stanoveny ve školním řádu a vnitřním řádu domova mládeže",
+        "Žáci jsou seznamováni s bezpečnostními pravidly na začátku roku a průběžně",
+        "Škola vyhledává a analyzuje bezpečnostní rizika, ale je potřebné důsledněji přijímat opatření k jejich odstraňování"
+      ],
+      "partnerships_practice": [
+        "Škola promyšleně rozvíjí spolupráci s profesními a sociálními partnery k doplnění odborné složky vzdělávání",
+        "Praktické vyučování probíhá na reálném pracovišti potenciálního zaměstnavatele (obor Obráběč kovů)",
+        "Zapojení do projektu Erasmus+ od školního roku 2021/2022 s mobilitou žáků a učitelů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však technicky náročnější a vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků v jednotlivých oborech, pouze celkové počty",
+        "Není jasné, jaké konkrétní opatření škola již přijala na základě inspekce",
+        "Chybí informace o kvalitě teoretické výuky v jednotlivých předmětech mimo zmíněné"
+      ]
+    }
+  }
+}

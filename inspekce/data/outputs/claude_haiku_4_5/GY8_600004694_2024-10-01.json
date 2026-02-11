@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600004694_2024-10-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:13:38.931973+00:00",
+  "run_finished_utc": "2026-02-09T16:14:07.168406+00:00",
+  "raw_file": "GY8_600004694_2024-10-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600004694_2024-10-01",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium poskytující všeobecné vzdělání v denní formě",
+      "inspection_period": "1. 10. 2024 – 4. 10. 2024",
+      "school_change_summary": "Od inspekce v 2017: obměna více než poloviny pedagogů, posílení vedení o třetího zástupce, rozšíření poradenského pracoviště o školní psycholožku, výrazné zlepšení materiálních podmínek (fasáda, okna, atrium, tělocvičny), zlepšení výsledků vzdělávání a snížení počtu neprospívajících žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělávání",
+          "detail": "Systémově nastavené jazykové vzdělávání s diferenciací skupin podle úrovně, přípravou na certifikáty a širokými semináři.",
+          "evidence": "Přes polovina žáků dosahuje úrovně C1, mnozí C2, téměř polovina skládá zkoušky ze dvou jazyků."
+        },
+        {
+          "tag": "Osobnostní rozvoj",
+          "detail": "Motivační prostředí podporuje všestranný rozvoj prostřednictvím projektů, soutěží, exkurzí a zájmových aktivit.",
+          "evidence": "Žáci se umisťují na předních místech celostátních kol olympiád, 13 žáků studuje podle individuálního plánu."
+        },
+        {
+          "tag": "Materiální vybavení",
+          "detail": "Aktivní zlepšování podmínek včetně modernizace odborných učeben a digitálního vybavení.",
+          "evidence": "Nová fasáda, výměna oken, rekonstrukce atria, zmodernizované učebny fyziky a jazykové učebny."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Reflexe výuky",
+          "detail": "V některých hodinách chybí didaktické závěry a dostatečná reflexe s žáky.",
+          "evidence": "Inspektoři zaznamenali, že vyučující sporadicky ověřují zvládnutí učiva a efektivně nevyužívají závěrečné shrnutí."
+        },
+        {
+          "tag": "Diferenciace úloh",
+          "detail": "V části hodin chybí individualizace a diferenciace s ohledem na různé tempo práce a nadané žáky.",
+          "evidence": "Všichni žáci často plnili stejné typy úloh bez odlišné míry obtížnosti."
+        },
+        {
+          "tag": "Jazyková kultura",
+          "detail": "Někteří učitelé a žáci používají nespisovnou češtinu.",
+          "evidence": "Inspektoři zaznamenali nižší míru jazykové kultury v některých hodinách."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením, a jaké jsou výsledky tohoto doučování?",
+        "Jaké jsou možnosti individuálního vzdělávacího plánu a pro které žáky je vhodný?",
+        "Jak se škola vypořádává s tím, že sídlí ve dvou budovách – jaký to má dopad na organizaci výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a přírodní vědy – škola má silné zaměření na oba obory s bohatou nabídkou seminářů.",
+        "Talentovaní a nadaní žáci – škola vytváří podmínky pro jejich rozvoj a individuální studium.",
+        "Žáci z širšího okolí – příznivá dopravní dostupnost umožňuje dojíždění i ze Středočeského kraje."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuální péče a diferenciace – v některých hodinách se diferenciace nedostatečně uplatňuje.",
+        "Žáci se slabšími výsledky – ačkoli škola poskytuje podporu, počet neprospívajících je nízký, což může znamenat selektivní přístup.",
+        "Žáci preferující praktické vzdělání – gymnázium je zaměřeno na teoretické vzdělání a přípravu na vysokou školu."
+      ],
+      "plain_czech_summary": "Gymnázium prof. Jana Patočky je kvalitní pražská škola se silným zaměřením na jazyky a přírodní vědy. Vedení aktivně zlepšuje podmínky, pedagogický sbor je kvalifikovaný a motivovaný. Výsledky žáků jsou výborné – všichni absolventi pokračují na vysokých školách. Škola nabízí bohatý program rozšiřujících aktivit a podporuje nadané žáky. Slabší stránkou je, že v některých hodinách chybí dostatečná reflexe a diferenciace úloh pro žáky s různým tempem práce."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení od inspekce 2017",
+        "key_numbers": [
+          "Všichni žáci pokračují do terciárního vzdělávání",
+          "Přes 50 % žáků dosahuje úrovně C1 v cizích jazycích",
+          "Téměř 50 % skládá zkoušky ze dvou cizích jazyků"
+        ],
+        "evidence": "Ve společné části MZ dosahují žáci výrazně lepších výsledků než žáci dané skupiny oborů v celorepublikovém srovnění."
+      },
+      "absence": {
+        "trend": "Vyšší omluvená absence na žáka",
+        "key_numbers": [
+          "Vyšší absence způsobena dlouhodobými zdravotními obtížemi některých žáků"
+        ],
+        "evidence": "Inspektoři zaznamenali vyšší průměrnou omluvená absenci, kterou vysvětlují zdravotními problémy jednotlivých žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště rozšířené o pozici školní psycholožky",
+        "Individuální konzultace, doučování a plány pedagogické podpory pro žáky ohrožené neúspěchem",
+        "Adaptační a sportovní kurzy, tematické přednášky a intervence ve třídách",
+        "Kariérové poradenství na standardní úrovni s individuálními konzultacemi"
+      ],
+      "safety_climate": [
+        "Vstup do hlavní budovy zabezpečen stálou službou recepce, kamerovým a elektronickým systémem",
+        "Ojedinělé případy rizikových jevů řešeny individuálně výchovnými komisemi",
+        "Motivační hodnocení prostřednictvím pochval výrazně převažuje nad výchovnými opatřeními",
+        "Školní preventivní strategie zohledňuje potřeby školy a umožňuje včasnou identifikaci problémů"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Přírodovědecké fakulty Univerzity Karlovy a Farmaceutické fakulty UK Hradec Králové",
+        "Dlouhodobě rozvíjená spolupráce s tuzemskými a evropskými zahraničními školami",
+        "Partnerská spolupráce se zákonnými zástupci, Spolkem rodičů a zřizovatelem",
+        "Odborné exkurze a workshopy na pracovištích vysokých škol a sociálních partnerů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Některé pasáže jsou však poměrně dlouhé a složitě strukturované, což mírně snižuje přehlednost.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent hodin mělo nedostatky v reflexi a diferenciaci – jde o 'část hodin' a 'některé hodiny'.",
+        "Není jasné, jaké konkrétní opatření škola již přijala na základě doporučení z inspekce 2017.",
+        "Chybí informace o počtu žáků, kteří opustili školu v průběhu studia, a důvodech jejich odchodu."
+      ]
+    }
+  }
+}

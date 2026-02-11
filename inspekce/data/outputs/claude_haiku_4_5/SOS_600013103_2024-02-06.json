@@ -1,0 +1,117 @@
+{
+  "report_id": "SOS_600013103_2024-02-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:27:29.171933+00:00",
+  "run_finished_utc": "2026-02-09T16:27:54.578835+00:00",
+  "raw_file": "SOS_600013103_2024-02-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600013103_2024-02-06",
+    "school_profile": {
+      "school_type": "Střední škola podnikání (obor Ekonomika a podnikání, 4leté studium)",
+      "inspection_period": "6. až 8. února 2024",
+      "school_change_summary": "Od poslední inspekce se zvýšil počet žáků až na plnou kapacitu (118 zapsaných). Ukončen byl program s jazykově-právním zaměřením, nyní se vyučuje s profilací na Anglický jazyk pro odbornou praxi nebo Internetové podnikání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné jazykové vzdělání",
+          "detail": "Škola nabízí širokou nabídku cizích jazyků s velmi dobrou úrovní komunikačních dovedností žáků.",
+          "evidence": "\"velmi dobrá úroveň komunikační dovednosti žáků v cizích jazycích\" a \"široka nabídka cizích jazyků\""
+        },
+        {
+          "tag": "Praktické vzdělání přes fiktivní firmy",
+          "detail": "Žáci pracují na vlastních internetových obchodech a získávají certifikáty a státní zkoušky.",
+          "evidence": "\"úspěšná práce žáků při vytváření a prezentaci fiktivních firem\" s \"vynikajícími výsledky ze soutěží\""
+        },
+        {
+          "tag": "Příjemná školní atmosféra",
+          "detail": "Malá škola s rodinným charakterem, kde se všichni dobře znají a panuje vstřícný přístup.",
+          "evidence": "\"vstřícná atmosféra školy\" a \"přátelský a vstřícný přístup učitelů\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší diferenciace výuky",
+          "detail": "Všichni žáci se učí stejné učivo stejným tempem bez přizpůsobení jejich schopnostem.",
+          "evidence": "\"Diferenciace obtížnosti zadávaných úloh nebyla využívána, všichni se učili všechno a stejným tempem\""
+        },
+        {
+          "tag": "Nekompletní cílování hodin",
+          "detail": "Učitelé ne vždy jasně stanovují a vyhodnocují, co se mají žáci v hodině naučit.",
+          "evidence": "\"Pouze v části hodin byl stanoven a ujasněn vzdělávací cíl zaměřený na žáky\""
+        },
+        {
+          "tag": "Krátké přestávky",
+          "detail": "Většina přestávek trvá jen 5 minut, což negativně ovlivňuje pohodu žáků i učitelů.",
+          "evidence": "\"částečným omezením pro wellbeing učitelů i žáků je jen minimální čas přestávek\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá práce na fiktivní firmě a jaké jsou reálné výstupy pro žáky?",
+        "Jakou podporu dostávají žáci, kteří mají potíže s matematikou nebo jinými předměty?",
+        "Jak se škola vypořádává s tím, že všichni žáci se učí stejné učivo bez ohledu na jejich schopnosti?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o podnikání, e-commerce a internetový marketing",
+        "Studenti, kteří chtějí kvalitní jazykové vzdělání s praktickým zaměřením",
+        "Žáci preferující menší školu s osobnějším přístupem a dobrými vztahy mezi učiteli a studenty"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s výrazně slabšími schopnostmi v matematice (obsah je nastaven i na rozšiřující učivo)",
+        "Studenti, kteří potřebují individualizovanou výuku přizpůsobenou jejich tempu",
+        "Žáci vyžadující více času na odpočinek během školního dne (krátké přestávky)"
+      ],
+      "plain_czech_summary": "Střední škola podnikání v Vysokém Mýtě je malá, příjemná škola s rodinným charakterem. Silnou stránkou je praktické vzdělání přes fiktivní firmy a výborné jazykové vzdělání. Žáci dosahují dobrých výsledků, chování je bez problémů. Slabší je individualizace výuky – všichni se učí stejně bez ohledu na schopnosti. Učitelé ne vždy jasně stanovují cíle hodin. Škola je vhodná pro motivované žáky zajímající se o podnikání a jazyky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – nízká míra neúspěšnosti",
+        "key_numbers": [
+          "Ze 27 maturantů v roce 2022/23 neuspěli 3 žáci (i po podzimním termínu)",
+          "5 žáků absolvovalo maturitu s vyznamenáním",
+          "Žáci skládají státní zkoušky a získávají certifikáty"
+        ],
+        "evidence": "\"Celkové ročníkové i maturitní výsledky žáků jsou dobré, míra neúspěšnosti je nízká\""
+      },
+      "absence": {
+        "trend": "Velmi nízká fluktuace žáků",
+        "key_numbers": [
+          "Příchody a odchody žáků během roku jsou spíše výjimečné",
+          "Vysoká míra naplněnosti tříd – plné využití kapacity školy",
+          "Nebyly uděleny snížené známky z chování ani ředitelské důtky"
+        ],
+        "evidence": "\"Pozitivním zjištěním je velmi nízká fluktuace žáků\" a \"nemusela se scházet výchovná komise\""
+      },
+      "support_services": [
+        "Výchovný poradce a metodika prevence v jedné osobě zajišťují individuální vzdělávací plány",
+        "Akce a přednášky pro žáky ve spolupráci s partnery (ACET, OSPOD, Policie ČR)",
+        "Adaptační kurzy na začátku prvního ročníku, sportovně-turistické a vodácké kurzy",
+        "Studentská rada poskytující vedení školy připomínky a podněty"
+      ],
+      "safety_climate": [
+        "Vstřícná a podporující atmosféra díky menší velikosti školy",
+        "Příjemné vystupování vyučujících, ukázněnost žáků, žádné komunikační bariéry",
+        "Žáci bez obav pokládají dotazy a vyjadřují postoj",
+        "Dobrá úroveň prevence negativního chování – nebyly uděleny důtky ani svolány výchovné komise"
+      ],
+      "partnerships_practice": [
+        "Partnerství s německým Korbachu – odborná praxe žáků financovaná Česko-německým fondem",
+        "Projekt DiscoverEU (Moje cesta do Evropy) – cestování vlakem po Evropě",
+        "Projektový den s konkrétní firmou pro žáky třetích ročníků",
+        "Workshopy odborníků z praxe, využití rodilých mluvčích",
+        "Účast na veletrzích fiktivních firem, škola sama pořádá školní i regionální veletrhy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Obsahuje jasné oddělení silných a slabých stránek. Některé pasáže jsou však delší a složitější (např. popis výuky), což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o počtu žáků, kteří neprospěli v jednotlivých předmětech (např. matematika)",
+        "Chybí informace o tom, jak dlouho trvá školní den a jaké jsou konkrétní délky přestávek",
+        "Není jasné, kolik procent žáků má speciální vzdělávací potřeby (zmíněno jen 5 žáků bez kontextu celkového počtu)"
+      ]
+    }
+  }
+}

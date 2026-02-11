@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "model_id": "openai_gpt_5_2_reference",
+  "run_started_utc": "2026-02-09T11:29:49.198072+00:00",
+  "run_finished_utc": "2026-02-09T11:30:24.918793+00:00",
+  "raw_file": "GY8_600008029_2025-10-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008029_2025-10-21",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium (79-41-K/81), denní studium",
+      "inspection_period": "21. 10. 2025 − 23. 10. 2025",
+      "school_change_summary": "Škola má nového zástupce, probíhá generační obměna sboru a proběhly investice do prostor a IT včetně nového zázemí pro žáky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Příjemné klima ve výuce",
+          "detail": "Výuka běžela ve vstřícném prostředí a ve vyšších ročnících mířila k dobré přípravě na maturitu.",
+          "evidence": "„výuka probíhala v příjemném a vstřícném pracovním klimatu… směřovala k efektivní přípravě na maturitní zkoušku“"
+        },
+        {
+          "tag": "Silné vztahy a peer program",
+          "detail": "Škola posiluje sociální dovednosti a bezpečné prostředí přes peer aktivity napříč ročníky.",
+          "evidence": "„podporuje rozvoj… kompetencí, včetně peer aktivit“; „významně přispívají k rozvoji bezpečného a podpůrného školního prostředí“"
+        },
+        {
+          "tag": "Dobré studijní výsledky a nízká absence",
+          "detail": "Neprospívajících je minimum, skoro polovina má vyznamenání a absence je nízká bez neomluvených hodin.",
+          "evidence": "„neprospěli pouze dva žáci… prospěli všichni… téměř polovina… vyznamenáním“; „neomluvené hodiny nebyly zaznamenány“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo diferenciace pro různé úrovně",
+          "detail": "Ve výuce se jen výjimečně přizpůsobují úkoly různému potenciálu žáků.",
+          "evidence": "„pouze výjimečně uplatněna diferenciace… s ohledem na potenciál jednotlivých žáků“"
+        },
+        {
+          "tag": "Slabší rozvoj kritického myšlení a práce žáků s IT",
+          "detail": "Žáci mají méně prostoru pracovat s digitálními nástroji a různými zdroji informací.",
+          "evidence": "„aktivní práce žáků s IT… v omezené míře… chyběla práce s různými zdroji… na rozvoj kritického myšlení“"
+        },
+        {
+          "tag": "Omezení tělocviku v zimě",
+          "detail": "Chybějící funkční tělocvična komplikuje tělesnou výchovu, v zimě se dochází do sportovní haly.",
+          "evidence": "„Absence funkční tělocvičny limituje… v zimním období… žáci docházejí… do městské sportovní haly“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší „pouze výjimečně uplatněnou diferenciaci“ v běžných hodinách (např. náročnější úkoly pro nadané)?",
+        "Jak budou více podporovat „aktivní práci žáků s IT“ a „práci s různými zdroji“ pro kritické myšlení?",
+        "Jak prakticky funguje tělocvik v zimě, když „žáci docházejí… do městské sportovní haly“?"
+      ],
+      "who_school_fits": [
+        "Pro děti, které chtějí osmileté gymnázium s „efektivní přípravou na maturitní zkoušku“.",
+        "Pro děti, kterým sedí komunitnější prostředí a baví je „peer aktivity“ a studentské zapojení.",
+        "Pro zájemce o jazyky, protože „výuka cizích jazyků probíhala převážně v cílovém jazyce“ a je zde „účast rodilé mluvčí“."
+      ],
+      "who_should_be_cautious": [
+        "Pro děti, které potřebují častou individuální gradaci obtížnosti, protože „chyběla diferenciace vzdělávacích cílů“.",
+        "Pro děti, které čekají hodně diskuzí a kritického myšlení v každém předmětu, protože „chyběla práce… zaměřená na rozvoj kritického myšlení“.",
+        "Pro děti, které chtějí plnohodnotnou tělocvičnu ve škole, protože „dvě menší tělocvičny… nejsou… využívány“."
+      ],
+      "plain_czech_summary": "Jde o malé osmileté gymnázium s dobrými výsledky a nízkou absencí. V hodinách je příjemné klima a ve vyšších ročnících se míří na maturitu. Škola je silná ve vztazích, prevenci a peer aktivitách, žáci se zapojují i do soutěží. Rezervy inspekce vidí v malé diferenciaci výuky, menší aktivní práci žáků s IT a slabším rozvoji kritického myšlení. Sport v zimě komplikuje chybějící funkční tělocvična, žáci chodí do městské haly."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě srovnatelná s průměrem, v roce 2025 v některých předmětech nadprůměr.",
+        "key_numbers": [
+          "5 žáků nahradilo maturitu z jazyka certifikátem",
+          "1 žák měl opravnou z AJ (uspěl na podzim)",
+          "Výsledky v matematice a NJ byly nadprůměrné (2025)"
+        ],
+        "evidence": "„dlouhodobě srovnatelné s celostátním průměrem… (matematika, německý jazyk) nadprůměrných“; „Pět žáků… certifikátem“; „Pouze jeden žák… opravnou“"
+      },
+      "absence": {
+        "trend": "Nízká.",
+        "key_numbers": [
+          "Neomluvené hodiny: 0"
+        ],
+        "evidence": "„Absence žáků zůstává na nízké úrovni, neomluvené hodiny nebyly zaznamenány“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště a kariérové poradenství („Součástí je i kariérové poradenství“)",
+        "Podpůrná opatření dle doporučení a vyhodnocování („realizována… a jejich účinnost… vyhodnocována“)",
+        "Školní asistentka („finančnímu zajištění pozice školní asistentky“)",
+        "Podpora začínajících učitelů včetně tandemu („Začínající učitelé… mentory… tandemové výuky“)",
+        "Elektronická schránka důvěry („Žáci mohou využít elektronickou schránku důvěry“)"
+      ],
+      "safety_climate": [
+        "Příjemné a vstřícné klima ve výuce („v příjemném a vstřícném pracovním klimatu“)",
+        "Prevence rizik a včasná intervence („zaměřuje na předcházení rizikovému chování a včasnou intervenci“)",
+        "Peer program napříč ročníky podporuje bezpečí („významně přispívají k rozvoji bezpečného a podpůrného… prostředí“)"
+      ],
+      "partnerships_practice": [
+        "Energetická společnost podporuje technické vzdělávání („klíčovým partnerem je energetická společnost… zájem o technické vzdělávání“)",
+        "Spolupráce s Jihočeskou univerzitou („projektu ‚Provázející učitel‘… nové impulzy“)",
+        "Absolventi se vracejí s přednáškami a workshopy („jako odborníci z praxe se vracejí“)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Shrnutí je psané běžnou češtinou, drží se praktických dopadů (výuka, podpora, zázemí) a každé tvrzení má krátkou citaci.",
+      "uncertainty_notes": [
+        "Text neuvádí konkrétní hodnoty absence (jen že je nízká).",
+        "U maturit jsou uvedeny jen vybrané údaje (certifikáty, opravná zkouška), ne celková úspěšnost."
+      ]
+    }
+  }
+}

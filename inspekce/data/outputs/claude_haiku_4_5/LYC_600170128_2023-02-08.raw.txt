@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "LYC_600170128_2023-02-08",
+  "school_profile": {
+    "school_type": "Střední odborná škola a Střední odborné učiliště (SOŠ a SOU)",
+    "inspection_period": "8.–13. února 2023",
+    "school_change_summary": "Od inspekce v roce 2016 se počet žáků zvýšil o třetinu na 632 žáků. Škola rozšířila nabídku oborů a výrazně zlepšila materiální podmínky díky projektům a spolupráci se zřizovatelem."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a strategie",
+        "detail": "Ředitel vede školu s jasnou koncepcí zaměřenou na stálé zlepšování a má funkční systém řízení s dobrou spoluprací vedení.",
+        "evidence": "Ředitel vychází z účelné a realistické koncepce, kterou průběžně vyhodnocuje. Funkční systém řízení účinně využívá efektivní spolupráci."
+      },
+      {
+        "tag": "Výborné výsledky u maturitní zkoušky",
+        "detail": "Žáci dosahují velmi dobrých výsledků, v posledních třech letech byla minimální nebo nulová neúspěšnost u maturit.",
+        "evidence": "Ve školním roce 2021/2022 byla minimální či nulová hrubá neúspěšnost žáků u MZ. Výsledky čtyřletých oborů jsou lepší nebo srovnatelné s celorepublikovým průměrem."
+      },
+      {
+        "tag": "Moderní vybavení a praktická příprava",
+        "detail": "Škola má nové vybavení požárního výcvikového střediska, robotizace, automatizace a měřicí laboratoře pro kvalitní praktické vyučování.",
+        "evidence": "Nové vybavení požárního výcvikového střediska, zajištění moderních technologií pro výuku robotizace a automatizace a měřicí a zkušební laboratoře."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nižší motivace žáků nástavbového studia",
+        "detail": "Žáci dvouletých oborů mají vysokou absenci (přes 200 hodin) a nižší motivaci k účasti ve výuce, což vede k předčasným ukončením studia.",
+        "evidence": "Průměrná absence žáků nástavbového studia činila více než 200 hodin. Ve školním roce 2021/2022 úspěšně ukončily vzdělávání MZ přibližně dvě třetiny žáků."
+      },
+      {
+        "tag": "Nedostatečná individuální podpora v teoretické výuce",
+        "detail": "Ve výuce chybí diferenciace obsahu podle potřeb žáků, málo se používá formativní hodnocení a zpětná vazba.",
+        "evidence": "Ve většině hodin nebyla sledována diferenciace obsahu učiva a individuální podpora žáků. Pedagogové jen v nízké míře poskytovali žákům zpětnou vazbu."
+      },
+      {
+        "tag": "Problémy s motivací v nematuritních oborech",
+        "detail": "Přibližně polovina žáků, kteří zahájí vzdělávání v nematuritních oborech, jej úspěšně nedokončí.",
+        "evidence": "Ze žáků, kteří v příslušném prvním ročníku zahájili vzdělávání, jej úspěšně dokončila zhruba polovina."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky nástavbového studia, aby zvýšila jejich motivaci a snížila vysokou absenci?",
+      "Jaké jsou konkrétní programy doučování a individuální podpory pro žáky ohrožené školní neúspěšností?",
+      "Jak se škola zaměřuje na rozvoj čtenářské gramotnosti a kritického myšlení v teoretické výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické obory a moderní technologie, kteří chtějí kvalitní přípravu na práci v regionu",
+      "Studenti čtyřletých maturitních oborů (Požární ochrana, Mechanik elektrotechnik), kde je vyšší motivace a lepší výsledky",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola věnuje náležitou pozornost a poskytuje podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižší motivací k učení – v nematuritních oborech skončí přibližně polovina studentů, v nástavbovém studiu je vysoká absence",
+      "Studenti, kteří potřebují intenzivní individuální podporu a diferenciovaný přístup – inspekce zjistila nedostatky v tomto směru",
+      "Žáci nástavbového studia (dvouletí) – mají výrazně vyšší absenci a nižší motivaci než čtyřletí studenti"
+    ],
+    "plain_czech_summary": "Škola v Kladně je dobře vedená s moderním vybavením a výborně připravuje žáky na maturitní zkoušky. Čtyřletí studenti dosahují velmi dobrých výsledků. Problém je nižší motivace žáků, zejména těch v dvouletých oborech, kteří mají vysokou absenci a často studium nedokončí. Ve výuce chybí individuální přístup a zpětná vazba. Škola je vhodná pro motivované žáky se zájmem o praktické obory, ale méně vhodná pro ty, kteří potřebují intenzivnější podporu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení – ve školním roce 2021/2022 minimální nebo nulová neúspěšnost",
+      "key_numbers": [
+        "Čtyřletí obory: výsledky lepší nebo srovnatelné s celorepublikovým průměrem",
+        "Nástavbové obory: v 2019/2020 horší než průměr, v 2021/2022 velmi dobré výsledky",
+        "Nejslabší výsledky v dílčí zkoušce z českého jazyka a literatury"
+      ],
+      "evidence": "Výsledky žáků čtyřletých oborů v celorepublikovém porovnání byly vždy lepší, popř. srovnatelné s průměrem. Ve školním roce 2021/2022 byla minimální či nulová hrubá neúspěšnost."
+    },
+    "absence": {
+      "trend": "Vysoká absence v nástavbovém studiu, nižší v čtyřletých oborech",
+      "key_numbers": [
+        "Nástavbové obory: průměrná absence více než 200 hodin",
+        "Čtyřletí obory: absence přibližně o třetinu nižší",
+        "Absence spojená s neprospěchem a předčasným ukončením studia"
+      ],
+      "evidence": "Průměrná absence žáků nástavbového studia činila více než 200 hodin. Ve čtyřletých oborech byla průměrná absence žáků přibližně o třetinu nižší."
+    },
+    "support_services": [
+      "Školní poradenský tým s podrobně rozpracovaným systémem poradenské pomoci",
+      "Dlouhodobý program Záchrana pro žáky s rizikem školní neúspěšnosti",
+      "Doučování v rámci projektů, ale s nižší účastí ohrožených žáků",
+      "Adaptační aktivity pro nástup do střední školy",
+      "Kariérové poradenství – absolventi se úspěšně zapojují do pracovního procesu"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti – škola dbá na bezpečné prostředí",
+      "Žáci jsou preventivně a opakovaně poučováni o bezpečnosti, zejména v praktickém vyučování",
+      "Příjemné a upravené prostředí podporuje zdravý sociální a psychický vývoj",
+      "Kvalitně nastaven preventivní systém na omezování všech forem rizikového chování"
+    ],
+    "partnerships_practice": [
+      "Funkční spolupráce se smluvními pracovišti pro praktické vyučování",
+      "Rozsáhlá spolupráce se základními a středními školami, Hospodářskou komorou a firmami",
+      "Firmy v regionu projevují trvalý zájem o absolventy",
+      "Intenzivní spolupráce učitelů teoretického a praktického vyučování s odborníky z praxe"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními údaji a příklady. Jsou jasně odděleny silné stránky, slabé stránky a doporučení. Některé pasáže jsou však delší a obsahují více technických detailů.",
+    "uncertainty_notes": [
+      "Inspekce nezveřejňuje konkrétní počty žáků, kteří předčasně ukončili studium v jednotlivých oborech – pouze obecné procento",
+      "Není jasné, jaké konkrétní opatření škola již přijala na základě doporučení z inspekce 2016",
+      "Chybí informace o počtu a kvalifikaci pedagogů v jednotlivých oborech"
+    ]
+  }
+}
+```

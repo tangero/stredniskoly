@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600010538_2021-09-21",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:33:53.810821+00:00",
+  "run_finished_utc": "2026-02-10T08:34:56.473667+00:00",
+  "raw_file": "GY8_600010538_2021-09-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600010538_2021-09-21",
+    "school_profile": {
+      "school_type": "osmileté a čtyřleté gymnázium",
+      "inspection_period": "21. − 23. 9. 2021",
+      "school_change_summary": "Škola nedávno otevřela čtyřletý obor a výrazně navýšila počet žáků i učitelů, vedení se zaměřuje na zkvalitnění procesů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky a rozvoj",
+          "detail": "Škola nabízí širokou škálu aktivit a kurzů, podporuje talent a žáci dosahují dobrých výsledků v soutěžích i u maturity.",
+          "evidence": "„Škola umožňuje uskutečňovat širokou nabídkou aktivit... žáci dosahují úspěchů i ve vyšších kolech na krajské a národní úrovni.“"
+        },
+        {
+          "tag": "Partnerské vztahy",
+          "detail": "Gymnázium aktivně spolupracuje s univerzitami a partnery, což obohacuje výuku.",
+          "evidence": "„Škola při vzdělávání žáků spolupracuje s celou řadou partnerů (např. Technická univerzita Liberec...).“"
+        },
+        {
+          "tag": "Motivace a stipendia",
+          "detail": "Škola má nastavený systém stipendií a oceňování, který motivuje žáky k výkonu.",
+          "evidence": "„Škola spravuje vlastní stipendijní fond... a v souladu s nastavenými podmínkami uděluje stipendia.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Právní nejistoty",
+          "detail": "Školní řád a pravidla hodnocení nejsou v souladu s legislativou, což může ohrozit práva žáků.",
+          "evidence": "„Zjištěné nedostatky v obsahu školního řádu... nesou rizika v oblasti naplňování práv žáků.“"
+        },
+        {
+          "tag": "Kvalita poradenských služeb",
+          "detail": "Školní poradenské pracoviště nemá jasná pravidla a metodiky chybí potřebnou kvalifikaci.",
+          "evidence": "„Škola nevytváří podmínky pro zajištění kvalitních poradenských služeb žákům.“"
+        },
+        {
+          "tag": "Klima ve třídách",
+          "detail": "U některých tříd byly zjištěny problémy ve vztazích mezi žáky.",
+          "evidence": "„Z analýzy výsledků tohoto šetření vyplynuly indicie o narušení některých složek třídního klimatu (vztahy mezi žáky).“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší zjištěné problémy v třídním klimatu a vztazích mezi žáky?",
+        "Jaká konkrétní opatření přijala škola k nápravě nelegálních částí školního řádu a pravidel hodnocení?",
+        "Kdo konkrétně a jak kvalifikovaně bude poskytovat mému dítěti výchovné poradenství?"
+      ],
+      "who_school_fits": [
+        "Ambiciózní žáci, kteří chtějí být motivováni stipendii a oceňováním za výsledky.",
+        "Rodiny hledající školu s bohatou nabídkou volitelných předmětů a mimoškolních aktivit.",
+        "Žáci, kteří chtějí být vedeni k samostatnému bádání a výzkumu."
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, které vyžadují bezchybné dodržování právních předpisů a transparentní pravidla hodnocení.",
+        "Žáci se speciálními vzdělávacími potřebami vyžadujícími komplexní podporu kvalifikovaného poradenského týmu.",
+        "Rodiče, kteří preferují klasická vysvědčení před trimestrálním bodovým hodnocením."
+      ],
+      "plain_czech_summary": "Gymnázium prošlo velkým nárůstem žáků a otevřelo čtyřletý obor. Klade důraz na rozvoj talentů, nabízí stipendia a širokou paletu aktivit, včetně spolupráce s univerzitami. Výuka je kvalitní, žáci jsou úspěšní v soutěžích i u maturity. Slabinou je neuspokojivé nastavení vnitřních pravidel, která nejsou v souladu se zákonem, a nedostatečná podpora poradenských služeb. Zhoršující se prostorové podmínky škola řeší provizorně. Pro aktivní a talentované žáky je škola dobrou volbou, ale rodiče by měli bedlivě sledovat, jak škola řeší své systémové nedostatky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "vysoká úspěšnost",
+        "key_numbers": [
+          "100 % úspěšnost ve společné části (jaro 2021)",
+          "6 ze 22 žáků neuspělo v profilové části (jaro 2021)",
+          "Všichni opravné zkoušky úspěšně složili na podzim"
+        ],
+        "evidence": "„Ve společné části maturitní zkoušky byli v jarním období 2021 úspěšní všichni žáci.“"
+      },
+      "absence": {
+        "trend": "neuvedeno",
+        "key_numbers": [
+          "7 žáků odešlo během/minulého školního roku",
+          "5 žáků odešlo na konci školního roku"
+        ],
+        "evidence": "„Škola sleduje počty a příčiny odchodů žáků... v loňském školním roce 7 žáků.“"
+      },
+      "support_services": [
+        "Školní psycholožka poskytuje podporu, ale chybí systematická dokumentace a program.",
+        "Výchovná poradkyně a metodička prevence nemají potřebnou kvalifikaci.",
+        "Kompetence členů poradenského pracoviště nejsou jasně definovány."
+      ],
+      "safety_climate": [
+        "Škola má nastavený systém úrazové prevence.",
+        "V některých třídách jsou narušené vztahy mezi žáky.",
+        "Třídnické hodiny slouží spíše k organizaci než k budování vztahů."
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce s Technickou univerzitou Liberec a Akademií věd ČR.",
+        "Účast v mezinárodním projektu Erasmus+.",
+        "Spolupráce se zákonnými zástupci je hodnocena jako důležitá součást partnerství."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, ale obsahuje úřednické obraty a opakuje se v popisu metodických a právních nedostatků.",
+      "uncertainty_notes": [
+        "Konkrétní příčiny odchodů 7 žáků nejsou v textu specifikovány.",
+        "Text nepřináší detaily o prostorových problémech kromě zmínky o kontejnerové přístavbě.",
+        "Není jasné, jak konkrétně probíhá „efektivní“ metodická podpora začínajících učitelů."
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY8_600015831_2023-01-12",
+  "school_profile": {
+    "school_type": "Biskupské gymnázium (osmileté a čtyřleté studium), 363 žáků",
+    "inspection_period": "12.–13. a 16.–17. ledna 2023",
+    "school_change_summary": "Škola zřídila robotické centrum, anglickou knihovnu a centrum neformálního vzdělávání s fotoateliérem. Zvýšila zapojení žáků a rodičů do školního života."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Více než 96% úspěšnosti při maturitních zkouškách a přední místa v soutěžích a olympiádách.",
+        "evidence": "Ve školním roce 2021/2022 škola dosáhla více než 96% úspěšnosti při maturitních zkouškách."
+      },
+      {
+        "tag": "Péče o nadané žáky",
+        "detail": "Speciální program pro nadané žáky včetně stáží v Akademii věd ČR a zkoušek Cambridge English.",
+        "evidence": "Klíčovou aktivitou školy je podpora mimořádně nadaných a nadaných žáků, kteří se podílí na výzkumu."
+      },
+      {
+        "tag": "Kvalitní poradenství",
+        "detail": "Tým výchovné poradkyně, metodičky prevence a psycholožky zajišťuje doučování a kariérové poradenství.",
+        "evidence": "Školní poradenské pracoviště tvoří výchovná poradkyně, metodička prevence a psycholožka."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejasné cíle hodin",
+        "detail": "Učitelé si často zaměňují cíl hodiny za téma, což vede k neefektivním závěrům bez ověření dosažení cíle.",
+        "evidence": "Ve většině hodin docházelo při stanovení cíle k záměně za téma hodiny a neefektivní závěry hodin."
+      },
+      {
+        "tag": "Chybí sebehodnocení žáků",
+        "detail": "Žáci nemají dostatek příležitostí k vlastnímu hodnocení svého pokroku a vzájemnému hodnocení.",
+        "evidence": "Absence sebehodnocení a vzájemného hodnocení žáků je uvedena jako slabá stránka."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "V některých hodinách chybí přizpůsobení činností různým schopnostem žáků.",
+        "evidence": "V některých hodinách byla zaznamenána nízká míra diferenciace činností."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s nadanými žáky a jaké jsou podmínky pro účast v programech Akademie věd ČR?",
+      "Jaký je systém doučování a jak se škola podílí na přípravě žáků na vysoké školy?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a sebehodnocení žáků?"
+    ],
+    "who_school_fits": [
+      "Nadaní a talentovaní žáci, kteří chtějí pokročilou přípravu a spolupráci s vědeckými institucemi",
+      "Žáci, kteří si cení kvalitního poradenství a individuální péče při výběru budoucího povolání",
+      "Rodiny hledající školu s moderní infrastrukturou (robotické centrum, anglická knihovna, fotoateliér)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více jasně strukturované a explicitně vysvětlené cíle jednotlivých lekcí",
+      "Rodiny očekávající silný důraz na sebehodnocení a reflexi vlastního učení",
+      "Žáci s různorodými schopnostmi, kteří by mohli profitovat z vyšší míry individualizace výuky"
+    ],
+    "plain_czech_summary": "Biskupské gymnázium je kvalitní škola s výbornými výsledky maturit (96%+) a silným zaměřením na nadané žáky. Nabízí moderní vybavení, kvalitní poradenství a spolupráci s vědeckými institucemi. Inspekce však upozornila na to, že učitelé si někdy zaměňují cíl hodiny za téma a chybí práce se sebehodnocením žáků. Škola má 30 dní na nápravu těchto nedostatků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborný",
+      "key_numbers": [
+        "96% úspěšnosti při maturitních zkouškách (2021/2022)",
+        "363 žáků celkem (234 v osmileté, 129 v čtyřleté formě)"
+      ],
+      "evidence": "Ve školním roce 2021/2022 škola dosáhla více než 96% úspěšnosti při maturitních zkouškách."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se nezabývá absencí žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, metodička prevence, psycholožka",
+      "Doučování a individuální konzultace",
+      "Intenzivní kurzy na prevenci školního neúspěchu",
+      "Kariérové poradenství včetně testů inteligence a osobnostních testů"
+    ],
+    "safety_climate": [
+      "Systematická práce školního poradenského pracoviště vede k minimalizaci rizikových jevů",
+      "Funkční systém delegování pravomocí a pravidelné provozní porady zvyšují kvalitu řízení",
+      "V hospitovaných hodinách byla příjemná atmosféra a aktivní zájem žáků o výuku"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s Akademií věd ČR na výzkumných projektech nadaných žáků",
+      "Spolupráce s vnějšími odborníky prostřednictvím workshopů, besed a přednášek",
+      "Pravidelné vzdělávání pedagogů s vzájemnými hospitacemi a zpětnou vazbou"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány. Chybí však konkrétní čísla o absenci a podrobnější data o výsledcích jednotlivých předmětů.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je to problém nebo ne",
+      "Nejsou uvedeny konkrétní výsledky jednotlivých předmětů, pouze celkový výsledek maturit",
+      "Není jasné, jak se škola vypořádá s doporučeními inspekce v praxi"
+    ]
+  }
+}
+```

@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "LYC_600013278_2023-12-04",
+  "school_profile": {
+    "school_type": "Střední škola s pěti tříletými obory (výuční list), čtyřmi čtyřletými obory (maturita) a jedním nástavbovým studiem",
+    "inspection_period": "4. prosince 2023 až 7. prosince 2023",
+    "school_change_summary": "Od poslední inspekce v 2018 se počet žáků zvýšil o 38 % na 699 žáků. Došlo k modernizaci materiálních podmínek, zejména pro praktické vyučování. Výrazně se zlepšily výsledky u maturitní zkoušky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické dovednosti",
+        "detail": "Výuka v dílnách a odborných učebnách s moderním vybavením umožňuje žákům kvalitně se připravit na reálnou práci.",
+        "evidence": "Materiální podmínky odpovídají nárokům oborů a umožňují seznamování s moderními technologiemi."
+      },
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola má unikátní partnerství s automobilovým výrobcem a spolupracuje s bezpečnostními složkami a dalšími firmami.",
+        "evidence": "Žáci získávají pracovní zkušenosti v reálném prostředí u nás i v zahraničí prostřednictvím projektů Erasmus+."
+      },
+      {
+        "tag": "Výsledky u maturity",
+        "detail": "Úspěšnost u maturitní zkoušky se výrazně zlepšila z 21 % neúspěšnosti na necelých 10 %.",
+        "evidence": "Ve školním roce 2022/2023 si maturitu složilo 95 % žáků, kteří ji konali."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita teoretické výuky",
+        "detail": "Převažuje frontální forma výuky s pasivitou žáků, chybí rozvoj kritického myšlení a klíčových kompetencí.",
+        "evidence": "V převážné části teoretického vyučování dominovala frontální forma s předáváním hotových informací."
+      },
+      {
+        "tag": "Metodická podpora učitelů",
+        "detail": "Vedení školy nedostatečně vyhodnocuje hospitační zjištění a neposkytuje cílenou metodickou podporu pedagogům.",
+        "evidence": "Hodnocení závěrů z hospitací a poskytování zpětné vazby je věnována nižší pozornost."
+      },
+      {
+        "tag": "Profesní rozvoj pedagogů",
+        "detail": "Jen část učitelů se aktivně zajímá o nové trendy a moderní pedagogické postupy.",
+        "evidence": "Plán dalšího vzdělávání má formální charakter a jeho naplnění vedení nevyhodnocuje důsledně."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá spolupráce s automobilovým výrobcem a jaké má pro žáky praktické přínosy?",
+      "Jaké jsou možnosti doučování a individuální podpory pro žáky, kteří mají potíže s teoretickými předměty?",
+      "Jak se škola zaměřuje na rozvoj klíčových kompetencí a kritického myšlení v teoretické výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a ruční práci, kteří se chtějí připravit na konkrétní profesi",
+      "Studenti, kteří si cení moderního vybavení a možnosti učit se na reálných pracovištích",
+      "Žáci, kteří chtějí získat zkušenosti v zahraničí a zapojit se do soutěží a projektů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují aktivní a interaktivní formu výuky teoretických předmětů",
+      "Studenti, kteří se spoléhají na individuální metodickou podporu a zpětnou vazbu od učitelů",
+      "Žáci se speciálními vzdělávacími potřebami, kde chybí cílenější podpora při realizaci podpůrných opatření"
+    ],
+    "plain_czech_summary": "Škola André Citroëna je zaměřená na praktické vzdělávání s výborným vybavením a silnými vazbami na praxi. Žáci se učí na moderních strojích a mají možnost pracovat u skutečných zaměstnavatelů. Výsledky u maturity se výrazně zlepšily. Slabší stránkou je teoretická výuka, která často probíhá tradičním způsobem bez aktivního zapojení žáků. Učitelé by měli více využívat interaktivní metody a rozvíjet u žáků kritické myšlení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "Neúspěšnost 2020/2021: 21 %",
+        "Neúspěšnost 2022/2023: necelých 10 %",
+        "Úspěšnost složení maturity: 95 %"
+      ],
+      "evidence": "Významné zlepšení dosáhli žáci čtyřletých oborů při ukončování vzdělávání maturitní zkouškou v porovnání posledních tří let."
+    },
+    "absence": {
+      "trend": "Velmi dobrá",
+      "key_numbers": [
+        "Průměrná absence: 134 hodin na žáka",
+        "Neomluvená absence: cca 0,2 hodiny na žáka",
+        "Kázeňská opatření: ojediněle"
+      ],
+      "evidence": "Na základě vhodně stanovených pravidel se škole daří úspěšně předcházet vysoké či neomluvené absenci."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psychologem, výchovnými poradci a speciálním pedagogem",
+      "Doučování a individuální konzultace s učiteli pro žáky ohrožené školním neúspěchem",
+      "Sociometrické šetření a adaptační kurzy pro nové žáky"
+    ],
+    "safety_climate": [
+      "Bezproblémové chování žáků, kázeňská opatření využita jen ojediněle",
+      "Jasně stanovená pravidla a vyrovnané udělování pochval a opatření",
+      "Školní psycholog intervuje v případě podezření na nezdravé vztahy v kolektivu"
+    ],
+    "partnerships_practice": [
+      "Unikátní partnerství se světovým výrobcem automobilů s autorizovaným prodejem a servisem",
+      "Spolupráce s bezpečnostními složkami (záchranný systém, celní správa, vězeňská služba, městská policie)",
+      "Projekty Erasmus+ umožňující praxi v zahraničí (Španělsko, Maďarsko, Rakousko)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více odborné terminologie.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní procenta žáků se speciálními vzdělávacími potřebami v jednotlivých oborech",
+      "Chybí detailní informace o tom, kolik procent pedagogů absolvuje další vzdělávání",
+      "Není jasné, jaké konkrétní metody se používají v doučování"
+    ]
+  }
+}
+```

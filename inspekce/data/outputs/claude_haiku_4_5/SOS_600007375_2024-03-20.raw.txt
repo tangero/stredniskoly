@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600007375_2024-03-20",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola stavební s maturitní zkouškou v oboru Stavebnictví, domovem mládeže a školní jídelnou",
+    "inspection_period": "20.–25. března 2024",
+    "school_change_summary": "Od inspekce v roce 2017 se výrazně zvýšil počet žáků (239 žáků, 95% naplněnost) i ubytovaných v domově mládeže (36 osob, 60% naplněnost). Materiální podmínky se výrazně zlepšily – modernizovány odborné učebny, vybudována venkovní učebna, zajištěna bezbariérovost."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola účinně propojuje teoretické poznatky s praktickými zkušenostmi a dlouhodobě spolupracuje s kvalitními sociálními partnery.",
+        "evidence": "\"Dlouhodobá spolupráce s kvalitními sociálními partnery, která umožňuje systematický rozvoj odborných kompetencí žáků a zvyšuje uplatnitelnost absolventů na trhu práce.\""
+      },
+      {
+        "tag": "Zlepšené materiální podmínky",
+        "detail": "Vedení školy aktivně získává finanční prostředky na modernizaci učeben a vybavení.",
+        "evidence": "\"Vícezdrojové financování a aktivní působení vedení školy umožňuje průběžné zkvalitňování materiálních podmínek vzdělávání.\""
+      },
+      {
+        "tag": "Nízká nezaměstnanost absolventů",
+        "detail": "Absolventi se úspěšně uplatňují na trhu práce nebo pokračují v dalším studiu.",
+        "evidence": "\"Absolventi školy se zapojují do pracovního procesu, někteří pokračují v dalším studiu. Nezaměstnanost absolventů školy je nízká.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky v maturitě – profilová část",
+        "detail": "Hrubá neúspěšnost v profilové části maturitní zkoušky dosáhla 28 % a meziročně se téměř zdvojnásobila.",
+        "evidence": "\"V profilové části MZ dosáhli žáci horších výsledků. Hrubá neúspěšnost činila přibližně 28 %, při meziročním srovnání se tak zvýšila téměř dvojnásobně.\""
+      },
+      {
+        "tag": "Rostoucí absence žáků",
+        "detail": "Roční průměrná absence se zvýšila o 10 % na 166 hodin na žáka, což signalizuje pokles motivace.",
+        "evidence": "\"Roční průměrná absence žáků byla vyšší o cca 10 %, dosahovala 166 h na žáka.\""
+      },
+      {
+        "tag": "Nedostatečná aktivizace v hodinách",
+        "detail": "Žáci nejsou dostatečně zapojeni do výuky, chybí diferenciace úkolů a sebehodnocení.",
+        "evidence": "\"Žáci však nebyli v některých hodinách účinně aktivizováni a málo se zapojovali do procesu vzdělávání.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou neúspěšnost v profilové části maturitní zkoušky, zejména v češtině a literatuře?",
+      "Jaké konkrétní kroky podniká škola proti rostoucí absenci žáků a jak motivuje studenty k účasti na výuce?",
+      "Jak se škola zaměřuje na individuální podporu slabších žáků a jaké má možnosti doučování?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o stavebnictví a praktické dovednosti, kteří si cení kvalitní vybavení a moderních učeben",
+      "Studenti, kteří potřebují individuální podporu a vedení – škola má kvalifikované poradce a vychovatele",
+      "Žáci z okolí, kteří mohou využít ubytování v domově mládeže s dobrými podmínkami"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v češtině a literatuře – právě v těchto předmětech jsou největší problémy u maturitní zkoušky",
+      "Studenti, kteří potřebují intenzivní přípravu na maturitu – opatření školy se zatím neukázala jako dostatečně účinná",
+      "Žáci, kteří se spoléhají na samostudium – výuka není dostatečně zaměřena na aktivní zapojení a sebehodnocení"
+    ],
+    "plain_czech_summary": "Střední průmyslová škola stavební v Mělníku je moderně vybavená a nabízí kvalitní praktické vzdělání v oboru stavebnictví. Vedení školy aktivně zlepšuje podmínky a spolupracuje s partnery z praxe. Absolventi se dobře uplatňují na trhu práce. Problémem je však slabá příprava na maturitní zkoušku, zvlášť v profilové části, kde neúspěšnost dosáhla 28 %. Také roste absence žáků a výuka není dostatečně zaměřena na aktivní zapojení studentů. Škola by měla zlepšit metody výuky a účinnost přípravy na maturitu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – společná část se zlepšila, profilová část se výrazně zhoršila",
+      "key_numbers": [
+        "Hrubá neúspěšnost v profilové části: 28 % (meziročně se zdvojnásobila)",
+        "Hrubá neúspěšnost v společné části: 11 % (zlepšení oproti předchozímu roku)",
+        "Nejslabší výsledky: český jazyk a literatura, zejména ústní zkoušky v profilové části"
+      ],
+      "evidence": "\"V profilové části MZ dosáhli žáci horších výsledků. Hrubá neúspěšnost činila přibližně 28 %. Ve společné části MZ činila přibližně 11 %.\""
+    },
+    "absence": {
+      "trend": "Negativní – absence výrazně vzrostla",
+      "key_numbers": [
+        "Roční průměrná absence: 166 hodin na žáka",
+        "Nárůst: cca 10 % oproti předchozímu roku",
+        "Indikátor: pokles motivace žáků k účasti na studiu"
+      ],
+      "evidence": "\"Roční průměrná absence žáků byla vyšší o cca 10 %, dosahovala 166 h na žáka. Se ve školním roce 2022/2023 ve srovnání s předchozím školním rokem dařilo méně motivovat žáky k účasti ke studiu.\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně a školní metodička prevence s příslušným studiem",
+      "Individuální konzultace a doučování pro žáky s problémy",
+      "Vychovatelé v domově mládeže poskytují individuální podporu a nabízejí zájmové činnosti"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti, zaznamenané úrazy převážně v tělesné výchově",
+      "Bezpečnost budovy zajištěna – vstup byl zabezpečen",
+      "Škola věnuje bezpečnosti patřičnou pozornost stanovením pravidel a postupů, žáci jsou prokazatelně informováni"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se sociálními partnery umožňuje praktické vyučování a rozvoj odborných kompetencí",
+      "Smlouvy o zajištění praktického vyučování jsou uzavřeny",
+      "Praktické činnosti jsou účelně propojovány s teoretickými poznatky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, ale obsahuje řadu odborných termínů a dlouhých vět. Hlavní zjištění jsou jasná, ale některé pasáže vyžadují pozorné čtení. Struktura je logická a umožňuje orientaci.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků neúspěšných v jednotlivých předmětech maturitní zkoušky",
+      "Chybí detailní informace o tom, jaká konkrétní opatření škola již podnikla a proč nebyla účinná",
+      "Není jasné, zda absence souvisí s konkrétními skupinami žáků nebo je rozšířená"
+    ]
+  }
+}
+```

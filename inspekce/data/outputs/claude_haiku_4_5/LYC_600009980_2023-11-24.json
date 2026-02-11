@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600009980_2023-11-24",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:33:14.112244+00:00",
+  "run_finished_utc": "2026-02-09T16:33:41.648810+00:00",
+  "raw_file": "LYC_600009980_2023-11-24.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600009980_2023-11-24",
+    "school_profile": {
+      "school_type": "Střední odborná škola s maturitní zkouškou, domovem mládeže a školní jídelnou",
+      "inspection_period": "24. listopadu 2023 až 5. ledna 2024",
+      "school_change_summary": "Škola prošla radikálním nárůstem počtu žáků (více než dvojnásobek), rozšířením nabídky o obor Informační technologie, modernizací budovy a stavbou nové tělocvičny. Počet ubytovaných žáků v domově mládeže vzrostl z 24 na 40."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie a praxe",
+          "detail": "Škola dlouhodobě spolupracuje s více než 90 sociálními partnery a nabízí zahraničních stáže v Evropě.",
+          "evidence": "\"Dlouhodobá spolupráce školy s externími partnery, možnosti zahraničních stáží pro žáky i pedagogy, úzké propojení teoretické a praktické výuky\""
+        },
+        {
+          "tag": "Kvalitní vybavení a infrastruktura",
+          "detail": "Kmenové a odborné učebny jsou dostatečně vybaveny pomůckami a IT technologiemi, staví se nová multifunkční tělocvična.",
+          "evidence": "\"Kmenové i odborné učebny jsou dostatečně a vhodně vybaveny pomůckami i IT technologiemi. Hygienicky a prostorově nevyhovující nefunkční školní tělocvičnu nahradí moderní multifunkční budova\""
+        },
+        {
+          "tag": "Péče o žáky se speciálními potřebami",
+          "detail": "Škola má výchovnou poradkyni a školního metodika prevence, kteří koordinují podporu a pravidelně vyhodnocují její účinnost.",
+          "evidence": "\"Výchovná poradkyně koordinuje poskytování podpůrných opatření žákům na základě doporučení školských poradenských zařízení. V pravidelných intervalech jejich účinnost vyhodnocuje\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá diferenciace výuky",
+          "detail": "Pedagogové nenabízejí aktivity podporující kreativitu a samostatné bádání, chybí individuální přístup k nadaným žákům.",
+          "evidence": "\"Pedagogové nenabízejí při výuce aktivity a činnosti využívající a podporující kreativitu nebo samostatné bádání. Žáci neporovnávají různé návrhy řešení problémových úloh\""
+        },
+        {
+          "tag": "Nedostatečné vedení domova mládeže",
+          "detail": "Řízení domova mládeže není dostatečně sledováno vedením školy, chybí hospitační činnost a profesní vzdělávání vychovatelek.",
+          "evidence": "\"Řízení a metodickému vedení činnosti v domově mládeže není věnována dostatečná pozornost vedení školy, hospitační činnost zde neprobíhá\""
+        },
+        {
+          "tag": "Absence strategického plánování vzdělávání",
+          "detail": "Plány dalšího vzdělávání pedagogů pro školní rok neexistují, vzdělávání probíhá pouze na základě nabídky institucí.",
+          "evidence": "\"Plány dalšího vzdělávání pedagogických pracovníků pro aktuální školní rok neexistují. Vzdělávání probíhá pouze na základě nabídky vzdělávacích institucí\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jak se liší přístup k nim od ostatních?",
+        "Jaké jsou výsledky maturitních zkoušek v jednotlivých oborech a jak se vyvíjely v posledních letech?",
+        "Jak funguje domov mládeže a jaké aktivity nabízí ubytovaným žákům mimo vyučování?"
+      ],
+      "who_school_fits": [
+        "Žáci zajímající se o zemědělství a přírodní vědy, kteří chtějí kombinovat teoretické znalosti s praktickou výukou na školním hospodářství",
+        "Studenti, kteří si chtějí rozšířit obzory zahraničními stážemi a kontakty s moderními podniky",
+        "Žáci z okolí, kteří potřebují ubytování v domově mládeže a ocení péči vychovatelek"
+      ],
+      "who_should_be_cautious": [
+        "Nadaní žáci, kteří potřebují individuální výzvy a kreativní přístup – škola se zaměřuje spíše na frontální výuku",
+        "Žáci se speciálními vzdělávacími potřebami, kterým chybí individualizovaná podpora při řešení úloh",
+        "Studenti, kteří se učí lépe prostřednictvím skupinové práce a diskusí – ty jsou v hodinách zařazovány jen ojediněle"
+      ],
+      "plain_czech_summary": "Střední odborná škola v Stříbru je moderní zařízení s dobrým vybavením a silnými vazbami na praxi. Žáci se učí v reálném prostředí zemědělských podniků a mohou vycestovat na zahraniční stáže. Škola však má rezervy v tom, jak učí – výuka je často frontální bez dostatečné podpory kreativního myšlení a individuálních potřeb žáků. Domov mládeže funguje, ale vedení školy mu nevěnuje dostatek pozornosti. Škola se snaží zlepšovat, ale potřebuje lépe plánovat vzdělávání svých učitelů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírný pozitivní posun",
+        "key_numbers": [
+          "Výsledky zpravidla průměrné až podprůměrné v porovnání s ČR",
+          "Dochází k mírnému pozitivnímu posunu v dosažených výsledcích"
+        ],
+        "evidence": "\"škola se však pravidelně účastní výběrového zjišťování výsledků vzdělávání Českou školní inspekcí zpravidla s průměrnými a podprůměrnými výsledky v porovnání s ČR. Dosažené výsledky (kde dochází k mírnému pozitivnímu posunu)\""
+      },
+      "absence": {
+        "trend": "Není v textu specifikován",
+        "key_numbers": [
+          "Vychovatelky domova mládeže mají přehled o docházce ubytovaných žáků"
+        ],
+        "evidence": "\"Vychovatelky mají přehled o docházce do školy i studijních výsledcích ubytovaných žáků, neboť se pravidelně zúčastňují porad\""
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodika prevence zajišťují poradenské služby",
+        "Pravidelné třídnické hodiny zaměřené na prevenci nežádoucího chování",
+        "Go Kurz pro adaptaci nových žáků a rozvoj prosociálních vazeb",
+        "Spolupráce s pedagogicko-psychologickými poradnami a speciálně pedagogickými centry",
+        "Doučování a pomoc s přípravou na vyučování v domově mládeže"
+      ],
+      "safety_climate": [
+        "Budova je vybavena recepcí, vchody jsou zabezpečeny a během výuky uzamčeny",
+        "Některé prostory jsou monitorovány kamerovým systémem",
+        "Domov mládeže má vnitřní řád a provozní řády zveřejněné na nástěnkách",
+        "Žáci jsou seznamováni s bezpečností a vnitřním řádem"
+      ],
+      "partnerships_practice": [
+        "Více než 90 sociálních partnerů pro praktickou výuku",
+        "Spolupráce s ČVUT (IT technika, 3D tiskárny)",
+        "Česká zemědělská univerzita – cvičná škola pro pedagogickou praxi",
+        "Lékařská fakulta Univerzity Karlovy v Plzni – přednášky a školení",
+        "Tříměsíční odborné stáže v Evropě pro žáky Agropodnikání a Přírodovědného lycea",
+        "Smluvní partneři pro praktickou výuku chovu zvířat s moderními technologiemi"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však technicky náročnější a vyžadují znalost školského systému. Struktura je logická a dobře organizovaná.",
+      "uncertainty_notes": [
+        "Konkrétní procenta nebo počty žáků, kteří dosahují jednotlivých stupňů maturitní zkoušky, nejsou uvedeny",
+        "Není jasné, jak přesně se liší výsledky jednotlivých oborů v maturitních zkouškách",
+        "Chybí informace o počtu žáků, kteří školu nedokončí nebo přestoupí"
+      ]
+    }
+  }
+}

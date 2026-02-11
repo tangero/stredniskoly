@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600012328_2023-04-11",
+  "school_profile": {
+    "school_type": "Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "11. až 13. a 17. dubna 2023",
+    "school_change_summary": "Nová ředitelka v prvním funkčním období. Vyřešeny majetkové poměry budov – všechny tři objekty jsou nyní v majetku zřizovatele, ale jeden stojí na pozemku soukromé společnosti. Stav budov se zhoršil kvůli historickým komplikacím s financováním oprav."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka ekonomických předmětů",
+        "detail": "Žáci pracují ve fiktivních firmách, učí se používat účetní software a rozvíjejí samostatnost.",
+        "evidence": "Firemní praxe, ekonomická cvičení a IT v ekonomice umožňují upevnění učiva v praktických činnostech."
+      },
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Nová digitální jazyková laboratoř umožňuje individuální práci podle vlastního tempa s efektivní kontrolou výslovnosti.",
+        "evidence": "Žáci pracují se sluchátky, učitelé monitorují práci a kontrolují správnost, komunikační kompetence se rozvíjejí rozhovory ve dvojicích."
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Minimální kázeňská opatření, velmi nízká absence (60 hodin na žáka), adaptační kurzy pro prvňáky.",
+        "evidence": "Pouze minimum neomluvených hodin, pravidelné sportovní kurzy a tematické besedy podporují třídní kolektivy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá individualizace výuky",
+        "detail": "Učitelé nediferencují učivo podle potřeb žáků – stejná úroveň pro všechny bez ohledu na speciální potřeby či nadání.",
+        "evidence": "Tempo hodin je jednotné, diferenciace není zřejmá, minimální zohledňování individuálních potřeb žáků ve výuce."
+      },
+      {
+        "tag": "Nefunkční systém řízení školy",
+        "detail": "Ředitelka si zajišťuje příliš mnoho věcí sama, zpětná vazba je omezená, školní dokumenty jsou nepřehledné.",
+        "evidence": "Systém řízení je méně otevřený, kontrolní systém málo účinný, dokumentace není srozumitelná pro všechny účastníky."
+      },
+      {
+        "tag": "Vyšší neúspěšnost v posledních ročnících",
+        "detail": "V jarním termínu 2022 neuspělo 37 % maturantů, po opravách zůstalo neúspěšných 15 %.",
+        "evidence": "Z 65 žáků neuspělo 25, neúspěšnost zejména v posledních dvou ročnících studia."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením nebo jsou nadaní? Jaké má individuální plány?",
+      "Jaké jsou výsledky maturit v posledních třech letech a jak se škola snaží zlepšit úspěšnost v posledních ročnících?",
+      "Jak probíhá komunikace mezi vedením školy a rodiči? Jak se rodiče dozvídají o problémech svých dětí?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o ekonomii a obchod – praktická výuka s fiktivními firmami je atraktivní a efektivní.",
+      "Studenti s dobrým základem v jazycích – kvalitní jazykové vybavení a digitální laboratoř podporují rozvoj jazykových dovedností.",
+      "Žáci, kteří potřebují bezpečné a podporující prostředí – nízká absence, minimální kázeňské problémy, adaptační kurzy."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – škola má málo individualizovanou výuku, pouze jeden individuální plán pro osm žáků se speciálními potřebami.",
+      "Nadaní a rychlejší žáci – nejsou dostatečně podporováni, učitelé nediferencují učivo, všichni pracují stejným tempem.",
+      "Žáci, kteří potřebují jasné cíle a strukturu – výuka často postrádá konkrétní vzdělávací cíle, závěry hodin chybí nebo jsou stručné."
+    ],
+    "plain_czech_summary": "Obchodní akademie v Pardubicích je solidní střední školou se silným zaměřením na praktickou ekonomickou výuku. Žáci se učí v reálných situacích, pracují se softwarem a jazykové vzdělání je moderní. Prostředí je bezpečné a podporující. Problém je, že učitelé málo přizpůsobují výuku jednotlivým žákům – všichni dělají totéž tempem. Vedení školy by mělo být otevřenější a lépe komunikovat. Vyšší neúspěšnost v posledních ročnících vyžaduje pozornost."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Klesající – vyšší neúspěšnost v posledních ročnících",
+      "key_numbers": [
+        "Jarní termín 2022: 25 neúspěšných z 65 žáků (37 %)",
+        "Po podzimním opravném termínu: ~15 % neúspěšných",
+        "Školní rok 2021/2022: 24 žáků neprospělo, 13 nebylo hodnoceno"
+      ],
+      "evidence": "Neúspěšnost žáků je vyšší zejména v posledních dvou ročnících studia. Výroční zpráva nereflektovala ročníkové výsledky, zabývala se pouze statistikou maturit."
+    },
+    "absence": {
+      "trend": "Velmi nízká – pozitivní zjištění",
+      "key_numbers": [
+        "Průměrně 60 hodin absence na žáka",
+        "Minimum neomluvených hodin",
+        "Pouze minimum kázeňských opatření"
+      ],
+      "evidence": "Pozitivním zjištěním je velmi malý počet kázeňských opatření, pouze minimum neomluvených hodin a také spíše nižší míra absence žáků ve výuce."
+    },
+    "support_services": [
+      "Výchovná poradkyně – individuální konzultace, kariérové poradenství, zprostředkování informací ze školských poradenských zařízení",
+      "Metodička prevence – pracuje první rok, spolupracuje s výchovnou poradkyní na prevenci",
+      "Asistentka pedagoga – pomáhá zajišťovat podpůrná opatření pro žáky se speciálními vzdělávacími potřebami",
+      "Školní poradenské pracoviště – pravidelná setkání k řešení aktuálních záležitostí"
+    ],
+    "safety_climate": [
+      "Bezpečné prostředí – minimální kázeňská opatření, velmi nízká absence",
+      "Adaptační kurzy pro prvňáky – podpora při vstupu do nového prostředí",
+      "Pravidelné sportovní kurzy a tematické besedy – posilování vztahů v třídních kolektivech",
+      "Žákovská rada – prostor pro projednávání otázek a návrhů týkajících se chodu školy"
+    ],
+    "partnerships_practice": [
+      "Stravování zajištěno ve školní jídelně Základní školy Pardubice, Štefánikova 448",
+      "Ubytování pro dojíždějící žáky v Domově mládeže a školní jídelně Pardubice",
+      "Spolupráce se zřizovatelem (Pardubický kraj) na zlepšování podmínek – nová digitální jazyková laboratoř, opravy",
+      "Finanční prostředky z pořádání přípravných kurzů, jazykových kurzů a kurzů na přípravu k mezinárodní zkoušce FCE"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní příklady z pozorovaných hodin. Jsou jasně identifikovány silné stránky (praktická výuka, jazykové vzdělání) i slabiny (nediferencovaná výuka, nefunkční řízení). Číselné údaje o neúspěšnosti a absenci jsou konkrétní. Doporučení jsou srozumitelná a praktická.",
+    "uncertainty_notes": [
+      "Není jasné, kolik přesně žáků má speciální vzdělávací potřeby – uvedeno osm, ale pouze jeden má individuální plán. Není vysvětleno, jak jsou ostatní podporováni.",
+      "Chybí informace o tom, jak se škola snaží zlepšit neúspěšnost v posledních ročnících – jsou zmíněny problémy, ale ne konkrétní řešení.",
+      "Není jasné, jaké konkrétní změny přinesla nová ředitelka – zmíněno, že převzala prvky původního systému a zavádí změny, ale bez detailů."
+    ]
+  }
+}
+```

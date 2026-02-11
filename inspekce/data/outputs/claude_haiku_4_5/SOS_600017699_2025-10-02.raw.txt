@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_600017699_2025-10-02",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola, Ostrava-Vítkovice, příspěvková organizace",
+    "inspection_period": "2. až 9. října 2025",
+    "school_change_summary": "Od inspekce v roce 2018 došlo k obměně pedagogického sboru, posílení školního psychologa, instalaci výtahu, obnově hřiště a wifi sítě. Kvalitativní posun v materiálních podmínkách a aktualizaci vzdělávacích programů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka na vysoké úrovni",
+        "detail": "Praktické vyučování dosahuje velmi dobré úrovně s kvalifikovanými instruktory, moderním vybavením a propojením s reálnými pracovišti.",
+        "evidence": "Kvalita praktické výuky dosahovala velmi dobré úrovně, vhodně navazovala na teoretické předměty a cíleně rozvíjela odborné dovednosti."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola aktivně identifikuje nadané žáky a vytváří podmínky pro rozvoj jejich talentu s úspěchy v soutěžích.",
+        "evidence": "Žáci dosahují výrazných úspěchů na školní, krajské i celostátní úrovni, např. 1. místo v krajském kole Kovo Junior."
+      },
+      {
+        "tag": "Bezpečnost a prevence",
+        "detail": "Nízká míra úrazovosti díky systematické prevenci a pravidelným nácvikům evakuace.",
+        "evidence": "Vedení školy provádí analýzu úrazovosti, věnuje stálou pozornost úrazové prevenci, což se projevuje v její nízké míře."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky v čtenářské a finanční gramotnosti",
+        "detail": "Žáci dosahují průměrných až slabých výsledků v externím testování gramotnosti.",
+        "evidence": "Ve výběrovém zjišťování výsledků (2022/2023) v čtenářské a finanční gramotnosti dosáhli žáci průměrných a slabých výsledků."
+      },
+      {
+        "tag": "Nedostatečná individualizace teoretické výuky",
+        "detail": "Učitelé v teoretické výuce ne vždy dostatečně sledují pokrok jednotlivých žáků a nereagují včas na obtíže.",
+        "evidence": "U části žáků se vzdělávací výsledky dlouhodobě nelepší, což ukazuje na potřebu intenzivnější podpory a efektivnějších opatření."
+      },
+      {
+        "tag": "Omezená práce v týmech",
+        "detail": "Kooperativní dovednosti a skupinová spolupráce nejsou dostatečně rozvíjeny v teoretické výuce.",
+        "evidence": "Rozvoj kooperativních dovedností nebyl ve sledované výuce výrazněji zaznamenán, skupinové aktivity chybí."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením? Jaké jsou dostupné doučovací programy?",
+      "Jaké jsou možnosti zapojení do soutěží a projektů mimo vyučování? Jak se škola podílí na rozvoji talentu?",
+      "Jak škola zajišťuje bezpečnost žáků při praktickém vyučování na externích pracovištích?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o technické obory a praktickou práci – škola má velmi dobrou úroveň praktické výuky s moderním vybavením",
+      "Nadaní žáci – škola aktivně podporuje jejich rozvoj a zapojuje je do soutěží s úspěchy",
+      "Žáci se speciálními vzdělávacími potřebami – škola poskytuje cílenou podporu a individuální přístup"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v čtenářské a finanční gramotnosti – inspekce zjistila, že škola v této oblasti nepostupuje vždy důsledně",
+      "Žáci, kteří potřebují intenzivní individuální podporu – teoretická výuka není vždy dostatečně individualizovaná",
+      "Žáci, kteří se lépe učí v týmech – skupinová práce a kooperativní dovednosti nejsou v teoretické výuce dostatečně rozvíjeny"
+    ],
+    "plain_czech_summary": "Střední průmyslová škola v Ostravě je zaměřena na technické obory s velmi dobrou praktickou výukou na reálných pracovištích. Škola má moderní vybavení, podporuje nadané žáky a věnuje pozornost bezpečnosti. Slabší stránkou je individualizace teoretické výuky – někteří žáci dlouhodobě neuspívají a škola na to nereaguje dostatečně rychle. Také výsledky v čtenářské a finanční gramotnosti jsou slabší. Skupinová práce a týmová spolupráce nejsou v teoretické výuce dostatečně rozvíjeny."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dobrá úspěšnost s převahou prospívajících žáků",
+      "key_numbers": [
+        "2025: 88 žáků u maturitní zkoušky, 30 s vyznamenáním, 7 neprospělo",
+        "Výučný list: 33 žáků, 2 s vyznamenáním, 6 neprospělo"
+      ],
+      "evidence": "V roce 2025 v oborech s maturitní zkouškou z 88 žáků prospělo s vyznamenáním 30 a neprospělo sedm žáků."
+    },
+    "absence": {
+      "trend": "Nízká neomluvená absence, celková absence na horní hranici",
+      "key_numbers": [
+        "1. pololetí: 32 199 hodin (71 hodin na žáka), neomluvená 338 hodin",
+        "2. pololetí: 35 543 hodin (79 hodin na žáka), neomluvená 178 hodin"
+      ],
+      "evidence": "Absence žáků v teoretickém vyučování byla 32 199 hodin v 1. pololetí a 35 543 hodin ve 2. pololetí."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, školní metodička prevence, interní školní psycholog",
+      "Podpora žáků se speciálními vzdělávacími potřebami: 44 žákům poskytována podpůrná opatření 1.–3. stupně",
+      "Doučování, dělení hodin a individuální konzultace ze všech vyučovacích předmětů"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti díky systematické prevenci a analýze úrazovosti",
+      "Pravidelný nácvik evakuace a krizových postupů prostřednictvím modulu Emergency",
+      "Žáci vybaveni předepsanými pracovními oděvy a ochrannými pomůckami při praktické výuce"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobě budované vztahy se sociálními partnery, kteří se aktivně podílejí na rozvoji praktických dovedností",
+      "Praktické vyučování realizováno na smluvních pracovištích pod vedením kvalifikovaných instruktorů",
+      "Spolupráce s vysokými školami přináší nové podněty žákům i pedagogům"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou více odborné, ale celkově je text pro rodiče dobře pochopitelný.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu absolventů, kteří se uplatnili na trhu práce – nelze posoudit dlouhodobou efektivitu vzdělávání",
+      "Chybí srovnání s průměrem ostatních středních škol v kraji – není jasné, zda jsou výsledky školy nadprůměrné či podprůměrné",
+      "Není specifikováno, jak konkrétně se škola vypořádá s doporučeními inspekce – lhůta je 7 dní, ale výsledky nejsou v této zprávě"
+    ]
+  }
+}
+```

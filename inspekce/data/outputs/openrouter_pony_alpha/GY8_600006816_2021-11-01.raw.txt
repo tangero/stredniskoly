@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600006816_2021-11-01",
+  "school_profile": {
+    "school_type": "Gymnázium s osmiletým a čtyřletým oborem",
+    "inspection_period": "1. − 4. listopadu 2021",
+    "school_change_summary": "Od minulé inspekce vzrostla kvalifikovanost učitelů a zlepšily se materiální podmínky, ale přetrvávají nedostatky v aktivizaci žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Maturita",
+        "detail": "Škola dosahuje v maturitních zkouškách dlouhodobě nadprůměrných výsledků oproti republikovému průměru.",
+        "evidence": "Výsledky žáků v českém jazyce a matematice jsou v průměru dlouhodobě lepší, než je průměr všech gymnázií."
+      },
+      {
+        "tag": "Prospěch",
+        "detail": "Většina žáků prospívá s vyznamenáním a téměř všichni absolventi odcházejí studovat na vysokou školu.",
+        "evidence": "Více než tři čtvrtiny žáků prospěly s vyznamenáním a téměř všichni pokračují ve studiu na vysokých školách."
+      },
+      {
+        "tag": "Klima",
+        "detail": "Škola má vybudovaný funkční systém adaptačních a zážitkových kurzů, který pozitivně ovlivňuje vztahy.",
+        "evidence": "Pestrá skladba zážitkových a sportovních činností pozitivně působí na klima školy, jak dosvědčuje zpětná vazba."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nadaní žáci",
+        "detail": "Škola nemá nastavený systém pro podporu nadaných dětí a ve výuce chybí diferenciace učiva.",
+        "evidence": "Diferenciace výuky zejména ve vztahu k nadaným žákům byla vhodně uplatněna pouze v pětině hodin."
+      },
+      {
+        "tag": "Absence a prospěch",
+        "detail": "U žáků vyššího stupně osmiletého gymnázia se zhoršují studijní výsledky a zvyšuje absence.",
+        "evidence": "V minulých třech letech je zřejmé zhoršování výsledků žáků osmiletého oboru a jejich vyšší absence."
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Fungování výchovného poradenství je omezeno nekvalifikovaností pracovníka a neúplnou dokumentací.",
+        "evidence": "Na oblast výchovného poradenství má nepříznivý vliv jeho nekvalifikovanost a chybí strategie předcházení neúspěšnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje talentované žáky a jak diferencuje výuku v běžných hodinách?",
+      "Jaká opatření škola přijímá k řešení zvyšující se absence a klesajících výsledků na vyšším gymnáziu?",
+      "Kdo zajišťuje výchovné poradenství a jaké má kvalifikaci pro tuto činnost?"
+    ],
+    "who_school_fits": [
+      "Samostatní žáci, kteří dobře zvládají frontální výuku a nevyžadují intenzivní individuální podporu.",
+      "Studenti, kterým vyhovuje sportovní a zážitkové vyžití jako součást života školy.",
+      "Cílevědomí uchazeči, kteří aspirují na vysoké školy a chtějí dosahovat dobrých maturitních výsledků."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují k rozvoji aktivní podporu nadání a pestřejší metody výuky.",
+      "Rodiče dětí se speciálními vzdělávacími potřebami kvůli nedostatkům v poradenském systému.",
+      "Uchazeči o osmiletý obor, kde se v posledních letech zhoršují studijní výsledky."
+    ],
+    "plain_czech_summary": "Gymnázium v Hořovicích nabízí kvalitní přípravu na vysokou školu s nadprůměrnými maturitními výsledky a skvělým klimatem založeným na zážitkových kurzech. Varovným signálem je absence systémové péče o nadané žáky a problémy na vyšším stupni osmiletého studia, kde roste absence a klesá prospěch. Pro rodiče je klíčové zjistit, jak škola řeší individuální přístup a jaké má konkrétní plány s nastavením výchovného poradenství."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výsledky jsou dlouhodobě nadprůměrné, ale v posledních třech letech klesá úroveň u osmiletého oboru.",
+      "key_numbers": [
+        "100 % úspěšnost u maturity",
+        "Výsledky lepší než republikový průměr",
+        "Více než 75 % žáků s vyznamenáním"
+      ],
+      "evidence": "V posledních třech letech ji úspěšně vykonali všichni žáci a výsledky jsou dlouhodobě lepší než průměr gymnázií."
+    },
+    "absence": {
+      "trend": "Celková absence v době pandemie klesla, ale u vyššího gymnázia je dlouhodobě vysoká.",
+      "key_numbers": [
+        "135 hodin na žáka (2018/19)",
+        "0 hodin neomluvené absence",
+        "Výrazně vyšší absence na vyšším gymnáziu"
+      ],
+      "evidence": "Absence žáků se v roce 2018/2019 pohybovala kolem 135 hodin, neomluvená absence se nevyskytla."
+    },
+    "support_services": [
+      "Funkční systém uvádění učitelů do praxe",
+      "Adaptační výjezdy pro začleňování žáků",
+      "Kariérové poradenství sledující uplatnění absolventů"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti a zabezpečený vstup do budovy",
+      "Vzájemný respekt a ohleduplnost mezi žáky",
+      "Převažující kladné hodnocení a motivace žáků"
+    ],
+    "partnerships_practice": [
+      "Využívání sportovišť a prostor místních partnerů",
+      "Zapojení do společenského života města",
+      "Spolupráce s rodiči a absolventy (sponzorství)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozdělený a poskytuje konkrétní data i kontext. Obsahuje odborné termíny, které jsou však vysvětleny nebo pochopitelné z kontextu.",
+    "uncertainty_notes": [
+      "Není zcela jasné, jak konkrétně probíhá diferenciace ve výuce mimo nadané žáky.",
+      "Chybí detailnější rozbor příčin zhoršujících se výsledků na osmiletém gymnáziu."
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600016307_2024-12-03",
+  "school_profile": {
+    "school_type": "Střední škola řemesel s obory vzdělání v elektrikářství, instalatérství, truhlářství, tesařství a zednictví. Nabízí vzdělání s výučním listem, maturitou a speciální programy pro žáky se speciálními vzdělávacími potřebami.",
+    "inspection_period": "3. prosince 2024 až 6. prosince 2024",
+    "school_change_summary": "Od inspekce v roce 2019 vzrostl počet žáků o 52 % na 747 studentů ve 37 třídách. Počet žáků se speciálními potřebami stoupl o 23 %. Vedení bylo posíleno o zástupce ředitele a školního psychologa, škola získala akreditaci Erasmus+ na 2021-2027."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství a uplatnitelnost",
+        "detail": "Škola má kvalitní vztahy se zřizovatelem, odbornými firmami (např. ČEZ) a profesními svazy, což zvyšuje šance absolventů na trhu práce.",
+        "evidence": "Kvalitní a oboustranně přínosné vztahy se zřizovatelem, sociálními partnery a profesními organizacemi se promítají do kvality vzdělávání."
+      },
+      {
+        "tag": "Projekty a vybavení",
+        "detail": "Škola získává dotace na modernizaci učeben a vybavení, což zlepšuje praktické dovednosti žáků a jazykové kompetence.",
+        "evidence": "Zapojení do projektů Erasmus+, Modernizace učebny IT CNC, EDUgrantu umožňuje kontinuální zlepšování materiálních podmínek."
+      },
+      {
+        "tag": "Talentovaní žáci",
+        "detail": "Škola systematicky vyhledává a podporuje nadané žáky, kteří pravidelně vítězí v krajských a celostátních soutěžích.",
+        "evidence": "Pedagogové vyhledávají nadané žáky, systematicky s nimi pracují a na krajské i celostátní úrovni pravidelně obsazují přední místa."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Bezpečnost při praktickém vyučování",
+        "detail": "Inspekce zjistila nedůslednost v zajišťování bezpečnosti a ochrany zdraví všech žáků při praktickém vzdělávání.",
+        "evidence": "Zaznamenány nedostatky v oblasti bezpečnosti a ochrany zdraví žáků při praktickém vzdělávání a nedůslednost v povinnosti zajišťovat bezpečnost všem žákům."
+      },
+      {
+        "tag": "Kontrola a administrativa",
+        "detail": "Vedení školy nemá dostatečně účinný systém kontroly, zejména v dokumentaci úrazů a dodržování právních předpisů.",
+        "evidence": "Nastavené kontrolní mechanismy nejsou efektivní, neumožňují dostatečně monitorovat činnosti školy v oblasti dokumentace úrazů a bezpečnosti."
+      },
+      {
+        "tag": "Kvalita výuky - aktivní učení",
+        "detail": "Výuka se příliš spoléhá na frontální metody, chybí aktivizující metody a práce s různými informačními zdroji.",
+        "evidence": "Využívání aktivizačních metod a různých informačních zdrojů jsou ve výuce uplatňovány pouze ojediněle, převažuje frontální výuka."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola zajišťuje bezpečnost žáků při praktickém vyučování na pracovištích partnerských firem?",
+      "Jaké jsou konkrétní výsledky absolventů na trhu práce a jak dlouho trvá jejich uplatnění po absolvování?",
+      "Jak škola podporuje rozvoj kritického myšlení a samostatného myšlení žáků v teoretické výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a řemesla, kteří se chtějí rychle uplalit na trhu práce",
+      "Talentovaní žáci, kterým škola nabízí podporu a možnost účasti v soutěžích",
+      "Žáci se speciálními vzdělávacími potřebami, kterým je poskytována individuální podpora a asistenti pedagoga"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kterým záleží na vysoké úrovni bezpečnosti při praktickém vyučování - inspekce zjistila nedůslednosti",
+      "Žáci, kteří potřebují více aktivního zapojení a moderních metod výuky - škola stále převážně používá frontální výuku",
+      "Žáci, kteří se chtějí hluboce věnovat teoretickému vzdělání a přípravě na vysokou školu - zaměření je spíše praktické"
+    ],
+    "plain_czech_summary": "Střední škola řemesel v Frýdku-Místku je dobře etablovaná škola s 747 žáky, která se zaměřuje na praktické obory. Její silnou stránkou jsou partnerství s firmami a projekty, které zvyšují kvalitu výuky a šance absolventů na trhu práce. Škola dobře podporuje talentované žáky. Problémem je však nedostatečná kontrola bezpečnosti při praktickém vyučování a administrativa. Výuka je stále příliš tradiční, chybí aktivnější metody a zapojení žáků. Škola by měla zlepšit kontrolní systémy a modernizovat přístup k výuce."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní - vysoká úspěšnost",
+      "key_numbers": [
+        "91,8 % žáků uspělo v maturitní zkoušce",
+        "96 % úspěšnost v češtině a angličtině",
+        "83 % úspěšnost v matematice"
+      ],
+      "evidence": "Ve školním roce 2023/2024 ve společné části maturitní zkoušky uspělo 91,8 % žáků, v češtině a angličtině 96 %, v matematice 83 %."
+    },
+    "absence": {
+      "trend": "Nízká úrazovost, ale problémy se záškoláním",
+      "key_numbers": [
+        "78 žáků s výchovnými problémy",
+        "159 kázeňských opatření",
+        "14 žáků s podmínečným vyloučením"
+      ],
+      "evidence": "V průběhu školního roku 2023/2024 škola projednávala výchovné problémy u 78 žáků, kterým bylo uloženo 159 kázeňských opatření. Problémy se týkaly zejména záškoláctví a zhoršení prospěchu."
+    },
+    "support_services": [
+      "Výchovný poradce, školní metodička prevence, interní školní psycholog a kariérový poradce",
+      "Konzultační hodiny pro žáky s osobními a vzdělávacími problémy",
+      "Skupinové doučování a zvýšená spolupráce se zákonnými zástupci",
+      "Motivační a preventivní workshopy zaměřené na komunikaci a řešení konfliktů"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti díky důrazu na bezpečnost práce",
+      "Ale: zjištěny nedostatky v dokumentaci úrazů a nedůslednost v zajišťování bezpečnosti všem žákům",
+      "Žáci jsou pravidelně poučováni o bezpečném chování a ochraně zdraví"
+    ],
+    "partnerships_practice": [
+      "Partnerství se skupinou ČEZ a.s., Cechem topenářů a instalatérů ČR, Českým sdružením pro technická zařízení",
+      "Spolupráce s Moravskoslezským dřevařským klastrem a Argos elektro a.s.",
+      "Praktické stáže a odborné exkurze navazující na školní vzdělávací programy",
+      "Zahraniční stáže pro zlepšení odborných a jazykových dovedností"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o důkazy. Některé pasáže jsou však delší a obsahují více technických termínů, které mohou být pro laické rodiče méně přístupné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty úrazů ani jejich závažnost - pouze uvádí 'nízkou míru úrazovosti'",
+      "Není jasné, jak dlouho trvá náprava zjištěných nedostatků v bezpečnosti a kontrole",
+      "Chybí konkrétní data o úspěšnosti absolventů na trhu práce a jejich průměrných platech"
+    ]
+  }
+}
+```

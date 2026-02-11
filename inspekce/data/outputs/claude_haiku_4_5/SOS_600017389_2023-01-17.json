@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600017389_2023-01-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:50:41.762182+00:00",
+  "run_finished_utc": "2026-02-09T16:51:07.935361+00:00",
+  "raw_file": "SOS_600017389_2023-01-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017389_2023-01-17",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola stavební, příspěvková organizace",
+      "inspection_period": "17. 1. 2023 − 20. 1. 2023",
+      "school_change_summary": "Od poslední inspekce v březnu 2016 se zlepšil materiálně technický stav budovy, modernizovaly se laboratoře a dílny, zavádí se metoda CLIL do výuky a od roku 2022/2023 funguje školní parlament."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Žáci dosahují stoprocentní úspěšnosti v češtině a cizím jazyce, výsledky jsou v celorepublikovém srovnání výborné.",
+          "evidence": "Dlouhodobý pozitivní trend úspěšnosti v posledních třech letech (od roku 2019)."
+        },
+        {
+          "tag": "Kvalitní propojení teorie s praxí",
+          "detail": "Škola poskytuje odborné vzdělání s účelným propojením teoretických znalostí a praktických dovedností.",
+          "evidence": "Praktická výuka probíhá v moderně vybavené hale, stavební laboratoři a na smluvních pracovištích partnerů."
+        },
+        {
+          "tag": "Silné partnerství se zaměstnavateli",
+          "detail": "Dlouhodobě rozvíjené vztahy s profesními partnery zvyšují uplatnitelnost absolventů na trhu práce.",
+          "evidence": "Vysoká poptávka po absolventech, většina pokračuje v terciárním vzdělávání na vysokých školách."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší zpětná vazba a sebehodnocení",
+          "detail": "Žáci nejsou dostatečně vedeni k sebehodnocení a vzájemnému hodnocení, chybí pravidelná prokazatelná zpětná vazba.",
+          "evidence": "Formativní hodnocení je využíváno jen ojediněle, přestože vedení školy doporučuje jeho zintenzivnění."
+        },
+        {
+          "tag": "Omezené zahraniční stáže",
+          "detail": "Vzdělávání by mohly obohatit zahraniční stáže s větší účastí žáků pro zvýšení jazykových a odborných kompetencí.",
+          "evidence": "Menší míra využití potenciálu zvýšení odborné a jazykové úrovně prostřednictvím zahraničních stáží."
+        },
+        {
+          "tag": "Vztahy mezi žáky a pedagogy",
+          "detail": "Dotazníkové šetření odhalilo prvky narušení ve vztazích mezi žáky a pedagogy.",
+          "evidence": "Analýza výsledků šetření vyplynuly prvky narušení složek týkajících se vztahů mezi žáky a pedagogy."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zintenzivnit formativní hodnocení a zpětnou vazbu v jednotlivých předmětech?",
+        "Jaké jsou možnosti účasti žáků v zahraničních stážích a jak se škola snaží zvýšit jejich počet?",
+        "Jak funguje školní parlament a jak se podílí na zlepšování komunikace mezi žáky a pedagogy?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o stavebnictví, geodézii a katastr nemovitostí, kteří chtějí kvalitní propojení teorie s praxí.",
+        "Talentovaní žáci zaměření na odborné soutěže a projekty (škola má tradici úspěchů v soutěžích).",
+        "Žáci, kteří si cení moderního vybavení a technologií (3D skener, robotické stanice, CAD systémy)."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní individuální zpětnou vazbu a sebehodnocení (ty nejsou dostatečně rozvinuty).",
+        "Žáci se zájmem o zahraniční zkušenosti (zahraniční stáže nejsou zatím běžné).",
+        "Žáci, kteří preferují méně frontální výuku (převažuje výklad a řízený rozhovor)."
+      ],
+      "plain_czech_summary": "Střední průmyslová škola stavební v Opavě je kvalitní školou se silnou tradicí v oboru. Žáci dosahují výborných výsledků v maturitách, zejména v češtině a cizích jazycích. Škola nabízí moderní vybavení a účelné propojení teorie s praxí. Absolventi jsou velmi žádáni na trhu práce. Slabší stránkou je nedostatečné využívání zpětné vazby a sebehodnocení v hodinách. Škola by měla více podporovat zahraniční stáže a zlepšit komunikaci mezi žáky a pedagogy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě pozitivní",
+        "key_numbers": [
+          "100% úspěšnost v českém jazyce a literatuře",
+          "100% úspěšnost v cizím jazyce",
+          "Výborné výsledky v celorepublikovém srovnání za poslední tři roky (2019–2023)"
+        ],
+        "evidence": "Analýza za období posledních tří let (od roku 2019) prokázala výborné výsledky v rámci dané skupiny oborů v celorepublikovém srovnění."
+      },
+      "absence": {
+        "trend": "Kontrola absence je součástí zlepšovacích opatření",
+        "key_numbers": [
+          "Důsledná kontrola absence je jedním z konkrétních postupů na úrovni organizace vzdělávání"
+        ],
+        "evidence": "Vedení školy se problematikou výsledků žáků dlouhodobě zabývá a zlepšuje konkrétní postupy včetně důsledné kontroly absence."
+      },
+      "support_services": [
+        "Výchovná poradkyně s odbornou kvalifikací (od minulé inspekce se stala kvalifikovanou)",
+        "Školní metodička prevence",
+        "Kariérové poradenství v nově vybudovaném pracovišti v půdních prostorách",
+        "Schránka důvěry a zapojení do on-line platformy Nenech to být",
+        "Individuální konzultace nad rámec konzultačních hodin"
+      ],
+      "safety_climate": [
+        "Bezpečnost a ochrana zdraví jsou systematicky řešeny s analýzou rizik a přijímáním opatření",
+        "Při sledované výuce nebyly zaznamenány negativní projevy ve vztazích mezi učiteli a žáky",
+        "Vstřícná pracovní atmosféra bez rušivých momentů",
+        "Školní parlament od září 2022 umožňuje žákům vyjadřovat se k dění ve škole"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s profesními a sociálními partnery na profesním stínování",
+        "Smluvní pracoviště pro praktickou výuku",
+        "Partnerství s Hospodářskou komorou a Českou komorou architektů a inženýrů",
+        "Rodilí mluvčí v jazykové výuce",
+        "Projekty Šablony financované z evropských fondů a OKAP II"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní fakta, ale některé pasáže jsou složitější. Klíčové informace pro rodiče jsou jasně identifikovatelné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty žáků s problémy v chování nebo absence – pouze kvalitativní popis.",
+        "Není jasné, jak velký je podíl žáků, kteří se účastní zahraničních stáží (zmíněno jako příležitost ke zlepšení).",
+        "Dotazníkové šetření odhalilo prvky narušení vztahů, ale nejsou uvedeny konkrétní procenta nebo detaily."
+      ]
+    }
+  }
+}

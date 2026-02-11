@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600015483_2023-04-21",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště s 14 obory vzdělání, z toho 2 maturitní obory (Chovatelství čtyřleté, Podnikání nástavbové) a 12 oborů s výučním listem",
+    "inspection_period": "21. 4. 2023 a 24.–25. 4. 2023",
+    "school_change_summary": "Škola prošla výrazným zlepšením výsledků maturit a snížením absence žáků. Hrubá neúspěšnost u maturit se snížila z 58,3 % (2018/2019) na 5,4 % lepší než průměr ČR (2021/2022). Absence se snížila přibližně o třetinu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní pedagogický sbor",
+        "detail": "Výuka předmětů společné části maturitní zkoušky zajištěna sedmi odborně kvalifikovanými pedagogy se správnou předmětovou specializací.",
+        "evidence": "Vyučující českého jazyka, matematiky a cizích jazyků mají příslušnou předmětovou specializaci."
+      },
+      {
+        "tag": "Výborné materiální vybavení",
+        "detail": "Škola má velmi dobré materiální podmínky s moderní technikou a didaktickým vybavením, zejména v oblasti ICT.",
+        "evidence": "Modernizací a dovybavením se zvýšila úroveň vzdělávání především v oblasti informačních a komunikačních technologií."
+      },
+      {
+        "tag": "Pozitivní klima a vztahy",
+        "detail": "Mezi vyučujícími a žáky panuje vstřícný přístup a oboustranný respekt.",
+        "evidence": "Společným rysem výuky byla příznivá pracovní atmosféra."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky v matematice",
+        "detail": "Matematika vykazuje nejvyšší neúspěšnost a kolísavé výsledky, často kvůli malému počtu přihlášených žáků.",
+        "evidence": "Hrubá neúspěšnost v matematice byla vyšší než celorepublikový průměr o 60 % (2018/2019, 2021/2022)."
+      },
+      {
+        "tag": "Problémy v nástavbovém studiu",
+        "detail": "Nástavbové studium má výrazně horší výsledky než čtyřleté studium, zejména ve společné části maturitní zkoušky.",
+        "evidence": "Přibližně polovina žáků nástavbového studia úspěšně ukončila závěrečný ročník a třetina úspěšně maturovala."
+      },
+      {
+        "tag": "Absence a docházka",
+        "detail": "Po návratu k prezenční výuce došlo ke zhoršení motivace žáků a mírnému nárůstu absence.",
+        "evidence": "Po obnovení prezenční výuky došlo ke zhoršení motivace žáků k účasti ve vzdělávání a k opětovnému mírnému nárůstu absence."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky v matematice, když je to nejslabší předmět?",
+      "Jaké jsou rozdíly v kvalitě výuky mezi čtyřletým oborem Chovatelství a nástavbovým studiem Podnikání?",
+      "Jak škola řeší problém s nízkou motivací žáků po návratu k prezenční výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické obory s výučním listem, kde škola dosahuje dobrých výsledků",
+      "Motivovaní žáci do čtyřletého oboru Chovatelství, který má výrazně lepší výsledky maturit",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje podporu v rozsahu 1.–4. stupně"
+    ],
+    "who_should_be_cautious": [
+      "Žáci slabší v matematice – předmět má dlouhodobě vysokou neúspěšnost",
+      "Uchazeči do nástavbového studia Podnikání – výrazně horší výsledky maturit než čtyřleté studium",
+      "Žáci s rizikem záškoláctví – přestože se absence snížila, stále existuje problém s motivací"
+    ],
+    "plain_czech_summary": "Střední odborné učiliště v Uherském Brodě je školou s dobrým vybavením a kvalitním pedagogickým sborem. Výrazně se zlepšily výsledky maturit – z velmi špatných čísel v roce 2019 se dostala na průměr ČR. Čtyřleté studium Chovatelství má lepší výsledky než nástavbové studium Podnikání. Největší problém zůstává matematika. Škola se dobře stará o žáky se speciálními potřebami a snaží se motivovat žáky k docházce. Pozitivní je vstřícný přístup učitelů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení – hrubá neúspěšnost se snížila z 58,3 % (2018/2019) na 5,4 % lepší než průměr ČR (2021/2022)",
+      "key_numbers": [
+        "Čtyřleté studium 2021/2022: hrubá neúspěšnost horší jen o 0,2 % než průměr ČR",
+        "Nástavbové studium 2021/2022: hrubá neúspěšnost o 5,4 % lepší než průměr ČR",
+        "Matematika: neúspěšnost vyšší o 60 % než průměr ČR (2018/2019, 2021/2022)"
+      ],
+      "evidence": "Hrubá neúspěšnost žáků ve školním roce 2021/2022 byla o 5,4 % nižší než celorepublikový průměr v dané skupině."
+    },
+    "absence": {
+      "trend": "Výrazné snížení absence v období 2018–2022, ale po návratu k prezenční výuce mírný nárůst",
+      "key_numbers": [
+        "Neomluvená absence snížena přibližně o třetinu ve srovnání s rokem 2018/2019",
+        "Omluvená absence klesla téměř o polovinu",
+        "Po obnovení prezenční výuky došlo k mírnému nárůstu absence"
+      ],
+      "evidence": "Důsledné uplatňování přijatých opatření proti záškoláctví se projevilo snížením neomluvené absence přibližně o třetinu."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, metodička prevence, kariérová poradkyně",
+      "Podpora 51 žáků se speciálními vzdělávacími potřebami v rozsahu 1.–4. stupně",
+      "Individuální konzultace, doučování a typové didaktické testy pro žáky s problémy"
+    ],
+    "safety_climate": [
+      "Vstřícný přístup a oboustranný respekt mezi vyučujícími a žáky",
+      "Školní parlament přispívá k well-beingu žáků",
+      "Domov mládeže nabízí zájmové vzdělávání pro zvýšení motivace ubytovaných žáků"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zákonnými zástupci žáků a školskými poradenskými zařízeními",
+      "Škola respektuje doporučení školských poradenských zařízení v plné míře",
+      "Pravidelná komunikace s rodiči o výsledcích a potřebách žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a fakty. Jsou jasně identifikovány silné stránky (kvalitní sbor, vybavení, klima) i slabiny (matematika, nástavbové studium, absence). Doporučení jsou konkrétní a praktická.",
+    "uncertainty_notes": [
+      "Není jasné, proč je matematika tak slabá – zda jde o kvalitu výuky nebo výběr žáků (malý počet přihlášených)",
+      "Chybí informace o tom, jak se liší přijímací kritéria mezi čtyřletým a nástavbovým studiem",
+      "Není specifikováno, jaké konkrétní opatření vedla k zlepšení výsledků maturit"
+    ]
+  }
+}
+```

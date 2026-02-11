@@ -1,0 +1,101 @@
+{
+  "report_id": "SOU_600171833_2021-12-02",
+  "school_profile": {
+    "school_type": "SOU",
+    "inspection_period": "2., 7. a 8. 12. 2021",
+    "school_change_summary": "V roce 2019 se ředitelství přesunulo do zrekonstruované budovy, probíhá modernizace."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Odborný výcvik je skvěle zajištěn a probíhá i v reálných firmách.",
+        "evidence": "„Systém spolupráce školy se smluvními partnery... je nastavený a funkční.“"
+      },
+      {
+        "tag": "Výsledky vzdělávání",
+        "detail": "Škola výrazně zlepšila výsledky u maturit, dříve kritický obor Kosmetické služby uspěl.",
+        "evidence": "„V roce 2021 se hrubá neúspěšnost v tomto oboru... snížila po podzimním termínu na 11,8 %.“"
+      },
+      {
+        "tag": "Vybavení",
+        "detail": "Škola má dobré materiální zázemí pro výuku odborných předmětů.",
+        "evidence": "„Materiálně-technické zabezpečení praktického vyučování.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Zastaralé metody",
+        "detail": "Výuka často probíhá frontální formou, žáci jsou pasivní a jen opisují.",
+        "evidence": "„V části sledovaných hodin... byli žáci pouze příjemci nových informací... většina z nich během hodiny byla pasivní.“"
+      },
+      {
+        "tag": "Nízké nároky při přijímacím řízení",
+        "detail": "Škola přijímá i žáky s velmi špatným prospěchem, což ohrožuje jejich úspěšnost.",
+        "evidence": "„Byl přijat i žák... který získal v přijímacím testu z jednoho předmětu pouze dva body z možných 50.“"
+      },
+      {
+        "tag": "Zanedbaný domov mládeže",
+        "detail": "Prostory ubytování jsou opotřebované a neprobíhá jejich modernizace.",
+        "evidence": "„Vybavení i prostory v domově mládeže jsou vsměs opotřebované a málo podnětné.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé motivují žáky k aktivní účasti na výuce, když inspekce často viděla pasivní frontální výuku?",
+      "Jaká kritéria platí pro přijímací řízení do oboru Kosmetické služby, aby se předešlo neúspěchu u maturity?",
+      "Plánuje škola rekonstrukci domova mládeže, jehož stav je aktuálně hodnocen jako opotřebovaný?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří se chtějí učit řemeslo a uplatnit se v praxi.",
+      "Žáci, kteří preferují individuální přístup učitelů v praktickém výcviku.",
+      "Studenti, kteří chtějí získat zkušenosti na reálných pracovištích firem."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabším prospěchem ze základní školy, zejména u maturitních oborů.",
+      "Studenti, kteří očekávají moderní a interaktivní formy výuky v teoretických předmětech.",
+      "Rodiče, kteří vyžadují kvalitní a moderní ubytování v domově mládeže."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní odborný výcvik s vazbou na reálné firmy a v poslední době výrazně zlepšila výsledky u maturit. Varovným signálem je pasivní styl výuky v teoretických předmětech a velmi nízké přijímací nároky, které v minulosti vedly k neúspěchům studentů. Problémem je také špatný stav domova mládeže. Pro technicky zaměřené žáky je škola dobrou volbou, ale u maturitních oborů je třeba zvážit studijní předpoklady dítěte."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení (neúspěšnost v oboru Kosmetické služby klesla z 83 % na 11,8 %).",
+      "key_numbers": [
+        "Neúspěšnost v oboru Kosmetické služby (2020): 83 %",
+        "Neúspěšnost v oboru Kosmetické služby (2021): 11,8 %",
+        "Obor Mechanik elektrotechnik (2021): 100 % úspěšnost"
+      ],
+      "evidence": "„V roce 2021 se hrubá neúspěšnost v tomto oboru vzdělání snížila po podzimním termínu na 11,8 %.“"
+    },
+    "absence": {
+      "trend": "Docházka se zlepšila, absence není hlavní příčinou neúspěchu.",
+      "key_numbers": [
+        "Průměrná omluvená absence: necelých 90 hodin/rok",
+        "Neomluvená absence: není uváděna jako problém"
+      ],
+      "evidence": "„Zlepšila docházka žáků. Omluvená ani neomluvená absence... není přímou příčinou neúspěšnosti žáků.“"
+    },
+    "support_services": [
+      "Fungující školní poradenské pracoviště (výchovná poradkyně, metodik prevence).",
+      "Možnost využití služeb smluvní psycholožky při složitějších problémech.",
+      "Podpora ubytovaných žáků při učení na domově mládeže."
+    ],
+    "safety_climate": [
+      "Kladena důraz na bezpečnost práce v praktickém vyučování.",
+      "Příjemná pracovní atmosféra při odborném výcviku.",
+      "Fungující strategie prevence rizikového chování (šikana, kyberšikana)."
+    ],
+    "partnerships_practice": [
+      "Efektivní systém spolupráce se smluvními partnery pro odborný výcvik.",
+      "Zapojení odborníků z praxe do výuky a stáže pedagogů u zaměstnavatelů.",
+      "Aktivní Společenství firem Lanškrounska zapojené do dění ve škole."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozdělený a poskytuje konkrétní číselné údaje i citace.",
+    "uncertainty_notes": [
+      "Aktuální stav domova mládeže může být v průběhu let 2022/2023 řešen, zpráva je z prosince 2021."
+    ]
+  }
+}

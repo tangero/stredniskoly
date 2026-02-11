@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600017401_2021-11-01",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:23:46.682886+00:00",
+  "run_finished_utc": "2026-02-10T08:25:17.103277+00:00",
+  "raw_file": "SOS_600017401_2021-11-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017401_2021-11-01",
+    "school_profile": {
+      "school_type": "Soukromá střední škola s maturitou, denní i dálkové studium.",
+      "inspection_period": "1. 11. 2021 − 4. 11. 2021",
+      "school_change_summary": "Škola prošla rekonstrukcí a změnou vedení, ředitel se stal jediným zřizovatelem a došlo k obměně části učitelů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola efektivně spolupracuje s firmami, učitelé absolvují stáže a žáci mají kvalitní odborný výcvik.",
+          "evidence": "„Efektivní spolupráce školy se sociálními partnery při realizaci odborného vzdělávání.“"
+        },
+        {
+          "tag": "Vybavení a prostředí",
+          "detail": "Prošly rekonstrukcí, modernizují se učebny i technologie a vzniká nové školní studio.",
+          "evidence": "„Vedení školy průběžně obnovuje materiální podmínky... modernizuje vybavení v oblasti informačních a komunikační technologie.“"
+        },
+        {
+          "tag": "Uplatnění absolventů",
+          "detail": "Absolventi oboru Tiskař nacházejí uplatnění přímo ve firmách, kde byli na praxi.",
+          "evidence": "„Absolventi oboru vzdělání Tiskař na polygrafických strojích se zpravidla stávají zaměstnanci firem, kde konali praktické vyučování.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zastaralé vyučování",
+          "detail": "Výuka je převážně frontální, učitelé málo diferencují úkoly a chybí moderní metody.",
+          "evidence": "„Učitelé využívali při výuce úzké spektrum metod a forem práce, většinou nediferencovali úkoly vzhledem k možnostem a potřebám žáků.“"
+        },
+        {
+          "tag": "Nedostatečná zpětná vazba",
+          "detail": "Žáci nejsou dostatečně motivováni, chybí průběžné hodnocení a sebehodnocení.",
+          "evidence": "„Žáci ve všech vyučovaných předmětech nezískávali dostačující zpětnou vazbu, nebyli vedeni k sebehodnocení.“"
+        },
+        {
+          "tag": "Školní neúspěšnost",
+          "detail": "V loňském roce vzrostl počet neprospívajících žáků a škola nedostatečně analyzuje příčiny.",
+          "evidence": "„Počet neprospívajících žáků byl v posledních čtyřech letech nejvyšší... škola systematicky neanalyzuje.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají v některých předmětech potíže, aby se zabránilo neúspěchu?",
+        "V jakých formách (skupinová práce, projekty) probíhá výuka, aby nebyla jen pasivním poslechem?",
+        "Jak škola zajišťuje, aby učební látku pochopili i žáci s různými vzdělávacími potřebami?"
+      ],
+      "who_school_fits": [
+        "Uchazeči o obor Tiskař na polygrafických strojích, kteří chtějí jistotu uplatnění v oboru.",
+        "Studenti, kteří očekávají individuální přístup v menší soukromé škole.",
+        "Zájemci o obory s propojením teorie a reálné praxe (fiktivní firmy, média)."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnou motivaci a častou zpětnou vazbu od učitelů.",
+        "Studenti, kteří preferují moderní interaktivní formy výuky před frontálním vyučováním.",
+        "Uchazeči se speciálními vzdělávacími potřebami vyžadujícími výraznou individuální podporu ve výuce."
+      ],
+      "plain_czech_summary": "Soukromá škola v Opavě nabízí zajímavé obory, zejména polygrafii a ekonomii, s vynikajícím propojením na prax a firmami. Rodiče ocení zrekonstruované prostředí a bezpečné klima. Slabinou je tradiční styl výuky, kde žáci jsou pasivní, a chybí efektivní systém prevence školních neúspěchů, který se projevil vyšším počtem neprospívajících v době pandemie. Škola se hodí pro samostatné studenty, kteří využijí nabídky odborných stáží a kontaktů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky ve společné části se dlouhodobě zlepšují, ale v profilové části je nemalá neúspěšnost.",
+        "key_numbers": [
+          "5 žáků u maturity neprospělo (13,5 % neúspěšnost)",
+          "18 žáků prospělo s vyznamenáním",
+          "Výsledky ve společné části se postupně zlepšovaly"
+        ],
+        "evidence": "„Úspěšnost žáků u maturitní zkoušky v posledních letech byla obdobná, výsledky žáků ve společné části maturitní zkoušky se postupně zlepšovaly.“"
+      },
+      "absence": {
+        "trend": "Neomluvená absence je minimální, celková absence byla ovlivněna pandemií.",
+        "key_numbers": [
+          "Neomluvená absence se týkala pouze 2 žáků",
+          "Celková absence ovlivněna distanční výukou",
+          "Škola řeší vztahové i osobní problémy žáků"
+        ],
+        "evidence": "„Neomluvenou absenci škola řeší ojediněle... V loňském školním roce se toto týkalo dvou žáků.“"
+      },
+      "support_services": [
+        "Výchovné poradenství a kariérové poradenství zajišťuje výchovná poradkyně.",
+        "Prevence rizikového chování a řešení vztahových problémů ve třídách.",
+        "Individuální konzultace pro žáky ohrožené neúspěchem."
+      ],
+      "safety_climate": [
+        "Příjemná pracovní atmosféra bez kázeňských problémů ve většině hodin.",
+        "Minimální úrazovost žáků dlouhodobě.",
+        "Dohled nad žáky zajištěn ve škole i při přesunech."
+      ],
+      "partnerships_practice": [
+        "Odborný výcvik na smluvních pracovištích v reálném provozu firem.",
+        "Firmy motivují žáky stipendii za účast na praxi a výsledky.",
+        "Spolupráce na projektu Podpůrné nástroje ve vzdělávání (odborníci, rodilí mluvčí)."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně rozdělená a konkrétní v popisu metod výuky i číselných údajích o neúspěšnosti.",
+      "uncertainty_notes": [
+        "Míra individuální podpory žáků se SVP je v dokumentech deklarována, ale v hospitacích nebyla patrná."
+      ]
+    }
+  }
+}

@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "LYC_600008215_2024-02-20",
+  "school_profile": {
+    "school_type": "Střední škola s maturitními obory (Ekonomické lyceum, Obchodní akademie) a odbornými obory (Kuchař-číšník, Kadeřník, Cukrář)",
+    "inspection_period": "20. února až 22. února 2024",
+    "school_change_summary": "Nový ředitel od září 2023. Generační obměna pedagogů, zejména v jazycích a češtině. Zvyšuje se počet žáků (304 v denní formě 2023/24). Od 2023 se již nepřijímají žáci do oboru Podnikání v denní formě."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Žáci získávají mezinárodně uznávané certifikáty (DELE B1/B2, C1 SERR), dva žáci se umístili v nejlepším 5% pásmu soutěže Best in English.",
+        "evidence": "Škola zaznamenala úspěch v soutěži Best in English, žáci získávají jazykové certifikáty."
+      },
+      {
+        "tag": "Praktická příprava v oborech",
+        "detail": "Odborný výcvik probíhá v účelně vybavených provozovnách s důrazem na bezpečnost a spolupráci mezi staršími a mladšími žáky.",
+        "evidence": "Žáci pracují se zájmem, dodržují zásady bezpečnosti, vedou portfolio svých prací jako důkaz profesního růstu."
+      },
+      {
+        "tag": "Podpora sociálního rozvoje",
+        "detail": "Škola pořádá adaptační kurzy, podporuje prosociální chování a mezigenerační spolupráci se seniory a předškoláky.",
+        "evidence": "Každoročně pořádaný adaptační kurz, spolupráce s domovy s pečovatelskou službou a předškolními zařízeními."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost u maturit",
+        "detail": "Výrazně vyšší podíl žáků, kteří maturitu nekonají nebo v ní selžou, než je průměr v ČR, zejména ve společné části.",
+        "evidence": "V roce 2023 obor Podnikání: 46,7% neúspěšnost (průměr ČR 32,5%), dálková forma 43,8% (průměr 29,9%)."
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Absence je chronickým problémem, kterou se škola nedaří snížit ani přestože používá postihy a jednání komisí.",
+        "evidence": "Nedoložení neprítomnosti je nejčastějším důvodem pro kázeňská opatření. Běžná opatření nebyla účinná vzhledem k vysoké absenci."
+      },
+      {
+        "tag": "Slabá motivace žáků",
+        "detail": "Vnitřní motivace žáků pro dosahování dobrých výsledků je často nízká, někteří hledají úniky formou absence.",
+        "evidence": "Z rozhovorů s pedagogy vyplývá nízká vnitřní motivace. Cca 30% žáků je hodnoceno až v náhradním termínu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+      "Jaké má škola plány na zlepšení výsledků maturitních zkoušek, zejména ve společné části?",
+      "Jak škola podporuje žáky, kteří mají potíže s učením, a jaké jsou dostupné doučovací služby?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí kvalitní jazykovou přípravu a možnost získat certifikáty.",
+      "Žáci zaměření na praktické obory (kuchař, kadeřník, cukrář) – kvalitní vybavení a zkušení instruktoři v odborném výcviku.",
+      "Žáci, kterým vyhovuje menší škola s osobnějším přístupem – škola má 295 žáků v denní formě, zná své studenty."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší motivací a tendencí k absenci – škola má problémy s motivací a absence není řešena účinně.",
+      "Žáci, kteří potřebují intenzivní přípravu na maturitu – výsledky ve společné části maturitní zkoušky jsou pod průměrem ČR.",
+      "Žáci s potřebou individuálního přístupu – diferenciace úkolů podle schopností je ve výuce nedostatečná."
+    ],
+    "plain_czech_summary": "Střední škola Jeronýmova je menší soukromá škola v Českých Budějovicích se zaměřením na ekonomické obory a praktické profesní vzdělání. Silnou stránkou je kvalitní jazykové vzdělání a dobrá příprava v praktických oborech. Velkým problémem jsou však vysoké neúspěšnosti u maturitních zkoušek a chronická absence žáků, kterou se škola nedaří řešit. Nový ředitel od září 2023 postupně zavádí změny, ale zatím se plně neprojevily. Škola je vhodná pro motivované žáky se zájmem o jazyky nebo praktické obory, ale méně vhodná pro žáky se slabší motivací."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý s tendencí k vyšší neúspěšnosti než průměr ČR",
+      "key_numbers": [
+        "2023 Podnikání: 46,7% neúspěšnost (průměr ČR 32,5%)",
+        "2023 Obchodní akademie: 8,6% neúspěšnost (průměr ČR 8,9%)",
+        "Rostoucí počet žáků, kteří po přihlášení maturitu nekonají"
+      ],
+      "evidence": "Výsledky maturitních zkoušek v období 2020–2023 vykazují vyšší podíl neúspěšných žáků ve společné části než je průměr ČR."
+    },
+    "absence": {
+      "trend": "Chronicky vysoká, nedaří se ji snížit",
+      "key_numbers": [
+        "Cca 30% žáků je hodnoceno až v náhradním termínu",
+        "Nedoložení neprítomnosti je nejčastějším důvodem pro kázeňská opatření",
+        "Běžná opatření (postihy, jednání komisí) jsou neúčinná"
+      ],
+      "evidence": "Absence je řešena stanovením náhradního termínu hodnocení, ale účinnost tohoto postupu není vyhodnocena."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a sociálním pedagogem",
+      "Doučování a konzultace pro neúspěšné žáky",
+      "Doplňkové a opravné zkoušení v náhradních termínech",
+      "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami (16 žáků)"
+    ],
+    "safety_climate": [
+      "Přátelská atmosféra ve třídách, vzájemná důvěra mezi učiteli a žáky",
+      "Žáci respektují nastavená pravidla",
+      "Systematická pozornost vývoji sociálních vztahů ve třídách",
+      "Adaptační kurzy pro prvňáky ke stmelování kolektivů",
+      "Důraz na otevřenou komunikaci se žáky a jejich zákonnými zástupci"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se smluvními partnery zajišťujícími praktickou výuku",
+      "Partnerství se zahraničními školami pro mobilitu žáků a pedagogů",
+      "Spolupráce s domovy s pečovatelskou službou (Libníč, Máj, Tylova)",
+      "Spolupráce s předškolními zařízeními a Nadačním fondem daruj vlasy",
+      "Účast v profesních soutěžích vyhlašovaných CERMATem a Hospodářskou komorou ČR"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Hlavní problémy (vysoká neúspěšnost u maturit, absence, nízká motivace) jsou jasně identifikovány. Některé pasáže jsou však technické a vyžadují znalost školského systému.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola plánuje na zlepšení maturitních výsledků – jsou jen obecná doporučení.",
+      "Není jasné, zda vysoká absence souvisí s kvalitou výuky nebo s osobnostními faktory žáků.",
+      "Chybí informace o tom, jak se nový ředitel a jeho opatření dosud projevily na výsledcích."
+    ]
+  }
+}
+```

@@ -1,0 +1,118 @@
+{
+  "report_id": "GY8_600016749_2025-02-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:46:02.673770+00:00",
+  "run_finished_utc": "2026-02-09T13:46:27.656791+00:00",
+  "raw_file": "GY8_600016749_2025-02-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600016749_2025-02-10",
+    "school_profile": {
+      "school_type": "Gymnázium a Střední průmyslová škola elektrotechniky a informatiky",
+      "inspection_period": "10. 2. 2025 − 14. 2. 2025",
+      "school_change_summary": "Od poslední inspekce v 2019/2020 se počet žáků mírně zvýšil na 737 žáků. Škola se zapojila do Erasmus+ (2022-2027), zlepšily se materiální podmínky, nově využívá sportovní halu. Doporučení z minulé inspekce byla zohledněna částečně - zejména sebehodnocení žáků není přirozenou součástí výuky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Mezinárodní spolupráce",
+          "detail": "Škola se zapojila do programu Erasmus+ s finančním grantem na 2022-2027, realizuje jazykové aktivity v zahraničí a studijní mobility.",
+          "evidence": "\"Škola se zapojila do mezinárodního programu Erasmus+, se získaným finančním grantem na období 2022-2027, realizuje jazykové aktivity v zahraničí.\""
+        },
+        {
+          "tag": "Výborné výsledky žáků",
+          "detail": "Žáci dosahují velmi dobrých studijních výsledků s 98% úspěšností u závěrečných zkoušek a 99% pokračuje na vysokých školách.",
+          "evidence": "\"Žáci školy dosahují v průběhu vzdělávání velmi dobrých studijních výsledků... 98% úspěšnost... 99 % absolventů pokračuje v dalším studiu.\""
+        },
+        {
+          "tag": "Kvalitní výuka jazyků",
+          "detail": "Výuka cizích jazyků se vyznačuje dynamickým střídáním činností a žáci prokazují velmi dobrou úroveň osvojení jazyka.",
+          "evidence": "\"Výuka cizích jazyků se vyznačovala dynamickým střídáním činností... žáci prokazovali velmi dobrou úroveň osvojení cizího jazyka.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vyšší úrazovost",
+          "detail": "Míra úrazovosti je dlouhodobě na vyšší úrovni, především v tělesné výchově a pohybových aktivitách.",
+          "evidence": "\"míra úrazovosti dlouhodobě na vyšší úrovni. Důvodem úrazů ve škole jsou většinou poranění v hodině tělesné výchovy.\""
+        },
+        {
+          "tag": "Nedostatečné sebehodnocení",
+          "detail": "Sebehodnocení a vzájemné hodnocení žáků nejsou přirozenou součástí výuky, přestože bylo doporučeno v minulé inspekci.",
+          "evidence": "\"Sebehodnocení a vzájemné hodnocení je ve výuce nadále uplatňováno jen ojediněle, účinnost zavedených opatření se doposud dostatečně neprojevila.\""
+        },
+        {
+          "tag": "Práce s informacemi",
+          "detail": "Žáci jsou v nižší míře vedeni k samostatné práci s více zdroji informací a jejich kritickému vyhodnocení.",
+          "evidence": "\"Jen v menší části výuky byl vytvářen prostor pro samostatné vyhledávání, porovnávání a vyhodnocení informací z více různých zdrojů.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší zvýšenou úrazovost v tělesné výchově a jaká bezpečnostní opatření má zavedena?",
+        "Jaké konkrétní projekty a soutěže mohou žáci absolvovat a jak se to promítá do jejich budoucího uplatnění?",
+        "Jak funguje podpora pro žáky ohrožené školním neúspěchem a jaké jsou možnosti doučování?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci - škola nabízí Erasmus+ program a kvalitní jazykové vzdělání",
+        "Talentovaní žáci s ambicí na vysokou školu - 99% absolventů pokračuje v terciárním vzdělání",
+        "Zájemci o elektrotechniku a informatiku - škola má moderní vybavení, školní firmu a spolupráci s firmami"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se zdravotními omezeními v pohybových aktivitách - vzhledem k vyšší úrazovosti v tělesné výchově",
+        "Žáci potřebující intenzivní individuální zpětnou vazbu - sebehodnocení není systematicky zařazeno",
+        "Žáci s potřebou strukturovaného vedení při práci s informacemi - samostatné vyhledávání není dostatečně rozvíjeno"
+      ],
+      "plain_czech_summary": "Gymnázium v Frenštátu je moderní školou s velmi dobrými výsledky. Žáci dosahují výborných studijních výsledků a 99 % pokračuje na vysokých školách. Škola se zapojila do mezinárodního programu Erasmus+ a nabízí kvalitní výuku jazyků. Má moderní vybavení a spolupracuje s firmami. Inspektoři však upozorňují na vyšší úrazovost v tělesné výchově a na to, že sebehodnocení žáků není dostatečně zařazeno do výuky. Škola by měla více rozvíjet samostatnou práci žáků s různými informačními zdroji."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně dobrý s mírným zlepšením",
+        "key_numbers": [
+          "2022/2023: 27% s vyznamenáním, 3% neprospělo",
+          "2023/2024: 30% s vyznamenáním, 1,7% neprospělo",
+          "98% úspěšnost u závěrečných zkoušek"
+        ],
+        "evidence": "\"Průměrně za školní rok 2022/2023 prospělo 27 % žáků s vyznamenáním... Za školní rok 2023/2024 prospělo s vyznamenáním 30 % žáků... 98% úspěšnost.\""
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "Průměrně 13 zameškaných hodin na žáka za školní rok"
+        ],
+        "evidence": "\"Ve sledovaných letech absence žáků činila průměrně 13 zameškaných hodin na žáka za školní rok.\""
+      },
+      "support_services": [
+        "Tři výchovné poradkyně",
+        "Dva školní metodici prevence",
+        "Školní psycholog",
+        "Kariérový poradce",
+        "Doučování pro vybrané předměty",
+        "Individuální konzultace učitelů"
+      ],
+      "safety_climate": [
+        "Vstupy do budov zajištěny, minimalizována možnost vniknutí cizích osob",
+        "Žáci pravidelně seznamováni s pravidly bezpečného chování",
+        "Dlouhodobě vyšší úrazovost, zejména v tělesné výchově",
+        "Anonymní schránka důvěry k dispozici"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s přibližně dvaceti organizacemi (firmy, vysoké školy, město, úřady)",
+        "Projekt TPA – Inovační centrum pro transformaci vzdělávání",
+        "Erasmus+ program s finančním grantem 2022-2027",
+        "Partnerství se zkouškovým centrem Cambridge Assessment English",
+        "Spolupráce s jazykovou školou P.A.R.K.",
+        "Smluvní pracovní místa pro praktické vyučování"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní čísla, citace a doporučení. Některé pasáže jsou však delší a obsahují více odborné termíny, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků s speciálními vzdělávacími potřebami, kteří se vzdělávají podle IVP (pouze '3 ze 36')",
+        "Není jasné, jaké konkrétní externí hodnotící nástroje by škola měla využívat",
+        "Chybí detailní analýza příčin vyšší úrazovosti a konkrétní čísla o počtu úrazů"
+      ]
+    }
+  }
+}

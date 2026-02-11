@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY8_600015149_2023-12-11",
+  "school_profile": {
+    "school_type": "Základní škola a gymnázium (8leté gymnázium), se školní družinou, klubem a jídelnou",
+    "inspection_period": "11.–13. prosince 2023",
+    "school_change_summary": "Změna na pozici zástupkyně ředitelky pro první stupeň. Posílení poradenského pracoviště o školního psychologa. Modernizace prostor a vybavení díky projektům EU."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora talentovaných žáků",
+        "detail": "Škola systematicky rozvíjí nadané žáky, kteří úspěšně reprezentují školu v soutěžích až na celostátní úrovni.",
+        "evidence": "Pozitivní zpětná vazba o funkčnosti podpory je jejich úspěšnost v soutěžích a přijetí absolventů na vysoké školy."
+      },
+      {
+        "tag": "Kvalitní péče o zdraví a bezpečnost",
+        "detail": "Škola nabízí vyvážený jídelníček, dotované ovoce a mléčné výrobky, podporuje zdravý životní styl.",
+        "evidence": "Pestrá skladba jídelníčku, projekty dotovaného ovoce a zeleniny, začlenění zdravotních témat do výuky."
+      },
+      {
+        "tag": "Silné poradenské služby",
+        "detail": "Komplexní tým (výchovná poradkyně, speciální pedagožka, psycholog) poskytuje podporu v kariérovém poradenství a prevenci.",
+        "evidence": "Nově zřízená pozice školního psychologa umožňuje zkvalitnění práce v prevenci a řešení školní neúspěšnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Žáci se speciálními potřebami pracují často na stejných úkolech bez přizpůsobení jejich schopnostem.",
+        "evidence": "Diferenciace vzdělávacího obsahu nebyla v hodnocené výuce vždy zaznamenána, žáci pracovali na totožných úkolech."
+      },
+      {
+        "tag": "Málo moderních metod na druhém stupni",
+        "detail": "Výuka na gymnáziu a druhém stupni ZŠ převážně frontální, málo skupinové práce a práce s technologiemi.",
+        "evidence": "V hodnocených hodinách převládala frontální výuka, digitální technika využita v menší míře, sporadicky metody jako skupinová práce."
+      },
+      {
+        "tag": "Slabá kvalita sebehodnocení žáků",
+        "detail": "Žáci málo pracují se sebehodnocením a vzájemným hodnocením, chybí formativní zpětná vazba.",
+        "evidence": "Ojediněle zařazováno formativní hodnocení, žákům často nebyl poskytnut prostor pro zhodnocení vyučovací hodiny."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se přizpůsobuje výuka potřebám žáků se speciálními vzdělávacími potřebami? Jaké jsou příklady diferenciace?",
+      "Jak se na gymnáziu využívá digitální technika a moderní metody výuky? Jaké jsou plány na jejich rozšíření?",
+      "Jak funguje nově zřízená pozice školního psychologa a jak konkrétně pomáhá žákům?"
+    ],
+    "who_school_fits": [
+      "Talentovaní žáci, kteří se chtějí zapojit do soutěží a olympiád – škola má osvědčený systém jejich podpory",
+      "Žáci se speciálními potřebami – škola má asistenty pedagoga a poradenské služby, ačkoliv s prostorem pro zlepšení",
+      "Žáci hledající bezpečné prostředí s důrazem na zdravý životní styl a prevenci rizikového chování"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující interaktivní a skupinové učení – výuka je stále převážně frontální, zejména na gymnáziu",
+      "Žáci se speciálními potřebami, kteří potřebují individualizovaný přístup – diferenciace není dosud dostatečně zavedena",
+      "Žáci, kteří se učí lépe prostřednictvím digitálních technologií – jejich využití je zatím omezené"
+    ],
+    "plain_czech_summary": "Gymnázium v Konici je stabilní školou s dobrým zázemím. Silné stránky: péče o talentované žáky, kvalitní poradenské služby včetně nového psychologa, bezpečné prostředí a zdravá strava. Slabiny: výuka na druhém stupni je stále převážně frontální, málo se používá digitální technika a moderní metody. Žáci se speciálními potřebami nejsou dostatečně individualizovaně podporováni. Škola má jasné plány na zlepšení, ale jejich realizace bude trvat."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – absolventi jsou úspěšně přijímáni na vysoké školy",
+      "key_numbers": [
+        "189 žáků v osmiletém oboru gymnázia",
+        "Úspěšnost v přijetí absolventů k dalšímu studiu na vysokých školách"
+      ],
+      "evidence": "Pozitivní zpětnou vazbou pro školu o funkčnosti nastavení podpory rozvoje žáků je jejich úspěšnost u maturitních zkoušek a přijetí absolventů k dalšímu studiu."
+    },
+    "absence": {
+      "trend": "Nízká absence – příznivě působí na výsledky vzdělávání",
+      "key_numbers": [
+        "Škola se nepotýká s vysokou absencí žáků ve vyučování"
+      ],
+      "evidence": "Na dosahované výsledky vzdělávání příznivě působí skutečnost, že se škola nepotýká s vysokou absencí žáků ve vyučování."
+    },
+    "support_services": [
+      "Výchovná poradkyně – kariérové poradenství, integrace žáků s potřebou podpůrných opatření",
+      "Speciální pedagožka – speciálně pedagogická péče, podpora nadaných žáků",
+      "Školní psycholog (nově) – prevence, řešení školní neúspěšnosti, zlepšování klimatu",
+      "Školní metodička prevence – prevence rizikového chování, pestré preventivní aktivity",
+      "Asistenti pedagoga – podpora žáků se speciálními potřebami a s odlišným mateřským jazykem"
+    ],
+    "safety_climate": [
+      "Přátelská atmosféra ve výuce, otevřená komunikace mezi pedagogy a žáky",
+      "Zodpovědný přístup k bezpečnosti – ředitelka stanovila podmínky v dokumentech, pedagogové seznamují žáky s riziky",
+      "Pozitivní pracovní klima založené na otevřené komunikaci v družině",
+      "Systém primární prevence – převládají pochvaly a ocenění nad kázeňskými opatřeními",
+      "On-line schránka důvěry pro předcházení rizikových jevů"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem – zkvalitnění materiálních podmínek",
+      "Projektová činnost – modernizace prostor a vybavení, financování z rozvojových programů a EU",
+      "Nadační projekt – hradí stravování žákům ze sociálně znevýhodněného prostředí",
+      "Projekty dotovaného ovoce, zeleniny a mléčných výrobků",
+      "Kooperace s externími partnery – rozvoj sociálních a občanských kompetencí žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně odděleny. Některé pasáže jsou však složitější a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Konkrétní čísla o výsledcích maturit nejsou v textu uvedena – pouze kvalitativní hodnocení",
+      "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými předměty na gymnáziu",
+      "Rozsah problémů s diferenciací není kvantifikován – není jasné, v kolika hodinách byl problém zaznamenán"
+    ]
+  }
+}
+```

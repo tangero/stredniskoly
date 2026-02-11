@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600017168_2025-01-14",
+  "school_profile": {
+    "school_type": "Střední škola grafiky a médií Olomouc – střední vzdělání s maturitní zkouškou v oborech Reprodukční grafik, Designér obalů, Tiskař a Polygrafie",
+    "inspection_period": "14.–16. ledna 2025",
+    "school_change_summary": "Nový ředitel od února 2024. Škola změnila název na lépe odpovídající její zaměření. Pokračuje v modernizaci materiálních podmínek a rozvoji partnerství s firmami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola efektivně spolupracuje s partnerskými firmami, což žákům přináší reálné zkušenosti a přípravu na pracovní uplatnění.",
+        "evidence": "Spolupráce se sociálními partnery efektivně přispívá k užšímu sepětí výuky a praxe, účinně podporuje získávání odborných kompetencí."
+      },
+      {
+        "tag": "Kvalitní pedagogický tým",
+        "detail": "Učitelé si aktivně předávají zkušenosti a zlepšují kvalitu výuky prostřednictvím vzájemných hospitací.",
+        "evidence": "Pedagogové dlouhodobě aktivně spolupracují, efektivně si předávají poznatky, využívají formy vzájemných hospitací."
+      },
+      {
+        "tag": "Podpora ohrožených žáků",
+        "detail": "Škola poskytuje doučování, konzultace a speciální semináře pro přípravu na maturitu těm, kteří ji potřebují.",
+        "evidence": "Škola identifikuje žáky ohrožené školním neúspěchem a poskytuje jim účinnou podporu formou doučování a intenzivní přípravy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší kontrola výuky",
+        "detail": "Vedení školy nemá dostatečně nastavené mechanismy pro kontrolu průběhu a výsledků vzdělávání.",
+        "evidence": "Systém kontrolní činnosti vedení školy není vhodně nastaven zejména do oblastí zaměřených na průběh a výsledky vzdělávání."
+      },
+      {
+        "tag": "Málo aktivní výuka",
+        "detail": "Výuka se příliš opírá o frontální metody, chybí práce s různými informačními zdroji a rozvoj kritického myšlení.",
+        "evidence": "V hodnocených vyučovacích hodinách byly minimálně zaznamenány činnosti vedoucí k objevování a rozvoji kritického myšlení žáků."
+      },
+      {
+        "tag": "Neúplná analýza výsledků",
+        "detail": "Ačkoli škola sbírá data o výsledcích žáků, nepřijímá z nich důsledně konkrétní opatření na zlepšení.",
+        "evidence": "Škola získává informace o vzdělávacích výsledcích žáků, nejsou z nich však důsledně přijímána konkrétní opatření."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením? Jaké jsou dostupné formy doučování?",
+      "Jaké jsou možnosti praktické výuky u partnerských firem a jak se žáci do těchto stáží dostávají?",
+      "Jak se škola připravuje na změny v metodách výuky, aby byla více aktivní a rozvíjela kritické myšlení?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s jasným propojením na budoucí práci v polygrafii a médiích",
+      "Talentovaní žáci zainteresovaní na soutěžích a projektech – škola je aktivně podporuje",
+      "Žáci, kteří potřebují individuální podporu a doučování – škola má systém péče o ohrožené žáky"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se učí lépe aktivní formou a skupinovou prací – výuka je zatím příliš frontální",
+      "Žáci, kteří potřebují časté zpětné vazby a motivaci – ta není vždy dostatečně formativní",
+      "Žáci, kteří se chtějí učit samostatně a kriticky myslet – škola na tom pracuje, ale zatím to není silná stránka"
+    ],
+    "plain_czech_summary": "Střední škola grafiky a médií je dobře vybavená a má stabilní tým učitelů. Její velkou výhodou je úzké propojení s firmami, kde se žáci učí prakticky. Maturitní výsledky jsou průměrné. Inspekce ale upozornila, že výuka je příliš tradiční – chybí skupinová práce, práce s různými zdroji a rozvoj kritického myšlení. Vedení školy by mělo lépe kontrolovat, jak se žákům daří, a na základě toho přijímat konkrétní opatření."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s výjimkou roku 2023",
+      "key_numbers": [
+        "Rok 2023: obory Polygrafie a Obalové techniky měly o 6,4 % vyšší neúspěšnost než celostátní průměr",
+        "Obory Tiskař a Grafik: bez významné neúspěšnosti",
+        "Ostatní roky: výsledky odpovídají celostátním průměrům"
+      ],
+      "evidence": "Úspěšnost ve společné části maturitní zkoušky byla u většiny studijních oborů na úrovni odpovídající celostátním průměrům."
+    },
+    "absence": {
+      "trend": "Aktivně řešena",
+      "key_numbers": [
+        "Bezodkladná opatření ke snižování absence",
+        "Průběžná informovanost zákonných zástupců"
+      ],
+      "evidence": "K dosažení pozitivních výsledků přispívají bezodkladná opatření ke snižování absence žáků. Zákonní zástupci jsou průběžně informováni."
+    },
+    "support_services": [
+      "Výchovný poradce, školní psycholog a školní metodika prevence",
+      "Doučování a konzultace pro ohrožené žáky",
+      "Peer program zaměřený na prevenci rizikového chování",
+      "Adaptační a socializační aktivity pro nové žáky"
+    ],
+    "safety_climate": [
+      "Škola vytváří předpoklady pro bezpečnost a ochranu zdraví žáků",
+      "Průběžné poučování žáků o ochraně zdraví a bezpečném chování",
+      "Schránka důvěry pro připomínky žáků",
+      "Primární preventivní program proti negativním projevům chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s partnerskými firmami na praktické výuce",
+      "Exkurze u zaměstnavatelů a přednášky odborníků z praxe",
+      "Partnerství s profesními sdruženími",
+      "Mezinárodní projekt Erasmus+ s pracovními stážemi v zahraničí",
+      "Spolupráce se školskou radou a zřizovatelem"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však technicky náročnější (např. popis evaluačních nástrojů).",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní počty žáků s speciálními vzdělávacími potřebami ani jejich úspěšnost",
+      "Chybí konkrétní data o počtu žáků, kteří využívají doučování nebo poradenské služby",
+      "Není jasné, jak se konkrétně měnily výsledky v jednotlivých oborech v čase"
+    ]
+  }
+}
+```

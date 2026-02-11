@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600014541_2025-10-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:32:37.175660+00:00",
+  "run_finished_utc": "2026-02-09T13:33:02.610017+00:00",
+  "raw_file": "GY8_600014541_2025-10-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014541_2025-10-01",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium se zaměřením na jazyky, zejména angličtinu",
+      "inspection_period": "1. 10. 2025 – 3. 10. 2025",
+      "school_change_summary": "Změna ve vedení školy a částečná obměna pedagogického sboru v posledních letech."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Škola dosahuje téměř nulové neúspěšnosti u maturitní zkoušky, v roce 2024/2025 všech 58 žáků zkoušku zvládlo.",
+          "evidence": "Ve školním roce 2024/2025 se k maturitní zkoušce přihlásilo 58 žáků a všichni zkoušku vykonali úspěšně."
+        },
+        {
+          "tag": "Jazykové vzdělávání na vysoké úrovni",
+          "detail": "Žáci získávají mezinárodní certifikáty až na úrovni C2 a aktivně se účastní jazykových soutěží.",
+          "evidence": "Žáci dosahují úrovně až C2, účastní se Best in English a pravidelně vyjíždějí do Anglie."
+        },
+        {
+          "tag": "Motivace a aktivní zapojení žáků",
+          "detail": "Škola systematicky podporuje účast v soutěžích, olympiádách a mimoškolních aktivitách.",
+          "evidence": "Řada žáků zúročuje znalosti v soutěžích na úrovni okresu i kraje a ve středoškolské odborné činnosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabý systém zpětné vazby v hodinách",
+          "detail": "Učitelé často neposkytují detailní formativní hodnocení, které by žákům pomohlo se zlepšovat.",
+          "evidence": "Ve většině hodin chyběla zpětná vazba v podobě hodnocení dosažených cílů samotnými žáky."
+        },
+        {
+          "tag": "Málo aktivních metod výuky",
+          "detail": "Převládá tradiční frontální výuka, skupinová práce se uplatnila jen v 17 % hodin.",
+          "evidence": "Převládala tradiční frontální výuka v 60 % hodin, zatímco skupinová výuka se uplatnila jen v 17 % hodin."
+        },
+        {
+          "tag": "Neefektivní systém hospitací",
+          "detail": "Hospitační záznamy obsahují málo doporučení ke zlepšení, vedení nemá promyšlený efektivní systém.",
+          "evidence": "Vedení školy dosud nemá promyšlený efektivní systém hospitační činnosti, který by vedl ke zkvalitňování."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením nebo hrozí jim neprospěch?",
+        "Jaké jsou možnosti individuálního přístupu v hodinách matematiky a přírodovědných předmětů?",
+        "Jak se škola chystá zlepšit systém zpětné vazby a aktivnějších metod výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a ambicí získat mezinárodní certifikáty",
+        "Motivovaní žáci s dobrými studijními výsledky, kteří chtějí být aktivní v soutěžích",
+        "Žáci, kterým vyhovuje tradiční přístup k výuce s důrazem na frontální vyuku"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více aktivních a interaktivních metod výuky a skupinové práce",
+        "Žáci se speciálními vzdělávacími potřebami (bez jasného popisu jejich podpory v běžných hodinách)",
+        "Žáci, kteří se lépe učí prostřednictvím detailní zpětné vazby a sebehodnocení"
+      ],
+      "plain_czech_summary": "Purkyňovo gymnázium v Strážnici je kvalitní škola se skvělými výsledky maturit a silným zaměřením na jazyky. Žáci dosahují vysokých úrovní angličtiny a získávají mezinárodní certifikáty. Škola je dobře vybavená a má motivované pedagogy. Rezervy jsou v systému zpětné vazby v hodinách a v používání aktivnějších metod výuky – převládá tradiční frontální přístup. Inspekce doporučuje zlepšit hospitační systém a zavést modernější metody."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborný",
+        "key_numbers": [
+          "Téměř nulová hrubá neúspěšnost v posledních třech letech",
+          "100 % úspěšnost v roce 2024/2025 (58 žáků)",
+          "71 % žáků osmiletého gymnázia prospělo s vyznamenáním"
+        ],
+        "evidence": "Úspěšnost žáků při ukončování vzdělávání maturitní zkouškou je dlouhodobě výborná na obou oborech gymnázia."
+      },
+      "absence": {
+        "trend": "Velmi dobrý",
+        "key_numbers": [
+          "Průměrná absence za poslední tři roky: 128 hodin",
+          "Neomluvená absence: zanedbatelná"
+        ],
+        "evidence": "Průměrná absence za poslední tři roky dosahovala 128 hodin, neomluvená absence je zanedbatelná."
+      },
+      "support_services": [
+        "Výchovný poradce a metodička prevence zajišťují cílenou podporu při řešení výchovných, vzdělávacích a osobnostních obtíží",
+        "Tým školního poradenského pracoviště nabízí odborné poradenství pedagogům, žákům a rodičům",
+        "Speciální podpora pro žáky se speciálními vzdělávacími potřebami (6 % žáků) a žáky ohrožené školním neúspěchem"
+      ],
+      "safety_climate": [
+        "Učitelé a žáci se vzájemně respektují a dodržují nastavená pravidla komunikace",
+        "Výchovná opatření jsou využívána především formou pochval za dobré výsledky",
+        "Kázeňská opatření jsou udělována velmi zřídka"
+      ],
+      "partnerships_practice": [
+        "Intenzivní spolupráce se slovinským gymnáziem s pravidelnými výjezdy",
+        "Pravidelné výjezdy do Anglie a účast na mezinárodních jazykových soutěžích",
+        "Škola je zkouškovým centrem zkoušek Cambridge",
+        "Aktivní zapojení do programu Mezinárodní cena vévody z Edinburghu (DofE)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny s příslušnými doklady. Některé pasáže jsou však technicky náročnější (např. popis hospitační činnosti).",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak konkrétně se podporují žáci se speciálními vzdělávacími potřebami v běžných hodinách",
+        "Chybí informace o počtu a typu opatření pro žáky ohrožené neúspěchem",
+        "Není jasné, jak se škola chystá implementovat doporučená zlepšení v systému hospitací"
+      ]
+    }
+  }
+}

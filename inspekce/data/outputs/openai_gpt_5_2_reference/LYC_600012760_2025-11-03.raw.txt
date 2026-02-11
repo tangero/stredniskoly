@@ -1,0 +1,80 @@
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "school_profile": {
+    "school_type": "Střední škola s 8letým gymnáziem a technickým lyceem („8 tříd osmiletého oboru… Gymnázium“; „4 třídy… Technické lyceum“) a domovem mládeže („vykonává činnost… domova mládeže“).",
+    "inspection_period": "2025-11-03 až 2025-11-06 (na místě „3. až 5. 11. 2025“).",
+    "school_change_summary": "Škola prošla růstem a změnou vedení („Navýšení počtu žáků“; „Personální změny ve vedení školy“), nový ředitel je druhým rokem („pokračuje druhým rokem“)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Silná atraktivita technického lycea (letectví)",
+        "detail": "Technické lyceum má výrazný přesah v zájmu uchazečů a výuku podporují i prvky z praxe.",
+        "evidence": "„Výrazně nadregionální zájem… Technické lyceum“; „Zapojování odborníků z praxe do výuky“."
+      },
+      {
+        "tag": "Domov mládeže ve velmi dobré kondici",
+        "detail": "Ubytování je modernizované a podporuje učení i volný čas.",
+        "evidence": "„Velmi dobré materiální podmínky domova mládeže“; „rekonstruované, modernizované a podnětné“."
+      },
+      {
+        "tag": "Hodně kroužků a rozvojových programů",
+        "detail": "Škola nabízí široké volnočasové aktivity a programy pro osobní rozvoj.",
+        "evidence": "„Velká šíře volnočasových aktivit“; „celkem škola organizuje 27… kroužků“; „programu DoFe“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Méně formativní zpětné vazby ve výuce",
+        "detail": "V části výuky se málo pracuje s cíli hodiny a sebehodnocením, což může brzdit individuální posun.",
+        "evidence": "„Nižší míra práce se vzdělávacími cíli… formativní zpětnou vazbu“; „Sebehodnocení… bylo výjimečné“."
+      },
+      {
+        "tag": "Slabší diferenciace podle schopností a zájmu",
+        "detail": "Výuka je málo přizpůsobovaná rozdílným potřebám žáků včetně nadaných.",
+        "evidence": "„Nebylo téměř zaznamenáno… úloh s rozdílnou obtížností“; „Malá míra diferenciace… (… žáků nadaných)“."
+      },
+      {
+        "tag": "Ubytování nemusí vyjít každému",
+        "detail": "Zájem o domov mládeže ze vzdálenějších míst převyšuje kapacitu.",
+        "evidence": "„zájem… o ubytování převyšuje kapacitu domova mládeže“."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola zlepší práci s cíli hodin a formativní zpětnou vazbou („Nižší míra práce se vzdělávacími cíli… formativní zpětnou vazbu“)?",
+      "Jak bude ve výuce častěji probíhat diferenciace pro silnější i slabší žáky („Malá míra diferenciace ve výuce“)?",
+      "Jaká je reálná šance získat místo na domově mládeže („zájem… převyšuje kapacitu“)?"
+    ],
+    "who_school_fits": [
+      "Žáci, které láká technika/letectví a praxe ve firmách („zaměření… na letectví“; „praxe… v reálném prostředí firem“).",
+      "Žáci, kteří chtějí hodně kroužků a aktivit nad rámec výuky („27 volnočasových kroužků“).",
+      "Žáci, kteří ocení klidné a partnerské prostředí („pozitivní a partnerské pracovní klima“)."
+    ],
+    "who_should_be_cautious": [
+      "Nadaní žáci, kteří očekávají častou práci na různých úrovních obtížnosti („Malá míra diferenciace…“, „nebylo téměř zaznamenáno… rozdílnou obtížností“).",
+      "Žáci, kteří potřebují pravidelnou sebereflexi a jasné cíle v každé hodině („Sebehodnocení… výjimečné“; „dobře stanovený… cíl… pouze občas“).",
+      "Zájemci z dálky, kteří počítají s ubytováním (kapacita může být plná: „převyšuje kapacitu“)."
+    ],
+    "plain_czech_summary": "Škola kombinuje 8leté gymnázium a technické lyceum („8 tříd… Gymnázium“; „4 třídy… Technické lyceum“) a má i domov mládeže („činnost… domova mládeže“). Silná je nabídka aktivit („27… kroužků“) a technické lyceum je hodně žádané („výrazně nadregionální zájem“). Klima ve třídách působí partnersky („pozitivní a partnerské pracovní klima“). Ke zlepšení je častější práce s cíli hodin, sebehodnocení a formativní zpětná vazba („Sebehodnocení… výjimečné“), plus větší diferenciace („Malá míra diferenciace“)."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Trend zpráva neuvádí; poslední uvedený rok dopadl na konci dobře („všichni… úspěšní“).",
+      "key_numbers": [
+        "2024/2025: po podzimním termínu maturit uspěli všichni („všichni žáci… úspěšní“).",
+        "Technické lyceum: součástí je maturitní práce s obhajobou („maturitní práce s obhajobou“).",
+        "Za 3 roky: 4 žáci složili Cambridge B2 First („čtyři žáci… Cambridge… B2 First“)."
+      ],
+      "evidence": "„ve školním roce 2024/2025 všichni žáci po podzimním termínu úspěšní“."
+    },
+    "absence": {
+      "trend": "Zpráva ji hodnotí jako spíše nízkou („poměrně nízká průměrná absence“).",
+      "key_numbers": [
+        "Průměr absence: necelých 110 hodin na žáka („necelých 110 zameškaných hodin na žáka“).",
+        "Neomluvené: celkem 3 hodiny („celkem tři neomluvené hodiny“)."
+      ],
+      "evidence": "„poměrně nízká průměrná absence… necelých 110… celkem tři neomluvené hodiny“."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště („škola má zřízené školní poradenské pracoviště“).",
+      "Výchovná poradkyně a metodička prevence („působí výchovná porad

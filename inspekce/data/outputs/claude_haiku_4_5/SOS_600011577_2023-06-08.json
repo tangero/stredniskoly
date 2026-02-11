@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600011577_2023-06-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:39:05.385908+00:00",
+  "run_finished_utc": "2026-02-09T16:39:27.738537+00:00",
+  "raw_file": "SOS_600011577_2023-06-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600011577_2023-06-08",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola, Obchodní akademie a Střední odborné učiliště technické",
+      "inspection_period": "8.–9. a 12.–13. června 2023",
+      "school_change_summary": "Škola se zaměřuje na zkvalitnění materiálního zabezpečení výuky. Vybudovala Centrum moderních technologií s CNC obráběním, virtuálním svařováním a 3D tiskem. Počet žáků zůstává stabilní: 180 žáků v oborech s maturitou, 112 v oborech se závěrečnou zkouškou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola má efektivní dlouhodobé partnerství s firmami, kde se organizuje odborná praxe a výsledky se pravidelně vyhodnocují.",
+          "evidence": "Workshopy na závěr roku, kde žáci prezentují výsledky za přítomnosti firem a pedagogů."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Centrum moderních technologií umožňuje praktické ověřování teoretických znalostí v reálných podmínkách.",
+          "evidence": "CNC obrábění, virtuální svařování, 3D tisk, databáze učebních materiálů na e-learningové platformě."
+        },
+        {
+          "tag": "Podpora nadaných žáků",
+          "detail": "Škola podporuje rozvoj nadání účastí v mezinárodních certifikacích a soutěžích.",
+          "evidence": "Cambridge Exams, CSWA certifikace Solidworks, projekty Erasmus+, Fit for career."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence",
+          "detail": "Přetrvávajícím problémem je vysoká absence žáků a její omlouvání, kterou se nedaří řešit.",
+          "evidence": "Inspekce identifikovala jako problém, který se nedaří motivovat ohrožené žáky k docházce na doučování."
+        },
+        {
+          "tag": "Psychické problémy žáků",
+          "detail": "Narůstá počet žáků s psychickými problémy, kterým škola poskytuje podporu.",
+          "evidence": "Školní sociální pedagog poskytuje pomoc v problémových situacích, ale trend se zhoršuje."
+        },
+        {
+          "tag": "Slabá teoretická výuka",
+          "detail": "V teoretické výuce chybí diferenciace úkolů a efektivní závěry hodin se zpětnou vazbou.",
+          "evidence": "Inspekce zaznamenala absenci sebehodnocení žáků a vzájemného hodnocení, chyběla zhodnocení cílů hodin."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně řešíte vysokou absenci žáků a jak motivujete ohrožené žáky k účasti na doučování?",
+        "Jakou podporu poskytujete žákům s psychickými problémy a jak se počet těchto žáků vyvíjí?",
+        "Jak plánujete zavést diferenciaci úkolů v teoretické výuce, aby se lépe využil studijní potenciál jednotlivých žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktickou výuku a propojení teorie s praxí – odborný výcvik je velmi kvalitní.",
+        "Nadaní žáci, kterým se nabízí certifikace a mezinárodní zkoušky (Cambridge, Solidworks).",
+        "Žáci, kteří potřebují podporu – sociální pedagog a poradenské pracoviště efektivně řeší problémové situace."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absenci – vysoká absence je přetrvávajícím problémem, který se nedaří řešit.",
+        "Žáci s psychickými problémy – jejich počet narůstá a škola má omezené kapacity na podporu.",
+        "Žáci, kteří potřebují individualizovanou teoretickou výuku – diferenciace úkolů není dostatečná."
+      ],
+      "plain_czech_summary": "Škola je moderně vybavená a má skvělé propojení s praxí. Odborný výcvik je na vysoké úrovni, žáci pracují samostatně a prakticky ověřují teoretické znalosti. Problém je v teoretické výuce, kde chybí individualizace a efektivní zpětná vazba. Inspekce také upozorňuje na vysokou absenci žáků a narůstající počet žáků s psychickými problémy. Maturitní výsledky byly v roce 2022 nadprůměrné, ale v roce 2023 se objevily slabší výsledky v čtenářské a finanční gramotnosti."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – v roce 2021/2022 nadprůměrné, v roce 2022/2023 slabší výsledky v některých oblastech",
+        "key_numbers": [
+          "Školní rok 2021/2022: nadprůměrné výsledky",
+          "Matematika 2021/2022: hrubá míra neúspěšnosti 50 % v jedné třídě",
+          "Školní rok 2022/2023: podprůměrné výsledky v čtenářské a finanční gramotnosti"
+        ],
+        "evidence": "Škola pořádá 'Maturity nanečisto', má zavedený systém interního testování a sleduje efektivitu přijatých opatření."
+      },
+      "absence": {
+        "trend": "Negativní – vysoká absence je přetrvávajícím problémem",
+        "key_numbers": [
+          "Vysoká absence a její omlouvání",
+          "Nedostatečná motivace ohrožených žáků k docházce na doučování"
+        ],
+        "evidence": "Inspekce identifikovala jako přetrvávající problém, který se nedaří řešit efektivně."
+      },
+      "support_services": [
+        "Školní sociální pedagog poskytuje pomoc žákům a zákonným zástupcům v problémových situacích",
+        "Výchovná poradkyně, školní metodička prevence a třídní učitelé pracují v efektivní spolupráci",
+        "Adaptační kurz při zahájení studia a sportovně jazykový kurz pro druhý ročník"
+      ],
+      "safety_climate": [
+        "Příjemná pracovní atmosféra ve všech hospitovaných hodinách",
+        "Žáci bez obav využívají prostor pro dotazy",
+        "Škole se daří včas identifikovat nevhodné chování a přijímat účinná opatření – úspěšně řešeny vztahy s prvky šikany"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobé partnerství s firmami pro odbornou praxi žáků",
+        "Pravidelné vyhodnocování výsledků a přijímání odpovídajících opatření",
+        "Workshopy na závěr roku s prezentacemi žáků za přítomnosti firem a pedagogů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná a obsahuje konkrétní fakta. Silné a slabé stránky jsou dobře zdokumentovány. Některé údaje o absenci a psychických problémech jsou popsány spíše kvalitativně bez číselných údajů.",
+      "uncertainty_notes": [
+        "Přesný počet žáků s absencí a jejich podíl na celkovém počtu není uveden.",
+        "Počet žáků s psychickými problémy není konkrétně kvantifikován, pouze se uvádí 'narůstající počet'.",
+        "Detaily o tom, jaká konkrétní opatření škola přijala na zlepšení teoretické výuky, nejsou v textu specifikována."
+      ]
+    }
+  }
+}

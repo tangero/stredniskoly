@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600010279_2024-05-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:16:16.707427+00:00",
+  "run_finished_utc": "2026-02-09T16:16:38.036212+00:00",
+  "raw_file": "GY8_600010279_2024-05-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600010279_2024-05-22",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřletý a osmiletý program)",
+      "inspection_period": "22. 5. 2024 – 24. 5. 2024",
+      "school_change_summary": "Škola pokračuje v zlepšování materiálních podmínek a realizuje četné projekty podporující rozvoj kompetencí žáků. Přetrvávají rezervy v práci se vzdělávacími cíli a formativním hodnocením."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Nejúspěšnější žáci dosahují jazykové úrovně C1, škola nabízí certifikáty z německého a anglického jazyka.",
+          "evidence": "Dělení žáků do skupin dle úrovně, zapojení do sítě DSD, rodilý mluvčí v němčině."
+        },
+        {
+          "tag": "Mimoškolní aktivity",
+          "detail": "Nadstandardní nabídka projektů, zájmových útvarů a soutěží podporujících rozvoj sociálních a občanských kompetencí.",
+          "evidence": "Úspěchy na republikové úrovni (Eurorébus, halovém veslování, olympiádě v angličtině)."
+        },
+        {
+          "tag": "Poradenské služby",
+          "detail": "Funkční systém podpory žáků s potřebou speciálních opatření a kariérového poradenství.",
+          "evidence": "Výchovná poradkyně, školní psycholožka, kariérový poradce, metodička prevence."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Ve školním roce 2022/2023 byla hrubá neúspěšnost horší než republikový průměr, zejména v matematice.",
+          "evidence": "Škola 9,8 % (ČR 2,2 %), v matematice 11,1 % neúspěšnosti."
+        },
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Chybí systematická práce se vzdělávacími cíli a jejich vyhodnocování, nedostatečné formativní hodnocení.",
+          "evidence": "Pedagogové pracují především s tématem, nikoliv s cílem; zpětná vazba není systematická."
+        },
+        {
+          "tag": "Individualizace",
+          "detail": "Pedagogové málo využívají diferenciaci obsahu podle individuálních potřeb žáků.",
+          "evidence": "Ve většině hodin nenabízeli diferencovaná zadání zohledňující různou kognitivní vyspělost."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola připravuje žáky na maturitní zkoušku z matematiky, kde měla loni horší výsledky?",
+        "Jaké konkrétní metody používáte pro individuální podporu žáků s různými schopnostmi?",
+        "Jak se škola vypořádá s doporučením inspekce na zlepšení formativního hodnocení?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazykové vzdělání a mezinárodní spolupráci",
+        "Talentovaní žáci hledající bohatou nabídku zájmových útvarů a soutěží",
+        "Žáci, kterým vyhovuje profilace podle zájmu od druhého/šestého ročníku"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v matematice (vzhledem k vysoké neúspěšnosti na maturitě)",
+        "Žáci potřebující intenzivní individuální přístup a diferenciovanou výuku",
+        "Žáci, kterým nevyhovuje převážně frontální forma výuky"
+      ],
+      "plain_czech_summary": "Gymnázium v Rumburku je kvalitní školou se silným zaměřením na jazykové vzdělání a bohatou nabídkou mimoškolních aktivit. Má dobré materiální podmínky a funkční systém poradenských služeb. Hlavní slabinou jsou horší výsledky maturit (zvlášť z matematiky) a nedostatečná práce s individuálními potřebami žáků. Inspekce doporučuje zlepšit formativní hodnocení a diferenciaci výuky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se",
+        "key_numbers": [
+          "2021/2022: hrubá neúspěšnost 3 % (ČR 2,4 %)",
+          "2022/2023: hrubá neúspěšnost 9,8 % (ČR 2,2 %)",
+          "Matematika 2022/2023: 11,1 % neúspěšnosti"
+        ],
+        "evidence": "Po podzimním termínu 2022/2023 byla neúspěšnost školy výrazně horší než republikový průměr."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně – informuje pedagogy o žácích s potřebou podpůrných opatření",
+        "Školní psycholožka – poskytuje odbornou pomoc žákům i učitelům",
+        "Kariérový poradce – podporuje volbu dalšího studia a uplatnění na trhu práce",
+        "Metodička prevence – sleduje náznaky rizikového chování"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra a respektující přístup pedagogů k žákům",
+        "Efektivní adaptační programy pro první ročníky mapující klima třídních kolektivů",
+        "Pravidelné třídnické hodiny a společně vytvořená vztahová pravidla",
+        "Spolupráce s neziskovými organizacemi (např. Nevypusť duši) na wellbingu"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se základními školami – workshopy, kroužky, akce",
+        "Zahraniční spolupráce – výměnné pobyty, debatní klub, soutěže",
+        "Sít škol DSD (Deutsches Sprachdiplom) – zaměstnávání rodilého mluvčího",
+        "Spolupráce s profesními organizacemi a úřadem práce na kariérovém poradenství"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní údaje a citace. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Absence údajů o počtu žáků s speciálními vzdělávacími potřebami a jejich úspěšnosti",
+        "Chybí informace o počtu žáků, kteří neúspěšně absolvují maturitu v letním termínu",
+        "Není jasné, jak se výsledky maturit vyvíjely v letních termínech"
+      ]
+    }
+  }
+}

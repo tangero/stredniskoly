@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_610300580_2022-12-02",
+  "school_profile": {
+    "school_type": "Střední odborná škola průmyslová a Střední odborné učiliště strojírenské",
+    "inspection_period": "2. až 6. prosince 2022",
+    "school_change_summary": "Od poslední inspekce došlo ke zlepšení materiálních podmínek – modernizace odborných učeben a učebních pomůcek. Škola realizuje 8 oborů vzdělání (3 s maturitou, 2 s výučním listem, 3 s certifikátem). Navštěvuje ji 364 žáků v 19 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a plánování",
+        "detail": "Ředitel škola vede na základě analýzy stavu a tržních potřeb s jasným systémem plánování a inovací.",
+        "evidence": "Kvalitně zpracované školní vzdělávací programy, průběžné hodnocení a inovace strategií."
+      },
+      {
+        "tag": "Praktická příprava na trh práce",
+        "detail": "Škola cíleně připravuje žáky na reálný trh práce prostřednictvím vlastních dílen a partnerských organizací.",
+        "evidence": "Spolupráce s řadou sociálních partnerů, firmy zajišťují praktické vyučování, neformální sledování absolventů."
+      },
+      {
+        "tag": "Bezpečné a příznivé prostředí",
+        "detail": "Vyučovací hodiny probíhaly bez časových prostojů s příznivým pracovním klimatem a korektní komunikací.",
+        "evidence": "Přirozená autorita vyučujících, empatický přístup, žáci vedeni k vzájemnému respektu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezené výukové metody",
+        "detail": "Výuka se opírá především o frontální výuku, chybí skupinová práce a aktivizace žáků.",
+        "evidence": "Převažuje frontální výuka s rozhovorem, skupinová práce se vyskytla méně a spíše formálně."
+      },
+      {
+        "tag": "Nedostatečná individualizace",
+        "detail": "Žáci pracují na stejných úkolech bez ohledu na jejich různé vzdělávací potřeby a schopnosti.",
+        "evidence": "Diferenciace nebyla vždy zřetelná, nadaní žáci měli zřídka příležitosti k rozvoji, podpůrná opatření méně patrná."
+      },
+      {
+        "tag": "Slabá analýza výsledků",
+        "detail": "Škola sbírá data o výsledcích, ale neprovádí hlubokou analýzu příčin neúspěchu a účinnosti opatření.",
+        "evidence": "Statistická sumarizace převládá nad podrobnou analýzou, metodické orgány se hlubší analýzou nezabývají."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky se speciálními vzdělávacími potřebami a nadané žáky?",
+      "Jaké nové výukové metody a formy plánuje škola zavádět v příštích měsících?",
+      "Jak se škola vypořádá s doporučením inspekce na zefektivnění skupinové práce a formativního hodnocení?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a přímou přípravu na konkrétní povolání v technických oborech",
+      "Studenti, kteří se chtějí učit v prostředí s moderními dílnami a partnerskými firmami",
+      "Žáci, kteří potřebují individuální konzultace a doučování (nabízeno v rámci projektů)"
+    ],
+    "who_should_be_cautious": [
+      "Nadaní žáci, kterým se ve výuce zřídka vytváří příležitosti k dalšímu rozvoji",
+      "Žáci se speciálními vzdělávacími potřebami, u kterých nejsou podpůrná opatření vždy funkční",
+      "Studenti, kteří se učí lépe prostřednictvím skupinové práce a interaktivních metod (ty jsou zatím omezené)"
+    ],
+    "plain_czech_summary": "Škola je dobře vedená s jasným zaměřením na přípravu žáků na trh práce. Má moderní vybavení a spolupracuje s firmami. Silnou stránkou je praktické vyučování v dílnách. Problém je, že teoretická výuka se příliš opírá o frontální metody bez dostatečné individualizace. Chybí skupinová práce, sebehodnocení žáků a hluboká analýza jejich výsledků. Inspekce doporučuje více aktivizovat žáky a lépe podporovat nadané i slabší studenty."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "3 obory s maturitní zkouškou (Strojírenství, Stavebnictví, Elektrotechnika)",
+        "Výsledky odpovídají očekávaným výstupům bez závažných odchylek",
+        "Realizují maturitní generálky a celorepublikové soutěže"
+      ],
+      "evidence": "Celkové výsledky vzdělávání žáků odpovídají očekávaným výstupům ve školních vzdělávacích programech."
+    },
+    "absence": {
+      "trend": "Problematická",
+      "key_numbers": [
+        "Vyšší absence jak omluvených, tak neomluvených hodin",
+        "Řešeno pouze s částečnou úspěšností",
+        "Škola důsledně sleduje celkovou absenci"
+      ],
+      "evidence": "Vyšší absenci jak omluvených, tak neomluvených hodin škola řeší, však pouze s částečnou úspěšností."
+    },
+    "support_services": [
+      "Výchovná poradkyně zaměřená na integraci žáků se speciálními vzdělávacími potřebami",
+      "Kariérová poradkyně spolupracující s úřadem práce a firmami",
+      "Školní metodička prevence realizující preventivní a intervenční opatření",
+      "Individuální konzultační hodiny a doučování v rámci projektů Šablony a Národního programu"
+    ],
+    "safety_climate": [
+      "Pravidla pro bezpečnost a ochranu zdraví stanovena ve vnitřních předpisech",
+      "Žáci pravidelně seznamováni s bezpečnostními riziky",
+      "Chybí vypracovaný krizový plán školy",
+      "Prevence sociálně nežádoucích jevů zaměřena na posilování příznivých vztahů"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s řadou sociálních partnerů – firmy zajišťují praktické vyučování",
+      "Partnerství s Pedagogicko-psychologickou poradnou Prostějov",
+      "Spolupráce s místním úřadem práce, Hospodářskou komorou a regionálními firmami",
+      "Projekty zaměřené na zkvalitnění výuky a polytechnické vzdělávání"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně vymezeny. Doporučení jsou specifická a praktická. Chybí pouze konkrétní číselné údaje o prospěchu a absenci.",
+    "uncertainty_notes": [
+      "Přesné procento žáků se speciálními vzdělávacími potřebami není uvedeno",
+      "Konkrétní data o absenci (počet hodin, procenta) nejsou v textu specifikována",
+      "Výsledky maturitních zkoušek nejsou číselně vyjádřeny"
+    ]
+  }
+}
+```

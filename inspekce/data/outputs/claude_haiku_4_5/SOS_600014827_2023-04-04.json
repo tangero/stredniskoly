@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600014827_2023-04-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:43:04.458240+00:00",
+  "run_finished_utc": "2026-02-09T16:43:24.121622+00:00",
+  "raw_file": "SOS_600014827_2023-04-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600014827_2023-04-04",
+    "school_profile": {
+      "school_type": "Střední odborná škola (SOŠ) - soukromá, s.r.o.",
+      "inspection_period": "4., 5., 12. a 13. dubna 2023",
+      "school_change_summary": "Počet žáků se zdvojnásobil z 96 na 182 žáků ve dvou oborech: Veřejnosprávní činnost a Ekonomika s podnikáním."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní výuka a spolupráce učitelů",
+          "detail": "Učitelé si navzájem hospitují, sdílí zkušenosti a pravidelně se vzdělávají v nových trendech.",
+          "evidence": "Vzájemné hospitace a stáže pedagogů se pozitivně projevují v kvalitě výuky."
+        },
+        {
+          "tag": "Bohatá mimoškolní činnost",
+          "detail": "Škola nabízí soutěže, projekty a aktivity zaměřené na rozvoj manažerských dovedností a kariérní orientaci.",
+          "evidence": "Pravidelně pořádaná soutěž manažersko-organizačních dovedností \"Den M\" cíleně rozvíjí kompetence žáků."
+        },
+        {
+          "tag": "Efektivní řešení problémů s absencí",
+          "detail": "Škola výrazně snížila vysokou absenci žáků pomocí funkčních opatření a spolupráce s poradcem.",
+          "evidence": "Nastavením funkčních opatření se podařilo výrazně snížit vysokou absenci žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná individualizace výuky",
+          "detail": "Učitelé málo přizpůsobují úkoly různým schopnostem a tempům žáků.",
+          "evidence": "Byla zaznamenána nízká diferenciace úloh s ohledem na rozdílné pracovní tempo a studijní předpoklady."
+        },
+        {
+          "tag": "Slabé sledování účinnosti opatření",
+          "detail": "Škola přijímá opatření, ale ne vždy důsledně sleduje, zda fungují.",
+          "evidence": "Efektivita opatření ale není vždy důsledně sledována."
+        },
+        {
+          "tag": "Omezené sebehodnocení žáků",
+          "detail": "Žáci se málo učí sami sebe hodnotit a vzájemně si dávat zpětnou vazbu.",
+          "evidence": "Vzájemné hodnocení či sebehodnocení bylo využíváno zejména při výstupech, méně jako součást zpětné vazby."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně přizpůsobujete výuku žákům s různými schopnostmi a tempem učení?",
+        "Jaké konkrétní dovednosti si žáci odnášejí pro své budoucí zaměstnání?",
+        "Jak se podílíte na kariérní orientaci žáků a jak sledujete jejich uplatnění po škole?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří se zajímají o management, ekonomiku a veřejnosprávní činnost",
+        "Studenti, kterým vyhovuje menší kolektiv a osobnější přístup učitelů",
+        "Žáci, kteří chtějí rozvíjet manažerské a organizační dovednosti"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se specifickými vzdělávacími potřebami, kteří potřebují více individuálního přístupu",
+        "Studenti, kteří se lépe učí v tradičnějším prostředí bez projektů a soutěží",
+        "Žáci, kteří potřebují více struktury a jasně definovaných cílů v každé hodině"
+      ],
+      "plain_czech_summary": "Manažerská akademie je soukromá střední škola v Jihlavě, která za poslední dobu výrazně rostla. Učitelé zde pracují kvalitně, navzájem si pomáhají a nabízejí žákům spoustu aktivit a projektů. Škola se zaměřuje na praktické dovednosti a kariérní přípravu. Hlavní slabinou je, že výuka není dostatečně přizpůsobena jednotlivým žákům a jejich schopnostem. Škola by měla lépe sledovat, zda její opatření skutečně fungují."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní a úspěšný",
+        "key_numbers": [
+          "Výsledky maturitních zkoušek jsou srovnatelné s výsledky během studia",
+          "Úspěšné ve srovnění se školami podobného typu"
+        ],
+        "evidence": "Důležitou zpětnou vazbou jsou výsledky maturitních zkoušek. Jsou srovnatelné s výsledky žáků během studia a úspěšné ve srovnění se školami podobného typu."
+      },
+      "absence": {
+        "trend": "Výrazně zlepšený",
+        "key_numbers": [
+          "Vysoká absence byla výrazně snížena"
+        ],
+        "evidence": "Nastavením funkčních opatření se podařilo výrazně snížit vysokou absenci žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště tvořené jedním pedagogem vykonávajícím funkci školního psychologa, výchovného poradce a metodika prevence",
+        "Doučování jako součást strategie řešení školní neúspěšnosti",
+        "Spolupráce s externími partnery v oblasti prevence rizikových jevů"
+      ],
+      "safety_climate": [
+        "Podnětná pracovní atmosféra podporující efektivní učení",
+        "Žáci dodržují pravidla komunikace a respektují stanovené postupy",
+        "Minimalizace rizikových jevů díky efektivní spolupráci poradce s učiteli"
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce s profesními a sociálními partnery pro naplňování profilu absolventa",
+        "Systematické sledování uplatnění absolventů na trhu práce prostřednictvím osobního kontaktu",
+        "Pravidelné aktivity s absolventy včetně besed a Kariérního dne"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Některé pasáže jsou však formulovány úřednicky a vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o úspěšnosti maturit nebo absenci - pouze kvalitativní hodnocení",
+        "Není jasné, jak velký je podíl žáků, kterým vyhovuje individualizovaná výuka",
+        "Chybí informace o počtu pedagogů a jejich kvalifikaci"
+      ]
+    }
+  }
+}

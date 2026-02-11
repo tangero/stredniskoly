@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "SOS_691015341_2024-02-06",
+  "school_profile": {
+    "school_type": "Střední škola knižní kultury s.r.o., obor Knihkupecké a nakladatelské činnosti, denní forma studia",
+    "inspection_period": "6. února 2024 až 8. února 2024",
+    "school_change_summary": "Od inspekce v roce 2017 se škola přestěhovala (od 2021/2022 sídlí na Fakultě tělesné výchovy a sportu UK), zvýšila naplněnost na 84 % (116 žáků ve čtyřech třídách), rozšířila vedení a poradenské služby, obměnila část pedagogů a modernizovala vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické propojení s praxí",
+        "detail": "Škola má dlouhodobé partnerství se smluvními pracovišti v knihkupectví, nakladatelství a archivnictví, což žákům umožňuje reálné zkušenosti a profesní portfolia.",
+        "evidence": "Dlouhodobě rozvíjené vztahy se sítí smluvních regionálních partnerů umožňují realizovat praktické vyučování podle zaměření žáků."
+      },
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Přibližně čtvrtina žáků maturuje s vyznamenáním, neprospívají jen jednotlivci, výsledky v češtině a angličtině překračují republikový průměr.",
+        "evidence": "Ve sledovaném období posledních tří let maturovala přibližně čtvrtina žáků s vyznamenáním, neprospěli pouze jednotlivci."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Žáci se zapojují do kulturních aktivit, kroužků, jazykových olympiád a projektů rozvíjejících jejich sociální a občanské hodnoty.",
+        "evidence": "Systémové zapojování žáků do rozšiřujících vzdělávacích aktivit, projektů a mimoškolní činnosti napomáhá rozvoji jejich kulturního povědomí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Přestože se absence snížila (z 209 na 166 hodin za rok), stále je vysoká a vede k individuální neúspěšnosti některých žáků a předčasným odchodům ze studia.",
+        "evidence": "Vysoký počet zameškaných hodin se promítá v individuální neúspěšnosti některých žáků, ve školním roce 2022/2023 ukončili studium čtyři žáci."
+      },
+      {
+        "tag": "Nejednotné metody výuky",
+        "detail": "V části hodin chybí aktivizační metody, kooperativní práce a individuální přístup; někteří učitelé používají převážně frontální výuku.",
+        "evidence": "Kvalitu vzdělávání snižovala menší metodická propracovanost, méně časté využívání kooperativních forem nebo obsahové diferenciace."
+      },
+      {
+        "tag": "Slabší jazyková kultura",
+        "detail": "Inspektoři zaznamenali nižší míru jazykové kultury a používání nespisovné češtiny některými učiteli i žáky.",
+        "evidence": "Zaznamenána nižší míra jazykové kultury a používání nespisovné češtiny některými učiteli i žáky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší problém vysoké absence žáků? Jaké jsou vaše zkušenosti s motivací žáků k pravidelné účasti?",
+      "Jak se liší přístup jednotlivých učitelů k výuce? Máte nějaké standardy pro aktivizační metody a individuální přístup?",
+      "Jaké jsou reálné možnosti uplatnění absolventů – kolik jich pokračuje na vysokých školách a kolik nastupuje přímo do praxe?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o knihy, vydavatelství, knihkupectví a kulturní činnosti, kteří chtějí praktické zkušenosti v oboru",
+      "Motivovaní studenti schopní samostudia, protože škola nabízí bohatou mimoškolní nabídku a propojení s praxí",
+      "Uchazeči, kteří plánují vysokoškolské studium humanitního zaměření, protože škola má dobré výsledky v češtině a angličtině"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k absencím nebo problémům s motivací – škola má vysokou absenci a to vede k vyřazení ze studia",
+      "Studenti, kteří potřebují silnou individuální podporu a diferenciovanou výuku – inspekce zjistila, že ne všichni učitelé ji dostatečně poskytují",
+      "Rodiny, které očekávají jednotný a moderní přístup ke všem předmětům – kvalita výuky se liší podle učitele"
+    ],
+    "plain_czech_summary": "Malá škola s rodinným charakterem, která se zaměřuje na knihkupectví a nakladatelství. Silné stránky: výborné výsledky u maturity, praktické propojení s reálnými pracovišti, bohatá mimoškolní nabídka. Slabé stránky: vysoká absence žáků (přestože se snižuje), nejednotné metody výuky mezi učiteli, někdy chybí individuální přístup. Vhodná pro motivované studenty se zájmem o kulturu a knihy, méně vhodná pro ty, kteří mají problémy s docházkou."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – dlouhodobě velmi dobré výsledky s kvalitativním zlepšením",
+      "key_numbers": [
+        "Přibližně čtvrtina žáků maturuje s vyznamenáním",
+        "Neprospívají pouze jednotlivci",
+        "Výsledky v češtině a angličtině překračují republikový průměr"
+      ],
+      "evidence": "Ve sledovaném období posledních tří let si škola udržuje velmi dobré výsledky. Došlo ke kvalitativnímu zlepšení výsledků v profilové části maturitní zkoušky."
+    },
+    "absence": {
+      "trend": "Částečně zlepšující se, ale stále vysoká s negativním dopadem",
+      "key_numbers": [
+        "Školní rok 2021/2022: 209 hodin na žáka",
+        "Školní rok 2022/2023: 166 hodin na žáka",
+        "Přibližně čtvrtina žáků hodnocena v náhradním termínu"
+      ],
+      "evidence": "Přestože jsou přijata systémová opatření, vysoký počet zameškaných hodin se promítá v individuální neúspěšnosti a předčasných odchodech ze studia."
+    },
+    "support_services": [
+      "Školní psycholožka (od poslední inspekce)",
+      "Výchovná poradkyně se speciálně-pedagogickou kvalifikací",
+      "Metodička prevence",
+      "Doučování a individuální konzultace",
+      "Plány pedagogické podpory pro žáky s potřebou podpůrných opatření (pětina žáků)"
+    ],
+    "safety_climate": [
+      "Demokratický způsob řízení s otevřenou komunikací",
+      "Funkční vnitřní a vnější informační systém",
+      "Nastavené adaptační a preventivní postupy (seznamovací workshop, adaptační kurzy)",
+      "Programy primární prevence realizované externími subjekty",
+      "Převážně funkční zajištění preventivní a psychologické péče"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobé partnerství se Světem knihy (Mezinárodní veletrh a knižní festival)",
+      "Smluvní regionální partneři v knihkupectví, nakladatelství, archivnictví a knihovnictví",
+      "Spolupráce s tělovýchovnou fakultou UK (prostory, videa knižní produkce)",
+      "Profesní svazy a akademická pracoviště",
+      "Odborníci z praxe jako vyučující (přibližně pětina pedagogů)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, citace a doklady. Některé pasáže jsou však složitější a úřednického stylu, což může ztížit porozumění rodičům bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Přesný počet učitelů bez kvalifikace není jasný – zpráva uvádí 'dva nesplňují kvalifikační předpoklady', ale není jasné, zda si vzdělání doplňují nebo jsou k němu přihlášeni",
+      "Není specifikováno, jaké konkrétní 'systémové opatření' vedla ke snížení absence – pouze obecně zmíněny hranice povinné účasti, jednotný postup a elektronický systém",
+      "Podíl žáků s odlišným mateřským jazykem je zmíněn jako 'z toho 3 žáci', ale není jasné, zda to znamená 3 z pětiny žáků s podpůrnými opatřeními"
+    ]
+  }
+}
+```

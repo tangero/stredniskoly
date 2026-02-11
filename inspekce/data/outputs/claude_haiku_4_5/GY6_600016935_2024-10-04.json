@@ -1,0 +1,117 @@
+{
+  "report_id": "GY6_600016935_2024-10-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:13:12.821322+00:00",
+  "run_finished_utc": "2026-02-09T16:13:38.930390+00:00",
+  "raw_file": "GY6_600016935_2024-10-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600016935_2024-10-04",
+    "school_profile": {
+      "school_type": "Osmileté, čtyřleté a šestileté gymnázium s zaměřením na jazyky, sport a všeobecné vzdělání. Součástí je bilingvní program s vyučováním v češtině a španělštině.",
+      "inspection_period": "4., 7. a 8. října 2024",
+      "school_change_summary": "Od poslední inspekce (2019) došlo k zefektivnění činnosti školního poradenského pracoviště. Škola si udržuje stabilní pedagogický sbor a pokračuje v modernizaci prostor a vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "Neúspěšnost u maturit je minimální (0,9–1,7 %), žáci dosahují lepších výsledků než průměr v republice.",
+          "evidence": "V posledních třech rocích hrubá školní neúspěšnost 0,9–1,7 %, žáci dosahují lepších výsledků než průměr skupiny oborů v republice."
+        },
+        {
+          "tag": "Silné jazykové vzdělání",
+          "detail": "Kvalitní výuka cizích jazyků s rodilými mluvčími, vysoká úroveň komunikativní kompetence, mezinárodní certifikáty.",
+          "evidence": "Vedení vyučovacích hodin v cílovém jazyce, vysoká úroveň jazykové kompetence žáků, úspěšnost při absolvování mezinárodních certifikovaných zkoušek."
+        },
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Pozitivní pracovní atmosféra, partnerský přístup učitelů, nízká absence žáků, efektivní prevence rizikového chování.",
+          "evidence": "Pozitivní pracovní a sociální atmosféra, partnerský přístup vyučujících, škola se nepotýká s vysokou absencí, včasná intervence při problémovém chování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Monotónní výuka v některých předmětech",
+          "detail": "Převažuje frontální výuka, málo skupinové práce, nedostatečná pestrost metod vedoucí k nerovnoměrnému zapojení žáků.",
+          "evidence": "Nedostatečná pestrost forem a metod výuky vedla k monotónnosti, minimálně vytvářela příležitosti k týmové spolupráci."
+        },
+        {
+          "tag": "Slabé využívání moderních technologií",
+          "detail": "Projekční technika se používá spíše k pasivní prezentaci, málo interaktivních aplikací a digitálních nástrojů.",
+          "evidence": "Projekční technika používána spíše k pasivní prezentaci, účelné využívání interaktivního softwaru zaznamenáno jen v minoritě hodin."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učitelé málo přizpůsobují úlohy individuálním možnostem žáků, chybí podpora talentovaných i slabších žáků.",
+          "evidence": "Učitelé jen v malé míře diferencovali zadávané úlohy, výraznější časová či obsahová diferenciace nebyla patrná."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje talentované žáky v jednotlivých oborech? Jaké jsou možnosti účasti v soutěžích a olympiádách?",
+        "Jaké jsou zkušenosti s přijetím absolventů na vysoké školy? Máte statistiku úspěšnosti přijetí?",
+        "Jak se škola vypořádává s rozdílnými tempem učení žáků? Nabízí doučování nebo individuální podporu?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky – škola má kvalitní výuku angličtiny, španělštiny a německého jazyka s rodilými mluvčími.",
+        "Sportovně nadaní žáci – škola nabízí sportovní zaměření a nadstandardně vybavenou tělocvičnu.",
+        "Žáci připravující se na vysokou školu – vysoká úspěšnost u maturity a přijetí na VŠ."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se lépe učí aktivní metodou a skupinovou prací – výuka je často frontální a monotónní.",
+        "Žáci se speciálními vzdělávacími potřebami – podpora vychází spíše z osobního přístupu jednotlivých učitelů než ze systému.",
+        "Žáci, kteří potřebují individuální přístup – diferenciace výuky je na nízké úrovni."
+      ],
+      "plain_czech_summary": "Gymnázium v Olomouci je kvalitní školou s výborným jazykovým vzděláním a vysokou úspěšností u maturity. Žáci dosahují nadprůměrných výsledků a úspěšně se dostávají na vysoké školy. Prostředí je bezpečné a podporující. Slabší stránkou je převážně frontální výuka s málo skupinové práce a nedostatečným využitím moderních technologií. Diferenciace výuky pro různě nadané žáky není dostatečná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "Hrubá neúspěšnost 0,9–1,7 % v posledních třech rocích",
+          "Lepší výsledky než průměr skupiny oborů v republice",
+          "Vysoká úspěšnost absolventů při přijetí na vysoké školy"
+        ],
+        "evidence": "V posledních třech školních rocích se hrubá školní neúspěšnost pohybovala v minimálních hodnotách 0,9–1,7 %, žáci dosahovali lepších výsledků než průměr dané skupiny oborů v republice."
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "Škola se nepotýká s vysokou absencí žáků",
+          "Žáci jsou vedeni ke spoluodpovědnosti za své výsledky"
+        ],
+        "evidence": "Na dosahované výsledky vzdělávání pozitivně působí skutečnost, že se škola nepotýká s vysokou absencí žáků ve vyučování."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, školní metodička prevence, školní psycholožka",
+        "Péče o žáky se speciálními vzdělávacími potřebami, identifikace nadaných žáků",
+        "Kariérové poradenství a primární prevence rizikového chování",
+        "Doučování a individuální konzultace pro žáky s rizikem neúspěchu"
+      ],
+      "safety_climate": [
+        "Pozitivní pracovní a sociální atmosféra založená na vstřícnosti, důvěře a toleranci",
+        "Partnerský přístup vyučujících k žákům",
+        "Celodenní přítomnost nepedagogického pracovníka u vstupu do školy",
+        "Systematická organizace dohledů pedagogických pracovníků v areálu",
+        "Adaptační kurzy pro prvňáky zaměřené na prevenci konfliktů"
+      ],
+      "partnerships_practice": [
+        "Nadstandardní spolupráce se statutárním městem Olomouc",
+        "Partnerství s organizacemi, institucemi, sportovními kluby a spolky v regionu",
+        "Spolupráce s Univerzitou Palackého v Olomouci",
+        "Zahraniční partnerství přispívající k rozvoji jazykových a sociálních kompetencí",
+        "Činnost nadačního fondu školy podporující školní akce"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Některé pasáže jsou však delší a obsahují více odborné termíny, které mohou být pro laické rodiče méně přístupné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty žáků se speciálními potřebami nebo nadaných žáků, takže není jasné, jak velkou skupinu tvoří.",
+        "Není specifikováno, kolik procent vyučovacích hodin bylo hodnoceno jako monotónních nebo s nedostatečnou diferenciací.",
+        "Chybí informace o počtu žáků, kteří se účastní doučování nebo individuálních konzultací."
+      ]
+    }
+  }
+}

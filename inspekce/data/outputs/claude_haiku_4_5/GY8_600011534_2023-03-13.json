@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600011534_2023-03-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:45:19.909829+00:00",
+  "run_finished_utc": "2026-02-09T16:45:45.316643+00:00",
+  "raw_file": "GY8_600011534_2023-03-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600011534_2023-03-13",
+    "school_profile": {
+      "school_type": "Gymnázium, Střední odborná škola a Vyšší odborná škola",
+      "inspection_period": "13. března až 16. března 2023",
+      "school_change_summary": "Škola zkvalitnila materiální podmínky: zřídila mediální učebnu na SOŠ a vybudovala chemickou a biologickou laboratoř na gymnáziu. Stala se centrem pro setkávání chemiků v projektu Elixír do škol."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Dlouhodobá spolupráce s místními firmami a institucemi podporuje kvalitu vzdělávání a propagaci oborů.",
+          "evidence": "Workshopy s firmami, praktické vyučování na reálných pracovištích, výměnné programy se Slovenskem a Finskem."
+        },
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Gymnazisté dosahují lepších výsledků než průměr republiky, odborníci zvládají češtinu a matematiku lépe.",
+          "evidence": "Všichni žáci úspěšní při závěrečných zkouškách v posledních třech letech."
+        },
+        {
+          "tag": "Mimoškolní aktivity",
+          "detail": "Bohatá nabídka soutěží, olympiád, zájezdů a projektů rozvíjí zájmy a talenty žáků.",
+          "evidence": "Úspěchy v jazykových, matematických, přírodovědných a odborných soutěžích s postupem do krajských kol."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nízká aktivita žáků ve výuce",
+          "detail": "Převažuje frontální výuka s nižší aktivizací žáků, chybí skupinová práce a práce ve dvojicích.",
+          "evidence": "Inspektoři zaznamenali nedostatek efektivních metod a forem výuky v části hodin."
+        },
+        {
+          "tag": "Chybějící zpětná vazba od žáků",
+          "detail": "Chybí sebehodnocení a vzájemné hodnocení žáků, závěry hodin jsou neefektivní.",
+          "evidence": "Pedagogové nemohli efektivně zhodnotit dosažení cíle hodiny, chybělo vzájemné a sebehodnocení."
+        },
+        {
+          "tag": "Slabá diferenciace výuky",
+          "detail": "Minimální přizpůsobení činností individuálním schopnostem a studijnímu potenciálu žáků.",
+          "evidence": "Jen minimálně zaznamenána diferenciace činností vedoucí k rozvoji individuality žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s individuálními rozdíly mezi žáky? Jaké metody používá k diferenciaci výuky?",
+        "Jak se žáci podílejí na hodnocení své práce? Dostávají prostor pro sebehodnocení a vzájemné hodnocení?",
+        "Jaké konkrétní změny škola plánuje v metodách výuky po inspekci?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří se zajímají o praktické obory a chtějí se učit na reálných pracovištích s profesionálním vedením.",
+        "Studenti, kteří se chystají na vysokou školu a chtějí kvalitní přípravu na maturitu (gymnazisté dosahují nadprůměrných výsledků).",
+        "Žáci, kteří se chtějí zapojit do projektů, soutěží a mezinárodních výměn."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují aktivní, interaktivní výuku s vysokou mírou zapojení – škola zatím více využívá frontální výuku.",
+        "Studenti s individuálními potřebami, kteří vyžadují silnou diferenciaci a přizpůsobení obsahu svým schopnostem.",
+        "Žáci, kteří se učí lépe prostřednictvím skupinové práce a kooperativního učení – ty jsou zatím méně využívány."
+      ],
+      "plain_czech_summary": "Gymnázium v Ledči je kvalitní školou s dobrými výsledky maturit a bohatou nabídkou aktivit. Silnou stránkou je spolupráce s firmami a praxí. Inspektoři ale upozornili, že výuka je často příliš frontální, chybí aktivizace žáků a jejich zapojení do hodnocení. Škola má 30 dní na to, aby zlepšila metody výuky a zaměřila se více na cíle hodin a individuální přístup."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní",
+        "key_numbers": [
+          "Gymnazisté úspěšnější než průměr republiky",
+          "Všichni žáci úspěšní v posledních třech letech",
+          "Odborníci lepší v češtině a matematice, ale vyšší neúspěšnost v cizím jazyce"
+        ],
+        "evidence": "V posledním školním roce byli žáci gymnázia úspěšnější v porovnání s průměrnými republikovými výsledky. Žáci odborných oborů dosáhli lepších výsledků v českém jazyce a matematice."
+      },
+      "absence": {
+        "trend": "Neuvedeno",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje konkrétní údaje o absenci žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: dva výchovní poradci a metodik prevence",
+        "Doučování a individuální konzultace pro žáky s horšími výsledky",
+        "Plány pedagogické podpory pro žáky s odlišným mateřským jazykem",
+        "Řešení ojedinělých případů rizikových jevů s přijatými opatřeními"
+      ],
+      "safety_climate": [
+        "V posledních dvou školních letech řešeny pouze ojedinělé případy rizikových jevů",
+        "Přijata opatření s důsledným sledováním jejich funkčnosti",
+        "Vedení školy a pedagogové efektivně řeší případné problémy"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s místními firmami formou workshopů",
+        "Praktické vyučování na smluvních pracovištích s důsledným sledováním",
+        "Projekt Elixír do škol – pravidelná setkávání chemiků",
+        "Výměnné programy se Slovenskem a Finskem",
+        "Spolupráce se středními a vysokými školami"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky z inspekce. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní číselné údaje o absenci a podrobnější data o výsledcích.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent hodin mělo nízkou aktivizaci žáků – údaj je kvalitativní (\"v některých hodinách\", \"v části hodin\").",
+        "Nejsou uvedeny konkrétní výsledky maturit v procentech nebo bodech, pouze kvalitativní srovnání.",
+        "Není jasné, jak dlouho trvá školení pedagogů v nových metodách a jaká je jejich účinnost."
+      ]
+    }
+  }
+}

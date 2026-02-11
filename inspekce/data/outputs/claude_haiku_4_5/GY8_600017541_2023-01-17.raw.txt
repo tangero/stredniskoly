@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY8_600017541_2023-01-17",
+  "school_profile": {
+    "school_type": "Biskupské gymnázium (osmileté a čtyřleté studium), střední škola s maturitní zkouškou",
+    "inspection_period": "17. 1. 2023 − 19. 1. 2023",
+    "school_change_summary": "Od inspekce v 2013/2014 došlo k částečné obměně pedagogického sboru, vytvoření pozice školního psychologa, zlepšení materiálně technického zázemí včetně bezbariérového vstupu a výtahu pro imobilní žáky, inovaci školních vzdělávacích programů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Žáci dlouhodobě dosahují velmi dobrých výsledků v průběhu vzdělávání i při maturitě (100% úspěšnost v roce 2022).",
+        "evidence": "V jarním zkušebním období 2022 byla úspěšnost 100%, více než polovina žáků prospívá s vyznamenáním."
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Škola vytváří sociálně bezpečné, výchovně podnětné prostředí s rovnými podmínkami pro všechny žáky.",
+        "evidence": "Kvalitní služby školního poradenského pracoviště, efektivní systém podpory žáků se speciálními potřebami, bezbariérové prostředí."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Škola podporuje všestranný rozvoj osobnosti prostřednictvím soutěží, olympiád, charitativních akcí a zahraničních zájezdů.",
+        "evidence": "Žáci úspěšně reprezentují školu na regionální a republikové úrovni, aktivně pracuje studentská rada."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezené metody výuky",
+        "detail": "Převažuje frontální výuka, málo se využívá skupinová práce, kritické myšlení a práce s více zdroji.",
+        "evidence": "Žáci měli minimální možnost vzájemného hodnocení, sebehodnocení a kooperace při párové nebo skupinové práci."
+      },
+      {
+        "tag": "Slabá vazba hospitací na zlepšování",
+        "detail": "Hospitační činnost není provázena dostatečně účinnými opatřeními ke zvyšování kvality výuky.",
+        "evidence": "Dílčí doporučení z hospitací se neprojevovala ve vyšší kvalitě výuky, závěry se nepromítají do úkolů předmětových komisí."
+      },
+      {
+        "tag": "Nedostatečná zpětná vazba",
+        "detail": "Závěrečné zhodnocení výuky probíhá často formálně bez potřebné zpětné vazby o zvládnutí učiva.",
+        "evidence": "Výuka často končila po zvonění, sporadické využívání formativního hodnocení a reflexe vzdělávacího pokroku."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje samostatné myšlení a kritické uvažování žáků v jednotlivých předmětech?",
+      "Jaké metody používáte k tomu, aby žáci pracovali ve skupinách a učili se od sebe navzájem?",
+      "Jak probíhá zpětná vazba od učitelů – jak se dozvídají žáci, co zvládli a co je třeba zlepšit?"
+    ],
+    "who_school_fits": [
+      "Žáci s výborným prospěchem a motivací k učení, kteří si chtějí připravit solidní základ pro vysokou školu",
+      "Děti se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální podporu a bezbariérové prostředí",
+      "Všestranně nadaní žáci, kterým vyhovuje bohatá nabídka volitelných předmětů a mimoškolních aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se lépe učí aktivní metodou, skupinovou prací a diskusí – zde převažuje frontální výuka",
+      "Děti, které potřebují více praktických dovedností a reálných aplikací – výuka cizích jazyků se málo zaměřuje na komunikaci",
+      "Žáci, kteří se potřebují více podílet na vlastním hodnocení a reflexi – formativní hodnocení se využívá minimálně"
+    ],
+    "plain_czech_summary": "Biskupské gymnázium v Ostravě je kvalitní škola s výbornými výsledky maturit a dlouhodobě dobrým prospěchem žáků. Nabízí bezpečné, podporující prostředí s kvalitním poradenským servisem a bohatou mimoškolní nabídkou. Slabší stránkou je převaha frontální výuky, která málo rozvíjí skupinovou práci a kritické myšlení. Škola by měla více pracovat na propojení hospitací s konkrétními zlepšeními a na lepší zpětné vazbě pro žáky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoká úspěšnost",
+      "key_numbers": [
+        "Jarní období 2021: více než 97 % úspěšnost, téměř polovina s vyznamenáním",
+        "Jarní období 2022: 100 % úspěšnost",
+        "Nadprůměrné výsledky v přírodovědné a čtenářské gramotnosti (2022/2023)"
+      ],
+      "evidence": "Výbornou úroveň kompetencí potvrzují výsledky maturitní zkoušky a externí výběrové zjišťování výsledků."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se absencí nezabývá."
+    },
+    "support_services": [
+      "Školní kaplan, výchovná poradkyně, školní metodička prevence, kariérová poradkyně, školní psycholog",
+      "Pět asistentů pedagoga pro individuální podporu žáků se speciálními vzdělávacími potřebami",
+      "Individuální vzdělávací plány pro 7 žáků (3 na základě doporučení poradenského zařízení, 4 z jiných důvodů)"
+    ],
+    "safety_climate": [
+      "Dlouhodobě uplatňovaná preventivní strategie vede k předcházení rizikových jevů v chování žáků",
+      "Účinný systém seznamování pedagogů s individuálními potřebami žáků",
+      "Žáci jsou průběžně upozorňováni na bezpečnostní rizika, míra úrazovosti vykazuje kolísavou tendenci"
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce s nadačním fondem, církevními školami a organizacemi",
+      "Program přeshraniční spolupráce se slovenskou základní školou v Žilině – výměna zkušeností z výuky",
+      "Adaptační kurzy pro žáky začínajících ročníků, zahraniční poznávací zájezdy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s příklady z pozorování. Chybí však konkrétní čísla o absenci a některé údaje jsou obecnější.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, jaká je situace s docházkou žáků",
+      "Míra úrazovosti 'vykazuje kolísavou tendenci' – není specifikováno, zda jde o zlepšení či zhoršení",
+      "Není jasné, jak konkrétně se hospitační zjištění promítají do praxe a jaké jsou výsledky doporučených opatření"
+    ]
+  }
+}
+```

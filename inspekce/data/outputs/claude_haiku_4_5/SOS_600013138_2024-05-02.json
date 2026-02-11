@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600013138_2024-05-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:17:25.992825+00:00",
+  "run_finished_utc": "2026-02-09T16:17:51.143459+00:00",
+  "raw_file": "SOS_600013138_2024-05-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600013138_2024-05-02",
+    "school_profile": {
+      "school_type": "Střední škola uměleckoprůmyslová s domem mládeže a školní jídelnou",
+      "inspection_period": "2. května až 6. června 2024",
+      "school_change_summary": "Nová ředitelka od srpna 2023 provádí pozitivní změny: jmenován zástupce pro umělecké obory, nová vedoucí školní jídelny, externí psycholog. Strojírenské obory se již nebudou naplňovat."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Individuální přístup v praktické výuce",
+          "detail": "V odborných předmětech pedagogové velmi vstřícně a empaticky pracují s jednotlivými žáky, podporují jejich kreativitu a poskytují průběžné konzultace.",
+          "evidence": "\"velmi vstřícný, individuální a empatický přístup pedagogů k žákům podporující příjemné a bezpečné klima\""
+        },
+        {
+          "tag": "Kvalitní poradenské služby",
+          "detail": "Školní poradenské pracoviště s dvěma výchovnými poradkyněmi, metodikem prevence a externí psycholožkou poskytuje podporu žákům se speciálními potřebami.",
+          "evidence": "\"rozšíření personálního obsazení školního poradenského pracoviště o externího psychologa, což umožní zvýšit kvalitu poskytovaných poradenských služeb\""
+        },
+        {
+          "tag": "Dobrá bezpečnost a disciplína",
+          "detail": "Hospitované hodiny vykazovaly klidnou pracovní atmosféru bez kázeňských přestupků, pochvaly jsou udíleny více než tresty.",
+          "evidence": "\"klidnou pracovní atmosféru bez kázeňských přestupků\", \"pochvaly jsou udíleny více než kázeňská opatření\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní teoretická výuka",
+          "detail": "Převažuje frontální výuka s výkladem učitele, žáci pasivně přijímají informace, chybí skupinová práce a diskuze.",
+          "evidence": "\"převážně frontální formu výuky s výkladem učitele\", \"žáci pouze pasivně přijímali informace\""
+        },
+        {
+          "tag": "Chybí individualizace výuky",
+          "detail": "Diferenciace úloh pro žáky se speciálními potřebami nebo nadané žáky se neobjevuje, všichni dostávají stejné úkoly bez možnosti výběru.",
+          "evidence": "\"Diferenciace úloh... nebyla zaznamenána. Zadávané úkoly měly všechny stejnou náročnost\""
+        },
+        {
+          "tag": "Slabá kontrola a hospitační činnost",
+          "detail": "Kontrolní systém není funkční, hospitační činnost je velmi omezená, chybí vzájemné hospitace pedagogů pro sdílení zkušeností.",
+          "evidence": "\"V některých oblastech není kontrolní činnost funkční\", \"Velmi omezená byla aktuálně ve škole i hospitační činnost\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola podporuje žáky, kteří mají potíže s učením nebo naopak jsou nadaní? Existují pro ně speciální programy?",
+        "Jaké jsou zkušenosti s domem mládeže? Jak se tam žáci cítí a jaké aktivity se tam nabízejí?",
+        "Jak se škola připravuje na maturitní zkoušky? Jaké jsou výsledky v jednotlivých předmětech?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o umělecké obory (design, fotografii, textil, grafiku) – praktická výuka je na vysoké úrovni s individuálním přístupem",
+        "Žáci, kteří potřebují podporu – škola má kvalitní poradenské služby a externí psychologa",
+        "Žáci z jiných měst – domov mládeže nabízí ubytování s aktivitami a podporou k učení"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se učí lépe aktivně a diskuzí – teoretická výuka je převážně pasivní s málo skupinové práce",
+        "Nadaní žáci nebo žáci se speciálními potřebami – výuka není dostatečně individualizovaná",
+        "Žáci, kteří potřebují jasné cíle a zpětnou vazbu – chybí práce s cíli a sebehodnocení"
+      ],
+      "plain_czech_summary": "Škola je zaměřená na umělecké obory a má kvalitní praktickou výuku s individuálním přístupem. Nová ředitelka přináší pozitivní změny. Silné stránky: bezpečné klima, dobrá poradenská péče, kvalitní vybavení dílen. Slabiny: teoretické hodiny jsou pasivní, chybí skupinová práce a diskuze, výuka není dostatečně přizpůsobena jednotlivým žákům. Škola pracuje na zlepšení kontroly a hospitací mezi učiteli."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní s mírným problémem v některých předmětech",
+        "key_numbers": [
+          "Neúspěšnost 10,3 % (hrubá), 7,9 % (čistá) v roce 2023",
+          "6 neúspěšných z 78 žáků",
+          "Lepší výsledky v profilové části, průměrné ve společné části"
+        ],
+        "evidence": "\"z celkového počtu 78 žáků neuspělo šest žáků, celková hrubá neúspěšnost činila 10,3 %, čistá neúspěšnost 7,9 %\""
+      },
+      "absence": {
+        "trend": "Nízká absence, bez zásadních problémů se záškoláctví",
+        "key_numbers": [
+          "Průměrná absence čtyři týdny docházky za pololetí",
+          "Snížené známky z chování uděleny ojediněle",
+          "Dva žáci podmíněně vyloučeni"
+        ],
+        "evidence": "\"Škola se nepotýká s výraznější absencí žáků ani se zásadními problémy záškoláctví, průměrná absence... tvořila v průměru čtyři týdny\""
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně, metodika prevence, externí psycholog (1x týdně)",
+        "Schůzky poradenského pracoviště přibližně jednou za měsíc nebo podle potřeby",
+        "Konzultační hodina pro ubytované žáky každý den, besedy a primárně preventivní akce"
+      ],
+      "safety_climate": [
+        "Klidná pracovní atmosféra bez kázeňských přestupků v hospitovaných hodinách",
+        "Pochvaly udíleny více než tresty – snaha motivovat více než trestat",
+        "Pozitivní přátelské klima v domově mládeže se čtyřmi klubovnami pro relaxaci"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s rodiči přes Spolek rodičů a přátel dětí školy",
+        "Fungující spolupráce se školskou radou a žákovským parlamentem",
+        "Smluvní partneři, veřejné akce (výstavy, módní přehlídky, dovednostní soutěže)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a citacemi. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou technické, ale celkově je text pro rodiče pochopitelný.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty žáků s jednotlivými diagnózami speciálních vzdělávacích potřeb",
+        "Chybí detailní informace o výsledcích v jednotlivých maturitních předmětech (kromě poznámky o angličtině)",
+        "Není jasné, jak se škola konkrétně připravuje na doporučená zlepšení v diferenciaci výuky"
+      ]
+    }
+  }
+}

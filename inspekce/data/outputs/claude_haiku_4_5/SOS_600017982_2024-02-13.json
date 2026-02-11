@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600017982_2024-02-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:26:28.525811+00:00",
+  "run_finished_utc": "2026-02-09T16:26:55.926659+00:00",
+  "raw_file": "SOS_600017982_2024-02-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017982_2024-02-13",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola elektrotechniky a informatiky (SPŠ) s domovem mládeže a školní jídelnou",
+      "inspection_period": "13.–16. února 2024",
+      "school_change_summary": "Škola se sloučila s Obchodní akademií Mohelnice a změnila název. Pokračuje v modernizaci materiálních podmínek a rozvoji partnerských vztahů s firmami. Realizuje obory Elektrotechnika a Informační technologie s různými zaměřeními od 3. ročníku."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola efektivně spolupracuje s partnerskými firmami, organizuje exkurze a přednášky odborníků, což žákům pomáhá pochopit praktické uplatnění získaných znalostí.",
+          "evidence": "Spolupráce se sociálními partnery efektivně přispívá k sepětí výuky a praxe a přípravě na pracovní uplatnění."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Škola má moderně vybavené učebny, laboratoře, dílny a audiovizuální techniku, která podporuje názornost výuky.",
+          "evidence": "Všechny prostory jsou účelně a esteticky zařízené, vybaveny pomůckami a audiovizuální technikou."
+        },
+        {
+          "tag": "Nízká absence žáků",
+          "detail": "Škola se nepotýká s vysokou absencí, což pozitivně ovlivňuje dosahované výsledky vzdělávání.",
+          "evidence": "Škola se nepotýká s vysokou absencí žáků ve vyučování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená variabilita výuky",
+          "detail": "Převažuje frontální výuka, skupinové a kooperativní činnosti jsou využívány jen minimálně, což omezuje rozvoj týmových dovedností.",
+          "evidence": "Frontální výuka doplněná řízeným rozhovorem převažuje, jiné formy podporující kooperativní techniky byly uplatňovány jen v omezené míře."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Učitelé málo přizpůsobují výuku rozdílným schopnostem a tempům práce jednotlivých žáků, zejména těch se speciálními potřebami.",
+          "evidence": "Výraznější časová či obsahová diferenciace nebyla ve výuce příliš patrná, učitelé jen v malé míře zadávali odlišné úkoly."
+        },
+        {
+          "tag": "Slabá podpora ohrožených žáků",
+          "detail": "Ačkoliv škola identifikuje žáky v riziku neúspěchu, konkrétní opatření nejsou důsledně realizována a vyhodnocována.",
+          "evidence": "Záznamy pedagogické rady obsahují převážně statistiku, chybí detailnější rozbor a systematické vyhodnocování individuální podpory."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením nebo se obávají neúspěchu u maturity?",
+        "Jaké jsou možnosti zapojení se do skupinových projektů a týmové práce během studia?",
+        "Jak se škola připravuje na změny v metodách výuky a zavádění novějších přístupů k vyučování?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o technické obory a praktické dovednosti, kteří ocení propojení teorie s reálnou praxí",
+        "Studenti, kteří si cení kvalitního vybavení a moderních učeben s audiovizuální technikou",
+        "Žáci z okolí, kteří mohou využít ubytování v domově mládeže a potřebují komplexní péči"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se lépe učí v interaktivním prostředí s skupinovou prací a potřebují více individuálního přístupu",
+        "Studenti se speciálními vzdělávacími potřebami, pokud potřebují systematickou a plánovanou podporu",
+        "Žáci, kteří se obávají školního neúspěchu a potřebují intenzivní metodickou pomoc a zpětnou vazbu"
+      ],
+      "plain_czech_summary": "SPŠ elektrotechniky a informatiky v Mohelnici je moderně vybavená škola s dobrými vazbami na praxi. Žáci se učí v kvalitních učebnách a mají možnost exkurzí u zaměstnavatelů. Absence je nízká a výsledky odpovídají očekáváním. Inspekce však upozorňuje, že výuka je často frontální a málo přizpůsobená individuálním potřebám žáků. Škola by měla více využívat skupinové práce, lépe podporovat ohrožené žáky a zavádět inovativnější metody vyučování."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý",
+        "key_numbers": [
+          "Výsledky ve společné části maturitní zkoušky měly v posledních třech letech kolísavou tendenci",
+          "Výsledky odpovídají studijnímu potenciálu a průběžným výsledkům žáků"
+        ],
+        "evidence": "Vedení školy pravidelně zpracovává rozbor výsledků a navrhuje systémová opatření (doučování, konzultace, změny v organizaci)."
+      },
+      "absence": {
+        "trend": "Nízká",
+        "key_numbers": [
+          "Škola se nepotýká s vysokou absencí žáků"
+        ],
+        "evidence": "Nízká absence pozitivně působí na dosahované výsledky vzdělávání."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště tvořené kvalifikovanými pracovníky poskytuje služby učitelům, žákům a rodičům",
+        "Kariérové poradenství zaměřené na poslední ročníky s informacemi o dalším studiu a zaměstnání",
+        "Prevence rizikového chování prostřednictvím besed, přednášek, sportovních kurzů a preventivních programů"
+      ],
+      "safety_climate": [
+        "Škola vytváří předpoklady pro bezpečnost a ochranu zdraví žáků, průběžně přijímá opatření k minimalizaci rizik",
+        "Žáci jsou pravidelně poučováni o ochraně zdraví a bezpečném chování",
+        "Domov mládeže poskytuje standardní ubytování s dostatečným zázemím pro volný čas"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s partnerskými firmami pro praktické vyučování a získávání informací o požadovaných kompetencích",
+        "Partnerství s jinými školami s obdobným zaměřením v České republice",
+        "Mezinárodní projekt Erasmus+ s pracovními stážemi v zahraničí rozvíjející jazykové a sociální kompetence",
+        "Spolupráce s profesními sdruženími pro udržení kontaktu s praxí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně vymezeny s odkazem na konkrétní oblasti. Některé pasáže jsou však delší a obsahují více technických termínů, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní procenta nebo počty žáků, kterých se slabé stránky týkají (např. kolik procent hodin mělo omezené skupinové činnosti)",
+        "Chybí konkrétní příklady z maturitních výsledků (např. jaké předměty měly kolísavé výsledky)",
+        "Není jasné, jak se situace změnila po sloučení s Obchodní akademií a jak to ovlivnilo kvalitu vzdělávání"
+      ]
+    }
+  }
+}

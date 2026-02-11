@@ -1,0 +1,115 @@
+{
+  "report_id": "SOU_600171311_2024-11-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:10:33.478503+00:00",
+  "run_finished_utc": "2026-02-09T16:10:58.955420+00:00",
+  "raw_file": "SOU_600171311_2024-11-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600171311_2024-11-04",
+    "school_profile": {
+      "school_type": "Střední škola technická a dopravní, Ostrava-Vítkovice, příspěvková organizace",
+      "inspection_period": "4. 11. 2024 − 8. 11. 2024",
+      "school_change_summary": "Od roku 2018 nárůst počtu žáků o 18 %, téměř trojnásobný nárůst žáků se speciálními vzdělávacími potřebami, kvalitativní posun v materiálních podmínkách a školních vzdělávacích programech."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a uplatnitelnost",
+          "detail": "Škola má velmi dobré vztahy se sociálními partnery, kteří aktivně spolupracují na inovaci učiva a rozvoji praktických dovedností žáků.",
+          "evidence": "Sociální partneři účinně kooperují se školou při inovaci obsahu učiva v souladu s požadavky trhu práce."
+        },
+        {
+          "tag": "Kvalita praktické výuky",
+          "detail": "Praktické vyučování dosahuje velmi dobré úrovně a vhodně navazuje na teoretické předměty s moderními technologiemi.",
+          "evidence": "Kvalita praktické výuky dosahovala velmi dobré úrovně, seznamovala žáky s moderními technologiemi a cíleně rozvíjela jejich pracovní postoje."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola nabízí doučování, dělení hodin a individuální konzultace ze všech předmětů pro žáky v obtížích.",
+          "evidence": "Škola přijímá opatření k jejich eliminaci spočívající v nabídce doučování, dělení hodin a v poskytování individuálních konzultací."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vyšší neúspěšnost žáků",
+          "detail": "Podíl neprospívajících žáků u maturit je 17 % a u výučních listů 20 %, přestože škola přijímá opatření.",
+          "evidence": "I přes přijatá opatření se nedaří škole trvale snížit vyšší neúspěšnost v průběhu a při ukončování vzdělávání žáků."
+        },
+        {
+          "tag": "Slabší výsledky v některých předmětech",
+          "detail": "Ve výběrovém zjišťování v moderních dějinách a čtenářské gramotnosti dosáhli žáci podprůměrných a slabých výsledků.",
+          "evidence": "Ve výběrovém zjišťování výsledků žáků středních škol (2022/2023), v moderních dějinách a čtenářské gramotnosti, dosáhli žáci školy podprůměrných a slabých výsledků."
+        },
+        {
+          "tag": "Nedostatečné zapojení žáků do hodnocení",
+          "detail": "Učitelé jen ojediněle vedou žáky k sebehodnocení a vzájemnému hodnocení podle vymezených kritérií.",
+          "evidence": "Učitelé jen ojediněle zapojovali žáky do hodnocení jejich práce vzhledem ke stanovenému vzdělávacímu cíli."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pomáhá žákům, kteří mají problémy s učením? Jaké jsou zkušenosti s doučováním?",
+        "Jaké jsou reálné šance na uplatnění absolventů na trhu práce a jak s tím sociální partneři pomáhají?",
+        "Jak se škola snaží zlepšit výsledky v předmětech jako jsou moderní dějiny a čtenářská gramotnost?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a technické obory s podporou zkušených pedagogů",
+        "Studenti, kteří se chtějí připravit na konkrétní profesi s pomocí sociálních partnerů a reálných pracovišť",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální podporu"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků, kteří mají problémy s učením – škola má vyšší podíl neprospívajících (17–20 %)",
+        "Studenti zaměření na všeobecné vzdělání – škola se zaměřuje primárně na technické obory",
+        "Žáci, kteří potřebují silnější podporu v češtině a dějepisu – zde jsou slabší výsledky"
+      ],
+      "plain_czech_summary": "Jde o kvalitní technickou školu s dobrými vztahy k firmám a pracovištím. Výuka je promyšlená, učitelé mají praxi. Praktické vyučování je na vysoké úrovni. Škola pomáhá slabším žákům doučováním. Problém je, že přibližně pětina žáků neuspěje u zkoušek, a to se nedaří snížit. Také jsou slabší výsledky v některých obecných předmětech. Škola je vhodná pro ty, kdo chtějí technickou profesi a umí se učit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní s vyšší neúspěšností",
+        "key_numbers": [
+          "115 žáků v oborech s maturitou",
+          "20 neprospívajících (17 %)",
+          "14 prospělo s vyznamenáním"
+        ],
+        "evidence": "Ze 115 žáků prospělo s vyznamenáním 14 a neprospělo 20 žáků (tzn. podíl neprospívajících žáků je 17 %)."
+      },
+      "absence": {
+        "trend": "Řešeno důsledně",
+        "key_numbers": [
+          "22 žáků se sníženou známkou z chování",
+          "Zejména za neomluvenou absenci",
+          "6 žáků s podmíněným vyloučením"
+        ],
+        "evidence": "Snížená známka z chování ve školním roce 2023/2024 byla udělena dvaceti dvěma žákům, a to zejména za neomluvenou absenci."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, školní metodik prevence, interní školní psycholožka",
+        "Koordinátor pro práci s nadanými žáky a žáky ohroženými školním neúspěchem",
+        "Doučování a individuální konzultace ze všech předmětů",
+        "Strategie předcházení školní neúspěšnosti"
+      ],
+      "safety_climate": [
+        "Nízká míra úrazovosti díky pravidelným poučením a analýze úrazovosti",
+        "Vedení školy věnuje stálou pozornost úrazové prevenci",
+        "Žáci jsou vybaveni předepsanými pracovními oděvy a ochrannými pomůckami"
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování probíhá v odborných dílnách školy, na pracovišti Dopravního podniku Ostrava a na smluvních pracovištích",
+        "Sociální partneři aktivně spolupracují na inovaci obsahu učiva",
+        "Škola organizuje Dny otevřených dveří pro základní školy",
+        "Stipendijní programy od sociálních partnerů včetně nabídky pracovního místa"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Jsou jasně identifikovány silné stránky (partnerství, kvalita praktické výuky, podpora žáků) a slabé stránky (neúspěšnost, slabší výsledky v některých předmětech, nedostatečné zapojení žáků do hodnocení). Číselné údaje jsou konkrétní. Mírně snižuje srozumitelnost vysoká míra odborného jazyka a dlouhé věty.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o počtu žáků v jednotlivých oborech, což by pomohlo lépe pochopit strukturu školy",
+        "Chybí konkrétní údaje o tom, kolik žáků využívá doučování a jaké jsou jeho výsledky",
+        "Není jasné, jak se liší výsledky mezi jednotlivými obory vzdělání"
+      ]
+    }
+  }
+}

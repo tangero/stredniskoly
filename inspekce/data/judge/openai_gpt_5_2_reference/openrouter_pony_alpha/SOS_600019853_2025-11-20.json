@@ -1,0 +1,32 @@
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-09T12:12:52.202015+00:00",
+  "run_finished_utc": "2026-02-09T12:13:24.453883+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOS_600019853_2025-11-20\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 3,\n  \"critical_issues\": [\n    \"Tvrzení o „křesťanském prostředí“ a „důrazu na křesťanské hodnoty“ není ve zdrojové zprávě výslovně doloženo (zpráva uvádí zřizovatele a etický přístup v praxi, ne popis školního prostředí/hodnotové výchovy).\",\n    \"Tvrzení, že škola „přísněji hodnotí docházku“, není ve zprávě explicitně; uveden je limit zameškaných hodin a možnost nehodnocení, ale ne hodnocení ve smyslu „přísnosti“.\",\n    \"Pro rodičovský use-case chybí v kandidátu výraznější akcent na zjištěné nedostatky v kontrolní činnosti a právním souladu (dílčí nedostatky v ŠVP, v poskytování podpůrných opatření a v organizaci praktického vyučování) – ve zdroji je to podstatné riziko.\",\n    \"Kandidát málo zviditelňuje další důležité zjištění ze zdroje: nejednotnost ošetřovatelských postupů mezi skupinami (riziko pro návaznou praxi) a naopak velmi dobré formativní hodnocení v praxi u smluvních partnerů.\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené klíčové slabiny výuky: převaha frontální výuky v téměř 80 % teoretických hodin a nedostatek prostoru pro diskusi/kritické myšlení.\",\n    \"Přesně převzatá a pro rodiče užitečná čísla k výsledkům: maturitní neúspěšnost Praktická sestra 3,8 % (2025), Sociální činnost 30 % (2025) a celková úspěšnost ukončení Sociální činnost 43 %; závěrečná zkouška Ošetřovatel 100 %.\",\n    \"Dobře pokryté téma absence (pokles na 144 hodin/žák, téměř 5 % neomluvené absence u Ošetřovatele) včetně vysvětlení opatření s limitem zameškaných hodin.\",\n    \"V souladu se zdrojem popsané posílení školního poradenského pracoviště, rezervy v IVP a v práci s nadanými, a velmi dobré kariérové poradenství propojené se zaměstnavateli.\",\n    \"Správně uvedená silná stránka spolupráce s partnery pro praxe a uvedení výměnných pobytů s partnerskou školou v Německu.\"\n  ],\n  \"one_line_verdict\": \"Kandidát je převážně věrný a pro rodiče prakticky použitelný, ale přidává několik nedoložených formulací (křesťanské prostředí/přísnost docházky) a opomíjí některá důležitá rizika z oblasti kontroly a organizace praxe.\"\n}",
+  "judge_output": {
+    "report_id": "SOS_600019853_2025-11-20",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 3,
+    "critical_issues": [
+      "Tvrzení o „křesťanském prostředí“ a „důrazu na křesťanské hodnoty“ není ve zdrojové zprávě výslovně doloženo (zpráva uvádí zřizovatele a etický přístup v praxi, ne popis školního prostředí/hodnotové výchovy).",
+      "Tvrzení, že škola „přísněji hodnotí docházku“, není ve zprávě explicitně; uveden je limit zameškaných hodin a možnost nehodnocení, ale ne hodnocení ve smyslu „přísnosti“.",
+      "Pro rodičovský use-case chybí v kandidátu výraznější akcent na zjištěné nedostatky v kontrolní činnosti a právním souladu (dílčí nedostatky v ŠVP, v poskytování podpůrných opatření a v organizaci praktického vyučování) – ve zdroji je to podstatné riziko.",
+      "Kandidát málo zviditelňuje další důležité zjištění ze zdroje: nejednotnost ošetřovatelských postupů mezi skupinami (riziko pro návaznou praxi) a naopak velmi dobré formativní hodnocení v praxi u smluvních partnerů."
+    ],
+    "best_points": [
+      "Správně zachycené klíčové slabiny výuky: převaha frontální výuky v téměř 80 % teoretických hodin a nedostatek prostoru pro diskusi/kritické myšlení.",
+      "Přesně převzatá a pro rodiče užitečná čísla k výsledkům: maturitní neúspěšnost Praktická sestra 3,8 % (2025), Sociální činnost 30 % (2025) a celková úspěšnost ukončení Sociální činnost 43 %; závěrečná zkouška Ošetřovatel 100 %.",
+      "Dobře pokryté téma absence (pokles na 144 hodin/žák, téměř 5 % neomluvené absence u Ošetřovatele) včetně vysvětlení opatření s limitem zameškaných hodin.",
+      "V souladu se zdrojem popsané posílení školního poradenského pracoviště, rezervy v IVP a v práci s nadanými, a velmi dobré kariérové poradenství propojené se zaměstnavateli.",
+      "Správně uvedená silná stránka spolupráce s partnery pro praxe a uvedení výměnných pobytů s partnerskou školou v Německu."
+    ],
+    "one_line_verdict": "Kandidát je převážně věrný a pro rodiče prakticky použitelný, ale přidává několik nedoložených formulací (křesťanské prostředí/přísnost docházky) a opomíjí některá důležitá rizika z oblasti kontroly a organizace praxe."
+  }
+}

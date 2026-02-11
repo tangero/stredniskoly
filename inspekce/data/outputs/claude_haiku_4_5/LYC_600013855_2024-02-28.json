@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600013855_2024-02-28",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:24:12.381938+00:00",
+  "run_finished_utc": "2026-02-09T16:24:35.834102+00:00",
+  "raw_file": "LYC_600013855_2024-02-28.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600013855_2024-02-28",
+    "school_profile": {
+      "school_type": "Střední škola strojírenská a elektrotechnická, příspěvková organizace",
+      "inspection_period": "28. února až 1. března 2024",
+      "school_change_summary": "Škola se zaměřila na modernizaci materiálního vybavení a rozšíření služeb. Zřídila pozici školního psychologa, obnovila vybavení nástrojárny a spustila kroužek 3D tisku a robotiky. Zároveň se zvýšil počet žáků ohrožených školní neúspěšností."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola má kvalitní partnerství se zaměstnavateli, což zlepšuje praktické dovednosti a uplatnitelnost absolventů.",
+          "evidence": "Praktické vyučování probíhá na pracovištích smluvních partnerů, žáci se seznamují se současnými obory trendy."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola investuje do nového strojního vybavení, digitálních technologií a bezpečnostních systémů.",
+          "evidence": "Rekonstrukce odborné učební haly, kamerový systém, nové stroje v nástrojárně, obměna výpočetní techniky."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola má komplexní tým poradenských služeb včetně psychologa, speciální pedagožky a asistentů.",
+          "evidence": "Dva výchovní poradci, speciální pedagožka, školní psycholožka, metodičky prevence, asistenti pedagoga."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence a neúspěšnost",
+          "detail": "Absence žáků se zvýšila po distanční výuce a přibližně 30 % žáků neprospívá.",
+          "evidence": "V prvním pololetí 2023/2024 byl podíl neprospívajících žáků přibližně 30 %, nárůst více než jedenapůlkrát od roku 2020/2021."
+        },
+        {
+          "tag": "Slabé výsledky u zkoušek",
+          "detail": "Vysoká neúspěšnost u maturitní a závěrečné zkoušky, zejména v oboru Provozní technika.",
+          "evidence": "Obor Provozní technika: průměrná hrubá neúspěšnost 52 % (2021–2023), všechny nematuritní obory: 46 % v roce 2023."
+        },
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Teoretická výuka je převážně frontální s málo prostoru pro aktivitu žáků a rozvoj klíčových kompetencí.",
+          "evidence": "Dominuje frontální forma výuky s předáváním hotových informací, žáci jsou pasivní, diferenciace učiva je ojediněla."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci a neúspěšnost žáků? Jaká jsou opatření pro žáky v ohrožení?",
+        "Jak se teoretická výuka liší od frontální výuky? Jaké metody škola používá k aktivizaci žáků?",
+        "Jaké jsou výsledky absolventů na trhu práce a jak se liší mezi jednotlivými obory?"
+      ],
+      "who_school_fits": [
+        "Žáci s praktickým zaměřením, kteří chtějí kvalitní odborné vzdělání s vazbou na reálnou praxi",
+        "Studenti, kteří si cení moderního vybavení a nových technologií v učebnách a dílnách",
+        "Žáci, kteří potřebují podporu speciálních pedagogů, psychologa nebo asistentů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absencím – škola má vysoké absence a to negativně ovlivňuje prospěch",
+        "Studenti, kteří potřebují aktivní a interaktivní výuku – teoretické předměty jsou převážně frontální",
+        "Uchazeči o obor Provozní technika – tento obor má dlouhodobě velmi vysokou neúspěšnost u zkoušek"
+      ],
+      "plain_czech_summary": "Škola je moderně vybavená a má dobré vazby na praxi, což je výhodou pro praktické dovednosti. Má také podporu pro žáky se speciálními potřebami. Problém je vysoká absence a neúspěšnost – přibližně třetina žáků neprospívá. Teoretická výuka je spíše pasivní, učitelé převážně přednášejí. Výsledky u maturitní a závěrečné zkoušky jsou slabé, zvlášť v oboru Provozní technika. Škola si je těchto problémů vědoma a pracuje na jejich řešení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se",
+        "key_numbers": [
+          "Obor Mechanik elektrotechnik: průměrná hrubá neúspěšnost ~20 % (2021–2023)",
+          "Obor Provozní technika: průměrná hrubá neúspěšnost 52 % (2021–2023)",
+          "Zhoršení v některých oborech za poslední tři uzavřené školní roky"
+        ],
+        "evidence": "Výsledky maturitních zkoušek vykazují v některých oborech zhoršující se tendenci, nejvyšší neúspěšnost v nástavbovém oboru Provozní technika."
+      },
+      "absence": {
+        "trend": "Klesající, ale stále vysoká",
+        "key_numbers": [
+          "2021/2022: 154 hodin na žáka za školní rok",
+          "2022/2023: snížení o přibližně 11 %",
+          "Průměrně 8 % žáků nehodnoceno v klasifikačním období"
+        ],
+        "evidence": "Absence výrazně vzrostla po ukončení distanční výuky, díky cíleným opatřením došlo k jejímu snížení, klesající trend pokračuje v prvním pololetí 2023/2024."
+      },
+      "support_services": [
+        "Dva výchovní poradci, speciální pedagožka, školní psycholožka",
+        "Dvě metodičky prevence, čtyři asistenti pedagoga, jeden asistent pro ukrajinské žáky",
+        "Speciální pedagožka poskytuje pedagogickou podporu mimo výuku, psycholožka pracuje se složitějšími případy"
+      ],
+      "safety_climate": [
+        "Žáci dodržují stanovená pravidla, vyučující jsou vstřícní a poskytují zpětnou vazbu",
+        "Školní psycholožka efektivně pracuje se školním parlamentem, žáci prokazují odpovídající sociální kompetence",
+        "Metodičky prevence monitorují klima tříd na adaptačních kurzech a v třídnických hodinách"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zaměstnavateli – praktické vyučování probíhá na pracovištích smluvních partnerů",
+        "Projekt Erasmus+ se školami v Rakousku a Slovinsku",
+        "Spolupráce s Masarykovou univerzitou v Brně na projektu odborného vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, citace a doklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však dlouhé a úřednické, což snižuje srozumitelnost pro laiky.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala na řešení vysoké absence a neúspěšnosti.",
+        "Není jasné, zda se kvalita teoretické výuky liší mezi jednotlivými učiteli nebo je to systémový problém.",
+        "Chybí informace o tom, jak se výsledky liší mezi žáky se speciálními potřebami a ostatními."
+      ]
+    }
+  }
+}

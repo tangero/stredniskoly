@@ -1,0 +1,115 @@
+{
+  "report_id": "GY4_691002207_2022-05-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:03:20.645933+00:00",
+  "run_finished_utc": "2026-02-09T17:03:43.384634+00:00",
+  "raw_file": "GY4_691002207_2022-05-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691002207_2022-05-18",
+    "school_profile": {
+      "school_type": "Základní škola a gymnázium (ZŠ + SŠ) se školní družinou a klubem",
+      "inspection_period": "18.–20. května 2022",
+      "school_change_summary": "Škola se v roce 2021 přestěhovala do nové budovy ve Světicích. Rozšířila nabídku o čtyřletý gymnázijní obor. Základní škola dosáhla 97% naplněnosti (175 žáků), střední škola má 14 žáků prvního ročníku."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky a motivace",
+          "detail": "90 % žáků základní školy a dvě třetiny žáků střední školy prospívají s vyznamenáním.",
+          "evidence": "\"90 % žáků ZŠ a dvě třetiny žáků SŠ prospívají s vyznamenáním\""
+        },
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Nízká absence a příznivé chování žáků díky efektivní prevenci a jednotnému přístupu vedení.",
+          "evidence": "\"se projevuje v celkově nízké absenci a příznivých výsledcích chování žáků\""
+        },
+        {
+          "tag": "Péče o speciální potřeby",
+          "detail": "Efektivní podpora 35 žáků se speciálními vzdělávacími potřebami s výsledky srovnatelnými s průměrem třídy.",
+          "evidence": "\"podpora těchto žáků je efektivní. Jejich výsledky jsou srovnatelné s průměrným prospěchem třídy\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá podpora nadaných žáků",
+          "detail": "Diferenciace výuky pro nadané žáky je minimální, chybí systematická identifikace jejich potřeb.",
+          "evidence": "\"diferenciace výuky ve vztahu k žákům nadaným byla účelně uplatněna pouze minimálně\""
+        },
+        {
+          "tag": "Nedostatečný rozvoj kritického myšlení",
+          "detail": "Práce s textem a různými informačními zdroji se objevuje jen ve třetině výuky.",
+          "evidence": "\"Příležitostí ke zlepšení je podpora rozvoje kritického myšlení a práce žáků s různými informačními zdroji, která byla zaznamenána pouze ve třetině výuky\""
+        },
+        {
+          "tag": "Omezené prostory pro mimoškolní aktivity",
+          "detail": "Školní družina a klub nemají vlastní herny, využívané třídy nejsou optimální pro relaxaci a pohyb.",
+          "evidence": "\"ŠD a ŠK nemají pro svou činnost vlastní herny, využívané třídy neposkytují optimální podmínky\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jak se jejich potřeby liší od standardního programu?",
+        "Jaké jsou plány na zlepšení prostor pro školní družinu a klub, zejména vlastních heren?",
+        "Jak se škola připravuje na maturitní zkoušky a jaké jsou výsledky absolventů na vysokých školách?"
+      ],
+      "who_school_fits": [
+        "Rodiny hledající bezpečné prostředí s jasným systémem hodnot a křesťanským zaměřením",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje efektivní individuální podporu",
+        "Rodiče oceňující úzkou komunikaci, tutoring a zapojení do školního života"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče nadaných dětí, které by potřebovaly více individualizované a náročnější úkoly",
+        "Žáci preferující výuku založenou na vlastním experimentování a badatelských metodách",
+        "Rodiny hledající velké prostory pro mimoškolní aktivity a sportovní vyžití"
+      ],
+      "plain_czech_summary": "Škola Navis je dobře fungující zařízení s jednotným vedením, které efektivně propojuje základní, střední vzdělání a mimoškolní aktivity. Žáci dosahují výborných výsledků, chování je příznivé a atmosféra podporující. Silnou stránkou je péče o děti se speciálními potřebami a rozvoj osobnostních kompetencí. Slabší je podpora nadaných žáků a rozvoj kritického myšlení. Prostory pro mimoškolní aktivity nejsou ideální. Škola se úspěšně přestěhovala a rozšířila nabídku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nový obor, první ročník v provozu",
+        "key_numbers": [
+          "14 žáků v prvním ročníku čtyřletého gymnázia",
+          "Více než polovina absolventů ZŠ studuje na gymnáziích a lyceích"
+        ],
+        "evidence": "\"V SŠ škola v denní formě čtyřletého oboru vzdělání Gymnázium aktuálně vykazuje 14 žáků prvního ročníku\""
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "Celkově nízká absence"
+        ],
+        "evidence": "\"se projevuje v celkově nízké absenci a příznivých výsledcích chování žáků\""
+      },
+      "support_services": [
+        "Speciální pedagožka a metodička prevence",
+        "Ředitel jako výchovný poradce",
+        "Vedoucí tutorka se zaměřením na osobnostní růst",
+        "9 asistentů pedagoga",
+        "Mentoring v SŠ zaměřený na profesní směřování"
+      ],
+      "safety_climate": [
+        "Preventivní poučování žáků o bezpečnosti a ochraně zdraví",
+        "Nízké chování rizikové – nevhodné chování se vyskytuje ojediněle",
+        "Lehčí úrazy především při pohybových činnostech",
+        "Jednotný přístup vedení a pedagogů podporující bezpečné prostředí"
+      ],
+      "partnerships_practice": [
+        "Funkční spolupráce se zřizovatelem (Spolek Navis)",
+        "Partnerství s charitativními organizacemi",
+        "Spolupráce s regionálními institucemi a školami podobného zaměření",
+        "Zapojení odborníků z praxe",
+        "Pravidelná komunikace se zákonnými zástupci"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasným oddělením silných a slabých stránek. Doporučení jsou praktická. Některé pasáže jsou však poměrně dlouhé a obsahují úřednickou terminologii.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o absenci – pouze kvalitativní popis 'nízké absence'",
+        "Výsledky maturit nejsou dostupné, protože první ročník SŠ ještě nematuroval",
+        "Počet učitelů bez kvalifikace je uveden jako 'přibližně čtvrtina', přesné číslo není uvedeno"
+      ]
+    }
+  }
+}

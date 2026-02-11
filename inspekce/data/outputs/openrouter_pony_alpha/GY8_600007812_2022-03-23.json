@@ -1,0 +1,10 @@
+{
+  "report_id": "GY8_600007812_2022-03-23",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:03:26.310356+00:00",
+  "run_finished_utc": "2026-02-10T07:03:40.411425+00:00",
+  "raw_file": "GY8_600007812_2022-03-23.raw.txt",
+  "call_error": null,
+  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
+  "parsed_output": null
+}

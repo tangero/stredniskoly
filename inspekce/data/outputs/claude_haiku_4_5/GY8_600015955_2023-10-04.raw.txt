@@ -1,0 +1,101 @@
+```json
+{
+  "report_id": "GY8_600015955_2023-10-04",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté obory)",
+    "inspection_period": "4.–6. a 9. 10. 2023",
+    "school_change_summary": "Počet žáků zůstává stabilní (465 žáků). Škola si dlouhodobě udržuje vysokou úroveň vzdělávání s důrazem na jazykové vzdělání, mezinárodní spolupráci a rozvoj talentů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky a příprava na vysoké školy",
+        "detail": "Žáci dosahují standardně výsledků nad republikovým průměrem a téměř všichni úspěšně pokračují na vysokých školách.",
+        "evidence": "62 % žáků v roce 2023 nahradilo maturitu z angličtiny zkouškou Cambridge ESOL."
+      },
+      {
+        "tag": "Bohatá nabídka aktivit a projektů",
+        "detail": "Škola nabízí mezinárodní výměny, program Erasmus+, DofE, P-TECH s technologickými firmami a další motivující aktivity.",
+        "evidence": "Partnerství se školami v osmi zemích, akreditace pro Erasmus+, program P-TECH se místními technologickými firmami."
+      },
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Výuka pěti cizích jazyků s rodilými mluvčími, certifikované zkoušky a tradice v jazykovém vzdělávání.",
+        "evidence": "Výuka angličtiny, francouzštiny, němčiny, ruštiny, španělštiny; v kroužcích latina a čínština."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo sebehodnocení a vzájemného hodnocení žáků",
+        "detail": "Učitelé nevytvářejí dostatek příležitostí pro to, aby si žáci sami vyhodnocovali svou práci a hodnotili se navzájem.",
+        "evidence": "Inspektoři zaznamenali, že vzájemné hodnocení či sebehodnocení bylo využíváno ojediněle."
+      },
+      {
+        "tag": "Nedostatečné shrnutí lekcí",
+        "detail": "Závěry hodin nejsou vždy využívány k shrnutí učiva a vyhodnocení dosažení cílů.",
+        "evidence": "Pouze občas byly závěry hodin využity pro shrnutí učiva a vyhodnocení stanoveného vzdělávacího cíle."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se žáci podílejí na sebehodnocení a vzájemném hodnocení během hodin?",
+      "Jaké jsou konkrétní výsledky žáků v přijímacích řízeních na vysoké školy?",
+      "Jak funguje program P-TECH a jaké jsou zkušenosti žáků s místními technologickými firmami?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci",
+      "Talentovaní žáci, kterým vyhovuje individuální péče a rozvoj nadání",
+      "Žáci, kteří chtějí studovat na vysoké škole a potřebují kvalitní přípravu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více zpětné vazby a reflexe své práce během hodin",
+      "Žáci, kteří preferují více strukturovaného shrnutí a vyhodnocení lekcí"
+    ],
+    "plain_czech_summary": "Gymnázium Žďár nad Sázavou je kvalitní střední škola se stabilním počtem žáků a silným zaměřením na jazykové vzdělání a mezinárodní spolupráci. Žáci dosahují výborných výsledků a úspěšně pokračují na vysokých školách. Škola nabízí bohatou nabídku projektů včetně Erasmus+ a P-TECH programu. Hlavní oblastí ke zlepšení je více příležitostí pro sebehodnocení a vzájemné hodnocení žáků během vyuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně nad průměrem",
+      "key_numbers": [
+        "62 % žáků v roce 2023 nahradilo maturitu z angličtiny zkouškou Cambridge ESOL",
+        "Výsledky standardně nad republikovým průměrem",
+        "Téměř všichni žáci úspěšně pokračují na vysokých školách"
+      ],
+      "evidence": "Škola si dlouhodobě udržuje vysokou úroveň kvalitní podpory výuky prostřednictvím velkého množství promyšleně vybíraných aktivit a projektů."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva se absencí nezabývá."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s psychologickým poradenstvím",
+      "Kariérní vzdělávání a poradenství propojené s koncepcí školy",
+      "Centrum metodické pomoci",
+      "Prevence rizikového chování prostřednictvím adaptačních kurzů a projektů"
+    ],
+    "safety_climate": [
+      "Důsledné vedení žáků k dodržování dohodnutých pravidel vzájemných vztahů",
+      "Pravidelné třídnické hodiny a podpůrné aktivity",
+      "Sociometrická šetření a pestrá nabídka volnočasových aktivit",
+      "Témata prevence rizikového chování jsou součástí vzdělávacího procesu"
+    ],
+    "partnerships_practice": [
+      "Partnerství se školami v osmi zemích",
+      "Akreditace pro program Erasmus+",
+      "Spolupráce s vysokými školami",
+      "Program P-TECH se místními technologickými firmami",
+      "Partnerství s MENSOU ČR",
+      "Spolupráce s absolventy a odborníky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní příklady a evidence. Silné a slabé stránky jsou jasně vymezeny. Informace jsou srozumitelné a prakticky využitelné pro rodiče.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, nelze posoudit trend absence žáků.",
+      "Konkrétní počty žáků s podpůrnými opatřeními (14 žáků) nejsou dále analyzovány.",
+      "Detailní výsledky jednotlivých předmětů nejsou uvedeny."
+    ]
+  }
+}
+```

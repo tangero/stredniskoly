@@ -1,0 +1,115 @@
+{
+  "report_id": "SOU_600005798_2022-10-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:59:33.279658+00:00",
+  "run_finished_utc": "2026-02-09T16:59:57.241050+00:00",
+  "raw_file": "SOU_600005798_2022-10-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600005798_2022-10-06",
+    "school_profile": {
+      "school_type": "Střední škola kosmetiky a hotelnictví BEAN – soukromá škola s obory Kosmetické služby, Gastronomie a Kuchař-číšník",
+      "inspection_period": "6. 10. – 7. 10. a 10. 10. – 12. 10. 2022",
+      "school_change_summary": "Od poslední inspekce v 2017 se počet žáků snížil (nyní 54 z 300 povolených). Škola se přestěhovala na nové místo. Materiální podmínky se výrazně zhoršily. Přetrvávají nedostatky v kontrolní činnosti a vysoká absence žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Zlepšující se výsledky maturit",
+          "detail": "Hrubá neúspěšnost ve společné části maturitní zkoušky poklesla z 50 % na 33 % v oboru Kosmetické služby.",
+          "evidence": "Kalendářní roky 2020–2022, obor Kosmetické služby"
+        },
+        {
+          "tag": "Podpora žáků s odlišným mateřským jazykem",
+          "detail": "Škola nabízí doučování českého jazyka a má nastavenu strategii pedagogické podpory.",
+          "evidence": "Tři čtvrtiny žáků s OMJ má sestaven plán pedagogické podpory"
+        },
+        {
+          "tag": "Praktická výuka v kosmetických službách",
+          "detail": "V oboru Kosmetické služby je praktická výuka založena na individuálním přístupu instruktorky.",
+          "evidence": "Dílčí samostatné úkony s dopomocí a individuálním přístupem"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence a předčasné odchody",
+          "detail": "Vysoká absence žáků se negativně promítá do výsledků a vedení k předčasným odchodům ze studia.",
+          "evidence": "Chybí systém prevence pro předčasné odchody, nejvyšší absence v oboru s výučním listem"
+        },
+        {
+          "tag": "Bezpečnost při praktickém vyučování",
+          "detail": "Žáci na gastronomických pracovištích nejsou poučováni o bezpečnosti a někdy pracují bez dohledu instruktora.",
+          "evidence": "Na dvou pracovištích část žáků vykonává činnost bez dohledu, překročeny počty žáků na instruktora"
+        },
+        {
+          "tag": "Slabá kvalita teoretické výuky",
+          "detail": "Dominuje frontální výuka s verbální převahou učitele, chybí diferenciace a aktivní zapojení žáků.",
+          "evidence": "Nerovnoměrné zapojení žáků, ojedinělá samostatná práce, minimální využití informačních zdrojů"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a co dělá pro prevenci předčasných odchodů?",
+        "Jaké bezpečnostní opatření jsou zavedena na pracovištích, kde žáci vykonávají praktický výcvik?",
+        "Jak se škola připravuje na zlepšení výsledků v matematice, kde maturují pouze jednotlivci?"
+      ],
+      "who_school_fits": [
+        "Žáci s vůlí pracovat v kosmetických službách, kde je individuální přístup a praktická orientace",
+        "Žáci s odlišným mateřským jazykem, kterým škola nabízí podporu a doučování",
+        "Motivovaní žáci, kteří zvládnou nižší úroveň teoretické výuky a zaměří se na praxi"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v matematice – škola má problém s přípravou na maturitu z matematiky",
+        "Žáci vyžadující strukturovanou a interaktivní výuku – dominuje frontální přístup bez diferenciace",
+        "Žáci v oborech Gastronomie a Kuchař-číšník – nejsou zajištěny bezpečnostní podmínky na pracovištích"
+      ],
+      "plain_czech_summary": "Škola kosmetiky a hotelnictví BEAN je malá soukromá střední škola s 54 žáky. Výsledky v maturitě se zlepšují, ale stále jsou vysoké. Hlavní problémy: vysoká absence žáků, slabá kvalita teoretické výuky (frontální, bez aktivizace), bezpečnostní rizika při praktickém vyučování a nedostatečné materiální vybavení. Škola dobře podporuje žáky s odlišným mateřským jazykem. Vhodná pro motivované žáky zaměřené na praxi, ne pro ty, kteří potřebují kvalitní teoretickou přípravu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní trend – hrubá neúspěšnost klesá, ale zůstává vysoká",
+        "key_numbers": [
+          "Hrubá neúspěšnost v Kosmetických službách: 50 % (2020) → 33 % (2022)",
+          "Obor Podnikání (2022): 38 % neúspěšnosti",
+          "Matematika: maturují pouze jednotlivci"
+        ],
+        "evidence": "Analýza výsledků MZ za kalendářní roky 2020–2022, vysoký podíl neúspěšných v českém a anglickém jazyce"
+      },
+      "absence": {
+        "trend": "Negativní – vysoká absence se negativně promítá do výsledků",
+        "key_numbers": [
+          "Nejvyšší absence v oboru s výučním listem",
+          "Vysoký podíl nehodnocených žáků za pololetí",
+          "Absence úzce souvisí s předčasnými odchody ze studia"
+        ],
+        "evidence": "Chybí systém prevence pro předčasné odchody, absence vede k nehodnocení a ztrátě motivace"
+      },
+      "support_services": [
+        "Doučování českého jazyka pro žáky s odlišným mateřským jazykem",
+        "Pedagogická podpora – plán sestaven pro tři čtvrtiny žáků s OMJ (ale formálně bez zohlednění individuálních potřeb)",
+        "Školní poradenské pracoviště – bez efektivní kontroly plnění opatření"
+      ],
+      "safety_climate": [
+        "Elektronický čipový systém na vstupu do budovy",
+        "KRITICKÉ RIZIKO: Žáci na gastronomických pracovištích nejsou poučováni o bezpečnosti",
+        "KRITICKÉ RIZIKO: Na dvou pracovištích část žáků pracuje bez dohledu instruktora",
+        "KRITICKÉ RIZIKO: V některých případech překročeny počty žáků na jednoho instruktora"
+      ],
+      "partnerships_practice": [
+        "Praktický výcvik zajišťován pouze na smluvních pracovištích (ne ve vlastních učebnách)",
+        "Chybí obsahová provázanost teoretické výuky s praxí",
+        "Nejednotná pravidla hodnocení na pracovištích – výsledky nejsou porovnatelné",
+        "Nedostatečná kontrola naplňování učebních osnov odborného výcviku"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Konkrétní problémy jsou dobře zdokumentovány s příklady. Některé pasáže jsou technicky náročné (např. popis organizace výuky), ale celkově je srozumitelná.",
+      "uncertainty_notes": [
+        "Není jasné, zda se bezpečnostní problémy týkají všech nebo jen některých smluvních pracovišť – zpráva zmiňuje 'dvě smluvní pracoviště'",
+        "Počet nehodnocených žáků není konkrétně uveden – pouze se zmiňuje 'vysoký podíl'",
+        "Není specifikováno, kolik z 24 pedagogů nesplňuje kvalifikaci – pouze se uvádí 'tři' a u maturitních předmětů 'dva'"
+      ]
+    }
+  }
+}

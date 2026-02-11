@@ -1,0 +1,111 @@
+{
+  "report_id": "SOU_600017419_2022-03-22",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:04:15.037441+00:00",
+  "run_finished_utc": "2026-02-10T07:05:22.061468+00:00",
+  "raw_file": "SOU_600017419_2022-03-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600017419_2022-03-22",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště stavební",
+      "inspection_period": "22. 3. 2022 − 25. 3. 2022",
+      "school_change_summary": "Škola si udržela oborovou skladbu a modernizuje materiální podmínky, ale dlouhodobě se nedaří řešit vysokou absenci a odchody žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe a uplatnění",
+          "detail": "Škola má kvalitní vztahy s firmami a zaměstnavateli, což žákům zajišťuje dobrou praxi a uplatnění.",
+          "evidence": "Partnerské vztahy se zaměstnavateli se promítají do kvality odborného vzdělávání a vytvářejí podmínky pro lepší uplatnitelnost absolventů."
+        },
+        {
+          "tag": "Zázemí školy",
+          "detail": "Výrazně se zlepšily materiální podmínky, zejména díky novým dílnám a venkovní učebně.",
+          "evidence": "Výrazného zlepšení materiálních podmínek... bylo dosaženo realizací dvou finančně náročných projektů, přestavbou zednických dílen a výstavbou nové venkovní učebny."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Ve škole panuje přátelská atmosféra a minimálně se vyskytují rizikové projevy chování.",
+          "evidence": "Společným znakem výuky byla příznivá pracovní atmosféra... Minimální výskyt rizikových projevů chování žáků svědčí o efektivní prevenci."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Neúspěšnost a odchody",
+          "detail": "Velká část žáků (14–20 %) neprospívá a škola neefektivně řeší odchody studentů.",
+          "evidence": "Neúčinnost přijímaných opatření se projevila v množství žáků, kteří na konci školního roku neprospívají... 14 až 20 % žáků."
+        },
+        {
+          "tag": "Zastaralé vyučování",
+          "detail": "V teoretické výuce převažuje pasivní frontální styl bez zapojení žáků.",
+          "evidence": "Ve většině sledované výuky se vyskytovala méně účelná frontální výuka... jednalo se spíše o pasivní učení."
+        },
+        {
+          "tag": "Absence",
+          "detail": "Škola má dlouhodobý problém s vysokou neomluvenou absencí, který se nedaří řešit.",
+          "evidence": "Přes přijatá opatření... se škole dlouhodobě nedaří tento negativní jev (neomluvenou absenci) výrazněji eliminovat."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s prospěchem, aby neodešli?",
+        "Jakým způsobem jsou propojena teoretická vyučování s praktickým výcvikem?",
+        "Nabízí domov mládeže programy pro přípravu na vyučování mimo běžnou výuku?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří se chtějí naučit řemeslo a najít uplatnění ve stavebnictví nebo dřevovýrobě.",
+        "Žáci, kteří preferují praktickou výuku a odborný výcvik před teoretickým studiem.",
+        "Studenti, kteří oceňují vstřícné vztahy s učiteli a přátelské prostředí."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnou individuální podporu při studiu teoretických předmětů.",
+        "Studenti s tendencí k vyšší absenci nebo nižší motivací ke studiu.",
+        "Uchazeči, kteří očekávají moderní a interaktivní metody výuky i v teoretických předmětech."
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní odborné vzdělání se silným zaměřením na praxi a dobrým uplatněním v řemeslných oborech. Pro rodiče je důležité vědět, že škola bojuje s vysokou neúspěšností (až 20 % žáků neprospívá) a častými odchody studentů. Výuka teoretických předmětů je často pasivní a nezajímavá. Přesto panuje ve škole bezpečná a přátelská atmosféra. Pro dítě, které má zájem o řemeslo a je disciplinované, je škola dobrou volbou, ale u méně motivovaných žáků je riziko předčasného odchodu vysoké."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výsledky v jazycích se mírně zlepšily, ale v matematice jsou nadále špatné.",
+        "key_numbers": [
+          "Mírné zlepšení v českém jazyce a cizích jazycích",
+          "Nízká úspěšnost v matematice nadále přetrvává"
+        ],
+        "evidence": "Některá opatření... vedla k mírnému zlepšení výsledků žáků u maturitní zkoušky v českém jazyce a cizích jazycích, nízká úspěšnost v matematice však nadále přetrvává."
+      },
+      "absence": {
+        "trend": "Vysoká neomluvená absence je dlouhodobý problém, represivní opatření nefungují.",
+        "key_numbers": [
+          "Vysoký počet neomluvené absence",
+          "Represivní přístup se jeví jako neefektivní"
+        ],
+        "evidence": "Přes přijatá a realizovaná opatření... se škole dlouhodobě nedaří tento negativní jev výrazněji eliminovat. Represivní přístup... se jeví jako neefektivní."
+      },
+      "support_services": [
+        "Kariérové poradenství je na velmi dobré úrovni.",
+        "Škola identifikovala 79 žáků se speciálními vzdělávacími potřebami (1.–4. stupeň).",
+        "Poradenské služby vyžadují rozšíření o dalšího pracovníka."
+      ],
+      "safety_climate": [
+        "Minimální výskyt rizikového chování (vyjma absence).",
+        "Příznivá pracovní atmosféra a vstřícný vztah učitelů k žákům.",
+        "Bezpečnost a ochrana zdraví jsou zajištěny a pravidelně vyhodnocovány."
+      ],
+      "partnerships_practice": [
+        "Kvalitní spolupráce se smluvními pracovišti a zaměstnavateli v regionu.",
+        "Praktická výuka má velmi dobrou úroveň a je dobře organizována.",
+        "Aktivní přístup instruktorů motivuje žáky k dodržování postupů."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky a poskytuje konkrétní číselné údaje o neúspěšnosti.",
+      "uncertainty_notes": [
+        "Chybí přesné procento neomluvené absence, pouze se uvádí, že je vysoká.",
+        "Není specifikováno, o kolik se přesně zvýšil počet žáků v posledních třech letech.",
+        "Nejasná míra efektivity stipendijního programu, chybí analýza dopadu."
+      ]
+    }
+  }
+}

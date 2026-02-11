@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "GY4_600012409_2024-01-17",
+  "school_profile": {
+    "school_type": "Sportovní gymnázium se čtyřletým oborem vzdělání s maturitní zkouškou",
+    "inspection_period": "17. až 19. a 22. ledna 2024",
+    "school_change_summary": "Škola se postupně zlepšuje v materiálních podmínkách ve spolupráci se zřizovatelem a aktivně získává další finanční zdroje z dotačních titulů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Sportovní úspěchy",
+        "detail": "Žáci dosahují významných úspěchů v krajských, republikových i mezinárodních sportovních soutěžích, loni bylo 29 žáků reprezentanty České republiky.",
+        "evidence": "Výroční zpráva školy, sportovní výsledky žáků"
+      },
+      {
+        "tag": "Příjemná atmosféra",
+        "detail": "Škola vytváří podporující a vstřícné prostředí s otevřenou komunikací mezi všemi účastníky vzdělávání.",
+        "evidence": "Pozorování hodin, partnerský přístup vedení"
+      },
+      {
+        "tag": "Kvalitní sportovní vybavení",
+        "detail": "Škola má vlastní trenéry pro sedm kmenových sportů a postupně zlepšuje materiální podmínky.",
+        "evidence": "Charakteristika školy, sportovní infrastruktura"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Ve velké většině hodin chybí diferenciace náročnosti úkolů, což omezuje pokrok jak slabších, tak nadaných žáků.",
+        "evidence": "Hospitační činnost inspektorů, pozorování 20+ hodin"
+      },
+      {
+        "tag": "Převaha frontální výuky",
+        "detail": "Výuka se opírá především o výklad a řízený rozhovor, žáci jsou vedeni jen ojediněle k argumentaci a sebehodnocení.",
+        "evidence": "Analýza průběhu vzdělávání, hospitační záznamy"
+      },
+      {
+        "tag": "Slabá zpětná vazba z hospitací",
+        "detail": "Zpětná vazba poskytovaná učitelům není nastavena na konkrétní doporučení a omezuje ověřování její účelnosti.",
+        "evidence": "Hodnocení podmínek vzdělávání, hospitační činnost"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola individualizuje výuku pro žáky s různými schopnostmi a jak se liší přístup k nadaným a slabším žákům?",
+      "Jaké konkrétní metody používáte k rozvoji sebehodnocení a vzájemného hodnocení mezi žáky?",
+      "Jak se škola vypořádává s tím, že žáci musí zvládat jak náročné studium, tak intenzivní sportovní přípravu?"
+    ],
+    "who_school_fits": [
+      "Sportovně nadaní žáci, kteří chtějí kombinovat kvalitní gymnáziální vzdělání s profesionální sportovní přípravou",
+      "Žáci s jasným zaměřením na konkrétní sport a motivací k vrcholovému sportování",
+      "Mladí lidé, kteří prospívají v strukturovaném prostředí s jasným zaměřením a podporou"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciované úkoly podle svého tempa",
+      "Studenti, kteří preferují aktivnější a rozmanitější vyučovací metody než frontální výuku",
+      "Žáci bez jasného sportovního zaměření, kteří by se cítili v menšině v prostředí zaměřeném na sport"
+    ],
+    "plain_czech_summary": "Sportovní gymnázium v Pardubicích je kvalitní školou se silným zaměřením na sport a výborným vybavením. Žáci dosahují pozoruhodných úspěchů v soutěžích a atmosféra je podporující. Inspekce ale upozorňuje, že výuka by měla být více individualizovaná a rozmanitá. Učitelé by měli více pracovat s různými metodami, aby všichni žáci – jak slabší, tak nadaní – měli dostatek výzvy. Škola má prostor pro zlepšení v oblasti sebehodnocení žáků a konkrétní zpětné vazby pro učitele."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "Přibližně třetina žáků absolvovala maturitu s vyznamenáním",
+        "Minimální neúspěšnost žáků"
+      ],
+      "evidence": "Vyhodnocování úspěšnosti při maturitních zkouškách, meziročních srovnání"
+    },
+    "absence": {
+      "trend": "Efektivně řešena",
+      "key_numbers": [
+        "Školou přijímaná opatření ke snížení absence jsou efektivní"
+      ],
+      "evidence": "Matrika, třídní knihy, monitoring absence"
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence v jedné osobě s důrazem na otevřenou komunikaci",
+      "Koordinace péče o žáky se speciálními vzdělávacími potřebami",
+      "Kariérové poradenství a primární prevence realizovaná napříč ročníky"
+    ],
+    "safety_climate": [
+      "Nízký výskyt signálů rizikového chování vzhledem k zaměření školy",
+      "Bezodkladné řešení problémových situací ve spolupráci s vedením a zákonnými zástupci",
+      "Monitoring vztahů ve třídách řešen třídními učiteli"
+    ],
+    "partnerships_practice": [
+      "Funkční spolupráce se sportovními kluby, svazy a organizacemi na materiálním zázemí a organizaci soutěží",
+      "Tradičně se škola zapojuje do charitativních sbírek",
+      "Asistent anglického jazyka z programu Fulbright English Teaching Assistantships"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně identifikovány s odkazem na pozorování. Doporučení jsou praktická a konkrétní.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje přesné procento žáků s vyznamenáním (pouze 'přibližně třetina')",
+      "Počet sledovaných hodin není explicitně uveden, pouze se zmiňuje 'velká většina' a 'některé' hodiny",
+      "Konkrétní čísla absence nejsou v textu uvedena"
+    ]
+  }
+}
+```

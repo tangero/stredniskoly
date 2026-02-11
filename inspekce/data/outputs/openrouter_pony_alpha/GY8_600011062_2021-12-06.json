@@ -1,0 +1,108 @@
+{
+  "report_id": "GY8_600011062_2021-12-06",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:12:48.356823+00:00",
+  "run_finished_utc": "2026-02-10T08:14:06.863231+00:00",
+  "raw_file": "GY8_600011062_2021-12-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600011062_2021-12-06",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté)",
+      "inspection_period": "6. 12. 2021 – 9. 12. 2021",
+      "school_change_summary": "Škola modernizuje vybavení (nové hřiště, laboratoř, arboretum) a posiluje přírodovědné vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky a volba",
+          "detail": "Škola nabízí širokou škálu volitelných předmětů a nadstandardní výběr cizích jazyků.",
+          "evidence": "Nadstandardní je nabídka vyučovaných cizích jazyků... široká nabídka volitelných předmětů."
+        },
+        {
+          "tag": "Prostředí",
+          "detail": "Materiální zázemí je na velmi dobré úrovni díky modernizacím a darům partnerů.",
+          "evidence": "Materiálně technické podmínky pro vzdělávání jsou na velmi dobré úrovni."
+        },
+        {
+          "tag": "Klima",
+          "detail": "Ve škole panuje pozitivní atmosféra založená na respektu a důvěře.",
+          "evidence": "Ve všech hospitovaných vyučovacích hodinách byla patrná pozitivní učební atmosféra."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Styl výuky",
+          "detail": "Výuka často probíhá frontálně bez zapojení žáků do spolupráce.",
+          "evidence": "Převaha frontální výuky... vedla v některých vyučovacích hodinách k nízké míře spoluúčasti žáků."
+        },
+        {
+          "tag": "Individualizace",
+          "detail": "Učitelé málo rozlišují úkoly podle potřeb a schopností jednotlivých žáků.",
+          "evidence": "Až na výjimky učitelé nevyužívali obsahovou diferenciaci... všichni žáci plnili stejné typy úloh."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Ve výuce chybí efektivní zpětná vazba a závěrečné shrnutí propečeného učiva.",
+          "evidence": "Pedagogové nevěnují dostatečný časový prostor závěrečnému shrnutí... ani efektivní zpětné vazbě."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak učitelé využívají nové moderní prostory (arboretum, laboratoře) v běžné výuce?",
+        "Jakým způsobem škola individualizuje výuku pro žáky s různou úrovní znalostí?",
+        "Plánuje škola zavést více skupinové práce a aktivizujících metod do přírodovědných předmětů?"
+      ],
+      "who_school_fits": [
+        "Studenti, kteří chtějí širokou nabídku jazyků a volitelných seminářů.",
+        "Žáci, kterým vyhovuje tradičnější styl výuky vedené učitelem.",
+        "Přírodovědně orientovaní studenti (díky novým laboratořím a projektům)."
+      ],
+      "who_should_be_cautious": [
+        "Žáci vyžadující silný individuální přístup a častou zpětnou vazbu.",
+        "Studenti, kteří preferují kooperativní a projektovou výuku před frontální.",
+        "Talentovaní žáci v matematice a přírodovědných předmětech (méně aktivizujících metod)."
+      ],
+      "plain_czech_summary": "Gymnázium v Litvínově nabízí kvalitní zázemí a širokou nabídku jazyků i volitelných předmětů. Učitelé mají velmi dobrou odbornou úroveň a ve škole panuje přátelská atmosféra. Slabinou je převažující frontální styl výuky a nízká míra individualizace, kdy všichni žáci plní stejné úkoly bez ohledu na jejich individuální potřeby. Škola se úspěšně rozvíjí materiálně (nové hřiště, arboretum) a připravuje žáky k maturitě s vysokou úspěšností."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vysoká úspěšnost",
+        "key_numbers": [
+          "2019/2020: 100 % úspěšnost ve čtyřletém studiu",
+          "2020/2021: 100 % úspěšnost všech přihlášených žáků"
+        ],
+        "evidence": "Ve školním roce 2020/2021 uspěli všichni přihlášení žáci."
+      },
+      "absence": {
+        "trend": "Nehodnoceno",
+        "key_numbers": [],
+        "evidence": "Zpráva neuvádí konkrétní data o absenci."
+      },
+      "support_services": [
+        "Výchovné a kariérové poradenství zajišťuje školní poradenské pracoviště.",
+        "Škola realizuje Národní plán doučování pro vyrovnání znalostních mezer.",
+        "K dispozici je základní krizová intervence a psychologická pomoc."
+      ],
+      "safety_climate": [
+        "Nízký počet rizikových projevů chování v posledních letech.",
+        "Pozitivní učební atmosféra založená na vzájemném respektu a důvěře.",
+        "Systematická realizace šetření školního klimatu a diagnostika tříd."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s nadací ORLEN Unipetrol a Severní energetickou (modernizace školy).",
+        "Projekt ČT edu (tvorba učebních materiálů) a Erasmus+ (mobilita).",
+        "Podpora stipendií pro nadané žáky a projekt EDUbus pro zájem o chemii."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně člení hodnocení podmínek, průběhu a výsledků. Závěry a doporučení dávají jasný obraz o kvalitě školy.",
+      "uncertainty_notes": [
+        "Nejasná míra zapojení žáků do projektové činnosti v běžných hodinách.",
+        "Chybí konkrétní data o prospěchu žáků v jednotlivých předmětech.",
+        "Není uvedeno, zda škola plánuje změnu metodické podpory učitelů."
+      ]
+    }
+  }
+}

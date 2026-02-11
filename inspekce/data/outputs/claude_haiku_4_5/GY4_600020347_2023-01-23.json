@@ -1,0 +1,117 @@
+{
+  "report_id": "GY4_600020347_2023-01-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:50:11.766979+00:00",
+  "run_finished_utc": "2026-02-09T16:50:41.171089+00:00",
+  "raw_file": "GY4_600020347_2023-01-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600020347_2023-01-23",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola sklářská a Střední škola s domovem mládeže",
+      "inspection_period": "23.–26. ledna 2023",
+      "school_change_summary": "Nový ředitel od srpna 2019. Vyšší odborná škola bez studentů poslední tři roky, jednání o výmazu z rejstříku. Zlepšené prostorové a materiální podmínky, zvýšený zájem uchazečů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní vedení a stabilita",
+          "detail": "Promyšlený systém řízení s efektivně spolupracujícím vedením a delegovanými pravomocemi zajišťuje kvalitní podmínky.",
+          "evidence": "Ředitel s dlouhodobou profesní spjatostí se školou, systematické plánování vycházející ze SWOT analýzy."
+        },
+        {
+          "tag": "Praktické uplatnění absolventů",
+          "detail": "Silné partnerství s průmyslem (Crystalex, Lasvit, AJETO) zajišťuje relevantní praxi a zaměstnanost.",
+          "evidence": "Absolventi sklářských oborů se uplatňují v oboru (60 %), maturanti Gymnázia na vysokých školách (86 %)."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují výjimečných výsledků v odborných a jazykových soutěžích.",
+          "evidence": "Druhé místo na mistrovství světa v broušení skla, úspěchy v olympiádách z jazyků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v některých oborech",
+          "detail": "Obor Design interiéru má nižší úspěšnost u maturit a více neúspěšných v profilové části.",
+          "evidence": "Úspěšnost 67 % v roce 2022, nárůst neúspěšných v profilové části oproti předchozím letům."
+        },
+        {
+          "tag": "Problémy s nematuritními obory",
+          "detail": "Výrazný nárůst neúspěšnosti u závěrečných zkoušek sklářských oborů.",
+          "evidence": "37,5 % neúspěšných žáků v roce 2021/2022 oproti 0–14 % v předchozích třech letech."
+        },
+        {
+          "tag": "Chybějící moderní didaktika",
+          "detail": "Učitelé málo využívají aktivizační metody, závěry hodin jsou formální bez ověření efektivity.",
+          "evidence": "Inspektoři zaznamenali formální závěry bez upevnění učiva a aktivní účasti žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak se škola vypořádává s nižší úspěšností v oboru Design interiéru a co se plánuje na zlepšení?",
+        "Jaké konkrétní kroky podniká škola k modernizaci výuky a využívání aktivizačních metod?",
+        "Jaké jsou reálné šance na zaměstnání po absolvování sklářských oborů a jak škola spolupracuje s firmami?"
+      ],
+      "who_school_fits": [
+        "Zájemci o sklářství a uměleckořemeslné obory s praktickou orientací a ambicí pracovat v tradičním řemesle",
+        "Talentovaní studenti gymnázia s cílem studovat na vysoké škole (86 % absolventů pokračuje ve studiu)",
+        "Budoucí pedagogové – obor Předškolní a mimoškolní pedagogika má stabilně vysoký zájem a 90 % úspěšnost"
+      ],
+      "who_should_be_cautious": [
+        "Studenti Design interiéru – obor má nižší úspěšnost u maturit (67 %) a rostoucí počet neúspěšných",
+        "Zájemci o sklářské obory bez jasné motivace – neomluvená absence a předčasné odchody jsou problém",
+        "Studenti, kteří potřebují moderní interaktivní výuku – škola stále více využívá frontální metody"
+      ],
+      "plain_czech_summary": "Škola s 150letou tradicí nabízí kvalitní vzdělání v tradičních sklářských oborech, pedagogice a gymnáziu. Vedení je stabilní a promyšlené, prostory se zlepšují. Absolventi se dobře uplatňují, zejména v průmyslu. Slabinou je nižší úspěšnost v některých oborech a málo moderní výuka. Obor Design interiéru vyžaduje pozornost. Ideální pro prakticky zaměřené studenty a budoucí pedagogy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – Gymnázium výborné, Pedagogika zlepšená, Design interiéru zhoršený",
+        "key_numbers": [
+          "Gymnázium 2022: 71 % s vyznamenáním, pouze 1 neúspěšný",
+          "Pedagogika: 90 % úspěšnosti",
+          "Design interiéru: 67 % úspěšnosti, nárůst neúspěšných v profilové části"
+        ],
+        "evidence": "V roce 2022 v oboru Gymnázium získalo 71 % maturantů vyznamenání. Mírně pod průměrem Design interiéru (67 %) a Uměleckořemeslné zpracování skla (64 %)."
+      },
+      "absence": {
+        "trend": "Pozitivní – snižování počtu zameškaných hodin",
+        "key_numbers": [
+          "Neomluvené absence u maturitních oborů nízké",
+          "Sklářské obory: jednotliví žáci s vysokou neomluvená absencí",
+          "Maximálně 25% absence nutná pro udělení známky"
+        ],
+        "evidence": "Pozitivním trendem je snižování počtu zameškaných hodin. Omlouvání absencí je účinně stanoveno školním řádem."
+      },
+      "support_services": [
+        "Výchovná poradkyně (zástupkyně ředitele) – individuální konzultace, pomoc žákům s rizikem neúspěšnosti",
+        "Kariérová poradkyně – informace o dalším studiu a uplatnění na trhu práce",
+        "Metodika prevence – integrační kurzy, besedy o internetu, šikaně a kyberšikaně",
+        "Doučování a konzultační činnost pro žáky s rizikem školní neúspěšnosti"
+      ],
+      "safety_climate": [
+        "Čipovací zařízení na vstupech do budov pro zamezení nežádoucího vstupu cizích osob",
+        "Pravidelné proškolování žáků a zaměstnanců v bezpečnosti a ochraně zdraví",
+        "Při prohlídce pracovišť nebyla identifikována zjevná bezpečnostní rizika",
+        "Podnětné, upravené a čisté prostředí domova mládeže"
+      ],
+      "partnerships_practice": [
+        "Crystalex – externí praktické vyučování zaměření strojník sklářských zařízení, nabídka zaměstnání",
+        "Lasvit – projekt DOFE (Cena vévody z Edinburgu)",
+        "Místní sklářské firmy (AJETO aj.) – odborné konzultace, praktické vyučování, závěrečné zkoušky",
+        "Mateřské školy a školní zařízení – učební praxe oboru Pedagogika",
+        "Národní pedagogický institut – aktivní spolupráce"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní čísla a příklady. Slabinou je místy úřednický jazyk, ale pro rodiče jsou klíčové informace jasné.",
+      "uncertainty_notes": [
+        "Nejasné, zda se nižší úspěšnost v Design interiéru týká pouze malého počtu žáků (statistická vypovídavost není zmíněna)",
+        "Není jasné, jaké konkrétní kroky škola plánuje na zlepšení didaktiky – doporučení jsou obecná",
+        "Chybí informace o počtu žáků v jednotlivých oborech pro lepší kontextualizaci úspěšnosti"
+      ]
+    }
+  }
+}

@@ -1,0 +1,101 @@
+```json
+{
+  "report_id": "SOS_600019683_2023-02-14",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola, příspěvková organizace",
+    "inspection_period": "14. 2. 2023 − 16. 2. 2023",
+    "school_change_summary": "Škola nabízí tři obory: Sociální činnost, Zdravotnický asistent (dobíhající) a Praktická sestra. Počet žáků v denní a dálkové formě se od roku 2019 zvýšil. Hlavní problém: výsledky maturit zůstávají pod průměrem ČR."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Škola má dostačující materiální podmínky pro výuku předmětů maturitní zkoušky včetně knihovny a moderních učebnic.",
+        "evidence": "Materiální podmínky umožňují naplňovat vzdělávací cíle, k dispozici jsou nové učebnice a pracovní sešity."
+      },
+      {
+        "tag": "Individuální podpora",
+        "detail": "Pedagogové nabízejí žákům individuální konzultace, které jsou využívány zejména v dálkové formě.",
+        "evidence": "Žákům ohroženým školní neúspěšností nabízí pedagogové individuální konzultace."
+      },
+      {
+        "tag": "Hospitační dohled",
+        "detail": "Vedení školy sleduje kvalitu výuky ve všech předmětech s fokusem na začínající učitele.",
+        "evidence": "V rámci hospitační činnosti vedení školy sleduje kvalitu vzdělávacího procesu ve všech předmětech."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Velmi nízké výsledky maturit",
+        "detail": "Průměrná neúspěšnost ve společné části maturitní zkoušky činila 46,7 % (2019–2022), což je výrazně nad republikovým průměrem.",
+        "evidence": "Průměrná hrubá neúspěšnost školy činila v těchto letech 46,7 %. V oboru Zdravotnický asistent: 2019 škola 51,5 % vs ČR 24 %."
+      },
+      {
+        "tag": "Kritická úspěšnost v dálkové formě",
+        "detail": "V dálkové formě oboru Zdravotnický asistent z 33 žáků, kteří nastoupili do 1. ročníku, úspěšně studium ukončil jen jeden.",
+        "evidence": "Z 33 žáků, kteří nastoupili do 1. ročníku, úspěšně ukončil studium a vykonal maturitní zkoušku jen jeden žák."
+      },
+      {
+        "tag": "Neefektivní opatření",
+        "detail": "Opatření přijatá na základě předchozí inspekce (2019) nebyla účinná a jejich dopad se nevyhodnocuje.",
+        "evidence": "Opatření přijatá ředitelkou školy nebyla realizována, nebo nebyla účinná. Škola dopady přijatých opatření nesleduje a nevyhodnocuje."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou neúspěšnost v matematice a cizích jazycích? Jaké nové metody plánuje zavést?",
+      "Jaké jsou konkrétní důvody tak nízké úspěšnosti v dálkové formě a co se změní v přijímacím řízení?",
+      "Jak budou vyhodnocovány výsledky nových opatření a v jaké lhůtě se očekává zlepšení?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří potřebují individuální konzultace a osobnější přístup (zejména v dálkové formě)",
+      "Studenti s dobrým zdravotním stavem a vysokou motivací, kteří se neobávají výzev",
+      "Uchazeči, kteří si mohou dovolit dodatečné doučování mimo školu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v matematice a cizích jazycích – riziko neúspěchu u maturity je vysoké",
+      "Zájemci o dálkovou formu vzdělávání – úspěšnost je kriticky nízká (pouze 3 % v oboru Zdravotnický asistent)",
+      "Studenti, kteří se spoléhají na frontální výuku – škola málo využívá aktivní a kooperativní metody"
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola v Děčíně nabízí vzdělání v sociální činnosti a zdravotnických oborech. Má dobré materiální vybavení a individuální podporu. Hlavní problém: výsledky maturitní zkoušky jsou dlouhodobě pod průměrem ČR (47 % neúspěšnosti). Zvlášť kritická je dálková forma – z 33 žáků oboru Zdravotnický asistent úspěšně maturovalo jen jeden. Škola přijatá opatření nevyhodnocuje. Výuka je převážně frontální bez dostatečné diferenciace. Rodiče by měli zvážit, zda jejich dítě zvládne vysoké nároky bez intenzivní externí podpory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě klesající – výsledky se nezlepšily od inspekce 2019",
+      "key_numbers": [
+        "Průměrná hrubá neúspěšnost 2019–2022: 46,7 %",
+        "Obor Zdravotnický asistent 2022: škola 52,4 % vs ČR 17 %",
+        "Dálková forma 2022: 75 % neúspěšnosti"
+      ],
+      "evidence": "Průměrná hrubá neúspěšnost školy činila v těchto letech 46,7 %. V maturitním ročníku 2022 činil podíl žáků, kteří úspěšně dokončili studium, pouze 21 %."
+    },
+    "absence": {
+      "trend": "Vysoká absence je považována za nejzávažnější problém, ale systematicky se neřeší",
+      "key_numbers": [
+        "Absence je hlavní faktor školního neúspěchu",
+        "Žáci s vysokou absencí jsou ohroženi předčasným odchodem"
+      ],
+      "evidence": "Školní poradenské pracoviště se systematicky nezabývá dopadem absence na výsledky žáků denní formy vzdělávání, přestože ji považuje za nejvážnější problém."
+    },
+    "support_services": [
+      "Individuální konzultace pro žáky ohrožené neúspěšností (využívají zejména žáci dálkové formy)",
+      "Skupinové doučování (nízká účast, škola se nedaří žáky motivovat)",
+      "Školní poradenské pracoviště (zaměřeno na absenci, ale bez systematického řešení)"
+    ],
+    "safety_climate": [
+      "Zpráva se nezabývá bezpečností nebo klimatem školy"
+    ],
+    "partnerships_practice": [
+      "Zpráva se nezabývá partnerstvy nebo praxí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně dokumentuje problémy. Čísla jsou konkrétní a srovnatelná s republikovým průměrem. Slabší je absence informací o konkrétních plánech nápravy.",
+    "uncertainty_notes": [
+      "Není jasné, jaké konkrétní nové opatření škola plánuje zavést po této inspekci",
+      "Chybí informace o kvalitě pedagogů a jejich motivaci ke změně",
+      "Není zřejmé, zda má vedení školy kapacitu a vůli problém řešit"
+    ]
+  }
+}
+```

@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600008908_2023-04-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:41:59.973158+00:00",
+  "run_finished_utc": "2026-02-09T16:42:26.757201+00:00",
+  "raw_file": "GY8_600008908_2023-04-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008908_2023-04-19",
+    "school_profile": {
+      "school_type": "Gymnázium (4leté, 6leté a 8leté obory)",
+      "inspection_period": "19.–21. dubna 2023",
+      "school_change_summary": "Od roku 2021/22 přibyla pozice kariérové poradkyně, od ledna 2023 pracuje školní psycholog. Škola intenzivně rozšiřuje mezinárodní spolupráci a projekty Erasmus+."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní jazykové vzdělání",
+          "detail": "Výuka cizích jazyků (angličtina, francouzština, němčina) podporuje komunikativní kompetence s důrazem na mluvený projev.",
+          "evidence": "Hospitované hodiny vykazovaly efektivní metodiku, vysoce efektivní byla výuka angličtiny ve skupinách pokročilé úrovně."
+        },
+        {
+          "tag": "Péče o nadané žáky",
+          "detail": "Škola systematicky identifikuje a podporuje nadané žáky, kteří dosahují úspěchů v regionálních i celostátních soutěžích.",
+          "evidence": "Jeden žák je členem reprezentace ČR v celosvětovém kole astronomické olympiády, řada úspěchů v olympiádách."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola zajišťuje bezpečnost elektronickým zabezpečením vstupu a aktivní prací na prevenci sociálně patologických jevů.",
+          "evidence": "Interní předpisy, elektronické zabezpečení, programy prevence zajišťované externími i vlastními odborníky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá výuka přírodovědných předmětů",
+          "detail": "Fyzika, chemie a biologie jsou vedeny převážně frontální formou s nízkou aktivní spoluprací žáků a pasivitou.",
+          "evidence": "Hospitované hodiny vykazovaly frontální formu s řízeným dialogem, žáci byli pasivní, chyběla diferenciace."
+        },
+        {
+          "tag": "Nedostatečné formativní hodnocení",
+          "detail": "Žáci nemají dostatek prostoru pro sebehodnocení a vzájemné hodnocení, závěrečné shrnutí hodin chybí.",
+          "evidence": "Ve všech sledovaných hodinách byl malý prostor pro sebehodnocení, závěry hodin zhodnotili jen někteří vyučující."
+        },
+        {
+          "tag": "Pokles výsledků maturity",
+          "detail": "Došlo ke zhoršení výsledků maturitních zkoušek, zejména u ústních zkoušek profilové části.",
+          "evidence": "Vedení školy přijala opatření k nastavení pozitivního trendu pro zlepšení výsledků na úroveň před pandemií."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší pokles výsledků maturitních zkoušek a jaká opatření již zavedla?",
+        "Jaké jsou možnosti individuální podpory pro žáky, kteří mají potíže s přírodovědnými předměty?",
+        "Jak funguje spolupráce se školním psychologem a jak se dá o jeho služby požádat?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci (výměnné pobyty do Francie, Belgie, Německa, USA)",
+        "Nadaní žáci, kterým škola nabízí individualizovaný přístup a zapojení do soutěží a projektů",
+        "Žáci, kteří oceňují bezpečné prostředí a kvalitní péči školního poradenského pracoviště"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími předpoklady v přírodovědách, kde výuka není dostatečně diferencovaná",
+        "Žáci, kteří potřebují více interaktivní a skupinové formy výuky (v některých předmětech převládá frontální výuka)",
+        "Žáci, kteří se lépe učí s jasným formativním zpětnovazebním systémem (ten není konzistentně uplatňován)"
+      ],
+      "plain_czech_summary": "Gymnázium J. Š. Baara je kvalitní škola se silným zaměřením na jazyky a mezinárodní spolupráci. Nadaní žáci zde nacházejí podporu a dosahují úspěchů v soutěžích. Bezpečné prostředí a péče školního poradenského pracoviště jsou na vysoké úrovni. Slabší stránkou je výuka přírodovědných předmětů, která je příliš frontální a málo diferencovaná. Inspekce také upozornila na pokles výsledků maturity a nedostatečné formativní hodnocení. Škola si je těchto problémů vědoma a pracuje na jejich řešení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se",
+        "key_numbers": [
+          "Pokles výsledků v posledním zkušebním období",
+          "Zejména ústní zkoušky profilové části maturity"
+        ],
+        "evidence": "Vedení školy přijala opatření k nastavení pozitivního trendu pro zlepšení výsledků na úroveň před covidovou pandemií."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Zpráva se absencí nezabývá."
+      },
+      "support_services": [
+        "Výchovný poradce – koordinuje péči o žáky s potřebou podpory",
+        "Metodička prevence – zajišťuje preventivní programy",
+        "Kariérová poradkyně – poradenství pro nejvyšší ročníky (od 2021/22)",
+        "Školní psycholog – individuální konzultace (od ledna 2023 na částečný úvazek)"
+      ],
+      "safety_climate": [
+        "Elektronické zabezpečení vstupu do budovy",
+        "Interní předpisy se všemi aktéry vzdělávání",
+        "Aktivní prevence sociálně patologických jevů podle stanovených programů",
+        "Schránka důvěry pro anonymní vyjádření potřeb žáků",
+        "Studentská rada se schází přibližně jednou za měsíc"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se školami ve Francii (Saint Arnoult en Yvelines) – výměnné pobyty",
+        "Přeshraniční spolupráce se školami v Bavorsku (Realschule Waldmünchen, Gymnasium Kötzing)",
+        "Nová spolupráce s High School v Two Rivers (USA) – plánované výměnné pobyty",
+        "Projekty Erasmus+ – jazykové kurzy pro pedagogy, studijní pobyty žáků",
+        "Spolupráce s vysokými školami jako fakultní škola a v projektech s nadanými žáky",
+        "Projekt U3V (Univerzita třetího věku) pro seniory v Domažlicích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně identifikovány. Absence konkrétních číselných údajů o absencích a některé obecnější formulace snižují jasnost.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní data o absencích žáků – není jasné, zda je to problém či ne.",
+        "Není specifikováno, jak se konkrétně projevil nárůst úzkostného chování po pandemii a jaké jsou výsledky intervencí.",
+        "Není jasné, jaké konkrétní opatření vedení školy přijalo k zlepšení výsledků maturity a jaké jsou jejich dosavadní výsledky."
+      ]
+    }
+  }
+}

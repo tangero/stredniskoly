@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY8_600014100_2025-01-27",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium (nižší a vyšší stupeň)",
+    "inspection_period": "27. 1. 2025 – 30. 1. 2025",
+    "school_change_summary": "Od poslední inspekce v 2019: nový ŠVP s blokovou výukou a formativním hodnocením na nižším stupni (od 2023/24), rozšíření vedení o druhého zástupce, založení studentského parlamentu, posílení poradenského pracoviště o školní psycholožku, modernizace suterénního prostoru s novými přírodovědnými učebnami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Inovativní přístup k výuce",
+        "detail": "Škola zavádí blokovou organizaci výuky s formativním slovním hodnocením a důrazem na zodpovědnost žáků za vlastní učení.",
+        "evidence": "Nový ŠVP GŽ 2023 plus s inovativními vzdělávacími postupy, interaktivní výuka, projektové vyučování."
+      },
+      {
+        "tag": "Vynikající výsledky maturit",
+        "detail": "Hrubá neúspěšnost u maturitní zkoušky je téměř nulová a dlouhodobě převyšuje výsledky srovnatelných škol.",
+        "evidence": "V posledních třech letech téměř nulová neúspěšnost, vyšší úroveň než ostatní školy ve stejné skupině oborů."
+      },
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Projekt Erasmus+, partnerství se školami v Evropě, rodilí mluvčí ve výuce, mezinárodní jazykové certifikáty.",
+        "evidence": "Skupinové výjezdy, výměnné pobyty, každoročně část žáků získává mezinárodní certifikát."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Zastaralá síťová infrastruktura",
+        "detail": "Špatná konektivita omezuje využití digitálních technologií a rozvoj digitálních kompetencí žáků.",
+        "evidence": "Jen v necelé třetině hodin byla zaznamenána aktivní práce žáků s digitálními technologiemi."
+      },
+      {
+        "tag": "Omezená diferenciace podle volby žáka",
+        "detail": "Chybí dostatek příležitostí, aby si žáci sami vybírali úkoly různé obtížnosti podle svých schopností.",
+        "evidence": "V části hodin byla diferenciace uplatňována, ale chybělo vytváření příležitostí pro samostatný výběr."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaký je konkrétní harmonogram modernizace síťové infrastruktury a kdy budou mít žáci stabilní konektivitu?",
+      "Jak se formativní slovní hodnocení na nižším stupni postupně zavádí na vyšší stupeň?",
+      "Jaké jsou konkrétní možnosti pro žáky se zájmem o STEM obory a jak se rozvíjí jejich nadání?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí na vysokou školu – výborné výsledky maturit a příprava na přijímací řízení",
+      "Jazykově nadaní žáci – bohatá nabídka jazykových projektů, certifikátů a zahraničních pobytů",
+      "Žáci preferující aktivní učení – projektová výuka, kooperativní práce, formativní hodnocení"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší digitální gramotností – omezené možnosti rozvoje digitálních kompetencí kvůli infrastruktuře",
+      "Žáci potřebující více individuální volby v učení – systém zatím více nabízí strukturované úkoly",
+      "Žáci s výrazně odlišným tempem učení – diferenciace je přítomna, ale ne vždy dostatečně flexibilní"
+    ],
+    "plain_czech_summary": "Gymnázium Židlochovice je moderní škola s jasnou vizí a inovativním přístupem. Nižší stupeň se vzdělává podle nového programu s blokovým vyučováním a slovním hodnocením. Žáci dosahují výborných výsledků, zejména u maturit. Silné jsou jazykové vzdělání, projektová výuka a spolupráce s vysokými školami. Hlavní slabinou je zastaralá síťová infrastruktura, která brání plnému využití digitálních technologií. Škola je vhodná pro ambiciózní žáky se zájmem o vysokoškolské studium."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě vynikající, stabilně vysoké",
+      "key_numbers": [
+        "Hrubá neúspěšnost v posledních třech letech: téměř nulová",
+        "Výsledky vyšší než u ostatních škol ve stejné skupině oborů",
+        "Úspěšné ročníkové práce postupují do krajského a celostátního kola SOČO"
+      ],
+      "evidence": "Vynikající výsledky při ukončování maturitní zkouškou, dlouhodobě vyšší úroveň než srovnatelné školy."
+    },
+    "absence": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Průměrná absence za školní rok: 107 hodin",
+        "Školní rok 2021/2022: 121 hodin",
+        "Pokles o 14 hodin za tři roky"
+      ],
+      "evidence": "Absence se snížila na 107 hodin ve srovnání se školním rokem 2021/2022, kdy činila 121 hodin."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodička prevence, metodička práce s nadanými žáky, školní psycholožka",
+      "Systematická informovanost pedagogů o doporučeních školských poradenských zařízení",
+      "Kariérové poradenství a pomoc při rozhodování o další vzdělávací cestě",
+      "Preventivní aktivity zaměřené na primární i sekundární prevenci"
+    ],
+    "safety_climate": [
+      "Atmosféra podporující učení, vzájemný respekt a otevřená komunikace mezi učitelem a žáky",
+      "Bezpečné a podporující prostředí vytvářené školním poradenským pracovištěm",
+      "Počet pochval výrazně převyšuje počet uložených kázeňských opatření",
+      "Adaptační kurz pro primu a pravidelné třídnické hodiny k budování zdravých vztahů"
+    ],
+    "partnerships_practice": [
+      "Projekt Erasmus+, partnerství se školami ve Francii a Španělsku, skupinové výjezdy a výměnné pobyty",
+      "Spolupráce s Masarykovou univerzitou – využití akademického zázemí, sdílení pedagogů",
+      "Metodická pomoc Jihomoravského centra pro mezinárodní mobilitu a Národního pedagogického institutu",
+      "Aktivní zapojení do kulturního a společenského života města Židlochovice"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk bez zbytečného úřednického stylu, konkrétní fakta jsou vždy podložena citacemi. Všechny klíčové informace jsou snadno identifikovatelné a prakticky využitelné pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní termín pro modernizaci síťové infrastruktury – není jasné, kdy bude problém vyřešen",
+      "Není specifikováno, jak se budou inovativní postupy z nižšího stupně postupně zavádět na vyšší stupeň",
+      "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami v jednotlivých ročnících"
+    ]
+  }
+}
+```

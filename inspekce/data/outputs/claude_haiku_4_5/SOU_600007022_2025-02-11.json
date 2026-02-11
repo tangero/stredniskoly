@@ -1,0 +1,116 @@
+{
+  "report_id": "SOU_600007022_2025-02-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:45:36.826057+00:00",
+  "run_finished_utc": "2026-02-09T13:46:02.666266+00:00",
+  "raw_file": "SOU_600007022_2025-02-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600007022_2025-02-11",
+    "school_profile": {
+      "school_type": "Střední škola služeb a řemesel (SOU) s domovem mládeže a školní jídelnou",
+      "inspection_period": "11. až 13. února 2025",
+      "school_change_summary": "Počet žáků vzrostl o 256 od roku 2017 na aktuálních 634. Zlepšily se materiální podmínky (nová klempířská dílna, upravené instalatérské dílny, rekonstruovaný kadeřnický salón). Škola se rozšířila a modernizovala vybavení digitální technikou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Zahraniční stáže a partnerství",
+          "detail": "Škola dlouhodobě zajišťuje odborné stáže pro žáky v Německu, Rakousku a Itálii, což rozvíjí jejich jazykové a odborné kompetence.",
+          "evidence": "Dlouhodobě se daří zajišťování odborných stáží pro žáky různých oborů v Německu, Rakousku nebo v Itálii."
+        },
+        {
+          "tag": "Kvalitní domov mládeže",
+          "detail": "Domov mládeže nabízí rozsáhlou nabídku volnočasových aktivit, kroužků a sportovního vyžití, které podporují osobnostní rozvoj.",
+          "evidence": "Rozsáhlá nabídka rozmanitých volnočasových aktivit a rozličných zájmových kroužků v domově mládeže účelně přispívá k osobnostnímu i profesnímu růstu žáků."
+        },
+        {
+          "tag": "Zlepšení maturitních výsledků",
+          "detail": "Žáci snižují hrubou neúspěšnost u maturitních zkoušek, obory Hotelnictví a Logistické služby dosáhly 0% neúspěšnosti.",
+          "evidence": "Nejlepších výsledků docílili žáci oboru Hotelnictví a Logistické a finanční služby, jejichž hrubá neúspěšnost v roce 2023/2024 činila 0%."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Žáci mají vysokou omluvenu i neomluvenu absenci (180-220 hodin ročně), která negativně ovlivňuje jejich výsledky a vede k předčasným odchodům.",
+          "evidence": "V nematuritních oborech přes 220 hodin na žáka za školní rok, neomluvená absence téměř 20 hodin na žáka za školní rok."
+        },
+        {
+          "tag": "Nízká aktivita žáků ve výuce",
+          "detail": "Učitelé málo využívají skupinovou práci, diferenciaci a formativní hodnocení, což snižuje motivaci a aktivitu žáků.",
+          "evidence": "Pouze v pětině hodin učitelé vytvářeli vhodné podněty pro aktivitu žáků, jinak zůstávala hlavní činností práce učitelů."
+        },
+        {
+          "tag": "Problémy s chováním a kázeňskými opatřeními",
+          "detail": "Počet napomenutí a důtek převýšil počet pochval o více než třetinu, zejména kvůli neomluvené absenci a problémům v chování.",
+          "evidence": "Napomenutí a důtky ve školním roce 2023/2024 o více než třetinu převýšily počet udělených pochval."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké má mechanismy pro komunikaci s rodiči neúčastných žáků?",
+        "Jaké konkrétní kroky podniká škola pro zvýšení aktivity žáků ve výuce a zavedení skupinové práce?",
+        "Jak se škola vypořádává s nedostatkem kvalifikovaných pedagogů a jaké má plány na jejich získání?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktické obory (kuchař, kadeřník, instalatér, klempíř) – škola má moderně vybavené dílny a dobré výsledky v praktických zkouškách",
+        "Žáci se zájmem o cestování a jazykové vzdělání – škola nabízí stáže v zahraničí a podporuje jazykové dovednosti",
+        "Žáci, kteří potřebují podporu a individuální přístup – škola má kvalifikované poradenské pracovníky a asistenty pedagoga"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absenci – vysoká absence je v této škole problém a negativně ovlivňuje výsledky",
+        "Žáci, kteří potřebují aktivní a interaktivní výuku – výuka je často frontální s nízkou aktivitou žáků",
+        "Žáci s problémy v chování – škola má vysoký počet kázeňských opatření a nižší počet pochval"
+      ],
+      "plain_czech_summary": "Střední škola služeb a řemesel v Stochově je moderně vybavená škola s rostoucím počtem žáků. Silnými stránkami jsou zahraniční stáže, kvalitní domov mládeže a zlepšující se výsledky u maturit. Hlavními problémy jsou vysoká absence žáků, nízká aktivita ve výuce a problémy s chováním. Škola se snaží zlepšovat, ale rodiče by měli počítat s tím, že jejich dítě bude muset být samostatné a motivované, protože škola nemůže plně kompenzovat nízkou účast rodičů na vzdělávání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – hrubá neúspěšnost se snižuje",
+        "key_numbers": [
+          "Hotelnictví a Logistické služby: 0% neúspěšnosti v 2023/2024",
+          "Kosmetické služby: snížení z 16,7% na 12,5%",
+          "Nástavbový obor Podnikání (dálka): snížení z 63,6% na 28,6%"
+        ],
+        "evidence": "Ve školním roce 2023/2024 se žákům dařilo ve srovnání s předchozím rokem ve všech oborech snižovat hrubou neúspěšnost."
+      },
+      "absence": {
+        "trend": "Negativní – vysoká absence přetrvává",
+        "key_numbers": [
+          "Maturitní obory: cca 180 hodin na žáka za rok",
+          "Nematuritní obory: přes 220 hodin na žáka za rok",
+          "Neomluvená absence v nematuritních oborech: téměř 20 hodin na žáka za rok"
+        ],
+        "evidence": "Žáci maturitních i nematuritních oborů vykazovali vysokou omluvenu i neomluvenu absenci, která se promítá do jejich horších vzdělávacích výsledků."
+      },
+      "support_services": [
+        "Kvalifikovaná výchovná poradkyně, školní metodička prevence a kariérová poradkyně",
+        "Dva asistenti pedagoga pro podporu žáků se speciálními potřebami",
+        "Pedagogická intervence a individuální doučování pro žáky s problémovým prospěchem",
+        "Podpora žáků cizinců s jazykovou bariérou"
+      ],
+      "safety_climate": [
+        "Škola klade důraz na bezpečné a zdravé prostředí, pravidelně poučuje žáky o bezpečnosti",
+        "Příčiny úrazů jsou vyhodnocovány a přijímají se opatření",
+        "Prvky prevence rizikového chování jsou zahrnuty do vyučovacích předmětů",
+        "Realizují se projekty a programy s externími odborníky"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se zahraničními pracovišti v Německu, Rakousku a Itálii",
+        "Partnerství s místními organizacemi a školami",
+        "Spolupráce s domovy seniorů pro rozvoj sociálních kompetencí",
+        "Smluvní partneři v gastronomických oborech, kde žáci vykonávají praxi"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však technické a vyžadují pozornost.",
+      "uncertainty_notes": [
+        "Není jasné, jaké konkrétní kroky škola plánuje pro řešení absence – zpráva pouze popisuje současný stav",
+        "Není specifikováno, kolik procent pedagogů nemá požadovanou kvalifikaci a jak dlouho bude trvat jejich doplnění",
+        "Chybí informace o tom, jak se škola vypořádá s neoprávněným chováním rodičů, kteří omlouvají absenci svých dětí"
+      ]
+    }
+  }
+}

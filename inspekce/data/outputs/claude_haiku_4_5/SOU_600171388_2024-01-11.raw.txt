@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600171388_2024-01-11",
+  "school_profile": {
+    "school_type": "Střední škola řemesel s obory vzdělání zaměřenými na strojírenství, stavebnictví, elektrikářství, truhlářství a obchod",
+    "inspection_period": "11.–16. ledna 2024",
+    "school_change_summary": "Od roku 2022 změna názvu na Střední škola řemesel, Šumperk. V roce 2023 navýšena kapacita o téměř třetinu. Škola má 906 žáků ve 41 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Žáci získávají praktické zkušenosti u smluvních partnerů a rozvíjejí sociální a komunikativní kompetence v reálném pracovním prostředí.",
+        "evidence": "Žáci vyšších ročníků pracují u smluvních partnerů a získávají kompetence s přidanou hodnotou v reálném prostředí."
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Škola má komplexní systém podpory včetně psychologa, speciálních pedagogů a výchovného poradce.",
+        "evidence": "Školní poradenské pracoviště zajišťuje podporu všem žákům, včetně nadaných a ohrožených školním neúspěchem."
+      },
+      {
+        "tag": "Praktické vyučování",
+        "detail": "Kvalitní vedení praktické výuky s důrazem na bezpečnost, odbornost a individuální podporu žáků.",
+        "evidence": "Učitelé praktického vyučování oceňují snahu, poskytují individuální podporu a kontrolují pracovní postupy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Tradiční výuka",
+        "detail": "Převažuje frontální forma výuky s pasivitou žáků, málo se používají moderní metody a skupinové činnosti.",
+        "evidence": "Ve vyučovacích hodinách chyběly inovativní metody, práce se zdroji, kritické myšlení a problémové vyučování."
+      },
+      {
+        "tag": "Chybí zpětná vazba",
+        "detail": "Učitelé málo využívají sebehodnocení, vzájemné hodnocení a formativní hodnocení žáků.",
+        "evidence": "Závěry vyučovacích hodin postrádaly motivační shrnutí a zhodnocení práce žáků."
+      },
+      {
+        "tag": "Diferenciace",
+        "detail": "Individuální přístup k žákům s různými potřebami není dostatečně zaznamenán.",
+        "evidence": "Diferenciace vzdělávacího obsahu nebyla vždy zaznamenána ani pro žáky se speciálními potřebami, ani pro nadané."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s moderními metodami výuky a skupinovými aktivitami v teoretické výuce?",
+      "Jaké jsou výsledky maturitní zkoušky za poslední tři roky a jak se škola připravuje na zlepšení?",
+      "Jak probíhá přechod žáků do praxe a jaké jsou zkušenosti absolventů s jejich uplatněním na trhu práce?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a řemesla, kteří se chystají do praxe",
+      "Studenti, kteří si cení individuální podpory a poradenských služeb",
+      "Žáci, kteří se chtějí zapojit do soutěží a projektů s regionálními firmami"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní, interaktivní a moderní formy výuky",
+      "Studenti, kteří potřebují časté zpětné vazby a sebehodnocení",
+      "Žáci s vyšší potřebou individualizace a diferenciace obsahu"
+    ],
+    "plain_czech_summary": "Střední škola řemesel v Šumperku je zaměřena na praktickou přípravu do řemesel a obchodu. Silnou stránkou je kvalitní praktické vyučování a spolupráce s firmami, kde žáci získávají reálné zkušenosti. Škola má dobré poradenské služby a podporu pro žáky. Slabší je teoretická výuka, která se opírá především o frontální vyučování bez moderních metod. Chybí také zpětná vazba a individuální přístup k různým typům žáků. Škola je vhodná pro ty, kdo chtějí praktické vzdělání s podporou, ale méně pro ty, kdo preferují aktivní a interaktivní výuku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá tendence",
+      "key_numbers": [
+        "Výsledky ve společné části maturitní zkoušky měly kolísavou tendenci",
+        "Škola zpracovává rozbor výsledků formou sumarizace a analýzy příčin neúspěšnosti"
+      ],
+      "evidence": "Výsledky maturitní zkoušky se pravidelně vyhodnocují a navrhují se systémová opatření na zlepšení."
+    },
+    "absence": {
+      "trend": "Aktivní řešení",
+      "key_numbers": [
+        "Škola bezodkladně přijímá opatření na minimalizaci zvýšené absence žáků"
+      ],
+      "evidence": "Na dosahované výsledky vzdělávání pozitivně působí fakt, že škola bezodkladně přijímá opatření na minimalizaci zvýšené absence."
+    },
+    "support_services": [
+      "Školní psycholog s aktivní podporou všem žákům",
+      "Výchovný poradce a školní metodika prevence",
+      "Speciální pedagogové pro koordinaci asistentů pedagoga",
+      "Doučování a individuální konzultace pro žáky ohrožené neúspěchem",
+      "Adaptační a socializační aktivity pro nově příchozí žáky"
+    ],
+    "safety_climate": [
+      "Pozitivní vztahy mezi učiteli praktického vyučování a žáky",
+      "Důraz na dodržování pravidel bezpečnosti a hygieny při práci s technickými zařízeními",
+      "Systematická práce s třídními kolektivy na posilování vztahů mezi vrstevníky",
+      "Anonymní schránka důvěry pro postřehy a připomínky žáků",
+      "Primární preventivní program zaměřený na snižování negativních projevů v chování"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s Vysokou školou báňskou – Technickou univerzitou Ostrava",
+      "Spolupráce s regionálními energetickými subjekty",
+      "Smluvní partneři zajišťující praktické vyučování pro vyšší ročníky",
+      "Pořádání soutěží pro žáky základních škol a projektových dnů",
+      "Zapojení do projektů na volnočasových aktivitách a prevenci sociálně patologických jevů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, jasně rozlišuje silné a slabé stránky. Praktické informace pro rodiče jsou však zabaleny v odborném textu.",
+    "uncertainty_notes": [
+      "Konkrétní procenta úspěšnosti u maturit nejsou uvedena, pouze zmínka o kolísavé tendenci",
+      "Počet žáků se speciálními potřebami není specifikován",
+      "Detailní informace o absenci nejsou kvantifikovány"
+    ]
+  }
+}
+```

@@ -1,0 +1,120 @@
+{
+  "report_id": "GY4_600008690_2025-04-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:38:42.171664+00:00",
+  "run_finished_utc": "2026-02-09T13:39:07.868079+00:00",
+  "raw_file": "GY4_600008690_2025-04-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600008690_2025-04-07",
+    "school_profile": {
+      "school_type": "Všeobecné a sportovní gymnázium s domovem mládeže. Poskytuje osmiletý obor a dva čtyřleté obory (standardní gymnázium a gymnázium se sportovní přípravou). Zaměření na IT a sport.",
+      "inspection_period": "7. 4. 2025 – 9. 4. 2025",
+      "school_change_summary": "Od poslední inspekce se navýšil počet žáků, zkvalitnila se prezentace na veřejnosti, vznikl marketingový kroužek, byla zapojena rodilá mluvčí do výuky angličtiny. Probíhá průběžná obnova budov a zahájení nového oboru informační technologie."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Sportovní úspěchy",
+          "detail": "Žáci sportovního gymnázia dosahují výborných výsledků v běžeckém lyžování, snowboardingu a cyklistice, včetně umístění v světovém poháru.",
+          "evidence": "Žákyně se umístila na šestém místě světového poháru ve snowboardcrossu v tomto školním roce."
+        },
+        {
+          "tag": "Mezinárodní partnerství",
+          "detail": "Dlouhodobá spolupráce s německým gymnáziem a program Euregio posilují jazykové a sociální kompetence.",
+          "evidence": "Partnerství s gymnáziem ve Waldkirchenu a reciproční pobyty v rámci programu Euregio."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Efektivní systém včasné identifikace ohrožených žáků a poskytování doučování minimalizuje neúspěšnost.",
+          "evidence": "Minimální počet neprospívajících, zhruba třetina prospívá s vyznamenáním, v nižším gymnáziu polovina."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená variabilita výuky",
+          "detail": "Dominuje frontální výuka s prezentacemi, málo skupinové práce a práce s různými informačními zdroji.",
+          "evidence": "Inspektoři zjistili nedostatek příležitostí pro rozvoj komunikačních dovedností a kritického myšlení."
+        },
+        {
+          "tag": "Vlhkost v některých učebnách",
+          "detail": "Historická budova ve svahu má v přízemních učebnách občasný výskyt plísní, což může představovat zdravotní riziko.",
+          "evidence": "Inspektoři doporučili stavební úpravy k vyřešení problémů s vlhnutím zdiva."
+        },
+        {
+          "tag": "Omezené prostory domova mládeže",
+          "detail": "Ubytování je stísněné, chybí regenerační místnost, kuchyňka není optimální pro vaření.",
+          "evidence": "Domov mládeže je v kulturní památce, která limituje jeho rozvoj."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se ve výuce uplatňuje skupinová práce a práce s různými zdroji informací?",
+        "Jaké jsou plány na řešení vlhkosti v některých učebnách a kdy se mají stavební úpravy uskutečnit?",
+        "Jak probíhá příprava na vysoké školy a jaké jsou úspěchy absolventů při přijetí na univerzity?"
+      ],
+      "who_school_fits": [
+        "Sportovně nadaní žáci, kteří chtějí kombinovat kvalitní vzdělání s profesionálním sportovním tréninkem",
+        "Žáci se zájmem o informační technologie (nový obor od roku 2025/2026)",
+        "Žáci s ambicí studovat na vysokých školách, zejména v technických oborech"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují velmi individualizovanou výuku a práci v malých skupinách – škola se zaměřuje spíše na frontální výuku",
+        "Žáci s alergií na plísně nebo respiračními problémy – vzhledem k vlhkosti v některých učebnách",
+        "Žáci, kteří preferují praktickou výuku s experimentováním – ta se vyskytuje jen příležitostně"
+      ],
+      "plain_czech_summary": "Gymnázium v Vimperku je kvalitní školou se silným zaměřením na sport a IT. Žáci dosahují výborných výsledků v soutěžích a vysokoškolském studiu. Škola má dobré mezinárodní kontakty a efektivně podporuje slabší žáky. Hlavní výzvou je rozšíření variability vyučovacích metod – zatím dominuje frontální výuka. Fyzické prostředí se postupně zlepšuje, ale některé učebny mají problémy s vlhkostí. Domov mládeže je prostorově omezený."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní, srovnatelný s celorepublikovým průměrem",
+        "key_numbers": [
+          "Minulý školní rok: 1 neúspěšný ze 39 maturantů",
+          "Rok 2022: Mírný pokles kvůli distanční výuce, všichni žáci v následujícím roce uspěli",
+          "Zhruba třetina volí matematiku ve společné části"
+        ],
+        "evidence": "Výsledky jsou srovnatelné s celorepublikovým průměrem gymnaziálních oborů. V minulém školním roce ze 39 žáků jeden neuspěl."
+      },
+      "absence": {
+        "trend": "Velmi nízká",
+        "key_numbers": [
+          "Absence se udržuje na velmi nízké úrovni",
+          "Koreluje se studijními výsledky"
+        ],
+        "evidence": "Se studijními výsledky koreluje také absence, kterou se daří udržovat na velmi nízké úrovni."
+      },
+      "support_services": [
+        "Výchovná poradkyně (zároveň karierová poradkyně) – od letošního roku bez specializačního vzdělání, ale efektivní",
+        "Metodička prevence – zajišťuje preventivní programy a mapování vztahů v třídách",
+        "Asistenti pedagoga pro 9 žáků se speciálními vzdělávacími potřebami",
+        "Doučovací aktivity a individuální konzultace včetně vrstevnického učení",
+        "Online prostředí s uloženými výukovými materiály"
+      ],
+      "safety_climate": [
+        "Příjemné pracovní klima během sledované výuky",
+        "Efektivní rozdělení kompetencí vedení školy (teoretické vzdělání a sport/domov mládeže)",
+        "Detailní hodnocení práce pedagogů s poskytováním zpětné vazby",
+        "Adaptační programy pro nové žáky v prvních ročnících",
+        "Preventivní programy zaměřené na předcházení rizikovému chování"
+      ],
+      "partnerships_practice": [
+        "Memorandum se sdružením regionálních firem (2023) – exkurze, přednášky, workshopy",
+        "Spolupráce se Smíchovskou střední průmyslovou školou a gymnáziem na novém oboru IT",
+        "Partnerství s Fakultou elektrotechnickou Západočeské univerzity v Plzni",
+        "Dlouhodobé partnerství s gymnáziem ve Waldkirchenu (Německo)",
+        "Program Euregio – reciproční pobyty v českých a německých příhraničních školách",
+        "Spolupráce s národním parkem Šumava na environmentálních projektech",
+        "Spolupráce s městem Vimperk na charitativních a ekologických akcích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však poměrně dlouhé a složitě strukturované, zejména v části o průběhu vzdělávání. Připomínky ředitelky a stanovisko inspekce přidávají na jasnosti, ale také na objemu textu.",
+      "uncertainty_notes": [
+        "Inspektoři neuvedli konkrétní jména učitelů, u kterých zjistili nedostatky v metodice – ředitelka si stěžuje, že učitelé neznají detaily kritiky",
+        "Není jasné, jak dlouho budou trvat stavební úpravy na řešení vlhkosti v učebnách",
+        "Není specifikováno, jak dlouho bude v škole působit rodilá mluvčí z Fullbrightovy komise (pouze 1 školní rok)"
+      ]
+    }
+  }
+}

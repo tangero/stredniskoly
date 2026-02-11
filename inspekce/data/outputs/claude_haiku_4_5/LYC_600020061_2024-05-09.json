@@ -1,0 +1,117 @@
+{
+  "report_id": "LYC_600020061_2024-05-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:16:34.946847+00:00",
+  "run_finished_utc": "2026-02-09T16:16:56.874819+00:00",
+  "raw_file": "LYC_600020061_2024-05-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600020061_2024-05-09",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola (příspěvková organizace)",
+      "inspection_period": "9. 5. až 14. 5. 2024",
+      "school_change_summary": "V roce 2022 došlo ke změně vedení školy. Od 2023/2024 je škola zapojena do pokusného ověřování stupňovitého propojení oborů, které umožňuje žákům získat výuční list nebo pokračovat na vyšší odborné škole."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Škola vykazuje velmi dobré výsledky žáků při maturitní a závěrečné zkoušce.",
+          "evidence": "V posledních letech škola vykazuje velmi dobré výsledky žáků při konání maturitní a závěrečné zkoušky."
+        },
+        {
+          "tag": "Kvalitní odborná výuka",
+          "detail": "Praktické vyučování je dobře organizováno ve zdravotnických zařízeních s profesionálním vedením instruktorů.",
+          "evidence": "Praktické vyučování bylo dobře organizováno a zajištěno na odděleních lůžkové péče s vedením instruktorů."
+        },
+        {
+          "tag": "Bohatá mimoškolní činnost",
+          "detail": "Škola nabízí kroužky, soutěže, charitativní akce, projekty Erasmus+ a školní parlament.",
+          "evidence": "Žáci se mohou účastnit soutěží, charitativních akcí, dobrovolnické práce a pracovních návštěv v zahraničí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečné formativní hodnocení",
+          "detail": "V teoretické výuce se málo používá sebehodnocení a zpětná vazba o zvládnutí učiva.",
+          "evidence": "Ojediněle docházelo ke zhodnocení vytyčeného cíle a realizaci aktivit představujících zpětnou vazbu."
+        },
+        {
+          "tag": "Chybí diferenciace podle schopností",
+          "detail": "Učitelé nedostatečně přizpůsobují úkoly individuálním schopnostem jednotlivých žáků.",
+          "evidence": "Cílená diferenciace zadávaných úkolů podle individuálních schopností žáků zaznamenána nebyla."
+        },
+        {
+          "tag": "Málo práce s informačními zdroji",
+          "detail": "Výuka nedostatečně rozvíjí kritické myšlení a vyhledávání informací z různých zdrojů.",
+          "evidence": "V menší míře docházelo k práci s různými informačními zdroji a aktivitám podporujícím kritické myšlení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s nadanými žáky a jak je podporuje v jejich rozvoji?",
+        "Jaké jsou možnosti individuálního přístupu k žákům s různými schopnostmi v jednotlivých předmětech?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a práci s informacemi v digitálním věku?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o zdravotnické obory a praktickou činnost v péči o pacienty",
+        "Studenti, kteří si cení kvalitní odborné výuky a přímé praxe v nemocnicích",
+        "Žáci, kterým vyhovuje bohatá mimoškolní činnost a možnost účasti v projektech Erasmus+"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovaný přístup a diferenciované úkoly podle svých schopností",
+        "Studenti, kteří se spoléhají na časté zpětné vazby a formativní hodnocení během výuky",
+        "Žáci s nadáním, kteří potřebují systematickou podporu a výzvu v teoretických předmětech"
+      ],
+      "plain_czech_summary": "Střední zdravotnická škola v Opavě je dobře vedená institucí se silným zaměřením na praktickou přípravu budoucích zdravotnických pracovníků. Výuka je kvalitní, zejména v odborných předmětech a praktickém vyučování ve zdravotnických zařízeních. Škola dosahuje výborných výsledků u maturit a nabízí bohatý mimoškolní program. Hlavní oblastí ke zlepšení je větší individualizace výuky, více formativního hodnocení a rozvoj kritického myšlení žáků. Škola je vhodná pro motivované studenty se zájmem o zdravotnické obory."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní",
+        "key_numbers": [
+          "Velmi dobré výsledky v posledních letech",
+          "408 žáků ve školním roce 2023/2024",
+          "112 žáků v oboru Zdravotnické lyceum"
+        ],
+        "evidence": "V posledních letech škola vykazuje velmi dobré výsledky žáků při konání maturitní a závěrečné zkoušky."
+      },
+      "absence": {
+        "trend": "Pozitivní",
+        "key_numbers": [
+          "Minimální výskyt rizikového chování",
+          "Klesající tendence úrazovosti žáků",
+          "18 žáků se speciálními vzdělávacími potřebami"
+        ],
+        "evidence": "Úrazovost žáků má klesající tendenci, vedení školy provádí její analýzu a přijímá potřebná opatření."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště se složením představujícím významnou podporu pro žáky",
+        "Výchovná poradkyně a školní metodička prevence",
+        "Individuální konzultace pro žáky s rizikem školního neúspěchu",
+        "Adaptační plány a mentorství pro začínající pedagogy"
+      ],
+      "safety_climate": [
+        "Systematické vytváření bezpečného prostředí pro vzdělávání",
+        "Pravidelné seznamování žáků s pravidly bezpečného chování",
+        "Minimální výskyt rizikového chování díky účinné preventivní strategii",
+        "Příznivá atmosféra mezi vyučujícími a žáky s důrazem na respektování pravidel"
+      ],
+      "partnerships_practice": [
+        "Efektivní spolupráce se zdravotnickými zařízeními pro praktické vyučování",
+        "Projekt Erasmus+ s pracovními návštěvami ve Španělsku",
+        "Dobrovolnická práce v domech pro seniory a psychiatrické nemocnici",
+        "Vedení kurzů první pomoci pro veřejnost",
+        "Spolupráce se zřizovatelem (Moravskoslezský kraj) a vícezdrojové financování"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní příklady a citace z pozorování. Slabší je v některých místech příliš odborný jazyk, ale pro rodiče jsou klíčové informace jasné.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní procenta úspěšnosti u maturit, pouze kvalitativní hodnocení 'velmi dobré'",
+        "Chybí konkrétní data o počtu žáků s rizikem školního neúspěchu a jejich podpoře",
+        "Není jasné, jak konkrétně se škola zaměřuje na nadané žáky - inspektoři to označili jako oblast ke zlepšení"
+      ]
+    }
+  }
+}

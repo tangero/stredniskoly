@@ -1,0 +1,97 @@
+```json
+{
+  "report_id": "GY4_600014398_2025-03-24",
+  "school_profile": {
+    "school_type": "Gymnázium a Jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "24. března až 27. března 2025",
+    "school_change_summary": "Od září 2024 nový ředitel a změna struktury řízení. Nově vytvořený tým koordinátorů kompetencí velmi dobře plní účely poradního orgánu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Výsledky maturitní zkoušky jsou stabilně vysoké a patří mezi nejlepší na úrovni kraje, výrazně lepší než celorepublikový průměr.",
+        "evidence": "Výsledky žáků ze společné části maturitních zkoušek patří mezi jedny z nejlepších na úrovni kraje a jsou výrazně lepší ve srovnání s celorepublikovými výsledky."
+      },
+      {
+        "tag": "Partnerství s prestižními institucemi",
+        "detail": "Škola spolupracuje s Centrem pro talentovanou mládež, čtyřmi vysokými školami a zahraničními partnery, což žákům otevírá mimořádné příležitosti.",
+        "evidence": "Nadstandardní je partnerství s CTM. Na vysoké úrovni je spolupráce se čtyřmi vysokými školami. Absolvovalo 166 žáků jeden a více on-line kurzů."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují dlouhodobě čelních umístění v literárních, společenskovědních, cizojazyčných, matematických a přírodovědných soutěžích.",
+        "evidence": "Mezi významné úspěchy patří již dlouholetá čelní umístění v literárních, společenskovědních, cizojazyčných, matematických, přírodovědných a sportovních soutěžích."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Chybí závěrečné vyhodnocení lekcí",
+        "detail": "V některých předmětech chybí na konci hodiny shrnutí a zpětná vazba pro žáky o jejich pokroku.",
+        "evidence": "Kromě výuky českého jazyka a literatury a výtvarné výchovy chybělo závěrečné vyhodnocení stanovených vzdělávacích cílů."
+      },
+      {
+        "tag": "Nejednotný přístup k sebehodnocení",
+        "detail": "V ekonomice žáci nedostali zpětnou vazbu od učitele a neproběhlo jejich sebehodnocení.",
+        "evidence": "Zpětnou vazbu však dostali žáci pouze od spolužáků. Hodnocení nebo sebehodnocení žáků neproběhlo."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá spolupráce s Centrem pro talentovanou mládež a jaké jsou podmínky pro zapojení žáků?",
+      "Jaké jsou možnosti absolvování mezinárodních AP zkoušek a jak se liší od běžné maturitní zkoušky?",
+      "Jak škola podporuje žáky se speciálními vzdělávacími potřebami a jaké má poradenské služby?"
+    ],
+    "who_school_fits": [
+      "Talentovaní žáci zainteresovaní v hlubším studiu věd, jazyků a matematiky",
+      "Sportovně nadaní žáci, kterým vyhovuje kombinace kvalitního gymnázia se sportovní přípravou",
+      "Žáci s ambicí studovat na prestižních vysokých školách doma i v zahraničí"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální pozornosti a zpětné vazby v každé hodině",
+      "Žáci bez vnitřní motivace k samostudiu a práci s on-line kurzy",
+      "Žáci, kteří preferují méně náročné gymnázium bez vysokých nároků na výsledky"
+    ],
+    "plain_czech_summary": "Gymnázium v Zlíně je prestižní školou s výbornou pověstí. Žáci dosahují špičkových výsledků u maturit a pravidelně se umisťují v soutěžích. Škola nabízí unikátní partnerství s Centrem pro talentovanou mládež a vysokými školami. Nový ředitel přinesl svěží přístup a zlepšil řízení. Jediným slabším místem je, že v některých hodinách chybí závěrečné shrnutí a zpětná vazba. Ideální pro ambiciózní žáky s vnitřní motivací."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoká a výrazně nadprůměrná",
+      "key_numbers": [
+        "Výsledky patří mezi nejlepší na úrovni kraje",
+        "Výrazně lepší než celorepublikový průměr",
+        "Osmiletí žáci dosahují statisticky nejlepších výsledků s vyznamenáním"
+      ],
+      "evidence": "Výsledky žáků ze společné části maturitních zkoušek patří mezi jedny z nejlepších na úrovni kraje a jsou výrazně lepší ve srovnění s celorepublikovými výsledky."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněna",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva se absencí žáků nezabývá."
+    },
+    "support_services": [
+      "Tým dvou výchovných poradkyň, metodika prevence a školní psycholožka",
+      "Konzultační hodiny a doučování pro žáky ohrožené školním neúspěchem",
+      "Individuální podpora pro žáky se speciálními vzdělávacími potřebami prostřednictvím pedagogických intervencí"
+    ],
+    "safety_climate": [
+      "Systematické upozorňování na rizika a poučování o bezpečném chování",
+      "Úprava venkovního schodiště a rozšíření elektronického systému na vstupech",
+      "Cílená práce na eliminaci společensky nežádoucích jevů a vytváření pozitivních vztahů"
+    ],
+    "partnerships_practice": [
+      "Centrum pro talentovanou mládež – 166 žáků absolvovalo on-line kurzy",
+      "Čtyři vysoké školy – přednášky, workshopy, semináře, stáže, využívání laboratoří",
+      "Sportovní kluby, Česká televize, ambasáda Francouzské republiky, Erasmus+ projekty"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk bez zbytečného úřednického stylu. Všechna tvrzení jsou podpořena konkrétními příklady a citacemi. Informace jsou snadno pochopitelné pro rodiče bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Absence není zmíněna – není jasné, jaká je absence žáků na škole",
+      "Počet žáků se speciálními potřebami (26) je zmíněn, ale není jasné, jak konkrétně se jim věnuje individuální péče",
+      "Není specifikováno, kolik žáků využívá konzultační hodiny a doučování"
+    ]
+  }
+}
+```

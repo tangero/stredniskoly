@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "SOS_600012450_2023-03-15",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště zemědělské, obor Opravář zemědělských strojů",
+    "inspection_period": "15. až 17. března 2023",
+    "school_change_summary": "Nová ředitelka školy, která zpracovala koncepci rozvoje na 2020–2023. Došlo k výmazu nástavbového oboru a zápisu nového oboru Mechanizace a služby. Počet žáků mírně stoupá (130 žáků v šesti třídách k 30. 9. 2022)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vstřícné prostředí",
+        "detail": "Klidná pracovní atmosféra podporující učení s dobrými vztahy mezi žáky a učiteli.",
+        "evidence": "Vstřícná a respektující pracovní atmosféra přispívá k utváření pozitivního učebního prostředí."
+      },
+      {
+        "tag": "Kvalitní výuka",
+        "detail": "Učitelé používají efektivní metody, čtenářskou gramotnost a formativní hodnocení.",
+        "evidence": "Uplatňování efektivních metod práce, zařazování prvků čtenářské gramotnosti a formativního hodnocení."
+      },
+      {
+        "tag": "Bohatá nabídka aktivit",
+        "detail": "Pestrá zájmová činnost včetně kroužků, sportů a odborných soutěží s dobrými výsledky.",
+        "evidence": "Pestrá nabídka zájmových aktivit, dlouhodobě dobré výsledky v soutěžích odborných dovedností."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Výuka se někdy přizpůsobuje nejpomalejším žákům, schopnější žáci nejsou dostatečně zatíženi.",
+        "evidence": "Nižší míra diferenciace výuky podle možností žáků, někdy volili tempo podle nejpomalejších žáků."
+      },
+      {
+        "tag": "Slabá zpětná vazba",
+        "detail": "Závěry hodin s účelnou zpětnou vazbou od žáků často chybí.",
+        "evidence": "Méně často využívané závěry hodin k získání účelné zpětné vazby od žáků k vlastnímu pokroku."
+      },
+      {
+        "tag": "Kázeňské problémy",
+        "detail": "22 žáků mělo uloženo podmíněné vyloučení, negativní dopad pandemie na docházku.",
+        "evidence": "Dvacet dva žáků mělo jako kázeňské opatření uloženo podmíněné vyloučení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku schopnějším žákům, aby nebyli nudní?",
+      "Jaké jsou možnosti doučování a individuální podpory pro žáky v obtížích?",
+      "Jak se škola vypořádala s negativními dopady pandemie na chování a docházku žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o zemědělství a techniku s praktickým zaměřením",
+      "Chlapci a dívky, kterým vyhovuje kombinace teoretické a praktické výuky v dílnách",
+      "Žáci, kteří potřebují podporu a vstřícné prostředí s jasně nastavenými pravidly"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s vysokými nároky na individualizaci a diferenciaci výuky",
+      "Žáci, kteří potřebují časté a detailní zpětnou vazbu na svůj pokrok",
+      "Žáci se závažnými kázeňskými problémy, kterým by prospěla přísněji strukturovaná škola"
+    ],
+    "plain_czech_summary": "Střední odborné učiliště v Chvaleticích je dobře vedená škola s příjemným prostředím a kvalitní výukou. Učitelé používají moderní metody a žáci se aktivně zapojují. Škola nabízí bohatou nabídku kroužků a soutěží. Hlavní slabinou je, že výuka není vždy dostatečně přizpůsobena jednotlivým žákům – někdy se přizpůsobuje nejpomalejším. Škola řeší i kázeňské problémy z doby pandemie. Vhodná pro prakticky zaměřené žáky zajímající se o techniku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Obor s maturitní zkouškou (41-45-M/01 Mechanizace a služby) nebyl v posledních třech letech otevřen z důvodu nízkého zájmu.",
+      "key_numbers": [
+        "130 žáků v šesti třídách",
+        "Kapacita 180 žáků",
+        "Mírně stoupající trend počtu žáků"
+      ],
+      "evidence": "Obor vzdělání zakončený maturitní zkouškou nebyly v posledních třech letech z důvodu nízkého zájmu otevřeny."
+    },
+    "absence": {
+      "trend": "Negativní dopad pandemie COVID-19 na docházku, řešeno doučováním a motivačními stipendiemi.",
+      "key_numbers": [
+        "60 % žáků pobírá stipendium za bezproblémovou docházku",
+        "22 žáků s podmíněným vyloučením",
+        "9 žáků opakuje ročník"
+      ],
+      "evidence": "Škola řešila negativní dopad pandemie COVID-19 a karanténních opatření na docházku. Ke dni inspekce pobíralo stipendium 60 % žáků."
+    },
+    "support_services": [
+      "Výchovné poradenství a primární prevence zajišťované metodičkou prevence a výchovnou poradkyní",
+      "Individuální a skupinové doučování na základě doporučení učitelů",
+      "Výuka češtiny pro žáky z Ukrajiny (5 žáků)",
+      "Psychologická podpora na adaptačních kurzech",
+      "Elektronická schránka důvěry pro žáky"
+    ],
+    "safety_climate": [
+      "Jasně nastavená a zveřejněná pravidla prospívají předcházení negativního jednání",
+      "Žáci projevovali slušnost a dodržovali pravidla chování",
+      "Školní poradenské pracoviště řeší kázeňské problémy aktivně spoluprací se žáky",
+      "Kontrola osobních ochranných prostředků při odborném výcviku",
+      "Bezpečnostní školení na začátku každého vyučovacího dne"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá partnerství s Domovem mládeže Střední školy chovu koní Kladruby nad Labem",
+      "Spolupráce se základními školami na popularizaci oboru",
+      "Účast v národních kolech soutěží odborných dovedností",
+      "Realizace kroužků s technickým zaměřením pro okolní školy",
+      "Propojení s praxí prostřednictvím partnerů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však poměrně dlouhé a obsahují úřednickou terminologii, která může být pro rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Není jasné, jaké jsou konkrétní výsledky maturitních zkoušek, protože obor s maturitou není otevřen.",
+      "Chybí informace o počtu absolventů a jejich uplatnění na trhu práce.",
+      "Není specifikováno, jak dlouho trvá doučování a jaké jsou jeho výsledky."
+    ]
+  }
+}
+```

@@ -1,0 +1,30 @@
+{
+  "report_id": "GY4_600005143_2025-11-19",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T11:36:14.473483+00:00",
+  "run_finished_utc": "2026-02-09T11:36:47.382449+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY4_600005143_2025-11-19\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 7,\n  \"critical_issues\": [\n    \"Chybné vymezení inspekční činnosti na místě: kandidát uvádí 19. 11. 2025 – 24. 11. 2025, zdroj uvádí 19.–22. 11. 2025 a 24. 11. 2025 (23. 11. ve zdroji není).\",\n    \"Sekce „who_school_fits“ a „who_should_be_cautious“ obsahuje cílové skupiny a varování formulované jako doporučení pro rodiče, ale nejsou přímo doložitelné ve zdrojovém textu (jde o inference nad rámec zprávy).\",\n    \"Tvrzení o absenci jako „nízké“ není ve zdroji; zdroj uvádí „přijatelný počet zameškaných hodin“ a „zanedbatelnou míru neomluvené absence“, nikoli nízkou celkovou absenci.\"\n  ],\n  \"best_points\": [\n    \"Dobře zachycené silné stránky a oblasti ke zlepšení v souladu se závěry ČŠI, včetně přesných citací (zdroje/evidence).\",\n    \"Užitečné shrnutí klíčových rizik ve výuce: nižší míra aktivizace, slabší formativní zpětná vazba a nejednotnost hodnoticích postupů – to vše odpovídá textu zprávy.\",\n    \"Správně převzatá a pro rodiče relevantní maturitní data (35–40 % s vyznamenáním, 80 % nahrazuje profilovou část certifikátem, 31 žáků DSD II v roce 2024/2025) i informace o poradenském týmu (2 psycholožky, 2 asistentky pedagoga se speciálněpedagogickým úvazkem).\",\n    \"Zahrnutí informací o bezpečnosti (kamerový/elektronický systém, dohled) a preventivních mechanismech je v souladu se zdrojem a prakticky použitelné.\"\n  ],\n  \"one_line_verdict\": \"Výstup je převážně věrný a pro rodiče dobře použitelný, ale obsahuje chybné datumové vymezení inspekce a několik nedoložených „pro koho se škola hodí/nehodí“ tvrzení nad rámec zprávy.\"\n}",
+  "judge_output": {
+    "report_id": "GY4_600005143_2025-11-19",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 7,
+    "critical_issues": [
+      "Chybné vymezení inspekční činnosti na místě: kandidát uvádí 19. 11. 2025 – 24. 11. 2025, zdroj uvádí 19.–22. 11. 2025 a 24. 11. 2025 (23. 11. ve zdroji není).",
+      "Sekce „who_school_fits“ a „who_should_be_cautious“ obsahuje cílové skupiny a varování formulované jako doporučení pro rodiče, ale nejsou přímo doložitelné ve zdrojovém textu (jde o inference nad rámec zprávy).",
+      "Tvrzení o absenci jako „nízké“ není ve zdroji; zdroj uvádí „přijatelný počet zameškaných hodin“ a „zanedbatelnou míru neomluvené absence“, nikoli nízkou celkovou absenci."
+    ],
+    "best_points": [
+      "Dobře zachycené silné stránky a oblasti ke zlepšení v souladu se závěry ČŠI, včetně přesných citací (zdroje/evidence).",
+      "Užitečné shrnutí klíčových rizik ve výuce: nižší míra aktivizace, slabší formativní zpětná vazba a nejednotnost hodnoticích postupů – to vše odpovídá textu zprávy.",
+      "Správně převzatá a pro rodiče relevantní maturitní data (35–40 % s vyznamenáním, 80 % nahrazuje profilovou část certifikátem, 31 žáků DSD II v roce 2024/2025) i informace o poradenském týmu (2 psycholožky, 2 asistentky pedagoga se speciálněpedagogickým úvazkem).",
+      "Zahrnutí informací o bezpečnosti (kamerový/elektronický systém, dohled) a preventivních mechanismech je v souladu se zdrojem a prakticky použitelné."
+    ],
+    "one_line_verdict": "Výstup je převážně věrný a pro rodiče dobře použitelný, ale obsahuje chybné datumové vymezení inspekce a několik nedoložených „pro koho se škola hodí/nehodí“ tvrzení nad rámec zprávy."
+  }
+}

@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600006425_2025-02-17",
+  "school_profile": {
+    "school_type": "Střední odborná škola podnikatelská PROFIT, s.r.o. – obory Ekonomika a podnikání (Management obchodu a služeb, Management sportu) v denní formě a Podnikání v dálkové formě",
+    "inspection_period": "17. února 2025 až 20. února 2025",
+    "school_change_summary": "Od inspekce v roce 2020 došlo k personální obměně vedení (nová ředitelka od srpna 2024), rozšíření poradenského týmu, částečné obměně pedagogů, zlepšení digitálního vybavení a zavedení přísnějších kritérií přijímání a omlouvání absence. Počet žáků mírně vzrostl na 172 v denní formě a 17 v dálkové formě."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Ověřování odborných kompetencí",
+        "detail": "Škola komplexně ověřuje znalosti žáků formou obhajoby podnikatelského záměru, kde prokazují dobrou úroveň odborných, komunikačních a ICT kompetencí.",
+        "evidence": "Žáci projevují schopnost uplatnit probírané jevy při zpracovávání podnikatelského záměru a jeho obhajobě."
+      },
+      {
+        "tag": "Vlastní výukové materiály",
+        "detail": "Učitelé tvoří vlastní studijní materiály a skripta pro odborné i všeobecně vzdělávací předměty, včetně speciálních materiálů pro žáky s odlišným mateřským jazykem.",
+        "evidence": "Ediční činnost některých učitelů a tvorba vlastních výukových materiálů podporují vzdělávání žáků."
+      },
+      {
+        "tag": "Zlepšující se výsledky maturit",
+        "detail": "Úspěšnost v maturitní zkoušce vykazuje zlepšující se tendenci, v některých předmětech dosahuje průměru nebo jej překračuje.",
+        "evidence": "Ve školním roce 2023/2024 v češtině a angličtině byla úspěšnost srovnatelná nebo vyšší než průměr daného oboru."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoký podíl nekvalifikovaných učitelů",
+        "detail": "Čtvrtina pedagogických pracovníků (25 %) nesplňuje předpoklady odborné kvalifikace, přestože třetina si ji doplňuje studiem.",
+        "evidence": "Z 24 pedagogů 6 nemá požadovanou kvalifikaci, což klade zvýšené nároky na metodické vedení."
+      },
+      {
+        "tag": "Málo aktivizující výuka",
+        "detail": "V polovině hodin chybí aktivizující metody, kooperativní práce a práce s informačními zdroji, což snižuje zapojení všech žáků.",
+        "evidence": "Převládá frontální výuka, kooperativní formy jsou využity v menší míře, chybí formativní hodnocení a sebereflex žáků."
+      },
+      {
+        "tag": "Absence některých žáků",
+        "detail": "Přestože se absence snížila, některé žáky stále trápí vyšší počet zameškaných hodin a pozdní příchody.",
+        "evidence": "Ve školním roce 2023/2024 průměrně 125 zameškaných hodin na žáka, u některých žáků přetrvává vyšší absence."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s docházkou a pozdními příchody? Jaké jsou důsledky?",
+      "Jaké konkrétní kroky podniká škola na zvýšení kvalifikace svých učitelů a jak to ovlivňuje kvalitu výuky?",
+      "Jak se škola snaží více zapojit žáky do aktivní výuky a kooperativní práce, když inspekce zjistila, že je to slabší stránka?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o podnikání, ekonomiku a management, kteří chtějí praktické znalosti a kontakt s reálným podnikatelským prostředím",
+      "Aktivní sportovci, kterým škola nabízí individuální vzdělávací plány a flexibilitu v učení",
+      "Žáci se speciálními vzdělávacími potřebami nebo s odlišným mateřským jazykem, kterým škola věnuje cílenou podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují velmi aktivní a interaktivní výuku – v polovině hodin převládá frontální přístup s menší mírou zapojení",
+      "Rodiny, které očekávají, že všichhlí učitelé budou mít vysokou kvalifikaci – čtvrtina pedagogů nemá požadovanou odbornou kvalifikaci",
+      "Žáci se sklonem k absencím – škola má zpřísněné podmínky pro omlouvání a vyžaduje vysokou docházku"
+    ],
+    "plain_czech_summary": "PROFIT je menší soukromá střední škola zaměřená na podnikání a ekonomiku v Praze. Má dobré výsledky v maturitách a učí prakticky – žáci obhajují své podnikatelské záměry. Škola podporuje žáky se speciálními potřebami a sportovce. Slabší stránkou je, že čtvrtina učitelů nemá plnou kvalifikaci a výuka je často frontální bez dostatečného zapojení žáků. Absence některých žáků je stále vyšší, přestože se zlepšila. Škola se snaží zlepšovat a má novou ředitelku od srpna 2024."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se tendence od posledního inspekčního hodnocení v roce 2020",
+      "key_numbers": [
+        "Ve školním roce 2023/2024 v češtině a angličtině úspěšnost srovnatelná nebo vyšší než průměr daného oboru",
+        "V posledních třech letech zkoušku nekonali pouze jednotlivci, neprospěli také jednotlivci",
+        "64 % žáků ukončilo řádný cyklus vzdělávání ve školním roce 2023/2024"
+      ],
+      "evidence": "Úspěšnost žáků v dílčích zkouškách společné části MZ byla srovnatelná nebo vyšší než průměrná úspěšnost daného oboru v celorepublikovém srovnání."
+    },
+    "absence": {
+      "trend": "Zlepšující se, ale stále vyšší u některých žáků",
+      "key_numbers": [
+        "Školní rok 2021/2022: průměrně 177 zameškaných hodin na žáka (8 neomluvených)",
+        "Školní rok 2023/2024: průměrně 125 zameškaných hodin na žáka (0,5 neomluvených)",
+        "Snížení o 52 hodin na žáka za dva roky"
+      ],
+      "evidence": "Přijatá opatření (hranice povinné účasti, zpřísněný režim omlouvání) se částečně projevila ve sníženém počtu omluvených i neomluvených hodin."
+    },
+    "support_services": [
+      "Výchovná poradkyně, metodik prevence, zástupkyně ředitelky pro žáky s IVP a kariérová poradkyně",
+      "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami a aktivní sportovce",
+      "Dělené hodiny českého jazyka a odborných předmětů pro žáky s odlišným mateřským jazykem",
+      "Adaptační kurz, zimní lyžařský kurz a tematické programy pro všechny žáky",
+      "Psychologická péče poskytovaná zřizovatelem (škola reflektuje potřebu interního školního psychologa)"
+    ],
+    "safety_climate": [
+      "Ve školním roce 2023/2024 pouze dva žáci hodnoceni sníženým stupněm z chování",
+      "Počet uložených kázeňských opatření byl přiměřený",
+      "Partnerský přístup učitelů k žákům, avšak u některých pedagogů se projevila nedůslednost ve vymáhání pravidel",
+      "Preventivní postupy jsou převážně funkční, včetně důsledného zjišťování příčin absence a osobních jednání se žáky"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery přispívá k rozvoji odborných kompetencí žáků a provázanosti teoretické výuky s praxí",
+      "Kariérní poradenství využívá zapojení sociálních partnerů a sdílení zkušeností absolventů",
+      "Žáci se uplatňují na trhu práce nebo pokračují v terciárním studiu",
+      "Zahraniční pobyty a poznávací zájezdy upevňují jazykové znalosti a komunikativní dovednosti"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Inspekční zpráva je podrobná a obsahuje konkrétní data, ale je psána úředním stylem s dlouhými větami. Hlavní informace pro rodiče jsou jasné, ale vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní předměty vyučují nekvalifikovaní pedagogové – není jasné, zda jde o kritické obory",
+      "Není uvedeno, kolik žáků konkrétně má problémy s absencí – údaj o 'některých žácích' je vágní",
+      "Pokles úspěšnosti v maturitě ve školním roce 2023/2024 není detailně vysvětlen – není jasné, zda jde o dočasný jev"
+    ]
+  }
+}
+```

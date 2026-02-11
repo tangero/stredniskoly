@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY8_600017508_2023-05-09",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium, příspěvková organizace",
+    "inspection_period": "9. května 2023 až 12. května 2023",
+    "school_change_summary": "Od inspekce v 2016/2017 je počet žáků (597) a pedagogů stabilní. Rozšířen katalog volitelných předmětů a zájmových aktivit. Zvýšena úroveň materiálních podmínek (nová učebna, laboratoř, relaxační zóna)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Všichni žáci prospěli, 73 % s vyznamenáním; stoprocentní úspěšnost u maturit v letech 2018–2021.",
+        "evidence": "Ve školním roce 2021/2022 prospěli všichni žáci, 73 % s vyznamenáním. Stoprocentní úspěšnost při maturitě."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Funkční systém rozvoje nadání s mezinárodními programy, stážemi a vědeckými přednáškami.",
+        "evidence": "Nadaní žáci zapojeni do mezinárodních programů ve Vietnamu, Estonsku, Francii, Anglii, Španělsku; úspěchy v celostátních soutěžích."
+      },
+      {
+        "tag": "Kvalitní výuka cizích jazyků",
+        "detail": "Optimální střídání činností, vedení výuky v cílovém jazyce, velmi dobrá úroveň osvojení.",
+        "evidence": "Výuka se vyznačovala optimálním střídáním činností a efektivním využitím aktivizujících prvků; žáci prokazovali velmi dobrou úroveň."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivní výuka",
+        "detail": "V části hodin převažuje frontální výuka s pasivní rolí žáků, málo prostoru pro vlastní kompetence.",
+        "evidence": "Převažoval málo efektivní frontální způsob výuky s dominantním postavením vyučujícího; žáci v roli pasivních příjemců informací."
+      },
+      {
+        "tag": "Slabé sociální klima",
+        "detail": "Žáci hlásí obtížnější třídní spolupráci; učitelé mají náročnější komunikaci s vedením při názorových rozdílech.",
+        "evidence": "Z dotazníků vyplynulo, že je jejich třídní spolupráce obtížnější. Učitelé se vyjádřili, že je náročnější vzájemná komunikace s vedením."
+      },
+      {
+        "tag": "Nedostatečné sebehodnocení",
+        "detail": "Sebehodnocení a vzájemné hodnocení žáků se uplatňuje jen ojediněle, přestože bylo doporučeno již dříve.",
+        "evidence": "Doporučení z minulé inspekční činnosti přetrvává, doposud není přirozenou součástí výuky sebehodnocení a vzájemné hodnocení žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje na zlepšení sociálního klimatu a komunikace mezi učiteli a vedením?",
+      "Jaké konkrétní kroky podniká škola, aby se sebehodnocení stalo součástí běžné výuky?",
+      "Jak se škola vypořádává s nízkou úrazovostí při tělovýchovných aktivitách?"
+    ],
+    "who_school_fits": [
+      "Nadaní a talentovaní žáci, kterým vyhovuje intenzivní podpora a mezinárodní programy",
+      "Žáci se zájmem o cizí jazyky a kvalitní jazykové vzdělání",
+      "Motivovaní žáci s ambicí dosáhnout vysokých studijních výsledků a pokračovat na vysokých školách"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní, interaktivní výuku – v některých předmětech převažuje frontální přístup",
+      "Žáci se sociálními obtížemi – školní klima vykazuje napětí v třídních kolektivech",
+      "Žáci potřebující více individuálního vedení k samostatné práci s informacemi a kritickému myšlení"
+    ],
+    "plain_czech_summary": "Matiční gymnázium je prestižní škola s výbornými výsledky – všichni žáci prospěli, 73 % s vyznamenáním. Silně podporuje nadané žáky prostřednictvím mezinárodních programů a vědeckých aktivit. Výuka cizích jazyků je na vysoké úrovni. Problém je v tom, že část výuky je příliš frontální a pasivní pro žáky. Sebehodnocení se v hodinách téměř nepoužívá, přestože bylo doporučeno. Sociální klima tříd není ideální – žáci hlásí obtížnější spolupráci. Škola má moderní vybavení a podporu nadaných žáků, ale měla by více aktivizovat žáky a zlepšit klima."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "Stoprocentní úspěšnost v letech 2018/2019 až 2020/2021",
+        "Lepší výsledky než celostátní průměr v části maturitní zkoušky",
+        "73 % žáků prospělo s vyznamenáním v 2021/2022"
+      ],
+      "evidence": "U společné části maturitní zkoušky dosahovali žáci školy lepších výsledků, než je celostátní průměr. Ve školním roce 2018/2019 až 2020/2021 vykazovali stoprocentní úspěšnost."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se absencí nezabývá."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodička prevence a školní psycholožka",
+      "Individuální i skupinové doučování pro žáky se studijními obtížemi",
+      "Individuální vzdělávací plány pro 2 žáky se speciálními vzdělávacími potřebami"
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování a ochrany zdraví",
+      "Vedení provádí rozbor úrazovosti; k většině úrazů dochází při tělovýchovných aktivitách",
+      "Školní stravování zajišťuje blízká základní škola; nabídka občerstvení (automaty, pekárna)"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s externími partnery v oblasti prevence, péče o žáky se speciálními potřebami a podpory nadaných",
+      "Projektové aktivity s mezinárodními partnery umožňující mobilitu žáků a rozvoj jazykových dovedností",
+      "Spolupráce s odborníky z praxe na vědeckých přednáškách a workshopech"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně identifikovány. Chybí však konkrétní čísla o absenci a některé údaje jsou obecnější.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, jaká je absence žáků",
+      "Sociální klima je popsáno jako problematické, ale chybí konkrétní data z dotazníků",
+      "Úrazovost je zmíněna jako kolísavá, ale nejsou uvedena konkrétní čísla"
+    ]
+  }
+}
+```

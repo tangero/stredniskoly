@@ -1,0 +1,109 @@
+{
+  "report_id": "LYC_600011551_2024-04-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:18:47.678795+00:00",
+  "run_finished_utc": "2026-02-09T16:19:11.828004+00:00",
+  "raw_file": "LYC_600011551_2024-04-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600011551_2024-04-19",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola stavební s maturitními obory (Stavebnictví, Technické lyceum) a učebními obory (Instalatér, Tesař, Zedník, Malíř a lakýrník)",
+      "inspection_period": "19.–26. dubna 2024",
+      "school_change_summary": "Změna na postu ředitele školy. Navýšení počtu žáků od poslední inspekce. Vybudování nové relaxační místnosti pro žáky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Škola má dlouhodobou spolupráci s mnoha firmami v regionu, která zvyšuje kvalitu vzdělávání a propojuje teorii s praxí.",
+          "evidence": "Praktické vyučování probíhá na vlastních pracovištích i ve firmách zajištěných smluvně. Bohatá nabídka exkurzí a odborných přednášek."
+        },
+        {
+          "tag": "Úspěchy absolventů",
+          "detail": "Absolventi dosahují výborného uplatnění na trhu práce a žáci se umisťují v regionálních i mezinárodních soutěžích.",
+          "evidence": "Velmi dobré výsledky u závěrečných zkoušek učebních oborů. Významné úspěchy na krajské, národní i mezinárodní úrovni."
+        },
+        {
+          "tag": "Kvalita praktické výuky",
+          "detail": "Praktické vyučování je dobře organizované s efektivním propojením teorie a praxe.",
+          "evidence": "Pedagogové odborných předmětů vyučují i praktické vyučování. Pozitivní disciplinovanost žáků a dodržování bezpečnosti práce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v češtině",
+          "detail": "Žáci mají problémy s didaktickými testy z českého jazyka v maturitní zkoušce.",
+          "evidence": "Neúspěšnost přetrvává ve společné části maturitní zkoušky. Doučování a konzultace se zatím efektivně neprojevily."
+        },
+        {
+          "tag": "Nedostatečná diferenciace v teoretické výuce",
+          "detail": "Výuka v teoretických předmětech není dostatečně přizpůsobena individuálnímu potenciálu jednotlivých žáků.",
+          "evidence": "Nebyla sledována diferenciace činností s ohledem na využití studijního potenciálu žáků v teoretických předmětech."
+        },
+        {
+          "tag": "Slabé závěry hodin",
+          "detail": "V teoretických předmětech chybí sebehodnocení a vzájemné hodnocení žáků na konci hodin.",
+          "evidence": "Až na výjimky chybělo vzájemné hodnocení a sebehodnocení žáků. Méně často docházelo k vyhodnocení cíle hodiny."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší problémy s výsledky v českém jazyce? Jaké nové metody chystá?",
+        "Jak se liší přístup k nadaným žákům a žákům, kteří potřebují více podpory?",
+        "Jaké jsou konkrétní příklady spolupráce se firmami a jak se to promítá do výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla – učební obory mají výborné výsledky a absolventi se velmi dobře uplatňují",
+        "Žáci, kteří se chtějí učit v prostředí s moderní technikou a propojením teorie s praxí",
+        "Žáci, kteří se zajímají o stavebnictví a technické obory s možností účasti v soutěžích"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími dovednostmi v češtině – škola má problémy s výukou českého jazyka a didaktickými testy",
+        "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – v teoretických předmětech to není dostatečně zajištěno",
+        "Žáci, kteří se lépe učí diskusí a vlastním vyjadřováním – chybí prostor pro souvislý mluvený projev"
+      ],
+      "plain_czech_summary": "Stavební škola v Havlíčkově Brodě je dobře vedená s jasnou vizí. Silnou stránkou je propojení s firmami a praxí – absolventi se velmi dobře uplatňují. Praktická výuka je kvalitní. Problém je v teoretických předmětech, zejména v češtině, kde žáci selhávají v maturitních testech. Chybí také individuální přístup k žákům s různými schopnostmi a prostor pro jejich vyjadřování. Škola má co zlepšovat v závěrech hodin a v sebehodnocení žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – profilová část se zlepšila, společná část zůstává problematická",
+        "key_numbers": [
+          "278 žáků v maturitních oborech",
+          "Úspěšnost v profilové části maturitní zkoušky se pozitivně zlepšila",
+          "Neúspěšnost v didaktických testech z českého jazyka přetrvává"
+        ],
+        "evidence": "Opatření (úprava skladby volitelných předmětů) se pozitivně projevila v profilové části. Doučování a konzultace se zatím efektivně neprojevily v části společné."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Zpráva se absence nezabývá."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, metodička prevence, externí školní psycholožka",
+        "Efektivní spolupráce poradenských pracovníků s vedením, pedagogy a asistenty pedagoga",
+        "Řešení ojedinělých případů rizikových jevů s přijatými opatřeními a důsledným sledováním"
+      ],
+      "safety_climate": [
+        "Pozitivní disciplinovanost žáků a dodržování technologických postupů a zásad bezpečnosti práce",
+        "Úzká spolupráce žákovského parlamentu s vedením školy na úpravě školního prostředí",
+        "Vytvoření nové volnočasové místnosti pro žáky svépomocí"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá systematická spolupráce s mnoha vnějšími partnery zvyšující kvalitu vzdělávání",
+        "Praktické vyučování na vlastních pracovištích i ve firmách fyzických a právnických osob zajištěných smluvně",
+        "Bohatá nabídka exkurzí a odborných přednášek firem zprostředkovávajících praktické ukázky a technologické postupy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Absence dat o absenci a některé obecnější formulace snižují skóre o jeden bod.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, jak je na škole řešena absence žáků",
+        "Počet žáků v jednotlivých oborech není detailně rozepsán – známe jen celkový počet 401 žáků",
+        "Konkrétní procenta úspěšnosti v maturitě nejsou uvedena – pouze kvalitativní popis"
+      ]
+    }
+  }
+}

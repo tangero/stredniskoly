@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600019900_2022-11-22",
+  "school_profile": {
+    "school_type": "Církevní střední zdravotnická škola s.r.o. – střední odborné vzdělání v oborech Praktická sestra, Zdravotnické lyceum a Ošetřovatel",
+    "inspection_period": "22. listopadu 2022 až 24. listopadu 2022",
+    "school_change_summary": "Počet žáků vzrostl na 360 (kapacita naplněna na 95 %), zlepšily se materiální a prostorové podmínky (nové učebny, sociální zařízení, výtah), došlo k personální změně vedoucího střediska volného času."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka v reálném prostředí",
+        "detail": "Žáci se učí přímo v nemocnicích a zařízeních sociální péče pod vedením zkušených instruktorů, kde aplikují vědomosti na skutečných pacientech.",
+        "evidence": "Praktická výuka realizovaná ve zdravotnických zařízeních byla dobře zorganizována, žáci profesionálně komunikovali s pacienty a odváděli kvalitní práci."
+      },
+      {
+        "tag": "Silné sociální a dobrovolnické programy",
+        "detail": "Škola systematicky rozvíjí sociální kompetence žáků prostřednictvím dobrovolnické činnosti v domovech seniorů, hospicích a charitativních sbírkách.",
+        "evidence": "Den církevních škol, kdy žáci druhých a třetích ročníků navštíví jako dobrovolníci domovy pro seniory, hospic a další zařízení, má výrazný pozitivní dopad na jejich rozvoj."
+      },
+      {
+        "tag": "Kvalitní personální podpora",
+        "detail": "Škola má výchovnou poradkyni, metodičku prevence a školního kaplana, kteří poskytují adekvátní podporu všem žákům.",
+        "evidence": "Činnost školního poradenského pracoviště koordinuje výchovná poradkyně, která je zástupkyní ředitele, a efektivně řeší problémové jevy v součinnosti se zákonnými zástupci."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné vyhodnocování cílů v hodinách",
+        "detail": "Ve většině hodin chybí prostor pro vyhodnocení, zda žáci dosáhli stanovených vzdělávacích cílů.",
+        "evidence": "V převážné většině hodin neprobíhalo závěrečné hodnocení naplnění stanovených vzdělávacích cílů žáky ani učiteli."
+      },
+      {
+        "tag": "Omezená práce s různými zdroji informací",
+        "detail": "Žáci nejsou dostatečně vedeni k vyhledávání informací z různých zdrojů, spoléhají se především na učitele.",
+        "evidence": "Jen v menší části sledovaných hodin byli žáci vedeni k vyhledávání informací z různých zdrojů, méně byli vedeni k využití digitálních technologií."
+      },
+      {
+        "tag": "Slabší řízení střediska volného času",
+        "detail": "Vedoucí střediska se zaměřuje spíše na organizační záležitosti než na pedagogický rozvoj a monitoring vzdělávacích procesů.",
+        "evidence": "Vedení střediska nemá plán vlastního manažerského a pedagogického rozvoje, což má vliv na řízení a další rozvoj střediska."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá praktická výuka a jak často se žáci dostávají do zdravotnických zařízení?",
+      "Jaké jsou možnosti doučování a individuální podpory pro žáky, kteří mají problémy s učením?",
+      "Jak se škola podílí na přípravě žáků k maturitní zkoušce, zejména z jazyků?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí pracovat v sociálních službách nebo zdravotnictví a mají zájem o praktickou práci s lidmi",
+      "Studenti s křesťanským přesvědčením, kterým vyhovuje hodnota-orientovaný přístup školy",
+      "Žáci, kteří se chcete zapojit do dobrovolnické činnosti a sociálních projektů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují čistě teoretické vzdělání bez praktické složky",
+      "Studenti, kteří potřebují intenzivní individuální podporu v samostudiu a vyhledávání informací",
+      "Žáci, kteří nejsou motivováni křesťanským zaměřením školy"
+    ],
+    "plain_czech_summary": "Jde o kvalitní zdravotnickou školu s důrazem na praktickou přípravu a sociální rozvoj. Žáci se učí přímo v nemocnicích a sociálních zařízeních, což je velkou výhodou. Škola má dobré zázemí, podporuje dobrovolnickou činnost a má kvalitní poradenské služby. Inspektoři upozornili na to, že by se mělo více dbát na vyhodnocování cílů v hodinách a na vedení žáků k samostatnému vyhledávání informací. Výsledky maturit jsou srovnatelné s ostatními školami stejného typu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, srovnatelný s celorepublikovou úrovní",
+      "key_numbers": [
+        "Všichni žáci oboru s výučním listem vykonali závěrečnou zkoušku úspěšně v posledních třech letech",
+        "Celková úspěšnost při maturitní zkoušce je srovnatelná se školami stejné oborové skupiny"
+      ],
+      "evidence": "Výsledky vzdělávání žáků vykazují za poslední tři školní roky srovnatelnou úroveň. Škola přijala opatření k podprůměrným výsledkům z období před třemi lety v českém a cizím jazyce."
+    },
+    "absence": {
+      "trend": "Pozitivní trend díky preventivním opatřením",
+      "key_numbers": [
+        "Třídní učitelé vedou pravidelné třídnické hodiny věnované klimatu třídy a příčinám absence"
+      ],
+      "evidence": "Metodička prevence zajišťuje sociometrický průzkum v jednotlivých třídách, s výsledky pracuje formou pohovorů se žáky. Pozitivní dopad na snížení školní neúspěšnosti má činnost zájmových útvarů."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště koordinované výchovnou poradkyní (zástupkyní ředitele)",
+      "Metodička prevence zajišťující sociometrické průzkumy a pohovory se žáky",
+      "Školní kaplan poskytující rozhovory pro řešení osobních problémů žáků",
+      "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+      "Zájmové útvary střediska volného času zaměřené na doplnění a prohloubení znalostí"
+    ],
+    "safety_climate": [
+      "Malé množství úrazů, která jsou způsobena převážně při nácviku praktických činností v odborné výuce a tělesné výchově",
+      "Všechny sledované hodiny probíhaly v atmosféře vzájemného respektu a důvěry",
+      "Žáci kladli otázky bez obav a vyjadřovali se k tématu",
+      "Vyučující podporují otevřenou komunikaci a mají vstřícný přístup k žákům",
+      "Schránka důvěry instalována, ale využívána minimálně – žáci preferují individuální rozhovory"
+    ],
+    "partnerships_practice": [
+      "Přední zdravotnická zařízení a zařízení sociální péče – místa praktické výuky a nabídka pracovních míst absolventům",
+      "Zdravotnické a církevní školy – předávání zkušeností a spolupráce při zdravotnické osvětě",
+      "Neziskové organizace – zapojení žáků do charitativních sbírek",
+      "Zřizovatel (Kongregace Milosrdných sester) – strategický partner školy i střediska volného času",
+      "Domovy pro seniory, hospice, denní stacionáře – místa dobrovolnické činnosti"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však delší a složitější, což mírně snižuje jasnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta úspěšnosti u maturit, pouze že jsou srovnatelné s ostatními školami",
+      "Počet žáků se speciálními vzdělávacími potřebami je pouze 8 %, ale není jasné, jakou podporu přesně dostávají",
+      "Formální nedostatky ve smlouvách o praktické výuce jsou zmíněny, ale nejsou specifikovány"
+    ]
+  }
+}
+```

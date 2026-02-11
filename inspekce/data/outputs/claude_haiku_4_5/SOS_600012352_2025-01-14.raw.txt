@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600012352_2025-01-14",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola potravinářství a služeb (SPŠ)",
+    "inspection_period": "14. až 16. ledna 2025",
+    "school_change_summary": "Škola rozšířila vedení o zástupce pro teoretickou výuku, modernizuje vybavení (nová školní kuchyň), zvýšil se počet žáků. Pracuje zde 9 nových nebo začínajících učitelů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka",
+        "detail": "Praktické vyučování je velmi dobře organizované s moderním vybavením a efektivní spoluprací se sociálními partnery.",
+        "evidence": "Vybavení školních pracovišť je v souladu s potřebami praxe, žáci aktivně plní úkoly a respektují bezpečnost."
+      },
+      {
+        "tag": "Odborné úspěchy",
+        "detail": "Žáci úspěšně reprezentují školu v odborných soutěžích na krajské i celorepublikové úrovni.",
+        "evidence": "Zejména žáci oborů Pekař a Cukrář dosahují výrazných úspěchů, prodej jejich výrobků ve školní prodejně je velmi žádaný."
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Atmosféra ve škole je bezpečná a přátelská s otevřenou komunikací.",
+        "evidence": "Vedení školy je vstřícné, žáci se mohou podílet na změnách prostřednictvím žákovského parlamentu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "Hrubá neúspěšnost v maturitní zkoušce kolísá, v roce 2024 dosáhla téměř 40 procent.",
+        "evidence": "Zvlášť problematický je nástavbový obor Technologie potravin s neúspěšností 64,7 procent, zejména v cizím jazyce (52,9 procent)."
+      },
+      {
+        "tag": "Nedostatečná individuální péče",
+        "detail": "Chybí cílená podpora žáků se speciálními potřebami a nadaných žáků, výchovná poradkyně nenavštěvuje hodiny.",
+        "evidence": "Poradenské služby zajišťuje pouze jedna učitelka, školní psycholožka je přítomna jen dva dny týdně."
+      },
+      {
+        "tag": "Kvalita teoretické výuky",
+        "detail": "Teoretické hodiny mají méně promyšlenou strukturu, chybí jasné cíle a aktivizující metody.",
+        "evidence": "Učitelé často seznamují žáky s obsahem, ne s cílem hodiny, chybí závěrečné zhodnocení a zpětná vazba."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s matematikou nebo cizím jazykem, zejména před nástupem do nástavbového studia?",
+      "Jaké jsou plány na zlepšení výsledků maturitní zkoušky, zvlášť v nástavbovém oboru Technologie potravin?",
+      "Jak je zajištěna individuální péče pro žáky se speciálními vzdělávacími potřebami a jak se pracuje s nadanými žáky?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a gastronomii, kteří se chtějí učit v moderně vybaveném prostředí blízko reálné praxe.",
+      "Studenti, kteří preferují učení prostřednictvím praktických činností a spolupráce se sociálními partnery.",
+      "Žáci, kteří chtějí získat profesní kvalifikace a prezentovat se v odborných soutěžích."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími předpoklady v matematice a cizích jazycích, zvlášť pokud plánují pokračovat v nástavbovém studiu.",
+      "Studenti, kteří potřebují intenzivní individuální podporu a diferenciovanou výuku podle svých schopností.",
+      "Žáci s odlišným mateřským jazykem, kterých je ve škole 36 a nejsou dostatečně monitorováni."
+    ],
+    "plain_czech_summary": "SPŠ potravinářství je silná v praktické výuce a odborných úspěších žáků. Má moderní vybavení a dobrou spolupráci s firmami. Problém je v teoretické výuce – hodiny nejsou dobře strukturované, chybí jasné cíle a aktivizace žáků. Maturitní zkoušky mají vysokou neúspěšnost, zvlášť v nástavbovém oboru. Individuální péče je nedostatečná – jen jedna výchovná poradkyně pro 455 žáků. Škola je vhodná pro prakticky zaměřené žáky, ale slabší studenti v teoretických předmětech by měli být opatrní."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý s tendencí k horším výsledkům",
+      "key_numbers": [
+        "2022: hrubá neúspěšnost 39,0 procent",
+        "2023: hrubá neúspěšnost 20,0 procent",
+        "2024: hrubá neúspěšnost téměř 40 procent"
+      ],
+      "evidence": "Nástavbový obor Technologie potravin má zvlášť vysokou neúspěšnost 64,7 procent, v cizím jazyce 52,9 procent."
+    },
+    "absence": {
+      "trend": "Pozitivní zlepšení",
+      "key_numbers": [
+        "Průměrně 166 vyučovacích hodin zameškaných na žáka za rok 2023/2024",
+        "Pokles absence oproti poslední inspekci"
+      ],
+      "evidence": "Vedení školy sleduje a vyhodnocuje absenci, došlo k jejímu snížení."
+    },
+    "support_services": [
+      "Výchovné poradenství zajišťuje 1 učitelka",
+      "Školní psycholožka přítomna 2 dny v týdnu",
+      "Intenzivní doučování a skupinové konzultace pro žáky s rizikem neúspěchu",
+      "40 žáků se speciálními vzdělávacími potřebami, 16 má nastavená podpůrná opatření"
+    ],
+    "safety_climate": [
+      "Atmosféra je bezpečná a přátelská",
+      "Vedení komunikuje a řeší všechny nastalé situace",
+      "Žáci se mohou podílet na změnách prostřednictvím žákovského parlamentu",
+      "Aktualizace školní sociální sítě pomáhá odhalovat potenciální rizika v chování žáků"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobě osvědčená spolupráce s mnoha sociálními partnery a profesními organizacemi",
+      "Smluvní pracoviště umožňují žákům poznat reálné a moderně vybavené provozy",
+      "Zahraniční zájezdy, pobyty a odborné stáže v rámci Erasmu",
+      "Organizace odborných kurzů a nabídka profesních kvalifikací"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, jasně identifikuje silné stránky (praktická výuka, odborné úspěchy) a slabé stránky (teoretická výuka, maturitní výsledky, individuální péče). Konkrétní čísla a příklady jsou dostupné.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně se plánuje rozšíření poradenského pracoviště – zda se již děje nebo je to jen doporučení.",
+      "Chybí informace o tom, jaké konkrétní opatření škola již přijala v letošním roce a jaké jsou jejich výsledky.",
+      "Není specifikováno, jak se bude řešit vysoká neúspěšnost v nástavbovém oboru – zda se zvažuje jeho utlumení nebo jen zlepšení."
+    ]
+  }
+}
+```

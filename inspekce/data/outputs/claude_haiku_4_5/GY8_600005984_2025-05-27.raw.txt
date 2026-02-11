@@ -1,0 +1,87 @@
+```json
+{
+  "report_id": "GY8_600005984_2025-05-27",
+  "school_profile": {
+    "school_type": "Gymnázium se školním klubem (zájmové vzdělávání)",
+    "inspection_period": "27. května až 28. května 2025",
+    "school_change_summary": "Od září 2024 škola provozuje školní klub s 50 účastníky. Nový ředitel (od 2024/2025) nastavil podmínky pro zájmové vzdělávání jako součást aktivního života školy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a personál",
+        "detail": "Ředitel zajistil odpovídající personální, materiální a finanční podmínky pro školní klub s 10 pedagogy, všichni splňují kvalifikační předpoklady.",
+        "evidence": "Ředitel zajistil pro činnost ŠK odpovídající personální, materiální a finanční podmínky."
+      },
+      {
+        "tag": "Pestrá nabídka aktivit",
+        "detail": "Školní klub nabízí vzdělávací, umělecké, kulturní a venkovní aktivity včetně programování, Klubu vědců, hudby a meditace.",
+        "evidence": "Pestrá nabídka aktivit ve školním klubu cíleně podporuje zájmy, motivaci a potřeby každého účastníka."
+      },
+      {
+        "tag": "Příznivá atmosféra",
+        "detail": "Pedagogové přistupují k účastníkům s respektem a individuálním zájmem, vytváří vstřícné klima.",
+        "evidence": "Pedagogičtí pracovníci přistupovali k účastníkům s respektem a s individuálním zájmem, poskytovali jim odpovídající podporu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nové zařízení",
+        "detail": "Školní klub funguje teprve od září 2024 v pronajatém prostoru v nákupní galerii.",
+        "evidence": "Od 1. 9. 2024 i činnost školního klubu. ŠK využívá ke svému provozu prostorové podmínky v nákupní galerii v Praze 5."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak probíhá komunikace mezi školním klubem a gymnáziem? Jak se aktivity navazují na vzdělávání v hlavní škole?",
+      "Jaké jsou konkrétní podmínky pronájmu prostoru v nákupní galerii a jak dlouhodobě je zajištěn?",
+      "Jak se řeší bezpečnost a dohled účastníků během aktivit mimo hlavní budovu gymnázia?"
+    ],
+    "who_school_fits": [
+      "Žáci gymnázia, kteří chtějí smysluplně trávit volný čas s podporou kvalitních pedagogů",
+      "Děti se zájmem o programování, vědu, umění nebo venkovní aktivity",
+      "Účastníci, kteří potřebují doučování nebo podporu při studijních potížích"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kterým záleží na tradičním prostředí – klub sídlí v nákupní galerii, ne v hlavní budově",
+      "Rodiny vyžadující dlouhodobou stabilitu – klub funguje teprve od září 2024"
+    ],
+    "plain_czech_summary": "Gymnázium Přírodní škola provozuje od září 2024 kvalitní školní klub s 50 účastníky. Inspekce oceňuje profesionální přístup vedení, kvalifikované pedagogy a pestrou nabídku aktivit od programování přes vědu až po umění. Atmosféra je přátelská a podporující. Klub sídlí v pronajatém prostoru v nákupní galerii. Inspekce nenašla závažné nedostatky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Není relevantní pro školní klub",
+      "key_numbers": [],
+      "evidence": "Inspekce se zaměřila na zájmové vzdělávání ve školním klubu, nikoli na maturitní výsledky gymnázia."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněna",
+      "key_numbers": [],
+      "evidence": "Zpráva se nezabývá absencí účastníků školního klubu."
+    },
+    "support_services": [
+      "Doučování a konzultace pro účastníky s riziky studijního neúspěchu",
+      "Vrstevnické učení podporující kooperaci",
+      "Individuální pohovory a skupinová shromáždění"
+    ],
+    "safety_climate": [
+      "Elektronicky zabezpečený vstup do budovy",
+      "Preventivní program školy zaměřený na předcházení rizikového chování a úrazů",
+      "Kniha úrazů vedená podle předpisů"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zákonnými zástupci, kteří se zapojují do aktivit a financování",
+      "Dlouhodobá spolupráce s partnerskými školami a vzdělávacími institucemi",
+      "Spolupráce se sociálními partnery podporující prosociální chování"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná, používá srozumitelný jazyk a konkrétní příklady. Všechny klíčové informace jsou podloženy citacemi z textu.",
+    "uncertainty_notes": [
+      "Zpráva se nezabývá dlouhodobou udržitelností pronajatého prostoru v nákupní galerii",
+      "Chybí informace o počtu účastníků v jednotlivých aktivitách a jejich věkovém složení",
+      "Nejsou uvedeny konkrétní výsledky či metriky úspěchu jednotlivých aktivit"
+    ]
+  }
+}
+```

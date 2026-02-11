@@ -1,0 +1,108 @@
+{
+  "report_id": "SOS_600016994_2022-03-17",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:06:28.173119+00:00",
+  "run_finished_utc": "2026-02-10T07:08:17.504056+00:00",
+  "raw_file": "SOS_600016994_2022-03-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600016994_2022-03-17",
+    "school_profile": {
+      "school_type": "Střední odborná škola s výučním listem i maturitou (lesnické, strojírenské a podnikatelské obory)",
+      "inspection_period": "17. - 22. 3. 2022",
+      "school_change_summary": "Škola rozšířila nabídku o obory Ekologie a Rybář, zmodernizovala dílny a zlepšila práci s rizikovými žáky, ale bojuje s vysokou neúspěšností v oboru Podnikání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Škola velmi efektivně propojuje teoretickou výuku s odborným výcvikem v moderních dílnách.",
+          "evidence": "Školní dílny s moderním vybavením umožňují naplňovat profil absolventa... účinná podpora odborných kompetencí žáků."
+        },
+        {
+          "tag": "Zázemí a vybavení",
+          "detail": "Díky projektům a aktivitě vedení škola disponuje kvalitním materiálním zázemím pro výuku i praktickou činnost.",
+          "evidence": "Efektivní vícezdrojové financování umožňuje vytvářet kvalitní podmínky... modernizovány zejména prostory pro praktické vyučování."
+        },
+        {
+          "tag": "Zahraniční stáže",
+          "detail": "Žáci mají díky evropským projektům možnost získat praxi a zlepšit jazykové dovednosti v zahraničí.",
+          "evidence": "Daří se realizovat i každoroční zahraniční stáže žáků, které přispívají k získávání nových odborných i praktických dovedností."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Rizikový obor Podnikání",
+          "detail": "Dvouletý obor Podnikání má dlouhodobě katastrofální výsledky u maturity a obrovský úbytek studentů.",
+          "evidence": "Hrubá neúspěšnost... v roce 2019 činila 57,1 %... didaktický test z matematiky vykazuje stoprocentní neúspěšnost."
+        },
+        {
+          "tag": "Zastaralé metody výuky",
+          "detail": "V běžných předmětech převažuje pasivní frontální výuka bez dostatečné podpory slabších žáků.",
+          "evidence": "Ve všech hodnocených vyučovacích hodinách teoretického vyučování dominovala frontální forma výuky."
+        },
+        {
+          "tag": "Nadhodnocování známek",
+          "detail": "Známky v oboru Podnikání neodpovídají reálným znalostem probraným u maturity, což studenty klame.",
+          "evidence": "Projevuje se určité nadhodnocování interního hodnocení výsledků vzdělávání ve prospěch průběžné a závěrečné klasifikace."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje studenty v teoretických předmětech, aby se zabránilo pasivitě ve výuce?",
+        "Jaká je aktuální úspěšnost studentů u maturity v konkrétním oboru, o který mám zájem (zejména Podnikání)?",
+        "Jak škola využívá modernizované dílny a zahraniční stáže v rámci běžné výuky?"
+      ],
+      "who_school_fits": [
+        "Uchazeči o technické a lesnické řemeslo, kteří chtějí získat praktické dovednosti v moderních dílnách.",
+        "Studenti, kteří očekávají možnost zahraniční stáže a uplatnění v odborném provozu.",
+        "Žáci, kteří preferují menší školu s rodinnou atmosférou a zázemím domova mládeže."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o nástavbové studium Podnikání kvůli extrémně vysokému riziku neúspěchu u maturity.",
+        "Studenti očekávající moderní interaktivní metody výuky i v běžných všeobecných předmětech.",
+        "Žáci, kteří potřebují silnou individuální podporu v teoretických předmětech (např. u maturity z matematiky)."
+      ],
+      "plain_czech_summary": "Škola je skvělou volbou pro zájemce o lesnická a strojírenská řemesla, kde nabízí moderní vybavení, zahraniční stáže a kvalitní přípravu na praxi. Vedení školy aktivně získává finance na zlepšení podmínek. Velkým varováním je však dvouletý obor Podnikání, kde většina studentů neudrží studium nebo neuspěje u maturity, a to i přes dobré známky. V běžné teoretické výuce převažují tradiční pasivní metody, které méně podporují individuální rozvoj žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kriticky špatná situace v oboru Podnikání (100 % neúspěšnost z matematiky), stabilní v ostatních oborech.",
+        "key_numbers": [
+          "57 % hrubá neúspěšnost v oboru Podnikání (2019)",
+          "100 % neúspěšnost v didaktickém testu z matematiky (obor Podnikání, 3 roky po sobě)",
+          "Pouze 27 % studentů Podnikání úspěšně dostudovalo (z přijatých ročníků)"
+        ],
+        "evidence": "Didaktický test z matematiky... vykazuje stoprocentní neúspěšnost. Podíl úspěšně maturujících žáků... se zvýšil z 12 % na 27 %."
+      },
+      "absence": {
+        "trend": "Škola evidenci a řešení absence zintenzivnila, ale v oboru Podnikání zůstává problémový.",
+        "key_numbers": [
+          "Zintenzivnila se práce se žáky s vysokou absencí",
+          "Efektivita opatření v oboru Podnikání je nízká"
+        ],
+        "evidence": "Zintenzivnila se také práce se žáky s vysokou absencí... efektivita těchto opatření je nízká ve třídách oboru Podnikání."
+      },
+      "support_services": [
+        "Funguje školní poradenské pracoviště a výchovná poradkyně aktivně spolupracuje s třídními učiteli.",
+        "Je zavedena strategie pro podporu žáků s rizikem školní neúspěšnosti a vyhodnocování podpůrných plánů.",
+        "Škola je zapojena do Národního plánu doučování."
+      ],
+      "safety_climate": [
+        "Při odborném výcviku je kladen důraz na bezpečnost a ochranné pracovní prostředky.",
+        "Ve výuce vládne příjemná pracovní atmosféra, žáci se nebají klást dotazy.",
+        "Škola má školní program proti šikanování a preventivní aktivity."
+      ],
+      "partnerships_practice": [
+        "Škola efektivně spolupracuje s firmami a organizuje exkurze.",
+        "Realizuje zahraniční stáže žáků v rámci evropských projektů.",
+        "Spolupráce se zřizovatelem je funkční a pomáhá zkvalitňovat podmínky."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán srozumitelným jazykem, jasně člení pozitiva a rizika a obsahuje konkrétní data podložená citacemi.",
+      "uncertainty_notes": []
+    }
+  }
+}

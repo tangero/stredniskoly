@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600009661_2022-03-02",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:14:19.269940+00:00",
+  "run_finished_utc": "2026-02-10T07:15:53.672832+00:00",
+  "raw_file": "SOS_600009661_2022-03-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009661_2022-03-02",
+    "school_profile": {
+      "school_type": "Soukromá střední škola",
+      "inspection_period": "2. 3. − 3. 3. 2022",
+      "school_change_summary": "Od roku 2019 došlo ke změně vedení, zvýšil se počet žáků i tříd a probíhá postupná rekonstrukce budovy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola má uzavřený vstup, kamerový systém a žáci jsou poučeni o bezpečnosti.",
+          "evidence": "Prostředí v budově školy je bezpečné... Vstup je trvale uzavřen před cizími osobami, ve škole je instalován kamerový systém."
+        },
+        {
+          "tag": "Praktická výuka",
+          "detail": "Učitelé propojují teorii s praxí a používají reálné příklady.",
+          "evidence": "Učitelé uplatňovali mezipředmětové vazby a zdůrazňovali žákům možnost využití nabytých vědomostí... v profesní praxi."
+        },
+        {
+          "tag": "Rozvoj školy",
+          "detail": "Škola se rozvíjí, rekonstruuje a zpřísnila podmínky pro přijetí.",
+          "evidence": "Postupnou rekonstrukcí budovy došlo ke zkvalitnění podmínek... důležitým krokem... je zpřísnění podmínek přijímání uchazečů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná prevence a poradenství",
+          "detail": "Prevence i poradenství nejsou systematická, metodická prevence nemá specializaci.",
+          "evidence": "Výchovné poradenství... zajišťována jednou učitelkou, která dosud neabsolvovala specializační studium... Minimální preventivní program obsahuje převážně obecné informace."
+        },
+        {
+          "tag": "Problém s motivací a absencí",
+          "detail": "Část žáků má nízkou motivaci a vysokou absenci, kterou škola neřeší systémově.",
+          "evidence": "Do celkových výsledků vzdělávání se dlouhodobě negativně promítá množství žáků s nízkou motivací... a s tím často související jejich vysoká absence."
+        },
+        {
+          "tag": "Neefektivní vedení a kontrola",
+          "detail": "Vedení školy nekontroluje efektivně výuku a neposkytuje učitelům zpětnou vazbu.",
+          "evidence": "Vedení školy nemá nastavený účinný kontrolní systém... učitelům není poskytována zpětná vazba formou stanovení příležitostí pro jejich další rozvoj."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci a nízkou motivaci u žáků?",
+        "Kdo zajišťuje výchovné poradenství a prevenci rizikového chování, a má na to kvalifikaci?",
+        "Jakým způsobem ředitel kontroluje kvalitu výuky a poskytuje učitelům zpětnou vazbu?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří preferují menší kolektiv a osobní kontakt v uzavřeném prostředí.",
+        "Pro studenty, kteří očekávají propojení ekonomických předmětů s praktickými příklady.",
+        "Pro žáky, kteří potřebují individuální konzultace a doučování nabízené pedagogy."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří vyžadují systematickou podporu výchovného poradenství nebo prevence.",
+        "Pro studenty s tendencí k vyšší absenci nebo nižší motivací ke studiu.",
+        "Pro rodiče, kteří očekávají bohatší vybavení odborných učeben a didaktických pomůcek."
+      ],
+      "plain_czech_summary": "Soukromá obchodní akademie prošla změnou vedení a rekonstrukcí, nabízí bezpečné prostředí a menší kolektivy. Výuka je zaměřena na praxi, chybí však odborné učebny. Velkým problémem je vysoká absence a nízká motivace části žáků, kterou škola neřeší dostatečně systémově. Nedostatky jsou také v oblasti výchovného poradenství a prevence, které nejsou odborně zajištěny. Vedení školy má slabý kontrolní systém a učitelé nedostávají potřebnou zpětnou vazbu pro zlepšení výuky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nedostatek dat o úspěšnosti",
+        "key_numbers": [
+          "153 žáků celkem",
+          "29 žáků v dálkovém studiu"
+        ],
+        "evidence": "Zpráva neuvádí konkrétní úspěšnost u maturit, pouze zmiňuje, že žáci prezentují maturitní témata."
+      },
+      "absence": {
+        "trend": "Vysoká a negativní",
+        "key_numbers": [
+          "Všechny hodiny omluveny",
+          "Neregistrováno záškoláctví"
+        ],
+        "evidence": "Do celkových výsledků vzdělávání se dlouhodobě negativně promítá množství žáků... s tím často související jejich vysoká absence."
+      },
+      "support_services": [
+        "Individuální konzultace a skupinové doučování (dobrovolné)",
+        "Práce se žáky se SVP bez systematického nastavení",
+        "Nekvalifikované výchovné poradenství"
+      ],
+      "safety_climate": [
+        "Uzavřený vstup a kamerový systém",
+        "Bezpečné prostředí budovy",
+        "Náhodné preventivní aktivity"
+      ],
+      "partnerships_practice": [
+        "Škola aktivně nevyhledává partnery",
+        "Využívání pronajatých sportovišť",
+        "Účast na projektech evropských fondů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, s výjimkou některých úřednických frází.",
+      "uncertainty_notes": [
+        "Chybí konkrétní data o úspěšnosti u maturitních zkoušek.",
+        "Není uveden konkrétní počet žáků s vysokou absencí.",
+        "Nejasná míra zapojení žáků do soutěží (pouze 'nedosáhli významnějších úspěchů')."
+      ]
+    }
+  }
+}

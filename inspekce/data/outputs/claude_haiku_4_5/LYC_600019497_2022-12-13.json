@@ -1,0 +1,115 @@
+{
+  "report_id": "LYC_600019497_2022-12-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:53:21.017516+00:00",
+  "run_finished_utc": "2026-02-09T16:53:48.317237+00:00",
+  "raw_file": "LYC_600019497_2022-12-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600019497_2022-12-13",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola s obory Praktická sestra a Zdravotnické lyceum",
+      "inspection_period": "13.–15. prosince 2022",
+      "school_change_summary": "Od 2020/2021 škola rozšířila nabídku o Zdravotnické lyceum a přestala přijímat do oboru Sociální činnost. Počet žáků denní formy vzrostl o 50 %, celkový počet zůstal stabilní (219 žáků, naplněnost 88 %)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Systematické zlepšování výsledků",
+          "detail": "Škola důsledně vyhodnocuje výsledky maturit a upravuje opatření na základě jejich účinnosti.",
+          "evidence": "Hrubá neúspěšnost ve společné části MZ se postupně snížila, v 2021–2022 jen mírně přesáhla průměr skupiny oborů."
+        },
+        {
+          "tag": "Kvalifikovaní učitelé",
+          "detail": "Předměty společné části maturitní zkoušky vyučují odborně kvalifikovaní pedagogové, převážně dlouhodobě ve škole.",
+          "evidence": "Český jazyk, cizí jazyky a 80 % matematiky vyučují učitelé s příslušnou předmětovou specializací."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola poskytuje doučování, individuální konzultace a pravidelné testování typových úloh z maturit.",
+          "evidence": "Od 2022/2023 rozšířena poradenská služba o školního psychologa, včasná identifikace potřeb žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Absence ve výuce se zvýšila po návratu k prezenční výuce, zejména v oboru Praktická sestra.",
+          "evidence": "Průměrná absence v 2021/2022 činila 150 hodin na žáka (o čtvrtinu více než v 2018/2019)."
+        },
+        {
+          "tag": "Nižší úspěšnost v maturitě 2022",
+          "detail": "Hrubá neúspěšnost ve společné části MZ v 2022 mírně vzrostla na 22 %.",
+          "evidence": "Čtyři žáci nekonali MZ, tři neuspěli v didaktickém testu z češtiny a literatury."
+        },
+        {
+          "tag": "Málo aktivní výuka",
+          "detail": "Výuka často používá frontální metody s omezeným zapojením žáků do diskuse a mluvené komunikace.",
+          "evidence": "Nižší míra aktivizujících metod, žáci odpovídají stručně, chybí prostor pro jejich mluvený projev."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a co dělá, aby se žáci více motivovali k účasti ve výuce?",
+        "Jaké jsou konkrétní plány na zlepšení výuky češtiny a matematiky, kde žáci selhávají v maturitě?",
+        "Jak se liší výuka v oboru Zdravotnické lyceum od oboru Praktická sestra a proč jsou výsledky v lyceu lepší?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří mají zájem o zdravotnické obory a jsou motivováni k učení – obor Zdravotnické lyceum má velmi dobré výsledky.",
+        "Žáci, kteří potřebují individuální podporu – škola má poradenské služby, doučování a psychologa.",
+        "Žáci se speciálními potřebami – škola má zkušenost s jejich podporou a včasnou identifikací."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v češtině a matematice – v těchto předmětech jsou problémy s porozuměním a orientací v zadáních.",
+        "Žáci, kteří mají tendenci záškoláčit – absence je vysoká a často vede k neúspěchu v maturitě.",
+        "Žáci, kteří preferují aktivní a interaktivní výuku – výuka je často frontální s omezeným zapojením žáků."
+      ],
+      "plain_czech_summary": "Střední zdravotnická škola v Berouně se zaměřuje na zdravotnické obory a postupně zlepšuje výsledky v maturitě. Silnou stránkou je kvalifikovaný tým učitelů a systematická podpora slabších žáků. Hlavní problémy jsou vysoká absence žáků po návratu k prezenční výuce a málo aktivní výuka, kde žáci málo mluví a diskutují. V oboru Zdravotnické lyceum jsou výsledky velmi dobré, v oboru Praktická sestra jsou horší. Škola má prostor na zlepšení v motivaci žáků a v interaktivnější výuce."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Postupné zlepšování s mírným zhoršením v 2022",
+        "key_numbers": [
+          "Hrubá neúspěšnost 2019: vysoká (obor Sociální činnost a kombinované studium)",
+          "Hrubá neúspěšnost 2021: 8 % (obor Zdravotnický asistent)",
+          "Hrubá neúspěšnost 2022: 22 % (mírně vyšší než průměr skupiny oborů 16 %)"
+        ],
+        "evidence": "V 2022 čtyři žáci nekonali MZ, tři neuspěli v didaktickém testu z češtiny a literatury. Opatření (doučování, typové testy, jazykové projekty) se projevila postupným snížením neúspěšnosti."
+      },
+      "absence": {
+        "trend": "Zvýšená absence po návratu k prezenční výuce",
+        "key_numbers": [
+          "Praktická sestra 2021/2022: 150 hodin na žáka (o 25 % více než 2018/2019)",
+          "Zdravotnické lyceum 2021/2022: 180 hodin na žáka",
+          "Pozitivum: snížení neomluvené absence díky důsledným opatřením"
+        ],
+        "evidence": "Vyšší absence byla zpravidla spojena s podprůměrnými výsledky a předčasným odchodem ze vzdělávání. Pouze polovina žáků denního studia Praktické sestry úspěšně MZ ukončila v předepsané době."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní a metodičkou prevence (obě se specializovaným studiem)",
+        "Školní psycholog (od 2022/2023)",
+        "Doučování a individuální konzultace pro žáky ohrožené neúspěšností",
+        "Podpora žáků-cizinců s jazykovou bariérou v součinnosti s pedagogy"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra v hospitované výuce",
+        "Žáci dodržují nastavená pravidla práce",
+        "Důsledné uplatňování opatření proti záškoláctví"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se školskými poradenskými zařízeními",
+        "Zahraniční projekty na podporu jazykového vzdělávání",
+        "Výuka některých předmětů v anglickém jazyce (CLIL metoda)",
+        "Vzájemná hospitační činnost učitelů předmětů společné části MZ"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, ale některé pasáže jsou složitě strukturované. Hlavní zjištění jsou jasná: zlepšující se maturitní výsledky, vysoká absence a potřeba aktivnější výuky.",
+      "uncertainty_notes": [
+        "Přesné důvody vysoké absence nejsou v textu vysvětleny – zda jde o zdravotní problémy, nezájem nebo jiné faktory.",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými učiteli – text mluví o průměru.",
+        "Chybí informace o tom, kolik žáků předčasně opustilo vzdělávání a z jakých důvodů."
+      ]
+    }
+  }
+}

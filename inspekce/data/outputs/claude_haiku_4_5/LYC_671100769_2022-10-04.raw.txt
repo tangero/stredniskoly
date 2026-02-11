@@ -1,0 +1,101 @@
+```json
+{
+  "report_id": "LYC_671100769_2022-10-04",
+  "school_profile": {
+    "school_type": "Montessori střední škola (součást komplexu MŠ, ZŠ a SŠ)",
+    "inspection_period": "4. až 6. října 2022",
+    "school_change_summary": "Od poslední inspekce se zvýšil počet tříd a žáků základní školy, která je nyní plně organizovaná. Od školního roku 2022/2023 škola zahájila činnost střední školy, kde se v době inspekce vzdělával jeden žák prvního ročníku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Montessori přístup v praxi",
+        "detail": "Škola efektivně uplatňuje principy montessori pedagogiky s důsledným metodickým vedením a evaluací pedagogické práce.",
+        "evidence": "Metodické vedení pedagogického sboru a aktivní spolupráce všech pedagogů vytváří podmínky pro efektivní uplatňování principů montessori pedagogiky."
+      },
+      {
+        "tag": "Individuální přístup k žákům",
+        "detail": "Škola kontinuálně sleduje pokroky každého žáka a poskytuje průběžnou zpětnou vazbu přizpůsobenou jeho schopnostem.",
+        "evidence": "Škola kontinuálně systematicky sleduje individuální pokroky ve vzdělávání jednotlivých dětí a žáků a poskytuje jim průběžnou zpětnou vazbu."
+      },
+      {
+        "tag": "Podporující pedagogický styl",
+        "detail": "Pedagogové používají empatický přístup a vedou děti k samostatnosti a odpovědnosti za vlastní učení.",
+        "evidence": "Pedagogové uplatňují při vzdělávání dětí a žáků podporující, empatický pedagogický styl. Děti i žáci jsou cíleně vedeni k samostatnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná pohybová aktivita v MŠ",
+        "detail": "Děti nemají dostatek příležitostí pro pohybové a relaxační aktivity, což neodpovídá jejich vývojovým potřebám.",
+        "evidence": "Nedostatečné zařazování pohybových, tělovýchovných a relaxačních aktivit nepodporovalo rozvoj pohybových dovedností dětí."
+      },
+      {
+        "tag": "Kvalifikace některých pedagogů",
+        "detail": "Část pedagogických pracovníků nesplňuje předpoklady pro výkon pedagogické činnosti, zejména v oblasti jazykových znalostí.",
+        "evidence": "Část pedagogických pracovníků školy nesplňovala předpoklady pro výkon pedagogické činnosti. Průvodkyně bez aktivní znalosti českého jazyka."
+      },
+      {
+        "tag": "Bezpečnost na farmě",
+        "detail": "Chybí nastavená pravidla a podmínky pro zajištění bezpečnosti žáků při vzdělávání na farmě v Křížovicích.",
+        "evidence": "Škola nenastavila ve školním řádu pravidla provozu a podmínky zajištění bezpečnosti a ochrany zdraví žáků při vzdělávání na farmě."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší nedostatek pohybových aktivit v mateřské škole a jaký je plán na zlepšení?",
+      "Jaké kroky škola podnikla k zajištění bezpečnosti žáků při vzdělávání na farmě?",
+      "Jak škola zajišťuje, aby všichni pedagogové splňovali požadované kvalifikace a jazykové znalosti?"
+    ],
+    "who_school_fits": [
+      "Rodiče, kteří věří v montessori pedagogiku a individuální přístup k dítěti",
+      "Rodiny hledající alternativní vzdělání s důrazem na samostatnost a odpovědnost",
+      "Děti, které se lépe učí vlastním tempem a svobodnou volbou aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče dětí s logopedickými vadami – škola měla problémy se spoluprací na zlepšení jejich výsledků",
+      "Rodiny, kterým chybí dostatek pohybových aktivit a venkovního pobytu v průběhu dne",
+      "Rodiče, kteří očekávají intenzivní práci s digitálními technologiemi a informačními zdroji"
+    ],
+    "plain_czech_summary": "Montessori škola v Příkrá nabízí kvalitní vzdělání založené na individuálním přístupu a principech montessori pedagogiky. Pedagogové jsou podporující a vedou děti k samostatnosti. Silnou stránkou je kontinuální sledování pokroků každého žáka. Inspekce však upozornila na nedostatek pohybových aktivit v mateřské škole, problémy s kvalifikací některých pedagogů a chybějící bezpečnostní pravidla pro vzdělávání na farmě. Škola má 14 dní na odstranění zjištěných nedostatků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze určit",
+      "key_numbers": [
+        "Ve střední škole se v době inspekce vzdělával pouze 1 žák prvního ročníku"
+      ],
+      "evidence": "Střední škola byla právě zahájena v školním roce 2022/2023, není dostupných dat o maturitě."
+    },
+    "absence": {
+      "trend": "Není zmíněna",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje údaje o absenci žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (ŠPP) s kontinuální informovaností pedagogů prostřednictvím sdíleného elektronického prostředí",
+      "Speciální pedagogická péče poskytovaná externí speciální pedagožkou žákům se speciálními vzdělávacími potřebami",
+      "Metodická podpora členkami ŠPP pro pedagogy"
+    ],
+    "safety_climate": [
+      "Bezpečné a klidné pracovní prostředí zajišťuje otevřená partnerská komunikace pedagogů se žáky",
+      "Vedení žáků k respektování nastavených organizačních a komunikačních pravidel",
+      "Chybí pravidla provozu a bezpečnosti na farmě – zjištěný nedostatek"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce mateřské a základní školy při přechodu dětí do základního vzdělávání",
+      "Spolupráce se zákonnými zástupci na tripartitách (učitel – žák – rodič)",
+      "Partnerské vztahy se zákonnými zástupci žáků pozitivně ovlivňují kvalitu vzdělávacího procesu",
+      "Spolupráce s jinými školami zaměřenými na montessori pedagogiku"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní pozorování, ale některé pasáže jsou dlouhé a složitě strukturované. Klíčové informace pro rodiče jsou jasné, ale vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Střední škola je nová (od 2022/2023), není jasné, jaké obory nabízí a jaké jsou její dlouhodobé plány",
+      "Zpráva nespecifikuje, kolik pedagogů nesplňuje kvalifikační předpoklady a v jakých oblastech",
+      "Není jasné, jak konkrétně se škola vypořádá s doporučeními inspekce v 14denní lhůtě"
+    ]
+  }
+}
+```

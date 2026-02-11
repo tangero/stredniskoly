@@ -1,0 +1,114 @@
+{
+  "report_id": "SOU_600008592_2022-03-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:05:59.883358+00:00",
+  "run_finished_utc": "2026-02-09T17:06:26.128425+00:00",
+  "raw_file": "SOU_600008592_2022-03-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600008592_2022-03-23",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště",
+      "inspection_period": "23. března až 25. března 2022",
+      "school_change_summary": "Nová ředitelka od srpna 2020. Škola nabízí čtyřletý obor Autotronik a Provoz a ekonomika dopravy, nástavbové obory Nábytkářství a Stavební provoz, obor Podnikání v denní i dálkové formě. Naplněnost čtyřletých oborů 60 %, nástavbových 38 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní výuka cizích jazyků",
+          "detail": "Výuka vedena v cílovém jazyce s autentickými materiály, zaměřena na reálné komunikační situace a strukturu maturitní zkoušky.",
+          "evidence": "Vyučující účelně zařazovali řízený rozhovor, skupinovou práci a od žáků vyžadovali obsahově náročnou komunikaci."
+        },
+        {
+          "tag": "Funkční poradenské služby",
+          "detail": "Výchovná poradkyně včas identifikuje speciální vzdělávací potřeby a informuje vyučující; škola realizuje adaptační pobyty a besedy se sociálními partnery.",
+          "evidence": "Daří se zlepšovat vztahy v kolektivech a posilovat komunikaci mezi žáky a pedagogy."
+        },
+        {
+          "tag": "Moderní vybavení a bezpečnost",
+          "detail": "Dostatečný počet učeben, průběžně modernizovaná digitální technika, funkční pravidla pro bezpečnost a ochranu zdraví.",
+          "evidence": "Materiální podmínky jsou efektivně využívány a přispívají ke kvalitě vzdělávání."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká neúspěšnost u maturit",
+          "detail": "V roce 2020 hrubá neúspěšnost 57,1 %, v roce 2021 34,6 %. Obor Podnikání zvlášť kritický: v roce 2020 neuspělo 76,9 % žáků, v roce 2021 52,9 %.",
+          "evidence": "Výsledky v českém jazyce, matematice a angličtině zaostávají za průměrem ČR. Pouze 60 % žáků úspěšně dokončí studium."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Průměrně 94 hodin absence za rok na žáka, neomluvená absence u 12,4 % žáků. Problém se od poslední inspekce nevyřešil.",
+          "evidence": "Opatření realizovaná školou jsou jen málo účinná. Řešení pouze napomenutím nebo důtkou."
+        },
+        {
+          "tag": "Nesoulad mezi průběžnými známkami a výsledky maturit",
+          "detail": "Čtyři žáci hodnoceni jako dobrí či chvalitební během studia neuspěli u maturitní zkoušky z češtiny.",
+          "evidence": "Kritéria hodnocení v předmětech maturitní zkoušky lépe nevypovídají o připravenosti žáků na zkoušku."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků? Jaké jsou důsledky pro žáky s vysokou absencí?",
+        "Jaké jsou reálné šance na úspěch u maturitní zkoušky v jednotlivých oborech? Jak se liší mezi čtyřletými a nástavbovými obory?",
+        "Jak se školní známky v průběhu studia vztahují k výsledkům maturitní zkoušky? Proč někdy nekorelují?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o cizí jazyky – výuka je kvalitní a zaměřená na komunikaci",
+        "Žáci s potřebou speciálních vzdělávacích opatření – škola má funkční poradenské služby a včas identifikuje potřeby",
+        "Žáci v oborech Autotronik a Provoz a ekonomika dopravy – čtyřletý obor s lepšími výsledky než nástavbové obory"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s nižší úspěšností u jednotné přijímací zkoušky – škola přijímá převážně všechny uchazeče, což nevytváří předpoklady pro zvýšení úspěšnosti",
+        "Zájemci o obor Podnikání – obor vykazuje velmi vysokou neúspěšnost (52–77 % neuspělých) a je neefektivní i ekonomicky",
+        "Žáci se sklonem k absenci – škola nemá účinná opatření na řešení absence, která průměrně činí 94 hodin za rok"
+      ],
+      "plain_czech_summary": "Škola v Písku nabízí kvalitní výuku cizích jazyků a má funkční poradenské služby. Hlavní problém je vysoká neúspěšnost u maturitní zkoušky, zvlášť v nástavbovém oboru Podnikání (52–77 % neuspělých). Žáci často chybějí – průměrně 94 hodin za rok. Známky během studia často neodpovídají výsledkům u maturity. Čtyřletý obor Autotronik má lepší výsledky než nástavbové obory. Škola přijímá převážně všechny uchazeče, což zhoršuje situaci."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý – zlepšení v 2019 a 2021, zhoršení v 2020. Dlouhodobě nižší úspěšnost než průměr ČR.",
+        "key_numbers": [
+          "2019: 37,9 % neúspěšnosti (zlepšení z 61,4 %)",
+          "2020: 57,1 % neúspěšnosti (zhoršení)",
+          "2021: 34,6 % neúspěšnosti (zlepšení)"
+        ],
+        "evidence": "Obor Podnikání: 2020 – 76,9 % neuspělých, 2021 – 52,9 % neuspělých. Pouze 60 % žáků úspěšně dokončí studium, v oboru Podnikání jen 42 %."
+      },
+      "absence": {
+        "trend": "Dlouhodobě vysoká, problém se od poslední inspekce nevyřešil.",
+        "key_numbers": [
+          "Průměr 94 hodin absence za rok na žáka",
+          "Neomluvená absence u 12,4 % žáků",
+          "Řešení pouze napomenutím nebo důtkou"
+        ],
+        "evidence": "Opatření realizovaná školou jsou jen málo účinná. Absence není efektivně řešena."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence zajišťují poradenské služby",
+        "Individuální a skupinové konzultace v předmětech maturitní zkoušky",
+        "Doučování v předmětech maturitní zkoušky (letošní rok)",
+        "Elektronické studijní materiály z distanční výuky",
+        "Adaptační pobyty pro prvňáky, přednášky a besedy se sociálními partnery"
+      ],
+      "safety_climate": [
+        "Nastavená pravidla zajišťování bezpečnosti a ochrany zdraví žáků jsou funkční",
+        "Klima v průběhu sledované výuky bylo převážně pozitivní",
+        "Výuka probíhala v prostředí vzájemné vstřícnosti"
+      ],
+      "partnerships_practice": [
+        "Škola realizuje besedy a přednášky ve spolupráci se sociálními partnery",
+        "Cílem je podpora tvorby pozitivního třídního klimatu a posilování komunikace mezi žáky a pedagogy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, citace z hospitací a analýzy výsledků. Jsou jasně identifikovány silné stránky (cizí jazyky, poradenství) a slabiny (absence, neúspěšnost u maturit, obor Podnikání). Doporučení jsou konkrétní. Mírně snižuje srozumitelnost úřednický jazyk a místy hustá struktura.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, proč se výsledky v jednotlivých letech tak výrazně liší (2019 vs 2020 vs 2021) – není jasné, zda je to vlivem pandemie, změny pedagogů nebo jiných faktorů.",
+        "Není jasné, jaké konkrétní opatření škola plánuje zavést na základě doporučení inspekce, zejména ohledně absence a oboru Podnikání.",
+        "Chybí informace o tom, jak se liší výsledky mezi jednotlivými pedagogy v předmětech maturitní zkoušky."
+      ]
+    }
+  }
+}

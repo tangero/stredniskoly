@@ -1,0 +1,115 @@
+{
+  "report_id": "GY4_600006042_2022-11-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:57:23.416859+00:00",
+  "run_finished_utc": "2026-02-09T16:57:49.470645+00:00",
+  "raw_file": "GY4_600006042_2022-11-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600006042_2022-11-08",
+    "school_profile": {
+      "school_type": "Střední škola a vyšší odborná škola (VOŠ) - soukromá, s.r.o.",
+      "inspection_period": "8. listopadu 2022 až 11. listopadu 2022",
+      "school_change_summary": "Od inspekce v roce 2014 se škola výrazně rozvinula: přibyl nový obor Grafický design, počet žáků se mnohonásobně zvýšil na 314 žáků ve 13 třídách, došlo k obměně ředitele a zřizovatele. Škola zmodernizovala vybavení a vytvořila nové učebny pro grafický design a herní grafiku."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Péče o sportovce",
+          "detail": "Škola má promyšlený systém pro žáky provozující sport na výkonnostní úrovni (asi šestina všech žáků), umožňuje sladit teoretickou výuku se sportovním tréninkem.",
+          "evidence": "Spolupráce se sportovními kluby, včasná prevence studijní neúspěšnosti žáků-sportovců."
+        },
+        {
+          "tag": "Moderní technologie a komunikace",
+          "detail": "Jednotný informační systém slouží jako funkční platforma pro všechny aktéry vzdělávání, umožňuje online přístup k materiálům a podporu při distančním i prezenčním vzdělávání.",
+          "evidence": "Systém používán k informování rodičů, sdílení podkladů, zadávání úkolů a ověřování výsledků."
+        },
+        {
+          "tag": "Kvalitní praktická příprava",
+          "detail": "Partnerství s grafickými studiemi propojuje teorii s praxí a seznamuje žáky se současnými trendy v oboru.",
+          "evidence": "Projekty, exkurze, zahraniční výjezdy a odborná praxe jsou součástí vzdělávání."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Méně aktivní výuka",
+          "detail": "V části hodin převažuje frontální forma výuky, skupinová práce a interaktivní metody se používají méně často.",
+          "evidence": "Inspektoři zaznamenali stereotypní výukové postupy a nižší zapojení žáků v některých hodinách."
+        },
+        {
+          "tag": "Slabší výsledky v Grafickém designu",
+          "detail": "Žáci oboru Grafický design mají horší výsledky maturitní zkoušky než žáci Obchodní akademie.",
+          "evidence": "Zhoršené výsledky v letech 2021 a 2022, negativně se projevilo distanční vzdělávání."
+        },
+        {
+          "tag": "Nejednotná podpora speciálních potřeb",
+          "detail": "Účinnost podpory žáků se speciálními potřebami se odvíjí od přístupu jednotlivých učitelů.",
+          "evidence": "Inspektoři zjistili, že učitelé žáky obvykle identifikují, ale uplatňování doporučených postupů není konzistentní."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky-sportovce při skloubení tréninku a studia? Jaké jsou zkušenosti s jejich prospěchem?",
+        "Jaké konkrétní kroky škola podnikla po inspekci, aby zlepšila výsledky maturitní zkoušky v oboru Grafický design?",
+        "Jak se škola zaměřuje na rozvoj aktivních a interaktivních metod výuky? Jaké konkrétní změny jsou plánovány?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o grafický design, fotografii a umělecké obory - škola má moderně vybavené ateliéry a spolupracuje s profesionály z oboru.",
+        "Sportovně talentovaní žáci - škola má zkušenosti se skloubením vrcholového sportu a studia, spolupracuje se sportovními kluby.",
+        "Žáci hledající praktickou přípravu - obor Obchodní akademie má dobré výsledky maturit a orientuje se na uplatnění v praxi."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více interaktivní a skupinové práce - v některých předmětech převažuje frontální výuka.",
+        "Žáci oboru Grafický design by měli vědět, že obor má horší výsledky maturitní zkoušky než Obchodní akademie.",
+        "Žáci se speciálními vzdělávacími potřebami - kvalita podpory se liší podle přístupu jednotlivých učitelů."
+      ],
+      "plain_czech_summary": "ART ECON je malá soukromá střední škola v Praze 8 s dvěma obory: Obchodní akademie a Grafický design. Škola se za poslední osm let výrazně rozvinula - počet žáků vzrostl na 314. Má dobré zázemí, moderní technologie a fungující systém komunikace s rodiči. Silnou stránkou je péče o sportovce a propojení teorie s praxí. Slabší je aktivita výuky v některých předmětech a výsledky maturit v Grafickém designu. Škola se orientuje spíše na praktické uplatnění absolventů než na vysokoškolské studium."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Obchodní akademie: stabilně dobrá, Grafický design: zhoršená v 2021-2022",
+        "key_numbers": [
+          "Obchodní akademie: neúspěšnost nižší než průměr skupiny oborů",
+          "Grafický design: zhoršené výsledky v 2021 a 2022",
+          "Český jazyk a literatura: mírné zhoršení v 2021/2022"
+        ],
+        "evidence": "Analýza výsledků společné části maturitní zkoušky za tři školní roky. Vedení školy zavedlo měsíční pedagogické rady pro sledování výsledků a nabízí doučování."
+      },
+      "absence": {
+        "trend": "Nízký výskyt rizikového chování",
+        "key_numbers": [
+          "Minimum žáků hodnocených sníženým stupněm z chování",
+          "Pochvaly převažují nad kázeňskými opatřeními"
+        ],
+        "evidence": "Žáci dodržují nastavená pravidla komunikace, vztahy mezi učiteli a žáky vycházejí ze vzájemné úcty a respektu."
+      },
+      "support_services": [
+        "Poradenský tým s úzkou spoluprací s třídními učiteli identifikuje vzdělávací a vztahové problémy",
+        "Adaptační kurzy a přípravné kurzy pro budoucí žáky seznamující je s náročností studia",
+        "Individuální vzdělávací plány a úpravy podmínek pro žáky se speciálními potřebami",
+        "Sociální stipendium, slevy na školném a splátkový kalendář pro žáky v tíživé situaci"
+      ],
+      "safety_climate": [
+        "Elektronický systém vstupu do budovy a recepce zvyšují bezpečnost",
+        "Komunitní charakter školy podporuje otevřenost, toleranci a vzájemný respekt",
+        "Demokratický styl vedení vytváří příznivé pracovní prostředí s konstruktivním dialogem",
+        "Od roku 2022/2023 funguje žákovská samospráva"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s grafickými studiemi - propojení teoretické a praktické výuky, seznámení se současnými trendy",
+        "Partnerství se sportovními kluby - umožňuje sladit teoretické vyučování se sportovním tréninkem",
+        "Účast externích odborníků, výkonných umělců a rodilých mluvčích ve výuce",
+        "Fakultní škola Pedagogické fakulty Univerzity Karlovy v Praze"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní fakta a citace. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři (např. popis metodických nedostatků).",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje přesné procento žáků se speciálními potřebami nebo s odlišným mateřským jazykem.",
+        "Není jasné, jak se konkrétně liší kvalita podpory mezi jednotlivými učiteli u žáků se speciálními potřebami.",
+        "Chybí informace o počtu a typu kázeňských opatření nebo jejich trendech."
+      ]
+    }
+  }
+}

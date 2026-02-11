@@ -1,0 +1,103 @@
+{
+  "report_id": "GY6_600013626_2021-11-30",
+  "school_profile": {
+    "school_type": "Gymnázium",
+    "inspection_period": "30. 11. 2021 − 3. 12. 2021",
+    "school_change_summary": "Škola zaznamenala stagnaci v materiálním zázemí výuky a zavedla elektronický informační systém pro rodiče."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazyky a zahraničí",
+        "detail": "Škola nabízí výjimečné možnosti pro rozvoj jazyků, včetně bilingvního studia a zahraničních výměn.",
+        "evidence": "Prioritou je podpora rozvoje cizojazyčné gramotnosti... aktivní spolupráce se zahraničními partnery."
+      },
+      {
+        "tag": "Výsledky",
+        "detail": "Žáci dosahují vynikajících výsledků u maturity a mají vysokou úspěšnost při přijetí na VŠ.",
+        "evidence": "Výsledky maturitní zkoušky... vykazovaly výbornou úroveň... v průměru 96 % absolventů je přijato ke studiu na VŠ."
+      },
+      {
+        "tag": "Klima",
+        "detail": "Ve škole panují zdravé vztahy a žáci i učitelé se zapojují do společných aktivit.",
+        "evidence": "Aktivity napomáhají vytvářet zdravé prosociální vztahy... žáci prokazovali velmi dobrou úroveň vědomostí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Řízení kvality",
+        "detail": "Vedení školy nezajišťuje dostatečnou kontrolní a hospitační činnost, chybí zpětná vazba pro učitele.",
+        "evidence": "Hospitační činnost nebyla ze strany vedení školy prováděna... učitelům chybí efektivní zpětná vazba."
+      },
+      {
+        "tag": "Podpora SVP",
+        "detail": "Systém péče o žáky se speciálními potřebami i nadané není nastaven efektivně a chybí mu systém.",
+        "evidence": "Neefektivně nastavený systém podpory žáků se SVP... informování vyučujících probíhá nahodile."
+      },
+      {
+        "tag": "Výukové metody",
+        "detail": "Výuka je často frontální bez diferenciace, což neplně využívá potenciál všech žáků.",
+        "evidence": "Převažovala frontálně vedená výuka... diferenciace učiva podle schopností žáků byla uplatňována ojediněle."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jakým způsobem škola v současnosti zajišťuje zpětnou vazbu pro učitele, aby se mohla zlepšovat kvalita výuky?",
+      "Jak konkrétně funguje systém podpory pro žáky se speciálními vzdělávacími potřebami a nadané žáky?",
+      "Plánuje škola modernizaci učeben a vybavení, když inspekce zaznamenala stagnaci materiálních podmínek?"
+    ],
+    "who_school_fits": [
+      "Studenty se zájmem o jazyky a zahraniční stáže (bilingvní sekce, projekty).",
+      "Samostatné žáky, kteří jsou schopni dobře pracovat ve frontální výuce.",
+      "Uchazeče, kteří cílí na vysokou školu a očekávají silné akademické výsledky."
+    ],
+    "who_should_be_cautious": [
+      "Žáky, kteří vyžadují individuální přístup a často se setkávají s diferencovanými úkoly.",
+      "Rodiče očekávající proaktivní a systematickou podporu u dětí se specifickými vzdělávacími potřebami.",
+      "Studenty, kteří preferují moderní, digitálně bohaté a diskuzní formy výuky před tradičními metodami."
+    ],
+    "plain_czech_summary": "Gymnázium Matyáše Lercha je škola se silným akademickým zaměřením a vynikajícími výsledky studentů u maturity i při přijímacích řízeních na vysoké školy. Pro rodiče je klíčovou předností aktivní podpora cizích jazyků a široká nabídka zahraničních výměnných pobytů. Inspekce však upozorňuje na slabší vedení školy, které nevěnuje dostatek pozornosti kontrole kvality výuky a zpětné vazbě učitelů. Dalším rizikem je zastaralejší výuka, která málo respektuje individuální rozdíly mezi žáky. Škola tak ideálně vyhoví samostatným studentům s jazykovým nadáním, kteří nepotřebují intenzivní individuální podporu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborná a stabilní úroveň výsledků.",
+      "key_numbers": [
+        "45 % maturantů prospěje s vyznamenáním",
+        "96 % absolventů přijato na VŠ",
+        "Výrazný pokles neúspěšnosti v prvním termínu"
+      ],
+      "evidence": "Výsledky maturitní zkoušky... vykazovaly výbornou úroveň... v průměru 96 % absolventů je přijato ke studiu na vysokých školách."
+    },
+    "absence": {
+      "trend": "Není hodnoceno, rizikové chování je minimální.",
+      "key_numbers": [
+        "Minimální výskyt rizikového chování",
+        "Fungující systém prevence",
+        "Důraz na individuální přístup metodičky prevence"
+      ],
+      "evidence": "Projevy rizikového chování žáků škola řešila v posledních letech minimálně... systém prevence je nastaven účinně."
+    },
+    "support_services": [
+      "Školní jídelna s výběrem ze dvou jídel podporující zdravý životní styl.",
+      "Individuální a empatický přístup školní metodičky prevence.",
+      "Spolupráce s CTM (Centrum talentované mládeže) pro nadané žáky."
+    ],
+    "safety_climate": [
+      "Klidná a motivující pracovní atmosféra založená na vzájemném respektu.",
+      "Zdravé prosociální vztahy podporované společnými aktivitami.",
+      "Účinný systém prevence sociálně patologických jevů."
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se zahraničními školami (Francie, Německo, Švýcarsko).",
+      "Partnerská práce s velvyslanectvími a kulturními instituty.",
+      "Spolupráce s vysokými školami a vědeckými institucemi."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a terminologie je vysvětlena nebo pochopitelná v kontextu.",
+    "uncertainty_notes": [
+      "Nejasná míra 'stagnace' materiálního zázemí – zda jde o estetiku nebo funkčnost.",
+      "Chybí konkrétní data o počtu žáků se SVP, pouze obecná zmínka o neefektivitě systému."
+    ]
+  }
+}

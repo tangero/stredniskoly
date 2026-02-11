@@ -1,0 +1,116 @@
+{
+  "report_id": "GY8_600009556_2025-02-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:02:52.615784+00:00",
+  "run_finished_utc": "2026-02-09T16:03:16.853989+00:00",
+  "raw_file": "GY8_600009556_2025-02-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600009556_2025-02-03",
+    "school_profile": {
+      "school_type": "Osmileté, šestileté a čtyřleté gymnázium v denní formě; čtyřleté gymnázium v distanční formě",
+      "inspection_period": "3. února 2025 až 6. února 2025",
+      "school_change_summary": "Od inspekce v roce 2018 vzrostl počet žáků z 659 na 735. Nový ředitel nastoupil v srpnu 2024 a zavádí intenzivní monitoring kvality vzdělávání. Pedagogický sbor prochází přirozenou obměnou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky žáků",
+          "detail": "Téměř 50 % žáků prospělo s vyznamenáním, všichni maturanti prospěli, přibližně polovina složila maturitu s vyznamenáním.",
+          "evidence": "Školní rok 2023/2024: 50 % s vyznamenáním, 1 % neprospělo. Maturita: polovina s vyznamenáním, 60 % skládá matematiku."
+        },
+        {
+          "tag": "Mimořádné úspěchy v soutěžích",
+          "detail": "Žáci dosahují vynikajících výsledků v olympiádách, technických projektech a mezinárodních soutěžích včetně NASA Challenge.",
+          "evidence": "Tým LASAR zvítězil ve dvou kategoriích Conrad Challenge, první český finalista v historii soutěže."
+        },
+        {
+          "tag": "Nové vedení s jasnou vizí",
+          "detail": "Ředitel vypracoval realistickou koncepci rozvoje a zavádí monitorování kvality, jasná pravidla a další vzdělávání pedagogů.",
+          "evidence": "Více než třicet hospitačních záznamů mapuje kvalitu výuky, předsedové komisí se stali součástí vedení."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo interaktivní výuka",
+          "detail": "Převažuje frontální forma výuky, žáci mají omezené příležitosti pro skupinovou práci a vlastní vyjádření.",
+          "evidence": "Hospitační zjištění: kooperativní formy v menší míře, žáci dostávají minimální prostor pro vyjádření k procesu."
+        },
+        {
+          "tag": "Slabá diferenciace ve výuce",
+          "detail": "Úkoly jsou zadávány jednotně bez ohledu na náročnost, chybí přizpůsobení tempu a kognitivní úrovni žáků.",
+          "evidence": "Diferenciace podle tempa či náročnosti byla uplatněna zřídka, chybí využití potenciálu nadaných žáků."
+        },
+        {
+          "tag": "Neshody mezi žáky nejsou řešeny",
+          "detail": "Více než polovina žáků vnímá vztahové problémy jako spíše neřešené, chybí efektivní prevence kyberšikany.",
+          "evidence": "Dotazníkové šetření ČŠI: více než polovina žáků vnímá neshody jako neřešené."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky v běžné výuce a jaké má pro ně speciální programy?",
+        "Jaké jsou plány na zlepšení interaktivní výuky a skupinové práce žáků?",
+        "Jak škola řeší konflikty mezi žáky a kyberšikanu?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními předpoklady a zájmem o matematiku a přírodní vědy",
+        "Talentovaní žáci, kteří chtějí reprezentovat školu v soutěžích a projektech",
+        "Žáci, kterým vyhovuje tradiční přístup s důrazem na odbornost a výsledky"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuálního přístupu a diferenciované úkoly podle svého tempa",
+        "Žáci, kteří se lépe učí skupinovou prací a interaktivními metodami",
+        "Žáci se sociálními obtížemi, kde není dostatečně řešena prevence konfliktů"
+      ],
+      "plain_czech_summary": "Gymnázium na Mikulášském náměstí je prestižní škola s tradičně výborným vzděláním. Žáci dosahují skvělých výsledků, zvlášť v matematice a přírodních vědách. Škola má nového ředitele, který zavádí lepší kontrolu kvality a podporu učitelů. Silnou stránkou jsou mimořádné úspěchy v soutěžích. Slabinou je, že výuka je často frontální bez dostatečné interakce žáků. Škola by měla více podporovat skupinovou práci a individuální přístup. Také by měla lépe řešit konflikty mezi žáky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi dobrý",
+        "key_numbers": [
+          "Přibližně 50 % žáků složilo maturitu s vyznamenáním",
+          "100 % žáků prospělo",
+          "Přibližně 60 % žáků skládá matematiku"
+        ],
+        "evidence": "Školní rok 2023/2024: všichni maturanti prospěli, polovina s vyznamenáním, 60 % skládá matematiku."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Není dostupná konkrétní data o absenci"
+        ],
+        "evidence": "Zpráva se zaměřuje na výsledky, ne na absenci."
+      },
+      "support_services": [
+        "Výchovná poradkyně, školní speciální pedagožka, psycholožka a metodička prevence",
+        "Individuální a skupinová diagnostika, péče o žáky s výukovými obtížemi",
+        "Plány pedagogické podpory pro žáky v systému podpory a individuální studijní plány pro nadané žáky",
+        "Preventivní programy zaměřené na prevenci šikany a budování pozitivního klimatu"
+      ],
+      "safety_climate": [
+        "Pravidla pro bezpečnost jsou vymezena v dokumentech a všichni je dodržují",
+        "Program prevence šikany je prezentován na začátku roku, třídnické hodiny probíhají jednou za 14 dní",
+        "Schránka důvěry, Instagram a MS Teams pro přenos informací",
+        "Sociometrie v případě vztahových problémů",
+        "Doporučení: zefektivnit prevenci kyberšikany a nastavit účinné preventivní postupy"
+      ],
+      "partnerships_practice": [
+        "Projekt Vzdělávání 4.0",
+        "Mezinárodní spolupráce s gymnázii v Německu a Francii",
+        "Výměnné pobyty v programu AFS a projektu Euregio Egrensis",
+        "Spolupráce s univerzitami a firmami na technickém vzdělávání",
+        "Rodilí mluvčí ve výuce cizích jazyků, tandemová výuka"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, obsahuje konkrétní příklady a čísla. Slabinou je, že některé oblasti (např. absence) nejsou pokryty. Doporučení jsou jasná a praktická.",
+      "uncertainty_notes": [
+        "Absence žáků není v textu zmíněna, nelze posoudit trend",
+        "Konkrétní počty žáků se speciálními potřebami (17 žáků) nejsou dále analyzovány",
+        "Distanční forma (15 žáků) není detailně hodnocena"
+      ]
+    }
+  }
+}

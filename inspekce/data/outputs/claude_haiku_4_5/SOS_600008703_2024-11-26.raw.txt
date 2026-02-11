@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600008703_2024-11-26",
+  "school_profile": {
+    "school_type": "Střední odborná škola s domovem mládeže a školní jídelnou",
+    "inspection_period": "26. listopadu až 28. listopadu 2024",
+    "school_change_summary": "Od roku 2018 se zvýšil počet žáků a zlepšila se naplněnost tříd. Škola modernizuje vybavení, zejména odborné učebny pro informatiku. Školní vzdělávací programy jsou průběžně aktualizovány."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava na kariéru",
+        "detail": "Škola používá systém školních certifikátů a obhajob závěrečných projektů, který motivuje žáky k praktickému použití znalostí a připravuje je na pracovní trh.",
+        "evidence": "Efektivní systém ověřování odborných výstupů a kompetencí usnadňuje další vzdělávací dráhu nebo vstup na pracovní trh."
+      },
+      {
+        "tag": "Kvalitní odborné vzdělání",
+        "detail": "V hodinách odborného vzdělávání jsou metody a formy práce efektivní, s propojením teorie a praxe.",
+        "evidence": "Vyučující účelně propojují teoretickou výuku s praktickým využitím znalostí a dovedností žáků."
+      },
+      {
+        "tag": "Podpora ohrožených žáků",
+        "detail": "Škola má systematicky nastavený systém prevence školní neúspěšnosti s nízkým počtem neprospívajících žáků.",
+        "evidence": "Pro žáky ohrožené školním neúspěchem nabízí individuální konzultace a doučování v domově mládeže."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní přístup v teoretické výuce",
+        "detail": "Převažuje frontální výuka s malou aktivitou žáků, chybí kooperace a diferenciace podle potřeb jednotlivých žáků.",
+        "evidence": "Převažovala méně efektivní frontální forma výuky s výraznou aktivitou na straně vyučujících, jen sporadicky byla zařazována efektivní kooperace žáků."
+      },
+      {
+        "tag": "Slabé rozvíjení komunikačních dovedností",
+        "detail": "Učitelé se spokojují se stručnými odpověďmi žáků a nevyžadují hlubší formulace, chybí prostor pro diskusi.",
+        "evidence": "Vyučující se spokojili se stručnými či jednoslovnými odpověďmi žáků, nevyžadovali obsahově náročnější formulace."
+      },
+      {
+        "tag": "Chybějící zpětná vazba v hodinách",
+        "detail": "Žáci nejsou vedeni k sebehodnocení a chybí efektivní shrnutí hodin s vyhodnocením naplnění cílů.",
+        "evidence": "V závěru hodin většinou chyběl časový prostor pro shrnutí učiva, ke zhodnocení hodin došlo ojediněle jen ze strany učitele."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola plánuje zlepšit aktivní zapojení žáků v teoretické výuce a zavádět více skupinové práce?",
+      "Jaké konkrétní školení pro učitele jsou plánována v oblasti diferenciace a formativního hodnocení?",
+      "Jak se výsledky závěrečných projektů žáků prezentují veřejnosti a jak je to součástí jejich portfolia?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a konkrétní aplikaci znalostí, zejména v IT, elektrotechnice a obchodu",
+      "Žáci z jiných krajů, kteří potřebují ubytování – domov mládeže nabízí podporu při přípravě na vyučování a volnočasové aktivity",
+      "Žáci, kteří potřebují individuální podporu – škola má systematicky nastavený systém prevence neúspěšnosti"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se učí lépe v interaktivním prostředí s diskusemi – teoretická výuka zde je spíše frontální",
+      "Žáci, kteří potřebují individualizovaný přístup – v hodinách chybí diferenciace podle úrovně znalostí",
+      "Žáci, kteří se spoléhají na detailní zpětnou vazbu – závěry hodin a sebehodnocení nejsou běžnou praxí"
+    ],
+    "plain_czech_summary": "Střední odborná škola v Blatné je stabilní institucí se 224 žáky, která se zaměřuje na IT, elektrotechniku a obchodní akademii. Silnou stránkou je praktická příprava na kariéru prostřednictvím projektů a certifikátů. Odborné předměty jsou vyučovány kvalitně s propojením teorie a praxe. Slabinou je převažující frontální výuka v teoretických předmětech s malou aktivitou žáků a chybějící diferenciací. Škola má dobrou podporu pro ohrožené žáky a kvalitní domov mládeže pro ubytované žáky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "Výsledky maturitních zkoušek jsou srovnatelné se stejnou skupinou oborů vzdělání v České republice"
+      ],
+      "evidence": "Výsledky maturitních zkoušek jsou srovnatelné se stejnou skupinou oborů vzdělání v České republice."
+    },
+    "absence": {
+      "trend": "Nízká",
+      "key_numbers": [
+        "V případě zvýšení absence žáka jsou přijímána individuální a konkrétní opatření"
+      ],
+      "evidence": "V případě zhoršení prospěchu nebo zvýšení absence žáka jsou většinou přijímána individuální a konkrétní opatření."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště zajišťuje poradenské služby v rozsahu odpovídajícím velikosti školy",
+      "Individuální konzultace pro žáky ohrožené školním neúspěchem",
+      "Doučování v domově mládeže pro ubytované žáky",
+      "Adaptační kurz pro nastupující žáky",
+      "Preventivní program zaměřený na zdravý životní styl a prevenci rizikového chování"
+    ],
+    "safety_climate": [
+      "Výuka probíhala v příznivé a přátelské atmosféře",
+      "Žáci respektovali nastavená pravidla vzájemných vztahů",
+      "Činnost domova mládeže vhodně cílí na podporu přátelských a respektujících vzájemných vztahů všech aktérů",
+      "Výchovná opatření jsou uplatňována v souladu se školním řádem"
+    ],
+    "partnerships_practice": [
+      "Domov mládeže úzce spolupracuje se střední školou a využívá její sportovní zázemí",
+      "Škola se zapojuje do programu e-Twinning pro podporu výuky angličtiny",
+      "Spolupráce s ostatními organizacemi v rámci preventivního programu",
+      "Město Blatná poskytuje dotaci na odměny na školou organizovanou soutěž Sportshow",
+      "Zřizovatel přispívá na obědy pro sociálně znevýhodněné žáky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní pozorování z hospitací. Jasně rozlišuje silné a slabé stránky. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta nebo počty žáků s prospěchovými problémy – pouze konstatuje 'nízký počet neprospívajících žáků'",
+      "Chybí konkrétní data o absenci – není jasné, jaká je průměrná absence nebo jak se vyvíjela",
+      "Není specifikováno, jak se výsledky maturit vyvíjely v čase – pouze se uvádí, že jsou 'srovnatelné'"
+    ]
+  }
+}
+```

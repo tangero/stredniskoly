@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600007120_2022-06-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:01:39.315429+00:00",
+  "run_finished_utc": "2026-02-09T17:01:59.649371+00:00",
+  "raw_file": "GY8_600007120_2022-06-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007120_2022-06-13",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium",
+      "inspection_period": "13. až 15. června 2022",
+      "school_change_summary": "Nový ředitel od srpna 2020. Výrazné zlepšení materiálních podmínek. Naplněnost čtyřletého oboru vzrostla o čtvrtinu. Částečně odstraněny nedostatky z předchozí inspekce, přetrvávají problémy s aktivizací žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné maturitní výsledky",
+          "detail": "Žáci dosahují lepších výsledků v maturitě než je průměr v republice.",
+          "evidence": "Výsledky ve společné části maturitní zkoušky jsou lepší než průměr stejného oboru v republice."
+        },
+        {
+          "tag": "Kvalitní prevence a bezpečnost",
+          "detail": "Systém sportovních a zážitkových aktivit účinně předchází rizikovému chování.",
+          "evidence": "Nízký počet projevů rizikového chování, efektivní adaptační kurzy pro prvňáky."
+        },
+        {
+          "tag": "Zlepšující se prospěch",
+          "detail": "Podíl žáků s vyznamenáním vzrostl z 40 % na 50 % za tři roky.",
+          "evidence": "Průměrný prospěch na 1,5, postupné zlepšování výsledků v posledních třech letech."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Učitelé často používají pouze frontální výuku s dominancí učitele, málo skupinové práce.",
+          "evidence": "Minimálně využita skupinová nebo párová práce, chybí motivace a cíle na začátku hodin."
+        },
+        {
+          "tag": "Slabá diferenciace",
+          "detail": "Výuka není dostatečně přizpůsobena individuálním potřebám žáků, zejména nadaných.",
+          "evidence": "Ve většině hodin chyběl diferencovaný přístup, nízká míra aktivizujících metod."
+        },
+        {
+          "tag": "Málo digitálních technologií",
+          "detail": "Digitální technologie se ve výuce téměř nevyužívají.",
+          "evidence": "Nebyly téměř využity digitální technologie pro zpestření výuky a rozvoj zájmu žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s nadanými žáky a jak je individuálně podporuje?",
+        "Jaké metody výuky se používají v jednotlivých předmětech a jak se liší od tradičního frontálního vyučování?",
+        "Jak se škola připravuje na distanční výuku a jaké digitální nástroje používá?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními výsledky a motivací ke studiu na vysoké škole",
+        "Děti zajímající se o sportovní a zážitkové aktivity, které škola nabízí",
+        "Žáci, kterým vyhovuje tradiční gymnáziální vzdělání s přesahem do více oborů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující individualizovanou a aktivní výuku s více interakcí",
+        "Děti, které se lépe učí pomocí digitálních technologií a moderních metod",
+        "Žáci s matematickou slabostí (matematika a chemie patří mezi obtížné předměty)"
+      ],
+      "plain_czech_summary": "Gymnázium v Českém Brodě je stabilní školou s dobrými výsledky v maturitě a rostoucím počtem žáků. Nový ředitel zlepšuje materiální podmínky a bezpečnost. Silnou stránkou jsou sportovní a preventivní programy. Hlavní výzvou je modernizace výuky – učitelé by měli více využívat skupinové práce, digitální technologie a individuální přístup k žákům. Matematika a chemie jsou obtížnější předměty."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní",
+        "key_numbers": [
+          "Výsledky lepší než průměr republiky",
+          "Všichni žáci prospěli v profilové zkoušce (s výjimkou ojedinělých případů v 2020/2021)",
+          "Dlouhodobě výborné výsledky"
+        ],
+        "evidence": "Výsledky žáků ve společné části maturitní zkoušky jsou lepší než průměr stejného oboru vzdělání v republice."
+      },
+      "absence": {
+        "trend": "Pozitivní",
+        "key_numbers": [
+          "Absence klesla o třetinu v 2019/2020",
+          "Absence klesla o polovinu v 2020/2021",
+          "Neomluvené hodiny se téměř nevyskytly"
+        ],
+        "evidence": "Absence ve školních letech 2019/2020 a 2020/2021 klesla oproti roku 2018/2019 s plně prezenční výukou."
+      },
+      "support_services": [
+        "Školní metodik prevence, výchovný poradce, externí psycholožka",
+        "Učitelé pro koordinaci práce s nadanými žáky a program DofE",
+        "Doučování, individuální konzultace, volitelné semináře, povinné čtvrtletní práce"
+      ],
+      "safety_climate": [
+        "Míra úrazovosti byla v posledních třech letech klesající",
+        "Škola aktivně přijímá opatření k dalšímu snižování úrazovosti",
+        "Počet pochval výrazně převyšuje počet kázeňských opatření"
+      ],
+      "partnerships_practice": [
+        "Partnerské vztahy s vysokými školami a akademickou obcí",
+        "Zahraniční partnerské školy",
+        "Projekty Recyklohraní, Ekoškola, návštěvy Ekocentra, mezinárodní projekt DofE"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně odděluje silné stránky od slabých. Konkrétní čísla a citace podporují tvrzení. Doporučení jsou praktická a měřitelná.",
+      "uncertainty_notes": [
+        "Efektivita školního poradenského pracoviště je popsána jako 'různá' bez konkrétních příkladů",
+        "Strategie výchovného poradenství je 'roztříštěná' – není jasné, jak se to projeví v praxi",
+        "Není specifikováno, kolik učitelů se účastní dalšího vzdělávání a v jaké míře"
+      ]
+    }
+  }
+}

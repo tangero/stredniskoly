@@ -1,0 +1,118 @@
+{
+  "report_id": "GY8_600004546_2022-11-28",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:55:17.226851+00:00",
+  "run_finished_utc": "2026-02-09T16:55:44.679576+00:00",
+  "raw_file": "GY8_600004546_2022-11-28.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600004546_2022-11-28",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium s všeobecným vzděláním v denní formě",
+      "inspection_period": "28. listopadu až 1. prosince 2022",
+      "school_change_summary": "Od poslední inspekce (2014) škola rozšířila nabídku volitelných předmětů na badatelskou výuku, zavedla systém ročníkových prací a školní parlament. Centrum pro podporu integrace žáků s autismem bylo uzavřeno, ale poradenské služby v této oblasti pokračují."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Badatelská výuka v přírodovědě",
+          "detail": "Škola systémově podporuje praktické dovednosti žáků prostřednictvím badatelské výuky v přírodovědných předmětech.",
+          "evidence": "Gymnázium systémově podporuje výuku přírodovědných předmětů, pedagogové účelně využívají dovednostně praktických metod."
+        },
+        {
+          "tag": "Ročníkové práce",
+          "detail": "Propracovaný koncept ročníkových prací v celém osmiletém cyklu podporuje mezipředmětové vztahy a komplexní rozvoj kompetencí.",
+          "evidence": "Koncept ročníkových prací systémově podporuje mezipředmětovou provázanost, týmovou spolupráci a komplexní rozvoj kompetencí."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Více než polovina maturantů dosahuje vyznamenání, neprospívající se objevují jen výjimečně.",
+          "evidence": "Více než polovina žáků dlouhodobě maturuje s vyznamenáním, neprospívající se objevili pouze výjimečně."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Učitelé jen v malé míře diferencují úkoly podle individuálních možností a schopností žáků.",
+          "evidence": "Učitelé jen v malé míře diferencovali zadávané úkoly s ohledem na žáky s odlišnými individuálními možnostmi a schopnostmi."
+        },
+        {
+          "tag": "Zapojení žáků do hodnocení",
+          "detail": "Žáci nejsou dostatečně vedeni k vzájemnému kriteriálnímu hodnocení a sebereflexi.",
+          "evidence": "Učitelé nevedli žáky ke vzájemnému kriteriálnímu hodnocení, žáci tak byli jen ojediněle vedeni k objektivnímu posouzení kvality práce."
+        },
+        {
+          "tag": "Podpora začínajících učitelů",
+          "detail": "Podpora pro začínající pedagogy není vždy zcela účinná a efektivní.",
+          "evidence": "Začínajícím učitelům je poskytována podpora zkušenějšího pedagoga, není však vždy zcela účinná a efektivní."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola diferencuje výuku pro žáky s různými schopnostmi a tempem práce?",
+        "Jakou podporu dostávají žáci se speciálními vzdělávacími potřebami a jak je škola integruje do běžné výuky?",
+        "Jak se škola připravuje na přechod žáků z nižšího na vyšší stupeň gymnázia?"
+      ],
+      "who_school_fits": [
+        "Nadaní žáci s zájmem o přírodovědné předměty a badatelskou výuku",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola nabízí komplexní poradenské služby",
+        "Všestranně nadaní žáci, kterým škola poskytuje rozšiřující vzdělávací aktivity a zahraniční výměny"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individualizované přístupy a diferenciované úkoly – v některých hodinách to není dostatečné",
+        "Žáci, kteří se učí lépe aktivní participací – část výuky je stále frontální s dominantní rolí učitele",
+        "Žáci, kteří potřebují více prostoru pro ústní projev a diskusi – v některých hodinách to chybí"
+      ],
+      "plain_czech_summary": "Gymnázium Jarkovského je prestižní pražská škola s výborným renomé. Silné stránky: výborné výsledky maturit (více než polovina s vyznamenáním), badatelská výuka v přírodovědě, systém ročníkových prací. Slabiny: v některých hodinách chybí diferenciace podle schopností žáků, málo se využívá vzájemné hodnocení žáků, podpora začínajících učitelů není vždy efektivní. Škola je vhodná pro nadané a motivované žáky, ale rodiče by měli ověřit, jak konkrétně se individuálním potřebám jejich dítěte přizpůsobuje."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborný",
+        "key_numbers": [
+          "Více než 50 % maturantů s vyznamenáním",
+          "Neprospívající se objevili pouze výjimečně",
+          "Lepší výsledky než republikový průměr v předmětech společné části"
+        ],
+        "evidence": "V posledních třech školních letech dosáhli žáci ve srovnání s danou skupinou oborů v předmětech společné části maturitní zkoušky lepších výsledků, než je republikový průměr."
+      },
+      "absence": {
+        "trend": "Nízká a stabilní",
+        "key_numbers": [
+          "Průměrně okolo 50 hodin na žáka za školní rok",
+          "Nízký podíl žáků s neuzavřenou klasifikací (asi 1 %)",
+          "Nízká míra neomluvené absence"
+        ],
+        "evidence": "Vykázaná absence byla nízká (v průměru okolo 50 hodin na žáka za školní rok), nízký podíl žáků s neuzavřenou klasifikací k 30. 6. zůstal nezměněn (asi 1 % žáků)."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s kvalifikovaným týmem (speciální pedagožky, psycholožka, metodička prevence)",
+        "Individuální vzdělávací plány pro žáky se speciálními potřebami",
+        "Asistenti pedagoga pro podporu žáků s poruchami autistického spektra a zdravotním postižením",
+        "Doučování, individuální konzultace, dělené hodiny matematiky",
+        "Spektrum volitelných předmětů a testů maturitní kompetence"
+      ],
+      "safety_climate": [
+        "Nižší počet ukládaných kázeňských opatření",
+        "Nízká míra neomluvené absence",
+        "Funkční preventivní mechanismy proti rizikovému chování",
+        "Pedagogové průběžně sledují situaci v třídních kolektivech a vhodně intervenují"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se vysokými školami a odbornými pracovišti na podporu nadaných žáků",
+        "Partnerství se školskými poradenskými zařízeními",
+        "Spolupráce s externími organizacemi na prevenci rizikového chování",
+        "Zapojení zákonných zástupců do života školy prostřednictvím akcí a vzdělávacích programů",
+        "Tradičních akcí a společná prezentace s připojenou základní školou"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a citace z pozorování. Některé pasáže jsou však dlouhé a složitě strukturované, což mírně snižuje srozumitelnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty hodin hospitací nebo procento hodin s nedostatky – je obtížné posoudit rozsah problémů",
+        "Není jasné, jak velký podíl výuky se týkají zjištěné slabiny (např. 'část výuky' je vágní)",
+        "Chybí informace o počtu žáků s jednotlivými typy speciálních potřeb a jejich úspěšnosti"
+      ]
+    }
+  }
+}

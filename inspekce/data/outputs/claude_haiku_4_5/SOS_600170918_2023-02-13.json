@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600170918_2023-02-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:48:03.923005+00:00",
+  "run_finished_utc": "2026-02-09T16:48:30.798055+00:00",
+  "raw_file": "SOS_600170918_2023-02-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170918_2023-02-13",
+    "school_profile": {
+      "school_type": "Střední škola s domovem mládeže a školní jídelnou, zaměřená na gastronomii, cestovní ruch a potravinářství",
+      "inspection_period": "13.–16. února 2023",
+      "school_change_summary": "Od poslední inspekce v roce 2017 se počet žáků mírně zvýšil. Od roku 2020/2021 škola nabízí nový obor Nutriční asistent (ojedinělý v Libereckém kraji). Vedení školy se změnilo v roce 2018. Zlepšily se prostorové a materiální podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka na vysoké úrovni",
+          "detail": "Praktické vyučování v oborech s výučním listem dosahuje velmi dobré úrovně s pozitivním dopadem na úspěšnost žáků v závěrečných zkouškách (100%, 95%, 100% v posledních třech letech).",
+          "evidence": "\"Škole se daří zajistit kvalitní podmínky a vysokou úroveň průběhu praktického vyučování\""
+        },
+        {
+          "tag": "Přívětivé a otevřené klima",
+          "detail": "Škola si dlouhodobě udržuje přívětivé edukační klima otevřené a vstřícné potřebám všech žáků.",
+          "evidence": "\"Silnou stránkou školy je přívětivé klima otevřené a vstřícné potřebám všech žáků\""
+        },
+        {
+          "tag": "Bohatá nabídka volnočasových aktivit",
+          "detail": "Domov mládeže nabízí příkladnou nabídku výchovně vzdělávací činnosti včetně sportovních, environmentálních a kulturních aktivit.",
+          "evidence": "\"Příkladná je široká nabídka výchovně vzdělávací činnosti a volnočasových aktivit v domově mládeže\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Dlouhodobě problematická vysoká absence žáků (275 hodin na žáka ročně) vede k předčasným odchodům ze vzdělávání a neúspěšnosti v maturitě.",
+          "evidence": "\"Málo účinný systém opatření pro snížení vysoké absence vede k předčasným odchodům a neúspěšnosti\""
+        },
+        {
+          "tag": "Slabé výsledky v maturitě",
+          "detail": "Úspěšnost v maturitní zkoušce je pod celorepublikovým průměrem. V roce 2021/2022 uspělo jen 55% žáků přijatých do prvního ročníku.",
+          "evidence": "\"Ve školním roce 2021/2022 vykonalo úspěšně maturitní zkoušku 55 % žáků přijatých do prvního ročníku\""
+        },
+        {
+          "tag": "Pasivita žáků ve výuce všeobecných předmětů",
+          "detail": "Nižší míra aktivizujících metod ve výuce všeobecně vzdělávacích předmětů vede k pasivitě žáků a horším výsledkům.",
+          "evidence": "\"Nižší míra využití aktivizujících metod a forem práce vedla k pasivitě žáků\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké má plány na její snížení?",
+        "Jaké jsou konkrétní důvody nižší úspěšnosti v maturitní zkoušce a jak se to bude zlepšovat?",
+        "Jak se liší příprava na maturitu v jednotlivých předmětech a jaké jsou konkrétní výsledky?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory (cukrář, kuchař, číšník, potravinářství) – zde škola dosahuje výborných výsledků",
+        "Žáci, kterým vyhovuje přívětivé a otevřené prostředí se silným zaměřením na praxi",
+        "Žáci z regionu, kteří chtějí studovat v kvalitně vybavených dílnách a kuchyních"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími studijními předpoklady přijímaní do maturitních oborů – mají nižší šanci na úspěch",
+        "Žáci s tendencí k absencím – vysoká absence je zde dlouhodobý problém",
+        "Žáci, kteří potřebují intenzivní přípravu na maturitu – výuka všeobecných předmětů není dostatečně aktivizující"
+      ],
+      "plain_czech_summary": "Střední škola v Lomnici nad Popelkou je zaměřená na gastronomii a cestovní ruch. Její největší silou je praktická výuka v oborech s výučním listem, kde dosahuje výborných výsledků (100% úspěšnost v závěrečných zkouškách). Škola má přívětivé klima a bohatou nabídku aktivit v domově mládeže. Hlavním problémem je vysoká absence žáků a slabší výsledky v maturitní zkoušce, kde je úspěšnost pod celorepublikovým průměrem. Výuka všeobecných předmětů by potřebovala více aktivizujících metod. Škola je vhodná pro žáky zaměřené na praktické obory, ale méně vhodná pro ty, kteří chtějí studovat maturitní obory."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Klesající – výsledky pod celorepublikovým průměrem",
+        "key_numbers": [
+          "55% úspěšnost v roce 2021/2022 (žáci přijatí do 1. ročníku)",
+          "41% úspěšnost v jarním termínu 2022",
+          "77% úspěšnost po podzimním termínu 2022"
+        ],
+        "evidence": "\"Ve školním roce 2021/2022 vykonalo úspěšně maturitní zkoušku 55 % žáků přijatých do prvního ročníku. V jarním termínu představovala úspěšnost 41 %, po podzimním termínu 77 %\""
+      },
+      "absence": {
+        "trend": "Vysoká a dlouhodobě problematická",
+        "key_numbers": [
+          "275 hodin na žáka ročně (2021/2022)",
+          "5 neomluvených hodin na žáka ročně",
+          "231 hodin v maturitních oborech"
+        ],
+        "evidence": "\"Dlouhodobě problematickým jevem je vysoká absence žáků. Ve školním roce 2021/2022 průměrně 275 hodin na žáka, z toho pět neomluvených\""
+      },
+      "support_services": [
+        "Výchovné poradenství – výchovná poradkyně se orientuje všestranně a přistupuje zodpovědně",
+        "Pedagogická podpora – 9 žáků má plány pedagogické podpory, 1 žák má individuální vzdělávací plán",
+        "Školní metodik prevence – spolupracuje na řešení absence a rizikového chování"
+      ],
+      "safety_climate": [
+        "Bezpečnostní opatření: vstupy do prostor zabezpečeny čipy",
+        "Při inspekční prohlídce nebyla identifikována zjevná bezpečnostní rizika",
+        "Podmínky bezpečnosti jsou stanoveny ve školním řádu a vnitřních řádech"
+      ],
+      "partnerships_practice": [
+        "Členství v Asociaci kuchařů a cukrářů České republiky",
+        "Spolupráce s regionálními partnery na odborné praxi (Cestovní ruch)",
+        "Zapojení odborníků z praxe do výuky a ukončování vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, citace a doklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však dlouhé a úřednické, což snižuje srozumitelnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Není jasné, zda se absence týká především určitých skupin žáků nebo je rozšířená všeobecně",
+        "Chybí detailní analýza příčin nižší úspěšnosti v maturitě (zda je to důsledek absence, slabších předpokladů nebo špatné výuky)",
+        "Není specifikováno, jaké konkrétní aktivizující metody by měly být zavedeny"
+      ]
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "report_id": "LYC_600170675_2025-04-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:37:40.701259+00:00",
+  "run_finished_utc": "2026-02-09T13:38:03.971019+00:00",
+  "raw_file": "LYC_600170675_2025-04-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600170675_2025-04-22",
+    "school_profile": {
+      "school_type": "Hotelová škola, Obchodní akademie a Střední průmyslová škola (9 oborů vzdělání)",
+      "inspection_period": "22. 4. 2025 – 25. 4. 2025",
+      "school_change_summary": "Počet žáků se zvýšil o cca 50 % od poslední inspekce. Nově otevřeny obory Sociální činnost (2018/2019) a Ekonomické lyceum (2024/2025). Modernizovány prostorové a materiálně-technické podmínky, zejména pro gastronomické obory."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola efektivně spolupracuje se zaměstnavateli a sociálními partnery, což podporuje odborné kompetence žáků a jejich uplatnění na trhu práce.",
+          "evidence": "Realizace odborné praxe, stáže pedagogů ve firmách, besedy odborníků, kariérní poradenství."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Materiální vybavení pro odborné vzdělávání odpovídá současným trendům, zejména v gastronomických oborech.",
+          "evidence": "Efektivně využívána kuchařská studia, učebny stolničení, dílny pro praktickou výuku technických oborů."
+        },
+        {
+          "tag": "Aktivní zapojení žáků",
+          "detail": "Žáci se účastní četných soutěží, projektů a nadstandardních aktivit, které rozvíjejí jejich občanské kompetence.",
+          "evidence": "Logická olympiáda, Technowizz, gastronomické soutěže, sportovní utkání, projektové dny."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá diferenciace výuky",
+          "detail": "Úkoly nejsou přizpůsobovány individuálním potřebám žáků, zejména v odborných předmětech převažuje frontální výuka.",
+          "evidence": "Inspektoři zjistili, že zadávané úkoly nejsou diferencované podle kognitivních schopností jednotlivých žáků."
+        },
+        {
+          "tag": "Problémy s komunikací",
+          "detail": "Někteří pedagogové a žáci se obávají vyjadřovat nesouhlasu s vedením či učiteli, neshody nejsou řešeny.",
+          "evidence": "Během inspekce pedagogové uváděli, že nemohou bez obav rozporovat kroky vedení; žáci nemohou učitelům říct, pokud nesouhlasí."
+        },
+        {
+          "tag": "Slabé výsledky v některých oborech",
+          "detail": "V oborech Sociální činnost a Dopravní prostředky jsou výsledky maturit výrazně horší než průměr v ČR.",
+          "evidence": "Sociální činnost: škola 22,2 %, ČR 9,5 %; Dopravní prostředky: škola 17,7 %, ČR 7,7 % (2024)."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola podporuje žáky, kteří mají problémy s učením? Jaké jsou konkrétní programy doučování?",
+        "Jak se škola připravuje na zlepšení výsledků v oborech Sociální činnost a Dopravní prostředky, kde jsou výsledky maturit slabší?",
+        "Jaké jsou možnosti pro žáky, kteří chtějí studovat v zahraničí nebo se účastnit výměnných pobytů?"
+      ],
+      "who_school_fits": [
+        "Žáci zainteresovaní v gastronomii, hotelnictví a cestovním ruchu – škola má moderní vybavení a silné vazby na zaměstnavatele.",
+        "Žáci, kteří chtějí praktické vzdělání s jasným uplatněním – obory jsou zaměřeny na konkrétní profese.",
+        "Aktivní žáci zajímající se o soutěže a projekty – škola nabízí bohatou nabídku mimoškolních aktivit."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s poruchami učení nebo nižšími kognitivními schopnostmi – diferenciace výuky není dostatečná.",
+        "Žáci, kteří potřebují individuální přístup a podporu – frontální výuka v odborných předmětech nemusí vyhovovat.",
+        "Zájemci o obory Sociální činnost a Dopravní prostředky – výsledky maturit jsou výrazně pod průměrem ČR."
+      ],
+      "plain_czech_summary": "Hotelová škola v Teplicích je moderní, rozrůstající se instituce s dobrými vazbami na praxi. Silné stránky: kvalitní vybavení, spolupráce se zaměstnavateli, aktivní zapojení žáků. Slabiny: výuka není dostatečně přizpůsobena individuálním potřebám, komunikace mezi vedením a pedagogy/žáky má rezervy, některé obory mají slabé výsledky maturit. Vhodná pro prakticky zaměřené žáky, ale vyžaduje zlepšení v diferenciaci výuky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšení v některých oborech, ale problémy přetrvávají",
+        "key_numbers": [
+          "Informační technologie: 2023 (21,6 %), 2024 (10,6 %)",
+          "Sociální činnost: 2023 (36,4 %), 2024 (22,2 %)",
+          "Dopravní prostředky: 2023 (30 %), 2024 (17,7 %)"
+        ],
+        "evidence": "Hrubá neúspěšnost (podíl neúspěšných žáků) se zlepšila, ale v oborech Sociální činnost a Dopravní prostředky zůstává výrazně vyšší než průměr ČR."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně a tři metodičky prevence",
+        "Individuální a skupinové doučování, konzultace",
+        "Podpora žáků se speciálními vzdělávacími potřebami (184 žáků)",
+        "Kariérní poradenství a spolupráce s vysokými školami"
+      ],
+      "safety_climate": [
+        "Systém školní prevence účinně reaguje na aktuální potřeby",
+        "Adaptační a sportovní kurzy, komplexní preventivní programy",
+        "Anonymní schránka důvěry a pravidelné třídnické hodiny",
+        "Rizikové chování řešeno bezodkladně",
+        "Rezerva: někteří pedagogové a žáci se obávají vyjadřovat nesouhlasu"
+      ],
+      "partnerships_practice": [
+        "Rozsáhlá spolupráce se zaměstnavateli a sociálními partnery",
+        "Realizace odborné praxe a odborného výcviku u různých zaměstnavatelů",
+        "Stáže pedagogů ve firmách, besedy odborníků",
+        "Zahraniční spolupráce podporující mobilitu žáků",
+        "Spolupráce s vysokými školami a absolventy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, obsahuje konkrétní čísla a příklady. Slabší je pouze absence údajů o absence žáků a některé pasáže jsou technicky náročnější.",
+      "uncertainty_notes": [
+        "Absence údajů o absence žáků – není v textu zmíněna.",
+        "Nejasné, jak přesně se liší výuka mezi jednotlivými pracovišti (hotelová, obchodní akademie, průmyslová škola).",
+        "Není jasné, jaké konkrétní opatření škola již přijala na základě doporučení z inspekce 2017."
+      ]
+    }
+  }
+}

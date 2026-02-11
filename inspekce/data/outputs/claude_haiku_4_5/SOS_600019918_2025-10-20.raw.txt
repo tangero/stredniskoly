@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "SOS_600019918_2025-10-20",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická",
+    "inspection_period": "20. až 24. října 2025",
+    "school_change_summary": "Škola se od roku 2022/2023 účastní pokusného ověřování stupňovitého propojení zdravotnických oborů. Výrazně se zlepšily materiální podmínky, byl vybudován nový sportovní areál a zřízena pozice školního psychologa."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Strategie a vedení",
+        "detail": "Škola má jasně formulovanou strategii rozvoje s reálnými cíli, kterou aktivně komunikuje se zákonnými zástupci a partnery.",
+        "evidence": "Vedení školy účelně řídí pedagogické procesy v souladu s koncepcí rozvoje a strategickými cíli."
+      },
+      {
+        "tag": "Partnerství a praxe",
+        "detail": "Nadstandardní spolupráce s nemocnicemi, zdravotnickými zařízeními a zahraničními institucemi zajišťuje kvalitní praktické vyučování.",
+        "evidence": "Krajská nemocnice ve Zlíně je klíčovým partnerem; žáci absolvují mezinárodní mobility a získávají cenné odborné zkušenosti."
+      },
+      {
+        "tag": "Výsledky a úspěchy",
+        "detail": "Žáci dosahují výrazně vyšší úspěšnosti u maturit než průměr podobných škol a pravidelně se umisťují v národních i mezinárodních soutěžích.",
+        "evidence": "Výsledky maturitní zkoušky mimo matematiku jsou výrazně vyšší než u středních škol obdobného typu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vyhodnocování v některých předmětech",
+        "detail": "V závěru výuky některých předmětů chybí dostatečné vyhodnocování dosažených cílů a zpětná vazba žákům.",
+        "evidence": "Kromě společenskovědních, anglického jazyka, biologie a odborných předmětů chybělo závěrečné vyhodnocení stanovených vzdělávacích cílů."
+      },
+      {
+        "tag": "Diferenciace úkolů v teoretické výuce",
+        "detail": "V teoretické výuce střední školy by měly být více zařazovány úkoly různé náročnosti pro různě schopné žáky.",
+        "evidence": "Inspekce doporučuje účelně zařazovat úkoly rozdílné náročnosti do teoretické výuky ve střední škole."
+      },
+      {
+        "tag": "Zpětná vazba v tělesné výchově",
+        "detail": "Poskytovaná zpětná vazba v tělesné výchově jen omezeně podporuje individuální rozvoj žáků.",
+        "evidence": "Zpětná vazba jen v omezené míře podporovala individuální rozvoj žáků a jejich porozumění vlastním pokrokům."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá praktické vyučování a jak jsou zajištěny stáže v nemocnicích?",
+      "Jaké jsou možnosti účasti v mezinárodních projektech a jaké jazykové znalosti jsou k tomu potřeba?",
+      "Jak škola podporuje žáky, kteří mají problémy s učením nebo se obávají školního neúspěchu?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o zdravotnické povolání, kteří chtějí kvalitní praktickou přípravu a kontakty v nemocnicích",
+      "Studenti, kteří se zajímají o mezinárodní zkušenosti a jazykový rozvoj v odborném kontextu",
+      "Žáci, kteří si cení moderního vybavení, včetně virtuální reality a robotiky v edukaci"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální zpětné vazby a detailního vyhodnocování svého pokroku v některých předmětech",
+      "Studenti, kteří preferují více diferenciovaných úkolů různé náročnosti v teoretické výuce",
+      "Žáci se slabšími předpoklady, kteří by měli vědět, že škola má podporu, ale měli by si ověřit konkrétní rozsah doučování"
+    ],
+    "plain_czech_summary": "Jde o kvalitní zdravotnickou školu se silným vedením, moderním vybavením a výbornou spoluprací s nemocnicemi. Žáci dosahují nadprůměrných výsledků a mají možnost mezinárodních stáží. Inspekce pochválila strategii, partnerství a úspěchy v soutěžích. Drobné nedostatky se týkají vyhodnocování cílů v některých hodinách a potřeby více diferenciovaných úkolů. Škola má systém podpory pro slabší žáky a věnuje pozornost jejich osobnímu rozvoji."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně pozitivní",
+      "key_numbers": [
+        "Úspěšnost mimo matematiku výrazně vyšší než u středních škol obdobného typu",
+        "Výsledky na velmi dobré úrovni v posledních třech letech",
+        "Všichni žáci 3. ročníku oboru Praktická sestra úspěšně absolvovali jednotnou závěrečnou zkoušku"
+      ],
+      "evidence": "Ve srovnání se středními školami obdobného typu byla úspěšnost žáků při maturitní zkoušce mimo zkoušku z matematiky výrazně vyšší."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva se absence věnuje pouze v kontextu bezpečnosti a zdraví, ne jako samostatný problém."
+    },
+    "support_services": [
+      "Školní psycholožka poskytující individuální konzultace žákům, studentům, pedagogům a zákonným zástupcům",
+      "Výchovná poradkyně, školní metodičky prevence a kariérová poradkyně s jasně vymezenými kompetencemi",
+      "Doučování a konzultační hodiny jednotlivých pedagogů pro žáky ohrožené školním neúspěchem",
+      "Plány pedagogické podpory a podpůrná opatření pro žáky se speciálními vzdělávacími potřebami"
+    ],
+    "safety_climate": [
+      "Funkční a efektivní systém bezpečnosti a ochrany zdraví zaveden a pravidelně vyhodnocován",
+      "Bezpečnostní rizika jsou pravidelně vyhodnocována a přijímána odpovídající preventivní opatření",
+      "Žáci jsou průběžně informováni o bezpečnostních rizicích v prostorách školy i mimo ni",
+      "Škola se věnuje sledování projevů rizikového chování a realizuje opatření na prevenci společensky nežádoucích jevů"
+    ],
+    "partnerships_practice": [
+      "Krajská nemocnice ve Zlín jako hlavní partner pro praktické vyučování a odbornou praxi",
+      "Spolupráce s řadou poskytovatelů zdravotnických a sociálních služeb",
+      "Mezinárodní projektová spolupráce s mobilitami žáků a studentů v zahraničních zařízeních",
+      "Spolupráce se základními a středními školami na prevenci a prezentaci zdravotnického povolání"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však poměrně dlouhé a složitě strukturované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna jako samostatný problém, není jasné, zda je to pozitivní nebo se jí zpráva věnuje jinde",
+      "Konkrétní počty žáků v jednotlivých oborech nejsou jasně odděleny (362 žáků a 100 studentů celkem, ale rozdělení není specifikováno)",
+      "Výsledky matematiky u maturity nejsou detailně popsány, pouze se uvádí, že jsou mimo matematiku výrazně vyšší"
+    ]
+  }
+}
+```

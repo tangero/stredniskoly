@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600008487_2022-11-04",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola a Střední odborné učiliště (SPŠ a SOU) zaměřená na strojírenství, elektrotechniku, dřevo, zemědělství a služby",
+    "inspection_period": "4., 7. a 9.–10. listopadu 2022",
+    "school_change_summary": "Škola prošla zkvalitnění materiálních podmínek a stabilizací pedagogického sboru. Zavedla tandemovou výuku a zlepšila propojení teorie s praxí. Pozitivní je demokratický styl řízení a péče o zaměstnance."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Učitelé odborných předmětů vyučují i praktickou výuku, čímž účinně propojují teorii s reálnou praxí.",
+        "evidence": "Většina učitelů odborných předmětů je současně vyučujícími praktického vyučování, což účelně napomáhá přenosu získaných teoretických znalostí do praxe."
+      },
+      {
+        "tag": "Podpora žáků v obtížích",
+        "detail": "Škola systematicky pracuje se žáky ohrožovanými neúspěchem a těmi se speciálními potřebami.",
+        "evidence": "Práce školního poradenského pracoviště je systematická, škola pracuje s vlastním seznamem žáků ohrožených školním neúspěchem a průběžně upravuje opatření."
+      },
+      {
+        "tag": "Dobrá atmosféra a vztahy",
+        "detail": "Vedení školy vytváří příznivé prostředí pro všechny účastníky vzdělávání.",
+        "evidence": "Účinný demokratický styl řízení a promyšlená péče o pracovníky vede k vytváření dobrých vztahů a vzájemné kooperaci všech aktérů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá diferenciace výuky",
+        "detail": "Učitelé často nezpracovávají úkoly přizpůsobené různým schopnostem žáků.",
+        "evidence": "Nízká míra diferenciace učiva podle možností a schopností jednotlivých žáků; vyučující často deklarovali rozdílnou úroveň žáků, ale nedostatečně ji v praxi využívali."
+      },
+      {
+        "tag": "Nízké výsledky v některých oborech",
+        "detail": "Obor Podnikání má vysokou fluktuaci a neúspěšnost – více než polovina žáků není u maturity úspěšná.",
+        "evidence": "Řada žáků opouští studium již během prvního pololetí prvního ročníku a ze zbývajících není většinou u maturitní zkoušky úspěšná ani polovina žáků."
+      },
+      {
+        "tag": "Nedostatečné shrnutí a reflexe hodin",
+        "detail": "V závěru hodin často chybí zhodnocení učiva a sebehodnocení žáků.",
+        "evidence": "V převážné části hospitovaných hodin absence efektivního zhodnocení ze strany vyučujících a nevytváření vhodných příležitostí pro vzájemné hodnocení a sebehodnocení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku žákům s různými schopnostmi a jak se to projevuje v jednotlivých předmětech?",
+      "Jaké jsou důvody vysoké neúspěšnosti v oboru Podnikání a co se plánuje změnit?",
+      "Jak probíhá doučování a konzultace – jak často je žáci využívají a jak se na ně dostanu?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou výuku a řemesla – škola má vybavené dílny s moderními stroji a CNC technologií",
+      "Žáci, kteří potřebují individuální podporu – škola má funkční poradenské pracoviště a nabízí doučování",
+      "Žáci zajímající se o mezinárodní spolupráci – škola nabízí výměnné programy v Německu, Rakousku, Švýcarsku a dalších zemích"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižší motivací – absence je řešeným problémem, škola hlásí vysokou absenci a záškoláctví",
+      "Zájemci o obor Podnikání – tento obor má vysokou fluktuaci a více než polovina žáků není u maturity úspěšná",
+      "Žáci, kteří potřebují jasně strukturovanou výuku – inspekce zjistila, že učitelé často nedostatečně formulují cíle hodin"
+    ],
+    "plain_czech_summary": "SPŠ a SOU Pelhřimov je víceoborová škola se 669 žáky zaměřená na strojírenství, elektrotechniku a služby. Silnými stránkami jsou kvalitní praktická výuka, dobrá atmosféra a podpora žáků v obtížích. Slabinou je nedostatečná diferenciace výuky podle schopností žáků a nízké výsledky v oboru Podnikání. Inspekce doporučuje více využívat různé vyučovací metody a zlepšit reflexi hodin."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pokles úspěšnosti v roce 2022",
+      "key_numbers": [
+        "V roce 2022 došlo k nárůstu neúspěšnosti u většiny oborů zakončovaných maturitní zkouškou",
+        "Obor Podnikání: méně než polovina žáků je u maturity úspěšná",
+        "Obor Podnikání: řada žáků opouští studium již během prvního pololetí prvního ročníku"
+      ],
+      "evidence": "V roce 2022 došlo oproti rokům předcházejícím u většiny oborů zakončovaných maturitní zkouškou k nárůstu neúspěšnosti, což souvisí s návratem standardních podmínek."
+    },
+    "absence": {
+      "trend": "Vysoká absence je řešeným problémem",
+      "key_numbers": [
+        "Vysoká absence je nejčastěji řešeným problémem",
+        "Záškoláctví je mezi hlavními problémy",
+        "Ztráta pracovních návyků v důsledku distanční výuky"
+      ],
+      "evidence": "Nejčastěji řešenými problémy byly vysoká absence, záškoláctví a aktuálně závislosti, spolu s postcovidovými psychickými problémy."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se systematickou prací s žáky se speciálními vzdělávacími potřebami",
+      "Výchovné poradkyně a metodičky prevence pracující s žáky ohroženými školním neúspěchem",
+      "Doučování a konzultace (využívají však pouze někteří žáci)",
+      "Výchovné komise a speciální schůzky vyučujících pro konkrétní třídy",
+      "Preventivní programy pro jednotlivé ročníky (první pomoc, finanční gramotnost, prevence závislostí)"
+    ],
+    "safety_climate": [
+      "Důsledné vedení žáků k dodržování dohodnutých pravidel vzájemných vztahů účinně vede k příznivé edukační atmosféře",
+      "Dílčí rezervy v kontrolní činnosti v oblasti zabezpečení vstupu do budovy školy a domovů mládeže",
+      "Bezbariérovost dosud zajištěna není na pracovišti v Kamenici nad Lipou"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s cca 80 firmami v regionu zajištěná smluvně pro praktické vyučování",
+      "Třetí místo v Kraji Vysočina v iniciativě Škola doporučená zaměstnavateli 2022",
+      "Výměnné programy a společné projekty se školami v zahraničí (Slovensko, Německo, Rakousko, Švýcarsko, Finsko, Švédsko, Polsko)",
+      "Spolupráce s externími organizacemi (Fokus Vysočina, Hodina H, domov důchodců)",
+      "Bohatá nabídka exkurzí a odborných přednášek firem"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Jsou jasně odděleny silné stránky, slabiny a doporučení. Některé pasáže jsou však delší a méně přehledné.",
+    "uncertainty_notes": [
+      "Přesné počty žáků v jednotlivých oborech nejsou uvedeny, pouze celkový počet 669 žáků",
+      "Konkrétní procenta neúspěšnosti v maturitě nejsou uvedena, pouze kvalitativní popis",
+      "Není jasné, kolik žáků skutečně využívá nabízené doučování a konzultace"
+    ]
+  }
+}
+```

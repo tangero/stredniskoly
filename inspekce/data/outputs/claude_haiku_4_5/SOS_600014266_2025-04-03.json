@@ -1,0 +1,117 @@
+{
+  "report_id": "SOS_600014266_2025-04-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:39:22.377705+00:00",
+  "run_finished_utc": "2026-02-09T13:39:51.479888+00:00",
+  "raw_file": "SOS_600014266_2025-04-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600014266_2025-04-03",
+    "school_profile": {
+      "school_type": "Soukromá střední škola manažerská a zdravotnická + vyšší odborná škola, dva obory se maturitou (Praktická sestra, Ekonomika a podnikání) + jeden obor vyšší vzdělání",
+      "inspection_period": "3.–14. dubna 2025",
+      "school_change_summary": "Od poslední inspekce v 2019: počet žáků vzrostl o 50 %, zahájeno vyšší odborné vzdělávání, zlepšeny materiální podmínky, posíleno vedení o zástupkyni ředitelky"
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické zkušenosti a společenský přínos",
+          "detail": "Žáci zdravotnického oboru aktivně učí první pomoc na jiných školách a v komunitě, což rozvíjí jejich odborné dovednosti a osobnost.",
+          "evidence": "Žáci se aktivně podílejí na programech první pomoci a edukačních akcích, kde prezentují postupy řešení mimořádných situací."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Škola systematicky modernizuje prostory, učební pomůcky a digitální technologie pro podporu odborného vzdělávání.",
+          "evidence": "Od poslední inspekce byly modernizovány vnitřní prostory, pořízeny nové učební pomůcky a zlepšilo se vybavení digitálními technologiemi."
+        },
+        {
+          "tag": "Podpora podnikavosti",
+          "detail": "Žáci získávají praktické podnikatelské dovednosti prostřednictvím fiktivních a reálných žákovských firem.",
+          "evidence": "Vyučující předmět fiktivní firma umožňuje žákům propojit znalosti, týmově spolupracovat a rozvíjet tvořivost v reálném prostředí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká neúspěšnost u maturity v oboru Praktická sestra",
+          "detail": "Žáci tohoto oboru opakovaně selhávají u maturitní zkoušky výrazně více než průměr v republice.",
+          "evidence": "V 2022: 46,2 % neúspěšnosti, 2023: 43,8 %, 2024: 34,5 %. V profilové části 2024 uspělo jen 79,3 % žáků."
+        },
+        {
+          "tag": "Slabý rozvoj kritického myšlení",
+          "detail": "Výuka se zaměřuje především na memorování, žáci málo řeší problémy a hledají vlastní řešení.",
+          "evidence": "Jen v pětině hodin měli žáci příležitost hledat a navrhovat řešení, vzájemně je porovnávat a diskutovat."
+        },
+        {
+          "tag": "Nedostatečná individualizace výuky",
+          "detail": "Učitelé málo přizpůsobují výuku různým schopnostem žáků, všichni plní stejné úkoly stejné náročnosti.",
+          "evidence": "Pedagogové účelně nevyužili možnost diferencovat výuku podle individuálních schopností či učebního pokroku jednotlivých žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou neúspěšnost žáků oboru Praktická sestra u maturity? Jaká opatření jsou naplánována?",
+        "Jak se učitelé přizpůsobují různým tempům učení jednotlivých žáků? Existuje individuální podpora pro slabší i nadané žáky?",
+        "Jaké jsou konkrétní výsledky vlastního testování v češtině a angličtině a jak je škola využívá k zlepšení výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci zajímající se o zdravotnictví, kteří chtějí praktické zkušenosti a zapojení do komunity",
+        "Budoucí podnikatelé, kterým vyhovuje výuka přes fiktivní firmy a reálné podnikatelské projekty",
+        "Žáci, kterým vyhovuje kombinace teoretické výuky s praxí na pracovištích nemocnic a zdravotnických zařízení"
+      ],
+      "who_should_be_cautious": [
+        "Žáci oboru Praktická sestra by měli vědět, že mají výrazně vyšší riziko neúspěchu u maturity než průměr v ČR",
+        "Žáci, kteří potřebují individualizovanou výuku a diferenciaci podle svého tempa – škola ji zatím málo nabízí",
+        "Žáci, kteří se spoléhají na rozvoj kritického myšlení a analýzy – výuka se zaměřuje spíše na memorování"
+      ],
+      "plain_czech_summary": "Škola se dynamicky rozvíjí: počet žáků vzrostl o 50 %, zlepšily se podmínky, zahájila vyšší vzdělání. Silné stránky: praktické zkušenosti, kvalitní vybavení, podpora podnikavosti. Hlavní problémy: obor Praktická sestra má vysokou neúspěšnost u maturity (34–46 %), výuka málo rozvíjí kritické myšlení a individualizaci. Škola pracuje na zlepšení, ale rodiče by měli být realističtí ohledně náročnosti zdravotnického oboru."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Obor Praktická sestra: zlepšování, ale stále kritické. Obor Ekonomika a podnikání: stabilně dobrý.",
+        "key_numbers": [
+          "Praktická sestra 2024: 34,5 % neúspěšnosti (2022: 46,2 %, 2023: 43,8 %)",
+          "Praktická sestra 2024: v profilové části uspělo 79,3 % žáků",
+          "Ekonomika a podnikání 2024: 100 % úspěšnosti"
+        ],
+        "evidence": "Hrubá neúspěšnost (podíl neúspěšných nebo nekonajících zkoušku) v oboru Praktická sestra opakovaně výrazně překračuje celorepublikový průměr stejné oborové skupiny."
+      },
+      "absence": {
+        "trend": "Pozitivní: absence se snížila a byla eliminována neomluvená nepřítomnost.",
+        "key_numbers": [
+          "Školní rok 2023/2024: průměrná absence 164 hodin na žáka",
+          "Neomluvená absence: eliminována",
+          "Opatření byla účinná ve srovnání se stavem při poslední inspekci"
+        ],
+        "evidence": "Jedním z opatření je stanovení maximální hranice absence pro hodnocení. Škola přijatá opatření vyhodnocuje a upravuje."
+      },
+      "support_services": [
+        "Výchovná poradkyně zajišťuje péči o žáky se speciálními vzdělávacími potřebami a komunikuje se školními poradenskými zařízeními",
+        "Kariérová poradkyně nabízí osobní konzultace a aktivity pro rozhodování o dalším studiu či kariéře",
+        "Metodička prevence provádí šetření mezi žáky a upravuje plán preventivních aktivit (prevence šikany, kyberšikany, poruch příjmu potravy, psychických problémů)",
+        "Schránka důvěry (včetně elektronické podoby) pro hlášení problémů"
+      ],
+      "safety_climate": [
+        "Škola sleduje míru úrazovosti, vyhodnocuje ji a přijímá preventivní opatření",
+        "Vedení školy zajistilo vzdělávání celé sboru v krizových situacích",
+        "Poradenští pracovníci zpracovali kvalitní krizové plány",
+        "V posledních třech letech řešila projevy nevhodného chování, psychických poruch, sebepoškozování a poruch příjmu potravy"
+      ],
+      "partnerships_practice": [
+        "Partnerství se zaměstnavateli regionu – praktické vyučování na jejich pracovištích (zejména nemocnice v Břeclavi)",
+        "Spolupráce s dalšími školami podobného typu – sdílení odborných znalostí a zkušeností",
+        "Spolupráce s Městem Břeclav a místními organizacemi na školních a mimoškolních akcích",
+        "Spolupráce s Integrovaným záchranným systémem na edukačních akcích",
+        "Spolupráce s Ústavem zdravotnických věd při Masarykově univerzitě"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, obsahuje konkrétní čísla a příklady. Hlavní zjištění jsou jasná: vysoká neúspěšnost u maturity v oboru Praktická sestra, slabý rozvoj kritického myšlení, nedostatečná individualizace. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+      "uncertainty_notes": [
+        "Nový systém interního testování v češtině a angličtině byl zaveden krátce před inspekcí – dopad na prospěch zatím není jasný",
+        "Zpráva neuvádí konkrétní důvody vysoké neúspěšnosti u maturity v oboru Praktická sestra (chybí analýza na úrovni předmětů)",
+        "Není jasné, jak se bude škola konkrétně vypořádávat s doporučeními inspekce – lhůta na opatření je 14 dní"
+      ]
+    }
+  }
+}

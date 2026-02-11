@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_600020665_2021-10-12",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:28:49.279952+00:00",
+  "run_finished_utc": "2026-02-10T08:29:56.303871+00:00",
+  "raw_file": "GY4_600020665_2021-10-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600020665_2021-10-12",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola zdravotnická a Střední zdravotnická škola",
+      "inspection_period": "12. 10. 2021 − 15. 10. 2021, 18. 10. 2021",
+      "school_change_summary": "Od roku 2016 vzrostl počet žáků, naopak se snížil počet studentů vyšší odborné školy a došlo k omezení některých oborů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci dosahují nadprůměrných výsledků u maturity a v profilové části prověřující odborné kompetence.",
+          "evidence": "„Hrubá neúspěšnost žáků... byla ve všech oborech nižší než je průměr... v celorepublikovém srovnání.“"
+        },
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola efektivně propojuje teorii s praxí díky dlouhodobé spolupráci s řadou sociálních partnerů.",
+          "evidence": "„Spolupráce... zajišťuje nezbytnou vazbu teoretického odborného vzdělávání na praxi... i profesní růst pedagogů.“"
+        },
+        {
+          "tag": "Zázemí a vybavení",
+          "detail": "Škola disponuje kvalitním materiálním zázemím, modernizovanými učebnami a bezpečnostním systémem.",
+          "evidence": "„Vedení školy... systematicky obnovuje, mj. kmenové třídy, odborné učebny... laboratoře... Prezentační a audiovizuální techniku.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "V části hodin převažuje frontální výuka bez dostatečného zapojení žáků, což vede k jejich pasivitě.",
+          "evidence": "„Nedostatečné střídání výukových forem... se projevilo... nedostatečným zapojením žáků až k jejich pasivitě.“"
+        },
+        {
+          "tag": "Chybějící zpětná vazba",
+          "detail": "Učitelé často nevyužívají formativní hodnocení a nezapojují žáky do sebereflexe.",
+          "evidence": "„Pedagogové rovněž většinou nevyužívali formativní funkci hodnocení, žáci byli jen ojediněle vedeni... k sebereflexi.“"
+        },
+        {
+          "tag": "Komunikační napětí",
+          "detail": "Změny ve vedení školy kladou zvýšené nároky na komunikaci, kde dosud nebyl dosažen plný konsenzus.",
+          "evidence": "„V některých případech se dosud nepodařilo dosáhnout potřebného konsenzu, např. v oblasti změn ve vedení oborových sekcí.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje zapojení žáků do výuky, aby nedocházelo k pasivitě?",
+        "Jakým způsobem jsou žáci vedeni k sebereflexi a vzájemnému hodnocení svých výkonů?",
+        "Jaké konkrétní stáže a praxe v rámci spolupráce s partnery můj potomek absolvuje?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří chtějí získat silné odborné kompetence a praktické dovednosti v laboratorních či zdravotnických oborech.",
+        "Studenti, kteří očekávají kvalitní materiální zázemí a moderní vybavení odborných učeben.",
+        "Žáci, kteří preferují školu s jasnou koncepcí rozvoje a stabilními výsledky u maturitní zkoušky."
+      ],
+      "who_should_be_cautious": [
+        "Studenti, kteří preferují inovativní a interaktivní metody výuky před tradičním frontálním vyučováním.",
+        "Žáci, kteří potřebují častou a detailní zpětnou vazbu a podporu v rámci sebereflexe.",
+        "Rodiče, kteří vyžadují bezproblémovou komunikaci mezi vedením a pedagogy bez vnitřních napětí."
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní odborné vzdělání s vynikajícími výsledky u maturity a silným propojením s praxí. Žáci mají k dispozici moderní vybavení a podporu výchovného poradenství. Slabší stránkou je tradiční styl výuky s nízkou aktivizací žáků a nedostatečným využíváním moderních hodnoticích metod. Nedávné změny ve vedení způsobují částečné komunikační problémy. Pro ambiciózní studenty se zájmem o zdravotnictví a chemii je však škola dobrou volbou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Podíl žáků prospívajících s vyznamenáním se zvyšuje.",
+          "Hrubá neúspěšnost u maturity je nižší než celorepublikový průměr.",
+          "Nedaří se uspět jen jednotlivcům."
+        ],
+        "evidence": "„Žáci všech oborů dosahovali nadprůměrných výsledků při ukončování vzdělávání maturitní zkouškou.“"
+      },
+      "absence": {
+        "trend": "Klesající",
+        "key_numbers": [
+          "Snižující se průměrný počet zameškaných hodin žáka.",
+          "Snížený stupeň chování udělen jen jednotlivcům.",
+          "Neomluvená absence je řešena kázeňskými opatřeními."
+        ],
+        "evidence": "„Snižujícím se průměrným počtem zameškaných hodin žáka... Nízký počet uložených kázeňských opatření.“"
+      },
+      "support_services": [
+        "Funkční systém výchovného poradenství a prevence sociálně patologických jevů.",
+        "Individuální a skupinové konzultace a doučování pro předcházení neúspěchu.",
+        "Činnost školní psycholožky pro řešení individuálních a vztahových problémů."
+      ],
+      "safety_climate": [
+        "Vstup do budovy zabezpečen elektronicky (turnikety, termokamery).",
+        "Většina hodin probíhá ve vstřícné pracovní atmosféře.",
+        "Efektivní řešení problémového chování v součinnosti s rodiči."
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s četnými sociálními partnery zajišťující vazbu na praxi.",
+        "Aktivní podpora zahraničních pobytů a stáží pro rozvoj kompetencí.",
+        "Konstruktivní vztah se zřizovatelem podporující zlepšování materiálních podmínek."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a terminologie je vysvětlena kontextově. Závěry a hodnocení jsou explicitně vyjádřeny.",
+      "uncertainty_notes": [
+        "Nejasná míra 'nižší dynamiky' vyučovacích hodin a její vliv na konkrétní žáky.",
+        "Chybí konkrétní data o počtu žáků s individuálními vzdělávacími plány.",
+        "Není specifikováno, které konkrétní 'inovativní metody' ve vzdělávání pedagogů chyběly."
+      ]
+    }
+  }
+}

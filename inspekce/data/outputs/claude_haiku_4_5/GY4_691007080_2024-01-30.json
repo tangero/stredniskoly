@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_691007080_2024-01-30",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:28:04.986593+00:00",
+  "run_finished_utc": "2026-02-09T16:28:30.336142+00:00",
+  "raw_file": "GY4_691007080_2024-01-30.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691007080_2024-01-30",
+    "school_profile": {
+      "school_type": "Gymnázium (4leté) a Střední odborná škola (obor Kuchař-číšník, 3leté)",
+      "inspection_period": "30. ledna až 1. února 2024",
+      "school_change_summary": "Škola prošla výraznou transformací: změnila skladbu oborů (zrušila gastronomické obory), od roku 2023 nese nový název lépe odrážející nabídku. Časté personální změny na pozici ředitele ovlivnily kontinuitu vzdělávání. Nově otevřený gymnáziem reflektuje zájem uchazečů o všeobecné vzdělání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Gymnázium: kvalitní výuka",
+          "detail": "Výuka v gymnáziu probíhá v konstruktivní atmosféře s promyšlenou přípravou a motivačním prostředím.",
+          "evidence": "94 % žáků prospělo v prvním pololetí, z toho 15 % s vyznamenáním."
+        },
+        {
+          "tag": "Demokratické vedení",
+          "detail": "Ředitelka uplatňuje partnerský přístup s otevřenou komunikací a žáci se podílejí na rozhodování.",
+          "evidence": "Žáci mají možnost spolurozhodovat prostřednictvím žákovského parlamentu."
+        },
+        {
+          "tag": "Podpora cizinců",
+          "detail": "Škola má kurátora pro žáky s odlišným mateřským jazykem, který s nimi pracuje individuálně.",
+          "evidence": "Ředitelka v pozici kurátorky zajišťuje doučování z českého jazyka a individuální pomoc."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v oboru Kuchař-číšník",
+          "detail": "Obor trpí nízkou úspěšností a klesajícím počtem žáků, v prvním pololetí prospělo jen 41 % žáků druhého ročníku.",
+          "evidence": "Pouze 60 % žáků dokončilo vzdělání, počty mají snižující se tendenci."
+        },
+        {
+          "tag": "Zastaralé vybavení kuchyně",
+          "detail": "Cvičná kuchyně neodpovídá moderním trendům v gastronomii a omezuje kvalitu praktické výuky.",
+          "evidence": "Škola disponuje pouze jednou cvičnou kuchyní s nevyhovujícím vybavením."
+        },
+        {
+          "tag": "Chybí laboratoře pro gymnázium",
+          "detail": "Gymnáziu chybí přírodovědné laboratoře a odborné učebny pro kvalitní výuku.",
+          "evidence": "Absence laboratoří a odborných učeben pro výuku v gymnáziu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky-cizince v češtině a jak dlouho trvá, než dosáhnou potřebné úrovně?",
+        "Jaké jsou plány na modernizaci cvičné kuchyně a rozšíření praktického vyučování mimo školu?",
+        "Jak se škola vypořádá s nízkou úspěšností v oboru Kuchař-číšník a plánuje-li jeho reformu?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o všeobecné vzdělání a vysokou motivací – gymnázium má velmi dobré výsledky.",
+        "Žáci s odlišným mateřským jazykem – škola má systém individuální podpory a kurátora.",
+        "Žáci, kterým vyhovuje demokratické vedení a možnost spolurozhodování o chodu školy."
+      ],
+      "who_should_be_cautious": [
+        "Zájemci o obor Kuchař-číšník – obor má nízké výsledky (41 % prospěchu) a zastaralé vybavení.",
+        "Žáci potřebující intenzivní jazykovou podporu – systémová podpora cizinců je zatím v počátcích.",
+        "Žáci vyžadující speciální péči – škola má jen 4 žáky se speciálními potřebami, systém je v budování."
+      ],
+      "plain_czech_summary": "Gymnázium International je školou v transformaci. Nové gymnázium funguje velmi dobře s výbornými výsledky a kvalitní výukou. Obor Kuchař-číšník však zápasí s nízkou úspěšností (41 % prospěchu) a zastaralým vybavením. Škola má demokratické vedení a podporuje žáky-cizince, ale systémová podpora těchto žáků se teprve buduje. Inspekce doporučuje zlepšit diferenciaci výuky, modernizovat vybavení a posílit kontrolu kvality."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Gymnázium: velmi pozitivní; Kuchař-číšník: kritický",
+        "key_numbers": [
+          "Gymnázium 1. pololetí 2023/24: 94 % prospěchu, 15 % s vyznamenáním",
+          "Kuchař-číšník: 60 % dokončilo vzdělání za 3 roky",
+          "Kuchař-číšník 2. ročník 1. pololetí: pouze 41 % prospěchu"
+        ],
+        "evidence": "Výrazný rozdíl mezi obory. Gymnázium dosahuje velmi dobrých výsledků, obor Kuchař-číšník vykazuje slabší výsledky vzdělávání."
+      },
+      "absence": {
+        "trend": "Problematická, zejména u oboru Kuchař-číšník",
+        "key_numbers": [
+          "Vysoká nepřítomnost a neomluvená absence jsou řešeny výchovnou poradkyní",
+          "Nízká znalost češtiny vede k předčasným odchodům ze vzdělávání"
+        ],
+        "evidence": "Těžiště práce výchovné poradkyně spočívá v řešení vysoké nepřítomnosti a neomluvené absence žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence (postupně se konsolidují)",
+        "Kurátor pro žáky s odlišným mateřským jazykem (ředitelka) – individuální doučování z češtiny",
+        "Individuální dopomoc učitelů žákům se speciálními vzdělávacími potřebami (4 žáci)"
+      ],
+      "safety_climate": [
+        "Nastavený systém prevence vychází z charakteru školy a individualit žáků",
+        "Umožňuje včas identifikovat projevy sociálně patologického jednání a zahájit včasnou intervenci",
+        "Adaptační proces žáků gymnázia zaměřen na zvládnutí nároků středoškolského vzdělávání"
+      ],
+      "partnerships_practice": [
+        "Nejdůležitější partneři: zákonní zástupci žáků – stálý kontakt prostřednictvím třídních schůzek",
+        "Škola postupně navazuje spolupráci se sociálními partnery",
+        "Školní stravování zajištěno externím subjektem"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní čísla a citace. Některé pasáže jsou více úřednické, ale celkově je dobře pochopitelná pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní plány školy na řešení problémů – jsou to jen doporučení inspekce.",
+        "Není jasné, jak dlouho trvá individuální podpora cizinců, aby dosáhli potřebné úrovně češtiny.",
+        "Chybí informace o tom, zda se počty žáků v gymnáziu budou stabilizovat nebo růst."
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600006727_2023-02-21",
+  "school_profile": {
+    "school_type": "Střední odborná škola a Střední zdravotnická škola (SOŠ a SZŠ)",
+    "inspection_period": "21. až 23. února 2023",
+    "school_change_summary": "Počet žáků vzrostl o 20 % na 327 studentů (88% naplněnosti). Škola rozšířila kvalifikovaný pedagogický sbor, zlepšila materiální vybavení a posílila zahraniční mobilitu žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná praxe a partnerství",
+        "detail": "Zdravotnické obory mají promyšlený systém postupné adaptace na práci v nemocnici s podporou odborníků z praxe.",
+        "evidence": "Praktické vyučování probíhá na odděleních místní nemocnice se systematickým hodnocením od praktiků."
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Škola poskytuje doučování, individuální intervence a online konzultace ohrožených žáků.",
+        "evidence": "Výchovná poradkyně a školní metodička prevence pracují v úzké spolupráci s vedením a třídními učiteli."
+      },
+      {
+        "tag": "Kariérní úspěch absolventů",
+        "detail": "Přibližně 80 % absolventů pokračuje ve vzdělávání na vyšších nebo vysokých školách.",
+        "evidence": "O absolventy školy je velký zájem, ostatní se aktivně zapojují do trhu práce."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky v cizích jazycích",
+        "detail": "Žáci dosahují nižších výsledků v didaktických testech z cizích jazyků na maturitě.",
+        "evidence": "V roce 2020/2021 se žáci zhoršili, ve zdravotnických oborech zůstali horšími i v loňském roce."
+      },
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Učitelé často volí frontální výuku se stejnými úkoly pro všechny bez zohlednění individuálních potřeb.",
+        "evidence": "Pouze ve třetině hodin byla účelně využita didaktická technika; chybí sebehodnocení žáků."
+      },
+      {
+        "tag": "Kolísavý počet úrazů",
+        "detail": "Počet úrazů žáků je v letošním roce vyšší než dříve, především v tělesné výchově.",
+        "evidence": "Přestože jsou nastavena pravidla bezpečnosti, počet úrazů kolísá a je vyšší než v minulosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se slabšími výsledky v cizích jazycích, když jsou to klíčové předměty na maturitě?",
+      "Jaké konkrétní metody používáte k diferenciaci výuky podle schopností jednotlivých žáků?",
+      "Jak se škola vypořádává se zvýšeným počtem úrazů a jaká opatření přijala?"
+    ],
+    "who_school_fits": [
+      "Zájemci o zdravotnické obory (Praktická sestra, Asistent zubního technika) – mají vynikající praktickou přípravu v nemocnici",
+      "Žáci se speciálními vzdělávacími potřebami – škola má kvalifikované poradenské služby a individuální podporu",
+      "Motivovaní studenti zajímající se o mezinárodní spolupráci – škola aktivně podporuje projekty Erasmus a eTwinning"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími jazykovými schopnostmi – výuka cizích jazyků vykazuje nižší efektivitu a žáci dosahují horších výsledků",
+      "Studenti vyžadující individualizovaný přístup – frontální výuka bez diferenciace nemusí vyhovovat všem",
+      "Žáci s tendencí k absencím – vysoká absence (13 % prvňáků s více než 100 hodinami) koreluje s prospěchovými problémy"
+    ],
+    "plain_czech_summary": "Škola je stabilní institucí s dobrým vedením a kvalitní odbornou praxí, zejména v zdravotnických oborech. Silnou stránkou je spolupráce s nemocnicí a vysoký podíl absolventů pokračujících ve studiu. Slabinou je nižší efektivita výuky cizích jazyků a nedostatečná diferenciace teoretických předmětů. Škola potřebuje zlepšit individualizaci výuky a zvýšit aktivitu žáků v hodinách, aby zlepšila výsledky v maturitních testech."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se trend s výjimkou cizích jazyků",
+      "key_numbers": [
+        "Český jazyk: žáci stejně nebo více úspěšní než srovnatelné obory v republice",
+        "Cizí jazyk: zhoršení v roce 2020/2021, zdravotnické obory horší i v loňském roce",
+        "Profilová část: dlouhodobě velmi dobré výsledky"
+      ],
+      "evidence": "Výsledky žáků u maturitní zkoušky se od minulé inspekční činnosti zlepšovaly, zkoušku konali dlouhodobě většinou všichni přihlášení žáci."
+    },
+    "absence": {
+      "trend": "Stabilní, ale s negativním dopadem na prospěch",
+      "key_numbers": [
+        "Průměrný počet zameškaných hodin se v loňském roce nezvýšil oproti roku 2018/2019",
+        "13 % žáků prvních ročníků vykázalo absenci nad 100 hodin za druhé pololetí",
+        "64 % těchto žáků bylo klasifikováno stupněm dostatečný"
+      ],
+      "evidence": "Absence se projevuje v prospěchových problémech; vysoká absence koreluje s nižšími známkami."
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodička prevence v úzké spolupráci s vedením školy",
+      "Doučování, individuální a skupinové intervence, online konzultace pro ohrožené žáky",
+      "Spolupráce se školskými poradenskými zařízeními a cílené kariérové poradenství"
+    ],
+    "safety_climate": [
+      "Bezpečné a příjemné prostředí v pronajatém prostoru budovy",
+      "Počet úrazů je kolísavý a v letošním roce vyšší než dříve, především v tělesné výchově",
+      "Promyšlený systém prevence rizikového chování je účinný; v posledních dvou letech nebyl žádný žák hodnocen sníženým stupněm chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s místní nemocnicí na praktické výuce zdravotnických oborů",
+      "Projekty Erasmus a eTwinning pro mezinárodní stáže a výměny",
+      "Sociální partneři se podílejí na prezentaci výstupů z praxe a jejich hodnocení"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně identifikuje silné stránky (odborná praxe, podpora žáků) i slabiny (diferenciace, cizí jazyky). Doporučení jsou konkrétní a praktická. Mírně snižuje srozumitelnost vysoký objem textu a místy odborný jazyk.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní procenta úspěšnosti v maturitních testech, pouze kvalitativní srovnání",
+      "Není jasné, jaké konkrétní opatření škola již přijala na základě doporučení z minulé inspekce",
+      "Chybí informace o počtu učitelů a jejich kvalifikaci v jednotlivých oborech"
+    ]
+  }
+}
+```

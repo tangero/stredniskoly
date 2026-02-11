@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600013286_2024-02-13",
+  "school_profile": {
+    "school_type": "Střední odborná škola s domovem mládeže, obor Hotelnictví (65-42-M/01)",
+    "inspection_period": "13. února 2024 až 15. února 2024",
+    "school_change_summary": "Od poslední inspekce v roce 2017 se zlepšily materiální podmínky a akustika ve třídách, ale výrazně se zhoršily výsledky maturitní zkoušky. Počet žáků zůstává stabilní (158 žáků v osmi třídách)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka a praxe",
+        "detail": "Žáci získávají kvalitní praktické dovednosti v reálných podmínkách firem a v zahraničí, což zvyšuje jejich uplatnitelnost na trhu práce.",
+        "evidence": "Praktická cvičení probíhají ve velké míře v režii žáků, firmy pozitivně hodnotí spolupráci se školou."
+      },
+      {
+        "tag": "Materiální vybavení a prostory",
+        "detail": "Škola má velmi dobré materiálně technické zázemí, digitální technologie a dostatek prostoru pro relaxaci žáků.",
+        "evidence": "Materiálně technické zázemí vytváří velmi dobré předpoklady pro kvalitní realizaci teoretického i praktického vyučování."
+      },
+      {
+        "tag": "Spolupráce s místní komunitou",
+        "detail": "Škola aktivně spolupracuje s městysem, okolními obcemi a rodiči na zvyšování sociálních kompetencí žáků.",
+        "evidence": "Kvalitní spolupráce zaměřená na různé akce pro seniory a charitativní projekty, vedení klade velký důraz na kooperaci se zákonnými zástupci."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost u maturitní zkoušky",
+        "detail": "V roce 2023 neuspělo 37 % žáků, průměr za tři roky je 26 %, což je výrazně horší než průměr ostatních škol.",
+        "evidence": "Hrubá neúspěšnost se zvýšila na 37 % v roce 2023, opakovaně více než čtvrtina žáků nevykonala zkoušku úspěšně."
+      },
+      {
+        "tag": "Slabá kontrola a evaluace výuky",
+        "detail": "Vedení školy dostatečně nevyhodnocuje vzdělávací proces, hospitační činnost byla ojedinělá a na zjištění z ní nenavazují účinná opatření.",
+        "evidence": "V letošním školním roce byla hospitační činnost ojedinělá, v části sledovaného vyučování byly zaznamenány nedostatky."
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Žáci zameškali průměrně 157 hodin za školní rok, což negativně ovlivňuje jejich vzdělávací výsledky.",
+        "evidence": "Absence je srovnatelná s obdobím poslední inspekce, škola usiluje o snížení, ale opatření nejsou dostatečně účinná."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní opatření škola přijala po inspekci k zlepšení výsledků maturitní zkoušky?",
+      "Jak škola řeší vysokou absenci žáků a jaké jsou konkrétní důsledky pro jejich klasifikaci?",
+      "Jaké jsou možnosti individuální podpory pro žáky ohrožené školním neúspěchem a jak se liší od běžné výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením a zájmem o gastronomii a hotelnictví, kteří se chtějí rychle uplalit na trhu práce",
+      "Studenti, kteří prospívají v praktické výuce a potřebují reálné zkušenosti z firem",
+      "Žáci, kteří si cení kvalitního vybavení, moderních technologií a aktivního trávení volného času v domově mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími studijními předpoklady – škola nemá dostatečně účinný systém podpory pro ty ohrožené neúspěchem",
+      "Studenti, kteří se chystají na vysokou školu – vysoká neúspěšnost u maturitní zkoušky může být problém",
+      "Žáci s tendencí k absencím – škola nemá dostatečně účinné motivační nástroje k pravidelné docházce"
+    ],
+    "plain_czech_summary": "Škola Fortika je moderně vybavená střední odborná škola se zaměřením na hotelnictví. Silnou stránkou je kvalitní praktická výuka v reálných firmách a dobrá spolupráce s místní komunitou. Domov mládeže poskytuje žákům vhodné podmínky. Hlavní problém je vysoká neúspěšnost u maturitní zkoušky (37 % v roce 2023) a nedostatečná kontrola vzdělávacího procesu vedením školy. Absence žáků zůstává vysoká a opatření k jejímu snížení nejsou dostatečně účinná. Škola je vhodná pro prakticky zaměřené žáky, ale ti se slabšími předpoklady by měli počítat s vyšším rizikem neúspěchu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršující se – výsledky se zhoršily od poslední inspekce v roce 2017",
+      "key_numbers": [
+        "37 % neúspěšnost v roce 2023",
+        "26 % průměrná neúspěšnost za poslední tři roky",
+        "Více než čtvrtina žáků nevykonala zkoušku úspěšně v některých letech"
+      ],
+      "evidence": "Výsledky jsou horší než průměr ostatních škol ve stejné skupině oborů v ČR, jak v části společné tak profilové."
+    },
+    "absence": {
+      "trend": "Vysoká a stabilní – srovnatelná s obdobím poslední inspekce",
+      "key_numbers": [
+        "Průměrně 157 hodin zameškáno za školní rok na žáka",
+        "Neomluvená absence se vyskytuje spíše výjimečně"
+      ],
+      "evidence": "Absence negativně ovlivňuje úspěšnost žáků, pravidlo v školním řádu není důsledně využíváno jako motivační nástroj."
+    },
+    "support_services": [
+      "Výchovná poradkyně seznamuje vyučující s podpůrnými opatřeními pro žáky se speciálními vzdělávacími potřebami",
+      "Individuální konzultace a dovysvětlování látky pro žáky ohrožené neúspěchem",
+      "Doučování českého jazyka pro žáky s jazykovou bariérou (v loňském roce)",
+      "Kariérové poradenství s dostatkem informací o dalším vzdělávání"
+    ],
+    "safety_climate": [
+      "Klima v praktické výuce je pracovní, založené na respektu a vzájemné toleranci",
+      "Zásady bezpečnosti práce a ochrany zdraví jsou žáky dodržovány",
+      "62 % žáků se vyjádřilo nesouhlasně k tvrzení, že se neshody mezi spolužáky řeší a vedou ke zlepšení spolupráce",
+      "Škola reagovala na zvýšenou úrazovost přijetím adekvátních opatření"
+    ],
+    "partnerships_practice": [
+      "Praktické vyučování probíhá u smluvních partnerů v reálných podmínkách firem",
+      "Zapojení odborníků z praxe do výuky prostřednictvím besed, přednášek a workshopů",
+      "Praxe v zahraničí a průvodcovská činnost žáků pro návštěvníky města",
+      "Firmy pozitivně hodnotí spolupráci a komunikaci se školou, žáci jsou za produktivní činnost odměňováni"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Hlavní problémy jsou jasně identifikovány (maturita, absence, kontrola). Některé pasáže jsou však složitější a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní předměty maturitní zkoušky jsou problematické – pouze zmiňuje 'společnou i profilovou část'",
+      "Není jasné, zda vysoká absence souvisí s domovem mládeže nebo je to obecný problém školy",
+      "Chybí informace o tom, kolik žáků se účastní doučování a jak je efektivní"
+    ]
+  }
+}
+```

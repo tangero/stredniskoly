@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600009424_2025-04-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:37:12.259325+00:00",
+  "run_finished_utc": "2026-02-09T13:37:40.697523+00:00",
+  "raw_file": "SOU_600009424_2025-04-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600009424_2025-04-22",
+    "school_profile": {
+      "school_type": "Střední škola zemědělská a potravinářská s maturitními a učebními obory, domovem mládeže a školním hospodářstvím",
+      "inspection_period": "22. 4. 2025 – 25. 4. 2025",
+      "school_change_summary": "Škola rozšířila nabídku oborů o Zemědělce-farmáře, převzala školní farmu, modernizovala domov mládeže a vybavení. Počet žáků a pedagogů se kontinuálně zvyšuje (640 žáků v 31 třídách)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava na povolání",
+          "detail": "Škola má vlastní penzion, restauraci, prodejnu a autoškolu, kde se žáci učí v reálném prostředí.",
+          "evidence": "Vysoká úroveň služeb oboru Kuchař-číšník a výrobků Cukrář, Pekař; stabilní zájem veřejnosti."
+        },
+        {
+          "tag": "Bohaté partnerství a projekty",
+          "detail": "Dlouhodobá spolupráce s profesními asociacemi, ministerstvem zemědělství, zahraničními školami a firmami.",
+          "evidence": "Žáci dosahují předních umístění v celostátních a regionálních soutěžích, získali titul regionální potravina."
+        },
+        {
+          "tag": "Kvalitní domov mládeže",
+          "detail": "Pestrá nabídka zájmových aktivit, dobrovolnictví a spolupráce s charitativními organizacemi.",
+          "evidence": "Činnost vhodně navazuje na vzdělávání, rozvíjí sociální a komunikativní kompetence žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá diferenciace ve výuce",
+          "detail": "Učitelé málo přizpůsobují výuku různým schopnostem a tempům jednotlivých žáků.",
+          "evidence": "Nízká míra diferenciace snižuje účinnost výuky, zjištěno ojediněle jen pro žáky s podporou."
+        },
+        {
+          "tag": "Málo aktivních metod výuky",
+          "detail": "Výuka se zaměřuje především na výklad a upevňování, chybí prvky objevování a kritického myšlení.",
+          "evidence": "Prostor pro aktivní zapojení žáků byl efektivně poskytnut jen v části hodin."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Škola se nedaří minimalizovat absenci, která je nejčastějším důvodem pro kázeňská opatření.",
+          "evidence": "Neomluvené absence jsou hlavním problémem, řada žáků opakuje ročník nebo přechází na jiné obory."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s nižší motivací a jak řeší jejich absenci?",
+        "Jaké konkrétní kroky podnikne škola, aby více využívala aktivní metody a diferenciaci ve výuce?",
+        "Jak se škola připravuje na nové požadavky na hlubší analýzu výsledků vzdělávání?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o zemědělství, gastronomii, řemesla a praktickou práci v reálném prostředí",
+        "Studenti, kteří se chtějí připravit na konkrétní povolání s podporou zahraničních stáží a odborných kurzů",
+        "Žáci, kteří potřebují ubytování a podporu v domově mládeže s bohatou nabídkou aktivit"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s vyšší motivací k teoretickému vzdělávání – výuka se zaměřuje spíše na praktiku a výklad",
+        "Studenti, kteří potřebují individualizovanou výuku – diferenciace není dostatečně rozvinuta",
+        "Žáci se sklonem k absenci – škola má problémy s minimalizací absence a vysoký podíl neúspěšných"
+      ],
+      "plain_czech_summary": "Škola je zaměřená na praktickou přípravu v zemědělství a gastronomii s vlastními provozovnami. Má silné partnerství s firmami a organizacemi, žáci se účastní soutěží a projektů. Domov mládeže nabízí pestrý program. Slabinou je málo aktivní výuka, nedostatečná přizpůsobení různým schopnostem žáků a vysoká absence. Maturitní výsledky jsou průměrné (68 % prospělo, 15 % neprospělo v roce 2024)."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Srovnatelné se skupinami oborů jiných škol v republice",
+        "key_numbers": [
+          "47 žáků konalo maturitní zkoušku v roce 2024",
+          "32 žáků prospělo (68 %), 7 s vyznamenáním (15 %), 7 neprospělo (15 %)",
+          "V nástavbovém studiu 3 z 13 žáků neúspěšní (23,08 %)"
+        ],
+        "evidence": "Výsledky maturitních zkoušek korespondují s průběžnými výsledky vzdělávání."
+      },
+      "absence": {
+        "trend": "Vysoká absence je problém, kterou se škole nedaří minimalizovat",
+        "key_numbers": [
+          "Neomluvené absence jsou nejčastějším důvodem pro kázeňská opatření",
+          "Vysoká absence se promítá do úrovně dosahovaných výsledků v některých oborech",
+          "Řada žáků opakuje ročník nebo přechází na jiné obory"
+        ],
+        "evidence": "Absence je zmiňována jako hlavní problém v prevenci rizikového chování a dosahování výsledků."
+      },
+      "support_services": [
+        "Tým školního poradenského pracoviště: výchovná poradkyně pro maturitní obory, výchovná poradkyně pro učební obory, školní metodička prevence",
+        "Plány pedagogické podpory pro žáky se speciálními vzdělávacími potřebami",
+        "Individuální nabídka možností ke zlepšení při zhoršení prospěchu nebo zvýšení absence"
+      ],
+      "safety_climate": [
+        "Hospitované hodiny se vyznačovaly klidnou pracovní atmosférou",
+        "Pedagogové uplatňovali respektující a vstřícný přístup, podporovali pozitivní vztahy mezi žáky",
+        "Důraz na dodržování zásad bezpečnosti a ochrany zdraví v odborném výcviku"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s profesními asociacemi a komorami, ministerstvem zemědělství",
+        "Mezinárodní spolupráce se zahraničními školami, projekty Erasmus+ s absolvováním zahraničních odborných praxí",
+        "Spolupráce se stěžejními regionálními smluvními partnery, praxe v reálném prostředí firem"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, jasně rozlišuje silné a slabé stránky. Číselné údaje o maturitě a závěrečných zkouškách jsou konkrétní. Některé pasáže jsou však úřednicky formulované a pro laika obtížnější.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent žáků v učebních oborech prospělo závěrečnou zkouškou (uvedeno jen 81,8 % z 66 žáků), chybí srovnění s předchozími roky.",
+        "Není jasné, jak konkrétně se projevuje 'různá míra účinnosti' podpory žáků ohrožených školním neúspěchem.",
+        "Chybí informace o počtu a typu speciálních vzdělávacích potřeb žáků a jak efektivně jsou řešeny."
+      ]
+    }
+  }
+}

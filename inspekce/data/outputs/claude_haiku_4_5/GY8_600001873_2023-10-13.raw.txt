@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY8_600001873_2023-10-13",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium s hudebním zaměřením + Základní umělecká škola (hudební obor)",
+    "inspection_period": "13. 10. 2023 – 18. 10. 2023",
+    "school_change_summary": "Od inspekce v 2016: mírný nárůst žáků (gymnázium 295 žáků v 16 třídách, ZUŠ 701 žáků), personální obměna na pozici jednoho zástupce ředitele, zlepšení materiálního vybavení a obnova prostor."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Hudební vzdělání na vysoké úrovni",
+        "detail": "Vysoce kvalifikovaný pedagogický sbor s aktivními hudebníky a vysokoškolskými pedagogy zajišťuje vzdělání na špičkové odborné úrovni.",
+        "evidence": "Žáci dosahují předních ocenění v prestižních soutěžích Virtuosi per musica, Amadeus, Pro Bohemia na celostátní i mezinárodní úrovni."
+      },
+      {
+        "tag": "Výborné materiální podmínky",
+        "detail": "Škola disponuje moderně vybaveným zázemím včetně specializovaných hudebních učeben, koncertních sálů a kvalitní techniky.",
+        "evidence": "Nové audiovizuální vybavení, 3D tiskárna, datové zasíťování, možnost zapůjčení hudebních nástrojů pro domácí přípravu."
+      },
+      {
+        "tag": "Výborné výsledky maturit a přijetí na vysoké školy",
+        "detail": "Všichni maturanti uspěli ve všech částech maturitní zkoušky, třetina pokračuje v hudebních oborech.",
+        "evidence": "Ve sledovaném období dvou let uspěli všichni žáci konající maturitní zkoušku ve všech jejích částech."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace pro nadané žáky",
+        "detail": "V některých hodinách všeobecného vzdělávání chybí dostatečná individualizace pro žáky s vyšším tempem práce.",
+        "evidence": "Nadaní žáci dostávali další úlohy místo gradovaných úloh či úloh s rozšiřujícím učivem."
+      },
+      {
+        "tag": "Slabší kontrola kvality výuky",
+        "detail": "Vedení školy nevykonává hospitační činnost systematicky v průběhu celého roku.",
+        "evidence": "Hospitační činnost není prováděna důsledně, chybí konkrétní doporučení pro zkvalitnění výuky."
+      },
+      {
+        "tag": "Nízké zapojení žáků do sebehodnocení",
+        "detail": "V části hodin chybí vzájemné hodnocení žáků a jejich sebereflexe vlastního pokroku.",
+        "evidence": "Žáci byli méně vedeni k sebehodnocení a vzájemnému hodnocení podle stanovených kritérií."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky v jejich individuálním rozvoji? Jaké jsou možnosti pro žáky s vyšším tempem práce?",
+      "Jaké jsou kritéria pro přijetí do gymnázia a jak probíhá výběr žáků? Jaké jsou šance pro žáky bez hudebního vzdělání?",
+      "Jak je zajištěna bezpečnost žáků v členitých školních prostorech, zejména během volných hodin?"
+    ],
+    "who_school_fits": [
+      "Žáci s vážným zájmem o hudbu a klasickou hudbu, kteří chtějí kombinovat všeobecné vzdělání s profesionálním hudebním vzděláním",
+      "Talentovaní hudebníci, kteří se chtějí připravit na studium na konzervatoři nebo vysoké škole s hudebním zaměřením",
+      "Žáci s vyšší akademickou úrovní, kteří si cení kvalitního všeobecného vzdělání a individuálního přístupu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci bez hudebního nadání nebo zájmu – škola je primárně zaměřena na hudební obor a vyžaduje vážný hudební zájem",
+      "Žáci, kteří potřebují intenzivní individuální podporu v běžných předmětech – diferenciace pro slabší žáky není zdůrazňována",
+      "Žáci preferující tradičnější přístup – škola klade důraz na aktivní metody a samostatnou práci"
+    ],
+    "plain_czech_summary": "Gymnázium a Hudební škola je prestižní instituce s dlouhou tradicí v hudebním vzdělávání. Nabízí kombinaci kvalitního všeobecného vzdělání s profesionálním hudebním vzděláním na vysoké úrovni. Pedagogický sbor je vysoce kvalifikovaný, materiální vybavení je moderní a žáci dosahují výborných výsledků v soutěžích i při přijetí na vysoké školy. Slabší stránkou je nedostatečná diferenciace pro nadané žáky v běžných předmětech a méně systematická kontrola kvality výuky vedením školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborný – 100% úspěšnost",
+      "key_numbers": [
+        "Všichni žáci konající maturitní zkoušku uspěli ve všech jejích částech",
+        "Přes 50 % maturantů volí praktickou zkoušku ze sólové hry na nástroj",
+        "Až 20 % žáků nahrazuje školní profilovou zkoušku z cizího jazyka certifikátem B2 nebo C1"
+      ],
+      "evidence": "Ve sledovaném období dvou školních let 2021/2022 a 2022/2023 uspěli všichni žáci konající maturitní zkoušku ve všech jejích částech."
+    },
+    "absence": {
+      "trend": "Velmi nízký výskyt rizikového chování",
+      "key_numbers": [
+        "Nastavené preventivní mechanismy umožňují včas odhalovat různé formy rizikového chování",
+        "Velmi nízký výskyt rizikového chování je dokumentován"
+      ],
+      "evidence": "Nastavené funkční preventivní mechanismy umožňují včas odhalovat a zachycovat různé formy rizikového chování, což dokládá jejich velmi nízký výskyt."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště v úzké spolupráci s vedením, třídními učiteli a zákonnými zástupci",
+      "Doučování a individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami",
+      "Plány pedagogické podpory vytvářené podle doporučení školských poradenských zařízení"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra založená na partnerském přístupu učitelů a žáků",
+      "Nastavená a dodržovaná pravidla komunikace a chování s jednotným důsledným přístupem pedagogů",
+      "Bezbariérový vstup se stálou službou, kamerovým a elektronickým systémem"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s četnými sociálními partnery umožňuje kvalitní naplňování vzdělávacích programů",
+      "Projekty ERASMUS+, odborné workshopy a hudebně vzdělávací projekty s velkými symfonickými orchestry",
+      "Kooperace se zřizovatelem (Hlavní město Praha) přispívá ke zlepšování materiálních podmínek a zajištění kulturních akcí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní fakta, citace a evidence. Všechny tvrzení jsou podložena konkrétními údaji z inspekční činnosti. Jazyk je srozumitelný a bez zbytečného úřednického stylu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o počtu žáků se speciálními vzdělávacími potřebami v ZUŠ (uvedeno pouze 7 % s OMJ)",
+      "Chybí konkrétní údaje o počtu absence a její trendu – zmíněn pouze velmi nízký výskyt rizikového chování",
+      "Nejsou uvedeny konkrétní procenta úspěšnosti v jednotlivých předmětech nebo srovnání s celorepublikovým průměrem"
+    ]
+  }
+}
+```

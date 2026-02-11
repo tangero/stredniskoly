@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY8_600012786_2023-04-18",
+  "school_profile": {
+    "school_type": "Gymnázium, obchodní akademie a jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "18. dubna až 2. května 2023",
+    "school_change_summary": "Od září 2018 došlo ke sloučení dvou příspěvkových organizací. Škola vzdělává 340 žáků gymnázia v 12 třídách a 115 žáků obchodní akademie ve 4 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Žáci gymnázia dosahují dlouhodobě výborných výsledků, více než 40 % prospívá s vyznamenáním. Maturitní zkoušku v roce 2022 složilo 98 % žáků gymnázia.",
+        "evidence": "\"98 % přihlášených žáků gymnázia\" složilo maturitu v roce 2022"
+      },
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Škola nabízí přípravu na mezinárodní Cambridge zkoušky přímo ve škole ve spolupráci s autorizovaným centrem.",
+        "evidence": "\"Cambridgeských jazykových zkoušek\" probíhají přímo ve škole"
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Žáci se zapojují do soutěží, olympiád, projektů a volnočasových aktivit s vysokou účastí a dobrými výsledky.",
+        "evidence": "\"Účast žáků v soutěžích je vysoká, pravidelně se úspěšně účastní krajských i celostátních kol\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo individualizované výuky",
+        "detail": "Chybí diferenciace náročnosti úloh pro nadané žáky a žáky s různou úrovní vzdělávacího potenciálu.",
+        "evidence": "\"chybělo zadávání úloh diferencované náročnosti, což zčásti omezovalo žáky se speciálními vzdělávacími potřebami včetně žáků nadaných\""
+      },
+      {
+        "tag": "Nedostatečná zpětná vazba",
+        "detail": "Učitelé se málo zaměřují na konkrétní vzdělávací cíle zaměřené na činnosti a dovednosti žáků.",
+        "evidence": "\"Spíše v menší míře dokázali zaměřit vzdělávací cíl na žáky a jejich vzdělávací potřeby\""
+      },
+      {
+        "tag": "Málo sebehodnocení žáků",
+        "detail": "Sebehodnocení a vzájemné hodnocení žáků se vyskytují jen velmi málo.",
+        "evidence": "\"Sebehodnocení žáků nebo jejich vzájemné hodnocení byly zaznamenány jen velmi málo\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje nadané žáky přímo během výuky a jaké má plány na jejich rozvoj?",
+      "Jaké jsou možnosti ubytování v domově mládeže a jaké jsou podmínky pro žáky mimo Svitavy?",
+      "Jak probíhá příprava na Cambridge zkoušky a jaké jsou náklady na kurzy?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o kvalitní všeobecné vzdělání a přípravu na vysoké školy",
+      "Studenti zainteresovaní na jazykové výuce a mezinárodních certifikátech",
+      "Žáci, kteří chtějí studovat obchodní akademii s praktickou výukou"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individualizované přístupy a diferenciované úlohy",
+      "Nadaní žáci, pokud hledají speciální program pro jejich rozvoj přímo ve výuce",
+      "Žáci, kteří se lépe učí prostřednictvím skupinové práce a diskusí"
+    ],
+    "plain_czech_summary": "Gymnázium v Sokolovské ulici je dobře řízená škola s výborným zázemím a kvalitním pedagogickým sborem. Žáci dosahují skvělých výsledků, zejména v maturitách a soutěžích. Škola nabízí bohatou mimoškolní činnost a jazykové vzdělání s Cambridge zkouškami. Hlavní prostor pro zlepšení je v individualizaci výuky – více diferenciace úloh pro různě nadané žáky a větší zaměření na zpětnou vazbu o jejich pokroku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi pozitivní",
+      "key_numbers": [
+        "98 % úspěšnost maturitní zkoušky gymnázia v roce 2022",
+        "80 % úspěšnost maturitní zkoušky obchodní akademie v roce 2022",
+        "Více než 40 % žáků gymnázia prospívá s vyznamenáním"
+      ],
+      "evidence": "\"V roce 2022 maturitní zkoušku úspěšně složilo 98 % přihlášených žáků gymnázia a 80 % žáků obchodní akademie\""
+    },
+    "absence": {
+      "trend": "Velmi nízká absence",
+      "key_numbers": [
+        "Průměr 108 hodin omluvených zameškaných na žáka gymnázia za rok",
+        "Průměr 64 hodin omluvených zameškaných na žáka obchodní akademie za rok",
+        "Minimum neomluvených hodin"
+      ],
+      "evidence": "\"Průměrný počet omluvených zameškaných hodin byl v loňském školním roce přibližně 108 hodin na žáka gymnázia a 64 na žáka obchodní akademie, rovněž neomluvených hodin bylo minimum\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se dvěma výchovnými poradkyněmi a metodiky prevence",
+      "Školní psycholožka dostupná externě",
+      "Konzultační hodiny a doučování pro žáky ohrožené školní neúspěšností",
+      "Skupinové online konzultace pro žáky obchodní akademie",
+      "Poradenské centrum pro vysokoškolské studium v zahraničí (UniLink)"
+    ],
+    "safety_climate": [
+      "Klidná pracovní a podporující atmosféra ve sledovaných hodinách",
+      "Pozitivní vzájemná komunikace mezi učiteli a žáky",
+      "Vstřícná a otevřená komunikace mezi všemi účastníky vzdělávání",
+      "Preventivní aktivity včetně návštěv krizového centra",
+      "Sportovní a adaptační kurzy pro posílení zdravého životního stylu"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s jazykovou školou P.A.R.K. Brno pro Cambridge zkoušky",
+      "Partnerství se školami v německém Bad Essen a Staßfurt",
+      "Spolupráce se sociálními partnery pro realizaci školních vzdělávacích programů",
+      "Smluvní pracovní místa pro učební praxi obchodní akademie",
+      "Spolupráce s místními organizacemi a spolky na preventivních aktivitách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní čísla, citace a příklady. Všechna tvrzení jsou podložena důkazy z textu. Jazyk je srozumitelný a bez zbytečného úřednického stylu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu žáků se speciálními vzdělávacími potřebami v detailu (zmíněno jen 10 žáků celkem)",
+      "Chybí konkrétní data o výsledcích obchodní akademie v jednotlivých předmětech",
+      "Nejsou uvedeny konkrétní náklady na jazykové kurzy nebo Cambridge zkoušky"
+    ]
+  }
+}
+```

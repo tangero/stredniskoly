@@ -1,0 +1,118 @@
+{
+  "report_id": "LYC_600014011_2025-02-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:44:40.625176+00:00",
+  "run_finished_utc": "2026-02-09T13:45:06.338900+00:00",
+  "raw_file": "LYC_600014011_2025-02-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600014011_2025-02-18",
+    "school_profile": {
+      "school_type": "Střední škola a Základní škola Tišnov (příspěvková organizace). Střední vzdělání s výučním listem (4 obory) a s maturitní zkouškou (Technické lyceum). Základní vzdělání pro žáky se speciálními potřebami.",
+      "inspection_period": "18. února 2025 až 21. února 2025",
+      "school_change_summary": "Od poslední inspekce v 2019: Nový obor Technické lyceum (od 2024/25), nový obor Elektromechanik. Zřízena třída pro žáky s autismem. Počet žáků střední školy vzrostl o 23 %. Nový žákovský parlament. Personální změny ve vedení včetně nové ředitelky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní péče o žáky se speciálními potřebami",
+          "detail": "V základní škole pracují týmy pedagogů a asistentů, kteří individuálně podporují každého žáka podle jeho schopností.",
+          "evidence": "Efektivní spolupráce pedagogů a asistentů umožňuje kvalitní individualizovanou výuku dle speciálních vzdělávacích potřeb."
+        },
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Praktické vyučování má vysokou kvalitu, žáci získávají reálné pracovní zkušenosti na pracovištích partnerských firem.",
+          "evidence": "Škola účelně využívá partnerské vztahy se zaměstnavateli, na jejichž pracovištích žáci absolvují praktické vyučování."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují vynikajících výsledků v odborných soutěžích, včetně mezinárodní soutěže YOUNG CAR MECHANIC.",
+          "evidence": "Žáci se účastní regionálních a celostátních kol mnoha odborných soutěží s vynikajícími výsledky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků střední školy",
+          "detail": "Průměrná absence dosáhla 173 hodin na žáka za rok, přestože se snížila oproti předchozímu roku.",
+          "evidence": "Průměrná absence v 2023/2024 byla 173 hodin na žáka, neomluvená absence tvořila 6 % zameškaných hodin."
+        },
+        {
+          "tag": "Nedostatečný rozvoj kritického myšlení",
+          "detail": "Výuka se zaměřuje spíše na předávání hotových informací než na samostatné vyhledávání a analýzu.",
+          "evidence": "Učitelé žákům obvykle předávají hotové informace formou výkladu, chybí vyhledávání z různých zdrojů."
+        },
+        {
+          "tag": "Slabší metodické vedení pedagogů",
+          "detail": "V základní škole metodický orgán vůbec neexistuje, v střední škole jsou předmětové komise málo efektivní.",
+          "evidence": "Nedochází k cílenému rozvoji pedagogických dovedností a systematickému zkvalitňování výuky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší vysokou absenci žáků a jaká opatření zavádí pro zlepšení docházky?",
+        "Jaké konkrétní firmy jsou partnery pro praktické vyučování a jak se žáci do těchto míst dostávají?",
+        "Jak se škola připravuje na nový obor Technické lyceum a jaké jsou jeho výhledy na trhu práce?"
+      ],
+      "who_school_fits": [
+        "Žáci se speciálními vzdělávacími potřebami, kteří potřebují individuální péči a podporu kvalifikovaného týmu",
+        "Prakticky zaměření žáci, kteří chtějí získat reálné pracovní zkušenosti a propojit teorii s praxí",
+        "Žáci zajímající se o technické obory s možností účasti v odborných soutěžích"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s tendencí k absenci – škola má problémy s efektivním řešením vysoké absence",
+        "Žáci, kteří potřebují rozvoj kritického myšlení a samostatného vyhledávání informací",
+        "Žáci se speciálními vzdělávacími potřebami v třídě s autismem – zde jsou rezervy v jednotném přístupu pedagogů"
+      ],
+      "plain_czech_summary": "Škola se zaměřuje na speciální vzdělávání a technické obory. Silnou stránkou je kvalitní péče o žáky se speciálními potřebami a propojení teorie s praxí na pracovištích partnerských firem. Žáci dosahují dobrých výsledků v soutěžích. Problémy jsou vysoká absence žáků, nedostatečný rozvoj kritického myšlení a slabší metodické vedení pedagogů. Škola se snaží zlepšovat podmínky, ale potřebuje více zaměřit se na kvalitu výuky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní",
+        "key_numbers": [
+          "Nový obor Technické lyceum od 2024/25",
+          "Téměř všichni žáci úspěšně vykonali závěrečné zkoušky v řádném a prvním opravném termínu",
+          "Pouze jednotky žáků, především zkráceného studia, byly neúspěšné"
+        ],
+        "evidence": "Výsledky závěrečných zkoušek zůstaly v posledních třech letech stabilní, téměř všichni žáci úspěšně vykonali zkoušky."
+      },
+      "absence": {
+        "trend": "Zlepšující se, ale stále vysoká",
+        "key_numbers": [
+          "Průměrná absence 2023/2024: 173 hodin na žáka za rok",
+          "Snížení oproti předchozímu roku",
+          "Neomluvená absence: přibližně 6 % z celkového počtu zameškaných hodin"
+        ],
+        "evidence": "Průměrná absence dosáhla v posledním uzavřeném školním roce 2023/2024 celkem 173 hodin na žáka, oproti předchozímu roku došlo k jejímu snížení."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnými poradci a metodiky prevence pro základní i střední školu",
+        "Sociální pedagog a kariérový poradce ve střední škole",
+        "Školní psycholožka poskytující poradenství pro oba druhy škol",
+        "Speciální pedagogové v základní škole zajišťující podpůrná opatření",
+        "Doučování češtiny pro žáky s odlišným mateřským jazykem"
+      ],
+      "safety_climate": [
+        "Méně důsledně prováděna kontrola a vyhodnocování bezpečnostních rizik v prostorech základní školy",
+        "Probíhají stavební úpravy pro zajištění bezbariérovosti školy",
+        "Bezpečné prostředí na pracovištích smluvních partnerů pro praktické vyučování",
+        "Řešení vztahových problémů mezi žáky v základní škole vhodným způsobem"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zaměstnavateli v regionu na smluvních pracovištích pro praktické vyučování",
+        "Součást sítě Center metodické podpory v Jihomoravském kraji",
+        "Vzdělávací aktivity organizované Místní akční skupinou Tišnovska",
+        "Spolupráce s nemocnicí pro obor Ošetřovatel",
+        "Partnerství se školami v regionu na společných sportovních a kulturních akcích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Údaje o absenci a prospěchu jsou jasné, ale analýza pedagogických postupů je detailnější.",
+      "uncertainty_notes": [
+        "Není jasné, jak přesně se řeší vysoká absence – zpráva zmiňuje setkání s rodiči a lékaři, ale účinnost opatření není dostatečně vysvětlena",
+        "Chybí konkrétní jména firem, které jsou partnery pro praktické vyučování",
+        "Není jasné, jaké konkrétní problémy má třída s žáky s autismem – zpráva zmiňuje rezervy, ale nespecifikuje je podrobně"
+      ]
+    }
+  }
+}

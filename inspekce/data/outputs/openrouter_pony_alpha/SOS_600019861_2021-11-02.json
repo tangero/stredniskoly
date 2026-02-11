@@ -1,0 +1,109 @@
+{
+  "report_id": "SOS_600019861_2021-11-02",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:22:38.015303+00:00",
+  "run_finished_utc": "2026-02-10T08:23:42.062312+00:00",
+  "raw_file": "SOS_600019861_2021-11-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019861_2021-11-02",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a Vyšší odborná škola",
+      "inspection_period": "2. 11. 2021 − 5. 11. 2021",
+      "school_change_summary": "Od poslední inspekce došlo ke změně vedení (2018), zájem o školu dlouhodobě převyšuje kapacity a zefektivnil se informační systém i spolupráce pedagogů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odbornost a praxe",
+          "detail": "Škola má širokou síť smluvních partnerů a kvalitní odbornou výuku v praxi.",
+          "evidence": "„Vedení školy se podařilo vytvořit široké portfolio smluvních pracovišť... žáci a studenti se seznamují se specifiky různých typů pracovišť.“"
+        },
+        {
+          "tag": "Maturita",
+          "detail": "Žáci dosahují dlouhodobě vynikajících výsledků u maturitní zkoušky.",
+          "evidence": "„Celková úspěšnost žáků při ukončování jejich vzdělávání maturitní zkouškou je dlouhodobě výborná... v roce 2020/21 bylo úspěšných 98 % žáků.“"
+        },
+        {
+          "tag": "Poradenství",
+          "detail": "Funguje kvalitní systém péče o žáky včetně psychologů a speciálních pedagogů.",
+          "evidence": "„Poskytování poradenských služeb je kvalitně zajištěno... týmem 13 pedagogů včetně školní psycholožky a speciální pedagožky.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "V teoretických předmětech převažuje frontální výuka bez aktivního zapojení žáků.",
+          "evidence": "„Ve většině vyučovacích hodin dominovala frontální forma výuky s výkladem učitele, která neposkytovala dostatek podnětů pro aktivní zapojení žáků.“"
+        },
+        {
+          "tag": "Problémové budovy",
+          "detail": "Pracoviště Lipová a domov mládeže jsou v špatném technickém stavu.",
+          "evidence": "„Vzdělávání na pracovišti Lipová se uskutečňuje v méně podnětném prostředí zastaralé budovy... Špatný technický stav budovy školy a domova mládeže na pracovišti Lipová přetrvává.“"
+        },
+        {
+          "tag": "Neúspěšnost",
+          "detail": "Škola bojuje s vyšším podílem neúspěšných žáků v prvních ročnících a u jednoho oboru.",
+          "evidence": "„Studijní problémy se projevují zejména na začátku studia... se stejným problémem se potýká škola také u žáků dvouletého vzdělávacího oboru.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky v prvním ročníku, aby zvládli náročné odborné požadavky?",
+        "V jakých konkrétních budovách se budou vyučovat jednotlivé obory a plánuje se rekonstrukce Lipové?",
+        "Jaké aktivační metody využívají učitelé v teoretických předmětech, aby nebyla jen přednáška?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří se chtějí vzdělávat ve zdravotnických oborech s důrazem na kvalitní praxi.",
+        "Studenti, kteří očekávají možnost zahraničních stáží a bohatou mimoškolní činnost.",
+        "Žáci, kteří potřebují silné zázemí školního poradenství a psychologické podpory."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o obor Zubní instrumentářka, kde je vyšší riziko předčasného ukončení studia.",
+        "Studenti, kteří preferují moderní interiér školních budov (riziko zastaralého prostředí na Lipové).",
+        "Žáci, kteří potřebují silný rozvoj kritického myšlení a samostatnosti v teoretické výuce."
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní zdravotnické vzdělání s vynikajícími výsledky u maturity (98 % úspěšnost) a širokou nabídkou odborných praxí i stáží. Pro rodiče je klíčové vědět, že v teoretické výuce často chybí moderní metody a žáci jsou spíše pasivní. Varovným signálem je špatný stav budovy na Lipové a vyšší neúspěšnost studentů v prvních ročnících. Škola má ale skvělé zázemí pro podporu žáků v podobě psychologů a výchovných poradců."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborná úspěšnost nad celorepublikovým průměrem.",
+        "key_numbers": [
+          "98 % úspěšnost u maturity (2020/21)",
+          "93 % úspěšnost u absolutoria VOŠ",
+          "100 % úspěšnost u závěrečných zkoušek"
+        ],
+        "evidence": "„Celková úspěšnost žáků při ukončování jejich vzdělávání maturitní zkouškou je dlouhodobě výborná... Ve školním roce 2020/21 bylo u maturitní zkoušky úspěšných 98 % žáků.“"
+      },
+      "absence": {
+        "trend": "Není uvedeno",
+        "key_numbers": [],
+        "evidence": "Text zprávy neobsahuje konkrétní data o absence."
+      },
+      "support_services": [
+        "Tým 13 pedagogů včetně školní psycholožky a speciální pedagožky.",
+        "Sdílený elektronický prostor pro včasnou intervenci u ohrožených žáků.",
+        "Programy pro efektivní učení a příprava na maturitu."
+      ],
+      "safety_climate": [
+        "Příznivé školní klima a efektivní spolupráce napříč obory.",
+        "Sociálně patologické jevy se díky prevenci vyskytují v minimální míře.",
+        "Funkční školní parlament a dobrá komunikace s vedením."
+      ],
+      "partnerships_practice": [
+        "Široké portfolio smluvních pracovišť pro praktické vyučování.",
+        "Spolupráce s profesními organizacemi a komerčními subjekty na exkurzích.",
+        "Mezinárodní projekty a odborné stáže v zahraničí."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně člení hodnocení podmínek, průběhu a výsledků, a používá přímou řeč v závěrech.",
+      "uncertainty_notes": [
+        "Absence konkrétních číselných dat o prospěchu a chování žáků v průběhu studia.",
+        "Nejasná míra zastaralosti vybavení na pracovišti Lipová oproti Merhautově.",
+        "Chybí detailnější rozbor příčin neúspěšnosti u oboru Zubní instrumentářka."
+      ]
+    }
+  }
+}

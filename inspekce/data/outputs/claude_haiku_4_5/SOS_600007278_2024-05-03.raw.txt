@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600007278_2024-05-03",
+  "school_profile": {
+    "school_type": "Střední zemědělská škola s maturitními obory (Agropodnikání, Veterinářství, Ekonomika a podnikání) a výučním listem (Zemědělec – farmář), domovem mládeže a školní jídelnou",
+    "inspection_period": "3., 7., 9. a 10. května 2024",
+    "school_change_summary": "Od inspekce v 2017 se zvýšil počet žáků na 457 (80% naplnění) a ubytovaných v domově mládeže na 167 (54% naplnění). Pedagogický tým se obměnil a rozšířil. Zlepšilo se vybavení digitálními technologiemi a materiální podmínky, zejména v odborném vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Škola má příkladnou spolupráci se zemědělskými firmami v regionu, které zajišťují kvalitní praktickou výuku a seznamují žáky s moderními technologiemi.",
+        "evidence": "Příkladná spolupráce školy zejména se zemědělskými firmami v regionu výrazně přispívá k naplňování ŠVP."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola investuje do digitálních technologií a nového strojního vybavení, včetně revitalizované botanické zahrady a skleníku.",
+        "evidence": "Pořízené materiální vybavení účelně podporuje rozvoj odborných kompetencí žáků a rozvíjí jejich povědomí o moderních technologiích."
+      },
+      {
+        "tag": "Domov mládeže",
+        "detail": "Domov mládeže nabízí širokou škálu zájmových činností a podporuje osobnostní rozvoj ubytovaných žáků v komunikačně vstřícném prostředí.",
+        "evidence": "Komunikačně vstřícné a podnětné prostředí domova mládeže s širokou nabídkou zájmových činností účinně přispívá k sociálnímu a osobnostnímu rozvoji žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky u maturity",
+        "detail": "V oborech Agropodnikání a Ekonomika a podnikání je hrubá neúspěšnost ve společné části maturitní zkoušky výrazně vyšší než průměr v ČR.",
+        "evidence": "V oboru Ekonomika a podnikání byla v roce 2023 hrubá neúspěšnost 22,2 % (průměr ČR 10,5 %), u Agropodnikání 17,4 % (průměr ČR 11,1 %)."
+      },
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Ve výuce převládá frontální přístup, žáci nejsou dostatečně aktivizováni a málo se zapojují do procesu vzdělávání.",
+        "evidence": "Ve výuce nebyly dostatečně využívány formy a metody práce podporující aktivitu žáků, převažující frontální prací žáci nebyli účinně aktivizováni."
+      },
+      {
+        "tag": "Překročení hodinové dotace",
+        "detail": "U dvou tříd došlo k překročení nejvyššího povoleného počtu vyučovacích hodin v týdnech teoretické výuky.",
+        "evidence": "Dílčí nedostatky byly zjištěny v organizaci vzdělávání u dvou tříd, ve kterých došlo k překročení nejvyššího povoleného počtu vyučovacích hodin."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se škola připravuje na maturitní zkoušku, zejména v oborech Agropodnikání a Ekonomika a podnikání, kde jsou výsledky slabší?",
+      "Jaké konkrétní změny v metodách výuky plánuje škola zavést, aby žáci byli více aktivní a zapojeni do vyuky?",
+      "Jak funguje spolupráce s partnerskými firmami a jak se praktická výuka podílí na přípravě na budoucí zaměstnání?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o zemědělství, chov zvířat a moderní zemědělské technologie, kteří si cení praktické výuky",
+      "Studenti, kteří potřebují individuální podporu a vedení – škola má funkční poradenské pracoviště s psycholožkou a metodikem prevence",
+      "Žáci z okolí, kteří chtějí bydlet v domově mládeže s bohatou nabídkou zájmových činností a sportovních akcí"
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o obory Agropodnikání a Ekonomika a podnikání, pokud jim jde především o vysoké výsledky v maturitní zkoušce – tyto obory mají dlouhodobě slabší výsledky",
+      "Žáci, kteří potřebují aktivní a interaktivní výuku – škola stále převážně používá frontální metody",
+      "Studenti, kteří si potřebují vybrat obor s vyšší selektivností – do těchto oborů byli v minulosti přijímáni prakticky všichni uchazeči"
+    ],
+    "plain_czech_summary": "Zemědělská škola v Čáslavi je moderně vybavená a má výborné vazby na zemědělské firmy, kde žáci získávají praktické zkušenosti. Domov mládeže nabízí kvalitní péči a zájmové činnosti. Hlavní problém je slabší úspěšnost v maturitní zkoušce u oborů Agropodnikání a Ekonomika a podnikání – výrazně více žáků neuspěje než v průměru České republiky. Výuka je často pasivní, žáci se málo aktivně podílejí na hodinách. Škola si je těchto problémů vědoma a pracuje na jejich řešení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšování, ale stále pod průměrem v některých oborech",
+      "key_numbers": [
+        "Veterinářství: hrubá neúspěšnost 4 % (2023), pod průměrem ČR",
+        "Agropodnikání: hrubá neúspěšnost 17,4 % (2023), průměr ČR 11,1 %",
+        "Ekonomika a podnikání: hrubá neúspěšnost 22,2 % (2023), průměr ČR 10,5 %"
+      ],
+      "evidence": "Hrubá neúspěšnost se ve všech oborech snížila, ale u Agropodnikání a Ekonomiky a podnikání zůstává vyšší než průměr v ČR. Nízká úspěšnost v matematice (cca 30 %), vysoká v češtině (cca 95 %)."
+    },
+    "absence": {
+      "trend": "Pozitivní – absence se snižuje",
+      "key_numbers": [
+        "2021/2022: cca 160 hodin na žáka",
+        "2022/2023: cca 144 hodin na žáka",
+        "Neomluvená absence 2022/2023: cca 0,15 h na žáka (snížení z 0,5 h)"
+      ],
+      "evidence": "Absence se meziročně snížila. Podíl neomluvené absence je nízký a meziročně se snížil, což svědčí o účinných opatřeních školy."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně, kariérový poradce, školní metodik prevence a školní psycholožka – všichni s příslušným vzděláním",
+      "Individuální podpora žáků ohrožených školním neúspěchem na základě analýzy neúspěšnosti",
+      "Funkční systém identifikace rizikového chování s důrazem na prevenci"
+    ],
+    "safety_climate": [
+      "Škola věnuje bezpečnosti a ochraně zdraví patřičnou pozornost stanovením pravidel a postupů ve vnitřních předpisech",
+      "Žáci jsou prokazatelně informováni o bezpečnostních pravidlech",
+      "Počty úrazů jsou sledovány, převážně v hodinách tělesné výchovy a při odborném výcviku"
+    ],
+    "partnerships_practice": [
+      "Příkladná spolupráce se zemědělskými firmami v regionu zajišťujícími praktickou výuku",
+      "Spolupráce s obdobně zaměřenými školami a Českou zemědělskou univerzitou",
+      "Funkční systém kontroly a hodnocení žáků v praxi s zapojením pověřených pracovníků firem"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Jsou jasně identifikovány silné stránky (praktická výuka, vybavení, domov mládeže) a slabé stránky (pasivní výuka, slabé výsledky u maturity). Některé pasáže jsou technicky náročnější, ale celkově je obsah pro rodiče pochopitelný.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu učitelů bez kvalifikace v praktickém vyučování (dva z čtyř) – není jasné, jak vážný je tento problém",
+      "Není specifikováno, jaké konkrétní opatření škola plánuje zavést na zlepšení výsledků maturity",
+      "Chybí informace o tom, jak se škola vypořádá s překročením hodinové dotace u dvou tříd"
+    ]
+  }
+}
+```

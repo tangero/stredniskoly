@@ -1,0 +1,112 @@
+{
+  "report_id": "GY6_600013863_2022-04-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:04:08.526294+00:00",
+  "run_finished_utc": "2026-02-09T17:04:35.981045+00:00",
+  "raw_file": "GY6_600013863_2022-04-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600013863_2022-04-12",
+    "school_profile": {
+      "school_type": "Gymnázium s čtyřmi obory: osmileté, šestileté a čtyřleté studium, plus dvojjazyčné gymnázium se španělštinou",
+      "inspection_period": "12. 4. až 29. 4. 2022",
+      "school_change_summary": "Nový ředitel a jeho zástupci. Celková rekonstrukce budovy zlepšila materiální podmínky. Škola má 746 žáků (90 % kapacity)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Přírodovědné vzdělání",
+          "detail": "Škola cíleně buduje nadstandardní podmínky pro rozvoj přírodovědné gramotnosti s novou chemickou laboratoří a venkovní učebnou.",
+          "evidence": "Nově vybavená chemická laboratoř, zřízená venkovní učebna přírodovědných předmětů, zapojení do dlouhodobých projektů"
+        },
+        {
+          "tag": "Úspěchy a spolupráce",
+          "detail": "Žáci dosahují výrazných úspěchů v soutěžích (1. místo v Matematickém klokanu) a škola má funkční partnerství se zahraničními školami.",
+          "evidence": "Účast v celorepublikových soutěžích, kontakty se školami v Rakousku, Francii a Španělsku, 12. ročník festivalu studentského divadla"
+        },
+        {
+          "tag": "Péče o nadané a speciální potřeby",
+          "detail": "Promyšlený systém péče o nadané žáky a žáky se speciálními potřebami s pravidelným vyhodnocováním a přizpůsobováním.",
+          "evidence": "Výchovná poradkyně, metodička prevence a školní psycholožka nastavily systém péče, opatření jsou pravidelně vyhodnocována"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita žáků ve výuce",
+          "detail": "Mnoho hodin je vedeno frontální formou s dominantní rolí učitele, chybí aktivizující metody a práce s informačními zdroji.",
+          "evidence": "Žáci pasivně přijímají informace, chybí skupinová a kooperativní výuka, jednotvárná výuka bez aktivního zapojení"
+        },
+        {
+          "tag": "Chybějící práce s cíli hodin",
+          "detail": "Vyučující jen ojediněle pracují se vzdělávacími cíli na začátku a konci hodin, chybí sebehodnocení žáků.",
+          "evidence": "Vyučující jen ojediněle pracují s cíli v úvodu i závěru hodin, chybí čas na zhodnocení, žákovské hodnocení se téměř nevyskytuje"
+        },
+        {
+          "tag": "Nízká diferenciace",
+          "detail": "Učitelé nedostatečně zohledňují individuální předpoklady a nadání žáků, chybí přizpůsobení pracovního tempa.",
+          "evidence": "Chybí diferenciace zadávaných úkolů, nízká míra podpory rozvoje každého žáka, nerespektování odlišného pracovního tempa"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s cíli jednotlivých hodin a jak se žáci podílejí na jejich vyhodnocování?",
+        "Jaké konkrétní aktivizující metody používáte ve výuce a jak často se žáci učí pracovat s informačními zdroji?",
+        "Jak škola zajišťuje diferenciaci výuky pro nadané žáky a jak se liší přístup k žákům se speciálními potřebami?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky – škola má silné jazykové zaměření s dvojjazyčným programem a kvalitní výukou angličtiny",
+        "Nadaní žáci v přírodních vědách – nové vybavení laboratoří a venkovní učebny podporují praktické vzdělání",
+        "Žáci s ambicí na vysokou školu – 99,5 % úspěšnost u maturity a převážná většina absolventů pokračuje na VŠ"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují aktivní a interaktivní výuku – mnoho hodin je vedeno tradičně s převažující aktivitou učitele",
+        "Žáci vyžadující individuální přístup – inspekce zjistila nízkou míru diferenciace a nedostatečné zohledňování individuálních potřeb",
+        "Žáci, kteří se učí lépe skrze samostatnou práci – skupinová a kooperativní výuka nejsou běžné"
+      ],
+      "plain_czech_summary": "Gymnázium Brno-Bystrc je kvalitní škola s výborným vybavením a silným zaměřením na jazyky a přírodní vědy. Žáci dosahují skvělých výsledků – 99,5 % úspěšnosti u maturity a úspěchy v celorepublikových soutěžích. Škola má dobrou péči o nadané žáky a ty se speciálními potřebami. Hlavní slabinou je, že výuka je často vedena tradičně s málo aktivitou žáků. Inspekce doporučuje více aktivizujících metod, práce s cíli hodin a lepší diferenciaci podle potřeb jednotlivých žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoká úspěšnost",
+        "key_numbers": [
+          "0,5 % neúspěšnosti u maturity za poslední tři roky",
+          "Prakticky všichni přihlášení žáci maturitu úspěšně vykonají",
+          "Převážná většina absolventů pokračuje na vysoké školy"
+        ],
+        "evidence": "Celková průměrná hrubá neúspěšnost kolem 0,5 % za poslední tři školní roky"
+      },
+      "absence": {
+        "trend": "Bez zjištěných problémů",
+        "key_numbers": [
+          "Žádné kázeňské přestupky zaznamenány během inspekce",
+          "Maximální pozornost žáků věnovaná vyučujícímu"
+        ],
+        "evidence": "Společným prvkem všech hodin byla maximální pozornost žáků, která nebyla narušována žádnými kázeňskými přestupky"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní, metodičkou prevence a školní psycholožkou",
+        "Individuální vzdělávací plány a plány pedagogické podpory pro žáky se speciálními potřebami",
+        "Podpora nadaných žáků formou mimoškolních aktivit, soutěží a středoškolské odborné činnosti"
+      ],
+      "safety_climate": [
+        "Bezpečné prostředí pro vzdělávání vytvářené školou",
+        "Celková rekonstrukce budovy zlepšila bezpečnostní parametry",
+        "Pozitivní atmosféra ve třídách s cílenou individuální a skupinovou intervencí"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobé kontakty se zahraničními partnerskými školami v Rakousku, Francii a Španělsku",
+        "Spolupráce s vysokými školami – žáci se zapojují do seminářů a odborných přednášek",
+        "Funkční vztahy se zřizovatelem, školskou radou, základními školami a kulturními institucemi"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná a obsahuje konkrétní příklady. Silné a slabé stránky jsou dobře zdokumentovány s citacemi z pozorování. Některé pasáže jsou však technicky náročnější pro laika.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent hodin bylo vedeno aktivizujícím způsobem versus tradičně – údaj je kvalitativní",
+        "Chybí konkrétní čísla o počtu žáků se speciálními potřebami (uvedeno jen 7 % bez detailů)",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými předměty – některé jsou chváleny, jiné kritizovány"
+      ]
+    }
+  }
+}

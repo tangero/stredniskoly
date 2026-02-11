@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600020011_2024-01-16",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:29:35.264834+00:00",
+  "run_finished_utc": "2026-02-09T16:30:02.244466+00:00",
+  "raw_file": "SOS_600020011_2024-01-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600020011_2024-01-16",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola, příspěvková organizace",
+      "inspection_period": "16. 1. 2024 − 19. 1. 2024",
+      "school_change_summary": "Nový ředitel od srpna 2022. Počet žáků od roku 2015 stabilní (337 žáků). Inovované školní vzdělávací programy od září 2022. Průběžné zlepšování materiálního vybavení s podporou zřizovatele."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní propojení teorie s praxí",
+          "detail": "Praktické vyučování se vyznačuje promyšlenou organizací, motivací žáků a systematickým osvojováním odborných postupů.",
+          "evidence": "Praktické vyučování vykazovalo výrazně vyšší úroveň než teoretická výuka, žáci si osvojovali postupy nezbytné pro budoucí profesi."
+        },
+        {
+          "tag": "Silné partnerství s praxí",
+          "detail": "Intenzivní spolupráce s nemocnicemi, sociálními zařízeními a odbornými organizacemi podporuje kvalitní přípravu na povolání.",
+          "evidence": "Spolupráce s četnými externími organizacemi, institucemi a odborníky zajišťuje odborné praxe a účast praktiků ve výuce."
+        },
+        {
+          "tag": "Podpora talentovaných žáků",
+          "detail": "Žáci se úspěšně účastní soutěží na regionální, celostátní i mezinárodní úrovni.",
+          "evidence": "Reprezentace školy v soutěžích v anglickém jazyce, první pomoci, sportu a na mezinárodní úrovni v tancích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší teoretická výuka",
+          "detail": "Teoretické předměty jsou vedeny převážně frontální výukou s dominantní rolí učitele, chybí aktivizace žáků.",
+          "evidence": "Výuka se vyznačovala rozdílnou kvalitou, v teoretické výuce bylo málo samostatného vyhledávání informací a práce s různými zdroji."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Výuka není přizpůsobena různé úrovni znalostí a schopností žáků, chybí diferenciace úkolů.",
+          "evidence": "Nízká míra diferencovaně zadávaných úloh a individualizace výuky vzhledem k různé úrovni znalostí a dovedností žáků."
+        },
+        {
+          "tag": "Slabší výsledky v maturitě (Sociální činnost)",
+          "detail": "Obor Sociální činnost dlouhodobě vykazuje horší průměr než je průměr v České republice.",
+          "evidence": "Dlouhodobě horší průměr v oboru Sociální činnost než průměr stejného oboru v ČR ve společné i profilové části maturitní zkoušky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak se škola snaží zlepšit teoretickou výuku a více aktivizovat žáky v hodinách všeobecně vzdělávacích předmětů?",
+        "Jaké konkrétní opatření přijala škola k podpoře lepších výsledků v maturitě, zejména v oboru Sociální činnost?",
+        "Jak probíhá komunikace mezi učiteli a žáky a jak se sbírá zpětná vazba od studentů?"
+      ],
+      "who_school_fits": [
+        "Zájemci o zdravotnické obory s praktickým zaměřením – obor Praktická sestra má dvojnásobně vyšší zájem než kapacita.",
+        "Žáci, kteří se chtějí připravit na konkrétní povolání s podporou praxe v nemocnicích a zdravotnických zařízeních.",
+        "Studenti zajímající se o sociální práci a péči o lidi v sociálních zařízeních."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individualizované přístupy – škola zatím nedostatečně diferencuje výuku podle schopností.",
+        "Studenti oboru Sociální činnost – tento obor má dlouhodobě horší výsledky v maturitě než průměr v ČR.",
+        "Žáci, kteří se lépe učí aktivní metodou a skupinovou prací – teoretická výuka je zatím převážně frontální."
+      ],
+      "plain_czech_summary": "Střední zdravotnická škola v Frýdku-Místku je zaměřena na přípravu zdravotnických pracovníků a sociálních pracovníků. Její velkou silou je praktické vyučování a spolupráce s nemocnicemi a sociálními zařízeními. Žáci se zde učí skutečné pracovní postupy od zkušených praktiků. Slabší stránkou je teoretická výuka, která je vedena spíše tradičním způsobem bez dostatečné aktivizace žáků. Škola by měla více pracovat na individualizaci výuky a zlepšení výsledků v maturitě, zejména v oboru Sociální činnost."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – Praktická sestra výrazně lepší, Sociální činnost dlouhodobě horší než průměr ČR",
+        "key_numbers": [
+          "Hrubá úspěšnost 76–83 % (2022–2023)",
+          "20 % žáků s vyznamenáním (2022/2023)",
+          "Sociální činnost: horší průměr než průměr ČR"
+        ],
+        "evidence": "Dlouhodobě horší průměr v oboru Sociální činnost ve společné i profilové části. Praktická sestra dosahuje výrazně lepších výsledků."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Není dostupné"
+        ],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+      },
+      "support_services": [
+        "Výchovný poradce a školní metodik prevence poskytují komplexní poradenské služby",
+        "Doučování v českém jazyce, matematice a odborných předmětech",
+        "Individuální konzultace pro žáky ohrožené školním neúspěchem",
+        "Adaptační dny na počátku studia"
+      ],
+      "safety_climate": [
+        "Vedení klade důraz na vytváření pozitivních, respektujících vztahů mezi všemi účastníky",
+        "Seznámení s bezpečností a ochranou zdraví zahrnuto do průběhu vzdělávání",
+        "Zvýšená úrazovost souvisí s důsledností evidence úrazů v tělesné výchově a praktickém vyučování",
+        "Dotazníkové šetření poukazuje na nedostatečnou komunikaci mezi žáky a učiteli"
+      ],
+      "partnerships_practice": [
+        "Nemocnice ve Frýdku-Místku a Třinci – odborná praxe",
+        "Sociální a předškolní zařízení – odborná praxe",
+        "Integrovaný záchranný sbor, Český červený kříž – vzdělávací akce",
+        "Střední škola gastronomie – sdílení tělocvičny a stravování",
+        "Základní škola – kurz první pomoci"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní čísla o absenci a některé údaje jsou obecnější.",
+      "uncertainty_notes": [
+        "Absence žáků není v textu zmíněna – není jasné, zda je problém nebo ne.",
+        "Konkrétní počty žáků s speciálními potřebami (15) a s odlišným mateřským jazykem (8) jsou uvedeny, ale jejich podpora není detailně popsána.",
+        "Výsledky dotazníkového šetření o komunikaci mezi žáky a učiteli nejsou konkrétně kvantifikovány."
+      ]
+    }
+  }
+}

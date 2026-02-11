@@ -1,0 +1,99 @@
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "school_profile": {
+    "school_type": "LYC (škola má i gymnázium a předškolní pedagogiku)",
+    "inspection_period": "2025-10-22 až 2025-10-24",
+    "school_change_summary": "Od minulé inspekce škola srovnala ŠVP v předškolní pedagogice, řešila vysokou absenci, zavedla opatření ke zlepšení maturity a sjednotila hodnocení praxí.",
+    "evidence": "Od poslední inspekční činnosti… „uvedla v soulad“ ŠVP… „opatření ke snižování vysoké absence“… „sérii opatření“ k maturitám… „nastaven systém hodnocení… praxe“."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné a přátelské prostředí",
+        "detail": "Ve škole podle inspekce převládá respektující přístup a žáci se cítí psychicky bezpečně.",
+        "evidence": "„vstřícný a respektující přístup… přispívá k pocitu psychického bezpečí“"
+      },
+      {
+        "tag": "Dobře organizované pedagogické praxe",
+        "detail": "Praxe jsou ve všech ročnících, s jednotným hodnocením a průběžnou podporou.",
+        "evidence": "„praxe… ve všech ročnících“… „jednotný systém hodnocení“… „individuální průběžná podpora“"
+      },
+      {
+        "tag": "Zlepšování pravidel hodnocení a přípravy na maturitu",
+        "detail": "Od 2025/2026 škola zpřísnila klasifikaci a zavedla postupové zkoušky v klíčových předmětech.",
+        "evidence": "„zpřísnila… hranice“… „sjednotila váhy známek“ a „zavedla postupové zkoušky“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky u maturity",
+        "detail": "Dlouhodobě jsou výsledky maturit spíše podprůměrné a část žáků selhává i přes dobré známky během studia.",
+        "evidence": "„dlouhodobě… nedosahují… dobrých výsledků“… „převážně podprůměrné“"
+      },
+      {
+        "tag": "Výuka málo zohledňuje rozdíly mezi žáky",
+        "detail": "Ve většině hodin chybí diferenciace a žáci mají málo vedení k sebehodnocení a vzájemnému hodnocení.",
+        "evidence": "„absence diferenciace“… „nevedli je k… sebehodnocení a vzájemného hodnocení“"
+      },
+      {
+        "tag": "Méně rozvoje kritického myšlení a práce s chybou",
+        "detail": "Žáci mají méně příležitostí pro samostatné objevování a učitelé málo pracují s chybou.",
+        "evidence": "„omezeným rozvojem kritického myšlení“ a „Efektivní práce s chybou… minimálně“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak přesně vypadá příprava na maturitu po zavedení „postupových zkoušek“ a jak škola měří, že to funguje? („zavedla postupové zkoušky“)",
+      "Jak budou učitelé více diferencovat výuku pro silnější i slabší žáky? („absence diferenciace“)",
+      "Jak škola řeší absenci a kdy dostane žák „Plán vzdělávací podpory“? („stanovuje přesné podmínky“)"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří hledají respektující prostředí a chtějí se ve škole cítit psychicky bezpečně. („pocitu psychického bezpečí“)",
+      "Pro zájemce o pedagogické obory, kterým vyhovuje pravidelná praxe na smluvních pracovištích. („praxe… na smluvních pracovištích“)",
+      "Pro aktivní studenty, kteří chtějí ovlivňovat dění ve škole přes parlament a projekty. („možnost ovlivňovat chod školy“)"
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky mířící na co nejsilnější maturitní výsledky je dobré si ověřit, jak rychle se projeví nová opatření. („převážně podprůměrné“)",
+      "Pro ty, kdo potřebují individuálně odstupňované úlohy a jasné cíle učení, protože to inspekce viděla jako slabinu. („nízká míra diferenciace“)",
+      "Pro studenty, kteří očekávají časté aktivní využívání technologií v hodinách, protože žáci je „téměř nepoužívali“. („Žáci… téměř nepoužívali“)"
+    ],
+    "plain_czech_summary": "Škola podle inspekce nabízí velmi přátelské a bezpečné klima a dobře zvládnuté pedagogické praxe. Slabinou je výuka: často je frontální, málo se přizpůsobuje různým žákům a chybí sebehodnocení i práce s chybou. Největší praktické riziko jsou dlouhodobě podprůměrné výsledky u maturit, i když škola od 2025/2026 zpřísnila klasifikaci a zavedla postupové zkoušky. Na dni otevřených dveří se ptejte hlavně na konkrétní podporu k maturitě, diferenciaci výuky a pravidla pro absenci."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě podprůměrné výsledky; od 2025/2026 zavedena opatření ke zlepšení.",
+      "key_numbers": [
+        "Zpráva neuvádí konkrétní procenta úspěšnosti u maturity."
+      ],
+      "evidence": "„výsledky… převážně podprůměrné“ a „přijala sérii opatření… ke zlepšení“"
+    },
+    "absence": {
+      "trend": "Dříve vysoká absence; škola zavedla systémová opatření a zpřísnila podmínky individuální podpory.",
+      "key_numbers": [
+        "Zpráva neuvádí konkrétní míru absence (procenta/dny)."
+      ],
+      "evidence": "„opatření ke snižování vysoké absence žáků“ a „zpřísnila… podmínky“"
+    },
+    "support_services": [
+      "Stabilní školní poradenské pracoviště (výchovný poradce a metodička prevence) s jasnými kompetencemi. („personálně stabilní… jasně vymezenými kompetencemi“)",
+      "Spolupráce s externími odborníky na prevenci šikany, kyberšikany a rizikového chování. („spolupracuje s externími odborníky… prevenci šikany, kyberšikany“)",
+      "Pozor: vyhodnocování podpůrných opatření je jen ústní, inspekce to označila jako nespolehlivé. („pouze ústně… nedostatečně spolehlivé“)"
+    ],
+    "safety_climate": [
+      "Psychické bezpečí a příznivé sociální klima díky respektujícímu přístupu pracovníků. („pocitu psychického bezpečí… příznivé sociální klima“)",
+      "Škola vede BOZP dokumentaci a věnuje pozornost prevenci úrazů. („dokumentace je řádně vedena“)"
+    ],
+    "partnerships_practice": [
+      "Praxe na smluvních pracovištích (ZŠ, MŠ, družiny, kroužky) ve všech ročnících. („praxe… na smluvních pracovištích… ve všech ročnících“)",
+      "Erasmus: výměna se Španělskem a plánovaný workshop o AI v Rumunsku. („projektu Erasmus“… „workshop… umělé inteligence… do Rumunska“)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Použil jsem krátké body a dopady pro rodiče; nejistota je hlavně v chybějících číslech (maturita, absence).",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní statistiky k maturitě (jen slovní hodnocení jako „podprůměrné“).",
+      "Zpráva neuvádí konkrétní hodnoty absence (jen že byla „vysoká“).",
+      "Účinnost nových opatření (postupové zkoušky, zpřísnění hodnocení) je teprve v běhu."
+    ]
+  }
+}

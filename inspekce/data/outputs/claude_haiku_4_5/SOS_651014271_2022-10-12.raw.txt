@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "SOS_651014271_2022-10-12",
+  "school_profile": {
+    "school_type": "Střední škola s maturitní zkouškou, obory: Bezpečnostně právní činnost (denní forma), Technické lyceum (denní forma), Bezpečnostní služby (distanční forma). Provozuje také domov mládeže.",
+    "inspection_period": "12. 10. – 14. 10. 2022",
+    "school_change_summary": "Škola se za poslední roky výrazně rozvinula. Počet přihlášek vzrostl z 132 (2018) na 247 (2022). Došlo k modernizaci obou pracovišť (Praha, Malé Svatoňovice) a k výstavbě nového domova mládeže. Vedení se stabilizovalo pod současným ředitelem (ve funkci od 2019)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Silná prezentace a růst",
+        "detail": "Škola si za poslední tři roky výrazně zvýšila počet přihlášek a získala ekonomickou stabilitu, což jí umožňuje vybírat žáky a zvyšovat nároky na vzdělávání.",
+        "evidence": "Počet přihlášek vzrostl z 132 (2018) na 247 (2022). Vedení cíleně získává zpětnou vazbu od žáků a pedagogů."
+      },
+      {
+        "tag": "Kvalitní materiální vybavení",
+        "detail": "Škola má moderní zařízení pro odbornou výuku včetně střelnice, posilovny a sportovních zařízení odpovídajících zaměření oborů.",
+        "evidence": "Materiální podmínky jsou v souladu s požadavky Ministerstva vnitra. V roce 2020 došlo k rozsáhlým investicím do oprav a nových objektů."
+      },
+      {
+        "tag": "Partnerství s profesními subjekty",
+        "detail": "Škola má funkční spolupráci s Policií ČR, Ministerstvem vnitra a dalšími institucemi, což podporuje praktickou přípravu žáků.",
+        "evidence": "Ředitel byl oceněn krajským ředitelstvím policie za přínos pro rozvoj spolupráce. Škola organizuje odborné exkurze a stáže."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovaní učitelé odborných předmětů",
+        "detail": "Podíl výuky zajištěné kvalifikovanými pedagogy je nízký (62,5 % v Praze, 64,3 % v Malých Svatoňovicích), což negativně ovlivňuje kvalitu výuky.",
+        "evidence": "Učitelé často nesplňují požadovanou praxi u bezpečnostních sborů. Kvalita hospitované výuky byla negativně ovlivněna pedagogickými zkušenostmi a nekvalifikovaností některých pedagogů."
+      },
+      {
+        "tag": "Pasivní přístup žáků k výuce",
+        "detail": "Učitelé používají převážně frontální výuku s řízeným rozhovorem, která neumožňuje aktivní zapojení všech žáků. V téměř všech hodinách bylo několik žáků, kteří výuku pouze pasivně sledovali.",
+        "evidence": "Chyběly metody aktivního učení, skupinová práce se objevila ojediněle. Diferenciace výuky nebyla zaznamenána."
+      },
+      {
+        "tag": "Nekompletní odborná praxe",
+        "detail": "Odborná praxe v oboru Bezpečnostně právní činnost není realizována v požadovaném souvislém časovém úseku, ale jako jednotlivé projektové akce a exkurze.",
+        "evidence": "Souvisle probíhá pouze 2 týdny z požadovaných 4 týdnů. Zbývající dny jsou projektové akce, které nemají charakter odborné praxe."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaký je konkrétní podíl kvalifikovaných učitelů v jednotlivých oborech a jak škola řeší nedostatek kvalifikovaných pedagogů?",
+      "Jak probíhá odborná praxe v oboru Bezpečnostně právní činnost a v jakých organizacích se žáci prakticky připravují?",
+      "Jaké metody výuky škola používá k aktivnímu zapojení všech žáků a jak se liší přístup mezi jednotlivými učiteli?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o bezpečnostní a právní obory, kteří mají motivaci k fyzické přípravě a disciplíně",
+      "Studenti, kteří si cení kvalitního materiálního vybavení a moderních sportovních zařízení",
+      "Žáci, kteří se chystají na kariéru v bezpečnostních sborech nebo právní oblasti a ocení kontakty se skutečnými profesionály"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovaný přístup a aktivní zapojení do výuky – škola se zaměřuje spíše na frontální výuku",
+      "Studenti, kteří preferují samostatnou práci a skupinové projekty – ty jsou v hodinách využívány jen ojediněle",
+      "Uchazeči, kteří si nejsou jisti svým zaměřením – kariérové poradenství není systematicky nastaveno"
+    ],
+    "plain_czech_summary": "Bezpečnostně právní akademie je dynamicky se rozvíjející škola se silným zaměřením na bezpečnostní a právní obory. Má moderní vybavení, funkční partnerství s profesními institucemi a rostoucí počet žáků. Hlavní slabinou je vysoký podíl nekvalifikovaných učitelů odborných předmětů a převážně pasivní forma výuky. Učitelé málo využívají aktivizační metody a individualizaci. Odborná praxe není realizována v plném rozsahu. Škola je vhodná pro motivované žáky se zájmem o bezpečnostní kariéru, ale vyžaduje zlepšení kvality pedagogické práce."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě nižší úspěšnost v Malých Svatoňovicích ve srovnání s Prahou. Škola zavádí opatření ke zlepšení.",
+      "key_numbers": [
+        "Bezpečnostně právní činnost: 23 neúspěšných z 185 žáků (12,4 %)",
+        "Technické lyceum: 5 neúspěšných z 33 žáků (15,2 %)",
+        "Veřejnosprávní činnost: 1 neúspěšný ze 2 žáků"
+      ],
+      "evidence": "Jarní zkušební období 2022. Škola zřídila školní knihovnu pro rozvoj čtenářské gramotnosti a zvyšuje požadavky na žáky."
+    },
+    "absence": {
+      "trend": "Zvýšený počet neomluvených hodin ve školním roce 2021/2022, řešeno správním řízením.",
+      "key_numbers": [
+        "Zvýšený počet neomluvených hodin způsoben dlouhodobou absencí jednotlivců",
+        "Řešení v souladu se školním řádem",
+        "Vyloučení ze studia v případě dlouhodobé absence"
+      ],
+      "evidence": "Vedení školy sleduje absenci žáků a postupuje podle školního řádu. Neomluvené hodiny byly řešeny správním řízením."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (výchovný poradce, školní metodik prevence) na obou místech",
+      "Skupinové a individuální doučování dle potřeb žáků",
+      "Internetová schránka důvěry pro stížnosti a návrhy žáků",
+      "Adaptační kurzy pro žáky 1. ročníku",
+      "Pestrá nabídka kurzů (lyžařský, branný, horolezecký, střelecký, zdravotní)"
+    ],
+    "safety_climate": [
+      "Pozitivní atmosféra a dobré vztahy mezi pedagogy, mezi pedagogy a žáky i mezi žáky",
+      "Nový kamerový systém v areálu školy v Malých Svatoňovicích",
+      "Poučování žáků o bezpečnostních rizicích na začátku roku a v průběhu",
+      "Nejčastějšími místy úrazů jsou tělocvičny a sportoviště (převážně lehčí úrazy)",
+      "Vstřícná a respektující komunikace mezi vychovateli a žáky v domově mládeže"
+    ],
+    "partnerships_practice": [
+      "Ministerstvo vnitra a Policie ČR",
+      "Vyšší policejní škola a Střední policejní škola MV v Holešově",
+      "Vězeňská služba ČR, Česká obchodní inspekce",
+      "Škoda Auto Mladá Boleslav, Vojenské muzeum, Kynologické centrum",
+      "Fakultní nemocnice Královské Vinohrady, Anatomické muzeum 1. lékařské fakulty UK"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Hlavní zjištění jsou jasně formulována. Některé pasáže jsou však technicky náročnější a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými učiteli a jak se to projevuje na výsledcích žáků",
+      "Chybí konkrétní údaje o tom, kolik žáků má individuální vzdělávací plány nebo speciální podporu",
+      "Není specifikováno, jaké konkrétní opatření škola přijala na základě předchozích inspekčních zjištění"
+    ]
+  }
+}
+```

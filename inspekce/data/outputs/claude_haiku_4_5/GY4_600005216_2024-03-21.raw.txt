@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY4_600005216_2024-03-21",
+  "school_profile": {
+    "school_type": "Střední škola gastronomická a hotelová s.r.o. - soukromá škola s obory: Cestovní ruch, Hotelnictví, Gastronomie (maturitní), Kuchař-číšník, Cukrář (výuční listy) a nově Gymnázium",
+    "inspection_period": "21. března až 26. března 2024",
+    "school_change_summary": "Od inspekce v roce 2016 se počet žáků zvýšil z původního stavu na 2423 žáků v 91 třídách. Významně vzrostl podíl studentů v kombinované formě. Nově byl zaveden obor Gymnázium. Výrazně se zlepšily materiálně technické podmínky a digitální vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Silné vedení a strategie",
+        "detail": "Ředitel efektivně řídí velkou školu s jasnou vizí a strategií, která se promítá do kvalitního zajištění personálu, materiálu a financí.",
+        "evidence": "Ředitel 'vhodně využívá své dlouholeté zkušenosti a manažerské dovednosti' s 'jasně definovanou vizí školy'"
+      },
+      {
+        "tag": "Výborné partnerství a praxe",
+        "detail": "Škola má nadstandardní spolupráci se sociálními partnery, zahraničními školami a profesními organizacemi, což podporuje praktické vzdělávání.",
+        "evidence": "'Nadstandardní partnerské vztahy se sociálními partnery, zahraničními školami' včetně USA, Kanady a Velké Británie"
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Škola disponuje novými kuchařskými a cukrářskými studiemi, interaktivními tabulemi, 3D tiskárnami a profesionálním nahrávacím studiem.",
+        "evidence": "'Zcela nové kuchařské a cukrářské studio', 'velkoformátové dotykové obrazovky, profesionální nahrávací studio, sady iPadů'"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výuka teoretických předmětů",
+        "detail": "V části hodin chybí pestrost metod, žáci nejsou dostatečně vedeni k samostatnému vyhledávání a kritickému zpracování informací.",
+        "evidence": "'Nižší pestrost zařazovaných forem výuky', 'chybělo však vlastní vyhledávání a kritické zpracovávání informací z různých zdrojů samotnými žáky'"
+      },
+      {
+        "tag": "Problémy s cizím jazykem v některých oborech",
+        "detail": "Žáci oboru Hotelnictví a Cestovní ruch v kombinované formě dosahují menší úspěšnosti v maturitě z cizího jazyka.",
+        "evidence": "'Menší úspěšností dosahovali žáci ve společné části maturitní zkoušky z cizího jazyka v oboru Hotelnictví a Cestovní ruch v kombinované formě'"
+      },
+      {
+        "tag": "Nová gymnázia bez dostatečných prostor",
+        "detail": "Obor Gymnázium je umístěn v pronajatých prostorách základní školy, což může omezit jeho rozvoj.",
+        "evidence": "'Rozšířit vhodné prostory pro výuku oboru Gymnázium' - doporučení inspekce"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se liší výuka v oboru Gymnázium od ostatních oborů a jaké má své vlastní prostory?",
+      "Jaké jsou konkrétní výsledky žáků v maturitě z cizích jazyků a jak se škola snaží zlepšit úspěšnost v kombinované formě?",
+      "Jak funguje praktické vyučování a jak často se žáci střídají na různých pracovištích?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na gastronomii, hotelnictví a cestovní ruch, kteří chtějí kombinovat teorii s praxí na moderně vybavených pracovištích",
+      "Studenti, kteří si cení mezinárodních zkušeností a zahraničních stáží (škola nabízí výjezdy do USA, Kanady, Velké Británie)",
+      "Žáci s individuálními potřebami - škola má rozsáhlé poradenské služby a podporu pro žáky se speciálními vzdělávacími potřebami"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, jejichž děti potřebují intenzivní přípravu na maturitu z cizích jazyků, zejména v kombinované formě studia",
+      "Zájemci o obor Gymnázium - je nový (od 2023) a prozatím nemá vlastní prostory, sídlí v pronajatých místnostech",
+      "Studenti, kteří preferují tradičnější výuku - inspekce upozorňuje na potřebu více aktivizačních metod a kritického myšlení"
+    ],
+    "plain_czech_summary": "Jde o velkou soukromou střední školu se 2400 žáky zaměřenou na gastronomii, hotelnictví a cestovní ruch. Škola je dobře řízená, má moderní vybavení a výborné kontakty s praxí. Silnou stránkou je praktické vyučování na reálných pracovištích a mezinárodní spolupráce. Slabší je teoretická výuka - chybí zde více aktivních metod a vedení žáků k samostatnému myšlení. Nový obor Gymnázium zatím nemá vlastní prostory. Úspěšnost v maturitě z cizích jazyků je v některých oborech nižší."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s rozdíly podle oboru",
+      "key_numbers": [
+        "Nejlepší výsledky: obor Gastronomie (denní i kombinovaná forma)",
+        "Slabší výsledky: Hotelnictví a Cestovní ruch v kombinované formě, zejména v cizím jazyce",
+        "Vysoká úspěšnost u závěrečných zkoušek (tradičně velmi vysoká)"
+      ],
+      "evidence": "'Nejlepších výsledků dosahovali žáci oboru Gastronomie', 'menší úspěšností dosahovali žáci ve společné části maturitní zkoušky z cizího jazyka'"
+    },
+    "absence": {
+      "trend": "Nízká, odpovídá typu školy",
+      "key_numbers": [
+        "Průměr 98 hodin na žáka denní formy za školní rok",
+        "Počet neomluvených hodin zanedbatelný",
+        "Pozitivní trend: zvyšuje se podíl žáků s uzavřenou klasifikací (86 % → 89 % denní forma, 45 % → 55 % ostatní formy)"
+      ],
+      "evidence": "'Vykázaná absence odpovídá druhu školy (v průměru 98 hodin na žáka denní formy vzdělávání za školní rok), počet neomluvených hodin byl zanedbatelný'"
+    },
+    "support_services": [
+      "Centrum studijní podpory pro žáky se speciálními vzdělávacími potřebami a s odlišným mateřským jazykem",
+      "Školní poradenské pracoviště: 2 výchovné poradkyně, 3 metodici prevence, 1 školní psycholog",
+      "Kariérové poradenství zaměřené na profesní a studijní směřování",
+      "Konzultace a individuální podpora pro žáky v kombinované a dálkové formě"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra s respektujícím přístupem učitelů",
+      "Důsledné vyžadování dodržování pravidel",
+      "Bezpečnost zajištěna kamerovým systémem a elektronickými čipy",
+      "Preventivní program zaměřený na bezpečné chování a zdravý životní styl",
+      "Spolupráce s neziskovými organizacemi na charitativních akcích"
+    ],
+    "partnerships_practice": [
+      "Partnerské školy v USA, Kanadě, Velké Británii a Číně",
+      "Vysoké školy v ČR a zahraničí",
+      "Sociální partneři přispívající motivačním a stipendijním programem",
+      "Sociální partneři zapojeni do tvorby školních vzdělávacích programů",
+      "Pravidelné zahraniční exkurze a výměnné pobyty"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však velmi odborné a pro laika těžko srozumitelné (např. popis kritérií hodnocení).",
+    "uncertainty_notes": [
+      "Inspekce neuvádí konkrétní procenta úspěšnosti v maturitě - pouze kvalitativní popis",
+      "Není jasné, jak velký je podíl žáků v kombinované formě (uvedeno jen že 'významně se zvýšil')",
+      "Nový obor Gymnázium není dostatečně vyhodnocen - inspekce jej zmínila jen okrajově"
+    ]
+  }
+}
+```

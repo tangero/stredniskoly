@@ -1,0 +1,117 @@
+{
+  "report_id": "LYC_600013782_2023-11-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:34:14.759038+00:00",
+  "run_finished_utc": "2026-02-09T16:34:41.747755+00:00",
+  "raw_file": "LYC_600013782_2023-11-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600013782_2023-11-20",
+    "school_profile": {
+      "school_type": "Střední škola informatiky, poštovnictví a finančnictví (příspěvková organizace)",
+      "inspection_period": "20. 11. 2023 – 23. 11. 2023",
+      "school_change_summary": "Škola zaznamenala výrazný nárůst počtu žáků (o 59 % více než při poslední inspekci na 1 270 žáků), zlepšila materiální podmínky (nové laboratoře kybernetiky, renovované učebny), a rozšířila domov mládeže (nárůst ubytovaných o 27 % na 630 žáků)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Škola má cílené partnerství s firmami a univerzitami, které přispívají k propojení teorie s praxí a zvyšují kvalitu odborného vzdělávání.",
+          "evidence": "Vypracování 72 výukových scénářů, Junior Centrum Excelence kybernetické bezpečnosti, finalisté soutěže REGIOSTAR 2023."
+        },
+        {
+          "tag": "Domov mládeže a mimoškolní aktivity",
+          "detail": "Bohatá nabídka zájmových útvarů a aktivit podporuje osobnostní rozvoj a smysluplné trávení volného času.",
+          "evidence": "Tři metodická sdružení vychovatelů, pestrá nabídka zájmových útvarů, projektový den, funkční žákovská samospráva."
+        },
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Úspěšnost při maturitní zkoušce se zvýšila na přibližně 95 % (145 z 153 žáků), výsledky srovnatelné s celorepublikovým průměrem.",
+          "evidence": "Maturitní zkoušku konalo 153 žáků, 145 uspělo, výsledky na stejné úrovni jako oborové skupiny v ČR."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita výuky a didaktika",
+          "detail": "Výuka často využívá pasivní frontální formu, chybí aktivizační metody, diferenciace a práce se vzdělávacím cílem.",
+          "evidence": "Zařazení aktivizačních forem jen v menší části hodin, malý prostor k rozvoji komunikativních dovedností, ojedinělá práce se vzdělávacím cílem."
+        },
+        {
+          "tag": "Kontrola a řízení",
+          "detail": "Vedení školy nebyla v některých oblastech dostatečně důsledná, zejména při ukládání výchovných opatření a vedení záznamů.",
+          "evidence": "Nedodržování pravidel při ukládání výchovných opatření, nejasné vedení záznamů v třídních knihách, nedostatečné metodické vedení začínajících učitelů."
+        },
+        {
+          "tag": "Tělesná výchova",
+          "detail": "Rozdílná úroveň vzdělávání mezi třídami, nejednotná pravidla, nevhodné prostory pro výuku.",
+          "evidence": "Nejednotnost v organizaci a postupech, výuka v prostorech neurčených pro tělesnou výchovu, vyšší index úrazovosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s prospěchem v prvních ročnících? Jaké jsou možnosti přestupu do jiného oboru?",
+        "Jaké jsou podmínky ubytování v domově mládeže a jak je zajištěna bezpečnost ubytovaných žáků?",
+        "Jak se škola zaměřuje na rozvoj komunikativních dovedností a kritického myšlení v jednotlivých předmětech?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na IT, kybernetiku a bezpečnost – škola má moderní vybavení a silné partnerství v těchto oborech.",
+        "Žáci, kteří chtějí získat mezinárodní certifikáty – Cambridge, jazykové zkoušky, certifikáty z ekonomiky.",
+        "Žáci z okolí Brna, kteří potřebují ubytování – domov mládeže nabízí pestrou nabídku aktivit a podporu."
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující aktivní a interaktivní výuku – výuka často probíhá formou výkladu s omezeným prostorem pro aktivní zapojení.",
+        "Žáci se speciálními vzdělávacími potřebami – podpora není vždy konzistentní, metodické vedení pedagogů v této oblasti je nedostatečné.",
+        "Žáci v tělesné výchově – nejednotná pravidla a organizace mezi třídami, vyšší riziko úrazů."
+      ],
+      "plain_czech_summary": "Škola je moderní zařízení s dobrým vybavením a silnými vazbami na praxi. Výsledky maturit jsou solidní a nabídka oborů je pestrá. Domov mládeže poskytuje kvalitní zázemí. Hlavní slabinou je tradičnější přístup k výuce – chybí aktivní metody a diferenciace. Vedení školy by mělo zlepšit kontrolu a konzistenci v některých oblastech, zejména v tělesné výchově a podpoře žáků se speciálními potřebami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zvýšení úspěšnosti",
+        "key_numbers": [
+          "95 % úspěšnost (145 z 153 žáků)",
+          "16 % žáků s vyznamenáním",
+          "3 % neprospělo"
+        ],
+        "evidence": "Úspěšnost se zvýšila v porovnání s předchozím rokem, výsledky srovnatelné s celorepublikovým průměrem v oborových skupinách."
+      },
+      "absence": {
+        "trend": "Zvýšená absence v některých oborech",
+        "key_numbers": [
+          "126 hodin na žáka průměrně",
+          "1 % neomluvené absence",
+          "Vyšší absence v oborech manipulant, ekonomika a podnikání, nástavbové studium"
+        ],
+        "evidence": "Absence řešena ve spolupráci třídních učitelů a školního poradenského pracoviště, systém pravidel ve školním řádu ovlivňuje počet neomluvených hodin."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště na dobré úrovni s výchovnou poradkyní a speciální pedagožkou",
+        "Individuální podpora žáků se speciálními vzdělávacími potřebami (13 % žáků)",
+        "Školní asistentka pro ukrajinské žáky s jazykovou přípravou a doučováním",
+        "Adaptační kurz pro první ročníky, doučování pro ohrožené žáky"
+      ],
+      "safety_climate": [
+        "Žádná závažná bezpečnostní rizika identifikována",
+        "Vstup zabezpečen turnikety, pohyb cizích osob zaznamenáván",
+        "Únikové východy ozvučeny, žáci seznámeni s pravidly bezpečného chování",
+        "Vyšší index úrazovosti v tělesné výchově (drobná zranění)"
+      ],
+      "partnerships_practice": [
+        "Cambridge Exam Centre P.A.R.K. – mezinárodní jazykové certifikáty",
+        "Junior Centrum Excelence kybernetické bezpečnosti – sdíleno s pěti dalšími brněnskými školami",
+        "Spolupráce s firmami a univerzitami na vzdělávacích aktivitách",
+        "Kybernetická konference ALEF Security TALK 2023 (6. ročník)",
+        "Sportovní kluby financující ubytování a stravování sportovců"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní fakta, čísla a citace. Slabší je pouze v některých technických pasážích s úřednickým jazykem, ale pro rodiče jsou klíčové informace jasné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní procenta žáků se speciálními potřebami v jednotlivých oborech, pouze celkový podíl 13 %.",
+        "Nejsou uvedeny konkrétní výsledky v jednotlivých předmětech maturitní zkoušky, pouze celková úspěšnost.",
+        "Absence údajů o počtu žáků, kteří přestoupili do jiného oboru kvůli neúspěchu."
+      ]
+    }
+  }
+}

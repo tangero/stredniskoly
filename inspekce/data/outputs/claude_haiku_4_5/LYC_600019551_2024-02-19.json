@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600019551_2024-02-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:25:48.513990+00:00",
+  "run_finished_utc": "2026-02-09T16:26:16.467657+00:00",
+  "raw_file": "LYC_600019551_2024-02-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600019551_2024-02-19",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická",
+      "inspection_period": "19.–22. února 2024",
+      "school_change_summary": "Od poslední inspekce (2017) vzrostl počet žáků o desetinu na 288 (96% naplněnost) a studentů o třetinu na 100 (83% naplněnost). Změnila se vedení školy, zvýšil se počet pedagogů. Inovovala se nabídka oborů včetně nového oboru Diplomovaná všeobecná sestra v kombinované formě."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Spolupráce se stomatologickými pracovišti a nemocnicemi zajišťuje kvalitní praktické vyučování s individuálním přístupem.",
+          "evidence": "Žáci zručně používají nástroje, osvojují si dovednosti a propojují znalosti s praxí."
+        },
+        {
+          "tag": "Odborné předměty",
+          "detail": "Výuka odborných teoretických předmětů je velmi kvalitní s efektivním propojením teorie a praxe.",
+          "evidence": "Učitelé systematicky rozvíjí klíčové i odborné kompetence, poskytují zpětnou vazbu a vedou k samostatnosti."
+        },
+        {
+          "tag": "Úspěch absolventů",
+          "detail": "Absolventi jsou velmi dobře uplatnitelní na trhu práce díky vysoké společenské poptávce po zdravotnických profesích.",
+          "evidence": "Studenti VOŠ dosahují stabilně dobrých výsledků, polovina prospívá s vyznamenáním."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v jazycích",
+          "detail": "Neúspěšnost u maturitní zkoušky z českého jazyka a angličtiny je vyšší než republikový průměr.",
+          "evidence": "Prospěchové problémy způsobuje především český jazyk a literatura, zejména v oborech Praktická sestra a Asistent zubního technika."
+        },
+        {
+          "tag": "Všeobecné předměty",
+          "detail": "Výuka všeobecně vzdělávacích předmětů je málo aktivizující, chybí kooperativní formy a diferenciace.",
+          "evidence": "Učitelé minimálně vedou žáky ke kritickému myšlení, převažuje frontální výuka s pasivní účastí žáků."
+        },
+        {
+          "tag": "Bezpečnost",
+          "detail": "Počet úrazů má stoupající trend za poslední tři roky.",
+          "evidence": "Přestože jsou žáci průběžně poučováni o bezpečnostních rizicích, trend zůstává problematický."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s problémy v češtině a angličtině? Jaké jsou dostupné doučovací programy?",
+        "Jak probíhá praktická příprava a jaké jsou konkrétní partnerské nemocnice a ordinace?",
+        "Jaké jsou možnosti mezinárodní mobility a jaké jazykové zkoušky si mohou žáci skládat?"
+      ],
+      "who_school_fits": [
+        "Motivovaní žáci se zájmem o zdravotnické obory, kteří si chtějí osvojit praktické dovednosti.",
+        "Žáci, kteří preferují praktickou výuku a propojení teorie s reálnými situacemi v medicíně.",
+        "Uchazeči o studium na vysokých školách zdravotnického zaměření (obor Zdravotnické lyceum)."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v češtině a angličtině – budou potřebovat intenzivní doučování.",
+        "Žáci preferující teoretickou výuku – všeobecné předměty jsou vyučovány převážně frontálně bez aktivizace.",
+        "Žáci s nižší motivací – škola přijímá motivované uchazeče a očekává jejich aktivní přístup."
+      ],
+      "plain_czech_summary": "Zdravotnická škola v Nymburku je kvalitní zařízení se silným zaměřením na praktickou přípravu. Žáci se učí přímo v nemocnicích a ordinacích, což je velkou výhodou. Obor Zdravotnické lyceum dosahuje nadprůměrných výsledků u maturity. Slabší stránkou je výuka všeobecných předmětů, která je málo aktivní, a problémy s češtinou a angličtinou. Absolventi se velmi dobře uplatňují na trhu práce. Škola nabízí i mezinárodní mobility a soutěže."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – Zdravotnické lyceum nadprůměrné, ostatní obory podprůměrné",
+        "key_numbers": [
+          "Zdravotnické lyceum: dlouhodobě lepší než republikový průměr",
+          "Ostatní obory: hrubá neúspěšnost vyšší než republikový průměr",
+          "Neúspěšnost v češtině a angličtině: zaznamenána u více žáků"
+        ],
+        "evidence": "MZ 2022 a 2023: celková hrubá neúspěšnost u oborů Praktická sestra, Asistent zubního technika vyšší než v příslušné skupině oborů v republice."
+      },
+      "absence": {
+        "trend": "Pozitivní – zlepšující se",
+        "key_numbers": [
+          "Průměr 2022/2023: 120 hodin na žáka (snížení z 138 hodin)",
+          "Neomluvené hodiny: minimální",
+          "Chování: žádný žák se sníženým stupněm, pochvaly převyšují kázeňská opatření"
+        ],
+        "evidence": "Škola účinně motivuje žáky k řádné docházce a dobrým vztahům. Systém prevence rizikového chování je funkční."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, školní metodička prevence, externí školní psycholožka",
+        "Doučování českého jazyka pro žáky s jazykovou bariérou a pro ohrožené školní neúspěchem",
+        "Individuální dopomoc a skupinové doučování pro žáky se speciálními vzdělávacími potřebami",
+        "Kariérové poradenství a adaptační a sportovní kurzy"
+      ],
+      "safety_climate": [
+        "Počet úrazů má stoupající trend za poslední tři roky",
+        "Žáci jsou průběžně poučováni o bezpečnostních rizicích",
+        "Ředitel správně nastavil pravidla pro bezpečnost a ochranu zdraví"
+      ],
+      "partnerships_practice": [
+        "Stomatologická pracoviště a ordinace dentální hygieny",
+        "Oddělení nemocnic pro praktickou přípravu",
+        "Místní knihovna (spolupráce v češtině a literatuře)",
+        "Základní a mateřské školy (programy dentální hygieny)",
+        "Mezinárodní mobility a partneři pro jazykové zkoušky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje o výsledcích, metodách a problémech. Některé pasáže jsou však úřednicky husté a vyžadují pozorné čtení. Klíčové informace pro rodiče jsou jasně odděleny v závěrech.",
+      "uncertainty_notes": [
+        "Konkrétní počty úrazů nejsou uvedeny, pouze zmínka o 'stoupajícím trendu' – není jasné, zda jde o 2-3 úrazy ročně nebo více.",
+        "Podíl žáků s jazykovou bariérou (12 žáků) není jasně vysvětlen – není zřejmé, jak vážná je jejich situace.",
+        "Zpráva nespecifikuje, které konkrétní nemocnice a ordinace jsou partnery školy."
+      ]
+    }
+  }
+}

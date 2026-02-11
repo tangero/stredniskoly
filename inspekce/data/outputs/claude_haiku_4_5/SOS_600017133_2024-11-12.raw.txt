@@ -1,0 +1,102 @@
+```json
+{
+  "report_id": "SOS_600017133_2024-11-12",
+  "school_profile": {
+    "school_type": "Střední škola technických profesí s domovem mládeže a školní jídelnou",
+    "inspection_period": "12. až 14. listopadu 2024",
+    "school_change_summary": "V roce 2023 došlo ke změně ředitele a přejmenování školy. Od poslední inspekce se zvýšil počet žáků a zlepšily se prostorové i materiální podmínky včetně výstavby nových dílen."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství s praxí",
+        "detail": "Škola má rozsáhlou síť partnerství s firmami, které zajišťují odborné praxe a zahraniční stáže v rámci Erasmus+.",
+        "evidence": "\"Realizací mobility žáků v rámci stáží žáků v praktickém vyučování podporuje škola snahu o lepší uplatnitelnost absolventů na trhu práce.\""
+      },
+      {
+        "tag": "Kvalitní atmosféra",
+        "detail": "Vyučovací hodiny probíhají v příznivé pracovní atmosféře s otevřenou komunikací mezi učiteli a žáky.",
+        "evidence": "\"Kvalitu poskytovaného vzdělávání pozitivně ovlivňuje příznivá pracovní atmosféra ve vyučovacích hodinách založená na otevřené vzájemné komunikaci.\""
+      },
+      {
+        "tag": "Prevence a péče",
+        "detail": "Efektivní prevence rizikového chování a péče o žáky se speciálními potřebami včetně kariérního poradenství.",
+        "evidence": "\"Projevy rizikového chování se daří udržovat na minimální úrovni účinným preventivním působením.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezené metody výuky",
+        "detail": "V teoretické výuce převažuje frontální výuka s předáváním hotových informací, chybí kritické myšlení a experimentování.",
+        "evidence": "\"Převažovalo však předávání hotových informací, pestré metody práce se však v hodnocených vyučovacích hodinách vyskytly výjimečně.\""
+      },
+      {
+        "tag": "Chybí individualizace",
+        "detail": "Nedostatečná diferenciace obsahu pro talentované žáky a slabší individuální přístup v teoretické výuce.",
+        "evidence": "\"K diferenciaci vzdělávacího obsahu směrem k žákům rychlejším a talentovaným však nedocházelo téměř vůbec.\""
+      },
+      {
+        "tag": "Nejasná pravidla hodnocení",
+        "detail": "V pravidlech hodnocení chybí zásady pro určení váženého průměru u jednotlivých typů zkoušek.",
+        "evidence": "\"V těchto pravidlech však chyběly zásady pro určení váženého průměru u jednotlivých typů zkoušek.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro nadané žáky a jak se liší přístup k pomalejším studentům?",
+      "Jaké jsou konkrétní výsledky absolventů na trhu práce a jak dlouho trvá jejich uplatnění po absolvování?",
+      "Jak se škola snaží rozvíjet kritické myšlení a samostatné myšlení žáků v teoretické výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a technické obory s jasnou představou o budoucím povolání",
+      "Studenti, kteří si cení kvalitní atmosféry a osobního přístupu pedagogů",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje systematickou podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující teoretickou výuku s důrazem na kritické myšlení a samostatné objevování",
+      "Talentovaní studenti hledající výrazně individualizovaný přístup a rozšířené vzdělávání",
+      "Rodiče, kterým záleží na transparentních a jasně definovaných pravidlech hodnocení"
+    ],
+    "plain_czech_summary": "Střední škola technických profesí v Olomouci je moderní technická škola s dobrým vybavením a silnými vazbami na praxi. Silnými stránkami jsou kvalitní atmosféra, efektivní prevence problémů a praktické zaměření. Slabší je teoretická výuka, kde chybí pestré metody, individualizace pro nadané žáky a rozvoj kritického myšlení. Škola je vhodná pro prakticky zaměřené studenty, ale méně pro ty, kteří chtějí hlouběji teoretické vzdělání."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní výsledky",
+      "key_numbers": [
+        "Hrubá neúspěšnost ve společné části nepřekročila 25 %",
+        "Profilová část srovnatelná s průměrem ČR",
+        "Bez výrazné změny podílu neprospívajících a prospívajících s vyznamenáním"
+      ],
+      "evidence": "\"Hrubá neúspěšnost ve společné části maturitní zkoušky v hodnoceném období nepřekročila 25 %. V profilové části maturitní zkoušky žáci školy dosahovali výsledků srovnatelných s průměrem.\""
+    },
+    "absence": {
+      "trend": "Údaje nejsou v textu",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje konkrétní údaje o absenci žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně zaměřená na péči o žáky se speciálními vzdělávacími potřebami",
+      "Školní metodička prevence spolupracující na odhalování a řešení negativních projevů",
+      "Kariérní poradenství s informacemi o dalším studiu a nabídkách zaměstnání"
+    ],
+    "safety_climate": [
+      "Projevy rizikového chování udržovány na minimální úrovni",
+      "Školní klima monitorováno dotazníkovým šetřením mezi žáky, rodiči a pedagogy",
+      "Schránka důvěry pro vyjádření se k dění ve škole"
+    ],
+    "partnerships_practice": [
+      "Rozsáhlá síť partnerství s firmami zajišťujícími odborné praxe",
+      "Zahraniční odborné stáže v rámci projektu Erasmus+ ve strojírenských a stavebních firmách",
+      "Spolupráce s vysokými školami a vzdělávacími institucemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétně popsány s příklady. Některé pasáže jsou však delší a obsahují více odborné terminologie.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o absenci žáků, což je důležitý indikátor kvality",
+      "Chybí srovnání s předchozí inspekční zprávou z roku 2020 - není jasné, zda se situace zlepšila či zhoršila",
+      "Nejsou uvedeny konkrétní počty žáků, kteří úspěšně složili závěrečné zkoušky v jednotlivých oborech"
+    ]
+  }
+}
+```

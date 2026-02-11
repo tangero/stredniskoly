@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY4_691014604_2022-05-26",
+  "school_profile": {
+    "school_type": "Gymnázium s humanitním zaměřením, čtyřleté denní studium, soukromá škola (s.r.o.)",
+    "inspection_period": "26. května až 30. května 2022",
+    "school_change_summary": "Nově založená škola (od 1. 9. 2021) s inovativním konceptem zaměřeným na moderní dějiny, mezigenerační dialog a demokratické hodnoty. V době inspekce měla 30 žáků prvního ročníku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Inovativní výuka s praktickým zaměřením",
+        "detail": "Škola propojuje teoretickou výuku s projektovou činností, zážitkovou pedagogikou a rozšiřujícími aktivitami, což podporuje aktivní zapojení žáků.",
+        "evidence": "Hospitované hodiny se vyznačovaly metodickou propracovaností a rovnoměrným zapojením žáků do výuky."
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Malá škola vytváří komunitní atmosféru s respektem k individualitám a participací žáků na rozhodování.",
+        "evidence": "Gymnázium neuplatňuje restriktivní opatření, přístup je založen na spoluodpovědnosti žáků za dodržování pravidel."
+      },
+      {
+        "tag": "Kvalitní pedagogický tým",
+        "detail": "Převážně kvalifikovaní učitelé sdílí filozofii školy a jsou podporováni vedením i supervizí.",
+        "evidence": "12 učitelů, z nichž pouze dva nesplňují kvalifikační předpoklady; jeden si doplňuje vzdělání studiem."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejednotné hodnotící standardy",
+        "detail": "Požadavky na závěrečné hodnocení nejsou dostatečně sjednoceny mezi předměty, hodnocení je částečně závislé na přístupu učitele.",
+        "evidence": "Nejsou dostatečně sjednoceny požadavky pro splnění podmínek závěrečného hodnocení, např. četnost klasifikačních podkladů."
+      },
+      {
+        "tag": "Slabší pedagogické řízení",
+        "detail": "Chybí cílené hospitace s konkrétně definovanými cíli a následným ověřením pokroku pedagogů.",
+        "evidence": "Zjištění jsou často projednávána formou ústní individuální zpětné vazby; schází zacílení hospitací na konkrétně definované cíle."
+      },
+      {
+        "tag": "Organizační problémy ve výuce",
+        "detail": "V části hodin chybí efektivní časové rozvržení činností a didaktický závěr ke shrnutí učiva.",
+        "evidence": "Nedodržování struktury vyučovací hodiny, méně efektivní časové a organizační rozvržení činností ve vyučovacím bloku."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá hodnocení žáků a jaké jsou jednotné kritéria pro známkování v jednotlivých předmětech?",
+      "Jaké jsou plány na dovybavení školy didaktickými pomůckami, zejména pro přírodovědné předměty?",
+      "Jak se škola připravuje na personální změny, aby byla zajištěna kontinuita vzdělávacího konceptu?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o moderní dějiny, historii a společenské vědy s důrazem na kritické myšlení",
+      "Motivovaní žáci, kteří chtějí participovat na chodu školy a zapojit se do projektové činnosti",
+      "Žáci s různými vzdělávacími potřebami, kterým vyhovuje malá třída a individuální přístup"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují jasné a jednotné hodnotící standardy – v této škole se přístupy mezi učiteli liší",
+      "Rodiny, které preferují tradičnější výuku bez projektů a experimentování",
+      "Žáci, kteří potřebují silnější zaměření na přírodovědné předměty – škola je teprve vybavuje"
+    ],
+    "plain_czech_summary": "Gymnázium Paměti národa je mladá, inovativní škola s humanitním zaměřením, která se zaměřuje na moderní dějiny a demokratické hodnoty. Silnými stránkami jsou kvalitní učitelé, bezpečné prostředí a praktická projektová výuka. Slabší jsou jednotnost hodnocení žáků a pedagogické řízení. Škola je vhodná pro motivované žáky zajímající se o společenské vědy a historii, ale měla by zlepšit standardizaci hodnocení a dovybavit se pro přírodovědné předměty."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze určit – škola byla založena v září 2021, první maturitní ročník bude až v roce 2025",
+      "key_numbers": [
+        "30 žáků v prvním ročníku (školní rok 2022/2023)",
+        "Úspěšné naplnění prvního ročníku v jednokolovém přijímacím řízení"
+      ],
+      "evidence": "Uchazeči jsou přijímáni na základě jednotné přijímací zkoušky a prokázané motivace ke vzdělávání."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+    },
+    "support_services": [
+      "Školní psycholožka – podpora psychické pohody žáků a učitelů, pomoc s prospěchovými obtížemi",
+      "Výchovný poradce – součást vedení školy na pozici zástupkyně ředitele",
+      "Doučování a individuální konzultace – prevence studijní neúspěšnosti",
+      "Stipendijní fond – pomoc žákům ze sociálně znevýhodněného prostředí"
+    ],
+    "safety_climate": [
+      "Bezpečné vzdělávací prostředí – samostatné prostory gymnázia jsou zabezpečeny elektronickým vstupním systémem",
+      "Demokratický přístup – gymnázium neuplatňuje restriktivní výchovná opatření",
+      "Participace žáků – žáci mají možnost spoluvytvářet školní prostředí a aktivně se podílet na formulaci pravidel",
+      "Prevence rizikového chování – škola rozpoznává projevy rizikového chování a řeší je v součinnosti s poradenským pracovníkem a rodiči"
+    ],
+    "partnerships_practice": [
+      "Síť škol Paměti národa – propojení s partnerskou sítí pro obohacení vzdělávací nabídky",
+      "Akademie Gymnázia Paměti národa – celoživotní vzdělávání pro žáky a veřejnost",
+      "Vysoké školy – spolupráce na vzdělávacích aktivitách",
+      "Média a osobnosti – Expertní rada gymnázia sdružuje odborníky a osobnosti",
+      "Ukrajinské žáky – konverzační aktivity a adaptační podpora"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní příklady, ale některé pasáže jsou psány úředním stylem. Hlavní zjištění jsou jasná, ale pro rodiče by byla užitečnější přímější komunikace.",
+    "uncertainty_notes": [
+      "Absence dat o maturitě – škola je příliš nová, aby měla výsledky maturity",
+      "Absence konkrétních čísel o absenci a prospěchu – zpráva se zaměřuje spíše na kvalitativní hodnocení",
+      "Nejasnost ohledně dlouhodobé stability – vedení školy je nové a zpráva doporučuje zajistit kontinuitu po personální změně"
+    ]
+  }
+}
+```

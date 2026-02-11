@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600014096_2024-02-20",
+  "school_profile": {
+    "school_type": "Střední zahradnická škola, příspěvková organizace v Rajhradě",
+    "inspection_period": "20. února až 22. února 2024",
+    "school_change_summary": "Škola rozšířila nabídku oborů (přidáno přírodovědné lyceum), počet žáků vzrostl na 500, zlepšily se materiální podmínky, ale výsledky maturit v nástavbovém studiu se zhoršily."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a zázemí",
+        "detail": "Škola průběžně zlepšuje materiální podmínky, zejména vybavení odborných učeben a digitálních technologií.",
+        "evidence": "Od poslední inspekce došlo k výraznému pozitivnímu posunu v materiálních podmínkách pro praktické i teoretické vyučování."
+      },
+      {
+        "tag": "Bezpečné a vstřícné prostředí",
+        "detail": "Škola aktivně buduje bezpečné prostředí prostřednictvím adaptačních programů a školních akcí.",
+        "evidence": "V posledních třech letech byly zaznamenány spíše ojedinělé rizikové jevy, kterým byla věnována adekvátní pozornost."
+      },
+      {
+        "tag": "Kvalifikovaní učitelé",
+        "detail": "Výuku předmětů maturitní zkoušky zajišťují kvalifikovaní učitelé s příslušnou specializací.",
+        "evidence": "Ředitel prokazatelně usiluje o zajištění vzdělávání odborně kvalifikovanými pedagogy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost v nástavbovém studiu",
+        "detail": "Obor Zahradnictví (2leté nástavbové studium) vykazuje dlouhodobě velmi vysokou neúspěšnost při maturitě – v roce 2023 dosáhla 80 %.",
+        "evidence": "Hrubá neúspěšnost u maturitní zkoušky v oboru 41-44-L/51 Zahradnictví: 2020 (61%), 2021 (56%), 2022 (71%), 2023 (80%)."
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Zejména v nástavbovém oboru je absence kritická – průměrně 192 hodin za rok na žáka.",
+        "evidence": "Absence v nástavbovém oboru zahradnictví byla v roce 2022/2023 přibližně o 13 % vyšší než v čtyřletém oboru."
+      },
+      {
+        "tag": "Nízká efektivita výuky",
+        "detail": "Výuka často postrádá aktivizační metody, diferenciaci a práci s informačními zdroji.",
+        "evidence": "V hospitovaných hodinách převažovala frontální výuka, žáci byli spíše pasivními účastníky, chyběla práce s informačními zdroji."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola přijala proti vysoké absenci v nástavbovém oboru a jak je monitoruje?",
+      "Jak škola podporuje žáky ohrožené neúspěchem a jak funguje doučování?",
+      "Proč je neúspěšnost v oboru Zahradnictví (4leté studium) výrazně vyšší než v oboru Ekologie a životní prostředí?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o zahradnictví a přírodní vědy, kteří mají stabilní docházku a motivaci",
+      "Uchazeči o obor Ekologie a životní prostředí – ten vykazuje výrazně lepší výsledky (5% neúspěšnost v roce 2023)",
+      "Žáci, kterým vyhovuje praktická výuka a moderní vybavení odborných učeben"
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o dvouletý nástavbový obor Zahradnictví – riziko neúspěchu je velmi vysoké (80% neúspěšnost)",
+      "Žáci se sklonem k absencím – absence je hlavní příčinou neúspěchu",
+      "Žáci slabší v matematice – v oboru Zahradnictví dosahuje matematika 25–100% neúspěšnosti"
+    ],
+    "plain_czech_summary": "Rajhradská zahradnická škola je moderně vybavená a nabízí kvalitní praktickou přípravu. Prostředí je bezpečné a podporující. Problém je vysoká neúspěšnost v maturitě, zejména v dvouletém nástavbovém oboru Zahradnictví (80% neúspěšnosti). Hlavní příčinou je vysoká absence žáků a nízká motivace. Výuka často chybí aktivizační metody. Obor Ekologie a životní prostředí dosahuje lepších výsledků. Škola se snaží situaci řešit, ale dosavadní opatření nejsou dostatečně účinná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršující se, zejména v nástavbovém oboru",
+      "key_numbers": [
+        "Nástavbový obor Zahradnictví: 2023 (80% neúspěšnosti), 2022 (71%), 2021 (56%)",
+        "Čtyřletý obor Zahradnictví: 2023 (29%), 2022 (36%), 2021 (29%), 2020 (31%)",
+        "Obor Ekologie a životní prostředí: 2023 (5%), 2022 (7%), 2021 (11%), 2020 (20%)"
+      ],
+      "evidence": "Vedení školy sleduje a vyhodnocuje výsledky maturit. Hrubá neúspěšnost v nástavbovém oboru se zvyšuje, v matematice dosahuje až 100%."
+    },
+    "absence": {
+      "trend": "Kriticky vysoká, zejména v nástavbovém oboru",
+      "key_numbers": [
+        "Nástavbový obor Zahradnictví: průměrně 192 hodin absence za rok na žáka",
+        "O 13 % vyšší absence než v čtyřletém oboru stejného zaměření",
+        "Absence identifikována jako hlavní příčina neúspěchu"
+      ],
+      "evidence": "Školní rok 2022/2023: absence v nástavbovém oboru činila průměrně 192 hodin na žáka. Opatření školy (informování rodičů, výchovné komise) nebyla dostatečně účinná."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s úzkou spoluprací členů",
+      "Doučování a individuální konzultace pro neúspěšné žáky",
+      "Strategie prevence a řešení školní neúspěšnosti (od roku 2019)",
+      "Uvádějící učitelé pro nové a začínající pedagogy"
+    ],
+    "safety_climate": [
+      "Bezpečné a vstřícné prostředí s minimem rizikových jevů",
+      "Adaptační a zážitkové programy pro posílení sociálních vazeb",
+      "Propracovaný systém autoevaluačních dotazníků na mapování rizik",
+      "V posledních třech letech ojedinělé případy s adekvátními opatřeními"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobé partnerské vztahy s odbornými pracovišti pro praktické vyučování",
+      "Zapojení do několika mezinárodních projektů s výměnnými praxemi a stážemi",
+      "Pronajímání zařízení školám v Jihomoravském kraji pro zvýšení kvality odborného vzdělávání",
+      "Vzdělávací aktivity pro veřejnost"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní čísla. Hlavní problémy jsou jasně identifikovány (absence, neúspěšnost v nástavbovém oboru). Některé pasáže jsou však technické a obsahují úřednickou terminologii.",
+    "uncertainty_notes": [
+      "Není jasné, zda se doporučení školy týkající se zrušení oboru Zahradnictví (nástavbové studium) již realizují",
+      "Chybí informace o tom, jak se škola vypořádala s nízkou účinností dosavadních opatření",
+      "Není specifikováno, jaké konkrétní aktivizační metody by měly být zavedeny"
+    ]
+  }
+}
+```

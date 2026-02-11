@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600170772_2022-01-05",
+  "school_profile": {
+    "school_type": "Střední odborná škola a učiliště",
+    "inspection_period": "5. až 7. 1. 2022",
+    "school_change_summary": "Škola zlepšila materiální vybavení (nové učebny, rekonstrukce tělocvičny) a modernizuje pracoviště praktického vyučování."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a výuka",
+        "detail": "Škola disponuje kvalitním materiálním vybavením a moderními technologiemi pro odborný výcvik.",
+        "evidence": "Materiálně technické vybavení školy je na vysoké úrovni... přínosem je postupné vybavování školních dílen moderními technologiemi."
+      },
+      {
+        "tag": "Atmosféra a vedení",
+        "detail": "Ve škole panuje příjemná pracovní atmosféra a vedení funguje jako kvalitní tým.",
+        "evidence": "Vzájemná komunikace... je na velmi dobré úrovni, přispívá k vytváření příznivé atmosféry."
+      },
+      {
+        "tag": "Praxe",
+        "detail": "Žáci se zapojují do reálného provozu a získávají dovednosti odpovídající běžné praxi.",
+        "evidence": "Žáci se zapojují do jednotlivých činností reálného gastronomického provozu... technická vybavenost plně odpovídá požadavkům na přípravu do běžné praxe."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "V teoretických předmětech převažuje frontální výuka, kde jsou žáci často pasivní.",
+        "evidence": "Výuka probíhala v těchto hodinách převážně formou méně efektivní frontální formy... Žáci pak byli pouze příjemci informací."
+      },
+      {
+        "tag": "Nediferencovaný přístup",
+        "detail": "Učitelé příliš nerespektují různé pracovní tempo a schopnosti jednotlivých žáků.",
+        "evidence": "Při výuce nebyla zaznamenána diferenciace práce se žáky... se všemi žáky pracováno stejnými metodami stejným tempem."
+      },
+      {
+        "tag": "Úrazovost",
+        "detail": "Školní úrazovost je vyšší než je celostátní průměr, zejména při praktické výuce.",
+        "evidence": "Školní úrazovost je nad celostátním průměrem (zejména v tělocvičně a v průběhu odborného výcviku)."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší prevenci úrazů, když je úrazovost nad celostátním průměrem?",
+      "Jakým způsobem učitelé ve výuce přizpůsobují nároky žákům s různým tempem učení?",
+      "Využívají se při teoretické výuce moderní aktivizační metody, nebo převažuje výklad?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o gastronomické obory, kteří chtějí pracovat s moderními technologiemi.",
+      "Žáci, kteří preferují učení se praktickými činnostmi v reálném provozu.",
+      "Studenti, kteří vítají přátelskou atmosféru a možnost odborných kurzů (barista, barman)."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří vyžadují silnou podporu školního psychologa (škola ho nemá stálého).",
+      "Studenti, kteří potřebují individuální přístup a odlišné tempo ve teoretické výuce.",
+      "Uchazeči, kteří preferují moderní interaktivní formy výuky před klasickým výkladem."
+    ],
+    "plain_czech_summary": "Škola v Chrudimi nabízí kvalitní odborné vybavení a praktickou výuku v gastronomii a službách. Vyznačuje se příjemnou atmosférou a funkčním vedením. Rizikem je vyšší úrazovost a pasivní styl teoretické výuky, kde učitelé málo rozlišují potřeby jednotlivých žáků. Pro prakticky založené studenty je vhodná volbou, náročnější teoretiky může zklamat."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neúspěšnost kolem 11 %",
+      "key_numbers": [
+        "10,8 % hrubá neúspěšnost u maturity (2021)",
+        "37 přihlášených žáků ke společné části",
+        "1 žák neuspěl ani po podzimním termínu"
+      ],
+      "evidence": "Hrubá neúspěšnost... činila 10,8 %."
+    },
+    "absence": {
+      "trend": "Vysoká v některých oborech",
+      "key_numbers": [
+        "106 omluvených hodin na žáka (průměr)",
+        "Více než 150 hodin v některých třídách",
+        "Absence není hlavní příčinou neúspěchu"
+      ],
+      "evidence": "V několika třídách oborů... dosáhla v průměru více než 150 zameškaných hodin na žáka."
+    },
+    "support_services": [
+      "Doučování z matematiky, češtiny a cizích jazyků",
+      "Psycholog 1x měsíčně (z projektu)",
+      "Spolupráce se Střediskem výchovné péče ARCHA"
+    ],
+    "safety_climate": [
+      "Úrazovost nad celostátním průměrem",
+      "Opatření ke snižování úrazovosti jsou přijímána",
+      "Klima školy je cíleně sledováno a vyhodnocováno"
+    ],
+    "partnerships_practice": [
+      "Funkční partnerství se smluvními partnery pro praxi",
+      "Členství v Asociaci kuchařů a cukrářů ČR",
+      "Spolupráce s Cchem podnikatelů Chrudim"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje konkrétní číselné údaje i kontextové informace.",
+    "uncertainty_notes": [
+      "Chybí bližší specifikace 'několika tříd' s vysokou absencí pro přesnější lokalizaci problému.",
+      "Není uveden konkrétní trend úrazovosti v čase, pouze srovnání s průměrem.",
+      "Míra 'moderních technologií' je subjektivní, nejsou detailně specifikovány."
+    ]
+  }
+}

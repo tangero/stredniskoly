@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_610450671_2022-10-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:00:48.412784+00:00",
+  "run_finished_utc": "2026-02-09T17:01:14.590712+00:00",
+  "raw_file": "SOS_610450671_2022-10-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_610450671_2022-10-03",
+    "school_profile": {
+      "school_type": "Střední odborná škola (SOŠ) s maturitními obory (Předškolní a mimoškolní pedagogika, Sociální činnost) a nematuritním oborem (Práce ve stravování)",
+      "inspection_period": "3. až 7. října 2022",
+      "school_change_summary": "Škola provozuje 3 aktivní pracoviště (Jihlava, Brno, Karviná) místo původních sedmi. Počet žáků klesl, aktuálně 191 v denní formě a 77 v dálkové formě. Naplněnost školy je pouze 11 %. Přidán nový obor Pečovatelské služby."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Příjemné prostředí a vztahy",
+          "detail": "Pedagogové jsou vstřícní a podporující, vytváří rodinné klima s dobrými vztahy mezi všemi účastníky vzdělávání.",
+          "evidence": "Komunikace pedagogů s žáky byla velmi vstřícná a podporující, žáci bez obav pokládali otázky."
+        },
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Efektivní partnerství se sociálními partnery zajišťuje kvalitní odbornou a učební praxi.",
+          "evidence": "Spolupráce se sociálními partnery přispívá k efektivnímu zajištění odborné a učební praxe a vytváří podmínky pro lepší uplatnitelnost absolventů."
+        },
+        {
+          "tag": "Bezpečnost a zdraví",
+          "detail": "Škola důsledně dbá na bezpečné prostředí s minimem úrazů.",
+          "evidence": "Škola vhodně dbá na zajištění bezpečného prostředí pro žáky, úrazů je dlouhodobě minimum."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence a předčasné odchody",
+          "detail": "Absence žáků výrazně ovlivňuje jejich výsledky a zůstává hlavním problémem školy.",
+          "evidence": "Docházka stále vykazuje velké nedostatky a ovlivňuje výsledky vzdělávání. Nižší účinnost strategie předcházení školní neúspěšnosti se projevila v přetrvávající vysoké absenci."
+        },
+        {
+          "tag": "Slabé výsledky maturit",
+          "detail": "Výsledky ve společné části maturitní zkoušky jsou přibližně dvojnásobně horší než celorepublikový průměr.",
+          "evidence": "Výsledky žáků byly v společné části MZ přibližně dvojnásobně horší než v příslušné skupině oborů v celorepublikovém srovnání především v českém jazyce a literatuře a cizím jazyce."
+        },
+        {
+          "tag": "Nekvalifikovaní učitelé a zastaralé metody",
+          "detail": "Třetina pedagogů nemá odbornou kvalifikaci, výuka je převážně frontální bez aktivizačních metod.",
+          "evidence": "Třetina pracovníků nemá odbornou kvalifikaci. Ve dvou třetinách hodin byla využita frontální organizace výuky, u níž byla míra zapojení žáků nízká."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a co dělá s těmi, kteří se vzdělávání neúčastní?",
+        "Jaké konkrétní kroky podnikne škola na zlepšení výsledků maturitní zkoušky, zejména v češtině a cizích jazycích?",
+        "Jak se škola vypořádá s tím, že třetina učitelů nemá odbornou kvalifikaci, a jaký je plán na jejich proškolení?"
+      ],
+      "who_school_fits": [
+        "Žáci z sociálně znevýhodněného prostředí, kterým škola věnuje zvláštní pozornost a podporu",
+        "Zájemci o obor Předškolní a mimoškolní pedagogika, kde škola dosahuje nejlepších výsledků",
+        "Studenti dálkové formy, kteří si potřebují vzdělání skloubit s prací"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s nižší motivací a slabšími výsledky – škola nemá dostatečně účinný systém jejich podpory",
+        "Zájemci o obor Sociální činnost – zde neprospěla zhruba polovina žáků v denní formě",
+        "Rodiny, které nemohou zajistit pravidelnou školní docházku – absence je zde kritickým problémem"
+      ],
+      "plain_czech_summary": "Škola vytváří příjemné prostředí s dobrými vztahy mezi pedagogy a žáky. Silná je spolupráce s firmami na praxi. Hlavní problémy: vysoká absence žáků, slabé výsledky maturit (dvojnásobně horší než průměr), třetina učitelů bez kvalifikace a zastaralé vyučovací metody. Škola se snaží podporovat žáky ze znevýhodněného prostředí, ale strategie na snížení neúspěšnosti nejsou dostatečně účinné. Nejlepší výsledky má obor Předškolní pedagogika."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s tendencí k horším výsledkům",
+        "key_numbers": [
+          "Výsledky v společné části MZ přibližně 2× horší než celorepublikový průměr",
+          "Obor Předškolní pedagogika: lepší výsledky; obor Sociální činnost: horší výsledky",
+          "Část žáků MZ složila až po opakovaných opravných zkouškách"
+        ],
+        "evidence": "Výsledky žáků byly v posledních třech ukončených letech (2019, 2020, 2021) kolísavé. Výsledky v společné části MZ přibližně dvojnásobně horší než v celorepublikovém srovnění."
+      },
+      "absence": {
+        "trend": "Vysoká a přetrvávající problém",
+        "key_numbers": [
+          "Absence výrazně ovlivňuje výsledky vzdělávání",
+          "Neomluvená absence postihována kázeňskými opatřeními",
+          "Zhruba desetina žáků měla sníženou známku z chování kvůli absenci"
+        ],
+        "evidence": "Docházka stále vykazuje velké nedostatky a ovlivňuje výsledky vzdělávání. Nižší účinnost strategie předcházení školní neúspěšnosti se projevila v přetrvávající vysoké absenci."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnými poradci a školními metodiky prevence (bez příslušné kvalifikace)",
+        "Doučování, individuální konzultace, opravné písemné práce",
+        "Spolupráce s partnery na prevenci rizikového chování"
+      ],
+      "safety_climate": [
+        "Bezpečné prostředí s minimem úrazů",
+        "Preventivní poučování žáků o bezpečnosti a ochraně zdraví",
+        "Příznivá atmosféra a vstřícný přístup pedagogů"
+      ],
+      "partnerships_practice": [
+        "Funkční spolupráce s firmami a institucemi na zajištění praktického vyučování",
+        "Využívání instruktorů při praxi, zejména v oboru Předškolní pedagogika",
+        "Absolventi oboru Předškolní pedagogika převážně nastupují do mateřských škol"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Hlavní zjištění jsou jasná, ale technické detaily mohou být pro laika obtížné.",
+      "uncertainty_notes": [
+        "Přesné číslo nekvalifikovaných učitelů není uvedeno, jen 'třetina' – není jasné, zda jde o 33 % nebo přibližně",
+        "Konkrétní opatření, která škola přijala na základě předchozí inspekce, nejsou detailně popsána",
+        "Není jasné, jaké konkrétní 'aktivizační metody' inspektoři doporučují"
+      ]
+    }
+  }
+}

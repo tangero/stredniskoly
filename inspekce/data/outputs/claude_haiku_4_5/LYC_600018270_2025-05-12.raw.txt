@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "LYC_600018270_2025-05-12",
+  "school_profile": {
+    "school_type": "Obchodní akademie a Vyšší odborná škola (VOŠ), střední vzdělání v 4 oborech",
+    "inspection_period": "12. května 2025 až 15. května 2025",
+    "school_change_summary": "V srpnu 2024 došlo ke změně vedení školy. Nově byl zaveden obor Ekonomické lyceum, což zvýšilo počet žáků na 495 v 17 třídách. Zkvalitnily se materiálně technické podmínky, zejména v oblasti digitálních technologií."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky v soutěžích",
+        "detail": "Žáci dosahují čelních umístění v soutěžích v ekonomice, účetnictví, IT a grafice na republikové úrovni, včetně předních míst na mistrovství světa ve zpracování textu.",
+        "evidence": "Dlouhodobé výborné výsledky žáků v odborně zaměřených soutěžích v celostátní úrovni."
+      },
+      {
+        "tag": "Rostoucí maturitní výsledky",
+        "detail": "Od roku 2021/2022 prospívá většina žáků maturitní zkouškou, počet vyznamenáných se více než zdvojnásobil v roce 2023/2024.",
+        "evidence": "Zlepšující tendence v kvalitě vzdělávání zejména v angličtině a češtině, bez větších výkyvů v matematice."
+      },
+      {
+        "tag": "Kvalitní poradenské služby",
+        "detail": "Tým výchovné poradkyně, metodika prevence a školní psycholožky poskytuje cílenou podporu žákům se speciálními potřebami a ohroženým školním neúspěchem.",
+        "evidence": "Školní poradenské služby zajišťovány kvalifikovaným týmem s jasně vymezené rolí a efektivní koordinací."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivita žáků v některých předmětech",
+        "detail": "V češtině, literatuře, hospodářském zeměpisu, biologii a ekonomických předmětech dominuje frontální výuka s minimálním zapojením žáků.",
+        "evidence": "Učitelé komunikují s minimálním počtem žáků, což vede k nerovnoměrnému zapojování a v některých případech k pasivitě žáků."
+      },
+      {
+        "tag": "Chybí aktivizační metody",
+        "detail": "Ojediněle se v některých předmětech zařazují aktivizující metody a kooperativní činnosti mimo cizí jazyky a fyziku.",
+        "evidence": "Absence aktivizačních výukových metod a forem s výjimkou výuky cizích jazyků a základů přírodních věd."
+      },
+      {
+        "tag": "Slabá kontrola doporučení z hospitací",
+        "detail": "Vedení školy nedůsledně kontroluje, zda učitelé naplňují doporučení z hospitační činnosti zaměřená na zlepšení výuky.",
+        "evidence": "Nedůsledná kontrola naplňování doporučení z hospitační činnosti cílená ke zkvalitnění výuky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje rozvoj kritického myšlení a komunikativních dovedností žáků mimo cizí jazyky?",
+      "Jaké jsou plány na zvýšení podílu aktivních a kooperativních metod ve výuce českého jazyka, literatury a ekonomických předmětů?",
+      "Jak se škola zapojuje do zahraničních stáží a praxí a jaké jsou šance pro žáky se jich zúčastnit?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na ekonomiku, účetnictví a informační technologie, kteří chtějí dosahovat úspěchů v soutěžích",
+      "Studenti s ambicí na kvalitní maturitní zkoušku a následné uplatnění v praxi",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje cílenou podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují aktivní a interaktivní výuku – v některých předmětech dominuje pasivní frontální výuka",
+      "Studenti, kteří potřebují silný důraz na rozvoj kritického myšlení a samostatné práce v češtině a literatuře",
+      "Žáci, kteří se lépe učí kooperativně – tyto metody se používají jen ojediněle mimo cizí jazyky"
+    ],
+    "plain_czech_summary": "Obchodní akademie v Meziříčí je solidní školou s výborným renomé v soutěžích a rostoucími maturitními výsledky. Má kvalitní vedení, moderní vybavení a podporu pro žáky se speciálními potřebami. Hlavní slabinou je pasivní frontální výuka v některých předmětech a nedostatečný rozvoj kritického myšlení mimo cizí jazyky. Škola je vhodná pro ambiciózní studenty zaměřené na ekonomiku a IT, ale měla by zlepšit interaktivitu výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vzestupný",
+      "key_numbers": [
+        "Od 2021/2022 prospívá většina žáků maturitní zkouškou",
+        "Počet vyznamenáných se více než zdvojnásobil v 2023/2024",
+        "Výborné výsledky v angličtině a češtině, stabilní v matematice"
+      ],
+      "evidence": "V porovnání se školním rokem 2021/2022 se počet žáků s vyznamenáním ve školním roce 2023/2024 více než zdvojnásobil."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se absencí nezabývá."
+    },
+    "support_services": [
+      "Výchovná poradkyně, metodik prevence a školní psycholožka s jasně vymezené rolí",
+      "Konzultační hodiny a doučování nabízené jednotlivými pedagogy",
+      "Cílená individuální podpora pro žáky se speciálními vzdělávacími potřebami prostřednictvím pedagogické intervence"
+    ],
+    "safety_climate": [
+      "Funkční a účinné preventivní mechanismy v oblasti bezpečnosti a ochrany zdraví",
+      "Systematické monitorování rizikového chování žáků a realizace preventivních programů",
+      "Bezpečné, podnětné a motivující prostředí vytvářené školním poradenským pracovištěm"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s regionálními firmami a sociálními institucemi na odborné praxi",
+      "Zahraniční odborné stáže a letní brigády pro žáky",
+      "Partnerství se základními, středními a vysokými školami, místními organizacemi a městem Valašské Meziříčí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Hlavní zjištění jsou zřetelná, silné stránky i slabiny jsou konkrétně popsány. Některé pasáže jsou však delší a obsahují více odborné terminologie, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Absence dat není v textu zmíněna – nelze posoudit, zda je to silná stránka nebo se o ní nevedou záznamy",
+      "Konkrétní počty žáků s vyznamenáním nejsou uvedeny, pouze relativní nárůst",
+      "Detaily o kvalitě zahraničních stáží a jejich dostupnosti pro všechny žáky nejsou specifikovány"
+    ]
+  }
+}
+```

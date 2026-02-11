@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600014665_2023-02-07",
+  "school_profile": {
+    "school_type": "Střední škola s maturitními obory (Veřejnosprávní činnost, Hotelnictví) a výučním oborem (Kadeřník)",
+    "inspection_period": "7.–9. února 2023",
+    "school_change_summary": "Od poslední inspekce v 2013 došlo k nárůstu žáků o 75 %, změně názvu, zřizovatele a vedení. Škola ukončila obory Kosmetické služby a Podnikání, zahájila nový obor Kadeřník."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a prostory",
+        "detail": "Škola má nově vybudované odborné pracoviště pro Kadeřníka a modernizovanou cvičnou kuchyni s moderními technologiemi.",
+        "evidence": "Nově vybudované odborné pracoviště odpovídá potřebám praktického vyučování."
+      },
+      {
+        "tag": "Dobrá atmosféra ve třídách",
+        "detail": "Žáci pracují v příjemné, klidné atmosféře a dodržují stanovená pravidla.",
+        "evidence": "Ve vyučovacích hodinách žáci pracovali v příjemné, klidné atmosféře, dodržovali stanovená pravidla."
+      },
+      {
+        "tag": "Partnerství a mimoškolní aktivity",
+        "detail": "Škola nabízí exkurze, výukové programy, přednášky a tematické dny propojující vzdělání s praxí.",
+        "evidence": "V průběhu školního roku jsou pro žáky realizovány různé odborné a kulturní exkurze, výukové programy či přednášky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Průměrná absence dosahuje 221 hodin za rok, někteří žáci chybí až 300 hodin za pololetí.",
+        "evidence": "Ve školním roce 2021/2022 činila průměrná absence na žáka za školní rok 221 hodin."
+      },
+      {
+        "tag": "Slabé poradenské služby",
+        "detail": "Výchovná poradkyně není kvalifikovaná, vykonává více funkcí najednou a nedostatečně podporuje žáky se speciálními potřebami.",
+        "evidence": "Výchovná poradkyně není odborně kvalifikovaná pro výkon specializovaných činností v oblasti poradenských služeb."
+      },
+      {
+        "tag": "Nekvalifikovaní učitelé v některých předmětech",
+        "detail": "Část výuky není zajištěna pedagogy se správnou kvalifikací, což se projevuje nízkou úrovní vyučování.",
+        "evidence": "Část výuky nebyla zajištěna pedagogickými pracovníky splňujícími odbornou kvalifikaci pro přímou pedagogickou činnost."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky pro jejich prospěch?",
+      "Jaké má škola plány na zlepšení kvalifikace učitelů, zejména těch bez potřebného vzdělání?",
+      "Jak funguje poradenská služba a jak podporuje žáky se speciálními potřebami?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o praktické obory (Kadeřník, Hotelnictví) s moderním vybavením",
+      "Studenti, kteří si cení příjemné atmosféry a osobního přístupu učitelů",
+      "Žáci, kteří se chtějí zapojit do exkurzí a praktických projektů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – poradenské služby nejsou dostatečně zajištěny",
+      "Studenti, kteří potřebují intenzivní podporu – absence vysokého počtu kvalifikovaných pedagogů",
+      "Žáci s tendencí k absenci – škola nemá účinné mechanismy na řešení vysoké absence"
+    ],
+    "plain_czech_summary": "Škola se modernizuje a nabízí dobrou atmosféru, ale má vážné problémy. Vysoká absence žáků (průměrně 221 hodin ročně) není řešena účinně. Poradenská služba je slabá – výchovná poradkyně není kvalifikovaná a má příliš mnoho povinností. Někteří učitelé nemají správné vzdělání pro své předměty. Žáci se speciálními potřebami nejsou dostatečně podporováni. Přestože se škola snaží zlepšovat, inspekce zjistila závažné nedostatky v řízení a kvalitě výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nerovnoměrný – průměrně 80 % úspěšnosti, ale s velkými rozdíly mezi obory",
+      "key_numbers": [
+        "Veřejnosprávní činnost: 12 % neúspěšnosti",
+        "Hotelnictví: 29 % neúspěšnosti",
+        "Podnikání (nástavba): 50 % neúspěšnosti v posledním roce"
+      ],
+      "evidence": "Při ukončování vzdělávání maturitní zkouškou bylo v posledních třech letech úspěšných v průměru 80 % všech žáků."
+    },
+    "absence": {
+      "trend": "Kriticky vysoká a neřešená",
+      "key_numbers": [
+        "2021/2022: průměr 221 hodin na žáka za rok",
+        "2022/2023 (1. pololetí): průměr 103 hodin na žáka",
+        "Někteří žáci: až 300 hodin za pololetí"
+      ],
+      "evidence": "Ve školním roce 2021/2022 činila průměrná absence na žáka za školní rok 221 hodin. Veškerou absenci vykázala škola jako omluvenou."
+    },
+    "support_services": [
+      "Výchovné poradenství – NEDOSTATEČNÉ, výchovná poradkyně není kvalifikovaná a přetížená",
+      "Individuální konzultace a skupinové konzultace – nabízeny, ale doučování se nerealizuje",
+      "Speciální vzdělávací plány – existují, ale nejsou kvalitně zajišťovány"
+    ],
+    "safety_climate": [
+      "Bezpečnostní rizika v nedůsledném zajištění vchodu do budovy v prostorách stravovny",
+      "Příjemná a klidná atmosféra ve třídách, žáci dodržují pravidla",
+      "Žáci mají možnost konzultovat problémy s ředitelkou či výchovnou poradkyní"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem a rodiči – účinná, zapojeni v orgánech školy",
+      "Partnerství s neziskovými organizacemi a záchranným systémem – úspěšné v primární prevenci",
+      "Propojení s praxí – exkurze, výukové programy, přednášky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale obsahuje řadu technických termínů a právních odkazů. Pro rodiče jsou klíčové informace jasné, ale celkový rozsah je obsáhlý.",
+    "uncertainty_notes": [
+      "Není jasné, jaké konkrétní podpůrné opatření dostávají žáci se speciálními potřebami",
+      "Chybí informace o tom, jak se škola konkrétně snaží řešit vysokou absenci",
+      "Není specifikováno, které předměty vyučují nekvalifikovaní učitelé"
+    ]
+  }
+}
+```

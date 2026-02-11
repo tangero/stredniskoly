@@ -1,0 +1,30 @@
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "deepseek_chat",
+  "run_started_utc": "2026-02-09T12:04:04.904268+00:00",
+  "run_finished_utc": "2026-02-09T12:04:26.136027+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOS_600019853_2025-11-20\",\n  \"faithfulness_score_1_5\": 3,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 4,\n  \"critical_issues\": [\n    \"Chybně uvedené období inspekce: kandidát uvádí 20.–25. 11. 2025, zdroj uvádí inspekční činnost na místě 20.–21. 11. 2025 a 24. 11. 2025.\",\n    \"Zkreslení výsledků maturit: údaj „nejvyšší neúspěšnost v roce 2024: 46 %“ se ve zdroji vztahuje k oboru Sociální činnost (a ne jako obecný údaj za školu); kandidát to nevymezuje a působí to jako celkový výsledek.\",\n    \"Odvozený (nikoli explicitně uvedený) údaj „úspěšnost v roce 2025: 96,2 %“ – ve zdroji je uvedena hrubá neúspěšnost 3,8 %, nikoli přímo úspěšnost 96,2 %.\",\n    \"Neopřené tvrzení „nejnižší absence v oboru praktická sestra“ – zdroj pouze říká, že v ostatních oborech je neomluvená absence minimální; neuvádí, který obor má nejnižší (celkovou) absenci.\"\n  ],\n  \"best_points\": [\n    \"Dobře zachycené klíčové silné stránky ze závěrů: spolupráce s partnery a široké portfolio aktivit.\",\n    \"Správně převzaté hlavní slabiny výuky: převaha frontální práce (~80 %) a nízká individualizace.\",\n    \"Užitečné pro rodiče: struktura na „silné stránky / rizika“, konkrétní otázky na dny otevřených dveří, srozumitelné shrnutí.\"\n  ],\n  \"one_line_verdict\": \"Shrnutí je pro rodiče dobře použitelné a většinou věrné, ale obsahuje několik nepřesností a nevymezených údajů (zejména k termínu inspekce a maturitním výsledkům podle oborů) a opomíjí část důležitých zjištění ze zprávy.\"\n}",
+  "judge_output": {
+    "report_id": "SOS_600019853_2025-11-20",
+    "faithfulness_score_1_5": 3,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 4,
+    "critical_issues": [
+      "Chybně uvedené období inspekce: kandidát uvádí 20.–25. 11. 2025, zdroj uvádí inspekční činnost na místě 20.–21. 11. 2025 a 24. 11. 2025.",
+      "Zkreslení výsledků maturit: údaj „nejvyšší neúspěšnost v roce 2024: 46 %“ se ve zdroji vztahuje k oboru Sociální činnost (a ne jako obecný údaj za školu); kandidát to nevymezuje a působí to jako celkový výsledek.",
+      "Odvozený (nikoli explicitně uvedený) údaj „úspěšnost v roce 2025: 96,2 %“ – ve zdroji je uvedena hrubá neúspěšnost 3,8 %, nikoli přímo úspěšnost 96,2 %.",
+      "Neopřené tvrzení „nejnižší absence v oboru praktická sestra“ – zdroj pouze říká, že v ostatních oborech je neomluvená absence minimální; neuvádí, který obor má nejnižší (celkovou) absenci."
+    ],
+    "best_points": [
+      "Dobře zachycené klíčové silné stránky ze závěrů: spolupráce s partnery a široké portfolio aktivit.",
+      "Správně převzaté hlavní slabiny výuky: převaha frontální práce (~80 %) a nízká individualizace.",
+      "Užitečné pro rodiče: struktura na „silné stránky / rizika“, konkrétní otázky na dny otevřených dveří, srozumitelné shrnutí."
+    ],
+    "one_line_verdict": "Shrnutí je pro rodiče dobře použitelné a většinou věrné, ale obsahuje několik nepřesností a nevymezených údajů (zejména k termínu inspekce a maturitním výsledkům podle oborů) a opomíjí část důležitých zjištění ze zprávy."
+  }
+}

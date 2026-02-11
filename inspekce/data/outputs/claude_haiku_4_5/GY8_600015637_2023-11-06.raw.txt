@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600015637_2023-11-06",
+  "school_profile": {
+    "school_type": "Gymnázium a obchodní akademie (čtyřleté a osmileté gymnázium, obchodní akademie)",
+    "inspection_period": "6. listopadu 2023 až 9. listopadu 2023",
+    "school_change_summary": "Nový ředitel školy, rozšíření školního poradenského pracoviště o školního psychologa, zkvalitnění materiálních podmínek (nové odborné učebny, školní jídelna), zvýšení počtu žáků na 453 ve 16 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Gymnázia dosahují neúspěšnosti pouze 0,7 % (osmileté studium 0 %), obchodní akademie 4 %.",
+        "evidence": "V posledních třech letech velmi dobré výsledky ve srovnění s celorepublikovou úrovní."
+      },
+      {
+        "tag": "Bohaté mimoškolní aktivity",
+        "detail": "Škola organizuje soutěže, olympiády, zahraniční výjezdy, kariérní den a podporuje nadané žáky.",
+        "evidence": "Žáci jsou opakovaně úspěšní ve sportovních disciplínách, přírodovědných a společenskovědných soutěžích."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Nové odborné učebny, zrekonstruovaná školní jídelna, venkovní hřiště s umělým povrchem.",
+        "evidence": "Přístavba školní budovy z roku 2019 vytváří estetické a podnětné prostředí pro vzdělávání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivizujících metod ve výuce",
+        "detail": "Převažuje frontální výuka s výkladem, chybí skupinová práce a problémové úlohy.",
+        "evidence": "Při vzdělávání převažovala frontální výuka, v menší míře byly uplatněny aktivizující metody."
+      },
+      {
+        "tag": "Slabá podpora začínajících učitelů",
+        "detail": "Systém pro začínající pedagogy existuje, ale reálně nebyly vytvořeny vhodné podmínky pro jejich profesní rozvoj.",
+        "evidence": "Ve školním roce došlo k výraznější obměně pedagogického sboru bez adekvátní adaptační podpory."
+      },
+      {
+        "tag": "Absence v obchodní akademii",
+        "detail": "Vyšší absence u žáků obchodní akademie negativně ovlivňuje jejich vzdělávací výsledky.",
+        "evidence": "Absence činila v průměru 137 hodin na žáka za rok, vyšší u obchodní akademie."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje začínající učitele v jejich prvním roce? Jaké jsou jejich mentorské vztahy?",
+      "Jaké jsou plány na zvýšení aktivizujících metod ve výuce, zejména v obchodní akademii?",
+      "Jak škola řeší vyšší absenci u žáků obchodní akademie a jaké jsou konkrétní opatření?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a motivací na gymnázia – výborné maturitní výsledky a kvalitní příprava.",
+      "Nadaní žáci – škola je vyhledává a cíleně podporuje prostřednictvím soutěží a projektů.",
+      "Žáci zajímající se o cizí jazyky – kvalitní výuka angličtiny s rodilým mluvčím a příprava na mezinárodní zkoušky."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a skupinové práce – výuka je zatím převážně frontální.",
+      "Žáci obchodní akademie s problémy s docházkou – absence zde dosahuje vyšších hodnot.",
+      "Žáci, kteří se lépe učí aktivizujícími metodami – v některých předmětech chybí dostatek praktických cvičení."
+    ],
+    "plain_czech_summary": "Gymnázium a obchodní akademie v Bučovicích je moderní škola s výborným vybavením a velmi dobrými výsledky maturit (0,7 % neúspěšnosti na gymnáziích). Škola nabízí bohaté mimoškolní aktivity, podporuje nadané žáky a má kvalitní poradenské služby. Hlavní výzvou je zvýšení aktivizujících metod ve výuce, lepší podpora začínajících učitelů a řešení vyšší absence u žáků obchodní akademie. Nový ředitel má jasnou vizi rozvoje školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně velmi dobrý",
+      "key_numbers": [
+        "Gymnázia: 0,7 % neúspěšnosti (osmileté: 0 %)",
+        "Obchodní akademie: 4 % neúspěšnosti",
+        "Poslední tři roky: konzistentně nad celorepublikový průměr"
+      ],
+      "evidence": "Výsledky žáků při ukončování vzdělávání maturitní zkouškou měly opakovaně velmi dobrou úroveň."
+    },
+    "absence": {
+      "trend": "Zvýšená, zejména v obchodní akademii",
+      "key_numbers": [
+        "Průměr 137 hodin na žáka za školní rok 2022/2023",
+        "Vyšší absence u obchodní akademie",
+        "Nepravidelná docházka negativně ovlivňuje výsledky"
+      ],
+      "evidence": "Absence žáků činila ve školním roce 2022/2023 v průměru 137 hodin na žáka za školní rok."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: 2 výchovné poradkyně, metodička prevence, školní psycholog",
+      "Podpora žáků ohrožených neúspěchem: konzultace, plány pedagogické podpory, doučování",
+      "Péče o nadané žáky: vyhledávání, soutěže, projekty, zahraniční výjezdy"
+    ],
+    "safety_climate": [
+      "Prevence rizikového chování: pravidelné preventivní aktivity, vzdělávací programy, besedy",
+      "Řešení problémů: spolupráce ŠPP s třídními učiteli a zákonnými zástupci",
+      "Školní klubovna pro odpočinek žáků, vzájemná kooperace žáků při aktivitách"
+    ],
+    "partnerships_practice": [
+      "Vysoké školy: Masarykova univerzita, Univerzita Tomáše Bati, Univerzita Karlova, Univerzita Palackého, ČVUT, Veterinární univerzita Brno, Univerzita obrany státu",
+      "Firmy: stabilní partnerské vztahy pro praktické vyučování obchodní akademie",
+      "Místní akční plán: provázanost základních a středních škol v regionu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní procenta žáků se speciálními vzdělávacími potřebami (jen počet 24 žáků z 453).",
+      "Chybí detailní informace o kvalitě výuky v jednotlivých třídách – hodnocení je spíše obecné.",
+      "Není jasné, jak konkrétně se budou implementovat doporučení inspekce v příštích měsících."
+    ]
+  }
+}
+```

@@ -1,0 +1,101 @@
+```json
+{
+  "report_id": "GY4_600015343_2023-01-25",
+  "school_profile": {
+    "school_type": "Gymnázium (4leté a 8leté obory)",
+    "inspection_period": "25.–27. 1. a 30. 1. 2023",
+    "school_change_summary": "Počet žáků zůstává stabilní (357 v 4letém oboru, 234 v 8letém oboru). Škola zkvalitnila materiální zázemí: badatelské centrum, jazykové učebny, digitální vybavení. Všechny třídy mají audiovizuální techniku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "100% úspěšnost u maturitních zkoušek ve školním roce 2021/2022 a nadprůměrné výsledky v externím testování.",
+        "evidence": "Funkčnost přijímaných opatření se projevuje v oblasti ukončování vzdělávání."
+      },
+      {
+        "tag": "Bohatá nabídka aktivit",
+        "detail": "Mezinárodní spolupráce (Francie, Finsko, Německo), olympiády, soutěže, projektové dny, charitativní akce.",
+        "evidence": "Žáci úspěšně reprezentují školu na regionální i republikové úrovni."
+      },
+      {
+        "tag": "Kvalitní poradenství",
+        "detail": "Školní poradenské pracoviště s psycholožkou, výchovným poradcem, metodičkou a kariérovou poradkyní.",
+        "evidence": "Úzká spolupráce s vedením přispívá k minimalizaci rizikových jevů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé závěry hodin",
+        "detail": "Učitelé často nezhodnotí hodinu způsobem, který by dal žákům kvalitní zpětnou vazbu.",
+        "evidence": "V závěrech hodin převážně nedocházelo ke zhodnocení pedagogem."
+      },
+      {
+        "tag": "Málo individuálního přístupu",
+        "detail": "Diferenciace činností není dostatečná pro rozvoj znalostí podle individuálních potřeb žáků.",
+        "evidence": "V nižší míře byla sledována diferenciace činností vedoucí k výraznějšímu rozvoji."
+      },
+      {
+        "tag": "Chybí sebehodnocení žáků",
+        "detail": "Žáci se málo učí sami sebe hodnotit a vzájemně si dávat zpětnou vazbu.",
+        "evidence": "Sebehodnocení žáků či jejich vzájemné hodnocení bylo zaznamenáno minimálně."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s nadanými žáky a jak je individuálně podporuje?",
+      "Jaké jsou zkušenosti s mezinárodní spoluprací – mohou se jí účastnit všichni žáci?",
+      "Jak se škola zaměřuje na čtenářskou gramotnost a kdy ji plánuje lépe nastavit?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí na vysokou školu – výborné výsledky maturit a nadprůměrné testy",
+      "Děti zajímající se o jazyky a mezinárodní spolupráci – bohatá nabídka projektů",
+      "Žáci, kterým vyhovuje strukturované prostředí s jasně nastavenými pravidly"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující intenzivní individuální podporu – diferenciace není dostatečná",
+      "Děti, které se učí lépe skrze vlastní reflexi – sebehodnocení není běžné",
+      "Žáci se slabší čtenářskou gramotností – tato oblast není plně nastavena"
+    ],
+    "plain_czech_summary": "Gymnázium Třebíč je kvalitní škola s výbornými výsledky (100% úspěšnost u maturit) a bohatou nabídkou aktivit včetně mezinárodní spolupráce. Má dobré zázemí a fungující poradenství. Inspekce ale upozorňuje, že učitelé by měli lépe uzavírat hodiny se zpětnou vazbou, více individualizovat výuku a více podporovat sebehodnocení žáků. Jde o detaily, které by měly zlepšit kvalitu vzdělávání."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi pozitivní",
+      "key_numbers": [
+        "100% úspěšnost u maturitních zkoušek ve školním roce 2021/2022",
+        "Nadprůměrné výsledky v externím testování"
+      ],
+      "evidence": "Funkčnost přijímaných opatření se projevuje mj. v oblasti ukončování vzdělávání."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence věnuje minimálně."
+    },
+    "support_services": [
+      "Psycholožka, výchovný poradce, metodička rizikového chování, koordinátorka nadaných žáků, kariérová poradkyně",
+      "Systém účinného doučování s zapojením žáků navzájem",
+      "Metodické vedení třídnických hodin zaměřených na práci se vztahy"
+    ],
+    "safety_climate": [
+      "Klidná a příjemná atmosféra v hodinách",
+      "Žáci se neobávají vyjadřovat vlastní názory a jsou vedeni k diskusi",
+      "Úzká spolupráce školního poradenského pracoviště s vedením minimalizuje rizikové jevy"
+    ],
+    "partnerships_practice": [
+      "Mezinárodní spolupráce se školami ve Finsku (Tampere), Francii (Rive-de-Gier) a Německu (Bochum)",
+      "Projekty s fakultami vysokých škol",
+      "Spolupráce s Gymnazijní maticí podporující žáky ze socioekonomicky znevýhodněného prostředí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Chybí pouze detailnější číselné údaje o absenci a některé aspekty nejsou zmíněny.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, jaká je situace se školní docházkou",
+      "Není specifikováno, jak se škola vypořádala s doporučením na čtenářskou gramotnost z předchozích let",
+      "Chybí informace o počtu žáků, kteří potřebují speciální podporu nebo mají zdravotní omezení"
+    ]
+  }
+}
+```

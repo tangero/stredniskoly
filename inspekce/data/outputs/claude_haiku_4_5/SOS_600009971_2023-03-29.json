@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600009971_2023-03-29",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:43:35.134143+00:00",
+  "run_finished_utc": "2026-02-09T16:44:01.724998+00:00",
+  "raw_file": "SOS_600009971_2023-03-29.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009971_2023-03-29",
+    "school_profile": {
+      "school_type": "Střední škola živnostenská s učebními obory (3leté s výučním listem, 2leté nástavbové), Základní škola včetně speciální třídy, Domov mládeže",
+      "inspection_period": "29. března až 31. března 2023",
+      "school_change_summary": "Pedagogický sbor se rozšířil a generačně obměnil. V domově mládeže se zvýšil počet zaměstnanců i ubytovaných žáků (55 žáků). Dochází k postupné rekonstrukci budovy DM. Škola má Wi-Fi připojení pro žáky i učitele."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jasná koncepce a vedení",
+          "detail": "Škola má realistickou, písemně zpracovanou vizi rozvoje, kterou aktualizuje každé dva roky a sleduje plnění krátkodobých cílů.",
+          "evidence": "Vedení vychází z analýzy školy a stanovuje cíle se konkrétní odpovědností jednotlivců."
+        },
+        {
+          "tag": "Kvalitní péče o žáky se speciálními potřebami",
+          "detail": "Výuka v třídách pro žáky se SVP je příkladná, s individuálním přístupem a cílem maximální uplatnitelnosti v praktickém životě.",
+          "evidence": "Učitelé důsledně diferencují a individualizují výuku s příkladnou trpělivostí."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Vedení pravidelně sleduje bezpečnost, má zpracovány externí analýzy a vstupy do budov jsou uzamčeny s kamerovým monitoringem.",
+          "evidence": "Vstupy do SŠ a DM jsou monitorovány kamerovým systémem."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá vybavenost některých oborů",
+          "detail": "Dílny pro Zednické práce a Malířské práce nemají moderní vybavení, obor Spojový mechanik pro IT je nedostatečně vybaven.",
+          "evidence": "Materiálně technické vybavení nereaguje na moderní trendy a potřeby v odvětví."
+        },
+        {
+          "tag": "Nekvalifikovanost pedagogů v IT oboru",
+          "detail": "Učitel oboru Spojový mechanik pro IT není dostatečně kvalifikován a nemůže provádět praktická měření.",
+          "evidence": "Učitel využívá pouze simulace na počítači, jeho nekvalifikovanost mu znemožňuje praktická měření."
+        },
+        {
+          "tag": "Nedostatečná diferenciace ve výuce SŠ",
+          "detail": "Výuka není adekvátně diferencována podle individuálních potřeb, nadaní žáci nemají dostatečnou podporu.",
+          "evidence": "Zadávané úkoly jsou pro všechny stejné, nejsou zohledňovány potřeby žáků rychlejších či se zájmem."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a žáky se zájmem o jednotlivé předměty?",
+        "Jaký je plán na modernizaci dílen pro obory Zednické práce a Malířské práce?",
+        "Jak se škola vypořádává s nekvalifikovaností některých pedagogů a jaké má plány na jejich vzdělávání?"
+      ],
+      "who_school_fits": [
+        "Žáci se speciálními vzdělávacími potřebami – škola jim poskytuje kvalitní individuální podporu a příkladný přístup.",
+        "Prakticky zaměření žáci – obory s výučním listem mají dobré vybavení (Cukrář, Kuchařské práce, Krejčí) a spolupráci s 80 sociálními partnery.",
+        "Žáci hledající bezpečné prostředí – škola má jasné bezpečnostní opatření a prevenci nežádoucího chování."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se zájmem o obor Spojový mechanik pro IT – obor má slabou vybavenost a nekvalifikovaného učitele.",
+        "Nadaní žáci – výuka není dostatečně diferencována a jejich potřeby nejsou adekvátně zohledňovány.",
+        "Žáci v oborech Zednické práce a Malířské práce – dílny mají zastaralé vybavení neodpovídající moderním trendům."
+      ],
+      "plain_czech_summary": "Střední škola v Plané je stabilní institucí s jasnou koncepcí a dobrým vedením. Silnou stránkou je péče o žáky se speciálními potřebami a bezpečné prostředí. Škola má však slabiny v diferenciaci výuky pro nadané žáky a v technickém vybavení některých oborů. Obor Spojový mechanik pro IT má problémy s kvalifikací učitele a vybavením. Pedagogové se málo sdílí zkušenosti prostřednictvím hospitací. Přesto je to vhodná volba pro prakticky zaměřené žáky a žáky se speciálními potřebami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní trend v posledním období",
+        "key_numbers": [
+          "44 žáků v nástavbovém studiu oboru Podnikání",
+          "Výrazné zlepšení výsledků maturitních zkoušek v kombinaci s utlumením dálkového studia"
+        ],
+        "evidence": "V maturitních třídách vyučují výhradně kvalifikovaní pedagogové, což se odráží v pozitivním trendu výsledků."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Vedení školy vykonává pravidelné kontroly plnění ŠVP a docházky žáků u sociálních partnerů"
+        ],
+        "evidence": "Kontroly probíhají u sociálních partnerů, kde žáci vyšších ročníků vykonávají odborný výcvik."
+      },
+      "support_services": [
+        "Výchovný poradce ZŠ koordinuje práci s asistenty pedagoga a efektivně spolupracuje s učiteli a poradenskými zařízeními",
+        "Metodici prevence realizují průběžně vyhodnocovanou preventivní strategii",
+        "Kariérový poradce pro nástavbové studium",
+        "Konzultační hodiny učitelů pro žáky ohrožené školním neúspěchem",
+        "Sociální partneři (80 firem) pro praktickou výuku"
+      ],
+      "safety_climate": [
+        "Vstupy do budov jsou během vyučování uzamčeny, u SŠ a DM jsou monitorovány kamerovým systémem",
+        "Žáci jsou pravidelně a prokazatelně seznamováni se školním řádem a pravidly bezpečnosti na začátku roku",
+        "Vedení školy pravidelně sleduje a vyhodnocuje bezpečnost prostředí, má zpracovány externí analýzy",
+        "Všechny zjištěné projevy nevhodného chování jsou důsledně okamžitě řešeny"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s téměř 80 sociálními partnery pro odborný výcvik",
+        "Workshopy pro budoucí uchazeče ve spolupráci se základními školami z regionu",
+        "Odborné stáže, exkurze, přednášky a workshopy s tuzemskými i zahraničními partnery",
+        "Přizvaní odborníci spolupracují na změnách ŠVP a podílejí se na výuce",
+        "Cateringové služby pro Krajský úřad Plzeňského kraje a okolní firmy",
+        "Úspěšná účast v krajských soutěžích (Kontext, Řemeslo má zlaté dno, ENERSOL 2023)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, jasně rozlišuje silné a slabé stránky. Konkrétní údaje o počtu žáků, oborech a vybavení jsou jasné. Některé pasáže jsou však technicky náročnější (např. popis ŠVP), ale pro rodiče jsou klíčové informace dostupné.",
+      "uncertainty_notes": [
+        "Absence není v textu konkrétně kvantifikována, není jasné, jaké jsou aktuální čísla.",
+        "Výsledky maturit nejsou uvedeny konkrétními procenty, pouze se zmiňuje 'pozitivní trend'.",
+        "Počet nekvalifikovaných pedagogů není přesně specifikován, pouze se uvádí 'řada nekvalifikovaných pedagogů'."
+      ]
+    }
+  }
+}

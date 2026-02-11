@@ -1,0 +1,116 @@
+{
+  "report_id": "GY4_691008426_2024-05-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:15:53.396433+00:00",
+  "run_finished_utc": "2026-02-09T16:16:22.069212+00:00",
+  "raw_file": "GY4_691008426_2024-05-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691008426_2024-05-23",
+    "school_profile": {
+      "school_type": "Čtyřleté gymnázium (všeobecné vzdělání) v denní formě, součást komplexu Heřmánek Praha",
+      "inspection_period": "23. května až 27. května 2024",
+      "school_change_summary": "Gymnázium funguje od 1. 9. 2023 a navazuje na tradici základní školy Heřmánek. Vzdělání je inspirováno Montessori pedagogikou s důrazem na osobnostní rozvoj, sociální dovednosti a samostudium."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní výuka v blocích",
+          "detail": "Devadesátiminutové bloky a dělení třídy na skupiny umožňují individuální přístup a propojení učiva v souvislostech.",
+          "evidence": "Výuka splňovala požadavky gymnaziálního vzdělávání, žáci prokazovali odpovídající úroveň vědomostí."
+        },
+        {
+          "tag": "Příjemná atmosféra a partnerský přístup",
+          "detail": "Učitelé a žáci si vzájemně důvěřují, komunikují s respektem a dodržují nastavená pravidla.",
+          "evidence": "Společným znakem všech hospitovaných hodin byla příjemná atmosféra, vzájemně respektující přístup učitele a žáků."
+        },
+        {
+          "tag": "Rozvoj osobnosti a sociálních dovedností",
+          "detail": "Škola nabízí projekty, umělecké aktivity, zahraniční výjezdy a praktické činnosti propojující teorii s praxí.",
+          "evidence": "Zapojování do různých celoškolních akcí, zahraniční výjezdy, exkurze, sportovní kurzy, charitativní akce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotná kvalita výuky",
+          "detail": "Některé hodiny jsou méně efektivní kvůli pasivnímu zapojení žáků a chybějícím závěrům hodin.",
+          "evidence": "Dominující postavení učitele, menší pestrost metod vedly k pasivitě jednotlivců a nerovnoměrnému zapojení žáků."
+        },
+        {
+          "tag": "Slabá kontrola implementace doporučení",
+          "detail": "Vedení školy provádí hospitace, ale závěry se nedostatečně promítají do konkrétních opatření a jejich následné kontroly.",
+          "evidence": "Ze závěrů hospitací nevyplývají jednoznačná zjištění, konkrétní doporučení či opatření; schází následná kontrola."
+        },
+        {
+          "tag": "Nedostatečná práce s textem a informacemi",
+          "detail": "Chybí systematická práce s různými informačními zdroji a kritické vyhodnocování informací.",
+          "evidence": "Nebyl vytvořen dostatečný prostor pro souvislejší slovní projev či systematickou práci s textem."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně vedení školy kontroluje, zda učitelé aplikují doporučení z hospitací do své výuky?",
+        "Jaké konkrétní aktivity nabízíte pro rozvoj kritického myšlení a práce s informacemi?",
+        "Jak se liší kvalita výuky mezi jednotlivými předměty a jak to řešíte?"
+      ],
+      "who_school_fits": [
+        "Žáci, kterým vyhovuje individuální přístup a menší třídy (cca 17 žáků na skupinu)",
+        "Rodiny zajímající se o osobnostní rozvoj, sociální dovednosti a praktické projekty",
+        "Žáci s vnitřní motivací a schopností samostudia (předmět Focusion na to klade důraz)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více struktury a jasných pokynů – některé hodiny jsou méně organizované",
+        "Rodiny očekávající jednotně vysokou kvalitu všech vyučujících – kvalita se liší",
+        "Žáci se slabšími jazykovými dovednostmi – chybí systematická práce s textem a slovním projevem"
+      ],
+      "plain_czech_summary": "Gymnázium Heřmánek je mladá, perspektivní škola s příjemnou atmosférou a zajímavým konceptem zaměřeným na osobnostní rozvoj. Silné stránky: malé třídy, individuální přístup, kvalitní projekty a zahraniční spolupráce. Slabiny: kvalita výuky není jednotná, někteří učitelé používají pasivní metody, chybí systematická práce s textem a informacemi. Vedení školy by mělo lépe kontrolovat, zda se doporučení z hospitací skutečně uplatňují v praxi."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze určit – gymnázium funguje teprve od září 2023, první maturitní ročník bude až v roce 2027",
+        "key_numbers": [
+          "34 žáků v jedné třídě prvního ročníku",
+          "21 pedagogických pracovníků",
+          "2 nekvalifikovaní pedagogové si doplňují vysokoškolské studium"
+        ],
+        "evidence": "Ke vzdělávání jsou přijímáni žáci na základě jednotné přijímací zkoušky a osobního pohovoru zjišťujícího vnitřní motivaci."
+      },
+      "absence": {
+        "trend": "Zpráva neobsahuje údaje o absenci",
+        "key_numbers": [],
+        "evidence": "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      },
+      "support_services": [
+        "Asistentka pedagoga podporující práci s jednotlivými žáky",
+        "Předmět Focusion zaměřený na rozvoj studijních dovedností a sebereflexi",
+        "Předmět FIO (Feuersteinova metoda instrumentálního obohacování) na rozvoj kognitivních schopností",
+        "Individuální vzdělávací plány pro žáky se závažnými důvody",
+        "Tripartitní jednání mezi žákem, rodičem a pedagogem",
+        "Spolupráce s Akademií věd pro přírodovědné pokusy"
+      ],
+      "safety_climate": [
+        "Vstup do prostor je uzamčen a opatřen zvonkem",
+        "Demokratický styl řízení ředitele založený na vzájemné důvěře",
+        "Vstřícné klima školy podporuje pozitivní mezilidské vztahy",
+        "Rychlé řešení vztahových problémů v počátečním stádiu",
+        "Výchovná opatření jsou ukládána uvážlivě a v souladu se školním řádem"
+      ],
+      "partnerships_practice": [
+        "Partnerská škola v Athénách (Řecko) – zahraniční výjezdy",
+        "Spolupráce s Akademií věd – využívání laboratoří pro přírodovědné pokusy",
+        "Smluvně zajištěné tělocvičny a prostory Sokola Kobylisy pro tělesnou výchovu",
+        "Zahraniční výjezdy (např. Island) pro rozvoj jazykových kompetencí",
+        "Nabídka výuky druhého cizího jazyka (španělský nebo německý)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Slabší je absence číselných údajů o výsledcích (maturita, absence, prospěch), což ztěžuje objektivní posouzení kvality. Některé pasáže jsou příliš odborné.",
+      "uncertainty_notes": [
+        "Nelze posoudit dlouhodobé trendy – gymnázium existuje teprve 9 měsíců, chybí srovnání s předchozími roky",
+        "Zpráva neobsahuje konkrétní procenta či čísla o úspěšnosti žáků, absenci nebo výsledcích testů",
+        "Není jasné, jak se kvalita výuky liší mezi jednotlivými předměty a učiteli – jsou jen obecné výtky"
+      ]
+    }
+  }
+}

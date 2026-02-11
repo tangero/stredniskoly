@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_691015163_2023-05-29",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:39:56.769222+00:00",
+  "run_finished_utc": "2026-02-09T16:40:23.840263+00:00",
+  "raw_file": "GY4_691015163_2023-05-29.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691015163_2023-05-29",
+    "school_profile": {
+      "school_type": "Gymnázium (střední škola, s.r.o.)",
+      "inspection_period": "29. května až 31. května 2023",
+      "school_change_summary": "Škola funguje od září 2022. Při inspekci měla 53 žáků ve třech ročnících, z toho 15 % se speciálními vzdělávacími potřebami. Součást sítě ScioŠkol s důrazem na individuální přístup a odpovědnost žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Demokratické prostředí",
+          "detail": "Žáci se aktivně podílí na rozhodování a vytváření školního prostředí na základě demokratických principů.",
+          "evidence": "Škola jim nadstandardním způsobem umožňuje rozhodovat o všech věcech, které se jich týkají."
+        },
+        {
+          "tag": "Moderní výuka",
+          "detail": "Výuka propojuje různé obory, reálný život a podporuje kritické myšlení a tvořivost.",
+          "evidence": "Vzdělávací obsah byl výrazným způsobem provázán s reálným životem, žáci efektivně využívali digitální technologie."
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Každý žák má mentora a vlastní rozvojový plán, výsledky se hodnotí formativně bez klasifikace.",
+          "evidence": "Žáci jsou vedeni ke kvalitní sebereflexi a stanovování vlastních vzdělávacích cílů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé vybavení přírodovědných předmětů",
+          "detail": "Chybí speciální učebna a přístroje pro praktické činnosti v přírodovědě.",
+          "evidence": "Absence omezuje možnost uplatnit některé vzdělávací strategie vhodné pro přírodovědné zkoumání."
+        },
+        {
+          "tag": "Nová škola bez historie",
+          "detail": "Škola funguje teprve od září 2022, nemá dlouhodobé výsledky maturit.",
+          "evidence": "Inspekční činnost proběhla v prvním roce provozu školy."
+        },
+        {
+          "tag": "Chybějící pedagogové s odborností",
+          "detail": "V některých vzdělávacích oblastech se nepodařilo zajistit pedagogy s příslušnou odborností.",
+          "evidence": "Většina pedagogů splňuje požadavky na kvalifikaci, ale ne všichni."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá mentoring a jak se žák seznamuje s vlastním rozvojovým plánem?",
+        "Jaké jsou plány na zlepšení vybavení pro přírodovědné předměty a praktické činnosti?",
+        "Jak se škola připravuje na maturitní zkoušky, když je teprve v prvním roce provozu?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří preferují aktivní zapojení a rozhodování o vlastním vzdělávání",
+        "Děti se speciálními vzdělávacími potřebami, které potřebují individuální přístup a podporu",
+        "Tvůrčí žáci, kterým vyhovuje propojování předmětů a praktické aplikace znalostí"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají tradiční klasifikaci a známky místo slovního hodnocení",
+        "Žáci zaměření na přírodovědné obory, kteří potřebují kvalitní laboratorní vybavení",
+        "Rodiny hledající školu s dlouhodobě ověřenými výsledky maturit"
+      ],
+      "plain_czech_summary": "ScioŠkola Brno je mladá gymnázia se zajímavým přístupem. Žáci se učí aktivně, rozhodují o svém vzdělávání a mají mentora. Výuka propojuje různé předměty a reálný život. Škola vytváří příjemné, demokratické prostředí. Slabinou je nedostatečné vybavení pro přírodovědné předměty a fakt, že škola funguje teprve rok. Hodí se pro tvořivé žáky, kteří chtějí být aktivní."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze určit - škola funguje teprve od září 2022",
+        "key_numbers": [
+          "53 žáků ve třech ročnících při inspekci",
+          "15 % žáků se speciálními vzdělávacími potřebami",
+          "Bez klasifikace, slovní hodnocení"
+        ],
+        "evidence": "Škola vykonává činnost střední školy od 1. 9. 2022, v době inspekce se vzdělávalo celkem 53 žáků."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se absencí nezabývá."
+      },
+      "support_services": [
+        "Výchovná poradkyně, která je zároveň metodičkou prevence rizikových jevů",
+        "Mentoring prostřednictvím individuálních rozhovorů a mentorských kruhů",
+        "Minimální preventivní program provázaný se vzdělávacím obsahem",
+        "Tripartitní schůzky průvodců, žáků a zákonných zástupců"
+      ],
+      "safety_climate": [
+        "Vstřícná otevřená atmosféra s partnerským přístupem pedagogů",
+        "Demokratické principy a pravidla vytvářející vhodné podmínky pro komunikaci",
+        "Prosociální přístup všech pedagogů minimalizující nežádoucí jevy",
+        "Adekvátní podpora při adaptaci žáků na nové školní prostředí"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s dalšími školami v síti ScioŠkol - sdílení zkušeností a stáže",
+        "Mezinárodní spolupráce se školou v Srbsku a na Slovensku",
+        "Partnerství s organizacemi v regionu - dětský domov, dům seniorů, úřad městské části",
+        "Aktivní vyhledávání dalších vnějších partnerů pro zkvalitnění vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní příklady a jasné závěry. Mírně snižuje srozumitelnost odborná terminologie (sciokompetence, konstruktivistický přístup), ale je vždy vysvětlena v kontextu.",
+      "uncertainty_notes": [
+        "Chybí konkrétní údaje o výsledcích maturit - škola je příliš nová",
+        "Není jasné, jak se bude škola vypořádávat s absencí laboratorního vybavení v dlouhodobém horizontu",
+        "Nejasné, jak se bude hodnocení bez klasifikace přijímat na vysokých školách"
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_600017079_2022-03-10",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola a Střední odborné učiliště",
+    "inspection_period": "10., 11. a 14. 3. 2022",
+    "school_change_summary": "Od poslední inspekce došlo k částečnému zlepšení materiálního a technického vybavení pro realizaci praktického vyučování."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a praxe",
+        "detail": "Škola má nově vybudovaná dílenská pracoviště s dostatečným vybavením a efektivně propojuje teorii s praxí.",
+        "evidence": "Výuka odborného výcviku probíhá v nově vybudovaných prostorách... spolupráce se smluvními partnery ve vztahu propojení teorie s praxí."
+      },
+      {
+        "tag": "Vzdělávací nabídka",
+        "detail": "Škola vhodně doplňuje vzdělávání v průmyslové oblasti a reaguje na poptávku trhu práce v regionu.",
+        "evidence": "Nabídka dalších oborů vhodně doplňuje vzdělávání převážně v průmyslové oblasti... reaguje na demografický vývoj v regionu, na poptávku trhu práce."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí doučování, konzultace a zapojuje se do projektů na podporu vzdělávání.",
+        "evidence": "Škola zavedla podpůrné doučovací aktivity... realizuje v rámci projektu Národní plán doučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita výuky",
+        "detail": "V teoretické výuce převažuje frontální styl bez aktivizace žáků, což snižuje jejich zájem a pozornost.",
+        "evidence": "V teoretickém vyučování převládá frontální výuka bez častějšího využití aktivizujících prvků... projevovala se ve snížené či postupně upadající pozornosti některých žáků."
+      },
+      {
+        "tag": "Podpora SVP",
+        "detail": "Škola nesystematicky poskytuje podporu žákům se speciálními vzdělávacími potřebami.",
+        "evidence": "Nedostatky se projevily také při uplatňování podpůrných opatření žáků se speciálními vzdělávacími potřebami... bez výraznější diferenciace."
+      },
+      {
+        "tag": "Hodnocení výsledků",
+        "detail": "Škola nevyužívá externí srovnání a nevyhodnocuje účinnost nastavené podpory žáků.",
+        "evidence": "Externí nástroje, které by jí umožňovaly srovnání s ostatními školami, však nevyužívá. Účinnost... není systematicky na úrovni školy vyhodnocována."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se specifickými vzdělávacími potřebami v běžných hodinách teoretického vyučování?",
+      "Jaké aktivační metody a formy výuky učitelé používají, aby žáci nebyli pouze pasivními posluchači?",
+      "Jak škola objektivně zjišťuje a vyhodnocuje úspěšnost nastavených podpůrných opatření pro žáky v problémech?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o technické a opravárenské obory, kteří očekávají kvalitní vybavení dílen a provázanost s praxí.",
+      "Studenti, kteří preferují klasické metody výuky a nepotřebují silný individuální přístup.",
+      "Žáci, kteří chtějí využívat širokou nabídku mimoškolních aktivit a zázemí domova mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami vyžadující výraznější diferenciaci a individuální podporu v teorii.",
+      "Studenti, kteří potřebují silnou motivaci a aktivní zapojení do výuky, aby je bavila.",
+      "Talentovaní žáci, kteří mohou v nenáročném teoretickém prostředí bez výzev ztratit zájem."
+    ],
+    "plain_czech_summary": "Inspekce potvrdila, že škola má kvalitní zázemí pro odborný výcvik a dobře spolupracuje s partnery v regionu. Naopak v teoretické výuce převažuje pasivní styl bez aktivizace žáků. Škola nedostatečně řeší individuální potřeby žáků, zejména těch talentovaných nebo s potřebou podpory. Přestože škola nabízí doučování, neví, jak moc jsou tato opatření účinná. Pro rodiče je to škola se silným technickým zaměřením a praxí, ale s rezervami v kvalitě a modernosti teoretické výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšená",
+      "key_numbers": [
+        "Nejlepší výsledky: Obchodní akademie",
+        "Nejvyšší neúspěšnost: Mechanik-seřizovač",
+        "13 uchazečů o VŠ ze 2 oborů"
+      ],
+      "evidence": "Stabilně nejlepších výsledků... dosahují žáci studijního oboru Obchodní akademie... nejvyšší neúspěšnost byla zaznamenána u studijního oboru Mechanik-seřizovač."
+    },
+    "absence": {
+      "trend": "Řešena důsledně",
+      "key_numbers": [
+        "Důsledné řešení absence",
+        "Eliminace vlivu na výsledky",
+        "Okamžitá opatření při zjištění problémů"
+      ],
+      "evidence": "Negativní vliv na výsledky vzdělávání žáků z důvodu jejich omluvené i neomluvené absence... škola eliminuje důsledným řešením a přijímáním opatření ihned při zjištění problémů."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště",
+      "Domov mládeže",
+      "Národní plán doučování"
+    ],
+    "safety_climate": [
+      "Důraz na prevenci rizikového chování",
+      "Adaptační programy pro nové kolektivy",
+      "Elektronická schránka důvěry"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem na obnově vybavení",
+      "Partnerská spolupráce se zaměstnavateli",
+      "Projekty Erasmus+ a Digitální kompetence"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně rozděluje silné a slabé stránky a poskytuje konkrétní důkazy.",
+    "uncertainty_notes": [
+      "Nejasné, jak konkrétně probíhá individualizace ve výuce, když je hodnocena jako nedostatečná.",
+      "Chybí konkrétní data o úspěšnosti maturit v procentech, pouze relativní srovnání oborů.",
+      "Není uvedeno, kolik žáků konkrétně využívá služeb domova mládeže a jaká je jeho kapacita."
+    ]
+  }
+}

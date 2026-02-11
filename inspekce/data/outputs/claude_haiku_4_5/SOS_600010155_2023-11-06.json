@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600010155_2023-11-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:35:15.092184+00:00",
+  "run_finished_utc": "2026-02-09T16:35:43.269944+00:00",
+  "raw_file": "SOS_600010155_2023-11-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600010155_2023-11-06",
+    "school_profile": {
+      "school_type": "Střední lesnická škola a Střední odborná škola s domovem mládeže",
+      "inspection_period": "6. listopadu 2023 až 9. listopadu 2023",
+      "school_change_summary": "Škola se výrazně zlepšila v materiálních podmínkách (nové budovy, sportovní hala, střelnice), zvýšil se počet žáků na 430 v denní formě, byly redukovány obory s důrazem na jejich prostupnost."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola úspěšně propojuje teoretickou výuku s praktickou přípravou u sociálních partnerů, což vede k lepšímu uplatnění absolventů na trhu práce.",
+          "evidence": "Aktivní spolupráce se sociálními partnery, speciální kurzy od 1. do 3. ročníku, profesionální vedení odborného výcviku."
+        },
+        {
+          "tag": "Nadstandardní vybavení",
+          "detail": "Škola disponuje velmi dobře vybaveným zázemím včetně nových dílen, sportovní haly a vlastních učebních materiálů.",
+          "evidence": "Dvě nové budovy domova mládeže, nová střelnice, venkovní hřiště, kvalitní učebnice a pracovní sešity vytvořené pedagogy."
+        },
+        {
+          "tag": "Podpora ohrožených žáků",
+          "detail": "Od roku 2023/2024 posílila tým školní psycholožka, která pomáhá identifikovat žáky v riziku a poskytuje krizové intervence.",
+          "evidence": "Efektivní poradenské pracoviště, systematická primární prevence, individuální a skupinové doučování s evidencí účasti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní vyučování",
+          "detail": "Část hodin je příliš výkladová, chybí aktivizace žáků a rozvoj jejich kooperativních dovedností.",
+          "evidence": "Inspektoři zaznamenali, že chyběla vhodná aktivizace, minimálně byly rozvíjeny kooperativní dovednosti, didaktika sloužila hlavně k prezentaci."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Žáci často plní shodné úkoly bez ohledu na jejich individuální schopnosti a potřeby.",
+          "evidence": "Diferenciace a individualizace vzdělávacího obsahu zohledňují kognitivní schopnosti jen v malé míře, chybí účinná zpětná vazba."
+        },
+        {
+          "tag": "Slabší výsledky v některých oborech",
+          "detail": "V oboru Bezpečnostně právní činnost byla hrubá neúspěšnost u maturitní zkoušky vyšší než v republice (50 % vs. 25 %).",
+          "evidence": "Po podzimním termínu se sice snížila na 14 %, ale stále vyžaduje pozornost."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá propojení teoretické výuky s praxí u sociálních partnerů a jak často se žáci dostávají do reálného pracovního prostředí?",
+        "Jaké konkrétní opatření škola přijala na základě inspekční zprávy k zlepšení individualizace výuky a aktivizace žáků?",
+        "Jak funguje systém doučování a jaké jsou výsledky jeho efektivity pro žáky ohrožené školním neúspěchem?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří se zajímají o praktické obory (lesnictví, sociální činnost, bezpečnostně právní činnost, práce ve stravování) a chtějí se rychle uplalit na trhu práce.",
+        "Žáci z regionu, kteří ocení ubytování v domově mládeže a bohatou nabídku volnočasových aktivit.",
+        "Žáci, kteří potřebují individuální podporu a poradenství – škola má kvalitní tým poradenských pracovníků včetně psycholožky."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří preferují aktivní, interaktivní výuku – část hodin je stále příliš výkladová a pasivní.",
+        "Žáci s vyšší kognitivní náročností, kterým může chybět dostatečná diferenciace a individuální výzva.",
+        "Uchazeči o obor Bezpečnostně právní činnost by měli zvážit, že tento obor má vyšší neúspěšnost u maturitní zkoušky."
+      ],
+      "plain_czech_summary": "Střední lesnická škola v Šluknově je moderně vybavená škola se silným zaměřením na propojení teorie s praxí. Má kvalitní poradenský tým a dobré podmínky pro vzdělávání. Inspektoři ale upozornili, že část výuky je příliš pasivní a chybí individualizace pro různě schopné žáky. Škola se zaměřuje na praktické obory a má dobré výsledky v uplatnění absolventů. Vhodná pro žáky, kteří chtějí praktické vzdělání a podporu při studiu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – po podzimním termínu se výsledky zlepšily, ale v některých oborech zůstávají slabší",
+        "key_numbers": [
+          "Lesnictví: hrubá neúspěšnost 26 % (jaro 2023), po podzimě 13 %",
+          "Bezpečnostně právní činnost: 25 % (jaro), po podzimě 14 %",
+          "Sociální činnost: 0 % (jaro), po podzimě 0 %"
+        ],
+        "evidence": "Ve společné části maturitní zkoušky byli všichni žáci, kteří ji konali, úspěšní. Neúspěšnost je dána žáky, kteří zkoušku nekonali."
+      },
+      "absence": {
+        "trend": "Není v textu explicitně uvedeno",
+        "key_numbers": [
+          "Informace o absenci nejsou v inspekční zprávě obsaženy"
+        ],
+        "evidence": "Zpráva se zaměřuje na výsledky vzdělávání a kvalitu výuky, ne na docházku."
+      },
+      "support_services": [
+        "Výchovná poradkyně – sleduje vzdělávací výsledky, informuje o žácích se speciálními potřebami",
+        "Školní psycholožka (od 2023/2024) – pomáhá s identifikací ohrožených žáků, krizové intervence",
+        "Kariérové poradkyně – spolupracují s úřadem práce a profesními organizacemi",
+        "Metodička prevence – zaměřena na prevenci záškoláctví, závislostí, šikany a kyberšikany"
+      ],
+      "safety_climate": [
+        "Velmi dobré prosociální vztahy a pozitivní klima školy podporují učení každého žáka",
+        "Systematická primární prevence eliminuje výskyt rizikového chování",
+        "Adaptační programy pro prvňáky upevňují prosociální vztahy a seznamují se strategiemi studia",
+        "Jakékoliv náznaky problémového chování jsou řešeny bezodkladně"
+      ],
+      "partnerships_practice": [
+        "Strategickými partnery jsou firmy participující na realizaci odborné praxe žáků",
+        "Zástupci školy a sociálních partnerů se pravidelně setkávají a vyhodnocují průběh praxí",
+        "Obor Bezpečnostně právní činnost je vykonáván u sociálních partnerů odpovídajících zaměření",
+        "Kariérové poradkyně aktivně spolupracují s úřadem práce"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však administrativně husté a pro laika obtížnější. Silné a slabé stránky jsou jasně vymezeny.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – není jasné, zda je problém nebo není sledována.",
+        "Konkrétní počty žáků se speciálními potřebami (40) nejsou kontextualizovány – není jasné, zda je to vysoké číslo.",
+        "Výsledky v oborech zakončených závěrečnou zkouškou nejsou detailně rozvedeny – fokus je na maturitní obory."
+      ]
+    }
+  }
+}

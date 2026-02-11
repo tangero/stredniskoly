@@ -1,0 +1,98 @@
+```json
+{
+  "report_id": "GY4_600170047_2023-01-25",
+  "school_profile": {
+    "school_type": "Střední odborná škola pro administrativu Evropské unie s domovem mládeže",
+    "inspection_period": "25. 1. − 27. 1. 2023 a 30. 1. 2023",
+    "school_change_summary": "Škola si udržuje vysoký standard a stabilní naplněnost. Od inspekce v 2015 vzrostl počet žáků s odlišným mateřským jazykem a žáků se speciálními vzdělávacími potřebami. Došlo k výrazné kvalitativní obměně pedagogického sboru a snížení věkového průměru učitelů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Více než polovina žáků prospívá s vyznamenáním, nulová neúspěšnost, nadprůměrné výsledky v celostátním srovnání.",
+        "evidence": "Více než 50 % žáků s vyznamenáním, hrubá neúspěšnost nulová, nadprůměrné výsledky ve všech předmětech."
+      },
+      {
+        "tag": "Moderní vybavení a podmínky",
+        "detail": "Nové učebny, klimatizace, Wi-Fi, wellness centrum, filmové studio, knihovna, relaxační zóny.",
+        "evidence": "Realizované rekonstrukce: klimatizace, osvětlení, Wi-Fi, ergonomický nábytek, konferenční sál, filmové studio."
+      },
+      {
+        "tag": "Mezinárodní mobilita a jazyky",
+        "detail": "Akreditace Erasmus, zahraniční stáže v Německu, Francii, Španělsku, Irsku, Maltě, pět cizích jazyků.",
+        "evidence": "Akreditace Erasmus, dlouhodobě organizované zahraniční odborné praxe a stáže, nabídka pěti cizích jazyků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Méně efektivní závěry hodin",
+        "detail": "V některých hodinách chybí prostor pro shrnutí, fixaci poznatků a sebereflexi žáků.",
+        "evidence": "Méně efektivní časové rozvržení, kdy v závěru chyběl prostor pro efektivní shrnutí a fixaci poznatků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak probíhá podpora žáků se speciálními vzdělávacími potřebami a jak se jim přizpůsobuje výuka?",
+      "Jaké jsou konkrétní možnosti zahraničních stáží a jak se do nich dostane můj syn/dcera?",
+      "Jak se škola připravuje na maturitní zkoušky a jaké jsou výsledky v jednotlivých oborech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o státní správu, diplomacii, právo, mediální komunikaci nebo bankovnictví",
+      "Motivovaní studenti s ambicí na vysokou školu (90 % absolventů pokračuje v terciárním vzdělávání)",
+      "Žáci z jiných regionů – škola má vlastní domov mládeže s 100 lůžky"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří si nejsou jisti volbou oboru – v prvním ročníku odchází část žáků pro obtížnost",
+      "Žáci bez zájmu o jazyky – jazykové dovednosti jsou klíčové pro profil školy"
+    ],
+    "plain_czech_summary": "Prestižní škola s moderním vybavením a výbornou pověstí. Žáci dosahují nadprůměrných výsledků u maturit (50+ % s vyznamenáním), mají přístup k zahraničním stážím a pěti cizím jazykům. Silná je podpora nadaných žáků i těch se speciálními potřebami. Skoro všichni absolventi pokračují na vysoké škole. Jediná slabina: v některých hodinách chybí lepší shrnutí učiva. Vhodná pro ambiciózní studenty se zájmem o státní správu, právo nebo mediální komunikaci."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě nadprůměrné výsledky",
+      "key_numbers": [
+        "Více než 50 % žáků s vyznamenáním",
+        "Nulová hrubá neúspěšnost",
+        "96 % žáků úspěšně zakončí čtyřletý cyklus"
+      ],
+      "evidence": "Výsledky v celostátním srovnání v rámci skupiny stejných oborů dosahují nadprůměrných výsledků ve všech předmětech."
+    },
+    "absence": {
+      "trend": "Velmi nízká absence",
+      "key_numbers": [
+        "V průměru 24 hodin na žáka za rok"
+      ],
+      "evidence": "Škola vykazuje velmi nízký počet hodin absence, počet pochval výrazně převažuje nad kázeňskými opatřeními."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: koordinátoři výchovného a kariérového poradenství, prevence, školní psycholog",
+      "Individuální vzdělávací plány pro nadané žáky (22 žáků)",
+      "Doučování a individuální konzultace pro žáky s problémy",
+      "Speciální podpora pro žáky s OMJ a uprchlíky (výuka češtiny s čtvrtletními reporty)",
+      "Adaptační a sportovní kurzy, projekt Správná cesta"
+    ],
+    "safety_climate": [
+      "Recepce, čipový systém vstupu do obou budov, kamerový systém",
+      "Splnění požadavků bezbariérovosti",
+      "Participace žáků: žákovský parlament a domovní rada v domově mládeže",
+      "Nízký počet pochval převažuje nad kázeňskými opatřeními"
+    ],
+    "partnerships_practice": [
+      "Ministerstvo zahraničních věcí ČR, Nejvyšší kontrolní úřad, soudy, velvyslanectví, Policie ČR, banky",
+      "Partnerské školy v zahraničí (Německo, Francie, Španělsko, Irsko, Malta)",
+      "Akreditace Erasmus v oblasti odborného vzdělávání",
+      "Program fairtradových škol, projekt Demokratická škola",
+      "Spolek pro podporu a rozvoj SOŠ (finanční podpora)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Všechna tvrzení jsou podpořena konkrétními údaji a citacemi. Informace jsou srozumitelné a relevantní pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků v jednotlivých oborech, pouze celkový počet 883 žáků",
+      "Nejsou uvedeny konkrétní procenta žáků s OMJ nebo SVP, pouze že jejich počet roste",
+      "Chybí informace o počtu učitelů bez kvalifikace (uvedeno pouze 'zhruba desetina')"
+    ]
+  }
+}
+```

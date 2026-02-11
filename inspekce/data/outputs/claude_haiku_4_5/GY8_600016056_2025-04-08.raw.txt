@@ -1,0 +1,113 @@
+```json
+{
+  "report_id": "GY8_600016056_2025-04-08",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté vzdělání), příspěvková organizace",
+    "inspection_period": "8. 4. 2025 – 11. 4. 2025",
+    "school_change_summary": "Od inspekce v 2018/2019 se změnil ředitel a výchovná poradkyně. Škola se zapojila do projektů (Erasmus+, Učící se škola, Českého panelového šetření). Zlepšily se materiální podmínky. Závěry z předchozí inspekce byly zohledněny jen částečně."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit a vysokoškolské úspěšnosti",
+        "detail": "Žáci dosahují velmi dobrých výsledků v celorepublikovém srovnání, přibližně 90 % absolventů je přijato na vysokou školu.",
+        "evidence": "Výsledky při maturitní zkoušce vykazují velmi dobrou úroveň, vysoká úspěšnost v přijetí k vysokoškolskému studiu kolem 90 %."
+      },
+      {
+        "tag": "Projektová činnost a osobnostní rozvoj",
+        "detail": "Škola aktivně zapojuje žáky do národních i mezinárodních projektů s pozitivním vlivem na jejich rozvoj.",
+        "evidence": "Zapojení do Erasmus+, dobrovolnické činnosti, charitativních aktivit, dárcovství krve, návštěvy domova seniorů."
+      },
+      {
+        "tag": "Silná jazyková příprava",
+        "detail": "Více než polovina žáků závěrečných ročníků úspěšně získává mezinárodní jazykové zkoušky FCE a CAE.",
+        "evidence": "Navýšen počet rodilých mluvčích, tandemová výuka, volitelné semináře vedoucí k certifikovaným zkouškám."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá diferenciace výuky",
+        "detail": "Výuka není přizpůsobena individuálním vzdělávacím potřebám žáků, chybí sebehodnocení a vzájemné hodnocení.",
+        "evidence": "Výuka nebyla diferencovaná podle vzdělávacích možností žáků, výjimečně bylo realizováno sebehodnocení a vzájemné hodnocení."
+      },
+      {
+        "tag": "Nedostatečná kontrola kvality výuky",
+        "detail": "Kontrolní systém není plně funkční, učitelé nedostávají dostatečnou zpětnou vazbu na svou práci.",
+        "evidence": "V nastaveném systému hospitací chybí účinná zpětná vazba a vhodné doporučení k výuce pro ostatní učitele."
+      },
+      {
+        "tag": "Frontální výuka bez interakce",
+        "detail": "Převažuje výuka vedená učitelem s minimální spoluprací a diskusí mezi žáky.",
+        "evidence": "V části sledovaných hodin převažovala výuka frontální s dominancí učitele, žáci mezi sebou cíleně nediskutovali."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individuálně podporuje žáky s různými vzdělávacími potřebami a jak se liší přístup v jednotlivých předmětech?",
+      "Jaké jsou konkrétní plány na zlepšení zpětné vazby učitelům a jak se to bude odrážet v kvalitě výuky?",
+      "Jak se škola chystá více zapojit žáky do aktivní spolupráce a diskusí během hodin?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí studovat na vysoké škole – škola má prokázanou úspěšnost v přípravě na vysokoškolské studium.",
+      "Jazykově nadaní žáci – silný důraz na cizí jazyky a možnost získat mezinárodní certifikáty.",
+      "Žáci zajímající se o společenské projekty a dobrovolnictví – škola aktivně podporuje mimoškolní činnosti a sociální angažovanost."
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individualizovaný přístup – výuka není dostatečně přizpůsobena různým vzdělávacím potřebám.",
+      "Žáci, kteří se lépe učí interaktivně – převažuje frontální výuka s nízkou mírou spolupráce mezi žáky.",
+      "Žáci, kteří potřebují jasnou zpětnou vazbu – inspekce zjistila nedostatek zpětné vazby od učitelů."
+    ],
+    "plain_czech_summary": "Gymnázium v Krnově je kvalitní školou se skvělými výsledky maturit a vysokou úspěšností absolventů na vysokých školách. Silně podporuje jazykovou přípravu a zapojuje žáky do zajímavých projektů. Má však problémy s individualizací výuky – hodiny jsou často vedeny tradičně, bez dostatečné interakce mezi žáky. Učitelé nedostávají dostatečnou zpětnou vazbu na svou práci. Škola by měla více pracovat na tom, aby každý žák mohl učit se podle svých potřeb a aby se více diskutovalo."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "Výsledky v celorepublikovém srovnání velmi dobré",
+        "Cca 90 % absolventů přijato na vysokou školu",
+        "Nadprůměrné výsledky v komerčním testování v češtině, matematice a cizích jazycích"
+      ],
+      "evidence": "Výsledky žáků při ukončování vzdělání maturitní zkouškou vykazují v celorepublikovém srovnání velmi dobrou úroveň. Vysoká úspěšnost absolventů v přijetí k vysokoškolskému studiu činí kolem 90 %."
+    },
+    "absence": {
+      "trend": "Bez konkrétních údajů",
+      "key_numbers": [
+        "Zpráva neobsahuje konkrétní data o absenci"
+      ],
+      "evidence": "Inspekční zpráva se absencí žáků nezabývá."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná a karierová poradkyně, metodik prevence",
+      "Externí psycholožka z pedagogicko-psychologické poradny",
+      "Pravidelné konzultační hodiny pedagogů",
+      "Preventivní programy zaměřené na pozitivní klima a negativní jevy",
+      "Adaptační programy pro nové třídní kolektivy",
+      "Podpora žáků se speciálními vzdělávacími potřebami"
+    ],
+    "safety_climate": [
+      "Příjemná a respektující pracovní atmosféra ve vyučovacích hodinách",
+      "Výuka probíhala bez kázeňských nedostatků",
+      "Žáci bez obav pokládali otázky a sdělovali své postřehy",
+      "Vstupy do budovy zabezpečeny proti vniknutí cizích osob",
+      "Zvýšená úrazovost souvisí s důsledností vedení evidence; doporučeno vyměnit prosklené skříně za bezpečnější náhradu",
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování"
+    ],
+    "partnerships_practice": [
+      "Erasmus+ – příhraniční spolupráce s enviromentálním zaměřením",
+      "Projekt Učící se škola – podpora manažerských kompetencí",
+      "České panelové testování středoškoláků – zkoumání školního prostředí a sociálních postojů",
+      "Spolupráce s neziskovými organizacemi na dobrovolnických a charitativních aktivitách",
+      "Výjezdy do zahraničí a výukové pobyty",
+      "Rodilí mluvčí pro konverzační hodiny a tandemovou výuku"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, ale obsahuje řadu odborných termínů a dlouhých vět. Hlavní zjištění jsou jasná, ale detaily jsou někdy rozptýleny v delších pasážích.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o počtu absence žáků nebo jejich vývoji.",
+      "Chybí konkrétní čísla o počtu žáků se speciálními vzdělávacími potřebami a jejich úspěšnosti.",
+      "Není jasné, jak přesně se měří kvalita zpětné vazby učitelům a jaké jsou konkrétní metriky zlepšení."
+    ]
+  }
+}
+```

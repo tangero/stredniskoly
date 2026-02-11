@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600017770_2024-01-22",
+  "school_profile": {
+    "school_type": "Střední lesnická škola s čtyřletým oborem Lesnictví zakončeným maturitou, včetně domovů mládeže a školního polesí",
+    "inspection_period": "22.–24. ledna 2024",
+    "school_change_summary": "V hodnoceném období došlo ke změně ve vedoucí pracovní pozici ředitele školy. Materiálně technické podmínky se zlepšují ve spolupráci se zřizovatelem."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství a praxe",
+        "detail": "Škola má navázaná partnerství s firmami a realizuje zahraniční odborné stáže přes Erasmus+, což zvyšuje uplatnění absolventů.",
+        "evidence": "\"Škola disponuje celou řadou navázaných partnerství s firmami, které tyto praxe zabezpečují\" a \"realizuje pro žáky zahraniční odborné stáže\""
+      },
+      {
+        "tag": "Odborné úspěchy",
+        "detail": "Žáci dosahují velmi dobrých výsledků v odborných soutěžích na regionální i celostátní úrovni.",
+        "evidence": "\"Velmi dobrých výsledků žáci dosahují především v odborných soutěžích, a to jak v rámci regionu, tak celé České republiky\""
+      },
+      {
+        "tag": "Péče o slabší žáky",
+        "detail": "Škola identifikuje žáky s rizikem neúspěchu a nabízí jim doučování, konzultace a intenzivní přípravu na maturitu.",
+        "evidence": "\"Škola identifikuje žáky s rizikem školního neúspěchu, zajišťuje jim primární podporu, nabízí individuální konzultace, nebo pravidelně realizuje doučování\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní vyučování",
+        "detail": "V teoretické výuce převažuje frontální výuka, chybí skupinová práce a aktivní zapojení žáků s informačními zdroji.",
+        "evidence": "\"Ojediněle byl vytvořen prostor pro posílování kompetencí žáků využívat digitální technologie\" a \"Jen ve výjimečných případech došlo k účelnému zařazení práce ve dvojicích či skupinách\""
+      },
+      {
+        "tag": "Slabá diferenciace",
+        "detail": "Žáci plní obsahem a náročností shodné úkoly bez přizpůsobení jejich individuálním potřebám, zejména nadaní žáci nejsou dostatečně podporováni.",
+        "evidence": "\"Žáci plnili obsahem, typem, rozsahem i náročností shodné úkoly\" a \"nebyla vždy zaznamenána diferenciace vzdělávacího obsahu\""
+      },
+      {
+        "tag": "Slabá prevence",
+        "detail": "Preventivní program není dostatečně zaměřen na cílené předcházení rizikového chování a vychází jen v malé míře z analýzy problémů.",
+        "evidence": "\"Preventivní program školy je v malé míře zaměřen na cílené předcházení výskytu nežádoucích forem rizikového chování žáků\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky v jejich oboru a jaké má pro ně speciální programy?",
+      "Jaké jsou možnosti zapojení se do zahraničních stáží přes Erasmus+ a jak se na ně žáci připravují?",
+      "Jak funguje doučování a individuální podpora pro žáky, kteří mají potíže s učením?"
+    ],
+    "who_school_fits": [
+      "Žáci s vášní pro lesnictví a přírodu, kteří chtějí praktické vzdělání s možností zahraniční praxe",
+      "Talentovaní žáci v odborných předmětech, kteří se chtějí prosazovat v soutěžích",
+      "Žáci, kteří potřebují podporu a doučování – škola má systém péče o slabší studenty"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují aktivní, skupinovou a projektovou výuku – teoretická výuka je spíše tradiční a frontální",
+      "Nadaní žáci v obecně vzdělávacích předmětech – diferenciace není dostatečná",
+      "Žáci, kteří potřebují silný preventivní program proti rizikům – program je zatím málo cílený"
+    ],
+    "plain_czech_summary": "Střední lesnická škola v Hranicích je zaměřená na praktické vzdělání v lesnictví s dobrými vazbami na zaměstnavatele a zahraničními stážemi. Žáci dosahují výborných výsledků v odborných soutěžích. Škola má péči o slabší žáky. Slabinou je tradiční frontální výuka bez dostatečné aktivizace žáků, chybí skupinová práce a diferenciace pro nadané. Preventivní program není dostatečně cílený. Vhodná pro žáky s vášní pro lesnictví a praktickou práci."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neuvedeno v textu",
+      "key_numbers": [
+        "308 žáků ve 12 třídách střední školy",
+        "Obor 41-46-M/01 Lesnictví čtyřletý"
+      ],
+      "evidence": "\"Ve 12 třídách střední školy celkem 308 žáků\" – konkrétní výsledky maturit nejsou v textu uvedeny"
+    },
+    "absence": {
+      "trend": "Neuvedeno v textu",
+      "key_numbers": [
+        "Absence není v textu konkrétně zmiňována"
+      ],
+      "evidence": "Text se nezabývá absencí žáků"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a školní psycholožkou",
+      "Individuální konzultace a doučování pro žáky s rizikem neúspěchu",
+      "Školní metodička prevence zajišťující besedy a přednášky",
+      "Adaptační program pro žáky 1. ročníku"
+    ],
+    "safety_climate": [
+      "Seznamování žáků s pravidly školního řádu a bezpečnostními riziky",
+      "Výchovné působení zaměřené na bezpečnost a ochranu zdraví",
+      "Ředitel pravidelně ověřuje kvalitu třídního klimatu",
+      "Zachycené problémy rizikového chování jsou školou úspěšně řešeny"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zaměstnavateli na externích souvislých praxích",
+      "Projekt Erasmus+ s zahraničními odbornými stážemi",
+      "Zapojení odborníků z praxe do výuky",
+      "Spolupráce s vysokými školami a školskými poradenskými zařízeními",
+      "Partnerství s firmami zabezpečujícími praktickou výuku"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný a obsahuje konkrétní informace o chodu školy. Některé pasáže jsou však formulovány úřednicky a obsahují opakování. Hlavní zjištění jsou jasná.",
+    "uncertainty_notes": [
+      "Text neobsahuje konkrétní čísla o výsledcích maturitní zkoušky ani absenci žáků",
+      "Není jasné, jak se změna ředitele projevila na kvalitě vzdělávání",
+      "Rozsah problémů s pasivní výukou není kvantifikován – není jasné, kolik hodin bylo problematických"
+    ]
+  }
+}
+```

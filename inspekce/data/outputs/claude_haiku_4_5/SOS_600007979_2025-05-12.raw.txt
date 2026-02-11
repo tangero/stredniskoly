@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600007979_2025-05-12",
+  "school_profile": {
+    "school_type": "Střední lesnická škola a Střední odborné učiliště s domovem mládeže",
+    "inspection_period": "12. až 14. května 2025",
+    "school_change_summary": "Od poslední inspekce (2018/2019) se změnilo vedení školy, zvýšil se počet žáků na 178 (77% naplněnost), ukončen obor Ekologie a životní prostředí, zlepšily se prostorové podmínky a výsledky u maturit."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturit",
+        "detail": "Ve školním roce 2023/2024 měla škola hrubou neúspěšnost 4,5 % oproti celorepublikovému průměru 10,1 %.",
+        "evidence": "\"hrubá neúspěšnost ve společné části MZ činila 4,5 %, zatímco celorepublikový průměr byl 10,1 %\""
+      },
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Teoretická a praktická výuka jsou účinně propojovány, žáci získávají reálné dovednosti v oborech Veterinářství, Truhlářství a Lesní mechanizace.",
+        "evidence": "\"Teoretická a praktická výuka je účinně propojována v souladu s progresivní vizí školy\""
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Domov mládeže nabízí příkladnou nabídku zájmových činností na základě poptávky žáků, vedou je i zkušení starší žáci.",
+        "evidence": "\"příkladná nabídka zájmových činností na základě poptávky žáků a její efektivní využívání\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nižší efektivita teoretické výuky",
+        "detail": "Ve dvou třetinách hodin chybí diferenciace učiva, samostatná práce s informacemi a týmová spolupráce.",
+        "evidence": "\"Ve dvou třetinách hodin teoretických předmětů nebyla zaznamenána diferenciace učiva a činností podle možností jednotlivců\""
+      },
+      {
+        "tag": "Nedostatečná podpora žáků se speciálními potřebami",
+        "detail": "Podpora žáků s potřebou podpůrných opatření nebyla v hospitované výuce realizována v potřebném rozsahu.",
+        "evidence": "\"Podpora žáků s potřebou podpůrných opatření nebyla v hospitované výuce realizována v potřebném rozsahu\""
+      },
+      {
+        "tag": "Vyšší úrazovost",
+        "detail": "V posledních dvou letech měla škola vyšší míru úrazovosti než je republikový průměr, zejména při odborné praxi.",
+        "evidence": "\"V uplynulých dvou školních rocích měla škola vyšší míru úrazovosti, než je republikový průměr\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami během teoretické výuky?",
+      "Jaké jsou plány na zlepšení efektivity teoretické výuky a zavedení více skupinové práce?",
+      "Jak škola řeší vyšší míru úrazovosti a jaká bezpečnostní opatření zavádí?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a řemesla (Truhlářství, Lesní mechanizace, Veterinářství)",
+      "Studenti, kteří chtějí kvalitní přípravu na maturitní zkoušku s vysokou úspěšností",
+      "Žáci z regionu, kterým vyhovuje ubytování v domově mládeže s bohatou mimoškolní nabídkou"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami, kterým chybí dostatečná individuální podpora v teoretické výuce",
+      "Studenti preferující interaktivní a skupinové vyučování, protože převažuje frontální výuka",
+      "Žáci oboru Opravář lesnických strojů, kde jsou horší výsledky u závěrečných zkoušek"
+    ],
+    "plain_czech_summary": "Střední lesnická škola v Křivolkátu je zaměřená na praktické obory s dobrou reputací. Silnou stránkou jsou výborné výsledky u maturitní zkoušky a kvalitní propojení teorie s praxí. Domov mládeže nabízí bohatý program volného času. Slabinou je nižší efektivita teoretické výuky, kde chybí individuální přístup a skupinová práce. Škola také potřebuje zlepšit podporu žáků se speciálními potřebami. Vhodná pro prakticky zaměřené studenty, méně pro ty, kteří preferují interaktivní vyučování."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "2021/2022: 21,4 % neúspěšnosti (nad průměrem 14,2 %)",
+        "2023/2024: 4,5 % neúspěšnosti (pod průměrem 10,1 %)",
+        "2023/2024: všichni žáci maturitních oborů prospěli, téměř pětina s vyznamenáním"
+      ],
+      "evidence": "\"Ve školním roce 2023/2024 hrubá neúspěšnost ve společné části MZ činila 4,5 %, zatímco celorepublikový průměr byl 10,1 %\""
+    },
+    "absence": {
+      "trend": "Příznivý trend snižování",
+      "key_numbers": [
+        "2021/2022: cca 130 h na žáka",
+        "2023/2024: cca 110 h na žáka",
+        "Neomluvená absence: jednotlivci, nízké počty hodin"
+      ],
+      "evidence": "\"Zatímco ve školním roce 2021/2022 byla průměrná absence na žáka cca 130 h, v následujících dvou letech se ji podařilo snížit na cca 110 h\""
+    },
+    "support_services": [
+      "Výchovná poradkyně (zároveň kariérní poradkyně)",
+      "Školní psycholožka",
+      "Školní metodička prevence",
+      "Tým poskytuje poradenství žákům, zákonným zástupcům a pedagogům"
+    ],
+    "safety_climate": [
+      "Škola pravidelně poučuje žáky o bezpečnosti a ochraně zdraví",
+      "Vyšší míra úrazovosti v posledních dvou letech než je průměr",
+      "Úrazy zejména při odborné praxi a sportovních aktivitách",
+      "Škola vyhodnocuje příčiny a přijímá opatření ke zlepšení"
+    ],
+    "partnerships_practice": [
+      "Příkladná spolupráce se zřizovatelem (Středočeský kraj) a městysem Křivoklát",
+      "Partnerství s Lesy ČR a dalšími školami v regionu",
+      "Spolupráce s odborníky z praxe na aktualizaci odborné složky vzdělání",
+      "Praktická výuka probíhá v reálných podmínkách provozu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní čísla a citace. Slabší je pouze v některých technických pasážích s odbornou terminologií.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně se podpora žáků se speciálními potřebami bude zlepšovat - zpráva pouze konstatuje nedostatek",
+      "Příčiny vyšší úrazovosti nejsou detailně analyzovány, pouze zmíněny jako fakt",
+      "Není specifikováno, jaké konkrétní metody budou použity na zlepšení efektivity teoretické výuky"
+    ]
+  }
+}
+```

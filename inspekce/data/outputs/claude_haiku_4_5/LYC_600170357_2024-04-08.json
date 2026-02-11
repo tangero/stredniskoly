@@ -1,0 +1,114 @@
+{
+  "report_id": "LYC_600170357_2024-04-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:19:49.727743+00:00",
+  "run_finished_utc": "2026-02-09T16:20:16.374977+00:00",
+  "raw_file": "LYC_600170357_2024-04-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600170357_2024-04-08",
+    "school_profile": {
+      "school_type": "Střední škola technická a obchodní s obory: Mechanik seřizovač (4 roky), Obchodník (4 roky), Podnikání (2 roky nástavbové), Truhlář, Kadeřník, Elektrikář (s výučním listem)",
+      "inspection_period": "8. až 10. dubna 2024",
+      "school_change_summary": "Škola postupně realizuje koncepční změny 2022–2025. V roce 2023 otevřela obor Obchodník, od září 2024 spouští nový obor Technické lyceum. Vedení investuje do moderního vybavení dílen a výukových prostor."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Žáci dosahují výrazně lepších výsledků než průměr v ČR – v oboru Podnikání 5 % neúspěšnosti (ČR 32,5 %), Mechanik seřizovač 7,1 % (ČR 18,2 %).",
+          "evidence": "Hrubá neúspěšnost maturitních zkoušek 2023 významně lepší než celorepublikový průměr."
+        },
+        {
+          "tag": "Moderní vybavení a bezpečnost",
+          "detail": "Škola zajišťuje nadstandardní materiální podmínky v dílnách, moderní technologie a maximální bezpečnost žáků.",
+          "evidence": "Vedení školy reaguje na technologický vývoj, zajišťuje optimální vybavení dílen a výukových učeben."
+        },
+        {
+          "tag": "Spolupráce s praxí a zahraniční školou",
+          "detail": "Dlouhodobé partnerství se strojírenskými firmami, spolupráce s rakouskou školou a stipendia od budoucích zaměstnavatelů.",
+          "evidence": "Spolupráce s externími partnery v strojírenské oblasti, konverzační hodiny němčiny s rodilým mluvčím."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo aktivní výuka v teorii",
+          "detail": "Převládá frontální výuka s řízeným rozhovorem, kooperativní činnosti a aktivizační metody jsou aplikovány méně často.",
+          "evidence": "Hospitované hodiny ukazují, že aktivizující metody nejsou dostatečně využívány, zejména v teoretických předmětech."
+        },
+        {
+          "tag": "Slabé formativní hodnocení",
+          "detail": "Učitelé nedostatečně využívají formativní hodnocení a nediferencují úkoly podle schopností jednotlivých žáků.",
+          "evidence": "Prvky formativního hodnocení byly uplatněny sporadicky, podpora nadaných žáků byla zaznamenána výjimečně."
+        },
+        {
+          "tag": "Chybí prostor pro shrnutí lekcí",
+          "detail": "Často chybí čas na závěrečné shrnutí cílů hodiny, což ztěžuje zhodnocení učení a individuálního pokroku.",
+          "evidence": "Chybějící prostor pro shrnutí cílů žáky v závěru hodin neumožnil dostatečné zhodnocení proběhlé hodiny."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně budete zlepšovat aktivní metody výuky v teoretických předmětech?",
+        "Jaké konkrétní kroky plánujete pro lepší individuální podporu nadaných žáků?",
+        "Jak se budou lišit nové obory (Technické lyceum) od stávajících v přístupu k výuce?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické řemeslo a techniku, kteří chtějí kvalitní přípravu na konkrétní profesi",
+        "Studenti, kteří si cení moderního vybavení a bezpečného pracovního prostředí",
+        "Žáci motivovaní k účasti v odborných soutěžích a rozvoji praktických dovedností"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující velmi interaktivní a skupinovou výuku – zde převládá spíše frontální přístup",
+        "Studenti, kteří potřebují intenzivní individuální podporu a diferenciaci – toto je slabší stránka školy",
+        "Žáci s vyšší potřebou zpětné vazby a reflexe – závěry hodin nejsou vždy dostatečně shrnuty"
+      ],
+      "plain_czech_summary": "Střední škola v Dačicích je moderně vybavená technická škola se silným zaměřením na praxi. Žáci dosahují výborných výsledků maturit – výrazně lepších než průměr v Česku. Škola má dobré vztahy s firmami a zahraničními školami. Hlavní slabinou je, že výuka v teoretických předmětech není dostatečně aktivní a interaktivní. Učitelé by měli více pracovat s individuálními rozdíly mezi žáky a lépe využívat formativní hodnocení. Vhodná pro prakticky zaměřené studenty, méně vhodná pro ty, kteří preferují velmi interaktivní přístup."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazně pozitivní – výsledky školy jsou lepší než celorepublikový průměr",
+        "key_numbers": [
+          "Obor Podnikání: 5 % neúspěšnosti (ČR 32,5 %)",
+          "Obor Mechanik seřizovač: 7,1 % neúspěšnosti (ČR 18,2 %)",
+          "Systematické trojí testování nanečisto pro poslední ročníky"
+        ],
+        "evidence": "Hrubá neúspěšnost maturitních zkoušek 2023 je ve srovnání s danou skupinou oborů za ČR významně lepší."
+      },
+      "absence": {
+        "trend": "Pozitivní – škola zvládá míru absence účinnými opatřeními",
+        "key_numbers": [
+          "Bezodkladné řešení s žákem nebo zákonnými zástupci",
+          "Preventivní programy zařazované do výuky",
+          "Adaptační kurzy a externí odborníci"
+        ],
+        "evidence": "Škole se daří zvládat míru absence žáků účinnými opatřeními a preventivními programy."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje podporu všem aktérům, úzce spolupracuje s vyučujícími, žáky a asistentkou pedagoga",
+        "Doučování a individuální konzultace pro žáky před maturitními a závěrečnými zkouškami",
+        "Preventivní programy proti rizikovému chování, adaptační kurzy"
+      ],
+      "safety_climate": [
+        "Hospitované hodiny probíhaly v přátelské atmosféře, vyučující byli vstřícní a empatičtí",
+        "Žáci respektovali nastavená pravidla, vládla vzájemná důvěra",
+        "Maximální bezpečnost zajišťována v dílnách odborného výcviku, žáci důsledně dodržují zásady BOZP"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se smluvními partnery v strojírenské oblasti",
+        "Spolupráce se základními školami v kraji a zahraniční školou v Rakousku",
+        "Stipendia od budoucích zaměstnavatelů pro motivaci žáků",
+        "Příprava na profesní soutěže (KOVO Junior, Mistrovství ČR v oboru Truhlář)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Obsahuje konkrétní čísla, citace z hospitací a jasné závěry. Slabší stránky jsou formulovány konstruktivně. Jedinou překážkou je místy odborný jazyk inspekce, ale pro rodiče je obsah dostatečně srozumitelný.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o počtu žáků, kteří pokračují na vysoké škole – uvedeno jen 'menší počet'",
+        "Chybí konkrétní data o absenci – není uvedeno, jaká je aktuální míra absence",
+        "Není jasné, jak konkrétně se budou zlepšovat aktivní metody – doporučení jsou obecná"
+      ]
+    }
+  }
+}

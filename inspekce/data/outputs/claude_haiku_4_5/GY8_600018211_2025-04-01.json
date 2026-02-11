@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600018211_2025-04-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:39:33.503890+00:00",
+  "run_finished_utc": "2026-02-09T13:39:59.862780+00:00",
+  "raw_file": "GY8_600018211_2025-04-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600018211_2025-04-01",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté obory), 430 žáků v 16 třídách",
+      "inspection_period": "1. 4. 2025 – 4. 4. 2025",
+      "school_change_summary": "Změna ve vedení školy, posílení pedagogického sboru o asistenty pedagoga, zlepšení materiálně technických podmínek zejména rekonstrukcí počítačových učeben."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné maturitní výsledky",
+          "detail": "Žáci dosahují nejlepších výsledků v kraji, v matematice měli nejlepší výsledky ve Zlínském kraji v letech 2021/2022 a 2023/2024.",
+          "evidence": "V celorepublickém srovnání dosahují výborného hodnocení, vedení školy systematicky pracuje na zlepšování."
+        },
+        {
+          "tag": "Kvalitní pedagogický sbor",
+          "detail": "Dlouhodobě vysoký podíl odborně kvalifikovaných pedagogů, asistenti pedagoga pro žáky se speciálními potřebami.",
+          "evidence": "Pedagogický tým vhodně posílen, plán profesního rozvoje respektuje strategické cíle i potřeby jednotlivých učitelů."
+        },
+        {
+          "tag": "Bohaté partnerství a aktivity",
+          "detail": "Spolupráce se sportovními, kulturními a vzdělávacími institucemi, výměnné pobyty v Německu a Polsku, školní divadlo.",
+          "evidence": "Žáci získali čelní místa v krajských soutěžích, ve školním roce 2022/2023 se stali mistry světa v záznamu textu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečné využívání informačních zdrojů",
+          "detail": "Žáci jen zřídka využívají různé informační zdroje při plnění úkolů ve výuce.",
+          "evidence": "Inspekce označila jako slabou stránku, vedení školy má zaměřit kontrolní činnost na účelné využívání zdrojů."
+        },
+        {
+          "tag": "Nejednotná kvalita výuky biologie",
+          "detail": "Některé hodiny vedené frontální formou bez optimálních podmínek pro iniciativu žáků, jiné s lepší interakcí.",
+          "evidence": "V některých hodinách chyběly podněty pro zvýšení iniciativy, v jiných byl větší prostor pro spolupráci a diskusi."
+        },
+        {
+          "tag": "Chybějící závěrečná reflexe",
+          "detail": "Kromě češtiny, některých hodin cizích jazyků a biologie chybí závěrečná reflexe žáků o vlastním pokroku.",
+          "evidence": "Omezuje možnost žáků zhodnotit svůj vlastní studijní pokrok a identifikovat oblasti ke zlepšení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením? Jaké konzultační hodiny a podpůrná opatření nabízíte?",
+        "Jaké jsou možnosti zapojení do mezinárodních výměnných pobytů a jak se na nich podílí žáci různých úrovní?",
+        "Jak škola pracuje s informačními zdroji a digitálními technologiemi ve výuce? Mohu vidět konkrétní příklady?"
+      ],
+      "who_school_fits": [
+        "Ambiciózní žáci zaměření na vysoké studijní výsledky a přípravu na maturitu – škola dosahuje nejlepších výsledků v kraji.",
+        "Žáci se zájmem o mezinárodní spolupráci a jazykové vzdělání – bohaté výměnné pobyty a jazykové zájezdy.",
+        "Žáci se speciálními vzdělávacími potřebami – kvalifikovaný tým poradenských služeb a asistenti pedagoga."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více samostatné práce s různými informačními zdroji – inspekce upozornila na jejich nedostatečné využívání.",
+        "Žáci, kteří se lépe učí interaktivně a potřebují pravidelnou zpětnou vazbu – některé vyučovací hodiny chybí závěrečná reflexe.",
+        "Žáci s nižší motivací – přestože škola nabízí podporu, vysoká úroveň gymnázia může být náročná."
+      ],
+      "plain_czech_summary": "Gymnázium Rožnov pod Radhoštěm je kvalitní školou s výborným renomé. Žáci dosahují nejlepších výsledků v maturitních zkouškách v kraji, zejména v matematice a češtině. Škola má kvalitní pedagogy, bohaté partnerství se zahraničními školami a nabízí mnoho aktivit. Vedení je stabilní a podporuje iniciativy žáků. Jedinou slabší stránkou je, že žáci málo pracují s různými informačními zdroji a někdy chybí reflexe jejich vlastního pokroku. Škola je vhodná pro ambiciózní žáky zaměřené na vysoké výsledky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborný, zlepšující se tendence",
+        "key_numbers": [
+          "V matematice nejlepší výsledky ve Zlínském kraji v r. 2021/2022 a 2023/2024",
+          "V češtině a angličtině pravidelně čelní pozice v kraji",
+          "Všechny společné části maturitní zkoušky dosahují výborného hodnocení v celorepublickém srovnění"
+        ],
+        "evidence": "Vedení školy systematicky pracuje s výsledky, analyzuje je a přijímá účinná opatření k zlepšení."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se absence věnuje, ale konkrétní data nejsou uvedena."
+      },
+      "support_services": [
+        "Kvalifikovaný tým: výchovná a kariérová poradkyně, dvě metodičky prevence, školní psycholožka",
+        "Komise pro řešení šikany zaměřená na včasné rozpoznání a účinné řešení výchovných problémů",
+        "Konzultační hodiny jednotlivých pedagogů pro žáky ohrožené školním neúspěchem",
+        "Cílená individuální podpora pro žáky se speciálními vzdělávacími potřebami prostřednictvím pedagogické intervence"
+      ],
+      "safety_climate": [
+        "Funkční a účinné preventivní mechanismy v oblasti bezpečnosti a ochrany zdraví minimalizující riziko úrazů",
+        "Aktivní podpora zdravého životního stylu prostřednictvím nutričně vyvážené stravy",
+        "Pravidelné sledování klimatu ve třídách formou dotazníkového šetření",
+        "Vstřícné a přátelské prostředí podporující bezpečnost a motivaci žáků"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se sportovními, kulturními, vzdělávacími a sociálními organizacemi",
+        "Výměnné pobyty s partnerskými školami v Německu a Polsku",
+        "Kooperace s vysokými školami pro rozvoj osobnostního potenciálu žáků",
+        "Spolupráce s místními firmami na zavádění inovativních přístupů a modernizaci vybavení",
+        "Aktivní zapojení do kulturního a společenského života města Rožnov pod Radhoštěm"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky, s jasnou strukturou. Obsahuje konkrétní příklady a evidence. Mírně snižuje srozumitelnost odborná terminologie a dlouhé věty v některých pasážích.",
+      "uncertainty_notes": [
+        "Absence konkrétních čísel o absenci žáků – zpráva se jí věnuje, ale data nejsou uvedena.",
+        "Nejsou specifikovány konkrétní procenta žáků s vyznamenáním nebo neprospívajících.",
+        "Chybí informace o počtu žáků, kteří se účastní jednotlivých aktivit a soutěží."
+      ]
+    }
+  }
+}

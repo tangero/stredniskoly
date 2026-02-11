@@ -1,0 +1,112 @@
+{
+  "report_id": "GY8_600014312_2024-11-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:10:05.336509+00:00",
+  "run_finished_utc": "2026-02-09T16:10:28.582888+00:00",
+  "raw_file": "GY8_600014312_2024-11-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014312_2024-11-07",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté studium)",
+      "inspection_period": "7.–8. listopadu a 11.–12. listopadu 2024",
+      "school_change_summary": "Škola prošla revitalizací prostor, modernizací techniky a zvýšením počtu žáků. Nově vybudovány šatny, bezbariérový přístup a relaxační zóny. Pořízeny digitální technologie a moderní didaktická technika."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Poradenské služby",
+          "detail": "Komplexní podpora žáků zajišťovaná školním psychologem, výchovným poradcem a metodičkou prevence v součinnosti s třídními učiteli.",
+          "evidence": "Tým efektivně spolupracuje a poskytuje cílenou podporu při řešení vzdělávacích a výchovných problémů."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují významných úspěchů v recitačních soutěžích, cizojazykových konverzacích a olympiádách na regionální i celorepublikové úrovni.",
+          "evidence": "Výborné výsledky v Ars Poetica a cizojazykových soutěžích s účastí v celorepublikových kolech."
+        },
+        {
+          "tag": "Kvalitní vedení",
+          "detail": "Dobře nastavený systém řízení s jasně stanovenou odpovědností jednotlivých pracovníků a pravidelnou hospitační činností.",
+          "evidence": "Vedení školy má představu, jak zvyšovat kvalitu vzdělávání a předává poznatky pedagogickému sboru."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá diferenciace výuky",
+          "detail": "Chybí možnost výběru úloh s různou kognitivní náročností, nadaní žáci nejsou dostatečně podporováni.",
+          "evidence": "Absence diferencované výuky byla společným znakem většiny vyučovacích hodin."
+        },
+        {
+          "tag": "Nižší výsledky maturity",
+          "detail": "Průměrné percentilové umístění žáků u společné části maturitní zkoušky je nižší než průměr České republiky.",
+          "evidence": "Úspěšnost ve společné části maturitní zkoušky je nižší než průměrné percentilové umístění v ČR."
+        },
+        {
+          "tag": "Nejednotná kvalita výuky",
+          "detail": "Výuka českého jazyka v nižších ročnících je aktivní a efektivní, ve vyšších ročnících stereotypní a založená pouze na výkladu.",
+          "evidence": "Ve vyšších ročnících byla výuka založena pouze na výkladu pedagoga bez aktivního zapojení ostatních žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a nabízí jim úkoly s různou náročností?",
+        "Jaké konkrétní kroky podnikne škola na zlepšení výsledků v maturitní zkoušce?",
+        "Jak se liší přístup k výuce v nižších a vyšších ročnících a jak se to změní?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení kvalitního poradenství a psychologické podpory při studiu",
+        "Talentovaní žáci se zájmem o soutěže a reprezentaci školy v uměleckých aktivitách",
+        "Žáci, kterým vyhovuje tradičnější přístup k výuce s důrazem na odbornost obsahu"
+      ],
+      "who_should_be_cautious": [
+        "Nadaní žáci, kteří potřebují individualizovanou výuku a úkoly na míru jejich schopnostem",
+        "Žáci, kteří se chystají na maturitu a chtějí dosáhnout vysokých výsledků v celostátním srovnání",
+        "Žáci, kteří se učí lépe aktivními metodami a potřebují rozmanitost ve vyučovacích hodinách"
+      ],
+      "plain_czech_summary": "Gymnázium Otrokovice je dobře vedená škola s kvalitním pedagogickým sborem a výborným poradenským zázemím. Žáci dosahují dobrých výsledků a úspěchů v soutěžích. Škola má moderní vybavení a podporuje aktivní participaci žáků. Hlavní slabinou je nedostatečná podpora nadaných žáků a nižší výsledky v maturitní zkoušce. Výuka není dostatečně diferencovaná a chybí rozmanitost metod, zejména ve vyšších ročnících."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírně negativní",
+        "key_numbers": [
+          "2022/2023: všichni žáci uspěli",
+          "2023/2024: jeden žák neuspěl",
+          "Percentilové umístění nižší než průměr ČR"
+        ],
+        "evidence": "Ve školním roce 2023/2024 jeden žák u maturitní zkoušky neuspěl. Úspěšnost ve společné části je nižší než průměrné percentilové umístění v ČR."
+      },
+      "absence": {
+        "trend": "Neuvedeno",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje konkrétní údaje o absenci žáků."
+      },
+      "support_services": [
+        "Školní psycholožka, výchovný poradce a metodička prevence pracují v koordinovaném týmu",
+        "Kariérové poradenství ve spolupráci s odbornými institucemi",
+        "Individuální konzultace pro žáky závěrečných ročníků",
+        "Osobnostní kurzy pro nově nastupující žáky"
+      ],
+      "safety_climate": [
+        "Systematické upozorňování žáků na možná rizika",
+        "Průběžné poučování o bezpečném chování, zejména při sportovních aktivitách",
+        "Kvalitně propracovaná strategie prevence zaměřená na podporu ohrožených žáků",
+        "Včasná identifikace žáků s rizikem školního neúspěchu"
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce s městem Otrokovice a místními organizacemi",
+        "Partnerství s místními mateřskými a základními školami",
+        "Dlouhodobé mezinárodní partnerství se školou na Slovensku",
+        "Pořádání festivalu gymnaziálních souborů s mezinárodní účastí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Chybí konkrétní údaje o absenci a některých dalších metrikách.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní procenta nebo počty žáků v jednotlivých kategoriích podpory",
+        "Nejsou uvedeny konkrétní údaje o absenci a její vývoji",
+        "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými předměty a ročníky"
+      ]
+    }
+  }
+}

@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY8_691003009_2025-04-16",
+  "school_profile": {
+    "school_type": "Gymnázium a grafická střední odborná škola (kombinovaná střední škola s domovem mládeže)",
+    "inspection_period": "16. dubna až 5. května 2025",
+    "school_change_summary": "Škola změnila název, snížila počet budov, rozšířila vedení o jednoho zástupce a otevřela nový čtyřletý obor Fotograf. Došlo k výraznému zlepšení materiálních podmínek pro praktickou výuku a domov mládeže."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborný výcvik na vysoké úrovni",
+        "detail": "Kvalitní organizace praktické výuky se střídáním skupin žáků zajišťuje dostatek času na osvojení dovedností a učitelé vedou žáky k samostatnosti a odpovědnosti.",
+        "evidence": "Dobře fungující organizace odborného výcviku, učitelé průběžně kontrolují správnost úkolů a vedou žáky k nalézání chyb."
+      },
+      {
+        "tag": "Spolupráce s firmami a partnery",
+        "detail": "Dlouhodobá spolupráce se sociálními partnery a firmami, kde žáci absolvují odborný výcvik, podporuje jejich praktické uplatnění.",
+        "evidence": "Různé akce jako grafická soutěž, mobility v programu Erasmus+, pracovní stáže v zahraničí."
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Nadstandardní kvalita poradenských služeb zajišťovaných výchovným poradcem, metodikem prevence a kariérovou poradkyní.",
+        "evidence": "Nízká četnost problémových případů, efektivní řešení vlastními nástroji nebo ve spolupráci s externími odborníky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká diferenciace v teoretické výuce",
+        "detail": "Učitelé málo přizpůsobují náročnost úkolů různým schopnostem žáků, což omezuje učební pokrok nadanějších i slabších studentů.",
+        "evidence": "Ve velké většině navštívených hodin nebyla zaznamenána diferenciace náročnosti zadávaných úkolů."
+      },
+      {
+        "tag": "Málo aktivní metody výuky",
+        "detail": "Převažuje frontální výuka s minimálním využitím skupinové práce, vzájemného hodnocení a sebehodnocení žáků.",
+        "evidence": "Převažovala frontální forma výuky občas vedená až přednáškovou metodou, zpětnou vazbu poskytovali pouze sami učitelé."
+      },
+      {
+        "tag": "Problémy s matematikou",
+        "detail": "Matematika vykazuje horší výsledky než ostatní předměty, což vyžaduje analýzu příčin a zlepšení metod výuky.",
+        "evidence": "Příležitostí k rozvoji je analýza důvodů horších výsledků vzdělávání v matematice oproti ostatním předmětům."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadanější žáky a jak se liší přístup k žákům se slabšími výsledky?",
+      "Jaké jsou plány na zlepšení výuky matematiky a jak se to bude odrážet v metodách vyučování?",
+      "Jak se škola snaží motivovat žáky k aktivnější účasti v hodinách a k sebehodnocení svého pokroku?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a odborné vzdělání v grafice, fotografii nebo reprodukční grafice",
+      "Studenti, kteří si cení kvalitního vybavení a moderních technologií pro praktickou výuku",
+      "Žáci z vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže s pestrým programem volnočasových aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s matematickými problémy by měli vědět, že matematika vykazuje horší výsledky a výuka není dostatečně diferencovaná",
+      "Studenti preferující aktivní a interaktivní výuku mohou být zklamáni převahou frontální výuky v teoretických předmětech",
+      "Nadaní žáci, kterým chybí dostatečná diferenciace a individuální přístup v teoretické výuce"
+    ],
+    "plain_czech_summary": "Gymnázium a grafická SOŠ Přelouč je moderní škola s výborným vybavením pro praktickou výuku a domovem mládeže. Silnou stránkou je kvalitní odborný výcvik a spolupráce s firmami. Poradenské služby jsou na vysoké úrovni. Slabinou je málo aktivní a diferencovaná teoretická výuka, kde převažuje frontální přístup. Matematika vykazuje horší výsledky. Škola je vhodná pro žáky zaměřené na praktické obory, ale měla by zlepšit metody výuky teoretických předmětů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dobré výsledky s postupným zlepšením",
+      "key_numbers": [
+        "Gymnázium 2024: 26 maturantů, 1 neprospěl, 10 s vyznamenáním",
+        "Odborné vzdělání 2024: 21 maturantů, 2 nepřipuštěni, 4 neprospěli, 15 zvládlo",
+        "Závěrečné zkoušky: 16 žáků, 4 neuspěli"
+      ],
+      "evidence": "Výsledky maturitní zkoušek jsou dobré, u žáků odborného vzdělávání byly výsledky lepší nebo srovnatelné s ČR."
+    },
+    "absence": {
+      "trend": "Pozitivní - nízké počty zameškaných hodin",
+      "key_numbers": [
+        "Relativně nízké počty zameškaných hodin ve školním roce 2023/2024",
+        "Nízká četnost záškoláctví"
+      ],
+      "evidence": "Pozitivním zjištěním jsou relativně nízké počty zameškaných hodin, což svědčí o dobrých preventivních aktivitách."
+    },
+    "support_services": [
+      "Výchovný poradce, metodik prevence a kariérová poradkyně pod vedením zástupkyně ředitele",
+      "Externí školní psycholožka doplňující práci školního poradenského pracoviště",
+      "Preventivní programy pro adaptaci nových žáků a tvorbu třídních pravidel"
+    ],
+    "safety_climate": [
+      "Žáci dodržují zásady bezpečnosti při práci na smluvních pracovištích i ve školních odborných učebnách",
+      "Vedení školy využívá dotazník k získání přehledu o školním klimatu",
+      "Kázeňská opatření jsou vhodně využívána jen v zásadnějších situacích, převažují pochvaly a ocenění"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se sociálními partnery a firmami pro odborný výcvik",
+      "Mobility žáků v programu Erasmus+ včetně pracovních stáží v zahraničí",
+      "Spolupráce s úřadem práce na kariérovém poradenství a uplatnění absolventů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, jasně rozlišuje silné a slabé stránky. Konkrétní příklady z pozorovaných hodin a číselné údaje usnadňují pochopení. Některé pasáže jsou však technicky náročnější.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní procenta úspěšnosti v jednotlivých oborech, pouze popisuje je kvalitativně",
+      "Není jasné, jak dlouho trvá zlepšování situace s internetovým připojením v budově praktického vyučování",
+      "Chybí konkrétní data o počtu žáků s vysokou absencí, kteří školu nedokončili"
+    ]
+  }
+}
+```

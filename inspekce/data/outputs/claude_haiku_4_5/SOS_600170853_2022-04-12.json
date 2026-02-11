@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600170853_2022-04-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:04:30.735081+00:00",
+  "run_finished_utc": "2026-02-09T17:04:57.905986+00:00",
+  "raw_file": "SOS_600170853_2022-04-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170853_2022-04-12",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola stavební s domovem mládeže a školní jídelnou",
+      "inspection_period": "12. dubna až 9. května 2022",
+      "school_change_summary": "Od září 2020 škola umožňuje žákům oboru Operátor dřevařské výroby absolvovat také závěrečnou zkoušku a získat výuční list. Pokračuje zkvalitnění materiálních podmínek ve spolupráci se zřizovatelem."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vedení a modernizace",
+          "detail": "Ředitelka aktivně zlepšuje materiálně-technické podmínky a modernizuje areál školy.",
+          "evidence": "Vedení školy aktivně usiluje o zkvalitňování materiálních podmínek a zapojením do projektů se daří zázemí postupně modernizovat."
+        },
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Funkční systém spolupráce se sociálními partnery přispívá k získávání odborných kompetencí a profesnímu uplatnění.",
+          "evidence": "Škola je členem Hospodářské komory ČR, Asociace středních průmyslových škol a dalších institucí, je autorizovanou školou v profesních kvalifikacích."
+        },
+        {
+          "tag": "Praktická výuka",
+          "detail": "Odborný výcvik probíhá efektivně s aktivním přístupem učitelů a dobrou organizací.",
+          "evidence": "Výuka na pracovištích školy, stavbách i u partnerů s potřebným vybavením, žáci aktivně plnili úkoly a komunikovali o své práci."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita žáků ve výuce",
+          "detail": "Převažuje frontální výuka s dominantním postavením učitele, žáci jsou spíše pasivní.",
+          "evidence": "V mnoha hodinách převažovala frontální výuka s dominantním postavením učitele, který předával hotové poznatky, což vedlo k pasivitě žáků."
+        },
+        {
+          "tag": "Nižší úspěšnost u maturity",
+          "detail": "Výsledky maturitních zkoušek jsou nižší ve srovnání se školami podobného zaměření.",
+          "evidence": "Úspěšnost žáků u maturitních zkoušek byla od poslední inspekce spíše nižší ve srovnání se školami obdobného zaměření."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Vyšší absence včetně neomluvených absencí negativně ovlivňuje výsledky žáků.",
+          "evidence": "Neúspěšnost žáků je do jisté míry ovlivňována jejich vyšší absencí při výuce, včetně neomluvených absencí."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s vyšší absencí a jaké má nástroje k jejímu snižování?",
+        "Jaké konkrétní kroky podniká škola ke zlepšení výsledků u maturitních zkoušek?",
+        "Jak se škola zaměřuje na aktivizaci žáků a rozvoj jejich samostatnosti v hodinách?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory stavebnictví, truhlářství a tesařství s jasnou představou o budoucím povolání",
+        "Studenti, kteří se lépe učí praxí a potřebují propojení teorie s reálnými stavbami a pracovními procesy",
+        "Žáci ze vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže se sportovními aktivitami"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuálního přístupu a diferenciace – ta je zatím využívána jen ojediněle",
+        "Studenti se speciálními vzdělávacími potřebami, protože individualizace ve výuce je zaznamenána jen ojediněle",
+        "Uchazeči, kteří se lépe učí aktivními metodami a diskusí – škola se na to teprve zaměřuje"
+      ]
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nižší úspěšnost než u srovnatelných škol",
+        "key_numbers": [
+          "Školní rok 2020/2021: vyšší hrubá neúspěšnost u maturitních zkoušek",
+          "Žáci v jarním/podzimním termínu byli zpravidla úspěšní, nezvládli jen ojediněle",
+          "Závěrečné zkoušky: po podzimních opravách neuspěl jediný žák, třetina s vyznamenáním"
+        ],
+        "evidence": "Úspěšnost u maturitních zkoušek byla od poslední inspekce spíše nižší ve srovnání se školami obdobného zaměření."
+      },
+      "absence": {
+        "trend": "Vyšší absence včetně neomluvených",
+        "key_numbers": [
+          "Vyšší absence při výuce ovlivňuje neúspěšnost žáků",
+          "Vysoký počet zameškaných hodin řešen ve výchovných komisích",
+          "Absence je jedním z faktorů ovlivňujících prospěch"
+        ],
+        "evidence": "Neúspěšnost žáků je do jisté míry ovlivňována jejich vyšší absencí při výuce, včetně neomluvených absencí."
+      },
+      "support_services": [
+        "Výchovná poradkyně koordinuje práci se žáky se speciálními vzdělávacími potřebami a nabízí konzultace pedagogům",
+        "Metodik prevence vytváří plán prevence a zajišťuje přednášky a akce v oblasti prevence",
+        "Doučování a individuální konzultace pro žáky ohrožené školní neúspěšností",
+        "Adaptační aktivity na konci školního roku pro podporu vztahů v třídě"
+      ],
+      "safety_climate": [
+        "Otevřená komunikace mezi vedením, žáky, pedagogy a partnery podporuje příznivé klima",
+        "Domov mládeže vytváří pozitivní přátelské prostředí nahrazující rodinné prostředí",
+        "Vychovatelé spolupracují s ostatními pedagogy a řeší problémy ubytovaných žáků",
+        "Pochvaly a kázeňská opatření jsou vhodně a smysluplně využívána"
+      ],
+      "partnerships_practice": [
+        "Členství v Hospodářské komoře ČR, Asociaci středních průmyslových škol, Cechu suchých staveb",
+        "Autorizovaná škola v profesních kvalifikacích",
+        "Spolupráce se Sdružením rodičů a přátel školy a školskou radou",
+        "Účast žáků v odborných soutěžích (SKILL, Řemeslo doma) s dobrými výsledky",
+        "Praktická výuka na stavbách, u smluvních partnerů a v reálném prostředí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však delší a složitější, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Přesné číselné údaje o absenci nejsou v textu uvedeny, pouze kvalitativní popis",
+        "Konkrétní procenta úspěšnosti u maturity nejsou specifikována, pouze srovnání se školami podobného zaměření",
+        "Počet začínajících učitelů bez pedagogického studia není přesně uveden"
+      ]
+    }
+  }
+}

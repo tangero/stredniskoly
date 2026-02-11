@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "GY6_600017443_2024-10-01",
+  "school_profile": {
+    "school_type": "Jazykové gymnázium (čtyřleté a šestileté obory)",
+    "inspection_period": "1. 10. 2024 – 4. 10. 2024",
+    "school_change_summary": "Od poslední inspekce (2019/2020) byly inovovány školní vzdělávací programy, zlepšila se spolupráce pedagogů a materiální podmínky. Škola se od 2023/2024 účastní pokusného ověřování kombinované výuky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Žáci dlouhodobě dosahují lepších výsledků než průměr v ČR, každoročně 100% úspěšnost u maturit.",
+        "evidence": "97 % absolventů pokračuje na vysokých školách, výsledky dlouhodobě lepší než průměr oboru v ČR."
+      },
+      {
+        "tag": "Kvalitní výuka jazyků",
+        "detail": "Výuka probíhá v cílových jazycích s vysokou úrovní rozvoje řečových dovedností.",
+        "evidence": "Žáci prokazují velmi vysokou úroveň jazykových dovedností, jsou úspěšní v certifikovaných zkouškách."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Četné kroužky, soutěže, projekty a aktivity podporují osobnostní rozvoj.",
+        "evidence": "Žáci reprezentují školu na regionální, národní i mezinárodní úrovni, zapojeni v programu Cena vévody z Edinburghu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší sebehodnocení žáků",
+        "detail": "Žáci se málo učí sami sebe hodnotit a reflektovat svou práci.",
+        "evidence": "Sebehodnocení a vzájemné hodnocení je zařazováno jen minimálně, chybí předem známá kritéria."
+      },
+      {
+        "tag": "Nedostatky v kontrolním systému",
+        "detail": "Škola nedostatečně ověřuje, zda přijatá opatření skutečně fungují.",
+        "evidence": "Kontrolní systém vykazuje dílčí nedostatky v ověřování účinnosti přijatých opatření."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá výuka jazyků a jaké jsou možnosti jazykových certifikátů?",
+      "Jaké jsou podmínky pro žáky se speciálními vzdělávacími potřebami a jak je škola podporuje?",
+      "Jak se škola připravuje na vysoké školy a jaké jsou možnosti volitelných předmětů?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci",
+      "Talentovaní studenti s ambicí na vysoké školy",
+      "Žáci hledající bohatou mimoškolní nabídku a osobnostní rozvoj"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více podpory v sebereflexi a vlastním hodnocení",
+      "Rodiny očekávající individuální přístup k žákům se speciálními potřebami (kapacita omezená)"
+    ],
+    "plain_czech_summary": "Jazykové gymnázium Pavla Tigrida je kvalitní škola se silným zaměřením na jazyky. Žáci dosahují výborných výsledků u maturit a pokračují na vysokých školách. Výuka je aktivní, učitelé jsou dobře vedeni a škola nabízí spoustu mimoškolních aktivit. Slabší stránkou je, že žáci se málo učí sami sebe hodnotit. Škola má také drobné nedostatky v kontrole, zda její opatření skutečně fungují."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě pozitivní",
+      "key_numbers": [
+        "100% úspěšnost u maturit každoročně",
+        "Výsledky lepší než průměr stejného oboru v ČR",
+        "97 % absolventů pokračuje na vysokých školách"
+      ],
+      "evidence": "Ve společné části maturitní zkoušky jsou výsledky dlouhodobě lepší než průměr, stoprocentní úspěšnost při ukončování."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Neúspěšnost žáků nižší než 1 % ve školním roce 2023/2024"
+      ],
+      "evidence": "Žáci vykazují dobré studijní výsledky, neúspěšnost nižší než jedno procento."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště zajišťuje poradenské a konzultační služby",
+      "Metodická podpora pedagogům při řešení klimatu tříd a vzdělávacích obtíží",
+      "Strategie předcházení školní neúspěšnosti",
+      "Individuální vzdělávací plány pro žáky se speciálními potřebami",
+      "On-line schránka důvěry pro žáky"
+    ],
+    "safety_climate": [
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování a ochrany zdraví",
+      "Nové třídy se účastní adaptačních kurzů",
+      "Třídní učitelé cíleně sledují klima tříd, vedeny pravidelné třídnické hodiny",
+      "Negativní projevy v chování jsou aktivně řešeny ve spolupráci se zákonnými zástupci"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s externími partnery v oblasti prevence a duševního zdraví",
+      "Partnerství se zahraničními školami, výměnné pobyty a zahraniční stáže",
+      "Projekty: pokusné ověřování kombinované výuky, TPA Inovační centrum",
+      "Sdružení rodičů a přátel gymnázia finančně podporuje činnosti",
+      "Pořádání celostátní konference pro učitele a mezinárodních soutěží"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní čísla o absencích a více detailů o některých aspektech.",
+    "uncertainty_notes": [
+      "Absence není v textu detailně specifikována, pouze neúspěšnost žáků",
+      "Počet žáků se speciálními potřebami je nízký (14), není jasné, jak je to vzhledem k velikosti školy (507 žáků)",
+      "Kontrolní systém má nedostatky, ale není jasné, jak vážné jsou a jak je to řešeno"
+    ]
+  }
+}
+```

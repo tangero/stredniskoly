@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY6_600018199_2022-11-01",
+  "school_profile": {
+    "school_type": "Střední škola Kostka s.r.o. - soukromá škola s 4 obory: Ekonomika a podnikání, Předškolní a mimoškolní pedagogika, Pedagogické lyceum a Gymnázium",
+    "inspection_period": "1. listopadu 2022 až 4. listopadu 2022",
+    "school_change_summary": "Škola zaznamenala výrazný růst: počet žáků se zvýšil na 732 v 26 třídách, byla realizována přístavba nového objektu, modernizovány učebny s novými technologiemi a rozšířena vzdělávací nabídka."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství a praxe",
+        "detail": "Škola má dlouhodobou spolupráci se sociálními partnery, firmami a školami v ČR i zahraničí, která efektivně podporuje praktickou výuku a uplatnění absolventů.",
+        "evidence": "Praktická výuka zajišťována ve smluvních pracovištích i na pracovištích zřizovatele s vedením učitelů a instruktorů."
+      },
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Škola má velmi dobré a moderní materiální podmínky s kvalitním vybavením učeben, tělovýchovy a informačních technologií.",
+        "evidence": "Nové i stávající učebny vybaveny moderními technologiemi, kvalitní zázemí pro tělovýchovu, moderní domov mládeže s jídelnou."
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Škola systematicky identifikuje potřeby žáků a poskytuje doučování, konzultace a individuální pomoc včetně spolupráce se speciálními poradenskými zařízeními.",
+        "evidence": "Od roku 2022/2023 zavedeny povinné konzultace pro žáky s horším prospěchem, efektivně uplatňována vlastní strategie podpory."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky v jednom oboru",
+        "detail": "Obor Předškolní a mimoškolní pedagogika dlouhodobě vykazuje výrazně horší výsledky v maturitní zkoušce než je republikový průměr.",
+        "evidence": "Výsledky v společné části maturitní zkoušky vždy výrazně zaostávaly za celorepublikovým průměrem, přestože v profilové části jsou výborné."
+      },
+      {
+        "tag": "Málo aktivní výuka",
+        "detail": "Výuka často postrádá skupinovou práci, spolupráci žáků a aktivizující metody, což omezuje jejich zapojení a sociální rozvoj.",
+        "evidence": "Škole se zatím jen v malé míře daří zařazovat metody podporující spolupráci žáků a jejich aktivní zapojení do výuky."
+      },
+      {
+        "tag": "Nedostatečné využití technologií",
+        "detail": "Přestože má škola moderní vybavení, není v žádoucím rozsahu využíváno ve výuce.",
+        "evidence": "Digitální technika nebyla v žádoucím rozsahu využita ve výuce, zejména v cizích jazycích a při zdokonalování poslechových dovedností."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší slabší výsledky maturitní zkoušky u oboru Předškolní a mimoškolní pedagogika a jaká opatření jsou plánována?",
+      "Jaké konkrétní metody aktivní výuky a skupinové práce se budou více využívat v jednotlivých předmětech?",
+      "Jak se bude zlepšovat využívání moderního vybavení a digitálních technologií v běžné výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na pedagogiku a práci s dětmi - obor má výborné výsledky v profilové části maturitní zkoušky a kvalitní praktickou přípravu",
+      "Žáci s ambicemi v ekonomii a podnikání - obor dosahuje lepších výsledků než republikový průměr a nabízí tvorbu reálných firem",
+      "Žáci, kteří potřebují individuální podporu - škola má kvalitní poradenské služby a systematickou péči o slabší žáky"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků oboru Předškolní a mimoškolní pedagogika by měli počítat s tím, že výsledky v maturitní zkoušce jsou dlouhodobě slabší než průměr",
+      "Žáci, kteří se učí lépe v interaktivním prostředí se skupinovou prací - výuka je zatím více frontální a méně aktivizující",
+      "Žáci, kteří se spoléhají na digitální výuku - přestože je vybavení moderní, není dosud dostatečně využíváno"
+    ],
+    "plain_czech_summary": "Střední škola Kostka je dynamicky se rozvíjející soukromá škola s velmi dobrým materiálním vybavením a silnými vazbami na praxi. Nabízí čtyři obory s maturitou, z nichž ekonomika a gymnázium dosahují nadprůměrných výsledků. Škola má kvalitní poradenské služby a péči o slabší žáky. Hlavní slabinou je dlouhodobě nižší úroveň výsledků v oboru pedagogika a nedostatečné využívání aktivizujících metod výuky. Vhodná pro žáky s jasným zaměřením a schopností samostudia."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Rozdílná úroveň mezi obory - ekonomika a gymnázium nad průměrem, pedagogika pod průměrem",
+      "key_numbers": [
+        "Ekonomika a podnikání: vždy lepší než republikový průměr",
+        "Gymnázium: vždy lepší než republikový průměr",
+        "Předškolní a mimoškolní pedagogika: výrazně pod průměrem v společné části, výborně v profilové části"
+      ],
+      "evidence": "Výsledky maturitní zkoušky v posledních třech letech vykazovaly rozdílnou úroveň u jednotlivých oborů vzdělání."
+    },
+    "absence": {
+      "trend": "Žáci se zvýšenou absencí jsou vedením školy systematicky sledováni a podporováni",
+      "key_numbers": [
+        "Žáci se slabším prospěchem a zvýšenou absencí byli ve škole evidováni",
+        "Poskytována podpora formou doučování a konzultací"
+      ],
+      "evidence": "Vedení školy i pedagogičtí pracovníci se zabývali neúspěchy a problémy v učení těchto žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně - systematická péče o žáky se speciálními vzdělávacími potřebami a metodická pomoc pedagogům",
+      "Metodička prevence - součást poradenských služeb na velmi dobré úrovni",
+      "Doučování a konzultace v jednotlivých předmětech - zejména pro žáky s horším prospěchem",
+      "Povinné konzultace od roku 2022/2023 pro žáky oboru Předškolní a mimoškolní pedagogika zaměřené na maturitní předměty"
+    ],
+    "safety_climate": [
+      "Vedení školy klade patřičný důraz na bezpečnost prostředí školy",
+      "Škola pravidelně vyhodnocuje bezpečnostní rizika",
+      "Průběžně zajišťuje informovanost a poučení žáků k bezpečnému chování",
+      "Domov mládeže nabízí příjemné a moderní prostředí s péčí vychovatelů"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se sociálními partnery (firmami) pro praktickou výuku",
+      "Kontakty se školami a pedagogickými institucemi v regionu i mimo něj",
+      "Mezinárodní výměnné programy a projekty",
+      "Spolupráce se základními školami - příprava aktivit pro jejich žáky",
+      "Účast v odborných soutěžích ve spolupráci se školami stejného zaměření"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasným oddělením silných a slabých stránek. Některé pasáže jsou však delší a obsahují více úřednického stylu, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní počty žáků v jednotlivých oborech, pouze celkový počet 732 žáků",
+      "Nejsou uvedeny konkrétní procenta úspěšnosti v maturitní zkoušce, pouze kvalitativní srovnání s průměrem",
+      "Chybí informace o počtu pedagogů a jejich kvalifikaci v jednotlivých oborech"
+    ]
+  }
+}
+```

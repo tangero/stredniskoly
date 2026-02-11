@@ -1,0 +1,118 @@
+{
+  "report_id": "LYC_600008797_2023-01-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:51:59.846486+00:00",
+  "run_finished_utc": "2026-02-09T16:52:25.971936+00:00",
+  "raw_file": "LYC_600008797_2023-01-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600008797_2023-01-11",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola strojní a stavební (SPŠ) s maturitními obory (technické lyceum, stavebnictví, strojírenství) a učebními obory (tesař, truhlář, zedník, klempíř, strojní mechanik, strojník)",
+      "inspection_period": "11. ledna 2023 až 16. ledna 2023",
+      "school_change_summary": "Škola prošla reorganizací řízení s novou pozicí zástupce ředitele pro výchovně-vzdělávací proces. Získala další tělocvičnu, zmodernizovala odborné učebny a dílny, realizovala rekonstrukci budovy B se snížením energetické náročnosti."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Téměř 98 % žáků uspělo u maturitních zkoušek v roce 2022, s 100% úspěšností v matematice u technického lycea.",
+          "evidence": "Ve zkušebním roce 2022 uspělo při maturitních zkouškách téměř 98 % přihlášených žáků, stoprocentní úspěšnost u matematiky."
+        },
+        {
+          "tag": "Silná spolupráce s praxí",
+          "detail": "Rozsáhlá síť partnerů z firem umožňuje žákům praxi v reálných provozech a kvalitní přípravu na povolání.",
+          "evidence": "Rozsáhlá spolupráce s mnoha externími partnery významně posiluje rozvoj odbornosti a praktických dovedností žáků."
+        },
+        {
+          "tag": "Moderní vybavení a zázemí",
+          "detail": "Kvalitně vybavené dílny, domov mládeže s rekonstruovaným areálem a moderní učebny.",
+          "evidence": "Odborné učebny a strojní, dřevařské a stavební dílny byly vybaveny moderními přístroji, domov mládeže poskytuje kvalitní zázemí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní přístup k učení",
+          "detail": "Výuka se příliš spoléhá na frontální metody, málo se rozvíjí kritické myšlení a samostatné řešení problémů.",
+          "evidence": "Nedostatečně využívané širší spektrum vyučovacích metod vedlo u mnoha žáků k pasivnímu přijímání informací bez vlastní iniciativy."
+        },
+        {
+          "tag": "Slabá diferenciace výuky",
+          "detail": "Učitelé málo přizpůsobují úkoly individuálním schopnostem žáků.",
+          "evidence": "Učitelé v malé míře využívali možnosti diferencovaného zadávání úloh rozdílné obtížnosti s ohledem na individuální dispozice žáků."
+        },
+        {
+          "tag": "Nedostatečné formativní hodnocení",
+          "detail": "Chybí systematické využívání zpětné vazby jako motivačního nástroje pro rozvoj každého žáka.",
+          "evidence": "Není systematicky využíván potenciál formativního hodnocení jako motivační nástroj a prostředek ke zkvalitňování pokroku."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se uplatňuje spolupráce s firmami v jednotlivých oborech a jaké jsou možnosti praxe?",
+        "Jaké jsou podmínky ubytování v domově mládeže a jaké aktivity se tam nabízejí?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a samostatného řešení problémů v teoretické výuce?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na technické obory s ambicí pracovat v praxi a získat kvalitní odborné vzdělání",
+        "Dojíždějící žáci, kterým vyhovuje kvalitní ubytování a stravování v areálu školy",
+        "Nadaní žáci zajímající se o soutěže a projekty s praktickým dopadem na reálné firmy"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující aktivní, interaktivní a samostatné učení – výuka je zatím více tradiční a frontální",
+        "Žáci se slabšími výsledky v průběhu vzdělávání – mezi neúspěšné u maturit patří právě tito žáci",
+        "Žáci hledající individuální přístup a diferenciovanou výuku – ta není zatím dostatečně rozvinuta"
+      ],
+      "plain_czech_summary": "SPŠ Tábor je technicky zaměřená škola s výbornou reputací. Žáci dosahují skvělých výsledků u maturit (98 % úspěšnost) a závěrečných zkoušek. Silnou stránkou je propojení s praxí – firmy se podílejí na výuce a žáci pracují na reálných projektech. Škola má moderní vybavení a kvalitní domov mládeže. Slabší je tradiční přístup k výuce – chybí více aktivních metod, kritického myšlení a individuálního přístupu. Vhodná pro technicky nadané žáky s ambicí pracovat v praxi."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi pozitivní – dlouhodobě vysoké úspěšnosti",
+        "key_numbers": [
+          "Téměř 98 % úspěšnost v roce 2022",
+          "100 % úspěšnost v matematice u technického lycea",
+          "Vyšší úspěšnost než celorepublikový průměr v dané skupině oborů"
+        ],
+        "evidence": "Ve zkušebním roce 2022 uspělo při maturitních zkouškách téměř 98 % přihlášených žáků, stoprocentní úspěšnost u matematiky, vyšší úspěšnost v celorepublikovém srovnání."
+      },
+      "absence": {
+        "trend": "Pozitivní – přiměřená a řízená",
+        "key_numbers": [
+          "Neomluvené hodiny řešeny výchovnými či kázeňskými opatřeními spíše výjimečně",
+          "Velmi nízký podíl žáků opakujících ročník v 2021/2022",
+          "Ojedinělý neprospěch u závěrečných zkoušek"
+        ],
+        "evidence": "Škole se daří zvládat míru absence, která je přiměřená. Neomluvené hodiny byly řešeny spíše výjimečně."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence",
+        "Asistentka pedagoga pro žáky se speciálními vzdělávacími potřebami",
+        "Doučování a individuální konzultace pro žáky se školní neúspěšností",
+        "Výchovné komise pro řešení vážnějších problémů",
+        "Adaptační kurzy pro nastupující žáky"
+      ],
+      "safety_climate": [
+        "Praktické vyučování probíhá v příjemné atmosféře s důrazem na bezpečnost a ochranu zdraví",
+        "Vyučující dbají na dodržování technologických postupů a zásad BOZP",
+        "Preventivní program zaměřený na aktuální potřeby školy",
+        "Jednorázové i dlouhodobé aktivity směřující k minimalizaci rizikových jevů"
+      ],
+      "partnerships_practice": [
+        "Rozsáhlá spolupráce s firmami – praxe v reálných provozech, besedy, odborné exkurze",
+        "Mezinárodní spolupráce se školami na Slovensku, ve Slovinsku, Rakousku a Německu",
+        "Maturitní práce zadávané přímo firmami s praktickým dopadem",
+        "Projekty financované z EU fondů (Šablony, Erasmus+)",
+        "Motivační stipendium od Jihočeského kraje pro učební obory"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní čísla, citace z hospitací a jasné závěry. Slabší je pouze v tom, že některé pasáže jsou poměrně dlouhé a odborné, ale pro rodiče jsou klíčové informace dobře identifikovatelné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent žáků si volí matematiku jako maturitní předmět v celorepublikovém srovnání – pouze že si ji volí 'dvakrát častěji'",
+        "Není jasné, jaký je konkrétní počet pochval udělených žákům – pouze že je 'nižší' než by mělo být",
+        "Chybí konkrétní data o počtu žáků, kteří ukončili studium předčasně – pouze že je to 'velmi nízký' podíl"
+      ]
+    }
+  }
+}

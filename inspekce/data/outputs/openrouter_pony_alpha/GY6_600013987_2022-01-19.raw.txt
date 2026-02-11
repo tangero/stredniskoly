@@ -1,0 +1,100 @@
+{
+  "report_id": "GY6_600013987_2022-01-19",
+  "school_profile": {
+    "school_type": "Gymnázium",
+    "inspection_period": "2022-01-19 až 2022-01-21",
+    "school_change_summary": "Od roku 2014 škola nahradila osmiletý obor šestiletým a počet žáků se zvýšil o téměř 20 %."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky",
+        "detail": "Žáci dosahují dlouhodobě vynikajících výsledků, téměř 37 % prospívá s vyznamenáním.",
+        "evidence": "Žáci školy dlouhodobě dosahují velmi dobrých výsledků vzdělávání... téměř 37 % žáků prospělo s vyznamenáním."
+      },
+      {
+        "tag": "Maturita",
+        "detail": "Škola vykazuje dlouhodobě vyšší úroveň výsledků maturitních zkoušek než jiné školy.",
+        "evidence": "V posledních třech letech maturitní zkoušku úspěšně vykonali všichni žáci, kteří se k ní přihlásili."
+      },
+      {
+        "tag": "Klima",
+        "detail": "Ve škole panuje vstřícná atmosféra, rizikové chování je ojedinělé a funguje účinný preventivní program.",
+        "evidence": "Realizovaný preventivní program... je účinný, což se projevuje v ojedinělém výskytu rizikového chování žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nadaní žáci",
+        "detail": "Systém péče o nadané žáků není nastaven, ve výuce chybí diferencovaný přístup.",
+        "evidence": "Přístup k vyhledávání nadaných žáků a zajištění jejich optimální podpory není ve škole systémově nastaven."
+      },
+      {
+        "tag": "Hodnocení",
+        "detail": "Učitelé málo využívají formativní hodnocení a nevedou žáky k sebereflexi.",
+        "evidence": "Vyučujícím se pouze minimálně dařilo uplatňovat formativní hodnocení výsledků vzdělávání žáků."
+      },
+      {
+        "tag": "Prostředí",
+        "detail": "Škola postrádá prostor pro relaxaci žáků a délka přestávek není optimální.",
+        "evidence": "Chybí vhodný prostor pro jejich relaxaci... zkrácená délka není optimální vzhledem k psychohygienickým potřebám."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jakým způsobem škola individuálně přistupuje k nadaným žákům nebo žákům se zvýšeným zájmem o předmět?",
+      "Využívají učitelé ve výuce moderní metody zpětné vazby a sebehodnocení žáků?",
+      "Jak škola řeší volný čas žáků v době mezi dopoledním a odpoledním vyučováním?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří preferují bezpečné prostředí s vstřícnou pracovní atmosférou a minimálním výskytem rizikového chování.",
+      "Pro ambiciózní žály, kteří chtějí dosahovat vynikajících studijních výsledků a úspěšně složit maturitu.",
+      "Pro zájemce o zapojení do soutěží, olympiád a projektů, v nichž škola dosahuje dobrých výsledků."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče dětí s mimořádným nadáním, pokud očekávají systematickou péči a individuální plán.",
+      "Studenty, kteří potřebují častou a kvalitní zpětnou vazbu o svém pokroku, nikoliv jen známky.",
+      "Žáky citlivé na režim dne a potřebu dostatečného odpočinku během přestávek."
+    ],
+    "plain_czech_summary": "Gymnázium ve Zastávce u Brna nabízí kvalitní vzdělání s vynikajícími výsledky u maturit, kde téměř 37 % žáků prospívá s vyznamenáním. Škola má příjemné, bezpečné klima a úspěšně motivuje žáky k zapojení do soutěží. Slabinou je absence systematické péče o nadané žáky a málo moderní metody hodnocení, které neumožňují dostatečnou zpětnou vazbu. Nedostatkem je také chybějící relaxační prostor a neoptimální délka přestávek."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborné a stabilní výsledky",
+      "key_numbers": [
+        "100 % úspěšnost v posledních 3 letech (z přihlášených)",
+        "37 % žáků prospělo s vyznamenáním",
+        "Hrubá neúspěšnost 3,7 % v loňském roce (1 žák nekonal)"
+      ],
+      "evidence": "V posledních třech letech maturitní zkoušku úspěšně vykonali všichni žáci, kteří se k ní přihlásili."
+    },
+    "absence": {
+      "trend": "Průměrná až nízká",
+      "key_numbers": [
+        "71 hodin na žáka (2. pololetí 2018/19)",
+        "cca 20 hodin na žáka (distanční výuka)",
+        "Neomluvená absence ojedinělá"
+      ],
+      "evidence": "Absence žáků činila ve školním roce 2018/2019 (ve druhém pololetí) 71 hodin na žáka."
+    },
+    "support_services": [
+      "Funguje školní poradenské pracoviště (výchovná poradkyně, metodik prevence).",
+      "Kvalitně zajištěná pomoc při rozhodování o profesní volbě.",
+      "Méně aktivní vyhledávání žáků s potřebou podpory 1. stupně."
+    ],
+    "safety_climate": [
+      "Vstřícná pracovní atmosféra bez kázeňských problémů.",
+      "Účinný preventivní program a ojedinělý výskyt rizikového chování.",
+      "Pravidelné třídnické hodiny a adaptační kurzy podporují klima."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Mendelovou univerzitou (výuka informatiky).",
+      "Aktivní Gymnaziální společnost a Klub absolventů.",
+      "Spolupráce s organizacemi v regionu (senioři, volný čas)."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je srozumitelný, terminologie je vysvětlena nebo běžně srozumitelná, struktura je jasná.",
+    "uncertainty_notes": []
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600171361_2021-11-10",
+  "school_profile": {
+    "school_type": "Střední odborná škola s gastronomickým a služebním zaměřením (výuční list i maturita).",
+    "inspection_period": "10. až 12. 11. 2021",
+    "school_change_summary": "Od minulé inspekce došlo ke zlepšení materiálního a technického vybavení pro praktické vyučování."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Výuka v odborných předmětech a výcviku probíhá na vysoké profesní úrovni s důrazem na praxi.",
+        "evidence": "„V průběhu hodnocených vyučovacích hodin odborných předmětů se projevovala vysoká profesní úroveň vyučujících.“"
+      },
+      {
+        "tag": "Výsledky učebních oborů",
+        "detail": "Žáci učebních oborů dosahují velmi dobrých výsledků u závěrečných zkoušek.",
+        "evidence": "„Výsledky žáků školy u závěrečných zkoušek jsou napříč jednotlivými obory vzdělání zpravidla stabilní a velmi dobré.“"
+      },
+      {
+        "tag": "Partnerská spolupráce",
+        "detail": "Škola efektivně spolupracuje se zaměstnavateli a zřizovatelem, což zlepšuje podmínky výuky.",
+        "evidence": "„Partnerská spolupráce pozitivně podporuje kvalitu vzdělávání... spolupráce se smluvními partnery pro propojení teorie s praxí.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Žáci maturitních oborů mají výrazně horší úspěšnost ve společné části maturitní zkoušky.",
+        "evidence": "„Zvláště patrné jsou tyto horší výsledky v hrubé neúspěšnosti u společné části maturitní zkoušky.“"
+      },
+      {
+        "tag": "Zastaralé metody výuky",
+        "detail": "V teoretických předmětech převažuje pasivní frontální výuka bez aktivizace žáků.",
+        "evidence": "„Ve většině sledovaných vyučovacích hodin všeobecně vzdělávacích předmětů dominovala frontální forma výuky.“"
+      },
+      {
+        "tag": "Nedostatečná podpora",
+        "detail": "Chybí systematická podpora a diferenciace výuky pro talenty i žáky s potřebami.",
+        "evidence": "„Diferenciace vzdělávacího obsahu... nebyla vždy zaznamenána. Talentovaným žákům byly... zřídka vytvářeny další vhodné příležitosti.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomáhá žákům maturitních oborů připravit se na společnou část maturitní zkoušky?",
+      "Využívají učitelé v teoretických předmětech moderní a interaktivní metody výuky, nebo převažuje přednášení?",
+      "Jakým způsobem škola individuálně rozvíjí talentované žáky a naopak podporuje ty s potížemi?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří se chtějí naučit řemeslo a uplatnit v gastronomii, kadeřnictví nebo kosmetice.",
+      "Pro studenty, kteří preferují menší kolektivy a individuální přístup v praktickém výcviku.",
+      "Pro ty, kteří očekávají dobrou přípravu na konkrétní profesi a uplatnění na trhu práce."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří plánují studovat maturitní obory (Podnikání, Kosmetické služby) a cílí na vysoké školy.",
+      "Pro žáky, kteří vyžadují silnou akademickou přípravu a aktivní formy výuky v teoretických předmětech.",
+      "Pro rodiče dětí se speciálními vzdělávacími potřebami, pokud očekávají systematickou kontrolu podpůrných opatření."
+    ],
+    "plain_czech_summary": "Škola má silné zastoupení v gastronomických a služebních oborech. Praktická výuka a výsledky učebních oborů jsou na velmi dobré úrovni, stejně jako vybavení díky spolupráci s partnery. Pozor by si měli rodiče vzít na maturitní obory, kde žáci výrazně selhávají ve společné části maturit. Slabinou zůstává pasivní styl výuky v teorii a nedostatečná péče o individuální pokrok všech žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Klesající / Rizikový",
+      "key_numbers": [
+        "Hrubá neúspěšnost u společné části maturitní zkoušky je vysoká.",
+        "Nejhorší výsledky v oborech Podnikání a Kosmetické služby.",
+        "Profilová část maturitní zkoušky má zpravidla nulovou neúspěšnost."
+      ],
+      "evidence": "„Při ukončování studia maturitní zkouškou je však úspěšnost těchto žáků zpravidla nižší... Zvláště patrné jsou tyto horší výsledky v hrubé neúspěšnosti u společné části maturitní zkoušky.“"
+    },
+    "absence": {
+      "trend": "Neuvedeno / Pod kontrolou",
+      "key_numbers": [
+        "Problematika absence je řešena pravidelně na schůzkách vedení.",
+        "Opatření jsou přijímána již na počátku problémů.",
+        "Sledována je omluvená i neomluvená absence."
+      ],
+      "evidence": "„Problematika... vysoké omluvené či neomluvené absence je řešena pravidelně... Problémy jsou řešeny již na počátku.“"
+    },
+    "support_services": [
+      "Funguje školní poradenské pracoviště pro žáky se speciálními potřebami.",
+      "Jsou nabízeny doučovací konzultace a skupinová doučování (Národní plán doučování).",
+      "Kariérové poradenství zahrnuje exkurze a veletrhy."
+    ],
+    "safety_climate": [
+      "Vztahy mezi učiteli a žáky v odborném výcviku jsou popisovány jako pozitivní.",
+      "Důraz je kladen na dodržování bezpečnosti a hygieny při práci s technikou.",
+      "Výchovné problémy a rizikové chování jsou řešeny systémově."
+    ],
+    "partnerships_practice": [
+      "Silná spolupráce se zřizovatelem (Olomoucký kraj) vede k obnově vybavení.",
+      "Propojení teorie s praxí zajišťují smluvní partneři.",
+      "Žáci se zapojují do soutěží a charitativních akcí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně rozdělená a klade důraz na praktické informace. Jedinou nevýhodou je absence konkrétních číselných dat o neúspěšnosti.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procento neúspěšnosti u maturity, pouze obecné srovnání.",
+      "Chybí kvantitativní údaje o počtu žáků se speciálními potřebami v jednotlivých oborech.",
+      "Není specifikováno, o jaké konkrétní „efektivní formy“ výuky se inspekci jednalo."
+    ]
+  }
+}

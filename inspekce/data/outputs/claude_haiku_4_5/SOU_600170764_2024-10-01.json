@@ -1,0 +1,119 @@
+{
+  "report_id": "SOU_600170764_2024-10-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:14:00.760622+00:00",
+  "run_finished_utc": "2026-02-09T16:14:27.089151+00:00",
+  "raw_file": "SOU_600170764_2024-10-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600170764_2024-10-01",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště",
+      "inspection_period": "1. 10. 2024 − 4. 10. 2024",
+      "school_change_summary": "Od poslední inspekce škola navýšila počet žáků o 200 a počet tříd o 11. Došlo k modernizaci prostor pro odbornou praktickou výuku a zlepšily se podmínky v domově mládeže."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Škola dlouhodobě spolupracuje s firmami (Škoda Auto, Porsche) a odbornými organizacemi, což přináší moderní technologie a reálné zkušenosti do výuky.",
+          "evidence": "Partnerství s firmami přináší nové možnosti v oblasti moderních technologií a aktuálních informací o nových produktech."
+        },
+        {
+          "tag": "Materiální vybavení",
+          "detail": "Škola disponuje moderními učebnami, laboratořemi, speciální technikou a novými vozidly včetně elektromobilu pro výuku.",
+          "evidence": "Odborné dílny jsou vybavené nářadím i moderní speciální technikou, nově zřízená učebna s výpočetní technikou."
+        },
+        {
+          "tag": "Podpora žáků v obtížích",
+          "detail": "Školní poradenské pracoviště vytvořilo funkční systém pro podporu žáků se speciálními potřebami a řešení výchovných problémů.",
+          "evidence": "Nově nastavený systém práce se škole daří včas zachycovat projevy rizikového chování a okamžitě je řešit."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita žáků ve výuce",
+          "detail": "Učitelé často používají pouze frontální výuku bez dostatečného zapojení žáků do aktivního učení a samostatného objevování.",
+          "evidence": "Dlouhotrvající frontální práce bez střídání výukových metod měla negativní dopad na pozornost žáků a jejich zájem o výuku."
+        },
+        {
+          "tag": "Nedostatky v matematice",
+          "detail": "Škola nedodržela minimální hodinovou dotaci v matematickém vzdělávání u některých oborů s výučním listem.",
+          "evidence": "Nedostatky byly shledány v nesouladu výuky předmětu Matematika s učebními osnovami a učebním plánem."
+        },
+        {
+          "tag": "Slabá zpětná vazba",
+          "detail": "Učitelé poskytují žákům málo zpětné vazby o jejich pokroku a nediferencují práci podle individuálních potřeb.",
+          "evidence": "Posun žáků ve vzdělávání nehodnotili. Práci žáků nediferencovali s ohledem na různé pracovní tempo či jejich vzdělávací možnosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší nedostatky v hodinové dotaci matematiky a jak se to změní v příštím roce?",
+        "Jaké konkrétní metody používáte k tomu, aby žáci více aktivně participovali na výuce místo pasivního poslouchání?",
+        "Jak škola podporuje nadané žáky a ty s hlubším zájmem o obor?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou výuku a řemesla – škola má výborné vybavení dílen a moderní techniku",
+        "Žáci s ambicí pracovat v automobilovém průmyslu – díky partnerství se Škodou a Porsche",
+        "Žáci potřebující individuální podporu – školní poradenské pracoviště má funkční systém pomoci"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující aktivní a interaktivní výuku – škola stále spoléhá především na frontální výuku",
+        "Žáci s potřebou silné podpory v matematice – škola má problémy s dodržením minimální hodinové dotace",
+        "Žáci s vyšší absence – průměrná absence je vysoká (72-84 hodin za rok), což může ovlivnit prospěch"
+      ],
+      "plain_czech_summary": "Škola je moderně vybavená s dobrými partnerskými vztahy a kvalitní podporou pro žáky v obtížích. Silná je praktická výuka a příprava na konkrétní profese. Slabší stránkou je, že výuka je často pasivní – žáci spíše poslouchají než aktivně pracují. Problém je také s matematikou, kde škola nedodržuje požadované hodiny. Absence žáků je poměrně vysoká. Škola se snaží zlepšovat, ale v metodách výuky je co dělat."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní s nižší úspěšností u závěrečné zkoušky",
+        "key_numbers": [
+          "90 % žáků prospělo v ročníkovém hodnocení (285 z 317)",
+          "57 % žáků prospělo u maturitní zkoušky (37 z 65)",
+          "37 % žáků neprospělo u maturitní zkoušky (24 z 65)"
+        ],
+        "evidence": "Ve školním roce 2023/2024 z 65 žáků vykonalo MZ s vyznamenáním 4 žáci (6 %), prospělo 37 žáků (57 %) a neprospělo 24 žáků (37 %)."
+      },
+      "absence": {
+        "trend": "Vysoká absence, kterou škola intenzivně monitoruje",
+        "key_numbers": [
+          "72 hodin průměrně na žáka oborů s maturitou",
+          "84 hodin průměrně na žáka oborů s výučním listem",
+          "Limit 25 % absence za klasifikační období"
+        ],
+        "evidence": "Průměrný počet zameškaných hodin na žáka oboru s MZ činil ve školním roce 2023/2024 72 hodin a na žáka oboru s VL 84 hodin."
+      },
+      "support_services": [
+        "Výchovný poradce a školní metodik prevence (od 2021/2022)",
+        "Doučování pro žáky ohrožené školním neúspěchem",
+        "Individuální konzultace pedagogů",
+        "Systém podpůrných opatření pro žáky se speciálními vzdělávacími potřebami",
+        "Třídnické hodiny zaměřené na práci s třídním kolektivem"
+      ],
+      "safety_climate": [
+        "Elektronický systém zabezpečení vstupu do budovy",
+        "Služba na recepci",
+        "Bezpečnostní pracovníci zajišťují noční služby v domově mládeže",
+        "Jednotné pracovní oblečení a obuv žáků v odborném výcviku",
+        "Dodržování zásad bezpečnosti práce v dílnách"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se Škodou Auto a Porsche Česká republika",
+        "Partnerství se společností Grohe (vybudování odborné učebny pro instalatéry)",
+        "Kooperace s odbornými organizacemi (Hospodářská komora, Svaz podnikatelů ve stavebnictví)",
+        "Mezinárodní mobilita žáků a pedagogů (Španělsko, Irsko, Portugalsko, Slovensko)",
+        "Spolupráce se základními školami a vysokými školami"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, ale některé pasáže jsou dlouhé a složitě strukturované. Hlavní zjištění jsou jasná, ale vyžadují čtení mezi řádky.",
+      "uncertainty_notes": [
+        "Není jasné, zda vysoká absence (72-84 hodin) je normální pro tento typ školy nebo problém",
+        "Zpráva nespecifikuje, které konkrétní obory mají problém s matematikou",
+        "Není zřejmé, jak dlouho trvá nový systém školního poradenského pracoviště a zda se již projevily výsledky"
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "GY8_691002339_2021-10-14",
+  "school_profile": {
+    "school_type": "Gymnázium s osmiletým a čtyřletým cyklem",
+    "inspection_period": "14. - 15. a 18. - 19. října 2021",
+    "school_change_summary": "Od roku 2014 se škole podařilo odstranit zásadní nedostatky, výrazně zvýšit naplněnost z 52 % na 98 % a stabilizovat kvalifikovaný pedagogický sbor."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Přírodovědné zaměření",
+        "detail": "Škola vyniká v rozvoji přírodovědné gramotnosti a moderních technologiích.",
+        "evidence": "Škola účelně rozvíjí přírodovědnou gramotnost... v laboratoři využívali elektronické mikroskopy s tablety."
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Žáci dosahují nadprůměrných výsledků ve srovnání s republikou.",
+        "evidence": "Celkové výsledky... v průměru dlouhodobě lepší, než je průměr všech gymnázií v republice."
+      },
+      {
+        "tag": "Rozvoj talentů",
+        "detail": "Škola efektivně podporuje nadané žáky a jejich samostatnost.",
+        "evidence": "Ročníková práce s obhajobou... významně přispívá k rozvoji klíčových kompetencí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší čeština",
+        "detail": "Výsledky z českého jazyka jsou dlouhodobě pod průměrem osmiletých gymnázií.",
+        "evidence": "V didaktickém testu z českého jazyka... výsledky žáků dlouhodobě horší, než je průměr osmiletých gymnázií."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Výuka není dostatečně přizpůsobena individuálním potřebám žáků.",
+        "evidence": "Učitelům se málo dařilo diferencovat obsah probíraného učiva."
+      },
+      {
+        "tag": "Riziková absence",
+        "detail": "Neprospívající žáci mají často problém s vysokou absencí.",
+        "evidence": "Žáci, kteří neprospěli, měli zároveň vysokou absenci - ročně v průměru přes 190 hodin."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola reaguje na horší výsledky v testech z českého jazyka a jak je podporuje?",
+      "Jakým způsobem učitelé individuálně přistupují k žákům s různou úrovní znalostí?",
+      "Jaká konkrétní opatření škola přijímá u žáků s vysokou absencí, aby předešla neúspěchu?"
+    ],
+    "who_school_fits": [
+      "Pro žáky se zájmem o přírodovědné předměty a moderní technologie.",
+      "Pro samostatné studenty, kteří zvládnou obhajobu ročníkových prací.",
+      "Pro ty, kdo preferují nadprůměrnou úroveň cizích jazyků a matematiky."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří potřebují intenzivní podporu v českém jazyce a literatuře.",
+      "Pro studenty s tendencí k vyšší absenci nebo menší motivací.",
+      "Pro ty, kteří preferují častou skupinovou a kooperativní práci ve výuce."
+    ],
+    "plain_czech_summary": "Gymnázium Hostivice je velmi žádaná škola s kapacitou téměř plnou, která nabízí nadprůměrnou úroveň vzdělávání, zejména v přírodovědných předmětech a cizích jazycích. Škola je dobře řízená a bezpečná, žáci zde dosahují skvělých maturitních výsledků. Slabinou je podprůměrná úroveň českého jazyka a literatury a fakt, že výuka není dostatečně přizpůsobena individuálním potřebám žáků. Pro rodiče je důležité sledovat motivaci dítěte, protože škola nemá plně vyřešenou strategii pro žáky s vysokou absencí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborné výsledky, zejména v přírodovědných předmětech a cizích jazycích.",
+      "key_numbers": [
+        "Téměř všichni maturanti uspěli.",
+        "Polovina maturantů prospěla s vyznamenáním.",
+        "Výsledky lepší než republikový průměr."
+      ],
+      "evidence": "V posledních třech letech... uspěli kromě jednoho všichni, podíl vyznamenaných se zvýšil... na zhruba polovinu."
+    },
+    "absence": {
+      "trend": "Korelace mezi neprospěchem a vysokou absencí.",
+      "key_numbers": [
+        "Neprospívající žáci: průměrně přes 190 hodin absence ročně.",
+        "Neprospěch v roce 2018/2019: 4 %.",
+        "Neprospěch v době distanční výuky: 0,7 %."
+      ],
+      "evidence": "Žáci vyššího gymnázia, kteří na konci školního roku neprospěli, měli zároveň vysokou absenci."
+    },
+    "support_services": [
+      "Dvě kvalifikované výchovné poradkyně a školní metodička prevence.",
+      "Individuální vzdělávací plány pro žáky se speciálními potřebami.",
+      "Spolupráce s externími odborníky a poradenskými zařízeními."
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti.",
+      "Pozitivní sociální klima podporované třídními učiteli.",
+      "Funkční vztahy se zřizovatelem a rodiči."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem a městem Hostivice.",
+      "Projekty e-twinning a mezinárodní spolupráce.",
+      "Aktivní spolek rodičů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně člení hodnocení podmínek, průběhu a výsledků, a obsahuje konkrétní příklady z výuky i statistiky.",
+    "uncertainty_notes": [
+      "Nejasná je konkrétní skladba volitelných seminářů a jejich naplněnost.",
+      "Zpráva neuvádí konkrétní důvody horších výsledků v českém jazyce.",
+      "Chybí detailnější informace o aktivitách žákovského parlamentu a důvodech jeho neaktivity."
+    ]
+  }
+}

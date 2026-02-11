@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600016994_2024-11-21",
+  "school_profile": {
+    "school_type": "Střední odborná škola lesnická a strojírenská s domovem mládeže a školní jídelnou",
+    "inspection_period": "21.–27. listopadu 2024",
+    "school_change_summary": "Škola vykazuje stabilní vývoj. Od poslední inspekce v roce 2022 se zlepšily vzdělávací výsledky, zejména u oboru Podnikání. Hrubá neúspěšnost u maturit je pod celostátním průměrem."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Obor Podnikání dosáhl hrubé neúspěšnosti 15,4 % (průměr ČR 32,2 %), Ekologie 12,5 % (průměr 15,3 %).",
+        "evidence": "Jarní zkušební období 2024, analýza maturitních zkoušek"
+      },
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Efektivní spolupráce s partnery a kvalitní praktické vyučování zvyšují uplatnitelnost absolventů na trhu práce.",
+        "evidence": "Odborný výcvik navazuje na teoretické předměty, učitelé využívají profesní zkušenosti"
+      },
+      {
+        "tag": "Moderní vybavení a zázemí",
+        "detail": "Škola disponuje moderním materiálním vybavením odpovídajícím požadavkům vzdělávacích programů.",
+        "evidence": "Postupná obnova vybavení, modernizace učebních pomůcek a techniky"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezené kritické myšlení",
+        "detail": "Výuka často předkládá hotové poznatky místo aby vedla žáky k vlastnímu úsudku a kritickému myšlení.",
+        "evidence": "Prostor pro vyjádření vlastních názorů zůstává nevyužitý, heuristické metody používány výjimečně"
+      },
+      {
+        "tag": "Slabá individualizace výuky",
+        "detail": "Diferenciace pro nadané žáky a žáky se speciálními potřebami není dostatečně efektivní, zejména v teoretickém vyučování.",
+        "evidence": "Obsahová diferenciace zůstává na okraji, rozšiřující úkoly nejsou efektivně využívány"
+      },
+      {
+        "tag": "Nedostatečné zpětné vazby",
+        "detail": "Sebehodnocení, vzájemné hodnocení a formativní zpětná vazba jsou zařazovány jen ojediněle.",
+        "evidence": "Vzájemné hodnocení mezi žáky a motivační shrnutí chybí ve většině hodin"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jak se liší přístup k žákům se speciálními potřebami?",
+      "Jaké moderní výukové metody a techniky používáte k rozvoji kritického myšlení žáků?",
+      "Jak probíhá spolupráce s firmami a jak se praktické zkušenosti promítají do výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické obory (lesnictví, strojírenství, mechanika) s jasnou představou budoucího povolání",
+      "Studenti, kteří si cení kvalitního propojení teorie s praxí a kontaktů s budoucími zaměstnavateli",
+      "Žáci, kterým vyhovuje strukturovaný přístup a stabilní pedagogický sbor"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní individuální podporu a diferenciovaný přístup – škola má rezervy v tomto směru",
+      "Studenti preferující výuku zaměřenou na rozvoj kritického myšlení a samostatného úsudku",
+      "Nadaní žáci bez systematické podpory jejich rozvoje"
+    ],
+    "plain_czech_summary": "Škola je stabilní a dobře fungující zařízení se silnými výsledky maturit a kvalitní praxí. Učitelé jsou zkušení a vybavení moderní technikou. Hlavní výzvou je více aktivizovat žáky, rozvíjet jejich kritické myšlení a lépe individualizovat výuku pro nadané i slabší studenty. Škola se snaží zlepšovat, ale v některých pedagogických metodách má ještě rezervy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – výsledky se zlepšily a jsou pod celostátním průměrem",
+      "key_numbers": [
+        "Podnikání: 15,4 % neúspěšnosti (průměr ČR 32,2 %)",
+        "Ekologie: 12,5 % neúspěšnosti (průměr ČR 15,3 %)",
+        "Stabilita výsledků v posledních třech letech"
+      ],
+      "evidence": "Jarní zkušební období 2024, rozbory maturitních zkoušek, analýza příčin neúspěšnosti"
+    },
+    "absence": {
+      "trend": "Minimalizovaná absence díky cíleným opatřením",
+      "key_numbers": [
+        "Absence žáků je minimalizována",
+        "Přispívá k vyrovnaným výsledkům v jednotlivých předmětech"
+      ],
+      "evidence": "Cílená opatření školy, sledování absence v jednotlivých klasifikačních obdobích"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (výchovná a kariérová poradkyně, metodici prevence)",
+      "Individuální konzultace a doučování pro žáky s rizikem neúspěchu",
+      "Spolupráce se školskými poradenskými zařízeními pro žáky se speciálními potřebami",
+      "Domov mládeže s výchovně vzdělávací činností a zájmovými aktivitami"
+    ],
+    "safety_climate": [
+      "Pozitivní pracovní a bezpečná sociální atmosféra v hodnocených hodinách",
+      "Důraz na bezpečnost a ochranu zdraví při práci v odborném výcviku",
+      "Funkční žákovská rada přispívající k příznivému klimatu",
+      "Šetření školního klimatu pravidelně zjišťuje názory zaměstnanců a žáků"
+    ],
+    "partnerships_practice": [
+      "Nadstandardní spolupráce se zahraničními partnery obohacující jazykové a odborné kompetence",
+      "Efektivní propojování teoretické a praktické výuky s oborovými partnery",
+      "Vyhledávání nových forem spolupráce zaměřené na rozšíření pracovišť praktické výuky",
+      "Spolupráce se zřizovatelem, školskou radou a zákonnými zástupci"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o evidence. Některé pasáže jsou více odborné, ale celkově je text pro rodiče dobře čitelný.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků s speciálními potřebami v jednotlivých třídách ani jejich úspěšnost",
+      "Chybí informace o počtu a kvalifikaci pedagogů v jednotlivých oborech",
+      "Není jasné, jak konkrétně se škola vypořádala s nedostatky v administrativním výkaznictví"
+    ]
+  }
+}
+```

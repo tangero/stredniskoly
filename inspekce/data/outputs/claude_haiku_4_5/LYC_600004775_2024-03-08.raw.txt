@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_600004775_2024-03-08",
+  "school_profile": {
+    "school_type": "Obchodní akademie (střední škola s maturitou) - obory Ekonomické lyceum a Obchodní akademie se zaměřením na Ekonomiku a podnikání v EU a Cestovní ruch",
+    "inspection_period": "8. března 2024 až 13. března 2024",
+    "school_change_summary": "Od inspekce v roce 2017 vzrostla naplněnost školy na 71 % (516 žáků v 19 třídách). Zlepšily se materiální podmínky. Škola je fakultní školou Vysoké školy ekonomické a aktivně spolupracuje se sociálními partnery."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vzdělání přes fiktivní firmy",
+        "detail": "Škola dlouhodobě organizuje veletrh fiktivních firem, kde žáci aplikují teoretické znalosti v praxi.",
+        "evidence": "\"soustavné naplňování konceptu profesního rozvoje žáků prostřednictvím aplikace získaných teoretických znalostí formou založení a provozu fiktivních firem\""
+      },
+      {
+        "tag": "Kvalitní vedení a stabilita",
+        "detail": "Ředitel vede školu od roku 2004 s dlouhodobou tradicí a vytváří předpoklady pro naplňování vzdělávacích programů.",
+        "evidence": "\"Ředitel školy působí ve funkci od roku 2004, v řídicí práci vychází z dlouholeté tradice školy a svých pedagogických zkušeností.\""
+      },
+      {
+        "tag": "Podpora jazykového vzdělání",
+        "detail": "Škola podporuje znalost cizích jazyků prostřednictvím zahraničních projektů a tradičních akcí.",
+        "evidence": "\"Znalost cizích jazyků a komunikační dovednosti si žáci prohlubují při zahraničních projektech či tradičních školních akcích.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdílná kvalita výuky mezi učiteli",
+        "detail": "Kvalita výuky se výrazně liší podle pedagogických zkušeností a přístupu jednotlivých učitelů.",
+        "evidence": "\"Kvalita výuky byla výrazněji ovlivněna přístupem učitelů i mírou jejich pedagogických zkušeností, což se promítalo v různé úrovni metodické a didaktické propracovanosti.\""
+      },
+      {
+        "tag": "Slabší výsledky z matematiky",
+        "detail": "Žáci dosahují horších výsledků v matematice než průměr v celorepublikovém srovnění, zejména v didaktických testech.",
+        "evidence": "\"v matematice dosahovali žáci obou oborů horších výsledků než průměr dané skupiny oborů v celorepublikovém srovnění. Nejméně úspěšní byli žáci v didaktických testech z matematiky.\""
+      },
+      {
+        "tag": "Málo interaktivní výuka",
+        "detail": "Převládá frontální výuka s málo skupinové práce a interakce mezi žáky.",
+        "evidence": "\"Převládala frontální forma výuky doplněná samostatnou prací žáků... Jen v menší části hodin vytvořili vyučující dostatečný prostor ke vzájemné interakci žáků.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší slabší výsledky z matematiky? Nabízí nějakou speciální podporu nebo doučování?",
+      "Jaké jsou konkrétní příklady spolupráce se sociálními partnery a jak se to promítá do výuky?",
+      "Jak se liší přístup jednotlivých učitelů a jak škola zajišťuje konzistentní kvalitu výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o ekonomii, obchod a cestovní ruch, kteří chtějí praktické zkušenosti přes fiktivní firmy",
+      "Studenti, kteří se chtějí připravit na vysokou školu (škola je fakultní školou VŠE) a zajímá je mezinárodní spolupráce",
+      "Žáci, kteří preferují obory s jasným profesním zaměřením a vazbou na praxi"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími předpoklady v matematice by měli počítat s tím, že výsledky v tomto předmětu jsou pod průměrem",
+      "Studenti, kteří potřebují velmi strukturovanou a jednotnou výuku - kvalita se liší podle učitele",
+      "Žáci, kteří se učí lépe interaktivně a skupinově - výuka je spíše frontální"
+    ],
+    "plain_czech_summary": "Obchodní akademie Vinohradská je stabilní škola s dobrým vedením a zajímavým konceptem praktického vzdělání přes fiktivní firmy. Silnou stránkou je spolupráce se sociálními partnery a zahraniční projekty. Problém je rozdílná kvalita výuky mezi učiteli a slabší výsledky z matematiky. Výuka je spíše tradiční, frontální, s málo interaktivity. Škola by měla více podporovat samostatné myšlení žáků a lépe kontrolovat kvalitu pedagogické práce."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený - nejlepší výsledky v cizích jazycích, horší v matematice",
+      "key_numbers": [
+        "Nejlepší výsledky v cizím jazyce",
+        "Horší výsledky v matematice než celorepublikový průměr",
+        "Nejméně úspěšní žáci v didaktických testech z matematiky"
+      ],
+      "evidence": "\"dosahovali žáci školy nejlepších výsledků v cizím jazyce, naopak v matematice dosahovali žáci obou oborů horších výsledků než průměr dané skupiny oborů v celorepublikovém srovnění.\""
+    },
+    "absence": {
+      "trend": "Pozitivní - absence odpovídá typu školy, neomluvené hodiny zanedbatelné",
+      "key_numbers": [
+        "Neomluvené hodiny zanedbatelné",
+        "Absence odpovídá druhu školy",
+        "Narůstající podíl žáků s uzavřenou klasifikací k 30.6. (81 % na 93 %)"
+      ],
+      "evidence": "\"Vykázaná absence odpovídá druhu školy, počet neomluvených hodin byl zanedbatelný. Pozitivním zjištěním je narůstající podíl žáků s uzavřenou klasifikací k 30. 6.\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (výchovná poradkyně a metodička prevence) zajišťuje podporu žáků se speciálními vzdělávacími potřebami",
+      "Kariérové poradenství zaměřené na další profesní a studijní směřování",
+      "Konzultace a individuální podpora pro žáky s identifikovanými vzdělávacími potřebami"
+    ],
+    "safety_climate": [
+      "Preventivní program zaměřený na bezpečné chování a zdravý životní styl",
+      "Elektronický docházkový systém a recepce u vchodu pro ochranu před vnějším nebezpečím",
+      "Funkční preventivní mechanismy umožňující včas odhalovat rizikové chování",
+      "Snížené známky z chování se vyskytují pouze ojediněle"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Vysoké školy ekonomické",
+      "Spolupráce s četnými sociálními partnery zajišťující vazbu teoretického vzdělání na praxi",
+      "Mezinárodní projekty a spolupráce se školami v ČR",
+      "Organizace veletrhu fiktivních firem umožňující aplikaci teoretických poznatků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků v jednotlivých oborech ani jejich rozdělení",
+      "Chybí konkrétní data o počtu učitelů s různou délkou praxe a jejich kvalifikaci",
+      "Nejsou uvedeny konkrétní procenta úspěšnosti u maturitní zkoušky, pouze kvalitativní popis"
+    ]
+  }
+}
+```

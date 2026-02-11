@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "SOU_600015165_2022-11-21",
+  "school_profile": {
+    "school_type": "Střední škola polytechnická (13 oborů: 4 maturitní, 9 s výučním listem)",
+    "inspection_period": "21.–23. listopadu 2022",
+    "school_change_summary": "Počet žáků vzrostl na 590 (234 maturitních, 356 s výučním listem). Nový obor Výrobce potravin, pilotní ověřování Autotroniku s duální kvalifikací."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie a praxe",
+        "detail": "Škola efektivně kombinuje teoretickou přípravu s praktickým výcvikem v moderně vybavených dílnách.",
+        "evidence": "Důraz na účinné propojení teoretické a praktické přípravy vytváří vhodné příležitosti pro uplatnění na trhu práce."
+      },
+      {
+        "tag": "Partnerství a projekty",
+        "detail": "Dlouhodobá spolupráce s firmami, projekty Erasmus+ a polytechnické vzdělávání zvyšují atraktivitu oborů.",
+        "evidence": "Efektivní spolupráce s vnějšími partnery a zapojení do projektové činnosti přispívá ke zkvalitňování materiálních podmínek."
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Komplexní systém s výchovnými poradkyněmi, speciální pedagožkou a psycholožkou zajišťuje podporu žáků.",
+        "evidence": "Tým pracovníků poskytuje odbornou pomoc při vzdělávání žáků se speciálními potřebami a řešení rizikového chování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní vyučování",
+        "detail": "Převažuje frontální výuka bez dostatku skupinové práce, diskusí a samostatného zkoumání.",
+        "evidence": "V části hodin převládala frontální výuka bez častějšího využití pestrých metod vedoucích k aktivizaci žáků."
+      },
+      {
+        "tag": "Nedostatečná individualizace",
+        "detail": "Chybí přizpůsobení výuky nadaným žákům a těm se speciálními potřebami.",
+        "evidence": "Nebyla patrná vysoká míra individuálního přístupu k žákům se speciálními vzdělávacími potřebami a talentovaným."
+      },
+      {
+        "tag": "Chybějící reflexe",
+        "detail": "Vyučující často nezavršují hodiny zhodnocením práce a stanovením cílů pro příští hodinu.",
+        "evidence": "Závěry vyučovacích hodin postrádaly zhodnocení práce žáků a stanovení cílů na příští hodinu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve výuce uplatňuje skupinová práce a kooperativní učení?",
+      "Jakou podporu dostávají nadaní a talentovaní žáci v jednotlivých oborech?",
+      "Jak se škola připravuje na změny v metodách vyučování doporučené inspekčním týmem?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a řemesla s jasným cílem získat kvalifikaci",
+      "Studenti, kteří chtějí kombinovat teoretické znalosti s praxí v moderně vybavených dílnách",
+      "Zájemci o zahraniční stáže a mezinárodní zkušenosti (Erasmus+)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní, interaktivní a skupinové formy učení (v současnosti méně zastoupené)",
+      "Nadaní a talentovaní studenti, kteří potřebují individuální výzvy a obohacování obsahu",
+      "Žáci se speciálními vzdělávacími potřebami, kteří vyžadují vysokou míru individualizace"
+    ],
+    "plain_czech_summary": "Švehlova střední škola je moderně vybavená instituce se silným zaměřením na propojení teorie a praxe. Nabízí 13 oborů s dobrými podmínkami pro praktické vyučování a partnerskými vazbami na firmy. Inspekce ocenila kvalitní poradenské služby a projektové aktivity. Hlavní výzvou je modernizace vyučovacích metod – škola by měla více využívat skupinovou práci, aktivizovat žáky a lépe přizpůsobovat výuku individuálním potřebám talentovaných a žáků se speciálními potřebami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, bez závažných odchylek",
+      "key_numbers": [
+        "234 žáků v maturitních oborech",
+        "4 maturitní obory (Technologie potravin, Analýza potravin, Autotronik, Podnikání)"
+      ],
+      "evidence": "Ve školním roce 2021/2022 nevykazovaly výsledky vzdělávání žáků v jednotlivých vyučovacích předmětech závažné vzájemné odchylky."
+    },
+    "absence": {
+      "trend": "Aktivně řešena",
+      "key_numbers": [
+        "Zvýšená absence minimalizována bezodkladnými opatřeními"
+      ],
+      "evidence": "Škola bezodkladně přijímá opatření na minimalizaci zvýšené absence žáků, což pozitivně působí na dosahované výsledky."
+    },
+    "support_services": [
+      "Výchovné poradkyně a metodik prevence",
+      "Školní speciální pedagožka a školní psycholožka",
+      "Kariérové poradenství s informacemi o dalším studiu a uplatnění"
+    ],
+    "safety_climate": [
+      "Bezpečnostní rizika jsou pravidelně probírána se žáky",
+      "Preventivní strategie umožňuje včasnou eliminaci rizikového chování",
+      "Domov mládeže poskytuje podporu duševní pohody a zdraví"
+    ],
+    "partnerships_practice": [
+      "Smlouvy s firmami zajišťující odborný výcvik a učební praxi",
+      "Projekt Erasmus+ s zahraničními odbornými stážemi",
+      "Spolupráce s vysokými školami a vzdělávacími institucemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná s konkrétními příklady a citacemi. Silné a slabé stránky jsou dobře zdokumentovány. Doporučení jsou praktická a konkrétní.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o úspěšnosti u maturit nebo závěrečných zkoušek",
+      "Chybí údaje o počtu žáků, kteří pokračují ve studiu na vysokých školách",
+      "Není jasné, jak se konkrétně měří efektivita poradenských služeb"
+    ]
+  }
+}
+```

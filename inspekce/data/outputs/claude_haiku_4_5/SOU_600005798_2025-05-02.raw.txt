@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOU_600005798_2025-05-02",
+  "school_profile": {
+    "school_type": "Střední škola kosmetiky a hotelnictví BEAN – soukromá škola s maturitními obory (Kosmetické služby, Gastronomie), nástavbovým studiem a tříletým oborem s výučním listem",
+    "inspection_period": "2. května 2025 až 28. května 2025",
+    "school_change_summary": "Od roku 2022 došlo k zásadním změnám: nový ředitel s koncepcí rozvoje, rozšíření vedení o zástupce pro odborné vzdělávání, odstranění všech zásadních nedostatků z předchozí inspekce, výrazné zlepšení materiálních podmínek a výsledků maturit. Škola nyní sídlí také v pronajatých prostorách na Praze 12."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vzdělávání na vysoké úrovni",
+        "detail": "Výuka probíhá v moderních provozovnách s kvalitním materiálním zázemím, kde žáci získávají reálné pracovní návyky a profesionalitu.",
+        "evidence": "Prostředí smluvních pracovišť s vysokou úrovní služeb vytváří optimální podmínky pro výuku a zaručuje kvalitu vzdělávání."
+      },
+      {
+        "tag": "Výrazné zlepšení výsledků maturit",
+        "detail": "Všichni žáci v posledních dvou letech složili maturitní zkoušku úspěšně již v jarním termínu.",
+        "evidence": "Všichni žáci zkoušku složili úspěšně již v jarním termínu konání zkoušek v obou sledovaných školních letech."
+      },
+      {
+        "tag": "Podpora žáků se speciálními potřebami",
+        "detail": "Škola poskytuje cílené poradenství a individuální přístup k žákům se speciálními vzdělávacími potřebami.",
+        "evidence": "Identifikovaným žákům cíleně poskytuje podporu častou osobní komunikací výchovná poradkyně."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné aktivizační metody v teoretické výuce",
+        "detail": "V některých hodinách chybí interaktivní přístupy, diferenciace a využití moderních pomůcek.",
+        "evidence": "Nedostatečné využití aktivizujících metod v části výuky a příležitostí k diferenciaci vzdělávacího obsahu, menší názornost teoretické výuky."
+      },
+      {
+        "tag": "Slabší výuka cizích jazyků",
+        "detail": "Žáci si upevňují gramatiku, ale málo cvičí skutečnou komunikaci v cizím jazyce.",
+        "evidence": "Ve výuce cizího jazyka si žáci vhodně upevňovaly znalost gramatických jevů, avšak jen v nízké míře měli možnost uplatnit své jazykové znalosti v komunikační situaci."
+      },
+      {
+        "tag": "Chybějící prostor pro sebereflexe žáků",
+        "detail": "V některých hodinách není dostatek času na shrnutí učiva a vyhodnocení pokroku žáků.",
+        "evidence": "V závěru těchto vyučovacích hodin nebyl vytvořen prostor pro společné shrnutí učiva či vyhodnocení stanoveného vzdělávacího cíle."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky v přípravě na maturitní zkoušku a jaké jsou jejich úspěšnosti v jednotlivých předmětech?",
+      "Jaké jsou možnosti doučování a konzultací pro žáky, kteří mají potíže s teoretickými předměty?",
+      "Jak probíhá praktické vyučování a jaké jsou konkrétní pracovní místa, kde se žáci učí?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a gastronomii či kosmetiku, kteří se učí lépe v reálném prostředí",
+      "Studenti, kteří potřebují individuální přístup a podporu – škola má funkční poradenské služby",
+      "Žáci s ambicí pracovat v hotelnictví a gastronomii – více než tři čtvrtiny absolventů se uplatňují v oboru"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují interaktivní a moderní výuku – v některých teoretických předmětech je výuka spíše tradičnější",
+      "Studenti se slabší angličtinou – výuka cizích jazyků se zaměřuje spíše na gramatiku než na komunikaci",
+      "Žáci s vyšší absencí – absence se sice snižuje, ale stále je to sledovaná oblast"
+    ],
+    "plain_czech_summary": "Škola se za poslední tři roky výrazně zlepšila. Nový ředitel zavedl lepší řízení, všichni maturanti nyní uspějí, a praktické vyučování je na vysoké úrovni. Žáci se učí v moderních provozovnách a získávají reálné pracovní dovednosti. Slabší stránkou je teoretická výuka – v některých hodinách chybí interaktivní přístupy a žáci jsou pasivnější. Cizí jazyky se učí spíše gramatiku než komunikaci. Pokud chcete praktické vzdělání s dobrými výsledky maturit, je to dobrá volba."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "100% úspěšnost v jarním termínu v obou sledovaných letech (2022/2023 a 2023/2024)",
+        "Žáci nástavbového studia a oboru Kosmetické služby dosahují výrazně lepších výsledků v češtině a angličtině než celostátní průměr",
+        "Žáci oboru Gastronomie dosahují mírně horších výsledků v porovnání s celostátem"
+      ],
+      "evidence": "Všichni žáci zkoušku složili úspěšně již v jarním termínu konání zkoušek. V celostátním srovnání dosahovali žáci nástavbového studia a oboru Kosmetické služby vždy výrazně lepších výsledků v českém a anglickém jazyce."
+    },
+    "absence": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "Obor Kuchař–číšník: snížení z 200 hodin na 100 hodin průměrně na žáka (2022/2023 vs 2023/2024)",
+        "Maturitní obory: snížení z 100 hodin na 80 hodin průměrně na žáka",
+        "Neomluvená absence v nematuritním oboru: snížení z 30 hodin na 2 hodiny průměrně na žáka"
+      ],
+      "evidence": "Ve školním roce 2023/2024 se oproti školnímu roku 2022/2023 snížila průměrné absence žáků oboru Kuchař–číšník z 200 hodin na 100 hodin a u maturitních oborů ze 100 hodin na 80 hodin."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní poskytující cílené podpory žákům se speciálními vzdělávacími potřebami",
+      "Doučování a konzultace zaměřené na konkrétní potřeby žáků",
+      "Kariérové poradenství integrované do odborné výuky s reálným náhledem na profesní uplatnění"
+    ],
+    "safety_climate": [
+      "Pedagogický dohled a zabezpečený vstup do budovy přispívají k bezpečnosti žáků",
+      "Funkční preventivní mechanismy na odhalování rizikového chování",
+      "Systematická spolupráce se zákonnými zástupci při řešení problémů",
+      "Preventivní program zaměřený na bezpečné chování, snižování absence a pozitivní mezilidské vztahy"
+    ],
+    "partnerships_practice": [
+      "Nově navázané partnerství se střediskem praktického vyučování umožňující kvalitní naplňování vzdělávacích programů",
+      "Smluvní pracoviště s vysokou úrovní služeb a moderním materiálním zázemím",
+      "Spolupráce se sociálními partnery zajišťující vazbu teoretického vzdělávání na praxi a zvyšování uplatnitelnosti absolventů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní čísla, citace a doporučení. Některé pasáže jsou více úřednické, ale celkově je dobře čitelná pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků v jednotlivých oborech – pouze celkový počet 88 žáků",
+      "Chybí detailní informace o kvalifikaci pedagogů – pouze zmínka, že pětina si doplňuje vzdělání",
+      "Není jasné, jak se konkrétně liší výuka mezi jednotlivými třídami a obory"
+    ]
+  }
+}
+```

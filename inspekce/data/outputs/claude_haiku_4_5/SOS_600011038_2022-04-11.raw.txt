@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "SOS_600011038_2022-04-11",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola elektrotechnická se zaměřením na elektrotechniku a informační technologie, zakončené maturitní zkouškou",
+    "inspection_period": "11. 4. až 22. 4. 2022",
+    "school_change_summary": "Nová ředitelka od září 2021 postupně zavádí zlepšení. Rozšířena nabídka o obor Informační technologie. Zlepšeny materiální podmínky v IT. Škola má 56 žáků v denní formě a 25 v kombinované formě, 6 žáků se speciálními potřebami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s firmami",
+        "detail": "Škola má rozsáhlou síť sociálních partnerů, kteří aktivně podporují praktickou výuku a připravují žáky na budoucí zaměstnání.",
+        "evidence": "Efektivní spolupráce se sociálními partnery při realizaci odborné praxe, stáží a exkurzí"
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Všechny hospitované hodiny se vyznačovaly atmosférou založenou na vzájemné důvěře a respektu.",
+        "evidence": "Společným znakem všech hospitovaných hodin byla atmosféra založená na vzájemné důvěře a respektu"
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Výsledky žáků odpovídají průměru v ČR, v roce 2020 prospěli všichni, v roce 2021 všichni neúspěšní žáci uspěli v opravném termínu.",
+        "evidence": "V roce 2020 prospěli všichni žáci, v roce 2021 všichni neúspěšní byli úspěšní v opravném podzimním termínu"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá metodická podpora učitelů",
+        "detail": "Hospitační činnost neposkytuje konkrétní doporučení pro zlepšení výuky, chybí efektivní systém vedení začínajících pedagogů.",
+        "evidence": "Závěry z hospitací neposkytují konkrétní doporučení či opatření směřující ke zlepšení pedagogické práce"
+      },
+      {
+        "tag": "Nedostatečná diferenciace ve výuce",
+        "detail": "Učitelé nevyužívají individualizaci a diferenciaci podle potřeb žáků, převažuje frontální práce.",
+        "evidence": "Individualizaci a diferenciaci zadávaných úkolů podle individuálních potřeb žáků však nevyužívali"
+      },
+      {
+        "tag": "Slabá vybavenost elektrotechnické laboratoře",
+        "detail": "Laboratoř pro elektrotechnická měření je spíše na úrovni dílny, chybí moderní přístroje a stroje.",
+        "evidence": "Úroveň materiálně technických podmínek pro praktickou výuku elektrotechniky není dostačující"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje začínající učitele a jaký má systém jejich pedagogického vedení?",
+      "Jaké konkrétní plány má škola na zlepšení vybavenosti elektrotechnické laboratoře?",
+      "Jak se škola snaží individualizovat výuku pro žáky se speciálními vzdělávacími potřebami?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s podporou firemních partnerů a reálného pracovního prostředí",
+      "Studenti zainteresovaní na elektrotechnice nebo informačních technologiích s jasným zaměřením na budoucí profesi",
+      "Žáci, kteří si cení bezpečného a respektujícího školního prostředí"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – individualizace není dostatečně zajištěna",
+      "Studenti, kteří potřebují aktivní vyučovací metody a interaktivní přístup – převažuje frontální výuka",
+      "Žáci, kteří se učí lépe s detailní zpětnou vazbou – chybí formativní hodnocení"
+    ],
+    "plain_czech_summary": "Škola elektrotechniky v Žatci má silné zázemí v praxi díky partnerství s firmami. Nová ředitelka postupně zlepšuje podmínky. Maturitní výsledky jsou průměrné. Hlavní problémy: učitelé nedostávají kvalitní metodickou podporu, výuka je málo individualizovaná a převažuje frontální přístup. Laboratoř pro elektrotechniku potřebuje modernizaci. Bezpečné a respektující prostředí je pozitivum."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, odpovídá průměru v ČR",
+      "key_numbers": [
+        "2020: 100% úspěšnost (všichni prospěli)",
+        "2021: 6 z 28 žáků neprospělo v jarním termínu, všichni uspěli v podzimním opravném termínu"
+      ],
+      "evidence": "Výsledky žáků při ukončování vzdělávání maturitní zkouškou odpovídaly dosahovanému průměru v dané skupině oborů v ČR"
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje údaje o absence žáků"
+    },
+    "support_services": [
+      "Výchovná poradkyně – koordinuje práci se žáky se speciálními vzdělávacími potřebami",
+      "Kariérová poradkyně – podporuje orientaci na trhu práce",
+      "Metodik prevence – zajišťuje preventivní program zaměřený na klima tříd a zdravý životní styl",
+      "Doučování a individuální konzultace pro žáky ohrožené neúspěšností"
+    ],
+    "safety_climate": [
+      "Atmosféra založená na vzájemné důvěře a respektu ve všech hospitovaných hodinách",
+      "Psychická podpora žáků v souvislosti s distanční výukou prostřednictvím online třídnických hodin",
+      "Adaptační sportovní kurzy pro prvňáky",
+      "Preventivní program zaměřený na posílení vzájemných vztahů"
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce se sociálními partnery – firmy realizují odbornou praxi v reálném prostředí",
+      "Stáže pedagogických pracovníků v partnerských firmách",
+      "Exkurze žáků do praxe",
+      "Zapojení odborníků z praxe do výuky odborných předmětů",
+      "Síť partnerů byla v tomto roce rozšířena o další subjekty"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Obsahuje konkrétní příklady a citace z hospitací. Silné a slabé stránky jsou jasně vymezeny. Absence dat o absenci žáků a některé obecnější formulace snižují skóre o jeden bod.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o absenci žáků – není jasné, zda je to problém či ne",
+      "Není specifikováno, kolik pedagogů má nedostatečné pedagogické vzdělání a jak to konkrétně ovlivňuje výuku",
+      "Chybí konkrétní čísla o počtu žáků v jednotlivých oborech a jejich úspěšnosti"
+    ]
+  }
+}
+```

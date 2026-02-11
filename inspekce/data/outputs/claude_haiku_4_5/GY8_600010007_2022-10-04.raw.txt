@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY8_600010007_2022-10-04",
+  "school_profile": {
+    "school_type": "Gymnázium (všeobecné), příspěvková organizace",
+    "inspection_period": "4. až 6. října 2022",
+    "school_change_summary": "Od roku 2017 vede školu nová ředitelka, která zavedla pravidelné třídnické hodiny a zvýšila počet žáků v středoškolské odborné činnosti. Škola má 285 žáků (79 % kapacity 360), z toho 7 se speciálními potřebami a 22 s odlišným mateřským jazykem."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Všichni studenti úspěšní v běžné části maturity, v profilové části 100 % po opravách.",
+        "evidence": "V jarním zkušebním období 2022 byla úspěšnost v profilové části 77 % a po opravných zkouškách dosáhla 100 %."
+      },
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Velmi dobrá úroveň výuky cizích jazyků s výměnnými pobyty a poznávacími zájezdy.",
+        "evidence": "Gymnázium nabízí výměnné pobyty se Švýcarskem, spolupráci s německou školou a poznávací zájezdy do Anglie."
+      },
+      {
+        "tag": "Bezpečné a podnětné prostředí",
+        "detail": "Moderně vybavené učebny, relaxační místnosti a odpočinkové zóny pro zdravý vývoj žáků.",
+        "evidence": "Od poslední inspekce byla zmodernizována chemie, zřízena multimediální učebna s 3D tiskárnou a relaxační místnost."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivního učení",
+        "detail": "Výuka se opírá především o frontální výklad, chybí skupinová práce a diskuse.",
+        "evidence": "Mezi výukovými metodami se vzácně vyskytla skupinová práce, učitelé málo využívali aktivizaci žáků v podobě diskuze."
+      },
+      {
+        "tag": "Omezené využití digitálních technologií",
+        "detail": "Počítače a internet používají především učitelé, ne žáci.",
+        "evidence": "Digitální technologie jsou ve škole využívány v omezené míře, a to převážně učitelem."
+      },
+      {
+        "tag": "Nedostatečná kontrola bezpečnosti",
+        "detail": "Bezpečnostní rizika nejsou systematicky vyhodnocována.",
+        "evidence": "Důsledněji je třeba vyhodnocovat aktuální bezpečnostní rizika a průběžně přijímat opatření k jejich eliminaci."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně využíváte skupinovou práci a diskuse v hodinách? Můžete ukázat příklady?",
+      "Jaké jsou vaše plány na zvýšení používání počítačů a internetu přímo žáky?",
+      "Jak se školíte učitele v oblasti bezpečnosti a jak pravidelně kontrolujete bezpečnostní rizika?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí studovat na vysoké škole – skoro všichni absolventi pokračují v terciárním vzdělání",
+      "Jazykově nadaní žáci – škola nabízí 4 cizí jazyky a výměnné pobyty",
+      "Aktivní žáci zajímající se o soutěže – škola má úspěchy v předmětových i sportovních soutěžích"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující praktické a skupinové učení – výuka je spíše teoretická a frontální",
+      "Žáci potřebující intenzivní práci s digitálními technologiemi – jejich využití je omezené",
+      "Žáci se speciálními potřebami – ačkoli jsou podporováni, je jich málo (7 ze 285)"
+    ],
+    "plain_czech_summary": "Gymnázium Mimoň je kvalitní škola s výbornými výsledky u maturity a silným jazykovým vzděláním. Ředitelka od roku 2017 vytvořila vstřícné prostředí s moderní vybavením. Učitelé jsou zkušení a péče o žáky je na vysoké úrovni. Hlavní slabinou je tradiční frontální výuka s málo skupinové práce a diskusí. Digitální technologie se využívají málo. Bezpečnostní rizika nejsou dostatečně systematicky kontrolována. Škola je vhodná pro ambiciózní žáky směřující na vysoké školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně výborný",
+      "key_numbers": [
+        "100 % úspěšnost v běžné části maturity za poslední 3 roky",
+        "77 % úspěšnost v profilové části (jaro 2022)",
+        "100 % úspěšnost v profilové části po opravách"
+      ],
+      "evidence": "V posledních třech letech byli všichni studenti ve společné části maturitní zkoušky úspěšní. V jarním zkušebním období roku 2022 byla úspěšnost v profilové části 77 % a po opravných zkouškách dosáhla 100 %."
+    },
+    "absence": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "Neomluveným absencím se daří předcházet",
+        "Absence řeší neprodleně třídní učitelé",
+        "Rodiče jsou informováni přes školní informační systém"
+      ],
+      "evidence": "Absence žáků řeší neprodleně třídní učitelé, rodiče jsou informováni přes školní informační systém. Neomluveným absencím se daří předcházet díky včasné komunikaci se zákonnými zástupci žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně úzce spolupracuje s metodičkou prevence a třídními učiteli",
+      "Péče o žáky se speciálními vzdělávacími potřebami včetně identifikace individuálních potřeb",
+      "Kariérové poradenství pro poslední ročníky při výběru studia nebo zaměstnání",
+      "Metodička prevence koordinuje preventivní aktivity zaměřené na šikanu, kyberšikanu a závislostní chování"
+    ],
+    "safety_climate": [
+      "Bezpečnost a ochrana zdraví jsou prioritou školy",
+      "Podmínky bezpečnosti jsou stanoveny ve školním řádu a provozních řádech",
+      "Elektronický systém v entrada prostorách",
+      "Úrazy žáků jsou evidovány a záznamy zpracovávány",
+      "Výskyt rizikového chování je minimální díky aktivnímu přístupu pedagogů"
+    ],
+    "partnerships_practice": [
+      "Výměnné pobyty s partnerskou školou ve Švýcarsku",
+      "Spolupráce s Tilly Real Schule v Ingolstadtu (Německo)",
+      "Poznávací zájezdy do Anglie ve spolupráci s cestovními agenturami",
+      "Projekt JA Studentská firma pro všechny žáky septimy",
+      "Zapojení do projektu Podpora polytechnického vzdělávání (badatelský kroužek fyziky, robotika)",
+      "Spolupráce se vědeckými pracovišti a vzdělacími institucemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však poměrně dlouhé a obsahují úřednický jazyk, který by mohl být jednodušší.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků s vyznamenáním – pouze 'téměř polovina', což je vágní",
+      "Není jasné, kolik procent žáků se účastní středoškolské odborné činnosti – pouze 'výrazný nárůst'",
+      "Chybí konkrétní data o počtu hospitací vedení školy – pouze 'méně četná od ledna 2020'"
+    ]
+  }
+}
+```

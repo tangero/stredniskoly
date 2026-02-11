@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY8_600004821_2025-03-26",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium s česko-anglickým programem a Montessori pedagogikou, včetně mezinárodního programu IB",
+    "inspection_period": "26. března až 31. března 2025",
+    "school_change_summary": "Od inspekce v 2019: nárůst počtu žáků (407 žáků), obměna třetiny pedagogického sboru, změna ředitele (únor 2023), inovace ŠVP, zlepšení digitálního vybavení, zavedení kriteriálního hodnocení, od 2025 fakultní škola UK"
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Výuka vybraných předmětů v angličtině s rodilými mluvčími, výborné výsledky v anglickém jazyce na maturitě (mírně nad republikovým průměrem).",
+        "evidence": "Více jak dvě třetiny žáků dosahují nadprůměrných výsledků v externí zkoušce IB, v anglickém jazyce se výsledky pohybují mírně nad republikovým průměrem."
+      },
+      {
+        "tag": "Individuální přístup a podpora",
+        "detail": "Komplexní systém pastorální péče, tripartitní setkání, doučování a psychologická intervence pro každého žáka.",
+        "evidence": "Škola reflektuje potřeby talentovaných žáků, žáků se zdravotním oslabením a umožňuje individuální úpravu studia; 7 % žáků se speciálními potřebami dosahuje srovnatelných výsledků."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Renovované prostory s přírodovědnými laboratořemi, počítačovými pracovnami, letní učebnou a Wi-Fi sítí.",
+        "evidence": "Od poslední inspekce se zkvalitnilo vybavení informačními technologiemi, digitální technikou i didaktickými pomůckami."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky distančního studia",
+        "detail": "Žáci čtyřletého distančního programu dosahují výrazně horších výsledků – v roce 2023/2024 neprospělo 55 % přihlášených žáků na maturitě.",
+        "evidence": "K 30. 6. 2024 pouze dvě třetiny žáků řádně uzavřely ročník, s vyznamenáním prospěli jednotlivci a téměř třetina neprospěla."
+      },
+      {
+        "tag": "Nejednotné dodržování pravidel",
+        "detail": "Rozdílná úroveň pedagogických kompetencí se odráží v různém vynucování nastavených pravidel mezi učiteli.",
+        "evidence": "Rozdílná úroveň pedagogických kompetencí učitelů se odrážela v různém výchovném působení na žáky při vyžadování nastavených pravidel."
+      },
+      {
+        "tag": "Nedostatečná diferenciace ve výuce",
+        "detail": "V části hodin chybí dostatečně diferencovaná zadání pro žáky s různými studijními předpoklady.",
+        "evidence": "Méně časté využívání obsahově diferencovaných zadání v dostatečné míře nezohledňovalo individuální vzdělávací potřeby některých žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá příprava žáků distančního studia na maturitu a jaká opatření škola zavádí pro zlepšení jejich úspěšnosti?",
+      "Jaké jsou konkrétní kritéria pro přijímání žáků do vyšších ročníků distančního studia a jak se liší od denní formy?",
+      "Jak se škola vypořádává s rozdílnými studijními předpoklady žáků – jaké má nástroje pro nadané žáky a pro ty, kteří potřebují více podpory?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o kvalitní jazykové vzdělání a mezinárodní program IB, kteří chtějí studovat v zahraničí",
+      "Děti s individuálními potřebami, které ocení personalizovaný přístup a komplexní systém podpory",
+      "Žáci preferující aktivní, projektové učení s prvky Montessori pedagogiky a činnostním přístupem"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče zvažující distanční formu studia – výsledky jsou výrazně horší než v denní formě, vysoké riziko neúspěchu na maturitě",
+      "Žáci, kteří potřebují silnější strukturu a jasné vynucování pravidel – pedagogické přístupy se mezi učiteli liší",
+      "Rodiny, které hledají tradiční frontální výuku – škola klade důraz na samostatné objevování a projektové učení"
+    ],
+    "plain_czech_summary": "Gymnázium Duhovka je kvalitní soukromá škola se zaměřením na jazykové vzdělání a Montessori pedagogiku. Denní osmileté studium dosahuje výborných výsledků, zejména v angličtině a mezinárodním programu IB. Škola nabízí individuální přístup, moderní vybavení a komplexní podporu žáků. Hlavní problém je distanční čtyřleté studium, kde více než polovina žáků neuspěje na maturitě. Inspekce také upozorňuje na nejednotné dodržování pravidel mezi učiteli a nedostatečnou diferenciaci ve výuce pro žáky s různými schopnostmi."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšení v denní formě, výrazné problémy v distanční formě",
+      "key_numbers": [
+        "Denní forma: v anglickém jazyce mírně nad republikovým průměrem; v distanční formě 55 % žáků v roce 2023/2024 neabsolvovalo maturitu",
+        "Více jak dvě třetiny žáků IB programu dosahují nadprůměrných výsledků",
+        "V distanční formě neuspěli čtyři žáci v profilové zkoušce z matematiky"
+      ],
+      "evidence": "Od posledního inspekčního hodnocení došlo k výraznějšímu zlepšení maturitních výsledků, zejména v českém jazyce. Ve sledovaném období dvou školních let se promítly rozdíly v úspěšnosti mezi denní a distanční formou."
+    },
+    "absence": {
+      "trend": "Nízká absence, zanedbatelný výskyt neomluvené absence",
+      "key_numbers": [
+        "Nižší počet uložených kázeňských opatření",
+        "Zanedbatelný výskyt neomluvené absence"
+      ],
+      "evidence": "Uplatňované preventivní mechanismy jsou převážně funkční, což dokládá nižší počet uložených kázeňských opatření i zanedbatelný výskyt neomluvené absence."
+    },
+    "support_services": [
+      "Školní psycholožka a speciální pedagožka",
+      "Tři asistenti pedagoga, zejména v primách gymnázia",
+      "Komplexní systém pastorální péče: konzultace, doučování, pedagogická a psychologická intervence",
+      "Tripartitní setkání a dipartity s třídním učitelem",
+      "Kariérní poradenství a příprava k externím zkouškám"
+    ],
+    "safety_climate": [
+      "Elektronické zabezpečení vstupu do budovy a kamerový systém",
+      "Systém prevence sociálně patologických jevů: komunitní kruhy, šetření klimatu, věková integrace",
+      "Edukativní akce pro rodiče o bezpečnosti v kyberprostoru",
+      "Intervenční programy a individuální pohovory při nežádoucím chování",
+      "Nižší počet kázeňských opatření a zanedbatelná absence"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Filozofické fakulty UK od roku 2025",
+      "Partnerství se zahraničními institucemi a školami – jazykové výměny, stáže, mezinárodní projekty",
+      "Spolupráce s Centrem pro talentovanou mládež",
+      "Program Cena vévody z Edinburghu",
+      "Účast v Středoškolské odborné činnosti a předmětových soutěžích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Hlavní zjištění jsou jasná: denní forma je kvalitní, distanční forma má vážné problémy. Některé pasáže jsou však velmi odborné a pro laika těžko srozumitelné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala na základě doporučení inspekce",
+      "Není jasné, zda se problémy distančního studia týkají pouze žáků, kteří se přihlásili později, nebo i těch, kteří studují od začátku",
+      "Chybí informace o tom, jak se liší kvalita výuky mezi jednotlivými učiteli v konkrétních předmětech"
+    ]
+  }
+}
+```

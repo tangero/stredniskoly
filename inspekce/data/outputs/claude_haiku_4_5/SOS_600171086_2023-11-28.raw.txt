@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600171086_2023-11-28",
+  "school_profile": {
+    "school_type": "Integrovaná střední škola s 10 obory: 2 čtyřleté s maturitou (Mechanik seřizovač, Sociální činnost), 6 tříletých s výučním listem, 2 dvouletých nástavbových s maturitou",
+    "inspection_period": "28. listopadu až 1. prosince 2023",
+    "school_change_summary": "Škola zaznamenala nárůst žáků o 24 % na 544 studentů. Domov mládeže se rozrostl o 83 % na 55 ubytovaných. Postupně se zlepšují materiální podmínky a vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka na vysoké úrovni",
+        "detail": "Odborný výcvik je individualizovaný, moderně vybavený a probíhá v reálných provozních podmíních, což efektivně rozvíjí praktické dovednosti a odborné kompetence.",
+        "evidence": "Všechna pracoviště podporovala edukační proces, žáci odpovědně plnili pracovní úkoly v reálných podmínkách."
+      },
+      {
+        "tag": "Kvalitní poradenské služby",
+        "detail": "Škola má funkční systém podpory žáků se speciálními potřebami, nadaných žáků a těch ohrožených neúspěchem s individuálními vzdělávacími plány.",
+        "evidence": "Tým pracovníků pravidelně monitoruje situaci, komunikuje se školskými poradenskými zařízeními a koordinuje práci asistentů."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Žáci se zapojují do mnoha soutěží, dobrovolnických aktivit a vzdělávacích projektů, což motivuje jejich vzdělávání a rozvoj kompetencí.",
+        "evidence": "Zejména v soutěžích s odborným zaměřením dosahují opakovaně dobrých výsledků, obory Tesař a Elektrikář se zúčastňují mistrovství."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá teoretická výuka",
+        "detail": "Převažuje frontální výuka bez aktivního zapojení žáků, minimální využití digitálních technologií a nedostatečná práce se vzdělávacími cíli.",
+        "evidence": "Žáci byli pouze pasivními příjemci informací, digitální technologie využívány minimálně, závěry hodin bez hodnocení a sebehodnocení žáků."
+      },
+      {
+        "tag": "Vysoká absence a neúspěšnost u maturity",
+        "detail": "Obor Sociální činnost (nástavbový) má dlouhodobě velmi vysokou neúspěšnost u maturitní zkoušky (66,7 % v 2023) a vysokou absenci (216 hodin/rok).",
+        "evidence": "V nástavbovém oboru Sociální činnost v roce 2023 pouze 30 % žáků úspěšně ukončilo vzdělávání, vysoká absence přetrvává od roku 2021/2022."
+      },
+      {
+        "tag": "Neefektivní řešení problémů",
+        "detail": "Opatření proti neúspěšnosti nejsou systematicky vyhodnocována a jejich účinnost není prokázána, chybí konkrétní analýza příčin.",
+        "evidence": "Opatření jsou přijímána na neformální úrovni bez doložení konkrétních zápisů, dopadem vysoké absence se škola prokazatelným způsobem nezabývala."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci a neúspěšnost žáků oboru Sociální činnost u maturitní zkoušky?",
+      "Jaké jsou minimální studijní předpoklady pro přijetí do čtyřletých oborů s maturitou a jak se liší od ostatních škol?",
+      "Jak se škola zaměřuje na rozvoj klíčových kompetencí a kritického myšlení v teoretické výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické obory (Kadeřník, Kuchař-číšník, Elektrikář, Tesař, Truhlář) – zde je výuka na vysoké úrovni",
+      "Žáci se speciálními vzdělávacími potřebami – škola má kvalitní poradenské služby a individuální podporu",
+      "Žáci, kteří se chtějí zapojit do soutěží a dobrovolnických aktivit – bohatá nabídka mimoškolních činností"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižšími studijními předpoklady – přijímací řízení nemá nastavenu minimální bodovou hranici, což se negativně projevuje na výsledcích",
+      "Zájemci o obor Sociální činnost – dlouhodobě vysoká neúspěšnost u maturitní zkoušky (66,7 % v nástavbovém oboru)",
+      "Žáci, kteří potřebují kvalitní teoretickou výuku – převažuje pasivní frontální výuka bez aktivního zapojení"
+    ],
+    "plain_czech_summary": "Integrovaná střední škola v Hodoníně má silné stránky v praktické výuce a poradenských službách. Žáci se učí v moderně vybavených dílnách a na reálných pracovištích, což je efektivní. Problém je v teoretické výuce – učitelé často jen přednášejí bez aktivního zapojení žáků. Velký problém je vysoká absence a neúspěšnost u maturity, zvlášť v oboru Sociální činnost. Škola sice má plány na zlepšení, ale jejich účinnost není jasně prokázána. Vhodná pro prakticky zaměřené žáky, méně vhodná pro ty, kteří potřebují kvalitní teoretickou přípravu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě vysoká neúspěšnost, zejména v oboru Sociální činnost s tendencí zhoršování",
+      "key_numbers": [
+        "Nástavbový obor Sociální činnost: 53,8 % neúspěšnosti (2022) → 66,7 % (2023)",
+        "Čtyřletý obor Sociální činnost: 56,3 % (2022) → 27,8 % (2023)",
+        "Obor Mechanik seřizovač: 30,8 % (2021) → 23,1 % (2022) → 33,3 % (2023)"
+      ],
+      "evidence": "V nástavbovém oboru Sociální činnost v roce 2023 pouze 30 % žáků z původně přijatých úspěšně ukončilo vzdělávání."
+    },
+    "absence": {
+      "trend": "Vysoká absence po ukončení distanční výuky, mírný pokles, ale stále nadprůměrná",
+      "key_numbers": [
+        "Školní rok 2021/2022: 226 hodin na žáka za rok",
+        "Nástavbový obor Sociální činnost 2021/2022: 216 hodin na žáka za rok",
+        "Školní rok 2022/2023: 186 hodin na žáka za rok (mírný pokles)"
+      ],
+      "evidence": "Absence se výrazně zvýšila po distanční výuce, opatření vedení školy nevedla k výraznému snížení absence."
+    },
+    "support_services": [
+      "Funkční systém poradenských služeb s výchovnými poradkyněmi a speciální pedagožkou",
+      "Individuální vzdělávací plány pro žáky se speciálními potřebami",
+      "Doučování a příprava k maturitě, zejména v domově mládeže",
+      "Schránka důvěry na webu školy pro mapování osobních problémů žáků"
+    ],
+    "safety_climate": [
+      "Škola je zapojena do projektu Nenech to být zaměřeného na eliminaci rizikových jevů",
+      "Školní metodička prevence organizuje interaktivní programy a workshopy",
+      "Komunikace se sociálními a zdravotnickými službami",
+      "Operativní přijímání opatření při zjištění rizikového chování žáků"
+    ],
+    "partnerships_practice": [
+      "Cílená spolupráce s profesními partnery pro praktické vyučování",
+      "Praxe v zahraničí rozvíjející jazykové a sociální kompetence",
+      "Rámcové smlouvy o zajištění praktického vyučování",
+      "Domov mládeže spolupracuje s místní knihovnou a kulturními institucemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, jasně identifikuje silné a slabé stránky. Konkrétní čísla a citace podporují tvrzení. Jediný nedostatek: některé pasáže jsou dlouhé a složitě strukturované.",
+    "uncertainty_notes": [
+      "Příčiny vysoké absence nejsou v textu hluboce analyzovány – nejsou jasné konkrétní důvody",
+      "Efektivita nově přijatých opatření pro školní rok 2023/2024 nelze posoudit, jak sám text uvádí",
+      "Není jasné, zda nižší kvalita teoretické výuky je důsledkem nedostatečné přípravy učitelů nebo systémových problémů"
+    ]
+  }
+}
+```

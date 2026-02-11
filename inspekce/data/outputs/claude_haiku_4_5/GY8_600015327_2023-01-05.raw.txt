@@ -1,0 +1,98 @@
+```json
+{
+  "report_id": "GY8_600015327_2023-01-05",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium se školním klubem a střediskem volného času",
+    "inspection_period": "5. 1. − 10. 1. 2023",
+    "school_change_summary": "Nový pavilon s odbornými učebnami, posílené poradenské pracoviště, zavedení CLIL metody a nové informatiky"
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné maturitní výsledky",
+        "detail": "Úspěšnost ve společné i profilové části maturitní zkoušky dlouhodobě překračuje republikový průměr.",
+        "evidence": "Podle Centra pro zjišťování výsledků vzdělávání škola dosahuje výborných výsledků."
+      },
+      {
+        "tag": "Kvalitní edukační atmosféra",
+        "detail": "Žáci pracují soustředěně, aktivně a bez obav se vyjadřují, pedagogové jsou trpěliví a vstřícní.",
+        "evidence": "Všichni žáci v hospitovaných hodinách pracovali soustředěně a aktivně s příznivou edukační atmosférou."
+      },
+      {
+        "tag": "Komplexní podpora osobnostního rozvoje",
+        "detail": "Škola nabízí bohatou nabídku kroužků, jazykových kurzů a mimoškolních aktivit s důrazem na hodnoty.",
+        "evidence": "Široká nabídka nepovinných předmětů, jazykových kurzů a školních aktivit s velkým zájmem."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo individualizované vyučování",
+        "detail": "Pedagogové jen občas uplatňují diferencovaný přístup, většinou všichni žáci dostávají stejná zadání.",
+        "evidence": "Jen občas byl uplatněn diferencovaný přístup, většinou žáci obdrželi stejná zadání úkolů."
+      },
+      {
+        "tag": "Nejasné cíle hodin",
+        "detail": "Formulace cíle vyučovací hodiny je často omezena jen na téma, bez efektivního vyhodnocení na konci.",
+        "evidence": "Formulace cíle hodiny byla většinou omezena na sdělení tématu, méně často ji bylo možné využít při závěrečném hodnocení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku jednotlivým žákům s různými potřebami a tempem učení?",
+      "Jaké jsou konkrétní výsledky žáků v jednotlivých předmětech a jak se škola vypořádává s případnými slabšími oblastmi?",
+      "Jak funguje spolupráce mezi třídním učitelem a školním poradenským pracovištěm při podpoře žáka?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí dosáhnout vysokých výsledků v maturitě a pokračovat na vysoké škole",
+      "Děti zajímající se o cizí jazyky a mezinárodní spolupráci (angličtina, francouzština, španělština, italština, latina)",
+      "Žáci, kterým vyhovuje křesťanské prostředí a důraz na etickou výchovu a osobnostní rozvoj"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individualizovaného přístupu a přizpůsobení tempa výuky jejich možnostem",
+      "Děti, které se lépe učí, když mají jasně definované cíle a pravidelnou zpětnou vazbu na konci každé hodiny",
+      "Žáci, kteří preferují více praktické a experimentální vyučování bez důrazu na teoretické znalosti"
+    ],
+    "plain_czech_summary": "Katolické gymnázium v Třebíči je kvalitní škola s výborným zázemím a dlouhodobě nadprůměrnými maturitními výsledky. Žáci se učí v příjemné atmosféře, kde jsou vedeni k vzájemnému respektu a etickým hodnotám. Škola nabízí bohatou nabídku jazyků a zájmových aktivit. Inspekce upozornila na to, že by pedagogové měli více individualizovat výuku a jasněji formulovat cíle hodin. Celkově jde o stabilní, dobře řízené gymnázium s důrazem na všestranný rozvoj osobnosti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě nadprůměrný",
+      "key_numbers": [
+        "Úspěšnost ve společné části maturitní zkoušky nad republikovým průměrem",
+        "Úspěšnost v profilové části maturitní zkoušky nad republikovým průměrem"
+      ],
+      "evidence": "Podle poskytnutých dat Centra pro zjišťování výsledků vzdělávání škola dosahuje výborných výsledků."
+    },
+    "absence": {
+      "trend": "Bez identifikovaných rizik",
+      "key_numbers": [
+        "V aktuálním školním roce nemá škola informace o případech rizikového chování mezi žáky"
+      ],
+      "evidence": "Prevence rizikového chování spočívá na široké škále různorodých aktivit včetně třídnických hodin a adaptačních pobytů."
+    },
+    "support_services": [
+      "Vedoucí školního poradenského pracoviště, metodik prevence, spirituál školy, výchovná poradkyně, sociální pedagog, školní psycholožka",
+      "Písemně uzavírané dohody se žáky se speciálními vzdělávacími potřebami",
+      "Vyhodnocování účinnosti podpůrných opatření každé tři měsíce"
+    ],
+    "safety_climate": [
+      "Žáci jsou důsledně vedeni k dodržování dohodnutých pravidel vzájemných vztahů",
+      "Pozorován vzájemný respekt, ohleduplnost a dodržování zásad společenského chování",
+      "Žáci se vyjadřují bez obav a taktně se podílejí na vzájemném hodnocení"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se zapsaným spolkem Halahoj sdružujícím dobrovolníky z řad žáků a absolventů",
+      "Tandemová výuka s propojením cizích jazyků a ostatních předmětů (metoda CLIL)",
+      "Spolupráce s celou řadou partnerů pro všestranný rozvoj osobností žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní příklady a citace z pozorování. Všechna tvrzení jsou podložena důkazy z inspekční činnosti. Jazyk je srozumitelný a bez zbytečného úřednického stylu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o absencích žáků, pouze obecné tvrzení o absenci rizikového chování",
+      "Nejsou uvedeny konkrétní procenta nebo počty žáků, kterým je poskytována individuální podpora",
+      "Chybí informace o počtu žáků, kteří se účastní jednotlivých kroužků a jejich úspěšnosti"
+    ]
+  }
+}
+```

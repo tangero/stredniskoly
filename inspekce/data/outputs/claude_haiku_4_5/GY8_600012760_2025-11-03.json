@@ -1,0 +1,119 @@
+{
+  "report_id": "GY8_600012760_2025-11-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:29:35.927099+00:00",
+  "run_finished_utc": "2026-02-09T13:30:02.979511+00:00",
+  "raw_file": "GY8_600012760_2025-11-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600012760_2025-11-03",
+    "school_profile": {
+      "school_type": "Gymnázium a Letecká střední odborná škola (8letý obor Gymnázium, 4letý obor Technické lyceum)",
+      "inspection_period": "3. až 5. listopadu 2025",
+      "school_change_summary": "Škola zaznamenala nárůst počtu žáků a personální změny ve vedení. Nový ředitel pokračuje druhým rokem v naplňování koncepčního směru zaměřeného na stabilizaci zájmu žáků a zlepšování podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Nadregionální zájem o technické lyceum",
+          "detail": "Obor Technické lyceum má výrazně nadregionální zájem, kapacita domova mládeže je překročena.",
+          "evidence": "Aktuální zájem žáků ze vzdálenějších míst o ubytování převyšuje kapacitu domova mládeže."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Škola průběžně modernizuje učebny, včetně nové polytechnické učebny s laserovým plotrem a obnovené laboratoře.",
+          "evidence": "Průběžně probíhají rekonstrukce a obnovy (naposledy laboratoř biologie, polytechnická učebna vybavená počítači a laserovým plotrem)."
+        },
+        {
+          "tag": "Bohatá nabídka volnočasových aktivit",
+          "detail": "Škola organizuje 27 volnočasových kroužků s účastí cca 150 žáků, včetně sportovních, kulturních a odborných aktivit.",
+          "evidence": "Celkem škola organizuje 27 volnočasových kroužků, v letošním školním roce je v nich zapojenou cca 150 žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší práce s konkrétními vzdělávacími cíli",
+          "detail": "Učitelé často nestanovují jasné cíle zaměřené na konkrétní rozvoj žáka a nechybí závěrečné vyhodnocení jejich naplnění.",
+          "evidence": "Dobře stanovený vzdělávací cíl zaměřený na žáky byl zaznamenán pouze občas; zhodnocení naplnění cílů nebylo příliš časté."
+        },
+        {
+          "tag": "Nedostatečná diferenciace ve výuce",
+          "detail": "Výuka není dostatečně přizpůsobena různým schopnostem a zájmům žáků, chybí individualizace.",
+          "evidence": "Nebylo téměř zaznamenáno zadávání činností nebo úloh s rozdílnou obtížností ani vnitřní diferenciace činností ve třídě."
+        },
+        {
+          "tag": "Minimální sebehodnocení žáků",
+          "detail": "Žáci se málo učí hodnotit sami sebe a své vrstevníky, což omezuje jejich rozvoj komunikačních kompetencí.",
+          "evidence": "Sebehodnocení žáků vzhledem k jejich vlastnímu studijnímu pokroku bylo výjimečné, stejně jako vzájemné vrstevnické hodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s individuálními vzdělávacími cíli v jednotlivých hodinách a jak je vyhodnocuje?",
+        "Jaké konkrétní kroky podniká škola k diferenciaci výuky pro nadané žáky a pro ty, kteří potřebují více podpory?",
+        "Jak se škola připravuje na doporučení inspekce zaměřit se více na sebehodnocení a vrstevnické hodnocení žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci ze vzdálenějších míst, kteří hledají kvalitní ubytování v domově mládeže s moderním vybavením a podporou",
+        "Studenti zainteresovaní v letectví a technických oborech, kterým škola nabízí odborné praxe a návštěvy letiště",
+        "Aktivní žáci, kteří chtějí využívat bohatou nabídku 27 volnočasových kroužků a sportovních aktivit"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnější individuální podporu a jasně definované cíle – škola na tom teprve pracuje",
+        "Nadaní žáci, pokud hledají maximální diferenciaci a individualizaci – inspekce upozorňuje na nedostatečné využití jejich potenciálu",
+        "Rodiče, kteří očekávají, že jejich dítě bude mít jasně definované vzdělávací cíle a pravidelnou zpětnou vazbu – to se zatím nedělá konzistentně"
+      ],
+      "plain_czech_summary": "Gymnázium a Letecká SOŠ v Moravské Třebové je moderně vybavená škola s výrazným nadregionálním zájmem, zejména o obor Technické lyceum. Silnými stránkami jsou kvalitní materiální podmínky, bohatá nabídka aktivit a příznivá atmosféra. Inspekce však upozorňuje na potřebu zlepšit práci s konkrétními vzdělávacími cíli, více individualizovat výuku a rozvíjet sebehodnocení žáků. Škola má dobré předpoklady, ale potřebuje se zaměřit na hlubší pedagogické přístupy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – všichni žáci úspěšní",
+        "key_numbers": [
+          "100% úspěšnost při maturitní zkoušce v podzimním termínu 2024/2025",
+          "4 žáci složili Cambridge zkoušku B2 First v posledních třech letech",
+          "Průměrný prospěch 1,8–2,1 v jednotlivých třídách"
+        ],
+        "evidence": "Při maturitní zkoušce byli ve školním roce 2024/2025 všichni žáci po podzimním termínu úspěšní. Čtyři žáci složili Cambridge zkoušku úrovně B2 First."
+      },
+      "absence": {
+        "trend": "Velmi nízká absence – pozitivní",
+        "key_numbers": [
+          "Necelých 110 zameškaných hodin na žáka v loňském školním roce",
+          "Celkem 3 neomluvené hodiny za celou školu",
+          "Nízký počet výchovných opatření a snížených známek z chování"
+        ],
+        "evidence": "Poměrně nízká průměrná absence žáků (v loňském školním roce necelých 110 zameškaných hodin na žáka, celkem tři neomluvené hodiny)."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní a školní metodičkou prevence",
+        "Nově zavedená psychologická podpora (psycholožka)",
+        "Asistentka pedagoga pro žáky se speciálními vzdělávacími potřebami",
+        "Doučování a preventivní programy (Rizika kyberšikany, Bezpečnost silničního provozu, Dušeprostor)",
+        "Schránka důvěry (využívána vzácně, žáci preferují osobní kontakt)"
+      ],
+      "safety_climate": [
+        "Vstřícný přístup učitelů k žákům a pozitivní pracovní klima ve třídách",
+        "Opakovaně nízký počet výchovných opatření a snížených známek z chování",
+        "Vícedenní kurzy zaměřené na prevenci (adaptační kurz, teambuilding)",
+        "Spolupráce s městskou policií a dalšími subjekty na bezpečnosti"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s technickým muzeem a letištěm Brno (obor Technické lyceum)",
+        "Odborná čtyřtýdenní praxe žáků v reálném prostředí firem (3. ročník Technického lycea)",
+        "Zapojení odborníků z praxe do výuky",
+        "Partnerství s domovem pro seniory, domem dětí a mládeže, pedagogicko-psychologickou poradnou",
+        "Účast v mezinárodním programu DoFe (Mezinárodní cena vévody z Edinburghu) od roku 2022",
+        "Spolupráce s Centrem pro talentovanou mládež"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o počtu žáků v jednotlivých oborech – uvedeno pouze 160 žáků v 8letém gymnáziu a 93 v Technickém lyceu, ale není jasné, zda se jedná o aktuální stav.",
+        "Chybí informace o výsledcích v jednotlivých předmětech a o tom, které předměty mají vyšší neúspěšnost.",
+        "Není specifikováno, jak konkrétně se liší kvalita výuky mezi jednotlivými učiteli a předměty."
+      ]
+    }
+  }
+}

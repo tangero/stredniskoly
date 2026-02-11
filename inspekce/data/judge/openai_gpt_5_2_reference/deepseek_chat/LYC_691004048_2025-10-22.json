@@ -1,0 +1,35 @@
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "deepseek_chat",
+  "run_started_utc": "2026-02-09T12:05:58.019756+00:00",
+  "run_finished_utc": "2026-02-09T12:06:37.290244+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"LYC_691004048_2025-10-22\",\n  \"faithfulness_score_1_5\": 3,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 7,\n  \"critical_issues\": [\n    \"Část tvrzení o absenci je nedoložená: zpráva uvádí přijatá opatření ke snižování vysoké absence a zpřísnění podmínek „plánu vzdělávací podpory“, ale nekonstatuje „trend snižování absence“, „snížení počtu žáků s vysokou absencí“ ani neuvádí konkrétní údaje o absenci za 2025/2026.\",\n    \"Sekce „hard_facts.absence“ působí jako práce s konkrétními daty („údaje o absenci“, „snížení počtu žáků…“), která ve zdroji nejsou.\",\n    \"„Individuální vzdělávací plány pro nadané sportovce“ je terminologicky zavádějící: inspekce popisuje nově nastavený „Plán vzdělávací podpory“ (primárně pro nadané sportovce, případně zdravotně znevýhodněné), nikoli explicitně IVP v tomto významu.\",\n    \"Doporučení typu „kdo by měl být opatrný: zájemci o technické obory“ není opřené o inspekční zjištění (je to externí rada, kterou nelze ze zprávy dovodit).\",\n    \"Část „who_should_be_cautious“ obsahuje další zobecnění bez přímé opory (např. „žáci s nízkou motivací k samostatné práci“).\",\n    \"Chybí několik pro rodiče důležitých doložených bodů: převažující frontální výuka, slabý formativní rozměr zpětné vazby, minimální práce s chybou, slabé vyhodnocování cíle hodiny a jen ojedinělé sebehodnocení/vrstevnické hodnocení.\",\n    \"Nezmiňuje se (nebo jen velmi nepřímo) další relevantní zjištění: škola dává k vysvědčení i slovní hodnocení, existuje školní parlament, nesoulad mezi průběžným hodnocením a výsledky při ukončování vzdělávání stále trvá.\"\n  ],\n  \"best_points\": [\n    \"Správně zachycená silná stránka: příznivé klima a psychické bezpečí díky vstřícnému a respektujícímu přístupu pracovníků školy.\",\n    \"Správně uvedená slabá stránka: absence diferenciace v převážné většině hospitovaných hodin.\",\n    \"Správně popsané dlouhodobě podprůměrné maturitní výsledky a doložená opatření od 2025/2026 (zpřísnění hranic, sjednocení vah známek, postupové zkoušky).\",\n    \"Správně zachycená zahraniční spolupráce (Erasmus – výměna se Španělskem, plánovaný workshop v Rumunsku) a spolupráce pro realizaci praxí.\",\n    \"Správně uvedený problém: vyhodnocování podpůrných opatření jen ústně je inspekcí hodnoceno jako nedostatečně spolehlivé.\"\n  ],\n  \"one_line_verdict\": \"Dobře strukturované a pro rodiče užitečné shrnutí, ale místy si domýšlí vývoj/údaje (zejména k absenci) a doplňuje doporučení bez opory v inspekční zprávě, takže je potřeba zpřesnit a osekat nedoložené části.\"\n}",
+  "judge_output": {
+    "report_id": "LYC_691004048_2025-10-22",
+    "faithfulness_score_1_5": 3,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 7,
+    "critical_issues": [
+      "Část tvrzení o absenci je nedoložená: zpráva uvádí přijatá opatření ke snižování vysoké absence a zpřísnění podmínek „plánu vzdělávací podpory“, ale nekonstatuje „trend snižování absence“, „snížení počtu žáků s vysokou absencí“ ani neuvádí konkrétní údaje o absenci za 2025/2026.",
+      "Sekce „hard_facts.absence“ působí jako práce s konkrétními daty („údaje o absenci“, „snížení počtu žáků…“), která ve zdroji nejsou.",
+      "„Individuální vzdělávací plány pro nadané sportovce“ je terminologicky zavádějící: inspekce popisuje nově nastavený „Plán vzdělávací podpory“ (primárně pro nadané sportovce, případně zdravotně znevýhodněné), nikoli explicitně IVP v tomto významu.",
+      "Doporučení typu „kdo by měl být opatrný: zájemci o technické obory“ není opřené o inspekční zjištění (je to externí rada, kterou nelze ze zprávy dovodit).",
+      "Část „who_should_be_cautious“ obsahuje další zobecnění bez přímé opory (např. „žáci s nízkou motivací k samostatné práci“).",
+      "Chybí několik pro rodiče důležitých doložených bodů: převažující frontální výuka, slabý formativní rozměr zpětné vazby, minimální práce s chybou, slabé vyhodnocování cíle hodiny a jen ojedinělé sebehodnocení/vrstevnické hodnocení.",
+      "Nezmiňuje se (nebo jen velmi nepřímo) další relevantní zjištění: škola dává k vysvědčení i slovní hodnocení, existuje školní parlament, nesoulad mezi průběžným hodnocením a výsledky při ukončování vzdělávání stále trvá."
+    ],
+    "best_points": [
+      "Správně zachycená silná stránka: příznivé klima a psychické bezpečí díky vstřícnému a respektujícímu přístupu pracovníků školy.",
+      "Správně uvedená slabá stránka: absence diferenciace v převážné většině hospitovaných hodin.",
+      "Správně popsané dlouhodobě podprůměrné maturitní výsledky a doložená opatření od 2025/2026 (zpřísnění hranic, sjednocení vah známek, postupové zkoušky).",
+      "Správně zachycená zahraniční spolupráce (Erasmus – výměna se Španělskem, plánovaný workshop v Rumunsku) a spolupráce pro realizaci praxí.",
+      "Správně uvedený problém: vyhodnocování podpůrných opatření jen ústně je inspekcí hodnoceno jako nedostatečně spolehlivé."
+    ],
+    "one_line_verdict": "Dobře strukturované a pro rodiče užitečné shrnutí, ale místy si domýšlí vývoj/údaje (zejména k absenci) a doplňuje doporučení bez opory v inspekční zprávě, takže je potřeba zpřesnit a osekat nedoložené části."
+  }
+}

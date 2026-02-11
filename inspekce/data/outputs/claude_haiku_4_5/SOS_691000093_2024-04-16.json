@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_691000093_2024-04-16",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:19:11.829038+00:00",
+  "run_finished_utc": "2026-02-09T16:19:37.161447+00:00",
+  "raw_file": "SOS_691000093_2024-04-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_691000093_2024-04-16",
+    "school_profile": {
+      "school_type": "Obchodní akademie, Hotelová škola a Střední odborná škola",
+      "inspection_period": "16.–18. dubna 2024",
+      "school_change_summary": "Od poslední inspekce počet žáků vzrostl o 17 %. Škola otevřela Centrum odborného vzdělávání (2019) a od letošního roku má školní psycholožku. Ukončila výuku na odloučeném pracovišti."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborný výcvik na světové úrovni",
+          "detail": "Praktické vyučování je promyšleně organizované s vysokou odbornou úrovní, propojuje teorii s reálnou praxí na pracovištích partnerů.",
+          "evidence": "Promyšlená organizace a vysoká úroveň odborného výcviku reflektuje potřeby trhu práce."
+        },
+        {
+          "tag": "Výborné podmínky a prostředí",
+          "detail": "Moderní vybavení, esteticky podnětné prostředí a velmi dobré materiálně-technické podmínky příznivě ovlivňují vzdělávání.",
+          "evidence": "Esteticky podnětné prostředí školy a velmi dobré materiálně-technické podmínky příznivě ovlivňují proces vzdělávání."
+        },
+        {
+          "tag": "Silná podpora žáků",
+          "detail": "Funkční systém poradenských služeb včetně nové školní psycholožky, individuální přístup k žákům se speciálními potřebami.",
+          "evidence": "Poskytování poradenských služeb je plně funkční především v oblasti práce s třídním kolektivem a prevence rizikového chování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita žáků ve výuce",
+          "detail": "Žáci jsou často pasivní, chybí aktivní metody učení a efektivní vzdělávací strategie, zejména v teoretické výuce.",
+          "evidence": "V průběhu vzdělávání se často projevuje pasivita žáků, částečně v důsledku nevhodně zvolených metod výuky."
+        },
+        {
+          "tag": "Slabší výsledky v maturitě",
+          "detail": "Obor Strojírenství a Obchodní akademie mají výrazně vyšší neúspěšnost v maturitě než celorepublikový průměr.",
+          "evidence": "Strojírenství: český jazyk 18,0 % (ČR 5,4 %), cizí jazyk 20,9 % (ČR 4,6 %); Obchodní akademie: český jazyk 11,5 % (ČR 5,9 %)."
+        },
+        {
+          "tag": "Chybí komplexní analýza problémů",
+          "detail": "Vedení nemá detailní analýzu příčin rozdílných výsledků mezi obory, která by umožnila konkrétní opatření.",
+          "evidence": "Chybí komplexní analýza příčin výrazně rozdílných výsledků žáků daných oborů vzdělání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zlepšit výsledky maturitní zkoušky v oborech Strojírenství a Obchodní akademie?",
+        "Jaké konkrétní metody aktivního učení budou zavedeny v teoretické výuce?",
+        "Jak funguje nová školní psycholožka a jak se žáci mohou dostat k její pomoci?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla – tříleté obory mají dlouhodobě úspěšnost přes 90 % u závěrečné zkoušky",
+        "Zájemci o hotelnictví a cestovní ruch – tento obor dosahuje nadprůměrných výsledků v maturitě",
+        "Žáci potřebující individuální podporu – škola má kvalitní poradenské služby a novou školní psycholožku"
+      ],
+      "who_should_be_cautious": [
+        "Zájemci o obor Strojírenství – výrazně zaostává v maturitě za celorepublikovým průměrem (18 % neúspěšnosti v češtině)",
+        "Žáci preferující samostatnou práci a diskusi – výuka je převážně frontální bez kooperativních forem",
+        "Studenti, kteří potřebují jasnou zpětnou vazbu – chybí sebehodnocení a vrstevnické hodnocení na konci hodin"
+      ]
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Rozdílný – Hotelnictví a Cestovní ruch výrazně lepší, Strojírenství a Obchodní akademie horší než průměr",
+        "key_numbers": [
+          "Hotelnictví: 4,6 % neúspěšnosti v češtině (ČR 10,3 %), 4,6 % v cizím jazyce (ČR 8,3 %)",
+          "Strojírenství: 18,0 % neúspěšnosti v češtině (ČR 5,4 %), 20,9 % v cizím jazyce (ČR 4,6 %)",
+          "Obchodní akademie: 11,5 % v češtině (ČR 5,9 %), 14,5 % v cizím jazyce (ČR 4,8 %)"
+        ],
+        "evidence": "Srovnání výsledků společné části maturitní zkoušky ve školních letech 2021/2022 a 2022/2023 s celorepublikovým průměrem."
+      },
+      "absence": {
+        "trend": "Pozitivní – absence se snižuje",
+        "key_numbers": [
+          "Školní rok 2022/2023: 116 zameškaných hodin na žáka",
+          "Školní rok 2023/2024 (1. pololetí): 66 zameškaných hodin na žáka – pokles o 4 hodiny"
+        ],
+        "evidence": "Důsledné uplatňování pravidel školního řádu vedlo ke snížení dříve vysoké míry absence."
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně, školní metodička prevence a nová školní psycholožka",
+        "Individuální přístup k žákům se speciálními vzdělávacími potřebami a žákům s odlišným mateřským jazykem",
+        "Adaptační proces a třídnické hodiny pro zvládnutí nároků studia"
+      ],
+      "safety_climate": [
+        "Nízký počet úrazů díky důslednému poučení žáků v oblasti bezpečnosti a ochrany zdraví",
+        "Zabezpečovací systémy a čipy pro vstupy žáků minimalizují riziko pohybu cizích osob",
+        "Monitorovací kamerový systém v areálu domova mládeže"
+      ],
+      "partnerships_practice": [
+        "Smlouvy s reálnými pracovišti pro odborný výcvik vyšších ročníků (např. KAMAX, s. r. o.)",
+        "Praktické závěrečné zkoušky probíhají přímo na některých smluvních pracovištích",
+        "Intenzivní podpora mobilitu žáků v programech Erasmus+"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a fakticky bohatá, ale obsahuje řadu technických termínů a dlouhých vět. Hlavní zjištění jsou jasná, ale vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Matematika jako maturitní předmět – pouze 6 žáků ze 189, výsledky nejsou statisticky vypovídající",
+        "Chybí konkrétní data o počtu žáků s prospěchem s vyznamenáním v jednotlivých oborech",
+        "Není jasné, jak konkrétně se plánují řešit identifikované slabé stránky v aktivizaci žáků"
+      ]
+    }
+  }
+}

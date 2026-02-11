@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600009700_2022-03-24",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:02:51.998471+00:00",
+  "run_finished_utc": "2026-02-10T07:04:10.590625+00:00",
+  "raw_file": "SOS_600009700_2022-03-24.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009700_2022-03-24",
+    "school_profile": {
+      "school_type": "Střední škola s gastronomickým a hotelovým zaměřením (maturitní i učební obory) a domovem mládeže.",
+      "inspection_period": "24. - 25. 3., 7. – 8. 4. 2022",
+      "school_change_summary": "Škola má stabilní vedení a zájem o obory dlouhodobě nekolísá; oproti roku 2015 nedošlo k výrazným změnám v personálním složení vedení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná příprava",
+          "detail": "Škola nabízí kvalitní odborný výcvik na velmi dobře vybavených pracovištích s důrazem na praxi.",
+          "evidence": "Hospitovaný odborný výcvik... měl velmi dobrou odbornou úroveň... Rozsah pracovních činností, kvalita vybavení i surovin byly na odpovídající úrovni."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Díky funkční prevenci a „rodinné atmosféře“ na odloučeném pracovišti se zde cítí bezpečně.",
+          "evidence": "Díky úspěšným preventivním strategiím nevyvstala ve škole v poslední době nutnost řešit závažnější projevy sociálně-patologického chování žáků."
+        },
+        {
+          "tag": "Stabilita a řízení",
+          "detail": "Školu vede zkušený tým s jasným plánem a funkčním systémem kontroly kvality výuky.",
+          "evidence": "Ředitel školy pracuje na této pozici od roku 1992... Jeho dlouholeté zkušenosti... se pozitivně promítají do kvality řízení školy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní styl výuky",
+          "detail": "Výuka často probíhá frontální formou, což omezuje samostatné myšlení a spolupráci žáků.",
+          "evidence": "Společným slabším stránkám... patřilo dominantní zastoupení frontální výuky, která nepodporuje dostatečně rozvoj klíčových kompetencí žáků."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Učitelé málo zohledňují individuální potřeby a tempo jednotlivých žáků během hodin.",
+          "evidence": "Učitelé v úhrnu pracovali s kolektivy jako s homogenními skupinami, minimálně zohledňovali různé vzdělávací potřeby jednotlivých žáků."
+        },
+        {
+          "tag": "Absence a odchody",
+          "detail": "Škola bojuje s vysokou absencí a problémy s udržením žáků ve studiu až do konce.",
+          "evidence": "Navzdory přijatým opatřením... se příliš nedaří snižovat absenci žáků a motivovat je k dokončení vzdělání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé ve výuce podporují spolupráci žáků a aktivní učení, když převažuje frontální styl?",
+        "Jaká opatření škola zavádí pro snížení absence a předčasných odchodů ze studia?",
+        "Jakým způsobem je zajištěna individuální podpora pro žáky s různým tempem učení?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří se chtějí naučit řemeslo a uplatnit se v gastronomii nebo hotelnictví.",
+        "Pro rodiče hledající školu se stabilním vedením a bezpečným, přátelským prostředím.",
+        "Pro žáky, kteří preferují jasná vedení a tradiční formy výuky."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří vyžadují silnou individuální podporu a přizpůsobení tempa výuky.",
+        "Pro žáky, které nebaví pasivní poslouchání a preferují vlastní tvořivé řešení problémů.",
+        "Pro zájemce o nástavbový obor Gastronomie, kde byly v minulosti slabší výsledky u maturity."
+      ],
+      "plain_czech_summary": "Hotelová škola v Plzni působí jako stabilní a dobře řízená instituce s velmi kvalitním technickým zázemím pro odborný výcvik. Výuka v kuchyni a servisu je na vysoké úrovni a žáci jsou dobře připraveni na praxi. Škola klade velký důraz na bezpečnost a prevenci rizikového chování, což vytváří příjemné klima. Slabší stránkou je převažující styl výuky, který je spíše pasivní (frontální), s malým důrazem na individuální potřeby žáků a jejich schopnost spolupráce. Škola také dlouhodobě bojuje s problémy s absencí. Pro ambitiózního studenta může být nutné doplnit školní výuku vlastní iniciativou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý; obor Hotelnictví je nadprůměrný, ale nástavbová Gastronomie má problémy.",
+        "key_numbers": [
+          "387 žáků v maturitních oborech",
+          "Stabilně srovnatelné nebo lepší výsledky v oboru Hotelnictví",
+          "Vyšší míra neúspěšnosti v nástavbovém oboru Gastronomie"
+        ],
+        "evidence": "Výsledky žáků u maturitní zkoušky vykazovaly ve sledovaném období mírně kolísavou úroveň... Vyšší míra neúspěšnosti byla zaznamenána... u žáků nástavbového oboru Gastronomie."
+      },
+      "absence": {
+        "trend": "Longhodobě problematická, nápravná opatření zatím nefungují.",
+        "key_numbers": [
+          "904 žáků celkem",
+          "Snaha o eliminaci předčasných odchodů",
+          "Nedaří se snižovat absenci"
+        ],
+        "evidence": "Navzdory přijatým opatřením a důslednosti v jejich uplatňování se příliš nedaří snižovat absenci žáků a motivovat je k dokončení vzdělání."
+      },
+      "support_services": [
+        "Systémové výchovné poradenství s konzultačními hodinami a schránkou důvěry.",
+        "Spolupráce s PPP a SPC pro podporu žáků se SVP.",
+        "Adaptační kurzy pro první ročníky a aktivity na podporu duševního zdraví."
+      ],
+      "safety_climate": [
+        "Vstup do školy zabezpečen personálně i kamerovým systémem.",
+        "Funkční prevence sociálně-patologických jevů bez závažnějších incidentů.",
+        "„Rodinná atmosféra“ na odloučeném pracovišti v Bendově ulici."
+      ],
+      "partnerships_practice": [
+        "Kvalitní síť dlouhodobých smluvních pracovišť s odborným personálem.",
+        "Účast v projektech pro rozvoj kompetencí a uplatnění v zahraničí.",
+        "Četné úspěchy žáků v odborných soutěžích."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně člení hodnocení podmínek, průběhu a výsledků. Závěry jsou dobře strukturované. Jedinou komplikací je odborná terminologie v části o typech výuky.",
+      "uncertainty_notes": [
+        "Chybí konkrétní číselná data o procentu úspěšnosti u maturity, pouze slovní hodnocení.",
+        "Není uveden konkrétní počet žáků s problémy s absencí, pouze obecné konstatování.",
+        "Nejasné, jaké konkrétní 'nápravné kroky' byly učiněny v oboru Gastronomie a jak fungují."
+      ]
+    }
+  }
+}

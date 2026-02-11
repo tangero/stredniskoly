@@ -1,0 +1,115 @@
+{
+  "report_id": "GY8_600007952_2024-04-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:18:21.007896+00:00",
+  "run_finished_utc": "2026-02-09T16:18:46.314502+00:00",
+  "raw_file": "GY8_600007952_2024-04-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007952_2024-04-22",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium",
+      "inspection_period": "22. až 24. dubna 2024",
+      "school_change_summary": "Škola má 417 žáků s dlouhodobě stabilní naplněností kolem 96 %. Od minulé inspekce se zlepšily materiální podmínky (rekonstrukce studovny a fyziky), pokračuje dobrý prospěch žáků, roste počet vyznamenaných."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky v osmiletém oboru",
+          "detail": "Žáci osmiletého gymnázia dosahují stabilně výborných výsledků jak během vzdělávání, tak při maturitě.",
+          "evidence": "Všichni žáci primy prospěli s vyznamenáním, v osmiletém oboru 67 % s vyznamenáním v r. 2022/23."
+        },
+        {
+          "tag": "Silná spolupráce s vysokými školami",
+          "detail": "Dlouhodobá partnerství s přírodovědeckými a technickými fakultami vytváří výborné podmínky pro přírodovědné vzdělávání.",
+          "evidence": "Škola rozvíjí znalostní a dovednostní potenciál žáků podporou účasti v soutěžích na školní až mezinárodní úrovni."
+        },
+        {
+          "tag": "Bezpečné a příjemné prostředí",
+          "detail": "Nízká míra úrazovosti a příjemný interiér s výtvarnými pracemi žáků.",
+          "evidence": "Škola věnuje bezpečnosti potřebnou pozornost s účinnými opatřeními."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v čtyřletém oboru u maturity",
+          "detail": "Vyšší neúspěšnost v maturitní zkoušce než v srovnatelných oborech v republice, zejména z matematiky.",
+          "evidence": "Hrubá neúspěšnost v r. 2022/23 dosáhla 7,8 %, z matematiky 11,5 % (nárůst z 5,3 %)."
+        },
+        {
+          "tag": "Málo aktivní výuka s nedostatečnou diferenciací",
+          "detail": "Učitelé málo využívají kooperativní formy, aktivizační metody a formativní hodnocení, žáci pracují na stejných úkolech.",
+          "evidence": "Inspektoři zaznamenali nízkou míru aktivizačních metod a chybějící sebehodnocení žáků v polovině hodin."
+        },
+        {
+          "tag": "Slabá kontrola kvality výuky",
+          "detail": "Hospitační činnost není dostatečně orientovaná na systematické zhodnocení a efektivní zpětnou vazbu pedagogům.",
+          "evidence": "Vedení školy monitoruje kvalitu výuky, ale chybí účelná opatření k zvýšení kvality vyučovacího procesu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola konkrétně podporuje žáky čtyřletého oboru, aby dosáhli lepších výsledků v maturitní zkoušce, zejména z matematiky?",
+        "Jaké konkrétní metody aktivního učení a skupinové práce používáte ve výuce a jak je plánujete rozšiřovat?",
+        "Jak škola pracuje se žáky s odlišným mateřským jazykem a jakou jim poskytuje podporu?"
+      ],
+      "who_school_fits": [
+        "Talentovaní žáci se zájmem o přírodní vědy a matematiku, kteří si chtějí vybrat osmiletý obor s výbornou úrovní výuky.",
+        "Žáci, kteří oceňují mezinárodní spolupráci, zahraniční zájezdy a účast v soutěžích na vysoké úrovni.",
+        "Studenti, kteří se chtějí zapojit do programu DofE a rozvíjet své osobnostní dovednosti."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky z matematiky a chemie – v čtyřletém oboru je vyšší riziko neúspěchu u maturity.",
+        "Studenti, kteří potřebují více individualizované přístupu a aktivní zapojení do výuky – škola zatím málo diferenciuje.",
+        "Žáci s odlišným mateřským jazykem – škola teprve zavádí systematický přístup k jejich podpoře."
+      ],
+      "plain_czech_summary": "Gymnázium Zikmunda Wintra je kvalitní školou s výborným prospěchem, zejména v osmiletém oboru. Silné stránky: dlouhodobá spolupráce s vysokými školami, bezpečné prostředí, účast v soutěžích. Slabiny: v čtyřletém oboru vyšší neúspěšnost u maturity, málo aktivní výuka s nedostatečnou diferenciací, slabší kontrola kvality. Škola pracuje na zlepšení, ale rodiče by měli vědět, že výuka není vždy dostatečně individualizovaná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Osmiletý obor výborný, čtyřletý obor s problémy",
+        "key_numbers": [
+          "Čtyřletý obor: hrubá neúspěšnost 7,8 % v r. 2022/23 (vyšší než průměr)",
+          "Matematika v čtyřletém oboru: neúspěšnost 11,5 % v r. 2022/23 (nárůst z 5,3 %)",
+          "Osmiletý obor: výborná úspěšnost, všichni žáci primy s vyznamenáním"
+        ],
+        "evidence": "Některé žáky postihly opravné termíny z biologie, češtiny a základů společenských věd."
+      },
+      "absence": {
+        "trend": "Nízká absence, téměř žádné neomluvené hodiny",
+        "key_numbers": [
+          "Průměr 122,5 hodin absence na žáka za rok v obou sledovaných letech",
+          "Neomluvené hodiny se téměř nevyskytly"
+        ],
+        "evidence": "Absence je v normě, žáci jsou zodpovědní."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence (obě s ukončeným studiem)",
+        "Nově ustavená funkce kariérové poradkyně",
+        "Adaptační, sportovní a geologické kurzy, projektové dny",
+        "Program DofE od roku 2020 pro rozvoj osobnostních dovedností"
+      ],
+      "safety_climate": [
+        "Nízká míra úrazovosti díky účinným opatřením",
+        "Všechny sledované hodiny probíhaly ve velmi přátelské atmosféře",
+        "Učitelé projevovali zájem o žáky a jejich vzdělání",
+        "Škola správně identifikuje rizikové chování a klade důraz na prevenci"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s přírodovědeckými a technickými fakultami vysokých škol",
+        "Efektivní mezinárodní spolupráce s partnerskými školami z Německa a Francie",
+        "Trinacionální setkání žáků podporující cizojazyčné kompetence",
+        "Zahraniční poznávací zájezdy do Německa, Anglie, Francie a Španělska"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala na základě doporučení z minulé inspekce.",
+        "Není jasné, jak dlouho trvá, než se zlepšení v metodách výuky projeví na výsledcích maturitní zkoušky.",
+        "Chybí informace o počtu žáků, kteří jsou ohroženi školní neúspěšností (uvedeno jen 'nezanedbatelný podíl')."
+      ]
+    }
+  }
+}

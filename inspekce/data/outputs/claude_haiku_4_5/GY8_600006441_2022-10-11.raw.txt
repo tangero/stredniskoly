@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY8_600006441_2022-10-11",
+  "school_profile": {
+    "school_type": "Soukromé osmileté gymnázium zaměřené na jazykovou komunikaci, IT a přírodovědné vzdělávání",
+    "inspection_period": "11. 10. 2022 – 13. 10. 2022",
+    "school_change_summary": "Od inspekce v roce 2014 si škola udržuje stabilní počet žáků (279 ve 13 třídách). Proběhla částečná generační obměna pedagogů, 40 % učitelů je mladších 31 let. Škola získala status školy Přírodovědecké fakulty Univerzity Karlovy (od 2019)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Více než polovina maturantů prospívá s vyznamenáním, výsledky jsou vyšší než průměr v dané skupině oborů ve všech předmětech.",
+        "evidence": "Nadstandardní výsledky zejména v českém a cizím jazyce, přibližně polovina maturantů nahrazuje profilovou zkoušku mezinárodním certifikátem."
+      },
+      {
+        "tag": "Rodinná atmosféra a péče o žáky",
+        "detail": "Malá škola s otevřenou komunikací, která pružně reaguje na potřeby jednotlivých žáků a efektivně řeší jejich problémy.",
+        "evidence": "Funkční adaptační kurzy, škola v přírodě, třídní programy, konzultace s externí školní psycholožkou, nula neomluvených absencí."
+      },
+      {
+        "tag": "Bohatá nabídka aktivit",
+        "detail": "Rozmanitý program podporující všestranný rozvoj, nadání a sounáležitost se školou.",
+        "evidence": "Kroužky, mezinárodní expedice, modelové školní volby, víkendy s ARCUSEM, mezioborové projekty formující občanské postoje."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená ústní komunikace v některých hodinách",
+        "detail": "Žáci nemají dostatek prostoru pro delší ústní vyjádření a rozvoj interaktivních řečových dovedností.",
+        "evidence": "Inspektoři zaznamenali menší prostor pro souvislejší ústní vyjádření v některých hodinách, zejména v cizích jazycích v nižším gymnáziu."
+      },
+      {
+        "tag": "Nedostatečné zapojení žáků do sebehodnocení",
+        "detail": "Žáci se málo podílejí na evaluaci své práce a posuzování kvality práce spolužáků.",
+        "evidence": "V menší míře vedeni k objektivnímu posouzení kvality práce vrstevníků a sebereflexi vlastního výkonu."
+      },
+      {
+        "tag": "Chybějící závěry vyučovacích hodin",
+        "detail": "Některé hodiny postrádají didaktický závěr se shrnutím a vyhodnocením dosažení cílů.",
+        "evidence": "Dílčím nedostatkem bylo opomíjení shrnutí probraného učiva a vyhodnocení stanoveného vzdělávacího cíle."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje rozvoj řečových dovedností v cizích jazycích, zejména v nižším gymnáziu?",
+      "Jaké jsou možnosti individuálního poradenství a konzultací pro žáky, kteří mají potíže s učením?",
+      "Jak se škola podílí na přípravě žáků na vysoké školy a jaké jsou výsledky jejich přijetí?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a přírodní vědy, kteří chtějí kvalitní přípravu na vysokou školu",
+      "Talentovaní a nadaní žáci, kterým vyhovuje individuální přístup a bohatá nabídka aktivit",
+      "Rodiny hledající menší školu s rodinnou atmosférou a osobním přístupem k jednotlivým žákům"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní nácvik ústního projevu a komunikace v cizích jazycích",
+      "Žáci se speciálními vzdělávacími potřebami (škola má jen 2 takové žáky, omezené zkušenosti)",
+      "Rodiny, které preferují větší školu s širší nabídkou volitelných předmětů a specializací"
+    ],
+    "plain_czech_summary": "Soukromé gymnázium ARCUS je kvalitní malá škola s rodinnou atmosférou a výborným akademickým standardem. Žáci dosahují nadprůměrných výsledků, zejména v jazycích. Škola nabízí bohatý program aktivit a individuální péči. Inspektoři doporučují více prostoru pro ústní komunikaci žáků a jejich zapojení do sebehodnocení. Škola je vhodná pro talentované žáky, kteří si cení osobního přístupu a kvalitní přípravy na vysokou školu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě vysoký a stabilní",
+      "key_numbers": [
+        "Více než 50 % maturantů s vyznamenáním",
+        "Výsledky vyšší než průměr v dané skupině oborů ve všech předmětech",
+        "Přibližně 50 % maturantů nahrazuje profilovou zkoušku mezinárodním jazykovým certifikátem"
+      ],
+      "evidence": "Nadstandardní výsledky zejména v českém a cizím jazyce, nízký počet volících matematiku, pouze jednotlivci neúspěšní."
+    },
+    "absence": {
+      "trend": "Výborný – prakticky nulová",
+      "key_numbers": [
+        "Nula neomluvených absencí ve sledovaném období",
+        "Téměř všichni žáci mají uzavřenu klasifikaci k 30. 6.",
+        "Žádná kázeňská opatření"
+      ],
+      "evidence": "Ve sledovaném období se nevyskytla žádná neomluvená absence ani kázeňská opatření."
+    },
+    "support_services": [
+      "Spojená funkce výchovného poradce a metodika prevence",
+      "Konzultace s externí školní psycholožkou",
+      "Adaptační kurz, škola v přírodě, třídní preventivní programy",
+      "Metody efektivního učení a sociometrie třídních vazeb",
+      "Kariérové poradenství s testy profesní orientace a besedami s absolventy"
+    ],
+    "safety_climate": [
+      "Příznivá pracovní atmosféra podporující učení",
+      "Žáci dodržují pravidla komunikace a respektují stanovené postupy",
+      "Ojedinělé projevy problémového chování řešeny v souladu se stanovenými postupy",
+      "Soustavné výchovné působení efektivně eliminuje rizikové chování",
+      "Vstupní identifikační systém a termokamera na vchodu budovy"
+    ],
+    "partnerships_practice": [
+      "Status školy Přírodovědecké fakulty Univerzity Karlovy (od 2019)",
+      "Dlouhodobě rozvíjené partnerské vztahy s vysokými školami",
+      "Spolupráce s kulturně a jazykově zaměřenými institucemi",
+      "Propojení s externími subjekty pro prevenci sociálně patologických jevů",
+      "Besedy s bývalými absolventy pro kariérové poradenství"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Všechny klíčové informace jsou dobře zdokumentovány s konkrétními příklady. Některé pasáže jsou však poměrně technické a dlouhé, což mírně snižuje srozumitelnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o úspěšnosti absolventů při přijetí na vysoké školy – pouze obecné tvrzení o 'vysoké míře'",
+      "Chybí konkrétní data o počtu a typu mimoškolních aktivit (kroužků, expedic apod.)",
+      "Není jasné, jak přesně se měří 'nadstandardní výsledky' – srovnání s jakým konkrétním benchmarkem"
+    ]
+  }
+}
+```

@@ -1,0 +1,112 @@
+{
+  "report_id": "SOU_600171035_2025-11-04",
+  "model_id": "openai_gpt_5_2_reference",
+  "run_started_utc": "2026-02-09T11:32:31.319054+00:00",
+  "run_finished_utc": "2026-02-09T11:33:05.504262+00:00",
+  "raw_file": "SOU_600171035_2025-11-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600171035_2025-11-04",
+    "school_profile": {
+      "school_type": "SOU",
+      "inspection_period": "2025-11-04 až 2025-11-07",
+      "school_change_summary": "Po změně vedení (ředitel od 2023) škola zlepšila vybavení včetně nového centra, zřídila poradenské pracoviště, ale přetrvávají nedostatky ve školním řádu a ŠVP."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe a vazby na firmy",
+          "detail": "Škola je silně napojená na firmy a trendy v energetice, což zvyšuje kvalitu odborné přípravy a praxe.",
+          "evidence": "„rozsáhlé partnerské spolupráce s odbornými firmami“; „propoj ení školy s aktuálními požadavky trhu práce“"
+        },
+        {
+          "tag": "Dobré výsledky u zkoušek",
+          "detail": "Maturita i závěrečné zkoušky vycházejí dlouhodobě dobře a nad celostátním průměrem oborů.",
+          "evidence": "„hrubá neúspěšnost… 2 %… celostátní průměr… 13,7 %“; „v roce 2025… 6,9 %“"
+        },
+        {
+          "tag": "Odborný výcvik kvalitně vedený",
+          "detail": "Odborné předměty i výcvik byly hodnocené jako odborně silné a dobře propojené s praxí a bezpečností.",
+          "evidence": "„odborné… a odborný výcvik dosahovaly vysoké úrovně odbornosti“; „důsledně zahrnovaly dodržování bezpečnostních pravidel“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Méně aktivní výuka v části hodin",
+          "detail": "Ve většině hodin převládala frontální výuka a nižší zapojení žáků, což může snižovat motivaci a samostatné myšlení.",
+          "evidence": "„frontální výuka… v 68 %“; „převažovala aktivita učitele nad aktivitou žáků“"
+        },
+        {
+          "tag": "Podpora SVP a nadaných v praxi pokulhává",
+          "detail": "Podpůrná opatření a diferenciace se ve výuce používaly jen omezeně a identifikace potřeb/nadání není systematická.",
+          "evidence": "„realizace podpůrných opatření… pouze v omezené míře“; „systematické identifikaci… žáků nadaných“"
+        },
+        {
+          "tag": "Dokumenty a řízení kvality",
+          "detail": "Škola má nedostatky ve školním řádu a ŠVP a vedení výuky není dost řízené směrem ke zlepšování.",
+          "evidence": "„Přetrvávají nedostatky… školní řád a… školní vzdělávací programy“; „omezeném řízení kvality“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola opraví „nedostatky… školní řád a… školní vzdělávací programy“ a co to změní pro žáky v praxi?",
+        "Jak konkrétně zajistíte, aby se podpůrná opatření „důsledněji uplatňovala“ a byla „pravidelně vyhodnocována“ v hodinách?",
+        "Co škola dělá pro pestřejší výuku, když „frontální výuka… v 68 %“ a chybí více didaktiky a kooperativních metod?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí elektrotechniku/energetiku a ocení praxi přes „partnerství s desítkami… firem“.",
+        "Ti, kdo míří na maturitu i učňovské obory a chtějí školu se „stabilně dobrou úrovní přípravy… k maturitním a závěrečným zkouškám“.",
+        "Zájemci o domov mládeže a volnočasové zázemí („klubovny“, „posilovnu“, kroužky a možnost „doučování“)."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují výrazně individuální přístup ve třídě (diferenciace byla „využívána jen minimálně“).",
+        "Ti, kterým dlouhodobě nevyhovuje převažující frontální styl („frontální výuka… v 68 %“).",
+        "Sportovně založení žáci, kteří očekávají velkou vnitřní tělocvičnu („Problematický je velmi malý prostor vnitřní tělocvičny“)."
+      ],
+      "plain_czech_summary": "Škola v Sokolnicích je silná v odborné přípravě pro elektrotechniku a energetiku, hlavně díky rozsáhlé spolupráci s firmami a modernizaci vybavení (včetně nového centra pro simulace). Výsledky u maturity jsou nad průměrem oborů (např. 2 % neúspěšnost v roce 2024), v roce 2025 ale mírně vzrostly na 6,9 %. Ve výuce často převládá frontální styl a diferenciace pro žáky se SVP i nadané je zatím slabší. Škola snížila absenci zavedením limitu a má funkční prevenci rizikového chování."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "V roce 2025 se neúspěšnost mírně zhoršila, dlouhodobě je ale škola lepší než celostátní průměr oborů.",
+        "key_numbers": [
+          "Hrubá neúspěšnost 2024: 2 %",
+          "Celostátní průměr (skupina oborů) 2024: 13,7 %",
+          "Hrubá neúspěšnost 2025: 6,9 %"
+        ],
+        "evidence": "„za rok 2024… 2 %… celostátní… 13,7 %“; „V roce 2025… nárůstu… na 6,9 %“"
+      },
+      "absence": {
+        "trend": "Po zavedení limitu absence ve školním řádu výrazně klesla (cca o 27 %).",
+        "key_numbers": [
+          "2023/2024: 173,21 hodin/žák",
+          "2024/2025: 126,09 hodin/žák",
+          "Pokles: o 27 % (47,12 hodin/žák)"
+        ],
+        "evidence": "„173,21 hodin… klesla na 126,09… snížení přibližně o 27 %“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště („škola zřídila školní poradenské pracoviště“).",
+        "Prevence a řešení rizikového chování („preventivní program… je funkční“).",
+        "Kariérové poradenství („realizována na požadované úrovni“)."
+      ],
+      "safety_climate": [
+        "Příznivé klima ve třídách („příznivým sociálním klimatem“).",
+        "Řešili jednotky případů šikany a záškoláctví („v jednotkách případů“; „přijímala odpovídající opatření“).",
+        "Důraz na BOZP v odborném výcviku („dodržování bezpečnostních pravidel… ochranných pomůcek“)."
+      ],
+      "partnerships_practice": [
+        "Široká síť firem pro praxi („partnerství s desítkami… firem… umožňují žákům získávat odbornou praxi“).",
+        "Spolupráce se Svazem energetiky ČR („úzce a dlouhodobě spolupracuje se Svazem energetiky“).",
+        "EU projekty a mezinárodní spolupráce („Erasmus+… OP JAK“; „projektech… vodíkových technologií“)."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Použil jsem krátké věty, praktické dopady pro rodiče a u každého bodu je opora v citaci ze zprávy.",
+      "uncertainty_notes": [
+        "Metadata uvádí období do 2025-11-07, text říká „na místě 4. 11. 2025 − 6. 11. 2025“.",
+        "Zpráva dává jen vybraná čísla k maturitě (2024–2025) a absenci (2023/2024 vs. 2024/2025), ne kompletní trend za více let."
+      ]
+    }
+  }
+}

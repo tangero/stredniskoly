@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600011127_2025-01-14",
+  "school_profile": {
+    "school_type": "Střední odborná škola (soukromá), 236 žáků ve 14 třídách, obory: Informační technologie, Veřejnosprávní činnost, Sociální činnost",
+    "inspection_period": "14. 1. 2025 – 16. 1. 2025",
+    "school_change_summary": "Počet žáků se od poslední inspekce téměř zdvojnásobil díky lepší prezentaci školy. Škola úspěšně získává finanční prostředky na modernizaci vybavení. Přetrvávají však nedostatky v kvalitě výuky a vysoká neúspěšnost u maturit."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a praxe",
+        "detail": "Škola má velmi dobré technické vybavení odpovídající současným požadavkům a efektivně jej využívá pro odbornou přípravu.",
+        "evidence": "Učebny výpočetní techniky slouží pro odborné i všeobecné předměty, dobře vybavená učebna pro Sociální činnost."
+      },
+      {
+        "tag": "Spolupráce se zaměstnavateli",
+        "detail": "Škola má funkční partnerství se sociálními partnery včetně zahraničních organizací, kde žáci absolvují odbornou praxi.",
+        "evidence": "Spolupráce s Inovačním centrem Ústeckého kraje, realizace odborné praxe u zaměstnavatelů."
+      },
+      {
+        "tag": "Kvalitní pedagogický sbor",
+        "detail": "Pedagogové jsou převážně kvalifikovaní a začínající učitelé dostávají adekvátní podporu.",
+        "evidence": "Pedagogický sbor je ve velké míře kvalifikovaný, začínající pedagogové jsou seznamováni s fungováním školy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost u maturit",
+        "detail": "Škola má výrazně vyšší podíl neúspěšných žáků u maturitní zkoušky než je průměr v ČR, zejména v oborech Sociální činnost a Veřejnosprávní činnost.",
+        "evidence": "Sociální činnost 2023: škola 36,3 % vs ČR 11,4 %; Veřejnosprávní činnost 2024: škola 60 % vs ČR 9,5 %."
+      },
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Učitelé ve výuce nerozlišují úkoly podle schopností jednotlivých žáků a málo používají skupinovou práci.",
+        "evidence": "Diferenciace a individualizace zadávaných úkolů zaznamenána nebyla, sporadicky zařazeny párové nebo skupinové činnosti."
+      },
+      {
+        "tag": "Slabá komunikace mezi školou a žáky",
+        "detail": "Žáci se obávají vyjádřit nesouhlas s učiteli, neshody nejsou řešeny a chybí žákovská samospráva.",
+        "evidence": "Někteří žáci uváděli, že nemohou bez obav rozporovat kroky učitelů, žákovský parlament není zřízený."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomáhá žákům, kteří mají problémy s matematikou nebo češtinou, aby zvýšili úspěšnost u maturity?",
+      "Jaké jsou konkrétní plány na zlepšení výsledků v oborech Sociální činnost a Veřejnosprávní činnost, kde je neúspěšnost nejvyšší?",
+      "Jak mohou žáci vyjádřit své názory a problémy, pokud není zřízena žákovská samospráva?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o informační technologie – tento obor má nejnižší neúspěšnost a dobré vybavení",
+      "Žáci, kteří potřebují praktickou výuku a spolupráci se skutečnými zaměstnavateli",
+      "Žáci se speciálními vzdělávacími potřebami – škola má funkční systém podpory a asistenty"
+    ],
+    "who_should_be_cautious": [
+      "Žáci slabší v češtině a matematice – tyto předměty jsou problematické i u maturit",
+      "Zájemci o obory Sociální činnost nebo Veřejnosprávní činnost – zde je vysoká neúspěšnost u maturit",
+      "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – ta není systematicky zajišťována"
+    ],
+    "plain_czech_summary": "Škola InterDACT je moderně vybavená a má dobré kontakty se zaměstnavateli. Počet žáků roste. Problém je vysoká neúspěšnost u maturitní zkoušky, zejména v oborech Sociální činnost a Veřejnosprávní činnost. Inspekce zjistila, že výuka není dostatečně přizpůsobena jednotlivým žákům, chybí skupinová práce a žáci se obávají vyjádřit své názory. Škola by měla zlepšit metodickou podporu učitelům a zavést lepší komunikaci se žáky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Negativní – přetrvává vyšší neúspěšnost než je republikový průměr",
+      "key_numbers": [
+        "Sociální činnost 2023: 36,3 % neúspěšnosti (ČR 11,4 %)",
+        "Veřejnosprávní činnost 2024: 60 % neúspěšnosti (ČR 9,5 %)",
+        "Informační technologie 2024: 25 % neúspěšnosti (ČR 7,7 %)"
+      ],
+      "evidence": "Příčinou jsou výsledky v českém jazyce, matematice a ústní zkoušce. Nedostatky přetrvávají od poslední inspekce."
+    },
+    "absence": {
+      "trend": "Pozitivní – minimální výskyt",
+      "key_numbers": [
+        "Neomluvené hodiny řešeny minimálně",
+        "Problémy kázeňského charakteru řešeny bezodkladně"
+      ],
+      "evidence": "Jakékoliv náznaky problémového chování jsou řešeny bezodkladně, což přispívá k jejich malému výskytu."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence – funkční systém poradenských služeb",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+      "Skupinové i individuální doučování pro ohrožené žáky (efektivita individuální)",
+      "Adaptační dny pro první ročníky na rozvoj studijních návyků",
+      "Kariérové poradenství a podpora při osobních obtížích"
+    ],
+    "safety_climate": [
+      "Klidné a příjemné pracovní prostředí ve třídách",
+      "Minimální výskyt kázeňských problémů a šikany",
+      "Primární prevence zaměřena na zdravý životní styl a sociální klima",
+      "Riziko: žáci se obávají vyjádřit nesouhlas s učiteli, neshody nejsou řešeny"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Inovačním centrem Ústeckého kraje",
+      "Partnerství se zahraničními organizacemi",
+      "Realizace odborné praxe u zaměstnavatelů",
+      "Projekty a sbírky pro charitu",
+      "Školní turnaje a projektová výuka"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Některé pasáže jsou však formulovány úřednickým jazykem, který by rodiče mohli hůře pochopit bez vysvětlení.",
+    "uncertainty_notes": [
+      "Efektivita doučování je popsána jako 'individuální' – není jasné, jak často je skutečně účinné",
+      "Není specifikováno, kolik žáků předčasně opouští vzdělání kvůli chybějícímu systému zjišťování příčin selhávání",
+      "Konkrétní počty žáků se speciálními potřebami (18) a s odlišným mateřským jazykem (13) nejsou kontextualizovány vůči celkovému počtu 236 žáků"
+    ]
+  }
+}
+```

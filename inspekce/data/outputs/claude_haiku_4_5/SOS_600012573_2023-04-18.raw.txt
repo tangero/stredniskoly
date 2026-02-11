@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOS_600012573_2023-04-18",
+  "school_profile": {
+    "school_type": "Střední zemědělská škola a Střední odborné učiliště chladicí a klimatizační techniky",
+    "inspection_period": "18. 4. − 20. 4. 2023",
+    "school_change_summary": "Od 2018 došlo ke zrušení pozice zástupkyně pro učební obory, změně názvu školy (2019) a vytvoření nových pozic pro technické obory (2020). Škola realizuje 4 obory: 2 s maturitní zkouškou (Agropodnikání, Mechanik elektrotechnik) a 2 s výučním listem (Elektromechanik, Zemědělec-farmář). Ve 14 třídách se vzdělává 298 žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Škola má velmi dobré materiální zabezpečení s moderní technikou, dílenským vybavením a bezpečnostními systémy.",
+        "evidence": "Efektivní využívání vícezdrojového financování, nákup traktoru a speciálních pomůcek, instalace kamerového systému."
+      },
+      {
+        "tag": "Úspěchy žáků",
+        "detail": "Žáci dosahují výjimečných výsledků v soutěžích a reprezentují školu na přehlídkách.",
+        "evidence": "1. místo v celorepublikové soutěži elektromechaniků, 1. místo na Zemědělské olympiádě, 5. místo v softbale, 10 absolventů oceněno Hospodářskou komorou."
+      },
+      {
+        "tag": "Flexibilita vzdělávání",
+        "detail": "Žáci mohou přestupovat mezi obory s maturitou a výučním listem podle svých schopností.",
+        "evidence": "Poslední 3 roky: 2 žáci přestoupili z maturitních oborů na učební, 18 absolventů učebních oborů získalo maturitu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivita žáků ve výuce",
+        "detail": "Při teoretické výuce převažuje frontální výuka s nízkou aktivitou žáků a minimální kooperací.",
+        "evidence": "Hospitační zprávy: nízká míra aktivního zapojování, žáci plnili stejné úkoly bez diferenciace, skupinová práce ojediněle."
+      },
+      {
+        "tag": "Slabé výsledky u maturity",
+        "detail": "Vysoká neúspěšnost v písemné části maturitní zkoušky, zejména v anglickém jazyce a matematice.",
+        "evidence": "Jarní období 2022: 32,1 % neúspěšnosti ve společné části MZ (9 z 28 žáků), pedagogická rada nepřijímá konkrétní opatření."
+      },
+      {
+        "tag": "Nedostatečná kontrola plnění programu",
+        "detail": "Hospitační záznamy neobsahují doporučení pro zlepšení, chybí roční plán hospitací.",
+        "evidence": "Inspekční zjištění: přijímaná opatření nejsou dostatečná a efektivní, chybí konkrétní doporučení pedagogům."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky ohrožené neúspěchem v maturitních předmětech (angličtina, matematika)?",
+      "Jaké jsou výsledky doučování a jak se motivují žáci k jeho využívání?",
+      "Jak se škola vypořádá s doporučením inspekce na zvýšení aktivního zapojení žáků do výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o zemědělství, techniku a chladicí techniku, kteří chtějí praktické vzdělání s možností pokračování v maturitě",
+      "Žáci, kteří potřebují flexibilitu a možnost přestupu mezi obory podle svých schopností",
+      "Talentovaní žáci, kteří se chtějí prosazovat v soutěžích a reprezentovat školu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují aktivní výuku s vysokou mírou zapojení a skupinové práce – teoretická výuka je spíše frontální",
+      "Žáci slabší v angličtině a matematice – vysoká neúspěšnost v těchto předmětech u maturity (32 %)",
+      "Žáci, kteří se spoléhají na individuální přístup a diferenciaci – škola ji zatím nedostatečně realizuje"
+    ],
+    "plain_czech_summary": "Škola je dobře vybavená a žáci v ní dosahují skvělých výsledků v soutěžích. Nabízí flexibilní vzdělání s možností přestupu mezi obory. Problém je v teoretické výuce, kde převažuje frontální přístup bez aktivního zapojení žáků. Vysoká neúspěšnost v maturitě (32 %) v angličtině a matematice ukazuje, že podpora slabších žáků není dostatečná. Inspekce doporučuje více aktivních metod, lepší diferenciaci a práci s chybou jako zdrojem učení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Problematický – vysoká neúspěšnost v písemné části",
+      "key_numbers": [
+        "32,1 % neúspěšnosti ve společné části MZ (9 z 28 žáků) v jarním období 2022",
+        "8,5 % neúspěšnosti u závěrečné zkoušky (4 ze 47 žáků)",
+        "Všichni absolventi získávají certifikaci Europass"
+      ],
+      "evidence": "Jarní zkušební období 2022: 9 žáků z 28 přihlášených neprospělo ve společné části MZ, zejména v anglickém jazyce a matematice."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se absencí nezabývá."
+    },
+    "support_services": [
+      "Výchovná poradkyně zajišťuje kariérové poradenství a evidenci žáků se speciálními potřebami",
+      "Školní metodička prevence organizuje sociometrické šetření a prevenci rizikového chování",
+      "Speciální pedagožka podporuje práci s žáky se speciálními vzdělávacími potřebami",
+      "Doučování (pedagogická intervence) nabízeno napříč předměty, ale žáci jej málo využívají",
+      "Adaptační kurzy pro prvňáky, pestrá nabídka kurzů (lyžařský, cyklistický, vodácký) a kroužků"
+    ],
+    "safety_climate": [
+      "Instalován kamerový systém pro zvýšení bezpečnosti",
+      "Dodržování pravidel bezpečnosti práce při odborném výcviku",
+      "Schránka důvěry pro stížnosti žáků (málo využívána, žáci preferují osobní návštěvu ředitelky)",
+      "Dlouhodobá spolupráce s Policií ČR a Pedagogicko-psychologickou poradnou",
+      "Sociometrické šetření klimatu ve třídách"
+    ],
+    "partnerships_practice": [
+      "Agrární komora České republiky, Zemědělský svaz České republiky, Ministerstvo zemědělství",
+      "Dlouhodobé partnerství s firmami v regionu pro realizaci odborné praxe a výcviku",
+      "Asociace škol kritické infrastruktury",
+      "Spolupráce s Univerzitou Hradec Králové",
+      "Erasmus+ akreditace a partnerství se zahraničními školami (Německo, Slovensko)",
+      "Mendelova univerzita Brno, Česká zemědělská univerzita Praha, Úřad práce Rychnov nad Kněžnou"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Hlavní zjištění jsou jasně formulována. Slabší je pouze v některých technických pasážích o organizaci vzdělávání.",
+    "uncertainty_notes": [
+      "Absence dat o školní neúčasti/absenci – není v textu zmíněna",
+      "Nejsou uvedeny konkrétní počty žáků využívajících doučování a jeho efektivita",
+      "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami a jejich podpoře"
+    ]
+  }
+}
+```

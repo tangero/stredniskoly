@@ -1,0 +1,94 @@
+{
+  "report_id": "GY8_600013022_2022-04-07",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté)",
+    "inspection_period": "7., 8., 11. a 12. 4. 2022",
+    "school_change_summary": "Od minulé inspekce škola realizovala projekt úspory energií (okna, zateplení) a získala finance na bezbariérový přístup a vybavení učeben."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky",
+        "detail": "Škola dosahuje vynikajících výsledků, téměř všichni absolventi jsou přijati na VŠ a většina maturuje s vyznamenáním.",
+        "evidence": "„Úspěšnost žáků u maturitních zkoušek je tradičně velmi vysoká... Téměř všichni úspěšní absolventi školy jsou přijímáni ke studiu na vysoké školy.“"
+      },
+      {
+        "tag": "Atmosféra",
+        "detail": "Ve škole panuje přátelská atmosféra založená na otevřené komunikaci a vzájemných vztazích.",
+        "evidence": "„Úroveň vzájemné komunikace přispívá k vytváření příznivé atmosféry, což má pozitivní vliv na vzájemné vztahy účastníků vzdělávání.“"
+      },
+      {
+        "tag": "Nabídka předmětů",
+        "detail": "Široká nabídka volitelných předmětů umožňuje žákům rozvíjet zájmy a lépe se připravit na vysokou školu.",
+        "evidence": "„Široká paleta volitelných předmětů... umožňuje žákům rozvoj jejich zájmů... a uspět při přijímacích zkouškách na vysokou školu.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Výuka je málo přizpůsobována individuálním potřebám žáků, a to jak pro nadané, tak pro ty s obtížemi.",
+        "evidence": "„Jen výjimečně byla zaznamenána diferenciace ve vzdělávání vzhledem k zájmu žáků... a s ohledem na jejich individuální schopnosti.“"
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Ve výuce chybí prostor pro sebehodnocení žáků a závěrečné shrnutí splnění cílů hodiny.",
+        "evidence": "„Příležitosti pro vzájemné hodnocení nebo sebehodnocení... učitelé většinou nevytvářeli... Při absenci závěru ani žáci ani učitelé nedostali efektivní zpětnou vazbu.“"
+      },
+      {
+        "tag": "Prevence",
+        "detail": "Metodička prevence nemá specializační vzdělání, což může omezovat kvalitu prevence.",
+        "evidence": "„Metodička prevence, která dosud neabsolvovala specializační studium...“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé diferencují výuku pro nadané žáky nebo pro žáky s jinými potřebami?",
+      "Jakým způsobem je ve výuce zařazováno sebehodnocení žáků a zpětná vazba?",
+      "Má školní metodička prevence již ukončené specializační studium?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří cílí na vysokou školu a očekávají vysokou úspěšnost u maturity.",
+      "Pro žáky, kteří vítají pestrou nabídku volitelných předmětů a zájmových aktivit.",
+      "Pro rodiče hledající školu s bezbariérovým přístupem a příznivým sociálním klimatem."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří vyžadují výrazně individuální přístup nebo specifické metody výuky.",
+      "Pokud dáváte přednost moderním metodám zaměřeným na samostatnost a sebehodnocení před frontální výukou."
+    ],
+    "plain_czech_summary": "Gymnázium v České Třebové nabízí velmi kvalitní přípravu na vysokou školu s tradičně vysokou úspěšností u maturity a v přijímacím řízení. Škola vyniká příjemnou atmosférou, kvalifikovanými učiteli a širokou nabídkou volitelných předmětů. Nedostatkem může být méně časté přizpůsobování výuky individuálním potřebám žáků a chybějící prostor pro sebehodnocení ve výuce. Pro šikovné a samostatné studenty je však skvělou volbou."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vysoká úspěšnost",
+      "key_numbers": [
+        "cca 2/3 žáků maturuje s vyznamenáním",
+        "téměř 100 % úspěšnost přijetí na VŠ"
+      ],
+      "evidence": "„Úspěšnost žáků u maturitních zkoušek je tradičně velmi vysoká, přibližně dvě třetiny žáků ukončily vzdělávání s vyznamenáním.“"
+    },
+    "absence": {
+      "trend": "Velmi nízká",
+      "key_numbers": [],
+      "evidence": "„Absence žáků ve výuce byla ve školním roce 2020/2021 velmi nízká.“"
+    },
+    "support_services": [
+      "Individuální konzultace a doučování pro žáky zasažené distanční výukou.",
+      "Funkční výchovné poradenství a kariérní poradenství.",
+      "Adaptační kurzy pro první ročníky."
+    ],
+    "safety_climate": [
+      "Pochvaly výrazně převažují nad kázeňskými opatřeními.",
+      "Vstřícná a otevřená komunikace mezi učiteli a žáky.",
+      "Funkční systém prevence a monitorování vztahů ve třídách."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s poradenskými zařízeními při podpoře žáků se SVP.",
+      "Spolupráce na projektu FyBiCH (Contipro Dolní Dobrouč).",
+      "Účast v projektech AMAVET, Studentský summit OSN."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a obsahuje konkrétní příklady i citace.",
+    "uncertainty_notes": []
+  }
+}

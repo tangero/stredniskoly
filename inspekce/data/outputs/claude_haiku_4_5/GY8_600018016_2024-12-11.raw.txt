@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY8_600018016_2024-12-11",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté obory zakončené maturitní zkouškou)",
+    "inspection_period": "11. až 13. prosince 2024",
+    "school_change_summary": "Škola pokračuje v modernizaci prostorových a materiálních podmínek a rozvoji partnerských vztahů. Hlavní výzvou zůstává efektivnější využívání pestrých výukových metod a formativního hodnocení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Více než polovina maturantů prospívá s vyznamenáním, neúspěšnost se pohybuje kolem 1,7–1,9 %.",
+        "evidence": "Žáci dosahují lepších výsledků než průměr v ČR, vysoká úspěšnost při přijetí na vysoké školy."
+      },
+      {
+        "tag": "Podpora talentovaných žáků",
+        "detail": "Škola systematicky zapojuje žáky do soutěží, olympiád a středoškolské odborné činnosti.",
+        "evidence": "Nejúspěšnější žáci reprezentují školu v okresních, regionálních a celostátních kolech."
+      },
+      {
+        "tag": "Kvalitní péče o žáky se speciálními potřebami",
+        "detail": "Školní poradenské pracoviště s psycholožkou a speciální pedagožkou poskytuje komplexní podporu.",
+        "evidence": "Asistentka pedagoga aktivně podporuje žáky se zrakovým postižením, všichni pedagogové mají adekvátní odbornou podporu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezené využívání moderních výukových metod",
+        "detail": "V části hodin převládá transmisivní přístup s dominantní rolí učitele a nízkou pestrostí metod.",
+        "evidence": "Chybí diferenciace úkolů, individualizace pro nadané žáky, práce s různými informačními zdroji."
+      },
+      {
+        "tag": "Slabé formativní hodnocení",
+        "detail": "Učitelé minimálně využívají formativní hodnocení, sebehodnocení a vzájemné hodnocení žáků.",
+        "evidence": "Chybí didaktické závěry, reflexe výuky se zapojením žáků, ověřování zvládnutí učiva."
+      },
+      {
+        "tag": "Problémy se školním stravováním",
+        "detail": "Školní jídelna nedodržuje výživové normy, zejména v komoditě ovoce.",
+        "evidence": "Kapacita jídelny není dostatečná, kontrolní systém ředitele není dostatečně účinný."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jaké jsou jejich možnosti zapojení do soutěží?",
+      "Jaké metody výuky se používají v jednotlivých předmětech a jak se liší mezi třídami?",
+      "Jak funguje péče o žáky se speciálními vzdělávacími potřebami a jaká je kvalita asistence?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí studovat na vysoké škole – škola má prokázaně vysokou úspěšnost při přijetí na VŠ",
+      "Talentovaní a nadaní žáci – škola je aktivní v přípravě na soutěže a olympiády",
+      "Žáci se speciálními potřebami – škola má kvalitní poradenské služby a asistenci"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní a interaktivní výuku – v některých hodinách převládá tradičnější přístup",
+      "Žáci vyžadující individualizovaný přístup – diferenciace není konzistentně uplatňována",
+      "Žáci se zdravotními omezeními v oblasti stravování – kapacita a kvalita školní jídelny nejsou optimální"
+    ],
+    "plain_czech_summary": "Gymnázium v Šumperku je kvalitní střední školou se silnými výsledky u maturity a dobrou péčí o talentované žáky. Škola má moderní vybavení a fungující poradenské služby. Hlavní slabinou je nedostatečné využívání pestrých výukových metod a formativního hodnocení v některých hodinách. Problémy jsou také se školní jídelnou, která nedodržuje výživové normy. Škola je vhodná pro ambiciózní žáky, ale měla by zlepšit individualizaci výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě stabilně vysoké výsledky",
+      "key_numbers": [
+        "Více než 50 % maturantů prospívá s vyznamenáním",
+        "Hrubá neúspěšnost 1,7–1,9 % ve společné části",
+        "Lepší výsledky než průměr ČR v obou částech maturity"
+      ],
+      "evidence": "Žáci dosahují lepších výsledků v porovnání s průměrem dané skupiny oborů v ČR, vysoká úspěšnost absolventů při přijetí ke studiu na vysokých školách."
+    },
+    "absence": {
+      "trend": "Nízká absence žáků",
+      "key_numbers": [
+        "Škola se nepotýká s vysokou absencí žáků ve vyučování"
+      ],
+      "evidence": "Nízká absence pozitivně působí na dosahované výsledky vzdělávání, žáci jsou vedeni ke spoluodpovědnosti za své výsledky."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s jasně vymezenými kompetencemi",
+      "Školní psycholožka a externí speciální pedagožka",
+      "Asistentka pedagoga pro žáky se zrakovým postižením",
+      "Individuální konzultace, skupinové doučování a pedagogické intervence",
+      "Kariérové poradenství a prevence rizikového chování"
+    ],
+    "safety_climate": [
+      "Pozitivní pracovní atmosféra založená na vzájemném respektu a dodržování pravidel",
+      "Školní parlament s proaktivním přístupem žáků",
+      "Schránka důvěry pro vyjádření názorů",
+      "Sociometrická šetření v otázkách klimatu tříd",
+      "Preventivní program zaměřený na pozitivní osobnostní a sociální rozvoj"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s tuzemskými a evropskými školami",
+      "Partnerství se zákonnými zástupci žáků a školskou radou",
+      "Spolupráce s nadačním fondem při škole",
+      "Spolupráce se zřizovatelem (Olomoucký kraj)",
+      "Výběr z nabídek externích organizací pro preventivní programy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasnou strukturou. Obsahuje specifické údaje o maturitě, absenci a službách. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje přesný počet žáků se speciálními potřebami v jednotlivých kategoriích (pouze celkový počet 15)",
+      "Chybí konkrétní údaje o počtu hodin výuky, které byly hospitovány, a jejich procentuální podíl",
+      "Není jasné, jak dlouho trvá řešení problémů se školní jídelnou a jaký je konkrétní plán nápravy"
+    ]
+  }
+}
+```

@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_691006989_2022-11-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:57:54.708576+00:00",
+  "run_finished_utc": "2026-02-09T16:58:22.180781+00:00",
+  "raw_file": "SOS_691006989_2022-11-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_691006989_2022-11-02",
+    "school_profile": {
+      "school_type": "Střední zahradnická škola a Střední odborné učiliště s.r.o. – poskytuje vzdělávání v oboru Zahradnictví (4 roky, maturita) a oborech Prodavač a Zahradník (3 roky, výuční list)",
+      "inspection_period": "2. listopadu – 4. listopadu, 7. listopadu a 19. prosince 2022",
+      "school_change_summary": "Od poslední inspekce v 2021 se zvýšil počet žáků, zejména v maturitním oboru (nyní 92 z 169 žáků). Úspěšnost u maturity vzrostla z 25 % na 61 %, ale výsledky zůstávají kolísavé a horší než celorepublikový průměr."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Poradenské služby",
+          "detail": "Škola má dobře nastavený systém podpory žáků v potížích, včetně individualizované výuky a možnosti přestupu na obor s výučním listem.",
+          "evidence": "Úzká týmová spolupráce školního poradenského pracoviště s vedením, třídními učiteli a odbornými poradci."
+        },
+        {
+          "tag": "Angličtina",
+          "detail": "Výuka anglického jazyka je metodicky zdařilá s dobrým zapojením žáků a rozvojem řečových dovedností.",
+          "evidence": "Převládají metodicky a didakticky zdařilé hodiny, učitelé efektivně vedou výuku a zapojují téměř všechny žáky."
+        },
+        {
+          "tag": "Matematika",
+          "detail": "Výuka matematiky je kvalitní s důrazem na pochopení a praktické aplikace.",
+          "evidence": "Všechny sledované hodiny byly vedeny didakticky správně, všichni žáci konající zkoušku z matematiky vždy uspěli."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nestabilní výsledky u maturity",
+          "detail": "Hrubá neúspěšnost kolísá (2020: 18 %, 2021: 46 %, 2022: 18 %) a zůstává vyšší než celorepublikový průměr.",
+          "evidence": "V roce 2022 neuspěli pouze dva žáci, ale výsledky nekorespondují s trendy postupného poklesu v oboru."
+        },
+        {
+          "tag": "Slabá kvalita výuky češtiny",
+          "detail": "Výuka českého jazyka a literatury má metodické nedostatky – málo aktivizujících metod, málo prostoru pro mluvený projev žáků.",
+          "evidence": "Frontálně vedená výuka s verbální převahou učitele, nízká míra kooperativních forem práce, opomíjení didaktických závěrů hodin."
+        },
+        {
+          "tag": "Vysoká fluktuace žáků",
+          "detail": "Více než třetina žáků studium předčasně ukončuje, zejména po prvním ročníku, protože obor neodpovídá jejich představám.",
+          "evidence": "Významná část předčasně končících žáků odchází po prvním ročníku vzhledem k tomu, že zvolený obor neodpovídá jejich původní představě."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola připravuje žáky na maturitní zkoušku z češtiny? Jaké jsou výsledky v jednotlivých letech?",
+        "Proč odchází tolik žáků po prvním ročníku? Jak se škola snaží lépe seznámit uchazeče s náplní oboru před přijetím?",
+        "Jaké konkrétní změny v přípravě na maturitu škola plánuje po inspekci?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o zahradnictví a praktickou práci v přírodě, kteří jsou motivováni a mají dobré základy z češtiny a angličtiny",
+        "Žáci, kteří potřebují individuální podporu a menší třídy – škola má pouze 169 žáků a pružně reaguje na problémy",
+        "Žáci, kteří chtějí získat výuční list a později si mohou doplnit maturitu – škola nabízí přestup z tříletého oboru do čtyřletého"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími znalostmi češtiny – výuka tohoto předmětu má metodické nedostatky a výsledky u maturity jsou problematické",
+        "Žáci, kteří si nejsou jisti, zda chtějí pracovat v zahradnictví – třetina žáků studium ukončuje, protože obor neodpovídá jejich představám",
+        "Žáci, kteří potřebují intenzivní přípravu na maturitu – výsledky jsou kolísavé a horší než průměr v oboru"
+      ],
+      "plain_czech_summary": "Střední zahradnická škola je malá soukromá škola v Praze se 169 žáky. Silné stránky: dobrá podpora žáků v potížích, kvalitní výuka angličtiny a matematiky. Slabé stránky: výuka češtiny má metodické nedostatky, výsledky u maturity jsou nestabilní a horší než průměr, mnoho žáků studium ukončuje po prvním ročníku. Škola se snaží zlepšit, ale inspekce zjistila, že přijatá opatření nejsou dostatečně účinná."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý – počet úspěšných žáků vzrostl z 25 % na 61 %, ale hrubá neúspěšnost zůstává vyšší než celorepublikový průměr",
+        "key_numbers": [
+          "2020: hrubá neúspěšnost 18 % (odpovídala celorepublikovému průměru)",
+          "2021: hrubá neúspěšnost 46 % (výrazný nárůst)",
+          "2022: hrubá neúspěšnost 18 % (pokles, ale stále vyšší než průměr)"
+        ],
+        "evidence": "Ve společné části MZ více žáků neuspělo v angličtině, jeden v češtině, všichni v matematice uspěli. Výsledky nejsou stabilní a nekorespondují s trendy postupného poklesu v oboru."
+      },
+      "absence": {
+        "trend": "Mírně vyšší v prvním ročníku, ale vhodně řešená",
+        "key_numbers": [
+          "Absence je vyšší v prvním ročníku čtyřletého studia",
+          "Škola důsledně uplatňuje pravidla včetně výchovných opatření"
+        ],
+        "evidence": "Vhodně nastavený systém prevence sociálně patologických jevů umožňuje předcházet vzniku rizikového chování. V případě neomluvené absence škola důsledně uplatňuje stanovená pravidla."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s úzkou spoluprací s vedením, třídními učiteli a odbornými poradci",
+        "Individualizovaná výuka a konzultace pro neprospívající žáky",
+        "Adaptační kurz prvních ročníků a projektový týden vyšších ročníků",
+        "Projekt Prevence předčasných odchodů ze vzdělávání",
+        "Možnost přestupu na obor s výučním listem nebo opakování ročníku"
+      ],
+      "safety_climate": [
+        "Přátelská atmosféra založená na vzájemném respektu v hodinách",
+        "Vhodné zapojování žáků do školních akcí a soutěží",
+        "Cílené využívání pochval jako pozitivního motivačního nástroje",
+        "Důsledné uplatňování školního řádu a výchovných opatření"
+      ],
+      "partnerships_practice": [
+        "Spolupráce učitelů v rámci předmětových komisí na kontrole naplňování školního vzdělávacího programu",
+        "Organizační a metodická pomoc novým učitelům od ředitele",
+        "Účast na adaptačním kurzu a každodenní kontakt s kolegy pro nové učitele",
+        "Sdílení poznatků z dalšího vzdělávání prostřednictvím elektronického systému školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a obsahuje konkrétní údaje o výsledcích, metodách a problémech. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Stanovisko k připomínkám je místy technické a těžko srozumitelné pro laiky.",
+      "uncertainty_notes": [
+        "Není jasné, jak přesně se počítá hrubá neúspěšnost a jak se liší od běžné neúspěšnosti – čísla se zdají vysoká",
+        "Není specifikováno, kolik přesně žáků z Ukrajiny neuspělo u maturity a jak to ovlivňuje statistiku",
+        "Není jasné, jaké konkrétní 'nevhodné vzdělávací postupy' inspekce zjistila – jsou popsány jen obecně"
+      ]
+    }
+  }
+}

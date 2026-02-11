@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600017010_2024-10-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:12:19.277797+00:00",
+  "run_finished_utc": "2026-02-09T16:12:43.131792+00:00",
+  "raw_file": "SOS_600017010_2024-10-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017010_2024-10-14",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola strojnická, obory: Informační technologie, Strojírenství (3 zaměření), Zpracování usní, plastů a pryže",
+      "inspection_period": "14. až 16. října 2024",
+      "school_change_summary": "Došlo ke změně ředitele, stabilizaci pedagogického sboru a zlepšení klimatu školy. Škola rozšířila prostory novou přístavbou a modernizuje vybavení. Nová zaměření v oborech vzdělání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola efektivně spolupracuje se sociálními partnery, což přispívá k získávání odborných kompetencí a přípravě na pracovní uplatnění.",
+          "evidence": "Spolupráce se sociálními partnery efektivně přispívá k užšímu sepětí výuky a praxe."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Vedení systematicky modernizuje prostory, učebny, dílny a techniku s podporou zřizovatele a operačních programů.",
+          "evidence": "Vedení školy systematicky vyhodnocuje stav materiálních a technických podmínek a usiluje o jejich průběžné zkvalitňování."
+        },
+        {
+          "tag": "Příznivé školní prostředí",
+          "detail": "Mezi žáky a pedagogy panují dobré vztahy, které podporují osobnostní rozvoj žáků.",
+          "evidence": "Vytvoření vstřícného prostředí pro vzdělávání projevující se v žádoucích prosociálních vztazích mezi žáky a pedagogy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená pestrost vyučovacích metod",
+          "detail": "Učitelé málo využívají skupinové práce, heuristické metody a práci s různými informačními zdroji.",
+          "evidence": "V některých hodinách byly minimálně využívány rozmanité organizační formy a metody výuky."
+        },
+        {
+          "tag": "Slabé formativní hodnocení",
+          "detail": "Žáci dostávají málo zpětné vazby motivující je k dalšímu učení a reflexi svého pokroku.",
+          "evidence": "Nižší míra využívání formativního hodnocení a reflexe vzdělávacího pokroku žáků v části vyučovacích hodin."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Učitelé málo přizpůsobují výuku rozdílným schopnostem a potřebám jednotlivých žáků.",
+          "evidence": "Malá míra obsahové a časové diferenciace výuky vzhledem k rozdílným vzdělávacím potřebám žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola propojuje teoretickou výuku s praxí u jednotlivých oborů?",
+        "Jaké možnosti má žák, který se chce více věnovat skupinové práci a projektům?",
+        "Jak škola podporuje žáky, kteří mají potíže s učením nebo naopak jsou nadaní?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a budoucí pracovní uplatnění v technických oborech",
+        "Studenti, kteří si cení kvalitního materiálního vybavení a moderních dílen",
+        "Žáci, kteří preferují přátelské prostředí a dobré vztahy mezi studenty a učiteli"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se učí lépe prostřednictvím skupinové práce a diskusí (škola je zatím málo využívá)",
+        "Studenti, kteří potřebují intenzivní individuální přístup a diferenciovanou výuku",
+        "Žáci, kteří se spoléhají na detailní zpětnou vazbu a reflexi svého pokroku"
+      ],
+      "plain_czech_summary": "SPŠ strojnická je stabilní škola s dobrým vybavením a příznivým klimatem. Silnou stránkou je propojení výuky s praxí díky spolupráci s firmami. Vedení školy systematicky modernizuje prostory a podporuje učitele. Slabší je pestrost vyučovacích metod – učitelé málo využívají skupinové práce a různé informační zdroje. Žáci dostávají málo motivující zpětné vazby. Škola by měla více individualizovat výuku podle potřeb jednotlivých žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní",
+        "key_numbers": [
+          "Hrubá neúspěšnost ve společné části maturitní zkoušky za poslední tři roky mírně pod celostátním průměrem",
+          "Výsledky odpovídají studijnímu potenciálu a průběžným výsledkům žáků"
+        ],
+        "evidence": "Výsledky ve společné části maturitní zkoušky měly v období posledních tří let ustálený charakter. Hrubá neúspěšnost se pohybuje mírně pod celostátním průměrem."
+      },
+      "absence": {
+        "trend": "Nízká",
+        "key_numbers": [
+          "Škola se nepotýká s vysokou absencí žáků ve vyučování"
+        ],
+        "evidence": "Na dosahované výsledky vzdělávání pozitivně působí skutečnost, že se škola nepotýká s vysokou absencí žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje poradenské služby pedagogům, žákům a zákonným zástupcům",
+        "Individuální vzdělávací plány a plány pedagogické podpory pro žáky se speciálními potřebami",
+        "Podpora nadaných a talentovaných žáků prostřednictvím soutěží a odborných aktivit",
+        "Kariérní poradenství na individuální úrovni a účast na veletrzích vzdělávání"
+      ],
+      "safety_climate": [
+        "Škola má stanovena pravidla pro vyhledávání bezpečnostních rizik a jejich řešení",
+        "Spolupráce s odborně způsobilou osobou, provádění revizí a přijímání opatření",
+        "Výchova ke zdraví prostřednictvím výuky, sportovních aktivit a akcí na zdravý životní styl",
+        "Plánovitá a pravidelně vyhodnocovaná prevence rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Efektivní spolupráce se sociálními partnery (partnerskými firmami) pro propojení teorie s praxí",
+        "Spolupráce se základními školami v regionu pro propagaci a nábor",
+        "Partnerství se školskými poradenskými zařízeními, kulturními a tělovýchovnými institucemi",
+        "Komunikace se zřizovatelem (Olomoucký kraj) o plánech a koncepčních záměrech"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky z inspekce. Silné a slabé stránky jsou jasně vymezeny s odkazem na konkrétní oblasti. Některé pasáže jsou však formulovány úřednicky a vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o počtu žáků v jednotlivých oborech ani podrobné statistiky absence",
+        "Chybí konkrétní procenta úspěšnosti u maturitní zkoušky – uvedeno pouze 'mírně pod průměrem'",
+        "Není jasné, jak konkrétně se liší kvalita výuky mezi jednotlivými obory a třídami"
+      ]
+    }
+  }
+}

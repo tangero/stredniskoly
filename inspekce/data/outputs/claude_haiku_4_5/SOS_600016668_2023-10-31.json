@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600016668_2023-10-31",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:35:44.231430+00:00",
+  "run_finished_utc": "2026-02-09T16:36:10.292401+00:00",
+  "raw_file": "SOS_600016668_2023-10-31.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600016668_2023-10-31",
+    "school_profile": {
+      "school_type": "Střední škola s maturitními obory (Provoz a ekonomika dopravy, Sociální činnost) a odbornými obory s výučním listem (Strojní mechanik, Obráběč kovů, Mechanik opravář, Elektrikář, Železničář, Kuchař-číšník, Kadeřník)",
+      "inspection_period": "31. 10. 2023 – 3. 11. 2023",
+      "school_change_summary": "Od inspekce v roce 2017: nové vedení, otevření oboru Železničář, rekonstrukce budov, nové vybavení učeben, zřízení relaxačních zón, zavedení stáží pedagogů u partnerů, zrušení domova mládeže."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce se zaměstnavateli",
+          "detail": "Škola má velmi dobrou spolupráci s řadou sociálních partnerů, kteří se podílejí na výuce a reálném zapojení žáků do svých provozů.",
+          "evidence": "Partneři pomáhají s materiálním zajištěním a reálným zapojením žáků, což rozvíjí jejich odborné i sociální kompetence."
+        },
+        {
+          "tag": "Kvalita praktické výuky",
+          "detail": "Odborný výcvik má jasně nastavené cíle a učitelé jsou zdatní po odborné i sociální stránce.",
+          "evidence": "Výuka v odborném výcviku vykazuje požadovanou úroveň s vhodným nastavením metod a diferenciací podle možností žáků."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují výborných výsledků v odborných soutěžích a přehlídkách.",
+          "evidence": "Baristický kroužek získal 3. místo v soutěži Mistr kávy, žáci oboru Kuchař-číšník vyhráli 1. místo v soutěži Svatomartinská husa."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní teoretická výuka",
+          "detail": "Převážná část hodin teoretického vyučování je vedena frontálně bez aktivního zapojení žáků.",
+          "evidence": "Chybí diferenciace, kooperativní práce, diskuze a samostatné vyhledávání informací. Kritické myšlení není podporováno."
+        },
+        {
+          "tag": "Slabá podpora učitelů",
+          "detail": "Škola poskytuje jen v menší míře podporu vyučujícím, kteří nejsou dostatečně odborně způsobilí.",
+          "evidence": "Chybí vzdělávání v oblasti aktivizačních metod, kooperativní práce a využívání informačních technologií. Nejsou vzájemné náslechy pro sdílení dobré praxe."
+        },
+        {
+          "tag": "Organizační problémy",
+          "detail": "Žáci přecházejí mezi budovami i během pětiminutové přestávky, což ohrožuje jejich bezpečnost a psychohygienu.",
+          "evidence": "Škola nezohlednila potřebnou časovou dotaci při organizaci tělesné výchovy. Kontrolní systém není zcela účinný."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s teoretickými předměty? Jaké má doučování a konzultace?",
+        "Jaké jsou reálné šance na úspěšné absolvování maturitní zkoušky? (V loňském roce prospělo 78 % žáků.)",
+        "Jak se škola vypořádává s tím, že teoretická výuka probíhá ve dvou budovách vzdálených 400 metrů od sebe?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou výuku a řemesla – odborný výcvik je na vysoké úrovni s kvalitními učiteli a moderním vybavením.",
+        "Talentovaní žáci se zájmem o soutěže – škola aktivně podporuje účast v odborných soutěžích a přehlídkách.",
+        "Žáci se speciálními vzdělávacími potřebami – škola má výchovnou poradkyni a metodičku prevence, která se věnuje jejich podpoře."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují aktivní a interaktivní výuku – teoretické předměty jsou vedeny převážně frontálně bez zapojení žáků.",
+        "Žáci vyžadující individuální přístup – diferenciace a individualizace nejsou optimálně využívány v teoretické výuce.",
+        "Žáci se slabší motivací – chybí dostatečná podpora v rozvoji klíčových kompetencí a kritického myšlení."
+      ],
+      "plain_czech_summary": "Střední škola v Bohumíně je silná v praktické výuce a spolupráci se zaměstnavateli. Žáci se učí v moderně vybavených prostorech a dosahují dobrých výsledků v odborných soutěžích. Slabinou je teoretická výuka, která je příliš frontální a pasivní. Učitelé nemají dostatek podpory v používání moderních metod. Škola má také organizační problémy s přechody mezi budovami. Vhodná pro žáky zaměřené na praktické obory, méně vhodná pro ty, kteří potřebují aktivní a interaktivní výuku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírný pokles úspěšnosti",
+        "key_numbers": [
+          "2021/2022: 80 % ze 44 žáků prospělo",
+          "2022/2023: 78 % ze 44 žáků prospělo"
+        ],
+        "evidence": "Analýza výsledků maturitních zkoušek ukazuje pokles o 2 procentní body. Škola monitoruje příčiny neúspěchu a nabízí doučování."
+      },
+      "absence": {
+        "trend": "Údaje nejsou v textu explicitně uvedeny",
+        "key_numbers": [
+          "Není specifikováno"
+        ],
+        "evidence": "Zpráva se nezabývá absencí žáků jako samostatným tématem."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence zajišťují péči o žáky se speciálními vzdělávacími potřebami",
+        "Doučování a individuální konzultace pro žáky s neúspěchem",
+        "Stipendia od zřizovatele a sociálních partnerů na podporu docházky a motivace"
+      ],
+      "safety_climate": [
+        "Žáci jsou pravidelně poučováni o bezpečnosti a ochraně zdraví",
+        "Škola vyhodnocuje úrazovost – v 2022/2023 došlo k poklesu úrazů oproti předchozímu roku",
+        "Prevence školního neúspěchu je součástí dění ve škole – pravidelné třídnické hodiny, diagnostika tříd, Dny prevence"
+      ],
+      "partnerships_practice": [
+        "Velmi dobrá spolupráce s řadou sociálních partnerů (Renarkon, Bílý kruh bezpečí, Slezská diakonie, Městská policie, Policie ČR)",
+        "Projekt Erasmus+ – stáže v zahraničí (Itálie, Maďarsko) pro posílení jazykových kompetencí",
+        "Příhraniční spolupráce v Polsku s odbornou školou pro výměnu zkušeností"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, obsahuje konkrétní příklady a čísla. Slabinou je místy úřednický jazyk a dlouhé věty, které mohou být pro rodiče těžko pochopitelné.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna jako samostatné téma – není jasné, jaká je absence žáků.",
+        "Není specifikováno, kolik žáků má speciální vzdělávací potřeby a jak konkrétně jim škola pomáhá v teoretické výuce.",
+        "Není jasné, jaké konkrétní obory jsou nejúspěšnější a které mají nižší úspěšnost."
+      ]
+    }
+  }
+}

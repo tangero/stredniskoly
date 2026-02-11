@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600015751_2025-01-15",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:04:30.811389+00:00",
+  "run_finished_utc": "2026-02-09T16:04:55.635627+00:00",
+  "raw_file": "SOS_600015751_2025-01-15.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015751_2025-01-15",
+    "school_profile": {
+      "school_type": "Střední odborná škola a školní jídelna s domovem mládeže",
+      "inspection_period": "15.–17. 1. a 20. 1. 2025",
+      "school_change_summary": "Škola prošla změnou vedení (ředitel ve třetím roce), reorganizací struktury a zvýšením počtu žáků o 16 %. Počet žáků se speciálními vzdělávacími potřebami vzrostl o 48 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vedení a klima",
+          "detail": "Ředitel buduje pozitivní klima a vstřícnou komunikaci, která podporuje naplňování rozvojových záměrů.",
+          "evidence": "Vedení školy aktivně získává finanční prostředky z mimorozpočtových zdrojů a zlepšuje podmínky pro vzdělávání."
+        },
+        {
+          "tag": "Praktická výuka",
+          "detail": "Kvalitní praktické vyučování s moderním vybavením a intenzivní spoluprací s profesními partnery.",
+          "evidence": "Žáci získávají zkušenosti v reálném prostředí, škola je Centrem odborného vzdělávání Jihomoravského kraje."
+        },
+        {
+          "tag": "Výsledky závěrečných zkoušek",
+          "detail": "Výborné výsledky u závěrečných zkoušek, v posledních třech letech 100% úspěšnost.",
+          "evidence": "V roce 2024 byla hrubá neúspěšnost nulová, všichni žáci zkoušku úspěšně vykonali."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Dlouhodobě vysoká míra absence negativně ovlivňuje úspěšnost vzdělávání a vede k předčasným ukončením.",
+          "evidence": "Průměrně 220 hodin absence za rok u oborů s závěrečnou zkouškou, zhruba 25 % žáků předčasně skončí."
+        },
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Převažující frontální výuka vede k pasivitě žáků, chybí individualizace a diferenciace.",
+          "evidence": "Interakce probíhá formou dotazování a krátkých odpovědí, minimální rozvoj mluveného projevu."
+        },
+        {
+          "tag": "Maturitní zkoušky",
+          "detail": "Výsledky maturit jsou proměnlivé, zejména slabší výsledky z cizích jazyků a matematiky.",
+          "evidence": "Hrubá neúspěšnost u nástavbového oboru byla 29 % průměrně, v roce 2022 dokonce 41 %."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší problém vysoké absence žáků a jaké jsou důsledky pro studijní úspěch?",
+        "Jaké metody výuky se používají k aktivizaci žáků a jak se liší mezi jednotlivými obory?",
+        "Jak se škola připravuje na maturitní zkoušky a jaká je úspěšnost v jednotlivých předmětech?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a odborné obory (kuchař, cukrář, zahradník, opravář strojů)",
+        "Studenti, kteří si cení kvalitního vybavení a moderních technologií v učebnách",
+        "Žáci se zájmem o spolupráci s reálnými partnery a získávání praktických zkušeností"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s tendencí k absenci – škola má dlouhodobě vysokou míru absence a nedaří se jí ji zlepšit",
+        "Studenti preferující aktivní a interaktivní výuku – převažuje frontální přístup s pasivitou žáků",
+        "Uchazeči o nástavbový obor Podnikání – výsledky maturit z matematiky jsou historicky slabší"
+      ],
+      "plain_czech_summary": "Znojemská střední odborná škola je moderně vybavená instituce se silným zaměřením na praktickou výuku a spolupráci s partnery. Žáci dosahují výborných výsledků u závěrečných zkoušek a mají přístup k moderním technologiím. Hlavním problémem je vysoká absence žáků, která negativně ovlivňuje jejich úspěšnost. Výuka je často pasivní a frontální, chybí individualizace. Škola se snaží zlepšovat, ale změny se zatím projevují jen částečně."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se, zejména u nástavbového oboru",
+        "key_numbers": [
+          "Obor Agropodnikání: hrubá neúspěšnost 8 % v roce 2024",
+          "Obor Podnikání: hrubá neúspěšnost 16 % v roce 2024 (bylo 41 % v roce 2022)",
+          "Průměrně 11 % neúspěšnost u čtyřletého oboru, srovnatelné s celorepublikovým průměrem"
+        ],
+        "evidence": "Škola přijala opatření k posílení předmětů společné části maturitní zkoušky a zefektivnila přípravu žáků."
+      },
+      "absence": {
+        "trend": "Dlouhodobě vysoká, nedaří se ji zlepšit",
+        "key_numbers": [
+          "Průměrně 220 hodin absence za rok u oborů s závěrečnou zkouškou",
+          "Průměrně 170 hodin absence za rok u oborů s maturitní zkouškou",
+          "Neomluvená absence činí průměrně 8 % celkového počtu zameškaných hodin"
+        ],
+        "evidence": "Vysoká absence často souvisí s předčasným ukončováním vzdělávání – zhruba 25 % žáků takto skončí."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní, psycholožkou a kariérovou poradkyní",
+        "Individuální doučování a konzultace pro žáky s rizikem neprospěchu",
+        "Výchovné komise pro problémové žáky a žáky s vysokou absencí"
+      ],
+      "safety_climate": [
+        "Příjemná pracovní atmosféra, žáci dodržují pravidla a nejsou si vědomi strachu z vyjadřování",
+        "Průběžná zpětná vazba od pedagogů",
+        "Žáci jsou řádně vybaveni ochrannými pomůckami a poučeni o bezpečnosti"
+      ],
+      "partnerships_practice": [
+        "Intenzivní spolupráce s profesními partnery pro praktické vyučování",
+        "Projekt Erasmus+ se školami ve Francii a Rakousku",
+        "Spolupráce se základními školami v regionu a Okresní hospodářskou komorou",
+        "Partnerství s nemocnicí, domovem důchodců a dětským domovem pro rozvoj sociálních kompetencí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní data. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání.",
+      "uncertainty_notes": [
+        "Není jasné, jaké konkrétní opatření škola přijala na řešení vysoké absence – zpráva uvádí, že se problémem zabývá, ale efektivita není doložena.",
+        "Chybí informace o tom, jak se liší kvalita výuky mezi jednotlivými pedagogy a obory – hodnocení je spíše obecné.",
+        "Není specifikováno, jaké konkrétní aktivizační metody by měly být zavedeny – doporučení je příliš obecné."
+      ]
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "report_id": "GY6_600005500_2024-10-31",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:10:58.958700+00:00",
+  "run_finished_utc": "2026-02-09T16:11:26.010197+00:00",
+  "raw_file": "GY6_600005500_2024-10-31.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600005500_2024-10-31",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a šestileté studium), všeobecné zaměření",
+      "inspection_period": "31. 10. 2024 – 5. 11. 2024",
+      "school_change_summary": "Od inspekce v roce 2017 mírně vzrostl počet žáků čtyřletého studia. Škola získala nové prostory v pronajatých budovách. Nyní má 303 žáků ve 11 třídách (168 v šestiletém, 135 v čtyřletém studiu)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělávání",
+          "detail": "Systémově nastavená výuka cizích jazyků s rodilými mluvčími, 80 % maturantů si vezme mezinárodní certifikát místo školní zkoušky.",
+          "evidence": "Žáci dosahují lepších výsledků v angličtině než průměr ČR, úspěšné složení certifikovaných zkoušek B2 a C1."
+        },
+        {
+          "tag": "Kvalifikovaný pedagogický sbor",
+          "detail": "37 plně kvalifikovaných učitelů včetně 2 rodilých mluvčích, kontinuální vzdělávání pedagogů.",
+          "evidence": "Stabilní sbor s odbornými zkušenostmi, pravidelné školení (AI, digitální kompetence, formativní hodnocení)."
+        },
+        {
+          "tag": "Úspěšnost na vysokých školách",
+          "detail": "Více než 90 % absolventů se dostane na vysokou školu, 45 % maturantů s vyznamenáním.",
+          "evidence": "Všichni žáci prospěli u maturity, téměř 30 % prospívá s vyznamenáním během studia."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nízká aktivizace žáků v některých hodinách",
+          "detail": "V části vyučovacích hodin dominuje učitel, žáci jsou pasivnější, chybí samostatná práce s informacemi.",
+          "evidence": "Inspektoři zjistili menší pestrost metod, nerovnoměrné zapojení žáků, minimální formativní hodnocení."
+        },
+        {
+          "tag": "Slabší rozvoj kritického myšlení",
+          "detail": "Žáci málo pracují s různými informačními zdroji, chybí vedení k ověřování faktů a vyhodnocování údajů.",
+          "evidence": "Vyhledávání klíčových slov, ověřování reálií a vyhodnocování údajů nebylo patrné v sledovaných hodinách."
+        },
+        {
+          "tag": "Nedostatečné sebehodnocení žáků",
+          "detail": "Žáci se málo zapojují do vyhodnocení své práce a shrnutí hodin, chybí vzájemné hodnocení.",
+          "evidence": "Jen ojediněle byli žáci vedeni k sebereflexi nebo posouzení výkonu spolužáků podle kritérií."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s formativním hodnocením a sebehodnocením žáků?",
+        "Jaké jsou možnosti individuálního přístupu pro žáky s různým tempem práce?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a práci s informacemi?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky – výborná příprava v angličtině, možnost získat mezinárodní certifikáty",
+        "Talentovaní a nadaní žáci – pestrá nabídka seminářů, projektů, soutěží a olympiád",
+        "Žáci s ambicí na vysokou školu – 90 % úspěšnost přijetí, kvalitní příprava na maturitu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více interaktivní a aktivizující výuku – v některých hodinách převládá frontální výuka",
+        "Žáci, kteří se lépe učí samostatnou prací s různými zdroji – toto není dostatečně rozvíjeno",
+        "Žáci, kteří potřebují více zpětné vazby a sebehodnocení – formativní hodnocení se využívá minimálně"
+      ],
+      "plain_czech_summary": "Gymnázium Oty Pavla je kvalitní škola s tradičním gymnaziálním vzděláním. Silné stránky: výborné jazykové vzdělávání, kvalifikovaní učitelé, vysoká úspěšnost na vysokých školách. Slabiny: v některých hodinách je málo aktivizace žáků, chybí práce s různými informačními zdroji a rozvoj kritického myšlení, málo se používá sebehodnocení. Škola je vhodná pro talentované žáky se zájmem o jazyky a vysokoškolské studium."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi dobrý – všichni žáci prospěli, 45 % s vyznamenáním",
+        "key_numbers": [
+          "100 % úspěšnost u maturity",
+          "45 % maturantů s vyznamenáním",
+          "80 % maturantů si vezme mezinárodní certifikát místo školní zkoušky"
+        ],
+        "evidence": "Ve srovnění se stejnou skupinou oborů v ČR dosahují žáci lepších výsledků v češtině a angličtině."
+      },
+      "absence": {
+        "trend": "Velmi nízký výskyt rizikového chování",
+        "key_numbers": [
+          "Neprospívající žáci se objevili zcela ojediněle",
+          "Téměř 30 % žáků prospívá s vyznamenáním"
+        ],
+        "evidence": "Preventivní mechanismy založené na komplexním monitoringu přispívají k řešení problémů v jejich počátku."
+      },
+      "support_services": [
+        "Poradenské služby v úzké spolupráci s třídními učiteli",
+        "Individuální přístup pro žáky se speciálními vzdělávacími potřebami (7 žáků)",
+        "Podpora žáků s odlišným mateřským jazykem (10 žáků bez jazykové bariéry)",
+        "Kariérové poradenství včetně předmětu Profesní příprava",
+        "Adaptační kurz pro nově vznikající třídní kolektivy"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra, přirozené dodržování pravidel spolupráce",
+        "Bezpečnostní opatření: celodenní přítomnost nepedagogického pracovníka u vstupu, elektronický systém u žákovského vstupu",
+        "Důvěryhodné a bezpečné prostředí malé školy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zahraniční partnerskou školou, studijní jazykové pobyty",
+        "Partnerství s vysokými školami",
+        "Spolupráce se zřizovatelem (Hlavní město Praha) a místní farou",
+        "Sdružení rodičů a přátel školy",
+        "Projekty a rozvojové programy pro získávání finančních prostředků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady, čísla a citace. Slabiny jsou jasně identifikovány s konkrétními doporučeními. Jediný problém: některé pasáže jsou velmi dlouhé a odborné, což může být pro běžného rodiče těžko srozumitelné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o počtu hodin jednotlivých předmětů, což by bylo užitečné pro srovnání s jinými školami.",
+        "Chybí informace o počtu žáků, kteří opakují ročník, nebo o počtu vyloučených žáků.",
+        "Není jasné, jak konkrétně se škola vypořádala s doporučeními z inspekce v roce 2017."
+      ]
+    }
+  }
+}

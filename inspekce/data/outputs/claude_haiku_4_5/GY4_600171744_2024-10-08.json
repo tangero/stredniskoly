@@ -1,0 +1,117 @@
+{
+  "report_id": "GY4_600171744_2024-10-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:12:49.157684+00:00",
+  "run_finished_utc": "2026-02-09T16:13:15.188044+00:00",
+  "raw_file": "GY4_600171744_2024-10-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600171744_2024-10-08",
+    "school_profile": {
+      "school_type": "Gymnázium s třemi obory: čtyřleté (121 žáků), osmileté (238 žáků) a se sportovní přípravou (114 žáků). Celkem 473 žáků.",
+      "inspection_period": "8. až 10. října 2024",
+      "school_change_summary": "Od poslední inspekce (2019) došlo k výrazným zlepšením: nový elektronický informační systém, zřízena funkce školního psychologa a metodika prevence, zlepšeny materiální podmínky (výtah, bezbariérovost, nové osvětlení, fotovoltaika)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné studijní výsledky",
+          "detail": "53 % žáků prospívá s vyznamenáním, neprospěje méně než 1 %, úspěšnost u maturity přesahuje 97 %.",
+          "evidence": "\"Za poslední tři školní roky jich na konci školního roku prospělo s vyznamenáním v průměru 53 %, neprospělo necelé 1 %.\""
+        },
+        {
+          "tag": "Kvalifikovaní učitelé a trenéři",
+          "detail": "Všichni pedagogové jsou plně kvalifikovaní s potřebnou odbornou způsobilostí.",
+          "evidence": "\"Plná kvalifikovanost pedagogických pracovníků a potřebná míra odborné způsobilosti trenérů.\""
+        },
+        {
+          "tag": "Bezpečné a moderní prostředí",
+          "detail": "Nové osvětlení, fotovoltaika, bezpečnostní dokumentace, dobré vybavení pro sport i učení.",
+          "evidence": "\"Nové úsporné osvětlení s vyšší svítivostí zlepšuje podmínky pro učení a práci ve škole.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezené metody výuky",
+          "detail": "Převažuje frontální výuka, málo skupinové práce, žáci nemají možnost volit úlohy různé náročnosti.",
+          "evidence": "\"Převládala frontální výuka... Nebyla zaznamenána individuální podpora žáků, všichni žáci plnili stejné typy úloh.\""
+        },
+        {
+          "tag": "Slabá informovanost o poradenství",
+          "detail": "Chybí viditelné informace o školním poradenském pracovišti, schránka důvěry a program proti šikaně.",
+          "evidence": "\"Nedostatkem je absence informační tabule s kontakty... Chybí schránka důvěry... pracoviště nemá zpracovaný program proti šikaně.\""
+        },
+        {
+          "tag": "Málo zpětné vazby v hodinách",
+          "detail": "Závěrečné zhodnocení hodin probíhá formálně bez konkrétní zpětné vazby o zvládnutí učiva.",
+          "evidence": "\"Závěrečné zhodnocení hodiny učitelem probíhalo v mnoha případech formálně, neposkytovalo žákům potřebnou zpětnou vazbu.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří si nevedou dobře? Jaké jsou možnosti doučování?",
+        "Jak funguje poradenské pracoviště a jak se na něj mohu obrátit se svými obavami?",
+        "Jaké jsou zkušenosti rodičů se vzájemnou komunikací se školou a jak probíhají třídní schůzky?"
+      ],
+      "who_school_fits": [
+        "Talentovaní žáci s ambicí dosáhnout vysokých studijních výsledků a pokračovat na vysoké škole",
+        "Sportovně nadaní žáci, kteří chtějí kombinovat kvalitní vzdělání s intenzivní sportovní přípravou",
+        "Žáci, kterým vyhovuje strukturovaná výuka s důrazem na přípravu k maturitě"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a různorodé metody výuky – škola se zaměřuje spíše na frontální výuku",
+        "Žáci se speciálními vzdělávacími potřebami – poradenské pracoviště není dostatečně viditelné a dostupné",
+        "Žáci, kteří se učí lépe skrze skupinovou práci a diskusi – ty jsou v hodinách minimálně"
+      ]
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě velmi vysoká úspěšnost",
+        "key_numbers": [
+          "Neuspěje 1 % v části společné",
+          "Neuspěje necelá 3 % v části profilové",
+          "Neúspěšní žáci obvykle uspějí v opravném termínu"
+        ],
+        "evidence": "\"Dlouhodobě vysoká je úspěšnost žáků školy u maturitní zkoušky. V posledních třech školních letech neuspělo ve společné části v průměru 1 % žáků, v profilové části necelá 3 %.\""
+      },
+      "absence": {
+        "trend": "Velmi nízká absence, odpovídá vysokým studijním výsledkům",
+        "key_numbers": [
+          "Osmileté gymnázium: 125 hodin na žáka za rok",
+          "Čtyřleté gymnázium: 143 hodin na žáka za rok",
+          "Sportovní příprava: 123 hodin výuky + 203 hodin tréninku"
+        ],
+        "evidence": "\"Studijní výsledky žáků korespondují s nízkou mírou jejich absence... Neomluvená absence byla zaznamenána výjimečně, činila v průměru 0,025 hodiny na jednoho žáka.\""
+      },
+      "support_services": [
+        "Školní psycholožka (od února 2024)",
+        "Výchovná poradkyně",
+        "Školní metodik prevence",
+        "Efektivní systém prevence zaměřený na věk žáků"
+      ],
+      "safety_climate": [
+        "Propracovaná bezpečnostní dokumentace",
+        "Poučování žáků a zaměstnanců o preventivních opatřeních",
+        "Budova zabezpečena proti nežádoucímu vstupu",
+        "Dobře nastavené adaptační kurzy pro nové třídy",
+        "Bezodkladné řešení absencí a rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s Jacob-Brucker-Gymnasiem v Kaufbeurenu (výměnné pobyty)",
+        "Kooperace se sportovními kluby a svazy",
+        "Partnerství s vysokými školami",
+        "Spolupráce s místními a regionálními firmami a institucemi",
+        "Aktivní rada rodičů a studentská rada"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Silné a slabé stránky jsou jasně vymezeny. Chybí však více praktických informací pro rodiče (např. konkrétní počty hodin doučování, ceny, přesný obsah sportovní přípravy).",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o počtu žáků se speciálními potřebami a jak konkrétně jsou podporováni",
+        "Není jasné, jak se liší výuka mezi jednotlivými obory (osmileté vs. čtyřleté) v praxi",
+        "Chybí informace o tom, kolik žáků pokračuje na vysokých školách a jaké si vybírají obory"
+      ]
+    }
+  }
+}

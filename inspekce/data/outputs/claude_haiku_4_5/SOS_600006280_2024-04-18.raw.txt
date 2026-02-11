@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600006280_2024-04-18",
+  "school_profile": {
+    "school_type": "Střední odborná škola s domovem mládeže, poskytující technické, zahradnické a ekonomické vzdělání ve 40 oborech",
+    "inspection_period": "18. 4. 2024 − 23. 4. 2024",
+    "school_change_summary": "Od inspekce v 2017 se škola přejmenovala, naplněnost vzrostla z 65 % na 84 %, počet žáků dosáhl 1438 v 66 třídách. Vedení kontinuálně zlepšuje materiálně technické vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka na vysoké úrovni",
+        "detail": "Praktické vyučování je realizováno s individuálním přístupem, efektivně propojuje teorii s praxí a buduje pozitivní vztah k profesi.",
+        "evidence": "Sledované praktické vyučování bylo realizováno na vysoké úrovni s erudovaností učitelů a jejich profesními zkušenostmi."
+      },
+      {
+        "tag": "Spolupráce se sociálními partnery",
+        "detail": "Úzká spolupráce s řemeslnými cechy, profesními svazy a firmami zajišťuje vazbu na praxi a vysokou uplatnitelnost absolventů.",
+        "evidence": "Přínosná spolupráce s četnými sociálními partnery vytvářející podmínky pro lepší uplatnitelnost absolventů na trhu práce."
+      },
+      {
+        "tag": "Moderní vybavení a infrastruktura",
+        "detail": "Škola disponuje rozlehlým areálem s učebnami a dílnami vybaveným nejmodernější technikou, bazénem a sportovišti.",
+        "evidence": "Nadstandardní činnost ředitele při zajišťování finančních prostředků na rozvoj moderního materiálně technického zázemí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdílná kvalita teoretické výuky",
+        "detail": "Kvalita hodin se liší podle přístupu učitelů a jejich zkušeností, v některých předmětech chybí efektivní práce s textem a informačními zdroji.",
+        "evidence": "Nižší efektivita kontroly kvality vzdělávání se projevuje v rozdílné úrovni kvality výuky."
+      },
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Obsahová a časová diferenciace učiva pro žáky s různými předpoklady není dostatečně patrná.",
+        "evidence": "Nižší míra obsahové a časové diferenciace výuky vzhledem k rozdílným vzdělávacím potřebám žáků."
+      },
+      {
+        "tag": "Slabší výsledky v čtenářské gramotnosti",
+        "detail": "V porovnání s průměrem ČR dosáhli žáci slabších výsledků v čtenářské a přírodovědné gramotnosti.",
+        "evidence": "Z výstupů výběrového zjišťování ČŠI vyplývá nižší výsledky v čtenářské a přírodovědné gramotnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky s různými studijními předpoklady a tempem práce?",
+      "Jaké konkrétní kroky podniká škola na zlepšení čtenářské gramotnosti a práce s textem?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a sebereflexe žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a řemesla, kteří se učí lépe praxí než teorií",
+      "Uchazeči s jasným profesním zaměřením v technických, zahradnických nebo ekonomických oborech",
+      "Žáci, kteří oceňují moderní vybavení a propojení studia s reálnou praxí"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími předpoklady v čtenářské gramotnosti, kteří potřebují intenzivnější podporu v teoretické výuce",
+      "Uchazeči, kteří preferují individualizovaný přístup a diferenciovanou výuku v každém předmětu",
+      "Žáci, kteří se spoléhají na aktivní zapojení a skupinovou práci jako hlavní formu učení"
+    ],
+    "plain_czech_summary": "Střední odborná škola Jarov je moderní instituce s výborným praktickým vyučováním a silnými vazbami na praxi. Absolventi mají vysokou uplatnitelnost. Vedení školy je aktivní a efektivně získává prostředky na vybavení. Slabší stránkou je rozdílná kvalita teoretické výuky a nedostatečná individualizace. Žáci dosahují slabších výsledků v čtenářské gramotnosti. Škola je vhodná pro prakticky zaměřené žáky s jasným profesním cílem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá úroveň s rozdíly podle oboru",
+      "key_numbers": [
+        "Nejlepší výsledky: obor Nábytkářská a dřevařská výroba",
+        "Velmi dobré výsledky: Ekonomika a podnikání, Technická zařízení budov, Stavebnictví v cizích jazycích",
+        "Nižší úspěšnost v nástavbových oborech ve srovnání s republikovým průměrem"
+      ],
+      "evidence": "Výsledky žáků u maturitní zkoušky vykazovaly kolísavou úroveň v jednotlivých částech, nejlepších výsledků dosahovali žáci oboru Nábytkářská a dřevařská výroba."
+    },
+    "absence": {
+      "trend": "Průměrný počet zameškaných hodin na nízké úrovni",
+      "key_numbers": [
+        "95 hodin na žáka",
+        "Průměrné hodnoty svědčí o funkčnosti preventivních mechanismů"
+      ],
+      "evidence": "Nastavené preventivní mechanismy jsou převážně funkční, o čemž svědčí průměrné počty zameškaných hodin (95 hodin na žáka)."
+    },
+    "support_services": [
+      "Tři výchovní poradci, speciální pedagog, metodik prevence, dva školní psychologové",
+      "Komplexní psychologická, preventivní a inkluzivní péče",
+      "Podpora žáků se speciálními vzdělávacími potřebami a odlišným mateřským jazykem",
+      "Kariérové poradenství zaměřené na další profesní či studijní směřování",
+      "Adaptační pobyty, sportovní kurzy a tematické programy"
+    ],
+    "safety_climate": [
+      "Příznivá pracovní atmosféra podporující učení",
+      "Žáci dodržují pravidla přirozené komunikace a respektují stanovené postupy",
+      "Domov mládeže vytváří podmínky pro zdravý životní styl a psychohygienu",
+      "Identifikované projevy problémového chování jsou řešeny v souladu se stanovenými pravidly"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce s řemeslnými cechy, profesními svazy, výrobci a firmami",
+      "Zahraniční odborné stáže a program Erasmus+",
+      "Členství v řadě profesních svazů a asociací",
+      "Aktivní rozvoj partnerských vztahů se zahraničními školami",
+      "Tematické exkurze a projektové aktivity"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasnou strukturou. Obsahuje specifické údaje o počtech žáků, oborech a výsledcích. Některé pasáže jsou více odborné, ale celkově je text pro rodiče dobře pochopitelný.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní procenta úspěšnosti u maturit, pouze kvalitativní popis",
+      "Chybí detailní informace o počtu žáků v jednotlivých oborech a jejich výsledcích",
+      "Není jasné, jak se liší kvalita výuky mezi jednotlivými předměty a třídami"
+    ]
+  }
+}
+```

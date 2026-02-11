@@ -1,0 +1,47 @@
+{
+  "report_id": "GY4_600012875_2022-11-07",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T06:59:53.242696+00:00",
+  "run_finished_utc": "2026-02-10T07:00:06.314282+00:00",
+  "raw_file": "GY4_600012875_2022-11-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600012875_2022-11-07",
+    "school_profile": {
+      "school_type": "Gymnázium",
+      "inspection_period": "7. 11. 2022 až 9. 11. 2022",
+      "school_change_summary": "Nebyla poskytnuta zdrojová data pro vyhodnocení změn."
+    },
+    "for_parents": {
+      "strengths": [],
+      "risks": [],
+      "questions_for_open_day": [],
+      "who_school_fits": [],
+      "who_should_be_cautious": [],
+      "plain_czech_summary": "K této inspekční zprávě nebyl dodán zdrojový text, takže nelze vyhodnotit kvalitu školy, její silné stránky ani rizika. Pro získání relevantních informací doporučuji kontaktovat přímo školu nebo vyhledat zprávu v databázi České školní inspekce."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neznámý (chybí zdroj)",
+        "key_numbers": [],
+        "evidence": "Zdrojový text zprávy nebyl dodán."
+      },
+      "absence": {
+        "trend": "Neznámý (chybí zdroj)",
+        "key_numbers": [],
+        "evidence": "Zdrojový text zprávy nebyl dodán."
+      },
+      "support_services": [],
+      "safety_climate": [],
+      "partnerships_practice": []
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 1,
+      "czech_clarity_reason": "Nebyl dodán žádný text ke zpracování, výstup je prázdný.",
+      "uncertainty_notes": [
+        "Chybí celý zdrojový text inspekční zprávy."
+      ]
+    }
+  }
+}

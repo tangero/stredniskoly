@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600014614_2025-11-11",
+  "school_profile": {
+    "school_type": "Střední škola gastronomie, hotelnictví a lesnictví (SOU) s domovem mládeže a školní jídelnou",
+    "inspection_period": "11. až 14. listopadu 2025",
+    "school_change_summary": "Od poslední inspekce v roce 2023 škola přijala účinná opatření ke zlepšení vzdělávacích výsledků. Počet žáků vzrostl o 28 % na 534 žáků. Došlo k postupné modernizaci materiálních podmínek, zejména v domově mládeže, který byl kompletně rekonstruován. Zřízeny pozice koordinátorů školních vzdělávacích programů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství a praxe",
+        "detail": "Škola systematicky spolupracuje s odbornými firmami a smluvními partnery, což obohacuje výuku a zvyšuje uplatnitelnost absolventů na trhu práce.",
+        "evidence": "Spolupráce s The Candy Plus Sweet Factory, Lesy České republiky, vzdělávacím střediskem Bílé Karpaty a program Erasmus+."
+      },
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Praktické vyučování probíhá v bezpečném prostředí s moderními technologiemi a umožňuje žákům okamžitě aplikovat teoretické poznatky.",
+        "evidence": "Žáci prokazují osvojené odborné dovednosti, správné pracovní návyky a zodpovědný přístup; výuka je strukturovaná s kvalitním odborným vedením."
+      },
+      {
+        "tag": "Silné poradenské služby",
+        "detail": "Školní poradenské pracoviště je velmi dobře personálně zajištěno s týmem výchovných poradců, speciálních pedagogů, sociálního pedagoga a psychologa.",
+        "evidence": "Tým koordinuje činnost, spolupracuje s třídními učiteli a externími zařízeními; výskyt patologického chování je minimální."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Stereotypní teoretická výuka",
+        "detail": "Převážná část teoretických hodin využívá frontální výuku s nedostatkem aktivizačních prvků, což omezuje zapojení žáků a rozvoj jejich klíčových kompetencí.",
+        "evidence": "Hospitační činnost zaznamenala převahu výkladu učitele, málo diferenciace úloh, omezené využití digitálních technologií a pasivní zapojení žáků."
+      },
+      {
+        "tag": "Slabá kvalita hospitací a jejich dopad",
+        "detail": "Hospitační činnost neumožňuje efektivní zlepšování výuky, chybí konkrétní doporučení a návaznost na další vzdělávání pedagogů.",
+        "evidence": "Výstupy hospitací postrádají konkrétní doporučení; další vzdělávání pedagogů vychází z individuálních potřeb, nikoli ze strategických potřeb školy."
+      },
+      {
+        "tag": "Problémy s některými obory",
+        "detail": "Obor Hotelnictví dosahuje opakovaně horších výsledků u maturitní zkoušky; obor Kuchař-číšník má zhoršující se výsledky závěrečných zkoušek.",
+        "evidence": "Hrubá neúspěšnost v Hotelnictví vzrostla z 10 % (2023) na 25 % (2025); v Kuchař-číšníkovi více než čtvrtina žáků nesložila závěrečnou zkoušku (2025)."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s motivací a školní docházkou? Jaké jsou vaše zkušenosti se zlepšováním absence?",
+      "Jaké konkrétní změny plánujete v teoretické výuce, aby byla více aktivizující a méně stereotypní? Jak budete zapojovat žáky do výuky?",
+      "Jak se liší výuka v jednotlivých oborech a proč mají některé obory (Hotelnictví, Kuchař-číšník) horší výsledky než jiné?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou výuku a odborné dovednosti – praktické vyučování je na vysoké úrovni s moderním vybavením a kvalitním vedením.",
+      "Žáci z jiných regionů – domov mládeže byl nedávno kompletně rekonstruován a nabízí dostatečný osobní prostor a volnočasové aktivity.",
+      "Žáci se speciálními vzdělávacími potřebami – škola má silné poradenské pracoviště s psychologem, speciálními pedagogy a sociálním pedagogem."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují aktivní a interaktivní výuku – teoretické hodiny jsou převážně frontální s málo aktivizačních prvků a diskusí.",
+      "Žáci oboru Hotelnictví – obor dosahuje opakovaně horších výsledků u maturitní zkoušky (25 % neúspěšnosti v roce 2025).",
+      "Žáci oboru Kuchař-číšník – výsledky závěrečných zkoušek se zhoršují; v roce 2025 více než čtvrtina žáků nesložila zkoušku."
+    ],
+    "plain_czech_summary": "Škola gastronomie v Bzenci je moderní zařízení se silnými praktickými obory a výborným domovem mládeže. Vedení je aktivní, spolupracuje s firmami a investuje do vybavení. Poradenské služby jsou na vysoké úrovni. Hlavní problém: teoretická výuka je stereotypní, málo aktivizující a žáci jsou pasivní. Některé obory (Hotelnictví, Kuchař-číšník) mají horší výsledky. Škola potřebuje zlepšit kvalitu teoretických hodin a lépe motivovat žáky k učení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – u nástavbových oborů výrazné zlepšení, u čtyřletých oborů rozdílný vývoj",
+      "key_numbers": [
+        "Nástavbové obory: hrubá neúspěšnost klesla z 67 % (2023) na necelých 8 % (2025)",
+        "Ekologie a životní prostředí: hrubá neúspěšnost 7–10 %",
+        "Hotelnictví: hrubá neúspěšnost vzrostla z 10 % (2023) na 25 % (2025)"
+      ],
+      "evidence": "Škola zpřísnila podmínky přijímání do nástavbových oborů, zavedla test z angličtiny, upravila školní vzdělávací programy a organizuje doučování zkušebních předmětů."
+    },
+    "absence": {
+      "trend": "Klesající – výrazné zlepšení zejména u nástavbových oborů",
+      "key_numbers": [
+        "Průměr 2024/2025: 146 hodin na žáka za školní rok",
+        "Průměr 2022/2023: 162 hodin na žáka za školní rok",
+        "Nástavbové obory: snížení z 236 hodin (2022/2023) na 128 hodin (2024/2025)"
+      ],
+      "evidence": "Škola sleduje a vyhodnocuje účast žáků, uplatňuje pravidla školního řádu; žáci překročující hranici absence jsou nehodnoceni a konají komisionální zkoušky."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnými poradci, speciálními pedagogy, sociálním pedagogem a psychologem",
+      "Identifikace žáků s potřebou podpory zaměřená na první stupeň podpůrných opatření a žáky s odlišným mateřským jazykem",
+      "Jazyková příprava, adaptační aktivity, individuální konzultace, doučování a metodická pomoc třídním učitelům",
+      "Spolupráce s externími poradenskými zařízeními na velmi dobré úrovni"
+    ],
+    "safety_climate": [
+      "Výskyt patologického chování (záškoláctví, šikana, kyberšikana) je minimální a pohybuje se v jednotkách případů",
+      "Bezpečné prostředí zajišťováno pravidelnou kontrolou tělocvičného nářadí a sportovního vybavení",
+      "Systematické školení pedagogických a vedoucích pracovníků",
+      "Zavedený systém řešení stížností a připomínek prokazuje otevřenost školy"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s The Candy Plus Sweet Factory na realizaci zkráceného studia oboru Výrobce potravin",
+      "Partnerství s Lesy České republiky – stipendia a aktivity pro obor Lesní mechanizátor",
+      "Spolupráce se vzdělávacím střediskem Bílé Karpaty na ekologicky zaměřených projektech",
+      "Program Erasmus+ s partnery v Německu, Itálii a Portugalsku; dlouhodobé kontakty se slovenskými školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Používá jasný jazyk s konkrétními příklady a čísly. Některé pasáže jsou delší a složitější, ale celkově je text pro rodiče čitelný.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní aktivizační metody by měly být zavedeny – pouze obecně doporučuje projektové vyučování a skupinovou práci.",
+      "Není jasné, jak dlouho trvá adaptace nových pedagogů a jaké konkrétní problémy se při ní vyskytují.",
+      "Chybí informace o tom, kolik žáků se skutečně účastní doučování a jak efektivní je."
+    ]
+  }
+}
+```

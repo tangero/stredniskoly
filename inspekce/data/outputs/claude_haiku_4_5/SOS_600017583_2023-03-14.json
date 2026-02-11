@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600017583_2023-03-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:45:19.732820+00:00",
+  "run_finished_utc": "2026-02-09T16:45:45.316144+00:00",
+  "raw_file": "SOS_600017583_2023-03-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017583_2023-03-14",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola elektrotechniky a informatiky (obory: Informační technologie, Elektrotechnika)",
+      "inspection_period": "14. až 17. března 2023",
+      "school_change_summary": "Ředitel školy vede od srpna 2019. Škola pokračuje v modernizaci: ve školním roce 2022/2023 zprovoznila nové nadstandardně vybavené odborné učebny. Škola má 563 žáků ve 20 třídách, z toho 32 se speciálními vzdělávacími potřebami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělání na vysoké úrovni",
+          "detail": "Praktické vyučování je kvalitní, žáci získávají odborné kompetence odpovídající aktuálním požadavkům praxe.",
+          "evidence": "Pedagogové účelně využívají nadstandardní vybavení odborných učeben a propojují teoretické znalosti s praktickými dovednostmi."
+        },
+        {
+          "tag": "Silné vazby na praxi",
+          "detail": "Úzká spolupráce se sociálními partnery efektivně přispívá k sepětí výuky a praxe.",
+          "evidence": "Spolupráce zajišťuje vazbu teoretického odborného vzdělávání na praxi a inovaci obsahu učiva v souladu s moderními trendy."
+        },
+        {
+          "tag": "Příznivé školní prostředí",
+          "detail": "Řízení školy s důrazem na pozitivní klima vytváří vstřícné a klidné prostředí.",
+          "evidence": "Zdvořilé chování a přátelské vystupování žáků bylo zaznamenáno i během inspekční činnosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená pestrost výuky v teoretických předmětech",
+          "detail": "Ve všeobecně vzdělávacích a teoretických odborných předmětech chybí pestré metody a formy výuky.",
+          "evidence": "Převažuje frontální výuka zaměřená na vysvětlování a opakování. Metody kritického myšlení nebo badatelská výuka se vyskytly výjimečně."
+        },
+        {
+          "tag": "Nedostatečná individualizace výuky",
+          "detail": "Chybí diferenciace vzdělávacího obsahu a výukových aktivit podle potřeb jednotlivých žáků.",
+          "evidence": "Talentovaným žákům byly zřídka vytvářeny příležitosti pro rozvoj. Úkoly měly stejnou obtížnost."
+        },
+        {
+          "tag": "Slabé využívání zpětné vazby",
+          "detail": "Formativní hodnocení a sebehodnocení žáků jsou využívány jen sporadicky.",
+          "evidence": "Zpětná vazba vycházela převážně z okamžitého hodnocení. Vzájemné hodnocení nebylo vždy zařazováno."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje talentované žáky v jejich oboru? Jaké jsou možnosti pro jejich další rozvoj?",
+        "Jaké metody používáte ve výuce teoretických předmětů, aby se žáci aktivně zapojovali a rozvíjeli kritické myšlení?",
+        "Jak probíhá individuální podpora žáků, kteří mají potíže s učením? Jaké jsou dostupné formy doučování?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí kvalitní praktické vzdělání v elektrotechnice nebo IT s vazbou na reálný trh práce",
+        "Studenti, kteří se zajímají o moderní technologie a chtějí pracovat s nadstandardním vybavením",
+        "Žáci, kteří si cení příjemného školního klimatu a vstřícného přístupu pedagogů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují pestrou a interaktivní výuku s různými metodami a formami (skupinová práce, projekty, badatelská výuka)",
+        "Studenti, kteří se lépe učí prostřednictvím sebehodnocení a formativní zpětné vazby",
+        "Talentovaní žáci, kteří potřebují individuální výzvy a obohacování učiva nad rámec standardu"
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní praktické vzdělání v IT a elektrotechnice s moderním vybavením a vazbou na praxi. Vedení je vstřícné a klima příjemné. Slabinou je výuka teoretických předmětů, která se opírá především o frontální metody bez dostatečné diferenciace a individualizace. Formativní hodnocení a sebehodnocení žáků nejsou systematicky využívány. Škola je vhodná pro žáky, kteří chtějí praktické vzdělání, ale měla by zlepšit přístup k teoretickým předmětům."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborné výsledky v celorepublikovém srovnění, ale s prostorom pro zlepšení",
+        "key_numbers": [
+          "Hrubá neúspěšnost 5–8 % v posledních třech letech",
+          "Výsledky odpovídají očekávaným výstupům školních vzdělávacích programů"
+        ],
+        "evidence": "Přestože jsou výsledky v celorepublikovém srovnění výborné, vedení školy systematicky analyzuje příčiny neúspěšnosti a přijímá opatření."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Zpráva se absence věnuje pouze v kontextu statistických vyhodnocení na pedagogické radě."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště poskytuje poradenské a konzultační služby učitelům, žákům a zákonným zástupcům",
+        "Asistent pedagoga koordinuje podporu žáků se speciálními vzdělávacími potřebami",
+        "Individuální konzultace a pravidelné doučování v rámci projektů Šablony a Národního plánu doučování",
+        "Kariérové poradenství zaměřené na žáky čtvrtých ročníků"
+      ],
+      "safety_climate": [
+        "Prevence rizikového chování je nedílnou součástí vzdělávacích strategií",
+        "Důraz na osvětu a vedení žáků k vzájemnému respektu a slušnému chování",
+        "Vzniklé problémy jsou řešeny prostřednictvím pohovoru se žáky a jejich zákonnými zástupci",
+        "Ředitel školy cíleně sleduje prostředí a materiální vybavení s cílem vytvoření bezpečného a příjemného prostředí"
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce s četnými sociálními partnery zajišťuje vazbu teoretického vzdělávání na praxi",
+        "Spolupráce se středními a vysokými školami a účast v mezinárodních projektech",
+        "Smlouvy o zajištění odborné praxe žáků",
+        "Konstruktivní partnerské vztahy se zřizovatelem (Moravskoslezský kraj) na zlepšování materiálně technického zázemí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétně popsány s příklady. Doporučení jsou praktická a realizovatelná. Mírně snižuje srozumitelnost pro rodiče vysoký podíl odborné terminologie a administrativního jazyka.",
+      "uncertainty_notes": [
+        "Absence není v textu konkrétně zmíněna jako problém, pouze se objevuje v kontextu statistických vyhodnocení",
+        "Počet žáků s odlišným mateřským jazykem (5) je zmíněn, ale jejich specifické potřeby nejsou detailně popsány",
+        "Konkrétní počty žáků ohrožených školním neúspěchem nejsou uvedeny"
+      ]
+    }
+  }
+}

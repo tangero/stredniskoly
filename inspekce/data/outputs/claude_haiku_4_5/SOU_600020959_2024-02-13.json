@@ -1,0 +1,115 @@
+{
+  "report_id": "SOU_600020959_2024-02-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:26:35.520534+00:00",
+  "run_finished_utc": "2026-02-09T16:27:02.942793+00:00",
+  "raw_file": "SOU_600020959_2024-02-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600020959_2024-02-13",
+    "school_profile": {
+      "school_type": "Střední škola a Mateřská škola Aloyse Klara – speciální škola pro děti a žáky se speciálními vzdělávacími potřebami, zejména se zrakovým postižením",
+      "inspection_period": "13. února 2024 až 16. února 2024",
+      "school_change_summary": "Od poslední inspekce se mateřská škola a speciálně pedagogické centrum přestěhovaly do nových prostor. Škola poskytuje vzdělávání v čtyřletých oborech s maturitou, dvouletých nástavbových oborech a tříletých oborech s výučním listem."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava na vysoké úrovni",
+          "detail": "Odborné vyučování je realizováno s nadstandardní kvalitou, která připravuje žáky na uplatnění na trhu práce.",
+          "evidence": "Profesní přístup vyučujících a jejich zaujetí vytváří optimální předpoklady pro uplatnění absolventů."
+        },
+        {
+          "tag": "Individuální přístup pedagogů",
+          "detail": "Učitelé poskytují empatickou podporu a přizpůsobují výuku potřebám jednotlivých žáků.",
+          "evidence": "Pedagogové uplatňují individuální přístup a vedou žáky k sebehodnocení a vzájemnému hodnocení."
+        },
+        {
+          "tag": "Komplexní poradenské služby",
+          "detail": "Škola nabízí účinnou podporu žákům ohrožených neúspěchem prostřednictvím školního poradenského pracoviště.",
+          "evidence": "ŠPP poskytuje individuální konzultace a preventivní mechanismy včetně adaptačních kurzů pro prvňáky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká neúspěšnost u maturitní zkoušky",
+          "detail": "Žáci maturitních oborů dosahují výrazně horších výsledků než průměr v ČR, zejména v nástavbových oborech.",
+          "evidence": "V nástavbovém oboru Podnikání dosáhla neúspěšnost 83,3 % (ČR 37,2 %), v Masérství 100 % v jednom roce."
+        },
+        {
+          "tag": "Slabá kvalita výuky teoretických předmětů",
+          "detail": "Výuka českého jazyka, matematiky a angličtiny využívá málo aktivizujících metod a diferenciace podle potřeb žáků.",
+          "evidence": "Chybí diferenciace učiva, žáci řeší stejné úlohy bez odlišné obtížnosti, nízké zapojení do evaluace."
+        },
+        {
+          "tag": "Nízké vstupní požadavky na uchazeče",
+          "detail": "Přijímací řízení nemá nastavenu minimální hranici úspěšnosti, přijímáni jsou všichni uchazeči.",
+          "evidence": "Nízká vstupní úroveň uchazečů nevytváří vhodné podmínky pro úspěšnost v průběhu studia."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření škola přijala ke zlepšení výsledků v maturitní zkoušce, zejména v matematice a češtině?",
+        "Jak se liší příprava na maturitu mezi čtyřletými obory a nástavbovými obory a proč jsou výsledky tak rozdílné?",
+        "Jaké jsou minimální požadavky na uchazeče v přijímacím řízení a jak se to změní v budoucnu?"
+      ],
+      "who_school_fits": [
+        "Žáci se zrakovým postižením a souběžnými vadami, kteří potřebují speciální péči a bezbariérové prostředí",
+        "Uchazeči o praktické obory s výučním listem (čalouník, knihař, keramika), kde škola dosahuje dobrých výsledků",
+        "Žáci, kteří potřebují individuální přístup a empatickou podporu pedagogů"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, jejichž děti mají ambici úspěšně složit maturitní zkoušku – výsledky v maturitních oborech jsou výrazně pod průměrem ČR",
+        "Uchazeči o nástavbové obory (Podnikání, Masérství) – zde je neúspěšnost obzvlášť vysoká (20–100 %)",
+        "Žáci se slabšími vstupními vědomostmi – škola nemá nastaveny minimální požadavky na přijetí"
+      ],
+      "plain_czech_summary": "Škola se zaměřuje na vzdělávání dětí se speciálními potřebami, zejména se zrakovým postižením. Silné stránky: výborná praktická příprava, individuální přístup pedagogů, kvalitní poradenské služby. Hlavní problém: velmi vysoká neúspěšnost žáků v maturitní zkoušce, zejména v nástavbových oborech (až 100 % neúspěšnosti). Výuka teoretických předmětů (čeština, matematika, angličtina) postrádá aktivizující metody a diferenciaci. Škola přijímá všechny uchazeče bez minimálních požadavků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s tendencí k vysoké neúspěšnosti, zejména v nástavbových oborech",
+        "key_numbers": [
+          "Textilní výtvarnictví (4leté): 100 % úspěšnost v roce 2022",
+          "Masérství nástavbové: 20–100 % neúspěšnosti, v roce 2021/2022 až 100 %",
+          "Podnikání nástavbové: 83,3 % neúspěšnosti v roce 2021/2022 (ČR 37,2 %)"
+        ],
+        "evidence": "Ve zkušebních obdobích 2020–2023 se hlásilo 14–17 žáků. Hrubá neúspěšnost v nástavbovém Masérství dosáhla 100 % v roce 2021/2022, v Podnikání 83,3 % v roce 2021/2022."
+      },
+      "absence": {
+        "trend": "Vyšší absence u žáků maturitních oborů, negativně ovlivňuje úspěšnost",
+        "key_numbers": [
+          "60 % všech neúspěšných maturantů mělo výrazně vyšší absenci v posledním ročníku",
+          "Absence souvisí se zdravotními obtížemi žáků"
+        ],
+        "evidence": "Vzhledem ke zdravotním obtížím mají někteří žáci vyšší absenci, což má negativní vliv na jejich úspěšnost v průběhu studia."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (ŠPP) s metodickou podporou pro žáky a pedagogy",
+        "Speciálně pedagogické centrum (SPC) s logopedy a diagnostickými nástroji",
+        "Asistenti pedagoga (14 v SŠ, 11 v SŠ) poskytující individuální podporu",
+        "Adaptační kurzy pro žáky prvních ročníků"
+      ],
+      "safety_climate": [
+        "Příjemná pracovní atmosféra založená na vzájemném respektu mezi učiteli a žáky",
+        "Dodržování nastavených pravidel práce a komunikace",
+        "Empatický a vstřícný přístup pedagogů se odráží v pozitivní atmosféře",
+        "Elektronické zabezpečení vstupu do školy s recepcí"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobé vztahy se sociálními partnery a odbornými pracovišti",
+        "Spolupráce s vysokými školami s pedagogickými obory",
+        "Kooperace se školskými poradenskými zařízeními a zdravotnickými zařízeními",
+        "Partnerství s nadacemi (např. Leontinka) a odbornými organizacemi"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Hlavní zjištění jsou jasně formulována, ale některé pasáže jsou technicky náročné a obsahují odbornou terminologii.",
+      "uncertainty_notes": [
+        "Není jasné, jaké konkrétní opatření škola již přijala ke zlepšení výsledků v maturitě – zpráva uvádí, že chybí strategie, ale nespecifikuje, co se již změnilo",
+        "Není zcela zřejmé, zda nízké výsledky v maturitě jsou důsledkem nízké vstupní úrovně žáků nebo špatné výuky – pravděpodobně obojí",
+        "Chybí informace o tom, jak se výsledky vyvíjely v jednotlivých letech – jsou to jen jednotlivá čísla bez trendu"
+      ]
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_651033772_2024-02-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:26:03.899029+00:00",
+  "run_finished_utc": "2026-02-09T16:26:28.521283+00:00",
+  "raw_file": "SOS_651033772_2024-02-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_651033772_2024-02-19",
+    "school_profile": {
+      "school_type": "Střední škola zemědělská a Vyšší odborná škola (VOŠ) s domovem mládeže a školním hospodářstvím",
+      "inspection_period": "19. až 22. února 2024",
+      "school_change_summary": "Od poslední inspekce výrazně vzrostl zájem o studium, kapacita střední školy se zvýšila na 86 %, domov mládeže je na 99 % kapacity. Výrazně se zlepšily materiální podmínky školního hospodářství."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka na školním statku",
+          "detail": "Učitelé praktického vyučování uplatňují empatický přístup, žáci pracují v malých skupinách a dobře propojují teorii s praxí.",
+          "evidence": "Empatický, respektující a individuální přístup učitelů praktického vyučování k žákům ve výuce na školním statku (3.2)"
+        },
+        {
+          "tag": "Spolupráce se zaměstnavateli",
+          "detail": "Škola intenzivně spolupracuje se sociálními partnery a zemědělskými firmami, což zvyšuje relevanci vzdělání.",
+          "evidence": "Rozsah a využívání spolupráce se sociálními partnery ve vzdělávání (1.5)"
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují výborných výsledků v krajských a republikových soutěžích zaměřených na zemědělství a ekologii.",
+          "evidence": "Prezentace výsledků vzdělávání žáků střední školy v oborově zaměřených soutěžích, projektech a výstavách (5.3)"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita v teoretické výuce",
+          "detail": "Převládá frontální výuka s výkladem učitele, chybí skupinová práce a samostatná práce žáků, což vede k jejich pasivitě.",
+          "evidence": "Menší pestrost účelných metod a forem práce v teoretické výuce vedoucí k pasivitě žáků (4.2)"
+        },
+        {
+          "tag": "Rozdílné výsledky v předmětech",
+          "detail": "Přetrvávají horší výsledky v matematice, češtině, společenských vědách a mechanizaci, což naznačuje rozdílné přístupy učitelů.",
+          "evidence": "Přetrvávající horší výsledky vzdělávání žáků v některých předmětech teoretické výuky (5.2)"
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Učitelé volí jednotné tempo pro všechny žáky bez ohledu na jejich rozdílné potřeby, nadaní žáci nejsou dostatečně podporováni.",
+          "evidence": "Málo účelné zohledňování individuálních vzdělávacích potřeb žáků diferenciací náročnosti řešených úloh (4.3)"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s matematikou nebo češtinou? Jaké jsou dostupné konzultační hodiny a doučování?",
+        "Jaké jsou možnosti pro nadané žáky? Nabízí škola rozšířené úkoly nebo speciální programy?",
+        "Jak se škola připravuje na změny v teoretické výuce, aby byla méně nudná a více interaktivní?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o zemědělství, ekologii a práci v přírodě, kteří se chtějí učit prakticky na školním statku",
+        "Studenti, kteří si cení kvalitního vybavení a moderních učeben pro odborný výcvik",
+        "Žáci, kteří potřebují ubytování a ocení bohatou nabídku zájmových kroužků v domově mládeže"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří preferují interaktivní a skupinovou výuku – teoretické hodiny jsou zatím převážně frontální",
+        "Studenti s potížemi v matematice nebo češtině – zde jsou zaznamenány horší výsledky a rozdílné přístupy učitelů",
+        "Nadaní žáci – škola zatím málo diferenciuje úkoly podle jejich schopností"
+      ],
+      "plain_czech_summary": "Škola je zaměřená na zemědělství a ekologii s výborným vybavením a praxí na vlastním statku. Praktická výuka je na vysoké úrovni, učitelé jsou odborníci z praxe. Problém je v teoretické výuce – převládá nudná frontální forma, málo skupinové práce a individualizace. Výsledky v některých předmětech jsou horší. Škola si to uvědomuje a chce se zlepšit. Vhodná pro prakticky zaměřené žáky, méně pro ty, kteří chtějí interaktivní výuku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšení",
+        "key_numbers": [
+          "Úspěšnost u maturity se zvýšila a je nad průměrem zemědělských škol",
+          "Hrubá neúspěšnost v běžné části maturity přibližně 15 %",
+          "Zvýšená neúspěšnost v cizím jazyce"
+        ],
+        "evidence": "Úspěšnost žáků u maturitní zkoušky se proti zjištěním předchozí inspekční činnosti zvýšila, v čisté úspěšnosti u maturity byla škola nad průměrem zemědělských škol."
+      },
+      "absence": {
+        "trend": "Pozitivní",
+        "key_numbers": [
+          "Neomluvené hodiny jsou spíše výjimečné",
+          "Týkají se vždy spíše několika jednotlivců",
+          "Minimální program prevence proti záškoláctví je účelně nastaven"
+        ],
+        "evidence": "Škole se daří působit na snižování absence žáků ve výuce. Neomluvené hodiny jsou spíše výjimečné a týkají se vždy spíše několika jednotlivců."
+      },
+      "support_services": [
+        "Metodička prevence a výchovná poradkyně zajišťují primární prevenci a výchovné poradenství",
+        "Pravidelné konzultační hodiny a individuální i skupinové doučování pro žáky ohrožené školní neúspěšností",
+        "Školní poradenské pracoviště řeší problémy studijního i kázeňského charakteru, spolupracuje se žáky a zákonnými zástupci",
+        "Adaptační, lyžařský a turistický kurz na podporu spolupráce a pozitivní atmosféry"
+      ],
+      "safety_climate": [
+        "Problematické chování žáků je včas řešeno a je spíše ojedinělé",
+        "Nízká míra udělovaných nezbytných kázeňských opatření",
+        "Funkuje žákovský parlament, který se pravidelně schází s vedením školy",
+        "V domově mládeže je vytvářeno pozitivní přátelské klima s podporou k učení"
+      ],
+      "partnerships_practice": [
+        "Intenzivní spolupráce se sociálními partnery a profesními organizacemi zaměstnavatelů",
+        "Praktická výuka na smluvních pracovištích s funkčním systémem kontroly",
+        "Přednášky a exkurze od odborníků z praxe",
+        "Projekty ERASMUS+ včetně stáží žáků na ekologických farmách v Itálii"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně rozlišuje silné a slabé stránky. Některé pasáže jsou však dlouhé a úřednické, což může být pro rodiče obtížné.",
+      "uncertainty_notes": [
+        "Konkrétní počty žáků se speciálními vzdělávacími potřebami nejsou přesně uvedeny (více než 80), takže není jasný přesný rozsah problému",
+        "Není jasné, jak dlouho trvá doučování a jaké jsou jeho konkrétní výsledky",
+        "Není specifikováno, které konkrétní učitele se týkají rozdílné přístupy k hodnocení"
+      ]
+    }
+  }
+}

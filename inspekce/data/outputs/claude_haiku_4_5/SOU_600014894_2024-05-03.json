@@ -1,0 +1,10 @@
+{
+  "report_id": "SOU_600014894_2024-05-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:16:56.879543+00:00",
+  "run_finished_utc": "2026-02-09T16:18:56.911963+00:00",
+  "raw_file": "SOU_600014894_2024-05-03.raw.txt",
+  "call_error": "The read operation timed out",
+  "parse_error": "The read operation timed out",
+  "parsed_output": null
+}

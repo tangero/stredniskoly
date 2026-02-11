@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600011771_2025-10-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:31:51.115318+00:00",
+  "run_finished_utc": "2026-02-09T13:32:18.110277+00:00",
+  "raw_file": "SOS_600011771_2025-10-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600011771_2025-10-07",
+    "school_profile": {
+      "school_type": "Střední škola s obory: Kadeřník (závěrečná zkouška), Hotelnictví se zaměřením na cestovní ruch (maturita), Ekonomika a podnikání se zaměřením na multimediální tvorbu (maturita)",
+      "inspection_period": "7. až 9. října 2025",
+      "school_change_summary": "Škola od poslední inspekce odstranila nedostatky v matematickém vzdělávání, zefektivnila poradenské služby a zavedla systém proti absenci. Od roku 2020/2021 neexistují dvouoborové třídy. Obor Kadeřník končí v roce 2025/2026. Zlepšily se materiální podmínky (ICT, vybavení, částečná revitalizace budovy)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Zdravé školní prostředí",
+          "detail": "Vedení školy vytváří příznivou atmosféru prostřednictvím jasných pravidel chování a komunikace, kterou potvrdila hospitační činnost.",
+          "evidence": "Pedagogové systematicky vedli žáky k dodržování interních pravidel i společenských norem."
+        },
+        {
+          "tag": "Kvalitní praktické vyučování",
+          "detail": "Praktické vyučování v hotelnictví a kadeřnictví probíhá v příjemné atmosféře s efektivním nácvikem v reálném prostředí.",
+          "evidence": "Materiální vybavení odpovídá potřebám, žáci získávají dovednosti na smluvních pracovištích v reálném provozu."
+        },
+        {
+          "tag": "Efektivní poradenské služby",
+          "detail": "Výchovná poradkyně a školní metodička prevence pracují v úzké kooperaci a poskytují kvalitní podporu žákům.",
+          "evidence": "Funkčně spolupracují s učiteli, zpracovávají přehledy podpory pro žáky se speciálními potřebami, realizují preventivní programy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učitelé v teoretické výuce neposkytují žákům úlohy různé obtížnosti podle jejich schopností a zájmů.",
+          "evidence": "Chyběla cílená diferenciace úkolů zohledňující rozdílné schopnosti a vzdělávací možnosti jednotlivých žáků."
+        },
+        {
+          "tag": "Slabé zapojení do soutěží a projektů",
+          "detail": "Škola nezapojuje žáky do oborových soutěží, přehlídek a projektových činností mimo školu.",
+          "evidence": "Škola nevěnuje odpovídající pozornost zapojování žáků do přehlídek, projektových činností a soutěží."
+        },
+        {
+          "tag": "Omezené sebehodnocení žáků",
+          "detail": "Žáci nejsou vedeni k systematickému slovně zdůvodněnému sebehodnocení a vrstevnickému hodnocení.",
+          "evidence": "Formativní zpětná vazba a vrstevnické hodnocení zaznamenáno pouze ve dvou hodinách z celkového počtu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku žákům s různými schopnostmi a jak jim nabízí úlohy různé obtížnosti?",
+        "Jaké soutěže a projekty mimo školu mohou žáci absolvovat a jak se škola snaží motivovat jejich účast?",
+        "Jak se škola připravuje na ukončení oboru Kadeřník a jaké jsou plány pro jeho nahrazení?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení praktického vyučování a reálného prostředí – obory Hotelnictví a Kadeřník mají kvalitní vybavení a učebny v reálném provozu.",
+        "Žáci se speciálními vzdělávacími potřebami – škola má efektivní poradenské služby a individuální přístup.",
+        "Žáci, kterým vyhovuje strukturované prostředí s jasnými pravidly a podporou – vedení školy vytváří zdravé školní klima."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovanou výuku a různé úrovně obtížnosti – teoretická výuka není dostatečně diferencovaná.",
+        "Žáci motivovaní soutěžením a porovnáváním se s vrstevníky z jiných škol – škola se nezapojuje do oborových soutěží.",
+        "Žáci, kteří se chtějí zapojit do mezinárodních výměn – zahraniční odborné praxe jsou nabízeny v minimální míře."
+      ],
+      "plain_czech_summary": "Hotelová škola Hradec Králové je soukromá střední škola se třemi obory zaměřenými na hotelnictví, cestovní ruch a ekonomiku. Silnými stránkami jsou kvalitní praktické vyučování v reálném prostředí, zdravé školní klima a efektivní poradenské služby. Slabší je teoretická výuka – chybí diferenciace podle schopností žáků a jejich zapojení do soutěží. Škola se snaží motivovat žáky stipendii a pochvalami. Vhodná je pro žáky, kterým vyhovuje praktická orientace a strukturované prostředí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavá ale stabilní úroveň",
+        "key_numbers": [
+          "Dva obory s maturitní zkouškou: Hotelnictví (84 žáků), Ekonomika a podnikání (101 žáků)",
+          "Výsledky MZ vykazovaly ve sledovaném období dvou uplynulých školních let kolísavou ale stabilní úroveň"
+        ],
+        "evidence": "Výsledky u MZ a ZZ vykazovaly ve sledovaném období dvou uplynulých školních let kolísavou ale stabilní úroveň."
+      },
+      "absence": {
+        "trend": "Postupně se snižuje",
+        "key_numbers": [
+          "Hranice absence pro hodnocení: 20 %",
+          "Od školního roku 2025/2026 hranice průměrného prospěchu 3,5",
+          "Průměrný počet zameškaných hodin na žáka se postupně snižoval"
+        ],
+        "evidence": "Škola zavedla systém, že všechny chybějící známky musí být žákem doplněny v pevně stanovených termínech. Průměrný počet zameškaných hodin na žáka se ve sledovaném období postupně snižoval."
+      },
+      "support_services": [
+        "Výchovná poradkyně zajišťuje podporu žáků se speciálními vzdělávacími potřebami",
+        "Školní metodička prevence realizuje preventivní programy a krizové plány",
+        "Třídnické hodiny minimálně jednou měsíčně k posílení důvěry mezi učiteli a žáky",
+        "Individuální konzultace, doučování a možnost opravy klasifikace zkouškou"
+      ],
+      "safety_climate": [
+        "Vedení školy vytváří zdravé školní prostředí prostřednictvím nastavených pravidel chování a komunikace",
+        "Pedagogové systematicky vedli žáky k dodržování interních pravidel i všeobecně platných společenských norem",
+        "Pozornost věnována bezpečnosti a ochraně zdraví v praktickém vyučování",
+        "Žáci vedeni k vhodnému společenskému vystupování"
+      ],
+      "partnerships_practice": [
+        "Fakultní pracoviště Pedagogické fakulty Univerzity Hradec Králové – studenti plní pedagogickou praxi",
+        "Spolupráce s vnějšími partnery pro zajištění učební a odborné praxe žáků",
+        "Smluvní pracoviště pro učební praxi v reálném profesním prostředí",
+        "Zahraniční odborné praxe nabízeny, ale využívány v minimální míře"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a citacemi. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o prospěchu žáků (průměrný prospěch není uveden číselně), pouze kvalitativní popis 'výrazně se neměnil'",
+        "Počet žáků opakujících ročník (9 žáků) není jasně vztažen k celkovému počtu – uvedeno pouze 'cca 4 %'",
+        "Konkrétní výsledky maturitních zkoušek nejsou uvedeny, pouze 'kolísavá ale stabilní úroveň'"
+      ]
+    }
+  }
+}

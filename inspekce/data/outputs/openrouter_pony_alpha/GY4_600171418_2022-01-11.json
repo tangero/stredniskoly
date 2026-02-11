@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_600171418_2022-01-11",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:04:14.981751+00:00",
+  "run_finished_utc": "2026-02-10T08:05:50.895451+00:00",
+  "raw_file": "GY4_600171418_2022-01-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600171418_2022-01-11",
+    "school_profile": {
+      "school_type": "Gymnázium a střední odborná škola pro zrakově postižené",
+      "inspection_period": "11. 1. 2022 − 13. 1. 2022",
+      "school_change_summary": "Od roku 2013 došlo ke změně vedení školy, byla zřízena školní poradenské pracoviště a systematicky se zvyšuje úroveň materiálně-technického zázemí."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Individuální přístup",
+          "detail": "Škola nabízí vstřícný a respektující přístup s vysokou mírou empatie a individuální podporou pro každého žáka.",
+          "evidence": "„vysoká míra empatie, vstřícný a respektující přístup všech pedagogů k žákům, individuální přístup při všech činnostech“"
+        },
+        {
+          "tag": "Kvalitní zázemí",
+          "detail": "Škola disponuje nadstandardním technickým vybavením a speciálními pomůckami pro žáky se zrakovým postižením.",
+          "evidence": "„nadstandardní materiální a finanční podmínky... nejmodernějším technickým vybavením (interaktivní technika, kamerové a digitální lupy... 3D tiskárna)“"
+        },
+        {
+          "tag": "Úspěšnost absolventů",
+          "detail": "Žáci dosahují velmi dobrých výsledků u maturity a nacházejí uplatnění na vysokých školách či trhu práce.",
+          "evidence": "„V následujícím školním roce byli u maturitní zkoušky úspěšní všichni žáci... žáci přijímáni ke studiu na vysokých školách“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalifikace učitelů",
+          "detail": "Třetina pedagogů nesplňuje předpoklad odborné kvalifikace, i když si ji většina doplňuje studiem.",
+          "evidence": "„třetina pedagogů nesplňuje předpoklad odborné kvalifikace“"
+        },
+        {
+          "tag": "Méně efektivní výuka",
+          "detail": "V některých hodinách chybí shrnutí učiva, dostatek názorných pomůcek a podpora samostatného ústního projevu žáků.",
+          "evidence": "„malý přínos didaktických závěrů vyučovacích hodin, opomíjení shrnutí probraného učiva... nebyl vytvářen dostatečný prostor pro souvislejší mluvený projev žáků“"
+        },
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Výuka není vždy dostatečně přizpůsobena rozdílnému tempu a potřebám nadanějších žáků.",
+          "evidence": "„menší míra diferenciace vzdělávání s ohledem na vzdělávací potřeby žáků“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje profesní uplatnění absolventů se zrakovým postižením?",
+        "Jakým způsobem je zajištěná kvalifikace učitelů, kteří ji v současnosti nemají?",
+        "Jaké konkrétní aktivační metody a pomůcky se používají ve výuce pro žáky s různým stupněm postižení?"
+      ],
+      "who_school_fits": [
+        "Pro žáky se zrakovým postižením nebo souběžným postižením více vadami, kteří potřebují specializovanou podporu.",
+        "Pro studenty, kteří oceňují individuální přístup, bezpečné prostředí a rodinnou atmosféru malé školy.",
+        "Pro zájemce o obory Gymnázium, Obchodní akademie a Sociální činnost s potřebou nadstandardního technického vybavení."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří preferují velké kolektivy a bohatý společenský život na velké škole.",
+        "Pro žáky, kteří vyžadují širokou nabídku volitelných předmětů a specializovaných seminářů nad rámec aktuální nabídky.",
+        "Pro ty, kteří očekávají, že všichni učitelé budou mít plnou odbornou kvalifikaci v daném momentě."
+      ],
+      "plain_czech_summary": "Škola je určena primárně žákům se zrakovým postižením a nabízí jim bezbariérové prostředí s nadstandardním vybavením a vstřícným přístupem. Vedení školy funguje koncepčně a žáci dosahují vynikajících výsledků u maturit. Slabším místem je nižší podíl kvalifikovaných učitelů a občasný nedostatek diferenciace ve výuce. Celkově škola vytváří bezpečné a podnětné prostředí pro studenty se speciálními potřebami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vysoká úspěšnost",
+        "key_numbers": [
+          "Školní rok 2020/2021: 100% úspěšnost u maturity",
+          "Školní rok 2019/2020: pouze 1 neúspěšný žák v každém oboru",
+          "Přibližně třetina žáků vyznamenání"
+        ],
+        "evidence": "„V následujícím školním roce byli u maturitní zkoušky úspěšní všichni žáci... podíl vyznamenaných tvoří v průměru přibližně třetina žáků“"
+      },
+      "absence": {
+        "trend": "Standardní",
+        "key_numbers": [
+          "Zanedbatelný počet neomluvených hodin",
+          "Absence souvisí převážně se zdravotním stavem",
+          "Standardní průměrný počet zameškaných hodin"
+        ],
+        "evidence": "„standardní průměrný počet zameškaných hodin na žáka a zanedbatelný počet neomluvených hodin na žáka“"
+      },
+      "support_services": [
+        "Funkční školní poradenské pracoviště (ŠPP) ve spolupráci s odborníky",
+        "Možnost ubytování v internátě s volným přístupem k internetu a volnočasovými aktivitami",
+        "Spolupráce s nadačními fondy a Českým svazem zrakově postižených sportovců"
+      ],
+      "safety_climate": [
+        "Příjemná atmosféra, trpělivý přístup pedagogů a bezpečné prostředí malých kolektivů",
+        "Funkční systém prevence sociálně patologických jevů a důsledná výchovná opatření",
+        "Bezbariérový přístup, elektronický a kamerový systém a informační majáčky pro orientaci"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Pedagogickou fakultou UK (fakultní škola)",
+        "Partnerská vztahy s neziskovými organizacemi a subjekty pro odbornou praxi",
+        "Inkluzivní faktor díky umístění v areálu s Hotelovou školou Radlická"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje konkrétní příklady. Obsahuje standardní odbornou terminologii, která je však v kontextu srozumitelná.",
+      "uncertainty_notes": [
+        "Přesné statistiky úspěšnosti na vysokých školách nejsou uvedeny, pouze obecné konstatování.",
+        "Chybí konkrétní specifikace 'standardního průměrného počtu zameškaných hodin'.",
+        "Nejasná míra 'nižší míry diferenciace' - není kvantifikováno, jak často se jedná."
+      ]
+    }
+  }
+}

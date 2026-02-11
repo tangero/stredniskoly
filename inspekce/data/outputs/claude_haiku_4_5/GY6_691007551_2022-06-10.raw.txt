@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY6_691007551_2022-06-10",
+  "school_profile": {
+    "school_type": "Gymnázium (střední škola)",
+    "inspection_period": "10. a 14.–15. června 2022",
+    "school_change_summary": "Počet žáků mírně roste, škola zlepšuje materiální podmínky (nové odborné učebny, centrum 3D tisku), zavádí elektronické žákovské knížky a posiluje komunikaci se zřizovatelem."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "100% úspěšnost v maturitních zkouškách ve školním roce 2021/2022, žáci dosahují nadprůměrných výsledků v externím testování.",
+        "evidence": "Ve školním roce 2021/2022 škola vykázala 100% úspěšnost v maturitních zkouškách."
+      },
+      {
+        "tag": "Kvalitní výuka",
+        "detail": "Hospitované hodiny probíhaly v příjemné atmosféře s kreativními úkoly, diferenciací podle schopností a kvalitní zpětnou vazbou.",
+        "evidence": "Vyučující žáky nápaditými úkoly účelně podněcovali ke kreativitě, často v kombinaci se skupinovou spoluprací."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Funkční systém doučování, individuálních konzultací a péče o duševní zdraví, spolupráce s odborníky na prevenci rizikových jevů.",
+        "evidence": "V případě prospěchových obtíží mohou žáci využít doučování či individuální konzultace. Ve škole nejsou sledovány závažné rizikové jevy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Chybí závěrečné shrnutí hodin",
+        "detail": "Učitelé často nezavršují hodiny vyhodnocením cíle a chybí příležitosti pro sebehodnocení a vzájemné hodnocení žáků.",
+        "evidence": "Negativem naprosté většiny hospitovaných hodin byla absence závěrečného shrnutí učiva a související společné vyhodnocení splnění vzdělávacího cíle."
+      },
+      {
+        "tag": "Omezená nabídka cizích jazyků",
+        "detail": "Škola se nepodařilo zajistit rozšíření volby nepovinných cizích jazyků a rodilé mluvčí do pravidelné výuky.",
+        "evidence": "Dosud se však řediteli nepodařilo zajistit rozšíření volby nepovinných cizích jazyků a rodilé mluvčí do pravidelné výuky cizích jazyků."
+      },
+      {
+        "tag": "Slabší rozvoj kritického myšlení",
+        "detail": "Pouze v části hodin byla funkčně zařazena podpora kritického myšlení a aktivit rozvíjejících postoje žáků.",
+        "evidence": "Pouze v části z hodin byla funkčně zařazena podpora kritického myšlení žáků. V menší míře se objevovaly aktivity cíleně rozvíjející jejich postoje."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně budou učitelé zlepšovat závěrečná shrnutí hodin a sebehodnocení žáků?",
+      "Plánuje škola rozšířit nabídku nepovinných cizích jazyků nebo angažovat rodilé mluvčí?",
+      "Jaké konkrétní aktivity rozvíjejí kritické myšlení a postoje žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí na vysokou školu – škola má 100% úspěšnost v maturitách a úzkou spolupráci s vysokými školami",
+      "Talentovaní žáci – škola podporuje mimořádně nadané a má úspěchy v soutěžích (1. místa v okresních kolech)",
+      "Žáci potřebující individuální podporu – funkční systém doučování a konzultací"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více jazykových možností – nabídka nepovinných jazyků je omezená",
+      "Žáci preferující více praktické a projektové vyučování – převažuje frontální výuka",
+      "Žáci, kteří se lépe učí s jasným závěrem a sebehodnocením – to v hodinách chybí"
+    ],
+    "plain_czech_summary": "Gymnázium Pacov je dobře řízená škola s výborným vedením a kvalitní výukou. Žáci dosahují skvělých výsledků – 100% úspěšnost v maturitách a nadprůměrné výsledky v testech. Škola má funkční systém podpory žáků, včetně doučování a péče o duševní zdraví. Atmosféra je přátelská a motivující. Hlavní slabinou je, že učitelé často nezavršují hodiny vyhodnocením cíle a chybí příležitosti pro sebehodnocení. Škola také rozšiřuje nabídku cizích jazyků. Vhodná pro ambiciózní žáky směřující na vysokou školu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborný – 100% úspěšnost",
+      "key_numbers": [
+        "100% úspěšnost v maturitních zkouškách 2021/2022",
+        "Dva žáci získali First Certificate in English",
+        "Nadprůměrné výsledky v externím testování"
+      ],
+      "evidence": "Ve školním roce 2021/2022 škola vykázala 100% úspěšnost v maturitních zkouškách. Dva žáci maturitního ročníku získali First Certificate in English."
+    },
+    "absence": {
+      "trend": "Pozitivní – nejsou sledovány závažné rizikové jevy",
+      "key_numbers": [
+        "Žádné závažné rizikové jevy",
+        "Důsledné vedení k dodržování pravidel",
+        "Spolupráce s Policií ČR a Komunitním centrem Spirála"
+      ],
+      "evidence": "Ve škole nejsou sledovány závažné rizikové jevy. V rámci minimalizace rizikových jevů jsou navázány obvyklé způsoby spolupráce (např. Policie ČR)."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s funkčně rozdělenými kompetencemi",
+      "Doučování a individuální konzultace pro žáky s prospěchovými obtížemi",
+      "Kariérní poradenství od sexty s úzkou spoluprací s výchovnou poradkyní",
+      "Neformální doučování mezi spolužáky"
+    ],
+    "safety_climate": [
+      "Přátelská atmosféra v hodinách s důrazem na duševní rozvoj",
+      "Důsledné vedení žáků k dodržování dohodnutých pravidel",
+      "Žáci se nebojí sdělovat postřehy a dotazovat se",
+      "Chyby vnímány jako prostředek k dalšímu učení"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s Člověkem v tísni na výukových aktivitách",
+      "Partnerství se zřizovatelem (Město Pacov) na rozvoji materiálních podmínek",
+      "Spolupráce se Sdružením rodičů a příznivců na podpoře žáků",
+      "Mezinárodní projekt eTwinning a pilotní projekt MŠMT Dějepis+",
+      "Kontakty s integrovaným záchranným systémem, domovem důchodců a místními školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní citace a čísla. Všechny tvrzení jsou podložena důkazy z dokumentů. Jazyk je srozumitelný bez zbytečného úřednického stylu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu učitelů, jejich kvalifikacích nebo fluktuaci",
+      "Chybí detailní údaje o financování a rozpočtu školy",
+      "Není jasné, jak konkrétně se budou řešit zjištěné nedostatky v závěrečných shrnutích hodin"
+    ]
+  }
+}
+```

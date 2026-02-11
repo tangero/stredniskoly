@@ -1,0 +1,111 @@
+{
+  "report_id": "LYC_600013804_2022-03-22",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:04:12.149262+00:00",
+  "run_finished_utc": "2026-02-10T07:06:13.781514+00:00",
+  "raw_file": "LYC_600013804_2022-03-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600013804_2022-03-22",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola stavební",
+      "inspection_period": "22. 3. 2022 − 24. 3. 2022",
+      "school_change_summary": "Došlo ke změně na vedoucím pracovním místě ředitele školy a k pozitivnímu posunu v oblasti zajišťování finančních prostředků pro zlepšení materiálních podmínek školy jejím zapojením do několika projektů financovaných především z evropských strukturálních fondů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná výuka",
+          "detail": "Výuka má výrazný podíl praktických činností a reálně propojuje teorii s praxí.",
+          "evidence": "Průběh odborného vzdělávání s výrazným podílem praktických činností žáků a reálné propojení výuky s praxí přispívá k rozvoji jejich odborných kompetencí."
+        },
+        {
+          "tag": "Maturita",
+          "detail": "Škola dosahuje dlouhodobě velmi dobrých výsledků u maturitní zkoušky.",
+          "evidence": "Žáci vykazují u této zkoušky opakovaně vyšší úspěšnost v porovnání s ostatními školami ve stejné skupině oborů za celou Českou republiku."
+        },
+        {
+          "tag": "Profesní rozvoj",
+          "detail": "Škola ve spolupráci s firmami vhodně motivuje žáky k jejich profesnímu rozvoji.",
+          "evidence": "Škole se daří ve spolupráci se sociálními partnery vhodně motivovat žáky k jejich profesnímu rozvoji."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "V části hodin převládá frontální výuka bez prostoru pro aktivní zapojení žáků.",
+          "evidence": "V části hodin převládala frontální výuka, kde žáci neměli dostatečný prostor pro aktivní zapojení."
+        },
+        {
+          "tag": "Podpora ohrožených",
+          "detail": "Chybí nastavená systémová péče pro žáky ohrožené školním neúspěchem.",
+          "evidence": "Systém poradenských služeb v oblasti péče o žáky ohrožené školním neúspěchem není jednoznačně nastaven a koordinován."
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Žáci nejsou dostatečně vedeni k sebereflexi a hodnocení výuky.",
+          "evidence": "V závěrech hodin žáci byli jen ojediněle vedeni k sebereflexi. Méně pozornosti je věnováno zajištění zpětné vazby od samotných žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají studijní problémy nebo horší prospěch?",
+        "V jakých předmětech a jak často využíváte aktivní formy výuky oproti tradičnímu výkladu?",
+        "Jaké konkrétní firmy spolupracují se školou na odborných praxích a projektech?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří se chtějí uplatnit ve stavebnictví nebo geodézii a očekávají kvalitní odbornou přípravu.",
+        "Pro ty, kdo očekávají silné propojení výuky s reálnou praxí a odbornými firmami.",
+        "Pro studenty, kteří preferují menší školu s rodinným prostředím a zavedenými tradicemi."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří potřebují silný individuální přístup a systematickou podporu při studijních potížích.",
+        "Pro studenty vyžadující moderní, estetické a plně vybavené školní prostředí (budova je starší).",
+        "Pro ty, kdo očekávají pestrou nabídku aktivizačních metod a skupinové práce ve všech předmětech."
+      ],
+      "plain_czech_summary": "Střední průmyslová škola stavební v Brno nabízí kvalitní odborné vzdělání s výrazným propojením teorie a praxe. Žáci zde dosahují nadprůměrných výsledků u maturitní zkoušky a mají možnost zapojit se do zajímavých projektů a zahraničních stáží. Škola však čelí výzvám v podobě zastaralejší budovy a nedostatečně nastaveného systému podpory pro žáky se studijními problémy. V některých hodinách převažuje pasivní forma výuky, která neumožňuje dostatečnou aktivitu žáků. Pro ambiciózní studenty se zájmem o stavebnictví je však škola dobrou volbou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě velmi dobrá úspěšnost, nadprůměrná v rámci ČR.",
+        "key_numbers": [
+          "Průměrná hrubá neúspěšnost u maturitní zkoušky za poslední tři roky činila jen 4 %.",
+          "Žáci vykazují opakovaně vyšší úspěšnost v porovnání s ostatními školami ve stejné skupině oborů."
+        ],
+        "evidence": "Žáci vykazují u této zkoušky opakovaně vyšší úspěšnost v porovnání s ostatními školami ve stejné skupině oborů za celou Českou republiku."
+      },
+      "absence": {
+        "trend": "Průměrná absence, která může souviset s neúspěšností části žáků.",
+        "key_numbers": [
+          "Absence žáků v tomto období činila průměrně 80 zameškaných hodin na žáka za rok.",
+          "V 1. pololetí školního roku 2021/2022 škola evidovala 39 žáků, kteří neprospěli nebo nebyli z důvodu vysoké absence hodnoceni."
+        ],
+        "evidence": "Absence žáků v tomto období činila průměrně 80 zameškaných hodin na žáka za rok. Špatné vzdělávací výsledky často souvisí s jejich nepravidelnou docházkou do školy."
+      },
+      "support_services": [
+        "Individuální konzultace poskytované žákům i nad rámec konzultačních hodin výchovné poradkyně.",
+        "Metodická podpora ze strany zkušenějších kolegů pro začínající pedagogy.",
+        "Doučování pro vybrané vyučovací předměty realizované pro žáky s prospěchovými problémy."
+      ],
+      "safety_climate": [
+        "Škola vytváří pro žáky bezpečné prostředí a případná rizika efektivně vyhledává a odstraňuje.",
+        "Hospitované hodiny probíhaly v celkově příznivé pracovní atmosféře s pozitivním přístupem vyučujících k žákům.",
+        "Nebyly zaznamenány žádné kázeňské problémy, či narušování vlastního průběhu hodin."
+      ],
+      "partnerships_practice": [
+        "Žáci konají odbornou praxi také ve firmách (u sociálních partnerů), se kterými škola uzavírá smluvní vztah.",
+        "Škola je zapojená do projektu Erasmus+ s názvem Rekvalifikace stavebních činností, v rámci kterého vysílá žáky a učitele na partnerskou spolupráci do Itálie (Milána).",
+        "Škola využívá odborníky z praxe ve vzdělávání a zapojuje žáky do spolupráce s vysokými školami."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je psán srozumitelnou češtinou, většina odborných termínů je vysvětlena nebo použitelná v kontextu. Závěry a doporučení jsou jasná a srozumitelná.",
+      "uncertainty_notes": [
+        "V textu chybí upřesnění, co přesně znamená 'méně podnětné prostředí technicky zastaralé budovy' – nejasná míra opotřebení nebo absence vybavení.",
+        "Není zcela jasné, jak škola konkrétně řeší 'dílčí nedostatky v orgánu Školního poradenského pracoviště' – zda jde o personální nebo systémové problémy.",
+        "V textu chybí informace o tom, jak škola reaguje na doporučení 'zvážit zapojení psychologa' – zda je to v plánu nebo nikoliv."
+      ]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T11:37:29.475874+00:00",
+  "run_finished_utc": "2026-02-09T11:37:56.240911+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOS_600019853_2025-11-20\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 5,\n  \"unsupported_claims_count\": 3,\n  \"critical_issues\": [\n    \"Chybné uvedení období inspekce: kandidát uvádí 20.–25. 11. 2025, zdroj uvádí 20.–21. 11. 2025 a 24. 11. 2025.\",\n    \"Tvrzení/implikace „Dobré poradenství a prevence šikany“ je částečně zkreslující: zdroj sice popisuje postupy a efektivní řešení případů, ale zároveň uvádí, že šikana/kyberšikana je dlouhodobě zvýšenou rizikovou oblastí a problémy přetrvávají.\",\n    \"Použití hodnotících formulací bez opory ve zdroji (např. „teoretická výuka je často nudná“, „super praxe“) – zdroj popisuje pasivitu/frontální výuku a kvalitu praxe, ale nepracuje s tímto jazykem.\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené obory a klíčové kontexty (199 žáků ~ plná kapacita, projekt H/M/N a možnost získat výuční list ošetřovatele v rámci praktické sestry).\",\n    \"Dobře vystižené silné stránky ze závěrů zprávy (spolupráce s partnery pro praxi; rozmanité aktivity).\",\n    \"Správně převzaté hlavní slabé stránky (frontální výuka/nedostatečná aktivizace; nízká účinnost řízení a kontrol; malá individualizace).\",\n    \"Užitečné a zdrojově podložené „hard facts“ (maturitní neúspěšnost 3,8 % u praktické sestry v r. 2025; 30 % u sociální činnosti v r. 2025; absence pokles 176 → 144 h; téměř 5 % neomluvené absence u ošetřovatele; závěrečná zkouška ošetřovatel 100 %).\",\n    \"Praktické otázky pro rodiče na dny otevřených dveří (zejména k aktivizaci výuky, IVP a absenci) odpovídají identifikovaným oblastem ke zlepšení.\"\n  ],\n  \"one_line_verdict\": \"Většina obsahu odpovídá inspekční zprávě a je pro rodiče dobře použitelná, ale jsou zde 1–2 věcné nepřesnosti a několik zbytečně hodnotících či mírně zkreslujících formulací.\"\n}",
+  "judge_output": {
+    "report_id": "SOS_600019853_2025-11-20",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 5,
+    "unsupported_claims_count": 3,
+    "critical_issues": [
+      "Chybné uvedení období inspekce: kandidát uvádí 20.–25. 11. 2025, zdroj uvádí 20.–21. 11. 2025 a 24. 11. 2025.",
+      "Tvrzení/implikace „Dobré poradenství a prevence šikany“ je částečně zkreslující: zdroj sice popisuje postupy a efektivní řešení případů, ale zároveň uvádí, že šikana/kyberšikana je dlouhodobě zvýšenou rizikovou oblastí a problémy přetrvávají.",
+      "Použití hodnotících formulací bez opory ve zdroji (např. „teoretická výuka je často nudná“, „super praxe“) – zdroj popisuje pasivitu/frontální výuku a kvalitu praxe, ale nepracuje s tímto jazykem."
+    ],
+    "best_points": [
+      "Správně zachycené obory a klíčové kontexty (199 žáků ~ plná kapacita, projekt H/M/N a možnost získat výuční list ošetřovatele v rámci praktické sestry).",
+      "Dobře vystižené silné stránky ze závěrů zprávy (spolupráce s partnery pro praxi; rozmanité aktivity).",
+      "Správně převzaté hlavní slabé stránky (frontální výuka/nedostatečná aktivizace; nízká účinnost řízení a kontrol; malá individualizace).",
+      "Užitečné a zdrojově podložené „hard facts“ (maturitní neúspěšnost 3,8 % u praktické sestry v r. 2025; 30 % u sociální činnosti v r. 2025; absence pokles 176 → 144 h; téměř 5 % neomluvené absence u ošetřovatele; závěrečná zkouška ošetřovatel 100 %).",
+      "Praktické otázky pro rodiče na dny otevřených dveří (zejména k aktivizaci výuky, IVP a absenci) odpovídají identifikovaným oblastem ke zlepšení."
+    ],
+    "one_line_verdict": "Většina obsahu odpovídá inspekční zprávě a je pro rodiče dobře použitelná, ale jsou zde 1–2 věcné nepřesnosti a několik zbytečně hodnotících či mírně zkreslujících formulací."
+  }
+}

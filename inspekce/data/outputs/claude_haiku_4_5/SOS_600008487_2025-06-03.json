@@ -1,0 +1,119 @@
+{
+  "report_id": "SOS_600008487_2025-06-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:34:32.803414+00:00",
+  "run_finished_utc": "2026-02-09T13:35:01.462728+00:00",
+  "raw_file": "SOS_600008487_2025-06-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600008487_2025-06-03",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola a Střední odborné učiliště",
+      "inspection_period": "3.–6. 6. 2025",
+      "school_change_summary": "Škola zaznamenala nárůst žáků o téměř 12 % na 749 studentů, rozšířila nabídku o obor Praktická sestra a má nového ředitele od srpna 2023. Proběhly rozsáhlé rekonstrukce objektů pro praktické vyučování."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní příprava nových učitelů",
+          "detail": "Škola má promyšlený systém uvádění začínajících pedagogů s adaptačními plány a vzájemnými návštěvami hodin.",
+          "evidence": "Systém práce s novými učiteli je promyšlený, adaptační plány umožňují sledovat průběh uvádění pedagogů do praxe."
+        },
+        {
+          "tag": "Moderní vybavení a propojení teorie s praxí",
+          "detail": "Nové pracovní prostory a vybavení umožňují kvalitní profesní přípravu s propojením teoretických znalostí s praktickou aplikací.",
+          "evidence": "Rozsáhlé rekonstrukce objektů, pracoviště v Nemocnici Pelhřimov, materiální vybavení umožňuje kvalitní profesní přípravu."
+        },
+        {
+          "tag": "Úspěchy v soutěžích a praktických osvědčeních",
+          "detail": "Žáci se tradičně úspěšně umísťují v odborných soutěžích a mohou získat řadu praktických osvědčení (autoškola, svářečské zkoušky).",
+          "evidence": "Reprezentanti školy se úspěšně umísťují v soutěžích v oboru, sváření, truhlářství, módě a dalších oborech."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá diferenciace ve výuce",
+          "detail": "Ve většině hodin chybí přizpůsobení učiva schopnostem jednotlivých žáků, sebehodnocení a skupinová práce.",
+          "evidence": "Ve většině hodin teoretické výuky chyběla diferenciace učiva vzhledem ke vzdělávacímu potenciálu žáků a příležitosti pro kooperaci."
+        },
+        {
+          "tag": "Absence a záškoláctví",
+          "detail": "Vysoká absence a záškoláctví se nedaří vždy řešit úspěšně, přestože vedení školy situaci monitoruje.",
+          "evidence": "Nejvýraznější problémy jako vysoká absence a záškoláctví se nedaří vždy řešit úspěšně."
+        },
+        {
+          "tag": "Nedostatečná kontrola kvality",
+          "detail": "Kontrolní činnost není prováděna dostatečně a důsledně, chybí kontrola kvality podpůrných opatření.",
+          "evidence": "Kontrolní činnost není prováděna dostatečně a důsledně, kvalita poskytování podpůrných opatření není důsledně kontrolována."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s žáky, kteří mají problémy s absencí a záškolástvím?",
+        "Jaké konkrétní metody používají učitelé k individuálnímu přizpůsobení výuky různě schopným žákům?",
+        "Jak se škola vypořádala s problémy v oboru Podnikání v nástavbové formě studia a jaké jsou aktuální výsledky?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí získat praktická osvědčení a zkušenosti v reálném pracovním prostředí",
+        "Talentovaní žáci zaměření na odborné soutěže a praktické dovednosti",
+        "Studenti, kteří potřebují podporu v podobě domova mládeže a individuálního vedení"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absenci a záškoláctví – škola má problémy s jejich řešením",
+        "Studenti, kteří potřebují individualizovanou výuku a diferenciaci – ve výuce převažuje frontální přístup",
+        "Žáci s nižší motivací – v některých hodinách převažuje pasivní příjem informací"
+      ],
+      "plain_czech_summary": "SPŠ a SOU Pelhřimov je moderně vybavená škola s kvalitní praxí a úspěchy v soutěžích. Nový ředitel dobře deleguje úkoly a škola se rozvíjí. Silnou stránkou je systém práce s novými učiteli a propojení teorie s praxí. Slabinou je, že výuka často chybí individuální přizpůsobení žákům, chybí sebehodnocení a skupinová práce. Problémem zůstává vysoká absence některých žáků. Škola je vhodná pro prakticky zaměřené studenty, ale měla by zlepšit kvalitu teoretické výuky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní posun v problematickém oboru",
+        "key_numbers": [
+          "Obor 64-41-L/51 Podnikání: zvýšil se počet přihlášených k maturitě",
+          "Snížil se počet neúspěšných (25 %) a těch, kteří zkoušku nekonali (18,8 %)",
+          "Škola reagovala změnami v kritériích pro přijetí ke studiu"
+        ],
+        "evidence": "V jarním zkušebním období 2024/2025 došlo k dílčímu pozitivnímu posunu u dlouhodobě problematického oboru vzdělání 64-41-L/51 Podnikání."
+      },
+      "absence": {
+        "trend": "Problematická, aktivně řešená vedením",
+        "key_numbers": [
+          "Vysoká absence a záškoláctví jsou hlavními problémy",
+          "Výchovné komise svolávány zejména pro řešení absence",
+          "Vedení školy situaci monitoruje a přijímá opatření"
+        ],
+        "evidence": "Nejvýraznější problémy jako vysoká absence a záškoláctví se nedaří vždy řešit úspěšně. Vedení školy situaci monitoruje a přijímá následná opatření."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní – evidence a sdílení údajů o žácích se speciálními potřebami",
+        "72 žáků s podpůrnými opatřeními 2. a 3. stupně a 36 žáků s odlišným mateřským jazykem",
+        "Domov mládeže pro 129 žáků s vychovateli zaměřenými na prevenci a podporu",
+        "Konzultace a doučování (účastní se ho pouze někteří žáci)",
+        "Adaptační kurzy a preventivní programy"
+      ],
+      "safety_climate": [
+        "Pozitivní a pracovní atmosféra ve sledovaných hodinách, kázeňské problémy ojediněle",
+        "Primární prevence účinně realizována prostřednictvím adaptačních kurzů a preventivních programů",
+        "Vychovatelé domovů mládeže dlouhodobě a úspěšně se soustředí na eliminaci kázeňských problémů",
+        "Žáci se mohou vyjadřovat prostřednictvím žákovského parlamentu a setkání 'Hlas studentů'",
+        "Modernizované relaxační prostory na základě požadavků žáků"
+      ],
+      "partnerships_practice": [
+        "Funkční a rozvíjející se spolupráce s tuzemskými i zahraničními partnery (firmy, školy, neziskové organizace)",
+        "Kvalitní monitorování a vyhodnocování praktického vyučování na smluvních pracovištích",
+        "Efektivní získávání zpětné vazby od účastníků vzdělávání (žáci, instruktoři) a přijímání adekvátních opatření",
+        "Pracoviště pro praktickou sestru v Nemocnici Pelhřimov",
+        "Rozšíření spolupráce se základními školami a firmami"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však formulovány úřednicky a vyžadují pozorné čtení. Silné a slabé stránky jsou jasně odděleny.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o výsledcích maturit za poslední roky – pouze zmínku o jednom oboru",
+        "Není jasné, jak velký je podíl žáků, kteří se účastní doučování a konzultací",
+        "Chybí informace o konkrétních počtech absence a záškoláctví"
+      ]
+    }
+  }
+}

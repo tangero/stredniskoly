@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY4_691001529_2023-03-31",
+  "school_profile": {
+    "school_type": "Střední škola, základní škola a mateřská škola da Vinci (gymnázium, ZŠ, MŠ, PPP)",
+    "inspection_period": "31. března 2023 až 5. dubna 2023",
+    "school_change_summary": "Škola se rozvinula: počet dětí a žáků se zvýšil, MŠ byla rozšířena o dvě třídy včetně lesní, zlepšily se materiální podmínky, došlo ke změně vedení. Od roku 2018/2019 jsou naplněny všechny čtyři ročníky gymnázia."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky vzdělávání",
+        "detail": "Na gymnáziu prospívá s vyznamenáním 77 % žáků, u maturit třetina s vyznamenáním, všichni žáci ZŠ prospěli, z toho 85 % s vyznamenáním.",
+        "evidence": "Školní rok 2021/2022: gymnázium 77 % s vyznamenáním, ZŠ 85 % s vyznamenáním, maturita třetina s vyznamenáním."
+      },
+      {
+        "tag": "Motivující a bezpečné prostředí",
+        "detail": "Škola vytváří přátelskou atmosféru založenou na respektu, důvěře a společně nastavených pravidlech, kde žáci bez obav komunikují.",
+        "evidence": "Pozitivní atmosféra ve všech hospitovaných hodinách, žáci pokládali otázky bez obav, výchovná opatření jsou neúčelná."
+      },
+      {
+        "tag": "Pestrá nabídka aktivit a projektů",
+        "detail": "Dvanáct expedic s atraktivními tématy (umění, historie, vědy, podnikání), kroužky (tanec, plavání, hudba, divadlo, šachy, 3D tisk).",
+        "evidence": "Expedice zahrnují svět umění, historii, přírodní vědy, kriminalistiku, podnikání; pestré odpolední aktivity a kroužky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabý kontrolní systém",
+        "detail": "Kontrola a evaluace nejsou dostatečně účinné, což negativně ovlivňuje organizaci vzdělávání, zejména v lesní třídě.",
+        "evidence": "Kontrolní systém školy není dostatečně účinný, nepříznivě se promítá do organizace vzdělávání a průběhu v lesní třídě."
+      },
+      {
+        "tag": "Problémy v lesní třídě MŠ",
+        "detail": "Režim dne nevychází ze standardů lesních MŠ, děti jdou ven až v 10:30, chybí řízené aktivity a bezpečnostní vedení.",
+        "evidence": "Scházení probíhalo v zázemí, do venkovních prostor až v 10:30, spontánní aktivity převažovaly nad řízenými."
+      },
+      {
+        "tag": "Nedostatky v pedagogicko-psychologické poradně",
+        "detail": "Nejednotná evidence klientů, některé služby bez informovaného souhlasu, zastaralé diagnostické nástroje, chybí metodická podpora.",
+        "evidence": "Evidence nesystematická, některé služby bez souhlasu, nejčastěji používaný nástroj zastaralý, metodická podpora neposkytována."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami a jak funguje individuální přístup?",
+      "Jaké jsou podmínky a program lesní třídy mateřské školy a jak se liší od běžné třídy?",
+      "Jak se škola připravuje na přijímací zkoušky na střední školy a jaké jsou výsledky přijetí absolventů?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří se chtějí aktivně zapojit do projektů, expedic a vrstevnické výuky a hledají motivující prostředí.",
+      "Děti a žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje cílenou podporu a individuální přístup.",
+      "Rodiny hledající školu s pestrým nabídkou zájmových aktivit (hudba, sport, umění, divadlo, vědy)."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají přísný dohled a jasné pravidla – v lesní třídě MŠ je vysoká míra volnosti a spontánních aktivit.",
+      "Rodiny preferující tradičnější přístup – škola klade důraz na aktivní učení, projekty a seberealizaci.",
+      "Rodiče dětí s jazykovou bariérou – ačkoliv škola podporuje žáky s odlišným mateřským jazykem, je to specifická potřeba."
+    ],
+    "plain_czech_summary": "Škola da Vinci je moderní vzdělávací zařízení s výborným klimatem a vysokými výsledky. Žáci gymnázia prospívají z 77 % s vyznamenáním, základní škola má 85 % s vyznamenáním. Škola nabízí pestrý program: dvanáct expedic, desítky kroužků a aktivit. Silnou stránkou je motivující prostředí založené na respektu a důvěře. Slabinou je nedostatečný kontrolní systém a problémy v lesní třídě MŠ, kde se vzdělávání neodehrává podle standardů lesních škol. Pedagogicko-psychologická poradna má organizační nedostatky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborná úroveň",
+      "key_numbers": [
+        "Všichni žáci prospěli s výjimkou jednoho (za čtyři roky)",
+        "Průměrně třetina žáků s vyznamenáním",
+        "Jeden žák složil zkoušku v následujícím roce"
+      ],
+      "evidence": "Ve sledovaných čtyřech letech prospěli všichni žáci s výjimkou jednoho, který složil maturitní zkoušku v následujícím školním roce."
+    },
+    "absence": {
+      "trend": "Minimální výskyt rizikového chování",
+      "key_numbers": [
+        "Výskyt rizikového chování minimální",
+        "Neprospívajících žáků minimum (3 z 210 za čtyři roky)",
+        "Výchovná opatření neúčelná a využívána výjimečně"
+      ],
+      "evidence": "Výskyt rizikového chování je ve škole minimální, při jeho zjištění jsou ihned přijímána účinná opatření."
+    },
+    "support_services": [
+      "Pedagogicko-psychologická poradna s psychologem a externím speciálním pedagogem",
+      "Školní poradenské pracoviště: výchovná poradkyně, kariérová poradkyně, metodik prevence, koordinátorka inkluze, speciální pedagožka",
+      "Efektivní systém doučování žáků a komplexní kariérové poradenství"
+    ],
+    "safety_climate": [
+      "Systém prevence úrazů, bezpečnosti a ochrany zdraví je funkční",
+      "Úrazovost na obvyklé úrovni jako u srovnatelných škol",
+      "Areál bezbariérový a vhodně zabezpečen proti vstupu cizích osob"
+    ],
+    "partnerships_practice": [
+      "Rozsáhlá mezinárodní spolupráce při přípravě učebních materiálů a rozvoji měkkých dovedností",
+      "Výuka vedená čtyřmi rodilými mluvčími s pedagogickým vzděláním",
+      "Výuka doplněna odborníky z praxe"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Hlavní zjištění jsou jasně oddělena na silné stránky a slabé stránky. Některé pasáže jsou však velmi dlouhé a odborné, což může být pro laické rodiče těžko srozumitelné.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o finančních poplatcích nebo školném, což je pro rodiče důležité.",
+      "Chybí konkrétní informace o počtu žáků v jednotlivých třídách a poměru učitel-žák.",
+      "Není jasné, jak se škola vypořádala s nedostatky z předchozí inspekce (zmíněno jen 'částečně')."
+    ]
+  }
+}
+```

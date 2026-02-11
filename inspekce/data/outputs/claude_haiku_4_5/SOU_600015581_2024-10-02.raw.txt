@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOU_600015581_2024-10-02",
+  "school_profile": {
+    "school_type": "Střední škola služeb s.r.o. – soukromá škola poskytující vzdělání v 4 oborech denního studia (2 obory s výučním listem, 1 s maturitou, 1 nástavbové studium) a 1 oboru v dálkové formě",
+    "inspection_period": "2. 10. – 8. 10. 2024",
+    "school_change_summary": "Škola se vyvíjí pozitivně: zlepšily se materiální podmínky pro praktickou výuku, rozšířila se o obory aranžér a kadeřník, zvýšil se počet žáků (302 v denní formě), zlepšily se maturitní výsledky. Hlavní výzvou zůstává modernizace teoretické výuky a profesní rozvoj pedagogů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka na vysoké úrovni",
+        "detail": "Praktické vyučování je velmi zdařilé s cíleným rozvojem kompetencí, bezpečností a individuálním přístupem učitelů.",
+        "evidence": "Žáci zodpovědně plnili pracovní úkoly, učitelé poskytovali radu a pomoc, průběžně hodnotili pokrok."
+      },
+      {
+        "tag": "Silné výsledky v maturitách",
+        "detail": "Maturitní výsledky se zlepšily a jsou srovnatelné nebo lepší než celostátní průměr, zejména v oboru kosmetické služby.",
+        "evidence": "Z 123 žáků v letech 2020–2024 neuspělo pouze 14, v oboru kosmetiky si žáci dlouhodobě udržují velmi dobrou úroveň."
+      },
+      {
+        "tag": "Podpora žáků v obtížích",
+        "detail": "Škola má dobrou strategii prevence a umí identifikovat žáky ohrožené neúspěchem, poskytuje konzultace a doučování.",
+        "evidence": "Výchovná poradkyně systematicky zajišťuje podporu, škola má nastavené evaluační nástroje a konkrétní postupy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá teoretická výuka",
+        "detail": "Teoretické předměty (zejména angličtina, ekonomika, zdravověda) jsou často monotónní, frontální a bez aktivního zapojení žáků.",
+        "evidence": "Žáci byli pasivní, chyběly poslouchací aktivity, výuka byla zaměřena na opisování textu, aktivizační metody byly málo efektivní."
+      },
+      {
+        "tag": "Nedostatek moderních metod výuky",
+        "detail": "Pedagogové nejsou dostatečně vzděláváni v moderních výukových metodách a kritickém myšlení.",
+        "evidence": "Chyběla diferenciace výuky, žáci neměli možnost vybírat si úlohy různé náročnosti, minimální podpora kritického myšlení."
+      },
+      {
+        "tag": "Nižší úroveň v některých testech",
+        "detail": "Externí testování žáků prvních a druhých ročníků vykazuje nižší úroveň než v jiných školách.",
+        "evidence": "Výsledky testování v moderních dějinách (1. ročník) a čtenářské gramotnosti (2. ročník) byly nižší než u srovnatelných škol."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se škola chystá zlepšit výuku teoretických předmětů, zejména angličtiny a ekonomiky?",
+      "Jaké konkrétní kroky podnikne v dalším vzdělávání pedagogů v moderních výukových metodách?",
+      "Jak se škola vypořádá s nižšími výsledky v testech čtenářské gramotnosti a moderních dějin?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické obory (kadeřnictví, kosmetické služby, aranžérství) – zde je výuka na vysoké úrovni s moderním vybavením",
+      "Žáci, kteří potřebují individuální podporu a poradenství – škola má kvalitní systém prevence a doučování",
+      "Žáci s ambicí na maturitu v oboru kosmetické služby – dlouhodobě dosahují velmi dobrých výsledků"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se zájmem o kvalitní výuku angličtiny – výuka je monotónní, převážně v češtině, bez poslouchacích aktivit",
+      "Žáci, kteří se učí lépe aktivními metodami – teoretická výuka je často frontální bez diferenciace",
+      "Žáci v oboru podnikání (nástavbové studium) – výsledky maturit jsou zde proměnlivější než v ostatních oborech"
+    ],
+    "plain_czech_summary": "Střední škola služeb je soukromá škola v Uherském Hradišti se 302 žáky. Její největší silou je praktická výuka v oborech kadeřnictví a kosmetiky – zde je vybavení moderní a učitelé pracují s žáky individuálně. Maturitní výsledky jsou dobré, zejména v kosmetice. Škola má také kvalitní systém podpory pro žáky v obtížích. Slabinou je teoretická výuka – angličtina, ekonomika a zdravověda jsou často nudné a frontální. Pedagogové se málo vzdělávají v moderních metodách. Pokud vás zajímá praktický obor, je to dobrá volba. Pokud chcete kvalitní teoretické vzdělání, zvažte pečlivě."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se a stabilní",
+      "key_numbers": [
+        "14 neúspěšných z 123 žáků v letech 2020–2024",
+        "10 neúspěšných z oboru podnikání",
+        "Výsledky srovnatelné nebo lepší než celostátní průměr"
+      ],
+      "evidence": "Celkové výsledky maturitních zkoušek se od poslední inspekce zlepšily a vykazují stabilní úroveň. V oboru kosmetické služby si žáci dlouhodobě udržují velmi dobrou úroveň."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje konkrétní údaje o absenci žáků."
+    },
+    "support_services": [
+      "Výchovné poradenství zajišťované výchovnou poradkyní, která zároveň zastává funkci školní metodičky prevence",
+      "Kariérové poradenství ve spolupráci s odbornými organizacemi",
+      "Individuální konzultace se žáky závěrečných ročníků zaměřené na budoucí studijní a kariérní plány",
+      "Adaptační pobyty pro žáky prvních ročníků",
+      "Doučování a vzdělávací platformy pro online přístup"
+    ],
+    "safety_climate": [
+      "Účinně nastavený systém pro zajištění bezpečnosti a ochrany zdraví žáků",
+      "Žáci pravidelně dostávají informace o bezpečnostních rizicích ve škole i mimo ni",
+      "Elektronické zabezpečení vchodů pomocí čipů na budově školy a pracovišti odborného výcviku",
+      "Zásady bezpečnosti práce a ochrany zdraví jsou v praktické výuce důsledně dodržovány"
+    ],
+    "partnerships_practice": [
+      "Systematická spolupráce se sociálními partnery v oblasti sociálních služeb",
+      "Spolupráce s odbornými organizacemi na kariérovém poradenství",
+      "Aktivní zapojení do projektové činnosti s finančními prostředky na rozvoj",
+      "Pravidelná účast žáků v republikových kolech soutěží v kadeřnictví a kosmetických službách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však delší a obsahují více vět najednou, což mírně snižuje čitelnost.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je to problém nebo ne",
+      "Počet žáků v jednotlivých oborech není detailně rozepsán",
+      "Konkrétní počty žáků se speciálními vzdělávacími potřebami (16) není jasné, jak se distribuují mezi obory"
+    ]
+  }
+}
+```

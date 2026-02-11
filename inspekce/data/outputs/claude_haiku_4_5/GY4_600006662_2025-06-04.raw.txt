@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "GY4_600006662_2025-06-04",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium s důrazem na výuku cizích jazyků",
+    "inspection_period": "4. 6. – 5. 6. 2025",
+    "school_change_summary": "Škola funguje od září 2024 jako nové pracoviště v centru Prahy. Rozšířila se o obor Gymnázium v reakci na společenskou poptávku. V inspekčním období měla jednu třídu s 16 žáky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Cílená podpora jazykových kompetencí včetně rodilých mluvčích, druhého cizího jazyka od 1. ročníku a přípravy na mezinárodní certifikáty.",
+        "evidence": "Konverzační kroužky, spolupráce se zahraniční školou v Norimberku, zahraniční pobyty."
+      },
+      {
+        "tag": "Atmosféra a přístup",
+        "detail": "Příznivá pracovní atmosféra s vstřícným, podporujícím a empatickým přístupem pedagogů.",
+        "evidence": "Inspektoři zaznamenali respektující komunikaci a partnerský přístup učitelů k žákům."
+      },
+      {
+        "tag": "Vybavení a prostředí",
+        "detail": "Moderně vybavené nově rekonstruované prostory s interaktivními tabulemi, notebooky, učebnami pro virtuální realitu a dramatickou výchovu.",
+        "evidence": "Budova nabízí odpočinkovou zónu, multimediální učebnu, elektronický vstupní systém."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Závěry vyučovacích hodin",
+        "detail": "V menší části hodin chybí dostatečné shrnutí, ověření cílů a reflexe výuky se žáky.",
+        "evidence": "Inspektoři zjistili nedostatečné využití didaktického závěru a formativního hodnocení v některých hodinách."
+      },
+      {
+        "tag": "Absence a disciplína",
+        "detail": "Mezi řešené problémy patří zameškaná absence a její pozdní omlouvání.",
+        "evidence": "Výchovná poradkyně řeší studijní neúspěch a absenci jako nejčastější problémy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak probíhá adaptační kurz pro nové žáky a jakou roli hrají starší žáci jako 'pomocníčci'?",
+      "Jaké jsou konkrétní možnosti získání mezinárodních jazykových certifikátů a jak jsou zahraniční pobyty organizovány?",
+      "Jak se škola vypořádává s absencí a jak komunikuje s rodiči o studijních problémech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní vzdělání",
+      "Motivovaní žáci hledající menší třídy s individuálním přístupem",
+      "Rodiny oceňující moderní vybavení a inovativní výuku (virtuální realita, projekty)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s problémy s docházkou – škola řeší absenci jako jeden z hlavních problémů",
+      "Rodiny očekávající tradičnější přístup – škola klade důraz na projekty a kombinovanou výuku",
+      "Žáci bez vnitřní motivace – přijímací řízení zahrnuje pohovor zjišťující motivaci"
+    ],
+    "plain_czech_summary": "Nové gymnázium v Praze se zaměřuje na jazykové vzdělání a moderní přístup. Inspektoři ocenili příznivou atmosféru, kvalitní vybavení a podporu osobnostního rozvoje. Učitelé jsou kvalifikovaní a používají inovativní metody. Hlavní výzvou je zlepšit závěry vyučovacích hodin a reflexi s žáky. Škola má nulovou neomluvenu absenci, ale řeší omluvené absence. Vhodná pro motivované žáky zajímající se o jazyky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze hodnotit – obor funguje teprve od září 2024",
+      "key_numbers": [
+        "16 žáků v prvním ročníku",
+        "Čtyřleté studium",
+        "Nulová neomluvená absence v inspekčním období"
+      ],
+      "evidence": "Vzhledem ke krátké době realizace jsou hodnoceny pouze průběžné výsledky, které byly příznivé."
+    },
+    "absence": {
+      "trend": "Nulová neomluvená absence, ale řeší se omluvené absence",
+      "key_numbers": [
+        "Nulová neomluvená absence v inspekčním období",
+        "Zameškaná absence a její pozdní omlouvání patří mezi nejčastěji řešené problémy"
+      ],
+      "evidence": "Výchovná poradkyně a pedagogové pracují na individuálním přístupu k řešení absence."
+    },
+    "support_services": [
+      "Funkční poradenský systém propojený s prevencí sociálně patologických jevů",
+      "Výchovná poradkyně poskytující individuální přístup k žákům s rizikem studijního neúspěchu",
+      "Adaptační kurz pro nově vznikající třídní kolektiv s pomocí starších žáků"
+    ],
+    "safety_climate": [
+      "Elektronický vstupní systém do budovy",
+      "Demokratický styl řízení ředitelky založený na konstruktivním dialogu",
+      "Školní parlament poskytující prostor pro iniciativu žáků",
+      "Primární prevence sociálně patologických jevů"
+    ],
+    "partnerships_practice": [
+      "Partnerství se školou v Norimberku – zahraniční pobyty a kontakty se zahraničními studenty",
+      "Spolupráce s Filosofickou fakultou Univerzity Karlovy",
+      "Zapojení rodilých mluvčích ve výuce cizích jazyků",
+      "Pokusné ověřování kombinované výuky",
+      "Spolupráce s neziskovými organizacemi na sportovních aktivitách a sociálním cítění"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Jediná omezení: obor funguje velmi krátce, takže chybí dlouhodobá data o výsledcích.",
+    "uncertainty_notes": [
+      "Nelze posoudit kvalitu maturitních výsledků – obor existuje teprve od září 2024",
+      "Údaje o absenci jsou z velmi krátké doby (inspekce v červnu prvního roku)",
+      "Dlouhodobá udržitelnost koncepce není zatím ověřena"
+    ]
+  }
+}
+```

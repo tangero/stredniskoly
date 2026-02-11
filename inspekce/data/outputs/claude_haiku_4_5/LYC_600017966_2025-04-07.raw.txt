@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600017966_2025-04-07",
+  "school_profile": {
+    "school_type": "Waldorfská střední škola (4leté kombinované lyceum s humanitní/přírodovědnou specializací)",
+    "inspection_period": "7.–9. dubna 2025",
+    "school_change_summary": "Soukromá škola s 119 žáky ve čtyřech třídách. Na začátku druhého pololetí 2024/2025 došlo ke změně ředitele. Škola sídlí v pronajatých prostorách a financuje se ze státního rozpočtu, dotací a školného."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Pozitivní školní klima",
+        "detail": "Vyučující vytvářejí partnerský přístup založený na vstřícnosti, důvěře a otevřené komunikaci se žáky.",
+        "evidence": "Pozorována byla pozitivní pracovní a sociální atmosféra, žáci měli prostor pro vyjádření názoru."
+      },
+      {
+        "tag": "Péče o žáky v obtížích",
+        "detail": "Škola nabízí doučování, individuální konzultace a cílené podpůrné opatření pro žáky s rizikem neúspěchu.",
+        "evidence": "Žákům s rizikem školního neúspěchu je zajišťována primární podpora v průběhu vyučování."
+      },
+      {
+        "tag": "Kvalitní materiální podmínky",
+        "detail": "Učebny jsou dobře vybaveny pomůckami a projekční technikou, prostory jsou čisté a esteticky upravené.",
+        "evidence": "Vedení školy dlouhodobě cíleně sleduje a modernizuje školní objekty a vybavení."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence a pozdní příchody",
+        "detail": "Žáci mají poměrně vysokou průměrnou absenci a každodenně se vyskytují pozdní ranní příchody do vyučování.",
+        "evidence": "Současná opatření k eliminaci těchto jevů vykazují poměrně nízkou účinnost."
+      },
+      {
+        "tag": "Nestabilita pedagogického sboru",
+        "detail": "Vysoký podíl začínajících učitelů s minimální zkušeností a četnými obměnami stávajících členů sboru.",
+        "evidence": "Nízká míra odborné či pedagogické kvalifikace části pedagogů nepřispívá k efektivnímu naplňování vzdělávacího procesu."
+      },
+      {
+        "tag": "Omezená diferenciace výuky",
+        "detail": "Nedostatečná podpora pro nadané žáky a malá nabídka forem výuky podporujících samostatné bádání a kritické myšlení.",
+        "evidence": "Žákům nadaným chybí motivace formou prospěchového stipendia či zapojování do soutěží."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci a pozdní příchody žáků? Jaká jsou nová opatření?",
+      "Jaké má škola plány na stabilizaci pedagogického sboru a zvýšení kvalifikace učitelů v waldorfské pedagogice?",
+      "Jak se škola připravuje na první maturitní zkoušky a jaké jsou očekávané výsledky?"
+    ],
+    "who_school_fits": [
+      "Žáci, kterým vyhovuje waldorfský přístup k vzdělávání s důrazem na osobnostní rozvoj a celistvost",
+      "Rodiny, které oceňují partnerský přístup učitelů a pozitivní školní klima",
+      "Žáci se speciálními vzdělávacími potřebami, kterým je poskytována cílená podpora"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají vysokou úroveň diferenciace výuky a individuálního přístupu k nadaným žákům",
+      "Rodiny, které vyžadují přísné dodržování školního řádu a disciplíny (absence a pozdní příchody nejsou účinně řešeny)",
+      "Žáci, kteří potřebují strukturovanou výuku s pevným rozvrhem (waldorfský přístup je flexibilnější)"
+    ],
+    "plain_czech_summary": "Waldorfská střední škola v Olomouci je mladá soukromá škola s 119 žáky, která se zaměřuje na celistvý rozvoj osobnosti. Silnými stránkami jsou pozitivní klima, péče o slabší žáky a kvalitní vybavení. Hlavní problémy jsou vysoká absence žáků, nestabilní pedagogický sbor s nedostatečnou kvalifikací a omezená podpora nadaných žáků. Škola se teprve připravuje na první maturitní zkoušky, takže chybí data o jejich výsledcích."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neznámý – první maturitní ročník se teprve připravuje",
+      "key_numbers": [
+        "119 žáků celkem",
+        "4 třídy",
+        "První závěrečný ročník v termínu inspekce"
+      ],
+      "evidence": "Vzhledem ke krátkodobé existenci školy neumožňovala absence dat o maturitách hodnocení výsledků vzdělávání."
+    },
+    "absence": {
+      "trend": "Negativní – vysoká absence a časté pozdní příchody",
+      "key_numbers": [
+        "Poměrně vysoká průměrná absence",
+        "Každodenní velké množství pozdních ranních příchodů",
+        "Nízká účinnost současných opatření"
+      ],
+      "evidence": "Částečně negativní odraz do výsledků vzdělávání žáků má jejich poměrně vysoká průměrná absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (sdílené se základní školou) – péče o žáky s potřebou podpůrných oatření",
+      "Doučování a individuální konzultace pedagogů",
+      "Kariérové poradenství a informační podpora při rozhodování o dalším studiu",
+      "Preventivní programy a besedy na téma rizikového chování"
+    ],
+    "safety_climate": [
+      "Pozitivní pracovní a sociální atmosféra ve vyučovacích jednotkách",
+      "Partnerský přístup vyučujících k žákům založený na vstřícnosti a důvěře",
+      "Včasná intervence školy při prvotních projevech problémového chování",
+      "Pravidelné organizování adaptačních kurzů k rozvoji sociálních kompetencí"
+    ],
+    "partnerships_practice": [
+      "Čtrnáctidenní učební praxe ve třetím ročníku na pracovištích smluvních partnerských institucí",
+      "Spolupráce s waldorfskými školami v ČR (společné přehlídky)",
+      "Aktivní spolupráce se spolkem Waldorfská iniciativa (zákonní zástupci)",
+      "Návštěvy zahraničního lektora se specializací na waldorfskou pedagogiku"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale obsahuje řadu odborných termínů a dlouhých vět. Pro rodiče bez pedagogického vzdělání by byla některá místa obtížnější. Struktura je logická a závěry jsou jasně formulovány.",
+    "uncertainty_notes": [
+      "Konkrétní čísla o absenci nejsou uvedena – pouze kvalitativní popis 'poměrně vysoké'",
+      "Výsledky maturit nejsou k dispozici, nelze tedy objektivně posoudit kvalitu vzdělávání",
+      "Není jasné, kolik procent pedagogů nemá požadovanou kvalifikaci"
+    ]
+  }
+}
+```

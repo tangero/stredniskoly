@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "SOS_600171191_2025-02-03",
+  "school_profile": {
+    "school_type": "Střední odborná škola s výučním listem a maturitními obory (technické, zemědělské a dopravní zaměření)",
+    "inspection_period": "3. února až 6. března 2025",
+    "school_change_summary": "Od inspekce v roce 2019 vzrostl počet žáků o 25 % na 803 studentů. Počet žáků se speciálními potřebami se téměř zdvojnásobil z 42 na 83. Škola získala nová pracoviště a modernizovala vybavení dílen."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné vybavení a moderní dílny",
+        "detail": "Škola má vlastní moderně vybavené dílny a učebny, která odpovídají současným potřebám a simulují reálné pracovní prostředí.",
+        "evidence": "\"Zejména učebny a pracoviště pro odborné vzdělávání odpovídají současným potřebám pro efektivní vzdělávání.\""
+      },
+      {
+        "tag": "Silné partnerství s firmami a zaměstnavateli",
+        "detail": "Škola má mimořádný počet spolupracujících sociálních partnerů, kteří přispívají k lepší uplatnitelnosti absolventů.",
+        "evidence": "\"Mimořádný je počet spolupracujících tuzemských sociálních partnerů, kteří přispívají ke zlepšení podmínek vzdělávání.\""
+      },
+      {
+        "tag": "Kvalitní praktické vyučování",
+        "detail": "Praktické vyučování je dobře organizované s aktivním přístupem učitelů a efektivním využitím času.",
+        "evidence": "\"V průběhu sledované výuky bylo obvykle zaznamenáno efektivní využívání času a aktivní přístup žáků k plnění zadaných úkolů.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost u maturit",
+        "detail": "U maturitních oborů neprospělo v jarním termínu 37,7 % žáků, v podzimním až 50 %.",
+        "evidence": "\"V podzimním termínu ze 32 žáků neprospělo 16 žáků (tzn. podíl neprospívajících žáků je 50,0 %).\""
+      },
+      {
+        "tag": "Slabé výsledky v čtenářské a finanční gramotnosti",
+        "detail": "Při externím testování dosáhli žáci slabých výsledků v těchto klíčových dovednostech.",
+        "evidence": "\"Ve výběrovém zjišťování výsledků žáků středních škol (2022/2023) ve čtenářské a finanční gramotnosti dosáhli žáci školy slabých výsledků.\""
+      },
+      {
+        "tag": "Nedostatečné využívání aktivních metod výuky",
+        "detail": "Málo se využívá skupinová práce, sebehodnocení žáků a práce s více informačními zdroji.",
+        "evidence": "\"Jen malá část pedagogů však vedla žáky ke kooperaci při párové nebo skupinové práci. Výraznější práce s informacemi nebyla zaznamenána.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou neúspěšnost u maturitních zkoušek a jaké má plány na zlepšení?",
+      "Jaké jsou možnosti doučování a individuální podpory pro žáky, kteří mají problémy s učením?",
+      "Jak se škola zaměřuje na rozvoj čtenářské a finanční gramotnosti, kde měli žáci slabší výsledky?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením, kteří se chtějí učit řemeslu v moderně vybavených dílnách",
+      "Studenti, kteří mají zájem o spolupráci se skutečnými firmami a chystají se na trh práce",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje podporu a individuální přístup"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků, kteří mají ambice na vysokou úspěšnost u maturitní zkoušky (vysoká neúspěšnost 37–50 %)",
+      "Studenti, kteří potřebují silný důraz na teoretické znalosti a jazykové dovednosti",
+      "Žáci, kteří se spoléhají na skupinové učení a moderní aktivní metody (ty nejsou dostatečně využívány)"
+    ],
+    "plain_czech_summary": "Střední odborná škola v Lískovci je moderně vybavená technická škola se silnými vazbami na firmy a zaměstnavatele. Praktické vyučování je kvalitní a žáci se učí v reálných podmínkách. Problém je vysoká neúspěšnost u maturitních zkoušek (až 50 % neprospívajících) a slabší výsledky v čtenářské gramotnosti. Škola by měla více pracovat na aktivních metodách výuky a motivaci žáků. Vhodná pro prakticky zaměřené studenty, méně vhodná pro ty, kteří chtějí vysokou úspěšnost u maturity."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neuspokojivý – vysoká neúspěšnost, částečně zlepšeno v některých oborech",
+      "key_numbers": [
+        "Jarní termín 2024: 37,7 % neprospívajících (26 z 69 žáků)",
+        "Podzimní termín 2024: 50 % neprospívajících (16 z 32 žáků)",
+        "Obor Mechanik seřizovač: 86 % úspěšnosti (zlepšení oproti roku 2023)"
+      ],
+      "evidence": "\"Ve školním roce 2023/2024 v oborech vzdělání ukončených maturitní zkouškou v jarním období ze 69 žáků prospělo s vyznamenáním 7 a neprospělo 26 žáků.\""
+    },
+    "absence": {
+      "trend": "Monitorována a řešena, zvýšená absence některých žáků",
+      "key_numbers": [
+        "Zvýšená absence některých žáků je vedením školy monitorována",
+        "Neomluvená absence je důsledně řešena v rámci výchovných opatření"
+      ],
+      "evidence": "\"Zvýšená absence některých žáků je vedením školy monitorována, v případě neomluvené absence je spolu s dalšími přestupky vůči školnímu řádu důsledně řešena.\""
+    },
+    "support_services": [
+      "Dva metodici prevence, dvě výchovné poradkyně a speciální pedagožka",
+      "Konzultační hodiny pro řešení osobních a studijních problémů",
+      "Doučování a tandemová výuka pro žáky ohrožené školní neúspěšností",
+      "Adaptační pobyty pro žáky prvních ročníků",
+      "Individuální konzultace ve všech vyučovacích předmětech"
+    ],
+    "safety_climate": [
+      "Dbáno na upevňování zásad bezpečné práce a ochrany zdraví",
+      "V praktickém vyučování je zřejmá příjemná tvůrčí pracovní atmosféra",
+      "Teoretické vyučování se vyznačovalo příjemnou atmosférou s příznivými podmínkami pro vzdělávání",
+      "Dva školní žákovské parlamenty s pravidelnými setkáními s vedením"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s okolními základními a středními školami",
+      "Partnerství s vysokými školami technického zaměření",
+      "Spolupráce s městem Frýdek-Místek",
+      "Profesní svazy a řemeslné cechy",
+      "Smluvní partneři pro praktické vyučování",
+      "Mezinárodní soutěž ve svařování Zlatý pohár Linde",
+      "Konstruktivní vztahy se zřizovatelem (Moravskoslezský kraj)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní čísla a citace. Některé pasáže jsou delší a složitější, ale celkově je dobře čitelná pro rodiče.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní obory mají nejvyšší neúspěšnost u maturit (kromě pozitivního příkladu Mechanika seřizovače)",
+      "Není jasné, zda se vysoká neúspěšnost týká všech maturitních oborů stejně nebo jen některých",
+      "Chybí informace o počtu žáků v jednotlivých oborech s výučním listem a jejich úspěšnosti"
+    ]
+  }
+}
+```

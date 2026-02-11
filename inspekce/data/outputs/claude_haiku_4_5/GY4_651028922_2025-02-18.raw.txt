@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY4_651028922_2025-02-18",
+  "school_profile": {
+    "school_type": "Čtyřleté všeobecné gymnázium s jazykovým zaměřením a právem státní jazykové zkoušky",
+    "inspection_period": "18. února až 21. února 2025",
+    "school_change_summary": "Od inspekce v roce 2018 se škola přestěhovala (od září 2024 na adresu Na Příkopě 850/8), zvýšila kapacitu na 400 žáků (nyní 356 žáků v 13 třídách), snížil se podíl žáků s odlišným mateřským jazykem na 24 %. Došlo k personálním změnám v řídících pozicích a při zajištění poradenských služeb."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělávání",
+        "detail": "Škola systematicky podporuje jazykové kompetence žáků výukou tří cizích jazyků, konverzacemi s rodilými mluvčími a možností získat jazykové certifikáty.",
+        "evidence": "\"Koncepční podpora jazykových kompetencí žáků, mobility a získávání jazykových certifikátů v průběhu celého studia\""
+      },
+      {
+        "tag": "Partnerství a kariérní příprava",
+        "detail": "Dlouhodobé vztahy s vysokými školami, jazykovými instituty a zahraničními partnery přispívají k naplňování profilu absolventa a kariérnímu směřování.",
+        "evidence": "\"Dlouhodobě přínosné partnerské vztahy napomáhají k naplňování profilu absolventa a kariérnímu směřování žáků\""
+      },
+      {
+        "tag": "Školní komunita",
+        "detail": "Škola vytváří prostředí pro vzájemnou toleranci a sdílení hodnot prostřednictvím tradičních akcí, žákovského parlamentu a zapojení rodičů.",
+        "evidence": "\"Mezinárodní vzdělávací prostředí přispívá k rozvoji tolerance, sdílení společných hodnot zapojením žáků do tradičních akcí\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nestabilita pedagogů",
+        "detail": "Vysoká fluktuace učitelů (jen 58 % pedagogů působilo ve škole 2 roky), odchod pěti učitelů na začátku 2. pololetí zvýšil riziko zejména pro výuku češtiny.",
+        "evidence": "\"K 1. 9. 2024 pouze 58 % pedagogů působilo ve škole v posledních dvou letech. Odchod pěti učitelů k začátku 2. pololetí prohloubil riziko zejména pro zajištění výuky českého jazyka\""
+      },
+      {
+        "tag": "Rozdílná kvalita výuky",
+        "detail": "Přibližně polovina hodin vykazuje metodické nedostatky, nižší aktivizaci žáků, málo kooperativních forem a nedostatečné zohledňování individuálních potřeb.",
+        "evidence": "\"Účinnost vzdělávacího procesu přibližně v polovině hospitovaných hodin snižovaly některé metodické nedostatky nebo málo efektivní didaktické postupy\""
+      },
+      {
+        "tag": "Chybějící preventivní program",
+        "detail": "Škola nemá zpracován povinný minimální preventivní program pro řešení rizikového chování a šikany, což je administrativní nedostatek.",
+        "evidence": "\"Nebyl zpracován povinný minimální preventivní program k prevenci možného rizikového chování žáků včetně školních strategií k řešení šikany\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší vysokou fluktuaci učitelů a jak zajišťuje kontinuitu výuky, zejména v češtině a dalších klíčových předmětech?",
+      "Jaké konkrétní metody používáte k individuální podpoře žáků s různými studijními předpoklady a jak se liší přístup k nadaným žákům a těm, kteří potřebují více času?",
+      "Jak probíhá příprava na maturitu a jaké jsou vaše výsledky v jednotlivých předmětech v porovnání s republikovým průměrem?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní prostředí – škola nabízí výuku tří cizích jazyků a intenzivní jazykový program s rodilými mluvčími",
+      "Motivovaní žáci s jasným záměrem studovat vysokou školu – téměř všichni absolventi pokračují v terciárním vzdělávání",
+      "Žáci z mezinárodního prostředí – 24 % žáků má odlišný mateřský jazyk a škola má zkušenosti s jejich integrací"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují stabilní a konzistentní přístup jednoho učitele – vysoká fluktuace pedagogů může být problematická",
+      "Žáci vyžadující individualizovanou výuku a diferenciaci – inspekce zjistila, že toto není dostatečně uplatňováno",
+      "Žáci se slabšími studijními předpoklady – přijímací řízení vybírá uchazeče s odpovídajícími předpoklady, takže škola není určena pro všechny"
+    ],
+    "plain_czech_summary": "1. Slovanské gymnázium je prestižní jazyková škola v centru Prahy s mezinárodním prostředím. Silné stránky: výborné jazykové vzdělávání, partnerství s vysokými školami, dobrá příprava na vysokoškolské studium (98 % absolventů pokračuje v terciárním vzdělávání). Slabé stránky: vysoká fluktuace učitelů snižuje kontinuitu, přibližně polovina hodin má metodické nedostatky, individuální přístup k žákům není dostatečný. Vhodné pro motivované žáky se zájmem o jazyky, méně vhodné pro ty, kteří potřebují stabilitu a individuální podporu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "Více než polovina maturantů s vyznamenáním v posledních dvou letech",
+        "Ve školním roce 2023/2024 uspěli všichni žáci v části společné maturitní zkoušky",
+        "Nejméně třetina žáků nahradila profilovou část jazykovým certifikátem"
+      ],
+      "evidence": "\"Od poslední inspekční činnosti došlo k výraznému zlepšení celkových výsledků žáků ve společné i profilové části maturitní zkoušky. V posledních dvou školních letech maturovala více než polovina konajících žáků s vyznamenáním\""
+    },
+    "absence": {
+      "trend": "Mírný pokles",
+      "key_numbers": [
+        "Průměr přibližně 170 omluvených hodin na žáka",
+        "Neomluvená absence jednotlivců koresponduje se sníženým stupněm z chování",
+        "Vyšší absence u žáků se zdravotním znevýhodněním"
+      ],
+      "evidence": "\"Z přeložených podkladů posledních dvou školních let je zřejmé, že došlo k mírnému poklesu zameškaných hodin, průměr na žáka (přibližně 170 omluvených hodin) významněji zvyšují jedinci se zdravotním znevýhodněním\""
+    },
+    "support_services": [
+      "Poradenský pracovník zajišťuje podpůrné, preventivní a kariérní služby na základní úrovni",
+      "Adaptační a sportovní kurzy, matematická příprava pro 1. ročníky, výuka češtiny jako cizího jazyka",
+      "Individuální vzdělávací plány pro žáky se zdravotními problémy nebo nadané žáky",
+      "Chybí školní psycholog (pozice není obsazena) a zpracovaný minimální preventivní program"
+    ],
+    "safety_climate": [
+      "Celodenní ostraha při vstupu do budovy",
+      "Bezbariérový přístup budovy",
+      "Školní řád s nastavenými pravidly práce a komunikace",
+      "Chybí zpracovaný program pro řešení šikany a rizikového chování"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Filozofické fakulty Univerzity Karlovy",
+      "Partnerství s jazykovými instituty a vzdělávacími institucemi na regionální i zahraniční úrovni",
+      "Studijní pobyty a mezinárodní program pro žáky",
+      "Spolupráce s vysokými školami na kariérním směřování absolventů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními fakty a čísly. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však delší a obsahují více technických termínů, které mohou být pro laiky méně přístupné.",
+    "uncertainty_notes": [
+      "Přesný počet žáků s OMJ (24 %) je uvedený jako přibližný, skutečné číslo se může lišit",
+      "Výsledky v matematice jsou popsány jako 'spíše horší' než republikový průměr, ale konkrétní procenta nejsou uvedena",
+      "Počet pedagogů bez oborové specializace, kteří vyučují češtinu, není specifikován"
+    ]
+  }
+}
+```

@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600017834_2025-02-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:46:13.266291+00:00",
+  "run_finished_utc": "2026-02-09T13:46:40.678067+00:00",
+  "raw_file": "SOS_600017834_2025-02-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017834_2025-02-05",
+    "school_profile": {
+      "school_type": "Střední škola zemědělská s domovem mládeže a školní jídelnou",
+      "inspection_period": "5. až 7. února 2025",
+      "school_change_summary": "Od poslední inspekce došlo k personální změně ředitelky (od prosince 2023) a částečné obměně pedagogického sboru. Škola pokračuje v zlepšování materiálních podmínek a partnerských vztahů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické vzdělání",
+          "detail": "Praktické vyučování je kvalitní, učitelé vedou žáky k bezpečnosti, logickému uvažování a spolupráci s efektivní zpětnou vazbou.",
+          "evidence": "Vyučující kladli důraz na technologické postupy, bezpečnost a práci s chybou jako efektivním nástrojem."
+        },
+        {
+          "tag": "Partnerství a vybavení",
+          "detail": "Škola má silné vazby s firmami a institucemi, což přispívá k modernizaci učeben a vybavení pro odborný výcvik.",
+          "evidence": "Efektivní spolupráce s vnějšími partnery přispívá ke zkvalitňování materiálních podmínek vzdělávání."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola nabízí doučování, individuální konzultace a identifikuje žáky v riziku neúspěchu.",
+          "evidence": "Škola zajišťuje primární podporu v průběhu vyučování a realizuje doučování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v maturitě",
+          "detail": "Obor Mechanizace zemědělství měl v roce 2024 neúspěšnost 40 % v češtině a matematice, což výrazně překročilo průměr.",
+          "evidence": "Hrubá neúspěšnost dosáhla 40,0 % oproti celorepublikovému průměru 23,8 %."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učitelé málo přizpůsobují obtížnost úkolů jednotlivým žákům, chybí práce s různými informačními zdroji.",
+          "evidence": "Zadávání úloh s rozdílnou mírou obtížnosti nebylo téměř využíváno, žáci vyhledávali informace jen výjimečně."
+        },
+        {
+          "tag": "Slabá motivace a zpětná vazba",
+          "detail": "Chybí formativní hodnocení a sebehodnocení žáků, závěry hodin postrádají motivační shrnutí.",
+          "evidence": "Formativní hodnocení vedoucí k posílení motivace bylo využíváno jen sporadicky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola připravuje žáky nástavbového oboru na společnou část maturitní zkoušky, zejména na češtinu a matematiku?",
+        "Jaké konkrétní metody používáte k diferenciaci výuky pro nadané a slabší žáky v jednotlivých třídách?",
+        "Jak se škola vypořádala s vysokou neúspěšností v maturitě v roce 2024 a jaká opatření zavedla?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a zemědělství – praktické vyučování je kvalitně vedeno s důrazem na bezpečnost a profesní návyky.",
+        "Žáci, kteří potřebují podporu – škola nabízí doučování, individuální konzultace a identifikuje žáky v riziku.",
+        "Žáci z regionu – domov mládeže poskytuje ubytování a školní jídelna zajišťuje stravování."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s ambicí na vysokou úspěšnost v maturitě – zejména v oboru Mechanizace zemědělství jsou výsledky slabé (40% neúspěšnost v 2024).",
+        "Žáci potřebující individuální přístup – výuka je převážně frontální, diferenciace je nedostatečná.",
+        "Žáci, kteří se učí lépe s různými metodami – škola málo využívá kooperativní činnosti a práci se zdroji."
+      ],
+      "plain_czech_summary": "Střední škola zemědělská v Přerově je zaměřená na praktické vzdělání v zemědělství. Silnou stránkou je kvalitní praktické vyučování a spolupráce s firmami. Slabinou jsou výsledky v maturitě – obor Mechanizace zemědělství měl v roce 2024 neúspěšnost 40 % v češtině a matematice. Výuka je často frontální bez dostatečné diferenciace pro různé žáky. Škola nabízí doučování a podporu slabších žáků, ale systematické zlepšování výsledků chybí. Vhodná pro žáky zaměřené na praxi a zemědělství, méně vhodná pro ty, kdo chtějí vysokou úspěšnost v maturitě."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavá s výrazným zhoršením v roce 2022, v roce 2024 vysoká neúspěšnost v nástavbovém oboru",
+        "key_numbers": [
+          "Obor Mechanizace zemědělství: 40,0 % neúspěšnost v 2024 (celorepublikový průměr 23,8 %)",
+          "Ostatní obory s maturitou: 3,0 % neúspěšnost v 2024 (celorepublikový průměr 10,1 %)",
+          "Vysoká neúspěšnost zejména v češtině a matematice"
+        ],
+        "evidence": "V roce 2022 hrubá neúspěšnost 44,4 %, v 2023 28,6 %, v 2024 40,0 % v nástavbovém oboru."
+      },
+      "absence": {
+        "trend": "Není v textu specifikován",
+        "key_numbers": [],
+        "evidence": "Text neobsahuje konkrétní údaje o absenci žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní a školním metodikem prevence",
+        "Doučování zaměřené na přípravu k maturitní zkoušce a procvičování didaktických testů",
+        "Individuální konzultace a primární podpora v průběhu vyučování",
+        "Kariérové poradenství s informačními a náborovými aktivitami"
+      ],
+      "safety_climate": [
+        "Domov mládeže systematicky vede žáky k dodržování pravidel a společenských norem",
+        "Kázeňské přestupky jsou efektivně řešeny spoluprací se školou a zákonnými zástupci",
+        "Nabízené činnosti respektují výchovně vzdělávací cíle",
+        "Primární prevence rizikového chování je plánovitá a účelně zaměřená"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s profesními organizacemi a partnerskými firmami na praktickém vyučování",
+        "Vazba s mateřskými, základními, středními a vysokými školami",
+        "Kooperace s orgány veřejné správy a školskými poradenskými zařízeními",
+        "Účast v projektové činnosti přispívající ke zkvalitňování materiálních podmínek"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a obsahuje konkrétní údaje o výsledcích, silných a slabých stránkách. Některé pasáže jsou však úřednicky složité a pro laika obtížně srozumitelné.",
+      "uncertainty_notes": [
+        "Text neobsahuje konkrétní údaje o absenci žáků, pouze zmínku o sledování absence.",
+        "Není jasné, jaké konkrétní opatření škola zavedla po roce 2024 na zlepšení výsledků v maturitě.",
+        "Chybí informace o počtu a typu podpůrných opatření pro žáky se speciálními potřebami."
+      ]
+    }
+  }
+}

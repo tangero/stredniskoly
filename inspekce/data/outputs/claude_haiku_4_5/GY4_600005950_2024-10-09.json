@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_600005950_2024-10-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:12:36.869854+00:00",
+  "run_finished_utc": "2026-02-09T16:13:03.008069+00:00",
+  "raw_file": "GY4_600005950_2024-10-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600005950_2024-10-09",
+    "school_profile": {
+      "school_type": "Čtyřleté gymnázium s profilací na cizí jazyky a mezikulturní dovednosti",
+      "inspection_period": "9. 10. 2024 – 16. 10. 2024",
+      "school_change_summary": "Škola funguje od školního roku 2023/2024. K inspekci se vzdělávalo 176 žáků v osmi třídách (1. a 2. ročník), z toho 29 s odlišným mateřským jazykem. Kapacita 250 míst využita ze 70 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Příznivá školní atmosféra",
+          "detail": "Vedení podporuje iniciativu žáků, jejich sounáležitost se školou a demokratický styl řízení založený na spolupráci a otevřené komunikaci.",
+          "evidence": "Vedení školy podporuje iniciativu žáků a jejich sounáležitost se školou, např. organizací různorodých akcí."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "V roce 2024 proběhla rekonstrukce prostor včetně vybavení tříd, chemické laboratoře, učeben výtvarné a hudební výchovy, počítačové techniky.",
+          "evidence": "Systematický rozvoj materiálně-technického zázemí školy v souladu s nejmodernějšími trendy umožňuje kvalitní realizaci vzdělávacích programů."
+        },
+        {
+          "tag": "Bohaté mimoškolní aktivity",
+          "detail": "Škola nabízí projektové dny, mezinárodní programy (DofE), kariérní dny, exkurze a adaptační kurzy.",
+          "evidence": "Žáci se účastní kulturních a sportovních akcí, exkurzí a adaptačních kurzů. Škola pořádá pravidelné projektové dny zaměřené na aktuální témata."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalifikace učitelů",
+          "detail": "Třetina z 37 pedagogů nesplňuje předpoklad oborné kvalifikace, někteří si ji doplňují studiem.",
+          "evidence": "Třetina pedagogických pracovníků nesplňuje předpoklad oborné kvalifikace (část z nich si doplňuje požadované vzdělání studiem)."
+        },
+        {
+          "tag": "Kvalita výuky cizích jazyků",
+          "detail": "Výuka vedená rodilými mluvčími postrádá strukturu, didaktickou techniku a pestrost metod, je na nižší úrovni.",
+          "evidence": "Jazykové vzdělávání vedené rodilými mluvčími bylo didakticky na nižší úrovni. Tato výuka postrádala úvod vyučovacích hodin, využití didaktické techniky."
+        },
+        {
+          "tag": "Podpora žáků-cizinců",
+          "detail": "Přestože se ve škole vzdělává vysoké procento cizinců, chybí systémová opatření. Doučování z češtiny ne vždy eliminuje jazykové bariéry.",
+          "evidence": "Chybí systémová opatření na úrovni školy. Žákům s odlišným mateřským jazykem je sice zajišťováno doučování z českého jazyka, ne vždy se však daří eliminovat jejich jazykovou bariéru."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky-cizince v překonávání jazykových bariér? Jaké jsou výsledky jejich prospěchu?",
+        "Jaký je plán na doplnění kvalifikace učitelů, kteří ji v současnosti nemají? Jak dlouho to bude trvat?",
+        "Jak se škola vypořádá s doporučením inspekce na zlepšení výuky cizích jazyků a zavedení více aktivních metod?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní prostředí – škola nabízí výuku s rodilými mluvčími a mezinárodní projekty",
+        "Motivovaní žáci hledající moderní vybavení a bohaté mimoškolní aktivity – nově zrekonstruované prostory a pestré programy",
+        "Žáci z okolních regionů – dobrá dopravní dostupnost umožňuje dojíždění ze Středočeského kraje"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující intenzivní podporu v češtině – systémová opatření pro cizince zatím nejsou dostatečná",
+        "Rodiny očekávající vysokou kvalitu výuky všech předmětů – část učitelů vyžaduje soustavnější odborné vedení",
+        "Žáci preferující tradiční frontální výuku – inspekce upozorňuje na nižší pestrost metod a převahu frontální výuky"
+      ],
+      "plain_czech_summary": "Gymnázium FOSTRA je relativně nová škola s moderním vybavením a příznivou atmosférou. Nabízí zajímavý program zaměřený na jazyky a mezinárodní dovednosti. Vedení je vstřícné a podporuje žákovské iniciativy. Hlavní problémy: část učitelů nemá potřebnou kvalifikaci, výuka cizích jazyků potřebuje zlepšení, a chybí systémová podpora pro vysoký počet žáků-cizinců. Inspekce doporučuje zlepšit kvalitu výuky a zavést více aktivních metod."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Škola funguje od školního roku 2023/2024",
+          "176 žáků v 1. a 2. ročníku",
+          "97 % žáků prospělo v 1. a 2. pololetí 2023/2024"
+        ],
+        "evidence": "Většina žáků v prvním a druhém pololetí školního roku 2023/2024 prospěla (97 %)."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Dvě výchovné poradkyně, metodička prevence, kariérní poradce, psychoterapeut",
+        "Doučování z českého jazyka pro žáky s odlišným mateřským jazykem",
+        "Adaptační program pro nově příchozí a začínající učitele",
+        "Kariérní poradenství a poradenství při výběru budoucího studia"
+      ],
+      "safety_climate": [
+        "Elektronický systém zabezpečení vstupu do budovy a vrátnice",
+        "Důraz na dodržování pravidel a bezpečnost žáků",
+        "Nastavený systém prevence sociálně patologického jednání s možností včasné intervence",
+        "Projektové dny zaměřené na bezpečnost"
+      ],
+      "partnerships_practice": [
+        "Zapojení odborníků z praxe k obohacení vzdělávacího procesu",
+        "Spolupráce s Radou rodičů a Radou učitelů",
+        "Mezinárodní projekty (program DofE – The Duke of Edinburgh's Award)",
+        "Kariérní dny se setkáním s odborníky z různých oborů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, obsahuje konkrétní příklady a doporučení. Některé pasáže jsou však technicky náročnější (kritéria, metodické postupy), ale pro rodiče jsou klíčové informace jasně identifikovatelné.",
+      "uncertainty_notes": [
+        "Výsledky maturit nejsou v textu uvedeny – není jasné, jak si absolventi vedou na maturitách",
+        "Chybí konkrétní údaje o absenci a disciplinárních problémech",
+        "Není specifikováno, jak dlouho trvá doplňování kvalifikace učitelů bez oborného vzdělání"
+      ]
+    }
+  }
+}

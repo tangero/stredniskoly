@@ -1,0 +1,104 @@
+{
+  "report_id": "SOU_600017702_2022-03-28",
+  "school_profile": {
+    "school_type": "Střední škola stavební a dřevozpracující",
+    "inspection_period": "28. 3. 2022 − 31. 3. 2022",
+    "school_change_summary": "Od roku 2017 škola zrušila dálkové nástavbové studium a místo něj otevřela čtyřletý maturitní obor Technik CNC; došlo ke změně vedení a rekonstrukci dílen."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Učitelé odborného výcviku využívají aktivizující metody a individuální přístup, což žáky motivuje.",
+        "evidence": "Profesionální a motivující přístup učitelů odborného výcviku... využívání aktivizujících metod praktického vyučování."
+      },
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola úzce spolupracuje se sociálními partnery, kteří zajišťují stáže a pomáhají s uplatněním.",
+        "evidence": "Přínosná spolupráce školy se sociálními partnery... přispívá ke zvýšení jejich komunikativních, pracovních i sociálních kompetencí."
+      },
+      {
+        "tag": "Moderní zázemí",
+        "detail": "Díky rekonstrukcím a projektům má škola kvalitní vybavení pro odborný výcvik.",
+        "evidence": "Podařilo se vytvořit vhodné zázemí pro praktickou výuku... získání kvalitního moderního zázemí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Extrémně nízká úspěšnost maturit",
+        "detail": "Více než 40 % žáků nástavbového studia neuspěje u maturitní zkoušky.",
+        "evidence": "Výsledky žáků u této zkoušky vykazovaly vysokou míru hrubé neúspěšnosti... průměrně 41 %... a 51 %."
+      },
+      {
+        "tag": "Masové předčasné odchody",
+        "detail": "Téměř polovina žáků studium nedokončí a odchází předčasně.",
+        "evidence": "Průměrně za tři poslední uzavřené školní roky... úbytku 48 % žáků... pouze každý čtvrtý žák úspěšně ukončil vzdělávání."
+      },
+      {
+        "tag": "Zastaralá teoretická výuka",
+        "detail": "Vyučování v teoretických předmětech je pasivní, bez moderních metod.",
+        "evidence": "Převažující zaměření výuky na vědomostní cíle... dominantní role učitele... nižší pestrost výukových forem a metod."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podpoří mého dítěte, pokud bude mít potíže s učivem, aby nedošlo k předčasnému ukončení studia?",
+      "Vzhledem k vysoké neúspěšnosti u maturit: jaká je statistika úspěšnosti v konkrétním oboru, o který se zajímáme?",
+      "Jakým způsobem škola zajišťuje, aby teoretická výuka byla stejně kvalitní a moderní jako ta praktická?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří se chtějí naučit řemeslo a uplatnit se v něm přímo po škole (výuční list).",
+      "Prakticky založení studenti, kteří preferují práci v dílnách před teoretickým studiem.",
+      "Zájemci o obor Operátor dřevařské výroby (Technik CNC), který je novější a lépe vybavený."
+    ],
+    "who_should_be_cautious": [
+      "Studenti, kteří prioritně cílí na bezproblémové složení maturitní zkoušky (zejména u nástavbového studia).",
+      "Žáci, kteří vyžadují silnou podporu při vzdělávání a snižování absence.",
+      "Uchazeči o nástavbové studium oborů Nábytkářská a dřevařská výroba či Stavební provoz."
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktickou výuku a dobré zázemí pro získání řemesla, což oceňují i zaměstnavatelé. Na druhou stranu ji trápí extrémně vysoká neúspěšnost a předčasné odchody studentů, zejména u maturitních oborů, kde úspěšně dokončí studium jen čtvrtina žáků. Teoretická výuka je často nudná a zastaralá. Pro rodiče je klíčové zvážit, zda je dítě dostatečně motivované a odolné, aby v náročném prostředí uspělo, zejména pokud jde o nástavbové studium."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně negativní (dlouhodobě se nedaří zlepšit úspěšnost)",
+      "key_numbers": [
+        "Pouze 25 % žáků maturitních oborů úspěšně ukončí studium",
+        "Hrubá neúspěšnost u maturity 41–51 %",
+        "Úbytek studentů v průběhu studia 48 %"
+      ],
+      "evidence": "V průměru za tři poslední uzavřené školní roky došlo v průběhu vzdělávání k úbytku 48 % žáků, pouze každý čtvrtý žák úspěšně ukončil vzdělávání maturitní zkouškou."
+    },
+    "absence": {
+      "trend": "Vysoká, s poklesem vlivem opatření, ale nárůstem v době covidu",
+      "key_numbers": [
+        "Vysoká absence negativně ovlivňuje výsledky",
+        "Neomluvená absence u nematuritních oborů tvoří 25 % celkové absence",
+        "Zavedení stipendií snížilo neomluvenou absenci"
+      ],
+      "evidence": "Průběžné i celkové výsledky vzdělávání žáků jsou negativně ovlivněny vysokou absencí žáků... neomluvené absence, která u nematuritních oborů vzdělání činila průměrně... 25 %."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (výchovný poradce, speciální pedagog, metodička prevence)",
+      "Individuální pohovory a nabídka doučování pro žáky se slabším prospěchem",
+      "Intenzivní spolupráce se zákonnými zástupci a participujícími institucemi"
+    ],
+    "safety_climate": [
+      "Kázeňské problémy v některých hodinách matematiky",
+      "Rizikové jevy: nevhodné chování vůči spolužákům i pedagogům, kouření, záškoláctví",
+      "Úrazovnost má mírně klesající tendenci"
+    ],
+    "partnerships_practice": [
+      "Aktivní spolupráce s profesními sdruženími a asociacemi",
+      "Partneři zajišťují část praxe, exkurze, workshopy a účast na zkouškách",
+      "Získávání sponzorských darů (materiál, vybavení) pro zlepšení výuky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, ale místy používá úřednický jazyk (např. 'participujícími institucemi', 'hrubá neúspěšnost').",
+    "uncertainty_notes": [
+      "Chybí přesné absolutní počty žáků u maturity, pouze procenta úspěšnosti.",
+      "Není jasné, jak konkrétně vypadá 'efektivní využití zavedených třídnických hodin'.",
+      "Nejasná míra 'nižší pestrosti výukových forem' – chybí konkrétní příklady metod."
+    ]
+  }
+}

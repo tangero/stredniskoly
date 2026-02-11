@@ -1,0 +1,100 @@
+{
+  "report_id": "GY4_600005364_2021-11-25",
+  "school_profile": {
+    "school_type": "Soukromá střední a vyšší odborná škola zaměřená na reklamu, design a uměleckou tvorbu.",
+    "inspection_period": "25. – 30. 11. 2021",
+    "school_change_summary": "Škola rozšířila nabídku oborů (Design interiéru, Filmová produkce), zrekonstruovala ateliéry a vybudovala nový grafický pavilon."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vynikající vybavení",
+        "detail": "Škola nabízí nadstandardní technické zázemí včetně nových ateliérů, kinosálu a profesionálních softwarů.",
+        "evidence": "„Všichni účastníci vzdělávání mohou využívat bohatě vybavenou knihovnu... zřízení kinosálu, zbudování nástavby grafického pavilonu.“"
+      },
+      {
+        "tag": "Jazyky a praxe",
+        "detail": "Výuka angličtiny s rodilými mluvčími dosahuje 100% úspěšnosti u maturity a studenti získávají kontakty z praxe.",
+        "evidence": "„Dlouhodobě vynikajících výsledků dosahují žáci v anglickém jazyce (100% úspěšnost u maturitní zkoušky).“"
+      },
+      {
+        "tag": "Uplatnění absolventů",
+        "detail": "Absolventi mají téměř jistou šanci na přijetí na vysokou školu nebo uplatnění v oboru.",
+        "evidence": "„Úspěšnost přijetí je téměř 100% (např. FAMU Praha, Vysoká škola umělecko-průmyslová Praha).“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výuka češtiny",
+        "detail": "Přes snahy školy jsou výsledky z maturity z českého jazyka dlouhodobě neuspokojivé.",
+        "evidence": "„Přes přijatá opatření se zatím nedaří zlepšit neuspokojivé výsledky v českém jazyce.“"
+      },
+      {
+        "tag": "Méně aktivních metod",
+        "detail": "V některých všeobecných předmětech převažuje frontální výuka a chybí sebehodnocení žáků.",
+        "evidence": "„Ve výuce některých všeobecně vzdělávacích předmětů nebyly dostatečně využívány aktivizační metody.“"
+      },
+      {
+        "tag": "Nejasná kritéria",
+        "detail": "U maturitních prací nejsou vždy jasně stanovená pravidla pro hodnocení.",
+        "evidence": "„Hodnotící kritéria klauzurních prací a praktické zkoušky... jsou však nedostatečně specifikováta.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají slabší výsledky v českém jazyce?",
+      "Kdo budou moji učitelé odborných předmětů a jakou mají praxi v oboru?",
+      "Jaká jsou konkrétní kritéria pro hodnocení závěrečných maturitních prací?"
+    ],
+    "who_school_fits": [
+      "Kreativní žáci, kteří chtějí nastoupit na uměleckou VŠ (FAMU, UMPRUM) a potřebují kvalitní portfolio.",
+      "Studenti, kteří chtějí ovládnout profesionální softwarové nástroje a technologie v designu a filmu.",
+      "Žáci, kterým vyhovuje individuální přístup a menší kolektivy s uměleckým zaměřením."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silný metodický vedení v obecných předmětech (zejména čeština).",
+      "Studenti preferující tradiční frontální výuku před náročnou tvorbou vlastních projektů.",
+      "Uchazeči, kteří neplánují profesní dráhu v kreativních oblastech."
+    ],
+    "plain_czech_summary": "Michael je soukromá škola s vynikajícím technickým vybavením a silným zaměřením na praxi. Propojuje výuku s reálnými projekty a zahraničními stážemi. Absolventi se výborně umisťují na uměleckých vysokých školách. Škola má ale dlouhodobý problém s výsledky z maturity z češtiny. Výuka probíhá v příjemné atmosféře, i když v některých všeobecných předmětech chybí moderní metody. Pro talentované žáky se zájmem o design, film a reklamu je toto ideální volba s nadstandardním zázemím."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Klesající neúspěšnost (celkově), ale problémy v českém jazyce přetrvávají.",
+      "key_numbers": [
+        "100% úspěšnost v anglickém jazyce",
+        "Téměř 100% úspěšnost přijetí na VŠ",
+        "Klesající celková neúspěšnost"
+      ],
+      "evidence": "„Celková neúspěšnost žáků u maturitní zkoušky má v posledních třech letech klesající tendenci.“"
+    },
+    "absence": {
+      "trend": "Kontrola absence je důsledná a většina opatření je účinná.",
+      "key_numbers": [
+        "Nízká míra fluktuace žáků",
+        "Snížená známka z chování udělena výjimečně",
+        "Odchody většinou po 1. ročníku"
+      ],
+      "evidence": "„Škola se vyznačuje nízkou mírou fluktuace žáků... Důsledně je sledována absence.“"
+    },
+    "support_services": [
+      "Školní psycholožka a výchovný poradce",
+      "Týdenní adaptační kurz pro prváky",
+      "Individuální vzdělávací plány a podpora žáků s odlišným mateřským jazykem"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra",
+      "Nízký výskyt rizikového chování",
+      "Funkční školní poradenské pracoviště"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Českou televizí a Solent University",
+      "Odborníci z praxe (režiséři, grafici) ve výuce",
+      "Akreditace Erasmus+ na období 2021–2027"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán srozumitelně, má jasnou strukturu a explicitně vyjmenovává silné i slabé stránky.",
+    "uncertainty_notes": []
+  }
+}

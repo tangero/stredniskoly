@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "LYC_600170403_2023-02-06",
+  "school_profile": {
+    "school_type": "Střední škola a Jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "6. února 2023 až 8. února 2023",
+    "school_change_summary": "Od poslední inspekce došlo k výraznému nárůstu počtu žáků, modernizaci materiálních podmínek včetně digitální techniky a rozšíření praktického vyučování v několika oborech."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní portfolia žáků",
+        "detail": "Žákovská portfolia s fotodokumentací a popisem práce mapují individuální vývoj praktických dovedností a podporují sebereflexi.",
+        "evidence": "Zavedena ve všech ročnících oboru cukrář a v prvních ročnících maturitních oborů."
+      },
+      {
+        "tag": "Silná podpora nadaných žáků",
+        "detail": "Škola cíleně zapojuje nadané žáky do soutěží, olympiád a sportovních akcí na školní až krajské úrovni.",
+        "evidence": "Zvyšuje atraktivitu studia a motivaci žáků k učení."
+      },
+      {
+        "tag": "Kvalifikovaný poradenský tým",
+        "detail": "Výchovná poradkyně a metodička prevence zajišťují podporu žákům se speciálními potřebami a prevenci rizikového chování.",
+        "evidence": "Funkční spolupráce se školským poradenským zařízením a odborníky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Výuka často převažuje frontální formou bez dostatečného využití aktivizačních metod a kritického myšlení.",
+        "evidence": "Nedostatečná nabídka vyučovacích metod vedla u některých žáků k pasivitě a ztrátě pozornosti."
+      },
+      {
+        "tag": "Vysoký věk pedagogů",
+        "detail": "Pedagogický sbor má vysoký věkový průměr, což představuje riziko pro dlouhodobou stabilitu.",
+        "evidence": "Ředitelka aktivně vyhledává nové pedagogy k postupné generační obměně."
+      },
+      {
+        "tag": "Slabé výsledky v některých oborech",
+        "detail": "Obory sociální činnost a veřejnosprávní činnost mají výrazně horší výsledky v maturitě než průměr skupiny.",
+        "evidence": "Ve společné části maturity 2022 jsou výsledky těchto oborů významně horší v rámci dané skupiny."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s učením, a jaké jsou dostupné formy doučování?",
+      "Jaké jsou plány na modernizaci domova mládeže a jaké aktivity se tam nabízejí mimo domácí přípravu?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a samostatného myšlení žáků v hodinách?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří se zajímají o praktické obory, zejména cukrářství, kde škola dosahuje vysoké úspěšnosti.",
+      "Nadaní žáci, kterým škola nabízí zapojení do soutěží a olympiád na různých úrovních.",
+      "Žáci z okolí, kteří potřebují ubytování, protože škola poskytuje kvalitní služby v domově mládeže."
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o obory sociální činnost a veřejnosprávní činnost by měli vědět, že tyto obory mají slabší výsledky v maturitě.",
+      "Žáci, kteří potřebují aktivní a interaktivní výuku, protože převažuje spíše frontální přístup.",
+      "Rodiče, kteří očekávají moderní přístup k výuce, by měli vědět, že škola teprve zavádí více aktivizačních metod."
+    ],
+    "plain_czech_summary": "Škola v Volynech je stabilní střední školou s kvalitním zázemím a rostoucím počtem žáků. Silnými stránkami jsou praktické obory (zvlášť cukrářství), podpora nadaných žáků a kvalitní poradenství. Slabší jsou teoretické obory a výuka, která často zůstává pasivní. Pedagogický sbor je zkušený, ale starší. Domov mládeže funguje, ale potřebuje lepší strategii rozvoje. Škola se snaží zlepšovat, ale měla by více pracovat na aktivnějších metodách výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – vysoká úspěšnost v přírodovědném lyceu, slabší v sociální činnosti a veřejnosprávní činnosti",
+      "key_numbers": [
+        "Přibližně dvě třetiny žáků uspěly v roce 2022",
+        "Přírodovědné lyceum dlouhodobě nejvyšší úspěšnost",
+        "Sociální činnost a veřejnosprávní činnost výrazně horší než průměr skupiny"
+      ],
+      "evidence": "Ve zkušebním roce 2022 uspěly přibližně dvě třetiny žáků, dlouhodobě nejvyšší úspěšnost zaznamenává studijní obor přírodovědné lyceum."
+    },
+    "absence": {
+      "trend": "Přiměřená a zvládaná",
+      "key_numbers": [
+        "Absence je přiměřená",
+        "Neomluvené hodiny adekvátně řešeny"
+      ],
+      "evidence": "Škole se daří zvládat míru absence, která je přiměřená. Neomluvené hodiny byly zaznamenány a adekvátně řešeny výchovnými či kázeňskými opatřeními."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence zajišťují podporu žákům se speciálními vzdělávacími potřebami",
+      "Individuální konzultace a doučování pro žáky s neúspěšností",
+      "Adaptační kurzy pro žáky prvních ročníků na podporu vytváření pozitivních vztahů",
+      "Spolupráce s odborníky v oblasti sociálně patologických jevů"
+    ],
+    "safety_climate": [
+      "Klidné prostředí s příjemnou a vstřícnou pracovní atmosférou",
+      "Respektující a přátelský způsob komunikace mezi žáky a pedagogy",
+      "Žáci bez obav pokládají otázky a sdělují své postřehy",
+      "Dodržování nastavených pravidel"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s partnery v oblasti praktické výuky, kteří poskytují odbornou praxi v reálném pracovním prostředí",
+      "Nově zajištěna odborná praxe pro obor veřejnosprávní činnost v místních institucích veřejné správy",
+      "Mezinárodní spolupráce s partnerskými školami v Německu umožňující výměnné studijní pobyty"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a čísla. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání.",
+    "uncertainty_notes": [
+      "Přesné procento žáků s vyznamenáním není uvedeno, jen 'asi šestina'",
+      "Konkrétní počty žáků v jednotlivých oborech nejsou specifikovány",
+      "Detaily o obsahu kroužků v domově mládeže chybí, inspekce nenašla dokumentaci"
+    ]
+  }
+}
+```

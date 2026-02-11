@@ -1,0 +1,119 @@
+{
+  "report_id": "GY4_600006565_2023-01-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:50:24.052338+00:00",
+  "run_finished_utc": "2026-02-09T16:50:51.162465+00:00",
+  "raw_file": "GY4_600006565_2023-01-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600006565_2023-01-17",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola a Gymnázium (SPŠ) s obory Informační technologie, Strojírenství, Technické lyceum a Gymnázium se zaměřením na IT",
+      "inspection_period": "17. ledna 2023 až 20. ledna 2023",
+      "school_change_summary": "Od inspekce v 2015 vzrostl počet žáků o 17 % na 531 žáků. Nový ředitel od 2016 realizuje koncepci rozvoje podle trendů trhu práce. Od 2021 škola nabízí i gymnaziální vzdělávání. Pedagogický sbor se obměnil ze dvou třetin. Výrazně se zlepšily materiální podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní odborné vzdělávání",
+          "detail": "Praktická výuka probíhá na vysoké odborné úrovni s moderními zařízeními (CNC stroje, svařovny, laboratoře automatizace).",
+          "evidence": "Praktická část odborného vzdělávání probíhá na vysoké odborné úrovni s účelným využitím specializovaných odborných učeben."
+        },
+        {
+          "tag": "Silné partnerství s průmyslem",
+          "detail": "Dlouhodobá spolupráce s odbornými svazy, asociacemi a regionálními firmami propojuje teorii s praxí.",
+          "evidence": "Dlouhodobá kooperace s odbornými svazy, asociacemi, regionálními firmami vytváří vazbu mezi teoretickým vzděláváním a praxí."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Téměř čtvrtina maturantů prospívá s vyznamenáním, 65 % absolventů úspěšně složí maturitu.",
+          "evidence": "Ve sledovaném období vzrostl počet žáků prospívajících s vyznamenáním – téměř čtvrtina konajících žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Méně aktivizujících metod ve výuce",
+          "detail": "Učitelé preferují frontální výuku, kooperativní formy práce jsou využívány méně často.",
+          "evidence": "Učitelé preferovali frontální výuku v kombinaci s řízeným rozhovorem, méně často byly využity kooperativní formy práce."
+        },
+        {
+          "tag": "Nedostatečná diferenciace pro nadané žáky",
+          "detail": "Všichni žáci plní stejné typy úloh bez odlišné míry obtížnosti, chybí individualizace pro nadané.",
+          "evidence": "Všichni žáci však plnili stejné typy úloh bez odlišné míry obtížnosti. Výuka nebyla vhodně diferencována pro nadané."
+        },
+        {
+          "tag": "Mírně horší výsledky z češtiny",
+          "detail": "V celostátním srovnání dosahují žáci mírně horších výsledků z českého jazyka na maturitě.",
+          "evidence": "Mírně horších pak z českého jazyka. Maturitní zkoušku z matematiky v povinné části zkoušek skládají jen jednotlivci."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jak se liší jejich výuka od ostatních?",
+        "Jaké jsou možnosti získání odborných certifikátů a jak to zvyšuje konkurenceschopnost absolventů?",
+        "Jak funguje domov mládeže a jaké aktivity se tam organizují pro ubytované žáky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o technické obory a praktickou přípravu s moderním vybavením",
+        "Studenti, kteří chtějí pokračovat v terciárním vzdělávání (2/3 absolventů pokračuje na vysokých školách)",
+        "Žáci z jiných měst, kterým vyhovuje kvalitní domov mládeže s 96% obsazeností"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující více interaktivní a skupinové formy výuky (škola více využívá frontální výuku)",
+        "Nadaní žáci, kteří potřebují individualizovanou výuku s vyšší obtížností",
+        "Žáci se slabšími znalostmi češtiny (maturitní výsledky z češtiny jsou mírně pod průměrem)"
+      ],
+      "plain_czech_summary": "Jde o kvalitní průmyslovou školu s moderním vybavením a silným propojením s průmyslem. Praktická výuka je na vysoké úrovni, výsledky maturit jsou dobré. Škola má funkční systém podpory pro žáky se speciálními potřebami. Slabší stránkou je méně aktivizující výuka v teoretických předmětech a nedostatečná diferenciace pro nadané žáky. Škola je vhodná pro technicky zaměřené studenty, kteří chtějí kvalitní praktickou přípravu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní - počet žáků s vyznamenáním vzrostl ze 4 % na 15 %, v posledním roce až na čtvrtinu maturantů",
+        "key_numbers": [
+          "Hrubá neúspěšnost max. 17 % v jednotlivých oborech",
+          "65 % absolventů úspěšně složí maturitu od zahájení studia",
+          "44 % maturantů si volí matematiku jako nepovinný předmět (2021/2022)"
+        ],
+        "evidence": "Ve sledovaném období vzrostl počet žáků prospívajících s vyznamenáním – téměř čtvrtina konajících žáků. Hrubá neúspěšnost dosahovala nejvýše 17 %."
+      },
+      "absence": {
+        "trend": "Mírný nárůst zameškaných hodin, ale snížení neomluvené absence díky důslednému přístupu",
+        "key_numbers": [
+          "Neomluvená absence se snížila",
+          "Snížené známky z chování jsou udělovány ojediněle",
+          "Počet pochval výrazně převažuje nad kázeňskými opatřeními"
+        ],
+        "evidence": "Ve sledovaném období došlo k mírnému nárůstu v počtu zameškaných hodin. Důsledný přístup k omlouvání se odrazil ve snížení neomluvené absence."
+      },
+      "support_services": [
+        "Individuální konzultace a doučování pro žáky se SVP a OMJ",
+        "Konzultace s výchovnou poradkyní pro žáky s prospěchovými či osobními problémy",
+        "Kurzy jazykové přípravy pro žáky s odlišným mateřským jazykem",
+        "Adaptační a sportovní kurzy, preventivní programy",
+        "Vychovatelé v domově mládeže podporují přípravu a samostudium"
+      ],
+      "safety_climate": [
+        "Pedagogický dohled a dodržování nastavených pravidel",
+        "Zabezpečený vstup do školy a kamerový systém v šatnách",
+        "Příjemná pracovní atmosféra založená na partnerském přístupu učitelů",
+        "Jednotný důsledný přístup pedagogického sboru k pravidlům chování",
+        "Ojedinělé případy rizikových jevů řešeny individuálně se třídními učiteli"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá kooperace s odbornými svazy a asociacemi",
+        "Spolupráce s regionálními firmami na aktualizaci obsahu učiva",
+        "Partnerství se zřizovatelem (Hlavní město Praha) na zlepšování materiálních podmínek",
+        "Možnost získání odborných profesních certifikátů zvyšujících konkurenceschopnost",
+        "Výborné profesní uplatnění absolventů dokládá efektivní spolupráci se sociálními partnery"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné stránky, slabé stránky a doporučení. Některé pasáže jsou však delší a obsahují více úřednického stylu.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent žáků se SVP a OMJ dosahuje stejných výsledků jako ostatní - pouze uvádí, že jsou srovnatelné",
+        "Není jasné, jak konkrétně se liší výuka pro nadané žáky v praxi, pouze se uvádí, že chybí diferenciace",
+        "Počet nekvalifikovaných pedagogů (7 z 57) není vysvětlen - není jasné, v jakých oborech učí"
+      ]
+    }
+  }
+}

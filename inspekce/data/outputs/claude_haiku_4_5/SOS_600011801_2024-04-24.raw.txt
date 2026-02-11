@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600011801_2024-04-24",
+  "school_profile": {
+    "school_type": "Střední odborná škola veterinární, obor Veterinářství se dvěma zaměřeními (Veterinární technik a Veterinární technik-laborant)",
+    "inspection_period": "24. 4. 2024 – 26. 4. 2024",
+    "school_change_summary": "Škola získala nadstandardní materiální podmínky: zrekonstruované laboratoře chemie, laboratorní techniky a biologie, nově vybudované Středisko praktické výuky (školní stáj, sýrárna, masná výrobna, včelnice, centrum malých zvířat a fyzioterapie zvířat). Vedení aktivně získává finanční prostředky z projektů a grantů EU a státních institucí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Žáci dosahují výjimečných výsledků: v roce 2023 byla neúspěšnost pouze 5,3 % (oproti průměru 11,1 % v ČR), v letech 2021–2022 neuspěl jen jeden žák.",
+        "evidence": "V roce 2023 z 113 přihlášených k MZ neuspělo jen 6 žáků (2 zkoušku nekonali, 4 neuspěli)."
+      },
+      {
+        "tag": "Moderní vybavení a praktická výuka",
+        "detail": "Škola disponuje nejmodernějšími veterinárními přístroji včetně virtuálního pitevního stolu, simulátorů a reálným provozem školní stáje, sýrárny a centra malých zvířat.",
+        "evidence": "Laboratoře byly kompletně zrekonstruovány a vybaveny nejnovějšími interaktivními pomůckami s prvky digitalizace a automatizace."
+      },
+      {
+        "tag": "Silná praktická příprava",
+        "detail": "Praktická výuka probíhá v reálném provozu s odbornými učiteli, kteří mají zkušenosti z praxe a vedou žáky k aktivnímu zapojení a sebehodnocení.",
+        "evidence": "Učitelé praktické výuky jsou odborníky se zkušenostmi z praxe, žáci byli v průběhu praktické výuky zpravidla aktivní a se zájmem pracovali."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivita žáků v teoretické výuce",
+        "detail": "V teoretických hodinách převažuje frontální výuka s řídícím rozhovorem, žáci jsou málo aktivní a málo spolupracují mezi sebou.",
+        "evidence": "Ve vyučování odborných teoretických předmětů byla zaznamenána nízká míra aktivního zapojování žáků do výuky a jejich vzájemné spolupráce."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Učitelé nediferencují úkoly podle schopností žáků, všichni plní stejné úkoly bez ohledu na jejich vzdělávací možnosti.",
+        "evidence": "Vyučující nediferencovali úkoly s ohledem na aktuální vzdělávací možnosti a potřeby žáků, všichni plnili stejné úkoly."
+      },
+      {
+        "tag": "Slabá práce s chybou a kritickým myšlením",
+        "detail": "Učitelé se věnují málo cílené práci s chybou a nevedou žáky k využívání různých informačních zdrojů a kritickému myšlení.",
+        "evidence": "Téměř v žádné hodině se nevěnovali cíleně práci s chybou, jen výjimečně byli žáci vedeni k využívání dalších informačních zdrojů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé podporují aktivní zapojení žáků v teoretických hodinách? Jaké metody používají?",
+      "Jak se škola vypořádává s rozdílnými schopnostmi žáků – nabízí nějakou individuální podporu nebo doučování?",
+      "Jaké jsou konkrétní možnosti pro žáky se zájmem o mezinárodní mobilitu a zahraniční stáže?"
+    ],
+    "who_school_fits": [
+      "Žáci s vášní pro práci se zvířaty a zájmem o praktickou veterinární činnost – škola nabízí reálný provoz a moderní vybavení.",
+      "Motivovaní žáci schopní pracovat samostatně – vysoké výsledky maturit ukazují, že škola připravuje na závěrečné zkoušky kvalitně.",
+      "Žáci zajímající se o mezinárodní spolupráci – škola aktivně nabízí zahraniční stáže a projekty."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální pozornosti a diferenciované úkoly – teoretická výuka není dostatečně přizpůsobena různým tempům učení.",
+      "Žáci, kteří se lépe učí aktivní spoluprací a skupinovou prací – frontální výuka převažuje nad kooperativními metodami.",
+      "Žáci, kteří potřebují více zpětné vazby a sebehodnocení – tyto prvky nejsou v teoretické výuce dostatečně využívány."
+    ],
+    "plain_czech_summary": "Střední odborná škola veterinární v Hradci Králové je moderní školou s výborným vybavením a špičkovými výsledky maturit (neúspěšnost jen 5,3 %). Praktická výuka je na vysoké úrovni s odbornými učiteli a reálným provozem. Slabší stránkou je teoretická výuka, kde převažuje pasivní frontální výuka bez dostatečné diferenciace a aktivního zapojení žáků. Škola je vhodná pro motivované žáky se zájmem o veterinářství, ale méně pro ty, kteří potřebují více individuální podpory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně pozitivní – výsledky jsou dlouhodobě výborné a lepší než průměr v ČR",
+      "key_numbers": [
+        "2023: neúspěšnost 5,3 % (6 z 113 žáků)",
+        "2021–2022: neuspěl jen 1 žák z 167 přihlášených",
+        "Průměr ČR: 11,1 % neúspěšnosti"
+      ],
+      "evidence": "V roce 2023 hrubá neúspěšnost školy činila 5,3 %, což bylo podstatně nižší než průměrná hrubá neúspěšnost ve srovnatelné skupině oborů vzdělání v ČR (11,1 %)."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně – vede evidenci žáků se speciálními vzdělávacími potřebami, poskytuje konzultace a metodickou podporu",
+      "Speciální pedagožka – věnuje se žákům se specifickými poruchami učení a s odlišným mateřským jazykem",
+      "Školní psycholožka – zaměřuje se na individuální psychické problémy žáků a poskytuje konzultace",
+      "Karierová poradkyně – poskytuje individuální konzultace, zajišťuje besedy s absolventy a odborníky, spolupracuje s úřadem práce"
+    ],
+    "safety_climate": [
+      "Prevence rizikového chování je součástí vybraných předmětů a zajišťována metodičkou prevence",
+      "Škola pořádá adaptační kurz pro nové žáky (1. ročník) zaměřený na stmelení kolektivu",
+      "Sportovní kurz ve 2. ročníku včetně kurzu první pomoci",
+      "Zapojení do programu NTB 'nenech to být' pro žáky s osobními problémy",
+      "Spolupráce se Střední zdravotnickou školou v rámci programu Hrou proti AIDS"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s firmami a odbornými organizacemi (Agrární komora, Svaz včelařů, Asociace vzdělávacích zařízení)",
+      "Kooperace s odbornými pracovišti, kde žáci vykonávají odbornou praxi",
+      "Mezinárodní spolupráce – kurzy, krátkodobé a dlouhodobé vzdělávací aktivity a stáže v zahraničí",
+      "Cvičná škola pro studenty České zemědělské univerzity a Pedagogické fakulty Univerzity Hradec Králové",
+      "Centrum odborného vzdělávání, člen Agrární komory a Českého včelařského svazu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více odborné terminologie, která by mohla být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, jaká je absence žáků na škole.",
+      "Nejsou uvedeny konkrétní počty žáků se speciálními vzdělávacími potřebami nebo jejich podpora.",
+      "Není jasné, jak konkrétně škola řeší diferenciaci v teoretické výuce navzdory zjištěným nedostatkům."
+    ]
+  }
+}
+```

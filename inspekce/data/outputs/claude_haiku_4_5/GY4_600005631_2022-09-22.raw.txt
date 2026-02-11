@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "GY4_600005631_2022-09-22",
+  "school_profile": {
+    "school_type": "Hotelová škola a Gymnázium Radlická – střední odborná škola s obory Hotelnictví, Cestovní ruch a nově (od 9/2022) Gymnázium",
+    "inspection_period": "22.–23. září a 26.–27. září 2022",
+    "school_change_summary": "Od inspekce 2015 pokles žáků o 14 %. Nově přidáno čtyřleté gymnáziální vzdělávání. Vedení zúženo na ředitele a dva zástupce. Zavedeno průběžné hodnocení v modulech, což snížilo počet předčasně ukončujících vzdělávání o 70 %."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vzdělávání na vysoké úrovni",
+        "detail": "Výuka probíhá v reálných provozech (školní hotel, cestovní kanceláře) s moderními technologiemi a trendy.",
+        "evidence": "Až 40 % absolventů se uplatní přímo v oboru; žáci získávají praktické dovednosti v autentickém prostředí."
+      },
+      {
+        "tag": "Kvalitní materiální vybavení pro hotelnictví a cestovní ruch",
+        "detail": "Škola disponuje školním hotelem, fiktivní cestovní kanceláří, galerií a moderně vybaveným zázemím.",
+        "evidence": "Vedení průběžně obnovuje vybavení v souladu se soudobými trendy; nové počítačové učebny a technologie."
+      },
+      {
+        "tag": "Efektivní podpora slabších žáků",
+        "detail": "Zavedeno průběžné hodnocení a podpůrné mechanismy pro adaptaci prvňáků.",
+        "evidence": "Počet předčasně ukončujících vzdělávání klesl z 68 na 21 žáků; dvě třetiny žáků úspěšně maturují."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé vybavení pro přírodovědné předměty v gymnáziu",
+        "detail": "Chybí laboratoře; škola řeší pronájmem v sousedním gymnáziu.",
+        "evidence": "Inspekce označila materiálně technické zázemí pro přírodovědné předměty jako limitující."
+      },
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Všichni žáci plní stejné úkoly bez ohledu na jejich schopnosti; nadaní žáci nejsou dostatečně podporováni.",
+        "evidence": "Inspekce zjistila nižší míru diferenciace vzhledem k individuálním vzdělávacím potřebám."
+      },
+      {
+        "tag": "Problémy s neomluvenou absencí",
+        "detail": "Přestože se absence snížila, některé žáky se nedaří dostatečně motivovat k docházce.",
+        "evidence": "Inspekce konstatuje, že se nedaří eliminovat neomluvenou absenci některých žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá praktické vyučování v prvním ročníku a jak se žáci seznamují s reálnými pracovišti?",
+      "Jaké jsou plány na zlepšení vybavení pro přírodovědné předměty v novém gymnáziu?",
+      "Jak škola podporuje nadané žáky a jak se liší jejich výuka od ostatních?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a budoucí práci v hotelnictví či cestovním ruchu",
+      "Studenti, kteří se lépe učí v reálném prostředí a potřebují jasnou vazbu mezi teorií a praxí",
+      "Žáci, kteří potřebují individuální podporu a postupný nástup do středního vzdělávání"
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o přírodovědné obory – vybavení pro chemii, fyziku a biologii je omezené",
+      "Nadaní žáci – výuka není dostatečně diferencována pro jejich potřeby",
+      "Žáci s tendencí k absenci – škola má problémy s motivací některých studentů k docházce"
+    ],
+    "plain_czech_summary": "Hotelová škola Radlická je dobře vedená instituce se silným zaměřením na praktické vzdělávání v hotelnictví a cestovním ruchu. Žáci se učí v reálných provozech, což je velkou výhodou. Škola má kvalitní vybavení pro své hlavní obory a úspěšně snížila počet žáků, kteří předčasně skončí. Nově přidané gymnázium je slabší – chybí mu laboratoře pro přírodovědné předměty. Výuka by mohla být lépe přizpůsobena různým schopnostem žáků. Pokud vás zajímá praktické vzdělávání v hotelnictví, je to dobrá volba."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – dvě třetiny žáků, kteří studují od prvního ročníku, úspěšně maturují",
+      "key_numbers": [
+        "Obor Cestovní ruch dosahuje výrazně lepších výsledků než Hotelnictví",
+        "V celostátním srovnání: mírně horší výsledky z češtiny, mírně lepší z angličtiny",
+        "Výsledky žáků se speciálními potřebami jsou srovnatelné se žáky bez speciálních potřeb"
+      ],
+      "evidence": "Inspekce analyzovala výsledky vzdělávání ve sledovaném období a porovnala je s celostátním průměrem."
+    },
+    "absence": {
+      "trend": "Zlepšující se – důsledný přístup k omlouvání snížil počet zameškaných hodin",
+      "key_numbers": [
+        "Počet předčasně ukončujících vzdělávání klesl o 70 % (z 68 na 21 žáků v r. 2021/22)",
+        "V prvním ročníku 8 žáků skončilo pro neprospěch, 5 během roku",
+        "Ve vyšších ročnících opouští školu pouze jednotlivci"
+      ],
+      "evidence": "Zavedení průběžného hodnocení a podpůrných mechanismů se pozitivně promítlo do snížení neúspěšnosti."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní – identifikuje žáky s potřebou podpory",
+      "Individuální konzultace pro žáky s prospěchovými problémy – hledání motivace a správného stylu učení",
+      "Jazyková příprava pro žáky s odlišným mateřským jazykem",
+      "Podpora prvňáků při přechodu ze základní na střední školu a adaptaci na modulový systém"
+    ],
+    "safety_climate": [
+      "Elektronický systém u vstupu a celodenní služba ve vrátnici zvyšují bezpečnost",
+      "Žáci jsou vedeni k dodržování hygienických a bezpečnostních předpisů na pracovištích",
+      "Důsledný přístup k řešení problémového chování – pohovory s třídním učitelem, jednání s rodiči, výchovné komise"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se sociálními a zahraničními partnery zajišťuje praktické vyučování na smluvních pracovištích",
+      "Systém výměny žáků na odborných pracovištích – seznamují se s novými trendy a technologiemi",
+      "Kooperace se zřizovatelem (Hlavní město Praha) – zlepšování materiálních podmínek, propagace, zahraniční výjezdy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jak přesně se liší výuka nadaných žáků od ostatních – není jasné, zda vůbec existuje.",
+      "Není uvedeno, kolik procent žáků má speciální vzdělávací potřeby nebo odlišný mateřský jazyk.",
+      "Chybí informace o tom, jak dlouho trvá pronájem laboratoří v sousedním gymnáziu a jaké jsou plány na vlastní vybavení."
+    ]
+  }
+}
+```

@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600012522_2023-05-03",
+  "school_profile": {
+    "school_type": "Střední odborná škola (SOŠ) s obory Informační technologie a Ekonomika a podnikání, denní a dálková forma",
+    "inspection_period": "3. května až 12. května 2023",
+    "school_change_summary": "Výrazná personální obměna pedagogického sboru. Vysoký počet učitelů bez požadované kvalifikace a s krátkou pedagogickou praxí. Vedení školy operativně řešilo složitou personální situaci během inspekce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemné prostředí a atmosféra",
+        "detail": "Škola vytváří esteticky zařízené prostory s relaxačními prvky a podporuje otevřenou atmosféru mezi žáky a učiteli.",
+        "evidence": "Esteticky zařízené prostory školy (relaxační pohovky na chodbách) a uspořádání informačních ploch"
+      },
+      {
+        "tag": "Praktická výuka a projekty",
+        "detail": "Prakticky zaměřené hodiny a projektová výuka (EDUCreate) probíhají s vysokou aktivizací žáků a individuálním přístupem.",
+        "evidence": "V prakticky zaměřených hodinách pracovali žáci se zájmem, byl vytvářen prostor pro spolupráci i individuální přístup"
+      },
+      {
+        "tag": "Bohaté mimoškolní aktivity",
+        "detail": "Škola nabízí sportovní kluby, soutěže, charitativní akce a spolupráci s vysokými školami a regionálními firmami.",
+        "evidence": "Žáci dosahují velmi dobrých výsledků v odborných soutěžích, účast v charitativních akcích, dlouholetá spolupráce se sociálními partnery"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovaní učitelé",
+        "detail": "Vysoký počet pedagogů bez požadované kvalifikace a s minimální pedagogickou praxí negativně ovlivňuje kvalitu výuky.",
+        "evidence": "Vysoký počet vyučujících, kteří nesplňovali požadavek odborné kvalifikace, s krátkou pedagogickou praxí"
+      },
+      {
+        "tag": "Slabé výsledky v matematice",
+        "detail": "Matematika je dlouhodobě nejslabším předmětem. V prvním pololetí 2022/2023 měli žáci nejhorší výsledky právě z matematiky.",
+        "evidence": "V prvním pololetí aktuálního školního roku 2022/2023 byli žáci hodnoceni stupněm nedostatečný z matematiky přibližně ve dvou třetinách zjištěných případů"
+      },
+      {
+        "tag": "Nízké úspěšnosti u maturity",
+        "detail": "Hrubá neúspěšnost u maturitních zkoušek dosahuje 20 % v denním studiu a 40 % v dálkovém studiu.",
+        "evidence": "V denním studiu se hrubá neúspěšnost pohybovala okolo 20 %, v dálkovém studiu okolo 40 %"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní kroky podniká škola na stabilizaci pedagogického sboru a získávání kvalifikovaných učitelů?",
+      "Jak se škola zaměřuje na zlepšení výsledků z matematiky a jaké nové metody výuky plánuje zavést?",
+      "Jakou podporu nabízí škola žákům ohrožovaným školní neúspěšností, zejména v dálkovém studiu?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o praktickou výuku a projekty, kteří se lépe učí v interaktivním prostředí",
+      "Studenti, kteří chtějí kombinovat vzdělání se sportem (škola nabízí individuální podporu pro sportovce)",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje cílené podpůrné opatření"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími předpoklady v matematice by měli počítat s vyšší náročností a měli by zvážit doučování",
+      "Studenti dálkového studia – více než polovina žáků neprospívá, absence je vysoká a řada žáků studium zanechá",
+      "Žáci vyžadující intenzivní individuální přístup a diferenciovanou výuku – škola zatím minimálně zohledňuje individuální potřeby"
+    ],
+    "plain_czech_summary": "EDUCA Pardubice je střední odborná škola s příjemným prostředím a bohatou nabídkou praktické výuky a mimoškolních aktivit. Silnou stránkou jsou projektové hodiny a spolupráce s firmami. Hlavní problém je vysoký počet nekvalifikovaných učitelů s krátkou praxí, což negativně ovlivňuje kvalitu výuky. Dlouhodobě slabé jsou výsledky z matematiky a maturitních zkoušek, zejména v dálkovém studiu. Škola se snaží situaci řešit, ale zatím se jí nepodařilo stabilizovat pedagogický sbor."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Negativní – dlouhodobě nízké úspěšnosti",
+      "key_numbers": [
+        "Denní studium: hrubá neúspěšnost ~20 %",
+        "Dálkové studium: hrubá neúspěšnost ~40 %",
+        "Poslední ročník denního studia: 35 žáků ve dvou třídách"
+      ],
+      "evidence": "V rámci denního studia se hrubá neúspěšnost pohybovala okolo 20 %, v dálkovém studiu okolo 40 % u maturitních zkoušek 2022"
+    },
+    "absence": {
+      "trend": "Vyšší absence v dálkovém studiu, nižší v denním",
+      "key_numbers": [
+        "Denní studium: absence spíše nižší",
+        "Dálkové studium: vyšší míra absence vedoucí k předčasnému ukončení studia",
+        "Některé případy: žáci sami zanechali studium"
+      ],
+      "evidence": "V denním studiu je absence žáků ve výuce celkově spíše nižší. Vyšší míru absence měli žáci dálkového studia"
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence (jedna osoba bez specializačního studia) – identifikuje žáky s potřebou podpůrných opatření",
+      "Doučování a individuální konzultace pro žáky ohrožené neúspěchem",
+      "Adaptační kurz pro první ročníky, třídnické hodiny, schránka důvěry",
+      "Spolupráce se školskými poradenskými zařízeními"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra podporovaná učiteli",
+      "Otevřený systém řízení s efektivně rozdělenými kompetencemi",
+      "Měsíční schůzky vedení se zástupci tříd pro diskusi o návrzích a připomínkách žáků",
+      "Podpora sociálních vazeb prostřednictvím třídnických hodin a charitativních akcí"
+    ],
+    "partnerships_practice": [
+      "Dlouholetá spolupráce se sociálními partnery (vysoké školy, regionální firmy)",
+      "Firmy poskytují mentoring, vzdělávací materiály, umožňují exkurze a stáže",
+      "Úzká spolupráce se sportovními kluby (fotbal, hokej, florbal)",
+      "Projekt fiktivní firmy s tvorbou webových stránek"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Hlavní problémy jsou jasně identifikovány (nekvalifikovaní učitelé, slabé výsledky z matematiky a maturity). Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Přesné počty nekvalifikovaných učitelů nejsou uvedeny – pouze kvalitativní popis 'vysoký počet'",
+      "Konkrétní plány školy na řešení problémů nejsou v textu detailně rozpracovány",
+      "Není jasné, zda se situace s kvalifikací učitelů od inspekce zlepšila nebo zhoršila"
+    ]
+  }
+}
+```

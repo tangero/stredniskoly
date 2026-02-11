@@ -1,0 +1,119 @@
+{
+  "report_id": "GY8_610380061_2023-01-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:49:21.449470+00:00",
+  "run_finished_utc": "2026-02-09T16:49:50.633733+00:00",
+  "raw_file": "GY8_610380061_2023-01-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_610380061_2023-01-25",
+    "school_profile": {
+      "school_type": "Mateřská škola, základní škola a osmileté gymnázium při Židovské obci v Praze",
+      "inspection_period": "25. 1. 2023 − 27. 1. 2023 a 30. 1. 2023",
+      "school_change_summary": "Od inspekce v 2015 se škola rozšířila o druhý stupeň ZŠ, zvýšila počet žáků na maximum 393, rozšířila pedagogický sbor a výrazně zlepšila prostorové a materiální podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jedinečný koncept vzdělávání",
+          "detail": "Škola propojuje kvalitní všeobecné vzdělání s židovskou kulturou, tradicemi a hebrejštinou v přátelské rodinné atmosféře.",
+          "evidence": "Realizuje \"jedinečný vzdělávací systém od předškolního stupně až po gymnázium v duchu židovských tradic\""
+        },
+        {
+          "tag": "Čtenářská gramotnost a tvořivost",
+          "detail": "Systematická podpora čtenářství a tvořivého psaní vedoucí k pokročilým čtenářským dovednostem.",
+          "evidence": "\"Systémová podpora čtenářské gramotnosti napříč předměty, rozvoj pokročilých čtenářských dovedností formou prožitkového učení\""
+        },
+        {
+          "tag": "Komplexní podpora žáků",
+          "detail": "Psychologická, inkluzivní a preventivní péče pro žáky se speciálními potřebami a cizinci.",
+          "evidence": "\"Zajišťuje komplexní psychologickou, inkluzivní a preventivní péči (59 žáků se speciálními vzdělávacími potřebami, 70 žáků s odlišným mateřským jazykem)\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Grafomotorická prevence v MŠ",
+          "detail": "V mateřské škole není systematicky realizována prevence správného držení psacího náčiní a sezení dětí.",
+          "evidence": "\"Grafomotorická prevence však nebyla realizována systematicky. Pedagožky nekorigovaly nesprávné sezení dětí a špatné držení psacího náčiní\""
+        },
+        {
+          "tag": "Ergonomie v MŠ",
+          "detail": "Nedostatečný počet vhodného sedacího nábytku přizpůsobeného výšce dětí ve věkově smíšených třídách.",
+          "evidence": "\"Negativním zjištěním je nedostatečný počet vhodného sedacího nábytku, který by zohledňoval různou výšku dětí\""
+        },
+        {
+          "tag": "Jazyková kultura ve výuce",
+          "detail": "V některých hodinách byla zaznamenána nižší jazyková kultura a používání nespisovné češtiny.",
+          "evidence": "\"Nižší míra jazykové kultury ve vyučování a používání nespisovné češtiny některými učiteli a žáky\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje na grafomotorické prevenci a správném sezení dětí v mateřské škole?",
+        "Jaké jsou konkrétní výsledky žáků při přijetí na vysoké školy a jak se škola podílí na jejich přípravě?",
+        "Jak je zajištěna individuální péče pro žáky s odlišným mateřským jazykem a jak se jim daří v češtině?"
+      ],
+      "who_school_fits": [
+        "Rodiny, které chtějí, aby jejich děti poznaly židovskou kulturu, tradice a hebrejštinu v kvalitním vzdělávacím prostředí",
+        "Žáci se speciálními vzdělávacími potřebami nebo cizinci, kterým škola poskytuje komplexní podporu",
+        "Děti a žáci, kterým vyhovuje menší počet žáků ve třídách a individualizovaný přístup"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají, že jejich dítě bude v mateřské škole systematicky připravováno na psaní (grafomotorická prevence není dostatečná)",
+        "Rodiny, které si nepřejí, aby jejich dítě bylo vystaveno židovské kultuře a náboženství",
+        "Žáci, kteří potřebují intenzivní nápravu jazykové kultury a správné češtiny"
+      ],
+      "plain_czech_summary": "Lauderova škola je unikátní vzdělávací instituce, která kombinuje kvalitní vzdělání s židovskou kulturou a hebrejštinou. Silnými stránkami jsou přátelská atmosféra, podpora čtenářství a tvořivosti, komplexní péče o žáky se speciálními potřebami a výborné výsledky maturit. Slabší je grafomotorická prevence v mateřské škole a ergonomie nábytku. Škola se hodí pro rodiny sdílející židovské hodnoty a pro žáky, kterým vyhovuje individualizovaný přístup v menších třídách."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi dobrý",
+        "key_numbers": [
+          "Všichni konající žáci složili maturitu úspěšně v posledních třech letech",
+          "38–47 % vyznamenaných žáků",
+          "Srovnatelné výsledky s danou skupinou oborů, nejvyšší úspěšnost v cizích jazycích"
+        ],
+        "evidence": "\"Ve sledovaném období posledních tří školních let složili všichni konající žáci maturitní zkoušku úspěšně, podíl vyznamenaných se pohyboval v rozmezí 38 % - 47 %\""
+      },
+      "absence": {
+        "trend": "Velmi nízká v ZŠ, zvýšená v některých třídách vyššího gymnázia",
+        "key_numbers": [
+          "V ZŠ se nevyskytla žádná neomluvená absence",
+          "Absence v nižším gymnáziu srovnatelná se ZŠ",
+          "Nárůst absence v některých třídách vyššího gymnázia v roce 2021/2022 (zdravotní důvody, odchod do zahraničí)"
+        ],
+        "evidence": "\"Ve sledovaném období se v ZŠ nevyskytla žádná neomluvená absence, počet omluvených hodin žáků nižšího gymnázia je srovnatelný se základní školou\""
+      },
+      "support_services": [
+        "Školní psycholožka a sociální pedagožka (rozšíření od posledního hodnocení)",
+        "Asistenti pedagoga (8 osob) pracující s žáky se speciálními potřebami",
+        "Logopedická prevence v MŠ a klinický logoped na doporučení",
+        "Speciální pedagožka a psycholožka pro předškolní přípravu",
+        "Poradenské služby včetně kariérního poradenství a testů profesní orientace"
+      ],
+      "safety_climate": [
+        "Vchod do budovy zajištěn dohledem recepčního a ostrahy",
+        "Elektronické zabezpečení budovy",
+        "Spíše ojedinělé projevy problémového chování řešeny v souladu se stanovenými postupy",
+        "Výchovná opatření převažují nad kázeňskými opatřeními",
+        "Soustavné výchovné působení eliminuje rizikové chování"
+      ],
+      "partnerships_practice": [
+        "ZŠ je fakultní školou Pedagogické fakulty UK, gymnázium Filozofické fakulty UK",
+        "Partnerské vztahy se zahraničními školami a mezinárodní projekty",
+        "Součást sítě škol podporovaných Nadací R. S. Laudera",
+        "Spolupráce s vysokými školami a vzdělávacími instituty",
+        "Kooperace s externími subjekty pro primární prevenci a podporu speciálních potřeb"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní fakta, ale místy je psána úřednickým stylem. Hlavní informace pro rodiče jsou jasné, ale vyžadují určitou interpretaci.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků v jednotlivých ročnících gymnázia, pouze celkový počet 163 žáků",
+        "Není jasné, jaký je přesný podíl žáků ZŠ, kteří pokračují v gymnáziu (uvedeno \"přibližně čtvrtina\")",
+        "Chybí informace o počtu učitelů v jednotlivých předmětech a jejich kvalifikaci"
+      ]
+    }
+  }
+}

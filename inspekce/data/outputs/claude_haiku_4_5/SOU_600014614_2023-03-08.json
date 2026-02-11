@@ -1,0 +1,116 @@
+{
+  "report_id": "SOU_600014614_2023-03-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:45:22.426537+00:00",
+  "run_finished_utc": "2026-02-09T16:45:48.059415+00:00",
+  "raw_file": "SOU_600014614_2023-03-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600014614_2023-03-08",
+    "school_profile": {
+      "school_type": "Střední škola gastronomie, hotelnictví a lesnictví (SŠ gastronomie)",
+      "inspection_period": "8. až 10. března 2023",
+      "school_change_summary": "Škola rozšířila nabídku o obor Masér sportovní a rekondiční. Došlo k personálním změnám na pozici zástupce ředitele v místě Přívoz a zřízení pozice vedoucího učitele. Počet žáků mírně klesl o 11 % od poslední inspekce."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola má systematický systém péče o žáky ohrožené neúspěchem včetně doučování, konzultací a plánů pedagogické podpory.",
+          "evidence": "Škola realizuje plány pedagogické podpory, doučování a individuální konzultace pod vedením výchovné poradkyně a speciálního pedagoga."
+        },
+        {
+          "tag": "Kvalitní učitelé",
+          "detail": "Všichni učitelé předmětů maturitní zkoušky mají odbornou kvalifikaci a škola podporuje jejich další vzdělávání.",
+          "evidence": "Osm učitelů splňuje odbornou kvalifikaci, škola organizuje vzdělávací aktivity v tématech formativního hodnocení a práce s nadanými žáky."
+        },
+        {
+          "tag": "Příjemné prostředí",
+          "detail": "Výuka probíhá v příjemné atmosféře, učitelé projevují zájem o žáky a oceňují jejich pokroky.",
+          "evidence": "Inspektoři zaznamenali, že učitelé průběžně oceňují dobré výkony žáků pochvalou nebo známkou."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence v nástavbovém studiu",
+          "detail": "Žáci dvouletých oborů (Mechanizace, Podnikání) mají extrémně vysokou absenci, někteří přesahují 500 hodin za rok.",
+          "evidence": "Ve školním roce 2021/2022 průměrná absence v nástavbě činila 323 hodin na žáka, neúspěšní žáci se podíleli na 96 % celkové absence."
+        },
+        {
+          "tag": "Velmi nízká úspěšnost v nástavbovém studiu",
+          "detail": "V oborech Mechanizace a Podnikání neuspěje 80-83 % žáků u maturitní zkoušky a mnoho jich studium předčasně opustí.",
+          "evidence": "V oboru Podnikání hrubá neúspěšnost dosáhla 80 % v roce 2022, v oboru Mechanizace 83 %. Úspěšnost ukončení: Podnikání 11 %, Mechanizace 13 %."
+        },
+        {
+          "tag": "Slabé výsledky v některých čtyřletých oborech",
+          "detail": "Obory Hotelnictví a Ekologie vykazují horší výsledky maturitní zkoušky než celorepublikový průměr.",
+          "evidence": "Hrubá neúspěšnost v Hotelnictví 24 %, v Ekologii 27 %, celorepublikový průměr je nižší."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky pro studium?",
+        "Jaké jsou reálné šance na úspěšné složení maturitní zkoušky v jednotlivých oborech?",
+        "Jak se liší podpora žáků v čtyřletých oborech versus dvouletém nástavbovém studiu?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o gastronomii a hotelnictví s dobrými studijními výsledky a pravidelnou docházkou",
+        "Žáci, kteří potřebují individuální podporu a jsou ochotni ji aktivně využívat",
+        "Žáci se zájmem o ekologii a zemědělství, kteří mají stabilní motivaci"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s nižšími studijními výsledky zvažující dvouletý nástavbový obor (Mechanizace, Podnikání) – riziko vysoké absence a neúspěchu",
+        "Žáci se slabšími znalostmi anglického jazyka – škola zavedla povinnou zkoušku z angličtiny do přijímacího řízení",
+        "Žáci bez jasné motivace a tendencí k absencím – v nástavbě je absence hlavní příčinou neúspěchu"
+      ],
+      "plain_czech_summary": "Střední škola gastronomie v Bzenci nabízí kvalitní výuku s podporou slabších žáků. Učitelé jsou kvalifikovaní a vytváří příjemné prostředí. Problém je v dvouletém nástavbovém studiu (Mechanizace, Podnikání), kde žáci mají extrémně vysokou absenci a 80 % z nich neuspěje u maturitní zkoušky. Čtyřleté obory (Hotelnictví, Ekologie) jsou stabilnější, ale výsledky jsou pod průměrem. Škola se snaží podporovat žáky, ale opatření v nástavbě zatím nefungují."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Čtyřleté obory se zlepšily, nástavbové obory se zhoršily",
+        "key_numbers": [
+          "Hotelnictví: 24 % hrubá neúspěšnost (pod průměrem)",
+          "Ekologie: 27 % hrubá neúspěšnost (pod průměrem)",
+          "Podnikání: 80 % neúspěšnost v 2022 (vzrostla z 70 % v 2019)",
+          "Mechanizace: 83 % neúspěšnost v 2022 (mírně poklesla z 86 % v 2019)"
+        ],
+        "evidence": "Analýza výsledků maturitní zkoušky za roky 2020-2022. V nástavbě: Podnikání 11 % úspěšnost ukončení, Mechanizace 13 % úspěšnost ukončení."
+      },
+      "absence": {
+        "trend": "Kriticky vysoká v nástavbovém studiu, přetrvávající problém",
+        "key_numbers": [
+          "Nástavba 2021/2022: průměr 323 hodin/žáka za rok",
+          "Nástavba 2022/2023 (1. pololetí): 112 hodin/žáka za pololetí",
+          "Neúspěšní žáci nástavby se podíleli na 96 % celkové absence"
+        ],
+        "evidence": "Absence je hlavní příčinou vysoké neúspěšnosti. Škola eviduje žáky s nadměrnou absencí, ale opatření (dopisy, pohovory) nejsou dostatečně účinná."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovný poradce, školní metodik prevence, 2 speciální pedagogové, školní psycholog",
+        "Doučování skupinové i individuální v rámci Národního plánu obnovy",
+        "Plány pedagogické podpory pro žáky s rizikem neúspěchu",
+        "Individuální konzultace a pohovory se žáky a zákonnými zástupci",
+        "Elektronický výukový systém pro podporu angličtiny"
+      ],
+      "safety_climate": [
+        "Výuka probíhá v příjemné pracovní atmosféře",
+        "Učitelé projevují zájem o žáky a jejich výsledky",
+        "V 1. pololetí 2022/2023 všichni žáci hodnoceni stupněm velmi dobré z chování"
+      ],
+      "partnerships_practice": [
+        "Škola má domov mládeže a školní jídelnu",
+        "Žáci jsou motivováni k mezinárodním jazykovým zkoušením (B2, C1 úrovně)",
+        "Nadaní žáci se prezentují v soutěžích své odborné profilace"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla. Hlavní problémy jsou jasně identifikovány (vysoká absence v nástavbě, nízká úspěšnost). Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace srozumitelné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, proč přesně žáci nástavby chybějí – zda jde o zdravotní problémy, práci, nezájem nebo jiné důvody",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými obory a místy poskytování vzdělávání",
+        "Chybí informace o tom, jak se škola vypořádá s doporučením inspekce ukončit nástavbové obory"
+      ]
+    }
+  }
+}

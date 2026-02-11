@@ -1,0 +1,99 @@
+{
+  "report_id": "SOS_600005071_2022-03-15",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola stavební",
+    "inspection_period": "15. 3. 2022 − 18. 3. 2022",
+    "school_change_summary": "Škola od roku 2014 zvýšila počet žáků o více než třetinu na 682, zavedla vlastní jídelnu a modernizuje vybavení včetně technologií BIM."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a technologie",
+        "detail": "Škola nabízí nadstandardní vybavení včetně moderních technologií, 3D tisku a softwaru.",
+        "evidence": "„Nově vybudovaná učebna... včetně využití systému BIM-technologií... a učebna pro práci v 3D-prostoru“"
+      },
+      {
+        "tag": "Atmosféra a vztahy",
+        "detail": "Ve škole panuje příjemná atmosféra založená na partnerském přístupu a vzájemném respektu.",
+        "evidence": "„Společným znakem... byla příjemná pracovní atmosféra založená na partnerském přístupu učitelů k žákům“"
+      },
+      {
+        "tag": "Uplatnění a studium",
+        "detail": "Absolventi mají výborné uplatnění v praxi a vysokou úspěšnost při přijetí na vysoké školy.",
+        "evidence": "„Téměř 85 % absolventů pokračuje ve studiu v terciárním vzdělávání.“, „výborné uplatnění na trhu práce“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individuální přístup",
+        "detail": "Výuka není vždy dostatečně diferencována podle potřeb nadaných či slabších žáků.",
+        "evidence": "„Výuka však nebyla diferencována vzhledem k individuálním vzdělávacím potřebám všech žáků“"
+      },
+      {
+        "tag": "Metodika výuky",
+        "detail": "V některých hodinách chybí efektivní časové řízení a závěrečné shrnutí látky.",
+        "evidence": "„Méně efektivní časové a organizační rozvržení činností a opomíjení didaktického závěru“"
+      },
+      {
+        "tag": "Zapojení žáků",
+        "detail": "Převaha frontální výuky může vést k nerovnoměrnému zapojení studentů do dění.",
+        "evidence": "„Převaha činností vyučujících však v některých případech vedla k nerovnoměrnému zapojení žáků“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak učitelé individuálně přistupují k nadaným žákům nebo k žákům s potížemi v učení?",
+      "Jakým způsobem je využívána nová technologie BIM a 3D tisk v běžných hodinách?",
+      "Které konkrétní firmy spolupracují se školou při odborném výcviku a stážích?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří chtějí pokračovat na technické VŠ (zejména ČVUT) nebo v architektuře.",
+      "Pro zájemce o praktické dovednosti v oboru stavebnictví s využitím moderních technologií.",
+      "Pro žáky, kterým vyhovuje partnerský přístup učitelů a příjemné sociální klima."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří vyžadují silně individualizovaný přístup nebo vlastní tempo výuky.",
+      "Pro žáky, kteří upřednostňují aktivní a kooperativní formy výuky před frontálním vyučováním."
+    ],
+    "plain_czech_summary": "SPŠ stavební Gočára si udržuje vysoký standard a popularitu (téměř plná kapacita). Mezi hlavní přednosti patří výborné technické vybavení (BIM, 3D), silné vazby na praxi a vysoký podíl absolventů na VŠ. Škola klade důraz na pořádek a bezpečnost. Slabinou může být méně diferencovaná výuka, která nebere příliš ohled na individuální potřeby nadanějších či pomalejších žáků, a občasná neefektivita v řízení vyučovacích hodin."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní výsledky, úspěšnost srovnatelná nebo vyšší než celorepublikový průměr.",
+      "key_numbers": [
+        "85 % absolventů pokračuje na VŠ",
+        "Úspěšnost u maturit srovnatelná/vyšší než ČR průměr",
+        "Nízký počet neomluvených hodin"
+      ],
+      "evidence": "„Čistá úspěšnost žáků... byla... srovnatelná nebo vyšší než úspěšnost žáků dané skupiny oborů“"
+    },
+    "absence": {
+      "trend": "Nízká absence, zanedbatelný počet neomluvených hodin.",
+      "key_numbers": [
+        "Nízký průměr zameškaných hodin",
+        "Zanedbatelné neomluvené hodiny",
+        "Vysoký počet žáků s uzavřenou klasifikací včas"
+      ],
+      "evidence": "„Nízké průměrné počty zameškaných hodin na žáka a zanedbatelné počty neomluvených hodin“"
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště (výchovná, kariérová poradkyně, prevence).",
+      "Možnost získání certifikátů (FCE, Autodesk) a řidičského oprávnění.",
+      "Nabídka doučování a individuálních konzultací pro žáky s problémy."
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti a funkční bezpečnostní opatření (kamery, vrátnice).",
+      "Funkční preventivní strategie a důvěra mezi žáky a učiteli.",
+      "Příjemná pracovní atmosféra založená na vzájemném respektu."
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce s ČVUT (fakultní škola) a odbornou praxí.",
+      "Aktivní zapojení do projektů Erasmus+ a zahraničních stáží.",
+      "Spolupráce se zřizovatelem při zlepšování materiálních podmínek."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a obsahuje konkrétní příklady i data.",
+    "uncertainty_notes": []
+  }
+}

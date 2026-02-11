@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600014517_2022-05-24",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště s internátem a domovem mládeže",
+    "inspection_period": "24. května až 27. května 2022",
+    "school_change_summary": "Nový ředitel od srpna 2019. Škola nabízí 10 oborů vzdělání včetně 2 maturitních a 4 učebních oborů. Počet žáků mírně vzrostl na 198 ve 16 třídách. Identifikováno 51 žáků se speciálními vzdělávacími potřebami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní odborný výcvik",
+        "detail": "Individuální přístup v gastronomii s důrazem na procvičování dovedností a bezpečnost práce.",
+        "evidence": "Žáci oborů Kuchař-číšník a Stravovací služby prokazovali velmi dobrou úroveň dovedností."
+      },
+      {
+        "tag": "Podpora speciálních potřeb",
+        "detail": "Velmi dobře nastavený systém práce školního poradenského pracoviště pro žáky ve speciálních třídách.",
+        "evidence": "Všichni žáci speciálních tříd uspěli v závěrečné zkoušce v posledních třech letech."
+      },
+      {
+        "tag": "Příjemné školní klima",
+        "detail": "Dlouhodobá preventivní strategie vedla k prosociálnímu chování a respektu mezi žáky.",
+        "evidence": "Inspektoři zaznamenali příjemné školní klima a neformální komunikaci mezi žáky a učiteli."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Přetrvává vysoká omluvená i neomluvená absence, zejména v praktickém vyučování a u učebních oborů.",
+        "evidence": "Absence je jednou z hlavních příčin školní neúspěšnosti a předčasných odchodů ze vzdělávání."
+      },
+      {
+        "tag": "Předčasné odchody ze studia",
+        "detail": "Škole se nedaří snižovat počet žáků, kteří předčasně opustí vzdělávání.",
+        "evidence": "Neprospěch vedl k předčasným odchodům zejména v oborech Podnikání, Mechanik opravář a Zedník."
+      },
+      {
+        "tag": "Slabší výsledky v některých předmětech",
+        "detail": "Nízká úroveň znalostí v matematice a zhoršené výsledky maturitní zkoušky v roce 2020/2021.",
+        "evidence": "V matematice byla úroveň znalostí nízká vzhledem k požadavkům maturitního oboru."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola zavádí proti vysoké absenci žáků a jak je vyhodnocuje?",
+      "Jak škola podporuje žáky ohrožené školním neúspěchem a jaké jsou výsledky těchto intervencí?",
+      "Jaké aktivity nabízí domov mládeže a internát pro přípravu na vyučování?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické obory (gastronomie, stavebnictví, opravárenství) s individuálním přístupem",
+      "Žáci se speciálními vzdělávacími potřebami, kterým je věnována kvalitní podpora",
+      "Žáci z okolí, kteří mohou využít internát nebo domov mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s tendencí k absenci – škola má problém s motivací a sledováním absence",
+      "Žáci slabší v matematice – výuka matematiky postrádá diferenciaci a individualizaci",
+      "Žáci z učebních oborů – vyšší riziko neomluvené absence a předčasného odchodu"
+    ],
+    "plain_czech_summary": "Střední odborné učiliště v Brumovské ulici je solidní školou s příjemným klimatem a kvalitní podporou pro žáky se speciálními potřebami. Silnou stránkou je praktický výcvik, zejména v gastronomii. Hlavním problémem je vysoká absence žáků, která vede k neúspěchu a odchodům ze studia. Škola by měla lépe sledovat účinnost svých opatření a více se zaměřit na motivaci žáků k docházce. Výuka není vždy dostatečně aktivizující a chybí diferenciace pro žáky s různými schopnostmi."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se trend s výkyvy",
+      "key_numbers": [
+        "2018/2019 a 2019/2020: výsledky významně převyšovaly celorepublikový průměr",
+        "2020/2021: zhoršené výsledky, neodpovídaly celorepublikovému průměru"
+      ],
+      "evidence": "Obor Podnikání dosahoval velmi dobrých výsledků, ale v posledním roce se výsledky zhoršily."
+    },
+    "absence": {
+      "trend": "Vysoká a přetrvávající",
+      "key_numbers": [
+        "Vysoká omluvená absence v praktickém vyučování (Zednické práce, Malířské práce)",
+        "Vysoká neomluvená absence u Mechanika opravářů a Zedníků",
+        "Absence je hlavní příčinou školní neúspěšnosti"
+      ],
+      "evidence": "Absence je jednou z hlavních příčin školní neúspěšnosti i následných odchodů z poskytovaného vzdělávání."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s kvalitní podporou speciálních potřeb",
+      "Pedagogická podpora pro 2 žáky a individuální výchovný plán pro 1 žáka",
+      "2 asistenti pedagoga pro podporu vzdělávání",
+      "Konzultace v jednotlivých předmětech pro žáky ohrožené neúspěchem"
+    ],
+    "safety_climate": [
+      "Příjemné školní klima s prosociálním chováním žáků",
+      "Dlouhodobě uplatňovaná preventivní strategie",
+      "Kamerový systém pro zajištění bezpečného prostředí",
+      "Neformální a otevřená komunikace mezi žáky a učiteli"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s regionální automobilkou podporující praktické vzdělání",
+      "Projekty podporující praktické vyučování a jazykovou vybavenost",
+      "Spolupráce se školskými poradenskými zařízeními",
+      "Zapojení do projektů pro modernizaci učebních pomůcek"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a evidence. Hlavní problémy jsou jasně identifikovány (absence, slabá diferenciace, nedostatečná analýza příčin). Silné stránky jsou také konkrétně popsány.",
+    "uncertainty_notes": [
+      "Není jasné, jaké konkrétní opatření škola již zavedla proti absenci a jaké jsou jejich výsledky",
+      "Chybí detailnější informace o počtech žáků, kteří předčasně opustili vzdělávání",
+      "Není specifikováno, jak se liší absence mezi jednotlivými obory a ročníky"
+    ]
+  }
+}
+```

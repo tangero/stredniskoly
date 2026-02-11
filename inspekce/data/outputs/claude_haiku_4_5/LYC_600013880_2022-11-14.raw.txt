@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600013880_2022-11-14",
+  "school_profile": {
+    "school_type": "Střední škola - Hotelová škola s.r.o., soukromá, obor Hotelnictví (65-42-M/01)",
+    "inspection_period": "14. listopadu 2022 až 16. listopadu 2022",
+    "school_change_summary": "Počet žáků stoupá (223 žáků v 10 třídách k 30. 9. 2022). Škola postupně zlepšuje materiální vybavení, nově zřídila školní knihovnu se studovnou. Praktické vyučování probíhá u smluvních partnerů - hotelů a cestovních kanceláří."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství s praxí",
+        "detail": "Spolupráce s hotely a cestovními kancelářemi zajišťuje kvalitní praktické vyučování a kontakt s reálným pracovním prostředím.",
+        "evidence": "Převážná část praktického vyučování realizována u smluvních partnerů, pravidelné odborné exkurze a stáže."
+      },
+      {
+        "tag": "Mezinárodní mobilita",
+        "detail": "Žáci se účastní zahraničních stáží a projektů, které rozvíjejí jejich jazykové dovednosti a komunikační schopnosti.",
+        "evidence": "Zahraniční stáže v Německu, Itálii, Rakousku a Francii, projekt Erasmus+."
+      },
+      {
+        "tag": "Zlepšování podmínek",
+        "detail": "Škola investuje do modernizace - nové učebny s ICT, školní knihovna se studovnou.",
+        "evidence": "Vedení školy průběžně vyhodnocuje a zlepšuje materiální podmínky pro vzdělávání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky v maturitě",
+        "detail": "Výsledky v cizích jazycích jsou pod průměrem podobných škol, celkové výsledky jsou nižší.",
+        "evidence": "Výsledky ve společné části maturitní zkoušky byly v posledních třech letech pod průměrem oborové skupiny."
+      },
+      {
+        "tag": "Nedostatečná podpora slabších žáků",
+        "detail": "Škola nemá systematickou strategii pro žáky ohrožené školním neúspěchem, chybí doučování a konzultace.",
+        "evidence": "Strategie předcházení školní neúspěšnosti nebyla jednoznačně stanovena, žáci nemohou využít doučování."
+      },
+      {
+        "tag": "Slabá kontrola kvality výuky",
+        "detail": "Vedení školy neposkytuje učitelům systematickou zpětnou vazbu o kvalitě jejich výuky.",
+        "evidence": "Hospitační činnost prováděna, ale není zřejmé, jakou dostávají vyučující zpětnou vazbu o kvalitě pedagogického procesu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s učením? Nabízíte doučování nebo konzultace?",
+      "Jaké jsou výsledky vašich absolventů v maturitě, zvlášť v cizích jazycích? Jak se chystáte zlepšit výsledky?",
+      "Jak probíhá praktické vyučování u partnerských hotelů? Jak se zajišťuje bezpečnost a kvalita výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří mají zájem o hotelnictví a cestovní ruch a chtějí získat praktické zkušenosti v reálném prostředí.",
+      "Studenti, kteří se zajímají o mezinárodní mobilitu a jazykové dovednosti - škola nabízí zahraniční stáže.",
+      "Žáci, kteří se lépe učí v praktickém prostředí a potřebují propojení teorie s reálnými příklady z praxe."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v jazycích - výuka cizích jazyků není dostatečně zaměřena na komunikativní dovednosti.",
+      "Studenti, kteří potřebují intenzivní podporu a doučování - škola tuto podporu v dostatečné míře neposkytuje.",
+      "Žáci se speciálními vzdělávacími potřebami - systém jejich podpory není jednoznačně nastavený a pedagogové nemají vždy přehled o jejich potřebách."
+    ],
+    "plain_czech_summary": "Hotelová škola je soukromá střední škola zaměřená na hotelnictví s rostoucím počtem žáků. Silnou stránkou je spolupráce s hotely a cestovními kancelářemi, která dává studentům praktické zkušenosti, a mezinárodní projekty. Slabinou jsou podprůměrné výsledky v maturitě, zvlášť v cizích jazycích, a nedostatečná podpora žáků s problémy v učení. Vedení školy by mělo zlepšit kontrolu kvality výuky a vytvořit jasný systém pomoci slabším studentům."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nižší úroveň",
+      "key_numbers": [
+        "Výsledky pod průměrem oborové skupiny v posledních třech letech",
+        "Horší výsledky v cizích jazycích",
+        "Srovnatelná nižší úroveň v průběhu posledních tří let"
+      ],
+      "evidence": "Celkové výsledky vzdělávání žáků vykazovaly v průběhu posledních tří let srovnatelnou nižší úroveň. Výsledky ve společné části maturitní zkoušky byly pod průměrem."
+    },
+    "absence": {
+      "trend": "Kontrolovaná",
+      "key_numbers": [
+        "Pravidla pro omlouvání absence nastavena ve školním řádu",
+        "Absence 30 % v předmětu vyvolá přezkoušení žáka",
+        "Škola věnuje trvalou pozornost absenci žáků"
+      ],
+      "evidence": "Škola věnuje trvalou pozornost absenci žáků a pravidla pro její omlouvání jsou nastavena ve školním řádu, který stanovuje nutnost přezkoušení žáka."
+    },
+    "support_services": [
+      "Jeden pedagogický pracovník zajišťuje veškeré poradenské služby (výchovné a karierní poradenství, primární prevenci)",
+      "Výchovný poradce zajišťuje administrativu pro žáky se SVP a žáky s odlišným mateřským jazykem",
+      "Poradce nemá specializované vzdělání v oblasti poradenství - negativně se to odrazilo v orientaci v problematice",
+      "Metodika prevence realizuje aktivity, což se projevuje v nízké míře výskytu rizikových jevů"
+    ],
+    "safety_climate": [
+      "Příznivá pracovní atmosféra v převážné části teoretického vyučování",
+      "Žáci měli osvojená pravidla práce, vyučovací hodiny nebyly narušovány kázeňskými problémy",
+      "Rezervy v dodržování hygienických pravidel při práci v kuchyni - zjištěný nedostatek",
+      "Nejednotně stanovená evidence docházky žáků na pracovištích smluvních partnerů"
+    ],
+    "partnerships_practice": [
+      "Poradní sbor tvořen zástupci školy a zástupci firem - zajišťuje spolupráci se zaměstnavateli",
+      "Praktické vyučování probíhá u smluvních partnerů - hotelů a cestovních kanceláří",
+      "Pravidelné odborné exkurze a stáže pro kontakt s reálným pracovním prostředím",
+      "Zahraniční stáže v Německu, Itálii, Rakousku a Francii v rámci projektů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a srozumitelná. Jasně identifikuje silné stránky (partnerství, mezinárodní mobilita) i slabiny (výsledky v maturitě, podpora slabších žáků). Doporučení jsou konkrétní. Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta žáků s problémy v učení nebo počty těch, kteří neprospívají",
+      "Není jasné, jak se konkrétně liší výsledky v jednotlivých cizích jazycích",
+      "Chybí informace o tom, kolik žáků školu nedokončí nebo opakuje ročník"
+    ]
+  }
+}
+```

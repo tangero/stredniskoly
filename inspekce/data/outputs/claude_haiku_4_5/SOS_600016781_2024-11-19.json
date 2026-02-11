@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600016781_2024-11-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:09:05.076235+00:00",
+  "run_finished_utc": "2026-02-09T16:09:35.938904+00:00",
+  "raw_file": "SOS_600016781_2024-11-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600016781_2024-11-19",
+    "school_profile": {
+      "school_type": "Střední škola a Vyšší odborná škola s obory zaměřenými na strojírenství, automechaniku a logistiku",
+      "inspection_period": "19. 11. 2024 - 25. 11. 2024",
+      "school_change_summary": "Od inspekce v roce 2019 došlo ke změně vedení, renovaci budov, rozšíření oborů (nový obor Logistické a finanční služby) a zrušení domova mládeže. Počet žáků mírně vzrostl na 416 žáků ve 22 třídách."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola efektivně spojuje teoretické znalosti s praktickými dovednostmi a úzce spolupracuje s firmami, což připravuje žáky na reálný pracovní trh.",
+          "evidence": "Propojování teoretických poznatků s praktickými zkušenostmi vede k rozvoji odborných kompetencí a lepšímu uplatnění absolventů."
+        },
+        {
+          "tag": "Silné partnerství se zaměstnavateli",
+          "detail": "Dlouhodobá spolupráce s oborově blízkými firmami a odborníky z praxe podporuje kvalitu vzdělávání.",
+          "evidence": "Praktické vyučování probíhá na školních pracovištích i u smluvních partnerů, škola není schopna pokrýt poptávku zaměstnavatelů."
+        },
+        {
+          "tag": "Bezpečnost a péče o žáky",
+          "detail": "Škola má účinný systém bezpečnosti, nízkou úrazovost a funkční poradenské služby pro žáky se speciálními potřebami.",
+          "evidence": "Čipový systém u vchodů, důsledné dodržování bezpečnosti při práci, dva výchovní poradci a školní psycholog."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší rozvoj kritického myšlení",
+          "detail": "Výuka se zaměřuje především na výklad učitele a hotové informace, žáci pracují jen s jedním zdrojem a málo se učí myslet kriticky.",
+          "evidence": "Žáci nebyli vedeni k vyhledávání a vyhodnocování informací z různých zdrojů, chybí podpora čtenářské gramotnosti."
+        },
+        {
+          "tag": "Nedostatečná individualizace výuky",
+          "detail": "Učitelé málo přizpůsobují výuku individuálním potřebám žáků, chybí diferenciace pro nadané i slabší žáky.",
+          "evidence": "Diferenciace podle individuálních potřeb nebyla aplikována v dostatečné míře, opatření doporučená poradenskými zařízeními nejsou konzistentně realizována."
+        },
+        {
+          "tag": "Slabé formativní hodnocení",
+          "detail": "Žáci nedostávají dostatečnou zpětnou vazbu o svém pokroku a neúčastní se sebehodnocení, což snižuje jejich motivaci.",
+          "evidence": "Vyučující nevyužívali formativní hodnocení, žáci se nepodílejí na vyhodnocování cílů, závěry hodin jsou pouze formální."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje se žáky, kteří mají problémy s učením nebo jsou nadaní? Jakou individuální podporu jim poskytuje?",
+        "Jaké jsou výsledky absolventů na trhu práce? Kolik procent jich najde zaměstnání v oboru do půl roku po absolvování?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a práci s informacemi z různých zdrojů?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí praktické vzdělání s jasným propojením na reálný pracovní trh a spolupráci s firmami",
+        "Studenti zaměření na strojírenství, automechaniku a logistiku, kde má škola silné partnerství se zaměstnavateli",
+        "Žáci, kteří potřebují bezpečné prostředí s dobrou péčí a podporou (nízká úrazovost, funkční poradenské služby)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní rozvoj kritického myšlení a práci s různými zdroji informací – výuka je zaměřena spíše na výklad",
+        "Nadaní žáci nebo žáci se speciálními potřebami, pokud očekávají individualizovanou výuku – diferenciace není dostatečná",
+        "Žáci, kteří se lépe učí prostřednictvím zpětné vazby a sebehodnocení – škola v tomto směru zaostává"
+      ],
+      "plain_czech_summary": "Škola je dobře zaměřená na praktické vzdělání s výbornou spoluprací s firmami a zaměstnavateli. Žáci se učí v bezpečném prostředí a mají šanci pracovat na reálných projektech. Slabší stránkou je, že výuka se příliš zaměřuje na výklad učitele a hotové informace místo toho, aby žáci sami hledali a kriticky mysleli. Individuální přístup k různým typům žáků také není dostatečný. Škola by měla více pracovat na tom, aby žáci dostávali zpětnou vazbu a sami se podíleli na hodnocení svého pokroku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – vysoká úspěšnost v profilové části, ale slabší výsledky v části společné",
+        "key_numbers": [
+          "Hrubá neúspěšnost 20 % v části společné (2023/2024)",
+          "100 % úspěšnost v profilové části",
+          "5 studentů VOŠ s vyznamenáním, 100 % úspěšnost absolutoria"
+        ],
+        "evidence": "Ve školním roce 2023/2024 byla hrubá neúspěšnost 20 % především u nástavbového studia, v profilové části uspěli všichni žáci."
+      },
+      "absence": {
+        "trend": "Pozitivní – nízká absence, efektivní řešení neomluvených hodin",
+        "key_numbers": [
+          "Průměr omluvených hodin na žáka: 47",
+          "Průměr neomluvených hodin na žáka: 2",
+          "Osm žáků dostalo snížený stupeň z chování pro neomluvené absence"
+        ],
+        "evidence": "Neomluvené hodiny byly zaznamenány a řešeny kázeňskými opatřeními, škola nastavenými opatřeními úspěšně absenci snižuje."
+      },
+      "support_services": [
+        "Dva výchovní poradci poskytující systematickou péči a metodickou pomoc pedagogům",
+        "Školní psycholog zajišťující metodickou podporu a řešení individuálních problémů",
+        "Školní asistent a koordinátor spolupráce se zaměstnavateli",
+        "Doučování a individuální konzultace pro žáky se slabším prospěchem"
+      ],
+      "safety_climate": [
+        "Čipový systém u vstupu do budov",
+        "Nízká míra úrazovosti, důsledné dodržování bezpečnosti při práci",
+        "Pravidelné informace žákům o bezpečnostních rizicích",
+        "Vhodné osobní ochranné pracovní prostředky při praktickém vyučování",
+        "Dílčí nedostatky v evidenci úrazů žáků"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s oborově blízkými firmami a odborníky z praxe",
+        "Praktické vyučování na školních pracovištích i u smluvních partnerů",
+        "Spolupráce se zahraničními školami",
+        "Projekt Tatra do škol – stavba vlastního automobilu pro výuku",
+        "Zapojení rodilého mluvčího pro rozvoj konverzačních schopností"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Zjištění jsou konkrétní a opřená o evidence. Některé pasáže jsou technicky náročnější, ale celkově je text pro rodiče pochopitelný.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o počtu žáků s vyznamenáním v jednotlivých oborech – údaj 7 % je celkový",
+        "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými obory a třídami",
+        "Chybí informace o tom, jaký podíl absolventů pokračuje v dalším studiu versus vstupuje na trh práce"
+      ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600171779_2024-10-15",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola a střední škola s domovem mládeže a školní jídelnou",
+    "inspection_period": "15. 10. 2024 – 18. 10. 2024",
+    "school_change_summary": "Od poslední inspekce v 2018 se změnil název školy, proběhla personální obměna včetně vedení, změnila se oborová nabídka (nově Praktická sestra, Fyzioterapie zvířat) a počet žáků vzrostl o 39 %, studentů o 20 %."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení a technologie",
+        "detail": "Škola má velmi dobré materiální podmínky s moderními digitálními technologiemi, které umožňují žákům získávat odborné kompetence odpovídající současné praxi.",
+        "evidence": "Kvalitně vybavené odborné učebny (robotiky, fyzioterapie zvířat, ošetřovatelství) s moderním zařízením."
+      },
+      {
+        "tag": "Péče o žáky v ohrožení",
+        "detail": "Účinný systém prevence a podpory žáků se speciálními potřebami prostřednictvím kvalitního poradenského pracoviště a třídních učitelů.",
+        "evidence": "Systém vedení výkazů třídního učitele, analýza dat a bezodkladná opatření vedoucí k nápravě problémů."
+      },
+      {
+        "tag": "Praktické zkušenosti a partnerství",
+        "detail": "Žáci zdravotnických oborů se aktivně zapojují do edukačních programů a získávají cenné profesní zkušenosti.",
+        "evidence": "Pravidelné zapojení do edukačních a osvětových programů, nácvik zásahu integrovaného záchranného systému."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdílná kvalita výuky",
+        "detail": "V teoretické výuce střední školy se projevily výrazné rozdíly v efektivitě pedagogických strategií a aktivitě žáků.",
+        "evidence": "V části hodin převažovala frontální forma s dominancí pedagoga, chyběla diferenciace a kooperativní činnost žáků."
+      },
+      {
+        "tag": "Slabá spolupráce pedagogů",
+        "detail": "Týmová spolupráce pedagogů není vždy účelná a sdílení pedagogické praxe neprobíhá plánovitě.",
+        "evidence": "Metodické orgány se zabývaly převážně organizačními záležitostmi, chybělo vyhodnocování pedagogických strategií a sjednocování kritérií hodnocení."
+      },
+      {
+        "tag": "Vysoká neúspěšnost v některých oborech",
+        "detail": "Na vyšší odborné škole řada studentů předčasně ukončuje vzdělávání, zejména v oboru Fyzioterapie zvířat.",
+        "evidence": "Studenti nezvládají náročné požadavky odborných předmětů a předčasně ukončují studium."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením nebo vysokou absencí?",
+      "Jaké jsou možnosti individuálního přístupu v teoretické výuce, zejména v oborech s vyšší neúspěšností?",
+      "Jak se škola připravuje na maturitní zkoušky a jaké jsou výsledky v jednotlivých oborech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o zdravotnické obory, kteří chtějí praktické zkušenosti a zapojení do veřejných programů",
+      "Studenti vyšší odborné školy, kteří zvládají náročné požadavky a chtějí moderní vybavení a technologie",
+      "Žáci oborů Veterinářství a Informační technologie, které mají dlouhodobě nejnižší neúspěšnost"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s učebními potížemi – v některých oborech je vysoká neúspěšnost (Hotelnictví 16 %, Ekonomika 14 %)",
+      "Studenti oboru Fyzioterapie zvířat – řada studentů předčasně ukončuje vzdělávání",
+      "Žáci, kteří potřebují individualizovaný přístup – diferenciace výuky se využívá jen ojediněle"
+    ],
+    "plain_czech_summary": "Škola se výrazně rozvinula – má moderní vybavení, kvalitní péči o žáky v ohrožení a aktivní zapojení v praxi. Maturitní výsledky se zlepšily, absence klesá. Slabinou je rozdílná kvalita výuky, nedostatečná spolupráce pedagogů a vysoká neúspěšnost v některých oborech. Škola potřebuje zlepšit systematičnost vyhodnocování a sdílení pedagogických zkušeností."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení od poslední inspekce v 2018",
+      "key_numbers": [
+        "Hotelnictví: 16 % neúspěšnosti (2024) vs. 37 % (2017)",
+        "Ekonomika a podnikání: 14 % neúspěšnosti (2024) vs. 28 % (2017)",
+        "Veterinářství a IT: průměrně do 5 % neúspěšnosti"
+      ],
+      "evidence": "Hrubá neúspěšnost u maturitních oborů se výrazně snížila. Dlouhodobě nejnižší neúspěšnost mají obory Veterinářství a Informační technologie."
+    },
+    "absence": {
+      "trend": "Klesající tendence za poslední tři roky",
+      "key_numbers": [
+        "Průměrná absence: 143 hodin na žáka za školní rok (2023/2024)",
+        "Neprospělo pouze 2 % žáků na konci roku 2023/2024"
+      ],
+      "evidence": "Škola důsledně sleduje docházku a uplatňuje opatření ke snížení absence. Funkčnost systému potvrzuje klesající trend."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště vedené školní psycholožkou zajišťuje kvalitní poradenské služby",
+      "Plány pedagogické podpory pro žáky se specifickými potížemi, pravidelné vyhodnocování",
+      "Strategie adaptace pro žáky s odlišným mateřským jazykem",
+      "Preventivní program s intenzivní součinností třídních učitelů a poradenského pracoviště",
+      "Kariérní poradenství a přípravné kurzy pro uchazeče"
+    ],
+    "safety_climate": [
+      "Klidná pracovní atmosféra založená na vzájemném respektu a dodržování pravidel",
+      "Velký důraz na prevenci rizikového chování v teoretické i praktické výuce",
+      "Bezpečnost a ochrana zdraví zajištěny při praktickém vyučování – žáci vybaveni ochrannými pomůckami",
+      "Domov mládeže zajišťuje vhodné podmínky pro bydlení a realizaci volnočasových aktivit"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s řadou zaměstnavatelů pro praktické vyučování, exkurze a workshopy",
+      "Partnerství se zdravotnickými zařízeními pro praktickou výuku zdravotnických oborů",
+      "Součinnost s dalšími středními školami včetně zahraničních pro sdílení pedagogických zkušeností",
+      "Spolupráce s domovem seniorů a mateřskou školou (domov mládeže)",
+      "Zapojení do edukačních a osvětových programů pro veřejnost"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více technických termínů, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní informace o počtu pedagogů nebo jejich kvalifikaci, pouze že je sbor 'převážně kvalifikovaný'",
+      "Chybí detailní analýza příčin vysoké neúspěšnosti v oborech Hotelnictví a Ekonomika (14-16 %), pouze se uvádí, že se zlepšilo",
+      "Není jasné, jak konkrétně se budou řešit identifikované slabé stránky v týmové spolupráci pedagogů"
+    ]
+  }
+}
+```

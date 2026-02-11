@@ -1,0 +1,104 @@
+{
+  "report_id": "LYC_600014410_2021-12-07",
+  "school_profile": {
+    "school_type": "Střední škola (Obchodní akademie, Veřejnosprávní činnost) a Vyšší odborná škola ekonomická.",
+    "inspection_period": "7. 12. 2021 − 10. 12. 2021",
+    "school_change_summary": "Od poslední inspekce došlo ke změně ve vedení školy a ke zkvalitnění materiálního vybavení, zejména IT technologií."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Maturita",
+        "detail": "Škola dosahuje dlouhodobě velmi dobrých výsledků u maturitních zkoušek s vysokou úspěšností.",
+        "evidence": "Výsledky maturitní zkoušky... vykazovaly výrazně vyšší procento úspěšnosti."
+      },
+      {
+        "tag": "Partnerské vztahy",
+        "detail": "Škola výborně spolupracuje s firmami i veřejnou správou, což zajišťuje kvalitní praxe.",
+        "evidence": "Spolupráce školy s podniky... byla na výborné úrovni, probíhala v rámci zajišťování... praxe."
+      },
+      {
+        "tag": "Soutěže",
+        "detail": "Žáci dosahují významných úspěchů v odborných soutěžích na národní i mezinárodní úrovni.",
+        "evidence": "Čelní umístění v dovednostních soutěžích... na celostátní i mezinárodní úrovni."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "V odborných předmětech převažuje frontální výklad učitele bez dostatečné aktivizace žáků.",
+        "evidence": "Ve většině vyučovacích hodin dominovala frontální forma výuky... neposkytovala dostatek podnětů."
+      },
+      {
+        "tag": "Nediferencovaná výuka",
+        "detail": "Učitelé málo zadávají úkoly podle schopností jednotlivých žáků.",
+        "evidence": "V malé míře bylo využito zadávání diferencovaných úkolů vzhledem ke schopnostem... žáků."
+      },
+      {
+        "tag": "Hodnocení cílů",
+        "detail": "Ve výuce chybí efektivní závěry hodin, kde by se shrnovaly nové poznatky.",
+        "evidence": "Společným nedostatkem... byla absence efektivního závěru zaměřeného na shrnutí... poznatků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola aktivizuje žáky v odborných předmětech, aby se nepouze poslouchalo?",
+      "Jakým způsobem učitelé rozdělují úkoly, aby zohlednili různé úrovně žáků?",
+      "Využívá škola své partnerské vazby i pro besedy nebo exkurze, nejen pro praxe?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří preferují tradiční formy výuky a chtějí dosáhnout na silné jméno školy.",
+      "Pro žáky, kteří chtějí uplatnit své znalosti v odborných soutěžích (účetnictví, texty).",
+      "Pro zájemce o ekonomické obory s důrazem na praktické dovednosti (software, účetnictví)."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří vyžadují silně individualizovaný přístup a často diferencované úkoly.",
+      "Pro studenty, kteří se rychle nudí při převaze pasivního poslouchání výkladu.",
+      "Pro ty, kteří očekávají moderní formativní hodnocení v každé hodině (zatím ojedinělé)."
+    ],
+    "plain_czech_summary": "Obchodní akademie ve Zlíně je stabilní škola s novým vedením a vynikající pověstí. Hlavním tahákem jsou nadprůměrné výsledky u maturity a skvělé vazby na firmy, což zaručuje kvalitní praxe. Škola také úspěšně baví žáky v odborných soutěžích. Slabinou je stále tradiční styl výuky v odborných předmětech, kde učitelé málo zapojují žáky a nerozlišují úkoly podle jejich schopností. Pro samostatné studenty, kteří chtějí jisté vzdělání a uplatnění, je to skvělá volba. Kdo ale potřebuje hodně individuální pozornosti nebo moderní interaktivní metody, měl by se informovat podrobněji."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně nadprůměrná úspěšnost",
+      "key_numbers": [
+        "Výrazně vyšší procento úspěšnosti než jiné školy",
+        "Všichni přihlášení žáci maturitu konali",
+        "Výsledky na velmi dobré úrovni"
+      ],
+      "evidence": "Výsledky maturitní zkoušky... vykazovaly výrazně vyšší procento úspěšnosti."
+    },
+    "absence": {
+      "trend": "Není hodnoceno",
+      "key_numbers": [
+        "474 žáků střední školy",
+        "94 studentů VOŠ",
+        "25 žáků se SVP"
+      ],
+      "evidence": "Ve škole se vzdělávalo 474 žáků a 94 studentů. Škola identifikovala 25 žáků se SVP."
+    },
+    "support_services": [
+      "Kvalitní tým (výchovná a kariérová poradkyně, metodička prevence).",
+      "Nabídka doučování v odborných předmětech (využíváno dostatečně).",
+      "Nabídka doučování ve všeobecných předmětech (využíváno málo)."
+    ],
+    "safety_climate": [
+      "Příjemná a klidná pracovní atmosféra ve výuce.",
+      "Pravidelné vyhodnocování bezpečnostních rizik.",
+      "Jasně nastavená pravidla pro sledování rizikového chování."
+    ],
+    "partnerships_practice": [
+      "Výborná spolupráce s firmami a organizacemi (praxe).",
+      "Partnersví s městem Zlín, VŠ a Nadací T. Bati.",
+      "Zapojení do charitativních a neziskových aktivit."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně rozdělená a klíčová data jsou snadno dohledatelná.",
+    "uncertainty_notes": [
+      "Konkrétní číselné procento úspěšnosti u maturity není uvedeno, pouze srovnání.",
+      "Absence konkrétních dat o chování žáků (počty řešení kázeňských problémů).",
+      "Nejasné, jak konkrétně vypadá 'kombinace prezenční a synchronní formy' z pohledu žáka."
+    ]
+  }
+}

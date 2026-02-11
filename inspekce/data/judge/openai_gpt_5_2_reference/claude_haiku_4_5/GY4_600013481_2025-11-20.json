@@ -1,0 +1,31 @@
+{
+  "report_id": "GY4_600013481_2025-11-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T12:15:30.764771+00:00",
+  "run_finished_utc": "2026-02-09T12:15:59.695970+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY4_600013481_2025-11-20\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 1,\n  \"critical_issues\": [\n    \"Tvrzení v souhrnu „Gymnázium Brno patří mezi nejlepší střední školy“ není ve zdrojové zprávě doloženo (zpráva uvádí dlouhodobě výborné výsledky, ale nepořadí ani srovnání typu „mezi nejlepší“).\",\n    \"Neúplnost vůči rodičovskému use-casu: chybí explicitní zmínka o důležité slabé stránce ze závěrů – nesjednocená kritéria hodnocení napříč školou (a s tím související doporučení).\",\n    \"Neúplnost: opomenuto doporučení pravidelně analyzovat hospitační činnost a přijímat návazná opatření (ve zdroji uvedeno jako problém).\",\n    \"Neúplnost: opomenuta organizační slabina – kumulace funkcí u jednoho ze zástupců a doporučení zvážit rozdělení činností vedoucích pracovníků.\"\n  ],\n  \"best_points\": [\n    \"Správně převzaté klíčové „tvrdé“ údaje: termín inspekce, počty a procenta (vyznamenání 55 %/72 %, absence 120 hodin, frontální výuka 72 %, skupinová 15 %).\",\n    \"Dobře zachycené a zdrojem podložené silné stránky: výjimečný rozsah Erasmus+ a velmi dobré výsledky u maturit i úspěšnost absolventů při přechodu na VŠ.\",\n    \"Rizika kolem wellbeingu a kapacity školní psycholožky (1 den v týdnu) odpovídají textu včetně konstatování silného tlaku na výkon a okrajové pozornosti poradenského pracoviště.\",\n    \"Užitečné pro rodiče: jasná struktura (silné stránky / rizika / pro koho se hodí / otázky na den otevřených dveří) a konkrétní formulace otázek.\"\n  ],\n  \"one_line_verdict\": \"Většina údajů i interpretací odpovídá inspekční zprávě a je rodičovsky použitelná, ale výstup vynechává několik klíčových slabých stránek a doporučení a obsahuje jednu nedoloženou superlativní formulaci.\"\n}",
+  "judge_output": {
+    "report_id": "GY4_600013481_2025-11-20",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 1,
+    "critical_issues": [
+      "Tvrzení v souhrnu „Gymnázium Brno patří mezi nejlepší střední školy“ není ve zdrojové zprávě doloženo (zpráva uvádí dlouhodobě výborné výsledky, ale nepořadí ani srovnání typu „mezi nejlepší“).",
+      "Neúplnost vůči rodičovskému use-casu: chybí explicitní zmínka o důležité slabé stránce ze závěrů – nesjednocená kritéria hodnocení napříč školou (a s tím související doporučení).",
+      "Neúplnost: opomenuto doporučení pravidelně analyzovat hospitační činnost a přijímat návazná opatření (ve zdroji uvedeno jako problém).",
+      "Neúplnost: opomenuta organizační slabina – kumulace funkcí u jednoho ze zástupců a doporučení zvážit rozdělení činností vedoucích pracovníků."
+    ],
+    "best_points": [
+      "Správně převzaté klíčové „tvrdé“ údaje: termín inspekce, počty a procenta (vyznamenání 55 %/72 %, absence 120 hodin, frontální výuka 72 %, skupinová 15 %).",
+      "Dobře zachycené a zdrojem podložené silné stránky: výjimečný rozsah Erasmus+ a velmi dobré výsledky u maturit i úspěšnost absolventů při přechodu na VŠ.",
+      "Rizika kolem wellbeingu a kapacity školní psycholožky (1 den v týdnu) odpovídají textu včetně konstatování silného tlaku na výkon a okrajové pozornosti poradenského pracoviště.",
+      "Užitečné pro rodiče: jasná struktura (silné stránky / rizika / pro koho se hodí / otázky na den otevřených dveří) a konkrétní formulace otázek."
+    ],
+    "one_line_verdict": "Většina údajů i interpretací odpovídá inspekční zprávě a je rodičovsky použitelná, ale výstup vynechává několik klíčových slabých stránek a doporučení a obsahuje jednu nedoloženou superlativní formulaci."
+  }
+}

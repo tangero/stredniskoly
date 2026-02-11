@@ -1,0 +1,99 @@
+{
+  "report_id": "LYC_600019802_2022-01-05",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola s domovem mládeže",
+    "inspection_period": "5.-7. 1. 2022",
+    "school_change_summary": "Škola od roku 2015 rozšířila nabídku oborů (např. Masér, Praktická sestra), čímž výrazně zvýšila počet žáků a kapacitně tak narostla."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola výborně spolupracuje s nemocnicemi a sociálními zařízeními, což žákům zajišťuje kvalitní praxi a uplatnění.",
+        "evidence": "Příkladná spolupráce školy se sociálními partnery přispívá k... propojení výuky s praxí a následné uplatnitelnosti absolventů."
+      },
+      {
+        "tag": "Jazyky a vybavení",
+        "detail": "Výuka cizích jazyků má vysokou úroveň a odborné učebny jsou moderně vybaveny tak, aby odpovídaly reálnému provozu.",
+        "evidence": "Vzdělávání v cizích jazycích... má ve škole vysokou úroveň. Vybavení... odpovídalo reálnému pracovnímu prostředí ve zdravotnictví."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Škola nabízí nadstandardní podporu žákům s odlišným mateřským jazykem a účinně pomáhá těm, kteří mají studijní potíže.",
+        "evidence": "Škola se cíleně zabývá podporou žáků s odlišným mateřským jazykem... Těm, kteří aktuálně nedosahují... výsledků, poskytuje účinnou podporu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Ve většině teoretických hodin převažuje frontální výuka, kdy jsou žáci spíše pasivními příjemci informací.",
+        "evidence": "Ve výuce převažuje frontální způsob předávání informací, aktivizace žáků je nízká."
+      },
+      {
+        "tag": "Nevyhovující hřiště",
+        "detail": "Venkovní asfaltové hřiště je v špatném stavu a neumožňuje bezpečný a plnohodnotný sportovní provoz.",
+        "evidence": "Povrch asfaltového hřiště nevyhovuje požadavkům pro sportovní činnosti."
+      },
+      {
+        "tag": "Maturita v některých oborech",
+        "detail": "Úspěšnost u maturitní zkoušky v oborech Praktická sestra a Masér je dlouhodobě pod celorepublikovým průměrem.",
+        "evidence": "Úspěšnost žáků u maturitní zkoušky... v oborech Praktická sestra a Masér ve zdravotnictví je nižší [než republikový průměr]."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola reaguje na nižší maturitní výsledky v oborech Praktická sestra a Masér?",
+      "Je plánována rekonstrukce asfaltového hřiště, aby bylo bezpečné pro sport?",
+      "Jakým způsobem jsou žáci zapojováni do výuky, aby nebyli jen pasivními posluchači?"
+    ],
+    "who_school_fits": [
+      "Uchazeči, kteří se chtějí uplatnit ve zdravotnictví nebo sociální péči a očekávají kvalitní praxi.",
+      "Cizinci nebo žáci s odlišným mateřským jazykem, kteří potřebují jazykovou podporu.",
+      "Studenti, kteří očekávají moderní vybavení odborných učeben a zapojení do mezinárodních projektů."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují moderní a interaktivní formy výuky před tradičním frontálním přednášením.",
+      "Sportovně zaměření uchazeči, kterým vadí špatný stav venkovního hřiště.",
+      "Uchazeči o obory Praktická sestra a Masér kvůli nižší úspěšnosti u maturity."
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola v Turnově prochází úspěšným rozvojem, zaznamenala nárůst žáků i nové obory. Její největší devízou je silné propojení s praxí v nemocnicích a zařízeních sociální péče, což absolventům zajišťuje dobrou uplatnitelnost. Škola má moderní odborné učebny a nabízí vysokou úroveň výuky jazyků i podporu pro cizince. Mezi rizika patří převaha pasivní frontální výuky v teoretických předmětech a špatný stav venkovního hřiště. Rodiče dětí v oborech Praktická sestra a Masér by měli sledovat přípravu k maturitě, jejíž výsledky jsou podprůměrné. Škola se snaží problém řešit doučováním a dělením hodin."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený (Lyceum nadprůměrné, ostatní podprůměrné)",
+      "key_numbers": [
+        "33 % vyznamenaných žáků",
+        "4 % neprospívajících žáků",
+        "Úspěšnost u maturity u Lycea nadprůměrná, u Praktické sestry a Maséra podprůměrná"
+      ],
+      "evidence": "Úspěšnost žáků u maturitní zkoušky je... v oboru Zdravotnické lyceum vyšší, než je republikový průměr, naopak v oborech Praktická sestra a Masér... je nižší."
+    },
+    "absence": {
+      "trend": "Nízká, bez větších problémů",
+      "key_numbers": [
+        "Důtky ředitelky za neomluvené hodiny (4 žáci)",
+        "Snížené známky z chování za neomluvené hodiny (3 žáci)"
+      ],
+      "evidence": "Díky vhodně nastaveným pravidlům... se škole daří úspěšně předcházet vysoké či neomluvené absenci."
+    },
+    "support_services": [
+      "Individuální konzultace a doučování pro žáky se studijními problémy",
+      "Nadstandardní výuka českého jazyka pro žáky s odlišným mateřským jazykem",
+      "Kariérové poradenství a prevence předčasných odchodů ze studia"
+    ],
+    "safety_climate": [
+      "Kultivované prostředí a nízká míra úrazovosti",
+      "Zabezpečený vstup do objektů elektronickým systémem",
+      "Spolupráce s Policií ČR a Linkou důvěry na prevenci rizikového chování"
+    ],
+    "partnerships_practice": [
+      "Klíčový partner Krajská nemocnice Liberec (pracoviště Turnov)",
+      "Aktivní zapojení žáků do pomoci zařízením během pandemie COVID-19",
+      "Mezinárodní odborné stáže v rámci projektu ERASMUS+"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán srozumitelně, klíčová tvrzení jsou jasně oddělena v závěru a doložena konkrétními příklady v těle zprávy.",
+    "uncertainty_notes": []
+  }
+}

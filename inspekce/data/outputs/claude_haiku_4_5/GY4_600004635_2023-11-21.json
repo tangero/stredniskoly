@@ -1,0 +1,116 @@
+{
+  "report_id": "GY4_600004635_2023-11-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:33:41.650427+00:00",
+  "run_finished_utc": "2026-02-09T16:34:05.367409+00:00",
+  "raw_file": "GY4_600004635_2023-11-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600004635_2023-11-21",
+    "school_profile": {
+      "school_type": "Čtyřleté gymnázium s důrazem na anglický jazyk a otevřené vzdělávání",
+      "inspection_period": "21. 11. 2023 – 24. 11. 2023",
+      "school_change_summary": "Od inspekce v roce 2015 si škola udržuje stabilní počet žáků (176 v 8 třídách). Došlo ke kvalitativnímu posunu: modernizace výuky, rozšíření profilace, zavedení formativního hodnocení, zlepšení výsledků maturit a nový program Aktivní student podporující individuální potenciál žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání na vysoké úrovni",
+          "detail": "Žáci dosahují nadstandardních výsledků v angličtině na úrovni osmiletých gymnázií, více než polovina maturantů si uznává certifikát C1.",
+          "evidence": "Nadstandardní výsledky v anglickém jazyce, více než 50 % maturantů s certifikátem C1"
+        },
+        {
+          "tag": "Individuální podpora a péče",
+          "detail": "Komplexní poradenské služby, psychologická péče a kariérní vedení přispívají k úspěšnému pokroku každého žáka.",
+          "evidence": "45 % talentovaných žáků v programu Aktivní student, 98 % žáků s uzavřenou klasifikací"
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Nové digitální technologie, LCD boardy, iPady, studentský klub a relaxační zóny vytvářejí kvalitní podmínky pro učení.",
+          "evidence": "Výrazné zlepšení vybavení digitálními technologiemi ve všech učebnách"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotné používání závěrů vyučovacích hodin",
+          "detail": "V části hodin chybí společné shrnutí a vyhodnocení vzdělávacího cíle se žáky.",
+          "evidence": "Ve třetině sledovaného vzdělávání pedagogové nedostatečně nevyužili didaktického závěru"
+        },
+        {
+          "tag": "Omezená skupinová práce a samostatné vyhledávání informací",
+          "detail": "Kooperativní činnosti a práce s různými informačními zdroji se objevují spíše v menší míře.",
+          "evidence": "Menší četnost kooperativních činností a samostatné práce s informačními zdroji"
+        },
+        {
+          "tag": "Jazyková kultura v hodinách",
+          "detail": "Někteří učitelé a žáci používají nespisovnou češtinu, menší důraz na hodnocení mluveného projevu.",
+          "evidence": "Nižší míra jazykové kultury a menší akcent na hodnocení úrovně mluveného projevu"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá program Aktivní student a jaké jsou jeho výstupy pro talentované žáky?",
+        "Jaké jsou možnosti zahraničních stáží a jak se podílejí na přípravě na vysoké školy?",
+        "Jak škola zajišťuje individuální podporu pro žáky se speciálními potřebami nebo zdravotními problémy?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazykové vzdělání a angličtinu na vysoké úrovni",
+        "Talentovaní a nadaní žáci hledající individuální podporu a profilaci",
+        "Žáci plánující studium na zahraničních vysokých školách (více než 10 % absolventů)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující tradiční frontální výuku – škola klade důraz na samostatnost a aktivní zapojení",
+        "Žáci se zdravotními problémy – vysoký počet zameškaných hodin v některých třídách",
+        "Žáci bez zájmu o angličtinu – jazyk je klíčovou součástí profilu školy"
+      ],
+      "plain_czech_summary": "Gymnázium Jana Palacha je etablovaná pražská škola s komorním prostředím (176 žáků) zaměřená na jazykové vzdělání a individuální rozvoj. Silné stránky: výborné výsledky v angličtině, komplexní poradenství, moderní vybavení a program Aktivní student. Slabiny: v některých hodinách chybí společné vyhodnocení cílů, málo skupinové práce a samostatného vyhledávání informací. Vhodná pro talentované žáky a zájemce o jazykové vzdělání s perspektivou zahraničního studia."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – zvýšil se počet žáků s vyznamenáním, klesá podíl neprospívajících",
+        "key_numbers": [
+          "Třetina maturantů s vyznamenáním",
+          "Školní rok 2022/2023: pouze 1 neprospívající žák",
+          "Více než 50 % maturantů s certifikátem C1 v angličtině"
+        ],
+        "evidence": "Ve sledovaném období posledních tří let se zvýšil počet žáků s vyznamenáním, podíl neprospívajících měl klesající tendenci"
+      },
+      "absence": {
+        "trend": "Nízká absence – ojedinělý výskyt neomluvené absence",
+        "key_numbers": [
+          "98 % žáků s uzavřenou klasifikací k 30. 6.",
+          "Vysoký počet zameškaných hodin v některých třídách souvisí se zdravotními problémy nebo vrcholovou sportovní činností",
+          "Vyrovnaný poměr kázeňských opatření a pochval"
+        ],
+        "evidence": "Ojedinělý výskyt neomluvené absence, vysoký počet zameškaných hodin souvisí s dlouhodobými zdravotními problémy"
+      },
+      "support_services": [
+        "Školní psycholožka a asistentka pedagoga",
+        "Komplexní poradenské, kariérní a psychologické služby",
+        "Adaptační kurzy, preventivní programy, doučování a individuální konzultace",
+        "Speciální opatření pro žáky se speciálními potřebami (7 % žáků) a talentované (45 % v programu Aktivní student)"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra s přirozeným dodržováním pravidel spolupráce",
+        "Funkční preventivně-podpůrné mechanismy s nízkým výskytem neomluvené absence",
+        "Vstupní elektronický systém pro větší bezpečnost žáků",
+        "Rodinné klima školy s úzkou spoluprací mezi pedagogy, rodiči a žáky"
+      ],
+      "partnerships_practice": [
+        "Partnerství s Centrem pro talentovanou mládež (CTM) od roku 2019/2020",
+        "Spolupráce s vysokými školami na laboratorních cvičeních",
+        "Zahraniční studijní stáže a mezinárodní certifikované zkoušky",
+        "Partnerské vztahy s neziskovými organizacemi a zahraničními školami"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a úřednického stylu, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků s jednotlivými typy speciálních potřeb mimo zmínku 7 %",
+        "Chybí informace o konkrétních výsledcích v matematice a češtině v porovnání s republikovým průměrem",
+        "Není jasné, jak se program Aktivní student konkrétně liší od běžné výuky v praktickém provedení"
+      ]
+    }
+  }
+}

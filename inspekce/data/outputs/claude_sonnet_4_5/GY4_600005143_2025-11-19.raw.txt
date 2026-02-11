@@ -4,102 +4,100 @@
   "school_profile": {
     "school_type": "Čtyřleté a šestileté gymnázium s posílenou výukou jazyků, fakultní škola UK, partnerská škola Národního muzea",
     "inspection_period": "19. 11. 2025 – 24. 11. 2025",
-    "school_change_summary": "Od roku 2019 významně vzrostl zájem o školu, zlepšilo se materiální vybavení (rekonstrukce, nové učebny, digitální technika). Postupně se modernizují výukové postupy, ale v části výuky přetrvává tradiční pojetí s nižší aktivizací žáků."
+    "school_change_summary": "Od roku 2019 výrazně vzrostl zájem o školu, zlepšilo se materiální vybavení (rekonstrukce, nové učebny, digitální technika). Postupně se modernizují výukové postupy, ale část výuky zůstává tradiční s nižší aktivizací žáků."
   },
   "for_parents": {
     "strengths": [
       {
-        "tag": "Excelentní podmínky a vybavení",
-        "detail": "Moderní budova, špičkové zázemí pro přírodní vědy, sport i jazyky, kvalitní stravování.",
-        "evidence": "„rekonstrukce budovy, modernizace učebny biologie s terárii, multifunkční přednáškový sál, dvě tělocvičny, posilovna, horolezecké stěny, víceúčelový sportovní areál, moderní školní jídelna""
+        "tag": "Vynikající podmínky a vybavení",
+        "detail": "Moderní budova, špičkové zázemí pro přírodní vědy, sport i jazyky, kvalitní jídelna.",
+        "evidence": "„rekonstrukce budovy, přístavba školní jídelny, modernizace učebny biologie s novými terárii a paludárii, vybudování letní učebny a botanické zahrady, multifunkční přednáškový sál, notebooky, interaktivní dotykové panely""
       },
       {
-        "tag": "Mezinárodní rozměr vzdělávání",
-        "detail": "Četné zahraniční výjezdy, Erasmus+, možnost získat německý jazykový diplom.",
-        "evidence": "„zapojení do zahraničních mobilit v zemích všech vyučovaných jazyků, Řecko, Španělsko, SRN, Velká Británie, Rakousko, Dánsko, Itálie, Francie, Slovensko, USA, Kanada, Deutsches Sprachdiplom II""
+        "tag": "Silná jazyková příprava a zahraniční kontakty",
+        "detail": "Pět jazyků, rodilí mluvčí, mezinárodní certifikáty, časté zahraniční výjezdy a Erasmus+.",
+        "evidence": "„šest rodilých mluvčích, zapojení do zahraničních mobilit v zemích všech vyučovaných jazyků, 80 % žáků nahrazuje profilovou část maturitní zkoušky z cizího jazyka mezinárodním certifikátem""
       },
       {
-        "tag": "Individuální přístup a podpora",
-        "detail": "Dvě psycholožky, speciální pedagog, asistenti, plány podpory pro žáky se specifickými potřebami.",
-        "evidence": "„dvě školní psycholožky, dvě asistentky pedagoga s úvazkem speciálního pedagoga, plány pedagogické podpory, individuální vzdělávací plány, konzultace, doučování""
+        "tag": "Individuální přístup a podpora žáků",
+        "detail": "Dvě psycholožky, speciální pedagogové, asistenti, plány podpory, doučování, konzultace.",
+        "evidence": "„dvě školní psycholožky, dvě asistentky pedagoga s úvazkem speciálního pedagoga, plány pedagogické podpory, individuální vzdělávací plány, konzultace, doučování, elektronické výukové materiály""
       }
     ],
     "risks": [
       {
-        "tag": "Tradiční výuka v části hodin",
-        "detail": "Někteří učitelé preferují frontální výklad, málo aktivizují žáky, chybí moderní metody.",
-        "evidence": "„převaha frontální formy výuky s převládajícími činnostmi na straně pedagoga, faktografický výklad, absence názornosti, pasivita jednotlivců, nižší metodická propracovanost""
+        "tag": "Tradiční výuka u části učitelů",
+        "detail": "Někteří pedagogové málo aktivizují žáky, převládá frontální výklad a memorování.",
+        "evidence": "„Převaha frontální formy výuky s převládajícími činnostmi na straně pedagoga, faktografický výklad, absence názornosti, opomíjení střídání aktivit, se projevovaly jednotvárností, nižší interakcí se žáky nebo pasivitou jednotlivců""
       },
       {
-        "tag": "Nejednotné hodnocení",
-        "detail": "Kritéria hodnocení se liší podle učitele, v některých předmětech přísnější klasifikace.",
-        "evidence": "„podrobnější kritéria pro hodnocení v jednotlivých předmětech nejsou nastavena, nejednotná měřítka hodnocení se promítají v rozdílné nebo přísnější klasifikaci v některých předmětech""
+        "tag": "Nejednotné hodnocení mezi učiteli",
+        "detail": "Chybí jednotná kritéria, známky se liší podle konkrétního vyučujícího.",
+        "evidence": "„Podrobnější kritéria pro hodnocení v jednotlivých předmětech nejsou na úrovni školy nebo některých předmětových sekcí nastavena. Nejednotná měřítka hodnocení se promítají v rozdílné nebo přísnější klasifikaci v některých předmětech""
       },
       {
-        "tag": "Slabší zpětná vazba",
-        "detail": "Učitelé méně využívají formativní hodnocení, reflexi pokroku žáků a vzájemné hodnocení.",
-        "evidence": "„méně účinná zpětná vazba k práci žáků, méně časté uplatňování formativní zpětné vazby, opomíjení vyhodnocení přínosu učení ve spolupráci se žáky v závěru hodiny""
+        "tag": "Málo zpětné vazby k učení",
+        "detail": "Učitelé nedostatečně vyhodnocují pokrok žáků a zapojují je do sebehodnocení.",
+        "evidence": "„méně účinná zpětná vazba k práci žáků nebo podpora jejich hodnoticích dovedností, mj. formou reflexe vlastního pokroku nebo zařazování vrstevnického hodnocení podle předem známých kritérií""
       }
     ],
     "questions_for_open_day": [
-      "Jak škola zajišťuje, že všichni učitelé používají moderní metody výuky a aktivně zapojují žáky do hodin?",
-      "Jakým způsobem jsou sjednocena kritéria hodnocení napříč předměty, aby byla klasifikace spravedlivá?",
-      "Jak probíhá zpětná vazba k pokroku žáka a jak se rodiče dozvídají o silných stránkách a oblastech ke zlepšení?"
+      "Jak konkrétně škola podporuje aktivní metody výuky a zapojení žáků do hodin? Můžete uvést příklady z běžné praxe?",
+      "Jakým způsobem zajišťujete jednotné hodnocení žáků napříč paralelními třídami a různými učiteli stejného předmětu?",
+      "Jak probíhá zpětná vazba k učení – dostávají žáci pravidelně informace o svém pokroku a možnostech zlepšení?"
     ],
     "who_school_fits": [
-      "Žáky se zájmem o jazyky a mezinárodní prostředí, kteří chtějí získat certifikáty a studovat v zahraničí",
-      "Studenty s akademickými ambicemi směřující na přírodovědné, technické i humanitní obory vysokých škol",
-      "Děti, které potřebují individuální podporu – škola má kvalitní poradenský tým a zkušenosti s integrací"
+      "Žáky se zájmem o jazyky a zahraniční studium – škola nabízí pět jazyků, rodilé mluvčí a časté výjezdy",
+      "Studenty s akademickými ambicemi směřující na vysokou školu – fakultní škola UK s vysokou úspěšností přijetí",
+      "Děti potřebujące individuální podporu – kvalitní poradenský tým, psycholožky, speciální pedagogové"
     ],
     "who_should_be_cautious": [
-      "Žáky, kteří potřebují dynamickou, interaktivní výuku – část hodin je stále vedena tradičně",
-      "Rodiče očekávající transparentní a jednotné hodnocení – kritéria se liší podle učitelů",
-      "Studenty preferující pravidelnou formativní zpětnou vazbu – ta není ve všech předmětech standardem"
+      "Žáky preferující moderní, interaktivní výuku – část učitelů stále vyučuje tradičně s nižší aktivizací",
+      "Rodiče očekávající transparentní a jednotné hodnocení – kritéria se liší podle konkrétního učitele",
+      "Studenty, kteří potřebují pravidelnou zpětnou vazbu k učení – formativní hodnocení není běžnou praxí všech pedagogů"
     ],
-    "plain_czech_summary": "Gymnázium Na Vítězné pláni je prestižní škola s výborným zázemím, moderním vybavením a silným mezinárodním rozměrem. Nabízí kvalitní jazykovou přípravu včetně německého diplomu, zahraniční výjezdy a individuální podporu žáků. Absolventi úspěšně pokračují na vysokých školách. Škola má stabilní tým zkušených pedagogů a fungující poradenské služby. Slabinou je, že část učitelů stále preferuje tradiční frontální výuku s menší aktivizací žáků. Chybí jednotná kritéria hodnocení a formativní zpětná vazba není ve všech hodinách standardem. Pro ambiciózní žáky se zájmem o jazyky a akademickou dráhu jde o výbornou volbu, pokud nevadí konzervativnější přístup části pedagogů."
+    "plain_czech_summary": "Gymnázium Na Vítězné pláni je prestižní škola s vynikajícím zázemím – moderní budovou, špičkovým vybavením pro přírodní vědy a sport, kvalitní jídelnou. Silnou stránkou je jazyková příprava (pět jazyků, rodilí mluvčí, mezinárodní certifikáty) a zahraniční kontakty včetně Erasmus+. Škola nabízí individuální podporu díky dvěma psycholožkám a speciálním pedagogům. Žáci dosahují výborných výsledků u maturity a úspěšně se hlásí na vysoké školy.\n\nNa druhou stranu část učitelů vyučuje tradičně s nižší aktivizací žáků, převládá frontální výklad. Chybí jednotná kritéria hodnocení – známky se liší podle konkrétního vyučujícího. Žáci dostávají málo zpětné vazby k učení a nejsou dostatečně zapojováni do sebehodnocení. Škola je vhodná pro žáky s jazykovými a akademickými ambicemi, kteří zvládnou i tradiční formy výuky."
   },
   "hard_facts": {
     "maturita": {
       "trend": "stabilně výborný",
       "key_numbers": [
-        "35–40 % maturantů s vyznamenáním",
-        "Neuspěli pouze jednotlivci (2024/25: 2 žáci)",
-        "80 % žáků nahrazuje profilovou část certifikátem z cizího jazyka"
+        "35–40 % maturantů s vyznamenáním (poslední 3 roky)",
+        "80 % žáků nahrazuje profilovou maturitu mezinárodním certifikátem z jazyka",
+        "Lepší výsledky než republikový průměr v didaktických testech (zejména angličtina, matematika)"
       ],
-      "evidence": "„V didaktických testech společné části dosáhli žáci lepších výsledků než průměr, zejména v angličtině a matematice. Výsledky profilové části vyrovnané nebo o něco horší než republikový průměr. Vysoká úspěšnost při přijetí na VŠ.""
+      "evidence": "„Ve sledovaném období posledních tří školních let prospělo s vyznamenáním v rozmezí 35−40 % maturantů, neuspěli jednotlivci. V didaktických testech předmětů společné části maturitní zkoušky dosáhli žáci lepších výsledků, než je průměrná úspěšnost dané skupiny oborů v celorepublikovém srovnání, zejména v anglickém jazyce a matematice.""
     },
     "absence": {
-      "trend": "nízká, pod kontrolou",
+      "trend": "nízká, bez problémů",
       "key_numbers": [
         "Přijatelný počet zameškaných hodin",
-        "Zanedbatelná míra neomluvené absence"
+        "Zanedbatelná míra neomluvené absence",
+        "Nižší počet kázeňských opatření"
       ],
-      "evidence": "„Nastavené preventivní mechanismy jsou převážně funkční, což dokládá nižší počet ukládaných kázeňských opatření, přijatelný počet zameškaných hodin a zanedbatelná míra neomluvené absence.""
+      "evidence": "„Nastavené preventivní mechanismy jsou převážně funkční, což dokládá i nižší počet ukládaných kázeňských opatření, přijatelný počet zameškaných hodin a zanedbatelná míra neomluvené absence.""
     },
     "support_services": [
       "Dvě školní psycholožky pro individuální i skupinovou péči",
-      "Výchovná poradkyně, metodik prevence, dvě asistentky pedagoga/speciální pedagog",
-      "Plány pedagogické podpory, individuální vzdělávací plány, jazyková intervence, konzultace a doučování"
+      "Dvě asistentky pedagoga s úvazkem speciálního pedagoga",
+      "Výchovná poradkyně a metodik prevence, plány pedagogické podpory, individuální vzdělávací plány",
+      "Konzultace, doučování, elektronické výukové materiály, předmaturitní soustředění"
     ],
     "safety_climate": [
       "Systematické adaptační a preventivní programy (adaptační kurzy, zdravý třídní kolektiv, primární prevence)",
       "Elektronický a kamerový systém, celodenní personální dohled při vstupu",
-      "Funkční spolupráce poradenských pracovníků s třídními učiteli a externími odborníky při řešení rizikového chování"
+      "Funkční spolupráce poradenských pracovníků s třídními učiteli a externími odborníky",
+      "Studentský parlament, žáci se podílejí na utváření školního prostředí"
     ],
     "partnerships_practice": [
       "Fakultní škola čtyř fakult Univerzity Karlovy (Přírodovědecká, Filozofická, Matematicko-fyzikální, 1. lékařská)",
       "Partnerská škola Národního muzea v Praze od roku 2023",
-      "Zahraniční mobility v programu Erasmus+ do 12 zemí, spolupráce s různými typy škol v zahraničí"
+      "Zahraniční mobility v zemích všech vyučovaných jazyků (Řecko, Španělsko, SRN, Velká Británie, Rakousko, Dánsko, Itálie, Francie, Slovensko, USA, Kanada)",
+      "Program Erasmus+, možnost získat Deutsches Sprachdiplom II"
     ]
   },
   "model_self_check": {
-    "czech_clarity_score_1_5": 5,
-    "czech_clarity_reason": "Text je psán srozumitelnou češtinou bez úředního žargonu, prakticky zaměřený na potřeby rodičů s konkrétními příklady.",
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný a praktický pro rodiče, místami obsahuje odborné formulace z původní zprávy, ale celkově dobře čitelný.",
     "uncertainty_notes": [
-      "Zpráva neuvádí konkrétní počty žáků s podpůrnými opatřeními – uvedeno pouze procento (3 % SVP, 5 % odlišný mateřský jazyk, 6 % individuální organizace)",
-      "Chybí detailnější informace o tom, které konkrétní předměty mají problémy s nejednotným hodnocením (zmíněny biologie, český a francouzský jazyk, chemie)",
-      "Není specifikováno, jaká konkrétní opatření škola přijala k odstranění nedostatků z kontroly maturit v roce 2025"
-    ]
-  }
-}
-```
+      "Zpráva neuvádí přesná čísla absence, pouze kvalitativní hodnocení

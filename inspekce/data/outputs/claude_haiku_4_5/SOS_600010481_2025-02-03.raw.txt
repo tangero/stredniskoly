@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600010481_2025-02-03",
+  "school_profile": {
+    "school_type": "Střední škola řemesel a služeb s domovem mládeže",
+    "inspection_period": "3. února 2025 až 6. února 2025",
+    "school_change_summary": "Od inspekce v roce 2020 se počet žáků zvýšil o 72,6 %. V roce 2022 bylo otevřeno moderní centrum odborného vzdělávání s nejnovějšími technologiemi. Od roku 2025/2026 škola nabízí nový obor Bezpečnostně právní činnost."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vyučování na špičkové úrovni",
+        "detail": "Praktické vyučování je koncepčně pojato s nadstandardními podmínkami a vede žáky k důvěře ve vlastní schopnosti.",
+        "evidence": "Praktické vyučování úspěšně naplňuje cíle odborného vzdělávání a připravuje absolventy na budoucí uplatnění."
+      },
+      {
+        "tag": "Kvalitní vedení a personál",
+        "detail": "Ředitel školy působí ve vedoucí funkci od roku 2015 s promyšleným systémem řízení a efektivním plánováním.",
+        "evidence": "Vedení tvoří účinně spolupracující tým s přesně vymezenými pravomocemi a povinnostmi."
+      },
+      {
+        "tag": "Výborné poradenské služby",
+        "detail": "Školní poradenské pracoviště poskytuje podporu na velmi dobré úrovni včetně kariérového poradenství.",
+        "evidence": "Od roku 2024/2025 posílil tým školní psycholog, členové úzce spolupracují s vedením a ostatními pedagogy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nižší aktivita žáků v teoretické výuce",
+        "detail": "Převládá frontální forma výuky s méně pestrými metodami, což vede k nerovnoměrnému zapojení žáků.",
+        "evidence": "V některých hodinách teoretického vzdělávání byla patrná nižší míra aktivního zapojení žáků."
+      },
+      {
+        "tag": "Kolísavé výsledky u maturit",
+        "detail": "Úspěšnost ve společné části maturitní zkoušky se mezi lety výrazně liší (46,2 % neúspěšnosti v roce 2023 vs. 11,1 % v roce 2024).",
+        "evidence": "Hrubá neúspěšnost žáků v oboru Podnikání činila v roce 2023 46,2 %, což bylo výrazně vyšší než celorepublikový průměr."
+      },
+      {
+        "tag": "Vysoký podíl neprospívajících žáků",
+        "detail": "Relativně vysoký podíl žáků nesplňujících podmínky pro postup do dalšího ročníku (19 %).",
+        "evidence": "Na konci školního roku 2023/2024 došlo k poklesu o 7 %, ale zůstává to slabou stránkou."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s matematikou nebo češtinou, aby zvládli maturitu?",
+      "Jaké jsou konkrétní důvody vysoké absence žáků (150 hodin ročně) a jak se s tím škola vypořádává?",
+      "Jak se škola zaměřuje na rozvoj komunikačních dovedností a argumentace žáků v teoretické výuce?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o tradiční řemesla (sklářství, zlatnictví, bižuterii) a praktickou práci",
+      "Studenti, kteří prospívají v praktickém vyučování a potřebují individuální přístup",
+      "Uchazeči hledající kvalitní přípravu na konkrétní profesi s dobrým uplatněním na trhu práce"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky z matematiky nebo češtiny (pod 20 % úspěšnosti) – riziko neúspěchu u maturit",
+      "Studenti, kteří potřebují více interaktivní a skupinové formy výuky – teoretická výuka je spíše frontální",
+      "Uchazeči s tendencí k absencím – absence zde dosahuje vyšších hodnot (150 hodin ročně)"
+    ],
+    "plain_czech_summary": "Jablonecká střední škola řemesel a služeb je moderní instituce se silným zaměřením na praktické vyučování a tradiční řemesla. Má výborné vybavení, kvalitní pedagogy a efektivní vedení. Praktická výuka je na vysoké úrovni a absolventi se dobře uplatňují. Slabší stránkou je teoretická výuka, která je méně interaktivní, a kolísavé výsledky u maturit. Škola je vhodná pro žáky zaměřené na řemesla a praktickou práci."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nevyrovnaný – výrazné kolísání mezi lety",
+      "key_numbers": [
+        "Hrubá neúspěšnost v oboru Podnikání: 25,8 % průměr za poslední 2 roky",
+        "Rok 2023: 46,2 % neúspěšnosti (výrazně nad celorepublikovým průměrem 29,9 %)",
+        "Rok 2024: 11,1 % neúspěšnosti (pod celorepublikovým průměrem 23,8 %)"
+      ],
+      "evidence": "Úspěšnost žáků ve společné části maturitní zkoušky je v jednotlivých letech nevyrovnaná. Minimální zájem o matematiku jako volitelný předmět (v posledních 3 letech si ji zvolil jen 1 žák)."
+    },
+    "absence": {
+      "trend": "Stabilní na vyšší úrovni – po covidu se nevrátila na původní hodnoty",
+      "key_numbers": [
+        "Průměr 150 zameškaných hodin na žáka za školní rok",
+        "Předcovidové období: průměr 100 hodin",
+        "Neomluvené absence: 6–11 hodin na žáka za školní rok"
+      ],
+      "evidence": "Po období covidové pandemie došlo k nárůstu absence. Vedení školy vývoj absence sleduje, přes přijímaná opatření zůstává stabilní."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní, kariérovou poradkyní, metodikem prevence a školním psychologem",
+      "Individuální konzultace, doučování a pedagogická intervence pro žáky s rizikem neúspěchu",
+      "Spolupráce s externími partnery (Acet, Fokus, Policie ČR, Červený kříž) na prevenci rizikového chování"
+    ],
+    "safety_climate": [
+      "Příznivé edukační klima s tolerantním a partnerským přístupem učitelů",
+      "Empatický a vstřícný přístup vyučujících v praktickém vyučování",
+      "Nedílnou součástí výuky je dodržování zásad bezpečnosti a ochrany zdraví"
+    ],
+    "partnerships_practice": [
+      "Aktivní člen Svazu výrobců skla a bižuterie a Sdružení učňovských zařízení ČR",
+      "Spolupráce s Hospodářskou komorou ČR",
+      "Zapojena do odborné skupiny poradního sboru při Úřadu práce v Jablonci nad Nisou",
+      "Smluvní pracovníci sociálních partnerů pro praktické vyučování"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní čísla a citace. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní příčiny kolísavých výsledků u maturit – pouze konstatuje, že je třeba je analyzovat",
+      "Není jasné, jaké konkrétní 'dílčí opatření' škola přijala proti absencím, která zůstávají stabilní",
+      "Chybí informace o tom, kolik žáků školu předčasně opouští a z jakých důvodů"
+    ]
+  }
+}
+```

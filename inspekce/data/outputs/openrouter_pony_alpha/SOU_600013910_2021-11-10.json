@@ -1,0 +1,109 @@
+{
+  "report_id": "SOU_600013910_2021-11-10",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:19:13.534074+00:00",
+  "run_finished_utc": "2026-02-10T08:20:25.679496+00:00",
+  "raw_file": "SOU_600013910_2021-11-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600013910_2021-11-10",
+    "school_profile": {
+      "school_type": "Střední škola grafická s maturitními obory (Polygrafie, Obalová technika) a učebními obory (Tiskař, Reprodukční grafik, Knihař).",
+      "inspection_period": "10. 11. 2021 − 12. 11. 2021, 15. 11. 2021",
+      "school_change_summary": "Školu nově vede ředitel jmenovaný v roce 2020, který zřídil studentský parlament a deleguje pravomoci na zástupkyně."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná úroveň",
+          "detail": "Praktická výuka v odborném výcviku dosahuje nadprůměrné úrovně a efektivně rozvíjí kompetence žáků.",
+          "evidence": "„Výuka v odborném výcvigu vykazuje nadprůměrnou úroveň s pozitivním dopadem do rozvoje odborných kompetencí žáků.“"
+        },
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "Žáci maturitních oborů dosahují v dlouhodobém horizontu vynikajících výsledků, které převyšují celorepublikový průměr.",
+          "evidence": "„Výborné byly výsledky maturitní zkoušky žáků oborů vzdělání kategorie L0, výrazně převyšovaly celorepublikovou průměrnou úroveň.“"
+        },
+        {
+          "tag": "Klima ve škole",
+          "detail": "Fungující studentský parlament a pravidelné dotazníky přispívají k otevřené komunikaci a zlepšování atmosféry.",
+          "evidence": "„Činnost studentského parlamentu přispívá k otevřené komunikaci žáků s vedením školy i pedagogy.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "V teoretických předmětechpřevládá frontální výuka, kde jsou žáci pasivními příjemci informací bez aktivního zapojení.",
+          "evidence": "„V převážné části hodin teoretického vyučování převládalo frontální pojetí výuky, bez aktivního zapojení žáků.“"
+        },
+        {
+          "tag": "Nedostatečná podpora",
+          "detail": "Učitelé dostatečně nezohledňují individuální vzdělávací potřeby žáků ani nerozvíjejí studijní potenciál nadaných.",
+          "evidence": "„Diferenciace a zohledňování těchto potřeb se vyskytly jen ojediněle, včetně specifických potřeb nadaných žáků.“"
+        },
+        {
+          "tag": "Formální kontrola",
+          "detail": "Kontrolní a hospitační činnost probíhá formálně bez vyvození konkrétních opatření ke zlepšení kvality výuky.",
+          "evidence": "„Kontrolní a hospitační činnosti probíhají podle plánu, ale bez vyhodnocení zjištění a vyvození závěrů.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola reaguje na zjištění, že teoretická výuka je pasivní, a jak učitele motivuje k moderním metodám?",
+        "Jakým způsobem je v běžných hodinách uplatňován individuální přístup k žákům se speciálními potřebami?",
+        "V jakých konkrétních firmách a oborech mohou žáci absolvovat odbornou praxi?"
+      ],
+      "who_school_fits": [
+        "Uchazeči, kteří se chtějí uplatnit v polygrafii, tiskařství nebo obalové technice a chtějí získat silné praktické dovednosti.",
+        "Studenti, kteří oceňují otevřenou komunikaci s vedením školy a možnost ovlivňovat dění ve škole.",
+        "Žáci, kteří preferují školu s nadprůměrnými výsledky u maturitní zkoušky."
+      ],
+      "who_should_be_cautious": [
+        "Studenti, kteří očekávají moderní, interaktivní formy výuky i v teoretických předmětech.",
+        "Žáci se specifickými vzdělávacími potřebami, kteří vyžadují výrazně individuální přístup v běžných hodinách.",
+        "Uchazeči, kteří plánují složit maturitu z matematiky (škola zde dosahuje horších výsledků)."
+      ],
+      "plain_czech_summary": "Střední škola grafická v Brno nabízí silné odborné zázemí a vynikající výsledky u maturit, zejména v polygrafických oborech. Vedení školy podporuje komunikaci se studenty a modernizuje vybavení dílen. Slabší stránkou je tradiční, pasivní styl výuky v teoretických předmětech, kde chybí individuální přístup k žákům. Pro prakticky založené studenty je škola skvělou volbou, náročnější teoretiky může styl výuky zklamat."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborné výsledky v hlavních oborech, dlouhodobě nadprůměrné.",
+        "key_numbers": [
+          "Výsledky maturit v oborech L0 výrazně převyšují celorepublikový průměr.",
+          "Hrubá neúspěšnost u maturity v loňském roce byla pouze 4 %.",
+          "Nižší úspěšnost u maturity z matematiky (malý počet přihlášených)."
+        ],
+        "evidence": "„Výborné byly výsledky maturitní zkoušky žáků oborů vzdělání kategorie L0, výrazně převyšovaly celorepublikovou průměrnou úroveň... Hrubá neúspěšnost... činila v loňském školním roce 4 %.“"
+      },
+      "absence": {
+        "trend": "Negativně ovlivňuje výsledky, část je opakovaně neomluvená.",
+        "key_numbers": [
+          "Vyšší míra zameškaných hodin.",
+          "Část absence je opakovaně neomluvená.",
+          "Třídní učitelé důsledně dodržují pravidla pro omlouvání."
+        ],
+        "evidence": "„Negativní vliv na výsledky žáků měla vyšší míra zameškaných hodin, z nichž část je opakovaně neomluvená.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zajišťuje identifikaci potřeb žáků.",
+        "Doučování pro 4. ročníky v rámci národního plánu (eliminace dopadů covidu).",
+        "Individuální konzultace nabízené v časných ranních hodinách (ne vždy optimální)."
+      ],
+      "safety_climate": [
+        "Studentský parlament přispívá ke stabilizaci klimatu.",
+        "Škola řeší rizikové chování jen v minimálním počtu případů.",
+        "Preventivní program zahrnuje kyberbezpečnost a drogovou prevenci."
+      ],
+      "partnerships_practice": [
+        "Odborná praxi žáci konají ve firmách (sociální partneři).",
+        "Projekt „Do světa“ zajišťuje stáže a spolupráci s Rakouskem.",
+        "Žáci pracují na reálných zakázkách komerčních subjektů (např. návrhy log)."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán srozumitelně, problémy s kvalitou výuky jsou jasně definovány a výsledky podloženy čísly.",
+      "uncertainty_notes": []
+    }
+  }
+}

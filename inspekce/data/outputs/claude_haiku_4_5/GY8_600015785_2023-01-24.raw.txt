@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY8_600015785_2023-01-24",
+  "school_profile": {
+    "school_type": "Gymnázium, Střední pedagogická škola, Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "24. 1. 2023 − 27. 1. 2023",
+    "school_change_summary": "Nový ředitel od roku 2021 s novou koncepcí. Došlo k zásadní revitalizaci budov a vybudování odborných učeben. Počet žáků (925 ve 32 třídách) se zásadně nezměnil."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Výuka cizích jazyků na velmi vysoké úrovni s aktivním používáním jazyků a úspěchy v certifikovaném testování.",
+        "evidence": "30 žáků složilo zkoušku B2 First, 18 žáků B1 z pedagogického lycea. Jedna žákyně 1. místo v celorepublikové soutěži ve španělštině."
+      },
+      {
+        "tag": "Zapojení do soutěží a projektů",
+        "detail": "Žáci aktivně participují v soutěžích, olympiádách a mezinárodních projektech, což rozvíjí jejich klíčové kompetence.",
+        "evidence": "Pravidelné úspěchy na krajských kolech, účast v programu DofE, Erasmus+ projekty, soutěž Má dáti dal (11. místo ze 60 škol)."
+      },
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Škola postupně zlepšuje své prostředí a vybavení digitálními technologiemi.",
+        "evidence": "Od poslední inspekce došlo k zásadní revitalizaci budov, vybudování odborných učeben a zlepšení digitálního vybavení."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá kontrola a zpětná vazba",
+        "detail": "Vedení školy nemá dostatečně efektivní systém kontroly plnění úkolů a analýza výuky není systematická.",
+        "evidence": "Hospitační činnost bez konkretizace cílů, výsledky nejsou zobecňovány všem učitelům. Chybí důsledná kontrola plnění úkolů zaměstnanců."
+      },
+      {
+        "tag": "Nedostatečná podpora nadaných žáků",
+        "detail": "Škola aktivně nevyhledává nadané a mimořádně nadané žáky, jejich podpora má intuitivní podobu.",
+        "evidence": "Vyučující se na vyhledávání nadaných příliš nezaměřují. Ve škole chybí promyšlená systematická metodická podpora v této oblasti."
+      },
+      {
+        "tag": "Problémy s praktickou výukou",
+        "detail": "Hodnocení žáků v praktické výuce oboru pedagogika není jednotné a objektivní, přetrvávají nedostatky z předchozí inspekce.",
+        "evidence": "Hodnocení probíhá rozdílně v závislosti na pedagógovi. Nebyl vytvořen sjednocující systém, který by jednotně hodnotil všechny žáky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami a jak je diferenciuje výuka?",
+      "Jaký je systém přípravy žáků na maturitní zkoušku a jak se liší podle jednotlivých oborů?",
+      "Jak funguje praktická výuka v oboru pedagogika a jak se hodnotí výkony žáků na jednotlivých pracovištích?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazykové vzdělání a komunikaci – výuka cizích jazyků je na velmi vysoké úrovni",
+      "Aktivní žáci, kteří se chtějí zapojit do soutěží, projektů a mezinárodních výměn (Erasmus+, DofE)",
+      "Zájemci o pedagogické obory – kvalitní praktická příprava s podporou zkušených pedagogů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s výraznějšími vzdělávacími obtížemi – chybí systematická metodická podpora a jednotný přístup",
+      "Mimořádně nadaní žáci – jejich vyhledávání a podpora není aktivní a systematická",
+      "Žáci oboru informační technologie, sociální činnost a obchodní akademie – dosahují slabších studijních výsledků"
+    ],
+    "plain_czech_summary": "Gymnázium v Znojmu je stabilní školou s kvalitním jazykovým vzděláním a aktivním zapojením žáků do soutěží a projektů. Budovy byly nedávno zrekonstruovány a vybaveny moderní technikou. Hlavní slabinou je nedostatečná kontrola kvality výuky a chybějící systematická podpora nadaných žáků. Praktická výuka v pedagogických oborech není jednotně hodnocena. Škola je vhodná pro jazykově nadané a aktivní žáky, ale méně vhodná pro ty se speciálními potřebami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Srovnatelné s průměry za skupinu oborů v České republice",
+      "key_numbers": [
+        "Osmileté gymnázium: průměrná známka 1,47",
+        "Informační technologie: průměrná známka 2,31",
+        "Výsledky odpovídají úrovni v ČR"
+      ],
+      "evidence": "Výsledky žáků u maturitní zkoušky ve školním roce 2021/2022 jsou srovnatelné s průměry za skupinu oborů v České republice."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v textu uvedeny"
+      ],
+      "evidence": "Zpráva se absencí nezabývá."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: 3 výchovní poradci, metodik prevence, psycholožka",
+      "Domov mládeže s 114 ubytovanými žákyněmi a společnými prostory pro přípravu na výuku",
+      "Školní jídelna s možností dietního stravování"
+    ],
+    "safety_climate": [
+      "Bezpečné a příjemné prostředí – škola systematicky dbá na zajištění bezpečnosti",
+      "Žáci dodržují nastavená pravidla, vyučovací hodiny nejsou narušovány kázeňskými problémy",
+      "Adaptační kurzy pro první ročníky, besedy s policií, projektový den o aktivitách Policie ČR"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s profesními a sociálními partnery pro praktické vyučování",
+      "Mezinárodní projekt Erasmus+ – žáci vyjíždějí do zahraničí",
+      "Intenzivní spolupráce s občanskými sdruženími a neziskovými organizacemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však delší a obsahují více technických detailů.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, jaká je situace s docházkou žáků",
+      "Konkrétní počty žáků se speciálními potřebami (55) nejsou dále analyzovány",
+      "Detailní výsledky jednotlivých oborů nejsou všechny uvedeny (chybí data pro pedagogické lyceum)"
+    ]
+  }
+}
+```

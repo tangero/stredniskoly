@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600011089_2025-03-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:39:59.863800+00:00",
+  "run_finished_utc": "2026-02-09T13:40:25.120329+00:00",
+  "raw_file": "SOS_600011089_2025-03-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600011089_2025-03-25",
+    "school_profile": {
+      "school_type": "Střední odborná škola podnikatelská (soukromá, s.r.o.)",
+      "inspection_period": "25. března 2025 až 27. března 2025",
+      "school_change_summary": "Škola se přestěhovala do nových zrekonstruovaných prostor. Od roku 2017 vede školu nová ředitelka. Vzdělává 174 žáků v sedmi třídách v oboru Ekonomika a podnikání se čtyřmi zaměřeními."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Škola aktivně rozvíjí jazykové kompetence žáků prostřednictvím mezinárodní spolupráce a přípravy na certifikované jazykové zkoušky.",
+          "evidence": "Zapojení do mezinárodního projektu, organizace jazykových zkoušek k získání certifikátu z angličtiny."
+        },
+        {
+          "tag": "Podpůrné klima",
+          "detail": "Partnerský přístup učitelů a bohatá nabídka aktivit mimo výuku pozitivně ovlivňují prostředí pro učení.",
+          "evidence": "Vstřícná atmosféra, týdenní adaptační programy, školní projekty, sportovní kurzy, třídnické hodiny."
+        },
+        {
+          "tag": "Péče o slabší žáky",
+          "detail": "Škola efektivně identifikuje a podporuje žáky ohrožené neúspěchem prostřednictvím doučování a online aplikací.",
+          "evidence": "Nízký počet žáků opakujících ročník, skupinové a individuální doučování, online aplikace k procvičování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace ve výuce",
+          "detail": "Učitelé všeobecných předmětů nedostatečně přizpůsobují úkoly individuálním schopnostem žáků.",
+          "evidence": "Žáci plnili obsahem, typem, rozsahem i náročností shodné úkoly; chybějící diferenciace neumožňuje využít individuální potenciál."
+        },
+        {
+          "tag": "Zpětná vazba a hodnocení",
+          "detail": "Učitelé věnují málo pozornosti shrnutí učiva a ověření dosažení cílů na konci hodin.",
+          "evidence": "V závěru většiny hodin nebyl věnován dostatečný prostor shrnutí a efektivní zpětné vazbě; žáci jen v malé míře vedeni k rozvoji hodnoticích dovedností."
+        },
+        {
+          "tag": "Metodická podpora pedagogů",
+          "detail": "Vedení školy neposkytuje pedagogům dostatečně účinnou podporu k zlepšování výuky.",
+          "evidence": "Metodická podpora není dostatečně účinná; nedostatky z předchozí inspekce přetrvávají."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku individuálním schopnostem jednotlivých žáků?",
+        "Jaké konkrétní kroky podnikla škola k zlepšení formativního hodnocení a zpětné vazby?",
+        "Jak se škola připravuje na maturitní zkoušku a jaké jsou výsledky v posledních letech?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o podnikání a ekonomiku s podporou v přípravě na certifikované jazykové zkoušky",
+        "Studenti, kteří potřebují individuální podporu a doučování – škola má funkční systém péče o slabší žáky",
+        "Žáci hledající přátelské prostředí s bohatou nabídkou mimoškolních aktivit a projektů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s vyšší potřebou individualizace a diferenciace – učitelé ji zatím nedostatečně aplikují",
+        "Studenti, kteří se učí lépe s jasnou zpětnou vazbou a ověřením pochopení – to není v hodinách dostatečně zajištěno",
+        "Žáci potřebující rozvoj kritického myšlení a práce s informačními zdroji – to se v hodinách zařazuje jen ojediněle"
+      ],
+      "plain_czech_summary": "Soukromá střední škola v Mostě nabízí vzdělání v ekonomice a podnikání. Silné stránky: jazykové vzdělání, přátelské prostředí, péče o slabší žáky. Hlavní problémy: učitelé nedostatečně přizpůsobují výuku individuálním schopnostem, málo věnují pozornosti zpětné vazbě a ověření pochopení. Škola má funkční vedení a kvalifikované učitele, ale potřebuje zlepšit metodickou podporu pedagogům. Maturitní výsledky jsou srovnatelné s celorepublikovým průměrem."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý – rok 2023 lepší než průměr, rok 2024 srovnatelný s průměrem",
+        "key_numbers": [
+          "2023: všichni žáci úspěšní (1 žák zkoušku nekonal)",
+          "2024: 3 žáci neuspěli (1 ve společné části, 2 v profilové), 2 žáci zkoušku nekonali"
+        ],
+        "evidence": "Ve zkušebním období 2023 byla úspěšnost vyšší než v ČR v dané skupině oborů. V roce 2024 srovnatelná s ČR."
+      },
+      "absence": {
+        "trend": "Neinformováno v textu",
+        "key_numbers": [
+          "Neinformováno"
+        ],
+        "evidence": "Zpráva neobsahuje konkrétní údaje o absenci žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodik prevence zajišťují funkční systém poradenských služeb",
+        "Kariérová poradkyně poskytuje efektivní podporu při volbě studia a uplatnění na trhu práce",
+        "Skupinové a individuální doučování, zejména pro žáky s vyšší absencí"
+      ],
+      "safety_climate": [
+        "Promyšlený systém školní prevence reagující na aktuální potřeby",
+        "Případné problémy s nevhodným chováním řešeny bezodkladně, což minimalizuje jejich výskyt",
+        "Cílem je vytvářet dobré prosociální vztahy v třídních kolektivech i mezi ročníky"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zaměstnavateli a subjekty, kde žáci absolvují odbornou praxi",
+        "Zapojení do mezinárodního projektu podporujícího mobilitu žáků",
+        "Aktivní spolupráce s úřadem práce a profesními organizacemi v oblasti kariérového poradenství"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Hlavní zjištění jsou jasně formulována. Mírně snižuje skóre absence konkrétních čísel o absenci a některé obecnější formulace.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o počtu či procentu absence žáků.",
+        "Není jasné, kolik procent žáků využívá doučování nebo online aplikaci.",
+        "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami v jednotlivých třídách."
+      ]
+    }
+  }
+}

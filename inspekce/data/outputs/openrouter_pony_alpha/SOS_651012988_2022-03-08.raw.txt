@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_651012988_2022-03-08",
+  "school_profile": {
+    "school_type": "Střední škola s převahou oborů s výučním listem a menší nabídkou maturitních oborů.",
+    "inspection_period": "8. 3. 2022 − 10. 3. 2022",
+    "school_change_summary": "Škola postupně utlumuje dálkové studium a od příštího roku nebude přijímat žáky do oboru Podnikání v dálkové formě."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Podpora studentů",
+        "detail": "Škola nabízí individuální doučování a v příštím roce zavede povinné semináře k přípravě na maturitu.",
+        "evidence": "Škola nabízí žákům závěrečných ročníků podporu spočívající v individuálním doučování... od příštího školního roku budou nabízené semináře zařazeny mezi povinné předměty."
+      },
+      {
+        "tag": "Kvalitní jazyky",
+        "detail": "Výuka anglického jazyka je kvalitní a efektivní, vyučující zapojují žáky.",
+        "evidence": "Sledované hodiny byly výrazně odlišné... promyšlená struktura hodin... byla sledována ve výuce anglického jazyka... žáky se většinou dařilo do výuky aktivně zapojovat."
+      },
+      {
+        "tag": "Systémové řešení problémů",
+        "detail": "Vedení školy aktivně analyzuje neúspěšnost u maturit a hledá cesty ke zlepšení.",
+        "evidence": "Vedení školy systematicky a cílevědomě vyhodnocuje výsledky vzdělávání žáků... snaží se přijímat opatření ke zlepšení výsledků vzdělávání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká úspěšnost u maturity",
+        "detail": "Většina maturitních oborů má výrazně horší výsledky než celostátní průměr.",
+        "evidence": "Výsledky žáků ve společné části maturitní zkoušky jsou od předchozí inspekční činnosti... nadále neuspokojivé. Hrubá neúspěšnost... v oboru... Kosmetické služby... je významně nižší (cca 2,5 krát)."
+      },
+      {
+        "tag": "Nekvalifikovaní učitelé",
+        "detail": "Škola nemá plně kvalifikované učitele angličtiny a matematiky, což škodí výuce.",
+        "evidence": "Jednoho učitele anglického jazyka a jednoho učitele matematiky se škole zatím nepodařilo nahradit odborně kvalifikovanými pedagogy."
+      },
+      {
+        "tag": "Slabá diferenciace výuky",
+        "detail": "Výuka není přizpůsobena schopnostem jednotlivců, spojování tříd zhoršuje výsledky.",
+        "evidence": "Spojení žáků s různými studijními předpoklady... a nezohlednění této okolnosti formou diferenciace výuky se negativně odráží ve výsledcích společné části maturitní zkoušky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola konkrétně zajistí, aby studenti s rozdílnými znalostmi ve spojených třídách prospívali?",
+      "Kdo bude učit matematiku a angličtinu v příštím roce a jaká je jeho kvalifikace?",
+      "Jaká je statistika úspěšnosti studentů u maturity v konkrétním oboru, o který se zajímám, za poslední tři roky?"
+    ],
+    "who_school_fits": [
+      "Studentům, kteří chtějí získat odborný výuční list v nabízených živnostech.",
+      "Samostatným studentům, kteří dokáží pracovat i bez individuálního přístupu.",
+      "Uchazečům o obor Informační služby, který dosahuje nadprůměrných výsledků."
+    ],
+    "who_should_be_cautious": [
+      "Studentům se zájmem o obor Kosmetické služby či Vlasová kosmetika kvůli vysoké neúspěšnosti.",
+      "Uchazečům o dálkové nástavbové studium, které škola ruší a má velmi špatné výsledky.",
+      "Studentům, kteří vyžadují individuální přístup nebo mají vyšší studijní ambice."
+    ],
+    "plain_czech_summary": "Inspekce potvrdila vážné problémy s úspěšností u maturitní zkoušky, zejména v oborech Kosmetické služby a dálkovém Podnikání, kde neuspěje až 60 % studentů. Škola trpí nedostatkem kvalifikovaných učitelů matematiky a angličtiny a spojování tříd s různou úrovní studentů škodí výuce. Pozitivem je snaha vedení o zlepšení, zavedení povinných seminářů a kvalitní výuka angličtiny v denním studiu. Pro rodiče je klíčové zvážit konkrétní obor, protože zatímco Informační služby fungují dobře, kosmetické obory mají špatná data a vysokou neúspěšnost."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně negativní, dlouhodobě neuspokojivé výsledky ve většině oborů.",
+      "key_numbers": [
+        "Až 60 % neúspěšnost v oborech Kosmetické služby a Vlasová kosmetika.",
+        "Pouze 35 % studentů úspěšně ukončí studium včas (cyklus 2019–2021).",
+        "Neúspěšnost u maturity z matematiky je cca 55 %."
+      ],
+      "evidence": "Hrubá neúspěšnost žáků... v oboru... Kosmetické služby dosahovala... průměrně přibližně 60 %... průměrná úspěšnost v cyklu v letech 2019 – 2021 je pouze cca 35 %."
+    },
+    "absence": {
+      "trend": "Vysoká a dlouhodobě se zhoršující, negativně ovlivňuje výsledky.",
+      "key_numbers": [
+        "Vysoká absence především u žáků oborů Kosmetička a nástavbových oborů.",
+        "Podíl absence závěrečných ročníků na celkové absenci byl více než třetinový.",
+        "Značná část žáků jen obtížně dosahuje očekávaných výsledků."
+      ],
+      "evidence": "Významným faktorem, který negativně ovlivňuje výsledky vzdělávání je vysoká absence žáků... Podíl absence žáků závěrečných ročníků... byl více jak třetinový."
+    },
+    "support_services": [
+      "Individuální doučování a dobrovolné semináře pro přípravu na maturitu.",
+      "Spolupráce třídních učitelů se školním poradenským pracovištěm.",
+      "Pilotní program Dohody se žáky a rodiči pro snížení absence."
+    ],
+    "safety_climate": [
+      "Vedení školy se zaměřuje na vytváření psychického bezpečí po distanční výuce.",
+      "Identifikována pasivita žáků a problémy s třídním kolektivem během online výuky.",
+      "Absence diferenciace práce se žáky se speciálními vzdělávacími potřebami ve výuce."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se školskými poradenskými zařízeními a externími organizacemi.",
+      "Aktivní spolupráce třídních učitelů s poradenským pracovištěm při řešení problémů."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je psán srozumitelně, ale obsahuje velké množství úředních frází a pasivních konstrukcí.",
+    "uncertainty_notes": [
+      "Nejasné, jak konkrétně vypadá 'pilotní program Dohody se žáky a rodiči'.",
+      "Chybí upřesnění, co znamená 'více jak třetinový podíl absence' v absolutních číslech.",
+      "Není zcela jasné, zda 'nekvalifikovaný učitel' učí všechny třídy nebo jen část."
+    ]
+  }
+}

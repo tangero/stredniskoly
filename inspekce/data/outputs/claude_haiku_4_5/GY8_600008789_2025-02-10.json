@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_600008789_2025-02-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:45:49.837573+00:00",
+  "run_finished_utc": "2026-02-09T13:46:13.264751+00:00",
+  "raw_file": "GY8_600008789_2025-02-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008789_2025-02-10",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium se 585 žáky ve 20 třídách",
+      "inspection_period": "10. února až 12. února 2025",
+      "school_change_summary": "Škola vydala nové vzdělávací programy, posílila digitální technologie, založila studentský parlament a systematicky sleduje školní klima. Probíhá modernizace prostor a postupná obměna pedagogů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Mezinárodní spolupráce",
+          "detail": "Dlouhodobé partnerství se zahraničními školami a projekty Erasmus+ rozvíjejí jazykové dovednosti a osobnostní růst žáků.",
+          "evidence": "Žáci uplatňují jazykové a sociální dovednosti při společných aktivitách a výjezdech do zahraničí."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Škola cíleně podporuje účast v odborných soutěžích a olympiádách s výborným umístěním.",
+          "evidence": "Žáci dosahují výborných umístění ve vyšších kolech včetně republikové a mezinárodní úrovně."
+        },
+        {
+          "tag": "Kariérové poradenství",
+          "detail": "Škola dlouhodobě sleduje uplatnění absolventů a efektivně je využívá v poradenství.",
+          "evidence": "Klub absolventů Gymnázia Strakonice napomáhá žákům volit optimální vzdělávací cestu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Chybějící tělocvična",
+          "detail": "Absence tělocvičny komplikuje organizaci tělesné výchovy a aktivit s větším počtem účastníků.",
+          "evidence": "Nepodařilo se vybudovat chybějící tělocvičnu, což negativně ovlivňuje organizaci výuky."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Ve výuce chybí přizpůsobení úkolů různým schopnostem a zájmům žáků.",
+          "evidence": "Ve většině hodin chyběla diferenciace zadávaných úkolů umožňující plné využití potenciálu žáků."
+        },
+        {
+          "tag": "Slabší rozvoj kritického myšlení",
+          "detail": "Výuka nedostatečně pracuje s různými zdroji informací zaměřenými na kritické myšlení.",
+          "evidence": "Zpravidla chyběla práce s různými zdroji informací cíleně zaměřená na rozvoj kritického myšlení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje vyřešit problém chybějící tělocvičny a kdy by mohla být postavena?",
+        "Jaké konkrétní kroky podniká škola k větší diferenciaci výuky pro žáky s různými schopnostmi?",
+        "Jak se škola věnuje rozvoji kritického myšlení a práci s různými zdroji informací?"
+      ],
+      "who_school_fits": [
+        "Žáci s vysokými studijními předpoklady a motivací ke studiu, kteří chtějí studovat na vysoké škole",
+        "Talentovaní žáci se zájmem o jazyky, umění, vědu a účast v soutěžích a olympiádách",
+        "Žáci, kterým vyhovuje intenzivní mezinárodní spolupráce a výměnné pobyty v zahraničí"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími studijními předpoklady, kterým by mohla chybět individuální podpora a diferenciace",
+        "Žáci se zájmem o tělesnou výchovu a sportovní aktivity, kterým chybí vhodné zázemí",
+        "Žáci, kteří potřebují více praktické a problémově orientované výuky s rozvojem kritického myšlení"
+      ],
+      "plain_czech_summary": "Gymnázium Strakonice je kvalitní škola s vysokými výsledky a silnou mezinárodní spoluprací. Žáci dosahují výborných výsledků, téměř polovina prospívá s vyznamenáním. Škola podporuje talenty v soutěžích a olympiádách. Hlavní slabinou je chybějící tělocvična a nedostatečná diferenciace výuky pro různě nadané žáky. Výuka by měla více rozvíjet kritické myšlení a komunikativní dovednosti."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě vysoká úroveň",
+        "key_numbers": [
+          "Celkové výsledky maturitní zkoušky jsou dlouhodobě na vysoké úrovni",
+          "V některých případech neúspěch u maturitní zkoušky nekoresponduje s průběžným hodnocením"
+        ],
+        "evidence": "Žáci jsou následně úspěšní v přijímacím řízení v celé škále oborů vysokých škol."
+      },
+      "absence": {
+        "trend": "Velmi nízká",
+        "key_numbers": [
+          "Počet zameškaných hodin je udržován na nízké úrovni",
+          "Vhodně nastavená pravidla pro hodnocení v případě absence jsou důsledně uplatňována"
+        ],
+        "evidence": "Škole se daří udržovat na nízké úrovni počet zameškaných hodin."
+      },
+      "support_services": [
+        "Nabídka individuálních konzultací pro žáky s menší úspěšností",
+        "Kariérové poradenství s využitím informací od absolventů",
+        "Studentský parlament participující na vytváření školního klimatu"
+      ],
+      "safety_climate": [
+        "Vedení školy se systematicky věnuje evaluaci školního klimatu",
+        "Informace a podněty jsou získávány od žáků i pedagogů formou dotazníkového šetření",
+        "Studentský parlament se účinně podílí na vytváření příznivého školního klimatu"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se základními školami včetně Klubu nadaných dětí",
+        "Partnerství s vysokými školami a regionálními firmami technického zaměření",
+        "Reciproční vztahy s partnerskými zahraničními školami a účast v mezinárodních projektech"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasně odděluje silné stránky od slabých. Všechny tvrzení jsou podložena důkazy z textu.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o procentu žáků s vyznamenáním (pouze 'téměř polovina')",
+        "Chybí konkrétní termín pro výstavbu tělocvičny, pouze se uvádí, že se nepodařilo ji vybudovat",
+        "Není jasné, jak velký je podíl neprospívajících žáků (pouze 'velmi nízký')"
+      ]
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600009211_2024-09-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:14:07.170972+00:00",
+  "run_finished_utc": "2026-02-09T16:14:31.083655+00:00",
+  "raw_file": "SOS_600009211_2024-09-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009211_2024-09-25",
+    "school_profile": {
+      "school_type": "Soukromá obchodní akademie, střední vzdělání s maturitou (obor 63-41-M/02), denní a dálková forma",
+      "inspection_period": "25.–27. září 2024",
+      "school_change_summary": "Od inspekce v 2018: obměna třetiny pedagogů, zvýšená kvalifikovanost, mírný nárůst žáků v denní formě (142 žáků), stabilní počty v dálkové formě (34 žáků). Celkem 176 žáků, z toho 8 se speciálními potřebami a 24 s odlišným mateřským jazykem."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Škola vytváří žákům bezpečné prostředí s pozitivním klimatem, který předchází rizikovým jevům.",
+          "evidence": "Výrazný individuální přístup podporuje příznivé klima a předcházení sociálně patologickým jevům."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují velmi dobrých výsledků v soutěžích a olympiádách, zejména v cizích jazycích a odborných předmětech.",
+          "evidence": "Škola pravidelně vyhodnocuje a oceňuje výsledky soutěží a olympiád."
+        },
+        {
+          "tag": "Kvalitní příprava k maturitě",
+          "detail": "V posledních dvou letech byla úspěšnost žáků denního studia ve společné části maturitní zkoušky téměř stoprocentní.",
+          "evidence": "Škola zaměřila přípravu na didaktické testy z českého jazyka a cizích jazyků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Ve druhém pololetí 2023/2024 mělo téměř 50 % žáků absenci vyšší než 80 hodin, pravidla se uplatňují nesystematicky.",
+          "evidence": "V prvním pololetí bylo 16 % žáků hodnoceno stupněm neprospěl/nehodnocen, pouze 10 % absolvovalo komisionální zkoušku."
+        },
+        {
+          "tag": "Pasivní výuka bez diferenciace",
+          "detail": "Vyučující převážně používají frontální výuku bez přizpůsobení různým vzdělávacím potřebám žáků.",
+          "evidence": "Nedochází k diferenciaci pro žáky se speciálními potřebami, chybí sebehodnocení a vzájemné hodnocení."
+        },
+        {
+          "tag": "Přetížení pedagogů",
+          "detail": "Více jak dvě třetiny pedagogů má velmi vysoké úvazky (1,5krát vyšší než norma), jeden pedagog má 1,85krát vyšší úvazek.",
+          "evidence": "Vysoké úvazky neumožňují kvalitní výkon více funkcí a snižují kvalitu poradenské pomoci."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou důsledky pro jejich hodnocení?",
+        "Jaké metody výuky se používají v odborných předmětech a jak se liší od frontální výuky?",
+        "Jak je zajištěna individuální podpora pro žáky se speciálními vzdělávacími potřebami nebo s odlišným mateřským jazykem?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení bezpečného a podporujícího prostředí s individuálním přístupem",
+        "Talentovaní žáci zaměření na cizí jazyky a soutěže, kde škola dosahuje výborných výsledků",
+        "Žáci motivovaní k přípravě na maturitní zkoušku s téměř stoprocentní úspěšností v posledních letech"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k vyšší absenci – škola má problémy se systematickým řešením vysoké absence",
+        "Žáci potřebující individualizovanou výuku a různorodé metody – převažuje frontální výuka bez diferenciace",
+        "Žáci se speciálními vzdělávacími potřebami – vzdělávací plány se vypracovávají, ale jejich vyhodnocování chybí"
+      ],
+      "plain_czech_summary": "Soukromá obchodní akademie v Karlových Varech je bezpečné prostředí s dobrým klimatem a úspěchy v soutěžích. Silná je příprava k maturitě – v posledních dvou letech skoro všichni žáci denního studia uspěli. Problém je vysoká absence (50 % žáků přesahuje limit), kterou škola neřeší systematicky. Výuka je převážně frontální bez přizpůsobení různým potřebám žáků. Pedagogové jsou přetíženi vysokými úvazky, což snižuje kvalitu poradenské pomoci. Škola by měla zlepšit práci s absencí a zavést více aktivních metod výuky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní trend v denní formě, slabý v dálkové formě",
+        "key_numbers": [
+          "Denní forma: téměř 100% úspěšnost ve společné části maturitní zkoušky v posledních dvou letech",
+          "Dálková forma: ve společné části maturitní zkoušky v roce 2022 uspěl jen zlomek konajících",
+          "Žáci s vyznamenáním: pouze 3 žáci (2 %) v minulém školním roce"
+        ],
+        "evidence": "Škola zaměřila přípravu na didaktické testy z českého jazyka a cizích jazyků, což vedlo ke zlepšení."
+      },
+      "absence": {
+        "trend": "Kritický – vysoká absence není řešena systematicky",
+        "key_numbers": [
+          "Druhé pololetí 2023/2024: téměř 50 % žáků mělo absenci vyšší než 80 hodin",
+          "První pololetí 2023/2024: 16 % žáků hodnoceno stupněm neprospěl/nehodnocen",
+          "Komisionální zkoušky: absolvovalo pouze 10 % žáků s vysokou absencí"
+        ],
+        "evidence": "Pravidlo o přípustné absenci (80 hodin) se uplatňuje nesystematicky, pouze ve druhém pololetí."
+      },
+      "support_services": [
+        "Poradenská pomoc: kariérové poradenství, zejména před ukončením studia a vstupem na VŠ",
+        "Speciální vzdělávací plány: vypracovávány pro 8 žáků se speciálními potřebami, ale bez systematického vyhodnocování",
+        "Preventivní aktivity: realizovány ve spolupráci s externími organizacemi, zaměřené na rizikové chování"
+      ],
+      "safety_climate": [
+        "Bezpečné prostředí: škola vytváří žákům bezpečné prostředí pro vzdělávání",
+        "Pozitivní klima: budování pozitivního klimatu ve třídách umožňuje předcházení rizikovým jevům",
+        "Sociometrická šetření: realizována u žáků druhých ročníků pro sledování klimatu"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se sociálními partnery pro naplňování vzdělávacích programů",
+        "Odborné praxe a exkurze: využívány k podpoře rozvoje sociálních kompetencí a odborného růstu",
+        "Externí organizace: spolupráce na preventivních aktivitách zaměřených na rizikové chování"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná s konkrétními čísly a citacemi. Slabé stránky jsou jasně identifikovány. Mírně snižuje srozumitelnost technická terminologie a rozsáhlé pasáže o metodice.",
+      "uncertainty_notes": [
+        "Dálková forma: zpráva neobsahuje dostatek informací o kvalitě výuky v dálkové formě, pouze zmínku o konzultacích",
+        "Finanční aspekty: není jasné, jak se poplatek za vzdělávání odráží v kvalitě služeb",
+        "Budoucí vývoj: není jasné, jaké konkrétní kroky škola plánuje k nápravě zjištěných nedostatků"
+      ]
+    }
+  }
+}

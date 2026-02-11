@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_650067231_2023-12-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:31:57.966265+00:00",
+  "run_finished_utc": "2026-02-09T16:32:19.680129+00:00",
+  "raw_file": "GY4_650067231_2023-12-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_650067231_2023-12-05",
+    "school_profile": {
+      "school_type": "Čtyřleté gymnázium (obor 79-41-K/41) zřízené Arcibiskupstvím olomouckým",
+      "inspection_period": "5. 12. 2023 – 8. 12. 2023",
+      "school_change_summary": "Od poslední inspekce došlo k výraznému zlepšení výsledků vzdělávání. Škola vybudovala nové odborné učebny, multifunkční prostory a modernizovala digitální technologie. Klasifikační průměr se zlepšil z 1,64 (2017/2018) na 1,45 (2022/2023)."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci dosahují velmi dobrých až vynikajících výsledků, úspěšnost u maturity je konstantně 100 %.",
+          "evidence": "Klasifikační průměr 1,45, nadprůměrné výsledky v testování gramotnosti, vysoká úspěšnost při přijímání na vysoké školy."
+        },
+        {
+          "tag": "Komplexní podpora",
+          "detail": "Škola propojuje vzdělávání se střediskem volného času a domovem mládeže, což vytváří ucelený systém podpory.",
+          "evidence": "Personální propojení pedagogů, okamžitá a cílená pomoc ohrožených žáků, doučování a konzultace."
+        },
+        {
+          "tag": "Kvalitní vybavení",
+          "detail": "Nové odborné učebny, multifunkční prostory a moderní digitální technologie podporují efektivní výuku.",
+          "evidence": "Vybudované učebny fyziky, chemie, jazykové a počítačové učebny, nová školní kuchyně."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Absence tělocvičny",
+          "detail": "Škola nemá vlastní tělocvičnu, což limituje výuku tělesné výchovy.",
+          "evidence": "Škola proto využívá multifunkční prostory, sportovní areály obce nebo tělocvičnu základní školy."
+        },
+        {
+          "tag": "Nejednotná kvalita hospitací",
+          "detail": "Některé hospitace vedením školy postrádají konkrétní závěry vedoucí k zlepšení pedagogické práce.",
+          "evidence": "Inspekce doporučuje zaměřit se na poskytování účelnější zpětné vazby vyučujícím."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně funguje systém doučování a individuální podpory pro žáky v obtížích?",
+        "Jaké jsou možnosti sportovního vyžití bez vlastní tělocvičny a jak je to řešeno v praxi?",
+        "Jak se škola podílí na přípravě žáků na vysoké školy a jaké jsou jejich úspěchy?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí dosáhnout vysokých výsledků a pokračovat na vysoké škole",
+        "Děti zajímající se o humanitní i přírodovědné obory s možností účasti v olympiádách",
+        "Žáci, kteří ocení komplexní podporu včetně volnočasových aktivit a ubytování"
+      ],
+      "who_should_be_cautious": [
+        "Rodiny, které preferují vlastní tělocvičnu na školním pozemku",
+        "Žáci hledající méně náročné studium bez vysokých nároků na výsledky",
+        "Rodiny bez zájmu o církevní zaměření školy"
+      ],
+      "plain_czech_summary": "Stojanovo gymnázium je kvalitní církevní škola s výbornou pověstí. Žáci dosahují velmi dobrých výsledků (průměr 1,45), maturita se píše se 100% úspěšností. Škola nabízí komplexní podporu propojením třídy, domova mládeže a střediska volného času. Nově vybudované učebny a moderní technologie podporují kvalitní výuku. Jedinou limitací je absence vlastní tělocvičny. Škola je vhodná pro ambiciózní žáky s cílem vysoké školy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Konstantně vysoká úspěšnost",
+        "key_numbers": [
+          "Úspěšnost u maturitních zkoušek: 100 %",
+          "Vysoká úspěšnost při přijímání na vysoké školy",
+          "Žáci konají zkoušky napříč všemi vzdělávacími oblastmi"
+        ],
+        "evidence": "Úspěšnost u maturitních zkoušek je konstantně vysoká, většinou 100 %. Při přijímání na vysoké školy je úspěšnost rovněž vysoká."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Informace o absenci nejsou v inspekční zprávě uvedeny"
+        ],
+        "evidence": "Inspekční zpráva se absencí nezabývá."
+      },
+      "support_services": [
+        "Výchovná a kariérová poradkyně",
+        "Školní metodička prevence (zároveň vychovatelka na domově mládeže)",
+        "Školní kaplan",
+        "Doučování a individuální konzultace",
+        "Systém podpory žáků ohrožených školním neúspěchem propojující školu, domov mládeže a středisko volného času"
+      ],
+      "safety_climate": [
+        "Prostředí školy je udržované, estetické, velmi podnětné a bezpečné",
+        "Škola pravidelně vyhodnocuje bezpečnostní rizika a přijímá patřičná opatření",
+        "Nastavené preventivní mechanismy školy jsou účinné",
+        "Aktivity zaměřené na rozvoj osobnosti a předcházení negativním jevům se pozitivně projevují v celém výchovně vzdělávacím procesu"
+      ],
+      "partnerships_practice": [
+        "Funkční spolupráce se zřizovatelem (Arcibiskupství olomoucké)",
+        "Kooperace se základními a středními školami",
+        "Spolupráce se školskými poradenskými zařízeními a odbornými zařízeními",
+        "Vstřícná kooperace s různými zájmovými organizacemi",
+        "Dlouhodobě nastavená spolupráce se školami podobného zaměření v zahraničí",
+        "Funkční vztahy se všemi partnery pro rozvoj vzdělávání (domovy pro seniory, zařízení pro osoby se zdravotním postižením)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní údaje, citace a doklady. Všechna tvrzení jsou podpořena evidencí. Jazyk je srozumitelný a bez zbytečného úřednického stylu.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna, nelze posoudit trend či čísla",
+        "Počet žáků se speciálními vzdělávacími potřebami (14) je zmíněn, ale jejich podpora není detailně popsána",
+        "Finanční aspekty a rozpočet školy nejsou v textu obsaženy"
+      ]
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "report_id": "SOU_600170098_2022-03-29",
+  "school_profile": {
+    "school_type": "Integrovaná střední škola technická s maturitními obory a výučními listy.",
+    "inspection_period": "29. − 31. března 2022",
+    "school_change_summary": "Škola dlouhodobě neplní záměr snižovat neúspěšnost u maturity a v některých oborech nekvalifikované učitele."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Individuální přístup",
+        "detail": "Díky nízkému počtu žáků ve třídách se daří zapojovat do výuky všechny studenty.",
+        "evidence": "Do úloh připravených vyučujícími se dařilo zapojovat všechny žáky také díky jejich nižšímu počtu ve třídě."
+      },
+      {
+        "tag": "Kvalifikovaní učitelé češtiny",
+        "detail": "Výuka českého jazyka je zajištěna stabilními a odborně kvalifikovanými pedagogy.",
+        "evidence": "Stabilní je situace v zabezpečení výuky českého jazyka a literatury... předměty společné části maturitní zkoušky vyučuje šest odborně kvalifikovaných učitelů."
+      },
+      {
+        "tag": "Podpora cizinců",
+        "detail": "Škola nabízí reedukaci českého jazyka pro žáky-cizince s jazykovou bariérou.",
+        "evidence": "Žákovi-cizinci s výraznou jazykovou bariérou je poskytována reedukace v českém jazyce."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Katastrofální úspěšnost maturity",
+        "detail": "V nástavbovém oboru neuspělo u maturity v roce 2021 až 75 % studentů.",
+        "evidence": "V roce 2021 významně vzrostla [hrubá neúspěšnost] a činila 75 % (v ČR se v daném roce pohybovala kolem 24 %)."
+      },
+      {
+        "tag": "Nekvalifikovaná výuka jazyků a matematiky",
+        "detail": "Více než polovinu hodin angličtiny a čtvrtinu hodin matematiky učí lektoři bez aprobace.",
+        "evidence": "Téměř čtvrtina hodin matematiky a více než polovina hodin anglického jazyka vyučovány pedagogy bez příslušné předmětové specializace."
+      },
+      {
+        "tag": "Zbytečnost nástavbového studia",
+        "detail": "Studium dokončí pouze 20 % přijatých žáků, inspekce doporučuje obor zrušit.",
+        "evidence": "Ve kterém pouze 20 % žáků příslušného prvního ročníku po dvou letech studium úspěšně absolvuje... doporučuje nepřijímat žáky do nástavbového oboru."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší, že více než polovinu hodin angličtiny vyučují nekvalifikovaní pedagogové?",
+      "Proč je úspěšnost u maturity v nástavbovém oboru dlouhodobě podprůměrná a jak mi z toho pomůžete?",
+      "Jaká konkrétní opatření škola přijímá proti vysoké absenci žáků?"
+    ],
+    "who_school_fits": [
+      "Technicky nadaní studenti se zájmem o obor Mechanik elektrotechnik, který má lepší výsledky.",
+      "Žáci, kteří potřebují menší kolektiv a individuální pozornost díky nezaplněným třídám.",
+      "Cizinci hledající školu s reedukací českého jazyka."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o nástavbové studium Provozní elektrotechnika, které inspekce doporučuje zrušit.",
+      "Studenti očekávající kvalitní výuku anglického jazyka a matematiky.",
+      "Žáci se sklonem k vysoké absenci, kterým škola nedokáže účinně pomoci."
+    ],
+    "plain_czech_summary": "Inspekce odhalila vážné problémy v maturitních oborech. Nástavbové studium Provozní elektrotechnika je prakticky neúspěšné – maturitu složí jen 20 % studentů a inspekce doporučuje obor zrušit. Čtyřletý obor Mechanik elektrotechnik je lepší, ale trpí nekvalifikovanou výukou angličtiny a matematiky. Například angličtinu učí bez aprobace více než v polovině hodin. Škola má stabilní výuku češtiny a nabízí podporu cizincům. Celkově ale opatření proti neúspěšnosti a vysoké absenci nefungují. Rodiče by měli zvážit rizika spojená s nízkou kvalitou výuky klíčových předmětů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně se zhoršující úspěšnost, zejména v nástavbovém studiu.",
+      "key_numbers": [
+        "75 % neúspěšnost v nástavbovém oboru (2021)",
+        "20 % žáků nástavbového oboru studium dokončí",
+        "100 % úspěšnost v oboru Mechanik elektrotechnik (2021)"
+      ],
+      "evidence": "V roce 2021 [hrubá neúspěšnost] činila 75 %... V oboru Mechanik elektrotechnik... v roce 2021 byli všichni žáci... 100 % úspěšní."
+    },
+    "absence": {
+      "trend": "Vysoká a dlouhodobě neřešená absence, zejména v nástavbovém studiu.",
+      "key_numbers": [
+        "cca 199 zameškaných hodin na žáka (nástavbový obor)",
+        "145 zameškaných hodin na žáka (Mechanik elektrotechnik)",
+        "Absence v prezenční výuce je přetrvávajícím problémem."
+      ],
+      "evidence": "Absence žáků byla ve školním roce 2018/2019 vysoká, u nástavbového oboru cca 199 hodin na žáka."
+    },
+    "support_services": [
+      "Reedukace českého jazyka pro cizince (účinnost snižována velkými intervaly).",
+      "Strategie prevence školní neúspěšnosti nastavena, ale neúčinná.",
+      "Individuální konzultace a doučování nabízena, ale bez výraznějšího dopadu."
+    ],
+    "safety_climate": [
+      "Výuka probíhá v pozitivní pracovní atmosféře.",
+      "Pravidelné třídnické hodiny přispívají k řešení rizikového chování.",
+      "Opatření k prevenci záškoláctví nejsou dostatečně účinná."
+    ],
+    "partnerships_practice": [
+      "Škola se snaží propojovat teoretickou a praktickou výuku.",
+      "Spolupráce s firmami je v koncepci školy vytyčena jako cíl, inspekce ji nezmiňuje jako nedostatek."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, jasně identifikuje problémy (neúspěšnost, absence, nekvalifikovanost) a podporuje je konkrétními čísly.",
+    "uncertainty_notes": []
+  }
+}

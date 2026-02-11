@@ -1,0 +1,119 @@
+{
+  "report_id": "GY8_600006166_2022-10-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:00:29.261165+00:00",
+  "run_finished_utc": "2026-02-09T17:00:59.504693+00:00",
+  "raw_file": "GY8_600006166_2022-10-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600006166_2022-10-03",
+    "school_profile": {
+      "school_type": "Osmileté gymnázium se všeobecným zaměřením, příspěvková organizace",
+      "inspection_period": "3. 10. 2022 – 6. 10. 2022",
+      "school_change_summary": "Od inspekce v roce 2015 došlo ke změně vedení. Škola kontinuálně rozvíjí koncepci kvalitního gymnaziálního vzdělávání, rozšířila poradenský systém a zlepšila materiální zabezpečení. Udržuje stabilní počet 452 žáků v 16 třídách."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Všichni maturanti prospěli, 45–54 % s vyznamenáním, nadprůměrné výsledky v testech z češtiny a matematiky.",
+          "evidence": "\"všichni prospěli, počty vyznamenaných se pohybovaly v rozmezí 45 % - 54 %\""
+        },
+        {
+          "tag": "Silná podpora nadaných žáků",
+          "detail": "Pestrá nabídka volitelných seminářů, projektů, soutěží a mezinárodních aktivit rozvíjí talent a sociální kompetence.",
+          "evidence": "\"účinně podporuje všestranný rozvoj osobnosti a nadání žáků\" prostřednictvím \"rozmanitých projektů, soutěží\""
+        },
+        {
+          "tag": "Kvalitní vedení a organizace",
+          "detail": "Ředitelka od roku 2017 zajistila kontinuitu, jasnou vizi a efektivní tým vedení s dobrou komunikací.",
+          "evidence": "\"kontinuitu řízení\", \"efektivně spolupracující tým s přesně vymezenými pravomocemi\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nejednotná kvalita výuky",
+          "detail": "Některé hodiny mají nižší aktivizaci žáků, méně diferenciace a chybí shrnutí učiva na konci.",
+          "evidence": "\"v některých hodinách nižší míra aktivizace žáků\", \"nižší diferenciace a individualizace\""
+        },
+        {
+          "tag": "Slabší ústní komunikace v cizích jazycích",
+          "detail": "Výuka jazyků se více zaměřuje na čtení a poslech, méně na interaktivní mluvení.",
+          "evidence": "\"méně směřovala na uplatnění interaktivních řečových dovedností žáků\""
+        },
+        {
+          "tag": "Nedosledná kontrola doporučení",
+          "detail": "Metodická doporučení z hospitací se ne vždy aplikují do výuky kvůli chybějící následné kontrole.",
+          "evidence": "\"schází jejich důsledná následná kontrola, což se projevuje rozdílnou úrovní výuky\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením nebo se adaptují pomaleji?",
+        "Jaké jsou možnosti volitelných předmětů a jak se vybírají podle zájmů žáků?",
+        "Jak se škola vypořádává s tím, že sídlí na dvou místech – jaké to má dopady na žáky?"
+      ],
+      "who_school_fits": [
+        "Talentovaní a motivovaní žáci, kteří chtějí vysokou úroveň vzdělání a přípravu na vysokou školu",
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci (výjezdy, certifikáty, partnerská škola v Německu)",
+        "Žáci, kterým vyhovuje strukturovaný přístup s jasným vedením a vysokými nároky"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuální péče a diferenciace – kvalita výuky není jednotná",
+        "Žáci se slabšími jazykovými dovednostmi, pokud jim nevyhovuje převážně receptivní přístup (čtení, poslech)",
+        "Žáci, kteří se hůře adaptují na vysoké studijní nároky a potřebují více motivace a zpětné vazby"
+      ],
+      "plain_czech_summary": "Gymnázium Chodovická je kvalitní škola s výborným vedením a velmi dobrými výsledky maturit. Všichni maturanti prospěli, polovina s vyznamenáním. Škola nabízí pestrý program pro nadané žáky včetně projektů a mezinárodních aktivit. Má kvalitní pedagogy a dobrou podporu pro žáky se speciálními potřebami. Slabší stránkou je, že kvalita výuky není zcela jednotná – některé hodiny mají méně aktivních žáků a chybí jim lepší shrnutí. Cizí jazyky se učí spíše pasivně (čtení, poslech) než aktivně (mluvení)."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100 % prospělo",
+          "45–54 % s vyznamenáním",
+          "Nadprůměrné výsledky v testech z češtiny a matematiky"
+        ],
+        "evidence": "\"všichni prospěli, počty vyznamenaných se pohybovaly v rozmezí 45 % - 54 %\", \"opakovaně dosahují nadprůměrných výsledků\""
+      },
+      "absence": {
+        "trend": "Velmi nízký výskyt",
+        "key_numbers": [
+          "Stabilní míra absence",
+          "Nízký počet neomluvených hodin",
+          "Nízký výskyt rizikových projevů chování"
+        ],
+        "evidence": "\"žáci vykazovali stabilní míru absence, počet neomluvených hodin byl nízký\", \"funkčnost preventivních mechanismů\""
+      },
+      "support_services": [
+        "Školní psycholog (posílená pozice)",
+        "Výchovný poradce s portfoliem a metodikou prevence",
+        "Individuální konzultace a koordinace postupů pro žáky se speciálními potřebami",
+        "Podpora žáků-cizinců podle míry jazykové bariéry",
+        "Kariérové poradenství standardně nastaveno"
+      ],
+      "safety_climate": [
+        "Bezpečné a estetické prostředí",
+        "Jasná a srozumitelná pravidla komunikace",
+        "Partnerský přístup učitelů k žákům",
+        "Motivační charakter výchovných opatření (převažují pochvaly)",
+        "Nízký výskyt rizikových projevů chování"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s vysokými školami a neziskovými organizacemi",
+        "Partnerská německá škola – mobilita žáků a učitelů, výměna zkušeností",
+        "Spolek přátel gymnázia",
+        "Žákovský parlament",
+        "Spolupráce se zřizovatelem (Hlavní město Praha) na zlepšování podmínek"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní citace, čísla a příklady. Silné a slabé stránky jsou jasně odděleny. Doporučení jsou konkrétní a praktická.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní počty žáků s speciálními vzdělávacími potřebami ani jejich podrobné výsledky",
+        "Chybí informace o počtu a typu neomluvených hodin – pouze se uvádí, že byl nízký",
+        "Není jasné, jak přesně se měří 'nadprůměrné výsledky' v porovnání s jinými školami"
+      ]
+    }
+  }
+}

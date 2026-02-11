@@ -1,0 +1,100 @@
+{
+  "report_id": "GY4_691000468_2021-10-19",
+  "school_profile": {
+    "school_type": "čtyřleté gymnázium",
+    "inspection_period": "19. 10. 2021 − 22. 10. 2021",
+    "school_change_summary": "Škola od poslední inspekce v roce 2013 výrazně rostla a stabilizovala se; daří se jí naplňovat koncepci zaměřenou na moderní dějiny a zvyšuje se zájem uchazečů o studium."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jedinečná profilace",
+        "detail": "Gymnázium má ojedinělé zaměření na moderní dějiny a podporuje demokratické hodnoty.",
+        "evidence": "„Svým charakteristickým zaměřením na výuku moderních dějin se škole podařilo zaujmout výlučné místo mezi pražskými gymnázii.“"
+      },
+      {
+        "tag": "Výborné výsledky a atmosféra",
+        "detail": "Škola dosahuje velmi dobrých výsledků, všichni maturanti úspěšně složí zkoušky a panuje zde partnerská atmosféra.",
+        "evidence": "„Všichni žáci maturitní zkoušku úspěšně složili... Většina hospitovaných hodin probíhala v příznivé pracovní atmosféře.“"
+      },
+      {
+        "tag": "Silné jazykové zázemí",
+        "detail": "Výuka jazyků je na vysoké úrovni s širokou nabídkou a rodilými mluvčími.",
+        "evidence": "„Gymnázium má kvalitní personální podmínky pro oblast jazykového vzdělávání, tj. 11 vyučujících cizích jazyků, z toho 3 rodilí mluvčí.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nerovnoměrná výuka",
+        "detail": "V části hodin chybí diferenciace pro nadanější žáky a vyučování může být málo interaktivní.",
+        "evidence": "„Stanovené vzdělávací strategie jen ojediněle odrážely individuální studijní předpoklady žáků... nižší míra spoluzapojení žáků do vyučování.“"
+      },
+      {
+        "tag": "Slabší výuka matematiky",
+        "detail": "Výsledky z maturitní zkoušky z matematiky jsou mírně pod celorepublikovým průměrem.",
+        "evidence": "„Mírně horší výsledky než je republikový průměr vykazují žáci v předmětu matematika, který si volí přibližně třetina maturujících.“"
+      },
+      {
+        "tag": "Nedostatek techniky",
+        "detail": "Škola by potřebovala rozšířit počítačové vybavení pro moderní výuku.",
+        "evidence": "„V souladu s koncepčními záměry... je ale nezbytné rozšířit další počítačové vybavení.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola diferencuje výuku v rámci hodin pro studenty s rychlejším tempem práce nebo hlubším zájmem?",
+      "Jaké konkrétní aktivity nebo projekty zahrnuje 'Týden moderních dějin' a jak se žáci zapojují?",
+      "Jak škola podporuje studenty, kteří se rozhodnou maturovat z matematiky, vzhledem k jejím nižším výsledkům?"
+    ],
+    "who_school_fits": [
+      "Studenty se zájmem o historii, společenské vědy a formování demokratických postojů.",
+      "Žáky, kteří hledají menší gymnázium s rodinnou atmosférou a osobním přístupem.",
+      "Uchazeče, kteří chtějí rozvíjet jazykové schopnosti díky široké nabídce výuky a konverzacím."
+    ],
+    "who_should_be_cautious": [
+      "Studenty očekávající vysokou míru diferenciace a individuálního přístupu přímo v běžných hodinách.",
+      "Žáky, kteří preferují přírodovědné a technické předměty nad humanitními.",
+      "Rodiče, kteří kladou důraz na špičkové výsledky z matematiky v rámci srovnání s národním průměrem."
+    ],
+    "plain_czech_summary": "Gymnázium Milady Horákové je střední škola s unikátním zaměřením na moderní dějiny a demokratické hodnoty. Rodiče mohou očekávat velmi dobrou úroveň vzdělávání, zejména v jazycích a humanitních předmětech, a bezpečné, partnerské prostředí. Škola funguje jako menší komunita, což umožňuje dobrý přehled o studentech, ale v některých hodinách může chybět individuální přístup k nadanějším žákům. Absolventi jsou úspěšní při přijímacích řízeních na VŠ. Slabším bodem jsou průměrné výsledky z matematiky a potřeba modernizovat počítačové vybavení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "stabilní a úspěšná",
+      "key_numbers": [
+        "100 % úspěšnost u maturity v roce 2021",
+        "cca 1/4 maturantů prospěla s vyznamenáním",
+        "Matematika volena cca 1/3 maturujících"
+      ],
+      "evidence": "„Všichni žáci maturitní zkoušku úspěšně složili... dlouhodobě čtvrtina maturantů prospívá s vyznamenáním.“"
+    },
+    "absence": {
+      "trend": "výrazně klesající",
+      "key_numbers": [
+        "90 omluvených hodin (prezenční)",
+        "40 omluvených hodin (distanční)",
+        "0 neomluvených hodin"
+      ],
+      "evidence": "„Průměrném snížení absence na žáka za školní rok přibližně o polovinu... neomluvená absence nebyla zaznamenána.“"
+    },
+    "support_services": [
+      "Systém poradenských služeb a primární prevence (vp, metodik prevence).",
+      "Individuální vzdělávací plány a podpora asistenta pedagoga pro žáky se SVP.",
+      "Maturitní semináře a konzultace pro přípravu na ukončení studia."
+    ],
+    "safety_climate": [
+      "Nízký počet kázeňských opatření a žádné snížené stupně z chování.",
+      "Příznivá pracovní atmosféra založená na respektu a partnerství.",
+      "Bezpečné prostředí zajištěné oploceným areálem a kontrolou vstupu."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Klubem dr. Milady Horákové a historickými ústavy.",
+      "Výměnné pobyty s gymnáziem v Budapešti.",
+      "Spolupráce s VŠ a vědeckými ústavy pro podporu nadaných žáků."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, má jasnou strukturu a explicitně vyjmenovává silné i slabé stránky s konkrétními důkazy.",
+    "uncertainty_notes": []
+  }
+}

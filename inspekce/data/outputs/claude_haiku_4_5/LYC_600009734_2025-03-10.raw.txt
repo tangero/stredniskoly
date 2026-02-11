@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_600009734_2025-03-10",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola stavební s maturitní zkouškou",
+    "inspection_period": "10.–17. března 2025",
+    "school_change_summary": "Škola se výrazně rozrostla: počet žáků vzrostl z 402 na 585, tříd ze 16 na 21. Vedení se stabilizovalo pod ředitelkou od roku 2018. Pedagogický sbor se rozšířil o odborníky z praxe na částečné úvazky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Škola systematicky pracuje na prevenci rizikového chování a vytváří otevřené partnerské prostředí pro žáky.",
+        "evidence": "Více než 70 % žáků potvrdilo, že mohou říci učitelům svůj názor a neshody se řeší konstruktivně."
+      },
+      {
+        "tag": "Kvalitní odborné vzdělání",
+        "detail": "Výuka je provázena s reálnou praxí, žáci pracují s moderními technologiemi a získávají praktické dovednosti.",
+        "evidence": "Geodetická praxe jednou týdně, spolupráce s firmami, používání komerčních softwarů v učebně."
+      },
+      {
+        "tag": "Úspěšné výsledky a uznání",
+        "detail": "Žáci dosahují velmi dobrých výsledků v soutěžích a maturitě, počet zájemců o studium třikrát převyšuje kapacitu.",
+        "evidence": "Stabilně srovnatelné nebo lepší výsledky než republikový průměr, zejména v oboru Geodézie."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá komunikace mezi vedením a učiteli",
+        "detail": "Přibližně 60 % pedagogů uvedlo, že vedení nedostatečně poskytuje zpětnou vazbu a neshody se neřeší konstruktivně.",
+        "evidence": "Dotazníkové šetření 64 učitelů: 60 % negativně hodnotilo zpětnou vazbu, 60 % řešení neshod."
+      },
+      {
+        "tag": "Pasivní výuka v některých předmětech",
+        "detail": "Převažuje frontální vyučování bez dostatečné aktivace žáků, chybí práce se zdroji a diferenciace úloh.",
+        "evidence": "Inspektoři zaznamenali nízké využívání kooperativních forem, téměř žádné úlohy různé náročnosti."
+      },
+      {
+        "tag": "Chybějící monitoring kvality",
+        "detail": "Sledování kvality vzdělávání není systémově nastaveno a v některých předmětech chybí doklady.",
+        "evidence": "Monitoring v některých týmech málo četný nebo nedoložen, v přírodovědném týmu formální charakter."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola zajišťuje, aby všichni žáci měli dostatek příležitostí k aktivní práci a spolupráci, ne jen poslouchání?",
+      "Jaké konkrétní podpory dostane můj syn/dcera, pokud bude mít potíže s učením nebo chováním?",
+      "Jak se škola připravuje na to, aby absolventi byli konkurenceschopní na trhu práce?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s vazbou na reálný pracovní svět a moderní technologie",
+      "Studenti zaměření na stavebnictví, geodézii nebo technické obory s ambicí pokračovat na vysoké škole",
+      "Mladí lidé, kterým vyhovuje strukturované prostředí s jasným vedením a podporou při problémech"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní, interaktivní výuku – v některých předmětech dominuje frontální vyučování",
+      "Studenti, kteří potřebují individualizovaný přístup – nabídka úloh různé náročnosti je zatím omezená",
+      "Rodiče, kteří očekávají intenzivní komunikaci se školou – komunikace mezi vedením a pedagogy má rezervy"
+    ],
+    "plain_czech_summary": "Střední průmyslová škola stavební v Plzni je stabilní a rostoucí instituce s dobrým zaměřením na praxi. Žáci dosahují kvalitních výsledků, zejména v oborech Geodézie a Stavebnictví. Škola má funkční systém podpory pro žáky v potížích a vytváří bezpečné prostředí. Slabinou je komunikace mezi vedením a učiteli a pasivnější výuka v některých předmětech. Škola je vhodná pro prakticky zaměřené studenty, kteří si cení moderního vybavení a vazby na praxi."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se, stabilně dobrý",
+      "key_numbers": [
+        "Obor Geodézie: stabilně srovnatelné nebo lepší výsledky než republikový průměr",
+        "Obor Stavebnictví: vyšší neúspěšnost 2022–2024, ale zlepšující se trend",
+        "Obor Technické lyceum: velmi dobrá úroveň s jednou výjimkou"
+      ],
+      "evidence": "Výsledky odpovídají úrovni průběhu vzdělávání. Žáci si mohou vyzkoušet maturitu nanečisto v 4. ročníku."
+    },
+    "absence": {
+      "trend": "Řešeno jednotně a důsledně",
+      "key_numbers": [
+        "Pravidla pro omlouvání nepřítomnosti jasně nastavena ve školním řádu",
+        "Jednotná a důsledná aplikace pravidel"
+      ],
+      "evidence": "Pedagogové věnují pozornost chování a absenci žáků, pravidla jsou jasně nastavena a aplikována."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, speciální pedagožka, metodička prevence, asistenti pedagoga",
+      "Individuální vzdělávací plány a plány pedagogické podpory pro žáky se speciálními potřebami",
+      "Adaptační kurzy pro prvňáky, preventivní programy a besedy zaměřené na rizikové chování",
+      "Péče o 59 žáků se speciálními vzdělávacími potřebami a 14 žáků s odlišným mateřským jazykem"
+    ],
+    "safety_climate": [
+      "Bezpečné a respektující prostředí je jednou z tří hlavních vizí ředitelky",
+      "Pravidla bezpečnosti nastavena ve vnitřních dokumentech, žáci jsou pravidelně poučováni",
+      "Více než 70 % žáků potvrdilo otevřené partnerské prostředí a konstruktivní řešení neshod",
+      "Efektivní práce školního poradenského pracoviště s pozitivním dopadem na klima"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se Západočeskou univerzitou v Plzni a Fakultou stavební ČVUT Praha",
+      "Partnerství s Českou komorou zeměměřičů a řadou stavebních firem",
+      "Odborné praxe žáků u partnerů, besedy se zástupci odborných firem",
+      "Člen Asociace středních průmyslových škol ČR"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Některé pasáže jsou technicky náročnější, ale hlavní zjištění jsou jasná. Chybí však některé konkrétní číselné údaje o absenci a chování.",
+    "uncertainty_notes": [
+      "Přesné procento neúspěšnosti u maturity v oboru Stavebnictví není uvedeno, jen kvalitativní popis",
+      "Počet žáků s problémy chování není specifikován, jen obecné tvrzení o jejich řešení",
+      "Konkrétní obsah komunikačních problémů mezi vedením a učiteli není detailně popsán"
+    ]
+  }
+}
+```

@@ -1,0 +1,117 @@
+{
+  "report_id": "SOU_650008006_2025-01-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:03:41.371177+00:00",
+  "run_finished_utc": "2026-02-09T16:04:08.553398+00:00",
+  "raw_file": "SOU_650008006_2025-01-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_650008006_2025-01-23",
+    "school_profile": {
+      "school_type": "Střední škola letecká s.r.o. – soukromá škola zaměřená na letectví",
+      "inspection_period": "23.–24. 1. 2025 a 27.–28. 1. 2025",
+      "school_change_summary": "Škola nabízí jeden čtyřletý obor s maturitou (Letecký mechanik) a dva tříleté obory s výučním listem (Strojní mechanik, Klempíř). V září 2024 došlo k výrazné obměně vyučujících odborných předmětů a změně na pozici zástupce ředitele."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výjimečné praktické vybavení",
+          "detail": "Škola disponuje dvěma funkčními letadly, trenažérem a moderními dílnami, kde si žáci osvojují reálné dovednosti.",
+          "evidence": "Dvě funkční dopravní letadla, řezy komponentů a trenažér umožňují simulaci reálného provozu."
+        },
+        {
+          "tag": "Přímá cesta k zaměstnání",
+          "detail": "Absolventi oboru Letecký mechanik mohou získat licenci Technika údržby letadel, což zvyšuje jejich konkurenceschopnost.",
+          "evidence": "Absolventi na rozdíl od ostatních škol mají možnost získat licenci Technika údržby letadel."
+        },
+        {
+          "tag": "Silné vazby na průmysl",
+          "detail": "Dlouhodobá spolupráce se zaměstnavateli a leteckými firmami zajišťuje kvalitní odborný výcvik a uplatnitelnost absolventů.",
+          "evidence": "Dlouhodobě kvalitní vztahy se zaměstnavateli a profesními organizacemi v oboru letectví."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší angličtina v nižších oborech",
+          "detail": "Výuka angličtiny v oborech s výučním listem je málo motivující, frontální a bez dostatečného prostoru pro komunikaci.",
+          "evidence": "Výuka byla vedena málo účelným frontálním způsobem, postrádající motivační metody a formy."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Teoretická výuka jen ojediněle nabízí úkoly různé náročnosti pro žáky s různými schopnostmi.",
+          "evidence": "Pouze ojediněle byla využita diferenciace výuky; chyběla možnost výběru úloh odlišné kognitivní náročnosti."
+        },
+        {
+          "tag": "Omezená práce se zdroji",
+          "detail": "Žáci se málo učí vyhledávat a analyzovat informace z různých zdrojů, což je důležité pro moderní pracovní trh.",
+          "evidence": "V malé míře se dařilo zařazovat vyhledávání informací z různých zdrojů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá výuka v letadlech a jak často se jí žáci účastní?",
+        "Jaké jsou konkrétní možnosti uplatnění absolventů a jaké firmy s vámi spolupracují?",
+        "Jak se škola vypořádá s nedostatečnou diferenciací výuky a jak budete zlepšovat angličtinu v nižších oborech?"
+      ],
+      "who_school_fits": [
+        "Žáci s vášní pro letectví a techniku, kteří chtějí praktické vzdělání s reálným vybavením",
+        "Studenti, kteří si cení přímé vazby na zaměstnavatele a jasné cesty k zaměstnání",
+        "Mladí lidé, kteří se chtějí stát leteckými mechaniky a získat profesní licenci"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovanou výuku a různé úrovně náročnosti – škola to zatím málo nabízí",
+        "Studenti, kteří se chtějí zaměřit na jazykové dovednosti – angličtina v nižších oborech není silná",
+        "Žáci, kteří preferují teoretické vzdělání bez praktické složky – tato škola je zaměřena na praxi"
+      ],
+      "plain_czech_summary": "Střední škola letecká je špičková volba pro zájemce o letectví. Nabízí unikátní praktické vybavení včetně funkčních letadel a přímou cestu k zaměstnání. Absolventi oboru Letecký mechanik mohou získat profesní licenci. Silné jsou vztahy se zaměstnavateli a kvalita odborného výcviku. Slabší stránkou je angličtina v nižších oborech a nedostatečná diferenciace výuky. Škola se snaží zlepšit práci se zdroji informací."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborný – všichni žáci uspěli, přibližně třetina s vyznamenáním",
+        "key_numbers": [
+          "100% úspěšnost v posledních třech letech",
+          "Přibližně 33 % žáků s vyznamenáním",
+          "Výrazně vyšší úspěšnost než u škol obdobného typu"
+        ],
+        "evidence": "Výsledky společné i profilové části maturitní zkoušky v posledních třech letech byly na velmi dobré úrovni, všichni žáci uspěli."
+      },
+      "absence": {
+        "trend": "Pozitivní – škola má účinný systém na snižování absence",
+        "key_numbers": [
+          "Prospěchové stipendium jako motivace",
+          "Doučování a konzultační hodiny",
+          "Individuální přístup k ohroženým žákům"
+        ],
+        "evidence": "Škola úspěšně využívá účinně nastavený systém k poskytnutí finančního ohodnocení formou prospěchového stipendia."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní a školním metodikem prevence",
+        "Doučování a konzultační hodiny jednotlivých pedagogů",
+        "Pedagogické intervence a podpůrná opatření pro žáky se speciálními vzdělávacími potřebami",
+        "Kariérové poradenství s aktivní spoluprací absolventů"
+      ],
+      "safety_climate": [
+        "Účinně nastavený systém bezpečnosti a ochrany zdraví žáků",
+        "Pravidelné informace o bezpečnostních rizicích",
+        "Systematická prevence rizikového chování a negativních jevů",
+        "Pozitivní klima v jednotlivých třídách"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zřizovatelem Aircraft Industries – praktická výuka v reálném provozu",
+        "Partnerství s leteckými firmami zajišťujícími odborný výcvik",
+        "Vztahy se základními školami a středními školami v regionu",
+        "Kooperace s leteckým muzeem a aerokluben",
+        "Smlouva s Ministerstvem obrany ČR pro praxi na vojenských základnách"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní čísla o absenci a podrobnější údaje o výsledcích závěrečných zkoušek.",
+      "uncertainty_notes": [
+        "Absence – zpráva neuvádí konkrétní procenta či trendy absence, pouze že systém stipendií pomáhá",
+        "Závěrečné zkoušky – údaje jsou vágní ('dobré výsledky'), chybí konkrétní procenta úspěšnosti",
+        "Počet žáků v jednotlivých oborech – zpráva uvádí celkem 173 žáků, ale nespecifikuje rozdělení"
+      ]
+    }
+  }
+}

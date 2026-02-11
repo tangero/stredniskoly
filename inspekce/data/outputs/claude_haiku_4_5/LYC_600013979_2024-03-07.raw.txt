@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "LYC_600013979_2024-03-07",
+  "school_profile": {
+    "school_type": "Střední škola a Vyšší odborná škola tradičních řemesel s.r.o. (soukromá, s.r.o.)",
+    "inspection_period": "7.–8. března 2024 a 11.–12. března 2024",
+    "school_change_summary": "Od poslední inspekce v roce 2020 došlo k výrazným změnám: nová ředitelka (od 2022/2023), změna názvu školy, zvýšení počtu žáků o 12 % na 585 žáků, zpřísnění kritérií pro přijímání do maturitních oborů, zavedení systému interního testování a nových oborů vzdělání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Rozmanitá a ojedinělá nabídka oborů",
+        "detail": "Škola nabízí pestrou škálu oborů včetně uměleckých řemesel, které jsou v Jihomoravském kraji ojedinělé, s kvalitním personálem a moderním vybavením.",
+        "evidence": "Realizace osmi oborů s výučním listem a pěti oborů s maturitou, včetně uměleckých oborů s talentovými zkouškami."
+      },
+      {
+        "tag": "Zlepšení výsledků maturit v roce 2023",
+        "detail": "Došlo k výraznému zlepšení výsledků ve společné části maturitní zkoušky u několika oborů, zejména Kosmetické služby (z 53,8 % na 7,7 % neúspěšnosti).",
+        "evidence": "V oborech Kosmetické služby a Starožitník škola dosáhla lepších výsledků než celorepublikový průměr."
+      },
+      {
+        "tag": "Kvalitní praktické vyučování a odborný výcvik",
+        "detail": "Praktické vyučování je postaveno na aktivitě žáků, individuálních konzultacích a moderních technologiích s důrazem na bezpečnost.",
+        "evidence": "Výuka odborného výcviku probíhá na smluvních pracovištích s moderním vybavením, žáci si osvojují nejnovější technologie."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá kvalita teoretického vyučování",
+        "detail": "Převážná část teoretické výuky využívá stereotypní frontální formu s výkladem učitele, chybí aktivizační metody a příležitosti pro rozvoj klíčových kompetencí.",
+        "evidence": "V hospitované výuce chybělo zařazení aktivizačních metod, žáci měli málo příležitostí aktivně pracovat a rozvíjet tvořivé myšlení."
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Průměrná absence činí 154 hodin na žáka za školní rok, škola ji považuje za hlavní příčinu školní neúspěšnosti.",
+        "evidence": "Absence přetrvává i přes zavedení opatření na její snížení, někteří žáci ji výrazně překračují."
+      },
+      {
+        "tag": "Slabé výsledky v oboru Podnikání (dálková forma)",
+        "detail": "Obor Podnikání v dálkové formě vykazuje velmi slabé výsledky (50 % neúspěšnosti ve společné části maturitní zkoušky v roce 2023).",
+        "evidence": "Škola tento obor v dálkové formě od roku 2022/2023 již nepřijímá kvůli neefektivnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky ohrožené školní neúspěšností a jaké má výsledky s doučováním?",
+      "Jaké jsou konkrétní plány na zlepšení teoretické výuky a zavedení více aktivních metod vyučování?",
+      "Jak škola řeší vysokou absenci žáků a jaká opatření jsou účinná?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o tradiční řemesla a umělecké obory, kteří chtějí praktické dovednosti a moderní technologie.",
+      "Žáci z okolních obcí, kterým vyhovuje ubytování v domově mládeže se zájmovými aktivitami.",
+      "Žáci s talenty v uměleckých oborech, kde škola nabízí ojedinělé obory s talentovými zkouškami."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v češtině a angličtině – teoretická výuka těchto předmětů má nižší kvalitu a aktivizaci.",
+      "Žáci s tendencí k absencím – vysoká absence je hlavní příčinou neúspěšnosti a škola ji nedokáže dostatečně řešit.",
+      "Zájemci o obor Podnikání – tento obor dlouhodobě vykazuje vysokou neúspěšnost, zejména v dálkové formě."
+    ],
+    "plain_czech_summary": "Škola nabízí zajímavou a rozmanitou nabídku oborů včetně ojedinělých uměleckých řemesel. Praktické vyučování je kvalitní a moderní. Výsledky maturit se v roce 2023 zlepšily. Hlavní problémy jsou v teoretické výuce, která je příliš frontální a málo aktivizující. Vysoká absence žáků zůstává neřešeným problémem. Vedení školy se snaží situaci zlepšit, ale dopad opatření zatím není výrazný."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – v roce 2023 došlo k výraznému zlepšení u některých oborů, ale dlouhodobě kolísavý vývoj",
+      "key_numbers": [
+        "Kosmetické služby: neúspěšnost klesla z 53,8 % (2022) na 7,7 % (2023)",
+        "Design interiéru: neúspěšnost klesla z 30 % (2022) na 8,3 % (2023)",
+        "Podnikání (dálka): neúspěšnost 50 % (2023), obor již není nabízen"
+      ],
+      "evidence": "Analýza výsledků maturitní zkoušky za roky 2020–2023 ukazuje nerovnoměrný vývoj s výrazným zlepšením v roce 2023 u vybraných oborů."
+    },
+    "absence": {
+      "trend": "Vysoká a přetrvávající – opatření na snížení nejsou účinná",
+      "key_numbers": [
+        "Průměrná absence: 154 hodin na žáka za školní rok (2020/2021–2022/2023)",
+        "Absence přetrvává i přes zavedení maximální hranice pro hodnocení",
+        "V 1. pololetí 2023/2024 čtyřnásobný nárůst nehodnocených žáků"
+      ],
+      "evidence": "Vysoká absence a záškoláctví jsou považovány za hlavní příčinu školní neúspěšnosti; škola přijímá cílená opatření, ale jejich účinnost je nízká."
+    },
+    "support_services": [
+      "Výchovná poradkyně a speciální pedagožka zaměřená na řešení školní neúspěšnosti",
+      "Systém interního testování (pretesty, ředitelské testy, souhrnné ověřovací zkoušky) od 1. ročníku",
+      "Program doučování pro žáky ohrožené neúspěšností",
+      "Kariérové poradenství a sledování pracovního uplatnění žáků",
+      "Primární prevence s různorodým zaměřením a řešení rizikového chování"
+    ],
+    "safety_climate": [
+      "Přátelský přístup pedagogů, pozitivní motivace žáků",
+      "Žáci dodržují pravidla komunikace a nejsou si vědomi klást dotazy",
+      "V praktickém vyučování důsledné vedení k bezpečnosti práce a ochraně zdraví",
+      "Domov mládeže vytváří vhodný režim dne pro studium i relaxaci"
+    ],
+    "partnerships_practice": [
+      "Rozmanité portfolio smluvních partnerů pro praktické vyučování umožňující seznamování s výrobními procesy",
+      "Spolupráce s odbornými institucemi a profesními svazy",
+      "Zapojení odborníků z praxe do výuky uměleckých oborů",
+      "Partnerské vztahy domova mládeže nejsou aktivně rozvíjeny"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Hlavní zjištění jsou jasně formulována, ale některé pasáže jsou technicky náročné a obsahují úřednický styl.",
+    "uncertainty_notes": [
+      "Celkový dopad systému testování na výsledky nebyl školou podrobně vyhodnocen – inspekce zjistila, že dopad na průběžné výsledky nebyl výrazný.",
+      "Není jasné, zda se kvalita teoretické výuky zlepšila od zavedení metodické komise – zpráva uvádí, že dopad se doposud neprojevil.",
+      "Konkrétní počty žáků v jednotlivých oborech nejsou v přehledu uvedeny, pouze celkový počet 585 žáků."
+    ]
+  }
+}
+```

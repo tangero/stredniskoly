@@ -1,0 +1,119 @@
+{
+  "report_id": "LYC_600019543_2024-12-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:06:31.960522+00:00",
+  "run_finished_utc": "2026-02-09T16:07:00.965404+00:00",
+  "raw_file": "LYC_600019543_2024-12-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600019543_2024-12-10",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a Vyšší odborná škola zdravotnická",
+      "inspection_period": "10. až 12. prosince 2024",
+      "school_change_summary": "Škola rozšířila kapacitu střední školy na 425 žáků (92% naplněnost) a udržuje 69 studentů VOŠ (58% naplněnost). Od 2023/2024 již neposkytuje ubytování v domově mládeže a vzdělávání v oboru Sociální činnost. Prostory byly zrekonstruovány a vybaveny moderní technikou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Angličtina na vysoké úrovni",
+          "detail": "Výuka anglického jazyka systematicky rozvíjí komunikační dovednosti s důrazem na praktické využití a odbornou angličtinu pro zdravotníky.",
+          "evidence": "Učitelé komunikují s žáky v angličtině i mimo vyučování, což prodlužuje čas aktivního kontaktu s jazykem."
+        },
+        {
+          "tag": "Výborné výsledky u maturit",
+          "detail": "V oboru Zdravotnické lyceum se hrubá neúspěšnost snížila na 0 % v roce 2024, všichni žáci uspěli ve společné části.",
+          "evidence": "V roce 2024 všichni žáci prospěli v českém jazyce, cizím jazyce i matematice."
+        },
+        {
+          "tag": "Silné vedení a tým",
+          "detail": "Ředitelka vytváří výkonný tým s jasně rozdělenými pravomocemi a efektivní spoluprací.",
+          "evidence": "Vedení pravidelně vyhodnocuje strategické záměry a podporuje otevřenou komunikaci a sdílení dovedností."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá adaptace v prvním ročníku",
+          "detail": "V oboru Praktická sestra byla ve školním roce 2023/2024 neprospěchem ohrožena téměř polovina prvňáků.",
+          "evidence": "Matematika, anglický jazyk a český jazyk jsou nejproblematičtější předměty, odborné předměty obtíže nezpůsobují."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Žáci si nemohou vybírat úkoly různé náročnosti, výuka málo reaguje na individuální potřeby.",
+          "evidence": "Inspekce zjistila, že ve dvou třetinách hodin zůstávali někteří žáci během výuky pasivní."
+        },
+        {
+          "tag": "Problémy s praktickou výukou",
+          "detail": "V kontrolním systému byla zjištěna nižší účinnost v organizaci praktického vyučování.",
+          "evidence": "Nekompletní záznamy v denících odborné praxe, nedodržení délky odborného výcviku, nevhodná úprava žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky v prvním ročníku, kteří mají problémy s matematikou a angličtinou?",
+        "Jaké jsou konkrétní plány na zlepšení diferenciace výuky a individuálního přístupu k žákům?",
+        "Jak se škola vypořádá s problémy v organizaci praktického vyučování, které inspekce zjistila?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o zdravotnické obory a motivací k praxi v nemocnicích a zdravotnických zařízeních",
+        "Studenti s dobrými jazykovými schopnostmi, kteří chtějí rozvíjet angličtinu v odborném kontextu",
+        "Žáci, kteří prospívají v odborných předmětech a hledají praktické uplatnění"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími znalostmi matematiky – v prvním ročníku je to problematický předmět",
+        "Studenti bez motivace k praktické práci – škola klade důraz na propojení teorie s praxí",
+        "Žáci, kteří potřebují individuální přístup – diferenciace výuky je stále nedostatečná"
+      ],
+      "plain_czech_summary": "Zdravotnická škola v Mladé Boleslavi je dobře vedená a úspěšná, zejména v angličtině a maturitách. Silné jsou mezinárodní projekty a spolupráce se zdravotnickými zařízeními. Hlavní problémy: žáci v prvním ročníku mají potíže s matematikou a angličtinou, výuka není dostatečně přizpůsobena individuálním potřebám a v praktické výuce jsou organizační nedostatky. Škola se snaží tyto problémy řešit, ale zatím s omezeným úspěchem."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní trend, zejména v oboru Zdravotnické lyceum",
+        "key_numbers": [
+          "Zdravotnické lyceum: hrubá neúspěšnost 0 % v roce 2024 (bylo 4,8 % v 2023)",
+          "Praktická sestra: hrubá neúspěšnost 11,1 % v 2024 (bylo 16,7 % v 2023)",
+          "Matematika v Praktické sestře: 100 % neúspěšnost v 2024 (3 žáci)"
+        ],
+        "evidence": "Ve společné části maturitní zkoušky v oboru Zdravotnické lyceum všichni žáci v roce 2024 uspěli v českém jazyce, cizím jazyce i matematice."
+      },
+      "absence": {
+        "trend": "Pozitivní – absence se snižuje",
+        "key_numbers": [
+          "Průměrný počet zameškaných hodin se snížil mezi sledovanými lety ve všech oborech",
+          "Neomluvené hodiny minimální ve všech oborech",
+          "Absence není vysoká"
+        ],
+        "evidence": "Školní poradenské pracoviště se zabývá absencí a přijímá vhodná opatření, což svědčí o vysoké míře disciplinovanosti žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, školní psycholožka, metodička prevence, koordinátorka inkluze, kariérní poradkyně, koordinátorka prevence",
+        "Doučování a konzultace pro žáky ohrožené školním neúspěchem",
+        "Plány podpory jako forma pedagogické intervence",
+        "Systematické doučování českého jazyka pro žáky s odlišným mateřským jazykem",
+        "Školní parlament podporující wellbeing žáků"
+      ],
+      "safety_climate": [
+        "Bezpečnosti a ochraně zdraví věnuje škola patřičnou pozornost, všichni jsou pravidelně poučováni",
+        "Klesající míra úrazovosti",
+        "Preventivní program dlouhodobě usiluje o dobré klima a wellbeing",
+        "Adaptační pobyty pro nové žáky se smysluplnými činnostmi",
+        "Volnočasové aktivity s pozitivním vlivem na vrstevnické vztahy"
+      ],
+      "partnerships_practice": [
+        "Mnohostranná spolupráce se sociálními partnery: velké množství zdravotnických a sociálních zařízení",
+        "Nadstandardní spolupráce se sousední nemocnicí",
+        "Zahraniční partnerská škola a mezinárodní projekty",
+        "Aktivní zapojení žáků Zdravotnického lycea do mezinárodního programu",
+        "Praktická výuka na pracovištích smluvních partnerů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje, ale místy je technická a úřednická. Hlavní zjištění jsou jasná, ale pro rodiče by byla užitečnější jednodušší formulace.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak dlouho trvá řešení problémů s diferenciací výuky – není jasné, zda jde o dlouhodobý problém",
+        "Není jasné, jaký je konkrétní obsah 'plánů podpory' a jak účinné jsou v praxi",
+        "Údaje o žácích se SVP jsou obecné – není jasné, jaké konkrétní problémy mají a jak se jim pomáhá"
+      ]
+    }
+  }
+}

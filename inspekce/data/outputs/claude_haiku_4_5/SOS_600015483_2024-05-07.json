@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600015483_2024-05-07",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:16:38.040206+00:00",
+  "run_finished_utc": "2026-02-09T16:17:09.298510+00:00",
+  "raw_file": "SOS_600015483_2024-05-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015483_2024-05-07",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště s 2 maturitními obory (Chovatelství, Podnikání) a 12 obory s výučním listem",
+      "inspection_period": "7. května 2024 a 13.–15. května 2024",
+      "school_change_summary": "Škola se rozvinula: zvýšil se počet žáků, otevřely se nové obory (Chovatelství, Zemědělec–farmář), výrazně se modernizovaly materiální podmínky a domov mládeže. Jmenována Ministerstvem zemědělství jako Centrum odborného vzdělávání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a praxe",
+          "detail": "Škola má výbornou spolupráci s firmami, městem a školami v regionu, která přináší žákům reálné pracovní zkušenosti a moderní poznatky.",
+          "evidence": "Kooperace s firmami je velmi přínosná při získávání nových trendů a technologií v oboru."
+        },
+        {
+          "tag": "Materiální vybavení",
+          "detail": "Nové odborné učebny, zemědělská technika, zařízení pro výcvik psů, učebna pro zpracování mléka a moderní IT technologie.",
+          "evidence": "Vedení školy aktivně usiluje o průběžné zkvalitňování materiálních podmínek odpovídajících moderním trendům."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci pravidelně dosahují výborných umístění v dovednostních soutěžích na krajské, národní i mezinárodní úrovni.",
+          "evidence": "Mezi nejvýznamnější úspěchy patří pravidelná výborná umístění zejména žáků oborů Malíř a lakýrník, Instalatér, Opravář zemědělských strojů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita výuky teoretických předmětů",
+          "detail": "Výuka češtiny a literatury je převážně frontální bez aktivizačních metod; výuka odborných předmětů strojírenských oborů postrádá jasné cíle a zpětnou vazbu.",
+          "evidence": "Ve většině hodin chybělo zřetelné stanovení vzdělávacích cílů, žáci byli pasivní, činnost omezena na diktovaný zápis nebo opisování z tabule."
+        },
+        {
+          "tag": "Slabé výsledky v češtině u maturit",
+          "detail": "Nízká úspěšnost žáků v českém jazyce a literatuře ve srovnání s republikovými výsledky přetrvává, zejména u nástavbového studia.",
+          "evidence": "Nízká úspěšnost žáků v českém jazyce a literatuře ve srovnění s republikovými výsledky přetrvává."
+        },
+        {
+          "tag": "Chybějící shrnutí učiva",
+          "detail": "V závěru hodin chybí zhodnocení probíraného obsahu; žáci nemají možnost vybírat si úlohy různé náročnosti.",
+          "evidence": "V závěru výuky chybělo zhodnocení probíraného obsahu učiva vyučujícími i žáky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší slabé výsledky v českém jazyce u maturitní zkoušky a jaká opatření zavedla?",
+        "Jaké jsou možnosti doučování a konzultačních hodin pro žáky, kteří mají problémy s teoretickými předměty?",
+        "Jak probíhá praktická výuka a jaké jsou podmínky pro odborný výcvik v jednotlivých oborech?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické obory (tesař, zedník, instalatér, malíř) – zde je výuka kvalitní a dobře vybavená",
+        "Žáci, kteří chtějí získat reálné pracovní zkušenosti – škola má silné vazby na firmy a praxi",
+        "Žáci se speciálními vzdělávacími potřebami – škola má asistenty pedagoga a školního psychologa"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují kvalitní výuku českého jazyka a literatury – zde jsou slabší výsledky a méně aktivizující metody",
+        "Žáci v maturitních oborech (Chovatelství, Podnikání) – zejména v češtině jsou výsledky pod průměrem",
+        "Žáci, kteří se spoléhají na frontální výuku – v teoretických předmětech převládá pasivní přístup bez dostatečné zpětné vazby"
+      ],
+      "plain_czech_summary": "Střední odborné učiliště v Uherském Brodě je moderně vybavená škola se silnými vazbami na praxi a firmy. Praktická výuka je kvalitní, žáci dosahují úspěchů v soutěžích. Slabší stránkou je teoretická výuka, zejména v češtině a literatuře, kde jsou výsledky pod průměrem. Výuka často postrádá aktivizující metody a zpětnou vazbu. Škola je vhodná pro žáky zaměřené na praktické obory, méně pak pro ty, kteří potřebují silnou teoretickou přípravu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – anglický jazyk výborný, čeština slabá",
+        "key_numbers": [
+          "Podnikání (nástavba): velmi dobré výsledky v angličtině, nízká úspěšnost v češtině",
+          "Chovatelství: nejlepší výsledky v 2021/2022, v profilové části se postupně zlepšuje",
+          "Společná část: výsledky mírně nižší než celorepublikový průměr"
+        ],
+        "evidence": "V anglickém jazyce nástavbového studia byly výsledky v posledních třech letech na velmi dobré úrovni. Nízká úspěšnost žáků v českém jazyce a literatuře přetrvává."
+      },
+      "absence": {
+        "trend": "Zlepšující se – škola aktivně pracuje na snížení absence",
+        "key_numbers": [
+          "Absence byla identifikována jako problém u žáků se slabšími výsledky",
+          "Škola přijala nápravná opatření zaměřená na snížení absence",
+          "Smlouvy se žáky jsou pravidelně vyhodnocovány"
+        ],
+        "evidence": "Systém nápravy nastavený na počátku školního roku 2023/2024 se daří průběžně naplňovat především v oblasti snížení absence žáků ve výuce."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště se třemi výchovnými poradkyněmi a školní metodičkou prevence",
+        "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+        "Externí školní psycholog",
+        "Kariérové poradenství a doučování",
+        "Domov mládeže s vychovateli poskytujícími doučování"
+      ],
+      "safety_climate": [
+        "Vedení školy se systematicky zaměřuje na zajištění bezpečnosti žáků",
+        "Žáci jsou při praktických činnostech průběžně seznamováni se zásadami bezpečného chování",
+        "Upozorňování na používání ochranných pracovních prostředků, oděvů a obuvi",
+        "Nutnost dodržování zásad bezpečnosti je cíleně sledována a vyžadována"
+      ],
+      "partnerships_practice": [
+        "Velmi přínosná kooperace s firmami – získávání nových trendů, technologií a praktických zkušeností",
+        "Výborná spolupráce se zřizovatelem (Zlínský kraj) – modernizace materiálního zázemí",
+        "Kvalitní vzájemná kooperace s městem Uherský Brod na tradičních a charitativních akcích",
+        "Oboustranně přínosné partnerství se zákonnými zástupci žáků a školami v blízkém okolí",
+        "Zavedený model pro zjišťování uplatnitelnosti absolventů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, ale obsahuje místy úřednický styl a dlouhé věty. Hlavní zjištění jsou jasná, ale pro rodiče by byla užitečnější konkrétnější čísla a příklady.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní procenta úspěšnosti u maturit – pouze kvalitativní popis (nízká, velmi dobrá)",
+        "Počet žáků se speciálními potřebami (67 ze 530) je uveden, ale není jasné, jak to ovlivňuje kvalitu výuky pro ostatní",
+        "Není specifikováno, které konkrétní obory mají problémy s kvalitou teoretické výuky"
+      ]
+    }
+  }
+}

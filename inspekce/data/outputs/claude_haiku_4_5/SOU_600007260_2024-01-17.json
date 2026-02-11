@@ -1,0 +1,116 @@
+{
+  "report_id": "SOU_600007260_2024-01-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:29:09.274296+00:00",
+  "run_finished_utc": "2026-02-09T16:29:36.566229+00:00",
+  "raw_file": "SOU_600007260_2024-01-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600007260_2024-01-17",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště (SOŠ a SOU) s domovem mládeže a školní jídelnou",
+      "inspection_period": "17.–19. ledna a 24. ledna 2024",
+      "school_change_summary": "Škola se výrazně zlepšila. Počet žáků vzrostl o 43 % (o 103 žáky) na 345 žáků. Nový ředitel od 2018/2019 zavedl strategický plán a zkvalitnění řízení. Výsledky vzdělávání se zlepšily, absence klesla, vybavení se modernizovalo. Škola nově provozuje autoškolu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné vybavení pro praxi",
+          "detail": "Moderní dílny s diagnostickým softwarem od automobilek, kvalitní nářadí a technologie pro všechny obory.",
+          "evidence": "Škola má 'unikátní diagnostický software a další vybavení poskytnuté automobilovými koncerny' a 'kvalitní a průběžně udržované vybavení'."
+        },
+        {
+          "tag": "Silné výsledky maturit",
+          "detail": "Úspěšnost u závěrečných zkoušek kolem 97 %, zlepšující se výsledky u maturit, lepší výsledky v češtině a cizích jazycích než průměr republiky.",
+          "evidence": "'Úspěšnost žáků u jednotné závěrečné zkoušky se v posledních dvou školních letech pohybuje kolem 97 %' a 'dosahují žáci v českém jazyce a literatuře a v cizím jazyce lepších výsledků'."
+        },
+        {
+          "tag": "Kvalitní péče o žáky se speciálními potřebami",
+          "detail": "Škola má speciálního pedagoga, kariérního poradce a školní psycholožku. Žáci se speciálními potřebami dosahují srovnatelných výsledků jako ostatní.",
+          "evidence": "'Kvalifikovaně poskytují své služby výchovná poradkyně, školní metodik prevence a současně speciální pedagog, kariérní poradce a nově externě školní psycholožka.'"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo aktivní výuka v teoretických předmětech",
+          "detail": "Převažuje frontální výuka, žáci málo pracují ve skupinách nebo dvojicích, chybí diferenciace podle schopností.",
+          "evidence": "'Ve třech čtvrtinách výuky převažovala frontální organizace výuky' a 'Žáci si ale nemohli vybírat z úloh různé náročnosti.'"
+        },
+        {
+          "tag": "Slabší výsledky v matematice",
+          "detail": "Žáci mají problémy u zkoušky z matematiky, ačkoli se k ní přihlašuje jen minimum žáků.",
+          "evidence": "'Problémy však mají u zkoušky z matematiky. K jejímu konání se ale přihlašuje minimum žáků.'"
+        },
+        {
+          "tag": "Chybí systematická podpora prvních ročníků",
+          "detail": "Strategie předcházení neúspěchu se zaměřuje hlavně na závěrečné ročníky, první ročníky nemají dostatečnou podporu adaptace.",
+          "evidence": "'V této strategii však chybí zacílení na žáky prvních ročníků pro jejich úspěšnou adaptaci na středoškolský způsob práce.'"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky v prvním ročníku, aby se lépe adaptovali na středoškolský způsob práce?",
+        "Jaké jsou možnosti doučování a individuální péče pro žáky, kteří mají problémy s matematikou?",
+        "Jak se v praktické výuce využívají skutečné zakázky od veřejnosti a jak to motivuje žáky?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou výuku a řemesla – škola má výborné vybavení a zkušené instruktory v dílnách.",
+        "Žáci z jiných zemí nebo s jazykovou bariérou – škola nabízí výuku českého jazyka včetně odborné terminologie.",
+        "Žáci, kteří chtějí získat více kvalifikací – škola umožňuje získat výuční list ve více oborech a prostupnost mezi obory."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří preferují aktivní skupinovou práci – teoretická výuka je převážně frontální s málo skupinových aktivit.",
+        "Žáci se slabšími matematickými dovednostmi – škola nemá speciální program pro podporu matematiky.",
+        "Žáci, kteří potřebují individualizovaný přístup – diferenciace obsahu podle schopností není dostatečná."
+      ],
+      "plain_czech_summary": "Čáslavská dopravní škola je moderní zařízení s výborným vybavením pro praktickou výuku. Počet žáků roste, výsledky se zlepšují. Silné jsou praktické obory a péče o žáky se speciálními potřebami. Slabší je teoretická výuka – převažuje frontální přístup bez skupinové práce a diferenciace. Matematika je problém. Škola se snaží podporovat žáky, ale zaměřuje se hlavně na závěrečné ročníky. Vhodná pro prakticky zaměřené žáky, méně pro ty, kteří chtějí aktivní vyučování."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Hrubá neúspěšnost v Požární ochraně: 11,8 % (2021/22) → 8,3 % (2022/23)",
+          "Hrubá neúspěšnost v Autotroniku: 25 % (2021/22) → 14,3 % (2022/23)",
+          "Lepší výsledky v češtině a cizích jazycích než průměr republiky"
+        ],
+        "evidence": "Inspekční zpráva uvádí zlepšující se výsledky maturitních zkoušek v obou čtyřletých oborech a lepší výsledky v jazykových předmětech."
+      },
+      "absence": {
+        "trend": "Příznivý",
+        "key_numbers": [
+          "Tříleté obory: 69 zameškaných hodin na žáka za rok",
+          "Čtyřleté obory: 61 zameškaných hodin na žáka za rok",
+          "Neomluvená absence: 1,60 hodin (tříleté) a 1,22 hodin (čtyřleté) na žáka za rok"
+        ],
+        "evidence": "'Snižování průměrné absence žáků, která se u tříletých oborů pohybuje v příznivém průměru 69 zameškaných hodin na žáka za školní rok.'"
+      },
+      "support_services": [
+        "Speciální pedagog, školní psycholožka (externí), kariérní poradce, školní metodik prevence",
+        "Výuka českého jazyka pro žáky s odlišným mateřským jazykem",
+        "Doučování a konzultační hodiny všech učitelů",
+        "Plán pedagogické podpory pro 30 žáků s doporučením a 15 žáků s jazykovou bariérou"
+      ],
+      "safety_climate": [
+        "Nízký počet kázeňských problémů – převažují pochvaly nad kázeňskými opatřeními",
+        "Žádný žák nebyl klasifikován se sníženou známkou z chování",
+        "Nízký počet případů rizikového chování řešených pohovorem nebo jednáním s rodiči",
+        "Žádné stížnosti rodičů na nejednotný postup vyučujících"
+      ],
+      "partnerships_practice": [
+        "Zakázky od veřejnosti – žáci vyšších ročníků pracují na reálných projektech, což je motivuje",
+        "Povinné doškolovací kurzy pro absolventy svářečských kurzů v dvouletých intervalech",
+        "Vysoký zájem zaměstnavatelů o absolventy na trhu práce",
+        "Nově provozovaná autoškola"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, ale obsahuje místy úřednický jazyk a dlouhé věty. Hlavní informace jsou jasné, ale pro rodiče by bylo lépe více konkrétních příkladů.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent žáků prvního ročníku má problémy s adaptací – uvádí jen příklad jedné třídy.",
+        "Není jasné, jaké konkrétní aktivizační metody škola plánuje zavést v teoretické výuce.",
+        "Chybí informace o tom, jak dlouho trvá doučování a kolik žáků ho využívá."
+      ]
+    }
+  }
+}

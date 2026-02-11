@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "LYC_600006921_2025-09-24",
+  "school_profile": {
+    "school_type": "Obchodní akademie a Ekonomické lyceum (střední škola)",
+    "inspection_period": "24.–26. září 2025",
+    "school_change_summary": "Od inspekce v 2020 nový ředitel, vzrostl počet žáků na 333 (naplněnost 69 %), rozšířena nabídka o Ekonomické lyceum, zlepšeny materiální podmínky, založen žákovský parlament."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a evaluace",
+        "detail": "Ředitel systematicky vyhodnocuje kvalitu vzdělávání a přijímá opatření ke zlepšení.",
+        "evidence": "Systematická evaluační činnost zvyšuje kvalitu vzdělávání."
+      },
+      {
+        "tag": "Jazykové a odborné kompetence",
+        "detail": "Škola účinně rozvíjí jazykové dovednosti a odborné znalosti, což zvyšuje uplatnitelnost absolventů.",
+        "evidence": "Účinná podpora rozvoje jazykových a odborných kompetencí zvyšuje uplatnitelnost absolventů na trhu práce."
+      },
+      {
+        "tag": "Kariérní orientace",
+        "detail": "Aktivní vztahy s absolventy podporují kariérní orientaci a zapojení žáků do akcí.",
+        "evidence": "Aktivně rozvíjené vztahy s absolventy se pozitivně odráží v jejich zapojení do akcí podporujících kariérní orientaci."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Nadaní žáci nemají možnost výběru z různě obtížných úkolů, chybí individualizace.",
+        "evidence": "Nedaří se využít příležitosti k diferenciaci výuky podle individuálních vzdělávacích potřeb, zvláště nadaných žáků."
+      },
+      {
+        "tag": "Málo kooperativních forem práce",
+        "detail": "Výuka se opírá spíše o frontální výklad, chybí skupinová práce a interakce žáků.",
+        "evidence": "Přetrvává nižší využití kooperativních forem práce ve výuce některých předmětů a cílené diskuse."
+      },
+      {
+        "tag": "Absence v horních ročnících",
+        "detail": "Průměrná roční absence je 130 hodin na žáka, horší motivace v 3. a 4. ročníku.",
+        "evidence": "Nejlépe se daří motivovat žáky v nižších ročnících, v horších ročnících absence roste."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky? Existují pro ně speciální programy nebo volitelné předměty?",
+      "Jaké jsou výsledky maturit v posledních třech letech a jak se škola připravuje na zkoušky?",
+      "Jak funguje doučování a individuální podpora pro žáky s problémy? Je dostupné online?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o ekonomii, obchod a jazyky – škola má silné zaměření na tyto oblasti.",
+      "Žáci, kteří chtějí praktické znalosti – škola nabízí odborné praxe u partnerů a zahraniční výměny.",
+      "Žáci, kteří potřebují podporu – školní poradenské pracoviště má psycholožku, kariérovou poradkyni a metodika prevence."
+    ],
+    "who_should_be_cautious": [
+      "Nadaní žáci – výuka není dostatečně diferencovaná, chybí výzvy pro nejlepší studenty.",
+      "Žáci, kteří se lépe učí skupinově – kooperativní formy práce se používají málo, převažuje frontální výuka.",
+      "Žáci v 3. a 4. ročníku – absence roste, motivace klesá, škola se na to zaměřuje, ale je to stále problém."
+    ],
+    "plain_czech_summary": "Obchodní akademie v Slaném je dobře vedená škola s novým ředitelem, která se zlepšuje. Silné stránky: kvalitní jazykové a odborné vzdělání, dobrá péče o absolventy, moderní vybavení. Slabiny: výuka není dost přizpůsobená jednotlivým žákům, málo skupinové práce, absence v horních ročnících. Maturitní výsledky se zlepšily. Škola je vhodná pro zájemce o ekonomii a jazyky, ale nadaní žáci by měli vědět, že nejsou dostatečně vytíženi."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "2024/2025: hrubá neúspěšnost dosahuje průměru v oborové skupině ČR",
+        "Profilová část: velice dobré výsledky, neuspěli jen jednotlivci",
+        "Zvýšená úspěšnost v anglickém jazyce a češtině"
+      ],
+      "evidence": "Ve školních letech 2022/2023 a 2023/2024 byla neúspěšnost mírně vyšší než průměr, v 2024/2025 se zlepšila na průměr."
+    },
+    "absence": {
+      "trend": "Problematická v horních ročnících",
+      "key_numbers": [
+        "Průměrná roční absence: 130 hodin na žáka",
+        "Minimální výskyt neomluvené absence",
+        "Nejlépe motivováni žáci v nižších ročnících"
+      ],
+      "evidence": "Z podrobnější analýzy vyplývá, že nejlépe se daří motivovat žáky k účasti ve výuce v nižších ročnících."
+    },
+    "support_services": [
+      "Školní psycholožka a kariérová poradkyně (nově rozšířeno od minulé inspekce)",
+      "Výchovná poradkyně a školní metodik prevence (oba absolvovali specializační studium)",
+      "Doučování a individuální konzultace včetně online formátu",
+      "Strategie předcházení školní neúspěšnosti s efektivními postupy"
+    ],
+    "safety_climate": [
+      "Úrazovost na nízké úrovni",
+      "Pravidla a postupy bezpečnosti stanoveny ve vnitřních předpisech, žáci jsou poučováni",
+      "Zaznamenány problémy s nevhodným chováním ke spolužákům, řešeno individuální prací ŠPP",
+      "Adaptační kurzy plní pozitivní roli v nastavení vrstevnických vztahů",
+      "Dodržování pravidel dobrého chování patrné v hodinách i o přestávkách"
+    ],
+    "partnerships_practice": [
+      "Partnerství s německou školou – výměnné pobyty a seznámení s pracovním prostředím zahraničních firem",
+      "Odborné přednášky a exkurze od sociálních partnerů",
+      "Realizace odborné praxe u smluvních partnerů (nově koordinátor pro spolupráci)",
+      "Zapojení do akcí města a projektových dnů se základními školami",
+      "Projekt Absolventi – zpětná vazba o uplatnění absolventů a interakce se zaměstnavateli"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Číselné údaje jsou jasné, ale kvalitativní hodnocení je někdy obecnější.",
+    "uncertainty_notes": [
+      "Přesné procento nadaných žáků není uvedeno, pouze obecné tvrzení o nedostatečné diferenciaci.",
+      "Konkrétní počty žáků s problémy chování nejsou specifikovány, pouze zmínka o 'problémech s nevhodným chováním'.",
+      "Detaily o online doučování nejsou rozvedeny – není jasné, jak často se využívá a jak je efektivní."
+    ]
+  }
+}
+```

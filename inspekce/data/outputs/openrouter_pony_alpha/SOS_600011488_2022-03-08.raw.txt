@@ -1,0 +1,99 @@
+{
+  "report_id": "SOS_600011488_2022-03-08",
+  "school_profile": {
+    "school_type": "Soukromá střední škola zaměřená na bezpečnostně právní činnost.",
+    "inspection_period": "8. 3. 2022 − 10. 3. 2022",
+    "school_change_summary": "Od září 2021 je ve funkci nová ředitelka, která se zaměřuje na stabilizaci kolektivu a zlepšení klimatu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praxe a uplatnění",
+        "detail": "Škola má funkční síť partnerů (Policie ČR atd.), kteří zajišťují kvalitní praxi a zvyšují šance absolventů na trhu práce.",
+        "evidence": "„Zdařilá a funkční je spolupráce se sociálními partnery... podporuje rozvoj odborných kompetencí žáků a motivuje žáky...“"
+      },
+      {
+        "tag": "Klima a vztahy",
+        "detail": "Ve výuce panuje příjemná atmosféra založená na vzájemné důvěře, respektu a partnerském přístupu učitelů.",
+        "evidence": "„Společným znakem všech hospitovaných hodin byla atmosféra založená na vzájemné důvěře a respektu.“"
+      },
+      {
+        "tag": "Bezpečnost",
+        "detail": "Škola efektivně předchází rizikovému chování a věnuje velkou pozornost vztahům mezi žáky.",
+        "evidence": "„Vzhledem k nízké míře výskytu rizikového chování mezi žáky je realizace preventivního programu školy účinná.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita výuky",
+        "detail": "Výuka je převážně frontální bez aktivizujících metod, učitelé jen výjimečně využívají zpětnou vazbu.",
+        "evidence": "„Převažovala frontální výuka, kooperativní činnosti a účelné aktivizační metody učitelé do výuky zařazovali jen sporadicky.“"
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "V roce 2021 se výrazně zhoršila úspěšnost u maturity oproti předchozím letům i průměru v ČR.",
+        "evidence": "„V roce 2021... došlo ke zhoršení výsledků... 6 žáků neprospělo ani po opravných zkouškách (17,1 % oproti 5,5 % v ČR).“"
+      },
+      {
+        "tag": "Podpora pedagogů",
+        "detail": "Nová vedení školy se nedaří dostatečně metodicky podporovat učitele, což se odráží na kvalitě výuky.",
+        "evidence": "„Dosažení cílů... omezuje málo účinná podpora pedagogů jako důsledek nižší míry hospitační činnosti vedení školy.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola reaguje na vysoký neúspěch žáků u maturity v roce 2021 a jaká opatření přijala?",
+      "Jakým způsobem učitelé individuálně přistupují k žákům s odlišným pracovním tempem nebo potřebami?",
+      "Jak často a v jakých formách probíhá výuka v terénu ve spolupráci s policií a dalšími partnery?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, které baví tématika bezpečnosti, práva a chtějí získat kontakt na budoucí zaměstnavatele.",
+      "Pro studenty, kteří preferují menší soukromou školu s důrazem na dobré vztahy a přátelské prostředí.",
+      "Pro ty, kteří potřebují strukturovanější vedení a preferují tradiční výuku před samostatným zkoumáním."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty očekávající moderní, interaktivní metody výuky a častou skupinovou práci.",
+      "Pokud dáváte přednost stabilnímu pedagogickému sboru s dlouholetou praxí na škole.",
+      "Pro žáky, kteří potřebují silný individuální přístup kvůli specifickým vzdělávacím potřebám."
+    ],
+    "plain_czech_summary": "Škola nabízí zajímavé odborné zaměření na bezpečnost a právo s vynikajícím propojením na praxi a policii, což je velké plus pro budoucí uplatnění. Prostředí je přátelské a bezpečné. Slabinou je však zastaralá metoda výuky, kdy se žáci spíše pasivně učí, a v roce 2021 se výrazně zhoršily výsledky u maturity. Nové vedení teprve řeší stabilitu sboru a kvalitu výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršující se (pokles úspěšnosti v roce 2021).",
+      "key_numbers": [
+        "2020: 4 neúspěšní ze 45 žáků.",
+        "2021: 6 neúspěšných z 35 konajících (17,1 % neúspěšnost).",
+        "Průměr neúspěšnosti v oboru v ČR je 5,5 %."
+      ],
+      "evidence": "„V roce 2021... 6 žáků neprospělo ani po opravných zkouškách v podzimním termínu (17,1 % oproti 5,5 % v dané skupině oborů v ČR).“"
+    },
+    "absence": {
+      "trend": "Neuvedeno v textu zprávy.",
+      "key_numbers": [],
+      "evidence": "Text zprávy neobsahuje konkrétní data o absence žáků."
+    },
+    "support_services": [
+      "Výchovné poradenství a kariérní poradenství zajišťuje ředitelka školy.",
+      "Metodik prevence pro oblast sociálně patologických jevů.",
+      "Individuální konzultace pro žáky ohrožené školní neúspěšností."
+    ],
+    "safety_climate": [
+      "Nízký výskyt rizikového chování.",
+      "Důraz na primární prevenci a adaptační pobyty pro první ročníky.",
+      "Atmosféra vzájemné důvěry a respektu mezi žáky a učiteli."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se subjekty pro zajištění odborné praxe (např. policejní cvičení).",
+      "Účast žáků na reálných akcích (zátěžové pochody, domovní prohlídky).",
+      "Náborové akce a besedy se zaměstnavateli přímo ve škole."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně rozdělená a klade důraz na praktické popisy chování ve výuce. Jedinou nevýhodou je chybějící kvantitativní data o absenci.",
+    "uncertainty_notes": [
+      "Chybí jakékoliv statistiky o absence žáků.",
+      "Není blíže specifikováno, jaké konkrétní „důvody neukončeného ročníku“ vedly k nekonání maturity u 2 žáků v roce 2021."
+    ]
+  }
+}

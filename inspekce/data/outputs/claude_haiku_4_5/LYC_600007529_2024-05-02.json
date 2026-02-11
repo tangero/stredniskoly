@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600007529_2024-05-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:17:02.925558+00:00",
+  "run_finished_utc": "2026-02-09T16:17:25.986008+00:00",
+  "raw_file": "LYC_600007529_2024-05-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600007529_2024-05-02",
+    "school_profile": {
+      "school_type": "Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky (střední škola)",
+      "inspection_period": "2. až 13. května 2024",
+      "school_change_summary": "V roce 2021 ukončena činnost vyšší odborné školy. Počet žáků vzrostl na 490 (naplněnost 77 % z 640 povolených). Zlepšilo se vybavení digitálními technologiemi a materiální podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Žáci stabilně dosahují lepších výsledků než průměr v ČR, v roce 2023 všichni přihlášení žáci uspěli.",
+          "evidence": "Hrubá neúspěšnost v obou oborech lepší než průměr oborové skupiny v ČR."
+        },
+        {
+          "tag": "Kvalitní výuka s moderními metodami",
+          "detail": "Učitelé používají aktivizující metody, skupinovou práci a propojují teorii s praxí.",
+          "evidence": "Hospitační činnost inspekčního týmu potvrdila zavedení inovativních metod do výuky."
+        },
+        {
+          "tag": "Vysoký zájem uchazečů",
+          "detail": "Škola je dlouhodobě přeplňovaná, počet žáků a tříd se zvyšuje.",
+          "evidence": "Počet žáků vzrostl od inspekce v 2017, v oboru Ekonomické lyceum navýšen počet tříd."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výsledky v některých předmětech",
+          "detail": "Žáci opakovaně dosahují nejslabších výsledků v matematice, ekonomice a účetnictví.",
+          "evidence": "Z podrobné analýzy vyplynulo, že nejslabší výsledky mají žáci v těchto předmětech."
+        },
+        {
+          "tag": "Podpora žáků s jiným mateřským jazykem",
+          "detail": "Někteří žáci s OMJ vykazovali riziko školní neúspěšnosti v češtině a literatuře.",
+          "evidence": "Zejména ve školním roce 2021/2022 klasifikace stupněm dostatečný v českém jazyce."
+        },
+        {
+          "tag": "Nedostatečná sebereflexe v hodinách",
+          "detail": "Chybí zařazování vrstevnického hodnocení a sebereflexe žáků v závěru hodin.",
+          "evidence": "Příležitost ke zlepšení v četnějším zařazování sebereflexe k vyhodnocení splnění cílů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s matematikou nebo účetnictvím?",
+        "Jaké má škola zkušenosti s přijetím žáků s jiným mateřským jazykem a jak jim pomáhá s češtinou?",
+        "Jak se škola připravuje na přijímací zkoušky na vysoké školy a jaké má výsledky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o ekonomii, obchod a jazyky, kteří chtějí kvalitní přípravu na vysokou školu",
+        "Motivovaní žáci, kterým vyhovuje strukturovaná výuka s důrazem na praktické aplikace",
+        "Žáci, kteří chtějí získat certifikát státní jazykové zkoušky a rozvíjet jazykové dovednosti"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími předpoklady v matematice bez dodatečné podpory",
+        "Žáci s výraznou jazykovou bariérou, kteří potřebují intenzivnější podporu v češtině",
+        "Žáci, kteří preferují méně strukturovaný přístup a více sebereflexe v hodinách"
+      ],
+      "plain_czech_summary": "Mladoboleslavská obchodní akademie je kvalitní střední škola s dlouhodobě vysokým zájmem uchazečů. Žáci dosahují výborných výsledků při maturitě a v soutěžích. Výuka je moderní, učitelé používají aktivizující metody a propojují teorii s praxí. Škola má dobré vybavení a fungující poradenské služby. Slabší jsou výsledky v matematice a účetnictví, a také podpora žáků s jiným mateřským jazykem. Inspekce doporučuje více sebereflexe v hodinách."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi dobrý, lepší než průměr v ČR",
+        "key_numbers": [
+          "Rok 2023: všichni přihlášení žáci uspěli v profilové části",
+          "Hrubá neúspěšnost v obou oborech lepší než průměr oborové skupiny v ČR",
+          "Přibližně 85 % absolventů pokračuje na vysokých školách"
+        ],
+        "evidence": "V maturitním období 2023 konali MZ všichni přihlášení žáci, kteří ve zkouškách společné části uspěli."
+      },
+      "absence": {
+        "trend": "Pozitivní vývoj, absence klesá",
+        "key_numbers": [
+          "Roční průměrná absence přibližně 120 hodin na žáka",
+          "Pokles absence téměř o 20 % ve srovnání s předchozím rokem",
+          "Zcela ojedinělý výskyt neomluvené absence"
+        ],
+        "evidence": "V obou oborech klesla roční průměrná absence shodně téměř o 20 %."
+      },
+      "support_services": [
+        "Výchovná poradkyně, metodik prevence a školní psycholožka pracují v úzké spolupráci",
+        "Efektivní poradenství a konzultace pro žáky, zákonné zástupce i pedagogy",
+        "Kariérové poradenství s aktivním zapojením školní psycholožky"
+      ],
+      "safety_climate": [
+        "Míra úrazovosti je nízká",
+        "Škola dbá na zajišťování bezpečného prostředí a pravidelně poučuje žáky o bezpečnosti",
+        "Malá četnost sociálně patologických jevů, škola identifikuje rizikové chování a bezodkladně jej řeší"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s kvalitními sociálními partnery umožňuje efektivní využití teoretických poznatků v praxi",
+        "Pravidelná realizace odborně zaměřených exkurzí a seminářů vedených externími odborníky",
+        "Simulace přijímacího řízení do zaměstnání s prezentací životopisu v maturitním ročníku"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, bez zbytečného úřednického stylu. Fakta jsou jasně oddělena, závěry jsou konkrétní a podložené citacemi z textu.",
+      "uncertainty_notes": [
+        "Přesné počty žáků s OMJ a jejich jazykové bariéry nejsou zcela jasné (12 žáků, z toho 2 s částečnou bariérou)",
+        "Konkrétní opatření na podporu žáků s OMJ nejsou v textu detailně popsána",
+        "Není jasné, jak přesně se měří efektivita sebereflexe a vrstevnického hodnocení"
+      ]
+    }
+  }
+}

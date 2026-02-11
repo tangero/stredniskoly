@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "LYC_600012794_2022-05-02",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola pedagogická a Střední pedagogická škola s domem mládeže",
+    "inspection_period": "2. až 13. května 2022",
+    "school_change_summary": "Počet tříd ve střední škole se zvýšil na 14 s 437 žáky. Škola si udržuje velmi dobrou úroveň ve všech oblastech. Postupně se zlepšují materiální podmínky a modernizuje se vybavení učeben."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické dovednosti",
+        "detail": "Výuka je zaměřena na získávání praktických dovedností využitelných v budoucím pracovním životě.",
+        "evidence": "Součástí vzdělávání je průběžná i souvislá pedagogická praxe zaměřená na podporu dovedností potřebných pro pracovní život."
+      },
+      {
+        "tag": "Příjemná atmosféra",
+        "detail": "Klidné, přátelské prostředí podporuje vytváření pozitivních vztahů mezi všemi účastníky vzdělávání.",
+        "evidence": "Vedení školy klade důraz na vytváření pozitivních, respektujících vztahů a zajištění fyzické i psychické bezpečnosti žáků."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola průběžně investuje do modernizace učeben a nákupu digitálních technologií.",
+        "evidence": "Uskutečnila se rekonstrukce elektroinstalace, modernizace počítačové učebny, nákup notebooků a dataprojektorů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná práce s informacemi",
+        "detail": "Žáci málo pracují s různými zdroji informací během výuky.",
+        "evidence": "Chybějící práce žáků s různými zdroji informací je uvedena jako slabá stránka v závěrech inspekce."
+      },
+      {
+        "tag": "Chybějící reflexe hodin",
+        "detail": "Učitelé málo vyhodnocují, zda byly naplněny cíle výuky a chybí sebereflexe žáků.",
+        "evidence": "Shrnutí a zhodnocení proběhlé výuky bylo zaznamenáno ojediněle, chybějící závěry hodin jsou uvedeny jako slabá stránka."
+      },
+      {
+        "tag": "Omezená diferenciace",
+        "detail": "Učitelé pracují se všemi žáky stejnými metodami a tempem, včetně nadaných a těch se speciálními potřebami.",
+        "evidence": "V hodinách nebyla patrná výraznější diferenciace práce, učitelé se všemi žáky pracovali stejnými metodami a totožným tempem."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami a nadané žáky?",
+      "Jaké jsou podmínky pro ubytování v domě mládeže a jak se tam žáci připravují na výuku?",
+      "Jaké jsou výsledky absolventů na vysokých školách a v pedagogické praxi?"
+    ],
+    "who_school_fits": [
+      "Zájemci o pedagogické obory s jasnou představou o budoucí práci s dětmi",
+      "Žáci, kteří si cení praktické výuky a osobního rozvoje v příjemném prostředí",
+      "Studenti z vzdálenějších míst, kterým vyhovuje ubytování v domě mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku",
+      "Ti, kdo preferují samostatnou práci s různými zdroji informací a kritické myšlení",
+      "Studenti, kteří se neorientují na pedagogické povolání"
+    ],
+    "plain_czech_summary": "Jde o kvalitní pedagogickou školu v Litomyšli, která si dlouhodobě udržuje vysokou úroveň. Výuka je zaměřena na praktické dovednosti a probíhá v příjemné atmosféře. Škola má moderní vybavení a podporuje osobní rozvoj žáků. Inspekce doporučuje zlepšit práci s informacemi a reflexi výuky. Maturitní zkoušku zvládlo 97 % žáků, z toho polovina s vyznamenáním."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "97 % žáků úspěšně zvládlo maturitní zkoušku",
+        "Skoro polovina maturantů s vyznamenáním",
+        "27 % žáků na konci 1. pololetí 2021/2022 s vyznamenáním"
+      ],
+      "evidence": "Maturitní zkoušku úspěšně zvládlo 97 % žáků, s vyznamenáním skoro polovina z nich. Na konci 1. pololetí prospělo s vyznamenáním necelých 27 % žáků."
+    },
+    "absence": {
+      "trend": "Pozitivní",
+      "key_numbers": [
+        "Neprospívajících bylo přibližně 1 %",
+        "Počet výchovných opatření minimální",
+        "Pozitivní bilance hodnocení chování"
+      ],
+      "evidence": "Zásadní výukové problémy se nevyskytují, neprospívajících bylo přibližně 1 %. Počet výchovných opatření jako napomenutí nebo důtky je minimální."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: zástupkyně ředitele, výchovná poradkyně, školní psycholožka, metodička prevence",
+      "Konzultace a doučování pro žáky v oblasti rizika školního neúspěchu",
+      "Programy primární prevence zaměřené na aktuální témata v jednotlivých skupinách"
+    ],
+    "safety_climate": [
+      "Vedení školy klade důraz na vytváření pozitivních, respektujících vztahů mezi všemi účastníky",
+      "Komplexní poradenské služby řešící prevenci rizikového chování",
+      "Škole se daří zachytávat projevy rizikového chování již v prvopočátku a řešit je ve spolupráci s odborníky"
+    ],
+    "partnerships_practice": [
+      "Praktická výuka v některých případech konaná v zahraničí",
+      "Spoluprací s různými školskými zařízeními (např. Dětský domov Holice) je upevňován vztah k budoucí pedagogické činnosti",
+      "Pedagogové pravidelně vyjíždějí do zahraničí na jazykově-metodické kurzy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní údaje, citace z pozorování a jasné závěry. Slabší je pouze v tom, že některé údaje jsou formulovány obecně (např. 'necelých 27 %', 'přibližně 1 %').",
+    "uncertainty_notes": [
+      "Přesné počty neprospívajících nejsou uvedeny, pouze přibližně 1 %",
+      "Údaje o absenci nejsou v textu explicitně uvedeny",
+      "Detaily o specifických problémech jednotlivých žáků nejsou v textu obsaženy"
+    ]
+  }
+}
+```

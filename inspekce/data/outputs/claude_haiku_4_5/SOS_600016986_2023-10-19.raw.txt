@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600016986_2023-10-19",
+  "school_profile": {
+    "school_type": "Střední škola s maturitními obory: Aplikovaná chemie, Provoz a ekonomika dopravy, Logistické a finanční služby. Součástí je domov mládeže a školní jídelna.",
+    "inspection_period": "19.–24. října 2023",
+    "school_change_summary": "Od roku 2020/2021 nový ředitel. Od roku 2023/2024 škola přestala realizovat obor Manipulant poštovního provozu. Pokračuje v modernizaci prostor a materiálního vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola efektivně spolupracuje se sociálními partnery a profesními organizacemi, což přispívá k tomu, že žáci získávají praktické dovednosti odpovídající požadavkům trhu práce.",
+        "evidence": "Spolupráce se sociálními partnery efektivně přispívá k užšímu sepětí výuky a praxe a účinně podporuje získávání odborných kompetencí."
+      },
+      {
+        "tag": "Kvalitní praktické vyučování",
+        "detail": "V laboratorních cvičeních a praktických hodinách žáci pracují se moderním vybavením a učitelé jim poskytují průběžnou zpětnou vazbu.",
+        "evidence": "V hodinách laboratorních cvičení z chemie žáci vykazovali samostatnost a zručnost v zacházení s laboratorními pomůckami a technickým vybavením."
+      },
+      {
+        "tag": "Bezpečné a příjemné prostředí",
+        "detail": "Škola má čisté, vkusně upravené prostory a dostatečné didaktické vybavení pro všechny předměty.",
+        "evidence": "Vedení školy systematicky vyhodnocuje stav materiálních a technických podmínek školy a usiluje o jejich průběžné zkvalitňování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená pestrost výukových metod",
+        "detail": "V některých hodinách převažuje frontální výuka zaměřená na vysvětlování a opakování, chybí skupinové práce a aktivnější metody.",
+        "evidence": "V některých hodnocených vyučovacích hodinách byly minimálně využívány pestré metody a organizační formy výuky."
+      },
+      {
+        "tag": "Málo formativního hodnocení",
+        "detail": "Učitelé jen minimálně využívají zpětnou vazbu a sebehodnocení žáků, což omezuje jejich vědomí o vlastním pokroku.",
+        "evidence": "Nižší míra využívání formativního hodnocení a reflexe vzdělávacího pokroku žáků. Méně intenzivní míra využívání sebehodnocení a vzájemného hodnocení."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Učitelé málo přizpůsobují výuku individuálním potřebám žáků, všichni dělají stejné úkoly bez ohledu na jejich schopnosti.",
+        "evidence": "Malá míra obsahové a časové diferenciace výuky vzhledem k rozdílným vzdělávacím potřebám žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením? Jaké doučování nabízí?",
+      "Jaké jsou výsledky absolventů na vysokých školách a jejich uplatnění na trhu práce?",
+      "Jak se škola zaměřuje na rozvoj klíčových kompetencí jako je týmová práce a kritické myšlení?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s jasným zaměřením na konkrétní profesi (chemie, logistika, doprava)",
+      "Studenti, kteří se lépe učí v laboratorních cvičeních a praktických hodinách než v teoretické výuce",
+      "Žáci z jiných měst, kteří mohou využít kvalitní domov mládeže se 231 místy"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – inspekce zjistila, že se tímto oblastem škola věnuje málo",
+      "Studenti, kteří se lépe učí aktivními metodami a skupinovou prací – frontální výuka zde převažuje",
+      "Žáci se speciálními vzdělávacími potřebami – inspekce upozornila, že podpůrná opatření nejsou vždy dostatečně viditelná v praxi"
+    ],
+    "plain_czech_summary": "Střední škola logistiky a chemie v Olomouci je dobře vybavená škola s kvalitním praktickým vyučováním a silnými vazbami na praxi. Žáci se zde učí reálné dovednosti v moderních laboratořích. Slabší stránkou je, že teoretické předměty se vyučují spíše tradičním způsobem – převažuje frontální výuka bez skupinových aktivit. Učitelé málo využívají zpětnou vazbu a sebehodnocení žáků. Škola by měla více individualizovat výuku podle potřeb jednotlivých žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá tendence s pozitivním vývojem v posledních termínech",
+      "key_numbers": [
+        "Výsledky ve společné části maturitní zkoušky měly kolísavou tendenci",
+        "Pozitivní projev přístupu školy se projevil v posledních zkušebních termínech"
+      ],
+      "evidence": "Rozbor výsledků žáků u maturitní zkoušky škola pravidelně zpracovává a navrhuje systémová opatření. Tento přístup se pozitivně projevil na výsledcích v posledních zkušebních termínech."
+    },
+    "absence": {
+      "trend": "Aktivně řešeno, minimalizace zvýšené absence",
+      "key_numbers": [
+        "Škola bezodkladně přijímá opatření k minimalizaci zvýšené absence žáků"
+      ],
+      "evidence": "Na dosahované výsledky vzdělávání pozitivně působí mj. fakt, že škola bezodkladně přijímá opatření k minimalizaci zvýšené absence žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s kvalifikovanými pedagogy poskytuje poradenské a konzultační služby",
+      "Doučování a konzultace pro žáky ohrožené školním neúspěchem",
+      "Podpora žáků se speciálními vzdělávacími potřebami a žáků s odlišným mateřským jazykem",
+      "Kariérové poradenství s informacemi o dalším studiu a uplatnění na trhu práce"
+    ],
+    "safety_climate": [
+      "Pozitivní pracovní atmosféra ve všech hodnocených hodinách",
+      "Žáci dodržují pravidla komunikace a respektují stanovené postupy",
+      "Zdvořilé chování a přátelské vystupování žáků zaznamenáno během inspekce",
+      "Primární prevence rizikového chování je nedílnou součástí vzdělávacího procesu",
+      "Ojedinělé problémy jsou neprodleně řešeny prostřednictvím pohovoru a spolupráce se zákonnými zástupci"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s profesními organizacemi, základními, středními a vysokými školami",
+      "Odborné stáže a soutěže se zahraničními partnery",
+      "Propojení teoretického odborného vzdělávání s praxí",
+      "Využití odborných kompetencí žáků k propagaci vzdělávací nabídky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více odborné terminologie, která by mohla být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o úspěšnosti maturit – pouze popis trendu",
+      "Není jasné, kolik procent hodin bylo hodnoceno jako problematických z hlediska metod výuky",
+      "Chybí konkrétní data o počtu žáků, kterým je poskytováno doučování"
+    ]
+  }
+}
+```

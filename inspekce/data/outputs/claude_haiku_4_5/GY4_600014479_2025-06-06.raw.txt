@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY4_600014479_2025-06-06",
+  "school_profile": {
+    "school_type": "Soukromá střední škola (gymnázium a maturitní obory) s připojenou základní a mateřskou školou",
+    "inspection_period": "6. 6. 2025 a 10.–11. 6. 2025",
+    "school_change_summary": "Od roku 2024 je škola součástí sítě Cambridge International School. V letošním roce byl zahájen nový obor Gymnázium. Škola prošla změnou vedení v roce 2023 a postupně zvyšuje počet žáků (168 žáků ve 12 třídách)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné materiální podmínky",
+        "detail": "Všechny učebny mají interaktivní tabule a digitální techniku, prostory jsou esteticky upraveny s odpočinkovými zónami.",
+        "evidence": "Modernizací všech učeben byly vytvořeny nadstandardní podmínky pro moderní metody výuky."
+      },
+      {
+        "tag": "Silné jazykové vzdělání",
+        "detail": "Výuka cizích jazyků s rodilými mluvčími, Cambridge certifikáty, více než zdvojnásobení počtu úspěšně složených mezinárodních zkoušek.",
+        "evidence": "Cílené navýšení disponibilních hodin a výuka předmětů v anglickém jazyce vedla k více než zdvojnásobení počtu úspěšně složených mezinárodních jazykových zkoušek."
+      },
+      {
+        "tag": "Bezpečné prostředí",
+        "detail": "Systematická bezpečnostní opatření, kvalitní poradenské služby a prevence patologických jevů.",
+        "evidence": "Nastavená preventivní opatření garantují žákům reálnou fyzickou bezpečnost a vstřícné prostředí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší rozvoj kritického myšlení",
+        "detail": "V některých předmětech chybí úlohy s rozdílnou náročností a vyhodnocení výukových cílů na konci hodin.",
+        "evidence": "Minimálně byly do výuky začleňovány úlohy s rozdílnou kognitivní náročností a chybělo závěrečné vyhodnocení výukových cílů."
+      },
+      {
+        "tag": "Nejednotná kvalita výuky matematiky",
+        "detail": "Jedna vyučující bez odborné kvalifikace používá málo účinné metody s minimální podporou komunikačních dovedností.",
+        "evidence": "Absence odborné kvalifikace vyučující se projevila integrací velmi málo účinných výukových metod s minimální podporou rozvoje komunikačních dovedností."
+      },
+      {
+        "tag": "Pasivita žáků v češtině",
+        "detail": "Výuka je vedena převážně frontálně, někteří žáci jsou při práci s pracovními listy pasivní.",
+        "evidence": "Výuka byla vedena méně účelným frontálním způsobem se začleněním samostatné práce a některé žáky byly pasivní."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně budete zlepšovat výuku matematiky a zajistíte, aby všichni učitelé měli potřebnou kvalifikaci?",
+      "Jaké konkrétní kroky podniknete, aby žáci více rozvíjeli kritické myšlení a samostatnost?",
+      "Jak funguje program Cambridge International School a jaké jsou výhody pro naše děti?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní vzdělání (Cambridge certifikáty, rodilí mluvčí)",
+      "Děti, které potřebují individuální přístup (malé třídy, dělení jazyků podle úrovně)",
+      "Žáci zaměření na ekonomiku a IT (silné praktické vazby s firmami v regionu)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silný rozvoj kritického myšlení a samostatného řešení problémů",
+      "Děti, které se lépe učí aktivizačními metodami (výuka češtiny je spíše frontální)",
+      "Žáci s potřebou kvalitní výuky matematiky (variabilní úroveň kvality podle učitele)"
+    ],
+    "plain_czech_summary": "ORBIS je soukromá střední škola v Zlíně s výborným vybavením a silným zaměřením na jazyky. Škola nabízí Cambridge certifikáty a výuku s rodilými mluvčími. Materiální podmínky jsou nadstandardní, bezpečnost zajištěna. Slabší stránkou je rozvoj kritického myšlení a aktivizace žáků v některých předmětech. Výuka matematiky má rozdílnou kvalitu podle učitele. Škola je vhodná pro jazykově nadané děti a ty zaměřené na ekonomiku či IT."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se",
+      "key_numbers": [
+        "Více než dvě třetiny žáků úspěšně absolvovaly studium v oborech Ekonomika a podnikání a Informační technologie v roce 2023/2024",
+        "Postupně zlepšující se výsledky ve všech částech maturitní zkoušky v posledních třech letech",
+        "Více než zdvojnásobení počtu úspěšně složených mezinárodních jazykových zkoušek"
+      ],
+      "evidence": "Vedení školy systematicky pracovalo s výsledky maturitních zkoušek a podnikalo kroky k posílení studijních výsledků."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence věnuje minimálně, není uveden konkrétní trend nebo čísla."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence zajišťují cílenou podporu žákům a zákonným zástupcům",
+      "Doučování a konzultace pro žáky potřebující podporu",
+      "Pedagogické intervence pro žáky se speciálními vzdělávacími potřebami",
+      "Externí preventista a kariérový poradce",
+      "Adaptační pobyty pro prvňáky a tematicky zaměřené kurzy"
+    ],
+    "safety_climate": [
+      "Preventivní opatření garantují reálnou fyzickou bezpečnost",
+      "Úprava venkovního schodiště a rozšíření elektronického systému posílily bezpečnost vstupů",
+      "Aktivní zapojení do prevence patologických jevů",
+      "Budování pozitivních vztahů v třídních kolektivech",
+      "Dotazníkový průzkum klimatu ve všech třídách v roce 2023"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Univerzitou Tomáše Bati ve Zlíně (stravování)",
+      "Odborné praxe v regionálních firmách v ekonomické oblasti a IT",
+      "Partnerství s městem Zlín na kulturních a společenských akcích",
+      "Kooperace se sportovními oddíly",
+      "Úzká spolupráce se zřizovatelem na investičních opravách a financování akcí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o evidence. Některé pasáže jsou však delší a obsahují více odborné terminologie, která by mohla být pro laické rodiče méně přístupná.",
+    "uncertainty_notes": [
+      "Absence konkrétních čísel o absenci žáků – zpráva se jí věnuje minimálně",
+      "Nejsou uvedeny konkrétní procenta úspěšnosti v jednotlivých předmětech maturitní zkoušky",
+      "Není jasné, jak velký je podíl žáků bez odborné kvalifikace vyučujících (zmíněna jen jedna vyučující matematiky)"
+    ]
+  }
+}
+```

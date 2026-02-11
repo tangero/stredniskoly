@@ -1,0 +1,104 @@
+{
+  "report_id": "GY8_691012458_2022-03-07",
+  "school_profile": {
+    "school_type": "Gymnázium, střední škola (agropodnikání, sociální činnost, učební obory) a vyšší odborná škola.",
+    "inspection_period": "7. 3. − 10. 3. 2022",
+    "school_change_summary": "Škola vznikla sloučením v roce 2018, potýká se s provázaním autonomních pracovišť a končí výuka některých oborů (Obráběč kovů, dálková VOŠ)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné zázemí pro praxi",
+        "detail": "Škola disponuje moderním školním hospodářstvím, které umožňuje propojit teorii s reálným provozem.",
+        "evidence": "Díky probíhající rekonstrukci ŠH vznikly zcela nové a moderní stáje... ŠH tak komplexně přispívá k podpoře odborného vzdělávání žáků."
+      },
+      {
+        "tag": "Možnost přestupu při neúspěchu",
+        "detail": "Škola umožňuje žákům neúspěšným v maturitních oborech získat alespoň výuční list v příbuzném oboru.",
+        "evidence": "Neúspěšným žákům oborů vzdělání s maturitní zkouškou... škola umožňuje získat v rámci přestupu střední vzdělání s výučním listem."
+      },
+      {
+        "tag": "Příjemné klima a bezpečnost",
+        "detail": "Panuje zde vstřícná komunikace a škola klade důraz na prevenci rizikového chování.",
+        "evidence": "Charakteristickým znakem... byla příjemná pracovní atmosféra... Cílená, systematická... práce s třídními kolektivy má zásadní význam pro účinnou prevenci."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekonzistentní výsledky u maturity",
+        "detail": "Známky na vysvědčení ne vždy odpovídají výsledkům u státních maturit, což může vést k falešnému pocitu jistoty.",
+        "evidence": "Celkové výsledky vzdělávání žáků... neodpovídají jejich výsledkům u maturitní zkoušky... hrubá neúspěšnost u MZ byla cca 22,9 %."
+      },
+      {
+        "tag": "Pasivní styl výuky",
+        "detail": "Výuka často probíhá frontální formou bez dostatečného zapojení žáků do diskuse a samostatné práce.",
+        "evidence": "Převažovaly tradiční metody výuky... Absence zařazování větší pestrosti aktivizačních metod... vedla k pasivitě části žáků."
+      },
+      {
+        "tag": "Chybějící individuální přístup",
+        "detail": "Učitelé málo zohledňují rozdílné tempo a schopnosti jednotlivých žáků při výuce.",
+        "evidence": "Malá pozornost byla věnována diferenciaci a individualizaci výuky, která by více zohledňovala odlišné pracovní tempo... žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola reaguje na rozdíl mezi školními známkami a výsledky maturitních zkoušek?",
+      "Jakým způsobem jsou využívány nové prostory školního hospodářství ve výuce?",
+      "Jaké konkrétní metody používáte k zapojení žáků do výuky mimo tradiční výklad?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o zemědělské a technické obory, kteří oceňují kvalitní praktickou přípravu na reálném provozu.",
+      "Žáci, kteří hledají vstřícné prostředí a podporu v případě studijních potíží s možností přestupu na učební obor.",
+      "Zájemci o sociální činnost, kde je efektivně zařazována skupinová práce a aktivní zapojení do výuky."
+    ],
+    "who_should_be_cautious": [
+      "Žáci očekávající moderní, interaktivní styl výuky s důrazem na samostatné bádání a diskuzi.",
+      "Studenti, kteří potřebují silný individuální přístup a přizpůsobení tempa výuky jejich schopnostem.",
+      "Uchazeči, kteří berou školní prospěch jako záruku úspěchu u maturitní zkoušky."
+    ],
+    "plain_czech_summary": "Škola nabízí širokou škálu oborů od gymnázia po učební zemědělské obory s unikátním zázemím školního hospodářství. Pro rodiče je klíčovou výhodou možnost přestupu mezi obory a bezpečné, vstřícné prostředí. Rizikem je však tradiční styl výuky s malou aktivitou žáků a varující nepoměr mezi školními známkami a neúspěšností u maturit (celkem 22,9 %). Škola vznikla sloučením a stále bojuje s propojením různých pracovišť. Pro prakticky zaměřené žáky je škola dobrou volbou, náročnější studenty může zklamat nízká míra individualizace výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Varující rozdíl mezi školním hodnocením (neúspěšnost 4,2 %) a realitou maturitní zkoušky (neúspěšnost 22,9 %).",
+      "key_numbers": [
+        "Hrubá neúspěšnost u MZ cca 22,9 % (gympnázium 15,4 %, Agropodnikání 28,6 %).",
+        "Pouze 2 ze 48 žáků končících ročník neprospěli k MZ (školní hodnocení).",
+        "Nejvyšší neúspěšnost u MZ v oboru Agropodnikání (28,6 %)."
+      ],
+      "evidence": "Porovnáním celkových výsledků vzdělávání... s výsledky ve společné části maturitní zkoušky... bylo zjištěno, že... hrubá neúspěšnost u MZ byla cca 22,9 %."
+    },
+    "absence": {
+      "trend": "Škola má zaveden efektivní systém kontroly a omlouvání absence, zejména v učňovských oborech.",
+      "key_numbers": [
+        "Zaveden efektivní systém tzv. úředního omlouvání.",
+        "Využívání třídních kárných sešitů v učňovských oborech.",
+        "Pravidelné každotýdenní porady výchovného poradce s pedagogy."
+      ],
+      "evidence": "Škola má jasně nastavený postup pro řešení absencí... Pro řešení případů vysoké absence má škola zavedený efektivní systém tzv. úředního omlouvání."
+    },
+    "support_services": [
+      "Tři výchovní poradci s funkcí metodiků prevence a kariérového poradenství.",
+      "Spolupráce s Policií ČR a okresním metodikem prevence při řešení rizikového chování.",
+      "Doučování žáků v rámci národního plánu doučování pro rok 2021/2022."
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra a vstřícná komunikace mezi učiteli a žáky.",
+      "Kvalitní prevence rizikového chování prostřednictvím práce s třídními kolektivy.",
+      "Jasně nastavená pravidla pro bezpečné vzdělávání a pravidelné revize."
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zemědělci, podniky a zoologickou zahradou pro praktickou výuku.",
+      "Mezinárodní projekty Erasmus a spolupráce se školami v Německu a na Slovensku.",
+      "Realizace praxe na školním hospodářství s moderními stájemi a rostlinnou výrobou."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozdělený a klíčová data jsou zdůrazněna. Obsahuje standardní odbornou terminologii, která však nepřekáží porozumění.",
+    "uncertainty_notes": [
+      "Není zcela jasné, jak konkrétně probíhá 'úřední omlouvání' absence a jaké má podmínky.",
+      "Text zmiňuje 'dílčí nedostatky' ve výuce učebních oborů, ale nedefinuje je přesně.",
+      "Rozsah rekonstrukce domova mládeže a školního hospodářství není detailně specifikován."
+    ]
+  }
+}

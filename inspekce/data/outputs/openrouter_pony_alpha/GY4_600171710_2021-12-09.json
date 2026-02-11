@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_600171710_2021-12-09",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:09:48.359125+00:00",
+  "run_finished_utc": "2026-02-10T08:10:47.283934+00:00",
+  "raw_file": "GY4_600171710_2021-12-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600171710_2021-12-09",
+    "school_profile": {
+      "school_type": "Čtyřleté gymnázium s všeobecným zaměřením a se sportovní přípravou (atletika, basketbal, plavání, volejbal).",
+      "inspection_period": "9. 12. 2021 − 14. 12. 2021",
+      "school_change_summary": "Od roku 2013 se výrazně zlepšily materiální a finanční podmínky, škola udržuje stabilní počet žáků a rozšířila poradenské služby."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Sport a studium",
+          "detail": "Škola umožňuje skvěle sladit náročné sportovní tréninkování s teoretickým studiem.",
+          "evidence": "„Promyšlený systém a organizace výuky umožňuje sladit teoretické vyučování se sportovním tréninkem.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Funguje zde komplexní systém poradenství včetně školní psycholožky a adaptačních kurzů.",
+          "evidence": "„Funkčně nastavený systém poradenského pracoviště včetně efektivní podpory žáků i v období distanční výuky.“"
+        },
+        {
+          "tag": "Výsledky",
+          "detail": "Žáci dosahují velmi dobrých studijních výsledků a úspěšně skládají maturitu.",
+          "evidence": "„Celkové výsledky žáků v průběhu vzdělávání jsou na velmi dobré úrovni... téměř 99 % žáků s uzavřenou klasifikací.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Ve škole převažuje tradiční frontální výuka, která žáky příliš neaktivizuje.",
+          "evidence": "„Vyučující velmi často preferovali frontální výuku... kooperativní formy práce byly využity v menší míře.“"
+        },
+        {
+          "tag": "Jazyková komunikace",
+          "detail": "V cizích jazycích chybí důraz na skutečnou konverzaci a interaktivní dovednosti.",
+          "evidence": "„Méně často však docházelo k rozvoji interaktivních řečových dovedností žáků a aplikaci... v reálné komunikační situaci.“"
+        },
+        {
+          "tag": "Řízení kvality",
+          "detail": "Vedení školy nemá plně pod kontrolou kvalitu výuky u jednotlivých pedagogů.",
+          "evidence": "„Kontrolní činnost není vždy systematická... schází konkrétní doporučení včetně navazující metodické pomoci.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje učitele v zavádění moderních a aktivizujících metod výuky?",
+        "Jaké konverzační příležitosti mimo běžné vyučování škola pro rozvoj cizích jazyků nabízí?",
+        "Jakým způsobem probíhá individuální příprava žáků ve sportovních třídách na maturitu?"
+      ],
+      "who_school_fits": [
+        "Pro sportovně talentované děti, které potřebují sladit vrcholový sport se studiem.",
+        "Pro žáky, kteří preferují jasná pravidla, bezpečné prostředí a tradiční přístup ke vzdělávání.",
+        "Pro studenty s zájmem o přírodovědné obory, kde škola dosahuje vynikajících výsledků."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty, kteří vyžadují vysokou míru samostatnosti, tvořivosti a diskuse ve výuce.",
+        "Pokud hledáte školu s důrazem na praktickou komunikaci v cizích jazycích nad gramatikou.",
+        "Pro rodiče, kteří očekávají intenzivní individuální přístup učitele k odlišnému tempu dítěte."
+      ],
+      "plain_czech_summary": "Gymnázium na Praze 10 je stabilní školou se silným sportovním zaměřením a velmi dobrou úrovní vzdělávání. Umožňuje výborně sloučit studium se sportovní kariérou a nabízí silné zázemí výchovného poradenství. Škola dosahuje kvalitních maturitních výsledků, zejména v přírodovědných předmětech. Slabinou je převažující tradiční styl výuky, který nabízí málo prostoru pro diskuzi, tvořivost a konverzaci v cizích jazycích. Pro rodiče je důležité, že prostředí je bezpečné a žáci prospívají, ale moderní aktivizující metody zde zatím nepřevažují."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "stabilní až mírně lepší",
+        "key_numbers": [
+          "Téměř 99 % žáků úspěšně ukončuje ročník.",
+          "Třetina žáků volí u maturity státní zkoušku z matematiky.",
+          "Téměř 75 % žáků volí v profilové části zeměpis nebo přírodovědné předměty."
+        ],
+        "evidence": "„Výsledky (i v době distančního vzdělávání) korespondují s průběžnými výsledky žáků... dosahovali žáci všeobecného zaměření stabilně srovnatelných nebo mírně lepších výsledků.“"
+      },
+      "absence": {
+        "trend": "nízká",
+        "key_numbers": [
+          "Nízká celková míra zameškaných hodin.",
+          "Nízká míra neomluvené absence.",
+          "Bezvýznamný počet žáků se sníženým stupněm z chování."
+        ],
+        "evidence": "„Systém zvolených mechanismů je funkční, což dokládá bezvýznamný počet žáků hodnocených sníženým stupněm z chování a nízká celková míra zameškaných hodin.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (výchovná poradkyně, metodik prevence, školní psycholožka).",
+        "Přípravné a adaptační kurzy pro první ročníky.",
+        "Individuální konzultace pro žáky s rizikem neúspěchu."
+      ],
+      "safety_climate": [
+        "Prioritou je vytváření důvěryhodného a bezpečného prostředí.",
+        "Kázeňská opatření jsou ukládána uvážlivě a systém je funkční.",
+        "Žáci mají k dispozici odpočinkovou místnost a kuchyňku na základě svých podnětů."
+      ],
+      "partnerships_practice": [
+        "Status fakultní školy Přírodovědecké fakulty UK.",
+        "Spolupráce se sportovními kluby a partnerskou školou v zahraničí.",
+        "Partnerské vztahy s městskou částí a zřizovatelem."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje dostatek konkrétních příkladů k tvrzením. Obsahuje minimum odborného žargonu mimo standardní pedagogické pojmy.",
+      "uncertainty_notes": [
+        "Chybí přesné procentuální vyjádření úspěšnosti u maturity, pouze slovní popis 'srovnatelné' či 'lepší'.",
+        "Není specifikováno, o jaký konkrétní cizí jazyk se jedná u 'partnerské školy v zahraničí'.",
+        "Údaj o 'téměř 99 %' žáků s uzavřenou klasifikací není zcela přesně vysvětlen (zda jde o postup do dalšího ročníku)."
+      ]
+    }
+  }
+}

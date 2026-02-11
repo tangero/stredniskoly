@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOU_600017087_2023-02-14",
+  "school_profile": {
+    "school_type": "Střední odborná škola s domovem mládeže",
+    "inspection_period": "14. až 16. února 2023",
+    "school_change_summary": "Škola nabízí 3leté obory s výučním listem (Cukrář, Kuchař-číšník, Elektrikář, Výrobce potravin) a nově 4leté obory s maturitou (Mechanik elektrotechnik, Fotograf). Celkem 187 žáků, z toho 19 se speciálními vzdělávacími potřebami. Zrušen nástavbový obor Podnikání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Odborný výcvik v gastronomických oborech je dobře organizovaný s provázáním teorie a praxe, individuální podporou a rozvojem klíčových kompetencí.",
+        "evidence": "Pracovní činnosti probíhaly v souladu s tematickým rozvržením, byla zajištěna účelná organizace a rozvoj komunikativních, sociálních a personálních kompetencí."
+      },
+      {
+        "tag": "Stabilní pedagogický sbor",
+        "detail": "Škola má kvalifikované a stabilní učitele, kteří zajišťují výuku.",
+        "evidence": "Výuku zajišťuje stabilní, kvalifikovaný pedagogický sbor."
+      },
+      {
+        "tag": "Dobrá spolupráce se zaměstnavateli",
+        "detail": "Škola aktivně spolupracuje s místními firmami a profesními svazy na praktické přípravě žáků.",
+        "evidence": "Škola spolupracuje s různými subjekty zejména místního a regionálního významu a profesními svazy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká aktivita žáků v teoretické výuce",
+        "detail": "Převažuje frontální výuka bez dostatečného zapojení žáků, chybí diskuse, skupinová práce a diferenciace obsahu.",
+        "evidence": "Dominantní výskyt frontální výuky vedl k nízké míře zapojení všech žáků a pasivnímu předávání informací bez motivace."
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Nejčastěji řešeným problémem je vysoká míra absence s podezřením na skryté záškoláctví.",
+        "evidence": "Nejčastěji řešeným problémem je vysoká míra absence s podezřením na skryté záškoláctví."
+      },
+      {
+        "tag": "Slabá kontrola vedením školy",
+        "detail": "Řízení školy stagnuje, opatření z předchozí inspekce nebyla efektivně realizována, hospitační činnost není dostatečně účinná.",
+        "evidence": "Řízení školy a pedagogických procesů stagnuje. Opatření navržená ČŠI nebyla efektivně přijata a v praxi zcela realizována."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+      "Jaké moderní metody výuky a aktivizace žáků škola v poslední době zavedla?",
+      "Jak probíhá podpora žáků ohrožených předčasným ukončením studia a jaké jsou úspěchy?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou výuku a ruční dovednosti, zejména v gastronomii a elektrikářství",
+      "Studenti, kteří potřebují individuální podporu a osobnější přístup v odborném výcviku",
+      "Žáci ze znevýhodněného prostředí, kterým škola nabízí ubytování v domově mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní teoretickou výuku s diskusemi a skupinovou prací – zde převažuje frontální výuka",
+      "Studenti, kteří potřebují silnou motivaci a zpětnou vazbu – formativní hodnocení se nevyskytuje",
+      "Žáci s vyšší absencí – škola má problémy se zvládáním absence a prevencí záškoláctví"
+    ],
+    "plain_czech_summary": "Střední odborná škola v Litoveli nabízí kvalitní praktickou výuku v gastronomických a technických oborech s dobrou spoluprací se zaměstnavateli. Silnou stránkou je odborný výcvik s individuální podporou. Slabinou je převaha frontální výuky v teoretických předmětech bez dostatečné aktivizace žáků, vysoká absence a nedostatečná kontrola vedením. Inspekce upozorňuje, že škola nerealizuje doporučení z předchozí inspekce a že řízení stagnuje. Vhodná pro prakticky zaměřené žáky, méně pro ty, kteří preferují aktivní teoretickou výuku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní",
+      "key_numbers": [
+        "41 žáků v oborech s maturitní zkouškou",
+        "2 obory s maturitou: Mechanik elektrotechnik, Fotograf",
+        "Výsledky u závěrečných zkoušek jsou zpravidla stabilní"
+      ],
+      "evidence": "K termínu inspekční činnosti se v oborech s maturitní zkouškou vzdělávalo 41 žáků. Výsledky žáků u závěrečných zkoušek jsou zpravidla stabilní."
+    },
+    "absence": {
+      "trend": "Vysoká a problematická",
+      "key_numbers": [
+        "Vysoká míra absence s podezřením na skryté záškoláctví",
+        "Absence je nejčastěji řešeným problémem",
+        "Značná část žáků ukončuje studium předčasně"
+      ],
+      "evidence": "Nejčastěji řešeným problémem je vysoká míra absence s podezřením na skryté záškoláctví. Značná část těchto žáků ukončuje studium předčasně."
+    },
+    "support_services": [
+      "Výchovná poradkyně a zástupkyně ředitele (jedna osoba)",
+      "Kariérová poradkyně",
+      "Školní metodička prevence",
+      "Doučovací aktivity v rámci Národního plánu doučování",
+      "Individuální vzdělávací plány pro 13 žáků"
+    ],
+    "safety_climate": [
+      "Respektující přístup pedagog-žák bez kázeňských problémů",
+      "Žáci dodržují nastavená pravidla",
+      "V domově mládeže panovalo příjemné klima a spolupráce",
+      "Prevence sociálně nežádoucích jevů v kompetenci metodičky prevence"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se subjekty místního a regionálního významu",
+      "Partnerství s profesními svazy",
+      "Mezinárodní spolupráce s partnerskou školou na Slovensku v oblasti regionální gastronomie",
+      "Smluvní partneři pro realizaci praktického vyučování",
+      "Návštěvy regionálních firem a besedy na Úřadě práce"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasně identifikuje problémy. Některé pasáže jsou však delší a složitější, což mírně snižuje přehlednost.",
+    "uncertainty_notes": [
+      "Přesné číselné údaje o absenci nejsou v textu uvedeny, pouze kvalitativní popis",
+      "Konkrétní výsledky maturitních zkoušek nejsou specifikovány, pouze zmínka na stabilitu",
+      "Počet žáků v jednotlivých oborech není úplně rozepsán"
+    ]
+  }
+}
+```

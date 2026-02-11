@@ -1,0 +1,116 @@
+{
+  "report_id": "SOU_600012808_2025-04-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:39:07.873964+00:00",
+  "run_finished_utc": "2026-02-09T13:39:33.501183+00:00",
+  "raw_file": "SOU_600012808_2025-04-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600012808_2025-04-03",
+    "school_profile": {
+      "school_type": "Střední škola obchodní a služeb (soukromá, s.r.o.)",
+      "inspection_period": "3., 7., 9.–11. dubna a 2. května 2025",
+      "school_change_summary": "Škola rozrostla počet žáků z 296 na 443. Zpřísnila přijímací kritéria a zavedla nové obory. Zlepšily se výsledky maturit (89 % úspěšnosti). Došlo k personálním změnám a modernizaci vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné vybavení pro praxi",
+          "detail": "Školní salon s nejmodernějším zařízením srovnatelným se soukromými profesionály v regionu, zejména pro obory Kosmetické služby a Kadeřník.",
+          "evidence": "Materiální vybavení praktické výuky je na velmi dobré úrovni s nejmodernějším zařízením."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci pravidelně dosahují úspěchů v odborných soutěžích na regionální i celostátní úrovni.",
+          "evidence": "Účast žáků v různých odborných soutěžích, v nichž pravidelně dosahují úspěchů."
+        },
+        {
+          "tag": "Kvalitní praktická výuka",
+          "detail": "Učitelé vhodně pracují s chybou, individuálně vedou žáky a dohlížejí na správný průběh technologických procesů.",
+          "evidence": "Velmi dobrá úroveň praktického vyučování doložená zájmem veřejnosti o služby."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoké absence žáků",
+          "detail": "Třetina prvňáků chyběla více než 100 hodin. Horší výsledky často souvisí s nepřítomností ve vyučování.",
+          "evidence": "V tomto pololetí například jedna třetina žáků 1. ročníku chyběla více než 100 hodin."
+        },
+        {
+          "tag": "Slabé výsledky v testech",
+          "detail": "Výkony žáků v externím testování jsou slabé a nejsou dostatečně analyzovány s pedagogy.",
+          "evidence": "Výkony žáků v něm jsou slabé. Příležitostí ke zlepšení je vyhodnocovat společně s pedagogy."
+        },
+        {
+          "tag": "Prostorové problémy",
+          "detail": "Některé učebny jsou malé a přeplněné, což negativně ovlivňuje kvalitu výuky a individuální přístup.",
+          "evidence": "Malé třídy vzhledem k počtu žáků mohou vést k přeplněnosti, což může negativně ovlivnit kvalitu výuky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysoké absence žáků a motivuje je k pravidelné účasti?",
+        "Jaké jsou plány na zlepšení prostorových podmínek v učebnách?",
+        "Jak se škola vypořádává s tím, že někteří učitelé nemají dokončené pedagogické vzdělání?"
+      ],
+      "who_school_fits": [
+        "Zájemci o praktické obory (Kosmetické služby, Kadeřník) s dobrým vybavením a reálným prostředím",
+        "Talentovaní žáci, kteří se chtějí prosazovat v soutěžích a reprezentovat školu",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola věnuje pozornost a má poradenské služby"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – v teoretických předmětech je málo aktivizující styl",
+        "Rodiny, které nemohou zajistit pravidelnou docházku – vysoké absence negativně ovlivňují prospěch",
+        "Žáci s vyšším učebním potenciálem – jejich schopnosti nejsou vždy optimálně využívány"
+      ],
+      "plain_czech_summary": "Škola obchodní a služeb v Poličce je soukromá střední škola s 443 žáky. Silnými stránkami jsou výborné vybavení pro praktickou výuku, úspěchy v soutěžích a kvalitní praktické vyučování. Slabší jsou teoretické předměty s málo aktivizujícím stylem výuky. Velkým problémem jsou vysoké absence žáků, které negativně ovlivňují prospěch. Prostorové podmínky v některých učebnách nejsou ideální. Vedení školy se snaží zlepšovat kvalitu, ale je potřeba více práce na motivaci žáků a diferenciaci výuky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní posun – zvýšená úspěšnost",
+        "key_numbers": [
+          "89 % žáků úspěšně zvládlo maturitu v jarním a podzimním období 2024",
+          "Necelá čtvrtina prospěla s vyznamenáním",
+          "V oborech Obchodník, Veřejnosprávní činnost a Kosmetické služby 100 % úspěšnost"
+        ],
+        "evidence": "V jarním a podzimním zkušebním období roku 2024 je úspěšně zvládlo celkem 89 % žáků, s vyznamenáním prospěla necelá čtvrtina."
+      },
+      "absence": {
+        "trend": "Kritický – velmi vysoké absence",
+        "key_numbers": [
+          "Třetina žáků 1. ročníku chyběla více než 100 hodin",
+          "Přibližně jedna pětina žáků neprospívá nebo není hodnocena",
+          "Horší výsledky často souvisí s nepřítomností"
+        ],
+        "evidence": "V tomto pololetí například jedna třetina žáků 1. ročníku chyběla ve škole více než 100 hodin. Motivovat žáky k pravidelné účasti se zatím nedaří."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní zaměřenou na žáky se speciálními vzdělávacími potřebami",
+        "Dvě školní metodičky prevence zpracovávající minimální preventivní program",
+        "Adaptační kurzy pro nové třídy vedené psychology se stmelovacím programem",
+        "Sociometrické šetření ze Střediska výchovné péče ALFA pro prevenci problémů v kolektivu"
+      ],
+      "safety_climate": [
+        "Pozitivní bilance chování – za poslední dvě klasifikační období pouze jeden snížený stupeň",
+        "Pochvaly převažují nad kázeňskými opatřeními, která jsou ukládána výjimečně",
+        "Nedostatky v bezpečnosti práce u oboru Kadeřník – některé žákyně neměly zajištěné vlasy, nosily šperky, dlouhé nehty",
+        "Zápisník bezpečnosti nebyl k dispozici, drobné úrazy nejsou evidovány"
+      ],
+      "partnerships_practice": [
+        "Školní salon U Růže (Riegrova 52) v reálném profesionálním prostředí s klientelou veřejnosti",
+        "Zvyšující se zájem veřejnosti o poskytované služby ve školním salonu",
+        "Praktické vyučování probíhá v reálném prostředí kosmetického studia a kadeřnického salonu",
+        "Smlouvy o obsahu a podmínkách praktického vyučování se zařízeními"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a čísla. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní důvody vysokých absencí – zda jde o zdravotní problémy, nezájem nebo jiné faktory",
+        "Není jasné, jak přesně se škola vypořádá s nedostatky v bezpečnosti práce – zmínka o nápravě během inspekce není detailní",
+        "Chybí informace o tom, jak se škola vypořádá s učiteli bez odborné kvalifikace v dlouhodobém horizontu"
+      ]
+    }
+  }
+}

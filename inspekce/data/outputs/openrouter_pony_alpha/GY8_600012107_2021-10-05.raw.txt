@@ -1,0 +1,98 @@
+{
+  "report_id": "GY8_600012107_2021-10-05",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté)",
+    "inspection_period": "5. 10. − 7. 10. 2021",
+    "school_change_summary": "Od roku 2018 školu vede nový ředitel, který zlepšil materiální vybavení, založil pozici školní psycholožky a rozdělil funkce výchovné a kariérové poradkyně."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky maturit",
+        "detail": "Škola dosahuje dlouhodobě velmi dobrých výsledků, vysoká část studentů maturuje s vyznamenáním.",
+        "evidence": "V roce 2021 z 45 přihlášených žáků 30 (cca 67 %) absolvovalo MZ s vyznamenáním, pouze jeden žák nebyl úspěšný."
+      },
+      {
+        "tag": "Poradenské zázemí",
+        "detail": "Škola nabízí kvalitní systém péče včetně školní psycholožky a kariérového poradenství.",
+        "evidence": "Školní psycholožka plánovitě pracuje s třídními kolektivy a poskytuje cílenou odbornou péči a podporu žákům i zákonným zástupcům."
+      },
+      {
+        "tag": "Vybavení a prostředí",
+        "detail": "Škola má kvalitní zázemí pro jazykovou i přírodovědnou výuku a esteticky podnětné prostředí.",
+        "evidence": "Gymnázium disponuje kvalitním zázemím pro jazykové vzdělávání i pro výuku přírodovědných předmětů, vzdělávání probíhá v esteticky podnětném prostředí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní styl výuky",
+        "detail": "Výuka je často tradiční a frontální, žáci jsou málo aktivní a nekooperují spolu.",
+        "evidence": "Převažovalo tradiční pojetí frontální formy výuky, jen výjimečně byly zařazovány práce ve dvojicích nebo skupinová práce."
+      },
+      {
+        "tag": "Nedostatečná podpora rozdílů",
+        "detail": "Učitelé příliš nerozlišují výuku podle individuálních potřeb a schopností studentů.",
+        "evidence": "Ve vyučovacích hodinách nebyla téměř zaznamenána diferenciace ani individualizace výuky, učitelé neposkytovali dostatečnou podporu žákům se SVP a nadaným."
+      },
+      {
+        "tag": "Neobjektivní hodnocení",
+        "detail": "Chybí jednotná kritéria hodnocení, známky tak nemusí odrážet reálnou úroveň vědomostí.",
+        "evidence": "Škola nemá stanovena jednotná kritéria pro hodnocení žáků ve stejných předmětech, která by umožnila objektivní porovnání dosažené úrovně."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé využívají výsledky testování (např. Scio) k tomu, aby zlepšili výuku jednotlivých žáků?",
+      "Jakým způsobem škola zajišťuje, aby hodnocení bylo u různých učitelů ve stejném předmětu srovnatelné a objektivní?",
+      "Jaké aktivační metody a formy skupinové práce jsou běžně zařazovány do výuky, aby žáci nebyli jen pasivními posluchači?"
+    ],
+    "who_school_fits": [
+      "Studentům, kteří preferují tradiční přednáškový styl výuky a dobře zvládají frontální výuku.",
+      "Žákům, kteří ocení silné poradenské zázemí a podporu školní psycholožky při řešení osobních či studijních problémů.",
+      "Příznivcům přírodovědných předmětů, kterým vyhovuje moderní vybavení laboratoří a podpora v této oblasti."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kteří vyžadují individuální přístup nebo mají specifické vzdělávací potřebu, jelikož podpora ve výuce je nedostatečná.",
+      "Studentům, kteří se učí lépe prostřednictvím vlastní aktivity, diskuse a skupinové práce, což je ve výuce málo zastoupeno.",
+      "Rodičům, kteří očekávají detailní a formativní zpětnou vazbu o pokroku dítěte, nikoliv jen klasické známkování."
+    ],
+    "plain_czech_summary": "Gymnázium v Broumově nabízí kvalitní prostředí a vynikající výsledky u maturity, což potvrzuje i vysoký počet vyznamenání. Velkým plusem je funkční poradenské pracoviště se školní psycholožkou. Inspekce však upozorňuje na příliš tradiční výuku, kde žáci často jen pasivně naslouchají a chybí skupinová práce. Problémem je také nedostatečná individualizace pro studenty s odlišnými potřebami a neobjektivní hodnocení způsobené chybějícími jednotnými kritérii. Škola je vhodná pro samostatné studenty, kteří zvládnou náročné studium bez intenzivní individuální podpory přímo ve vyučovacích hodinách."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně pozitivní (vysoká úspěšnost a podíl vyznamenání)",
+      "key_numbers": [
+        "2021: 67 % maturit s vyznamenáním (30 z 45 žáků)",
+        "2020: 50 % maturit s vyznamenáním (17 z 34 žáků)",
+        "2019: 42 % maturit s vyznamenáním (23 z 55 žáků)"
+      ],
+      "evidence": "V jarním zkušebním období roku 2021 z 45 přihlášených žáků 30 (cca 67 %) absolvovalo MZ s vyznamenáním, pouze jeden žák nebyl u MZ úspěšný."
+    },
+    "absence": {
+      "trend": "Neuvedeno",
+      "key_numbers": [
+        "Data o absenci nejsou ve zprávě uvedena."
+      ],
+      "evidence": "V textu inspekční zprávy chybí konkrétní údaje o absence nebo jejím vývoji."
+    },
+    "support_services": [
+      "Školní psycholožka (částečný úvazek) pro žáky i rodiče.",
+      "Oddělené pozice výchovné a kariérové poradkyně.",
+      "Systém adaptačních kurzů pro prváky."
+    ],
+    "safety_climate": [
+      "Přátelská pracovní atmosféra ve třídách.",
+      "Bezbariérový přístup a elektronické zabezpečení vstupu.",
+      "Systém prevence a evidence úrazovosti."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s partnerskými školami v Polsku a Německu.",
+      "Vazby na regionální kulturní instituce a podnikatelské subjekty.",
+      "Spolupráce s vysokými školami."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, inspekční zpráva má jasnou strukturu a závěry jsou explicitně vyjmenovány v samostatné sekci.",
+    "uncertainty_notes": []
+  }
+}

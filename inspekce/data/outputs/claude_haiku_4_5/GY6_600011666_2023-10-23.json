@@ -1,0 +1,114 @@
+{
+  "report_id": "GY6_600011666_2023-10-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:36:07.934097+00:00",
+  "run_finished_utc": "2026-02-09T16:36:37.570193+00:00",
+  "raw_file": "GY6_600011666_2023-10-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600011666_2023-10-23",
+    "school_profile": {
+      "school_type": "Gymnázium (šestileté studium), střední škola s maturitní zkouškou",
+      "inspection_period": "23. 10. 2023 – 25. 10. 2023",
+      "school_change_summary": "Škola se rozvíjí: získala akreditaci Erasmus, zlepšila IT vybavení, rekonstruovala hřiště, 15 učitelů se zapojilo do projektu podpory provázejících učitelů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a mezinárodní spolupráce",
+          "detail": "Škola spolupracuje s univerzitami a zahraničními školami, nabízí výměnné pobyty v programu Erasmus+ a sdílí edukativní zkušenosti.",
+          "evidence": "Akreditace Erasmus 2022-1-CZ01-KA120-SCH-000111548 na období 2023–2027."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci tradičně dosahují výborných výsledků v předmětových soutěžích a olympiádách na krajské i národní úrovni.",
+          "evidence": "Vítězství v krajských kolech, 1. místo Matematický klokan, 2. místo Republikové finále v šachu, 3. místa v dalších soutěžích."
+        },
+        {
+          "tag": "Kvalitní vedení a stabilní tým",
+          "detail": "Ředitel vede školu od roku 2006 s jasnou vizí, pedagogický sbor je odborně kvalifikovaný a podporován v profesním rozvoji.",
+          "evidence": "Systematické naplňování záměrů, mentoring pro začínající učitele, účast na seminářích zaměřených na nové metody."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená aktivita žáků ve výuce",
+          "detail": "Převažuje frontální výuka s řízeným rozhovorem, málo se používají kooperativní metody a skupinová práce.",
+          "evidence": "V půlených hodinách se žáci zapojovali více; v několika hodinách byla nízká aktivita žáků zapisujících si výklad."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Všichni žáci plnili stejné úlohy bez ohledu na jejich odlišné pracovní tempo a vzdělávací potřeby.",
+          "evidence": "Diferenciace a individualizace byla zaznamenána výjimečně; chybí přizpůsobení výuky jednotlivým žákům."
+        },
+        {
+          "tag": "Slabší rozvoj kritického myšlení",
+          "detail": "Žáci nejsou dostatečně vedeni k práci s různými zdroji, vlastnímu bádání a kritickému myšlení.",
+          "evidence": "Žáci pracovali s různými zdroji informací pouze sporadicky, jen výjimečně byli vedeni k objevování."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různým tempem učení a jak se to projeví v praxi?",
+        "Jaké metody používáte k rozvoji kritického myšlení a vlastního bádání žáků?",
+        "Jak se škola chystá zlepšit zapojení žáků do aktivní výuky a skupinové práce?"
+      ],
+      "who_school_fits": [
+        "Žáci s vysokou motivací a ambicí dosahovat výborných výsledků, kteří se chtějí zapojit do soutěží a olympiád.",
+        "Nadaní žáci, kterým škola nabízí individuální vzdělávací plány a speciální péči.",
+        "Žáci zajímající se o mezinárodní spolupráci, jazykové výměny a projekty Erasmus+."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuálního přístupu a diferenciované výuky přizpůsobené jejich tempu.",
+        "Žáci, kteří se lépe učí aktivní, skupinovou prací a experimentováním než frontální výukou.",
+        "Žáci, kteří potřebují více podpory v rozvoji kritického myšlení a vlastního bádání."
+      ],
+      "plain_czech_summary": "Gymnázium Boženy Němcové je kvalitní škola s dlouhodobě stabilním vedením, silnými výsledky v soutěžích a bohatou nabídkou mezinárodní spolupráce. Žáci zde dosahují výborných prospěchů (48 % s vyznamenáním). Inspekce však upozorňuje, že výuka často probíhá frontální formou s omezeným zapojením žáků, chybí individualizace a rozvoj kritického myšlení. Škola by měla více využívat skupinovou práci, experimentování a přizpůsobovat výuku jednotlivým žákům."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100 % úspěšnost v maturitní zkoušce (262 žáků v jarních zkušebních obdobích 2021–2023)",
+          "Všichni přihlášení žáci odmaturovali ve společné části MZ úspěšně"
+        ],
+        "evidence": "Ve sledovaném období posledních tří školních let všech 262 žáků přihlášených k MZ odmaturovalo úspěšně."
+      },
+      "absence": {
+        "trend": "Velmi nízký výskyt",
+        "key_numbers": [
+          "Jen minimum žáků ukončuje nebo přerušuje studium (průměr 8 žáků ročně, cca 1,5 %)",
+          "Nejčastěji přestup na jinou střední školu"
+        ],
+        "evidence": "V posledních třech uzavřených školních letech šlo v průměru o osm žáků ročně, což je kolem 1,5 % z celkového počtu."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s rozdělením kompetencí; adaptační kurzy pro primu zaměřené na osobnostní a sociální výchovu",
+        "Individuální konzultace v rámci kariérového poradenství; projekt Den s osobností s besedami od absolventů",
+        "Doučování pro žáky v ohrožení školním neúspěchem (český jazyk, matematika, jazyky, fyzika, chemie)",
+        "Pestrá nabídka kurzů (lyžařský, cyklistický, sportovně turistický, hudebně výtvarný)"
+      ],
+      "safety_climate": [
+        "Příjemná pracovní atmosféra s respektujícím přístupem žáků i vyučujících",
+        "Žáci dodržují nastavená pravidla chování a práce, bez obav sdělují své postřehy",
+        "Velmi nízký výskyt rizikového chování; preventivní program zaměřený na návykové látky, záškoláctví, šikanování",
+        "Dlouhodobé zapojení žáků do charitativních akcí (Běh pro Boženku, Světluška, Tříkrálová sbírka)"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Univerzitou Hradec Králové (fakultní škola, odborná praxe studentů) a Masarykovou univerzitou Brno",
+        "Zahraniční partnerství a výměnné pobyty v programu Erasmus+ (akreditace 2023–2027)",
+        "Spolupráce s externími odborníky a organizacemi (Konsent z.s., KAM z.s., LORA Asist LFHK)",
+        "Aktivní Klub rodičů a přátel, který finančně podporuje sportovní a kulturní aktivity"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však poměrně odborné a detailní, což může být pro laické rodiče méně přístupné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o počtu žáků s individuálními vzdělávacími plány nebo speciálními potřebami.",
+        "Chybí informace o tom, jak konkrétně se škola chystá řešit zjištěné nedostatky v metodách výuky.",
+        "Není jasné, jak dlouho trvá, než se doporučená opatření promítnou do praxe."
+      ]
+    }
+  }
+}

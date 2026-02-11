@@ -1,0 +1,117 @@
+{
+  "report_id": "GY4_600005844_2022-11-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:55:55.412202+00:00",
+  "run_finished_utc": "2026-02-09T16:56:17.948786+00:00",
+  "raw_file": "GY4_600005844_2022-11-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600005844_2022-11-21",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola pedagogická a sociální, Střední odborná škola pedagogická a Gymnázium",
+      "inspection_period": "21. listopadu 2022 až 6. prosince 2022",
+      "school_change_summary": "Od inspekce v roce 2015 došlo ke změně vedení. Nový ředitel od roku 2020 zajistil kontinuitu řízení a úspěšně realizuje koncepční záměry včetně rekonstrukce budov a rozšíření činnosti centra volného času."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Všichni žáci prospěli u maturitní zkoušky, 40–60 % s vyznamenáním, úspěšnost vyšší než průměr skupiny oborů.",
+          "evidence": "Všichni prospěli, počty vyznamenaných se pohybovaly v rozmezí 40 % - 60 %"
+        },
+        {
+          "tag": "Kvalitní pedagogický sbor",
+          "detail": "Téměř plně odborně kvalifikovaní pedagogové s dlouhodobými zkušenostmi, včetně rodilých mluvčích angličtiny.",
+          "evidence": "Téměř plně odborně kvalifikovaný sbor 79 pedagogických pracovníků s dlouhodobými pedagogickými zkušenostmi"
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Nové odborné učebny s nejmodernější technikou, relaxační zákoutí, knihovna, Wi-Fi, bezpečné prostředí.",
+          "evidence": "Nově vybudovány odborné učebny plně vybavené nejmodernější technikou, kultivované prostředí"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nižší aktivizace žáků v některých hodinách",
+          "detail": "V části vyučovacích hodin chybí dostatečný prostor pro vyjadřování žáků a jejich zapojení do evaluace.",
+          "evidence": "V některých hodinách nižší míra aktivizace žáků a jejich zapojení do výchovně vzdělávacího procesu"
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Některé hodiny nemají dostatečnou individualizaci úloh podle potřeb jednotlivých žáků.",
+          "evidence": "V části hospitovaných hodin nižší diferenciace a individualizace, absence shrnutí učiva v závěru"
+        },
+        {
+          "tag": "Chybí shrnutí učiva v závěru hodin",
+          "detail": "V některých hodinách není prostor pro ověření splnění vzdělávacího cíle.",
+          "evidence": "V závěru vyučovacích hodin nebyl také vytvořen prostor pro shrnutí probraného učiva"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola zajišťuje individuální přístup k žákům s různými studijními tempy a potřebami?",
+        "Jaké jsou konkrétní výsledky absolventů na vysokých školách a na trhu práce?",
+        "Jak funguje systém doučování pro žáky ohrožené školním neúspěchem?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o pedagogiku, sociální práci nebo estetické vzdělání s důrazem na praxi",
+        "Studenti, kteří oceňují kvalitní jazykové vzdělávání (čtyři cizí jazyky) a mezinárodní projekty",
+        "Talentovaní žáci v umění a hudbě, kterým škola nabízí Pěvecký sbor a další umělecké aktivity"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují velmi individualizovaný přístup – v některých hodinách chybí dostatečná diferenciace",
+        "Studenti preferující více interaktivní a dynamické vyučování – část hodin má jednotvárnou strukturu",
+        "Žáci, kteří se lépe učí aktivní participací – v některých hodinách je nižší zapojení do evaluačních aktivit"
+      ],
+      "plain_czech_summary": "Jde o kvalitní školu s výborným pedagogickým sborem a moderním vybavením. Žáci dosahují skvělých výsledků u maturit a úspěšně se uplatňují na vysokých školách. Škola nabízí bohatou nabídku jazyků, uměleckých aktivit a praktické zkušenosti. Slabší stránkou je, že v některých hodinách chybí dostatečná individualizace a aktivní zapojení všech žáků. Inspekce doporučuje více diferencovat výuku a lépe využívat závěry hodin k ověření cílů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100 % prospěšnost u maturitní zkoušky",
+          "40–60 % žáků s vyznamenáním",
+          "Úspěšnost vyšší než průměr skupiny oborů"
+        ],
+        "evidence": "Všichni prospěli, počty vyznamenaných se pohybovaly v rozmezí 40 % - 60 %, úspěšnost školy celkově vyšší než průměrná"
+      },
+      "absence": {
+        "trend": "Velmi nízká",
+        "key_numbers": [
+          "Velmi nízká absence včetně neomluvené",
+          "98 % žáků s uzavřenou klasifikací k 30. červnu",
+          "Téměř 100 % žáků dokončí vzdělání v 4letém cyklu"
+        ],
+        "evidence": "Funkčnost preventivních mechanismů dokládá velmi nízká absence včetně neomluvené"
+      },
+      "support_services": [
+        "Školský poradenský tým: výchovný poradce, metodička primární prevence, speciální pedagožka, kariérní poradce, školní psycholožka",
+        "Individuální vzdělávací plány pro žáky se speciálními potřebami (22 žáků)",
+        "Osobní asistent pro studenty s kompenzačními potřebami",
+        "Doučování žáků ohrožených školním neúspěchem"
+      ],
+      "safety_climate": [
+        "Velmi nízký výskyt rizikového chování",
+        "Funkční preventivní mechanismy včetně adaptačních kurzů",
+        "Bezpečnost zajištěna vrátnicí a pravidelnou technickou údržbou zařízení",
+        "Vstřícný přístup učitelů k žákům a dodržování nastavených pravidel"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Pedagogické fakulty Univerzity Karlovy a Fakulty tělesné výchovy a sportu UK",
+        "Spolupráce s vysokými školami a vzdělávacími institucemi",
+        "Mezinárodní projekty Erasmus+ pro mobilitu žáků a učitelů",
+        "Partnerství s městskou částí Praha 6 a Klubem rodičů",
+        "Pedagogická praxe studentů učitelských oborů v mateřských školách"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi podrobná, jasně strukturovaná a obsahuje konkrétní citace. Všechna tvrzení jsou opřena o důkazy z textu. Jsou jasně odděleny silné stránky, slabé stránky a doporučení.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty žáků s jednotlivými klasifikacemi, pouze procenta",
+        "Nejsou uvedeny konkrétní výsledky jednotlivých předmětů u maturit, pouze celkové hodnocení",
+        "Chybí informace o počtu žáků, kteří se hlásí na vysoké školy versus ty, které nenastoupí"
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "report_id": "GY4_600006531_2022-03-02",
+  "school_profile": {
+    "school_type": "Soukromá škola spojující čtyřleté gymnázium a odborné učiliště (kadeřník, cukrář, truhlář) s nástavbovým studiem.",
+    "inspection_period": "2. 3. 2022 − 8. 3. 2022",
+    "school_change_summary": "Od roku 2014 škola rozšířila nabídku oborů a zlepšila systém poradenských služeb, ale potýká se s přetrvávajícími problémy v kontrole a metodice výuky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Odborný výcvik a praxe jsou na vysoké úrovni a skvěle připravují na trh práce.",
+        "evidence": "Profesní příprava žáků je na vysoké úrovni a vytváří optimální předpoklady pro jejich uplatnění na trhu práce."
+      },
+      {
+        "tag": "Úspěšnost gymnazistů",
+        "detail": "Žáci gymnázia dosahují velmi dobrých výsledků u maturitní zkoušky.",
+        "evidence": "V maturitním období roku 2021 složili téměř všichni žáci oboru Gymnázium maturitní zkoušku úspěšně."
+      },
+      {
+        "tag": "Partnerské zázemí",
+        "detail": "Škola využívá moderní vybavení sociálních partnerů pro odborný výcvik.",
+        "evidence": "Škola využívá moderně vybavené materiální zázemí sociálních partnerů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Neúspěšnost nástavby",
+        "detail": "Polovina studentů nástavbového studia Podnikání neuspěje u maturit.",
+        "evidence": "Vysoká míra neúspěšnosti žáků oboru vzdělání Podnikání u maturitní zkoušky v roce 2021."
+      },
+      {
+        "tag": "Zastaralé metody",
+        "detail": "Výuka na gymnáziu často probíhá frontálně bez zapojení žáků.",
+        "evidence": "Převládala frontální forma výuky... předávání hotových poznatků... vedlo k nerovnoměrnému zapojení žáků."
+      },
+      {
+        "tag": "Chybějící vybavení",
+        "detail": "Pro výuku přírodovědných předmětů chybí vhodné materiální zabezpečení.",
+        "evidence": "Pro výuku přírodovědných předmětů oboru Gymnázium schází odpovídající materiální vybavení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola reaguje na vysokou neúspěšnost studentů oboru Podnikání u maturit?",
+      "Jakým způsobem jsou modernizovány vyučovací metody, aby nebyla jen frontální výuka?",
+      "Jak škola řeší dlouhodobě vysokou absenci studentů a neomluvené hodiny?"
+    ],
+    "who_school_fits": [
+      "Studentům, kteří hledají kvalitní odbornou praxi a uplatnění v řemesle.",
+      "Samostatným studentům, kteří nepotřebují intenzivní metodické vedení učiteli.",
+      "Uchazečům o obor Vlásenkář a maskér, kde jsou studijní výsledky nejlepší."
+    ],
+    "who_should_be_cautious": [
+      "Studentům se zájmem o přírodní vědy kvůli chybějícímu vybavení laboratoří.",
+      "Uchazečům o nástavbové studium oboru Podnikání kvůli vysokému riziku neúspěchu.",
+      "Žákům, kteří vyžadují aktivizační a moderní formy výuky místo klasického výkladu."
+    ],
+    "plain_czech_summary": "Škola nabízí širokou paletu oborů od gymnázia po řemesla. Největším plusem je skvělá praktická příprava v odborných oborech a úspěšnost gymnazistů u maturity. Rizikem je vysoká neúspěšnost u maturity v oboru Podnikání a absence moderního vybavení pro výuku přírodovědných předmětů. Výuka na gymnáziu často využívá pasivní metody (frontální výklad) a škola dlouhodobě bojuje s vysokou absencí studentů. Pro ambiciózního studenta je klíčové zjistit, jak škola řeší modernizaci výuky a disciplínu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený: gymnázium výborné, nástavbové studium (Podnikání) špatné.",
+      "key_numbers": [
+        "Téměř 100% úspěšnost u maturity pro gymnázium (2021)",
+        "Pouze 50% úspěšnost u maturity pro obor Podnikání (2021)",
+        "Přibližně 10% maturantů prospívá s vyznamenáním"
+      ],
+      "evidence": "Téměř všichni žáci oboru Gymnázium maturitní zkoušku úspěšně, žáci oboru Podnikání pouze z poloviny."
+    },
+    "absence": {
+      "trend": "Vysoká a dlouhodobě problematická, škola ji neřeší dostatečně systémově.",
+      "key_numbers": [
+        "Průměrně 94 zameškaných hodin na žáka za rok",
+        "Nezanedbatelný počet neomluvených hodin",
+        "Nedůsledné ukládání kázeňských opatření"
+      ],
+      "evidence": "Dlouhodobým problémem... je vysoká absence žáků, která činí v průměru 94 zameškaných hodin na žáka."
+    },
+    "support_services": [
+      "Systémové nastavení adaptačních kurzů a prevence sociálně patologických jevů.",
+      "Individuální konzultace pro žáky ohrožené školní neúspěšností.",
+      "Spolupráce výchovné poradkyně a speciální pedagožky (26 žáků se SVP)."
+    ],
+    "safety_climate": [
+      "Zvýšený dohled ve sdílených prostorech se základní uměleckou školou.",
+      "Vstřícný individuální přístup většiny vyučujících podporuje kladnou atmosféru.",
+      "Systém řešení rizikového chování selhává v případě záškoláctví."
+    ],
+    "partnerships_practice": [
+      "Úzké propojení teoretické výuky s praxí na smluvních pracovištích partnerů.",
+      "Využívání moderního materiálního zázemí partnerů pro odborný výcvik.",
+      "Spolupráce zajišťuje konkrétní příklady z praxe a nové technologie ve výuce."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a jasně rozdělená, byť používá standardní odbornou terminologii (hospitace, diferenciace).",
+    "uncertainty_notes": [
+      "Konkrétní příčiny neúspěchu v oboru Podnikání nejsou blíže specifikovány.",
+      "Není jasné, jak konkrétně probíhá individualizace výuky pro talentované studenty.",
+      "Chybí detailnější data o prospěchu v jednotlivých ročnících gymnázia."
+    ]
+  }
+}

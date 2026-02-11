@@ -1,0 +1,118 @@
+{
+  "report_id": "LYC_600016013_2025-05-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:36:05.773734+00:00",
+  "run_finished_utc": "2026-02-09T13:36:31.980210+00:00",
+  "raw_file": "LYC_600016013_2025-05-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600016013_2025-05-05",
+    "school_profile": {
+      "school_type": "Střední škola obchodní a služeb (soukromá, s.r.o.) s domovem mládeže a školní jídelnou",
+      "inspection_period": "5.–14. května 2025 (poslední inspekce 2018)",
+      "school_change_summary": "Počet žáků vzrostl z 312 (2018) na 485 (2025). Škola má 103 žáky se speciálními vzdělávacími potřebami. Díky grantu dánské nadace byla vybudována moderní pracoviště (školní bar, gastrocentrum), multifunkční učebna a renovována odborná pracoviště."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Škola investovala do špičkové technologie, školního baru a gastrocentra, což zvyšuje kvalitu praktické výuky.",
+          "evidence": "Vybudování moderního pracoviště pro praktickou výuku vybaveného špičkovou technologií díky grantové podpoře."
+        },
+        {
+          "tag": "Kvalitní odborný výcvik",
+          "detail": "Žáci v praktické výuce prokazují zodpovědný přístup, správně aplikují postupy a dodržují bezpečnost.",
+          "evidence": "Odborný výcvik probíhal v podnětném prostředí, žáci prokazovali zodpovědný přístup a správně aplikovali pracovní postupy."
+        },
+        {
+          "tag": "Kariérní poradenství",
+          "detail": "Škola má systematicky nastavené poradenství se skupinovými i individuálními konzultacemi a portfolii.",
+          "evidence": "Výrazným pozitivním posunem je kvalita poskytování kariérního poradenství se skupinovým a individuálním poradenstvím."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v maturitě (obor Podnikání)",
+          "detail": "Obor 64-41-L/51 Podnikání vykazuje vysokou neúspěšnost v maturitní zkoušce, včetně srovnání s celorepublikovým průměrem.",
+          "evidence": "Vysoká neúspěšnost v oboru 64-41-L/51 Podnikání, efektivnost přijatých opatření se zatím neprojevila."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Počet nehodnocených žáků je vysoký, zejména v prvním pololetí, přestože škola řeší tuto problematiku.",
+          "evidence": "Vedení školy se dlouhodobě zabývá řešením zvýšené absence žáků; počet nehodnocených žáků je vysoký."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "V teoretických předmětech chybí systematická práce s různými úrovněmi zadání podle potřeb jednotlivců.",
+          "evidence": "Diferenciace výuky byla uplatňována spíše výjimečně, chyběla systematická práce s různými úrovněmi zadání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou neúspěšnost v maturitě u oboru Podnikání a jaká nová opatření plánuje?",
+        "Jaké jsou konkrétní postupy školy při vysoké absenci žáků a jak se to řeší s rodiči?",
+        "Jak se v jednotlivých předmětech přizpůsobuje výuka různým úrovním schopností žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou výuku a odborné dovednosti (kuchař, kadeřník, kosmetické služby, masér)",
+        "Studenti, kteří potřebují podporu a individuální přístup (škola má systém doučování a konzultací)",
+        "Žáci zajímající se o cestovní ruch a obchod s kvalitním kariérním vedením"
+      ],
+      "who_should_be_cautious": [
+        "Zájemci o obor Podnikání – výsledky v maturitě jsou slabé a škola zatím nenašla účinná řešení",
+        "Žáci s tendencí k absenci – škola má problém s vysokým počtem nehodnocených žáků",
+        "Studenti vyžadující individualizovanou výuku – diferenciace v teoretických předmětech není dostatečná"
+      ],
+      "plain_czech_summary": "Střední škola obchodní a služeb v Žďáru nad Sázavou je moderně vybavená soukromá škola s domovem mládeže. Silné stránky: kvalitní odborný výcvik, nové vybavení (gastrocentrum, školní bar), dobré kariérní poradenství. Slabiny: vysoká neúspěšnost v maturitě u oboru Podnikání, vysoká absence žáků, nedostatečná individualizace výuky v teoretických předmětech. Škola roste (485 žáků), má 103 žáky se speciálními potřebami. Vhodná pro prakticky zaměřené studenty, ale obor Podnikání vyžaduje opatrnost."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s problémy v oboru Podnikání",
+        "key_numbers": [
+          "Obor 64-41-L/51 Podnikání: vysoká neúspěšnost včetně srovnání s celorepublikovým průměrem",
+          "Převažuje neúspěšnost ve společné části (didaktické testy z češtiny a angličtiny)",
+          "Závěrečné zkoušky vykazují stabilní úspěšné výsledky"
+        ],
+        "evidence": "Výsledky MZ jsou v průběhu posledních tří let kolísavé. Vysoká neúspěšnost v oboru Podnikání, efektivnost opatření se zatím neprojevila."
+      },
+      "absence": {
+        "trend": "Vysoká, dlouhodobě řešená",
+        "key_numbers": [
+          "Počet nehodnocených žáků je vysoký, zejména v prvním pololetí",
+          "Vedení školy se dlouhodobě zabývá řešením zvýšené absence"
+        ],
+        "evidence": "Vedení školy se dlouhodobě zabývá řešením zvýšené absence žáků, včetně postupů stanovených ve školním řádu. I přes tato opatření je počet nehodnocených žáků vysoký."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s plány pedagogické podpory pro žáky se speciálními potřebami",
+        "Doučování a individuální konzultace (ve škole i v domově mládeže)",
+        "Kariérní poradenství se skupinovými a individuálními konzultacemi, SWOT analýzami, absolventským poradenstvím",
+        "Asistenti pedagoga pro 6 žáků se speciálními potřebami",
+        "Prevence sociálně patologických jevů v součinnosti s externími partnery (Klub v 9, Popálka o.p.s., Ponorka)"
+      ],
+      "safety_climate": [
+        "Kultivované a podnětné prostředí podporující důvěru mezi žáky a pedagogy",
+        "Esteticky a funkčně upravené vnitřní prostory s aranžérskou výzdobou",
+        "V domově mládeže vychovatelé přistupují k žákům s respektem a vedou je k vytváření vztahů na důvěře",
+        "Žáci v odborném výcviku dodržují bezpečnostní pravidla a používají předepsané vybavení"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s profesními partnery na pracovištích pro odborný výcvik žáků",
+        "Charitativní akce pro seniory (Centrum Zdislava, Centrum Kamélie)",
+        "Spolupráce s Městem Žďár nad Sázavou (výzdoba, výlohy v obchodech)",
+        "Centrum celoživotního vzdělávání Univerzity třetího věku (garantem Katedra cestovního ruchu VŠP Jihlava)",
+        "Spolupráce se základními školami (soutěže, dny otevřených dveří)",
+        "Účast v mezinárodních projektech a soutěžích (Radost Evropy, AR Junior, Vévody z Edinburghu)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale obsahuje řadu odborných termínů a dlouhých vět. Hlavní zjištění jsou jasná, ale vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Konkrétní počty nehodnocených žáků nejsou uvedeny, pouze kvalitativní popis 'vysoký počet'",
+        "Detailní analýza příčin neúspěšnosti v oboru Podnikání není v textu obsažena",
+        "Není jasné, jaké konkrétní nové opatření škola plánuje pro zlepšení situace v oboru Podnikání"
+      ]
+    }
+  }
+}

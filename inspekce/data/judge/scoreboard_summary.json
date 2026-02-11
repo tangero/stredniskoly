@@ -1,5 +1,84 @@
 {
   "judge_model_id": "openai_gpt_5_2_reference",
-  "generated_utc": "2026-02-09T07:22:49.504322+00:00",
-  "models": []
+  "generated_utc": "2026-02-09T12:25:21.582343+00:00",
+  "models": [
+    {
+      "model_id": "claude_sonnet_4_5",
+      "reports_count": 10,
+      "valid_json_rate": 0.6,
+      "avg_faithfulness": 4.0,
+      "avg_completeness": 3.6,
+      "avg_parent_usefulness": 4.6,
+      "avg_judge_czech_clarity": 4.4,
+      "avg_heuristic_czech_clarity": 3.3,
+      "avg_blended_czech_clarity": 4.58,
+      "avg_unsupported_claims": 1.0,
+      "avg_overall_score": 3.736
+    },
+    {
+      "model_id": "grok_4_1_fast",
+      "reports_count": 10,
+      "valid_json_rate": 1,
+      "avg_faithfulness": 4.0,
+      "avg_completeness": 3.7,
+      "avg_parent_usefulness": 4.0,
+      "avg_judge_czech_clarity": 4.1,
+      "avg_heuristic_czech_clarity": 5.0,
+      "avg_blended_czech_clarity": 4.37,
+      "avg_unsupported_claims": 2.3,
+      "avg_overall_score": 3.579
+    },
+    {
+      "model_id": "claude_haiku_4_5",
+      "reports_count": 10,
+      "valid_json_rate": 1,
+      "avg_faithfulness": 4.0,
+      "avg_completeness": 3.5556,
+      "avg_parent_usefulness": 4.0,
+      "avg_judge_czech_clarity": 4.1111,
+      "avg_heuristic_czech_clarity": 4.9,
+      "avg_blended_czech_clarity": 4.3778,
+      "avg_unsupported_claims": 1.8,
+      "avg_overall_score": 3.5644
+    },
+    {
+      "model_id": "openrouter_pony_alpha",
+      "reports_count": 10,
+      "valid_json_rate": 1,
+      "avg_faithfulness": 3.9,
+      "avg_completeness": 3.7,
+      "avg_parent_usefulness": 4.0,
+      "avg_judge_czech_clarity": 4.2,
+      "avg_heuristic_czech_clarity": 4.7,
+      "avg_blended_czech_clarity": 4.35,
+      "avg_unsupported_claims": 3.8,
+      "avg_overall_score": 3.22
+    },
+    {
+      "model_id": "deepseek_chat",
+      "reports_count": 10,
+      "valid_json_rate": 1,
+      "avg_faithfulness": 3.6667,
+      "avg_completeness": 3.3333,
+      "avg_parent_usefulness": 4.1111,
+      "avg_judge_czech_clarity": 4.0,
+      "avg_heuristic_czech_clarity": 4.7,
+      "avg_blended_czech_clarity": 4.2,
+      "avg_unsupported_claims": 2.8,
+      "avg_overall_score": 3.2011
+    },
+    {
+      "model_id": "qwen_turbo",
+      "reports_count": 10,
+      "valid_json_rate": 1,
+      "avg_faithfulness": 3.5,
+      "avg_completeness": 3.0,
+      "avg_parent_usefulness": 3.4,
+      "avg_judge_czech_clarity": 3.5,
+      "avg_heuristic_czech_clarity": 4.8,
+      "avg_blended_czech_clarity": 3.89,
+      "avg_unsupported_claims": 4.2,
+      "avg_overall_score": 2.713
+    }
+  ]
 }

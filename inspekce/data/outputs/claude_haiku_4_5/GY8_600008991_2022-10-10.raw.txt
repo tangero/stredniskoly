@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "GY8_600008991_2022-10-10",
+  "school_profile": {
+    "school_type": "Gymnázium a obchodní akademie (8leté a 4leté gymnázium, obchodní akademie)",
+    "inspection_period": "10. až 13. října 2022",
+    "school_change_summary": "Od roku 2018 vede školu současná ředitelka. Od září 2022 došlo ke změně na pozici zástupce ředitele a postupně dochází k generační obměně v pedagogickém sboru."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vedení a strategie",
+        "detail": "Ředitelka školy nastavuje cílenou podporu učitelům na základě podrobné analýzy jejich potřeb a schopností.",
+        "evidence": "Vedení školy vypracovalo školní akční plán s reálnými a splnitelnými cíly, plán dalšího vzdělávání pedagogů odráží jejich faktické potřeby."
+      },
+      {
+        "tag": "Výsledky maturit",
+        "detail": "Výsledky žáků u maturitních zkoušek jsou velmi dobré a odpovídají celostátnímu průměru.",
+        "evidence": "Vedení školy pravidelně vyhodnocuje výsledky vzdělávání a porovnává je s externím testováním a dotazníkovými šetřeními."
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Škola má kvalitně nastavené poradenské služby s jasně stanoveným rozdělením kompetencí.",
+        "evidence": "Ve škole téměř nedochází k závažným kázeňským problémům a počet žáků opouštějících školu se pohybuje v řádech jednotek."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdílná kvalita výuky",
+        "detail": "Kvalita hodin je velmi rozdílná, někteří učitelé se zaměřují především na znalosti místo rozvoje dovedností a postojů.",
+        "evidence": "V hospitovaných hodinách byla sledována kvalitativně velmi rozdílná úroveň, zejména v oblasti funkčních gramotností a kritického myšlení."
+      },
+      {
+        "tag": "Absence diferenciace",
+        "detail": "Učitelé málo přizpůsobují výuku individuálním potřebám a schopnostem žáků.",
+        "evidence": "Ve sledované výuce byla jen ojediněle zaznamenána diferenciace práce žáků vzhledem k jejich vzdělávacím možnostem a potřebám."
+      },
+      {
+        "tag": "Podpora žáků s jiným mateřským jazykem",
+        "detail": "Chybí systematická podpora žáků s odlišným mateřským jazykem během vyuky.",
+        "evidence": "V hospitovaných hodinách nebyla sledována systematická práce se žáky s odlišným mateřským jazykem, někdy jim nebyla poskytnuta podpora při neporozumění obsahu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s odlišným mateřským jazykem během běžné výuky?",
+      "Jaké metody výuky učitelé používají k rozvoji kritického myšlení a funkčních gramotností?",
+      "Jak se škola vypořádává s rozdílnou kvalitou výuky mezi jednotlivými učiteli?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si chtějí ověřit své znalosti v reálném prostředí (obchodní akademie má odbornou praxi)",
+      "Talentovaní žáci všech oborů, kterým škola nabízí účast v soutěžích a zahraniční studijní pobyty",
+      "Žáci, kteří potřebují podporu poradenských služeb (psycholog, výchovný poradce, kariérový poradce)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s odlišným mateřským jazykem, protože chybí systematická podpora během vyuky",
+      "Žáci, kteří potřebují individualizovaný přístup a diferenciaci, protože se vyskytuje jen ojediněle",
+      "Žáci, kteří se učí lépe aktivními metodami, protože převažuje frontální výuka"
+    ],
+    "plain_czech_summary": "Gymnázium a obchodní akademie v Mariánských Lázních je dobře vedená škola s velmi dobrými výsledky maturit a kvalitními poradenskými službami. Ředitelka systematicky podporuje učitele v jejich rozvoji. Hlavní problém je rozdílná kvalita výuky mezi jednotlivými učiteli. Někteří se zaměřují především na znalosti místo rozvoje dovedností a kritického myšlení. Chybí také podpora žáků s jiným mateřským jazykem a individualizace výuky podle potřeb žáků. Škola by měla více pracovat na sdílení efektivních metod výuky mezi učiteli."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně velmi dobrý",
+      "key_numbers": [
+        "Výsledky odpovídají celostátnímu průměru pro gymnázia i ekonomické obory"
+      ],
+      "evidence": "Vedení školy pravidelně vyhodnocuje výsledky maturitních zkoušek a porovnává je s externím testováním znalostí."
+    },
+    "absence": {
+      "trend": "Problematická v určitých ročnících",
+      "key_numbers": [
+        "Výrazné zhoršení průměrného prospěchu ve třetích ročnících střední odborné školy a septimě gymnázia",
+        "Vyšší průměrná absence v těchto ročnících než v ostatních"
+      ],
+      "evidence": "Škola přijala opatření formou ustanovení školního řádu (pozdní omlouvání absence se považuje za neomluveno), ale mají zatím jen malou účinnost."
+    },
+    "support_services": [
+      "Výchovný poradce, školní metodička prevence, kariérová poradkyně, školní psycholog",
+      "Doučování a individuální konzultace pro žáky ohrožené školní neúspěšností",
+      "Jazykové kurzy českého jazyka pro žáky cizince a kurzy efektivní sebeobrany"
+    ],
+    "safety_climate": [
+      "Bezpečný vstup do budovy zajištěn pomocí čipů a recepce",
+      "Elektronická schránka důvěry pro žáky",
+      "Téměř žádné závažné kázeňské problémy, minimální počet žáků opouštějících školu"
+    ],
+    "partnerships_practice": [
+      "Odborná praxe obchodní akademie realizována ve spolupráci s úřady státní správy, samosprávy a podnikatelskými subjekty",
+      "Spolupráce s kulturními institucemi, komerčními subjekty, neziskovými organizacemi a státními institucemi",
+      "Účast v mezinárodním veletrhu fiktivních firem v Praze a regionálních veletrzích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní příklady z hospitací. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Hlavní zjištění jsou jasně formulována v závěrech.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta nebo počty hodin, které byly hospitovány v jednotlivých předmětech",
+      "Není jasné, jak velký podíl učitelů se zaměřuje na znalosti versus dovednosti - popis je spíše kvalitativní",
+      "Chybí informace o tom, kolik žáků konkrétně má problém s absencí a jak se to projevuje na jejich prospěchu"
+    ]
+  }
+}
+```

@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600015068_2024-02-08",
+  "school_profile": {
+    "school_type": "Střední škola nábytkářská a obchodní s 7 obory denního studia (3 maturitní, 2 s výučním listem, 2 již nevyučované)",
+    "inspection_period": "8.–9. února a 12.–13. února 2024",
+    "school_change_summary": "Škola rozšířila nabídku o nový obor Design interiéru, modernizovala dílny a vybavení, zavedla nové digitální technologie. Od roku 2022/23 nevzdělává žáky v oborech Truhlářská a čalounická výroba a Tesařské práce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a strategie",
+        "detail": "Ředitelka zpracovala promyšlenou koncepci rozvoje školy, která reflektuje potřeby trhu práce a inovace v oboru.",
+        "evidence": "Koncepce navazuje na předcházející strategii a vnáší inovativní prvky s důslednou analýzou stavu školy."
+      },
+      {
+        "tag": "Odborný pedagogický sbor",
+        "detail": "Učitelé praktického vyučování mají dlouholetou praxi v oboru a kvalifikaci, nové pedagogy škola systematicky zaškoluje.",
+        "evidence": "Stabilizovaný sbor s potřebnou specializací, propracovaný systém začlenění nových pedagogů."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Nové dílny, ateliéry, digitální technologie a investice do materiálního vybavení vytvářejí reálné pracovní podmínky.",
+        "evidence": "Výrazný posun v modernizaci strojů, vybavení a nový ateliér pro umělecké obory."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výuka všeobecných předmětů",
+        "detail": "Matematika a přírodovědné předměty jsou vedeny převážně frontální formou bez dostatečné interaktivity a práce s různými zdroji.",
+        "evidence": "Žáci byli často pasivní, chyběla podpora názornosti, úkoly různé náročnosti a digitální technologie v teoretické výuce."
+      },
+      {
+        "tag": "Nižší čtenářská gramotnost",
+        "detail": "Při externím testování čtenářské gramotnosti škola dosáhla slabších výsledků než celorepublikový průměr.",
+        "evidence": "Následně byla přijata opatření, která se projevila především při výuce českého jazyka."
+      },
+      {
+        "tag": "Nejednotné výsledky maturit",
+        "detail": "Výsledky se mezi obory liší; obor Uměleckořemeslné zpracování dřeva měl v roce 2022/23 horší výsledky než předchozí rok.",
+        "evidence": "Ve školním roce 2022/23 došlo ke zhoršení, jeden žák neprospěl v anglickém jazyce, jeden v technologii."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola zlepšuje výuku matematiky a přírodovědných předmětů, aby byla více interaktivní a zajímavá?",
+      "Jaké jsou konkrétní výsledky maturit v jednotlivých oborech za poslední rok a jak se škola připravuje na zlepšení?",
+      "Jak škola podporuje žáky se slabšími výsledky v čtenářské gramotnosti a jaké jsou dostupné doučovací programy?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o řemeslo a praktickou práci – škola má vynikající vybavení dílen a zkušené učitele v praktickém vyučování.",
+      "Talentovaní studenti v oborech design a umělecké zpracování dřeva – škola má nový ateliér a úspěchy na republikových výstavách.",
+      "Žáci, kteří potřebují individuální podporu – škola má propracovaný systém doučování a péče o žáky ohrožené neúspěchem."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími předpoklady v matematice a přírodovědách – výuka těchto předmětů je méně interaktivní a individualizovaná.",
+      "Uchazeči, kteří preferují moderní, aktivní výuku s digitálními technologiemi – teoretické předměty zatím digitální technologie dostatečně nevyužívají.",
+      "Žáci, kteří potřebují silnou podporu v čtenářské gramotnosti – škola na tom pracuje, ale výsledky jsou zatím pod průměrem."
+    ],
+    "plain_czech_summary": "Střední škola nábytkářská a obchodní je moderní odborná škola se silným zaměřením na praktickou výuku a řemesla. Má kvalitní vedení, zkušené učitele a nové vybavení dílen. Žáci se zde úspěšně připravují na profese v nábytkářství a designu. Slabší stránkou je výuka všeobecných předmětů, zejména matematiky a přírodovědných oborů, které jsou vedeny tradičnějším způsobem. Škola na tom aktivně pracuje a nabízí podporu žákům v obtížích."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nejednotný – obor Nábytkářská a dřevařská výroba se zlepšil, obor Uměleckořemeslné zpracování dřeva se zhoršil",
+      "key_numbers": [
+        "Ve školních letech 2020/21–2022/23 neuspělo 4 žáci z 53 konajících maturitu",
+        "V roce 2022/23: 1 žák neprospěl v anglickém jazyce, 1 v technologii z 10 žáků oboru Uměleckořemeslné zpracování dřeva",
+        "Profilová část maturit u obou oborů vždy nad celorepublikovým průměrem"
+      ],
+      "evidence": "Výsledky se pohybují na rozdílné úrovni mezi obory; přijatá opatření (doučování, konzultace) jsou u velké části žáků účinná."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence nezabývá."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště v účinné spolupráci s vedením školy",
+      "Cílená podpora žáků se speciálními vzdělávacími potřebami (29 žáků s 1.–3. stupněm podpůrného opatření)",
+      "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+      "Kariérové poradenství ve spolupráci s odbornými organizacemi a vysokými školami",
+      "Adaptační pobyty pro žáky prvních ročníků",
+      "Prevence krizových situací ve spolupráci s Policií České republiky"
+    ],
+    "safety_climate": [
+      "Žáci byli systematicky upozorňováni na rizika a poučováni o bezpečném chování, zejména v praktické výuce",
+      "Zásady bezpečnosti práce a ochrany zdraví byly v praktickém vyučování důsledně dodrženy",
+      "Vhodně byl uplatňován osobní přístup ke každému žákovi",
+      "Školní stravování vedlo žáky ke zdravému životnímu stylu v souladu se zásadami zdravé výživy"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce se zřizovatelem (Zlínský kraj) na investičních akcích",
+      "Spolupráce s firmami a vysokými školami pro seznamování s trendy a technologiemi",
+      "Víceletá projektová spolupráce se základními a mateřskými školami",
+      "Mezinárodní řezbářské sympozium s prezentací žákovských prací",
+      "Setkávání s absolventy pro motivaci současných žáků",
+      "Zapojení do projektů s investičními zdroji na vybavení"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a strukturovaná, ale obsahuje řadu odborných termínů a dlouhých vět. Pro rodiče bez pedagogického vzdělání by byla některá místa srozumitelnější, pokud by byla zjednodušena.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je problém nebo se jednoduše nehodnotila.",
+      "Konkrétní počty žáků v jednotlivých oborech nejsou uvedeny, pouze celkový počet 236 žáků.",
+      "Detailní výsledky jednotlivých předmětů v maturitě nejsou specifikovány, pouze obecné trendy."
+    ]
+  }
+}
+```

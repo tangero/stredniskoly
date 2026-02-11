@@ -1,0 +1,29 @@
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T11:39:40.960667+00:00",
+  "run_finished_utc": "2026-02-09T11:40:06.794903+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"LYC_691004048_2025-10-22\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Tvrzení/implikace, že škola „opatření ke zlepšení (maturit) sleduje“, není ve zprávě doložena; inspekce naopak doporučuje efektivitu nově přijatých opatření teprve systematicky sledovat a vyhodnocovat.\",\n    \"Kandidát nezahrnuje důležitou část slabé stránky 5.2: podprůměrnost se týká nejen maturit, ale i testování České školní inspekce.\",\n    \"Méně podstatné, ale pro rodiče relevantní nedopovězené informace: ve výuce je zmiňována slabá práce s chybou, malý formativní rozměr zpětné vazby, jen ojedinělé sebehodnocení/vrstevnické hodnocení a nízké využití kooperativních forem práce.\"\n  ],\n  \"best_points\": [\n    \"Správně vystihuje hlavní silnou stránku (příznivé klima, psychické bezpečí) a opírá ji o formulace ze závěrů (3.2).\",\n    \"Dobře zachycuje slabé stránky: nízká diferenciace (4.3) a dlouhodobě podprůměrné výsledky u maturit (5.2), včetně zmínky o nesouladu průběžného hodnocení vs. závěrečné výsledky.\",\n    \"Většina „tvrdých faktů“ sedí se zdrojem (Erasmus Španělsko + workshop Rumunsko, systém hodnocení praxe, podpora začínajících učitelů, stabilizované ŠPP, zpřísnění podmínek individuální vzdělávací podpory a pokles jejího využití).\"\n  ],\n  \"one_line_verdict\": \"Převážně věrné a pro rodiče užitečné shrnutí, ale s několika nedoloženými posuny (zejména že opatření už jsou systematicky sledována) a s neúplností u slabých výsledků v testování ČŠI a některých zjištění o kvalitě výuky.\"\n}",
+  "judge_output": {
+    "report_id": "LYC_691004048_2025-10-22",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "Tvrzení/implikace, že škola „opatření ke zlepšení (maturit) sleduje“, není ve zprávě doložena; inspekce naopak doporučuje efektivitu nově přijatých opatření teprve systematicky sledovat a vyhodnocovat.",
+      "Kandidát nezahrnuje důležitou část slabé stránky 5.2: podprůměrnost se týká nejen maturit, ale i testování České školní inspekce.",
+      "Méně podstatné, ale pro rodiče relevantní nedopovězené informace: ve výuce je zmiňována slabá práce s chybou, malý formativní rozměr zpětné vazby, jen ojedinělé sebehodnocení/vrstevnické hodnocení a nízké využití kooperativních forem práce."
+    ],
+    "best_points": [
+      "Správně vystihuje hlavní silnou stránku (příznivé klima, psychické bezpečí) a opírá ji o formulace ze závěrů (3.2).",
+      "Dobře zachycuje slabé stránky: nízká diferenciace (4.3) a dlouhodobě podprůměrné výsledky u maturit (5.2), včetně zmínky o nesouladu průběžného hodnocení vs. závěrečné výsledky.",
+      "Většina „tvrdých faktů“ sedí se zdrojem (Erasmus Španělsko + workshop Rumunsko, systém hodnocení praxe, podpora začínajících učitelů, stabilizované ŠPP, zpřísnění podmínek individuální vzdělávací podpory a pokles jejího využití)."
+    ],
+    "one_line_verdict": "Převážně věrné a pro rodiče užitečné shrnutí, ale s několika nedoloženými posuny (zejména že opatření už jsou systematicky sledována) a s neúplností u slabých výsledků v testování ČŠI a některých zjištění o kvalitě výuky."
+  }
+}

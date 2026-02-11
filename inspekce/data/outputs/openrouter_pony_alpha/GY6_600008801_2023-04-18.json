@@ -1,0 +1,75 @@
+{
+  "report_id": "GY6_600008801_2023-04-18",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T06:58:59.864629+00:00",
+  "run_finished_utc": "2026-02-10T06:59:26.071318+00:00",
+  "raw_file": "GY6_600008801_2023-04-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600008801_2023-04-18",
+    "school_profile": {
+      "school_type": "Gymnázium",
+      "inspection_period": "2023-04-18 až 2023-04-21",
+      "school_change_summary": "Nebyl poskytnen zdrojový text zprávy pro analýzu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Nedostatek dat",
+          "detail": "Bez zdrojového textu nelze identifikovat silné stránky školy.",
+          "evidence": "Zdrojový text zprávy nebyl dodán."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Chybějící vstup",
+          "detail": "Není možné vyhodnotit rizika bez obsahu inspekční zprávy.",
+          "evidence": "Zdrojový text zprávy nebyl dodán."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké jsou konkrétní výsledky studentů této školy v posledních letech?"
+      ],
+      "who_school_fits": [
+        "Informace bude dostupná po zadání textu zprávy."
+      ],
+      "who_should_be_cautious": [
+        "Informace bude dostupná po zadání textu zprávy."
+      ],
+      "plain_czech_summary": "Neposkytli jste text inspekční zprávy, takže nemohu provést analýzu pro rodiče. Prosím, vložte obsah zprávy, abych mohl zpracovat hodnocení školy, její silné a slabé stránky a další důležité informace."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neznámý",
+        "key_numbers": [
+          "Nejsou k dispozici"
+        ],
+        "evidence": "Chybí zdrojový text."
+      },
+      "absence": {
+        "trend": "Neznámý",
+        "key_numbers": [
+          "Nejsou k dispozici"
+        ],
+        "evidence": "Chybí zdrojový text."
+      },
+      "support_services": [
+        "Data nejsou k dispozici"
+      ],
+      "safety_climate": [
+        "Data nejsou k dispozici"
+      ],
+      "partnerships_practice": [
+        "Data nejsou k dispozici"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "JSON je validní a český text je srozumitelný, avšak obsahově prázdný kvůli chybějícímu vstupu.",
+      "uncertainty_notes": [
+        "Nebyl dodán zdrojový text zprávy pro analýzu."
+      ]
+    }
+  }
+}

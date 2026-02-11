@@ -1,0 +1,12 @@
+Nemám k dispozici zdrojový text inspekční zprávy. Bez konkrétního obsahu dokumentu nemohu vytvořit validní analýzu.
+
+Prosím poskytni:
+- **Úplný text inspekční zprávy** ČŠI pro tuto školu
+
+Jakmile mi text dodáš, vrátím JSON analýzu přesně podle schématu se zaměřením na:
+- Silné stránky a rizika
+- Praktické informace pro rodiče
+- Tvrdá data (maturita, absence, služby)
+- Ověření srozumitelnosti zprávy
+
+Čekám na text zprávy.

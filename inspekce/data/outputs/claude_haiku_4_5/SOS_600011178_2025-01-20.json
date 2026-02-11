@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600011178_2025-01-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:04:15.058401+00:00",
+  "run_finished_utc": "2026-02-09T16:04:37.846245+00:00",
+  "raw_file": "SOS_600011178_2025-01-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600011178_2025-01-20",
+    "school_profile": {
+      "school_type": "Soukromá střední hotelová škola, obor Hotelnictví (65-42-M/01), denní forma",
+      "inspection_period": "20. 1. 2025 – 22. 1. 2025",
+      "school_change_summary": "Škola má 183 žáků v sedmi třídách. V letošním roce došlo k významné obměně pedagogického sboru. Poradenské služby nyní zajišťuje ředitelka školy po odchodu kvalifikované výchovné poradkyně."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Špičková odborná příprava",
+          "detail": "Žáci dosahují vynikajících výsledků v národních i mezinárodních soutěžích (Gastro Hradec Vitana Cup, Bidfood Gastro Junior, Team Challenge).",
+          "evidence": "Škola je držitelkou certifikátu od Asociace kuchařů a cukrářů ČR a ocenění \"Škola roku\" od Asociace hotelů a restaurací ČR."
+        },
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Nadstandardně vybavené odborné učebny a spolupráce s odbornými partnery z tuzemska i zahraničí zajišťují kvalitní praktické vzdělávání.",
+          "evidence": "\"Dlouhodobě budovaná spolupráce se sociálními partnery je významným pilířem odborného vzdělávání ve škole.\""
+        },
+        {
+          "tag": "Vysoká úspěšnost u maturity",
+          "detail": "Ve školním roce 2023/2024 uspěli všichni žáci po podzimním termínu maturitní zkoušky.",
+          "evidence": "\"Ve školním roce 2023/2024 uspěli po podzimním termínu všichni žáci, kteří se k maturitní zkoušce přihlásili.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná individualizace výuky",
+          "detail": "Všichni žáci plní stejné úkoly bez možnosti volby podle svých schopností, chybí diferenciace.",
+          "evidence": "\"Všichni žáci plnili obsahem i náročností stejné úkoly, neměli možnost vybírat si zadání různé kognitivní náročnosti.\""
+        },
+        {
+          "tag": "Slabá práce s informačními zdroji",
+          "detail": "Pedagogové málo využívají práci s různorodými informačními zdroji a podporu kritického myšlení.",
+          "evidence": "\"Méně však pracovali s informačními zdroji a podporovali kritické myšlení žáků.\""
+        },
+        {
+          "tag": "Personální změny v poradenství",
+          "detail": "Po odchodu kvalifikované výchovné poradkyně poradenské služby zajišťuje ředitelka, což může být kapacitně náročné.",
+          "evidence": "\"Po odchodu kvalifikované výchovné poradkyně a metodičky prevence prochází školní poradenské pracoviště přestavbou.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi a jak se to projeví v praxi?",
+        "Jaké jsou konkrétní příklady spolupráce se zahraničními partnery a jaké zkušenosti si žáci mohou odnést?",
+        "Jak se škola vypořádala s personálními změnami v poradenství a jak jsou nyní zajišťovány poradenské služby?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zájmem o gastronomii a hotelnictví, kteří chtějí kvalitní praktickou přípravu na profesi",
+        "Motivovaní studenti, kteří se chtějí zapojit do soutěží a reprezentovat školu na národní i mezinárodní úrovni",
+        "Žáci, kteří oceňují moderní vybavení a propojení teoretické výuky s praxí od odborníků z oboru"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku podle svých schopností – to není silná stránka školy",
+        "Studenti, kteří se spoléhají na rozvoj kritického myšlení a práci s různorodými informačními zdroji – tyto oblasti jsou slabší",
+        "Žáci vyžadující intenzivní individuální poradenství – kapacita poradenských služeb je nyní omezená"
+      ],
+      "plain_czech_summary": "Bukaschool je prestižní hotelová škola s vynikající odbornou přípravou a skvělými výsledky v soutěžích. Žáci se učí v moderně vybavených učebnách a spolupracují s odbornými partnery. Maturitní zkoušky zvládají velmi dobře. Slabší stránkou je, že všichni žáci dostávají stejné úkoly bez přizpůsobení jejich schopnostem. Škola také málo pracuje s různými informačními zdroji a rozvojem kritického myšlení. Personální změny v poradenství jsou stále v řešení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – vysoká úspěšnost",
+        "key_numbers": [
+          "Školní rok 2023/2024: 100% úspěšnost po podzimním termínu",
+          "Školní rok 2022/2023: úspěšnost srovnatelná s republikovým průměrem v dané skupině oborů"
+        ],
+        "evidence": "\"Ve školním roce 2023/2024 uspěli po podzimním termínu všichni žáci, kteří se k maturitní zkoušce přihlásili.\""
+      },
+      "absence": {
+        "trend": "Nízká míra rizikového chování",
+        "key_numbers": [
+          "Minimální počet žáků, kteří neprospějí na konci školního roku",
+          "Nízká míra záškoláctví a rizikového chování"
+        ],
+        "evidence": "\"Systém prevence se vzhledem k nízké míře rizikového chování žáků školy jeví jako přiměřeně účinný.\""
+      },
+      "support_services": [
+        "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+        "Poradenské služby zajišťované ředitelkou školy a učitelkou praktického vyučování (kariérové poradenství)",
+        "Výchovné poradenství propojené s prevencí rizikového chování"
+      ],
+      "safety_climate": [
+        "Pozitivní klima podporované adaptačními aktivitami pro prvňáky a třídnickými hodinami",
+        "Etický kodex a třídní desatera jako nástroje pro budování kultury školy",
+        "Úzká spolupráce s rodiči jako partnery v dodržování pravidel"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se sociálními partnery v tuzemsku i zahraničí",
+        "Aktivní zapojování odborníků z praxe do výuky klíčových předmětů",
+        "Pravidelné gastronomické akce, přednášky a besedy s odborníky z praxe"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků, kteří neprospějí – pouze uvádí \"minimální počet\"",
+        "Není jasné, jak dlouho trvá přestavba poradenského pracoviště a jaké jsou konkrétní plány",
+        "Chybí informace o počtu a typu žáků se speciálními vzdělávacími potřebami (uvedeno jen \"jedna žákyně\")"
+      ]
+    }
+  }
+}

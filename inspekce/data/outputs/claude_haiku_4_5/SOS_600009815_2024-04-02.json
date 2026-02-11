@@ -1,0 +1,119 @@
+{
+  "report_id": "SOS_600009815_2024-04-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:20:16.378976+00:00",
+  "run_finished_utc": "2026-02-09T16:20:44.720461+00:00",
+  "raw_file": "SOS_600009815_2024-04-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009815_2024-04-02",
+    "school_profile": {
+      "school_type": "Střední škola s obory: Mechanik opravář motorových vozidel, Opravář zemědělských strojů (výuční listy) a Sociální činnost (maturita)",
+      "inspection_period": "2. až 4. dubna 2024",
+      "school_change_summary": "Počet žáků vzrostl ze 192 na 229. Pedagogický sbor se stabilizoval a rozrostl. Školní poradenské pracoviště se rozšířilo o speciální pedagožku, kariérového poradce a sociální pedagožku. Zlepšily se výsledky u maturitní zkoušky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní zpětná vazba z praxe",
+          "detail": "Škola má propracovaný systém získávání informací o pokroku žáků od instruktorů na pracovištích, kde absolvují odborný výcvik.",
+          "evidence": "Instruktoři jsou detailně informováni o kritériích hodnocení a poskytují komplexní zpětnou vazbu."
+        },
+        {
+          "tag": "Vzdělávání pedagogů",
+          "detail": "Učitelé se pravidelně účastní kvalitních školení zaměřených na digitální kompetence, mediální gramotnost a práci s náročnými žáky.",
+          "evidence": "Vysoká četnost vzdělávacích akcí pozitivně ovlivňuje rozvoj žákovských kompetencí."
+        },
+        {
+          "tag": "Moderní vybavení domova mládeže",
+          "detail": "Pokoje jsou vybaveny moderním nábytkem, k dispozici je posilovna a počítačová učebna.",
+          "evidence": "Ubytovaní žáci mají možnost sportovního vyžití přímo v budově školy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná individualizace výuky",
+          "detail": "Učitelé nedostatečně sledují pokrok jednotlivých žáků a nepřizpůsobují výuku jejich potřebám.",
+          "evidence": "Nebyla zaznamenána diferenciovaná práce s motivovanými nebo rychleji pracujícími žáky, úkoly měly stejnou náročnost."
+        },
+        {
+          "tag": "Málo skupinové práce",
+          "detail": "Kooperativní formy práce se používají jen výjimečně, převažuje frontální výuka.",
+          "evidence": "Skupinová práce byla zaznamenána jen v češtině, psychologii a občanské nauce."
+        },
+        {
+          "tag": "Slabá sebereflexe žáků",
+          "detail": "Žáci nemají dostatek prostoru k uvědomění si svého pokroku a nejsou vedeni k sebehodnocení.",
+          "evidence": "Vyhodnocení cílů hodin probíhalo pouze samotnými učiteli, sebereflexe byla výjimkou."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různými tempem učení?",
+        "Jaké má škola zkušenosti s umístěním absolventů na trhu práce?",
+        "Jak funguje příprava na maturitní zkoušku a jaké jsou výsledky v posledních letech?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí praktické vzdělání v automechanice nebo zemědělské technice s možností získat řidičský průkaz nebo svářečský certifikát",
+        "Zájemci o sociální činnost s maturitou, kteří se chystají na práci v sociálních službách",
+        "Žáci, kteří potřebují podporu školního poradenského pracoviště (speciální pedagog, sociální pedagog, kariérový poradce)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovanou výuku a více skupinové práce – škola se v tomto zaměřuje především na frontální výuku",
+        "Žáci se slabší motivací – vysoká absence byla identifikována jako hlavní příčina neúspěchu",
+        "Žáci, kteří se lépe učí v menších skupinách – domov mládeže má kapacitu jen 77 míst"
+      ],
+      "plain_czech_summary": "Střední škola v Kralovicích je stabilní a dobře vedená instituce se 229 žáky. Silnými stránkami jsou kvalitní spolupráce s pracovišti, kde žáci absolvují praxi, a pravidelné vzdělávání pedagogů. Škola má moderní vybavení včetně vlastní autoškoly a svářečské školy. Hlavní slabinou je nedostatečná individualizace výuky – učitelé málo přizpůsobují výuku jednotlivým žákům a používají převážně frontální výuku. Škola má dobré výsledky u maturitní zkoušky a dlouhodobě nemá neúspívající žáky u závěrečných zkoušek v oborech s výučním listem."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Od roku 2018 se k maturitě dostavili téměř všichni přihlášení žáci",
+          "Neprosperovali pouze 2 žáci od roku 2018 (oba ve společné části)",
+          "V roce 2021 a 2023 po jednom žákovi neprospěl v jednotlivém předmětu"
+        ],
+        "evidence": "Vysoká úspěšnost maturitní zkoušky, škola dlouhodobě vykazuje velmi dobré výsledky."
+      },
+      "absence": {
+        "trend": "Problematická, řešená",
+        "key_numbers": [
+          "Vysoká a často neomluvená absence byla identifikována jako nejzávažnější příčina neúspěchu",
+          "Problém se týkal především žáků v oborech s výučním listem ve školním roce 2022/2023",
+          "Od roku 2023/2024 pracuje v této oblasti sociální pedagožka"
+        ],
+        "evidence": "Absence je systematicky sledována a řešena, vedou se rozhovory se žáky se zvýšenou absencí."
+      },
+      "support_services": [
+        "Speciální pedagog – poskytuje podporu žákům se speciálními vzdělávacími potřebami",
+        "Sociální pedagog – řeší problémy se školním neúspěchem a absencí (od roku 2023/2024)",
+        "Kariérový poradce – pomáhá s orientací na trhu práce",
+        "Výchovná poradkyně – koordinuje preventivní aktivity a řešení problémů",
+        "Metodička prevence – zajišťuje preventivní programy"
+      ],
+      "safety_climate": [
+        "Všichni žáci procházejí pravidelným proškolením v bezpečnosti a ochraně zdraví",
+        "Úrazovost je pravidelně vyhodnocována",
+        "Během inspekce všichni žáci používali ochranné pomůcky",
+        "Pedagogický dohled je realizován i během přestávek",
+        "Elektronický systém otevírání dveří a fyzický dohled ve vrátnici zabraňují pohybu nežádoucích osob"
+      ],
+      "partnerships_practice": [
+        "Funkční spolupráce se smluvními partnery na pracovištích odborného výcviku",
+        "Detailní informování instruktorů o kritériích hodnocení žáků",
+        "Zpětná vazba od instruktorů a od žáků o průběhu vzdělávání na pracovišti",
+        "Vlastní autoškola a svářečská škola umožňují žákům získat profesní certifikáty",
+        "Školní autoservis poskytuje žákům praktické zkušenosti v produktivní práci"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Hlavní zjištění jsou jasně formulována, včetně silných stránek a oblastí ke zlepšení. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty žáků, kteří opustili školu nebo neprospěli v jednotlivých letech – údaje jsou pouze orientační",
+        "Není jasné, jak přesně se měří efektivita individualizace výuky a jaké jsou konkrétní metriky",
+        "Chybí informace o počtu žáků, kteří se účastní doučování nebo konzultací"
+      ]
+    }
+  }
+}

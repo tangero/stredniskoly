@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "LYC_600017753_2022-12-01",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola chemická (obory: Přírodovědné lyceum, Aplikovaná chemie)",
+    "inspection_period": "1. 12. 2022 – 6. 12. 2022",
+    "school_change_summary": "Od roku 2016/2017 škola neposkytuje vzdělávání v oboru Gymnázium. Došlo ke změně vedení (nový ředitel od 1. 9. 2021). Chemické laboratoře a chodby prošly rekonstrukcí."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Ve školním roce 2021/2022 úspěšně ukončilo vzdělávání 99 % žáků v obou částech maturitních zkoušek.",
+        "evidence": "99 % úspěšnost maturit, 22 % žáků s vyznamenáním v roce 2021/2022"
+      },
+      {
+        "tag": "Silné partnerství a praxe",
+        "detail": "Škola má systematické vztahy s firmami, vysokými školami a institucemi, které poskytují stáže, exkurze a odborné přednášky.",
+        "evidence": "Projekty Erasmus+, stáže v Polsku, Španělsku, Slovensku; spolupráce s vysokými školami"
+      },
+      {
+        "tag": "Příznivé školní klima",
+        "detail": "Škola pracuje s žáky na bázi empatie, vstřícné komunikace a vzájemného respektu.",
+        "evidence": "Adaptační kurz prvních ročníků, třídní projekty, aktivní školní poradenské pracoviště"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivních metod ve výuce",
+        "detail": "V teoretických předmětech chybí diferenciace, práce s různými zdroji a aktivity na rozvoj kritického myšlení.",
+        "evidence": "Převažuje frontální výuka, chybí inovativní metody, málo sebehodnocení žáků"
+      },
+      {
+        "tag": "Slabá individualizace výuky",
+        "detail": "Učitelé poskytují málo příležitostí pro výběr úkolů s různou obtížností a individuální práci.",
+        "evidence": "Nedostatečná diferenciace podle vzdělávacích potřeb, málo prostoru pro samostatné vyjadřování"
+      },
+      {
+        "tag": "Nedostatečná zpětná vazba z hospitací",
+        "detail": "Doporučení z hospitací nejsou systematicky využívána k rozvoji kvality výuky pedagogů.",
+        "evidence": "Chybí konkretizovaná doporučení v řízení pedagogických procesů"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje žáky, kteří mají potíže s matematikou nebo chemií? Jaké jsou možnosti doučování?",
+      "Jaké inovativní metody výuky se používají v jednotlivých předmětech a jak se to změní v příštích měsících?",
+      "Jak se škola vypořádala s doporučením inspekce na zlepšení diferenciace a individualizace výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o přírodní vědy a chemii, kteří chtějí kvalitní přípravu na vysokou školu",
+      "Nadaní žáci, kterým škola nabízí soutěže, exkurze a odborné projekty",
+      "Žáci, kteří si cení příjemného školního klimatu a podpory od pedagogů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individualizované přístupy a aktivní metody výuky",
+      "Žáci se slabšími předpoklady v matematice a chemii – vysoké nároky školy mohou být náročné",
+      "Žáci, kteří se lépe učí pomocí moderních interaktivních metod (ty nejsou v teoretických předmětech běžné)"
+    ],
+    "plain_czech_summary": "Škola dosahuje výborných výsledků v maturitách (99 % úspěšnost) a má příznivé klima. Silnou stránkou je spolupráce s firmami a vysokými školami, která žákům nabízí praktické zkušenosti. Slabší je využívání aktivních a inovativních metod ve výuce teoretických předmětů. Inspekce doporučuje více diferenciace, práce s různými zdroji informací a rozvoje kritického myšlení. Vedení školy má jasnou koncepci a pravidelně vyhodnocuje kvalitu výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi vysoká úspěšnost",
+      "key_numbers": [
+        "99 % úspěšnost v roce 2021/2022",
+        "22 % žáků s vyznamenáním v roce 2021/2022",
+        "27 % žáků s vyznamenáním v roce 2020/2021"
+      ],
+      "evidence": "Žáci vykazují vysokou připravenost na maturitní zkoušky v obou částech"
+    },
+    "absence": {
+      "trend": "Mírně klesající tendence úrazovosti",
+      "key_numbers": [
+        "Míra úrazovosti vykazuje mírně klesající tendenci"
+      ],
+      "evidence": "Vedení školy provádí analýzu úrazovosti a přijímá potřebná opatření"
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodik prevence, školní psycholog",
+      "Plán pedagogické podpory pro žáky se speciálními vzdělávacími potřebami",
+      "Doučování v matematice, chemii a dalších stěžejních předmětech",
+      "Kurz 'Jak se učit?' a individuální konzultace od školního psychologa",
+      "Čtyřdenní adaptační kurz pro první ročníky"
+    ],
+    "safety_climate": [
+      "Bezpečnost zajištěna proti volnému vstupu cizích osob",
+      "Ojedinělý náznak šikany v roce 2021/2022 byl neprodleně řešen",
+      "Škola monitoruje situaci a ověřuje účinnost opatření",
+      "Školské poradenské pracoviště věnuje velkou pozornost prevenci negativních jevů"
+    ],
+    "partnerships_practice": [
+      "Projekt Erasmus+ – stáže v Polsku, Španělsku, Slovensku",
+      "Projekty Otevřená věda, Vysokoškolákem na zkoušku, Bioskop, DNA klub",
+      "Spolupráce s vysokými školami na přednáškách a workshopech",
+      "Partnerství s firmami zabývajícími se chemickou výrobou",
+      "Organizace krajského kola soutěže 'Hledáme nejlepšího Mladého chemika'",
+      "Přírodovědný workshop pro děti mateřských škol"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Chybí však více konkrétních čísel o absenci a podrobnosti o jednotlivých oborech.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta absence žáků, pouze trend úrazovosti",
+      "Není jasné, jak se liší kvalita výuky mezi oběma obory (Přírodovědné lyceum vs. Aplikovaná chemie)",
+      "Chybí informace o počtu pedagogů a jejich kvalifikaci"
+    ]
+  }
+}
+```

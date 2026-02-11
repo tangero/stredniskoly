@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOU_600013391_2023-03-07",
+  "school_profile": {
+    "school_type": "Střední škola technická a gastronomická s domovem mládeže a jídelnou",
+    "inspection_period": "7. března 2023 až 9. března 2023",
+    "school_change_summary": "Počet žáků se od poslední inspekce v roce 2015 mírně zvýšil na 292 žáků. Škola výrazně zlepšila materiálně-technické vybavení a navázala aktivní spolupráci se zahraniční partnerskou školou v Itálii v gastro oborech."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborný výcvik na vysoké úrovni",
+        "detail": "Materiální zázemí odborného výcviku je na vysoké úrovni s jasně nastavenými pravidly a vhodným metodickým vedením žáků.",
+        "evidence": "Učitelé mají jasně nastavená pravidla i vhodné metodické vedení žáků s dopadem do kvality odborného vyučování."
+      },
+      {
+        "tag": "Silné výsledky v soutěžích",
+        "detail": "Žáci dosahují stabilně dobrých výsledků v odborných soutěžích, což přispívá k velkému zájmu zaměstnavatelů o absolventy.",
+        "evidence": "Žáci dosáhli 1. místa v krajském kole Elektro-slaboproud a škola získala 3. místo jako škola doporučená zaměstnavateli."
+      },
+      {
+        "tag": "Kvalitní sociální partnerství",
+        "detail": "Široká škála sociálních partnerů umožňuje žákům optimální odborný rozvoj a posilování sociálních i jazykových kompetencí.",
+        "evidence": "Škola má uzavřeny smluvní vztahy se sociálními partnery pro odbornou praxi a navázala dlouhodobou spolupráci se zahraniční školou."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní teoretické vyučování",
+        "detail": "V teoretických předmětech převládá frontální výuka s nedostatečným zapojením žáků a malou možností obhajování nabytých vědomostí.",
+        "evidence": "Formy a metody práce nepodporovaly v potřebné míře aktivitu žáků, skupinová práce byla využita nedostatečně."
+      },
+      {
+        "tag": "Slabá podpora při studijním selhávání",
+        "detail": "Žákům, kteří selhávají z jiných příčin než absence, poskytuje škola méně systematickou podporu.",
+        "evidence": "Strategii předcházení školní neúspěšnosti nemá ŠPP vypracovanou, jako příčinu studijního selhávání uvádí jen vysokou absenci."
+      },
+      {
+        "tag": "Přetížení výchovné poradkyně",
+        "detail": "Výchovná poradkyně kumuluje funkce poradkyně, metodičky prevence, kariérové poradkyně a třídní učitelky, což neumožňuje efektivní podporu.",
+        "evidence": "Vzhledem k tomuto vytížení není možné plně se soustředit na veškeré oblasti poradenství, což se projevilo zejména v prevenci sociálně patologických jevů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže se studiem z důvodů jiných než absence?",
+      "Jaké konkrétní aktivizační metody budou zavedeny v teoretické výuce po inspekci?",
+      "Jak se bude řešit přetížení výchovné poradkyně a jaké jsou plány na rozšíření školního poradenského pracoviště?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a odborný výcvik, kde je výuka na vysoké úrovni",
+      "Studenti, kteří se chtějí připravit na konkrétní pracovní místo u zaměstnavatelů, se kterými má škola partnerství",
+      "Žáci z okolních obcí, kteří mohou využít kvalitní ubytování v domově mládeže s bohatou nabídkou volnočasových aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují aktivní a interaktivní teoretickou výuku s důrazem na kritické myšlení a práci s informacemi",
+      "Studenti, kteří se potýkají se studijními problémy z důvodů jiných než absence a potřebují intenzivní individuální podporu",
+      "Žáci vyžadující silnou podporu v oblasti prevence sociálně patologických jevů a psychologického poradenství"
+    ],
+    "plain_czech_summary": "Škola je silná v praktickém odborném vzdělávání s moderním vybavením a dobrými výsledky v soutěžích. Žáci se připravují na konkrétní pracovní místa díky partnerství se zaměstnavateli. Slabší je teoretická výuka, která je příliš frontální a pasivní. Absence se daří snižovat, ale podpora žáků se studijními problémy z jiných příčin není dostatečná. Výchovná poradkyně je přetížená a nemůže efektivně řešit všechny oblasti poradenství."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Proměnlivý vývoj s postupným zlepšením",
+      "key_numbers": [
+        "Hrubá neúspěšnost 2021/2022: 21% (zlepšení o 9% oproti 2020/2021)",
+        "Matematika: 20% neúspěšnost (nejvyšší)",
+        "Cizí jazyk: 8,3% neúspěšnost (nejnižší)"
+      ],
+      "evidence": "Hrubá neúspěšnost ve školním roce 2021/2022 byla 21%, což je o 9% lepší výsledek než ve školním roce 2020/2021."
+    },
+    "absence": {
+      "trend": "Pozitivní pokles",
+      "key_numbers": [
+        "2021/2022: 81 hodin na žáka",
+        "2022/2023: 72 hodin na žáka",
+        "Pokles o 11%"
+      ],
+      "evidence": "Ve školním roce 2021/2022 byla průměrná absence 81 hodin, v 2022/2023 se snížila na 72 hodin na žáka."
+    },
+    "support_services": [
+      "Školní psycholog poskytující dlouhodobě individuální psychickou podporu žákům, pedagogům i zákonným zástupcům",
+      "Plány pedagogické podpory pro žáky se vzdělávacími obtížemi s pravidelným vyhodnocováním opatření",
+      "Kariérový poradce zřízený v letošním školním roce, který pomáhá žákům najít pracovní místa u konkrétních zaměstnavatelů",
+      "Doučování žáků ohrožených školním neúspěchem zajišťované metodickými orgány"
+    ],
+    "safety_climate": [
+      "Pravidla pro fungování školy jsou jasně stanovená a umožňují partnerskou spolupráci všech účastníků vzdělávání",
+      "Společným znakem všech sledovaných hodin byla pracovní a příjemná atmosféra",
+      "Učitelé projevovali zájem o žáky a měli aktuální přehled o žácích se speciálními vzdělávacími potřebami",
+      "Vzniklé sociálně patologické jevy jsou ihned řešeny podle krizového plánu"
+    ],
+    "partnerships_practice": [
+      "Smlouvy se sociálními partnery pro odbornou praxi žáků ve firmách",
+      "Dlouhodobá spolupráce s partnerskou zahraniční školou z Itálie v gastro oborech",
+      "Odměňování za produktivní činnost žáků v rámci odborného výcviku nastavené v organizační směrnici"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s konkrétními příklady. Některé pasáže jsou však složitější a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní aktivizační metody by měly být zavedeny v teoretické výuce",
+      "Není jasné, jak dlouho trvá typická absence jednoho žáka v hodinách (zda jde o jednotlivé hodiny nebo dny)",
+      "Chybí informace o tom, kolik procent žáků má speciální vzdělávací potřeby a jak efektivně jsou podporováni"
+    ]
+  }
+}
+```

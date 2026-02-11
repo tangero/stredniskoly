@@ -1,0 +1,113 @@
+{
+  "report_id": "GY8_600012549_2025-03-17",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:41:42.678795+00:00",
+  "run_finished_utc": "2026-02-09T13:42:05.088943+00:00",
+  "raw_file": "GY8_600012549_2025-03-17.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600012549_2025-03-17",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmileté studium), střední škola s maturitní zkouškou",
+      "inspection_period": "17. března až 21. března 2025",
+      "school_change_summary": "Od roku 2024/2025 škola realizuje mezinárodní zkoušky Cambridge z angličtiny a vyučuje francouzštinu jako další cizí jazyk. Došlo ke zkvalitnění materiálních podmínek včetně rekonstrukce učeben a nového vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a rozvoj nadaných žáků",
+          "detail": "Škola aktivně spolupracuje s tuzemskými a zahraničními partnery, což podporuje profilaci a vzdělávání nadaných žáků.",
+          "evidence": "Partnerství s univerzitami, výměnné pobyty do Německa, Španělska a Izraele, mezinárodní projekty."
+        },
+        {
+          "tag": "Motivace k úspěchu",
+          "detail": "Žáci dosahují vynikajících výsledků v soutěžích a olympiádách na krajské i národní úrovni.",
+          "evidence": "Vynikající umístění v olympiádách téměř ve všech předmětech, úspěchy ve sportovních soutěžích."
+        },
+        {
+          "tag": "Kvalitní vedení a péče o žáky",
+          "detail": "Ředitelka vede školu od roku 2014 s jasnou koncepcí rozvoje a věnuje pozornost osobnostnímu rozvoji pedagogů.",
+          "evidence": "Koncepce rozvoje 2020–2026, roční hodnoticí rozhovory s pedagogy, funkční poradenské pracoviště."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená interaktivita ve výuce",
+          "detail": "Výuka často dominuje frontální forma s nízkou mírou aktivního zapojení žáků, skupinová práce je vzácná.",
+          "evidence": "Skupinová práce zaznamenána jen ojediněle, činnosti podporující sociální dovednosti zařazeny minimálně."
+        },
+        {
+          "tag": "Nedostatečné formativní hodnocení",
+          "detail": "Chybí sebehodnocení žáků, vrstevnické hodnocení a prvky formativního hodnocení jako prostředku rozvoje.",
+          "evidence": "Sebehodnocení bylo formálního charakteru, vrstevnické hodnocení nebylo zaznamenáno."
+        },
+        {
+          "tag": "Slabá diferenciace výuky",
+          "detail": "Žáci plní stejné úlohy bez možnosti volby úkolů různé náročnosti, chybí přizpůsobení různému pracovnímu tempu.",
+          "evidence": "Diferenciace zaznamenána jen výjimečně, žáci neměli možnost volby úkolů odlišné kognitivní náročnosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje rozvoj kritického myšlení a samostatného bádání žáků?",
+        "Jaké jsou plány na zvýšení skupinové práce a kooperativního učení v jednotlivých předmětech?",
+        "Jak se škola vypořádá s doporučením inspekce na zlepšení formativního hodnocení a diferenciace?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí studovat na prestižních vysokých školách – kolem 92 % absolventů pokračuje v terciárním vzdělávání",
+        "Nadaní žáci zajímající se o soutěže a olympiády – škola je aktivně motivuje a podporuje",
+        "Žáci s vážným přístupem k učení – nízký počet neprospívajících, vysoký podíl prospěvajících s vyznamenáním (31 %)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující interaktivní a skupinové učení – výuka je zatím převážně frontální",
+        "Žáci s různým tempem učení – diferenciace je zatím nedostatečná",
+        "Žáci, kteří potřebují časté zpětné vazby – formativní hodnocení není dosud plně zavedeno"
+      ],
+      "plain_czech_summary": "Gymnázium v Dobrušce je kvalitní škola s jasným vedením, dobrými výsledky a silnými partnerskými vazbami. Žáci dosahují vysokých prospěchů a úspěchů v soutěžích. Škola se však musí zaměřit na zvýšení interaktivity ve výuce, více skupinové práce a lepší formativní hodnocení. Výuka je zatím příliš frontální a chybí diferenciace podle potřeb jednotlivých žáků. Inspekce doporučuje více samostatného bádání a kritického myšlení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoká úspěšnost",
+        "key_numbers": [
+          "Cca 93 % žáků uspělo u maturitní zkoušky v řádném a náhradním termínu",
+          "Výsledky dlouhodobě odpovídají úspěšnosti skupiny oborů vzdělání"
+        ],
+        "evidence": "Školní rok 2023/2024: cca 93 % úspěšnost v řádném a náhradním termínu maturitní zkoušky."
+      },
+      "absence": {
+        "trend": "Velmi nízká absence",
+        "key_numbers": [
+          "Průměrně 55 hodin zameškaných na jednoho žáka za školní rok",
+          "Počet pochval výrazně převyšuje počet kázeňských opatření"
+        ],
+        "evidence": "Školní rok 2023/2024: průměrný počet zameškaných hodin na žáka činil 55 hodin."
+      },
+      "support_services": [
+        "Funkčně nastavené školní poradenské pracoviště s výchovnou poradkyní",
+        "Systematická péče o žáky s rizikem školního neúspěchu a konzultační činnost",
+        "Plány pedagogické podpory pro žáky s potřebou podpůrných opatření, pravidelně vyhodnocované"
+      ],
+      "safety_climate": [
+        "Jasně nastavená pravidla chování a školní řád",
+        "Rizikové chování se ve škole objevuje jen v malé míře",
+        "Schránka důvěry pro žáky, možnost obrátit se na učitele",
+        "Adaptační kurzy pro prvňáky a tělovýchovné kurzy podporují pozitivní sociální vazby"
+      ],
+      "partnerships_practice": [
+        "Partnerství s regionálními školami a akademickým prostředím (Přírodovědecká fakulta Olomouc, Farmaceutická fakulta UHK)",
+        "Zahraniční spolupráce: výměnné pobyty do Německa, Španělska a Izraele",
+        "Spolupráce s vnějšími partnery na prevenci (návykové látky, bezpečnost v silničním provozu, první pomoc)",
+        "Vzájemné hospitace s Lepařovým gymnáziem Jičín"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a obsahují úřednickou terminologii, která může být pro rodiče méně srozumitelná.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní procento žáků s podporou speciálních vzdělávacích potřeb",
+        "Chybí detailní informace o počtu pedagogů a jejich kvalifikaci",
+        "Není jasné, jak přesně se škola vypořádá s doporučeními inspekce v praxi"
+      ]
+    }
+  }
+}

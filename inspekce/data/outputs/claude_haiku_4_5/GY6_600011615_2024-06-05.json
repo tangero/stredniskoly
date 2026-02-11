@@ -1,0 +1,116 @@
+{
+  "report_id": "GY6_600011615_2024-06-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:15:26.303540+00:00",
+  "run_finished_utc": "2026-02-09T16:15:52.390394+00:00",
+  "raw_file": "GY6_600011615_2024-06-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600011615_2024-06-05",
+    "school_profile": {
+      "school_type": "Soukromé jazykové gymnázium se zaměřením na cizí jazyky",
+      "inspection_period": "5. 6. 2024 – 7. 6. 2024",
+      "school_change_summary": "Škola se rozvíjí: zlepšily se materiálně-technické podmínky (nová PC učebna, učebna fyziky, fotovoltaika, renovace budov), inovoval se elektronický systém Open School pro lepší komunikaci s rodiči, rozšířila se osobní portfolia žáků i učitelů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "V roce 2024 prospělo s vyznamenáním 60 % žáků, všichni přihlášení žáci maturitu úspěšně zvládli.",
+          "evidence": "Hrubá neúspěšnost ve společné části MZ 0 %, 60 % s vyznamenáním (30 z 50 žáků)."
+        },
+        {
+          "tag": "Péče o talentované žáky",
+          "detail": "Škola systematicky podporuje nadané žáky a jejich úspěchy v soutěžích jsou výrazné.",
+          "evidence": "Medaile na ICYS v Turecku (2 zlaté, 2 stříbrné, 3 bronzové), 1. místo v celostátní soutěži ve španělštině."
+        },
+        {
+          "tag": "Bohatá nabídka jazyků a aktivit",
+          "detail": "Žáci si mohou vybrat z 8 cizích jazyků a účastní se 70 % v různých školních klubech.",
+          "evidence": "Povinně volitelné jazyky (4 možnosti), nepovinné jazyky (8 možností), 13 školních klubů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo skupinové práce ve výuce",
+          "detail": "Učitelé málo využívají kooperativní formy práce, převažuje frontální výuka.",
+          "evidence": "Skupinová forma práce byla zaznamenána jen zcela výjimečně, převažovala frontální výuka bez vzájemných činností."
+        },
+        {
+          "tag": "Nedostatečné sebehodnocení žáků",
+          "detail": "Učitelé jen výjimečně zařazují formativní hodnocení a nevedou žáky k sebehodnocení.",
+          "evidence": "Jen zcela výjimečně zařadili vyučující formativní hodnocení, sebehodnocení nebo vrstevnické hodnocení."
+        },
+        {
+          "tag": "Omezené využití technologií žáky",
+          "detail": "Digitální technologie používají především učitelé, žáci je využívají jen málo.",
+          "evidence": "Digitální technologie byly ve většině hodin používány účelně pedagogy, ze strany žáků však byly využity jen v malé míře."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola připravuje žáky na mezinárodní jazykové zkoušky a jaké jsou úspěšnosti?",
+        "Jaké jsou možnosti individuální podpory pro žáky s prospěchovými problémy?",
+        "Jak se škola chystá zlepšit skupinovou práci a sebehodnocení žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci s vášní pro jazyky a mezinárodní komunikaci – škola nabízí až 8 cizích jazyků a zahraniční výměny.",
+        "Talentovaní a nadaní žáci – škola má systematickou péči o jejich rozvoj a podporuje jejich soutěžní úspěchy.",
+        "Žáci zajímající se o širší vzdělání – bohatá nabídka klubů (13 druhů) a seminářů pokrývá všechny oblasti."
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující skupinovou práci a interaktivní výuku – ve třídách převažuje frontální výuka bez vzájemné spolupráce.",
+        "Žáci, kteří se učí lépe prostřednictvím vlastního sebehodnocení – škola jej zatím málo využívá.",
+        "Žáci s nižšími studijními předpoklady – vysoká úroveň výuky a vysoké nároky mohou být náročné."
+      ],
+      "plain_czech_summary": "Jedná se o kvalitní soukromé gymnázium se silným zaměřením na jazyky. Žáci dosahují výborných výsledků maturit (100 % úspěšnost) a vynikají v soutěžích. Škola má dobrou péči o talentované žáky a bohatou nabídku aktivit. Hlavní slabinou je málo skupinové práce ve výuce a nedostatečné vedení žáků k sebehodnocení. Materiální vybavení se zlepšilo. Vhodná pro jazykově nadané a ambiciózní žáky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoké výsledky s mírným poklesem počtu žáků s vyznamenáním",
+        "key_numbers": [
+          "2023: 69 % s vyznamenáním (36 z 52 žáků)",
+          "2024: 60 % s vyznamenáním (30 z 50 žáků)",
+          "Hrubá neúspěšnost 0 % v obou letech"
+        ],
+        "evidence": "Všichni přihlášení žáci k maturitní zkoušce ji vykonali úspěšně v roce 2023 i 2024."
+      },
+      "absence": {
+        "trend": "Není v textu explicitně uvedeno",
+        "key_numbers": [
+          "Údaje o absenci nejsou v inspekční zprávě detailně rozvedeny"
+        ],
+        "evidence": "Minimální výskyt negativních jevů ve škole je zmíněn v kontextu prevence rizikových jevů."
+      },
+      "support_services": [
+        "Výchovná poradkyně (zároveň školní metodička prevence)",
+        "Dvě školní psycholožky",
+        "Speciální pedagožka",
+        "Plány individuální podpory pro žáky s obtížemi při učení",
+        "Kariérové poradenství"
+      ],
+      "safety_climate": [
+        "Minimální výskyt negativních jevů ve škole",
+        "Vhodně nastavená prevence rizikových jevů",
+        "Plné a promyšlené vytížení žáků v souladu s jejich předpoklady",
+        "Aktivní činnost studentského parlamentu"
+      ],
+      "partnerships_practice": [
+        "Magistrát města Hradec Králové a Královéhradecký kraj",
+        "Vysoké školy (např. Univerzita Hradec Králové)",
+        "Zahraniční partnerské školy (Německo, Velká Británie, Nizozemí, Španělsko)",
+        "Projekty Erasmus+ s výměnnými pobyty",
+        "Divadlo Drak, Rozhlasu Hradec Králové, regionální firmy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky, obsahuje konkrétní údaje a citace. Slabší je pouze v některých pasážích s dlouhými větami a úřednickým stylem.",
+      "uncertainty_notes": [
+        "Absence není v textu detailně rozvedena, nelze posoudit trend či konkrétní čísla.",
+        "Digitální technologie – není jasné, jaké konkrétní technologie se používají a proč žáci jejich využití omezují.",
+        "Doporučení inspekce jsou formulována obecně, není jasné, jak závažné jsou zjištěné nedostatky."
+      ]
+    }
+  }
+}

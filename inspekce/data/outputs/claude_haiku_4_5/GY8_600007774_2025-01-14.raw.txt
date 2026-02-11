@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY8_600007774_2025-01-14",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium, od 2024/2025 také Technické lyceum",
+    "inspection_period": "14.–16. ledna 2025",
+    "school_change_summary": "Škola má stabilní počet žáků (358), zlepšily se materiální podmínky. Od poslední inspekce přetrvávají nedostatky v diferenciaci výuky a aktivizaci žáků, ale pokračuje výborný prospěch."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Žáci dlouhodobě dosahují velmi dobrých výsledků v průběhu i při ukončování studia, řada prospívá s vyznamenáním.",
+        "evidence": "Na nižším stupni osmiletého gymnázia ~90 % s vyznamenáním, na vyšším stupni ~60 %, ve čtyřletém ~50 %."
+      },
+      {
+        "tag": "Moderní zázemí",
+        "detail": "Škola prošla rozsáhlou rekonstrukcí s novými učebnami pro badatelskou výuku, tělocvičnou a outdoorovou učebnou.",
+        "evidence": "Prostory upraveny na učebny pro badatelskou výuku, nová lezecká stěna, relaxační prvky v zahradě."
+      },
+      {
+        "tag": "Kvalitní estetická výuka",
+        "detail": "Výuka umění využívá zážitkovou pedagogiku a rozvíjí kreativitu a praktické dovednosti.",
+        "evidence": "Hudební workshopy, výtvarná výchova s recyklovanými materiály, prvky relaxace a osobního obohacení."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená aktivizace žáků",
+        "detail": "V přibližně polovině hodin chybí diskuse mezi žáky, jejich vzájemná spolupráce a reflexe pokroku.",
+        "evidence": "Sebehodnocení a vrstevnické hodnocení začleněno jen zřídka, omezuje se rozvoj kritického myšlení."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Výuka není vždy přizpůsobena individuálním potřebám, potenciál nadaných žáků zůstává nevyužitý.",
+        "evidence": "Diferenciace nebyla dostatečně zohledněna, omezilo se přizpůsobení obsahu jednotlivým žákům."
+      },
+      {
+        "tag": "Absence v 7. ročníku",
+        "detail": "V sedmém ročníku osmiletého studia se absence zvýšila až na 267 hodin za rok, což se projevilo zhoršením prospěchu.",
+        "evidence": "Výrazné zvýšení absence v obou sledovaných letech, korelace se zhoršením průměrného prospěchu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jak se liší přístup pro různě schopné žáky?",
+      "Jaké konkrétní kroky podniká škola proti zvýšené absenci v 7. ročníku?",
+      "Jak se ve výuce uplatňuje sebehodnocení a vrstevnické hodnocení žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a motivací – škola nabízí kvalitní vzdělání a podporu",
+      "Děti zajímající se o přírodní vědy – silné zaměření na badatelskou výuku a projekty",
+      "Žáci s zájmem o umění a kreativitu – kvalitní estetická výuka s prvky zážitkové pedagogiky"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individuální přístup – diferenciace výuky není vždy dostatečná",
+      "Děti se sklonem k absenci – zejména v 7. ročníku osmiletého studia jsou problémy s docházkou",
+      "Žáci vyžadující více interaktivní a diskusní výuku – frontální výuka stále převládá"
+    ],
+    "plain_czech_summary": "Gymnázium J. S. Machara je kvalitní školou s výborným prospěchem žáků a moderním zázemím. Silné stránky jsou dlouhodobě výborné výsledky, nové učebny pro badatelskou výuku a kvalitní estetická výuka. Slabiny se týkají omezené aktivizace žáků ve výuce, nedostatečné diferenciace a zvýšené absence v 7. ročníku. Škola by měla více rozvíjet sebehodnocení, diskuse mezi žáky a propojení teorie s praxí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, v profilové části velmi dobrý",
+      "key_numbers": [
+        "Společná část: hrubá neúspěšnost odpovídá průměru oborové skupiny v obou letech",
+        "Profilová část 2022/2023: hrubá neúspěšnost odpovídala průměru",
+        "Profilová část 2023/2024: 100 % úspěšnost všech žáků"
+      ],
+      "evidence": "Ve společné části maturitní zkoušky v obou sledovaných letech 2022/2023 a 2023/2024 odpovídala hrubá neúspěšnost průměru. V profilové části dosáhli velmi dobrých výsledků."
+    },
+    "absence": {
+      "trend": "Zvýšená absence v 7. ročníku osmiletého studia",
+      "key_numbers": [
+        "Průměrná absence v obou oborech: ~155 hodin za školní rok",
+        "7. ročník osmiletého studia: 267 hodin v obou sledovaných letech",
+        "Korelace s zhoršením průměrného prospěchu v 7. ročníku"
+      ],
+      "evidence": "V sedmém ročníku osmiletého studia se v obou sledovaných letech výrazně zvýšila až na 267 hodin, což se projevilo zhoršením průměrného prospěchu."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a kariérovou poradkyní",
+      "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami (13 žáků se SVP, 1 podle IVP)",
+      "Pravidelné konzultace se školskými poradenskými zařízeními o podpůrných opatřeních",
+      "Adaptační pobyty pro nové žáky a sportovní kurzy pro posilování kolektivu"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti",
+      "Škola dbá na zajišťování bezpečného prostředí a poučuje žáky o pravidlech bezpečnosti",
+      "Projevy závažnějšího rizikového chování se ve škole nevyskytují",
+      "Prohřešky se týkají především porušování pravidel školního řádu",
+      "Zavedený krizový plán a systém oatření k řešení problémových situací"
+    ],
+    "partnerships_practice": [
+      "Exkurze, kulturní akce a workshopy s partnery školy",
+      "Jednodenní praxe v různých povoláních pro žáky 4. ročníku osmiletého studia",
+      "Setkání s úspěšnými absolventy",
+      "Středoškolská odborná činnost – 2 práce reprezentovaly školu v celostátním kole",
+      "Projekty zaměřené na estetickou výchovu a netradičních formy výuky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Klíčové informace pro rodiče jsou jasně identifikovatelné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní 'etické problémy' se vyskytly u některých pedagogů – pouze zmiňuje 'nevhodné chování' jednoho pedagoga, který byl vyřešen.",
+      "Není jasné, kolik přesně pedagogů nesplňuje kvalifikační předpoklady – uvedeno 'zhruba pětina', což je přibližné číslo.",
+      "Detaily o 'rezervovaném postoji' části pedagogů nejsou konkrétně specifikovány – není jasné, o jakou část sboru jde."
+    ]
+  }
+}
+```

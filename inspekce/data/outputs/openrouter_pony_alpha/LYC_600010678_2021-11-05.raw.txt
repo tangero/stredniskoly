@@ -1,0 +1,104 @@
+{
+  "report_id": "LYC_600010678_2021-11-05",
+  "school_profile": {
+    "school_type": "Střední škola hospodářská a lesnická s 23 obory (zemědělství, strojírenství, služby), domov mládeže a školní farma.",
+    "inspection_period": "5. a 22. − 25. 11. 2021",
+    "school_change_summary": "Škola se od roku 2019 výrazně zmodernizovala, sjednotila areál ve Frýdlantu a zlepšila materiální vybavení i zájem uchazečů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení",
+        "detail": "Škola nabízí špičkové zázemí včetně nových dílen, školní farmy, autoservisu a moderních sportovišť.",
+        "evidence": "Škola disponuje špičkovým strojovým vybavením... nově vybudované centrum odborného vzdělávání... školní autoservis."
+      },
+      {
+        "tag": "Praxe",
+        "detail": "Žáci získávají velmi dobré praktické dovednosti a úspěšně se uplatňují v odborných soutěžích.",
+        "evidence": "Teoretické odborné a praktické vyučování dobře rozvíjí odborné kompetence žáků... dosahují velmi dobrých výsledků."
+      },
+      {
+        "tag": "Prostředí",
+        "detail": "Vládnou zde přátelská atmosféra, škola je bezpečná a vedení má jasnou vizi moderního vzdělávacího centra.",
+        "evidence": "Výuka probíhala v otevřené a přátelské pracovní atmosféře... koncepční řízení... bezpečnostní rizika nebyla identifikována."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Maturita",
+        "detail": "Žáci maturitních oborů mají dlouhodobě podprůměrné výsledky ve společné části maturitní zkoušky.",
+        "evidence": "Úspěšnost žáků ve společné části maturitní zkoušky je v rámci celorepublikového srovnání... dlouhodobě podprůměrná."
+      },
+      {
+        "tag": "Absence",
+        "detail": "Nematuritní obory bojují s vysokou neomluvenou absencí, která se často opakuje i přes zásahy školy.",
+        "evidence": "Vysoké zastoupení neomluvené absence... v průměru i desítky hodin na žáka za rok... kroky ne vždy účinné."
+      },
+      {
+        "tag": "Výuka",
+        "detail": "V hodinách často chybí aktivní zapojení žáků, diskuze a efektivní závěrečné shrnutí látky.",
+        "evidence": "Společným dílčím negativem... formální závěry... nevyužitými příležitostmi k utřídění poznatků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky v přípravě na společnou část maturitní zkoušky, když jsou výsledky dlouhodobě podprůměrné?",
+      "Jaká opatření škola přijímá k řešení vysoké neomluvené absence v učebních oborech?",
+      "V jakých oborech a jak často mohou žáci využívat nově vybudované centrum odborného vzdělávání a školní farmu?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří se chtějí učit řemeslo a chtějí mít opravdu kvalitní praktickou přípravu a zázemí.",
+      "Pro zájemce o zemědělství, lesnictví a veterinářství, kteří ocení reálný provoz na školní farmě.",
+      "Pro rodiče hledající pro dítě bezpečné prostředí s moderním areálem a bohatou nabídkou aktivit."
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o nástavbové studium (Podnikání), kde je vysoké riziko neúspěchu u maturitní zkoušky.",
+      "Žáci, kteří plánují studium v oboru Strojírenské práce, který trpí vysokou absencí a horším prospěchem.",
+      "Studenti, kteří očekávají náročnou teoretickou přípravu a vysokou míru diskuse v běžných hodinách."
+    ],
+    "plain_czech_summary": "Škola ve Frýdlantu prošla pozitivní proměnou a nabízí žákům vynikající materiální zázemí, od vlastní farmy až po moderní dílny. Praktická výuka a příprava na povolání jsou na velmi dobré úrovni, což se odráží v úspěších žáků v soutěžích. Problémem je však dlouhodobě podprůměrná úspěšnost u maturitních zkoušek, zejména v teoretických předmětech. Škola také bojuje s vysokou absencí v některých učebních oborech. Pro prakticky zaměřené žáky je skvělou volbou, u maturitních oborů je však třeba zvážit kvalitu přípravy na státní zkoušky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý, v posledních letech mírné zlepšení, ale stále podprůměrné výsledky ve srovnání s ČR.",
+      "key_numbers": [
+        "Neúspěšnost v oboru Podnikání (nástavba) až 80 % (průměr ČR 50 %).",
+        "Neúspěšnost v zemědělských oborech kolem 50 % (průměr ČR cca 25 %).",
+        "Obchodní akademie vykazuje nadprůměrné výsledky (neúspěšnost 14–20 %)."
+      ],
+      "evidence": "V období let 2017 – 2021 byly výsledky žáků v MZ podprůměrné, a to v její společné části."
+    },
+    "absence": {
+      "trend": "Celková absence v době covidu klesla, ale v nematuritních oborech zůstává kriticky vysoká.",
+      "key_numbers": [
+        "Neomluvená absence v nematuritních oborech až desítky hodin ročně.",
+        "V některých ročnících oboru Strojírenské práce absence přes 300 hodin ročně.",
+        "V maturitních oborech neomluvená absence pouze v jednotkách hodin."
+      ],
+      "evidence": "U nematuritních oborů je rovněž negativem vysoké zastoupení neomluvené absence, v průměru i desítky hodin."
+    },
+    "support_services": [
+      "Funguje školní poradenské pracoviště s romskou asistentkou pro komunikaci s rodiči.",
+      "Spolupráce s centrem POSEC a externími odborníky pro žáky s nepříznivým sociálním zázemím.",
+      "Domov mládeže v areálu školy s kapacitu 100 lůžek a bohatým volnočasovým programem."
+    ],
+    "safety_climate": [
+      "Areál je monitorován kamerovým systémem a uzavřen pomocí identifikačních karet.",
+      "Při inspekci nebyla zjištěna žádná zjevná bezpečnostní rizika.",
+      "Škola má zpracovaný preventivní program a klade důraz na včasnou intervenci."
+    ],
+    "partnerships_practice": [
+      "Účinná spolupráce s firmami v regionu (Lesy ČR, ZF Automotive) na odborné praxi.",
+      "Mezinárodní spolupráce se saskými farmami a německou školou (mobility žáků).",
+      "Status cvičné školy ČZU a fakultní školy TU v Liberci."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je psán srozumitelně, jasně odděluje silné a slabé stránky a obsahuje konkrétní data i citace. Místy používá standardní pedagogickou terminologii (např. 'formativní hodnocení'), která může být pro laika méně srozumitelná, ale kontext je vždy jasný.",
+    "uncertainty_notes": [
+      "Nejasná je míra efektivity přijatých opatření proti neomluvené absenci, inspekce uvádí 'ne vždy účinné'.",
+      "Není zcela jasné, proč má obor Podnikání tak dramaticky horší výsledky u maturity oproti Obchodní akademii.",
+      "Chybí bližší specifikace 'formálních závěrů' hodin a jak konkrétně ovlivňují celkové výsledky žáků."
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOS_600010996_2023-03-20",
+  "school_profile": {
+    "school_type": "Střední odborné učiliště a Střední odborná škola (SOU a SOŠ) se zaměřením na gastronomii, hotelnictví a podnikání",
+    "inspection_period": "20. března až 23. března 2023",
+    "school_change_summary": "Škola rozšířila nabídku o obor Výrobce potravin se zaměřením na Sladovníka-Pivovárníka. Pokračuje modernizace odborných učeben a IT. Vedení školy se snaží zlepšit výsledky v maturitních oborech, ale přetrvávají problémy s neúspěšností při maturitní zkoušce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava v reálných podmínkách",
+        "detail": "Škola má vlastní odborná pracoviště (jídelna, minipivovar, kavárna, gastrolaboratoř), která umožňují efektivní praktickou přípravu v reálných pracovních podmínkách.",
+        "evidence": "Materiální podmínky umožňují realizaci školních vzdělávacích programů s vlastními odbornými pracovišti."
+      },
+      {
+        "tag": "Bohatá síť partnerů a aktivit",
+        "detail": "Škola má silné vazby na zaměstnavatele a organizuje četné školní i mimoškolní aktivity včetně odborných soutěží a projektů.",
+        "evidence": "Bohatá síť sociálních partnerů přispívá k úspěšné realizaci praktického vyučování a četné aktivity podporují rozvoj kompetencí žáků."
+      },
+      {
+        "tag": "Podpora žáků se speciálními potřebami",
+        "detail": "Výchovná poradkyně efektivně koordinuje přístup k žákům se speciálními vzdělávacími potřebami a pravidelně vyhodnocuje úspěšnost opatření.",
+        "evidence": "Školní poradenské pracoviště pravidelně vyhodnocuje a aktualizuje podpůrná opatření pro všechny žáky se speciálními potřebami."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost u maturitní zkoušky",
+        "detail": "Pouze 34 % žáků, kteří nastoupili do 1. ročníku, úspěšně dokončilo studium v předepsané době; u oboru Podnikání jen 24 %.",
+        "evidence": "V maturitním ročníku 2022 činil podíl úspěšných absolventů pouze 34 %, u oboru Podnikání jen 24 %."
+      },
+      {
+        "tag": "Slabá příprava v předmětech maturitní zkoušky",
+        "detail": "Výuka cizích jazyků a českého jazyka postrádá dostatečnou diferenciaci, reflexi cílů a formativní hodnocení.",
+        "evidence": "V předmětech společné části maturitní zkoušky se absence kvalifikace nejvíce projevila ve výuce cizích jazyků; formativní hodnocení bylo zaznamenáno ojediněle."
+      },
+      {
+        "tag": "Nedostatečná metodická podpora pedagogů",
+        "detail": "Vedení školy neposkytuje pedagogům dostatečně efektivní podporu pro zvyšování kvality výuky a neověřuje implementaci znalostí z dalšího vzdělávání.",
+        "evidence": "Metodická podpora se ve výchovně vzdělávacím procesu projevuje jen částečně; vedení neověřuje implementaci znalostí z dalšího vzdělávání."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola připravuje žáky na společnou část maturitní zkoušky, zejména na didaktický test z českého jazyka a cizího jazyka?",
+      "Jaké jsou kritéria pro přijetí do maturitních oborů a jak škola zajišťuje, aby přijatí žáci měli reálné předpoklady pro úspěch?",
+      "Jak škola řeší vysoký podíl žáků, kteří předčasně ukončují vzdělávání, a jakou podporu jim nabízí?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou přípravu v gastronomii, hotelnictví a potravinářství, kteří se chtějí učit v reálných pracovních podmínkách",
+      "Žáci z nematuritních oborů (výučních listů), kde škola efektivně podporuje jejich vzdělávání a dosahuje 100% úspěšnosti při závěrečné zkoušce",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje koordinovanou a pravidelně vyhodnocovanou podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižšími studijními předpoklady, kteří se hlásí do maturitních oborů – škola přijímá uchazeče s nízkými výsledky v přijímacích zkouškách",
+      "Žáci, kteří potřebují intenzivní přípravu v teoretických předmětech (český jazyk, cizí jazyky, matematika) – výuka těchto předmětů postrádá dostatečnou diferenciaci a reflexi",
+      "Žáci, kteří potřebují jasné vedení a strukturovanou podporu – pedagogové nedostatečně využívají formativní hodnocení a reflexi cílů"
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktickou přípravu v gastronomii a hotelnictví s vlastními odbornými pracovišti a silnou sítí partnerů. Žáci nematuritních oborů dosahují dobrých výsledků. Problém je vysoká neúspěšnost v maturitních oborech – jen 34 % žáků úspěšně skončí v předepsané době. Výuka teoretických předmětů (jazyky, čeština) postrádá diferenciaci a efektivní zpětnou vazbu. Vedení školy nedostatečně podporuje pedagogy a neanalyzuje příčiny neúspěšnosti. Vhodná pro prakticky zaměřené žáky, ale riziková pro ty, kteří chtějí maturitu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšení v některých oborech, ale přetrvávající problémy s celkovým podílem úspěšných absolventů",
+      "key_numbers": [
+        "Podnikání: hrubá neúspěšnost 37,5 % v roce 2022 (srovnatelná s ČR 37,2 %)",
+        "Gastronomie: 100 % neúspěšnost v 2020, 50 % v 2021, 0 % v 2022",
+        "Pouze 34 % žáků z 1. ročníku úspěšně skončilo v předepsané době (Podnikání: 24 %)"
+      ],
+      "evidence": "Hrubá neúspěšnost u Podnikání se snížila z 50 % (2020) na 26,7 % (2021), v 2022 stoupla na 37,5 %. Nízký podíl žáků, kteří nastoupili do 1. ročníku a úspěšně dokončili studium."
+    },
+    "absence": {
+      "trend": "Vysoký podíl žáků, kteří neukončují poslední ročník v řádném termínu",
+      "key_numbers": [
+        "Cca 30 % žáků nematuritních oborů neúspěšně neukončilo poslední ročník",
+        "Vysoký podíl žáků, kteří ukončují vzdělávání předčasně"
+      ],
+      "evidence": "Negativním jevem je vysoký podíl žáků (cca 30 %), kteří úspěšně neukončili poslední ročník vzdělávání a nemohli konat závěrečnou zkoušku v řádném termínu."
+    },
+    "support_services": [
+      "Výchovné poradenství s efektivní koordinací podpory pro žáky se speciálními vzdělávacími potřebami",
+      "Individuální konzultace a doučování pro žáky se slabšími výsledky",
+      "Adaptační pobytové kurzy pro žáky prvního ročníku",
+      "Spolupráce s neziskovými a charitativními organizacemi pro žáky ze socioekonomicky znevýhodněného prostředí",
+      "Plány pedagogické podpory pro žáky nematuritních oborů s pravidelným vyhodnocováním"
+    ],
+    "safety_climate": [
+      "Pravidelný každodenní kontakt a otevřená komunikace mezi vedením, pedagogy a žáky zajišťují bezproblémový přenos informací",
+      "Klidná pracovní atmosféra v praktických vyučovacích hodinách",
+      "Školní poradenské pracoviště zjišťuje klima v třídních kolektivech každý rok pomocí dotazníků",
+      "Primární prevence realizována prostřednictvím třídnických hodin a částečně integrována do předmětů"
+    ],
+    "partnerships_practice": [
+      "Bohatá síť sociálních partnerů přispívá k realizaci praktického vyučování",
+      "Exkurze, besedy, workshopy a kurzy s odborníky",
+      "Realizace části praktického vyučování u zaměstnavatelů",
+      "Žáci se uplatňují při akcích organizovaných městem Žatec",
+      "Projektové dny pro žáky základních škol",
+      "Účast v odborných soutěžích (Český kapr, MasterChef Česko, Gastro Labe, CBA Challenge Brno)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Hlavní problémy jsou jasně identifikovány (vysoká neúspěšnost u maturit, slabá metodická podpora, nedostatečná diferenciace). Číselné údaje jsou konkrétní. Mírně snižuje srozumitelnost vysoká míra odborné terminologie a místy složitější věty.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní metody výuky by měly být zavedeny – doporučení jsou spíše obecná",
+      "Chybí informace o tom, jak se školní poradenství konkrétně podílí na přípravě na maturitu",
+      "Není jasné, zda nízký počet žáků v některých oborech (Gastronomie 5 žáků, Podnikání 4 žáci) je důsledkem nízké poptávky nebo špatné propagace"
+    ]
+  }
+}
+```

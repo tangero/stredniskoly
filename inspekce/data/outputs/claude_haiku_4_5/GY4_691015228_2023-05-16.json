@@ -1,0 +1,112 @@
+{
+  "report_id": "GY4_691015228_2023-05-16",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:40:14.821914+00:00",
+  "run_finished_utc": "2026-02-09T16:40:41.850074+00:00",
+  "raw_file": "GY4_691015228_2023-05-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691015228_2023-05-16",
+    "school_profile": {
+      "school_type": "Hudební gymnázium (čtyřletý obor 79-41-K/41), soukromá škola s.r.o.",
+      "inspection_period": "16. května až 18. května 2023",
+      "school_change_summary": "Nově vzniklá škola, která zahájila činnost v září 2022. Při inspekci měla 12 žáků v 1. ročníku. Škola se rozvíjí, finalizuje nahrávací studio a připravuje přístavbu nového pavilonu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vynikající hudební pedagogové",
+          "detail": "Učitelé hudebních předmětů jsou uznávaní výkonní umělci se zahraničními zkušenostmi, kteří propojují teorii s praktickou uměleckou praxí.",
+          "evidence": "Pedagogové jsou 'výkonnými umělci s velmi kvalitním vzděláním a bohatými zkušenostmi ze zahraničí' a 'vysoká erudovanost pedagogických pracovníků umělecky zaměřených předmětů'."
+        },
+        {
+          "tag": "Individuální přístup a péče",
+          "detail": "Malý počet žáků umožňuje intenzivní individuální péči, měsíční schůzky vedení k řešení problémů a nulová neomluvenná absence.",
+          "evidence": "'Nízký počet žáků ve třídě' a 'pravidelná setkání ředitele s třídní učitelkou' každý měsíc. 'Škola nezaznamenala žádnou neomluvenou absenci'."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Škola buduje špičkové nahrávací studio a připravuje nový pavilón s odbornými učebnami.",
+          "evidence": "'Finalizuje dostavba špičkového nahrávacího studia' a 'přístavba nového pavilonu s několika kmenovými a odbornými učebnami'."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší výuka všeobecných předmětů",
+          "detail": "Ve skupinové výuce nehumánních předmětů chybí efektivní metody, formativní hodnocení, kritické myšlení a diferenciace úkolů.",
+          "evidence": "'Ve skupinové výuce neuměleckých předmětů nejsou v dostatečné míře využívány efektivní vzdělávací strategie' a 'Efektivní práce s informačními zdroji a diferenciace učiva se v hodinách nevyskytovaly'."
+        },
+        {
+          "tag": "Nestabilní pedagogický sbor",
+          "detail": "Sbor se teprve tvoří s průběžnými obměnami, pouze 2 interní učitelé, zbytek externí spolupracovníci.",
+          "evidence": "'Pedagogický sbor se tvoří, v jeho složení dochází k průběžným obměnám' a 'Personálně je výuka zabezpečena dvěma interními učiteli, zbytek tvoří externí spolupracovníci'."
+        },
+        {
+          "tag": "Chybí externí testování",
+          "detail": "Škola nepoužívá externí testy k ověření objektivity svého hodnocení.",
+          "evidence": "'Externí testování pro sledování objektivity vlastního hodnocení škola zatím neprovádí'."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak se budou řešit rozdíly v kvalitě výuky mezi hudebními a všeobecně vzdělávacími předměty?",
+        "Jaký je plán na stabilizaci pedagogického sboru a zvýšení počtu interních učitelů?",
+        "Jak se škola chystá zavádět formativní hodnocení a rozvoj kritického myšlení ve všech předmětech?"
+      ],
+      "who_school_fits": [
+        "Talentovaní hudebníci a zpěváci, kteří chtějí studovat u uznávaných umělců a připravit se na vysoké umělecké školy",
+        "Žáci zajímající se o zvukovou tvorbu, hudební režii a produkci s moderním technickým vybavením",
+        "Studenti, kteří si cení individuálního přístupu a malých tříd s osobní péčí"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují silnější podporu v matematice, přírodovědách a jazycích – zde chybí efektivní metody a diferenciace",
+        "Studenti, kteří se spoléhají na stabilní tým učitelů – sbor se teprve formuje s externími spolupracovníky",
+        "Rodiče, kteří očekávají tradiční přístup k výuce – škola experimentuje s novými metodami a není všude konzistentní"
+      ],
+      "plain_czech_summary": "Hudební gymnázium je nová soukromá škola se silným zaměřením na hudbu. Její největší předností jsou vynikající hudební pedagogové – uznávaní umělci se zahraničními zkušenostmi – a individuální přístup díky malému počtu žáků. Škola buduje moderní vybavení včetně studia. Slabší stránkou je výuka všeobecných předmětů, kde chybí efektivní metody a kritické myšlení. Sbor se teprve stabilizuje. Ideální pro talentované hudebníky, méně vhodná pro ty, kdo potřebují silnější podporu v ostatních předmětech."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nelze určit – škola existuje teprve od září 2022, žáci jsou v 1. ročníku",
+        "key_numbers": [
+          "12 žáků v 1. ročníku při inspekci",
+          "4 zaměření: hudební obor, hudební režie, zvuková tvorba, hudební produkce"
+        ],
+        "evidence": "Škola 'svou činnost zahájila ve školním roce 2022/2023' a 'K termínu inspekce navštěvovalo školu 12 žáků v 1. ročníku'."
+      },
+      "absence": {
+        "trend": "Výborný – nulová neomluvenná absence",
+        "key_numbers": [
+          "0 neomluvenek",
+          "0 kázeňských opatření"
+        ],
+        "evidence": "'Díky efektivní práci školního poradenského pracoviště škola nezaznamenala žádnou neomluvenou absenci, udělena nebyla ani žádná kázeňská opatření'."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště – výchovná poradkyně a metodička prevence v jedné osobě s dlouhodobými zkušenostmi",
+        "Měsíční schůzky vedení s třídní učitelkou a poradkyní k analýze a řešení problémů žáků",
+        "Individuální konzultace a adaptační kurz pro nové žáky"
+      ],
+      "safety_climate": [
+        "Pozitivní třídní klima ve všech hospitovaných hodinách s respektem a vstřícností",
+        "Žáci dodržují nastavená pravidla komunikace a chování",
+        "Zdvořilá a přátelská komunikace mezi žáky a vyučujícími"
+      ],
+      "partnerships_practice": [
+        "Partnerství s uměleckými středními a vysokými školami",
+        "Spolupráce s místním divadlem a filharmonií",
+        "Setkávání s významnými domácími a zahraničními umělci",
+        "Ve fázi jednání: spolupráce se zahraničními uměleckými školami"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Některé pasáže jsou technické (např. popis metod), ale pro rodiče jsou klíčové informace dostupné.",
+      "uncertainty_notes": [
+        "Nelze posoudit kvalitu maturitních výsledků – škola existuje teprve rok, žáci jsou v 1. ročníku",
+        "Dlouhodobá stabilita pedagogického sboru není jasná – sbor se teprve formuje",
+        "Dopad všeobecného vzdělání na budoucí uplatnění žáků není zatím vidět"
+      ]
+    }
+  }
+}

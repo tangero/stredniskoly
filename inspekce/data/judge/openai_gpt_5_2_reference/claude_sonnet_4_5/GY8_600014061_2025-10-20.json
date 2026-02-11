@@ -1,0 +1,11 @@
+{
+  "report_id": "GY8_600014061_2025-10-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "claude_sonnet_4_5",
+  "run_started_utc": "2026-02-09T12:21:08.318445+00:00",
+  "run_finished_utc": "2026-02-09T12:21:49.827989+00:00",
+  "call_error": null,
+  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
+  "raw_response": "{\n  \"report_id\": \"GY8_600014061_2025-10-20\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Nadhodnocení úspěchů v soutěžích: formulace „žáci pravidelně vyhrávají olympiády“ není ve zdroji doložena (zpráva uvádí „dosahují významných úspěchů“).\",\n    \"Tvrzení o „prestižních“ vysokých školách je hodnotící a ve zdroji explicitně není (zdroj uvádí 100% přijetí na vybrané VŠ, bez hodnocení prestiže).\",\n    \"V části o řízení ZUŠ je zachycen problém metodické podpory, ale kandidát nevyužívá některé důležité formulace ze závěrů (např. že rozdělení kompetencí a odpovědnosti v ZUŠ je „nesystémové“), což snižuje úplnost pro rodičovské rozhodování.\"\n  ],\n  \"best_points\": [\n    \"Správně a konkrétně přebírá",
+  "judge_output": null
+}

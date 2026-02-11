@@ -1,0 +1,119 @@
+{
+  "report_id": "SOS_600026957_2023-02-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:47:33.767061+00:00",
+  "run_finished_utc": "2026-02-09T16:48:03.921705+00:00",
+  "raw_file": "SOS_600026957_2023-02-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600026957_2023-02-14",
+    "school_profile": {
+      "school_type": "Střední škola s 18 obory: 4leté obory s maturitou (IT, hotelnictví, pedagogika, sociální činnost), 3leté obory s výučním listem (pekař, cukrář, kuchař, prodej, služby) a praktické školy",
+      "inspection_period": "14. února až 17. února 2023",
+      "school_change_summary": "Nové vedení školy (ředitelka a dva zástupci jmenováni ve školním roce 2022/2023). Postupné zlepšování materiálních podmínek. Zavedení elektronického informačního systému. Škola vzdělává 788 žáků v denní formě, z toho 344 se speciálními vzdělávacími potřebami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Péče o žáky se speciálními potřebami",
+          "detail": "Pedagogové vytvářejí příznivé prostředí s vstřícným a respektujícím přístupem k individuálním potřebám těchto žáků.",
+          "evidence": "Při hospitacích byla patrná individualizace výuky a poskytování podpůrných opatření v souladu s doporučením."
+        },
+        {
+          "tag": "Sociální a osobnostní rozvoj",
+          "detail": "Žáci se zapojují do dobrovolnické činnosti, charitativních akcí a mezinárodních projektů (Erasmus+, CISCO Akademie).",
+          "evidence": "Sbírky šatstva, dobrovolnictví v domovech seniorů, stáže v zahraničí, získání 15 certifikátů CISCO."
+        },
+        {
+          "tag": "Podpora ohrožených žáků",
+          "detail": "Škola nabízí doučování, konzultace a řeší výchovné problémy v počátcích s rodinou.",
+          "evidence": "Výchovné pohovory, zasedání výchovné komise, spolupráce s odborem sociálně právní ochrany dítěte."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky maturit z cizích jazyků",
+          "detail": "Neúspěšnost žáků v cizích jazycích přesahuje celostátní průměr ve všech oborech (Hotelnictví 20%, IT 28,6%, Sociální činnost 22%).",
+          "evidence": "Maturitní zkoušky vykazují nižší úspěšnost než žáci stejných oborů v ČR, zejména v cizích jazycích."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Průměrná absence činí 199 hodin na žáka za rok, neomluvená absence 5 hodin na žáka.",
+          "evidence": "Absence často vede k odchodům žáků ze studia, zejména v oborech pekař, cukrář, kuchař-číšník."
+        },
+        {
+          "tag": "Problémy v řízení a komunikaci vedení",
+          "detail": "Neshody mezi vedením a pedagogy nejsou řešeny ke spokojenosti obou stran. Dotazník ukázal, že 60% pedagogů se obává rozporovat vedení.",
+          "evidence": "Anonymní dotazník: 37,3% pedagogů odpovědělo 'spíše ne' na otázku, zda mohou bez obav rozporovat vedení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší slabé výsledky z cizích jazyků na maturitě a jaké jsou plány na zlepšení?",
+        "Jaké jsou důvody vysoké absence žáků a jak s ní škola pracuje v jednotlivých oborech?",
+        "Jak probíhá výuka v sloučených třídách (prodavačské práce, zpracovatel přírodních pletiv) a jak jsou zajištěna podpůrná opatření pro žáky se speciálními potřebami?"
+      ],
+      "who_school_fits": [
+        "Žáci se speciálními vzdělávacími potřebami, kterým vyhovuje individualizovaný přístup a vstřícné prostředí",
+        "Žáci zaměření na praktické obory (gastronomie, služby, zdravotnictví), kde má škola dobré vazby na zaměstnavatele",
+        "Žáci, kterým vyhovuje domov mládeže a mimoškolní aktivity (kroužky, dobrovolnictví, zahraniční stáže)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími jazykovými schopnostmi, pokud plánují maturitu z cizího jazyka (výsledky jsou pod průměrem)",
+        "Žáci v oborech pekař, cukrář, kuchař-číšník, kde je vysoká míra předčasného ukončení studia",
+        "Žáci, kteří potřebují stabilní a jasné vedení – nové vedení školy se teprve etabluje a komunikace s pedagogy není optimální"
+      ],
+      "plain_czech_summary": "Střední škola prof. Zdeňka Matějčka je zaměřena na praktické obory a péči o žáky se speciálními potřebami. Silnými stránkami jsou vstřícný přístup pedagogů, bohatá mimoškolní nabídka a spolupráce se zaměstnavateli. Problémy jsou v slabých výsledcích maturit z jazyků, vysoké absenci žáků a komunikaci mezi novým vedením a pedagogy. Škola je vhodná pro žáky orientované na praxi a ty se speciálními potřebami, ale rodiče by měli zvážit jazykové výsledky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stagnace – výsledky se zlepšují pomalu, v cizích jazycích jsou pod průměrem",
+        "key_numbers": [
+          "95% žáků prospělo nebo prospělo s vyznamenáním v maturitních oborech",
+          "Hotelnictví: 20% neúspěšných, IT: 28,6% neúspěšných, Sociální činnost: 22% neúspěšných",
+          "Závěrečné zkoušky: 97,5% úspěšnosti (104 z 107 žáků)"
+        ],
+        "evidence": "Maturitní zkoušky vykazují nižší úspěšnost než žáci stejných oborů v ČR, zejména v cizích jazycích. Škola se výsledky zabývá, ale přijatá opatření nevykazují tendenci ke zlepšování."
+      },
+      "absence": {
+        "trend": "Vysoká a problematická – průměrně 199 hodin na žáka za rok",
+        "key_numbers": [
+          "Průměrná absence: 199 hodin na žáka za rok",
+          "Neomluvená absence: 5 hodin na žáka za rok",
+          "Nejvyšší odchody v oborech: pekař, cukrář, kuchař-číšník a dálkové studium"
+        ],
+        "evidence": "Absence je často ovlivněna nepřizpůsobením se pravidelnému školnímu režimu a nízkou motivací. Neomluvená absence často končí odchodem žáka ze školy."
+      },
+      "support_services": [
+        "Poradenské pracoviště vedené speciální pedagožkou s 4 dalšími pedagogy (výchovná poradkyně, speciální pedagožka, školní psycholožka, metodička prevence)",
+        "Asistenti pedagogů efektivně podporují žáky se speciálními vzdělávacími potřebami",
+        "Doučování a individuální konzultace pro žáky ohrožené školní neúspěšností",
+        "Kariérové poradenství všem žákům",
+        "Finanční podpora pro žáky ze sociálně slabého prostředí"
+      ],
+      "safety_climate": [
+        "Bezpečnost a ochrana zdraví jsou řešeny systematicky a odpovědně",
+        "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování",
+        "Míra úrazovosti je na zvýšené úrovni – důvodem jsou zranění v tělesné výchově a praktickém vyučování",
+        "Škola pozitivně podporuje zdravý životní styl (kurzy plavání, lyžování)"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zaměstnavateli v mnoha oborech (sociální služby, zdravotnictví, školství, gastronomie)",
+        "Partnerství s Asociací kuchařů a cukrářů ČR, Českou barmanskou organizací, AHR",
+        "Projekt Erasmus+ – stáže v Itálii, Francii, Nizozemí",
+        "Akademie CISCO – žáci získávají certifikáty v IT (15 certifikátů v minulém roce)",
+        "Účast v oborových soutěžích s dobrými výsledky",
+        "Spolupráce se zřizovatelem na veřejných akcích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 3,
+      "czech_clarity_reason": "Zpráva je detailní a fakticky bohatá, ale obsahuje některé nejasnosti. Inspektoři kritizují 'neshody mezi vedením a pedagogy', ale konkrétní obsah těchto neshod není jasně specifikován. Vedení školy v připomínkách právem poukazuje na nekonkrétnost. Druhá kritika týkající se sloučených tříd je lépe zdokumentována (konkrétní čísla podpůrných oatření), ale i zde by bylo užitečné více konkrétních příkladů z hospitací.",
+      "uncertainty_notes": [
+        "Neshody mezi vedením a pedagogy jsou popsány obecně; není jasné, které konkrétní vize a strategie nejsou akceptovány pedagogy",
+        "Dotazníkové šetření se zúčastnilo jen 45% pedagogů (50 z 112), což snižuje reprezentativnost zjištění",
+        "Kritika sloučených tříd vychází z analýzy rozvrhu a dokumentace, ale není jasné, jak konkrétně to ovlivňuje kvalitu výuky jednotlivých žáků"
+      ]
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "report_id": "LYC_600010015_2021-11-02",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:22:23.106699+00:00",
+  "run_finished_utc": "2026-02-10T08:23:46.682076+00:00",
+  "raw_file": "LYC_600010015_2021-11-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600010015_2021-11-02",
+    "school_profile": {
+      "school_type": "Střední škola (Obchodní akademie a lyceum)",
+      "inspection_period": "2.−4. 11. 2021",
+      "school_change_summary": "Škola výrazně zlepšila materiální vybavení a budovu díky evropským fondům a zavedla funkční systém distanční výuky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky a praxe",
+          "detail": "Škola nabízí širokou škálu jazyků a kvalitní zahraniční stáže v rámci programu Erasmus+.",
+          "evidence": "Vzdělávání v cizích jazycích má tradičně velmi dobrou úroveň... Rozvoj cizojazyčných dovedností žáků tradičně podporují zahraniční exkurze a studijní pobyty."
+        },
+        {
+          "tag": "Vstřícné prostředí",
+          "detail": "Panuje zde příznivé klima, vstřícné vztahy a funkční systém prevence rizikového chování.",
+          "evidence": "Společným znakem sledované výuky byl vstřícný vztah učitelů a žáků a vzájemná tolerance... Systematicky a efektivně uplatňovaná preventivní strategie školy."
+        },
+        {
+          "tag": "Vybavení školy",
+          "detail": "Škola prošla rekonstrukcí, má moderní vybavení a kvalitní technické zázemí.",
+          "evidence": "Obchodní akademie od poslední inspekce významně zkvalitnila materiální podmínky... vysokorychlostním internetem, včetně bezdrátové WIFI."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Jednotnost výuky",
+          "detail": "Existují rozdíly v kvalitě a metodách výuky mezi jednotlivými učiteli.",
+          "evidence": "Byly zaznamenány zřetelné rozdíly v pojetí výuky jednotlivých učitelů... Odborné znalosti byly ve vysoké míře účelně aplikovány, v menší míře však... aktivizujících metod."
+        },
+        {
+          "tag": "Časové manažment",
+          "detail": "Vyučující ne vždy dodržují plnou časovou délku hodin.",
+          "evidence": "Důležitým faktorem je dodržování vyučovací jednotky v plné časové šíři, což se vždy nedařilo."
+        },
+        {
+          "tag": "Absence praxe",
+          "detail": "Pandemie omezila možnosti odborné praxe a praktické výuky.",
+          "evidence": "Negativní dopady na vzdělávací obsah se projevily zejména v absenci praktické výuky... aktuálně se začínají projevovat důsledky... v menší ochotě partnerů přijímat žáky na souvislou dvoutýdenní praxi."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola podporuje začleňování aktivizujících metod výuky u všech učitelů?",
+        "Jaká je aktuální nabídka zahraničních stáží a jak se jí daří realizovat v současné situaci?",
+        "Jakým způsobem škola zajišťuje dostatečnou kapacitu pro odborné praxe u partnerů ve městě?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří chtějí získat ekonomické vzdělání s uplatněním na trhu práce.",
+        "Pro zájemce o studium cizích jazyků a zahraniční zkušenosti.",
+        "Pro žáky hledající bezpečné a vstřícné školní prostředí."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty očekávající inovativní a aktivizující metody výuky u všech předmětů.",
+        "Pokud je pro vás prioritní vlastní sportovní vybavení školy (chybí vlastní tělocvična).",
+        "Pro rodiče, kteří kladou důraz na striktní dodržování časového plánu vyučovacích hodin."
+      ],
+      "plain_czech_summary": "Obchodní akademie v České Lípě nabízí kvalitní přípravu do ekonomické praxe se silným důrazem na jazyky a mezinárodní stáže. Škola se pyšní moderně rekonstruovaným prostředím, bezbariérovým přístupem a vstřícným klima. Výuka je odborná, byť někdy tradiční, a studenti dosahují nadprůměrných výsledků u maturity. Rodiče by měli sledovat, jak se škole daří obnovit plný rozsah odborných praxí po covidu. Celkově jde o školu s jasnou vizí a dobrou pověstí, kam se lehce dostávávají i studenti s odlišným mateřským jazykem."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se (zejména u OA)",
+        "key_numbers": [
+          "91% úspěšnost (60 z 66 žáků)",
+          "Ekonomické lyceum a Veřejnosprávní činnost dlouhodobě nadprůměrné",
+          "Obchodní akademie se v posledních dvou letech zlepšila"
+        ],
+        "evidence": "Ve školním roce 2020/2021 z 66 žáků uspělo 60... úspěšnost žáků u maturitní zkoušky je zejména v oborech Ekonomické lyceum a Veřejnosprávní činnost dlouhodobě vyšší než celorepublikový průměr."
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "3 ředitelské důtky za rok",
+          "3 snížené známky z chování za rok",
+          "90 % absolventů pokračuje na VŠ"
+        ],
+        "evidence": "Díky vhodně nastaveným pravidlům... se škole daří úspěšně předcházet vysoké či neomluvené absenci."
+      },
+      "support_services": [
+        "Funkční výchovné a kariérové poradenství (3 pracovníci)",
+        "Cílená podpora žákům s jazykovou bariérou",
+        "Systém prevence rizikového chování včetně adaptačních kurzů"
+      ],
+      "safety_climate": [
+        "Kamerový systém s napojením na bezpečnostní službu",
+        "Nízká míra úrazovosti",
+        "Bezproblémové chování žáků (pochvaly převažují)"
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce s MěÚ Česká Lípa (oponenti maturitních prací)",
+        "Erasmus+ a ECVET (stáže v UK, Německu, Rakousku)",
+        "Spolupráce s lokálními firmami na odborné praxi"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán srozumitelně, klíčová data jsou jasně uvedena v textu i v závěru.",
+      "uncertainty_notes": []
+    }
+  }
+}

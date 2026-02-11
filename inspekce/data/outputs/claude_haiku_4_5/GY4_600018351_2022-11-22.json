@@ -1,0 +1,115 @@
+{
+  "report_id": "GY4_600018351_2022-11-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:55:27.178773+00:00",
+  "run_finished_utc": "2026-02-09T16:55:53.170132+00:00",
+  "raw_file": "GY4_600018351_2022-11-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600018351_2022-11-22",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium s možností sportovní přípravy",
+      "inspection_period": "22. až 24. listopadu 2022",
+      "school_change_summary": "Škola realizovala pouze část doporučených opatření z předchozí inspekce. Postupně se zlepšují materiální podmínky, ale systém práce s výsledky žáků zůstává slabý."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "Všichni žáci uspěli u maturitní zkoušky, výsledky jsou srovnatelné s průměrem gymnázií v ČR.",
+          "evidence": "Ve školním roce 2021/2022 uspěli u maturitní zkoušky všichni žáci v řádném a opravném termínu."
+        },
+        {
+          "tag": "Úspěchy v soutěžích a projektech",
+          "detail": "Žáci dosahují výborných výsledků v robotice, sportu, olympiádách a soutěžích s mezinárodním přesahem.",
+          "evidence": "Žáci dosahují úspěchů v regionálních a republikových soutěžích, např. v cizích jazycích, biologické olympiádě."
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Škola má kvalitní materiální podmínky včetně laboratoře robotiky, nového sportovního hřiště a didaktické techniky.",
+          "evidence": "Postupná obnova a modernizace materiálního vybavení, rozšiřování laboratoře robotiky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá individuální podpora žáků",
+          "detail": "Učitelé málo diferencují výuku podle potřeb jednotlivých žáků, zejména těch se speciálními potřebami nebo nadaných.",
+          "evidence": "Absence individuální práce se žáky se speciálními vzdělávacími potřebami, diferenciace zadané práce nebyla zaznamenána."
+        },
+        {
+          "tag": "Neformální zpětná vazba pro učitele",
+          "detail": "Ředitel neposkytuje učitelům systematickou zpětnou vazbu, hospitační činnost probíhá neformálně bez analýzy na pedagogické radě.",
+          "evidence": "Ředitel dává učitelům pouze neformální zpětnou vazbu, závěry nejsou systematicky prezentovány na pedagogické radě."
+        },
+        {
+          "tag": "Chybí sebehodnocení žáků",
+          "detail": "V závěrech hodin žáci nedostávají prostor pro sebehodnocení ani formativní zpětnou vazbu motivující k dalšímu učení.",
+          "evidence": "V závěrech většiny vyučovacích hodin nebyl vytvořen žákům dostatečný prostor pro sebehodnocení či vzájemné hodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s nadanými žáky a jak jim umožňuje jejich rozvoj?",
+        "Jaký systém má škola pro podporu žáků, kteří mají potíže s učením nebo se speciálními vzdělávacími potřebami?",
+        "Jak se učitelé podílejí na zlepšování své práce – jakou dostávají zpětnou vazbu a jak se vzájemně učí?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí dosáhnout vysokých výsledků u maturity a pokračovat na vysoké škole",
+        "Talentovaní žáci zajímající se o robotiku, vědu, sport nebo cizí jazyky",
+        "Žáci, kteří si cení kvalitního vybavení a moderního prostředí"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se speciálními vzdělávacími potřebami – systém jejich podpory není dostatečně nastaven",
+        "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku podle svého tempa",
+        "Žáci, kteří se učí lépe skrze sebehodnocení a reflexi – toto není v hodinách dostatečně rozvíjeno"
+      ],
+      "plain_czech_summary": "Gymnázium v Jeseníku je kvalitní školou s výborným vybavením a úspěšnými žáky. Všichni maturanti uspějí a žáci dosahují skvělých výsledků v soutěžích. Problém je v tom, že učitelé málo přizpůsobují výuku jednotlivým žákům – zejména těm, kteří potřebují více pomoci nebo jsou nadaní. Učitelé také nedostávají dostatečnou zpětnou vazbu na svou práci a žáci se málo učí sami sebe hodnotit."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoký",
+        "key_numbers": [
+          "100% úspěšnost v řádném a opravném termínu",
+          "Výsledky srovnatelné s průměrem gymnázií v ČR",
+          "Velká část absolventů pokračuje na vysokých školách"
+        ],
+        "evidence": "Ve školním roce 2021/2022 uspěli u maturitní zkoušky všichni žáci, výsledky dlouhodobě korespondují s úspěšností dané skupiny oborů."
+      },
+      "absence": {
+        "trend": "Není v textu specifikován",
+        "key_numbers": [
+          "Absence je sledována a vyhodnocována na úrovni tříd"
+        ],
+        "evidence": "Záznamy z pedagogické rady obsahují statistická vyhodnocení absence žáků jednotlivých tříd."
+      },
+      "support_services": [
+        "Výchovná poradkyně zaměřená na integraci žáků se speciálními vzdělávacími potřebami",
+        "Školní metodik prevence zajímající se o rizikové chování a kariérové poradenství",
+        "Doučování a individuální konzultace pro žáky s rizikem školního neúspěchu",
+        "Adaptační kurzy pro prvňáky zaměřené na sociální kompetence"
+      ],
+      "safety_climate": [
+        "Příjemná pracovní a tvůrčí atmosféra, nekonfliktní vztahy mezi žáky a učiteli",
+        "Partnerský přístup založený na vzájemné důvěře a respektu",
+        "Vysoký počet pochval přesahující počet kázeňských opatření",
+        "Preventivní programy zaměřené na závislosti, šikanu a poruchy příjmu potravy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se základními školami v okolí na propagaci gymnázia",
+        "Partnerství se školami v Německu a projekty Erasmus+ pro rozvoj jazykové gramotnosti",
+        "Spolupráce s místními sportovními oddíly a firmami v oblasti robotiky",
+        "Aktivní rodičovské sdružení pomáhající při školních akcích",
+        "Studentská rada umožňující participaci žáků na chodu školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Hlavní problémy jsou jasně identifikovány (slabá diferenciace, chybějící sebehodnocení, neformální zpětná vazba). Některé pasáže jsou však technické a vyžadují pozornost.",
+      "uncertainty_notes": [
+        "Absence není v textu konkrétně kvantifikována – není jasné, zda je problém nebo ne",
+        "Není specifikováno, kolik procent žáků má speciální vzdělávací potřeby (zmíněno 18 ze 407 = 4,4%)",
+        "Chybí informace o počtu žáků, kteří opakují ročník nebo odcházejí ze školy"
+      ]
+    }
+  }
+}

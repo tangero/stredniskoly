@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600017567_2023-02-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:47:15.191694+00:00",
+  "run_finished_utc": "2026-02-09T16:47:45.139920+00:00",
+  "raw_file": "SOS_600017567_2023-02-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017567_2023-02-14",
+    "school_profile": {
+      "school_type": "Střední škola PRIGO, s.r.o. – soukromá střední škola s čtyřmi obory: Obchodní akademie, Ekonomika a podnikání se zaměřením na sport, Předškolní a mimoškolní pedagogika, Veterinářství",
+      "inspection_period": "14. února 2023 až 17. února 2023",
+      "school_change_summary": "Od poslední inspekce v 2016 se škola transformovala: rozšířila nabídku ze 58 žáků v jednom oboru na 256 žáků ve čtyřech oborech, kapacita vzrostla o 440 %, v červnu 2022 nastoupila nová ředitelka, od 2019/2020 se vzdělávání přesunulo na novou adresu U Haldy 200/18."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jasná vize a rozvoj",
+          "detail": "Škola má promyšlenou koncepci rozvoje s prioritou na odborné a jazykové kompetence, kterou aktivně naplňuje.",
+          "evidence": "Ředitelka nastavila srozumitelnou koncepci, kterou členové pedagogického sboru aktivně sdílejí."
+        },
+        {
+          "tag": "Kvalitní odborná výuka",
+          "detail": "Výuka odborných předmětů využívá pestré metody, praktické příklady a aktivní zapojení žáků.",
+          "evidence": "Vyšší kvalita výuky zaznamenána ve sledované výuce odborných předmětů s účinným propojením frontální výuky s aktivním dialogem."
+        },
+        {
+          "tag": "Bohaté mimoškolní aktivity",
+          "detail": "Žáci se účastní soutěží, olympiád, mezinárodních projektů a získávají jazykové certifikáty.",
+          "evidence": "Žáci reprezentují školu v celostátních kolech a na mezinárodní úrovni, v posledních třech letech získalo certifikát 7 žáků."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá výuka všeobecných předmětů",
+          "detail": "Převažuje frontální výuka s málo jasně stanoveným cílem, chybí diferenciace a formativní hodnocení.",
+          "evidence": "Nízká míra směřování vzdělávacího cíle na potřeby žáků, role učitelů dominantní, aktivita žáků nízká."
+        },
+        {
+          "tag": "Nedostatečný rozvoj čtenářské gramotnosti",
+          "detail": "Práce s textem se uplatňuje jen ojediněle mimo český jazyk, chybí systematický rozvoj kritického myšlení.",
+          "evidence": "Výuka pouze částečně podporuje rozvoj čtenářské gramotnosti, v externím testování byly výsledky průměrné."
+        },
+        {
+          "tag": "Personální problémy",
+          "detail": "Část pedagogů nemá odbornou kvalifikaci, poznatky z dalšího vzdělávání se málo aplikují v praxi.",
+          "evidence": "Část pracovníků nemá odbornou kvalifikaci, což se v ojedinělých případech negativně odrazilo v kvalitě výuky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zlepšit výuku všeobecných předmětů a zavádět více aktivizačních metod?",
+        "Jaké konkrétní kroky podnikne pro zvýšení kvalifikace pedagogů bez odborného vzdělání?",
+        "Jak se škola vypořádá s prostorovou tísní v některých učebnách (např. veterinární učebna) a kdy bude rekonstrukce budovy hotova?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na odborné předměty a praktickou výuku – obory Veterinářství, Ekonomika a podnikání, Předškolní pedagogika mají kvalitní praktickou výuku.",
+        "Motivovaní žáci s ambicemi na vysokou školu – škola nabízí stipendijní programy a podporu v jazykových certifikátech.",
+        "Žáci hledající mezinárodní zkušenosti – škola pořádá soutěže, projekty a má kontakty na zahraniční partnery."
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující silnou podporu v češtině a obecném vzdělání – výuka těchto předmětů má rezervy v metodice a diferenciaci.",
+        "Žáci s učebními obtížemi – formativní hodnocení a individuální přístup nejsou dostatečně rozvinuty.",
+        "Rodiny očekávající tradičnější přístup – škola se orientuje na inovativní metody, které jsou teprve zaváděny."
+      ],
+      "plain_czech_summary": "Střední škola PRIGO je dynamicky se rozvíjející soukromá škola s jasnou vizí a čtyřmi obory. Silné stránky: kvalitní odborná výuka, bohaté mimoškolní aktivity, jazykové certifikáty. Slabiny: výuka všeobecných předmětů je příliš frontální bez jasných cílů, chybí diferenciace a formativní hodnocení, nedostatečný rozvoj čtenářské gramotnosti. Část pedagogů nemá kvalifikaci. Škola má prostor pro zlepšení v metodice výuky a individuální podpoře žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní trend po zavedení opatření",
+        "key_numbers": [
+          "Cizí jazyk v Obchodní akademii 2020/2021: horší než průměr ČR",
+          "Po navýšení hodinové dotace 2021/2022: 100% úspěšnost",
+          "Ostatní obory dosud maturitou neukončily"
+        ],
+        "evidence": "K horším výsledkům z cizího jazyka škola přijala účinná opatření (navýšení hodinové dotace seminárem), v dalším roce dosáhla stoprocentní úspěšnosti."
+      },
+      "absence": {
+        "trend": "Pozitivní trend v prospěchu",
+        "key_numbers": [
+          "2021/2022: 24% žáků s vyznamenáním",
+          "2021/2022: 1,4% neprospělo (3 žáci)",
+          "Snížení procenta školní neúspěšnosti oproti 2020/2021"
+        ],
+        "evidence": "Ve školním roce 2021/2022 prospělo 24% žáků s vyznamenáním, neprospěli tři žáci (1,4%), došlo ke snížení procenta školní neúspěšnosti."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovný poradce a školní metodik prevence",
+        "Individuální konzultace pro žáky se studijními obtížemi",
+        "Projekt BuddyGo: mentoring starších žáků pro mladší spolužáky",
+        "Adaptační kurzy pro třídní kolektivy"
+      ],
+      "safety_climate": [
+        "Budova zabezpečena proti vstupu cizích osob",
+        "Žáci preventivně poučováni o pravidlech bezpečnosti a ochrany zdraví",
+        "Zpracována analýza rizik včetně opatření k eliminaci",
+        "Nárůst úrazů souvisí s rostoucím počtem žáků a aktivitami v tělesné výchově"
+      ],
+      "partnerships_practice": [
+        "Rozšířená spolupráce se sociálními partnery v oblasti učební a souvislé praxe",
+        "Propojování s dalšími školami PRIGO pro sdílení zkušeností a aktivit",
+        "Zahraniční stáže ve spolupráci se zahraničními školami (po pandemii se nepodařilo obnovit)",
+        "Projekty: BuddyGo, Školy – vyslanci evropského parlamentu, JA studentská firma"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Hlavní zjištění jsou jasně oddělena v sekcích. Některé pasáže jsou však delší a obsahují více technických termínů, které mohou být pro laické rodiče méně přístupné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak dlouho trvá rekonstrukce budovy a kdy bude hotova – pro rodiče je to důležitá informace.",
+        "Není jasné, kolik konkrétně pedagogů nemá odbornou kvalifikaci a v kterých oborech – údaj 'část pracovníků' je vágní.",
+        "Zahraniční stáže se po pandemii neobnovily, ale není jasné, zda je to dočasný stav nebo dlouhodobý problém."
+      ]
+    }
+  }
+}

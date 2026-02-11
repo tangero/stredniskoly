@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600010589_2022-09-14",
+  "school_profile": {
+    "school_type": "Gymnázium a Střední odborná škola pedagogická (4leté a 8leté gymnázium, Předškolní a mimoškolní pedagogika, Pedagogické lyceum)",
+    "inspection_period": "14. září 2022 až 10. listopadu 2022",
+    "school_change_summary": "Od poslední inspekce: nová chemická laboratoř, hudební centrum, venkovní posilovna, mobilní počítačová učebna, dva výtahy (plná bezbariérnost), rekonstrukce knihovny, relaxační koutky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Gymnázium dosahuje 91-100% úspěšnosti, obor Předškolní pedagogika 77-87% po opravách.",
+        "evidence": "Jarní období 2022: gymnázium čtyřleté 91,3%, osmileté 79,9%, po opravách 100%."
+      },
+      {
+        "tag": "Špičková jazyková výuka",
+        "detail": "Tradičně vysoká úroveň angličtiny, němčiny, francouzštiny s autentickými texty a rodilými mluvčími.",
+        "evidence": "Vyučující využívají různé formy práce, skupinové práce, didaktické hry, výuka v cílovém jazyce."
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Plně bezbariérová budova, specializované laboratoře, výtvarný ateliér, hudební centrum, vlastní tělocvičny a hřiště.",
+        "evidence": "Více než stoletá budova prochází postupnou obnovou, nadstandardní podmínky pro všechny obory."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivní učení",
+        "detail": "Převaha frontální výuky, žáci málo diskutují a sami nehledají informace.",
+        "evidence": "Frontální předávání informací převažuje, žákovské diskuze při řešení úloh téměř chybí."
+      },
+      {
+        "tag": "Slabší matematika v odborných oborech",
+        "detail": "Žáci oboru Předškolní pedagogika mají nižší úspěšnost v matematice na maturitě.",
+        "evidence": "Čtyři žáci neuspěli ve společné části maturitní zkoušky z matematiky."
+      },
+      {
+        "tag": "Bezpečnostní rizika",
+        "detail": "Škola potřebuje věnovat větší pozornost aktuálním rizikům a důsledně přijímat opatření.",
+        "evidence": "Je nutné věnovat větší pozornost aktuálním rizikům a důsledně přijímat opatření k jejich eliminaci."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje samostatné myšlení a kritické uvažování žáků?",
+      "Jaké má škola zkušenosti s uplatněním absolventů oboru Předškolní pedagogika na trhu práce?",
+      "Jak se škola vypořádává s rozdílnými učebními tempy jednotlivých žáků?"
+    ],
+    "who_school_fits": [
+      "Talentovaní žáci s ambicí studovat na vysoké škole (89% gymnazistů pokračuje v terciárním vzdělání)",
+      "Zájemci o pedagogické obory s podporou praktické přípravy v mateřských školách",
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci (výměnné pobyty, Cambridge zkoušky)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciace (převaha frontální výuky)",
+      "Uchazeči se slabší matematikou do oboru Předškolní pedagogika (nižší úspěšnost v matematice)",
+      "Žáci, kteří se lépe učí aktivním objevováním než tradičním způsobem (málo diskusí a samostatného vyhledávání)"
+    ],
+    "plain_czech_summary": "Jde o prestižní školu s dlouhodobě vysokým zájmem uchazečů. Gymnázia dosahují výborných výsledků na maturitě (91-100%), obor Předškolní pedagogika má dobrou praktickou přípravu v mateřských školách. Výuka jazyků je na vysoké úrovni. Škola má moderní vybavení a je plně bezbariérová. Slabší stránkou je převaha frontální výuky a málo prostoru pro samostatné myšlení žáků. Matematika v odborných oborech je náročnější."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně velmi dobré výsledky, gymnázia na úrovni či nad průměrem, pedagogické obory lepší než průměr středních pedagogických škol",
+      "key_numbers": [
+        "Gymnázium čtyřleté: 91,3% (po opravách 100%)",
+        "Gymnázium osmileté: 79,9% (po opravách 100%)",
+        "Předškolní pedagogika: 76,7% (po opravách 86,7%)"
+      ],
+      "evidence": "Jarní zkušební období 2022. Společná část maturitní zkoušky: gymnázia 98,8%, matematika u pedagogů slabší."
+    },
+    "absence": {
+      "trend": "Nízký průměrný počet zameškaných hodin na jednoho žáka",
+      "key_numbers": [
+        "Průměrný počet zameškaných hodin na žáka je nízký",
+        "Omlouvání absencí je stanoveno školním řádem"
+      ],
+      "evidence": "Pozitivní zjištění: počet udělených pochval vysoko přesahuje počet výchovných opatření."
+    },
+    "support_services": [
+      "Výchovný poradce v pravidelném kontaktu se žáky, individuální konzultace",
+      "Kariérová poradkyně informuje o studiu a uplatnění na trhu práce",
+      "Prevence rizikového chování, šikany a kyberšikany podle Krizového plánu",
+      "Adaptační kurzy pro primy a první ročník, sociometrická šetření"
+    ],
+    "safety_climate": [
+      "Elektronický systém v entrada prostorech",
+      "Analýza a hodnocení rizik v oblasti bezpečnosti zpracovány, ale nutná větší pozornost aktuálním rizikům",
+      "Vysoká míra sounáležitosti pedagogů i žáků se školou, příznivá atmosféra pro vzdělávání"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Přírodovědecké fakulty UK, TU Liberec, Farmaceutické fakulty Hradec Králové",
+      "Spolupráce s mateřskými školami pro praktickou přípravu oboru Předškolní pedagogika",
+      "Partnerské školy v Německu, Francii, Švýcarsku (studentské výměnné pobyty)",
+      "Zkušební místo Cambridge English, Asociace středních pedagogických škol",
+      "Projekt Dějepis plus, Šablony pro střední školy (EU financování)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní čísla, citace z dokumentů a jasné závěry. Mírně snižuje srozumitelnost pro rodiče vysoká míra detailů a odborné terminologie.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu žáků se speciálními potřebami v jednotlivých oborech (zmíněno jen celkově 12 žáků)",
+      "Chybí konkrétní údaje o počtu žáků, kteří neprospěli (zmíněno jen 'ojediněle')",
+      "Není jasné, jak se liší kvalita výuky mezi jednotlivými obory (gymnázia vs. pedagogické obory)"
+    ]
+  }
+}
+```

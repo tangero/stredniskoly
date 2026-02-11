@@ -1,0 +1,111 @@
+{
+  "report_id": "GY6_600016927_2023-10-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:37:25.907957+00:00",
+  "run_finished_utc": "2026-02-09T16:37:50.697696+00:00",
+  "raw_file": "GY6_600016927_2023-10-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600016927_2023-10-11",
+    "school_profile": {
+      "school_type": "Osmileté, čtyřleté a šestileté gymnázium s bilingvní výukou (česko-anglickou)",
+      "inspection_period": "11.–13. a 16. října 2023",
+      "school_change_summary": "Od poslední inspekce došlo k výraznému zlepšení materiálních podmínek a rozšíření nabídky o školní klub."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vstřícné prostředí a vztahy",
+          "detail": "Škola vytváří prosociální vztahy mezi žáky a pedagogy s partnerským přístupem vyučujících.",
+          "evidence": "Pozitivní pracovní atmosféra, žáci respektují nastavená pravidla komunikace."
+        },
+        {
+          "tag": "Výborné jazykové vzdělání",
+          "detail": "Žáci dosahují vysoké úrovně jazykových kompetencí a úspěšně skládají mezinárodní certifikáty.",
+          "evidence": "Důsledné vedení výuky v cílovém jazyce, vysoká úspěšnost v certifikovaných zkouškách z angličtiny a němčiny."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Moderní, čisté a esteticky upravené prostory s dostatečným vybavením pro výuku.",
+          "evidence": "Všechny učebny vybaveny učebními pomůckami a projekční technikou, příjemné prostředí pro oddech."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená pestrost vyučovacích metod",
+          "detail": "Převažuje frontální výuka, chybí dostatek skupinové práce a aktivizačních prvků.",
+          "evidence": "Ve většině hodin nedostatečná pestrost forem vedla k nerovnoměrnému zapojení žáků do procesu."
+        },
+        {
+          "tag": "Slabé využívání sebehodnocení žáků",
+          "detail": "Žáci nejsou dostatečně zapojeni do vlastního hodnocení a reflexe svého pokroku.",
+          "evidence": "Formativní hodnocení využito minimálně, chybí závěrečné motivační shrnutí hodin."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učitelé málo přizpůsobují úkoly rozdílným schopnostem a tempům práce jednotlivých žáků.",
+          "evidence": "Výraznější obsahová či časová diferenciace nebyla ve výuce příliš patrná."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami a nadané žáky?",
+        "Jaké jsou možnosti účasti v mezinárodních projektech a zahraničních výjezdech?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a práce s různými informačními zdroji?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazykové vzdělání a mezinárodní certifikáty",
+        "Talentovaní a nadaní žáci hledající kvalitní všeobecné vzdělání",
+        "Žáci připravující se na vysokoškolské studium, zejména v zahraničí"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující interaktivní a skupinovou práci – škola se více zaměřuje na frontální výuku",
+        "Žáci s potřebou individuálního přístupu a diferenciované výuky – tato oblast je slabší",
+        "Žáci vyžadující intenzivní zpětnou vazbu a sebereflexi – formativní hodnocení je minimální"
+      ],
+      "plain_czech_summary": "Gymnázium v Olomouci je kvalitní škola se silným zaměřením na jazykové vzdělání a přípravu na vysoké školy. Má moderní vybavení, vstřícné prostředí a stabilizovaný pedagogický sbor. Žáci dosahují výborných výsledků, zejména v maturitách a mezinárodních jazykových testech. Slabší stránkou je menší pestrost vyučovacích metod a omezené využívání aktivizačních prvků. Škola by měla více pracovat na sebehodnocení žáků a lepší diferenciaci výuky podle individuálních potřeb."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě pozitivní",
+        "key_numbers": [
+          "Více než třetina maturantů prospívá s vyznamenáním",
+          "Jednotliví žáci neprospívají",
+          "Lepší výsledky než průměr skupiny oborů v republice"
+        ],
+        "evidence": "Ve společné i profilové části maturitní zkoušky dosahují žáci lepších výsledků v porovnání s průměrem dané skupiny oborů v rámci republiky."
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "Škola se nepotýká s vysokou absencí žáků"
+        ],
+        "evidence": "Na dosahované výsledky vzdělávání pozitivně působí skutečnost, že se škola nepotýká s vysokou absencí žáků ve vyučování."
+      },
+      "support_services": [
+        "Výchovná poradkyně, školní psycholožka a školní metodička prevence",
+        "Individuální konzultace a doučování pro žáky s rizikem neúspěchu",
+        "Kariérové poradenství podporované asociací absolventů"
+      ],
+      "safety_climate": [
+        "Bezpečnost zajišťována podle školního řádu a dalších dokumentů",
+        "Seznamování s riziky a poučení v oblasti bezpečnosti zahrnuty do vzdělávání",
+        "Adaptační kurzy pro první ročníky zaměřené na prevenci konfliktů"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zřizovatelem, školskou radou a zákonnými zástupci žáků",
+        "Partnerství se základními školami v regionu a zahraničními školami",
+        "Nadstandardní spolupráce s městem Olomouc, Univerzitou Palackého a sportovními kluby"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, jasně rozlišuje silné a slabé stránky. Některé pasáže jsou však formulovány úřednickým jazykem, který může být pro laické rodiče obtížnější.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty žáků s speciálními potřebami nebo nadaných žáků",
+        "Chybí konkrétní údaje o počtu hodin jednotlivých předmětů a jejich rozložení",
+        "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými předměty a třídami"
+      ]
+    }
+  }
+}

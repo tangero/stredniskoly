@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY4_600016501_2024-11-19",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté) s vyučovacím jazykem polským",
+    "inspection_period": "19. 11. 2024 - 25. 11. 2024",
+    "school_change_summary": "Od poslední inspekce (2019/2020) došlo k generální rekonstrukci budovy, která rozšířila možnosti vzdělávání. Ve škole nyní působí školní psycholožka (od 2022/2023). Škola má 318 žáků v 12 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a personál",
+        "detail": "Ředitelka efektivně řídí školu, pedagogové jsou kvalifikovaní a odborně zdatní, vedení provádí průběžné hospitace s doporučeními.",
+        "evidence": "Ředitelka vykonává funkci od 2018, hospitační činnost je prováděna průběžně a v dostatečné míře."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Žáci se účastní četných projektů, soutěží, vzdělávacích zájezdů do Polska a rozmanitých zájmových kurzů.",
+        "evidence": "Škola nabízí širokou škálu mimoškolních zájmových kurzů, exkurzí, zahraničních zájezdů a soutěží."
+      },
+      {
+        "tag": "Výborné výsledky na vysokých školách",
+        "detail": "Valná většina absolventů pokračuje ve studiu na vysokých školách, včetně polských univerzit.",
+        "evidence": "Ve školním roce 2023/2024 pokračovalo 96 % absolventů na vysokých školách, z toho cca 20 žáků na polských školách."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezené aktivizační metody ve výuce",
+        "detail": "Výuka se zaměřuje především na frontální formu, chybí skupinová práce, formativní hodnocení a rozvoj kritického myšlení.",
+        "evidence": "Převažovala výuka vedená pouze frontální formou, malá část učitelů vedla žáky ke kooperaci, nebyly využívány prvky formativního hodnocení."
+      },
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Žáci pracují na stejných úkolech se stejnou obtížností bez ohledu na jejich individuální schopnosti a potenciál.",
+        "evidence": "Diferenciace úkolů podle dovedností byla zaznamenána minimálně, docházelo k nižší podpoře rozvoje jejich potenciálu."
+      },
+      {
+        "tag": "Zvýšená úrazovost žáků",
+        "detail": "Škola vykazuje dlouhodobě zvýšenou úrazovost, především v hodinách tělesné výchovy a při sportovních soutěžích.",
+        "evidence": "Škola vykazuje dlouhodobě zvýšenou úrazovost žáků, a to především v hodinách tělesné výchovy a při sportovních soutěžích."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola plánuje zvýšit bezpečnost žáků v tělesné výchově a při sportovních aktivitách?",
+      "Jaké konkrétní kroky podnikne škola k zavedení více skupinové práce a aktivizačních metod ve výuce?",
+      "Jak bude škola individualizovat výuku pro žáky s různými schopnostmi a potenciálem?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o polskou kulturu a jazyk, kteří chtějí studovat v polském prostředí",
+      "Nadaní a motivovaní žáci, kteří se chystají na vysokou školu a chtějí kvalitní přípravu k maturitě",
+      "Žáci zajímající se o mimoškolní aktivity, soutěže a mezinárodní projekty"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciované úkoly podle svých schopností",
+      "Žáci, kteří se lépe učí aktivizačními metodami, skupinovou prací a diskusí než frontální výukou",
+      "Žáci se zdravotními problémy nebo obavy z úrazů v tělesné výchově"
+    ],
+    "plain_czech_summary": "Polské gymnázium v Českém Těšíně je dobře vedená škola s kvalitním pedagogickým sborem a moderně vybavenou budovou. Žáci dosahují výborných výsledků na vysokých školách a mají bohatou nabídku mimoškolních aktivit. Hlavní slabinou je výuka zaměřená především na frontální formu bez dostatečné individualizace a aktivizace žáků. Škola by měla více pracovat na rozvoji kritického myšlení a skupinové práce. Pozornost si zaslouží také zvýšená úrazovost v tělesné výchově."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě pozitivní",
+      "key_numbers": [
+        "96 % absolventů pokračuje na vysokých školách (2023/2024)",
+        "Cca 20 žáků studuje na polských vysokých školách",
+        "Více než 30 % žáků prospělo s vyznamenáním (2023/2024)"
+      ],
+      "evidence": "Žáci dlouhodobě vykazují dobrou úspěšnost u maturitních zkoušek. Ve studiu na vysokých školách pokračuje valná většina žáků."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Inspekční zpráva se absencí žáků nezabývá."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní",
+      "Školní psycholožka poskytující pomoc při vzdělávacích a osobních problémech",
+      "Školní metodička prevence realizující preventivní aktivity",
+      "Doučování českého jazyka pro žáky",
+      "Kariérní poradenství s exkurzemi do firem a vysokoškolskými veletrhy"
+    ],
+    "safety_climate": [
+      "Dlouhodobě zvýšená úrazovost žáků, především v tělesné výchově a při sportovních soutěžích",
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování a ochrany zdraví",
+      "Stoupající trend psychických potíží žáků řešených prostřednictvím školní psycholožky",
+      "Aktivní řešení negativních projevů v chování žáků ve spolupráci se zákonnými zástupci"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s místními základními školami s polským vyučovacím jazykem",
+      "Projekty a aktivity s externími organizacemi",
+      "Vzdělávací zájezdy do Polska rozšiřující znalosti o historii a kultuře",
+      "Účast v soutěžích a přehlídkách v Polské republice",
+      "Návštěvy učitelů a žáků gymnázia v základních školách s polským jazykem"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a obsahují více kritických pozorování, která by mohla být pro rodiče méně srozumitelná bez hlubšího porozumění pedagogickým termínům.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, nelze posoudit trend absence žáků",
+      "Konkrétní počty žáků se speciálními vzdělávacími potřebami (13 žáků) nejsou dále analyzovány",
+      "Nejsou uvedeny konkrétní údaje o počtu úrazů a jejich typu"
+    ]
+  }
+}
+```

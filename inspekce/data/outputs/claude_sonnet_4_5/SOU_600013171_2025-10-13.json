@@ -1,0 +1,10 @@
+{
+  "report_id": "SOU_600013171_2025-10-13",
+  "model_id": "claude_sonnet_4_5",
+  "run_started_utc": "2026-02-09T11:25:18.717543+00:00",
+  "run_finished_utc": "2026-02-09T11:26:21.631718+00:00",
+  "raw_file": "SOU_600013171_2025-10-13.raw.txt",
+  "call_error": null,
+  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
+  "parsed_output": null
+}

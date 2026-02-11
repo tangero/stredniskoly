@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_600013146_2021-10-06",
+  "school_profile": {
+    "school_type": "Střední škola zemědělská a veterinární",
+    "inspection_period": "6. až 8. a 11. 10. 2021",
+    "school_change_summary": "Od poslední inspekce došlo k výraznému rozvoji materiálně technických podmínek a navýšení počtu žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Žáci dosahují dlouhodobě stabilních výsledků, které jsou lepší než republikový průměr v oboru.",
+        "evidence": "Žáci školy byli i v tomto období lepší, než průměrné výsledky vzdělávání žáků ostatních škol stejných oborů."
+      },
+      {
+        "tag": "Zázemí a vybavení",
+        "detail": "Škola nabízí kvalitní prostové a materiální podmínky včetně vlastního školního hospodářství a mlékárny.",
+        "evidence": "Prostorové, materiální a technické podmínky školy jsou na velmi dobré úrovni, umožňují naplňování cílů vzdělávání."
+      },
+      {
+        "tag": "Atmosféra a vztahy",
+        "detail": "Ve škole panuje přátelská atmosféra s otevřenou komunikací a vzájemným respektem.",
+        "evidence": "Společným rysem zhlédnutých vyučovacích hodin byla přátelská atmosféra, pedagogové se žáky otevřeně komunikovali."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Způsob výuky",
+        "detail": "Ve výuce převažuje frontální styl, chybí více moderních metod a mezipředmětové spolupráce učitelů.",
+        "evidence": "V teoretickém vyučování převažovala frontální výuka, chybí systematické využívání vzájemných hospitací."
+      },
+      {
+        "tag": "Hodnocení žáků",
+        "detail": "Učitelé málo využívají zpětnou vazbu a sebehodnocení k motivaci a rozvoji žáků.",
+        "evidence": "Vyučující málo využívají formativní zpětnou vazbu jako prostředek rozvoje osobnosti žáka."
+      },
+      {
+        "tag": "Práce s informacemi",
+        "detail": "Žáci mají malou příležitost pracovat samostatně s informacemi a efektivně využívat závěry hodin.",
+        "evidence": "Samostatná efektivní práce žáků s informacemi byla zaznamenána v malé míře, závěry hodin probíhaly formálně."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje modernizaci vyučovacích metod mimo frontální výuku?",
+      "Jakým způsobem učitelé poskytují žákům zpětnou vazbu, aby je motivovali k dalšímu učení?",
+      "Využívá škola své vybavení (mlékárna, hospodářství) i pro výuku všeobecných předmětů?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří chtějí získat praktické dovednosti v zemědělství a veterinářství na velmi dobře vybaveném pracovišti.",
+      "Pro studenty, kterým vyhovuje přátelské prostředí s důrazem na kultivované vystupování a komunikaci.",
+      "Pro zájemce o studium na škole s dlouhodobě nadprůměrnými studijními výsledky."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří preferují moderní interaktivní formy výuky před tradičním frontálním vyučováním.",
+      "Pro žáky, kteří potřebují častou a detailní zpětnou vazbu o svém pokroku.",
+      "Pokud hledáte školu s důrazem na samostatnou práci s informacemi v teoretických předmětech."
+    ],
+    "plain_czech_summary": "Střední škola zemědělská a veterinární v Lanškrouně nabízí nadprůměrné studijní výsledky a vynikající materiální zázemí včetně školního hospodářství. Škola se úspěšně rozvíjí a má stabilní kolektiv. Mezi hlavní přednosti patří přátelská atmosféra a kvalitní příprava do praxe. Slabinou je tradiční styl výuky s dominancí učitele a nedostatečné využívání moderních metod hodnocení a zpětné vazby. Pro rodiče je důležitou informací nízký počet výchovných opatření a fungující systém prevence rizikového chování."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "lepší než průměr",
+      "key_numbers": [
+        "316 žáků ve 12 třídách",
+        "lepší výsledky než průměr ČR",
+        "dlouhodobě stabilní úroveň"
+      ],
+      "evidence": "Z analýzy... vyplývá, že žáci školy byli i v tomto období lepší, než průměrné výsledky vzdělávání žáků ostatních škol."
+    },
+    "absence": {
+      "trend": "bez nápaditosti",
+      "key_numbers": [
+        "nízký počet výchovných opatření",
+        "ojedinělé hodnocení chování stupněm neuspokojivé",
+        "fungující prevence rizik"
+      ],
+      "evidence": "Příznivou atmosféru školy potvrzuje nízký počet výchovných opatření, také chování bylo hodnoceno stupněm uspokojivé pouze ojediněle."
+    },
+    "support_services": [
+      "Výchovná poradkyně, kariérový poradce a školní metodička prevence.",
+      "Měsíční návštěvy školní psycholožky.",
+      "Nabídka konzultačních hodin a doučování pro ohrožené žáky."
+    ],
+    "safety_climate": [
+      "Přátelská atmosféra a otevřená komunikace mezi učiteli a žáky.",
+      "Pozornost soustředěná na předcházení rizikovým projevům chování.",
+      "Podpora volnočasových aktivit a sportovních klubů."
+    ],
+    "partnerships_practice": [
+      "Široká síť sociálních partnerů v oblasti zemědělství a vědy.",
+      "Spolupráce s univerzitami a zemědělskými podniky.",
+      "Členství ve vzdělávacím centru Agrovenkov."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, pozitiva a negativa jsou jasně oddělena v závěru, text obsahuje konkrétní příklady z praxe.",
+    "uncertainty_notes": [
+      "Neuveden konkrétní počet žáků s nadprůměrnými výsledky, pouze obecné srovnání.",
+      "Chybí přesné údaje o procentuální úspěšnosti u maturity v číslech.",
+      "Není specifikováno, jaké konkrétní moderní metody by měly nahradit frontální výuku."
+    ]
+  }
+}

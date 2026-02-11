@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_600171051_2024-03-14",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola polytechnická - Centrum odborné přípravy (SPŠ polytechnická - COP Zlín)",
+    "inspection_period": "14. března až 19. března 2024",
+    "school_change_summary": "Škola rozšířila nabídku oborů (nový obor Informační technologie od 2020/2021), modernizuje vybavení díky spolupráci s firmami a efektivně využívá finanční zdroje pro zkvalitnění materiálních podmínek, zejména v odborné přípravě."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava na trh práce",
+        "detail": "Škola má účelnou spolupráci s regionálními firmami, která umožňuje žákům praktické vyučování v reálném prostředí a vytváří příležitosti pro jejich profesní uplatnění.",
+        "evidence": "Žáci pracují v moderně vybavených dílnách a na stážích u sociálních partnerů, což přispívá k jejich efektivnímu uplatnění v praxi."
+      },
+      {
+        "tag": "Moderní vybavení a technologie",
+        "detail": "Škola disponuje kvalitně vybaveným materiálním zázemím včetně nových strojírensko-plastikářských dílen a učebny mechatroniky.",
+        "evidence": "Vedení školy se systematicky zaměřuje na zajištění fyzické bezpečnosti a modernizaci vybavení informačními a komunikačními technologiemi."
+      },
+      {
+        "tag": "Stabilní výsledky maturit",
+        "detail": "Výsledky maturitní zkoušky jsou srovnatelné nebo mírně lepší než celorepublikový průměr.",
+        "evidence": "Žáci technických oborů vykazují lepší výsledky ve společné části maturitní zkoušky než celorepublikový průměr stejné skupiny oborů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá samostatnost žáků",
+        "detail": "Žáci nemají dostatek příležitostí k samostatnému vyhledávání informací a jejich analýze.",
+        "evidence": "Zpráva uvádí: 'Žákům nebyl vytvořen prostor pro samostatné využívání různých informačních zdrojů při řešení úloh.'"
+      },
+      {
+        "tag": "Absence individualizace výuky",
+        "detail": "Výuka není dostatečně přizpůsobena různým schopnostem žáků, chybí diferenciace.",
+        "evidence": "Nebyla patrná diferenciace ve výuce s nabídkou úloh různé kognitivní náročnosti odpovídající individuálním schopnostem žáků."
+      },
+      {
+        "tag": "Slabší výuka odborných předmětů",
+        "detail": "Výuka strojírenství a elektrotechniky používá neúčelné metody s převahou frontálního výkladu.",
+        "evidence": "Ve výuce odborných předmětů byly použité metody neúčelné, vzdělávací cíle nebyly jasně formulovány a samostatná práce byla omezena na opisování."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá spolupráce s firmami a jaké jsou možnosti stáží a praxe během studia?",
+      "Jaké jsou plány na zlepšení výuky odborných předmětů, zejména v oblasti diferenciace a samostatné práce žáků?",
+      "Jak se škola zaměřuje na rozvoj dovedností v oblasti vyhledávání a analýzy informací?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou přípravu a budoucí uplatnění v technických oborech",
+      "Studenti, kteří si cení moderního vybavení a spolupráce se skutečnými firmami",
+      "Žáci se zájmem o soutěže a vědomostní aktivity (škola má úspěchy v CNC programování, polygrafii a fotografování)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku podle svých schopností",
+      "Studenti preferující samostatné učení a práci s různými informačními zdroji",
+      "Žáci, kteří se lépe učí dialogem a diskusí než frontálním výkladem"
+    ],
+    "plain_czech_summary": "SPŠ polytechnická v Zlíně je moderní průmyslová škola s kvalitním vybavením a silnou vazbou na místní firmy. Výsledky maturit jsou stabilní a srovnatelné s celorepublikovým průměrem. Praktické vyučování je na vysoké úrovni. Slabší stránkou je výuka teoretických předmětů, kde chybí individualizace, samostatná práce žáků a vyhledávání informací. Škola se zaměřuje na zlepšení těchto oblastí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s mírným zlepšením",
+      "key_numbers": [
+        "Výsledky srovnatelné nebo mírně lepší než celorepublikový průměr",
+        "Technické obory: lepší výsledky ve společné části, horší v profilové části",
+        "Reprodukční grafik: výrazně lepší výsledky v posledních třech letech"
+      ],
+      "evidence": "Celkové výsledky maturitní zkoušky vykazovaly v období posledních tří školních let stabilní úroveň a byly srovnatelné nebo mírně lepší než celorepublikový průměr."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Údaj není v inspekční zprávě uveden"
+      ],
+      "evidence": "Zpráva se nezabývá absencí žáků jako samostatným tématem."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně a školní metodička prevence zajišťují poradenské služby",
+      "Individuální konzultace a skupinové doučování pro předcházení studijnímu neúspěchu",
+      "Spolupráce se školskými poradenskými zařízeními pro žáky se speciálními vzdělávacími potřebami (111 žáků s podpůrnými opatřeními 1.–4. stupně)",
+      "Kariérové poradenství v součinnosti s odbornými organizacemi"
+    ],
+    "safety_climate": [
+      "Fyzická bezpečnost: žáci jsou průběžně seznamováni se zásadami bezpečného chování a riziky",
+      "Ochranné pomůcky: důraz na jejich používání při praktických činnostech a odborném výcviku",
+      "Preventivní strategie: účinná a pozitivně se projevila v dění ve školy",
+      "Adaptační pobyty pro prvňáky, třídnické hodiny a testování sociálního klimatu"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s regionálními firmami oborově zaměřenými na vyučované obory",
+      "Exkurze, stáže a odborná praxe u sociálních partnerů",
+      "Mezinárodní spolupráce se středními školami zaměřená na rozvoj cizojazyčných dovedností",
+      "Spolupráce se dvěma fakultami Univerzity Tomáše Bati",
+      "Kooperace se základními a mateřskými školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní údaje. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a složitější, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Absence konkrétních čísel týkajících se absence žáků - není jasné, zda je to problém nebo ne",
+      "Výsledky testování čtenářské gramotnosti jsou označeny jako 'slabé', ale není uvedeno, co to konkrétně znamená",
+      "Není jasné, jak se konkrétně projevují slabiny v odborných předmětech na výsledcích zkoušek"
+    ]
+  }
+}
+```

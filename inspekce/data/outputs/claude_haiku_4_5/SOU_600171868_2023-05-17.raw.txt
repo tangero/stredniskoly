@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOU_600171868_2023-05-17",
+  "school_profile": {
+    "school_type": "Střední škola technická s domovem mládeže a školní jídelnou",
+    "inspection_period": "17. 5. 2023 – 19. 5. 2023 a 22. 5. 2023",
+    "school_change_summary": "Od poslední inspekce (2015/2016) došlo k výrazným zlepšením v materiální vybavenosti (laboratoř virtuální reality, technických měření, elektrolaboratoř) a kvalitě odborného vzdělávání prostřednictvím exkurzí, přednášek odborníků a stáží. Škola vytvořila novou komunikační strategii a zohlednila doporučení z minulé inspekce, zejména v kvalifikaci pedagogů ve speciálních třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství se zaměstnavateli",
+        "detail": "Škola udržuje vysoce odborné vztahy se sociálními partnery, které se promítají do kvality odborného vzdělávání a lepší uplatnitelnosti absolventů.",
+        "evidence": "Požadavky sociálních partnerů se smysluplně zapracovávají do výuky odborných předmětů a praktické výuky."
+      },
+      {
+        "tag": "Výborné materiální podmínky",
+        "detail": "Škola disponuje moderní vybaveností včetně CNC strojů, svářečské školy, laboratoří a 14 odborně zaměřených dílen.",
+        "evidence": "Materiálně technické podmínky školy jsou na vysoké úrovni a stále dochází k jejich zkvalitňování."
+      },
+      {
+        "tag": "Příznivé klima a empatický přístup",
+        "detail": "Výuka probíhá v přátelské atmosféře založené na vzájemném respektu a empatickém přístupu pedagogů.",
+        "evidence": "Příznivé klima ve škole a práce s žáky založená na empatickém přístupu účinně podporuje pozitivní vztahy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Přes přijatá opatření se nedaří trvale snížit vysokou absenci žáků v průběhu vzdělávání.",
+        "evidence": "Žáci dosahují stabilně vysoké omluvené i neomluvené absence; v dálkové formě neprospělo 41,5 % žáků."
+      },
+      {
+        "tag": "Slabé výsledky v externím testování",
+        "detail": "Žáci dosahují slabých výsledků v testování moderní dějiny, čtenářské gramotnosti a sociální gramotnosti.",
+        "evidence": "Škola využívá externí testování, ve kterých žáci dosahují slabých výsledků (testování moderní dějiny 1. ročník, čtenářská gramotnost 2. ročník)."
+      },
+      {
+        "tag": "Nedostatečná diferenciace ve výuce",
+        "detail": "Výuka nerespektuje dostatečně individuální potřeby žáků, chybí diferenciace úkolů podle schopností.",
+        "evidence": "Nebyla uplatňována individualizace a diferenciace učiva vzhledem ke schopnostem a možnostem jednotlivých žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+      "Jaké jsou možnosti doučování a individuální podpory pro žáky, kteří si nevhodně zvolili obor?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a samostatného myšlení žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o technické a řemeslné obory, kteří chtějí kvalitní praktické vzdělávání",
+      "Studenti, kteří si cení moderní vybavenosti a kontaktu s reálnými zaměstnavateli",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola nabízí speciální třídy a individuální podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s tendencí k absenci – škola má problém s vysokou absencí a nedaří se jí ji snižovat",
+      "Studenti, kteří potřebují silnou individuální podporu a diferenciaci – výuka není dostatečně přizpůsobena různým schopnostem",
+      "Uchazeči, kteří si nejsou jisti volbou oboru – 7,35 % žáků odchází ze školy, často proto, že si nevhodně zvolili obor"
+    ],
+    "plain_czech_summary": "Střední škola technická v Opavě je moderně vybavená technická škola se silnými vazbami na zaměstnavatele. Výuka probíhá v příjemné atmosféře s empatickým přístupem pedagogů. Škola dosahuje dobrých výsledků u maturit (92,6 % úspěšnost) a nabízí kvalitní praktické vzdělávání. Hlavní problémy jsou vysoká absence žáků a nedostatečná individualizace výuky. Škola je vhodná pro žáky s jasným zájmem o technické obory, ale vyžaduje od nich pravidelnou docházku."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – výsledky se zlepšují a překračují celostátní průměr",
+      "key_numbers": [
+        "Mechanik seřizovač 2021/2022: 92,6 % úspěšnost (vs. 85,2 % celostátní průměr)",
+        "Podnikání 2021/2022: 72 % úspěšnost (vs. 71,5 % celostátní průměr)",
+        "Anglický jazyk: 100 % úspěšnost v posledních třech letech"
+      ],
+      "evidence": "V porovnání se stejnou skupinou oborů v posledních třech letech žáci vykazují lepších výsledků v celkové úspěšnosti u maturitní zkoušky."
+    },
+    "absence": {
+      "trend": "Negativní – vysoká absence přetrvává navzdory opatřením",
+      "key_numbers": [
+        "Odchody žáků ze školy: 7,35 % v letošním školním roce",
+        "Dálková forma: 41,5 % neprospívajících žáků",
+        "Snížené hodnocení z chování: 16 žáků v 2021/2022, 15 žáků v 1. pololetí 2022/2023"
+      ],
+      "evidence": "Žáci dosahují stabilně vysoké omluvené i neomluvené absence. Přes přijatá opatření se stále nedaří u všech žáků fixovat návyky pravidelné školní docházky."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovný poradce, školní metodik prevence, dva kariéroví poradci",
+      "Doučování a individuální konzultace ze všech vyučovacích předmětů",
+      "Péče o 103 žáků se speciálními vzdělávacími potřebami s podpůrnými opatřeními 1.–5. stupně",
+      "Domov mládeže s vychovateli v kontaktu s třídními učiteli"
+    ],
+    "safety_climate": [
+      "Škola zajišťuje bezpečné prostředí pro vzdělávání s pravidly bezpečného chování",
+      "Žáci jsou vybaveni předepsanými pracovními oděvy a ochrannými pomůckami",
+      "Vnitřní kontrolní systém má nedostatky v administraci úrazů žáků",
+      "Chování žáků je sledováno průběžně a problémové projevy jsou důsledně řešeny"
+    ],
+    "partnerships_practice": [
+      "Vysoce odborné partnerské vztahy se zaměstnavateli z opavského regionu",
+      "Praktické vyučování probíhá v prostorách školy i na smluvních pracovištích",
+      "Spolupráce se základními školami – soutěže, stáže v dílnách, profesní dny",
+      "Projekty: Odborné kariérové a polytechnické vzdělávání v MSK II, Podpora technických a řemeslných oborů v MSK"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní data. Některé pasáže jsou však formulovány úřednickým stylem, který může být pro rodiče méně přístupný. Chybí jasné shrnutí hlavních rizik a příležitostí v úvodní části.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola přijala na řešení vysoké absence – není jasné, zda jsou účinná",
+      "Není jasné, jak se liší kvalita výuky mezi jednotlivými obory a třídami",
+      "Chybí informace o počtu žáků, kteří úspěšně absolvují obor bez opakování ročníku"
+    ]
+  }
+}
+```

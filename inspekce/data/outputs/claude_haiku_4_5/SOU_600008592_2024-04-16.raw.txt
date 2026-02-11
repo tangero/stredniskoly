@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOU_600008592_2024-04-16",
+  "school_profile": {
+    "school_type": "Střední odborná škola a Střední odborné učiliště (SOŠ a SOU)",
+    "inspection_period": "16. 4. − 19. 4. 2024",
+    "school_change_summary": "Od inspekce v roce 2018 se počet žáků zvýšil o cca 10 % na 749 žáků. Škola modernizuje pracoviště pro praktické vyučování a rozšiřuje spolupráci se sociálními partnery. Postupně utlumuje obor Podnikání v dálkové formě."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Soutěže a motivace",
+        "detail": "Škola aktivně připravuje žáky do oborových soutěží, kde dosahují vynikajících výsledků i na celorepublikové úrovni.",
+        "evidence": "Žáci se hojně účastní soutěží na dobrovolné bázi a dosahují vynikajících výsledků."
+      },
+      {
+        "tag": "Praktické zkušenosti",
+        "detail": "Bohatá spolupráce se sociálními partnery umožňuje žákům získat odborné kompetence v reálném pracovním prostředí.",
+        "evidence": "Část praktického vyučování probíhá na pracovištích smluvních partnerů, škola má moderní gastrostudio a nový automobil."
+      },
+      {
+        "tag": "Bezpečí a zázemí",
+        "detail": "Škola zajišťuje fyzické bezpečí žáků a domov mládeže nabízí moderní pokoje s vlastním sociálním zázemím.",
+        "evidence": "Prostory jsou vybaveny kamerovými systémy, elektronickými zámky, relaxačními zónami a klubovnami."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "Výsledky ve společné části maturitní zkoušky jsou neuspokojivé, zejména v nástavbových oborech (Podnikání 58,8 %, Stavební provoz 40 %).",
+        "evidence": "V roce 2023 byla hrubá neúspěšnost 38,6 %, v matematice 50 % žáků zkoušku nekonalo."
+      },
+      {
+        "tag": "Vysoká absence a neúspěšnost",
+        "detail": "Vysoká absence žáků a nízká motivace ke studiu jsou hlavními příčinami školní neúspěšnosti, opatření nejsou účinná.",
+        "evidence": "Opatření spočívající ve vyloučení žáků s vysokou neomluvenou absencí nevedou k významějšímu snížení."
+      },
+      {
+        "tag": "Slabá příprava na maturitu",
+        "detail": "Žáci dosahují relativně dobrého hodnocení během studia, ale následně ve maturitě neuspějí, systém hodnocení neposkytuje odpovídající zpětnou vazbu.",
+        "evidence": "Analýza prospěchu ukazuje, že relativně dobře hodnocení žáci následně ve společné části maturitní zkoušky neuspějí."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s absencí a motivací? Jaká opatření se skutečně osvědčila?",
+      "Jaké jsou konkrétní důvody slabých výsledků v nástavbových oborech a co se plánuje změnit?",
+      "Jak se liší příprava na maturitu v jednotlivých oborech a jak se hodnocení během studia vztahuje k výsledkům maturitní zkoušky?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické obory (Kuchař, Zedník, Instalatér, Mechanik) – zde škola dosahuje lepších výsledků a nabízí moderní zázemí.",
+      "Žáci se zájmem o soutěže a reprezentaci – škola aktivně podporuje účast v oborových soutěžích.",
+      "Žáci z okolí, kteří potřebují ubytování – domov mládeže nabízí kvalitní zázemí s moderními pokoji a aktivitami."
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižšími studijními předpoklady přijímáni do oborů s maturitní zkouškou – kritéria přijímacího řízení jsou formální a umožňují přijímat téměř všechny uchazeče.",
+      "Žáci v nástavbových oborech (Podnikání, Stavební provoz) – zde je velmi vysoká neúspěšnost (40–59 %).",
+      "Žáci, kteří potřebují individuální přístup – diferenciace výuky podle potřeb žáků se realizuje jen výjimečně."
+    ],
+    "plain_czech_summary": "Škola nabízí pestrou nabídku oborů a kvalitní praktické zázemí. Silnou stránkou je spolupráce se sociálními partnery a úspěchy v soutěžích. Hlavní problém je vysoká neúspěšnost v maturitní zkoušce, zejména v nástavbových oborech. Žáci mají během studia lepší známky, ale u maturity neuspějí. Škola se potýká s vysokou absencí a nízkou motivací žáků. Přijímací kritéria jsou příliš benevolentní a nepřipravují slabší žáky na náročnější obory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršující se od roku 2021",
+      "key_numbers": [
+        "Hrubá neúspěšnost 2023: 38,6 % (rok 2022: 37,3 %)",
+        "Obor Podnikání: 58,8 % neúspěšnosti (ČR průměr 29,9 %)",
+        "Obor Autotronik: 14,3 % neúspěšnosti (lepší než ČR průměr 14,8 %)"
+      ],
+      "evidence": "V matematice zkoušku nekonalo 50 % žáků, v českém jazyce 33 % přihlášených, v cizím jazyce 35,5 %."
+    },
+    "absence": {
+      "trend": "Vysoká a neřešená",
+      "key_numbers": [
+        "Opatření ke snížení absence nejsou účinná",
+        "Vyloučení žáků s vysokou neomluvenou absencí nevedou k zlepšení",
+        "Absence je zřetelnou příčinou neúspěšnosti v nematuritních oborech"
+      ],
+      "evidence": "Neomluvená absence se zaznamenává spíše v nematuritních oborech, opatření vedou ke zlepšení jen v malé míře."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: 2 výchovní poradci, 1 metodik prevence, 1 školní psycholog, 1 speciální pedagog",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami (70 žáků)",
+      "Plány podpory pro žáky se SVP, ale implementace do výuky je výjimečná"
+    ],
+    "safety_climate": [
+      "Kamerové systémy a elektronické zámky na vstupech",
+      "Čipy pro bezproblémový vstup žáků a zaměstnanců",
+      "Relaxační zóny a podnětné prostředí",
+      "Prevence sociálně patologických jevů v domově mládeže"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery na modernizaci pracovišť a vybavení",
+      "Část praktického vyučování na pracovištích smluvních partnerů",
+      "Motivační programy od firem, exkurze a besedy",
+      "Pořádání oborových soutěží ve spolupráci s partnery (Zednické klání, Písecké dortování)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, obsahuje konkrétní čísla a příklady. Struktura je logická, ale místy je text husté a obsahuje odborný jazyk. Pro rodiče by byla užitečná ještě větší konkrétnost v doporučeních.",
+    "uncertainty_notes": [
+      "Není jasné, jaké konkrétní opatření škola již přijala na základě předchozích inspekcí z let 2018 a 2022.",
+      "Chybí informace o tom, jak se liší kvalita výuky mezi jednotlivými učiteli a jak se to promítá do výsledků.",
+      "Není specifikováno, jaké konkrétní strategie by měly vést ke zlepšení – doporučení jsou spíše obecná."
+    ]
+  }
+}
+```

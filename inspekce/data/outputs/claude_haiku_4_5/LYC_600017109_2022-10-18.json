@@ -1,0 +1,110 @@
+{
+  "report_id": "LYC_600017109_2022-10-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:58:40.490989+00:00",
+  "run_finished_utc": "2026-02-09T16:59:01.715890+00:00",
+  "raw_file": "LYC_600017109_2022-10-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600017109_2022-10-18",
+    "school_profile": {
+      "school_type": "Obchodní akademie a Ekonomické lyceum (čtyřleté obory)",
+      "inspection_period": "18.–20. října 2022",
+      "school_change_summary": "Pozitivní vývoj v materiálním rozvoji školy ve spolupráci se zřizovatelem (Olomoucký kraj). Škola má 365 žáků, z toho 15 se speciálními vzdělávacími potřebami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Příznivé školní klima",
+          "detail": "Pedagogové komunikují se žáky partnersky a vstřícně, založeno na respektu k jejich základním potřebám.",
+          "evidence": "Inspektoři pozorovali příznivou pracovní atmosféru, žáci dodržovali pravidla a nebáli se ptát."
+        },
+        {
+          "tag": "Projektová činnost a praxe",
+          "detail": "Škola aktivně zapojuje žáky do projektů, exkurzí, stáží a spolupráce se zaměstnavateli.",
+          "evidence": "Realizuje Erasmus+ pro učitele, externí odborné praxe pro 3. a 4. ročníky, spolupráce s vysokými školami."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola identifikuje ohrožené žáky a nabízí jim doučování, konzultace a intenzivní přípravu na maturitu.",
+          "evidence": "Nízká absence žáků, systematické sledování výsledků na pedagogických radách a komisích."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo aktivizujících metod",
+          "detail": "Výuka často probíhá frontálně bez skupinových aktivit, práce s různými zdroji nebo samostatné práce žáků.",
+          "evidence": "Inspektoři zaznamenali, že chyběly aktivity ve skupinách či dvojicích, nebyla patrná práce s informačními zdroji."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Učitelé nedostatečně přizpůsobují výuku individuálním potřebám nadaných žáků ani žáků se speciálními potřebami.",
+          "evidence": "Inspektoři nenalezli důkazy diferenciace obsahu pro rychlejší a talentované žáky."
+        },
+        {
+          "tag": "Slabé závěry hodin",
+          "detail": "Chybí motivační shrnutí s hodnocením práce žáků a stanovením cílů na další hodinu.",
+          "evidence": "Inspektoři zaznamenali, že závěry postrádaly sebehodnocení a vzájemné hodnocení žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané a talentované žáky? Jaké jsou jejich možnosti v rámci výuky?",
+        "Jaké jsou výsledky maturit v jednotlivých předmětech a jak se vyvíjely v posledních třech letech?",
+        "Jak probíhá příprava na vysoké školy a jaké jsou zkušenosti absolventů s jejich přijetím?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení dobrého klimatu a partnerského přístupu učitelů",
+        "Zájemci o praxi a reálné zkušenosti – škola nabízí stáže a spolupráci se zaměstnavateli",
+        "Žáci, kteří potřebují podporu – škola má systém doučování a poradenských služeb"
+      ],
+      "who_should_be_cautious": [
+        "Nadaní a talentovaní žáci, kteří potřebují individuální výzvy a obohacování obsahu",
+        "Žáci preferující aktivní a skupinové formy výuky – škola se zaměřuje spíše na frontální výuku",
+        "Žáci se speciálními vzdělávacími potřebami – diferenciace není vždy dostatečná"
+      ],
+      "plain_czech_summary": "Obchodní akademie v Olomouci je stabilní školou s příjemným klimatem a dobrým přístupem pedagogů. Silnou stránkou je praktická orientace, projekty a podpora slabších žáků. Inspektoři ale upozornili, že výuka je často příliš frontální a chybí aktivizující metody. Nadaní žáci a žáci se speciálními potřebami by měli dostat více individuální pozornosti. Škola má na co pracovat, ale není to problém, který by měl rodiče odrazovat."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní bez výrazných odchylek",
+        "key_numbers": [
+          "Ve školním roce 2021/2022 nevykazovaly výsledky výrazné vzájemné odchylky",
+          "Škola sleduje úspěšnost přijetí absolventů na vysoké školy"
+        ],
+        "evidence": "Inspektoři nenalezli konkrétní procenta úspěšnosti, ale potvrdili, že škola má účinné mechanismy pro sledování výsledků."
+      },
+      "absence": {
+        "trend": "Nízká absence",
+        "key_numbers": [
+          "Škola se nepotýká s vysokou absencí žáků"
+        ],
+        "evidence": "Nízká absence pozitivně působí na dosahované výsledky vzdělávání."
+      },
+      "support_services": [
+        "Poradenské služby zajišťuje tým poradenských pracovníků s podporou vedení",
+        "Doučování a konzultace pro žáky ohrožené školním neúspěchem",
+        "Podpůrná opatření pro žáky se speciálními vzdělávacími potřebami dle doporučení školských poradenských zařízení"
+      ],
+      "safety_climate": [
+        "Systém výchovného působení zaměřený na seznamování žáků s bezpečnostními riziky",
+        "Cílené adaptační a socializační aktivity pro nově příchozí žáky",
+        "Schránka důvěry pro vyjádření žáků, důsledné řešení porušení školního řádu"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zaměstnavateli na externí odborné praxe pro 3. a 4. ročníky",
+        "Projekt Erasmus+ s zahraničními odbornými stážemi pro učitele",
+        "Spolupráce s místní vysokou školou a úřadem práce na kariérovém poradenství"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a jasně strukturovaná. Silné a slabé stránky jsou konkrétní a opřené o pozorování inspektorů. Chybí však konkrétní číselné údaje o maturitách a absence.",
+      "uncertainty_notes": [
+        "Inspektoři neuvádějí konkrétní procenta úspěšnosti u maturit – pouze konstatují, že nejsou výrazné odchylky",
+        "Není jasné, kolik procent vyučovacích hodin bylo hodnoceno jako problematických",
+        "Chybí informace o počtu žáků, kteří využívají doučování nebo poradenské služby"
+      ]
+    }
+  }
+}

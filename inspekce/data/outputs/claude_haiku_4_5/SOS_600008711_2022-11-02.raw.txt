@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "SOS_600008711_2022-11-02",
+  "school_profile": {
+    "school_type": "Střední škola s maturitní zkouškou, obor Bezpečnostně právní činnost (4leté studium)",
+    "inspection_period": "2. listopadu 2022 až 4. listopadu 2022",
+    "school_change_summary": "Škola mírně zvýšila naplněnost (95 % kapacity, 230 žáků). Zlepšilo se vybavení ICT a byla zprovozněna multimediální učebna pro střeleckou přípravu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství s praxí",
+        "detail": "Škola úzce spolupracuje se složkami Integrovaného záchranného systému (policie, hasiči), což žákům přináší kvalitní praktickou výuku v reálných podmínkách.",
+        "evidence": "Partnerství vedou ke kvalitnímu získávání odborných kompetencí v těsné spolupráci s praxí."
+      },
+      {
+        "tag": "Aktuální učební materiály",
+        "detail": "Vlastní učebnice vydávané sítí TRIVIS zajišťují aktuální obsah s pozitivním dopadem na znalosti žáků.",
+        "evidence": "Vlastní učebnice vydáváné sítí škol TRIVIS pro výuku odborných předmětů zajišťují aktuální obsah učiva."
+      },
+      {
+        "tag": "Výsledky maturit",
+        "detail": "Škola dosahuje mírně lepších výsledků než srovnatelné školy, zejména v anglickém jazyce.",
+        "evidence": "Dosahuje mírně lepších výsledků ve srovnání se skupinou škol se stejným oborem vzdělání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Tradiční výuka",
+        "detail": "Převažuje frontální výuka s řízeným rozhovorem, chybí aktivní formy práce (skupinová, samostatná), což snižuje zapojení žáků.",
+        "evidence": "Výrazně převažoval tradiční způsob frontálního vedení výuky, efekt aktivizace žáků nastal jen v pětině hodin."
+      },
+      {
+        "tag": "Slabé vedení pedagogů",
+        "detail": "Hospitační činnost není systematická, chybí konkrétní doporučení ke zlepšení výuky a propojení s dalším vzděláváním pedagogů.",
+        "evidence": "Doporučení ke zlepšení kvality výuky nejsou vyvozovány, chybí jasné zaměření hospitační činnosti."
+      },
+      {
+        "tag": "Nedostatečná podpora slabších žáků",
+        "detail": "Chybí systematické stanovování konkrétních opatření pro žáky ohrožené školním neúspěchem s vyhodnocením jejich účinnosti.",
+        "evidence": "Částečně nevyužitý prostor je v důslednějším stanovování konkrétních opatření u žáků ohrožených školním neúspěchem."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se slabším prospěchem a jak měří účinnost těchto opatření?",
+      "Jaké moderní výukové metody a formy práce (skupinová práce, projekty) se v hodinách používají?",
+      "Jak se škola připravuje na změny v maturitních testech a jak analyzuje výsledky jednotlivých žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o bezpečnostní profese (policie, hasiči, armáda, veřejná správa) – škola má silné vazby na tyto instituce",
+      "Motivovaní žáci s dobrým prospěchem na základní škole – škola dosahuje dobrých výsledků u maturit",
+      "Žáci preferující praktickou výuku – škola nabízí kurzy, exkurze a praxi v reálných podmínkách"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individuální přístup a aktivní vyučování – výuka je spíše tradiční a frontální",
+      "Žáci se slabšími předpoklady – škola přijímá i takové žáky, ale systematická podpora není dostatečná",
+      "Žáci vyžadující rozvoj kritického myšlení a tvořivosti – tyto aspekty nejsou v hodinách dostatečně rozvíjeny"
+    ],
+    "plain_czech_summary": "TRIVIS je střední škola zaměřená na bezpečnostně právní činnost s 230 žáky. Její silnou stránkou je partnerství s policií a hasiči, které přináší praktickou výuku v reálných podmínkách. Výsledky maturit jsou dobré. Slabinou je tradiční frontální výuka s malou aktivizací žáků, nedostatečné vedení pedagogů a chybějící systematická podpora slabších žáků. Škola se hodí pro motivované žáky se zájmem o bezpečnostní profese, ale méně pro ty, kteří potřebují individuální přístup a moderní výukové metody."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – mírně lepší výsledky než srovnatelné školy",
+      "key_numbers": [
+        "Výsledky v anglickém jazyce jsou v celorepublikovém srovnění velmi dobré",
+        "Ve většině případů korespondují výsledky maturit s hodnocením během studia"
+      ],
+      "evidence": "Škola dosahuje mírně lepších výsledků ve srovnění se skupinou škol se stejným oborem vzdělání."
+    },
+    "absence": {
+      "trend": "Pozitivní – absence jsou řešeny funkčně",
+      "key_numbers": [
+        "Škola neřešila žádné zásadní výchovné nebo kázeňské problémy"
+      ],
+      "evidence": "Opatření k absenci jsou funkční, škola neřešila žádné zásadní výchovné nebo kázeňské problémy."
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodička prevence – jejich úzká spolupráce je efektivní",
+      "Konzultace pro žáky se slabším prospěchem",
+      "Podpora čtyř žáků se speciálními vzdělávacími potřebami podle doporučení poradenských zařízení"
+    ],
+    "safety_climate": [
+      "Pozitivní atmosféra založená na vzájemném respektu mezi učiteli a žáky",
+      "Minimální preventivní program s vymezením postupů v případě šikany",
+      "Seznamovací a zátěžový kurz na počátku studia"
+    ],
+    "partnerships_practice": [
+      "Partnerství se složkami Integrovaného záchranného systému ČR (policie, hasiči) – praktická výuka v kurzech, tematické ukázky, účast na soutěžích",
+      "Spolupráce s Městskou knihovnou a školami v regionu",
+      "Dlouhodobé sledování uplatnění absolventů na vysokých školách a v praxi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s příslušnými důkazy. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o počtu žáků, kteří neuspěli u maturit nebo opakují ročník",
+      "Chybí detailní informace o tom, kolik žáků se účastní jednotlivých forem podpory (konzultace, poradenství)",
+      "Není jasné, jaký je přesný obsah 'tradiční frontální výuky' a jak by měla vypadat ideální výuka podle inspektora"
+    ]
+  }
+}
+```

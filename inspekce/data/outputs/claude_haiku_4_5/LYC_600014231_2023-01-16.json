@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600014231_2023-01-16",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:51:34.637681+00:00",
+  "run_finished_utc": "2026-02-09T16:52:00.615631+00:00",
+  "raw_file": "LYC_600014231_2023-01-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600014231_2023-01-16",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola a obchodní akademie (11 oborů: 5 tříletých s výučním listem, 5 čtyřletých s maturitou, 1 nástavbové studium)",
+      "inspection_period": "16.–20. ledna 2023",
+      "school_change_summary": "Nový ředitel od 2021. Zavedení jednotného elektronického systému. Modernizace dílen a odborných učeben. Přesun Obchodní akademie do budovy na nábřeží Komenského."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství s firmami",
+          "detail": "Dlouhodobá spolupráce s profesními partnery v regionu umožňuje žákům získávat praktické dovednosti přímo v reálném prostředí.",
+          "evidence": "Stabilní partnerské vztahy s firmami, odborné exkurze, přednášky a semináře pro žáky i učitele."
+        },
+        {
+          "tag": "Kvalitní praktické vyučování",
+          "detail": "Výuka v dílnách a odborných učebnách s moderním vybavením, kde žáci pracují se zájmem a samostatně.",
+          "evidence": "Materiální vybavení odpovídá nárokům oborů, žáci dobře osvojili pravidla práce a bezpečnost."
+        },
+        {
+          "tag": "Angličtina a jazykové vzdělání",
+          "detail": "Výuka anglického jazyka má velmi dobrou úroveň s odpovídající náročností pro jednotlivé obory.",
+          "evidence": "Vyučovací hodiny vedené téměř výhradně v anglicktině s dobrým spádem a promyšleným obsahem."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Průměrná absence 181 hodin na žáka za rok, zvlášť vysoká u tříletých oborů a nástavbového studia.",
+          "evidence": "Absence vzrostla ve školním roce 2021/2022 oproti předchozímu roku; opatření nejsou dostatečně vyhodnocována."
+        },
+        {
+          "tag": "Slabé výsledky u maturit a závěrečných zkoušek",
+          "detail": "21 % žáků čtyřletých oborů nekonalo nebo neprospělo maturitní zkouškou v roce 2022, u tříletých oborů 13 % neúspěšnost.",
+          "evidence": "Zhoršující se tendence za poslední tři roky; nejvyšší neúspěšnost v nástavbovém studiu Podnikání."
+        },
+        {
+          "tag": "Nejednotná kvalita teoretické výuky",
+          "detail": "Část hodin používá zastaralé metody bez aktivního zapojení žáků, chybí diferenciace podle schopností.",
+          "evidence": "Stereotypní činnosti, absence aktivizačních metod, pasivita žáků, minimální rozvoj klíčových kompetencí."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké jsou výsledky těchto opatření?",
+        "Jaké konkrétní kroky podniká škola pro zlepšení výsledků u maturitních a závěrečných zkoušek?",
+        "Jak se liší kvalita výuky mezi jednotlivými učiteli a co škola dělá pro sjednocení standardů?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zájmem o technické obory a praktickou práci, kteří se mohou opřít o kvalitní vybavení dílen a zkušené instruktory.",
+        "Studenti Obchodní akademie, kde je dlouhodobě nejnižší podíl neprospívajících žáků a výuka je kvalitní.",
+        "Žáci, kteří potřebují propojení teorie s praxí a kontakt s reálným pracovním prostředím prostřednictvím partnerských firem."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absencím – škola má problém s vysokou absencí a opatření nejsou dostatečně účinná.",
+        "Studenti nástavbového studia Podnikání – vykazují vysokou neúspěšnost v průběhu i při ukončování vzdělání.",
+        "Žáci tříletých technických oborů – dlouhodobě vykazují vysoký podíl neprospívajících v prvním pololetí (14 %)."
+      ],
+      "plain_czech_summary": "Břeclavská průmyslová škola je moderně vybavená a má dobré vazby na firmy v regionu, kde žáci získávají praktické zkušenosti. Silná je výuka angličtiny a praktické vyučování. Problémem je však vysoká absence žáků (181 hodin ročně), slabé výsledky u maturit a závěrečných zkoušek a nejednotná kvalita teoretické výuky. Část učitelů používá zastaralé metody bez aktivního zapojení žáků. Opatření na zlepšení nejsou dostatečně vyhodnocována."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se",
+        "key_numbers": [
+          "21 % neúspěšnost v roce 2022 (nekonalo nebo neprospělo)",
+          "Nárůst o 7 % oproti předchozím dvěma letům",
+          "Nejvyšší neúspěšnost v nástavbovém studiu"
+        ],
+        "evidence": "Ve školním roce 2021/2022 maturitní zkoušku nekonalo nebo u ní neprospělo 21 % žáků všech čtyřletých oborů."
+      },
+      "absence": {
+        "trend": "Vysoká a rostoucí",
+        "key_numbers": [
+          "181 hodin na žáka za školní rok 2021/2022",
+          "Nárůst oproti roku 2020/2021 (kdy byla 120 hodin kvůli distanční výuce)",
+          "Nejvyšší u tříletých oborů a nástavbového studia"
+        ],
+        "evidence": "Škola se dlouhodobě potýká s vysokou absencí; neomluvenou absenci se podařilo snížit, ale celková absence vzrostla."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnými poradkyněmi, metodičkami prevence a kariérovou poradkyní",
+        "Doučování z češtiny pro cizince, akce na podporu jejich začlenění",
+        "Pedagogická podpora prvního stupně pro žáky ohrožené školní neúspěšností",
+        "Kariérové poradenství a pomoc při změně oboru"
+      ],
+      "safety_climate": [
+        "V několika hospitovaných hodinách zaznamenány kázeňské problémy žáků",
+        "Pravidelné třídnické hodiny nejsou realizovány, práce s třídními kolektivy probíhá jen na adaptačních kurzech",
+        "Prevence rizikového chování je součástí vzdělávacích aktivit"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s profesními a sociálními partnery v regionu",
+        "Stabilní partnerské vztahy s firmami pro praktické vyučování",
+        "Odborné exkurze, přednášky a semináře s účastí žáků i učitelů",
+        "Partnerská škola na Slovensku pro rozvoj sociálních kompetencí",
+        "Generální partner mezi sponzorskými firmami"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky. Jsou jasně odděleny silné stránky, slabé stránky a konkrétní čísla. Některé pasáže jsou však delší a obsahují více technických detailů, které by mohly být pro rodiče méně přístupné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o tom, jak se výsledky maturit a závěrečných zkoušek vyvíjely v jednotlivých oborech v posledních letech – je uvedena jen agregovaná data.",
+        "Není jasné, jaký je konkrétní obsah 'pedagogické podpory prvního stupně' a jak se liší od běžné výuky.",
+        "Chybí informace o tom, kolik žáků skutečně využívá nabízené doučování a jaké jsou jeho výsledky."
+      ]
+    }
+  }
+}

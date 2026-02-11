@@ -1,0 +1,92 @@
+```json
+{
+  "report_id": "GY8_600016269_2022-05-24",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté, šestileté a osmileté studium)",
+    "inspection_period": "24. 5. 2022, 26. 5. – 27. 5. 2022 a 30. 5. 2022",
+    "school_change_summary": "Od poslední inspekce v 2013/2014 škola zavedla osmileté gymnázium (od 2015/2016), postupně snížila počet tříd šestiletého gymnázia, zapojila se do projektu Erasmus+ a zlepšila materiální podmínky (nová přírodovědná učebna, modernizované jazykové učebny, rekonstruovaná chemická laboratoř, bezbariérový přístup, nové hřiště)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné studijní výsledky",
+        "detail": "Ve školním roce 2020/2021 prospěli všichni žáci, 68 % s vyznamenáním; 98 % absolventů pokračuje na vysokých školách.",
+        "evidence": "Ve společné části maturitní zkoušky jsou výsledky v češtině a matematice dlouhodobě lepší než průměr v ČR."
+      },
+      {
+        "tag": "Kvalitní výuka s aktivním zapojením",
+        "detail": "Učitelé používají činnostní učení, skupinovou práci, rozvíjejí kritické myšlení a propojují učivo s reálným životem.",
+        "evidence": "Pozitivní klima, vstřícný vztah učitelů k žákům, žáci bez obav kladou dotazy a zapojují se do diskuse."
+      },
+      {
+        "tag": "Bohatá nabídka aktivit a soutěží",
+        "detail": "Škola organizuje olympiády, vědecké konference, Erasmus+, robotiku, školní parlament a charitativní činnost.",
+        "evidence": "Žáci reprezentují školu na mezinárodní úrovni v přírodovědných, lingvistických a astronomických olympiádách."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená práce se zdroji informací",
+        "detail": "Žáci nejsou dostatečně vedeni k samostalému vyhledávání, porovnávání a vyhodnocování informací z různých zdrojů.",
+        "evidence": "Příležitosti pro samostatné vyhledávání informací byly vytvářeny jen v menší části výuky."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola podporuje žáky se zájmem o konkrétní obory (např. přírodní vědy, jazyky)?",
+      "Jaké jsou možnosti doučování a individuální péče pro žáky s obtížemi?",
+      "Jak se škola připravuje na přechod na vysokou školu a jaké má kontakty s univerzitami?"
+    ],
+    "who_school_fits": [
+      "Talentovaní a motivovaní žáci, kteří chtějí kvalitní přípravu na vysokou školu",
+      "Žáci se zájmem o soutěže, olympiády a vědeckou činnost",
+      "Žáci, kterým vyhovuje aktivní a skupinová forma výuky s důrazem na kritické myšlení"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují tradičnější formu výuky se silnějším důrazem na samostudium z různých zdrojů",
+      "Žáci se speciálními vzdělávacími potřebami (škola má pouze 7 takových žáků, z nichž 3 mají individuální plán)"
+    ],
+    "plain_czech_summary": "Gymnázium Třinec je kvalitní střední škola s výbornou pověstí. Žáci dosahují skvělých výsledků – všichni prospívají, 68 % s vyznamenáním, a 98 % pokračuje na vysokých školách. Výuka je moderní, zaměřená na aktivní zapojení žáků, skupinovou práci a rozvoj kritického myšlení. Škola nabízí bohatou nabídku volitelných předmětů, soutěží a mimoškolních aktivit. Jedinou slabší stránkou je, že žáci nejsou dostatečně vedeni k samostalné práci s různými informačními zdroji. Prostředí je příjemné, učitelé vstřícní a škola se aktivně zapojuje do mezinárodních projektů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě pozitivní",
+      "key_numbers": [
+        "100% úspěšnost v cizích jazycích od 2017/2018",
+        "Výsledky v češtině a matematice dlouhodobě lepší než průměr ČR",
+        "98 % absolventů 2020/2021 pokračuje na vysokých školách"
+      ],
+      "evidence": "K horším výsledkům z cizího jazyka v 2017/2018 přijala škola účinná opatření; v dalších letech stoprocentní úspěšnost."
+    },
+    "absence": {
+      "trend": "Klesající úrazovost",
+      "key_numbers": [
+        "Minimální výskyt rizikového chování žáků"
+      ],
+      "evidence": "Vedení školy provádí rozbor úrazovosti a přijímá potřebná opatření; tematicky zaměřené preventivní aktivity v průběhu celého vzdělávání."
+    },
+    "support_services": [
+      "Školní psycholožka vytváří programy pro třídní kolektivy podle potřeb",
+      "Individuální doučování a konzultace pro žáky se studijními obtížemi",
+      "Poradenské a konzultační služby v rámci školního poradenského pracoviště"
+    ],
+    "safety_climate": [
+      "Pozitivní klima spočívající ve vstřícném vztahu učitelů k žákům a vzájemném respektu",
+      "Důraz na dodržování bezpečnosti, soustředěnost a dodržování pravidel chování",
+      "Činnosti zaměřené na podporu psychické pohody žáků po návratu z distanční výuky"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s vysokými školami (přednášky, workshopy, přípravné kurzy Cambridge Center)",
+      "Projekt Erasmus+ zaměřený na mobilitu žáků i pedagogů",
+      "Partnerství se základními školami, organizacemi v oblasti prevence a péče o žáky se speciálními potřebami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, bez zbytečného úřednického stylu. Konkrétní fakta jsou jasně uvedena s příklady. Silné a slabé stránky jsou jasně vymezeny. Doporučení jsou praktická a konkrétní.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků se speciálními potřebami v jednotlivých třídách, pouze celkový počet 7 žáků",
+      "Chybí konkrétní data o počtu žáků, kteří se účastní jednotlivých volitelných předmětů nebo aktivit"
+    ]
+  }
+}
+```

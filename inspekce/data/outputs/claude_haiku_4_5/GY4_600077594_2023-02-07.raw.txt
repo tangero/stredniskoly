@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY4_600077594_2023-02-07",
+  "school_profile": {
+    "school_type": "Gymnázium (4leté) a Základní škola s speciálními třídami",
+    "inspection_period": "7. února 2023 až 10. února 2023",
+    "school_change_summary": "Škola se zlepšila v transparentnosti řízení. Pokračuje v rekonstrukci prostor a rozšiřování materiálně-technického vybavení. Hlavní výzvou zůstává kvalita pedagogické podpory a diferenciace výuky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Sportovní a mimoškolní aktivity",
+        "detail": "Škola dlouhodobě úspěšně podporuje sportovní nadání žáků, včetně úspěchů na celostátní úrovni ve volejbale.",
+        "evidence": "\"Dlouhodobě úspěšná podpora sportovních aktivit a pohybového rozvoje žáků posiluje jejich tělesnou zdatnost\""
+      },
+      {
+        "tag": "Bohatá nabídka zájmového vzdělávání",
+        "detail": "Školní klub a družina nabízejí pestrou paletu kroužků (čtenářský, florbal, matematika, sborový zpěv) v pozitivní atmosféře.",
+        "evidence": "\"Zájmové vzdělávání se širokou nabídkou zájmových útvarů efektivně doplňuje základní vzdělávání\""
+      },
+      {
+        "tag": "Podpora žáků se speciálními potřebami",
+        "detail": "Škola posílila poradenské pracoviště o školního psychologa a speciální pedagogy, nabízí adaptační skupiny pro žáky s odlišným mateřským jazykem.",
+        "evidence": "\"Škola posílila personální obsazení poradenského pracoviště o školního psychologa a další speciální pedagogy\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká kvalita pedagogické podpory",
+        "detail": "Metodická podpora pedagogům není dostatečně efektivní, chybí pravidelná hospitační činnost se zpětnou vazbou.",
+        "evidence": "\"Metodická podpora poskytovaná pedagogům není dostatečně efektivní pro zkvalitňování vzdělávacího procesu\""
+      },
+      {
+        "tag": "Převažující frontální výuka",
+        "detail": "Výuka se málo přizpůsobuje individuálním potřebám žáků, chybí diferenciace a individualizace.",
+        "evidence": "\"Převažující frontální výuka s nízkou mírou diferenciace a individualizace dostatečně nerozvíjejí potenciál každého žáka\""
+      },
+      {
+        "tag": "Slabé využívání formativního hodnocení",
+        "detail": "Učitelé málo využívají zpětnou vazbu a reflexi vzdělávacích cílů, což brání efektivnímu učení.",
+        "evidence": "\"Nepravidelně využívaná reflexe vzdělávacích cílů a nedostatečné využívání formativního hodnocení\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně budete zlepšovat metodickou podporu učitelům a jak se to projeví v kvalitě výuky mého dítěte?",
+      "Jaké konkrétní kroky podniknete, aby se výuka více přizpůsobila individuálním potřebám jednotlivých žáků?",
+      "Jak se škola zaměří na rozvoj kritického myšlení a samostatnosti žáků, když inspekce upozornila na převahu frontální výuky?"
+    ],
+    "who_school_fits": [
+      "Sportovně nadaní žáci, kterým vyhovuje kvalitní sportovní zázemí a systematická podpora talentů",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola nabízí rozšířené poradenské služby a asistenci",
+      "Žáci s odlišným mateřským jazykem, kterým jsou poskytovány adaptační skupiny s intenzivní výukou češtiny"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku – inspekce upozornila na nedostatečnou diferenciaci",
+      "Žáci, kteří se učí lépe prostřednictvím aktivních metod a diskuse – škola stále preferuje frontální výuku",
+      "Žáci, kteří potřebují jasnou zpětnou vazbu a reflexi svého pokroku – formativní hodnocení se využívá málo"
+    ],
+    "plain_czech_summary": "Jirkovské gymnázium a základní škola je stabilní instituce se silným zaměřením na sport a mimoškolní aktivity. Má dobré podmínky pro žáky se speciálními potřebami. Hlavní slabinou je kvalita výuky – učitelé stále převážně používají frontální výuku bez dostatečné individualizace a zpětné vazby. Inspekce doporučuje zlepšit metodickou podporu pedagogům a zaměřit se na moderní metody výuky. Škola se snaží zlepšovat, ale v pedagogických procesech je ještě co dělat."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s podporou",
+      "key_numbers": [
+        "93 žáků na gymnáziu ve 4 třídách",
+        "8 žáků se speciálními vzdělávacími potřebami",
+        "11 žáků s odlišným mateřským jazykem"
+      ],
+      "evidence": "\"Úspěch žáků u maturitní zkoušky je vhodně podporován v rámci volitelných předmětů a systematickou přípravou\""
+    },
+    "absence": {
+      "trend": "Monitorováno a řešeno",
+      "key_numbers": [
+        "Záškoláctví identifikováno jako rizikový faktor",
+        "Vysoký počet zameškaných hodin sledován",
+        "Školní specialisté řeší vysoké absence"
+      ],
+      "evidence": "\"Účinné je působení školních specialistů v rámci konzultací s žáky i jejich zákonnými zástupci při řešení vysokých absencí\""
+    },
+    "support_services": [
+      "Školní psycholog a speciální pedagogové na poradenském pracovišti",
+      "Výchovné poradkyně koordinující vzdělávání žáků se speciálními potřebami",
+      "Asistenti pedagoga ve třídách a speciálních třídách",
+      "Metodička prevence zajišťující besedy a programy prevence",
+      "Kariérová poradkyně pro orientaci v dalším vzdělávání"
+    ],
+    "safety_climate": [
+      "Vstřícná a přátelská atmosféra v hodinách, respektující přístup učitelů",
+      "Psychicky bezpečné prostředí pro učení žáků",
+      "Preventivní program se strategií předcházení školní neúspěšnosti",
+      "Monitorování signálů rizikového chování a uplatňování pravidel",
+      "Aktivity posilující pozitivní školní klima a wellbeing (třídní dny, celoškolní projekty)"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s místními sportovními kluby a organizacemi v regionu",
+      "Zapojení do mnoha programů a projektů zlepšujících materiálně-technické podmínky",
+      "Funkční partnerské vztahy přispívající k naplňování cílů vzdělávání",
+      "Spolupráce s úřadem práce a středními školami v kariérovém poradenství",
+      "Efektivní spolupráce s pracovníky odborných zařízení při řešení složitějších případů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Doporučení jsou praktická. Mírně snižuje skóre administrativní jazyk v některých pasážích.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o výsledcích maturit nebo srovnávacích testů – není jasné, jak si žáci vedou v porovnání s republikovým průměrem",
+      "Chybí informace o počtu a typu sankcí za porušování školního řádu – není jasné, jak vážné jsou problémy s chováním",
+      "Není specifikováno, jak dlouho trvá zlepšování materiálně-technických podmínek a kdy budou hotovy všechny rekonstrukce"
+    ]
+  }
+}
+```

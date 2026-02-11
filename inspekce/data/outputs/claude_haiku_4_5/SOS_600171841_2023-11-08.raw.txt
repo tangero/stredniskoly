@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "SOS_600171841_2023-11-08",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola s obory Informační technologie a Strojírenství, včetně domova mládeže a školní jídelny",
+    "inspection_period": "8. 11. 2023 – 10. 11. 2023",
+    "school_change_summary": "Od poslední inspekce v 2016 došlo k nárůstu žáků o 30 % (214 žáků), nárůstu ubytovaných v domově mládeže o 70 % (38 žáků). Škola se stala Centrem odborného vzdělávání s moderním vybavením. Zrušeny obory Modelář a Slévač."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vysoká úspěšnost u maturity",
+        "detail": "Žáci dosahují 96–100% úspěšnosti u maturitní zkoušky, téměř všichni absolventi obor úspěšně dokončí.",
+        "evidence": "Úspěšnost pohybovala se od 96 do 100 %, s výjimkou roku 2021/2022 v Strojírenství (83 %)"
+      },
+      {
+        "tag": "Moderní vybavení a praktická příprava",
+        "detail": "Škola jako centrum odborného vzdělávání nabízí kvalitní praktické vyučování s rozdělením do skupin a individuálním přístupem.",
+        "evidence": "Efektivitu výuky zvyšovalo dělení žáků do skupin, učitelé poskytovali individuální podporu a vedli žáky k samostatnosti"
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Robotické soutěže, zahraniční výjezdy Erasmus+, lyžařské a sportovní kurzy, finanční gramotnost.",
+        "evidence": "Škola motivuje žáky k účasti v soutěžích, pořádá vlastní soutěž JedoBot, je držitelem bronzového certifikátu projektu Finančně gramotná škola"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá diferenciace v teoretické výuce",
+        "detail": "Učitelé v teoretických předmětech málo přizpůsobují výuku individuálním potřebám žáků, všichni řeší stejné úkoly.",
+        "evidence": "Žáci většinou plnili stejné úkoly, úlohy s odlišnou kognitivní náročností nebyly zadávány"
+      },
+      {
+        "tag": "Pasivní přístup žáků v teoretické výuce",
+        "detail": "Převažuje frontální výuka, žáci jsou spíše pasivními příjemci informací bez vlastní aktivity a vyhledávání.",
+        "evidence": "Ti byli v některých hodinách pouhými pasivními příjemci informací, nebyli vedeni k vlastnímu vyhledávání a zpracování informací"
+      },
+      {
+        "tag": "Nedostatečná podpora žáků se speciálními potřebami",
+        "detail": "Učitelé nemají vždy přehled o žácích s potřebou podpůrných opatření a cíleně je nepodporují.",
+        "evidence": "Učitelé neměli vždy přehled o žácích s potřebou podpůrných opatření a strategii práce s těmito žáky většinou cíleně neuplatňovali"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku v teoretických předmětech pro žáky s různými tempem učení?",
+      "Jakou podporu dostávají žáci se speciálními vzdělávacími potřebami během teoretické výuky?",
+      "Jaké jsou konkrétní příklady aktivních metod výuky, které se používají v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o technické obory a praktickou práci, kteří se chtějí dobře připravit na pracovní trh",
+      "Talentovaní žáci v robotice, programování a technických oborech, kterým škola nabízí speciální podporu",
+      "Žáci, kteří si cení kvalitního praktického vyučování a moderního vybavení"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovaný přístup a diferenciaci v teoretických předmětech – zde jsou rezervy",
+      "Žáci se speciálními vzdělávacími potřebami – podpora není dostatečně systematická",
+      "Žáci preferující aktivní a interaktivní výuku – teoretické předměty jsou spíše frontální"
+    ],
+    "plain_czech_summary": "Střední průmyslová škola v Jedovnici je stabilní školou s tradičními obory Informační technologie a Strojírenství. Silnou stránkou je vysoká úspěšnost u maturity (96–100 %), kvalitní praktické vyučování a bohatá mimoškolní nabídka. Absolventi mají na trhu práce vysoký zájem. Rezervy jsou v teoretické výuce, kde převažuje frontální přístup a chybí individualizace. Žáci se speciálními potřebami nejsou dostatečně podporováni. Škola se postupně zlepšuje v materiálním vybavení a má jasnou vizi rozvoje."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Vysoká a stabilní úspěšnost",
+      "key_numbers": [
+        "96–100 % úspěšnost v posledních třech letech",
+        "Výjimka: 83 % v Strojírenství 2021/2022",
+        "Téměř všichni žáci obor úspěšně dokončí"
+      ],
+      "evidence": "Úspěšnost žáků u maturitní zkoušky byla v posledních třech uzavřených školních letech vysoká a pohybovala se od 96 do 100 %"
+    },
+    "absence": {
+      "trend": "Stabilní a nízká",
+      "key_numbers": [
+        "Průměrně kolem 60 omluvených hodin na žáka za pololetí",
+        "Stabilní v posledních dvou letech",
+        "Neomluvenou absenci řeší minimálně"
+      ],
+      "evidence": "Absence žáků je v posledních dvou letech stabilní, průměrně kolem 60 omluvených hodin na žáka za pololetí"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní a metodikem prevence",
+      "Doučování a konzultace s jednotlivými učiteli pro žáky ohrožené školním neúspěchem",
+      "Maturitní trénink – externí testování ve čtvrtém ročníku (účastní se zhruba polovina žáků)",
+      "Adaptační program pro nové žáky",
+      "Prevence rizikového chování formou přednášek, besed a sportovních aktivit"
+    ],
+    "safety_climate": [
+      "Pozitivní sociální klima ve škole, pozitivně hodnoceno inspektory",
+      "Vzájemně vstřícná a příjemná atmosféra v hodinách",
+      "Pracovní klima v praktickém vyučování založené na vzájemném respektu a toleranci",
+      "Výchovně vzdělávací činnost v domově mládeže v přátelské až rodinné atmosféře",
+      "Sociálně patologické jevy se vyskytují v minimální míře"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s oborově podobnými školami – výměna zkušeností a sdílení učebních pomůcek",
+      "Efektivní spolupráce s firmami na zajištění souvislé odborné praxe a exkurzí",
+      "Finanční podpora od neziskové organizace pro nadané a talentované žáky",
+      "Projekty Erasmus+ pro zahraniční výjezdy",
+      "Projekt JedoBot – vlastní robotická soutěž pro školy z celé republiky"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny s citacemi. Některé pasáže jsou však delší a obsahují více úřednického stylu, což mírně snižuje srozumitelnost pro laické rodiče.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků se speciálními potřebami v jednotlivých třídách – uvedeno jen 11 z 214 celkem",
+      "Není jasné, jak konkrétně se liší kvalita výuky mezi jednotlivými učiteli a předměty",
+      "Chybí informace o počtu žáků, kteří opakují ročník nebo odcházejí na jinou školu"
+    ]
+  }
+}
+```

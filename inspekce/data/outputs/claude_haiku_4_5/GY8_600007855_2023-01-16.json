@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600007855_2023-01-16",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:51:18.724919+00:00",
+  "run_finished_utc": "2026-02-09T16:51:46.557471+00:00",
+  "raw_file": "GY8_600007855_2023-01-16.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600007855_2023-01-16",
+    "school_profile": {
+      "school_type": "Gymnázium a Střední odborná škola ekonomická (412 žáků: 229 v osmiletém gymnáziu, 109 v čtyřletém gymnáziu, 74 v Obchodní akademii)",
+      "inspection_period": "16.–20. ledna 2023",
+      "school_change_summary": "Od roku 2016 nové vedení realizuje koncepci rozvoje s modernizací vybavení, generační obměnou pedagogů a rozšířením spolupráce se základními školami. Zájem o Obchodní akademii vzrostl o 66 % oproti roku 2018/2019."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky a motivace",
+          "detail": "Více než dvě třetiny žáků prospívají s vyznamenáním, průměrný prospěch kolem 1,3.",
+          "evidence": "Analýza interních výsledků vzdělávání; maturitní zkoušky: osmiletý obor 1,5, čtyřletý 1,7, Obchodní akademie 2,4"
+        },
+        {
+          "tag": "Rozvoj nadání a praktických dovedností",
+          "detail": "Žáci se úspěšně účastní vědeckých soutěží, stáží na vědeckých pracovištích a práce v reálných studentských firmách.",
+          "evidence": "Partnerství s Nadací Orlen Unipetrol a VŠCHT; žáci dosahují velmi pěkných výsledků v okresních, krajských i celostátních soutěžích"
+        },
+        {
+          "tag": "Kvalitní jazykové vzdělání",
+          "detail": "Dlouhodobě úspěšní v mezinárodních jazykových zkouškách, většina dosahuje vyšších úrovní než předpokládá rámcový program.",
+          "evidence": "Rodilí mluvčí pro angličtinu a španělštinu; nepovinný předmět připravující na mezinárodní zkoušky"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo pestré vyučovací metody",
+          "detail": "Ve více než polovině hodin převažuje frontální výuka, chybí skupinová práce a diferenciace pro různé potřeby žáků.",
+          "evidence": "Frontální uspořádání bylo účelné pouze v pětině hodin; v necelé třetině byla zařazena skupinová práce"
+        },
+        {
+          "tag": "Slabé závěry hodin",
+          "detail": "Závěry jsou formální, chybí shrnutí učiva a sebehodnocení žáků, což omezuje zpětnou vazbu.",
+          "evidence": "Závěry byly spíše formální, nebyly využity ke shrnutí učiva a k sebehodnocení žáků v naprosté většině výuky"
+        },
+        {
+          "tag": "Absence analýzy absence",
+          "detail": "Chybí průběžná analýza příčin absence, zejména u žáků Obchodní akademie.",
+          "evidence": "Chybí ale průběžná analýza příčin absence ve spolupráci se všemi pedagogy a školním poradenským pracovištěm"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří si potřebují více času na pochopení látky? Jaké jsou možnosti doučování?",
+        "Jaké jsou zkušenosti absolventů se studiem na vysokých školách? Jak se jim daří v terciárním vzdělávání?",
+        "Jak probíhá příprava na mezinárodní jazykové zkoušky a jaké jsou náklady na jejich skládání?"
+      ],
+      "who_school_fits": [
+        "Talentovaní žáci se zájmem o vědu a jazyky – škola má silné partnerství s vědeckými institucemi a rodilými mluvčími",
+        "Budoucí podnikatelé – Obchodní akademie nabízí práci v reálných studentských firmách s praktickým zaměřením",
+        "Žáci, kteří chtějí pokračovat na vysoké škole – výborné výsledky maturit a vysoký podíl absolventů v terciárním vzdělávání"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – škola zatím málo využívá skupinovou práci a diferenciaci",
+        "Žáci s vyšší absencí – chybí systematická analýza příčin absence a konkrétní opatření, zejména v Obchodní akademii",
+        "Žáci, kteří se učí lépe interaktivně – frontální výuka stále převažuje, sebehodnocení a reflexe jsou minimální"
+      ],
+      "plain_czech_summary": "Gymnázium a SOŠ ekonomická v Sedlčanech je dobře vedená škola s výborným prospěchem žáků (více než dvě třetiny s vyznamenáním) a silným zaměřením na rozvoj nadání. Žáci se úspěšně účastní soutěží a stáží na vědeckých pracovištích. Jazykové vzdělání je na vysoké úrovni. Hlavní slabinou je málo pestré vyučování – učitelé často používají jen frontální výuku bez diferenciace. Chybí také kvalitní závěry hodin se shrnutím a sebehodnocením žáků. Škola by měla více pracovat se skupinovou prací a individuálními potřebami žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi dobrý, v posledních třech letech cca polovina žáků prospěla s vyznamenáním",
+        "key_numbers": [
+          "Osmiletý obor: průměr 1,5",
+          "Čtyřletý obor: průměr 1,7",
+          "Obchodní akademie: průměr 2,4"
+        ],
+        "evidence": "Ve školním roce 2020/2021 prospěli všichni žáci; v 2021/2022 neuspěl jeden žák z Obchodní akademie u praktické zkoušky"
+      },
+      "absence": {
+        "trend": "Není explicitně uveden, ale identifikován jako problém",
+        "key_numbers": [
+          "Chybí konkrétní data o absenci"
+        ],
+        "evidence": "Chybí ale průběžná analýza příčin absence ve spolupráci se všemi pedagogy a školním poradenským pracovištěm pro stanovení konkrétních opatření především u žáků oboru Obchodní akademie"
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence zajišťují péči o žáky se speciálními vzdělávacími potřebami",
+        "Kariérová poradkyně poskytuje kvalitní odbornou pomoc v profesní orientaci",
+        "Pedagogické podpory pro 12 žáků s odlišným mateřským jazykem z důvodu jazykové bariéry",
+        "Individuální konzultace, doučování a semináře k prevenci neprospěchu"
+      ],
+      "safety_climate": [
+        "Minimální počet závažnějších kázeňských problémů",
+        "Počet udělených pochval výrazně převyšuje nad uloženými kázeňskými opatřeními",
+        "Všichni žáci jsou poučováni o zásadách a pravidlech bezpečného chování",
+        "Škola sleduje počty úrazů a přijímá účinná opatření k jejich snižování"
+      ],
+      "partnerships_practice": [
+        "Partnerství s Nadací Orlen Unipetrol a VŠCHT pro odbornou praxi a vybavení laboratoří",
+        "Spolupráce s místním hospicicem a Nadací Olgy Havlové na rozvoji sociálních kompetencí",
+        "Efektivní spolupráce se spolkem rodičů, podniky a firmami v regionu",
+        "Rozšířená spolupráce se základními školami na propagaci a prezentaci"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně rozlišuje silné a slabé stránky. Některé údaje o absenci a konkrétní čísla chybí, ale celkový obraz je zřejmý.",
+      "uncertainty_notes": [
+        "Konkrétní data o absenci nejsou uvedena, pouze poznámka o chybějící analýze",
+        "Počet žáků se speciálními vzdělávacími potřebami (11) je malý, není jasné, jak se jim daří v běžné výuce",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými obory a třídami"
+      ]
+    }
+  }
+}

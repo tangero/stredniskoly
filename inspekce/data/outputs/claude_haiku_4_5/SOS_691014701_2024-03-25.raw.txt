@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_691014701_2024-03-25",
+  "school_profile": {
+    "school_type": "Střední škola pedagogická a sociálně právní a střední zdravotnická škola Jana Blahoslava (církevní škola Jednoty bratrské)",
+    "inspection_period": "25.–26. března a 2. dubna 2024",
+    "school_change_summary": "Škola funguje od září 2021. Nabízí tři obory: Předškolní a mimoškolní pedagogika, Veřejnosprávní činnost (oba s maturitou) a Ošetřovatel (bez maturity). Provozuje také domov mládeže a školní jídelnu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné a příznivé prostředí",
+        "detail": "Škola vytváří velmi příznivé prostředí pro vzdělávání s přátelskou atmosférou a dobrými materiálně-technickými podmínkami.",
+        "evidence": "Ředitel 'vhodně využívá předchozích zkušeností' a 'vytváří bezpečné a velmi příznivé prostředí pro vzdělávání'."
+      },
+      {
+        "tag": "Kvalitní partnerství a praxe",
+        "detail": "Škola má efektivní spolupráci se zřizovatelem a externími partnery, což umožňuje žákům získávat praktické zkušenosti.",
+        "evidence": "'Spolupráce se zřizovatelem a dalšími externími partnery je efektivně nastavená' a 'promyšlená organizace vzdělávání napomáhá žákům získávat odborné kompetence'."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Domov mládeže nabízí pestrý program volnočasových aktivit a klubů přiměřených věku a zájmům žáků.",
+        "evidence": "'Nabídka volnočasových aktivit je pestrá' a zahrnuje 'Klub deskových her, Divadelní soubor, Keramika a Klub matematiků'."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovaní pedagogové",
+        "detail": "Téměř polovina pedagogů nemá požadovanou odbornou kvalifikaci, což se negativně projevuje v kvalitě výuky.",
+        "evidence": "'Téměř polovina nesplňuje podmínky odborné kvalifikace' a 'absence dalšího vzdělávání se odráží v nižší míře a kvalitě metod a forem ve výuce'."
+      },
+      {
+        "tag": "Málo efektivní vyučovací metody",
+        "detail": "Výuka je převážně frontální s dominancí učitele, chybí aktivní zapojení žáků a práce s informačními zdroji.",
+        "evidence": "'V převážné většině sledovaných hodin převládala méně efektivní frontální výuka s dominancí učitele bez aktivního zapojení žáků'."
+      },
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Průměrná absence činí 166 zameškaných hodin na žáka za školní rok, což ovlivňuje vzdělávací výsledky.",
+        "evidence": "'Absence v posledních dvou školních letech činila v průměru 166 zameškaných hodin na žáka za školní rok'."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaký je konkrétní plán na zvýšení kvalifikace pedagogů a jak budete řešit situaci, kdy polovina sboru nemá požadovanou kvalifikaci?",
+      "Jak budete zlepšovat vyučovací metody a více zapojovat žáky do aktivního učení místo převážně frontální výuky?",
+      "Jaká opatření plánujete proti vysoké absenci žáků (166 hodin ročně na žáka)?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o pedagogiku a sociální práci, kteří si cení osobního přístupu a křesťanských hodnot",
+      "Studenti, kteří chtějí kvalitní praktickou přípravu v oboru díky spolupráci se sociálními partnery",
+      "Žáci, kterým vyhovuje menší škola s přátelskou atmosférou a bohatou mimoškolní nabídkou v domově mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají moderní a pestrý přístup k výuce – škola se stále orientuje na tradičnější frontální metody",
+      "Žáci potřebující intenzivní metodickou podporu – hospitační činnost není dostatečně kontinuální a systematická",
+      "Studenti, kteří se spoléhají na vysokou docházku – průměrná absence je výrazně vyšší než obvyklá"
+    ],
+    "plain_czech_summary": "Škola Jana Blahoslava je mladá církevní instituce (od 2021) s příznivou atmosférou a dobrým vybavením. Silnými stránkami jsou bezpečné prostředí, kvalitní partnerství pro praxi a bohatá mimoškolní nabídka. Hlavní problémy: téměř polovina učitelů nemá potřebnou kvalifikaci, výuka je převážně frontální bez aktivního zapojení žáků a absence žáků je vysoká (166 hodin ročně). Škola má potenciál, ale potřebuje zlepšit kvalitu pedagogů a modernizovat vyučovací metody."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze zhodnotit – škola dosud neprovedla maturitní zkoušky",
+      "key_numbers": [
+        "Škola funguje od září 2021",
+        "Nabízí 2 maturitní obory (Předškolní a mimoškolní pedagogika, Veřejnosprávní činnost)",
+        "První maturitní zkoušky se budou konat v budoucnu"
+      ],
+      "evidence": "'Vzhledem ke skutečnosti, že škola svou činnost vykonává od září 2021, nelze zhodnotit žákovské výsledky ve formě maturitních či závěrečných zkoušek, které doposud neproběhly'."
+    },
+    "absence": {
+      "trend": "Vysoká absence – výrazně nad normou",
+      "key_numbers": [
+        "166 zameškaných hodin na žáka za školní rok (průměr za poslední 2 roky)",
+        "Absence ovlivňuje vzdělávací výsledky"
+      ],
+      "evidence": "'Absence v posledních dvou školních letech činila v průměru 166 zameškaných hodin na žáka za školní rok' a 'jedním z faktorů ovlivňujícím vzdělávací výsledky je absence'."
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodik prevence zajišťují poradenské služby",
+      "Doučování pro žáky s rizikem školního neúspěchu",
+      "Spolupráce s Pedagogicko-psychologickou poradnou Liberec a Střediskem výchovné péče Frýdlant",
+      "Prevence rizikového chování ve spolupráci s organizací Maják a Policií ČR",
+      "Adaptační kurzy pro první ročníky a nově ubytované žáky"
+    ],
+    "safety_climate": [
+      "Pracovníci školy intuitivně vedou žáky k bezpečnému chování",
+      "Fyzické bezpečí je zajišťováno při výchovně vzdělávacím procesu",
+      "Bezpečnostní rizika nejsou dostatečně analyzována a dokumentována – inspekce doporučuje formální analýzu a dokumentaci"
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce se zřizovatelem (Jednotou bratrskou) s finanční podporou",
+      "Smluvní pracovní místa pro praktickou výuku oboru Předškolní a mimoškolní pedagogika",
+      "Členství v organizaci ACSI (křesťanské školy světa) s výměnou žáků",
+      "Spolupráce se Střediskem volného času Narnie, Asociací Comeniana a dalšími subjekty",
+      "Kontakt s úřadem práce pro kariérové poradenství"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však složitější (např. popis vyučovacích metod), ale celkově je text pro rodiče pochopitelný.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty nekvalifikovaných pedagogů – pouze 'téměř polovina', což je přibližné",
+      "Nejsou uvedeny konkrétní výsledky prospěchu za školní rok 2023/2024 – pouze data z roku 2022/2023 (48% s vyznamenáním, 50% prospělo, 2% neprospělo)",
+      "Absence 166 hodin ročně je uvedena jako průměr, ale není jasné, zda jde o všechny žáky nebo jen některé"
+    ]
+  }
+}
+```

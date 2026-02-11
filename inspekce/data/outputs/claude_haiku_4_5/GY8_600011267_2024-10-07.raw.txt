@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600011267_2024-10-07",
+  "school_profile": {
+    "school_type": "Gymnázium a Střední průmyslová škola (kombinovaná střední škola s 5 obory: 2 gymnázia, 3 odborné obory v technických oborech)",
+    "inspection_period": "7. až 10. října 2024",
+    "school_change_summary": "Od poslední inspekce v 2016 se počet žáků zvýšil o více než 40 %, škola přidala nový obor Stavebnictví. Výrazně se zlepšily výsledky maturit v gymnáziích, ale některé technické obory zůstávají pod průměrem. Materiální podmínky se zlepšily, kvalita výuky cizích jazyků se zvýšila."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství a praxe",
+        "detail": "Škola má funkční spolupráci se zaměstnavateli, vysokými školami a zahraničními partnery, což žákům přináší praktické zkušenosti a lepší uplatnění.",
+        "evidence": "Navázaná partnerství včetně zahraniční spolupráce efektivně podporují rozvoj odborných kompetencí žáků."
+      },
+      {
+        "tag": "Osobnostní rozvoj",
+        "detail": "Bohatá nabídka projektů, soutěží, exkurzí a adaptačních programů podporuje sociální a osobnostní vývoj žáků.",
+        "evidence": "Aktivity nad rámec běžné výuky účelně přispívají k osobnostnímu a sociálnímu rozvoji žáků."
+      },
+      {
+        "tag": "Kariérové poradenství",
+        "detail": "Výchovná poradkyně intenzivně podporuje žáky při volbě vysoké školy a jejich profesním uplatnění.",
+        "evidence": "Systém kariérového poradenství přispívá k dobrému profesnímu uplatnění všech žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita výuky",
+        "detail": "Výuka často postrádá individualizaci, diferenciaci a formativní hodnocení; žáci jsou často pasivními příjemci informací.",
+        "evidence": "Cílená diferenciace zadávaných úkolů podle schopností nebyla zaznamenána, formativní hodnocení pedagogové nevyužívali."
+      },
+      {
+        "tag": "Výsledky maturit v technických oborech",
+        "detail": "Obory Stavebnictví a Technická zařízení budov dosahují podprůměrných výsledků v maturitě ve srovnání s republikovým průměrem.",
+        "evidence": "V roce 2023 byla neúspěšnost zejména v češtině, v 2024 v profilové části; Geodézie měla kolísavé výsledky."
+      },
+      {
+        "tag": "Metodická podpora pedagogů",
+        "detail": "Vedení školy neposkytuje pedagogům dostatečně účinnou podporu pro zlepšování kvality výuky.",
+        "evidence": "Metodická podpora není dostatečně účinná pro zlepšování kvality vychovně-vzdělávacího procesu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi? Jaké metody používá?",
+      "Jaké jsou konkrétní výsledky maturit v jednotlivých oborech za poslední 2 roky a jak se škola snaží zlepšit výsledky v technických oborech?",
+      "Jak se škola věnuje rozvoji kritického myšlení a práci s informačními zdroji v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí kvalitní přípravu na vysokou školu a ocení bohatou nabídku projektů a soutěží",
+      "Studenti technických oborů, kteří si cení praktické výuky a spolupráce se zaměstnavateli",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje podporu a individuální konzultace"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků, kteří potřebují silnou individualizaci a diferenciaci výuky – to není v současnosti dostatečně zajištěno",
+      "Zájemci o technické obory (Stavebnictví, Technická zařízení budov) by měli zvážit nižší úspěšnost v maturitách",
+      "Žáci, kteří se učí lépe aktivní metodou a diskusí – výuka je často frontální s pasivní rolí žáků"
+    ],
+    "plain_czech_summary": "Gymnázium a SPŠD v Duchcově je stabilní školou s dobrým zázemím a bohatou nabídkou aktivit. Silné stránky: kvalitní partnerství se zaměstnavateli a vysokými školami, výborné kariérové poradenství, osobnostní rozvoj žáků. Slabiny: výuka často postrádá individualizaci a aktivní metody, žáci jsou pasivní, formativní hodnocení se nepoužívá. Technické obory mají nižší úspěšnost v maturitách. Vedení pracuje na zlepšení, ale metodická podpora pedagogům není zatím dostatečná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní trend v gymnáziích (v 2023-2024 neúspěšný pouze 1 žák), ale kolísavé a podprůměrné výsledky v technických oborech",
+      "key_numbers": [
+        "Gymnázia: 1 neúspěšný žák v 2023-2024",
+        "Geodézie: v 2023 všichni úspěšní, v 2024 neuspěli 3 ze 6",
+        "Stavebnictví a Technická zařízení: podprůměrné výsledky vůči skupině oborů v ČR"
+      ],
+      "evidence": "Ke značnému zvýšení úspěšnosti došlo u oborů Gymnázium. Kolísavých výsledků dosahovali žáci oboru Geodézie. Stavebnictví a Technická zařízení vykazují vyšší míru neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Není v textu zprávy specifikován",
+      "key_numbers": [],
+      "evidence": "Zpráva se absencí nezabývá"
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodik prevence poskytují poradenské služby",
+      "Individuální konzultace a doučování pro všechny žáky",
+      "Nepovinné semináře pro žáky posledního ročníku",
+      "Kariérové poradenství se zástupci vysokých škol a úřadu práce",
+      "Systém primární prevence reagující na aktuální potřeby školy"
+    ],
+    "safety_climate": [
+      "Hospitované hodiny probíhaly v klidné pracovní atmosféře založené na vzájemném respektu",
+      "Promyšlený systém primární prevence efektivně předchází rizikovému chování",
+      "Adaptační programy pro žáky prvních ročníků vytvářejí dobré prosociální vztahy",
+      "Náznaky problémového chování jsou řešeny bezodkladně"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se základními, středními a vysokými školami",
+      "Velmi dobrá spolupráce se zřizovatelem (Ústecký kraj) na zlepšování materiálních podmínek",
+      "Zapojení do krajského programu Dobrá škola – Moderní škola 4.0",
+      "Smluvní partneři a zahraniční školy v oblasti odborného vzdělávání",
+      "Spolupráce s městem na společných akcích",
+      "Přítomnost rodilých mluvčích v hodinách cizích jazyků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři (např. popis kritérií inspekce).",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o absencích žáků",
+      "Chybí detailní informace o počtu žáků v jednotlivých oborech a jejich věkovém složení",
+      "Není jasné, jaké konkrétní opatření škola již přijala na základě doporučení z inspekce 2016"
+    ]
+  }
+}
+```

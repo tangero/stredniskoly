@@ -1,0 +1,113 @@
+```json
+{
+  "report_id": "SOS_600170977_2025-05-27",
+  "school_profile": {
+    "school_type": "Střední škola stavební s obory: Truhlář, Instalatér, Zedník (s výučním listem) a Stavebnictví (s maturitou)",
+    "inspection_period": "27. května až 9. června 2025",
+    "school_change_summary": "V září 2023 byl vymazán obor vyššího odborného vzdělávání. Škola změnila název a od té doby zaznamenala výrazný nárůst počtu žáků z přibližně 200 na 312 žáků (nárůst o více než 100 žáků)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Žáci dosahují velmi dobrých výsledků u maturitní zkoušky, obvykle lepších než průměr v ČR.",
+        "evidence": "Úspěšnost žáků u maturitní zkoušky byla v několika posledních letech velmi dobrá, ve srovnění s výsledky v ČR je obvykle škola úspěšnější."
+      },
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola efektivně propojuje teoretické znalosti s praktickou aplikací v reálných projektech a firmách.",
+        "evidence": "Efektivní propojování teorie s praxí v odborných i všeobecně-vzdělávacích předmětech, žáci pracují na zakázkách, které si sami řídí."
+      },
+      {
+        "tag": "Moderní vybavení a prostory",
+        "detail": "Škola má velmi dobré materiální podmínky s novými učebnami, počítačovými laboratořemi a pracovními prostory.",
+        "evidence": "Nově vybavené počítačové učebny, kompletní výměna oken, nově budované a rekonstruované prostory pro odborný výcvik."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejednotný přístup učitelů k výuce",
+        "detail": "Kvalita vyučovacích hodin se liší, někteří učitelé používají zastaralé frontální metody bez aktivizace žáků.",
+        "evidence": "Kvalita sledované výuky byla rozdílná, některé hodiny byly jednotvárné s malým využitím pestrých aktivizačních metod."
+      },
+      {
+        "tag": "Slabší výsledky v matematice",
+        "detail": "Matematika dlouhodobě vykazuje nejnižší úspěšnost mezi maturitními předměty.",
+        "evidence": "Nejnižší úspěšnost žáků oboru s maturitní zkouškou z dlouhodobého hlediska vykazuje matematika, škola o tom ví a hledá řešení."
+      },
+      {
+        "tag": "Chybí individualizace výuky",
+        "detail": "Výuka není dostatečně přizpůsobena různým schopnostem a potřebám jednotlivých žáků.",
+        "evidence": "Ve většině hodin nebyla zaznamenána diferenciace náročnosti zadávaných úkolů zohledňující možnosti a nadání žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje slabší žáky v matematice a jaké má plány na zlepšení jejich výsledků?",
+      "Jaké jsou možnosti individuálního přístupu v jednotlivých třídách a jak se učitelé přizpůsobují různým tempům učení?",
+      "Jak probíhá spolupráce se zaměstnavateli a jaké jsou šance na získání praxe přímo během studia?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s jasným propojením na budoucí zaměstnání v oboru stavebnictví",
+      "Studenti, kteří se chtějí podílet na reálných projektech a zakázkách již během studia",
+      "Žáci motivovaní k učení, kteří si váží moderního vybavení a kvalitních pracovních podmínek"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovaný přístup a více podpory v teoretických předmětech, zejména v matematice",
+      "Studenti, kteří preferují čistě teoretické vzdělání bez praktické složky",
+      "Žáci se slabšími studijními výsledky v prvním ročníku, kde je vyšší riziko neúspěchu"
+    ],
+    "plain_czech_summary": "Střední škola stavební Vysoké Mýto je stabilní a úspěšná škola, která se dynamicky rozvíjí. Žáci dosahují výborných výsledků u maturit a závěrečných zkoušek. Škola má moderní vybavení a efektivně propojuje teorii s praxí prostřednictvím spolupráce s firmami. Hlavní výzvou je zlepšit jednotnost přístupu učitelů k výuce, více individualizovat výuku a zlepšit výsledky v matematice. Škola si je těchto problémů vědoma a pracuje na jejich řešení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrý, dlouhodobě nadprůměrný",
+      "key_numbers": [
+        "Úspěšnost obvykle vyšší než průměr v ČR",
+        "Po opravných zkouškách minimální počet neúspěšných žáků",
+        "Všichni žáci uspěli u závěrečných zkoušek v roce 2024"
+      ],
+      "evidence": "Úspěšnost žáků u maturitní zkoušky byla v několika posledních letech velmi dobrá, ve srovnění s výsledky v ČR je obvykle škola úspěšnější."
+    },
+    "absence": {
+      "trend": "Nízká, pozitivní",
+      "key_numbers": [
+        "Absence spíše nízká napříč obory",
+        "Neomluvená absence ojedinělá",
+        "Svědčí o účelné motivaci žáků"
+      ],
+      "evidence": "Napříč obory vzdělání je absence žáků ve výuce spíše nízká, neomluvená je ojedinělá, což svědčí o účelné motivaci žáků."
+    },
+    "support_services": [
+      "Výchovná poradkyně (zároveň kariérová poradkyně a metodik prevence)",
+      "Individuální konzultace pro ohrožené žáky",
+      "Semináře z anglického jazyka, českého jazyka a literatury",
+      "Seminář z matematiky pro čtvrtý ročník jako příprava na vysokou školu",
+      "Adaptační, sportovní a geodetické kurzy",
+      "Spolupráce s vnějšími organizacemi na prevenci rizikového chování"
+    ],
+    "safety_climate": [
+      "Klidná, respektující pracovní atmosféra ve třídách",
+      "Žáci dodržují nastavená pravidla",
+      "Žáci dodržují zásady bezpečnosti při práci v odborném výcviku",
+      "Škola řeší projevy rizikového chování ve spolupráci se všemi zainteresovanými"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s mnoha firmami a institucemi na odborných praxích",
+      "Firmy tvoří Poradní sbor školy a přispívají finančně na rekonstrukce",
+      "Velké množství odborných exkurzí do reálné praxe",
+      "Žáci druhého a třetího ročníku pracují na vlastních zakázkách",
+      "Mezinárodní program Erasmus+ pro mobility žáků v zahraničí",
+      "Součást mezinárodního programu DofE"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však delší a složitější, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Přesné procento neúspěšných žáků v jednotlivých oborech není uvedeno, pouze kvalitativní popis",
+      "Konkrétní počty žáků se speciálními vzdělávacími potřebami (23 žáků) nejsou dále rozčleněny podle typu potřeb",
+      "Detailní analýza příčin slabších výsledků v matematice není v textu obsažena, pouze zmínka, že škola situaci analyzuje"
+    ]
+  }
+}
+```

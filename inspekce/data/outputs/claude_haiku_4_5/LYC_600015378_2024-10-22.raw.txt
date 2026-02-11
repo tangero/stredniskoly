@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "LYC_600015378_2024-10-22",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola a Střední škola veterinární, zemědělská a zdravotnická",
+    "inspection_period": "22.–25. 10. 2024",
+    "school_change_summary": "Od 2023/2024 přibyl obor Diplomovaný veterinární asistent, od 2024/2025 Zdravotnické lyceum. Zřízena funkce mediátorky. Výrazně zlepšeny materiální podmínky pro praktickou výuku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní vybavení pro praxi",
+        "detail": "Škola vybudovala kvalitně vybavené prostory pro praktické vyučování včetně veterinární ordinace a mlékárenské technologie.",
+        "evidence": "Venkovní areál Dvůr Kuchyňka, školní veterinární ordinace, propojení teorie s praxí v reálném prostředí."
+      },
+      {
+        "tag": "Kvalitní vedení a řízení",
+        "detail": "Vedení pracuje podle nové koncepce 2024–2030 s komplexním systémem řízení a jednotným informačním systémem.",
+        "evidence": "Pravidelné porady, zpětná vazba, operativní řešení problémů, pozitivní posun v materiálních podmínkách."
+      },
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Pedagogové účinně propojují teoretické vzdělávání s reálnou praxí, zvláště v praktickém vyučování zdravotnických oborů.",
+        "evidence": "Žáci pracují s přiměřeným počtem pacientů, výkony jsou komentovány, činnosti navazují na teoretické předměty."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá metodická podpora začínajících učitelů",
+        "detail": "Uvádění nových učitelů není komplexní a chybí organizace účinnější spolupráce mezi uvádějícím a uvádívaným.",
+        "evidence": "Nedůsledné metodické vedení s negativním dopadem na efektivitu výuky, absence aktivizačních metod."
+      },
+      {
+        "tag": "Omezená individualizace ve výuce",
+        "detail": "Pedagogové neuplatňují dostatečně diferencovaný přístup k žákům, chybí vedení k souvislému mluvnímu projevu.",
+        "evidence": "Převažuje frontální výuka, diktování látky, žáci odpovídají stručně, málo příležitostí pro kooperativní kompetence."
+      },
+      {
+        "tag": "Vysoká fluktuace v kombinovaném studiu VOŠ",
+        "detail": "Zhruba 50 % studentů kombinovaného studia VOŠ jej opouští kvůli náročnosti na sebeorganizaci.",
+        "evidence": "Řada studentů opouští studium již v zimním období prvního ročníku, kombinované studium má vysokou fluktuaci."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá mentoring pro začínající učitele a jaké jsou jeho výsledky?",
+      "Jaké jsou plány na zlepšení individualizace výuky a vedení žáků k samostatnému vyjadřování?",
+      "Jak se škola vypořádává s vysokou fluktuací studentů v kombinovaném studiu VOŠ?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o zdravotnické, veterinární a zemědělské obory, kteří oceňují moderní vybavení a propojení teorie s praxí.",
+      "Studenti VOŠ, kteří preferují denní formu studia s intenzivní praktickou výukou a podporou.",
+      "Žáci, kteří se chtějí účastnit mezinárodních projektů (Erasmus+) a soutěží v odborných oborech."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovaný přístup a více podpory v samostatném učení – výuka je zatím spíše frontální.",
+      "Studenti kombinovaného studia VOŠ bez silné sebeorganizace – vysoká fluktuace naznačuje náročnost tohoto formátu.",
+      "Žáci, kteří se chtějí rozvíjet v komunikačních dovednostech – škola zatím málo pracuje na souvislém mluvním projevu."
+    ],
+    "plain_czech_summary": "Škola se zaměřuje na zdravotnické, veterinární a zemědělské obory s moderním vybavením a propojením teorie s praxí. Vedení je koncepční a řízení se zlepšuje. Pozitiva: kvalitní praktické prostředí, účinné propojení teorie s praxí, aktivní poradenské pracoviště. Slabiny: začínající učitelé nemají dostatečnou podporu, výuka je spíše frontální bez individualizace, žáci málo cvičí samostatné vyjadřování. Kombinované studium VOŠ má vysokou fluktuaci. Vhodná pro motivované žáky se zájmem o obory, méně vhodná pro ty, kteří potřebují individuální přístup."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní",
+      "key_numbers": [
+        "Žáci dosahují po podzimním termínu maturitní zkoušky většinou lepších výsledků než celorepublikový průměr",
+        "V anglickém jazyce došlo k intenzivnější cílené přípravě po neúspěchu v roce 2022, což se ukázalo jako účinné"
+      ],
+      "evidence": "Při ukončování studia maturitní zkouškou dosahují žáci po podzimním termínu většinou lepších výsledků, než je celorepublikový průměr."
+    },
+    "absence": {
+      "trend": "Neuvedeno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje konkrétní údaje o absenci žáků."
+    },
+    "support_services": [
+      "Od školního roku 2024/2025 posíleno školní poradenské pracoviště: dvě výchovné poradkyně, školní metodik prevence a nová mediátorka pro žáky i pedagogy",
+      "Individuální konzultace s vyučujícími týkající se metod a forem vzdělávání žáků se speciálními vzdělávacími potřebami",
+      "Nabídka konzultací pro žáky s vzdělávacími problémy, zejména v přípravě na maturitu"
+    ],
+    "safety_climate": [
+      "Všichni žáci měli vytvořené správné pracovní návyky, bez prodlení se zapojovali do řešení úkolů",
+      "Hodiny probíhaly v klidné a příznivé pracovní atmosféře díky vhodnému přístupu vyučujících",
+      "Škola aktivně vyhledává žáky s problémy, v uplynulých letech řešila podezření na šikanu (nepotvrdila se)",
+      "Školní senát pracuje aktivně s oboustrannou komunikací s vedením"
+    ],
+    "partnerships_practice": [
+      "Smlouvy o zabezpečení odborné praxe žáků a studentů",
+      "Projekty Erasmus+ s zahraničními partnery (např. stáže v Portugalsku)",
+      "Spolupráce s různými subjekty pro zajištění vhodných podmínek pro praxi",
+      "Školní centrum zdraví, Školní veterinární poradna a řada kurzů pro veřejnost"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní číselné údaje o absenci, počtech žáků v jednotlivých oborech a podrobnější statistiky výsledků.",
+    "uncertainty_notes": [
+      "Není jasné, jak se konkrétně měří efektivita hospitační činnosti a jaké jsou její výsledky.",
+      "Chybí informace o počtu a podílu žáků, kteří využívají nabízené konzultace.",
+      "Není specifikováno, jaké konkrétní opatření byla přijata v oblasti individualizace výuky."
+    ]
+  }
+}
+```

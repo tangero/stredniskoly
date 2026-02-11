@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600009033_2025-05-05",
+  "school_profile": {
+    "school_type": "Hotelová škola (střední škola) s obory: Hotelnictví (maturitní, 187 žáků), Gastronomie (maturitní nástavba, 9 žáků), Kuchař–číšník (výuční list, 117 žáků). Celkem 313 žáků.",
+    "inspection_period": "5. května až 15. května 2025",
+    "school_change_summary": "Nová ředitelka od srpna 2024. Výrazně vzrostl počet žáků se speciálními potřebami (více než dvojnásobek) a s odlišným mateřským jazykem (více než trojnásobek). Od inspekce 2018 se neimplementovala účinná opatření proti školnímu neúspěchu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní praktické vzdělávání",
+        "detail": "Žáci se učí v reálném pracovním prostředí u kvalitních zaměstnavatelů v malých skupinách s individuální péčí instruktorů.",
+        "evidence": "Praktické vyučování v malých skupinách umožňuje intenzivní věnování se každému žákovi, rozvoj odborných kompetencí v reálném prostředí."
+      },
+      {
+        "tag": "Rozšiřující se partnerství",
+        "detail": "Škola aktivně buduje síť spolupracujících hotelů a restaurací, což žákům umožňuje poznat různé typy pracovišť.",
+        "evidence": "Různorodost gastronomických a hotelových subjektů s kvalitním zázemím a technologiemi umožňuje seznámit se s různými pracovními procesy."
+      },
+      {
+        "tag": "Kariérové poradenství",
+        "detail": "Kariérová poradkyně pomáhá žákům s volbou další vzdělávací cesty a informuje o možnostech na trhu práce.",
+        "evidence": "Poradenská podpora k volbě další vzdělávací cesty a budoucímu profesnímu uplatnění je funkční."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost a absence",
+        "detail": "Téměř 20 % žáků neprospělo v roce 2023/24, v prvním čtvrtletí 2024/25 neprospěla více než polovina prvňáků. Průměrně 4 týdny absence na žáka ročně.",
+        "evidence": "Více jak 27 000 hodin absence ročně, z toho 1500 neomluvené. Vysoká absence je společným důvodem neúspěšnosti."
+      },
+      {
+        "tag": "Slabé výsledky v maturitě",
+        "detail": "Výsledky ve společné části maturitní zkoušky jsou horší než průměr v ČR, zejména v češtině a matematice.",
+        "evidence": "Hrubá neúspěšnost v maturitních obdobích 2023 a 2024 byla horší než průměrný výsledek v příslušné skupině oborů."
+      },
+      {
+        "tag": "Zastaralé vybavení a technologie",
+        "detail": "Chybí wi-fi, počítačové stanice neodpovídají požadavkům, ve výuce se používají elektrické psací stroje místo moderních programů.",
+        "evidence": "Materiální a prostorové podmínky jsou z větší části zastaralé a neodpovídají současným požadavkům na výuku."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší vysokou absenci žáků a jaké konkrétní kroky podniká k jejímu snížení?",
+      "Jaký je plán na modernizaci technologického vybavení a zavedení wi-fi v obou budovách?",
+      "Jak se škola vypořádá s vysokou neúspěšností v prvních ročnících a jakou podporu nabízí ohrožených žákům?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením, kteří se chtějí učit v reálném pracovním prostředí u kvalitních zaměstnavatelů.",
+      "Studenti, kteří mají zájem o gastronomii a hotelnictví a chtějí se seznámit s různými typy pracovišť.",
+      "Žáci, kteří potřebují individuální péči a podporu instruktorů při praktickém vyučování."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími znalostmi z matematiky a cizích jazyků – škola nemá účinnou strategii jejich podpory.",
+      "Studenti, kteří potřebují moderní technologické vybavení – škola má zastaralé prostředky.",
+      "Žáci se speciálními potřebami – podpůrná opatření nejsou důsledně uplatňována v podobě individualizované podpory."
+    ],
+    "plain_czech_summary": "Hotelová škola v Mariánských Lázních nabízí kvalitní praktické vzdělávání v reálném pracovním prostředí. Silnou stránkou je spolupráce s místními hotely a restauracemi. Problémem je vysoká absence žáků (průměrně 4 týdny ročně), neúspěšnost v prvních ročnících a slabé výsledky v maturitě. Technologické vybavení je zastaralé. Nová ředitelka (od srpna 2024) se snaží zlepšit situaci, ale zatím se jí nedaří zavádět potřebné změny. Podpora žáků se speciálními potřebami není dostatečná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Negativní – horší než průměr ČR",
+      "key_numbers": [
+        "Hrubá neúspěšnost v maturitních obdobích 2023 a 2024 horší než průměr v příslušné skupině oborů",
+        "Neúspěšnost především v Českém jazyce a literatuře a Matematice",
+        "Úspěšnost v cyklu oboru Hotelnictví cca 67 % (zlepšení o 10 procentních bodů od 2018)"
+      ],
+      "evidence": "Výsledky školy ve společné části maturitní zkoušky byly v maturitním období roků 2023 a 2024 horší, než je průměrný výsledek."
+    },
+    "absence": {
+      "trend": "Kritický – velmi vysoká",
+      "key_numbers": [
+        "Více jak 27 000 hodin absence ročně (2023/24)",
+        "Přes 1500 hodin neomluvené absence ročně",
+        "Průměrně 4 týdny omluvené a 1 den neomluvené absence na žáka ročně"
+      ],
+      "evidence": "Ve školním roce 2023/2024 evidovala škola více jak 27 000 hodin absence, z toho přes 1500 hodin neomluvené absence."
+    },
+    "support_services": [
+      "Výchovná poradkyně (zároveň kariérová poradkyně) – funkční kariérové poradenství, ale chybí koncepční přístup",
+      "Metodička prevence",
+      "Plány pedagogické podpory pro žáky s odlišným mateřským jazykem (nově v aktuálním školním roce)",
+      "Doučování a konzultační hodiny pro žáky v neúspěchu",
+      "Individuální výchovné plány (jen u některých žáků, převážně nematuritního oboru)"
+    ],
+    "safety_climate": [
+      "Počet školních úrazů výrazně stoupl, zejména při praktickém vyučování a tělesné výchově",
+      "Přijatá opatření se nedaří minimalizovat úrazovost",
+      "Chybí krizový plán pro jednotné postupy pedagogů",
+      "Nekorektní komunikace učitelů se žáky zaznamenána v některých hodinách"
+    ],
+    "partnerships_practice": [
+      "Aktivní spolupráce s regionálními zaměstnavateli (hotely, restaurace) – zajišťují praktické vyučování",
+      "Spolupráce s místními základními školami – příprava zážitkových akcí",
+      "Smluvní partnerství s 7 pracovišti v Mariánských Lázních (hotely, lázně, wellness centra)",
+      "Praktické vyučování v malých skupinách pod vedením instruktorů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Některé pasáže jsou však velmi dlouhé a složitě strukturované (např. popis průběhu vzdělávání), což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní důvody vysoké absence (zdravotní, sociální, motivační) – rodiče si tak nemohou udělat úplný obrázek.",
+      "Chybí informace o tom, jak konkrétně se škola snaží řešit nízké výsledky v matematice a cizích jazycích.",
+      "Není jasné, jaké konkrétní kroky nová ředitelka již podnikla a jaké jsou její konkrétní plány na zlepšení."
+    ]
+  }
+}
+```

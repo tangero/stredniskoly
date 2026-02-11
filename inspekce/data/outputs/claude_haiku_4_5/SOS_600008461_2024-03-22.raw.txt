@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "SOS_600008461_2024-03-22",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola a Střední škola hotelová (VOŠ činnost ukončena v 2017, nyní pouze SŠ)",
+    "inspection_period": "22. března až 27. března 2024",
+    "school_change_summary": "Od poslední inspekce v 2019 počet žáků vzrostl ze 126 na 200. Škola modernizovala učebny, získala podporu Erasmus+ a vybudovala venkovní učebnu. Došlo ke změně na pozici výchovné poradkyně."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka na vysoké úrovni",
+        "detail": "Vyučující praktického vyučování podrobně vysvětlují cíle, vedou žáky k sebehodnocení a vzájemnému hodnocení, efektivně rozvíjejí odborné i klíčové kompetence.",
+        "evidence": "Vyučující kladli důraz na dodržování technologických postupů, kvalitu práce a bezpečnost. Promyšlená diferenciace požadavků podle schopností žáků."
+      },
+      {
+        "tag": "Kvalitní spolupráce se zaměstnavateli",
+        "detail": "Dlouhodobá kooperace umožňuje efektivní praktické vyučování na smluvních pracovištích s pravidelným sledováním výsledků.",
+        "evidence": "Průběh a výsledky vzdělávání na smluvních pracovištích jsou pravidelně sledovány a vyhodnocovány."
+      },
+      {
+        "tag": "Dobrá podpora žáků se speciálními potřebami",
+        "detail": "Vedení a výchovná poradkyně vytvořili účinný mechanismus předávání informací o žácích se speciálními vzdělávacími potřebami.",
+        "evidence": "Všichni vyučující mají operativně k dispozici potřebné údaje. Došlo k výraznému pozitivnímu posunu ve srovnání s minulou inspekční činností."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Velmi vysoká neúspěšnost v nástavbovém studiu",
+        "detail": "Obor Podnikání (64-41-L/51) vykazuje katastrofální výsledky: neúspěšnost u maturit vzrostla z 21,4 % (2020) na 50 % (2023), v posledních dvou letech pod celorepublikovým průměrem.",
+        "evidence": "V roce 2023 neuspělo 50 % žáků ve společné části maturitní zkoušky. Průměrně 40 % přijatých žáků neukončilo vzdělávání úspěšně."
+      },
+      {
+        "tag": "Pasivní teoretická výuka",
+        "detail": "Teoretické vyučování je převážně frontální s předáváním faktů, chybí aktivizační metody, žáci mají málo příležitostí pro spolupráci a kritické myšlení.",
+        "evidence": "Dominovala frontální forma výuky, komunikace byla jednostranná od učitele k žákům. Nízká byla podpora rozvoje klíčových kompetencí."
+      },
+      {
+        "tag": "Slabá podpora žáků v obtížích",
+        "detail": "Doučování v letošním roce neprobíhá, žáci ohrožení neúspěchem si konzultace s učiteli berou jen výjimečně, konkrétní opatření nejsou zaznamenána.",
+        "evidence": "Postupy ze Strategie předcházení školní neúspěšnosti nejsou v plné míře uplatňovány. Zapojení výchovné poradkyně je spíše výjimečné."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou neúspěšnost žáků v oboru Podnikání? Jaká opatření byla přijata od inspekce?",
+      "Jaké jsou přijímací kritéria do oborů s maturitou a jak se liší od ostatních škol? Jsou povinné přijímací zkoušky?",
+      "Jak funguje doučování a individuální podpora pro žáky v obtížích? Je dostupné všem, kdo ho potřebují?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktickou výuku (obory Kuchař-číšník, Cukrář, Pekař) – zde jsou výsledky dobré a praktická výuka na vysoké úrovni",
+      "Žáci se speciálními vzdělávacími potřebami – škola má dobře nastavený systém podpory a informovanosti pedagogů",
+      "Žáci z okolí, kteří chtějí ubytování – domov mládeže poskytuje kvalitní podmínky a individuální podporu"
+    ],
+    "who_should_be_cautious": [
+      "Uchazeči o nástavbové studium oboru Podnikání – obor vykazuje katastrofální výsledky, polovina žáků u maturit neuspěje",
+      "Žáci, kteří potřebují intenzivní podporu v teoretických předmětech – teoretická výuka je převážně pasivní bez aktivizačních metod",
+      "Žáci, kteří se spoléhají na doučování – v letošním roce doučování neprobíhá a konzultace si berou jen výjimečně"
+    ],
+    "plain_czech_summary": "Škola je známá kvalitní praktickou výukou v oborech jako Kuchař-číšník nebo Pekař, kde dosahuje dobrých výsledků. Má dobrou spolupráci se zaměstnavateli a podporuje žáky se speciálními potřebami. Velkým problémem je nástavbové studium oboru Podnikání, kde neuspěje polovina žáků u maturit. Teoretická výuka je spíše pasivní, chybí aktivní zapojení žáků. Doučování v letošním roce neprobíhá. Škola se rozrostla z 126 na 200 žáků a modernizuje své vybavení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Obor Hotelnictví se zlepšuje (27,3 % neúspěšnosti v 2020 → 0 % v 2022). Obor Podnikání se zhoršuje (21,4 % v 2020 → 50 % v 2023).",
+      "key_numbers": [
+        "Podnikání 2023: 50 % hrubá neúspěšnost ve společné části",
+        "Podnikání: průměrně 40 % žáků neukončí vzdělávání úspěšně",
+        "Hotelnictví 2022: 0 % neúspěšnosti ve společné části"
+      ],
+      "evidence": "V oboru 64-41-L/51 Podnikání se neúspěšnost postupně zhoršovala. Matematika jako zkušební předmět: žáci vždy neúspěšní. V oborech s výučním listem se výsledky zlepšovaly, v 2023 úspěšně 95 % žáků."
+    },
+    "absence": {
+      "trend": "Celková absence se snížila a stabilizovala. Přetrvávají jednotlivci s nadměrnou absencí, která negativně ovlivňuje výsledky.",
+      "key_numbers": [
+        "Průměr posledních 3 let: 116 hodin/žáka/rok (bez 2020/21: 142 hodin)",
+        "2018/19 pro srovnání: 201 hodin/žáka/rok",
+        "V 1. pololetí 2023/24: 20 % žáků nehodnoceno kvůli absenci"
+      ],
+      "evidence": "Absence neúspěšných žáků u maturit v 2022/23 tvořila polovinu celkové absence posledního ročníku. Ojediněle žáci přesahují 400 hodin absence za rok."
+    },
+    "support_services": [
+      "Výchovné poradenství – nově obsazená pozice, vytváří mechanismus pro podporu žáků se speciálními potřebami",
+      "Kariérové poradenství – zprostředkování informací a prezentace vysokých škol a zaměstnavatelů",
+      "Domov mládeže – individuální podpora ubytovaných žáků v osobní i studijní rovině, doučování"
+    ],
+    "safety_climate": [
+      "Sledovaná výuka probíhala v příjemné pracovní atmosféře, žáci dodržovali pravidla",
+      "Vyučující byli vstřícní a poskytovali individuální podporu",
+      "Strategie prevence rizikových jevů zahrnuje plánované aktivity, rizikové oblasti jsou mapovány a řešeny"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se smluvními pracovišti umožňuje kvalitní praktické vyučování",
+      "Pravidelné sledování průběhu a výsledků na pracovištích",
+      "Projekt Erasmus+ – odborná praxe v Itálii a Rakousku",
+      "Návštěvy základních škol pro propagaci a seznámení s praktickou výukou"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Hlavní problémy jsou jasně identifikovány (neúspěšnost v Podnikání, pasivní teoretická výuka). Silné stránky jsou také konkrétní (praktická výuka, spolupráce se zaměstnavateli). Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala na základě zjištění z inspekce",
+      "Není jasné, zda se situace v oboru Podnikání od inspekce (březen 2024) změnila",
+      "Chybí informace o tom, jak se škola postavila k doporučení zvážit další realizaci nástavbového studia"
+    ]
+  }
+}
+```

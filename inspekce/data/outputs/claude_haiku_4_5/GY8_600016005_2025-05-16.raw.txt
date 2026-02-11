@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600016005_2025-05-16",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmileté studium)",
+    "inspection_period": "16. až 21. května 2025",
+    "school_change_summary": "Od poslední inspekce došlo k navýšení počtu žáků na 341. Zkvalitnilo se digitální zázemí a materiální podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Cizí jazyky a mezinárodní spolupráce",
+        "detail": "Škola dlouhodobě úspěšně rozvíjí jazykové dovednosti žáků prostřednictvím mezinárodních projektů, stáží a certifikovaných zkoušek.",
+        "evidence": "Aktivní účast v mezinárodních projektech, stáže zahraničních žáků, počet žáků s certifikáty a studiem v zahraničí."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola systematicky podporuje nadané žáky a dosahuje výrazných úspěchů v soutěžích na krajské i celorepublikové úrovni.",
+        "evidence": "Opakované vítězství v olympiádách, středoškolské odborné činnosti, 1. místo v národním kole ENERSOL."
+      },
+      {
+        "tag": "Komplexní poradenské služby",
+        "detail": "Funkční tým poradců (výchovná poradkyně, metodici prevence, kariérní poradce) efektivně řeší individuální potřeby žáků.",
+        "evidence": "Výchovná komise řeší dlouhodobou absenci, vzdělávací obtíže, preventivní program mapuje rizikové chování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné sebehodnocení žáků",
+        "detail": "Sebehodnocení a vzájemné hodnocení žáků nejsou dostatečně zařazovány do výuky.",
+        "evidence": "Sebehodnocení probíhalo pouze formálně nebo vůbec, chybí příležitosti k rozvoji reflexe."
+      },
+      {
+        "tag": "Nejednotná diferenciace ve výuce",
+        "detail": "Diferenciace úkolů podle individuálních možností žáků není využívána konzistentně ve všech hodinách.",
+        "evidence": "Míra zařazení diferenciačních přístupů byla rozdílná, v některých hodinách chyběla."
+      },
+      {
+        "tag": "Formativní zpětná vazba",
+        "detail": "Další nástroje formativního hodnocení jsou využívány jen příležitostně.",
+        "evidence": "Učitelé poskytují zpětnou vazbu, ale další nástroje nejsou systematicky zařazovány."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje sebehodnocení a vzájemné hodnocení žáků v jednotlivých předmětech?",
+      "Jaké konkrétní metody diferenciace používají učitelé pro žáky s různými studijními předpoklady?",
+      "Jak se škola vypořádá s doporučením inspekce na zlepšení v oblasti sebehodnocení a diferenciace?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o cizí jazyky a mezinárodní spolupráci – škola má silný program v jazykové přípravě.",
+      "Nadaní a talentovaní žáci – škola systematicky podporuje jejich rozvoj a úspěchy v soutěžích.",
+      "Žáci, kteří potřebují komplexní podporu – funkční poradenské služby řeší individuální potřeby."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se spoléhají na intenzivní zpětnou vazbu a reflexi – sebehodnocení není dostatečně rozvinuto.",
+      "Žáci s různorodými studijními předpoklady – diferenciace není konzistentní ve všech hodinách.",
+      "Žáci, kteří potřebují individualizovaný přístup – formativní hodnocení se využívá jen příležitostně."
+    ],
+    "plain_czech_summary": "Gymnázium Bystřice nad Pernštejnem je dobře řízená škola se silným zaměřením na cizí jazyky, podporu nadaných žáků a kvalitní poradenské služby. Výsledky maturit jsou vyrovnané a úspěšné. Inspekce ocenila systémové řízení a efektivní spolupráci všech aktérů. Doporučuje však více pozornosti sebehodnocení žáků a konzistentnější diferenciaci ve výuce. Škola se vyvíjí pozitivně a počet žáků roste."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní a úspěšný",
+      "key_numbers": [
+        "Výsledky vyrovnané a úspěšné ve srovnění s gymnázii v ČR",
+        "Rostoucí počet žáků nahrazujících profilovou část mezinárodním certifikátem",
+        "Výborné výsledky v externí testování přírodovědné a čtenářské gramotnosti"
+      ],
+      "evidence": "Analýza dosažených výsledků vzdělávání umožňuje vedení školy získávat informace o riziku neúspěchu a nadání."
+    },
+    "absence": {
+      "trend": "Řešeno systematicky",
+      "key_numbers": [
+        "Výchovná komise řeší dlouhodobou absenci žáků",
+        "Preventivní program mapuje rizikové chování",
+        "Vysoká psychická zátěž a stres jsou součástí mapování klimatu"
+      ],
+      "evidence": "Výchovná komise poskytuje konkrétní návrhy opatření vedoucí k překonání problémů spojených s absencí."
+    },
+    "support_services": [
+      "Výchovná poradkyně, dva metodici prevence, kariérní poradce s jasně vymezenými kompetencemi",
+      "Výchovná komise řešící dlouhodobou absenci, výchovné a vzdělávací obtíže",
+      "Plány pedagogické podpory, doučování na digitální platformě, individuální konzultace"
+    ],
+    "safety_climate": [
+      "Preventivní program vytvořen na základě sledování rizikového chování a mapování klimatu ve třídách",
+      "Respektuje návrhy žáků týkající se jejich problémů (psychická zátěž, stres, sebepoškozování)",
+      "Relaxační zákoutí vytvořená pro wellbeing žáků"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s vysokými školami a externími odborníky v přírodovědných předmětech",
+      "Seminární práce ve spolupráci s odbornými konzultanty",
+      "Partnerství s firmami, institucemi a zahraničními školami; funkce vyslanecké školy Evropského parlamentu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně identifikovány s odkazem na kritéria. Chybí však konkrétní číselné údaje o absenci a některé detaily o maturitních výsledcích.",
+    "uncertainty_notes": [
+      "Konkrétní procenta nebo počty žáků s absencí nejsou uvedeny",
+      "Přesné procento úspěšnosti u maturitní zkoušky není specifikováno",
+      "Počet žáků se speciálními vzdělávacími potřebami (21) není dále analyzován"
+    ]
+  }
+}
+```

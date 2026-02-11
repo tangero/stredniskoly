@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600005771_2023-12-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:31:15.102265+00:00",
+  "run_finished_utc": "2026-02-09T16:31:44.590453+00:00",
+  "raw_file": "GY8_600005771_2023-12-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600005771_2023-12-11",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium",
+      "inspection_period": "11. 12. 2023 – 15. 12. 2023",
+      "school_change_summary": "Škola si udržuje vysoký standard, stabilní naplněnost (598 žáků z 620 povolených) a kvalifikovaný pedagogický sbor. Od inspekce v 2016 byly odstraněny zásadní nedostatky a provedeny úpravy ŠVP."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělávání",
+          "detail": "Metodicky zdařilá výuka cizích jazyků s nadstandardním rozvojem řečových dovedností, rodilí mluvčí, certifikované zkoušky.",
+          "evidence": "Téměř všichni žáci uplatňují jazykové certifikáty, třetina skládá zkoušky ze dvou jazyků."
+        },
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Výborné výsledky při ukončování studia s dlouhodobě nadprůměrnými výsledky v celostátním srovnění.",
+          "evidence": "Dvě třetiny žáků prospěly s vyznamenáním, výjimečně neprospěl jeden žák za dvě školní léta."
+        },
+        {
+          "tag": "Osobnostní rozvoj",
+          "detail": "Motivační prostředí s bohatou nabídkou volitelných předmětů a rozšiřujících aktivit podporující všestranný rozvoj.",
+          "evidence": "Charitativní akce, projektová činnost, soutěže, olympiády, zahraniční výjezdy a korespondenční kurzy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kvalita hospitační činnosti",
+          "detail": "Nízká četnost hospitací a absence konkrétních doporučení vedoucích ke zlepšení, zejména pro začínající učitele.",
+          "evidence": "Inspekce zjistila nedostatečnou metodickou podporu učitelů v některých hodinách výuky."
+        },
+        {
+          "tag": "Formativní hodnocení",
+          "detail": "V části výuky chybí zapojení žáků do evaluačních aktivit a vzájemného kriteriálního hodnocení.",
+          "evidence": "Zhruba v polovině sledovaného vzdělávání pedagogové nedostatečně nevyužili didaktického závěru hodin."
+        },
+        {
+          "tag": "Didaktické postupy",
+          "detail": "V malé části hodin převaha frontální výuky s nerovnoměrným zapojením žáků a nižší míra pedagogických zkušeností.",
+          "evidence": "Inspekce zaznamenala ojediněle nižší míru pedagogických zkušeností některých učitelů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá podpora začínajících učitelů a jaké jsou mechanismy zpětné vazby z hospitací?",
+        "Jaké jsou konkrétní příklady projektové výuky a jak se propojuje s přípravou na maturitu?",
+        "Jak se škola vypořádává s rostoucími zdravotními obtížemi psychického charakteru u žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazykové vzdělávání a mezinárodní spolupráci – škola nabízí výuku s rodilými mluvčími a certifikované zkoušky.",
+        "Nadaní žáci – individuální vzdělávací plány, korespondenční kurzy a příprava na studium na nejlepších vysokých školách.",
+        "Žáci hledající všestranný rozvoj – bohatá nabídka volitelných předmětů, sportovních, kulturních a charitativních aktivit."
+      ],
+      "who_should_be_cautious": [
+        "Žáci vyžadující intenzivní individuální metodickou podporu – hospitační činnost není dostatečně systematická.",
+        "Žáci preferující interaktivní a skupinové vyučování – v některých hodinách převažuje frontální výuka.",
+        "Žáci se specifickými vzdělávacími potřebami – ačkoli dosahují stejných výsledků, podpora není explicitně zdůrazněna."
+      ],
+      "plain_czech_summary": "Gymnázium Nad Alejí je kvalitní škola se stabilní naplněností a výborným jazykovým vzděláním. Žáci dosahují nadprůměrných výsledků v maturitách a skoro všichni pokračují v terciárním vzdělávání. Škola nabízí bohatou nabídku volitelných předmětů a rozšiřujících aktivit. Hlavní slabinou je nižší efektivita hospitační činnosti a metodické podpory některých učitelů. Vhodná pro nadané žáky a ty se zájmem o jazyky, ale vyžaduje kvalitní pedagogický sbor."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborné a stabilní výsledky",
+        "key_numbers": [
+          "Dvě třetiny žáků prospěly s vyznamenáním za dvě školní léta",
+          "Výjimečně neprospěl jeden žák",
+          "Výsledky didaktických testů vždy výrazně lepší než celostátní průměr"
+        ],
+        "evidence": "Výsledky žáků při ukončování vzdělávání dlouhodobě korespondují s jejich hodnocením v průběhu studia. Vysoká úroveň jazykových dovedností – téměř všichni žáci uplatňují jazykové certifikáty."
+      },
+      "absence": {
+        "trend": "Nízká míra absence",
+        "key_numbers": [
+          "Nízká míra absence jako důkaz funkčnosti preventivního systému"
+        ],
+        "evidence": "Aplikovaný systém preventivně vzdělávacích mechanismů je funkční, o čemž svědčí nízká míra absence a přiměřené množství uložených kázeňských opatření."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště v úzké spolupráci s vedením, třídními učiteli a ostatními pedagogy",
+        "Systém prevence sociálně patologických jevů – interní preventivní programy, sociometrická šetření, konzultace",
+        "Nadstandardní individuální péče pro žáky s narůstajícími zdravotními obtížemi psychického charakteru",
+        "Adaptační, zážitkové a sportovní kurzy, tematicky zaměřené přednášky"
+      ],
+      "safety_climate": [
+        "Důraz na dodržování pravidel, čipový systém a celodenní provoz recepce napomáhá bezpečnému prostředí",
+        "Příjemná atmosféra, vzájemně respektující přístup učitele a žáků, dodržování nastavených pravidel",
+        "Stabilně vysoké procento žáků s uzavřenou klasifikací do 30. 6.",
+        "Ojedinělé případy rizikových jevů řešeny individuálně ve spolupráci s třídními učiteli a zákonnými zástupci"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Matematicko-fyzikální, Přírodovědecké, Filozofické fakulty a Fakulty tělesné výchovy a sportu Univerzity Karlovy",
+        "Partnerské vztahy se zřizovatelem, místními a akademickými institucemi a zahraničními školami",
+        "Nadační fond příznivců gymnázia Nad Alejí umožňuje realizaci kulturních, společensky prospěšných, sportovních a charitativních aktivit",
+        "Zahraniční výjezdy, studijní pobyty v zahraničí a korespondenční kurzy pro nadané žáky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje, ale některé pasáže jsou složitě strukturované s dlouhými větami. Hlavní zjištění jsou jasná, ale vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty hospitací za inspekční období – pouze uvádí jejich nízkou četnost.",
+        "Není jasné, kolik procent hodin dosáhlo 'výborné či očekávané úrovně' – pouze se uvádí 'většina'.",
+        "Detaily o zdravotních obtížích psychického charakteru nejsou konkretizovány – není jasné, o jaké obtíže jde."
+      ]
+    }
+  }
+}

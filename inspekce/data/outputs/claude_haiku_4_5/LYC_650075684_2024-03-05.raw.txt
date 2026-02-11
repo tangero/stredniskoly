@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_650075684_2024-03-05",
+  "school_profile": {
+    "school_type": "Střední škola - Waldorfské lyceum, obor Kombinované lyceum zakončené maturitní zkouškou",
+    "inspection_period": "5. března 2024 až 7. března 2024",
+    "school_change_summary": "Od inspekce v roce 2017 škola kontinuálně rozvíjí kvalitní rozvojový vzdělávací model. Kapacita je naplněna na 94 % (124 žáků ve 4 třídách). Přetrvává omezení prostoru, které limituje další rozvoj."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výjimečné výsledky maturit",
+        "detail": "31–35 % žáků prospěje s vyznamenáním, všichni prospějí. Výsledky jsou stabilně lepší než průměr v ČR.",
+        "evidence": "Analýza výsledků MZ dokládá stabilně lepší výsledky ve srovnění v rámci ČR."
+      },
+      {
+        "tag": "Komplexní osobnostní rozvoj",
+        "detail": "Waldorfský přístup propojuje teoretické, praktické, umělecké a sociální aspekty vzdělávání.",
+        "evidence": "Celostní pojetí vzdělávání cíleně podporuje týmovou spolupráci a sounáležitost žáků se školou."
+      },
+      {
+        "tag": "Individuální péče a podpora",
+        "detail": "Každý žák má pravidelné rozhovory s třídním učitelem zaměřené na studijní pokrok a osobní situaci.",
+        "evidence": "Propracované efektivní individuální rozhovory třídního učitele se zaměřením na zvládání studijních povinností."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatek prostoru",
+        "detail": "Škola nemá dostatek učeben na dělené hodiny, chybí přírodovědná laboratoř a prostory pro učební pomůcky.",
+        "evidence": "Nedostatek prostoru limituje rozvoj potenciálu školy a kladou vyšší nároky na organizaci vzdělávání."
+      },
+      {
+        "tag": "Omezené možnosti rozšíření",
+        "detail": "Zájem o přijetí je řadu let až čtyřnásobný, ale kapacita je téměř využita (132 žáků max).",
+        "evidence": "Omezené prostory neumožňují rozšíření školy, přestože zájem o přijetí je řadu let až čtyřnásobný."
+      },
+      {
+        "tag": "Dílčí metodické nedostatky",
+        "detail": "Ojediněle chybí shrnutí v závěru vyučovací hodiny a ověření splnění vzdělávacího cíle.",
+        "evidence": "Neefektivní časové a organizační rozvržení vyučovací hodiny v části všeobecného vzdělávání."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá individuální podpora žáků, kteří mají potíže se studiem?",
+      "Jaké jsou možnosti pro žáky s nadáním a jak se rozvíjí jejich talent?",
+      "Jak se škola vypořádává s nedostatkem prostoru a jak to ovlivňuje kvalitu výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si cení osobnostního rozvoje a kreativního myšlení vedle tradičního vzdělávání",
+      "Rodiny hledající alternativní přístup k vzdělávání s důrazem na sociální a umělecké dovednosti",
+      "Talentovaní žáci, kterým vyhovuje individuální přístup a možnost hlubšího zkoumání témat"
+    ],
+    "who_should_be_cautious": [
+      "Rodiny, které preferují klasický přístup k vzdělávání bez waldorfské filozofie",
+      "Žáci, kteří potřebují více prostoru a moderní vybavení (např. velkou přírodovědnou laboratoř)",
+      "Rodiny z větší vzdálenosti – 40 % žáků dojíždí z různých regionů ČR, což znamená delší cestu"
+    ],
+    "plain_czech_summary": "Waldorfské lyceum je malá, rodinná škola s výjimečnými výsledky. Žáci dosahují lepších výsledků maturit než průměr v ČR (31–35 % s vyznamenáním). Škola klade důraz na osobnostní rozvoj, kreativitu a sociální dovednosti. Každý žák dostává individuální péči. Hlavní omezení je nedostatek prostoru – škola nemá dostatek učeben a laboratoří. Zájem o přijetí je vysoký, kapacita je téměř plná. Vhodná pro žáky, kterým vyhovuje alternativní přístup k vzdělávání."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoké výsledky",
+      "key_numbers": [
+        "31–35 % žáků prospěje s vyznamenáním",
+        "100 % žáků prospěje",
+        "Výsledky stabilně lepší než průměr v ČR ve stejné skupině oborů"
+      ],
+      "evidence": "Analýza výsledků MZ dokládá, že ve srovnění v rámci ČR žáci lycea dosahují stabilně lepších výsledků."
+    },
+    "absence": {
+      "trend": "Důsledně sledována a řešena",
+      "key_numbers": [
+        "Zvýšená absence je řešena osobním pohovorem se žákem a zákonnými zástupci"
+      ],
+      "evidence": "Škola důsledně sleduje absenci žáků, v případě jejího zvýšení situaci neprodleně řeší."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodika prevence v úzké spolupráci se všemi aktéry vzdělávání",
+      "Individuální rozhovory třídního učitele zaměřené na studijní pokrok a osobní situaci",
+      "Vzdělávací plány pro žáky s potřebou podpůrných opatření",
+      "Vrstevnické doučování a konzultace se sociálními partnery pro rozvoj talentu"
+    ],
+    "safety_climate": [
+      "Příjemná a přátelská pracovní atmosféra ve všech navštívených hodinách",
+      "Nastavená a dodržovaná pravidla komunikace a chování",
+      "Jednotný přístup celého pedagogického sboru k vytváření pozitivních vztahů",
+      "Elektronicky zabezpečený vstup do budovy školy"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s 45 zařízeními v rámci sociálního praktika (domovy pro seniory, chráněné dílny, dětské domovy)",
+      "Spolupráce s 29 partnery v rámci profesního praktika",
+      "Mezinárodní spolupráce s waldorfskými školami v zahraničí",
+      "Spolupráce s Pedagogickou fakultou UK, Husitskou teologickou fakultou UK",
+      "Spolupráce s městskou částí Praha 11"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk s konkrétními příklady. Všechna tvrzení jsou podložena citacemi z textu. Informace jsou relevantní pro rodiče a snadno pochopitelné.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o počtu žáků s speciálními vzdělávacími potřebami nebo jejich úspěšnosti.",
+      "Chybí informace o finančních nákladech na vzdělávání a poplatcích pro rodiče.",
+      "Není specifikováno, jak dlouho trvá adaptace nových žáků na školní prostředí."
+    ]
+  }
+}
+```

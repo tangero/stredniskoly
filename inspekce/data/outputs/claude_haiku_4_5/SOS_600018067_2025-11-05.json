@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600018067_2025-11-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:29:14.905013+00:00",
+  "run_finished_utc": "2026-02-09T13:29:40.771359+00:00",
+  "raw_file": "SOS_600018067_2025-11-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600018067_2025-11-05",
+    "school_profile": {
+      "school_type": "Střední škola sociální péče a služeb s obory v sociální péči, gastronomii, zemědělství a zahradnictví. Nabízí vzdělání s výučním listem, maturitní obory a nástavbové studium.",
+      "inspection_period": "5. až 7. listopadu 2025",
+      "school_change_summary": "Škola rozšířila vedení o pozici pro inovativní vzdělávání, modernizovala odborné učebny (gastronomie, reminiscenční učebnu), zavedla čipový systém pro bezpečnost a vrátnice. V domově mládeže došlo k výměně všech pedagogů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické propojení s realitou",
+          "detail": "Škola systematicky spolupracuje se sociálními partnery a zahraničními institucemi, čímž žáci efektivně propojují teorii s praxí a získávají reálné pracovní zkušenosti.",
+          "evidence": "Zahraniční pracovní pobyty, projekty s partnery, praktické vyučování v reálných provozech."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Moderní učebny, včetně nové gastronomické učebny s aktuální technikou, reminiscenční učebny a relaxačních prostor, odpovídají současným trendům vzdělávání.",
+          "evidence": "Modernizace odborných učeben, čipový systém, zavlažovací systém, nadstandardní domov mládeže."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola se zaměřuje na identifikaci a podporu žáků s rizikem neúspěchu prostřednictvím doučování a individuálních konzultací.",
+          "evidence": "Strategie předcházení školní neúspěšnosti, školní poradenské pracoviště s psychologem a speciálním pedagogem."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Problémy v kolektivu pedagogů",
+          "detail": "Mezi učiteli existují napjaté vztahy a omezená schopnost konstruktivního dialogu, což negativně ovlivňuje klima školy a částečně se promítá i do vztahu s žáky.",
+          "evidence": "Externím subjektem zjištěno napětí v pedagogickém sboru, žáci jsou částečně vtahováni do sporů bez úplné informace."
+        },
+        {
+          "tag": "Slabé výsledky u maturity",
+          "detail": "Výsledky ve společné a profilové části maturitní zkoušky jsou kolísavé a často pod republikovým průměrem (neúspěšnost 15–49 %).",
+          "evidence": "Hrubá neúspěšnost v oboru Podnikání 2023: 48,7 %, Sociální činnost 2025: 26,3 %, horší než průměr ČR."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Škola se dlouhodobě potýká s vysokou absencí žáků, která ovlivňuje jejich výsledky a motivaci ke vzdělávání.",
+          "evidence": "Absence je dlouhodobě řešeným problémem, který ovlivňuje průběžné i celkové výsledky vzdělávání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaká opatření zavádí pro zvýšení jejich motivace?",
+        "Jaké jsou výsledky supervizních setkání zaměřených na zlepšení vztahů mezi pedagogy a jak se to projevuje v klimatu školy?",
+        "Jak škola analyzuje slabé výsledky u maturitní zkoušky a jaká konkrétní opatření zavádí pro jejich zlepšení?"
+      ],
+      "who_school_fits": [
+        "Žáci zainteresovaní na praktickém vzdělávání s důrazem na propojení teorie s praxí a reálnými pracovními zkušenostmi.",
+        "Uchazeči o obory v gastronomii, zemědělství a sociální péči, kde má škola kvalitní vybavení a zkušené učitele odborného výcviku.",
+        "Žáci, kteří potřebují individuální podporu a doučování – škola má školní poradenské pracoviště s psychologem a speciálním pedagogem."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, jejichž děti se spoléhají na stabilní a harmonické prostředí – klima mezi pedagogy není optimální a může to ovlivnit kvalitu výuky.",
+        "Uchazeči, kteří se připravují na maturitní zkoušku – výsledky jsou kolísavé a často pod průměrem, zejména v předmětech společné části.",
+        "Žáci s tendencí k absencím – vysoká absence je dlouhodobý problém, který škola řeší, ale zatím bez viditelného zlepšení."
+      ],
+      "plain_czech_summary": "Střední škola sociální péče a služeb v Zábřehu nabízí kvalitní praktické vzdělávání s moderním vybavením a spoluprací se sociálními partnery. Silnou stránkou je propojení teorie s praxí a podpora slabších žáků. Škola se však potýká s problémy v kolektivu pedagogů, jejichž napjaté vztahy ovlivňují klima. Výsledky u maturitní zkoušky jsou kolísavé a často pod průměrem. Dlouhodobě řešeným problémem zůstává vysoká absence žáků. Škola postupně zavádí opatření ke zlepšení, ale jejich účinnost se zatím plně neprojevila."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s tendencí pod průměrem",
+        "key_numbers": [
+          "Obor Podnikání 2023: 48,7 % neúspěšnosti, 2024: 15,1 %",
+          "Obor Sociální činnost 2023: 24,1 %, 2024: 17,7 %, 2025: 26,3 %",
+          "Škola dosahuje horších výsledků než republikový průměr v dané skupině oborů"
+        ],
+        "evidence": "Hrubá neúspěšnost (podíl neúspěšných nebo nekonajících zkoušku) se pohybuje v intervalu 15,1–48,7 % v hodnoceném období."
+      },
+      "absence": {
+        "trend": "Dlouhodobě vysoká, ovlivňuje výsledky vzdělávání",
+        "key_numbers": [
+          "Absence je dlouhodobě řešeným problémem",
+          "Ovlivňuje průběžné i celkové výsledky vzdělávání",
+          "Škola posiluje kontrolní a podpůrná opatření"
+        ],
+        "evidence": "Průběžné i celkové výsledky vzdělávání jsou do určité míry ovlivňovány vysokou absencí žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s rozsáhlým týmem: speciální pedagog, sociální pedagog, externí školní psycholog",
+        "Individuální konzultace, doučování a podpora účasti v soutěžích",
+        "Elektronické konzultace se školním psychologem, schránky důvěry na pracovištích"
+      ],
+      "safety_climate": [
+        "Vrátnice se stálou službou v budovách teoretické výuky",
+        "Čipový identifikační systém pro evidenci vstupu, otevírání skříněk a výdej obědů",
+        "Pravidelné školení žáků o bezpečnostních a zdravotních rizicích",
+        "Napjaté vztahy v pedagogickém sboru negativně ovlivňují klima školy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se sociálními partnery pro praktické vyučování",
+        "Zahraniční pracovní pobyty pro žáky gastronomických oborů",
+        "Projekty podporující rozvoj klíčových kompetencí a uplatnění absolventů",
+        "Spolupráce s městem Zábřeh na rautech a květinových výzdob"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je podrobná a srozumitelná, obsahuje konkrétní údaje a citace. Některé pasáže jsou však dlouhé a úřednicky formulované, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků s absencí ani jejich průměrný počet absencí – údaj je pouze kvalitativní.",
+        "Není jasné, jaké konkrétní opatření vedla ke zlepšení v oboru Podnikání z 48,7 % na 15,1 % neúspěšnosti.",
+        "Detaily o problémech v pedagogickém sboru jsou vágní – není jasné, zda jde o izolované případy nebo systémový problém."
+      ]
+    }
+  }
+}

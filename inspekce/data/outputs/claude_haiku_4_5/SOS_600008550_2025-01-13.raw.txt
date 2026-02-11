@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600008550_2025-01-13",
+  "school_profile": {
+    "school_type": "Střední zemědělská škola se čtyřletými obory Agropodnikání a Ekologie a životní prostředí",
+    "inspection_period": "13. 1. 2025 − 15. 1. 2025",
+    "school_change_summary": "Škola navýšila počet žáků (217 žáků v osmi třídách), modernizovala strojové vybavení školního statku díky dotaci, zapojila se do programu Erasmus+ a zřídila žákovský parlament."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava na povolání",
+        "detail": "Efektivní dlouhodobá spolupráce se sociálními partnery z oblasti zemědělství a ekologie zajišťuje kvalitní propojení teorie a praxe.",
+        "evidence": "Školní statek umožňuje práci v reálných podmínkách, tandemová výuka s odborníky z praxe, projektové dny."
+      },
+      {
+        "tag": "Moderní vybavení a investice",
+        "detail": "Škola aktivně získává finanční prostředky z evropských fondů a dotačních programů na modernizaci.",
+        "evidence": "Nově vybudovaná venkovní učebna, modernizované strojové vybavení, digitální učební pomůcky, doučování žáků."
+      },
+      {
+        "tag": "Mimoškolní aktivity a rozvoj",
+        "detail": "Bohatá nabídka aktivit podporuje klíčové kompetence a zdravý životní styl.",
+        "evidence": "Besedy, exkurze, charitativní akce, zájmové kroužky, opakované ocenění Škola udržitelného rozvoje."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní metody výuky",
+        "detail": "Učitelé se omezují na předávání informací bez dostatečného rozvoje kritického myšlení a samostatného řešení problémů.",
+        "evidence": "Převládá frontální výuka, téměř žádná kooperativní činnost, minimální práce s textem a informačními zdroji."
+      },
+      {
+        "tag": "Chybí individualizace výuky",
+        "detail": "Všichni žáci plní stejné úlohy bez ohledu na jejich schopnosti a potenciál.",
+        "evidence": "Diferencovaná či gradovaná zadání nejsou využita, chybí formativní hodnocení a shrnutí hodin."
+      },
+      {
+        "tag": "Slabá kontrola nápravy",
+        "detail": "Vedení školy identifikuje problémy, ale následná opatření nejsou vždy efektivní.",
+        "evidence": "Kontrolní činnost je spíše formální, hospitační činnost pojmenovává problémy bez následné nápravy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola plánuje zlepšit aktivní metody výuky a rozvoj kritického myšlení žáků?",
+      "Jaké konkrétní doučovací programy nabízíte a jak je mohu jako rodič sledovat pokrok svého dítěte?",
+      "Jak se škola vypořádá s omezeným prostorem pro teoretickou výuku a jak to ovlivňuje kvalitu výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o zemědělství, ekologii a práci v přírodě, kteří si cení praktické přípravy",
+      "Studenti, kteří se chtějí zapojit do mezinárodních projektů (Erasmus+) a rozšiřovat si obzory",
+      "Žáci s nadáním pro odborné soutěže a projektové aktivity v zemědělství a environmentalistice"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku podle svých schopností",
+      "Studenti preferující aktivní, interaktivní metody výuky s důrazem na kritické myšlení",
+      "Žáci, kteří se spoléhají na formativní zpětnou vazbu a pravidelné shrnutí učiva"
+    ],
+    "plain_czech_summary": "Střední zemědělská škola v Písku je moderní instituce s kvalitní praktickou přípravou díky spolupráci s partnery a vlastnímu školnímu statku. Škola se aktivně rozvíjí, investuje do vybavení a nabízí bohaté mimoškolní aktivity. Hlavní slabinou je tradiční přístup k výuce – učitelé se zaměřují spíše na memorování faktů než na rozvoj myšlení a samostatnosti. Chybí individualizace a aktivní metody. Škola si je těchto problémů vědoma a pracuje na jejich řešení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazné zlepšení po přijatých opatřeních",
+      "key_numbers": [
+        "2022/2023: 3 z 4 žáků neuspěli v matematice",
+        "2024: všichni konající žáci uspěli ve společné části zkoušky",
+        "Opakovaně vyšší neúspěšnost než srovnatelné školy (před opatřeními)"
+      ],
+      "evidence": "Vedení se v roce 2023/2024 zaměřilo na nepříznivé výsledky a přijala opatření ke zvýšení úspěšnosti."
+    },
+    "absence": {
+      "trend": "Nízký počet případů rizikového chování",
+      "key_numbers": [
+        "Počet žáků stabilní v průběhu studia",
+        "V případě zvýšené absence jsou přijímána individuální opatření"
+      ],
+      "evidence": "Škola zaznamenává u žáků nízký počet případů rizikového chování, aktivně řeší zjištěné problémy bez odkladu."
+    },
+    "support_services": [
+      "Výchovná poradkyně (zároveň ředitelka) a školní metodik prevence efektivně spolupracují s třídními učiteli",
+      "12 žáků se speciálními vzdělávacími potřebami druhého až čtvrtého stupně s pravidelně vyhodnocovanými podpůrnými opatřeními",
+      "Doučovací aktivity a individuální konzultace pro žáky ohrožené školním neúspěchem",
+      "Kariérové poradenství poskytováno žákům a zákonným zástupcům"
+    ],
+    "safety_climate": [
+      "Výuka probíhala v respektující atmosféře s otevřenou a vstřícnou komunikací mezi učiteli a žáky",
+      "Žáci dodržovali nastavená pravidla chování",
+      "Nízký počet případů rizikového chování",
+      "Efektivní naplňování školního preventivního programu"
+    ],
+    "partnerships_practice": [
+      "Široká spolupráce s řadou externích partnerů z oblasti zemědělství a ekologie",
+      "Odborná praxe realizována na školním statku, smluvních pracovištích partnerských firem a zemědělských farmách",
+      "Tandemová výuka s odborníky z praxe, projektové dny",
+      "Příprava na program Erasmus+ pro mobilitu žáků",
+      "Edukativní aktivity pro základní a mateřské školy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Hlavní slabiny jsou jasně pojmenované (pasivní výuka, chybějící diferenciace). Silné stránky jsou doloženy konkrétními fakty (modernizace, partnerství, výsledky maturit). Některé pasáže jsou technické, ale pro rodiče jsou klíčové informace dostupné.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní počty žáků, kteří využívají doučovací aktivity – není jasné, jak efektivní jsou v praxi.",
+      "Chybí informace o počtu učitelů a jejich kvalifikaci v oblasti aktivních metod výuky.",
+      "Není specifikováno, jak konkrétně se škola vypořádá s omezeným prostorem pro teoretickou výuku."
+    ]
+  }
+}
+```

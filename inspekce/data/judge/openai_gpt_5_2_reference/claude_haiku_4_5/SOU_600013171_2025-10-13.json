@@ -1,0 +1,29 @@
+{
+  "report_id": "SOU_600013171_2025-10-13",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T12:19:05.554403+00:00",
+  "run_finished_utc": "2026-02-09T12:19:27.245612+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOU_600013171_2025-10-13\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 3,\n  \"critical_issues\": [\n    \"Označení školy jako „SOU“ není ve zdroji explicitně uvedeno (jde o střední školu s více obory včetně nástavbových/maturitních).\",\n    \"Formulace „nekvalifikovaní učitelé bez podpory“ je silnější než zdroj: inspekce uvádí nedostatečnou metodickou/didaktickou podporu, ne že podpora neexistuje vůbec.\",\n    \"Tvrzení o „kontrole používání mobilních telefonů“ není ve zdroji výslovně popsáno (zdroj uvádí odkládání do stojánků a využití na vyzvání učitele).\"\n  ],\n  \"best_points\": [\n    \"Dobře zachycené hlavní závěry inspekce: frontální/pasivní teoretická výuka, slabá práce s cílem a závěrem hodiny, malá pestrost metod, chybějící diferenciace a potřeba podpory nekvalifikovaných/začínajících učitelů.\",\n    \"Správně vyzdvižena silná stránka školy: spolupráce se sociálními partnery a přínos praxe na pracovištích partnerů včetně zmínky o zahraniční stáži pro některé obory.\",\n    \"Přehledné členění pro rodiče (silné stránky/rizika/otázky) a zahrnutí relevantních tvrdých faktů (272 žáků, 13 tříd, pozastavení výdejny jídelny, absence teorie vs praxe, maturita 15/2 neúspěšní).\"\n  ],\n  \"one_line_verdict\": \"Většinou věrné a pro rodiče praktické shrnutí klíčových zjištění, jen místy s lehce přehnanými nebo ne zcela doloženými formulacemi a s několika opomenutými tématy ze závěrů (např. výchovná opatření, závěrečné zkoušky, doporučení k poradenskému pracovišti).\"\n}",
+  "judge_output": {
+    "report_id": "SOU_600013171_2025-10-13",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 3,
+    "critical_issues": [
+      "Označení školy jako „SOU“ není ve zdroji explicitně uvedeno (jde o střední školu s více obory včetně nástavbových/maturitních).",
+      "Formulace „nekvalifikovaní učitelé bez podpory“ je silnější než zdroj: inspekce uvádí nedostatečnou metodickou/didaktickou podporu, ne že podpora neexistuje vůbec.",
+      "Tvrzení o „kontrole používání mobilních telefonů“ není ve zdroji výslovně popsáno (zdroj uvádí odkládání do stojánků a využití na vyzvání učitele)."
+    ],
+    "best_points": [
+      "Dobře zachycené hlavní závěry inspekce: frontální/pasivní teoretická výuka, slabá práce s cílem a závěrem hodiny, malá pestrost metod, chybějící diferenciace a potřeba podpory nekvalifikovaných/začínajících učitelů.",
+      "Správně vyzdvižena silná stránka školy: spolupráce se sociálními partnery a přínos praxe na pracovištích partnerů včetně zmínky o zahraniční stáži pro některé obory.",
+      "Přehledné členění pro rodiče (silné stránky/rizika/otázky) a zahrnutí relevantních tvrdých faktů (272 žáků, 13 tříd, pozastavení výdejny jídelny, absence teorie vs praxe, maturita 15/2 neúspěšní)."
+    ],
+    "one_line_verdict": "Většinou věrné a pro rodiče praktické shrnutí klíčových zjištění, jen místy s lehce přehnanými nebo ne zcela doloženými formulacemi a s několika opomenutými tématy ze závěrů (např. výchovná opatření, závěrečné zkoušky, doporučení k poradenskému pracovišti)."
+  }
+}

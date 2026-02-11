@@ -1,0 +1,117 @@
+{
+  "report_id": "SOS_600010104_2023-11-28",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:32:48.292227+00:00",
+  "run_finished_utc": "2026-02-09T16:33:14.109666+00:00",
+  "raw_file": "SOS_600010104_2023-11-28.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600010104_2023-11-28",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a Střední odborná škola (SZdrŠ a SOŠ)",
+      "inspection_period": "28. listopadu až 1. prosince 2023",
+      "school_change_summary": "Od roku 2021/2022 škola rozšířila nabídku o zdravotnické obory Praktická sestra a Ošetřovatel. V roce 2019 se stala Centrem odborného vzdělávání Libereckého kraje pro oblast služeb. Zásadně obnovila a zmodernizovala materiální vybavení všech odborných pracovišť."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní vedení a řízení",
+          "detail": "Ředitelka s dlouhodobou profesní spjatostí se školou efektivně řídí tým šesti zástupců s jasně vymezenými pravomocemi.",
+          "evidence": "Vysoké pracovní nasazení a manažerské schopnosti pozitivně ovlivňují systém řízení a efektivní plánování."
+        },
+        {
+          "tag": "Praktické vyučování",
+          "detail": "Silná stránka školy s úzkou vazbou na reálnou praxi a moderní vybavení školních dílen.",
+          "evidence": "Žáci pracují samostatně, vyučující poskytují individuální pomoc, převládá pozitivní pracovní atmosféra."
+        },
+        {
+          "tag": "Partnerství s firmami",
+          "detail": "Stabilní vztahy s více než čtyřiceti firmami a institucemi včetně Škody Auto a Nemocnice Česká Lípa.",
+          "evidence": "Organizace odborné praxe a výcviku na pracovištích potenciálních zaměstnavatelů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nižší aktivizace v teoretické výuce",
+          "detail": "V některých hodinách teoretických předmětů žáci spíše pasivně přijímají informace bez dostatečné aktivizace.",
+          "evidence": "Snaha o aktivizaci pomocí problémových otázek byla jen částečně úspěšná, žáci reagovali stručně."
+        },
+        {
+          "tag": "Slabé výsledky v matematice",
+          "detail": "Žáci volí matematiku jako zkušební předmět jen sporadicky s nízkou úspěšností.",
+          "evidence": "V posledních třech letech uspěli jen dva z sedmi přihlášených žáků, přijatá opatření nebyla účinná."
+        },
+        {
+          "tag": "Podprůměrné výsledky nástavbového studia",
+          "detail": "Žáci nástavbového studia dosahují v celorepublikovém srovnění podprůměrné úspěšnosti.",
+          "evidence": "Dlouhodobě převážně podprůměrné úspěšnosti ve společné části maturitní zkoušky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se škola snaží zlepšit výsledky v matematice a jaké má plány na příští rok?",
+        "Jaké jsou možnosti zapojení žáků do soutěží a projektů mimo obor vzdělání?",
+        "Jak funguje systém poradenství a jak škola pomáhá žákům s osobními či výukovými problémy?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a budoucí uplatnění v konkrétních profesích",
+        "Studenti zdravotnických oborů díky novým programům Praktické sestry a Ošetřovatele",
+        "Žáci s ambicí pracovat v oborech s vazbou na reálné partnery (Škoda Auto, zemědělství, služby)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v matematice, pokud ji plánují volit jako zkušební předmět",
+        "Studenti nástavbového studia, které má podprůměrné výsledky v celorepublikovém srovnění",
+        "Žáci preferující teoretickou výuku s vysokou mírou samostatné práce a diskuse"
+      ],
+      "plain_czech_summary": "Česká Lípa má velkou a dobře řízenou střední školu s 1055 žáky v 44 třídách. Silnou stránkou je praktické vyučování s moderním vybavením a vazbou na skutečné zaměstnavatele. Vedení školy je kvalitní a efektivní. Pozitivní je pokles absence a zlepšení prospěchu. Problémy jsou v nižší aktivizaci žáků v teoretické výuce a slabých výsledcích v matematice. Škola se snaží zlepšit situaci pomocí ročníkových prací a srovnávacích testů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dílčí zlepšení ve společné části maturitní zkoušky, ale s výkyvy podle oboru",
+        "key_numbers": [
+          "Obor Ekologie a životní prostředí: 100% úspěšnost v češtině a angličtině za poslední tři roky",
+          "Matematika: pouze 2 z 7 přihlášených žáků uspěli v posledních třech letech",
+          "Nástavbové studium: dlouhodobě převážně podprůměrné výsledky"
+        ],
+        "evidence": "Dílčí zlepšení úspěšnosti ve společné části maturitní zkoušky, zavedeny srovnávací testy z češtiny a angličtiny."
+      },
+      "absence": {
+        "trend": "Pozitivní trend snížení absence",
+        "key_numbers": [
+          "Absence 2022/2023: 77 hodin na žáka (pokles z 94 hodin v 2021/2022)",
+          "Neomluvené hodiny 2022/2023: 7 na žáka (pokles z 12 v 2021/2022)",
+          "Neprospívající žáci 2022/2023: 9% (pokles z 13% v 2021/2022)"
+        ],
+        "evidence": "Meziročně se podařilo snížit absenci a předčasné odchody ze vzdělávání, pozitivní výsledek opatření v oblasti pravidel hodnocení."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště se čtyřmi výchovnými poradkyněmi a metodičkou prevence",
+        "Cílené programy prevence pro jednotlivé třídy a skupiny žáků",
+        "Každoroční mapování školního klimatu prostřednictvím sociometrického průzkumu s externím spolupracovníkem",
+        "Systém uvádějícího učitele pro začínající pedagogy od školního roku 2023/2024"
+      ],
+      "safety_climate": [
+        "Podmínky k zajištění bezpečnosti stanoveny ve školním řádu a řádech jednotlivých pracovišť",
+        "Žáci seznamováni s bezpečnostními pravidly na začátku roku a průběžně",
+        "Vstupní prostory zajištěny proti vniknutí cizí osoby",
+        "Při praktickém vyučování dodržovány hygienické zásady a zásady bezpečnosti práce"
+      ],
+      "partnerships_practice": [
+        "Více než čtyřicet stabilních partnerských vztahů s firmami a institucemi",
+        "Klíčoví partneři: Škoda Auto, Agrární Rada Libereckého kraje, Nemocnice Česká Lípa, FESTOOL",
+        "Intenzivní spolupráce se základními školami formou celodenních projektových dnů",
+        "Dlouhodobá spolupráce s partnerskou školou Fachschule für Landwirtschaft Zwickau",
+        "Od roku 2022 realizace odborné praxe oboru Hotelnictví v Itálii"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi podrobná, jasně strukturovaná a obsahuje konkrétní údaje. Všechna tvrzení jsou podpořena citacemi z textu. Informace jsou srozumitelné a prakticky využitelné pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o počtu absolventů, kteří se úspěšně uplaćují na trhu práce",
+        "Chybí detailní údaje o finančních nákladech na studium a možnostech stipendií",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými pracovišti školy"
+      ]
+    }
+  }
+}

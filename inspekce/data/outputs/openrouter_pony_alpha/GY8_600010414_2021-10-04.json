@@ -1,0 +1,109 @@
+{
+  "report_id": "GY8_600010414_2021-10-04",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:32:19.279736+00:00",
+  "run_finished_utc": "2026-02-10T08:33:53.805012+00:00",
+  "raw_file": "GY8_600010414_2021-10-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600010414_2021-10-04",
+    "school_profile": {
+      "school_type": "Gymnázium s osmiletým všeobecným studiem (čtyřleté studium a obchodní akademie byly zrušeny).",
+      "inspection_period": "4. − 7. 10. 2021",
+      "school_change_summary": "Škola se od poslední inspekce zaměřila výhradně na všeobecné vzdělávání, posílila přírodovědné zaměření a stala se fakultní školou Přírodovědecké fakulty UK."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky",
+          "detail": "Škola dosahuje vynikajících výsledků, téměř všichni žáci maturují a většina se dostává na vysoké školy.",
+          "evidence": "„Téměř stoprocentní úspěšnost u maturitních zkoušek... Naprostá většina absolventů školy pokračuje ve studiu na vysokých školách.“"
+        },
+        {
+          "tag": "Atmosféra",
+          "detail": "Ve škole panuje přátelské, otevřené a motivační prostředí s důrazem na individuální pomoc.",
+          "evidence": "„Výuka probíhala v klidné a přátelské pracovní atmosféře... Významná pozornost je věnována kariérovému poradenství.“"
+        },
+        {
+          "tag": "Vzdělávací nabídka",
+          "detail": "Žáci mají k dispozici širokou nabídku volitelných předmětů, doučování a projektových aktivit.",
+          "evidence": "„Všeobecné vzdělávání žáků je rozvíjeno prostřednictvím široké nabídky volitelných i nepovinných předmětů... nabízeno doučování.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vybavení IT",
+          "detail": "Škola má nedostatečnou kapacitu počítačových učeben pro moderní výuku.",
+          "evidence": "„Rezervou je počítačové vybavení (ve škole je pouze jedna učebna vybavená počítači pro dělenou třídu).“"
+        },
+        {
+          "tag": "Metody hodnocení",
+          "detail": "Ve výuce převažuje tradiční známkování, chybí moderní formy zpětné vazby a sebehodnocení.",
+          "evidence": "„Učitelé v malé míře uplatnili formativní hodnocení a jen ojediněle vedli žáky k sebereflexi.“"
+        },
+        {
+          "tag": "Struktura hodin",
+          "detail": "Učitelé někdy nevěnují dostatek pozornosti závěrečnému shrnutí a vyhodnocení hodiny.",
+          "evidence": "„V závěrečné fázi hospitovaných hodin někteří pedagogové opomíjeli shrnutí probraného učiva.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola plánuje rozšířit kapacitu počítačových učeben vzhledem k současnému nedostatku?",
+        "Jakým způsobem učitelé poskytují žákům zpětnou vazbu mimo tradiční klasifikaci?",
+        "Jaké konkrétní projekty a spolupráce s vysokými školami jsou pro žáky dostupné?"
+      ],
+      "who_school_fits": [
+        "Uchazeči se zájmem o přírodovědné obory (biologie, chemie, fyzika).",
+        "Žáci, kteří hledají menší školu s osobním přístupem a bezpečným prostředím.",
+        "Studenti směřující na vysoké školy, kteří oceňují systémovou podporu a doučování."
+      ],
+      "who_should_be_cautious": [
+        "Žáci očekávající moderní digitální prostředí a bohaté vybavení počítačovou technikou.",
+        "Studenti, kteří preferují moderní metody hodnocení (sebehodnocení) před tradičními známkami.",
+        "Uchazeči, kteří by preferovali studium obchodní akademie (obor byl zrušen)."
+      ],
+      "plain_czech_summary": "Gymnázium v Tanvaldu je stabilní škola s vynikajícími studijními výsledky a vysokou úspěšností při přijímacích řízeních na VŠ. Poskytuje bezpečné, přátelské prostředí s tradičním přírodovědným zaměřením a silnou podporou žáků formou doučování a konzultací. Pro rodiče je důležité, že škola efektivně řeší výchovné i studijní problémy. Slabinou je zastaralé vybavení počítačovou technikou a setrvalost v tradičních metodách hodnocení. Škola je vhodná pro ambitiózní žáky, kteří potřebují individuální přístup, ale nemusí vyhovovat těm, kteří vyžadují špičkové digitální zázemí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vysoká úspěšnost s výrazným podílem vyznamenání.",
+        "key_numbers": [
+          "Téměř 100% úspěšnost u maturity.",
+          "27 % žáků maturuje s vyznamenáním (průměr 4 let).",
+          "Minimálně 90 % absolventů nastupuje na VŠ."
+        ],
+        "evidence": "„Úspěšnost žáků u maturitní zkoušky je dlouhodobě vysoká... v posledních čtyřech školních letech to bylo průměrně 27 % [vyznamenání].“"
+      },
+      "absence": {
+        "trend": "Neomluvená absence je minimální, škola ji důsledně řeší.",
+        "key_numbers": [
+          "Neomluvené hodiny zaznamenány výjimečně (1 hodina v 2019/20).",
+          "Snížený stupeň z chování udělován zřídka (2,5 % v 2019/20).",
+          "V roce 2020/2021 nebyl udělen žádný snížený stupeň z chování."
+        ],
+        "evidence": "„Neomluvené hodiny nejsou v posledních letech zaznamenány, popř. výjimečně (naposledy pouze jedna hodina ve školním roce 2019/2020).“"
+      },
+      "support_services": [
+        "Kvalifikované výchovné poradenství s důrazem na kariéru a prevenci odchodů.",
+        "Individuální konzultace a doučování využívané žáky.",
+        "Spolupráce s psychologem (jedna z vyučujících)."
+      ],
+      "safety_climate": [
+        "Klidná a přátelská pracovní atmosféra bez výraznějších rušivých momentů.",
+        "Nízký výskyt závažného negativního chování, nulové drogové delikty.",
+        "Efektivní řešení počínajících problémů ve vztazích mezi žáky."
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Přírodovědecké fakulty UK a spolupráce s UP Olomouc.",
+        "Aktivní členství v Asociaci školních sportovních klubů.",
+        "Spolupráce s odbornými pracovišti a kulturními institcemi."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán srozumitelně, klíčová data jsou jasně uvedena v textu i v závěru, neobsahuje vágní formulace bránící porozumění.",
+      "uncertainty_notes": []
+    }
+  }
+}

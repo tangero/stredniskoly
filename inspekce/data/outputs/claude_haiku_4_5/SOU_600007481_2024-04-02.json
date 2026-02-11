@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600007481_2024-04-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:20:16.212883+00:00",
+  "run_finished_utc": "2026-02-09T16:20:44.061616+00:00",
+  "raw_file": "SOU_600007481_2024-04-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600007481_2024-04-02",
+    "school_profile": {
+      "school_type": "Střední škola tradičních řemesel (soukromá, s.r.o.)",
+      "inspection_period": "2. až 5. dubna 2024",
+      "school_change_summary": "Od inspekce v 2017: nové vedení (ředitelka od listopadu 2022), zvýšený počet žáků (167 žáků, naplněnost 32 %), změna místa vzdělávání, částečná obměna pedagogického sboru."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické dovednosti a uplatnitelnost",
+          "detail": "Dlouhodobá spolupráce se sociálními partnery systematicky rozvíjí praktické dovednosti žáků a zvyšuje jejich uplatnitelnost na trhu práce.",
+          "evidence": "Instruktoři v pracovištích uplatňují partnerský přístup, žáci získávají pestrou skladbu odborných činností a nízkou nezaměstnanost absolventů."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola zajišťuje bezpečné prostředí s minimálním počtem úrazů a důsledným poučováním o bezpečnosti.",
+          "evidence": "Elektronický vstup do školy, setrvale minimální počet úrazů, pravidelné poučování žáků o bezpečnosti."
+        },
+        {
+          "tag": "Kvalita výuky odborných předmětů",
+          "detail": "Teoretické odborné předměty jsou dobře připraveny s propojením teorie a praxe.",
+          "evidence": "Učitelé navazují na předchozí znalosti, používají správnou terminologii, zařazují praktické ukázky a příklady z praxe."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v maturitě (kombinovaná forma)",
+          "detail": "V kombinované formě oborů Podnikání a Gastronomie jsou výsledky ve společné části maturitní zkoušky výrazně horší než průměr ČR.",
+          "evidence": "V roce 2023: Podnikání 66,7 % neúspěšnosti (průměr ČR 29,9 %), Gastronomie 50 % (průměr ČR 29,9 %)."
+        },
+        {
+          "tag": "Nekvalitní průběžné hodnocení",
+          "detail": "Systém hodnocení v průběhu studia neposkytuje objektivní zpětnou vazbu o připravenosti na maturitu.",
+          "evidence": "V roce 2023 neuspěli v matematice i žáci hodnocení průběžně stupněm výborný či chvalitebný; disproporce zejména v kombinované formě."
+        },
+        {
+          "tag": "Nízké nároky na přijetí",
+          "detail": "Škola přijímá téměř všechny zájemce s nízkými kritérii (průměr do 3,5 stačí na body za prospěch).",
+          "evidence": "Přijímáni byli až na výjimky všichni zájemci; jednotnou přijímací zkoušku konalo jen nízké procento uchazečů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření škola zavedla pro zlepšení výsledků v maturitě, zvláště v kombinované formě?",
+        "Jak se liší příprava na maturitu mezi denní a kombinovanou formou a proč jsou výsledky tak rozdílné?",
+        "Jaké jsou konkrétní nároky na přijetí a jak se liší pro denní a kombinovanou formu?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla (Kuchař, Truhlář) – zde škola dosahuje velmi dobrých výsledků.",
+        "Studenti v denní formě oborů Podnikání a Gastronomie – výsledky v maturitě jsou zde srovnatelné s průměrem ČR.",
+        "Dospělí s pracovní zkušeností hledající kvalitní praktickou přípravu a kontakty v oboru."
+      ],
+      "who_should_be_cautious": [
+        "Rodiče žáků v kombinované formě oborů Podnikání a Gastronomie – zde je vysoké riziko neúspěchu v maturitě (50–67 % neúspěšnosti).",
+        "Žáci se slabšími znalostmi z matematiky – v roce 2023 z 11 žáků uspěl v matematice jen jeden.",
+        "Studenti, kteří potřebují přísné nároky a vysoké standardy – škola přijímá téměř všechny zájemce bez selekce."
+      ],
+      "plain_czech_summary": "Škola se zaměřuje na tradičních řemesla a nabízí kvalitní praktickou přípravu s dobrými kontakty v oboru. Absolventi nematuritních oborů (Kuchař, Truhlář) dosahují výborných výsledků a snadno se uplatňují. Problém je v maturitních oborech, zvláště v kombinované formě, kde je vysoká neúspěšnost v maturitě. Denní forma je lepší. Škola přijímá téměř všechny zájemce a průběžné hodnocení není objektivní. Vhodná pro prakticky zaměřené žáky, méně pro ty, kteří chtějí vysoké akademické standardy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nestabilní, s výrazným rozdílem mezi denní a kombinovanou formou",
+        "key_numbers": [
+          "Podnikání kombinovaná 2023: 66,7 % neúspěšnosti (průměr ČR 29,9 %)",
+          "Gastronomie kombinovaná 2023: 50 % neúspěšnosti (průměr ČR 29,9 %)",
+          "Podnikání denní 2023: 32 % neúspěšnosti (průměr ČR 29,9 %)"
+        ],
+        "evidence": "Kombinovaná forma obou oborů dlouhodobě horší než průměr ČR. Denní forma srovnatelná. Nejčastější neúspěchy v češtině, angličtině a matematice."
+      },
+      "absence": {
+        "trend": "Klesající trend v denní formě",
+        "key_numbers": [
+          "2018/2019: 209 h průměrné roční absence",
+          "2021/2022: 173 h",
+          "2022/2023: 151 h; Podnikání denní: 120 h"
+        ],
+        "evidence": "Zvýšená absence spojená s podprůměrnými výsledky a předčasným odchodem ze studia. Důsledné opatření proti záškoláctví snížilo neomluvené absence."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodička prevence (bez příslušného studia)",
+        "Kariérové poradenství (funkční)",
+        "Individuální a skupinové doučování včetně online konzultací (s omezenou účinností v kombinované formě)"
+      ],
+      "safety_climate": [
+        "Elektronický vstup do školy",
+        "Setrvale minimální počet úrazů",
+        "Pravidelné poučování o bezpečnosti a ochraně zdraví"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se sociálními partnery (řada odborných firem)",
+        "Praktické vyučování v reálných pracovištích s instruktory",
+        "Funkční systém výběru partnerských firem a kontroly odborného výcviku"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a fakticky bohatá, ale místy technická. Hlavní zjištění jsou jasná: problém s maturitou v kombinované formě, slabé průběžné hodnocení, nízké nároky na přijetí. Praktické informace pro rodiče jsou extrahovatelné, ale vyžadují čtení mezi řádky.",
+      "uncertainty_notes": [
+        "Počet žáků v kombinované formě je malý, takže jednotlivé výsledky mohou výrazně ovlivnit procenta (např. Gastronomie 2023).",
+        "Zpráva nespecifikuje, zda se situace v kombinované formě zlepšila po dubnu 2024.",
+        "Není jasné, jaké konkrétní opatření škola plánuje zavést – doporučení jsou obecná."
+      ]
+    }
+  }
+}

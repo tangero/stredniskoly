@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600017346_2022-03-01",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:16:50.432488+00:00",
+  "run_finished_utc": "2026-02-10T07:18:01.559101+00:00",
+  "raw_file": "LYC_600017346_2022-03-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600017346_2022-03-01",
+    "school_profile": {
+      "school_type": "Soukromá střední škola zaměřená na hotelnictví, gastronomii a služby s domovem mládeže.",
+      "inspection_period": "1. 3. 2022 − 4. 3. 2022",
+      "school_change_summary": "Od roku 2018 škola modernizuje vybavení, zrušila obor Kosmetické služby a zavedla Nutriční terapeut."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vynikající praxe",
+          "detail": "Praktická výuka má velmi dobrou úroveň a probíhá v moderních zařízeních nebo na smluvních pracovištích.",
+          "evidence": "Organizace a průběh sledovaného praktického vyučování měly velmi dobrou úroveň."
+        },
+        {
+          "tag": "Zázemí a vybavení",
+          "detail": "Škola disponuje kvalitním moderním zázemím včetně vlastních salonů a laboratoří.",
+          "evidence": "Aktivní přístup vedení školy vedl k získání kvalitního moderního zázemí."
+        },
+        {
+          "tag": "Partnerské vztahy",
+          "detail": "Škola úzce spolupracuje s profesními sdruženími a zajišťuje stáže i u zahraničních zaměstnavatelů.",
+          "evidence": "Škola aktivně spolupracuje s profesními sdruženími a zahraničními zaměstnavateli."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nástavbové studium",
+          "detail": "Obor Podnikání vykazuje dlouhodobě vysokou neúspěšnost studentů při ukončování studia.",
+          "evidence": "Žáci oboru vzdělání Podnikání vykazují dlouhodobě vysokou neúspěšnost v průběhu i při ukončování vzdělávání."
+        },
+        {
+          "tag": "Zastaralé metody výuky",
+          "detail": "V teoretické výuce převažuje málo efektivní frontální výuka bez aktivizace žáků.",
+          "evidence": "Ve většině sledované výuky převažovala málo efektivní frontální výuka s využitím metody výkladu."
+        },
+        {
+          "tag": "Podpora v domově mládeže",
+          "detail": "Program domova mládeže dostatečně nepodporuje žáky v samostatné přípravě na vyučování.",
+          "evidence": "Program neobsahuje nabídku vhodných aktivit vytvářejících návyky k samostatnému učení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje studenty nástavbového oboru Podnikání, aby úspěšně složili maturitu?",
+        "Jaké konkrétní aktivační metody učitelé používají v teoretických předmětech, aby výuka nebyla jen přednášková?",
+        "Nabízí domov mládeže individuální doučování nebo konzultace pro studenty s horším prospěchem?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří se chtějí učit řemeslo a uplatnit v gastronomii, kadeřnictví nebo hotelnictví.",
+        "Pro žáky, kteří očekávají kvalitní vybavení odborných učeben a možnost zahraničních stáží.",
+        "Pro zájemce o obor Nutriční terapeut, který škola nově otevřela."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o nástavbové studium oboru Podnikání kvůli vysoké neúspěšnosti při maturitě.",
+        "Studenti, kteří preferují moderní interaktivní formy výuky před klasickým výkladem.",
+        "Žáci s potřebou intenzivní akademické podpory při přípravě na vyučování v domově mládeže."
+      ],
+      "plain_czech_summary": "Škola vyniká v přípravě na povolání, zejména v gastronomických a kadeřnických oborech, kde nabízí špičkové vybavení a kvalitní praxe. Naopak teoretická výuka často probíhá zastaralými metodami bez zapojení studentů. Pozor si musíte dát na dvouleté nástavbové studium Podnikání, kde je vysoký počet neúspěšných u maturity. Pro ubytované studenty chybí v domově mládeže systematická podpora při učení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírné zlepšení ve čtyřletých oborech, ale dlouhodobě špatné výsledky v nástavbovém studiu.",
+        "key_numbers": [
+          "V roce 2019 konalo maturitní zkoušku pouze 50 % přihlášených žáků nástavbového studia.",
+          "Více žáků tříletých oborů s výučním listem prospělo s vyznamenáním.",
+          "Trend mírného zlepšení u maturit ve čtyřletých oborech v letech 2019 až 2021."
+        ],
+        "evidence": "V roce 2019 pouze polovina těchto přihlášených žáků konala maturitní zkoušku."
+      },
+      "absence": {
+        "trend": "Celková absence se snížila, ale opatření nemusí fungovat u všech žáků.",
+        "key_numbers": [
+          "Snížení absence žáků v posledním uzavřeném školním roce.",
+          "Neúspěch při fixování návyků pravidelné docházky u části žáků.",
+          "Nízká účinnost opatření zejména u dvouletého nástavbového studia."
+        ],
+        "evidence": "Škola dosáhla snížení absence žáků ve srovnání s předchozími lety, avšak se nedaří u všech žáků fixovat návyky pravidelné školní docházky."
+      },
+      "support_services": [
+        "Individuální konzultace a doučování pro žáky se slabším prospěchem.",
+        "Funkční systém prevence rizikového chování a spolupráce s poradenskými zařízeními.",
+        "Možnost ubytování v domově mládeže s dostatečnou kapacitou pro všechny zájemce."
+      ],
+      "safety_climate": [
+        "Škola vytváří předpoklady pro pozitivní školní klima a bezpečí.",
+        "Minimální míra úrazovosti díky vytvářeným podmínkám.",
+        "Příznivá pracovní atmosféra a vstřícný vztah učitelů k žákům."
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce s profesními sdruženími a místními firmami v regionu Hlučínsko.",
+        "Realizace odborné praxe u zahraničních zaměstnavatelů (Německo, Španělsko).",
+        "Účast zástupců partnerů na závěrečných zkouškách a workshopech."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky a obsahuje konkrétní důkazy.",
+      "uncertainty_notes": [
+        "Chybí přesné procentuální údaje o celkové úspěšnosti u maturity pro všechny obory.",
+        "Není uvedeno konkrétní procento absence, pouze její srovnávací trend.",
+        "Nejasné, zda problémy s vedením dokumentace ovlivňují i informovanost rodičů o prospěchu."
+      ]
+    }
+  }
+}

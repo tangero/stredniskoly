@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY8_600008282_2023-01-23",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium v denní formě",
+    "inspection_period": "23. 1. 2023 – 25. 1. 2023",
+    "school_change_summary": "Ředitelka ve funkci od roku 2020, probíhá generační obměna pedagogů, posíleno zapojení do mezinárodních projektů, zlepšeny materiální podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Mezinárodní spolupráce",
+        "detail": "Škola má dlouhodobé vztahy s partnerskými zahraničními školami a aktivně zapojuje žáky do projektů Erasmus+ a Ceny vévody z Edinburghu.",
+        "evidence": "\"Dlouhodobé reciproční vztahy s několika partnerskými zahraničními školami a spoluúčast gymnázia v mezinárodních projektech přispívají k mobilitě žáků i učitelů\""
+      },
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Žáci dosahují velmi dobrých výsledků v maturitní zkoušce a jsou úspěšní v přijímacím řízení na vysoké školy.",
+        "evidence": "\"Ve společné části maturitní zkoušky jsou v celorepublikovém srovnání výsledky školy velmi dobré. Žáci jsou následně úspěšní v přijímacím řízení.\""
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Škola nabízí širokou paletu zájmových kroužků, soutěží a aktivit podporujících osobnostní rozvoj.",
+        "evidence": "\"Zapojení žáků do četných aktivit nad rámec běžné výuky, projektů, soutěží, poznávacích zájezdů posiluje všestranný osobnostní rozvoj žáků\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Výuka často nerespektuje různé úrovně schopností žáků, chybí přizpůsobení úkolů jejich specifickému nadání.",
+        "evidence": "\"Ve většině hodin však chyběla diferenciace zadávaných úkolů, která by umožňovala plné využití vzdělávacího potenciálu žáků\""
+      },
+      {
+        "tag": "Převaha frontální výuky",
+        "detail": "Některé hodiny jsou vedeny převážně frontální formou s převažující aktivitou učitele, což omezuje vlastní iniciativu žáků.",
+        "evidence": "\"Výuka vedená převážně frontální formou s převažující aktivitou učitele nevytvářela dostatečný prostor pro vlastní iniciativu žáků\""
+      },
+      {
+        "tag": "Slabé formativní hodnocení",
+        "detail": "Zpětná vazba se zaměřuje především na okamžité výkony, chybí sebehodnocení a vzájemné hodnocení žáků.",
+        "evidence": "\"Hodnocení pokroku jednotlivých žáků, sebehodnocení či vzájemné hodnocení žáků se však ve sledovaných hodinách vyskytly pouze výjimečně\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku různým schopnostem a zájmům jednotlivých žáků?",
+      "Jaké jsou zkušenosti s účastí v mezinárodních projektech a jak se to projevuje v praxi?",
+      "Jak se škola připravuje na maturitní zkoušku a jaké jsou výsledky v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci s vysokými studijními předpoklady a motivací ke studiu na vysoké škole",
+      "Děti zajímající se o jazyky a mezinárodní spolupráci",
+      "Žáci hledající bohatou nabídku mimoškolních aktivit a soutěží"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující individuální přístup a více diferenciované úkoly podle svých schopností",
+      "Děti preferující aktivní, interaktivní formy výuky s menší frontální výukou",
+      "Žáci se speciálními vzdělávacími potřebami, kteří mohou potřebovat více podpory"
+    ],
+    "plain_czech_summary": "Gymnázium Vítězslava Nováka je kvalitní střední škola se skvělými výsledky v maturitě a vysokou úspěšností absolventů na vysokých školách. Silnou stránkou je bohatá nabídka mezinárodních projektů, zájmových kroužků a mimoškolních aktivit. Škola má moderní vybavení a kvalifikované pedagogy. Inspekce však upozorňuje na nedostatečnou diferenciaci výuky podle schopností žáků a na převahu frontální výuky v některých hodinách. Doporučuje více využívat aktivní metody a formativní hodnocení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborné výsledky",
+      "key_numbers": [
+        "Výsledky v celorepublikovém srovnání velmi dobré",
+        "Vysoká úspěšnost v přijímacím řízení na vysoké školy",
+        "Ve školním roce 2021/2022 podíl vyznamenaných žáků 55,9 %"
+      ],
+      "evidence": "\"Ve školním roce 2021/2022 činil podíl vyznamenaných žáků 55,9 % a všichni žáci prospěli. Ve společné části maturitní zkoušky jsou v celorepublikovém srovnání výsledky školy velmi dobré.\""
+    },
+    "absence": {
+      "trend": "Nízká úroveň zameškaných hodin",
+      "key_numbers": [
+        "Minimální počet neomluvených absencí",
+        "Ojedinělé neomluvené absence jsou nejčastějším důvodem pro kázeňská opatření",
+        "Efektivní pravidla pro hodnocení v případě absence"
+      ],
+      "evidence": "\"Díky vhodně nastaveným pravidlům pro hodnocení žáků v případě absence a jejich důslednému uplatňování se škole daří udržovat na nízké úrovni počet zameškaných hodin.\""
+    },
+    "support_services": [
+      "Doučování a konzultace pro žáky s menší úspěšností",
+      "Identifikace žáků se speciálními vzdělávacími potřebami a iniciace vyšetření v poradenských zařízeních",
+      "Kariérové poradenství s informacemi o uplatnění absolventů"
+    ],
+    "safety_climate": [
+      "Respektující komunikace mezi žáky a pedagogy",
+      "Dodržování nastavených pravidel",
+      "Minimální počet kázeňských opatření",
+      "Pozitivní jev udělování pochval za reprezentaci školy"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobé vztahy s partnerskými zahraničními školami",
+      "Projekty Erasmus+ a Cena vévody z Edinburghu",
+      "Spolupráce s místními organizacemi a spolky",
+      "Aktivní účast rodilých mluvčích v hodinách angličtiny",
+      "Rodičovský Spolek pro rozvoj GVN"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však poměrně dlouhé a složitě formulované, což mírně snižuje srozumitelnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o počtu žáků s speciálními vzdělávacími potřebami, kteří dosahují dobrých výsledků",
+      "Chybí konkrétní údaje o počtu hodin doučování a jejich efektivitě",
+      "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými předměty a třídami"
+    ]
+  }
+}
+```

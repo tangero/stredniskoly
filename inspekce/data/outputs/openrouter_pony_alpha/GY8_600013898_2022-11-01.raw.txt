@@ -1,0 +1,38 @@
+{
+  "report_id": "GY8_600013898_2022-11-01",
+  "school_profile": {
+    "school_type": "Gymnázium",
+    "inspection_period": "2022-11-01 až 2022-11-03",
+    "school_change_summary": "Neuvedeno v dodaném textu."
+  },
+  "for_parents": {
+    "strengths": [],
+    "risks": [],
+    "questions_for_open_day": [],
+    "who_school_fits": [],
+    "who_should_be_cautious": [],
+    "plain_czech_summary": "Nemohu vygenerovat shrnutí, protože zdrojový text zprávy nebyl dodán. Chybí jakákoliv data k analýze."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neznámý",
+      "key_numbers": [],
+      "evidence": "Chybí zdrojový text."
+    },
+    "absence": {
+      "trend": "Neznámý",
+      "key_numbers": [],
+      "evidence": "Chybí zdrojový text."
+    },
+    "support_services": [],
+    "safety_climate": [],
+    "partnerships_practice": []
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 1,
+    "czech_clarity_reason": "Zdrojový text zprávy je prázdný, nelze vyhodnotit kvalitu jazyka ani obsahu.",
+    "uncertainty_notes": [
+      "Nebyl dodán žádný text zprávy k analýze."
+    ]
+  }
+}

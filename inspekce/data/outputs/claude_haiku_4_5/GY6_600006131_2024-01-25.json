@@ -1,0 +1,119 @@
+{
+  "report_id": "GY6_600006131_2024-01-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:28:30.340071+00:00",
+  "run_finished_utc": "2026-02-09T16:28:57.735304+00:00",
+  "raw_file": "GY6_600006131_2024-01-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600006131_2024-01-25",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a šestileté studium) se zaměřením na cizí jazyky",
+      "inspection_period": "25. 1. 2024 – 26. 1. 2024 a 29. 1. 2024 – 30. 1. 2024",
+      "school_change_summary": "Od inspekce v 2017 vzrostl počet žáků, došlo ke změně vedení a částečné obměně pedagogů. Škola zlepšila materiálně technické vybavení, rozšířila poradenské služby o školní psycholožku a modernizovala digitální technologie."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Škola systematicky rozvíjí jazykové dovednosti žáků prostřednictvím druhého cizího jazyka, volitelných předmětů, zahraničních výjezdů a mezinárodních certifikátů.",
+          "evidence": "Systémová podpora jazykových kompetencí v cizích jazycích, dlouhodobě lepší výsledky v cizích jazycích než v celostátním průměru."
+        },
+        {
+          "tag": "Osobnostní rozvoj",
+          "detail": "Škola nabízí bohatou nabídku projektů, charitativních akcí, soutěží a mimoškolních aktivit pro všestranný rozvoj žáků.",
+          "evidence": "Podpora všestranného osobnostního rozvoje formou rozšiřujících vzdělávacích aktivit, Cena vévody z Edinburghu, školní parlament."
+        },
+        {
+          "tag": "Kvalitní vedení a řízení",
+          "detail": "Ředitelka systematicky řídí školu, vytváří transparentní pravidla, poskytuje pedagogům zpětnou vazbu a průběžně monitoruje kvalitu.",
+          "evidence": "Efektivní řízení založené na koncepční práci, odstranění všech nedostatků z předchozí inspekce, nastavené kontrolní mechanismy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace ve výuce",
+          "detail": "V části hodin učitelé nedostatečně přizpůsobují obsah individuálním potřebám žáků, chybí jim volba úloh různé náročnosti.",
+          "evidence": "Nevyužití diferenciace vzdělávacího obsahu v menší části hodin, žáci neměli možnost si zvolit zadání odlišné kognitivní náročnosti."
+        },
+        {
+          "tag": "Jazyková kultura a mluvený projev",
+          "detail": "Někteří učitelé a žáci používají nespisovnou češtinu, žáci nemají dostatek prostoru pro delší mluvený projev a diskusi.",
+          "evidence": "Nižší míra jazykové kultury, menší prostor pro souvislejší ústní vyjádření žáků, méně časté poskytování prostoru pro mluvený projev."
+        },
+        {
+          "tag": "Jazyková bariéra u cizinců",
+          "detail": "V ojedinělých případech představuje jazyková bariéra u žáků s odlišným mateřským jazykem riziko neúspěchu při maturitě.",
+          "evidence": "Větší míra jazykové bariéry u jednotlivců v závěrečném ročníku představuje zvýšené riziko jejich neúspěchu při ukončování studia."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku individuálním potřebám žáků? Jaké má nástroje pro diferenciaci?",
+        "Jak se škola vypořádává s jazykovou bariérou u žáků s odlišným mateřským jazykem, zejména v závěrečném ročníku?",
+        "Jaké jsou konkrétní výsledky žáků v maturitních zkouškách za poslední roky a jak se liší mezi čtyřletým a šestiletým studiem?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky – škola má silný program cizích jazyků s možností získat mezinárodní certifikáty a absolvovat zahraniční výjezdy.",
+        "Všestranně nadaní žáci – škola nabízí bohatou nabídku projektů, soutěží a mimoškolních aktivit pro osobnostní rozvoj.",
+        "Žáci s dlouhodobými zdravotními problémy – škola vytváří vhodné podmínky včetně úpravy docházky a individuálních strategií."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s odlišným mateřským jazykem – inspekce upozorňuje na riziko jazykové bariéry v závěrečném ročníku.",
+        "Žáci vyžadující intenzivní individuální přístup – v části hodin chybí dostatečná diferenciace a individualizace výuky.",
+        "Žáci potřebující více prostoru pro mluvený projev – inspekce zaznamenala méně časté poskytování prostoru pro diskusi a delší ústní vyjádření."
+      ],
+      "plain_czech_summary": "Gymnázium Čakovice je dobře řízená škola se silným zaměřením na jazykové vzdělání. Nabízí kvalitní výuku s bohatou nabídkou mimoškolních aktivit a projektů. Vedení školy systematicky pracuje na zlepšování podmínek. Inspekce však upozorňuje na to, že v některých hodinách chybí dostatečná přizpůsobení výuky individuálním potřebám žáků a že by mělo být více prostoru pro mluvený projev žáků. Škola je vhodná pro jazykově nadané žáky a ty, kteří si cení všestranného rozvoje."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě pozitivní, výrazné zlepšení u šestiletého studia, stabilní vysoká úspěšnost",
+        "key_numbers": [
+          "Všichni žáci přihlášení k maturitní zkoušce jsou dlouhodobě úspěšní",
+          "Ve školním roce 2022/2023 až dvě pětiny žáků šestiletého studia prospěly s vyznamenáním",
+          "Ve čtyřletém gymnáziu za poslední dva roky pouze dva žáci neprospěli, až 15 % prospělo s vyznamenáním"
+        ],
+        "evidence": "Výsledky žáků při ukončování vzdělávání dlouhodobě korespondují s jejich hodnocením v průběhu studia, ve společné části maturitní zkoušky si žáci volí anglický jazyk."
+      },
+      "absence": {
+        "trend": "Velmi dobrý – zanedbatelný výskyt neomluvené absence",
+        "key_numbers": [
+          "Zanedbatelný výskyt neomluvené absence",
+          "Přijatelný počet zameškaných hodin",
+          "Pouze jeden žák se sníženým stupněm z chování ve školním roce 2022/2023"
+        ],
+        "evidence": "Nastavené preventivní mechanismy jsou převážně funkční, ojedinělé projevy problémového chování jsou řešeny v souladu se stanovenými postupy."
+      },
+      "support_services": [
+        "Školní psycholožka (nově rozšířené poradenské pracoviště)",
+        "Výchovný poradce a metodička prevence",
+        "Kariérní poradenství a besedy s absolventy",
+        "Individuální doučování a konzultace",
+        "Adaptační a preventivní programy (seznamovací kurzy, sportovní kurzy, celoškolní projekty)"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra podporující učení",
+        "Žáci dodržují pravidla komunikace s učiteli a respektují stanovené postupy",
+        "Elektronický informační systém sdílený pedagogy, žáky a zákonnými zástupci",
+        "Vchod do budovy zabezpečen elektronickým systémem a vrátnicí",
+        "Ojedinělé projevy problémového chování řešeny v souladu se stanovenými postupy"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Filozofické fakulty a Přírodovědecké fakulty Univerzity Karlovy",
+        "Mezinárodní spolupráce se zahraničními školami v rámci projektové činnosti",
+        "Partnerská spolupráce s vysokými školami a vzdělávacími instituty",
+        "Spolupráce s externími subjekty pro poskytování podpůrně preventivních služeb",
+        "Zahraniční výjezdy a jazykové pobyty"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a srozumitelná, jasně rozlišuje silné a slabé stránky. Konkrétní čísla a příklady usnadňují pochopení. Mírně snižuje srozumitelnost pro rodiče vysoká míra odborné terminologie a délka textu.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počet žáků s odlišným mateřským jazykem, kteří čelí jazykové bariéře – uvedeno pouze obecně 'ojedinělé případy'.",
+        "Není jasné, jak dlouho trvá individuální doučování a jaké jsou jeho výsledky.",
+        "Zpráva neuvádí konkrétní procento hodin, kde byla zjištěna nedostatečná diferenciace – pouze 'menší část hodin'."
+      ]
+    }
+  }
+}

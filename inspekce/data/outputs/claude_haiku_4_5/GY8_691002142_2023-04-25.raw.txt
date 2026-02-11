@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY8_691002142_2023-04-25",
+  "school_profile": {
+    "school_type": "Městské gymnázium a střední odborná škola (2 obory: Gymnázium 8leté a Veřejnosprávní činnost 4leté)",
+    "inspection_period": "25. dubna až 9. května 2023",
+    "school_change_summary": "Od poslední inspekce se zvýšil počet žáků, zlepšilo se klima školy, nastavily se nové formy spolupráce se zřizovatelem a školami v regionu, zvyšuje se kvalita materiálního zajištění."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Stabilní vedení a strategie",
+        "detail": "Ředitelka vede školu od roku 2012 s jasnou koncepcí rozvoje na období 2020–2030 a systematickým hodnocením pedagogů.",
+        "evidence": "Ředitelka školy je ve své funkci od roku 2012, má zpracovanou Koncepci rozvoje školy s reálnými strategickými cíli."
+      },
+      {
+        "tag": "Výborné výsledky gymnázia",
+        "detail": "Žáci oboru Gymnázium dosahují velmi dobrých výsledků v maturitě s neúspěšností kolem 3–11 %.",
+        "evidence": "Hrubá neúspěšnost v jarní MZ 2022 byla 11,1 %, v 2021 jen 8,7 %, v 2020 pouze 3,8 %."
+      },
+      {
+        "tag": "Kvalitní materiální vybavení",
+        "detail": "Škola má dobré vybavení včetně ICT techniky a posilovny, postupně se zlepšuje.",
+        "evidence": "Dobré materiální zabezpečení školy s přispěním různých zdrojů, zapojení do projektů Šablony a Národní plán obnovy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky oboru Veřejnosprávní činnost",
+        "detail": "Žáci tohoto oboru mají vysokou neúspěšnost v maturitě – až 46,7 % v roce 2022.",
+        "evidence": "Hrubá neúspěšnost v jarní MZ 2022 byla 46,7 %, v 2020 dokonce 64,7 %, v 2021 27,3 %."
+      },
+      {
+        "tag": "Nejednotné a pasivní vyučování",
+        "detail": "Přibližně dvě třetiny hodin má didaktické nedostatky, převládá frontální výuka bez aktivního zapojení žáků.",
+        "evidence": "Jen třetina hospitovaných hodin byla zdařilá, v ostatních chyběla diferenciace, aktivní zapojení žáků a formativní hodnocení."
+      },
+      {
+        "tag": "Absence strategie pro prevenci neúspěchu",
+        "detail": "Škola nemá systematické opatření na předcházení školnímu neúspěchu, pouze běžné pedagogické postupy.",
+        "evidence": "Absence strategie předcházení školní neúspěšnosti, opatření nejsou dostatečně účinná, chybí metodické vedení učitelů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou neúspěšnost žáků oboru Veřejnosprávní činnost v maturitě a jaká nová opatření plánuje?",
+      "Jaké konkrétní metody aktivního vyučování používají učitelé a jak se školí v moderních pedagogických přístupech?",
+      "Jak funguje systém doučování a individuální podpory pro žáky ohrožené školním neúspěchem?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a motivací pro gymnázium – obor Gymnázium má výborné výsledky v maturitě.",
+      "Žáci, kterým vyhovuje tradičnější přístup k výuce – škola má stabilní vedení a jasné cíle.",
+      "Žáci, kteří potřebují podporu – škola má kariérového poradce a systém podpůrných opatření pro žáky se speciálními potřebami."
+    ],
+    "who_should_be_cautious": [
+      "Žáci slabší v učení – obor Veřejnosprávní činnost má velmi vysokou neúspěšnost v maturitě (až 46,7 %), chybí účinná prevence.",
+      "Žáci, kteří se učí lépe aktivní metodou – přibližně dvě třetiny vyučovacích hodin používá převážně frontální výuku.",
+      "Žáci, kteří potřebují individualizovaný přístup – diferenciace ve výuce není dostatečná, úkoly nejsou přizpůsobeny různému tempu."
+    ],
+    "plain_czech_summary": "Gymnázium v Úpici je stabilní školou s dobrým vedením a materiálním vybavením. Obor Gymnázium dosahuje výborných výsledků v maturitě. Hlavní problémy jsou: obor Veřejnosprávní činnost má velmi vysokou neúspěšnost (až 46,7 %), vyučování je často pasivní bez aktivního zapojení žáků, chybí jednotné kritéria hodnocení a systematická podpora pro slabší žáky. Škola potřebuje zlepšit pedagogické metody a zavést účinnou strategii prevence školního neúspěchu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Gymnázium: stabilně velmi dobré; Veřejnosprávní činnost: stabilně špatné s vysokou neúspěšností",
+      "key_numbers": [
+        "Gymnázium 2022: 11,1 % neúspěšnosti (2 z 18 žáků)",
+        "Veřejnosprávní činnost 2022: 46,7 % neúspěšnosti (7 z 15 žáků)",
+        "Veřejnosprávní činnost 2020: 64,7 % neúspěšnosti (11 z 17 žáků)"
+      ],
+      "evidence": "Hrubá neúspěšnost žáků v jarním zkušebním období 2022 ve společné části MZ byla u Gymnázia 11,1 %, u Veřejnosprávní činnosti 46,7 %."
+    },
+    "absence": {
+      "trend": "Neomluvená absence je podchycena v počátcích, týká se jen jednotlivců; omluvená absence má účinný systém prevence",
+      "key_numbers": [
+        "Neomluvená absence: řešena hned v počátcích",
+        "Omluvená absence: účinný systém prevence",
+        "Vyšší ročníky Veřejnosprávní činnosti: převládá řešení absence"
+      ],
+      "evidence": "Neomluvená absence je zpravidla podchycena hned v počátcích a týká se jen jednotlivců. V oblasti omluvené absence je nastaven účinný systém prevence."
+    },
+    "support_services": [
+      "Kariérové poradenství – pomoc při výběru dalšího studia nebo zaměstnání",
+      "Výchovné poradenství – koordinace práce s žáky se speciálními vzdělávacími potřebami (plány pedagogické podpory, individuální vzdělávací plány)",
+      "Doučování v rámci projektů Šablony a Národní plán obnovy zaměřené na maturitní ročníky",
+      "Adaptační proces zaměřený na zvládnutí nároků středoškolského vzdělávání a prevenci rizikových projevů"
+    ],
+    "safety_climate": [
+      "Škole se daří zajistit bezpečné a příjemné klima pro všechny aktéry vzdělávání",
+      "Školní preventivní program zaměřený na podporu zdravého životního stylu a eliminaci rizikového chování (šikana, návykové látky, vandalismus)",
+      "Aktivní žákovský parlament organizující společné akce a podporující sounáležitost se školou",
+      "Zapojení žáků do charitativních akcí (Srdíčkový den, Květinový den)"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Farmaceutickou fakultou Univerzity Karlovy",
+      "Spolupráce s podnikatelskou sférou a subjekty státní správy zajišťujícími praktickou výuku",
+      "Spolupráce se zřizovatelem a dalšími školami v regionu",
+      "Exkurze ve firmách a besedy s odborníky z praxe – výstupy však často nemají vypovídací hodnotu pro posouzení rozvoje odborných kompetencí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, obsahuje konkrétní čísla a příklady. Hlavní zjištění jsou jasně oddělena v sekcích. Některé pasáže jsou však delší a složitější (např. popis vyučovacích hodin).",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, kolik přesně hodin bylo hospitováno a jaké bylo jejich rozložení mezi předměty a ročníky.",
+      "Není jasné, zda vysoká neúspěšnost oboru Veřejnosprávní činnost je způsobena kvalitou výuky, složitostí oboru nebo výběrem žáků.",
+      "Chybí informace o tom, jak se vedení školy konkrétně seznamuje s výsledky externího testování a jaké z toho vyvozuje závěry."
+    ]
+  }
+}
+```

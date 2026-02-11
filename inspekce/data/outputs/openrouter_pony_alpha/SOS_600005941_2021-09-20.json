@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600005941_2021-09-20",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:33:55.564132+00:00",
+  "run_finished_utc": "2026-02-10T08:35:06.747299+00:00",
+  "raw_file": "SOS_600005941_2021-09-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600005941_2021-09-20",
+    "school_profile": {
+      "school_type": "Střední škola (čtyřleté obory Obchodní akademie a Cestovní ruch)",
+      "inspection_period": "20. 9. 2021 − 22. 9. 2021",
+      "school_change_summary": "Škola odstranila některé nedostatky z roku 2015 a inovovala vzdělávací programy, ale přetrvává nízká kvalita poradenských služeb a vysoká míra předčasných odchodů žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Profilace žáků",
+          "detail": "Pestrá nabídka volitelných předmětů umožňuje žákům lépe se profilovat podle jejich zájmů a budoucího zaměření.",
+          "evidence": "„Pestrá nabídka volitelných předmětů účinně napomáhá odborné profilaci žáků.“"
+        },
+        {
+          "tag": "Vybavení a prostředí",
+          "detail": "Škola disponuje dostatečným počtem učeben, je nadprůměrně vybavena didaktickou technikou a udržuje čisté prostředí.",
+          "evidence": "„Škola disponuje dostatečným počtem kmenových, odborných či specializovaných učeben... Je nadprůměrně vybavena didaktickou technikou.“"
+        },
+        {
+          "tag": "Uplatnění absolventů",
+          "detail": "Škola systematicky sleduje uplatnění absolventů, z nichž většina pokračuje na vysokých školách.",
+          "evidence": "„Příkladný je dlouhodobě realizovaný systém sledování uplatnění absolventů školy... jsou žáci přijímáni ke studiu na vyšších odborných či vysokých školách.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Předčasné odchody",
+          "detail": "Téměř polovina žáků nedokončí studium v předepsané době, což ukazuje na problémy s udržením studentů.",
+          "evidence": "„Poslední čtyřletý cyklus vzdělávání nedokončilo v oboru Cestovní ruch 41 % žáků a v oboru Obchodní akademie 45 % žáků.“"
+        },
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Výuka je často frontální a monotónní, učitelé málo využívají moderní pomůcky a aktivizující metody.",
+          "evidence": "„V hospitovaných hodinách převažovala frontální výuka... minimální používání didaktické techniky vedlo k nízké názornosti výuky.“"
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Škola nemá funkční systém pro podporu žáků v potížích, což vede k jejich odchodům místo řešení problémů.",
+          "evidence": "„Poradenské služby nejsou systematicky zajišťovány, chybí strategie podpory žáků ohrožených školním neúspěchem... Vzdělávací deficity... jsou řešeny ukončením jejich vzdělávání.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají studijní potíže, aby nedošlo k předčasnému ukončení studia?",
+        "Využívají učitelé při výuce moderní technologie a aktivizující metody, nebo převažuje tradiční frontální výuka?",
+        "Jaká je metodika výuky matematiky a jak jsou žáci připravováni na maturitu z tohoto předmětu?"
+      ],
+      "who_school_fits": [
+        "Samostatní žáci, kteří zvládnou převažující frontální styl výuky bez nutnosti velké podpory.",
+        "Uchazeči o obor Cestovní ruch, který vykazuje lepší výsledky a úspěšnost.",
+        "Studenti, kteří chtějí využít širokou nabídku volitelných předmětů pro svou profesní profilaci."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individuální přístup nebo mají specifické vzdělávací potřeby.",
+        "Uchazeči o obor Obchodní akademie, kde jsou výsledky horší a neúspěšnost vyšší.",
+        "Studenti s odlišným mateřským jazykem, pro které škola nemá jednotný systém podpory."
+      ],
+      "plain_czech_summary": "Obchodní akademie na Vinohradech nabízí dva obory a vyniká nadprůměrným vybavením a širokou nabídkou volitelných předmětů. Pro rodiče je však varovným signálem vysoký počet žáků, kteří školu předčasně opouštějí (až 45 %). Inspekce rovněž kritizovala málo pestré vyučovací metody a nedostatečnou podporu pro žáky se studijními či jinými problémy. Škola lépe vede žáky v oboru Cestovní ruch, zatímco na Obchodní akademii jsou výsledky horší."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený (úspěšnost závisí na oboru)",
+        "key_numbers": [
+          "Obor Cestovní ruch dosahuje velmi dobrých výsledků.",
+          "Obor Obchodní akademie je méně úspěšný."
+        ],
+        "evidence": "„Při ukončování vzdělávání maturitní zkouškou jsou dlouhodobě úspěšní žáci oboru Cestovní ruch... Méně úspěšní jsou žáci oboru Obchodní akademie.“"
+      },
+      "absence": {
+        "trend": "Neuvedeno (data o absence chybí)",
+        "key_numbers": [
+          "Zpráva neuvádí konkrétní čísla o absenci."
+        ],
+        "evidence": "Text zprávy neobsahuje specifické údaje o absentující žácích."
+      },
+      "support_services": [
+        "Systém podpory žáků ohrožených neúspěchem je nedostatečný a neefektivní.",
+        "Chybí jednotný systém podpory pro žáky s odlišným mateřským jazykem (10 % žáků).",
+        "Kvalita metodické podpory učitelů pro práci se žáky se SVP se nezlepšila."
+      ],
+      "safety_climate": [
+        "Žáci jsou ve výuce velmi ukáznění a respektují pravidla.",
+        "Počet úrazů má snižující se tendenci.",
+        "Kázeňská opatření jsou však udělována nejednotně za stejné přestupky."
+      ],
+      "partnerships_practice": [
+        "Fungující spolupráce s VŠE a Metropolitní univerzitou.",
+        "Praxe byla omezena pandemií covid-19.",
+        "Škola je fakultní cvičnou školou VŠE."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a jasně členěná, byť používá standardní odbornou terminologii (např. formativní hodnocení, SVP).",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní data o prospěchu žáků (průměr známek).",
+        "Chybí podrobnější statistiky k absenci žáků.",
+        "Není blíže specifikováno složení 'pestré nabídky' volitelných předmětů."
+      ]
+    }
+  }
+}

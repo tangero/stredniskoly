@@ -1,0 +1,118 @@
+{
+  "report_id": "GY4_691009627_2024-05-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:16:20.361523+00:00",
+  "run_finished_utc": "2026-02-09T16:16:45.374451+00:00",
+  "raw_file": "GY4_691009627_2024-05-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691009627_2024-05-22",
+    "school_profile": {
+      "school_type": "Gymnázium a základní škola (soukromá, s.r.o.)",
+      "inspection_period": "22. 5. 2024 – 24. 5. 2024",
+      "school_change_summary": "Škola rozšířila základní vzdělávání o druhý stupeň a od 1. 9. 2024 poskytuje střední vzdělání v oboru Gymnázium. Změnilo se místo výuky druhého stupně ZŠ. Škola je první laboratorní školou v ČR, spolupracuje s univerzitami a mezinárodními projekty."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Individuální přístup a podpora",
+          "detail": "Pedagogové vytvářejí podnětné prostředí, kde se všichni žáci cítí přijímáni a motivováni rozvíjet své schopnosti.",
+          "evidence": "Empatický, podporující přístup učitelů; specifická podpora všem žákům podle jejich potřeb."
+        },
+        {
+          "tag": "Moderní a inovativní výuka",
+          "detail": "Škola využívá propracovaný systém hodnocení s důrazem na formativní charakter a rozvoj kritického myšlení.",
+          "evidence": "Sebehodnocení žáků, měsíční plány, portfolia; metody CLIL, badatelská činnost, mezipředmětové propojování."
+        },
+        {
+          "tag": "Péče o nadané a ohrožené žáky",
+          "detail": "Škola má systém identifikace nadaných žáků a včasné depistáže ohrožených školním neúspěchem.",
+          "evidence": "Diferenciace učiva, individuální péče, doučovací aktivity; prevence specifických poruch učení."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná práce s chybou na 1. stupni",
+          "detail": "Učitelé málo využívají písemnosti žáků pro práci s chybou a poskytování zpětné vazby.",
+          "evidence": "Písemnosti na nižší úrovni; nácvik psaní není věnována požadovaná pozornost."
+        },
+        {
+          "tag": "Málo pamětního učení na 1. stupni",
+          "detail": "Chybí dostatečné zařazování prvků pamětného učení v nižších ročnících.",
+          "evidence": "Inspekční doporučení: zařazovat pamětní učení a vrstevnické hodnocení."
+        },
+        {
+          "tag": "Nevyužitý potenciál druhého pedagoga na střední škole",
+          "detail": "Ve výuce působí dva pedagogové, ale druhý není dostatečně aktivně zapojen.",
+          "evidence": "Druhý pedagog sporadicky doplňuje výuku; doporučení na lepší využití jeho potenciálu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá sebehodnocení žáků a jak se výsledky používají pro jejich další rozvoj?",
+        "Jaké konkrétní kroky podniká škola pro žáky, kteří mají potíže s psaním nebo učením?",
+        "Jak je zajištěna individuální péče pro nadané žáky a jaké mají možnosti pro jejich rozvoj?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří potřebují individuální přístup a podporu v rozvoji svých schopností",
+        "Nadaní žáci hledající prostředí pro rozvoj svého potenciálu a kritického myšlení",
+        "Rodiny preferující moderní, inovativní metody výuky s důrazem na sebehodnocení a reflexi"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s poruchami učení nebo dysgrafií – na 1. stupni je málo pozornosti věnováno nácviku psaní",
+        "Rodiny očekávající tradičnější přístup k výuce a pamětnímu učení",
+        "Žáci, kteří potřebují více struktury – škola pracuje s dlouhodobými a krátkodobými cíli, což vyžaduje aktivitu samotného žáka"
+      ],
+      "plain_czech_summary": "LABYRINTH je inovativní soukromá škola s jasnou vizí a moderním přístupem. Silné stránky: individuální péče, kvalitní pedagogové, podpora nadaných i ohrožených žáků, zajímavá výuka s kritickým myšlením. Slabší místa: na 1. stupni málo práce s chybou v písemnostech a nácviku psaní, málo pamětního učení. Střední škola je nová (od září 2024). Vhodná pro žáky, kteří si chtějí uvědomit svůj pokrok a rozvíjet potenciál."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Střední škola byla právě otevřena (od 1. 9. 2024), v inspekční zprávě nejsou dostupné výsledky maturit.",
+        "key_numbers": [
+          "19 žáků v prvním ročníku gymnázia v době inspekce",
+          "Obor: 79-41-K/41 Gymnázium"
+        ],
+        "evidence": "Škola začala poskytovat střední vzdělání od 1. 9. 2024; v době inspekce (květen 2024) měla jednu třídu prvního ročníku."
+      },
+      "absence": {
+        "trend": "Zpráva neobsahuje konkrétní údaje o absenci žáků.",
+        "key_numbers": [
+          "Údaje nejsou v inspekční zprávě dostupné"
+        ],
+        "evidence": "Inspekční zpráva se zaměřuje na kvalitu vzdělávání, ne na statistiku absence."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (ŠPP) vedené školní psycholožkou s diagnostickými zkušenostmi",
+        "Depistáže zaměřené na vyhledávání žáků ohrožených školní neúspěšností a nadaných žáků",
+        "Doučovací aktivity pro žáky ohrožené školním neúspěchem",
+        "Kariérové poradenství s důrazem na identifikaci silných stránek žáků",
+        "Preventivní programy a intervenční programy řešené na základě monitoringu klimatu tříd"
+      ],
+      "safety_climate": [
+        "Zdvořilé chování žáků ke všem dospělým pozorované během inspekce",
+        "Bezpečné a klidné pracovní prostředí zajišťované učiteli",
+        "Partnerská komunikace mezi pedagogy a žáky",
+        "Netradiční otevřený prostor tříd druhého stupně vede žáky k respektujícímu chování",
+        "Kázeňská opatření udělována sporadicky, obvykle řešena domluvou",
+        "Neprospívající či nehodnocení žáci se ve škole nevyskytují"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s univerzitami a fakultami brněnských vysokých škol",
+        "Členství v Mezinárodní asociaci laboratorních škol (IALS)",
+        "Zapojení do mezinárodního vzdělávacího projektu Open School Space",
+        "Partnerství s Moravskou galerií, Filharmonií Brno a nadacemi",
+        "Zahraniční spolupráce zajišťující mobilitu žáků a učitelů",
+        "Ředitel sdílí manažerské zkušenosti s jinými řediteli v regionu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelnou češtinou s jasnou strukturou. Důležité informace jsou jasně odděleny do sekcí (podmínky, průběh, výsledky). Doporučení jsou konkrétní a praktická. Není zbytečného úřednického stylu.",
+      "uncertainty_notes": [
+        "Výsledky maturit nejsou dostupné – střední škola byla právě otevřena",
+        "Konkrétní čísla o absenci nejsou v zprávě uvedena",
+        "Detailní informace o financování a dotacích nejsou pro rodiče relevantní"
+      ]
+    }
+  }
+}

@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY8_600014151_2022-11-08",
+  "school_profile": {
+    "school_type": "Gymnázium a střední odborná škola (11 oborů: praktická škola, 6 oborů s výučním listem, 2 maturitní obory)",
+    "inspection_period": "8.–11. listopadu 2022",
+    "school_change_summary": "Významná obměna pedagogického sboru (40 % nových učitelů), pokles počtu žáků na 440, posílení poradenského pracoviště o školní psycholožku, ukončení oboru Hotelnictví a zavedení Gastronomie"
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Žáci gymnázia dosahují dlouhodobě vysoké úspěšnosti – průměrně 98 % úspěšně složí maturitní zkoušku.",
+        "evidence": "V posledních třech letech vykonalo úspěšně maturitní zkoušku průměrně 98 % žáků."
+      },
+      {
+        "tag": "Kvalitní praktická příprava",
+        "detail": "Odborný výcvik probíhá v moderně vybavených dílnách s propojením na reálné pracovní prostředí a zakázky.",
+        "evidence": "Žáci pracují na konkrétních zakázkách, získávají finanční odměnu a cenné zkušenosti na pracovištích smluvních partnerů."
+      },
+      {
+        "tag": "Bohatá mimoškolní činnost",
+        "detail": "Škola nabízí soutěže, olympiády, projekty, exkurze a mezinárodní spolupráci, která rozvíjí klíčové kompetence.",
+        "evidence": "Sedm žáků se umístilo na předních místech v krajském či celostátním kole soutěží; 20 z 21 žáků úspěšně složilo Cambridge English."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence v odborných oborech",
+        "detail": "Žáci tříletých oborů meškají průměrně 338 hodin za rok, což negativně ovlivňuje jejich výsledky a vedení školy zatím nenašlo účinná řešení.",
+        "evidence": "Dlouhodobě vykazují vysoký počet zameškaných hodin zejména žáci tříletých oborů vzdělání, za školní rok 2021/2022 to bylo průměrně 338 hodin na žáka."
+      },
+      {
+        "tag": "Nekvalifikovaní učitelé",
+        "detail": "Třetina z 40 % nových učitelů nemá odbornou kvalifikaci pro vyučovaný předmět, což snižuje kvalitu výuky.",
+        "evidence": "Třetina nových učitelů nesplňuje odbornou kvalifikaci pro přímou pedagogickou činnost, kterou vykonávají."
+      },
+      {
+        "tag": "Slabá kontrola kvality výuky",
+        "detail": "Vedení školy provádí minimálně hospitací bez systematické zpětné vazby a sledování zlepšování pedagogické úrovně.",
+        "evidence": "Podle doloženého přehledu hospitací jsou hospitace prováděny minimálně; nebylo doloženo, jak jsou doporučení realizována a vyhodnocována."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků v oborech s výučním listem a jaké jsou výsledky těchto opatření?",
+      "Jaký je plán na doplnění kvalifikace učitelů, kteří nyní vyučují bez potřebného vzdělání?",
+      "Jak se škola zaměřuje na individualizaci výuky a diferenciaci úkolů podle schopností jednotlivých žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o gymnáziální vzdělání a přípravu na vysokou školu – dlouhodobě vysoká úspěšnost maturit",
+      "Žáci s praktickým zaměřením a zájmem o konkrétní řemeslo – kvalitní vybavení dílen a propojení s reálnými pracovními místy",
+      "Žáci se speciálními vzdělávacími potřebami – škola má posílené poradenské pracoviště a asistenty pedagoga"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s tendencí k absenci – v oborech s výučním listem je vysoká absence problém, který škola zatím neřeší dostatečně účinně",
+      "Žáci potřebující individuální přístup – v některých hodinách chybí diferenciace úkolů a aktivizace žáků",
+      "Žáci v oborech s výučním listem – 11 % žáků neprospěje, což je výrazně vyšší než u maturitních oborů (1 %)"
+    ],
+    "plain_czech_summary": "Gymnázium v Mikulově je solidní školou se silnými stránkami v maturitním vzdělání (98 % úspěšnost) a kvalitní praktickou přípravou. Nabízí bohatý mimoškolní program a dobrou spolupráci s partnery. Hlavní problémy jsou vysoká absence žáků v oborech s výučním listem (338 hodin/rok), nedostatek kvalifikovaných učitelů (třetina nových učitelů bez potřebného vzdělání) a slabá kontrola kvality výuky vedením. Škola se snaží zlepšovat, ale systematické řešení těchto problémů zatím chybí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě vysoká úspěšnost",
+      "key_numbers": [
+        "98 % žáků úspěšně složí maturitní zkoušku (průměr za 3 roky)",
+        "1 % žáků neprospěje v maturitních oborech",
+        "278 žáků v maturitních oborech (ze 440 celkem)"
+      ],
+      "evidence": "V posledních třech letech vykonalo úspěšně maturitní zkoušku průměrně 98 % žáků. Žáci dosahují dlouhodobě vysokou úspěšnost i v porovnání s žáky jiných škol."
+    },
+    "absence": {
+      "trend": "Dlouhodobě vysoká, zejména v oborech s výučním listem",
+      "key_numbers": [
+        "338 hodin/žáka/rok v tříletých oborech (2021/2022)",
+        "11 % žáků neprospěje v oborech s výučním listem",
+        "Absence má negativní vliv na výsledky a předčasné odchody"
+      ],
+      "evidence": "Dlouhodobě vykazují vysoký počet zameškaných hodin zejména žáci tříletých oborů vzdělání, za školní rok 2021/2022 to bylo průměrně 338 hodin na žáka. Nadměrná absence má většinou významný negativní vliv na výsledky vzdělávání."
+    },
+    "support_services": [
+      "Školní psycholožka (nově posíleno pracoviště)",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+      "Individuální a skupinové doučování",
+      "Kariérové poradenství s diagnostikou profesní orientace",
+      "Spolupráce se školským poradenským zařízením v hlavní budově"
+    ],
+    "safety_climate": [
+      "Bezpečnost žáků je prioritou – vedení průběžně vyhodnocuje a zlepšuje podmínky",
+      "Učitelé dbají na bezpečnost a ochranu zdraví během odborného výcviku",
+      "Kázeňské problémy se nevyskytují, žáci dodržují nastavená bezpečnostní pravidla",
+      "Školní psycholožka se cíleně zabývá školním klimatem a klimatem v třídách"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se středními školami ze Slovenské republiky – společné sportovní a kulturní akce",
+      "Partnerství s městem Mikulov – podíl na Mezinárodním kytarovém festivalu, Pálavském vinobraní, festivalu Kampanila",
+      "Smluvní partneři pro praktické vyučování – výrobní podniky a gastro provozovny",
+      "Spolupráce s vysokými školami a charitativními institucemi",
+      "Výměnné pobyty s partnerskou speciální školou v Helsinkách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta s citacemi. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však delší a obsahují více technických detailů, které mohou být pro rodiče méně přístupné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření vedení školy již přijalo k řešení vysoké absence – pouze uvádí, že dosavadní opatření nebyla dostatečně účinná",
+      "Není jasné, zda se kvalifikace nových učitelů postupně doplňuje a jak dlouho bude trvat, než budou všichni kvalifikováni",
+      "Chybí informace o konkrétních plánech na zlepšení hospitační činnosti a zpětné vazby učitelům"
+    ]
+  }
+}
+```

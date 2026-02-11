@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600011305_2022-01-18",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:00:40.931409+00:00",
+  "run_finished_utc": "2026-02-10T08:02:06.802323+00:00",
+  "raw_file": "SOS_600011305_2022-01-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600011305_2022-01-18",
+    "school_profile": {
+      "school_type": "Soukromá škola (akciová společnost) nabízející maturitní obory (IT, ekonomie, pedagogika, elektrotechnika) a učební obory.",
+      "inspection_period": "18. 1. – 21. 1. 2022 a 23. 3. – 24. 3. 2022",
+      "school_change_summary": "Od roku 2019 školu vede nový ředitel, který zastavil úbytek žáků a otevřel nový obor Mechanik elektrotechnik."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Technické obory",
+          "detail": "Silné zázemí a spolupráce se zaměstnavateli zajišťuje kvalitní přípravu na praxi v technických oborech.",
+          "evidence": "„Podpora zřizovatele a široká síť sociálních partnerů umožňují efektivní realizaci praktického vyučování žáků technických oborů vzdělání.“"
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola disponuje moderními dílnami a technologiemi pro odbornou výuku.",
+          "evidence": "„Materiální a technické vybavení [dílen] odpovídá současným požadavkím odborné praxe.“"
+        },
+        {
+          "tag": "Klima a bezpečnost",
+          "detail": "Škola klade důležitost na bezpečné prostředí a dobrou spolupráci s žáky.",
+          "evidence": "„Problémy s chováním žáků škola řeší bezodkladně... vedení školy podporuje partnerský přístup k žákům.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nízká úspěšnost u maturity",
+          "detail": "Žáci mají dlouhodobě výrazně horší výsledky ve společné části maturity než je celorepublikový průměr.",
+          "evidence": "„Škola i nadále vykazuje ve společné části maturitní zkoušky podprůměrné výsledky... v roce 2021 dosáhla hrubá neúspěšnost 21,9 % oproti 6,3 % v celé ČR.“"
+        },
+        {
+          "tag": "Nekvalitní praxe (pedagogika)",
+          "detail": "Učební praxe v oboru předškolní pedagogika probíhá převážně ve škole bez kontaktu s dětmi.",
+          "evidence": "„Převážná část učební praxe probíhá ve škole, nikoli v mateřských školách... Obsahovou náplň tvoří... administrativa, nikoli přímá práce s dětmi.“"
+        },
+        {
+          "tag": "Zastaralé metody výuky",
+          "detail": "Výuka je často pasivní, učitelé málo zapojují žáky a neuzpůsobují výuku jejich potřebám.",
+          "evidence": "„Převažovaly postupy zaměřené na předávání poznatků učitelem, chyběla vhodná aktivizace žáků... diferenciace... zaznamenána nebyla.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola reaguje na špatné výsledky žáků u maturity a jaká nová opatření chystá?",
+        "Kde budou probíhat odborné praxe v oboru Předškolní a mimoškolní pedagogika a kolik času stráví žáci přímo s dětmi?",
+        "Kolik hodin výuky zajišťují nekvalifikovaní učitelé a jak je škola řeší?"
+      ],
+      "who_school_fits": [
+        "Uchazeči o technické obory (Elektrikář, Mechanik), kteří chtějí získat praktické dovednosti a uplatnění ve firmě zřizovatele.",
+        "Samostatní žáci, kteří dokáží efektivně studovat i při frontální výuce a nevyžadují silnou individuální podporu.",
+        "Zájemci o obor Informační technologie s cílem získat mezinárodní certifikáty (ECDL)."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o obor Předškolní a mimoškolní pedagogika kvůli špatně zajištěné praxi a vysoké neúspěšnosti u maturity.",
+        "Žáci, kteří potřebují k učení aktivní zapojení, skupinovou práci a moderní metody výuky.",
+        "Studenti se speciálními vzdělávacími potřebami vyžadujícími výraznou individualizaci výuky."
+      ],
+      "plain_czech_summary": "Škola má silné stránky v technických oborech, kde nabízí kvalitní vybavení a praxi. Trpí však dlouhodobě špatnými výsledky u maturity, zejména v oboru pedagogika, kde je i nekvalitní praxe bez dětí. Výuka je často pasivní a učitelé málo respektují individuální potřeby žáků. Pro technicky zaměřené studenty může být dobrá volba, ale pro ostatní představuje riziko."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírné zlepšení oproti roku 2019, ale stále výrazně podprůměrné výsledky.",
+        "key_numbers": [
+          "Neúspěšnost 2021: 21,9 % (škola) vs 6,3 % (ČR)",
+          "Neúspěšnost v pedagogice 2021: 28,1 % vs 5,3 % (obor v ČR)",
+          "Neúspěšnost v pedagogice 2019: 72,7 %"
+        ],
+        "evidence": "„V roce 2021 dosáhla hrubá neúspěšnost žáků školy 21,9 % oproti 6,3 % v celé ČR.“"
+      },
+      "absence": {
+        "trend": "Podařilo se výrazně snížit vysokou absenci zavedením přísnějších pravidel.",
+        "key_numbers": [
+          "Průměrná absence 1. pololetí 2018/19: 151 hod.",
+          "Průměrná absence 1. pololetí 2019/20: 95 hod."
+        ],
+        "evidence": "„Průměrná absence 151 hod. na žáka... se snížila na 95 hod.... opatření... byla účinná.“"
+      },
+      "support_services": [
+        "Individuální konzultace a skupinová doučování (nízký zájem žáků)",
+        "Výchovné poradenství a metodik prevence",
+        "Adaptační pobyty pro prváky"
+      ],
+      "safety_climate": [
+        "Okamžité řešení problémů s chováním",
+        "Partnerský přístup vedení k žákům",
+        "Fungující studentská rada"
+      ],
+      "partnerships_practice": [
+        "Silná spolupráce se zřizovatelem (AGC) a zaměstnavateli v technice",
+        "Fakultní škola Přírodovědecké fakulty UJEP",
+        "Chybící systematická spolupráce s mateřskými školami pro obor pedagogika"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky a konkrétní číselné údaje o neúspěšnosti jsou dobře čitelné.",
+      "uncertainty_notes": [
+        "Nejasná míra zapojení nekvalifikovaných učitelů v jednotlivých předmětech (kromě AJ a Mat).",
+        "Chybí detailní srovnání úspěšnosti maturity mezi jednotlivými ročníky.",
+        "Není specifikováno, jaké konkrétní technické vybavení chybí v oboru pedagogika."
+      ]
+    }
+  }
+}

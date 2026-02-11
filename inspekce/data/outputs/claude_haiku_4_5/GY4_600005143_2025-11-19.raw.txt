@@ -4,107 +4,107 @@
   "school_profile": {
     "school_type": "Gymnázium (čtyřleté a šestileté), Praha 4",
     "inspection_period": "19. 11. 2025 – 22. 11. 2025 a 24. 11. 2025",
-    "school_change_summary": "Od inspekce v 2019 vzrostl zájem o školu, zlepšilo se materiálně-technické vybavení a postupně se modernizují výukové postupy. Škola si udržuje stabilní naplněnost (670 žáků v 22 třídách) a kvalitní výsledky vzdělávání."
+    "school_change_summary": "Od inspekce v roce 2019 se zvýšil zájem o školu, zlepšilo se materiálně-technické vybavení a postupně se modernizují výukové postupy. Škola si udržuje stabilní počet žáků (670) a kvalifikovaný pedagogický sbor. Přetrvávají ale nedostatky v aktivizaci žáků a formativním hodnocení."
   },
   "for_parents": {
     "strengths": [
       {
         "tag": "Výborné podmínky a vybavení",
-        "detail": "Moderní budova s dvěma tělocvičnami, posilnou, horolezeckou stěnou, botanickou zahradou, knihovnou a multifunkčním sálem.",
-        "evidence": "Rekonstrukce budovy, přístavba jídelny, modernizace učeben s interaktivními panely a notebooky."
+        "detail": "Moderní budova s dvěma tělocvičnami, posilnou, horolezeckou stěnou, knihovnou, hudební zkušebnou a botanickou zahradou.",
+        "evidence": "Rekonstrukce budovy, přístavba jídelny, modernizace učeben, multifunkční přednáškový sál, interaktivní panely."
       },
       {
-        "tag": "Jazykový profil a mezinárodní spolupráce",
-        "detail": "Posílená výuka cizích jazyků (angličtina, němčina, španělština, francouzština, řečtina, latina) s konverzacemi s rodilými mluvčími a zahraničními pobyty.",
-        "evidence": "Erasmus+ program, zahraniční mobility v 10+ zemích, 31 žáků skládá Deutsches Sprachdiplom II, 80 % žáků nahrazuje profilovou maturitu certifikátem."
+        "tag": "Silná jazyková příprava",
+        "detail": "Angličtina, němčina, španělština, francouzština, řečtina a latina s rodilými mluvčími a mezinárodními certifikáty.",
+        "evidence": "80 % žáků nahrazuje profilovou maturitu certifikátem, 31 žáků složilo Deutsches Sprachdiplom II v roce 2024/2025."
       },
       {
-        "tag": "Podpora individuálních potřeb žáků",
-        "detail": "Komplexní péče školního psychologa, speciálního pedagoga a asistentů pro žáky se speciálními potřebami, talentované i zdravotně znevýhodněné.",
-        "evidence": "3 % žáků se speciálními vzdělávacími potřebami, 5 % s odlišným mateřským jazykem, asi 6 % s individuální organizací vzdělávání."
+        "tag": "Vysoká úspěšnost při přijetí na vysoké školy",
+        "detail": "Žáci dosahují výborných výsledků v maturitě a úspěšně se hlásí na české i zahraniční univerzity.",
+        "evidence": "35–40 % maturantů s vyznamenáním, lepší výsledky než republikový průměr v angličtině a matematice."
       }
     ],
     "risks": [
       {
         "tag": "Nejednotné hodnocení mezi předměty",
-        "detail": "Různá měřítka hodnocení vedou k rozdílné klasifikaci v některých předmětech (biologie, český jazyk, francouzština, chemie) podle konkrétního učitele.",
+        "detail": "Různá měřítka hodnocení vedou k rozdílné přísnosti klasifikace v některých předmětech (biologie, čeština, francouzština, chemie).",
         "evidence": "Vedení školy zaznamenalo odchylky a vnímá nutnost sjednocování hodnoticích postupů."
       },
       {
-        "tag": "Tradičnější přístup v části výuky",
-        "detail": "V některých hodinách přetrvává nižší aktivizace žáků, převaha frontální výuky a transmisivní předávání poznatků místo interaktivního učení.",
-        "evidence": "Inspekce zjistila méně efektivní didaktické postupy v menší části hodin s nízkou aktivizací žáků a jejich pasivitou."
+        "tag": "Nižší aktivizace žáků v některých hodinách",
+        "detail": "Část vyučování stále využívá převážně frontální výuku s nízkou aktivizací žáků místo moderních metod.",
+        "evidence": "V menší části hodin převažuje faktografický výklad, absence názornosti a jednotvárnost bez střídání aktivit."
       },
       {
         "tag": "Slabší zpětná vazba a sebehodnocení",
-        "detail": "Formativní zpětná vazba a zapojení žáků do reflexe vlastního pokroku nejsou dostatečně uplatňovány.",
-        "evidence": "Méně účinná zpětná vazba k práci žáků, opomíjení vrstevnického hodnocení a vyhodnocení přínosu učení v závěru hodiny."
+        "detail": "Učitelé méně často poskytují formativní zpětnou vazbu a nezahrnují žáky do reflexe jejich pokroku.",
+        "evidence": "Chybí vrstevnické hodnocení podle kritérií a vyhodnocení přínosu učení v závěru hodin."
       }
     ],
     "questions_for_open_day": [
-      "Jak konkrétně probíhá jazyková příprava a jaké jsou možnosti získání mezinárodních certifikátů?",
-      "Jaké jsou kritéria pro přijetí do jednotlivých tříd a jak se vybírají uchazeči?",
-      "Jak škola podporuje žáky se speciálními vzdělávacími potřebami a jaké jsou zkušenosti s jejich integrací?"
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s některým předmětem? Jaké jsou možnosti doučování a konzultací?",
+      "Jaké jsou kritéria pro přijetí do šestiletého gymnázia a jak se liší nároky mezi čtyřletým a šestiletým studiem?",
+      "Jak se škola vypořádává s rozdílnými tempy učení – jsou k dispozici rozšiřující či zjednodušující materiály?"
     ],
     "who_school_fits": [
-      "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí posílenou výuku cizích jazyků a četné zahraniční pobyty.",
-      "Talentovaní a nadaní žáci – škola má systém podpory individuálního potenciálu a zapojuje žáky do soutěží a projektů.",
-      "Žáci s ambicí na vysokoškolské studium – vysoká úspěšnost absolventů při přijetí na české i zahraniční vysoké školy."
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí bohatou jazykovou přípravu a zahraniční výjezdy.",
+      "Talentovaní a motivovaní žáci – vysoké nároky a kvalitní příprava na vysoké školy.",
+      "Žáci se speciálními potřebami – škola má systém podpory (psycholožky, asistenty, individuální plány)."
     ],
     "who_should_be_cautious": [
-      "Žáci preferující aktivní, interaktivní výuku – v některých předmětech stále převládá tradičnější přístup s nižší aktivizací.",
-      "Žáci potřebující jasné a jednotné kritéria hodnocení – mezi předměty existují rozdíly v přísnosti klasifikace.",
-      "Žáci se speciálními vzdělávacími potřebami – ačkoli je péče kvalitní, měli by si ověřit konkrétní podporu pro svou situaci."
+      "Žáci, kteří potřebují více interaktivní a praktické vyučování – část hodin je stále tradičnější.",
+      "Žáci, kteří se lépe učí prostřednictvím skupinové práce a diskuse – kooperativní činnosti jsou uplatňovány jen částečně.",
+      "Žáci, kteří potřebují jasné a jednotné kritéria hodnocení – v některých předmětech se přísnost liší podle učitele."
     ],
-    "plain_czech_summary": "Gymnázium na Vítězné pláni je prestižní školou s výborným vybavením, silným zaměřením na jazyky a mezinárodní spolupráci. Žáci dosahují výborných výsledků, zejména v angličtině a matematice. Škola má kvalitní podporu pro individuální potřeby žáků. Slabší stránkou je nejednotné hodnocení mezi předměty a v některých hodinách tradičnější přístup k výuce. Ideální pro ambiciózní žáky se zájmem o jazyky a vysokoškolské studium."
+    "plain_czech_summary": "Gymnázium na Vítězné pláni je prestižní školou s výborným vybavením, silnou jazykovou přípravou a vysokou úspěšností absolventů. Žáci dosahují lepších výsledků v maturitě než průměr v republice. Škola má kvalitní podporu pro žáky se speciálními potřebami. Slabší stránkou je, že část vyučování stále používá tradičnější metody s nižší aktivizací žáků a formativní zpětná vazba není konzistentní. Hodnocení se také liší mezi jednotlivými předměty a učiteli."
   },
   "hard_facts": {
     "maturita": {
-      "trend": "Stabilně vysoké výsledky s rostoucím podílem vyznamenaných maturantů",
+      "trend": "Stabilně vysoká úspěšnost s rostoucím podílem vyznamenaných žáků",
       "key_numbers": [
-        "35–40 % maturantů prospělo s vyznamenáním v posledních třech letech",
-        "Neuspěli pouze jednotlivci (2024/2025: 2 žáci)",
-        "Lepší výsledky než republikový průměr v anglickém jazyce a matematice"
+        "35–40 % maturantů s vyznamenáním v posledních třech letech",
+        "Pouze jednotlivci neuspěli (2024/2025: 2 žáci)",
+        "Lepší výsledky než republikový průměr v angličtině a matematice"
       ],
-      "evidence": "Žáci šestiletého i čtyřletého gymnázia dosáhli v didaktických testech lepších výsledků než průměrná úspěšnost v celorepublikovém srovnání."
+      "evidence": "Žáci šestiletého i čtyřletého gymnázia dosahují lepších výsledků v didaktických testech společné části maturitní zkoušky než průměrná úspěšnost dané skupiny oborů v celorepublikovém srovnání."
     },
     "absence": {
-      "trend": "Nízká absence a přijatelný počet zameškaných hodin",
+      "trend": "Nízká absence a přijatelný počet zameškanych hodin",
       "key_numbers": [
         "Nižší počet ukládaných kázeňských opatření",
-        "Přijatelný počet zameškaných hodin",
+        "Přijatelný počet zameškanych hodin",
         "Zanedbatelná míra neomluvené absence"
       ],
-      "evidence": "Nastavené preventivní mechanismy jsou převážně funkční, což se projevuje nízkými počty absence a kázeňských opatření."
+      "evidence": "Nastavené preventivní mechanismy jsou převážně funkční, což dokládá nižší počet kázeňských opatření a absence."
     },
     "support_services": [
       "Dvě školní psycholožky poskytující individuální i skupinovou péči",
       "Výchovná poradkyně a metodik prevence",
       "Dvě asistentky pedagoga s úvazkem speciálního pedagoga",
-      "Šest rodilých mluvčích pro jazykovou přípravu",
-      "Komplexní preventivně-podpůrná péče a kariérní poradenství"
+      "Systém individuálních vzdělávacích plánů a jazykových intervencí",
+      "Doučování, konzultace a předmaturitní soustředění"
     ],
     "safety_climate": [
       "Elektronický a kamerový systém s celodenním personálním dohledem",
-      "Systematické adaptační a preventivní programy (adaptační kurzy, zdravý třídní kolektiv, primární prevence)",
+      "Systematické adaptační a preventivní programy (adaptační kurzy, zdravý třídní kolektiv)",
       "Úzká spolupráce poradenských pracovníků s třídními učiteli a vedením",
-      "Řešení rizikového chování podle závažnosti s využitím určených postupů"
+      "Řešení rizikového chování podle závažnosti (výchovná jednání, kázeňská opatření)"
     ],
     "partnerships_practice": [
       "Fakultní škola čtyř fakult Univerzity Karlovy",
-      "Jedinečná partnerská škola Národního muzea v Praze od 2023",
-      "Zahraniční partnerství v 10+ zemích (Řecko, Španělsko, SRN, Velká Británie, Rakousko, Dánsko, Itálie, Francie, Slovensko, USA, Kanada)",
-      "Program Erasmus+ s četným zapojením žáků a učitelů",
-      "Funkční spolupráce se zákonnými zástupci (spolek rodičů, Nadační fond)"
+      "Partnerská škola Národního muzea v Praze (od 2023)",
+      "Zahraniční mobilita v zemích všech vyučovaných jazyků (Řecko, Španělsko, SRN, Velká Británie, Rakousko, Dánsko, Itálie, Francie, Slovensko, USA, Kanada)",
+      "Program Erasmus+ s účastí žáků a učitelů",
+      "Spolupráce se zákonnými zástupci (spolek rodičů, Nadační fond)"
     ]
   },
   "model_self_check": {
     "czech_clarity_score_1_5": 4,
-    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, s konkrétními příklady a čísly. Slabší stránky jsou jasně identifikovány. Některé pasáže jsou však poměrně odborné a dlouhé.",
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více odborné termíny, které by rodiče bez pedagogického vzdělání mohli hůře pochopit.",
     "uncertainty_notes": [
-      "Zpráva nespecifikuje přesné procento žáků s jednotlivými typy speciálních potřeb mimo uvedené 3 % a 5 %.",
-      "Není jasné, jak přesně se liší klasifikace mezi jednotlivými učiteli v uvedených předmětech (biologie, český jazyk atd.).",
-      "Doporučení jsou formulována obecně bez konkrétního časového plánu implementace."
+      "Zpráva nespecifikuje, kolik procent hodin bylo hospitováno v jednotlivých předmětech, takže není jasné, jak reprezentativní je vzorek.",
+      "Není uvedeno, jak dlouho trvá typické doučování nebo jaké jsou jeho náklady.",
+      "Chybí informace o počtu žáků, kteří opakují ročník, nebo o počtu žáků, kteří školu opustili."
     ]
   }
 }

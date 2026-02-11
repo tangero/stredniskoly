@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOU_600007707_2025-04-15",
+  "school_profile": {
+    "school_type": "Střední škola letecké a výpočetní techniky (SOU) s domovem mládeže a školní jídelnou",
+    "inspection_period": "15. 4. a 22.–24. 4. 2025",
+    "school_change_summary": "Od inspekce v 2019 se počet žáků zvýšil přibližně o třetinu na 402 žáků (naplněnost 82 %). Došlo k částečné personální obměně, rozšíření poradenského týmu a kontinuálnímu zlepšování materiálně technického vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Dlouhodobá partnerství se sociálními partnery účinně rozvíjejí odborné kompetence a zvyšují uplatnitelnost absolventů na trhu práce.",
+        "evidence": "Systematicky rozvíjená spolupráce se sociálními partnery, externí odborníci v hodinách, stipendia od zaměstnavatelů."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Škola kontinuálně investuje do kvalitního technického zázemí včetně leteckých motorů, simulátorů a 3D tiskáren.",
+        "evidence": "Pořízení 3D tiskáren, scannerů, tabletů, výukových panelů, leteckých motorů a simulátorů."
+      },
+      {
+        "tag": "Mimoškolní aktivity",
+        "detail": "Bohatá nabídka zájmových kroužků a akcí podporuje osobnostní rozvoj a motivaci žáků.",
+        "evidence": "Letecké modelářství, robotika, sportovní nadání, kulturní akce, charitativní činnost."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky v IT oboru",
+        "detail": "Obor Informační technologie má výrazně horší výsledky maturitní zkoušky než průměr v ČR (29 % neúspěšnosti vs. 4 % průměr).",
+        "evidence": "V roce 2024 hrubá neúspěšnost v IT oboru 29 %, průměr oborové skupiny v ČR 4 %."
+      },
+      {
+        "tag": "Pasivita žáků ve výuce",
+        "detail": "Část hodin používá převážně frontální výuku bez dostatečné aktivizace všech žáků, chybí diferenciace podle potřeb.",
+        "evidence": "Nižší pestrost výukových metod, jen čtvrtina hodin s kooperativní prací, ojediněle vrstevnické hodnocení."
+      },
+      {
+        "tag": "Vyšší úrazovost",
+        "detail": "Ve školním roce 2023/2024 měla škola vyšší míru úrazů než je republikový průměr.",
+        "evidence": "Vyšší míra úrazovosti než republikový průměr, vedení přijímá adekvátní opatření."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší slabé výsledky v oboru Informační technologie u maturitní zkoušky?",
+      "Jaké jsou konkrétní příklady spolupráce se sociálními partnery a jak to ovlivňuje výuku?",
+      "Jak se škola vypořádává s vyšší úrazovostí a jaká bezpečnostní opatření zavádí?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o leteckou techniku a praktické dovednosti – škola má unikátní vybavení a zkušené pedagogy.",
+      "Talentovaní žáci v technických oborech – škola systematicky podporuje jejich rozvoj a má dobré výsledky v Letectví a Strojírenství.",
+      "Žáci potřebující jasnou cestu na trh práce – vysoký zájem zaměstnavatelů, stipendia a praktická orientace."
+    ],
+    "who_should_be_cautious": [
+      "Zájemci o obor Informační technologie – výrazně horší výsledky maturitní zkoušky než v ČR, vyžaduje zvážení.",
+      "Žáci preferující samostatnou práci a diskusi – část výuky je stále frontální s omezeným zapojením všech.",
+      "Rodiče obávající se bezpečnosti – škola měla vyšší míru úrazů než průměr, ačkoli přijímá opatření."
+    ],
+    "plain_czech_summary": "Škola je moderní technické učiliště se silným zaměřením na leteckou techniku. Má výborné vybavení, motivované učitele a silné vazby na zaměstnavatele. Absolventi jsou na trhu práce velmi žádaní. Pozitivní je bohatá mimoškolní nabídka. Slabinou je obor IT s horšími výsledky maturit a částečně pasivnější výuka v některých předmětech. Škola se snaží zlepšovat, ale některé problémy přetrvávají."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – Letectví a Strojírenství dosahují dobrých výsledků, IT obor má vážné problémy",
+      "key_numbers": [
+        "IT obor: 29 % neúspěšnosti v 2024 vs. 4 % průměr ČR",
+        "Letectví a Strojírenství: výsledky srovnatelné nebo lepší než průměr",
+        "Nejčastější selhání: didaktický test z češtiny a literatury"
+      ],
+      "evidence": "V oboru IT byla hrubá neúspěšnost vždy horší než průměr v dané oborové skupině. Žáci oborů Strojírenství a Letecký mechanik dosahovali lepších nebo srovnatelných výsledků."
+    },
+    "absence": {
+      "trend": "Pozitivní – absence se snižuje, zejména v nematuritním oboru",
+      "key_numbers": [
+        "Nematuritní obor: 102 hodin/žáka v 2023/24 (pokles z 132 hodin)",
+        "Maturitní obory: 120 hodin/žáka (stabilní)",
+        "Neomluvená absence: dlouhodobě nízká"
+      ],
+      "evidence": "Absence v nematuritním oboru klesla z cca 132 na 102 hodin na žáka. Opatření ke zvýšení motivace se pozitivně projevila."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s rozšířeným týmem: výchovný poradce, kariérový poradce, koordinátoři inkluze",
+      "Podpora žáků se speciálními vzdělávacími potřebami – dosahují srovnatelných výsledků s průměrem",
+      "Jazykové kurzy a výukové materiály pro žáky s odlišným mateřským jazykem (32 žáků)",
+      "Doučování, individuální konzultace a pedagogické intervence pro prevenci neúspěšnosti",
+      "Podpora nadaných žáků v rámci oborové specializace"
+    ],
+    "safety_climate": [
+      "Škola dbá na bezpečné prostředí a pravidelně poučuje žáky o pravidlech bezpečnosti",
+      "Ve školním roce 2023/2024 měla vyšší míru úrazovosti než republikový průměr",
+      "Vedení vyhodnocuje příčiny úrazů a přijímá adekvátní opatření",
+      "Praktické vyučování: žáci důsledně dodržují pravidla bezpečnosti a ochrany zdraví"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se sociálními partnery – rozvoj odborných znalostí a praktických dovedností",
+      "Zapojování externích odborníků do výuky",
+      "Stipendia od potenciálních zaměstnavatelů pro žáky",
+      "Vysoký zájem zaměstnavatelů o absolventy – většina se zapojuje do pracovního procesu",
+      "Praktické vyučování v školních dílnách s reálnými leteckými součástkami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více odborné terminologie, která by mohla být pro laiky méně přístupná.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní opatření, která škola již přijala na zlepšení IT oboru – není jasné, zda jsou nová nebo dlouhodobá.",
+      "Není jasné, jaké konkrétní příčiny stojí za vyšší úrazovostí – zpráva pouze uvádí, že vedení je vyhodnocuje.",
+      "Chybí informace o tom, jak se konkrétně liší kvalita výuky mezi jednotlivými učiteli v teoretických předmětech."
+    ]
+  }
+}
+```

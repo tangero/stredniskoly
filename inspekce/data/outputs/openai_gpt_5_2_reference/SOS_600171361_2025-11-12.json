@@ -1,0 +1,10 @@
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "model_id": "openai_gpt_5_2_reference",
+  "run_started_utc": "2026-02-09T11:31:53.023697+00:00",
+  "run_finished_utc": "2026-02-09T11:32:31.315049+00:00",
+  "raw_file": "SOS_600171361_2025-11-12.raw.txt",
+  "call_error": null,
+  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
+  "parsed_output": null
+}

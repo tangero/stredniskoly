@@ -1,0 +1,116 @@
+{
+  "report_id": "GY8_600013405_2024-11-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:10:10.831267+00:00",
+  "run_finished_utc": "2026-02-09T16:10:35.158939+00:00",
+  "raw_file": "GY8_600013405_2024-11-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600013405_2024-11-04",
+    "school_profile": {
+      "school_type": "Biskupské gymnázium (4leté a 8leté obory) + mateřská škola + školní jídelna",
+      "inspection_period": "4. 11. 2024 – 7. 11. 2024",
+      "school_change_summary": "Zrušena pozice vedoucí učitelky v MŠ, částečná obměna pedagogů, změna na pozici zástupce ředitele, zefektivnění poradenského pracoviště, průběžné zlepšování materiálních podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání na špičkové úrovni",
+          "detail": "Škola systematicky rozvíjí jazykové kompetence žáků přes rodilé mluvčí, zahraniční pobyty a přípravu na mezinárodní zkoušky.",
+          "evidence": "Desítky žáků ročně úspěšně skládají mezinárodní jazykové zkoušky, často na úrovni C1 nebo C2."
+        },
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Dlouhodobě lepší výsledky než celorepublikový průměr, téměř nulová neúspěšnost u maturitní zkoušky.",
+          "evidence": "V posledních třech letech vykazuje škola téměř nulovou hrubou neúspěšnost u maturitní zkoušky."
+        },
+        {
+          "tag": "Bohatá mimovýuková nabídka",
+          "detail": "Projektové týdny, divadelní festival, exkurze, soutěže a kroužky rozvíjejí nadání a zájmy žáků.",
+          "evidence": "Žáci opakovaně dosahují významných úspěchů v soutěžích a olympiádách i na celostátní úrovni."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší řízení mateřské školy",
+          "detail": "Chybí aktivní řízení pedagogických procesů, monitorování a vyhodnocování v MŠ.",
+          "evidence": "Nedostatky v kontrolním systému, pedagogickém řízení vzdělávání a realizaci evaluace pedagogického procesu."
+        },
+        {
+          "tag": "Tradiční přístup k výuce na gymnáziu",
+          "detail": "Učitelé málo využívají moderní metody jako kooperativní učení, kritické myšlení a práci s informacemi.",
+          "evidence": "Převažuje frontální výuka, žáci nejsou vedeni k reflexi a sebehodnocení, chybí diferenciace pro nadané žáky."
+        },
+        {
+          "tag": "Slabá koordinace mezi předměty",
+          "detail": "Předmětové komise pracují izolovaně, chybí jednotný přístup k metodám a hodnocení.",
+          "evidence": "Práce komisí není jednotně nastavena, chybí pravidelné setkávání předsedů s vedením školy."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje rozvoj kritického myšlení a samostatného vyhledávání informací u žáků?",
+        "Jaké jsou konkrétní plány na zlepšení řízení a pedagogických procesů v mateřské škole?",
+        "Jak se škola vypořádá s nedostatečnou diferenciací výuky pro nadané žáky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí nadstandardní jazykové vzdělání a zahraniční pobyty.",
+        "Ambiciózní žáci s cílem na vysokou školu – dlouhodobě výborné výsledky maturit a spolupráce s vysokými školami.",
+        "Děti s potřebou bezpečného a podporujícího prostředí – mateřská škola poskytuje téměř rodinné prostředí."
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující moderní interaktivní metody výuky – škola stále více využívá tradiční frontální přístup.",
+        "Nadaní žáci bez diferenciované výuky – učitelé nezadávají diferencované úkoly podle schopností.",
+        "Rodiče očekávající vysokou kvalitu řízení v mateřské škole – inspekce zjistila nedostatky v pedagogickém řízení MŠ."
+      ],
+      "plain_czech_summary": "Biskupské gymnázium je prestižní školou se skvělými výsledky maturit a špičkovým jazykovým vzděláním. Žáci se zapojují do bohaté mimovýukové nabídky a dosahují úspěchů v soutěžích. Slabší stránkou je tradiční přístup k výuce – učitelé málo využívají moderní metody a nediferencují výuku pro nadané žáky. V mateřské škole inspekce zjistila nedostatky v řízení pedagogických procesů. Škola je vhodná pro ambiciózní žáky se zájmem o jazyky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě výborný, stabilně nad celorepublikovým průměrem",
+        "key_numbers": [
+          "Téměř nulová hrubá neúspěšnost v posledních třech letech",
+          "Výjimka rok 2023: jeden žák zkoušku nekonal",
+          "Vynikající výsledky zejména v cizích jazycích"
+        ],
+        "evidence": "Výsledky maturitních zkoušek jsou dlouhodobě výborné, opakovaně lepší než celorepublikový průměr."
+      },
+      "absence": {
+        "trend": "Stabilní a nízká",
+        "key_numbers": [
+          "Průměrně 106 hodin na žáka za školní rok (poslední 3 roky)",
+          "Minimální počet neomluvených zameškaných hodin"
+        ],
+        "evidence": "Absence žáků je stabilní, počet neomluvených zameškaných hodin byl minimální."
+      },
+      "support_services": [
+        "Rozšířené školní poradenské pracoviště s rovnoměrným rozdělením kompetencí",
+        "Výchovná poradkyně koordinuje podporu žákům se speciálními vzdělávacími potřebami",
+        "Metodička prevence koordinuje preventivní aktivity",
+        "Školní psychologové zajišťují adaptační programy a kariérové poradenství"
+      ],
+      "safety_climate": [
+        "Celková klidná a vstřícná atmosféra ve výuce",
+        "Žáci se ochotně zapojují a nebojí se vznášet dotazy",
+        "V mateřské škole se děti cítí bezpečně a spokojeně, škola poskytuje téměř rodinné prostředí",
+        "Některé hodiny narušovaly pozdní příchody žáků a neklidné chování"
+      ],
+      "partnerships_practice": [
+        "Akreditace v projektu Erasmus+ s velkým množstvím zahraničních mobilit",
+        "Spolupráce s jazykovými školami pro nadstandardní rozvoj jazykových kompetencí",
+        "Partnerství s brněnskými vysokými školami pro orientaci v budoucím studiu",
+        "Spolupráce s ekologicky zaměřenými organizacemi na environmentálních aktivitách",
+        "Zapojení do aktivit charitativních organizací v duchu křesťanských hodnot"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a důkazy. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní číselné údaje o počtu žáků se speciálními potřebami v gymnáziu (uvedeno jen 6,8 %), chybí detailnější statistika.",
+        "Není jasné, jak konkrétně se projevuje nedostatečná diferenciace – chybí příklady z jednotlivých předmětů.",
+        "Doporučení jsou obecná, není zřejmé, jaké konkrétní kroky by měla škola podniknout v nejbližší době."
+      ]
+    }
+  }
+}

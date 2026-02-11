@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 export function Footer() {
@@ -9,18 +11,18 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-3 text-sm" style={{ color: '#28313b' }}>O projektu</h3>
             <p className="text-sm mb-3" style={{ color: '#818c99' }}>
-              Simulátor přijímacích zkoušek využívá reálná data z CERMAT pro odhad
+              Stránka využívá reálná data z CERMAT a ČŠI pro zobrazení dat a odhad
               šancí na přijetí na střední školy v ČR.
             </p>
             <p className="text-sm" style={{ color: '#818c99' }}>
-              <strong style={{ color: '#28313b' }}>Autor:</strong> Patrick Zandl
-            </p>
-            <p className="text-xs mt-1" style={{ color: '#818c99' }}>
-              Jde o experiment, data nemusí být přesná.
+              <strong style={{ color: '#28313b' }}>Autor:</strong> <a href="https://cs.wikipedia.org/wiki/Patrick_Zandl">Patrick Zandl</a> a <a href="https://www.hlidacstatu.cz">Hlídač státu</a>
             </p>
             <a href="mailto:patrick@zandl.cz" className="text-sm no-underline mt-1 inline-block" style={{ color: '#0074e4' }}>
               patrick@zandl.cz
-            </a>
+            </a> | <a href='https://www.vibecoding.cz'>Vibecoding.cz</a>
+            <p className="text-xs mt-3" style={{ color: '#818c99' }}>
+              Pro hlášení chyb použijte prosím tlačítko vpravo dole
+            </p>
           </div>
 
           {/* Sloupec 2 */}
@@ -63,7 +65,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm list-none p-0">
               <li>
                 <Link href="/changelog" className="no-underline" style={{ color: '#0074e4' }}>
-                  Changelog (v2.4.0)
+                  Changelog (v2.4.1)
                 </Link>
               </li>
               <li>
@@ -81,21 +83,32 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid #e0e6ed' }}>
           <p className="text-xs" style={{ color: '#818c99' }}>
-            Simulátor slouží pouze k orientačním účelům. Skutečné výsledky se mohou lišit. | Data z let 2024-2025 | &copy; {new Date().getFullYear()}
+            Stránka slouží pouze k orientačním účelům. Skutečné výsledky záleží hlavně na výsledcích žáka. | Data z let 2024-2025 | &copy; {new Date().getFullYear()}
           </p>
-          <div className="flex items-center gap-2">
-            <span className="text-xs" style={{ color: '#818c99' }}>Projekt</span>
+          <div className="flex items-center gap-3">
             <a
               href="https://www.hlidacstatu.cz"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold no-underline px-2 py-1 rounded"
+              className="inline-block transition-opacity hover:opacity-80"
+              aria-label="Hlídač státu"
+            >
+              <img
+                src="https://www.hlidacstatu.cz/content/hlidacloga/Hlidac-statu-ctverec-norm.svg"
+                alt="Logo Hlídač státu"
+                width="32"
+                height="32"
+                className="rounded"
+              />
+            </a>
+            <a
+              href="https://www.hlidacstatu.cz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold no-underline px-3 py-1.5 rounded"
               style={{ color: '#0074e4', border: '1px solid #0074e4' }}
             >
-              <svg width="14" height="14" viewBox="0 0 40 40" fill="none">
-                <path d="M20 4L4 16H10V34H18V25H22V34H30V16H36L20 4Z" fill="#0074e4"/>
-              </svg>
-              Hlídače státu
+              Projekt Hlídače státu
             </a>
           </div>
         </div>

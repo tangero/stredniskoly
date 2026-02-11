@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600007871_2022-09-19",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola a Střední odborná škola",
+    "inspection_period": "19.–23. září 2022",
+    "school_change_summary": "Od minulé inspekce přetrvává většina nedostatků. Nový zástupce ředitelky od školního roku 2022/2023. Počet žáků SŠ výrazně vzrostl, VOŠ je nenaplněna."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vzdělávání",
+        "detail": "Velmi dobrá spolupráce s organizacemi zajišťujícími praktické vyučování a kvalitní vybavení školního hospodářství.",
+        "evidence": "\"velmi dobrá spolupráce s organizacemi, ve kterých je zajišťováno praktické vyučování\""
+      },
+      {
+        "tag": "Sociální rozvoj",
+        "detail": "Charitativní a dobrovolnická činnost účinně rozvíjí sociální kompetence žáků.",
+        "evidence": "\"Významná je charitativní a dobrovolnická činnost žáků a studentů, která účinně rozvíjí jejich sociální kompetence\""
+      },
+      {
+        "tag": "Uplatnitelnost absolventů",
+        "detail": "Vysoká uplatnitelnost v pracovním procesu a pokračování v terciárním vzdělávání.",
+        "evidence": "\"Vysoká je uplatnitelnost absolventů školy v pracovním procesu, značná část úspěšných žáků pokračuje v terciárním vzdělávání\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence",
+        "detail": "Absence žáků se zvýšila zejména po distanční výuce, opatření proti záškoláctví nejsou dostatečně účinná.",
+        "evidence": "\"došlo ke zvýšení absence žáků ve výuce... opatření přijatá školou k prevenci záškoláctví nejsou dostatečně účinná\""
+      },
+      {
+        "tag": "Kvalita výuky",
+        "detail": "V polovině hodin převládá neefektivní frontální výuka s pasivitou žáků, chybí diferenciace a moderní metody.",
+        "evidence": "\"V polovině vyučovacích hodin s neefektivní frontální organizací... docházelo k nerovnoměrnému zapojení žáků a studentů... do jejich pasivity\""
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Hrubá neúspěšnost u maturit kolísá, v některých oborech výrazně horší než průměr v ČR.",
+        "evidence": "\"V oboru Sociální činnost byla v hodnoceném období hrubá neúspěšnost žáků vždy horší než průměr v příslušné skupině oborů v ČR\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci žáků a jaká opatření zavádí?",
+      "Jaké moderní pedagogické metody a diferenciaci používají učitelé v jednotlivých oborech?",
+      "Jak se škola připravuje na zlepšení výsledků u maturitní zkoušky, zejména v oboru Sociální činnost?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a zemědělství – kvalitní vybavení a spolupráce s partnery",
+      "Studenti VOŠ Sociální práce – nejlepší výsledky a návaznost na SŠ obor Sociální činnost",
+      "Žáci s potřebou individuální péče – škola identifikuje a podporuje žáky s potřebou podpůrných opatření"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s tendencí k absenci – vysoká absence není dostatečně řešena a může vést k neúspěchu",
+      "Žáci oboru Informační technologie – výsledky u praktické části maturit jsou slabší",
+      "Žáci preferující aktivní a interaktivní výuku – převládá frontální výuka s pasivitou žáků"
+    ],
+    "plain_czech_summary": "Březnická škola nabízí kvalitní praktické vzdělávání s dobrým vybavením a spoluprací s partnery. Silná je zejména sociální práce a zemědělství. Problém je vysoká absence žáků a kvalita výuky – v polovině hodin převládá nudná frontální výuka bez aktivního zapojení. Výsledky u maturit nejsou stabilní, zejména v sociální činnosti jsou horší než průměr. Škola má co zlepšovat v motivaci žáků a modernizaci vyučování."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý, s negativním vlivem distanční výuky; výrazně horší než průměr v některých oborech",
+      "key_numbers": [
+        "Sociální činnost: hrubá neúspěšnost vždy horší než průměr ČR, v 2021/2022 cca 14 %",
+        "Agropodnikání: v 2020/2021 čtyřnásobně horší než průměr, v 2021/2022 20 %",
+        "Informační technologie: v 2020/2021 dvojnásobně horší než průměr, v 2021/2022 cca 6 %"
+      ],
+      "evidence": "\"V oboru Sociální činnost byla v hodnoceném období hrubá neúspěšnost žáků vždy horší než průměr... V oboru Agropodnikání... byla hrubá neúspěšnost... téměř čtyřnásobně horší\""
+    },
+    "absence": {
+      "trend": "Zvyšující se, zejména po distanční výuce; nedostatečná opatření",
+      "key_numbers": [
+        "Zvýšení absence ve srovnání se školním rokem 2018/2019 (plně prezenční výuka)",
+        "Zvýšená míra neomluvené absence po distančním vzdělávání",
+        "Absence zejména v oborech Informační technologie a Sociální činnost"
+      ],
+      "evidence": "\"došlo ve školním roce 2021/2022 ke zvýšení absence žáků ve výuce... opatření přijatá školou k prevenci záškoláctví nejsou dostatečně účinná\""
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s kvalifikovanou školní metodičkou prevence",
+      "Doučování a konzultace (využívají jen někteří žáci)",
+      "Podpora žáků s doporučením školského poradenského zařízení (6 žáků) a s identifikovanou potřebou podpůrných opatření (7 žáků)"
+    ],
+    "safety_climate": [
+      "Funkční zajišťování bezpečnosti žáků a studentů",
+      "Škola dbá na prevenci a omezování rizikových situací",
+      "Drobné úrazy především při hodinách tělesné výchovy"
+    ],
+    "partnerships_practice": [
+      "Velmi dobrá spolupráce s organizacemi zajišťujícími praktické vyučování",
+      "Spolupráce se státním kontrolním ústavem při výuce určování škůdců a chorob rostlin",
+      "Spolupráce s domovy mládeže formou sportovních utkání"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje o výsledcích, metodách a problémech. Jsou jasně identifikovány silné a slabé stránky. Některé pasáže jsou však velmi dlouhé a složité, což snižuje srozumitelnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Přesné počty žáků s absencí nejsou uvedeny, pouze kvalitativní popis zvýšení absence",
+      "Detaily o konkrétních opatřeních proti absenci nejsou specifikovány",
+      "Není jasné, jak se liší absence mezi jednotlivými třídami nebo učiteli"
+    ]
+  }
+}
+```

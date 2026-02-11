@@ -1,0 +1,116 @@
+{
+  "report_id": "GY6_600012867_2023-11-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:34:49.414883+00:00",
+  "run_finished_utc": "2026-02-09T16:35:15.088640+00:00",
+  "raw_file": "GY6_600012867_2023-11-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600012867_2023-11-13",
+    "school_profile": {
+      "school_type": "Gymnázium (šestileté a čtyřleté studium), střední škola s maturitní zkouškou",
+      "inspection_period": "13. listopadu 2023 až 15. listopadu 2023",
+      "school_change_summary": "Od roku 2018 nová ředitelka s jasnou vizí. Personální obměna na klíčových pozicích (zástupce ředitelky, ekonomka, výchovná poradkyně, školní psycholožka). Výrazné zlepšení materiálně-technického vybavení včetně rekonstrukce budovy, nové laboratoře a ICT techniky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné studijní výsledky",
+          "detail": "38,5 % žáků prospělo s vyznamenáním, pouze 2,2 % neprospělo. Při maturitě neuspělo úspěšně jen 3,4 % žáků.",
+          "evidence": "Školní rok 2022/2023: 270 žáků, 149 přihlášených k maturitě v období 2021–2023"
+        },
+        {
+          "tag": "Kvalitní poradenské služby",
+          "detail": "Školní psycholožka, výchovná poradkyně a metodička prevence poskytují odbornou pomoc s ohledem na potřeby žáků.",
+          "evidence": "Školní poradenské pracoviště s jasně rozdělenými kompetencemi, efektivní komunikace s třídními učiteli"
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují předních umístění v krajských a celostátních soutěžích (olympiády, SOČ, jazykové soutěže).",
+          "evidence": "Např. 1. místo v Atletickém čtyřboji, fyzice a francouzštině, 2. místo v českém jazyce"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Tradiční přístup k výuce",
+          "detail": "Převažuje frontální výuka, málo kooperativních metod. Učitelé nevyžadují dostatečně náročnou komunikaci od žáků.",
+          "evidence": "Hospitační zjištění: kooperativní činnosti minimálně, jen část pedagogů vyžaduje obsahově náročnější komunikaci"
+        },
+        {
+          "tag": "Chybí individualizace výuky",
+          "detail": "Všichni žáci plní stejné úkoly bez ohledu na jejich schopnosti. Nedostatečná diferenciace pro nadané i slabší žáky.",
+          "evidence": "Zásadní nedostatek: absence individualizace a diferenciace zadaných úkolů podle vzdělávacích možností"
+        },
+        {
+          "tag": "Slabá kontrola kvality výuky",
+          "detail": "Hospitační činnost vedení školy nevedou vždy k konkrétním doporučením. Předmětové komise se málo věnují metodice výuky.",
+          "evidence": "Méně účinná kontrolní činnost, činnost komisí v minimální míře zaměřena na metodickou stránku"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro nadané žáky a jak podporuje ty, kteří mají potíže?",
+        "Jaké moderní vyučovací metody (skupinová práce, projekty, badatelské učení) se používají v jednotlivých předmětech?",
+        "Jak se škola připravuje na vysoké školy – jsou k dispozici přípravné kurzy na maturitu a přijímací zkoušky?"
+      ],
+      "who_school_fits": [
+        "Motivovaní žáci s dobrými studijními předpoklady, kteří chtějí kvalitní přípravu na vysokou školu",
+        "Žáci se zájmem o soutěže a olympiády – škola aktivně podporuje talentované žáky",
+        "Žáci, kterým vyhovuje tradiční přístup k výuce s důrazem na znalosti a systematické učení"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více individuálního přístupu a diferenciované úkoly podle svého tempa",
+        "Žáci, kteří se lépe učí prostřednictvím skupinové práce, projektů a praktických aktivit",
+        "Žáci se speciálními vzdělávacími potřebami – ačkoliv škola spolupracuje s poradenskými zařízeními, individualizace výuky je slabá"
+      ],
+      "plain_czech_summary": "Gymnázium v Dvoře Králové je kvalitní školou s výbornými výsledky maturit a úspěchy v soutěžích. Má dobré materiální podmínky, kvalitní poradenské služby a podporuje talentované žáky. Hlavní slabinou je tradiční přístup k výuce – převažuje frontální výuka bez dostatečné individualizace. Učitelé by měli více využívat skupinové práce, projektů a moderních metod. Škola je vhodná pro motivované žáky s dobrými předpoklady, ale méně pro ty, kteří potřebují individuální přístup."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Velmi pozitivní – vysoká úspěšnost",
+        "key_numbers": [
+          "96,6 % žáků úspěšně odmaturovalo (3,4 % neuspělo)",
+          "149 žáků přihlášeno k maturitě v období 2021–2023",
+          "Období: jarní zkušební období 2021–2023"
+        ],
+        "evidence": "Ze všech 149 žáků přihlášených k MZ neodmaturovalo úspěšně pouze 3,4 % žáků ve společné části"
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Maximální hranice absence za klasifikační období je stanovena ve školním řádu"
+        ],
+        "evidence": "Sjednocujícím kritériem je stanovení minimálního počtu známek a maximální hranice absence"
+      },
+      "support_services": [
+        "Školní psycholožka – poskytuje poradenskou a odbornou pomoc všem aktérům vzdělávání",
+        "Výchovná poradkyně – zajišťuje kariérové poradenství a volbu vzdělávací dráhy",
+        "Školní metodička prevence – realizuje preventivní program s ohledem na potřeby školy",
+        "Doučování v rámci projektů NPO a Šablony III (zejména český jazyk, cizí jazyky, fyzika, chemie, dějepis)"
+      ],
+      "safety_climate": [
+        "Přátelská pracovní atmosféra ve všech sledovaných hodinách",
+        "Pedagogové zaujímají respektující přístup a vytvářejí psychicky bezpečné prostředí",
+        "Žáci se neobávají chybovat, požádat o pomoc a sdělovat své postřehy",
+        "Školní parlament aktivně přispívá k vytváření pozitivních vztahů v třídách a celé škole"
+      ],
+      "partnerships_practice": [
+        "Partnerství s německým gymnáziem v Cloppenburgu – podpora profilu absolventa",
+        "Spolupráce s vysokými školami (Farmaceutická fakulta UK, Univerzita Palackého)",
+        "Fakultní škola Farmaceutické fakulty Univerzity Hradec Králové",
+        "Místní akční skupina Královédvorsko, kulturní a charitativní organizace",
+        "Centrum pro talentovanou mládež – zapojení nadaných žáků",
+        "Místní školy (základní, střední, mateřské) – pedagogické praxe studentů vysokých škol"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky. Obsahuje konkrétní příklady a čísla. Slabší je pouze v některých pasážích s dlouhými větami a odbornou terminologií.",
+      "uncertainty_notes": [
+        "Absence není v textu konkrétně kvantifikována – není jasné, jaké jsou skutečné absence žáků",
+        "Není specifikováno, kolik procent učitelů skutečně používá moderní metody – údaje jsou kvalitativní",
+        "Chybí informace o počtu žáků se speciálními vzdělávacími potřebami a jejich konkrétní podpora"
+      ]
+    }
+  }
+}

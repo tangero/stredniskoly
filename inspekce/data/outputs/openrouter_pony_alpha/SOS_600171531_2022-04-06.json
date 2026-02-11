@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600171531_2022-04-06",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:00:20.595782+00:00",
+  "run_finished_utc": "2026-02-10T07:01:49.531842+00:00",
+  "raw_file": "SOS_600171531_2022-04-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600171531_2022-04-06",
+    "school_profile": {
+      "school_type": "Střední škola pro žáky s tělesným a mentálním postižením",
+      "inspection_period": "6. 4. 2022 − 8. 4. 2022",
+      "school_change_summary": "Škola modernizovala odborné učebny a přesunula výuku na nová pracoviště."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Přátelské prostředí",
+          "detail": "Výuka probíhá v motivujícím prostředí, kde pedagogové s žáky komunikují vstřícně a s respektem.",
+          "evidence": "Veškerá sledovaná výuky probíhala v přátelském, motivujícím prostředí... komunikovali s nimi vstřícným způsobem."
+        },
+        {
+          "tag": "Komplexní péče",
+          "detail": "Škola zajišťuje ubytování, rehabilitaci, logopedii i dietní stravování ve spolupráci s Centrem Kociánka.",
+          "evidence": "Úzké spolupráce s Centrem Kociánka, kde je jim zajištěna komplexní péče v oblasti ubytování, rehabilitace..."
+        },
+        {
+          "tag": "Zlepšené výsledky",
+          "detail": "Výrazně se snížila neúspěšnost u maturitní zkoušky a všichni žáci úspěšně složili závěrečné zkoušky.",
+          "evidence": "Všichni žáci, kteří závěrečnou zkoušku konali, ji i úspěšně vykonali... došlo k významnému zlepšení."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Jednotvárná teoretická výuka",
+          "detail": "V teoretických předmětech převažuje frontální výuka a chybí aktivizace žáků.",
+          "evidence": "Výuka tedy na žáky působila jednotvárně, aktivizační prvky... byly zařazovány spíše ojediněle."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Učitelé nerozlišují učivo podle individuálních potřeb, což brzdí rychlejší žáky.",
+          "evidence": "V hodinách však nebyla vůbec využita diferenciace učiva s ohledem na individuální vzdělávací potřeby žáka."
+        },
+        {
+          "tag": "Slabá zpětná vazba",
+          "detail": "Hodiny končí formálním shrnutím učitele bez zapojení žáků do sebehodnocení.",
+          "evidence": "Žáci tak neměli většinou vytvořen prostor pro vlastní hodnocení své práce ani nebyli vedeni ke zhodnocení hodiny."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola zajišťuje, aby se i nadanější žáci v teoretických předmětech nenudili (diferenciace výuky)?",
+        "Jakým způsobem jsou asistenti pedagoga zapojováni přímo do výuky, nikoliv jen do dohledu?",
+        "Jak škola reaguje na zjištění, že systém hospitací neposkytuje učitelům dostatečnou zpětnou vazbu?"
+      ],
+      "who_school_fits": [
+        "Pro žáky se zdravotním postižením vyžadující komplexní zdravotní a sociální podporu.",
+        "Pro uchazeče, kteří preferují praktickou přípravu v malých skupinách s individuálním přístupem.",
+        "Pro žáky, kterým vyhovuje přátelské a podpůrné prostředí s důrazem na respekt."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří preferují moderní interaktivní metody výuky před frontálním výkladem.",
+        "Pro studenty, kteří očekávají prostor pro vlastní sebehodnocení a reflexi výuky.",
+        "Pro ty, kteří potřebují silnou metodickou podporu učitelů založenou na kvalitních hospitačních zjištěních."
+      ],
+      "plain_czech_summary": "Škola se zaměřuje na žáky se zdravotním postižením a nabízí jim výborné zázemí, rehabilitace a přátelské prostředí. Výborně dopadají praktické obory i maturitní zkoušky. Slabinou je stále tradiční, málo interaktivní styl výuky v teoretických předmětech, který nezohledňuje individuální tempo nadanějších žáků. Škola je ideální volbou pro ty, kteří potřebují komplexní péči a podporu, ale rodiče by měli sledovat, jak je řešena nuda ve výuce."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "Neúspěšnost klesla z 50 % na cca 17 %",
+          "Všichni konající složili závěrečnou zkoušku",
+          "Nejlepší výsledky v profilové části"
+        ],
+        "evidence": "Došlo k významnému zlepšení, a to z 50 % hrubé neúspěšnosti... na zaokrouhleně 17 % hrubé neúspěšnosti."
+      },
+      "absence": {
+        "trend": "Zvýšená ze zdravotních důvodů",
+        "key_numbers": [
+          "Vyšší absence ze zdravotních důvodů",
+          "Minimální neomluvená absence",
+          "Aktivní řešení s poradenským pracovištěm"
+        ],
+        "evidence": "Vyšší absenci vykazují žáci většinou ze zdravotních důvodů. Neomluvená absence byla zaznamenána u minimálního počtu žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (výchovný poradce, psycholog, metodik prevence).",
+        "Spolupráce s Centrem Kociánka na ubytování, stravování a rehabilitaci.",
+        "Nabídka doučování a konzultací při dlouhodobé nemoci."
+      ],
+      "safety_climate": [
+        "Přátelské a motivující prostředí.",
+        "Respektující přístup pedagogů k osobnosti žáků.",
+        "Fungující prevence rizikového chování."
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce se zřizovatelem a Centrem Kociánka.",
+        "Zapojení zaměstnavatelů do praktického vyučování a závěrečných zkoušek.",
+        "Spolupráce s vysokými školami (MU, Mendelova univerzita)."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěry jsou strukturované do silných a slabých stránek.",
+      "uncertainty_notes": [
+        "Konkrétní číselné údaje o počtu žáků ve třídách nejsou v textu explicitně uvedeny (jen celkový počet 197 ve 25 třídách).",
+        "Text neposkytuje detailní rozbor úspěšnosti u maturity podle jednotlivých předmětů, pouze celkové procento neúspěšnosti."
+      ]
+    }
+  }
+}

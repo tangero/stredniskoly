@@ -1,0 +1,114 @@
+{
+  "report_id": "LYC_600009599_2024-03-15",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:22:20.695171+00:00",
+  "run_finished_utc": "2026-02-09T16:22:45.241835+00:00",
+  "raw_file": "LYC_600009599_2024-03-15.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600009599_2024-03-15",
+    "school_profile": {
+      "school_type": "Obchodní akademie (střední škola s maturitou)",
+      "inspection_period": "15. března až 20. března 2024",
+      "school_change_summary": "Nový ředitel od července 2023. Probíhá přestavba suterénu na šatny. Změny v poradenském pracovišti a vytvoření systému podpory nadaných žáků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Žáci dlouhodobě dosahují nadprůměrných výsledků, v posledních letech složili zkoušku všichni (s minimálními výjimkami).",
+          "evidence": "Všichni žáci úspěšně složili maturitu s výjimkou dvou žáků z matematiky v roce 2022/2023."
+        },
+        {
+          "tag": "Jazykové certifikáty",
+          "detail": "Každoročně více než 100 žáků získává mezinárodní certifikáty z angličtiny na úrovni B1, B2 i C1.",
+          "evidence": "Podstatná část žáků získává certifikáty, zejména z angličtiny na vysokých úrovních."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují cenných umístění v mezinárodních, celostátních a krajských soutěžích, zejména v odborných předmětech.",
+          "evidence": "Úspěchy v Best in English, Ekonomickém týmu, Mistrovství ČR ve zpracování textu a dalších."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá spolupráce mezi učiteli",
+          "detail": "Pedagogové si nesdílejí zdroje ani zkušenosti z dalšího vzdělávání, chybí vzájemné hospitace.",
+          "evidence": "Pedagogové si navzájem nesdílejí zdroje ani zkušenosti z DVPP, vzájemné hospitace neproběhají."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "V matematice a humanitních předmětech chybí přizpůsobení výuky různým potřebám žáků.",
+          "evidence": "Individualizace výuky vzhledem k potřebám jednotlivých žáků neprobíhala, řada žáků byla pasivní."
+        },
+        {
+          "tag": "Málo prostoru pro sebereflexi",
+          "detail": "Žáci mají omezené příležitosti k vlastnímu zhodnocení své práce a pokroků.",
+          "evidence": "Vyhodnocení cílů v polovině hodin neproběhlo, sebereflexi měli žáci pouze výjimečně."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky mimo soutěže a olympiády?",
+        "Jaké jsou plány na zlepšení spolupráce mezi učiteli a sdílení zkušeností?",
+        "Jak se škola vypořádá s nedostatečnou kapacitou tělocvičny?"
+      ],
+      "who_school_fits": [
+        "Žáci s ambicí na vysokou školu a zájem o ekonomii či obchod",
+        "Motivovaní studenti, kteří chtějí získat mezinárodní jazykové certifikáty",
+        "Žáci, kterým vyhovuje strukturovaný přístup a tradičnější metody výuky"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující individualizovaný přístup a diferenciaci výuky",
+        "Studenti, kteří se lépe učí kooperativními a aktivními metodami",
+        "Žáci s nižší motivací, kterým chybí více interaktivní a podnětné vyučování"
+      ],
+      "plain_czech_summary": "Obchodní akademie v Plzni je silná škola s výbornými výsledky maturit a jazykovými certifikáty. Žáci dosahují nadprůměrných výsledků v testech a soutěžích. Výuka humanitních předmětů je kvalitní a podnětná. Hlavní slabinou je nedostatečná spolupráce mezi učiteli a málo diferenciované přizpůsobení výuky různým potřebám žáků. Matematika se vyučuje spíše tradičně bez kooperativních metod. Škola má dobré zázemí a bezpečné prostředí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nadprůměrné výsledky, stabilní úspěšnost",
+        "key_numbers": [
+          "Všichni žáci složili zkoušku (s výjimkou 2 žáků z matematiky v 2022/2023)",
+          "Více než 100 žáků ročně získá mezinárodní certifikáty",
+          "Výborné výsledky v krajském i republikovém srovnění"
+        ],
+        "evidence": "Žáci dlouhodobě dosahují nadprůměrných výsledků u maturitních zkoušek, zejména v Ekonomickém lyceu."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+      },
+      "support_services": [
+        "Výchovné a kariérové poradenství zajišťované výchovnou poradkyní",
+        "Doučování a konzultace pro žáky ohrožené školním neúspěchem",
+        "Podpora žáků se speciálními vzdělávacími potřebami s individuálním přístupem",
+        "Spolupráce s externí krizovou interventkou z Diakonie Západ",
+        "Adaptační kurzy pro prvňáky"
+      ],
+      "safety_climate": [
+        "Bezpečný vstup do budovy zabezpečen vrátnicí celodenně",
+        "Žáci a zaměstnanci jsou pravidelně seznamováni s pravidly bezpečnosti",
+        "Dohledy jsou stanoveny a řádně vykonávány",
+        "Bezpečnost je prioritou vedení školy"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s partnerskou školou v Regensburgu (výměnné pobyty a odborné praxe)",
+        "Spolupráce se Západočeskou univerzitou v Plzni a Jihočeskou univerzitou (prezentace studijních programů)",
+        "Pedagogická praxe studentů Pedagogické fakulty ZČU",
+        "Rozvíjející se spolupráce s Fakultou ekonomickou ZČU",
+        "Spolupráce s externími partnery na besedách a exkurzích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však poměrně dlouhé a složitě strukturované, což mírně snižuje jasnost.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna, nelze posoudit trend či čísla",
+        "Počet žáků se speciálními potřebami (8) je zmíněn, ale jejich úspěšnost není detailně popsána",
+        "Konkrétní čísla o výsledcích v testech ČŠI nejsou uvedena, pouze kvalitativní popis"
+      ]
+    }
+  }
+}

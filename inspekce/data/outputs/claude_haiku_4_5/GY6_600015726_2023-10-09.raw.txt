@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY6_600015726_2023-10-09",
+  "school_profile": {
+    "school_type": "Gymnázium (střední škola s maturitní zkouškou)",
+    "inspection_period": "9. až 11. října 2023",
+    "school_change_summary": "Od poslední inspekce došlo k ustálení oborů, zvýšení počtu tříd na 10 a nárůstu počtu žáků na 230. Škola je naplněna z téměř dvou třetin maximální kapacity."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Partnerství a financování",
+        "detail": "Škola aktivně spolupracuje s partnery a získává další zdroje financování, což pozitivně ovlivňuje kvalitu vzdělávání.",
+        "evidence": "Partnerství se zahraničními školami, projekty ČEZ, Erasmus+, ECDL a DofE."
+      },
+      {
+        "tag": "Osobnostní rozvoj",
+        "detail": "Výjimečná podpora osobnostního rozvoje žáků prostřednictvím mezinárodního programu DofE.",
+        "evidence": "Přes 10 % žáků úspěšně absolvuje program zaměřený na osobnostní růst a dobrovolnictví."
+      },
+      {
+        "tag": "Klíčové kompetence",
+        "detail": "Škola účinně rozvíjí klíčové kompetence prostřednictvím projektové výuky a různorodých aktivit.",
+        "evidence": "Projektové dny, semináře, kroužky, soutěže, olympiády a mezinárodní jazykové zkoušky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Bezpečnost a psychohygiena",
+        "detail": "Žáci přecházejí mezi dvěma budovami i během pětiminutových přestávek bez jasných pravidel a dohledu.",
+        "evidence": "Inspektoři zaznamenali přechody v nevhodné časy; chybí dokumentace s konkrétními pravidly a odpovědností."
+      },
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Matematika a některé další předměty nejsou dostatečně diferencovány pro nadané žáky a ty se zvýšeným zájmem.",
+        "evidence": "Všichni žáci plní stejné úkoly se shodnou náročností, což neoptimalizuje jejich rozvoj."
+      },
+      {
+        "tag": "Kritické myšlení",
+        "detail": "Výuka jen ojediněle podporuje kritické myšlení a samostatné objevování poznatků.",
+        "evidence": "Chybí aktivity na bádání a porovnávání řešení; převládá frontální výuka s nízkou aktivitou žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně řešíte bezpečnost a dohled při přechodech žáků mezi budovami? Jaká jsou jasná pravidla?",
+      "Jak se v matematice a dalších předmětech přizpůsobuje výuka nadaným žákům a těm se zvýšeným zájmem?",
+      "Jaké konkrétní opatření přijímáte, když žák vykazuje riziko školního neúspěchu?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí rozvíjet osobnostní dovednosti a angažovat se v mezinárodních projektech (DofE, Erasmus+).",
+      "Studenti se zájmem o jazyky a mezinárodní certifikáty (ECDL, jazykové zkoušky).",
+      "Žáci, kteří oceňují pestrou nabídku volitelných předmětů, kroužků a soutěží."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kterým záleží na maximální bezpečnosti a jasných pravidlech (problém s přechody mezi budovami).",
+      "Nadaní žáci, kteří potřebují individualizovanou a náročnější výuku (diferenciace není dostatečná).",
+      "Žáci s rizikem neúspěchu, kde není jasné, jaká konkrétní opatření se přijímají (zápisy z porad mají jen statistický charakter)."
+    ],
+    "plain_czech_summary": "Gymnázium v Moravském Krumlově je dobře vedená škola s kvalitním vedením a inovativním přístupem. Silné stránky: partnerství s institucemi, osobnostní rozvoj přes DofE program, projektová výuka a bohatá nabídka aktivit. Slabé stránky: bezpečnost při přechodech mezi budovami bez jasných pravidel, nedostatečná diferenciace výuky pro nadané žáky a slabší podpora kritického myšlení. Maturitní výsledky jsou dlouhodobě dobré, ale v roce 2022/23 došlo ke zhoršení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě dobrý, ale se zhoršením v posledním roce",
+      "key_numbers": [
+        "Průměrná hrubá neúspěšnost 5 % za poslední tři roky",
+        "Výsledky obvykle lepší nebo srovnatelné s celorepublikovým průměrem",
+        "Zhoršení ve školním roce 2022/2023 – část žáků neuspěla v části maturitní zkoušky"
+      ],
+      "evidence": "Úspěšnost byla opakovaně vysoká, ale ke zhoršení došlo v 2022/23, kdy část žáků nebyla úspěšná ve společné části."
+    },
+    "absence": {
+      "trend": "Nízká absence u většiny žáků",
+      "key_numbers": [
+        "Zvýšená absence je sledována jako rizikový faktor",
+        "Pedagogové věnují zvýšenou pozornost žákům s vyšší absencí"
+      ],
+      "evidence": "Absence je monitorována jako součást identifikace žáků s rizikem školního neúspěchu."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodik prevence a kariérový poradce",
+      "Doučování a pedagogické konzultace pro žáky s rizikem neúspěchu",
+      "Adaptační programy pro nově vznikající kolektivy",
+      "Schránka důvěry a externí psycholožka pro řešení problémů",
+      "Interaktivní akce jako Protidrogový vlak"
+    ],
+    "safety_climate": [
+      "Klidná atmosféra ve vyučovacích hodinách, žáci dodržují pravidla",
+      "Problém: přechody mezi budovami bez jasných pravidel a dohledu",
+      "Žáci jsou poučeni o chování během přesunů, ale chybí dokumentace",
+      "Škola se rizikovým chováním zabývá a přijímá operativní opatření"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem (Jihomoravský kraj) na financování aktivit",
+      "Partnerství s městem na kulturních a slavnostních akcích",
+      "Součinnost s vysokoškolskými a výzkumnými pracovišti",
+      "Stáž Jaderná maturita se skupinou ČEZ",
+      "Partnerství se zahraničními školami (Slovensko) pro výjezdy a sdílení zkušeností",
+      "Projekty Erasmus+, DofE a ECDL"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně bez zbytečného úřednického stylu. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více technických detailů, které by mohly být pro rodiče méně přístupné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků s rizikem neúspěchu ani jejich podíl na celkovém počtu.",
+      "Není jasné, jak dlouho trvají přestávky mezi hodinami a zda je možné je prodloužit.",
+      "Chybí informace o tom, kolik procent vyučujících absolvovalo vzdělání v projektové výuce."
+    ]
+  }
+}
+```

@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_600006115_2023-11-15",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium, denní forma vzdělávání",
+    "inspection_period": "15.–16. listopadu a 20.–21. listopadu 2023",
+    "school_change_summary": "Od inspekce v 2016: mírný pokles žáků v osmiletém gymnáziu, výrazný nárůst v čtyřletém oboru. Od 2023/24 škola navyšuje počty tříd čtyřletého gymnázia. Rozšířeno poradenské pracoviště o školního psychologa. Kvalita vzdělávání zůstává vysoká."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "38–48 % vyznamenání, jednotliví neprospěli, nadprůměrné výsledky v češtině a cizích jazycích.",
+        "evidence": "Žáci dosáhli nadprůměrných výsledků ve srovnání s ČR v didaktickém testu z češtiny a jazyků."
+      },
+      {
+        "tag": "Bezpečné a podnětné prostředí",
+        "detail": "Moderní vybavení, tři tělocvičny, odborné učebny, kamery, elektronické zabezpečení.",
+        "evidence": "Pavilonový typ s bezbariérovým přístupem, esteticky podnětné prostředí, nízký počet kázeňských opatření."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Kroužky, soutěže, charitativní akce, mezinárodní programy, studijní zájezdy.",
+        "evidence": "Zapojení do mezinárodních programů přispívá k všestrannému rozvoji osobnosti žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Méně aktivní zapojení žáků v některých hodinách",
+        "detail": "Část výuky stále využívá transmisivní přístup s nižší interakcí a nerovnoměrným zapojením.",
+        "evidence": "Převaha frontální výuky, menší pestrost metod, absence didaktického závěru v některých hodinách."
+      },
+      {
+        "tag": "Nedostatečná práce s informačními zdroji",
+        "detail": "Žáci nemají dostatek příležitostí k samostatnému kritickému vyhodnocování informací.",
+        "evidence": "Méně časté zařazování práce s různými informačními zdroji ve výuce."
+      },
+      {
+        "tag": "Slabší rozvoj řečových dovedností v cizích jazycích",
+        "detail": "Vyučující v dostatečné míře nevyužívají menší počty žáků k rozvoji interaktivních řečových dovedností.",
+        "evidence": "V hodinách cizích jazyků nedostatečně podporován rozvoj interaktivních řečových dovedností."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje samostatné myšlení a kritické hodnocení informací?",
+      "Jaké jsou zkušenosti s přechodem žáků z osmiletého na čtyřleté gymnázium a jak se jim daří?",
+      "Jak se škola vypořádává s rozdíly ve výsledcích mezi osmiletým a čtyřletým oborem?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými výsledky ze základní školy, kteří chtějí kvalitní všeobecné vzdělání a přípravu na vysokou školu",
+      "Děti zajímající se o mimoškolní aktivity, soutěže a mezinárodní projekty",
+      "Žáci z Středočeského kraje – dobrá dopravní dostupnost"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní a aktivizující výuku – část hodin je stále tradičnější",
+      "Děti se slabšími jazykovými dovednostmi – rozvoj řečových dovedností v cizích jazycích není v některých hodinách dostatečně podporován",
+      "Žáci, kteří se hlásí do čtyřletého oboru – dosahují horších výsledků než osmiletí, ačkoliv škola na to reaguje"
+    ]
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoká úspěšnost",
+      "key_numbers": [
+        "38–48 % vyznamenání v maturitním období",
+        "Jednotliví neprospěli",
+        "Nadprůměrné výsledky v češtině a cizích jazycích oproti ČR"
+      ],
+      "evidence": "Více než třetina žáků nahradila zkoušku z cizího jazyka mezinárodním certifikátem. Vysoká úspěšnost absolventů při přijetí na vysoké školy."
+    },
+    "absence": {
+      "trend": "Stabilně nízká",
+      "key_numbers": [
+        "Nízký počet neomluvených hodin",
+        "Zanedbatelný počet neomluvených absencí"
+      ],
+      "evidence": "Nastavené preventivní mechanismy jsou funkční a přispívají k eliminaci rizikového chování. Stabilní a nízká míra absence žáků."
+    },
+    "support_services": [
+      "Školní psycholog (nově rozšířeno)",
+      "Výchovná poradkyně a poradenský tým",
+      "Doučování a individuální konzultace pro žáky s rizikem neúspěchu",
+      "Spolupráce se školskými poradenskými zařízeními",
+      "Kariérové poradenství s testy profesní orientace"
+    ],
+    "safety_climate": [
+      "Nízký počet ukládaných kázeňských opatření",
+      "Bezpečné prostředí – kamery, elektronické zabezpečení, dohled recepčního",
+      "Adaptační a preventivní programy v průběhu celého vzdělávacího cyklu",
+      "Ojedinělé rizikové chování řešeno ve spolupráci s rodiči"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Pedagogické fakulty a Přírodovědecké fakulty Univerzity Karlovy",
+      "Spolupráce s vysokými školami a kulturně vzdělávacími institucemi",
+      "Mezinárodní projekty umožňující mobilitu žáků a učitelů",
+      "Zapojení absolventů do kariérového poradenství"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však formulovány úřednicky a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaký podíl hodin měl transmisivní přístup – není jasné, zda jde o 10 % nebo 50 % výuky",
+      "Není uvedeno, kolik žáků čtyřletého oboru dosahuje horších výsledků – pouze obecné tvrzení",
+      "Chybí konkrétní příklady slabších stránek v hodinách cizích jazyků"
+    ]
+  }
+}
+```

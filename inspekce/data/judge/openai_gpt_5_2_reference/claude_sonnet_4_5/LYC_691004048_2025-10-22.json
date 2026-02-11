@@ -1,0 +1,29 @@
+{
+  "report_id": "LYC_691004048_2025-10-22",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "claude_sonnet_4_5",
+  "run_started_utc": "2026-02-09T12:23:12.559346+00:00",
+  "run_finished_utc": "2026-02-09T12:23:36.293988+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"LYC_691004048_2025-10-22\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 5,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 1,\n  \"critical_issues\": [\n    \"Formulace „omezila individuální vzdělávací plány“ je vůči zdroji mírně nepřesná/zobecňující: zpráva popisuje nahrazení benevolentního IVP novou směrnicí a zpřísnění podmínek pro „Plán vzdělávací podpory“ (primárně pro sportovce a zdravotně znevýhodněné), ale neříká přímo, že škola obecně „omezila IVP“.\",\n    \"Kandidát nezmiňuje některé důležité slabiny popsané ve výuce: minimální efektivní práce s chybou, zpětná vazba bez formativního rozměru a častěji chybějící vyhodnocení cíle hodiny.\",\n    \"Chybí zmínka o nedostatečně spolehlivém (jen ústním) vyhodnocování podpůrných opatření a o tom, že vzájemné hospitace učitelů nejsou systematické.\"\n  ],\n  \"best_points\": [\n    \"Dobře zachycené klíčové závěry inspekce pro rodiče: bezpečné a přátelské klima, silná praxe a propojení teorie s praxí vs. dlouhodobě podprůměrné výsledky maturit a nízká diferenciace.\",\n    \"U většiny tvrzení jsou uvedeny přesné citace/opory ve zdrojovém textu.\",\n    \"Praktická struktura pro rodiče (rizika/silné stránky, otázky na den otevřených dveří, pro koho je škola vhodná/nevhodná) odpovídá typickým potřebám při výběru školy.\"\n  ],\n  \"one_line_verdict\": \"Většinou věrné a pro rodiče velmi použitelné shrnutí s drobným nepodloženým/zobecňujícím tvrzením o „omezení IVP“ a s několika opomenutými slabinami výuky popsanými inspekcí.\"\n}",
+  "judge_output": {
+    "report_id": "LYC_691004048_2025-10-22",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 5,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 1,
+    "critical_issues": [
+      "Formulace „omezila individuální vzdělávací plány“ je vůči zdroji mírně nepřesná/zobecňující: zpráva popisuje nahrazení benevolentního IVP novou směrnicí a zpřísnění podmínek pro „Plán vzdělávací podpory“ (primárně pro sportovce a zdravotně znevýhodněné), ale neříká přímo, že škola obecně „omezila IVP“.",
+      "Kandidát nezmiňuje některé důležité slabiny popsané ve výuce: minimální efektivní práce s chybou, zpětná vazba bez formativního rozměru a častěji chybějící vyhodnocení cíle hodiny.",
+      "Chybí zmínka o nedostatečně spolehlivém (jen ústním) vyhodnocování podpůrných opatření a o tom, že vzájemné hospitace učitelů nejsou systematické."
+    ],
+    "best_points": [
+      "Dobře zachycené klíčové závěry inspekce pro rodiče: bezpečné a přátelské klima, silná praxe a propojení teorie s praxí vs. dlouhodobě podprůměrné výsledky maturit a nízká diferenciace.",
+      "U většiny tvrzení jsou uvedeny přesné citace/opory ve zdrojovém textu.",
+      "Praktická struktura pro rodiče (rizika/silné stránky, otázky na den otevřených dveří, pro koho je škola vhodná/nevhodná) odpovídá typickým potřebám při výběru školy."
+    ],
+    "one_line_verdict": "Většinou věrné a pro rodiče velmi použitelné shrnutí s drobným nepodloženým/zobecňujícím tvrzením o „omezení IVP“ a s několika opomenutými slabinami výuky popsanými inspekcí."
+  }
+}

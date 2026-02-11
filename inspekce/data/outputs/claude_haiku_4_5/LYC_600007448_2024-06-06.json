@@ -1,0 +1,115 @@
+{
+  "report_id": "LYC_600007448_2024-06-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:15:20.604545+00:00",
+  "run_finished_utc": "2026-02-09T16:15:45.394420+00:00",
+  "raw_file": "LYC_600007448_2024-06-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600007448_2024-06-06",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola s maturitní zkouškou, domovem mládeže a školní jídelnou",
+      "inspection_period": "6.–7. a 10.–11. června 2024",
+      "school_change_summary": "Od inspekce v 2017 vzrostl počet žáků o 12 % na 451 studentů. Škola rozšířila nabídku o obor Technické lyceum (od 2024/2025) a utlumuje obor Dopravní prostředky. Vedení školy se změnilo v roce 2019."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola efektivně spojuje teoretickou přípravu s praktickým vzděláváním prostřednictvím exkurzí, přednášek a stáží se zaměstnavateli.",
+          "evidence": "Teoretická odborná příprava je efektivně propojena s praxí. Účinné partnerství přispívá k naplňování profilu absolventa."
+        },
+        {
+          "tag": "Moderní vybavení a prostory",
+          "detail": "Škola průběžně rekonstruuje učebny, modernizuje vybavení včetně digitálních technologií a zlepšuje podmínky v domově mládeže.",
+          "evidence": "Soustavné zkvalitňování materiálních podmínek a vybavení pro výuku vytváří vhodné podmínky pro vzdělávání žáků."
+        },
+        {
+          "tag": "Vysoká uplatnitelnost absolventů",
+          "detail": "Absolventi si podávají přihlášky na vysoké školy nebo se aktivně zapojují do pracovního procesu, kde je po nich vysoká poptávka.",
+          "evidence": "Přetrvává vysoká uplatnitelnost absolventů školy na trhu práce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoký podíl žáků v riziku neúspěchu",
+          "detail": "V prvním a třetím ročníku jsou přibližně dvě třetiny žáků klasifikovány alespoň jednou dostatečnou známkou.",
+          "evidence": "V prvním a třetím ročníku ve 2. pololetí 2022/2023 jich byly cca dvě třetiny z celkového počtu žáků v daném ročníku."
+        },
+        {
+          "tag": "Nižší účinnost podpory slabších žáků",
+          "detail": "Strategie předcházení školní neúspěšnosti má nižší účinnost, přestože škola nabízí doučování a konzultace.",
+          "evidence": "Strategie předcházení školní neúspěšnosti žáků má nižší účinnost. Účinnost je však individuální."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učitelé málo přizpůsobují výuku rozdílným schopnostem žáků, chybí práce s informačními zdroji a rozvoj kritického myšlení.",
+          "evidence": "Minimální zařazování diferenciace učiva způsobovalo, že byl méně využit vzdělávací potenciál každého žáka."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s matematikou nebo odbornými předměty?",
+        "Jaké jsou možnosti doučování a jak se vyhodnocuje jejich účinnost?",
+        "Jak se škola připravuje na nový obor Technické lyceum a co se změní v učebních metodách?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a technické obory s jasnou představou o budoucím povolání",
+        "Studenti, kteří si cení moderního vybavení a kvalitních pracovních podmínek ve školních dílnách",
+        "Uchazeči, kteří chtějí po maturitě pracovat v technických oborech, kde je vysoká poptávka"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky z matematiky – škola má vysoký podíl studentů v riziku neúspěchu",
+        "Studenti, kteří potřebují individualizovaný přístup a diferenciovanou výuku – ta není dostatečně rozvinuta",
+        "Uchazeči, kteří preferují aktivní a diskusní formy výuky – převládá frontální výuka s nižší aktivizací žáků"
+      ],
+      "plain_czech_summary": "Střední průmyslová škola v Mladé Boleslavi je moderně vybavená a nabízí kvalitní propojení teorie s praxí. Absolventi mají vysokou uplatnitelnost na trhu práce. Hlavní výzvou je vysoký podíl žáků ohrožených školním neúspěchem (zejména v matematice) a nedostatečná diferenciace výuky. Škola pracuje na zlepšení, ale účinnost opatření je zatím nižší. Vhodná pro prakticky zaměřené studenty, méně pro ty, kteří potřebují individuální přístup."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírné zlepšení, ale stále vyšší neúspěšnost technických oborů než v ČR",
+        "key_numbers": [
+          "Obor Informační technologie: 18,4 % resp. 18 % hrubé neúspěšnosti",
+          "Obor Strojírenství: zlepšení z 19,4 % na 13,8 %",
+          "Obor Dopravní prostředky: zlepšení z 40 % na 25 %"
+        ],
+        "evidence": "Hrubá neúspěšnost u MZ v technických oborech byla vyšší než průměr ČR. Obor Ekonomika a podnikání měl 100% úspěšnost v 2021/2022."
+      },
+      "absence": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "Snížení z 2021/2022 na 2022/2023 o cca 15 %",
+          "Průměr 92 hodin absence na žáka v 2022/2023"
+        ],
+        "evidence": "Vysokou absenci se podařilo snížit zpřísněním kritérií pro její posuzování."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní, metodičkou prevence a kariérní poradkyní",
+        "Doučování a konzultace pro ohrožené žáky",
+        "Adaptační kurz na počátku studia",
+        "Kariérní poradenství s vedením ke zpracování portfolií"
+      ],
+      "safety_climate": [
+        "Prostory a vybavení jsou vyhodnocovány z hlediska bezpečnosti",
+        "Míru úrazovosti žáků se daří snižovat",
+        "Škola správně identifikuje projevy rizikového chování s důrazem na prevenci",
+        "Počet pochval převyšuje kázeňská opatření"
+      ],
+      "partnerships_practice": [
+        "Účinná spolupráce se sociálními partnery a zaměstnavateli regionu",
+        "Exkurze, přednášky, realizace praxe a stáží",
+        "Dlouhodobá podpora zahraniční mobility žáků a učitelů",
+        "Spolupráce s organizacemi veřejného a neziskového sektoru na rozvoji kompetencí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Hlavní zjištění jsou jasně oddělena v sekcích. Některé pasáže jsou však administrativně husté a vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jak přesně se měří účinnost doučování – údaj o 'individuální účinnosti' je vágní",
+        "Není jasné, jaké konkrétní inovativní metody by měli učitelé zavádět – doporučení je obecné",
+        "Chybí informace o tom, kolik žáků skutečně využívá nabízené doučování a konzultace"
+      ]
+    }
+  }
+}

@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY8_600063861_2023-12-04",
+  "school_profile": {
+    "school_type": "Základní škola a Gymnázium (spojená instituce od 2016). Střední vzdělání: 202 žáků v 9 třídách (osmiletého a čtyřletého gymnázia). Základní vzdělání: 875 žáků v 38 třídách. Také školní družina (291 účastníků) a školní jídelny.",
+    "inspection_period": "4. prosince 2023 až 7. prosince 2023",
+    "school_change_summary": "Nová ředitelka (třetím rokem ve funkci) postupně zavádí změny. Rozšířena organizační struktura – tým vedení o tři nové zástupce. Aktualizovány školní vzdělávací programy. Nový pavilon s odbornými učebnami, knihovny, relaxační místnosti a venkovní učebna. Zvýšil se počet žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky na gymnáziu",
+        "detail": "Žáci gymnázia dosahují velmi dobrých výsledků a dlouhodobě vysoké úspěšnosti při maturitní zkoušce.",
+        "evidence": "Žáci gymnázia dosahují velmi dobrých výsledků v průběhu středního vzdělávání a dlouhodobě vysoké úspěšnosti při ukončování vzdělávání maturitní zkouškou."
+      },
+      {
+        "tag": "Kvalitní výuka na gymnáziu",
+        "detail": "Vyučující na gymnáziu vytvářejí pozitivní klima, používají různé metody práce a poskytují efektivní zpětnou vazbu.",
+        "evidence": "Sledované hodiny byly vždy promyšlené a velice kvalitně připravené a podporovaly sociální a osobnostní rozvoj žáků."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Pestrá nabídka zájmových kroužků a projektů podporuje rozvoj nadání a prevenci rizikového chování.",
+        "evidence": "Činnost školní družiny a široká nabídka zájmových kroužků prospěšně ovlivňují způsob trávení volného času žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výuka na základní škole",
+        "detail": "Převažuje frontální vyučování, málo skupinové práce, nedostatečná diferenciace podle schopností žáků.",
+        "evidence": "Převažovalo frontální vyučování doplněné řízenou diskuzí, méně často se objevily aktivity podporující tvořivost a kritické myšlení."
+      },
+      {
+        "tag": "Nejednotný přístup k problémům v učení",
+        "detail": "Škola nemá efektivní systém pro řešení školní neúspěšnosti, doučování funguje jen částečně.",
+        "evidence": "Opatření realizovaná školou ke zlepšení prospěchu žáků základního vzdělávání jsou účinná pouze částečně."
+      },
+      {
+        "tag": "Komunikační rezervy",
+        "detail": "Informování rodičů má rezervy kvůli složitosti řízení velkého subjektu.",
+        "evidence": "V oblasti informování zákonných zástupců existují rezervy, které mimo jiné vyplývají ze složitosti systému řízení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pomáhá žákům základní školy, kteří mají problémy s učením? Jaké jsou výsledky doučování?",
+      "Jak se liší přístup k výuce mezi jednotlivými pracovišti základní školy a proč jsou rozdíly ve výsledcích?",
+      "Jaké konkrétní změny plánuje škola v metodách výuky na základní škole v příštím roce?"
+    ],
+    "who_school_fits": [
+      "Talentovaní žáci se zájmem o hlubší vzdělání – škola nabízí blokovou výuku a spolupracuje s Mensou",
+      "Žáci se speciálními potřebami – poskytuje se jim podpora asistentů a individuální péče",
+      "Žáci zajímající se o sport, přírodní vědy a jazyky – škola dosahuje výrazných úspěchů v těchto oborech"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v základní škole – systém podpory není dostatečně efektivní",
+      "Rodiny, které potřebují intenzivní komunikaci se školou – informování má rezervy",
+      "Žáci, kteří se lépe učí aktivní metodami – převažuje frontální výuka"
+    ],
+    "plain_czech_summary": "Gymnázium je velmi kvalitní s výbornými výsledky a moderní výukou. Základní škola má rezervy – výuka je spíše tradiční, chybí diferenciace a aktivní metody. Škola se snaží pomáhat slabším žákům, ale systém není dostatečně efektivní. Mimoškolní činnost je bohatá a kvalitní. Nová ředitelka postupně zlepšuje podmínky. Materiální vybavení se výrazně zlepšilo. Komunikace s rodiči by mohla být lepší."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě vysoká úspěšnost",
+      "key_numbers": [
+        "202 žáků na gymnáziu v 9 třídách",
+        "Vysoká úspěšnost při maturitní zkoušce",
+        "Výrazné úspěchy v soutěžích na okresní, krajské i celostátní úrovni"
+      ],
+      "evidence": "Žáci gymnázia dosahují velmi dobrých výsledků v průběhu středního vzdělávání a dlouhodobě vysoké úspěšnosti při ukončování vzdělávání maturitní zkouškou."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se nezabývá absencí žáků."
+    },
+    "support_services": [
+      "Školní psycholožka poskytující krizové intervence a dlouhodobou individuální práci",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+      "Speciální hodiny českého jazyka pro žáky s odlišným mateřským jazykem",
+      "Doučování a individuální konzultace (s částečnou účinností)",
+      "Spolupráce s odborem sociální péče a školskými poradenskými zařízeními"
+    ],
+    "safety_climate": [
+      "Důraz na příznivé klima ve škole a dodržování nastavených pravidel",
+      "Pravidelné adaptační programy a výjezdové akce sportovně-turistického zaměření",
+      "Aktivní prevence rizikového chování s dlouhodobě ověřenými aktivitami",
+      "Cílené aktivity vytvořené pro konkrétní situace v jednotlivých třídách",
+      "Pravidelná práce se vztahy uvnitř tříd"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se zahraničními partnerskými školami (Erasmus+)",
+      "Projekt Pomáháme školám k úspěchu s dalšími základními školami v Jihočeském kraji",
+      "Partnerství s ekologickými a sportovními organizacemi",
+      "Spolupráce s Mensou a nadačním fondem Jihočeské naděje pro talentované žáky",
+      "Součinnost se zřizovatelem a místními institucemi",
+      "Partnerství s mateřskými, středními a vysokými školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, ale obsahuje řadu odborných termínů a dlouhých vět. Struktura je logická a informace jsou jasně odděleny. Hlavní zjištění jsou zřetelná, ale pro laika by byla užitečná větší konkrétnost v číslech.",
+    "uncertainty_notes": [
+      "Absence konkrétních čísel o výsledcích maturit a přijímacích zkoušek – uvedeno jen 'velmi dobré' a 'vysoká úspěšnost'",
+      "Nejasné, jak přesně funguje doučování a proč je jen 'částečně účinné'",
+      "Není jasné, jaké konkrétní rezervy existují v komunikaci s rodiči"
+    ]
+  }
+}
+```

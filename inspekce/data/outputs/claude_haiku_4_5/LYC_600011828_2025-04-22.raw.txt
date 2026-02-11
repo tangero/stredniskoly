@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600011828_2025-04-22",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola, střední odborná škola a střední odborné učiliště",
+    "inspection_period": "22.–25. 4. a 28.–29. 4. 2025",
+    "school_change_summary": "Od srpna 2020 nový ředitel. Personální obměna zástupců ředitele. Modernizace centra praktického vzdělávání díky vícezdrojovému financování."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vzdělávání",
+        "detail": "Vysoká kvalita odborné praxe v moderně vybaveném centru s profesionálními instruktory a příjemnou pracovní atmosférou.",
+        "evidence": "Hospitované praktické vzdělávání mělo vysokou kvalitativní úroveň, vyučující efektivně předávali znalosti a rozvíjeli manuální zručnost."
+      },
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Škola má dobré finanční podmínky a postupně modernizuje své zázemí včetně digitálních pomůcek.",
+        "evidence": "Vícezdrojové financování umožnilo rozšíření a modernizaci centra praktického vzdělávání."
+      },
+      {
+        "tag": "Spolupráce s firmami",
+        "detail": "Intenzivní partnerství s průmyslovými podniky a vysokými školami podporuje praktické dovednosti a budoucí uplatnění.",
+        "evidence": "Škola realizuje odborný výcvik u smluvních partnerů a žáci se umísťují na předních místech v odborných soutěžích."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita teoretické výuky",
+        "detail": "Převažuje výkladový styl s pasivní rolí žáků, chybí aktivní zapojení, kooperativní práce a samostatné vyhledávání informací.",
+        "evidence": "Ve většině hodin převažovala výuka výkladového charakteru, žáci se stávali pouhými příjemci informací."
+      },
+      {
+        "tag": "Výsledky maturit",
+        "detail": "V oborech s maturitní zkouškou jsou výsledky ve společné části mírně nižší než republikový průměr.",
+        "evidence": "Úspěšnost žáků ve společné části maturitní zkoušky byla ve srovnání s republikovým průměrem mírně nižší."
+      },
+      {
+        "tag": "Vysoké absence",
+        "detail": "Škola řeší významný problém vysoké míry absencí žáků, kterému věnuje zvýšenou pozornost.",
+        "evidence": "Vysoká míra absencí žáků ve výuce představuje problém, kterému se škola věnuje nastavením jednotných pravidel."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s teoretickými předměty, zejména s matematikou a češtinou?",
+      "Jaké jsou konkrétní plány na zlepšení výsledků v maturitní zkoušce, zejména v její společné části?",
+      "Jak škola řeší vysoké absence a jaké jsou důsledky pro žáky, kteří se vzdělávání neúčastní?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické a technické obory, kteří se lépe učí praxí než teorií",
+      "Motivovaní studenti, kteří si chtějí vybudovat konkrétní odborné dovednosti s podporou průmyslových partnerů",
+      "Žáci, kteří potřebují ubytování – domov mládeže nabízí sportovní a umělecké aktivity"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnou podporu v teoretických předmětech – výuka je spíše pasivní a málo diferencovaná",
+      "Studenti s vyšší ambicí na vysokou školu – výsledky v maturitní zkoušce jsou pod průměrem",
+      "Žáci se sklonem k absencím – škola řeší tento problém, ale není jasné, jak efektivně"
+    ],
+    "plain_czech_summary": "SPŠ Hradební je moderní technická škola s výborným praktickým vzděláním a dobrým vybavením. Žáci se učí v profesionálních dílnách od zkušených instruktorů. Problém je v teoretické výuce – učitelé často jen přednášejí, žáci málo aktivně pracují. Výsledky v maturitě jsou pod průměrem. Škola má vysoké absence žáků. Vhodná pro ty, kdo chtějí praktické řemeslo, méně pro ty, kdo chystají vysokou školu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá úroveň s mírně nižší úspěšností ve společné části",
+      "key_numbers": [
+        "Úspěšnost ve společné části maturitní zkoušky mírně nižší než republikový průměr",
+        "Úspěšnost v oborech s výučním listem kolem 95 %",
+        "Zvýšil se počet žáků s hodnocením prospěl/a s vyznamenáním"
+      ],
+      "evidence": "Výsledky vykazovaly kolísavou úroveň v obou částech maturitní zkoušky. Škola přijala opatření zpřísněním podmínek přijetí."
+    },
+    "absence": {
+      "trend": "Vysoká míra absencí jako významný problém",
+      "key_numbers": [
+        "Vysoká míra absencí žáků ve výuce",
+        "Předmět zvýšené pozornosti vedení školy",
+        "Nově nastavena jednotná pravidla na obou pracovištích"
+      ],
+      "evidence": "Vysoká míra absencí žáků ve výuce představuje ve škole významný problém, kterému škola soustavně přijímá opatření."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště na obou budovách s podporou žáků se speciálními vzdělávacími potřebami",
+      "Doučování z maturitních předmětů v domově mládeže",
+      "Kariérní poradenství prostřednictvím konzultací a návštěv vysokých škol",
+      "Preventivní program s přednáškami, adaptačními kurzy a třídnickými hodinami"
+    ],
+    "safety_climate": [
+      "Rizikové chování (šikana, vandalismus, látkové závislosti) je významným problémem",
+      "Škola realizuje krizové intervence ve spolupráci s externími organizacemi",
+      "Zavedeny třídnické hodiny a sociometrická šetření",
+      "Domov mládeže nabízí prevenci rizikového chování prostřednictvím zájmových aktivit"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s několika spřátelenými školami od základní školy po Univerzitu Hradec Králové",
+      "Výměnné pobyty s odbornými školami v Německu",
+      "Partnerství s mnoha firmami pro odborný výcvik a finanční podporu soutěží",
+      "Program DofE (Mezinárodní cena vévody z Edinburghu) pro rozvoj sociálních kompetencí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní pozorování z hospitací. Některé pasáže jsou však složitější a úřednické. Hlavní zjištění jsou jasná, ale pro laika by byla užitečná větší konkrétnost v číslech.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta úspěšnosti v maturitě – pouze 'mírně nižší' než průměr",
+      "Není jasné, jak velký je problém s absencemi – chybí konkrétní čísla",
+      "Není specifikováno, kolik procent absolventů pokračuje na vysoké škole (zmíněno pouze '30 %')"
+    ]
+  }
+}
+```

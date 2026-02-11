@@ -1,0 +1,120 @@
+{
+  "report_id": "SOS_600170021_2025-10-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:32:44.601406+00:00",
+  "run_finished_utc": "2026-02-09T13:33:11.788941+00:00",
+  "raw_file": "SOS_600170021_2025-10-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170021_2025-10-01",
+    "school_profile": {
+      "school_type": "Střední škola designu a umění, knižní kultury a ekonomiky – čtyřleté obory s maturitou (Ekonomika a podnikání, Knihkupecké a nakladatelské činnosti, Informační služby, Grafický design), dvouletý nástavbový obor Propagace a tříletý obor s výučním listem Aranžér",
+      "inspection_period": "1. 10. 2025 – 2. 10. 2025, 6. 10. 2025 – 7. 10. 2025",
+      "school_change_summary": "Od inspekce v roce 2020 počet žáků vzrostl o 22 % na 599 žáků v 21 třídách. Naplněnost školy dosáhla 95 %. Došlo k personálnímu posílení poradenského pracoviště (školní psycholožka, speciální pedagog) a výrazné obnově materiálně-technického vybavení včetně nových učeben, klimatizací a moderní techniky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborné vzdělávání na vysoké úrovni",
+          "detail": "Praktická výuka probíhá v souladu s koncepcí školy na velmi dobré úrovni s propojením teoretické a praktické složky vzdělávání.",
+          "evidence": "Odborné vzdělávání probíhá na velmi dobré úrovni s efektivní praktickou výukou v prostorách školy i u smluvních partnerů."
+        },
+        {
+          "tag": "Výborné výsledky při maturitě",
+          "detail": "Výrazné zlepšení výsledků v českém jazyce – za tři roky neprospěli pouze dva žáci. V anglickém jazyce všichni žáci čtyřletých oborů prospěli.",
+          "evidence": "Z českého jazyka neprospěli pouze dva žáci za tři školní roky. V anglickém jazyce všichni čtyřletí žáci prospěli."
+        },
+        {
+          "tag": "Moderní vybavení a bezpečnost",
+          "detail": "Nové učebny, klimatizace, čističky vzduchu, kamerový systém, elektronicky zabezpečený vstup a stálá služba na vrátnici.",
+          "evidence": "Vybudovány nové učebny, nainstalované klimatizace, čističky vzduchu, kamerový systém a elektronicky zabezpečený vstup."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vyšší absence žáků",
+          "detail": "Přetrvává vyšší celkový počet omluvených hodin na žáka, především kvůli dlouhodobým zdravotním problémům a hospitalizaci.",
+          "evidence": "Nadále přetrvává vyšší celkový počet omluvených hodin na žáka, způsobený dlouhodobými zdravotními problémy."
+        },
+        {
+          "tag": "Diferenciace výuky v některých předmětech",
+          "detail": "V menší části hodin všeobecně vzdělávacích předmětů chybí dostatečná diferenciace pro nadanější žáky nebo ty s rychlejším tempem.",
+          "evidence": "V menší části vyučovacích hodin nižší míra diferenciace výuky pro žáky s větším zájmem nebo rychlejším tempem práce."
+        },
+        {
+          "tag": "Jazyková kultura ve výuce",
+          "detail": "Nedostatečná pozornost věnovaná jazykové kultuře a opravě nespisovné češtiny v některých hodinách.",
+          "evidence": "Nebyla dostatečná pozornost věnována jazykové kultuře a usměrňování používání nespisovné češtiny."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s vyšší absencí a jak se to odráží v jejich výsledcích?",
+        "Jaké jsou možnosti individuální podpory pro nadanější žáky v teoretických předmětech?",
+        "Jak se škola připravuje na změny v maturitních zkouškách a jak to ovlivní přípravu současných žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o design, grafiku, knihovnictví nebo ekonomiku, kteří chtějí kvalitní odborné vzdělávání s propojením teorie a praxe",
+        "Talentovaní žáci v uměleckých oborech, kterým škola nabízí soutěže, výstavy a prezentaci jejich prací na veřejnosti",
+        "Žáci, kteří si cení moderního vybavení, bezpečného prostředí a aktivního zapojení do projektů se sociálními partnery"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se zdravotními problémy – škola má vyšší počet omluvených hodin, což může ovlivnit jejich studijní pokrok",
+        "Nadaní žáci v teoretických předmětech – v některých hodinách chybí dostatečná diferenciace pro jejich rozvoj",
+        "Žáci, kteří potřebují intenzivní jazykovou přípravu – inspekce upozornila na nedostatečnou pozornost jazykové kultuře"
+      ],
+      "plain_czech_summary": "Škola designu a umění na Náhorní je moderní zařízení s kvalitním odborným vzděláním. Výsledky maturit se výrazně zlepšily, zejména v češtině. Škola má nové učebny, bezpečnost a spolupracuje s odbornými partnery. Slabší stránkou je vyšší absence některých žáků a v některých hodinách chybí individuální přístup k nadanějším žákům. Škola je vhodná pro zájemce o design, grafiku a ekonomiku, kteří chtějí kvalitní praktické vzdělávání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "Český jazyk: pouze 2 neúspěšní žáci za 3 roky",
+          "Anglický jazyk: všichni žáci čtyřletých oborů prospěli",
+          "Profilová část: pouze 3 neúspěšní žáci ze všech oborů za 3 roky"
+        ],
+        "evidence": "Od posledního inspekčního hodnocení se realizovaná opatření pozitivně promítla do výsledků v českém jazyce. V anglickém jazyce všichni žáci čtyřletých oborů prospěli."
+      },
+      "absence": {
+        "trend": "Zlepšení krátkodobé absence, přetrvávající vyšší omluvená absence",
+        "key_numbers": [
+          "Výrazné snížení krátkodobé absence",
+          "Minimalizace neomluveného chybění",
+          "Vyšší celkový počet omluvených hodin na žáka"
+        ],
+        "evidence": "Škole se podařilo výrazně snížit krátkodobou absenci a minimalizovat absenci neomluvenou. Nadále přetrvává vyšší počet omluvených hodin způsobený dlouhodobými zdravotními problémy."
+      },
+      "support_services": [
+        "Školní psycholožka a speciální pedagog (nově přidáni)",
+        "Dvě výchovné poradkyně a metodička prevence",
+        "Doučování českého jazyka pro žáky s odlišným mateřským jazykem (8 % žáků)",
+        "Individuální podpora pro 10 % žáků se speciálními vzdělávacími potřebami",
+        "Adaptační kurzy a preventivní aktivity"
+      ],
+      "safety_climate": [
+        "Elektronicky zabezpečený vstup a stálá služba na vrátnici",
+        "Kamerový systém ve škole",
+        "Jednotný přístup pedagogů k vytváření pozitivních vztahů",
+        "Sociomapování pro sledování dynamiky v třídních kolektivech",
+        "Standardní postupy řešení výchovně vzdělávacích problémů"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se sociálními partnery a vysokými školami",
+        "Praktická výuka na pracovištích smluvních partnerů",
+        "Realizace projektů sociálních partnerů v reálné praxi",
+        "Odborné workshopy a projektové dny",
+        "Pořádání celostátní literární soutěže Čapkoviny",
+        "Přípravné výtvarné kurzy pro talentové zkoušky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními fakty, čísly a citacemi. Informace jsou jasně strukturovány a snadno pochopitelné pro rodiče bez odborného vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje podrobné informace o počtu absolventů pokračujících v terciárním vzdělávání – uvedeno pouze 'téměř tři čtvrtiny'",
+        "Chybí konkrétní data o počtu žáků s speciálními vzdělávacími potřebami a jejich konkrétních diagnózách",
+        "Nejsou uvedeny konkrétní výsledky v jednotlivých oborech – data jsou agregovaná"
+      ]
+    }
+  }
+}

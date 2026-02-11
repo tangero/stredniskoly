@@ -1,0 +1,116 @@
+{
+  "report_id": "LYC_600009602_2024-06-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:15:02.727230+00:00",
+  "run_finished_utc": "2026-02-09T16:15:26.300493+00:00",
+  "raw_file": "LYC_600009602_2024-06-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600009602_2024-06-10",
+    "school_profile": {
+      "school_type": "Střední odborná škola obchodu, užitého umění a designu",
+      "inspection_period": "10. až 14. června 2024",
+      "school_change_summary": "Počet žáků má vzestupný trend (713 žáků ve 24 třídách). Zvýšil se počet žáků se speciálními vzdělávacími potřebami (55 žáků). Školní poradenské pracoviště bylo posíleno o třetí výchovnou poradkyni a školního psychologa."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Mezinárodní mobilita",
+          "detail": "Škola umožňuje žákům stáže v zahraničí (Německo, Španělsko, Finsko, Irsko, Malta) v rozsahu, který ji řadí mezi šest nejlepších v ČR.",
+          "evidence": "Ve školním roce 2022/2023 vycestovalo 116 žáků na krátkodobé a 13 na dlouhodobé stáže."
+        },
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Žáci dosahují stabilně velmi dobrých výsledků v maturitní zkoušce.",
+          "evidence": "V roce 2023 z 135 žáků byli neúspěšní pouze 2 žáci v profilové části."
+        },
+        {
+          "tag": "Moderní vybavení",
+          "detail": "Škola má vynikající materiální vybavení s digitálními technologiemi a moderními pomůckami.",
+          "evidence": "Průběžná obnova výpočetní techniky, nákup kamer, dronů, brýlí pro virtuální realitu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Individualizace výuky",
+          "detail": "V některých hodinách chybí dostatečná individualizace a reflexe vlastního učení žáků.",
+          "evidence": "Prvky diferenciace byly zaznamenány pouze ojediněle, sebehodnocení bylo využito minimálně."
+        },
+        {
+          "tag": "Prostorová kapacita",
+          "detail": "Ateliéry pro výtvarné obory jsou vzhledem k rostoucímu počtu žáků stísněné.",
+          "evidence": "Aktuální prostorové podmínky nejsou adekvátní nárůstu počtu žáků v těchto oborech."
+        },
+        {
+          "tag": "Neprůchodnost prvních ročníků",
+          "detail": "Nejvíce neprůchodných žáků je v prvních ročnících vzdělávání.",
+          "evidence": "Ve školním roce 2022/2023 neprospělo 2,7 % žáků v maturitních oborech a 7 % v oborech s výučním listem."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různými tempem učení?",
+        "Jaké jsou možnosti doučování a individuální podpory pro žáky v prvním ročníku?",
+        "Jak se škola vypořádává s nedostatkem prostoru v ateliérech výtvarných oborů?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o mezinárodní zkušenosti a jazykový rozvoj (program Erasmus+)",
+        "Talentovaní žáci v oborech design, grafika a multimediální tvorba (řada soutěžních úspěchů)",
+        "Žáci se speciálními vzdělávacími potřebami (55 žáků v péči, školní psycholog, poradenské služby)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní individuální přístup a diferenciaci (v některých předmětech není dostatečně zajištěna)",
+        "Žáci s problémy s adaptací na střední vzdělávání (7 % neprospívajících v prvních ročnících)",
+        "Žáci v oborech s výučním listem (vyšší procento neprospívajících - cca 7 %)"
+      ],
+      "plain_czech_summary": "Škola je moderně vybavená a nabízí kvalitní vzdělání s důrazem na mezinárodní mobilitu. Žáci dosahují velmi dobrých výsledků v maturitách a soutěžích. Silnou stránkou je program Erasmus+ s možností stáží v zahraničí. Slabší je individualizace výuky v některých předmětech a prostorová kapacita ateliérů. Škola má dobrou péči o žáky se speciálními potřebami. Doporučuje se věnovat pozornost prvním ročníkům, kde je vyšší procento neprospívajících."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně velmi dobrý",
+        "key_numbers": [
+          "2023: 135 žáků konalo zkoušku, neúspěšní pouze 2 žáci",
+          "Všichni žáci úspěšní v předmětech společné části",
+          "Zvyšuje se počet žáků úspěšných u mezinárodních jazykových zkoušek"
+        ],
+        "evidence": "V roce 2023 ze 135 maturantů byli neúspěšní pouze 2 v profilové části (Český jazyk a Anglický jazyk)."
+      },
+      "absence": {
+        "trend": "Nízká a kontrolovaná",
+        "key_numbers": [
+          "Průměrná absence 141 hodin na žáka za rok 2022/2023",
+          "Neomluvená absence minimální - cca 0,4 hodiny na žáka",
+          "Účinné postupy vedení školy v této oblasti"
+        ],
+        "evidence": "Díky včasnému individuálnímu řešení případů zvýšené absence se ji daří udržovat na nižších hodnotách."
+      },
+      "support_services": [
+        "Tři výchovné poradkyně zajišťující péči o žáky se speciálními vzdělávacími potřebami",
+        "Školní psycholog na částečný úvazek (nově zřízená pozice)",
+        "Školní metodička prevence aktivně spolupracující s externími odbornými subjekty",
+        "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem"
+      ],
+      "safety_climate": [
+        "Prostředí v obou budovách je celkově bezpečné",
+        "Vchody jsou trvale uzavřeny pro vstup zvenčí, monitorovány",
+        "Žáci jsou pravidelně poučováni o bezpečnostních pravidlech",
+        "Příjemná atmosféra v hodinách, vzájemný respekt mezi učiteli a žáky"
+      ],
+      "partnerships_practice": [
+        "Program Erasmus+ s krátkodobými (až 3 týdny) a dlouhodobými (3 měsíce) odbornými stážemi",
+        "Spolupráce se Západočeskou univerzitou v Plzni, Galerií města Plzeň",
+        "Partnerství se školami v Německu, Španělsku, Finsku, Irsku, Maltě, Slovensku, Polsku",
+        "Spolupráce s odbornými subjekty v prevenci (Ledovec, CP-centrum, Městská policie Plzeň)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelně napsána s jasnou strukturou. Obsahuje konkrétní údaje a citace. Některé pasáže jsou však delší a složitější, což mírně snižuje srozumitelnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní procento žáků s individuálními vzdělávacími plány mimo doporučení poradenských zařízení.",
+        "Není jasné, jaké konkrétní opatření škola plánuje na řešení nedostatku prostoru v ateliérech.",
+        "Chybí informace o počtu učitelů bez pedagogické kvalifikace a jejich konkrétní počet."
+      ]
+    }
+  }
+}

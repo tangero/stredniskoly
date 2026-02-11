@@ -1,0 +1,115 @@
+{
+  "report_id": "SOU_600170276_2024-03-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:21:53.584621+00:00",
+  "run_finished_utc": "2026-02-09T16:22:17.498665+00:00",
+  "raw_file": "SOU_600170276_2024-03-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600170276_2024-03-19",
+    "school_profile": {
+      "school_type": "Střední odborná škola elektrotechnická s obory v elektrotechnice a IT",
+      "inspection_period": "19. března až 22. března 2024",
+      "school_change_summary": "Nový ředitel se zaměřil na zvyšování kvality vzdělávání. Výrazně vzrostl počet žáků (486 v 21 třídách), zlepšily se výsledky maturit a pokračuje modernizace vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s průmyslem",
+          "detail": "Škola intenzivně spolupracuje s firmami z energetiky a IT, které se podílejí na vytváření reálných podmínek pro praktickou výuku a moderním vybavením.",
+          "evidence": "Dlouhodobá spolupráce s externími partnery podporuje rozvoj odbornosti a uplatnění absolventů."
+        },
+        {
+          "tag": "Kvalitní praktická výuka",
+          "detail": "Školní dílny mají moderní technické zázemí, kde žáci získávají praktické dovednosti v reálných podmínkách.",
+          "evidence": "Vysoká odbornost vyučujících a materiálně technické zázemí pozitivně ovlivňují kvalitu vzdělávání."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola nabízí doučování, individuální konzultace a podporu pro žáky s odlišným mateřským jazykem.",
+          "evidence": "V případě zhoršení prospěchu jsou přijímána individuální a konkrétní opatření."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní teoretická výuka",
+          "detail": "Převažuje frontální výuka s výkladem, chybí aktivní metody, které by rozvíjely kritické myšlení a spolupráci žáků.",
+          "evidence": "Kooperativní činnosti byly aplikovány méně často, negativně to ovlivňuje motivaci některých žáků."
+        },
+        {
+          "tag": "Nedostatečná individualizace",
+          "detail": "Diferenciace v teoretické výuce není dostatečná, učitelé málo přizpůsobují výuku individuálním schopnostem žáků.",
+          "evidence": "Podpora nadaných žáků nebo žáků se speciálními potřebami byla zaznamenána výjimečně."
+        },
+        {
+          "tag": "Absence a školní neúspěch",
+          "detail": "Neomluvené absence jsou nejčastějším důvodem pro kázeňská opatření, v některých oborech se promítá do nižších výsledků.",
+          "evidence": "Nižší studijní potenciál spolu s vysokou absencí se promítá do úrovně dosahovaných výsledků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi a jak se to liší mezi obory?",
+        "Jaké jsou konkrétní výsledky spolupráce s firmami – kolik procent absolventů se uplatní u partnerských firem?",
+        "Jak škola řeší vysokou absenci a jaké jsou důsledky pro prospěch žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci s praktickým zaměřením a zájmem o elektrotechniku či IT, kteří se chtějí rychle uplalit na trhu práce",
+        "Studenti, kteří potřebují podporu a doučování – škola nabízí konzultace a doučovací aktivity",
+        "Žáci ze vzdálenějších míst – škola provozuje domov mládeže se 130 místy a nabízí pestrý program volného času"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se lépe učí aktivními metodami a diskusí – teoretická výuka je spíše tradiční a frontální",
+        "Studenti s nižší motivací – absence a nižší motivace se promítají do výsledků, zejména v některých oborech",
+        "Žáci, kteří potřebují individuální přístup – diferenciace v teoretické výuce není dostatečná"
+      ],
+      "plain_czech_summary": "Elektrotechnická škola v Hluboké nad Vltavou je moderní zařízení s dobrým vybavením a silnými vazbami na průmysl. Absolventi se velmi dobře uplatňují na trhu práce. Škola má však rezervy v teoretické výuce – chybí aktivní metody a individualizace. Nižší motivace a absence některých žáků jsou problém. Nový ředitel školu zlepšuje, počet žáků roste a maturitní výsledky se zlepšují."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – výrazné zlepšení",
+        "key_numbers": [
+          "V loňském školním roce dosáhla škola ve společné části maturitní zkoušky srovnatelných nebo lepších výsledků než stejné skupiny oborů v celorepublikovém srovnění",
+          "Úspěšnost se postupně zvýšila v reakci na dříve nepříznivé výsledky"
+        ],
+        "evidence": "Vedení školy se zaměřilo na vyhodnocení příčin neúspěchu a přijetí efektivních opatření."
+      },
+      "absence": {
+        "trend": "Problematická – vysoká absence",
+        "key_numbers": [
+          "Neomluvené absence jsou nejčastějším důvodem pro udělování kázeňských opatření",
+          "Vysoká absence se promítá do nižších výsledků v některých oborech"
+        ],
+        "evidence": "Nižší studijní potenciál spolu s vysokou absencí se promítá do úrovně dosahovaných výsledků."
+      },
+      "support_services": [
+        "Doučování v hlavních teoretických předmětech podle individuálních potřeb",
+        "Lekce anglického jazyka s rodilým mluvčím",
+        "Čtenářský kroužek zaměřený na rozvoj čtenářské gramotnosti",
+        "Individuální konzultace pro žáky ohrožené školním neúspěchem",
+        "Podpora žáků s odlišným mateřským jazykem"
+      ],
+      "safety_climate": [
+        "Hospitovaná výuka probíhala v respektující atmosféře",
+        "Důraz na dodržování zásad bezpečnosti a ochrany zdraví v odborném výcviku",
+        "Aktivity k prevenci rizikového chování realizovány formou projektů, adaptačních kurzů a třídnických hodin"
+      ],
+      "partnerships_practice": [
+        "Intenzivní spolupráce s firmami z oblasti energetiky a informačních technologií",
+        "Firmy se podílejí na vytváření reálných podmínek pro praktické vyučování a vybavení moderními technologiemi",
+        "Stipendia poskytovaná budoucími zaměstnavateli posilují motivaci žáků",
+        "Dlouhodobá spolupráce se zahraničními školami a účast v projektech ERASMUS+",
+        "Zpětná vazba od partnerských firem pro monitoring výsledků vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní čísla o absencích, počtech opakujících žáků nebo podrobné statistiky maturit.",
+      "uncertainty_notes": [
+        "Není jasné, jaké jsou konkrétní procenta úspěšnosti u maturit – zpráva mluví jen o 'srovnatelných nebo lepších výsledcích'",
+        "Chybí konkrétní data o počtu žáků, kteří předčasně opustili studium, zejména u nástavbového studia",
+        "Není specifikováno, v kterých oborech je absence a nižší motivace největším problémem"
+      ]
+    }
+  }
+}

@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "LYC_600018156_2025-04-09",
+  "school_profile": {
+    "school_type": "Střední škola informatiky, elektrotechniky a řemesel s domovem mládeže a školní jídelnou",
+    "inspection_period": "9. 4. – 10. 4. 2025 a 14. 4. – 16. 4. 2025",
+    "school_change_summary": "Od srpna 2023 nová ředitelka systematicky naplňuje koncepční cíle. Proběhly rekonstrukce střech, hřiště, výtahu, modernizace šaten a bezpečného propojení budov. Rozšířeno poradenské pracoviště o speciálního a sociálního pedagoga. Založen školní parlament."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s praxí",
+        "detail": "Škola úzce spolupracuje s podniky v regionu, žáci absolvují praktické vyučování v reálném pracovním prostředí s nejmodernějšími technologiemi.",
+        "evidence": "Dlouhodobé partnerství se smluvními pracovišti, sponzorské dary firem na rozvoj výuky."
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Systematická podpora ohrožených žáků včetně doučování, individuálních plánů a asistentů pedagoga.",
+        "evidence": "Prezenční i online doučování, pedagogické intervence, efektivní využití asistentů pedagoga."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují výrazných úspěchů v literárních soutěžích na krajské úrovni a středoškolské odborné činnosti na celostátní úrovni.",
+        "evidence": "Pravidelná významná umístění v matematických soutěžích, soutěžích zručnosti a tvůrčí činnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá komunikace s rodiči",
+        "detail": "Rodiče nejsou dostatečně informováni o strategických záměrech a cílech školy.",
+        "evidence": "Inspekce zjistila nízkou úroveň informovanosti zákonných zástupců o strategických záměrech školy."
+      },
+      {
+        "tag": "Domov mládeže v špatném stavu",
+        "detail": "Ubytovací zařízení je zastaralé, zanedbané a nedostatečně zabezpečené proti vstupu nepovolaných osob.",
+        "evidence": "Chybí rozvojová koncepce, prostory nejsou dostatečně zabezpečeny, zázemí je esteticky nepodnětné."
+      },
+      {
+        "tag": "Omezená práce s informacemi",
+        "detail": "Žáci nejsou dostatečně vedeni k propojování znalostí s reálnými situacemi a práce s informačními zdroji probíhá nahodile.",
+        "evidence": "Omezená podpora v propojování znalostí s reálným životem, nahodilá práce s informačními zdroji."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá spolupráce s firmami a jak se praktické zkušenosti promítají do výuky teoretických předmětů?",
+      "Jaké jsou konkrétní plány na zlepšení stavu domova mládeže a kdy se začnou realizovat?",
+      "Jak se škola zaměřuje na rozvoj digitální gramotnosti a práce s informačními zdroji?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a práci v technických oborech, kteří se chtějí učit v moderně vybaveném prostředí",
+      "Studenti, kteří potřebují individuální podporu a doučování – škola má systém péče o slabší žáky",
+      "Talentovaní žáci zajímající se o soutěže a projekty – škola aktivně podporuje jejich zapojení"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří chtějí být aktivně zapojeni do školního života – komunikace se školou není optimální",
+      "Žáci, kteří bydlí v domově mládeže – zařízení je v špatném stavu a nedostatečně zabezpečené",
+      "Studenti, kteří potřebují silnou podporu v propojování teorie s praxí a práci s informačními zdroji"
+    ],
+    "plain_czech_summary": "Škola je moderně vybavená a dobře spolupracuje s firmami, kde se žáci učí praktické dovednosti. Má kvalitní systém podpory slabších žáků a úspěšné studenty v soutěžích. Problém je slabá komunikace s rodiči o cílech školy a špatný stav domova mládeže. Inspekce také upozorňuje, že žáci nejsou dost vedeni k propojování znalostí s reálným životem a práce s informacemi probíhá náhodně."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – zlepšení v některých oborech, zhoršení v jiných",
+      "key_numbers": [
+        "Podnikání: zlepšení z pod průměru na 4 neprospěvající žáky v 2023/2024",
+        "Mechanik elektrotechnik: všichni žáci uspěli v 2023/2024",
+        "Informační technologie: mírné zhoršení, 2 neprospěvající žáci"
+      ],
+      "evidence": "Výsledky maturitní zkoušky se lišily v závislosti na skupině oborů. V nástavbovém studiu došlo k výraznému zlepšení, u mechaniků elektrotechniků všichni uspěli."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje konkrétní údaje o absence žáků."
+    },
+    "support_services": [
+      "Školní psycholožka, dvě výchovné poradkyně, tři metodičky prevence",
+      "Speciální a sociální pedagog (nově rozšířeno)",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+      "Doučování v klíčových předmětech (prezenční i online)",
+      "Kariérové poradenství ve spolupráci s absolventy a zaměstnavateli"
+    ],
+    "safety_climate": [
+      "Pravidelné poskytování informací o rizicích spojených s pobytem ve škole",
+      "Osobní ochranné pracovní prostředky v praktické výuce",
+      "Klima školy, tříd a domova mládeže je pravidelně monitorováno",
+      "Účinná opatření při výskytu negativních jevů",
+      "RIZIKO: Domov mládeže není dostatečně zabezpečen proti vstupu nepovolaných osob"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s podniky v regionu na praktické přípravě žáků",
+      "Spolupráce s úřady práce, Městským úřadem a Krajským úřadem Zlínského kraje",
+      "Aktivní spolupráce se základními školami na podporu zájmu o polytechnické vzdělávání",
+      "Zapojení do programu Erasmus+ v oblasti informačních technologií",
+      "Spolupráce s vysokými školami a absolventy na kariérovém poradenství"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však delší a složitější, zejména v části o průběhu vzdělávání.",
+    "uncertainty_notes": [
+      "Absence není v textu specifikována – není jasné, zda je problém nebo ne",
+      "Konkrétní počty žáků s jednotlivými problémy nejsou vždy jasné",
+      "Některé údaje o maturitě chybí (např. přesné procenta úspěšnosti)"
+    ]
+  }
+}
+```

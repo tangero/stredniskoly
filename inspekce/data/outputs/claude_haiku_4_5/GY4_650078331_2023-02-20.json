@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_650078331_2023-02-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:46:51.043161+00:00",
+  "run_finished_utc": "2026-02-09T16:47:15.187334+00:00",
+  "raw_file": "GY4_650078331_2023-02-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_650078331_2023-02-20",
+    "school_profile": {
+      "school_type": "Gymnázium Jana Šabršuly s.r.o., čtyřleté gymnázium se zaměřením na jazyky",
+      "inspection_period": "20. února 2023 až 22. února 2023",
+      "school_change_summary": "Od inspekce v roce 2015 se zlepšily materiální podmínky. Personální obsazení zůstalo na vysoké úrovni, zejména v cizojazyčném vzdělávání. Nedostatek bezbariérového vstupu nebyl dosud vyřešen."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Škola systematicky rozvíjí jazykové kompetence s možností složit mezinárodní zkoušky přímo ve škole (B2, C1 z angličtiny).",
+          "evidence": "Výuka třetího cizího jazyka, bezplatné přípravné kurzy, personální propojení s jazykovými centry."
+        },
+        {
+          "tag": "Výsledky maturit",
+          "detail": "V posledních dvou letech 100% úspěšnost v maturitě z češtiny, nadprůměrné výsledky v čtenářské a přírodovědné gramotnosti.",
+          "evidence": "Školní roky 2020/2021 a 2021/2022 stoprocentní úspěšnost v maturitě, výborné výsledky v testování 2022/2023."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Nízký počet kázeňských opatření, žádný žák se sníženým stupněm chování, nulová neomluvená absence.",
+          "evidence": "Efektivní prevence sociálně patologických jevů, pružné řešení problémů v malé škole."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita žáků ve výuce",
+          "detail": "Žáci nejsou dostatečně vedeni k sebehodnocení a vzájemnému hodnocení, chybí jim zpětná vazba na jejich práci.",
+          "evidence": "Hospitace ukázaly, že žáci byli jen v omezené míře vedeni k objektivnímu posouzení kvality práce vrstevníků."
+        },
+        {
+          "tag": "Omezené aktivizační metody",
+          "detail": "Výuka často dominuje frontální výklad, málo se uplatňují metody podporující spolupráci a kritické myšlení.",
+          "evidence": "Činnosti podporující kooperaci žáků byly uplatněny v malé míře, škála metod byla málo pestrá."
+        },
+        {
+          "tag": "Přístupnost budovy",
+          "detail": "Bezbariérový vstup nebyl od inspekce v roce 2015 vyřešen.",
+          "evidence": "Doporučení z minulé inspekční činnosti se nepodařilo naplnit."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky s odlišným mateřským jazykem a jak se jim daří v češtině?",
+        "Jaké jsou konkrétní plány na řešení bezbariérového přístupu do budovy?",
+        "Jak se škola chystá zlepšit aktivizaci žáků a zavádět více skupinové práce?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní komunikaci – škola nabízí výuku až tří cizích jazyků a přípravu na mezinárodní zkoušky.",
+        "Motivovaní studenti s dobrými předpoklady – gymnázium má vysoké nároky a podporuje nadané žáky rozmanitými aktivitami.",
+        "Žáci hledající bezpečné a klidné prostředí – nízká kriminalita, dobrá disciplína, pružná péče o problémy."
+      ],
+      "who_should_be_cautious": [
+        "Žáci se zdravotním postižením – budova není bezbariérově přístupná.",
+        "Žáci preferující interaktivní a skupinovou výuku – výuka je často frontální s dominantní rolí učitele.",
+        "Žáci s nižšími předpoklady – gymnázium je náročné a individuální podpora je poskytována spíše okrajově."
+      ],
+      "plain_czech_summary": "Gymnázium Jana Šabršuly je kvalitní soukromá škola se silným zaměřením na jazyky. Žáci dosahují výborných výsledků v maturitě a mezinárodních testech. Prostředí je bezpečné a disciplinované. Hlavní slabinou je, že výuka není dostatečně interaktivní – žáci jsou spíše pasivní posluchači než aktivní účastníci. Škola také dosud nevyřešila přístupnost pro osoby se zdravotním postižením. Vhodná pro motivované jazykáře, méně vhodná pro ty, kdo potřebují více individuální péče."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – výrazné zlepšení",
+        "key_numbers": [
+          "2020/2021 a 2021/2022: 100% úspěšnost v maturitě z češtiny",
+          "2022/2023: nadprůměrné výsledky v čtenářské a přírodovědné gramotnosti",
+          "2017–2020: horší výsledky než průměr ČR, nyní vyřešeno"
+        ],
+        "evidence": "Škola přijímala opatření na zlepšení, která se projevila v delším časovém odstupu. Poslední výběrové zjišťování ukazuje výborné výsledky."
+      },
+      "absence": {
+        "trend": "Velmi dobrý",
+        "key_numbers": [
+          "Nulová neomluvená absence",
+          "Počet zameškaných hodin odpovídá typu školy",
+          "Žádný žák se sníženým stupněm chování"
+        ],
+        "evidence": "Nízký počet uložených kázeňských opatření, efektivní prevence sociálně patologických jevů."
+      },
+      "support_services": [
+        "Výchovný poradce a metodika prevence – zastává je zástupce ředitelky",
+        "Kariérové poradenství – komplexní diagnostika profesní orientace pro výběr vysoké školy",
+        "Individuální pomoc žákům se slabším prospěchem – delší časový prostor, motivační pohovory, možnost opravy testů"
+      ],
+      "safety_climate": [
+        "Klidná a příjemná pracovní atmosféra se vzájemným přirozeným respektem",
+        "Nízký počet kázeňských opatření a nulová neomluvená absence",
+        "Efektivní prevence sociálně patologických jevů s využitím besed a projektů"
+      ],
+      "partnerships_practice": [
+        "Personální propojení učitelů s vysokými školami a certifikovanými jazykovými centry",
+        "Úzká spolupráce vedení s vysokými školami pro kariérové poradenství",
+        "Smluvní zajištění stravování v prostorách základní školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitě strukturované a obsahují dlouhé věty typické pro úřední styl, což může ztížit porozumění rodičům bez pedagogického vzdělání.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje přesný počet žáků s odlišným mateřským jazykem a jejich konkrétní výsledky – pouze uvádí, že jsou tři.",
+        "Není jasné, jak dlouho trvá řešení bezbariérového vstupu a jaké jsou konkrétní plány.",
+        "Individuální podpora slabším žákům je popsána jako 'okrajová', ale chybí konkrétní čísla o počtu takto podporovaných žáků."
+      ]
+    }
+  }
+}

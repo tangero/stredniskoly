@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "LYC_600008304_2023-02-24",
+  "school_profile": {
+    "school_type": "Obchodní akademie a Jazyková škola s právem státní jazykové zkoušky, střední škola se čtyřletými obory zakončenými maturitou",
+    "inspection_period": "24. února až 28. února 2023",
+    "school_change_summary": "Od poslední inspekce vzrostl počet žáků i tříd. Průběžně se zlepšují materiální podmínky a modernizace. Navýšily se finanční prostředky z projektů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Žáci úspěšně skládají mezinárodní zkoušky z angličtiny a dosahují nadstandardní úrovně v cizích jazycích.",
+        "evidence": "Žáci úspěšně skládají mezinárodní zkoušky z angličtiny, kterými nahrazují školní část maturitní zkoušky."
+      },
+      {
+        "tag": "Mezinárodní spolupráce",
+        "detail": "Dlouhodobá spolupráce se zahraničními školami a projekty Erasmus+ podporují osobnostní rozvoj a jazykové kompetence.",
+        "evidence": "Nadstandardní dlouhodobá spolupráce s několika zahraničními školami v rámci projektů významně podporuje celistvý osobnostní rozvoj."
+      },
+      {
+        "tag": "Vysoká úspěšnost",
+        "detail": "Velmi nízký počet neprospívajících žáků a vysoký podíl prospívajících s vyznamenáním.",
+        "evidence": "Ve školním roce 2021/2022 neprospělo pouze 1 % žáků, 12 % prospělo s vyznamenáním."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita výuky",
+        "detail": "Výuka se zaměřuje především na vědomosti, chybí moderní vzdělávací strategie, diferenciace a formativní hodnocení.",
+        "evidence": "Ve výuce nejsou využívány efektivní vzdělávací strategie, včetně formativního hodnocení a diferenciace."
+      },
+      {
+        "tag": "Frontální výuka",
+        "detail": "Převažuje frontální forma výuky, která neaktivizuje všechny žáky a omezuje rozvoj klíčových kompetencí.",
+        "evidence": "Ve sledovaných hodinách převažovala forma frontální výuky, která neaktivizovala všechny žáky."
+      },
+      {
+        "tag": "Slabší výsledky v matematice",
+        "detail": "Obor obchodní akademie měl horší výsledky v matematice a češtině než srovnatelné školy v ČR.",
+        "evidence": "Obor obchodní akademie zaznamenal ve školním roce 2021/2022 horší výsledky v matematice a češtině."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje individuální potřeby žáků s různými schopnostmi? Jaké jsou možnosti diferenciace?",
+      "Jaké moderní metody výuky a digitální technologie se používají v jednotlivých předmětech?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a kreativního řešení problémů?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí výměnné pobyty a projekty Erasmus+",
+      "Studenti plánující vysokoškolské studium – většina absolventů pokračuje na vysoké škole",
+      "Žáci s ambicí v ekonomických oborech – ekonomické lyceum dosahuje nadprůměrných výsledků"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní a interaktivní výuku – převažuje frontální forma výuky s omezeným prosorem pro diskusi",
+      "Nadaní žáci hledající výzvu – chybí cílená podpora nadaných žáků a jejich specifických potřeb",
+      "Studenti oboru obchodní akademie v matematice – tento obor vykazuje slabší výsledky v matematice než srovnatelné školy"
+    ],
+    "plain_czech_summary": "Obchodní akademie v Jindřichově Hradci je stabilní střední školou se silným zaměřením na jazyky a mezinárodní spolupráci. Žáci dosahují dobrých výsledků, zejména v cizích jazycích a ekonomických oborech. Škola nabízí kvalitní materiální zázemí a podporu nadaných žáků. Hlavní výzvou je modernizace výuky – chybí diferenciace, formativní hodnocení a aktivnější metody. Výuka se zaměřuje spíše na vědomosti než na rozvoj klíčových kompetencí. Škola by měla více investovat do dalšího vzdělávání pedagogů v moderních vzdělávacích strategiích."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Ekonomické lyceum dlouhodobě nadprůměrné, obchodní akademie slabší v matematice",
+      "key_numbers": [
+        "Ekonomické lyceum: nadprůměrná úroveň v porovnání se školami podobného zaměření",
+        "Obchodní akademie: horší výsledky v matematice a češtině než srovnatelné školy v ČR (2021/2022)",
+        "Neprospívajících žáků: pouze 1 % (2021/2022)"
+      ],
+      "evidence": "Úspěšnost žáků u maturitní zkoušky je u oboru ekonomické lyceum dlouhodobě na nadprůměrné úrovni. Obor obchodní akademie zaznamenal horší výsledky v matematice a češtině."
+    },
+    "absence": {
+      "trend": "Velmi nízká absence, minimální neomluvenost",
+      "key_numbers": [
+        "Poměrně nízká absence",
+        "Neomluvenou absenci minimalizuje se, zapříčiněna pouze jednotlivci",
+        "12 % žáků prospělo s vyznamenáním"
+      ],
+      "evidence": "Škola zaznamenává poměrně nízkou absenci, minimalizovat se daří i neomluvenou absenci, která je zapříčiněna pouze jednotlivci."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně a metodik prevence",
+      "Speciální podpora: dvě asistentky pedagoga pro žáky se speciálními vzdělávacími potřebami (7 žáků ze 216)",
+      "Doučování pro žáky ohrožené školním neúspěchem v rámci projektů",
+      "Individuální konzultace nabízené všemi vyučujícími",
+      "Adaptační kurzy pro nastupující žáky"
+    ],
+    "safety_climate": [
+      "Pozitivní atmosféra a vzájemný respektující přístup mezi vyučujícími a žáky",
+      "Pochvaly za vzornou reprezentaci a plnění povinností výrazně převyšují kázeňská opatření",
+      "Preventivní program spíše formální, chybí pravidelný monitoring školního klimatu",
+      "Adaptační kurzy podporují vytváření zdravých vztahů v kolektivu"
+    ],
+    "partnerships_practice": [
+      "Nadstandardní dlouhodobá spolupráce s několika zahraničními školami",
+      "Projekty Erasmus+ a mezinárodní program DofE",
+      "Spolupráce se zřizovatelem (Jihočeský kraj) a Městem Jindřichův Hradec",
+      "Spolupráce s vysokými školami – absolventi získávají informace o nárocích návazného studia",
+      "Řada regionálních i nadregionálních partnerů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Silné a slabé stránky jsou konkrétně popsány s příklady. Některé pasáže jsou technicky náročnější, ale celkově je text pro rodiče dobře pochopitelný.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků v jednotlivých třídách, což by pomohlo lépe pochopit velikost skupin",
+      "Chybí konkrétní příklady z hospitovaných hodin – není jasné, které předměty měly lepší a horší výsledky",
+      "Není specifikováno, které zahraniční školy jsou partnery a jaké konkrétní projekty škola realizuje"
+    ]
+  }
+}
+```

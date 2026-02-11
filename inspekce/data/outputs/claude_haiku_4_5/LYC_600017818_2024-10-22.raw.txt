@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "LYC_600017818_2024-10-22",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola s maturitou v oborech Strojírenství, Technické lyceum a Elektrotechnika",
+    "inspection_period": "22.–24. 10. 2024",
+    "school_change_summary": "Od poslední inspekce došlo ke zkvalitnění školního poradenského pracoviště a intenzivní renovaci prostředí s realizací významných investičních projektů. Počet žáků roste každoročně od roku 2020, zájem o Elektrotechniku roste, o Strojírenství mírně klesá."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola efektivně spolupracuje se sociálními partnery a firmami, žáci získávají praktické zkušenosti v reálném pracovním prostředí.",
+        "evidence": "Praktické vyučování probíhá ve školních dílnách a u smluvních partnerů, kde žáci rozvíjejí odborné i sociální kompetence."
+      },
+      {
+        "tag": "Příznivá školní atmosféra",
+        "detail": "Vedení školy vytváří pozitivní a přátelské prostředí, které posiluje zájem žáků o vzdělávání.",
+        "evidence": "Pravidelné dotazníkové šetření klimatu školy, pozitivní komunikace s žáky a zákonnými zástupci."
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Škola identifikuje ohrožené žáky a nabízí jim doučování, konzultace a podporu školního poradenského pracoviště.",
+        "evidence": "Bezodkladná opatření ke snížení absence, práce s žáky se speciálními vzdělávacími potřebami."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená aktivizace ve výuce",
+        "detail": "Chybí práce v skupinách, diskuse a práce s různými zdroji informací, což omezuje rozvoj kritického myšlení.",
+        "evidence": "Frontální vyučování převažuje, skupinová práce je méně časté, chybí práce s chybou."
+      },
+      {
+        "tag": "Nedostatečné sebehodnocení žáků",
+        "detail": "Sebehodnocení a vzájemné hodnocení nejsou systematicky využívány, což omezuje rozvoj sebereflexe.",
+        "evidence": "Závěrečné shrnutí je rozpracováno, ale sebehodnocení a vzájemné hodnocení využito jen ojediněle."
+      },
+      {
+        "tag": "Slabší individualizace výuky",
+        "detail": "Diferenciace učebních aktivit podle individuálních potřeb je omezená, nadaní žáci nemají dostatek rozšiřujících úkolů.",
+        "evidence": "Pro žáky s rychlejším tempem připraveny další rozvíjející úkoly zřídkakdy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané a talentované žáky? Jaké soutěže a projekty nabízí?",
+      "Jaké jsou výsledky absolventů při přijetí na vysoké školy a jejich uplatnění v praxi?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a samostatného myšlení žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci zainteresovaní na praktickém vzdělání s propojením na reálný pracovní svět",
+      "Studenti, kteří chtějí získat odborné dovednosti v technických oborech a připravit se na vysokou školu",
+      "Žáci, kteří potřebují podporu a individuální přístup – škola má funkční poradenské pracoviště"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují interaktivní a skupinovou práci – výuka je spíše frontální",
+      "Studenti, kteří potřebují silnější podporu rozvoje kritického myšlení a diskusí",
+      "Žáci, kteří se učí lépe prostřednictvím sebehodnocení a reflexe – ty nejsou dostatečně využívány"
+    ],
+    "plain_czech_summary": "Střední průmyslová škola v Přerově je dobře vedená instituce s rostoucím počtem žáků. Její silnou stránkou je propojení teoretické výuky s praxí u partnerských firem a příznivá školní atmosféra. Škola má kvalitní poradenské pracoviště a podporuje slabší žáky. Zlepšit by měla aktivizační metody ve výuce – více skupinové práce, diskusí a práce s různými zdroji. Chybí také systematické využívání sebehodnocení žáků a lepší individualizace výuky pro nadané studenty."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s kolísáním podle oborů",
+      "key_numbers": [
+        "Hrubá neúspěšnost v posledních třech letech odpovídá průměrným celostátním výsledkům",
+        "Výsledky ve společné části maturitní zkoušky vykazují kolísavou úroveň podle studijních oborů"
+      ],
+      "evidence": "Škola pravidelně zpracovává rozbor výsledků, analyzuje příčiny neúspěšnosti a navrhuje systémová opatření."
+    },
+    "absence": {
+      "trend": "Aktivně řešená",
+      "key_numbers": [
+        "Škola bezodkladně přijímá opatření ke snížení absence žáků"
+      ],
+      "evidence": "K pozitivním výsledkům vzdělávání přispívá bezodkladné řešení absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, školní metodik prevence, kariérová poradkyně",
+      "Doučování a konzultace pro žáky ohrožené školním neúspěchem",
+      "Podpora žáků se speciálními vzdělávacími potřebami a nadaných žáků"
+    ],
+    "safety_climate": [
+      "V hodnocených vyučovacích hodinách panovala pozitivní pracovní a bezpečná sociální atmosféra",
+      "Vedení školy pravidelně monitoruje klima školy pomocí dotazníkových šetření",
+      "Prevence rizikového chování je plánovitá a pravidelně vyhodnocovaná"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s hospodářskými subjekty, Univerzitou Tomáše Bati ve Zlíně (fakultní škola) a VŠB-TU Ostrava",
+      "Praktické vyučování zajištěno ve školních pracovištích a u smluvních partnerů",
+      "Společné projekty, soutěže (RoboticX), workshopy a odborné exkurze"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a citace. Slabší stránky jsou jasně identifikovány s odkazem na kritéria. Mírně snižuje srozumitelnost pro rodiče vysoká míra odborné terminologie a administrativního stylu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní procenta úspěšnosti u maturity – pouze obecné tvrzení o stabilitě a shodě s průměrem",
+      "Chybí konkrétní počty žáků v jednotlivých oborech a jejich vývoj v čase",
+      "Není jasné, kolik procent žáků využívá doučování a jaká je jeho efektivita"
+    ]
+  }
+}
+```

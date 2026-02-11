@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_610451251_2022-01-10",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:05:51.020503+00:00",
+  "run_finished_utc": "2026-02-10T08:07:47.938452+00:00",
+  "raw_file": "LYC_610451251_2022-01-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_610451251_2022-01-10",
+    "school_profile": {
+      "school_type": "Waldorfská škola (MŠ, ZŠ, SŠ) s uměleckými a řemeslnými obory",
+      "inspection_period": "10. až 13. ledna 2022",
+      "school_change_summary": "Od roku 2016 školu vede nový ředitel, byla zřízena MŠ a navýšila se kapacita SŠ, která je využívána z 65 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky",
+          "detail": "Škola učí dva cizí jazyky od prvního ročníku s podporou rodilého mluvčího.",
+          "evidence": "Výuka byla efektivní a podpořena působením rodilého mluvčího... Důraz byl kladen na komplexní prohlubování cizojazyčných kompetencí."
+        },
+        {
+          "tag": "Vztahy a prostředí",
+          "detail": "Panuje zde příjemné, respektující prostředí s důrazem na vzájemnou toleranci a spolupráci.",
+          "evidence": "Ve škole panovalo celkově příjemné prostředí... Všichni zúčastnění byli k sobě tolerantní, respektovali odlišnosti."
+        },
+        {
+          "tag": "Rozvoj osobnosti",
+          "detail": "Důraz na všestranný rozvoj v teoretických, praktických i uměleckých oblastech.",
+          "evidence": "Vzdělávací cíle vycházely z konceptu školy zaměřeného na všestranný rozvoj v teoretických, praktických i uměleckých oblastech."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturita",
+          "detail": "Škola má v porovnání s ostatními výrazně vyšší neúspěšnost u společné části maturit.",
+          "evidence": "V příslušné skupině oborů v ČR jedná o výrazně vyšší neúspěšnost... neúspěšnost tak činila 20 %... 7,7 %, resp. na 5,9 %."
+        },
+        {
+          "tag": "Kvalifikace a vybavení",
+          "detail": "Problémy s nedostatečnou kvalifikací pedagogů a špatnou výpočetní technikou.",
+          "evidence": "Přetrvávají problémy v zajištění kvalitní výpočetní techniky... či v zajištění plně kvalifikovaného pedagogického sboru."
+        },
+        {
+          "tag": "Vedení a dokumentace",
+          "detail": "Slabá kontrolní činnost vedení vede k chybám v dokumentaci a nejasnostem v hodnocení.",
+          "evidence": "V důsledku nízké účinnosti kontrolního systému školy byly oba [školní řády] vydány s dílčími nedostatky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pomáhá žákům, kteří mají potíže s maturitními testy z češtiny a cizích jazyků?",
+        "V jakých předmětech vyučují nekvalifikovaní učitelé a jak škola řeší jejich další vzdělávání?",
+        "Jakým způsobem jsou ve výuce využívány počítače a moderní technologie, když inspekce zjistila jejich nedostatečné vybavení?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, kteří potřebují podpůrné a tolerantní prostředí a hledají alternativní přístup ke vzdělávání.",
+        "Pro tvůrčí osobnosti se zájmem o umění, řemesla nebo humanitní obory.",
+        "Pro rodiny, které preferují úzkou spolupráci se školou a zapojení do komunitních akcí."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří preferují klasické vyučování a silné zaměření na digitální technologie a práci s informacemi.",
+        "Pro ty, kteří očekávají bezproblémový průběh státních maturit bez nutnosti intenzivní přípravy.",
+        "Pro studenty, kteří vyžadují striktně vymezená pravidla hodnocení a klasifikační systém od začátku studia."
+      ],
+      "plain_czech_summary": "Waldorfská škola v Příbrami nabízí unikátní prostředí s důrazem na umění, řemesla a osobnostní rozvoj dětí. Výuka probíhá v příjemné, respektující atmosféře a zahrnuje dva cizí jazyky od první třídy. Škola má ale své slabiny: inspekce upozornila na výrazně vyšší neúspěšnost u maturitních zkoušek ve srovnání s celorepublikovým průměrem. Dále kritizovala nedostatečnou kvalifikaci části učitelů, špatnou výpočetní techniku a slabou kontrolní činnost vedení. Pro rodiče, kteří hledají alternativní vzdělání s lidským přístupem, může být škola dobrou volbou, ale měli by se aktivně zajímat o přípravu na státní zkoušky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavá úspěšnost, v posledních letech se zlepšuje, ale zůstává podprůměrná.",
+        "key_numbers": [
+          "Neúspěšnost 20 % (2018/2019)",
+          "Neúspěšnost 5,9 % (2020/2021)",
+          "Největší problémy v češtině a cizích jazycích"
+        ],
+        "evidence": "V příslušné skupině oborů v ČR jedná o výrazně vyšší neúspěšnost... neúspěšnost se tak snížila na 7,7 %, resp. na 5,9 %."
+      },
+      "absence": {
+        "trend": "Průměrná, bez závažných problémů.",
+        "key_numbers": [
+          "Průměrná absence srovnatelná s ostatními školami",
+          "Mírně vyšší absence v tříletých oborech",
+          "Nulová neomluvená absence"
+        ],
+        "evidence": "Průměrná absence na žáka za školní rok byla srovnatelná s ostatními školami... Neomluvená absence se v ZŠ ani v SŠ nevyskytla."
+      },
+      "support_services": [
+        "Fungující školní poradenské pracoviště (psycholog, speciální pedagog, metodici prevence).",
+        "Nabídka doučování a konzultací pro žáky s potížemi.",
+        "Individuální přístup a časté konzultace se zákonnými zástupci."
+      ],
+      "safety_climate": [
+        "Tolerantní a respektující klima bez vážných disciplinárních problémů.",
+        "Nulový výskyt sníženého stupně z chování za poslední dva roky.",
+        "Vzájemná podpora mezi žáky a učiteli."
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce s rodiči a Společností waldorfské školy Příbram.",
+        "Zapojení do programu Erasmus+ pro středoškoláky.",
+        "Pořádání častých veřejných akcí (jarmarky, divadla) propojujících školu s veřejností."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, srozumitelně strukturovaná a jazykově správná. Obsahuje minimum administrativního žargonu a důležité informace jsou jasně odděleny v závěru.",
+      "uncertainty_notes": [
+        "Nejasné procento neúspěšnosti maturit v roce 2020/2021 (5,9 % vs. kontext 'výrazně vyšší neúspěšnost').",
+        "Chybí přesné údaje o počtu nekvalifikovaných učitelů, pouze obecné konstatování."
+      ]
+    }
+  }
+}

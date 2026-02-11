@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600170853_2025-09-29",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:33:14.391219+00:00",
+  "run_finished_utc": "2026-02-09T13:33:43.431190+00:00",
+  "raw_file": "SOS_600170853_2025-09-29.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170853_2025-09-29",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola stavební s domovem mládeže a školní jídelnou",
+      "inspection_period": "29. září až 2. října 2025",
+      "school_change_summary": "Od poslední inspekce (2022) došlo k personálním změnám ve vedení a pedagogickém sboru (5 nových učitelů), zlepšily se materiální podmínky (rekonstrukce domova mládeže, nová IT učebna, venkovní učebna), ale přetrvávají problémy s komunikací uvnitř školy a aktivizací žáků ve výuce."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka",
+          "detail": "Odborný výcvik je velmi dobře zajištěn kvalifikovanými učiteli, žáci pracují se zájmem a získávají praktické dovednosti v reálných podmínkách.",
+          "evidence": "Učitelé odborného výcviku jsou odborně erudovaní, vedou žáky trpělivě a efektivně využívají čas výuky."
+        },
+        {
+          "tag": "Chování a prevence",
+          "detail": "Žáci vykazují velmi dobré chování, žádný snížený stupeň za poslední období, škola úspěšně řeší prevenci šikany a návykových látek.",
+          "evidence": "Pozitivní bilance hodnocení chování potvrzuje výchovné působení školy v osobnostním rozvoji žáků."
+        },
+        {
+          "tag": "Domov mládeže",
+          "detail": "Prostředí domova mládeže je čisté, upravené a podporuje žáky v přípravě na vyučování i volném čase.",
+          "evidence": "Rekonstrukce domova mládeže s modernizací vnitřního vybavení, ubytováno 96 žáků z několika středních škol."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Komunikace ve škole",
+          "detail": "Předávání informací uvnitř školy není funkční, ne všichni pedagogové využívají elektronický systém Edookit, ředitelka je fyzicky oddělena od hlavní budovy.",
+          "evidence": "Kancelář ředitelky se nachází mimo hlavní budovu teoretického vyučování, což má negativní dopad na řešení aktuálních problémů."
+        },
+        {
+          "tag": "Podpora žáků se speciálními potřebami",
+          "detail": "Žáci se speciálními vzdělávacími potřebami a s odlišným mateřským jazykem nedostávají potřebnou podporu, chybí diferenciace úkolů.",
+          "evidence": "Více než polovina žáků se speciálními potřebami v maturitních oborech má nedostatečný prospěch, nejsou jim poskytována podpůrná opatření."
+        },
+        {
+          "tag": "Monotónní teoretická výuka",
+          "detail": "Výuka převažuje frontální práci a řízený rozhovor, chybí aktivizace žáků, samostatná práce a práce se zdroji informací.",
+          "evidence": "Celohodinové přednášky, kdy žáci pouze přepisují text z dataprojektoru, nejsou efektivní a chybí sebehodnocení žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami a jak jsou jim přizpůsobovány úkoly?",
+        "Jaké konkrétní kroky škola podnikla na zlepšení komunikace mezi vedením, pedagogy a žáky?",
+        "Jak se škola zaměřuje na rozvoj digitálních kompetencí a moderních metod výuky v teoretických předmětech?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o praktické obory (truhlář, tesař, zedník, kovář) – praktická výuka je na vysoké úrovni s kvalitními učiteli",
+        "Žáci z okolních regionů – škola nabízí kvalitní ubytování v domově mládeže s podporou při přípravě na vyučování",
+        "Žáci s dobrým chováním a zájmem o dodržování pravidel – škola má účinné preventivní programy a pozitivní klima"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se speciálními vzdělávacími potřebami – chybí jim dostatečná podpora a diferenciace úkolů ve výuce",
+        "Žáci s odlišným mateřským jazykem – škola nemá zavedenu systematickou podporu při překonávání jazykové bariéry",
+        "Žáci preferující aktivní a interaktivní výuku – teoretické vyučování je spíše monotónní s převahou frontální práce"
+      ],
+      "plain_czech_summary": "SPŠ stavební Pardubice je stavební škola se silnou praktickou výukou a dobrým chováním žáků. Domov mládeže je moderně vybavený. Hlavní problémy jsou slabá komunikace uvnitř školy, monotónní teoretická výuka bez aktivizace žáků a nedostatečná podpora žáků se speciálními potřebami. Škola se snaží zlepšovat materiální podmínky, ale potřebuje zlepšit pedagogické metody a podporu pro zranitelné skupiny žáků."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní posun od poslední inspekce, hrubá neúspěšnost nižší než u podobných škol",
+        "key_numbers": [
+          "94 % žáků zvládlo maturitní zkoušku v jarním a podzimním období 2025",
+          "7 žáků s vyznamenáním",
+          "Nižší neúspěšnost ve srovnání s obdobnými školami"
+        ],
+        "evidence": "V jarním a podzimním zkušebním období roku 2025 maturitní zkoušku zdárně zvládlo skoro 94 % žáků, sedm z nich s vyznamenáním."
+      },
+      "absence": {
+        "trend": "Není v textu zprávy specifikován",
+        "key_numbers": [
+          "Informace o absence nejsou v textu dostupné"
+        ],
+        "evidence": "Zpráva se nezabývá absencí žáků jako samostatným tématem."
+      },
+      "support_services": [
+        "Výchovné poradenství – výchovná poradkyně, ale s nedostatečným přenosem informací o žácích se speciálními potřebami",
+        "Prevence – metodika prevence, anonymní schránka důvěry (fyzická i elektronická), spolupráce s městskou policií",
+        "Domov mládeže – vychovatelé poskytují podporu při přípravě na vyučování a rozvoji sociálních vztahů"
+      ],
+      "safety_climate": [
+        "Velmi dobré chování žáků – žádný snížený stupeň za poslední klasifikační období",
+        "Bezpečnost při praktickém vyučování – žáci dodržují pravidla bezpečnosti, používají ochranné pomůcky",
+        "Preventivní programy – úspěšně řešena šikana a užití návykových látek, spolupráce s institucemi (městská policie, úřad práce)"
+      ],
+      "partnerships_practice": [
+        "Sociální partneři – pravidelný kontakt podporující dobré jméno školy a povědomí o její činnosti",
+        "Projekty – účelová dotace Pardubického kraje na sportovní činnost, grant na vybavení truhlářské dílny",
+        "Komunikace s veřejností – webové stránky, akce pro žáky základních škol, účast na akcích pořádaných městem a krajem"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelnou češtinou s jasnou strukturou. Obsahuje konkrétní příklady a doklady. Některé pasáže jsou však delší a složitější, zejména v části o teoretické výuce.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna jako samostatné téma, nelze posoudit trend absence žáků",
+        "Kariérové poradenství je zmíněno jako pasivní – žáci mají pouze možnost navštívit burzy, ale není jasné, jak aktivně škola podporuje volbu povolání",
+        "Konkrétní čísla o prospěchu nejsou uvedena – pouze kvalitativní popis (přibližně jedna pětina s vyznamenáním)"
+      ]
+    }
+  }
+}

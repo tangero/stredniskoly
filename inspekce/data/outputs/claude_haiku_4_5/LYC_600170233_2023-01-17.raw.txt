@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "LYC_600170233_2023-01-17",
+  "school_profile": {
+    "school_type": "Integrovaná střední škola hotelového provozu, obchodu a služeb (ISŠ)",
+    "inspection_period": "17.–19. ledna 2023",
+    "school_change_summary": "Počet žáků v maturitních oborech vzrostl, zejména v Pedagogickém lyceu. Zlepšilo se materiální vybavení digitální technikou. Opatření z předchozí inspekce byla jen částečně účinná."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní výuka matematiky",
+        "detail": "Matematika je plně odborně kvalifikovaně zajištěna s vysokou pedagogickou úrovní a důrazem na správnou terminologii.",
+        "evidence": "Matematika zajištěna plně kvalifikovaně, výuka vedena na velmi dobré pedagogické úrovni."
+      },
+      {
+        "tag": "Podpora žáků se speciálními potřebami",
+        "detail": "Funkční systém přenosu informací mezi výchovným poradcem a pedagogy, doporučená opatření jsou realizována.",
+        "evidence": "Systém pravidelného přenosu informací je funkční, opatření doporučená školskými poradenskými zařízeními byla realizována."
+      },
+      {
+        "tag": "Digitální technologie ve výuce",
+        "detail": "Škola efektivně využívá online aplikace, videonahrávky a digitální materiály pro aktivizaci žáků.",
+        "evidence": "Zvýšilo se využití digitální techniky, zařazování online aplikací, sdílení výukových materiálů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká neúspěšnost v oboru Podnikání",
+        "detail": "Hrubá neúspěšnost v maturitě je 1,5krát horší než průměr, v roce 2022 nekonalo zkoušku 40 % přihlášených žáků.",
+        "evidence": "Hrubá neúspěšnost přibližně 1,5krát horší, v roce 2022 nekonalo MZ téměř 40 % žáků."
+      },
+      {
+        "tag": "Vysoká absence v oboru Podnikání",
+        "detail": "Žáci nástavbového studia mají průměrně 200 hodin absence za rok, což je výrazně vyšší než u ostatních oborů.",
+        "evidence": "Průměrná absence žáků nástavbového studia byla přibližně 200 hodin na žáka."
+      },
+      {
+        "tag": "Nízké procento úspěšnosti v maturitě",
+        "detail": "V některých oborech pouze 25–67 % žáků úspěšně ukončilo maturitu v předepsané době.",
+        "evidence": "Např. v oboru Podnikání pouze čtvrtina žáků úspěšně MZ ukončila v předepsané době."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola přijala pro zvýšení úspěšnosti v oboru Podnikání a jak je vyhodnocuje?",
+      "Jak škola řeší vysokou absenci žáků nástavbového studia a jaké jsou výsledky těchto opatření?",
+      "Jaké metody aktivizace žáků a formativního hodnocení škola zavádí do výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o cestovní ruch a hotelnictví – tyto obory dosahují lepších výsledků a stabilnějších výsledků v maturitě.",
+      "Žáci určení pro Pedagogické lyceum – nový obor s dobrými výsledky, všichni přihlášení žáci konali maturitu.",
+      "Žáci se speciálními vzdělávacími potřebami – škola má funkční systém podpory a individuálních opatření."
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižšími studijními předpoklady – škola nyní přijímá jen úspěšnější uchazeče, méně úspěšní nejsou přijati.",
+      "Zájemci o obor Podnikání – obor má dlouhodobě vysokou neúspěšnost v maturitě a vysokou absenci žáků.",
+      "Žáci, kteří potřebují intenzivní motivaci – nástavbové studium bylo negativně ovlivněno distančním vzděláváním."
+    ],
+    "plain_czech_summary": "Škola hotelového provozu v Příbrami má 459 žáků. Silné stránky: kvalitní výuka matematiky, dobrá podpora žáků se speciálními potřebami, využívání digitální techniky. Problémy: obor Podnikání má velmi vysokou neúspěšnost v maturitě (40 % žáků nekonalo zkoušku v roce 2022) a vysokou absenci (200 hodin ročně). Výuka českého jazyka a literatury by mohla více aktivizovat žáky. Inspekce doporučuje zvážit zrušení oboru Podnikání."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – čtyřleté obory se zlepšují, nástavbové studium se zhoršuje",
+      "key_numbers": [
+        "Cestovní ruch: hrubá neúspěšnost mírně nižší než průměr skupiny oborů",
+        "Pedagogické lyceum: všichni žáci konali MZ, neuspěl 1 žák",
+        "Podnikání: hrubá neúspěšnost 1,5× horší než průměr, v roce 2022 nekonalo MZ 40 % žáků"
+      ],
+      "evidence": "Výsledky žáků se v maturitních obdobích 2019–2022 lišily. Cestovní ruch dosahuje nejlepších výsledků. Podnikání má dlouhodobě vysokou neúspěšnost."
+    },
+    "absence": {
+      "trend": "Zlepšení v čtyřletých oborech, zhoršení v nástavbovém studiu",
+      "key_numbers": [
+        "Čtyřleté obory: absence nižší o čtvrtinu než v roce 2018/2019",
+        "Nástavbové studium: průměrně 200 hodin absence na žáka",
+        "Neomluvená absence: snížena ve všech oborech"
+      ],
+      "evidence": "Průměrná absence čtyřletých oborů přibližně o čtvrtinu nižší. Žáci nástavbového studia nejsou dostatečně motivováni k účasti."
+    },
+    "support_services": [
+      "Poradenské služby pro žáky se speciálními vzdělávacími potřebami – funkční systém",
+      "Individuální konzultace a doučování včetně online studijní podpory",
+      "Typové didaktické testy pro přípravu na maturitu",
+      "Adaptační aktivity při zahájení vzdělávání",
+      "Monitoring rizikového chování a prevence šikany"
+    ],
+    "safety_climate": [
+      "Pozitivní pracovní atmosféra v hospitované výuce",
+      "Důsledné uplatňování opatření proti záškoláctví se projevilo snížením neomluvené absence",
+      "Monitoring projevů rizikového chování žáků v oblastech návykových látek a šikany",
+      "Příležitost ke zlepšení: rozšíření preventivních programů i na vyšší ročníky"
+    ],
+    "partnerships_practice": [
+      "Návštěvy knihoven, divadelních a filmových představení",
+      "Besedy se spisovateli",
+      "Návštěvy kulturních institucí",
+      "Mezipředmětové vztahy a souvislost učiva s regionem"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, ale místy je složitá a úřednická. Hlavní zjištění jsou jasná: vysoká neúspěšnost v oboru Podnikání, problémy s absencí, potřeba aktivizace žáků.",
+    "uncertainty_notes": [
+      "Není jasné, zda se obor Podnikání skutečně zruší nebo jen doporučení inspekce",
+      "Chybí informace o tom, jak se škola postavila k doporučením z inspekce 2019",
+      "Není specifikováno, jaké konkrétní opatření škola plánuje zavést"
+    ]
+  }
+}
+```

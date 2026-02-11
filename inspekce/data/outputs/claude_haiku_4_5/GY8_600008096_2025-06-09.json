@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600008096_2025-06-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:33:54.506188+00:00",
+  "run_finished_utc": "2026-02-09T13:34:17.080327+00:00",
+  "raw_file": "GY8_600008096_2025-06-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008096_2025-06-09",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium se zaměřením na rozšířenou výuku cizích jazyků",
+      "inspection_period": "9. 6. 2025 – 11. 6. 2025",
+      "school_change_summary": "Nový ředitel od roku 2022. Posílena spolupráce pedagogů, modernizováno poradenské pracoviště, rozšířeny zahraniční partnerství a digitální vybavení."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání na špičkové úrovni",
+          "detail": "Žáci dosahují certifikátů Cambridge (C1-C2) a německého DSD diplomu s 100% úspěšností.",
+          "evidence": "V minulém roce 32 žáků CAE C1-C2, 25 žáků DSD certifikát, letos 38 maturantů Cambridge C2-B2."
+        },
+        {
+          "tag": "Intenzivní mezinárodní spolupráce",
+          "detail": "Erasmus+, stáže v Německu a Rakousku, projekty s USA a Mexikem, účast v Evropském parlamentu mládeže.",
+          "evidence": "Dlouhodobá spolupráce s tuzemskými i mezinárodními partnery, dvoutýdenní stáže v zahraničí."
+        },
+        {
+          "tag": "Výborné výsledky maturit a soutěží",
+          "detail": "Všichni maturanti v jarním termínu 2025 uspěli, 26 s vyznamenáním, 10 s průměrem 1.",
+          "evidence": "Úspěchy v olympiádách a soutěžích na krajské i celostátní úrovni, 3. místo v konverzační soutěži ve španělštině."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Chybí tělocvična a prostory",
+          "detail": "Absence tělocvičny negativně ovlivňuje organizaci tělesné výchovy a omezuje aktivity s větším počtem žáků.",
+          "evidence": "Inspekce konstatuje: 'Nepodařilo se vybudovat chybějící tělocvičnu a další prostorové zázemí'."
+        },
+        {
+          "tag": "Nedostatečná diferenciace ve výuce",
+          "detail": "Některé hodiny postrádají přizpůsobení úkolů různým schopnostem a zájmům žáků.",
+          "evidence": "Inspekce doporučuje: 'Využívat diferenciaci s důrazem na specifické zájmy žáků a jejich studijní potenciál'."
+        },
+        {
+          "tag": "Špatné časové rozvržení hodin",
+          "detail": "V části hodin chybí závěrečné shrnutí učiva a zhodnocení dosažených cílů.",
+          "evidence": "Inspekce upozorňuje na 'nevhodné časové rozvržení, které mělo za následek absenci závěrečného shrnutí'."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá příprava na jazykové certifikáty a jaké jsou podmínky pro jejich získání?",
+        "Jaké jsou plány na vybudování tělocvičny a kdy se počítá s jejím dokončením?",
+        "Jak se škola vypořádává s tím, že nemá vlastní tělocvičnu – kde probíhá tělesná výchova?"
+      ],
+      "who_school_fits": [
+        "Žáci s vášní pro jazyky a ambicí dosáhnout vysoké úrovně angličtiny, němčiny či španělštiny",
+        "Motivovaní studenti, kteří chtějí studovat na vysoké škole, zejména v zahraničí",
+        "Žáci zajímající se o mezinárodní spolupráci, výjezdy do zahraničí a kulturní výměnu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími studijními předpoklady – škola je zaměřena na přípravu ke studiu na vysoké škole s vysokou náročností",
+        "Studenti, kterým chybí vnitřní motivace – škola předpokládá vysokou motivaci ke studiu",
+        "Žáci s vážným zájmem o tělesnou výchovu – absence vlastní tělocvičny může být omezující"
+      ],
+      "plain_czech_summary": "Česko-anglické gymnázium je prestižní soukromá škola se 300 žáky, která se zaměřuje na jazykové vzdělání. Žáci dosahují výborných výsledků – všichni maturanti uspěli, mnoho jich získá certifikáty Cambridge a německého DSD. Škola nabízí bohatou mezinárodní spolupráci, stáže v zahraničí a účast v evropských projektech. Vedení je aktivní a systematické. Hlavní slabinou je absence vlastní tělocvičny. Škola je vhodná pro motivované žáky s ambicí studovat na vysoké škole."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný – všichni žáci uspěli",
+        "key_numbers": [
+          "Zkušební rok 2024: 100% úspěšnost",
+          "Jarní termín 2025: 38 žáků, 26 s vyznamenáním, 10 s průměrem 1",
+          "Jazykové certifikáty: 38 Cambridge C2-B2, 37 DSD certifikátů"
+        ],
+        "evidence": "Inspekční zpráva: 'Ve zkušebním roce 2024 uspěli všichni žáci konající maturitní zkoušku. Při ukončování studia v jarním termínu 2025 uspěli všichni žáci'."
+      },
+      "absence": {
+        "trend": "Minimální – kázeňské problémy se vyskytují výjimečně",
+        "key_numbers": [
+          "Kázeňské problémy řešeny individuálně",
+          "61 % žáků prospělo s vyznamenáním na konci 2023/2024",
+          "Zbývající žáci prospěli bez problémů"
+        ],
+        "evidence": "Zpráva uvádí: 'Kázeňské problémy se vyskytují spíše výjimečně a jsou řešeny individuálně'."
+      },
+      "support_services": [
+        "Výchovná poradkyně, školní metodik prevence, školní psycholožka",
+        "Externí kariérová poradkyně a studentská poradkyně",
+        "Doučování a individuální konzultace pro zlepšení výsledků"
+      ],
+      "safety_climate": [
+        "Respektující komunikace mezi žáky a pedagogy",
+        "Dodržování nastavených pravidel",
+        "Pracovní atmosféra podporující učení"
+      ],
+      "partnerships_practice": [
+        "Erasmus+ a další mezinárodní projekty",
+        "Spolupráce s německými a rakouskými firmami – dvoutýdenní stáže",
+        "Partnerství s českými vysokými školami v přírodních a technických vědách",
+        "Projekty s USA a Mexikem, program GLOBE"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi podrobná, konkrétní a jasně strukturovaná. Obsahuje konkrétní čísla, citace z pozorování a jasné závěry. Všechny klíčové informace jsou doloženy fakty.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o počtu přihlášek a konkurenci na školu – nelze posoudit, jak selektivní je přijímací řízení",
+        "Chybí informace o školném a finančních podmínkách – důležité pro rodiče",
+        "Není jasné, jak se škola vypořádává s absencí tělocvičny v praxi – kde přesně probíhá tělesná výchova"
+      ]
+    }
+  }
+}

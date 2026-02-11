@@ -1,0 +1,119 @@
+{
+  "report_id": "SOS_600007383_2025-04-28",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:36:34.993174+00:00",
+  "run_finished_utc": "2026-02-09T13:37:02.639714+00:00",
+  "raw_file": "SOS_600007383_2025-04-28.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600007383_2025-04-28",
+    "school_profile": {
+      "school_type": "Střední škola (SŠ) a Vyšší odborná škola (VOŠ) se zaměřením na zahradnictví, floristiku, vinařství a krajinnou tvorbu",
+      "inspection_period": "28. až 30. dubna 2025",
+      "school_change_summary": "Od poslední inspekce (2018) se škola výrazně rozvinula: rozšířila vzdělávací nabídku o nová zaměření (Floristická tvorba, Zahradní tvorba, Vinařství, Květinový farmář), počet žáků SŠ a studentů dálkové formy VOŠ vzrostl, zlepšily se materiální podmínky a výsledky maturit."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce s praxí",
+          "detail": "Škola systematicky spolupracuje se sociálními partnery a zaměstnavateli, což žákům umožňuje získávat praktické dovednosti přímo v reálném prostředí.",
+          "evidence": "Systematická spolupráce se sociálními partnery účinně přispívá k rozvoji odborných dovedností."
+        },
+        {
+          "tag": "Mezinárodní zkušenosti",
+          "detail": "Dlouhodobá účast v evropských projektech rozvíjí jazykové dovednosti a schopnost pracovat v multikulturním prostředí.",
+          "evidence": "Dlouhodobá účast školy v mezinárodních projektech rozvíjí odborné kompetence a komunikační dovednosti."
+        },
+        {
+          "tag": "Úspěchy v maturitách",
+          "detail": "Žáci dosahují nadprůměrných výsledků zejména v cizích jazycích a všichni žáci prospívají v profilové části maturitní zkoušky.",
+          "evidence": "Žáci nadprůměrně úspěšní u zkoušky z cizího jazyka, všichni v profilové části MZ prospěli."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoký podíl ohrožených žáků",
+          "detail": "Polovina žáků maturitního oboru a třetina učňovského oboru má v průběhu roku známku dostatečný, což signalizuje riziko neúspěchu.",
+          "evidence": "Polovina žáků maturitního oboru a třetina v učňovském oboru hodnoceni stupněm dostatečný."
+        },
+        {
+          "tag": "Absence u některých žáků",
+          "detail": "Některé žáky se speciálními potřebami charakterizuje vysoká absence, u jednotlivců až kolem 200 hodin za rok.",
+          "evidence": "Vyšší je průměrná absence, u některých žáků činí kolem 200 hodin za školní rok."
+        },
+        {
+          "tag": "Nízké počty v denní formě VOŠ",
+          "detail": "Denní forma vyšší odborné školy má dlouhodobě nízké počty studentů a po prvním ročníku jich třetina skončí.",
+          "evidence": "Počet studentů denní formy je nízký a dlouhodobě stagnuje, třetina ukončila vzdělávání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením, zejména s odbornými předměty a biologií?",
+        "Jaké jsou možnosti individuálního přístupu pro nadané žáky, kteří by chtěli více výzev?",
+        "Jak funguje doučování a příprava na maturitní zkoušku a kolik stojí?"
+      ],
+      "who_school_fits": [
+        "Žáci s vášní pro zahradnictví, floristiku nebo vinařství, kteří chtějí praktické dovednosti a přímý kontakt s praxí",
+        "Studenti, kteří se zajímají o mezinárodní zkušenosti a jazykový rozvoj (zejména angličtina)",
+        "Žáci, kteří preferují kombinaci teoretické výuky s praktickým vyučováním v reálném prostředí"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v matematice a češtině – více než polovina třídy má problémy s těmito předměty",
+        "Studenti denní formy VOŠ – vysoká fluktuace (třetina skončí po prvním ročníku)",
+        "Žáci s tendencí k absencím – škola má problémy s vysokou absencí u některých skupin"
+      ],
+      "plain_czech_summary": "Česká zahradnická akademie je kvalitní odborná škola se silným zaměřením na praxi. Žáci se učí přímo v zahradách a parcích, spolupracují se skutečnými zaměstnavateli a cestují do zahraničí. Výsledky v maturitách jsou dobré, zejména v cizích jazycích. Problém je, že mnoho žáků během roku bojuje s učením – polovina má horší známky. Škola se snaží pomáhat, ale ne všem se daří stejně. Pokud máte dítě s vášní pro zahradnictví a praktickou práci, je to skvělá volba."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní trend – výrazné zlepšení od předchozí inspekce (2018)",
+        "key_numbers": [
+          "Cizí jazyk: nadprůměrné výsledky oproti ČR",
+          "Profilová část: 100% úspěšnost v letech 2022–2024",
+          "Česká literatura a matematika: mírný nárůst neúspěšnosti v 2024"
+        ],
+        "evidence": "Od maturitního období 2022 se daří motivovat všechny přihlášené žáky, aby MZ konali. Žáci nadprůměrně úspěšní u zkoušky z cizího jazyka."
+      },
+      "absence": {
+        "trend": "Problematická – vysoká absence u některých skupin žáků",
+        "key_numbers": [
+          "Některé žáky se speciálními potřebami: až 200 hodin za rok",
+          "Neomluvená absence: téměř se nevyskytuje (pozitivum)",
+          "Průměrná absence: vyšší než u ostatních žáků"
+        ],
+        "evidence": "Vyšší je průměrná absence, u některých žáků činí kolem 200 hodin za školní rok. Pozitivní je, že se neomluvená absence téměř nevyskytuje."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně a školní metodička prevence",
+        "Doučování a individuální konzultace pro ohrožené žáky",
+        "Kroužky k přípravě na maturitní zkoušku",
+        "Adaptační pobyty a vzdělávání v osobnostní a sociální výchově",
+        "Péče o 55 žáků se speciálními vzdělávacími potřebami (trojnásobný nárůst od 2018)"
+      ],
+      "safety_climate": [
+        "Nízká míra úrazovosti",
+        "Pravidelné poučování žáků o bezpečnosti a ochraně zdraví",
+        "Dodržování zásad bezpečné práce při praktickém vyučování",
+        "Správné dbání na pitný režim a pracovní podmínky"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se sociálními partnery a zaměstnavateli v regionu",
+        "Řada partnerů jsou absolventi školy",
+        "Zapojování externích odborníků do výuky",
+        "Exkurze u smluvních partnerů",
+        "Praktické vyučování na školním statku a v parcích",
+        "Reciproční evropská mobilita studentů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní data, ale některé pasáže jsou složitě strukturované. Hlavní zjištění jsou jasná, ale vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Není jasné, jaké konkrétní opatření škola již přijala na podporu nadaných žáků – zpráva jen konstatuje nedostatek",
+        "Chybí informace o tom, jak se liší absence mezi jednotlivými skupinami žáků (speciální potřeby vs. ostatní)",
+        "Není specifikováno, které konkrétní předměty způsobují problémy (kromě zmínky biologie)"
+      ]
+    }
+  }
+}

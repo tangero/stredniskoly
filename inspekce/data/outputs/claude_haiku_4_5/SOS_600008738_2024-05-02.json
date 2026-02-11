@@ -1,0 +1,117 @@
+{
+  "report_id": "SOS_600008738_2024-05-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:17:09.300132+00:00",
+  "run_finished_utc": "2026-02-09T16:17:34.060488+00:00",
+  "raw_file": "SOS_600008738_2024-05-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600008738_2024-05-02",
+    "school_profile": {
+      "school_type": "Střední odborná škola s.r.o. (soukromá), obory: Hotelnictví, Ekonomika a podnikání, Podnikání (nástavbové)",
+      "inspection_period": "2. května až 13. května 2024",
+      "school_change_summary": "Od poslední inspekce v březnu 2018 se počet žáků zdvojnásobil na 198 celkem. Došlo k výrazné obměně učitelského sboru a personálu poradenského pracoviště. Škola otevřela nové zaměření Management sportu a změnila formu nástavbového studia na kombinovanou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola systematicky spolupracuje s řadou firem z gastronomie a dalších oborů, kde žáci získávají praktické zkušenosti.",
+          "evidence": "\"Škola systematicky podporuje zapojení žáků do reálných aktivit, tím jim umožňuje uplatňovat získané znalosti a dovednosti v praxi.\""
+        },
+        {
+          "tag": "Mezinárodní zkušenosti",
+          "detail": "Žáci mají možnost zahraničních stáží a spolupráce s partnery v zahraničí.",
+          "evidence": "\"Motivační je pro žáky také možnost zahraničních stáží, spolupráce se zahraničním partnerem podporuje jazykové vzdělávání.\""
+        },
+        {
+          "tag": "Podpůrné služby",
+          "detail": "Škola má školního psychologa, asistentku pro žáky s odlišným mateřským jazykem a nabízí doučování.",
+          "evidence": "\"Posílení poradenského týmu o školního psychologa a také o školní asistentku, která poskytuje podporu 19 žákům.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence a neúspěšnost",
+          "detail": "V nástavbovém studiu neprospělo 22,6 % žáků, vysoká absence ovlivňuje výsledky.",
+          "evidence": "\"V nástavbovém studiu neprospělo 7 žáků z 31 žáků, tj. 22,6 %\" a \"vysokou absencí, což se projevuje vysokým počtem nehodnocených žáků.\""
+        },
+        {
+          "tag": "Pasivní metody výuky",
+          "detail": "Převládá frontální výuka, málo se používají aktivizační metody a kooperativní práce.",
+          "evidence": "\"Převládala frontální forma výuky doplněná samostatnou prací žáků, pouze v některých hodinách byly vhodně zařazeny kooperativní formy práce.\""
+        },
+        {
+          "tag": "Slabá diferenciace",
+          "detail": "Malý důraz na přizpůsobení učiva schopnostem jednotlivých žáků a jejich nadání.",
+          "evidence": "\"V menším rozsahu byla zaznamenána diferenciace učiva, směřující k maximálnímu využití nadání a studijního potenciálu žáků.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje se žáky, kteří mají problémy s absencí a motivací? Jaké jsou vaše zkušenosti s jejich zlepšením?",
+        "Jaké konkrétní firmy spolupracují se školou a jak často žáci absolvují praxi v reálném prostředí?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a diskusí, nebo se výuka soustředí především na memorování?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí praktické vzdělání s propojením teorie a praxe v hotelnictví, gastronomii nebo podnikání",
+        "Studenti zajímající se o zahraniční zkušenosti a jazykové vzdělávání (zejména angličtina)",
+        "Žáci, kteří potřebují individuální podporu a speciální péči (škola má psychologa a asistentku)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absencím – vysoká absence zde vede k neprospěchu (22,6 % v nástavbě)",
+        "Studenti, kteří preferují aktivní, diskusní a interaktivní výuku – zde převládá frontální přístup",
+        "Žáci s vysokými ambicemi v teoretických předmětech – zaměření je spíše praktické a odborné"
+      ],
+      "plain_czech_summary": "Euroškola Strakonice je soukromá střední odborná škola zaměřená na hotelnictví, ekonomiku a podnikání. Její silnou stránkou je úzká spolupráce s firmami a možnost zahraničních stáží. Škola má kvalitní poradenské služby včetně psychologa. Slabinou je vysoká absence a neúspěšnost žáků, zejména v nástavbovém studiu (22,6 % neprospívajících). Výuka je spíše tradičně frontální, málo se používají aktivizační metody. Škola je vhodná pro prakticky zaměřené žáky, ale vyžaduje vysokou motivaci a docházku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírně lepší než celorepublikový průměr",
+        "key_numbers": [
+          "Ve zkušebním roce 2023 byly výsledky mírně lepší než celorepublikový průměr"
+        ],
+        "evidence": "\"Ve zkušebním roce 2023 byly výsledky žáků u maturitní zkoušky pro danou skupinu oborů mírně lepší, než byl celorepublikový průměr.\""
+      },
+      "absence": {
+        "trend": "Vysoká absence negativně ovlivňuje výsledky",
+        "key_numbers": [
+          "Vysoký počet nehodnocených žáků v 1. pololetí",
+          "V nástavbovém studiu 22,6 % neprospívajících žáků (7 z 31)",
+          "Ve střední škole 7,9 % neprospívajících žáků (11 z 140) v r. 2022/2023"
+        ],
+        "evidence": "\"V některých případech jsou výsledky vzdělávání žáků ovlivněny jejich nižší mírou motivace k učení a vysokou absencí.\""
+      },
+      "support_services": [
+        "Školní psycholog (nově posílený tým)",
+        "Školní asistentka pro 19 žáků s odlišným mateřským jazykem",
+        "Výchovná poradkyně zajišťující podpůrná opatření pro žáky se speciálními vzdělávacími potřebami",
+        "Doučování a individuální konzultace pro žáky s rizikem neúspěšnosti",
+        "Adaptační kurz pro prvňáky"
+      ],
+      "safety_climate": [
+        "Přátelská a respektující atmosféra mezi všemi aktéry vzdělávacího procesu",
+        "Vzájemná důvěra a respektování demokratických principů",
+        "Systematicky nastavený systém prevence rizikového chování",
+        "Dotazníková šetření zaměřená na sledování kvality klimatu ve třídách",
+        "Činnosti podporující aktivní trávení volného času, především sportovního zaměření"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s řadou smluvních podnikatelských subjektů z oblasti gastronomie",
+        "Fiktivní firma pro přípravu na práci v reálné firmě",
+        "Zahraniční partner podporující jazykové vzdělávání a poznávání odlišných kulturních podmínek",
+        "Odborníci z praxe zapojeni do výuky",
+        "Četné sportovní soutěže a prezentace dovedností na veřejných akcích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná a obsahuje konkrétní údaje. Některé pasáže jsou však formulovány úřednicky a vyžadují pozorné čtení. Číselné údaje o neúspěšnosti jsou jasné, ale chybí detaily o příčinách vysoké absence.",
+      "uncertainty_notes": [
+        "Není jasné, zda vysoká absence v nástavbovém studiu souvisí s formou studia (kombinovaná) nebo s charakterem studentů",
+        "Zpráva nespecifikuje, které konkrétní firmy spolupracují se školou a jak často",
+        "Není zřejmé, jaké konkrétní opatření škola přijala na základě předchozí inspekce z roku 2018"
+      ]
+    }
+  }
+}

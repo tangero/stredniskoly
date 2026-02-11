@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600010546_2025-02-10",
+  "school_profile": {
+    "school_type": "Střední škola právní - Právní akademie, s.r.o., obor Veřejnosprávní činnost",
+    "inspection_period": "10.–12. února 2025",
+    "school_change_summary": "Od září 2022 nová ředitelka, která stabilizovala pedagogický sbor a modernizuje podmínky. Proběhla rozsáhlá rekonstrukce vnitřních prostor, vytvořeny relaxační koutky, posíleno poradenské pracoviště o kariérovou poradkyni."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné maturitní výsledky",
+        "detail": "Průměrná úspěšnost 94 % v celostátním srovnání, nadprůměrné hodnoty v dané skupině oborů.",
+        "evidence": "Od poslední inspekce 94 % úspěšnost, ve školním roce 2023/2024 neuspělo jen 2,8 % žáků."
+      },
+      {
+        "tag": "Silné praktické propojení",
+        "detail": "Spolupráce se státními institucemi, policií, armádou a dalšími partnery přináší autentické zkušenosti.",
+        "evidence": "Spolupráce s Policií ČR, Armádou, Hasičským záchranným sborem, návštěvy soudů a věznění."
+      },
+      {
+        "tag": "Pozitivní školní klima",
+        "detail": "Vstřícná atmosféra, vzájemný respekt, nízké absence a minimální disciplinární problémy.",
+        "evidence": "Nízký počet neomluvených hodin, snížený stupeň z chování u 1,5 % žáků, 14 % prospělo s vyznamenáním."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená samostatnost žáků",
+        "detail": "Žáci málo vyhledávají informace sami, převažuje frontální výuka s pasivními posluchači.",
+        "evidence": "Ojediněle zaznamenáno samostatné vyhledávání informací, dominantní role pedagoga, někteří žáci zůstávají pasivními posluchači."
+      },
+      {
+        "tag": "Slabší rozvoj komunikačních dovedností",
+        "detail": "Málo diskusí, řízené rozhovory jen u některých předmětů, chybí důraz na kritické myšlení.",
+        "evidence": "Zřídka zaznamenána řízená diskuse, ojediněle prvky sebereflexe, doporučení věnovat větší pozornost komunikačním dovednostem."
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Výuka se málo přizpůsobuje individuálním možnostem a předpokladům jednotlivých žáků.",
+        "evidence": "Minimální míra diferenciace s ohledem na studijní předpoklady, málo možností volit úlohy s různou náročností."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením? Jaké jsou dostupné doučovací programy?",
+      "Jaké jsou konkrétní příklady spolupráce s policií a dalšími institucemi? Jak často se žáci účastní praktických aktivit?",
+      "Jak se škola zaměřuje na rozvoj komunikačních dovedností a kritického myšlení mimo frontální výuku?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o právo, veřejnou správu a sociální věci, kteří si cení praktických zkušeností a kontaktu s reálnými institucemi.",
+      "Motivovaní studenti, kteří zvládají učit se převážně z přednášek a jsou schopni samostatné přípravy na maturitu.",
+      "Žáci, kterým vyhovuje stabilní, klidné prostředí s jasně nastavenými pravidly a dobrými vztahy mezi učiteli a studenty."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více interaktivní výuku s diskusemi a samostatným objevováním – zde převažuje frontální přístup.",
+      "Studenti se slabšími studijními předpoklady – přijímací zkouška (minimum 25 bodů) je sice prevencí, ale diferenciace ve výuce je omezená.",
+      "Žáci, kteří se lépe učí prostřednictvím skupinové práce a diskusí – ty jsou zařazovány jen ojediněle."
+    ],
+    "plain_czech_summary": "Právní akademie je stabilní a dobře vedená škola s výborným renomé v maturitních výsledcích (94 % úspěšnost). Silnou stránkou je propojení s praxí – spolupráce s policií, armádou a státními institucemi dává žákům autentické zkušenosti. Školní klima je pozitivní, absence nízké. Slabší je samostatnost žáků a rozvoj komunikačních dovedností – výuka je spíše frontální s pasivními posluchači. Škola je vhodná pro motivované studenty zájemce o právo a veřejnou správu, kteří si cení praktických zkušeností."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoká úspěšnost, nadprůměrná v celostátním srovnání",
+      "key_numbers": [
+        "94 % průměrná úspěšnost od poslední inspekce",
+        "2,8 % neúspěšných ve školním roce 2023/2024",
+        "100 % úspěšnost v letech 2020/2021 až 2022/2023"
+      ],
+      "evidence": "Výsledky žáků u maturitních zkoušek dosahují nadprůměrných hodnot. Žáci neúspěšní v prvním termínu převážně uspějí v opravných termínech."
+    },
+    "absence": {
+      "trend": "Velmi nízká absence, minimální disciplinární problémy",
+      "key_numbers": [
+        "Nízký počet neomluvených hodin",
+        "1,5 % žáků se sníženým stupněm z chování (2023/2024)",
+        "2 % neprospívajících žáků (2023/2024)"
+      ],
+      "evidence": "Počet neomluvených hodin je nízký, snížený stupeň z chování byl uplatněn u 1,5 % žáků. Prospěch je stabilní, neprospívajících je minimum."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, metodička prevence, kariérová poradkyně",
+      "Individuální konzultace a skupinové doučování pro žáky s nedostatečnými výsledky",
+      "Speciální vzdělávací potřeby: 11 žáků se SVP, podpůrná opatření 1. a 2. stupně",
+      "Přípravné kurzy k přijímacím zkouškám z matematiky pro uchazeče"
+    ],
+    "safety_climate": [
+      "Bezpečné prostředí v budově i mimo školu, seznamování s riziky na začátku roku",
+      "Kamerový systém na vstupních prostorech a chodbách",
+      "Čipový systém pro vstup a evidenci docházky",
+      "Vstřícná a nestresující pracovní atmosféra, vzájemný respekt pedagogů a žáků"
+    ],
+    "partnerships_practice": [
+      "Policie ČR – atraktivní aktivity, soutěže, projektové dny, právní vědomí",
+      "Armáda ČR, Hasičský záchranný sbor, Vězeňská služba – exkurze, preventivní programy",
+      "Státní instituce, úřady, orgány státní správy a samosprávy",
+      "Firmy a instituce ze sociální sféry – Domov pro seniory, Azylový dům, Středisko rané péče",
+      "Vzdělávací zařízení, Letiště Praha, Česká národní banka, Česká televize, Český rozhlas"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní čísla, citace a příklady. Všechny tvrzení jsou podložena důkazy z textu. Jazyk je srozumitelný bez zbytečného úřednického stylu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu učitelů, jejich kvalifikaci nebo fluktuaci – nelze posoudit stabilitu pedagogického sboru v detailu.",
+      "Chybí konkrétní data o počtu žáků s odlišným mateřským jazykem (15 žáků) a jejich integraci – není jasné, jak se jim věnuje pozornost.",
+      "Není specifikováno, jaké konkrétní inovativní metody by měly být více využívány – doporučení je spíše obecné."
+    ]
+  }
+}
+```

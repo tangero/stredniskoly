@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600004848_2025-10-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:31:18.488242+00:00",
+  "run_finished_utc": "2026-02-09T13:31:59.991989+00:00",
+  "raw_file": "SOS_600004848_2025-10-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600004848_2025-10-09",
+    "school_profile": {
+      "school_type": "Střední škola ekonomická se sportovním zaměřením, s.r.o., obor Ekonomika a podnikání s maturitou",
+      "inspection_period": "9.–10. 10. 2025 a 13.–14. 10. 2025",
+      "school_change_summary": "Škola si kontinuálně udržuje standard vzdělání. Vedení průběžně zlepšuje materiální vybavení (nová počítačová učebna, IT technologie). Počet žáků vzrostl díky účelným úpravám prostor. Zvýšil se podíl žáků s uzavřenou klasifikací do 30. 6. na více než 90 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Sportovní zaměření",
+          "detail": "Škola vytváří vhodné podmínky pro žáky provozující sport na výkonnostní a vrcholové úrovni s promyšleným systémem slučujícím vzdělání se tréninkem.",
+          "evidence": "Dlouholetá aktivní spolupráce se sportovními svazy, kluby a oddíly slouží k podpoře sportovních aktivit žáků."
+        },
+        {
+          "tag": "Příjemné prostředí",
+          "detail": "Vedení vytváří vstřícné vzdělávací prostředí založené na aktivní spolupráci pedagogů a žáků s partnerským přístupem.",
+          "evidence": "Výuka probíhala v příjemném pracovním klimatu založeném na vzájemném respektu při dodržování nastavených pravidel."
+        },
+        {
+          "tag": "Stabilní výsledky",
+          "detail": "Žáci dosahují stabilních výsledků s minimálním počtem neprospívajících a přibližně 20 % s vyznamenáním.",
+          "evidence": "Ve sledovaném období dvou školních let neprospěli jen jednotlivci, podíl žáků s vyznamenáním zůstává okolo 20 %."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Méně aktivní výuka",
+          "detail": "Část hodin využívá převážně frontální výuku s omezeným prostorem pro skupinovou práci a diskuzi žáků.",
+          "evidence": "Kooperativní formy práce a práce ve skupinách byly zařazovány méně často, méně efektivní bylo časové rozvržení činností."
+        },
+        {
+          "tag": "Slabší dohled vedení",
+          "detail": "Hospitační činnost vedení má nižší frekvenci, což snižuje její účinnost při kontrole kvality výuky.",
+          "evidence": "Hospitační činnost vychází z aktuálních potřeb, avšak nižší frekvence snižuje její účinnost."
+        },
+        {
+          "tag": "Omezená diferenciace",
+          "detail": "Výuka méně podporuje individuální potřeby žáků s vyššími předpoklady a chybí jim dostatek výzev.",
+          "evidence": "Menší podpora hodnoticích dovedností žáků a nižší míra diferenciace výuky vzhledem k žákům s vyššími studijními předpoklady."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola organizuje výuku pro sportovce? Jaké jsou možnosti úpravy rozvrhu a jak se to řeší s ostatními předměty?",
+        "Jaké metody používáte na rozvoj samostatného myšlení a kritického zpracování informací u žáků?",
+        "Jak se škola zaměřuje na přípravu na vysoké školy a jaké jsou výsledky absolventů v terciárním vzdělávání?"
+      ],
+      "who_school_fits": [
+        "Žáci provozující sport na výkonnostní nebo vrcholové úrovni, kteří potřebují flexibilní organizaci studia",
+        "Studenti s jasným zájmem o ekonomiku a podnikání, kteří si chtějí rozšířit obzory sportovními aktivitami",
+        "Žáci preferující menší školu s rodinným charakterem a osobnějším přístupem pedagogů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní individuální podporu a diferenciovanou výuku – škola ji poskytuje, ale v omezené míře",
+        "Studenti, kteří se chtějí zaměřit výhradně na akademické výsledky bez sportovního zaměření – škola má jasný sportovní profil",
+        "Žáci s vyššími studijními předpoklady, kteří hledají maximální intelektuální výzvu – část výuky je méně aktivizující"
+      ],
+      "plain_czech_summary": "Jde o malou soukromou školu s jasným zaměřením na ekonomiku a sport. Vhodná pro sportovce, kterým škola umožní skloubení tréninku se studiem. Prostředí je přátelské a stabilní, výsledky žáků jsou dobré. Slabší stránkou je, že část výuky není dostatečně aktivní a interaktivní – žáci se méně podílejí na diskuzích a skupinové práci. Vedení školy by mělo více kontrolovat kvalitu výuky. Vhodná volba pro motivované sportovce, méně pro ty, kteří hledají maximální akademickou výzvu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní a pozitivní",
+        "key_numbers": [
+          "Téměř všichni žáci složí zkoušku s celkovým hodnocením prospěl",
+          "Žáci dosahují převážně srovnatelné nebo vyšší úspěšnosti v dané skupině oborů",
+          "Ojediněle žák neprospěje nebo prospěje s vyznamenáním"
+        ],
+        "evidence": "Výsledky žáků u maturitní zkoušky odpovídají jejich studijnímu potenciálu a průběžným výsledkům. Ve sledovaném období zůstává stabilní počet žáků konajících maturitní zkoušku."
+      },
+      "absence": {
+        "trend": "Vysoká absence u některých žáků, ale zdůvodněná",
+        "key_numbers": [
+          "Vysoká omluvená absence u některých žáků",
+          "Změny v počtech žáků během roku minimální",
+          "Více než 90 % žáků má uzavřenou klasifikaci do 30. 6."
+        ],
+        "evidence": "Vysoká omluvená absence je způsobena převážně souběžnou účastí na sportovní přípravě, případně zdravotními důvody. Změny v počtech žáků v průběhu školního roku jsou minimální."
+      },
+      "support_services": [
+        "Výchovná poradkyně (zároveň zástupkyně ředitele) a školní metodička prevence",
+        "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami",
+        "Psycholog a cizojazyčný asistent financovaní z operačních programů",
+        "Individuální konzultace a opravy písemných prací pro žáky ohrožené neúspěchem",
+        "Kariérové poradenství standardně nastaveno"
+      ],
+      "safety_climate": [
+        "Rodinný charakter školy umožňuje včas identifikovat rizikové chování žáků",
+        "Komplexní průběžný monitoring rizikového chování",
+        "Výchovné a studijní obtíže řešeny převážně jednáním se zákonnými zástupci",
+        "Minimální počty hodnocení chování sníženo u známkou",
+        "Mechanismy k prevenci a řešení vztahových problémů ve třídě (třídnické hodiny, součinnost pedagogů)"
+      ],
+      "partnerships_practice": [
+        "Dlouholetá aktivní spolupráce se sportovními svazy, kluby a oddíly",
+        "Součinnost s dalšími subjekty při realizaci vzdělávacích programů",
+        "Efektivní využívání partnerství při rozvoji sociálního cítění a primární prevenci",
+        "Navazující vzdělávací aktivity (projekty, exkurze, soutěže) podporující rozvoj osobnosti"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři (např. odkazy na kritéria, technické termíny).",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty hodin hospitací nebo jejich frekvenci – není jasné, jak často vedení kontroluje výuku",
+        "Chybí konkrétní data o počtu žáků s jednotlivými typy podpory (speciální vzdělávací potřeby, jazyková podpora)",
+        "Není specifikováno, kolik procent výuky bylo ovlivněno nižší kvalitou metodického vedení"
+      ]
+    }
+  }
+}

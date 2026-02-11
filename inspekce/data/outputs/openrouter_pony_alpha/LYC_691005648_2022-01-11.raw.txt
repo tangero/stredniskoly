@@ -1,0 +1,100 @@
+{
+  "report_id": "LYC_691005648_2022-01-11",
+  "school_profile": {
+    "school_type": "Soukromá waldorfská škola (ZŠ i SŠ) s družinou a klubem",
+    "inspection_period": "11. 1. − 13. 1. 2022",
+    "school_change_summary": "Škola se od poslední inspekce úspěšně rozvíjí ve všech sledovaných oblastech, zefektivnila se činnost poradenského pracoviště, nedaří se však zajistit vzdělávání kvalifikovanými pedagogy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Klima a vztahy",
+        "detail": "Ve škole panuje příznivá atmosféra, pedagogové jsou trpěliví a rodiče se zapojují do chodu školy.",
+        "evidence": "Společným znakem výuky byla příznivá pracovní atmosféra... Rodiče se spolupodílí na chodu školy, zapojují se do mimoškolních aktivit."
+      },
+      {
+        "tag": "Podpora žáků",
+        "detail": "Funguje komplexní systém poradenských služeb a individuální péče o žáky s potřebou podpory.",
+        "evidence": "Systém poradenských služeb školy je komplexní a funkční... Kvalitu vzdělávání pozitivně ovlivňuje činnost asistentů pedagoga."
+      },
+      {
+        "tag": "Prostorové zázemí",
+        "detail": "Škola má dostatek učeben, dílen i prostornou tělocvičnu a neustále zlepšuje své zázemí.",
+        "evidence": "Škola disponuje dostatečným množstvím kmenových i odborných učeben... Materiální podmínky ke vzdělávání se nadále zlepšují."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovaní učitelé",
+        "detail": "Třetina učitelů nemá potřebnou kvalifikaci, což snižuje kvalitu výuky v některých hodinách.",
+        "evidence": "Nekvalifikovanost a krátká pedagogická zkušenost třetiny vyučujících se v některých případech negativně projevila v rozdílné kvalitě poskytovaného vzdělávání."
+      },
+      {
+        "tag": "Pasivita žáků",
+        "detail": "V části výuky převažuje slovo učitele a žáci jsou pasivní, chybí aktivizující metody.",
+        "evidence": "V části výuky... převládala frontální výuka s verbální převahou učitele... Zvolené vzdělávací strategie vedly v některých případech k pasivitě části žáků."
+      },
+      {
+        "tag": "Hodnocení a diferenciace",
+        "detail": "Škola má problém sjednotit hodnocení a přizpůsobovat výuku tempu různých žáků.",
+        "evidence": "Diferenciace a individualizace však byla ve výuce zaznamenána pouze ojediněle... Následná kontrola však není důsledná."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší problém s nízkou mírou kvalifikovanosti třetiny pedagogického sboru?",
+      "Jakým způsobem jsou ve výuce uplatňovány metody, které zabraňují pasivitě žáků?",
+      "Jak funguje systém slovního hodnocení a jak jsou sjednocena kritéria mezi jednotlivými učiteli?"
+    ],
+    "who_school_fits": [
+      "Rodiče hledající školu s důrazem na celostní rozvoj osobnosti a waldorfskou pedagogiku.",
+      "Žáci, kteří potřebují individuální přístup a podporu poradenského pracoviště.",
+      "Rodiny, které chtějí být aktivně zapojeny do života školy a mimoškolních aktivit."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silně strukturované prostředí a tradiční metody výuky.",
+      "Rodiče, kteří trvají na plné kvalifikaci všech vyučujících.",
+      "Rodiny, které preferují běžné užívání digitálních technologií a učebnic ve výuce."
+    ],
+    "plain_czech_summary": "Waldorfská škola Dobromysl se zaměřuje na celostní rozvoj dětí v příznivém prostředí s dobrou spoluprací s rodiči. Škola má skvělé zázemí a fungující systém poradenské pomoci. Slabinou je však vysoký podíl nekvalifikovaných učitelů a v některých hodinách pasivní zapojení žáků. Výuka nepoužívá učebnice ani digitální techniku. Pro rodiče, které oslovuje waldorfský přístup a aktivní zapojení do školství, může být vhodnou volbou, měli by si ale ověřit kvalifikaci konkrétních vyučujících."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nedostatek dat",
+      "key_numbers": [
+        "Zpráva neuvádí výsledky maturit."
+      ],
+      "evidence": "Text zprávy neobsahuje specifické údaje o výsledcích maturitních zkoušek."
+    },
+    "absence": {
+      "trend": "Nedostatek dat",
+      "key_numbers": [
+        "Zpráva neuvádí data o absence."
+      ],
+      "evidence": "Text zprávy neobsahuje specifické údaje o absence žáků."
+    },
+    "support_services": [
+      "Fungující komplexní systém školního poradenského pracoviště.",
+      "Účinná podpora asistentů pedagoga a dalších pedagogických pracovníků.",
+      "Spolupráce s externími poradenskými zařízeními při intervenci."
+    ],
+    "safety_climate": [
+      "V prostorách školy nebylo zjištěno žádné bezpečnostní riziko.",
+      "Vstup do budovy je technicky zajištěn.",
+      "Příznivá pracovní atmosféra podporující učení a respektování pravidel."
+    ],
+    "partnerships_practice": [
+      "Aktivní spolupráce s Asociací waldorfských škol ČR.",
+      "Výrazné zapojení rodičů do chodu školy a organizace akcí.",
+      "Spolupráce s umělci z praxe podporovaná projekty."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, s výjimkou standardních odborných termínů (eurytmie, epochy). Struktura je jasná a závěry dobře vystihují předchozí části.",
+    "uncertainty_notes": [
+      "Chybí konkrétní data o výsledcích maturitních zkoušek, což je pro střední školu klíčové.",
+      "Není uvedena konkrétní míra absence nebo statistiky prospěchu žáků.",
+      "Rozsah nekvalifikovanosti (třetina sboru) je uveden, ale nekonkrétní plán nápravy."
+    ]
+  }
+}

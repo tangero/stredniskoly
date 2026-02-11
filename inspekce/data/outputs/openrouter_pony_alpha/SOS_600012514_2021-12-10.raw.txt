@@ -1,0 +1,104 @@
+{
+  "report_id": "SOS_600012514_2021-12-10",
+  "school_profile": {
+    "school_type": "Soukromá střední odborná škola a učiliště zaměřená na gastronomii, hotelnictví, veřejnosprávní činnost a podnikání.",
+    "inspection_period": "10. až 16. prosince 2021",
+    "school_change_summary": "Škola od minulé inspekce navýšila počet žáků, zlepšila materiální podmínky a změnila zřizovatele i název."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborná příprava",
+        "detail": "Výuka v odborném výcviku má vysokou úroveň a probíhá na kvalitních smluvních pracovištích.",
+        "evidence": "„Společným rysem hospitované výuky... byla její vysoká odborná úroveň“ a „ideální podmínky pro získávání zkušeností žáků v reálném gastronomickém provozu“."
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Škola úspěšně podporuje žáky s odlišným mateřským jazykem i žáky se speciálními potřebami.",
+        "evidence": "„Škola vytváří vhodné podmínky pro vzdělávání žáků s odlišným mateřským jazykem“ a „vyhotovuje tzv. vyrovnávací plány“."
+      },
+      {
+        "tag": "Prostředí a klima",
+        "detail": "Škola nabízí estetické prostředí a klade důraz na přátelskou atmosféru a prevenci rizikového chování.",
+        "evidence": "„Estetické prostředí všech vnitřních prostor školy“ a „jakékoliv náznaky problémového chování jsou řešeny bezodkladně“."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivita ve výuce",
+        "detail": "V teoretických předmětech převažuje frontální výuka, kdy jsou žáci často pasivní.",
+        "evidence": "„Těžiště výuky bylo téměř výhradně na [učitelích]. Žáci pak byli pasivními příjemci nových informací.“"
+      },
+      {
+        "tag": "Nedostatečná zpětná vazba",
+        "detail": "Hodiny teoretické výuky často postrádají funkční závěr a kontrolu pochopení látky.",
+        "evidence": "„Společným znakem hospitované teoretické výuky byl chybějící funkční závěr hodiny a nedostatek času k získání zpětné vazby.“"
+      },
+      {
+        "tag": "Neúspěšnost u maturity",
+        "detail": "Část žáků neuspěla u společné části maturitní zkoušky ani v náhradním termínu.",
+        "evidence": "„Z nich dva (nástavbový obor... Podnikání) neuspěli ani po podzimním termínu.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola motivuje žáky k aktivní účasti během teoretických hodin, aby nebyli jen pasivními posluchači?",
+      "Jakým způsobem vyučující zajišťují v závěru hodin, že všichni žáci látku pochopili?",
+      "Jaká konkrétní opatření škola přijala ke zlepšení výsledků u maturitní zkoušky po loňských neúspěších?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří se chtějí uplatnit v gastronomii a hotelnictví a ocení kvalitní praxi v reálném provozu.",
+      "Pro žáky, kteří potřebují individuální podporu nebo mají odlišný mateřský jazyk.",
+      "Pro ty, kteří hledají školu s rodinnou atmosférou a estetickým interiérem."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří preferují moderní, interaktivní formy výuky před klasickým výkladem.",
+      "Pro žáky, kteří mají problémy se samostatným učením a vyžadují okamžitou zpětnou vazbu ve výuce.",
+      "Pro zájemce o nástavbové studium Podnikání, kde došlo k neúspěchu u maturity."
+    ],
+    "plain_czech_summary": "Škola je skvělou volbou pro zájemce o gastronomii a hotelnictví, kde oceníte kvalitní odborný výcvik v reálných provozech a individuální přístup, včetně podpory cizinců. Příprava na povolání je na vysoké úrovni a prostředí školy je příjemné. Mírným rizikem je tradiční styl teoretické výuky, kdy jsou žáci spíše pasivní a hodinám chybí efektivní závěrečná kontrola pochopení látky. Pokud hledáte pro dítě moderní vyučovací metody, raději se informujte na aktuální kroky školy v této oblasti."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený (většina úspěšná, ale existují neúspěchy v nástavbovém oboru)",
+      "key_numbers": [
+        "36 žáků přihlášeno k maturitě 2021",
+        "2 žáci neuspěli ani po podzimním termínu",
+        "12,5 % žáků maturitních oborů prospělo s vyznamenáním"
+      ],
+      "evidence": "„Z nich dva (nástavbový obor... Podnikání) neuspěli ani po podzimním termínu.“"
+    },
+    "absence": {
+      "trend": "Zlepšující se (pokles oproti minulé inspekci)",
+      "key_numbers": [
+        "Průměr necelých 105 omluvených hodin na žáka/rok",
+        "Neúčast není primární příčinou neúspěchu",
+        "Absence je pravidelně vyhodnocována"
+      ],
+      "evidence": "„V průměru necelých 105 omluvených hodin na žáka za školní rok 2020/2021, což je zlepšení proti zjištěním minulé inspekční činnosti.“"
+    },
+    "support_services": [
+      "Vytváření vyrovnávacích plánů pro žáky s odlišným mateřským jazykem",
+      "Individuální vzdělávací plány pro žáky se SVP",
+      "Systém doučování a konzultací pro prevenci neúspěšnosti"
+    ],
+    "safety_climate": [
+      "Okamžité řešení problémového chování",
+      "Důraz na prevenci šikany a kyberšikany",
+      "Spolupráce s Policií ČR při řešení sociálních problémů"
+    ],
+    "partnerships_practice": [
+      "Realizace odborného výcviku u smluvních partnerů v reálném provozu",
+      "Spolupráce se sociálními partnery na soutěžích a zkouškách",
+      "Zahraniční výměnné akce se školou v Německu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje konkrétní příklady. Odborné termíny jsou vysvětleny kontextem.",
+    "uncertainty_notes": [
+      "Chybí upřesnění, o jaký typ změny zřizovatele se konkrétně jednalo (např. změna vlastníků).",
+      "Není specifikováno, které konkrétní učebnice chybí a zda je problém systémový.",
+      "Zpráva neuvádí detaily o technickém stavu budovy, pouze ho zmiňuje jako vnější vliv."
+    ]
+  }
+}

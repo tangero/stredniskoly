@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "GY4_600007961_2022-06-06",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium se maturitní zkouškou",
+    "inspection_period": "6.–8. června 2022",
+    "school_change_summary": "Škola si udržuje vysokou kvalifikovanost pedagogů a zlepšily se její materiální podmínky. Naplněnost zůstává stabilní na 80 % (190 žáků)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a strategie",
+        "detail": "Ředitel vede školu od roku 2008 s jasnou koncepcí rozvoje a funkční organizační strukturou.",
+        "evidence": "Koncepční řízení školy, systematické přijímání a vyhodnocování opatření ke zvýšení kvality vzdělávání."
+      },
+      {
+        "tag": "Odborní učitelé",
+        "detail": "Všichni učitelé mají příslušnou předmětovou specializaci, pedagogický sbor je 100% kvalifikovaný.",
+        "evidence": "Veškeré hodiny jsou odučeny s příslušnou předmětovou specializací."
+      },
+      {
+        "tag": "Rozvoj osobnosti žáků",
+        "detail": "Škola nabízí bohatou nabídku projektů, volitelných předmětů a mimoškolních aktivit.",
+        "evidence": "Účinná podpora všestranného rozvoje osobnosti žáků jejich zapojením do četných projektů a širší nabídkou volitelných a nepovinných předmětů."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné evaluační nástroje",
+        "detail": "Učitelé málo používají formativní hodnocení, vzájemné hodnocení a sebehodnocení žáků.",
+        "evidence": "V hospitovaných hodinách učitelé pouze výjimečně uplatnili formativní hodnocení žáků."
+      },
+      {
+        "tag": "Nejednotné kritéria hodnocení",
+        "detail": "Zejména v češtině dosahují žáci výrazně horšího prospěchu než v jiných předmětech.",
+        "evidence": "V českém jazyce a literatuře tak žáci dlouhodobě dosahují výrazně horšího průměrného prospěchu než v jiných předmětech."
+      },
+      {
+        "tag": "Zvýšená absence po návratu do školy",
+        "detail": "Po obnovení prezenční výuky absence vzrostla přibližně o třetinu oproti srovnatelným obdobím.",
+        "evidence": "V prvním pololetí školního roku 2021/2022 byla absence přibližně o třetinu vyšší."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s nadanými žáky a jakou má nabídku pro jejich rozvoj?",
+      "Jaké jsou konkrétní plány na zlepšení jednotnosti hodnocení, zvláště v češtině?",
+      "Jak škola řeší zvýšenou absenci žáků a jaké má preventivní opatření?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a motivací na vysokoškolské vzdělání",
+      "Děti zajímající se o jazyky (škola má projekt Erasmus+ a výuku šesti cizích jazyků)",
+      "Všestranně nadaní žáci, kterým vyhovuje bohatá nabídka volitelných předmětů a projektů"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v češtině (dlouhodobě nižší prospěch než v jiných předmětech)",
+      "Děti, které potřebují intenzivnější individuální podporu a zpětnou vazbu (málo se používá formativní hodnocení)",
+      "Žáci s vyšší absencí – škola řeší případy individuálně, ale absence po návratu do školy vzrostla"
+    ],
+    "plain_czech_summary": "Gymnázium v Novém Strašecí je dobře vedená škola s kvalifikovanými učiteli a stabilní naplněností. Žáci dosahují velmi dobrých výsledků u maturity (60 % s vyznamenáním) a úspěšně pokračují v terciárním vzdělání. Silné stránky jsou koncepční řízení, odbornost pedagogů a bohatá nabídka aktivit. Slabší je využívání moderních evaluačních metod (formativní hodnocení) a jednotnost kritérií hodnocení, zejména v češtině. Po návratu do prezenční výuky vzrostla absence žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výrazně pozitivní",
+      "key_numbers": [
+        "Přibližně 60 % žáků prospívá s vyznamenáním (2021/2022)",
+        "Hrubá neúspěšnost srovnatelná s průměrem v dané skupině oborů",
+        "Téměř dvojnásobný nárůst prospívajících s vyznamenáním oproti předchozím rokům"
+      ],
+      "evidence": "Výsledky žáků při ukončování studia maturitní zkouškou jsou stabilně velmi dobré. Podíl žáků prospívajících u maturitní zkoušky s vyznamenáním se zvýšil, ve školním roce 2021/2022 činil přibližně 60 %."
+    },
+    "absence": {
+      "trend": "Mírně negativní po návratu do prezenční výuky",
+      "key_numbers": [
+        "2018/2019 (prezenční): cca 140 hodin na žáka ročně",
+        "2021/2022 (1. pololetí): přibližně o třetinu vyšší než v srovnatelných obdobích",
+        "Neomluvené hodiny se téměř nevyskytly"
+      ],
+      "evidence": "Po obnovení prezenční výuky však absence žáků mírně vzrostla, v prvním pololetí školního roku 2021/2022 tak byla přibližně o třetinu vyšší."
+    },
+    "support_services": [
+      "Výchovná poradkyně, výchovná poradkyně pro kariérové poradenství a školní metodik prevence",
+      "Program osobnostního růstu žáků s akcentem na předcházení rizikovému chování",
+      "Adaptační kurz pro žáky prvního ročníku",
+      "Individuální online a prezenční konzultace, maturitní semináře"
+    ],
+    "safety_climate": [
+      "Škola stanovuje pravidla a postupy bezpečnosti v interních předpisech, s nimiž jsou seznámeni žáci i zaměstnanci",
+      "Míra úrazovosti je pravidelně vyhodnocována a přijímají se opatření k jejímu snížení",
+      "Tělesná výchova probíhá v pronajatých prostorách s důsledným dodržováním bezpečnostních pravidel"
+    ],
+    "partnerships_practice": [
+      "Projekt Erasmus+ podporující výuku cizích jazyků s výjezdy žáků a pedagogů do zahraničí",
+      "Využívání evropských finančních zdrojů na pořízení informačních technologií",
+      "Sledování uplatnění absolventů na trhu práce prostřednictvím osobního kontaktu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, obsahuje konkrétní čísla, citace a praktické informace. Všechna tvrzení jsou podložena důkazy z textu.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu žáků se speciálními vzdělávacími potřebami, kteří by mohli mít problémy s integrací (zmíněno jen obecně)",
+      "Chybí detailnější informace o konkrétních opatřeních na snížení absence",
+      "Není jasné, zda se plánuje obsazení pozice školního psychologa (doporučeno, ale bez časového rámce)"
+    ]
+  }
+}
+```

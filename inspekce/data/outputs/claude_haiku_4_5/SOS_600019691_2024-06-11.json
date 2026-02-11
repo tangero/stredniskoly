@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600019691_2024-06-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:15:02.385192+00:00",
+  "run_finished_utc": "2026-02-09T16:15:28.030620+00:00",
+  "raw_file": "SOS_600019691_2024-06-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600019691_2024-06-11",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola a Obchodní akademie s domovem mládeže",
+      "inspection_period": "11. 6. 2024 – 14. 6. 2024",
+      "school_change_summary": "Škola změnila nabídku oborů: ukončila Ekonomické a Zdravotnické lyceum, obor Zdravotnický asistent je dobíhající a nahradil jej obor Praktická sestra. V únoru 2024 došlo ke změně ředitele. Zlepšily se materiální podmínky v digitálních technologiích."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství se zaměstnavateli",
+          "detail": "Škola má funkční spolupráci se sociálními partnery, která žákům umožňuje získávat odborné kompetence a připravuje je na pracovní trh.",
+          "evidence": "Besedy, exkurze a praktické vyučování u zaměstnavatelů přispívají k uplatnitelnosti absolventů."
+        },
+        {
+          "tag": "Bohaté mimoškolní aktivity",
+          "detail": "Škola organizuje projekty, sportovní soutěže a charitativní akce, které rozvíjejí osobnost a sociální kompetence žáků.",
+          "evidence": "Den zdraví, Letní sportovní dny mládeže, Krabice od bot a další aktivity."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Učebny pro zdravotnické obory mají moderní vybavení odpovídající současným trendům, včetně virtuální reality a odborných modelů.",
+          "evidence": "Simulace zdravotnických výkonů v podmínkách simulujících reálné prostředí."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky maturit",
+          "detail": "Hrubá neúspěšnost ve společné části maturitní zkoušky je vyšší než republikový průměr, zejména v oboru Zdravotnický asistent/Praktická sestra.",
+          "evidence": "V roce 2023: Obchodní akademie 18,2 % (ČR 5,9 %), Praktická sestra 58,3 % (ČR 10,3 %)."
+        },
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Průměrná absence ve výuce činí přibližně 165 hodin na žáka ročně, nejvyšší v nematuritním oboru.",
+          "evidence": "Absence je spojena s podprůměrnými výsledky a předčasným odchodem ze vzdělávání."
+        },
+        {
+          "tag": "Nedostatky v pedagogickém procesu",
+          "detail": "Výuka postrádá diferenciaci, práci s informačními zdroji a rozvoj kritického myšlení; chybí efektivní zpětná vazba.",
+          "evidence": "Inspektoři zjistili, že žáci nemají možnost vybírat z diferenciovaných zadání a nejsou vedeni k rozvoji hodnoticích dovedností."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou neúspěšnost v maturitní zkoušce a jaké jsou plány na zlepšení?",
+        "Jaké jsou příčiny vysoké absence žáků a jaká opatření škola zavádí?",
+        "Jak se škola zaměřuje na individuální potřeby žáků s různými schopnostmi?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o zdravotnické obory, kteří mají podporu rodiny a jsou motivováni k pravidelnému docházení",
+        "Studenti oboru Obchodní akademie, kde jsou lepší výsledky a vyšší úspěšnost maturit",
+        "Žáci, kteří oceňují bohaté mimoškolní aktivity a praktické vyučování u zaměstnavatelů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími výsledky v češtině, matematice a cizích jazycích – maturitní obory mají vysokou neúspěšnost",
+        "Studenti, kteří potřebují individualizovanou výuku a diferenciaci – inspekce zjistila nedostatky v tomto směru",
+        "Žáci s tendencí k absencím – vysoká absence je spojená s neúspěchem a předčasným odchodem"
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní praktické vzdělávání v zdravotnických oborech s dobrým vybavením a vazbami na zaměstnavatele. Silnou stránkou jsou mimoškolní aktivity. Hlavní problém: výrazně vyšší neúspěšnost v maturitní zkoušce než v republice (zejména v zdravotnických oborech) a vysoká absence žáků. Výuka postrádá individuální přístup a efektivní zpětnou vazbu. Obor Obchodní akademie má lepší výsledky. Škola si problémy uvědomuje a zavádí opatření, ale jejich účinnost se teprve projeví."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se trend v Obchodní akademii, stále kritický stav v zdravotnických oborech",
+        "key_numbers": [
+          "Obchodní akademie 2023: 18,2 % neúspěšnosti (ČR 5,9 %)",
+          "Praktická sestra 2023: 58,3 % neúspěšnosti (ČR 10,3 %)",
+          "Obchodní akademie 2022/2023: 60 % žáků úspěšně ukončilo v řádném termínu (2021/2022 bylo 50 %)"
+        ],
+        "evidence": "Nejčastěji žáci neuspějí v didaktickém testu z češtiny, literatury a cizích jazyků. Matematiku volí minimum žáků s nízkou úspěšností."
+      },
+      "absence": {
+        "trend": "Vysoká absence, částečně zlepšená opatřeními proti záškoláctví",
+        "key_numbers": [
+          "Průměrná absence: přibližně 165 hodin na žáka ročně",
+          "Nejvyšší absence v nematuritním oboru",
+          "Snížení neomluvené absence díky důsledným opatřením"
+        ],
+        "evidence": "Vyšší neúčast ve výuce je spojena s podprůměrnými výsledky a předčasným odchodem ze vzdělávání."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodik prevence poskytují funkční poradenské služby",
+        "Kariérový poradce poskytuje účinnou podporu při volbě dalšího studia a uplatnění na pracovním trhu",
+        "Ve školním roce 2023/2024 zvýšena nabídka individuálního a skupinového doučování",
+        "Pedagogové poskytují individuální konzultace"
+      ],
+      "safety_climate": [
+        "Pravidelné adaptační programy pro první ročníky budují zdravé klima třídních kolektivů",
+        "Organizované preventivní aktivity: besedy, přednášky, sportovní a turistické kurzy",
+        "Bezodkladné řešení problémů s rizikovým chováním přispívá ke snižování jejich výskytu",
+        "Žáci bez obav sdělují vedení své podněty a návrhy"
+      ],
+      "partnerships_practice": [
+        "Funkční partnerství se zaměstnavateli prostřednictvím besed, exkurzí a praktického vyučování",
+        "Spolupráce se základními a mateřskými školami – realizace kurzů zaměřených na zdravovědu",
+        "Žáci školy pomáhají v základních školách při organizaci projektů",
+        "Prostupnost mezi obory kategorie H a M ve zdravotnických oborech"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Hlavní zjištění jsou jasná, ale některé pasáže jsou technicky náročnější. Praktické informace pro rodiče nejsou explicitně odděleny.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření budou zavedena – pouze doporučuje jejich přijetí",
+        "Není jasné, zda se nízké výsledky týkají všech žáků nebo jen určité skupiny",
+        "Chybí informace o tom, jak se výsledky liší mezi jednotlivými třídami v rámci oboru"
+      ]
+    }
+  }
+}

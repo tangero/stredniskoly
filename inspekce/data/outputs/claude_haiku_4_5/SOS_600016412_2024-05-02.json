@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600016412_2024-05-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:17:41.631389+00:00",
+  "run_finished_utc": "2026-02-09T16:18:09.927145+00:00",
+  "raw_file": "SOS_600016412_2024-05-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600016412_2024-05-02",
+    "school_profile": {
+      "school_type": "Soukromá střední odborná škola",
+      "inspection_period": "2. května až 13. května 2024",
+      "school_change_summary": "Od října 2023 došlo k personální obměně (nový školitel prevence, péče o žáky se speciálními potřebami), rozšíření pedagogického sboru o dva externí učitele, změně složení předmětových komisí a novelizaci pravidel hodnocení. Kvalita výuky se zlepšila."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola úzce spolupracuje s četnými profesními partnery, kteří umožňují žákům absolvovat praktické vyučování v reálném pracovním prostředí.",
+          "evidence": "Spolupráce s profesními partnery účinně přispívá k rozvoji odborných kompetencí žáků."
+        },
+        {
+          "tag": "Osobnostní rozvoj",
+          "detail": "Pedagogové podporují zapojení žáků do dobrovolnických aktivit, což rozvíjí jejich občanské, osobnostní a sociální kompetence.",
+          "evidence": "Žáci spolupracují s pomáhajícími organizacemi a působí v nízkoprahových zařízeních, domovech pro seniory."
+        },
+        {
+          "tag": "Kvalita výuky",
+          "detail": "Výuka probíhá v příznivé atmosféře se vstřícným přístupem učitelů, s propojením teorie a praxe.",
+          "evidence": "Při hospitacích bylo zaznamenáno celkové zlepšení kvality výuky a praktické využívání poznatků ze vzdělávacích aktivit."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Chybějící kontrolní mechanismy",
+          "detail": "Vytýčené cíle rozvoje školy nejsou provázeny se stanovením termínů, odpovědnosti zaměstnanců a nástrojů pro ověření jejich naplňování.",
+          "evidence": "Chybí nastavení kontrolních mechanizmů pro ověření naplňování cílů včetně termínů a odpovědnosti."
+        },
+        {
+          "tag": "Nedostatky v řízení",
+          "detail": "Kontrolní systém není funkčně nastaven pro některé oblasti řízení, dílčí nedostatky v organizaci ukončování vzdělávání.",
+          "evidence": "Řízení školy vykazuje dílčí nedostatky vyplývající z nedostatečné aplikace vybraných právních předpisů."
+        },
+        {
+          "tag": "Omezená diferenciace výuky",
+          "detail": "V nižší míře jsou zařazovány úkoly rozdílné obtížnosti podle individuálních schopností žáků a aktivity rozvíjející kritické myšlení.",
+          "evidence": "Jen u některých vyučujících bylo využito efektivní formativní hodnocení a funkční sebehodnocení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá praktické vyučování u profesních partnerů a jak se žáci na něj připravují?",
+        "Jaké jsou výsledky maturitních zkoušek v posledních třech letech, zejména v českém a cizím jazyce?",
+        "Jak škola individuálně podporuje žáky se slabšími výsledky a jaké má doučovací programy?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří chtějí praktické vzdělání s propojením na reálné pracovní prostředí a profesní partnery",
+        "Studenti zainteresovaní na osobnostním rozvoji a dobrovolnické činnosti",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola nabízí individuální plány a podporu"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají vysokou úroveň individualizace výuky – diferenciace je zatím v nižší míře",
+        "Žáci, kteří potřebují silný důraz na kritické myšlení a práci s informačními zdroji – tyto strategie se zavádějí postupně",
+        "Studenti, kteří preferují jasně nastavené a kontrolované systémy – škola má nedostatky v kontrolních mechanismech"
+      ],
+      "plain_czech_summary": "Soukromá SOŠ Frýdek-Místek vzdělává 308 žáků ve dvou oborech (Veřejnosprávní činnost, Sociální činnost). Silné stránky: kvalitní výuka s propojením praxe, spolupráce s profesními partnery, podpora osobnostního rozvoje. Slabiny: chybějí kontrolní mechanismy pro naplňování cílů, nedostatky v řízení, omezená diferenciace výuky. Inspekce doporučuje zlepšit plánování, kontrolu a zavádět více strategií pro kritické myšlení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neurčitý – účinnost opatření bude ověřena až podle výsledků v aktuálním školním roce",
+        "key_numbers": [
+          "2 obory s maturitní zkouškou (68-43-M/01 Veřejnosprávní činnost, 75-41-M/01 Sociální činnost)",
+          "Škola upustila od spojování tříd závěrečných ročníků ve výuce českého a cizího jazyka",
+          "On-line doučování v českém jazyce pro maturitní ročníky"
+        ],
+        "evidence": "Účinnost zavedených opatření bude možné ověřit až podle úspěšnosti žáků u maturitních zkoušek v aktuálním školním roce."
+      },
+      "absence": {
+        "trend": "Od druhého pololetí 2023/2024 jsou nastaveny jednotné postupy při řešení neomluvené absence",
+        "key_numbers": [
+          "Jednotné postupy vyučujících v krizovém plánu od druhého pololetí 2023/2024",
+          "Individuální řešení negativních projevů chování s žáky a zákonnými zástupci",
+          "Spolupráce s externími odborníky podle potřeby"
+        ],
+        "evidence": "Od druhého pololetí školního roku 2023/2024 jsou v krizovém plánu nastaveny jednotné postupy vyučujících v případě výskytu různých projevů rizikového chování včetně postupů při řešení neomluvené absence."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s konzultačními a poradenským službami pro žáky a zákonné zástupce",
+        "Individuální vzdělávací plány pro 3 žáky se speciálními vzdělávacími potřebami",
+        "Plány pedagogické podpory pro 18 žáků se speciálními vzdělávacími potřebami, pravidelně vyhodnocované",
+        "Doučování a konzultace s pedagogy pro žáky s prospěchovými problémy",
+        "Adaptační kurzy pro nové třídní kolektivy"
+      ],
+      "safety_climate": [
+        "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování a ochrany zdraví",
+        "Třídnické hodiny zavedeny ve škole",
+        "Anonymní schránka důvěry k dispozici",
+        "Primární prevence prostřednictvím tematicky zaměřených přednášek",
+        "Krizový plán s jednotnými postupy od druhého pololetí 2023/2024"
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce s četnými profesními partnery umožňující praktické vyučování v reálném pracovním prostředí",
+        "Exkurze a přednášky se zaměstnavateli",
+        "Spolupráce s organizacemi v oblasti prevence, péče o žáky se speciálními vzdělávacími potřebami a dobrovolnické činnosti",
+        "Zapojení odborníků z praxe do vzdělávání přenášejících praktické zkušenosti"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však technicky náročnější (legislativní odkazy, kritéria hodnocení).",
+      "uncertainty_notes": [
+        "Výsledky maturitních zkoušek nejsou v zprávě konkrétně uvedeny – inspekce čeká na ověření účinnosti opatření",
+        "Přesné počty žáků s prospěchovými problémy a jejich vývoj nejsou detailně specifikovány",
+        "Dopad personální obměny na kvalitu vzdělávání bude patrný až v čase"
+      ]
+    }
+  }
+}

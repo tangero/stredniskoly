@@ -1,0 +1,28 @@
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T11:39:20.907429+00:00",
+  "run_finished_utc": "2026-02-09T11:39:40.952137+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"LYC_600012760_2025-11-03\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Nesoulad v termínu inspekce: kandidát uvádí 2025-11-03 až 2025-11-06, zdroj uvádí inspekční činnost na místě 3.–5. 11. 2025.\",\n    \"Tvrzení o „stabilizaci zájmu“ jako výsledku je ve zdroji formulováno jako cíl/směřování plánu rozvoje, ne jako prokazatelně dosažený stav.\"\n  ],\n  \"best_points\": [\n    \"Správně přebírá silné stránky i slabé stránky přesně podle závěrů ČŠI (nadregionální zájem o technické lyceum, materiální podmínky domova mládeže, šíře volnočasových aktivit; slabiny v práci s cíli, sebehodnocení/vrstevnickém hodnocení a diferenciaci).\",\n    \"Uvádí klíčová, zdrojem doložená čísla (maturita 2024/2025 po podzimním termínu všichni úspěšní; cca čtvrtina s vyznamenáním; absence necelých 110 hodin/žák a 3 neomluvené hodiny).\",\n    \"Pro rodiče prakticky zachycuje téma domova mládeže (zájem převyšuje kapacitu) a překládá jej do smysluplné otázky na den otevřených dveří.\"\n  ],\n  \"one_line_verdict\": \"Obsah je z většiny věrný a pro rodiče dobře použitelný, ale má chybný termín inspekce a místy prezentuje plánovaný cíl (stabilizaci zájmu) jako hotový výsledek.\"\n}",
+  "judge_output": {
+    "report_id": "LYC_600012760_2025-11-03",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "Nesoulad v termínu inspekce: kandidát uvádí 2025-11-03 až 2025-11-06, zdroj uvádí inspekční činnost na místě 3.–5. 11. 2025.",
+      "Tvrzení o „stabilizaci zájmu“ jako výsledku je ve zdroji formulováno jako cíl/směřování plánu rozvoje, ne jako prokazatelně dosažený stav."
+    ],
+    "best_points": [
+      "Správně přebírá silné stránky i slabé stránky přesně podle závěrů ČŠI (nadregionální zájem o technické lyceum, materiální podmínky domova mládeže, šíře volnočasových aktivit; slabiny v práci s cíli, sebehodnocení/vrstevnickém hodnocení a diferenciaci).",
+      "Uvádí klíčová, zdrojem doložená čísla (maturita 2024/2025 po podzimním termínu všichni úspěšní; cca čtvrtina s vyznamenáním; absence necelých 110 hodin/žák a 3 neomluvené hodiny).",
+      "Pro rodiče prakticky zachycuje téma domova mládeže (zájem převyšuje kapacitu) a překládá jej do smysluplné otázky na den otevřených dveří."
+    ],
+    "one_line_verdict": "Obsah je z většiny věrný a pro rodiče dobře použitelný, ale má chybný termín inspekce a místy prezentuje plánovaný cíl (stabilizaci zájmu) jako hotový výsledek."
+  }
+}

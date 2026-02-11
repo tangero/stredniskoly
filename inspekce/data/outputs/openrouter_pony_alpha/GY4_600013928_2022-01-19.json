@@ -1,0 +1,111 @@
+{
+  "report_id": "GY4_600013928_2022-01-19",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:00:40.717701+00:00",
+  "run_finished_utc": "2026-02-10T08:01:34.105893+00:00",
+  "raw_file": "GY4_600013928_2022-01-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600013928_2022-01-19",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola chemická",
+      "inspection_period": "19. 1. 2022 − 21. 1. 2022",
+      "school_change_summary": "Škola dlouhodobě zlepšuje materiální zázemí, modernizuje odborné učebny a zavedla motivační osobní kreditový systém pro žáky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Vybavení a zázemí",
+          "detail": "Škola nabízí nadstandardní materiální vybavení včetně nového přírodovědného centra s 3D modely.",
+          "evidence": "Materiálně technické podmínky jsou na velmi dobré úrovni... zřízení přírodovědného motivujícího centra, které obsahuje interaktivní 3D modely."
+        },
+        {
+          "tag": "Jazyky a uplatnění",
+          "detail": "Výuka předmětu Science v angličtině a zahraniční stáže zvyšují šance absolventů na trhu práce.",
+          "evidence": "Výuka povinného předmětu Science... v anglickém jazyce... Dlouhodobě organizuje pravidelné výměnné pobyty... ve Stuttgartu a Debrecenu."
+        },
+        {
+          "tag": "Úspěchy žáků",
+          "detail": "Žáci dosahují vynikajících výsledků v mezinárodních soutěžích a chemických olympiádách.",
+          "evidence": "V chemické olympiádě 2021 se žák školy umístil na 1. místě v národním kole... v roce 2016 žák vyhrál 1. místo v Číně."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Riziko úrazů",
+          "detail": "V posledních letech škola eviduje zvýšený počet úrazů, zejména v tělesné výchově.",
+          "evidence": "V posledních dvou školních letech evidováno zvýšené množství úrazů... lehčí úrazy vzniklé výrazně zhoršenou fyzickou kondicí."
+        },
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Ve výuce převažuje frontální styl, kde žáci jsou méně vedeni k samostatnosti a komunikaci.",
+          "evidence": "Pedagogové využili převážně frontální způsob výuky... v některých hodinách převažovala verbální aktivita na straně učitele."
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Učitelé málo diferencují výuku podle individuálních potřeb a schopností žáků.",
+          "evidence": "Obsahová diferenciace výuky vzhledem k jejich individuálním vzdělávacím potřebám byla velmi zřídka uplatněna."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně funguje systém osobních kreditů, za které mohou žáci získat finanční odměnu?",
+        "Jaké možnosti má dítě, pokud bude potřebovat individuální přístup v náročnějších předmětech?",
+        "Jak škola řeší prevenci úrazů a zlepšování fyzické kondice žáků mimo hodiny tělesné výchovy?"
+      ],
+      "who_school_fits": [
+        "Pro žáky se zájmem o chemii, přírodní vědy a environmentální témata.",
+        "Pro studenty, kteří chtějí získat kvalitní jazykové vzdělání a zahraniční zkušenosti.",
+        "Pro ty, kdo oceňují moderní vybavení laboratoří a odborných učeben."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří preferují samostatnou a skupinovou práci před tradiční frontální výukou.",
+        "Pro studenty, kteří vyžadují výrazně individuální přizpůsobení tempa a obsahu výuky.",
+        "Pro rodiče, které znepokojuje statistika zvýšeného výskytu úrazů v tělocviku."
+      ],
+      "plain_czech_summary": "Škola je jedinečným centrem chemického vzdělávání v kraji s vynikajícím technickým vybavením a úspěchy v soutěžích. Klade důraz na jazyky a nabízí zajímavý kreditový systém odměňující aktivitu žáků. Nevýhodou může být tradičnější styl výuky s menším důrazem na individuální přístup a statisticky vyšší výskyt úrazů v tělocviku. Celkově jde o kvalitní volbu pro technicky nadšené studenty."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "stabilní",
+        "key_numbers": [
+          "Průměrná neúspěšnost 8 %",
+          "25 % žáků s vyznamenáním",
+          "Vynikající výsledky z angličtiny"
+        ],
+        "evidence": "Celková průměrná hrubá neúspěšnost žáků školy u maturitní zkoušky... je 8 %."
+      },
+      "absence": {
+        "trend": "nehodnoceno",
+        "key_numbers": [
+          "Data nejsou relevantní"
+        ],
+        "evidence": "Počet zameškaných hodin nelze hodnotit vzhledem k nestandardním průběhům posledních školních let."
+      },
+      "support_services": [
+        "Fungující školní poradenské pracoviště s psycholožkou a kariérovým poradcem.",
+        "Schránka důvěry a vrstevnické doučování pro podporu žáků.",
+        "Programy prevence kyberšikany a závislostí."
+      ],
+      "safety_climate": [
+        "Dobré klima podporované studentskou radou a vzájemnou komunikací.",
+        "Zvýšený výskyt lehčích úrazů v tělesné výchově po návratu z distanční výuky.",
+        "Nízký výskyt závažných problémů a kázeňských opatření."
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce s firmami a vysokými školami v poradním sboru.",
+        "Realizace odborných exkurzí a stáží v reálném výrobním prostředí.",
+        "Mezinárodní spolupráce se školami v Německu a Maďarsku."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje konkrétní příklady i číselné údaje. Obsahuje minimum zbytečných úřednických frází.",
+      "uncertainty_notes": [
+        "Chybí konkrétní data o počtu žáků přijímaných k maturitě vs. úspěšnosti.",
+        "Není blíže specifikováno, které obory mají horší maturitní výsledky než angličtina.",
+        "Nejasná míra 'zvýšeného množství úrazů' v absolutních číslech."
+      ]
+    }
+  }
+}

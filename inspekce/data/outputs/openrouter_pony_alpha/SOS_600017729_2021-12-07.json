@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600017729_2021-12-07",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:11:50.755057+00:00",
+  "run_finished_utc": "2026-02-10T08:12:52.239967+00:00",
+  "raw_file": "SOS_600017729_2021-12-07.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017729_2021-12-07",
+    "school_profile": {
+      "school_type": "Soukromá střední škola zaměřená na bezpečnostně právní činnost.",
+      "inspection_period": "7. 12. 2021 − 10. 12. 2021",
+      "school_change_summary": "Škola se od roku 2015 cíleně zaměřuje na jeden profilový obor Bezpečnostně právní činnost a modernizuje materiální podmínky i digitální nástroje."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná výuka",
+          "detail": "Výuka v bezpečnostně právních předmětech má výbornou úroveň a je vedena odborníky z praxe.",
+          "evidence": "Sledované hodiny odborných bezpečnostně právních předmětů měly výbornou úroveň... bohatými profesními zkušenostmi."
+        },
+        {
+          "tag": "Vybavení a technologie",
+          "detail": "Škola nabízí nadstandardní materiální zázemí a vlastní aplikaci pro výuku.",
+          "evidence": "Materiální zázemí... bylo hodnoceno jako nadstandardní... škola využívala vlastní vzdělávací aplikaci."
+        },
+        {
+          "tag": "Partnerská spolupráce",
+          "detail": "Škola efektivně propojuje výuku s praxí u policii a hasičů.",
+          "evidence": "Partnerské vztahy... se pozitivně promítají do kvality odborného vzdělávání... funkční propojování teorie a praxe."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence",
+          "detail": "Škola se dlouhodobě neúspěšně potýká s vysokou absencí žáků.",
+          "evidence": "Dlouhodobě se škola potýká s problémem vysoké omluvené i neomluvené absence... snižovat ji se nedaří."
+        },
+        {
+          "tag": "Neúspěšnost u maturity",
+          "detail": "Míra neúspěšnosti u maturitních zkoušek se zhoršuje, zejména v českém jazyce.",
+          "evidence": "Výsledky maturitních zkoušek... vykazují mírné zhoršení... nejméně úspěšným předmětem... je český jazyk."
+        },
+        {
+          "tag": "Kvalita všeobecných předmětů",
+          "detail": "Výuka v běžných předmětech je málo aktivizující a chybí diferenciace.",
+          "evidence": "Převládala frontální metoda... poskytovala málo prostoru pro aktivizaci... cílená diferenciace... zaznamenána nebyla."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podpoří mé dítě, pokud bude mít problém s docházkou nebo prospěchem?",
+        "Jakým způsobem jsou využívány zkušenosti z praxe ve výuce všeobecných předmětů, jako je čeština?",
+        "Jaká je efektivita opatření zavedených ke zlepšení maturitních výsledků v českém jazyce?"
+      ],
+      "who_school_fits": [
+        "Pro žáky, které baví tématika bezpečnosti, práva a chtějí získat praktické dovednosti.",
+        "Pro studenty, kteří očekávají kamarádské prostředí a individuální přístup v odborných předmětech.",
+        "Pro zájemce o sport a fyzickou přípravu v rámci studia (např. bojové sporty, lyžařské kurzy)."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, které nezajímá vojenský či policejní styl výuky a fyzická náročnost.",
+        "Pro studenty, kteří potřebují silnou podporu v běžných předmětech (čeština, jazyky) a aktivní výuku.",
+        "Pro rodiče, kteří kladou důraz na striktní zvládání školní docházky bez větších výkyvů."
+      ],
+      "plain_czech_summary": "BPA Ostrava je škola se silným zaměřením na bezpečnost a právo, kde září odborná výuka vedená lidmi z praxe. Oceníte skvělé vybavení, vlastní výukovou aplikaci a rodinnou atmosféru. Pozor si dejte na vysokou absenci, která je zde dlouhodobým problémem, a na horší výsledky u maturity z češtiny. Výuka v běžných předmětech může být pro náročnější studenty příliš pasivní. Škola sedne těm, kdo se chtějí učit profesi a baví je pohyb, méně pak těm, kdo potřebují hlubší akademický přístup ve všeobecných předmětech."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírné zhoršení",
+        "key_numbers": [
+          "Podíl neprospívajících žáků 10 % až 24 %",
+          "Nejméně úspěšný předmět: český jazyk a literatura"
+        ],
+        "evidence": "Výsledky maturitních zkoušek... vykazují mírné zhoršení (podíl neprospívajících žáků se pohyboval mezi 10 % až 24 %)."
+      },
+      "absence": {
+        "trend": "Vysoká a dlouhodobě neřešená",
+        "key_numbers": [
+          "Snížená známka z chování 27 žákům",
+          "Důvod: neomluvená absence"
+        ],
+        "evidence": "Snížená známka z chování byla udělená 27 žákům, všem za neomluvenou absenci."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště (výchovný poradce, metodik prevence)",
+        "Individuální konzultace pro ohrožené žáky",
+        "Metodické vedení začínajících pedagogů"
+      ],
+      "safety_climate": [
+        "Přátelské klima a otevřená komunikace",
+        "Důraz na bezpečnost při fyzicky náročných činnostech",
+        "Aktivní prevence rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Policie ČR, Městská policie, Hasičský záchranný sbor",
+        "Vazební věznice Ostrava, Krajský soud",
+        "Realizace odborné praxe a exkurzí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a negativa, ačkoliv některé pasáže o metodice výuky jsou obecnější.",
+      "uncertainty_notes": [
+        "Přesné procento absence není uvedeno, pouze její dopad na klasifikaci.",
+        "Není specifikováno, jak konkrétně probíhá 'efektivní' spolupráce s partnery mimo zmíněné akce."
+      ]
+    }
+  }
+}

@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY8_600011887_2024-01-04",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmiletého oboru), 16 tříd, 473 žáků",
+    "inspection_period": "4.–9. ledna 2024",
+    "school_change_summary": "Škola pokračuje v zlepšování materiálních podmínek. Vedení se zaměřuje na rozšíření volitelných předmětů a zájmových kroužků. Pedagogický sbor je zkušený a kvalifikovaný."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "Žáci dosahují dlouhodobě velmi dobrých výsledků v maturitních zkouškách a soutěžích.",
+        "evidence": "Výsledky ve společné části maturitní zkoušky jsou dlouhodobě velmi dobré, někteří žáci plní rozšiřující zkoušku z matematiky."
+      },
+      {
+        "tag": "Bohatá nabídka volitelných předmětů",
+        "detail": "Škola nabízí širokou škálu seminářů a konverzací, které podporují studijní orientaci žáků.",
+        "evidence": "Široká škála povinně volitelných předmětů (např. semináře, konverzace) nebo organizování zájmových kroužků (např. sportovní, žurnalistický, divadelní)."
+      },
+      {
+        "tag": "Kvalitní pedagogický sbor",
+        "detail": "Učitelé jsou odborně kvalifikovaní a mají dlouholeté zkušenosti s výukou na gymnáziu.",
+        "evidence": "Pedagogický sbor odborně kvalifikovaných, ve vysoké míře zkušených učitelů, kteří mají s výukou na gymnáziu letité zkušenosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Přeplnění hodin učivem",
+        "detail": "Vyučovací hodiny jsou někdy přeplněné objemem učiva, což brání aktivizaci všech žáků.",
+        "evidence": "Vyučovací hodiny byly občas až přeplněné objemem učiva. To vedlo v některých sledovaných hodinách k tomu, že se učitelům nedařilo část žáků aktivizovat."
+      },
+      {
+        "tag": "Slabá diferenciace výuky",
+        "detail": "Výuka se málo přizpůsobuje rozdílným schopnostem žáků, chybí individuální přístup.",
+        "evidence": "Pouze v minimální míře byla zaznamenána účelná diferenciace náročnosti zadávaných úkolů či vhodný individuální přístup k žákům se speciálními vzdělávacími potřebami."
+      },
+      {
+        "tag": "Problémy v poradenském systému",
+        "detail": "Školní poradenské pracoviště nefunguje dostatečně efektivně, chybí kontrola naplňování doporučení.",
+        "evidence": "Nebyl vypracován jeden školským poradenským zařízením doporučený individuální vzdělávací plán žáka. Neprobíhala dostatečná průběžná kontrola naplňování doporučení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s žáky, kteří mají nižší studijní potenciál nebo se potýkají s problémy v určitých předmětech (zejména v češtině a matematice)?",
+      "Jaké konkrétní kroky podnikne škola na zlepšení fungování školního poradenského pracoviště a podpory žáků se speciálními vzdělávacími potřebami?",
+      "Jak se škola chystá zavádět více interaktivních a kooperativních metod výuky místo převážně frontální výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci s vyšším studijním potenciálem a motivací dosahovat výborných výsledků, zejména v přípravě na vysoké školy",
+      "Žáci zajímající se o jazykové vzdělání (škola nabízí mezinárodně uznávané zkoušky z angličtiny)",
+      "Žáci, kterým vyhovuje tradiční přístup k vzdělání s důrazem na odbornost a kvalitu výuky"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižšími studijními schopnostmi nebo těmi, kteří potřebují více individuální podpory a diferenciace",
+      "Žáci, kteří se lépe učí interaktivními a kooperativními metodami než frontální výukou",
+      "Žáci se speciálními vzdělávacími potřebami, vzhledem k nedostatečné funkčnosti poradenského systému"
+    ],
+    "plain_czech_summary": "Gymnázium Josefa Ressela je kvalitní škola s výbornými výsledky u maturity a bohatou nabídkou volitelných předmětů. Pedagogický sbor je zkušený a kvalifikovaný. Hlavní problémy jsou přeplnění hodin učivem, nedostatečná diferenciace výuky podle schopností žáků a slabé fungování poradenského systému. Škola by měla více zaměřit pozornost na individuální přístup k žákům a zavádět interaktivnější metody výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi dobrý",
+      "key_numbers": [
+        "Výsledky ve společné části maturitní zkoušky jsou dlouhodobě velmi dobré",
+        "Někteří žáci plní rozšiřující zkoušku z matematiky",
+        "Žáci úspěšně skládají mezinárodně uznávané zkoušky (B2 First a C1 Advanced)"
+      ],
+      "evidence": "Výsledky ve společné části maturitní zkoušky jsou dlouhodobě velmi dobré, někteří žáci plní rozšiřující zkoušku z matematiky. V rámci spolupráce s Britskou radou žáci úspěšně skládají mezinárodně uznávané zkoušky."
+    },
+    "absence": {
+      "trend": "Nízká míra rizikového chování",
+      "key_numbers": [
+        "Žádný žák nebyl v roce 2022/23 hodnocen stupněm neprospěl",
+        "Žádný žák nemusel absolvovat opravnou zkoušku",
+        "Nízká míra rizikového chování žáků"
+      ],
+      "evidence": "Celkové ročníkové výsledky žáků jsou dobré, žádný žák ve školním roce 2022/23 nebyl celkově hodnocen stupněm neprospěl ani nemusel absolvovat opravnou zkoušku. Preventivní strategie se vzhledem k nízké míře rizikového chování jeví jako přiměřeně účinná."
+    },
+    "support_services": [
+      "Školní psycholožka na 0,5 úvazku věnující se osobním a studijním otázkám žáků",
+      "Dva vyučující zajišťující primární prevenci a výchovné poradenství",
+      "Metodička prevence aktualizující plán preventivních opatření a aktivit",
+      "Asistentky pedagoga (kontrola jejich práce je však nedostatečná)"
+    ],
+    "safety_climate": [
+      "Klidná atmosféra ve třídách, žáci bez zdržování nebo nekázně plnili zadané postupy",
+      "Vedení školy dbá na dobré vztahy mezi účastníky vzdělávání",
+      "Adaptační pobyty prvního ročníku a osmiletého gymnázia v kvintě podporují prosociální vazby",
+      "Funguje studentský parlament, který se pravidelně schází"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Britskou radou na mezinárodně uznávaných zkouškách z angličtiny",
+      "Projekty z programu Erasmus+ (Podpora aktivního a odpovědného občanství ve školách)",
+      "Doučování žáků ohrožených školním neúspěchem z Národního plánu obnovy",
+      "Prevence digitální propasti a inovativní výuka (tandemová)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Struktura je logická a dobře organizovaná.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní procenta žáků s problémy v češtině a matematice, pouze uvádí, že jde o 'horší výsledky'",
+      "Není jasné, kolik hodin týdně mají žáci třídnické hodiny (zmíněno 'jednou za dva měsíce')",
+      "Chybí konkrétní data o počtu žáků, kteří využívají služby školní psycholožky"
+    ]
+  }
+}
+```

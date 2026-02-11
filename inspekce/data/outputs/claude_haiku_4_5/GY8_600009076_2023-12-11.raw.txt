@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY8_600009076_2023-12-11",
+  "school_profile": {
+    "school_type": "Osmileté gymnázium, základní škola a školní družina (soukromá, s.r.o.)",
+    "inspection_period": "11. 12. – 13. 12. 2023",
+    "school_change_summary": "Škola inovovala vzdělávací programy, částečně zlepšila vybavení a odhlučnila učebny. Nabízí volitelné předměty na obou stupních. Počet pedagogů mírně vzrostl, ale jejich kvalifikovanost se snížila – více než třetina nesplňuje odbornou kvalifikaci."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Efektivní využití testování",
+        "detail": "Škola systematicky používá výsledky interního a externího testování ke zlepšování vzdělávání.",
+        "evidence": "Výsledky testování se promítají do využití dotací ve vzdělávacích oblastech."
+      },
+      {
+        "tag": "Nízká neúspěšnost",
+        "detail": "Velmi málo žáků neprospívá; v základní škole v minulém roce prospěli všichni.",
+        "evidence": "Ve střední škole neprospěli pouze čtyři žáci."
+      },
+      {
+        "tag": "Kvalitní výuka na prvním stupni",
+        "detail": "Učitelky prvního stupně efektivně motivují žáky, kombinují různé metody a podporují kooperaci.",
+        "evidence": "Žáci bez obav pokládají otázky, diskutují o řešeních, učitelky poskytují efektivní zpětnou vazbu."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovanost pedagogů",
+        "detail": "Více než třetina pedagogů nesplňuje podmínku odborné kvalifikace a nedostává systematickou podporu.",
+        "evidence": "Nesystematická podpora učitelům bez potřebné kvalifikace přetrvává, vzdělávání se účastní jen malý počet pedagogů."
+      },
+      {
+        "tag": "Slabá diferenciace ve výuce",
+        "detail": "Chybí přizpůsobení aktivit potřebám jednotlivých žáků, zejména těch se speciálními vzdělávacími potřebami.",
+        "evidence": "Diferencované úlohy byly zařazeny jen v některých hodinách bez poskytnutí zpětné vazby."
+      },
+      {
+        "tag": "Vyšší úrazovost",
+        "detail": "Škola se dlouhodobě potýká s vyšší úrazovostí, přijatá opatření nejsou zatím účinná.",
+        "evidence": "Opakovaná poučení žáků v tělesné výchově zatím nevedla ke snížení počtu úrazů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje učitele bez odborné kvalifikace? Jaké školení nebo mentoring jim poskytuje?",
+      "Jak se škola vypořádává s vyšší úrazovostí v tělesné výchově? Jaká konkrétní opatření plánuje zavést?",
+      "Jak se liší výuka v dvouhodinových blocích od tradičních hodin? Jak to ovlivňuje učení dětí?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří prospívají v menších skupinách a potřebují individuální přístup – škola nabízí výuku v menších kolektivech.",
+      "Nadaní žáci – škola aktivně podporuje účast v soutěžích a olympiádách, nabízí volitelné semináře.",
+      "Žáci se speciálními vzdělávacími potřebami – škola má školní poradenské pracoviště se speciálním pedagogem."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají vysokou kvalifikaci všech učitelů – více než třetina pedagogů nemá požadovanou kvalifikaci.",
+      "Rodiče dětí se speciálními potřebami – diferenciace a kompenzační pomůcky nejsou v hodinách dostatečně využívány.",
+      "Rodiče, kterým záleží na bezpečnosti – škola má problém s vyšší úrazovostí, zejména v tělesné výchově."
+    ],
+    "plain_czech_summary": "Svobodná chebská škola je alternativní soukromá škola s 283 žáky, která se zaměřuje na výuku v menších skupinách. Silné stránky: nízká neúspěšnost žáků, efektivní využití testování, kvalitní motivace na prvním stupni. Hlavní problémy: více než třetina učitelů nemá odbornou kvalifikaci a nedostává systematickou podporu, chybí přizpůsobení výuky potřebám jednotlivých žáků, vyšší úrazovost v tělesné výchově. Maturitní výsledky jsou mírně horší než průměr oboru. Škola se snaží zlepšovat, ale potřebuje pracovat na kvalitě pedagogického sboru a diferenciaci výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírně horší než průměr oboru",
+      "key_numbers": [
+        "Hrubá neúspěšnost 2022: 5,9 % (průměr oboru 1,5 %)",
+        "Hrubá neúspěšnost 2023: 5,6 % (průměr oboru 1,3 %)",
+        "Všichni žáci, kteří zkoušky konali, byli úspěšní"
+      ],
+      "evidence": "Ve srovnání s hrubou neúspěšností žáků ve stejném oboru vzdělání má škola mírně horší výsledky."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva se absence věnuje minimálně."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovný poradce, metodik prevence, speciální pedagog",
+      "Kariérové poradenství: pro základní školu v rámci výuky, pro střední školu individuální konzultace",
+      "Doučování: učitelé nabízejí doučování v předmětech, kde žáci nedosahují očekávaných výsledků"
+    ],
+    "safety_climate": [
+      "Kamerový systém omezující vstup cizím osobám",
+      "Dlouhodobě vyšší úrazovost, přijatá opatření nejsou účinná",
+      "Schránka důvěry pro žáky (téměř nevyužívána)",
+      "Chybí adaptační aktivity pro nové žáky a funkční třídnické hodiny"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery v rámci města Cheb",
+      "Účast na společenských a kulturních akcích pořádaných městem",
+      "Využití pomoci bývalých žáků při organizaci projektů",
+      "Spolupráce s externími organizacemi na preventivních aktivitách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale obsahuje řadu odborných termínů a dlouhých vět. Hlavní zjištění jsou jasná, ale vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, jaká je absence žáků.",
+      "Konkrétní počty nekvalifikovaných pedagogů nejsou uvedeny, jen 'více jak třetina'.",
+      "Není jasné, jak se liší výsledky jednotlivých tříd nebo ročníků."
+    ]
+  }
+}
+```

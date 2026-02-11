@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_600005682_2022-10-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:58:36.133409+00:00",
+  "run_finished_utc": "2026-02-09T16:59:00.249279+00:00",
+  "raw_file": "GY4_600005682_2022-10-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600005682_2022-10-18",
+    "school_profile": {
+      "school_type": "Čtyřleté gymnázium se zaměřením na humanitní vědy, přírodní vědy a programování",
+      "inspection_period": "18. 10. 2022 – 21. 10. 2022",
+      "school_change_summary": "Od poslední inspekce v 2014 mírně vzrostla naplněnost (610 žáků ve 20 třídách), zvýšil se podíl žáků s potřebou podpory, vzniklo nové poradenské pracoviště, došlo k personální obměně vedení a třetiny učitelů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Více než polovina žáků prospěla s vyznamenáním, neprospěli pouze jednotlivci, výsledky překračují republikový průměr.",
+          "evidence": "Ve všech předmětech společné části dosahují lepších výsledků než průměr skupiny oborů."
+        },
+        {
+          "tag": "Kvalitní jazykové vzdělání",
+          "detail": "Pět cizích jazyků s možností mezinárodních certifikátů, tři čtvrtiny žáků si volí certifikát místo profilové zkoušky.",
+          "evidence": "Nejlepší výsledky vykazují žáci všech zaměření ve zkoušce z cizího jazyka."
+        },
+        {
+          "tag": "Moderní vybavení a bezpečnost",
+          "detail": "Nová multimediální knihovna, počítačové pracovny, laboratoře, sportovní areál, vstupní turnikety a kamerový systém.",
+          "evidence": "Gymnázium disponuje odpovídajícím počtem kmenových i odborných učeben vybavených moderními didaktickými pomůckami."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Méně skupinové práce",
+          "detail": "Kooperativní formy práce (párová a skupinová) nejsou využívány dostatečně v části hodin.",
+          "evidence": "Pouze v části hodin byly využity kooperativní formy práce k podpoře sociálních a komunikativních kompetencí."
+        },
+        {
+          "tag": "Nedostatečný prostor pro mluvený projev",
+          "detail": "Žáci nemají dost příležitostí k souvislejšímu ústnímu vyjádření a rozvoji interaktivních řečových dovedností.",
+          "evidence": "Ojediněle nebyl v dostatečné míře vytvářen prostor pro mluvený projev žáků."
+        },
+        {
+          "tag": "Chybí závěry hodin",
+          "detail": "V části vyučovacích hodin chybí shrnutí probraného učiva a vyhodnocení dosažených cílů.",
+          "evidence": "Ve větší části sledovaného vzdělávání pedagogové nevyužili didaktického závěru vyučovací hodiny."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá příprava na maturitu a jaké jsou průměrné výsledky v jednotlivých předmětech?",
+        "Jaké jsou možnosti zapojení do mezinárodních projektů a výměnných pobytů?",
+        "Jak škola podporuje žáky se speciálními vzdělávacími potřebami a jak funguje nové poradenské pracoviště?"
+      ],
+      "who_school_fits": [
+        "Talentovaní žáci se zájmem o jazyky – škola nabízí pět jazyků a mezinárodní certifikáty",
+        "Žáci se zájmem o přírodní vědy a programování – prakticky orientovaná výuka s laboratorními cvičeními",
+        "Žáci s různými vzdělávacími potřebami – systémová podpora včetně psychologa a asistenta"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více skupinové práce a interaktivní komunikace – škola se na to zaměřuje méně",
+        "Žáci, kteří se lépe učí diskusí a debatou – prostor pro ústní projev není dostatečný",
+        "Žáci, kteří preferují méně náročné gymnázium – toto je prestižní škola s vysokými nároky"
+      ],
+      "plain_czech_summary": "Gymnázium Arabská je prestižní pražská škola s 610 žáky a výbornou pověstí. Silné stránky: více než polovina maturantů prospívá s vyznamenáním, pět cizích jazyků, moderní vybavení, nové poradenské pracoviště pro podporu žáků. Slabé stránky: méně skupinové práce, málo prostoru pro mluvený projev žáků, v některých hodinách chybí závěry. Škola je vhodná pro talentované žáky se zájmem o jazyky a přírodní vědy. Nové je zvýšené zapojení žáků se speciálními potřebami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "Více než 50 % žáků prospělo s vyznamenáním",
+          "Jednotlivci neprospěli",
+          "Výsledky překračují republikový průměr ve všech předmětech společné části"
+        ],
+        "evidence": "Výsledky ve společné a profilové části maturitní zkoušky byly vyvážené, žáci dosahují úrovně osmiletých gymnázií v humanitních a přírodovědných předmětech."
+      },
+      "absence": {
+        "trend": "Nízký podíl, výkyv v 2021/2022",
+        "key_numbers": [
+          "Stabilně nízký podíl neuzavřené klasifikace k 30. 6.",
+          "Nárůst omluvené absence v 2021/2022 souvisel s karanténními opatřeními",
+          "Nízký počet ukládaných kázeňských opatření a neomluvených hodin"
+        ],
+        "evidence": "Školou identifikovaný výkyv v nárůstu omluvené absence ve školním roce 2021/2022 souvisel s uplatňováním karanténních opatření."
+      },
+      "support_services": [
+        "Nové školní poradenské pracoviště: výchovná poradkyně, koordinátor prevence, kariérový poradce, školní psycholožka, asistentka pedagoga",
+        "Systémová opatření: prevence školní neúspěšnosti, podpora při ukončování studia, depistáž vzdělávacích potřeb",
+        "Doučování z českého jazyka pro nově přijaté ukrajinské žáky (11 žáků v 2022/2023)"
+      ],
+      "safety_climate": [
+        "Nízký počet ukládaných kázeňských opatření a neomluvených hodin",
+        "Ojedinělé závažné porušení školního řádu řešeno jednáním s rodiči",
+        "Zlepšené vnější zabezpečení: vstupní turnikety a nový kamerový systém"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Přírodovědecké a Filozofické fakulty Univerzity Karlovy",
+        "Partnerská škola Centra pro talentovanou mládež",
+        "Pilotní škola projektu AI akademie pro výuku umělé inteligence"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Všechna tvrzení jsou podpořena konkrétními citacemi. Informace jsou srozumitelné a prakticky využitelné pro rodiče.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní počty žáků s jednotlivými typy podpory (pouze procenta)",
+        "Nejsou uvedeny konkrétní výsledky v jednotlivých předmětech maturit, pouze obecné trendy",
+        "Chybí informace o počtu přijatých žáků na vysoké školy v konkrétních oborech"
+      ]
+    }
+  }
+}

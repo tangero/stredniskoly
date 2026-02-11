@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600004597_2024-12-04",
+  "school_profile": {
+    "school_type": "Osmileté všeobecné gymnázium v denní formě",
+    "inspection_period": "4.–6. prosince 2024 a 9. prosince 2024",
+    "school_change_summary": "Od inspekce v 2018 si škola udržuje stabilní počet žáků (448 v 16 třídách), zvýšil se zájem uchazečů, došlo k inovaci vzdělávacího programu, zkvalitnily se materiální podmínky a rozšířila se mezinárodní spolupráce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vynikající výsledky",
+        "detail": "Dlouhodobě velmi dobré výsledky vzdělávání, dvě třetiny žáků prospívá s vyznamenáním, maturanti dosahují výsledků nad republikovým průměrem.",
+        "evidence": "\"dlouhodobě velmi dobré výsledky vzdělávání\" a \"polovina maturantů prospěla s vyznamenáním\""
+      },
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Systémová podpora jazykových kompetencí prostřednictvím výuky pěti cizích jazyků, rodilých mluvčích a mezinárodních programů.",
+        "evidence": "\"nabídkou výuky cizích jazyků (anglický, německý, francouzský, španělský, italský)\" a \"86 % maturantů nahradilo jazykovou profilovou zkoušku mezinárodním certifikátem\""
+      },
+      {
+        "tag": "Aktivní školní život",
+        "detail": "Funkční studentská rada, aktivní zapojení žáků do chodu školy a řady mimoškolních aktivit podporujících talent a všestranný rozvoj.",
+        "evidence": "\"funkční studentská rada a aktivní podíl žáků při utváření kultivovaného školního prostředí\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší formativní zpětná vazba",
+        "detail": "Učitelé jen ojediněle využívají prvky formativního hodnocení a sebehodnocení žáků, zejména v nižším gymnáziu.",
+        "evidence": "\"pedagogové ale pouze ojediněle uplatnili prvky formativního hodnocení\" a \"žáci jsou často fixováni na hodnocení známkou\""
+      },
+      {
+        "tag": "Jazyková kultura",
+        "detail": "V některých hodinách se vyskytuje nižší míra jazykové kultury a menší důraz na kvalitu mluveného projevu žáků.",
+        "evidence": "\"nižší míra jazykové kultury (používání nespisovné češtiny) v některých hodinách s menším důrazem na hodnocení kvality mluveného projevu\""
+      },
+      {
+        "tag": "Prostorové omezení",
+        "detail": "Sdílení budovy se základní školou limituje možnosti dělené výuky a čerpání finančních prostředků.",
+        "evidence": "\"Společné sdílení prostor s druhým stupněm základní školy je ale pro potřeby gymnázia limitující\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se slabšími výsledky a jak funguje systém doučování?",
+      "Jaké jsou možnosti zapojení do mezinárodních programů a jaké jsou náklady na zahraniční výjezdy?",
+      "Jak se škola vypořádává s psychickou zátěží žáků a jakou podporu nabízí školní psycholožka?"
+    ],
+    "who_school_fits": [
+      "Žáci s vyššími studijními předpoklady a zájmem o všeobecné vzdělání s důrazem na jazyky",
+      "Talentovaní žáci, kterým vyhovuje systémová podpora nadání a zapojení do soutěží a olympiád",
+      "Rodiny hledající školu s aktivním školním životem a mezinárodní orientací"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální péče a formativní zpětné vazby – škola se na to teprve zaměřuje",
+      "Rodiny očekávající větší důraz na rozvoj komunikačních dovedností v češtině",
+      "Žáci se specifickými poruchami učení – prostorové omezení může komplikovat speciální výuku"
+    ],
+    "plain_czech_summary": "Malostranské gymnázium je prestižní školou s výborným renomé. Žáci dosahují velmi dobrých výsledků, zejména v jazycích a přírodních vědách. Škola nabízí bohatý program včetně zahraničních výjezdů a mezinárodních certifikátů. Silnou stránkou je aktivní školní život a podpora nadaných žáků. Inspekce upozorňuje na potřebu zlepšit formativní hodnocení a jazykovou kulturu ve výuce. Prostorové omezení kvůli sdílení budovy se základní školou je dlouhodobým problémem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně velmi dobrý",
+      "key_numbers": [
+        "Polovina maturantů prospěla s vyznamenáním",
+        "Neprospěl pouze jeden žák za tři roky",
+        "86 % maturantů v 2023/2024 nahradilo jazykovou zkoušku mezinárodním certifikátem"
+      ],
+      "evidence": "\"polovina maturantů prospěla s vyznamenáním, neprospěl pouze jeden žák\" a \"Úspěšnost žáků v dílčích zkouškách společné části v českém a cizím jazyce byla vyšší, než je republikový průměr\""
+    },
+    "absence": {
+      "trend": "Velmi nízká",
+      "key_numbers": [
+        "Zanedbatelný výskyt neomluvené absence",
+        "K 30. 6. má uzavřenou klasifikaci 95 % žáků",
+        "Počet zameškaných hodin na žáka odpovídá druhu školy"
+      ],
+      "evidence": "\"zanedbatelný výskyt neomluvené absence\" a \"Počet zameškaných hodin na žáka odpovídá druhu školy\""
+    },
+    "support_services": [
+      "Školní psycholožka s možností individuálních konzultací a workshopů na duševní pohodu",
+      "Výchovná poradkyně, metodička prevence a kariérový poradce",
+      "Systém maturitních seminářů, cvičení z češtiny a vrstevnického doučování"
+    ],
+    "safety_climate": [
+      "Přiměřený počet kázeňských opatření za méně závažné přestupky",
+      "Ojedinělé hodnocení žáků sníženým stupněm z chování",
+      "Kamerový a elektronický vstupní systém, vrátnice s personálním obsazením"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola čtyř fakult Univerzity Karlovy",
+      "Rozšířená partnerská spolupráce s vysokými školami na regionální i zahraniční úrovni",
+      "Významné zapojení do mezinárodního programu Erasmus+ s individuální a skupinovou mobilitou"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a profesionálně napsaná, ale místy obsahuje úřednickou terminologii. Hlavní zjištění jsou jasná a podložená konkrétními příklady. Doporučení jsou srozumitelná, ale orientují se spíše na pedagogy než na rodiče.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků s potřebou podpůrných opatření (uvedeno jen \"4 %\")",
+      "Chybí informace o konkrétních nákladech na zahraniční programy a certifikáty",
+      "Není jasné, jak se škola vypořádá s nárůstem psychické nestability žáků v praxi"
+    ]
+  }
+}
+```

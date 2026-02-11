@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600009416_2024-02-22",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:24:48.729203+00:00",
+  "run_finished_utc": "2026-02-09T16:25:18.712747+00:00",
+  "raw_file": "SOS_600009416_2024-02-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009416_2024-02-22",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště",
+      "inspection_period": "22. února až 27. února 2024",
+      "school_change_summary": "Od poslední inspekce došlo k radikálnímu nárůstu žáků o polovinu na 642 studentů, s adekvátním navýšením zaměstnanců. Škola masivně revitalizovala objekty, vytvořila nová sportoviště a odborné dílny. Zvyšuje se podíl kvalifikovaných pedagogů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Zahraniční praxe a partnerství",
+          "detail": "Žáci mají možnost absolvovat až dvoutýdenní praxi v Bavorsku a účastnit se výměnných pobytů díky dlouhodobé spolupráci se školou v Chamu.",
+          "evidence": "\"Dlouholetá intenzivní spolupráce s partnerskou školou v německém městě Cham... každý rok realizovány výměnné pobyty, workshopy a (až dvoutýdenní) praxe na pracovištích v Bavorsku\""
+        },
+        {
+          "tag": "Moderní vybavení a infrastruktura",
+          "detail": "Škola má nové odborné učebny, modely od Škody Auto, vlastní autoškolu, svářečskou školu a gastronomické centrum pro praktickou výuku.",
+          "evidence": "\"Koncepční a cílená spolupráce s významným tuzemským výrobcem automobilů (Škoda Auto) zcela zásadně zlepšuje materiálně technické zabezpečení výuky\""
+        },
+        {
+          "tag": "Kvalitní praktická výuka",
+          "detail": "Pedagogové v praktickém vyučování dobře pracují s chybou, sledují a korigují pracovní postupy, žáci se aktivně zapojují a využívají nabytých zkušeností.",
+          "evidence": "\"Pedagogové při výuce dobře pracují s chybou, sledují a korigují špatné pracovní postupy žáků. Ti se aktivně zapojují do výuky\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Převaha frontální výuky v teoretických předmětech",
+          "detail": "Výuka probíhá převážně frontální metodou s nízkou mírou kooperativních forem práce, žáci nemají prostor pro sebereflexi a vyhledávání informací.",
+          "evidence": "\"Výuka teoretických předmětů probíhá převážně frontální metodou s nízkou mírou využití kooperativních forem práce. Žáci nemají možnost využívat různé informační zdroje\""
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Úlohy jsou zadávány stejně bez ohledu na nadání či potřeby žáků, chybí individualizace podle schopností.",
+          "evidence": "\"Úlohy, zadávané v hodinách, jsou zadány stejně, bez ohledu na nadání či potřeby žáků. Diferenciace zadání... nebyla\""
+        },
+        {
+          "tag": "Slabé výsledky v gramotnostech",
+          "detail": "V roce 2022/2023 žáci dosáhli slabých výsledků v přírodovědné a čtenářské gramotnosti, ačkoli byla provedena školení pedagogů.",
+          "evidence": "\"Žáci v obou případech dosáhli slabých výsledků. Vedení školy tato zjištění analyzovalo, jako opatření bylo realizováno hromadné proškolení pedagogů\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se liší přístup k nadaným žákům a jak jsou jejich schopnosti rozvíjeny?",
+        "Jaké jsou konkrétní výsledky maturitních zkoušek v jednotlivých oborech za poslední tři roky?",
+        "Jak se škola vypořádala se slabými výsledky v čtenářské a přírodovědné gramotnosti a jaké jsou nové výsledky?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktickou výuku a odborné dovednosti – škola má vynikající vybavení a kvalitní praktickou výuku",
+        "Studenti se zájmem o zahraniční zkušenosti – dlouhodobá spolupráce s německou školou a možnost praxe v Bavorsku",
+        "Žáci z okolí, kteří potřebují ubytování – domov mládeže nabízí moderní vybavení a kvalitní péči"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující samostatné učení a aktivní vyhledávání informací – výuka je převážně frontální bez prostoru pro samostatné práce",
+        "Nadaní žáci hledající individualizovanou výuku – chybí diferenciace úloh podle schopností",
+        "Studenti s nižšími studijními předpoklady v teoretických předmětech – obor Sociální činnost měl vysokou neúspěšnost na maturitě"
+      ],
+      "plain_czech_summary": "Sušická střední škola je moderní zařízení s vynikajícím praktickým vybavením a silnými vazbami na zaměstnavatele. Žáci mají jedinečnou příležitost absolvovat praxi v Německu. Domov mládeže je nově vybavený. Hlavní slabinou je převaha frontální výuky v teoretických předmětech bez dostatečné diferenciace. Škola pracuje na zlepšení čtenářské a přírodovědné gramotnosti. Vhodná pro prakticky zaměřené studenty, méně pro ty, kteří preferují samostatné učení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý, závislý na oboru",
+        "key_numbers": [
+          "Obor Sociální činnost: vysoká neúspěšnost v posledních dvou rocích",
+          "Závěrečné zkoušky: téměř všichni žáci (kromě jednoho) uspěli v 2021/2022 a 2022/2023"
+        ],
+        "evidence": "\"Výsledky maturitních zkoušek kolísají v závislosti na oboru i meziročně. Nejvyšší neúspěšnost... byla zaznamenána v oboru Sociální činnost\""
+      },
+      "absence": {
+        "trend": "Není v textu specifikován",
+        "key_numbers": [
+          "Informace o absence nejsou v inspekční zprávě uvedeny"
+        ],
+        "evidence": "Text neobsahuje údaje o absence žáků"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovný poradce, školní metodik prevence, sociální pedagožka",
+        "Individuální vzdělávací plány pro 9 žáků se speciálními vzdělávacími potřebami",
+        "Asistentky pedagoga pracující se žáky se SVP",
+        "Doučování v různých zaměřeních a konzultace",
+        "Sociometrická šetření a diagnostika vztahových problémů"
+      ],
+      "safety_climate": [
+        "Bezpečnostní čipy pro vstup do budov a domova mládeže",
+        "Školní recepce obsluhovaná žáky",
+        "Prokazatelné informování všech žáků o bezpečnostních rizicích na začátku roku",
+        "Důsledné dodržování bezpečnostních a hygienických předpisů v praktické výuce",
+        "Vnitřní řád domova mládeže s nastavenými pravidly, která vychovatelé důsledně vynucují"
+      ],
+      "partnerships_practice": [
+        "Přibližně 80 sociálních partnerů pro praktickou výuku a odborný výcvik",
+        "Dlouhodobá spolupráce se školou Volkshochschule im Landkreis Cham v Německu (od 2011)",
+        "Partnerství se Škoda Auto – poskytování učebních modelů a technologií",
+        "Spolupráce s Katolickou teologickou fakultou UK a Fakultou elektrotechnickou ZČU",
+        "Spolupráce s místními základními a mateřskými školami na enviromentálních a polytechnických kroužcích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a citacemi. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více technických detailů, které mohou být pro rodiče méně relevantní.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna, nelze posoudit trend absence žáků",
+        "Konkrétní procenta úspěšnosti maturit nejsou uvedena, pouze kvalitativní popis",
+        "Nejsou uvedeny konkrétní počty žáků v jednotlivých oborech, pouze celkový počet 642"
+      ]
+    }
+  }
+}

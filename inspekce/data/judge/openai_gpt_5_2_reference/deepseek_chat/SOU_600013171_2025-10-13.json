@@ -1,0 +1,30 @@
+{
+  "report_id": "SOU_600013171_2025-10-13",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "deepseek_chat",
+  "run_started_utc": "2026-02-09T12:05:14.841052+00:00",
+  "run_finished_utc": "2026-02-09T12:05:32.993149+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOU_600013171_2025-10-13\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"U části „maturita“ je uvedeno „trend: Stabilní“, ale zdrojová zpráva žádný trend nehodnotí – uvádí jen počty (15 vykonalo, 2 neuspěli).\",\n    \"Shrnutí pro rodiče tvrdí „škola nabízí kvalitní praktické vzdělání“ – inspekční zpráva hodnotí přínos praxe u smluvních partnerů a spolupráci, ale explicitně nekvalifikuje celkovou kvalitu praktického vzdělávání jako „kvalitní“.\"\n  ],\n  \"best_points\": [\n    \"Správně zachycený vývoj školy: nárůst počtu žáků o téměř 100 a pozastavení činnosti školní jídelny‑výdejny k 1. 9. 2025.\",\n    \"Dobře převzaté klíčové silné stránky: spolupráce s podnikatelskými subjekty, praxe v reálném prostředí a možnost zahraniční stáže u některých oborů.\",\n    \"Přesně popsané hlavní slabiny teoretické výuky: převaha frontální výuky, nízká aktivizace, chybějící práce s cílem a závěrečná reflexe, nedostatečná diferenciace.\",\n    \"Korektně uvedený rozdíl v absenci: nízká (neomluvená ojedinělá) v teoretické výuce, přetrvávající záškoláctví v praktické výuce.\",\n    \"Odpovídající popis domova mládeže: pozitivní přátelské klima, rozvoj sociálních vztahů, pestré aktivity a spolupráce s organizacemi v regionu.\"\n  ],\n  \"one_line_verdict\": \"Výstup je převážně věrný a pro rodiče prakticky použitelný, ale je jen středně úplný a obsahuje několik formulací navíc oproti zdroji (zejména „trend“ u maturity a hodnotící tvrzení o kvalitě praxe).\"\n}",
+  "judge_output": {
+    "report_id": "SOU_600013171_2025-10-13",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "U části „maturita“ je uvedeno „trend: Stabilní“, ale zdrojová zpráva žádný trend nehodnotí – uvádí jen počty (15 vykonalo, 2 neuspěli).",
+      "Shrnutí pro rodiče tvrdí „škola nabízí kvalitní praktické vzdělání“ – inspekční zpráva hodnotí přínos praxe u smluvních partnerů a spolupráci, ale explicitně nekvalifikuje celkovou kvalitu praktického vzdělávání jako „kvalitní“."
+    ],
+    "best_points": [
+      "Správně zachycený vývoj školy: nárůst počtu žáků o téměř 100 a pozastavení činnosti školní jídelny‑výdejny k 1. 9. 2025.",
+      "Dobře převzaté klíčové silné stránky: spolupráce s podnikatelskými subjekty, praxe v reálném prostředí a možnost zahraniční stáže u některých oborů.",
+      "Přesně popsané hlavní slabiny teoretické výuky: převaha frontální výuky, nízká aktivizace, chybějící práce s cílem a závěrečná reflexe, nedostatečná diferenciace.",
+      "Korektně uvedený rozdíl v absenci: nízká (neomluvená ojedinělá) v teoretické výuce, přetrvávající záškoláctví v praktické výuce.",
+      "Odpovídající popis domova mládeže: pozitivní přátelské klima, rozvoj sociálních vztahů, pestré aktivity a spolupráce s organizacemi v regionu."
+    ],
+    "one_line_verdict": "Výstup je převážně věrný a pro rodiče prakticky použitelný, ale je jen středně úplný a obsahuje několik formulací navíc oproti zdroji (zejména „trend“ u maturity a hodnotící tvrzení o kvalitě praxe)."
+  }
+}

@@ -1,10 +1,109 @@
 {
   "report_id": "GY4_600013481_2025-11-20",
   "model_id": "openai_gpt_5_2_reference",
-  "run_started_utc": "2026-02-09T07:46:50.056136+00:00",
-  "run_finished_utc": "2026-02-09T07:47:25.344174+00:00",
+  "run_started_utc": "2026-02-09T11:28:33.935633+00:00",
+  "run_finished_utc": "2026-02-09T11:29:04.710214+00:00",
   "raw_file": "GY4_600013481_2025-11-20.raw.txt",
   "call_error": null,
-  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
-  "parsed_output": null
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600013481_2025-11-20",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté i osmileté) s rozšířenou profilací na matematiku.",
+      "inspection_period": "2025-11-20 až 2025-11-25",
+      "school_change_summary": "Nový ředitel od 1. 8. 2024, škola se materiálně zlepšuje, ale systém podpory talentů a aktivizující výuka nejsou zatím dostatečné.",
+      "evidence": "„jmenovací… s účinností od 1. 8. 2024“; „Zlepšení materiálních podmínek…“; „není vytvořen… systém podpory… talentovanými žáky“"
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Erasmus+ a zahraniční zkušenosti",
+          "detail": "Škola má nadstandardně široké zahraniční mobility, které posilují jazyky i sociální dovednosti.",
+          "evidence": "„Erasmus+… naprosto výjimečná“; „přímý dopad do jazykových a sociálních kompetencí“"
+        },
+        {
+          "tag": "Výborné výsledky a maturita",
+          "detail": "Dlouhodobě velmi dobré výsledky a téměř nulová neúspěšnost u maturity.",
+          "evidence": "„dlouhodobě výbornou úroveň“; „téměř nulovou hrubou neúspěšnost… u maturitní zkoušky“"
+        },
+        {
+          "tag": "Soutěže a olympiády",
+          "detail": "Žáci mají špičkové úspěchy v olympiádách a projektech, což podporuje jejich další rozvoj.",
+          "evidence": "„významných úspěchů… Mezinárodní matematické olympiádě“; „výrazně podporuje rozvoj“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Méně aktivní styl výuky",
+          "detail": "Ve většině hodin převažuje frontální výuka a málo spolupráce, což může brzdit rozvoj komunikace a kritického myšlení.",
+          "evidence": "„frontální výuka… v 72 % hodin“; „kooperativních forem… omezovalo“"
+        },
+        {
+          "tag": "Nesjednocené hodnocení",
+          "detail": "Pravidla známkování nejsou napříč školou jednotná, takže férovost může být různá podle učitele.",
+          "evidence": "„kritéria hodnocení nebyla… sjednocena“; „ostatní si je určují individuálně“"
+        },
+        {
+          "tag": "Wellbeing a psycholog",
+          "detail": "Na žáky je podle zjištění tlak na výkon a psycholog je jen 1 den týdně, což může být málo.",
+          "evidence": "„doléhá silný tlak na výkon“; „školní psycholožka… pouze jeden den v týdnu“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola prakticky sníží převahu frontální výuky a posílí „kooperativní formy práce“ a kritické myšlení?",
+        "Kdy a jak sjednotíte „kritéria hodnocení“ napříč předměty, aby žáci věděli, co je čeká u různých učitelů?",
+        "Plánujete navýšit školního psychologa a práci s třídami kvůli „silnému tlaku na výkon“?"
+      ],
+      "who_school_fits": [
+        "Pro studijně ambiciózní žáky, kteří míří na vysokou školu (podle školy „velmi dobré výsledky…“ a „úspěšnost… při přechodu na vysoké školy“).",
+        "Pro žáky, které lákají jazyky a zahraničí (škola má „Erasmus+… naprosto výjimečná“).",
+        "Pro soutěživé a talentované v olympiádách/projektech (škola uvádí „významné úspěchy… olympiádě“)."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více podpory duševní pohody, protože je tu popsaný „silný tlak na výkon“ a psycholog jen „jeden den v týdnu“.",
+        "Žáci, kterým vyhovuje hodně týmové a projektové práce, protože „skupinová výuka“ byla jen „v 15 % hodin“.",
+        "Nadaní, kteří čekají systémovou individuální práci, protože „není vytvořen… systém podpory práce s talentovanými žáky“."
+      ],
+      "plain_czech_summary": "Škola má dlouhodobě výborné výsledky: téměř nikdo nepropadá u maturity a žáci sbírají špičkové úspěchy v olympiádách. Velkým plusem jsou mimořádně široké zahraniční mobility Erasmus+. Slabší je každodenní výuka: často převažuje frontální styl a méně se rozvíjí kritické myšlení, komunikace a spolupráce. Hodnocení není všude sjednocené. Inspekce také zmiňuje tlak na výkon a to, že školní psycholog je jen jeden den v týdnu. Nové vedení školu postupně modernizuje, ale některé změny jsou ještě „ve stádiu hledání“."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě lepší než celorepublikový průměr a téměř nulová neúspěšnost.",
+        "key_numbers": [
+          "„téměř nulovou hrubou neúspěšnost… u maturitní zkoušky“",
+          "„v posledních třech letech… lepších výsledků oproti celorepublikovému průměru“"
+        ],
+        "evidence": "„téměř nulovou hrubou neúspěšnost…“; „lepší… oproti celorepublikovému průměru“"
+      },
+      "absence": {
+        "trend": "Spíše stabilní, neomluvená je řešena zřídka; průměrná omluvená je vysoká v hodinách.",
+        "key_numbers": [
+          "120 hodin průměrná omluvená absence na žáka (3 roky)"
+        ],
+        "evidence": "„Průměrná omluvená absence… 120 hodin na žáka“; „neomluvenou absenci řeší… zřídka“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: „dva výchovní poradci a dva metodici prevence“.",
+        "Asistenti pedagoga na osmiletém: „čtyři asistenti pedagoga“.",
+        "Školní psycholog: „pouze jeden den v týdnu“."
+      ],
+      "safety_climate": [
+        "Většina hodin probíhala v respektující atmosféře: „atmosféře vzájemného respektu“.",
+        "Řešené problémy byly v jednotkách případů: „kyberšikany, sebepoškozování a užívání návykových látek“."
+      ],
+      "partnerships_practice": [
+        "Zahraniční spolupráce a výměny: „výměnné pobyty… v Německu, Finsku, Španělsku, Belgii“.",
+        "Erasmus+ mobility pro žáky i učitele: „jazykové vzdělávání nebo stínování do zahraničí“.",
+        "DofE: „Mezinárodní cena vévody z Edinburghu (DofE)“."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Shrnutí je věcné a praktické, limity jsem držel; některé oblasti (např. wellbeing) mají méně čísel, opírají se hlavně o popis inspekce.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní míru „úspěšnosti absolventů při přechodu na vysoké školy“, jen slovní hodnocení.",
+        "U tlaku na výkon nejsou data, jen závěr z „dotazníkového šetření a rozhovorů“."
+      ]
+    }
+  }
 }

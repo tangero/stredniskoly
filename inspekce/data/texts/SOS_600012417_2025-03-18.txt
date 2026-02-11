@@ -1,0 +1,413 @@
+CSI0X00DF06V
+
+
+
+
+                               Česká školní inspekce
+                               Pardubický inspektorát
+                         Sukova třída 1556, 530 02 Pardubice
+____________________________________________________________________________________________________________
+
+
+
+
+                         IN S P E K Č N Í ZP R ÁVA
+                                          Čj. ČŠIE-318/25-E
+                                        Sp. zn. ČŠIE-S-40/25 E
+
+
+Název                               DELTA - Střední škola informatiky a ekonomie, s.r.o.
+Sídlo                               Ke Kamenci 151, Bílé Předměstí, 530 03 Pardubice
+E-mail                              skola@DELTA-skola.cz
+IČO                                 62 061 178
+Identifikátor                       600 012 417
+Právní forma                        společnost s r.o.
+Zastupující                         Ing. Jiří Formánek
+Zřizovatel                          Ing. Jiří Formánek
+Místo inspekční činnosti            Ke Kamenci 151, Pardubice
+Inspekční činnost na místě          18. až 21., 24. až 27. a 29. 3., 5. a 11. 4. 2025
+
+Inspekční činnost byla zahájena doručením pověření k inspekční činnosti.
+
+
+                                 Předmět inspekční činnosti
+Předmětem inspekční činnosti vykonané podle § 174 odst. 2 písm. b) a c) zákona
+č. 561/2004 Sb., o předškolním, základním, středním, vyšším odborném a jiném vzdělává ní
+(školský zákon), ve znění pozdějších předpisů, bylo zjišťování a hodnocení podmínek,
+průběhu a výsledků vzdělávání, včetně hodnocení naplňování školních vzdělávac íc h
+programů.
+
+
+                                         Charakteristika
+DELTA - Střední škola informatiky a ekonomie, s.r.o. (dále „škola“) vykonává činnost
+střední školy. K 30. 9. 2024 evidovala celkem 446 žáků oborů vzdělání s maturitní zkouškou,
+z toho 199 žáků v osmi třídách denní formy vzdělávání 18-20-M/01 Informační technologie
+a 274 žáků ve dvanácti třídách pouze kombinované formy vzdělávání 63-41-M/01
+Ekonomika podnikání.
+K datu inspekční činnosti se ve škole vzdělávalo celkem 23 žáků se speciálními
+vzdělávacími potřebami (z nich dva podle individuálního vzdělávacího plánu), dalším devíti
+škola nastavila vlastní podpůrná opatření zohledňující fakt, že se jedná o žáky s odlišným
+mateřským jazykem.
+
+
+                         Hodnocení podmínek vzdělávání
+Funkci ředitele školy vykonává její zřizovatel. Nastavené postupy jeho řízení jsou funkční,
+v rámci užšího vedení efektivně spolupracuje se třemi zástupci. Koncepční záměry rozvoje
+školy pravidelně aktualizuje a vyhodnocuje s ohledem na potřeby školy i s ohledem na vývoj
+vyučovaných oborů vzdělání, což příznivě ovlivňuje jednotnost řízení a směřování školy.
+Jednou z hlavních priorit je dlouhodobé zvyšování kvality a přidané hodnoty vzdělává ní
+s důrazem na rozvoj talentovaných žáků. Další prioritou je (zvláště u denní formy
+vzdělávání) efektivní propojení odborného zaměření výuky s praktickou zkušeností žáků
+i učitelů (soutěže, stáže ve firmách, brigády, spolupráce se zahraničními partnery apod.).
+Tuto strategii dlouhodobě účelně podporuje také zapojení školy v projektech mezinárod níc h
+výukových konceptů (např. CISCO Networking Academy, Oracle Academy, Microsoft
+Studentské trenérské centrum). Za nezbytný prostředek k očekávanému dosažení profilu
+absolventa škola považuje v souladu se vzdělávacími programy také důraz na vysokou
+úroveň dovedností žáků v anglickém jazyce a vysoký respekt a vstřícnost k osobnostem
+žáků. Pozitivním zjištěním je sdílení uvedených vizí a cílů účastník y vzdělávání, což se
+zpravidla projevuje příjemným pracovním klimatem a otevřenou komunikací žáků i učitelů.
+Žáci denní formy vzdělávání si od třetího ročníku vzdělávání vybírají zaměření podle svého
+zájmu (programování nebo počítačová grafika a internetový marketing), což je naplňová no
+prostřednictvím skupiny povinně volitelných seminářů. Zvolené profilace jsou ale
+„prostupné“ a žák si může v souladu se svými prioritami volit semináře i napříč zaměřeními
+a tím si vytvářet vlastní, unikátní profilaci. V kombinované formě vzdělávání podle školního
+vzdělávacího programu Ekonomika a podnikání škola vyučuje žáky, kteří zpravidla již mají
+jak pracovní, tak rodinné závazky. Realizací tohoto vzdělávání škola umožňuje žákům získat
+středoškolské vzdělání zakončené maturitní zkouškou, aby měli širší možnosti uplatnění
+na trhu práce a přístup k dalšímu vzdělávání na vyšší úrovni. Jejich předchozí vzdělávac í
+cesta, pracovní a životní zkušenosti a časové možnosti zásadně ovlivňují celou organizac i
+i metody výuky. K realizaci konzultací jsou využívány zejména soboty, aby byly přístupné
+a dosažitelné pro co nejširší spektrum žáků. Jedenkrát za pololetí probíhá tzv. týden
+intenzivní výuky, kdy žáci mají rozepsané konzultace po dobu pěti po sobě jdoucích
+pracovních dnů. Konzultace jsou realizovány zpravidla blokově – celý den jeden vyučovac í
+předmět, s možností pro žáky účastnit se prezenčně nebo distančně. Podpora žáků
+uvedeného typu studia probíhá i prostřednictvím e-learningových materiálů v systému
+Moodle.
+Zvláště u denní formy vzdělávání část učitelů odborných předmětů zároveň působí jako
+vyučující na vysokých školách, což zlepšuje provázanost výuky s požadavky vysokých škol
+na žáky. Zejména v posledních dvou ročnících učí předměty zaměřené na programová ní
+a počítačovou grafiku učitelé s úzkou vazbou na praxi, přínosem je jejich schopnost se žáky
+sdílet aktuální technologie a pracovní postupy. Přínosná je také vzájemná spolupráce
+odborníků z praxe s učiteli při vedení maturitních projektů. Zajištění odborné výuky žáků
+denní formy vzdělávání a spolupráce se sociálními partnery mají významně nadstandardní
+
+
+                                            2/9
+úroveň. Kvalita výuky anglického jazyka je účelně podpořena využitím rodilého mluvč ího.
+Role uvádějícího učitele pro pomoc učitelům v adaptačním období je sdílená více kolegy,
+zpětná vazba začínajícím je poskytována, ale častěji spíše v neformální podobě, což je
+příležitostí ke zlepšení procesu jejich uvádění. Jako příležitost k dalšímu rozvoji přetrvává
+od minulé inspekční činnosti nastavení kontrolní činnosti vedení školy ke zvýšení četnosti
+i účelnosti zpětné formativní vazby pro potřebnou metodickou podporu učitelů
+(v adaptačním období, ve výuce kombinované formy vzdělávání apod.). Učitelé jsou na
+různém stupni schopností umět zohlednit různou úroveň žáků (v rámci jednoho oboru
+vzdělávání i mezi oběma vyučovanými obory).
+Podmínky, průběh i výsledky vzdělávání žáků jsou projednávány v rámci jednání
+pedagogické rady i předmětových komisí. Ředitel se systematicky věnuje vyhodnoco vá ní
+účelnosti nastavených podmínek i dosažených výsledků vzdělávání. Měřítkem úspěšnosti
+jsou pro školu nejen výsledky přijímacích zkoušek (dochází postupně ke zvyšování kvality
+přijímaných uchazečů) nebo maturitních zkoušek, ale rovněž úspěšnost žáků školy
+v odborných soutěžích, jejich zapojení v projektech a hodnocení žáků z firem, kde žáci
+konají odbornou praxi, i od sociálních partnerů (týká se hlavně denní formy vzdělávání).
+Od minulé inspekční činnosti v roce 2018 se zvýšil počet žáků denní formy vzdělává ní
+i počet žáků celkově. Škola realizuje vzdělávání ve dvou propojených budovách. V „nové“
+budově se mimo jiné nacházejí tři odborné učebny: grafický ateliér, učebna počítačových
+sítí a učebna přírodních věd. Žáci denní formy vzdělávání využívají na celé čtyři roky studia
+možnost pronájmu nových školních notebooků.
+
+
+                          Hodnocení průběhu vzdělávání
+Sledovaná výuka byla učiteli vždy promyšlená, připravená. Kvalita závisela na přístupu
+učitelů k rozsahu učiva. Pozitivní vliv měla zpravidla i vyšší míra zkušeností učitelů nebo
+praktické pojetí výuky (zvláště v odborných předmětech). V průběhu hodin převládala
+příjemná atmosféra s respektujícím a korektním přístupem učitelů, která vytvářela příznivé
+podmínky pro vzdělávání. Pozitivem byl otevřený a od žáků přirozeně spontánní přístup
+ke vzdělávání, což učitelé podporovali. Závěry hodin byly ze strany učitelů jen výjimeč ně
+využívány k získání zpětné vazby od žáků. Občas průběh nebo obsah výuky shrnuli sami
+učitelé. Cílená reflexe vyučovací hodiny od žáků, sebehodnocení nebo vzájemné hodnocení
+žáků byly ojedinělé. Někteří učitelé s kratší praxí zatím nezvládali přizpůsobit čas, objem
+učiva a metody úrovni žáků, jejich učební potenciál pak nebyl rozvíjen dostatečně.
+Ve většině sledované výuky učitelé pracovali více s tématem a plánem hodiny, méně
+s pedagogickým cílem zaměřeným na to, co a jak se mají žáci naučit. Převažovala frontální
+forma, někdy vhodně kombinovaná se samostatnou prací žáků. Zejména v části všeobecně
+vzdělávacích předmětů, kde dominoval učitel jako jediný zdroj informací, byla část žáků
+pasivnější. Sledovaná výuka cizích jazyků byla v některých případech málo aktivizujíc í,
+nebylo využíváno vrstevnické učení, možnosti práce a komunikace ve dvojicích nebo
+skupinách apod. Všichni žáci pracovali zpravidla na stejném úkolu a stejným tempem bez
+ohledu na rozdílné vzdělávací potřeby. V některých vyučovacích hodinách (např.
+programování, výpočetní technika) byla přínosem individuální dopomoc učitelů žákům, kdy
+např. učitelé vybízeli rychlejší žáky k pomoci pomalejším. Vytvářeli jim také prostor pro
+samostatné programování (např. nemuseli pracovat se spolužáky třídy, ale na svém
+projektu). Pozitivem výuky bylo vhodné a podporující využívání didaktické techniky, a to
+včetně digitálních technologií učiteli i žáky (mobily, tablety apod.). Vyhledávání informac í
+a cílená práce s nimi byly zaznamenány ojediněle stejně jako kooperativní metody práce.
+
+
+                                            3/9
+Ve výuce matematiky je doporučením diferenciace obtížnosti zadávaných úloh, která by
+umožnila některým žákům získat učební sebevědomí z vlastního pokroku v dovednostech
+na jednodušších úlohách.
+Ve výuce odborných předmětů v denní formě vzdělávání byly výrazným přínosem odborné
+znalosti a dovednosti učitelů. Praktické zaměření odborné výuky podporovalo motivac i
+žáků, učitelé při výkladu využívali přesahy učiva do praxe. Zaznamenána byla i cílená a pro
+žáky podporující skupinová práce vyžadující rozdělení rolí pro zvládnutí učební úlohy
+i diferenciace, kdy žáci pracovali na projektech podle svého výběru a možností. Sledované
+vyučovací hodiny byly vedeny odborně i metodicky na odpovídající úrovni.
+Za hlavní cíl výuky kombinované formy vzdělávání škola i žáci považují přípravu
+k maturitní zkoušce, čemuž se snaží podřizovat formy i metody. Sobotní výuka
+kombinované formy vzdělávání je žáky využívána prezenčně více, při intenzivní týdenní
+výuce byla osobní přítomnost žáků minimální. Průběh prezenční výuky je nahráván
+a zpřístupňován žákům. Organizace výuky českého jazyka byla založena hlavně na výkladu
+s podporou výukových materiálů (včetně pracovních listů s uměleckými i neuměleck ými
+texty), které byly žákům k dispozici pro samostudium už doma. Do řízeného rozhovoru se
+dařilo zapojit jenom některé žáky. Přestože je při této výuce komplikací koordinace sdílení
+materiálů s výkladem pro žáky on-line (učitelka sedí u počítače), zvládala učitelka formu
+řízeného rozhovoru s žáky efektivně. Dobře poukazovala na podstatné jevy. Aktivizace žáků
+se nedařila zejména v anglickém jazyce, kde byla efektivita výuky nízká. Při minimá lní
+osobní účasti žáků, kdy většina byla připojena online a aktivně se příliš nezapojovala, měla
+výrazný vliv na nedostatky ve volbě metod a forem práce. Vliv měla také krátká praxe
+učitelky, která učí pouze žáky kombinované formy vzdělávání, a také minimální metodická
+pomoc od vedení. Frontální způsob výuky v rozsahu šesti vyučovacích hodin v bloku
+jednoho předmětu je nevhodný pro žáky i učitele zejména z pohledu psychohygieny výuky.
+Škola také nemá nastaven systém, aby žáci kombinované formy vzdělávání, kteří se
+neúčastní prezenční výuky, dostávali kromě zkoušek další zpětnou vazbu o průběžném
+zvládání nároků a požadavků, např. v oblasti verbální komunikace, která je nezbytná pro
+zvládnutí ústní části maturitní zkoušky z cizího jazyka. Doporučením je efektivně nastavit
+systém práce tak, aby během celého pololetí mohl učitel žáky monitorovat a poskytovat jim
+průběžnou zpětnou vazbu.
+Intenzivní výuku matematiky v kombinované formě vzdělávání vedla učitelka
+se zkušenostmi i výbornou didaktickou erudicí, což se příznivě promítalo do sledované
+výuky. Během bloku pěti vyučovacích hodin za sebou udržela tempo vhodné pro většinu
+žáků, svými dotazy se obracela i na žáky připojené online. Při samostatné práci žáků
+dokázala účelně a individuálně poskytovat smysluplnou zpětnou vazbu k jejich učení.
+Dokázala žákům předkládat učivo v základní požadované úrovni, která odpovídala
+náročnosti kombinované formy vzdělávání i jejím specifikům. Žáci měli k dispozici učební
+materiály, včetně vizuálních záznamů z probíhající výuky, což jim umožňuje opakovaně se
+k výuce jednotlivých témat vracet podle svých možností a potřeb. Příležitostí k rozvoji je
+větší využívání konzultací, které by lépe podpořily individuální potřeby žáků při samostudiu
+náročnějších úloh. Při sobotní výuce matematiky bylo žákům předkládáno tematicky velmi
+rozsáhlé učivo, které si stíhali zpravidla pouze opisovat. Vzhledem k omezenému času
+na množství výukových témat nebylo zařazeno opakování a procvičování učiva, což
+nepodporuje učení žáků v prezenčním způsobu kombinované formy vzdělávání. V rámci
+sobotní výuky je doporučením zvážit i nadměrnou zátěž učitelů, kteří v některých případech
+učí svůj předmět až deset vyučovacích hodin v řadě.
+
+
+
+
+                                            4/9
+Učitelky odborných předmětů zaměřených na ekonomiku u kombinované formy vzdělává ní
+stanovovaly cíle hodiny a dařilo se jim ho dosáhnout. Jeho dosažení bylo většinou
+vyhodnoceno i žáky. Ve výuce převládala frontální výuka s občasnou řízenou diskusí
+se žáky. Učitelky aplikovaly při výuce své praktické zkušenosti stejně jako žáci, kteří
+většinou pracují v oboru. Výraznější aktivizační metody výuky se neobjevovaly. Výuka
+probíhala podle materiálů připravovaných učiteli a podle učebnic, žáci používali vlastní
+notebooky a tablety. Celkově je výuka odborných ekonomických předmětů ve škole
+na vysoké úrovni.
+
+
+                          Hodnocení výsledků vzdělávání
+Škola systematicky sleduje a vyhodnocuje průběžné i celkové výsledky žáků zejména
+v denní formě vzdělávání. V kombinované formě vzdělávání v poslední době mírně mění
+nastavení systému a analyzuje účelnost těchto změn. K popisu vyhodnocení vzdělávac ího
+procesu využívá účelně např. výroční zprávu o činnosti školy, účastníky vzdělávání také
+informuje o podmínkách, průběhu i výsledcích vzdělávání prostřednictvím webových
+stránek.
+Ve školním roce 2023/2024 se vzdělávalo v denní formě vzdělávání 193 žáků, jejich
+ročníkové výsledky byly velmi dobré. Třetina dokončila ročník s vyznamenáním. Neúspěšní
+žáci byli v uvedeném období spíše ojedinělou výjimkou, což zejména v prvním ročníku
+denní formy vzdělávání ukazovalo pozitivní dopad nastavených podmínek přijímac ího
+řízení. To potvrzovaly i výborné studijní výsledky žáků prvního ročníku, kteří se
+na celkovém počtu žáků s vyznamenáním podíleli téměř 45 %. Škola umí vyrovnávat rozdíly
+mezi žáky z různých základních škol vhodnou motivací pro rozvoj jejich nadání a dovedností
+v oboru IT. Někteří v daném oboru už sami podnikají. I mezi žáky nižších ročníků je např.
+dost držitelů jazykových certifikátů (kteří by potřebovali ještě víc motivace a podpory pro
+svůj samostatný rozvoj). Je na zvážení úprava školního vzdělávacího programu tak, aby daný
+stav zohledňoval a diferenciaci v tomto smyslu umožňoval.
+V kombinované formě vzdělávání se ve školním roce 2023/2024 vzdělávalo celkem 250
+žáků, jejich ročníkové výsledky ukazovaly na vyšší procento neúspěšných. Pouze osm z nich
+absolvovalo ročník s vyznamenáním, na druhé straně jich více než 40 % neprospělo
+(nepostoupili do vyššího ročníku). Důvodem neúspěšnosti necelé poloviny z těchto žáků
+bylo jejich předčasné ukončení vzdělávání zejména v prvním a třetím ročníku, nebyli
+klasifikováni často ani z jediného předmětu. Dalším důvodem vysoké neúspěšnosti žáků
+kombinované formy vzdělávání byl počet žáků s vyšším počtem předmětů hodnocených
+stupněm nedostatečný (ve školním roce 2023/2024 za druhé pololetí téměř 20 %), kteří
+z různých důvodů nedokázali zvládnout náročnost studia. Svůj vliv má i skutečnost, že
+zejména u věkově starších žáků platí, že se neumí samostatně učit. Roli může mít i nižší
+učební potenciál přijatých žáků, případně jejich horší výsledky z předchozího vzdělává ní
+(část žáků byla přijata v dalších kolech bez konání přijímací zkoušky, několik žáků přijato
+po předchozích neúspěších do vyšších ročníků). Míra neúspěšnosti žáků, jejichž studium
+může škola ovlivnit a podpořit je k lepším výsledkům, je tedy přibližně 22 %. Nejčastěji jsou
+horší výsledky v předmětech matematika, podniková ekonomika nebo účetnictví, v dalších
+předmětech spadajících do společné části maturitní zkoušky (český jazyk a literatura, cizí
+jazyk) mají žáci kombinované formy vzdělávání výrazně lepší studijní výsledky napříč
+ročníky. Příležitostí je zvážit způsoby vyučování této formy vzdělávání, zaměřit se cíleně
+na podporu studijních návyků žáků a promyslet účelnost využití studijních materiálů
+zejména pro samostudium žáků.
+
+
+
+                                            5/9
+Výsledky žáků denní formy vzdělávání u maturitních zkoušek mají v posledních letech
+vzestupnou tendenci, v roce 2024 všichni úspěšně zvládli společnou i profilovou část.
+Výsledky jejích žáků patří k nejlepším mezi technickými odbornými školami v ČR. Méně
+úspěšní byli při maturitní zkoušce v roce 2024 žáci kombinovaného studia. Z 38 žáků
+přihlášených k maturitní zkoušce jich šest zkoušku nesložilo. Hrubá neúspěšnost (podíl žáků
+prvomaturantů, kteří nekonali zkoušku nebo neuspěli, z celkového počtu poprvé
+přihlášených) činila po podzimním termínu přibližně třetinu (38 přihlášenýc h,
+13 neúspěšných). Jedná se o výsledek srovnatelný s výsledky v ČR u tohoto typu studia
+v oborech SHP (obory hotelového a podnikatelského zaměření). Do statistiky výsledků se
+promítá i skutečnost, že výsledky v ČR, ke kterým se výsledky žáků školy vztahují, zahrnují
+i žáky denní formy vzdělávání, kteří se ve škole nevzdělávají.
+Mnozí žáci denní formy vzdělávání se aktivně zapojují do studentské odborné činnosti.
+Dlouhodobě se umisťují na prvních místech v celorepublikových soutěžích (např. SOČ,
+Soutěž MŠMT v programování) i v projektové soutěži Festivalu vědy a techniky pro děti
+a mládež. Jejich projekty jsou konkurenceschopné na vysokoškolské úrovni.
+Škola dokáže pořádat nadstandardní zajímavé akce a projekty pro své žáky i uchazeče
+(představení IT vysokých škol pardubickým maturantům, představení zaměstnava te lů
+IT Pick-Up, fotografický plenér pro první ročníky, týdenní poznávací návštěva žáků v Irsku).
+Ve školním roce 2023/24 vedli žáci školy čtyři kroužky základů programování a jeden
+kroužek pro pokročilé žáky základních škol, probíhal korespondenční seminář
+v programování s názvem Pardubický hacker. Škola udržuje síť svých stálých partnerů
+(Unicorn, Microsoft, IBM, eBRÁNA, FOXCONN). Fakulty řady vysokých škol
+zaměřených na IT oponují především maturitní projekty, které posílá škola do soutěží,
+zpřístupňují on-line výuky mimořádně nadaným žákům, zapojují se do vedení žákovských
+projektů. Nově byly zapojeny do spolupráce Kempelenův institut inteligentních technologií
+a společnost Wezeo v Bratislavě, měsíční stáže se v nich zúčastnilo 25 žáků. Škole se
+podařilo získat akreditaci organizace pro program Erasmus+, která poskytuje zjednodušený
+přístup k možnostem financování v rámci vzdělávací mobility mládeže.
+Poradenské služby ve škole zajišťuje výchovná poradkyně a metodička prevence, pravidelně
+dochází také psycholožka. Spolupráce v rámci školního poradenského pracoviště je funkční
+a bezproblémová, bezprostřední péči poskytuje zejména žákům denní formy vzdělává ní.
+Školnímu poradenskému pracovišti se daří operativně řešit rizikové případy chování žáků
+i studijní a další problémy, škola těchto případů nemá mnoho. Preventivní program mapuje
+situaci ve škole, vyjmenovává organizované preventivní aktivity včetně adaptačních kurzů
+pro první ročníky. Monitorování klimatu školy probíhá vzhledem k velikosti školy
+a nastavení komunikace a prostředí v podstatě průběžně. Mezi nadanými žáky se ve škole
+objevuje v naprosté většině nadání především na oblast programování (kvůli kterému si
+většina uchazečů tuto školu volí). Vzdělávání nadaných žáků v této oblasti systémově řeší
+Talentový program DELTA TopGun, podle kterého se žáci, kteří mají v programování velký
+náskok, individuálně rozvíjejí již čtvrtý rok. Obsahuje dvě aktivity zaměřené na vyhledá vá ní
+a podporu talentů na programování na základních školách a další dvě aktivity potom na jejich
+vlastní rozvoj. Tito žáci školy např. absolvují individuální výuku v předmětech
+programování, výpočetní technika a internetové prezentace, ve kterých si mohou klasifik ac i
+dobrovolně splnit již na začátku pololetí. Místo další prezenční výuky potom povinně pracují
+na svém individuálním projektu, účastní se vysokoškolských kurzů apod. Práce s talenty
+nese některé dílčí znaky příkladu inspirativní praxe.
+
+
+
+
+                                             6/9
+                                         Závěry
+Vývoj školy
+– změna názvu školy
+– zvýšení počtu žáků
+Silné stránky
+– sdílení strategických vizí a cílů většinou účastníků vzdělávání (1.1)
+– výborně nastavená strategie v rámci oboru vzdělávání 18 20-M/01 Informační
+  technologie, kdy se žáky školy stávají zájemci s nadprůměrnými studijními předpoklady,
+  což pomáhá dalším výborným studijním výsledkům (1.1)
+– výrazný důraz na respektování individuality žáků a rozvoj jejich vzdělávacího potenciálu,
+  rozvoj nadání, příležitosti k profesnímu růstu pro mimořádně nadané žáky oboru (6.2)
+– efektivní sepětí vzdělávání s praxí - část odborných učitelů zároveň působí jako vyučujíc í
+  na vysokých školách nebo ve firmách; dlouhodobý přínos spolupráce se sociálními
+  partnery (1.5, 3.1)
+– kvalitní materiální zázemí a vybavenost školy (2.4)
+– příjemné prostředí, přátelský a vstřícný přístup k žákům, podpora jejich aktivity
+  a schopností (2.2)
+Číselné označení odkazuje na kód kritéria v příslušné modifikaci. Znění kritéria je dostupné
+na adrese: kriteria.csicr.cz
+Slabé stránky (oblasti ke zlepšení)
+– nižší míra účelnosti poskytování zpětné vazby od vedení školy učitelům k průběhu
+  vzdělávacího procesu (2.1)
+– nižší účelnost organizace vzdělávání kombinované formy vzdělávání (2.3)
+– jen ojedinělé vyhledávání informací a cílená práce s nimi ve vyučovacích hodinách, málo
+  využívané závěry hodin k získání zpětné vazby od žáků a k formativnímu zhodnocení
+  průběhu a přínosu vyučovací hodiny (4.2)
+Číselné označení odkazuje na kód kritéria v příslušné modifikaci. Znění kritéria je dostupné
+na adrese: kriteria.csicr.cz
+Doporučení pro zlepšení činnosti školy
+– zvážit u kombinované formy vzdělávání 63 41 M/01 Ekonomika podnikání rozsah
+  a podmínky vzdělávání umožňující použít efektivnější vzdělávací metody; zvážit změnu
+  systému včasné diagnostiky školního neúspěchu, aby byl identifikován již v nižšíc h
+  ročnících vzdělávání a snížila se neúspěšnost žáků ve vyšších ročnících
+– zohledňovat vysoký učební potenciál některých žáků denní formy vzdělávání diferenciac í
+  jejich vzdělávání při běžné výuce (např. po získání jazykového certifikátu)
+– v rámci poskytování formativní zpětné vazby z hospitační činnosti k průběhu
+  vzdělávacího procesu vymezovat cíleněji příležitosti ke zlepšení výuky; se zobecněnými
+  zjištěními z kontrolní činnosti pracovat v rámci celého pedagogického sboru
+– zaměřit se na vedení učitelů během adaptačního období zvláště učitelů s krátkou praxí,
+  zvážit nastavení náplně uvádějícího učitele a zavedení praxe vzájemných náslechů
+  především jako inspirace pro začínající kolegy
+
+                                            7/9
+– ve výuce matematiky upevňovat učební sebevědomí žáků cíleným procvičováním
+  konkrétních početních dovedností přímo ve vyučovacích hodinách
+Pro účely zvýšení dotací právnická osoba vykonávající činnost školy dosahuje škola
+výsledků hodnocení požadovaných dle § 5 odst. 3 písm. b) zákona č. 306/1999 Sb.,
+o poskytování dotací soukromým školám, předškolním a školským zařízením, ve znění
+pozdějších předpisů.
+
+
+                                 Stanovení lhůty
+Česká školní inspekce v souladu s § 175 odst. 1 školského zákona ukládá řediteli školy
+ve lhůtě do 30 dnů od marného uplynutí lhůty pro podání připomínek k obsahu
+inspekční zprávy, resp. od doručení stanoviska k připomínkám, přijmout opatře ní
+k odstranění nedostatků zjištěných inspekční činností. Tyto nedostatky jsou
+formulovány v části slabé stránky (oblasti ke zlepšení). Ve stejné lhůtě pís emně
+informujte Českou školní inspekci, jaká byla přijata opatření, a to prostřednictvím
+datové schránky (g7zais9).
+
+
+           Seznam dokladů, o které se inspekční zjištění opírají
+ 1.   Školní vzdělávací programy, platné ve školním roce 2024/2025
+ 2.   Školní řád a klasifikační řád, platné k termínu inspekční činnosti
+ 3.   Zápisy z jednání pedagogické rady, školní rok 2023/2024 a aktuální (výběr)
+ 4.   Rozvrhy hodin tříd, školní rok 2024/2025
+ 5.   Matrika, ke dni inspekční činnosti
+ 6.   Třídní knihy, školní rok 2024/2025
+ 7.   Výroční zpráva o činnosti školy, školní rok 2023/2024
+ 8.   Dokumentace školních poradenských služeb vedená ve školním roce 2024/2025
+ 9.   Zápisy předmětových komisí vedené ve školním roce 2023/2024 a 2024/2025
+10.   Inspekční zpráva ČŠIE-633/18-E, ze dne 15. 6. 2018
+
+
+                                      Poučení
+Podle § 174 odst. 11 školského zákona může ředitel školy podat připomínky k obsahu
+inspekční zprávy České školní inspekci, a to do 14 dnů po jejím převzetí. Případné
+připomínky zašlete prostřednictvím datové schránky (g7zais9), a to k rukám ředitele
+inspektorátu.
+Inspekční zprávu společně s připomínkami a stanoviskem České školní inspekce
+k jejich obsahu zasílá Česká školní inspekce zřizovateli a školské radě. Inspekční
+zpráva včetně připomínek je veřejná a je uložena po dobu 10 let ve škole nebo školském
+zařízení, jichž se týká, a v místně příslušném inspektorátu České školní inspekce.
+Zároveň je inspekční zpráva zveřejněna v Registru inspekčních zpráv na webových
+stránkách České školní inspekce www.csicr.cz.
+
+
+
+
+                                         8/9
+Složení inspekčního týmu a datum vyhotovení inspekční zprávy
+
+ Mgr. Jaroslav Loučka, školní inspektor, vedoucí inspekčního týmu
+
+ Mgr. Petra Holánková, školní inspektorka
+
+ Bc. Daniela Růžová, kontrolní pracovnice
+
+ Mgr. Hana Řebíčková, školní inspektorka
+
+ Mgr. Martin Valášek, školní inspektor
+
+ Ing. Miroslav Balík, Ph.D., odborník na vzdělávání v informatice a výpočetní technice
+
+ Ing. Martin Kovář, odborník na ekonomické vzdělávání
+9. 5. 2025
+
+
+
+
+                                            9/9
+

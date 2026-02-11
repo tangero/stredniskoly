@@ -1,0 +1,109 @@
+{
+  "report_id": "SOS_600012247_2022-12-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:53:41.556033+00:00",
+  "run_finished_utc": "2026-02-09T16:54:08.213424+00:00",
+  "raw_file": "SOS_600012247_2022-12-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600012247_2022-12-12",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola s obory Praktická sestra (maturita), Sociální činnost (maturita) a Ošetřovatel (výuční list)",
+      "inspection_period": "12. 12. – 13. 12. 2022",
+      "school_change_summary": "Od poslední inspekce v roce 2019 došlo k personální obměně na pozici zástupce ředitele. Poprvé maturovali žáci oboru Praktická sestra v roce 2022."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Stabilní vedení",
+          "detail": "Ředitel vede školu od roku 2005 a splňuje předpoklady pro výkon funkce.",
+          "evidence": "Ředitel, který vede školu od roku 2005, splňuje předpoklady pro výkon této funkce."
+        },
+        {
+          "tag": "Podpora ohrožených žáků",
+          "detail": "Škola nabízí individuální i skupinové konzultace a kroužky pro žáky s rizikem neúspěchu.",
+          "evidence": "Žákům s rizikem školního neúspchu jsou od roku 2019 pravidelně nabízeny individuální i skupinové konzultace a nabídka kroužků."
+        },
+        {
+          "tag": "Příprava na maturitu",
+          "detail": "Od roku 2022 škola využívá cvičné didaktické testy k přípravě na společnou část maturitní zkoušky.",
+          "evidence": "Škola od konce jarního zkušebního období 2022 využívá cvičné didaktické testy společné části MZ."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Velmi vysoká neúspěšnost u maturity",
+          "detail": "V jarní maturitě 2022 neuspělo 67,4 % žáků, u češtiny 53,5 %, u angličtiny 42,9 %, u matematiky 100 %.",
+          "evidence": "Hrubá neúspěšnost žáků maturitních oborů na jaře 2022 činila 67,4 %, z českého jazyka 53,5 %, z anglického jazyka 42,9 %."
+        },
+        {
+          "tag": "Nadhodnocování žáků během studia",
+          "detail": "Žáci dostávali jedničky a dvojky, ale u maturity neuspěli. Mezi školním hodnocením a výsledky maturity je velký nesoulad.",
+          "evidence": "Žáci byli v průběhu svého vzdělávání a v jeho závěru školou nadhodnocováni. Zkoušky nekonali úspěšně i žáci hodnoceni známkou chvalitebný nebo výborný."
+        },
+        {
+          "tag": "Kvalita výuky matematiky",
+          "detail": "Matematiku vyučuje učitelka bez potřebné specializace, výuka má nedostatky v organizaci a didaktických zásadách.",
+          "evidence": "Výuku matematiky zajišťovala jediná učitelka bez potřebné specializace. Nedostatky vykazovala organizace vyučovacích hodin, vyučující nedodržovala obecné didaktické zásady."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak se škola vypořádá s tím, že žáci dostávají jedničky, ale pak neuspějí u maturity? Jaké konkrétní kroky plánuje vedení?",
+        "Kdo bude vyučovat matematiku v příštím roce a bude mít potřebnou kvalifikaci?",
+        "Jaké jsou konkrétní plány na zlepšení výsledků z češtiny a angličtiny, kde neuspělo přes 40 % žáků?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří mají jasný zájem o zdravotnické či sociální obory a jsou motivováni k samostudiu",
+        "Žáci, kteří si umí sami zajistit dodatečnou přípravu a nejsou závislí pouze na školní výuce",
+        "Rodiny, které mohou poskytnout domácí podporu a doučování v předmětech společné části maturity"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují kvalitní výuku matematiky – ta zde není na dostatečné úrovni",
+        "Žáci, kteří se spoléhají na školní známky jako indikátor své připravenosti – zde jsou nereálně vysoké",
+        "Rodiny, které očekávají, že školní hodnocení odpovídá skutečné úrovni znalostí – zde je velký nesoulad"
+      ],
+      "plain_czech_summary": "Zdravotnická škola v Náchodě má vážný problém: žáci dostávají během studia dobré známky, ale u maturity masivně neuspívají. V roce 2022 neuspělo 67 % maturantů. Inspekce zjistila, že škola nadhodnocuje své žáky a výuka není dostatečně kvalitní, zvlášť matematika. Vedení školy se problémem nezabývalo systematicky. Škola sice nabízí podporu ohrožených žáků, ale nedaří se jí motivovat je k využívání. Pokud se situace nezmění, je vysoké riziko, že váš syn či dcera neuspěje u maturity."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dramatický pokles úspěšnosti v roce 2022 po dočasném zlepšení v roce 2021",
+        "key_numbers": [
+          "2020: 88,5 % neúspěšnosti (23 z 26 žáků)",
+          "2021: 13,3 % neúspěšnosti (2 z 15 žáků) – ale s centrálním zjednodušením",
+          "2022: 67,4 % neúspěšnosti (29 z 43 žáků)"
+        ],
+        "evidence": "Na jaře 2020 hrubá neúspěšnost činila 88,5 %. V roce 2021 se snížila na 13,3 %. V jarním zkušebním období roku 2022 byla hrubá neúspěšnost 67,4 %."
+      },
+      "absence": {
+        "trend": "Informace o absenci nejsou v textu zprávy obsaženy",
+        "key_numbers": [],
+        "evidence": "Zpráva se zaměřuje na maturitní výsledky, absence nejsou analyzovány"
+      },
+      "support_services": [
+        "Individuální a skupinové konzultace pro žáky s rizikem neúspěchu (od roku 2019)",
+        "Kroužky jako English Party a školní časopis NaZdraVí",
+        "Výchovná poradkyně spolupracuje na identifikaci ohrožených žáků a stanovení podpůrných opatření"
+      ],
+      "safety_climate": [
+        "Vedení školy je stabilní (ředitel od roku 2005)",
+        "Jednoduchá organizační struktura vyhovuje potřebám",
+        "Bezpečnost žáků je dokumentována (knihy úrazů)"
+      ],
+      "partnerships_practice": [
+        "Škola je zřizována Českobratrskou církví evangelickou",
+        "Nabízí akreditované kvalifikační kurzy (Sanitář a Masér ve zdravotnictví)",
+        "Spolupráce mezi učiteli v rámci předmětových komisí (s omezenou efektivitou)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, ale je velmi dlouhá a technická. Pro rodiče je těžké vyčíst klíčové informace bez hlubšího čtení. Hlavní zjištění (vysoká neúspěšnost a nadhodnocování) jsou jasná, ale jsou zahalena v odborné terminologii.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o počtu žáků, kteří školu opustili během studia",
+        "Chybí analýza, proč se žáci v roce 2021 zlepšili – bylo to jen díky zjednodušení maturity nebo i díky školním opatřením?",
+        "Není jasné, jaké konkrétní opatření škola přijala v letošním roce a jak účinná jsou"
+      ]
+    }
+  }
+}

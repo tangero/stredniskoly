@@ -1,0 +1,113 @@
+{
+  "report_id": "SOU_600007880_2022-01-10",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:04:39.542593+00:00",
+  "run_finished_utc": "2026-02-10T08:07:29.973973+00:00",
+  "raw_file": "SOU_600007880_2022-01-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600007880_2022-01-10",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště",
+      "inspection_period": "10. − 13. 1. 2022",
+      "school_change_summary": "Od roku 2016 se mírně zvýšil počet žáků a zlepšilo se materiální vybavení, ale opatření k odstranění dřívějších nedostatků byla jen částečně účinná."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava",
+          "detail": "Žáci získávají dobrou profesní přípravu a praktické dovednosti, které jim umožní se dobře uplatnit na trhu práce.",
+          "evidence": "Profesní příprava žáků je na dobré úrovni a vytváří optimální předpoklady pro uplatnění absolventů na trhu práce."
+        },
+        {
+          "tag": "Vybavení školy",
+          "detail": "Škola disponuje moderním vybavením pro odborný výcvik i teoretickou výuku, které odpovídá reálným podmínkám oborů.",
+          "evidence": "Přístrojové a technologické zařízení odpovídá reálným podmínkám vyučovaných oborů."
+        },
+        {
+          "tag": "Zázemí pro ubytované",
+          "detail": "Domov mládeže nabízí kvalitní zázemí pro studium i volný čas a přispívá k rozvoji samostatnosti žáků.",
+          "evidence": "Domov mládeže poskytuje ubytovaným žákům klidné a upravené prostředí včetně vhodných prostor pro samostudium či relaxaci."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Neúspěšnost u maturity",
+          "detail": "Žáci maturitních oborů dosahují dlouhodobě horších výsledků ve společné části maturity než průměr, zejména v oboru Kosmetické služby.",
+          "evidence": "Neúspěšnost žáků ve společné části maturitní zkoušky byla v období let 2019 až 2021 vysoká, zejména u oboru vzdělání Kosmetické služby."
+        },
+        {
+          "tag": "Nekvalifikovaní učitelé jazyků",
+          "detail": "Výuku cizích jazyků v maturitních oborech zajišťují učitelé bez příslušné specializace, což snižuje kvalitu výuky.",
+          "evidence": "Výuka cizích jazyků... je v těchto oborech zajištěna učiteli bez příslušné předmětové specializace."
+        },
+        {
+          "tag": "Značná absence",
+          "detail": "Škola bojuje s vysokou neomluvenou absencí, která souvisí s horšími studijními výsledky žáků.",
+          "evidence": "Neomluvená absence dlouhodobě představuje přibližně 4 % z celkové absence... zpravidla úzce souvisí s podprůměrným prospěchem žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola reaguje na dlouhodobě nízkou úspěšnost žáků u maturity, zejména v oboru Kosmetické služby?",
+        "Jaká opatření škola přijímá k řešení vysoké absence a záškoláctví žáků?",
+        "Jak škola zajišťuje kvalifikovanou výuku cizích jazyků vzhledem k absenci specializovaných pedagogů?"
+      ],
+      "who_school_fits": [
+        "Pro uchazeče o řemeslné obory (truhlář, tesař, zpracovatel dřeva), kde je profesní příprava na dobré úrovni.",
+        "Pro žáky, kteří hledají školu s moderním vybavením dílen a účelným propojením teorie s praxí.",
+        "Pro studenty, kteří potřebují ubytování v domově mládeže s kvalitním zázemím pro volný čas."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o obor Kosmetické služby kvůli vysoké neúspěšnosti u maturitní zkoušky.",
+        "Žáci, kteří potřebují kvalitní přípravu k maturitě z anglického jazyka.",
+        "Studenti se sklonem k vyšší absenci, kterým škola nemusí poskytnout dostatečnou podporu."
+      ],
+      "plain_czech_summary": "Škola nabízí kvalitní praktickou přípravu a moderní vybavení pro řemeslné obory, což žákům zajišťuje dobré uplatnění na trhu práce. Problémem je ale dlouhodobě nízká úspěšnost u maturitní zkoušky, zejména v oboru Kosmetické služby, a vysoká absence žáků. Škola také zápasí s nedostatkem kvalifikovaných učitelů cizích jazyků. Pro rodiče to znamená, že škola je vhodná pro získání řemesla, ale příprava k maturitě může být riziková."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se úspěšnost ve srovnání s předchozím obdobím i národním průměrem.",
+        "key_numbers": [
+          "Neúspěšnost v oboru Kosmetické služby v roce 2021 byla 25 %.",
+          "V roce 2019 dosáhla neúspěšnost v tomto oboru 69 %.",
+          "V oboru Podnikání úspěšně ukončilo studium maturity přibližně 20 % žáků."
+        ],
+        "evidence": "Výsledky žáků ve společné části MZ se od předešlé inspekční činnosti zhoršily."
+      },
+      "absence": {
+        "trend": "Vysoká absence v prezenční výuce s malou účinností opatření.",
+        "key_numbers": [
+          "Neomluvená absence tvoří dlouhodobě přibližně 4 % z celkové absence.",
+          "V roce 2018/2019 se absence pohybovala kolem 250 hodin na žáka.",
+          "V roce 2020/2021 absence činila přibližně 100 hodin na žáka."
+        ],
+        "evidence": "Opatření přijatá školou k jejímu snížení byla jen málo účinná."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště zajišťuje včasnou identifikaci žáků se speciálními potřebami.",
+        "Důsledné informování vyučujících o potřebách žáků.",
+        "Nabídka individuálních konzultací a doučování pro žáky s rizikem neúspěchu."
+      ],
+      "safety_climate": [
+        "Výrazné zlepšení v zabezpečení budov proti vstupu cizích osob.",
+        "Důsledné poučování žáků o bezpečnostních rizicích.",
+        "Klesající trend počtu úrazů, převážně lehčích."
+      ],
+      "partnerships_practice": [
+        "Exkurze do firem a realizace části praktického vyučování u smluvních partnerů.",
+        "Spolupráce s obdobnými školami v rámci profesních soutěží.",
+        "Výměnné pobyty na Slovensku rozvíjející profesní a jazykové kompetence."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je psán srozumitelně, ale obsahuje množství administrativních frází a zkratek, které mohou být pro laika matoucí.",
+      "uncertainty_notes": [
+        "V textu chybí upřesnění, které konkrétní 'další obory' jsou myšleny v souvislosti se soutěžemi.",
+        "Není zcela jasné, jak škola konkrétně 'statisticky hodnotí' výsledky v pedagogických radách.",
+        "Text se opakuje v popisu neúspěšnosti u maturity, což může vést k nejednoznačnosti v celkovém hodnocení."
+      ]
+    }
+  }
+}

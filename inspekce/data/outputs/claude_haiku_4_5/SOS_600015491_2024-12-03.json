@@ -1,0 +1,115 @@
+{
+  "report_id": "SOS_600015491_2024-12-03",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:07:25.085229+00:00",
+  "run_finished_utc": "2026-02-09T16:07:49.046249+00:00",
+  "raw_file": "SOS_600015491_2024-12-03.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015491_2024-12-03",
+    "school_profile": {
+      "school_type": "Církevní střední škola pedagogická a sociální, zaměřená na obor Předškolní a mimoškolní pedagogika v denní i dálkové formě",
+      "inspection_period": "3. 12. 2024 – 6. 12. 2024",
+      "school_change_summary": "Škola se zaměřila na jediný obor vzdělání, rozšířila prostorové zázemí, modernizovala vybavení, získala nové kvalifikované pedagogy a výrazně zlepšila výsledky maturit. Navýšila kapacitu na 180 žáků a 53 lůžek v domově mládeže."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Úspěšnost u maturitní zkoušky dosahuje v posledních třech letech převážně 100 %.",
+          "evidence": "Úspěšnost žáků u maturitní zkoušky se od poslední inspekční činnosti výrazně zlepšila, v posledních třech školních letech je vysoká, většinou 100 %."
+        },
+        {
+          "tag": "Kvalitní odborná příprava",
+          "detail": "Pedagogové využívají inovativní metody a žáci získávají praktické zkušenosti v mateřských školách.",
+          "evidence": "Pedagogové odborných předmětů využívají široké spektrum metod a forem práce, reflektují specifika žáků a cíleně reagují na poznatky odborníků z praxe."
+        },
+        {
+          "tag": "Komplexní podpora žáků",
+          "detail": "Škola má školní psychologa, kariérního poradce a efektivní systém podpory pro žáky se speciálními potřebami.",
+          "evidence": "Poradenské služby jsou zajišťovány systematicky prostřednictvím školního poradenského pracoviště s psycholožkou a metodičkou prevence."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá diferenciace v přírodovědě",
+          "detail": "Ve výuce přírodovědných předmětů chybí nabídka úkolů s různou náročností pro různě schopné žáky.",
+          "evidence": "Ve výuce přírodovědných předmětů chyběla nabídka úkolů různé kognitivní náročnosti."
+        },
+        {
+          "tag": "Problém se stravováním na internátu",
+          "detail": "Ubytovaní žáci dostávají pouze studenou večeři, což nepodporuje zdravý životní styl.",
+          "evidence": "Ve školní jídelně-výdejně na domově mládeže je ubytovaným žákům poskytována strava formou studené večeře, což nepřispívá k upevňování správných stravovacích návyků."
+        },
+        {
+          "tag": "Absence tělocvičny",
+          "detail": "Škola nemá vlastní tělocvičnu, což limituje výuku tělesné výchovy.",
+          "evidence": "Pro výuku tělesné výchovy je limitujícím faktorem absence tělocvičny. Škola využívá tělocvičnu blízké základní školy."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá praktická příprava v mateřských školách a jak často se žáci účastní praxe?",
+        "Jaké jsou plány na zlepšení stravování ubytovaných žáků a kdy se budou realizovat?",
+        "Jak se škola vypořádává s absencí vlastní tělocvičny a jaké má plány na její vybudování?"
+      ],
+      "who_school_fits": [
+        "Zájemci o práci s dětmi, kteří chtějí kvalitní teoretickou i praktickou přípravu na profesi pedagoga",
+        "Žáci, kteří oceňují osobní přístup a podporu – škola má psychologa a efektivní systém péče",
+        "Studenti, kteří se chtějí zapojit do mezinárodních projektů – škola nabízí stáže v zahraničních mateřských školách"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují intenzivní diferenciovanou výuku v přírodovědných předmětech – zde je prostor ke zlepšení",
+        "Studenti se zdravotními omezeními vyžadující kvalitní tělocvičnu – škola ji nemá",
+        "Ubytovaní žáci se zvýšenými nároky na kvalitní a teplou stravu – večeře je pouze studená"
+      ],
+      "plain_czech_summary": "Církevní střední škola v Bojkovicích je kvalitní pedagogická škola se 100% úspěšností u maturit. Nabízí skvělou přípravu na práci s dětmi, včetně praxe v mateřských školách a zahraničních stáží. Škola má psychologa a dobrou péči o žáky. Slabší stránkou je nedostatečná diferenciace v přírodovědě, absence vlastní tělocvičny a problém se studenou večeří na internátu. Vhodná pro motivované zájemce o pedagogiku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazné zlepšení",
+        "key_numbers": [
+          "Úspěšnost 100 % v posledních třech školních letech",
+          "Všechny žákyně v dálkové formě úspěšné v posledních dvou letech",
+          "Průměrná známka se zlepšila z 1,69 na 1,53 (2022/23 vs 2023/24)"
+        ],
+        "evidence": "Úspěšnost žáků u maturitní zkoušky se od poslední inspekční činnosti výrazně zlepšila, v posledních třech školních letech je vysoká, většinou 100 %."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Informace o absenci nejsou v textu uvedeny"
+        ],
+        "evidence": "Zpráva se absencí nezabývá."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní, školní psycholožkou a metodičkou prevence",
+        "Podpora žáků se speciálními vzdělávacími potřebami (21 žáků v době inspekce)",
+        "Kariérové poradenství a spolupráce s odbornými organizacemi",
+        "Adaptační pobyty pro prvňáky a testování sociálního klimatu"
+      ],
+      "safety_climate": [
+        "Prostředí školy je udržované, estetické, velmi podnětné a bezpečné",
+        "Škola pravidelně vyhodnocuje bezpečnostní rizika a přijímá patřičná opatření",
+        "Nastavené preventivní mechanismy školy jsou účinné",
+        "Více než 2/3 žáků bylo s volbou školy spokojeno"
+      ],
+      "partnerships_practice": [
+        "Intenzivní spolupráce se sociálními partnery – mateřskými a základními školami, kde probíhá odborná praxe",
+        "Aktivní členství v asociaci středních pedagogických škol",
+        "Dlouhodobé zapojení do programů s vyjezdy do zahraničních mateřských škol",
+        "Spolupráce se školskými poradenskými zařízeními a odbornými zařízeními",
+        "Zapojení do vzdělávacího programu Pokusného ověřování Systému podpory provázejících učitelů (2023–2025)"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však delší a více úřednického stylu, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní údaje o absenci žáků, což je důležitý indikátor kvality.",
+        "Chybí informace o počtu žáků, kteří neuspěli u maturit v jednotlivých letech.",
+        "Není jasné, jak konkrétně se liší kvalita výuky mezi jednotlivými pedagogy v přírodovědě."
+      ]
+    }
+  }
+}

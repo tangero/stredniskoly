@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_691000719_2023-11-20",
+  "school_profile": {
+    "school_type": "Gymnázium (8 tříd, 112 žáků) a obor Bezpečnostně právní činnost (4 třídy, 105 žáků), střední škola se školním klubem, domovem mládeže a jídelnou",
+    "inspection_period": "20.–22. listopadu 2023",
+    "school_change_summary": "Od poslední inspekce vzrostl počet žáků, obnovena činnost domova mládeže (od 2021), využití kapacity školy na 60,3 %"
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemná atmosféra a demokratický přístup",
+        "detail": "Ve všech hodinách panuje vstřícný přístup pedagogů, klidné pracovní klima a dodržování pravidel komunikace.",
+        "evidence": "Inspektoři zaznamenali příjemnou atmosféru bez problémů s chováním ve všech sledovaných hodinách."
+      },
+      {
+        "tag": "Bohaté mimoškolní aktivity",
+        "detail": "Škola pravidelně pořádá zážitkově motivační, seberozvíjející a charitativní aktivity podporující profil absolventa.",
+        "evidence": "Spolupráce s Policií ČR, Hasičským záchranným sborem, dobrovolnické projekty, soutěže a olympiády."
+      },
+      {
+        "tag": "Dobrá péče o žáky se speciálními potřebami",
+        "detail": "Žáci se speciálními vzdělávacími potřebami nejsou ohroženi neúspěchem a dostávají individuální přístup.",
+        "evidence": "Přestože se počet těchto žáků zvýšil na 19, žádný z nich neprospěl špatně."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivní výuka a formativního hodnocení",
+        "detail": "Výuka je často vedena frontální formou, chybí sebehodnocení žáků a zpětná vazba zaměřená na jejich učení.",
+        "evidence": "Inspektoři zaznamenali, že cíle nejsou dostatečně zaměřeny na žáky a jejich naplnění se vyhodnocuje jen výjimečně."
+      },
+      {
+        "tag": "Slabá diferenciace pro nadané žáky",
+        "detail": "Škola minimálně využívá možnosti rozlišené výuky pro maximální rozvoj potenciálu nadaných žáků.",
+        "evidence": "Inspektoři doporučují zaměřit se více na vyhledávání a podporu nadaných žáků formou alternativních činností."
+      },
+      {
+        "tag": "Problematické odborné praxe v oboru Bezpečnostně právní činnost",
+        "detail": "Část praxí probíhá u partnerů, jejichž zaměření neodpovídá oboru, žáci pak vykonávají činnosti spíše v oblasti veřejné správy.",
+        "evidence": "Inspektoři zjistili, že pouze sedm žáků ročně absolvuje praxi u Policie ČR, ostatní u nevhodných partnerů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s nadanými žáky a jaké má pro ně speciální programy?",
+      "Jaké jsou konkrétní partneři pro odborné praxe v oboru Bezpečnostně právní činnost a jak se vybírají?",
+      "Jak se v hodinách používá formativní hodnocení a jak se žáci podílí na sebehodnocení?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si cení vstřícného a demokratického přístupu pedagogů a bezpečného prostředí",
+      "Zájemci o obor Bezpečnostně právní činnost s kontakty na bezpečnostní sbory (Policie, Hasiči, Vězeňská služba)",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální péči"
+    ],
+    "who_should_be_cautious": [
+      "Nadaní žáci, kteří potřebují výrazně vyšší nároky a diferenciovanou výuku",
+      "Žáci preferující aktivní, skupinovou a projektovou výuku (škola používá převážně frontální formu)",
+      "Zájemci o obor Bezpečnostně právní činnost, pokud chtějí praxi primárně u Policie ČR (míst je málo)"
+    ],
+    "plain_czech_summary": "Gymnázium ve Skutči je příjemné místo s klidnou atmosférou a vstřícnými učiteli. Škola nabízí bohaté mimoškolní aktivity a dobrou péči o žáky se speciálními potřebami. Výsledky maturit jsou velmi dobré (100 % úspěšnost v roce 2023). Slabší stránkou je, že výuka je často vedena tradičně frontální formou bez dostatečného zaměření na individuální cíle žáků a jejich sebehodnocení. Nadaní žáci by měli méně příležitostí k rozšíření svého potenciálu. V oboru Bezpečnostně právní činnost je problém s vhodností některých partnerů pro odborné praxe."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi pozitivní",
+      "key_numbers": [
+        "Školní rok 2022/2023: 100 % úspěšnost (všech 26 žáků prospělo)",
+        "Přibližně 15 % žáků prospělo s vyznamenáním",
+        "Pouze cca 2 % žáků neprospělo (po opravných zkouškách v září)"
+      ],
+      "evidence": "Ve školním roce 2022/2023 všech 26 žáků maturitní zkoušku úspěšně absolvovalo. Průměrný prospěch se pohyboval v rozmezí 1,32 až 2,4."
+    },
+    "absence": {
+      "trend": "Dobře sledovaná a řešená",
+      "key_numbers": [
+        "Více než 87 % žáků dojíždí (často ze vzdálenějšího okolí)",
+        "22 žáků ubytováno v domově mládeže (max. 30)",
+        "Nízký počet výchovných problémů"
+      ],
+      "evidence": "Škola účinně sleduje a vyhodnocuje docházku žáků včetně příčin neomluvených absencí. Malý počet výchovných problémů svědčí o dobré koordinaci práce poradenského pracoviště."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovný poradce, metodička prevence, externí psycholožka (dojíždí týdně)",
+      "Spirituál školy nabízí žákům a zaměstnancům duchovní setkání a svačinky",
+      "Sociometrické testy ve vybraných třídách a přednášky s preventivním zaměřením"
+    ],
+    "safety_climate": [
+      "Vstřícný přístup pedagogů, demokratické prostředí, pozitivní pracovní klima",
+      "Malý počet výchovných problémů a porušení školních pravidel",
+      "Dobře koordinovaná činnost poradenského pracoviště zaměřená na prevenci sociálně patologických jevů"
+    ],
+    "partnerships_practice": [
+      "Policie České republiky (7 žáků ročně na praxi)",
+      "Hasičský záchranný sbor ČR, Vězeňská služba ČR, Záchranná služba, Městská policie Hrochův Týnec",
+      "Sociální partneři pro odborné praxe (část s nevhodným zaměřením pro obor Bezpečnostně právní činnost)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však technicky náročnější (kritéria inspekce, kódy), ale pro rodiče jsou klíčové informace jasně odděleny.",
+    "uncertainty_notes": [
+      "Přesný počet žáků s vyznamenáním není uveden (pouze 'přibližně 15 %'), stejně jako přesný podíl neúspěšných (pouze 'přibližně 2 %')",
+      "Není jasné, kolik konkrétně žáků oboru Bezpečnostně právní činnost absolvuje praxi u nevhodných partnerů",
+      "Zpráva nespecifikuje, které konkrétní vyučovací formy chybí (pouze obecně 'méně pestré spektrum')"
+    ]
+  }
+}
+```

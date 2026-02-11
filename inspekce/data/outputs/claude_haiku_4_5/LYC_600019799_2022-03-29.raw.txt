@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_600019799_2022-03-29",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola s domovem mládeže a školní jídelnou",
+    "inspection_period": "29. března až 31. března 2022",
+    "school_change_summary": "Od minulé inspekce byla zavedena nová čtyřletá specializace Praktická sestra (53-41-M/03), která nahradila starší program. Škola realizovala projekty na zlepšení vybavení včetně nové chemické laboratoře a digitální techniky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné materiální vybavení",
+        "detail": "Škola má novou chemickou laboratoř, simulační modely, 3D tiskárnu a moderní IT techniku pro praktickou výuku.",
+        "evidence": "Vybudovala novou chemickou laboratoř, prostředky na notebooky, dataprojektory, resuscitační modely, simulátor kojence."
+      },
+      {
+        "tag": "Kvalitní pedagogický sbor",
+        "detail": "Učitelé jsou odborně kvalifikovaní se zkušenostmi z praxe, aktivně se vzdělávají a podporují žáky individuálně.",
+        "evidence": "Pedagogický sbor tvoří odborně kvalifikovaní učitelé, jejich oborová způsobilost má příznivý vliv na průběh a výsledky vzdělávání."
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Škola má velmi nízký výskyt problémů se šikanou, kyberšikanou a nežádoucích jevů, příjemná pracovní atmosféra.",
+        "evidence": "Pozitivním trendem je velmi nízký výskyt nežádoucích jevů ve škole. Problémy se šikanou nebo kyberšikanou za poslední roky škola nezaznamenala."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Učitelé neposkytují dostatečně náročné úkoly pro nadané žáky, výuka je vedena jednotně pro všechny.",
+        "evidence": "Chybělo využití diferenciace náročnosti učebních úloh podporující nadané žáky. Individuální přístup vyučujících k těmto žákům nebyl zaznamenán."
+      },
+      {
+        "tag": "Omezená samostatná práce žáků",
+        "detail": "Zejména v matematice a při opakování učiva je málo příležitostí pro samostatnou práci žáků.",
+        "evidence": "Samostatná práce žáků byla zařazována méně, příležitostí je její výraznější využití při vyučovacích hodinách."
+      },
+      {
+        "tag": "Personální kapacita prevence",
+        "detail": "Primární prevence a výchovné poradenství jsou zajišťovány pouze dvěma vyučujícími, školní metodika prevence nemá specializační studium.",
+        "evidence": "Primární prevence a výchovné poradenství jsou zajišťovány dvěma vyučujícími. Doporučení: absolvování specializačního studia školního metodika prevence."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jak se liší jejich výuka od ostatních?",
+      "Jaké jsou možnosti ubytování v domově mládeže a jaké aktivity se tam pro žáky pořádají?",
+      "Jak probíhá praktická výuka v nemocnici a jaké jsou zkušenosti absolventů s nástupem do zaměstnání?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí kvalitní praktickou přípravu v oboru zdravotnictví s moderním vybavením a zkušenými učiteli",
+      "Studenti, kteří si cení bezpečného a podporujícího prostředí bez problémů se šikanou a s příjemnou atmosférou",
+      "Žáci z okolních měst, kteří mohou využít ubytování v domově mládeže se zajímavým programem"
+    ],
+    "who_should_be_cautious": [
+      "Nadaní žáci, kteří potřebují výrazně náročnější úkoly – škola se na ně zaměřuje méně",
+      "Žáci, kteří se učí lépe samostatnou prací – frontální výuka je zde převažující",
+      "Studenti, kteří potřebují intenzivní psychologickou nebo speciální pedagogickou podporu – kapacita je omezená"
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola v Pardubicích je moderně vybavená zdravotnická škola s dobrým jménem. Učitelé jsou zkušení a vstřícní, žáci se učí v příjemné atmosféře bez problémů se šikanou. Praktická výuka probíhá v nemocnici s reálnými pacienty. Slabší stránkou je, že nadaní žáci nedostávají dostatečně náročné úkoly a chybí více samostatné práce. Škola má domov mládeže pro ubytované žáky. Výsledky maturit jsou velmi dobré."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "346 žáků ve čtyřletých oborech s maturitní zkouškou",
+        "Výsledky maturitních zkoušek jsou v jednotlivých oborech zpravidla velmi dobré",
+        "Vysoká míra prospívajících s vyznamenáním u závěrečných zkoušek v oboru Ošetřovatel"
+      ],
+      "evidence": "Výsledky maturitních zkoušek jsou v jednotlivých oborech vzdělání zpravidla velmi dobré, to se týká rovněž nástavbového studia."
+    },
+    "absence": {
+      "trend": "Nízký",
+      "key_numbers": [
+        "Absence žáků je spíše nízká",
+        "Neomluvená absence ojedinělá",
+        "Kázeňská opatření byla ojedinělá"
+      ],
+      "evidence": "Absence žáků je spíše nízká, neomluvená absence ojedinělá. Kázeňská opatření byla ojedinělá, sníženou známkou z chování nebylo hodnoceno chování žádného žáka."
+    },
+    "support_services": [
+      "Výchovné poradenství a primární prevence zajišťované dvěma vyučujícími",
+      "Kariérové poradenství od roku 2017, osobní portfolio žáků pro profesní orientaci",
+      "Doučování v hlavních předmětech se zapojením desítek žáků, konzultační hodiny všech učitelů",
+      "Spolupráce se školskými poradenskými zařízeními"
+    ],
+    "safety_climate": [
+      "Velmi nízký výskyt nežádoucích jevů ve škole",
+      "Žádné problémy se šikanou nebo kyberšikanou za poslední roky",
+      "Příjemná a klidná pracovní atmosféra vyučovacích hodin",
+      "Adaptační kurzy pro první ročníky na upevňování sociálních vazeb"
+    ],
+    "partnerships_practice": [
+      "Nemocnice Pardubického kraje – nadstandardní spolupráce na praktické výuce a odborném výcviku",
+      "Fakultní škola Fakulty zdravotnických studií University Pardubice od ledna 2021",
+      "Projekty prevence a zdraví s mateřskými a základními školami",
+      "Dobrovolnické aktivity v sociálních a zdravotnických zařízeních"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a citace z pozorování. Některé pasáže jsou však dlouhé a složitě strukturované, což mírně snižuje srozumitelnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o počtu žáků s vyznamenáním nebo podrobné statistiky prospěchu – pouze kvalitativní hodnocení",
+      "Nejsou uvedeny konkrétní výsledky maturitních zkoušek v procentech nebo bodech",
+      "Chybí informace o počtu žáků, kteří opakují ročník nebo přestupují na jiné obory"
+    ]
+  }
+}
+```

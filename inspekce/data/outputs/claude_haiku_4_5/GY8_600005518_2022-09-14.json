@@ -1,0 +1,119 @@
+{
+  "report_id": "GY8_600005518_2022-09-14",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:01:26.884914+00:00",
+  "run_finished_utc": "2026-02-09T17:01:53.780710+00:00",
+  "raw_file": "GY8_600005518_2022-09-14.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600005518_2022-09-14",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium se zaměřením na matematiku, informatiku, fyziku a cizí jazyky",
+      "inspection_period": "14. září 2022 až 19. září 2022",
+      "school_change_summary": "Škola si udržuje stabilní počet žáků (549 ve 20 třídách). Od inspekce 2016 byla odstraněna nedostatečnost v dějepisu, ale snížila se kvalita poradenských služeb."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "Všichni žáci uspěli u maturitní zkoušky, 95 % absolventů se úspěšně dostane na vysoké školy.",
+          "evidence": "Ve sledovaném období tří školních let všichni žáci u maturitní zkoušky uspěli."
+        },
+        {
+          "tag": "Bohatá nabídka aktivit",
+          "detail": "Škola nabízí mezinárodní projekty, soutěže, exkurze a mimoškolní aktivity podporující talent a nadání.",
+          "evidence": "Zapojování do národních i mezinárodních projektů a tradičních celoškolních akcí přispívá k naplňování klíčových kompetencí."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Nízký výskyt rizikových chování, minimální absence a téměř nulový počet neomluvených hodin.",
+          "evidence": "Funkčnost preventivních mechanismů dokládá nízký výskyt rizikových projevů chování a přiměřená míra absence."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá poradenská služba",
+          "detail": "Poradenské služby nejsou zajišťovány systematicky, učitelé nejsou informováni o podpůrných opatřeních pro žáky se speciálními potřebami.",
+          "evidence": "Nefunkčně nastavený systém identifikace žáků se SVP a OMJ má přímý dopad na kvalitu poskytování podpůrných opatření."
+        },
+        {
+          "tag": "Převaha frontální výuky",
+          "detail": "Přibližně polovina hodin používá málo aktivizačních metod, chybí diferenciace obsahu podle potřeb žáků.",
+          "evidence": "Převaha frontální výuky s okrajovým využitím samostatné práce vedla k nerovnoměrnému zapojení žáků do vyučování."
+        },
+        {
+          "tag": "Slabá kontrola kvality výuky",
+          "detail": "Hospitační činnost není dostatečně systematická, chybí konkrétní doporučení pro zlepšení.",
+          "evidence": "Nastavené kontrolní mechanismy nejsou dostatečně funkční, vedení školy hospituje pouze u začínajících učitelů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami a jak jsou o tom informováni učitelé?",
+        "Jaké konkrétní kroky škola podnikla po inspekci k zlepšení aktivizačních metod ve výuce?",
+        "Jak funguje systém doučování a individuální podpory pro žáky, kteří si nevedou dobře?"
+      ],
+      "who_school_fits": [
+        "Nadaní žáci se zájmem o jazyky nebo matematiku – škola má speciální zaměření a bohatou nabídku volitelných předmětů",
+        "Žáci z širšího okolí – dobrá dopravní dostupnost, přibližně 24 % žáků dojíždí ze Středočeského kraje",
+        "Žáci s ambicí na vysokou školu – 95 % absolventů se úspěšně dostane na vysoké školy"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se speciálními vzdělávacími potřebami – systém jejich podpory není dostatečně funkční a učitelé nejsou vždy informováni",
+        "Žáci preferující interaktivní a skupinovou práci – výuka často používá frontální metody s omezeným zapojením všech žáků",
+        "Žáci potřebující individuální péči – poradenské služby nejsou zajišťovány systematicky"
+      ],
+      "plain_czech_summary": "Gymnázium Christiana Dopplera je prestižní škola s výborným renomé. Žáci dosahují skvělých výsledků u maturity a vysokých škol. Škola nabízí bohatý program aktivit a vytváří bezpečné prostředí. Slabinou je však slabá poradenská služba pro žáky se speciálními potřebami a převaha tradičnější frontální výuky. Inspekce doporučuje zlepšit aktivizační metody a systematičnost podpory pro všechny žáky."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100 % úspěšnost všech žáků u maturitní zkoušky",
+          "95 % absolventů se úspěšně dostane na vysoké školy",
+          "Přibližně 50 % žáků osmiletého studia dosahuje vyznamenání vs. 20 % čtyřletého studia"
+        ],
+        "evidence": "Ve sledovaném období tří školních let všichni žáci u maturitní zkoušky uspěli. Gymnázium kvalitně připravuje žáky na terciární vzdělávání."
+      },
+      "absence": {
+        "trend": "Velmi nízká a stabilní",
+        "key_numbers": [
+          "Průměrně 70 omluvených hodin za pololetí",
+          "V období pandemie průměrná absence 27 hodin",
+          "Téměř nulový počet neomluvených hodin"
+        ],
+        "evidence": "Přiměřená míra absence a téměř nulový počet neomluvených hodin dokládají funkčnost preventivních mechanismů."
+      },
+      "support_services": [
+        "Adaptační kurzy a teambuildingy pro nové žáky",
+        "Sociometrie tříd a prevence rizikových chování",
+        "Spolupráce s externími odborníky",
+        "Individuální konzultace a doučování",
+        "Však: Poradenské služby nejsou zajišťovány systematicky, chybí jednotný systém podpory žáků s odlišným mateřským jazykem"
+      ],
+      "safety_climate": [
+        "Důraz na dodržování pravidel a pedagogický dohled o přestávkách",
+        "Celodenní provoz recepce",
+        "Nízká míra úrazovosti dosahuje stabilně nízké úrovně",
+        "Nízký výskyt rizikových projevů chování",
+        "Nižší počet ukládaných kázeňských opatření"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Matematicko-fyzikální fakulty UK a Přírodovědecké fakulty UK",
+        "Spolupráce s Akademií věd ČR, ČVUT a Pedagogickou fakultou UK",
+        "Stabilní síť zahraničních partnerských škol",
+        "Projekty jako Evropský parlament mládeže",
+        "Organizace matematických a fyzikálních soutěží pro základní školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní citace a evidence. Některé pasáže jsou však dlouhé a úřednické, což mírně snižuje srozumitelnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Přesný počet žáků se SVP (8 %) a OMJ (9 %) je uveden jako stav k termínu inspekce, ale není jasné, zda se jedná o poddiagnostikování nebo skutečný stav",
+        "Zpráva nespecifikuje, které konkrétní předměty mají problémy s metodikou, pouze obecně hovoří o 'zhruba polovině hospitovaných hodin'",
+        "Není jasné, jak se kvalita poradenských služeb snížila od roku 2016 – chybí konkrétní srovnání"
+      ]
+    }
+  }
+}

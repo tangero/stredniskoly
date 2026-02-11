@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600013073_2022-05-31",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium",
+    "inspection_period": "31. května až 2. června 2022",
+    "school_change_summary": "Škola zlepšila prostorové a materiální podmínky (nová učebna fyziky, rekonstrukce jazykové učebny, relaxační prostor pro žáky). Vedení škola efektivně komunikuje prostřednictvím EduPage a MS Teams."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výuka cizích jazyků",
+        "detail": "Angličtina se vyučuje v jazyce samotném a žáci jsou rozděleni do čtyř skupin podle úrovně dovedností, s možností prostupnosti i mezi ročníky.",
+        "evidence": "Systém rozdělení žáků podle úrovně jazykových dovedností do čtyř skupin v rámci ročníků vyššího stupně."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola spolupracuje s univerzitami (Pardubice, Hradec Králové) a vytváří podmínky pro práci s mimořádně nadanými žáky.",
+        "evidence": "Spolupráce s Univerzitou Pardubice a Univerzitou Hradec Králové, nabídka exkurzí a podpory talentovaných žáků."
+      },
+      {
+        "tag": "Mezinárodní zkušenosti",
+        "detail": "Žáci se účastní výměnných pobytů do zahraničí, poznávacích zájezdů a eTwinningových aktivit.",
+        "evidence": "Dlouhodobě podporuje realizaci výměnných výukových pobytů (Itálie, Španělsko), zájezdů do zahraničí (Norsko)."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivizujících metod",
+        "detail": "Výuka je často frontální s dominantní rolí učitele, chybí vrstevnické hodnocení a sebehodnocení žáků.",
+        "evidence": "Nízké začlenění aktivizačních metod, frontální výuka, dominantní role učitele, ojedinělá práce s informacemi."
+      },
+      {
+        "tag": "Slabá diferenciace",
+        "detail": "Výuka se málo přizpůsobuje schopnostem a zájmům jednotlivých žáků, jen někdy jsou dostupné úlohy s rozdílnou náročností.",
+        "evidence": "Méně využívaná diferenciace výuky v hodinách s ohledem na schopnosti žáků, ojedinělé příklady individuálního přístupu."
+      },
+      {
+        "tag": "Nadprůměrná úrazovost",
+        "detail": "Přestože škola poučuje žáky o bezpečnosti, školní úrazovost je vyšší než průměr.",
+        "evidence": "Školní úrazovost je nadprůměrná, doporučení zvážit preventivní program vedoucí k jejímu snížení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve vyučování uplatňují aktivizační metody a skupinová práce?",
+      "Jaké jsou možnosti individuálního přístupu k žákům s různými schopnostmi a zájmy?",
+      "Jak se škola snaží snižovat počet úrazů a jaká bezpečnostní opatření má zavedena?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky, zejména angličtinu, díky kvalitnímu systému výuky v jazyce samotném",
+      "Nadaní a talentovaní žáci, kterým škola nabízí spolupráci s univerzitami a speciální podporu",
+      "Žáci zajímající se o mezinárodní zkušenosti a cestování (výměnné pobyty, zahraniční zájezdy)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciované výuky přizpůsobené jejich tempu",
+      "Žáci, kteří se lépe učí aktivizačními metodami a skupinovou prací než frontální výukou",
+      "Rodiče obávající se bezpečnosti, vzhledem k nadprůměrné úrazovosti školy"
+    ],
+    "plain_czech_summary": "Gymnázium Vysoké Mýto je kvalitní škola s výborným vybavením a stabilním pedagogickým sborem. Silné stránky jsou zejména v jazykové výuce, podpoře nadaných žáků a mezinárodních aktivitách. Žáci dosahují velmi dobrých výsledků v maturitách a soutěžích. Slabší je využívání aktivizačních metod a individuálního přístupu v hodinách – výuka je často frontální. Škola by měla více pracovat na diferenciaci a zapojení žáků do výuky. Pozornost si zaslouží i nadprůměrná úrazovost."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborný",
+      "key_numbers": [
+        "V roce 2021: 46 absolventů přihlášeno k maturitě",
+        "59 % prospělo s vyznamenáním",
+        "Pouze 1 žák neprospěl ani v podzimním termínu"
+      ],
+      "evidence": "Tradičně výborných výsledků dosahují žáci při absolvování maturitních zkoušek, jak ve společné, tak v profilové části."
+    },
+    "absence": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "Počet absencí není vysoký",
+        "Záškoláctví velmi nízké",
+        "Neomluvená absence velmi nízká"
+      ],
+      "evidence": "Počet absencí žáků ve výuce není vysoký, záškoláctví nebo neomluvená absence jsou velmi nízké, vyhodnocování příčin řeší s důrazem na prevenci."
+    },
+    "support_services": [
+      "Výchovná poradkyně – kariérové poradenství, spolupráce s poradenskými zařízeními",
+      "Školní metodik prevence – plán preventivních opatření, identifikace šikany a kyberšikany",
+      "Školní psycholožka na částečný úvazek – poradenské a konzultační služby"
+    ],
+    "safety_climate": [
+      "Pozitivní, podporující pracovní atmosféra ve všech sledovaných hodinách",
+      "Nízká míra rizikového chování žáků",
+      "Nadprůměrná školní úrazovost navzdory poučování o bezpečnosti"
+    ],
+    "partnerships_practice": [
+      "Iveco Bus – spolupráce na odborných aktivitách",
+      "Univerzita Pardubice a Univerzita Hradec Králové – exkurze, podpora nadaných žáků",
+      "Erasmus+ projekty, eTwinning aktivity, výměnné pobyty do zahraničí"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady, čísla a citace. Slabší je pouze v některých místech, kde by bylo užitečné více konkrétních příkladů z hodin.",
+    "uncertainty_notes": [
+      "Není jasné, jak přesně se individuální vzdělávací plán uplatňuje v praxi – zpráva zmiňuje, že konkrétní příklady individuálního přístupu nebyly v hospitovaných hodinách zaznamenány",
+      "Nadprůměrná úrazovost není kvantifikována – není jasné, o kolik procent je vyšší než průměr",
+      "Není specifikováno, jak se konkrétně liší kvalita výuky mezi jednotlivými předměty a učiteli"
+    ]
+  }
+}
+```

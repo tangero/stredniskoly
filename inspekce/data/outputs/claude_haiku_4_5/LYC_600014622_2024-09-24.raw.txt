@@ -1,0 +1,116 @@
+```json
+{
+  "report_id": "LYC_600014622_2024-09-24",
+  "school_profile": {
+    "school_type": "Obchodní akademie a střední škola polytechnická (SŠP) – střední vzdělání s maturitou, výučním listem a nástavbové studium",
+    "inspection_period": "24. 9. 2024 – 27. 9. 2024",
+    "school_change_summary": "Škola prošla personálními změnami ve vedení, změnou názvu a výrazným nárůstem počtu žáků (o 27,5 % na 449 žáků). Od září 2024 nabízí nový obor Pedagogické lyceum. Zlepšily se materiální podmínky a výsledky maturit u čtyřletých oborů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné dovednosti a praxe",
+        "detail": "Škola intenzivně podporuje rozvoj odborných kompetencí žáků prostřednictvím projektů, soutěží a spolupráce se sociálními partnery, což zvyšuje jejich uplatnění na trhu práce.",
+        "evidence": "Žáci dosáhli úspěchů v soutěžích fiktivních firem, účetnictví a informatiky; škola efektivně umísťuje žáky na odbornou praxi."
+      },
+      {
+        "tag": "Podpora osobnostního rozvoje",
+        "detail": "Škola realizuje preventivní programy a projekty včetně mezinárodního programu DofE, které podporují osobnostní rozvoj a sociální klima.",
+        "evidence": "Školní psycholog a metodičky prevence zajišťují smysluplné činnosti; žáci se účastní adaptačních kurzů a školních akcí."
+      },
+      {
+        "tag": "Kvalitní zázemí a vybavení",
+        "detail": "Moderní materiální podmínky s dostupnou výpočetní technikou, robotickými technologiemi a estetickým prostředím podporují aktivní zapojení žáků.",
+        "evidence": "Škola efektivně čerpá dotační programy; probíhá stavba nové budovy pro praktické vyučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní formy výuky v některých předmětech",
+        "detail": "V části všeobecně vzdělávacích předmětů dominuje frontální výuka (72 % hodin), která omezuje aktivní zapojení žáků a jejich motivaci.",
+        "evidence": "Inspektoři pozorovali nedostatečný rozvoj kritického myšlení (13 % hodin), skupinová práce jen v 6 % hodin, žáci vedeni k vyhodnocení cíle jen v 13 % hodin."
+      },
+      {
+        "tag": "Slabší čtenářská gramotnost",
+        "detail": "Cílená podpora čtenářské gramotnosti se objevila jen v 3 % sledovaných hodin; výběrové testování ČŠI prokázalo slabou úroveň v porovnání s průměrem.",
+        "evidence": "Žáci nástavbového oboru opakovaně selhávají v didaktickém testu z ČJL (2022–2024); vyhledávání informací z různých zdrojů jen v 13 % hodin."
+      },
+      {
+        "tag": "Vysoká absence u tříletých oborů",
+        "detail": "Žáci tříletých oborů mají vyšší absenci (158 hodin na žáka) a vyšší podíl neprospívajících, což souvisí s nižší motivací.",
+        "evidence": "Nástavbový obor vykazuje průměrně 30 % neúspěšnost u závěrečné zkoušky; část žáků ukončuje studium v prvním ročníku."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje aktivní učení a skupinovou práci v teoretických předmětech? Jaké metody používáte mimo frontální výuku?",
+      "Jaké konkrétní opatření podniká škola proti vysoké absenci u tříletých oborů a jak motivujete tyto žáky k pokračování v studiu?",
+      "Jak se škola zaměřuje na rozvoj čtenářské gramotnosti a práce s informacemi z různých zdrojů?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a odborné obory – škola má výborné vybavení, kvalitní praktickou výuku a úzkou spolupráci s podniky.",
+      "Žáci s nadáním – škola aktivně podporuje jejich rozvoj prostřednictvím projektů, soutěží a mezinárodních programů (DofE).",
+      "Žáci se speciálními vzdělávacími potřebami – kvalitní poradenské pracoviště s psychologem, asistenty pedagoga a individuální podporou."
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní, skupinové a interaktivní formy výuky – v některých předmětech převažuje frontální výuka, která může být pro ně méně motivující.",
+      "Žáci se slabší čtenářskou gramotností – škola se jí věnuje méně systematicky; riziko zejména v nástavbovém oboru.",
+      "Žáci s nižší motivací – tříleté obory vykazují vyšší absenci a neúspěšnost; škola se snaží, ale problém přetrvává."
+    ],
+    "plain_czech_summary": "Obchodní akademie v Bílovicích je moderní škola s výborným vybavením a kvalitní praktickou výukou. Žáci dosahují dobrých výsledků u maturit a závěrečných zkoušek, zejména v čtyřletých oborech. Škola intenzivně podporuje osobnostní rozvoj a odborné dovednosti. Slabší stránkou je pasivnější výuka v některých teoretických předmětech (příliš frontální výuka) a nedostatečná podpora čtenářské gramotnosti. Tříleté obory mají vyšší absenci a neúspěšnost. Celkově jde o solidní školu s dobrým klimatem, kde se však lze očekávat více aktivního učení.",
+    "note_on_summary": "Poznámka: Inspekční zpráva obsahuje i připomínky ředitelky školy a stanovisko inspekčního týmu. Ředitelka nesouhlasí s některými závěry (zejména ohledně hospitačních záznamů, výuky angličtiny a čtenářské gramotnosti). Inspekční tým své závěry obhajuje statistickými daty z 32 hospitací a výběrovým testováním."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Postupné zlepšování ve čtyřletých oborech; vysoká neúspěšnost v nástavbovém oboru",
+      "key_numbers": [
+        "Informační technologie: 3,3 % neúspěšnosti (pod celorepublikovým průměrem)",
+        "Obchodní akademie: 4,3 % neúspěšnosti (pod celorepublikovým průměrem)",
+        "Nástavbový obor Provozní technika: průměrně 30 % neúspěšnosti za 3 roky"
+      ],
+      "evidence": "Školní rok 2023/2024 vykázal hrubou neúspěšnost 3,3 % a 4,3 % u čtyřletých oborů; nástavbový obor opakovaně selhává."
+    },
+    "absence": {
+      "trend": "Postupné snižování celkové absence; vyšší absence u tříletých oborů",
+      "key_numbers": [
+        "Průměr 2023/2024: 140 hodin na žáka (cca 1 % neomluvené)",
+        "Tříleté obory: 158 hodin na žáka",
+        "Absence souvisí s vyšším podílem neprospívajících u tříletých oborů"
+      ],
+      "evidence": "Škola důsledně sleduje docházku a uplatňuje opatření; absence se postupně snižuje, ale u tříletých oborů zůstává vyšší."
+    },
+    "support_services": [
+      "Školní psycholog (druhý rok) – individuální intervence, práce s třídami, podpora nadaných žáků",
+      "Kariérová poradkyně – poradenství v oblasti volby povolání, koordinace digitálních žákovských portfolií",
+      "Dvě výchovné poradkyně a dvě školní metodičky prevence – preventivní činnosti, podpora sociálního klimatu",
+      "Čtyři asistentky pedagoga – podpora žáků se speciálními vzdělávacími potřebami",
+      "Funkční systém předcházení školnímu neúspěchu – včasná identifikace a individuální pomoc"
+    ],
+    "safety_climate": [
+      "Minimální počet školních úrazů během výuky odborné praxe – důkaz zvýšené pozornosti bezpečnosti",
+      "Vyšší úrazovost v tělesné výchově a sportovních akcích – způsobena zhoršenou fyzickou kondicí žáků",
+      "Žáci dodržují nastavená pravidla; vyučování není narušováno kázeňskými problémy",
+      "Pracovní atmosféra a pozitivní motivace žáků v hodinách"
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce se středními a základními školami v okolí – polytechnické vzdělávání, IT, prázdninové tábory",
+      "Úzká spolupráce se sociálními partnery v jednotlivých oborech – úspěšné umísťování žáků na odbornou praxi",
+      "Sportovní kurzy a poznávací pobyty s kulturní tématikou – obohacování školních vzdělávacích programů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní data a příklady. Připomínky ředitelky a stanovisko inspekčního týmu přidávají kontext, ale také určitou složitost. Některé technické termíny (kritéria hodnocení, modifikace) mohou být pro laiky méně jasné.",
+    "uncertainty_notes": [
+      "Ředitelka školy se v připomínkách částečně staví proti závěrům inspekčního týmu; inspektoři své závěry obhajují statistickými daty. Rodiče by měli vědět, že existuje určitá diskrepance v hodnocení.",
+      "Výběrové testování čtenářské gramotnosti (2022/2023) prokázalo slabou úroveň, ale ředitelka to zpochybňuje. Není jasné, jak se situace vyvíjela v posledním roce.",
+      "Vysoká neúspěšnost nástavbového oboru (30 %) je dlouhodobý problém; není jasné, jaká konkrétní opatření škola přijala a jak účinná jsou."
+    ]
+  }
+}
+```
+
+---
+
+## Poznámka pro rodiče
+
+Tato inspekční zpráva obsahuje **zajímavý prvek**: ředitelka školy se v připomínkách částečně neshoduje s insp

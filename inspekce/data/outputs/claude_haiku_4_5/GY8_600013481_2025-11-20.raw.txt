@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600013481_2025-11-20",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium se zaměřením na matematiku",
+    "inspection_period": "20.–21. listopadu 2025 a 24.–25. listopadu 2025",
+    "school_change_summary": "Nový ředitel od srpna 2024 s koncepcí rozvoje zaměřenou na změnu obsahu a způsobu vzdělávání. Probíhá postupná modernizace vybavení a budov."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výjimečné zahraniční zkušenosti",
+        "detail": "Projekt Erasmus+ umožňuje žákům i učitelům absolvovat jazykové vzdělávání a stínování v zahraničí.",
+        "evidence": "Skupinové mobility do Německa, Finska, Španělska, Belgie s přímým dopadem na jazykové a sociální kompetence."
+      },
+      {
+        "tag": "Vynikající studijní výsledky",
+        "detail": "Dlouhodobě velmi dobré výsledky u maturit a vysoká úspěšnost absolventů na vysokých školách.",
+        "evidence": "Téměř nulová hrubá neúspěšnost u maturit, 56–72 % žáků s vyznamenáním, lepší výsledky než celorepublikový průměr."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují výjimečných výsledků v olympiádách a vědeckých soutěžích.",
+        "evidence": "Bronz na Mezinárodní matematické olympiádě, medaile na lingvistické a astronomické olympiádě, vítězství v Pangea."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Tradiční výuka bez dostatečné aktivizace",
+        "detail": "Převažuje frontální výuka (72 % hodin), málo skupinové práce a individuálního rozvoje nadaných žáků.",
+        "evidence": "Skupinová výuka jen v 15 % hodin, chybí aktivity podporující nadání, učitelé nemají připraveny úkoly s různou náročností."
+      },
+      {
+        "tag": "Nejednotné kritéria hodnocení",
+        "detail": "Učitelé si stanovují pravidla hodnocení individuálně, jednotný systém existuje jen v některých komisích.",
+        "evidence": "Část pedagogů používá známky, část bodový systém, chybí sjednocení v rámci celé školy."
+      },
+      {
+        "tag": "Nedostatečná podpora psychického zdraví",
+        "detail": "Školní psycholog pracuje jen jeden den v týdnu, silný tlak na výkon řeší poradenství jen okrajově.",
+        "evidence": "Žáci pociťují silný tlak na výkon, psycholog se věnuje hlavně individuálním případům, chybí práce s třídami."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky? Jaké jsou postupy pro jejich identifikaci a individuální rozvoj?",
+      "Jaké jsou plány na zvýšení počtu hodin školního psychologa a jeho práce s třídami?",
+      "Jak se škola chystá zavádět více aktivních a skupinových metod výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci s vysokými ambicemi a zájmem o studium na vysoké škole – výborné výsledky a podpora úspěšnosti.",
+      "Jazykově nadaní žáci – projekt Erasmus+ a kvalitní výuka cizích jazyků s interaktivními metodami.",
+      "Talentovaní matematici a přírodovědci – tradice úspěchů v olympiádách a vědeckých soutěžích."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a aktivizujících metod – výuka je zatím převážně frontální.",
+      "Žáci se psychickými problémy nebo pod tlakem – podpora wellbeingu je zatím omezená.",
+      "Žáci, kteří se lépe učí skupinově a kooperativně – skupinová práce se zatím využívá málo."
+    ],
+    "plain_czech_summary": "Gymnázium Jaroše je prestižní škola s výjimečnými výsledky v maturitách a soutěžích. Silnou stránkou je projekt Erasmus+ umožňující zahraniční zkušenosti. Hlavní výzvou je tradiční frontální výuka, která málo podporuje aktivizaci a individuální rozvoj nadaných žáků. Nejednotná kritéria hodnocení a omezená podpora psychického zdraví jsou další oblasti ke zlepšení. Škola je ideální pro ambiciózní žáky, ale měla by více pracovat na aktivních metodách a péči o wellbeing."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborný",
+      "key_numbers": [
+        "Téměř nulová hrubá neúspěšnost",
+        "Lepší výsledky než celorepublikový průměr v posledních třech letech",
+        "Vysoká úspěšnost absolventů na vysokých školách"
+      ],
+      "evidence": "Škola vykazuje dlouhodobě velmi dobré výsledky u maturitní zkoušky, v soutěžích a projektech."
+    },
+    "absence": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "Průměrná omluvená absence 120 hodin na žáka za poslední tři roky",
+        "Neomluvenou absenci řeší škola zřídka",
+        "Pravidlo minimální docházky do jednotlivých předmětů"
+      ],
+      "evidence": "Vedení školy sleduje výsledky a absenci, přijímá adekvátní opatření, školní řád obsahuje pravidla minimální docházky."
+    },
+    "support_services": [
+      "Dva výchovní poradci a dva metodici prevence (zaměřeni na čtyřleté a osmileté studium)",
+      "Čtyři asistenti pedagoga na osmiletém gymnáziu",
+      "Školní psycholog pracující jeden den v týdnu (doporučuje se zvýšit úvazek)"
+    ],
+    "safety_climate": [
+      "Atmosféra vzájemného respektu, žáci dodržují nastavená pravidla chování",
+      "V posledním školním roce řešeny jednotky případů kyberšikany, sebepoškozování a užívání návykových látek",
+      "Preventivní programy zaměřené na duševní zdraví a prevenci rizikového chování"
+    ],
+    "partnerships_practice": [
+      "Projekt Erasmus+ s partnerskými školami v Německu, Finsku, Španělsku, Belgii",
+      "Skupinové mobility žáků a učitelů do zahraničí",
+      "Aktivní spolupráce s mnoha zahraničními školami přispívající ke zkvalitňování výuky cizích jazyků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Slabší je jen v některých technických pasážích o kritériích hodnocení.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně se plánuje zvýšit úvazek školního psychologa – je to doporučení, ne závazek.",
+      "Chybí informace o tom, jak dlouho trvá implementace nových metod výuky pod vedením nového ředitele.",
+      "Není specifikováno, které předmětové komise mají sjednocená kritéria hodnocení a které ne."
+    ]
+  }
+}
+```

@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600015297_2025-03-05",
+  "school_profile": {
+    "school_type": "Střední škola s maturitní zkouškou a výučním listem, 5 oborů (Ekonomika a podnikání, Propagace, Veřejnosprávní činnost, Grafický design, Modelářství a návrhářství oděvů, Aranžér)",
+    "inspection_period": "5.–7. března 2025",
+    "school_change_summary": "Od poslední inspekce (2019) došlo ke snížení počtu míst poskytovaného vzdělávání ze tří na jedno. Průběžně se zlepšují materiální podmínky pro teoretické i praktické vyučování."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Škola efektivně spolupracuje s partnerskými firmami, organizuje exkurze a přednášky odborníků z praxe.",
+        "evidence": "Spolupráce s partnerskými firmami a profesními sdruženími přispívá k sepětí výuky a praxe."
+      },
+      {
+        "tag": "Kvalitní praktická výuka",
+        "detail": "Odborný výcvik je zaměřen na rozvoj praktických dovedností, bezpečnost práce a klíčové kompetence.",
+        "evidence": "Vyučující kladli důraz na technologické postupy, bezpečnost a rozvoj komunikativních a sociálních kompetencí."
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Škola nabízí doučování, individuální konzultace a intenzivní přípravu na závěrečné zkoušky.",
+        "evidence": "Škola identifikuje žáky s rizikem neúspěchu a zajišťuje jim primární podporu v průběhu vyučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturit",
+        "detail": "V roce 2024 došlo ke zřetelnému zhoršení výsledků ve společné části maturitní zkoušky.",
+        "evidence": "Obor Propagace: 42,9 % neúspěšnosti (průměr 26,4 %), Veřejnosprávní činnost: 28,6 % (průměr 9,5 %)."
+      },
+      {
+        "tag": "Zvýšená absence žáků",
+        "detail": "Absence negativně ovlivňuje dosahované výsledky vzdělávání.",
+        "evidence": "Škola se tímto nepříznivým jevem zabývá a přijímá opatření na jeho minimalizaci."
+      },
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Ve výuce chybí diferenciace obsahu a aktivit pro různé potřeby žáků, zejména pro nadané.",
+        "evidence": "Obsahová diferenciace zůstávala spíše na okraji, podpora nadaných žáků nebyla efektivně využita."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou neúspěšnost v maturitní zkoušce, zejména v oboru Propagace?",
+      "Jaké konkrétní kroky podniká škola proti zvýšené absenci žáků?",
+      "Jak jsou v praxi podporováni nadaní žáci a jak se liší jejich výuka od ostatních?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a budoucí pracovní uplatnění v oborech jako design, modelářství nebo veřejná správa",
+      "Žáci, kteří potřebují intenzivní podporu a doučování – škola nabízí individuální konzultace a pravidelné doučování",
+      "Žáci se speciálními vzdělávacími potřebami – škola má školní poradenské pracoviště s psycholožkou a metodickou podporou"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s ambicí na vysoké výsledky v maturitní zkoušce – zejména v oborech Propagace a Veřejnosprávní činnost jsou výsledky pod průměrem",
+      "Žáci, kteří potřebují silnou individualizaci a rozšiřující úkoly – škola zatím nedostatečně diferencuje obsah pro nadané",
+      "Žáci, kteří se potřebují učit diskusí a kritickým myšlením – výuka je často frontální s omezeným prostorem pro vlastní názory"
+    ],
+    "plain_czech_summary": "ART ECON je střední škola v Prostějově se 345 žáky v 18 třídách. Silnou stránkou je propojení s praxí a kvalitní praktická výuka. Slabinou jsou výsledky maturit – v roce 2024 byla neúspěšnost v některých oborech výrazně nad průměrem. Škola nabízí podporu slabším žákům, ale nedostatečně individualizuje výuku pro nadané. Absence žáků je zvýšená a negativně ovlivňuje výsledky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá s výrazným zhoršením v roce 2024",
+      "key_numbers": [
+        "2024: Propagace 42,9 % neúspěšnosti (průměr 26,4 %)",
+        "2024: Veřejnosprávní činnost 28,6 % (průměr 9,5 %)",
+        "Jarní 2024: 33 žáků, 12 neprospělo (36,36 %)"
+      ],
+      "evidence": "Po zlepšení v 2022–2023 došlo v 2024 ke zřetelnému zhoršení. Hrubá neúspěšnost převýšila celorepublikový průměr."
+    },
+    "absence": {
+      "trend": "Zvýšená absence negativně ovlivňuje výsledky",
+      "key_numbers": [
+        "Absence je identifikována jako faktor snižující dosahované výsledky"
+      ],
+      "evidence": "Na dosahované výsledky vzdělávání má negativní dopad zvýšená absence žáků ve vyučování."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: vedoucí, kariérová poradkyně, výchovná poradkyně, školní metodička prevence, školní psycholožka",
+      "Doučování a individuální konzultace pro žáky s rizikem neúspěchu",
+      "Intenzivní příprava na závěrečné a maturitní zkoušky"
+    ],
+    "safety_climate": [
+      "Bezpečnost a ochrana zdraví jsou ošetřeny v základních dokumentech školy",
+      "Škola spolupracuje s odborně způsobilou osobou, provádí revize a přijímá opatření",
+      "Při fyzické kontrole prostor nebyly zjištěny závažnější nedostatky",
+      "Systém prevence rizikových projevů chování je vypracován a pravidelně vyhodnocován"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s partnerskými firmami pro praktické vyučování",
+      "Partnerství s profesními sdruženími pro udržení kontaktu s praxí",
+      "Partnerství s jinými školami s obdobným zaměřením v ČR",
+      "Spolupráce se školskou radou a zřizovatelem na zlepšování materiálně-technických podmínek"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní data. Slabinou je místy úřednický jazyk a složitější věty, ale hlavní informace jsou jasné.",
+    "uncertainty_notes": [
+      "Absence není kvantifikována konkrétními čísly – není jasné, jak vysoká je",
+      "Není jasné, zda se vysoká neúspěšnost v maturitě týká všech žáků nebo jen určitých skupin",
+      "Není specifikováno, jaké konkrétní opatření škola přijala na zlepšení výsledků"
+    ]
+  }
+}
+```

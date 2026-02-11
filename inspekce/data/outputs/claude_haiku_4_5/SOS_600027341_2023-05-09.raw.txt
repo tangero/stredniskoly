@@ -1,0 +1,97 @@
+```json
+{
+  "report_id": "SOS_600027341_2023-05-09",
+  "school_profile": {
+    "school_type": "Speciální vzdělávací zařízení: Mateřská škola (30 dětí), Základní škola (82 žáků v 14 třídách), Střední škola (101 žáků v 18 třídách) zaměřené na děti a žáky se speciálními vzdělávacími potřebami, primárně s tělesným postižením",
+    "inspection_period": "9. května 2023 až 12. května 2023",
+    "school_change_summary": "Od inspekce v roce 2017 došlo k personálním změnám na pozicích zástupců ředitele a vedoucího školního klubu, což se pozitivně odrazilo v kvalitě pedagogického vedení a kontrolního systému. Zvýšila se kvalifikovanost pedagogického sboru."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Individuální přístup a podpora",
+        "detail": "Pedagogové pracují s každým dítětem/žákem podle jeho individuálních potřeb a možností, poskytují cílenou podporu a motivaci.",
+        "evidence": "Inspektoři zaznamenali 'vstřícný přístup pedagogů' a 'individualizovaný a diferencovaný přístup při výuce' na všech stupních."
+      },
+      {
+        "tag": "Komplexní péče a služby",
+        "detail": "Škola nabízí integrovanou péči včetně speciálně pedagogického centra, fyzioterapie, ergoterapie, logopedie a dalších služeb v jedné instituci.",
+        "evidence": "'Komplexně realizovaný systém poradenských služeb umožňující účinnou podporu žáků při vzdělávání podle jejich potřeb.'"
+      },
+      {
+        "tag": "Výborné materiální podmínky",
+        "detail": "Moderně vybavené učebny, speciální pomůcky, bezbariérový areál, počítačová vybavení a rehabilitační zařízení.",
+        "evidence": "'Materiální podmínky ve všech místech poskytovaného vzdělávání jsou na velmi dobré úrovni a umožňují naplňování vzdělávacích programů.'"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné sebehodnocení žáků",
+        "detail": "Děti a žáci mají málo příležitostí hodnotit sami sebe podle předem stanovených kritérií.",
+        "evidence": "Inspektoři zjistili 'nedostatečné využití příležitostí k sebehodnocení dětí a žáků na základě předem stanovených kritérií.'"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje se sebehodnocením žáků a jak jej plánuje zlepšit?",
+      "Jaké jsou možnosti individuálního doučování a podpory pro žáky s obtížemi?",
+      "Jak probíhá komunikace mezi školou a rodiči ohledně pokroku dítěte?"
+    ],
+    "who_school_fits": [
+      "Děti a žáci s tělesným postižením, kterým vyhovuje komplexní péče v jedné instituci",
+      "Žáci se speciálními vzdělávacími potřebami, kteří potřebují individualizovaný přístup a podporu",
+      "Rodiny hledající školu s moderním vybavením a bezbariérovým prostředím"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří očekávají tradičnější vzdělávání bez speciálního zaměření na zdravotní postižení"
+    ],
+    "plain_czech_summary": "Jedličkův ústav je speciální škola pro děti a žáky s tělesným postižením. Inspektoři ji hodnotí velmi pozitivně. Silnými stránkami jsou vstřícný přístup pedagogů, individuální práce s každým žákem a komplexní péče včetně fyzioterapie a logopedie. Škola má moderní vybavení a bezbariérový areál. Žáci dosahují dobrých výsledků, všichni úspěšně skončili závěrečné zkoušky. Jedinou slabší stránkou je, že by se mělo více pracovat se sebehodnocením žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní - vysoká úspěšnost",
+      "key_numbers": [
+        "Úspěšnost u maturitní zkoušky vyšší než průměr v dané skupině oborů ve všech předmětech společné části",
+        "Všichni žáci, kteří závěrečnou zkoušku konali, ji úspěšně vykonali"
+      ],
+      "evidence": "'Pozitivním zjištěním je také vysoká úspěšnost žáků u maturitní zkoušky, jež je vyšší než průměr v dané skupině oborů ve všech předmětech.'"
+    },
+    "absence": {
+      "trend": "Nízká míra výchovných opatření",
+      "key_numbers": [
+        "Nižší míra výchovných opatření",
+        "Bezproblémové chování žáků"
+      ],
+      "evidence": "'Nastavené preventivní mechanismy, které slouží k zachycení případných signálů různých forem rizikového chování, jsou funkční, o čemž svědčí i nižší míra výchovných opatření.'"
+    },
+    "support_services": [
+      "Speciálně pedagogické centrum se školní a ambulantní částí",
+      "Psychologická a speciálně pedagogická diagnostika",
+      "Fyzioterapie, ergoterapie, logopedie",
+      "Individuální vzdělávací plány a podpůrná opatření",
+      "Doučování a konzultace pro žáky s rizikem neúspěchu"
+    ],
+    "safety_climate": [
+      "Bezpečný vstup do budov zajištěn pracovníky vrátnice",
+      "Kamerový systém v areálu",
+      "Příznivé sociální klima vytvářené preventivní strategií",
+      "Nižší míra výchovných opatření svědčící o bezproblémovém chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s vysokými školami s pedagogickými obory",
+      "Partnerství s odbornými organizacemi",
+      "Úzká spolupráce s rodiči, zejména v mateřské škole",
+      "Spolupráce se zdravotnickými pracovišti a státními institucemi",
+      "Partnerství s neziskovými organizacemi a sdruženími rodičů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk bez zbytečného úřednického stylu. Všechna důležitá zjištění jsou podpořena konkrétními citacemi z textu. Informace jsou relevantní pro rodiče a prakticky využitelné.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní údaje o počtu žáků s prospěchem s vyznamenáním - pouze 'přibližně polovina'",
+      "Chybí informace o počtu absolventů a jejich uplatnění na trhu práce",
+      "Nejsou uvedeny konkrétní počty žáků, kteří využívají doučování nebo individuální podporu"
+    ]
+  }
+}
+```

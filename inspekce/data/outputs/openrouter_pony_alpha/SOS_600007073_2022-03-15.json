@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600007073_2022-03-15",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:07:41.863577+00:00",
+  "run_finished_utc": "2026-02-10T07:08:48.235059+00:00",
+  "raw_file": "SOS_600007073_2022-03-15.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600007073_2022-03-15",
+    "school_profile": {
+      "school_type": "Střední škola s obory řemeslnými (výuční list) a maturitními (design, potravinářství, dřevařství).",
+      "inspection_period": "15. − 18. března 2022",
+      "school_change_summary": "Od roku 2018 škola otevřela obor Design interiéru a zrušila nástavbové studium Stavební provoz; počet žáků mírně vzrostl."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praxe a uplatnění",
+          "detail": "Škola skvěle propojuje teorii s praxí a absolventi nemají problém najít práci.",
+          "evidence": "Absolventi všech oborů nacházejí velmi dobré uplatnění na trhu práce... spolupráce s četnými sociálními partnery."
+        },
+        {
+          "tag": "Odborná výuka",
+          "detail": "V řemeslných a uměleckých oborech žáci dosahují výborných výsledků a rozvíjejí kreativitu.",
+          "evidence": "Účinný rozvoj praktických dovedností žáků... využitím komplexních úloh... velmi dobré výsledky u závěrečných zkoušek."
+        },
+        {
+          "tag": "Prostředí a bezpečnost",
+          "detail": "Výuka probíhá v přátelské atmosféře a škola klade důraz na bezpečnost.",
+          "evidence": "Výuka probíhala v přátelské atmosféře... klesající míra úrazovosti za poslední tři školní roky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Neúspěšnost u maturity",
+          "detail": "Žáci maturitních oborů často neuspívají ve společné části maturity (český jazyk, cizí jazyky).",
+          "evidence": "Přetrvávající vyšší hrubá neúspěšnost žáků ve společné části maturitní zkoušky... neuspěla přibližně třetina."
+        },
+        {
+          "tag": "Kvalita výuky jazyků",
+          "detail": "Výuka jazyků a matematiky není zajištěna dostatečně kvalifikovanými učiteli.",
+          "evidence": "Výuka anglického jazyka a matematiky není plně zajištěna učiteli s příslušnou předmětovou specializací."
+        },
+        {
+          "tag": "Absence a motivace",
+          "detail": "Část žáků, zejména v nástavbovém studiu, má problémy s docházkou a motivací.",
+          "evidence": "V nástavbovém studiu... činila průměrná absence v nástavbovém studiu téměř 120 h na žáka."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola konkrétně podporuje žaky, aby úspěšně složili společnou část maturitní zkoušky?",
+        "Kdo bude učit mého syna/dceru anglický jazyk a matematiku, a má na to kvalifikaci?",
+        "Jaká je aktuální absence ve třetích a čtvrtých ročnících a jak ji škola řeší?"
+      ],
+      "who_school_fits": [
+        "Kreativní žáky s zájmem o design, módu, práci se dřevem nebo potravinářství.",
+        "Uchazeče, kteří chtějí získat praktické dovednosti a uplatnit se v řemesle.",
+        "Studenty, kteří preferují přátelské prostředí a individuální přístup učitelů v dílnách."
+      ],
+      "who_should_be_cautious": [
+        "Žáky, kteří cílí primárně na vysokoškolské studium a potřebují bezchybné výsledky maturity.",
+        "Studenty se zájmem o hlubší studium cizích jazyků, kde chybí diferenciace a konverzace.",
+        "Uchazeče o nástavbové studium, kde je problematická absence a neúspěšnost u maturity."
+      ],
+      "plain_czech_summary": "Škola je skvělou volbou pro žáky, které baví tvořit, pracovat s materiálem a chtějí se naučit řemeslo či design. Absolventi mají zajištěné uplatnění na trhu práce. Pozor si musíte dát, pokud míříte na vysokou školu – škola bojuje s vysokou neúspěšností ve společné části maturity (zejména čeština a angličtina) a výuka jazyků není ideální. Problémem je také vysoká absence v některých oborech. Pro prakticky založené studenty je však prostředí a vybavení školních dílen a ateliérů na velmi dobré úrovni."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výrazně negativní (vysoká neúspěšnost ve společné části, zejména v češtině a angličtině).",
+        "key_numbers": [
+          "Neúspěšnost v didaktických testech z ČJL v roce 2020 cca 33 %.",
+          "Hrubá neúspěšnost v oboru Technologie potravin cca 30 % (2020/2021).",
+          "V profilové části maturity uspějí téměř všichni žáci."
+        ],
+        "evidence": "Příčinou neúspěšnosti žáků ve společné části MZ jsou především jejich výsledky v didaktických testech... v maturitním období 2020 z nich neuspěla přibližně třetina."
+      },
+      "absence": {
+        "trend": "Zhoršující se (zejména v nástavbovém studiu po návratu z distanční výuky).",
+        "key_numbers": [
+          "Průměrná absence v nástavbovém studiu: téměř 120 hodin na žáka (1. pololetí 2021/2022).",
+          "Průměrná absence ve čtyřletých oborech: cca 75 hodin na žáka.",
+          "Kontinuální pokles neomluvené absence."
+        ],
+        "evidence": "V prvním pololetí 2021/2022 např. činila průměrná absence v nástavbovém studiu téměř 120 h na žáka."
+      },
+      "support_services": [
+        "Fungující školní poradenské pracoviště (výchovný poradce, metodička prevence).",
+        "Adaptační kurzy pro první ročníky.",
+        "Možnost konzultací a doučování (využití je však nízké)."
+      ],
+      "safety_climate": [
+        "Klesající míra úrazovosti za poslední tři roky.",
+        "Přátelská atmosféra založená na respektu.",
+        "Pravidelné poučování o bezpečnosti a funkční prevence rizik."
+      ],
+      "partnerships_practice": [
+        "Exkurze do firem a stáže pedagogů u zaměstnavatelů.",
+        "Realizace praktického vyučování u smluvních partnerů.",
+        "Spolupráce se zahraničními školami a účast v profesních soutěžích."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky, konkrétní číselné údaje o neúspěšnosti a absenci jsou pro rodiče klíčové a srozumitelné.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí přesné počty žáků v jednotlivých ročnících pro výpočet procentuální úspěšnosti maturity.",
+        "Chybí bližší specifikace 'nízké míry využití' konzultací a doučování (je to 5 % nebo 20 %?).",
+        "Není jasné, zda problémy s kvalifikací učitelů platí pro všechny skupiny nebo jen specifické třídy."
+      ]
+    }
+  }
+}

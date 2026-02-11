@@ -1,0 +1,96 @@
+{
+  "report_id": "SOS_691009465_2021-06-10",
+  "school_profile": {
+    "school_type": "Soukromá střední škola zemědělská s.r.o.",
+    "inspection_period": "10., 11., 14. a 15. 6. 2021",
+    "school_change_summary": "Škola rozšířila nabídku oborů ze jednoho na tři a vybudovala domov mládeže i školní statek."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení s praxí",
+        "detail": "Výuku odborných předmětů zajišťují odborníci z praxe a škola spolupracuje s řadou farem.",
+        "evidence": "Výuka odborných předmětů odborníky z praxe a realizace přednášek externími odborníky zajišťuje efektivní sepětí školy s reálnou praxí."
+      },
+      {
+        "tag": "Materiální zázemí",
+        "detail": "Škola disponuje novým školním statkem, skleníky a moderní technikou přímo v areálu.",
+        "evidence": "Došlo ke zkvalitnění zázemí pro praktickou výuku, a to dobudováním školního statku... Díky těsnému sousedství se školou jsou tyto prostory pohotově k dispozici."
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Malé třídy umožňují osobnější kontakt s vyučujícími.",
+        "evidence": "Plánovitě nízkým počtem žáků ve třídách si škola připravuje podmínky pro individuální přístup a cílenou podporu jednotlivců."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nestabilita sboru",
+        "detail": "Časté změny učitelů mohou negativně ovlivnit kvalitu výuky, například v matematice.",
+        "evidence": "Průběžně dochází ke změnám ve složení pedagogického sboru, zatím se jej nepodařilo stabilizovat."
+      },
+      {
+        "tag": "Zastaralé metody výuky",
+        "detail": "Ve výuce převažuje frontální styl bez dostatku spolupráce žáků a sebehodnocení.",
+        "evidence": "U většiny pedagogů přetrvává malá pestrost výukových forem a metod a nedostatečné využívání aktivizačních metod."
+      },
+      {
+        "tag": "Nediferencovaná výuka",
+        "detail": "Při společné výuce různých oborů nejsou rozlišovány nároky na studenty.",
+        "evidence": "Nebyla zajištěna diferenciace výuky... při společné výuce žáků různých stupňů středního vzdělání."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší stabilitu učitelského sboru a zajišťuje kvalitu výuky při změnách pedagogů?",
+      "Jakým způsobem jsou rozlišovány nároky a učivo, pokud se vyučují společně obory s maturitou a výučním listem?",
+      "Jaké konkrétní aktivační metody a formy spolupráce žáků využíváte ve výuce?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří chtějí získat praktické zkušenosti v reálném zemědělském provozu.",
+      "Pro zájemce o individuální přístup v malých kolektivech.",
+      "Pro ty, kteří očekávají ubytování v areálu školy s vazbou na praktické činnosti."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří preferují moderní interaktivní metody výuky před frontálním výkladem.",
+      "Pro žáky, kteří potřebují silnou podporu v matematice (zde byl zaznamenán problém s neúspěšností).",
+      "Pro ty, kteří by mohli být citliví na časté změny vyučujících."
+    ],
+    "plain_czech_summary": "Škola se zaměřuje na zemědělství s velkým důrazem na praxi a odborníky z reálného provozu. Nově nabízí ubytování a rozšířila počet oborů. Velkou výhodou je malý počet žáků ve třídách a skvělé vybavení areálu. Slabinou je nestabilní učitelský sbor a příliš tradiční, málo interaktivní styl výuky. Pokud hledáte pro dítě spojení teorie s reálným životem na farmě a nevadí vám klasické vyučování, může to být dobrá volba."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený",
+      "key_numbers": [
+        "4 úspěšní maturovali",
+        "2 neuspěli v matematice",
+        "100% úspěšnost u výučního listu"
+      ],
+      "evidence": "Maturitní zkoušku úspěšně složili čtyři žáci... dva neuspěli v didaktickém testu z matematiky."
+    },
+    "absence": {
+      "trend": "Nehodnoceno",
+      "key_numbers": [],
+      "evidence": "Text zprávy neuvádí konkrétní data o absenci."
+    },
+    "support_services": [
+      "Domov mládeže přímo v areálu školy.",
+      "Doprava školním autobusem z Třebíče.",
+      "Motivační a závazková stipendia."
+    ],
+    "safety_climate": [
+      "Vstřícné a bezpečné prostředí.",
+      "Rodinná atmosféra bez známek šikany.",
+      "Důraz na toleranci a prosociální chování."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Agro 2000 s.r.o. a dalšími farmami.",
+      "Zahraniční praxe v Itálii.",
+      "Projekt fiktivních firem vedených žáky."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení pozitiva a negativa a obsahuje konkrétní příklady i citace.",
+    "uncertainty_notes": []
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "report_id": "SOS_600010601_2025-02-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:43:56.696424+00:00",
+  "run_finished_utc": "2026-02-09T13:44:25.608292+00:00",
+  "raw_file": "SOS_600010601_2025-02-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600010601_2025-02-25",
+    "school_profile": {
+      "school_type": "Střední škola s obory zakončenými závěrečnou zkouškou (Čalouník, Aranžér, Truhlář) a maturitní zkouškou (Bezpečnostně právní činnost, Nábytkářská a dřevařská výroba)",
+      "inspection_period": "25. února až 27. února 2025",
+      "school_change_summary": "Škola se vyvíjí pozitivně. Rozšiřuje počítačové učebny, modernizuje stroje v truhlářských dílnách, rekonstruuje prostory pro čalouníky a postupně modernizuje domov mládeže. Od září 2025 zvýší kapacitu jídelny na 700 stravovaných."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická výuka na vysoké úrovni",
+          "detail": "Odborný výcvik probíhá v tvůrčím, motivačním prostředí s individuálním přístupem, kde i slabší žáci dosahují úspěchu.",
+          "evidence": "Učitelé-odborníci z praxe předávají nejnovější poznatky a poskytují bezprostřední zpětnou vazbu."
+        },
+        {
+          "tag": "Výborné výsledky u maturit",
+          "detail": "Žáci oboru Bezpečnostně právní činnost dosahují opakovaně výborných výsledků, v posledních dvou letech 100% úspěšnost.",
+          "evidence": "Ve školním roce 2023/2024 a 2024/2025 uspěli všichni přihlášení žáci po podzimním zkušebním období."
+        },
+        {
+          "tag": "Mezinárodní spolupráce a stáže",
+          "detail": "Žáci se účastní stáží v zahraničí a projektů Erasmus+ v šesti evropských státech.",
+          "evidence": "Stáže v Portugalsku, Lotyšsku, Texasu, Stockholmu a Caen; projekt zaměřený na digitální dovednosti pro truhláře."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Teoretická výuka méně interaktivní",
+          "detail": "Ve většině hodin převažuje výklad s dominantní úlohou učitele, žáci jsou spíše příjemci informací.",
+          "evidence": "Kooperativní formy se vyskytovaly téměř vůbec, aktivizační otázky reagovaly jen někteří žáci."
+        },
+        {
+          "tag": "Slabší výsledky v nástavbových oborech",
+          "detail": "Žáci nástavbových oborů jsou méně úspěšní u maturitní zkoušky než průměr republiky.",
+          "evidence": "Čistá neúspěšnost 20 % vs. celorepubliková 17,1 % po podzimním opravném termínu."
+        },
+        {
+          "tag": "Nedostatek odborných učeben",
+          "detail": "Škola nemá vyhrazené odborné učebny pro teoretickou výuku odborných předmětů.",
+          "evidence": "Teoretická výuka probíhá v kmenových třídách, které jsou pouze vybaveny nástěnkami s odbornou tematikou."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se škola chystá zlepšit interaktivitu a kooperativní práci v hodinách teoretických předmětů?",
+        "Jaké jsou plány na zřízení odborných učeben pro teoretickou výuku a kdy by mohly být hotovy?",
+        "Jak se škola zaměřuje na podporu žáků v nástavbových oborech, aby zlepšila jejich výsledky u maturit?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří preferují praktickou výuku a učení skrze činnost – odborný výcvik je na vysoké úrovni s individuálním přístupem.",
+        "Zájemci o obor Bezpečnostně právní činnost – obor má výborné výsledky, spolupracuje s policií a armádou, nabízí zajímavé stáže.",
+        "Studenti, kteří chtějí získat mezinárodní zkušenosti – škola aktivně nabízí stáže a projekty v zahraničí."
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se lépe učí interaktivní formou a diskusí – teoretická výuka je zatím spíše tradičního charakteru s výkladem.",
+        "Uchazeči o nástavbové obory – jejich výsledky u maturit jsou slabší než průměr, škola na tom pracuje.",
+        "Studenti, kteří potřebují více strukturované a moderní učebny – některé prostory jsou stále v rekonstrukci."
+      ],
+      "plain_czech_summary": "Střední škola Kateřinky je stabilní, ekonomicky zdravá instituce se silným zaměřením na praktickou výuku. Odborný výcvik je na vysoké úrovni, učitelé-odborníci motivují žáky a poskytují jim zpětnou vazbu. Výsledky v maturitních oborech jsou výborné, zejména v bezpečnostně právní činnosti. Škola nabízí bohaté mezinárodní zkušenosti. Slabší stránkou je teoretická výuka, která je zatím spíše tradičního charakteru s méně interaktivními metodami. Škola na tom pracuje a plánuje zlepšení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní trend, zejména v oboru Bezpečnostně právní činnost",
+        "key_numbers": [
+          "Bezpečnostně právní činnost: 100% úspěšnost v posledních dvou letech",
+          "Nástavbové obory: 20% čistá neúspěšnost (celorepubliková průměr 17,1%)",
+          "Prospělo s vyznamenáním: 13,5% žáků v maturitních oborech"
+        ],
+        "evidence": "Ve školním roce 2023/2024 a 2024/2025 uspěli všichni přihlášení žáci oboru Bezpečnostně právní činnost po podzimním zkušebním období."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se nezabývá absencí žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně (zároveň kariérová poradkyně) a metodička prevence",
+        "Doučování: individuální a skupinové doučování pro žáky ohrožené školním neúspěchem",
+        "Speciální vzdělávací potřeby: 43 žáků se speciálními vzdělávacími potřebami, jejich podpora je přesně definována",
+        "Domov mládeže: doučování z maturitních předmětů, knihovna, klubovny, zájmové aktivity"
+      ],
+      "safety_climate": [
+        "BOZ je prioritní téma, bezpečnostní rizika jsou neustále identifikována a odstraňována",
+        "Učitelé odborného výcviku jsou velmi dobře obeznámeni s bezpečnostními riziky a předávají znalosti žákům",
+        "Obecné podmínky BOZ jsou stanoveny ve školním řádu a řádech jednotlivých pracovišť",
+        "Doporučení: věnovat pozornost fyzickému bezpečí v budovách domova mládeže"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se sociálními partnery: Policie ČR, Městská policie Liberec, Hasičský záchranný sbor, Armáda ČR",
+        "Zaměstnavatelé: Cech čalouníků, Cech parketářů, Hospodářská komora, Sdružení aranžérů, více než 50 firem v oboru Truhlář",
+        "Vysoké školy: Mendlova univerzita Brno, Technická univerzita v Liberci, Vyšší policejní škola",
+        "Mezinárodní: projekty Erasmus+ v šesti evropských státech, stáže v Portugalsku, Lotyšsku, Texasu, Stockholmu, Caen"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, obsahuje konkrétní příklady a čísla. Struktura je logická. Některé pasáže jsou však delší a složitější, což mírně snižuje srozumitelnost pro laiky.",
+      "uncertainty_notes": [
+        "Absence není zmíněna – není jasné, jaká je situace s docházkou žáků.",
+        "Finanční situace je popsána jako stabilní, ale konkrétní čísla nejsou uvedena.",
+        "Plány na zlepšení teoretické výuky nejsou konkrétně specifikovány, pouze doporučeny."
+      ]
+    }
+  }
+}

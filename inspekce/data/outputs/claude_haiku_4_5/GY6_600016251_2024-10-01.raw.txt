@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY6_600016251_2024-10-01",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a šestileté obory)",
+    "inspection_period": "1. 10. 2024 – 4. 10. 2024",
+    "school_change_summary": "Od poslední inspekce v 2020 se počet žáků a pedagogů výrazně nezměnil. Nově působí školní psycholožka, zřízena byla školní parlament. Škola se zapojila do programu Erasmus+ (2021–2027)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Žáci dosahují velmi dobrých studijních výsledků, 100% úspěšnost u maturity v posledních dvou letech, všichni absolventi pokračují na vysokých školách.",
+        "evidence": "\"stoprocentní úspěšnost\" v 2022/2023 a 2023/2024, \"100 % absolventů\" pokračuje v dalším studiu"
+      },
+      {
+        "tag": "Mezinárodní možnosti",
+        "detail": "Škola nabízí jazykové pobyty, stáže v zahraničí a spolupráci s mezinárodními školami včetně Indie.",
+        "evidence": "\"finanční grant Erasmus+ na období 2021–2027\", \"stáže s účastí na odborných přednáškách\""
+      },
+      {
+        "tag": "Kvalitní podpora žáků",
+        "detail": "Nově působí školní psycholožka, efektivní poradenské služby, adaptační kurzy pro prvňáky s mentory ze starších ročníků.",
+        "evidence": "\"nedílnou součástí školního poradenského pracoviště je ve školním roce 2024/2025 školní psycholožka\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší diferenciace výuky",
+        "detail": "Učitelé ne vždy přizpůsobují obtížnost úloh rozdílné úrovni žáků, chybí dostatečná individualizace.",
+        "evidence": "\"scházející diferenciace zadání úloh podle obtížnosti a četnosti\""
+      },
+      {
+        "tag": "Málo sebehodnocení žáků",
+        "detail": "Sebehodnocení a vzájemné hodnocení žáků se v hodinách uplatňuje jen ojediněle, přestože byla přijata opatření.",
+        "evidence": "\"sebehodnocení a vzájemné hodnocení je ve výuce nadále uplatňováno jen ojediněle\""
+      },
+      {
+        "tag": "Omezená práce s informacemi",
+        "detail": "Žáci málo pracují s informacemi z více různých zdrojů, chybí jim samostatné vyhledávání a porovnávání.",
+        "evidence": "\"méně byly využity příležitosti... vyhledávání informací z různých zdrojů\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá příprava na vysoké školy a jaké jsou vaše zkušenosti s úspěšností přijímacího řízení?",
+      "Jaké jsou možnosti účasti v mezinárodních projektech a jaké jazyky se vyučují?",
+      "Jak se škola vypořádává s rozdílnými tempem učení jednotlivých žáků – jaké má nástroje na individualizaci?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí studovat na vysoké škole – 100% absolventů pokračuje v dalším studiu",
+      "Jazykově nadaní žáci – škola nabízí jazykové pobyty, rodilé mluvčí a mezinárodní projekty",
+      "Talentovaní a nadaní žáci – bohatá nabídka soutěží, olympiád a speciálních aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální péče a diferenciace – výuka není vždy dostatečně přizpůsobena různým tempům",
+      "Žáci, kteří se učí lépe skrze vlastní reflexi – sebehodnocení není ještě běžnou součástí hodin",
+      "Žáci, kteří potřebují více praktické aplikace – výuka se zaměřuje spíše na teoretické znalosti"
+    ],
+    "plain_czech_summary": "Gymnázium v Frýdlantu je kvalitní škola s výbornými výsledky – všichni absolventi pokračují na vysokých školách. Nabízí zajímavé mezinárodní projekty a jazykové pobyty. Nově zde pracuje školní psycholožka. Inspekce ale upozorňuje, že výuka není vždy dostatečně přizpůsobena různým schopnostem žáků a že sebehodnocení se v hodinách příliš neuplatňuje. Škola by měla více pracovat na individualizaci a na tom, aby se žáci učili sami hodnotit svůj pokrok."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně vysoký",
+      "key_numbers": [
+        "100% úspěšnost v 2022/2023 a 2023/2024",
+        "Lepší výsledky než průměr v ČR",
+        "100% absolventů pokračuje v dalším studiu"
+      ],
+      "evidence": "\"stoprocentní úspěšnost\" v posledních dvou letech, \"lepších výsledků než je průměr stejného oboru vzdělání v České republice\""
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace nejsou v inspekční zprávě dostupné"
+      ],
+      "evidence": "Zpráva se absence věnuje minimálně"
+    },
+    "support_services": [
+      "Výchovná poradkyně a kariérová poradkyně v jedné osobě",
+      "Školní metodička prevence",
+      "Školní psycholožka (nově od 2024/2025)",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+      "Adaptační kurzy prvních ročníků s mentory"
+    ],
+    "safety_climate": [
+      "Převážná část úrazů v 2023/2024 vznikla v hodinách tělesné výchovy při míčových hrách",
+      "Vedení školy provádí rozbor úrazů a přijímá opatření",
+      "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování",
+      "Anonymní schránka důvěry pro žáky, upřednostňují však individuální konzultace"
+    ],
+    "partnerships_practice": [
+      "Mezinárodní program Erasmus+ (2021–2027) s finančním grantem",
+      "Spolupráce s mezinárodními školami včetně Indie",
+      "Jazykové pobyty a stáže v zahraničí",
+      "Spolupráce se základními, středními a vysokými školami",
+      "Partneři v oblasti prevence, péče o žáky se speciálními potřebami, podpory nadaných žáků",
+      "Pořádání Olympiády v českém jazyce a soutěže Náboj Junior"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní příklady a citace. Slabší je pouze v oblasti absence a některých statistických údajů, které nejsou podrobně rozvedeny.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – nelze posoudit trend či čísla",
+      "Počet žáků se speciálními vzdělávacími potřebami je zmíněn (10 žáků), ale bez detailnějšího popisu jejich podpory",
+      "Konkrétní počty účastníků v jednotlivých aktivitách a soutěžích nejsou uvedeny"
+    ]
+  }
+}
+```

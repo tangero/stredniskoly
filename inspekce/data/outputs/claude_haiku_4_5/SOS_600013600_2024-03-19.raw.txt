@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600013600_2024-03-19",
+  "school_profile": {
+    "school_type": "Střední škola s maturitou, obor Bezpečnostně právní činnost",
+    "inspection_period": "19. března až 21. března 2024",
+    "school_change_summary": "Škola prošla výraznou transformací: nový ředitel (od poloviny 2022/23), kompletní výměna pedagogů na začátku 2023/24, přestěhování do provizorních prostor na VUT. Počet žáků vzrostl o 86 % na 184 studentů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Bezpečné prostředí bez rizikového chování",
+        "detail": "Škola efektivně zachycuje a řeší rizikové chování, spolupracuje s odbornými institucemi na prevenci.",
+        "evidence": "Tyto jevy se vyskytují ve škole jen minimálně, škola reaguje včas a účelně."
+      },
+      {
+        "tag": "Kvalitní odborné předměty",
+        "detail": "Vyučující s praxí z bezpečnostních sborů věcně správně vyučují obor s aplikací právních norem.",
+        "evidence": "Odborné předměty byly vyučovány věcně správně, účelně uplatňovány mezipředmětové vztahy."
+      },
+      {
+        "tag": "Nízká absence",
+        "detail": "Absence se výrazně snížila na 128 hodin na žáka za rok (dříve 267 hodin).",
+        "evidence": "Podařilo se výrazně snížit absenci ve školním roce 2022/2023."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky u maturity",
+        "detail": "Průměrně 15–18 % žáků neuspěje u maturitní zkoušky, což je výrazně nad průměrem podobných škol.",
+        "evidence": "Hrubá neúspěšnost u maturitní zkoušky činila 18 %, v 2022/23 klesla na 15 %."
+      },
+      {
+        "tag": "Chybí učební pomůcky a vybavení",
+        "detail": "Škola nemá vzory dokladů, technické přístroje, resuscitační modely a další nezbytné vybavení pro praxi.",
+        "evidence": "Aktuální materiální podmínky umožňují naplňování programu jen v omezené míře."
+      },
+      {
+        "tag": "Pasivní výuka bez aktivizace",
+        "detail": "Převažuje frontální výuka s výkladem, žáci jsou často jen posluchači bez možnosti samostatné práce.",
+        "evidence": "Žáci byli aktivizováni jen prostřednictvím otázek, část byla po celou hodinu pasivními posluchači."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní kroky podniká škola na zlepšení výsledků u maturitní zkoušky?",
+      "Kdy bude škola mít nové prostory a jaké budou mít vybavení pro praktickou výuku?",
+      "Jak se škola připravuje na nové učitele a jak jim poskytuje podporu?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o bezpečnost, právo a prevenci kriminality s jasným profesním zaměřením",
+      "Studenti, kteří si cení osobního přístupu a individuálních konzultací s učiteli",
+      "Mladí lidé, kterým vyhovuje menší škola s přímou spoluprací se sociálními partnery (policie, vězeňská služba)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní přípravu na maturitu – výsledky jsou pod průměrem",
+      "Studenti vyžadující moderní vybavení a názorné učební pomůcky – prostředí je zatím provizorní",
+      "Žáci, kteří se učí lépe aktivní metodou – výuka je zatím převážně frontální"
+    ],
+    "plain_czech_summary": "TRIVIS je malá střední škola zaměřená na bezpečnostně právní činnost. Silnými stránkami jsou bezpečné prostředí bez rizikového chování, kvalitní odborné předměty a nízká absence. Hlavní problémy: 15–18 % žáků neuspěje u maturity (nad průměrem), chybí učební pomůcky a vybavení, výuka je pasivní. Škola se právě transformuje – nový ředitel, noví učitelé, nové prostory od příštího roku. Vhodná pro motivované studenty se zájmem o bezpečnost, ale vyžaduje zlepšení přípravy na maturitu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě slabý, mírné zlepšení v 2022/23",
+      "key_numbers": [
+        "18 % neúspěšnost (průměr 2021–2023)",
+        "15 % neúspěšnost v 2022/23",
+        "Výrazně nad průměrem podobných oborů v ČR"
+      ],
+      "evidence": "Hrubá neúspěšnost byla opakovaně vyšší v porovnání s průměrem stejné skupiny oborů za ČR."
+    },
+    "absence": {
+      "trend": "Výrazné zlepšení",
+      "key_numbers": [
+        "128 hodin na žáka za rok (2022/23)",
+        "267 hodin na žáka za rok (dříve)",
+        "Snížení o 52 %"
+      ],
+      "evidence": "Podařilo se výrazně snížit absenci, jedním z nástrojů je hranice minimální docházky jako podmínka hodnocení."
+    },
+    "support_services": [
+      "Výchovná poradkyně zajišťuje všechny poradenské služby",
+      "Kariérové poradenství s individuální pomocí při volbě profese",
+      "Podpora žáků s rizikem neúspěchu (osobní jednání, konzultace s učiteli)",
+      "Primární prevence rizikového chování – besedy s odborníky"
+    ],
+    "safety_climate": [
+      "Minimální výskyt rizikového chování díky včasné detekci a řešení",
+      "Spolupráce s odbornými institucemi (Poradenské centrum pro drogově závislé)",
+      "Škola reaguje na aktuální problémy ve společnosti a ve škole",
+      "Počet pochval převyšuje počet kázeňských opatření"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery: Policie ČR, Městská policie Brno, Vězeňská služba, soudy, advokátní kanceláře",
+      "Odborná praxe u partnerů odpovídajících zaměření oboru",
+      "Zpětná vazba od zaměstnavatelů, ale bez formálního hodnocení praxe",
+      "Spolupráce s dalšími školami vyučujícími stejný obor"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, ale obsahuje řadu technických termínů a dlouhých vět. Hlavní zjištění jsou jasná, ale vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně se budou nové prostory lišit od současných – zpráva jen uvádí, že jsou smluvně zajištěny od 2024/25",
+      "Chybí informace o tom, kolik učitelů nemá potřebnou kvalifikaci – zmíněno jen obecně",
+      "Není specifikováno, jaké konkrétní opatření škola již přijala na zlepšení maturitních výsledků"
+    ]
+  }
+}
+```

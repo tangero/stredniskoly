@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600010082_2025-09-23",
+  "school_profile": {
+    "school_type": "Střední škola zaměřená na ekonomiku a podnikání (obor 63-41-M/01) se dvěma zaměřeními: Personální řízení a 3D grafika s počítačovými hrami",
+    "inspection_period": "23.–25. září 2025",
+    "school_change_summary": "Škola se od roku 2020/2021 rozšířila na dvě zaměření, počet žáků vzrostl na 119 v denní formě, kapacita navýšena na 164 žáků. Pedagogický sbor byl rozšířen o mladé učitele odborných předmětů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "97 % absolventů úspěšně složilo maturitní zkoušku po opravném termínu, 73 % pokračuje na vysokých školách.",
+        "evidence": "Ve školním roce 2024/2025 uspělo v jarním termínu 84 %, po podzimním opravném termínu 97 %."
+      },
+      {
+        "tag": "Angličtina na vysoké úrovni",
+        "detail": "Metoda CLIL a kvalitní výuka anglického jazyka s možností získat mezinárodní certifikát od Britské rady.",
+        "evidence": "Hodiny vedeny v cílovém jazyce, autentické nahrávky, skupinová práce zvyšuje aktivní zapojení žáků."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Kroužky, soutěže, projekty Erasmus, exkurze a mezinárodní spolupráce s školami v Německu a Francii.",
+        "evidence": "Nabídka 10+ kroužků, účast v 8+ soutěžích, lyžařský zájezd do Alp, setkání v Maroku."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Škola má rezervy v přizpůsobení výuky individuálním potřebám žáků s různými schopnostmi.",
+        "evidence": "Ojediněle byla zaznamenána cílená samostatná práce, někteří žáci zůstávali pasivními posluchači."
+      },
+      {
+        "tag": "Sebehodnocení žáků",
+        "detail": "Chybí systematické nastavení kritérií pro efektivní sebehodnocení a vzájemné hodnocení mezi žáky.",
+        "evidence": "Zřídka poskytnut prostor žákům pro zhodnocení vlastních znalostí ve vztahu k vytyčenému cíli."
+      },
+      {
+        "tag": "Adaptace nových učitelů",
+        "detail": "Nedůsledné seznamování začínajících učitelů s kulturou a specifiky školy.",
+        "evidence": "V procesu uvádění začínajících učitelů bylo zjištěno nedůsledné seznamování s kulturou školy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají potíže s matematikou? Jaké jsou dostupné konzultace a doučování?",
+      "Jak probíhá příprava na maturitní zkoušku a jaké jsou průměrné známky z jednotlivých předmětů?",
+      "Jaké jsou podmínky pro získání mezinárodního certifikátu ICDL a jaký je podíl žáků, kteří jej úspěšně složí?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o ekonomiku, podnikání, 3D grafiku a počítačové hry s ambicí studovat na vysoké škole",
+      "Studenti, kteří chtějí kvalitní výuku angličtiny a mezinárodní certifikáty (ICDL, Cambridge)",
+      "Žáci hledající menší školu s osobním přístupem, kde nejsou anonymní a mají podporu při individuálních potížích"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní individuální podporu a diferenciovanou výuku – škola má v tomto oblasti rezervy",
+      "Studenti, kteří se lépe učí samostatnou prací a potřebují více autonomie – výuka je často frontálně koncipovaná",
+      "Žáci se slabšími předpoklady v matematice – inspekce zaznamenala potřebu lepší podpory v tomto předmětu"
+    ],
+    "plain_czech_summary": "Střední škola Klíč je soukromá škola v České Lípě zaměřená na ekonomiku a podnikání. Inspekce ji hodnotí velmi pozitivně. Silné stránky: výborné výsledky maturit (97 %), kvalitní angličtina, bohatá mimoškolní nabídka, mezinárodní projekty. Slabiny: nedostatečná diferenciace výuky podle individuálních potřeb, málo sebehodnocení žáků, horší adaptace nových učitelů. Škola má příznivou atmosféru, stabilní pedagogický sbor a dobré vybavení. Vhodná pro ambiciózní žáky s zájmem o obor."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi pozitivní – vysoká úspěšnost s rostoucím trendem",
+      "key_numbers": [
+        "97 % úspěšnosti po opravném termínu (2024/2025)",
+        "84 % v jarním zkušebním termínu",
+        "100 % absolventů vykonalo maturitu v řádném termínu (2023/2024)"
+      ],
+      "evidence": "Vedení školy neprodleně analyzovalo příčiny neúspěchu v matematice a přijalo opatření k nápravě. Poskytuje individuální konzultace."
+    },
+    "absence": {
+      "trend": "Výrazně pozitivní – absence klesají",
+      "key_numbers": [
+        "Pokles zameškaných hodin o 19 % za poslední tři roky",
+        "Neomluvené absence jsou eliminovány",
+        "Snížený stupeň z chování nebyl uplatněn (2024/2025)"
+      ],
+      "evidence": "Operativní jednání se žáky a jejich zákonnými zástupci v oblasti prevence školního neúspěchu a vysokých absencí."
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodička prevence v jedné osobě s odpovídající kvalifikací",
+      "Individuální poradenská konzultační činnost založená na profesionalitě a důvěře",
+      "Doučování a konzultace pro žáky nedosahující očekávaných výstupů",
+      "Čtvrtletní vyhodnocování účinnosti podpůrných opatření"
+    ],
+    "safety_climate": [
+      "Vchody do budovy zabezpečeny elektronickým systémem proti vniknutí nežádoucích osob",
+      "Vedení seznamuje žáky s pravidly bezpečného chování ve škole i na akcích mimo školu",
+      "Rizika jsou vyhodnocována a přijímána účinná opatření",
+      "Příznivé emocionální, sociální a pracovní klima – žáci nejsou anonymní"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se specializovanými firmami (Modus, eSuba, LanCraft) pro praktické vyučování",
+      "Projekt Erasmus se školami v Žitavě a Drážďanech, setkání v Maroku",
+      "Spolupráce s Britskou radou pro certifikáty z angličtiny",
+      "Partnerství s Domem pečovatelské služby – setkání se seniory",
+      "Členství v Sdružení soukromých škol Čech, Moravy a Slezska"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk bez zbytečného úřednického stylu. Všechna tvrzení jsou podpořena konkrétními údaji a citacemi. Závěry jsou jasně odděleny na silné stránky a slabé stránky.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu žáků se speciálními vzdělávacími potřebami v jednotlivých ročnících – uvedeno pouze celkově 4 žáci",
+      "Chybí konkrétní údaje o prospěchu v jednotlivých předmětech – uvedeno pouze, že 29 % žáků prospělo s vyznamenáním",
+      "Není jasné, jak přesně se liší kvalita výuky mezi dvěma zaměřeními (Personální řízení vs. 3D grafika)"
+    ]
+  }
+}
+```

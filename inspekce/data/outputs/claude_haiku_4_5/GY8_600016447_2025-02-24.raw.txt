@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY8_600016447_2025-02-24",
+  "school_profile": {
+    "school_type": "Lékařské a přírodovědné gymnázium (čtyřleté a osmileté obory)",
+    "inspection_period": "24. února 2025 až 26. února 2025",
+    "school_change_summary": "Od poslední inspekce v 2019/2020 se počet žáků výrazně navýšil na 330 (158 v čtyřletém, 172 v osmileté formě). Změnila se ředitelka a její zástupci. Škola modernizuje prostory a vybavuje žáky tablety."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce s vysokými školami a projekty",
+        "detail": "Žáci se zapojují do projektů vysokých škol, získávají přehled o možnostech studia a prohlubují zájem o svůj obor.",
+        "evidence": "Škola organizuje školní kola soutěží, žáci dosahují velmi dobrých umístění v krajských kolech."
+      },
+      {
+        "tag": "Bohatá mimoškolní činnost",
+        "detail": "Kroužky, zahraniční zájezdy, Erasmus+, charitativní aktivity a kulturní akce rozvíjejí osobnostní kompetence.",
+        "evidence": "Škola podporuje mezinárodní jazykové zkoušky, cestovatelský klub, Alumni klub pro absolventy."
+      },
+      {
+        "tag": "Dobrá komunikace a bezpečí",
+        "detail": "Vedení školy má systém otevřených dveří, pravidelné třídní schůzky a elektronický informační systém.",
+        "evidence": "Vstupy do budov jsou zabezpečeny, žáci jsou seznamováni se školním řádem a pravidly bezpečnosti."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka bez aktivizace",
+        "detail": "Převažuje frontální výuka s málo prostoru pro aktivní přístup žáků, chybí kreativní aktivity a dynamika hodin.",
+        "evidence": "Ojediněle se realizují aktivity podněcující kreativitu, malá část učitelů vede žáky ke kooperaci."
+      },
+      {
+        "tag": "Chybí individuální přístup",
+        "detail": "Diferenciace úkolů podle schopností je minimální, nadaní žáci nemají dostatek příležitostí k rozvoji.",
+        "evidence": "Žáci pracují na stejných úkolech se stejnou obtížností, individualizovaný přístup k žákům se speciálními potřebami není zřejmý."
+      },
+      {
+        "tag": "Slabá administrativa bezpečnosti",
+        "detail": "Kniha úrazů nebyla vedena prokazatelným způsobem, kontrolní mechanismy nejsou dostatečně účinné.",
+        "evidence": "Inspekce zjistila nedostatky v administraci evidence úrazů žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro nadané žáky a jak podporuje žáky se speciálními potřebami?",
+      "Jaké metody aktivní výuky (skupinová práce, projekty, diskuse) se používají v jednotlivých předmětech?",
+      "Jak se škola vypořádala s doporučeními inspekce z roku 2020 týkajícími se aktivizace žáků a diferenciace?"
+    ],
+    "who_school_fits": [
+      "Žáci zajímající se o přírodovědné a lékařské obory s ambicí studovat na vysoké škole",
+      "Děti, které chtějí rozvíjet jazykové dovednosti a mezinárodní zkušenosti (Erasmus+, zájezdy)",
+      "Žáci, kterým vyhovuje strukturovaný přístup s důrazem na soutěže a mimoškolní aktivity"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující interaktivní, projektovou a skupinovou výuku – zde převažuje frontální přístup",
+      "Nadaní žáci hledající individualizovaný rozvoj – škola jim nabízí málo diferenciovaných úloh",
+      "Žáci se speciálními vzdělávacími potřebami – individualizovaný přístup není dostatečně zřejmý"
+    ],
+    "plain_czech_summary": "PRIGO je prestižní gymnázium s výbornou infrastrukturou, bohatou mimoškolní činností a silnými vazbami na vysoké školy. Maturitní výsledky jsou nadprůměrné. Hlavní slabinou je výuka – převažuje pasivní frontální přístup bez dostatečné aktivizace žáků, chybí diferenciace podle schopností a individuální péče. Inspekce upozorňuje na přetrvávající problémy z roku 2020. Škola je vhodná pro samostatné, motivované žáky, ale méně pro ty, kteří potřebují individuální přístup nebo aktivní vyučovací metody."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírně nadprůměrný",
+      "key_numbers": [
+        "Výsledky vykazují v celorepublikovém srovnění se školami obdobného typu mírně nadprůměrnou úspěšnost"
+      ],
+      "evidence": "Škola sleduje úspěšnost žáků a vyhodnocuje výsledky na pedagogických radách."
+    },
+    "absence": {
+      "trend": "Není explicitně zmíněno",
+      "key_numbers": [
+        "Zpráva se absence věnuje minimálně"
+      ],
+      "evidence": "Údaje o absence nejsou v inspekční zprávě uvedeny."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje pomoc žákům, zákonným zástupcům a pedagogům",
+      "Adaptační pobyty pro nastupující ročníky zaměřené na prevenci negativních jevů",
+      "Primární prevence začleňovaná do výuky, workshopy a besedy na prevenci",
+      "Systém otevřených dveří pro komunikaci žáků s vedením školy"
+    ],
+    "safety_climate": [
+      "Vstupy do budov zabezpečeny proti vniknutí cizích osob",
+      "Žáci seznamováni se školním řádem a pravidly bezpečného chování",
+      "Nedostatek: Kniha úrazů nebyla vedena prokazatelným způsobem",
+      "Kázeňské problémy se nevyskytovaly, komunikace v pozitivní atmosféře"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá systematická spolupráce s externími partnery zvyšuje kvalitu vzdělávání",
+      "Projekty s vysokými školami, školní kola soutěží v cizích jazycích a olympiádách",
+      "Program Erasmus+ s pobyty žáků a učitelů v zahraničí",
+      "Cestovatelský klub s výlety do evropských zemí",
+      "Alumni klub pro podporu kontaktů s absolventy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a srozumitelná. Silné a slabé stránky jsou konkrétní a opřené o pozorování. Chybí však explicitní údaje o absenci a některé číselné údaje jsou vágní (např. 'mírně nadprůměrná').",
+    "uncertainty_notes": [
+      "Absence není zmíněna – není jasné, zda je problém nebo není sledována",
+      "Maturitní výsledky jsou popsány jako 'mírně nadprůměrné' bez konkrétních čísel",
+      "Počet žáků se speciálními potřebami (17) je zmíněn, ale jejich konkrétní podpora není detailně popsána"
+    ]
+  }
+}
+```

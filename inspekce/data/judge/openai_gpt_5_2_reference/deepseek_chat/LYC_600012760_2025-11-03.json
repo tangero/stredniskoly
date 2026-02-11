@@ -1,0 +1,29 @@
+{
+  "report_id": "LYC_600012760_2025-11-03",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "deepseek_chat",
+  "run_started_utc": "2026-02-09T12:05:32.997568+00:00",
+  "run_finished_utc": "2026-02-09T12:05:58.016157+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"LYC_600012760_2025-11-03\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"U tvrzení o „nadregionálním zájmu o Technické lyceum“ je doplněno, že zájem „přesahuje kapacitu“ – ve zdroji se překročení kapacity vztahuje k domovu mládeže (ubytování), nikoli výslovně ke kapacitě oboru/přijímání.\",\n    \"Formulace typu „škola nabízí kvalitní technické vzdělání“ je hodnotící a ve zdroji není takto přímo doložena (zdroj popisuje dobrou odbornost výuky a příznivé výsledky, ale nehodnotí ji jako „kvalitní“ v tomto zobecnění).\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené a zdrojem přímo podložené silné stránky: nadregionální zájem o obor Technické lyceum, velmi dobré materiální podmínky domova mládeže, velká šíře volnočasových aktivit.\",\n    \"Přesně převzaté klíčové slabé stránky výuky: nízká práce s cíli zaměřenými na žáka, málo sebehodnocení/vrstevnického hodnocení a minimální diferenciace úloh.\",\n    \"Číselné údaje k výsledkům/absenci odpovídají zdroji (prospěch 1,8–2,1; všichni maturanti úspěšní po podzimním termínu; ~110 hodin absence na žáka; 3 neomluvené hodiny; 27 kroužků, cca 150 žáků).\",\n    \"Dobře použitelná rodičovská struktura (silné stránky, rizika, otázky na den otevřených dveří) a srozumitelná čeština.\"\n  ],\n  \"one_line_verdict\": \"Výstup je z velké části věrný a pro rodiče praktický, ale obsahuje pár nepodložených/posunutých formulací (zejména „přesah kapacity“ u oboru a hodnotící tvrzení o kvalitě).\"\n}",
+  "judge_output": {
+    "report_id": "LYC_600012760_2025-11-03",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "U tvrzení o „nadregionálním zájmu o Technické lyceum“ je doplněno, že zájem „přesahuje kapacitu“ – ve zdroji se překročení kapacity vztahuje k domovu mládeže (ubytování), nikoli výslovně ke kapacitě oboru/přijímání.",
+      "Formulace typu „škola nabízí kvalitní technické vzdělání“ je hodnotící a ve zdroji není takto přímo doložena (zdroj popisuje dobrou odbornost výuky a příznivé výsledky, ale nehodnotí ji jako „kvalitní“ v tomto zobecnění)."
+    ],
+    "best_points": [
+      "Správně zachycené a zdrojem přímo podložené silné stránky: nadregionální zájem o obor Technické lyceum, velmi dobré materiální podmínky domova mládeže, velká šíře volnočasových aktivit.",
+      "Přesně převzaté klíčové slabé stránky výuky: nízká práce s cíli zaměřenými na žáka, málo sebehodnocení/vrstevnického hodnocení a minimální diferenciace úloh.",
+      "Číselné údaje k výsledkům/absenci odpovídají zdroji (prospěch 1,8–2,1; všichni maturanti úspěšní po podzimním termínu; ~110 hodin absence na žáka; 3 neomluvené hodiny; 27 kroužků, cca 150 žáků).",
+      "Dobře použitelná rodičovská struktura (silné stránky, rizika, otázky na den otevřených dveří) a srozumitelná čeština."
+    ],
+    "one_line_verdict": "Výstup je z velké části věrný a pro rodiče praktický, ale obsahuje pár nepodložených/posunutých formulací (zejména „přesah kapacity“ u oboru a hodnotící tvrzení o kvalitě)."
+  }
+}

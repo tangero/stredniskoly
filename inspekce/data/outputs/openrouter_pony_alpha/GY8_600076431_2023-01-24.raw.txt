@@ -1,0 +1,104 @@
+{
+  "report_id": "GY8_600076431_2023-01-24",
+  "school_profile": {
+    "school_type": "Gymnázium (osmileté)",
+    "inspection_period": "24. 1. 2023 − 27. 1. 2023",
+    "school_change_summary": "Oproti minulé inspekci se výrazně zlepšily materiální podmínky a stabilizoval pedagogický sbor; odstraněn byl i nedostatek ve školních vzdělávacích programech."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Žáci gymnázia dosahují dlouhodobě velmi dobrých výsledků u maturit a v externích testech.",
+        "evidence": "Kvalitu poskytovaného středního vzdělávání dokládají dlouhodobě velmi dobré výsledky žáků při ukončování vzdělávání maturitní zkouškou."
+      },
+      {
+        "tag": "Motivující prostředí",
+        "detail": "Škola nabízí podnětné prostředí a pestrou nabídku projektových dnů a aktivit.",
+        "evidence": "Četné doplňkové činnosti a školní projektové dny vhodně obohacují vzdělávací obsah."
+      },
+      {
+        "tag": "Kvalitní vedení",
+        "detail": "Vedení školy funguje na základě transparentních pravidel a otevřené komunikace.",
+        "evidence": "Funkční systém řízení, který vychází z účelného delegování kompetencí, transparentních pravidel... umožňuje optimální fungování školy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Chybějící zpětná vazba",
+        "detail": "Ve výuce chybí efektivní zpětná vazba a závěrečné shrnutí pro žáky.",
+        "evidence": "Žákům není v průběhu výuky poskytována dostatečná zpětná vazba o jejich dosahovaném vzdělávacím pokroku."
+      },
+      {
+        "tag": "Nízká individualizace",
+        "detail": "Výuka je převážně frontální a nezohledňuje individuální potřeby všech žáků.",
+        "evidence": "Nízká úroveň individualizace vzdělávání, absence potřebné diferenciace... dostatečně nerozvíjí vzdělávací potenciál každého žáka."
+      },
+      {
+        "tag": "Formální hodnocení",
+        "detail": "Učitelé nevyužívají formativní hodnocení k podpoře dalšího rozvoje žáků.",
+        "evidence": "Formativní hodnocení ve většině navštívených hodin pedagogové nevyužívali."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak učitelé na gymnáziu zajišťují, aby žáci na konci hodiny chápali, co se naučili (zpětná vazba)?",
+      "Jakým způsobem je ve výuce uplatňována diferenciace pro žáky s různým tempem učení?",
+      "Využívají pedagogové nějaké konkrétní metody formativního hodnocení průběhu výuky?"
+    ],
+    "who_school_fits": [
+      "Studentům, kteří preferují tradiční frontální výuku a dobře reagují na odborný výklad učitele.",
+      "Žákům, kteří potřebují kvalitní přípravu na maturitu a další studium na VŠ.",
+      "Dětem, kterým vyhovuje bohatá nabídka mimoškolních aktivit a projektových dnů."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kteří potřebují častou a průběžnou zpětnou vazbu o svém pokroku.",
+      "Studentům vyžadujícím silně individualizovaný přístup a vlastní tempo práce.",
+      "Rodičům, kteří očekávají moderní inovativní metody výuky nad rámec frontálního vyučování."
+    ],
+    "plain_czech_summary": "Gymnázium v České Kamenici nabízí stabilní a podnětné prostředí s velmi dobrou úrovní vybavení a vedením školy. Žáci dosahují skvělých výsledků u maturity a v soutěžích. Slabinou je tradiční styl výuky, který postrádá častější individuální přístup a efektivní zpětnou vazbu od učitelů v průběhu hodin. Pro ambiciózní studenty, kteří zvládají frontální styl výuky, je školou kvalitní volbou, ale rodiče by měli sledovat, jak škola plní doporučení na zlepšení individualizace."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborné a stabilní výsledky",
+      "key_numbers": [
+        "Školní rok 2021/2022: 100% úspěšnost",
+        "Dlouhodobě velmi dobré výsledky",
+        "Všichni přihlášení žáci úspěšně složili zkoušku"
+      ],
+      "evidence": "Ve školním roce 2021/2022 maturitní zkoušku úspěšně složili všichni přihlášení žáci."
+    },
+    "absence": {
+      "trend": "Pozitivní (snižování)",
+      "key_numbers": [
+        "Častá absence je hlavní příčinou neúspěchu",
+        "Snižování ve spolupráci se zákonnými zástupci",
+        "Neomluvená absence řešena důsledně"
+      ],
+      "evidence": "Nejčastější příčinou neúspěchu žáků je častá absence ve výuce, kterou se daří ve spolupráci se zákonnými zástupci postupně snižovat."
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště (3 výchovní poradci, metodik prevence)",
+      "Efektivní kariérové poradenství a spolupráce s úřadem práce",
+      "Individuální podpora žáků se SVP (17 asistentů pedagoga)"
+    ],
+    "safety_climate": [
+      "Příjemná atmosféra a vzájemný respekt mezi učiteli a žáky",
+      "Aktivní řešení rizikového chování a podpora prosociálních vztahů",
+      "Pravidelné třídnické hodiny jako prevence problémů"
+    ],
+    "partnerships_practice": [
+      "Efektivní spolupráce se zřizovatelem a sociálními partnery",
+      "Účast na veletrzích vzdělávání a besedách s úřadem práce",
+      "Spolupráce s pedagogicko-psychologickou poradnou a speciálně pedagogickým centrem"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně člení hodnocení podmínek, průběhu a výsledků, a obsahuje konkrétní závěry.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní číselné výsledky externích testů, pouze slovní hodnocení.",
+      "Chybí přesnější data o počtu žáků v jednotlivých ročnících gymnázia (celkem 229).",
+      "Není specifikováno, o jaké 'efektivní opatření' při kontrole nedostatků konkrétně jde."
+    ]
+  }
+}

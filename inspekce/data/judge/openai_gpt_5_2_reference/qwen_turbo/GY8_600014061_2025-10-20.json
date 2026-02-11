@@ -1,0 +1,32 @@
+{
+  "report_id": "GY8_600014061_2025-10-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T12:08:09.215545+00:00",
+  "run_finished_utc": "2026-02-09T12:08:28.884583+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY8_600014061_2025-10-20\",\n  \"faithfulness_score_1_5\": 3,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 3,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 11,\n  \"critical_issues\": [\n    \"Chybně uvedené datum inspekční činnosti: zdroj uvádí 20. 10. 2025 – 22. 10. 2025, kandidát uvádí až 23. 10. 2025.\",\n    \"Sekce „who_school_fits“ a „who_should_be_cautious“ obsahuje doporučení, která nejsou ve zdrojové zprávě doložena (jde o domněnky).\",\n    \"Tvrzení „Škola poskytuje bezpečné prostředí pro žáky“ není ve zdroji výslovně uvedeno (zdroj popisuje udržovanou budovu, ale nehodnotí bezpečnost explicitně).\",\n    \"U „hard_facts“ jsou přidány interpretace typu „trend: stabilní/výborný“, které nejsou ve zdroji jako trendové hodnocení formulovány (byť data tomu mohou napovídat).\",\n    \"Tvrzení o „spolupráci s různými institucemi“ je příliš obecné a není v této podobě přímo doložené; zdroj spíše vyjmenovává konkrétní projekty/programy.\"\n  ],\n  \"best_points\": [\n    \"Silné stránky (pestré metody, otevřená komunikace, výborné výsledky u maturity a přijetí na VŠ) jsou převzaté věcně správně a opřené o část „Závěry“.\",\n    \"Slabé stránky (nedostatečná kontrolní činnost v ZUŠ, chybějící struktura metodické podpory, rozdílná docházka do kolektivní výuky hudebního oboru) odpovídají zdroji.\",\n    \"Klíčová čísla k maturitě (27 žáků, 18 s vyznamenáním, 9 prospělo, 82 %) i průměrná absence 107 hodin jsou v souladu se zdrojem.\",\n    \"Popis školního poradenského pracoviště (složení týmu, efektivita, role psycholožky a metodičky prevence) odpovídá zdrojovému textu.\"\n  ],\n  \"one_line_verdict\": \"Shrnutí v hlavních bodech dobře odpovídá inspekční zprávě, ale obsahuje více rodičovských doporučení a několik tvrzení (vč. termínu inspekce), která nejsou ve zdroji doložená.\"\n}",
+  "judge_output": {
+    "report_id": "GY8_600014061_2025-10-20",
+    "faithfulness_score_1_5": 3,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 3,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 11,
+    "critical_issues": [
+      "Chybně uvedené datum inspekční činnosti: zdroj uvádí 20. 10. 2025 – 22. 10. 2025, kandidát uvádí až 23. 10. 2025.",
+      "Sekce „who_school_fits“ a „who_should_be_cautious“ obsahuje doporučení, která nejsou ve zdrojové zprávě doložena (jde o domněnky).",
+      "Tvrzení „Škola poskytuje bezpečné prostředí pro žáky“ není ve zdroji výslovně uvedeno (zdroj popisuje udržovanou budovu, ale nehodnotí bezpečnost explicitně).",
+      "U „hard_facts“ jsou přidány interpretace typu „trend: stabilní/výborný“, které nejsou ve zdroji jako trendové hodnocení formulovány (byť data tomu mohou napovídat).",
+      "Tvrzení o „spolupráci s různými institucemi“ je příliš obecné a není v této podobě přímo doložené; zdroj spíše vyjmenovává konkrétní projekty/programy."
+    ],
+    "best_points": [
+      "Silné stránky (pestré metody, otevřená komunikace, výborné výsledky u maturity a přijetí na VŠ) jsou převzaté věcně správně a opřené o část „Závěry“.",
+      "Slabé stránky (nedostatečná kontrolní činnost v ZUŠ, chybějící struktura metodické podpory, rozdílná docházka do kolektivní výuky hudebního oboru) odpovídají zdroji.",
+      "Klíčová čísla k maturitě (27 žáků, 18 s vyznamenáním, 9 prospělo, 82 %) i průměrná absence 107 hodin jsou v souladu se zdrojem.",
+      "Popis školního poradenského pracoviště (složení týmu, efektivita, role psycholožky a metodičky prevence) odpovídá zdrojovému textu."
+    ],
+    "one_line_verdict": "Shrnutí v hlavních bodech dobře odpovídá inspekční zprávě, ale obsahuje více rodičovských doporučení a několik tvrzení (vč. termínu inspekce), která nejsou ve zdroji doložená."
+  }
+}

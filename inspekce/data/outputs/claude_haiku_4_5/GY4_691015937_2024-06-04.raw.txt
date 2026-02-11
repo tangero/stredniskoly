@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY4_691015937_2024-06-04",
+  "school_profile": {
+    "school_type": "Základní škola a gymnázium (1.–9. ročník ZŠ + 4leté gymnázium)",
+    "inspection_period": "4.–7. června 2024",
+    "school_change_summary": "Škola funguje od září 2022. Kombinuje české kurikulum s mezinárodními programy (Pearson Edexcel, British School Overseas, od 2024 i International Baccalaureate). Od září 2024 navýšena kapacita na 100 žáků v ZŠ a 180 v gymnáziu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Systémová podpora cizích jazyků s rodilými mluvčími a tandemovou výukou českého a zahraničního učitele.",
+        "evidence": "\"koncepční systémová podpora výuky cizích jazyků s účinnou spoluprací českého a zahraničního učitele\""
+      },
+      {
+        "tag": "Komunitní prostředí",
+        "detail": "Kultivované prostředí s aktivním zapojením žáků, učitelů a rodičů do školního života.",
+        "evidence": "\"kultivované vzdělávací prostředí s komunitní atmosférou a aktivním zapojením žáků, učitelů a rodičů\""
+      },
+      {
+        "tag": "Osobnostní rozvoj",
+        "detail": "Projektová výuka a pestrá zájmová činnost podporují všestranný rozvoj a sociální kompetence.",
+        "evidence": "\"cílené zapojování žáků do projektové výuky, pestré zájmové činnosti a týmové spolupráce\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Individualizace v mladších ročnících",
+        "detail": "V části výuky nižší zohledňování individuálních potřeb žáků prvního stupně a chybí evaluace jejich pokroku.",
+        "evidence": "\"nižší míra zohledňování individuálních vzdělávacích potřeb i předpokladů žáků mladšího školního věku\""
+      },
+      {
+        "tag": "Kontrolní mechanismy",
+        "detail": "Méně účinný systém kontroly pedagogického procesu a vedení dokumentace.",
+        "evidence": "\"méně účinný kontrolní systém v oblasti řízení pedagogického procesu, vedení příslušné dokumentace\""
+      },
+      {
+        "tag": "Čeština a čtenářství",
+        "detail": "Menší podpora čtenářské gramotnosti a souvislého mluveného projevu v češtině v některých hodinách.",
+        "evidence": "\"menší podpora čtenářské gramotnosti a souvislého mluveného projevu žáků v českém jazyce\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá příprava na českou maturitní zkoušku v posledních ročnících gymnázia?",
+      "Jaké jsou zkušenosti rodičů s komunikací školy a jak se řeší individuální potřeby dítěte?",
+      "Jak se škola vypořádává s tím, že část učitelů nemá plnou kvalifikaci?"
+    ],
+    "who_school_fits": [
+      "Děti se zájmem o jazyky a mezinárodní vzdělání – silný důraz na angličtinu a další jazyky",
+      "Žáci s potřebou individuálního přístupu – malé třídy a personální podpora (asistenti, doučování)",
+      "Rodiče hledající alternativu k tradičnímu vzdělání – projektová výuka a propojení českého i mezinárodního kurikula"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří chtějí zaměřit se primárně na přípravu k české maturitě – strategie přípravy se teprve rozpracovává",
+      "Rodiny, které preferují stabilní tým učitelů – část pedagogů je bez plné kvalifikace a škola je hledá",
+      "Žáci s nižšími jazykovými schopnostmi – vysoký důraz na angličtinu může být náročný"
+    ],
+    "plain_czech_summary": "Škola Leonardo V. Academy je mladá, moderně vedená instituce s důrazem na jazykové vzdělání a mezinárodní programy. Nabízí kvalitní prostředí, aktivní zapojení rodičů a individuální přístup díky malým třídám. Inspekce oceňuje systémovou podporu cizích jazyků a komunitní atmosféru. Jako oblasti ke zlepšení inspekce identifikuje lepší individualizaci v mladších ročnících, posílení kontrolních mechanismů a větší podporu českého jazyka a čtenářské gramotnosti. Příprava na českou maturitu se teprve rozvíjí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nový program – žáci druhého ročníku gymnázia absolvovali poprvé certifikované zkoušky z mezinárodního programu",
+      "key_numbers": [
+        "Gymnázium má 59 žáků ve třech ročnících",
+        "Přibližně polovina žáků gymnázia prospěla s vyznamenáním",
+        "Strategie přípravy k české maturitě se teprve rozpracovává"
+      ],
+      "evidence": "\"V souladu s realizovaným konceptem vzdělávání konali v tomto školním roce poprvé žáci druhého ročníku gymnázia i externě hodnocené certifikované zkoušky\""
+    },
+    "absence": {
+      "trend": "Absence je na přijatelné úrovni, neomluvené hodiny se nevyskytují",
+      "key_numbers": [
+        "ZŠ: průměr 40 omluvených hodin na žáka za pololetí",
+        "Gymnázium: průměr 60 omluvených hodin na žáka za pololetí",
+        "Neomluvené hodiny: 0"
+      ],
+      "evidence": "\"vykázaná absence žáků dosahuje přijatelných hodnot (v základní škole v průměru 40 a v gymnáziu 60 omluvených hodin na žáka za pololetí), neomluvené hodiny se nevyskytovaly\""
+    },
+    "support_services": [
+      "Metodička prevence a výchovná poradkyně (bez specializačního studia)",
+      "Koordinátorka inkluze",
+      "Externí školní psycholožka",
+      "Tři školní asistenti (především na prvním stupni ZŠ)",
+      "Skupinové a individuální doučování, plány pedagogické podpory"
+    ],
+    "safety_climate": [
+      "Elektronický dochází systém a recepce s celodenním obsazením",
+      "Bezpečné vzdělávací prostředí je součástí dalšího vzdělávání pedagogů",
+      "Komunitní kruhy a cílené intervence řeší identifikované problémy",
+      "Školní řád je průběžně aktualizován (např. zpřesnění pravidel pro kázeňská opatření)"
+    ],
+    "partnerships_practice": [
+      "Účinná spolupráce s regionálními kulturně-sociálními partnery",
+      "Projekt 'Praha je naše učebna' a 'Pomáháme si' (filantropické aktivity)",
+      "Tandemová výuka s rodilými mluvčími (7 rodilých mluvčích v týmu)",
+      "Supervizní činnost externích odborníků v didaktice a formativním hodnocení"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a věcná, ale místy obsahuje úřednickou terminologii. Hlavní zjištění jsou jasně oddělena v sekcích Silné stránky a Slabé stránky. Pro rodiče by byla užitečnější jednodušší formulace některých pasáží.",
+    "uncertainty_notes": [
+      "Konkrétní výsledky maturitních zkoušek nejsou uvedeny – jsou dostupné pouze informace, že žáci absolvovali poprvé certifikované zkoušky",
+      "Počet učitelů bez plné kvalifikace (6 osob) není jasně vysvětlen – není jasné, v jakých předmětech a jak dlouho budou působit",
+      "Výsledky v čtenářské gramotnosti jsou podprůměrné (z výběrového zjišťování ČŠI), ale není jasné, jak se to promítá do aktuálního stavu"
+    ]
+  }
+}
+```

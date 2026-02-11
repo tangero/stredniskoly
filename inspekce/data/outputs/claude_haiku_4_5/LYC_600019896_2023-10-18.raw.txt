@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "LYC_600019896_2023-10-18",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola s obory: Praktická sestra, Sociální činnost, Zdravotnické lyceum",
+    "inspection_period": "18. 10. až 20. 10. a 23. 10. 2023",
+    "school_change_summary": "Od poslední inspekce v 2017 se počet žáků zvýšil o 37 % na 813 žáků. Škola se stala Centrem odborného vzdělávání pro zdravotnické obory a rozšířila se do druhé budovy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické zkušenosti v reálném prostředí",
+        "detail": "Žáci získávají odborné dovednosti na pracovištích fakultní nemocnice a sociálních služeb pod dohledem kvalifikovaných pedagogů.",
+        "evidence": "Praktické vyučování probíhá na pracovištích smluvních partnerů v pracovně pohodové atmosféře s funkční spoluprací personálu."
+      },
+      {
+        "tag": "Moderní vybavení pro zdravotnické obory",
+        "detail": "Simulační centrum ošetřovatelství a nadstandardní materiální vybavení odpovídají současným požadavkům zdravotnických zařízení.",
+        "evidence": "Škola se stala Centrem odborného vzdělávání pro zdravotnické obory, což přineslo výrazný kvalitativní posun ve vybavení."
+      },
+      {
+        "tag": "Zlepšující se výsledky maturit",
+        "detail": "Úspěšnost při maturitní zkoušce se v loňském roce zlepšila ve všech oborech, zejména u Sociální činnosti (z 28,6 % na 6,3 % neúspěšnosti).",
+        "evidence": "Obor Praktická sestra: z 11,8 % na 6,4 % neúspěšnosti. Zdravotnické lyceum dosahuje nejlepších výsledků trvale."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná individualizace výuky",
+        "detail": "Všichni žáci plní nejčastěji stejné úkoly se shodnou obtížností bez možnosti volby podle svých schopností.",
+        "evidence": "Chyběl výraznější individuální přístup zohledňující vzdělávací schopnosti, možnosti a nadání jednotlivých žáků."
+      },
+      {
+        "tag": "Málo sebereflexi a vlastních cílů",
+        "detail": "Žáci nejsou dostatečně vedeni k stanovení vlastních vzdělávacích cílů a vyhodnocování své práce.",
+        "evidence": "Jen ojediněle byli žáci vedeni ke stanovení vlastních cílů a měli málo příležitostí k účelné sebereflexi."
+      },
+      {
+        "tag": "Prostorové kapacity",
+        "detail": "Výrazné navýšení počtu žáků (o 37 %) není plně pokryto prostorami školy.",
+        "evidence": "V souvislosti s výrazným navýšením počtu žáků prostorové možnosti školy neodpovídají v plné míře jejím potřebám."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi a jak se to změní po doporučeních inspekce?",
+      "Jaké jsou konkrétní partnerské zdravotnické zařízení, kde budou moji syn/dcera vykonávat praxi?",
+      "Jak se škola vypořádá s nedostatkem prostoru a jak to ovlivní kvalitu výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o zdravotnické obory, kteří chtějí praktické zkušenosti v reálném prostředí",
+      "Motivovaní žáci, kterým vyhovuje strukturovaný přístup s jasným zaměřením na odbornost",
+      "Žáci, kteří se chtějí zapojit do projektů a aktivit mimo běžnou výuku (Erasmus, DofE, soutěže)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnou individuální podporu a přizpůsobení výuky svému tempu – škola na tom stále pracuje",
+      "Žáci, kteří se lépe učí v menších skupinách – kapacita tříd se zvýšila bez odpovídajícího zvýšení prostoru",
+      "Žáci, kteří potřebují více času na reflexi a vlastní rozhodování – to není zatím běžnou součástí výuky"
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola v Brně je moderně vybavená a nabízí kvalitní praktické vzdělávání v reálném zdravotnickém prostředí. Výsledky maturit se zlepšují. Vedení školy aktivně pracuje na zlepšování klimatu a spolupráce pedagogů. Hlavní výzvou je, že výuka není dostatečně přizpůsobena individuálním potřebám žáků – všichni řeší stejné úkoly bez ohledu na své schopnosti. Škola také potřebuje více prostoru kvůli nárůstu počtu žáků. Inspekce doporučuje zaměřit se na individualizaci a sebereflexi žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní trend zlepšování ve všech oborech",
+      "key_numbers": [
+        "Sociální činnost: neúspěšnost klesla z 28,6 % (2022) na 6,3 % (2023)",
+        "Praktická sestra: neúspěšnost klesla z 11,8 % (2022) na 6,4 % (2023)",
+        "Zdravotnické lyceum: nejlepší výsledky trvale"
+      ],
+      "evidence": "Úspěšnost žáků při ukončování vzdělávání maturitní zkouškou se v loňském školním roce zlepšila ve všech oborech vzdělání."
+    },
+    "absence": {
+      "trend": "Nízká absence s mírným poklesem",
+      "key_numbers": [
+        "Žáci vykazují spíše nižší průměrnou absenci na žáka",
+        "Oproti předchozímu školnímu roku došlo k mírnému poklesu",
+        "Neomluvenou absenci škola eviduje jen u jednotek žáků"
+      ],
+      "evidence": "Nejnižší absenci dlouhodobě vykazují žáci posledních maturitních ročníků, u nichž je patrná snaha vzdělávání úspěšně dokončit."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodička prevence, kariérový poradce a školní psycholožka na částečný úvazek",
+      "Individuální konzultace a doučování v rámci kroužků pro žáky se zhoršujícím se prospěchem",
+      "Podpora žáků se speciálními vzdělávacími potřebami a žáků s odlišným mateřským jazykem formou doučování a individuálního poradenství"
+    ],
+    "safety_climate": [
+      "Výuka probíhala v klidné pracovní atmosféře bez kázeňských problémů",
+      "Škola věnuje adekvátní pozornost prevenci rizikového chování a hledá efektivní řešení konfliktních situací",
+      "Pochvaly výrazně převažují nad kázeňskými opatřeními"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobě efektivní spolupráce s mnoha zdravotnickými zařízeními a zařízeními sociálních služeb pro odbornou praxi",
+      "Aktivní rozvoj spolupráce se základními a středními školami v regionu prostřednictvím seminářů a workshopů",
+      "Střední školy Jihomoravského kraje využívají kvalitně vybavené odborné učebny školy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou delší a obsahují více odborné terminologie, ale celkově je text dobře strukturován.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty hodin hospitací nebo podíl jednotlivých forem výuky v procentech",
+      "Není jasné, jak dlouho trvá adaptace nových pedagogů a jaké jsou konkrétní metriky jejich úspěchu",
+      "Chybí informace o tom, kolik procent žáků využívá nabízené doučování a jaká je jeho efektivita"
+    ]
+  }
+}
+```

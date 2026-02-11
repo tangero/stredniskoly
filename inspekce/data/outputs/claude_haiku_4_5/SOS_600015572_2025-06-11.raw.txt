@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "SOS_600015572_2025-06-11",
+  "school_profile": {
+    "school_type": "Soukromé gymnázium, střední odborná škola a jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "11. 6. 2025 – 13. 6. 2025",
+    "school_change_summary": "Od poslední inspekce v listopadu 2021 se na pozici ředitele střídaly tři osoby. Nový ředitel od ledna 2025 zahájil reformu, ale škola čelí vysoké fluktuaci pedagogů a dlouhodobě nevzdělává žáky v oboru Gymnázium."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Výuka angličtiny a němčiny probíhá s individuálním přístupem, strukturovaným hodnocením a systematickou prací s chybou.",
+        "evidence": "Žáci komunikují na odpovídající úrovni, dostávají průběžnou zpětnou vazbu a pracují s různými zdroji."
+      },
+      {
+        "tag": "Dobrá péče o žáky se speciálními potřebami",
+        "detail": "Výchovná poradkyně zajišťuje adekvátní pomoc včetně dobře zpracovaných individuálních vzdělávacích plánů.",
+        "evidence": "Škola vzdělává 13 žáků s přiznaným 2.–3. stupněm podpůrného opatření a 6 žáků podle individuálního plánu."
+      },
+      {
+        "tag": "Kontakt se zaměstnavateli",
+        "detail": "Škola sleduje uplatnění absolventů a je s nimi v kontaktu i po ukončení studia.",
+        "evidence": "Žáci absolvují praxi u významných partnerů včetně okresního soudu, podnikatelského inkubátoru a státní správy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Velmi nízké výsledky maturit",
+        "detail": "Celková úspěšnost u maturitní zkoušky je nízká, obor Ekonomika dosahuje neúspěšnosti 20–50 %.",
+        "evidence": "Výsledky jsou silně pod republikovým průměrem v češtině, cizích jazycích a matematice v posledních třech letech."
+      },
+      {
+        "tag": "Špatné klima v prvních ročnících",
+        "detail": "Vzájemné vztahy mezi žáky a některými učiteli jsou napjaté, chybí vhodné vzorce chování.",
+        "evidence": "Žáci ztrácejí zájem pracovat, jsou apatičtí nebo rušivě se chují. Z 15 žáků prvního ročníku zůstali jen tři ve třetím ročníku."
+      },
+      {
+        "tag": "Nekvalitní výuka odborných předmětů",
+        "detail": "Výuka IT předmětů je na velmi nízké úrovni, žáci nepracují s technikou, pouze poslouchají slovní výklad.",
+        "evidence": "Cizinci se nezapojují kvůli jazykové bariéře. Chybí hodnocení projektů podle nastavených kritérií."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou fluktuaci pedagogů a jak to ovlivňuje kontinuitu výuky?",
+      "Jaké konkrétní kroky podnikla škola na zlepšení klimatu ve třídách a snížení počtu odchodů ze studia?",
+      "Jak se škola vypořádá s nízkými výsledky maturit, zejména v oboru Ekonomika a podnikání?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazykové vzdělání – výuka angličtiny a němčiny je kvalitní s individuálním přístupem",
+      "Žáci se speciálními vzdělávacími potřebami – škola má nastavenu péči s individuálními vzdělávacími plány",
+      "Žáci, kteří potřebují praktické zkušenosti – škola má kontakty s firmami a institucemi pro praxi"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, jejichž děti potřebují stabilní pedagogický tým – vysoká fluktuace učitelů může narušit kontinuitu",
+      "Zájemci o obor Ekonomika a podnikání – výsledky maturit jsou výrazně pod průměrem (20–50 % neúspěšnosti)",
+      "Žáci citliví na školní klima – v prvních ročnících je napjatá atmosféra a chybí vhodné chování"
+    ],
+    "plain_czech_summary": "Soukromá škola v Kunovicích nabízí kvalitní jazykové vzdělání a péči o žáky se speciálními potřebami. Má však vážné problémy: velmi nízké výsledky maturit (obor Ekonomika 20–50 % neúspěšnosti), špatné klima v prvních ročnících a nekvalitní výuku IT. Vysoká fluktuace pedagogů a nový ředitel od ledna 2025 znamenají, že škola je v přechodném období. Před přihláškou se doporučuje pečlivě zvážit obor studia a aktuální stav školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Klesající – výsledky jsou dlouhodobě nízké a nekorespondují s průběžným hodnocením",
+      "key_numbers": [
+        "Obor Ekonomika: neúspěšnost 20–50 %",
+        "Obor IT: podprůměrné výsledky v 2021/2022 a 2023/2024, zejména v cizím jazyce",
+        "Výsledky pod republikovým průměrem v češtině, cizích jazycích a matematice"
+      ],
+      "evidence": "Škola výsledky eviduje, ale neprovádí podrobnou analýzu příčin vysoké míry neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Vysoká – opakovaně dochází k odchodům ze vzdělávání",
+      "key_numbers": [
+        "Z 15 žáků prvního ročníku zůstali jen 3 ve třetím ročníku kombinované formy",
+        "Žáci nejsou dostatečně motivováni k dokončení studia"
+      ],
+      "evidence": "Opatření ke zlepšení prospěchu jsou účinná jen u žáků, kteří se aktivně účastní konzultací, což je velmi omezené."
+    },
+    "support_services": [
+      "Výchovné poradenství: nová poradkyně bez odborné kvalifikace, ale s péčí o žáky se SVP a individuálními vzdělávacími plány",
+      "Metodika prevence: ředitel vykonává funkci metodika prevence sociálně patologických jevů se zavedenými pravidly",
+      "Doučování a konzultace: nabízeny, ale málo využívány žáky"
+    ],
+    "safety_climate": [
+      "Bezpečnost: škola má pravidla, ale nezapracovala podrobně trasu přesunu žáků na tělesnou výchovu",
+      "Klima: napjaté vztahy mezi žáky a některými učiteli v prvních ročnících, chybí vhodné vzorce chování",
+      "Organizace: nový ředitel nastavil kontrolní a hospitační systém, ale není dostatečně účinný"
+    ],
+    "partnerships_practice": [
+      "Akademie HUSPOL – úzká spolupráce v rámci vzdělávacího komplexu",
+      "Základní a střední školy – partnerství pro výměnu zkušeností",
+      "Firmy a státní instituce – praxi absolvují u okresního soudu, podnikatelského inkubátoru, měst a veřejné správy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Slabé stránky jsou jasně vyjmenované. Některé pasáže jsou však technické a vyžadují znalost školského systému.",
+    "uncertainty_notes": [
+      "Není jasné, zda nový ředitel (od ledna 2025) stihne implementovat reformy před dalšími maturitami",
+      "Chybí informace o konkrétních plánech na zlepšení výuky IT a klimatu ve třídách",
+      "Není specifikováno, jaké konkrétní opatření škola přijala na základě předchozí inspekce z listopadu 2021"
+    ]
+  }
+}
+```

@@ -1,0 +1,109 @@
+{
+  "report_id": "GY8_600005160_2021-10-05",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:31:10.863148+00:00",
+  "run_finished_utc": "2026-02-10T08:32:20.211721+00:00",
+  "raw_file": "GY8_600005160_2021-10-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600005160_2021-10-05",
+    "school_profile": {
+      "school_type": "Gymnázium",
+      "inspection_period": "5. 10. 2021 − 7. 10. 2021",
+      "school_change_summary": "Od předchozí inspekce si škola udržuje stabilní počet žáků a kvalitu vzdělávání, došlo k personální obměně na pozicích vedení a výchovného poradenství."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazyky",
+          "detail": "Škola klade velký důraz na systémovou podporu jazykových kompetencí a nadstandardní výsledky v cizích jazycích.",
+          "evidence": "„škola kontinuálně naplňuje koncept... s důrazem na výuku cizích jazyků“, „žáci dosahují nadstandardních výsledků zejména v cizích jazycích“"
+        },
+        {
+          "tag": "Výsledky",
+          "detail": "Žáci dosahují velmi dobrých studijních výsledků a jsou úspěšní při přijímacích řízeních na vysoké školy.",
+          "evidence": "„více než polovina žáků dlouhodobě maturuje s vyznamenáním“, „úspěšnost žáků u maturitní zkoušky, jež je vyšší než průměr“"
+        },
+        {
+          "tag": "Osobnostní rozvoj",
+          "detail": "Díky malé velikosti školy a systému výchovných aktivit je efektivně podporován osobnostní růst žáků.",
+          "evidence": "„účinný všestranný osobnostní rozvoj žáků prostřednictvím rozšiřujících vzdělávacích aktivit“, „výhoda prostředí malé školy“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Individualizace",
+          "detail": "Ve výuce chybí cílenější podpora žáků s různým tempem práce a specifickými potřebami.",
+          "evidence": "„nižší míra specifické podpory žáků podle jejich individuálních potřeb a zohlednění celého spektra jejich nadání“"
+        },
+        {
+          "tag": "Metody výuky",
+          "detail": "V části hodin převažuje frontální výuka bez dostatečného zapojení žáků do aktivit a diskuzí.",
+          "evidence": "„dominoval frontálně vedený výklad“, „uplatňovaná škála metod a forem výuky byla málo pestrá“"
+        },
+        {
+          "tag": "Digitalizace",
+          "detail": "Škola plně nevyužívá potenciál digitálních technologií a materiálů v běžné prezenční výuce.",
+          "evidence": "„menší názornost výuky a využívání zkušeností z distančního vzdělávání v oblasti uplatnění digitálních kompetencí“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé ve výuce diferencují nároky pro nadané žáky a pro ty, kteří potřebují pomalejší tempo?",
+        "Jakým způsobem škola využívá zkušenosti z distanční výuky k modernizaci běžných hodin (např. digitální pomůcky)?",
+        "Jaké konkrétní aktivity nabízíte pro rozvoj sociálních dovedností a vzájemné spolupráce žáků?"
+      ],
+      "who_school_fits": [
+        "Pro ambiciózní žáky, kteří chtějí dosáhnout vynikajících výsledků zejména v cizích jazycích a úspěšně složit maturitu.",
+        "Pro rodiče hledající menší školu s rodinnou atmosférou a individuálním přístupem k řešení problémů.",
+        "Pro žáky, kteří očekávají bohatou nabídku volitelných předmětů a zapojení do školních projektů."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří preferují pasivní styl učení a potřebují silný vnější motivátor, může být náročnost vysoká.",
+        "Pro ty, kteří vyžadují intenzivní individuální podporu přímo ve vyučovací hodině, může být současný styl výuky méně vyhovující.",
+        "Pro žáky, kteří očekávají moderní digitální výuku plnou technických novinek v každém předmětu."
+      ],
+      "plain_czech_summary": "Gymnázium ALTIS je stabilní a úspěšná menší škola s velmi dobrou pověstí. Klíčovými pilíři jsou silná jazyková příprava a osobnostní rozvoj žáků v prostředí, které díky menšímu počtu studentů umožňuje dobrý přehled o jejich potřebách. Výsledky u maturity a přijímacích zkoušek na VŠ jsou nadprůměrné. Inspekce však upozorňuje, že v některých hodinách převažuje tradiční frontální výuka nad aktivním zapojením žáků a chybí důslednější individualizace pro studenty s odlišným tempem práce. Škola je vhodná pro studijně založené žáky, kteří ocení jazyky a rodinné prostředí."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě nadprůměrná úspěšnost s vysokým podílem vyznamenání.",
+        "key_numbers": [
+          "Více než 50 % maturit s vyznamenáním",
+          "Úspěšnost vyšší než průměr oboru ve všech předmětech",
+          "100 % úspěšnost u maturity z matematiky"
+        ],
+        "evidence": "„více než polovina žáků dlouhodobě maturuje s vyznamenáním“, „úspěšnost... je vyšší než průměr v dané skupině oborů“"
+      },
+      "absence": {
+        "trend": "Průměrná absence bez výskytu neomluvených hodin.",
+        "key_numbers": [
+          "Cca 60 omluvených hodin ročně na žáka",
+          "0 neomluvených hodin",
+          "Nízký počet kázeňských opatření"
+        ],
+        "evidence": "„Počet zameškaných hodin na žáka odpovídá typu školy (v průměru 60 omluvených hodin)... neomluvená absence se nevyskytuje.“"
+      },
+      "support_services": [
+        "Kariérové poradenství s komplexní diagnostikou profesní orientace",
+        "Systém pravidelných konzultací všech pedagogů",
+        "Metodická podpora začínajících pedagogů"
+      ],
+      "safety_climate": [
+        "Motivační systém výchovných opatření s převahou pochval",
+        "Efektivní prevence sociálně patologických jevů (program ESA)",
+        "Respektující partnerský přístup učitelů"
+      ],
+      "partnerships_practice": [
+        "Status fakultní školy Přírodovědecké fakulty UK",
+        "Spolupráce s vysokými školami na laboratorních pracích",
+        "Propojení s kulturně vzdělávacími institucemi"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán ve srozumitelné češtině, byť s úřednickou terminologií, která však nepřekáží porozumění hlavním myšlenkám.",
+      "uncertainty_notes": []
+    }
+  }
+}

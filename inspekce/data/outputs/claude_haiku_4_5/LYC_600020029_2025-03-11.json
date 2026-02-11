@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_600020029_2025-03-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:42:33.824043+00:00",
+  "run_finished_utc": "2026-02-09T13:42:59.574024+00:00",
+  "raw_file": "LYC_600020029_2025-03-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600020029_2025-03-11",
+    "school_profile": {
+      "school_type": "Střední zdravotnická škola (obory: Ošetřovatel, Zdravotnické lyceum, Praktická sestra)",
+      "inspection_period": "11. března 2025 až 14. března 2025",
+      "school_change_summary": "Od poslední inspekce došlo k výměně ředitelky a jejích zástupců (2023), rekonstrukci sociálního zařízení, inovaci IT vybavení a nárůstu počtu žáků o 18,44%. Škola je od 2022 zapojena do pokusného ověřování stupňovitého propojení oborů vzdělání."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní praktická výuka",
+          "detail": "Učitelé z praxe předávají vysokou úroveň odborných znalostí v empatickém a profesionálním prostředí podporujícím bezpečnost a etiku.",
+          "evidence": "Hospitační činnost potvrdila vysokou úroveň odborných znalostí a efektivní předávání dovedností žákům na smluvních pracovištích."
+        },
+        {
+          "tag": "Bohatá mimoškolní činnost",
+          "detail": "Žáci se účastní psychologických olympiád, soutěží v první pomoci, kroužků a certifikovaných kurzů s výraznými úspěchy.",
+          "evidence": "Škola nabízí širokou paletu mimoškolní činnosti, kde žáci dosahují významných výsledků, zejména v psychologické olympiádě."
+        },
+        {
+          "tag": "Efektivní vedení a rozvoj pedagogů",
+          "detail": "Ředitelka provádí kariérní pohovory, hospitace a podporuje profesní rozvoj učitelů prostřednictvím projektů a kurzů.",
+          "evidence": "Vedení školy provádí průběžnou hospitaci s doporučeními a vzájemné náslechy učitelů pro sdílení zkušeností."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nižší příprava na maturitu v oboru Praktická sestra",
+          "detail": "Žáci upřednostňují pracovní příležitosti na úkor důsledné přípravy k maturitní zkoušce, úspěšnost byla 85,9%.",
+          "evidence": "Ve školním roce 2023/2024 z celkového počtu přihlášených žáků k maturitní zkoušce uspělo 85,9% žáků."
+        },
+        {
+          "tag": "Omezená individualizace výuky",
+          "detail": "Méně často se objevují úlohy s různou obtížností a individuální přístup k nadaným žákům a žákům se speciálními potřebami.",
+          "evidence": "Hospitační činnost zaznamenala ojediněle možnost výběru úloh s různou úrovní obtížnosti a sebehodnocení žáků."
+        },
+        {
+          "tag": "Nedostatečná práce s informačními zdroji",
+          "detail": "Žáci ojediněle samostatně vyhledávají a ověřují informace z různých zdrojů.",
+          "evidence": "Inspekce doporučuje začlenit do výuky získávání dat a práci s informačními zdroji."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola motivuje žáky oboru Praktická sestra k důsledné přípravě na maturitu, když mají pracovní příležitosti?",
+        "Jaké jsou možnosti individuální práce s nadanými žáky a jak se přizpůsobuje výuka žákům se speciálními vzdělávacími potřebami?",
+        "Jaké zahraniční partnerství nebo výměnné programy škola nabízí?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zájmem o zdravotnické obory, kteří chtějí kvalitní praktickou přípravu od zkušených odborníků",
+        "Nadaní žáci, kteří se chtějí zapojit do soutěží a mimoškolních aktivit (olympiády, první pomoc, odborná činnost)",
+        "Žáci, kteří preferují kombinaci teoretické výuky s intenzivní praktickou přípravou na skutečných pracovištích"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří plánují pokračovat v dalším studiu po maturitě – v oboru Praktická sestra je nižší motivace k přípravě na zkoušku",
+        "Žáci se speciálními vzdělávacími potřebami – individuální přístup není zcela zřejmý",
+        "Žáci, kteří potřebují více podpory v samostatné práci s informacemi a kritickém myšlení"
+      ],
+      "plain_czech_summary": "Střední zdravotnická škola v Karviné je dobře vedená s kvalitní praktickou výukou od zkušených zdravotníků. Žáci se mohou účastnit mnoha zajímavých soutěží a aktivit. Hlavní problém: žáci oboru Praktická sestra se méně připravují na maturitu, protože si najdou práci. Výuka by mohla více individualizovat úkoly podle schopností žáků a více je učit pracovat s informacemi. Prostory jsou pěkné a bezpečné."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vysoká úspěšnost s výjimkou oboru Praktická sestra",
+        "key_numbers": [
+          "Úspěšnost 85,9% v oboru Praktická sestra (školní rok 2023/2024)",
+          "Žáci upřednostňují pracovní příležitosti na úkor přípravy k maturitě"
+        ],
+        "evidence": "Ve školním roce 2023/2024 z celkového počtu přihlášených žáků k maturitní zkoušce uspělo 85,9% žáků, nedostatky se projevují v oboru Praktická sestra."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnými poradkyněmi a školním psychologem",
+        "Strategie předcházení školní neúspěšnosti pro žáky se studijními obtížemi",
+        "Kariérové poradenství pro žáky posledních ročníků s podporou sociálních partnerů",
+        "Metodická pomoc učitelům při naplňování podpůrných opatření pro žáky se speciálními vzdělávacími potřebami"
+      ],
+      "safety_climate": [
+        "Vstupy do budov zabezpečeny proti vniknutí cizích osob",
+        "Žáci seznamováni se školním řádem a pravidly bezpečného chování",
+        "Dodržování bezpečnostních a hygienických pravidel při praktickém vyučování",
+        "Relaxační koutky na chodbách pro odpočinek a neformální setkávání"
+      ],
+      "partnerships_practice": [
+        "Smluvní pracoviska pro praktické vyučování a odborný výcvik v zdravotnických zařízeních",
+        "Charitativní a dobrovolné činnosti s vedením kurzů první pomoci pro ostatní střední školy",
+        "Zdravovědné programy pro mateřské a základní školy jako náborová akce",
+        "Projektové dny se místní partnerskou školou na simulaci hromadných nehod",
+        "Spolupráce s absolventy školy, kteří vedou přednášky"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a citace. Slabší stránky jsou jasně identifikovány. Absence dat o absence žáků a některé obecnější formulace mírně snižují úplnost.",
+      "uncertainty_notes": [
+        "Inspekční zpráva neobsahuje údaje o absence žáků, nelze tedy posoudit trend v docházce",
+        "Není jasné, zda se individuální přístup k žákům se speciálními potřebami týká všech nebo jen některých tříd",
+        "Konkrétní počty žáků v jednotlivých oborech nejsou v závěrech detailně rozvedeny"
+      ]
+    }
+  }
+}

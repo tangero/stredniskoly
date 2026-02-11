@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "GY4_600008266_2025-05-13",
+  "school_profile": {
+    "school_type": "Soukromá střední a základní škola (gymnázium, IT, multimediální tvorba)",
+    "inspection_period": "13. 5. 2025 – 15. 5. 2025",
+    "school_change_summary": "Od poslední inspekce se počet žáků téměř zdvojnásobil. Nově vyučován obor Multimediální tvorba, vybudována multimediální učebna s profesionální kamerou. Rozšířen pedagogický sbor a personálně obměněno poradenské pracoviště."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Digitální kompetence",
+        "detail": "Škola systematicky rozvíjí digitální dovednosti žáků, které jim otevírají širší možnosti uplatnění v dalším studiu i práci.",
+        "evidence": "Rozvoj digitálních kompetencí napříč obory umožňuje široké uplatnění žáků v další studijní i profesní dráze."
+      },
+      {
+        "tag": "Mezinárodní certifikáty",
+        "detail": "Žáci mohou získat uznávané jazykové certifikáty Cambridge a ECDL, což zvyšuje jejich konkurenceschopnost.",
+        "evidence": "Partnerská škola Cambridge English a Österreichisches Sprachdiplom, akreditované testovací středisko ECDL."
+      },
+      {
+        "tag": "Praktické zkušenosti",
+        "detail": "Fiktivní firma Studio EDUCAnet+ propojuje teorii s praxí a rozvíjí týmové dovednosti.",
+        "evidence": "Žáci získávají mediální a marketingové zkušenosti při přípravě školního časopisu, vysílání rádia a sociálních sítí."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá diferenciace výuky",
+        "detail": "Výuka není dostatečně přizpůsobena různým schopnostem žáků, zejména nadaným a těm se speciálními potřebami.",
+        "evidence": "Nízká míra diferenciace a gradace úloh omezuje individualizaci a rozvoj potenciálu. Nadaným žákům věnována podpora zřídka."
+      },
+      {
+        "tag": "Omezené metody výuky",
+        "detail": "Převažuje frontální výuka, málo skupinové práce, práce se zdroji a kritického myšlení.",
+        "evidence": "Malá pestrost metod a forem práce, méně prostoru pro práci s různými informačními zdroji."
+      },
+      {
+        "tag": "Problémy v poradenském servisu",
+        "detail": "Poradenské pracoviště není dostatečně efektivní, zejména v péči o žáky se speciálními potřebami.",
+        "evidence": "Nedostatečně konkrétní vymezení kompetencí, informovanost pedagogů není funkční, podpora není cíleně efektivní."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky? Jaké jsou možnosti individuálního rozvoje jejich talentu?",
+      "Jaké jsou zkušenosti s žáky se speciálními vzdělávacími potřebami? Jak je škola podporuje?",
+      "Jak se škola vypořádává s absencí tělocvičny? Jak probíhá tělesná výchova?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na IT a digitální technologie – škola má silné zázemí v tomto oboru a externí odborníky z praxe",
+      "Žáci s ambicí získat mezinárodní certifikáty – Cambridge, ECDL a jazykové zkoušky jsou součástí nabídky",
+      "Žáci preferující menší třídy – malé kolektivy umožňují individuálnější přístup a osobnější vztahy"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami – poradenské pracoviště má problémy s efektivní podporou",
+      "Nadaní žáci – diferenciace výuky není dostatečná, jejich potenciál není plně rozvíjen",
+      "Žáci preferující aktivní, skupinové a projektové vyučování – škola se zaměřuje spíše na frontální výuku"
+    ],
+    "plain_czech_summary": "EDUCAnet je soukromá škola v centru Českých Budějovic s moderním vybavením a zaměřením na digitální kompetence. Nabízí gymnázium, IT a multimediální tvorbu. Silné stránky: mezinárodní certifikáty, praktické zkušenosti, malé třídy. Slabiny: výuka není dostatečně přizpůsobena různým schopnostem žáků, málo skupinové práce, poradenské pracoviště má problémy. Vhodná pro žáky zaměřené na IT a jazyky, méně vhodná pro ty se speciálními potřebami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, odpovídá vstupním předpokladům",
+      "key_numbers": [
+        "Všichni žáci v uzavřeném školním roce prospěli",
+        "Více než třetina s vyznamenáním",
+        "Čtyři žáci nahradili část maturitní zkoušky certifikátem SERRJ"
+      ],
+      "evidence": "V uzavřeném školním roce na jeho konci prospěli všichni žáci, více než třetina z nich s vyznamenáním. S těmito výsledky také koreluje úspěšnost při zakončování vzdělávání maturitní zkouškou."
+    },
+    "absence": {
+      "trend": "Velmi nízká, minimální neomluvená absence",
+      "key_numbers": [
+        "Velmi nízký počet neprospívajících žáků",
+        "Neomluvená absence registrována minimálně",
+        "Neprospěch zpravidla důsledkem vysoké absence"
+      ],
+      "evidence": "Škola vykazuje velmi nízký počet neprospívajících žáků; neprospěch je zpravidla důsledek vysoké absence. Neomluvená absence je registrována minimálně."
+    },
+    "support_services": [
+      "Výchovná poradkyně, metodik prevence, kariérový poradce pro ZŠ a SŠ",
+      "Externě poskytující služby školní psycholožka (zejména na prvním stupni)",
+      "Individuální konzultace pro žáky ohrožené školním neúspěchem"
+    ],
+    "safety_climate": [
+      "Vzdělávání probíhalo v klidné atmosféře s viditelnou důvěrou a respektem",
+      "Pravidelné třídnické hodiny a eseje žáků umožňují poznat jejich názory a potřeby",
+      "Elektronická schránka důvěry pro anonymní podněty žáků"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Přírodovědecké fakulty Jihočeské univerzity (obor IT)",
+      "Partnerská škola Cambridge English a Österreichisches Sprachdiplom",
+      "Akreditované testovací středisko ECDL, členství v Jihočeské hospodářské komoře"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Chybí některé konkrétní číselné údaje (např. přesné procento prospívajících žáků, konkrétní počty v jednotlivých oborech).",
+    "uncertainty_notes": [
+      "Není jasné, jak přesně se liší výsledky mezi jednotlivými obory (gymnázium vs. IT vs. multimediální tvorba)",
+      "Počet žáků se speciálními potřebami je uveden (12 na ZŠ, 4 na SŠ), ale není jasné, jak efektivně jsou podporováni",
+      "Analýza výsledků maturit není systematická – není jasné, jaké konkrétní oblasti se zlepšují nebo zhoršují"
+    ]
+  }
+}
+```

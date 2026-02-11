@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_600170306_2022-01-10",
+  "school_profile": {
+    "school_type": "Střední škola polytechnická nabízející učební i studijní obory se zaměřením na stavebnictví, strojírenství, ekonomii a požární ochranu.",
+    "inspection_period": "10. 1. 2022 − 13. 1. 2022",
+    "school_change_summary": "Škola prochází modernizací, otevírá nové obory dle potřeb trhu a rozšířila kapacitu domova mládeže."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení a praxe",
+        "detail": "Škola disponuje nadstandardním materiálním zázemím a spolupracuje s firmami, což zajišťuje kvalitní přípravu na povolání.",
+        "evidence": "„Nadstandardní materiálně-technické zázemí... podporuje kvalitu vzdělávání... spolupráce se smluvními partnery... podílí se na kvalitní přípravě žáků.“"
+      },
+      {
+        "tag": "Uplatnění absolventů",
+        "detail": "Absolventi se velmi dobře uplatňují na trhu práce včetně možnosti studia na vysokých školách.",
+        "evidence": "„Velmi dobré uplatnění absolventů školy na trhu práce... Díky spolupráci s několika vysokými školami mají absolventi možnost návazného studia.“"
+      },
+      {
+        "tag": "Klima a bezpečí",
+        "detail": "Ve škole panuje příjemné pracovní atmosféra, důraz je kladen na bezpečnost a prevenci rizikového chování.",
+        "evidence": "„Příjemná a vstřícná pracovní atmosféra... nastavená pravidla zajišťování bezpečnosti a ochrany zdraví žáků jsou funkční.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Ve výuce převažují frontální metody, které žákům nedávají prostor pro aktivitu a rozvoj kritického myšlení.",
+        "evidence": "„Nedostatečná nabídka širšího spektra vyučovacích metod... vedla u některých žáků k pasivnímu přejímání informací.“"
+      },
+      {
+        "tag": "Vysoká absence",
+        "detail": "Výsledky žáků negativně ovlivňuje vysoká absence, se kterou škola má omezené úspěchy při řešení.",
+        "evidence": "„Průběžné i celkové výsledky žáků negativně ovlivňuje zejména vysoká absence... Řešení... má pouze omezené účinky.“"
+      },
+      {
+        "tag": "Maturitní výsledky",
+        "detail": "Škola dosahuje v celorepublikovém srovnání nižší úspěšnosti u maturitních zkoušek.",
+        "evidence": "„Při ukončování vzdělávání státní maturitní zkouškou dosahuje škola v celorepublikovém srovnání nižší úspěšnosti.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s vysokou absencí, aby neztráceli přehled o probrané látce?",
+      "Jaké moderní metody výuky kromě frontálního výkladu učitelé využívají k aktivizaci žáků?",
+      "V jakých oborech dosahují žáci nejlepších maturitních výsledků a proč?"
+    ],
+    "who_school_fits": [
+      "Uchazeči o řemeslné a technické obory, kteří hledají kvalitní zázemí pro praxi a jistotu uplatnění.",
+      "Studenti, kteří oceňují srozumitelná pravidla, bezpečné prostředí a možnost ubytování v modernizovaném domově mládeže.",
+      "Žáci, kteří chtějí navázat spolupráci s firmami již během studia."
+    ],
+    "who_should_be_cautious": [
+      "Studenti, kteří preferují moderní, interaktivní formy výuky před tradičním frontálním výkladem.",
+      "Žáci se sklonem k vyšší absenci, jelikož škola má s tímto problémem omezené možnosti řešení.",
+      "Uchazeči o všeobecné akademické obory, neboť škola má profilaci spíše technickou a praktickou."
+    ],
+    "plain_czech_summary": "Střední škola polytechnická v Českých Budějovicích nabízí kvalitní přípravu na povolání v technických a řemeslných oborech. Jejím velkým plusem je moderní vybavení dílen a silné vazby na zaměstnavatele, což zaručuje absolventům dobrou práci. Pro rodiče je důležité vědět, že prostředí je bezpečné a vedení školy má jasnou vizi. Slabinou může být tradiční styl výuky, který ne vždy motivuje k aktivitě, a celkově nižší úspěšnost u maturit. Škola také bojuje s vysokou absencí žáků. Pro prakticky založené studenty je však volba vhodná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nižší úspěšnost v celorepublikovém srovnání, ale s výrazně lepšími výsledky v oboru Požární ochrana.",
+      "key_numbers": [
+        "Celorepublikově nižší úspěšnost u státních maturit",
+        "Vysoká úspěšnost u závěrečných zkoušek v učebních oborech"
+      ],
+      "evidence": "„...dosahuje škola v celorepublikovém srovnání nižší úspěšnosti... U závěrečných zkoušek... je úspěšnost dlouhodobě poměrně vysoká.“"
+    },
+    "absence": {
+      "trend": "Vysoká absence negativně ovlivňuje studijní výsledky a řešení má omezený efekt.",
+      "key_numbers": [
+        "Vysoká absence",
+        "Vysoký podíl snížených stupňů z chování",
+        "Zvýšená četnost kázeňských opatření"
+      ],
+      "evidence": "„Průběžné i celkové výsledky žáků negativně ovlivňuje zejména vysoká absence... poměrně vysoký podíl snížených stupňů z chování.“"
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště (výchovná poradkyně, metodička prevence).",
+      "Nabídka doučování a konzultací pro vyrovnání znalostních mezer.",
+      "Adaptační programy a kariérové poradenství."
+    ],
+    "safety_climate": [
+      "Funkční pravidla bezpečnosti a ochrany zdraví.",
+      "Úspěšná prevence rizikového chování ve škole.",
+      "Příjemná a vstřícná pracovní atmosféra ve vyučování."
+    ],
+    "partnerships_practice": [
+      "Intenzivní spolupráce s regionálními firmami (stavebnictví, strojírenství).",
+      "Praxe v reálném prostředí firem.",
+      "Spolupráce s vysokými školami umožňující návazné studium."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, odborné termíny jsou vysvětleny kontextem a struktura je logická.",
+    "uncertainty_notes": [
+      "Chybí konkrétní číselné údaje o procentuální úspěšnosti u maturit.",
+      "Není upřesněna konkrétní míra absence v procentech.",
+      "Chybí detailnější rozpis nově otevřených oborů v sekci Závěry."
+    ]
+  }
+}

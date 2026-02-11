@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "SOS_600012735_2022-10-11",
+  "school_profile": {
+    "school_type": "Střední odborná škola a Střední odborné učiliště zaměřená na gastronomii, hotelnictví a potravinářství",
+    "inspection_period": "11. až 14. 10. 2022",
+    "school_change_summary": "Od inspekce v lednu 2016 došlo ke změně vedení (nový zástupce ředitele) a nárůstu počtu žáků téměř o 60, zejména v oborech se závěrečnou zkouškou. Škola má 357 žáků (kapacita 755)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická výuka na vysoké úrovni",
+        "detail": "Odborný výcvik probíhá v reálných provozech se skvělým vybavením a individuálním přístupem k žákům.",
+        "evidence": "Výuka odborného výcviku měla vysokou odbornou úroveň, žáci pracovali se zájmem a prokazovali dovednosti."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dlouhodobě dosahují vynikajících výsledků v odborných soutěžích v rámci republiky.",
+        "evidence": "Škola motivuje a podporuje žáky v soutěžích odbornosti, ve kterých dlouhodobě vykazují vynikající výsledky."
+      },
+      {
+        "tag": "Kvalitní poradenské služby",
+        "detail": "Škola má výchovnou poradkyni, metodičku prevence a školní psycholožku pro podporu žáků.",
+        "evidence": "Školní poradenské služby zajišťuje výchovná poradkyně a metodička prevence, práci koordinuje výchovná poradkyně."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší teoretická výuka",
+        "detail": "Část hodin stále používá zastaralý frontální přístup s málo aktivizujícími metodami a bez ověření naplnění cílů.",
+        "evidence": "V části teoretické výuky nadále přetrvává předávání vědomostí frontální formou s nižším zastoupením efektivnějších metod."
+      },
+      {
+        "tag": "Vysoká neúspěšnost u maturity",
+        "detail": "Přibližně 28 % žáků u maturitní zkoušky neuspělo nebo ji nekonalo, problémy zejména s českým jazykem.",
+        "evidence": "Hrubá neúspěšnost žáků oboru zakončených maturitní zkouškou činila přibližně 28 %."
+      },
+      {
+        "tag": "Špatný stav sociálního zařízení",
+        "detail": "Sociální zařízení v domově mládeže jsou opotřebená a často se porouchávají.",
+        "evidence": "Již od minulé inspekční činnosti přetrvávají nevyhovující podmínky sociálního zařízení u pokojů domova mládeže."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, kteří mají problémy s českým jazykem a přípravou na maturitu?",
+      "Jaký je plán na rekonstrukci sociálního zařízení v domově mládeže a kdy by měla být hotova?",
+      "Jak se škola zaměřuje na zlepšení teoretické výuky a používání moderních vyučovacích metod?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením, kteří chtějí pracovat v gastronomii, hotelnictví nebo potravinářství",
+      "Studenti, kteří se chtějí účastnit mezinárodních výměn (Erasmus+) a specializačních kurzů",
+      "Žáci ze vzdálenějších míst, kteří potřebují ubytování v domově mládeže"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují silnou podporu v teoretických předmětech a přípravě na maturitu",
+      "Studenti, kteří preferují moderní interaktivní výuku s aktivním zapojením",
+      "Žáci se speciálními vzdělávacími potřebami (škola má systém podpory, ale kapacity jsou omezené)"
+    ],
+    "plain_czech_summary": "Škola se zaměřuje na gastronomii a hotelnictví s velmi dobrým praktickým vybavením a výukou. Žáci dosahují skvělých výsledků v odborných soutěžích a absolventi se uplatňují v oboru. Problém je v teoretické výuce, kterou učitelé často vedou zastaralým způsobem bez aktivního zapojení žáků. Maturitní zkoušky jsou pro mnohé žáky náročné, zejména český jazyk. Domov mládeže potřebuje rekonstrukci sociálního zařízení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Negativní - vysoká neúspěšnost",
+      "key_numbers": [
+        "Hrubá neúspěšnost přibližně 28 %",
+        "Největší problémy s didaktickým testem z českého jazyka",
+        "V posledních třech letech hlavně angličtina a čeština"
+      ],
+      "evidence": "Hrubá neúspěšnost žáků oboru zakončených maturitní zkouškou činila přibližně 28 %. Problémy žákům činil nejvíce didaktický test z českého jazyka."
+    },
+    "absence": {
+      "trend": "Negativní dopad COVID-19",
+      "key_numbers": [
+        "Negativní dopad karanténních opatření na docházku",
+        "Předčasné ukončování vzdělávání ve třetím ročníku",
+        "Počet odcházejících žáků klesl (pozitivní trend)"
+      ],
+      "evidence": "Negativní dopad karanténních opatření na docházku a plnění školních povinností. Počet odcházejících žáků klesl."
+    },
+    "support_services": [
+      "Výchovná poradkyně a metodička prevence",
+      "Školní psycholožka pro žáky v náročných situacích",
+      "Individuální vzdělávací plány pro 5 žáků se speciálními potřebami",
+      "Doučování na základě doporučení vyučujících",
+      "Prevence záškoláctví a šikany"
+    ],
+    "safety_climate": [
+      "Atmosféra založena na vzájemné důvěře a respektu",
+      "Příjemné a tvůrčí prostředí ve všech sledovaných skupinách",
+      "Domov mládeže vytváří pozitivní přátelské klima nahrazující rodinné prostředí",
+      "Absolutní kázeň žáků při výuce"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se čtyřmi odbornými asociacemi",
+      "Výměnné stáže žáků a učitelů v rámci Erasmus+ (Itálie, Francie, Slovensko)",
+      "Partnerství se školskými poradenskými zařízeními",
+      "Spolupráce s pedagogicko-psychologickou poradnou",
+      "Vlastní prodejny (cukrárna, maso-uzeniny) pro produktivní činnost žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní čísla a příklady. Některé pasáže jsou složitější, ale celkově je dobře čitelná pro rodiče.",
+    "uncertainty_notes": [
+      "Není jasné, jak konkrétně se škola zaměří na zlepšení teoretické výuky - doporučení je obecné",
+      "Chybí informace o konkrétním harmonogramu rekonstrukce sociálního zařízení domova mládeže",
+      "Není specifikováno, jak dlouho trvá příprava na maturitu a jaké jsou konkrétní podpůrné programy"
+    ]
+  }
+}
+```

@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600020312_2024-04-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:18:09.928938+00:00",
+  "run_finished_utc": "2026-02-09T16:18:34.567534+00:00",
+  "raw_file": "SOS_600020312_2024-04-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600020312_2024-04-23",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola a Střední průmyslová škola se čtyřmi maturitními obory (Design interiérů, Nábytkářská a dřevařská výroba, Technická zařízení budov, Stavebnictví) a vyšším odborným vzděláním v oboru Tvorba nábytku a dřevěné konstrukce",
+      "inspection_period": "23. 4. 2024 – 25. 4. 2024",
+      "school_change_summary": "Částečná změna vedení školy, generační obměna pedagogického sboru, nárůst počtu žáků střední školy o čtvrtinu, pokračující modernizace materiálně-technického vybavení"
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Partnerství a spolupráce",
+          "detail": "Škola má intenzivní dlouhodobou spolupráci s vysokými školami, firmami a zahraničními institucemi, což zvyšuje kvalitu vzdělávání.",
+          "evidence": "Spolupráce s Technickou univerzitou Zvolen, projekty ERASMUS+, mezinárodní konference"
+        },
+        {
+          "tag": "Vybavení a odbornost",
+          "detail": "Nadstandardní materiální zázemí a vysoce kvalifikovaní učitelé podporují rozvoj profesních kompetencí a uplatnitelnost na trhu práce.",
+          "evidence": "Moderní technologie, vysoká odbornost pedagogů, dlouhodobá publikační činnost"
+        },
+        {
+          "tag": "Řízení a strategie",
+          "detail": "Promyšlené vedení školy s jasnou organizační strukturou a kontinuální strategií rozvoje zajišťuje kvalitní vzdělávání.",
+          "evidence": "Funkční přenos informací, kontrolní činnost zaměřená na všechny součásti, hospitační činnost"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka v teoretických předmětech",
+          "detail": "V teoretické výuce střední školy převažuje frontální výuka, chybí aktivizující metody a diferenciace podle schopností žáků.",
+          "evidence": "Ojediné využití kooperativních činností, problémového učení, formativního hodnocení"
+        },
+        {
+          "tag": "Nedostatečná příprava na závěr hodin",
+          "detail": "Chybí dostatečný čas na shrnutí učiva a zhodnocení pokroku žáků na konci hodin.",
+          "evidence": "Často chybí závěr hodin s dostatečným časovým prostorem"
+        },
+        {
+          "tag": "Pokles zájmu o vyšší odborné studium",
+          "detail": "Vyšší odborná škola zaznamenává postupný pokles zájmu studentů, hlavně kvůli upřednostňování vysokoškolského studia.",
+          "evidence": "Trend poklesu zájmu o studium na VOŠ"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zlepšit aktivní zapojení žáků v teoretické výuce a jaké nové metody zavádí?",
+        "Jaké jsou konkrétní výsledky absolventů na trhu práce a jak škola sleduje jejich kariérní vývoj?",
+        "Jak funguje spolupráce s Technickou univerzitou Zvolen a jaké jsou výhody souběžného studia bakalářského programu?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla, kteří se chtějí učit v moderně vybaveném prostředí",
+        "Studenti, kteří chtějí kombinovat střední vzdělání s vysokoškolským studiem (bakalářský program)",
+        "Žáci se zájmem o dřevařství, stavebnictví, design a techniku s podporou mezinárodních projektů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující aktivní, diskusní a problémově orientovanou výuku – v teoretických předmětech převažuje frontální přístup",
+        "Žáci se speciálními vzdělávacími potřebami – diferenciace a individuální podpora jsou aplikovány ojediněle",
+        "Zájemci o vyšší odborné vzdělání – škola hlásí pokles zájmu o VOŠ studium"
+      ],
+      "plain_czech_summary": "Škola s dlouhou tradicí (od 1864) nabízí kvalitní odborné vzdělávání v praktických oborech. Silnými stránkami jsou moderní vybavení, odborní učitelé a spolupráce s vysokými školami a firmami. Praktická výuka je na vysoké úrovni. Slabší je teoretická výuka, kde chybí aktivizující metody a individuální přístup. Škola má velmi nízkou absenci a málo neprospívajících žáků. Absolventi se dobře uplatňují na trhu práce."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní, výsledky maturitní zkoušky zpravidla odpovídají průběžným výsledkům",
+        "key_numbers": [
+          "Vysoká úroveň maturitních a klausurních prací s důrazem na praktické využití",
+          "Nabídka přípravy z češtiny, angličtiny a matematiky"
+        ],
+        "evidence": "Výsledky maturitní zkoušky korespondují s výsledky průběžnými, maturitní práce zpracovávány s důrazem na praktické využití"
+      },
+      "absence": {
+        "trend": "Velmi nízká absence, minimální výskyt neomluvené absence",
+        "key_numbers": [
+          "Minimální výskyt neomluvené absence",
+          "Velmi nízký počet neprospívajících žáků"
+        ],
+        "evidence": "Výsledkem nastavených postupů je velmi nízký počet neprospívajících žáků i minimální výskyt neomluvené absence"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště posílené o školní psycholožku",
+        "Domov mládeže s úzkou spoluprací s třídními učiteli na prevenci školní neúspěšnosti",
+        "Adaptační kurzy pro žáky prvních ročníků na podporu zdravých vztahů v kolektivu",
+        "Plán primárně preventivních aktivit aplikovaný v rámci výuky a mimoškolních akcí"
+      ],
+      "safety_climate": [
+        "Vstřícný způsob komunikace mezi žáky, studenty a pedagogy",
+        "Dodržování nastavených pravidel a respektující pracovní atmosféra",
+        "Důraz na dodržování zásad bezpečnosti a ochrany zdraví při manuálních činnostech"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s Technickou univerzitou Zvolen (detašované pracoviště, souběžné bakalářské studium)",
+        "Spolupráce s vysokými školami ze Slovenska, Německa, Slovinska a Norska",
+        "Projekty ERASMUS+ a mezinárodní konference",
+        "Spolupráce se sociálními partnery a firmami na vytváření nadstandardních podmínek pro praktické vyučování",
+        "Spolupráce se středními a základními školami v oblasti technického vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Slabší stránky jsou jasně identifikovány, ale doporučení jsou poměrně obecná. Chybí konkrétní číselné údaje o výsledcích maturit a absenci.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní procenta úspěšnosti u maturitní zkoušky ani přesné údaje o absenci",
+        "Není jasné, jak přesně se liší kvalita teoretické výuky mezi jednotlivými obory a třídami",
+        "Chybí informace o počtu žáků, kteří opakují ročník nebo školu opouštějí"
+      ]
+    }
+  }
+}

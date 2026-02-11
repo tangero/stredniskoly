@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_610250574_2023-05-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:41:02.567907+00:00",
+  "run_finished_utc": "2026-02-09T16:41:24.165671+00:00",
+  "raw_file": "LYC_610250574_2023-05-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_610250574_2023-05-09",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola s domovem mládeže a jídelnou",
+      "inspection_period": "9. května až 15. května 2023",
+      "school_change_summary": "Nový ředitel, nové učebny strojírenství, centrum 3D tisku, první etapa rekonstrukce domova mládeže"
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické dovednosti",
+          "detail": "Výborné vybavení odborných učeben simulující pracovní prostředí, kvalitní propojení teorie a praxe v odborných předmětech.",
+          "evidence": "Pedagogové v praktickém vyučování poskytují zpětnou vazbu s důrazem na bezpečnost a kvalitu."
+        },
+        {
+          "tag": "Podpora žáků",
+          "detail": "Komplexní systém péče včetně doučování, konzultací, psychologa na plný úvazek a adaptačních pobytů.",
+          "evidence": "Školní psycholožka řídí poradenské pracoviště, sleduje klima v třídách a realizuje intervenční programy."
+        },
+        {
+          "tag": "Výsledky maturit",
+          "detail": "Výsledky maturitních zkoušek lepší než průměr ČR, vysoká úspěšnost u závěrečných zkoušek.",
+          "evidence": "V podzimním termínu 2021/2022 uspělo 94,5 % maturujících, nízká míra neúspěšnosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka",
+          "detail": "Převažuje frontální výuka se zápisem do sešitu, málo skupinové práce a moderních metod, nízká aktivizace žáků.",
+          "evidence": "V hospitovaných hodinách všeobecně vzdělávacích předmětů převažovala frontální výuka, zapojení žáků bylo ojedinělé."
+        },
+        {
+          "tag": "Chybějící diferenciace",
+          "detail": "Společné tempo pro celou třídu neumožňuje práci podle schopností jednotlivých žáků, nadaní čekají, slabší nemají podporu.",
+          "evidence": "Pohotovější žáci museli čekat, nedostávali dodatečné úkoly; méně úspěšní neměli prodloužený výklad."
+        },
+        {
+          "tag": "Slabá zpětná vazba",
+          "detail": "Chybí sebehodnocení a vzájemné hodnocení žáků, závěry hodin nejsou efektivní, hospitace neposkytují dostatečnou zpětnou vazbu.",
+          "evidence": "Při plnění úkolů nebyla využita příležitost pro diferencovaný přístup; závěry hodin bez vyhodnocení cíle."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje zavádět aktivizační metody a moderní formy výuky v jednotlivých předmětech?",
+        "Jaké jsou možnosti individuálního přístupu v hodinách všeobecně vzdělávacích předmětů pro nadané a slabší žáky?",
+        "Jak se škola vypořádá s nedostatky v diferenciaci během výuky, které inspekce zjistila?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a technické obory – výborné vybavení a propojení teorie s praxí",
+        "Žáci potřebující podporu – komplexní systém doučování, psychologa a sociální péče",
+        "Žáci s ambicí na vysoké výsledky maturit – škola dosahuje nadprůměrných výsledků"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující interaktivní a skupinovou výuku – převažuje frontální výuka se zápisem",
+        "Nadaní žáci – chybí diferenciace, mohou se nudit a čekat na ostatní",
+        "Žáci potřebující jasné cíle a zpětnou vazbu – závěry hodin nejsou efektivní, chybí sebehodnocení"
+      ],
+      "plain_czech_summary": "SPŠ Třebíč je velké centrum technického vzdělávání s dobrým vybavením a výsledky maturit nad průměrem. Silnou stránkou je praktická výuka a komplexní podpora žáků. Inspekce ale upozornila na problémy: výuka je příliš frontální a pasivní, chybí diferenciace podle schopností žáků a efektivní zpětná vazba. Škola má 30 dní na zavedení náprav, zejména na aktivizaci žáků a individuální přístup."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – výsledky nad průměrem ČR",
+        "key_numbers": [
+          "94,5 % úspěšnost v podzimním termínu 2021/2022",
+          "Výsledky lepší než průměr ČR",
+          "Stabilní výsledky u závěrečných zkoušek"
+        ],
+        "evidence": "Výsledky žáků u maturitních zkoušek ve školním roce 2021/2022 byly lepší než průměr ČR. Po podzimním termínu uspělo 94,5 % maturujících."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [],
+        "evidence": "Zpráva neobsahuje konkrétní údaje o absenci žáků."
+      },
+      "support_services": [
+        "Školní psycholožka na plný úvazek řídící poradenské pracoviště",
+        "Doučování a individuální konzultace",
+        "Spolupráce s domovem mládeže",
+        "Adaptační pobyty a programy prevence rizikového chování",
+        "Systém identifikace žáků se speciálními potřebami a nadaných žáků"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra s partnerským přístupem pedagogů",
+        "Žáci s respektem přijímají autoritu pedagogů",
+        "Aktivně pracující žákovský senát",
+        "Účinná pravidla v domově mládeže umožňující vlastní činnost a relaxaci"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s místními firmami zvyšující propagaci oborů a profesní uplatnění",
+        "Rozšiřování digitální sady učebních materiálů ve spolupráci s vyučujícími",
+        "Aktivní spolupráce pedagogů domova mládeže s vedením školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je jasně strukturovaná a obsahuje konkrétní příklady. Silné a slabé stránky jsou dobře zdokumentovány. Absence konkrétních čísel o absenci a některé obecnější formulace snižují skóre z 5 na 4.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – nelze posoudit trend",
+        "Počet žáků se speciálními potřebami není specifikován",
+        "Konkrétní počty hodin s aktivizačními metodami nejsou uvedeny"
+      ]
+    }
+  }
+}

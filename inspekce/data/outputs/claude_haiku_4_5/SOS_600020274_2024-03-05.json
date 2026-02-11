@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600020274_2024-03-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:23:46.019381+00:00",
+  "run_finished_utc": "2026-02-09T16:24:11.132916+00:00",
+  "raw_file": "SOS_600020274_2024-03-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600020274_2024-03-05",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola lesnická a Střední lesnická škola Bedřicha Schwarzenberga",
+      "inspection_period": "5. března 2024 až 15. března 2024",
+      "school_change_summary": "Zvýšil se počet žáků a studentů, došlo k částečné generační obměně pedagogů, zlepšilo se materiální zázemí a byly přepracovány školní vzdělávací programy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava na povolání",
+          "detail": "Spolupráce se smluvními partnery z regionálních a nadregionálních zaměstnavatelů umožňuje kvalitní přípravu na budoucí povolání.",
+          "evidence": "Efektivní spolupráce se smluvními partnery z řad významných regionálních i nadregionálních zaměstnavatelů."
+        },
+        {
+          "tag": "Mezinárodní zkušenosti",
+          "detail": "Dlouholetá spolupráce se zahraničními školami podporuje výměnu zkušeností a rozvoj komunikativních kompetencí.",
+          "evidence": "Dlouholetá spolupráce se zahraničními školami podporuje výměnu zkušeností a rozvoj občanských, sociálních a komunikativních kompetencí."
+        },
+        {
+          "tag": "Motivace a identita",
+          "detail": "Pestrá nabídka školních a mimoškolních aktivit zvyšuje motivaci žáků k dosahování dobrých výsledků.",
+          "evidence": "Pestrá nabídka školních i mimoškolních aktivit cíleně prohlubuje pocit sounáležitosti a stavovské příslušnosti."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní vyučování v teorii",
+          "detail": "Učitelé v teoretické výuce málo využívají aktivní metody, které by zvyšovaly aktivitu a spolupráci žáků.",
+          "evidence": "Ve většině sledovaných hodin převažoval frontální způsob výuky, který neposkytoval žákům dostatek prostoru pro jejich aktivitu."
+        },
+        {
+          "tag": "Slabé formativní hodnocení",
+          "detail": "Vyučující se zaměřují především na okamžité výkony, málo využívají sebehodnocení a vzájemné hodnocení.",
+          "evidence": "Vyučující převážně hodnotili okamžité výkony žáků, jen v malé míře bylo využíváno sebehodnocení a vzájemné hodnocení."
+        },
+        {
+          "tag": "Nedostatečná diferenciace",
+          "detail": "Úkoly nejsou dostatečně přizpůsobovány individuálním potřebám slabších i nadaných žáků.",
+          "evidence": "K diferenciaci zadávaných úkolů s ohledem na rozvoj individuálního potenciálu docházelo pouze v malém počtu sledovaných hodin."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jak se liší přístup k žákům se slabšími výsledky?",
+        "Jaké konkrétní firmy a zaměstnavatele máte jako partnery pro praktickou výuku?",
+        "Jak probíhá příprava na maturitní zkoušky a jaké jsou výsledky vašich absolventů?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří se zajímají o lesnictví a chtějí praktickou přípravu s kontaktem na reálné pracovní prostředí",
+        "Studenti, kteří si chtějí rozšířit obzory mezinárodní spoluprací a výměnnými pobyty",
+        "Žáci, kteří potřebují podporu domova mládeže a individuální péči při studiu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří preferují aktivní a interaktivní vyučování – teoretická výuka je zatím spíše tradiční",
+        "Nadaní žáci, kteří potřebují individuální přizpůsobení úkolů – diferenciace není dostatečná",
+        "Žáci, kteří se učí lépe skrze sebehodnocení a reflexi – ty nejsou v hodinách dostatečně využívány"
+      ],
+      "plain_czech_summary": "Lesnická škola v Písku je kvalitní zaměřená instituce s výbornou praxí a kontakty na zaměstnavatele. Žáci se učí v reálném prostředí a mají šanci na zahraniční výměny. Domov mládeže poskytuje dobrou podporu. Slabší stránkou je teoretická výuka, která je zatím spíše tradiční a frontální. Učitelé by měli více využívat aktivní metody a lépe přizpůsobovat úkoly jednotlivým žákům. Výsledky maturit a uplatnění absolventů jsou velmi dobré."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborný",
+        "key_numbers": [
+          "Velmi nízký počet neprospívajících žáků v maturitním oboru",
+          "Výsledky u maturitních zkoušek na výborné úrovni",
+          "Vysoká uplatnitelnost absolventů na trhu práce"
+        ],
+        "evidence": "Škola má velmi nízký počet neprospívajících žáků v maturitním oboru. Výsledky žáků u maturitních zkoušek jsou na výborné úrovni."
+      },
+      "absence": {
+        "trend": "Dobrý",
+        "key_numbers": [
+          "Škole se daří zvládat absenci žáků, včetně neomluvené",
+          "Úzká spolupráce s domovem mládeže na prevenci absence",
+          "Nízký počet neprospívajících žáků"
+        ],
+        "evidence": "Škole se díky úzké a efektivní spolupráci s domovem mládeže daří zvládat absenci žáků, včetně neomluvené."
+      },
+      "support_services": [
+        "Domov mládeže s 242 ubytovanými účastníky v 8 výchovných skupinách",
+        "Sociální stipendia pro žáky v tíživé životní situaci",
+        "Firemní stipendia pro žáky učebního oboru",
+        "Adaptační kurzy, třídnické hodiny a sociometrická šetření",
+        "Prevence školní neúspěšnosti a rizikového chování"
+      ],
+      "safety_climate": [
+        "Teoretické vzdělávání probíhalo v klidné pracovní atmosféře",
+        "Žáci respektovali dohodnutá pravidla chování",
+        "Velká pozornost věnována bezpečnosti práce v praktickém vyučování",
+        "Výchovná opatření jsou funkční, motivačně převládají pochvaly nad kázeňskými opatřeními"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s významnými regionálními a nadregionálními lesnickými a dřevařskými subjekty",
+        "Dlouhodobá spolupráce se zahraničními školami obdobného zaměření",
+        "Zapojení odborníků z praxe do výuky",
+        "Stáže pedagogů u zaměstnavatelů",
+        "Praktické vyučování ve školním polesí v reálném prostředí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Obsahuje konkrétní příklady a citace. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní procenta nebo čísla pro některé klíčové metriky (např. přesný podíl neprospívajících žáků)",
+        "Není jasné, jak se výsledky školy srovnávají s průměrem podobných škol v regionu",
+        "Detaily o konkrétních metodách aktivního učení, které by měly být zavedeny, nejsou specifikovány"
+      ]
+    }
+  }
+}

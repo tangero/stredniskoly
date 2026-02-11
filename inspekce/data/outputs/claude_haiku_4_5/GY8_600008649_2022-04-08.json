@@ -1,0 +1,118 @@
+{
+  "report_id": "GY8_600008649_2022-04-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:04:35.982114+00:00",
+  "run_finished_utc": "2026-02-09T17:05:01.165264+00:00",
+  "raw_file": "GY8_600008649_2022-04-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600008649_2022-04-08",
+    "school_profile": {
+      "school_type": "Osmileté a čtyřleté gymnázium v denní formě",
+      "inspection_period": "8. 4. 2022 – 13. 4. 2022",
+      "school_change_summary": "Od roku 2018 nová ředitelka realizuje koncepci modernizace výuky a otevření školy navenek. Probíhá generační obměna pedagogického sboru s příznivou věkovou strukturou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Škola dosahuje v celorepublikovém porovnání srovnatelné či nadprůměrné úspěšnosti, v roce 2020/2021 měla 0% neúspěšnost.",
+          "evidence": "\"hrubé neúspěšnosti 0 % a tato skutečnost dokládá mimo jiné to, že škola dobře zvládla období distančního vzdělávání\""
+        },
+        {
+          "tag": "Bohatá nabídka aktivit a projektů",
+          "detail": "Škola nabízí volitelné předměty, kroužky, sportovní kurzy a celoškolské projekty podporující rozvoj kompetencí.",
+          "evidence": "\"Díky bohaté nabídce volitelných předmětů se mohou žáci dle svého zájmu profilovat v celém spektru vzdělávacích oborů\""
+        },
+        {
+          "tag": "Kvalitní poradenství a podpora",
+          "detail": "Funkční poradenské pracoviště s výchovným poradcem, psycholožkou a metodičkou prevence poskytuje individuální konzultace a kariérové poradenství.",
+          "evidence": "\"Školní poradenské pracoviště poskytuje odpovídající pomoc při řešení výchovných, prospěchových a osobních problémů žáků\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná diferenciace ve výuce",
+          "detail": "Chybí hlubší individualizace úkolů a využívání různých informačních zdrojů, formativní hodnocení není dostatečně využíváno.",
+          "evidence": "\"Ve výuce chybí hlubší diferenciace a individualizace s cílem zohlednit odlišné potřeby jednotlivých žáků\""
+        },
+        {
+          "tag": "Nižší naplněnost čtyřletého gymnázia",
+          "detail": "Kapacita školy je naplněna pouze na 70% kvůli řídké osídlenosti regionu a demografickému vývoji.",
+          "evidence": "\"Kapacita školy je naplněna na 70 %. Specifikem školy je velká spádová oblast řídce osídleného příhraničního regionu\""
+        },
+        {
+          "tag": "Formální nedostatky v dokumentaci",
+          "detail": "V průběhu inspekce byly zjištěny některé formální nepřesnosti v dokumentaci, které byly částečně odstraněny.",
+          "evidence": "\"V dokumentaci školy byly v průběhu inspekční činnosti upraveny některé formální nepřesnosti\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různými potřebami a tempem učení?",
+        "Jaké jsou konkrétní výsledky absolventů při přijímacím řízení na vysoké školy a jak se škola podílí na jejich přípravě?",
+        "Jak funguje systém doučování a konzultací pro žáky, kteří mají problémy s určitými předměty?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o kvalitní přípravu na vysokou školu – škola má ověřené výsledky a kariérové poradenství",
+        "Talentovaní žáci zajímající se o projekty a soutěže – škola aktivně podporuje rozvoj nadání",
+        "Žáci z regionu Prachaticka – škola má dlouhou tradici a je součástí místní komunity"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující intenzivní individuální přístup – výuka není dostatečně diferencovaná",
+        "Žáci preferující praktické a aplikované učení – výuka má tendenci k převaze výkladu učitele",
+        "Žáci se speciálními vzdělávacími potřebami – podpora je poskytována, ale v omezeném rozsahu (12 žáků)"
+      ],
+      "plain_czech_summary": "Gymnázium v Prachaticích je stabilní školou s dobrými výsledky maturit a bohatou nabídkou aktivit. Nová ředitelka od roku 2018 modernizuje výuku a otevírá školu navenek. Pedagogický sbor je kvalifikovaný a aktivní v profesním rozvoji. Silnou stránkou je práce s výsledky a kariérové poradenství. Slabší je hlubší individualizace výuky a diferenciace úkolů. Škola dobře zvládla distanční vzdělávání a udržuje nízkou absenci. Vhodná pro ambiciózní žáky připravující se na vysokou školu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně nadprůměrné",
+        "key_numbers": [
+          "0% neúspěšnosti v roce 2020/2021",
+          "Srovnatelné či nadprůměrné výsledky v celorepublikovém porovnání",
+          "Vysoká míra prospěchu s vyznamenáním"
+        ],
+        "evidence": "\"Při ukončování vzdělávání státní maturitní zkouškou dosahuje škola v celorepublikovém porovnání se stejnou skupinou oborů srovnatelné či nadprůměrné úspěšnosti\""
+      },
+      "absence": {
+        "trend": "Nízká a kontrolovaná",
+        "key_numbers": [
+          "Nízký výskyt neomluvených absencí",
+          "Zanedbatelný podíl snížených stupňů z chování",
+          "Nižší četnost kázeňských opatření než pochval"
+        ],
+        "evidence": "\"Průběžné i celkové výsledky žáků pozitivně ovlivňuje i nízká absence. Škole se daří udržovat poměrně nízký výskyt neomluvených absencí\""
+      },
+      "support_services": [
+        "Výchovný poradce, školní psycholožka a školní metodička prevence",
+        "Individuální vzdělávací plány pro 12 žáků se speciálními vzdělávacími potřebami",
+        "Skupinové doučování a konzultace pro žáky s rozdílnými znalostmi",
+        "Kariérové poradenství s individuálními konzultacemi a statistikami úspěšnosti absolventů"
+      ],
+      "safety_climate": [
+        "Funkční nastavená pravidla zajišťování bezpečnosti a ochrany zdraví",
+        "Elektronické zabezpečení zadního vchodu do šaten",
+        "Aktivní prevence rizikového chování formou sportovních, kulturních a charitativních akcí",
+        "Spolupráce s neziskovými organizacemi na snižování rizikových jevů",
+        "Adaptační kurzy a peer-programy pro budování zdravých vztahů"
+      ],
+      "partnerships_practice": [
+        "Partnerství s vysokými školami – titul fakultní škola Pedagogické a Přírodovědecké fakulty Jihočeské univerzity",
+        "Spolupráce s jazykovým centrem na přípravu na mezinárodně uznávané zkoušky",
+        "Projekty Erasmus+ s podporou mobility žáků a pedagogů",
+        "Veřejné přednášky a besedy s odborníky z vysokých škol",
+        "Spolupráce s neziskovými organizacemi na prevenci rizikového chování"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a citacemi. Jsou jasně odděleny silné stránky, slabé stránky a doporučení. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o počtu žáků s jednotlivými stupni prospěchu nebo absence v procentech",
+        "Není jasné, jak přesně se liší výuka mezi jednotlivými třídami a předměty",
+        "Chybí informace o počtu žáků, kteří se zúčastňují doučování nebo konzultací"
+      ]
+    }
+  }
+}

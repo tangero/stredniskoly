@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_691015856_2023-05-30",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:39:43.988845+00:00",
+  "run_finished_utc": "2026-02-09T16:40:08.316410+00:00",
+  "raw_file": "GY4_691015856_2023-05-30.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691015856_2023-05-30",
+    "school_profile": {
+      "school_type": "Meridian česko-britská základní škola, s.r.o. (soukromá ZŠ s bilingvním zaměřením)",
+      "inspection_period": "30. května až 31. května 2023",
+      "school_change_summary": "Škola poskytuje vzdělání od školního roku 2022/2023 se zaměřením na komplexní rozvoj osobnosti žáků s důrazem na anglický jazyk. K inspekci měla 4 žáky v 1. ročníku."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Škola efektivně využívá bilingvní prostředí s rodilými mluvčími, kteří přirozeně podporují anglickou komunikaci.",
+          "evidence": "\"Každodenní přirozená komunikace s rodilým mluvčím vytváří velmi dobré základy pro další rozvoj komunikačních dovedností žáků v anglickém jazyce.\""
+        },
+        {
+          "tag": "Bezpečné a přátelské prostředí",
+          "detail": "Atmosféra je založena na vzájemné důvěře, respektu a empatickém přístupu pedagogů.",
+          "evidence": "\"Společným znakem vzdělávání je přátelská, respektující atmosféra, vzájemná důvěra, vstřícná komunikace a empatický přístup pedagogů k žákům.\""
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Malý počet žáků umožňuje maximální využití individuálního přístupu a podpory při prospěchových výkyvech.",
+          "evidence": "\"Organizace výuky, její personální zajištění a počet žáků umožňovaly maximální využití individuálního přístupu ve vzdělávání.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zkušenost pedagogů",
+          "detail": "Téměř polovina učitelů je nekvalifikovaných nebo má kratší pedagogickou praxi, což se projevilo didaktickými nedostatky.",
+          "evidence": "\"Téměř polovina z nich je nekvalifikovaných nebo s kratší pedagogickou praxí\" a \"dílčí metodické a didaktické nedostatky související s nižší mírou pedagogických zkušeností.\""
+        },
+        {
+          "tag": "Kontrolní systém",
+          "detail": "Kontrolní systém zatím není zcela funkční, což se projevilo v některých nedostatcích ve školní družině.",
+          "evidence": "\"Kontrolní systém zatím není zcela funkční, což se projevilo některými didaktickými nedostatky ve školní družině.\""
+        },
+        {
+          "tag": "Chybějící relaxační aktivity",
+          "detail": "Ve školní družině chybí odpočinkové a klidové aktivity pro regeneraci žáků.",
+          "evidence": "\"V zájmovém vzdělávání však nebyly zařazeny odpočinkové a klidové aktivity, které by poskytly žákům prostor pro relaxaci.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně probíhá spolupráce s rodilými mluvčími a kolik hodin týdně se anglickému jazyku věnuje?",
+        "Jaký je plán na zvýšení kvalifikace pedagogů a jak se škola vypořádá s nedostatky v didaktických postupech?",
+        "Jaké relaxační a odpočinkové aktivity plánuje škola zařadit do programu školní družiny?"
+      ],
+      "who_school_fits": [
+        "Rodiny, které chtějí kvalitní bilingvní vzdělání s důrazem na anglický jazyk od základní školy",
+        "Rodiče hledající malou, přátelskou školu s individuálním přístupem a bezpečným prostředím",
+        "Žáci, kteří prospívají v prostředí s osobním přístupem a podporou při učebních potížích"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají vysokou kvalifikaci všech pedagogů – více než polovina učitelů je nekvalifikovaných nebo začínajících",
+        "Žáci, kteří potřebují více struktury a jasných pravidel – kontrolní systém není zcela funkční",
+        "Děti vyžadující více odpočinkových chvil – školní družina postrádá relaxační aktivity"
+      ],
+      "plain_czech_summary": "Meridian je malá soukromá základní škola se zaměřením na bilingvní vzdělání. Její největší silou je kvalitní jazykové vzdělání s rodilými mluvčími a přátelské, bezpečné prostředí. Učitelé jsou vstřícní a individuálně se věnují žákům. Slabší stránkou je, že téměř polovina pedagogů nemá dostatečné zkušenosti, což se projevilo v některých didaktických nedostatcích. Kontrolní systém se teprve buduje. Škola také postrádá relaxační aktivity v odpoledním programu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Není relevantní – jedná se o základní školu",
+        "key_numbers": [
+          "Škola byla založena v roce 2022/2023",
+          "K inspekci měla 4 žáky v 1. ročníku"
+        ],
+        "evidence": "Inspekce se týkala základní školy, nikoli gymnázia. Zpráva neobsahuje údaje o maturitě."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněna",
+        "key_numbers": [
+          "Údaje o absenci nejsou v inspekční zprávě uvedeny"
+        ],
+        "evidence": "Inspekční zpráva se nezabývá absencí žáků."
+      },
+      "support_services": [
+        "Prvotní pedagogická diagnostika pro žáky se speciálními vzdělávacími potřebami",
+        "Plány pedagogické podpory na základě doporučení školských poradenských zařízení",
+        "Individualizované doučování a domácí úkoly pro žáky s prospěchovými výkyvy",
+        "Prevence sociálně patologických jevů prostřednictvím monitoringu klimatu školy"
+      ],
+      "safety_climate": [
+        "Bezproblémové chování žáků a slušné vystupování zaznamenané v hospitovaných hodinách",
+        "Pozitivní role rodinného prostředí a malé velikosti školy",
+        "Účinně nastavené mechanismy zaměřené na budování pozitivních vztahů mezi aktéry vzdělávání",
+        "Komplexní průběžný monitoring klimatu školy a vzájemné interakce mezi žáky"
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce s partnerskou mezinárodní česko-britskou školou ve stejném areálu",
+        "Přirozená setkávání a kooperace žáků vedoucí k vytváření komunitních vazeb",
+        "Četné formy spolupráce se zákonnými zástupci (třídní schůzky, individuální konzultace, elektronický systém)",
+        "Aktivní zapojení rodičů do života školy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky z inspekce. Silné a slabé stránky jsou jasně identifikovány s příslušnými důkazy. Absence některých údajů (absence, maturita) je pochopitelná vzhledem k typu školy.",
+      "uncertainty_notes": [
+        "Zpráva se týká základní školy, nikoli gymnázia – metadata uvádějí typ GY4, což je nekonzistence v dokumentaci",
+        "Velmi malý počet žáků (4 v 1. ročníku) ztěžuje generalizaci poznatků o kvalitě vzdělání",
+        "Škola funguje teprve od roku 2022/2023, takže dlouhodobé trendy nelze posoudit"
+      ]
+    }
+  }
+}

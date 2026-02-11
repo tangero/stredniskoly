@@ -1,0 +1,113 @@
+```json
+{
+  "report_id": "GY6_600008088_2022-12-12",
+  "school_profile": {
+    "school_type": "Biskupské gymnázium J. N. Neumanna s připojenou základní školou, základní uměleckou školou a domem mládeže",
+    "inspection_period": "12. 12. 2022 – 15. 12. 2022",
+    "school_change_summary": "Škola rozšířila činnost o základní uměleckou školu a dům dětí a mládeže. Došlo k modernizaci obou budov, zlepšení vybavení IT technikou a navýšení kapacity školního klubu. Nový ředitel pokračuje v tradici kvalitního jazykově-humanitního vzdělání s důrazem na duchovní rozvoj."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání na špičkové úrovni",
+        "detail": "Škola získala ocenění od British Council jako nejlepší v ČR v počtu certifikátů v angličtině; žáci získávají certifikáty v angličtině, němčině, francouzštině a španělštině na úrovni B2–C2.",
+        "evidence": "Dlouhodobá systematická podpora jazykového vzdělávání s mimořádnou úspěšností při získávání mezinárodně uznávaných certifikátů."
+      },
+      {
+        "tag": "Výborné výsledky u maturity",
+        "detail": "V posledních dvou školních rocích dosáhli žáci nulové hrubé neúspěšnosti ve společné části maturitní zkoušky, výsledky jsou lepší než průměr stejných oborů v ČR.",
+        "evidence": "Dlouhodobě velmi vysoká úspěšnost při státní maturitní zkoušce, téměř všichni absolventi pokračují na vysokých školách."
+      },
+      {
+        "tag": "Bohatá nabídka volnočasových aktivit",
+        "detail": "Dům dětí a mládeže, školní klub a družina nabízejí 37 zájmových útvarů s vazbou na maturitní předměty a přípravu na jazykové certifikáty.",
+        "evidence": "Cílené zapojování žáků do rozšiřujících vzdělávacích aktivit systematicky podporuje rozvoj specifických zájmů a nadání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečné prostory pro tělesnou výchovu",
+        "detail": "Výuku tělesné výchovy limitují nedostatečné prostory v obou budovách školy.",
+        "evidence": "Omezené zázemí pro tělesnou výchovu v základní škole a gymnáziu ztěžuje organizaci vzdělávání."
+      },
+      {
+        "tag": "Slabší využívání aktivních metod na druhém stupni ZŠ",
+        "detail": "Ve výuce druhého stupně základní školy převažuje frontální způsob výuky, málo se využívají skupinové práce a aktivizující prvky.",
+        "evidence": "Ve výuce na druhém stupni základní školy nejsou dostatečně využívány formy a metody práce podporující aktivní zapojení žáků."
+      },
+      {
+        "tag": "Nová základní umělecká škola teprve nabírá formu",
+        "detail": "Základní umělecká škola zahájila činnost v roce 2021/2022, chybí jí odpovídající zázemí a hospitační činnost zatím není realizována.",
+        "evidence": "Tým základní umělecké školy se vzhledem ke krátké existenci teprve vytváří, formální nedostatky se vyskytly v postupu při přijímání žáků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky v přípravě na mezinárodní jazykové certifikáty a jaké jsou šance na jejich získání?",
+      "Jaké jsou možnosti individuálního přístupu k žákům se speciálními vzdělávacími potřebami a jak funguje školní poradenské pracoviště?",
+      "Jak se škola vypořádává s omezeným prostorem pro tělesnou výchovu a jaké má plány na zlepšení?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a humanitní obory – škola má dlouhodobě ověřenou tradici v jazykovém vzdělání a nabízí studijní pobyty v zahraničí.",
+      "Nadaní žáci hledající všestranný rozvoj – bohatá nabídka volnočasových aktivit, soutěží a mezinárodních projektů podporuje rozvoj specifických zájmů.",
+      "Rodiny s důrazem na duchovní a etickou výchovu – škola akcentuje duchovní rozvoj a etické chování, má vlastní kapli a kostel."
+    ],
+    "who_should_be_cautious": [
+      "Žáci zaměření na sport – omezené prostory pro tělesnou výchovu mohou být limitující.",
+      "Žáci preferující aktivní a skupinové vyučování – druhý stupeň základní školy stále více využívá frontální výuku.",
+      "Rodiny hledající nově budovanou základní uměleckou školu – tato součást je teprve v počátcích a zatím nemá plně vybudované zázemí."
+    ],
+    "plain_czech_summary": "Biskupské gymnázium je prestižní školou se silnou tradicí kvalitního vzdělání. Zvlášť vyniká v jazykové přípravě – žáci získávají mezinárodní certifikáty a škola byla oceněna jako nejlepší v ČR. Maturitní výsledky jsou výborné, absolventi úspěšně pokračují na vysokých školách. Škola nabízí bohatou nabídku volnočasových aktivit a podporuje všestranný rozvoj. Slabší stránkou je omezený prostor pro tělesnou výchovu a méně aktivní vyučování na druhém stupni základní školy."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě velmi vysoká úspěšnost, zlepšující se",
+      "key_numbers": [
+        "Nulová hrubá neúspěšnost ve společné části maturitní zkoušky v posledních dvou školních rocích",
+        "Výsledky prokazatelně lepší než průměr stejných oborů v ČR",
+        "Téměř všichni absolventi pokračují na vysokých školách"
+      ],
+      "evidence": "Při ukončování vzdělávání státní maturitní zkouškou dosahuje škola dlouhodobě velmi vysoké úspěšnosti. V posledních dvou uzavřených školních rocích dosáhli žáci nulové hrubé neúspěšnosti."
+    },
+    "absence": {
+      "trend": "Velmi nízká, minimální kázeňská opatření",
+      "key_numbers": [
+        "Počet zameškaných hodin včetně neomluvených je nízký",
+        "Ojedinělé neomluvené absence jsou nejčastějším důvodem pro kázeňská opatření",
+        "Snížené známky z chování neudělilo gymnázium v posledních dvou rocích, základní škola jen minimálně"
+      ],
+      "evidence": "Počet zameškaných hodin, včetně hodin neomluvených, je ve škole nízký. Ojedinělé neomluvené absence jsou nejčastějším důvodem pro udělování kázeňských opatření, jejich četnost je však minimální."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovný poradce, školní metodik prevence, kariérový poradce, externí školní psycholožka, spirituál",
+      "V základní škole navíc: speciální pedagožka a školní asistentka",
+      "Doučovací aktivity a individuální konzultace pro žáky ohrožené školním neúspěchem",
+      "Podpora žáků se speciálními vzdělávacími potřebami podle doporučení poradenských zařízení",
+      "Individuální vzdělávací plány pro žáky se sportovním nadáním",
+      "Doučování z češtiny pro cizince pro žáky s odlišným mateřským jazykem"
+    ],
+    "safety_climate": [
+      "Klidné a přátelské pracovní prostředí s důrazem na vzájemný respekt a spolupráci",
+      "Otevřené vzdělávací prostředí a vstřícný, respektující přístup vyučujících pozitivně ovlivňují klima školy",
+      "Promyšlený systém prevence s tématy zaměřenými podle věku žáků se jeví jako účinný",
+      "Celoškolní systém aktivit vedoucích žáky k etickému jednání a sebereflexi",
+      "Letní gymnaziální tábor zaměřený na osobnostní rozvoj s důrazem na duchovní složku"
+    ],
+    "partnerships_practice": [
+      "Nadstandardní partnerské vztahy s partnerskými středními a vysokými školami, akademickými pracovišti a jazykovými institucemi",
+      "Příkladné zajišťování studijních a výměnných pobytů žáků v zahraničí",
+      "Spolupráce s charitativními a církevními organizacemi podporující rozvoj sociálních a občanských kompetencí",
+      "Rozšířená síť zahraničních partnerských škol pro studijní pobyty",
+      "Spolupráce s křesťanskou pedagogicko-psychologickou poradnou"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však dlouhé a složitě strukturované, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků v jednotlivých oborech gymnázia, což by pomohlo lépe pochopit velikost jednotlivých tříd.",
+      "Chybí informace o počtu učitelů a jejich kvalifikaci v základní umělecké škole, která je nová.",
+      "Nejsou uvedeny konkrétní příklady aktivizujících metod, které by se měly více využívat na druhém stupni základní školy."
+    ]
+  }
+}
+```

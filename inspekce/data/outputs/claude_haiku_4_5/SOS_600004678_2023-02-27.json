@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600004678_2023-02-27",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:46:10.815931+00:00",
+  "run_finished_utc": "2026-02-09T16:46:39.144043+00:00",
+  "raw_file": "SOS_600004678_2023-02-27.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600004678_2023-02-27",
+    "school_profile": {
+      "school_type": "Střední škola s maturitní zkouškou, obor Aplikovaná chemie (Forenzní analýza, Klinická a toxikologická analýza, Syntéza a výroba léčiv)",
+      "inspection_period": "27. února až 2. března 2023",
+      "school_change_summary": "Škola kontinuálně rozvíjí koncepci kvalitního odborného vzdělávání. Došlo k nárůstu podílu žáků se speciálními vzdělávacími potřebami (přibližně 18 %) a žáků s odlišným mateřským jazykem (4 %). Vedení modernizuje materiálně technické zázemí a inovuje obsah vzdělávacího programu."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky u maturity",
+          "detail": "Všichni žáci přihlášení k maturitní zkoušce uspěli ve všech jejích částech, nejméně třetina s vyznamenáním.",
+          "evidence": "V českém, anglickém jazyce a matematice dosahují žáci lepších výsledků než průměr v ČR."
+        },
+        {
+          "tag": "Kvalitní vedení a stabilní tým",
+          "detail": "Ředitel efektivně řídí školu na základě koncepční práce, pedagogický sbor čítá 34 zkušených učitelů.",
+          "evidence": "Všichni pedagogové splňují zákonné předpoklady odborné kvalifikace, pouze dva si doplňují vzdělání."
+        },
+        {
+          "tag": "Moderní vybavení a praktická výuka",
+          "detail": "Škola disponuje dostatečným počtem odborných učeben, laboratoří a moderními přístroji.",
+          "evidence": "Vybudováno nové Centrum interaktivní výuky, rekonstruována školní jídelna, nadstandardní materiálně-technické vybavení."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nárůst žáků se speciálními potřebami",
+          "detail": "Přibližně 18 % žáků má speciální vzdělávací potřeby, což je nárůst od poslední inspekce.",
+          "evidence": "Vzhledem k náročnosti oboru jsou poskytována převážně opatření s nižším stupněm podpory."
+        },
+        {
+          "tag": "Méně efektivní závěry hodin",
+          "detail": "V některých hodinách chybí shrnutí probraného učiva a vyhodnocení dosažení vzdělávacího cíle.",
+          "evidence": "Inspektoři zaznamenali absence didaktického závěru a méně efektivní časovou organizaci činností."
+        },
+        {
+          "tag": "Omezený prostor pro mluvený projev",
+          "detail": "Žáci mají méně příležitostí k souvislejšímu ústnímu vyjádření a sebereflexe.",
+          "evidence": "Ojediněle vedli učitelé žáky k objektivnímu posouzení kvality práce vrstevníků nebo sebereflexi vlastního výkonu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola podporuje žáky se speciálními vzdělávacími potřebami a jak se jejich počet zvýšil?",
+        "Jaké jsou konkrétní možnosti doučování a individuální podpory pro žáky, kteří si nevedou dobře?",
+        "Jak se škola připravuje na přijetí na vysoké školy a jaké jsou úspěchy absolventů?"
+      ],
+      "who_school_fits": [
+        "Talentovaní žáci se zájmem o chemii a přírodní vědy, kteří chtějí kvalitní přípravu na vysokou školu",
+        "Žáci, kteří si cení moderního vybavení a praktické výuky v laboratořích",
+        "Studenti, kteří chtějí kombinaci odborného vzdělání s jazykovými dovednostmi a všestranným rozvojem"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími předpoklady v matematice a přírodních vědách, obor je náročný",
+        "Studenti, kteří potřebují intenzivní individuální podporu a více času na pochopení učiva",
+        "Žáci s poruchami učení nebo zdravotními omezeními, která by mohla bránit v praktické laboratorní práci"
+      ],
+      "plain_czech_summary": "Masarykova střední škola chemická je prestižní školou s výbornou pověstí. Všichni maturanti uspějí u zkoušek, často s vyznamenáním. Škola má zkušené učitele, moderní laboratoře a propojuje teorii s praxí. Vedení je efektivní a transparentní. Žáci se učí nejen chemii, ale také jazykům a získávají praktické dovednosti. Škola se stará o všestranný rozvoj studentů. Zvyšuje se počet žáků se speciálními potřebami, což je výzva. Některé hodiny by mohly mít lepší závěry. Ideální pro ambiciózní studenty zájemce o chemii a přírodní vědy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "100 % úspěšnost všech přihlášených žáků ve všech částech maturitní zkoušky",
+          "Nejméně třetina žáků prospěla s vyznamenáním",
+          "Více než tři čtvrtiny absolventů pokračují v navazujících chemicko-technologických nebo přírodovědných oborech"
+        ],
+        "evidence": "Žáci dosahují lepších nebo výrazně lepších výsledků v češtině, angličtině a matematice než průměr v ČR ve stejné skupině oborů."
+      },
+      "absence": {
+        "trend": "Nízká a přijatelná",
+        "key_numbers": [
+          "Nízké průměrné počty zameškaných hodin na žáka",
+          "Vysoké počty žáků s uzavřenou klasifikací do 30. 6. (téměř 100 %)"
+        ],
+        "evidence": "Minimalizace předčasných odchodů žáků ze vzdělávání, důsledné dodržování nastavených pravidel chování."
+      },
+      "support_services": [
+        "Výchovná poradkyně a metodička prevence v úzké spolupráci s pedagogy",
+        "Skupinové doučování v odborných a všeobecně vzdělávacích předmětech",
+        "Individuální konzultace, elektronické materiály ve výukové platformě, osobní pohovory s výchovnou poradkyní",
+        "Schránka důvěry, konzultace s externí psycholožkou, specifické programy neziskových organizací",
+        "Individuální vzdělávací plány ze zdravotních důvodů, individuální úprava docházky talentovaným sportovcům"
+      ],
+      "safety_climate": [
+        "Bezpečné vzdělávací prostředí realizované v úzké spolupráci poradenských pracovníků s ostatními pedagogy",
+        "Elektronický a kamerový systém zabezpečení vstupu do budovy, recepce se stálou službou",
+        "Systémově nastavené adaptační a preventivní aktivity (seznamovací dny, sportovní kurzy, zahraniční výjezdy)",
+        "Pravidelná sociometrická šetření ve třídách, důraz na dodržování pravidel chování",
+        "Vyvážený systém ukládání výchovných opatření, poměr kázeňských opatření a pochval vyrovnaný"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobé partnerské vztahy s vysokými školami, ústavy Akademie věd ČR, průmyslovými podniky",
+        "Fakultní škola Vysoké školy chemicko-technologické a Přírodovědecké fakulty Univerzity Karlovy",
+        "Tematické exkurze, zahraniční odborné stáže, projekt Erasmus+",
+        "Spolupráce se vědeckými pracovišti vysokých škol, účast v středoškolské odborné činnosti a olympiádách",
+        "Iniciativa Responsible Care, mezinárodní titul Ekoškola"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi podrobná, jasně strukturovaná a obsahuje konkrétní fakta, čísla a citace. Všechny klíčové informace jsou dobře zdokumentovány a srozumitelně vysvětleny.",
+      "uncertainty_notes": [
+        "Přesný počet žáků se speciálními potřebami je uveden jako 'přibližně 18 %', což naznačuje, že se jedná o odhad k datu inspekce",
+        "Zpráva neobsahuje podrobné údaje o počtu žáků, kteří neuspěli v jednotlivých předmětech nebo o jejich konkrétních slabinách",
+        "Chybí informace o počtu žáků, kteří opustili školu předčasně, je zmíněna pouze 'minimalizace' těchto případů"
+      ]
+    }
+  }
+}

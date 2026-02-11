@@ -2,105 +2,109 @@
 {
   "report_id": "GY4_600013481_2025-11-20",
   "school_profile": {
-    "school_type": "Osmileté a čtyřleté gymnázium se zaměřením na matematiku",
-    "inspection_period": "20.–21. listopadu 2025 a 24.–25. listopadu 2025",
-    "school_change_summary": "Nový ředitel od srpna 2024 s koncepcí rozvoje zaměřenou na změnu obsahu a způsobu vzdělávání. Probíhá postupná modernizace vybavení a budov."
+    "school_type": "Osmileté a čtyřleté gymnázium se zaměřením na matematiku, příspěvková organizace",
+    "inspection_period": "20.–21. listopadu a 24.–25. listopadu 2025",
+    "school_change_summary": "Nový ředitel od srpna 2024 s vizí proměny obsahu a způsobu vzdělávání. Škola postupně obnovuje materiální vybavení, zavádí slovní hodnocení a víceúrovňové diferenciované studium."
   },
   "for_parents": {
     "strengths": [
       {
         "tag": "Výjimečné zahraniční zkušenosti",
-        "detail": "Projekt Erasmus+ umožňuje žákům i učitelům jazykové vzdělávání a stínování v zahraničí.",
-        "evidence": "Výměnné pobyty v Německu, Finsku, Španělsku, Belgii s přímým dopadem na jazykové a sociální kompetence."
+        "detail": "Projekt Erasmus+ umožňuje žákům i učitelům absolvovat jazykové vzdělávání a stínování v zahraničí.",
+        "evidence": "Skupinové mobility do Německa, Finska, Španělska, Belgie s přímým dopadem na jazykové a sociální kompetence."
       },
       {
         "tag": "Vynikající studijní výsledky",
         "detail": "Dlouhodobě velmi dobré výsledky u maturit a vysoká úspěšnost absolventů na vysokých školách.",
-        "evidence": "Více než 55 % žáků čtyřletého studia a 72 % osmiletého studia prospívá s vyznamenáním."
+        "evidence": "Téměř nulová hrubá neúspěšnost u maturit, lepší výsledky než celorepublikový průměr, 56–72 % žáků s vyznamenáním."
       },
       {
         "tag": "Úspěchy v soutěžích",
-        "detail": "Žáci dosahují výjimečných výsledků v mezinárodních a celostátních olympiádách.",
-        "evidence": "Bronzová medaile na Mezinárodní matematické olympiádě, tři medaile na Středoevropské matematické olympiádě."
+        "detail": "Žáci dosahují výjimečných výsledků v olympiádách a vědeckých soutěžích.",
+        "evidence": "Bronz na Mezinárodní matematické olympiádě, medaile na lingvistické a astronomické olympiádě, vítězství v Pangea."
       }
     ],
     "risks": [
       {
         "tag": "Tradiční výuka bez dostatečné aktivizace",
-        "detail": "Převládá frontální výuka (72 % hodin), skupinová práce jen v 15 % hodin.",
-        "evidence": "Hospitační činnost zjistila málo aktivizujících metod a forem práce, omezené využití kooperativních strategií."
+        "detail": "Převažuje frontální výuka (72 % hodin), málo skupinové práce a individuálního rozvoje nadaných žáků.",
+        "evidence": "Skupinová výuka jen v 15 % hodin, chybí aktivity podporující nadání, žáci nejsou vedeni k využívání různých informačních zdrojů."
       },
       {
-        "tag": "Nedostatečná podpora nadaných žáků",
-        "detail": "Chybí systematický systém práce s talentovanými žáky a diferenciace podle nadání.",
-        "evidence": "Ve sledované výuce nebyly nabízeny aktivity s odlišnou mírou náročnosti pro nadané žáky."
+        "tag": "Nejednotné kritéria hodnocení",
+        "detail": "Učitelé si stanovují pravidla hodnocení individuálně, jednotný systém existuje jen v některých komisích.",
+        "evidence": "Část pedagogů používá známky, část bodový systém, chybí sjednocené postupy v předmětových komisích."
       },
       {
-        "tag": "Vysoký tlak na výkon bez dostatečné péče",
-        "detail": "Žáci pociťují silný tlak na výkon, kterému se poradenské pracoviště věnuje okrajově.",
-        "evidence": "Školní psycholog pracuje jen jeden den v týdnu, chybí práce s celými třídami na wellbeing."
+        "tag": "Nedostatečná podpora psychického zdraví",
+        "detail": "Školní psycholog pracuje jen jeden den v týdnu, silný tlak na výkon řeší poradenství jen okrajově.",
+        "evidence": "Nižší úvazek psychologa, absence práce s celými třídami, dotazníky ukazují silný tlak na žáky."
       }
     ],
     "questions_for_open_day": [
-      "Jak konkrétně škola podporuje nadané a mimořádně nadané žáky v běžné výuce?",
-      "Jaké jsou plány na zvýšení počtu hodin školního psychologa a jeho práce s třídami?",
-      "Jak se škola vypořádává s vysokým tlakem na výkon, který žáci pociťují?"
+      "Jak konkrétně škola podporuje nadané žáky? Existují speciální programy nebo individuální plány?",
+      "Jaké jsou jednotné kritéria hodnocení a jak se liší mezi jednotlivými předměty?",
+      "Jak často se používají moderní metody výuky (skupinová práce, projektové vyučování) a jak se to liší podle předmětu?"
     ],
     "who_school_fits": [
-      "Žáci s vysokými ambicemi a zájmem o studium na vysoké škole – výborné výsledky u maturit a příprava na vysokoškolské studium.",
-      "Jazykově nadaní žáci – projekt Erasmus+ a kvalitní výuka cizích jazyků s interaktivními metodami.",
-      "Žáci se zájmem o soutěže a olympiády – škola aktivně podporuje účast v mezinárodních a celostátních soutěžích."
+      "Žáci s vysokými ambicemi a zájmem o studium na vysoké škole – škola má prokázanou tradici úspěšných absolventů.",
+      "Děti se zájmem o jazyky a mezinárodní zkušenosti – projekt Erasmus+ nabízí výjimečné příležitosti.",
+      "Talentovaní žáci v matematice a přírodních vědách – škola má silné tradice v soutěžích a olympiádách."
     ],
     "who_should_be_cautious": [
-      "Žáci, kteří potřebují více individuálního přístupu a diferenciace – výuka je zatím málo přizpůsobena různým vzdělávacím potřebám.",
-      "Žáci se psychickými problémy nebo vysokou úzkostností – omezená kapacita školního psychologa a okrajová péče o wellbeing.",
-      "Žáci preferující aktivní, skupinovou práci – převládá tradiční frontální výuka s omezeným prostorem pro kooperativní učení."
+      "Žáci, kteří potřebují více individuálního přístupu a aktivizujících metod – výuka je spíše tradiční a frontální.",
+      "Děti se psychickými problémy nebo pod tlakem – podpora školního psychologa je omezená (1 den v týdnu).",
+      "Žáci, kteří se lépe učí skupinově a kooperativně – skupinová práce se využívá jen v 15 % hodin."
     ],
-    "plain_czech_summary": "Gymnázium Brno patří mezi nejlepší střední školy s výjimečnými výsledky u maturit a úspěchy v soutěžích. Projekt Erasmus+ nabízí žákům unikátní zahraniční zkušenosti. Nový ředitel postupně modernizuje školu. Hlavní výzvou je tradiční frontální výuka, která málo aktivizuje žáky a nedostatečně podporuje nadané. Vysoký tlak na výkon není dostatečně řešen školním psychologem. Škola je ideální pro ambiciózní žáky se zájmem o vysoké školy."
+    "plain_czech_summary": "Gymnázium Brno patří mezi nejlepší střední školy s výjimečnými výsledky u maturit a úspěchy v soutěžích. Projekt Erasmus+ nabízí žákům vzácné zahraniční zkušenosti. Nový ředitel postupně modernizuje školu. Hlavní výzvou je, že výuka stále převažně využívá tradiční frontální metody místo aktivizujících přístupů. Hodnocení není jednotné a podpora psychického zdraví žáků je omezená. Ideální pro ambiciózní žáky, ale méně vhodná pro ty, kteří potřebují více individuálního přístupu."
   },
   "hard_facts": {
     "maturita": {
       "trend": "Dlouhodobě výborný",
       "key_numbers": [
-        "Téměř nulová hrubá neúspěšnost u maturitní zkoušky v posledních třech letech",
-        "Lepší výsledky než celorepublikový průměr ve společné části maturitní zkoušky",
-        "Vysoká úspěšnost absolventů při přechodu na vysoké školy"
+        "Téměř nulová hrubá neúspěšnost",
+        "Lepší výsledky než celorepublikový průměr v posledních třech letech",
+        "56 % žáků s vyznamenáním na čtyřletém studiu, 58 % na osmiletém"
       ],
-      "evidence": "Škola vykazuje dlouhodobě velmi dobré výsledky u maturitní zkoušky a ve srovnání s celorepublikovým průměrem dosahují žáci lepších výsledků."
+      "evidence": "Škola systematicky podporuje studijní úspěšnost, vysoká úspěšnost absolventů při přechodu na vysoké školy."
     },
     "absence": {
       "trend": "Velmi dobrý",
       "key_numbers": [
         "Průměrná omluvená absence 120 hodin na žáka za poslední tři roky",
         "Neomluvenou absenci řeší škola zřídka",
-        "Pravidlo minimální docházky do jednotlivých předmětů stanovené školním řádem"
+        "Pravidlo minimální docházky do jednotlivých předmětů"
       ],
-      "evidence": "Vedení školy sleduje výsledky a absenci, v případě negativních zjištění přijímá adekvátní opatření."
+      "evidence": "Vedení školy sleduje výsledky a absenci, přijímá adekvátní opatření, školní řád obsahuje pravidla minimální docházky."
     },
     "support_services": [
-      "Dva výchovní poradci a dva metodici prevence (každý zaměřen na jeden stupeň)",
+      "Dva výchovní poradci (jeden pro čtyřleté, jeden pro osmileté gymnázium)",
+      "Dva metodici prevence",
       "Čtyři asistenti pedagoga na osmiletém gymnáziu",
-      "Školní psycholog pracující jeden den v týdnu (doporučuje se zvýšit úvazek)",
+      "Školní psycholog (1 den v týdnu, zaměřen na individuální případy)",
       "Doučování a pedagogické konzultace pro žáky s rizikem neúspěchu"
     ],
     "safety_climate": [
-      "Převážná většina sledovaných hodin probíhala v atmosféře vzájemného respektu",
-      "Žáci dodržovali nastavená pravidla chování",
-      "V posledním školním roce řešeny jednotky případů kyberšikany, sebepoškozování a užívání návykových látek"
+      "Atmosféra vzájemného respektu, žáci dodržují nastavená pravidla chování",
+      "V posledním školním roce řešeny jednotky případů kyberšikany, sebepoškozování a užívání návykových látek",
+      "Preventivní programy zaměřené na duševní zdraví a prevenci rizikového chování",
+      "Adaptační kurz pro první ročníky"
     ],
     "partnerships_practice": [
       "Projekt Erasmus+ s partnerskými školami v Německu, Finsku, Španělsku, Belgii",
+      "Skupinové mobility žáků a učitelů do zahraničí",
       "Aktivní spolupráce s mnoha zahraničními školami",
-      "Školní parlament se dvěma sekcemi (osmileté a čtyřleté gymnázium) s pravidelným zasedáním"
+      "Program Mezinárodní cena vévody z Edinburghu (DofE)",
+      "Školní parlament se dvěma sekcemi (osmileté a čtyřleté gymnázium)"
     ]
   },
   "model_self_check": {
     "czech_clarity_score_1_5": 4,
-    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však poměrně dlouhé a obsahují více technických termínů.",
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní čísla a příklady. Slabší je pouze v tom, že některé pasáže jsou technicky náročné a obsahují úřednickou terminologii.",
     "uncertainty_notes": [
-      "Zpráva nespecifikuje konkrétní počet hodin, které věnuje školní psycholog jednotlivým žákům nebo třídám.",
-      "Není jasné, jak přesně se měří 'vysoký tlak na výkon' – vychází z dotazníků nebo rozhovorů, ale konkrétní čísla nejsou uvedena.",
-      "Doporučení jsou formulována obecně bez konkrétního časového plánu implementace."
+      "Zpráva nespecifikuje, jak přesně se liší kvalita výuky mezi jednotlivými předměty – některé jsou popsány jako velmi dobré (jazyky), jiné jako méně propracované (přírodovědné předměty).",
+      "Není jasné, zda nový systém slovního hodnocení je již plně zaveden nebo se teprve zavádí.",
+      "Počet žáků s nadáním (1,2 %) se zdá nízký – není jasné, zda jde o oficiální diagnostiku nebo subjektivní posouzení."
     ]
   }
 }

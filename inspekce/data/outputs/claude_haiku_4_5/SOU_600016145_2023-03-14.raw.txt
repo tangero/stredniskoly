@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOU_600016145_2023-03-14",
+  "school_profile": {
+    "school_type": "Střední škola průmyslová s domovem mládeže a školní jídelnou",
+    "inspection_period": "14. března 2023 až 17. března 2023",
+    "school_change_summary": "Od ledna 2020 sloučení Střední školy průmyslové Krnov a Střední školy automobilní Krnov. Škola postupně optimalizuje majetek a rozšířila nabídku o automobilní obory vzdělání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní vedení a stabilní tým",
+        "detail": "Ředitel má dlouhodobé zkušenosti, spolupracující tým průběžně monitoruje procesy a zavádí opatření ke zlepšení.",
+        "evidence": "Ředitel zavedl vzájemné hospitace mezi učiteli jako nástroj profesního růstu a sdílení zkušeností."
+      },
+      {
+        "tag": "Moderní vybavení a infrastruktura",
+        "detail": "Škola postupně zlepšuje materiální podmínky, vznikly nové odborné učebny a byly obnoveny dílny.",
+        "evidence": "Byla dokončena rekonstrukce druhého nadzemního podlaží, obnoveny dílny a tělocvična, vznikly odborné učebny pro IT."
+      },
+      {
+        "tag": "Bezpečné prostředí a péče o žáky",
+        "detail": "Vedení klade důraz na bezpečí žáků, identifikuje rizika a poskytuje kvalitní poradenské služby.",
+        "evidence": "Škola provádí rozbor úrazovosti, žáci používají osobní ochranné pomůcky, funguje školní poradenské pracoviště."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence a neúspěšnost v oboru Podnikání",
+        "detail": "Obor Podnikání vykazuje výrazné problémy s prospěchem a absencí, v roce 2022 byla hrubá neúspěšnost 68 %.",
+        "evidence": "V roce 2022 z přihlášených žáků nekonala maturitu téměř polovina, průměrná neúspěšnost 40 % vs. celorepublikový průměr 25,5 %."
+      },
+      {
+        "tag": "Nedostatečná personální kapacita poradenského pracoviště",
+        "detail": "Školní poradenské pracoviště je personálně podhodnoceno vzhledem k počtu žáků a jejich potřebám.",
+        "evidence": "Citelně chybí další pracovník pro řešení potenciálního neúspěchu žáků, ředitel si to uvědomuje, ale zatím nepřijal opatření."
+      },
+      {
+        "tag": "Nízká efektivita opatření proti školní neúspěšnosti",
+        "detail": "Přijatá opatření se zatím neprojevila ve větší míře ve výsledcích, jejich účinnost není systematicky vyhodnocována.",
+        "evidence": "Škola neprovedla celkové vyhodnocení opatření z hlediska individuálního dopadu na jednotlivé žáky, zejména v oboru Podnikání."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky ohrožené školní neúspěšností a jaké jsou výsledky těchto opatření?",
+      "Jaké jsou vstupní podmínky pro přijetí do oboru Podnikání a jak se liší od ostatních oborů?",
+      "Jak funguje spolupráce mezi domovem mládeže a školou při podpoře studijních výsledků ubytovaných žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické obory (automechanika, truhlářství, obrábění kovů) s dobrými výsledky v přijímacím řízení",
+      "Žáci z jiných regionů, kterým vyhovuje ubytování v domově mládeže s 90% obsazeností",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální vzdělávací plány a podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v základní škole, zejména pokud uvažují o oboru Podnikání (vysoká neúspěšnost)",
+      "Žáci s tendencí k absencím – škola má problémy s fixací návyků pravidelné docházky",
+      "Žáci do dvouletého nástavbového studia bez jasných vstupních podmínek – v roce 2022 neprospělo 7 z 17 žáků"
+    ],
+    "plain_czech_summary": "Střední škola průmyslová v Krnově je moderně vybavená instituce se stabilním vedením a kvalitním pedagogickým sborem. Silnými stránkami jsou praktická výuka, bezpečné prostředí a péče o žáky. Hlavním problémem je obor Podnikání s velmi vysokou neúspěšností (68 % v roce 2022) a nedostatečná personální kapacita poradenského pracoviště. Přijatá opatření zatím nejsou dostatečně účinná. Škola je vhodná pro žáky se zájmem o praktické obory, ale žáci se slabšími výsledky by měli být opatrní."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírné zlepšení u čtyřletých oborů, ale kritická situace v oboru Podnikání",
+      "key_numbers": [
+        "Čtyřleté obory: zlepšení z 26 % na 22 % hrubé neúspěšnosti (2021–2022)",
+        "Obor Podnikání 2022: 68 % hrubá neúspěšnost (40 % průměrná neúspěšnost vs. 25,5 % celorepublikový průměr)",
+        "Obory s výučním listem: kolem 80 % úspěšnosti"
+      ],
+      "evidence": "Z meziročního porovnání studijních výsledků čtyřletých maturitních oborů vyplývá trend mírného zlepšení. V oboru Podnikání v roce 2022 téměř polovina přihlášených žáků maturitní zkoušku nekonala."
+    },
+    "absence": {
+      "trend": "Vysoká absence, zejména v posledním uzavřeném školním roce 2021/2022",
+      "key_numbers": [
+        "Zvýšená absence v posledním uzavřeném roce 2021/2022 oproti předchozím dvěma rokům",
+        "Nejvyšší absence v dvouletém nástavbovém studiu, následně v oborech Uměleckořemeslné zpracování textilu a dřeva",
+        "Přes přijatá opatření se nedaří fixovat návyky pravidelné školní docházky"
+      ],
+      "evidence": "Žáci dosáhli vysoké absence zejména v posledním uzavřeném školním roce 2021/2022. Vysoká absence se projevila zejména u dvouletého nástavbového studia."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště (výchovná poradkyně, školní metodik prevence) poskytující komplexní poradenské služby",
+      "Doučování a individuální konzultace pro žáky ohrožené školní neúspěšností",
+      "Domov mládeže s vychovatelkami nabízející doučování a individuální přístup ubytovaným žákům"
+    ],
+    "safety_climate": [
+      "Vedení klade důraz na vytváření pozitivních, vzájemně se respektujících vztahů mezi účastníky vzdělávání",
+      "Seznámení s riziky a poučení žáků v oblasti bezpečnosti, ochrany zdraví a požární prevence zahrnuto do vzdělávání",
+      "Škola identifikuje rizika v praktickém vyučování, žáci používají osobní ochranné pomůcky, provádí se rozbor úrazovosti",
+      "Při sledované výuce nebyly zaznamenány negativní projevy ve vztazích mezi učiteli a žáky"
+    ],
+    "partnerships_practice": [
+      "Funkční systém spolupráce se smluvními partnery při zabezpečování odborného výcviku (např. RENOVA, o. p. s. v Miloticích nad Opavou)",
+      "Aktivní zapojení v projektu Erasmus+ s realizací vzdělávací jazykové a odborné mobility žáků",
+      "Spolupráce a sdílení zkušeností s učiteli oborově podobně zaměřených škol",
+      "Výuka anglického jazyka posílena rodilými mluvčími, pedagogové pravidelně vyjíždějí do zahraničí na jazykově-metodické kurzy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními čísly a příklady. Hlavní zjištění jsou jasně identifikována. Některé pasáže jsou však delší a obsahují více technických detailů, které mohou být pro rodiče méně přístupné.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje informace o počtu žáků, kteří úspěšně absolvovali obor Podnikání v jednotlivých letech – pouze údaje o neúspěšnosti",
+      "Není jasné, jaké konkrétní opatření škola zavedla v oboru Podnikání a proč nebyla účinná",
+      "Chybí informace o tom, zda se situace v oboru Podnikání zlepšila v roce 2023 (zpráva je z března 2023)"
+    ]
+  }
+}
+```

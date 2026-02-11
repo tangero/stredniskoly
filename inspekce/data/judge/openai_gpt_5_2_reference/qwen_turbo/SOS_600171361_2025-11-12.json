@@ -1,0 +1,31 @@
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T12:08:49.918908+00:00",
+  "run_finished_utc": "2026-02-09T12:09:09.517274+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOS_600171361_2025-11-12\",\n  \"faithfulness_score_1_5\": 3,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 3,\n  \"czech_clarity_score_1_5\": 3,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Chybně uvedené období inspekční činnosti: kandidát uvádí 2025-11-12 až 2025-11-17, zatímco zdroj říká 12.–14. 11. 2025.\",\n    \"Zavádějící/nesprávné zařazení údajů: sekce „absence“ neobsahuje absenci, ale počet žáků (629) a je tím pro rodiče matoucí.\",\n    \"Tvrzení o podpoře žáků se SVP je místy nepřesné v odůvodnění: škola má doložené nedostatky v individualizaci a v jednotném postupu podpory SVP, ale kandidát to propojuje s citací o (ne)analýze příčin neúspěšnosti, která míří spíš na evaluaci výsledků a opatření, ne přímo na SVP podporu.\",\n    \"Část o maturitě je jednostranná: správně uvádí zhoršení a horší výsledky ve společné části, ale opomíjí důležitou informaci ze zdroje, že v profilové části maturitní zkoušky škola dosahovala lepších výsledků než celorepublikový průměr.\"\n  ],\n  \"best_points\": [\n    \"Dobře zachycené hlavní silné stránky ze závěrů inspekce (spolupráce s tuzemskými i zahraničními partnery; materiální vybavení odborného vzdělávání).\",\n    \"Správně převzaté klíčové slabé stránky (formativní hodnocení výjimečně, nedostatečná analýza výsledků interní evaluace).\",\n    \"U maturitních výsledků uvádí konkrétní hodnoty hrubé neúspěšnosti (Podnikání 39,3 %, Hotelnictví 26,1 %, Kosmetické služby 22,7 %), které odpovídají zdroji.\",\n    \"Správně popisuje organizaci praktického vyučování na školních, odloučených i smluvních pracovištích a zmínku o zahraničních pracovních pobytech.\"\n  ],\n  \"one_line_verdict\": \"Shrnutí je zčásti věrné a pro rodiče použitelné, ale obsahuje chybu v datu inspekce, matoucí „absenci“ a nevyvažuje informace o maturitě (chybí lepší profilová část).\"\n}",
+  "judge_output": {
+    "report_id": "SOS_600171361_2025-11-12",
+    "faithfulness_score_1_5": 3,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 3,
+    "czech_clarity_score_1_5": 3,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "Chybně uvedené období inspekční činnosti: kandidát uvádí 2025-11-12 až 2025-11-17, zatímco zdroj říká 12.–14. 11. 2025.",
+      "Zavádějící/nesprávné zařazení údajů: sekce „absence“ neobsahuje absenci, ale počet žáků (629) a je tím pro rodiče matoucí.",
+      "Tvrzení o podpoře žáků se SVP je místy nepřesné v odůvodnění: škola má doložené nedostatky v individualizaci a v jednotném postupu podpory SVP, ale kandidát to propojuje s citací o (ne)analýze příčin neúspěšnosti, která míří spíš na evaluaci výsledků a opatření, ne přímo na SVP podporu.",
+      "Část o maturitě je jednostranná: správně uvádí zhoršení a horší výsledky ve společné části, ale opomíjí důležitou informaci ze zdroje, že v profilové části maturitní zkoušky škola dosahovala lepších výsledků než celorepublikový průměr."
+    ],
+    "best_points": [
+      "Dobře zachycené hlavní silné stránky ze závěrů inspekce (spolupráce s tuzemskými i zahraničními partnery; materiální vybavení odborného vzdělávání).",
+      "Správně převzaté klíčové slabé stránky (formativní hodnocení výjimečně, nedostatečná analýza výsledků interní evaluace).",
+      "U maturitních výsledků uvádí konkrétní hodnoty hrubé neúspěšnosti (Podnikání 39,3 %, Hotelnictví 26,1 %, Kosmetické služby 22,7 %), které odpovídají zdroji.",
+      "Správně popisuje organizaci praktického vyučování na školních, odloučených i smluvních pracovištích a zmínku o zahraničních pracovních pobytech."
+    ],
+    "one_line_verdict": "Shrnutí je zčásti věrné a pro rodiče použitelné, ale obsahuje chybu v datu inspekce, matoucí „absenci“ a nevyvažuje informace o maturitě (chybí lepší profilová část)."
+  }
+}

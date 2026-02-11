@@ -1,0 +1,27 @@
+{
+  "models": [
+    {
+      "id": "openrouter_pony_alpha",
+      "api_style": "chat_completions",
+      "api_base": "https://openrouter.ai/api/v1",
+      "endpoint": "/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "model": "openrouter/pony-alpha",
+      "temperature": 0,
+      "max_output_tokens": 3200,
+      "request_timeout_seconds": 480,
+      "max_retries": 8,
+      "initial_backoff_seconds": 3,
+      "response_format": {
+        "type": "json_object"
+      },
+      "reasoning": {
+        "effort": "none"
+      },
+      "extra_headers": {
+        "HTTP-Referer": "https://github.com/tangero/stredniskoly",
+        "X-Title": "inspekce-production"
+      }
+    }
+  ]
+}

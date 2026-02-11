@@ -1,0 +1,111 @@
+{
+  "report_id": "GY6_600013961_2023-03-20",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:44:27.310169+00:00",
+  "run_finished_utc": "2026-02-09T16:44:51.941623+00:00",
+  "raw_file": "GY6_600013961_2023-03-20.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600013961_2023-03-20",
+    "school_profile": {
+      "school_type": "Gymnázium (4leté, 6leté a 8leté) se základní uměleckou školou, školním klubem, pedagogicko-psychologickou poradnou a školní jídelnou",
+      "inspection_period": "20. až 22. března 2023",
+      "school_change_summary": "Od poslední inspekce v 2016 se počet žáků střední školy zvýšil asi o 50 % na 411 žáků. Zájem o ZUŠ zůstává vysoký s naplněnou kapacitou. Škola postupně zlepšovala materiální vybavení, vybudovala multimediální učebny a modernizovala odborné učebny."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výuka cizích jazyků",
+          "detail": "Kvalitní výuka angličtiny s cizojazyčným prostředím a rodilými mluvčími vytváří výborné podmínky pro rozvoj jazykových kompetencí.",
+          "evidence": "Vyučující podporují obsahově náročnější komunikaci, žáci prokazují výbornou znalost cizího jazyka a získávají certifikáty Cambridge English."
+        },
+        {
+          "tag": "Výtvarný obor ZUŠ",
+          "detail": "Vysoká úroveň pedagogického vedení s maximálním rozvojem talentu a potenciálu žáků.",
+          "evidence": "Práce vykazují kvalitní uměleckořemeslné provedení, žáci jsou vedeni k sebereflexi a vrstevnickému hodnocení."
+        },
+        {
+          "tag": "Podpora nadaných žáků",
+          "detail": "Bohatá nabídka volitelných činností, online kurzů a soutěží pro rozvoj nadání.",
+          "evidence": "Centrum talentované mládeže nabízí kurzy v matematice, programování, biologii, ekonomice a historii s možností získat certifikáty."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Diferenciace výuky",
+          "detail": "Výuka není dostatečně přizpůsobena individuálním schopnostem a potřebám jednotlivých žáků.",
+          "evidence": "Žáci převážně pracují na stejných úkolech se shodnou mírou obtížnosti, individualizace je nedostatečná."
+        },
+        {
+          "tag": "Aktivní metody výuky",
+          "detail": "Část vyučovacích hodin dominuje frontální forma výuky s převažující aktivitou učitele.",
+          "evidence": "Digitální technologie jsou často používány pouze k prezentaci, žáci mají málo příležitostí vyhledávat a zpracovávat informace."
+        },
+        {
+          "tag": "Nejednotná kvalita výuky",
+          "detail": "Výrazné rozdíly v efektivitě pedagogických postupů mezi jednotlivými vyučujícími.",
+          "evidence": "Část hodin se vyznačuje aktivní činností žáků, jiná část převážně frontální výukou s minimem podnětů pro iniciativu."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola individualizuje výuku pro žáky s různými schopnostmi a tempem učení?",
+        "Jaké moderní metody a technologie používáte v běžné výuce a jak je zapojujete do aktivního učení žáků?",
+        "Jak se liší přístup k výuce mezi jednotlivými třídami a jak škola zajišťuje jednotnost kvality?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky – výuka angličtiny je na velmi dobré úrovni s rodilými mluvčími",
+        "Nadaní a talentovaní žáci – bohatá nabídka kurzů, soutěží a certifikačních programů",
+        "Zájemci o umělecké vzdělání – ZUŠ nabízí kvalitní výuku výtvarného, hudebního a dramatického oboru"
+      ],
+      "who_should_be_cautious": [
+        "Žáci vyžadující individualizovaný přístup – výuka není dostatečně diferencovaná podle individuálních potřeb",
+        "Žáci preferující aktivní a interaktivní metody – část výuky je vedena tradičně frontální formou",
+        "Žáci potřebující konzistentní kvalitu výuky – mezi jednotlivými vyučujícími jsou výrazné rozdíly v pedagogických postupech"
+      ],
+      "plain_czech_summary": "Gymnázium J.G. Mendela je etablovaná škola s rostoucím počtem žáků a kvalitní infrastrukturou. Silné stránky jsou zejména v jazykové výuce, péči o nadané žáky a výtvarném oboru ZUŠ. Hlavní výzvou je nedostatečná individualizace výuky a nejednotná kvalita pedagogických přístupů. Škola by měla více zaměřit pozornost na aktivní metody učení a lepší přizpůsobení výuky různým potřebám žáků. Přes tyto výzvy dosahuje škola dobrých výsledků, cca 94 % absolventů je přijato na vysoké školy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Průměrná hrubá neúspěšnost přes 6,5 % za poslední tři roky",
+        "key_numbers": [
+          "Průměrná neúspěšnost z matematiky 16 %",
+          "Cca 94 % absolventů přijato na vysoké školy",
+          "V roce 2021 nekonala maturitu 7 % přihlášených žáků"
+        ],
+        "evidence": "Nejlepší výsledky dosahují žáci v profilové části maturitní zkoušky. Škola sleduje úspěšnost absolventů při přijímání na vysoké školy."
+      },
+      "absence": {
+        "trend": "Absence je řešena individuálně se zákonnými zástupci",
+        "key_numbers": [
+          "Při vysoké absenci škola hledá s rodiči řešení a stanovuje postupy k jejímu snížení"
+        ],
+        "evidence": "Třídní učitelé a učitelé jednotlivých předmětů přijímají opatření při náznaku neuspokojivých výsledků, včetně řešení absence."
+      },
+      "support_services": [
+        "Pedagogicko-psychologická poradna poskytuje diagnostické služby a stanovuje podpůrná opatření",
+        "Školní poradenské pracoviště zajišťuje kariérové poradenství a prevenci problémů",
+        "Školní klub nabízí bezplatné doučování a konzultace pro žáky s potřebou doplnit učivo"
+      ],
+      "safety_climate": [
+        "Respektující a partnerský přístup vyučujících k žákům",
+        "Nastavená pravidla práce a komunikace jsou žáky dodržována",
+        "Nevhodné projevy chování se škole daří eliminovat, pozitivní klima je podporováno adaptačními kurzy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Mendelovou univerzitou v Brně a dalšími vysokými školami pro přírodovědné vzdělávání",
+        "Partnerství se základními školami v rámci projektu Jihomoravského kraje",
+        "Dlouhodobá spolupráce s charitativními organizacemi pro rozvoj sociálního cítění žáků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Hlavní zjištění jsou jasně formulována, ale některé pasáže jsou delší a obsahují více technických detailů. Praktické informace pro rodiče jsou obsaženy, ale nejsou explicitně odděleny.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní procenta žáků s individuálním přístupem v jednotlivých třídách",
+        "Chybí detailní informace o počtu žáků, kteří využívají doučování a konzultace",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými předměty a třídami v konkrétních číslech"
+      ]
+    }
+  }
+}

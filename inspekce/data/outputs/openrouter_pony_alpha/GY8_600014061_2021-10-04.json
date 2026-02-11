@@ -1,0 +1,111 @@
+{
+  "report_id": "GY8_600014061_2021-10-04",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:32:23.197071+00:00",
+  "run_finished_utc": "2026-02-10T08:33:55.563404+00:00",
+  "raw_file": "GY8_600014061_2021-10-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014061_2021-10-04",
+    "school_profile": {
+      "school_type": "Gymnázium (8leté) a Základní umělecká škola",
+      "inspection_period": "4. 10. 2021 − 7. 10. 2021",
+      "school_change_summary": "Od roku 2013 došlo ke změnám ve vedení školy a navýšení kapacity ZUŠ na 482 žáků, kapacita gymnázia zůstala 260."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Maturita",
+          "detail": "Žáci dosahují vynikajících výsledků u maturitní zkoušky s téměř 100% úspěšností.",
+          "evidence": "„Úspěšnost žáků u maturitní zkoušky byla v posledních letech téměř 100 %.“"
+        },
+        {
+          "tag": "Jazyky a zahraničí",
+          "detail": "Škola má velmi dobrou úroveň cizojazyčné výuky a žáci jsou úspěšní v přijímacím řízení na zahraniční univerzity.",
+          "evidence": "„Mluvený projev žáků v cizích jazycích byl na velmi dobré úrovni... úspěšnost žáků je patrná i v počtech přijetí na zahraniční univerzity.“"
+        },
+        {
+          "tag": "Klima a podpora",
+          "detail": "Výuka probíhá v příjemné atmosféře a škola aktivně řeší psychické problémy žáků prostřednictvím školní psycholožky.",
+          "evidence": "„V hospitovaných hodinách výuka probíhala v příjemné pracovní atmosféře... škola navázala spolupráci s novou školní psycholožkou.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Hodnocení ve výuce",
+          "detail": "Ve výuce chybí efektivní zpětná vazba, žáci se málo učí sebehodnocení nebo vzájemnému hodnocení.",
+          "evidence": "„Společným znakem většiny hospitovaných hodin byla absence hodnocení, sebehodnocení nebo vzájemného hodnocení.“"
+        },
+        {
+          "tag": "Podpora nadaných a SVP",
+          "detail": "Podpora žáků se speciálními potřebami a nadaných žáků není ve standardní výuce dostatečná.",
+          "evidence": "„Slabou stránkou byla neefektivní podpora žáků se SVP a nadaných... ve sledovaných hodinách podpora patrná nebyla.“"
+        },
+        {
+          "tag": "Kvalita výuky (management)",
+          "detail": "Vedení školy nemá nastavený systém efektivní kontroly výuky, který by vedl ke zlepšování kvality.",
+          "evidence": "„Vedení školy ale dosud nemá promyšlený efektivní způsob kontroly jednotlivých činností školy...“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé poskytují žákům zpětnou vazbu a prostor pro sebehodnocení během hodin?",
+        "Jakým způsobem škola integruje podporu nadaných žáků a žáků se SVP přímo do běžných vyučovacích hodin?",
+        "Jaké konkrétní kroky management školy podniká k zajištění systémové kontroly kvality výuky?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří cílí na zahraniční univerzity a hledají silnou jazykovou přípravu.",
+        "Pro žáky, kterým vyhovuje příjemné klima školy a možnost zapojení do uměleckých aktivit.",
+        "Pro samostatné studenty, kteří nepotřebují intenzivní zpětnou vazbu od učitelů."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky se speciálními vzdělávacími potřebami, kteří vyžadují intenzivní individuální podporu přímo ve výuce.",
+        "Pro rodiče, kteří očekávají systematickou práci s nadáním dítěte v rámci běžných hodin.",
+        "Pro studenty, kteří potřebují častou a strukturovanou zpětnou vazbu ke svému výkonu."
+      ],
+      "plain_czech_summary": "Gymnázium ve Šlapanicích nabízí velmi kvalitní přípravu na maturitu a studium v zahraničí, což potvrzují skvělé výsledky žáků. Výuka probíhá v příjemném prostředí a škola pečuje o psychickou pohodu studentů. Slabším místem je málo efektivní zpětná vazba od učitelů a nedostatečná podpora nadaných dětí a žáků se speciálními potřebami přímo v hodinách. Škola je vhodná pro samostatné studenty s cílem na vysokou školu, rodiče dětí vyžadujících specifický přístup by měli být ostražití."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vynikající",
+        "key_numbers": [
+          "Úspěšnost téměř 100 %",
+          "21 z 32 žáků prospělo s vyznamenáním (2020/21)",
+          "Průměrný prospěch školy 1,22"
+        ],
+        "evidence": "„Úspěšnost žáků u maturitní zkoušky byla v posledních letech téměř 100 %... z 32 žáků... 21 prospělo s vyznamenáním.“"
+      },
+      "absence": {
+        "trend": "Nízká",
+        "key_numbers": [
+          "Průměr 23 hodin na žáka (2020/21)",
+          "Ovlivněno distanční výukou"
+        ],
+        "evidence": "„Absence žáků (i díky distanční výuce) v loňském školním roce dosahovala v průměru 23 hodin na žáka.“"
+      },
+      "support_services": [
+        "Školní poradenské pracoviště",
+        "Spolupráce se školní psycholožkou",
+        "Adaptační kurzy pro nové kolektivy"
+      ],
+      "safety_climate": [
+        "Příjemná pracovní atmosféra",
+        "Systém prevence rizikového chování funguje",
+        "Zaznamenán nárůst psychických problémů po návratu z distanční výuky"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s Masarykovou univerzitou a VUT",
+        "Partnerská spolupráce s městem Šlapanice",
+        "Spolupráce s Fulbrightovou nadací"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěry jsou explicitně vyjmenovány.",
+      "uncertainty_notes": [
+        "Nejasná míra individualizace pro SVP – text hovoří o 'neefektivní podpoře', ale neuvádí konkrétní čísla postižených žáků, kterých se to týká.",
+        "Vliv změny vedení školy na současnou kvalitu není z textu zcela zřejmý, pouze se konstatuje fakt změny."
+      ]
+    }
+  }
+}

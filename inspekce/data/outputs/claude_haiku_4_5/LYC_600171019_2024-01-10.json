@@ -1,0 +1,113 @@
+{
+  "report_id": "LYC_600171019_2024-01-10",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:30:15.093156+00:00",
+  "run_finished_utc": "2026-02-09T16:30:39.787289+00:00",
+  "raw_file": "LYC_600171019_2024-01-10.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600171019_2024-01-10",
+    "school_profile": {
+      "school_type": "Střední škola technická a ekonomická (denní forma)",
+      "inspection_period": "10.–12. a 15. ledna 2024",
+      "school_change_summary": "Od poslední inspekce se počet žáků zvýšil o 14 % na 1463 žáků. Došlo ke změně vedení (nový ředitel od 2019), rozšíření vzdělávací nabídky a modernizaci materiálního vybavení odborných pracovišť."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Promyšlená strategie a řízení",
+          "detail": "Ředitel se svým týmem vypracoval jasnou koncepční strategii rozvoje vycházející z analýzy silných a slabých stránek školy.",
+          "evidence": "Koncepční cíle se daří naplňovat prostřednictvím efektivního využívání zdrojů a otevřené komunikace."
+        },
+        {
+          "tag": "Silná podpora žáků se speciálními potřebami",
+          "detail": "Školní poradenské pracoviště je vhodně obsazeno (psycholožka, speciální pedagogové, výchovní poradci, asistenti).",
+          "evidence": "Úzká spolupráce umožňuje kvalitní péči o 155 žáků se SVP a nadané žáky s individuálním přístupem."
+        },
+        {
+          "tag": "Partnerství s firmami a praxe",
+          "detail": "Firmy poskytují moderní vybavení, instruktory a reálné pracovní prostředí pro praktické vyučování.",
+          "evidence": "Žáci pracují na CNC strojích, v moderních provozech a získávají aktuální znalosti trendů na trhu práce."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nižší úspěšnost v některých oborech",
+          "detail": "Žáci oborů L0 (mechanik seřizovač, mechanik elektrotechnik) dosahují dlouhodobě horších výsledků u maturity.",
+          "evidence": "Nástavbové studium vykazuje průměrně 29 % neúspěšnost u maturitní zkoušky."
+        },
+        {
+          "tag": "Pasivita žáků v některých hodinách",
+          "detail": "Ve výuce některých předmětů nejsou dostatečně využívány aktivizační metody, což vede k pasivitě žáků.",
+          "evidence": "Inspektoři zaznamenali, že v menší části výuky převažuje aktivita učitele nad aktivitou žáků."
+        },
+        {
+          "tag": "Absence stále vysoká",
+          "detail": "Přestože se absence snížila, průměr 118 zameškaných hodin za rok na žáka zůstává značný.",
+          "evidence": "Při minulé inspekci to bylo 134 hodin, zlepšení je tedy jen mírné."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky oborů L0, kteří mají horší výsledky u maturity? Jaké má plány na zlepšení?",
+        "Jaké jsou konkrétní příklady spolupráce s firmami a jak se to projevuje v praxi našeho dítěte?",
+        "Jak funguje individuální podpora pro žáky se speciálními potřebami a jak se o ní dozvíme?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na techniku a praktické dovednosti, kteří se chtějí učit v moderním prostředí s reálnými stroji a technologiemi",
+        "Žáci s nadáním, kterým škola nabízí soutěže, projekty a možnost rozvoje v zájmových kroužcích",
+        "Žáci se speciálními vzdělávacími potřebami, kterým je věnována individuální péče a podpora"
+      ],
+      "who_should_be_cautious": [
+        "Žáci oborů mechanik seřizovač a mechanik elektrotechnik, kde jsou dlouhodobě horší výsledky u maturity",
+        "Žáci, kteří potřebují více aktivního zapojení a interaktivní výuky – v některých hodinách převažuje frontální přístup",
+        "Žáci s tendencí k absencím – škola má přísná pravidla a absence se sleduje důsledně"
+      ],
+      "plain_czech_summary": "Jde o technickou školu s jasnou strategií a dobrým vedením. Silné stránky: moderní vybavení, spolupráce s firmami, podpora nadaných i žáků se speciálními potřebami. Slabiny: v některých oborech nižší úspěšnost u maturity, v některých hodinách málo aktivního zapojení žáků. Škola se zlepšuje – počet žáků roste, absence klesá, více prospívajících s vyznamenáním. Vhodná pro technicky zaměřené žáky, kteří chtějí praktickou výuku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní s mírným zlepšením v některých oborech",
+        "key_numbers": [
+          "Průměrná hrubá neúspěšnost 10 % (denní forma)",
+          "Obor Ekonomika a podnikání: 100 % úspěšnost v posledních dvou letech",
+          "Obory L0: dlouhodobě nižší úspěšnost"
+        ],
+        "evidence": "V posledních třech letech jsou výsledky srovnatelné. Nejlepší výsledky v IT a ekonomice, nejhorší v oborech L0 a nástavbovém studiu (29 % neúspěšnost)."
+      },
+      "absence": {
+        "trend": "Mírné zlepšení",
+        "key_numbers": [
+          "Školní rok 2022/2023: 118 hodin na žáka za rok",
+          "Předchozí inspekce: 134 hodin na žáka za rok",
+          "Snížení o 16 hodin (12 %)"
+        ],
+        "evidence": "Účinným opatřením jsou pravidla ve školním řádu stanovující minimální účast a dobrá informovanost žáků a rodičů prostřednictvím elektronického systému."
+      },
+      "support_services": [
+        "Školní psycholožka, dva speciální pedagogové, dva výchovní poradci, metodika prevence",
+        "Pět asistentů pedagoga s metodickým vedením",
+        "Individuální práce se žáky ohrožené školním neúspěchem, nadanými žáky a žáky s odlišným mateřským jazykem"
+      ],
+      "safety_climate": [
+        "Jasně stanovená pravidla a jednotný přístup pedagogů přinášejí dobré výsledky v oblasti výchovného působení",
+        "Škola má nastavena pravidla prevence sociálně-patologických jevů – závažnější projevy rizikového chování se téměř nevyskytují",
+        "Důraz na bezpečnost práce v praktickém vyučování, žáci respektují nastavená pravidla"
+      ],
+      "partnerships_practice": [
+        "Partnerské firmy umožňují praktické vyučování (odborný výcvik, odborná praxe) a poskytují moderní techniku",
+        "Spolupráce se základními, středními a vysokými školami a zahraničními partnery",
+        "Projekty Erasmus+ a DofE pro zahraniční praxi a osobnostní rozvoj"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní čísla, příklady z výuky a jasné závěry. Všechny tvrzení jsou opřena o doklady a konkrétní pozorování inspektorů.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o počtu absolventů, kteří se uplaťují na trhu práce – pouze zmínku o sledování uplatnění",
+        "Nejsou uvedeny konkrétní příklady aktivizačních metod, které by měly být více využívány",
+        "Chybí informace o počtu žáků, kteří předčasně ukončili studium (zmínka jen o poklesu)"
+      ]
+    }
+  }
+}

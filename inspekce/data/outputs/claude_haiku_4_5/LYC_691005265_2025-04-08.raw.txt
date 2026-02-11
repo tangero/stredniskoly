@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "LYC_691005265_2025-04-08",
+  "school_profile": {
+    "school_type": "Mateřská škola a Základní škola (s.r.o.), Beroun",
+    "inspection_period": "8.–11. dubna 2025",
+    "school_change_summary": "Od inspekce v 2017: škola rozšířila nabídku na druhý stupeň ZŠ, zvýšil se počet žáků (96 v ZŠ), tříd a zájmového vzdělávání. Pedagogický sbor se rozšířil a zvýšila se kvalifikovanost. Zrekonstruovány prostory pro druhý stupeň a jídelnu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní výuka a osobnostní rozvoj",
+        "detail": "Škola vytváří podnětné, sociálně vstřícné prostředí s respektujícím přístupem pedagogů, který se pozitivně odráží v průběhu i výsledcích vzdělávání.",
+        "evidence": "Nízké počty žáků ve třídách umožňují individuální přístup. Inovativní metody a formy práce efektivně podporují osobnostní rozvoj."
+      },
+      {
+        "tag": "Výborné výsledky v angličtině",
+        "detail": "Prakticky všichni absolventi dosahují úrovně anglického jazyka požadované pro maturitu ještě před vstupem na střední školu.",
+        "evidence": "Žáci skládají mezinárodní certifikační zkoušky. Od 5. ročníku jsou zavedeny hodiny konverzace s rodilým mluvčím."
+      },
+      {
+        "tag": "Bezpečné a podporující prostředí",
+        "detail": "Minimální výskyt rizikových jevů, žádné kázeňské opatření, funkční systém prevence úrazů a bezpečnosti.",
+        "evidence": "Třídnické hodiny, komunitní kruhy a společné aktivity stmelují školní společenství. Dohledy jsou vykonávány."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovaní pedagogové v MŠ",
+        "detail": "Dvě ze čtyř učitelek v mateřské škole nemají odbornou kvalifikaci a ani si ji nedoplňují.",
+        "evidence": "Inspekce konstatuje: 'Od předchozí inspekce se pouze částečně zlepšila kvalifikovanost učitelů v MŠ.'"
+      },
+      {
+        "tag": "Slabší hodnocení na druhém stupni",
+        "detail": "Podíl vyznamenaných žáků klesá s postupujícími ročníky, v devátém ročníku je to jen polovina.",
+        "evidence": "Na prvním stupni prospívají žáci zpravidla s vyznamenáním, na druhém stupni se podíl snižuje."
+      },
+      {
+        "tag": "Absence tělocvičny",
+        "detail": "Tělesná výchova probíhá v pronajatých prostorách mimo školu.",
+        "evidence": "Inspekční zpráva: 'Škola nemá tělocvičnu, výuka tělesné výchovy probíhá v pronajatých prostorách.'"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá individuální podpora žáků se speciálními vzdělávacími potřebami a jak se vyhodnocuje její účinnost?",
+      "Jaké konkrétní kroky podniká škola k získání kvalifikovaných pedagogů v mateřské škole?",
+      "Jak je zajištěna kontinuita tělesné výchovy, když probíhá v pronajatých prostorách mimo školu?"
+    ],
+    "who_school_fits": [
+      "Rodiče, kteří hledají alternativní přístup k vzdělávání založený na principech Montessori a osobnostním rozvoji",
+      "Rodiny s dětmi, které potřebují individuální přístup a menší třídy (80% naplněnost)",
+      "Rodiče, jejichž děti mají zájem o kvalitní výuku angličtiny a mezinárodní certifikace"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče, kteří preferují tradiční přístup k vzdělávání a klasické známkování (škola používá slovní hodnocení)",
+      "Rodiny, které potřebují tělocvičnu přímo v areálu školy",
+      "Rodiče, kteří si přejí vysoký podíl vyznamenaných žáků na druhém stupni (podíl klesá s věkem)"
+    ],
+    "plain_czech_summary": "Montessori škola v Berouně poskytuje kvalitní vzdělávání v přátelském, respektujícím prostředí. Silné stránky: výborné výsledky v angličtině, individuální přístup, bezpečné klima bez kázeňských opatření. Slabiny: dvě učitelky v MŠ bez kvalifikace, absence tělocvičny, klesající počet vyznamenaných na druhém stupni. Vhodná pro děti, které prospívají v menších třídách a alternativním přístupu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi pozitivní – všichni žáci 9. ročníku přijati na střední školy s maturitou",
+      "key_numbers": [
+        "100% přijetí na obory s maturitní zkouškou (2023/2024)",
+        "33% přijato na gymnázia",
+        "Prakticky všichni dosahují úrovně B1 v angličtině"
+      ],
+      "evidence": "Inspekce: 'Díky zřetelně nadprůměrným výsledkům v jednotné přijímací zkoušce byli ve školním roce 2023/2024 všichni žáci devátého ročníku přijati do oboru vzdělání s maturitní zkouškou.'"
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [
+        "Informace o absenci nejsou v inspekční zprávě uvedeny"
+      ],
+      "evidence": "Zpráva se zaměřuje na kvalitu vzdělávání, ne na absenci žáků."
+    },
+    "support_services": [
+      "Školní psycholožka",
+      "Výchovný poradce",
+      "Školní metodička prevence",
+      "Kariérní poradenství a systematická příprava na přijímací řízení"
+    ],
+    "safety_climate": [
+      "Minimální výskyt rizikových jevů",
+      "Žádný žák neměl sníženou známku z chování",
+      "Žádné kázeňské opatření",
+      "Funkční systém prevence úrazů a bezpečnosti",
+      "Dohledy nad žáky vykonávány, vchod zabezpečen"
+    ],
+    "partnerships_practice": [
+      "Bohatá spolupráce s různými partnery včetně mezinárodních",
+      "Zapojení do řady projektů a programů",
+      "Konverzace s rodilými mluvčími angličtiny",
+      "Externí odborníci na primární prevenci",
+      "Komunikace se zákonnými zástupci prostřednictvím třídních schůzek, tripartit a školního informačního systému"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní poznatky. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní čísla o absenci a některé údaje jsou obecnější.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je to silná stránka nebo se jednoduše nehodnotila",
+      "Kvalifikace jednoho učitele ZŠ není specifikována – není jasné, v jakém předmětu učí",
+      "Konkrétní obsah 'dílčích nedostatků' v MŠ není detailně popsán"
+    ]
+  }
+}
+```

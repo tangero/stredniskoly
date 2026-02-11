@@ -1,0 +1,115 @@
+{
+  "report_id": "GY6_600013537_2024-02-12",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:26:42.784058+00:00",
+  "run_finished_utc": "2026-02-09T16:27:11.102498+00:00",
+  "raw_file": "GY6_600013537_2024-02-12.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600013537_2024-02-12",
+    "school_profile": {
+      "school_type": "Gymnázium Globe, s.r.o. – soukromé gymnázium v Brně nabízející čtyřleté, šestileté a osmileté studium",
+      "inspection_period": "12. února 2024 až 14. února 2024",
+      "school_change_summary": "Škola se potýká s dlouhodobými problémy: nízký zájem uchazečů (100 % přijatých žáků v posledních dvou letech až v 2. a dalších kolech), vysoká fluktuace pedagogů, vysoká absence žáků (141 hodin/rok) a velmi nízká úspěšnost při maturitě (40–55 % neúspěšnosti). Inspekce zjistila, že osmileté a šestileté gymnázium jsou pro školu neefektivní."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní výuka cizích jazyků",
+          "detail": "Vyučující aktivně používají cílové jazyky, rozvíjejí komunikační dovednosti žáků a zařazují poslech a videa.",
+          "evidence": "Hospitované hodiny cizích jazyků vedly k rozvoji komunikativních dovedností v cizím jazyce."
+        },
+        {
+          "tag": "Aktivní získávání financí",
+          "detail": "Škola úspěšně hledá další zdroje financování prostřednictvím projektů a dotačních výzev.",
+          "evidence": "Škole se tímto způsobem daří alespoň částečně kompenzovat nedostatek finančních prostředků."
+        },
+        {
+          "tag": "Zapojení do soutěží a projektů",
+          "detail": "Žáci se účastní vzdělávacích projektů a soutěží, což podporuje jejich rozvoj a prezentaci školy.",
+          "evidence": "Škola zapojuje žáky do soutěží a projektů organizovaných vyučujícími."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Velmi vysoká neúspěšnost u maturitní zkoušky",
+          "detail": "V roce 2022 dosáhla neúspěšnost 55 %, v roce 2023 40 %. Pouze 15 % žáků úspěšně ukončilo vzdělání maturitou.",
+          "evidence": "Hrubá neúspěšnost v roce 2022 dosáhla 55 %, v roce 2023 40 %. Celková úspěšnost v cyklu byla 15 %."
+        },
+        {
+          "tag": "Vysoká absence a předčasné ukončování studia",
+          "detail": "Absence dosahuje 141 hodin na žáka ročně, vysoká neomluvenost vede k předčasnému ukončování vzdělání.",
+          "evidence": "Absence ve školním roce 2022/2023 dosáhla 141 hodin na žáka. Vysoká neomluvenost je spojená s předčasným ukončováním."
+        },
+        {
+          "tag": "Nedostatečná podpora žáků s odlišným mateřským jazykem",
+          "detail": "20 % žáků má odlišný mateřský jazyk, ale v letošním roce jim není poskytována cílená podpora.",
+          "evidence": "Škola eviduje 20 % žáků s odlišným mateřským jazykem, žádná specifická cílená podpora jim v tomto školním roce poskytována není."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola plánuje snížit vysokou absenci a předčasné ukončování studia?",
+        "Jaká podpora bude poskytnuta žákům s odlišným mateřským jazykem v letošním roce?",
+        "Jak se škola vypořádá s vysokou fluktuací pedagogů a jak to ovlivňuje kvalitu výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o kvalitní výuku cizích jazyků a komunikaci v anglickém jazyce",
+        "Motivovaní žáci, kteří zvládají samostatné učení a nejsou závislí na intenzivní individuální podpoře",
+        "Rodiny, které mohou aktivně podporovat studium a řešit vysokou absenci"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s odlišným mateřským jazykem – škola nemá systematickou podporu pro jejich úspěch",
+        "Žáci se slabšími studijními předpoklady – přijímací řízení neklade téměř žádné nároky, ale nízká úspěšnost při maturitě",
+        "Rodiny očekávající stabilní pedagogický tým – vysoká fluktuace zaměstnanců negativně ovlivňuje kontinuitu výuky"
+      ],
+      "plain_czech_summary": "Gymnázium Globe je soukromá škola s kvalitní výukou cizích jazyků, ale potýká se s vážnými problémy. Pouze 15 % žáků úspěšně ukončí studium maturitou, 40–55 % neuspěje. Žáci chybějí průměrně 141 hodin ročně a mnozí studium předčasně opustí. Škola přijímá žáky bez přísných kritérií, ale pak jim nedokáže poskytnout potřebnou podporu. Zvláště žáci s odlišným mateřským jazykem (20 % studentů) nemají v letošním roce žádnou cílenou podporu. Vysoká fluktuace učitelů také negativně ovlivňuje kvalitu vzdělání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Kolísavý s výrazným zhoršením v roce 2022, částečné zlepšení v roce 2023, ale stále velmi vysoká neúspěšnost",
+        "key_numbers": [
+          "2021: 25 % hrubá neúspěšnost",
+          "2022: 55 % hrubá neúspěšnost (nárůst o 30 procentních bodů)",
+          "2023: 40 % hrubá neúspěšnost"
+        ],
+        "evidence": "Škola dosáhla významně horších výsledků u maturitní zkoušky ve srovnání s gymnázii v ČR. Celková úspěšnost v cyklu byla v roce 2023 pouhých 15 %."
+      },
+      "absence": {
+        "trend": "Vysoká, přetrvávající, opatření nejsou účinná",
+        "key_numbers": [
+          "2021/2022: 186 hodin na žáka",
+          "2022/2023: 141 hodin na žáka",
+          "Vysoká neomluvenost vedoucí k předčasnému ukončování"
+        ],
+        "evidence": "Opatření přijatá školou k řešení vysoké absence nebyla dostatečně účinná a nevedla k jejímu snížení. Absence žáků je nadále vysoká."
+      },
+      "support_services": [
+        "Kariérový poradce (ředitelka)",
+        "Školní metodik prevence (ředitelka)",
+        "Výchovná poradkyně (od září 2023, bez dostatečných zkušeností)",
+        "Dobrovolné doučování z českého jazyka a individuální konzultace (nejsou systematicky vyhodnocovány)"
+      ],
+      "safety_climate": [
+        "Vstřícná, pracovní atmosféra ve třídách",
+        "Žáci dodržují nastavená pravidla chování",
+        "Vysoká absence a předčasné ukončování studia naznačují problémy s motivací a angažovaností"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se Střední školou KNIH, o.p.s. stejného zřizovatele (sdílení pedagogického sboru, společné projektové aktivity)",
+        "Zapojení do projektů s podporou EU",
+        "Spolupráce s ekologickými centry",
+        "Jednání o vytvoření geoparku s Přírodovědeckou fakultou MUNI"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a srozumitelná, s konkrétními čísly a citacemi. Kritika je jasně formulována, ale místy technicky náročná pro laiky.",
+      "uncertainty_notes": [
+        "Ředitelka v připomínkách částečně rozporuje tvrzení o nedostatečné podpoře žáků s odlišným mateřským jazykem, ale inspekce trvá na svém závěru o nesystematičnosti.",
+        "Není zcela jasné, zda se osmileté a šestileté gymnázium budou skutečně rušit, nebo zda to je pouze doporučení.",
+        "Konkrétní plány školy na nápravy nejsou v textu zmíněny, pouze jsou uvedeny nedostatky a doporučení."
+      ]
+    }
+  }
+}

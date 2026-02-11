@@ -1,0 +1,109 @@
+{
+  "report_id": "GY4_691018146_2025-06-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:34:27.731232+00:00",
+  "run_finished_utc": "2026-02-09T13:34:51.379609+00:00",
+  "raw_file": "GY4_691018146_2025-06-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691018146_2025-06-04",
+    "school_profile": {
+      "school_type": "Základní škola a gymnázium Minehava, z.s. (právní forma: spolek)",
+      "inspection_period": "4. 6. 2025 – 6. 6. 2025",
+      "school_change_summary": "Škola zahájila činnost 1. 9. 2024. K inspekci měla 40 žáků v ročnících 6–9, z toho 6 se speciálními vzdělávacími potřebami. Sídlí v pronajatých prostorách v Praze 3 s dobrou dopravní dostupností."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Přátelská atmosféra",
+          "detail": "Škola vytváří bezpečné prostředí založené na vzájemné úctě, respektu a důvěře s empatickým přístupem pedagogů.",
+          "evidence": "Přátelská, respektující atmosféra, vstřícná komunikace a empatický přístup pedagogů k žákům."
+        },
+        {
+          "tag": "Partnerská komunikace s rodiči",
+          "detail": "Vedení školy podporuje otevřenou komunikaci se zákonnými zástupci v přátelské atmosféře.",
+          "evidence": "Spolupráce probíhá v přátelské atmosféře a přispívá k budování pozitivního školního klimatu."
+        },
+        {
+          "tag": "Prevence a sociální klima",
+          "detail": "Škola aktivně pracuje na prevenci negativních jevů prostřednictvím ranních kruhů, školních sněmů a mimoškolních aktivit.",
+          "evidence": "Školní preventivní strategie se zaměřují na vytváření příznivého sociálního klimatu, pravidelné ranní kruhy a školní sněmy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "5 z 9 pedagogů nemá odbornou kvalifikaci, což se negativně projevuje v kvalitě výuky.",
+          "evidence": "5 z nich nesplňuje předpoklad odborné kvalifikace. Nekvalifikovanost se negativně odrazila v kvalitě vzdělávacího procesu."
+        },
+        {
+          "tag": "Slabá kvalita výuky",
+          "detail": "Výuka postrádá diferenciaci, aktivizaci žáků, didaktické závěry a systematickou práci s chybou.",
+          "evidence": "Efektivita výuky byla ve většině hospitovaných hodin nízká. Chyběla diferenciace, absence didaktického závěru, chybělo shrnutí probraného učiva."
+        },
+        {
+          "tag": "Porušování právních předpisů",
+          "detail": "Školní program není v souladu s rámcovým programem, žáci si sami volí předměty a někdy chybí povinné předměty.",
+          "evidence": "Školní vzdělávací program není v souladu s Rámcovým vzdělávacím programem. Analýzou rozvrhů bylo zjištěno, že neobsahují některé povinné předměty."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola zajišťuje, aby všichni žáci absolvovali všechny povinné předměty podle školního programu?",
+        "Jaký je plán na zvýšení kvalifikace učitelů, kteří nemají odborné vzdělání?",
+        "Jak konkrétně škola podporuje žáky se speciálními potřebami a jak se kontroluje účinnost podpůrných opatření?"
+      ],
+      "who_school_fits": [
+        "Žáci, kterým vyhovuje netradiční přístup k vzdělávání a kteří si cení přátelské atmosféry a empatického přístupu",
+        "Rodiny, které chtějí aktivně participovat na školním životě a komunikovat s vedením školy",
+        "Žáci, kteří se dobře orientují sami a nepotřebují přísný strukturovaný rámec"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří očekávají vysokou kvalitu výuky a systematické vzdělávání – škola má vážné nedostatky v metodice a kvalifikaci učitelů",
+        "Žáci se speciálními vzdělávacími potřebami – podpůrná opatření nejsou vždy realizována v plném rozsahu",
+        "Rodiny, které potřebují jasnou strukturu a kontrolu – systém řízení školy není plně funkční a chybí jasné kompetence"
+      ],
+      "plain_czech_summary": "Škola Minehava je mladá instituce (od září 2024) s přátelskou atmosférou a dobrým vztahem k rodičům. Má však vážné problémy: pět z devíti učitelů nemá odbornou kvalifikaci, kvalita výuky je nízká s nedostatečnou diferenciací a aktivizací žáků. Školní program porušuje právní předpisy – žáci si sami volí předměty a někdy chybí povinné předměty. Vedení školy nemá dostatečný kontrolní systém. Inspekce doporučuje urgentní nápravy v kvalifikaci učitelů, kvalitě výuky a souladu s právními předpisy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Není relevantní – zpráva se týká základní školy",
+        "key_numbers": [
+          "Škola má gymnázium v názvu, ale inspekce se týkala pouze základní školy"
+        ],
+        "evidence": "Inspekční činnost byla vykonána v základní škole. Předmět inspekční činnosti se týkal základního vzdělávání."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [
+          "Údaje o absenci nejsou v inspekční zprávě uvedeny"
+        ],
+        "evidence": "Zpráva se nezabývá absencí žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně a školní metodik prevence zajišťují péči o žáky se speciálními vzdělávacími potřebami",
+        "Škola realizuje podpůrná opatření na základě doporučení školských poradenských zařízení, ale ne vždy v plném rozsahu",
+        "Systém podpory ohrožených žáků je založen na včasném informování zákonných zástupců"
+      ],
+      "safety_climate": [
+        "Budova je zabezpečena elektronickým vstupním systémem",
+        "Škola se nachází v klidné zóně s dobrou dopravní dostupností",
+        "Přátelská atmosféra a vzájemná důvěra mezi pedagogy a žáky"
+      ],
+      "partnerships_practice": [
+        "Vedení školy vytváří podmínky pro otevřenou a partnerskou komunikaci se zákonnými zástupci",
+        "Spolupráce s rodiči probíhá v přátelské atmosféře a přispívá k budování pozitivního školního klimatu",
+        "Škola pořádá adaptační a zimní pobyty, jarní výjezdy a školní sněmy"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady problémů. Některé pasáže jsou však technické a obsahují úřednický jazyk, který by rodiče bez pedagogického vzdělání mohli těžko pochopit.",
+      "uncertainty_notes": [
+        "Zpráva se zaměřuje na základní školu, přestože název školy obsahuje 'gymnázium' – není jasné, zda gymnázium existuje a jaké jsou jeho výsledky",
+        "Nejsou uvedeny konkrétní výsledky testů nebo prospěchu žáků, pouze kvalitativní hodnocení",
+        "Není jasné, jak dlouho bude trvat náprava zjištěných nedostatků a zda bude škola schopna je odstranit"
+      ]
+    }
+  }
+}

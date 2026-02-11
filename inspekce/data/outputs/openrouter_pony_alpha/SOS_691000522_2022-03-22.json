@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_691000522_2022-03-22",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:05:22.064100+00:00",
+  "run_finished_utc": "2026-02-10T07:06:21.859852+00:00",
+  "raw_file": "SOS_691000522_2022-03-22.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_691000522_2022-03-22",
+    "school_profile": {
+      "school_type": "Soukromá střední škola s obory Bezpečnostně právní činnost, Veřejnosprávní činnost a Podnikání.",
+      "inspection_period": "22. 3. 2022 − 24. 3. 2022",
+      "school_change_summary": "Škola si udržuje kvalitní materiální zázemí a příkladnou péči o žáky, inspekce však identifikovala prostor pro zlepšení ve výsledcích maturit a metodách výuky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Atmosféra a vztahy",
+          "detail": "Ve škole panuje příjemné klima založené na vzájemné důvěře, respektu a partnerské spolupráci.",
+          "evidence": "„Dobré prosociální vztahy a zájem o žáky pozitivně ovlivňují proces vzdělávání.“"
+        },
+        {
+          "tag": "Odborná spolupráce",
+          "detail": "Škola výborně spolupracuje s partnery z praxe, což zvyšuje motivaci studentů.",
+          "evidence": "„Zdařilá a funkční je spolupráce s mnoha sociálními partnery... dochází k podpoře rozvoje odborných kompetencí žáků.“"
+        },
+        {
+          "tag": "Materiální zajištění",
+          "detail": "Škola disponuje velmi dobrým technickým vybavením a zázemím pro výuku.",
+          "evidence": "„Škola má velmi dobré materiální a technické podmínky pro naplňování školních vzdělávacích programů.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Maturitní výsledky",
+          "detail": "V roce 2021 se výrazně zvýšil podíl neúspěšných studentů u maturitní zkoušky.",
+          "evidence": "„V roce 2021 byla celková neúspěšnost u maturitní zkoušky 13,6 % (v republice 5,5 %).“"
+        },
+        {
+          "tag": "Individualizace výuky",
+          "detail": "Učitelé příliš nerozlišují úkoly podle schopností jednotlivých žáků.",
+          "evidence": "„Ve výuce nebyla zaznamenána zřetelná diferenciace úkolů dle individuálních předpokladů žáků.“"
+        },
+        {
+          "tag": "Zpětná vazba",
+          "detail": "Studenti často nedostávají dostatečnou informaci o tom, jak učivo zvládli.",
+          "evidence": "„Pedagogové neposkytovali dostatečnou zpětnou vazbu o míře zvládnutého učiva.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podpoří mé dítě, pokud bude mít s učivem potíže, když inspekce zjistila nedostatečnou individualizaci?",
+        "Jaká opatření škola přijala ke zlepšení maturitních výsledků po horším roce 2021?",
+        "V jakých konkrétních firmách a institucích mohou studenti absolvovat odbornou praxi?"
+      ],
+      "who_school_fits": [
+        "Pro studenty, kteří hledají obory zaměřené na bezpečnost, diplomacii nebo veřejnou správu.",
+        "Pro žáky, kterým vyhovuje partnerský přístup učitelů a přátelské prostředí školy.",
+        "Pro ty, kteří očekávají kvalitní odbornou přípravu s propojením praxe."
+      ],
+      "who_should_be_cautious": [
+        "Pro studenty se specifickými vzdělávacími potřebami, pokud vyžadují silně individualizovaný přístup ve výuce.",
+        "Pro rodiče, kteří kladou důraz na stabilní a nadprůměrné maturitní výsledky školy.",
+        "Pro žáky, kteří potřebují častou a detailní zpětnou vazbu od učitelů."
+      ],
+      "plain_czech_summary": "Inspekce potvrdila, že se jedná o školu s výborným technickým vybavením a velmi dobrou atmosférou, kde pedagogové mají zájem o studenty. Velkým plusem je propojení výuky s praxí. Slabinou je rok 2021, kdy byly maturitní výsledky výrazně horší než celorepublikový průměr. Inspekce také kritizovala, že učitelé příliš nepřizpůsobují výuku různým schopnostem studentů a nevěnují dostatek prostoru zpětné vazbě. Škola je vhodná pro samostatné studenty s zájmem o danou odbornou problematiku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršení (nárůst neúspěšnosti v roce 2021)",
+        "key_numbers": [
+          "Neúspěšnost 2021: 13,6 % (ČR 5,5 %)",
+          "Neúspěšnost 2020: 10,3 % (ČR 11,6 %)",
+          "Neúspěšnost dálkové studium 2021: 12,5 %"
+        ],
+        "evidence": "„V roce 2021 byla celková neúspěšnost u maturitní zkoušky 13,6 % (v republice 5,5 %).“"
+      },
+      "absence": {
+        "trend": "Nehodnoceno (inspekce neuvádí konkrétní čísla o absenci)",
+        "key_numbers": [
+          "Není uvedeno ve zprávě"
+        ],
+        "evidence": "Text zprávy neobsahuje specifické údaje o absence."
+      },
+      "support_services": [
+        "Individuální konzultace a doučování pro žáky ohrožené neúspěchem.",
+        "Spolupráce výchovné poradkyně a metodičky prevence.",
+        "Maturitní tréninky a tandemová výuka."
+      ],
+      "safety_climate": [
+        "Nízký výskyt rizikového chování.",
+        "Podpora třídního klimatu kurzy a výlety.",
+        "Aktivní zapojení žáků do charitativních akcí."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s odborníky z praxe při výuce.",
+        "Realizace odborných kurzů a exkurzí s partnery.",
+        "Pravidelné vyhodnocování průběhu odborné praxe."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně, jasně odděluje hodnocení podmínek, průběhu a výsledků. Závěry jsou dobře strukturované.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní data o neomluvené absenci.",
+        "Není blíže specifikováno, o jaké sociální partnery se jedná (jen obecně 'profesní sféry').",
+        "Chybí detailnější rozbor příčin horších maturitních výsledků v roce 2021."
+      ]
+    }
+  }
+}

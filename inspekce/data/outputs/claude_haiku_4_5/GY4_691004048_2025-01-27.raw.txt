@@ -1,0 +1,44 @@
+```json
+{
+  "report_id": "GY4_691004048_2025-01-27",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté)",
+    "inspection_period": "27. ledna až 21. února 2025",
+    "school_change_summary": "Není dostupný zdrojový text zprávy pro analýzu."
+  },
+  "for_parents": {
+    "strengths": [],
+    "risks": [],
+    "questions_for_open_day": [],
+    "who_school_fits": [],
+    "who_should_be_cautious": [],
+    "plain_czech_summary": "Není dostupný zdrojový text inspekční zprávy. Bez konkrétního obsahu nelze poskytnout analýzu silných stránek, rizik, výsledků maturity, absence nebo dalších důležitých informací pro rodiče uchazeče."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nedostupné",
+      "key_numbers": [],
+      "evidence": "Chybí zdrojový text zprávy"
+    },
+    "absence": {
+      "trend": "Nedostupné",
+      "key_numbers": [],
+      "evidence": "Chybí zdrojový text zprávy"
+    },
+    "support_services": [],
+    "safety_climate": [],
+    "partnerships_practice": []
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 1,
+    "czech_clarity_reason": "Zdrojový text inspekční zprávy nebyl poskytnut. Analýza je nemožná bez konkrétního obsahu dokumentu.",
+    "uncertainty_notes": [
+      "Chybí kompletní text inspekční zprávy",
+      "Nelze ověřit žádná tvrzení o škole",
+      "Výstup je pouze strukturální šablona bez faktických dat"
+    ]
+  }
+}
+```
+
+**Poznámka:** Prosím, poskytněte text inspekční zprávy. Bez něj nemohu provést analýzu pro rodiče. Potřebuji konkrétní obsah dokumentu ČŠI.

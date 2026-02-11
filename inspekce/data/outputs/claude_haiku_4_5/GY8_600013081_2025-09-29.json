@@ -1,0 +1,114 @@
+{
+  "report_id": "GY8_600013081_2025-09-29",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:33:11.790180+00:00",
+  "run_finished_utc": "2026-02-09T13:33:32.832286+00:00",
+  "raw_file": "GY8_600013081_2025-09-29.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600013081_2025-09-29",
+    "school_profile": {
+      "school_type": "Gymnázium (čtyřleté a osmiletého oboru)",
+      "inspection_period": "29. září až 1. října 2025",
+      "school_change_summary": "Od minulé inspekce došlo ke změně na pozici ředitele školy. Nový ředitel vychází z koncepce rozvoje školy 2023–2028 zaměřené na podporu vztahů se všemi účastníky vzdělávání a rozvoj materiálních podmínek."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky",
+          "detail": "Žáci dosahují výborných výsledků v jednotlivých ročnících i u maturitních zkoušek, všichni úspěšně absolvují maturitu.",
+          "evidence": "Výsledky jsou stabilní od minulé inspekce, žáci byli úspěšnější než průměr gymnázií v ČR."
+        },
+        {
+          "tag": "Bohaté mimoškolní aktivity",
+          "detail": "Škola nabízí soutěže, zahraniční pobyty (USA, Anglie), dobrovolnictví a program DOFE.",
+          "evidence": "Žáci úspěšní v soutěžích z matematiky, fyziky, angličtiny a ve sportovních soutěžích."
+        },
+        {
+          "tag": "Dobrá materiální vybavení",
+          "detail": "Prostorové a materiálně technické podmínky jsou dobré a průběžně se zlepšují.",
+          "evidence": "Projekty podporují doučování a preventivní programy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Převaha frontální výuky",
+          "detail": "Výuka je často vedena tradičním způsobem bez dostatečné aktivizace žáků a skupinové spolupráce.",
+          "evidence": "Hospitace ukázaly málo diferenciace, absence kooperativních metod a sebehodnocení žáků."
+        },
+        {
+          "tag": "Slabá reflexe v hodinách",
+          "detail": "Učitelé věnují málo pozornosti shrnutí učiva a ověření dosažení cílů na konci hodiny.",
+          "evidence": "Závěr hodiny slouží jen zřídka ke zhodnocení průběhu a zpětné vazbě."
+        },
+        {
+          "tag": "Nedostatečné řídící mechanismy",
+          "detail": "Vedení školy má málo účelně nastavené kontrolní mechanismy pro řízení pedagogického procesu.",
+          "evidence": "Chybí jasná pravidla pro realizaci kontrol a jejich efektivní využívání."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje s nadanými žáky a jak je individuálně podporuje přímo ve výuce?",
+        "Jaké metody výuky škola zavádí, aby byla výuka více interaktivní a méně frontální?",
+        "Jak se škola připravuje na změny v přístupu k výuce, které inspekce doporučila?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními výsledky a motivací – škola má vysoké nároky a výborné výsledky",
+        "Zájemci o mezinárodní zkušenosti – nabízí pobyty v USA a Anglii",
+        "Talentovaní v matematice, fyzice a jazycích – škola má silné zázemí v těchto oborech"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují více interaktivní a skupinové práce – výuka je zatím spíše frontální",
+        "Žáci se speciálními vzdělávacími potřebami – poradenské pracoviště je v přestavbě, dokumentace není zcela efektivní",
+        "Žáci, kteří se lépe učí prostřednictvím diskuse a vlastního objevování – chybí dostatek těchto příležitostí"
+      ],
+      "plain_czech_summary": "Gymnázium Žamberk je kvalitní škola s výbornými výsledky maturit a bohatým mimoškolním programem. Žáci jsou úspěšní v soutěžích a mají možnost studijních pobytů v zahraničí. Hlavní výzvou je modernizace výuky – inspekce doporučuje více interaktivních metod, diferenciace a reflexe v hodinách. Vedení školy pracuje na zlepšení řídících procesů a podpory žáků se speciálními potřebami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní a výborný",
+        "key_numbers": [
+          "100 % úspěšnost v maturitní zkoušce",
+          "Velká část žáků absolvuje maturitu s vyznamenáním",
+          "Výsledky lepší než průměr gymnázií v ČR"
+        ],
+        "evidence": "Všichni žáci úspěšně absolvují společnou i profilovou část maturitní zkoušky, výsledky jsou od minulé inspekce stabilní."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Informace nejsou v inspekční zprávě dostupné"
+        ],
+        "evidence": "Zpráva se absence věnuje pouze okrajově v kontextu školního klimatu."
+      },
+      "support_services": [
+        "Školní psycholog na částečný úvazek",
+        "Výchovná poradkyně (druhý rok v pozici, absolvuje kvalifikační studium)",
+        "Metodička prevence (druhý rok v pozici, doplňuje si kvalifikaci)",
+        "Doučování a konzultace zajišťované učiteli mimo vyučování"
+      ],
+      "safety_climate": [
+        "Klidná pracovní atmosféra v hodinách",
+        "Pravidelné adaptační kursy a aktivity na zlepšení vztahů v třídách",
+        "Operativní řešení rizikového chování ve spolupráci s třídními učiteli a rodiči",
+        "Osvědčené dny s třídním učitelem a celoškolní projekty"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce se střední školou Rice Lake (USA) – roční pobyty vybraných žáků",
+        "Jazykový pobyt v Anglii",
+        "Spolupráce s Univerzitou Palackého v Olomouci",
+        "Spolupráce s Contipro a.s."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní zjištění opřená o pozorování. Některé pasáže jsou však formulovány úřednicky a vyžadují pozorné čtení.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna – nelze posoudit trend absence žáků",
+        "Konkrétní počty žáků se speciálními potřebami (9 žáků) je uvedeno, ale detaily jejich podpory nejsou jasné",
+        "Financování projektů a jejich konkrétní dopad na kvalitu výuky není specifikován"
+      ]
+    }
+  }
+}

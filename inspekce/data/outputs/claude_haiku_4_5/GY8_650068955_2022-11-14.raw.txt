@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY8_650068955_2022-11-14",
+  "school_profile": {
+    "school_type": "Gymnázium (8leté) a základní škola, s.r.o., soukromá",
+    "inspection_period": "14.–16. listopadu a 21. listopadu 2022",
+    "school_change_summary": "Od předchozí inspekce (2015) se zvýšil počet žáků, rozšířilo se materiální vybavení a zintenzivnila se spolupráce se sociálními partnery. Od 1. září 2022 nová ředitelka školy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné jazykové vzdělání",
+        "detail": "Přibližně 80 % žáků 5. ročníku ZŠ úspěšně skládá zkoušku PET, v anglickém jazyce škola dlouhodobě vykazuje lepší výsledky než průměr v republice.",
+        "evidence": "Vysoká úroveň prokazovaných jazykových znalostí zejména v anglickém jazyce, výborné výsledky maturit."
+      },
+      {
+        "tag": "Osobnostní rozvoj a dobrovolnictví",
+        "detail": "Škola systematicky podporuje dobrovolnické aktivity a osobnostní rozvoj žáků prostřednictvím kroužků, projektů a mezinárodních programů.",
+        "evidence": "Většina žáků se zapojuje do dobrovolnických aktivit, úspěšná účast v Ceně vévody z Edinburghu."
+      },
+      {
+        "tag": "Kvalitní poradenské služby",
+        "detail": "Komplexní péče o žáky zahrnuje pedagogicko-psychologickou poradnu, školní poradenské pracoviště a mentoring.",
+        "evidence": "PPP vybavena diagnostickými nástroji, ŠPP poskytuje individualizované služby včetně podpory talentu a nadání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší diferenciace ve výuce SŠ",
+        "detail": "Ve dvou třetinách hodin střední školy nebyla patrná diferenciace obsahu podle schopností a nadání žáků.",
+        "evidence": "Inspektoři zaznamenali nedostatečné rozdělení náročnosti obsahu učiva a úkolů podle schopností."
+      },
+      {
+        "tag": "Nedostatky v kontrolním systému",
+        "detail": "Nižší účinnost kontroly se projevila v nesouladu školních vzdělávacích programů s rámcovými programy a v dokumentaci poradny.",
+        "evidence": "Spisová dokumentace PPP není vždy přehledná a neobsahuje všechny povinné údaje."
+      },
+      {
+        "tag": "Chybějící zpětná vazba v hodinách SŠ",
+        "detail": "V závěru hodin se nedostatečně věnují shrnutí učiva a chybí formativní hodnocení a vzájemné hodnocení žáků.",
+        "evidence": "Inspektoři zaznamenali nedostatek sebehodnocení a vzájemného hodnocení ve střední škole."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s různými schopnostmi v jednotlivých předmětech střední školy?",
+      "Jaké jsou možnosti individuálního mentoringu a podpory pro nadané žáky?",
+      "Jak probíhá příprava na maturitu a jaké jsou výsledky v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o kvalitní jazykové vzdělání, zejména angličtinu a další cizí jazyky",
+      "Talentovaní a nadaní žáci, kterým škola nabízí speciální podporu a individuální projekty",
+      "Žáci ze sociálně znevýhodněného prostředí, kterým škola poskytuje stipendia a podporu nadace TKFF"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují intenzivní individuální diferenciaci ve výuce – škola ji zatím ne vždy poskytuje",
+      "Žáci s poruchami učení – poradna neposkytuje terapeutické služby přímo v PPP, pouze přes školní poradenské pracoviště",
+      "Žáci, kteří preferují menší třídy – gymnázium má 16 tříd s vysokou naplněností (95 %)"
+    ]
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě pozitivní, stabilně vysoké výsledky",
+      "key_numbers": [
+        "Dvě třetiny žáků prospívají s vyznamenáním",
+        "Výsledky v češtině, cizích jazycích a matematice lepší než průměr v oboru v republice",
+        "Žáci absolvují IB zkoušky s výborným výsledkem nad celosvětovým průměrem"
+      ],
+      "evidence": "Průběžným výsledkům odpovídají výsledky maturitních zkoušek, především v anglickém jazyce jsou výsledky výborné."
+    },
+    "absence": {
+      "trend": "Nízká absence",
+      "key_numbers": [
+        "Celkově nízká absence",
+        "Příznivé výsledky chování žáků",
+        "Minimální využívání kázeňských opatření"
+      ],
+      "evidence": "Účinnost preventivního programu a formativního hodnocení se projevuje v celkově nízké absenci."
+    },
+    "support_services": [
+      "Pedagogicko-psychologická poradna (PPP) s diagnostickými nástroji a reedukačními pomůckami",
+      "Školní poradenské pracoviště (ŠPP) se zaměřením na individualizované služby, kariérové poradenství a mentoring",
+      "Asistenti pedagoga ve všech vyučovacích hodinách základní školy",
+      "Kroužek na podporu strategií učení s principy Feuersteinova instrumentálního obohacování"
+    ],
+    "safety_climate": [
+      "Bezpečné prostředí zajištěné preventivním poučováním žáků o bezpečnosti a ochraně zdraví",
+      "Nízká míra školní úrazovosti v SŠ, v ZŠ kolísající, ale nepřesahující celorepublikový průměr",
+      "Partnerský a empatický přístup učitelů k žákům vytváří příjemnou pracovní atmosféru",
+      "Pravidla upravující jednotný způsob oblékání a společné akce pozitivně ovlivňují klima ve škole"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem (Open Gate a.s.) a nadací The Kellner Family Foundation (TKFF)",
+      "Partnerství s regionálními institucemi, dalšími školami včetně zahraničních a odborníky z praxe",
+      "Spolupráce s charitativními organizacemi na dobrovolnických aktivitách",
+      "Mezinárodní program Cena vévody z Edinburghu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Obsahuje konkrétní příklady a čísla. Některé pasáže jsou však velmi odborné a dlouhé, což může ztížit orientaci rodičům bez pedagogického vzdělání.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní předměty se vyučují v angličtině na nižším gymnáziu – není jasné, zda všechny nebo jen vybrané.",
+      "Není uvedeno, kolik žáků školy dosahuje vyznamenání v jednotlivých ročnících SŠ – údaj o dvou třetinách je agregovaný.",
+      "Chybí informace o počtu žáků, kteří pokračují na vysoké školy v zahraničí versus v Česku – uvedeno jen 'více než polovina'."
+    ]
+  }
+}
+```

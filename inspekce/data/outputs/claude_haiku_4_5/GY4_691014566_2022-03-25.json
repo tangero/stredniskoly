@@ -1,0 +1,113 @@
+{
+  "report_id": "GY4_691014566_2022-03-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:05:49.127298+00:00",
+  "run_finished_utc": "2026-02-09T17:06:16.180589+00:00",
+  "raw_file": "GY4_691014566_2022-03-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_691014566_2022-03-25",
+    "school_profile": {
+      "school_type": "Základní škola VIA BEROUN s školní družinou, nově založená (od školního roku 2021/2022)",
+      "inspection_period": "25. až 28. března 2022",
+      "school_change_summary": "Škola začala poskytovat vzdělávání od září 2021. Vzdělává 29 žáků v základní škole (1. třída a třída pro ukrajinské uprchlíky 1.–3. ročník) a 23 žáků individuálně. Provozuje také školní družinu. Sídlí v pronajatých prostorech střední školy v Berouně."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Promyšlená vzdělávací koncepce",
+          "detail": "Škola kombinuje progresivní pedagogické přístupy zaměřené na rozvoj dovedností a hodnot, s důrazem na anglický jazyk a učení pro 21. století.",
+          "evidence": "Koncepce je \"detailně propracovaná v těsně provázaných školních vzdělávacích programech a zřetelně se uplatňuje v průběhu vzdělávání.\""
+        },
+        {
+          "tag": "Strukturované hodnocení žáků",
+          "detail": "Škola kombinuje klasifikaci, slovní hodnocení, sebehodnocení a vrstevnické hodnocení s detailní zpětnou vazbou.",
+          "evidence": "\"Velmi strukturovaný systém hodnocení\" zahrnuje portfolia, žákovské knížky a trojstranné hodnotící rozhovory učitele, žáka a rodiče."
+        },
+        {
+          "tag": "Bezpečné prostředí pro ukrajinské děti",
+          "detail": "Škola vytváří pocit bezpečí a vřelého přijetí pro ukrajinské uprchlíky s podporou ukrajinských zaměstnanců.",
+          "evidence": "\"Srdečná atmosféra vyučování jim poskytuje cíleně budovaný cenný pocit bezpečí a vřelého přijetí v cizí zemi.\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Přípravná třída – příliš řízené aktivity",
+          "detail": "Předškolní děti mají málo času na volnou hru a spontánní komunikaci, což neodpovídá jejich věkovým potřebám.",
+          "evidence": "\"Celé dopoledne převažovaly řízené aktivity s minimem příležitostí pro volnou hru nebo spontánní komunikaci mezi dětmi.\""
+        },
+        {
+          "tag": "Chybějící kvalifikace některých pedagogů",
+          "detail": "Jedna pedagogická pracovnice nemá odbornou kvalifikaci pro práci jako asistentka pedagoga a vychovatelka.",
+          "evidence": "\"Jedné pedagogické pracovnici, která působí jako asistentka pedagoga i jako vychovatelka, chybí odborná kvalifikace k oběma uvedeným činnostem.\""
+        },
+        {
+          "tag": "Nová škola – krátká historie",
+          "detail": "Škola funguje teprve od září 2021, takže chybí dlouhodobé údaje o stabilitě a výsledcích.",
+          "evidence": "\"Vzdělávání a školské služby začala poskytovat od začátku školního roku 2021/2022.\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně plánujete upravit denní řád v přípravné třídě, aby měly děti více času na volnou hru a spontánní činnosti?",
+        "Jaké konkrétní kroky podniknete, aby všichni pedagogičtí pracovníci měli potřebné kvalifikace?",
+        "Jak se škola vypořádává s tím, že sídlí v pronajatých prostorech střední školy – je to dlouhodobé řešení?"
+      ],
+      "who_school_fits": [
+        "Rodiče, kterým vyhovuje progresivní přístup k vzdělávání s důrazem na rozvoj dovedností a hodnot",
+        "Rodiny zajímající se o kvalitní výuku angličtiny od prvního ročníku (vedená rodilým mluvčím)",
+        "Ukrajinské rodiny hledající bezpečné a podporující prostředí pro své děti"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, kteří preferují tradiční přístup k vzdělávání a klasické vyučování",
+        "Rodiny s dětmi, které potřebují více struktury a jasných pravidel (škola klade důraz na neformální vazby)",
+        "Rodiče obávající se stability nové školy bez dlouhodobé historie a zkušeností"
+      ],
+      "plain_czech_summary": "Základní škola VIA BEROUN je nová, progresivně zaměřená škola s promyšlenou koncepcí vzdělávání. Silnými stránkami jsou kvalitní anglická výuka, strukturované hodnocení žáků a bezpečné prostředí pro ukrajinské děti. Inspekce upozornila na nedostatek volné hry v přípravné třídě a chybějící kvalifikaci jedné pedagogické pracovnice. Škola dosahuje dobrých výsledků – všichni žáci prospěli s vyznamenáním. Vhodná pro rodiče hledající moderní přístup k vzdělávání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neuplatnitelné – jedná se o základní školu, ne střední",
+        "key_numbers": [
+          "Škola funguje od září 2021",
+          "Všichni žáci prospěli s vyznamenáním v 1. pololetí"
+        ],
+        "evidence": "Inspekční zpráva se týká základní školy, nikoliv gymnázia či střední školy s maturitou."
+      },
+      "absence": {
+        "trend": "Výborné – žádné problémy s chováním nebo neomluvenými absencemi",
+        "key_numbers": [
+          "Nula kázeňských opatření v 1. pololetí",
+          "Žádné školní úrazy od zahájení činnosti"
+        ],
+        "evidence": "\"Komorní atmosféra a partnerský přístup školy je účinnou prevencí rizikového chování a nekázně žáků, které se od počátku činnosti školy nevyskytují.\""
+      },
+      "support_services": [
+        "Školní poradenské zařízení – identifikováno 1 dítě se speciálními vzdělávacími potřebami",
+        "Dvě ukrajinské školní asistentky – jedna s kvalifikací učitelky, druhá s kvalifikací psycholožky a tlumočnice",
+        "Preventivní program školy zaměřený na bezpečnost a klima"
+      ],
+      "safety_climate": [
+        "Bezpečné prostředí – žádné školní úrazy od zahájení činnosti",
+        "Dohledy nad žáky jsou účelně stanoveny a řádně vykonávány",
+        "Pozitivní klima školy je předmětem pravidelných porad pedagogických pracovníků",
+        "Zvláště příznivé prostředí pro ukrajinské žáky – pocit bezpečí a vřelého přijetí"
+      ],
+      "partnerships_practice": [
+        "Těsná spolupráce se zřizovatelem (Nadace TIPSPORT)",
+        "Klíčové partnerství se zákonnými zástupci dětí a žáků – pravidelný denní kontakt vedení školy",
+        "Pravidelná školní shromáždění a trojstranné hodnotící rozhovory",
+        "Personální propojení základního a zájmového vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a detailně, s konkrétními příklady z pozorování. Hlavní zjištění jsou jasná. Mírně snižuje skóre administrativní jazyk a délka některých vět, ale pro rodiče je obsah pochopitelný.",
+      "uncertainty_notes": [
+        "Zpráva se týká základní školy, ne gymnázia – metadata uvádějí typ GY4, což je nesoulad. Analýza vychází z obsahu textu (základní škola).",
+        "Dlouhodobé trendy nelze posoudit – škola funguje teprve od září 2021, inspekce proběhla v březnu 2022.",
+        "Údaje o absencích a chování jsou pouze za 1. pololetí školního roku 2021/2022 – krátké období."
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOS_600171213_2022-10-10",
+  "school_profile": {
+    "school_type": "Střední škola s maturitními obory (Agropodnikání, Ekologie a životní prostředí, Hotelnictví, Polygrafie, Podnikání) a výučními obory (Jezdec a chovatel koní, Pekař, Cukrář, Kuchař-číšník, Řezník-uzenář, Výrobce potravin, Aranžér, Tiskář)",
+    "inspection_period": "10. 10. 2022 – 14. 10. 2022",
+    "school_change_summary": "Škola vznikla sloučením dvou středních odborných škol v roce 2013. Od roku 2019 vede školu nový ředitel, který cíleně naplňuje dlouhodobou koncepci rozvoje zaměřenou na materiální podmínky, spolupráci se sociálními partnery a mezinárodní výměny."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Výuka odborných předmětů je kvalitně zaměřena prakticky s účastí odborníků z praxe, což vede k úspěchům žáků v odborných soutěžích.",
+        "evidence": "Žáci dosahují předních umístění v krajských i celostátních kolech odborných soutěží."
+      },
+      {
+        "tag": "Mezinárodní zkušenosti",
+        "detail": "Škola organizuje pravidelné zahraniční praxe a výměnné pobyty, které rozvíjejí jazykové a profesní dovednosti.",
+        "evidence": "Poznatky a zkušenosti získané v zahraničí se odrážejí v jazykovém a profesním vzdělávání žáků."
+      },
+      {
+        "tag": "Kvalitní pedagogický sbor",
+        "detail": "Učitelé mají zkušenosti z praxe a průběžně se vzdělávají podle aktualizovaného plánu dalšího vzdělávání.",
+        "evidence": "Vedení školy vytváří podmínky pro spolupráci pedagogů a podporuje jejich profesní rozvoj."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky z matematiky",
+        "detail": "Žáci jsou dlouhodobě méně úspěšní u maturitní zkoušky z matematiky, zejména v oboru Podnikání.",
+        "evidence": "Škola organizuje doučování pro žáky ohrožené neúspěchem, ale problém přetrvává."
+      },
+      {
+        "tag": "Vysoká neúspěšnost v prvním ročníku",
+        "detail": "Tříleté obory s výučním listem vykazují přibližně 18 % neprospívajících žáků v prvním ročníku.",
+        "evidence": "Výsledky vzdělávání v posledních třech letech ukazují poměrně vysoký počet neprospívajících."
+      },
+      {
+        "tag": "Omezené metody výuky",
+        "detail": "Výuka používá úzké spektrum forem a metod, což nemusí plně využít potenciál všech žáků.",
+        "evidence": "Inspekce doporučuje zaměřit se na realizaci moderních forem a metod ve větším rozsahu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší slabší výsledky z matematiky a jakou nabízí podporu pro žáky, kteří si s tímto předmětem nevedou dobře?",
+      "Jaké konkrétní zahraniční partnerské školy má a jak často se žáci účastní výměnných pobytů?",
+      "Jak se liší přístup k nadaným žákům a žákům se speciálními vzdělávacími potřebami v jednotlivých třídách?"
+    ],
+    "who_school_fits": [
+      "Žáci s praktickým zaměřením a zájmem o gastronomii, zemědělství nebo polygrafii, kteří se chtějí učit od zkušených praktiků",
+      "Studenti, kteří chtějí získat mezinárodní zkušenosti a zlepšit si jazykové dovednosti prostřednictvím zahraničních pobytů",
+      "Žáci, kteří prospívají v praktické výuce a chtějí si osvojit konkrétní odborné dovednosti s návazností na budoucí zaměstnání"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími matematickými schopnostmi, zejména pokud uvažují o oboru Podnikání, by měli počítat s intenzivnější přípravou",
+      "Studenti, kteří preferují teoretickou výuku a méně praktické činnosti, mohou být v některých oborech méně spokojeni",
+      "Žáci se speciálními vzdělávacími potřebami by měli vědět, že diferenciace učiva není zatím dostatečně rozvinuta"
+    ],
+    "plain_czech_summary": "Albrechtova střední škola je moderní zařízení se silným zaměřením na praktickou výuku a propojení s praxí. Učitelé mají zkušenosti z profesního života a žáci se účastní zahraničních pobytů. Škola dosahuje dobrých výsledků v odborných soutěžích. Slabší stránkou jsou výsledky z matematiky a vysoká neúspěšnost v prvních ročnících některých oborů. Inspekce doporučuje rozšířit spektrum vyučovacích metod a více podporovat sebehodnocení žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě slabší výsledky v předmětech společné části, zejména v matematice",
+      "key_numbers": [
+        "Pouze jeden neúspěšný žák u praktické maturitní zkoušky za poslední tři roky",
+        "Obor Podnikání vykazuje nižší úspěšnost z matematiky",
+        "Žáci tříletých oborů s výučním listem dosahují u závěrečné zkoušky dobrých výsledků"
+      ],
+      "evidence": "Škola dlouhodobě organizuje doučování pro žáky ohrožené neúspěchem z matematiky."
+    },
+    "absence": {
+      "trend": "Není v textu explicitně uvedeno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence věnuje minimálně, fokus je na výsledky a chování."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se složením výchovná poradkyně a školní metodička prevence",
+      "Externí školní psycholog dochází do školy jednou za 14 dnů",
+      "Doučování žáků ohrožených neúspěchem",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami (57 žáků)"
+    ],
+    "safety_climate": [
+      "Škola vytváří vhodné podmínky pro zajištění bezpečí žáků",
+      "Úrazy se převážně vyskytují při sportovních a pohybových aktivitách, minimum při praktických činnostech",
+      "Škola se úrazovosti zabývá a přijímá adekvátní opatření včetně vyhodnocování rizik",
+      "Veškeré náznaky rizikového chování jsou bezodkladně řešeny"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery a profesními komorami",
+      "Smluvní partneři pro praktické vyučování, zejména pro zemědělské obory",
+      "Mezinárodní spolupráce s zahraničními školami na výměnných pobytech",
+      "Odborné exkurze ve firmách a podnicích během školního roku",
+      "Školní jídelna a kavárna slouží jako pracoviště pro odborný výcvik gastro oborů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna, není jasné, zda je to problém nebo ne",
+      "Konkrétní počty žáků s jednotlivými speciálními potřebami nejsou rozepsány",
+      "Není jasné, jak se liší kvalita výuky mezi jednotlivými obory"
+    ]
+  }
+}
+```

@@ -1,0 +1,119 @@
+{
+  "report_id": "SOS_600017401_2025-04-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:36:51.107697+00:00",
+  "run_finished_utc": "2026-02-09T13:37:20.607515+00:00",
+  "raw_file": "SOS_600017401_2025-04-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017401_2025-04-25",
+    "school_profile": {
+      "school_type": "Soukromá střední škola podnikatelská s.r.o. v Opavě, vzdělávající 247 žáků v oborech Ekonomika a podnikání, Veřejnosprávní činnost, Operátor v polygrafii a Polygrafie (včetně dálkové formy).",
+      "inspection_period": "25.–30. dubna 2025",
+      "school_change_summary": "Od září 2023 nové vedení školy. Od roku 2021 průběžné zlepšování materiálního vybavení, zvýšení počtu žáků o 10 %. Od školního roku 2024/2025 nový obor Polygrafie."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola systematicky spolupracuje s mnoha sociálními partnery, kde žáci absolvují praxi a seznamují se s reálným pracovním prostředím.",
+          "evidence": "Výuka na pracovištích partnerů s moderními pomůckami a technologiemi, které se žáci setkají v budoucím povolání."
+        },
+        {
+          "tag": "Aktivní zapojení žáků do projektů",
+          "detail": "Žáci se cíleně zapojují do vlastních projektů, soutěží a akcí, které rozvíjejí jejich odborné znalosti a praktické dovednosti.",
+          "evidence": "Úspěchy v ekonomické olympiádě, grafických soutěžích, organizace akcí jako Hrdinové podnikání, pohybová výzva Švihej."
+        },
+        {
+          "tag": "Kvalitní technické vybavení",
+          "detail": "Škola disponuje moderním vybavením včetně iPadů, iMaců a kvalitního fotoateliéru.",
+          "evidence": "Od roku 2021 průběžné obnovování materiálního vybavení informačními technologiemi a softwarem."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "V sedmi třídách (čtvrtina všech tříd) měli žáci průměrně více než 100 zameškaných hodin za pololetí.",
+          "evidence": "Ve 2. pololetí 2023/2024 sedm tříd s průměrem >100 hodin absence; v 1. pololetí 2024/2025 čtyři třídy s tímto problémem."
+        },
+        {
+          "tag": "Slabé výsledky maturit v dálkovém studiu",
+          "detail": "Žáci dálkové formy mají nejvyšší neúspěšnost u maturitní zkoušky, zejména v češtině a cizích jazycích.",
+          "evidence": "Vedení školy a předmětové komise doposud tyto nepříznivé výsledky dostatečně neanalyzovaly a nepřijaly účinná opatření."
+        },
+        {
+          "tag": "Nedostatečná individualizace výuky",
+          "detail": "Učitelé minimálně využívají diferencované úlohy přizpůsobené individuálním schopnostem žáků.",
+          "evidence": "V některých hodinách chyběly diferencované úkoly podle potřeb jednotlivých žáků; omezená práce s vyhledáváním informací z různých zdrojů."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaká opatření zavádí pro zlepšení docházky?",
+        "Jaké konkrétní kroky podnikla škola pro zlepšení výsledků maturit v dálkovém studiu?",
+        "Jak jsou v jednotlivých hodinách přizpůsobovány úkoly různě schopným žákům?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří se zajímají o praktické dovednosti a chcete propojit teorii s reálnou praxí v oborech podnikání a polygrafie.",
+        "Studenti, kteří se chtějí zapojit do projektů, soutěží a mimoškolních aktivit s podporou kvalitního vybavení.",
+        "Žáci, kteří potřebují podporu speciálních vzdělávacích potřeb – škola má koordinátorku a poradenské služby."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s tendencí k vyšší absenci – škola má problém s vysokou absencí v některých třídách a mechanismy pro její snížení nejsou zatím účinné.",
+        "Studenti dálkové formy – výsledky maturit v dálkovém studiu jsou slabší a škola na tom teprve pracuje.",
+        "Žáci, kteří potřebují individualizovanou výuku – učitelé zatím málo využívají diferencované úkoly přizpůsobené jednotlivým potřebám."
+      ],
+      "plain_czech_summary": "Soukromá střední škola podnikatelská v Opavě je moderně vybavená škola se 247 žáky, která klade důraz na propojení teorie s praxí prostřednictvím spolupráce se sociálními partnery. Žáci se aktivně zapojují do projektů a soutěží. Silnými stránkami jsou kvalitní technické vybavení a praktická orientace. Slabinou je vysoká absence v některých třídách, slabší výsledky maturit v dálkovém studiu a nedostatečná individualizace výuky. Vedení školy si je těchto problémů vědomo a pracuje na jejich řešení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – zlepšení v polygrafii, zhoršení v dálkovém studiu",
+        "key_numbers": [
+          "Nejlepší výsledky v oboru Polygrafie (zlepšení oproti 2022/2023)",
+          "Nejvyšší neúspěšnost v dálkovém studiu v češtině a cizích jazycích",
+          "Některé oblasti se zhoršily oproti předchozímu roku"
+        ],
+        "evidence": "Ve školním roce 2023/2024 dosahovali nejlepších výsledků žáci polygrafie. Dálkové studium mělo nejvyšší čistou neúspěšnost. Vedení zatím nepřijalo účinná opatření."
+      },
+      "absence": {
+        "trend": "Vysoká absence v části tříd, postupné zlepšení",
+        "key_numbers": [
+          "2. pololetí 2023/2024: 7 tříd (čtvrtina) s průměrem >100 hodin absence",
+          "1. pololetí 2024/2025: 4 třídy (osmina) s průměrem >100 hodin absence",
+          "Zlepšení oproti závěru minulého školního roku"
+        ],
+        "evidence": "Absence je stále problémem, ale počet tříd s vysokou absencí se snížil. Škola zatím nemá účinné mechanismy pro snížení absence."
+      },
+      "support_services": [
+        "Výchovná poradkyně (zároveň kariérová poradkyně)",
+        "Školní metodička prevence",
+        "Koordinátorka žáků se speciálními vzdělávacími potřebami",
+        "Externí psycholog (dle potřeby)",
+        "Školní poradenské pracoviště s pravidelnými schůzkami a denním kontaktem"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra se vzájemným respektem mezi učiteli a žáky",
+        "Žádné zaznamenané kázeňské problémy ani narušování průběhu výuky",
+        "Partnerský přístup pedagogů přispívá k rozvoji sociálních a komunikačních kompetencí",
+        "Žáci jsou pravidelně seznamováni s bezpečností, ochranou zdraví a požární prevencí",
+        "Vstupy do budov zajištěny"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s mnoha sociálními partnery na realizaci praxe",
+        "Partnerství s vysokou školou v geovědním a montánním turismu",
+        "Spolupráce se zkouškovým centrem pro cambridgeské jazykové zkoušky",
+        "Spolupráce s místní základní školou na zavádění nových technologií",
+        "Absolventi školy se vracejí předávat zkušenosti současným žákům"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a dobře strukturovaná. Obsahuje konkrétní údaje, citace z dokumentů a jasné závěry. Slabinou je místy odborný jazyk, ale pro rodiče je obsah dostatečně srozumitelný.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní počty žáků s neúspěchem v jednotlivých oborech – údaje jsou pouze v procentech.",
+        "Není jasné, jaké konkrétní opatření škola již zavedla pro snížení absence (zmíněny jsou jen obecné doporučení inspekce).",
+        "Chybí informace o tom, jak dlouho trvá dálkové studium a jaké jsou jeho specifické podmínky."
+      ]
+    }
+  }
+}

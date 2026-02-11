@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_600015513_2025-04-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:37:02.641326+00:00",
+  "run_finished_utc": "2026-02-09T13:37:23.430513+00:00",
+  "raw_file": "SOS_600015513_2025-04-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015513_2025-04-23",
+    "school_profile": {
+      "school_type": "Obchodní akademie, Vyšší odborná škola a Jazyková škola s právem státní jazykové zkoušky",
+      "inspection_period": "23. 4. 2025 − 24. 4. 2025 a 28. 4. 2025 − 29. 4. 2025",
+      "school_change_summary": "Od srpna 2023 nové vedení školy. Zkvalitnění materiálně technických podmínek, modernizace učeben, digitální techniky a vybudování nových informatických laboratoří. Aktivní zapojení v projektové činnosti."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné výsledky maturit",
+          "detail": "Výsledky maturitní zkoušky jsou na velmi dobré úrovni, úspěšnost žáků je vyšší než na srovnatelných školách.",
+          "evidence": "Výsledky společné i profilové části maturitní zkoušky v posledních třech letech byly na velmi dobré úrovni."
+        },
+        {
+          "tag": "Moderní vybavení a prostředí",
+          "detail": "Škola má nadstandardní technické vybavení včetně nových informatických laboratoří a zrekonstruovaných prostor.",
+          "evidence": "Modernizací učeben a digitální techniky, vybudováním laboratoří nové informatiky byly vytvořeny nadstandardní podmínky."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci a studenti dosahují velmi dobrých umístění v krajských a národních soutěžích zaměřených na odbornost a jazyky.",
+          "evidence": "Mezi nejvýznamnější úspěchy patří pravidelná účast a zisk velmi dobrých umístění v soutěžích na krajské a národní úrovni."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší rozvoj komunikativních dovedností",
+          "detail": "V některých hodinách (zejména přírodovědných) převládá řízený dialog učitele se žáky, což omezuje jejich komunikaci.",
+          "evidence": "Ve výuce fyziky, chemie a základů přírodních věd vedené frontální formou byl kladen menší důraz na rozvoj komunikativních a sociálních kompetencí."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje rozvoj komunikativních dovedností žáků v jednotlivých předmětech?",
+        "Jaké jsou možnosti zapojení žáků do projektů a soutěží během studia?",
+        "Jak škola zajišťuje individuální podporu žákům se speciálními vzdělávacími potřebami?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na ekonomii, obchod a informační technologie s ambicí na vysokou školu",
+        "Studenti hledající kvalitní přípravu na trh práce s moderním vybavením a praxí",
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující skupinové diskuse a komunikaci v každém předmětu (v některých hodinách převládá frontální výuka)",
+        "Studenti se speciálními vzdělávacími potřebami by měli ověřit konkrétní formu podpory"
+      ],
+      "plain_czech_summary": "Obchodní akademie v Uherském Hradišti je dobře vedená škola s moderním vybavením a kvalitním pedagogickým sborem. Žáci dosahují výborných výsledků v maturitách a soutěžích. Škola má silné partnerství s firmami a institucemi, což zvyšuje praktickou přípravu. Jedinou oblastí ke zlepšení je větší podpora rozvoje komunikativních dovedností žáků v některých předmětech. Vhodná volba pro studenty zaměřené na ekonomii a IT."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborný",
+        "key_numbers": [
+          "Výsledky na velmi dobré úrovni",
+          "Úspěšnost vyšší než na srovnatelných školách",
+          "Analýza výsledků vedením a komisemi"
+        ],
+        "evidence": "Výsledky společné i profilové části maturitní zkoušky v posledních třech letech byly na velmi dobré úrovni. Ve srovnání se středními školami obdobného typu byla úspěšnost žáků při zkoušce vyšší."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Informace o absenci nejsou v inspekční zprávě uvedeny"
+        ],
+        "evidence": "Zpráva se absencí nezabývá."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná poradkyně, metodička prevence, externí školní psycholožka",
+        "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami",
+        "Individuální konzultační hodiny a kariérové poradenství",
+        "Spolupráce se školskými poradenskými zařízeními"
+      ],
+      "safety_climate": [
+        "Bezpečnostní rizika jsou pravidelně vyhodnocována a přijímána adekvátní opatření",
+        "Žáci a studenti jsou průběžně informováni o bezpečnostních rizicích",
+        "Cílená pozornost věnována vytváření pozitivního klimatu ve třídách",
+        "Prevence společensky nežádoucích jevů"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá spolupráce s odbornými firmami a institucemi na přednáškách, exkurzích, projektech a praxi",
+        "Partnerství s městem Uherské Hradiště na společenských a kulturně historických akcích",
+        "Spolupráce se základními, středními a vysokými školami",
+        "Příhraniční spolupráce se slovenskou školou stejného zaměření"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Inspekční zpráva je velmi podrobná, srozumitelná a jasně strukturovaná. Všechny klíčové informace jsou dobře zdokumentovány s konkrétními příklady a citacemi. Závěry jsou jasné a prakticky využitelné.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje údaje o absenci žáků a studentů",
+        "Nejsou uvedeny konkrétní číselné údaje o počtu žáků v jednotlivých oborech",
+        "Chybí informace o finančním stavu a rozpočtu školy"
+      ]
+    }
+  }
+}

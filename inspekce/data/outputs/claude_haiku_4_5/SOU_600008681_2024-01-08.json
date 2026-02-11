@@ -1,0 +1,111 @@
+{
+  "report_id": "SOU_600008681_2024-01-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:30:23.046247+00:00",
+  "run_finished_utc": "2026-02-09T16:30:48.723024+00:00",
+  "raw_file": "SOU_600008681_2024-01-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600008681_2024-01-08",
+    "school_profile": {
+      "school_type": "Střední škola a Základní škola s domem mládeže, školní družinou a jídelnou",
+      "inspection_period": "8. 1. 2024 – 11. 1. 2024",
+      "school_change_summary": "Pod vedením ředitele od roku 2018 došlo k rozvoji partnerské spolupráce a zlepšení materiálních podmínek. Celková naplněnost se zlepšila, ale v maturitních oborech zůstává nízký počet žáků ve třídách."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Stabilní pedagogický tým",
+          "detail": "Vyučující českého jazyka, matematiky a německého jazyka jsou zkušení, anglický jazyk zajišťují dva vyučující s dobrými jazykovými znalostmi.",
+          "evidence": "Personální zajištění výuky předmětů společné části maturitní zkoušky je vcelku stabilní."
+        },
+        {
+          "tag": "Kvalitní materiální vybavení",
+          "detail": "Učebny jsou vybaveny digitálními technologiemi, internetem a sítí školy, k dispozici jsou jazykové příručky a knihy.",
+          "evidence": "Materiální podmínky umožňují realizovat obory vzdělání s maturitní zkouškou."
+        },
+        {
+          "tag": "Funkční poradenské služby",
+          "detail": "Výchovné poradkyně a metodičky prevence úzce spolupracují s učiteli a zákonnými zástupci, zpracovávají individuální vzdělávací plány.",
+          "evidence": "Poradenské služby jsou funkčně zajišťovány na obou pracovištích školy."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Velmi nízké výsledky v maturitě",
+          "detail": "V nástavbovém oboru Podnikání dosahuje škola 50–61,5% neúspěšnosti ve společné části maturitní zkoušky, což je výrazně nad průměrem.",
+          "evidence": "Ve zkušebním roce 2023 bylo přihlášeno 13 žáků, maturitní zkoušku konalo devět, pouze pět uspělo. Hrubá neúspěšnost činila 61,5%."
+        },
+        {
+          "tag": "Vysoká předčasná ukončení studia",
+          "detail": "Přibližně polovina žáků nástavbového oboru studium ukončuje předčasně, někdy až po přihlášení k maturitě.",
+          "evidence": "Ve školním roce 2022/2023 zahájilo studium 18 žáků, k termínu inspekce se vzdělávalo jen 9 žáků."
+        },
+        {
+          "tag": "Neefektivní podpora slabších žáků",
+          "detail": "Doučování a konzultace nejsou na pracovišti Vimperk realizovány, pomoc se nabízí, ale reálně se neposkytuje.",
+          "evidence": "Na pracovišti Vimperk není v letošním školním roce realizováno doučování."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní opatření škola přijala na základě inspekční zprávy, aby zlepšila výsledky v maturitních oborech?",
+        "Jak škola řeší vysokou míru předčasného ukončení studia v nástavbovém oboru Podnikání?",
+        "Nabízí škola doučování a konzultace pro slabší žáky také na pracovišti Vimperk?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o technické obory (Mechanik-elektrotechnik), které jsou dobře uplatnitelné na trhu práce",
+        "Žáci z příhraničního regionu s malou hustotou osídlení, kterým chce škola umožnit přístup ke vzdělání",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální vzdělávací plány"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s jazykovou bariérou nebo slabšími výsledky v jazycích – škola neposkytuje dostatečně účinnou podporu na prvním stupni",
+        "Uchazeči do nástavbového oboru Podnikání – vysoká míra neúspěšnosti (61,5% v roce 2023) a předčasného ukončení studia",
+        "Žáci, kteří potřebují intenzivní doučování – na pracovišti Vimperk není doučování realizováno"
+      ],
+      "plain_czech_summary": "Škola má kvalitní vybavení a stabilní pedagogický tým, ale výsledky v maturitních oborech jsou problematické. Zvláště nástavbový obor Podnikání vykazuje 61,5% neúspěšnost v maturitě a polovina žáků studium nedokončí. Inspekce kritizuje, že opatření ke zlepšení nejsou efektivní a chybí doučování na pracovišti Vimperk. Technické obory jsou dobře uplatnitelné, ale s nízkými počty žáků je jejich provoz neekonomický."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě klesající, bez zlepšení navzdory přijatým opatřením",
+        "key_numbers": [
+          "Nástavbový obor Podnikání 2023: 61,5% hrubá neúspěšnost (13 přihlášených, 5 úspěšných)",
+          "Čtyřleté obory 2023: 20% hrubá neúspěšnost (10 přihlášených, 8 úspěšných)",
+          "Obor Mechanik-elektrotechnik 2023: 40% hrubá neúspěšnost"
+        ],
+        "evidence": "Ve zkušebním roce 2023 bylo v nástavbovém oboru přihlášeno 13 žáků, maturitní zkoušku konalo devět, pouze pět uspělo."
+      },
+      "absence": {
+        "trend": "Nelze posoudit",
+        "key_numbers": [
+          "Data o absenci nejsou k dispozici – třídní knihy za období říjen 2022 až duben 2023 nebyly doplněny"
+        ],
+        "evidence": "K termínu inspekční činnosti nebyly na pracovišti Vimperk doplněny zápisy v třídních knihách všech tříd za období říjen 2022 až duben 2023."
+      },
+      "support_services": [
+        "Výchovné poradkyně a metodičky prevence na obou pracovištích",
+        "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami",
+        "Doučování a konzultace (realizováno na pracovišti Prachatice, ne na Vimperku)",
+        "Vstupní testy v českém jazyce, externí testování gramotností, maturitní trénink"
+      ],
+      "safety_climate": [
+        "Klima v průběhu sledované výuky bylo převážně pozitivní, výuka probíhala v prostředí vzájemné vstřícnosti",
+        "Vedení školy projednávalo příčiny selhání žáků, ale projednávání s žáky nebylo účinné"
+      ],
+      "partnerships_practice": [
+        "Významný rozvoj partnerské spolupráce s firmami a zahraničními školami",
+        "Technické obory jsou dobře uplatnitelné na trhu práce",
+        "Škola reaguje na sociálně-ekonomické problémy rodin v příhraničním regionu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní čísla a citace. Slabší je pouze v některých technických pasážích o administrativě.",
+      "uncertainty_notes": [
+        "Inspekce nezveřejňuje podrobné důvody neúspěšnosti jednotlivých žáků – jsou zmíněny jen obecně 'zhoršení prospěchu'",
+        "Není jasné, jaké konkrétní metodické chyby v hodinách vedou k neúspěšnosti – kritika je spíše obecná",
+        "Chybí srovnání s jinými školami v regionu, aby bylo jasné, zda je problém specifický pro tuto školu"
+      ]
+    }
+  }
+}

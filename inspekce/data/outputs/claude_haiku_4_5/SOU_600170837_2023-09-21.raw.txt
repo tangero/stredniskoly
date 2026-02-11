@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOU_600170837_2023-09-21",
+  "school_profile": {
+    "school_type": "Střední škola automobilní s obory zakončenými výučním listem (Karosář, Autoelektrikář, Mechanik opravář motorových vozidel, Autolakýrník) a maturitní zkouškou (Dopravní prostředky, Autotronik) plus nástavbové studium",
+    "inspection_period": "21.–26. září 2023",
+    "school_change_summary": "Škola navýšila kapacitu na 540 žáků, zavedla nový obor Autolakýrník s novou lakovou, a umožňuje studentům Autotroniky získat výuční list v oborech Mechanik opravář nebo Autoelektrikář."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemné prostředí a vztahy",
+        "detail": "Vstřícná atmosféra školy vytváří pozitivní učební prostředí, kde žáci přirozeně dodržují pravidla slušného chování.",
+        "evidence": "Inspektoři zaznamenali, že 'žáci přirozeně dodržovali navzájem i vůči ostatním pravidla slušného chování'."
+      },
+      {
+        "tag": "Moderní vybavení a praxe",
+        "detail": "Škola má moderní technické zařízení pro odborný výcvik a využívá pracoviště u smluvních partnerů pro přípravu na reálné prostředí.",
+        "evidence": "Inspektoři potvrdili 'velmi dobré vybavení pro odborné vzdělávání, spolupráce se sociálními partnery'."
+      },
+      {
+        "tag": "Aktivní domov mládeže",
+        "detail": "Domov mládeže nabízí pestrý program aktivit, které rozvíjejí sociální vztahy a motivují žáky k smysluplnému využití volného času.",
+        "evidence": "Inspektoři zdůraznili 'pestrá zájmová činnost a aktivity realizované v domově mládeže'."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace ve výuce",
+        "detail": "Učitelé málo přizpůsobují obtížnost úloh individuálním schopnostem žáků, čímž nevyužívají potenciál nadaných žáků.",
+        "evidence": "Inspektoři zjistili: 'zcela chyběla diferenciace náročnosti úloh, čímž nebyl využit učební potenciál zejména žáků rychlejších nebo nadaných'."
+      },
+      {
+        "tag": "Slabší výuka angličtiny",
+        "detail": "Ve výuce angličtiny chybí kooperativní práce a učitelé nadměrně překládají, což nerozvinuje jazykové dovednosti žáků.",
+        "evidence": "Inspektoři zaznamenali 'nadužívání českého jazyka (učitelé překládají sami sebe), které nepřispívalo k rozvoji jazykových dovedností'."
+      },
+      {
+        "tag": "Omezené prostory pro odpočinek",
+        "detail": "Škola postrádá dostatek míst pro relaxaci a přípravu žáků, chybí studovna či knihovna.",
+        "evidence": "Inspektoři poznamenali: 'V prostorách školy není mnoho prostor pro odpočinek... Chybí i studovna nebo knihovna'."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jak přizpůsobuje výuku jejich potřebám?",
+      "Jaké jsou možnosti ubytování v domově mládeže a jaké jsou podmínky přijetí?",
+      "Jak se škola podílí na mezinárodních projektech a jaké jsou možnosti stáží v zahraničí?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o automobilní obory a technické vzdělávání, kteří si cení praktické výuky",
+      "Studenti ze vzdálenějších míst, kterým vyhovuje ubytování v domově mládeže se sociálním programem",
+      "Žáci, kteří chtějí kombinovat výuční list s maturitou (obor Autotronik)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku – škola na tom stále pracuje",
+      "Studenti zaměření na jazykové dovednosti – výuka angličtiny má prostor pro zlepšení",
+      "Žáci vyžadující klid a relaxaci během dne – prostory pro odpočinek jsou omezené"
+    ],
+    "plain_czech_summary": "Střední škola automobilní v Holici je moderně vybavená škola s dobrým jménem a vysokou poptávkou. Nabízí kvalitní odborné vzdělání v automobilních oborech s možností získat výuční list nebo maturitu. Atmosféra je příjemná, domov mládeže funguje dobře. Inspektoři ale upozornili, že učitelé by měli více přizpůsobovat výuku individuálním potřebám žáků a lépe strukturovat závěry hodin. Výuka angličtiny potřebuje zlepšení. Prostory pro odpočinek jsou omezené."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrý – stabilně vysoká úspěšnost",
+      "key_numbers": [
+        "Celková úspěšnost okolo 90 %",
+        "Ve školním roce 2022/2023 neuspělo pouze několik žáků posledních ročníků",
+        "Obory: Dopravní prostředky a Autotronik (4 roky)"
+      ],
+      "evidence": "Inspektoři konstatovali: 'Celková úspěšnost žáků se v případě maturitní zkoušky pohybuje okolo 90 %'."
+    },
+    "absence": {
+      "trend": "Dobře sledovaná a řešená",
+      "key_numbers": [
+        "Neúspěšnost na závěrečných zkouškách okolo 11 %",
+        "Nejvyšší neúspěšnost v oboru Mechanik opravář motorových vozidel (přibližně 20 %)",
+        "Prospělo s vyznamenáním přibližně 10 % žáků"
+      ],
+      "evidence": "Inspektoři zjistili: 'Škola účinně sleduje a vyhodnocuje docházku žáků, včetně příčin jejich neomluvených absencí'."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní, speciální pedagožkou a metodičkou prevence",
+      "Spolupráce se školní psycholožkou",
+      "Asistentka pedagoga",
+      "Adaptační kurzy pro první ročníky a lyžařské kurzy pro budování třídního kolektivu"
+    ],
+    "safety_climate": [
+      "Při zahájení odborného výcviku jsou žáci seznamováni s cílem, postupem práce a bezpečnostními riziky",
+      "Kontrola osobních ochranných prostředků je povinná",
+      "Všichni učitelé odborného výcviku uplatňují zásady individuálního přístupu a bezpečnosti",
+      "Pozitivní atmosféra vytváří příznivé podmínky pro vzdělávání"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s řadou místních i zahraničních partnerů (odborné školy a instituce)",
+      "Projekt mobility 'Pracujeme a učíme se v Evropě'",
+      "Mezinárodní projekt šesti států EU 'Ride' se stážemi v několika státech",
+      "Dlouhodobé vyjíždění žáků do zahraničí pro prohloubení jazykových a odborných znalostí",
+      "Využívání pracovišť u smluvních partnerů pro praktickou přípravu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Údaje o výsledcích jsou uvedeny spíše přibližně (např. 'přibližně 10 %', 'jednotky žáků') než přesně.",
+    "uncertainty_notes": [
+      "Přesné počty neúspěšných žáků nejsou uvedeny – inspektoři používají přibližné údaje ('jednotky', 'přibližně 2-3 %')",
+      "Údaje o prospěchu s vyznamenáním jsou uvedeny jako 'přibližně pouze 10 %' bez přesného čísla",
+      "Počet žáků, kterým bylo navrženo prospěchové stipendium, je vágní ('několik desítek')"
+    ]
+  }
+}
+```

@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "GY8_600004911_2024-10-16",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium s všeobecným vzděláním",
+    "inspection_period": "16. 10. 2024 – 22. 10. 2024",
+    "school_change_summary": "Od inspekce v 2017 vzrostl počet žáků (nyní 515), tříd a pedagogů. Nový ředitel od 2018 zefektivnil řízení, modernizoval vybavení a rozšířil poradenské služby. Posíleny třídy čtyřletého gymnázia od 2023/2024."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní přírodovědná výuka",
+        "detail": "Laboratorní cvičení systematicky rozvíjejí praktické dovednosti žáků s důrazem na bezpečnost a aplikaci teoretických poznatků.",
+        "evidence": "Účinný rozvoj praktických dovedností v laboratorních cvičeních a účelné využívání materiálně technického vybavení"
+      },
+      {
+        "tag": "Osobnostní rozvoj",
+        "detail": "Škola systematicky podporuje všestranný rozvoj osobnosti žáků prostřednictvím projektů, jazykových pobytů a zájmové činnosti.",
+        "evidence": "Systémová podpora všestranného osobnostního rozvoje a individuálního potenciálu prostřednictvím projektových a vzdělávacích aktivit"
+      },
+      {
+        "tag": "Funkční řízení a vybavení",
+        "detail": "Moderní vybavení, bezpečnostní systémy, relaxační učebna a kvalitní materiální podmínky pro výuku.",
+        "evidence": "Funkční řízení v koncepčním zajištění finančních, personálních a materiálních podmínek vzdělávání"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rozdílná kvalita výuky",
+        "detail": "Někteří učitelé si zachovávají větší autonomii, což vede k nejednotným přístupům a rozdílné kvalitě výuky mezi třídami.",
+        "evidence": "Menší míra přijímání prováděných změn a vzájemné spolupráce části pedagogů za účelem modernizace vzdělávacích postupů"
+      },
+      {
+        "tag": "Málo aktivizující výuka",
+        "detail": "Přibližně třetina hodin vykazuje metodické nedostatky – převaha frontální výuky, málo zohledňování individuálních potřeb žáků.",
+        "evidence": "Menší zohledňování věkových specifik a individuálních vzdělávacích potřeb při plánování výuky v části vyučování"
+      },
+      {
+        "tag": "Slabší zapojení žáků do hodnocení",
+        "detail": "Žáci málo participují na vlastním hodnocení, chybí sebereflexe a vzájemné kriteriální hodnocení.",
+        "evidence": "Nižší míra zapojení žáků do evaluace vlastního učebního pokroku formou vzájemného kriteriálního hodnocení"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola zajišťuje jednotnost hodnocení žáků mezi jednotlivými učiteli a třídami?",
+      "Jaké konkrétní metody používáte k tomu, aby se žáci více podíleli na vlastním hodnocení a reflexi svého pokroku?",
+      "Jak se liší přístup k výuce mezi jednotlivými pedagogy a jak to ovlivňuje studijní výsledky žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o přírodovědné obory – kvalitní laboratorní vybavení a systematická praktická výuka",
+      "Nadaní a motivovaní žáci – bohatá nabídka volitelných předmětů, seminářů a projektů pro rozvoj potenciálu",
+      "Žáci s jazykovými ambicemi – 38 % žáků si nahrazuje maturitu mezinárodním certifikátem z angličtiny"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižšími studijními předpoklady – část výuky nedostatečně zohledňuje jejich potřeby a věkové specifika",
+      "Žáci vyžadující jednotný a konzistentní přístup – rozdíly v kvalitě výuky mezi jednotlivými pedagogy",
+      "Žáci potřebující více interaktivní a diskusní výuku – převaha frontální výuky v některých hodinách"
+    ],
+    "plain_czech_summary": "Gymnázium Karla Sladkovského je dobře vedená škola s moderním vybavením a kvalitní podporou osobnostního rozvoje žáků. Silné stránky vidíme v přírodovědné výuce, bohaté nabídce aktivit a vysokých výsledcích absolventů (90 % pokračuje na vysoké škole). Slabší je jednotnost přístupu mezi učiteli – někteří si zachovávají větší autonomii, což vede k rozdílné kvalitě výuky. Přibližně třetina hodin vykazuje metodické nedostatky, zejména málo zohledňování individuálních potřeb žáků a převahu frontální výuky. Žáci se málo podílejí na vlastním hodnocení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s postupným zlepšením v matematice",
+      "key_numbers": [
+        "25 % žáků maturuje s vyznamenáním",
+        "14 % žáků úspěšně složilo rozšiřující zkoušku z matematiky",
+        "38 % žáků nahrazuje profilovou část maturitní zkoušky mezinárodním certifikátem z angličtiny"
+      ],
+      "evidence": "V matematice došlo k významnému zlepšení. V předmětech společné části maturitní zkoušky dosahují žáci mírně horších nebo srovnatelných výsledků s celorepublikovým průměrem."
+    },
+    "absence": {
+      "trend": "Velmi nízká, odpovídá typu školy",
+      "key_numbers": [
+        "Zanedbatelný výskyt neomluvené absence",
+        "Nízký podíl žáků hodnocených v náhradním termínu",
+        "Zvýšená absence zejména u žáků s dlouhodobým zdravotním oslabením"
+      ],
+      "evidence": "Nastavené preventivně podpůrné mechanismy jsou převážně funkční. Počet zameškaných hodin odpovídá druhu školy."
+    },
+    "support_services": [
+      "Školní psycholog, dva výchovní poradci, metodička prevence, asistentka pedagoga",
+      "Individuální vzdělávací plány pro žáky s potřebou podpůrných opatření",
+      "Adaptační pobyty, sportovní kurzy a intervence školního psychologa"
+    ],
+    "safety_climate": [
+      "Elektronický vstupní systém a vrátnice s celodenním obsazením",
+      "Bezpečnostní systémy a turnikety",
+      "Důsledné využívání preventivních strategií při rizikovém chování (vandalismus)",
+      "Pouze jednotlivci hodnoceni sníženým stupněm z chování"
+    ],
+    "partnerships_practice": [
+      "Partnerství s vysokými školami – status fakultní školy Pedagogické fakulty Univerzity Karlovy",
+      "Spolupráce s jazykovými instituty a kulturně vzdělávacími institucemi",
+      "Součinnost s externími organizacemi v oblasti prevence a podpory žáků"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně rozlišuje silné a slabé stránky. Některé pasáže jsou však složitější a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Konkrétní počty hodin s metodickými nedostatky nejsou přesně specifikovány (zmíněna 'přibližně třetina')",
+      "Není jasné, jak přesně se liší kvalita výuky mezi jednotlivými učiteli – chybí konkrétní příklady",
+      "Údaje o absenci jsou obecné, chybí konkrétní čísla o počtu zameškaných hodin"
+    ]
+  }
+}
+```

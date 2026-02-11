@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "LYC_691006474_2022-11-25",
+  "school_profile": {
+    "school_type": "Základní škola a Střední škola (ZŠ + SŠ s oborem Pedagogické lyceum)",
+    "inspection_period": "25.–29. listopadu 2022",
+    "school_change_summary": "Od inspekce v roce 2015 se počet žáků zvýšil. Od září 2020 škola provozuje střední vzdělání. Nový ředitel nastoupil 1. září 2022. Zvýšil se podíl nekvalifikovaných učitelů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemná atmosféra a podpora",
+        "detail": "Pedagogové vytvářejí důvěryhodné a bezpečné prostředí, které podporuje osobnostní rozvoj žáků.",
+        "evidence": "Inspektoři zaznamenali vstřícnou atmosféru a pozitivní vazby v třídních kolektivech."
+      },
+      {
+        "tag": "Digitální dovednosti",
+        "detail": "Žáci vynikají v práci s počítači a vyhledávání informací online.",
+        "evidence": "Vysoce rozvinutá dovednost žáků využívat digitální technologie při vyhledávání a prezentaci."
+      },
+      {
+        "tag": "Výtvarné a estetické vnímání",
+        "detail": "Aktivity efektivně rozvíjejí kreativitu a umělecké cítění.",
+        "evidence": "Činnosti v průběhu vzdělávání efektivně podporují rozvoj výtvarného a estetického vnímání."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovaní učitelé",
+        "detail": "Deset z dvaceti učitelů nemá odbornou kvalifikaci, což negativně ovlivňuje kvalitu výuky.",
+        "evidence": "Podíl nekvalifikovaných pedagogů v ZŠ se od roku 2015 zvýšil; má negativní dopad na kvalitu."
+      },
+      {
+        "tag": "Slabé výsledky v testech",
+        "detail": "Výsledky žáků v externím testování a přijímacích zkouškách jsou pod průměrem.",
+        "evidence": "Ve školním roce 2020/2021 byly výsledky 5., 7. a 9. ročníku horší než ve srovnatelných školách."
+      },
+      {
+        "tag": "Omezené prostorové podmínky",
+        "detail": "Nedostatek prostoru brání individualizaci výuky a osobnostnímu rozvoji.",
+        "evidence": "Žáci jsou často spojováni z důvodu nedostatku prostoru, což nepříznivě ovlivňuje individualizaci."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší nedostatek kvalifikovaných učitelů a jaký je plán na jejich získání?",
+      "Jaké konkrétní kroky podniká škola ke zlepšení výsledků v testech a přijímacích zkouškách?",
+      "Jak se škola vypořádává s omezeným prostorem a jak to ovlivňuje individuální přístup k žákům?"
+    ],
+    "who_school_fits": [
+      "Žáci, kterým vyhovuje projektové vyučování a práce v týmech",
+      "Děti se zájmem o digitální technologie a kreativní činnosti",
+      "Rodiny, které oceňují podporující a bezpečné prostředí"
+    ],
+    "who_should_be_cautious": [
+      "Rodiče žáků, kteří potřebují intenzivní individuální podporu a diferenciaci",
+      "Rodiny, jejichž děti mají vysoké ambice v matematice a českém jazyce",
+      "Rodiče nadaných dětí, pokud očekávají aktivní přípravu na soutěže a olympiády"
+    ],
+    "plain_czech_summary": "Škola vytváří příjemné a podporující prostředí, kde se žáci dobře cítí. Silné jsou digitální dovednosti a kreativita. Hlavní problémy: deset učitelů nemá odbornou kvalifikaci, výsledky v testech jsou slabé a prostoru je málo. Inspektoři doporučují stabilizovat tým učitelů, zlepšit výuku matematiky a češtiny a lépe informovat rodiče o pokrocích dětí."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nedostatečné údaje v textu",
+      "key_numbers": [
+        "Ve školním roce 2021/2022 prospělo 5 ze 6 žáků 1. ročníku SŠ",
+        "Jeden žák zanechal vzdělávání ve 2. pololetí",
+        "Polovina žáků byla ohrožena školním neúspěchem"
+      ],
+      "evidence": "Podpora mimoškolních aktivit vedla k časté absenci a slabým výsledkům."
+    },
+    "absence": {
+      "trend": "Problematická v SŠ, velmi dobrá v ZŠ",
+      "key_numbers": [
+        "V ZŠ: žádný žák neměl neomluvené hodiny",
+        "V SŠ: časté absence spojené se slabými výsledky"
+      ],
+      "evidence": "Absence v SŠ byla často spojená se slabými výsledky vzdělávání a mimoškolními aktivitami."
+    },
+    "support_services": [
+      "Školní poradenský tým s podrobně rozpracovaným systémem poradenské pomoci",
+      "Výchovná poradkyně a školní metodička prevence (bez příslušného specializačního studia)",
+      "Asistenti pedagoga pro žáky se speciálními vzdělávacími potřebami (6 asistentů, 1 bez kvalifikace)"
+    ],
+    "safety_climate": [
+      "Budova zabezpečena proti vstupu neoprávněných osob",
+      "Počet úrazů stabilně nízký, způsobeny převážně nepozorností",
+      "Žáci průběžně seznamováni se zásadami bezpečného chování",
+      "Efektivní preventivní systém na omezování rizikového chování"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s organizacemi zabývajícími se inovativními formami vzdělávání",
+      "Partnerství s městem Poděbrady",
+      "Mezinárodní spolupráce v rámci projektu e-twinning",
+      "Účast žákovského parlamentu na plánování rozvoje města"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Chybí některé konkrétní údaje o maturitě a výsledcích SŠ.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje explicitní údaje o výsledcích maturitní zkoušky nebo plánech na ni.",
+      "Není jasné, jak konkrétně se škola vypořádá s nedostatkem kvalifikovaných učitelů v příštích měsících.",
+      "Chybí detailní informace o tom, jak se zlepší prostorové podmínky."
+    ]
+  }
+}
+```

@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "GY4_691003050_2022-10-05",
+  "school_profile": {
+    "school_type": "Mateřská škola, základní škola a gymnázium sv. Augustina (Praha 4-Krč)",
+    "inspection_period": "5. 10. 2022 – 10. 10. 2022",
+    "school_change_summary": "Od inspekce v 2016 se zvýšila naplněnost na 319 dětí/žáků, přibyly třídy a nově vzniklo čtyřleté gymnázium s prvními maturanty v tomto školním roce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Příjemná atmosféra a vztahy",
+        "detail": "Pedagogové uplatňují respektující přístup, děti a žáci dodržují nastavená pravidla, panuje partnerský přístup všech aktérů.",
+        "evidence": "Příznivá pracovní atmosféra pozitivně ovlivňuje vzdělávací proces na všech stupních školy."
+      },
+      {
+        "tag": "Kvalitní výuka v základní škole",
+        "detail": "Převážná část hodin je správně strukturovaná s velkým podílem vlastní aktivity žáků, efektivní rozvoj kompetencí.",
+        "evidence": "Pedagogové volí vhodné motivace, zařazují rozmanité formy a metody, včetně kooperativních metod."
+      },
+      {
+        "tag": "Podpora speciálních potřeb",
+        "detail": "Škola účinně identifikuje a podporuje žáky se speciálními potřebami, s odlišným mateřským jazykem i ohrožené neúspěchem.",
+        "evidence": "Formou pedagogické diagnostiky, individualizace, speciálně pedagogické péče a asistentů pedagoga."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá kontrola naplňování programu",
+        "detail": "Vedení školy nevěnuje dostatečnou pozornost naplňování programu v některých předmětech (španělský, chemie).",
+        "evidence": "Hospitační činnost není systémově nastavena, chybí sdílení poznatků z hospitací v pedagogické radě."
+      },
+      {
+        "tag": "Málo aktivizačních metod na gymnáziu",
+        "detail": "Převažuje frontální výuka, kooperativní formy jsou využity jen minimálně, žáci nejsou dostatečně zapojeni do evaluace.",
+        "evidence": "Dominující postavení učitele, menší pestrost metod vedla k pasivitě jednotlivců a nerovnoměrnému zapojení."
+      },
+      {
+        "tag": "Chybí analýza výsledků a opatření",
+        "detail": "Pedagogové sledují výsledky, ale zcela chybí analýza příčin neúspěchů a systematická opatření pro zlepšení.",
+        "evidence": "Záznamy z pedagogických rad neobsahují analýzu příčin ani plán zlepšování vzdělávacích výsledků."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jak jim nabízí rozšiřující učivo?",
+      "Jaké jsou výsledky žáků v přijímacím řízení na střední školy a víceletá gymnázia?",
+      "Jak se škola vypořádala s doporučením inspekce na zlepšení hospitační činnosti a zavedení aktivizačních metod?"
+    ],
+    "who_school_fits": [
+      "Rodiny hledající školu s křesťanským zaměřením a hodnotovým vzděláváním",
+      "Rodiče, kterým vyhovuje pestré jazykové vzdělání (španělština, angličtina, latina, čínština)",
+      "Žáci se speciálními potřebami nebo s odlišným mateřským jazykem, kteří potřebují individuální podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující aktivní, interaktivní výuku – na gymnáziu převažuje frontální přístup",
+      "Nadaní žáci hledající rozšiřující učivo – škola jej zařazuje jen v malé míře",
+      "Rodiny, kterým chybí transparentní analýza výsledků a plány zlepšování"
+    ],
+    "plain_czech_summary": "Škola sv. Augustina nabízí ucelené vzdělání od mateřské školy až po maturitu v příjemné atmosféře s důrazem na hodnoty a jazykové vzdělání. Silné stránky: kvalitní výuka v základní škole, podpora speciálních potřeb, partnerský přístup. Slabiny: na gymnáziu málo aktivizačních metod a zapojení žáků, chybí systematická analýza výsledků, nedostatečná kontrola naplňování programu v některých předmětech. Vhodná pro rodiny s hodnotovým zaměřením, ale žáci preferující aktivní výuku by měli zvážit."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, velmi dobrá úroveň",
+      "key_numbers": [
+        "Více než třetina žáků prospěla s vyznamenáním",
+        "Neprospívající žáci pouze ve výjimečných případech",
+        "Nízký počet nehodnocených žáků"
+      ],
+      "evidence": "Celkové výsledky žáků dosahovaly velmi dobré úrovně, období distančního vzdělávání se negativně nepromítlo."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněna",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absence žáků."
+    },
+    "support_services": [
+      "Školní psycholožka",
+      "Asistenti pedagoga (2 pracovníci)",
+      "Výchovný poradce",
+      "Speciálně pedagogická péče",
+      "Individuální vzdělávací plány",
+      "Doučování a konzultace"
+    ],
+    "safety_climate": [
+      "Příznivá pracovní atmosféra a partnerský přístup učitelů",
+      "Žáci respektují nastavená pravidla komunikace a chování",
+      "Efekt pochval převažuje nad kázeňskými opatřeními",
+      "Ojedinělé přestupky řešeny vedením ve spolupráci se zákonnými zástupci"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce s augustiniánskými školami po celém světě",
+      "Studijní pobyty žáků gymnázia ve Španělsku a Velké Británii",
+      "Partnerství se zákonnými zástupci (Školou rodičů, setkání s rodiči a prarodiči)",
+      "Nadační fond školy s finanční podporou rodičů",
+      "Kooperace s dalšími subjekty pro primární prevenci a mimoškolní činnost"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně rozlišuje silné a slabé stránky. Některé pasáže jsou však dlouhé a obsahují odborný jazyk, který by mohl být pro laické rodiče méně přístupný.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je nízká nebo není sledována.",
+      "Konkrétní počty žáků s speciálními potřebami nejsou uvedeny.",
+      "Není jasné, jak se škola vypořádala s doporučením inspekce z roku 2016 týkajícím se stravování v mateřské škole."
+    ]
+  }
+}
+```

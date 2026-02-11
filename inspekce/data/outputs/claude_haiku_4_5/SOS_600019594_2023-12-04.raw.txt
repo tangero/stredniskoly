@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "SOS_600019594_2023-12-04",
+  "school_profile": {
+    "school_type": "Střední odborná škola zdravotnická a Střední odborné učiliště",
+    "inspection_period": "4. 12. 2023 – 6. 12. 2023",
+    "school_change_summary": "Škola prochází přirozenou generační obměnou pedagogů, byla zahájena výuka v novém oboru Rekondiční a sportovní masér (od září 2023). Zvýšil se podíl žáků s odlišným mateřským jazykem. Škola má akreditaci Erasmus+ pro období 2022–2027."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Zahraniční stáže a mobilita",
+        "detail": "Žáci i pedagogové se účastní zahraničních stáží v Španělsku, Řecku a Rakousku, což rozvíjí jejich odborné, jazykové a sociální kompetence.",
+        "evidence": "Škola má akreditaci Erasmus+ 2022–2027 a úspěšně ji využívá."
+      },
+      {
+        "tag": "Praktická příprava na povolání",
+        "detail": "Odborný výcvik probíhá na kvalitně vybavených pracovištích s odpovídající odbornou úrovní a žáci si systematicky osvojují technologické postupy.",
+        "evidence": "Zdravotnické obory se vzdělávají v nemocnici a u praktických lékařů, ostatní obory na smluvních pracovištích."
+      },
+      {
+        "tag": "Podpora nadaných žáků",
+        "detail": "Škola aktivně podporuje účast v soutěžích a projektech, žáci jsou každoročně úspěšní v regionálních i republikových soutěžích.",
+        "evidence": "Např. Jihočeská sestřička, Psychologická olympiáda, mezinárodní soutěž první pomoci."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízké výsledky maturit",
+        "detail": "Výsledky maturitních zkoušek jsou pod průměrem, zejména v cizích jazycích a společné části zkoušky.",
+        "evidence": "Školní rok 2022/2023: vyšší neúspěšnost v cizích jazycích, kterou se škola zatím do hloubky nezabývala."
+      },
+      {
+        "tag": "Vysoká absence a odchody žáků",
+        "detail": "Dlouhodobě vysoká absence včetně neomluvené, vysoký podíl žáků opouštějících studium (15,6 % v roce 2022/2023).",
+        "evidence": "Ze 270 žáků: 32 na vlastní žádost, 3 z důvodu neúspěchu, 8 přerušilo studium."
+      },
+      {
+        "tag": "Pasivní vyučování",
+        "detail": "Výuka je často vedena frontálně bez aktivního zapojení žáků, chybí diferenciace úkolů a formativní hodnocení.",
+        "evidence": "Ve sledovaných hodinách dominovala frontální výuka, dialog mezi žáky se vyskytoval jen v malé míře."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší vysokou absenci a motivaci žáků, zejména v učňovských oborech?",
+      "Jaké konkrétní kroky podnikne škola na zlepšení výsledků maturitních zkoušek, zvláště v cizích jazycích?",
+      "Jak se škola chystá více zapojit žáky do aktivního učení a diferenciace výuky?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o zdravotnické obory s podporou praktické přípravy v nemocnici a domovech pro seniory",
+      "Studenti zainteresovaní v zahraničních stážích a rozvoji jazykových dovedností (Erasmus+)",
+      "Žáci s nadáním pro řemesla a stavební obory, kteří se chtějí učit praxí na kvalitně vybavených pracovištích"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižší motivací a slabšími výsledky – škola nabízí doučování, ale zájem je rozdílný",
+      "Uchazeči o maturitní obory, pokud jim jde o vysoké výsledky maturit – výsledky jsou pod průměrem",
+      "Žáci z nestabilního sociálního prostředí – vysoká absence a odchody z učňovských oborů jsou dlouhodobým problémem"
+    ],
+    "plain_czech_summary": "Škola v Českém Krumlově nabízí kvalitní praktickou přípravu v zdravotnických a stavebních oborech s podporou zahraničních stáží. Vedení je stabilní a podporuje rozvoj pedagogů. Hlavní problémy: výsledky maturit jsou pod průměrem (zejména cizí jazyky), vysoká absence žáků a jejich odchody ze studia. Výuka je často pasivní, bez dostatečného zapojení žáků. Škola si je vědoma problémů a pracuje na jejich řešení, ale dosud bez viditelných výsledků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Klesající – výsledky pod průměrem",
+      "key_numbers": [
+        "Výsledky maturitních zkoušek pod průměrem skupiny oborů v ČR",
+        "Vyšší neúspěšnost v cizích jazycích a společné části zkoušky (2022/2023)",
+        "Všichni žáci úspěšní při závěrečné zkoušce (2022/2023)"
+      ],
+      "evidence": "Celkové výsledky maturitních zkoušek se pohybují pod průměrem úspěšnosti v dané skupině oborů v České republice."
+    },
+    "absence": {
+      "trend": "Dlouhodobě vysoká – kritický problém",
+      "key_numbers": [
+        "Vysoká absence včetně neomluvené",
+        "Riziko skrytého záškoláctví",
+        "Negativně ovlivňuje proces vzdělávání a jeho výsledky"
+      ],
+      "evidence": "Dlouhotrvajícím problémem je vysoká absence včetně neomluvené, která negativně ovlivňuje proces vzdělávání a jeho výsledky."
+    },
+    "support_services": [
+      "Výchovná poradkyně a školní metodička prevence – systematická evidence žáků se speciálními vzdělávacími potřebami",
+      "Karierová poradkyně a školní asistentka – doplňují poradenské služby",
+      "Jazyková příprava pro 23 žáků s odlišným mateřským jazykem",
+      "Individuální konzultace a doučování pro žáky ohrožené školním neúspěchem (zájem rozdílný)"
+    ],
+    "safety_climate": [
+      "Nastavená pravidla zajišťování bezpečnosti a ochrany zdraví žáků jsou funkční",
+      "Výuka probíhala v příznivé, přátelské atmosféře bez kázeňských problémů",
+      "Žáci bez obav pokládali otázky",
+      "Elektronická schránka důvěry zřízena, ale není žáky příliš využívána"
+    ],
+    "partnerships_practice": [
+      "Zdravotnické obory: spolupráce s nemocnicí v Českém Krumlově a dvěma praktickými lékaři, domovy pro seniory",
+      "Erasmus+ akreditace 2022–2027 s mobilitou žáků a pedagogů do Španělska, Řecka, Rakouska",
+      "Spolupráce s místním Centrem pro pomoc mládeži a programem DofE",
+      "Exkurze a účast odborníků z praxe ve výuce"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně vymezeny. Chybí však hloubková analýza příčin problémů (např. proč přesně jsou výsledky maturit nízké, jaké konkrétní kroky škola podnikla).",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, jaké konkrétní opatření škola již přijala na zlepšení maturitních výsledků",
+      "Není jasné, jak efektivní jsou nabízené doučovací služby – zmíněn jen 'rozdílný zájem'",
+      "Chybí srovnání s předchozími lety pro trendy v absenci a odchodech žáků"
+    ]
+  }
+}
+```

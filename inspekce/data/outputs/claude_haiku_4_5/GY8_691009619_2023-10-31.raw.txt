@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY8_691009619_2023-10-31",
+  "school_profile": {
+    "school_type": "Gymnázium (osmiletý a čtyřletý obor) a Střední odborná škola, akciová společnost",
+    "inspection_period": "31. 10. 2023 – 2. 11. 2023",
+    "school_change_summary": "Od roku 2016 se zvýšila naplněnost školy o třetinu. Od září 2023 škola otevřela čtyřleté gymnázium, zrušila Ekonomické lyceum a ukončila dálkové formy studia. Vedení se změnilo v roce 2018, pedagogický sbor prochází výraznou obměnou s nárůstem začínajících učitelů."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání",
+        "detail": "Škola systematicky podporuje řečové dovednosti v cizích jazycích (angličtina, němčina, španělština, francouzština) prostřednictvím pestrých seminářů, zahraničních výjezdů a pobytů.",
+        "evidence": "Pestrá nabídka volitelných seminářů účinně napomáhá další profilaci žáků; zahraniční pobyty a výjezdy podporují rozvoj jazykových kompetencí."
+      },
+      {
+        "tag": "Demokratické hodnoty",
+        "detail": "Žáci se aktivně podílejí na chodu školy prostřednictvím školních parlamentů, které organizují tematické dny a ovlivňují rozhodování.",
+        "evidence": "Aktivní činnost žáků ve školních parlamentech přispívá k rozvoji demokratických hodnot a občanských kompetencí."
+      },
+      {
+        "tag": "Materiální vybavení",
+        "detail": "Škola má moderní učebny, přírodovědnou laboratoř, kongresový sál, nahrávací studio, čtenářské koutky a relaxační zóny.",
+        "evidence": "Ředitelka systematicky obnovuje a dovybavuje didaktickými pomůckami v souladu s moderními trendy ve vyučování."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita výuky",
+        "detail": "V části hodin chybí diferenciace a individualizace, žáci řeší stejné úkoly bez ohledu na jejich tempo a schopnosti, málo se používá formativní hodnocení.",
+        "evidence": "Učitelé v malé míře individualizovali a diferencovali zadávané úkoly; nevytvořili dostatečný prostor pro efektivní shrnutí a fixaci poznatků."
+      },
+      {
+        "tag": "Stabilita pedagogů",
+        "detail": "Pedagogický sbor prochází výraznou obměnou, přibližně třetina učitelů je nekvalifikovaná a začínající, chybí jim systematická podpora.",
+        "evidence": "Nestabilizovaný pedagogický sbor; chybí plán adaptace začínajících učitelů se systematicky nastavenou podporou."
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Žáci s odlišným mateřským jazykem a se speciálními potřebami prospívají s horším průměrem, chybí jim cílená systémová podpora.",
+        "evidence": "Dvě třetiny žáků s OMJ a polovina žáků se SVP prospívaly s horším studijním průměrem než průměr třídy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje začínající a nekvalifikované učitele? Jaký je plán jejich adaptace a vzdělávání?",
+      "Jak se škola vypořádává s tím, že část žáků s odlišným mateřským jazykem zaostává? Jaké má konkrétní programy na jejich podporu?",
+      "Jaké jsou konkrétní výsledky absolventů při přijetí na vysoké školy a v jakých oborech pokračují?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazykové vzdělání a mezinárodní zkušenosti – škola nabízí pestrý výběr jazyků a zahraniční pobyty.",
+      "Talentovaní sportovci – škola má speciální program pro úspěšné reprezentanty ČR na celostátní a mezinárodní úrovni.",
+      "Žáci s ambicí na vysokoškolské studium – přibližně 85 % absolventů pokračuje v terciárním vzdělávání."
+    ],
+    "who_should_be_cautious": [
+      "Žáci s odlišným mateřským jazykem – dvě třetiny z nich prospívá s horším průměrem, chybí jim cílená podpora.",
+      "Žáci se speciálními vzdělávacími potřebami – polovina z nich zaostává, škola nemá dostatečný systém jejich podpory.",
+      "Žáci vyžadující individuální přístup – v části hodin se používá jednotný přístup bez ohledu na tempo a schopnosti žáků."
+    ],
+    "plain_czech_summary": "Gymnázium Kodaňská je moderní škola s kvalitním vybavením a pestrou nabídkou jazykového vzdělání. Vedení školy je aktivní a průběžně zlepšuje podmínky. Pozitivem je zapojení žáků do školního života a demokratických procesů. Hlavní problémy: pedagogický sbor prochází obměnou a chybí mu systematická podpora, v části výuky se málo individualizuje a diferencuje, slabší žáci (zejména s odlišným mateřským jazykem) zaostávají bez cílené podpory. Škola by měla zlepšit kvalitu výuky a podporu začínajících učitelů."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Smíšený – výsledky se liší podle oboru a předmětu",
+      "key_numbers": [
+        "Osmiletý gymnázium: srovnatelné nebo lepší výsledky v anglickém jazyce; jednotlivci úspěšní v matematice",
+        "Ekonomika a podnikání (poslední maturující 2021/2022): vysoká neúspěšnost v češtině a profilové části",
+        "Pouze jednotlivci prospívají s vyznamenáním"
+      ],
+      "evidence": "V osmiletém gymnáziu dosahovali žáci srovnatelných nebo lepších výsledků v předmětech společné části maturitní zkoušky; v profilové části vesměs korespondovaly s republikovým průměrem."
+    },
+    "absence": {
+      "trend": "Zlepšení od roku 2016",
+      "key_numbers": [
+        "Vysoká absence byla jedním z nedostatků zjištěných v roce 2016",
+        "Ředitelka tento problém odstranila"
+      ],
+      "evidence": "Na základě doporučení inspekčního týmu z roku 2016 ředitelka odstranila zjištěné nedostatky, mj. vysokou absenci žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště v úzké spolupráci s vedením, třídními učiteli a ostatními pedagogy",
+      "Systém prevence sociálně patologických jevů: interní preventivní programy, preventivní intervence ve třídách, konzultace s pedagogy",
+      "Adaptační a sportovní kurzy, práce s třídními kolektivy, tematicky zaměřené přednášky",
+      "Stipendia pro sociálně znevýhodněné žáky formou slevy na školném",
+      "Kariérové poradenství na standardní úrovni"
+    ],
+    "safety_climate": [
+      "Příjemná atmosféra, vzájemně respektující přístup učitele a žáků",
+      "Dodržování nastavených pravidel práce a komunikace",
+      "Elektronický vstupní systém k bezpečnosti žáků a ochraně majetku",
+      "Ojedinělé případy rizikových jevů řešeny individuálně výchovnými komisemi"
+    ],
+    "partnerships_practice": [
+      "Konstruktivní spolupráce se zřizovatelem (Vysokou školou finanční a správní), sdílení výukových prostor",
+      "Zapojení do potravinové sbírky Arcidiecézní charity Praha",
+      "Charitativní aktivity: Mercado/der Marktplatz, adopce na dálku, adopce zvířat, Světluška",
+      "Dny otevřených dveří a kulturní akce",
+      "Součást Společenství škol podporujícího propojenost od předškolního až po vysokoškolské vzdělání"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní fakta. Hlavní zjištění jsou jasně identifikována (silné stránky, slabé stránky, doporučení). Některé pasáže jsou však delší a složitější, což mírně snižuje přístupnost pro laické čtenáře.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o počtu nekvalifikovaných učitelů – pouze zmínka, že 'přibližně třetina' si doplňuje vzdělání",
+      "Chybí konkrétní data o počtu hodin hospitací a jejich frekvenci – pouze zmínka o 'nízké četnosti'",
+      "Kariérové výsledky absolventů nejsou systematicky vyhodnocovány – údaj o 85 % pokračujících v terciárním vzdělání je pouze z pohovorů"
+    ]
+  }
+}
+```

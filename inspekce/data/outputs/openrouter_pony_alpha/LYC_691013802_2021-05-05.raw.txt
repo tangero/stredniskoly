@@ -1,0 +1,96 @@
+{
+  "report_id": "LYC_691013802_2021-05-05",
+  "school_profile": {
+    "school_type": "Základní škola s koncepcí demokratické školy",
+    "inspection_period": "5. 5. 2021 − 6. 5. 2021",
+    "school_change_summary": "Škola vznikla 1. září 2020 a snaží se naplňovat koncepci demokratické školy založené na svobodě a zodpovědnosti."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Komunitní klima",
+        "detail": "Děti se podílejí na tvorbě pravidel a vzájemně se respektují, což vytváří bezpečné prostředí.",
+        "evidence": "„Participace žáků na tvorbě pravidel školy... má pozitivní dopad na prevenci rizikového chování žáků.“"
+      },
+      {
+        "tag": "Individuální přístup",
+        "detail": "Důraz na osobnostní rozvoj a svobodu žáků s podporou asistentů a dobrovolníků.",
+        "evidence": "„Respektující přístup pedagogů... vytváří podmínky pro osobnostní rozvoj každého žáka.“"
+      },
+      {
+        "tag": "Zázemí a vybavení",
+        "detail": "Škola nabízí kvalitní, esteticky zpracované prostory a volně dostupné pomůcky.",
+        "evidence": "„Škole se podařilo zajistit kvalitní materiální podmínky... učební pomůcky... jsou žákům volně dostupné.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nekvalifikovaní pedagogové",
+        "detail": "Učitelé nemají odpovídající kvalifikaci ani zkušenosti pro 1. stupeň, což snižuje kvalitu výuky.",
+        "evidence": "„Pedagogická kvalifikace vyučujících odpovídala jinému typu a stupni školy... projevovala se jejich malá zkušenost.“"
+      },
+      {
+        "tag": "Nízká náročnost výuky",
+        "detail": "Výuka není přizpůsobena věku ani potřebám starších žáků, zejména v jazycích.",
+        "evidence": "„Náročnost výuky pro starší žáky výrazně snižována... obsah vzdělávání ani náročnost... nebyly rozlišeny.“"
+      },
+      {
+        "tag": "Nedostatečná příprava na ZŠ",
+        "detail": "Žáci s menším zájmem nemusí zvládat povinný obsah, chyby v písemnostech nejsou opravovány.",
+        "evidence": "„Žáci nebyli na chyby v písemnostech vyučujícími upozorňováni... momentálně dostatečně nezaručují... zvládnutí obsahu.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola zajistí, že děti s menším zájmem o učení zvládnou povinné učivo pro 1. stupeň?",
+      "Plánuje škola najmout kvalifikované učitele pro 1. stupeň, nebo jak bude řešit jejich metodické vedení?",
+      "Jakým způsobem škola kontroluje, zda žáci dosahují očekávaných výstupů v českém jazyce?"
+    ],
+    "who_school_fits": [
+      "Rodiče hledající alternativní vzdělávání s důrazem na demokracii a svobodu volby.",
+      "Děti, které potřebují citlivý, respektující přístup a menší kolektiv.",
+      "Rodiny, které chtějí být aktivně zapojeny do dění ve škole a její komunitě."
+    ],
+    "who_should_be_cautious": [
+      "Rodiče očekávající klasickou strukturovanou výuku a přípravu na náročnější studium.",
+      "Žáci, kteří potřebují jasnější vedení a kontrolu osvojování si gramatiky a čtení.",
+      "Pokud vám záleží na kvalifikačních předpokladech učitelů pro daný stupeň školy."
+    ],
+    "plain_czech_summary": "Inspekce proběhla v malé soukromé škole s demokratickým zaměřením, která vznikla v roce 2020. Velkým kladem je úctivé prostředí, kde se děti podílejí na pravidlech a cítí se bezpečně. Škola má hezké prostory a podporuje rodičovskou komunitu. Slabinou je ale nekvalifikovanost učitelů pro 1. stupeň a málo promyšlená výuka. U starších dětí je práce v češtině málo náročná, chyby se neopravují a systém nezaručuje, že všichni žáci zvládnou povinné učivo. Škola musí do 14 dnů přijmout opatření k nápravě."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Není relevantní (jedná se o základní školu).",
+      "key_numbers": [
+        "Škola má pouze 1. stupeň ZŠ."
+      ],
+      "evidence": "„Školská právnická osoba... vykonává... činnost základní školy... v jedné třídě vzdělávalo 13 žáků prvního až pátého ročníku.“"
+    },
+    "absence": {
+      "trend": "Výborná, bez problémů.",
+      "key_numbers": [
+        "Škola neřeší vysoké absence ani neomluvené hodiny."
+      ],
+      "evidence": "„Škola není nucena řešit vysoké absence či neomluvené hodiny, výchovná opatření dosud žádná neuložila.“"
+    },
+    "support_services": [
+      "Škola využívá asistentky a dobrovolnici-cizojazyčnou mluvčí.",
+      "Poradenské služby koordinuje přímo ředitel, zatím bez spolupráce s PPP.",
+      "Prevence rizikového chování je řešena skrze demokratické nástroje a komunitu."
+    ],
+    "safety_climate": [
+      "Mezi žáky nedocházelo ke konfliktům, chovali se slušně a vstřícně.",
+      "Prostředí je založeno na respektu a trpělivém přístupu dospělých.",
+      "Žáci aktivně řeší problematické chování pomocí školních demokratických nástrojů."
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce se zřizovatelem (spolek Hnízdo), který školu materiálně i filozoficky podporuje.",
+      "Aktivní zapojení rodičů do vzdělávání a života školy (tzv. kavárny).",
+      "Spolupráce s městskou knihovnou v Tišnově a projektem MAP Tišnov II."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, byť s úřednickými prvky. Význam je jasný a jednoznačný.",
+    "uncertainty_notes": []
+  }
+}

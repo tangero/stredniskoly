@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "SOS_600012590_2024-02-20",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola elektrotechniky a informačních technologií s domovem mládeže",
+    "inspection_period": "20. února až 22. února 2024",
+    "school_change_summary": "Od inspekce v roce 2016 si škola udržuje vysoký standard. Zvýšil se počet žáků (max. 360) a lůžek v domově (max. 56). Materiální vybavení se průběžně modernizuje podle trendů v oborech."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Škola dlouhodobě spolupracuje s firmami a vysokými školami, což zajišťuje, že se žáci učí aktuální poznatky a mají lepší šance na trhu práce.",
+        "evidence": "\"Dlouhodobě rozvíjené partnerské vztahy se sociálními partnery přispívají k těsnějšímu propojení výuky s praxí a následným dobrým uplatněním absolventů.\""
+      },
+      {
+        "tag": "Výborné vybavení a zázemí",
+        "detail": "Moderní učebny, laboratoře, elektroinstalační dílna, tělocvična a posilovna umožňují kvalitní praktickou přípravu.",
+        "evidence": "\"Multimediální učebny, laboratoře, elektroinstalační dílna i velmi dobré zázemí pro sportovní aktivity vytvářejí velmi dobré předpoklady pro rozvoj kompetencí žáků.\""
+      },
+      {
+        "tag": "Podpora slabších žáků",
+        "detail": "Škola nabízí doučování v matematice a cizích jazycích, semináře k přípravě na maturitu a individuální konzultace.",
+        "evidence": "\"Pro žáky ohrožené školním neúspěchem organizuje škola kroužky doučování v cizím jazyce a v matematice.\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivní výuka teoretických předmětů",
+        "detail": "V některých hodinách převažuje frontální výuka, kde učitel převádí hotové poznatky místo aby žáci sami objevovali a přemýšleli.",
+        "evidence": "\"Převaha frontální formy výuky s dominancí učitele a předávání hotových poznatků vedla k nízkému zapojení žáků a jejich málo aktivní práci.\""
+      },
+      {
+        "tag": "Slabá diferenciace podle schopností",
+        "detail": "Učitelé často nezohledňují, že žáci mají různé tempo učení a různé znalosti, a reagují především na spolupracující žáky.",
+        "evidence": "\"Učitelé nediferencovali zadání úkolů vzhledem k rozdílným znalostem a odlišnému tempu žáků, reagovali zejména na spolupracující žáky.\""
+      },
+      {
+        "tag": "Chybí systém ověřování výsledků",
+        "detail": "Škola nemá nastavený způsob, jak objektivně zjistit, zda žáci dosáhli cílů stanovených v učebních plánech.",
+        "evidence": "\"Škola nemá nastavený systém, pomocí něhož by získávala objektivní informace o dosažené úrovni výstupů stanovených školními vzdělávacími programy.\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se v hodinách teoretických předmětů uplatňují skupinové práce a samostatné objevování poznatků?",
+      "Jaké konkrétní kroky podniká škola, aby se výuka více přizpůsobila různým tempům a schopnostem jednotlivých žáků?",
+      "Jak se ověřuje, že žáci skutečně dosáhli všech cílů, které jsou v učebních plánech stanoveny?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí praktické vzdělání s jasným propojením na budoucí zaměstnání v IT nebo elektrotechnice",
+      "Studenti, kterým vyhovuje kombinace teoretické výuky s intenzivní praktickou přípravou v moderně vybavených dílnách",
+      "Žáci, kteří potřebují podporu a doučování – škola má systém pro slabší studenty"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se učí lépe aktivní metodou a potřebují více samostatné práce – v některých hodinách převažuje pasivní poslouchání",
+      "Studenti s velmi odlišným tempem učení – diferenciace podle individuálních potřeb není dostatečná",
+      "Rodiče, kteří chtějí mít jasný přehled o tom, zda jejich dítě dosahuje všech cílů – škola nemá transparentní systém ověřování výstupů"
+    ],
+    "plain_czech_summary": "SPŠ elektrotechniky v Dobrušce je kvalitní odborná škola s výborným vybavením a silnými vazbami na firmy. Praktická výuka je na vysoké úrovni. Problém je v teoretických předmětech, kde někdy převažuje nudná frontální výuka místo aktivního učení. Škola také nedostatečně přizpůsobuje výuku různým schopnostem žáků. Pozitivum: dobrá podpora slabších studentů a moderní zázemí. Vhodná pro prakticky zaměřené žáky, kteří chtějí kvalitní přípravu na konkrétní povolání."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní s nízkými neúspěšnostmi",
+      "key_numbers": [
+        "Neúspěšnost v maturitě 3,5 % až 14,1 % za poslední tři roky",
+        "V roce 2022/23 prospělo s vyznamenáním 6,9 % žáků",
+        "Prospělo 86,8 % žáků, neprospělo 4,5 %"
+      ],
+      "evidence": "\"Hrubá neúspěšnost žáků ve společné části maturitní zkoušky se za poslední tři uzavřené školní roky pohybovala mezi 3,5 % a 14,1 %.\""
+    },
+    "absence": {
+      "trend": "Kontrolován systémem jednotných kritérií",
+      "key_numbers": [
+        "Maximální hranice absence v předmětu za klasifikační období je stanovena"
+      ],
+      "evidence": "\"Škola má nastavena jednotná kritéria pro hodnocení výsledků vzdělávání žáků včetně maximální hranice absence v předmětu za klasifikační období.\""
+    },
+    "support_services": [
+      "Výchovná poradkyně – vede evidenci žáků se speciálními potřebami",
+      "Školní psycholožka a speciální pedagožka – individuální podpora",
+      "Karierová poradkyně – konzultace o budoucím zaměření a vysokých školách",
+      "Doučování v matematice a cizích jazycích pro ohrožené žáky",
+      "Schránka důvěry pro anonymní stížnosti a návrhy"
+    ],
+    "safety_climate": [
+      "Elektronicky zabezpečený vstup do budovy školy a domova mládeže",
+      "Domov mládeže má standardně vybavené pokoje se sociálním zařízením",
+      "Vychovatelé přistupují empaticky k řešení osobních problémů žáků",
+      "Preventivní programy zaměřené na předcházení rizikovému chování",
+      "Sociometrická šetření a adaptační kurzy pro nové žáky"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s firmami a podnikatelskými subjekty – propojení výuky s praxí",
+      "Partnerství s technickými vysokými školami",
+      "Projekty Erasmus+ a Comenius se zahraničními školami",
+      "Členství v Národní radě Asociace SPŠ a Krajské radě Unie CZESHA",
+      "Spolupráce s Úřadem práce v Rychnově nad Kněžnou"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více odborné terminologie, která by mohla být pro laiky složitější.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty hodin, které inspektoři pozorovali – není jasné, jak reprezentativní je jejich vzorek",
+      "Není specifikováno, kolik procent hodin teoretické výuky mělo problémy s metodikou",
+      "Chybí informace o tom, jak dlouho trvá, než se doporučení inspekce v praxi realizují"
+    ]
+  }
+}
+```

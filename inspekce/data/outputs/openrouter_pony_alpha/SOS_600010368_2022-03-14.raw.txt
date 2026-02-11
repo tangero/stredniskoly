@@ -1,0 +1,101 @@
+{
+  "report_id": "SOS_600010368_2022-03-14",
+  "school_profile": {
+    "school_type": "Střední škola technická, gastronomická a automobilní",
+    "inspection_period": "14. 3. 2022 − 17. 3. 2022",
+    "school_change_summary": "Od roku 2017 došlo k výraznému snížení počtu žáků v maturitních oborech (cca o 46 %) a změně ředitele školy v roce 2018."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Klima ve škole",
+        "detail": "Výuka probíhá v příjemné atmosféře založené na vzájemné důvěře a respektu, žáci se neobávají chyby.",
+        "evidence": "Všechny hodiny probíhaly v příjemném pracovním prostředí, žáci bez obav navrhovali řešení."
+      },
+      {
+        "tag": "Snížení absence",
+        "detail": "Škola účinně bojuje s vysokou absencí, která výrazně poklesla.",
+        "evidence": "Průměrná absence na žáka maturitního oboru klesla z cca 160 hodin za pololetí (2015/2016) na cca 110 hodin (2021/2022)."
+      },
+      {
+        "tag": "Zlepšení přijímacího řízení",
+        "detail": "Škola přísněji vybírá uchazeče a kontroluje přestupy, což zlepšuje studijní výsledky.",
+        "evidence": "Škola uplatňuje přísnější kritéria pro přijímání žáků a pravidla pro povolování opakování ročníku."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nízká úspěšnost u maturity",
+        "detail": "Mnoho žáků nekončí studium úspěšně, velká část k maturitě ani nedospěje.",
+        "evidence": "V maturitním ročníku 2021 činil podíl žáků, kteří úspěšně dokončili studium, pouze 32 %."
+      },
+      {
+        "tag": "Zastaralé metody výuky",
+        "detail": "Výuka je převážně frontální, učitel dominuje a žáci jsou pasivní.",
+        "evidence": "Většina hodin byla založena na frontálním stylu výuky s dominantním postavením učitele."
+      },
+      {
+        "tag": "Nedostatečná příprava k maturitě",
+        "detail": "Výuka v klíčových předmětech neefektivně připravuje žáky na společnou část maturitní zkoušky.",
+        "evidence": "Nejvyšší neúspěšnost žáci vykázali v didaktickém testu z matematiky (75 %), velká neúspěšnost je i v češtině a angličtině."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podpoří mého syna/dceru, aby v tomto náročném prostředí úspěšně odmaturoval/a?",
+      "Jakým způsobem škola zajišťuje, aby výuka nebyla jen pasivním poslechem, ale aby žáci byli aktivní?",
+      "Proč je úspěšnost v matematice a jazycích tak nízká a co se dělá pro její zlepšení?"
+    ],
+    "who_school_fits": [
+      "Žákům, kteří potřebují přátelské a tolerantní prostředí bez strachu z chyb.",
+      "Žákům, kteří jsou samostatní a nepotřebují tolik individuálního přístupu či moderních metod výuky.",
+      "Uchazečům o obor Hotelnictví, kde se výsledky výrazně zlepšily."
+    ],
+    "who_should_be_cautious": [
+      "Žákům, kteří plánují studovat nástavbový obor Podnikání (zejména dálkově) kvůli extrémně nízké úspěšnosti.",
+      "Žákům, kteří potřebují intenzivní přípravu k maturitě z matematiky nebo českého jazyka.",
+      "Žákům, kteří vyžadují aktivizující metody výuky a častou zpětnou vazbu."
+    ],
+    "plain_czech_summary": "Inspekce ukázala, že ve škole panuje příjemné prostředí a podařilo se výrazně snížit absenci. Velkým problémem však zůstává nízká úspěšnost u maturit, kdy řada žáků studium nedokončí. Výuka často probíhá zastaralým stylem, kde žáci jen pasivně přijímají informace, což se odráží na špatných výsledcích v matematice a jazycích. Škola sice přijala opatření ke zlepšení, ale ta zatím plně nefungují. Rodiče by měli pečlivě zvážit studium v oborech s vysokou neúspěšností a zajímat se o konkrétní přípravu k maturitě."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavá, s celkovým meziročním zlepšením, ale stále velmi špatná v matematice a jazycích.",
+      "key_numbers": [
+        "Pouze 32 % žáků úspěšně dokončilo studium v maturitním ročníku 2021.",
+        "75 % neúspěšnost u maturity z matematiky (2019-2021).",
+        "Neúspěšnost v českém jazyce v roce 2019 v oboru Hotelnictví byla 56 % (průměr ČR 11 %)."
+      ],
+      "evidence": "Analýzou výsledků dílčích zkoušek... bylo zjištěno, že nejvyšší neúspěšnost vykázali žáci v didaktickém testu z matematiky."
+    },
+    "absence": {
+      "trend": "Výrazně klesající díky zavedeným opatřením.",
+      "key_numbers": [
+        "Pokles z cca 160 hodin na žáka za pololetí (2015/2016).",
+        "Na cca 110 hodin v 1. pololetí školního roku 2021/2022."
+      ],
+      "evidence": "Díky nastaveným aktivitám se daří snižovat především absenci žáků."
+    },
+    "support_services": [
+      "Funguje tým pro předcházení školní neúspěšnosti (výchovná poradkyně, metodik prevence, zástupkyně).",
+      "Individuální konzultace, doučování a kroužek pro přípravu k maturitní zkoušce.",
+      "Spolupráce s poradenskými zařízeními a plány pedagogické podpory pro žáky se SVP."
+    ],
+    "safety_climate": [
+      "Příjemné pracovní prostředí založené na vzájemné důvěře a respektu.",
+      "Žáci se neobávají chyby, navrhují řešení a řeší příklady u tabule.",
+      "Adaptační kurzy přispívají k rozvoji sociálních kompetencí."
+    ],
+    "partnerships_practice": [
+      "Spolupráce s různými organizacemi a úřady při realizaci preventivních aktivit.",
+      "Spolupráce výchovných poradců s poradenskými zařízeními."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, srozumitelně strukturovaný a jasně ukazuje na problémy i pozitiva. Obsahuje odborné termíny, které jsou však vysvětleny kontextem.",
+    "uncertainty_notes": [
+      "Nejasné, jak přesně jsou definována 'přísnější kritéria' pro přijímací řízení.",
+      "Chybí konkrétní data o počtu žáků ve všech oborech v jednotlivých letech pro lepší srovnání trendů."
+    ]
+  }
+}

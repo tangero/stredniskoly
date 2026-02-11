@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600004741_2022-12-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:53:55.303891+00:00",
+  "run_finished_utc": "2026-02-09T16:54:22.109229+00:00",
+  "raw_file": "SOS_600004741_2022-12-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600004741_2022-12-09",
+    "school_profile": {
+      "school_type": "Střední škola s maturitou v oboru Hotelnictví",
+      "inspection_period": "9. 12. 2022 – 14. 12. 2022",
+      "school_change_summary": "Škola si udržuje stabilní počet 531 žáků ve 20 třídách. Ředitel od roku 1991 inovoval odbornou složku vzdělávacího programu a zlepšuje materiálně technické vybavení. Přetrvávají však problémy s účinností kontroly a metodickou podporou učitelů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Škola nabízí výuku šesti cizích jazyků s podporou rodilých mluvčích a zahraničními stážemi v Německu, Španělsku a Řecku.",
+          "evidence": "\"Dlouhodobá tradice, jejímž charakteristickým prvkem je významná podpora výuky cizích jazyků\" a \"dlouhodobě výrazně lepších výsledků v anglickém jazyce\""
+        },
+        {
+          "tag": "Praktická příprava",
+          "detail": "Kvalitní propojení teorie s praxí prostřednictvím projektů, praktických činností a stáží na smluvních pracovištích.",
+          "evidence": "\"Zapojení žáků do odborné přípravy formou praktických činností a projektového vyučování, např. kompletní zajištění školních zájezdů\""
+        },
+        {
+          "tag": "Uplatnitelnost",
+          "detail": "Absolventi nacházejí velmi dobré uplatnění na trhu práce díky získaným odborným kompetencím.",
+          "evidence": "\"Absolventi školy nacházejí velmi dobré uplatnění\" a \"vysoký standard kvality odborného vzdělávání\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká fluktuace studentů",
+          "detail": "Poslední čtyřletý cyklus nedokončilo 44 % žáků, předčasné odchody se vyskytují i během studia.",
+          "evidence": "\"Poslední čtyřletý cyklus vzdělávání nedokončilo 44 % žáků\" a \"žáci předčasně ukončují vzdělávání nejen po prvním ročníku\""
+        },
+        {
+          "tag": "Nejednotný přístup k žákům se speciálními potřebami",
+          "detail": "Učitelé nejsou dostatečně informováni o podpůrných opatřeních a neposkytují účinnou podporu žákům s odlišným mateřským jazykem.",
+          "evidence": "\"Pedagogičtí pracovníci nejsou dostatečně informováni o nastavených podpůrných opatřeních\" a \"vyučující tyto žáky při hodnocení nijak nezohledňují\""
+        },
+        {
+          "tag": "Méně aktivní vyučování",
+          "detail": "Část hodin je vedena převážně frontálně bez dostatečné aktivizace žáků a diferenciace obsahu.",
+          "evidence": "\"Dominantní role učitele a důraz na předávání hotových poznatků nedostatečně rozvíjely komunikační dovednosti\" a \"méně pestrá škála metod a forem\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s učením nebo pocházejí z jiného jazykového prostředí?",
+        "Jaké jsou důvody, proč 44 % žáků poslední čtyřletý cyklus nedokončilo, a co se s tím dělá?",
+        "Jak se škola připravuje na to, aby učitelé více využívali aktivní metody výuky a skupinovou práci?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o gastronomii a hotelnictví s dobrou motivací a schopností se učit",
+        "Studenti, kteří chtějí kvalitní jazykové vzdělání a možnost stáží v zahraničí",
+        "Uchazeči, kteří si cení praktické přípravy a propojení teorie s reálnou praxí"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se speciálními vzdělávacími potřebami nebo z jiného jazykového prostředí – podpora není systematická",
+        "Studenti, kteří potřebují individuální přístup a diferenciovanou výuku – ta není dostatečně zajištěna",
+        "Uchazeči, kteří se obtížněji adaptují – vysoká fluktuace naznačuje, že ne všichni si studia užívají"
+      ],
+      "plain_czech_summary": "Hotelová škola v Praze je tradičním zařízením se silným zaměřením na jazykové vzdělání a praktickou přípravu v gastronomii. Absolventi se dobře uplatňují na trhu práce. Problém je však vysoká fluktuace studentů – 44 % poslední třídy studia nedokončilo. Učitelé nejsou dostatečně podporováni v používání moderních metod výuky a péče o žáky se speciálními potřebami není jednotná. Škola má výborné vybavení a partnery, ale chybí jí lepší metodická podpora pedagogů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní a srovnatelný s celostátním průměrem, v angličtině dlouhodobě výrazně lepší",
+        "key_numbers": [
+          "V profilové části maturitní zkoušky uspějí obvykle všichni žáci",
+          "V anglickém jazyce dlouhodobě výrazně lepší výsledky než v celostátním srovnání",
+          "Pouze jednotlivci neprospějí převážně v dílčích částech zkoušky"
+        ],
+        "evidence": "\"Výsledky žáků při ukončování studia u maturitních zkoušek korespondují se studijními předpoklady\" a \"v anglickém jazyce pak dlouhodobě výrazně lepších výsledků\""
+      },
+      "absence": {
+        "trend": "Vysoká fluktuace – 44 % žáků poslední čtyřletý cyklus nedokončilo",
+        "key_numbers": [
+          "44 % žáků poslední čtyřletý cyklus nedokončilo",
+          "Předčasné odchody se vyskytují i během studia, ne jen po prvním ročníku",
+          "Ve školním roce 2021/2022 ukončilo klasifikaci ke 30. 6. pouze 77 % žáků"
+        ],
+        "evidence": "\"Poslední čtyřletý cyklus vzdělávání nedokončilo 44 % žáků\" a \"žáci předčasně ukončují vzdělávání nejen po prvním ročníku, ale i v průběhu celého studia\""
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s psychologem identifikuje potřeby žáků se speciálními vzdělávacími potřebami a žáků ohrožených neúspěchem",
+        "Dvojjazyčná asistentka podporuje žáky s odlišným mateřským jazykem",
+        "Adaptační a sportovní kurzy, tematicky zaměřené přednášky a sportovní aktivity pro primární prevenci"
+      ],
+      "safety_climate": [
+        "Příjemná pracovní vzdělávací atmosféra založená na partnerském přístupu učitelů k žákům",
+        "Nastavená a dodržovaná pravidla komunikace a chování přispívají k vytváření pozitivních vztahů",
+        "Škola věnuje dostatečnou pozornost bezpečnosti a ochraně zdraví"
+      ],
+      "partnerships_practice": [
+        "Dlouhodobá kooperace s odbornými svazy, asociacemi a sociálními partnery zajišťuje realizaci praxe na smluvních pracovištích",
+        "Partnerství se zřizovatelem přispívá ke zlepšování materiálních podmínek a zajištění zahraničních výjezdů",
+        "Mezinárodní projekty podporují mobilitu učitelů"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje o výsledcích, problémech a doporučeních. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však dlouhé a úřednické, což snižuje srozumitelnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní podpůrné opatření jsou pro žáky se SVP nastavena, pouze konstatuje, že nejsou dostatečně komunikována",
+        "Chybí detailní analýza příčin vysoké fluktuace – není jasné, zda jde o osobní problémy žáků, kvalitu výuky nebo jiné faktory",
+        "Není uvedeno, kolik procent žáků s OMJ studia nedokončilo, aby bylo možné posoudit, zda jsou ohroženi více než ostatní"
+      ]
+    }
+  }
+}

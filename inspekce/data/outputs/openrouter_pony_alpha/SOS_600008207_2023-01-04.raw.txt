@@ -1,0 +1,68 @@
+{
+  "report_id": "SOS_600008207_2023-01-04",
+  "school_profile": {
+    "school_type": "SOŠ - technická",
+    "inspection_period": "4. 1. 2023 – 6. 1. 2023",
+    "school_change_summary": "Neuvedeno v zadání – chybí zdrojový text zprávy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Nezjištěno",
+        "detail": "Bez zdrojového textu nelze identifikovat silné stránky školy.",
+        "evidence": "Zdrojový text zprávy nebyl dodán."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nezjištěno",
+        "detail": "Bez zdrojového textu nelze identifikovat rizika ani nedostatky.",
+        "evidence": "Zdrojový text zprávy nebyl dodán."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké jsou konkrétní výsledky studentů této školy u maturity v posledních letech?",
+      "Jak škola podporuje žáky s různými studijními předpoklady?",
+      "Jaká je spolupráce školy s místními firmami a nabízí praxi?"
+    ],
+    "who_school_fits": [
+      "Studentům se zájmem o technické obory (strojírenství, elektrotechnika)."
+    ],
+    "who_should_be_cautious": [
+      "Žadatelům, kteří očekávají všeobecné vzdělání bez technického zaměření."
+    ],
+    "plain_czech_summary": "Tato zpráva se týká SPŠ strojní a elektrotechnické v Českých Budějovicích. Inspekce proběhla v lednu 2023. Bohužel, pro správnou analýzu mi nebyl dodán samotný text inspekční zprávy. Bez něj nemohu rodičům poskytnout konkrétní informace o kvalitě výuky, atmosféře ve škole ani o výsledcích studentů. Pro skutečný přehled je nutné nahlédnout do kompletní zprávy na webu ČŠI."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Neznámý",
+      "key_numbers": [
+        "Data nejsou k dispozici bez zdrojového textu."
+      ],
+      "evidence": "Zdrojový text zprávy chybí."
+    },
+    "absence": {
+      "trend": "Neznámý",
+      "key_numbers": [
+        "Data nejsou k dispozici bez zdrojového textu."
+      ],
+      "evidence": "Zdrojový text zprávy chybí."
+    },
+    "support_services": [
+      "Neznámo - chybí zdrojový text."
+    ],
+    "safety_climate": [
+      "Neznámo - chybí zdrojový text."
+    ],
+    "partnerships_practice": [
+      "Neznámo - chybí zdrojový text."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 1,
+    "czech_clarity_reason": "Analýzu nebylo možné provést, protože ve vstupu zcela chybí zdrojový text inspekční zprávy ('Zdrojový text zprávy:' je prázdné).",
+    "uncertainty_notes": [
+      "Všechny výstupy jsou defaultní, protože nebyl dodán žádný text k analýze."
+    ]
+  }
+}

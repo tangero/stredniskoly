@@ -1,0 +1,109 @@
+{
+  "report_id": "SOS_600005861_2022-01-13",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:01:53.392517+00:00",
+  "run_finished_utc": "2026-02-10T08:03:18.082971+00:00",
+  "raw_file": "SOS_600005861_2022-01-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600005861_2022-01-13",
+    "school_profile": {
+      "school_type": "Vyšší odborná škola oděvního návrhářství a Střední průmyslová škola oděvní",
+      "inspection_period": "13. 1. − 14. 1. 2022 a 17. 1. – 18. 1. 2022",
+      "school_change_summary": "Od roku 2012 vzrostl počet žáků a pedagogů, byl zaveden nový obor Scénická a výstavní tvorba a v roce 2020 došlo ke změně vedení školy."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Odborná výuka",
+          "detail": "Praktická výuka v ateliérech a dílnách dosahuje vynikající úrovně a efektivně rozvíjí talent žáků.",
+          "evidence": "Všechny hospitované hodiny praktické odborné přípravy... vykazovaly výbornou úroveň... a směřovaly k cílenému rozvoji jejich potenciálu."
+        },
+        {
+          "tag": "Mezinárodní spolupráce",
+          "detail": "Škola nabízí výměnné pobyty a projekty, které zlepšují jazykové dovednosti a odbornost.",
+          "evidence": "Partnerské vztahy se zahraničními školami a zapojení do mezinárodních projektů podporuje odborné a jazykové kompetence."
+        },
+        {
+          "tag": "Výsledky vzdělávání",
+          "detail": "Žáci dosahují velmi dobrých výsledků v praktických částech maturit a absolventských zkoušek.",
+          "evidence": "Dlouhodobě velmi dobrých výsledků dosahují žáci v profilové části maturitní zkoušky, zejména v její praktické části."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Prostorové podmínky",
+          "detail": "Budova nemá vlastní sportoviště, jídelnu a některé učebny jsou malé, což komplikuje výuku.",
+          "evidence": "Stávající prostorové podmínky... jsou pro fungování školy limitující (absence sportovního zázemí, stravování, velikost ateliérů)."
+        },
+        {
+          "tag": "Kvalita teoretické výuky",
+          "detail": "V některých teoretických předmětech převažuje pasivní výuka bez dostatečného zapojení žáků.",
+          "evidence": "Účinnost výuky přibližně v polovině hospitovaných hodin teoretického vyučování... snižovaly některé metodické a didaktické nedostatky."
+        },
+        {
+          "tag": "Podpora cizinců",
+          "detail": "Podpora žáků-cizinců s jazykovou bariérou není nastavena systematicky a závisí na jednotlivých učitelích.",
+          "evidence": "Vzhledem k identifikované jazykové bariéře... je jejich podpora v průběhu vzdělávání méně systémově nastavena."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky-cizince nebo žáky se specifickými potřebami v teoretických předmětech?",
+        "Jakým způsobem jsou řešeny problémy s nedostatečným prostorem a absencí vlastní jídelny?",
+        "Využívají učitelé při teoretické výuce moderní aktivizující metody, nebo převažuje tradiční přednášení?"
+      ],
+      "who_school_fits": [
+        "Kreativní uchazeči s zájmem o oděvní návrhářství, modelářství nebo scénickou tvorbu, kteří chtějí rozvíjet svůj talent.",
+        "Studenti, kteří preferují „dělanou“ praxi a ruční prací před čistě teoretickým studiem.",
+        "Uchazeči, kteří chtějí získat mezinárodní zkušenosti a vystavovat své práce v zahraničí."
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči, kteří očekávají moderní kampusové vybavení včetně vlastní jídelny a tělocvičny přímo v budově.",
+        "Studenti, kteří potřebují intenzivní a systematickou podporu při překonávání jazykové bariéry.",
+        "Žáci, kteří upřednostňují dynamickou a interaktivní výuku i v teoretických předmětech."
+      ],
+      "plain_czech_summary": "Škola je volbou pro kreativní talenty, kterým vyhovuje spojení tradice s moderním návrhářstvím. Největším přínosem je skvěle zvládnutá praktická výuka a mezinárodní aktivity, které žáky baví a posouvají vpřed. Naopak rodiče by měli počítat s komplikovanějšími prostorovými podmínkami (chybějící jídelna a sportoviště) a občasnou nevyvážeností v kvalitě teoretické výuky. Pro aktivní a talentované studenty je však škola dobrou volbou s vysokou úspěšností absolventů."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený",
+        "key_numbers": [
+          "V uměleckých oborech dosahují žáci nadprůměrných výsledků v českém jazyce.",
+          "V oboru Oděvnictví jsou výsledky v anglickém a českém jazyce horší než celorepublikový průměr.",
+          "V profilové (praktické) části maturit dosahují žáci dlouhodobě velmi dobrých výsledků."
+        ],
+        "evidence": "V oboru Oděvnictví dosáhli žáci v anglickém a českém jazyce o něco horších výsledků než je průměrná úspěšnost žáků dané skupiny oborů... Naopak dlouhodobě velmi dobrých výsledků dosahují žáci v profilové části."
+      },
+      "absence": {
+        "trend": "Klesající",
+        "key_numbers": [
+          "V posledním období se snižuje míra absence, včetně absence neomluvené.",
+          "Žádný žák nebyl ve školním roce 2020/2021 hodnocen sníženým stupněm z chování.",
+          "Zvyšuje se počet žáků s uzavřenou klasifikací ke konci školního roku."
+        ],
+        "evidence": "Funkčnost preventivních mechanismů... dokládá... nižší míra absence, včetně neomluvené. Žádný žák rovněž nebyl ve školním roce 2020/2021 hodnocen sníženým stupněm z chování."
+      },
+      "support_services": [
+        "Škola zajišťuje externí psycholožku pro žáky s psychickými obtížemi.",
+        "Pro zájemce a veřejnost běží kurzy kresby, šití a konstrukce střihů.",
+        "Je zavedena jednotná elektronická platforma pro sdílení materiálů a informací."
+      ],
+      "safety_climate": [
+        "Přístup do budovy je zabezpečen elektronickým systémem.",
+        "Výuka probíhá v kultivovaném prostředí s instalacemi studentských prací.",
+        "Výchovné problémy jsou řešeny dle závažnosti, včetně podmínečného vyloučení."
+      ],
+      "partnerships_practice": [
+        "Spolupráce s oděvními firmami, návrhářskými studii a kulturními institucemi.",
+        "Aktivní zapojení do mezinárodních projektů a výměn se zahraničními školami.",
+        "Prezentace výsledků na veletrzích, módních přehlídkách i velvyslanectvích ČR."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Text je psán ve srozumitelné češtině, byť s úřednickými prvky. Všechny klíčové informace jsou v textu explicitně uvedeny.",
+      "uncertainty_notes": []
+    }
+  }
+}

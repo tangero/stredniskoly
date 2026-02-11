@@ -1,0 +1,10 @@
+{
+  "report_id": "GY8_600076431_2023-01-24",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:49:46.611876+00:00",
+  "run_finished_utc": "2026-02-09T16:51:46.640577+00:00",
+  "raw_file": "GY8_600076431_2023-01-24.raw.txt",
+  "call_error": "The read operation timed out",
+  "parse_error": "The read operation timed out",
+  "parsed_output": null
+}

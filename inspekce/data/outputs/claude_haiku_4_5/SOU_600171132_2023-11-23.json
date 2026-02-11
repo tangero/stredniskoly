@@ -1,0 +1,114 @@
+{
+  "report_id": "SOU_600171132_2023-11-23",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:33:33.512372+00:00",
+  "run_finished_utc": "2026-02-09T16:33:57.431897+00:00",
+  "raw_file": "SOU_600171132_2023-11-23.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOU_600171132_2023-11-23",
+    "school_profile": {
+      "school_type": "Střední škola - Centrum odborné přípravy technické (SOU)",
+      "inspection_period": "23. 11. až 29. 11. 2023",
+      "school_change_summary": "Nové vedení od listopadu 2022. Škola zlepšila vybavení dílen moderními stroji, pořídila ICT zařízení a zintenzivnila spolupráci s Českou zbrojovkou. Postupně modernizuje domov mládeže."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktická příprava na profesi",
+          "detail": "Školní dílny jsou vybaveny moderním strojním zařízením odpovídajícím trendům v průmyslu, což zvyšuje uplatnitelnost absolventů.",
+          "evidence": "Účelné vybavení školních dílen strojním zařízením odpovídajícím moderním trendům přispívá ke kvalitnějšímu odbornému vzdělávání."
+        },
+        {
+          "tag": "Spolupráce s průmyslem",
+          "detail": "Česká zbrojovka umožňuje žákům praktickou výuku v reálných provozech a vytváří příležitosti pro jejich budoucí zaměstnání.",
+          "evidence": "Účelná spolupráce s Českou zbrojovkou a.s. umožňuje efektivní zapojení žáků v jednotlivých provozech při praktickém vyučování."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola nabízí doučování a individuální konzultace pro žáky ohrožené neúspěchem, zejména v domově mládeže.",
+          "evidence": "Cílená systematická pomoc při přípravě na výuku byla efektivně nastavena a využívána všemi ubytovanými žáky."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá teoretická výuka",
+          "detail": "Učitelé v teoretických předmětech používají převážně frontální výuku bez aktivizujících metod, což nerozvinuje kritické myšlení žáků.",
+          "evidence": "Převážně volená frontální výuka nevedla k rozvoji kritického myšlení a postupnému vyvozování souvislostí samotnými žáky."
+        },
+        {
+          "tag": "Nízké výsledky maturit",
+          "detail": "V profilové části maturitní zkoušky jsou výsledky hluboko pod celorepublikovým průměrem, v třech letech neuspělo 35 z 157 žáků.",
+          "evidence": "V profilové části maturitní zkoušky byly maturitní výsledky žáků jednotlivých oborů vzdělání vždy hluboko pod celorepublikovým průměrem."
+        },
+        {
+          "tag": "Slabá spolupráce mezi učiteli",
+          "detail": "Učitelé si navzájem neobservují hodiny a nesdílí poznatky, což omezuje zlepšování kvality výuky.",
+          "evidence": "Vzájemné hospitace a sdílení poznatků mají jen omezený dopad na zlepšení kvality vzdělávání jednotlivých žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se žáci připravují na maturitní zkoušku, když jsou výsledky v profilové části pod průměrem?",
+        "Jaké konkrétní kroky škola podnikla od roku 2023, aby zlepšila kvalitu teoretické výuky?",
+        "Jak funguje doučování a je dostupné všem žákům, kteří ho potřebují?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a ruční práci, kteří se chystají do průmyslu",
+        "Žáci, kteří potřebují individuální podporu a doučování - škola má systém péče",
+        "Zájemci o obory puškař, mechanik seřizovač nebo uměleckořemeslné zpracování kovů"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se spoléhají na kvalitní teoretickou výuku - ta není na vysoké úrovni",
+        "Zájemci o obory s maturitní zkouškou - výsledky jsou pod celorepublikovým průměrem",
+        "Žáci, kteří potřebují rozvoj kritického myšlení a diskusí - frontální výuka to nepodporuje"
+      ],
+      "plain_czech_summary": "Škola je zaměřená na praktickou přípravu v technických oborech a má dobré vybavení dílen. Spolupráce s Českou zbrojovkou je výhodou. Slabinou je teoretická výuka, která se opírá především o frontální metody bez aktivizace žáků. Výsledky maturitních zkoušek jsou pod průměrem. Škola má dobrou péči o slabší žáky a nabízí doučování. Vhodná pro ty, kdo chtějí praktickou profesi, méně vhodná pro ty, kdo očekávají kvalitní teoretické vzdělání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Mírné zlepšení v roce 2023, ale stále pod průměrem",
+        "key_numbers": [
+          "35 neúspěšných z 157 žáků za tři roky (2020-2023)",
+          "Společná část 2023: všichni žáci uměleckého oboru uspěli",
+          "Profilová část: hluboko pod celorepublikovým průměrem"
+        ],
+        "evidence": "Ve školním roce 2022/2023 došlo k mírnému zlepšení, ale v profilové části byly výsledky vždy hluboko pod celorepublikovým průměrem."
+      },
+      "absence": {
+        "trend": "Není v textu zmíněno",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s účinnou spoluprací s vedením",
+        "Individuální vzdělávací plány pro žáky se speciálními potřebami (49 žáků)",
+        "Doučování a individuální konzultace pro žáky ohrožené neúspěchem",
+        "Kariérové poradenství ve spolupráci s vysokými školami",
+        "Adaptační pobyty pro prvňáky na budování vztahů v třídě"
+      ],
+      "safety_climate": [
+        "Škola vyhledává a vyhodnocuje rizika ohrožení bezpečnosti a zdraví",
+        "Zásady bezpečnosti práce a ochrany zdraví jsou v praktické výuce dodrženy",
+        "Bezpečné prostředí vytvářeno ve škole, domově mládeže i školní jídelně",
+        "Domov mládeže postupně prochází rekonstrukcí a obnovou vybavení"
+      ],
+      "partnerships_practice": [
+        "Česká zbrojovka a.s. - praktická výuka v reálných provozech, finanční podpora",
+        "Další firmy poskytující praktické vyučování",
+        "Spolupráce se základními a středními odbornými školami",
+        "Profesně blízké vysoké školy - kariérové poradenství",
+        "Setkávání s absolventy pro motivaci současných žáků"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Slabiny jsou jasně popsány (frontální výuka, nízké výsledky maturit). Silné stránky jsou konkrétní (vybavení dílen, spolupráce s Českou zbrojovkou). Chybí však konkrétní čísla o absenci a některé údaje jsou obecnější.",
+      "uncertainty_notes": [
+        "Absence údajů o školní absenci - není zmíněna v textu",
+        "Nejasné, jaké konkrétní kroky škola podnikla od listopadu 2023 pro zlepšení teoretické výuky",
+        "Není jasné, kolik procent žáků využívá doučování a jak je dostupné"
+      ]
+    }
+  }
+}

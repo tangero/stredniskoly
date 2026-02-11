@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "GY8_691002339_2025-10-08",
+  "school_profile": {
+    "school_type": "Osmileté a čtyřleté gymnázium, příspěvková organizace",
+    "inspection_period": "8.–10. 10. 2025",
+    "school_change_summary": "Od inspekce v 2021 vzrostl počet žáků na 360. Škola prošla rozsáhlou stavební přestavbou s novým patrem, učebnami robotiky a kreativními místnostmi. Zvýšil se počet pracovníků poradenského pracoviště a aktivizoval se žákovský parlament."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné maturitní výsledky",
+        "detail": "Výsledky v maturitě jsou dlouhodobě lepší nebo srovnatelné s celostátním průměrem, v profilové části stabilně dobré.",
+        "evidence": "Výsledky ve společné i profilové části maturitní zkoušky jsou v delším horizontu srovnatelné nebo lepší než průměr v ČR."
+      },
+      {
+        "tag": "Bohatá mimoškolní nabídka",
+        "detail": "Škola nabízí expedice, projekty s vysokými školami, dobrovolnictví, soutěže a zájmové kroužky včetně drumbanду.",
+        "evidence": "Aktivní zapojování do tematických expedic a projektů rozšiřuje vzdělávací příležitosti a posiluje klíčové kompetence žáků."
+      },
+      {
+        "tag": "Moderní vybavení a prostory",
+        "detail": "Nové učebny robotiky, kreativní místnosti, IT technika, videokamery a fotoaparáty pro nové předměty.",
+        "evidence": "Vícezdrojové financování umožnilo významné zkvalitnění prostorového i technického zázemí školy."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vyšší absence ve vyšších ročnících",
+        "detail": "Průměrná absence 130–150 hodin na žáka, výraznější v 7. ročníku osmiletého a 3. ročníku čtyřletého studia.",
+        "evidence": "Ze žáků s vyšší absencí mělo slabý prospěch přibližně 58 %, nejvýraznější souvislost v sedmém a třetím ročníku."
+      },
+      {
+        "tag": "Slabší prospěch v matematice a němčině",
+        "detail": "Největší obtíže žákům způsobují matematika a německý jazyk, zejména ve vyšších ročnících.",
+        "evidence": "Největší obtíže žákům působila matematika a německý jazyk."
+      },
+      {
+        "tag": "Komunikační rezervy vedení",
+        "detail": "Otevřenost komunikace mezi vedením a některými pedagogy je méně efektivní, zejména při odlišných názorech.",
+        "evidence": "Otevřenost komunikace mezi vedením školy a některými pedagogy je však méně efektivní, zejména při vyjadřování odlišných názorů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky s obtížemi v matematice a němčině? Nabízí doučování nebo speciální semináře?",
+      "Jaké konkrétní kroky podnikla škola proti zvyšující se absenci ve vyšších ročnících a jak je kontroluje?",
+      "Jak funguje komunikace mezi vedením a učiteli v praxi? Jak se řeší neshody nebo zpětná vazba?"
+    ],
+    "who_school_fits": [
+      "Talentovaní a motivovaní žáci, kteří chtějí studovat na vysoké škole – škola má tradici velmi dobrých maturitních výsledků a spolupráci s vysokými školami.",
+      "Žáci zajímající se o vědu, techniku a kreativitu – bohatá nabídka projektů, expedic, robotiky a mediálních předmětů.",
+      "Žáci s aktivním přístupem k životu – škola podporuje dobrovolnictví, občanskou angažovanost a vedení zájmových kroužků."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabší motivací nebo tendencí k absencím – absence silně koreluje se slabým prospěchem, zejména ve vyšších ročnících.",
+      "Žáci s obtížemi v matematice nebo cizích jazycích – bez dodatečné podpory mohou mít problémy, neboť jsou to nejnáročnější předměty.",
+      "Žáci, kteří potřebují intenzivní individuální péči – výuka není systematicky diferencovaná a práce s nadanými žáky není dostatečně podporována."
+    ],
+    "plain_czech_summary": "Gymnázium Hostivice je moderní škola s výbornou pověstí v maturitách a bohatou nabídkou projektů, expedic a mimoškolních aktivit. Má nové vybavení a podporuje občanskou angažovanost žáků. Pozor však na vyšší absenci ve vyšších ročnících, která silně souvisí se slabým prospěchem. Matematika a němčina jsou náročné předměty. Komunikace mezi vedením a učiteli má rezervy. Ideální pro motivované žáky se zájmem o vědu a kreativitu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilně dobrý, dlouhodobě lepší nebo srovnatelný s celostátním průměrem",
+      "key_numbers": [
+        "Společná část: výsledky převážně lepší nebo srovnatelné s průměrem v příslušné oborové skupině",
+        "Profilová část: stabilně dobré výsledky, srovnatelné nebo lepší než průměr v ČR",
+        "Podzimní termín 2025: neuspěl jeden žák"
+      ],
+      "evidence": "Výsledky žáků ve společné části maturitní zkoušky byly v období posledních pěti let převážně lepší nebo srovnatelné s celostátním průměrem. V profilové části dosahují žáci stabilně dobrých výsledků."
+    },
+    "absence": {
+      "trend": "Zvyšující se ve vyšších ročnících, koreluje se slabým prospěchem",
+      "key_numbers": [
+        "Osmiletý obor: průměrně 130 hodin na žáka",
+        "Čtyřletý obor: průměrně 150 hodin na žáka",
+        "Ze žáků s vyšší absencí mělo slabý prospěch přibližně 58 %"
+      ],
+      "evidence": "Analýza vztahu mezi vyšší mírou neúčasti a slabým prospěchem prokázala, že ze žáků s vyšší absencí mělo slabý prospěch přibližně 58 %, nejvýraznější v 7. ročníku osmiletého a 3. ročníku čtyřletého studia."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: dvě výchovné poradkyně (jedna jako metodička prevence), speciální pedagog, externí školní psycholog",
+      "Individuální vzdělávací plány pro žáky se speciálními vzdělávacími potřebami",
+      "Tripartitní schůzky, třídnické hodiny a skupinové programy na podporu vztahů a komunikace"
+    ],
+    "safety_climate": [
+      "Nízká míra úrazovosti",
+      "Počet pochval dlouhodobě převyšuje počet kázeňských opatření, svědčí o stabilním preventivním působení",
+      "Škola dbá na zajišťování bezpečného prostředí a poučuje žáky o dodržování pravidel bezpečnosti"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s vysokými školami v přírodovědných a technických oborech",
+      "Odborná praxe v rámci volitelných vyučovacích předmětů od školního roku 2024/2025",
+      "Mezinárodní projekty: eTwinning s partnerskou školou v Itálii, projekty zaměřené na rovnost příležitostí",
+      "Setkání žáků s absolventy a tematické workshopy na podporu profesní orientace"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní údaje. Některé pasáže jsou však složitější a vyžadují pozorné čtení. Klíčové informace pro rodiče jsou jasně odděleny v závěrech.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počet žáků se slabým prospěchem v absolutních číslech, pouze v procentech (přibližně pětina v osmiletém, třetina v čtyřletém oboru).",
+      "Není jasné, jaké konkrétní kroky škola podnikla proti absenci – zmíněna je pouze úprava školního řádu bez detailů.",
+      "Komunikační problémy mezi vedením a pedagogy jsou zmíněny, ale není jasné, jak vážné jsou a jak se řeší."
+    ]
+  }
+}
+```

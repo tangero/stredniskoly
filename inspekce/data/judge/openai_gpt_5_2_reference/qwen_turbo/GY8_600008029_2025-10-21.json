@@ -1,0 +1,33 @@
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "qwen_turbo",
+  "run_started_utc": "2026-02-09T12:07:40.512436+00:00",
+  "run_finished_utc": "2026-02-09T12:08:09.211468+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY8_600008029_2025-10-21\",\n  \"faithfulness_score_1_5\": 3,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 5,\n  \"critical_issues\": [\n    \"Chybně uvedené období inspekční činnosti: kandidát uvádí 2025-10-21 až 2025-10-24, zdroj uvádí 21. 10. 2025 − 23. 10. 2025.\",\n    \"Část 'who_school_fits' obsahuje spekulace nepodložené zprávou (např. že škola je pro žáky se zájmem o humanitní a vědecké obory; že je pro žáky se zájmem o mezinárodní výměny; tvrzení o 'rodinném prostředí' podporujícím aktivity).\",\n    \"U 'maturita' je tvrzení o trendu 'Stabilní' – ve zdroji je jen srovnání s celostátním průměrem a dílčí nadprůměrné výsledky, nikoli explicitní trend.\",\n    \"Nezahrnuty důležité slabší stránky/prvky zjištěné ve výuce: nejednoznačně formulované cíle hodin, chybějící kritéria pro formativní hodnocení, často chybějící závěrečné zhodnocení hodiny, málo propojování s reálnými situacemi, omezená práce s různými zdroji informací pro kritické myšlení.\",\n    \"Opomenuty některé důležité závěry pro rodiče: méně využívané oceňování/uznání žáků jako motivační prvek a informace o odchodech po 4. ročníku nižšího gymnázia (~10 %).\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené klíčové silné stránky ze závěrů: spolupráce se sociálními partnery a význam peer aktivit pro klima/preventivní působení.\",\n    \"Správně uvedená hlavní slabá stránka: pouze výjimečná diferenciace výuky vzhledem k potenciálu žáků.\",\n    \"Odpovídající shrnutí omezené aktivní práce žáků s digitálními technologiemi (technologie využívají zpravidla vyučující, žáci jen omezeně).\",\n    \"Relevantně převzaté faktické body: nízká absence bez neomluvených hodin; v 1. pololetí 2024/2025 neprospěli dva žáci a na konci roku prospěli všichni; téměř polovina s vyznamenáním; 5 žáků nahradilo maturitu jazykovým certifikátem.\",\n    \"Správně zmíněná materiální bariéra tělocvičen (dvě menší tělocvičny nejsou využívány; omezení TV v zimě).\"\n  ],\n  \"one_line_verdict\": \"Výstup je pro rodiče dobře použitelný a většinou odpovídá zprávě, ale obsahuje několik nepodložených zobecnění (zejména 'pro koho je škola') a vynechává více důležitých zjištění o kvalitě výuky.\"\n}",
+  "judge_output": {
+    "report_id": "GY8_600008029_2025-10-21",
+    "faithfulness_score_1_5": 3,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 5,
+    "critical_issues": [
+      "Chybně uvedené období inspekční činnosti: kandidát uvádí 2025-10-21 až 2025-10-24, zdroj uvádí 21. 10. 2025 − 23. 10. 2025.",
+      "Část 'who_school_fits' obsahuje spekulace nepodložené zprávou (např. že škola je pro žáky se zájmem o humanitní a vědecké obory; že je pro žáky se zájmem o mezinárodní výměny; tvrzení o 'rodinném prostředí' podporujícím aktivity).",
+      "U 'maturita' je tvrzení o trendu 'Stabilní' – ve zdroji je jen srovnání s celostátním průměrem a dílčí nadprůměrné výsledky, nikoli explicitní trend.",
+      "Nezahrnuty důležité slabší stránky/prvky zjištěné ve výuce: nejednoznačně formulované cíle hodin, chybějící kritéria pro formativní hodnocení, často chybějící závěrečné zhodnocení hodiny, málo propojování s reálnými situacemi, omezená práce s různými zdroji informací pro kritické myšlení.",
+      "Opomenuty některé důležité závěry pro rodiče: méně využívané oceňování/uznání žáků jako motivační prvek a informace o odchodech po 4. ročníku nižšího gymnázia (~10 %)."
+    ],
+    "best_points": [
+      "Správně zachycené klíčové silné stránky ze závěrů: spolupráce se sociálními partnery a význam peer aktivit pro klima/preventivní působení.",
+      "Správně uvedená hlavní slabá stránka: pouze výjimečná diferenciace výuky vzhledem k potenciálu žáků.",
+      "Odpovídající shrnutí omezené aktivní práce žáků s digitálními technologiemi (technologie využívají zpravidla vyučující, žáci jen omezeně).",
+      "Relevantně převzaté faktické body: nízká absence bez neomluvených hodin; v 1. pololetí 2024/2025 neprospěli dva žáci a na konci roku prospěli všichni; téměř polovina s vyznamenáním; 5 žáků nahradilo maturitu jazykovým certifikátem.",
+      "Správně zmíněná materiální bariéra tělocvičen (dvě menší tělocvičny nejsou využívány; omezení TV v zimě)."
+    ],
+    "one_line_verdict": "Výstup je pro rodiče dobře použitelný a většinou odpovídá zprávě, ale obsahuje několik nepodložených zobecnění (zejména 'pro koho je škola') a vynechává více důležitých zjištění o kvalitě výuky."
+  }
+}

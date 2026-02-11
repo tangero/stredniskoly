@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600010520_2025-01-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:03:58.802580+00:00",
+  "run_finished_utc": "2026-02-09T16:04:27.113345+00:00",
+  "raw_file": "SOS_600010520_2025-01-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600010520_2025-01-21",
+    "school_profile": {
+      "school_type": "Střední odborná škola obchodní s.r.o. – soukromá škola poskytující vzdělání s maturitní zkouškou v oborech Obchodní akademie (denní i dálkové studium) a Podnikání (dálkové nástavbové studium)",
+      "inspection_period": "21.–23. a 25. ledna 2025",
+      "school_change_summary": "Od poslední inspekce v roce 2019 došlo k výrazné modernizaci prostor (rekonstrukce sociálního zařízení, interaktivní tabule, odpočinková zóna) a od roku 2023/2024 k úpravě vzdělávacího programu s posílením Literárního semináře. Kapacita 220 žáků je stabilně využívána z 98 %."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní vedení a koncepce",
+          "detail": "Ředitelka se dlouhodobou zkušeností vede školu promyšleně s důrazem na modernizaci, podporu pedagogů a zlepšování podmínek.",
+          "evidence": "Dlouholeté manažerské zkušenosti se odrážejí v promyšlené koncepci rozvoje, která je průběžně vyhodnocována a aktualizována."
+        },
+        {
+          "tag": "Praktická příprava na povolání",
+          "detail": "Žáci získávají zkušenosti v reálných pracovních podmínkách; mnozí absolventů pracují v místě své praxe.",
+          "evidence": "Realizace praktického odborného vzdělávání v reálných pracovních podmínkách umožňuje efektivní přípravu žáků na budoucí povolání."
+        },
+        {
+          "tag": "Péče o žáky se speciálními potřebami",
+          "detail": "Školní poradenské pracoviště s kvalifikovanými specialisty poskytuje cílenou podporu včetně kariérového poradenství.",
+          "evidence": "Výchovná poradkyně a metodička prevence s absolvovaným specializačním studiem poskytují efektivní spolupráci a včasnou identifikaci potřeb."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Kolísavé výsledky v maturitě",
+          "detail": "Obor Obchodní akademie vykazuje nevyrovnané výsledky mezi lety; v roce 2024 došlo k výraznému propadu (19,5 % neúspěšnosti vs. 4,8 % rok předtím).",
+          "evidence": "Ve zkušebním roce 2023 dosáhli žáci 4,8 % neúspěšnosti, v roce 2024 to bylo 19,5 % (ČR 5,4 %)."
+        },
+        {
+          "tag": "Slabší výuka matematiky",
+          "detail": "Část hodin matematiky je méně efektivní; učitel převažuje nad aktivitou žáků a chybí průběžná zpětná vazba.",
+          "evidence": "Aktivita učitele převažovala nad aktivitou žáků. Nebylo zřejmé, zda by byli schopni úlohu samostatně vyřešit."
+        },
+        {
+          "tag": "Nižší zájem o matematiku u maturity",
+          "detail": "V posledních dvou letech si matematiku jako volitelný předmět nezvolil žádný žák.",
+          "evidence": "Zájem o matematiku dlouhodobě klesá. V posledních dvou zkušebních letech si tento předmět nezvolil žádný žák."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší kolísavé výsledky v maturitě u oboru Obchodní akademie a jaká opatření přijala po propadu v roce 2024?",
+        "Jaké konkrétní firmy a instituce spolupracují se školou na odborné praxi a jak se vybírají místa pro jednotlivé žáky?",
+        "Jak škola podporuje nadané žáky a nabízí jim rozšíření vzdělání mimo standardní výuku?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na obchodní a ekonomické obory, kteří chtějí praktickou přípravu v reálných firmách",
+        "Studenti s potřebou individuální péče a podpory – škola má kvalifikované poradenské služby",
+        "Zájemci o dálkové studium, kteří pracují nebo mají jiné povinnosti"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se zájmem o matematiku – výuka není optimální a zájem o ni klesá",
+        "Studenti, kteří potřebují stabilní a konzistentní výsledky v maturitě – obor Obchodní akademie vykazuje kolísavost",
+        "Žáci s vyšší absencí – průměrná absence je 137 hodin ročně, což ovlivňuje prospěch"
+      ],
+      "plain_czech_summary": "Soukromá obchodní škola v Liberci nabízí kvalitní vedení a moderní prostředí. Silnou stránkou je praktická příprava v reálných firmách a péče o žáky se speciálními potřebami. Slabinou jsou kolísavé výsledky v maturitě (zvlášť v roce 2024) a méně efektivní výuka matematiky. Škola má 120 žáků v denním studiu a 96 v dálkovém. Vhodná pro ty, kdo chtějí praktickou přípravu na obchodní povolání, ale žáci zaměření na matematiku by měli zvážit jinde."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Nevyrovnaný – obor Podnikání dlouhodobě nadprůměrný, obor Obchodní akademie s výrazným poklesem v roce 2024",
+        "key_numbers": [
+          "Podnikání: 15,8 % neúspěšnosti (ČR 26,9 %)",
+          "Obchodní akademie 2024: 19,5 % neúspěšnosti (ČR 5,4 %)",
+          "Obchodní akademie 2023: 4,8 % neúspěšnosti (ČR 5,9 %)"
+        ],
+        "evidence": "Hrubá neúspěšnost žáků oboru Podnikání v průměru 15,8 %, zatímco celorepublikový průměr 26,9 %. Obor Obchodní akademie vykázal 12,0 % (ČR 5,7 %)."
+      },
+      "absence": {
+        "trend": "Průměrná absence bez výrazných problémů; neomluvená absence minimální",
+        "key_numbers": [
+          "Průměrná absence: 137 hodin za školní rok na žáka",
+          "Neomluvená absence: cca 1 hodina na žáka ročně",
+          "Záškoláctví: významně sníženo díky důslednému dodržování školního řádu"
+        ],
+        "evidence": "Každý žák zameškal v průměru 137 vyučovacích hodin za školní rok, což zásadně nevybočuje z obvyklé míry absence."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště vedené ředitelkou s výchovnou poradkyní a metodičkou prevence (obě se specializačním studiem)",
+        "Kariérové poradenství založené na individuálních konzultacích a spolupráci s vysokými školami (TUL, Vysoká škola Auto Škoda, Panevropská univerzita)",
+        "Spolupráce s Policií ČR, Advaita z.ú., AFS o.p.s., mezikulturními programy a kulturními institucemi"
+      ],
+      "safety_climate": [
+        "Vedení klade důraz na bezpečnost žáků i zaměstnanců; zpracovaný bezpečnostní a krizový plán",
+        "Vstup do budovy zabezpečen proti vstupu cizích osob; žáci pravidelně poučováni o bezpečnostních rizicích",
+        "Minimalizace úrazů díky systematické prevenci; včasné zachycování signálů rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Stabilní spolupráce s firmami a institucemi v regionu pro odbornou praxi",
+        "Dobře fungující zpětnovazební mechanismy; mnozí absolventi pracují v místě své praxe",
+        "Odborná praxe ve druhém a třetím ročníku v širokém spektru firem a státních institucích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, citace a doklady. Slabinou je absence některých údajů o financování a neúplné informace o specifických problémech v matematice (není jasné, které třídy jsou postiženy).",
+      "uncertainty_notes": [
+        "Příčiny propadu v maturitě oboru Obchodní akademie v roce 2024 nejsou v textu vysvětleny – inspekce pouze doporučuje analýzu",
+        "Není jasné, zda se problémy s matematikou týkají všech tříd nebo jen některých; chybí konkrétní data o počtu žáků s problémy",
+        "Údaje o absencích jsou průměrné – není jasné, jak se liší mezi jednotlivými žáky a třídami"
+      ]
+    }
+  }
+}

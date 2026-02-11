@@ -1,0 +1,30 @@
+{
+  "report_id": "GY8_600014061_2025-10-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-09T12:12:25.687379+00:00",
+  "run_finished_utc": "2026-02-09T12:12:52.197746+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY8_600014061_2025-10-20\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 5,\n  \"unsupported_claims_count\": 3,\n  \"critical_issues\": [\n    \"Tvrzení o „rodinné atmosféře“ není ve zdrojové inspekční zprávě doloženo.\",\n    \"U absence je uvedeno „mírně nadprůměrná“ – zpráva uvádí průměr cca 107 hodin/žák/rok, ale neobsahuje srovnání s průměrem ani hodnocení „nadprůměrnosti“.\",\n    \"Formulace „fluktuace začínajících učitelů“ není přesná: zpráva uvádí zvýšenou fluktuaci pedagogů (zejména v hudebním a výtvarném oboru) a chybějící metodickou podporu začínajících, ale neříká, že fluktuují konkrétně začínající učitelé.\"\n  ],\n  \"best_points\": [\n    \"Správně zachycena klíčová silná stránka gymnázia: nulová hrubá neúspěšnost u maturity za poslední tři roky, 27 maturantů (18 s vyznamenáním, 9 prospělo) a 100% přijetí na vybrané VŠ.\",\n    \"Dobře převzata hlavní slabina ZUŠ: chybějící koordinovaný mechanismus metodické podpory začínajících učitelů a rozdíly v kvalitě výuky napříč obory/pracovišti.\",\n    \"Správně zmíněno, že škola systematicky nevyužívá externí testování vzdělávacích výsledků, a vhodně převedeno do rodičovského „rizika“.\",\n    \"Užitečné a věcně navázané otázky na den otevřených dveří (docházka do kolektivní výuky, externí srovnání výsledků, podpora začínajících učitelů v ZUŠ).\"\n  ],\n  \"one_line_verdict\": \"Výstup je většinově věrný a pro rodiče praktický, ale obsahuje několik nedoložených/zpřesnění vyžadujících tvrzení a vynechává část podstatného kontextu ze zprávy.\"\n}",
+  "judge_output": {
+    "report_id": "GY8_600014061_2025-10-20",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 5,
+    "unsupported_claims_count": 3,
+    "critical_issues": [
+      "Tvrzení o „rodinné atmosféře“ není ve zdrojové inspekční zprávě doloženo.",
+      "U absence je uvedeno „mírně nadprůměrná“ – zpráva uvádí průměr cca 107 hodin/žák/rok, ale neobsahuje srovnání s průměrem ani hodnocení „nadprůměrnosti“.",
+      "Formulace „fluktuace začínajících učitelů“ není přesná: zpráva uvádí zvýšenou fluktuaci pedagogů (zejména v hudebním a výtvarném oboru) a chybějící metodickou podporu začínajících, ale neříká, že fluktuují konkrétně začínající učitelé."
+    ],
+    "best_points": [
+      "Správně zachycena klíčová silná stránka gymnázia: nulová hrubá neúspěšnost u maturity za poslední tři roky, 27 maturantů (18 s vyznamenáním, 9 prospělo) a 100% přijetí na vybrané VŠ.",
+      "Dobře převzata hlavní slabina ZUŠ: chybějící koordinovaný mechanismus metodické podpory začínajících učitelů a rozdíly v kvalitě výuky napříč obory/pracovišti.",
+      "Správně zmíněno, že škola systematicky nevyužívá externí testování vzdělávacích výsledků, a vhodně převedeno do rodičovského „rizika“.",
+      "Užitečné a věcně navázané otázky na den otevřených dveří (docházka do kolektivní výuky, externí srovnání výsledků, podpora začínajících učitelů v ZUŠ)."
+    ],
+    "one_line_verdict": "Výstup je většinově věrný a pro rodiče praktický, ale obsahuje několik nedoložených/zpřesnění vyžadujících tvrzení a vynechává část podstatného kontextu ze zprávy."
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "report_id": "LYC_600014495_2025-10-02",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:32:09.063736+00:00",
+  "run_finished_utc": "2026-02-09T13:32:37.169253+00:00",
+  "raw_file": "LYC_600014495_2025-10-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600014495_2025-10-02",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola s domem mládeže a jídelnou",
+      "inspection_period": "2. 10. – 3. 10. 2025 a 6. 10. - 7. 10. 2025",
+      "school_change_summary": "Škola se rozrostla z 391 žáků (2018/2019) na 656 žáků (2025/2026). Modernizovány odborné učebny, vybudováno relaxační centrum, rekonstruována sportovní hala. Zavedena nová maturitní obor Přírodovědné lyceum od roku 2024/2025."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Moderní vybavení a investice",
+          "detail": "Škola má nové počítačové učebny, modernizované odborné dílny a experimentárium s moderní technikou pro praktickou výuku.",
+          "evidence": "Vybudovány nové odborné učebny, relaxační centrum, rekonstrukce sportovní haly, modernizace počítačových učeben a nákup multimediální techniky."
+        },
+        {
+          "tag": "Kvalitní odborný výcvik",
+          "detail": "Praktická výuka v moderně vybavených školních pracovištích odpovídá reálné praxi a připravuje žáky na profesní život.",
+          "evidence": "Odborný výcvik probíhal v moderně vybavených školních pracovištích, učitelé poskytovali zpětnou vazbu a názorně ukazovali správné pracovní postupy."
+        },
+        {
+          "tag": "Podpora žáků se speciálními potřebami",
+          "detail": "Škola systematicky identifikuje a podporuje žáky se speciálními vzdělávacími potřebami prostřednictvím kvalifikovaného poradenského týmu.",
+          "evidence": "74 žáků s podpůrnými opatřeními, 18 žáků s odlišným mateřským jazykem, školní psycholožka a výchovná poradkyně poskytují individuální podporu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabší rozvoj kritického myšlení",
+          "detail": "Výuka se zaměřuje především na frontální metody a memorování, méně na rozvoj samostatného myšlení a řešení problémů.",
+          "evidence": "Rozvoj kritického myšlení nebyl podporován systematicky, dosavadní znalosti a praktické zkušenosti z reálné praxe byly využívány pouze omezeně."
+        },
+        {
+          "tag": "Nejednotná kvalita teoretické výuky",
+          "detail": "Některé hodiny odborných předmětů měly nízkou kvalitu s převážně diktovaným zápisem a jednotvárným přístupem.",
+          "evidence": "Ve výuce odborných předmětů chyběla promyšlená struktura, vzdělávací cíle nebyly jasně formulovány, motivace byla omezena na diktovaný zápis."
+        },
+        {
+          "tag": "Omezená diferenciace a zpětná vazba",
+          "detail": "Výuka není dostatečně přizpůsobena individuálním potřebám žáků, zpětná vazba je spíše formální.",
+          "evidence": "Zpětná vazba je převážně formální, diferenciace výuky i zapojení žáků do hodnocení jsou využívány pouze ojediněle."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola rozvíjí kritické myšlení a samostatnost žáků v teoretické výuce?",
+        "Jaké metody používáte k individuální zpětné vazbě a diferenciaci výuky podle potřeb jednotlivých žáků?",
+        "Jak se škola zaměřuje na propojení teoretických znalostí s praktickými situacemi a reálným životem?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla – odborný výcvik je na vysoké úrovni s moderním vybavením",
+        "Žáci se speciálními vzdělávacími potřebami – škola má kvalifikovaný poradenský tým a systematickou podporu",
+        "Žáci, kterým vyhovuje strukturovaný přístup a jasné pracovní postupy – škola má funkční systém řízení a pravidel"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují rozvoj kritického myšlení a tvůrčího přístupu – teoretická výuka se zaměřuje spíše na memorování",
+        "Žáci vyžadující individualizovanou zpětnou vazbu – zpětná vazba je často formální a nedostatečná",
+        "Žáci s vyšší motivací pro samostudium – některé hodiny jsou vedeny převážně frontální metodou bez aktivního zapojení"
+      ],
+      "plain_czech_summary": "Škola je moderně vybavená s kvalitním odborným výcvikem a dobrou podporou pro žáky se speciálními potřebami. Silnou stránkou je praktická příprava na profesní život. Slabší je teoretická výuka – chybí zde rozvoj kritického myšlení, individuální přístup a aktivní zapojení žáků. Výuka se často omezuje na frontální metody a memorování. Škola se snaží zlepšit, ale v některých předmětech je kvalita nejednotná. Vhodná pro prakticky zaměřené žáky, méně pro ty, kteří chtějí rozvíjet tvůrčí myšlení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – u některých oborů zlepšení, u jiných kolísání",
+        "key_numbers": [
+          "Mechanik instalatérských zařízení: zlepšení, ve 2023/24 a 2024/25 lepší než celorepublikový průměr",
+          "Provoz a ekonomika dopravy: výrazné zlepšení, ale stále mírně pod celorepublikovým průměrem",
+          "Aplikovaná chemie: proměnlivé výsledky, střídavě pod a nad celorepublikovým průměrem"
+        ],
+        "evidence": "Výsledky maturitní zkoušky se lišily v závislosti na skupině oborů. Zlepšení u mechanika instalatérských zařízení, výrazné zlepšení u provozu a ekonomiky dopravy, ale aplikovaná chemie vykazuje kolísavé výsledky."
+      },
+      "absence": {
+        "trend": "Není v textu specifikováno",
+        "key_numbers": [
+          "Žáci se zvýšenou absencí byli ve škole evidováni a poskytována jim byla podpora"
+        ],
+        "evidence": "Žáci se slabším prospěchem a zvýšenou absencí byli ve škole evidováni, jejich neúspěchy a problémy v učení se vedení školy cíleně zabývalo."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: výchovná a kariérová poradkyně, metodička prevence, školní psycholožka",
+        "Individuální konzultace v jednotlivých předmětech pro žáky se slabším prospěchem",
+        "Kariérové poradenství s exkurzemi, besedami s externími subjekty a individuálními konzultacemi",
+        "Podpůrná opatření 1.–3. stupně pro 74 žáků, individuální vzdělávací plány pro 3 žáky"
+      ],
+      "safety_climate": [
+        "Žáci byli systematicky upozorňováni na možná rizika a poučováni o bezpečném chování",
+        "Osobní přístup ke každému žákovi",
+        "Zásady bezpečnosti práce byly v odborném výcviku důsledně dodrženy",
+        "Pozornost zaměřena na rozvoj pozitivních vztahů a příznivého třídního klimatu"
+      ],
+      "partnerships_practice": [
+        "Úzká spolupráce se zřizovatelem (Zlínský kraj) na investičních akcích",
+        "Spolupráce se základními a mateřskými školami na polytechnickém vzdělávání",
+        "Smluvní pracoviště pro praktickou výuku s instruktory",
+        "Spolupráce s oborově zaměřenými partnery a regionálními firmami",
+        "Projekt T-Profi – kombinované vzdělávání s propojením různých odborností"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však delší a obsahují více technických termínů, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Absence není v textu konkrétně kvantifikována – není jasné, jaké jsou skutečné absence žáků",
+        "Výsledky testování přírodovědné a čtenářské gramotnosti jsou zmíněny jako nižší, ale bez konkrétních čísel",
+        "Není jasné, jak se liší kvalita výuky mezi jednotlivými třídami a učiteli v rámci stejného předmětu"
+      ]
+    }
+  }
+}

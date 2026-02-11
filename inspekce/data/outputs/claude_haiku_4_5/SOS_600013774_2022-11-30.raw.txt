@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "SOS_600013774_2022-11-30",
+  "school_profile": {
+    "school_type": "Střední škola veterinární, obor 43-41-M/01 Veterinářství",
+    "inspection_period": "30. listopadu až 2. prosince 2022",
+    "school_change_summary": "Vedení školy reagovalo na zjištění z předchozí inspekce a přijalo opatření ke zefektivnění kontrolního systému. Došlo k zapojení vedoucích předmětových skupin do pedagogického vedení a vytvoření nového školního vzdělávacího programu. Některá opatření však zatím nejsou dostatečně účinná."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní jazykové vzdělání",
+        "detail": "Výuka jazyků je vedena velmi kultivovaně s důrazem na komunikativní dovednosti a aktivní zapojení žáků.",
+        "evidence": "Vyučující vhodně uplatňují motivační prvky, důsledně dbají na správné gramatické struktury a precizní výslovnost."
+      },
+      {
+        "tag": "Praktické zkušenosti v oboru",
+        "detail": "Škola má rozsáhlou síť partnerů pro odborné praxe, kde žáci získávají reálné zkušenosti.",
+        "evidence": "Žáci absolvují odborné praxe na různých pracovištích, vedou kvalitně zpracované deníky praxe jako portfolia."
+      },
+      {
+        "tag": "Nízké kázeňské problémy",
+        "detail": "Vzdělávání probíhá v klidné atmosféře bez závažných porušení chování.",
+        "evidence": "Důtky nebo snížený stupeň z chování jsou ojedinělé, v loňském školním roce nebyly uděleny vůbec."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá podpora žáků se speciálními potřebami",
+        "detail": "Podpora těmto žákům je poskytována převážně jen formou navýšení času nebo zkrácení rozsahu úkolů bez individualizace.",
+        "evidence": "Efektivita realizovaných podpůrných opatření není systematicky vyhodnocována, chybí diferenciace zadávaných úkolů."
+      },
+      {
+        "tag": "Málo aktivní výuka",
+        "detail": "Převažuje frontální forma výuky s řízeným rozhovorem, kde žáci zůstávají pasivní.",
+        "evidence": "Aktivita učitele převažuje, chybí účelné shrnutí hodin a sebereflex žáků, diferenciace výuky není dostatečně využívána."
+      },
+      {
+        "tag": "Slabé kariérové poradenství",
+        "detail": "Kariérové poradenství je spíše přehledem služeb jiných organizací bez aktivní role školního poradenského pracoviště.",
+        "evidence": "Aktivní role školního poradenského pracoviště při poskytování pomoci v profesním rozvoji zatím není vymezena."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami a jak se jejich pokrok vyhodnocuje?",
+      "Jaké jsou konkrétní možnosti pro aktivní zapojení žáků do výuky a rozvoj jejich samostatnosti?",
+      "Jak škola pomáhá žákům s volbou budoucího zaměření a jaké má kontakty na vysoké školy nebo zaměstnavatele?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o veterinářství a praktickou práci s zvířaty, kteří si cení kvalitní jazykové výuky",
+      "Studenti, kteří preferují školu s nízkou mírou kázeňských problémů a klidným prostředím",
+      "Žáci, kteří se chtějí seznámit s praxí v různých veterinárních zařízeních a získat reálné pracovní zkušenosti"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se speciálními vzdělávacími potřebami, protože podpora není dostatečně individualizovaná a systematicky vyhodnocovaná",
+      "Studenti, kteří potřebují aktivní a interaktivní výuku s vysokou mírou zapojení, protože převažuje frontální forma",
+      "Žáci, kteří potřebují intenzivní kariérové poradenství a pomoc s volbou dalšího vzdělání"
+    ],
+    "plain_czech_summary": "TRIVIS je veterinářská střední škola v Brně se 118 žáky. Škola má silné stránky v jazykové výuce a praktických zkušenostech v oboru. Vzdělávání probíhá v klidné atmosféře bez závažných problémů. Slabší je podpora žáků se speciálními potřebami a aktivita žáků ve výuce. Inspekce zjistila, že výuka často probíhá frontální formou, kde žáci zůstávají pasivní. Kariérové poradenství potřebuje zlepšení. Maturitní výsledky jsou srovnatelné s ostatními školami."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Srovnatelný s ostatními školami ve stejné skupině oborů",
+      "key_numbers": [
+        "Hrubá neúspěšnost u maturitní zkoušky ve školním roce 2021/2022: cca 14 %",
+        "Prospělo zhruba 93 % žáků ve sledovaném období"
+      ],
+      "evidence": "Dlouhodobě jsou výsledky srovnatelné s výsledky žáků z ostatních škol ve stejné skupině oborů vzdělání za celou Českou republiku."
+    },
+    "absence": {
+      "trend": "Nízká absence, minimální problémy s neomluvenou absencí",
+      "key_numbers": [
+        "Průměrný počet omluvených hodin není nijak vysoký",
+        "V loňském školním roce neomluvená absence řešena jen v prvním ročníku"
+      ],
+      "evidence": "V ostatních ročnících se neomluvená absence nevyskytovala. Škola věnuje pravidelnou pozornost absenci žáků."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště vedené pedagožkou s kvalifikací výchovné poradkyně a metodičky prevence",
+      "Systém podpory žáků se speciálními vzdělávacími potřebami (7 žáků), ale s omezenou efektivitou",
+      "Konzultace s učiteli, možnost opakovaného napsání testu, náhradní zkoušení"
+    ],
+    "safety_climate": [
+      "Klidná atmosféra bez kázeňských problémů během teoretického vyučování",
+      "Důtky nebo snížený stupeň z chování jsou ojedinělé, v loňském školním roce nebyly uděleny",
+      "Při tělesné výchově učitelé respektují fyzické možnosti žáků a upozorňují na bezpečnost"
+    ],
+    "partnerships_practice": [
+      "Rozsáhlá síť smluvních partnerů pro odborné praxe žáků",
+      "Spolupráce s vysokými školami a komerčními subjekty",
+      "Zahraniční stáže nebo mezinárodní spolupráce nejsou realizovány"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s jasnou strukturou. Zjištění jsou konkrétní a opřená o pozorování. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, kolik procent žáků má speciální vzdělávací potřeby (uvedeno jen 7 žáků z 118, což je cca 6 %)",
+      "Není jasné, jak konkrétně se liší kvalita výuky mezi jednotlivými předměty a učiteli",
+      "Chybí informace o počtu žáků, kteří neprospěli nebo byli vyřazeni ze studia"
+    ]
+  }
+}
+```

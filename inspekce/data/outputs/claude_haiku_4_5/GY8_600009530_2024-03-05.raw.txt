@@ -1,0 +1,44 @@
+```json
+{
+  "report_id": "GY8_600009530_2024-03-05",
+  "school_profile": {
+    "school_type": "Gymnázium",
+    "inspection_period": "5. března 2024 až 8. března 2024",
+    "school_change_summary": "Nelze určit z dostupného textu"
+  },
+  "for_parents": {
+    "strengths": [],
+    "risks": [],
+    "questions_for_open_day": [],
+    "who_school_fits": [],
+    "who_should_be_cautious": [],
+    "plain_czech_summary": "Dostupný text obsahuje pouze technickou doložku o konverzi inspekční zprávy do elektronické podoby. Neobsahuje faktické údaje o kvalitě vzdělávání, výsledcích maturit, klimatu školy ani jiné relevantní informace pro rodiče uchazeče."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze určit",
+      "key_numbers": [],
+      "evidence": "Text neobsahuje data o maturitě"
+    },
+    "absence": {
+      "trend": "Nelze určit",
+      "key_numbers": [],
+      "evidence": "Text neobsahuje data o absenci"
+    },
+    "support_services": [],
+    "safety_climate": [],
+    "partnerships_practice": []
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 1,
+    "czech_clarity_reason": "Dodaný text je pouze technickou doložkou o konverzi dokumentu, neobsahuje obsah inspekční zprávy",
+    "uncertainty_notes": [
+      "Chybí vlastní obsah inspekční zprávy",
+      "Nelze analyzovat kvalitu školy bez faktických údajů",
+      "Doložka potvrzuje pouze technickou správnost konverze, nikoli obsah"
+    ]
+  }
+}
+```
+
+**Upozornění pro rodiče:** Dodaný text neobsahuje inspekční zprávu samotnou, pouze technickou doložku o její konverzi do elektronické podoby. Pro analýzu kvality Masarykova gymnázia v Plzni je nutné poskytnout úplný text inspekční zprávy.

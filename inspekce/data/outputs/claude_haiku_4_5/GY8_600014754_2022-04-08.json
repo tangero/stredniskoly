@@ -1,0 +1,116 @@
+{
+  "report_id": "GY8_600014754_2022-04-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:04:55.098749+00:00",
+  "run_finished_utc": "2026-02-09T17:05:20.230898+00:00",
+  "raw_file": "GY8_600014754_2022-04-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600014754_2022-04-08",
+    "school_profile": {
+      "school_type": "Gymnázium Otokara Březiny a Střední odborná škola (SOŠ) - kombinovaná střední škola s obory Gymnázium (8 a 4 třídy) a Ekonomika a podnikání (4 třídy)",
+      "inspection_period": "8. a 11.–13. dubna 2022",
+      "school_change_summary": "Došlo ke změně na pozici ředitele školy. Škola plánuje otevření nového oboru Předškolní a mimoškolní pedagogika od školního roku 2023/2024."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Mimoškolní aktivity a talentová podpora",
+          "detail": "Škola nabízí bohatou nabídku mimoškolních činností včetně literárních soutěží, vydávání školního časopisu a besed se zajímavými osobnostmi.",
+          "evidence": "Žáci dosahují úspěchů v krajských i republikových soutěžích v různých vzdělávacích oblastech."
+        },
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Kvalitní příprava na mezinárodní jazykové certifikáty a možnost zahraničních pobytů.",
+          "evidence": "Někteří žáci úspěšně skládají certifikované zkoušky z angličtiny a francouzštiny, včetně stipendijního pobytu v Paříži."
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Škola má jasně nastavená pravidla pro prevenci rizikového chování s efektivní podporou školní psycholožky.",
+          "evidence": "Problémové chování se vyskytuje ojediněle a je ihned systematicky řešeno."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní přístup v běžné výuce",
+          "detail": "Učitelé převážně používají frontální výuku bez aktivizačních metod, což vede k pasivitě žáků.",
+          "evidence": "Inspektoři zaznamenali, že ve většině hodin chyběly aktivizační a kooperační metody, žáci měli málo příležitostí k mluvnímu projevu a sebehodnocení."
+        },
+        {
+          "tag": "Slabá podpora žáků se speciálními potřebami",
+          "detail": "Pedagogové nejsou vedeni k individuální podpoře žáků s přiznanými podpůrnými opatřeními.",
+          "evidence": "Podpora těchto žáků ve výuce výrazně zaznamenána nebyla, přestože škola má 12 žáků se speciálními vzdělávacími potřebami."
+        },
+        {
+          "tag": "Nedostatečná analýza výsledků",
+          "detail": "Škola nesystematicky analyzuje příčiny prospěchových problémů a nenastavuje účinná opatření.",
+          "evidence": "Chybí důslednější a systematický přístup k analýze výsledků a stanovování opatření k jejich zlepšení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením nebo nízkou motivaci? Jaké jsou dostupné formy doučování?",
+        "Jaké konkrétní aktivizační metody budou učitelé v příštím roce více používat ve výuce?",
+        "Jak se škola připravuje na otevření nového oboru Předškolní a mimoškolní pedagogika a bude to mít vliv na ostatní obory?"
+      ],
+      "who_school_fits": [
+        "Talentovaní a nadaní žáci, kteří chtějí rozvíjet své schopnosti v mimoškolních aktivitách a soutěžích",
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci, zejména angličtinu a francouzštinu",
+        "Žáci, kteří si cení kvalitního prostředí a jasných pravidel chování"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují aktivní a interaktivní výuku – zde převládá frontální přístup",
+        "Žáci se speciálními vzdělávacími potřebami – jejich podpora ve výuce není dostatečně viditelná",
+        "Žáci s nižšími studijními předpoklady – škola nemá ucelenou strategii předcházení školní neúspěšnosti"
+      ],
+      "plain_czech_summary": "Gymnázium Otokara Březiny v Telči je funkční střední škola s kvalitní nabídkou mimoškolních aktivit a jazykového vzdělání. Žáci se mohou účastnit literárních soutěží, vydávání časopisu a zahraničních pobytů. Silnou stránkou je bezpečné prostředí a podpora nadaných žáků. Hlavní problém je, že běžná výuka je příliš frontální a pasivní – učitelé málo používají aktivizační metody. Žáci se speciálními potřebami nejsou dostatečně podporováni. Škola také potřebuje lépe analyzovat, proč někteří žáci selhávají, a nastavit účinná řešení."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – žáci gymnázia dosahují lepších výsledků než žáci odborného vzdělávání",
+        "key_numbers": [
+          "Žáci gymnázia dosahují výborného hodnocení v externím výběrovém zjišťování",
+          "Výsledky jsou nad průměrem v porovnání s ostatními školami",
+          "Téměř všichni absolventi gymnázia pokračují ve studiu na vysokých školách"
+        ],
+        "evidence": "V loňském školním roce dosáhli žáci gymnázia v externím výběrovém zjišťování výborného hodnocení, nad průměrem."
+      },
+      "absence": {
+        "trend": "Problematická – některé žáky trápí vysoká absence",
+        "key_numbers": [
+          "Vysoká absence některých žáků není systémově řešena",
+          "Řešení absence je v kompetenci jednotlivých učitelů",
+          "Chybí ucelenou strategii řešení vysoké absence"
+        ],
+        "evidence": "Škola nemá ucelenou a promyšlenou strategii předcházení školní neúspěšnosti a řešení vysoké absence některých žáků."
+      },
+      "support_services": [
+        "Školní psycholožka (nově zavedená pozice)",
+        "Kariérové poradenství zaměřené na vysokoškolské studium a formality přijímacího řízení",
+        "Doučování nabízené žákům s prospěchovými problémy",
+        "Adaptační program pro nové žáky včetně adaptačních dnů, exkurzí a sportovních kurzů"
+      ],
+      "safety_climate": [
+        "Jasně nastavená pravidla a mechanismy pro prevenci rizikového chování",
+        "Plánované besedy a přednášky na prevenci",
+        "Problémové chování se vyskytuje ojediněle a je ihned systematicky řešeno",
+        "Orientační šetření externími odborníky v případě potřeby"
+      ],
+      "partnerships_practice": [
+        "Městský úřad Telč – zajišťování praxe oboru Ekonomika a podnikání",
+        "Krajský úřad Kraje Vysočina – zajišťování praxe",
+        "Masarykova univerzita – rozvoj kvality vzdělání",
+        "Cambridge P.A.R.K. – rozvoj kvality vzdělání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Hlavní zjištění jsou jasně oddělena do sekcí. Některé pasáže jsou však delší a složitější, což mírně snižuje přístupnost pro laické čtenáře.",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní počty žáků s vysokou absencí ani jejich podíl na celkovém počtu",
+        "Chybí konkrétní data o prospěchu žáků se speciálními vzdělávacími potřebami – pouze se uvádí, že je srovnatelný s ostatními",
+        "Není jasné, kolik procent hodin bylo hospitováno a jak reprezentativní je vzorek pro celkové posouzení kvality výuky"
+      ]
+    }
+  }
+}

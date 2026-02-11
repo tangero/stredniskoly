@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY6_600017591_2023-04-25",
+  "school_profile": {
+    "school_type": "Jazykové a humanitní gymnázium (čtyřleté a šestileté obory)",
+    "inspection_period": "25. 4. 2023 – 28. 4. 2023",
+    "school_change_summary": "Od poslední inspekce v 2014/2015 se počet žáků zvýšil z 59 na 317 (v 14 třídách místo 6). Nová ředitelka od června 2022. Škola nyní nabízí i dvouletý program s mezinárodní maturitou."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové dovednosti",
+        "detail": "Žáci dosahují vysoké úrovně jazykových dovedností a jsou úspěšní u certifikovaných jazykových zkoušek.",
+        "evidence": "Dlouhodobě stoprocentní úspěšnost v češtině u maturity, vysoká úspěšnost u mezinárodních jazykových zkoušek."
+      },
+      {
+        "tag": "Digitální vzdělávání",
+        "detail": "Ve výuce je efektivně využívána digitální technika a žáci jsou vedeni k samostatné práci s informačními zdroji.",
+        "evidence": "Žáci pracují s tablety při výkladu i procvičování, efektivně využívají dostupnou didaktickou techniku."
+      },
+      {
+        "tag": "Mimoškolní aktivity",
+        "detail": "Bohatá nabídka školních a mimoškolních aktivit podporuje rozvoj komunikačních a sociálních dovedností.",
+        "evidence": "Školní parlament, debatní klub, cestovatelský klub, charitativní aktivity, mezinárodní výměny, soutěže."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Klima školy",
+        "detail": "Chybí systematické monitorování vztahů mezi všemi aktéry vzdělávání.",
+        "evidence": "Během inspekce zaznamenáno nepříznivé vnímání některých aspektů prosociálních vztahů, žádná cílená šetření klimatu v 2022/2023."
+      },
+      {
+        "tag": "Individualizace výuky",
+        "detail": "Minimálně se využívají diferencované úlohy zohledňující individuální schopnosti žáků.",
+        "evidence": "Výuka byla jen výjimečně diferencovaná podle individuálních schopností, např. zadáváním úkolů rozdílného rozsahu."
+      },
+      {
+        "tag": "Kvalifikace pedagogů",
+        "detail": "Někteří pedagogové nesplňují kvalifikační předpoklady pro přímou pedagogickou činnost.",
+        "evidence": "Hospitacemi bylo ověřeno, že to nemá negativní vliv na kvalitu, ale jedná se o nedostatek v nastavení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje na zlepšení klimatu a vztahů mezi žáky a pedagogy?",
+      "Jaké jsou možnosti individuální podpory pro žáky s různými schopnostmi?",
+      "Jak se škola vypořádává s tím, že někteří učitelé nemají požadovanou kvalifikaci?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí výměny, certifikované zkoušky a program v angličtině.",
+      "Talentovaní žáci motivovaní k soutěžím – škola je úspěšná v jazykových a vědomostních soutěžích.",
+      "Žáci hledající moderní přístup – efektivní využití digitální techniky a projektové práce."
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující intenzivní individuální podporu – diferenciace je minimální, sebehodnocení se uplatňuje ojediněle.",
+      "Žáci citliví na školní klima – inspekce zaznamenala nepříznivé vnímání některých prosociálních vztahů.",
+      "Žáci s nižší motivací – výuka se zaměřuje spíše na frontální formu, aktivizující metody jsou v menší míře."
+    ],
+    "plain_czech_summary": "Gymnázium PRIGO je moderní jazyková škola s výborným zaměřením na jazykové dovednosti a mezinárodní spolupráci. Žáci jsou úspěšní u certifikovaných zkoušek a soutěží. Škola efektivně využívá digitální techniku a nabízí bohatý program aktivit. Slabší stránkou je nedostatečné monitorování školního klimatu a minimální individualizace výuky. Některé vztahy mezi aktéry vzdělávání nejsou optimální. Škola je vhodná pro talentované žáky se zájmem o jazyky, ale méně pro ty, kteří potřebují intenzivní individuální podporu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní – výsledky vyšší než průměr oboru",
+      "key_numbers": [
+        "Školní rok 2020/2021 a 2021/2022: úspěšnost vyšší než průměr oboru v ČR",
+        "Český jazyk: dlouhodobě 100% úspěšnost",
+        "Školní rok 2019/2020: cizí jazyk horší než průměr (analyzováno)"
+      ],
+      "evidence": "Ve společné části maturitní zkoušky dosahují žáci vyšších výsledků než průměr stejného oboru vzdělání v České republice."
+    },
+    "absence": {
+      "trend": "Pozitivní – nízká úrazovost",
+      "key_numbers": [
+        "Nízká úrazovost žáků",
+        "Bezpečné prostředí zajištěno funkčními preventivními mechanizmy"
+      ],
+      "evidence": "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování, preventivní mechanizmy jsou funkční."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště zaměřené na podporu žáků se speciálními vzdělávacími potřebami",
+      "Projekt kariérového poradenství – odborné workshopy a individuální konzultace s psychologem",
+      "Doučování jinými žáky v rámci dobrovolnické činnosti a individuální konzultace s vyučujícími",
+      "On-line schránka důvěry pro žáky",
+      "Adaptační kurzy pro nové třídní kolektivy"
+    ],
+    "safety_climate": [
+      "Bezpečné prostředí zajištěno funkčními preventivními mechanizmy",
+      "Nízká úrazovost žáků",
+      "Nejsou evidovány závažnější projevy rizikového chování",
+      "Preventivní aktivity organizované ve spolupráci s externími odborníky",
+      "Minimální preventivní program realizován"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s vysokými školami – využívání laboratoří, přednášky, Letní škola filozofie",
+      "Zahraniční výměny a společná práce na projektech se zahraničními školami",
+      "Projekt bilingvní výuky – finančně podporován",
+      "Spolupráce s jazykovou školou na realizaci mezinárodních jazykových zkoušek",
+      "Spolupráce s externími organizacemi v oblasti primární prevence a péče o žáky se speciálními potřebami",
+      "Partnerství s mezinárodním hnutím Mary's meals"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a fakty. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou detailnější (např. popis výuky), což může být pro rodiče méně relevantní.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počet pedagogů bez kvalifikace – uvedeno jen 'někteří'.",
+      "Nepříznivé vnímání prosociálních vztahů není kvantifikováno – není jasné, jak rozsáhlý je tento problém.",
+      "Chybí konkrétní data o absencích žáků a jejich vývoji."
+    ]
+  }
+}
+```

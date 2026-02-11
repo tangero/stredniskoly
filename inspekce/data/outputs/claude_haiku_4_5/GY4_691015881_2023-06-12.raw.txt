@@ -1,0 +1,107 @@
+```json
+{
+  "report_id": "GY4_691015881_2023-06-12",
+  "school_profile": {
+    "school_type": "Čtyřleté gymnázium s uměleckým zaměřením a výukou cizích jazyků",
+    "inspection_period": "12. 6. 2023 – 14. 6. 2023 a 19. 6. 2023",
+    "school_change_summary": "Nově založená škola (od 1. 9. 2022) s inovativním konceptem propojujícím všeobecné vzdělání s uměním a jazyky. Vzdělávání probíhá v pronajatých prostorech Technologického centra UMPRUM a Domu módy v centru Prahy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Autonomní učení a motivace",
+        "detail": "Žáci se aktivně podílejí na plánování a hodnocení svého vzdělávání, což podporuje jejich vnitřní motivaci a tvořivost.",
+        "evidence": "Formativní hodnocení propojené s autonomním učením podporuje rozvoj individuálního potenciálu žáka a sebereflexe."
+      },
+      {
+        "tag": "Projektové a praktické vyučování",
+        "detail": "Vzdělávání kombinuje teoretické znalosti s praktickou tvorbou a reálnými projekty s veřejnou prezentací.",
+        "evidence": "Propracovaný systém projektové výuky s modulárním propojením vzdělávacích oblastí přispívá k aktivnímu zapojení žáka."
+      },
+      {
+        "tag": "Partnerství s odbornými institucemi",
+        "detail": "Škola spolupracuje s edukativními institucemi, zahraničními školami a odborníky z praxe, kteří se podílejí na výuce.",
+        "evidence": "Navázané partnerské vztahy a účast odborníků z praxe obohacují vzdělávací obsah gymnázia."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nejasné hodnocení v některých modulech",
+        "detail": "V integrovaných předmětech není vždy jasně vyjádřeno, jakou úroveň znalostí žák dosáhl podle cílů školního programu.",
+        "evidence": "V některých modulech integrovaných předmětů je méně přesně vyjádřena informace o dosažené úrovni znalostí."
+      },
+      {
+        "tag": "Jazyková kultura ve výuce",
+        "detail": "Někteří učitelé a žáci používají nespisovnou češtinu, což není vhodné pro gymnázium.",
+        "evidence": "Zaznamenána nižší míra jazykové kultury v části vyučování vzhledem k druhu školy."
+      },
+      {
+        "tag": "Personální nestabilita v modulech",
+        "detail": "Některé moduly jsou vázány na dočasné externí pedagogy, což ohrožuje kontinuitu výuky v dalších ročnících.",
+        "evidence": "Organizační vymezení některých modulů je vázáno na časově určené působení externího pedagoga v daném pololetí."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně probíhá přechod žáků z prvního do druhého ročníku, když jsou některé moduly vyučovány pouze dočasně?",
+      "Jaké konkrétní výsledky mají žáci v jednotlivých předmětech a jak se to projeví při přihlášce na vysokou školu?",
+      "Jak se škola vypořádává s tím, že některé předměty (zejména přírodovědné) nemají dostatečné laboratorní vybavení?"
+    ],
+    "who_school_fits": [
+      "Kreativní a samostatně myslící žáci, kteří se chtějí aktivně podílet na svém vzdělávání a mají zájem o umění a jazyky.",
+      "Žáci, kteří potřebují individualizovaný přístup a motivaci skrze praktické projekty a veřejné prezentace.",
+      "Rodiny, které oceňují demokratický styl vedení a partnerskou komunikaci mezi školou, žáky a rodiči."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří preferují tradiční způsob výuky se známkami a jasně strukturovaným učivem bez experimentování.",
+      "Rodiny, které chtějí jasné a srovnatelné hodnocení výsledků (známky) a standardní přípravy na vysokou školu.",
+      "Žáci se zájmem o přírodovědné obory, protože škola nemá dostatečné laboratorní vybavení pro kvalitní výuku těchto předmětů."
+    ],
+    "plain_czech_summary": "Gymnázium ARTION je nová, inovativní škola s unikátním konceptem propojujícím umění, jazyky a všeobecné vzdělání. Silnou stránkou je autonomní učení, projektová výuka a partnerství s odbornými institucemi. Žáci se aktivně podílejí na svém vzdělávání a mají motivaci k učení. Slabší stránkou je nejasné hodnocení v některých modulech, dočasné zaměstnávání externích pedagogů a nedostatečné vybavení pro přírodovědné předměty. Škola je vhodná pro kreativní žáky, kteří chtějí praktické a projektové učení."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nelze určit – škola byla založena 1. 9. 2022, první maturitní ročník bude až v roce 2026.",
+      "key_numbers": [
+        "Prvních 29 žáků v prvním ročníku (k 30. 9. 2022)",
+        "Úspěšné naplnění prvního ročníku pro školní rok 2023/2024 v jednokolovém přijímacím řízení"
+      ],
+      "evidence": "Gymnázium vykonává svou činnost od 1. 9. 2022. Uchazeči jsou přijímáni na základě jednotné přijímací zkoušky a projevené motivace."
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno.",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+    },
+    "support_services": [
+      "Individuální vzdělávací plány pro žáky se speciálními potřebami (2 žáci k termínu inspekce)",
+      "Jazyková intervence pro žáky s odlišným mateřským jazykem (5 žáků)",
+      "Reflexivní pohovory žáků s ředitelkou a komunitní kruhy",
+      "Individuální konzultace a elektronické výukové materiály",
+      "Adaptační kurz a předmět reflexe autonomního učení"
+    ],
+    "safety_climate": [
+      "Bezpečné a tvořivé vzdělávací prostředí s výraznou podporou vnitřní motivace",
+      "Systémově nastavené preventivní strategie proti šikaně a školní neúspěšnosti",
+      "Komunitní kruhy a reflexivní pohovory jako nástroje harmonizace školního prostředí",
+      "Demokratický způsob vedení založený na partnerské kooperaci a otevřené komunikaci",
+      "Výchovná opatření nejsou vzhledem k filozofii školy udělována"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s edukativními a odbornými institucemi",
+      "Partnerství se školami s uměleckým zaměřením",
+      "Vzájemná spolupráce se zahraniční školou",
+      "Zapojování odborníků z praxe do výuky modulů",
+      "Výměnné jazykové pobyty pro žáky a mobilita učitelů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní informace o konceptu, metodách a výsledcích. Jsou jasně identifikovány silné stránky, slabiny a doporučení. Chybí však konkrétní číselné údaje o výsledcích (známky, prospěch, absence), což je typické pro novou školu bez maturitních výsledků.",
+    "uncertainty_notes": [
+      "Nelze posoudit kvalitu přípravy na vysokou školu, protože první maturitní ročník bude až v roce 2026.",
+      "Nejasné, jak se bude škola vypořádávat s personální kontinuitou v modulech vyučovaných externími pedagogy.",
+      "Není jasné, jak se budou výsledky žáků srovnávat se standardními gymnázii bez modulárního systému."
+    ]
+  }
+}
+```

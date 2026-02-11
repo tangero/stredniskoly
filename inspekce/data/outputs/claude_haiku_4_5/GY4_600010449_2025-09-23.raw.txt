@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY4_600010449_2025-09-23",
+  "school_profile": {
+    "school_type": "Gymnázium, čtyřletý vzdělávací program, 243 žáků v osmi třídách",
+    "inspection_period": "23.–25. září 2025 a 6. října 2025",
+    "school_change_summary": "Od srpna 2024 nová ředitelka. Zlepšují se materiálně technické podmínky, ale výrazně se zhoršila atmosféra ve škole."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Všichni žáci v roce 2023/2024 uspěli, v roce 2024/2025 neuspěl jen jeden žák po podzimním termínu.",
+        "evidence": "Vysoká úspěšnost u maturitní zkoušky, velmi dobré výsledky v externím testování."
+      },
+      {
+        "tag": "Jazykové vzdělání na vysoké úrovni",
+        "detail": "Škola je certifikačním centrem pro mezinárodní jazykové zkoušky DELF a Cambridge.",
+        "evidence": "Efektivní podpora při skládání certifikovaných zkoušek, celoroční konverzace s rodilými mluvčími."
+      },
+      {
+        "tag": "Kvalitní poradenské služby",
+        "detail": "Funkční systém výchovného poradenství, školní psycholožka, prevence rizikového chování.",
+        "evidence": "Dlouhodobě na velmi dobré úrovni, dostupné všem žákům, zahrnují vzdělávací, osobnostní a kariérovou oblast."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Zhoršená atmosféra ve škole",
+        "detail": "Pedagogové se bojí vyjadřovat nesouhlas, komunikace vedení je vnímána jako nevstřícná.",
+        "evidence": "Výrazně se zhoršila atmosféra. Pedagogové nemohou bez obav vyjadřovat nesouhlas s rozhodnutími vedení."
+      },
+      {
+        "tag": "Slabá individualizace výuky",
+        "detail": "Učitelé málo zohledňují různé kognitivní schopnosti žáků, chybí diferenciace.",
+        "evidence": "Diferenciace vzdělávacího obsahu jen v malé míře, v jedné hodině si žáci mohli vybírat úkoly."
+      },
+      {
+        "tag": "Nedostatečná zpětná vazba v hodinách",
+        "detail": "Formativní hodnocení a sebehodnocení se téměř nevyskytují.",
+        "evidence": "Formativní zpětná vazba nebyla žákům poskytována, sebehodnocení se téměř nevyskytovalo."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak se škola chystá zlepšit komunikaci mezi vedením a učiteli? Jaké konkrétní kroky plánuje?",
+      "Jak budou učitelé více individualizovat výuku a zohledňovat různé schopnosti žáků?",
+      "Jaké jsou konkrétní plány na zlepšení školního klimatu a atmosféry?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí na vysokou úspěšnost u maturity a kvalitní jazykové vzdělání",
+      "Studenti zajímající se o mezinárodní jazykové certifikáty a cizojazyčné komunikaci",
+      "Žáci, kteří potřebují kvalitní poradenské služby a psychologickou podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciované výuky",
+      "Studenti citliví na školní klima a atmosféru mezi učiteli a vedením",
+      "Žáci, kteří se lépe učí s pravidelnou zpětnou vazbou a sebehodnocením"
+    ],
+    "plain_czech_summary": "Gymnázium dosahuje výborných výsledků u maturit a v jazykové přípravě. Má kvalitní poradenské služby a podporu pro žáky se speciálními potřebami. Hlavní problém je zhoršená atmosféra ve škole – pedagogové se bojí komunikovat s vedením, což negativně ovlivňuje klima. Chybí také individualizace výuky a formativní zpětná vazba. Nová ředitelka (od srpna 2024) zlepšuje vybavení, ale musí pracovat na vztazích v pedagogickém sboru."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě vysoká úspěšnost",
+      "key_numbers": [
+        "Školní rok 2023/2024: 100 % úspěšnost",
+        "Školní rok 2024/2025: 1 neúspěšný žák po podzimním termínu",
+        "Velmi dobré výsledky v externím testování 2022/2023"
+      ],
+      "evidence": "Všichni žáci, kteří maturitní zkoušku konali, uspěli. Výsledky v testovaných oblastech byly ve srovnání s republikovými výborné."
+    },
+    "absence": {
+      "trend": "Velmi nízký počet ohrožených žáků",
+      "key_numbers": [
+        "Velmi nízký počet žáků ohrožených opakováním ročníku",
+        "Nízká míra rizikového chování žáků"
+      ],
+      "evidence": "O účinnosti doučování a individuálních konzultací svědčí velmi nízký počet žáků ohrožených opakováním ročníku."
+    },
+    "support_services": [
+      "Výchovná poradkyně, školní metodička prevence, školní psycholožka (od 2025/2026)",
+      "Plány pedagogické podpory pro žáky se speciálními vzdělávacími potřebami",
+      "Doučování a individuální konzultace pro žáky s obtížemi",
+      "Primární prevence reagující na aktuální potřeby školy"
+    ],
+    "safety_climate": [
+      "Nízká míra rizikového chování žáků",
+      "Promyšlený systém adaptace prvních ročníků s pobytovými kurzy",
+      "Kurz komunikace a řešení konfliktů ve třetím ročníku",
+      "Zapojení do mezinárodního programu DofE (Cena vévody z Edinburghu)"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola Přírodovědecké fakulty Univerzity Karlovy",
+      "Fakultní škola Fakulty přírodovědně–humanitní a pedagogické Technické univerzity Liberec",
+      "Partnerská škola Francouzského velvyslanectví – centrum DELF",
+      "Partnerská škola Cambridge P.A.R.K. – centrum certifikovaných zkoušek",
+      "Celoroční spolupráce s rodilými mluvčími anglického jazyka"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně odděluje silné a slabé stránky. Některé pasáže jsou však úřednicky formulované a pro laika obtížnější.",
+    "uncertainty_notes": [
+      "Konkrétní počty žáků s speciálními vzdělávacími potřebami (6 žáků) nejsou dále specifikovány.",
+      "Rozsah 'sporadické' hospitační činnosti není kvantifikován – není jasné, kolik hodin ročně.",
+      "Detaily o 'nevstřícné komunikaci' vedení jsou subjektivní – nejsou uvedeny konkrétní příklady."
+    ]
+  }
+}
+```

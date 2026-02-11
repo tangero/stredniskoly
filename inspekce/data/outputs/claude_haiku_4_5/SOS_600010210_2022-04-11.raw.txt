@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "SOS_600010210_2022-04-11",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola, Střední průmyslová škola a Střední odborná škola",
+    "inspection_period": "11. 4. 2022 – 13. 4. 2022",
+    "school_change_summary": "Škola optimalizuje obory vzdělání podle doporučení inspekce z roku 2019. K 1. 9. 2022 plánuje vymazat nenaplňované obory (Strojírenství, Kosmetické služby, Vlásenkář a maskér, Cestovní ruch, Průmyslový design). Oproti 2019/2020 ubylo cca 5 % žáků, největší úbytek v Cestovním ruchu (62 %) a Veřejnosprávní činnosti (39 %), nárůst v Informačních technologiích (38 %)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vedení školy",
+        "detail": "Řízení je založeno na spolupráci vedení s pravidelnými schůzkami a účelnou delegací kompetencí.",
+        "evidence": "Vedení školy je založeno na spolupráci členů širšího vedení, jejich pravidelné schůzky přispívají k účelnému plánování."
+      },
+      {
+        "tag": "Poradenské služby",
+        "detail": "Dvě kvalifikované výchovné poradkyně a školní psycholožka poskytují komplexní podporu žákům.",
+        "evidence": "Školní poradenské služby poskytují dvě kvalifikované výchovné poradkyně a školní psycholožka."
+      },
+      {
+        "tag": "Matematika",
+        "detail": "Učitelé matematiky často poskytují individuální podporu umožňující žákům dosahovat pokroku v učení.",
+        "evidence": "Při samostatné práci učitelé často žákům poskytovali individuální podporu, která jim umožňovala dosahovat pokroku."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Výsledky maturit",
+        "detail": "Dlouhodobě vysoká neúspěšnost ve společné části maturitní zkoušky, zejména v češtině a cizích jazycích.",
+        "evidence": "V českém jazyce byli žáci 2–6× více neúspěšní než průměr ČR, v cizím jazyce 3–7× více neúspěšní."
+      },
+      {
+        "tag": "Absence žáků",
+        "detail": "Vysoká absence negativně ovlivňuje vzdělávací výsledky, opatření nejsou dostatečně účinná.",
+        "evidence": "Vysoká absence žáků negativně ovlivňuje vzdělávací výsledky žáků, opatření přijímaná nejsou dostatečně účinná."
+      },
+      {
+        "tag": "Kvalita výuky",
+        "detail": "Převaha frontální výuky bez diferenciace, nízké zapojení žáků, chybí efektivní zpětná vazba.",
+        "evidence": "Absence diferenciace a nízká míra využití kooperativních činností nepřispívají k efektivnímu naplňování vzdělávacích cílů."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola přijala pro snížení absence žáků a jak se jejich účinnost měří?",
+      "Jak škola plánuje zlepšit výsledky v češtině a cizích jazycích, kde jsou výsledky výrazně pod průměrem?",
+      "Jaké konkrétní změny v metodách výuky se plánují, aby se zvýšilo zapojení žáků a používaly se aktivizující metody?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zaměřením na praktické obory (elektrotechnika, mechanika, design), kde je výuka lépe strukturovaná.",
+      "Motivovaní žáci, kteří si sami zajistí dodatečnou přípravu na maturitu a nejsou závislí na školní podpoře.",
+      "Žáci s podporou rodiny, která aktivně řeší jejich vzdělávání a absenci."
+    ],
+    "who_should_be_cautious": [
+      "Žáci plánující maturitu z češtiny nebo cizích jazyků – výsledky jsou výrazně pod průměrem.",
+      "Žáci se sklonem k absenci – škola nemá dostatečně účinná opatření pro řešení vysoké absence.",
+      "Žáci potřebující individualizovanou výuku – chybí diferenciace a aktivizující metody, převažuje frontální výuka."
+    ],
+    "plain_czech_summary": "Škola vzdělává 866 žáků v 25 oborech. Inspekce zjistila dlouhodobě vysokou neúspěšnost v maturitě (zejména v češtině a cizích jazycích), vysokou absenci žáků a nízkou kvalitu výuky. Učitelé často používají jen frontální výuku bez zapojení žáků. Chybí efektivní zpětná vazba a individualizace. Pozitivem je kvalitní vedení a poradenské služby. Škola plánuje optimalizaci oborů a má 15 dní na přijetí nápravných opatření."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zlepšující se, ale stále podprůměrný",
+      "key_numbers": [
+        "Hrubá neúspěšnost 2019: 53,4 %, 2021: 25,9 %",
+        "Čeština: žáci 2–6× více neúspěšní než průměr ČR",
+        "Cizí jazyk: žáci 3–7× více neúspěšní než průměr ČR"
+      ],
+      "evidence": "Hrubá neúspěšnost se snížila z 53,4 % na 38 %, resp. 25,9 %, škola i nadále vykazuje podprůměrné výsledky."
+    },
+    "absence": {
+      "trend": "Vysoká, negativně ovlivňuje výsledky",
+      "key_numbers": [
+        "Absence je považována za nejvážnější problém úspěšnosti",
+        "Žáci s vysokou absencí jsou nejčastěji ohroženi školním neúspěchem"
+      ],
+      "evidence": "Vysoká absence žáků negativně ovlivňuje vzdělávací výsledky, opatření nejsou dostatečně účinná."
+    },
+    "support_services": [
+      "Dvě kvalifikované výchovné poradkyně, z nichž jedna je metodičkou prevence",
+      "Školní psycholožka",
+      "Spolupráce s pedagogicko-psychologickou poradnou a speciálním pedagogickým centrem",
+      "Individuální konzultace a skupinové doučování pro ohrožené žáky"
+    ],
+    "safety_climate": [
+      "Rizikové chování a vztahové problémy řešeny v součinnosti vedení, třídního učitele a zákonných zástupců",
+      "Primární prevence prostřednictvím neziskových a charitativních organizací"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s pedagogicko-psychologickou poradnou",
+      "Spolupráce se speciálním pedagogickým centrem",
+      "Spolupráce s neziskovými a charitativními organizacemi v primární prevenci"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně identifikuje problémy (vysoká neúspěšnost v maturitě, absence, kvalita výuky) a poskytuje konkrétní čísla. Některé pasáže jsou technické, ale hlavní zjištění jsou zřejmá.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků s vysokou absencí ani její průměrný rozsah.",
+      "Chybí informace o tom, jak se měří účinnost opatření proti absenci a jaké konkrétní kroky byly podniknuty.",
+      "Není jasné, jaké konkrétní obory mají nejhorší výsledky v maturitě (zmíněny jen některé příklady)."
+    ]
+  }
+}
+```

@@ -1,0 +1,120 @@
+{
+  "report_id": "SOS_600011488_2025-04-08",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:38:17.571354+00:00",
+  "run_finished_utc": "2026-02-09T13:38:42.170818+00:00",
+  "raw_file": "SOS_600011488_2025-04-08.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600011488_2025-04-08",
+    "school_profile": {
+      "school_type": "Střední škola veřejnoprávní, obor Bezpečnostně právní činnost",
+      "inspection_period": "8. 4. 2025 – 10. 4. 2025",
+      "school_change_summary": "Škola se od poslední inspekce (2022) výrazně zlepšila v materiálních podmínkách, práci s výsledky žáků a metodické podpoře pedagogů. Vybudovala novou odbornou učebnu, posilovnu a střelnice. Zřídila pozici kariérového poradce. Přetrvávají nedostatky v individualizaci výuky a práci s informačními zdroji."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení s praxí",
+          "detail": "Škola má bohatou síť sociálních partnerů (Policie ČR, Armáda, Vězeňská služba), kteří se podílejí na výuce a odborné praxi.",
+          "evidence": "\"Aktivní a promyšlená spolupráce se širokou sítí sociálních partnerů směřuje k těsnějšímu propojení výuky s praxí\""
+        },
+        {
+          "tag": "Příjemné prostředí",
+          "detail": "Pedagogové přistupují k žákům profesionálně s porozuměním, což vytváří pozitivní vztah ke vzdělávání.",
+          "evidence": "\"Pedagogové přistupují k žákům profesionálně, s porozuměním a partnerským duchem, což přispívá k příjemné pracovní atmosféře\""
+        },
+        {
+          "tag": "Soutěže a talenty",
+          "detail": "Škola aktivně podporuje žáky v jazykových, odborných a sportovních soutěžích s dobrými výsledky.",
+          "evidence": "\"Velmi často se žáci umísťují na předních či vítězných místech\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Individualizace výuky",
+          "detail": "Učitelé málo přizpůsobují úkoly různým schopnostem žáků, všichni řeší stejné úlohy bez možnosti volby.",
+          "evidence": "\"V průběhu většiny výuky plnili žáci obsahem i náročností stejné úkoly, neměli možnost vybírat si zadání různé kognitivní náročnosti\""
+        },
+        {
+          "tag": "Kritické myšlení",
+          "detail": "Práce s informačními zdroji a rozvoj kritického myšlení nejsou dostatečně zařazovány do výuky.",
+          "evidence": "\"Méně byla zařazována práce žáků s informačními zdroji s následnou podporou kritického myšlení\""
+        },
+        {
+          "tag": "Kvalifikace některých učitelů",
+          "detail": "Část učitelů odborných předmětů nesplňuje požadavky na praxi u bezpečnostních sborů.",
+          "evidence": "\"Část z nich však nesplňuje požadavky stanovené smlouvou s Ministerstvem vnitra na praxi u bezpečnostních sborů\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola přizpůsobuje výuku jednotlivým žákům s různými schopnostmi?",
+        "Jaké jsou konkrétní výsledky absolventů na trhu práce a jejich uplatnění?",
+        "Jak se škola zaměřuje na rozvoj kritického myšlení a práce s informačními zdroji?"
+      ],
+      "who_school_fits": [
+        "Žáci zajímající se o bezpečnostní obory a práci v policii, armádě nebo vězeňské službě",
+        "Talentovaní žáci v soutěžích, kterým škola poskytuje podporu a přípravu",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola nabízí efektivní podpůrná opatření"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku podle svých schopností",
+        "Žáci, kteří se chtějí rozvíjet v kritickém myšlení a práci s různými informačními zdroji",
+        "Žáci, kteří preferují více samostatné učení a hledání informací"
+      ],
+      "plain_czech_summary": "TRIVIS je soukromá střední škola v Ústí nad Labem zaměřená na bezpečnostně právní činnost. Škola se výrazně zlepšila – má nové učebny, střelnice a posilovnu. Pedagogové jsou profesionální a vytváří příjemné prostředí. Silnou stránkou je spolupráce s policií, armádou a dalšími institucemi, kde žáci absolvují praxi. Slabší je individualizace výuky – všichni žáci řeší stejné úkoly bez ohledu na jejich schopnosti. Škola by měla více zaměřit pozornost na rozvoj kritického myšlení a práci s informačními zdroji."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní – čistá neúspěšnost nižší než celorepublikový průměr",
+        "key_numbers": [
+          "2023: 9 z 42 s vyznamenáním, 5 neprospělo",
+          "2024: 6 z 51 s vyznamenáním, 4 neprospěli",
+          "Čistá neúspěšnost nižší než celorepublikový průměr"
+        ],
+        "evidence": "\"čistá neúspěšnost u maturitních zkoušek, jak části společné, tak části profilové, která je za poslední dva školní roky nižší než celorepublikový průměr\""
+      },
+      "absence": {
+        "trend": "Mírně klesá, ale zůstává na pozornosti",
+        "key_numbers": [
+          "Průměr 70,4 hodin zameškaných na žáka za školní rok",
+          "Počet absence mírně klesá",
+          "Škola průběžně monitoruje ohrožené žáky"
+        ],
+        "evidence": "\"Počet zameškaných hodin činil ve stejném období v průměru 70,4 hodin na žáka za školní rok. Přestože počet neprospívajících žáků i průměrná absence mírně klesá\""
+      },
+      "support_services": [
+        "Výchovná poradkyně (zároveň ředitelka školy)",
+        "Metodik prevence",
+        "Kariérový poradce (nově zřízená pozice)",
+        "Doučování a individuální konzultace pro ohrožené žáky",
+        "Adaptační a sportovní kurzy",
+        "Programy primární prevence"
+      ],
+      "safety_climate": [
+        "Minimální výskyt rizikových jevů ve škole",
+        "Pravidelné třídnické hodiny a anonymní schránka důvěry",
+        "Spolupráce s externími odborníky na prevenci",
+        "Převažující výchovná opatření jsou pochvaly a ocenění",
+        "Pozitivní klima a partnerský vztah mezi pedagogy a žáky"
+      ],
+      "partnerships_practice": [
+        "Policie ČR, Armáda ČR, Vězeňská služba, Okresní soud Ústí nad Labem",
+        "Odborná praxe v 2.–4. ročníku u sociálních partnerů",
+        "Exkurze, besedy a přednášky odborníků",
+        "Veletrh Gaudeamus, Inovační centrum Ústeckého kraje",
+        "Spolupráce s vysokými školami a zaměstnavateli"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více odborné termíny, které by rodiče mohli hůře pochopit.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaký je přesný obsah 'digitální knihovny' a jak ji žáci využívají",
+        "Není jasné, kolik procent pedagogů splňuje všechny požadavky na kvalifikaci",
+        "Chybí informace o počtu žáků, kteří prospěli s vyznamenáním v jednotlivých ročnících"
+      ]
+    }
+  }
+}

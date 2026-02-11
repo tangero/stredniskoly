@@ -1,0 +1,110 @@
+{
+  "report_id": "SOS_600011305_2023-06-06",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:39:15.433712+00:00",
+  "run_finished_utc": "2026-02-09T16:39:43.987920+00:00",
+  "raw_file": "SOS_600011305_2023-06-06.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600011305_2023-06-06",
+    "school_profile": {
+      "school_type": "Střední škola AGC a.s. - soukromá akciová společnost vzdělávající žáky v denní a zkrácené dálkové formě v 5 oborech (4 maturitní, 1 s výučním listem)",
+      "inspection_period": "6. 6. 2023 až 9. 6. 2023",
+      "school_change_summary": "Škola reagovala na zjištění z roku 2022 zlepšením výsledků maturit v jarním období 2023, modernizací vybavení technických oborů a Předškolní pedagogiky, a zavedením týdenní odborné praxe pro 1. ročník."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické dovednosti technických oborů",
+          "detail": "Promyšlená spolupráce se zaměstnavateli efektivně podporuje odborné kompetence a budoucí profesní uplatnění absolventů.",
+          "evidence": "Realizace praktického vyučování na pracovištích externích zaměstnavatelů, vysoká úspěšnost v cyklu oboru Elektrikář (88 %)"
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola nabízí individuální konzultace, doučování a poradenské služby školního psychologa pro žáky ohrožené neúspěšností.",
+          "evidence": "Výchovná poradkyně efektivně zajišťuje poradenské služby, včasná identifikace ohrožených žáků již v 1. ročníku"
+        },
+        {
+          "tag": "Zlepšení maturitních výsledků",
+          "detail": "V jarním období 2023 se výrazně zlepšily výsledky ve společné části maturitní zkoušky po zavedení nových opatření.",
+          "evidence": "V oboru Ekonomika a podnikání všichni žáci v konající části úspěšní, v Předškolní pedagogice hrubá neúspěšnost 10 %"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabé výsledky v některých oborech",
+          "detail": "Obor Ekonomika a podnikání měl v roce 2022 hrubou neúspěšnost 61 % (ČR 15 %), což je výrazně nad průměrem.",
+          "evidence": "Hrubá neúspěšnost v oboru Ekonomika a podnikání 61 % oproti republikovému průměru 15 % ve společné části"
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Pedagogové nevyužívají diferenciaci vzdělávacího obsahu podle individuálních potřeb žáků.",
+          "evidence": "Inspektoři zaznamenali, že diferenciace zadávaných úkolů různé kognitivní náročnosti nebyla využita"
+        },
+        {
+          "tag": "Slabá evaluace v hodinách",
+          "detail": "Žáci nejsou dostatečně zapojeni do evaluačních aktivit umožňujících reflexi vzdělávacího procesu.",
+          "evidence": "Jen v části hodin byli žáci efektivně zapojeni do evaluačních aktivit, závěry hodin byly spíše formální"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají problémy s maturitou? Jaké jsou dostupné konzultace a doučování?",
+        "Jaké jsou výsledky v jednotlivých oborech za poslední rok a jak se liší od celorepublikového průměru?",
+        "Jak škola zajišťuje praktickou přípravu v technických oborech a jaké jsou možnosti stáží u zaměstnavatelů?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a technické obory, zejména Elektrikář a Mechanik elektrotechnik, kde je vysoká úspěšnost",
+        "Studenti oboru Předškolní a mimoškolní pedagogika, kde se výuka zaměřuje na aktivizující metody a praktické zkušenosti",
+        "Žáci, kteří potřebují individuální podporu a konzultace - škola má funkční systém poradenských služeb"
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o obor Ekonomika a podnikání by měli zvážit, že obor měl v minulosti velmi nízké výsledky (61 % neúspěšnosti), i když se v roce 2023 zlepšil",
+        "Žáci, kteří potřebují výuku přizpůsobenou jejich individuálnímu tempu - škola zatím nedostatečně diferencuje obsah podle potřeb",
+        "Studenti, kteří se spoléhají na zpětnou vazbu a reflexi v hodinách - evaluace je zatím spíše formální"
+      ],
+      "plain_czech_summary": "Střední škola AGC v Teplicích je soukromá škola se čtyřmi maturitními obory a jedním oborem s výučním listem. Její silnou stránkou je praktická příprava v technických oborech a funkční systém podpory slabších žáků. V roce 2023 se výrazně zlepšily výsledky maturit. Slabinou je nedostatečná diferenciace výuky podle individuálních potřeb a formální evaluace v hodinách. Obor Ekonomika a podnikání měl dříve velmi nízké výsledky, i když se zlepšuje."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšení v jarním období 2023 po zavedení nových opatření, ale stále s rozdíly mezi obory",
+        "key_numbers": [
+          "Ekonomika a podnikání 2023: všichni žáci v konající části úspěšní, hrubá neúspěšnost 20 % (2022: 61 %)",
+          "Předškolní pedagogika 2023: hrubá neúspěšnost 10 % (2022: 21 % společná část)",
+          "Úspěšnost v cyklu 2021/2022: 46 % (Předškolní pedagogika 60 %, Ekonomika 26 %)"
+        ],
+        "evidence": "Dopady opatření se projevily až při ukončování vzdělávání maturitní zkouškou v roce 2023. Po jarním zkušebním období byla úspěšnost vyšší než v předchozích zkušebních obdobích."
+      },
+      "absence": {
+        "trend": "Není v textu zprávy zmíněn",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se nezabývá absencí žáků"
+      },
+      "support_services": [
+        "Výchovná poradkyně (zároveň kariérová poradkyně, metodik prevence a školní psycholog) - efektivně zajišťuje poradenské služby",
+        "Individuální konzultace a doučování pro žáky ohrožené neúspěšností",
+        "Volitelné semináře podle volby předmětu společné části maturitní zkoušky",
+        "Adaptační kurzy pro 1. ročník, sportovně-turistické kurzy pro vyšší ročníky"
+      ],
+      "safety_climate": [
+        "Primární prevence směřuje k účinné minimalizaci rizikového chování - klima třídy a signály rizikového chování jsou pravidelně analyzovány",
+        "Třídnické hodiny a spolupráce se školní psycholožkou na analýze klimatu",
+        "Školou organizované přednášky z oblasti rizikových jevů přispívají ke snižování projevů rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Systematická spolupráce se zaměstnavateli zajišťuje rozvoj praktických dovedností žáků technických oborů",
+        "Partnerství s vysokými školami a zahraniční spolupráce v rámci programu Erasmus+",
+        "Odborná praxe žáků oboru Předškolní pedagogika na různých typech škol a školských zařízení"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními údaji a příklady. Jsou jasně identifikovány silné stránky, slabiny a doporučení. Některé pasáže jsou technicky náročnější, ale celkově je text dobře strukturován.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna - není jasné, zda je to problém nebo se jí škola věnuje",
+        "Není jasné, jak konkrétně se zlepšily výsledky v roce 2023 v oboru Ekonomika a podnikání v profilové části (33 % neúspěšnosti je stále vysoká)",
+        "Není zmíněno, jak se daří žákům s odlišným mateřským jazykem (zmínění jsou jen 2 žáci)"
+      ]
+    }
+  }
+}

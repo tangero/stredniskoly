@@ -1,0 +1,113 @@
+```json
+{
+  "report_id": "SOS_600008363_2024-10-17",
+  "school_profile": {
+    "school_type": "Střední škola rybářská a vodohospodářská s domovem mládeže a školní jídelnou",
+    "inspection_period": "17.–22. října 2024",
+    "school_change_summary": "Počet žáků vzrostl o zhruba 20 % od inspekce v roce 2019 na 267 žáků ve 12 třídách. Kapacita domova mládeže byla navýšena na 213 lůžek s 202 ubytovanými žáky. Škola rozšířila vozový park a buduje aquaponický skleník."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Dlouhodobá spolupráce se smluvními pracovišti a odborníky z praxe zajišťuje kvalitní praktické vyučování s moderními technologiemi.",
+        "evidence": "Intenzívní spolupráce s řadou smluvních pracovišť významně přispívá k rozvoji znalostí a dovedností žáků."
+      },
+      {
+        "tag": "Vybavení a prostředí",
+        "detail": "Moderní rekonstruovaná budova s estetickým prostředím, unikátními pomůckami a aquaponickým skleníkem vytváří výborné podmínky pro výuku.",
+        "evidence": "Esteticky příznivé zázemí a unikátní názorné pomůcky vytvářejí výborné podmínky pro kvalitní vyučování."
+      },
+      {
+        "tag": "Mezinárodní zkušenosti",
+        "detail": "Žáci se účastní projektů Erasmus+, odborné praxe v zahraničí a získávají mezinárodní jazykové certifikáty.",
+        "evidence": "Škola vhodně rozvíjí sociální a jazykové kompetence účastí v projektu Erasmus+ a zahraničních stážích."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Absence a školní neúspěšnost",
+        "detail": "Výrazně vzrostla absence žáků, zejména v prvních ročnících, včetně neomluvené absence. Vysoký podíl žáků ohrožených školní neúspěšností.",
+        "evidence": "Absence se dvojnásobně zvýšila v prvním ročníku, vysoký počet žáků klasifikovaných dostatečně či nedostatečně."
+      },
+      {
+        "tag": "Pasivita žáků ve výuce",
+        "detail": "Převažující frontální výuka s malou diferenciací vede k nízké aktivitě žáků a jejich omezené participaci.",
+        "evidence": "Ve dvou třetinách hodin byli aktivní především učitelé, zapojeno bylo jen zhruba poloviny žáků."
+      },
+      {
+        "tag": "Slabá formativní zpětná vazba",
+        "detail": "Chybí efektivní závěry hodin s vyhodnocením dosažení cílů a získáním zpětné vazby o zvládnutí učiva.",
+        "evidence": "Nedostačující bylo žákovské hodnocení vlastní práce podle předem známých kritérií."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší rostoucí problém absence a neomluvené absence, zejména v prvních ročnících?",
+      "Jaké konkrétní kroky podniká škola k tomu, aby se zvýšila aktivita žáků ve výuce a byla více využívána diferenciace?",
+      "Jak funguje systém podpory pro žáky ohrožené školní neúspěšností a jaké jsou konkrétní výsledky těchto opatření?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o rybářství a vodohospodářství, kteří chtějí praktické vzdělání s moderními technologiemi",
+      "Studenti motivovaní k mezinárodní spolupráci a získávání jazykových certifikátů",
+      "Žáci, kterým vyhovuje ubytování v domově mládeže s bohatou nabídkou volnočasových aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k absenci – škola má problém s rostoucí neúčastí ve vyučování",
+      "Studenti vyžadující individuální přístup a diferenciovanou výuku – převažuje frontální výuka",
+      "Žáci potřebující silnou formativní zpětnou vazbu – chybí efektivní vyhodnocování pokroku"
+    ],
+    "plain_czech_summary": "Škola je tradičním a jedinečným zařízením pro odborné vzdělání v rybářství. Má výborné vybavení, moderní prostředí a dlouhodobě spolupracuje s odborníky z praxe. Žáci se účastní mezinárodních projektů. Hlavní problémy jsou rostoucí absence žáků, vysoký podíl žáků ohrožených neúspěšností a převažující frontální výuka s malou aktivitou žáků. Škola pracuje na zlepšení, ale výsledky jsou zatím částečné."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírné zlepšení v čtyřletém oboru, zhoršení v nástavbovém oboru v posledních dvou letech",
+      "key_numbers": [
+        "Čtyřletý obor: průměr známek 2,00, neúspěšnost se od 2019 postupně snižuje",
+        "Nástavbový obor: výsledky se zhoršily v 2022/2023 a 2023/2024, ale lepší než v republice",
+        "Český jazyk a matematika jsou problémové předměty v čtyřletém oboru"
+      ],
+      "evidence": "Výsledky žáků čtyřletého oboru se postupně zlepšují, v posledním roce dosáhli lepších výsledků než srovnatelné obory v ČR."
+    },
+    "absence": {
+      "trend": "Výrazně rostoucí, zejména v prvních ročnících a v neomluvené absenci",
+      "key_numbers": [
+        "Absence se v prvním ročníku dvojnásobně zvýšila mezi školními roky 2022/2023 a 2023/2024",
+        "Přetrvává výskyt neomluvené absence",
+        "Absence má zvyšující se tendenci i v čtyřletém oboru"
+      ],
+      "evidence": "Negativním jevem je, že výrazně vzrostla neúčast žáků ve vyučování, zejména v prvních ročnících."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: 2 výchovné poradkyně, 3 metodici prevence, 1 školní psycholožka",
+      "2 asistenti pedagoga",
+      "Peer program vzájemného doučování v studentském klubu a doučování v domově mládeže",
+      "Filmový klub pro rozvoj čtenářské gramotnosti",
+      "Psaní didaktických testů nanečisto"
+    ],
+    "safety_climate": [
+      "Snižování míry úrazovosti díky dodržování pravidel a pravidelným revizím",
+      "Školení všech aktérů vzdělávání v bezpečnosti",
+      "Osobní ochranné pracovní prostředky při praktickém vyučování",
+      "Prevence realizována formou projektů, přednášek a společných akcí",
+      "Přetrvávajícím problémem je vyšší míra absence a neomluvené absence"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s řadou smluvních pracovišť a odborníky z praxe",
+      "Členství v Rybářském sdružení ČR a dalších organizacích",
+      "Spolupráce s poradním sborem, zahraničními a vysokými školami",
+      "Projekt Erasmus+ pro rozvoj odborných, sociálních a jazykových kompetencí",
+      "Odborná praxe v Norsku, Francii a na Slovensku",
+      "Program O cenu vévody z Edinburghu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Hlavní zjištění jsou jasně oddělena v sekcích. Některé pasáže jsou však delší a obsahují více technických detailů, které mohou být pro rodiče méně přístupné.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků s jednotlivými klasifikacemi (dostatečné, nedostatečné), pouze jejich podíl",
+      "Není jasné, jaké konkrétní opatření škola přijala na základě doporučení z roku 2019 a jaké byly jejich výsledky",
+      "Chybí informace o počtu žáků, kteří opakují ročník, a jejich úspěšnosti"
+    ]
+  }
+}
+```

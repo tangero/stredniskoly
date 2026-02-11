@@ -1,0 +1,112 @@
+{
+  "report_id": "LYC_600124223_2022-12-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:55:00.241065+00:00",
+  "run_finished_utc": "2026-02-09T16:55:22.676971+00:00",
+  "raw_file": "LYC_600124223_2022-12-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "LYC_600124223_2022-12-01",
+    "school_profile": {
+      "school_type": "Střední odborná škola, základní škola a mateřská škola (kombinovaná instituce)",
+      "inspection_period": "1. 12. 2022 – 2. 12. 2022 a 5. 12. 2022",
+      "school_change_summary": "Škola se dynamicky rozvíjí: zavedla střední obor Kombinované lyceum v dálkové formě, zvýšil se počet žáků zejména v individuálním vzdělávání, zřídila pozici sociálního pedagoga, rozšířila prostory a zkvalitnila materiální vybavení včetně polyfunkčního hřiště."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné materiální podmínky",
+          "detail": "Škola má moderní vybavení, kvalitní didaktickou techniku, polyfunkční hřiště a sportovní halu.",
+          "evidence": "Všechny třídy vybaveny moderním nábytkem a didaktickou technikou, vybudováno polyfunkční hřiště v areálu školy."
+        },
+        {
+          "tag": "Silná podpora individuálního vzdělávání",
+          "detail": "On-line výuka je na velmi vysoké úrovni s kvalitní interakcí mezi školou a rodinou.",
+          "evidence": "Pedagogové cíleně vedli žáky k pochopení učiva, byla respektována jejich individuální tempa, hodiny se vyznačovaly příjemnou atmosférou."
+        },
+        {
+          "tag": "Péče o sociální rozvoj žáků",
+          "detail": "Škola systematicky rozvíjí sociální kompetence a prevenci rizikového chování.",
+          "evidence": "Žáci školy neměli neomluvené hodiny ani výrazně zvýšenou absenci, aktivně se zapojují do školního parlamentu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zhoršující se výsledky maturit",
+          "detail": "Úspěšnost maturitní zkoušky klesá: 2020 (90%), 2021 (74%), 2022 (69%).",
+          "evidence": "V roce 2022 pouze 85% humanitní, 75% technické a 67% přírodovědné specializace uspělo v profilové části."
+        },
+        {
+          "tag": "Slabší výsledky v základní škole",
+          "detail": "Standardizované testování ukázalo průměrné výsledky v češtině a dovednostech usnadňujících učení.",
+          "evidence": "Žáci 5. ročníku dosáhli výborných výsledků v matematice, ale průměrných v českém jazyce a dovednostech usnadňujících učení."
+        },
+        {
+          "tag": "Nedostatečná diferenciace v předškolním vzdělávání",
+          "detail": "Cíle nejsou dostatečně přizpůsobeny individuálním potřebám dětí.",
+          "evidence": "Cíle předškolního vzdělávání nebyly diferenciovány vzhledem k vývojovým potřebám dětí, jednotně zadávaná práce bez výběru obtížnosti."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaká konkrétní opatření škola přijala pro zlepšení výsledků maturitní zkoušky a jak motivuje žáky k pravidelné přípravě?",
+        "Jak probíhá individuální vzdělávání a jakou podporu dostávají žáci při domácím studiu?",
+        "Jaké jsou možnosti doučování a individuálních konzultací pro žáky se slabšími výsledky?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří preferují individuální nebo dálkové vzdělávání s kvalitní on-line podporou",
+        "Děti a žáci, kterým vyhovuje přátelská atmosféra a důraz na sociální rozvoj",
+        "Žáci zajímající se o sportovní aktivity a využívání moderní techniky ve výuce"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, jejichž děti potřebují intenzivní přípravu na maturitu – výsledky v posledních letech klesají",
+        "Žáci vyžadující vysokou míru individualizace v předškolním vzdělávání – diferenciace není dostatečná",
+        "Rodiny, které očekávají tradičnější přístup – škola se zaměřuje na alternativní formy vzdělávání"
+      ],
+      "plain_czech_summary": "Školy Březová je moderní instituce s výborným vybavením a přátelskou atmosférou. Silnou stránkou je kvalitní on-line vzdělávání pro individuálně vzdělávané žáky a péče o sociální rozvoj. Slabší jsou výsledky maturitní zkoušky, které v posledních třech letech klesají. Škola se snaží zlepšit situaci, ale zatím se jí nedaří dostatečně motivovat žáky k pravidelné přípravě. Předškolní vzdělávání by mohlo být více individualizované."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zhoršující se",
+        "key_numbers": [
+          "2020: 90% úspěšnosti",
+          "2021: 74% úspěšnosti",
+          "2022: 69% úspěšnosti (humanitní 85%, technická 75%, přírodovědná 67%)"
+        ],
+        "evidence": "Ke zhoršení došlo především u profilové části maturitní zkoušky. Vedení školy nastavilo opatření, ale pedagogům se nedaří náležitě motivovat žáky k pravidelné přípravě."
+      },
+      "absence": {
+        "trend": "Velmi dobrý",
+        "key_numbers": [
+          "Žáci školy neměli neomluvené hodiny",
+          "Bez výrazně zvýšené absence"
+        ],
+        "evidence": "Cílené preventivní aktivity a programy organizované školou se projevovaly tím, že žáci školy neměli neomluvené hodiny ani výrazně zvýšenou absenci."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní, kariérovou poradkyní a sociálním pedagogem",
+        "Asistenti pedagoga pro podporu žáků se speciálními vzdělávacími potřebami",
+        "Doučování a individuální konzultace pro žáky se zhoršenými výsledky"
+      ],
+      "safety_climate": [
+        "Bezpečnostní rizika jsou pravidelně vyhodnocována",
+        "Děti a žáci jsou průběžně poučeni o bezpečném chování",
+        "Prostředí školy je estetické a podnětné s patřičným důrazem na bezpečnost"
+      ],
+      "partnerships_practice": [
+        "Mezinárodní spolupráce s příhraniční základní školou na sportovním a kulturním vyžití",
+        "Spolupráce se zřizovatelem v materiálně-technickém zajištění a kulturním životě obce",
+        "Kooperace s místními organizacemi, školskými poradenskými zařízeními a okolními školami"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s konkrétními příklady. Některé pasáže jsou však více odborné a méně přístupné laickému čtenáři.",
+      "uncertainty_notes": [
+        "Není jasné, jaké konkrétní opatření škola přijala pro zlepšení maturitních výsledků – zmíněna jsou pouze obecná opatření",
+        "Chybí informace o počtu pedagogů bez požadované kvalifikace v jednotlivých oborech",
+        "Není specifikováno, jak se liší kvalita výuky mezi prezenční a individuální formou vzdělávání"
+      ]
+    }
+  }
+}

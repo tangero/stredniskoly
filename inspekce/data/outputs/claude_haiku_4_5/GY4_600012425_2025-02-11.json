@@ -1,0 +1,114 @@
+{
+  "report_id": "GY4_600012425_2025-02-11",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:45:40.980318+00:00",
+  "run_finished_utc": "2026-02-09T13:46:06.843500+00:00",
+  "raw_file": "GY4_600012425_2025-02-11.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600012425_2025-02-11",
+    "school_profile": {
+      "school_type": "Gymnázium se 354 žáky ve 12 třídách (3 paralelní třídy v každém ročníku)",
+      "inspection_period": "11. až 13. února 2025",
+      "school_change_summary": "Od poslední inspekce: zajištěna pravidelná spolupráce se školní psycholožkou, omezeno počet proseminářů ve 3. a 4. ročníku, zavedeny nové ročníkové práce pro porovnávání znalostí žáků. Škola úspěšně čerpala dotace NPO a operačního programu JAK."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Jazykové vzdělání",
+          "detail": "Bohatá nabídka cizích jazyků s rodilými mluvčími, téměř dvě třetiny maturantů získaly certifikát Cambridge English.",
+          "evidence": "\"Široká nabídka výuky cizích jazyků účelně podporující rozvoj jazykových dovedností žáků i prostřednictvím zajištění rodilých mluvčích\""
+        },
+        {
+          "tag": "Výsledky a úspěchy",
+          "detail": "Výborné výsledky maturit lepší než průměr gymnázií v ČR, úspěchy v soutěžích a olympiádách, příprava na vysoké školy.",
+          "evidence": "\"Výsledky žáků ve společné části maturitní zkoušky jsou opakovaně lepší než průměrné výsledky gymnázií v České republice\""
+        },
+        {
+          "tag": "Digitální vzdělání",
+          "detail": "Moderní přístup k digitálním technologiím, žáci mohou používat mobily a tablety, k dispozici digitální učebny.",
+          "evidence": "\"Pozitivním zjištěním bylo výraznější zapojování digitálních technologií do výuky, což příznivě podporuje rozvoj digitální kompetence žáků\""
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Zpětná vazba od vedení",
+          "detail": "Hospitační činnost vedení školy chybí formativní zpětná vazba, která by učitelům pomáhala se zlepšovat.",
+          "evidence": "\"V záznamech z hospitací zcela chybí formativní zpětná vazba, co se v hodině učiteli podařilo, jaké je doporučení ke zlepšení\""
+        },
+        {
+          "tag": "Hodnocení ve výuce",
+          "detail": "Málo se používají formativní způsoby hodnocení, chybí srozumitelná zpětná vazba pro žáky o jejich pokroku.",
+          "evidence": "\"Téměř ve všech hodinách chyběly funkční formativní závěry, který by daly žákům srozumitelnou zpětnou vazbu\""
+        },
+        {
+          "tag": "Individuální přístup",
+          "detail": "Výuka často probíhá společným tempem bez přizpůsobení různým schopnostem žáků, omezená podpora nadaných.",
+          "evidence": "\"Zaznamenáno nebylo diferencované zadání úkolů, většina sledovaných hodin probíhala ve společném, rychlejším tempu\""
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky? Existuje formální systém jejich vyhledávání?",
+        "Jaké jsou plány na zlepšení formativního hodnocení a individuálního přístupu k žákům s různými schopnostmi?",
+        "Jak se škola vypořádá s doporučením inspekce na rozšíření kooperativních metod výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí bohatou jazykovou výuku a zahraniční výměny",
+        "Nadaní a ambiciózní žáci – vysoké výsledky maturit, příprava na vysoké školy, účast v soutěžích",
+        "Žáci zajímající se o vědu a techniku – spolupráce s fakultami vysokých škol, odborné projekty a soutěže"
+      ],
+      "who_should_be_cautious": [
+        "Žáci potřebující více individuální podpory a jasné zpětné vazby – výuka se zaměřuje spíše na obsah než na individuální pokrok",
+        "Žáci s různým tempem učení – výuka často probíhá společným tempem bez diferencovaných úkolů",
+        "Žáci, kteří se lépe učí kooperativně – kooperativní metody se zatím používají málo"
+      ],
+      "plain_czech_summary": "Gymnázium Mozartova je kvalitní škola se silným zaměřením na jazyky a přípravu na vysoké školy. Maturanti dosahují výborných výsledků a získávají mezinárodní certifikáty. Škola má moderní vybavení a bohatou nabídku aktivit. Hlavní výzvou je zlepšit individuální přístup k žákům – výuka se příliš zaměřuje na obsah a chybí jí formativní zpětná vazba. Škola by měla více pracovat s různými tempem učení a podporovat nadané žáky systematičtěji."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně výborný",
+        "key_numbers": [
+          "Všichni přihlášení žáci v roce 2024 úspěšně vykonali maturitu (4 v podzimním termínu)",
+          "Téměř 2/3 maturantů získalo certifikát Cambridge English",
+          "Téměř 1/3 žáků vykonala nepovinnou zkoušku z rozšiřující matematiky"
+        ],
+        "evidence": "\"Výsledky žáků ve společné části maturitní zkoušky jsou opakovaně lepší než průměrné výsledky gymnázií v České republice\""
+      },
+      "absence": {
+        "trend": "Nízká, bez negativního vlivu",
+        "key_numbers": [
+          "Absence žáků je nižší a nemá negativní vliv na výsledky vzdělávání"
+        ],
+        "evidence": "\"Absence žáků je nižší a nemá negativní vliv na výsledky vzdělávání\""
+      },
+      "support_services": [
+        "Školní psycholožka – pravidelná spolupráce zajištěna od poslední inspekce",
+        "Dvě vyučující na výchovné poradenství a prevenci",
+        "Školní poradenské pracoviště – sleduje podporu žáků a metodické náhledy do vybraných hodin",
+        "Podpůrná opatření pro 8 žáků se speciálními vzdělávacími potřebami, 3 z nich podle individuálního vzdělávacího plánu"
+      ],
+      "safety_climate": [
+        "Kázeňská opatření jsou spíše ojedinělá, výraznější je počet pochval a uznání",
+        "Třídní učitelé monitorují problémy v třídních kolektivech",
+        "Škola zakoupila speciální počítačový program pro sledování a vyhodnocování školního a třídního klimatu",
+        "Primární prevence zajišťována ve spolupráci s externími subjekty (Městská policie, Mezipatra, Anabell, Sféra Pardubice)"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s partnerskými školami v zahraničí – výměnné pobyty a vzdělávací zájezdy",
+        "Spolupráce s fakultami vysokých škol – projekty, workshopy, přednášky a exkurze pro nadané žáky",
+        "Rodilí mluvčí, odborníci z praxe a výkonní umělci v pedagogickém sboru",
+        "Spolupráce s externími subjekty na prevenci a vzdělávacích akcích"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasně odděluje silné stránky od slabých. Doporučení jsou praktická. Místy je text technický (kritéria, kódy), ale hlavní zjištění jsou jasná.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje přesné procento žáků s vyznamenáním – uvádí 'téměř třetina', což je přibližné",
+        "Není jasné, jak konkrétně se bude škola vypořádávat s doporučeními – lhůta je 30 dní, ale konkrétní plán chybí",
+        "Počet hospitací a jejich frekvence nejsou uvedeny, takže není jasné, jak systematická je tato činnost"
+      ]
+    }
+  }
+}

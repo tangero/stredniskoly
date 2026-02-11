@@ -1,0 +1,108 @@
+{
+  "report_id": "GY8_600005046_2021-11-02",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T08:22:09.883160+00:00",
+  "run_finished_utc": "2026-02-10T08:23:40.051367+00:00",
+  "raw_file": "GY8_600005046_2021-11-02.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600005046_2021-11-02",
+    "school_profile": {
+      "school_type": "Gymnázium s všeobecným zaměřením nabízející čtyřleté a osmileté studium.",
+      "inspection_period": "2. 11. 2021 – 5. 11. 2021",
+      "school_change_summary": "Od roku 2014 došlo ke změně vedení, škola kontinuálně rozvíjí kvalitní koncepci a udržuje stabilní zájem uchazečů."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné studijní výsledky",
+          "detail": "Žáci dosahují nadprůměrných výsledků, všichni maturanti složí zkoušky a polovina s vyznamenáním.",
+          "evidence": "„žáci dosahují ve srovnání s republikovým průměrem stabilně výborných výsledků“, „polovina z celkového počtu maturantů prospěla s vyznamenáním“"
+        },
+        {
+          "tag": "Podpora talentu a jazyků",
+          "detail": "Škola je fakultní UK, nabízí robotiku, odborné semináře a mezinárodní certifikáty z jazyků.",
+          "evidence": "„Gymnázium má status fakultní školy Matematicko-fyzikální fakulty a Přírodovědecké fakulty Univerzity Karlovy“"
+        },
+        {
+          "tag": "Bezpečné prostředí",
+          "detail": "Fungující prevence rizikového chování, nulová neomluvená absence a žádné snížené známky z chování.",
+          "evidence": "„nulový počet žáků hodnocených sníženým stupněm z chování a žádná neomluvená absence“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivita ve výuce",
+          "detail": "V některých hodinách převažuje výklad učitele bez aktivního zapojení žáků.",
+          "evidence": "„Dominantní činnost učitele bez průběžné motivace vedla k jejich částečné pasivitě.“"
+        },
+        {
+          "tag": "Nedostatečná zpětná vazba",
+          "detail": "Učitelé málo využívají formativní hodnocení a sebehodnocení žáků.",
+          "evidence": "„Využití formativního hodnocení proběhlo v minimální míře a jen ojediněle vyučující vedli žáky k sebereflexi“"
+        },
+        {
+          "tag": "Formální kontrola výuky",
+          "detail": "Hospitační činnost vedení neukončuje konkrétními opatřeními pro zlepšení.",
+          "evidence": "„Doporučení ke zkvalitnění... jsou učitelům předávána pouze ústně“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně učitelé pracují s chybou žáků a jak jim poskytují zpětnou vazbu?",
+        "Jakým způsobem jsou ve výuce podporováni žáci, kteří potřebují více času na pochopení látky?",
+        "Jaké konkrétní semináře a projekty nabízíte pro propojení výuky s praxí?"
+      ],
+      "who_school_fits": [
+        "Pro studenty cílící na vysoké školy, zejména technického a přírodovědného směru.",
+        "Pro žáky, kteří očekávají silnou podporu v cizích jazycích a možnost mezinárodních certifikátů.",
+        "Pro rodiče hledající školu s bezpečným klimatem a funkční prevencí sociálně patologických jevů."
+      ],
+      "who_should_be_cautious": [
+        "Pro žáky, kteří preferují samostatnou aktivní práci před tradiční frontální výukou.",
+        "Pokud dítě potřebuje častou a systematickou zpětnou vazbu nebo sebehodnocení.",
+        "Pro rodiče očekávající detailní písemná doporučení pro zkvalitnění studia dítěte."
+      ],
+      "plain_czech_summary": "Gymnázium Písnická je stabilní škola s vynikajícími studijními výsledky a silným zaměřením na přírodní vědy a jazyky. Nabízí bezpečné prostředí s nulovou neomluvenou absencí a je vhodná pro přípravu na VŠ. Slabší stránkou je tradiční styl výuky, kde někdy chybí aktivní zapojení žáků a moderní zpětná vazba. Škola spolupracuje s UK a má dobré zázemí pro talentované studenty."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se (100% úspěšnost, lepší výsledky i v distanční výuce).",
+        "key_numbers": [
+          "100 % maturantů složilo zkoušku",
+          "50 % maturantů prospělo s vyznamenáním",
+          "Téměř 50 % žáků volí v profilové části přírodovědné předměty"
+        ],
+        "evidence": "„Ve sledovaném období všichni žáci konající zkoušku složili, polovina z celkového počtu maturantů prospěla s vyznamenáním.“"
+      },
+      "absence": {
+        "trend": "Vynikající (nulová neomluvená absence).",
+        "key_numbers": [
+          "0 žáků se sníženým stupněm z chování",
+          "0 neomluvených hodin"
+        ],
+        "evidence": "„dokládá ve sledovaném období nulový počet žáků hodnocených sníženým stupněm z chování a žádná neomluvená absence“"
+      },
+      "support_services": [
+        "Individuální konzultace a úzká spolupráce s výchovnou poradkyní.",
+        "Fungující adaptační kurzy pro první ročníky.",
+        "Péče o žáky se specifickými potřebami včetně cizinců."
+      ],
+      "safety_climate": [
+        "Důraz na pozitivní vazby v kolektivu a prosociální chování.",
+        "Příkladně zpracovaná prevence sociálně patologických jevů.",
+        "Partnerský přístup učitelů k žákům."
+      ],
+      "partnerships_practice": [
+        "Status fakultní školy MFF a PřF UK (laboratoře, zapůjčení techniky).",
+        "Spolupráce s AMAVET a vědeckotechnickými centry.",
+        "Aktivní zapojení rodičů (Rada rodičů, financování aktivit)."
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je psán ve srozumitelné češtině, byť s úřednickým nádechem. Závěry a klíčová zjištění jsou jasně strukturovaná.",
+      "uncertainty_notes": []
+    }
+  }
+}

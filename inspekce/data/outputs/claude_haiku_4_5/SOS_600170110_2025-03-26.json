@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600170110_2025-03-26",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:39:58.861522+00:00",
+  "run_finished_utc": "2026-02-09T13:40:25.377471+00:00",
+  "raw_file": "SOS_600170110_2025-03-26.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170110_2025-03-26",
+    "school_profile": {
+      "school_type": "Střední odborné učiliště (SOŠ) - příspěvková organizace",
+      "inspection_period": "26. až 28. března 2025",
+      "school_change_summary": "Od poslední inspekce (2018) se počet žáků výrazně zvýšil na 414 (naplněnost 60 %). Došlo k generační obměně pedagogů, rozšíření školního poradenského pracoviště a založení žákovského parlamentu. Zlepšily se materiální a finanční podmínky."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Spolupráce se zaměstnavateli",
+          "detail": "Partnerství s profesními organizacemi a smluvními pracovišti účelně podporuje praktické odborné vzdělávání.",
+          "evidence": "Partnerské vztahy s profesními organizacemi a smluvními pracovišti jsou velkým přínosem pro odbornou složku vzdělávání."
+        },
+        {
+          "tag": "Úspěch u závěrečných zkoušek",
+          "detail": "Téměř všichni žáci 3. ročníku zkoušku konali a s výjimkou jednotlivce uspěli.",
+          "evidence": "Při ukončování vzdělávání závěrečnou zkouškou je pozitivní, že téměř všichni žáci zkoušku konali a s výjimkou jednotlivce také uspěli."
+        },
+        {
+          "tag": "Investice do vybavení",
+          "detail": "Škola aktivně získává finanční prostředky a zlepšuje vzdělávací podmínky.",
+          "evidence": "Nově byla zřízena venkovní učebna, byly nakoupeny potřebné stroje a zařízení, rekonstruovala se školní pracoviště odborného výcviku."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Absence se pohybuje kolem 200 hodin na žáka za školní rok, včetně neomluvené absence.",
+          "evidence": "Zvýšená absence, která byla vysoká a pohybovala se v obou hodnocených letech kolem 200 hodin na žáka za školní rok."
+        },
+        {
+          "tag": "Nekvalifikovaní učitelé",
+          "detail": "Vzrostl podíl učitelů bez odborné kvalifikace, jen někteří si ji doplňují studiem.",
+          "evidence": "Zvýšil se ale podíl učitelů bez odborné kvalifikace, přičemž jen někteří si ji doplňují potřebným studiem."
+        },
+        {
+          "tag": "Slabší výuka technických oborů",
+          "detail": "Ve výuce odborných předmětů technických oborů převládá frontální výklad bez kooperativních forem.",
+          "evidence": "Ve výuce odborných předmětů technických oborů převládal jen frontálně vedený výklad učitele spojený s dotazováním žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jaké konkrétní kroky podniká škola na snížení absence žáků a jak se to projevuje v jejich prospěchu?",
+        "Jak škola řeší nedostatek kvalifikovaných učitelů a jaký je plán na jejich doplnění kvalifikace?",
+        "Jaké jsou konkrétní rozdíly v přístupu k výuce mezi technickými a netechnickými obory?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a ruční práci - škola má dobré vybavení a zkušené instruktory v odborném výcviku.",
+        "Žáci, kteří potřebují individuální podporu - škola má rozšířené poradenské služby včetně psychologa a doučování.",
+        "Žáci se speciálními vzdělávacími potřebami - škola vzdělává 42 žáků se SVP s individuálními plány."
+      ],
+      "who_should_be_cautious": [
+        "Žáci s tendencí k absenci - vysoká absence (200 hodin/rok) výrazně ovlivňuje prospěch a může vést k vyřazení.",
+        "Žáci v technických oborech - výuka zde používá méně interaktivních metod a žáci dosahují horších průměrů (kolem 3,00).",
+        "Žáci s jazykovou bariérou - 15 z 18 žáků s odlišným mateřským jazykem má různě velkou jazykovou bariéru."
+      ],
+      "plain_czech_summary": "Střední odborné učiliště v Slaném je stabilní školou s dobrými praktickými podmínkami a silnými vazbami na zaměstnavatele. Žáci jsou úspěšní u závěrečných zkoušek a získávají kvalitní odborné dovednosti. Škola investuje do vybavení a má rozšířené poradenské služby. Hlavní problémy jsou vysoká absence žáků, rostoucí podíl nekvalifikovaných učitelů a méně interaktivní výuka v technických oborech. Škola je vhodná pro prakticky zaměřené žáky, ale vyžaduje aktivní přístup k docházce."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilní úspěšnost",
+        "key_numbers": [
+          "Téměř 100 % žáků 3. ročníku konalo závěrečnou zkoušku",
+          "Průměr známek u závěrečných zkoušek: 2,30–3,50",
+          "Nejlepší výsledky: obor Cukrář, nejhorší: obor Truhlář"
+        ],
+        "evidence": "Téměř všichni žáci, kteří navštěvovali 3. ročník, zkoušku konali a s výjimkou jednotlivce také uspěli."
+      },
+      "absence": {
+        "trend": "Vysoká a problematická",
+        "key_numbers": [
+          "Průměrně 200 hodin absence na žáka za školní rok",
+          "Neomluvená absence: průměrně 1,37 hodin na žáka za rok",
+          "Absence se podílí na horších průběžných výsledcích"
+        ],
+        "evidence": "Zvýšená absence, která byla vysoká a pohybovala se v obou hodnocených letech kolem 200 hodin na žáka za školní rok."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s výchovnou poradkyní, kariérní poradkyní, školním psychologem a metodikem prevence",
+        "Systém doučování a individuálních konzultací pro žáky ohrožené školním neúspěchem",
+        "Adaptační kurzy a prevence rizikového chování ve spolupráci s odbornými organizacemi"
+      ],
+      "safety_climate": [
+        "Dodržování pravidel dobrého chování bylo patrné v hospitované výuce i o přestávkách",
+        "Žáci jsou důsledně vedeni k dodržování pořádku, hygienických a bezpečnostních zásad",
+        "Zaznamenány problémy s nevhodným chováním ke spolužákům, která řeší ŠPP individuálně"
+      ],
+      "partnerships_practice": [
+        "Partnerství se smluvními pracovišti pro odborný výcvik od 2. ročníku",
+        "Spolupráce s obdobně zaměřenými školami a profesními organizacemi",
+        "Zapojení odborníků z praxe do výuky formou přednášek a exkurzí"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však poměrně dlouhé a obsahují úřednickou terminologii.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaký je konkrétní plán na snížení absence - pouze uvádí, že se jí věnuje pozornost.",
+        "Není jasné, jak dlouho trvá doplňování kvalifikace u nekvalifikovaných učitelů a jaké je jejich procento.",
+        "Rozdíl mezi průběžným hodnocením (1,9) a závěrečnými zkouškami (2,30–3,50) není plně vysvětlen."
+      ]
+    }
+  }
+}

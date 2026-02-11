@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600013685_2024-01-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:29:05.178317+00:00",
+  "run_finished_utc": "2026-02-09T16:29:35.261578+00:00",
+  "raw_file": "SOS_600013685_2024-01-19.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600013685_2024-01-19",
+    "school_profile": {
+      "school_type": "Střední škola uměleckomanažerská, s.r.o. – soukromá škola s denní formou studia",
+      "inspection_period": "19. 1. 2024 – 23. 1. 2024",
+      "school_change_summary": "Nárůst počtu žáků o 10 % na 259 studentů ve 12 třídách. Částečná obměna pedagogického sboru. Průběžné zlepšování materiálního vybavení pro odbornou výuku."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Pestrá umělecká nabídka",
+          "detail": "Žáci si mohou vybrat z různých uměleckých specializací a rozvíjet svůj talent v ateliérech fotografie, dramatiky, hudby, filmové tvorby a dalších.",
+          "evidence": "Pestrá vzdělávací nabídka umožňuje žákům výběr studia různého uměleckého zaměření a rozvoj jejich specifického talentu"
+        },
+        {
+          "tag": "Moderní digitální výuka",
+          "detail": "Učitelé kvalitně využívají digitální technologie a software, což zvyšuje atraktivitu výuky a připravuje žáky na moderní pracovní trh.",
+          "evidence": "Účelná a efektivní podpora digitálních kompetencí napříč celým vzdělávacím procesem napomáhá uplatnění absolventů"
+        },
+        {
+          "tag": "Kvalitní praktická příprava",
+          "detail": "Vybavení ateliérů odpovídá nejmodernějším trendům v oboru, výuka je zaměřena na praktické dovednosti a reálné projekty.",
+          "evidence": "Vybavení je na vysoké úrovni v oblasti moderních pomůcek, jednotlivé ateliéry odpovídají nejmodernějším trendům v oboru"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence žáků",
+          "detail": "Některé třídy mají výrazně vyšší absenci (průměrně 189 hodin na žáka za rok), což vede k předčasnému ukončování vzdělávání u zhruba 8 % žáků.",
+          "evidence": "Absence žáků je v některých třídách poměrně vysoká. Z důvodu vysoké absence dochází k předčasnému ukončování vzdělávání u zhruba 8 % žáků"
+        },
+        {
+          "tag": "Slabá poradenská podpora",
+          "detail": "Výchovná poradkyně a metodička prevence nemají potřebnou kvalifikaci, poradenské služby nejsou snadno dostupné a chybí konzultační hodiny pedagogů.",
+          "evidence": "Výchovná poradkyně ani metodička prevence nezískaly potřebnou kvalifikaci. Chyběla konkrétní podpora ve formě konzultačních hodin všech pedagogů"
+        },
+        {
+          "tag": "Nižší podíl vyznamenáných žáků",
+          "detail": "Jen 36,49 % žáků prospělo s vyznamenáním, což je nižší než průměr. Řada žáků zůstává neklasifikována (průměrně 13,88 % za pololetí).",
+          "evidence": "S vyznamenáním v uplynulých třech letech prospělo v průměru jen 36,49 % žáků. Řada žáků je v každém pololetí neklasifikována"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a co nabízí těm, kteří mají problémy s docházkou?",
+        "Jaké jsou konkrétní konzultační hodiny a jak se k nim žáci dostanou, když mají problémy s učivem?",
+        "Jak se škola podílí na umístění absolventů na trhu práce v oblasti managementu kultury?"
+      ],
+      "who_school_fits": [
+        "Talentovaní žáci se zájmem o umění, design, film, fotografii nebo hudbu, kteří chtějí kvalitní praktickou přípravu",
+        "Žáci, kteří se lépe učí v tvůrčím prostředí s moderní technikou a digitálními nástroji",
+        "Studenti zainteresovaní v oborech Ekonomika a podnikání nebo Multimediální tvorba s jasným cílem v kulturním průmyslu"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k vyšší absenci – škola má problémy s jejím řešením a absence vede k vyřazení ze studia",
+        "Studenti, kteří potřebují intenzivní individuální poradenství – poradenské služby nejsou dostatečně rozvinuté",
+        "Žáci s nižšími výsledky – systém prevence školního neúspěchu funguje jen částečně"
+      ],
+      "plain_czech_summary": "Střední škola uměleckomanažerská je moderní soukromá škola se silným zaměřením na praktickou uměleckou přípravu. Nabízí kvalitní vybavení, digitální technologie a pestrý výběr uměleckých oborů. Učitelé jsou angažovaní a výuka je tvůrčí. Hlavní problémy jsou vysoká absence některých žáků, slabá poradenská podpora a nižší podíl vyznamenáných studentů. Škola se hodí pro talentované umělce, ale méně pro žáky, kteří potřebují intenzivní podporu."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě vyrovnaný s výjimkou oboru Multimediální tvorba v roce 2023",
+        "key_numbers": [
+          "Obor Multimediální tvorba 2023: hrubá neúspěšnost 14,8 %",
+          "Obor Ekonomika a podnikání: hrubá neúspěšnost 0–6,3 %",
+          "Průměrně 36,49 % žáků prospělo s vyznamenáním za poslední 3 roky"
+        ],
+        "evidence": "Vyšší hrubou neúspěšnost měli žáci oboru Multimediální tvorba v roce 2023 (14,8 %). V oboru Ekonomika a podnikání byla dlouhodobě hrubá neúspěšnost nízká"
+      },
+      "absence": {
+        "trend": "Výrazně zvýšená po ukončení distanční výuky, v některých třídách poměrně vysoká",
+        "key_numbers": [
+          "Průměrně 189 hodin na žáka za školní rok 2022/2023",
+          "Neomluvená absence: cca 1 % z celkové absence",
+          "Zhruba 8 % žáků ukončuje vzdělávání předčasně kvůli absenci"
+        ],
+        "evidence": "Po ukončení distanční výuky se výrazně zvýšila. Ve školním roce 2022/2023 činila průměrně 189 hodin na žáka za školní rok"
+      },
+      "support_services": [
+        "Výchovná poradkyně administruje dokumentaci žáků s podpůrnými opatřeními a participuje na tvorbě individuálních vzdělávacích plánů",
+        "Metodička prevence vytvořila preventivní strategii pro rizikové chování",
+        "Doučování a individuální konzultace pro žáky ohrozené školní neúspěšností",
+        "Studentský senát se schází dvakrát za pololetí a podává podněty vedení"
+      ],
+      "safety_climate": [
+        "Sledovaná výuka se vyznačovala klidnou pracovní atmosférou, žáci dodržovali nastavená pravidla",
+        "Vztahy mezi žáky a pedagogy charakterizovány vzájemnou důvěrou",
+        "Třídní učitelé realizují třídnické hodiny zaměřené na práci se vztahy",
+        "Škola využívá systém výchovných opatření – pochvaly, motivační odměny, kázeňská opatření"
+      ],
+      "partnerships_practice": [
+        "Odborná spolupráce s Českou televizí Brno, divadly Radost a Studio Marta",
+        "Spolupráce s JAMU, hudebními kluby METRO a SONO",
+        "Tradiční Start film fest v Bystřici nad Pernštejnem s účastí žáků",
+        "Poznávací zájezdy do zahraničí, tvůrčí víkendy s profesionálním vybavením"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a srozumitelná, obsahuje konkrétní příklady a čísla. Slabší je pouze v některých pasážích s odborným jazykem inspekce, ale pro rodiče jsou klíčové informace jasné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní opatření škola přijala na řešení absence – pouze popisuje problém",
+        "Není jasné, jak dlouho trvá kvalifikace výchovné poradkyně a metodičky prevence – zda je to plánováno",
+        "Chybí informace o počtu žáků, kteří opustili školu kvůli absenci, a jejich podíl na celkovém počtu"
+      ]
+    }
+  }
+}

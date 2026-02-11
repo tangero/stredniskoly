@@ -1,0 +1,31 @@
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-09T12:13:24.462089+00:00",
+  "run_finished_utc": "2026-02-09T12:13:48.764469+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOS_600171361_2025-11-12\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Tvrzení „pro žáky, kteří potřebují … náročnější teoretickou přípravu“ není ve zprávě výslovně doloženo (zpráva kritizuje individualizaci/diferenciaci a formativní hodnocení, ale neříká, že teoretická příprava je obecně málo náročná).\",\n    \"Formulace „skvělé kontakty na praxi“ je hodnotící a není ve zdroji takto přímo podložená (zdroj mluví o propojení s praxí a spolupráci s partnery, ale nehodnotí je jako „skvělé“).\",\n    \"Neúplnost vůči rodičovskému obrazu: chybí explicitní zmínka, že v profilové části maturity škola dosahovala lepších výsledků než celorepublikový průměr, a že závěrečné zkoušky (učební obory) jsou celkově na dobré úrovni.\",\n    \"Kandidát místy používá silně emotivní kvalifikace („alarmující“), které ve zdroji nejsou (zdroj uvádí sestupný trend a horší výsledky než průměr, bez tohoto hodnotícího rámce).\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené a číselně konkrétní shrnutí zhoršování výsledků ve společné části maturit (Podnikání, Hotelnictví, Kosmetické služby) včetně hodnot neúspěšnosti, které odpovídají zdroji.\",\n    \"Dobře trefené hlavní slabiny teoretické výuky: ojedinělé formativní hodnocení, chybějící sebehodnocení a vzájemné hodnocení, omezená podpora kritického myšlení a práce se zdroji, nedostatečná diferenciace.\",\n    \"Správně vyzdvižené silné stránky ze závěrů inspekce: spolupráce s tuzemskými i zahraničními partnery a modernizace materiálně-technického zázemí (nová IT učebna, kadeřnický salón).\",\n    \"Pro rodiče prakticky použitelná část „otázky na den otevřených dveří“ je v souladu s identifikovanými problémy inspekce.\"\n  ],\n  \"one_line_verdict\": \"Shrnutí je převážně věrné a pro rodiče užitečné, jen místy přidává hodnotící/odvozená tvrzení bez přímé opory a opomíjí některé důležité pozitivní kontexty (profilová maturita, závěrečné zkoušky).\"\n}",
+  "judge_output": {
+    "report_id": "SOS_600171361_2025-11-12",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "Tvrzení „pro žáky, kteří potřebují … náročnější teoretickou přípravu“ není ve zprávě výslovně doloženo (zpráva kritizuje individualizaci/diferenciaci a formativní hodnocení, ale neříká, že teoretická příprava je obecně málo náročná).",
+      "Formulace „skvělé kontakty na praxi“ je hodnotící a není ve zdroji takto přímo podložená (zdroj mluví o propojení s praxí a spolupráci s partnery, ale nehodnotí je jako „skvělé“).",
+      "Neúplnost vůči rodičovskému obrazu: chybí explicitní zmínka, že v profilové části maturity škola dosahovala lepších výsledků než celorepublikový průměr, a že závěrečné zkoušky (učební obory) jsou celkově na dobré úrovni.",
+      "Kandidát místy používá silně emotivní kvalifikace („alarmující“), které ve zdroji nejsou (zdroj uvádí sestupný trend a horší výsledky než průměr, bez tohoto hodnotícího rámce)."
+    ],
+    "best_points": [
+      "Správně zachycené a číselně konkrétní shrnutí zhoršování výsledků ve společné části maturit (Podnikání, Hotelnictví, Kosmetické služby) včetně hodnot neúspěšnosti, které odpovídají zdroji.",
+      "Dobře trefené hlavní slabiny teoretické výuky: ojedinělé formativní hodnocení, chybějící sebehodnocení a vzájemné hodnocení, omezená podpora kritického myšlení a práce se zdroji, nedostatečná diferenciace.",
+      "Správně vyzdvižené silné stránky ze závěrů inspekce: spolupráce s tuzemskými i zahraničními partnery a modernizace materiálně-technického zázemí (nová IT učebna, kadeřnický salón).",
+      "Pro rodiče prakticky použitelná část „otázky na den otevřených dveří“ je v souladu s identifikovanými problémy inspekce."
+    ],
+    "one_line_verdict": "Shrnutí je převážně věrné a pro rodiče užitečné, jen místy přidává hodnotící/odvozená tvrzení bez přímé opory a opomíjí některé důležité pozitivní kontexty (profilová maturita, závěrečné zkoušky)."
+  }
+}

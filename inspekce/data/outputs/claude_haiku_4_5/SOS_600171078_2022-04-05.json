@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600171078_2022-04-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:05:20.233359+00:00",
+  "run_finished_utc": "2026-02-09T17:05:45.519937+00:00",
+  "raw_file": "SOS_600171078_2022-04-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600171078_2022-04-05",
+    "school_profile": {
+      "school_type": "Střední odborná škola s pěti obory: dva zaměřené na informatiku a ekonomiku, tři uměleckořemeslné obory (kovy, dřevo, kámen, keramika) a jeden gastronomický obor",
+      "inspection_period": "5. 4. 2022 – 8. 4. 2022",
+      "school_change_summary": "Změna vedení školy. Postupné zlepšování materiálních podmínek, zvláště v oblasti odborného vzdělávání. Škola je členem Sítě přidružených škol UNESCO od roku 2005."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výsledky maturit a zkoušek",
+          "detail": "Maturitní výsledky se zlepšují a překonávají průměr České republiky. Všichni žáci učebního oboru uspěli.",
+          "evidence": "Dosahované výsledky loňského roku byly lepší v porovnání s průměrem ostatních škol v ČR."
+        },
+        {
+          "tag": "Mezinárodní mobilita a projekty",
+          "detail": "Žáci se zapojují do zahraničních stáží a projektů Erasmus+ v Evropě, což rozvíjí jejich jazykové a sociální kompetence.",
+          "evidence": "Cíleně podporuje evropskou a mezinárodní mobilitu žáků, stáže v Slovinsku, Litvě, Maltě a Portugalsku."
+        },
+        {
+          "tag": "Bezpečné a podporující prostředí",
+          "detail": "Příznivá pracovní atmosféra bez kázeňských problémů, dobré podmínky pro poradenské služby a podporu žáků v tísni.",
+          "evidence": "Pozitivní pracovní atmosféra, žáci dodržují pravidla, výchovná poradkyně poskytuje systematickou péči o žáky se speciálními potřebami."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní formy výuky",
+          "detail": "V některých hodinách dominuje frontální výuka s výkladem učitele bez dostatečného zapojení žáků do aktivního učení.",
+          "evidence": "Frontální forma výuky neposkytovala dostatek podnětů pro aktivní zapojení žáků, minimálně byly zařazovány kooperativní metody."
+        },
+        {
+          "tag": "Chybějící diferenciace",
+          "detail": "Učitelé málo přizpůsobují výuku individuálním potřebám a schopnostem jednotlivých žáků.",
+          "evidence": "Obsahová diferenciace výuky vzhledem k individuálním vzdělávacím potřebám byla uplatněna velmi zřídka."
+        },
+        {
+          "tag": "Nekompletní zpětná vazba z hospitací",
+          "detail": "Vedení školy neposkytuje všem učitelům dostatečně efektivní souhrnné informace o zjištěních z hospitací.",
+          "evidence": "Souhrnná zpětná vazba pedagogům o zjištěních z hospitací nebyla poskytována dostatečně efektivně."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky, kteří mají potíže s učením? Jaké jsou dostupné konzultace a doučování?",
+        "Jaké jsou zkušenosti absolventů s uplatněním na trhu práce? Máte kontakty na firmy, kde se žáci učí?",
+        "Jak probíhá příprava na maturitní zkoušky a jaké jsou výsledky v jednotlivých oborech?"
+      ],
+      "who_school_fits": [
+        "Žáci zajímající se o praktické obory (řemesla, gastronomie) s moderním vybavením a reálnou praxí u partnerských firem",
+        "Studenti s ambicí na mezinárodní zkušenosti a jazykový rozvoj díky projektům Erasmus+ a zahraničním stážím",
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje podporu v rozsahu 1.–4. stupně"
+      ],
+      "who_should_be_cautious": [
+        "Žáci preferující aktivní, interaktivní výuku – v některých hodinách převažuje pasivní frontální forma",
+        "Studenti vyžadující individuální přístup – diferenciace výuky není dosud dostatečně rozvinuta",
+        "Žáci, kteří potřebují jasné shrnutí a vyhodnocení cílů – závěry hodin nejsou vždy dostatečně strukturovány"
+      ],
+      "plain_czech_summary": "Střední odborná škola v Luhačovicích je stabilní, dobře vedená instituce s kvalitním pedagogickým sborem. Silnými stránkami jsou zlepšující se výsledky maturit, mezinárodní projekty a bezpečné prostředí. Škola systematicky podporuje žáky se speciálními potřebami. Rezervy jsou v aktivizaci výuky – někdy dominuje pasivní poslech místo zapojení žáků. Učitelé by měli více pracovat s individuálními rozdíly mezi žáky a lépe strukturovat závěry hodin. Vedení by mělo lépe komunikovat poznatky z hospitací všem pedagogům."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se",
+        "key_numbers": [
+          "Výsledky loňského roku lepší než průměr ČR",
+          "Všichni žáci učebního oboru uspěli v řádném termínu",
+          "Srovnatelně velmi dobrá úroveň v posledních třech letech"
+        ],
+        "evidence": "Dosahované výsledky žáků při ukončování vzdělávání v loňském roce byly lepší v porovnání s průměrnou úrovní výsledků ostatních škol."
+      },
+      "absence": {
+        "trend": "Systematicky sledována a řešena",
+        "key_numbers": [
+          "Zvýšená pozornost věnována žákům ohroženým školním neúspěchem",
+          "Relativně krátký čas na poskytnutí vhodné pomoci"
+        ],
+        "evidence": "Škola důsledně sleduje absenci žáků, systematicky spolupracuje se zákonnými zástupci, monitoruje potřeby ohrožených žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně poskytuje systematickou péči o 37 žáků se speciálními vzdělávacími potřebami",
+        "Individuální a skupinové konzultace (doučování) pro žáky ohrožené školním neúspěchem",
+        "Metodická pomoc pedagogům od poradenských pracovníků",
+        "Preventivní aktivity a programy zaměřené na efektivní učení"
+      ],
+      "safety_climate": [
+        "Příznivá pracovní atmosféra bez kázeňských problémů",
+        "Žáci mají osvojená pravidla práce a spolupracují s vyučujícími",
+        "Bezpečné a příjemné prostředí pro vzdělávání systematicky zajišťováno",
+        "Domov mládeže s vhodně upravenými společnými prostory"
+      ],
+      "partnerships_practice": [
+        "Praktické vyučování probíhá u smluvních partnerů – firem v regionu",
+        "Pravidelné odborné exkurze a stáže pro kontakt s reálným prostředím výroby",
+        "Mezinárodní projekt Erasmus+ s přínosem pro rozvoj klíčových kompetencí",
+        "Spolupráce s občanskými sdruženími a neziskovými organizacemi",
+        "Členství v Síti přidružených škol UNESCO od roku 2005"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady. Silné a slabé stránky jsou jasně identifikovány. Některé pasáže jsou však delší a obsahují více odborné terminologie, která může být pro laické rodiče méně přístupná.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje konkrétní čísla o počtu žáků v jednotlivých oborech ani podrobné statistiky absence",
+        "Nejsou uvedeny konkrétní jména firem, kde probíhá praktické vyučování",
+        "Chybí informace o počtu učitelů a jejich kvalifikaci v jednotlivých oborech"
+      ]
+    }
+  }
+}

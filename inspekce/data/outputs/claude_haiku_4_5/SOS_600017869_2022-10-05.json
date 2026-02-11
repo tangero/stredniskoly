@@ -1,0 +1,111 @@
+{
+  "report_id": "SOS_600017869_2022-10-05",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:59:33.947667+00:00",
+  "run_finished_utc": "2026-02-09T16:59:58.489682+00:00",
+  "raw_file": "SOS_600017869_2022-10-05.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017869_2022-10-05",
+    "school_profile": {
+      "school_type": "Střední průmyslová škola stavební s obory Stavebnictví a Grafický design",
+      "inspection_period": "5. až 7. října 2022",
+      "school_change_summary": "Od srpna 2021 nový ředitel. Od 2016/17 vyučován obor Grafický design. Zlepšily se materiální podmínky a spolupráce se základními školami."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Příjemné školní klima",
+          "detail": "Pedagogové komunikují se žáky partnersky a s respektem, což pozitivně ovlivňuje kvalitu vzdělávání.",
+          "evidence": "Příznivé školní klima s partnerskou komunikací pedagogů založenou na respektu vůči základním potřebám žáků."
+        },
+        {
+          "tag": "Praktická příprava a spolupráce",
+          "detail": "Škola efektivně spolupracuje s partnery a zapojuje se do projektů, což zlepšuje materiální podmínky a zajišťuje kvalitní odborné praxe.",
+          "evidence": "Efektivní spolupráce s vnějšími partnery a systematické zapojování do projektů přispívá k rozvoji klíčových kompetencí."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola identifikuje žáky v riziku a nabízí jim doučování a individuální konzultace, které žáci aktivně využívají.",
+          "evidence": "Škola identifikuje žáky s rizikem školního neúspěchu a zajišťuje jim pomoc formou doučování."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Málo aktivní vyučování",
+          "detail": "Převažuje frontální výuka bez dostatečného využití skupinové práce, her a aktivizačních metod.",
+          "evidence": "V části hodin převládala frontální výuka bez častějšího využití metod vedoucích k aktivizaci žáků."
+        },
+        {
+          "tag": "Slabá podpora speciálních potřeb",
+          "detail": "Některé vyučovací hodiny postrádají individuální práci se žáky se speciálními vzdělávacími potřebami.",
+          "evidence": "Nedostatkem některých vyučovacích hodin byla absence individuální práce s žáky se speciálními vzdělávacími potřebami."
+        },
+        {
+          "tag": "Chybí zpětná vazba od žáků",
+          "detail": "V závěrech hodin chybí sebehodnocení žáků a jejich zhodnocení průběhu vyučování.",
+          "evidence": "V závěrech hodnocených vyučovacích hodin bylo zařazováno spíše formální zhodnocení ze strany pedagoga."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje žáky se speciálními vzdělávacími potřebami během běžné výuky?",
+        "Jaké jsou možnosti doučování a individuálních konzultací pro žáky, kteří zaostávají?",
+        "Jak se škola snaží motivovat žáky k aktivnější účasti na hodinách?"
+      ],
+      "who_school_fits": [
+        "Žáci, kteří si cení praktické výuky a přímé aplikace znalostí v dílnách a na stavbách",
+        "Studenti, kterým vyhovuje přátelská atmosféra a partnerský přístup pedagogů",
+        "Žáci, kteří potřebují individuální podporu a doučování – škola je aktivně nabízí"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří se učí lépe prostřednictvím skupinové práce a interaktivních metod – frontální výuka zde převažuje",
+        "Studenti se speciálními vzdělávacími potřebami – individuální podpora není v hodinách konzistentní",
+        "Žáci, kteří potřebují jasnou zpětnou vazbu o svém pokroku – chybí sebehodnocení a zhodnocení od žáků"
+      ],
+      "plain_czech_summary": "SPŠ stavební v Lipníku je škola s příjemným klimatem a dobrými praktickými možnostmi. Pedagogové jsou vstřícní a škola nabízí doučování pro slabší žáky. Problém je, že výuka je často příliš frontální bez aktivnějšího zapojení studentů. Žáci se speciálními potřebami ne vždy dostávají dostatečnou individuální podporu. Chybí také zpětná vazba od samotných žáků o tom, jak se jim učilo. Škola by měla více experimentovat s skupinovou prací a aktivizačními metodami."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Neuvedeno v textu",
+        "key_numbers": [
+          "Neuvedeno"
+        ],
+        "evidence": "Zpráva neobsahuje konkrétní údaje o výsledcích maturit nebo jejich trendu."
+      },
+      "absence": {
+        "trend": "Aktivně řešeno",
+        "key_numbers": [
+          "Neuvedeno konkrétní číslo"
+        ],
+        "evidence": "Škola eliminuje negativní vliv absence důsledným řešením a přijímáním opatření ihned při zjištění problémů s docházkou."
+      },
+      "support_services": [
+        "Výchovná poradkyně zaměřená na integraci žáků se speciálními vzdělávacími potřebami",
+        "Školní metodik prevence spolupracující s ředitelem a třídními učiteli",
+        "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+        "Tematické besedy o závislostech, šikaně a poruchách příjmu potravy"
+      ],
+      "safety_climate": [
+        "Podmínky a pravidla pro bezpečnost jsou stanoveny ve vnitřních předpisech",
+        "Žáci jsou pravidelně seznamováni s bezpečnostními riziky ve škole i mimo ni",
+        "Školitel prevence koordinuje sportovní aktivity posilující vztahy s žáky"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s celou řadou sociálních partnerů, zejména s firmami a podnikateli",
+        "Praktické vyučování zajišťováno v partnerských organizacích",
+        "Aktivní zapojení do projektů zvyšujících zájem o polytechnické vzdělávání",
+        "Zintenzivněná spolupráce se základními školami"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní číselné údaje o výsledcích (prospěch, absence, maturita).",
+      "uncertainty_notes": [
+        "Zpráva neuvádí konkrétní procenta nebo počty žáků s jednotlivými problémy – pouze kvalitativní popis",
+        "Není jasné, jak často se vyskytují zmíněné nedostatky (v 'části hodin' vs. 'všech hodinách')",
+        "Chybí srovnání s předchozí inspekční zprávou z roku 2014 – není vidět, zda se situace zlepšila či zhoršila"
+      ]
+    }
+  }
+}

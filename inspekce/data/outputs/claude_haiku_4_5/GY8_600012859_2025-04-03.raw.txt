@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "GY8_600012859_2025-04-03",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmiletého studia)",
+    "inspection_period": "3.–15. dubna 2025",
+    "school_change_summary": "Od poslední inspekce v roce 2019 se počet žáků zvýšil na 353 (kapacita naplněna na 92 %). Škola postupně zlepšila komunikaci mezi účastníky vzdělávání a investovala do rekonstrukcí budovy, bezpečnostních systémů a digitálního vybavení."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Téměř 60 % žáků má vyznamenání, všichni maturanti v posledních dvou letech uspěli, přibližně polovina s vyznamenáním.",
+        "evidence": "Školní rok 2023/2024: 60 % žáků s vyznamenáním, 100 % úspěšnost maturit."
+      },
+      {
+        "tag": "Kvalitní učitelé",
+        "detail": "Stabilní pedagogický sbor s téměř 100% odbornou kvalifikací a širokými odbornými znalostmi.",
+        "evidence": "Téměř stoprocentní odborná kvalifikovanost pedagogů s širokými odbornými znalostmi."
+      },
+      {
+        "tag": "Bohatá nabídka aktivit",
+        "detail": "Žáci se rozvíjejí v soutěžích, projektech, exkurzích a speciálních programech jako Sumec či DofE.",
+        "evidence": "Výborné výsledky v soutěžích, projekty Polička 1938, Příběhy našich sousedů, vrstevnický program."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá zpětná vazba v hodinách",
+        "detail": "Učitelé málo využívají závěry hodin k ověření, co si žáci skutečně osvojili.",
+        "evidence": "Chybějí funkční závěry hodin s cílenou zpětnou vazbou o pochopení učiva."
+      },
+      {
+        "tag": "Nedostatečná podpora nadaných žáků",
+        "detail": "Nadaní žáci nemají dostatek diferencovaných úloh odpovídajících jejich úrovni.",
+        "evidence": "Diferenciace náročnosti úloh zaznamenána jen ojediněle, studijní potenciál nadaných není dostatečně podporován."
+      },
+      {
+        "tag": "Pasivita žáků ve výuce",
+        "detail": "Frontální výuka někdy vede k pasivnímu přijímání informací bez hlubšího porozumění.",
+        "evidence": "Část žáků přijímá informace pasivně bez hlubšího porozumění souvislostem."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky v běžné výuce, ne jen v seminářích?",
+      "Jaké jsou plány na zlepšení zpětné vazby a sebehodnocení žáků v hodinách?",
+      "Jak se škola vypořádává s tím, aby všichni žáci měli dostatek prostoru pro aktivní participaci?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a motivací k učení",
+      "Nadaní žáci, kteří chtějí rozvíjet svůj potenciál v soutěžích a projektech",
+      "Žáci zajímající se o vysokoškolské vzdělání a kariérní růst"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální pozornosti a zpětné vazby v hodinách",
+      "Žáci s učebními potížemi, kteří by mohli mít problém s rychlejším tempem výuky",
+      "Žáci preferující interaktivní a skupinovou práci, kteří se cítí nekomfortně při frontální výuce"
+    ],
+    "plain_czech_summary": "Gymnázium v Poličce je kvalitní škola s výbornými výsledky maturit a vysokým podílem vyznamenáných žáků. Učitelé jsou kvalifikovaní a nabízejí bohatý program aktivit pro rozvoj nadání. Škola má však prostor na zlepšení: učitelé by měli více pracovat se zpětnou vazbou v hodinách, lépe podporovat nadané žáky diferencovanými úkoly a více zapojovat žáky do aktivní práce. Vhodná pro motivované žáky, kteří si chtějí připravit cestu na vysokou školu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborný – stabilně vysoké výsledky",
+      "key_numbers": [
+        "100 % úspěšnost v posledních dvou letech",
+        "Přibližně 50 % absolventů s vyznamenáním",
+        "Rostoucí počet žáků s certifikátem Cambridge English"
+      ],
+      "evidence": "Všichni maturující žáci vykonali zkoušky úspěšně, přibližně polovina s vyznamenáním."
+    },
+    "absence": {
+      "trend": "Nízká absence bez negativního vlivu na výsledky",
+      "key_numbers": [
+        "Absence spíše nižší",
+        "Nemá negativní vliv na výsledky vzdělávání"
+      ],
+      "evidence": "Absence žáků je spíše nižší a nemá negativní vliv na výsledky vzdělávání."
+    },
+    "support_services": [
+      "Školní psycholožka na částečný úvazek (zároveň asistentka pedagoga)",
+      "Výchovná poradkyně se specializačním studiem",
+      "Metodička prevence zajišťující preventivní programy",
+      "Vrstevnický program s proškolenými lektory",
+      "Podpůrná opatření pro 13 žáků, individuální vzdělávací plány pro 3 nadané žáky"
+    ],
+    "safety_climate": [
+      "Bezdotykový přístupový a evidenční systém pro bezpečnost",
+      "Pozitivní a otevřené klima ve třídách",
+      "Adaptační kurzy pro první ročníky",
+      "Školní výlety, lyžařské a vodácké kurzy pro budování vztahů",
+      "Výchovná opatření udílena smysluplně s převahou pochval"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s vysokými školami a návštěvy",
+      "Projekt Synapse I pro práci s nadanými žáky",
+      "Studentská odborná činnost ve spolupráci s firmou Contipro Dolní Dobrouč",
+      "Erasmus+ program",
+      "Projekt DofE (Duke of Edinburgh)",
+      "Podpora města Polička na rozvoj nadání"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady. Silné a slabé stránky jsou jasně identifikovány. Doporučení jsou praktická. Mírně snižuje skóre administrativní jazyk v některých pasážích.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků v jednotlivých třídách ani podrobné statistiky absence.",
+      "Chybí konkrétní čísla o počtu žáků s podpůrnými opatřeními v jednotlivých kategoriích.",
+      "Není jasné, jak přesně se měří 'nízká míra zpětné vazby' – nejde o konkrétní procenta."
+    ]
+  }
+}
+```

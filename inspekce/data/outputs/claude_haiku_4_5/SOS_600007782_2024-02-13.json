@@ -1,0 +1,113 @@
+{
+  "report_id": "SOS_600007782_2024-02-13",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:26:11.006578+00:00",
+  "run_finished_utc": "2026-02-09T16:26:36.234858+00:00",
+  "raw_file": "SOS_600007782_2024-02-13.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600007782_2024-02-13",
+    "school_profile": {
+      "school_type": "Střední odborná škola (soukromá, s.r.o.) s maturitními obory (Mechanik seřizovač, Sociální činnost, Podnikání) a obory s výučním listem",
+      "inspection_period": "13. února až 16. února 2024 a 9. března 2024",
+      "school_change_summary": "Nová ředitelka od ledna 2023 zavádí reformy. Počet žáků v denní formě vzrostl o 38 % od poslední inspekce. Škola utlumuje dálkovou a distanční formu. Absence žáků se snižuje. Hlavní problém: vysoká neúspěšnost v maturitní zkoušce, zejména v dálkové a distanční formě."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Nové vedení s jasnou vizi",
+          "detail": "Ředitelka od ledna 2023 systematicky řeší problémy na základě analýzy slabých stránek a přijímá konkrétní opatření.",
+          "evidence": "Koncepce rozvoje školy vychází z kvalitní analýzy, vedení si je vědomo příčin neúspěšnosti"
+        },
+        {
+          "tag": "Zlepšující se docházka",
+          "detail": "Absence žáků v maturitních oborech klesá a neomluvená absence se snížila z 3 h na 0,4 h na žáka.",
+          "evidence": "Průměrná absence 2022/2023: 147 h na žáka, neomluvená absence 0,4 h (2018/2019 byla 3 h)"
+        },
+        {
+          "tag": "Kvalitní výuka cizích jazyků",
+          "detail": "Angličtina a němčina jsou vyučovány s důrazem na komunikaci, digitální technologie a přípravu na maturitu.",
+          "evidence": "Pozitivní pracovní atmosféra, účelné využití online platforem, vedení k obsahově náročnému projevu"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká neúspěšnost v maturitě",
+          "detail": "V dálkové a distanční formě selhává 35–63 % žáků, v některých oborech až 100 % v distanční formě.",
+          "evidence": "Sociální činnost dálka 2023: 58,3 % neúspěšnosti; Mechanik seřizovač 2023: 50 %; Podnikání distanční 2020: 100 %"
+        },
+        {
+          "tag": "Nestabilní pedagogický sbor",
+          "detail": "Sedm z 16 učitelů předmětů maturitní zkoušky nemá odbornou kvalifikaci, někteří si ji teprve doplňují.",
+          "evidence": "Část výuky zajištěna učiteli bez příslušné odborné kvalifikace či předmětové specializace"
+        },
+        {
+          "tag": "Slabá příprava na maturitu v průběhu studia",
+          "detail": "Žáci dostávají v průběhu studia lepší známky, než jaké dosahují v maturitní zkoušce – chybí reálná zpětná vazba.",
+          "evidence": "Relativně dobré hodnocení v průběhu, ale následně neúspěch v MZ; systém hodnocení neposkytuje adekvátní zpětnou vazbu"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně se škola připravuje na řešení vysoké neúspěšnosti v maturitní zkoušce, zejména v dálkové formě?",
+        "Jaký je plán na stabilizaci pedagogického sboru a získání učitelů s odbornou kvalifikací?",
+        "Jak se liší kvalita výuky mezi denní a dálkovou formou a co se dělá na zlepšení dálkové formy?"
+      ],
+      "who_school_fits": [
+        "Žáci v denní formě vzdělávání s dobrým prospěchem a motivací – zde jsou výsledky lepší a blíží se průměru ČR",
+        "Studenti cizích jazyků – výuka angličtiny a němčiny je kvalitní s důrazem na komunikaci a praktické dovednosti",
+        "Žáci, kteří potřebují individuální přístup – škola nabízí konzultace a systém 'maturit nanečisto' i pro nižší ročníky"
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o dálkovou nebo distanční formu – zde je neúspěšnost velmi vysoká (35–63 %), škola tyto formy utlumuje",
+        "Žáci se slabším prospěchem – přijímací kritéria se zpřísnila, minimální hranice úspěšnosti se zvýšila",
+        "Studenti oboru Mechanik seřizovač – v posledních dvou letech 50% neúspěšnost v maturitě"
+      ],
+      "plain_czech_summary": "Střední odborná škola v Čelákovicích se snaží zlepšit své výsledky pod vedením nové ředitelky od ledna 2023. Pozitiva: absence žáků klesá, výuka cizích jazyků je kvalitní, škola si uvědomuje problémy. Negativa: vysoká neúspěšnost v maturitní zkoušce (zejména v dálkové formě až 63 %), učitelé bez odborné kvalifikace, žáci nedostávají reálnou zpětnou vazbu o připravenosti. Denní forma je bezpečnější volbou než dálková či distanční. Škola se snaží, ale výsledky se zatím neprojevily."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Vysoká neúspěšnost, zejména v dálkové a distanční formě; denní forma se postupně zlepšuje",
+        "key_numbers": [
+          "Sociální činnost denní 2023: 11,11 % neúspěšnosti (průměr ČR 10,9 %)",
+          "Sociální činnost dálka 2023: 58,3 % neúspěšnosti (průměr ČR 10,9 %)",
+          "Mechanik seřizovač 2023: 50 % neúspěšnosti v obou formách (průměr ČR 14,8 %)"
+        ],
+        "evidence": "V denní formě 17,5 % neúspěšnosti, v dálkové a distanční 35 % neúspěšnosti; v dálkové/distanční formě 10 žáků nekonalo zkoušku vůbec"
+      },
+      "absence": {
+        "trend": "Příznivý klesající trend v maturitních oborech",
+        "key_numbers": [
+          "2018/2019: 173 h na žáka",
+          "2022/2023: 147 h na žáka",
+          "Neomluvená absence 2022/2023: 0,4 h na žáka (2018/2019: 3 h)"
+        ],
+        "evidence": "Důsledná práce třídních učitelů a spolupráce se zákonnými zástupci; absence vyžaduje nadále zvýšenou pozornost"
+      },
+      "support_services": [
+        "Poradenské služby zajišťuje pouze ředitelka – personální posílení je nezbytné",
+        "Systém 'maturit nanečisto' nově určen i žákům nižšího ročníku",
+        "Konzultace nabízené učiteli předmětů společné části maturitní zkoušky"
+      ],
+      "safety_climate": [
+        "Pozitivní třídní klima v maturitních oborech – převaha pochval nad kázeňskými opatřeními",
+        "Adaptační pobyty pro žáky 1. ročníku a tematické přednášky v rámci primární prevence",
+        "Zlepšující se vztahy v nově vznikajících kolektivech a komunikace mezi žáky a pedagogy"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se zřizovatelem TOSBOHEMIA, a.s. – garantuje materiální a finanční rozvoj",
+        "Spolupráce se sociálními partnery na realizaci přednášek a besed",
+        "Aktivnější role pedagogické rady a předmětových komisí od školního roku 2023/2024"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a fakticky bohatá, ale místy technická. Hlavní zjištění jsou jasná: vysoká neúspěšnost v dálkové/distanční formě, nestabilní sbor, slabá zpětná vazba. Pro rodiče jsou nejdůležitější údaje o maturitě a kvalitě výuky dobře identifikovatelné.",
+      "uncertainty_notes": [
+        "Počty žáků v jednotlivých oborech jsou malé (zejména v dálkové formě), takže jednotlivé výsledky mohou být zkreslené",
+        "Dopad opatření nové ředitelky se teprve projevuje – dlouhodobý trend není jasný",
+        "Zpráva se zaměřuje na maturitní obory; kvalita výuky v oborech s výučním listem není podrobně popsána"
+      ]
+    }
+  }
+}

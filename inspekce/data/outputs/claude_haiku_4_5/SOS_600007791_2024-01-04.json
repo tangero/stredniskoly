@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600007791_2024-01-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:30:33.752802+00:00",
+  "run_finished_utc": "2026-02-09T16:30:58.124171+00:00",
+  "raw_file": "SOS_600007791_2024-01-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600007791_2024-01-04",
+    "school_profile": {
+      "school_type": "Střední odborná škola a Střední odborné učiliště (SOŠ a SOU)",
+      "inspection_period": "4.–5. a 8.–9. ledna 2024",
+      "school_change_summary": "Od září 2019 rozšířila nabídku o čtyřleté maturitní obory. Počet žáků se téměř ztrojnásobil na 217 (naplněnost 72 %). Pedagogický sbor se zdvojnásobil na 26 pracovníků."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Kvalitní praktická příprava",
+          "detail": "Odborný výcvik je vedený zkušenými specialisty, žáci získávají reálné profesní dovednosti s motivací a individuálním přístupem.",
+          "evidence": "Sledovaný odborný výcvik byl kvalitně veden učiteli, žáci aplikovali poznatky a byli pozitivně motivováni."
+        },
+        {
+          "tag": "Moderní vybavení a investice",
+          "detail": "Škola aktivně získává finanční prostředky na obnovu prostor, digitální techniku a doučování ohrožených žáků.",
+          "evidence": "Díky projektům a spolupráci se zřizovatelem jsou získávány finanční prostředky na vybavení a doučování."
+        },
+        {
+          "tag": "Silné partnerství s praxí",
+          "detail": "Spolupráce s profesními organizacemi a smluvními pracovišti zajišťuje kvalitní praktické vzdělávání a uplatnění absolventů.",
+          "evidence": "O absolventy školy je na trhu práce zájem, partnerské vztahy jsou velkým přínosem pro odbornou složku."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká absence a předčasné odchody",
+          "detail": "Žáci chybějí průměrně přes 280 hodin ročně, vysoký podíl neomluvené absence vede k mnoha kázeňským opatřením.",
+          "evidence": "Velmi vysoká absence činila za všechny obory průměrně přes 280 hodin na žáka za školní rok."
+        },
+        {
+          "tag": "Slabé výsledky u maturit",
+          "detail": "Nástavbový obor dosahuje dlouhodobě horších výsledků než průměr v republice, neúspěšnost činí až polovinu žáků.",
+          "evidence": "Hrubá neúspěšnost žáků u MZ činila zhruba polovinu ve školních letech 2021/2022 a 2022/2023."
+        },
+        {
+          "tag": "Málo aktivizující výuka",
+          "detail": "V teoretických předmětech chybí diferenciace, kooperativní formy, práce s informačními zdroji a formativní hodnocení.",
+          "evidence": "Ve výuce teoretických předmětů chyběla diferenciace požadavků a uplatňování metod aktivního učení."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola řeší vysokou absenci žáků a jaké má plány na její snížení?",
+        "Jaké jsou výsledky žáků v maturitních zkouškách a jak se liší mezi jednotlivými obory?",
+        "Jak se škola zaměřuje na individuální podporu žáků, kteří mají potíže s učením?"
+      ],
+      "who_school_fits": [
+        "Žáci s jasným zájmem o gastronomii nebo veřejnosprávní činnost, kteří oceňují praktickou výuku a kvalitní vybavení",
+        "Motivovaní žáci, kterým vyhovuje individuální přístup v odborném výcviku a spolupráce se skutečnými pracovišti",
+        "Žáci, kteří se chtějí rychle uplalit na trhu práce – o absolventy je zájem"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se sklonem k absencím – škola se nedaří účelně motivovat k řádné docházce",
+        "Žáci s potížemi v teoretických předmětech – výuka není dostatečně diferencovaná a aktivizující",
+        "Zájemci o maturitu v nástavbovém oboru – dlouhodobě slabé výsledky u maturitních zkoušek"
+      ],
+      "plain_czech_summary": "SOŠ a SOU v Jílové u Prahy je moderní škola se silným zaměřením na praktickou přípravu v gastronomii a veřejné správě. Vybavení je dobré, partnerství s pracovišti funguje. Hlavní problémy: žáci často chybějí (přes 280 hodin ročně), výsledky u maturit jsou slabé, zejména v nástavbovém oboru. Teoretická výuka není dostatečně aktivizující a individualizovaná. Škola potřebuje zlepšit motivaci žáků k docházce a zkvalitňovat vyučovací metody."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Dlouhodobě slabý, bez zlepšení",
+        "key_numbers": [
+          "Nástavbový obor: neúspěšnost ~50 % žáků v letech 2021/2022 a 2022/2023",
+          "Nové maturitní obory (2022/2023): Ekologie 1,97, Veřejnosprávní činnost 2,34 průměrného prospěchu",
+          "Tříleté obory: závěrečné zkoušky úspěšné u ~50–67 % přijatých žáků"
+        ],
+        "evidence": "Hrubá neúspěšnost u MZ činila zhruba polovinu, výsledky jsou dlouhodobě horší než v republice."
+      },
+      "absence": {
+        "trend": "Vysoká a neřešená",
+        "key_numbers": [
+          "Průměrně přes 280 hodin absence na žáka za školní rok",
+          "Vysoký podíl neomluvené absence od prvních ročníků",
+          "V 1. čtvrtletí 2022/2023: ~20 % žáků 1. ročníku s kázeňským opatřením, na konci roku ~40 %"
+        ],
+        "evidence": "Velmi vysoká absence činila za všechny vyučované obory průměrně přes 280 hodin na žáka za školní rok."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště informuje učitele o potřebách žáků se SVP",
+        "Individuální doučování českého jazyka pro žáky s OMJ a jazykovou bariérou",
+        "Konzultace a doučování pro žáky ohrožené školním neúspěchem",
+        "Kariérní poradenství realizované účelně"
+      ],
+      "safety_climate": [
+        "Ředitel implementoval bezpečnostní rizika do směrnic a seznámil všechny zúčastněné",
+        "Počet úrazů má stoupající tendenci, zejména při praktickém výcviku a tělesné výchově",
+        "Ředitel během inspekce přijal preventivní opatření – zavedení opakovaného poučení během školního roku"
+      ],
+      "partnerships_practice": [
+        "Partnerské vztahy s profesními organizacemi a smluvními pracovišti pro zajištění praxe",
+        "Cílený rozvoj spolupráce s potenciálními uchazeči ze základních škol formou profesních a projektových dnů",
+        "O absolventy školy je na trhu práce zájem"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní čísla, citace a doklady. Některé pasáže jsou však složitější a úřednické, což mírně snižuje srozumitelnost pro laické rodiče.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje konkrétní plány školy na řešení vysoké absence – není jasné, zda má škola reálný akční plán",
+        "Není zcela zřejmé, zda se nové maturitní obory (Ekologie, Veřejnosprávní činnost) budou vyvíjet lépe než nástavbový obor",
+        "Chybí informace o tom, jak konkrétně se bude zlepšovat kvalita teoretické výuky a aktivizace žáků"
+      ]
+    }
+  }
+}

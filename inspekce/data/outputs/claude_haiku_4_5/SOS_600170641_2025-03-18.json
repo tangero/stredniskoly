@@ -1,0 +1,114 @@
+{
+  "report_id": "SOS_600170641_2025-03-18",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:41:18.123027+00:00",
+  "run_finished_utc": "2026-02-09T13:41:46.301858+00:00",
+  "raw_file": "SOS_600170641_2025-03-18.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600170641_2025-03-18",
+    "school_profile": {
+      "school_type": "Střední škola technická s maturitními obory (Mechanik seřizovač, Elektrotechnika, Ekonomika a podnikání, Bezpečnostně právní činnost) a učebními obory (Strojní mechanik, Obráběč kovů, Elektrikář, Truhlář, Instalatér, Zedník a další)",
+      "inspection_period": "18. března 2025 až 21. března 2025",
+      "school_change_summary": "Nový ředitel od roku 2023 stabilizoval atmosféru a pedagogický sbor. Škola zlepšila výsledky maturit, zefektivnila poradenské služby a výrazně posílila materiálně technické vybavení. Dlouhodobě rozvíjí partnerství se sociálními partnery a projektové aktivity."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Propojení teorie s praxí",
+          "detail": "Škola má výborné partnerství s odbornými firmami a moderně vybavené dílny, které umožňují žákům získat praktické dovednosti nezbytné pro budoucí povolání.",
+          "evidence": "Spolupráce se sociálními partnery probíhá na vynikající úrovni, propracovaný systém praktického vyučování."
+        },
+        {
+          "tag": "Kvalitní vybavení a infrastruktura",
+          "detail": "Škola má řadu moderně vybavených odborných učeben, laserovou střelnici a speciální učebny pro nácvik situací v bezpečnostně právní činnosti.",
+          "evidence": "Materiálně technické podmínky jsou vynikající, odpovídají současným trendům a požadavkům trhu práce."
+        },
+        {
+          "tag": "Podpora slabších žáků",
+          "detail": "Škola nabízí doučování, individuální konzultace a nově zřídila pozici sociálního pedagoga pro prevenci předčasného odchodu ze vzdělávání.",
+          "evidence": "Nově zřízená pozice sociálního pedagoga napomáhá zamezit předčasnému odchodu žáků ze vzdělávání."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Slabá zpětná vazba pro žáky",
+          "detail": "Pedagogové nevyužívají formativní hodnocení a neposkytují žákům účinnou zpětnou vazbu o jejich pokroku.",
+          "evidence": "Formativní hodnocení pedagogové v průběhu ani závěru hodin nevyužívali, žáci nejsou vedeni k rozvoji hodnoticích dovedností."
+        },
+        {
+          "tag": "Nedostatečná diferenciace výuky",
+          "detail": "Učební úlohy mají pro všechny žáky stejnou obtížnost, chybí přizpůsobení individuálním potřebám.",
+          "evidence": "Diferenciace a individualizace zadávaných úkolů nebyla ve většině zhlédnutých hodin využita."
+        },
+        {
+          "tag": "Slabý rozvoj kritického myšlení",
+          "detail": "Žáci nejsou vedeni k práci s informačními zdroji a kritickému myšlení.",
+          "evidence": "Ke kritickému myšlení a k práci s informačními zdroji žáci zpravidla vedeni nebyli."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola pracuje se žáky, kteří mají problémy s učením? Jaké jsou možnosti doučování a individuální podpory?",
+        "Jaké jsou reálné šance na uplatnění absolventů v oboru Bezpečnostně právní činnost, když měla škola v loňském roce horší výsledky maturit než průměr ČR?",
+        "Jak se škola snaží rozvíjet u žáků kritické myšlení a práci s informacemi, když inspekce zjistila, že to není běžnou součástí výuky?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a technické obory, kteří se chtějí rychle uplalit na trhu práce",
+        "Studenti, kteří se chtějí stát elektrikáři, mechaniky, truhlářem nebo pracovat v bezpečnostně právní činnosti",
+        "Žáci, kteří potřebují individuální podporu a doučování – škola má sociálního pedagoga a nabízí doučování"
+      ],
+      "who_should_be_cautious": [
+        "Rodiče, jejichž děti potřebují silnou zpětnou vazbu a jasné vysvětlení pokroku – to není silná stránka školy",
+        "Žáci, kteří se chtějí učit kritickému myšlení a práci s informacemi – to není dostatečně rozvíjeno",
+        "Uchazeči o obor Bezpečnostně právní činnost by měli vědět, že škola měla v loňském roce horší výsledky maturit než průměr České republiky"
+      ],
+      "plain_czech_summary": "Střední škola technická v Mostě je moderně vybavená a dobře propojená s firmami, kde žáci získávají praktické dovednosti. Nový ředitel od roku 2023 zlepšil atmosféru a výsledky. Škola má sociálního pedagoga a nabízí doučování. Slabinou je, že pedagogové málo používají zpětnou vazbu, nediferencují výuku podle schopností žáků a málo rozvíjejí kritické myšlení. Vhodná pro prakticky zaměřené žáky, kteří chtějí technické povolání."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Smíšený – některé obory se zlepšily, jiné se zhoršily",
+        "key_numbers": [
+          "Bezpečnostně právní činnost 2023: 7,7 % neúspěšnosti (ČR 11,4 %), 2024: 24,7 % (ČR 9,5 %)",
+          "Elektrotechnika 2023: 14,3 % (ČR 9,4 %), 2024: 7,1 % (ČR 7,7 %)",
+          "Mechanik seřizovač 2024: 0 % neúspěšnosti (ČR 13,7 %)"
+        ],
+        "evidence": "Ve zkušebním období 2024 byly výsledky v Elektrotechnice a Mechaniku seřizovači srovnatelné nebo lepší, ale v Bezpečnostně právní činnosti horší než průměr ČR."
+      },
+      "absence": {
+        "trend": "Aktivní monitoring a prevence",
+        "key_numbers": [
+          "Škola sleduje docházku žáků ohrožených školním neúspěchem",
+          "Nově zřízená pozice sociálního pedagoga v úzkém kontaktu se žáky a rodinami"
+        ],
+        "evidence": "U žáků potenciálně ohrožených školním neúspěchem v důsledku velké absence nebo skrytého záškoláctví škola důsledně sleduje jejich docházku."
+      },
+      "support_services": [
+        "Výchovné poradkyně – koordinují vzdělávání žáků se speciálními potřebami",
+        "Sociální pedagog – nově zřízená pozice pro prevenci předčasného odchodu",
+        "Kariérové poradkyně – podpora při volbě studia a uplatnění na trhu práce",
+        "Doučování – nabízeno v různých předmětech, efektivita individuální"
+      ],
+      "safety_climate": [
+        "Klidná pracovní atmosféra a vstřícný přístup pedagogů k žákům",
+        "Výrazné zlepšení atmosféry ve škole v oblasti mezilidských vztahů a týmové spolupráce",
+        "Školní poradenské týmy průběžně monitorují signály rizikového chování"
+      ],
+      "partnerships_practice": [
+        "Aktivní spolupráce se sociálními partnery – firmami participujícími na realizaci odborné a učební praxe",
+        "Program Erasmus+ podporuje mobilitu žáků i pedagogů",
+        "Spolupráce se základními školami – seznamování budoucích studentů s obory",
+        "Ocenění: Čestné uznání Hospodářské komory ČR, Škola doporučená zaměstnavateli, Místní centrum celoživotního vzdělávání"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní data. Některé pasáže jsou však více úřednické. Klíčové informace pro rodiče jsou jasně identifikovatelné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, kolik procent žáků v jednotlivých oborech dosahuje výborných výsledků – jsou uvedeny jen neúspěšnosti",
+        "Není jasné, jak dlouhé jsou čekací doby na doučování a jak je efektivní v praxi",
+        "Chybí informace o počtu žáků, kteří školu předčasně opustí, a jak se situace vyvíjí"
+      ]
+    }
+  }
+}

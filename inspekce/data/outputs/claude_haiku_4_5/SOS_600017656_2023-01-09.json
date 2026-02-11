@@ -1,0 +1,116 @@
+{
+  "report_id": "SOS_600017656_2023-01-09",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:52:25.976071+00:00",
+  "run_finished_utc": "2026-02-09T16:52:50.090045+00:00",
+  "raw_file": "SOS_600017656_2023-01-09.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600017656_2023-01-09",
+    "school_profile": {
+      "school_type": "Střední škola s maturitní zkouškou, obory Informační a komunikační technologie a Informační technologie",
+      "inspection_period": "9. 1. 2023 − 12. 1. 2023",
+      "school_change_summary": "Od poslední inspekce v 2016 došlo k úpravě ŠVP o kybernetickou bezpečnost, modernizaci učeben a zvýšení počtu žáků o 36 % na 428 studentů v 16 třídách."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborné vybavení a technologie",
+          "detail": "Škola disponuje moderními učebnami včetně jediné učebny kybernetické bezpečnosti v kraji, laboratořemi a neomezeným přístupem k internetu.",
+          "evidence": "Jako jediná škola v Moravskoslezském kraji disponuje učebnou kybernetické bezpečnosti."
+        },
+        {
+          "tag": "Vysoké výsledky maturit",
+          "detail": "V oboru Informační technologie 100% úspěšnost, v oboru Informační a komunikační technologie 87% úspěšnost.",
+          "evidence": "Ve školním roce 2021/2022 všichni žáci oboru IT úspěšně složili maturitu, 40 z 46 žáků druhého oboru."
+        },
+        {
+          "tag": "Partnerství s praxí",
+          "detail": "Škola úzce spolupracuje se zaměstnavateli a vysokými školami, žáci absolvují stáže v zahraničí.",
+          "evidence": "Projekt Erasmus+ umožnil 24 žákům stáž v Polsku a Slovensku, spolupráce s VŠB-TUO."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Nedostatečná péče o nadané žáky",
+          "detail": "Chybí systematická identifikace a podpora nadaných žáků, málo prostoru pro diferenciaci.",
+          "evidence": "Málo prostoru bylo věnováno diferenciaci směrem k žákům nadaným a žákům se zvýšeným zájmem."
+        },
+        {
+          "tag": "Slabší výsledky v matematice",
+          "detail": "Matematika je hlavním důvodem neprospívání, škola nabízí doučování a konzultace.",
+          "evidence": "Žáci neprospívají zejména z matematiky, což se škola snaží eliminovat nabídkou doučování."
+        },
+        {
+          "tag": "Chybí zpětná vazba na konci hodin",
+          "detail": "Učitelé málo vyhodnocují, zda žáci dosáhli vzdělávacího cíle na konci vyučovací hodiny.",
+          "evidence": "V závěru vyučovacích hodin není plnohodnotně využívána adekvátní zpětná vazba."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a jak se liší jejich program od ostatních?",
+        "Jaké jsou možnosti doučování z matematiky a jak se měří jeho efektivita?",
+        "Jaké jsou konkrétní příklady uplatnění absolventů na trhu práce a jaké firmy s vámi spolupracují?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o IT, programování a kybernetickou bezpečnost s ambicí pracovat v technologických firmách",
+        "Studenti, kteří ocení moderní vybavení, praktickou výuku a kontakty se zaměstnavateli",
+        "Žáci, kterým vyhovuje domov mládeže a strukturovaný režim s volnočasovými aktivitami"
+      ],
+      "who_should_be_cautious": [
+        "Žáci se slabšími matematickými dovednostmi bez vůle k doučování a samostudiu",
+        "Studenti, kteří potřebují individuální péči a podporu pro nadané – ta není systematicky nastavena",
+        "Žáci, kteří preferují teoretické vzdělání bez praktické výuky a kontaktu s praxí"
+      ],
+      "plain_czech_summary": "Střední škola teleinformatiky v Ostravě je moderní, dobře vybavená škola se silným zaměřením na IT a kybernetickou bezpečnost. Žáci dosahují vysokých výsledků maturit (100% v oboru IT), mají přístup k nejnovějším technologiím a absolvují stáže v zahraničí. Škola úzce spolupracuje s firmami a vysokými školami. Slabší stránkou je nedostatečná péče o nadané žáky a problémy s matematikou. Vhodná pro ambiciózní studenty IT s praktickým zaměřením."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Zlepšující se od inspekce 2016",
+        "key_numbers": [
+          "Obor IT: 100% úspěšnost (57 z 57 žáků)",
+          "Obor IKT: 87% úspěšnost (40 z 46 žáků)",
+          "Celkový počet žáků: 428 (nárůst o 36 % od poslední inspekce)"
+        ],
+        "evidence": "Od předchozí inspekční činnosti v roce 2016 došlo ke zlepšení výsledků maturitních zkoušek."
+      },
+      "absence": {
+        "trend": "Nízká absence, důsledné řešení neomluvené absence",
+        "key_numbers": [
+          "Odchody ze školy pouze ojedinělé, v řádu jednotek",
+          "Snížená známka z chování udělena minimu žáků za neomluvené absence"
+        ],
+        "evidence": "Odchody žáků ze školy v průběhu vzdělávání jsou pouze ojedinělé a pohybují se v řádu jednotek."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště: 2 výchovní poradci, 1 metodik prevence, 1 kariérový poradce",
+        "Doučování a individuální konzultace ze všech předmětů",
+        "Péče o žáky se speciálními vzdělávacími potřebami: 27 žáků s podpůrnými opatřeními 1.–4. stupně",
+        "Domov mládeže: 109 ubytovaných žáků se strukturovanými volnočasovými aktivitami"
+      ],
+      "safety_climate": [
+        "Bezpečné prostředí zajištěno zásadami v školních řádech a provozních řádech",
+        "Fyzické i psychické bezpečí žáků průběžně vytvářeno",
+        "Dlouhodobě uplatňovaná preventivní strategie účinně předchází rizikovým jevům",
+        "Příznivé klima založené na empatickém přístupu a vzájemném respektu"
+      ],
+      "partnerships_practice": [
+        "Spolupráce se sociálními partnery (firmy) – požadavky zapracovávány do odborné výuky",
+        "Projekt Erasmus+: stáže žáků v Polsku a Slovensku",
+        "Spolupráce s VŠB-TUO: stáže pro žáky 3. ročníků",
+        "Kroužky pro základní školy (AutoCAD, 3D tisk, Arduino, programování)",
+        "Soutěže: krajská a celostátní kola v anglickém jazyce, matematice, programování, kybernetické bezpečnosti"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Zpráva je velmi jasně strukturovaná, používá srozumitelný jazyk bez zbytečného úřednického stylu. Konkrétní čísla, citace a příklady jsou snadno identifikovatelné. Silné a slabé stránky jsou jasně odděleny.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o průměrných známkách nebo detailnějších statistikách prospěchu mimo zmíněné procento neprospívajících (1,18 %)",
+        "Chybí konkrétní jména sociálních partnerů (firem), se kterými škola spolupracuje",
+        "Není jasné, jak přesně se měří efektivita doučování z matematiky a jaké jsou konkrétní výsledky"
+      ]
+    }
+  }
+}

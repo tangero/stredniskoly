@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "LYC_610250451_2022-12-05",
+  "school_profile": {
+    "school_type": "Obchodní akademie, Hotelová škola a Jazyková škola s právem státní jazykové zkoušky",
+    "inspection_period": "5. až 8. prosince 2022",
+    "school_change_summary": "Změna na pozici ředitele školy"
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky maturit",
+        "detail": "Maturitní výsledky jsou stabilní a nad republikovým průměrem srovnatelných oborů.",
+        "evidence": "Výsledky maturitních zkoušek jsou stabilní a nad republikovým průměrem"
+      },
+      {
+        "tag": "Mezinárodní zkušenosti",
+        "detail": "Velké množství žáků a učitelů se účastní zahraničních stáží, projektů ERASMUS+ a mezinárodních soutěží.",
+        "evidence": "Výjezdy do Španělska, Portugalska, Irska; úspěchy na krajské, republikové i mezinárodní úrovni"
+      },
+      {
+        "tag": "Podpora žáků v potížích",
+        "detail": "Efektivní systém včasné pomoci pro žáky ohrožené neúspěchem prostřednictvím doučování a studijních plánů.",
+        "evidence": "Sdílení informací mezi třídními učiteli, výchovnou poradkyní a vychovatelkami domova mládeže"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivních metod ve výuce",
+        "detail": "Učitelé příliš často používají frontální výuku, chybí aktivizační metody a skupinová práce.",
+        "evidence": "Nedostatečné využívání aktivizačních metod ve výuce; pouze v některých hodinách byly využity metody podporující aktivní účast"
+      },
+      {
+        "tag": "Nedostatečná diferenciace",
+        "detail": "Výuka není dostatečně přizpůsobena různým schopnostem a předpokladům jednotlivých žáků.",
+        "evidence": "Malé zastoupení diferenciace výuky; převážně všichni plnili stejný typ úkolu"
+      },
+      {
+        "tag": "Chybí zpětná vazba v hodinách",
+        "detail": "Na konci hodin často chybí čas na zhodnocení dosažených cílů a reflexi pro žáky.",
+        "evidence": "V závěru většinou nezbýval čas na zhodnocení a dosažení cíle hodiny"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s žáky, kteří mají různé studijní předpoklady? Jaké metody používá?",
+      "Jaké jsou konkrétní příklady zahraničních projektů a jak se do nich mohou zapojit všichni žáci?",
+      "Jak škola řeší situaci, když se žák dostane do studijních potíží? Jaká je nabídka doučování?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí získat zkušenosti v zahraničí a rozvíjet jazykové dovednosti",
+      "Studenti zaměření na obchodní, hotelnictví a cestovní ruch s ambicí pracovat v mezinárodním prostředí",
+      "Žáci, kteří potřebují podporu a individuální přístup při studijních potížích"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se lépe učí aktivními metodami a skupinovou prací – výuka je zatím příliš frontální",
+      "Studenti s různorodými schopnostmi, kteří potřebují silně diferencovanou výuku přizpůsobenou jejich úrovni",
+      "Žáci, kteří se lépe učí, když dostanou jasnou zpětnou vazbu a reflexi na konci hodiny"
+    ],
+    "plain_czech_summary": "Škola má stabilní výsledky maturit nad průměrem a nabízí skvělé mezinárodní příležitosti. Dobře funguje podpora žáků v potížích. Hlavní slabinou je, že výuka není dostatečně přizpůsobena různým schopnostem žáků a učitelé málo používají aktivní metody. Inspekce doporučuje více diferenciace a aktivizačních metod ve výuce."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní a nadprůměrný",
+      "key_numbers": [
+        "Výsledky nad republikovým průměrem srovnatelných oborů",
+        "Systematická práce s výsledky maturitních a závěrečných zkoušek"
+      ],
+      "evidence": "Výsledky maturitních zkoušek jsou stabilní a nad republikovým průměrem; pedagogové prokazatelně pracují s výsledky"
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Zpráva se absence nezabývá"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s efektivním delegováním pravomocí",
+      "Doučování a studijní plány pro žáky ohrožené neúspěchem",
+      "Spolupráce se školskými poradenskými zařízeními a spolkem F Point Jihlava",
+      "Kariérové poradenství s orientací na profesní směřování",
+      "Projekt Spolu po Covidu reagující na aktuální problémy žáků"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra ve většině sledovaných hodin",
+      "Vhodně nastavené besedy a programy prevence pro jednotlivé ročníky",
+      "Volnočasové aktivity v domově mládeže"
+    ],
+    "partnerships_practice": [
+      "Rozšiřující se síť smluvních a sociálních partnerů: firmy, hotely, hrady, zámky, cestovní kanceláře",
+      "Spolupráce s neziskovými organizacemi, sportovními kluby, Městem Třebíč a Krajem Vysočina",
+      "Partnerství s jazykovou školou Cambridge P.A.R.K. pro mezinárodní jazykové zkoušky",
+      "Projekty ERASMUS+ se zahraničními partnery",
+      "Spolupráce s profesními svazy a asociacemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je jasně strukturovaná a obsahuje konkrétní zjištění. Silné stránky a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však formulovány úřednicky a vyžadují pozorné čtení.",
+    "uncertainty_notes": [
+      "Absence není v textu zmíněna – není jasné, zda je to problém nebo ne",
+      "Počet žáků s podpůrnými opatřeními (67) není kontextualizován – není jasné, zda je to vysoké či nízké číslo",
+      "Konkrétní procenta úspěšnosti u maturit nejsou uvedena, pouze tvrzení o nadprůměrnosti"
+    ]
+  }
+}
+```

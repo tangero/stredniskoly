@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600019781_2024-04-09",
+  "school_profile": {
+    "school_type": "Střední škola zdravotnická a sociální (obory Praktická sestra a Sociální činnost)",
+    "inspection_period": "9. až 11., 15. a 16. dubna 2024",
+    "school_change_summary": "Nová ředitelka v prvním roce funkčního období postupně zavádí změny podle své vize. Vedení školy se schází pravidelně s jasně určenými kompetencemi a zodpovědnostmi."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Odborné vzdělání na vysoké úrovni",
+        "detail": "Výuka odborných předmětů je kvalitní s pozitivní atmosférou a motivací žáků.",
+        "evidence": "Učitelky vytvářejí pozitivně-motivační atmosféru, vztah mezi nimi a žáky maximálně podporuje efektivitu vzdělávání."
+      },
+      {
+        "tag": "Bohaté praktické zkušenosti",
+        "detail": "Žáci mají přístup k širokému portfoliu pracovišť včetně nemocnic a sociálních služeb.",
+        "evidence": "Škola nabízí široké portfolio pracovišť, díky čemuž žáci získávají mnohem širší zkušenosti a kompetence pro budoucí výkon jejich povolání."
+      },
+      {
+        "tag": "Podpora osobnostního rozvoje",
+        "detail": "Škola vede žáky k dobrovolnictví a sociálnímu angažmá.",
+        "evidence": "Žáci oboru Sociální činnost jsou vedeni k dobrovolnictví v nemocnicích, domovech pro seniory a dalších sociálních zařízeních."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší výsledky v češtině",
+        "detail": "Žáci mají dlouhodobě horší výsledky v předmětu český jazyk a literatura.",
+        "evidence": "Nejvyšší míra neúspěšnosti žáků se týká jejich výsledků v předmětu český jazyk. Tento stav přetrvává i v aktuálním školním roce."
+      },
+      {
+        "tag": "Omezená diferenciace ve výuce",
+        "detail": "Učitelé nedostatečně přizpůsobují obtížnost úloh různým schopnostem žáků.",
+        "evidence": "V hodinách nebyla zaznamenána cílená diferenciace náročnosti zadávaných úloh, což někdy omezovalo podporu pomalejších, ale i nadaných žáků."
+      },
+      {
+        "tag": "Nedostatek tělocvičny",
+        "detail": "Škola nemá vlastní tělocvičnu a je omezena v organizaci tělesné výchovy.",
+        "evidence": "Škola nemá vlastní tělocvičnu a aktuálně je z kapacitních důvodů omezené i využívání zázemí sousední střední školy."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší dlouhodobě slabší výsledky žáků v češtině a jaká opatření zavádí?",
+      "Jaké jsou možnosti individuální podpory pro žáky, kteří mají potíže s učením?",
+      "Jak je zajištěna výuka tělesné výchovy a jaké sportovní aktivity mohou žáci absolvovat?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o zdravotnické nebo sociální obory, kteří chtějí kvalitní praktické vzdělání",
+      "Studenti motivovaní k dobrovolnictví a sociálnímu angažmá",
+      "Žáci, kteří se lépe učí praktickou formou a v reálných pracovních prostředích"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v češtině, kteří potřebují intenzivnější podporu v tomto předmětu",
+      "Studenti vyžadující individualizovaný přístup a diferenciovanou výuku",
+      "Žáci s nadáním, kteří mohou být v běžné výuce nedostatečně stimulováni"
+    ],
+    "plain_czech_summary": "Zdravotnická a sociální škola v Chrudimi nabízí kvalitní odborné vzdělání s bohatými praktickými zkušenostmi v nemocnicích a sociálních zařízeních. Silnou stránkou je motivující atmosféra a vedení žáků k dobrovolnictví. Slabší jsou výsledky v češtině a individualizace výuky. Škola postrádá vlastní tělocvičnu. Nová ředitelka postupně zavádí změny. Vhodná pro žáky s jasným zájmem o zdravotnické či sociální obory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Převážně úspěšní, ale s určitým podílem neúspěšných",
+      "key_numbers": [
+        "Ze 58 žáků denního studia neuspělo v jarním termínu 15 žáků",
+        "Po podzimním termínu zůstali neúspěšní 4 žáci",
+        "20 žáků absolvovalo MZ s vyznamenáním"
+      ],
+      "evidence": "U maturitních zkoušek žáků denního studia ze 58 žáků neuspělo v jarním termínu 15 žáků, po podzimním termínu zůstali neúspěšní čtyři žáci. Žáci večerního studia byli úspěšní."
+    },
+    "absence": {
+      "trend": "Nízká absence, převážně řešena jako kázeňské opatření",
+      "key_numbers": [
+        "Absence žáků byla spíše nižší",
+        "Neomluvené hodiny byly hlavní příčinou kázeňských opatření"
+      ],
+      "evidence": "Absence žáků ve výuce byla spíše nižší. Příčinou kázeňských opatření byly zejména neomluvené hodiny nebo včas neomluvené absence žáků."
+    },
+    "support_services": [
+      "Školní psycholog dochází do školy pravidelně",
+      "Výchovná poradkyně a metodička prevence spolupracují se školním psychologem",
+      "Školní poradenské pracoviště se pravidelně schází a řeší problémy a potřeby žáků",
+      "Kariérový poradce (pozice zavedena ze získaných finančních zdrojů)"
+    ],
+    "safety_climate": [
+      "Pozitivní, partnerská a podporující atmosféra napříč celou školou",
+      "Výskyt případných náznaků rizikového chování je sledován průběžně, jejich počet je nízký",
+      "Pochvaly jsou udíleny více než kázeňská opatření",
+      "Žákovský parlament se pravidelně schází a předává vedení podněty"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Chrudimskou nemocnicí pro praktickou výuku",
+      "Smluvně zajištěna zdravotnická zařízení v Praze a Hradci Králové pro souvislou praxi",
+      "Partnerství se sociálními partnery při pořádání odborných exkurzí a přednášek",
+      "Doplňková činnost: pořádání kvalifikačních kurzů pro pracovníky v sociálních službách"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní příklady. Některé pasáže jsou však poměrně dlouhé a složitě strukturované, což mírně snižuje jasnost.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní počty žáků v jednotlivých oborech, pouze celkový počet 241 žáků ve školním roce 2022/2023",
+      "Nejsou uvedeny konkrétní procenta neúspěšnosti v češtině, pouze kvalitativní popis",
+      "Chybí informace o počtu pedagogů a jejich kvalifikaci"
+    ]
+  }
+}
+```

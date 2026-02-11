@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "GY8_600009947_2024-10-21",
+  "school_profile": {
+    "school_type": "Gymnázium (8leté a 4leté) a Obchodní akademie",
+    "inspection_period": "21. 10. 2024 – 25. 10. 2024",
+    "school_change_summary": "Od poslední inspekce se počet žáků zvýšil z 319 na 353, přibylo pedagogů a došlo k částečné obměně sboru. Škola otevřela nový 4leté gymnázium. Probíhá modernizace vybavení (digitální technologie, zateplení, výměna oken)."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Mezinárodní spolupráce a jazykový rozvoj",
+        "detail": "Škola má dlouhodobou spolupráci se školami v Německu a Francii, pořádá výměnné pobyty a stáže v zahraničí.",
+        "evidence": "Erasmus+ program umožňuje stáže v Dublinu, tematické pobyty do Řecka či Německa, intenzivní součinnost s bavorskou školou."
+      },
+      {
+        "tag": "Podpora nadaných žáků a vědy",
+        "detail": "Klub malých debrujárů úspěšně rozvíjí vědecké zájmy žáků, kteří se účastní mezinárodních přehlídek.",
+        "evidence": "Žáci vyjíždějí na mezinárodní přehlídky (2023 Mexiko, 2022 Dubaj), úspěšní v soutěžích (Pohár vědy, ChemQuest)."
+      },
+      {
+        "tag": "Bezpečnost a prevence",
+        "detail": "Škola má systematické bezpečnostní opatření a účelně sestavenou prevenci rizikového chování.",
+        "evidence": "Čipový systém registrace, trvale zabezpečený vchod, monitorování, instruktáž o úkrytech, preventivní programy s odborníky."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Frontální výuka a nízká aktivita žáků",
+        "detail": "Zejména v přírodovědných předmětech a matematice dominuje učitel, žáci mají málo prostoru pro vlastní iniciativu.",
+        "evidence": "Inspektoři zaznamenali 'dominantní roli učitele', 'relativně malou aktivitu žáků' a 'nedostatečnou podporu komunikativních kompetencí'."
+      },
+      {
+        "tag": "Chybějící diferenciace a individuální přístup",
+        "detail": "Úkoly jsou zadávány jednotně bez ohledu na náročnost, chybí přizpůsobení potřebám jednotlivých žáků.",
+        "evidence": "Inspektoři zjistili 'nedostatečné zohledňování individuálních potřeb' a 'chybějící diferenciaci zadávaných úkolů'."
+      },
+      {
+        "tag": "Slabé formativní hodnocení",
+        "detail": "Pedagogové často neevaluují dosažení cílů hodin, hodnocení nemá formativní charakter.",
+        "evidence": "Inspektoři konstatují, že 'hodnocení ze strany pedagogů většinově nemělo formativní charakter' a chybělo 'sebehodnocení žáků'."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje individuální potřeby žáků v hodinách matematiky a přírodovědných předmětů?",
+      "Jaké jsou zkušenosti rodičů s komunikací školy a jak se řeší problémy s prospěchem jejich dětí?",
+      "Jak se škola připravuje na změny v přístupu k výuce (více interaktivity, méně frontální výuky)?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci – škola nabízí výměnné pobyty a stáže v zahraničí.",
+      "Nadaní a vědecky zaměření žáci – Klub malých debrujárů a účast v soutěžích vědy.",
+      "Žáci z okolních základních škol zajímající se o polytechnické vzdělávání – škola pořádá kroužky v modernizovaných laboratořích."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuálního přístupu a diferenciované úkoly – inspektoři zjistili nedostatek v tomto směru.",
+      "Žáci, kteří se lépe učí interaktivně a skupinově – frontální výuka je v některých předmětech stále dominantní.",
+      "Žáci, kteří potřebují jasnou zpětnou vazbu o svém pokroku – formativní hodnocení není konzistentně uplatňováno."
+    ],
+    "plain_czech_summary": "Gymnázium Stříbro je dobře vedená škola s výbornou mezinárodní spoluprací a podporou nadaných žáků. Maturitní výsledky jsou stoprocentní, bezpečnost je prioritou. Inspektoři však upozorňují na příliš frontální výuku zejména v přírodovědných předmětech, kde žáci mají málo prostoru pro vlastní aktivitu. Chybí také individuální přístup a kvalitní zpětná vazba. Škola by měla více podporovat samostatné myšlení a spolupráci žáků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě výborný",
+      "key_numbers": [
+        "100% úspěšnost u gymnázia",
+        "Velmi vysoká úspěšnost u obchodní akademie",
+        "Nadprůměrné výsledky v českém jazyce a moderních dějinách"
+      ],
+      "evidence": "Úspěšnost žáků gymnázia u maturitní zkoušky je dlouhodobě stoprocentní, u obchodní akademie velmi vysoká."
+    },
+    "absence": {
+      "trend": "Velmi nízký podíl neprospívajících",
+      "key_numbers": [
+        "Výjimečné opakování ročníku u osmiletého gymnázia",
+        "Zanedbatelné procento opakování u obchodní akademie",
+        "Žáci jsou vnitřně motivováni"
+      ],
+      "evidence": "Podíl neprospívajících žáků osmiletého gymnázia je celkově velmi nízký, předčasné ukončení studia je dlouhodobě výjimečné."
+    },
+    "support_services": [
+      "Výchovná poradkyně (zároveň kariérová poradkyně) – konzultace, péče o žáky s potřebou podpory a nadané",
+      "Metodička prevence – prevence rizikového chování, zdravý sociální klimat",
+      "Externí školní psycholožka – operativní dostupnost pro žáky a zákonné zástupce"
+    ],
+    "safety_climate": [
+      "Čipový systém registrace žáků při vstupu",
+      "Trvale zabezpečený vchod, monitoring prostoru před školou",
+      "Rozsáhlá instruktáž o úkrytových a únikových možnostech",
+      "Možnost uzamčení tříd zevnitř v případě ohrožení",
+      "Systematické kroky vedení k naplnění bezpečnostních pravidel"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce se školami v Německu a Francii – výměnné pobyty a tematické akce",
+      "Erasmus+ program – dvoutýdenní odborné stáže v Dublinu pro obchodní akademii",
+      "Síť smluvních partnerů pro odborné praxe (lokální firmy, lázeňské domy)",
+      "Spolupráce s Úřadem práce v Tachově, Městským úřadem ve Stříbře, Krajskou hospodářskou komorou",
+      "Metodická spolupráce s učiteli základních a mateřských škol"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně a obsahuje konkrétní příklady. Silné a slabé stránky jsou jasně vymezeny. Některé pasáže jsou však poměrně dlouhé a obsahují odborný jazyk, který by mohl být pro laické rodiče méně přístupný.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty hodin, které inspektoři sledovali, ani jejich přesné rozložení mezi předměty.",
+      "Není jasné, jak dlouho trvá typická hospitace a jak se výsledky jednotlivých hodin promítají do celkového hodnocení.",
+      "Chybí informace o tom, kolik procent pedagogů absolvuje další vzdělávání a jaké jsou jeho konkrétní výsledky."
+    ]
+  }
+}
+```

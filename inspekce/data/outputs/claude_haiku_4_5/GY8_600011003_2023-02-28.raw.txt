@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY8_600011003_2023-02-28",
+  "school_profile": {
+    "school_type": "Gymnázium a Střední odborná škola s domovem mládeže",
+    "inspection_period": "28. února až 3. března 2023",
+    "school_change_summary": "Od inspekce v 2014 se změnila vedení (nový ředitel od 2017) a nabídka oborů. Škola ukončila vzdělávání v 7 oborech (např. Strojírenství, Zemědělství) a přidala 3 nové (Cukrář, Elektrikář, Elektrotechnika). Proběhla modernizace kuchyní a budovy gymnázia."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktické vyučování",
+        "detail": "Kvalitní propojení praktické a teoretické výuky, učitelé uplatňují individuální přístup a pozitivní motivaci.",
+        "evidence": "V odborném výcviku patrný zájem o vzdělávání, vhodná návaznost praktické na teoretickou část."
+      },
+      {
+        "tag": "Mezinárodní spolupráce",
+        "detail": "Rozsáhlé projekty Erasmus+ s partnerskými školami na Slovensku, v Německu a Polsku.",
+        "evidence": "Žáci a učitelé absolvují studijní a pracovní stáže, exkurze u zaměstnavatelů dle oboru."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci gymnázia i odborné školy dosahují předních umístění v olympiádách a odborných soutěžích.",
+        "evidence": "Úspěchy v matematické, chemické olympiádě, Malířské akademii Josefa Čapka, Mistrovství ČR."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Velmi slabé výsledky maturit",
+        "detail": "Dlouhodobě podprůměrné výsledky ve společné části maturitní zkoušky (37% neúspěšnost vs. 11% republikový průměr).",
+        "evidence": "V letech 2020–2022 hrubá neúspěšnost okolo 37%, obor Podnikání 58–67%, Gastronomie 50–67%."
+      },
+      {
+        "tag": "Nekvalifikovaní učitelé teoretických předmětů",
+        "detail": "Více než 60% pedagogů v maturitních oborech nemá příslušnou odbornou kvalifikaci.",
+        "evidence": "Absence kvalifikace se projevila v nevhodně zvolených formách, metodách a nedostatečné didaktické propracovanosti."
+      },
+      {
+        "tag": "Nízký podíl úspěšných absolventů",
+        "detail": "Pouze 33% žáků, kteří nastoupili do 1. ročníku, úspěšně dokončilo studium v řádné době.",
+        "evidence": "V maturitním ročníku 2022 obor Podnikání 15%, Elektrotechnika 40% úspěšnosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní kroky podnikne škola na zlepšení výsledků v maturitní zkoušce, zejména v češtině, angličtině a matematice?",
+      "Jak se škola vypořádá s tím, že více než 60% učitelů teoretických předmětů v maturitních oborech nemá příslušnou kvalifikaci?",
+      "Jaké jsou plány na zlepšení podpory žáků oboru Podnikání, kde je 67% neúspěšnost?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické obory (Elektrikář, Kuchař, Instalatér) – zde je kvalitní výuka a dobré vybavení.",
+      "Nadaní žáci gymnázia – škola je úspěšně připravuje na olympiády a soutěže.",
+      "Žáci se zájmem o zahraniční zkušenosti – rozsáhlá mezinárodní spolupráce a projekty Erasmus+."
+    ],
+    "who_should_be_cautious": [
+      "Žáci s průměrnými studijními předpoklady přihlášení do maturitních oborů – vysoké riziko neúspěchu u maturitní zkoušky.",
+      "Uchazeči do oboru Podnikání – nejhorší výsledky (67% neúspěšnost), nízká kvalita podpory.",
+      "Žáci, kteří potřebují kvalitní teoretickou výuku – učitelé často nejsou kvalifikovaní a používají zastaralé metody."
+    ],
+    "plain_czech_summary": "Gymnázium v Podbořanech má dobré praktické vyučování a úspěchy v soutěžích, ale vážný problém s maturitní zkouškou. Výsledky jsou dlouhodobě velmi špatné – 37% neúspěšnosti proti 11% v republice. Obor Podnikání je kritický (67% neúspěšnosti). Více než 60% učitelů teoretických předmětů nemá potřebnou kvalifikaci. Jen třetina žáků úspěšně skončí v řádné době. Škola má moderní vybavení a zajímavé projekty, ale chybí jí strategie na zlepšení výsledků."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě podprůměrný, bez zlepšení",
+      "key_numbers": [
+        "Hrubá neúspěšnost školy 2020–2022: ~37% (republikový průměr <11%)",
+        "Obor Podnikání: 58% (2020), 59% (2021), 67% (2022)",
+        "Matematika v Podnikání: 1 úspěšný z 8 přihlášených (2020–2022)"
+      ],
+      "evidence": "Výsledky žáků byly výrazně určovány výsledky ve společné části maturitní zkoušky. Profilová část byla srovnatelná s průměrem."
+    },
+    "absence": {
+      "trend": "Není v textu specifikován",
+      "key_numbers": [],
+      "evidence": "Text neobsahuje konkrétní údaje o absence žáků."
+    },
+    "support_services": [
+      "Výchovné poradenství – informace o podpůrných opatřeních pro žáky se speciálními vzdělávacími potřebami",
+      "Doučování a osobní konzultace – nabízeno, ale hodnoceno jako nedostatečně efektivní",
+      "Spolupráce s poradnami – metodická podpora pro pedagogy",
+      "Volnočasové aktivity – rozsáhlá nabídka v domově mládeže",
+      "Adaptační pobyty a sportovní kurzy – efektivní pro gymnázium"
+    ],
+    "safety_climate": [
+      "Primární prevence – účelná spolupráce s neziskovými a charitativními organizacemi",
+      "Preventivní programy a přednášky – vzhledem k počtu řešených případů převážně efektivní",
+      "Volnočasové aktivity – efektivní prostředek prevence rizikových jevů"
+    ],
+    "partnerships_practice": [
+      "Zahraniční spolupráce – partnerské školy na Slovensku, v Německu a Polsku",
+      "Projekty Erasmus+ – studijní a pracovní stáže, exkurze u zaměstnavatelů",
+      "Koordinátor spolupráce se zaměstnavateli – získávání podnětů k revizím vzdělávacích programů",
+      "Spolupráce s neziskovými organizacemi – primární prevence"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně, ale obsahuje řadu technických termínů a dlouhých vět. Hlavní problémy jsou jasně identifikovány (slabé maturitní výsledky, nekvalifikovaní učitelé), ale některé pasáže jsou detailní a složité.",
+    "uncertainty_notes": [
+      "Text neobsahuje konkrétní údaje o absence žáků a jejím vlivu na výsledky.",
+      "Není jasné, jaké konkrétní opatření škola již podnikla na základě předchozích zjištění.",
+      "Chybí informace o počtu a kvalifikaci nových učitelů, kteří by měli nahradit nekvalifikované pedagogy."
+    ]
+  }
+}
+```

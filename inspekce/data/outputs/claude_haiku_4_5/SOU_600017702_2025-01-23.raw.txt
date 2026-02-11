@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOU_600017702_2025-01-23",
+  "school_profile": {
+    "school_type": "Střední škola stavební a dřevozpracující (SOU), příspěvková organizace",
+    "inspection_period": "23.–29. ledna 2025",
+    "school_change_summary": "Od poslední inspekce v 2022/23 došlo k mírnému nárůstu počtu žáků (zejména v dřevozpracujících oborech), změně ve funkci zástupkyně ředitele a postupné modernizaci materiálních podmínek. Škola si udržuje oborovou skladbu zaměřenou na řemeslnou činnost."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní praktické vzdělání",
+        "detail": "Praktické vyučování má velmi dobrou úroveň; učitelé a instruktoři systematicky vedou žáky k dovednostem a poskytují účelnou zpětnou vazbu.",
+        "evidence": "Průběh sledovaného praktického vyučování měl velmi dobrou úroveň. Učitelé a instruktoři soustavně sledovali činnosti žáků a poskytovali účelnou zpětnou vazbu."
+      },
+      {
+        "tag": "Silné partnerství s firmami",
+        "detail": "Škola má kvalitní vztahy s desítkami profesních organizací a zaměstnavatelů, což zvyšuje uplatnitelnost absolventů.",
+        "evidence": "Kvalitní, intenzivní a oboustranně přínosné partnerské vztahy se smluvními pracovišti a více než desítkou profesních organizací se promítají do kvality odborného vzdělávání."
+      },
+      {
+        "tag": "Úspěchy v soutěžích",
+        "detail": "Žáci dosahují výrazných úspěchů v dovednostních soutěžích, včetně mezinárodních projektů.",
+        "evidence": "Největších úspěchů dosahují v soutěžích dovednostních. Mezinárodní soutěží v loňském roce byly studentské projekty v programu TurboCAD, kdy žák získal prvenství."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Počet zameškaných hodin roste (111 hodin na žáka v 2023/24) a škola nemá účinná opatření na snížení absence.",
+        "evidence": "Ve školním roce 2023/2024 uvádí 111 zameškaných hodin na žáka. Přes přijatá opatření se škole dlouhodobě nedaří absence výrazněji omezovat."
+      },
+      {
+        "tag": "Slabé výsledky v matematice",
+        "detail": "Matematika vykazuje velmi nízkou úspěšnost, zejména u žáků nástavbového studia, přestože byla zavedena doučování.",
+        "evidence": "Velmi nízká úspěšnost v matematice, ke které se přihlašují především žáci nástavbového studia, nadále přetrvává."
+      },
+      {
+        "tag": "Pasivní přístup k výuce",
+        "detail": "Výuka je převážně frontální s minimálním využitím aktivních metod, kritického myšlení a diferenciace úkolů.",
+        "evidence": "Stále přetrvává nízká míra používání rozmanitých vzdělávacích metod v teoretické výuce, pasivní přístup žáků ke studiu. Dominantní role učitele neposkytuje dostatečný prostor pro podporu rozvoje gramotností."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaká konkrétní opatření škola zavádí na snížení absence a jak budou vyhodnocována?",
+      "Jak se škola vypořádá s nízkou úspěšností v matematice a jaká doučování nabízí?",
+      "Jaké aktivní metody výuky a skupinové práce se používají v jednotlivých předmětech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o řemesla a praktické dovednosti (stavebnictví, dřevozpracování)",
+      "Studenti, kteří se chtějí rychle uplalit na trhu práce díky silným vazbám na zaměstnavatele",
+      "Žáci, kteří se lépe učí praktickou činností než teoretickou výukou"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími znalostmi z matematiky – škola nemá účinné řešení pro jejich podporu",
+      "Studenti, kteří potřebují intenzivní teoretickou přípravu na maturitu – výuka je zaměřena spíše na vědomosti než na kritické myšlení",
+      "Žáci s tendencí k absencím – škola zatím nemá účinný systém motivace a kontroly"
+    ],
+    "plain_czech_summary": "Škola je zaměřená na praktické vzdělání v řemeslech a má dobré vztahy s firmami, kde se žáci učí. Praktické vyučování je na vysoké úrovni. Problém je, že teoretická výuka je pasivní a frontální, málo se používají aktivní metody. Velký problém je vysoká absence žáků a nízké výsledky v matematice. Škola se snaží, ale zatím nemá účinná opatření na zlepšení těchto problémů. Vhodná pro žáky, kteří chtějí praktické řemeslo, ale ne pro ty, kteří potřebují silnou teoretickou přípravu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírné zlepšení v češtině a cizích jazycích u nástavbového studia, ale velmi nízká úspěšnost v matematice přetrvává",
+      "key_numbers": [
+        "Nárůst neprospívajících žáků v 1. pololetí 2023/24 na 12,5 % (maturitní obory)",
+        "Ve 2. pololetí 3,5 % neprospívajících žáků maturitních oborů",
+        "Velmi nízká úspěšnost v matematice, zejména u nástavbového studia"
+      ],
+      "evidence": "Některá opatření vedla k mírnému zlepšení výsledků v českém jazyce a cizích jazycích u nástavbového studia. Velmi nízká úspěšnost v matematice nadále přetrvává."
+    },
+    "absence": {
+      "trend": "Nárůst absence – v 2023/24 je 111 zameškaných hodin na žáka oproti 103 v 2022/23",
+      "key_numbers": [
+        "103 zameškaných hodin na žáka v 2022/23",
+        "111 zameškaných hodin na žáka v 2023/24",
+        "Nárůst neomluvené absence přes přijatá opatření"
+      ],
+      "evidence": "Přes přijatá a realizovaná opatření ke snížení absence se škole dlouhodobě nedaří tento negativní jev výrazněji omezovat. Přístup se jeví jako neefektivní."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště – inspekce doporučuje rozšíření o dalšího pedagogického pracovníka",
+      "Doučování a dobrovolné konzultace v matematice, češtině a cizích jazycích – s omezenou účinností",
+      "Stipendijní řád pro motivaci žáků – chybí analýza efektivnosti"
+    ],
+    "safety_climate": [
+      "Bezpečnost zajištěna v součinnosti s odborně způsobilými osobami; preventivní mechanismy jsou pravidelně vyhodnocovány",
+      "Nízký výskyt rizikových projevů chování žáků (mimo absenci) svědčí o nastavené prevenci",
+      "Během inspekce žáci procházeli do bufetu staveništěm – zvýšené riziko; stavební úpravy budou ukončeny do srpna 2025"
+    ],
+    "partnerships_practice": [
+      "Partnerství s více než desítkou profesních organizací stavebnictví a dřevovýroby",
+      "Spolupráce se smluvními pracovišti pro odborný výcvik – instruktoři předávají zkušenosti z reálného prostředí",
+      "Spolupráce s Moravskoslezským paktem zaměstnanosti a Úřadem práce; kurzy vzdělávání dospělých"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a obsahuje konkrétní údaje. Některé pasáže jsou však dlouhé a složitě strukturované (např. popis výuky). Hlavní zjištění jsou jasná, ale vyžadují čtení mezi řádky.",
+    "uncertainty_notes": [
+      "Inspekce nespecifikuje konkrétní procenta úspěšnosti v maturitě – pouze kvalitativní popis (nízká, mírné zlepšení)",
+      "Není jasné, kolik žáků školu opouští kvůli neúspěchu – zmíněny jsou pouze 'časté přestupy' a 'odchody'",
+      "Stipendijní řád je zmíněn jako motivační nástroj, ale chybí data o jeho skutečné účinnosti"
+    ]
+  }
+}
+```

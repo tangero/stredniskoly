@@ -1,0 +1,98 @@
+{
+  "report_id": "GY6_600008819_2021-11-24",
+  "school_profile": {
+    "school_type": "Gymnázium",
+    "inspection_period": "24. 11. 2021 − 26. 11. 2021",
+    "school_change_summary": "Škola se dlouhodobě daří zlepšovat materiální podmínky, modernizovat odborné učebny a prohlubovat spolupráci s partnery, výuka však zaostává za moderními trendy."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné vybavení",
+        "detail": "Škola má modernizované odborné učebny, kvalitní digitální technologie i prostory pro odpočinek žáků.",
+        "evidence": "„Modernizace odborných učeben přírodních věd... poskytuje kvalitní podmínky pro vzdělávání. Škola poskytuje také vhodné prostory využívané pro odpočinek a samostudium žáků.“"
+      },
+      {
+        "tag": "Nadprůměrné výsledky",
+        "detail": "Žáci dosahují v maturitních zkouškách dlouhodobě mírně nadprůměrných výsledků ve srovnání s ostatními gymnázii.",
+        "evidence": "„Škola ve srovnání s ostatními gymnázii nadále dosahuje mírně nadprůměrných výsledků v předmětech státní maturitní zkoušky.“"
+      },
+      {
+        "tag": "Rozvoj sociálních dovedností",
+        "detail": "Díky kvalitní spolupráci s partnery a neziskovkami se daří významně rozvíjet sociální gramotnost žáků.",
+        "evidence": "„Kvalitní spolupráce se sociálními partnery významně rozvíjí sociální gramotnost žáků.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Zastaralé metody výuky",
+        "detail": "Výuka je často frontální, chybí prvky aktivního učení, experimentování a efektivní motivace žáků.",
+        "evidence": "„V části výuky nejsou zařazovány vzdělávací strategie podporující aktivní učení žáků, důsledkem je omezení motivačního působení.“"
+      },
+      {
+        "tag": "Nedostatečná podpora nadaných",
+        "detail": "Škola systematicky nepodporuje nadané žáky a ne diferencuje výuku podle jejich potřeb.",
+        "evidence": "„Menší pozornost je věnována systematické podpoře nadaných žáků ve výuce... Nedostatečná podpora individuálních vzdělávacích potřeb žáků... omezovala plnohodnotný rozvoj osobnosti zejména nadaných žáků.“"
+      },
+      {
+        "tag": "Slabá zpětná vazba",
+        "detail": "Hospitační činnost je formální, učitelé nedostávají dostatečnou zpětnou vazbu ke kvalitě své práce.",
+        "evidence": "„Hospitační činnost neprobíhá systematicky a vedení hospitačních záznamů je spíše formální. Nízká efektivita poskytované zpětné vazby pedagogům.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jak diferencuje výuku v běžných hodinách?",
+      "Jaké moderní vyučovací metody kromě frontální výuky a výkladu učitelé používají?",
+      "Jak škola zajišťuje, aby zpětná vazba od vedení pomáhala učitelům zlepšovat kvalitu výuky?"
+    ],
+    "who_school_fits": [
+      "Pro studenty, kteří preferují tradiční, frontální styl výuky s důrazem na vědomosti.",
+      "Pro žáky, kteří chtějí rozvíjet sociální cítění a zapojit se do charitativních či partnerských projektů.",
+      "Pro zájemce o přírodní vědy, kterým vyhovuje moderně vybavené laboratoře a spolupráce s univerzitou."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty, kteří vyžadují aktivní, projektové vyučování a prostor pro kreativitu a kritické myšlení.",
+      "Pro vysoce nadané žáky, kteří potřebují individuální přístup a náročnější studijní výzvy.",
+      "Pokud hledáte školu s důrazem na formativní hodnocení a častou sebereflexi."
+    ],
+    "plain_czech_summary": "Gymnázium v Soběslavi nabízí nadprůměrné studijní výsledky a vynikající materiální zázemí včetně moderních učeben. Škola klade velký důraz na sociální rozvoj žáků a spolupráci s partnery. Slabinou je však tradiční styl výuky, který málo podporuje aktivní učení a nabízí málo prostoru pro nadané studenty. Pokud hledáte pro dítě kvalitní zázemí a tradiční přístup, je to dobrá volba. Pro rodiče očekávající moderní metody a individuální přístup k talentům může být škola méně vhodná."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Mírně nadprůměrné",
+      "key_numbers": [
+        "Většinou mírně lepší výsledky než celostátní průměr gymnázií",
+        "Většina absolventů pokračuje na VŠ"
+      ],
+      "evidence": "„Škola ve srovnání s ostatními gymnázii nadále dosahuje mírně nadprůměrných výsledků v předmětech státní maturitní zkoušky.“"
+    },
+    "absence": {
+      "trend": "Nízká a stabilní",
+      "key_numbers": [
+        "Průměrná míra omluvené absence dlouhodobě nízká",
+        "Nízký počet neomluvených hodin"
+      ],
+      "evidence": "„Průměrná míra omluvené absence na jednoho žáka je dlouhodobě nízká. Také počet neomluvených hodin se týkal nízkého počtu žáků.“"
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště",
+      "Nabídka doučování pro žáky ohrožené neúspěchem",
+      "Kariérové poradenství"
+    ],
+    "safety_climate": [
+      "Přátelská atmosféra a vzájemný respekt mezi učiteli a žáky",
+      "Vzácný výskyt sociálně patologických jevů",
+      "Bezpečnostní odpočinková zóna v okolí školy"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s Jihočeskou univerzitou a ornitologickou společností",
+      "Dlouhodobá spolupráce s partnerskou školou v Dánsku",
+      "Spolupráce s církevní neziskovou organizací"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně rozlišuje silné a slabé stránky, používá běžnou češtinu bez zbytečného úředničení.",
+    "uncertainty_notes": []
+  }
+}

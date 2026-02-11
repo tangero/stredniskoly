@@ -1,0 +1,104 @@
+{
+  "report_id": "GY8_600013065_2021-10-04",
+  "school_profile": {
+    "school_type": "Gymnázium s osmiletým a čtyřletým oborem vzdělání",
+    "inspection_period": "4. až 6. 10. 2021",
+    "school_change_summary": "Od minulé inspekce došlo ke zlepšení materiálních a prostorových podmínek, včetně rekonstrukce a modernizace."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výsledky",
+        "detail": "Žáci dosahují tradičně výborných výsledků u maturit i v soutěžích a úspěšně se umisťují na předních příčkách.",
+        "evidence": "„Tradičně výborných výsledků dosahují žáci také při absolvování maturitních zkoušek... v olympiádách cizích jazyků se žáci často umisťují na předních příčkách.“"
+      },
+      {
+        "tag": "Atmosféra",
+        "detail": "Ve škole panuje příjemná pracovní atmosféra založená na otevřené komunikaci a vzájemné důvěře.",
+        "evidence": "„Ve vyučovacích hodinách byla zaznamenána příjemná a komunikativní pracovní atmosféra... pozitivní pracovní klima.“"
+      },
+      {
+        "tag": "Zázemí",
+        "detail": "Škola nabízí upravené a podnětné prostory s novým bezbariérovým přístupem a modernizovanými učebnami.",
+        "evidence": "„Prostory školy jsou upravené a podnětné... vylepšení bezbariérového přístupu včetně zajištění výtahu a modernizaci několika učeben.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Výuka",
+        "detail": "Výuka je převážně frontální s dominantní rolí učitele a nízkým využitím diferenciace pro různé potřeby žáků.",
+        "evidence": "„Základem výuky byla převážně frontální forma... Vyučující předkládali žákům učivo většinou jednotně, bez využití diferenciace.“"
+      },
+      {
+        "tag": "Hodnocení",
+        "detail": "Učitelé neplánují sebehodnocení žáků a málo využívají zpětnou vazbu pro další učení.",
+        "evidence": "„Sebehodnocení žáků... bylo zaznamenáno jen výjimečně... Málo prostoru bylo poskytováno pro vzájemné vrstevnické hodnocení.“"
+      },
+      {
+        "tag": "Řízení",
+        "detail": "Škola se více zaměřuje na řešení aktuálních problémů než na systematické plánování a prevenci rizik.",
+        "evidence": "„Škola se zaměřuje na řešení aktuálně vzniklých situací... méně na systematické plánování, které umožní předcházet rizikům.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola využívá dělené hodiny k individuální práci se žáky, když inspekce zaznamenala převahu frontální výuky?",
+      "Jakým způsobem pedagogové zajišťují diferencovanou výuku pro žáky s různými vzdělávacími potřebami?",
+      "Jak škola podporuje rozvoj digitálních kompetencí a využívání technologií přímo ve výuce?"
+    ],
+    "who_school_fits": [
+      "Samostatní žáci, kteří jsou schopni se dobře připravit na vysokoškolské studium v příznivém klimatu.",
+      "Žáci, kteří chtějí aktivně podnikat zahraniční výměnné pobyty a zapojit se do soutěží.",
+      "Studenti se zájmem o přírodní vědy, které podporuje kvalitní materiální zázemí školy."
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří vyžadují intenzivní individuální přístup a častou zpětnou vazbu od učitelů.",
+      "Studenti, kteří preferují moderní interaktivní formy výuky před tradičním výkladem.",
+      "Rodiny očekávající systematickou péči o nadané děti přímo v běžných hodinách."
+    ],
+    "plain_czech_summary": "Gymnázium v Ústí nad Orlicí nabízí kvalitní vzdělání s tradicí výborných maturitních výsledků a úspěchů v soutěžích. Škola má zrekonstruované prostory a bezbariérový přístup. Převažuje zde tradiční frontální styl výuky, který může vyhovovat samostatným studentům mířícím na VŠ. Slabším místem je málo diferencovaná výuka a nízký důraz na sebehodnocení žáků. Škola má velmi dobrou atmosféru a nabízí zajímavé zahraniční pobyty."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Tradičně výborné výsledky",
+      "key_numbers": [
+        "Výborné výsledky ve společné i profilové části",
+        "Vítěz celostátního kola olympiády v AJ",
+        "Úspěchy v krajských soutěžích (dějepis, ekologie)"
+      ],
+      "evidence": "„Tradičně výborných výsledků dosahují žáci také při absolvování maturitních zkoušek, a to jak ve společné, tak i v profilové části.“"
+    },
+    "absence": {
+      "trend": "Velmi nízká neomluvená absence",
+      "key_numbers": [
+        "Záškoláctví je velmi nízké",
+        "Neomluvená absence je velmi nízká",
+        "Celková absence není výrazně vyšší"
+      ],
+      "evidence": "„Počet absencí žáků ve výuce není výrazně vyšší, záškoláctví nebo neomluvená absence jsou velmi nízké.“"
+    },
+    "support_services": [
+      "Spolupráce s pedagogicko-psychologickou poradnou",
+      "Individuální vzdělávací plány pro žáky se SVP",
+      "Kariérní poradenství a podpora při volbě studia"
+    ],
+    "safety_climate": [
+      "Dlouhodobě velmi nízký výskyt patologických jevů",
+      "Příjemná a komunikativní pracovní atmosféra",
+      "Podpora vztahů skrze adaptační kurzy a zážitkové programy"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s partnerskými školami v zahraničí (např. Melbourne)",
+      "Aktivní Studentský parlament a Spolek rodičů",
+      "Spolupráce s městem a místními organizacemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a poskytuje konkrétní příklady. Obsahuje standardní pedagogické termíny, které jsou však vysvětleny kontextem.",
+    "uncertainty_notes": [
+      "Nejasná míra využití digitálních technologií v běžné výuce mimo distanční období.",
+      "Konkrétní podoba podpory nadaných žáků v běžných hodinách není detailně popsána.",
+      "Míra aktualizace krizového plánu není blíže specifikována."
+    ]
+  }
+}

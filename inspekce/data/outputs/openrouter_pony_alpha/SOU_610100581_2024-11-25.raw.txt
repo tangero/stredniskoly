@@ -1,0 +1,40 @@
+{
+  "report_id": "SOU_610100581_2024-11-25",
+  "school_profile": {
+    "school_type": "SOU",
+    "inspection_period": "2024-11-25 až 2024-11-28",
+    "school_change_summary": "Nebyl poskytnut zdrojový text zprávy, nelze určit změny."
+  },
+  "for_parents": {
+    "strengths": [],
+    "risks": [],
+    "questions_for_open_day": [],
+    "who_school_fits": [],
+    "who_should_be_cautious": [],
+    "plain_czech_summary": "Nebyl dodán text inspekční zprávy k analýze. Pro zpracování hodnocení školy je nutné vložit zdrojový text zprávy ČŠI."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "neurčeno",
+      "key_numbers": [],
+      "evidence": "Chybí zdrojový text."
+    },
+    "absence": {
+      "trend": "neurčeno",
+      "key_numbers": [],
+      "evidence": "Chybí zdrojový text."
+    },
+    "support_services": [],
+    "safety_climate": [],
+    "partnerships_practice": []
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 1,
+    "czech_clarity_reason": "Bez zdrojového textu nelze vyhodnotit kvalitu jazyka ani obsah zprávy.",
+    "uncertainty_notes": [
+      "Zdrojový text zprávy nebyl dodán.",
+      "Všechny výstupy jsou prázdné z důvodu chybějících vstupních dat.",
+      "Analýzu není možné provést bez textu inspekční zprávy."
+    ]
+  }
+}

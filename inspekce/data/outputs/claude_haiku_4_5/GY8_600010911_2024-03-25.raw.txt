@@ -1,0 +1,104 @@
+```json
+{
+  "report_id": "GY8_600010911_2024-03-25",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřleté a osmiletý program)",
+    "inspection_period": "25. března až 27. března 2024",
+    "school_change_summary": "Škola průběžně zlepšuje materiální podmínky, zvyšují se výsledky vzdělávání žáků, kteří dosahují nadprůměrných výsledků v externím testování. Přetrvává velmi dobrá úroveň partnerských vztahů a bohatá nabídka aktivit mimo výuku."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Mezinárodní spolupráce",
+        "detail": "Škola aktivně participuje v programu Erasmus+, organizuje výměnné pobyty a podporuje mezinárodní jazykové zkoušky.",
+        "evidence": "\"dlouholetá zahraniční spolupráce, v rámci které jsou organizovány pravidelné výměnné pobyty žáků\""
+      },
+      {
+        "tag": "Výuka cizích jazyků",
+        "detail": "Kvalitní výuka cizích jazyků s rodilým mluvčím, efektivní metodami a digitální technikou.",
+        "evidence": "\"Významným přínosem pro kvalitu výuky anglického jazyka je dlouhodobé působení rodilého mluvčího\""
+      },
+      {
+        "tag": "Mimoškolní aktivity",
+        "detail": "Bohatá nabídka kroužků, projektů a akcí podporujících osobnostní rozvoj žáků.",
+        "evidence": "\"velké množství volnočasových aktivit (pěvecké a divadelní kroužky, čtenářské dílny, filmový klub)\""
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Diferenciace výuky",
+        "detail": "Žáci často plní shodné úkoly bez ohledu na své individuální schopnosti a potřeby.",
+        "evidence": "\"Ve většině vyučovacích hodin chyběla vhodná diferenciace, žáci plnili obsahem, typem, rozsahem i náročností shodné úkoly\""
+      },
+      {
+        "tag": "Zpětná vazba",
+        "detail": "Učitelé poskytují žákům málo efektivní zpětné vazby o jejich pokroku a dosažení cílů.",
+        "evidence": "\"efektivní zpětnou vazbu k dalšímu učení poskytovali žákům ojediněle\""
+      },
+      {
+        "tag": "Kritické myšlení",
+        "detail": "Práce s informačními zdroji a vedení ke kritickému myšlení jsou v hodinách zařazovány jen výjimečně.",
+        "evidence": "\"Podpora čtenářské gramotnosti a práce s různými informačními zdroji byla ve zhlédnuté výuce zaznamenána výjimečně\""
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku individuálním potřebám jednotlivých žáků?",
+      "Jaké konkrétní kroky podnikne škola na zlepšení formativního hodnocení a zpětné vazby?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a práce s informačními zdroji?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní spolupráci (Erasmus+, výměnné pobyty)",
+      "Talentovaní žáci s nadáním, kterým škola nabízí kvalitní vzdělání a bohaté mimoškolní aktivity",
+      "Žáci, kterým vyhovuje tradiční přístup k výuce s důrazem na znalosti a externí testování"
+    ],
+    "who_should_be_cautious": [
+      "Žáci s nižšími schopnostmi, kterým chybí dostatečná individuální podpora a diferenciace",
+      "Žáci, kteří potřebují více zpětné vazby a konkrétního vedení k dosahování cílů",
+      "Žáci, kteří se učí lépe prostřednictvím kritického myšlení a práce s různými zdroji"
+    ],
+    "plain_czech_summary": "Gymnázium v Lovosicích je stabilní školou s dobrými materiálními podmínkami a nadprůměrnými výsledky v testech. Silnou stránkou je kvalitní výuka jazyků, bohatá nabídka mimoškolních aktivit a mezinárodní spolupráce. Slabší je individuální přístup k žákům – chybí diferenciace výuky a efektivní zpětná vazba. Škola se zaměřuje spíše na tradiční výuku s důrazem na znalosti než na rozvoj kritického myšlení a práce s informacemi."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Výborný",
+      "key_numbers": [
+        "100% úspěšnost u maturitní zkoušky ve školním roce 2022/2023",
+        "Nadprůměrné výsledky v externím testování 2021/2022 a 2022/2023"
+      ],
+      "evidence": "\"Ve školním roce 2022/2023 byla úspěšnost žáků školy u maturitní zkoušky 100 %\""
+    },
+    "absence": {
+      "trend": "Není v textu zmíněno",
+      "key_numbers": [],
+      "evidence": "Zpráva neobsahuje údaje o absenci žáků"
+    },
+    "support_services": [
+      "Výchovná poradkyně, metodička prevence a školní psycholožka",
+      "Doučování a individuální konzultace pro žáky ohrožené školním neúspěchem",
+      "Kariérové poradenství s aktivní spoluprací s úřadem práce",
+      "Virtuální schránka důvěry \"Nenech to být\" pro řešení osobních problémů"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra s respektujícím přístupem učitelů k žákům",
+      "Otevřená komunikace a flexibilní možnost individuálních schůzek s metodikem prevence",
+      "Pravidelná dotazníková šetření k monitorování klimatu školy a spokojenosti",
+      "Celoroční preventivní program zaměřený na nejčastější rizika a hrozby"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá zahraniční spolupráce a program Erasmus+ s výměnnými pobyty",
+      "Partnerství s nadací Unipetrol pro studentské vědecké konference",
+      "Spolupráce s domovem seniorů prostřednictvím mezigeračních setkávání",
+      "Aktivní spolupráce s úřadem práce a profesními organizacemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a citacemi. Silné a slabé stránky jsou jasně vymezeny. Chybí však konkrétní číselné údaje o některých aspektech (absence, počet žáků se speciálními potřebami v jednotlivých třídách).",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje údaje o absenci žáků a jejich vývoji",
+      "Nejsou uvedeny konkrétní výsledky dotazníkových šetření o klimatu školy",
+      "Chybí informace o počtu a typu žáků se speciálními vzdělávacími potřebami v jednotlivých ročnících"
+    ]
+  }
+}
+```

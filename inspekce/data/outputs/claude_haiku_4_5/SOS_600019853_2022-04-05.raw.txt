@@ -1,0 +1,108 @@
+```json
+{
+  "report_id": "SOS_600019853_2022-04-05",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola s obory: Praktická sestra (maturita), Zdravotnický asistent (maturita), Sociální činnost (nástavbové studium), Ošetřovatel (závěrečná zkouška)",
+    "inspection_period": "5. 4. 2022 – 7. 4. 2022",
+    "school_change_summary": "Škola se přestěhovala do náhradních prostor na Jánské 22 v Brně kvůli havarijnímu stavu původního sídla. Počet žáků vzrostl o 31 % na 192 žáků (96 % kapacity). Nová ředitelka zavedla elektronický informační systém a zlepšila vybavení odborných učeben."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Sociální a občanské kompetence",
+        "detail": "Škola systematicky rozvíjí sociální dovednosti žáků prostřednictvím dobrovolnictví, programu Setkávárna v domově seniorů a výuky první pomoci pro děti.",
+        "evidence": "Žáci získali pamětní bronzovou medaili od hejtmana za pomoc v pandemii. Každý týden probíhá dobrovolnický program."
+      },
+      {
+        "tag": "Kvalitní partnerství a praxe",
+        "detail": "Škola má rozsáhlou síť partnerů včetně nemocnic, domovů seniorů a sociálních služeb, kde žáci získávají praktické zkušenosti.",
+        "evidence": "Praktická výuka je dobře organizovaná, žáci vedou dokumentaci, nacvičují ošetřovatelské výkony pod vedením učitelek."
+      },
+      {
+        "tag": "Podpora žáků v obtížích",
+        "detail": "Školní poradenské pracoviště efektivně podporuje všechny žáky, včetně psychologické péče kaplanky.",
+        "evidence": "Výchovná poradkyně vyučuje ve všech třídách, metodička prevence kvalitně zpracovala preventivní program."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky z angličtiny",
+        "detail": "Žáci dosahují nižší úspěšnosti v anglickém jazyce na maturitě, výuka není zaměřena na aktivní mluvený projev.",
+        "evidence": "Ve výuce angličtiny chybí kooperativní metody, komunikace probíhá jen mezi učitelem a jedním-dvěma žáky."
+      },
+      {
+        "tag": "Podprůměrné maturitní výsledky",
+        "detail": "Celková úspěšnost při maturitě je dlouhodobě podprůměrná, zejména u nástavbového studia.",
+        "evidence": "V porovnání s celorepublikovou úrovní jsou výsledky nižší. Škola přijala opatření, ale účinnost se zatím neprojevila."
+      },
+      {
+        "tag": "Nedostatečné formativní hodnocení",
+        "detail": "Učitelé často nezařazují na konci hodin sebehodnocení a hodnocení žáků, chybí jasné formulování cílů.",
+        "evidence": "V hospitovaných hodinách se závěrečné shrnutí a zhodnocení objevilo jen v některých hodinách."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola řeší slabé výsledky z angličtiny? Jaké nové metody zavádí?",
+      "Jaká je nabídka doučování a jak se vybírají žáci, kteří ho potřebují?",
+      "Jak probíhá praktická výuka a jaké jsou šance na zaměstnání po absolvování?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří chtějí pracovat v sociálních a zdravotnických službách a mají zájem o praktickou výuku",
+      "Studenti, kterým vyhovuje silné zaměření na sociální kompetence a dobrovolnictví",
+      "Žáci se speciálními vzdělávacími potřebami, kterým škola věnuje adekvátní podporu"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří se chystají na vysokou školu – maturitní výsledky jsou podprůměrné",
+      "Studenti, kteří potřebují kvalitní výuku angličtiny – zde jsou rezervy",
+      "Žáci nástavbového studia – zde jsou výsledky nejslabší"
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola Evangelické akademie je zaměřená na praktickou přípravu zdravotnických a sociálních pracovníků. Její silnou stránkou je rozsáhlá síť partnerů, kvalitní praktická výuka a péče o sociální rozvoj žáků. Slabinou jsou podprůměrné maturitní výsledky, zejména z angličtiny. Škola se snaží situaci zlepšit, ale zatím bez viditelného efektu. Vhodná pro žáky zaměřené na praxi, méně vhodná pro ty, kdo plánují vysokou školu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě podprůměrný",
+      "key_numbers": [
+        "83 % úspěšnosti v loňském roce (zkrácená forma kvůli pandemii)",
+        "Nižší úspěšnost v anglickém jazyce u obou maturitních oborů",
+        "Nejslabší výsledky u nástavbového studia"
+      ],
+      "evidence": "V porovnání s celorepublikovou úrovní je celková úspěšnost dlouhodobě podprůměrná. Škola zavedla pravidelné testování a SCIO testy, ale účinnost se zatím neprojevila."
+    },
+    "absence": {
+      "trend": "Řešeno metodickými pokyny",
+      "key_numbers": [
+        "Zvýšená pozornost žákům s vyšším počtem zameškaných hodin",
+        "Důsledné dodržování pravidel u rizikových žáků"
+      ],
+      "evidence": "Škola vydala metodické pokyny zaměřené na žáky s vyšším počtem zameškaných hodin a ohrožené školním neúspěchem."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště s výchovnou poradkyní, metodičkou prevence a kaplankou",
+      "Doučování v češtině, angličtině a ošetřovatelství",
+      "Projekt Šablony a Národní plán doučování",
+      "Mentorská podpora pro začínající učitele"
+    ],
+    "safety_climate": [
+      "Malé množství evidovaných úrazů",
+      "Příjemná pracovní atmosféra založená na vzájemném respektu a důvěře",
+      "Žáci kladou bez obav dotazy a vyjadřují se k tématu",
+      "Bezpečný prostor poskytovaný kaplankou v náročných situacích"
+    ],
+    "partnerships_practice": [
+      "Fakultní nemocnice u sv. Anny, Masarykův onkologický ústav, Fakultní nemocnice Brno, Vojenská nemocnice",
+      "Domov pro seniory Věstonická, Centrum sociálních služeb, Diecézní charita Brno",
+      "Partnerská škola ve Stuttgartu pro rozvoj jazykových dovedností",
+      "Dobrovolnický program Setkávárna v domově seniorů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s příklady z hospitací. Některé pasáže jsou však delší a méně přehledné.",
+    "uncertainty_notes": [
+      "Není jasné, jaké konkrétní opatření škola zavedla v angličtině a jaké jsou jejich výsledky",
+      "Chybí detailní data o počtu žáků v jednotlivých oborech a jejich úspěšnosti",
+      "Není specifikováno, jak dlouho trvá doučování a kolik žáků se ho účastní"
+    ]
+  }
+}
+```

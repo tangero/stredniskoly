@@ -1,0 +1,119 @@
+{
+  "report_id": "GY8_600016064_2022-10-04",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:59:57.245971+00:00",
+  "run_finished_utc": "2026-02-09T17:00:29.259909+00:00",
+  "raw_file": "GY8_600016064_2022-10-04.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY8_600016064_2022-10-04",
+    "school_profile": {
+      "school_type": "Všeobecné a sportovní gymnázium (čtyřleté, osmileté a se sportovní přípravou)",
+      "inspection_period": "4. 10. 2022 – 7. 10. 2022",
+      "school_change_summary": "Od poslední inspekce (2015/2016) došlo ke změně vedení, zlepšení materiálních podmínek a poklesu počtu žáků ze 369 na 286. Od 2021/2022 se již nepřijímají uchazeči do oboru se sportovní přípravou."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Sledování výsledků a opatření",
+          "detail": "Škola systematicky sleduje výsledky žáků různými nástroji a přijímá účinná opatření k jejich zlepšení.",
+          "evidence": "Po horších výsledcích maturit v 2017/2018 a 2018/2019 zavedla dělené hodiny; v dalších dvou letech dosáhla 100% úspěšnosti."
+        },
+        {
+          "tag": "Podpora začínajících učitelů",
+          "detail": "Nově příchozím pedagogům je poskytována cílená metodická podpora a efektivní adaptační plán.",
+          "evidence": "Při inspekční hospitaci byl zaznamenán efektivní vliv cíleného metodického vedení a dobrá sebereflexi začínajícího pedagoga."
+        },
+        {
+          "tag": "Mimoškolní aktivity a rozvoj osobnosti",
+          "detail": "Bohatá nabídka školních klubů, soutěží, projektů a společenských aktivit podporuje osobnostní rozvoj žáků.",
+          "evidence": "Žáci se účastní středoškolské odborné činnosti, mezinárodních soutěží, sportovních akcí a komunitních projektů."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Pasivní výuka a chybějící sebehodnocení",
+          "detail": "Převažuje frontální výuka bez dostatečného sebehodnocení a vzájemného hodnocení žáků, což bylo doporučeno již v minulé inspekci.",
+          "evidence": "Společným nedostatkem bylo minimální uplatnění sebehodnocení a vzájemného hodnocení jako součást ověření dosažení cílů."
+        },
+        {
+          "tag": "Omezená diferenciace a kritické myšlení",
+          "detail": "Výuka je jen výjimečně diferencovaná podle schopností žáků; málo se rozvíjí kritické myšlení a práce s různými zdroji.",
+          "evidence": "Jen ojediněle byly do výuky zařazovány aktivity podporující práci s informačními zdroji a rozvoj kritického myšlení."
+        },
+        {
+          "tag": "Slabá zpětná vazba pro učitele",
+          "detail": "Hospitační činnost vedení není provázena konkrétními doporučeními pro zlepšení pedagogické práce.",
+          "evidence": "Její přínos pro rozvoj pedagogických procesů snižuje absence doporučení ke zkvalitňování výuky."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje sebehodnocení a vzájemné hodnocení žáků během hodin?",
+        "Jaké metody používáte k rozvoji kritického myšlení a práce s různými informačními zdroji?",
+        "Jak je zajištěna diferenciace výuky pro žáky s různými schopnostmi a potřebami?"
+      ],
+      "who_school_fits": [
+        "Žáci s dobrými studijními výsledky a zájmem o všeobecné vzdělání (polovina žáků prospívá s vyznamenáním)",
+        "Sportovně nadaní žáci, kteří chtějí kombinovat studium s kvalitní sportovní přípravou (biatlon, alpské disciplíny, snowboard)",
+        "Žáci se zájmem o společenské angažování a rozvoj sociálních kompetencí (kluby občanského vzdělávání, demokratického myšlení)"
+      ],
+      "who_should_be_cautious": [
+        "Žáci, kteří potřebují aktivní, interaktivní výuku s důrazem na sebehodnocení a kritické myšlení (výuka je spíše frontální)",
+        "Žáci s individuálními potřebami, kteří vyžadují silně diferencovaný přístup (diferenciace je minimální)",
+        "Žáci se zdravotním postižením vyžadující bezbariérový přístup (bezbariérový přístup dosud není zajištěn)"
+      ],
+      "plain_czech_summary": "Gymnázium v Bruntále je stabilní školou s dobrými studijními výsledky a bohatou nabídkou mimoškolních aktivit. Silnou stránkou je péče o výsledky žáků a podpora začínajících učitelů. Hlavní slabinou je převaha pasivní frontální výuky bez dostatečného sebehodnocení žáků a rozvoje kritického myšlení. Škola by měla více zaměřit pozornost na aktivizační metody a individuální přístup k žákům. Vhodná pro ambiciózní žáky, méně vhodná pro ty, kteří potřebují interaktivní a diferencovanou výuku."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Pozitivní - po nižších výsledcích v 2017/2018 a 2018/2019 dosáhla škola zlepšení",
+        "key_numbers": [
+          "2017/2018 a 2018/2019: horší výsledky než průměr ČR (cizí jazyk, matematika, český jazyk)",
+          "2020/2021 a 2021/2022: 100% úspěšnost (s výjimkou jednoho žáka v 2021/2022)",
+          "95% absolventů 2021/2022 pokračuje v dalším studiu na vysokých školách"
+        ],
+        "evidence": "Škola přijala účinná opatření (dělené hodiny, cílená práce s neúspěšnými úlohami); v dalších dvou letech stoprocentní úspěšnost."
+      },
+      "absence": {
+        "trend": "Není v textu explicitně zmíněn",
+        "key_numbers": [
+          "Není dostupné"
+        ],
+        "evidence": "Zpráva se absence věnuje minimálně; fokus je na prospěch a chování žáků."
+      },
+      "support_services": [
+        "Výchovná poradkyně, školní psycholog a školní metodista prevence zajišťují poradenské služby",
+        "Pro žáky se speciálními vzdělávacími potřebami je zpracován a vyhodnocován plán pedagogické podpory",
+        "Individuální konzultace pro řešení adaptačních, komunikačních, vztahových a osobních problémů",
+        "Testy profesní orientace s následujícími pohovory",
+        "Doučování a individuální konzultace pro žáky se studijními obtížemi"
+      ],
+      "safety_climate": [
+        "Žáci jsou pravidelně seznamováni s pravidly bezpečného chování a ochrany zdraví",
+        "Škola průběžně vyhodnocuje rizika v oblasti bezpečnosti a ochrany zdraví",
+        "Negativní projevy v chování jsou identifikovány a řešeny cílenými opatřeními (navýšení dohledu, monitoring, intervence)",
+        "Úzká spolupráce se zákonnými zástupci a externími odborníky",
+        "Adaptační pobyty pro první ročníky, kde žáci sami utváří pravidla třídního kolektivu",
+        "Anonymní schránka důvěry pro žáky"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s externími partnery v oblasti prevence a péče o žáky se speciálními vzdělávacími potřebami",
+        "Partnerství v environmentální výchově a kariérovém poradenství",
+        "Spolupráce s místním spolkem 'Život s vámi' na komunitně osvětových setkáních",
+        "Spolupráce s městem Bruntál na řešení aktuálních situací v obci (Klub občanského vzdělávání, Klub demokratického myšlení)",
+        "Přítomnost rodilého mluvčího v anglickém jazyce (koordinace by mohla být lepší)",
+        "Zapojení do programu 'Mezinárodní cena vévody z Edinburghu' od 2022/2023"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně a systematicky, s jasnou strukturou. Obsahuje konkrétní příklady a citace z pozorování. Některé pasáže jsou však poměrně dlouhé a obsahují více informací najednou, což mírně snižuje přehlednost.",
+      "uncertainty_notes": [
+        "Absence není v textu zmíněna - není jasné, zda je to problém nebo se jí škola věnuje dostatečně",
+        "Počet žáků se speciálními vzdělávacími potřebami (17) je zmíněn, ale jejich konkrétní výsledky a pokroky nejsou detailně popsány",
+        "Konkrétní čísla k účasti v jednotlivých mimoškolních aktivitách nejsou uvedena"
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "report_id": "GY6_600016943_2023-09-19",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:38:40.800778+00:00",
+  "run_finished_utc": "2026-02-09T16:38:43.563760+00:00",
+  "raw_file": "GY6_600016943_2023-09-19.raw.txt",
+  "call_error": null,
+  "parse_error": "Nepodařilo se parsovat JSON z odpovědi modelu.",
+  "parsed_output": null
+}

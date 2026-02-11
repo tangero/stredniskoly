@@ -1,0 +1,103 @@
+{
+  "report_id": "GY8_600008037_2021-10-20",
+  "school_profile": {
+    "school_type": "Gymnázium s osmiletým studiem",
+    "inspection_period": "20. 10. 2021 − 22. 10. 2021",
+    "school_change_summary": "Od poslední inspekce mírně vzrostl počet žáků, došlo k modernizaci materiálních podmínek a posílení bezpečnosti."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazyky a mezinárodní spolupráce",
+        "detail": "Škola dosahuje velmi dobrých výsledků v cizích jazycích a nabízí konverzace i mezinárodní projekty.",
+        "evidence": "„Škole se daří dosahovat dobré úrovně znalostí... v cizích jazycích, někteří žáci skládají i mezinárodně uznávané zkoušky.“"
+      },
+      {
+        "tag": "Atmosféra a bezpečí",
+        "detail": "Ve škole panuje příjemné klima, respektující přístup a je zajištěno technické zabezpečení proti vniknutí cizích osob.",
+        "evidence": "„V hospitovaných hodinách panoval vzájemný respektující přístup... Bezpečnost žáků byla posílena novým technickým zabezpečením.“"
+      },
+      {
+        "tag": "Partnerská spolupráce",
+        "detail": "Efektivní spolupráce s městem, vysokými školami a zahraničními partnery rozšiřuje možnosti žáků.",
+        "evidence": "„Škola rozvíjí efektivní spolupráci s mnoha externími partnery... aktivně podporován zájem o studium přírodních věd.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivní výuka",
+        "detail": "Ve výuce převažuje frontální styl, který neaktivizuje všechny žáky a nevyužívá dostatek diskuse či tvořivosti.",
+        "evidence": "„Ve sledovaných hodinách převažovala forma frontální výuky, která neaktivizovala všechny žáky.“"
+      },
+      {
+        "tag": "Chybějící individualizace",
+        "detail": "Žáci dostávají stejné úkoly bez ohledu na své schopnosti a potřeby, což omezuje jejich rozvoj.",
+        "evidence": "„Žákům byly většinou bez ohledu na jejich individuální možnosti a schopnosti... zadávány úlohy stejného typu.“"
+      },
+      {
+        "tag": "Nedostatečná podpora nadání",
+        "detail": "Škola neidentifikuje systematicky nadané žáky a chybí metodická podpora pedagogů v této oblasti.",
+        "evidence": "„Opomíjena je systematická identifikace nadaných žáků a metodická podpora pedagogů při jejich výuce.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje talentované žáky a jak je identifikuje?",
+      "Jaké metody aktivizující výuku učitelé používají, aby se žáci více zapojovali do diskuse?",
+      "Jak škola zajišťuje, aby výuka reflektovala individuální potřeby a schopnosti jednotlivých žáků?"
+    ],
+    "who_school_fits": [
+      "Pro žáky, kteří preferují klidné, bezpečné prostředí s důrazem na tradiční výuku a disciplínu.",
+      "Pro studenty s zájmem o jazyky a mezinárodní projekty.",
+      "Pro rodiče hledající školu s malým počtem žáků ve třídách a individuálním přístupem."
+    ],
+    "who_should_be_cautious": [
+      "Pro žáky, kteří vyžadují aktivní, diskuzní formy výuky a prostor pro kreativitu.",
+      "Pokud hledáte školu se systematickou podporou nadaných dětí.",
+      "Pro studenty, kteří potřebují silnou podporu při rozvoji samostatného a kritického myšlení."
+    ],
+    "plain_czech_summary": "Gymnázium v Trhových Svinech nabízí bezpečné prostředí s vynikající jazykovou výukou a mezinárodní spoluprací. Výuka je ale spíše tradiční, učitelé málo využívají aktivizující metody a často zadávají všem stejně náročné úkoly. Škola by měla zlepšit podporu nadaných žáků a individualizaci. Pro studenty, kteří preferují klid a jazyky, je vhodná, pro ty, co hledají kreativní a diskuzní výuku, může být méně inspirativní."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "stabilní",
+      "key_numbers": [
+        "Výsledky v češtině lepší než průměr ČR",
+        "Ostatní předměty nepatrně slabší než průměr ČR",
+        "Solidní úspěšnost při přijímání na VŠ"
+      ],
+      "evidence": "„Ve srovnání s výsledky osmiletých gymnázií... vychází škola lépe v předmětu český jazyk... v ostatních... nepatrně slabší.“"
+    },
+    "absence": {
+      "trend": "velmi nízká",
+      "key_numbers": [
+        "Cca 4 % zameškaných hodin",
+        "Pouze 3 neomluvené hodiny za rok",
+        "Nízký výskyt sociálně patologických jevů"
+      ],
+      "evidence": "„Počty zameškaných hodin jsou nízké (cca 4 %)... v uzavřeném školním roce nebyly omluveny celkem tři hodiny.“"
+    },
+    "support_services": [
+      "Funkční školní poradenské pracoviště (prevence, výchovné poradenství)",
+      "Kariérové poradenství v potřebném rozsahu",
+      "Nabídka zájmových útvarů pro osobnostní rozvoj"
+    ],
+    "safety_climate": [
+      "Příjemné klima a vzájemný respekt mezi učiteli a žáky",
+      "Nové technické zabezpečení hlavního vchodu",
+      "Funkční mechanismy prevence sociálně patologických jevů"
+    ],
+    "partnerships_practice": [
+      "Spolupráce s městem Trhové Sviny (prostory, hala)",
+      "Spolupráce s vysokými školami (přírodní vědy)",
+      "Mezinárodní projekty e-Twinning a spolupráce se zahraničními školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná, jasně členěná a poskytuje dostatek konkrétních příkladů. Některé pasáže by mohly být stručnější.",
+    "uncertainty_notes": [
+      "Nejasná míra zapojení žáků do aktivit mimo výuku (soutěže, kroužky) – zmíněno, ale bez konkrétních čísel.",
+      "Konkrétní podoba 'moderních trendů' ve vzdělávání, které škola plánuje zavést, není detailně popsána."
+    ]
+  }
+}

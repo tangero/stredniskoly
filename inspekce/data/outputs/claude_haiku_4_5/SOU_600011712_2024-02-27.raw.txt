@@ -1,0 +1,106 @@
+```json
+{
+  "report_id": "SOU_600011712_2024-02-27",
+  "school_profile": {
+    "school_type": "Střední škola služeb, obchodu a gastronomie (SOU)",
+    "inspection_period": "27. února až 1. března 2024",
+    "school_change_summary": "Škola vznikla sloučením v červenci 2018. Od poslední inspekce v roce 2016 došlo k výraznému zlepšení prostorových a materiálních podmínek. Zájem uchazečů roste, v současnosti studuje 1062 žáků v 48 třídách."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Silné vedení a systematická kontrola",
+        "detail": "Ředitelka školy systematicky plánuje, organizuje a kontroluje vzdělávací proces s funkčně nastavenou strukturou.",
+        "evidence": "Vedení školy se daří kvalitně zhodnotit hospitované hodiny a poskytnout doporučení k zlepšení."
+      },
+      {
+        "tag": "Praktické vyučování na vysoké úrovni",
+        "detail": "Praktické vyučování logicky propojuje teoretické znalosti s reálnou praxí a připravuje absolventy na pracovní trh.",
+        "evidence": "Výuka probíhá na školních pracovištích i v reálném prostředí potenciálních zaměstnavatelů s důrazem na pracovní kompetence."
+      },
+      {
+        "tag": "Rozvinutá síť partnerství",
+        "detail": "Škola spolupracuje s řadou odborných firem, profesních organizací a zahraničními školami.",
+        "evidence": "Partneři zajišťují materiální vybavení, odborníky z praxe a realizaci praktického vyučování na reálných pracovištích."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká absence žáků",
+        "detail": "Přes pokles zůstává absence stále vysoká, zejména v nematuritních oborech (o 72 % vyšší než v maturitních).",
+        "evidence": "Ve školním roce 2022/2023 bylo v průměru 162 zameškaných hodin na žáka, v nematuritních oborech výrazně více."
+      },
+      {
+        "tag": "Slabší výsledky v cizích jazycích",
+        "detail": "Hrubá neúspěšnost v cizích jazycích na maturitě je vyšší než celorepublikový průměr.",
+        "evidence": "V nástavbovém oboru 27,6 % (ČR 24,9 %), v kategorii M 15,4 % (ČR 8,3 %), v kategorii L 20 % (ČR 12,7 %)."
+      },
+      {
+        "tag": "Nedostatečné využití aktivních metod",
+        "detail": "V části výuky chybí aktivizační metody a práce s informačními zdroji.",
+        "evidence": "Převažuje frontální výuka, méně se zařazují skupinové aktivity a práce s různými informačními zdroji."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola řeší vysokou absenci žáků, zejména v nematuritních oborech? Jaká opatření zavádí?",
+      "Jaké konkrétní kroky podniká pro zlepšení výuky cizích jazyků, kde jsou výsledky slabší?",
+      "Jak se škola zaměřuje na rozvoj komunikačních dovedností a kritického myšlení žáků?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zaměřením na praktické obory (gastronomie, služby, obchod) – praktické vyučování je na vysoké úrovni.",
+      "Studenti, kteří se chtějí rychle uplalit na pracovním trhu – absolventi mají obvykle dobré uplatnění.",
+      "Nadaní žáci – škola podporuje jejich účast v odborných soutěžích, kde dosahují úspěchů."
+    ],
+    "who_should_be_cautious": [
+      "Žáci se sklonem k absenci – absence je zde vysoká a může vést k neúspěchu, zvlášť v nematuritních oborech.",
+      "Studenti zaměření na jazykové vzdělávání – výsledky v cizích jazycích jsou slabší než průměr.",
+      "Žáci vyžadující individuální přístup – v některých hodinách chybí diferenciace a nabídka úloh různé náročnosti."
+    ],
+    "plain_czech_summary": "Jde o velkou a dobře vedenou střední školu se zaměřením na služby, gastronomii a obchod. Silnými stránkami jsou kvalitní praktické vyučování, silné vedení a rozvinutá spolupráce s firmami. Absolventi se obvykle dobře uplatňují. Slabší jsou výsledky v cizích jazycích a vysoká absence žáků, zejména v nematuritních oborech. Škola se postupně zlepšuje – prostory se modernizují a vedení systematicky pracuje na kvalitě výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Kolísavý, s problémy v cizích jazycích",
+      "key_numbers": [
+        "Český jazyk – kategorie M: 17,2 % neúspěšnosti (ČR 10,3 %)",
+        "Cizí jazyk – kategorie M: 15,4 % neúspěšnosti (ČR 8,3 %)",
+        "Matematiku si volí v průměru 11 % žáků"
+      ],
+      "evidence": "Ve zkušebním předmětu cizí jazyk jsou výsledky školy v celorepublikovém srovnání horší ve všech kategoriích oborů."
+    },
+    "absence": {
+      "trend": "Vysoká, přes pokles zůstává problematická",
+      "key_numbers": [
+        "Školní rok 2022/2023: 162 zameškaných hodin na žáka (pokles z 201)",
+        "Nematuritní obory: o 72 % vyšší absence než maturitní obory",
+        "Absence se podílí na studijní neúspěšnosti žáků"
+      ],
+      "evidence": "Přes meziroční pokles zameškaných hodin zůstává celková absence stále vysoká, zejména v nematuritních oborech."
+    },
+    "support_services": [
+      "Čtyři výchovní poradci a tři metodici prevence systematicky kooperují na všech pracovištích",
+      "Včasná identifikace speciálních vzdělávacích potřeb a pravidelná spolupráce se zákonnými zástupci",
+      "Konzultace pro žáky ohrožené školní neúspěšností a možnost vnitřních přestupů na méně náročné obory"
+    ],
+    "safety_climate": [
+      "Žádné závažnější kázeňské problémy zaznamenány",
+      "Všechny navštívené vyučovací hodiny se vyznačovaly vstřícnou edukační atmosférou a vzájemným respektem",
+      "Dodržování zásad bezpečnosti a ochrany zdraví je průběžně sledováno a kontrolováno"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce s odbornými firmami, profesními organizacemi, svazy a cechů",
+      "Partneři zajišťují materiální vybavení, odborníky z praxe a realizaci praktického vyučování na reálných pracovištích",
+      "Dlouholeté partnerství se středními školami v tuzemsku i zahraničí (Vizovice, Prešov, Karpacz)"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními fakty a čísly. Některé pasáže jsou však více úřednické a méně přístupné laickému čtenáři.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje konkrétní opatření, která škola přijala k řešení vysoké absence – pouze uvádí, že se absence snížila.",
+      "Není jasné, jaké konkrétní kroky škola podniká k zlepšení výuky cizích jazyků, jen že vedení výsledky sleduje.",
+      "Chybí informace o tom, jak se liší kvalita výuky mezi jednotlivými pracovišti školy (má jich 9)."
+    ]
+  }
+}
+```

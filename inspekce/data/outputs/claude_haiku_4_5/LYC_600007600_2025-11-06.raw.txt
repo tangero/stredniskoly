@@ -1,0 +1,110 @@
+```json
+{
+  "report_id": "LYC_600007600_2025-11-06",
+  "school_profile": {
+    "school_type": "Střední zemědělská škola a Střední odborná škola (SZeŠ a SOŠ), Poděbrady",
+    "inspection_period": "6.–7. listopadu 2025",
+    "school_change_summary": "Nová ředitelka od října 2025 stabilizuje školu po odchodu předchozího ředitele. Pedagogický sbor se výrazně obměnil (8 odchodů, 12 nových učitelů). Zlepšila se činnost školního poradenského pracoviště a žákovského parlamentu."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Kvalitní výuka jazyků",
+        "detail": "Čeština a angličtina jsou vedeny kvalifikovanými učiteli s vstřícným přístupem a efektivními metodami rozvíjejícími komunikační dovednosti.",
+        "evidence": "Výuka byla vedena odborně kvalifikovanými učiteli, zaznamenány účinné aktivizační prvky a efektivní organizace hodin."
+      },
+      {
+        "tag": "Nová vedení se věnuje stabilizaci",
+        "detail": "Ředitelka aktivně řeší personální problémy a během inspekce přijala opatření proti nevhodným způsobům hodnocení.",
+        "evidence": "Vedení školy přijalo v průběhu inspekční činnosti opatření k odstranění nepedagogického způsobu hodnocení."
+      },
+      {
+        "tag": "Nízký podíl neprospívajících žáků",
+        "detail": "Ve všech oborech je počet žáků, kteří neprospívají, velmi nízký.",
+        "evidence": "Počet neprospívajících žáků je ve všech oborech nízký."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Vysoká fluktuace učitelů",
+        "detail": "Osm učitelů odešlo v posledních měsících, rozvrh se třikrát měnil, což narušuje kontinuitu vzdělávání.",
+        "evidence": "Od dubna 2025 do inspekce rozvázalo pracovní poměr osm učitelů. Stálý rozvrh byl třikrát změněn."
+      },
+      {
+        "tag": "Obavy z přípravy na maturitu",
+        "detail": "Část žáků vyšších ročníků si stěžuje na neprobrané učivo a různé požadavky učitelů kvůli personální obměně.",
+        "evidence": "Žáci vyjadřují obavy z přípravy k maturitní zkoušce, zejména v souvislosti s personální obměnou pedagogů."
+      },
+      {
+        "tag": "Nevhodné způsoby hodnocení",
+        "detail": "Někteří učitelé používali pedagogicky nesprávné metody (známka za domácí úkol, mobilní telefon, pozdní odevzdání).",
+        "evidence": "Pedagogicky nesprávné je hodnocení stupněm nedostatečný za neodevzdání domácí přípravy nebo nevhodné používání mobilního telefonu."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak škola zajistí kontinuitu výuky a přípravu na maturitu v situaci, kdy se výrazně obměnil pedagogický sbor?",
+      "Jaké konkrétní opatření škola přijala proti nevhodným způsobům hodnocení a jak je bude kontrolovat?",
+      "Jak se škola vypořádá s vysokým podílem žáků se slabým prospěchem, zejména v oborech Agropodnikání a Veřejnosprávní činnost?"
+    ],
+    "who_school_fits": [
+      "Žáci, kteří si cení kvalitní výuky jazyků a komunikačních dovedností",
+      "Studenti zaměření na zemědělství, veterinářství a veřejnosprávní činnost s jasnou motivací",
+      "Žáci, kteří potřebují individuální přístup a podporu (škola má asistentku a poradenské služby)"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují stabilní tým učitelů a dlouhodobou kontinuitu (vysoká fluktuace pedagogů)",
+      "Studenti, kteří se obávají přísného nebo nespravedlivého hodnocení (byly zaznamenány problémy s přístupem některých učitelů)",
+      "Žáci s nižší motivací nebo slabším prospěchem (vysoký podíl žáků se slabým prospěchem v některých oborech)"
+    ],
+    "plain_czech_summary": "Škola prochází výraznou změnou. Nová ředitelka se snaží stabilizovat tým, ale odešlo osm učitelů a přišlo dvanáct nových. To způsobilo problémy s rozvrhem a kontinuitou výuky. Inspektoři zjistili, že někteří učitelé používali nevhodné způsoby hodnocení, což škola během inspekce řešila. Výuka jazyků je kvalitní, ale v některých oborech je vysoký podíl žáků se slabým prospěchem. Žáci si stěžují na různé požadavky učitelů a obavy z přípravy na maturitu."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nejasný trend kvůli personální nestabilitě; vysoký podíl žáků se slabým prospěchem přetrvává",
+      "key_numbers": [
+        "Třetina žáků v Veterinářství má vyznamenání",
+        "V Agropodnikání více než dvě třetiny žáků se slabým prospěchem",
+        "Ve Veřejnosprávní činnosti přibližně dvě pětiny žáků se slabým prospěchem"
+      ],
+      "evidence": "Podíl žáků s vyznamenáním je nejvyšší v Veterinářství (třetina), nejnižší v Agropodnikání. Vysoký podíl žáků se slabým prospěchem přetrvává od předchozího inspekčního hodnocení."
+    },
+    "absence": {
+      "trend": "Nestabilita rozvrhu kvůli personálním změnám",
+      "key_numbers": [
+        "Osm učitelů odešlo od dubna 2025",
+        "Dvanáct nových učitelů (více než čtvrtina sboru)",
+        "Rozvrh změněn třikrát za školní rok"
+      ],
+      "evidence": "Od dubna 2025 do inspekce rozvázalo pracovní poměr osm učitelů. Nově přijatí pedagogové tvoří více než čtvrtinu sboru. Stálý rozvrh byl třikrát změněn."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: dvě školní metodičky prevence, jedna s absolvovaným specializačním studiem",
+      "Výchovná poradkyně (v přípravě na kvalifikaci) koordinuje podporu žáků se SVP",
+      "Asistentka pedagoga poskytuje individuální podporu žákům se speciálními vzdělávacími potřebami",
+      "Všechny individuální vzdělávací plány (IVP) jsou zpracované; preventivní program obsahuje strategii předcházení školní neúspěšnosti"
+    ],
+    "safety_climate": [
+      "Zlepšil se klimat mezi učiteli a vedením (dosažena názorová shoda)",
+      "Třetina žáků 1. ročníku Veřejnosprávní činnosti se cítila pod tlakem, stresem nebo strachem ze strany vyučujícího",
+      "Téměř polovina těchto žáků pocítila nespravedlivé hodnocení nebo trest",
+      "15 % žáků zaznamenalo vyhrožování hodnocením nebo vyloučením",
+      "Žákovský parlament se schází měsíčně a má institut mediátora pro řešení konfliktů"
+    ],
+    "partnerships_practice": [
+      "Vedení školy komunikuje se zákonnými zástupci pravidelně prostřednictvím webové aplikace",
+      "Žákovský parlament se aktivně podílí na přípravě školních akcí (Klub mladého diváka, celoškolní akce)",
+      "Předmětové komise se zabývají potřebnými a účelnými tématy",
+      "Nově příchozí pedagogové mají možnost konzultací v předmětových komisích"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Některé pasáže jsou však složitější (např. popis kritérií hodnocení), ale celkově je text jasný pro rodiče.",
+    "uncertainty_notes": [
+      "Není jasné, jak dlouho bude trvat stabilizace pedagogického sboru a zda se situace s rozvrhem zlepší",
+      "Konkrétní čísla o prospěchu nejsou uvedena pro všechny obory (např. přesný podíl žáků s vyznamenáním v Přírodovědném lyceu)",
+      "Není jasné, jaké konkrétní opatření škola přijala proti nevhodným způsobům hodnocení a jak je bude kontrolovat"
+    ]
+  }
+}
+```

@@ -1,0 +1,112 @@
+```json
+{
+  "report_id": "SOS_600171370_2024-02-06",
+  "school_profile": {
+    "school_type": "Střední škola technická s domovem mládeže a školní jídelnou",
+    "inspection_period": "6. až 8. února 2024",
+    "school_change_summary": "Škola pokračuje ve zkvalitňování materiálních podmínek a rozvoji partnerských vztahů podporujících odborné kompetence žáků."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Spolupráce se sociálními partnery efektivně podporuje získávání odborných kompetencí a přípravu na budoucí práci.",
+        "evidence": "Škola kooperuje s partnerskými firmami pro kvalitní praktické vyučování a zkvalitňování materiálních podmínek."
+      },
+      {
+        "tag": "Moderní vybavení",
+        "detail": "Vedení systematicky vyhodnocuje a zlepšuje materiální a technické podmínky.",
+        "evidence": "Plánovitě se obnovují učebny, dílny, počítačová technika a strojní zázemí s podporou zřizovatele."
+      },
+      {
+        "tag": "Praktická orientace výuky",
+        "detail": "Pedagogové důsledně propojují vzdělávací obsah se situacemi z každodenního života a budoucí praxe.",
+        "evidence": "Učitelé podporují přenos vědomostí a dovedností do profesní praxe žáků."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Výsledky maturit nejsou uspokojivé",
+        "detail": "Obor Mechanik-seřizovač vykazuje zhoršující se tendenci v neúspěšnosti za poslední dva roky.",
+        "evidence": "Výsledky maturitních zkoušek nejsou zcela uspokojivé, u některých oborů se situace zhoršuje."
+      },
+      {
+        "tag": "Vysoký počet předčasných odchodů",
+        "detail": "Škola se nedaří účinně snižovat počet žáků, kteří studium předčasně ukončí.",
+        "evidence": "Za školní rok 2022/2023 předčasně skončilo 13 % z celkového počtu žáků."
+      },
+      {
+        "tag": "Omezená variabilita vyuky",
+        "detail": "V teoretické výuce převažuje frontální výuka, chybí aktivizační prvky a diferenciace obsahu.",
+        "evidence": "Skupinové kooperativní činnosti a práce s různými informačními zdroji jsou uplatňovány jen v omezené míře."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jaké konkrétní kroky podniká škola na zlepšení výsledků maturitních zkoušek, zejména u oboru Mechanik-seřizovač?",
+      "Jak škola pracuje se žáky, kteří mají problémy se studiem, aby se snížil počet předčasných odchodů?",
+      "Jaké nové metody výuky škola zavádí, aby byla výuka zajímavější a více interaktivní?"
+    ],
+    "who_school_fits": [
+      "Žáci zaměření na praktické dovednosti a technické obory s jasnou představou o budoucím povolání",
+      "Studenti, kteří si cení moderního vybavení dílen a kvalitní spolupráce se skutečnými firmami",
+      "Žáci, kteří potřebují ubytování a ocení péči domova mládeže s bohatou nabídkou volnočasových aktivit"
+    ],
+    "who_should_be_cautious": [
+      "Žáci se slabšími výsledky v matematice a češtině – doučování není vždy efektivní",
+      "Studenti, kteří potřebují individuální přístup a diferenciovanou výuku – frontální výuka není jejich silnou stránkou",
+      "Uchazeči o obor Mechanik-seřizovač – maturitní výsledky se zhoršují"
+    ],
+    "plain_czech_summary": "Střední škola technická v Přerově je moderně vybavená technická škola s dobrými vazbami na praxi. Silnými stránkami jsou spolupráce s firmami, kvalitní vybavení dílen a snaha propojovat teorii s praxí. Slabší jsou výsledky maturit a vysoký počet studentů, kteří studium nedokončí. Výuka je často příliš frontální a chybí v ní aktivnější metody. Škola má domov mládeže s pestrým programem. Vhodná pro prakticky zaměřené studenty, ale ti se slabšími výsledky by měli počítat s náročnějším studiem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Zhoršující se, zejména u oboru Mechanik-seřizovač",
+      "key_numbers": [
+        "Výsledky maturitních zkoušek nejsou zcela uspokojivé",
+        "Obor 23-45-L/01 Mechanik-seřizovač vykazuje zhoršující se tendenci v hrubé neúspěšnosti za dva minulé roky",
+        "Doučovací aktivity nemají vždy patřičnou efektivitu"
+      ],
+      "evidence": "Výsledky maturitních zkoušek všech oborů nejsou zcela uspokojivé, u oboru Mechanik-seřizovač se situace zhoršuje."
+    },
+    "absence": {
+      "trend": "Vysoká míra předčasných odchodů",
+      "key_numbers": [
+        "13 % žáků předčasně ukončilo studium v roce 2022/2023",
+        "Škola se nedaří účinně snižovat počet předčasných odchodů",
+        "Podpůrná opatření nejsou dostatečně efektivní"
+      ],
+      "evidence": "Za školní rok 2022/2023 předčasně skončilo 13 % z celkového počtu žáků, škole se nedaří tuto skupinu účinně podporovat."
+    },
+    "support_services": [
+      "Školní psycholožka nabízí své služby všem žákům",
+      "Výchovný poradce a školní metodika prevence zajišťují poradenské služby",
+      "Asistentka pedagoga pracuje se žáky s podpůrným opatřením",
+      "Doučovací aktivity pro procvičování a opakování učiva",
+      "Systematická práce s nadanými žáky"
+    ],
+    "safety_climate": [
+      "Ve všech hodnocených vyučovacích hodinách převládala příznivá pracovní atmosféra",
+      "Komunikace mezi vyučujícími a žáky probíhala korektně bez nežádoucích projevů chování",
+      "Bezpečnost a ochrana zdraví jsou realizovány na základě školního řádu",
+      "Problematika výchovy ke zdraví je začleňována do celého průběhu vzdělávání",
+      "K dispozici je elektronická i fyzická schránka důvěry pro žáky"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se sociálními partnery efektivně podporuje sepětí výuky a praxe",
+      "Kooperace s partnerskými firmami pro kvalitní praktické vyučování",
+      "Členství v odborných profesních sdruženích",
+      "Spolupráce se základními školami v regionu při propagaci",
+      "Spolupráce se školskými poradenskými zařízeními a kulturními institucemi"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Některé pasáže jsou však velmi odborné a pro laika obtížně pochopitelné. Silné a slabé stránky jsou jasně vymezeny, ale jejich vyvážení je diskutabilní.",
+    "uncertainty_notes": [
+      "Ředitel školy zpochybňuje vyvážení mezi silnými a slabými stránkami – tvrdí, že pozitiv je více, než je v závěru uvedeno",
+      "Doporučení o kritériích váženého průměru bylo podle ředitele již splněno během inspekce, ale inspektoři to neuznali",
+      "Není jasné, jak konkrétně se budou výsledky maturit zlepšovat – doporučení jsou spíše obecná"
+    ]
+  }
+}
+```

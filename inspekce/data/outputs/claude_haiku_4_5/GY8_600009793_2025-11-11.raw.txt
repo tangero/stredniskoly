@@ -1,0 +1,111 @@
+```json
+{
+  "report_id": "GY8_600009793_2025-11-11",
+  "school_profile": {
+    "school_type": "Gymnázium a Střední odborná škola s domovem mládeže a školní jídelnou",
+    "inspection_period": "11. 11. 2025 – 14. 11. 2025",
+    "school_change_summary": "Škola systematicky zlepšuje materiální vybavení obou pracovišť. Byla vybudována nová učebna biologie a informatiky, venkovní učebna s jezírkem, veterinární ordinace a zahrada s chovem zvířat. Výuka matematiky na střední odborné škole byla personálně posílena."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky maturit",
+        "detail": "Žáci dosahují výjimečných výsledků v maturitních zkouškách, zejména v anglickém jazyce (90% úspěšnost, 21 z 37 maturantů s certifikátem FCE) a matematice (27. nejlepší škola v ČR).",
+        "evidence": "Výsledky maturitních zkoušek 2024/2025 a data Cermat"
+      },
+      {
+        "tag": "Moderní vybavení a prostředí",
+        "detail": "Obě pracoviště mají esteticky upravené prostory s relaxačními zónami, moderními učebnami, veterinární ordinací a výborným zázemím pro sport.",
+        "evidence": "Škola disponuje velmi dobrými materiálními podmínkami, atletický ovál, prostorné tělocvičny, víceúčelové hřiště"
+      },
+      {
+        "tag": "Kvalitní pedagogové a příznivé klima",
+        "detail": "Učitelé jsou odborně zdatní a ochotní k seberozvoji, jejich erudice se pozitivně promítá do výuky a příznivého klimatu školy.",
+        "evidence": "Pedagogové jsou odborně zdatní, jejich erudice se pozitivně promítá do výuky i příznivého klimatu školy"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Nedostatečná diferenciace ve výuce",
+        "detail": "V některých hodinách chybí dostatečná diferenciace náročnosti úkolů a prostor pro sebehodnocení žáků.",
+        "evidence": "Dílčím nedostatkem některých hodin byla nezřetelná diferenciace náročnosti předkládaných úkolů"
+      },
+      {
+        "tag": "Méně aktivní zapojení v přírodovědě",
+        "detail": "V přírodovědných předmětech je výuka méně pestrá, chybí prostor pro vyhledávání informací, diskusi a adresnou zpětnou vazbu.",
+        "evidence": "V přírodovědných předmětech byla výuka odborně správná, avšak méně pestrá"
+      },
+      {
+        "tag": "Neetické chování na sociálních sítích",
+        "detail": "Mezi nejvýraznější projevy rizikového chování patřilo neetické chování žáků na sociálních sítích.",
+        "evidence": "Mezi nejvýraznější projevy rizikového chování patřilo v poslední době neetické chování žáků na sociálních sítích"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola pracuje s diferenciací a sebehodnocením žáků v jednotlivých předmětech?",
+      "Jaké jsou možnosti účasti v mezinárodních projektech Erasmus+ a zahraničních stážích pro jednotlivé obory?",
+      "Jak funguje systém doučování a individuální podpory pro žáky s výukovými obtížemi?"
+    ],
+    "who_school_fits": [
+      "Žáci s ambicí dosáhnout vysokých výsledků v maturitě, zejména v cizích jazycích a matematice",
+      "Studenti zájemci o veterinářství, agropodnikání nebo obchodní akademii s možností zahraničních stáží",
+      "Talentovaní a nadaní žáci, kterým škola nabízí podporu prostřednictvím projektů a soutěží"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individualizovaného přístupu a diferenciace – v některých hodinách je výuka méně přizpůsobena různým úrovním",
+      "Studenti, kteří se lépe učí interaktivními metodami – v některých předmětech převládá frontální výuka",
+      "Žáci s problémy v chování na sociálních sítích – škola řeší neetické chování, ale systém prevence se teprve rozvíjí"
+    ],
+    "plain_czech_summary": "Gymnázium a Střední odborná škola v Plasech je kvalitní vzdělávací zařízení s výborným vybavením a zkušenými pedagogy. Žáci dosahují skvělých výsledků v maturitách a soutěžích. Škola nabízí bohaté mezinárodní projekty a stáže v zahraničí. Hlavní oblastí ke zlepšení je větší diferenciace ve výuce a rozvoj sebehodnocení žáků. Prostředí je bezpečné a podporující, s příznivým klimatem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní trend s výjimečnými výsledky",
+      "key_numbers": [
+        "Anglický jazyk: 37 maturantů, 21 s certifikátem FCE, 90% úspěšnost",
+        "Matematika: 27. nejlepší škola v ČR (Cermat), 4 žáci na plný počet bodů",
+        "Veterinářství a Agropodnikání: mírně lepší výsledky než celostátní průměr"
+      ],
+      "evidence": "Výsledky maturitních zkoušek v gymnáziu v roce 2024/2025 potvrzují vysokou kvalitu vzdělávání"
+    },
+    "absence": {
+      "trend": "Velmi nízký podíl neprospívajících žáků",
+      "key_numbers": [
+        "Velmi nízký podíl neprospívajících žáků ve školním roce 2024/2025",
+        "Testování ČŠI 2021/2022 a 2022/2023: výborné výsledky ve všech sledovaných oblastech"
+      ],
+      "evidence": "Účinnost nastavených postupů pro práci se žáky s výukovými obtížemi dokládá velmi nízký podíl neprospívajících žáků"
+    },
+    "support_services": [
+      "Školní poradenské pracoviště: výchovná poradkyně, dvě metodičky prevence, dvě kariérové poradkyně",
+      "Cílené doučování v rámci projektu pro žáky s výukovými obtížemi",
+      "Individuální konzultace a podpora pro žáky ohrožené školním neúspěchem",
+      "Adaptační kurzy pro nové kolektivy",
+      "Třídnické hodiny na žádost třídního učitele"
+    ],
+    "safety_climate": [
+      "Elektronický identifikační systém napojený na školní informační systém",
+      "Žáci seznámeni s pravidly bezpečnosti (doloženo zápisy v třídních knihách)",
+      "Domov mládeže: kvalifikované vychovatelky zajišťují pedagogickou a sociální péči",
+      "Prevence rizikového chování integrována do běžného vyučování a předmětů",
+      "Programy s externími partnery na téma neetického chování na sociálních sítích"
+    ],
+    "partnerships_practice": [
+      "Mezinárodní projekty: Erasmus+ 2025 (stáže v Portugalsku, Německu), Tandem (zemědělská praxe v Německu)",
+      "Smluvní partneři pro praxi: ZOO Plasy, ZOO Plzeň, Kralovická zemědělská a.s., veterinární lékaři, farmy v Portugalsku",
+      "Spolupráce s univerzitami a firmami v rámci koncepce školy",
+      "Projekt Paměť národa: Příběhy našich sousedů (audiovizuální prezentace)",
+      "Dobrovolnické aktivity: DOFE, projekt Samet do škol"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Zpráva je psána srozumitelnou češtinou s jasnou strukturou. Konkrétní fakta jsou podpořena citacemi. Informace jsou relevantní pro rodiče a snadno pochopitelné bez odborného vzdělání.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní počty žáků s výukovými obtížemi nebo podíl neprospívajících v procentech",
+      "Chybí detailní informace o počtu a typu kroužků v domově mládeže",
+      "Není specifikováno, jak dlouho trvá doučování a jaké jsou jeho výsledky"
+    ]
+  }
+}
+```

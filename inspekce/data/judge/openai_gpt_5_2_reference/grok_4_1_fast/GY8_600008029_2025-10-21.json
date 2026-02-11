@@ -1,0 +1,31 @@
+{
+  "report_id": "GY8_600008029_2025-10-21",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T11:36:47.386777+00:00",
+  "run_finished_utc": "2026-02-09T11:37:11.624157+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"GY8_600008029_2025-10-21\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 4,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Tvrzení o „silné komunitě“ není ve zdroji výslovně doloženo (je to spíše interpretace na základě zmínek o sounáležitosti s obcí a chybějících prostorách pro setkávání komunity).\",\n    \"Doporučení/„caution“ pro rodiče je místy formulováno jako cílová skupina („žáci z venkova“) – zdroj mluví o sounáležitosti s obcí a vztahu k místu, ale neříká explicitně, že je škola primárně pro venkovské děti.\",\n    \"Chybí některé pro rodiče relevantní slabiny z průběhu výuky: omezená aktivní práce žáků s digitální technikou, chybějící cílená práce s různými zdroji informací a rozvoj kritického myšlení, často chybějící závěrečné shrnutí hodiny a kritéria pro formativní hodnocení.\",\n    \"Opomenuta je slabší oblast motivace/ocenění žáků („podpora žáků prostřednictvím uznání a ocenění méně využívaná“), což může být pro rodiče důležité.\"\n  ],\n  \"best_points\": [\n    \"Klíčové silné stránky a slabá stránka (spolupráce s partnery, peer aktivity, nedostatečná diferenciace) jsou převzaty věrně a s oporou v textu.\",\n    \"Riziko s tělocvičnou je popsáno přesně včetně dopadu (zimní období, docházení do sportovní haly).\",\n    \"Část „hard facts“ dobře odpovídá textu (204 žáků, absence bez neomluvených hodin, neprospěch 2 žáci v pololetí a všichni na konci roku, odchody ~10 %, maturita srovnatelná s průměrem, nadprůměr v matice a NJ 2025, 5 certifikátů, 1 opravná zkouška úspěšně).\",\n    \"Otázky na den otevřených dveří jsou praktické a navazují na zjištění inspekce (TV bez tělocvičny, diferenciace, maturita).\"\n  ],\n  \"one_line_verdict\": \"Výstup je převážně věrný a pro rodiče použitelný, ale obsahuje pár nedoložených interpretací (zejména „silná komunita“/„pro venkov“) a vynechává několik důležitých zjištění o kvalitě výuky (IT/kritické myšlení, formativní hodnocení, závěry hodin, oceňování žáků).\"\n}",
+  "judge_output": {
+    "report_id": "GY8_600008029_2025-10-21",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 4,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "Tvrzení o „silné komunitě“ není ve zdroji výslovně doloženo (je to spíše interpretace na základě zmínek o sounáležitosti s obcí a chybějících prostorách pro setkávání komunity).",
+      "Doporučení/„caution“ pro rodiče je místy formulováno jako cílová skupina („žáci z venkova“) – zdroj mluví o sounáležitosti s obcí a vztahu k místu, ale neříká explicitně, že je škola primárně pro venkovské děti.",
+      "Chybí některé pro rodiče relevantní slabiny z průběhu výuky: omezená aktivní práce žáků s digitální technikou, chybějící cílená práce s různými zdroji informací a rozvoj kritického myšlení, často chybějící závěrečné shrnutí hodiny a kritéria pro formativní hodnocení.",
+      "Opomenuta je slabší oblast motivace/ocenění žáků („podpora žáků prostřednictvím uznání a ocenění méně využívaná“), což může být pro rodiče důležité."
+    ],
+    "best_points": [
+      "Klíčové silné stránky a slabá stránka (spolupráce s partnery, peer aktivity, nedostatečná diferenciace) jsou převzaty věrně a s oporou v textu.",
+      "Riziko s tělocvičnou je popsáno přesně včetně dopadu (zimní období, docházení do sportovní haly).",
+      "Část „hard facts“ dobře odpovídá textu (204 žáků, absence bez neomluvených hodin, neprospěch 2 žáci v pololetí a všichni na konci roku, odchody ~10 %, maturita srovnatelná s průměrem, nadprůměr v matice a NJ 2025, 5 certifikátů, 1 opravná zkouška úspěšně).",
+      "Otázky na den otevřených dveří jsou praktické a navazují na zjištění inspekce (TV bez tělocvičny, diferenciace, maturita)."
+    ],
+    "one_line_verdict": "Výstup je převážně věrný a pro rodiče použitelný, ale obsahuje pár nedoložených interpretací (zejména „silná komunita“/„pro venkov“) a vynechává několik důležitých zjištění o kvalitě výuky (IT/kritické myšlení, formativní hodnocení, závěry hodin, oceňování žáků)."
+  }
+}

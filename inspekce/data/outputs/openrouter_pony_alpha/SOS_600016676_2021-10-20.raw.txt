@@ -1,0 +1,98 @@
+{
+  "report_id": "SOS_600016676_2021-10-20",
+  "school_profile": {
+    "school_type": "Střední průmyslová škola",
+    "inspection_period": "2021-10-20 až 2022-01-21",
+    "school_change_summary": "Od roku 2014 došlo k redukci oborů, výrazné modernizaci dílen a posílení spolupráce s firmami."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Vybavení",
+        "detail": "Škola disponuje moderními odbornými učebnami, laboratořemi a dílnami.",
+        "evidence": "Materiálně technické podmínky školy jsou již dlouhodobě na vysoké úrovni... uvedena do provozu učebna kolaborativních robotů."
+      },
+      {
+        "tag": "Uplatnění",
+        "detail": "Silné vazby na firmy zajišťují kvalitní praxi a uplatnění absolventů.",
+        "evidence": "Kvalitní a oboustranně přínosné partnerské vztahy se zaměstnavateli... vytvářejí podmínky pro lepší uplatnitelnost absolventů."
+      },
+      {
+        "tag": "Jazyky",
+        "detail": "Probíhá výuka odborných předmětů v angličtině a příprava na mezinárodní zkoušky.",
+        "evidence": "Žáci skládají mezinárodní zkoušky z angličtiny First Cambridge English... realizována výuka metodou CLIL."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Metody výuky",
+        "detail": "Převažuje frontální výuka bez dostatečného zapojení žáků.",
+        "evidence": "Využíváno převážně úzké spektrum vyučovacích metod... většinou převažovala frontální výuka."
+      },
+      {
+        "tag": "Diferenciace",
+        "detail": "Výuka není dostatečně přizpůsobena individuálním potřebám žáků.",
+        "evidence": "V nízké míře jsou do výuky zařazovány diferencované úlohy odpovídající rozdílným schopnostem."
+      },
+      {
+        "tag": "Hodnocení",
+        "detail": "Žáci mají málo prostoru pro sebehodnocení a zpětnou vazbu.",
+        "evidence": "Žáci byli vedeni jen ojediněle ke vzájemnému hodnocení a sebehodnocení."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola diferencuje výuku pro studenty s různou úrovní znalostí?",
+      "Jaké možnosti seberealizace mají žáci mimo rámec soutěží a technických kroužků?",
+      "Jakým způsobem je využívána laboratoř virtuální reality v běžné výuce?"
+    ],
+    "who_school_fits": [
+      "Pro studenty směřující na technická VŠ nebo do praxe ve strojírenství a IT.",
+      "Pro zájemce o moderní technologie, robotiku a 3D tisk.",
+      "Pro žáky, kteří chtějí získat odbornou angličtinu a certifikáty."
+    ],
+    "who_should_be_cautious": [
+      "Pro studenty vyžadující aktivní a moderní styl výuky místo frontálního výkladu.",
+      "Pro žáky, kteří potřebují častou zpětnou vazbu a prostor pro sebehodnocení."
+    ],
+    "plain_czech_summary": "Technická škola s vynikajícím vybavením a silnými vazbami na průmyslové firmy. Umožňuje získat odborné dovednosti i jazykové certifikáty. Slabším místem je tradiční styl výuky, který příliš nezapojuje žáky do diskuze a nenabízí dostatek diferencovaných úkolů. Celkově škola připravuje studenty dobře na další studium i praxi."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní úspěšnost",
+      "key_numbers": [
+        "84 maturujících žáků",
+        "2 neprospěšní u maturity",
+        "59 žáků s vyznamenáním"
+      ],
+      "evidence": "V profilové části maturitní zkoušky jsou žáci všech vzdělávacích oborů dlouhodobě úspěšní."
+    },
+    "absence": {
+      "trend": "Nízká, řešená individuálně",
+      "key_numbers": [
+        "Účast na distanční výuce téměř 100%",
+        "Odchody v řádu jednotek"
+      ],
+      "evidence": "Zvýšená absence je důsledně řešena ve spolupráci se žáky... v institutu výchovných komisí."
+    },
+    "support_services": [
+      "Individuální doučování a konzultace pro ohrožené žáky.",
+      "Funkční spolupráce s pedagogicko-psychologickou poradnou.",
+      "Adaptační kurzy a besedy s odborníky."
+    ],
+    "safety_climate": [
+      "Klesající míra úrazovosti.",
+      "Vážnější negativní jevy se v posledních třech letech nevyskytovaly.",
+      "Přátelská atmosféra a vzájemný respekt ve výuce."
+    ],
+    "partnerships_practice": [
+      "Realizace maturitních prací ve spolupráci s firmami.",
+      "Zapojení firem do modernizace materiálního vybavení.",
+      "Technické kroužky pro žáky základních a mateřských škol."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je srozumitelný, jasně členěný a obsahuje konkrétní příklady i data.",
+    "uncertainty_notes": []
+  }
+}

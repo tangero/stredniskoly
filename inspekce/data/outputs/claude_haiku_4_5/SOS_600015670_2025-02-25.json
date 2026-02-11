@@ -1,0 +1,118 @@
+{
+  "report_id": "SOS_600015670_2025-02-25",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T13:44:01.303353+00:00",
+  "run_finished_utc": "2026-02-09T13:44:28.154939+00:00",
+  "raw_file": "SOS_600015670_2025-02-25.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600015670_2025-02-25",
+    "school_profile": {
+      "school_type": "Střední škola polytechnická s obory zaměřenými na strojírenství, stavebnictví, agropodnikání a řemesla",
+      "inspection_period": "25. února až 28. února 2025",
+      "school_change_summary": "Škola změnila název od 1. 9. 2023. Počet žáků vzrostl o 8 % na 448 studentů. Zlepšily se materiální podmínky a bylo vytvořeno Fórum odborníků z praxe."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Praktické zkušenosti v reálném prostředí",
+          "detail": "Žáci získávají cenné zkušenosti přímo ve spolupracujících firmách a seznamují se s aktuálními technologiemi.",
+          "evidence": "Praktické vyučování probíhá na školních pracovištích i v reálných podmínkách staveb a firem v regionu."
+        },
+        {
+          "tag": "Bohaté projektové aktivity",
+          "detail": "Škola participuje v projektech TAG, Erasmus+ a IKAP, které zahrnují zahraniční stáže a workshopy.",
+          "evidence": "Žáci se zúčastňují stáží v Japonsku, Slovinsku, Itálii a dalších zemích, což rozšiřuje jejich obzory."
+        },
+        {
+          "tag": "Úspěchy v soutěžích",
+          "detail": "Žáci dosahují předních míst v okresních, krajských a celostátních soutěžích včetně mezinárodních.",
+          "evidence": "Obsazují přední místa v Technické olympiádě, soutěži Kovo-junior, Czech Rocket Challenge a dalších."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Vysoká neúspěšnost v oboru Podnikání",
+          "detail": "Průměrná hrubá neúspěšnost u maturitní zkoušky je 41 % s úbytkem až 50 % žáků během studia.",
+          "evidence": "Ve školním roce 2023/2024 neprospěl jeden žák, ale mnoho žáků odchází v průběhu druhého ročníku."
+        },
+        {
+          "tag": "Problémy se školním klimatem",
+          "detail": "Opakované stížnosti na nepedagogické chování některých učitelů nebyly efektivně řešeny.",
+          "evidence": "Přijatá opatření vedla k přenášení problému do jiných tříd a negativně ovlivnila školní klima."
+        },
+        {
+          "tag": "Jednotvárné vyučovací metody",
+          "detail": "Výuka převážně využívá frontální formu, chybí kooperativní metody a diferenciace podle potřeb žáků.",
+          "evidence": "Kooperativní metody se vyskytly v méně než 10 % hodin, samostatná práce v méně než polovině hodin."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak škola řeší vysokou neúspěšnost v oboru Podnikání a co dělá pro podporu žáků, aby nezačali studium předčasně opouštět?",
+        "Jaké konkrétní opatření škola přijala na řešení problémů se školním klimatem a komunikací mezi vedením a pedagogy?",
+        "Jak se škola zaměřuje na rozvoj klíčových kompetencí žáků, jako je spolupráce a komunikace, když převažuje frontální výuka?"
+      ],
+      "who_school_fits": [
+        "Žáci zaměření na praktické dovednosti a řemesla, kteří se chtějí učit přímo v reálném pracovním prostředí",
+        "Studenti s ambicí získat mezinárodní zkušenosti a účastnit se zahraničních stáží a projektů",
+        "Žáci, kteří chtějí získat certifikáty a průkazy (svářečský, CAD) zvyšující jejich konkurenceschopnost"
+      ],
+      "who_should_be_cautious": [
+        "Uchazeči o obor Podnikání by měli zvážit vysoké riziko neúspěchu a předčasného ukončení studia",
+        "Žáci, kteří potřebují individuální přístup a diferenciovanou výuku, mohou být v převážně frontální výuce méně podporováni",
+        "Studenti citliví na školní klima by měli zvážit zjištěné problémy s řešením stížností a komunikací"
+      ],
+      "plain_czech_summary": "Škola je zaměřená na praktické vzdělávání v řemeslech a technických oborech. Silnou stránkou je propojení teorie s praxí přímo v reálných firmách a bohaté projektové aktivity se zahraničními stážemi. Žáci se úspěšně umisťují v soutěžích. Problémy jsou vysoká neúspěšnost v oboru Podnikání, jednotvárné vyučovací metody a nedostatečné řešení problémů se školním klimatem. Vedení školy potřebuje zlepšit komunikaci a kontrolní mechanismy."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Rozdílný podle oboru - Strojírenství a Stavebnictví mají nízkou neúspěšnost, Podnikání vysokou",
+        "key_numbers": [
+          "Obor Podnikání: 41 % průměrná hrubá neúspěšnost za 3 roky",
+          "Obor Strojírenství a Stavebnictví: v posledním roce 0 % neúspěšných",
+          "Úbytek žáků v oboru Podnikání: až 50 % během studia"
+        ],
+        "evidence": "Vysokou neúspěšnost vykazují žáci nástavbového oboru Podnikání, kde je průměrná hrubá neúspěšnost 41 % za poslední tři roky."
+      },
+      "absence": {
+        "trend": "Pokles absence díky zavedení pravidel prevence",
+        "key_numbers": [
+          "Školní rok 2023/2024: 164 hodin na žáka",
+          "Předchozí dva roky: srovnatelné hodnoty",
+          "Pokles od poslední inspekční činnosti"
+        ],
+        "evidence": "Využíváním nástrojů prevence došlo od poslední inspekční činnosti k poklesu průměrné absence na žáka."
+      },
+      "support_services": [
+        "Školní poradenské pracoviště s jasně vymezenou odpovědností pracovníků",
+        "Speciální pedagog s částečným úvazkem",
+        "Školní metodička prevence spolupracující s třídními učiteli",
+        "Adaptační program pro první ročníky s workshopy a seznamovacím programem"
+      ],
+      "safety_climate": [
+        "Bezpečnost a ochrana zdraví žáků je zajištěna",
+        "Ve tělesné výchově byla zjištěna zvýšená úrazovost, kterou škola řeší",
+        "Žáci jsou vedeni k dodržování bezpečnostních zásad a pracovních postupů",
+        "Problémy se školním klimatem související s neefektivním řešením stížností na nepedagogické chování"
+      ],
+      "partnerships_practice": [
+        "Spolupráce s mnoha sociálními partnery a firmami v regionu",
+        "Fórum odborníků z praxe poskytující zpětnou vazbu a podněty",
+        "Praktické vyučování v reálných podmínkách staveb a firem",
+        "Projekt TAG zahrnující nábor žáků, workshopy a exkurze",
+        "Erasmus+ umožňující výměnné pobyty se školami ze Slovenska, Chorvatska a Polska",
+        "Centrum odborného vzdělávání ve strojírenství poskytující moderní prostory a technologie"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Jsou jasně odděleny silné a slabé stránky. Některé pasáže jsou však delší a obsahují více technických detailů, které by mohly být pro rodiče méně přístupné.",
+      "uncertainty_notes": [
+        "Zpráva nespecifikuje, jaké konkrétní problémy se školním klimatem byly zjištěny - pouze zmiňuje stížnosti na nepedagogické chování",
+        "Není jasné, zda vysoká neúspěšnost v oboru Podnikání je způsobena kvalitou výuky nebo nevhodným výběrem uchazečů",
+        "Chybí informace o tom, jak se škola vypořádá s nedostatky v komunikaci a digitálním prostředí"
+      ]
+    }
+  }
+}

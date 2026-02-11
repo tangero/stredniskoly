@@ -1,0 +1,29 @@
+{
+  "report_id": "SOS_600171361_2025-11-12",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "grok_4_1_fast",
+  "run_started_utc": "2026-02-09T11:37:56.247928+00:00",
+  "run_finished_utc": "2026-02-09T11:38:18.370169+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOS_600171361_2025-11-12\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 4,\n  \"unsupported_claims_count\": 1,\n  \"critical_issues\": [\n    \"Nesedí období inspekční činnosti: kandidát uvádí 2025-11-12 až 2025-11-17, zdroj uvádí inspekci na místě 12.–14. 11. 2025.\",\n    \"U poradenského týmu kandidát vynechává školní metodičku prevence (ve zdroji je součástí týmu).\",\n    \"Formulace typu „Nedostatek podpory pro žáky se speciálními potřebami“ je zkratkovitá: zpráva spíše říká, že individualizace/diferenciace a systematické sledování podpůrných opatření jsou nedostatečné, ne že by podpora obecně chyběla.\"\n  ],\n  \"best_points\": [\n    \"Správně zachycené silné stránky: partnerství včetně zahraničních pracovních pobytů a modernizace zázemí (IT učebna, kadeřnický salón).\",\n    \"Správně identifikované klíčové slabiny: nedostatečná analýza výsledků, slabší výsledky ve společné části maturitní zkoušky se sestupným trendem a nedostatečná diferenciace/individualizace ve výuce.\",\n    \"Uvedená konkrétní maturitní čísla (Podnikání, Hotelnictví, Kosmetické služby) odpovídají zdroji a jsou pro rodiče prakticky užitečná.\"\n  ],\n  \"one_line_verdict\": \"Shrnutí je převážně věrné a pro rodiče užitečné, ale má chybu v datu/rozsahu inspekce a je jen středně úplné (chybí některé důležité závěry a doporučení ze zprávy).\"\n}",
+  "judge_output": {
+    "report_id": "SOS_600171361_2025-11-12",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 4,
+    "unsupported_claims_count": 1,
+    "critical_issues": [
+      "Nesedí období inspekční činnosti: kandidát uvádí 2025-11-12 až 2025-11-17, zdroj uvádí inspekci na místě 12.–14. 11. 2025.",
+      "U poradenského týmu kandidát vynechává školní metodičku prevence (ve zdroji je součástí týmu).",
+      "Formulace typu „Nedostatek podpory pro žáky se speciálními potřebami“ je zkratkovitá: zpráva spíše říká, že individualizace/diferenciace a systematické sledování podpůrných opatření jsou nedostatečné, ne že by podpora obecně chyběla."
+    ],
+    "best_points": [
+      "Správně zachycené silné stránky: partnerství včetně zahraničních pracovních pobytů a modernizace zázemí (IT učebna, kadeřnický salón).",
+      "Správně identifikované klíčové slabiny: nedostatečná analýza výsledků, slabší výsledky ve společné části maturitní zkoušky se sestupným trendem a nedostatečná diferenciace/individualizace ve výuce.",
+      "Uvedená konkrétní maturitní čísla (Podnikání, Hotelnictví, Kosmetické služby) odpovídají zdroji a jsou pro rodiče prakticky užitečná."
+    ],
+    "one_line_verdict": "Shrnutí je převážně věrné a pro rodiče užitečné, ale má chybu v datu/rozsahu inspekce a je jen středně úplné (chybí některé důležité závěry a doporučení ze zprávy)."
+  }
+}

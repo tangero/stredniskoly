@@ -1,0 +1,103 @@
+```json
+{
+  "report_id": "SOS_600019951_2025-03-25",
+  "school_profile": {
+    "school_type": "Střední zdravotnická škola, čtyřletý maturitní obor Praktická sestra",
+    "inspection_period": "25. až 27. března 2025",
+    "school_change_summary": "Od 2022/2023 rozšířena nabídka o kvalifikační kurz Sanitář, navázána spolupráce s dalšími školami a sociálními partnery, rozšířeny charitativní aktivity."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Praktická příprava",
+        "detail": "Praktické vyučování ve zdravotnických zařízeních je dobře organizováno a efektivně rozvíjí odborné kompetence žáků.",
+        "evidence": "Žáci jsou zapojeni do praktických činností ošetřovatelské péče, profesionálně komunikují s pacienty a týmem."
+      },
+      {
+        "tag": "Společenské angažmá",
+        "detail": "Škola aktivně zapojuje žáky do charitativních projektů, soutěží a preventivních akcí.",
+        "evidence": "Žáci se pravidelně zapojují do charitativních projektů sociálních a zdravotnických zařízení, reprezentují školu na soutěžích."
+      },
+      {
+        "tag": "Vedení a strategie",
+        "detail": "Ředitel vede školu podle jasné koncepce zaměřené na kvalitu odborného vzdělání a uplatnitelnost absolventů.",
+        "evidence": "Strategické cíle jsou realistické, reagují na potřeby zaměstnavatelů a jsou systematicky naplňovány."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Kvalita běžné výuky",
+        "detail": "V některých hodinách převažuje pasivní učení, chybí diferenciace úloh podle schopností žáků.",
+        "evidence": "Sporadické střídání výukových forem, nízká míra aktivizujících metod, všichni žáci plnili shodné úlohy se stejnou náročností."
+      },
+      {
+        "tag": "Technické vybavení",
+        "detail": "Nedostatečná konektivita učeben znemožňuje běžné používání digitálních technologií ve výuce.",
+        "evidence": "Konektivita většiny učeben je nedostatečná, tělocvična je prostorově a technicky limitující."
+      },
+      {
+        "tag": "Zpětná vazba žákům",
+        "detail": "Učitelé často neposkytují žákům motivující zpětnou vazbu o jejich pokroku.",
+        "evidence": "Závěrečné zhodnocení probíhalo formálně bez zapojení žáků, zřídka byla poskytnuta formativní zpětná vazba."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně se ve výuce používají digitální technologie a jaké jsou plány na zlepšení připojení k internetu?",
+      "Jak učitelé přizpůsobují výuku různým schopnostem žáků a jak se liší úkoly pro rychlejší a pomalejší žáky?",
+      "Jaké jsou konkrétní výsledky absolventů na trhu práce a v navazujícím terciárním vzdělání?"
+    ],
+    "who_school_fits": [
+      "Žáci s jasným zájmem o zdravotnický obor a praktickou práci s pacienty",
+      "Studenti, kteří se chtějí zapojit do společenských a charitativních aktivit",
+      "Žáci, kteří preferují praktické vyučování a spolupráci se zdravotnickými zařízeními"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální podpory a diferenciované úkoly podle svých schopností",
+      "Studenti, kteří se spoléhají na digitální technologie a interaktivní výuku",
+      "Žáci se speciálními vzdělávacími potřebami – uplatňování podpůrných oatření není cíleně sledováno"
+    ],
+    "plain_czech_summary": "Střední zdravotnická škola v Prostějově je dobře vedená a zaměřená na praktickou přípravu budoucích zdravotnických pracovníků. Silnou stránkou je kvalitní praktické vyučování ve zdravotnických zařízeních a aktivní zapojení žáků do charitativních projektů. Slabší je běžná teoretická výuka – chybí v ní dostatečná diferenciace, aktivní metody a zpětná vazba. Technické vybavení je omezené, zejména připojení k internetu. Škola je vhodná pro motivované žáky se zájmem o zdravotnictví, ale měla by zlepšit kvalitu běžné výuky."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Pozitivní",
+      "key_numbers": [
+        "Velmi dobrá úroveň dosažených kompetencí potvrzena výsledky při maturitní zkoušce"
+      ],
+      "evidence": "Výsledky žáků při ukončování vzdělávání maturitní zkouškou potvrzují velmi dobrou úroveň dosažených kompetencí."
+    },
+    "absence": {
+      "trend": "Bez konkrétních údajů",
+      "key_numbers": [
+        "Zpráva neobsahuje konkrétní data o absence žáků"
+      ],
+      "evidence": "Inspekční zpráva se zaměřuje na kvalitu výuky, ne na statistiku absence."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště poskytuje poradenské a konzultační služby v rozsahu základního standardu",
+      "Tým pedagogů komunikuje s pracovníky školských poradenských zařízení při navrhování podpůrných oatření",
+      "Doučování a konzultace s učiteli pro žáky ohrožené školním neúspěchem"
+    ],
+    "safety_climate": [
+      "Respektující a partnerský přístup vyučujících k žákům",
+      "Nastavená a dodržovaná pravidla komunikace a chování přispívají k vytváření pozitivních vztahů",
+      "Prevence rizikového chování je plánovitá a účelně zaměřená, škola operativně reaguje na aktuální trendy"
+    ],
+    "partnerships_practice": [
+      "Úzká spolupráce se zdravotnickými a sociálními zařízeními pro praktické vyučování",
+      "Členství v Asociaci zdravotnických škol",
+      "Spolupráce se sociálními partnery na charitativních projektech a preventivních akcích",
+      "Realizace akreditovaného kvalifikačního kurzu Sanitář pro veřejnost"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a detailní, ale obsahuje úřednický jazyk typický pro inspekční dokumenty. Hlavní zjištění jsou jasná, ale vyžadují určitou pozornost k pochopení.",
+    "uncertainty_notes": [
+      "Konkrétní čísla o absence, prospěchu a dalších statistikách nejsou v textu uvedena",
+      "Není jasné, jak konkrétně se liší kvalita výuky mezi jednotlivými učiteli a předměty",
+      "Chybí informace o počtu žáků, kteří pokračují v terciárním vzdělání versus těch, kteří jdou do praxe"
+    ]
+  }
+}
+```

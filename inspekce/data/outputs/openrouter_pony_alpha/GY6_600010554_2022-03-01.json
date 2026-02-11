@@ -1,0 +1,107 @@
+{
+  "report_id": "GY6_600010554_2022-03-01",
+  "model_id": "openrouter_pony_alpha",
+  "run_started_utc": "2026-02-10T07:15:53.673755+00:00",
+  "run_finished_utc": "2026-02-10T07:16:50.423437+00:00",
+  "raw_file": "GY6_600010554_2022-03-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY6_600010554_2022-03-01",
+    "school_profile": {
+      "school_type": "Gymnázium",
+      "inspection_period": "1.− 3. 3. 2022",
+      "school_change_summary": "Významně vzrostl zájem o dvojjazyčné studium a posílila činnost poradenského pracoviště."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Maturita a VŠ",
+          "detail": "Škola dosahuje dlouhodobě vynikajících výsledků u maturit a vysoké procento absolventů jde na VŠ.",
+          "evidence": "„100 % žáků uspělo u maturitní zkoušky... Kolem 92 % absolventů pokračuje ve studiu na vysokých školách.“"
+        },
+        {
+          "tag": "Jazyky",
+          "detail": "Dvojjazyčné gymnázium nabízí nadstandardní úroveň němčiny a mezinárodní kontakty.",
+          "evidence": "„Vysoká je úroveň výuky v německém jazyce... studium přináší absolventům vysokou nadhodnotu ve vzdělání.“"
+        },
+        {
+          "tag": "Zázemí",
+          "detail": "Škola má kvalitní materiální vybavení, moderní sítě a fungující poradenské služby.",
+          "evidence": "„Většina učeben je vybavena technikou... vybudována nová optická síť... školní psycholožka.“"
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Individuální přístup",
+          "detail": "Výuka je příliš frontální a učitelé málo diferencují nároky podle schopností žáků.",
+          "evidence": "„Diferenciace výuky... byla vhodně uplatněna pouze v menšině sledovaných hodin.“"
+        },
+        {
+          "tag": "Hodnocení",
+          "detail": "Ve výuce chybí efektivní zpětná vazba a prostor pro sebehodnocení žáků.",
+          "evidence": "„Jen ojediněle vyučující využívali práci s efektivní zpětnou vazbou formou... sebehodnocení žáků.“"
+        },
+        {
+          "tag": "Organizace",
+          "detail": "Vyučování často přesahuje časový limit a krátí přestávky.",
+          "evidence": "„Častým jevem bylo ‚přetahování‘ výuky a krácení navazujících přestávek.“"
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak učitelé pracují s rozdíly v nadání a tempu jednotlivých žáků v rámci hodiny?",
+        "Jakým způsobem dostávají žáci zpětnou vazbu kromě známek?",
+        "Jak je zajištěno propojení českých a německých vyučujících pro benefit žáků?"
+      ],
+      "who_school_fits": [
+        "Studentům, kteří chtějí dosáhnout excelentní úrovně v německém jazyce a získat mezinárodní zkušenosti.",
+        "Samostatným žákům, kteří zvládají náročnou přípravu na vysokoškolské studium.",
+        "Zájemcům o přírodovědné obory, kde škola nabízí silné zázemí a spolupráci s VŠ."
+      ],
+      "who_should_be_cautious": [
+        "Žákům, kteří potřebují častou individuální podporu a přizpůsobení tempa výuky.",
+        "Studentům, kteří preferují moderní interaktivní metody před tradiční frontální výukou.",
+        "Dětem, pro které je klíčová včasná zpětná vazba a sebehodnocení během hodin."
+      ],
+      "plain_czech_summary": "Gymnázium F. X. Šaldy je velká a tradiční škola s vynikajícími výsledky u maturity a vysokou úspěšností při přijetí na vysoké školy. Je jedinou školou v kraji s dvojjazyčným česko-německým studiem, které poskytuje studentům obrovskou přidanou hodnotu. Pro rodiče je důležité vědět, že výuka je spíše tradiční a frontální, takže škola může být náročnější pro děti vyžadující individuální přístup nebo častou zpětnou vazbu. Škola má velmi silné zázemí pro talentované žáky, zejména v jazycích a přírodních vědách, a fungující poradenské pracoviště včetně psychologa."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Výborná a stabilní úspěšnost.",
+        "key_numbers": [
+          "100 % úspěšnost u maturity",
+          "92 % absolventů studuje na VŠ",
+          "Výsledky dlouhodobě nadprůměrné"
+        ],
+        "evidence": "„Stejně jako v předchozích letech... uspělo u maturitní zkoušky 100 % žáků.“"
+      },
+      "absence": {
+        "trend": "Nízká a pod kontrolou.",
+        "key_numbers": [
+          "Průměrně 49 zameškaných hodin na žáka"
+        ],
+        "evidence": "„Průměrný počet zameškaných hodin na jednoho žáka je nízký, v uplynulém školním roce činil 49 hodin.“"
+      },
+      "support_services": [
+        "Školní psycholožka (0,2 úvazku)",
+        "Dva výchovní poradci a metodici prevence",
+        "Konzultační činnost pro žáky s rizikem neúspěchu"
+      ],
+      "safety_climate": [
+        "Kladný důraz na bezpečnost a pravidla",
+        "Respektující atmosféra mezi učiteli a žáky",
+        "Elektronický zabezpečený vstup do budovy"
+      ],
+      "partnerships_practice": [
+        "Fakultní škola Přírodovědecké a MFF UK",
+        "Spolupráce s Technickou univerzitou v Liberci",
+        "Výměnné pobyty a projekty se školami v Německu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 5,
+      "czech_clarity_reason": "Text je srozumitelný, dobře strukturovaný a poskytuje jasné souhrny na konci.",
+      "uncertainty_notes": []
+    }
+  }
+}

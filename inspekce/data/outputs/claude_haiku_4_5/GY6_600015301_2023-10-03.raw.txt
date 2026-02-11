@@ -1,0 +1,105 @@
+```json
+{
+  "report_id": "GY6_600015301_2023-10-03",
+  "school_profile": {
+    "school_type": "Reálné gymnázium a základní škola",
+    "inspection_period": "3. až 6. října 2023",
+    "school_change_summary": "Od poslední inspekce bylo zřízeno školní poradenské pracoviště, rozšířila se vzdělávací nabídka a postupně se zlepšují materiální podmínky."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Pozitivní školní klima",
+        "detail": "Příjemná pracovní atmosféra, vstřícnost a respekt mezi učiteli a žáky, otevřená komunikace bez obav vyjádřit názor.",
+        "evidence": "Všechny hodnocené vyučovací hodiny se vyznačovaly příjemnou atmosférou a nebyly zaznamenány negativní postoje žáků."
+      },
+      {
+        "tag": "Podpora talentovaných žáků",
+        "detail": "Škola aktivně podporuje účast žáků v soutěžích a olympiádách na všech úrovních.",
+        "evidence": "Nejúspěšnější žáci reprezentují školu v okresních, regionálních, krajských i celostátních kolech soutěží."
+      },
+      {
+        "tag": "Komplexní poradenské služby",
+        "detail": "Nově zřízené školní poradenské pracoviště zajišťuje podporu žákům se speciálními potřebami i nadaným žákům.",
+        "evidence": "Početný tým pracovníků systémově zajišťuje poradenské služby včetně péče o žáky s podpůrnými opatřeními."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Omezená diferenciace výuky",
+        "detail": "Nadaní žáci dostávají jen zřídka speciální úkoly, žáci pracují převážně na stejných úkolech se stejnou obtížností.",
+        "evidence": "Nadaným žákům byly zřídka vytvářeny další vhodné příležitosti pro jejich rozvoj, jen v několika hodinách byly nabízeny úkoly rozvíjející jejich schopnosti."
+      },
+      {
+        "tag": "Slabá práce s informačními zdroji",
+        "detail": "Žáci jen málo využívají různé informační zdroje, což omezuje rozvoj jejich kritického myšlení.",
+        "evidence": "Metody abstraktního myšlení a práce s více informačními zdroji se vyskytly výjimečně, jen v malé míře žáci využívali různé informační zdroje."
+      },
+      {
+        "tag": "Nedostatečné formativní hodnocení",
+        "detail": "Na konci hodin chybí efektivní shrnutí cíle a formativní zpětná vazba od učitele.",
+        "evidence": "Jen okrajově bylo žákům poskytováno efektivní shrnutí naplnění stanoveného cíle včetně formativní zpětné vazby."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola diferencuje výuku pro nadané a talentované žáky? Jaké speciální programy nebo kroužky pro ně existují?",
+      "Jaké jsou konkrétní výsledky žáků v maturitních zkouškách a jak se škola zaměřuje na přípravu k maturitě z matematiky?",
+      "Jak škola pracuje s kritickým myšlením a vědeckým přístupem, když je to součástí jejího zaměření na přírodovědné předměty?"
+    ],
+    "who_school_fits": [
+      "Žáci, kterým vyhovuje tradiční přístup k výuce s důrazem na přírodovědné předměty a jazykovou přípravu",
+      "Děti se speciálními vzdělávacími potřebami, které potřebují individuální podporu a podpůrná opatření",
+      "Talentovaní žáci, kteří se chtějí zapojit do soutěží a vědomostních olympiád"
+    ],
+    "who_should_be_cautious": [
+      "Nadaní žáci, kteří potřebují intenzivnější individuální rozvoj a speciální úkoly – škola je zatím podporuje jen ojediněle",
+      "Žáci, kteří se učí lépe pomocí kritického myšlení a práce s různými zdroji – tyto metody se používají jen výjimečně",
+      "Rodiny, které očekávají vysokou míru personalizace a diferenciace výuky – škola na tom stále pracuje"
+    ],
+    "plain_czech_summary": "Škola je dobře řízená s pozitivním klimatem a vstřícným přístupem. Učitelé jsou odborní a podporují žáky v jejich rozvoji. Silné stránky jsou podpora talentovaných žáků v soutěžích, nové poradenské služby a kvalitní materiální vybavení. Hlavní výzvou je lepší diferenciace výuky – nadaní žáci by měli dostávat více speciálních úkolů a všichni žáci by měli více pracovat s různými informačními zdroji a kritickým myšlením. Škola má prostor pro zlepšení v oblasti formativního hodnocení a shrnutí hodin."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní, bez závažných odchylek",
+      "key_numbers": [
+        "Povinná profilová maturitní zkouška z matematiky",
+        "Výsledky vzdělávání bez závažných vzájemných odchylek v jednotlivých předmětech (2022/2023)"
+      ],
+      "evidence": "Ve školním roce 2022/2023 nevykazovaly výsledky vzdělávání žáků v jednotlivých vyučovacích předmětech závažné vzájemné odchylky."
+    },
+    "absence": {
+      "trend": "Systematicky monitorována a řešena",
+      "key_numbers": [
+        "Absence je součástí analýz na pedagogické radě",
+        "Výsledky absence jsou podrobně analyzovány na úrovni tříd"
+      ],
+      "evidence": "Výsledky vzdělávání žáků, jejich chování a absence na úrovni tříd jsou za jednotlivá klasifikační období podrobně analyzovány na jednáních pedagogické rady."
+    },
+    "support_services": [
+      "Školní poradenské pracoviště se třemi výchovnými poradkyněmi a školní speciální pedagožkou",
+      "Individuální konzultace a doučování pro žáky s rizikem školní neúspěšnosti",
+      "Péče o žáky se speciálními vzdělávacími potřebami s odpovídajícími podpůrnými opatřeními"
+    ],
+    "safety_climate": [
+      "Prevence rizikového chování prolíná celým vzdělávacím procesem",
+      "Adaptační kurzy pro žáky 6. ročníků ZŠ a 1. ročníků gymnázia",
+      "Včasná intervence při prvotních projevech problémového chování formou individuálních pohovorů",
+      "Tematicky zaměřené a odborně vedené besedy a preventivní programy"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem na modernizaci materiálních a technických podmínek",
+      "Zahraniční exkurze, převážně do anglicky mluvících zemí pro rozvoj jazykové gramotnosti",
+      "Participace žáků na chodu školy prostřednictvím žákovské a studentské samosprávy"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a jasně odděluje silné stránky od slabých. Doporučení jsou praktická a konkrétní. Mírně snižuje skóre administrativní jazyk v některých pasážích.",
+    "uncertainty_notes": [
+      "Zpráva neobsahuje konkrétní čísla o úspěšnosti v maturitách nebo přijetí na vysoké školy – pouze obecné tvrzení o úspěšnosti",
+      "Chybí konkrétní data o počtu nadaných žáků a jejich výsledcích v soutěžích",
+      "Není jasné, jak se konkrétně liší výuka v jednotlivých třídách – hodnocení je spíše obecné"
+    ]
+  }
+}
+```

@@ -1,0 +1,102 @@
+```json
+{
+  "report_id": "GY8_600011453_2024-03-11",
+  "school_profile": {
+    "school_type": "Gymnázium a Střední odborná škola (SOŠ) - kombinovaná instituce",
+    "inspection_period": "11. března až 15. března 2024",
+    "school_change_summary": "Škola se v letošním roce přestěhovala do zcela nové moderní budovy. Tím se podařilo dokončit synchronizaci procesů po sloučení dvou škol a odstranit všechny nedostatky z minulé inspekce."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné zázemí a vybavení",
+        "detail": "Nová budova s moderními učebnami, laboratořemi a podnětným prostředím podporuje kvalitní vzdělávání.",
+        "evidence": "Škola má biotechnickou laboratoř se školním minipivovanem, dobře vybavené odborné učebny a esteticky upravené prostory."
+      },
+      {
+        "tag": "Silné partnerství a praxe",
+        "detail": "Spolupráce s vysokými školami, průmyslovými podniky a odbornými organizacemi přispívá k praktickému vzdělávání.",
+        "evidence": "Žáci si osvojují instrumentální metody na Univerzitě J. E. Purkyně, část praktického vyučování probíhá u smluvních partnerů."
+      },
+      {
+        "tag": "Úspěchy v soutěžích a maturitě",
+        "detail": "Žáci se úspěšně účastní olympiád, soutěží a středoškolské odborné činnosti; maturitní výsledky jsou srovnatelné nebo lepší než průměr.",
+        "evidence": "V roce 2022/2023: Aplikovaná chemie 0% neúspěšnosti (ČR 9,4%), Gymnázium 4,1% (ČR 2,2%), v osmiletém programu 100% úspěšnost."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Málo aktivní výuka",
+        "detail": "Převažuje frontální výuka s učitelem v hlavní roli, žáci se málo zapojují do procesu vzdělávání.",
+        "evidence": "Inspektoři zaznamenali, že aktivizující prvky a kooperativní práce jsou využívány jen příležitostně, diferenciace chybí."
+      },
+      {
+        "tag": "Slabá zpětná vazba a hodnocení",
+        "detail": "Učitelé často nemají jasně stanovené cíle hodin a neověřují jejich naplnění; formativní hodnocení se téměř nepoužívá.",
+        "evidence": "V závěru hodin chybí shrnutí učiva a efektivní zpětná vazba; sebehodnocení a vzájemné hodnocení se nevytvářejí."
+      },
+      {
+        "tag": "Nedostatečná práce s informacemi",
+        "detail": "Žáci nejsou systematicky vedeni k vyhledávání informací z různých zdrojů a kritickému myšlení.",
+        "evidence": "Samostatné vyhledávání informací s kritickou analýzou bylo zaznamenáno jen ojediněle, chybí odborné diskuze."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola individualizuje výuku pro žáky se speciálními vzdělávacími potřebami? Jaké jsou konkrétní příklady?",
+      "Jaké konkrétní kroky podnikne škola, aby více využívala aktivní metody výuky a formativní hodnocení?",
+      "Jak se škola připravuje na mezinárodní spolupráci v oblasti chemie, zejména s Technickou univerzitou v Drážďanech?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o přírodní vědy, zejména chemii - škola má špičkové vybavení a zkušené pedagogy",
+      "Talentovaní žáci, kteří chtějí soutěžit v olympiádách a vědeckých soutěžích - škola je aktivně podporuje",
+      "Žáci, kteří si cení kvalitního zázemí a moderního prostředí - nová budova nabízí výborné podmínky"
+    ],
+    "who_should_be_cautious": [
+      "Žáci, kteří potřebují více individuální pozornosti a diferenciované přístupy - inspekce zjistila, že individualizace je zatím nedostatečná",
+      "Žáci, kteří se lépe učí aktivními metodami a diskusí - převažuje zde frontální výuka",
+      "Žáci, kteří potřebují jasnou zpětnou vazbu a formativní hodnocení - to se v hodinách téměř nepoužívá"
+    ],
+    "plain_czech_summary": "Gymnázium a SOŠ dr. Václava Šmejkala je moderní škola s výborným vybavením a silnými partnerstvy. Žáci dosahují dobrých výsledků v maturitě a soutěžích. Nová budova poskytuje podnětné prostředí. Hlavní slabinou je styl výuky - převažuje frontální přístup bez dostatečné individualizace a aktivního zapojení žáků. Inspekce doporučuje více formativního hodnocení, diferenciace a aktivních metod. Škola je vhodná pro talentované žáky se zájmem o vědy, ale méně pro ty, kteří potřebují individuální přístup."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Převážně pozitivní s výjimkou jednoho oboru",
+      "key_numbers": [
+        "Aplikovaná chemie 2022/2023: 0% neúspěšnosti (ČR 9,4%)",
+        "Gymnázium 2022/2023: 4,1% neúspěšnosti (ČR 2,2%)",
+        "Veřejnosprávní činnost 2022/2023: 25% neúspěšnosti (ČR 11,4%)"
+      ],
+      "evidence": "Osmiletý program gymnázia: 100% úspěšnost v obou školních rocích. Gymnázium a Aplikovaná chemie dosahují lepších výsledků než republikový průměr."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+    },
+    "support_services": [
+      "Dvě výchovné poradkyně, metodička prevence a kariérový poradce",
+      "Funkční systém poradenských služeb s dobrou spoluprací a sdílením informací",
+      "Kariérový poradce pořádá projektové dny, workshopy s vysokými školami a besedy s absolventy"
+    ],
+    "safety_climate": [
+      "Promyšlený systém primární prevence reagující na aktuální potřeby",
+      "Adaptační programy pro prvňáky zaměřené na prosociální vztahy",
+      "Jakékoliv náznaky problémového chování jsou řešeny bezodkladně"
+    ],
+    "partnerships_practice": [
+      "Dlouhodobá spolupráce s vysokými školami (ČVUT, VŠChT, Univerzita J. E. Purkyně)",
+      "Partnerství s průmyslovými podniky a nadačními programy pro vybavení",
+      "Členství v Asociaci chemického průmyslu a spolupráce se základními školami"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je psána srozumitelně s konkrétními příklady a čísly. Silné a slabé stránky jsou jasně vymezeny. Absence je však jedinou oblastí, kde chybí konkrétní data.",
+    "uncertainty_notes": [
+      "Absence údajů o školní absence - zpráva ji nespecifikuje",
+      "Nejasné, jak konkrétně se individualizace provádí v praxi - inspekce ji hodnotí jako ojediněle",
+      "Chybí informace o počtu žáků se speciálními potřebami, kterým se individualizace skutečně dostává"
+    ]
+  }
+}
+```

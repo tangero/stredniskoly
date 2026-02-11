@@ -1,0 +1,29 @@
+{
+  "report_id": "SOS_600019853_2025-11-20",
+  "judge_model_id": "openai_gpt_5_2_reference",
+  "candidate_model_id": "claude_sonnet_4_5",
+  "run_started_utc": "2026-02-09T12:21:49.831471+00:00",
+  "run_finished_utc": "2026-02-09T12:22:12.054565+00:00",
+  "call_error": null,
+  "parse_error": null,
+  "raw_response": "{\n  \"report_id\": \"SOS_600019853_2025-11-20\",\n  \"faithfulness_score_1_5\": 4,\n  \"completeness_score_1_5\": 3,\n  \"parent_usefulness_score_1_5\": 4,\n  \"czech_clarity_score_1_5\": 5,\n  \"unsupported_claims_count\": 2,\n  \"critical_issues\": [\n    \"Nesoulad v datu/rozsahu inspekční činnosti: kandidát uvádí „20. 11. – 25. 11. 2025“, zdroj uvádí „20. 11. − 21. 11. 2025 a 24. 11. 2025“.\",\n    \"Mírně nepřesná formulace k závěrečné zkoušce v oboru ošetřovatel: zdroj uvádí, že cca 13 % žáků ji složí „až ve druhém opravném termínu“, kandidát zjednodušuje na „v opravném termínu“.\",\n    \"Chybí zmínka o některých důležitých zjištěních pro rodiče: dílčí nedostatky v dodržování právních předpisů (ŠVP, podpůrná opatření, organizace praxí), omezená role předmětových komisí a absence systematického zapojení žáků a pedagogů do autoevaluace.\"\n  ],\n  \"best_points\": [\n    \"Dobře vystiženy klíčové silné stránky přesně podle závěrů zprávy (spolupráce s partnery/praxe, školní a mimoškolní aktivity, modernizace odborných učeben).\",\n    \"Správně a užitečně vytaženy hlavní rizikové oblasti pro rodiče (frontální výuka a pasivita žáků, záškoláctví, předčasné ukončování studia v sociální činnosti) včetně relevantních čísel (43 %, téměř 5 %, trend maturit).\",\n    \"Praktická část pro rodiče (otázky na den otevřených dveří, pro koho se škola hodí / kdo má být opatrný) je srozumitelná a navázaná na zjištění inspekce.\"\n  ],\n  \"one_line_verdict\": \"Výstup je převážně věrný a pro rodiče užitečný, ale obsahuje chybné vymezení termínu inspekce, drobnou nepřesnost u opravných termínů a opomíjí některé podstatné systémové nedostatky zjištěné inspekcí.\"\n}",
+  "judge_output": {
+    "report_id": "SOS_600019853_2025-11-20",
+    "faithfulness_score_1_5": 4,
+    "completeness_score_1_5": 3,
+    "parent_usefulness_score_1_5": 4,
+    "czech_clarity_score_1_5": 5,
+    "unsupported_claims_count": 2,
+    "critical_issues": [
+      "Nesoulad v datu/rozsahu inspekční činnosti: kandidát uvádí „20. 11. – 25. 11. 2025“, zdroj uvádí „20. 11. − 21. 11. 2025 a 24. 11. 2025“.",
+      "Mírně nepřesná formulace k závěrečné zkoušce v oboru ošetřovatel: zdroj uvádí, že cca 13 % žáků ji složí „až ve druhém opravném termínu“, kandidát zjednodušuje na „v opravném termínu“.",
+      "Chybí zmínka o některých důležitých zjištěních pro rodiče: dílčí nedostatky v dodržování právních předpisů (ŠVP, podpůrná opatření, organizace praxí), omezená role předmětových komisí a absence systematického zapojení žáků a pedagogů do autoevaluace."
+    ],
+    "best_points": [
+      "Dobře vystiženy klíčové silné stránky přesně podle závěrů zprávy (spolupráce s partnery/praxe, školní a mimoškolní aktivity, modernizace odborných učeben).",
+      "Správně a užitečně vytaženy hlavní rizikové oblasti pro rodiče (frontální výuka a pasivita žáků, záškoláctví, předčasné ukončování studia v sociální činnosti) včetně relevantních čísel (43 %, téměř 5 %, trend maturit).",
+      "Praktická část pro rodiče (otázky na den otevřených dveří, pro koho se škola hodí / kdo má být opatrný) je srozumitelná a navázaná na zjištění inspekce."
+    ],
+    "one_line_verdict": "Výstup je převážně věrný a pro rodiče užitečný, ale obsahuje chybné vymezení termínu inspekce, drobnou nepřesnost u opravných termínů a opomíjí některé podstatné systémové nedostatky zjištěné inspekcí."
+  }
+}

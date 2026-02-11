@@ -1,0 +1,102 @@
+```json
+{
+  "report_id": "SOS_600020355_2025-03-31",
+  "school_profile": {
+    "school_type": "Vyšší odborná škola a Střední průmyslová škola strojní, stavební a dopravní",
+    "inspection_period": "31. března až 3. dubna 2025",
+    "school_change_summary": "Nový ředitel od dubna 2024. Probíhá modernizace budov a vybavení. Klesá zájem o strojírenství a VOŠ, roste zájem o stavebnictví. Škola má 541 žáků na střední škole a 15 studentů na VOŠ."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Spolupráce se zaměstnavateli",
+        "detail": "Rozsáhlá síť partnerství s firmami a odbornými organizacemi podporuje praktické dovednosti žáků.",
+        "evidence": "Škola je součástí odborných rad, svazů a asociací, spolupracuje s Hospodářskou komorou a univerzitami."
+      },
+      {
+        "tag": "Bohatá mimoškolní činnost",
+        "detail": "Žáci mají přístup k mnoha zájmovým útvarům, sportovním aktivitám a odborným seminářům.",
+        "evidence": "Modelářský kroužek, technické dílny, lyžařské kurzy, branné kurzy, florbal, lukostřelba."
+      },
+      {
+        "tag": "Kvalitní VOŠ vzdělání",
+        "detail": "Studenti dosahují velmi dobrých výsledků, absolventské práce jsou na vysoké úrovni.",
+        "evidence": "Výsledky u absolutorií jsou bez ohledu na formu studia velmi dobré, předčasná ukončení především v prvním semestru."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabé výsledky maturit v některých oborech",
+        "detail": "Obor Provoz a ekonomika dopravy má výrazně horší výsledky než průměr ČR.",
+        "evidence": "2024: škola 32,4 %, ČR 13,1 %. Stavebnictví: škola 16,7 %, ČR 7,7 %."
+      },
+      {
+        "tag": "Nedostatečná diferenciace ve výuce",
+        "detail": "Žáci plní stejné úkoly bez ohledu na své schopnosti, chybí individuální přístup.",
+        "evidence": "Žáci plnili obsahem, typem, rozsahem i náročností shodné úkoly."
+      },
+      {
+        "tag": "Problémy v řešení konfliktů",
+        "detail": "Škola adekvátně neřeší konflikty mezi žáky a nemá účinný systém primární prevence.",
+        "evidence": "Adekvátně neřeší případné konflikty mezi žáky, a tím účinně nepředchází rizikovému chování."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky ohrožené neúspěchem v oboru Provoz a ekonomika dopravy?",
+      "Jaké konkrétní kroky podnikla škola po změně vedení k zlepšení vztahů mezi pedagogy a vedením?",
+      "Jak se škola vypořádává s omezeným vybavením dílen během rekonstrukce budovy?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o praktické obory a spolupráci se zaměstnavateli",
+      "Studenti VOŠ hledající kvalitní terciární vzdělání s důrazem na praxi",
+      "Žáci, kterým vyhovuje bohatá mimoškolní činnost a zájmové kroužky"
+    ],
+    "who_should_be_cautious": [
+      "Žáci oboru Provoz a ekonomika dopravy – vysoká neúspěšnost u maturit",
+      "Žáci, kteří potřebují individualizovaný přístup a diferenciovanou výuku",
+      "Žáci se speciálními vzdělávacími potřebami – metodická podpora pedagogů není dostatečně účinná"
+    ],
+    "plain_czech_summary": "Škola nabízí kvalitní praktické vzdělání s výbornou spoluprací se zaměstnavateli a bohatou mimoškolní činností. VOŠ studenti dosahují velmi dobrých výsledků. Hlavní problémy: slabé výsledky maturit v některých oborech (zejména Provoz a ekonomika dopravy), nedostatečná diferenciace ve výuce a problémy v řešení konfliktů. Nový ředitel od dubna 2024 zavádí změny, ale jejich efekt se zatím neprojevil."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Nerovnoměrný – některé obory silné, jiné slabé",
+      "key_numbers": [
+        "Strojírenství 2024: 0 % neúspěšných (nejlepší)",
+        "Provoz a ekonomika dopravy 2024: 32,4 % neúspěšných (ČR 13,1 %)",
+        "Stavebnictví 2024: 16,7 % neúspěšných (ČR 7,7 %)"
+      ],
+      "evidence": "Ve zkušebním období 2024 byli nejúspěšnější žáci oboru Strojírenství, v ostatních oborech byla hrubá neúspěšnost školy vyšší než v ČR."
+    },
+    "absence": {
+      "trend": "Není v textu specifikováno",
+      "key_numbers": [],
+      "evidence": "Inspekční zpráva neobsahuje údaje o absenci žáků."
+    },
+    "support_services": [
+      "Skupinové doučování a individuální konzultace pro žáky ohrožené neúspěchem",
+      "Výchovné poradenství a metodická podpora pedagogů pro žáky se speciálními vzdělávacími potřebami",
+      "Kariérové poradenství s besedami se zástupci vysokých škol a absolventy"
+    ],
+    "safety_climate": [
+      "Adaptační programy pro prvňáky zaměřené na vztahy v třídách",
+      "Četné preventivní aktivity a školní projekty",
+      "Nedostatečně účinný systém primární prevence – škola nepostupuje podle krizových plánů"
+    ],
+    "partnerships_practice": [
+      "Rozsáhlá síť memorand o spolupráci se zaměstnavateli",
+      "Spolupráce s Hospodářskou komorou, univerzitami, Národním památkovým ústavem",
+      "Oponování absolventských prací VOŠ odborníky z praxe"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní údaje. Některé pasáže jsou však úřednicky formulované a pro laika obtížně pochopitelné (např. kódy kritérií, technické termíny).",
+    "uncertainty_notes": [
+      "Absence dat o školní docházce a absence žáků",
+      "Nejsou specifikovány konkrétní počty žáků se speciálními vzdělávacími potřebami v jednotlivých oborech",
+      "Chybí informace o počtu pedagogů a jejich kvalifikaci"
+    ]
+  }
+}
+```

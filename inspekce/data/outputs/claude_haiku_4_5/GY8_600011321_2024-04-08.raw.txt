@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY8_600011321_2024-04-08",
+  "school_profile": {
+    "school_type": "Gymnázium (čtyřletý a osmiletý program)",
+    "inspection_period": "8. 4. 2024 – 12. 4. 2024",
+    "school_change_summary": "Od července 2022 nová ředitelka, která navázala na efektivní předchozí řízení. Škola pokračuje v dosahování velmi dobrých výsledků a zefektivnila činnost školního poradenského pracoviště."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné výsledky",
+        "detail": "Žáci dosahují nadprůměrných výsledků v externím testování a maturitní zkoušce (2022/2023: neuspěl pouze jeden žák).",
+        "evidence": "Výsledky ve školním roce 2022/2023 byly ve všech testovaných oblastech nadprůměrné."
+      },
+      {
+        "tag": "Kvalitní učitelé a vybavení",
+        "detail": "Pedagogický sbor je vysoce kvalifikovaný a aprobovaný, budova je nově zrekonstruovaná s kvalitním vybavením.",
+        "evidence": "Materiální podmínky jsou velmi dobré, pedagogové mají vysokou odbornou úroveň."
+      },
+      {
+        "tag": "Bohatá mimoškolní činnost",
+        "detail": "Škola nabízí množství akcí, soutěží, olympiád a programů pro osobnostní rozvoj žáků.",
+        "evidence": "Žáci dosahují velmi dobrých výsledků v literární, matematické a přírodovědné soutěži."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabá individualizace výuky",
+        "detail": "Učitelé nesystematicky pracují se vzdělávacími cíli a málo diferencují obsah podle schopností jednotlivých žáků.",
+        "evidence": "Pedagogové respektovali pracovní tempo, ale individualizaci nevyužívali; formativní hodnocení uplatnili jen někteří."
+      },
+      {
+        "tag": "Nedostatečný rozvoj hodnoticích dovedností",
+        "detail": "Žáci jsou málo vedeni k vlastnímu hodnocení a sebehodnocení.",
+        "evidence": "Metody vzájemného hodnocení a sebehodnocení byly využity ojediněle."
+      },
+      {
+        "tag": "Omezená práce s textem v nejazykových předmětech",
+        "detail": "Čtenářská gramotnost není dostatečně podporována mimo jazykové předměty.",
+        "evidence": "Práce s textem byla v nejazykových předmětech zařazena výjimečně."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola přizpůsobuje výuku potřebám jednotlivých žáků s různými schopnostmi?",
+      "Jaké konkrétní metody používáte pro formativní hodnocení a zpětnou vazbu žákům?",
+      "Jak se škola zaměřuje na rozvoj kritického myšlení a práce s informačními zdroji?"
+    ],
+    "who_school_fits": [
+      "Žáci s dobrými studijními výsledky a motivací pokračovat na vysoké škole",
+      "Děti zajímající se o jazykové vzdělání a mezinárodní výměny",
+      "Žáci, kterým vyhovuje tradiční frontální výuka s aktivizačními prvky"
+    ],
+    "who_should_be_cautious": [
+      "Žáci potřebující intenzivní individuální přístup a diferenciaci podle svého tempa",
+      "Děti, které se lépe učí prostřednictvím vlastního hodnocení a reflexe",
+      "Žáci vyžadující více praktické aplikace znalostí a kritického myšlení"
+    ],
+    "plain_czech_summary": "Gymnázium v Jateční patří mezi kvalitní střední školy. Učitelé jsou odborně zdatní, budova moderní a vybavená. Žáci dosahují výborných výsledků u maturity a v testech. Škola nabízí bohatý program akcí a soutěží. Hlavní slabinou je, že učitelé málo přizpůsobují výuku individuálním potřebám žáků a málo je vedou k vlastnímu hodnocení. Vhodná pro ambiciózní žáky, kteří se dobře učí tradičním způsobem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Velmi dobrý",
+      "key_numbers": [
+        "Školní rok 2022/2023: neuspěl pouze 1 žák ze všech maturantů",
+        "Osvědčeným nástrojem je maturita nanečisto pro čtvrťáky"
+      ],
+      "evidence": "Úspěšnost u maturitní zkoušky byla velmi dobrá, ze všech žáků neuspěl pouze jeden."
+    },
+    "absence": {
+      "trend": "Monitorováno a řešeno",
+      "key_numbers": [
+        "V případě vyšší absence pomáhá výchovná poradkyně najít příčiny"
+      ],
+      "evidence": "Vedení školy sleduje absence a spolupracuje se zákonnými zástupci na jejich odstranění."
+    },
+    "support_services": [
+      "Výchovné poradkyně zajišťují efektivní poradenské služby",
+      "Školní psycholožka poskytuje konzultace pedagogům a žákům, krizové intervence",
+      "Metodička prevence zaměřená na prevenci šikany, kyberšikany a zdravý životní styl",
+      "Podpora žáků se speciálními vzdělávacími potřebami a nadaných žáků",
+      "Kariérové poradenství a sledování uplatnitelnosti absolventů"
+    ],
+    "safety_climate": [
+      "Příjemná pracovní atmosféra založená na partnerském přístupu s vzájemným respektem",
+      "Náznaky problémového chování řešeny bezodkladně, což minimalizuje jejich výskyt",
+      "Třídnické hodiny s osobnostní výchovou pro nižší gymnázium",
+      "Adaptační programy pro prvňáky zaměřené na prosociální vztahy",
+      "Sociometrické šetření v případě potřeby"
+    ],
+    "partnerships_practice": [
+      "Spolupráce se zřizovatelem, základními, středními a vysokými školami",
+      "Partnerství s kulturními institucemi a dalšími organizacemi",
+      "Zahraniční školská partnerství s výměnnými pobyty žáků",
+      "Spolupráce s Centrem pro talentovanou mládež",
+      "Zapojování do akcí města a regionu"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je srozumitelná a obsahuje konkrétní fakta. Silné a slabé stránky jsou jasně identifikovány s konkrétními příklady. Chybí však více číselných údajů o absenci a podrobnější data o výsledcích testování.",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní procenta úspěšnosti v externím testování, pouze že byla nadprůměrná",
+      "Není jasné, kolik procent žáků využívá doučování nebo individuální konzultace",
+      "Chybí informace o počtu žáků, kteří pokračují na vysokých školách versus pracovní uplatnění"
+    ]
+  }
+}
+```

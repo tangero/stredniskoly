@@ -1,0 +1,99 @@
+{
+  "report_id": "GY8_600012026_2022-03-15",
+  "school_profile": {
+    "school_type": "Gymnázium a Střední odborná škola pedagogická",
+    "inspection_period": "15.−18. 3. 2022",
+    "school_change_summary": "Od poslední inspekce došlo k mírnému poklesu počtu žáků (o 6,8 %), ale škola se díky zkvalitnění materiálních podmínek daří udržovat velmi dobrou úroveň vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Výborné studijní výsledky",
+        "detail": "Škola dosahuje nadprůměrných výsledků v maturitních zkouškách a vysokého podílu vyznamenání.",
+        "evidence": "„Žáci dosahují výborných výsledků... počet vyznamenaných v posledním školním roce dosáhl téměř 54 %.“"
+      },
+      {
+        "tag": "Kvalitní příprava na VŠ",
+        "detail": "Většina absolventů úspěšně pokračuje na vysokých školách.",
+        "evidence": "„Většina absolventů pokračuje v dalším studiu. Ve školním roce 2020/2021 to bylo 77 % na vysokých školách.“"
+      },
+      {
+        "tag": "Příznivé klima a vedení",
+        "detail": "Škola má kvalitní vedení a panuje v ní příznivá atmosféra s vysokou sounáležitostí.",
+        "evidence": "„Zjištění inspekčního týmu dokládá vysokou míru sounáležitosti pedagogů i žáků se školou.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Rezervy v hodnocení žáků",
+        "detail": "Ve výuce chybí větší důraz na sebereflexi a vzájemné hodnocení žáků.",
+        "evidence": "„Škola má rezervy ve využívání sebereflexe a vrstevnického hodnocení žáků.“"
+      },
+      {
+        "tag": "Nedůsledné závěry hodin",
+        "detail": "V některých hodinách chybí jasné shrnutí splnění cíle a zpětná vazba.",
+        "evidence": "„V závěru některých hospitovaných hodin chybělo shrnutí s ohledem na ověření splnění vzdělávacího cíle.“"
+      },
+      {
+        "tag": "Bezpečnostní rizika",
+        "detail": "Je třeba věnovat větší pozornost aktuálním rizikům a jejich eliminaci.",
+        "evidence": "„Je však nutné věnovat větší pozornost aktuálním rizikům a důsledně přijímat opatření k jejich eliminaci.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně učitelé poskytují žákům zpětnou vazbu a prostor pro sebereflexi?",
+      "Jakým způsobem škola reaguje na aktuální bezpečnostní rizika identifikovaná v analýze?",
+      "Jaké konkrétní projekty či exkurze doplňují výuku přírodovědných předmětů?"
+    ],
+    "who_school_fits": [
+      "Ambiciózní studenty, kteří cílí na vysoké školy a očekávají náročné prostředí.",
+      "Talentované děti se zájmem o přírodní vědy, hudbu nebo sport.",
+      "Studenty, kteří hledají školu s rodinnou atmosférou a silnými tradicemi."
+    ],
+    "who_should_be_cautious": [
+      "Žáky, kteří potřebují intenzivní individuální zpětnou vazbu od učitele, nikoliv od spolužáků.",
+      "Rodiče, kteří kladou důraz na moderní metody formativního hodnocení v každé hodině."
+    ],
+    "plain_czech_summary": "Gymnázium a SOŠ pedagogická v Nové Pace působí jako stabilní a kvalitně řízená škola s nadprůměrnými studijními výsledky a vysokou úspěšností při přijímacích řízeních na vysoké školy. Škola nabízí pestré mimoškolní aktivity, moderní zázemí a příznivé klima. Mezi slabší stránky patří méně využívané metody vzájemného hodnocení žáků a občasný nedostatek shrnující zpětné vazby na konci hodin. Pro ambiciózní studenty je však volbou s vysokým potenciálem."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Dlouhodobě nadprůměrné",
+      "key_numbers": [
+        "77 % absolventů nastupuje na VŠ",
+        "54 % žáků studuje s vyznamenáním",
+        "0 % neprospívajících žáků"
+      ],
+      "evidence": "„Výsledky školy v rámci České republiky jsou hodnoceny jako nadprůměrné v českém jazyce a literatuře a v cizích jazycích.“"
+    },
+    "absence": {
+      "trend": "Výborná",
+      "key_numbers": [
+        "2 neomluvené hodiny (2020/2021)",
+        "Důsledná evidence absence",
+        "Funkční prevence záškoláctví"
+      ],
+      "evidence": "„Neomluvené hodiny jsou zaznamenány pouze výjimečně (ve školním roce 2020/2021 pouze 2 hodiny).“"
+    },
+    "support_services": [
+      "Kvalifikované výchovné poradenství",
+      "Spolupráce s PPP a SPC",
+      "Metodik prevence a krizový plán"
+    ],
+    "safety_climate": [
+      "Příznivá atmosféra pro vzdělávání",
+      "Míra úrazovosti pod celorepublikovým průměrem",
+      "Elektronický zabezpečovací systém"
+    ],
+    "partnerships_practice": [
+      "Fakultní škola PedF UHK",
+      "Spolupráce s partnerskými školami v zahraničí (Nepál, Belgie)",
+      "Aktivní Sdružení rodičů"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 5,
+    "czech_clarity_reason": "Text je psán ve srozumitelné češtině, inspekční zpráva je logicky členěná a závěry jsou jasně formulované.",
+    "uncertainty_notes": []
+  }
+}

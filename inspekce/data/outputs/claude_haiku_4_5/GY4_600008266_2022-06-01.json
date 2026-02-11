@@ -1,0 +1,118 @@
+{
+  "report_id": "GY4_600008266_2022-06-01",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T17:02:20.651748+00:00",
+  "run_finished_utc": "2026-02-09T17:02:52.733560+00:00",
+  "raw_file": "GY4_600008266_2022-06-01.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "GY4_600008266_2022-06-01",
+    "school_profile": {
+      "school_type": "Soukromá střední škola (gymnázium a IT obor) a základní škola s družinou",
+      "inspection_period": "1. 6. 2022 – 3. 6. 2022",
+      "school_change_summary": "Nový ředitel od srpna 2018 postupně realizuje vizi kvalitního vzdělání s individuálním přístupem. Nově zřízena školní družina (od září 2021). Škola již nepřijímá žáky v dálkové a kombinované formě. Střední škola se stala Fakultní školou Jihočeské univerzity."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Výborná úroveň angličtiny",
+          "detail": "Všichni žáci uspěli v anglickém jazyce u maturit, zvýšená hodinová dotace a zapojování angličtiny v dalších aktivitách vede k velmi dobrým znalostem.",
+          "evidence": "Ve školním roce 2020/2021 uspěli všichni žáci v anglickém jazyce u maturit."
+        },
+        {
+          "tag": "Digitální gramotnost a moderní výuka",
+          "detail": "Dlouhodobé zkušenosti s notebooky a Google Classroom, škola je akreditovaným testovacím střediskem ECDL.",
+          "evidence": "Digitální gramotnost žáků je na výborné úrovni, na střední škole běžné efektivní využívání notebooků."
+        },
+        {
+          "tag": "Kvalitní pedagogický tým",
+          "detail": "14 kvalifikovaných kmenových pedagogů, vedení realizuje dostatek hospitací a podporuje vzdělávání učitelů.",
+          "evidence": "Vedení školy realizuje dostatek hospitací, jejichž závěry jsou východiskem pro následná opatření."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Spojování tříd a skupin z různých ročníků",
+          "detail": "Vytváření skupin napříč ročníky (např. na 2. stupni ZŠ) je rizikem pro systematické naplnění očekávaných výstupů.",
+          "evidence": "Rizikem je vytváření skupin napříč ročníky zejména v základním vzdělávání kvůli návaznosti učiva a rozdílům v rozumovém vývoji."
+        },
+        {
+          "tag": "Neomluvené absence některých žáků",
+          "detail": "Přetrvávající problém s neomluvením absence, zejména během distanční výuky, navzdory opatřením školy.",
+          "evidence": "Nízký výskyt neomluvených absencí se ne vždy daří udržovat, způsoben byl několika žáky převážně během distanční výuky."
+        },
+        {
+          "tag": "Nedostatečná diferenciace úkolů",
+          "detail": "V některých hodinách nejsou úkoly dostatečně diferencované, což plně nepodporuje individuální schopnosti žáků.",
+          "evidence": "Úkoly či otázky nebyly ve vyučovacích hodinách dále diferencované, což plně nepodporovalo individuální schopnosti žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně řešíte spojování tříd a skupin z různých ročníků? Jak zajišťujete, aby všichni žáci dosáhli očekávaných výstupů?",
+        "Jaké konkrétní opatření podnikáte proti neomluvené absenci a jak komunikujete s rodiči?",
+        "Jak se liší přístup k výuce mezi gymnáziem a IT oborem? Jsou nějaké společné projekty?"
+      ],
+      "who_school_fits": [
+        "Žáci se zájmem o angličtinu a jazykové certifikáty (Cambridge, ÖSD) – škola je partnerskou školou těchto institucí",
+        "Budoucí IT specialisté – střední škola je Fakultní školou Jihočeské univerzity, nabízí robotiku a ECDL certifikáty",
+        "Žáci preferující malé třídy a individuální přístup – průměrně nižší počty žáků umožňují intenzivnější péči"
+      ],
+      "who_should_be_cautious": [
+        "Žáci s problémy s docházkou – škola má problémy s neomluvením absence některých žáků",
+        "Žáci potřebující jasnou strukturu a chronologickou návaznost učiva – spojování tříd z různých ročníků může být problematické",
+        "Rodiny hledající levnější vzdělání – jedná se o soukromou školu se školným"
+      ],
+      "plain_czech_summary": "EDUCAnet je soukromá škola v Českých Budějovicích s gymnáziem, IT oborem a základní školou. Silné stránky: výborná angličtina, moderní digitální výuka, kvalitní učitelé. Slabé stránky: spojování tříd z různých ročníků, problémy s neomluvením absence, nedostatečná diferenciace úkolů. Škola se zaměřuje na individuální přístup a mimoškolní aktivity. Vhodná pro žáky zajímající se o jazyky a IT, méně vhodná pro ty s problémy s docházkou."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Stabilně vysoká úspěšnost v celorepublikovém porovnání",
+        "key_numbers": [
+          "100% úspěšnost v anglickém jazyce a češtině u maturit 2020/2021",
+          "Pouze 1 neprospívající ze 57 žáků v obou oborech (2020/2021)",
+          "Srovnatelná úspěšnost s celorepublikovým průměrem stejné skupiny oborů"
+        ],
+        "evidence": "Ve školním roce 2020/2021 uspěli všichni žáci ve společné části maturitní zkoušky v anglickém jazyce a v českém jazyce a literatuře."
+      },
+      "absence": {
+        "trend": "Problematická – přetrvávající neomluvené absence",
+        "key_numbers": [
+          "Neomluvené absence způsobeny několika žáky převážně během distanční výuky",
+          "3 neprospívající žáci ze 39 v ZŠ (2020/2021) v přímé souvislosti se zvýšenou absencí",
+          "Nízký podíl snížených stupňů z chování"
+        ],
+        "evidence": "Navzdory spolupráci se školním poradenským pracovištěm se ne vždy daří udržovat nízký výskyt neomluvených absencí."
+      },
+      "support_services": [
+        "Školní poradenské služby zajišťovány metodikem prevence a výchovným poradcem",
+        "Individuální konzultace a doučování pro žáky s rozdíly v dosažených kompetencích",
+        "Formativní hodnocení na 1. stupni ZŠ se slovním hodnocením",
+        "Prospěchová stipendia a motivační snižování školného",
+        "Tripartitní třídní schůzky na 1. stupni (učitel, žák, rodiče)"
+      ],
+      "safety_climate": [
+        "Příjemné pracovní klima tříd, žáci dodržují nastavená pravidla",
+        "Důraz na budování dobrých vztahů mezi žáky a sounáležitosti se školou",
+        "Vedení dbá na udržení dobrého školního klimatu ve všech součástech školy",
+        "Nízký podíl snížených stupňů z chování, vyvážená četnost kázeňských opatření a pochval"
+      ],
+      "partnerships_practice": [
+        "Partnerská škola Evropského centra jazykových zkoušek Cambridge English a ÖSD",
+        "Akreditované testovací středisko ECDL",
+        "Fakultní škola Jihočeské univerzity pro obor Informační technologie",
+        "Projektové odpoledne s odborníky z praxe",
+        "Studio Edison – školní časopis, rádio a televize"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 4,
+      "czech_clarity_reason": "Zpráva je velmi podrobná a jasně strukturovaná. Všechny klíčové informace jsou dobře zdokumentovány s konkrétními čísly a citacemi. Mírně snižuje srozumitelnost pro rodiče vysoký podíl odborné terminologie a administrativního jazyka.",
+      "uncertainty_notes": [
+        "Zpráva neobsahuje informace o školném a finančních nákladech pro rodiče",
+        "Chybí konkrétní údaje o počtu přijatých žáků v posledních letech a jejich umístění na vysokých školách",
+        "Není jasné, jak konkrétně škola řeší problém s neomluvením absence – pouze je zmíněno, že opatření přijala"
+      ]
+    }
+  }
+}

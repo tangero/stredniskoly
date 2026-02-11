@@ -1,0 +1,109 @@
+```json
+{
+  "report_id": "GY4_600005402_2023-09-22",
+  "school_profile": {
+    "school_type": "Soukromá střední škola s maturitní zkouškou: obory Veřejnosprávní činnost (5 zaměření) a Gymnázium moderních technologií",
+    "inspection_period": "22. září 2023 až 27. září 2023",
+    "school_change_summary": "Od inspekce 2017 vzrostl počet žáků denního studia o 80 %, byl otevřen nový obor Gymnázium, výrazně se zvýšil počet interních pedagogů a zlepšily se výsledky vzdělávání."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Jazykové vzdělání na vysoké úrovni",
+        "detail": "Škola systematicky posiluje řečové dovednosti v pěti cizích jazycích s rodilými mluvčími, mezinárodními certifikáty a zahraničními výjezdy.",
+        "evidence": "Žáci dosahují výrazně lepších výsledků v cizím jazyce ve srovnění s ČR, téměř všichni úspěšně skládají zkoušku z cizího jazyka."
+      },
+      {
+        "tag": "Propojení teorie s praxí",
+        "detail": "Odborné vzdělání je podporováno dlouhodobou spoluprací s profesními partnery (ministerstva, soudy, banky, univerzity) a řadou projektů.",
+        "evidence": "Žáci simulují soudní řízení, pracují ve fiktivních firmách, vedou E-portfolio a absolvují odborné praxe podle zaměření."
+      },
+      {
+        "tag": "Vysoká úspěšnost na vysokých školách",
+        "detail": "Absolventi jsou dobře připraveni na terciální vzdělávání s vysokou přijetí na VŠ.",
+        "evidence": "Zhruba 80 % absolventů se úspěšně dostane na vysoké školy různého zaměření."
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Pasivita žáků v některých hodinách",
+        "detail": "V části výuky převažuje frontální organizace s málo pestrými metodami, což omezuje aktivitu všech žáků.",
+        "evidence": "Inspektoři zaznamenali dominující postavení učitele a nerovnoměrné zapojení některých žáků do vyučování."
+      },
+      {
+        "tag": "Nedostatečná diferenciace výuky",
+        "detail": "Učitelé málo přizpůsobují úkoly žákům s různým tempem práce a zájmem, nadaní žáci nejsou speciálně podporováni.",
+        "evidence": "Všichni žáci plnili stejné typy úloh bez odlišné míry obtížnosti, chybí individuální přístup."
+      },
+      {
+        "tag": "Slabší rozvoj mluveného projevu v jazycích",
+        "detail": "Ve výuce cizích jazyků není dostatečně vytvářen prostor pro souvislý mluvený projev žáků.",
+        "evidence": "Inspektoři zjistili, že vyučující nedostatečně využívají výhody menšího počtu žáků pro interaktivní řečové dovednosti."
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje nadané žáky a jak se liší jejich výuka od ostatních?",
+      "Jaké jsou zkušenosti rodičů s komunikací školy a jak se řeší problémy jednotlivých žáků?",
+      "Jak se škola vypořádává s vysokým podílem žáků s odlišným mateřským jazykem a jakou mají podporu?"
+    ],
+    "who_school_fits": [
+      "Žáci se zájmem o jazyky a mezinárodní vztahy – škola nabízí výjezdy do zahraničí a certifikované zkoušky",
+      "Ambiciózní studenti plánující vysokou školu – 80 % absolventů se dostane na VŠ",
+      "Žáci s odlišným mateřským jazykem – škola má zkušenost a podporu pro ně"
+    ],
+    "who_should_be_cautious": [
+      "Žáci preferující interaktivní a skupinovou výuku – v některých hodinách převažuje frontální přístup",
+      "Nadaní žáci hledající speciální podporu – škola se jimi podle inspekce dostatečně nezabývá",
+      "Žáci s potřebou individuálního přístupu – diferenciace výuky není konzistentní"
+    ],
+    "plain_czech_summary": "Škola MVV je moderní instituce se silným zaměřením na jazyky a mezinárodní vztahy. Absolventi jsou úspěšní na vysokých školách a v praxi. Výuka je kvalitní, ale inspekce upozorňuje, že v některých hodinách chybí pestrost metod a aktivní zapojení všech žáků. Učitelé by měli více diferencovat výuku podle potřeb jednotlivých žáků a více podporovat mluvený projev v jazycích. Škola má dobré podmínky, zkušené vedení a fungující systém podpory."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Stabilní vysoká úspěšnost",
+      "key_numbers": [
+        "Téměř všichni žáci uspěli ve všech částech maturitní zkoušky v letech 2020/2021 a 2021/2022",
+        "Neuspěli jen jednotlivci z českého jazyka a odborných předmětů",
+        "Hrubá neúspěšnost je srovnatelná s ČR ve stejné skupině oborů"
+      ],
+      "evidence": "Výsledky v cizím jazyce jsou výrazně lepší než průměr ČR, v češtině a matematice srovnatelné."
+    },
+    "absence": {
+      "trend": "Nízká absence, zefektivněn systém",
+      "key_numbers": [
+        "Omluvená absence jednotlivců se promítá do uzavírání klasifikace",
+        "Neomluvená absence je zanedbatelná",
+        "Zhruba 15 % žáků konalo náhradní nebo opravné zkoušky"
+      ],
+      "evidence": "Vedení školy se zaměřilo na zefektivnění systému prevence rizikového chování a odstranění vysoké absence."
+    },
+    "support_services": [
+      "Výchovná poradkyně, metodička prevence a externí psycholožka",
+      "Multikulturní pracovnice pro žáky s odlišným mateřským jazykem",
+      "Individuální konzultace a doučování pro žáky se speciálními vzdělávacími potřebami",
+      "Preventivní programy a intervence ve třídách"
+    ],
+    "safety_climate": [
+      "Příjemná atmosféra, vzájemně respektující přístup učitele a žáků",
+      "Dodržování nastavených pravidel práce a komunikace",
+      "Počet kázeňských opatření koresponduje s počtem pochval",
+      "Ojedinělé případy rizikových jevů řešeny výchovnými komisemi"
+    ],
+    "partnerships_practice": [
+      "Ministerstvo spravedlnosti ČR, soudy, advokátní kanceláře",
+      "Banky, ČVUT, Metropolitní univerzita Praha",
+      "Partnerské školy v zahraničí (Rumunsko, Turecko)",
+      "Mezinárodní projekty a výměna edukativních zkušeností"
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Zpráva je detailní a srozumitelná, jasně odděluje silné stránky od slabých. Konkrétní příklady z výuky a čísla usnadňují pochopení. Mírně snižuje srozumitelnost odborná terminologie a dlouhé věty v některých pasážích.",
+    "uncertainty_notes": [
+      "Zpráva nespecifikuje, kolik procent hodin mělo nedostatky – pouze uvádí 'část' a 'menší část'",
+      "Není jasné, jak dlouho trvá adaptační období pro nové učitele",
+      "Chybí konkrétní počty žáků s odlišným mateřským jazykem a se speciálními potřebami"
+    ]
+  }
+}
+```

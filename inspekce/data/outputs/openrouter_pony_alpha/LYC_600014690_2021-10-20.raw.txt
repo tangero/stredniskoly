@@ -1,0 +1,97 @@
+{
+  "report_id": "LYC_600014690_2021-10-20",
+  "school_profile": {
+    "school_type": "Střední škola s teoretickým i praktickým vyučováním, domovem mládeže a jídelnou.",
+    "inspection_period": "20. 10. 2021 − 22. 10. 2021",
+    "school_change_summary": "Škola se sestěhovala do jednoho areálu a prošla rozsáhlou rekonstrukcí dílen a pavilonu IT."
+  },
+  "for_parents": {
+    "strengths": [
+      {
+        "tag": "Moderní zázemí",
+        "detail": "Rekonstrukce vytvořila unikátní prostředí propojující technické a umělecké obory.",
+        "evidence": "„Nejvýraznějším prvkem je zrekonstruovaný pavilon dílen... umožňuje propojení všech oborů.“"
+      },
+      {
+        "tag": "Výborná odborná výuka",
+        "detail": "Hodiny odborných předmětů a cvičení mají vysokou úroveň a propojení s praxí.",
+        "evidence": "„Hospitované hodiny odborných předmětů... vykazovaly vysokou odbornou i didaktickou úroveň.“"
+      },
+      {
+        "tag": "Kvalitní partnerská spolupráce",
+        "detail": "Škola nabízí široké možnosti praxe v firmách i unikátní spolupráci se školou v Japonsku.",
+        "evidence": "„Velkým úspěchem je spolupráce s partnerskou školou v Japonsku... spolupráce s pestrým portfoliem firem.“"
+      }
+    ],
+    "risks": [
+      {
+        "tag": "Slabší aktivizace ve všeobecných předmětech",
+        "detail": "V běžných předmětech převažuje pasivní výklad bez zapojení žáků.",
+        "evidence": "„V hodinách všeobecně vzdělávacích předmětů... dařilo se žáky motivovat a aktivizovat jen v menší míře.“"
+      },
+      {
+        "tag": "Nedostatečná individualizace",
+        "detail": "Výuka někdy nebere dostatečný ohled na individuální potřeby a nadání všech žáků.",
+        "evidence": "„V některých hodinách nebyla pozorována individualizace a diferenciace... potřebám žáků celého spektra nadání.“"
+      },
+      {
+        "tag": "Stagnující maturitní výsledky",
+        "detail": "Přes snahu školy se výsledky maturitních zkoušek dlouhodobě nezlepšují.",
+        "evidence": "„I přes tuto snahu vykazují výsledky maturitních zkoušek setrvalý stav.“"
+      }
+    ],
+    "questions_for_open_day": [
+      "Jak konkrétně škola podporuje žáky, aby se lépe připravili na maturitní zkoušky?",
+      "Využívají se při výuce všeobecných předmětů moderní metody, nebo převažuje frontální výuka?",
+      "Jaké konkrétní firmy nabízejí žákům odbornou praxi a možnost budoucího zaměstnání?"
+    ],
+    "who_school_fits": [
+      "Kreativní a technicky založené studenty, kteří ocení propojení oborů v moderních dílnách.",
+      "Studenty, kteří hledají široké uplatnění v praxi a kontakt s zaměstnavateli.",
+      "Uchazeče o umělecké obory (grafika, móda) s možností mezinárodní spolupráce."
+    ],
+    "who_should_be_cautious": [
+      "Studenti, kteří vyžadují silný individuální přístup v teoretických předmětech.",
+      "Žáci, kteří očekávají vysoce interaktivní a moderní styl výuky i ve všeobecných předmětech."
+    ],
+    "plain_czech_summary": "Střední škola Strážnice prošla úspěšnou modernizací a nabízí vynikající zázemí pro odbornou výuku, kde propojuje techniku s uměním. Škola má silné vazby na firmy i zahraničí (Japonsko), což žákům zajišťuje kvalitní praxi. Slabinou je tradiční styl výuky v běžných předmětech s malou aktivitou žáků a stagnující maturitní výsledky. Pro prakticky a tvůrčím zaměřeným studentům je však škola atraktivní volbou."
+  },
+  "hard_facts": {
+    "maturita": {
+      "trend": "Setrvalý stav bez výraznějšího zlepšování výsledků.",
+      "key_numbers": [
+        "Výsledky maturitních zkoušek vykazují setrvalý stav."
+      ],
+      "evidence": "„I přes tuto snahu vykazují výsledky maturitních zkoušek setrvalý stav.“"
+    },
+    "absence": {
+      "trend": "Údaje o celkové neomluvené absenci nejsou v textu uvedeny.",
+      "key_numbers": [
+        "Text zmiňuje strategii předcházení školní neúspěšnosti."
+      ],
+      "evidence": "„V případě neúspěšných žáků jsou s nimi realizovány takzvané pohovory.“"
+    },
+    "support_services": [
+      "Funguje školní poradenské pracoviště s psychologičkou a výchovnou poradkyní.",
+      "Škola klade velký důraz na prevenci rizikového chování a kariérové poradenství.",
+      "Kvalitní zázemí pro ubytované žáky v rekonstruovaném domově mládeže."
+    ],
+    "safety_climate": [
+      "Výuku charakterizuje klidná, přátelská a příjemná pracovní atmosféra.",
+      "Učitelé projevovali zájem o žáky a přehled o jejich potřebách."
+    ],
+    "partnerships_practice": [
+      "Pestré portfolio firem umožňuje realizaci odborné praxe a stáže pro pedagogy.",
+      "Unikátní spolupráce se školou v Japonsku zahrnuje tvorbu společných módních kolekcí."
+    ]
+  },
+  "model_self_check": {
+    "czech_clarity_score_1_5": 4,
+    "czech_clarity_reason": "Text je srozumitelný, jasně člení silné a slabé stránky a používá běžný jazyk, pouze místy obsahuje standardní odborné termíny (formativní hodnocení, kompetence).",
+    "uncertainty_notes": [
+      "Zpráva neuvádí konkrétní číselné údaje o úspěšnosti u maturity, pouze obecný 'setrvalý stav'.",
+      "Chybí jakékoliv statistiky o neomluvené absenci žáků.",
+      "Není specifikováno, kolik žáků je konkrétně ve třídách nebo skupinách."
+    ]
+  }
+}

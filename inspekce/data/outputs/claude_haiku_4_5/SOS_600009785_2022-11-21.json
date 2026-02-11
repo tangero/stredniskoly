@@ -1,0 +1,103 @@
+{
+  "report_id": "SOS_600009785_2022-11-21",
+  "model_id": "claude_haiku_4_5",
+  "run_started_utc": "2026-02-09T16:56:12.999020+00:00",
+  "run_finished_utc": "2026-02-09T16:56:34.328096+00:00",
+  "raw_file": "SOS_600009785_2022-11-21.raw.txt",
+  "call_error": null,
+  "parse_error": null,
+  "parsed_output": {
+    "report_id": "SOS_600009785_2022-11-21",
+    "school_profile": {
+      "school_type": "Církevní základní škola a střední škola",
+      "inspection_period": "21.–23. listopadu 2022",
+      "school_change_summary": "Inspekční zpráva obsahuje připomínky školy k interpretaci zjištění. ČŠI potvrzuje, že výuka odborných předmětů nebyla vnímána jako slabá stránka a doporučení jsou míněna jako příležitosti ke zlepšení, nikoli kritika kvality."
+    },
+    "for_parents": {
+      "strengths": [
+        {
+          "tag": "Individuální přístup k žákům",
+          "detail": "Pedagogové pracují s individuálními potřebami žáků, zejména těch se speciálními vzdělávacími potřebami a cizinců.",
+          "evidence": "Inspekční zpráva popisuje na více místech individuální podporu a výrazný individuální přístup pedagogů."
+        },
+        {
+          "tag": "Motivovaný tým učitelů",
+          "detail": "Učitelé odborných předmětů jsou vnímáni jako zapálení lidé s motivací předat odbornost a nadšení pro obor.",
+          "evidence": "Inspekční tým ocenil práci s chybou, podporu žáků a atmosféru vzájemné důvěry."
+        },
+        {
+          "tag": "Praktická výuka v oboru Ekologie",
+          "detail": "Systém exkurzí a praxí je propracovaný od 1. do 4. ročníku s významným podílem laboratorní práce.",
+          "evidence": "Ředitelka školy zdůrazňuje klíčový systém praktických činností v terénu."
+        }
+      ],
+      "risks": [
+        {
+          "tag": "Omezená diferenciace pro nadané žáky",
+          "detail": "Podpora nadaných žáků a žáků se zájmem byla minimální, chybí úlohy různé kognitivní náročnosti.",
+          "evidence": "Na střední škole vhodná podpora zájemců proběhla v 6 % hospitovaných hodin, možnost volby úloh nebyla sledována vůbec."
+        },
+        {
+          "tag": "Učební materiály vyžadují modernizaci",
+          "detail": "Některé učebnice jsou staršího data, učební texty by měly reflektovat nejnovější trendy a metody.",
+          "evidence": "ČŠI doporučuje aktualizovat učebnice a učební texty pro výuku odborných předmětů."
+        },
+        {
+          "tag": "Nesystematické sledování pokroku",
+          "detail": "Chybí systematické sledování vzdělávacího pokroku jednotlivých žáků a diferenciace jako reakce na jejich tempo.",
+          "evidence": "Inspekční tým zaznamenal pouze malou míru diferenciace učiva v reakci na složení a potenciál žáků."
+        }
+      ],
+      "questions_for_open_day": [
+        "Jak konkrétně škola podporuje nadané žáky a žáky se zájmem o probírané téma?",
+        "Jaký je plán na modernizaci učebních materiálů pro odborné předměty?",
+        "Jak funguje spolupráce mezi učiteli a asistenty pedagoga v praxi?"
+      ],
+      "who_school_fits": [
+        "Žáci se speciálními vzdělávacími potřebami, kterým škola poskytuje individuální podporu",
+        "Žáci oboru Ekologie a životní prostředí, kteří ocení praktickou výuku a exkurze",
+        "Žáci, kteří potřebují vstřícný přístup a atmosféru vzájemné důvěry"
+      ],
+      "who_should_be_cautious": [
+        "Nadaní žáci, kterým může chybět dostatečná diferenciace a výzvy v hodinách",
+        "Žáci, kteří preferují moderní učební materiály a nejnovější metody výuky",
+        "Žáci, kteří potřebují jasně strukturovanou podporu a systematické sledování pokroku"
+      ],
+      "plain_czech_summary": "Církevní škola v Plzni má motivovaný tým učitelů a poskytuje individuální podporu žákům se speciálními potřebami. Silnou stránkou je praktická výuka v oboru Ekologie. Inspekce doporučuje zlepšit diferenciaci pro nadané žáky, modernizovat učební materiály a systematičtěji sledovat pokrok jednotlivých žáků. Škola se k připomínkám vyjádřila a ČŠI potvrzuje, že doporučení jsou míněna jako příležitosti ke zlepšení, nikoli kritika kvality."
+    },
+    "hard_facts": {
+      "maturita": {
+        "trend": "Není v textu specifikován",
+        "key_numbers": [],
+        "evidence": "Inspekční zpráva se zaměřuje na kvalitu výuky a podporu žáků, ne na výsledky maturity."
+      },
+      "absence": {
+        "trend": "Není v textu specifikován",
+        "key_numbers": [],
+        "evidence": "Absence nejsou v textu zmíněny."
+      },
+      "support_services": [
+        "Individuální podpora pro žáky se speciálními vzdělávacími potřebami",
+        "Podpora cizinců",
+        "Asistenti pedagoga pracují se třídou"
+      ],
+      "safety_climate": [
+        "Atmosféra vzájemné důvěry mezi pedagogy a žáky",
+        "Vstřícný přístup pedagogů a asistentů vůči žákům s potřebou alternativních postupů"
+      ],
+      "partnerships_practice": [
+        "Systém exkurzí a praxí v oboru Ekologie a životní prostředí od 1. do 4. ročníku",
+        "Laboratorní práce a praktické činnosti v terénu"
+      ]
+    },
+    "model_self_check": {
+      "czech_clarity_score_1_5": 3,
+      "czech_clarity_reason": "Text obsahuje detailní připomínky školy a stanovisko ČŠI, ale je složitý a obsahuje mnoho právnických formulací. Pro rodiče je obtížné extrahovat jasné informace o kvalitě školy.",
+      "uncertainty_notes": [
+        "Inspekční zpráva není v textu přímo obsažena, pouze se na ni odkazuje. Nelze ověřit všechna tvrzení.",
+        "Není jasné, jak konkrétně se škola vůči doporučením ČŠI postavila a jaké kroky podnikla.",
+        "Chybí informace o výsledcích vzdělávání (maturita, přijetí na vysoké školy apod.)."
+      ]
+    }
+  }
+}
