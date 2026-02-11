@@ -233,7 +233,7 @@ function parseJsonPayload(jsonText) {
   // Case 2: Array at known container paths.
   const candidates = [parsed];
   if (isObject(parsed)) {
-    candidates.push(parsed.data, parsed.items, parsed.value, parsed.result, parsed.results, parsed.dataset);
+    candidates.push(parsed.rows, parsed.data, parsed.items, parsed.value, parsed.result, parsed.results, parsed.dataset);
   }
   for (const c of candidates) {
     if (Array.isArray(c) && c.length > 0) {
@@ -286,14 +286,31 @@ async function resolveDatasetDownloadUrl(detailUrl) {
   const response = await httpGet(detailUrl);
   const html = response.body;
 
-  const jsonCandidates = Array.from(html.matchAll(/https:\/\/opendata\.csicr\.cz\/Transformation\/Download\/\d+/g))
+  const absoluteCandidates = Array.from(html.matchAll(/https:\/\/opendata\.csicr\.cz\/Transformation\/Download\/\d+/g))
     .map((m) => m[0]);
-  if (jsonCandidates.length === 0) {
+  const relativeCandidates = Array.from(html.matchAll(/href=["'](\/Transformation\/Download\/\d+)["']/g))
+    .map((m) => `https://opendata.csicr.cz${m[1]}`);
+
+  const allCandidates = Array.from(new Set([...absoluteCandidates, ...relativeCandidates]));
+  if (allCandidates.length === 0) {
     throw new Error(`No transformation URL found in ${detailUrl}`);
   }
 
-  // Keep last occurrence; dataset pages often append newest transformation later in DOM.
-  return jsonCandidates[jsonCandidates.length - 1];
+  // Prefer candidates that actually return JSON, fallback to the last candidate.
+  for (const url of allCandidates) {
+    try {
+      const probe = await httpGet(url);
+      const ct = (probe.headers['content-type'] || '').toString().toLowerCase();
+      if (ct.includes('application/json') || probe.body.trim().startsWith('{') || probe.body.trim().startsWith('[')) {
+        return url;
+      }
+    } catch {
+      // try next candidate
+    }
+  }
+
+  // Keep last occurrence as best effort fallback.
+  return allCandidates[allCandidates.length - 1];
 }
 
 function buildDiff(previousData, nextData) {
