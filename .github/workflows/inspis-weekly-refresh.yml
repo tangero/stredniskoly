@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "45 5 * * 1" # every Monday 05:45 UTC
   workflow_dispatch:
+    inputs:
+      force_email:
+        description: "Send success email even if no data changes (test mode)"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -83,7 +89,7 @@ jobs:
   notify-success:
     runs-on: ubuntu-latest
     needs: refresh
-    if: needs.refresh.outputs.changed == 'true'
+    if: needs.refresh.outputs.changed == 'true' || github.event.inputs.force_email == 'true'
     steps:
       - name: Send email notification
         if: ${{ secrets.MAIL_USERNAME != '' && secrets.MAIL_PASSWORD != '' && secrets.NOTIFICATION_EMAIL != '' }}
