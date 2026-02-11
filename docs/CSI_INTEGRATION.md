@@ -218,7 +218,10 @@ Komponenta `HardFactValue` v inspekce/page.tsx resi vsechny tri tvary.
 | `inspekce/scripts/run_extraction.py` | Hlavni skript pro AI extrakci z PDF |
 | `inspekce/scripts/extract_texts.py` | Extrakce textu z PDF |
 | `inspekce/scripts/generate_city_page.py` | Generator staticke HTML stranky (docs/) |
-| `scripts/process-csi-data.js` | Stazeni a zpracovani CSI Open Data |
+| `scripts/process-csi-data.js` | Stazeni a zpracovani CSI Open Data (vč. verzí a diff) |
+| `data/csi_manifest.json` | Historie verzí CSI metadat (`valid_from` / `valid_to`) |
+| `data/csi_diff_latest.json` | Diff poslední změny metadat |
+| `data/csi_snapshots/*.json` | Historické snapshoty CSI metadat |
 | `src/types/school.ts` | TypeScript typy |
 | `src/lib/data.ts` | Data loading funkce |
 | `src/components/InspectionSummary.tsx` | Kompaktni inspekce box (client) |
@@ -251,7 +254,7 @@ Na obou urovnich (kompaktni box i detailni stranka) je upozorneni, ze shrnutí b
 ## Aktualizace dat
 
 ```bash
-# 1. Aktualizovat CSI metadata (ctvrtletne)
+# 1. Aktualizovat CSI metadata
 npm run update:csi
 
 # 2. Spustit AI extrakci pro nove inspekce
@@ -260,6 +263,20 @@ cd inspekce && python3 scripts/run_extraction.py
 # 3. Soubor data/inspection_extractions.json commitnout
 git add data/inspection_extractions.json && git commit -m "Update inspection extractions"
 ```
+
+## Automatizace refresh
+
+Pro tydenni kontrolu změn je připraven workflow:
+
+- `.github/workflows/csi-weekly-refresh.yml`
+
+Workflow:
+- zjisti aktualni `Transformation/Download/*` URL z `DataSet/Detail/69`,
+- zpracuje data,
+- pri zmene vytvori PR,
+- odesle emailove avizo (pokud jsou nastaveny mail secrets).
+
+Detail setupu je v `docs/CSI_REFRESH_AUTOMATION.md`.
 
 ## Licence dat
 

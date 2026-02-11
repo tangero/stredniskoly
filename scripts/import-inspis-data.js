@@ -29,6 +29,10 @@ const QUESTION_MAPPING = {
   'Přípravné kurzy': { field: 'pripravne_kurzy', type: 'boolean' },
   'Dny otevřených dveří (termín/y)': { field: 'dny_otevrenych_dveri', type: 'single' },
   'Termín přijímacích zkoušek': { field: 'termin_prijimacich_zkousek', type: 'single' },
+  'Forma přijímacího řízení': { field: 'forma_prijimaciho_rizeni', type: 'single' },
+  'Stupeň poskytovaného vzdělání': { field: 'stupen_vzdelani', type: 'array' },
+  'Forma vzdělání': { field: 'forma_vzdelani', type: 'array' },
+  'Způsob hodnocení': { field: 'zpusob_hodnoceni', type: 'single' },
   'Výuka cizích jazyků': { field: 'vyuka_jazyku', type: 'array' },
   'Výuka cizích jazyků metodou CLIL (v rámci výuky jiného předmětu)': { field: 'clil_metoda', type: 'boolean' },
   'Výuka cizích jazyků metodou CLIL - jazyky': { field: 'clil_jazyky', type: 'array' },
@@ -41,6 +45,12 @@ const QUESTION_MAPPING = {
   'Linka MHD nebo integrované dopravy': { field: 'linka_mhd', type: 'single' },
   'Nejbližší zastávka veřejné dopravy (v metrech)': { field: 'nejblizsi_zastavka_m', type: 'number' },
   'Umístění školy v obci': { field: 'umisteni_v_obci', type: 'single' },
+
+  // VLNA 1.5 - Komunikace a okolí (prioritní doplnění)
+  'Způsob informování rodičů': { field: 'zpusob_informovani_rodicu', type: 'array' },
+  'Funkce školního informačního systému': { field: 'funkce_sis', type: 'array' },
+  'V blízkosti školy': { field: 'v_blizkosti_skoly', type: 'array' },
+  'Místo pro trávení volného času': { field: 'mista_volny_cas', type: 'array' },
 
   // VLNA 2
   'Specifické akce školy (pravidelné)': { field: 'specificke_akce', type: 'array' },
@@ -122,6 +132,10 @@ function createEmptySchool(redizo) {
     pripravne_kurzy: null,
     dny_otevrenych_dveri: null,
     termin_prijimacich_zkousek: null,
+    forma_prijimaciho_rizeni: null,
+    stupen_vzdelani: null,
+    forma_vzdelani: null,
+    zpusob_hodnoceni: null,
     vyuka_jazyku: null,
     clil_metoda: null,
     clil_jazyky: null,
@@ -162,6 +176,7 @@ function calculateCompleteness(data) {
   const keys = [
     'rocni_skolne', 'zamereni', 'aktualni_pocet_zaku', 'nejvyssi_povoleny_pocet_zaku',
     'prijimaci_zkousky', 'zkousky_z_predmetu', 'pripravne_kurzy', 'dny_otevrenych_dveri', 'termin_prijimacich_zkousek',
+    'forma_prijimaciho_rizeni', 'stupen_vzdelani', 'forma_vzdelani', 'zpusob_hodnoceni',
     'vyuka_jazyku', 'clil_metoda', 'clil_jazyky', 'vyuziti_internetu_ve_vyuce',
     'odborne_ucebny', 'prostory_telocvik', 'pristup_k_pc',
     'bezbariery_pristup', 'dopravni_dostupnost', 'linka_mhd', 'nejblizsi_zastavka_m', 'umisteni_v_obci',

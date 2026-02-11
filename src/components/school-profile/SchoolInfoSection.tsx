@@ -95,6 +95,69 @@ export function SchoolInfoSection({ data }: { data: SchoolInspisData }) {
         </div>
       </div>
 
+      {/* VLNA 1.5 - Komunikace a okolí */}
+      {(data.zpusob_informovani_rodicu || data.funkce_sis || data.v_blizkosti_skoly || data.mista_volny_cas) && (
+        <div className="mt-6 border-t border-slate-200 pt-6">
+          <h3 className="text-lg font-semibold text-slate-900 mb-4">Komunikace a okolí školy</h3>
+          <div className="grid lg:grid-cols-2 gap-4">
+            {data.zpusob_informovani_rodicu && data.zpusob_informovani_rodicu.length > 0 && (
+              <div className="border border-slate-100 rounded-lg p-4">
+                <h4 className="font-medium text-slate-900 mb-2">📞 Komunikace s rodiči</h4>
+                <div className="flex flex-wrap gap-1.5">
+                  {data.zpusob_informovani_rodicu.map((way, idx) => (
+                    <span key={idx} className="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded-full">
+                      {way}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {data.funkce_sis && data.funkce_sis.length > 0 && (
+              <div className="border border-slate-100 rounded-lg p-4">
+                <h4 className="font-medium text-slate-900 mb-2">💻 Školní informační systém</h4>
+                <div className="text-sm text-slate-700 space-y-1">
+                  {data.funkce_sis.map((fn, idx) => (
+                    <div key={idx} className="flex items-start gap-2">
+                      <span className="text-green-600 font-bold">✓</span>
+                      <span>{fn}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {data.v_blizkosti_skoly && data.v_blizkosti_skoly.length > 0 && (
+              <div className="border border-slate-100 rounded-lg p-4">
+                <h4 className="font-medium text-slate-900 mb-2">🏛️ V okolí školy</h4>
+                <div className="text-sm text-slate-700 space-y-1">
+                  {data.v_blizkosti_skoly.map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-2">
+                      <span className="text-blue-600 font-bold">•</span>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {data.mista_volny_cas && data.mista_volny_cas.length > 0 && (
+              <div className="border border-slate-100 rounded-lg p-4">
+                <h4 className="font-medium text-slate-900 mb-2">🎮 Volný čas ve škole</h4>
+                <div className="text-sm text-slate-700 space-y-1">
+                  {data.mista_volny_cas.map((place, idx) => (
+                    <div key={idx} className="flex items-start gap-2">
+                      <span className="text-green-600 font-bold">✓</span>
+                      <span>{place}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {hasWave2Data(data) && (
         <div className="mt-6 border-t border-slate-200 pt-6">
           <h3 className="text-lg font-semibold text-slate-900 mb-4">Rozšířené informace</h3>

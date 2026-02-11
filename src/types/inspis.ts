@@ -11,6 +11,10 @@ export interface SchoolInspisData {
   pripravne_kurzy: boolean | null;
   dny_otevrenych_dveri: string | null;
   termin_prijimacich_zkousek: string | null;
+  forma_prijimaciho_rizeni: string | null;
+  stupen_vzdelani: string[] | null;
+  forma_vzdelani: string[] | null;
+  zpusob_hodnoceni: string | null;
 
   vyuka_jazyku: string[] | null;
   clil_metoda: boolean | null;
@@ -26,6 +30,12 @@ export interface SchoolInspisData {
   linka_mhd: string | null;
   nejblizsi_zastavka_m: number | null;
   umisteni_v_obci: string | null;
+
+  // VLNA 1.5 - Komunikace a okolí
+  zpusob_informovani_rodicu: string[] | null;
+  funkce_sis: string[] | null;
+  v_blizkosti_skoly: string[] | null;
+  mista_volny_cas: string[] | null;
 
   // VLNA 2
   specificke_akce: string[] | null;

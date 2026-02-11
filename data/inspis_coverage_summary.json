@@ -1,45 +1,13 @@
 {
-  "generated_at": "2026-02-11T16:49:44.029Z",
+  "generated_at": "2026-02-11T19:10:36.890Z",
   "schools_total": 1180,
-  "schools_with_inspis": 1176,
-  "coverage_percentage": 99.66,
+  "schools_with_inspis": 1180,
+  "coverage_percentage": 100,
   "rows_ss": 110584,
   "top_unmapped_questions": [
     {
-      "question": "Způsob informování rodičů",
-      "count": 9449
-    },
-    {
-      "question": "Funkce školního informačního systému",
-      "count": 5697
-    },
-    {
-      "question": "V blízkosti školy",
-      "count": 4745
-    },
-    {
-      "question": "Místo pro trávení volného času",
-      "count": 3707
-    },
-    {
-      "question": "Forma přijímacího řízení",
-      "count": 2730
-    },
-    {
       "question": "Účast ve vzdělávacích programech neziskových organizací",
       "count": 1878
-    },
-    {
-      "question": "Stupeň poskytovaného vzdělání",
-      "count": 1699
-    },
-    {
-      "question": "Forma vzdělání",
-      "count": 1612
-    },
-    {
-      "question": "Způsob hodnocení",
-      "count": 1168
     },
     {
       "question": "Začátek první vyučovací hodiny",
