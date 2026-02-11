@@ -10,6 +10,15 @@ on:
         type: boolean
         required: false
         default: false
+      review_pr_url:
+        description: "Optional existing PR URL for review-only LLM comment"
+        type: string
+        required: false
+      review_ref:
+        description: "Git ref to read diff from in review-only mode"
+        type: string
+        required: false
+        default: "codex/csi-weekly-refresh"
 
 permissions:
   contents: write
@@ -25,8 +34,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: codex/csi-weekly-refresh
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -71,13 +78,15 @@ jobs:
   llm-review:
     runs-on: ubuntu-latest
     needs: refresh
-    if: needs.refresh.outputs.changed == 'true' && needs.refresh.outputs.pr_url != ''
+    if: (needs.refresh.outputs.changed == 'true' && needs.refresh.outputs.pr_url != '') || github.event.inputs.review_pr_url != ''
     permissions:
       contents: read
       pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.review_ref || 'codex/csi-weekly-refresh' }}
 
       - name: Prepare review input
         id: prep
@@ -211,9 +220,15 @@ jobs:
       - name: Comment review to PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_URL: ${{ needs.refresh.outputs.pr_url }}
+          REVIEW_PR_URL: ${{ github.event.inputs.review_pr_url }}
+          REFRESH_PR_URL: ${{ needs.refresh.outputs.pr_url }}
           REVIEW_BODY: ${{ steps.llm.outputs.review }}
         run: |
+          if [ -n "$REVIEW_PR_URL" ]; then
+            PR_URL="$REVIEW_PR_URL"
+          else
+            PR_URL="$REFRESH_PR_URL"
+          fi
           if [ -z "$PR_URL" ]; then
             echo "No PR URL, skipping comment."
             exit 0
