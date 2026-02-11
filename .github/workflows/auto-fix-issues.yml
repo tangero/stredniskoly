@@ -64,11 +64,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          MSG="Issue was automatically closed.
-
-Reason: ${{ steps.validate.outputs.reason }}
-
-If you think this is a mistake, please contact a maintainer."
+          MSG="Issue was automatically closed.\n\nReason: ${{ steps.validate.outputs.reason }}\n\nIf you think this is a mistake, please contact a maintainer."
           gh issue close ${{ github.event.issue.number }} \
             --reason "not planned" \
             --comment "$MSG"
@@ -104,8 +100,6 @@ If you think this is a mistake, please contact a maintainer."
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          MSG="Automatic fix failed.
-
-A maintainer will need to apply the fix manually. Thank you for your patience."
+          MSG="Automatic fix failed.\n\nA maintainer will need to apply the fix manually. Thank you for your patience."
           gh issue comment ${{ github.event.issue.number }} \
             --body "$MSG"
