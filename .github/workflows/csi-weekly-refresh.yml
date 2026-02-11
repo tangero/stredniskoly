@@ -66,9 +66,160 @@ jobs:
 
             Diff summary: `${{ steps.summary.outputs.changed_summary }}`
 
-  notify-success:
+  llm-review:
     runs-on: ubuntu-latest
     needs: refresh
+    if: needs.refresh.outputs.changed == 'true' && needs.refresh.outputs.pr_url != ''
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare review input
+        id: prep
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const diffPath = path.join('data', 'csi_diff_latest.json');
+          let payload = {
+            summary: {},
+            changed_schools: [],
+            note: 'Diff file not found'
+          };
+          if (fs.existsSync(diffPath)) {
+            const raw = JSON.parse(fs.readFileSync(diffPath, 'utf8'));
+            payload = {
+              summary: raw.summary || {},
+              changed_schools: (raw.changed_schools || []).slice(0, 40),
+              added_schools_sample: (raw.added_schools || []).slice(0, 20),
+              removed_schools_sample: (raw.removed_schools || []).slice(0, 20)
+            };
+          }
+          fs.writeFileSync('/tmp/csi_llm_input.json', JSON.stringify(payload, null, 2));
+          NODE
+
+      - name: Generate LLM review (OpenRouter z-ai/glm-5)
+        id: llm
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "LLM review skipped: OPENROUTER_API_KEY is not set."
+            {
+              echo "review<<EOF"
+              echo "## LLM review"
+              echo ""
+              echo "Skipped: missing \`OPENROUTER_API_KEY\`."
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          node <<'NODE'
+          const fs = require('fs');
+          const https = require('https');
+
+          const apiKey = process.env.OPENROUTER_API_KEY;
+          const input = JSON.parse(fs.readFileSync('/tmp/csi_llm_input.json', 'utf8'));
+          const summary = input.summary || {};
+          const riskFlag =
+            (summary.schools_removed || 0) > 50 ||
+            (summary.schools_added || 0) > 100 ||
+            (summary.schools_changed || 0) > 300;
+
+          const systemPrompt =
+            'You are a strict data QA reviewer for Czech school inspection ETL. ' +
+            'Output concise markdown in Czech with verdict and actionable checklist.';
+          const userPrompt =
+            'Posuď bezpečnost merge tohoto CSI refresh PR. ' +
+            'Vrať sekce: 1) Verdikt (SAFE TO MERGE / REVIEW NEEDED), ' +
+            '2) Rizika, 3) Checklist před merge (max 8 bodů), 4) Krátké odůvodnění. ' +
+            'Buď konkrétní podle diff dat.\n\n' +
+            JSON.stringify(input, null, 2);
+
+          function postJson(url, body) {
+            return new Promise((resolve, reject) => {
+              const req = https.request(url, {
+                method: 'POST',
+                headers: {
+                  'Authorization': `Bearer ${apiKey}`,
+                  'Content-Type': 'application/json',
+                  'HTTP-Referer': 'https://github.com',
+                  'X-Title': 'stredniskoly-csi-review'
+                }
+              }, (res) => {
+                let data = '';
+                res.on('data', (chunk) => { data += chunk; });
+                res.on('end', () => {
+                  if (res.statusCode < 200 || res.statusCode >= 300) {
+                    return reject(new Error(`OpenRouter HTTP ${res.statusCode}: ${data.slice(0, 500)}`));
+                  }
+                  resolve(JSON.parse(data));
+                });
+              });
+              req.on('error', reject);
+              req.write(JSON.stringify(body));
+              req.end();
+            });
+          }
+
+          (async () => {
+            const payload = {
+              model: 'z-ai/glm-5',
+              temperature: 0.1,
+              messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+              ]
+            };
+            let content = '';
+            try {
+              const resp = await postJson('https://openrouter.ai/api/v1/chat/completions', payload);
+              content = (((resp || {}).choices || [])[0] || {}).message?.content || '';
+            } catch (err) {
+              content = `## LLM review\n\nOpenRouter call failed: ${err.message}\n`;
+            }
+
+            if (!content.trim()) {
+              content = '## LLM review\n\nModel nevrátil obsah. Doporučení: ruční kontrola.';
+            }
+            if (riskFlag && !/REVIEW NEEDED/i.test(content)) {
+              content = content.replace(/SAFE TO MERGE/gi, 'REVIEW NEEDED');
+            }
+
+            const footer =
+              '\n\n---\n' +
+              `Model: \`z-ai/glm-5\`  \n` +
+              `Workflow: https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            fs.writeFileSync('/tmp/csi_llm_review.md', content.trim() + footer + '\n', 'utf8');
+          })().catch((e) => {
+            fs.writeFileSync('/tmp/csi_llm_review.md', `## LLM review\n\nUnexpected error: ${e.message}\n`, 'utf8');
+          });
+          NODE
+
+          {
+            echo "review<<EOF"
+            cat /tmp/csi_llm_review.md
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Comment review to PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ needs.refresh.outputs.pr_url }}
+        run: |
+          if [ -z "$PR_URL" ]; then
+            echo "No PR URL, skipping comment."
+            exit 0
+          fi
+          gh pr comment "$PR_URL" --body "${{ steps.llm.outputs.review }}" || true
+
+  notify-success:
+    runs-on: ubuntu-latest
+    needs: [refresh, llm-review]
     if: needs.refresh.outputs.changed == 'true' || github.event.inputs.force_email == 'true'
     steps:
       - name: Check mail secrets
