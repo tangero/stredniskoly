@@ -43,6 +43,8 @@ next-env.d.ts
 !/data/transit_graph.json
 !/data/school_locations.json
 !/data/inspection_extractions.json
+!/data/inspis_school_profiles.json
+!/data/inspis_coverage_summary.json
 
 # TT Decoder outputs (large binary/generated files)
 /data/decoded_tt*/

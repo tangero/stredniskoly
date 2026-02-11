@@ -1,0 +1,16 @@
+-- ============================================================================
+-- ARCHIVNÍ SOUBOR (NEPOUŽÍVÁ SE V AKTUÁLNÍ IMPLEMENTACI)
+-- ============================================================================
+--
+-- Projekt InspIS byl 11. 2. 2026 rozhodnut implementovat bez databáze,
+-- ve Vercel/file-based architektuře.
+--
+-- Aktivní řešení:
+--   CSV -> scripts/import-inspis-data.js -> data/inspis_school_profiles.json
+--   načítání přes src/lib/data.ts
+--
+-- Tento SQL návrh je zachován pouze jako historická reference původní
+-- varianty se Supabase. Do produkce se nyní nepoužívá.
+-- ============================================================================
+
+-- (záměrně bez executable SQL)

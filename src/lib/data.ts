@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData, InspectionExtraction } from '@/types/school';
+import { InspisDataset, SchoolInspisData } from '@/types/inspis';
 import { createSlug, createKrajSlug, extractRedizo } from './utils';
 
 const dataDir = path.join(process.cwd(), 'public');
@@ -1296,6 +1297,38 @@ export async function getSchoolDifficultyProfile(
       typeName: schoolType
     }
   };
+}
+
+// ============================================================================
+// InspIS PORTÁL Data (file-based)
+// ============================================================================
+
+let inspisDataCache: InspisDataset | null = null;
+
+/**
+ * Načte InspIS dataset z data/inspis_school_profiles.json (server-side only)
+ */
+export async function getInspisDataset(): Promise<InspisDataset | null> {
+  if (inspisDataCache) return inspisDataCache;
+
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'inspis_school_profiles.json');
+    const data = await fs.readFile(filePath, 'utf-8');
+    inspisDataCache = JSON.parse(data) as InspisDataset;
+    return inspisDataCache;
+  } catch (error) {
+    console.error('Chyba při načítání InspIS datasetu:', error);
+    return null;
+  }
+}
+
+/**
+ * Získá InspIS data pro školu podle REDIZO
+ */
+export async function getInspisDataByRedizo(redizo: string): Promise<SchoolInspisData | null> {
+  const dataset = await getInspisDataset();
+  if (!dataset) return null;
+  return dataset.schools[redizo] || null;
 }
 
 // ============================================================================

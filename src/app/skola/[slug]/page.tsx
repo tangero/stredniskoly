@@ -5,7 +5,8 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution, ProgramTabs } from '@/components/SchoolDetailClient';
 import { InspectionSummary } from '@/components/InspectionSummary';
-import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo } from '@/lib/data';
+import { SchoolInfoSection } from '@/components/school-profile/SchoolInfoSection';
+import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
@@ -189,6 +190,7 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend }: {
 export default async function SchoolDetailPage({ params }: Props) {
   const { slug } = await params;
   const pageInfo = await getSchoolPageType(slug);
+  const inspisEnabled = process.env.INSPIS_ENABLED !== 'false';
 
   if (!pageInfo.school) {
     notFound();
@@ -206,9 +208,10 @@ export default async function SchoolDetailPage({ params }: Props) {
     if (!overview) notFound();
 
     // Načíst data ČŠI a AI extrakce
-    const [csiData, extractions] = await Promise.all([
+    const [csiData, extractions, inspis] = await Promise.all([
       getCSIDataByRedizo(redizo),
       getExtractionsByRedizo(redizo),
+      inspisEnabled ? getInspisDataByRedizo(redizo) : Promise.resolve(null),
     ]);
 
     // Seřadit programy podle min_body (nejobtížnější první)
@@ -319,6 +322,9 @@ export default async function SchoolDetailPage({ params }: Props) {
                 );
               })}
             </div>
+
+            {/* InspIS profil školy */}
+            {inspis && <SchoolInfoSection data={inspis} />}
 
             {/* Inspekce ČŠI */}
             <InspectionSummary
