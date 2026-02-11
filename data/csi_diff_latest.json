@@ -1,0 +1,1378 @@
+{
+  "generated_at": "2026-02-11T20:33:55.059Z",
+  "summary": {
+    "schools_added": 0,
+    "schools_removed": 0,
+    "schools_changed": 68,
+    "changed_by_type": {
+      "inspections_only": 0,
+      "metadata_only": 68,
+      "inspections_and_metadata": 0,
+      "unknown": 0
+    }
+  },
+  "added_schools": [],
+  "removed_schools": [],
+  "changed_schools": [
+    {
+      "redizo": "600000273",
+      "school_name": "Soukromá mateřská škola \" KORÁLEK \", spol. s r.o.",
+      "inspection_count_before": 3,
+      "inspection_count_after": 3,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Soukromá mateřská škola KORÁLEK , spol. s r.o.",
+          "after": "Soukromá mateřská škola \" KORÁLEK \", spol. s r.o."
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "d4a256658bd9bf4ba0d56619f3795ed2aaf1afde31a1f8b1cc3d84da322223a8",
+      "inspection_signature_after": "d4a256658bd9bf4ba0d56619f3795ed2aaf1afde31a1f8b1cc3d84da322223a8"
+    },
+    {
+      "redizo": "600000460",
+      "school_name": "Církevní mateřská škola \"U sv. Josefa\"",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Církevní mateřská škola U sv. Josefa",
+          "after": "Církevní mateřská škola \"U sv. Josefa\""
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "817ae622460feb53680d9cd786be44746c958c35fc6e4649ae71f8d68fbd5cbe",
+      "inspection_signature_after": "817ae622460feb53680d9cd786be44746c958c35fc6e4649ae71f8d68fbd5cbe"
+    },
+    {
+      "redizo": "600000516",
+      "school_name": "Mateřská škola \"SLUNÍČKO\" Vodňany s.r.o.",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola SLUNÍČKO Vodňany s.r.o.",
+          "after": "Mateřská škola \"SLUNÍČKO\" Vodňany s.r.o."
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "9c209a23ad6108e82d3ab36e6271060c8851c7352c77ac62313a3d5c9db8e2c2",
+      "inspection_signature_after": "9c209a23ad6108e82d3ab36e6271060c8851c7352c77ac62313a3d5c9db8e2c2"
+    },
+    {
+      "redizo": "600000770",
+      "school_name": "Mateřská škola \"Sluníčko\", s.r.o.",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Sluníčko, s.r.o.",
+          "after": "Mateřská škola \"Sluníčko\", s.r.o."
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "ca31529f716e56a7d00abcff76d7db580e2b120e2f85cf239f5dac73ea2fdf9b",
+      "inspection_signature_after": "ca31529f716e56a7d00abcff76d7db580e2b120e2f85cf239f5dac73ea2fdf9b"
+    },
+    {
+      "redizo": "600004201",
+      "school_name": "Základní umělecká škola \"Žerotín\" Olomouc, Kavaleristů 6",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Základní umělecká škola Žerotín Olomouc, Kavaleristů 6",
+          "after": "Základní umělecká škola \"Žerotín\" Olomouc, Kavaleristů 6"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "12c2391de6ed055a81010e55776822bf82a19c2d783ca592869103f850e3ef11",
+      "inspection_signature_after": "12c2391de6ed055a81010e55776822bf82a19c2d783ca592869103f850e3ef11"
+    },
+    {
+      "redizo": "600012077",
+      "school_name": "Střední uměleckoprůmyslová škola sochařská a kamenická, Hořice, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Střední uměleckoprůmyslová škola sochařská a kamenická, Hořice, př��spěvková organizace",
+          "after": "Střední uměleckoprůmyslová škola sochařská a kamenická, Hořice, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "0f81e4ead86ecf26a4f192cf8c3056b1e6bbf72d62a1bf8e7aebd7a6d1c511f3",
+      "inspection_signature_after": "0f81e4ead86ecf26a4f192cf8c3056b1e6bbf72d62a1bf8e7aebd7a6d1c511f3"
+    },
+    {
+      "redizo": "600027775",
+      "school_name": "Dům dětí a mládeže \"OSTROV\", Slaný, Šultysova 518",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Dům dětí a mládeže OSTROV, Slaný, Šultysova 518",
+          "after": "Dům dětí a mládeže \"OSTROV\", Slaný, Šultysova 518"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "e5108762a066102b77b2ab36a3ce76342be44557eb7db2578737eb31eade4304",
+      "inspection_signature_after": "e5108762a066102b77b2ab36a3ce76342be44557eb7db2578737eb31eade4304"
+    },
+    {
+      "redizo": "600027899",
+      "school_name": "Dům dětí a mládeže \"Na Výstavišti\", Mladá Boleslav, Husova 201",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Dům dětí a mládeže Na Výstavišti, Mladá Boleslav, Husova 201",
+          "after": "Dům dětí a mládeže \"Na Výstavišti\", Mladá Boleslav, Husova 201"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "58d1c3c76290ea1ad008237141464252cbc29bd29e070ef3fe4ff9049ec5a3d2",
+      "inspection_signature_after": "58d1c3c76290ea1ad008237141464252cbc29bd29e070ef3fe4ff9049ec5a3d2"
+    },
+    {
+      "redizo": "600028933",
+      "school_name": "Dětský domov \"Země dětí\" a Školní jídelna, Česká Kamenice, Komenského 491, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Dětský domov Země dětí a Školní jídelna, Česká Kamenice, Komenského 491, příspěvková organizace",
+          "after": "Dětský domov \"Země dětí\" a Školní jídelna, Česká Kamenice, Komenského 491, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "1cc0f3726ec18c607b5234a6f3254b2fb3a95e541e13999bf80535af1dda2dee",
+      "inspection_signature_after": "1cc0f3726ec18c607b5234a6f3254b2fb3a95e541e13999bf80535af1dda2dee"
+    },
+    {
+      "redizo": "600029361",
+      "school_name": "Dům dětí a mládeže \"Sluníčko\", Duchcov, Družby 1006, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Dům dětí a mládeže Sluníčko, Duchcov, Družby 1006, příspěvková organizace",
+          "after": "Dům dětí a mládeže \"Sluníčko\", Duchcov, Družby 1006, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "7175e567d3722393cb195d5ad675347adedfc31be1438131f1b23fa7c12793fa",
+      "inspection_signature_after": "7175e567d3722393cb195d5ad675347adedfc31be1438131f1b23fa7c12793fa"
+    },
+    {
+      "redizo": "600035417",
+      "school_name": "Mateřská škola \"Čtyřlístek\", Praha 2, Římská 27",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Čtyřlístek, Praha 2, Římská 27",
+          "after": "Mateřská škola \"Čtyřlístek\", Praha 2, Římská 27"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "5d3f96bb727ce1eff1994b71b7af71e2ae394353e9bf4abf228dd73956300082",
+      "inspection_signature_after": "5d3f96bb727ce1eff1994b71b7af71e2ae394353e9bf4abf228dd73956300082"
+    },
+    {
+      "redizo": "600035506",
+      "school_name": "Mateřská škola \"Trojlístek\", Praha 2, Kladská 25",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Trojlístek, Praha 2, Kladská 25",
+          "after": "Mateřská škola \"Trojlístek\", Praha 2, Kladská 25"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "54da5d555371e6c566f0523848aa3e96b9b0a4bf46de450fa385c1ccd572a308",
+      "inspection_signature_after": "54da5d555371e6c566f0523848aa3e96b9b0a4bf46de450fa385c1ccd572a308"
+    },
+    {
+      "redizo": "600037673",
+      "school_name": "Mateřská škola \"Slunéčko\" Praha 5 - Košíře, Beníškové 988, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Slunéčko Praha 5 - Košíře, Beníškové 988, příspěvková organizace",
+          "after": "Mateřská škola \"Slunéčko\" Praha 5 - Košíře, Beníškové 988, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "efec99f2fa90a7aae1d449940e24fc2a7f92c75fc950067eee911f6327da5dac",
+      "inspection_signature_after": "efec99f2fa90a7aae1d449940e24fc2a7f92c75fc950067eee911f6327da5dac"
+    },
+    {
+      "redizo": "600037720",
+      "school_name": "Mateřská škola \"U Krtečka\" Praha 5 - Motol, Kudrnova 235, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola U Krtečka Praha 5 - Motol, Kudrnova 235, příspěvková organizace",
+          "after": "Mateřská škola \"U Krtečka\" Praha 5 - Motol, Kudrnova 235, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "29c914322319aeb62f3653ad31b8e70ac8aadfaf3c7fd5c1b376cd2396731d91",
+      "inspection_signature_after": "29c914322319aeb62f3653ad31b8e70ac8aadfaf3c7fd5c1b376cd2396731d91"
+    },
+    {
+      "redizo": "600040216",
+      "school_name": "Mateřská škola \"U Rybníčku\", Praha 9 - Horní Počernice, Křovinovo nám.115",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola U Rybníčku, Praha 9 - Horní Počernice, Křovinovo nám.115",
+          "after": "Mateřská škola \"U Rybníčku\", Praha 9 - Horní Počernice, Křovinovo nám.115"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "c057eae9feb8ca1c2afaa76488ddf53c44eade5580940f25c39afac93e5138f3",
+      "inspection_signature_after": "c057eae9feb8ca1c2afaa76488ddf53c44eade5580940f25c39afac93e5138f3"
+    },
+    {
+      "redizo": "600041492",
+      "school_name": "Mateřská škola \"Berušky\" Benešov, Táborská 350",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Berušky Benešov, Táborská 350",
+          "after": "Mateřská škola \"Berušky\" Benešov, Táborská 350"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "72b8f27d16ad7f608bdc397f30dbdae65479c10f0dd2de6c9760c95638c75a5b",
+      "inspection_signature_after": "72b8f27d16ad7f608bdc397f30dbdae65479c10f0dd2de6c9760c95638c75a5b"
+    },
+    {
+      "redizo": "600041816",
+      "school_name": "Mateřská škola \"Úsměv\" Benešov, Pražského povstání 1711",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Úsměv Benešov, Pražského povstání 1711",
+          "after": "Mateřská škola \"Úsměv\" Benešov, Pražského povstání 1711"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "8260b52e19ea9173f0237c31ffdfbd550e72a12ecdda374b4a70aa45951189b9",
+      "inspection_signature_after": "8260b52e19ea9173f0237c31ffdfbd550e72a12ecdda374b4a70aa45951189b9"
+    },
+    {
+      "redizo": "600041832",
+      "school_name": "Mateřská škola \"Čtyřlístek\" Benešov, Bezručova 1948 - příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Čtyřlístek Benešov, Bezručova 1948 - příspěvková organizace",
+          "after": "Mateřská škola \"Čtyřlístek\" Benešov, Bezručova 1948 - příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "184ef0dbe4a015c7be0ff1c913c948f51bcf1dc84ef3c16289757dbfbe7b15ef",
+      "inspection_signature_after": "184ef0dbe4a015c7be0ff1c913c948f51bcf1dc84ef3c16289757dbfbe7b15ef"
+    },
+    {
+      "redizo": "600042553",
+      "school_name": "Mateřská škola \"Sluníčko\", příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Sluníčko, příspěvková organizace",
+          "after": "Mateřská škola \"Sluníčko\", příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "637e5760860a913650c3cf501ab3efb3359db8c17ba00d301ccb201c423685c8",
+      "inspection_signature_after": "637e5760860a913650c3cf501ab3efb3359db8c17ba00d301ccb201c423685c8"
+    },
+    {
+      "redizo": "600043819",
+      "school_name": "Mateřská škola \"Masarykova dětská školka\" Zlonice, okres Kladno",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Masarykova dětská školka Zlonice, okres Kladno",
+          "after": "Mateřská škola \"Masarykova dětská školka\" Zlonice, okres Kladno"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "5c9e1e5afd1f5f59e7005084d46fbe2d77ba94041d7f3bea5e086ada379875e1",
+      "inspection_signature_after": "5c9e1e5afd1f5f59e7005084d46fbe2d77ba94041d7f3bea5e086ada379875e1"
+    },
+    {
+      "redizo": "600046796",
+      "school_name": "Mateřská škola Tuhaň \"U KOČIČÁKŮ\", příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Tuhaň U KOČIČÁKŮ, příspěvková organizace",
+          "after": "Mateřská škola Tuhaň \"U KOČIČÁKŮ\", příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "629c12569aaeb044ba5dc7501e7baba0dcedfa3921bd18e89f917a154815ee8d",
+      "inspection_signature_after": "629c12569aaeb044ba5dc7501e7baba0dcedfa3921bd18e89f917a154815ee8d"
+    },
+    {
+      "redizo": "600047105",
+      "school_name": "Mateřská škola Vraňany, okres Mělník, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Vra��any, okres Mělník, příspěvková organizace",
+          "after": "Mateřská škola Vraňany, okres Mělník, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "ed8865e81ff873572cbb9d78f8cfffcb0af65c3c10ce76a875a9a07a0bdd96cd",
+      "inspection_signature_after": "ed8865e81ff873572cbb9d78f8cfffcb0af65c3c10ce76a875a9a07a0bdd96cd"
+    },
+    {
+      "redizo": "600050165",
+      "school_name": "Mateřská škola \"U Broučků\" Milovice",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola U Broučků Milovice",
+          "after": "Mateřská škola \"U Broučků\" Milovice"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "6f810f82d72b78acb36999b068bfd7c7afe7f17c60f10ca2e11fa8fc0120b342",
+      "inspection_signature_after": "6f810f82d72b78acb36999b068bfd7c7afe7f17c60f10ca2e11fa8fc0120b342"
+    },
+    {
+      "redizo": "600050785",
+      "school_name": "Základní škola a mateřská škola Opočnice, okres Nymburk",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Základní škola a mateřská škola Opo��nice, okres Nymburk",
+          "after": "Základní škola a mateřská škola Opočnice, okres Nymburk"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "233a68eded6eb69dcd41000e61f3e753624d2dd86893bdc2c51c5b9df7cbb971",
+      "inspection_signature_after": "233a68eded6eb69dcd41000e61f3e753624d2dd86893bdc2c51c5b9df7cbb971"
+    },
+    {
+      "redizo": "600074056",
+      "school_name": "Mateřská škola \"Klíček\" Nový Bor, Svojsíkova 754, okres Česká Lípa, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Klíček Nový Bor, Svojsíkova 754, okres Česká Lípa, příspěvková organizace",
+          "after": "Mateřská škola \"Klíček\" Nový Bor, Svojsíkova 754, okres Česká Lípa, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "cd6260bf1a1ec8ee2f0e941a864336a72c734bac5a5d55737eb953d22dee2b72",
+      "inspection_signature_after": "cd6260bf1a1ec8ee2f0e941a864336a72c734bac5a5d55737eb953d22dee2b72"
+    },
+    {
+      "redizo": "600075176",
+      "school_name": "Dům dětí a mládeže \"Smetanka\", Nový Bor, okres Česká Lípa, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Dům dětí a mládeže Smetanka, Nový Bor, okres Česká Lípa, příspěvková organizace",
+          "after": "Dům dětí a mládeže \"Smetanka\", Nový Bor, okres Česká Lípa, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "f25c51e0b7de183bd9e3e7014b4b77170d5ba85e42bdbe07f40e971a89b15e58",
+      "inspection_signature_after": "f25c51e0b7de183bd9e3e7014b4b77170d5ba85e42bdbe07f40e971a89b15e58"
+    },
+    {
+      "redizo": "600079066",
+      "school_name": "Mateřská škola \"Sluníčko\", Liberec, Bezová 274/1, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Sluníčko, Liberec, Bezová 274/1, příspěvková organizace",
+          "after": "Mateřská škola \"Sluníčko\", Liberec, Bezová 274/1, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "31232fba0d00d62f5fa5a1542bbc584ea2b5165d076efc5c26502d25b351389f",
+      "inspection_signature_after": "31232fba0d00d62f5fa5a1542bbc584ea2b5165d076efc5c26502d25b351389f"
+    },
+    {
+      "redizo": "600079074",
+      "school_name": "Mateřská škola \"Motýlek\", Liberec, Broumovská 840/7, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Motýlek, Liberec, Broumovská 840/7, příspěvková organizace",
+          "after": "Mateřská škola \"Motýlek\", Liberec, Broumovská 840/7, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "be4ddb0e332f4cedcc847913ef325b0dea1ec5ea5b3ea568f2ce75986b5366ec",
+      "inspection_signature_after": "be4ddb0e332f4cedcc847913ef325b0dea1ec5ea5b3ea568f2ce75986b5366ec"
+    },
+    {
+      "redizo": "600079082",
+      "school_name": "Mateřská škola \"Kamarád\", Liberec, Dělnická 831/7, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Kamarád, Liberec, Dělnická 831/7, příspěvková organizace",
+          "after": "Mateřská škola \"Kamarád\", Liberec, Dělnická 831/7, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "fc8407a0b5a7e81b4d58404ca22990b9ac9a2c090dfb2ef0d226ce616c696018",
+      "inspection_signature_after": "fc8407a0b5a7e81b4d58404ca22990b9ac9a2c090dfb2ef0d226ce616c696018"
+    },
+    {
+      "redizo": "600079112",
+      "school_name": "Mateřská škola \"Jablůňka\", Liberec, Jabloňová 446/29, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Jablůňka, Liberec, Jabloňová 446/29, příspěvková organizace",
+          "after": "Mateřská škola \"Jablůňka\", Liberec, Jabloňová 446/29, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "ce449f6259911f0d40a25f197ea0414ffda4ce12ba5c04800b6c03ecc3203d95",
+      "inspection_signature_after": "ce449f6259911f0d40a25f197ea0414ffda4ce12ba5c04800b6c03ecc3203d95"
+    },
+    {
+      "redizo": "600079121",
+      "school_name": "Mateřská škola \"Klubíčko\", Liberec, Jugoslávská 128/1, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Klubíčko, Liberec, Jugoslávská 128/1, příspěvková organizace",
+          "after": "Mateřská škola \"Klubíčko\", Liberec, Jugoslávská 128/1, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "845177c797e97b35a3dad048781a7440bc9127e47056146e99c6da6339c93bdb",
+      "inspection_signature_after": "845177c797e97b35a3dad048781a7440bc9127e47056146e99c6da6339c93bdb"
+    },
+    {
+      "redizo": "600079147",
+      "school_name": "Mateřská škola \"Nad přehradou\", Liberec, Klášterní 149/16, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Nad přehradou, Liberec, Klášterní 149/16, příspěvková organizace",
+          "after": "Mateřská škola \"Nad přehradou\", Liberec, Klášterní 149/16, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "aa890a2c8af5ebb201a9a08d947a70efa0e2ff721762b8730ec8999040a43296",
+      "inspection_signature_after": "aa890a2c8af5ebb201a9a08d947a70efa0e2ff721762b8730ec8999040a43296"
+    },
+    {
+      "redizo": "600079163",
+      "school_name": "Mateřská škola \"Beruška\", Liberec, Na Pískovně 761/3, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Beruška, Liberec, Na Pískovně 761/3, příspěvková organizace",
+          "after": "Mateřská škola \"Beruška\", Liberec, Na Pískovně 761/3, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "2e6c390b934c858dc353d65416457c6c28ee9849bfca5397b3a304754d436985",
+      "inspection_signature_after": "2e6c390b934c858dc353d65416457c6c28ee9849bfca5397b3a304754d436985"
+    },
+    {
+      "redizo": "600079171",
+      "school_name": "Mateřská škola \"Delfínek\", Liberec, Nezvalova 661/20, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Delfínek, Liberec, Nezvalova 661/20, příspěvková organizace",
+          "after": "Mateřská škola \"Delfínek\", Liberec, Nezvalova 661/20, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "269249d968d365c74133f8f5838331acc04a73f6dc01e74c37e703c78ba3acf8",
+      "inspection_signature_after": "269249d968d365c74133f8f5838331acc04a73f6dc01e74c37e703c78ba3acf8"
+    },
+    {
+      "redizo": "600079180",
+      "school_name": "Mateřská škola \"Srdíčko\", Liberec, Oldřichova 836/5, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Srdíčko, Liberec, Oldřichova 836/5, příspěvková organizace",
+          "after": "Mateřská škola \"Srdíčko\", Liberec, Oldřichova 836/5, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "24457ebf88b49ae732738281c303d93403221500f2ac33b92a06b3ee62b7ca81",
+      "inspection_signature_after": "24457ebf88b49ae732738281c303d93403221500f2ac33b92a06b3ee62b7ca81"
+    },
+    {
+      "redizo": "600079228",
+      "school_name": "MATEŘSKÁ ŠKOLA \"SÍDLIŠTĚ\", Liberec 30, Skloněná 1414, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "MATEŘSKÁ ŠKOLA SÍDLIŠTĚ, Liberec 30, Skloněná 1414, příspěvková organizace",
+          "after": "MATEŘSKÁ ŠKOLA \"SÍDLIŠTĚ\", Liberec 30, Skloněná 1414, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "a8659ab335d5b2d69a3df7d64cd031135fffc67e9df8c97faec480b1bd32ad0d",
+      "inspection_signature_after": "a8659ab335d5b2d69a3df7d64cd031135fffc67e9df8c97faec480b1bd32ad0d"
+    },
+    {
+      "redizo": "600079244",
+      "school_name": "Mateřská škola \"Pohádka\", Liberec, Strakonická 211/12, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Pohádka, Liberec, Strakonická 211/12, příspěvková organizace",
+          "after": "Mateřská škola \"Pohádka\", Liberec, Strakonická 211/12, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "2962d865260b96032b4b2e65f8d355bb9c9f08f1ce1977c933522a571d0d7cca",
+      "inspection_signature_after": "2962d865260b96032b4b2e65f8d355bb9c9f08f1ce1977c933522a571d0d7cca"
+    },
+    {
+      "redizo": "600079261",
+      "school_name": "Mateřská škola \"Rosnička\", Liberec, Školní vršek 503/3, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Rosnička, Liberec, Školní vršek 503/3, příspěvková organizace",
+          "after": "Mateřská škola \"Rosnička\", Liberec, Školní vršek 503/3, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "df892c1e62e9c4502ffef99aec7a4ee84980838e998b033c167bc0b828679c6e",
+      "inspection_signature_after": "df892c1e62e9c4502ffef99aec7a4ee84980838e998b033c167bc0b828679c6e"
+    },
+    {
+      "redizo": "600079287",
+      "school_name": "Mateřská škola \"Čtyřlístek\", Liberec, Horská 166/27, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Čtyřlístek, Liberec, Horská 166/27, příspěvková organizace",
+          "after": "Mateřská škola \"Čtyřlístek\", Liberec, Horská 166/27, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "0b0cb157acb2f234ecfb9df8cb57ff0880c58dc23878d49e094f1ed854a943fe",
+      "inspection_signature_after": "0b0cb157acb2f234ecfb9df8cb57ff0880c58dc23878d49e094f1ed854a943fe"
+    },
+    {
+      "redizo": "600079295",
+      "school_name": "Mateřská škola \"Rolnička\", Liberec, Truhlářská 340/7, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Rolnička, Liberec, Truhlářská 340/7, příspěvková organizace",
+          "after": "Mateřská škola \"Rolnička\", Liberec, Truhlářská 340/7, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "2e106ce6dde9fdf41f9f970b51e2961abf44cf04b5d294e0335e6f204e4df1f7",
+      "inspection_signature_after": "2e106ce6dde9fdf41f9f970b51e2961abf44cf04b5d294e0335e6f204e4df1f7"
+    },
+    {
+      "redizo": "600079309",
+      "school_name": "Mateřská škola \"Pod Ještědem\", Liberec, U Školky 67, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Pod Ještědem, Liberec, U Školky 67, příspěvková organizace",
+          "after": "Mateřská škola \"Pod Ještědem\", Liberec, U Školky 67, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "d0c145b43cb3c6e830dcd4f41c8f3e54221d1cd21000b5997adfcf197586e131",
+      "inspection_signature_after": "d0c145b43cb3c6e830dcd4f41c8f3e54221d1cd21000b5997adfcf197586e131"
+    },
+    {
+      "redizo": "600079317",
+      "school_name": "Mateřská škola \"Lísteček\", Vratislavice nad Nisou, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Lísteček, Vratislavice nad Nisou, příspěvková organizace",
+          "after": "Mateřská škola \"Lísteček\", Vratislavice nad Nisou, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "7a8ef0eba03397aee3b16ac4965d82ade8990368a6c6f7383204a10209255cab",
+      "inspection_signature_after": "7a8ef0eba03397aee3b16ac4965d82ade8990368a6c6f7383204a10209255cab"
+    },
+    {
+      "redizo": "600079333",
+      "school_name": "Mateřská škola \"Sedmikráska\", Liberec, Vzdušná 509/20, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Sedmikráska, Liberec, Vzdušná 509/20, příspěvková organizace",
+          "after": "Mateřská škola \"Sedmikráska\", Liberec, Vzdušná 509/20, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "3ccf399f162479f8bba90c979982cec73dce8dac0a3fd0616983d60663c3e418",
+      "inspection_signature_after": "3ccf399f162479f8bba90c979982cec73dce8dac0a3fd0616983d60663c3e418"
+    },
+    {
+      "redizo": "600079341",
+      "school_name": "Mateřská škola \"Klíček\", Liberec, Žitná 832/19, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Klíček, Liberec, Žitná 832/19, příspěvková organizace",
+          "after": "Mateřská škola \"Klíček\", Liberec, Žitná 832/19, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "5b6f7db454720efeff61784db26ea268730f1133f2a0d5130369d82c8ad22a3d",
+      "inspection_signature_after": "5b6f7db454720efeff61784db26ea268730f1133f2a0d5130369d82c8ad22a3d"
+    },
+    {
+      "redizo": "600079368",
+      "school_name": "Mateřská škola \"Jizerka\", Liberec, Husova 184/72, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Jizerka, Liberec, Husova 184/72, příspěvková organizace",
+          "after": "Mateřská škola \"Jizerka\", Liberec, Husova 184/72, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "27af8a9b69564aa11b7a6231e97d2d323f25e3800cd294a731be070c76e1dfad",
+      "inspection_signature_after": "27af8a9b69564aa11b7a6231e97d2d323f25e3800cd294a731be070c76e1dfad"
+    },
+    {
+      "redizo": "600079465",
+      "school_name": "Mateřská škola \"Korálek\", Liberec, Aloisina výšina 645/55, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Korálek, Liberec, Aloisina výšina 645/55, příspěvková organizace",
+          "after": "Mateřská škola \"Korálek\", Liberec, Aloisina výšina 645/55, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "2c23a9fca98b8b0996a67ce855ff6225deaab5e73d5108225205b9d96a103451",
+      "inspection_signature_after": "2c23a9fca98b8b0996a67ce855ff6225deaab5e73d5108225205b9d96a103451"
+    },
+    {
+      "redizo": "600079520",
+      "school_name": "Mateřská škola \"Kytička\", Liberec, Burianova 972/2, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Kytička, Liberec, Burianova 972/2, příspěvková organizace",
+          "after": "Mateřská škola \"Kytička\", Liberec, Burianova 972/2, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "40c2a0a88fd46efe8d0666a0841b7c87cb7c82112d257712111460c273f646ad",
+      "inspection_signature_after": "40c2a0a88fd46efe8d0666a0841b7c87cb7c82112d257712111460c273f646ad"
+    },
+    {
+      "redizo": "600079538",
+      "school_name": "Mateřská škola \"Lvíček\", Liberec, Kaplického 386, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Lvíček, Liberec, Kaplického 386, příspěvková organizace",
+          "after": "Mateřská škola \"Lvíček\", Liberec, Kaplického 386, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "aa526fea3e7bb22aee14902af03f4de7de937786385eae354a4600ff66b6ee64",
+      "inspection_signature_after": "aa526fea3e7bb22aee14902af03f4de7de937786385eae354a4600ff66b6ee64"
+    },
+    {
+      "redizo": "600079554",
+      "school_name": "Mateřská škola \"Pramínek\", Liberec, Březinova 389/8, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Pramínek, Liberec, Březinova 389/8, příspěvková organizace",
+          "after": "Mateřská škola \"Pramínek\", Liberec, Březinova 389/8, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "ae9b8a13cf2583bb57990b6ffb376e03ce920e0cc9e53a2910992879981b5aaa",
+      "inspection_signature_after": "ae9b8a13cf2583bb57990b6ffb376e03ce920e0cc9e53a2910992879981b5aaa"
+    },
+    {
+      "redizo": "600079635",
+      "school_name": "Mateřská škola \"U Bertíka\", Liberec, Purkyňova 458/19, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola U Bertíka, Liberec, Purkyňova 458/19, příspěvková organizace",
+          "after": "Mateřská škola \"U Bertíka\", Liberec, Purkyňova 458/19, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "88ce5c3562e44804d9c97a53b444496bfb638a4b010ef91eb50051ea94b85dbc",
+      "inspection_signature_after": "88ce5c3562e44804d9c97a53b444496bfb638a4b010ef91eb50051ea94b85dbc"
+    },
+    {
+      "redizo": "600079643",
+      "school_name": "Mateřská škola \"V zahradě\", Liberec, Žitavská 122/68, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola V zahradě, Liberec, Žitavská 122/68, příspěvková organizace",
+          "after": "Mateřská škola \"V zahradě\", Liberec, Žitavská 122/68, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "c9ae7b8c97361fe411bb6a81704f30446b4f7aecda17d6d5993a04bf89cbc99d",
+      "inspection_signature_after": "c9ae7b8c97361fe411bb6a81704f30446b4f7aecda17d6d5993a04bf89cbc99d"
+    },
+    {
+      "redizo": "600080447",
+      "school_name": "Středisko volného času \"ROROŠ\", Nové Město pod Smrkem, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Středisko volného času ROROŠ, Nové Město pod Smrkem, příspěvková organizace",
+          "after": "Středisko volného času \"ROROŠ\", Nové Město pod Smrkem, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "5bd3b70eb1717ca308c70f27001d5ebcd1c228f8a8d58a19e50bbef670ee9885",
+      "inspection_signature_after": "5bd3b70eb1717ca308c70f27001d5ebcd1c228f8a8d58a19e50bbef670ee9885"
+    },
+    {
+      "redizo": "600084230",
+      "school_name": "Mateřská škola \"Čtyřlístek\", Novosedlice",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Čtyřlístek, Novosedlice",
+          "after": "Mateřská škola \"Čtyřlístek\", Novosedlice"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "bfa48e5f0135313f5c9b4845188b261187d70e31b9d4a718ffce668a291d76dc",
+      "inspection_signature_after": "bfa48e5f0135313f5c9b4845188b261187d70e31b9d4a718ffce668a291d76dc"
+    },
+    {
+      "redizo": "600106829",
+      "school_name": "Mateřská škola \"Na kopečku u zvonečku\", Brno, Horní 17, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Na kopečku u zvonečku, Brno, Horní 17, příspěvková organizace",
+          "after": "Mateřská škola \"Na kopečku u zvonečku\", Brno, Horní 17, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "e7f23734c9f84486b64fdffb8354e172a08f6b7a842870d6d48170e3552567b9",
+      "inspection_signature_after": "e7f23734c9f84486b64fdffb8354e172a08f6b7a842870d6d48170e3552567b9"
+    },
+    {
+      "redizo": "600108520",
+      "school_name": "Základní škola a mateřská škola Brno, Blanenská 1, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Základní škola a mateřská škola Brno, Blanenská 1, přísp��vková organizace",
+          "after": "Základní škola a mateřská škola Brno, Blanenská 1, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "42466b755231172607a00f9b6e0651f6006aa7f1b9a4beb490cbe5fa368f504a",
+      "inspection_signature_after": "42466b755231172607a00f9b6e0651f6006aa7f1b9a4beb490cbe5fa368f504a"
+    },
+    {
+      "redizo": "600115844",
+      "school_name": "Mateřská škola Žádovice, okres Hodonín, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola ��ádovice, okres Hodonín, příspěvková organizace",
+          "after": "Mateřská škola Žádovice, okres Hodonín, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "7cfd150862948c0c576a7c7f6a95437c2250702c59e753b575856c165c642ec4",
+      "inspection_signature_after": "7cfd150862948c0c576a7c7f6a95437c2250702c59e753b575856c165c642ec4"
+    },
+    {
+      "redizo": "600121313",
+      "school_name": "Mateřská škola \"Čtyřlístek\" Třebíč, Kubišova ul., příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Čtyřlístek Třebíč, Kubišova ul., příspěvková organizace",
+          "after": "Mateřská škola \"Čtyřlístek\" Třebíč, Kubišova ul., příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "8a1870c16a519ab7624c7e0952f1e9c577896c102d84d108b83d70b7a685bb98",
+      "inspection_signature_after": "8a1870c16a519ab7624c7e0952f1e9c577896c102d84d108b83d70b7a685bb98"
+    },
+    {
+      "redizo": "600121615",
+      "school_name": "Mateřská škola \"Kaštánek\" Třebíč, Gorazdovo nám., příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Kaštánek Třebíč, Gorazdovo nám., příspěvková organizace",
+          "after": "Mateřská škola \"Kaštánek\" Třebíč, Gorazdovo nám., příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "390d988402825606cb9783f66d30f25e0f8d960968a409388ea6f6b161a5a93b",
+      "inspection_signature_after": "390d988402825606cb9783f66d30f25e0f8d960968a409388ea6f6b161a5a93b"
+    },
+    {
+      "redizo": "600126897",
+      "school_name": "Mateřská škola, Nový Šaldorf, okres Znojmo ,,příspěvková organizace\"",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola, Nový Šaldorf, okres Znojmo ,,příspěvková organizace",
+          "after": "Mateřská škola, Nový Šaldorf, okres Znojmo ,,příspěvková organizace\""
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "caa5c95264f95332f61c5561c47ca9bbc1ed832649f50ba98b3953017e5bf207",
+      "inspection_signature_after": "caa5c95264f95332f61c5561c47ca9bbc1ed832649f50ba98b3953017e5bf207"
+    },
+    {
+      "redizo": "600143104",
+      "school_name": "Základní škola a mateřská škola Hať, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Základní škola a mateřská škola Hať, př��spěvková organizace",
+          "after": "Základní škola a mateřská škola Hať, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "9c3cea21f94cea82407a7765b280d30085ef5b7586443b0b097efc34888e2b3f",
+      "inspection_signature_after": "9c3cea21f94cea82407a7765b280d30085ef5b7586443b0b097efc34888e2b3f"
+    },
+    {
+      "redizo": "650008651",
+      "school_name": "Dětský domov \"Pepa\" Příbram-Lazec, z.ú.",
+      "inspection_count_before": 4,
+      "inspection_count_after": 4,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Dětský domov Pepa Příbram-Lazec, z.ú.",
+          "after": "Dětský domov \"Pepa\" Příbram-Lazec, z.ú."
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "c3d6ea7627fe59a3b021723b3273348b190d6df697898f29a690ffd2e349de1b",
+      "inspection_signature_after": "c3d6ea7627fe59a3b021723b3273348b190d6df697898f29a690ffd2e349de1b"
+    },
+    {
+      "redizo": "650045424",
+      "school_name": "Základní škola a mateřská škola Rosice, okres Chrudim",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Základní škola a mateřská ��kola Rosice, okres Chrudim",
+          "after": "Základní škola a mateřská škola Rosice, okres Chrudim"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "80449f21e7e4b191a8359811644c3193022571fc64651b6fbab24be32f42b306",
+      "inspection_signature_after": "80449f21e7e4b191a8359811644c3193022571fc64651b6fbab24be32f42b306"
+    },
+    {
+      "redizo": "662000137",
+      "school_name": "Mateřská škola \"U kohoutka Sedmipírka\" Benešov, Dukelská 1546",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola U kohoutka Sedmipírka Benešov, Dukelská 1546",
+          "after": "Mateřská škola \"U kohoutka Sedmipírka\" Benešov, Dukelská 1546"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "3d85a826bf0eaedfb0aa3fce047163f919a7b1c1e903c25c15468af7f291a125",
+      "inspection_signature_after": "3d85a826bf0eaedfb0aa3fce047163f919a7b1c1e903c25c15468af7f291a125"
+    },
+    {
+      "redizo": "691002045",
+      "school_name": "Mateřská škola \" Veselé Sluníčko\" příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Veselé Sluníčko příspěvková organizace",
+          "after": "Mateřská škola \" Veselé Sluníčko\" příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "910f00f32419f5385f9c3d7f7cb91e7777c70f9471f75bb4a911c87c40cd6b49",
+      "inspection_signature_after": "910f00f32419f5385f9c3d7f7cb91e7777c70f9471f75bb4a911c87c40cd6b49"
+    },
+    {
+      "redizo": "691002606",
+      "school_name": "Mateřská škola \"Hvězdička\", Liberec, Gagarinova 788/9, příspěvková organizace",
+      "inspection_count_before": 2,
+      "inspection_count_after": 2,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Hvězdička, Liberec, Gagarinova 788/9, příspěvková organizace",
+          "after": "Mateřská škola \"Hvězdička\", Liberec, Gagarinova 788/9, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "034299bb4f91f2d2f20c4be3ff82f544b9ae2d7df0b5d29b98ce8538066fffa3",
+      "inspection_signature_after": "034299bb4f91f2d2f20c4be3ff82f544b9ae2d7df0b5d29b98ce8538066fffa3"
+    },
+    {
+      "redizo": "691007543",
+      "school_name": "Mateřská škola \"Písnický domeček\" s.r.o.",
+      "inspection_count_before": 3,
+      "inspection_count_after": 3,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Písnický domeček s.r.o.",
+          "after": "Mateřská škola \"Písnický domeček\" s.r.o."
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "84cc16b703de2bd08d9acf36639bb518f7ee3516a0aa8cfeb1655615c8886ed7",
+      "inspection_signature_after": "84cc16b703de2bd08d9acf36639bb518f7ee3516a0aa8cfeb1655615c8886ed7"
+    },
+    {
+      "redizo": "691008329",
+      "school_name": "Mateřská škola \"Dubínek\" v Kroučové, příspěvková organizace",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Mateřská škola Dubínek v Kroučové, příspěvková organizace",
+          "after": "Mateřská škola \"Dubínek\" v Kroučové, příspěvková organizace"
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "b9a772bde75ed23d89b3c4d58bbaace11d958da58550bbecd2460786037c782c",
+      "inspection_signature_after": "b9a772bde75ed23d89b3c4d58bbaace11d958da58550bbecd2460786037c782c"
+    },
+    {
+      "redizo": "691013624",
+      "school_name": "Základní škola \"Poznávání\" s.r.o.",
+      "inspection_count_before": 1,
+      "inspection_count_after": 1,
+      "added_inspections": 0,
+      "removed_inspections": 0,
+      "change_type": "metadata_only",
+      "field_changes": [
+        {
+          "field": "jmeno",
+          "before": "Základní škola Poznávání s.r.o.",
+          "after": "Základní škola \"Poznávání\" s.r.o."
+        }
+      ],
+      "added_inspections_sample": [],
+      "removed_inspections_sample": [],
+      "inspection_signature_before": "9d87537d8f8423a036cb483f0937b8c30ef263c8b53cdfeaa1b67697750de689",
+      "inspection_signature_after": "9d87537d8f8423a036cb483f0937b8c30ef263c8b53cdfeaa1b67697750de689"
+    }
+  ]
+}
