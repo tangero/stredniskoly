@@ -64,13 +64,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          MSG="Issue was automatically closed.
+
+Reason: ${{ steps.validate.outputs.reason }}
+
+If you think this is a mistake, please contact a maintainer."
           gh issue close ${{ github.event.issue.number }} \
             --reason "not planned" \
-            --comment "❌ **Issue byl automaticky zavřen**
-
-Důvod: ${{ steps.validate.outputs.reason }}
-
-Pokud si myslíte, že je toto chyba, kontaktujte prosím maintainera."
+            --comment "$MSG"
 
       - name: Add auto-fix label
         if: |
@@ -103,7 +104,8 @@ Pokud si myslíte, že je toto chyba, kontaktujte prosím maintainera."
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh issue comment ${{ github.event.issue.number }} \
-            --body "⚠️ **Automatická oprava selhala**
+          MSG="Automatic fix failed.
 
-Maintainer bude muset opravu provést ručně. Děkujeme za trpělivost!"
+A maintainer will need to apply the fix manually. Thank you for your patience."
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "$MSG"
