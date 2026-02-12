@@ -37,26 +37,36 @@ jobs:
         id: validate
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
         run: |
-          # Připravit issue data pro validaci
-          cat > /tmp/issue.json <<EOF
-          {
-            "title": "${{ github.event.issue.title }}",
-            "body": $(echo '${{ github.event.issue.body }}' | jq -Rs .),
-            "url": "${{ github.event.issue.body }}"
-          }
-          EOF
+          # Připravit issue data pro validaci (bezpečně escapované)
+          jq -n \
+            --arg title "$ISSUE_TITLE" \
+            --arg body "$ISSUE_BODY" \
+            --arg url "$ISSUE_URL" \
+            '{title: $title, body: $body, url: $url}' > /tmp/issue.json
 
           # Spustit validaci
           python .github/scripts/validate_issue.py < /tmp/issue.json > /tmp/validation.json
+
+          # Guard: pokud skript nevrátí validní JSON, použít bezpečný fallback
+          if ! jq -e '.valid != null and .auto_fix_eligible != null and (.reason | type == "string")' /tmp/validation.json >/dev/null; then
+            echo '{"valid": false, "reason": "Validation result is malformed", "auto_fix_eligible": false}' > /tmp/validation.json
+          fi
 
           # Načíst výsledek
           cat /tmp/validation.json
 
           # Export pro další kroky
-          echo "valid=$(jq -r .valid /tmp/validation.json)" >> $GITHUB_OUTPUT
-          echo "auto_fix=$(jq -r .auto_fix_eligible /tmp/validation.json)" >> $GITHUB_OUTPUT
-          echo "reason=$(jq -r .reason /tmp/validation.json)" >> $GITHUB_OUTPUT
+          echo "valid=$(jq -r '.valid | tostring' /tmp/validation.json)" >> "$GITHUB_OUTPUT"
+          echo "auto_fix=$(jq -r '.auto_fix_eligible | tostring' /tmp/validation.json)" >> "$GITHUB_OUTPUT"
+          {
+            echo "reason<<EOF"
+            jq -r .reason /tmp/validation.json
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Close invalid issue
         if: steps.validate.outputs.valid == 'false'

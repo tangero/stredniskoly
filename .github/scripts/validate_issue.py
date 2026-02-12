@@ -202,15 +202,37 @@ Bug je validní pokud:
         return False
 
 def main():
-    # Načíst issue data ze stdin nebo argumentů
-    if len(sys.argv) > 1:
-        issue_json = sys.argv[1]
-        issue_data = json.loads(issue_json)
-    else:
-        issue_data = json.load(sys.stdin)
+    try:
+        # Načíst issue data ze stdin nebo argumentů
+        if len(sys.argv) > 1:
+            issue_json = sys.argv[1]
+            issue_data = json.loads(issue_json)
+        else:
+            raw = sys.stdin.read()
+            issue_data = json.loads(raw)
+    except json.JSONDecodeError as e:
+        result = {
+            "valid": False,
+            "reason": f"Invalid issue payload JSON: {e}",
+            "auto_fix_eligible": False
+        }
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        sys.exit(0)
+    except Exception as e:
+        result = {
+            "valid": False,
+            "reason": f"Cannot read issue payload: {e}",
+            "auto_fix_eligible": False
+        }
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        sys.exit(0)
 
-    validator = IssueValidator()
-    is_valid, reason, auto_fix = validator.validate(issue_data)
+    try:
+        validator = IssueValidator()
+        is_valid, reason, auto_fix = validator.validate(issue_data)
+    except Exception as e:
+        is_valid, auto_fix = False, False
+        reason = f"Validation error: {e}"
 
     result = {
         "valid": is_valid,
@@ -219,7 +241,8 @@ def main():
     }
 
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    sys.exit(0 if is_valid else 1)
+    # Vracet 0 vždy: workflow větví podle JSON output, ne podle exit code.
+    sys.exit(0)
 
 if __name__ == '__main__':
     main()
