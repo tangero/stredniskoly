@@ -3,6 +3,7 @@ import path from 'path';
 import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData, InspectionExtraction } from '@/types/school';
 import { InspisDataset, SchoolInspisData } from '@/types/inspis';
 import { createSlug, createKrajSlug, extractRedizo } from './utils';
+import { sortSchoolsByPopularity } from './popularity';
 
 const dataDir = path.join(process.cwd(), 'public');
 
@@ -360,6 +361,138 @@ export async function generateAllSlugs(): Promise<{ slug: string }[]> {
       }
     }
   }
+
+  return slugs;
+}
+
+/**
+ * Generuje slugy pro top N nejpopulárnějších škol (pro hybrid ISR+SSG)
+ *
+ * Používá popularity scoring na základě:
+ * - Lokace (Praha, Brno = více trafficu)
+ * - Typ školy (Gymnázia = více researche)
+ * - Počet přihlášek (populární školy)
+ * - Obtížnost (prestižní školy)
+ *
+ * @param count Počet top škol (default: 200)
+ */
+export async function generateTopSlugs(count: number = 200): Promise<{ slug: string }[]> {
+  const schools = await getAllSchools();
+  const slugs: { slug: string }[] = [];
+  const addedSlugs = new Set<string>();
+
+  // Načíst detailní data ze schools_data.json pro zaměření
+  const filePath = path.join(dataDir, 'schools_data.json');
+  const content = await fs.readFile(filePath, 'utf-8');
+  const data = JSON.parse(content);
+  const yearData = data['2025'] || data['2024'] || [];
+
+  // Seskupit školy podle REDIZO
+  const schoolsByRedizo = new Map<string, School[]>();
+  for (const school of schools) {
+    const redizo = school.id.split('_')[0];
+    if (!schoolsByRedizo.has(redizo)) {
+      schoolsByRedizo.set(redizo, []);
+    }
+    schoolsByRedizo.get(redizo)!.push(school);
+  }
+
+  // Připravit školy pro popularity scoring (jeden záznam per REDIZO)
+  const schoolsForScoring = Array.from(schoolsByRedizo.entries()).map(([redizo, schoolList]) => {
+    const firstSchool = schoolList[0];
+    // Použít agregované metriky pro celou školu
+    const totalPrihlasky = schoolList.reduce((sum, s) => sum + (s.prihlasky || 0), 0);
+    const avgObtiznost = schoolList.reduce((sum, s) => sum + (s.obtiznost || 0), 0) / schoolList.length;
+    const totalKapacita = schoolList.reduce((sum, s) => sum + (s.kapacita || 0), 0);
+
+    return {
+      redizo,
+      nazev: firstSchool.nazev,
+      kraj_kod: firstSchool.kraj_kod,
+      obec: firstSchool.obec,
+      typ: firstSchool.typ,
+      prihlasky: totalPrihlasky,
+      obtiznost: avgObtiznost,
+      kapacita: totalKapacita,
+    };
+  });
+
+  // Seřadit podle popularity
+  const topSchoolsWithScore = sortSchoolsByPopularity(schoolsForScoring).slice(0, count);
+
+  // Připojit zpět schools z mapy
+  const topSchools = topSchoolsWithScore.map(school => ({
+    ...school,
+    schools: schoolsByRedizo.get(school.redizo)!,
+  }));
+
+  console.log(`\n🏆 Generuji slugy pro top ${count} nejpopulárnějších škol...`);
+  console.log(`Top 5 škol:`);
+  topSchools.slice(0, 5).forEach((school, idx) => {
+    console.log(`  ${idx + 1}. [${school.popularityScore} bodů] ${school.nazev} (${school.obec})`);
+  });
+  console.log('');
+
+  // Generovat slugy pro top školy
+  for (const topSchool of topSchools) {
+    const redizo = topSchool.redizo;
+    const schoolList = topSchool.schools;
+    const firstSchool = schoolList[0];
+    const schoolNameSlug = createSlug(firstSchool.nazev);
+
+    // 1. Přehled školy
+    const overviewSlug = `${redizo}-${schoolNameSlug}`;
+    if (!addedSlugs.has(overviewSlug)) {
+      slugs.push({ slug: overviewSlug });
+      addedSlugs.add(overviewSlug);
+    }
+
+    // Zjistit duplicitní názvy oborů
+    const oborCounts = new Map<string, number>();
+    for (const school of schoolList) {
+      oborCounts.set(school.obor, (oborCounts.get(school.obor) || 0) + 1);
+    }
+
+    // 2. Detail oborů
+    for (const school of schoolList) {
+      const hasDuplicateName = (oborCounts.get(school.obor) || 0) > 1;
+      const oborSlug = hasDuplicateName
+        ? createSlug(school.nazev, school.obor, undefined, school.delka_studia)
+        : createSlug(school.nazev, school.obor);
+      const fullSlug = `${redizo}-${oborSlug}`;
+      if (!addedSlugs.has(fullSlug)) {
+        slugs.push({ slug: fullSlug });
+        addedSlugs.add(fullSlug);
+      }
+    }
+
+    // 3. Detail zaměření
+    const detailedRecords = yearData.filter((s: { redizo: string }) => s.redizo === redizo);
+    const zamereniCounts = new Map<string, number>();
+    for (const record of detailedRecords) {
+      if (record.zamereni) {
+        const key = `${record.obor}|${record.zamereni}`;
+        zamereniCounts.set(key, (zamereniCounts.get(key) || 0) + 1);
+      }
+    }
+
+    for (const record of detailedRecords) {
+      if (record.zamereni) {
+        const key = `${record.obor}|${record.zamereni}`;
+        const hasDuplicateZamereni = (zamereniCounts.get(key) || 0) > 1;
+        const zamereniSlug = hasDuplicateZamereni
+          ? createSlug(firstSchool.nazev, record.obor, record.zamereni, record.delka_studia)
+          : createSlug(firstSchool.nazev, record.obor, record.zamereni);
+        const fullSlug = `${redizo}-${zamereniSlug}`;
+        if (!addedSlugs.has(fullSlug)) {
+          slugs.push({ slug: fullSlug });
+          addedSlugs.add(fullSlug);
+        }
+      }
+    }
+  }
+
+  console.log(`✅ Vygenerováno ${slugs.length} slugů pro top ${count} škol\n`);
 
   return slugs;
 }

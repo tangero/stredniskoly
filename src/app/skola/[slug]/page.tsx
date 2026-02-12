@@ -10,14 +10,34 @@ import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoo
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
+// V2 Overview komponenty
+import {
+  OverviewHero,
+  PriorityCardsGrid,
+  QuickFactsCard,
+  CSISummaryCard,
+  CTASection,
+  QuickFact,
+} from '@/components/school/overview';
+import { calculateAllPriorities } from '@/lib/priorities';
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
-// Generování statických cest pro všechny školy
+// =====================
+// HYBRID ISR+SSG APPROACH
+// =====================
+// Pre-generate top 200 nejnavštěvovanějších škol (SSG)
+// Zbytek generovat on-demand při prvním requestu (ISR)
+
+// ISR: Revalidate každou hodinu (fresh data)
+export const revalidate = 3600; // 1 hodina
+
+// SSG: Pre-generate top 200 škol (podle popularity)
 export async function generateStaticParams() {
-  const { generateAllSlugs } = await import('@/lib/data');
-  const slugs = await generateAllSlugs();
+  const { generateTopSlugs } = await import('@/lib/data');
+  const slugs = await generateTopSlugs(200);
   return slugs;
 }
 
@@ -191,6 +211,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   const { slug } = await params;
   const pageInfo = await getSchoolPageType(slug);
   const inspisEnabled = process.env.INSPIS_ENABLED !== 'false';
+  const overviewV2Enabled = process.env.OVERVIEW_V2_ENABLED !== 'false'; // V2 feature flag
 
   if (!pageInfo.school) {
     notFound();
@@ -232,6 +253,114 @@ export default async function SchoolDetailPage({ params }: Props) {
     const programIds = sortedPrograms.map(p => p.id);
     const trendDataMap = await getTrendDataForPrograms(programIds);
 
+    // =====================
+    // V2 OVERVIEW (pokud enabled)
+    // =====================
+    if (overviewV2Enabled && sortedPrograms.length === 1) {
+      // Pro školy s 1 oborem použijeme V2 Overview stránku
+      const program = sortedPrograms[0];
+
+      // Vypočítat priority scores
+      const priorities = calculateAllPriorities({
+        minBody: program.min_body,
+        obtiznost: school.obtiznost,
+        indexPoptavky: program.index_poptavky,
+        kapacita: program.kapacita,
+        prihlasky: program.prihlasky,
+        prijati: program.prijati,
+        typ: school.typ,
+      });
+
+      // Quick facts pro kartu
+      const quickFacts: QuickFact[] = [
+        { label: "Min. body", value: program.min_body },
+        { label: "Kapacita", value: program.kapacita },
+        { label: "Školné", value: inspis?.rocni_skolne ? `${inspis.rocni_skolne} Kč` : "0 Kč" },
+        { label: "Jazyky", value: inspis?.vyuka_jazyku?.slice(0, 2).join(", ") || "N/A" },
+      ];
+
+      // AI summary (první extrakce nebo fallback)
+      const aiSummary = extractions.length > 0
+        ? extractions[0].plain_czech_summary?.substring(0, 200) || "Škola poskytuje kvalitní vzdělání."
+        : "Data z inspekce nejsou k dispozici.";
+
+      const overviewSlug = `${redizo}-${createSlug(overview.nazev)}`;
+
+      return (
+        <div className="min-h-screen flex flex-col">
+          <Header />
+
+          <main className="flex-1">
+            {/* Breadcrumb */}
+            <div className="bg-white border-b">
+              <div className="max-w-6xl mx-auto px-4 py-3">
+                <nav className="text-sm text-slate-600">
+                  <Link href="/" className="hover:text-blue-600">Domů</Link>
+                  <span className="mx-2">/</span>
+                  <Link href="/skoly" className="hover:text-blue-600">Školy</Link>
+                  <span className="mx-2">/</span>
+                  <Link href={`/regiony/${krajSlug}`} className="hover:text-blue-600">
+                    {krajNames[school.kraj_kod] || school.kraj}
+                  </Link>
+                  <span className="mx-2">/</span>
+                  <span className="text-slate-900">{overview.nazev}</span>
+                </nav>
+              </div>
+            </div>
+
+            {/* V2 Hero */}
+            <OverviewHero
+              schoolName={overview.nazev}
+              location={overview.obec}
+              kraj={krajNames[overview.kraj_kod] || overview.kraj}
+              studyLength={program.delka_studia}
+              schoolType={overview.zrizovatel}
+              category={school.category_code}
+              hasInspection={extractions.length > 0}
+              overviewSlug={overviewSlug}
+            />
+
+            {/* Obsah */}
+            <div className="max-w-6xl mx-auto px-4 py-8 space-y-8">
+              {/* Priority Cards */}
+              <PriorityCardsGrid priorities={priorities} />
+
+              {/* Quick Facts */}
+              <QuickFactsCard facts={quickFacts} />
+
+              {/* ČŠI Summary */}
+              {extractions.length > 0 && (
+                <CSISummaryCard
+                  summary={aiSummary}
+                  reportUrl={`/skola/${overviewSlug}/inspekce`}
+                />
+              )}
+
+              {/* CTA Buttons */}
+              <CTASection
+                primaryAction={{
+                  label: "Zobrazit detail",
+                  href: `/skola/${overviewSlug}/detail`,
+                }}
+                secondaryAction={{
+                  label: "Je to pro mě?",
+                  href: `/skola/${overviewSlug}/pro-me`,
+                }}
+              />
+
+              {/* InspIS profil (optional) */}
+              {inspis && <SchoolInfoSection data={inspis} />}
+            </div>
+          </main>
+
+          <Footer />
+        </div>
+      );
+    }
+
+    // =====================
+    // V1 OVERVIEW (fallback)
+    // =====================
     return (
       <div className="min-h-screen flex flex-col">
         <Header />

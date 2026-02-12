@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  /* Legacy colors (keep for backwards compat) */
   --color-primary: #0074e4;
   --color-primary-dark: #003688;
   --color-text: #28313b;
@@ -10,6 +11,59 @@
   --color-success: #38caaa;
   --color-warning: #ffbf66;
   --color-danger: #ff525b;
+
+  /* V2 Design System - Priority-driven colors */
+  --critical-success: #10b981;
+  --critical-warning: #f59e0b;
+  --critical-danger: #ef4444;
+  --critical-info: #3b82f6;
+
+  /* V2 - Accents */
+  --accent-blue: #0ea5e9;
+  --accent-purple: #8b5cf6;
+  --accent-slate: #64748b;
+
+  /* V2 - Neutrals (light mode) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+
+  /* V2 - Spacing scale (8pt grid) */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+
+  /* V2 - Border radius */
+  --radius-sm: 0.375rem;
+  --radius-base: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* V2 - Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* V2 - Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Smooth scrolling */
