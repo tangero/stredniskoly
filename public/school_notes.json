@@ -12,6 +12,20 @@
       "source": "GitHub Issue #2",
       "date": "2026-02-08",
       "expires": "2026-09-01"
+    },
+    "691013489_79-41-K/41": {
+      "type": "warning",
+      "title": "Škola má vlastní přijímací zkoušky",
+      "message": "Kromě jednotných testů CERMAT škola vyžaduje vlastní přijímací zkoušky včetně testů z angličtiny. Body z CERMAT tvoří jen část celkového hodnocení.",
+      "source": "GitHub Issue #15, kontakt: jakub@sees.cz",
+      "date": "2026-02-11"
+    },
+    "600170501": {
+      "type": "info",
+      "title": "Nástavbové obory nejsou v datech",
+      "message": "Nástavbové obory (např. Podnikání 64-41-L/51) nejsou v datech CERMAT, protože nemají jednotné přijímací zkoušky. Informace o nástavbových oborech najdete na webu školy.",
+      "source": "GitHub Issue #19",
+      "date": "2026-02-12"
     }
   },
   "examples": {

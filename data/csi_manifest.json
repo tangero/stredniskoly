@@ -1,9 +1,21 @@
 {
   "versions": [
     {
-      "version_id": "2026-02-11T20-33-55-060Z",
-      "file": "data/csi_snapshots/csi_inspections_2026-02-11T20-33-55-060Z.json",
-      "valid_from": "2026-02-11T20:33:55.060Z",
+      "version_id": "2026-02-11T20-11-03-465Z",
+      "file": "data/csi_snapshots/csi_inspections_2026-02-11T20-11-03-465Z.json",
+      "valid_from": "2026-02-11T20:11:03.464Z",
+      "valid_to": "2026-02-11T20:32:52.994Z",
+      "source_download_url": "https://opendata.csicr.cz/Transformation/Download/139",
+      "sha256": "237a1ef0f15a2a72a8d7ae93984209fbd1596d8f0a2a4f6976e33705706643e7",
+      "stats": {
+        "schools": 9564,
+        "inspections": 14925
+      }
+    },
+    {
+      "version_id": "2026-02-11T20-32-52-994Z",
+      "file": "data/csi_snapshots/csi_inspections_2026-02-11T20-32-52-994Z.json",
+      "valid_from": "2026-02-11T20:32:52.994Z",
       "valid_to": null,
       "source_download_url": "https://opendata.csicr.cz/Transformation/Download/139",
       "sha256": "237a1ef0f15a2a72a8d7ae93984209fbd1596d8f0a2a4f6976e33705706643e7",
@@ -13,5 +25,5 @@
       }
     }
   ],
-  "current_version_id": "2026-02-11T20-33-55-060Z"
+  "current_version_id": "2026-02-11T20-32-52-994Z"
 }
