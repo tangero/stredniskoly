@@ -28,6 +28,10 @@ REFERENCE_WEEKDAY = "monday"
 HOUR_START = 7
 HOUR_END = 8
 
+# Blacklist known night routes to exclude from school accessibility analysis
+# Prague: 91-99 (night trams), 901-999 (night buses)
+NIGHT_ROUTE_PATTERNS = {'91', '92', '93', '94', '95', '96', '97', '98', '99'}
+
 
 def parse_time_seconds(time_str: str) -> int | None:
     """Parse HH:MM:SS to seconds since midnight. Supports >24h."""
@@ -39,6 +43,26 @@ def parse_time_seconds(time_str: str) -> int | None:
         return h * 3600 + m * 60 + s
     except ValueError:
         return None
+
+
+def is_night_route(route_short: str) -> bool:
+    """Check if route is a night service that should be excluded from school accessibility.
+
+    Night routes include:
+    - Prague night trams: 91-99
+    - Night buses: 901-999 (national pattern)
+    """
+    # Known night trams
+    if route_short in NIGHT_ROUTE_PATTERNS:
+        return True
+
+    # Night buses: 901-999
+    if route_short.isdigit():
+        route_num = int(route_short)
+        if 901 <= route_num <= 999:
+            return True
+
+    return False
 
 
 def main():
@@ -137,12 +161,17 @@ def main():
         if not route_short:
             return
 
-        # Filter: only process trips with departures in the morning window (5:00-10:00)
+        # Filter: exclude night routes (91-99, 901-999)
+        if is_night_route(route_short):
+            return
+
+        # Filter: only process trips with departures in the school commute window (6:30-9:00)
+        # This excludes night services ending early morning (e.g., night trams ending 5:00-6:30)
         dep_times = [dep for _, _, dep in stops_list if dep is not None]
         if not dep_times:
             return
         min_dep = min(dep_times)
-        if min_dep < 5 * 3600 or min_dep >= 10 * 3600:
+        if min_dep < 6.5 * 3600 or min_dep >= 9 * 3600:  # 6:30-9:00
             return
 
         for i in range(len(stops_list) - 1):
