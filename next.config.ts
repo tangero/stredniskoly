@@ -106,6 +106,14 @@ const nextConfig: NextConfig = {
 
   // Komprese
   compress: true,
+
+  // Rewrites pro strojově čitelné formáty stránek škol
+  async rewrites() {
+    return [
+      { source: '/skola/:slug.md', destination: '/api/skola/:slug/md' },
+      { source: '/skola/:slug.json', destination: '/api/skola/:slug/json' },
+    ];
+  },
 };
 
 export default nextConfig;
