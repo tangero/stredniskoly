@@ -882,17 +882,20 @@ export function SchoolDifficultyProfile({ profile, schoolType, cjPrumer, maPrume
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm">
-      <h2 className="text-xl font-semibold mb-4">Profil náročnosti školy</h2>
+      <h2 className="text-xl font-semibold mb-4">Náročnost přijetí na školu</h2>
+      <p className="text-sm text-slate-600 mb-4">
+        Jak těžké je se na školu dostat (podle bodů potřebných k přijetí), nikoliv jak náročné je studium.
+      </p>
 
       {/* Percentily náročnosti */}
       <div className="grid md:grid-cols-2 gap-4 mb-6">
         {/* Celkový percentil */}
         <div className="p-4 bg-slate-50 rounded-lg">
           <div className="text-sm text-slate-600 mb-1">
-            Celková náročnost
-            <InfoTooltip title="Celková náročnost (percentil)">
-              Ukazuje, jak je škola náročná ve srovnání se <strong>všemi školami v ČR</strong>.
-              Hodnota 90% znamená, že škola je náročnější než 90% všech škol.
+            V rámci celé ČR
+            <InfoTooltip title="Náročnost přijetí (celostátní percentil)">
+              Ukazuje, jak je obtížné se na školu dostat ve srovnání se <strong>všemi školami v ČR</strong>.
+              Hodnota 90% znamená, že škola má vyšší požadavky na přijetí než 90% všech škol.
               Počítáno podle minimálního počtu bodů potřebných pro přijetí.
             </InfoTooltip>
           </div>
@@ -922,11 +925,14 @@ export function SchoolDifficultyProfile({ profile, schoolType, cjPrumer, maPrume
         {/* Percentil v rámci typu */}
         <div className="p-4 bg-slate-50 rounded-lg">
           <div className="text-sm text-slate-600 mb-1">
-            V rámci {typeName}
-            <InfoTooltip title="Náročnost v rámci typu">
-              Porovnání <strong>pouze se školami stejného typu</strong> ({profile.totalInType} škol).
-              Gymnázia jsou obecně náročnější než SOŠ, proto má smysl porovnávat v rámci typu.
+            Mezi {typeName}
+            <InfoTooltip title="Náročnost přijetí (mezi stejným typem škol)">
+              Porovnání <strong>pouze se školami stejného typu</strong> ({profile.totalInType} škol v celé ČR).
+              <br /><br />
+              Gymnázia jsou obecně náročnější než SOŠ, proto je relevantní porovnávat v rámci typu.
+              <br /><br />
               Hodnota 80% mezi gymnázii znamená více než 80% mezi všemi školami.
+              Tento percentil je přesnější než srovnání v rámci kraje, protože zohledňuje typ školy.
             </InfoTooltip>
           </div>
           <div className="flex items-baseline gap-2">
