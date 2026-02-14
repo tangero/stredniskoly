@@ -12,10 +12,8 @@ jobs:
       pull-requests: write
       issues: write
 
-    # Spustit jen pokud má label 'bug-report' nebo 'auto-fix'
-    if: |
-      contains(github.event.issue.labels.*.name, 'bug-report') ||
-      contains(github.event.issue.labels.*.name, 'auto-fix')
+    # DEAKTIVOVÁNO: Issues budou zpracovávány ručně
+    if: false
 
     steps:
       - name: Checkout repository

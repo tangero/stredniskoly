@@ -7,8 +7,8 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
-    # Pouze pro issues s labelem "bug-report"
-    if: contains(github.event.issue.labels.*.name, 'bug-report')
+    # DEAKTIVOVÁNO: Issues budou zpracovávány ručně
+    if: false
 
     steps:
       - name: Check mail secrets

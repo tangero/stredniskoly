@@ -27,10 +27,8 @@ jobs:
       pull-requests: write
       issues: write
 
-    # Spustit jen pokud má label 'auto-fix-iterative' nebo je workflow_dispatch
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      contains(github.event.issue.labels.*.name, 'auto-fix-iterative')
+    # DEAKTIVOVÁNO: Spustit pouze ručně přes workflow_dispatch
+    if: github.event_name == 'workflow_dispatch'
 
     steps:
       - name: Checkout repository
