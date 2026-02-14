@@ -1116,6 +1116,12 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
           </>
         )}
 
+        {school.index_poptavky_2025 < 1.0 && (
+          <span className="px-1.5 py-0.5 bg-yellow-100 text-yellow-700 text-xs rounded shrink-0" title="Program má méně přihlášek než kapacitu">
+            ⚠️ Nízká poptávka
+          </span>
+        )}
+
         <span className="text-slate-300">·</span>
 
         {/* Název školy */}
@@ -1193,6 +1199,12 @@ function SchoolCard({ school, status, yourScore, isSelected, onToggle }: SchoolC
           {school.zamereni && (
             <>
               <span className="text-slate-600 font-medium shrink-0">{school.zamereni.replace(/_/g, ' ')}</span>
+              <span className="text-slate-300">·</span>
+            </>
+          )}
+          {school.index_poptavky_2025 < 1.0 && (
+            <>
+              <span className="px-1.5 py-0.5 bg-yellow-100 text-yellow-700 text-xs rounded shrink-0">⚠️</span>
               <span className="text-slate-300">·</span>
             </>
           )}
@@ -1317,12 +1329,19 @@ function SortableSchoolCard({
       {/* Obsah karty */}
       <div className="p-4 text-white">
         {/* Název a obor - fixní výška pro zarovnání */}
-        <div className="h-[84px] mb-2">
+        <div className="h-[100px] mb-2">
           <Link href={`/skola/${slug}`} className="block hover:underline" onClick={closeStrategy}>
             <h3 className="font-bold text-lg leading-tight line-clamp-2">{school.nazev_display || school.nazev}</h3>
             <p className="text-white/80 text-sm truncate">
-              {school.obor}{school.zamereni ? ` – ${school.zamereni.replace(/_/g, ' ')}` : ''}
+              {school.obor}
+              {school.delka_studia ? ` (${school.delka_studia}leté)` : ''}
+              {school.zamereni ? ` – ${school.zamereni.replace(/_/g, ' ')}` : ''}
             </p>
+            {school.index_poptavky_2025 < 1.0 && (
+              <span className="inline-block mt-1 px-2 py-0.5 bg-yellow-500/20 border border-yellow-500/40 text-yellow-200 text-xs rounded">
+                ⚠️ Nízká poptávka
+              </span>
+            )}
           </Link>
         </div>
         <p className="text-white/60 text-xs mb-4">{school.obec} · {school.kraj?.trim()}</p>
