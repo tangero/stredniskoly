@@ -19,6 +19,19 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '2.4.2',
+    date: '13. 2. 2026',
+    title: 'Opravy nočních spojů, simulátoru a náročnosti přijetí',
+    changes: [
+      { type: 'fix', text: 'Oprava nočních linek v dopravní dostupnosti — filtrování nočních tramvají (91-99) a autobusů (901-999) + časové okno změněno na 6:30-9:00 pro školní dojíždění (#21)' },
+      { type: 'improve', text: 'GitHub Actions pro automatické zpracování issues deaktivovány — issues nyní zpracovány ručně' },
+      { type: 'fix', text: 'Simulator zobrazuje jednotlivé obory samostatně — studenti si vybírají obory, ne školy. Každý obor má vlastní kartu s názvem školy, oborem, délkou studia a zaměřením (#22)' },
+      { type: 'new', text: 'Vizuální označení oborů s nízkou poptávkou v simulátoru — žlutý badge "⚠️ Nízká poptávka" pro obory s index_poptavky < 1.0' },
+      { type: 'improve', text: 'Změna zavádějícího nadpisu "Profil náročnosti školy" na "Náročnost přijetí na školu" — jasné rozlišení obtížnosti přijetí vs. obtížnosti studia (#28)' },
+      { type: 'improve', text: 'Rozšířené vysvětlení u percentilů — "V rámci celé ČR" místo "Celková náročnost" pro lepší srozumitelnost' },
+    ],
+  },
+  {
     version: '2.4.1',
     date: '11. 2. 2026',
     title: 'Opravy dopravní dostupnosti a UI patičky',
