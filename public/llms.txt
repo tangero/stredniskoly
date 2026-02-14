@@ -1,0 +1,38 @@
+# Přijímačky na školu
+
+> Analýza přijímacích zkoušek na střední školy v České republice. Data z CERMAT JPZ 2024-2025.
+
+## O webu
+
+Web analyzuje data přijímacích zkoušek (jednotné přijímací zkoušky - JPZ) pro ~2 500 středních škol v ČR. Obsahuje simulátor šancí na přijetí, statistiky škol, dojezdovost MHD a inspekční zprávy ČŠI.
+
+- Provozovatel: Hlídač státu (hlidacstatu.cz)
+- Doména: prijimackynaskolu.cz
+- Data: CERMAT JPZ 2024-2025, ČŠI inspekce
+
+## Hlavní sekce
+
+- [Simulátor přijetí](https://www.prijimackynaskolu.cz/simulator): Zadejte body z ČJ a MA, zjistěte šance na přijetí na konkrétní školy.
+- [Analýza škol](https://www.prijimackynaskolu.cz/skoly): Přehled všech středních škol s obtížností přijetí, indexem poptávky.
+- [Regiony](https://www.prijimackynaskolu.cz/regiony): Statistiky přijímacích zkoušek podle krajů.
+- [Dojezdovost MHD](https://www.prijimackynaskolu.cz/dostupnost): Které školy jsou dostupné z dané zastávky MHD.
+- [Jak funguje přijímání](https://www.prijimackynaskolu.cz/jak-funguje-prijimani): Průvodce přijímacím řízením na SŠ.
+
+## Strojově čitelná data
+
+Každá stránka školy nabízí data ve dvou formátech:
+- Markdown: `https://www.prijimackynaskolu.cz/skola/{slug}.md`
+- JSON: `https://www.prijimackynaskolu.cz/skola/{slug}.json`
+
+Příklad:
+- `https://www.prijimackynaskolu.cz/skola/600004775-obchodni-akademie-vinohradska.md`
+- `https://www.prijimackynaskolu.cz/skola/600004775-obchodni-akademie-vinohradska.json`
+
+Vyhledávání škol (API): `/api/schools/search?search={dotaz}&limit=10`
+
+## Klíčové pojmy
+
+- **JPZ** = Jednotná přijímací zkouška (CERMAT), max 50 bodů ČJ + 50 bodů MA = 100 bodů
+- **Min. body** = Minimální počet bodů posledního přijatého uchazeče
+- **Index poptávky** = Poměr přihlášek k počtu míst (>2 = vysoká konkurence)
+- **REDIZO** = Unikátní identifikátor školy v rejstříku MŠMT

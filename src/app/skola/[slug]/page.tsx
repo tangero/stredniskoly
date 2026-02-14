@@ -68,10 +68,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         type: 'article',
         url: `/skola/${slug}`,
       },
+      alternates: {
+        types: {
+          'text/markdown': `/skola/${slug}.md`,
+          'application/json': `/skola/${slug}.json`,
+        },
+      },
     };
   }
 
-  // Detail oboru/zaměření
+  // Detail oboru/zaměření - overview slug pro alternativní formáty (md/json vždy vrací celou školu)
+  const overviewSlugMeta = `${pageInfo.redizo}-${createSlug(school.nazev)}`;
+
   const program = pageInfo.program;
   const oborNazev = program?.zamereni ? `${program.obor} - ${program.zamereni}` : school.obor;
   const title = `${school.nazev} - ${oborNazev}`;
@@ -85,6 +93,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: 'article',
       url: `/skola/${slug}`,
+    },
+    alternates: {
+      types: {
+        'text/markdown': `/skola/${overviewSlugMeta}.md`,
+        'application/json': `/skola/${overviewSlugMeta}.json`,
+      },
     },
   };
 }
@@ -350,6 +364,25 @@ export default async function SchoolDetailPage({ params }: Props) {
 
               {/* InspIS profil (optional) */}
               {inspis && <SchoolInfoSection data={inspis} />}
+
+              {/* Strojově čitelné formáty */}
+              <div className="pt-4 border-t border-slate-100 flex items-center justify-center gap-3 text-xs text-slate-400">
+                <span>Otevřená data:</span>
+                <a
+                  href={`/skola/${overviewSlug}.md`}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
+                >
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                  Markdown
+                </a>
+                <a
+                  href={`/skola/${overviewSlug}.json`}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
+                >
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                  JSON
+                </a>
+              </div>
             </div>
           </main>
 
@@ -481,6 +514,25 @@ export default async function SchoolDetailPage({ params }: Props) {
               >
                 Vyzkoušet v simulátoru
               </Link>
+            </div>
+
+            {/* Strojově čitelné formáty */}
+            <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-center gap-3 text-xs text-slate-400">
+              <span>Otevřená data:</span>
+              <a
+                href={`/skola/${slug}.md`}
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
+              >
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+                Markdown
+              </a>
+              <a
+                href={`/skola/${slug}.json`}
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
+              >
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                JSON
+              </a>
             </div>
           </div>
         </main>
@@ -855,6 +907,25 @@ export default async function SchoolDetailPage({ params }: Props) {
             >
               Vyzkoušet v simulátoru
             </Link>
+          </div>
+
+          {/* Strojově čitelné formáty */}
+          <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-center gap-3 text-xs text-slate-400">
+            <span>Otevřená data:</span>
+            <a
+              href={`/skola/${overviewSlug}.md`}
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+              Markdown
+            </a>
+            <a
+              href={`/skola/${overviewSlug}.json`}
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+              JSON
+            </a>
           </div>
         </div>
       </main>
