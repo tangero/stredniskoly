@@ -226,9 +226,34 @@ export default async function SchoolDetailPage({ params }: Props) {
     const programIds = sortedPrograms.map(p => p.id);
     const trendDataMap = await getTrendDataForPrograms(programIds);
 
+    const overviewJsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'EducationalOrganization',
+      name: overview.nazev,
+      description: `Střední škola v ${overview.obec}, ${krajNames[overview.kraj_kod] || overview.kraj}. ${sortedPrograms.length} ${sortedPrograms.length === 1 ? 'obor' : 'oborů'}, kapacita ${totalKapacita} míst, ${totalPrihlasky} přihlášek.`,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: overview.obec,
+        addressRegion: krajNames[overview.kraj_kod] || overview.kraj,
+        addressCountry: 'CZ',
+        streetAddress: overview.adresa_plna,
+      },
+      url: `https://www.prijimackynaskolu.cz/skola/${slug}`,
+      hasCourse: sortedPrograms.map(p => ({
+        '@type': 'Course',
+        name: p.zamereni ? `${p.obor} - ${p.zamereni}` : p.obor,
+        description: `${p.typ}, ${p.delka_studia}leté studium. Kapacita: ${p.kapacita}, přihlášek: ${p.prihlasky}, přijatých: ${p.prijati}. Min. body JPZ: ${p.min_body}/100, index poptávky: ${p.index_poptavky.toFixed(1)}×.`,
+      })),
+    };
+
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(overviewJsonLd) }}
+        />
 
         <main className="flex-1">
           {/* Breadcrumb */}
@@ -420,13 +445,20 @@ export default async function SchoolDetailPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     name: school.nazev,
-    description: `${displayOborName} - ${school.typ}`,
+    description: `${displayOborName} - ${school.typ}, ${school.obec}. Min. body pro přijetí: ${program.min_body}/100, index poptávky: ${program.index_poptavky.toFixed(1)}×.`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: school.obec,
       addressRegion: krajNames[school.kraj_kod] || school.kraj,
       addressCountry: 'CZ',
-      streetAddress: school.adresa,
+      streetAddress: school.adresa_plna || school.adresa,
+    },
+    url: `https://www.prijimackynaskolu.cz/skola/${slug}`,
+    hasCourse: {
+      '@type': 'Course',
+      name: displayOborName,
+      description: `${program.typ}, ${program.delka_studia}leté studium. Kapacita: ${program.kapacita} míst, přihlášek: ${program.prihlasky}, přijatých: ${program.prijati}. Minimální body JPZ: ${program.min_body}/100.`,
+      provider: { '@type': 'EducationalOrganization', name: school.nazev },
     },
   };
 

@@ -106,6 +106,16 @@ const nextConfig: NextConfig = {
 
   // Komprese
   compress: true,
+
+  // Rewrites pro AI-čitelné markdown verze stránek
+  async rewrites() {
+    return [
+      {
+        source: '/skola/:slug.md',
+        destination: '/api/skola/:slug/md',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
