@@ -1,49 +1,8 @@
 {
-  "generated_at": "2026-02-11T19:10:36.890Z",
-  "schools_total": 1180,
-  "schools_with_inspis": 1180,
-  "coverage_percentage": 100,
-  "rows_ss": 110584,
-  "top_unmapped_questions": [
-    {
-      "question": "Účast ve vzdělávacích programech neziskových organizací",
-      "count": 1878
-    },
-    {
-      "question": "Začátek první vyučovací hodiny",
-      "count": 1145
-    },
-    {
-      "question": "Vstup do školy umožněn od",
-      "count": 1094
-    },
-    {
-      "question": "Rozmístění školy",
-      "count": 1067
-    },
-    {
-      "question": "Výuka vybraných předmětů v cizím jazyce",
-      "count": 756
-    },
-    {
-      "question": "Domácí spolupráce",
-      "count": 479
-    },
-    {
-      "question": "Zapojení ve specifických programech",
-      "count": 456
-    },
-    {
-      "question": "Rozšířené informace o ročním školném",
-      "count": 265
-    },
-    {
-      "question": "Výuka vybraných předmětů v cizím jazyce - jazyky",
-      "count": 193
-    },
-    {
-      "question": "Alternativní písmo",
-      "count": 98
-    }
-  ]
+  "generated_at": "2026-02-16T06:46:47.252Z",
+  "schools_total": 0,
+  "schools_with_inspis": 0,
+  "coverage_percentage": 0,
+  "rows_ss": 0,
+  "top_unmapped_questions": []
 }
