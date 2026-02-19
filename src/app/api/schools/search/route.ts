@@ -192,7 +192,7 @@ export async function GET(request: NextRequest) {
           delka_studia: s.delka_studia,
           slug: getSchoolSlug(s, slugContext),
           min_body_2025: normalizeMinBodyScore(s.min_body),
-          jpz_min: s.jpz_min_actual || normalizeMinBodyScore(s.min_body),
+          jpz_min: Math.max(s.jpz_min_actual || 0, normalizeMinBodyScore(s.min_body)),
           index_poptavky_2025: s.index_poptavky || 0,
         }));
 
@@ -209,8 +209,8 @@ export async function GET(request: NextRequest) {
 
     const filtered = schools
       .filter(s => {
-        // JPZ min body
-        const jpzMin = s.jpz_min_actual || s.min_body || 0;
+        // JPZ min body - max z individuálních dat a per-zaměření CERMAT agregátu
+        const jpzMin = Math.max(s.jpz_min_actual || 0, normalizeMinBodyScore(s.min_body));
 
         // Filtr podle délky studia
         if (delkaFilter && s.delka_studia !== delkaFilter) return false;
@@ -261,7 +261,7 @@ export async function GET(request: NextRequest) {
         delka_studia: s.delka_studia,
         slug: getSchoolSlug(s, slugContext),
         min_body_2025: normalizeMinBodyScore(s.min_body),
-        jpz_min: s.jpz_min_actual || normalizeMinBodyScore(s.min_body),
+        jpz_min: Math.max(s.jpz_min_actual || 0, normalizeMinBodyScore(s.min_body)),
         index_poptavky_2025: s.index_poptavky || 0,
       }))
       .sort((a, b) => {

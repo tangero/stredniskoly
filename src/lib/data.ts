@@ -865,8 +865,13 @@ async function getSchoolsDataById(): Promise<Map<string, ExtendedSchoolStats>> {
         const cj_at_jpz_min = school.cj_at_jpz_min || 0;
         const ma_at_jpz_min = school.ma_at_jpz_min || 0;
 
-        // Použít skutečné JPZ minimum, pokud je k dispozici, jinak fallback na součet nezávislých minim
-        const jpz_min = jpz_min_actual > 0 ? jpz_min_actual : (cj_min + ma_min);
+        // Použít maximum z: skutečné JPZ minimum z dat uchazečů (ale sdílené přes zaměření)
+        // a per-zaměření minimum z CERMAT agregátu. MAX zajistí správnou hodnotu i pro
+        // školy s více zaměřeními stejného kkov (kde jpz_min_actual je sdílené).
+        const jpz_min_from_aggregate = Math.round(min_body_raw / 2);
+        const jpz_min = jpz_min_actual > 0
+          ? Math.max(jpz_min_actual, jpz_min_from_aggregate)
+          : (cj_min + ma_min);
         const jpz_prumer = Math.round((cj_prumer + ma_prumer) * 10) / 10;
 
         // Celkové body pro přijetí (také převedeno z % škály)
