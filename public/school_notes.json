@@ -20,6 +20,13 @@
       "source": "GitHub Issue #15, kontakt: jakub@sees.cz",
       "date": "2026-02-11"
     },
+    "691017301_79-41-K/41": {
+      "type": "warning",
+      "title": "Výuka probíhá na jiné adrese než je uvedena v systému",
+      "message": "Škola je registrována na adrese Eliášova 827, Praha 6, ale výuka 4letého gymnázia probíhá na jiném místě (Praha 3 a Praha 5). Výpočet dojezdové vzdálenosti vychází z registrované adresy a nemusí odpovídat skutečné dostupnosti školy. Ověřte si přesné místo výuky na webu školy.",
+      "source": "GitHub Issue #37, #38",
+      "date": "2026-02-19"
+    },
     "600005968_79-41-K/41": {
       "type": "info",
       "title": "Škola váží výsledky z JPZ vlastními koeficienty",
