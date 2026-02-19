@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "last_updated": "2026-02-08",
+    "last_updated": "2026-02-19",
     "description": "Poznámky a upozornění ke školám a oborům"
   },
   "notes": {
@@ -19,6 +19,13 @@
       "message": "Kromě jednotných testů CERMAT škola vyžaduje vlastní přijímací zkoušky včetně testů z angličtiny. Body z CERMAT tvoří jen část celkového hodnocení.",
       "source": "GitHub Issue #15, kontakt: jakub@sees.cz",
       "date": "2026-02-11"
+    },
+    "600005968_79-41-K/41": {
+      "type": "info",
+      "title": "Škola váží výsledky z JPZ vlastními koeficienty",
+      "message": "Karlínské gymnázium násobí body z přijímacích zkoušek koeficientem 0,7 pro český jazyk a 0,5 pro matematiku. Zobrazené minimální skóre odpovídá celkovému hodnocení posledního přijatého uchazeče, ve kterém mají výsledky z češtiny větší váhu než výsledky z matematiky. Podrobná kritéria najdete na webu školy.",
+      "source": "GitHub Issue #39",
+      "date": "2026-02-19"
     },
     "600170501": {
       "type": "info",

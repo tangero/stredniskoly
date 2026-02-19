@@ -7,6 +7,8 @@ import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnal
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolInfoSection } from '@/components/school-profile/SchoolInfoSection';
 import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
+import { getNoteForSchool } from '@/lib/school-notes';
+import { SchoolNote } from '@/components/SchoolNote';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
@@ -553,7 +555,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   const category = categoryColors[school.category_code];
 
   // Načíst další data - pro zaměření použít specifickou funkci
-  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData, extractions] = await Promise.all([
+  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData, extractions, programNote, schoolNote] = await Promise.all([
     getProgramsByRedizo(redizo),
     getSchoolDetail(program.id),
     pageInfo.type === 'zamereni'
@@ -563,7 +565,11 @@ export default async function SchoolDetailPage({ params }: Props) {
     getTrendDataForProgram(program.id),
     getCSIDataByRedizo(redizo),
     getExtractionsByRedizo(redizo),
+    getNoteForSchool(program.id),   // poznámka specifická pro zaměření/obor
+    getNoteForSchool(school.id),    // fallback: poznámka pro celý obor (bez zaměření)
   ]);
+  // Použít zaměření-specifickou poznámku, nebo fallback na obecnou
+  const schoolNoteToShow = programNote || schoolNote;
 
   // Připravit data pro ProgramTabs
   // Zjistit duplicitní názvy oborů (různá délka studia, ale stejný název)
@@ -689,6 +695,13 @@ export default async function SchoolDetailPage({ params }: Props) {
 
         {/* Navigace oborů */}
         <ProgramTabs programs={programsForTabs} currentProgramId={program.id} />
+
+        {/* Poznámka ke škole/oboru */}
+        {schoolNoteToShow && (
+          <div className="max-w-6xl mx-auto px-4 pt-6">
+            <SchoolNote note={schoolNoteToShow} />
+          </div>
+        )}
 
         {/* Stats Grid */}
         <div className="max-w-6xl mx-auto px-4 py-8">

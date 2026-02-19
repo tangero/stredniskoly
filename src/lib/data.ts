@@ -939,9 +939,17 @@ export async function getExtendedStatsForProgram(programId: string): Promise<Ext
       const min_body = Math.round((school.min_body || 0) / 2);
 
       const jpz_min_actual = school.jpz_min_actual || 0;
-      const cj_at_jpz_min = school.cj_at_jpz_min || 0;
-      const ma_at_jpz_min = school.ma_at_jpz_min || 0;
-      const jpz_min = jpz_min_actual > 0 ? jpz_min_actual : (cj_min + ma_min);
+      // Použít maximum z: skutečné JPZ minimum z dat uchazečů (ale sdílené přes zaměření)
+      // a per-zaměření minimum z CERMAT agregátu. MAX zajistí správnou hodnotu i pro
+      // školy s více zaměřeními stejného kkov (kde jpz_min_actual je sdílené).
+      const jpz_min_from_aggregate = Math.round((school.min_body || 0) / 2);
+      const jpz_min = jpz_min_actual > 0
+        ? Math.max(jpz_min_actual, jpz_min_from_aggregate)
+        : (cj_min + ma_min);
+      // cj_at_jpz_min / ma_at_jpz_min jsou platná jen když jpz_min_actual není ze sdíleného zaměření
+      const actualIsRepresentative = jpz_min_actual > 0 && jpz_min_actual >= jpz_min_from_aggregate;
+      const cj_at_jpz_min = actualIsRepresentative ? (school.cj_at_jpz_min || 0) : 0;
+      const ma_at_jpz_min = actualIsRepresentative ? (school.ma_at_jpz_min || 0) : 0;
       const jpz_prumer = Math.round((cj_prumer + ma_prumer) * 10) / 10;
 
       const extra_body = min_body - jpz_min;

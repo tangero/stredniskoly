@@ -740,10 +740,12 @@ export function TestDifficulty({ cj_prumer, cj_at_jpz_min, ma_prumer, ma_at_jpz_
               </div>
             </div>
 
-            <div className="flex justify-between text-sm">
-              <span className="text-slate-600">Min. přijatý student:</span>
-              <span className="font-medium text-blue-600">{cj_at_jpz_min} b.</span>
-            </div>
+            {cj_at_jpz_min > 0 && (
+              <div className="flex justify-between text-sm">
+                <span className="text-slate-600">Min. přijatý student:</span>
+                <span className="font-medium text-blue-600">{cj_at_jpz_min} b.</span>
+              </div>
+            )}
           </div>
         </div>
 
@@ -765,10 +767,12 @@ export function TestDifficulty({ cj_prumer, cj_at_jpz_min, ma_prumer, ma_at_jpz_
               </div>
             </div>
 
-            <div className="flex justify-between text-sm">
-              <span className="text-slate-600">Min. přijatý student:</span>
-              <span className="font-medium text-blue-600">{ma_at_jpz_min} b.</span>
-            </div>
+            {ma_at_jpz_min > 0 && (
+              <div className="flex justify-between text-sm">
+                <span className="text-slate-600">Min. přijatý student:</span>
+                <span className="font-medium text-blue-600">{ma_at_jpz_min} b.</span>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -779,9 +783,11 @@ export function TestDifficulty({ cj_prumer, cj_at_jpz_min, ma_prumer, ma_at_jpz_
           <span className="text-slate-700">Minimální JPZ pro přijetí:</span>
           <span className="text-xl font-bold text-slate-900">{jpz_min} bodů</span>
         </div>
-        <div className="text-xs text-slate-500 mt-1">
-          (ČJ {cj_at_jpz_min} + MA {ma_at_jpz_min} = {jpz_min} bodů z max. 100)
-        </div>
+        {cj_at_jpz_min > 0 && ma_at_jpz_min > 0 && (
+          <div className="text-xs text-slate-500 mt-1">
+            (ČJ {cj_at_jpz_min} + MA {ma_at_jpz_min} = {jpz_min} bodů z max. 100)
+          </div>
+        )}
       </div>
 
       {/* Interpretace */}
