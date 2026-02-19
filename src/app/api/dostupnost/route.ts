@@ -72,7 +72,6 @@ const PAGE_SIZE = 50;
 const WALK_SPEED_KMPH = 4.0; // Běžná rychlost chůze
 const WALK_ROUTE_MULTIPLIER = 1.3; // Koeficient pro převod vzdušné čáry na reálnou trasu (budovy, zatáčky)
 const MAX_WALK_DISTANCE_KM = 1.5;
-const NEAR_MISS_EXTRA_MINUTES = 5; // Kolik minut navíc zobrazit v "near miss" počítadle
 
 let graphCache: TransitGraphData | null = null;
 let schoolLocationsCache: SchoolLocationsData | null = null;
@@ -402,7 +401,8 @@ function buildStopToSchoolsIndex(
 
 const TRANSFER_PENALTY = 2; // minutes for changing platforms
 const DEFAULT_HEADWAY = 60; // fallback headway when route not in table (high penalty to discourage unknown routes)
-const MAX_WAIT = 15; // cap on waiting time
+const MAX_WAIT = 10; // cap on waiting time (students plan their departure, so 10 min is realistic)
+const NEAR_MISS_EXTRA_MINUTES = 10; // how many minutes beyond limit to show in near miss count
 
 type DijkstraResult = {
   cost: number;
