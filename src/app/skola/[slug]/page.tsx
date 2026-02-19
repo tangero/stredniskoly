@@ -561,7 +561,7 @@ export default async function SchoolDetailPage({ params }: Props) {
     pageInfo.type === 'zamereni'
       ? getExtendedStatsForProgram(program.id)
       : getExtendedSchoolStats(school.id),
-    getSchoolDifficultyProfile(school.id, school.typ),
+    getSchoolDifficultyProfile(program.id, program.typ),
     getTrendDataForProgram(program.id),
     getCSIDataByRedizo(redizo),
     getExtractionsByRedizo(redizo),
@@ -785,7 +785,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             <div className="mb-8">
               <SchoolDifficultyProfile
                 profile={difficultyProfile}
-                schoolType={school.typ}
+                schoolType={program.typ}
                 cjPrumer={extendedStats.cj_prumer}
                 maPrumer={extendedStats.ma_prumer}
                 jpzMin={extendedStats.jpz_min}
