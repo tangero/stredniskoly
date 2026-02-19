@@ -34,6 +34,13 @@
       "source": "GitHub Issue #39",
       "date": "2026-02-19"
     },
+    "600170039": {
+      "type": "update",
+      "title": "Kapacita školy může být zastaralá",
+      "message": "Celkový počet povolených žáků je v systému uveden jako 600 (data INSPIS 2022/23). Škola uvádí, že aktuální kapacita je 720 žáků. Počty přijímaných do jednotlivých oborů (30 míst na zaměření) jsou aktuální data z přijímaček 2025.",
+      "source": "GitHub Issue #27, kontakt: lukas.prochazka@sps-prosek.cz",
+      "date": "2026-02-19"
+    },
     "600170501": {
       "type": "info",
       "title": "Nástavbové obory nejsou v datech",
