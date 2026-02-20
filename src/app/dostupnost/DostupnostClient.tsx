@@ -100,6 +100,11 @@ const TYP_OPTIONS: { value: string; label: string }[] = [
   { value: 'SOU', label: 'SOU' },
 ];
 
+const SUGGEST_MIN_LENGTH = 3;
+const SUGGEST_DEBOUNCE_MS = 320;
+const SUGGEST_CACHE_TTL_MS = 5 * 60 * 1000;
+const SUGGEST_CACHE_MAX_ITEMS = 150;
+
 function loadingStage(seconds: number): string {
   if (seconds < 2) return 'Načítám transit graf a data škol...';
   if (seconds < 5) return 'Spouštím Dijkstra algoritmus na grafu zastávek...';
@@ -222,6 +227,11 @@ export function DostupnostClient() {
   const timeoutTriggeredRef = useRef(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
+  const suggestionCacheRef = useRef<Map<string, {
+    expiresAt: number;
+    suggestions: StopSuggestion[];
+    totalFound: number;
+  }>>(new Map());
   const suggestionsListId = 'stop-suggestions-list';
 
   const totalFound = result?.pagination.totalItems ?? 0;
@@ -251,8 +261,18 @@ export function DostupnostClient() {
 
   useEffect(() => {
     const query = stopQuery.trim();
-    if (query.length < 2 || selectedStop) {
+    if (query.length < SUGGEST_MIN_LENGTH || selectedStop) {
       setSuggestions([]); setSuggestionsTotal(0); setSuggestLoading(false); setShowDropdown(false);
+      return;
+    }
+    const cacheKey = query.toLowerCase();
+    const cached = suggestionCacheRef.current.get(cacheKey);
+    if (cached && cached.expiresAt > Date.now()) {
+      setSuggestions(cached.suggestions);
+      setSuggestionsTotal(cached.totalFound);
+      setHighlightIndex(-1);
+      setShowDropdown(cached.suggestions.length > 0);
+      setSuggestLoading(false);
       return;
     }
     let isCurrent = true;
@@ -268,10 +288,19 @@ export function DostupnostClient() {
         const payload = await response.json() as { suggestions?: StopSuggestion[]; totalFound?: number };
         if (!isCurrent) return;
         const items = Array.isArray(payload.suggestions) ? payload.suggestions : [];
+        if (suggestionCacheRef.current.size >= SUGGEST_CACHE_MAX_ITEMS) {
+          const oldestKey = suggestionCacheRef.current.keys().next().value;
+          if (oldestKey) suggestionCacheRef.current.delete(oldestKey);
+        }
+        suggestionCacheRef.current.set(cacheKey, {
+          expiresAt: Date.now() + SUGGEST_CACHE_TTL_MS,
+          suggestions: items,
+          totalFound: payload.totalFound ?? items.length,
+        });
         setSuggestions(items); setSuggestionsTotal(payload.totalFound ?? items.length);
         setHighlightIndex(-1); setShowDropdown(items.length > 0); setSuggestLoading(false);
       } catch (err) { if (isCurrent && !(err instanceof Error && err.name === 'AbortError')) { setSuggestLoading(false); setError('Nepodařilo se načíst zastávky. Zkuste to znovu.'); } else if (isCurrent) { setSuggestLoading(false); } }
-    }, 150);
+    }, SUGGEST_DEBOUNCE_MS);
     return () => { isCurrent = false; controller.abort(); window.clearTimeout(timer); };
   }, [stopQuery, selectedStop]);
 
@@ -522,7 +551,7 @@ export function DostupnostClient() {
                 )}
               </div>
             )}
-            {suggestLoading && !showDropdown && stopQuery.trim().length >= 2 && !selectedStop && <p className="text-xs text-slate-500 mt-1">Hledám zastávky...</p>}
+            {suggestLoading && !showDropdown && stopQuery.trim().length >= SUGGEST_MIN_LENGTH && !selectedStop && <p className="text-xs text-slate-500 mt-1">Hledám zastávky...</p>}
           </div>
 
           <label className="md:col-span-2">

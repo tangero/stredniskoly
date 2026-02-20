@@ -167,6 +167,11 @@ function admissionRowClass(band: ReachableSchool['admissionBand']): string {
   return 'bg-slate-50/40';
 }
 
+const ADDRESS_SUGGEST_MIN_LENGTH = 3;
+const ADDRESS_SUGGEST_DEBOUNCE_MS = 350;
+const ADDRESS_SUGGEST_CACHE_TTL_MS = 5 * 60 * 1000;
+const ADDRESS_SUGGEST_CACHE_MAX_ITEMS = 150;
+
 export function PrahaDostupnostClient() {
   const [address, setAddress] = useState('');
   const [maxMinutes, setMaxMinutes] = useState(30);
@@ -185,6 +190,10 @@ export function PrahaDostupnostClient() {
   const abortRef = useRef<AbortController | null>(null);
   const timeoutRef = useRef<number | null>(null);
   const timeoutTriggeredRef = useRef(false);
+  const addressSuggestCacheRef = useRef<Map<string, {
+    expiresAt: number;
+    suggestions: Array<{ label: string; value: string }>;
+  }>>(new Map());
 
   const totalFound = result?.pagination.totalItems ?? 0;
 
@@ -217,8 +226,15 @@ export function PrahaDostupnostClient() {
 
   useEffect(() => {
     const query = address.trim();
-    if (query.length < 2) {
+    if (query.length < ADDRESS_SUGGEST_MIN_LENGTH) {
       setAddressSuggestions([]);
+      return;
+    }
+
+    const cacheKey = `${query.toLowerCase()}|${coverageMode}`;
+    const cached = addressSuggestCacheRef.current.get(cacheKey);
+    if (cached && cached.expiresAt > Date.now()) {
+      setAddressSuggestions(cached.suggestions);
       return;
     }
 
@@ -234,11 +250,20 @@ export function PrahaDostupnostClient() {
         });
         if (!response.ok) return;
         const payload = await response.json() as { suggestions?: Array<{ label: string; value: string }> };
-        setAddressSuggestions(Array.isArray(payload.suggestions) ? payload.suggestions : []);
+        const suggestions = Array.isArray(payload.suggestions) ? payload.suggestions : [];
+        if (addressSuggestCacheRef.current.size >= ADDRESS_SUGGEST_CACHE_MAX_ITEMS) {
+          const oldestKey = addressSuggestCacheRef.current.keys().next().value;
+          if (oldestKey) addressSuggestCacheRef.current.delete(oldestKey);
+        }
+        addressSuggestCacheRef.current.set(cacheKey, {
+          expiresAt: Date.now() + ADDRESS_SUGGEST_CACHE_TTL_MS,
+          suggestions,
+        });
+        setAddressSuggestions(suggestions);
       } catch {
         // Ignore suggest errors, main search keeps working.
       }
-    }, 220);
+    }, ADDRESS_SUGGEST_DEBOUNCE_MS);
 
     return () => {
       controller.abort();

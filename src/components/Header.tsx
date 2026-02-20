@@ -19,6 +19,18 @@ interface Kraj {
   nazev: string;
 }
 
+const SEARCH_MIN_LENGTH = 3;
+const SEARCH_DEBOUNCE_MS = 450;
+const SEARCH_CACHE_TTL_MS = 5 * 60 * 1000;
+const SEARCH_CACHE_MAX_ITEMS = 100;
+
+function normalizeText(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -28,6 +40,7 @@ export function Header() {
   const [isLoading, setIsLoading] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const searchDropdownRef = useRef<HTMLDivElement>(null);
+  const searchCacheRef = useRef<Map<string, { expiresAt: number; results: SearchResult[] }>>(new Map());
   const router = useRouter();
 
   const navLinks = [
@@ -54,28 +67,48 @@ export function Header() {
 
   // Vyhledávání s debounce
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (!searchQuery || searchQuery.length < 2) {
-        setSearchResults([]);
-        setIsSearchOpen(false);
-        setIsLoading(false);
-        return;
-      }
+    const query = searchQuery.trim();
+    if (!query || query.length < SEARCH_MIN_LENGTH) return;
 
-      setIsLoading(true);
-      fetch(`/api/schools/search?search=${encodeURIComponent(searchQuery)}&limit=10`)
+    const cacheKey = normalizeText(query);
+    const cached = searchCacheRef.current.get(cacheKey);
+    if (cached && cached.expiresAt > Date.now()) {
+      setSearchResults(cached.results);
+      setIsSearchOpen(cached.results.length > 0);
+      setIsLoading(false);
+      return;
+    }
+
+    setIsLoading(true);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => {
+      fetch(`/api/schools/search?search=${encodeURIComponent(query)}&limit=10`, { signal: controller.signal })
         .then(res => res.json())
         .then(data => {
-          if (data.schools) {
-            setSearchResults(data.schools);
-            setIsSearchOpen(true);
+          if (!Array.isArray(data.schools)) return;
+          const results = data.schools as SearchResult[];
+          if (searchCacheRef.current.size >= SEARCH_CACHE_MAX_ITEMS) {
+            const oldestKey = searchCacheRef.current.keys().next().value;
+            if (oldestKey) searchCacheRef.current.delete(oldestKey);
           }
+          searchCacheRef.current.set(cacheKey, {
+            expiresAt: Date.now() + SEARCH_CACHE_TTL_MS,
+            results,
+          });
+          setSearchResults(results);
+          setIsSearchOpen(results.length > 0);
         })
-        .catch(err => console.error('Chyba při vyhledávání:', err))
+        .catch(err => {
+          if (err instanceof Error && err.name === 'AbortError') return;
+          console.error('Chyba při vyhledávání:', err);
+        })
         .finally(() => setIsLoading(false));
-    }, 300);
+    }, SEARCH_DEBOUNCE_MS);
 
-    return () => clearTimeout(timeoutId);
+    return () => {
+      controller.abort();
+      clearTimeout(timeoutId);
+    };
   }, [searchQuery]);
 
   // Zavřít dropdown při kliknutí mimo
@@ -94,17 +127,9 @@ export function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Normalizace textu pro porovnání
-  const normalizeText = (text: string) => {
-    return text
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '');
-  };
-
   // Filtrovat kraje podle hledání
   const matchedKraje = useMemo(() => {
-    if (!searchQuery || searchQuery.length < 2) return [];
+    if (!searchQuery || searchQuery.length < SEARCH_MIN_LENGTH) return [];
     const q = normalizeText(searchQuery);
     return kraje
       .filter(k => {
@@ -135,7 +160,18 @@ export function Header() {
     if (searchQuery.trim()) {
       router.push(`/skoly?search=${encodeURIComponent(searchQuery)}`);
       setIsSearchOpen(false);
+      setSearchResults([]);
+      setIsLoading(false);
       setSearchQuery('');
+    }
+  };
+
+  const handleSearchQueryChange = (value: string) => {
+    setSearchQuery(value);
+    if (value.trim().length < SEARCH_MIN_LENGTH) {
+      setSearchResults([]);
+      setIsSearchOpen(false);
+      setIsLoading(false);
     }
   };
 
@@ -247,8 +283,8 @@ export function Header() {
               ref={searchInputRef}
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onFocus={() => searchQuery.length >= 2 && setIsSearchOpen(true)}
+              onChange={(e) => handleSearchQueryChange(e.target.value)}
+              onFocus={() => searchQuery.trim().length >= SEARCH_MIN_LENGTH && setIsSearchOpen(true)}
               onKeyDown={handleKeyDown}
               placeholder="Hledej školu, obor, město nebo kraj..."
               className="hs-search flex-1 px-4 py-2.5 border-none outline-none"
@@ -274,7 +310,7 @@ export function Header() {
           </div>
 
           {/* Dropdown s výsledky */}
-          {isSearchOpen && searchQuery.length >= 2 && (searchResults.length > 0 || matchedKraje.length > 0) && (
+          {isSearchOpen && searchQuery.trim().length >= SEARCH_MIN_LENGTH && (searchResults.length > 0 || matchedKraje.length > 0) && (
             <div
               ref={searchDropdownRef}
               className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-slate-200 overflow-hidden max-h-[400px] overflow-y-auto"
@@ -341,7 +377,7 @@ export function Header() {
           )}
 
           {/* Žádné výsledky */}
-          {isSearchOpen && searchQuery.length >= 2 && !isLoading && searchResults.length === 0 && matchedKraje.length === 0 && (
+          {isSearchOpen && searchQuery.trim().length >= SEARCH_MIN_LENGTH && !isLoading && searchResults.length === 0 && matchedKraje.length === 0 && (
             <div className="absolute z-50 w-full mt-2 bg-white rounded-lg shadow-xl border border-slate-200 p-6 text-center">
               <div className="text-slate-400 text-lg mb-2">Nic nenalezeno</div>
               <div className="text-sm text-slate-500">Zkuste jiný výraz nebo zkontrolujte pravopis</div>
