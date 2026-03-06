@@ -51,6 +51,21 @@ interface SchoolFullData {
   index_poptavky_2024?: number;
 }
 
+type DelkaFilter = 'all' | '4' | '6' | '8';
+
+function delkaLabel(delka: number): string {
+  return `${delka}leté`;
+}
+
+function delkaBadgeColor(delka: number): string {
+  switch (delka) {
+    case 4: return 'bg-blue-100 text-blue-700';
+    case 6: return 'bg-purple-100 text-purple-700';
+    case 8: return 'bg-emerald-100 text-emerald-700';
+    default: return 'bg-slate-100 text-slate-600';
+  }
+}
+
 // Komponenta pro vyhledávání školy
 function SchoolSearchInput({
   priority,
@@ -67,11 +82,12 @@ function SchoolSearchInput({
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [delkaFilter, setDelkaFilter] = useState<DelkaFilter>('all');
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const abortRef = useRef<AbortController | null>(null);
 
-  const searchSchools = useCallback(async (searchQuery: string) => {
+  const searchSchools = useCallback(async (searchQuery: string, delka: DelkaFilter) => {
     if (searchQuery.length < 2) {
       setResults([]);
       return;
@@ -83,7 +99,11 @@ function SchoolSearchInput({
 
     setIsLoading(true);
     try {
-      const res = await fetch(`/api/chances?search=${encodeURIComponent(searchQuery)}`, {
+      let url = `/api/chances?search=${encodeURIComponent(searchQuery)}`;
+      if (delka !== 'all') {
+        url += `&delka=${delka}`;
+      }
+      const res = await fetch(url, {
         signal: controller.signal,
       });
       if (res.ok) {
@@ -99,9 +119,9 @@ function SchoolSearchInput({
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => searchSchools(query), 300);
+    const timer = setTimeout(() => searchSchools(query, delkaFilter), 300);
     return () => clearTimeout(timer);
-  }, [query, searchSchools]);
+  }, [query, delkaFilter, searchSchools]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -124,10 +144,15 @@ function SchoolSearchInput({
               </span>
               <h4 className="font-semibold text-slate-900 truncate">{selectedSchool.nazev_display}</h4>
             </div>
-            <p className="text-sm text-slate-600 ml-8">
-              {selectedSchool.obor}{selectedSchool.zamereni ? ` – ${selectedSchool.zamereni}` : ''}
-              <span className="text-slate-400"> · {selectedSchool.obec}</span>
-            </p>
+            <div className="ml-8 mt-1 flex items-center gap-2">
+              <span className={`inline-flex px-2 py-0.5 rounded text-[11px] font-bold ${delkaBadgeColor(selectedSchool.delka_studia)}`}>
+                {delkaLabel(selectedSchool.delka_studia)}
+              </span>
+              <span className="text-sm font-semibold text-slate-800">
+                {selectedSchool.obor}{selectedSchool.zamereni ? ` – ${selectedSchool.zamereni}` : ''}
+              </span>
+              <span className="text-sm text-slate-400">{selectedSchool.obec}</span>
+            </div>
             <div className="flex gap-4 mt-2 ml-8 text-xs text-slate-500">
               <span>{selectedSchool.prihlasky_2026} přihlášek</span>
               <span>{selectedSchool.kapacita_2026} míst</span>
@@ -146,33 +171,58 @@ function SchoolSearchInput({
     );
   }
 
+  const filterButtons: { value: DelkaFilter; label: string }[] = [
+    { value: 'all', label: 'Vše' },
+    { value: '4', label: '4leté' },
+    { value: '6', label: '6leté' },
+    { value: '8', label: '8leté' },
+  ];
+
   return (
     <div className="relative" ref={dropdownRef}>
       <div className="flex items-center gap-2">
         <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-300 text-white text-xs font-bold flex-shrink-0">
           {priority}
         </span>
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-          <input
-            ref={inputRef}
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onFocus={() => results.length > 0 && setIsOpen(true)}
-            placeholder={`Hledejte ${priority}. školu...`}
-            className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          />
-          {isLoading && (
-            <div className="absolute right-3 top-1/2 -translate-y-1/2">
-              <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-            </div>
-          )}
+        <div className="flex-1">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <input
+              ref={inputRef}
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onFocus={() => results.length > 0 && setIsOpen(true)}
+              placeholder={`Hledejte ${priority}. školu...`}
+              className="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+            {isLoading && (
+              <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                <div className="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+              </div>
+            )}
+          </div>
+          {/* Filtry délky studia */}
+          <div className="flex gap-1.5 mt-2 ml-0.5">
+            {filterButtons.map((btn) => (
+              <button
+                key={btn.value}
+                onClick={() => setDelkaFilter(btn.value)}
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                  delkaFilter === btn.value
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {btn.label}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
       {isOpen && results.length > 0 && (
-        <div className="absolute z-50 left-8 right-0 mt-1 bg-white border border-slate-200 rounded-lg shadow-xl max-h-72 overflow-y-auto">
+        <div className="absolute z-50 left-8 right-0 mt-1 bg-white border border-slate-200 rounded-lg shadow-xl max-h-80 overflow-y-auto">
           {results.map((school) => (
             <button
               key={school.id}
@@ -182,13 +232,23 @@ function SchoolSearchInput({
                 setResults([]);
                 setIsOpen(false);
               }}
-              className="w-full text-left px-4 py-3 hover:bg-blue-50 border-b border-slate-50 last:border-b-0 transition-colors"
+              className="w-full text-left px-4 py-3 hover:bg-blue-50 border-b border-slate-100 last:border-b-0 transition-colors"
             >
               <div className="font-medium text-sm text-slate-900">{school.nazev_display}</div>
-              <div className="text-xs text-slate-500 mt-0.5">
-                {school.obor}{school.zamereni ? ` – ${school.zamereni}` : ''}
-                <span className="text-slate-400"> · {school.obec}</span>
-                <span className="ml-2 font-medium">{school.index_poptavky.toFixed(1)}× poptávka</span>
+              <div className="flex items-center gap-1.5 mt-1">
+                <span className={`inline-flex px-1.5 py-0.5 rounded text-[10px] font-bold leading-none ${delkaBadgeColor(school.delka_studia)}`}>
+                  {delkaLabel(school.delka_studia)}
+                </span>
+                <span className="text-sm font-semibold text-slate-700">
+                  {school.obor}{school.zamereni ? ` – ${school.zamereni}` : ''}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-slate-400 mt-1">
+                <span>{school.obec}</span>
+                <span>·</span>
+                <span>{school.prihlasky} přihlášek</span>
+                <span>·</span>
+                <span className="font-medium text-slate-500">{school.index_poptavky.toFixed(1)}× poptávka</span>
               </div>
             </button>
           ))}
@@ -198,6 +258,9 @@ function SchoolSearchInput({
       {isOpen && query.length >= 2 && results.length === 0 && !isLoading && (
         <div className="absolute z-50 left-8 right-0 mt-1 bg-white border border-slate-200 rounded-lg shadow-xl p-4 text-sm text-slate-500 text-center">
           Žádné výsledky pro &ldquo;{query}&rdquo;
+          {delkaFilter !== 'all' && (
+            <span> (filtr: {delkaFilter}leté studium)</span>
+          )}
         </div>
       )}
     </div>

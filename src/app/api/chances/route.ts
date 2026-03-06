@@ -9,6 +9,7 @@ import { createSlug } from '@/lib/utils';
 export async function GET(request: NextRequest) {
   const search = request.nextUrl.searchParams.get('search') || '';
   const id = request.nextUrl.searchParams.get('id');
+  const delka = request.nextUrl.searchParams.get('delka');
 
   // Pokud je zadáno ID, vrátit detailní data pro kalkulačku
   if (id) {
@@ -77,8 +78,12 @@ export async function GET(request: NextRequest) {
     .replace(/[\u0300-\u036f]/g, '');
 
   // Filtrovat školy
+  const delkaNum = delka ? parseInt(delka, 10) : null;
+
   const results = schools2026
     .filter(s => {
+      // Filtr délky studia
+      if (delkaNum && s.delka_studia !== delkaNum) return false;
       const text = `${s.nazev} ${s.nazev_display} ${s.obor} ${s.zamereni} ${s.obec}`
         .toLowerCase()
         .normalize('NFD')
