@@ -50,8 +50,23 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          {/* Průvodce link */}
+          {/* Novinka: přihlášky 2026 */}
           <div className="mt-10 pt-6" style={{ borderTop: '1px solid #e0e6ed' }}>
+            <Link
+              href="/moje-sance"
+              className="inline-flex items-center gap-2 text-base no-underline group font-semibold"
+              style={{ color: '#0074e4' }}
+            >
+              <span>Přihlášky 2026 jsou venku – zjistěte své šance na přijetí</span>
+              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </Link>
+            <p className="mt-1 text-sm" style={{ color: '#818c99' }}>
+              156 409 uchazečů podalo 425 279 přihlášek. Porovnejte konkurenci na vašich školách.
+            </p>
+          </div>
+
+          {/* Průvodce link */}
+          <div className="mt-6 pt-6" style={{ borderTop: '1px solid #e0e6ed' }}>
             <Link
               href="/jak-vybrat-skolu"
               className="inline-flex items-center gap-2 text-base no-underline group"
@@ -85,7 +100,7 @@ export default async function HomePage() {
               <div className="text-sm" style={{ color: '#818c99' }}>Krajů ČR</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold" style={{ color: '#28313b' }}>2024-2025</div>
+              <div className="text-3xl md:text-4xl font-bold" style={{ color: '#28313b' }}>2024-2026</div>
               <div className="text-sm" style={{ color: '#818c99' }}>Data z let</div>
             </div>
           </div>

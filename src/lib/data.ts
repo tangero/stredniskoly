@@ -1478,6 +1478,165 @@ export async function getInspisDataByRedizo(redizo: string): Promise<SchoolInspi
 }
 
 // ============================================================================
+// Data přihlášek 2026 (1. kolo) – SAMOSTATNÝ soubor applications_2026.json
+// ============================================================================
+
+/**
+ * Sloučený záznam: dynamická data 2026 + statická data joinnutá z 2025
+ */
+export interface School2026Data {
+  id: string;
+  redizo: string;
+  nazev: string;
+  nazev_display: string;
+  obor: string;
+  zamereni: string;
+  kkov: string;
+  typ: string;
+  delka_studia: number;
+  obec: string;
+  kraj: string;
+  kraj_kod: string;
+  kapacita: number;
+  prihlasky: number;
+  prihlasky_priority: number[];
+  index_poptavky: number;
+}
+
+/** Raw záznam z applications_2026.json (jen dynamická data per obor) */
+interface Raw2026Record {
+  id: string;
+  kapacita: number;
+  prihlasky: number;
+  pp: number[];   // prihlasky_priority (zkrácený klíč)
+  idx: number;    // index_poptavky (zkrácený klíč)
+}
+
+// Cache
+let raw2026Cache: Raw2026Record[] | null = null;
+let schools2026Cache: School2026Data[] | null = null;
+
+/**
+ * Načte raw data 2026 z applications_2026.json
+ */
+async function getRaw2026Data(): Promise<Raw2026Record[]> {
+  if (raw2026Cache) return raw2026Cache;
+  try {
+    const filePath = path.join(dataDir, 'applications_2026.json');
+    const content = await fs.readFile(filePath, 'utf-8');
+    const parsed = JSON.parse(content);
+    raw2026Cache = parsed.data || [];
+  } catch {
+    raw2026Cache = [];
+  }
+  return raw2026Cache!;
+}
+
+/**
+ * Načte data přihlášek 2026 obohacená o statická data ze schools_data.json (2025)
+ * Každý obor/zaměření má vlastní záznam s vlastními přihláškami.
+ */
+export async function getSchools2026Data(): Promise<School2026Data[]> {
+  if (schools2026Cache) return schools2026Cache;
+
+  const [rawRecords, schoolsDataContent] = await Promise.all([
+    getRaw2026Data(),
+    fs.readFile(path.join(dataDir, 'schools_data.json'), 'utf-8'),
+  ]);
+
+  const schoolsData = JSON.parse(schoolsDataContent);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const schools2025: any[] = schoolsData['2025'] || [];
+
+  // Index statických dat 2025 podle ID (per obor/zaměření)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const staticIndex = new Map<string, any>();
+  for (const s of schools2025) {
+    staticIndex.set(s.id, s);
+  }
+
+  schools2026Cache = rawRecords.map(r => {
+    const s = staticIndex.get(r.id);
+    return {
+      id: r.id,
+      redizo: s?.redizo || r.id.split('_')[0],
+      nazev: s?.nazev || '',
+      nazev_display: s?.nazev_display || s?.nazev || '',
+      obor: s?.obor || '',
+      zamereni: s?.zamereni || '',
+      kkov: s?.kkov || '',
+      typ: s?.typ || '',
+      delka_studia: s?.delka_studia || 4,
+      obec: s?.obec || '',
+      kraj: s?.kraj || '',
+      kraj_kod: s?.kraj_kod || '',
+      kapacita: r.kapacita,
+      prihlasky: r.prihlasky,
+      prihlasky_priority: r.pp,
+      index_poptavky: r.idx,
+    };
+  });
+
+  return schools2026Cache;
+}
+
+/**
+ * Získá data 2026 pro konkrétní školu podle ID
+ */
+export async function get2026DataById(schoolId: string): Promise<School2026Data | null> {
+  const allData = await getSchools2026Data();
+  // Zkusit přesné ID, pak baseId
+  const baseId = schoolId.split('_').slice(0, 2).join('_');
+  return allData.find(s => s.id === schoolId) ||
+         allData.find(s => s.id.startsWith(baseId)) ||
+         null;
+}
+
+/**
+ * Získá data 2026 pro školu podle REDIZO
+ */
+export async function get2026DataByRedizo(redizo: string): Promise<School2026Data[]> {
+  const allData = await getSchools2026Data();
+  return allData.filter(s => s.redizo === redizo);
+}
+
+/**
+ * Vrátí kombinovaná data pro kalkulačku šancí
+ * Spojí data 2026, 2025 a 2024 pro daný program
+ */
+export async function getChancesData(programId: string): Promise<{
+  data2026: School2026Data | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  data2025: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  data2024: any;
+} | null> {
+  const [data2026, schoolsDataContent] = await Promise.all([
+    get2026DataById(programId),
+    fs.readFile(path.join(dataDir, 'schools_data.json'), 'utf-8'),
+  ]);
+
+  const schoolsData = JSON.parse(schoolsDataContent);
+  const baseId = programId.split('_').slice(0, 2).join('_');
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const find = (yearData: any[]) => {
+    if (!yearData) return null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return yearData.find((s: any) => s.id === programId) ||
+           // eslint-disable-next-line @typescript-eslint/no-explicit-any
+           yearData.find((s: any) => s.id.startsWith(baseId)) ||
+           null;
+  };
+
+  return {
+    data2026,
+    data2025: find(schoolsData['2025']),
+    data2024: find(schoolsData['2024']),
+  };
+}
+
+// ============================================================================
 // ČŠI (Česká školní inspekce) Data
 // ============================================================================
 

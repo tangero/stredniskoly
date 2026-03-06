@@ -6,7 +6,8 @@ import { Footer } from '@/components/Footer';
 import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution, ProgramTabs } from '@/components/SchoolDetailClient';
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolInfoSection } from '@/components/school-profile/SchoolInfoSection';
-import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
+import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, get2026DataByRedizo, type School2026Data } from '@/lib/data';
+import { Applications2026Banner } from '@/components/Applications2026Banner';
 import { getNoteForSchool } from '@/lib/school-notes';
 import { SchoolNote } from '@/components/SchoolNote';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug } from '@/lib/utils';
@@ -245,10 +246,11 @@ export default async function SchoolDetailPage({ params }: Props) {
     if (!overview) notFound();
 
     // Načíst data ČŠI a AI extrakce
-    const [csiData, extractions, inspis] = await Promise.all([
+    const [csiData, extractions, inspis, data2026] = await Promise.all([
       getCSIDataByRedizo(redizo),
       getExtractionsByRedizo(redizo),
       inspisEnabled ? getInspisDataByRedizo(redizo) : Promise.resolve(null),
+      get2026DataByRedizo(redizo),
     ]);
 
     // Seřadit programy podle min_body (nejobtížnější první)
@@ -338,6 +340,15 @@ export default async function SchoolDetailPage({ params }: Props) {
 
             {/* Obsah */}
             <div className="max-w-6xl mx-auto px-4 py-8 space-y-8">
+              {/* Banner přihlášek 2026 */}
+              {data2026.length > 0 && (
+                <Applications2026Banner
+                  data2026={data2026}
+                  totalKapacita2025={totalKapacita}
+                  totalPrihlasky2025={totalPrihlasky}
+                />
+              )}
+
               {/* Priority Cards */}
               <PriorityCardsGrid priorities={priorities} />
 
@@ -468,6 +479,15 @@ export default async function SchoolDetailPage({ params }: Props) {
               </div>
             </div>
 
+            {/* Banner přihlášek 2026 */}
+            {data2026.length > 0 && (
+              <Applications2026Banner
+                data2026={data2026}
+                totalKapacita2025={totalKapacita}
+                totalPrihlasky2025={totalPrihlasky}
+              />
+            )}
+
             {/* Seznam oborů */}
             <h2 className="text-2xl font-bold mb-6">Obory a zaměření</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -555,6 +575,14 @@ export default async function SchoolDetailPage({ params }: Props) {
   const category = categoryColors[school.category_code];
 
   // Načíst další data - pro zaměření použít specifickou funkci
+  // Načíst data 2026
+  const data2026ForDetail = await get2026DataByRedizo(redizo);
+  const program2026 = data2026ForDetail.find(d => {
+    const baseId = d.id.split('_').slice(0, 2).join('_');
+    const programBaseId = program.id.split('_').slice(0, 2).join('_');
+    return baseId === programBaseId;
+  });
+
   const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData, extractions, programNote, schoolNote] = await Promise.all([
     getProgramsByRedizo(redizo),
     getSchoolDetail(program.id),
@@ -700,6 +728,18 @@ export default async function SchoolDetailPage({ params }: Props) {
         {schoolNoteToShow && (
           <div className="max-w-6xl mx-auto px-4 pt-6">
             <SchoolNote note={schoolNoteToShow} />
+          </div>
+        )}
+
+        {/* Banner přihlášek 2026 */}
+        {program2026 && (
+          <div className="max-w-6xl mx-auto px-4 pt-8">
+            <Applications2026Banner
+              data2026={[program2026]}
+              totalKapacita2025={program.kapacita}
+              totalPrihlasky2025={program.prihlasky}
+              singleProgram
+            />
           </div>
         )}
 
