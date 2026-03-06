@@ -1478,9 +1478,12 @@ export async function getInspisDataByRedizo(redizo: string): Promise<SchoolInspi
 }
 
 // ============================================================================
-// Data přihlášek 2026 (1. kolo)
+// Data přihlášek 2026 (1. kolo) – SAMOSTATNÝ soubor applications_2026.json
 // ============================================================================
 
+/**
+ * Sloučený záznam: dynamická data 2026 + statická data joinnutá z 2025
+ */
 export interface School2026Data {
   id: string;
   redizo: string;
@@ -1500,21 +1503,79 @@ export interface School2026Data {
   index_poptavky: number;
 }
 
-// Cache pro data 2026
+/** Raw záznam z applications_2026.json (jen dynamická data per obor) */
+interface Raw2026Record {
+  id: string;
+  kapacita: number;
+  prihlasky: number;
+  pp: number[];   // prihlasky_priority (zkrácený klíč)
+  idx: number;    // index_poptavky (zkrácený klíč)
+}
+
+// Cache
+let raw2026Cache: Raw2026Record[] | null = null;
 let schools2026Cache: School2026Data[] | null = null;
 
 /**
- * Načte data přihlášek 2026 z schools_data.json
+ * Načte raw data 2026 z applications_2026.json
+ */
+async function getRaw2026Data(): Promise<Raw2026Record[]> {
+  if (raw2026Cache) return raw2026Cache;
+  try {
+    const filePath = path.join(dataDir, 'applications_2026.json');
+    const content = await fs.readFile(filePath, 'utf-8');
+    const parsed = JSON.parse(content);
+    raw2026Cache = parsed.data || [];
+  } catch {
+    raw2026Cache = [];
+  }
+  return raw2026Cache!;
+}
+
+/**
+ * Načte data přihlášek 2026 obohacená o statická data ze schools_data.json (2025)
+ * Každý obor/zaměření má vlastní záznam s vlastními přihláškami.
  */
 export async function getSchools2026Data(): Promise<School2026Data[]> {
   if (schools2026Cache) return schools2026Cache;
 
-  const filePath = path.join(dataDir, 'schools_data.json');
-  const content = await fs.readFile(filePath, 'utf-8');
-  const data = JSON.parse(content);
+  const [rawRecords, schoolsDataContent] = await Promise.all([
+    getRaw2026Data(),
+    fs.readFile(path.join(dataDir, 'schools_data.json'), 'utf-8'),
+  ]);
 
-  schools2026Cache = data['2026'] || [];
-  return schools2026Cache!;
+  const schoolsData = JSON.parse(schoolsDataContent);
+  const schools2025: any[] = schoolsData['2025'] || [];
+
+  // Index statických dat 2025 podle ID (per obor/zaměření)
+  const staticIndex = new Map<string, any>();
+  for (const s of schools2025) {
+    staticIndex.set(s.id, s);
+  }
+
+  schools2026Cache = rawRecords.map(r => {
+    const s = staticIndex.get(r.id);
+    return {
+      id: r.id,
+      redizo: s?.redizo || r.id.split('_')[0],
+      nazev: s?.nazev || '',
+      nazev_display: s?.nazev_display || s?.nazev || '',
+      obor: s?.obor || '',
+      zamereni: s?.zamereni || '',
+      kkov: s?.kkov || '',
+      typ: s?.typ || '',
+      delka_studia: s?.delka_studia || 4,
+      obec: s?.obec || '',
+      kraj: s?.kraj || '',
+      kraj_kod: s?.kraj_kod || '',
+      kapacita: r.kapacita,
+      prihlasky: r.prihlasky,
+      prihlasky_priority: r.pp,
+      index_poptavky: r.idx,
+    };
+  });
+
+  return schools2026Cache;
 }
 
 /**
@@ -1546,10 +1607,12 @@ export async function getChancesData(programId: string): Promise<{
   data2025: any;
   data2024: any;
 } | null> {
-  const filePath = path.join(dataDir, 'schools_data.json');
-  const content = await fs.readFile(filePath, 'utf-8');
-  const data = JSON.parse(content);
+  const [data2026, schoolsDataContent] = await Promise.all([
+    get2026DataById(programId),
+    fs.readFile(path.join(dataDir, 'schools_data.json'), 'utf-8'),
+  ]);
 
+  const schoolsData = JSON.parse(schoolsDataContent);
   const baseId = programId.split('_').slice(0, 2).join('_');
 
   const find = (yearData: any[]) => {
@@ -1560,55 +1623,10 @@ export async function getChancesData(programId: string): Promise<{
   };
 
   return {
-    data2026: find(data['2026']),
-    data2025: find(data['2025']),
-    data2024: find(data['2024']),
+    data2026,
+    data2025: find(schoolsData['2025']),
+    data2024: find(schoolsData['2024']),
   };
-}
-
-/**
- * Získá všechna data 2026 pro vyhledávání (pro API endpoint)
- */
-export async function getSchools2026ForSearch(): Promise<Array<{
-  id: string;
-  nazev: string;
-  nazev_display: string;
-  obor: string;
-  zamereni: string;
-  obec: string;
-  kraj: string;
-  typ: string;
-  delka_studia: number;
-  kapacita: number;
-  prihlasky: number;
-  index_poptavky: number;
-  slug: string;
-}>> {
-  const schools2026 = await getSchools2026Data();
-  const allSchools = await getAllSchools();
-
-  // Vytvořit slug lookup
-  const slugMap = new Map<string, string>();
-  for (const school of allSchools) {
-    const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
-    slugMap.set(school.id, slug);
-  }
-
-  return schools2026.map(s => ({
-    id: s.id,
-    nazev: s.nazev,
-    nazev_display: s.nazev_display,
-    obor: s.obor,
-    zamereni: s.zamereni,
-    obec: s.obec,
-    kraj: s.kraj,
-    typ: s.typ,
-    delka_studia: s.delka_studia,
-    kapacita: s.kapacita,
-    prihlasky: s.prihlasky,
-    index_poptavky: s.index_poptavky,
-    slug: slugMap.get(s.id.split('_').slice(0, 2).join('_')) || s.id,
-  }));
 }
 
 // ============================================================================
