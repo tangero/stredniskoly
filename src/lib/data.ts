@@ -1478,6 +1478,140 @@ export async function getInspisDataByRedizo(redizo: string): Promise<SchoolInspi
 }
 
 // ============================================================================
+// Data přihlášek 2026 (1. kolo)
+// ============================================================================
+
+export interface School2026Data {
+  id: string;
+  redizo: string;
+  nazev: string;
+  nazev_display: string;
+  obor: string;
+  zamereni: string;
+  kkov: string;
+  typ: string;
+  delka_studia: number;
+  obec: string;
+  kraj: string;
+  kraj_kod: string;
+  kapacita: number;
+  prihlasky: number;
+  prihlasky_priority: number[];
+  index_poptavky: number;
+}
+
+// Cache pro data 2026
+let schools2026Cache: School2026Data[] | null = null;
+
+/**
+ * Načte data přihlášek 2026 z schools_data.json
+ */
+export async function getSchools2026Data(): Promise<School2026Data[]> {
+  if (schools2026Cache) return schools2026Cache;
+
+  const filePath = path.join(dataDir, 'schools_data.json');
+  const content = await fs.readFile(filePath, 'utf-8');
+  const data = JSON.parse(content);
+
+  schools2026Cache = data['2026'] || [];
+  return schools2026Cache!;
+}
+
+/**
+ * Získá data 2026 pro konkrétní školu podle ID
+ */
+export async function get2026DataById(schoolId: string): Promise<School2026Data | null> {
+  const allData = await getSchools2026Data();
+  // Zkusit přesné ID, pak baseId
+  const baseId = schoolId.split('_').slice(0, 2).join('_');
+  return allData.find(s => s.id === schoolId) ||
+         allData.find(s => s.id.startsWith(baseId)) ||
+         null;
+}
+
+/**
+ * Získá data 2026 pro školu podle REDIZO
+ */
+export async function get2026DataByRedizo(redizo: string): Promise<School2026Data[]> {
+  const allData = await getSchools2026Data();
+  return allData.filter(s => s.redizo === redizo);
+}
+
+/**
+ * Vrátí kombinovaná data pro kalkulačku šancí
+ * Spojí data 2026, 2025 a 2024 pro daný program
+ */
+export async function getChancesData(programId: string): Promise<{
+  data2026: School2026Data | null;
+  data2025: any;
+  data2024: any;
+} | null> {
+  const filePath = path.join(dataDir, 'schools_data.json');
+  const content = await fs.readFile(filePath, 'utf-8');
+  const data = JSON.parse(content);
+
+  const baseId = programId.split('_').slice(0, 2).join('_');
+
+  const find = (yearData: any[]) => {
+    if (!yearData) return null;
+    return yearData.find((s: any) => s.id === programId) ||
+           yearData.find((s: any) => s.id.startsWith(baseId)) ||
+           null;
+  };
+
+  return {
+    data2026: find(data['2026']),
+    data2025: find(data['2025']),
+    data2024: find(data['2024']),
+  };
+}
+
+/**
+ * Získá všechna data 2026 pro vyhledávání (pro API endpoint)
+ */
+export async function getSchools2026ForSearch(): Promise<Array<{
+  id: string;
+  nazev: string;
+  nazev_display: string;
+  obor: string;
+  zamereni: string;
+  obec: string;
+  kraj: string;
+  typ: string;
+  delka_studia: number;
+  kapacita: number;
+  prihlasky: number;
+  index_poptavky: number;
+  slug: string;
+}>> {
+  const schools2026 = await getSchools2026Data();
+  const allSchools = await getAllSchools();
+
+  // Vytvořit slug lookup
+  const slugMap = new Map<string, string>();
+  for (const school of allSchools) {
+    const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+    slugMap.set(school.id, slug);
+  }
+
+  return schools2026.map(s => ({
+    id: s.id,
+    nazev: s.nazev,
+    nazev_display: s.nazev_display,
+    obor: s.obor,
+    zamereni: s.zamereni,
+    obec: s.obec,
+    kraj: s.kraj,
+    typ: s.typ,
+    delka_studia: s.delka_studia,
+    kapacita: s.kapacita,
+    prihlasky: s.prihlasky,
+    index_poptavky: s.index_poptavky,
+    slug: slugMap.get(s.id.split('_').slice(0, 2).join('_')) || s.id,
+  }));
+}
+
+// ============================================================================
 // ČŠI (Česká školní inspekce) Data
 // ============================================================================
 
