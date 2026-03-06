@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { Search, TrendingUp, TrendingDown, Minus, Users, Target, BarChart3, Shield, AlertTriangle, CheckCircle, Info, ChevronDown, X } from 'lucide-react';
+import { Search, TrendingUp, TrendingDown, Minus, Users, Target, BarChart3, Shield, AlertTriangle, CheckCircle, Info, X } from 'lucide-react';
 import { analyzeCombination, type SchoolApplication2026, type CombinationAnalysis, type ChanceResult } from '@/lib/chances';
 
 interface SearchResult {
@@ -206,7 +206,6 @@ function SchoolSearchInput({
 
 // Komponenta pro výsledkovou kartu školy
 function SchoolResultCard({ result }: { result: ChanceResult }) {
-  const [expanded, setExpanded] = useState(false);
   const s = result.school;
 
   const trendIcon = result.trendDirection === 'up' ? <TrendingUp className="w-4 h-4" /> :
@@ -263,8 +262,8 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
           <div className="text-xs text-slate-500 mt-1">{result.chanceLabel}</div>
         </div>
 
-        {/* Stats grid */}
-        <div className="grid grid-cols-3 gap-3">
+        {/* Stats grid - hlavní čísla */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
           <div className="bg-slate-50 rounded-lg p-3 text-center">
             <div className="flex items-center justify-center gap-1 mb-1">
               <Users className="w-3.5 h-3.5 text-slate-400" />
@@ -298,108 +297,114 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
               (2025: {s.min_body_2025})
             </div>
           </div>
+
+          <div className="bg-slate-50 rounded-lg p-3 text-center">
+            <div className="flex items-center justify-center gap-1 mb-1">
+              <Shield className="w-3.5 h-3.5 text-slate-400" />
+            </div>
+            <div className="text-lg font-bold text-slate-900">{result.acceptRate2025} %</div>
+            <div className="text-xs text-slate-500">Přijato v 2025</div>
+            <div className="text-xs text-slate-400 mt-0.5">
+              ({s.prijati_2025} z {s.prihlasky_2025})
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Expandable detail */}
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="w-full px-5 py-3 border-t border-slate-100 flex items-center justify-between text-sm text-slate-600 hover:bg-slate-50 transition-colors"
-      >
-        <span>Podrobnosti</span>
-        <ChevronDown className={`w-4 h-4 transition-transform ${expanded ? 'rotate-180' : ''}`} />
-      </button>
-
-      {expanded && (
-        <div className="px-5 pb-5 space-y-4 border-t border-slate-100">
-          {/* Priority breakdown 2026 */}
-          <div>
-            <h4 className="text-sm font-semibold text-slate-700 mb-2">Přihlášky podle priority (2026)</h4>
-            <div className="space-y-1.5">
-              {s.prihlasky_priority_2026.map((count, i) => {
-                const pct = s.prihlasky_2026 > 0 ? (count / s.prihlasky_2026 * 100) : 0;
-                if (count === 0 && i > 2) return null;
-                return (
-                  <div key={i} className="flex items-center gap-2 text-sm">
-                    <span className="w-20 text-slate-500">{i + 1}. priorita</span>
-                    <div className="flex-1 h-4 bg-slate-100 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-blue-400 rounded-full"
-                        style={{ width: `${pct}%` }}
-                      />
-                    </div>
-                    <span className="w-16 text-right text-slate-600 font-medium">{count}</span>
-                    <span className="w-12 text-right text-slate-400">{pct.toFixed(0)} %</span>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Historické srovnání */}
-          <div>
-            <h4 className="text-sm font-semibold text-slate-700 mb-2">Srovnání s předchozími roky</h4>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-slate-200">
-                    <th className="text-left py-2 text-slate-500 font-medium">Rok</th>
-                    <th className="text-right py-2 text-slate-500 font-medium">Přihlášky</th>
-                    <th className="text-right py-2 text-slate-500 font-medium">Kapacita</th>
-                    <th className="text-right py-2 text-slate-500 font-medium">Index</th>
-                    <th className="text-right py-2 text-slate-500 font-medium">Min. body</th>
+        {/* Historické srovnání – vždy viditelné */}
+        <div className="mb-4">
+          <h4 className="text-sm font-semibold text-slate-700 mb-2">Srovnání s předchozími roky</h4>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-200">
+                  <th className="text-left py-2 text-slate-500 font-medium">Rok</th>
+                  <th className="text-right py-2 text-slate-500 font-medium">Přihlášky</th>
+                  <th className="text-right py-2 text-slate-500 font-medium">Kapacita</th>
+                  <th className="text-right py-2 text-slate-500 font-medium">Index</th>
+                  <th className="text-right py-2 text-slate-500 font-medium">Přijato</th>
+                  <th className="text-right py-2 text-slate-500 font-medium">Úspěšnost</th>
+                  <th className="text-right py-2 text-slate-500 font-medium">Min. body</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-slate-100 bg-blue-50/50 font-medium">
+                  <td className="py-2 text-blue-700">2026</td>
+                  <td className="py-2 text-right">{s.prihlasky_2026}</td>
+                  <td className="py-2 text-right">{s.kapacita_2026}</td>
+                  <td className="py-2 text-right">{s.index_poptavky_2026.toFixed(1)}×</td>
+                  <td className="py-2 text-right text-slate-400">—</td>
+                  <td className="py-2 text-right text-slate-400">—</td>
+                  <td className="py-2 text-right text-slate-400">—</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-2">2025</td>
+                  <td className="py-2 text-right">{s.prihlasky_2025}</td>
+                  <td className="py-2 text-right">{s.kapacita_2025}</td>
+                  <td className="py-2 text-right">{s.index_poptavky_2025.toFixed(1)}×</td>
+                  <td className="py-2 text-right font-medium">{s.prijati_2025}</td>
+                  <td className="py-2 text-right font-medium">{result.acceptRate2025} %</td>
+                  <td className="py-2 text-right">{s.min_body_2025}</td>
+                </tr>
+                {s.prihlasky_2024 !== undefined && s.prihlasky_2024 > 0 && (
+                  <tr>
+                    <td className="py-2">2024</td>
+                    <td className="py-2 text-right">{s.prihlasky_2024}</td>
+                    <td className="py-2 text-right">{s.kapacita_2024}</td>
+                    <td className="py-2 text-right">{s.index_poptavky_2024?.toFixed(1)}×</td>
+                    <td className="py-2 text-right font-medium">{s.prijati_2024}</td>
+                    <td className="py-2 text-right font-medium">{result.acceptRate2024 !== undefined ? `${result.acceptRate2024} %` : '—'}</td>
+                    <td className="py-2 text-right">{s.min_body_2024}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-slate-100 bg-blue-50/50 font-medium">
-                    <td className="py-2 text-blue-700">2026</td>
-                    <td className="py-2 text-right">{s.prihlasky_2026}</td>
-                    <td className="py-2 text-right">{s.kapacita_2026}</td>
-                    <td className="py-2 text-right">{s.index_poptavky_2026.toFixed(1)}×</td>
-                    <td className="py-2 text-right text-slate-400">—</td>
-                  </tr>
-                  <tr className="border-b border-slate-100">
-                    <td className="py-2">2025</td>
-                    <td className="py-2 text-right">{s.prihlasky_2025}</td>
-                    <td className="py-2 text-right">{s.kapacita_2025}</td>
-                    <td className="py-2 text-right">{s.index_poptavky_2025.toFixed(1)}×</td>
-                    <td className="py-2 text-right">{s.min_body_2025}</td>
-                  </tr>
-                  {s.prihlasky_2024 !== undefined && s.prihlasky_2024 > 0 && (
-                    <tr>
-                      <td className="py-2">2024</td>
-                      <td className="py-2 text-right">{s.prihlasky_2024}</td>
-                      <td className="py-2 text-right">{s.kapacita_2024}</td>
-                      <td className="py-2 text-right">{s.index_poptavky_2024?.toFixed(1)}×</td>
-                      <td className="py-2 text-right">{s.min_body_2024}</td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* P1 analýza */}
-          <div className="bg-blue-50 rounded-lg p-3">
-            <div className="text-sm">
-              <span className="font-medium text-blue-800">Analýza 1. priorit:</span>{' '}
-              <span className="text-blue-700">
-                {result.p1Applicants2026} uchazečů má tuto školu jako 1. volbu
-                {s.kapacita_2026 > 0 && (
-                  <> ({result.p1Ratio.toFixed(1)}× kapacita jen z P1)</>
                 )}
-              </span>
-            </div>
+              </tbody>
+            </table>
           </div>
-
-          <Link
-            href={`/skola/${s.slug}`}
-            className="block text-center text-sm text-blue-600 font-medium hover:text-blue-700 transition-colors"
-          >
-            Zobrazit detail školy →
-          </Link>
         </div>
-      )}
+
+        {/* Přihlášky podle priority – vždy viditelné */}
+        <div className="mb-4">
+          <h4 className="text-sm font-semibold text-slate-700 mb-2">Přihlášky podle priority (2026)</h4>
+          <div className="space-y-1.5">
+            {s.prihlasky_priority_2026.map((count, i) => {
+              const pct = s.prihlasky_2026 > 0 ? (count / s.prihlasky_2026 * 100) : 0;
+              if (count === 0 && i > 2) return null;
+              return (
+                <div key={i} className="flex items-center gap-2 text-sm">
+                  <span className="w-20 text-slate-500">{i + 1}. priorita</span>
+                  <div className="flex-1 h-4 bg-slate-100 rounded-full overflow-hidden">
+                    <div
+                      className="h-full bg-blue-400 rounded-full"
+                      style={{ width: `${pct}%` }}
+                    />
+                  </div>
+                  <span className="w-16 text-right text-slate-600 font-medium">{count}</span>
+                  <span className="w-12 text-right text-slate-400">{pct.toFixed(0)} %</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* P1 analýza */}
+        <div className="bg-blue-50 rounded-lg p-3 mb-4">
+          <div className="text-sm">
+            <span className="font-medium text-blue-800">Analýza 1. priorit:</span>{' '}
+            <span className="text-blue-700">
+              {result.p1Applicants2026} uchazečů má tuto školu jako 1. volbu
+              {s.kapacita_2026 > 0 && (
+                <> ({result.p1Ratio.toFixed(1)}× kapacita jen z P1)</>
+              )}
+            </span>
+          </div>
+        </div>
+
+        <Link
+          href={`/skola/${s.slug}`}
+          className="block text-center text-sm text-blue-600 font-medium hover:text-blue-700 transition-colors"
+        >
+          Zobrazit detail školy →
+        </Link>
+      </div>
     </div>
   );
 }

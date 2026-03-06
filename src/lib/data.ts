@@ -1545,9 +1545,11 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
   ]);
 
   const schoolsData = JSON.parse(schoolsDataContent);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const schools2025: any[] = schoolsData['2025'] || [];
 
   // Index statických dat 2025 podle ID (per obor/zaměření)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const staticIndex = new Map<string, any>();
   for (const s of schools2025) {
     staticIndex.set(s.id, s);
@@ -1604,7 +1606,9 @@ export async function get2026DataByRedizo(redizo: string): Promise<School2026Dat
  */
 export async function getChancesData(programId: string): Promise<{
   data2026: School2026Data | null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data2025: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data2024: any;
 } | null> {
   const [data2026, schoolsDataContent] = await Promise.all([
@@ -1615,9 +1619,12 @@ export async function getChancesData(programId: string): Promise<{
   const schoolsData = JSON.parse(schoolsDataContent);
   const baseId = programId.split('_').slice(0, 2).join('_');
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const find = (yearData: any[]) => {
     if (!yearData) return null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return yearData.find((s: any) => s.id === programId) ||
+           // eslint-disable-next-line @typescript-eslint/no-explicit-any
            yearData.find((s: any) => s.id.startsWith(baseId)) ||
            null;
   };

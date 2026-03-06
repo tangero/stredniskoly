@@ -57,6 +57,9 @@ export interface ChanceResult {
   chanceColor: string;
   // Historická minimální hranice
   estimatedMinScore: number;
+  // Historická úspěšnost
+  acceptRate2025: number; // % přijatých v 2025
+  acceptRate2024?: number; // % přijatých v 2024
   // Priority analýza
   p1Applicants2026: number;
   p1Ratio: number; // kolik P1 přihlášek vs kapacita
@@ -103,7 +106,7 @@ function estimateChance(school: SchoolApplication2026): {
   const adjustedRate = historicalAcceptRate / demandChange;
 
   // Převést na procenta (0-100), omezit na realistický rozsah
-  let chancePct = Math.min(95, Math.max(5, adjustedRate * 100));
+  const chancePct = Math.min(95, Math.max(5, adjustedRate * 100));
 
   // Odhadnout minimální skóre
   let estimatedMinScore = school.min_body_2025;
@@ -149,6 +152,14 @@ export function analyzeSchool(school: SchoolApplication2026): ChanceResult {
   const p1Applicants = school.prihlasky_priority_2026?.[0] || 0;
   const p1Ratio = school.kapacita_2026 > 0 ? p1Applicants / school.kapacita_2026 : 0;
 
+  // Historická úspěšnost přijetí
+  const acceptRate2025 = school.prihlasky_2025 > 0
+    ? Math.round((school.prijati_2025 / school.prihlasky_2025) * 100)
+    : 0;
+  const acceptRate2024 = (school.prihlasky_2024 && school.prijati_2024 && school.prihlasky_2024 > 0)
+    ? Math.round((school.prijati_2024 / school.prihlasky_2024) * 100)
+    : undefined;
+
   return {
     school,
     demandLevel: demand.level,
@@ -162,6 +173,8 @@ export function analyzeSchool(school: SchoolApplication2026): ChanceResult {
     chanceLabel: chance.label,
     chanceColor: chance.color,
     estimatedMinScore: chance.estimatedMinScore,
+    acceptRate2025,
+    acceptRate2024,
     p1Applicants2026: p1Applicants,
     p1Ratio: Math.round(p1Ratio * 100) / 100,
   };
