@@ -143,14 +143,16 @@ function SchoolSearchInput({
                 {priority}
               </span>
               <h4 className="font-semibold text-slate-900 truncate">{selectedSchool.nazev_display}</h4>
-              <span className={`inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold flex-shrink-0 ${delkaBadgeColor(selectedSchool.delka_studia)}`}>
+            </div>
+            <div className="ml-8 mt-1 flex items-center gap-2">
+              <span className={`inline-flex px-2 py-0.5 rounded text-[11px] font-bold ${delkaBadgeColor(selectedSchool.delka_studia)}`}>
                 {delkaLabel(selectedSchool.delka_studia)}
               </span>
+              <span className="text-sm font-semibold text-slate-800">
+                {selectedSchool.obor}{selectedSchool.zamereni ? ` – ${selectedSchool.zamereni}` : ''}
+              </span>
+              <span className="text-sm text-slate-400">{selectedSchool.obec}</span>
             </div>
-            <p className="text-sm text-slate-600 ml-8">
-              {selectedSchool.obor}{selectedSchool.zamereni ? ` – ${selectedSchool.zamereni}` : ''}
-              <span className="text-slate-400"> · {selectedSchool.obec}</span>
-            </p>
             <div className="flex gap-4 mt-2 ml-8 text-xs text-slate-500">
               <span>{selectedSchool.prihlasky_2026} přihlášek</span>
               <span>{selectedSchool.kapacita_2026} míst</span>
@@ -232,16 +234,16 @@ function SchoolSearchInput({
               }}
               className="w-full text-left px-4 py-3 hover:bg-blue-50 border-b border-slate-100 last:border-b-0 transition-colors"
             >
-              <div className="flex items-center gap-2">
-                <span className="font-medium text-sm text-slate-900">{school.nazev_display}</span>
-                <span className={`inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold ${delkaBadgeColor(school.delka_studia)}`}>
+              <div className="font-medium text-sm text-slate-900">{school.nazev_display}</div>
+              <div className="flex items-center gap-1.5 mt-1">
+                <span className={`inline-flex px-1.5 py-0.5 rounded text-[10px] font-bold leading-none ${delkaBadgeColor(school.delka_studia)}`}>
                   {delkaLabel(school.delka_studia)}
                 </span>
+                <span className="text-sm font-semibold text-slate-700">
+                  {school.obor}{school.zamereni ? ` – ${school.zamereni}` : ''}
+                </span>
               </div>
-              <div className="text-xs text-slate-600 mt-1 font-medium">
-                {school.obor}{school.zamereni ? ` – ${school.zamereni}` : ''}
-              </div>
-              <div className="flex items-center gap-2 text-xs text-slate-400 mt-0.5">
+              <div className="flex items-center gap-2 text-xs text-slate-400 mt-1">
                 <span>{school.obec}</span>
                 <span>·</span>
                 <span>{school.prihlasky} přihlášek</span>
