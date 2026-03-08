@@ -45,6 +45,7 @@ export async function GET(request: NextRequest) {
       prihlasky_2026: chancesData.data2026.prihlasky,
       prihlasky_priority_2026: chancesData.data2026.prihlasky_priority,
       index_poptavky_2026: chancesData.data2026.index_poptavky,
+      is_new_2026: chancesData.data2026.is_new || false,
       // Data 2025
       kapacita_2025: chancesData.data2025?.kapacita || 0,
       prihlasky_2025: chancesData.data2025?.prihlasky || 0,
@@ -116,6 +117,7 @@ export async function GET(request: NextRequest) {
         kapacita: s.kapacita,
         prihlasky: s.prihlasky,
         index_poptavky: s.index_poptavky,
+        is_new: s.is_new || false,
       };
     });
 

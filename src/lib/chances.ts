@@ -38,6 +38,7 @@ export interface SchoolApplication2026 {
   prijati_2024?: number;
   min_body_2024?: number;
   index_poptavky_2024?: number;
+  is_new_2026?: boolean;
 }
 
 export interface ChanceResult {

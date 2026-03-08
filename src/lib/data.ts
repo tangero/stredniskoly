@@ -1501,6 +1501,7 @@ export interface School2026Data {
   prihlasky: number;
   prihlasky_priority: number[];
   index_poptavky: number;
+  is_new?: boolean; // nový obor/zaměření 2026 bez historie
 }
 
 /** Raw záznam z applications_2026.json (jen dynamická data per obor) */
@@ -1510,6 +1511,7 @@ interface Raw2026Record {
   prihlasky: number;
   pp: number[];   // prihlasky_priority (zkrácený klíč)
   idx: number;    // index_poptavky (zkrácený klíč)
+  is_new?: boolean; // nový obor/zaměření v 2026 (bez historie 2025)
 }
 
 // Cache
@@ -1574,6 +1576,7 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
       prihlasky: r.prihlasky,
       prihlasky_priority: r.pp,
       index_poptavky: r.idx,
+      ...(r.is_new ? { is_new: true } : {}),
     };
   });
 

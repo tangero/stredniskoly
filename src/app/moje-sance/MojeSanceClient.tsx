@@ -20,6 +20,7 @@ interface SearchResult {
   kapacita: number;
   prihlasky: number;
   index_poptavky: number;
+  is_new?: boolean;
 }
 
 interface SchoolFullData {
@@ -50,6 +51,7 @@ interface SchoolFullData {
   prijati_2024?: number;
   min_body_2024?: number;
   index_poptavky_2024?: number;
+  is_new_2026?: boolean;
 }
 
 type DelkaFilter = 'all' | '4' | '6' | '8';
@@ -250,6 +252,9 @@ function SchoolSearchInput({
                 <span>{school.prihlasky} přihlášek</span>
                 <span>·</span>
                 <span className="font-medium text-slate-500">{school.index_poptavky.toFixed(1)}× poptávka</span>
+                {school.is_new && (
+                  <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-amber-100 text-amber-700">Nové 2026</span>
+                )}
               </div>
             </button>
           ))}
@@ -305,11 +310,17 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
             </div>
             <p className="text-sm text-slate-500 ml-8">
               {s.obor} · {s.obec}
+              {s.is_new_2026 && (
+                <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                  Nové zaměření 2026
+                </span>
+              )}
             </p>
           </div>
         </div>
 
-        {/* Šance bar */}
+        {/* Šance bar – skrýt pro nové obory bez historie */}
+        {!s.is_new_2026 && (
         <div className="mb-4">
           <div className="flex items-center justify-between mb-1">
             <span className="text-sm font-medium text-slate-700">Odhad šancí na přijetí <span className="font-normal text-slate-500">(vždy záleží na počtu bodů!)</span></span>
@@ -325,19 +336,22 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
           </div>
           <div className="text-xs text-slate-500 mt-1">{result.chanceLabel}</div>
         </div>
+        )}
 
         {/* Stats grid - hlavní čísla */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+        <div className={`grid ${s.is_new_2026 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-4'} gap-3 mb-5`}>
           <div className="bg-slate-50 rounded-lg p-3 text-center">
             <div className="flex items-center justify-center gap-1 mb-1">
               <Users className="w-3.5 h-3.5 text-slate-400" />
             </div>
             <div className="text-lg font-bold text-slate-900">{s.prihlasky_2026}</div>
             <div className="text-xs text-slate-500">Přihlášek 2026</div>
+            {!s.is_new_2026 && (
             <div className={`text-xs font-medium mt-0.5 flex items-center justify-center gap-0.5 ${trendColorClass}`}>
               {trendIcon}
               {result.trendLabel}
             </div>
+            )}
           </div>
 
           <div className="bg-slate-50 rounded-lg p-3 text-center">
@@ -351,6 +365,7 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
             </div>
           </div>
 
+          {!s.is_new_2026 && (
           <div className="bg-slate-50 rounded-lg p-3 text-center">
             <div className="flex items-center justify-center gap-1 mb-1">
               <BarChart3 className="w-3.5 h-3.5 text-slate-400" />
@@ -361,7 +376,9 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
               (2025: {s.min_body_2025})
             </div>
           </div>
+          )}
 
+          {!s.is_new_2026 && (
           <div className="bg-slate-50 rounded-lg p-3 text-center">
             <div className="flex items-center justify-center gap-1 mb-1">
               <Shield className="w-3.5 h-3.5 text-slate-400" />
@@ -372,9 +389,25 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
               ({s.prijati_2025} z {s.prihlasky_2025})
             </div>
           </div>
+          )}
         </div>
 
-        {/* Historické srovnání – vždy viditelné */}
+        {/* Upozornění pro nové obory */}
+        {s.is_new_2026 && (
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+            <div className="text-sm text-amber-800">
+              <span className="font-medium">Nové zaměření:</span>{' '}
+              Toto zaměření nemá historii z roku 2025, proto nemůžeme odhadnout šance na přijetí.
+              Zobrazujeme pouze aktuální data o přihláškách.
+            </div>
+            <div className="text-xs text-amber-600 mt-1">
+              Pokud si myslíte, že tento obor navazuje na jiné zaměření z minulého roku, <a href="https://github.com/tangero/stredniskoly/issues" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-800">nahlaste nám to</a>.
+            </div>
+          </div>
+        )}
+
+        {/* Historické srovnání – skrýt pro nové obory */}
+        {!s.is_new_2026 && (
         <div className="mb-4">
           <h4 className="text-sm font-semibold text-slate-700 mb-2">Srovnání s předchozími roky</h4>
           <div className="overflow-x-auto">
@@ -424,6 +457,7 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
             </table>
           </div>
         </div>
+        )}
 
         {/* Přihlášky podle priority – vždy viditelné */}
         <div className="mb-4">
@@ -583,6 +617,7 @@ export function MojeSanceClient() {
           kapacita_2024: s.kapacita_2024, prihlasky_2024: s.prihlasky_2024,
           prijati_2024: s.prijati_2024, min_body_2024: s.min_body_2024,
           index_poptavky_2024: s.index_poptavky_2024,
+          is_new_2026: s.is_new_2026,
         }));
         setAnalysis(analyzeCombination(applications));
       }
@@ -687,6 +722,7 @@ export function MojeSanceClient() {
       prijati_2024: s.prijati_2024,
       min_body_2024: s.min_body_2024,
       index_poptavky_2024: s.index_poptavky_2024,
+      is_new_2026: s.is_new_2026,
     }));
 
     const result = analyzeCombination(applications);
