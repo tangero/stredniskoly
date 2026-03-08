@@ -28,9 +28,27 @@ export default function MojeSancePage() {
       <Header />
 
       <main className="flex-1">
-        <Suspense fallback={<Loading />}>
-          <MojeSanceClient />
-        </Suspense>
+        <div className="bg-gradient-to-br from-blue-500 via-blue-500 to-blue-600 text-white py-12">
+          <div className="max-w-6xl mx-auto px-4">
+            <h1 className="text-2xl md:text-4xl font-bold mb-3">Moje šance</h1>
+            <p className="text-lg opacity-90 max-w-2xl">
+              Zadejte školy, na které se hlásíte, a zjistěte počty přihlášek.
+            </p>
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 text-center max-w-2xl mx-auto">
+            <div className="text-5xl mb-4">🔧</div>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">Aktualizujeme data</h2>
+            <p className="text-slate-600 mb-4">
+              Právě probíhá aktualizace dat přihlášek 2026 z CERMATu.
+              Funkce bude dostupná dnes večer s čerstvými čísly.
+            </p>
+            <p className="text-sm text-slate-400">
+              Děkujeme za trpělivost a za vaše hlášení nepřesností.
+            </p>
+          </div>
+        </div>
       </main>
 
       <Footer />
