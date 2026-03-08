@@ -1739,11 +1739,16 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
                           }
                         `}
                       >
-                        {/* Název */}
+                        {/* Název + délka studia */}
                         <span className={`flex-1 min-w-0 text-sm font-medium truncate ${isActive ? 'text-white' : ''}`}>
                           {program.obor}
+                          <span className={`ml-1.5 inline-flex px-1.5 py-0 rounded text-[10px] font-semibold ${
+                            isActive ? 'bg-white/20 text-white' : `${info.color} text-white`
+                          }`}>
+                            {program.delka_studia}leté
+                          </span>
                           {program.is_new_2026 && (
-                            <span className={`ml-1.5 inline-flex px-1.5 py-0 rounded text-[10px] font-semibold ${
+                            <span className={`ml-1 inline-flex px-1.5 py-0 rounded text-[10px] font-semibold ${
                               isActive ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-700'
                             }`}>
                               Nové 2026
