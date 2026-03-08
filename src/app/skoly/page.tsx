@@ -40,6 +40,12 @@ export default async function SchoolsPage() {
   // Top 50 nejobtížnějších
   const topSchools = sortedSchools.slice(0, 50);
 
+  // Top 50 podle převisu přihlášek (index_poptavky)
+  const topPrevis = [...schools]
+    .filter(s => s.prihlasky > 0 && s.kapacita > 0)
+    .sort((a, b) => b.index_poptavky - a.index_poptavky)
+    .slice(0, 50);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -203,6 +209,102 @@ export default async function SchoolsPage() {
                       <span className="text-slate-500">{krajNames[school.kraj_kod] || school.kraj}</span>
                       <span className="ml-auto text-slate-700 font-medium">min. {school.min_body}b</span>
                       <span className="text-slate-500">index {school.index_poptavky.toFixed(1)}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Převis přihlášek */}
+          <div className="bg-white rounded-lg shadow-sm overflow-hidden mt-8">
+            <div className="p-6 border-b">
+              <h2 className="text-xl font-semibold">Převis přihlášek – Top 50</h2>
+              <p className="text-slate-600 text-sm mt-1">
+                Obory s nejvyšším poměrem přihlášek na jedno místo. Každý žák podává 3–5 přihlášek, takže trojnásobný převis je běžný.
+              </p>
+            </div>
+
+            {/* Desktop tabulka */}
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-slate-50">
+                  <tr>
+                    <th className="text-left p-4 font-medium text-slate-600">#</th>
+                    <th className="text-left p-4 font-medium text-slate-600">Škola</th>
+                    <th className="text-left p-4 font-medium text-slate-600">Obor</th>
+                    <th className="text-center p-4 font-medium text-slate-600">Délka</th>
+                    <th className="text-left p-4 font-medium text-slate-600">Kraj</th>
+                    <th className="text-right p-4 font-medium text-slate-600">Přihlášek</th>
+                    <th className="text-right p-4 font-medium text-slate-600">Kapacita</th>
+                    <th className="text-right p-4 font-medium text-slate-600">Převis</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {topPrevis.map((school, idx) => {
+                    const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+                    const previs = school.index_poptavky;
+                    const previsColor = previs >= 10 ? 'bg-red-100 text-red-800' :
+                                        previs >= 5 ? 'bg-orange-100 text-orange-800' :
+                                        previs >= 3 ? 'bg-amber-100 text-amber-800' :
+                                        'bg-slate-100 text-slate-700';
+
+                    return (
+                      <tr key={school.id} className="border-t hover:bg-slate-50">
+                        <td className="p-4 text-slate-500">{idx + 1}</td>
+                        <td className="p-4">
+                          <Link href={`/skola/${slug}`} className="text-blue-600 hover:underline font-medium">
+                            {school.nazev}
+                          </Link>
+                        </td>
+                        <td className="p-4 text-slate-600 text-sm">{school.obor}</td>
+                        <td className="p-4 text-center">
+                          <StudyLengthBadge delka={school.delka_studia} />
+                        </td>
+                        <td className="p-4 text-slate-600 text-sm">{krajNames[school.kraj_kod] || school.kraj}</td>
+                        <td className="p-4 text-right">{school.prihlasky.toLocaleString('cs-CZ')}</td>
+                        <td className="p-4 text-right">{school.kapacita.toLocaleString('cs-CZ')}</td>
+                        <td className="p-4 text-right">
+                          <span className={`inline-block px-2 py-1 rounded text-sm font-bold ${previsColor}`}>
+                            {previs.toFixed(1)}×
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobilní karty */}
+            <div className="md:hidden divide-y">
+              {topPrevis.map((school, idx) => {
+                const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+                const previs = school.index_poptavky;
+                const previsColor = previs >= 10 ? 'bg-red-100 text-red-800' :
+                                    previs >= 5 ? 'bg-orange-100 text-orange-800' :
+                                    previs >= 3 ? 'bg-amber-100 text-amber-800' :
+                                    'bg-slate-100 text-slate-700';
+
+                return (
+                  <div key={school.id} className="p-4">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span className="text-slate-400 text-sm font-medium shrink-0">{idx + 1}.</span>
+                        <Link href={`/skola/${slug}`} className="text-blue-600 hover:underline font-medium text-sm truncate">
+                          {school.nazev}
+                        </Link>
+                      </div>
+                      <span className={`inline-block px-2 py-1 rounded text-sm font-bold shrink-0 ${previsColor}`}>
+                        {previs.toFixed(1)}×
+                      </span>
+                    </div>
+                    <div className="text-sm text-slate-600 mb-2 truncate">{school.obor}</div>
+                    <div className="flex flex-wrap items-center gap-2 text-xs">
+                      <StudyLengthBadge delka={school.delka_studia} />
+                      <span className="text-slate-500">{krajNames[school.kraj_kod] || school.kraj}</span>
+                      <span className="ml-auto text-slate-700">{school.prihlasky.toLocaleString('cs-CZ')} přihl.</span>
+                      <span className="text-slate-500">{school.kapacita.toLocaleString('cs-CZ')} míst</span>
                     </div>
                   </div>
                 );

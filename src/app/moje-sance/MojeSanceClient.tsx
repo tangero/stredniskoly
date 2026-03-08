@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Search, TrendingUp, TrendingDown, Minus, Users, Target, BarChart3, Shield, AlertTriangle, CheckCircle, Info, X } from 'lucide-react';
+import { Search, TrendingUp, TrendingDown, Minus, Users, Target, BarChart3, Shield, AlertTriangle, CheckCircle, Info, X, Share2, Check, LinkIcon } from 'lucide-react';
 import { analyzeCombination, type SchoolApplication2026, type CombinationAnalysis, type ChanceResult } from '@/lib/chances';
 
 interface SearchResult {
@@ -311,7 +312,7 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
         {/* Šance bar */}
         <div className="mb-4">
           <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-slate-700">Odhad šancí na přijetí</span>
+            <span className="text-sm font-medium text-slate-700">Odhad šancí na přijetí <span className="font-normal text-slate-500">(vždy záleží na počtu bodů!)</span></span>
             <span className={`text-sm font-bold ${result.chanceColor}`}>
               {result.estimatedChancePct} %
             </span>
@@ -535,6 +536,94 @@ export function MojeSanceClient() {
   const [schools, setSchools] = useState<(SchoolFullData | null)[]>([null, null, null]);
   const [analysis, setAnalysis] = useState<CombinationAnalysis | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [initialLoadDone, setInitialLoadDone] = useState(false);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  // Načtení škol z URL parametrů při prvním renderování
+  useEffect(() => {
+    if (initialLoadDone) return;
+    const ids = searchParams.get('skoly');
+    if (!ids) {
+      setInitialLoadDone(true);
+      return;
+    }
+    const schoolIds = ids.split(',').slice(0, 3);
+    const loadSchools = async () => {
+      const loaded: (SchoolFullData | null)[] = [null, null, null];
+      await Promise.all(
+        schoolIds.map(async (id, i) => {
+          try {
+            const res = await fetch(`/api/chances?id=${encodeURIComponent(id)}`);
+            if (res.ok) {
+              loaded[i] = await res.json();
+            }
+          } catch {
+            // skip
+          }
+        })
+      );
+      setSchools(loaded);
+      setInitialLoadDone(true);
+      // Auto-analyze if schools loaded from URL
+      const selectedSchools = loaded.filter((s): s is SchoolFullData => s !== null);
+      if (selectedSchools.length > 0) {
+        const applications: SchoolApplication2026[] = selectedSchools.map((s, i) => ({
+          id: s.id, redizo: s.id.split('_')[0], nazev: s.nazev_display || s.nazev,
+          nazev_display: s.nazev_display, obor: s.obor, zamereni: s.zamereni,
+          obec: s.obec, kraj: s.kraj, typ: s.typ, delka_studia: s.delka_studia,
+          slug: s.slug, priority: i + 1,
+          kapacita_2026: s.kapacita_2026, prihlasky_2026: s.prihlasky_2026,
+          prihlasky_priority_2026: s.prihlasky_priority_2026, index_poptavky_2026: s.index_poptavky_2026,
+          kapacita_2025: s.kapacita_2025, prihlasky_2025: s.prihlasky_2025,
+          prijati_2025: s.prijati_2025, min_body_2025: s.min_body_2025,
+          prumer_body_2025: s.prumer_body_2025, index_poptavky_2025: s.index_poptavky_2025,
+          prihlasky_priority_2025: s.prihlasky_priority_2025, prijati_priority_2025: s.prijati_priority_2025,
+          kapacita_2024: s.kapacita_2024, prihlasky_2024: s.prihlasky_2024,
+          prijati_2024: s.prijati_2024, min_body_2024: s.min_body_2024,
+          index_poptavky_2024: s.index_poptavky_2024,
+        }));
+        setAnalysis(analyzeCombination(applications));
+      }
+    };
+    loadSchools();
+  }, [searchParams, initialLoadDone]);
+
+  // Aktualizace URL při změně škol
+  const updateUrl = useCallback((newSchools: (SchoolFullData | null)[]) => {
+    const ids = newSchools.filter((s): s is SchoolFullData => s !== null).map(s => s.id);
+    const url = ids.length > 0
+      ? `/moje-sance?skoly=${ids.join(',')}`
+      : '/moje-sance';
+    router.replace(url, { scroll: false });
+  }, [router]);
+
+  const getShareUrl = () => {
+    const ids = schools.filter((s): s is SchoolFullData => s !== null).map(s => s.id);
+    if (ids.length === 0) return '';
+    return `${window.location.origin}/moje-sance?skoly=${ids.join(',')}`;
+  };
+
+  const handleCopyLink = async () => {
+    const url = getShareUrl();
+    if (!url) return;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback
+      const input = document.createElement('input');
+      input.value = url;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   const handleSelectSchool = async (index: number, searchResult: SearchResult) => {
     // Načíst plná data
@@ -545,7 +634,8 @@ export function MojeSanceClient() {
         const newSchools = [...schools];
         newSchools[index] = fullData;
         setSchools(newSchools);
-        setAnalysis(null); // Reset analýzy
+        updateUrl(newSchools);
+        setAnalysis(null);
       }
     } catch {
       // Error loading school data
@@ -556,6 +646,7 @@ export function MojeSanceClient() {
     const newSchools = [...schools];
     newSchools[index] = null;
     setSchools(newSchools);
+    updateUrl(newSchools);
     setAnalysis(null);
   };
 
@@ -612,8 +703,10 @@ export function MojeSanceClient() {
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-2xl md:text-4xl font-bold mb-3">Moje šance</h1>
           <p className="text-lg opacity-90 max-w-2xl">
-            Zadejte školy, na které se hlásíte, a zjistěte své šance na přijetí.
-            Porovnáme aktuální počty přihlášek 2026 s historickými daty.
+            Zadejte školy, na které se hlásíte, a zjistěte počty přihlášek.
+            Nezapomínejte, že každý žák má 3–5 přihlášek, takže trojnásobný převis je normální.
+            Rozhodují počty bodů z přijímací zkoušky. Vysoké převisy ale mohou znamenat nižší šanci
+            na přijetí, protože může být před vámi více uchazečů s vyšším bodovým skóre.
           </p>
         </div>
       </div>
@@ -647,6 +740,24 @@ export function MojeSanceClient() {
               {isAnalyzing ? 'Analyzuji...' : 'Zjistit šance'}
             </button>
             {selectedCount > 0 && (
+              <button
+                onClick={handleCopyLink}
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-4 h-4 text-green-600" />
+                    <span className="text-green-600">Odkaz zkopírován!</span>
+                  </>
+                ) : (
+                  <>
+                    <LinkIcon className="w-4 h-4" />
+                    Poslat odkaz na vyhodnocení
+                  </>
+                )}
+              </button>
+            )}
+            {selectedCount > 0 && (
               <span className="text-sm text-slate-500">
                 {selectedCount} {selectedCount === 1 ? 'škola vybrána' : selectedCount < 5 ? 'školy vybrány' : 'škol vybráno'}
               </span>
@@ -660,11 +771,12 @@ export function MojeSanceClient() {
             <div className="flex items-start gap-3">
               <Info className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
               <div>
-                <h3 className="font-semibold text-blue-800 mb-1">Jak kalkulačka funguje?</h3>
+                <h3 className="font-semibold text-blue-800 mb-1">Jak to funguje?</h3>
                 <p className="text-sm text-blue-700">
                   Porovnáváme aktuální počty přihlášek v 1. kole 2026 s výsledky z let 2024 a 2025.
-                  Na základě historického poměru přihlášek, kapacit a úspěšnosti přijetí odhadujeme
-                  vaše šance. Odhady jsou orientační – skutečné výsledky závisí na vašem skóre z přijímacích zkoušek.
+                  Každý žák podává 3–5 přihlášek, takže trojnásobný převis přihlášek nad kapacitou je běžný.
+                  O přijetí rozhodují body z přijímací zkoušky – vyšší převis ale znamená větší konkurenci
+                  a vyšší riziko, že před vámi bude více uchazečů s lepším skóre.
                 </p>
               </div>
             </div>
