@@ -1570,15 +1570,24 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
   // Index statických dat 2025 podle ID (per obor/zaměření)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const staticIndex = new Map<string, any>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const staticByBase = new Map<string, any>();
   for (const s of schools2025) {
     staticIndex.set(s.id, s);
+    // Index podle base key (REDIZO_KKOV) - první záznam vyhrává
+    const base = s.id.split('_').slice(0, 2).join('_');
+    if (!staticByBase.has(base)) {
+      staticByBase.set(base, s);
+    }
   }
 
   schools2026Cache = rawRecords.map(r => {
-    const s = staticIndex.get(r.id);
-    // Získat matching metadata z school_analysis (base key)
     const baseKey = r.id.split('_').slice(0, 2).join('_');
     const analysis = analysisData[baseKey];
+    // Lookup: přesné ID → matched_2025_id z analýzy → base key fallback
+    const s = staticIndex.get(r.id)
+      || (analysis?.matched_2025_id ? staticIndex.get(analysis.matched_2025_id) : null)
+      || staticByBase.get(baseKey);
     return {
       id: r.id,
       redizo: s?.redizo || r.id.split('_')[0],
