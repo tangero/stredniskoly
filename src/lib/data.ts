@@ -617,6 +617,11 @@ export interface SchoolProgram {
   min_body: number;
   index_poptavky: number;
   obec: string;
+  // Matching 2025↔2026
+  is_new_2026?: boolean;
+  matched_2025_id?: string;
+  prev_zamereni_name?: string;
+  match_type?: string;
 }
 
 /**
@@ -679,6 +684,14 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
   for (const school of schoolsFromAnalysis) {
     const zamereniList = zamereniMap.get(school.id);
 
+    // Matching metadata z school_analysis.json
+    const matchingMeta = {
+      ...(school.is_new_2026 ? { is_new_2026: true } : {}),
+      ...(school.matched_2025_id ? { matched_2025_id: school.matched_2025_id } : {}),
+      ...(school.prev_zamereni_name ? { prev_zamereni_name: school.prev_zamereni_name } : {}),
+      ...(school.match_type ? { match_type: school.match_type } : {}),
+    };
+
     if (zamereniList && zamereniList.length > 0) {
       // Škola má zaměření - rozložit na jednotlivá zaměření
       for (const z of zamereniList) {
@@ -696,6 +709,7 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
           min_body: z.min_body,
           index_poptavky: school.index_poptavky,
           obec: school.obec,
+          ...matchingMeta,
         });
       }
     } else {
@@ -714,6 +728,7 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
         min_body: school.min_body,
         index_poptavky: school.index_poptavky,
         obec: school.obec,
+        ...matchingMeta,
       });
     }
   }
@@ -1502,6 +1517,7 @@ export interface School2026Data {
   prihlasky_priority: number[];
   index_poptavky: number;
   is_new?: boolean; // nový obor/zaměření 2026 bez historie
+  prev_zamereni_name?: string; // předchozí název zaměření (přejmenování)
 }
 
 /** Raw záznam z applications_2026.json (jen dynamická data per obor) */
@@ -1541,9 +1557,10 @@ async function getRaw2026Data(): Promise<Raw2026Record[]> {
 export async function getSchools2026Data(): Promise<School2026Data[]> {
   if (schools2026Cache) return schools2026Cache;
 
-  const [rawRecords, schoolsDataContent] = await Promise.all([
+  const [rawRecords, schoolsDataContent, analysisData] = await Promise.all([
     getRaw2026Data(),
     fs.readFile(path.join(dataDir, 'schools_data.json'), 'utf-8'),
+    getSchoolAnalysis(),
   ]);
 
   const schoolsData = JSON.parse(schoolsDataContent);
@@ -1559,6 +1576,9 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
 
   schools2026Cache = rawRecords.map(r => {
     const s = staticIndex.get(r.id);
+    // Získat matching metadata z school_analysis (base key)
+    const baseKey = r.id.split('_').slice(0, 2).join('_');
+    const analysis = analysisData[baseKey];
     return {
       id: r.id,
       redizo: s?.redizo || r.id.split('_')[0],
@@ -1577,6 +1597,7 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
       prihlasky_priority: r.pp,
       index_poptavky: r.idx,
       ...(r.is_new ? { is_new: true } : {}),
+      ...(analysis?.prev_zamereni_name ? { prev_zamereni_name: analysis.prev_zamereni_name } : {}),
     };
   });
 

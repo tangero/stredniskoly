@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { TrendingUp, TrendingDown, Minus, Users, Target, AlertTriangle } from 'lucide-react';
+import { TrendingUp, TrendingDown, Minus, Users, Target, AlertTriangle, Info } from 'lucide-react';
 import type { School2026Data } from '@/lib/data';
 
 interface Props {
@@ -16,8 +16,13 @@ export function Applications2026Banner({ data2026, totalKapacita2025, totalPrihl
   const totalKapacita2026 = data2026.reduce((sum, d) => sum + d.kapacita, 0);
   const indexPoptavky2026 = totalKapacita2026 > 0 ? totalPrihlasky2026 / totalKapacita2026 : 0;
 
-  // Trend
-  const prihlaskyChange = totalPrihlasky2025 > 0
+  // Detekce nových oborů a přejmenovaných zaměření
+  const newPrograms = data2026.filter(d => d.is_new);
+  const renamedPrograms = data2026.filter(d => d.prev_zamereni_name);
+  const hasNewOnly = newPrograms.length === data2026.length;
+
+  // Trend - jen pokud nejsou všechny obory nové (jinak srovnání nemá smysl)
+  const prihlaskyChange = (totalPrihlasky2025 > 0 && !hasNewOnly)
     ? ((totalPrihlasky2026 - totalPrihlasky2025) / totalPrihlasky2025) * 100
     : 0;
 
@@ -111,6 +116,28 @@ export function Applications2026Banner({ data2026, totalKapacita2025, totalPrihl
               {indexPoptavky2026 >= 4
                 ? 'Velmi vysoký zájem! Na tuto školu se hlásí výrazně více uchazečů, než kolik je míst. Důkladná příprava na přijímací zkoušky je klíčová.'
                 : 'O tuto školu je zvýšený zájem. Doporučujeme mít záložní variantu a připravit se na přijímací zkoušky.'}
+            </p>
+          </div>
+        )}
+
+        {/* Informace o přejmenování zaměření */}
+        {singleProgram && renamedPrograms.length > 0 && (
+          <div className="flex items-start gap-2 p-3 bg-blue-50 rounded-lg text-sm mt-3">
+            <Info className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
+            <p className="text-blue-700">
+              Tento obor se v roce 2025 jmenoval <strong>&bdquo;{renamedPrograms[0].prev_zamereni_name}&ldquo;</strong>.
+              Historická data výše odpovídají tomuto oboru.
+            </p>
+          </div>
+        )}
+
+        {/* Info o novém oboru bez historie */}
+        {singleProgram && hasNewOnly && (
+          <div className="flex items-start gap-2 p-3 bg-slate-50 rounded-lg text-sm mt-3">
+            <Info className="w-4 h-4 text-slate-500 mt-0.5 flex-shrink-0" />
+            <p className="text-slate-600">
+              Tento obor je v roce 2026 nový &ndash; historická data z roku 2025 nejsou k dispozici.
+              Srovnání s předchozím rokem proto nelze provést.
             </p>
           </div>
         )}

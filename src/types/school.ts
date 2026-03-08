@@ -33,6 +33,16 @@ export interface School {
   cj_min?: number;                // minimum z češtiny
   ma_prumer?: number;             // průměr z matematiky
   ma_min?: number;                // minimum z matematiky
+  // Matching 2025↔2026
+  is_new_2026?: boolean;           // nový obor v 2026 bez historie
+  matched_2025_id?: string;        // ID matchnutého 2025 oboru
+  prev_zamereni_name?: string;     // předchozí název zaměření (pokud se přejmenovalo)
+  match_type?: string;             // typ matche: auto_1to1, auto_fuzzy, manual, ...
+  // 2026 data
+  prihlasky_2026?: number;
+  kapacita_2026?: number;
+  index_poptavky_2026?: number;
+  prihlasky_priority_2026?: number[];
 }
 
 export interface SchoolAnalysis {

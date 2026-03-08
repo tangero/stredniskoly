@@ -154,12 +154,13 @@ function StudyLengthBadge({ delka }: { delka: number }) {
 }
 
 // Komponenta pro kartu oboru v přehledu
-function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend }: {
+function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend, data2026ForProgram }: {
   program: SchoolProgram;
   schoolNazev: string;
   redizo: string;
   showStudyLength?: boolean;
   trend?: YearlyTrendData | null;
+  data2026ForProgram?: School2026Data | null;
 }) {
   const demand = getDemandClass(program.index_poptavky);
 
@@ -179,20 +180,37 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend }: {
   // Pokud má duplikátní název, přidat délku studia
   const displayName = showStudyLength ? `${baseName} (${program.delka_studia}leté)` : baseName;
 
+  const isNew = program.is_new_2026;
+  const prevName = program.prev_zamereni_name;
+
   return (
     <Link
       href={`/skola/${programSlug}`}
-      className="block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 overflow-hidden"
+      className={`block bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border overflow-hidden ${isNew ? 'border-amber-200' : 'border-slate-100'}`}
     >
       <div className="p-5">
-        <div className="flex items-start justify-between gap-4 mb-3">
-          <div>
+        <div className="flex items-start justify-between gap-4 mb-1">
+          <div className="min-w-0">
             <h3 className="font-semibold text-lg text-slate-900">{displayName}</h3>
             <p className="text-sm text-slate-500">
               {getSchoolTypeFullName(program.typ, program.obor)}
             </p>
           </div>
           <StudyLengthBadge delka={program.delka_studia} />
+        </div>
+
+        {/* Obor na vlastním řádku - délka studia badge */}
+        <div className="mb-3 text-xs">
+          {isNew && (
+            <span className="inline-block px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-medium mr-2">
+              Nové 2026
+            </span>
+          )}
+          {prevName && (
+            <span className="text-slate-400">
+              dříve &bdquo;{prevName}&ldquo;
+            </span>
+          )}
         </div>
 
         <div className="grid grid-cols-3 gap-4 mt-4">
@@ -212,6 +230,21 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend }: {
             <div className="text-xs text-slate-500">Poptávka</div>
           </div>
         </div>
+
+        {/* 2026 data mini-row pokud existují */}
+        {data2026ForProgram && (
+          <div className="mt-3 pt-3 border-t border-slate-50 grid grid-cols-3 gap-4 text-xs text-slate-400">
+            <div className="text-center">
+              <span className="font-medium text-blue-600">{data2026ForProgram.prihlasky}</span> přihl. 2026
+            </div>
+            <div className="text-center">
+              <span className="font-medium">{data2026ForProgram.kapacita}</span> míst 2026
+            </div>
+            <div className="text-center">
+              <span className="font-medium">{data2026ForProgram.index_poptavky.toFixed(1)}×</span> poptávka
+            </div>
+          </div>
+        )}
 
         <div className="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-sm">
           <span className="text-slate-500">
@@ -490,10 +523,37 @@ export default async function SchoolDetailPage({ params }: Props) {
 
             {/* Seznam oborů */}
             <h2 className="text-2xl font-bold mb-6">Obory a zaměření</h2>
+
+            {/* Přehled změn oborů - pokud jsou nové nebo přejmenované */}
+            {(() => {
+              const newCount = sortedPrograms.filter(p => p.is_new_2026).length;
+              const renamedCount = sortedPrograms.filter(p => p.prev_zamereni_name).length;
+              if (newCount === 0 && renamedCount === 0) return null;
+              return (
+                <div className="mb-6 p-4 bg-blue-50 border border-blue-100 rounded-xl text-sm text-blue-800">
+                  <p className="font-medium mb-1">Změny oborů oproti roku 2025:</p>
+                  <ul className="list-disc list-inside space-y-0.5 text-blue-700">
+                    {renamedCount > 0 && (
+                      <li>{renamedCount} {renamedCount === 1 ? 'obor změnil' : renamedCount < 5 ? 'obory změnily' : 'oborů změnilo'} název zaměření</li>
+                    )}
+                    {newCount > 0 && (
+                      <li>{newCount} {newCount === 1 ? 'nový obor' : newCount < 5 ? 'nové obory' : 'nových oborů'} (bez historie 2025)</li>
+                    )}
+                  </ul>
+                </div>
+              );
+            })()}
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {sortedPrograms.map(program => {
                 const baseName = program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor;
                 const hasDuplicateName = (oborCountsOverview.get(baseName) || 0) > 1;
+                // Najít odpovídající 2026 data pro tento program
+                const baseId = program.id.split('_').slice(0, 2).join('_');
+                const matching2026 = data2026.find(d => {
+                  const d2026BaseId = d.id.split('_').slice(0, 2).join('_');
+                  return d2026BaseId === baseId;
+                });
                 return (
                   <ProgramCard
                     key={program.id}
@@ -502,6 +562,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                     redizo={redizo}
                     showStudyLength={hasDuplicateName}
                     trend={trendDataMap.get(program.id)}
+                    data2026ForProgram={matching2026}
                   />
                 );
               })}
@@ -693,9 +754,21 @@ export default async function SchoolDetailPage({ params }: Props) {
               <h1 className="text-2xl md:text-4xl font-bold">{school.nazev}</h1>
               <StudyLengthBadge delka={program.delka_studia} />
             </div>
-            <p className="text-lg md:text-xl opacity-90 mb-4">
+            <p className="text-lg md:text-xl opacity-90 mb-2">
               {displayOborName}
             </p>
+            {school.prev_zamereni_name && (
+              <p className="text-sm opacity-70 mb-2">
+                V roce 2025: &bdquo;{school.prev_zamereni_name}&ldquo;
+              </p>
+            )}
+            {school.is_new_2026 && (
+              <p className="text-sm mb-2">
+                <span className="inline-block px-2 py-0.5 rounded-full bg-amber-400/30 text-amber-100 font-medium text-xs">
+                  Nový obor 2026
+                </span>
+              </p>
+            )}
             <div className="flex flex-wrap items-center gap-4 text-sm opacity-80">
               <span>{school.obec}, {krajNames[school.kraj_kod] || school.kraj}</span>
               <span>•</span>
