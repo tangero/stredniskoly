@@ -1656,122 +1656,120 @@ interface ProgramTabsProps {
     kapacita?: number;
     slug: string;
     hasZamereni?: boolean;
+    is_new_2026?: boolean;
+    prev_zamereni_name?: string;
   }>;
   currentProgramId: string;
 }
 
-export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
-  // Nezobrazovat, pokud má škola pouze jeden obor
-  if (programs.length <= 1) {
-    return null;
-  }
+const delkaLabels: Record<number, { label: string; sublabel: string; color: string }> = {
+  2: { label: '2leté', sublabel: 'nástavbové', color: 'bg-slate-500' },
+  3: { label: '3leté', sublabel: 'učební obory', color: 'bg-slate-500' },
+  4: { label: '4leté', sublabel: 'z 9. třídy', color: 'bg-blue-600' },
+  5: { label: '5leté', sublabel: 'z 9. třídy', color: 'bg-blue-600' },
+  6: { label: '6leté', sublabel: 'ze 7. třídy', color: 'bg-violet-600' },
+  8: { label: '8leté', sublabel: 'z 5. třídy', color: 'bg-emerald-600' },
+};
 
-  // Zjistit, zda jsou všechny programy zaměření (v rámci jednoho oboru)
+export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
+  if (programs.length <= 1) return null;
+
   const hasZamereni = programs.some(p => p.hasZamereni);
 
-  // Seřadit obory podle délky studia (kratší první) a pak podle min. bodů
-  const sortedPrograms = [...programs].sort((a, b) => {
-    if (a.delka_studia !== b.delka_studia) {
-      return a.delka_studia - b.delka_studia;
-    }
-    return b.min_body - a.min_body;
-  });
+  // Seskupit podle délky studia
+  const groups = new Map<number, typeof programs>();
+  for (const p of programs) {
+    if (!groups.has(p.delka_studia)) groups.set(p.delka_studia, []);
+    groups.get(p.delka_studia)!.push(p);
+  }
+  // Seřadit skupiny (kratší první), uvnitř skupiny podle min. bodů desc
+  const sortedGroups = [...groups.entries()]
+    .sort(([a], [b]) => a - b)
+    .map(([delka, progs]) => ({
+      delka,
+      programs: [...progs].sort((a, b) => b.min_body - a.min_body),
+    }));
 
-  // Hledat aktivní program
-  const currentProgram = programs.find(p => p.id === currentProgramId);
-  const activeProgramIndex = sortedPrograms.findIndex(p => p.id === currentProgramId);
-  const activeProgramPosition = activeProgramIndex >= 0 ? activeProgramIndex + 1 : null;
-
-  // Počítat celkovou kapacitu všech oborů
+  const hasMixedLengths = sortedGroups.length > 1;
   const totalKapacita = programs.reduce((sum, p) => sum + (p.kapacita || 0), 0);
 
   return (
-    <div className="bg-gradient-to-b from-blue-50/70 via-white to-white border-b border-blue-100 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Hlavička sekce */}
-        <div className="py-3 border-b border-blue-100">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <div>
-              <p className="text-sm font-semibold text-blue-900">
-                Vyberte {hasZamereni ? 'zaměření' : 'obor'} ({programs.length})
-              </p>
-              <p className="text-xs text-slate-600">
-                Škola má více variant. Kliknutím přepnete detail.
-              </p>
-            </div>
-            {activeProgramPosition && (
-              <span className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
-                Zobrazeno {activeProgramPosition}. z {programs.length}
-              </span>
-            )}
-          </div>
+    <div className="bg-slate-50 border-b border-slate-200">
+      <div className="max-w-6xl mx-auto px-4 py-4">
+        {/* Hlavička */}
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-sm font-semibold text-slate-900">
+            {hasZamereni ? 'Zaměření' : 'Obory'} školy
+            <span className="ml-1.5 text-slate-400 font-normal">
+              {programs.length} {programs.length === 1 ? 'obor' : programs.length < 5 ? 'obory' : 'oborů'}
+              {totalKapacita > 0 && ` · ${totalKapacita} míst celkem`}
+            </span>
+          </h2>
         </div>
 
-        {/* Info text */}
-        <div className="pt-3 pb-2 text-sm text-slate-700">
-          <span className="font-medium text-slate-900">
-            {hasZamereni ? (
-              <>Tento obor má {programs.length} zaměření (celkem {totalKapacita} míst).</>
-            ) : (
-              <>
-                Tato škola nabízí {programs.length} {programs.length === 1 ? 'obor' : programs.length < 5 ? 'obory' : 'oborů'}
-                {totalKapacita > 0 && ` (celkem ${totalKapacita} míst)`}.
-              </>
-            )}
-          </span>
-          {currentProgram && (
-            <>
-              {' '}Zobrazujete:{' '}
-              <span className="font-semibold text-blue-600">
-                {currentProgram.obor}
-              </span>
-            </>
-          )}
-        </div>
-
-        {/* Karty - všechny klikatelné */}
-        <div className="relative">
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent md:hidden" />
-          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-3" role="tablist" aria-label={hasZamereni ? 'Zaměření školy' : 'Obory školy'}>
-          {sortedPrograms.map((program) => {
-            const isActive = program.id === currentProgramId;
-
+        {/* Skupiny podle délky studia */}
+        <div className="space-y-3">
+          {sortedGroups.map(({ delka, programs: groupPrograms }) => {
+            const info = delkaLabels[delka] || { label: `${delka}leté`, sublabel: '', color: 'bg-slate-500' };
             return (
-              <Link
-                key={program.id}
-                href={`/skola/${program.slug}`}
-                role="tab"
-                aria-selected={isActive}
-                aria-current={isActive ? 'page' : undefined}
-                className={`
-                  group flex-shrink-0 min-w-[250px] rounded-lg border px-4 py-3 transition-all
-                  ${isActive
-                    ? 'border-blue-400 bg-blue-600 text-white shadow-sm'
-                    : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50/50'
-                  }
-                `}
-              >
-                <div className="flex flex-col items-start gap-1">
-                  <div className="w-full flex items-start justify-between gap-2">
-                    <span className="text-sm font-semibold">
-                      {program.obor}
+              <div key={delka}>
+                {/* Hlavička skupiny - jen pokud jsou smíšené délky */}
+                {hasMixedLengths && (
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold text-white ${info.color}`}>
+                      {info.label}
                     </span>
-                    <span
-                      className={`inline-flex rounded-full px-2 py-0.5 text-[11px] font-semibold ${
-                        isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600 group-hover:bg-blue-100 group-hover:text-blue-700'
-                      }`}
-                    >
-                      {isActive ? 'Aktivní' : 'Zobrazit'}
-                    </span>
+                    <span className="text-xs text-slate-400">{info.sublabel}</span>
                   </div>
-                  <span className={`text-xs ${isActive ? 'text-blue-100' : 'text-slate-500'}`}>
-                    {program.kapacita && `${program.kapacita} míst • `}min. {program.min_body} b.
-                  </span>
+                )}
+
+                {/* Řádky oborů */}
+                <div className="space-y-1">
+                  {groupPrograms.map(program => {
+                    const isActive = program.id === currentProgramId;
+                    return (
+                      <Link
+                        key={program.id}
+                        href={`/skola/${program.slug}`}
+                        className={`
+                          group flex items-center gap-3 px-3 py-2 rounded-lg transition-all
+                          ${isActive
+                            ? 'bg-blue-600 text-white shadow-sm'
+                            : 'bg-white border border-slate-200 text-slate-700 hover:border-blue-300 hover:bg-blue-50'
+                          }
+                        `}
+                      >
+                        {/* Název */}
+                        <span className={`flex-1 min-w-0 text-sm font-medium truncate ${isActive ? 'text-white' : ''}`}>
+                          {program.obor}
+                          {program.is_new_2026 && (
+                            <span className={`ml-1.5 inline-flex px-1.5 py-0 rounded text-[10px] font-semibold ${
+                              isActive ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-700'
+                            }`}>
+                              Nové 2026
+                            </span>
+                          )}
+                          {program.prev_zamereni_name && (
+                            <span className={`ml-1.5 text-xs font-normal ${isActive ? 'text-blue-200' : 'text-slate-400'}`}>
+                              (dříve {program.prev_zamereni_name})
+                            </span>
+                          )}
+                        </span>
+
+                        {/* Metriky */}
+                        <span className={`flex-shrink-0 text-xs tabular-nums ${isActive ? 'text-blue-100' : 'text-slate-500'}`}>
+                          {program.kapacita ? `${program.kapacita} míst` : ''}
+                        </span>
+                        <span className={`flex-shrink-0 w-16 text-xs tabular-nums text-right font-medium ${isActive ? 'text-white' : 'text-red-600'}`}>
+                          {program.min_body} b.
+                        </span>
+                      </Link>
+                    );
+                  })}
                 </div>
-              </Link>
+              </div>
             );
           })}
-          </div>
         </div>
       </div>
     </div>

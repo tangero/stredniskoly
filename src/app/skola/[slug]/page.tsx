@@ -693,6 +693,8 @@ export default async function SchoolDetailPage({ params }: Props) {
       kapacita: p.kapacita,
       slug: programSlug,
       hasZamereni: !!p.zamereni,
+      is_new_2026: p.is_new_2026,
+      prev_zamereni_name: p.prev_zamereni_name,
     };
   });
 
