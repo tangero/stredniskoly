@@ -262,7 +262,12 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="font-medium text-slate-900">{highlightMatch(school.nazev, query)}</div>
-                    <div className="text-sm text-slate-600">{highlightMatch(school.obor, query)}</div>
+                    <div className="text-sm text-slate-600">
+                      {highlightMatch(school.obor, query)}
+                      {school.typ?.startsWith('GY') && school.delka_studia && (
+                        <span className="text-slate-400"> • {school.delka_studia}leté</span>
+                      )}
+                    </div>
                     <div className="text-xs text-slate-400 mt-0.5">{school.obec} • {school.kraj}</div>
                   </Link>
                 );
