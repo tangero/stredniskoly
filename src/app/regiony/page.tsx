@@ -47,7 +47,7 @@ export default async function RegionsPage() {
   // Získat rozšířená data pro top školy
   const extendedStatsMap = await getExtendedSchoolStatsForSchools(allSchools.map(s => s.id));
 
-  // Top 10 nejtěžších škol podle JPZ bodů (porovnatelné)
+  // Top 10 oborů podle počtu přihlášek
   const top10Schools = [...allSchools]
     .map(school => {
       const stats = extendedStatsMap.get(school.id);
@@ -57,7 +57,7 @@ export default async function RegionsPage() {
         hasExtraCriteria: stats?.hasExtraCriteria || false
       };
     })
-    .sort((a, b) => b.jpzMin - a.jpzMin)
+    .sort((a, b) => b.prihlasky - a.prihlasky)
     .slice(0, 10);
 
   // Získat statistiky pro každý kraj
@@ -96,7 +96,7 @@ export default async function RegionsPage() {
               <span className="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center text-white text-lg">
                 🔥
               </span>
-              Top 10 nejtěžších středoškolských oborů podle přijímacích nároků
+              Top 10 středoškolských oborů podle počtu přihlášek
             </h2>
             <div className="bg-white rounded-xl shadow-sm overflow-hidden">
               {/* Desktop tabulka */}
@@ -106,8 +106,8 @@ export default async function RegionsPage() {
                     <tr>
                       <th className="text-left px-3 py-2 font-medium text-slate-600 w-8">#</th>
                       <th className="text-left px-3 py-2 font-medium text-slate-600">Škola / Obor / Město</th>
-                      <th className="text-center px-3 py-2 font-medium text-slate-600 whitespace-nowrap">JPZ body</th>
-                      <th className="text-center px-3 py-2 font-medium text-slate-600">Konkurence</th>
+                      <th className="text-right px-3 py-2 font-medium text-slate-600 whitespace-nowrap">Přihlášek</th>
+                      <th className="text-center px-3 py-2 font-medium text-slate-600">Převys</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -131,9 +131,8 @@ export default async function RegionsPage() {
                               <span className="text-slate-500">{school.obec}, {school.kraj}</span>
                             </Link>
                           </td>
-                          <td className="px-3 py-2 text-center whitespace-nowrap">
-                            <span className="font-bold text-slate-900">{school.jpzMin}</span>
-                            {school.hasExtraCriteria && <span className="ml-1" title="Dodatečná kritéria (prospěch)">📝</span>}
+                          <td className="px-3 py-2 text-right whitespace-nowrap">
+                            <span className="font-bold text-slate-900">{school.prihlasky.toLocaleString('cs-CZ')}</span>
                           </td>
                           <td className="px-3 py-2 text-center">
                             <span className={`font-semibold ${
@@ -167,7 +166,7 @@ export default async function RegionsPage() {
                             {school.nazev}
                           </Link>
                         </div>
-                        <span className="font-bold text-slate-900 shrink-0">{school.jpzMin}b</span>
+                        <span className="font-bold text-slate-900 shrink-0">{school.prihlasky.toLocaleString('cs-CZ')} přihl.</span>
                       </div>
                       <div className="text-sm text-slate-600 mb-1 truncate">{school.obor}</div>
                       <div className="flex items-center justify-between text-xs">
