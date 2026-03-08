@@ -105,7 +105,8 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
         const nazev = s.nazev.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const obor = s.obor.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const obec = s.obec.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        return nazev.includes(q) || obor.includes(q) || obec.includes(q);
+        const adresa = (s.adresa || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        return nazev.includes(q) || obor.includes(q) || obec.includes(q) || adresa.includes(q);
       })
       .slice(0, 5);
 
@@ -268,7 +269,9 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                         <span className="text-slate-400"> • {school.delka_studia}leté</span>
                       )}
                     </div>
-                    <div className="text-xs text-slate-400 mt-0.5">{school.obec} • {school.kraj}</div>
+                    <div className="text-xs text-slate-400 mt-0.5">
+                      {school.adresa ? highlightMatch(school.adresa, query) : <>{school.obec} • {school.kraj}</>}
+                    </div>
                   </Link>
                 );
               })}
