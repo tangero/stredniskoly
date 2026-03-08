@@ -44,6 +44,7 @@ export function Header() {
   const router = useRouter();
 
   const navLinks = [
+    { href: '/moje-sance', label: 'Moje šance' },
     { href: '/simulator', label: 'Simulátor' },
     { href: '/skoly', label: 'Analýza škol' },
     { href: '/dostupnost', label: 'Dojezdovost MHD' },
