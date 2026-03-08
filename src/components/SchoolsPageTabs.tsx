@@ -30,6 +30,11 @@ interface SchoolEntry {
   index_poptavky_2026?: number;
 }
 
+interface CityGroupSchool {
+  nazev: string;
+  slug: string;
+}
+
 interface CityStats {
   obec: string;
   groups: Array<{
@@ -39,6 +44,7 @@ interface CityStats {
     kapacita: number;
     index: number;
     count: number;
+    schools: CityGroupSchool[];
   }>;
   totalPrihlasky: number;
   totalKapacita: number;
@@ -55,7 +61,7 @@ export interface SchoolsPageTabsProps {
 
 type TabId = 'previs2026' | 'obtiznost2025' | 'mesta';
 type DelkaFilter = 'all' | '4' | '6' | '8';
-type TypFilter = 'all' | 'GY' | 'SOS' | 'LYC' | 'SOU' | 'NAS';
+type TypFilter = 'all' | 'GY' | 'GY4' | 'GY6' | 'GY8' | 'SOS' | 'LYC' | 'SOU' | 'NAS';
 
 const delkaColors: Record<number, string> = {
   2: 'bg-slate-500 text-white',
@@ -102,7 +108,10 @@ function matchesFilters(s: SchoolEntry, delka: DelkaFilter, typ: TypFilter): boo
   if (delka !== 'all' && s.delka_studia !== parseInt(delka)) return false;
   if (typ !== 'all') {
     if (typ === 'GY' && !s.typ.startsWith('GY')) return false;
-    if (typ !== 'GY' && s.typ !== typ) return false;
+    if (typ === 'GY4' && s.typ !== 'GY4') return false;
+    if (typ === 'GY6' && s.typ !== 'GY6') return false;
+    if (typ === 'GY8' && s.typ !== 'GY8') return false;
+    if (!typ.startsWith('GY') && s.typ !== typ) return false;
   }
   return true;
 }
@@ -122,6 +131,14 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
     { id: 'mesta', label: 'Převys podle měst' },
   ];
 
+  const handleTabChange = (tabId: TabId) => {
+    // Reset granular GY filter when leaving města tab
+    if (activeTab === 'mesta' && tabId !== 'mesta' && (typFilter === 'GY4' || typFilter === 'GY6' || typFilter === 'GY8')) {
+      setTypFilter('GY');
+    }
+    setActiveTab(tabId);
+  };
+
   const delkaButtons: { value: DelkaFilter; label: string }[] = [
     { value: 'all', label: 'Všechny' },
     { value: '4', label: '4leté' },
@@ -132,6 +149,17 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
   const typButtons: { value: TypFilter; label: string }[] = [
     { value: 'all', label: 'Všechny typy' },
     { value: 'GY', label: 'Gymnázia' },
+    { value: 'SOS', label: 'SOŠ' },
+    { value: 'LYC', label: 'Lycea' },
+    { value: 'SOU', label: 'SOU' },
+  ];
+
+  const typButtonsMesta: { value: TypFilter; label: string }[] = [
+    { value: 'all', label: 'Všechny typy' },
+    { value: 'GY', label: 'Gymnázia (vše)' },
+    { value: 'GY4', label: 'Gymnázia 4L' },
+    { value: 'GY6', label: 'Gymnázia 6L' },
+    { value: 'GY8', label: 'Gymnázia 8L' },
     { value: 'SOS', label: 'SOŠ' },
     { value: 'LYC', label: 'Lycea' },
     { value: 'SOU', label: 'SOU' },
@@ -166,7 +194,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
     // Jen školy s 2026 daty
     const withData = schools.filter(s =>
       (s.prihlasky_2026 || 0) > 0 && (s.kapacita_2026 || 0) > 0 &&
-      matchesFilters(s, delkaFilter, 'all') // typ filter se neaplikuje na města
+      matchesFilters(s, delkaFilter, typFilter)
     );
 
     // Seskupit podle města
@@ -182,15 +210,19 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
     for (const [obec, citySchools] of byCity) {
       if (citySchools.length < 3) continue; // jen města s dostatkem škol
 
-      const groupMap = new Map<string, { prihlasky: number; kapacita: number; count: number; sortKey: number }>();
+      const groupMap = new Map<string, { prihlasky: number; kapacita: number; count: number; sortKey: number; schools: CityGroupSchool[] }>();
       for (const s of citySchools) {
         const label = cityGroupLabel(s.typ, s.delka_studia);
         const sortKey = cityGroupSort(s.typ, s.delka_studia);
-        if (!groupMap.has(label)) groupMap.set(label, { prihlasky: 0, kapacita: 0, count: 0, sortKey });
+        if (!groupMap.has(label)) groupMap.set(label, { prihlasky: 0, kapacita: 0, count: 0, sortKey, schools: [] });
         const g = groupMap.get(label)!;
         g.prihlasky += s.prihlasky_2026 || 0;
         g.kapacita += s.kapacita_2026 || 0;
         g.count += 1;
+        // Deduplicate by nazev (multiple obory from same school)
+        if (!g.schools.some(x => x.nazev === s.nazev)) {
+          g.schools.push({ nazev: s.nazev, slug: s.slug });
+        }
       }
 
       const groups = [...groupMap.entries()]
@@ -201,6 +233,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
           kapacita: g.kapacita,
           index: g.kapacita > 0 ? g.prihlasky / g.kapacita : 0,
           count: g.count,
+          schools: g.schools,
         }))
         .filter(g => g.kapacita > 0)
         .sort((a, b) => a.sortKey - b.sortKey);
@@ -218,7 +251,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
     }
 
     return result.sort((a, b) => b.totalIndex - a.totalIndex);
-  }, [schools, delkaFilter]);
+  }, [schools, delkaFilter, typFilter]);
 
   return (
     <div>
@@ -227,7 +260,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
         {tabs.map(tab => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => handleTabChange(tab.id)}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
               activeTab === tab.id
                 ? 'bg-white text-blue-700 shadow-sm'
@@ -256,23 +289,21 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
             </button>
           ))}
         </div>
-        {activeTab !== 'mesta' && (
-          <div className="flex flex-wrap gap-1">
-            {typButtons.map(btn => (
-              <button
-                key={btn.value}
-                onClick={() => setTypFilter(btn.value)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                  typFilter === btn.value
-                    ? 'bg-slate-700 text-white'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                }`}
-              >
-                {btn.label}
-              </button>
-            ))}
-          </div>
-        )}
+        <div className="flex flex-wrap gap-1">
+          {(activeTab === 'mesta' ? typButtonsMesta : typButtons).map(btn => (
+            <button
+              key={btn.value}
+              onClick={() => setTypFilter(btn.value)}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                typFilter === btn.value
+                  ? 'bg-slate-700 text-white'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+              }`}
+            >
+              {btn.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Tab: Převys 2026 */}
@@ -483,30 +514,53 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
                 <div className="divide-y">
                   {city.groups.map(g => {
                     const barWidth = Math.min(100, (g.index / Math.max(...city.groups.map(x => x.index))) * 100);
+                    const isSingleSchool = g.schools.length === 1;
                     return (
-                      <div key={g.label} className="px-5 py-2.5 flex items-center gap-4">
-                        <span className="w-32 text-sm font-medium text-slate-700 shrink-0">{g.label}</span>
-                        <div className="flex-1 min-w-0">
-                          <div className="h-5 bg-slate-100 rounded-full overflow-hidden">
-                            <div
-                              className={`h-full rounded-full ${
-                                g.index >= 5 ? 'bg-red-400' : g.index >= 3 ? 'bg-orange-400' : 'bg-blue-400'
-                              }`}
-                              style={{ width: `${barWidth}%` }}
-                            />
+                      <div key={g.label} className="px-5 py-2.5">
+                        <div className="flex items-center gap-4">
+                          <span className="w-32 text-sm font-medium shrink-0">
+                            {isSingleSchool ? (
+                              <Link href={`/skola/${g.schools[0].slug}`} className="text-blue-600 hover:underline">
+                                {g.label}
+                              </Link>
+                            ) : (
+                              <span className="text-slate-700">{g.label}</span>
+                            )}
+                          </span>
+                          <div className="flex-1 min-w-0">
+                            <div className="h-5 bg-slate-100 rounded-full overflow-hidden">
+                              <div
+                                className={`h-full rounded-full ${
+                                  g.index >= 5 ? 'bg-red-400' : g.index >= 3 ? 'bg-orange-400' : 'bg-blue-400'
+                                }`}
+                                style={{ width: `${barWidth}%` }}
+                              />
+                            </div>
                           </div>
+                          <span className="w-20 text-right text-xs text-slate-500 tabular-nums shrink-0">
+                            {g.prihlasky.toLocaleString('cs-CZ')} / {g.kapacita.toLocaleString('cs-CZ')}
+                          </span>
+                          <span className={`w-14 text-right font-bold text-sm shrink-0 ${
+                            g.index >= 5 ? 'text-red-600' : g.index >= 3 ? 'text-orange-600' : 'text-blue-600'
+                          }`}>
+                            {g.index.toFixed(1)}×
+                          </span>
+                          <span className="w-16 text-right text-xs text-slate-400 shrink-0">
+                            {g.count} {g.count === 1 ? 'obor' : g.count < 5 ? 'obory' : 'oborů'}
+                          </span>
                         </div>
-                        <span className="w-20 text-right text-xs text-slate-500 tabular-nums shrink-0">
-                          {g.prihlasky.toLocaleString('cs-CZ')} / {g.kapacita.toLocaleString('cs-CZ')}
-                        </span>
-                        <span className={`w-14 text-right font-bold text-sm shrink-0 ${
-                          g.index >= 5 ? 'text-red-600' : g.index >= 3 ? 'text-orange-600' : 'text-blue-600'
-                        }`}>
-                          {g.index.toFixed(1)}×
-                        </span>
-                        <span className="w-16 text-right text-xs text-slate-400 shrink-0">
-                          {g.count} {g.count === 1 ? 'obor' : g.count < 5 ? 'obory' : 'oborů'}
-                        </span>
+                        {!isSingleSchool && (
+                          <div className="mt-1 ml-32 pl-4 text-[11px] text-slate-400 leading-snug">
+                            {g.schools.map((school, si) => (
+                              <span key={school.slug}>
+                                {si > 0 && ', '}
+                                <Link href={`/skola/${school.slug}`} className="text-slate-500 hover:text-blue-600 hover:underline">
+                                  {school.nazev}
+                                </Link>
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     );
                   })}

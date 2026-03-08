@@ -182,6 +182,9 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend, dat
 
   const isNew = program.is_new_2026;
   const prevName = program.prev_zamereni_name;
+  const has2026 = !!data2026ForProgram;
+  const d26 = data2026ForProgram;
+  const demand2026 = d26 ? getDemandClass(d26.index_poptavky) : null;
 
   return (
     <Link
@@ -199,7 +202,7 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend, dat
           <StudyLengthBadge delka={program.delka_studia} />
         </div>
 
-        {/* Obor na vlastním řádku - délka studia badge */}
+        {/* Badges - nový obor, přejmenování */}
         <div className="mb-3 text-xs">
           {isNew && (
             <span className="inline-block px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-medium mr-2">
@@ -213,42 +216,61 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend, dat
           )}
         </div>
 
-        <div className="grid grid-cols-3 gap-4 mt-4">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-red-600">{program.min_body}</div>
-            <div className="text-xs text-slate-500">Min. body 2025</div>
-            {trend && <MinBodyTrend trend={trend} />}
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-slate-700">{program.kapacita}</div>
-            <div className="text-xs text-slate-500">Kapacita</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-slate-700">
-              {program.index_poptavky.toFixed(1)}× {demand.emoji}
+        {/* Hlavní čísla - 2026 data pokud existují, jinak 2025 */}
+        {has2026 ? (
+          <>
+            <div className="grid grid-cols-3 gap-4 mt-4">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue-600">{d26!.prihlasky}</div>
+                <div className="text-xs text-slate-500">Přihlášek 2026</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-slate-700">{d26!.kapacita}</div>
+                <div className="text-xs text-slate-500">Míst 2026</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-slate-700">
+                  {d26!.index_poptavky.toFixed(1)}× {demand2026?.emoji}
+                </div>
+                <div className="text-xs text-slate-500">Poptávka</div>
+              </div>
             </div>
-            <div className="text-xs text-slate-500">Poptávka</div>
-          </div>
-        </div>
-
-        {/* 2026 data mini-row pokud existují */}
-        {data2026ForProgram && (
-          <div className="mt-3 pt-3 border-t border-slate-50 grid grid-cols-3 gap-4 text-xs text-slate-400">
+            {/* Doplňkový řádek s 2025 daty */}
+            <div className="mt-3 pt-3 border-t border-slate-50 grid grid-cols-3 gap-4 text-xs text-slate-400">
+              <div className="text-center">
+                <span className="font-medium text-red-600">{program.min_body}</span> min. body 2025
+              </div>
+              <div className="text-center">
+                {program.kapacita} míst 2025
+              </div>
+              <div className="text-center">
+                {program.prihlasky} přihl. 2025
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="grid grid-cols-3 gap-4 mt-4">
             <div className="text-center">
-              <span className="font-medium text-blue-600">{data2026ForProgram.prihlasky}</span> přihl. 2026
+              <div className="text-2xl font-bold text-red-600">{program.min_body}</div>
+              <div className="text-xs text-slate-500">Min. body 2025</div>
+              {trend && <MinBodyTrend trend={trend} />}
             </div>
             <div className="text-center">
-              <span className="font-medium">{data2026ForProgram.kapacita}</span> míst 2026
+              <div className="text-2xl font-bold text-slate-700">{program.kapacita}</div>
+              <div className="text-xs text-slate-500">Kapacita 2025</div>
             </div>
             <div className="text-center">
-              <span className="font-medium">{data2026ForProgram.index_poptavky.toFixed(1)}×</span> poptávka
+              <div className="text-2xl font-bold text-slate-700">
+                {program.index_poptavky.toFixed(1)}× {demand.emoji}
+              </div>
+              <div className="text-xs text-slate-500">Poptávka 2025</div>
             </div>
           </div>
         )}
 
         <div className="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-sm">
           <span className="text-slate-500">
-            {program.prihlasky} přihlášek → {program.prijati} přijatých
+            2025: {program.prihlasky} přihlášek → {program.prijati} přijatých
           </span>
           <span className="text-blue-600 font-medium">Detail →</span>
         </div>
@@ -521,52 +543,87 @@ export default async function SchoolDetailPage({ params }: Props) {
               />
             )}
 
-            {/* Seznam oborů */}
-            <h2 className="text-2xl font-bold mb-6">Obory a zaměření</h2>
-
-            {/* Přehled změn oborů - pokud jsou nové nebo přejmenované */}
+            {/* Rozdělit programy na ty s 2026 daty a ty pouze z 2025 */}
             {(() => {
-              const newCount = sortedPrograms.filter(p => p.is_new_2026).length;
-              const renamedCount = sortedPrograms.filter(p => p.prev_zamereni_name).length;
-              if (newCount === 0 && renamedCount === 0) return null;
-              return (
-                <div className="mb-6 p-4 bg-blue-50 border border-blue-100 rounded-xl text-sm text-blue-800">
-                  <p className="font-medium mb-1">Změny oborů oproti roku 2025:</p>
-                  <ul className="list-disc list-inside space-y-0.5 text-blue-700">
-                    {renamedCount > 0 && (
-                      <li>{renamedCount} {renamedCount === 1 ? 'obor změnil' : renamedCount < 5 ? 'obory změnily' : 'oborů změnilo'} název zaměření</li>
-                    )}
-                    {newCount > 0 && (
-                      <li>{newCount} {newCount === 1 ? 'nový obor' : newCount < 5 ? 'nové obory' : 'nových oborů'} (bez historie 2025)</li>
-                    )}
-                  </ul>
-                </div>
-              );
-            })()}
+              // Matchování programů s 2026 daty
+              const programsWith2026: typeof sortedPrograms = [];
+              const programsOnly2025: typeof sortedPrograms = [];
+              const matched2026BaseIds = new Set<string>();
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {sortedPrograms.map(program => {
-                const baseName = program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor;
-                const hasDuplicateName = (oborCountsOverview.get(baseName) || 0) > 1;
-                // Najít odpovídající 2026 data pro tento program
-                const baseId = program.id.split('_').slice(0, 2).join('_');
-                const matching2026 = data2026.find(d => {
+              for (const p of sortedPrograms) {
+                const baseId = p.id.split('_').slice(0, 2).join('_');
+                const has2026 = data2026.some(d => {
                   const d2026BaseId = d.id.split('_').slice(0, 2).join('_');
                   return d2026BaseId === baseId;
                 });
-                return (
-                  <ProgramCard
-                    key={program.id}
-                    program={program}
-                    schoolNazev={overview.nazev}
-                    redizo={redizo}
-                    showStudyLength={hasDuplicateName}
-                    trend={trendDataMap.get(program.id)}
-                    data2026ForProgram={matching2026}
-                  />
-                );
-              })}
-            </div>
+                if (has2026) {
+                  programsWith2026.push(p);
+                  matched2026BaseIds.add(baseId);
+                } else {
+                  programsOnly2025.push(p);
+                }
+              }
+
+              return (
+                <>
+                  {/* Obory 2026 */}
+                  <h2 className="text-2xl font-bold mb-6">
+                    Obory a zaměření
+                    {programsWith2026.length > 0 && (
+                      <span className="text-base font-normal text-slate-500 ml-2">přijímací řízení 2026</span>
+                    )}
+                  </h2>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    {programsWith2026.map(program => {
+                      const baseName = program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor;
+                      const hasDuplicateName = (oborCountsOverview.get(baseName) || 0) > 1;
+                      const baseId = program.id.split('_').slice(0, 2).join('_');
+                      const matching2026 = data2026.find(d => d.id.split('_').slice(0, 2).join('_') === baseId);
+                      return (
+                        <ProgramCard
+                          key={program.id}
+                          program={program}
+                          schoolNazev={overview.nazev}
+                          redizo={redizo}
+                          showStudyLength={hasDuplicateName}
+                          trend={trendDataMap.get(program.id)}
+                          data2026ForProgram={matching2026}
+                        />
+                      );
+                    })}
+                  </div>
+
+                  {/* Obory pouze z 2025 (ukončené) */}
+                  {programsOnly2025.length > 0 && (
+                    <>
+                      <h2 className="text-xl font-semibold mb-2 text-slate-600">
+                        Obory z roku 2025
+                      </h2>
+                      <p className="text-sm text-slate-500 mb-4">
+                        Tyto obory se v roce 2026 na této škole neotevírají. Zobrazujeme data z roku 2025 pro orientaci.
+                      </p>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 opacity-75">
+                        {programsOnly2025.map(program => {
+                          const baseName = program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor;
+                          const hasDuplicateName = (oborCountsOverview.get(baseName) || 0) > 1;
+                          return (
+                            <ProgramCard
+                              key={program.id}
+                              program={program}
+                              schoolNazev={overview.nazev}
+                              redizo={redizo}
+                              showStudyLength={hasDuplicateName}
+                              trend={trendDataMap.get(program.id)}
+                            />
+                          );
+                        })}
+                      </div>
+                    </>
+                  )}
+                </>
+              );
+            })()}
 
             {/* InspIS profil školy */}
             {inspis && <SchoolInfoSection data={inspis} />}
