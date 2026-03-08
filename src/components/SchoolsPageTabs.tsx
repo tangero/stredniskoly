@@ -136,6 +136,10 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
     if (activeTab === 'mesta' && tabId !== 'mesta' && (typFilter === 'GY4' || typFilter === 'GY6' || typFilter === 'GY8')) {
       setTypFilter('GY');
     }
+    // Reset délka filter when entering města tab (not used there)
+    if (tabId === 'mesta' && delkaFilter !== 'all') {
+      setDelkaFilter('all');
+    }
     setActiveTab(tabId);
   };
 
@@ -191,10 +195,10 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
 
   // Převys podle měst
   const cityStats = useMemo(() => {
-    // Jen školy s 2026 daty
+    // Jen školy s 2026 daty (délka filter se nepoužívá pro města)
     const withData = schools.filter(s =>
       (s.prihlasky_2026 || 0) > 0 && (s.kapacita_2026 || 0) > 0 &&
-      matchesFilters(s, delkaFilter, typFilter)
+      matchesFilters(s, 'all', typFilter)
     );
 
     // Seskupit podle města
@@ -208,7 +212,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
     // Pro každé město seskupit podle typ+délka
     const result: CityStats[] = [];
     for (const [obec, citySchools] of byCity) {
-      if (citySchools.length < 3) continue; // jen města s dostatkem škol
+      if (citySchools.length < 1) continue;
 
       const groupMap = new Map<string, { prihlasky: number; kapacita: number; count: number; sortKey: number; schools: CityGroupSchool[] }>();
       for (const s of citySchools) {
@@ -251,7 +255,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
     }
 
     return result.sort((a, b) => b.totalIndex - a.totalIndex);
-  }, [schools, delkaFilter, typFilter]);
+  }, [schools, typFilter]);
 
   return (
     <div>
@@ -274,21 +278,23 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
 
       {/* Filtry */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
-        <div className="flex flex-wrap gap-1">
-          {delkaButtons.map(btn => (
-            <button
-              key={btn.value}
-              onClick={() => setDelkaFilter(btn.value)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                delkaFilter === btn.value
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-              }`}
-            >
-              {btn.label}
-            </button>
-          ))}
-        </div>
+        {activeTab !== 'mesta' && (
+          <div className="flex flex-wrap gap-1">
+            {delkaButtons.map(btn => (
+              <button
+                key={btn.value}
+                onClick={() => setDelkaFilter(btn.value)}
+                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                  delkaFilter === btn.value
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {btn.label}
+              </button>
+            ))}
+          </div>
+        )}
         <div className="flex flex-wrap gap-1">
           {(activeTab === 'mesta' ? typButtonsMesta : typButtons).map(btn => (
             <button
