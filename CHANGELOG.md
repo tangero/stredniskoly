@@ -3,13 +3,29 @@
 Všechny podstatné změny v projektu jsou dokumentovány v tomto souboru.
 Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 
-## [Unreleased]
+## [0.3.0] — 2026-03-08
 
 ### Přidáno
+- **Nejžádanější studijní obory** (`/skoly`) — přepracovaná stránka se 3 taby:
+  - Nejžádanější obory 2026 (top 100 podle převysu poptávky)
+  - Obtížnost přijetí 2025 (top 100 podle indexu obtížnosti)
+  - Převys poptávky podle měst 2026 (agregace za města s vizuálními bary a odkazy na školy)
+- **Granulární filtry typů škol** — výběr Gymnázia 4L/6L/8L, SOŠ, Lycea, SOU na přehledu měst
+- **2026 data jako primární** na kartě školy — přihlášky, místa a poptávka 2026 zobrazeny jako hlavní čísla, 2025 data jako sekundární
+- **Oddělení oborů z roku 2025** — obory bez pokračování v 2026 ve vlastní sekci „Obory z roku 2025"
+- **Kontinuita oborů 2025↔2026** — badge „Nový obor 2026", info box „Tento obor se v roce 2025 jmenoval..." pro přejmenované obory
+- **Vertikální ProgramTabs** — seskupení oborů podle délky studia (4L/6L/8L) s barevnými hlavičkami místo horizontálního scrollování
+- **Délka studia v našeptávači** — u gymnázií se zobrazuje „4leté / 6leté / 8leté"
+- **Přetextování Moje šance** — sdílení URL, žebříček převisu přihlášek
 
 ### Změněno
+- **Top 10 na /regiony** — změněno z „nejobtížnější obory" na „podle počtu přihlášek"
+- **Párování oborů 2025↔2026** — tří-úrovňový lookup (exact ID → matched_2025_id → base key fallback)
 
 ### Opraveno
+- **1584 oborů nenalezitelných v Moje šance** — oprava párování 2025↔2026 dat
+- **Převys podle měst zobrazuje všechna města** — odstraněn limit min. 3 oborů, který skrýval menší města
+- **Aktualizace dat přihlášek 2026** ze skutečných dat CERMATu
 
 ## [0.2.0] — 2026-02-10
 
