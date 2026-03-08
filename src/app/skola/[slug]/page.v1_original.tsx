@@ -7,39 +7,17 @@ import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnal
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolInfoSection } from '@/components/school-profile/SchoolInfoSection';
 import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo } from '@/lib/data';
-import { getNoteForSchool, getNotesForRedizo } from '@/lib/school-notes';
-import { SchoolNote, SchoolNotes } from '@/components/SchoolNote';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
-
-// V2 Overview komponenty
-import {
-  OverviewHero,
-  PriorityCardsGrid,
-  QuickFactsCard,
-  CSISummaryCard,
-  CTASection,
-  QuickFact,
-} from '@/components/school/overview';
-import { calculateAllPriorities } from '@/lib/priorities';
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
-// =====================
-// HYBRID ISR+SSG APPROACH
-// =====================
-// Pre-generate top 200 nejnavštěvovanějších škol (SSG)
-// Zbytek generovat on-demand při prvním requestu (ISR)
-
-// ISR: Revalidate každou hodinu (fresh data)
-export const revalidate = 3600; // 1 hodina
-
-// SSG: Pre-generate top 200 škol (podle popularity)
+// Generování statických cest pro všechny školy
 export async function generateStaticParams() {
-  const { generateTopSlugs } = await import('@/lib/data');
-  const slugs = await generateTopSlugs(200);
+  const { generateAllSlugs } = await import('@/lib/data');
+  const slugs = await generateAllSlugs();
   return slugs;
 }
 
@@ -70,18 +48,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         type: 'article',
         url: `/skola/${slug}`,
       },
-      alternates: {
-        types: {
-          'text/markdown': `/skola/${slug}.md`,
-          'application/json': `/skola/${slug}.json`,
-        },
-      },
     };
   }
 
-  // Detail oboru/zaměření - overview slug pro alternativní formáty (md/json vždy vrací celou školu)
-  const overviewSlugMeta = `${pageInfo.redizo}-${createSlug(school.nazev)}`;
-
+  // Detail oboru/zaměření
   const program = pageInfo.program;
   const oborNazev = program?.zamereni ? `${program.obor} - ${program.zamereni}` : school.obor;
   const title = `${school.nazev} - ${oborNazev}`;
@@ -95,12 +65,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: 'article',
       url: `/skola/${slug}`,
-    },
-    alternates: {
-      types: {
-        'text/markdown': `/skola/${overviewSlugMeta}.md`,
-        'application/json': `/skola/${overviewSlugMeta}.json`,
-      },
     },
   };
 }
@@ -227,7 +191,6 @@ export default async function SchoolDetailPage({ params }: Props) {
   const { slug } = await params;
   const pageInfo = await getSchoolPageType(slug);
   const inspisEnabled = process.env.INSPIS_ENABLED !== 'false';
-  const overviewV2Enabled = process.env.OVERVIEW_V2_ENABLED !== 'false'; // V2 feature flag
 
   if (!pageInfo.school) {
     notFound();
@@ -244,12 +207,11 @@ export default async function SchoolDetailPage({ params }: Props) {
     const overview = await getSchoolOverview(redizo);
     if (!overview) notFound();
 
-    // Načíst data ČŠI, AI extrakce a poznámky
-    const [csiData, extractions, inspis, schoolNotes] = await Promise.all([
+    // Načíst data ČŠI a AI extrakce
+    const [csiData, extractions, inspis] = await Promise.all([
       getCSIDataByRedizo(redizo),
       getExtractionsByRedizo(redizo),
       inspisEnabled ? getInspisDataByRedizo(redizo) : Promise.resolve(null),
-      getNotesForRedizo(redizo),
     ]);
 
     // Seřadit programy podle min_body (nejobtížnější první)
@@ -270,138 +232,6 @@ export default async function SchoolDetailPage({ params }: Props) {
     const programIds = sortedPrograms.map(p => p.id);
     const trendDataMap = await getTrendDataForPrograms(programIds);
 
-    // =====================
-    // V2 OVERVIEW (pokud enabled)
-    // =====================
-    if (overviewV2Enabled && sortedPrograms.length === 1) {
-      // Pro školy s 1 oborem použijeme V2 Overview stránku
-      const program = sortedPrograms[0];
-
-      // Vypočítat priority scores
-      const priorities = calculateAllPriorities({
-        minBody: program.min_body,
-        obtiznost: school.obtiznost,
-        indexPoptavky: program.index_poptavky,
-        kapacita: program.kapacita,
-        prihlasky: program.prihlasky,
-        prijati: program.prijati,
-        typ: school.typ,
-      });
-
-      // Quick facts pro kartu
-      const quickFacts: QuickFact[] = [
-        { label: "Min. body", value: program.min_body },
-        { label: "Kapacita", value: program.kapacita },
-        { label: "Školné", value: inspis?.rocni_skolne ? `${inspis.rocni_skolne} Kč` : "0 Kč" },
-        { label: "Jazyky", value: inspis?.vyuka_jazyku?.slice(0, 2).join(", ") || "N/A" },
-      ];
-
-      // AI summary (první extrakce nebo fallback)
-      const aiSummary = extractions.length > 0
-        ? extractions[0].plain_czech_summary?.substring(0, 200) || "Škola poskytuje kvalitní vzdělání."
-        : "Data z inspekce nejsou k dispozici.";
-
-      const overviewSlug = `${redizo}-${createSlug(overview.nazev)}`;
-
-      return (
-        <div className="min-h-screen flex flex-col">
-          <Header />
-
-          <main className="flex-1">
-            {/* Breadcrumb */}
-            <div className="bg-white border-b">
-              <div className="max-w-6xl mx-auto px-4 py-3">
-                <nav className="text-sm text-slate-600">
-                  <Link href="/" className="hover:text-blue-600">Domů</Link>
-                  <span className="mx-2">/</span>
-                  <Link href="/skoly" className="hover:text-blue-600">Školy</Link>
-                  <span className="mx-2">/</span>
-                  <Link href={`/regiony/${krajSlug}`} className="hover:text-blue-600">
-                    {krajNames[school.kraj_kod] || school.kraj}
-                  </Link>
-                  <span className="mx-2">/</span>
-                  <span className="text-slate-900">{overview.nazev}</span>
-                </nav>
-              </div>
-            </div>
-
-            {/* V2 Hero */}
-            <OverviewHero
-              schoolName={overview.nazev}
-              location={overview.obec}
-              kraj={krajNames[overview.kraj_kod] || overview.kraj}
-              studyLength={program.delka_studia}
-              schoolType={overview.zrizovatel}
-              category={school.category_code}
-              hasInspection={extractions.length > 0}
-              overviewSlug={overviewSlug}
-            />
-
-            {/* Obsah */}
-            <div className="max-w-6xl mx-auto px-4 py-8 space-y-8">
-              {/* Poznámky ke škole */}
-              {schoolNotes.length > 0 && (
-                <SchoolNotes notes={schoolNotes.map(n => n.note)} />
-              )}
-
-              {/* Priority Cards */}
-              <PriorityCardsGrid priorities={priorities} />
-
-              {/* Quick Facts */}
-              <QuickFactsCard facts={quickFacts} />
-
-              {/* ČŠI Summary */}
-              {extractions.length > 0 && (
-                <CSISummaryCard
-                  summary={aiSummary}
-                  reportUrl={`/skola/${overviewSlug}/inspekce`}
-                />
-              )}
-
-              {/* CTA Buttons */}
-              <CTASection
-                primaryAction={{
-                  label: "Zobrazit detail",
-                  href: `/skola/${overviewSlug}/detail`,
-                }}
-                secondaryAction={{
-                  label: "Je to pro mě?",
-                  href: `/skola/${overviewSlug}/pro-me`,
-                }}
-              />
-
-              {/* InspIS profil (optional) */}
-              {inspis && <SchoolInfoSection data={inspis} />}
-
-              {/* Strojově čitelné formáty */}
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-center gap-3 text-xs text-slate-400">
-                <span>Otevřená data:</span>
-                <a
-                  href={`/skola/${overviewSlug}.md`}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
-                >
-                  <span className="font-bold leading-none">M&#8595;</span>
-                  Markdown
-                </a>
-                <a
-                  href={`/skola/${overviewSlug}.json`}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
-                >
-                  <span className="font-mono leading-none">&#123; &#125;</span>
-                  JSON
-                </a>
-              </div>
-            </div>
-          </main>
-
-          <Footer />
-        </div>
-      );
-    }
-
-    // =====================
-    // V1 OVERVIEW (fallback)
-    // =====================
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
@@ -474,13 +304,6 @@ export default async function SchoolDetailPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Poznámky ke škole */}
-            {schoolNotes.length > 0 && (
-              <div className="mb-8">
-                <SchoolNotes notes={schoolNotes.map(n => n.note)} />
-              </div>
-            )}
-
             {/* Seznam oborů */}
             <h2 className="text-2xl font-bold mb-6">Obory a zaměření</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -530,25 +353,6 @@ export default async function SchoolDetailPage({ params }: Props) {
                 Vyzkoušet v simulátoru
               </Link>
             </div>
-
-            {/* Strojově čitelné formáty */}
-            <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-center gap-3 text-xs text-slate-400">
-              <span>Otevřená data:</span>
-              <a
-                href={`/skola/${slug}.md`}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
-              >
-                <span className="font-bold leading-none">M&#8595;</span>
-                Markdown
-              </a>
-              <a
-                href={`/skola/${slug}.json`}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
-              >
-                <span className="font-mono leading-none">&#123; &#125;</span>
-                JSON
-              </a>
-            </div>
           </div>
         </main>
 
@@ -568,21 +372,17 @@ export default async function SchoolDetailPage({ params }: Props) {
   const category = categoryColors[school.category_code];
 
   // Načíst další data - pro zaměření použít specifickou funkci
-  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData, extractions, programNote, schoolNote] = await Promise.all([
+  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData, extractions] = await Promise.all([
     getProgramsByRedizo(redizo),
     getSchoolDetail(program.id),
     pageInfo.type === 'zamereni'
       ? getExtendedStatsForProgram(program.id)
       : getExtendedSchoolStats(school.id),
-    getSchoolDifficultyProfile(program.id, program.typ),
+    getSchoolDifficultyProfile(school.id, school.typ),
     getTrendDataForProgram(program.id),
     getCSIDataByRedizo(redizo),
     getExtractionsByRedizo(redizo),
-    getNoteForSchool(program.id),   // poznámka specifická pro zaměření/obor
-    getNoteForSchool(school.id),    // fallback: poznámka pro celý obor (bez zaměření)
   ]);
-  // Použít zaměření-specifickou poznámku, nebo fallback na obecnou
-  const schoolNoteToShow = programNote || schoolNote;
 
   // Připravit data pro ProgramTabs
   // Zjistit duplicitní názvy oborů (různá délka studia, ale stejný název)
@@ -709,13 +509,6 @@ export default async function SchoolDetailPage({ params }: Props) {
         {/* Navigace oborů */}
         <ProgramTabs programs={programsForTabs} currentProgramId={program.id} />
 
-        {/* Poznámka ke škole/oboru */}
-        {schoolNoteToShow && (
-          <div className="max-w-6xl mx-auto px-4 pt-6">
-            <SchoolNote note={schoolNoteToShow} />
-          </div>
-        )}
-
         {/* Stats Grid */}
         <div className="max-w-6xl mx-auto px-4 py-8">
           <StatsGrid
@@ -798,7 +591,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             <div className="mb-8">
               <SchoolDifficultyProfile
                 profile={difficultyProfile}
-                schoolType={program.typ}
+                schoolType={school.typ}
                 cjPrumer={extendedStats.cj_prumer}
                 maPrumer={extendedStats.ma_prumer}
                 jpzMin={extendedStats.jpz_min}
@@ -933,25 +726,6 @@ export default async function SchoolDetailPage({ params }: Props) {
             >
               Vyzkoušet v simulátoru
             </Link>
-          </div>
-
-          {/* Strojově čitelné formáty */}
-          <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-center gap-3 text-xs text-slate-400">
-            <span>Otevřená data:</span>
-            <a
-              href={`/skola/${overviewSlug}.md`}
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
-            >
-              <span className="font-bold leading-none">M&#8595;</span>
-              Markdown
-            </a>
-            <a
-              href={`/skola/${overviewSlug}.json`}
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded border border-slate-200 hover:border-slate-300 hover:text-slate-600 transition-colors"
-            >
-              <span className="font-mono leading-none">&#123; &#125;</span>
-              JSON
-            </a>
           </div>
         </div>
       </main>

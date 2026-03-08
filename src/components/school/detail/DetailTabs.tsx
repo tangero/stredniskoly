@@ -54,11 +54,15 @@ export function DetailTabs({
     <div className="max-w-6xl mx-auto px-4">
       {/* Sticky tabs */}
       <div className="sticky top-0 z-10 bg-white border-b border-slate-200 -mx-4 px-4">
-        <div className="flex overflow-x-auto">
+        <div className="flex overflow-x-auto" role="tablist" aria-label="Detail tabs">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
+              role="tab"
+              aria-selected={activeTab === tab.id}
+              aria-controls={`tabpanel-${tab.id}`}
+              id={`tab-${tab.id}`}
               className={cn(
                 'flex items-center gap-2 px-4 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors',
                 activeTab === tab.id
@@ -76,33 +80,41 @@ export function DetailTabs({
       {/* Tab content */}
       <div className="py-8">
         {activeTab === 'stats' && (
-          <StatsTab
-            school={school}
-            program={program}
-            extendedStats={extendedStats}
-          />
+          <div role="tabpanel" id="tabpanel-stats" aria-labelledby="tab-stats">
+            <StatsTab
+              school={school}
+              program={program}
+              extendedStats={extendedStats}
+            />
+          </div>
         )}
 
         {activeTab === 'competition' && (
-          <CompetitionTab
-            school={school}
-            program={program}
-            schoolDetail={schoolDetail}
-          />
+          <div role="tabpanel" id="tabpanel-competition" aria-labelledby="tab-competition">
+            <CompetitionTab
+              school={school}
+              program={program}
+              schoolDetail={schoolDetail}
+            />
+          </div>
         )}
 
         {activeTab === 'school' && (
-          <SchoolTab
-            school={school}
-            inspis={inspis}
-            extractions={extractions}
-            csiData={csiData}
-            overviewSlug={overviewSlug}
-          />
+          <div role="tabpanel" id="tabpanel-school" aria-labelledby="tab-school">
+            <SchoolTab
+              school={school}
+              inspis={inspis}
+              extractions={extractions}
+              csiData={csiData}
+              overviewSlug={overviewSlug}
+            />
+          </div>
         )}
 
         {activeTab === 'practical' && (
-          <PracticalTab school={school} inspis={inspis} />
+          <div role="tabpanel" id="tabpanel-practical" aria-labelledby="tab-practical">
+            <PracticalTab school={school} inspis={inspis} />
+          </div>
         )}
       </div>
     </div>

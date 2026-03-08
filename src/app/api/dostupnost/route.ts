@@ -68,10 +68,32 @@ type SearchRequest = {
   typFilter?: string;
 };
 
+type CachedSearchResponse = {
+  expiresAt: number;
+  payload: Record<string, unknown>;
+};
+
 const PAGE_SIZE = 50;
 const WALK_SPEED_KMPH = 4.0; // Běžná rychlost chůze
 const WALK_ROUTE_MULTIPLIER = 1.3; // Koeficient pro převod vzdušné čáry na reálnou trasu (budovy, zatáčky)
 const MAX_WALK_DISTANCE_KM = 1.5;
+
+function parsePositiveInt(value: string | undefined, fallback: number): number {
+  if (!value) return fallback;
+  const parsed = Number.parseInt(value, 10);
+  if (!Number.isFinite(parsed) || parsed <= 0) return fallback;
+  return parsed;
+}
+
+const RESPONSE_CACHE_ENABLED = process.env.DOSTUPNOST_RESPONSE_CACHE_ENABLED === 'true';
+const RESPONSE_CACHE_TTL_MS = parsePositiveInt(
+  process.env.DOSTUPNOST_RESPONSE_CACHE_TTL_MS,
+  5 * 60 * 1000,
+);
+const RESPONSE_CACHE_MAX_ITEMS = parsePositiveInt(
+  process.env.DOSTUPNOST_RESPONSE_CACHE_MAX_ITEMS,
+  200,
+);
 
 let graphCache: TransitGraphData | null = null;
 let schoolLocationsCache: SchoolLocationsData | null = null;
@@ -79,6 +101,7 @@ let allSchoolsCache: AggregatedSchool[] | null = null;
 let difficultyThresholdsCache: DifficultyThresholds | null = null;
 // Index: stopId → [{groupKey, distance_km, schoolLat, schoolLon}]
 let stopToSchoolsIndex: Map<string, Array<{ groupKey: string; distanceKm: number; lat: number; lon: number }>> | null = null;
+const searchResponseCache = new Map<string, CachedSearchResponse>();
 
 function toNumber(value: unknown): number | null {
   if (typeof value === 'number' && Number.isFinite(value)) return value;
@@ -138,6 +161,38 @@ function pickYearData(data: Record<string, unknown>): Record<string, unknown>[] 
   const year2025 = ensureArray<Record<string, unknown>>(data['2025']);
   const year2024 = ensureArray<Record<string, unknown>>(data['2024']);
   return year2025.length > 0 ? year2025 : year2024;
+}
+
+function buildSearchCacheKey(input: {
+  stopId: string;
+  maxMinutes: number;
+  page: number;
+  typFilter: string;
+}): string {
+  return `${input.stopId}|${input.maxMinutes}|${input.page}|${input.typFilter}`;
+}
+
+function readCachedSearchResponse(cacheKey: string): Record<string, unknown> | null {
+  const entry = searchResponseCache.get(cacheKey);
+  if (!entry) return null;
+  if (entry.expiresAt <= Date.now()) {
+    searchResponseCache.delete(cacheKey);
+    return null;
+  }
+  return entry.payload;
+}
+
+function writeCachedSearchResponse(cacheKey: string, payload: Record<string, unknown>): void {
+  if (searchResponseCache.size >= RESPONSE_CACHE_MAX_ITEMS) {
+    const oldestKey = searchResponseCache.keys().next().value;
+    if (oldestKey) {
+      searchResponseCache.delete(oldestKey);
+    }
+  }
+  searchResponseCache.set(cacheKey, {
+    expiresAt: Date.now() + RESPONSE_CACHE_TTL_MS,
+    payload,
+  });
 }
 
 async function loadGraph(): Promise<TransitGraphData> {
@@ -507,6 +562,30 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Vyberte výchozí zastávku.' }, { status: 400 });
   }
 
+  const cacheKey = buildSearchCacheKey({
+    stopId,
+    maxMinutes,
+    page: requestedPage,
+    typFilter,
+  });
+
+  if (RESPONSE_CACHE_ENABLED) {
+    const cachedPayload = readCachedSearchResponse(cacheKey);
+    if (cachedPayload) {
+      const payloadCopy = structuredClone(cachedPayload);
+      const diagnostics = payloadCopy.diagnostics as Record<string, unknown> | undefined;
+      if (diagnostics && typeof diagnostics === 'object') {
+        diagnostics.responseCache = {
+          enabled: true,
+          hit: true,
+          ttlMs: RESPONSE_CACHE_TTL_MS,
+          maxItems: RESPONSE_CACHE_MAX_ITEMS,
+        };
+      }
+      return NextResponse.json(payloadCopy);
+    }
+  }
+
   try {
     const requestStartedAt = Date.now();
     const timings: Record<string, number> = {};
@@ -642,7 +721,7 @@ export async function POST(request: NextRequest) {
 
     timings.totalMs = Date.now() - requestStartedAt;
 
-    return NextResponse.json({
+    const responsePayload: Record<string, unknown> = {
       input: {
         stopId,
         stopName: startName,
@@ -684,8 +763,20 @@ export async function POST(request: NextRequest) {
           `Chůze ze zastávky ke škole: rychlost ${WALK_SPEED_KMPH} km/h, koeficient trasy ${WALK_ROUTE_MULTIPLIER}× (zohledňuje budovy a zatáčky), max ${MAX_WALK_DISTANCE_KM} km.`,
           'Pro přesnější výsledky doporučujeme ověřit konkrétní spojení na spojenka.cz.',
         ],
+        responseCache: {
+          enabled: RESPONSE_CACHE_ENABLED,
+          hit: false,
+          ttlMs: RESPONSE_CACHE_TTL_MS,
+          maxItems: RESPONSE_CACHE_MAX_ITEMS,
+        },
       },
-    });
+    };
+
+    if (RESPONSE_CACHE_ENABLED) {
+      writeCachedSearchResponse(cacheKey, responsePayload);
+    }
+
+    return NextResponse.json(responsePayload);
   } catch (error) {
     console.error('Dostupnost API error:', error);
     return NextResponse.json({

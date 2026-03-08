@@ -13,6 +13,8 @@ import {
 } from '@/lib/data';
 import { krajNames } from '@/types/school';
 import { createSlug } from '@/lib/utils';
+import { getNotesForRedizo } from '@/lib/school-notes';
+import { SchoolNotes } from '@/components/SchoolNote';
 
 // V2 Detail komponenty
 import { DetailHero } from '@/components/school/detail/DetailHero';
@@ -72,7 +74,7 @@ export default async function SchoolDetailPageV2({ params }: Props) {
   }
 
   // Načíst všechna potřebná data
-  const [detailedPrograms, schoolDetail, extendedStats, csiData, extractions, inspis] =
+  const [detailedPrograms, schoolDetail, extendedStats, csiData, extractions, inspis, schoolNotes] =
     await Promise.all([
       getProgramsByRedizo(redizo),
       getSchoolDetail(program.id),
@@ -80,6 +82,7 @@ export default async function SchoolDetailPageV2({ params }: Props) {
       getCSIDataByRedizo(redizo),
       getExtractionsByRedizo(redizo),
       getInspisDataByRedizo(redizo),
+      getNotesForRedizo(redizo),
     ]);
 
   const overviewSlug = `${redizo}-${createSlug(school.nazev)}`;
@@ -126,6 +129,13 @@ export default async function SchoolDetailPageV2({ params }: Props) {
           studyLength={program.delka_studia}
           overviewSlug={overviewSlug}
         />
+
+        {/* Poznámky ke škole */}
+        {schoolNotes.length > 0 && (
+          <div className="max-w-6xl mx-auto px-4 pt-6">
+            <SchoolNotes notes={schoolNotes.map(n => n.note)} />
+          </div>
+        )}
 
         {/* Detail Tabs */}
         <DetailTabs

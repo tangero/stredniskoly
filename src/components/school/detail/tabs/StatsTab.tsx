@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { TrendingUp, TrendingDown, Users, Trophy, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { TestDifficultyModal } from '../modals/TestDifficultyModal';
+import { CohortsModal } from '../modals/CohortsModal';
 
 interface StatsTabProps {
   school: any;
@@ -168,7 +170,7 @@ function AcceptanceByPriorityCard({ extendedStats }: { extendedStats: any }) {
 }
 
 // Test difficulty preview component (triggers modal)
-function TestDifficultyCard({ extendedStats }: { extendedStats: any }) {
+function TestDifficultyCard({ extendedStats, onOpenModal }: { extendedStats: any; onOpenModal: () => void }) {
   if (!extendedStats?.cj_prumer && !extendedStats?.ma_prumer) {
     return null;
   }
@@ -207,8 +209,10 @@ function TestDifficultyCard({ extendedStats }: { extendedStats: any }) {
         )}
       </div>
 
-      {/* TODO: Add modal trigger */}
-      <button className="mt-4 w-full flex items-center justify-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors">
+      <button
+        onClick={onOpenModal}
+        className="mt-4 w-full flex items-center justify-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors"
+      >
         Zobrazit detail
         <ChevronRight className="w-4 h-4" />
       </button>
@@ -216,23 +220,47 @@ function TestDifficultyCard({ extendedStats }: { extendedStats: any }) {
   );
 }
 
-// Cohorts preview component (triggers modal)
-function CohortsCard({ extendedStats }: { extendedStats: any }) {
-  if (!extendedStats?.cohorts || extendedStats.cohorts.length === 0) {
-    return null;
-  }
+// Cohort definitions for the 9 categories
+const COHORT_DEFS = [
+  { label: 'Výborný matematik', emoji: '🧮', level: 'Výborní' },
+  { label: 'Výborný vyvážený', emoji: '⭐', level: 'Výborní' },
+  { label: 'Výborný humanitní', emoji: '📖', level: 'Výborní' },
+  { label: 'Dobrý matematik', emoji: '📐', level: 'Dobří' },
+  { label: 'Dobrý vyvážený', emoji: '👍', level: 'Dobří' },
+  { label: 'Dobrý humanitní', emoji: '📝', level: 'Dobří' },
+  { label: 'Slabší matematik', emoji: '🔢', level: 'Slabší' },
+  { label: 'Slabší vyvážený', emoji: '📚', level: 'Slabší' },
+  { label: 'Slabší humanitní', emoji: '✏️', level: 'Slabší' },
+];
 
-  const cohorts = extendedStats.cohorts.slice(0, 3); // Top 3 cohorts
+// Transform raw cohorts number[] into structured data
+function parseCohorts(raw: number[] | null) {
+  if (!raw || raw.length === 0) return null;
+  const total = raw.reduce((s, v) => s + v, 0);
+  if (total === 0) return null;
+  return COHORT_DEFS.map((def, i) => ({
+    ...def,
+    count: raw[i] || 0,
+    percentage: Math.round(((raw[i] || 0) / total) * 100),
+  })).filter(c => c.count > 0);
+}
+
+// Cohorts preview component (triggers modal)
+function CohortsCard({ extendedStats, onOpenModal }: { extendedStats: any; onOpenModal: () => void }) {
+  const cohorts = parseCohorts(extendedStats?.cohorts);
+  if (!cohorts || cohorts.length === 0) return null;
+
+  const top3 = cohorts.slice(0, 3);
 
   return (
     <div className="bg-white border border-slate-200 rounded-lg p-6">
       <h3 className="font-semibold text-slate-900 mb-4">Profily přijatých studentů</h3>
 
       <div className="space-y-2">
-        {cohorts.map((cohort: any, idx: number) => (
+        {top3.map((cohort, idx) => (
           <div key={idx} className="flex items-center justify-between py-2">
             <div className="flex items-center gap-2">
-              <span className="text-lg">{cohort.emoji || '📚'}</span>
+              <span className="text-lg">{cohort.emoji}</span>
               <span className="text-sm text-slate-700">{cohort.label}</span>
             </div>
             <span className="text-sm font-medium text-slate-900">{cohort.percentage}%</span>
@@ -240,8 +268,10 @@ function CohortsCard({ extendedStats }: { extendedStats: any }) {
         ))}
       </div>
 
-      {/* TODO: Add modal trigger */}
-      <button className="mt-4 w-full flex items-center justify-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors">
+      <button
+        onClick={onOpenModal}
+        className="mt-4 w-full flex items-center justify-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors"
+      >
         Zobrazit detail
         <ChevronRight className="w-4 h-4" />
       </button>
@@ -251,18 +281,31 @@ function CohortsCard({ extendedStats }: { extendedStats: any }) {
 
 // Main StatsTab component
 export function StatsTab({ school, program, extendedStats }: StatsTabProps) {
-  return (
-    <div className="space-y-6">
-      {/* Trend comparison */}
-      <TrendComparisonCard program={program} />
+  const [testDifficultyOpen, setTestDifficultyOpen] = useState(false);
+  const [cohortsOpen, setCohortsOpen] = useState(false);
 
-      {/* Grid layout for cards */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <PriorityDistributionCard extendedStats={extendedStats} />
-        <AcceptanceByPriorityCard extendedStats={extendedStats} />
-        <TestDifficultyCard extendedStats={extendedStats} />
-        <CohortsCard extendedStats={extendedStats} />
+  return (
+    <>
+      <div className="space-y-6">
+        {/* Trend comparison */}
+        <TrendComparisonCard program={program} />
+
+        {/* Grid layout for cards */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <PriorityDistributionCard extendedStats={extendedStats} />
+          <AcceptanceByPriorityCard extendedStats={extendedStats} />
+          <TestDifficultyCard extendedStats={extendedStats} onOpenModal={() => setTestDifficultyOpen(true)} />
+          <CohortsCard extendedStats={extendedStats} onOpenModal={() => setCohortsOpen(true)} />
+        </div>
       </div>
-    </div>
+
+      {/* Modals */}
+      <TestDifficultyModal
+        isOpen={testDifficultyOpen}
+        onClose={() => setTestDifficultyOpen(false)}
+        extendedStats={extendedStats}
+      />
+      <CohortsModal isOpen={cohortsOpen} onClose={() => setCohortsOpen(false)} extendedStats={extendedStats} />
+    </>
   );
 }

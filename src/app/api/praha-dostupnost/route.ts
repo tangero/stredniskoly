@@ -49,6 +49,11 @@ type SearchRequest = {
   coverageMode?: CoverageMode;
 };
 
+type CachedSearchResponse = {
+  expiresAt: number;
+  payload: Record<string, unknown>;
+};
+
 type GeocodeResult = {
   point: Point;
   displayName?: string;
@@ -130,6 +135,23 @@ const PID_REGION_BBOX = {
   maxLon: 15.95,
 };
 
+function parsePositiveInt(value: string | undefined, fallback: number): number {
+  if (!value) return fallback;
+  const parsed = Number.parseInt(value, 10);
+  if (!Number.isFinite(parsed) || parsed <= 0) return fallback;
+  return parsed;
+}
+
+const RESPONSE_CACHE_ENABLED = process.env.PRAHA_DOSTUPNOST_RESPONSE_CACHE_ENABLED === 'true';
+const RESPONSE_CACHE_TTL_MS = parsePositiveInt(
+  process.env.PRAHA_DOSTUPNOST_RESPONSE_CACHE_TTL_MS,
+  5 * 60 * 1000,
+);
+const RESPONSE_CACHE_MAX_ITEMS = parsePositiveInt(
+  process.env.PRAHA_DOSTUPNOST_RESPONSE_CACHE_MAX_ITEMS,
+  200,
+);
+
 let prahaSchoolsCache: PrahaSchool[] | null = null;
 let difficultyThresholdsCache: DifficultyThresholds | null = null;
 let departureLineHeadwayCache: Map<string, number> | null = null;
@@ -139,6 +161,7 @@ const pidStopsSourceByCoverage = new Map<CoverageMode, string>();
 const pidStopTokenIndexCacheByCoverage = new Map<CoverageMode, Map<string, number[]>>();
 const pidLineToStopIndicesCacheByCoverage = new Map<CoverageMode, Map<string, number[]>>();
 const pidCoverageSummaryCacheByCoverage = new Map<CoverageMode, PidCoverageSummary>();
+const searchResponseCache = new Map<string, CachedSearchResponse>();
 
 const geocodeCache = new Map<string, GeocodeResult>();
 const geocodeMissCache = new Set<string>();
@@ -196,6 +219,39 @@ function inBBox(point: Point, bbox: { minLat: number; maxLat: number; minLon: nu
 
 function parseCoverageMode(value: unknown): CoverageMode {
   return value === 'praha' ? 'praha' : DEFAULT_COVERAGE_MODE;
+}
+
+function buildSearchCacheKey(input: {
+  address: string;
+  maxMinutes: number;
+  page: number;
+  coverageMode: CoverageMode;
+}): string {
+  const addressKey = normalizeText(input.address);
+  return `${addressKey}|${input.maxMinutes}|${input.page}|${input.coverageMode}`;
+}
+
+function readCachedSearchResponse(cacheKey: string): Record<string, unknown> | null {
+  const entry = searchResponseCache.get(cacheKey);
+  if (!entry) return null;
+  if (entry.expiresAt <= Date.now()) {
+    searchResponseCache.delete(cacheKey);
+    return null;
+  }
+  return entry.payload;
+}
+
+function writeCachedSearchResponse(cacheKey: string, payload: Record<string, unknown>): void {
+  if (searchResponseCache.size >= RESPONSE_CACHE_MAX_ITEMS) {
+    const oldestKey = searchResponseCache.keys().next().value;
+    if (oldestKey) {
+      searchResponseCache.delete(oldestKey);
+    }
+  }
+  searchResponseCache.set(cacheKey, {
+    expiresAt: Date.now() + RESPONSE_CACHE_TTL_MS,
+    payload,
+  });
 }
 
 function shouldIncludeStop(stop: {
@@ -1153,6 +1209,30 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Zadejte výchozí adresu.' }, { status: 400 });
   }
 
+  const cacheKey = buildSearchCacheKey({
+    address,
+    maxMinutes,
+    page: requestedPage,
+    coverageMode,
+  });
+
+  if (RESPONSE_CACHE_ENABLED) {
+    const cachedPayload = readCachedSearchResponse(cacheKey);
+    if (cachedPayload) {
+      const payloadCopy = structuredClone(cachedPayload);
+      const diagnostics = payloadCopy.diagnostics as Record<string, unknown> | undefined;
+      if (diagnostics && typeof diagnostics === 'object') {
+        diagnostics.responseCache = {
+          enabled: true,
+          hit: true,
+          ttlMs: RESPONSE_CACHE_TTL_MS,
+          maxItems: RESPONSE_CACHE_MAX_ITEMS,
+        };
+      }
+      return NextResponse.json(payloadCopy);
+    }
+  }
+
   try {
     const requestStartedAt = Date.now();
     const timings: Record<string, number> = {};
@@ -1361,7 +1441,7 @@ export async function POST(request: NextRequest) {
     const unresolvedSchoolsCount = schools.length - resolvedSchools;
     timings.totalMs = Date.now() - requestStartedAt;
 
-    return NextResponse.json({
+    const responsePayload: Record<string, unknown> = {
       input: {
         address,
         maxMinutes,
@@ -1407,12 +1487,24 @@ export async function POST(request: NextRequest) {
           'Nejde o přesný jízdní řád. Pro produkční přesnost doporučujeme GTFS Connection Scan / RAPTOR precompute.',
         ],
         departureProfile: departureProfile.info,
+        responseCache: {
+          enabled: RESPONSE_CACHE_ENABLED,
+          hit: false,
+          ttlMs: RESPONSE_CACHE_TTL_MS,
+          maxItems: RESPONSE_CACHE_MAX_ITEMS,
+        },
       },
       sources: {
         pidStops: pidStopsSource,
         pidOpenDataInfo: 'https://pid.cz/o-systemu/opendata/',
       },
-    });
+    };
+
+    if (RESPONSE_CACHE_ENABLED) {
+      writeCachedSearchResponse(cacheKey, responsePayload);
+    }
+
+    return NextResponse.json(responsePayload);
   } catch (error) {
     console.error('Praha dostupnost API error:', error);
     return NextResponse.json({

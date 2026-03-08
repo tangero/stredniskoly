@@ -1,0 +1,294 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1650 800" width="100%" height="100%" style="background-color: #ffffff; font-family: sans-serif;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#D1D5DB" />
+    </marker>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.05" />
+    </filter>
+  </defs>
+
+  <text x="50" y="60" font-size="28" font-weight="bold" fill="#1F2937">Vývoj software s podporou AI nástrojů</text>
+  <text x="50" y="85" font-size="16" fill="#6B7280">20 kroků vývojového workflow s vyznačením AI asistence</text>
+
+  <rect x="1100" y="50" width="16" height="16" rx="4" fill="#10B981" />
+  <text x="1125" y="63" font-size="14" fill="#6B7280">Silný (≥70%)</text>
+  
+  <rect x="1250" y="50" width="16" height="16" rx="4" fill="#F59E0B" />
+  <text x="1275" y="63" font-size="14" fill="#6B7280">Střední (50-69%)</text>
+  
+  <rect x="1420" y="50" width="16" height="16" rx="4" fill="#EF4444" />
+  <text x="1445" y="63" font-size="14" fill="#6B7280">Slabý (&lt;50%)</text>
+
+  <text x="100" y="205" font-size="14" font-weight="bold" fill="#4B5563" text-anchor="end">PLÁNOVÁNÍ</text>
+  <text x="100" y="355" font-size="14" font-weight="bold" fill="#4B5563" text-anchor="end">VÝVOJ</text>
+  <text x="100" y="505" font-size="14" font-weight="bold" fill="#4B5563" text-anchor="end">NASAZENÍ</text>
+  <text x="100" y="655" font-size="14" font-weight="bold" fill="#4B5563" text-anchor="end">ÚDRŽBA</text>
+
+  <g stroke="#D1D5DB" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M 390 200 L 415 200" />
+    <path d="M 680 200 L 705 200" />
+    <path d="M 970 200 L 995 200" />
+    <path d="M 1260 200 L 1285 200" />
+    <path d="M 390 350 L 415 350" />
+    <path d="M 680 350 L 705 350" />
+    <path d="M 970 350 L 995 350" />
+    <path d="M 1260 350 L 1285 350" />
+    <path d="M 390 500 L 415 500" />
+    <path d="M 680 500 L 705 500" />
+    <path d="M 970 500 L 995 500" />
+    <path d="M 1260 500 L 1285 500" />
+    <path d="M 390 650 L 415 650" />
+    <path d="M 680 650 L 705 650" />
+    <path d="M 970 650 L 995 650" />
+    <path d="M 1260 650 L 1285 650" />
+  </g>
+
+  <g stroke="#D1D5DB" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M 1420 255 v 20 H 260 v 15" />
+    <path d="M 1420 405 v 20 H 260 v 15" />
+    <path d="M 1420 555 v 20 H 260 v 15" />
+  </g>
+
+
+  <g transform="translate(130, 145)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#10B981" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">1</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Sběr požadavků</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Mattermost MCP, Jira MCP</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="165" height="8" rx="4" fill="#10B981" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Silná AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#10B981" font-size="12" font-weight="bold">75%</text>
+  </g>
+
+  <g transform="translate(420, 145)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#10B981" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">2</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Triáž a prioritizace</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude + Jira MCP</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="154" height="8" rx="4" fill="#10B981" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Silná AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#10B981" font-size="12" font-weight="bold">70%</text>
+  </g>
+
+  <g transform="translate(710, 145)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#F59E0B" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#F59E0B" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">3</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Analýza a specifikace</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude Code, GitHub MCP</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="143" height="8" rx="4" fill="#F59E0B" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Střední AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#F59E0B" font-size="12" font-weight="bold">65%</text>
+  </g>
+
+  <g transform="translate(1000, 145)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#F59E0B" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#F59E0B" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">4</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Architektura</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude Code /plan</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="132" height="8" rx="4" fill="#F59E0B" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Střední AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#F59E0B" font-size="12" font-weight="bold">60%</text>
+  </g>
+
+  <g transform="translate(1290, 145)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#10B981" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">5</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Setup prostředí</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude Code, GH Actions</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="209" height="8" rx="4" fill="#10B981" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Silná AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#10B981" font-size="12" font-weight="bold">95%</text>
+  </g>
+
+  <g transform="translate(130, 295)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#10B981" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">6</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Implementace</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude Code + AGENTS.md</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="154" height="8" rx="4" fill="#10B981" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Silná AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#10B981" font-size="12" font-weight="bold">70%</text>
+  </g>
+
+  <g transform="translate(420, 295)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#F59E0B" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#F59E0B" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">7</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Unit / integr. testy</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude Code, GH Actions</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="132" height="8" rx="4" fill="#F59E0B" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Střední AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#F59E0B" font-size="12" font-weight="bold">60%</text>
+  </g>
+
+  <g transform="translate(710, 295)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#F59E0B" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#F59E0B" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">8</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Code review</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude Code, CodeRabbit</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="121" height="8" rx="4" fill="#F59E0B" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Střední AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#F59E0B" font-size="12" font-weight="bold">55%</text>
+  </g>
+
+  <g transform="translate(1000, 295)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#10B981" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">9</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Merge a konflikty</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude Code, GitHub</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="154" height="8" rx="4" fill="#10B981" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Silná AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#10B981" font-size="12" font-weight="bold">70%</text>
+  </g>
+
+  <g transform="translate(1290, 295)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#10B981" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">10</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">CI pipeline</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">GH Actions, Dependabot</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="165" height="8" rx="4" fill="#10B981" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Silná AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#10B981" font-size="12" font-weight="bold">75%</text>
+  </g>
+
+  <g transform="translate(130, 445)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#10B981" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">11</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Deploy staging</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">GH Actions + CD</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="198" height="8" rx="4" fill="#10B981" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Silná AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#10B981" font-size="12" font-weight="bold">90%</text>
+  </g>
+
+  <g transform="translate(420, 445)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#EF4444" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#EF4444" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">12</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">QA a akceptace</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Playwright, Claude</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="66" height="8" rx="4" fill="#EF4444" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Slabá AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#EF4444" font-size="12" font-weight="bold">30%</text>
+  </g>
+
+  <g transform="translate(710, 445)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#F59E0B" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#F59E0B" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">13</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Bug fixing</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude Code, Sentry</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="121" height="8" rx="4" fill="#F59E0B" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Střední AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#F59E0B" font-size="12" font-weight="bold">55%</text>
+  </g>
+
+  <g transform="translate(1000, 445)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#10B981" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">14</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Deploy produkce</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">GH Actions, feature flags</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="165" height="8" rx="4" fill="#10B981" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Silná AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#10B981" font-size="12" font-weight="bold">75%</text>
+  </g>
+
+  <g transform="translate(1290, 445)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#EF4444" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#EF4444" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">15</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Monitoring</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Sentry, Datadog, Grafana</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="55" height="8" rx="4" fill="#EF4444" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Slabá AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#EF4444" font-size="12" font-weight="bold">25%</text>
+  </g>
+
+  <g transform="translate(130, 595)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#10B981" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">16</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Dokumentace</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude Code, GH MCP</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="187" height="8" rx="4" fill="#10B981" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Silná AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#10B981" font-size="12" font-weight="bold">85%</text>
+  </g>
+
+  <g transform="translate(420, 595)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#EF4444" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#EF4444" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">17</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Retrospektiva</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude + Jira + GH MCP</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="77" height="8" rx="4" fill="#EF4444" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Slabá AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#EF4444" font-size="12" font-weight="bold">35%</text>
+  </g>
+
+  <g transform="translate(710, 595)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#F59E0B" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#F59E0B" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">18</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Bezpečnostní audit</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Snyk AI, CodeQL</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="132" height="8" rx="4" fill="#F59E0B" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Střední AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#F59E0B" font-size="12" font-weight="bold">60%</text>
+  </g>
+
+  <g transform="translate(1000, 595)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#10B981" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#10B981" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">19</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Onboarding</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude Code explorer</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="154" height="8" rx="4" fill="#10B981" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Silná AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#10B981" font-size="12" font-weight="bold">70%</text>
+  </g>
+
+  <g transform="translate(1290, 595)">
+    <rect width="260" height="110" rx="8" fill="#ffffff" stroke="#EF4444" stroke-width="2" filter="url(#shadow)" />
+    <circle cx="25" cy="25" r="12" fill="#EF4444" />
+    <text x="25" y="29" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">20</text>
+    <text x="45" y="25" fill="#1F2937" font-size="14" font-weight="bold">Estimace</text>
+    <text x="45" y="42" fill="#6B7280" font-size="10">Claude + Jira MCP</text>
+    <rect x="20" y="70" width="220" height="8" rx="4" fill="#E5E7EB" />
+    <rect x="20" y="70" width="88" height="8" rx="4" fill="#EF4444" />
+    <text x="20" y="95" fill="#6B7280" font-size="10">Slabá AI asistence</text>
+    <text x="240" y="95" text-anchor="end" fill="#EF4444" font-size="12" font-weight="bold">40%</text>
+  </g>
+
+</svg>

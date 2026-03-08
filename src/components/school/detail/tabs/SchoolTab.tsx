@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { SchoolInspisData } from '@/types/inspis';
+import { ActivitiesModal } from '../modals/ActivitiesModal';
 
 interface SchoolTabProps {
   school: any;
@@ -172,7 +173,7 @@ function FacilitiesCard({ data }: { data: SchoolInspisData }) {
 }
 
 // Activities card (modal trigger)
-function ActivitiesCard({ data }: { data: SchoolInspisData }) {
+function ActivitiesCard({ data, onOpenModal }: { data: SchoolInspisData; onOpenModal: () => void }) {
   const hasActivities =
     (data.zajmove_cinnosti && data.zajmove_cinnosti.length > 0) ||
     (data.sportovni_kurzy && data.sportovni_kurzy.length > 0) ||
@@ -207,8 +208,10 @@ function ActivitiesCard({ data }: { data: SchoolInspisData }) {
         )}
       </div>
 
-      {/* TODO: Add modal trigger */}
-      <button className="mt-4 flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors">
+      <button
+        onClick={onOpenModal}
+        className="mt-4 flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors"
+      >
         Zobrazit všech {totalActivities} aktivit
         <ExternalLink className="w-4 h-4" />
       </button>
@@ -244,6 +247,8 @@ function AISummaryCard({ extractions }: { extractions: any[] }) {
 
 // Main SchoolTab component
 export function SchoolTab({ school, inspis, extractions, csiData, overviewSlug }: SchoolTabProps) {
+  const [activitiesOpen, setActivitiesOpen] = useState(false);
+
   if (!inspis) {
     return (
       <div className="text-center py-12">
@@ -253,30 +258,35 @@ export function SchoolTab({ school, inspis, extractions, csiData, overviewSlug }
   }
 
   return (
-    <div className="space-y-6">
-      {/* AI Summary (if available) */}
-      {extractions && extractions.length > 0 && <AISummaryCard extractions={extractions} />}
+    <>
+      <div className="space-y-6">
+        {/* AI Summary (if available) */}
+        {extractions && extractions.length > 0 && <AISummaryCard extractions={extractions} />}
 
-      {/* Grid layout */}
-      <div className="grid md:grid-cols-2 gap-6">
-        <AdmissionCard data={inspis} />
-        <LanguagesCard data={inspis} />
-        <FacilitiesCard data={inspis} />
-        <ActivitiesCard data={inspis} />
+        {/* Grid layout */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <AdmissionCard data={inspis} />
+          <LanguagesCard data={inspis} />
+          <FacilitiesCard data={inspis} />
+          <ActivitiesCard data={inspis} onOpenModal={() => setActivitiesOpen(true)} />
+        </div>
+
+        {/* Link to full inspection report */}
+        {extractions && extractions.length > 0 && (
+          <div className="text-center">
+            <a
+              href={`/skola/${overviewSlug}/inspekce`}
+              className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors"
+            >
+              Zobrazit kompletní inspekční zprávu
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        )}
       </div>
 
-      {/* Link to full inspection report */}
-      {extractions && extractions.length > 0 && (
-        <div className="text-center">
-          <a
-            href={`/skola/${overviewSlug}/inspekce`}
-            className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors"
-          >
-            Zobrazit kompletní inspekční zprávu
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
-      )}
-    </div>
+      {/* Modal */}
+      <ActivitiesModal isOpen={activitiesOpen} onClose={() => setActivitiesOpen(false)} data={inspis} />
+    </>
   );
 }
