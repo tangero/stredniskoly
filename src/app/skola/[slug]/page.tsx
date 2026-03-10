@@ -889,6 +889,23 @@ export default async function SchoolDetailPage({ params }: Props) {
           </div>
         )}
 
+        {/* Oddělovač historických dat */}
+        {program2026 && (
+          <div className="max-w-6xl mx-auto px-4 pt-8">
+            <div className="bg-slate-100 border border-slate-200 rounded-xl px-6 py-4 flex items-center gap-3">
+              <div className="flex-shrink-0 w-10 h-10 bg-slate-200 rounded-lg flex items-center justify-center">
+                <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-lg font-bold text-slate-700">Data z přijímacího řízení 2025</h2>
+                <p className="text-sm text-slate-500">Výsledky loňského přijímacího řízení — minimální body, rozložení priorit a strategie uchazečů</p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Stats Grid */}
         <div className="max-w-6xl mx-auto px-4 py-8">
           <StatsGrid
