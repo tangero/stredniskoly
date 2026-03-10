@@ -9,19 +9,10 @@ interface SchoolSearchProps {
   kraje: { kod: string; nazev: string; slug: string }[];
 }
 
-// Lokální verze createSlug
-function createSlug(name: string, obor?: string): string {
-  let slug = name
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-
-  if (obor) {
-    const oborSlug = obor
+// Lokální verze createSlug (musí odpovídat utils.ts)
+function createSlug(name: string, obor?: string, zamereni?: string): string {
+  const slugify = (text: string, maxLen?: number) => {
+    let s = text
       .toLowerCase()
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
@@ -29,9 +20,22 @@ function createSlug(name: string, obor?: string): string {
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
       .replace(/^-|-$/g, '');
-    slug = `${slug}-${oborSlug}`;
-  }
+    if (maxLen && s.length > maxLen) {
+      s = s.substring(0, maxLen);
+      const ld = s.lastIndexOf('-');
+      if (ld > maxLen * 0.6) s = s.substring(0, ld);
+    }
+    return s;
+  };
 
+  let slug = slugify(name, 60);
+  if (obor) slug = `${slug}-${slugify(obor, 40)}`;
+  if (zamereni) slug = `${slug}-${slugify(zamereni, 40)}`;
+  if (slug.length > 150) {
+    slug = slug.substring(0, 150);
+    const ld = slug.lastIndexOf('-');
+    if (ld > 100) slug = slug.substring(0, ld);
+  }
   return slug;
 }
 
@@ -103,10 +107,12 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
     const matchedSchools = schools
       .filter(s => {
         const nazev = s.nazev.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const nazevDisplay = (s.nazev_display || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const obor = s.obor.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const zamereni = (s.zamereni || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const obec = s.obec.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const adresa = (s.adresa || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        return nazev.includes(q) || obor.includes(q) || obec.includes(q) || adresa.includes(q);
+        return nazev.includes(q) || nazevDisplay.includes(q) || obor.includes(q) || zamereni.includes(q) || obec.includes(q) || adresa.includes(q);
       })
       .slice(0, 5);
 
@@ -253,7 +259,10 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                 Školy
               </div>
               {results.schools.map((school, idx) => {
-                const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+                const displayNazev = school.nazev_display || school.nazev;
+                const slug = school.zamereni
+                  ? `${school.id.split('_')[0]}-${createSlug(displayNazev, school.obor, school.zamereni)}`
+                  : `${school.id.split('_')[0]}-${createSlug(displayNazev, school.obor)}`;
                 const adjustedIdx = idx + results.aliases.length;
                 return (
                   <Link
@@ -262,11 +271,11 @@ export function SchoolSearch({ schools, kraje }: SchoolSearchProps) {
                     className={`block px-4 py-3 hover:bg-blue-50 ${selectedIndex === adjustedIdx ? 'bg-blue-50' : ''}`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <div className="font-medium text-slate-900">{highlightMatch(school.nazev, query)}</div>
+                    <div className="font-medium text-slate-900">{highlightMatch(school.nazev_display || school.nazev, query)}</div>
                     <div className="text-sm text-slate-600">
-                      {highlightMatch(school.obor, query)}
+                      {highlightMatch(school.zamereni ? `${school.obor} - ${school.zamereni}` : school.obor, query)}
                       {school.typ?.startsWith('GY') && school.delka_studia && (
-                        <span className="text-slate-400"> • {school.delka_studia}leté</span>
+                        <span className="text-slate-400"> ({school.delka_studia}leté)</span>
                       )}
                     </div>
                     <div className="text-xs text-slate-400 mt-0.5">

@@ -513,26 +513,39 @@ export default async function SchoolDetailPage({ params }: Props) {
 
           {/* Statistiky přehledu */}
           <div className="max-w-6xl mx-auto px-4 py-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="bg-white p-4 rounded-xl shadow-sm text-center">
-                <div className="text-3xl font-bold text-blue-600">{sortedPrograms.length}</div>
-                <div className="text-sm text-slate-500">Oborů/zaměření</div>
-              </div>
-              <div className="bg-white p-4 rounded-xl shadow-sm text-center">
-                <div className="text-3xl font-bold text-slate-700">{totalKapacita}</div>
-                <div className="text-sm text-slate-500">Celková kapacita</div>
-              </div>
-              <div className="bg-white p-4 rounded-xl shadow-sm text-center">
-                <div className="text-3xl font-bold text-slate-700">{totalPrihlasky}</div>
-                <div className="text-sm text-slate-500">Přihlášek celkem</div>
-              </div>
-              <div className="bg-white p-4 rounded-xl shadow-sm text-center">
-                <div className="text-3xl font-bold text-red-600">
-                  {Math.min(...sortedPrograms.map(p => p.min_body))} - {Math.max(...sortedPrograms.map(p => p.min_body))}
+            {(() => {
+              const has2026 = data2026.length > 0;
+              const totalKapacita2026 = has2026 ? data2026.reduce((sum, d) => sum + d.kapacita, 0) : 0;
+              const totalPrihlasky2026 = has2026 ? data2026.reduce((sum, d) => sum + d.prihlasky, 0) : 0;
+              return (
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  <div className="bg-white p-4 rounded-xl shadow-sm text-center">
+                    <div className="text-3xl font-bold text-blue-600">{sortedPrograms.length}</div>
+                    <div className="text-sm text-slate-500">Oborů/zaměření</div>
+                  </div>
+                  <div className="bg-white p-4 rounded-xl shadow-sm text-center">
+                    <div className="text-3xl font-bold text-slate-700">{has2026 ? totalKapacita2026 : totalKapacita}</div>
+                    <div className="text-sm text-slate-500">Celková kapacita {has2026 ? '2026' : '2025'}</div>
+                    {has2026 && totalKapacita !== totalKapacita2026 && (
+                      <div className="text-xs text-slate-400">(2025: {totalKapacita})</div>
+                    )}
+                  </div>
+                  <div className="bg-white p-4 rounded-xl shadow-sm text-center">
+                    <div className="text-3xl font-bold text-slate-700">{has2026 ? totalPrihlasky2026 : totalPrihlasky}</div>
+                    <div className="text-sm text-slate-500">Přihlášek {has2026 ? '2026' : '2025'}</div>
+                    {has2026 && (
+                      <div className="text-xs text-slate-400">(2025: {totalPrihlasky})</div>
+                    )}
+                  </div>
+                  <div className="bg-white p-4 rounded-xl shadow-sm text-center">
+                    <div className="text-3xl font-bold text-red-600">
+                      {Math.min(...sortedPrograms.map(p => p.min_body))} - {Math.max(...sortedPrograms.map(p => p.min_body))}
+                    </div>
+                    <div className="text-sm text-slate-500">Rozsah min. bodů 2025</div>
+                  </div>
                 </div>
-                <div className="text-sm text-slate-500">Rozsah min. bodů</div>
-              </div>
-            </div>
+              );
+            })()}
 
             {/* Banner přihlášek 2026 */}
             {data2026.length > 0 && (
@@ -578,8 +591,9 @@ export default async function SchoolDetailPage({ params }: Props) {
                     {programsWith2026.map(program => {
                       const baseName = program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor;
                       const hasDuplicateName = (oborCountsOverview.get(baseName) || 0) > 1;
-                      const baseId = program.id.split('_').slice(0, 2).join('_');
-                      const matching2026 = data2026.find(d => d.id.split('_').slice(0, 2).join('_') === baseId);
+                      // Matchovat podle celého ID (včetně zaměření), fallback na baseId
+                      const matching2026 = data2026.find(d => d.id === program.id)
+                        || data2026.find(d => d.id.split('_').slice(0, 2).join('_') === program.id.split('_').slice(0, 2).join('_'));
                       return (
                         <ProgramCard
                           key={program.id}

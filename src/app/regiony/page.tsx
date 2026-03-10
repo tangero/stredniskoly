@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
-import { getAllKraje, getAllSchools, getSchoolsByKraj, getRegionStats, getExtendedSchoolStatsForSchools } from '@/lib/data';
+import { getAllKraje, getAllSchools, getAllSchoolsForSearch, getSchoolsByKraj, getRegionStats, getExtendedSchoolStatsForSchools } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Přehled regionů',
@@ -42,7 +42,10 @@ function createSlug(name: string, obor?: string): string {
 
 export default async function RegionsPage() {
   const kraje = await getAllKraje();
-  const allSchools = await getAllSchools();
+  const [allSchools, searchSchools] = await Promise.all([
+    getAllSchools(),
+    getAllSchoolsForSearch(),
+  ]);
 
   // Získat rozšířená data pro top školy
   const extendedStatsMap = await getExtendedSchoolStatsForSchools(allSchools.map(s => s.id));
@@ -85,7 +88,7 @@ export default async function RegionsPage() {
             </p>
 
             {/* Vyhledávání */}
-            <SchoolSearch schools={allSchools} kraje={kraje} />
+            <SchoolSearch schools={searchSchools} kraje={kraje} />
           </div>
         </div>
 

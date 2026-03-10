@@ -58,6 +58,60 @@ export async function getAllSchools(): Promise<School[]> {
 }
 
 /**
+ * Získá všechny školy rozložené na zaměření (pro vyhledávání)
+ * Kombinuje school_analysis.json + schools_data.json aby měl každý záznam zamereni a nazev_display
+ */
+let searchSchoolsCache: School[] | null = null;
+export async function getAllSchoolsForSearch(): Promise<School[]> {
+  if (searchSchoolsCache) return searchSchoolsCache;
+
+  const analysis = await getSchoolAnalysis();
+  const schoolsData = await getSchoolsData();
+  const yearData: Array<Record<string, unknown>> = (schoolsData as Record<string, unknown>)['2025'] as Array<Record<string, unknown>> || [];
+
+  // Vytvořit mapu baseId -> seznam zaměření
+  const zamereniMap = new Map<string, Array<Record<string, unknown>>>();
+  for (const record of yearData) {
+    const id = record.id as string;
+    const parts = id.split('_');
+    const baseId = parts.length >= 2 ? `${parts[0]}_${parts[1]}` : id;
+    if (!zamereniMap.has(baseId)) zamereniMap.set(baseId, []);
+    if (record.zamereni) {
+      zamereniMap.get(baseId)!.push(record);
+    }
+  }
+
+  const result: School[] = [];
+  for (const school of Object.values(analysis)) {
+    const zamereniList = zamereniMap.get(school.id);
+    if (zamereniList && zamereniList.length > 0) {
+      // Rozložit na zaměření
+      for (const z of zamereniList) {
+        result.push({
+          ...school,
+          id: z.id as string,
+          nazev_display: (z.nazev_display as string) || school.nazev,
+          zamereni: z.zamereni as string,
+          kapacita: z.kapacita as number,
+          prihlasky: z.prihlasky as number,
+          prijati: z.prijati as number,
+        });
+      }
+    } else {
+      // Bez zaměření — použít nazev_display z prvního záznamu schools_data pokud existuje
+      const detailRecord = yearData.find((r: Record<string, unknown>) => (r.id as string).startsWith(school.id));
+      result.push({
+        ...school,
+        nazev_display: (detailRecord?.nazev_display as string) || school.nazev,
+      });
+    }
+  }
+
+  searchSchoolsCache = result;
+  return result;
+}
+
+/**
  * Získá školu podle ID
  */
 export async function getSchoolById(id: string): Promise<School | null> {

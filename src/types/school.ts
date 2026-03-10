@@ -3,7 +3,9 @@ export interface School {
   redizo: string;
   kod_oboru: string;
   nazev: string;
+  nazev_display?: string;
   obor: string;
+  zamereni?: string;
   obec: string;
   okres: string;
   orp: string;

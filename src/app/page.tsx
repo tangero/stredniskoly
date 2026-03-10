@@ -2,13 +2,14 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
-import { getAllSchools, getAllKraje } from '@/lib/data';
+import { getAllSchools, getAllSchoolsForSearch, getAllKraje } from '@/lib/data';
 
 export default async function HomePage() {
-  const schools = await getAllSchools();
+  const schools = await getAllSchoolsForSearch();
   const kraje = await getAllKraje();
 
-  const totalSchools = schools.length;
+  // Počet unikátních škol (podle REDIZO), ne zaměření
+  const totalSchools = new Set(schools.map(s => s.id.split('_')[0])).size;
   const totalKraje = kraje.length;
 
   return (

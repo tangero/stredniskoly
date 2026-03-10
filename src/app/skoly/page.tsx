@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
-import { getAllSchools, getAllKraje, getSchoolAnalysis } from '@/lib/data';
+import { getAllSchools, getAllSchoolsForSearch, getAllKraje, getSchoolAnalysis } from '@/lib/data';
 import { createSlug } from '@/lib/utils';
 import { SchoolsPageTabs } from '@/components/SchoolsPageTabs';
 import Link from 'next/link';
@@ -17,8 +17,9 @@ export const metadata: Metadata = {
 };
 
 export default async function SchoolsPage() {
-  const [schools, kraje, analysis] = await Promise.all([
+  const [schools, searchSchools, kraje, analysis] = await Promise.all([
     getAllSchools(),
+    getAllSchoolsForSearch(),
     getAllKraje(),
     getSchoolAnalysis(),
   ]);
@@ -68,7 +69,7 @@ export default async function SchoolsPage() {
             </p>
 
             {/* Vyhledávání */}
-            <SchoolSearch schools={schools} kraje={kraje} />
+            <SchoolSearch schools={searchSchools} kraje={kraje} />
           </div>
         </div>
 

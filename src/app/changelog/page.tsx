@@ -19,6 +19,17 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '2.4.3',
+    date: '10. 3. 2026',
+    title: 'Oprava zobrazení kapacit a oborů na detailu školy',
+    changes: [
+      { type: 'fix', text: 'Oprava chybného matchování dat 2026 na obory se zaměřeními — školy s více zaměřeními (např. Gymnázium Na Zatlance ALT/VIA) nyní zobrazují správné kapacity pro každé zaměření (#46)' },
+      { type: 'fix', text: 'Header statistiky detailu školy nyní primárně zobrazují data 2026 (kapacita, přihlášky) s údaji 2025 v závorce, místo zavádějícího zobrazení loňských dat' },
+      { type: 'improve', text: 'Vyhledávání zobrazuje plný název školy (např. "Gymnázium, Na Zatlance") a zaměření u oborů (např. "Gymnázium - ALT") pro lepší rozlišení výsledků' },
+      { type: 'improve', text: 'Vyhledávání nyní hledá i v názvu zaměření a plném názvu školy' },
+    ],
+  },
+  {
     version: '2.4.2',
     date: '13. 2. 2026',
     title: 'Opravy nočních spojů, simulátoru a náročnosti přijetí',
