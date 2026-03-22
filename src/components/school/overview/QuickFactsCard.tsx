@@ -27,7 +27,7 @@ export function QuickFactsCard({ facts, className }: QuickFactsCardProps) {
   return (
     <div className={`bg-white p-6 rounded-xl shadow-sm ${className || ""}`}>
       <h2 className="text-xl font-semibold mb-4 text-slate-900">
-        Rychlé fakta
+        Rychlá fakta
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {facts.map((fact, index) => (
