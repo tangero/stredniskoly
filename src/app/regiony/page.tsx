@@ -110,7 +110,7 @@ export default async function RegionsPage() {
                       <th className="text-left px-3 py-2 font-medium text-slate-600 w-8">#</th>
                       <th className="text-left px-3 py-2 font-medium text-slate-600">Škola / Obor / Město</th>
                       <th className="text-right px-3 py-2 font-medium text-slate-600 whitespace-nowrap">Přihlášek</th>
-                      <th className="text-center px-3 py-2 font-medium text-slate-600">Převys</th>
+                      <th className="text-center px-3 py-2 font-medium text-slate-600">Převis</th>
                     </tr>
                   </thead>
                   <tbody>
