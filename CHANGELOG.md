@@ -7,9 +7,9 @@ Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 
 ### Přidáno
 - **Nejžádanější studijní obory** (`/skoly`) — přepracovaná stránka se 3 taby:
-  - Nejžádanější obory 2026 (top 100 podle převysu poptávky)
+  - Nejžádanější obory 2026 (top 100 podle převisu poptávky)
   - Obtížnost přijetí 2025 (top 100 podle indexu obtížnosti)
-  - Převys poptávky podle měst 2026 (agregace za města s vizuálními bary a odkazy na školy)
+  - Převis poptávky podle měst 2026 (agregace za města s vizuálními bary a odkazy na školy)
 - **Granulární filtry typů škol** — výběr Gymnázia 4L/6L/8L, SOŠ, Lycea, SOU na přehledu měst
 - **2026 data jako primární** na kartě školy — přihlášky, místa a poptávka 2026 zobrazeny jako hlavní čísla, 2025 data jako sekundární
 - **Oddělení oborů z roku 2025** — obory bez pokračování v 2026 ve vlastní sekci „Obory z roku 2025"
