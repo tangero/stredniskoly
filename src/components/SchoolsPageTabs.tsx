@@ -485,7 +485,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
                     </span>
                     <span className="text-slate-500">{s.obec}</span>
                     <span className="ml-auto text-slate-700 font-medium">min. {s.min_body}b</span>
-                    <span className="text-slate-500">{s.index_poptavky.toFixed(1)}× převys</span>
+                    <span className="text-slate-500">{s.index_poptavky.toFixed(1)}× převis</span>
                   </div>
                 </div>
               );

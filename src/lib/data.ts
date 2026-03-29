@@ -1626,8 +1626,14 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
   const staticIndex = new Map<string, any>();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const staticByBase = new Map<string, any>();
+  // Normalizovaný index bez diakritiky pro párování 2026↔2025 ID
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const staticByNormalized = new Map<string, any>();
   for (const s of schools2025) {
     staticIndex.set(s.id, s);
+    // Normalizovaný klíč (bez diakritiky) pro fallback matching
+    const normalizedId = s.id.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    staticByNormalized.set(normalizedId, s);
     // Index podle base key (REDIZO_KKOV) - první záznam vyhrává
     const base = s.id.split('_').slice(0, 2).join('_');
     if (!staticByBase.has(base)) {
@@ -1638,8 +1644,10 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
   schools2026Cache = rawRecords.map(r => {
     const baseKey = r.id.split('_').slice(0, 2).join('_');
     const analysis = analysisData[baseKey];
-    // Lookup: přesné ID → matched_2025_id z analýzy → base key fallback
+    // Lookup: přesné ID → normalizované ID → matched_2025_id z analýzy → base key fallback
+    const normalizedRId = r.id.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const s = staticIndex.get(r.id)
+      || staticByNormalized.get(normalizedRId)
       || (analysis?.matched_2025_id ? staticIndex.get(analysis.matched_2025_id) : null)
       || staticByBase.get(baseKey);
     return {
