@@ -96,7 +96,7 @@ export default async function SchoolsPage() {
               <div className="text-3xl font-bold text-blue-600">
                 {totalKapacita2026 > 0 ? (totalPrihlasky2026 / totalKapacita2026).toFixed(1) : '—'}×
               </div>
-              <div className="text-sm text-slate-600">Prům. převys 2026</div>
+              <div className="text-sm text-slate-600">Prům. převis 2026</div>
             </div>
           </div>
 
