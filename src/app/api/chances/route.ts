@@ -81,6 +81,8 @@ export async function GET(request: NextRequest) {
   // Filtrovat školy
   const delkaNum = delka ? parseInt(delka, 10) : null;
 
+  const searchWords = normalizedSearch.split(/\s+/).filter((w: string) => w.length > 0);
+
   const results = schools2026
     .filter(s => {
       // Filtr délky studia
@@ -89,7 +91,7 @@ export async function GET(request: NextRequest) {
         .toLowerCase()
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '');
-      return text.includes(normalizedSearch);
+      return searchWords.every((word: string) => text.includes(word));
     })
     .slice(0, 15)
     .map(s => {
