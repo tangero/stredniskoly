@@ -102,7 +102,7 @@ export async function GET(request: NextRequest) {
         return baseId === searchBase;
       });
       const slug = school
-        ? `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`
+        ? `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor, school.zamereni || undefined)}`
         : '';
 
       return {
