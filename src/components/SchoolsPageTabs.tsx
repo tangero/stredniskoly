@@ -128,7 +128,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
   const tabs: { id: TabId; label: string }[] = [
     { id: 'previs2026', label: 'Nejžádanější obory 2026' },
     { id: 'obtiznost2025', label: 'Obtížnost přijetí 2025' },
-    { id: 'mesta', label: 'Převys podle měst' },
+    { id: 'mesta', label: 'Převis podle měst' },
   ];
 
   const handleTabChange = (tabId: TabId) => {
@@ -175,7 +175,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
     [schools, delkaFilter, typFilter]
   );
 
-  // Převys 2026 - Top 100
+  // Převis 2026 - Top 100
   const previs2026 = useMemo(() =>
     [...filtered]
       .filter(s => (s.prihlasky_2026 || 0) > 0 && (s.kapacita_2026 || 0) > 0)
@@ -193,7 +193,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
     [filtered]
   );
 
-  // Převys podle měst
+  // Převis podle měst
   const cityStats = useMemo(() => {
     // Jen školy s 2026 daty (délka filter se nepoužívá pro města)
     const withData = schools.filter(s =>
@@ -312,7 +312,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
         </div>
       </div>
 
-      {/* Tab: Převys 2026 */}
+      {/* Tab: Převis 2026 */}
       {activeTab === 'previs2026' && (
         <div className="bg-white rounded-lg shadow-sm overflow-hidden">
           <div className="p-5 border-b">
@@ -335,7 +335,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
                   <th className="text-left px-3 py-2 font-medium text-slate-600">Město</th>
                   <th className="text-right px-3 py-2 font-medium text-slate-600">Přihlášek</th>
                   <th className="text-right px-3 py-2 font-medium text-slate-600">Míst</th>
-                  <th className="text-right px-3 py-2 font-medium text-slate-600">Převys</th>
+                  <th className="text-right px-3 py-2 font-medium text-slate-600">Převis</th>
                 </tr>
               </thead>
               <tbody>
@@ -419,7 +419,7 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
                   <th className="text-center px-3 py-2 font-medium text-slate-600">Délka</th>
                   <th className="text-left px-3 py-2 font-medium text-slate-600">Město</th>
                   <th className="text-right px-3 py-2 font-medium text-slate-600">Min. body</th>
-                  <th className="text-right px-3 py-2 font-medium text-slate-600">Převys</th>
+                  <th className="text-right px-3 py-2 font-medium text-slate-600">Převis</th>
                   <th className="text-right px-3 py-2 font-medium text-slate-600">Obtížnost</th>
                 </tr>
               </thead>
@@ -494,11 +494,11 @@ export function SchoolsPageTabs({ schools }: SchoolsPageTabsProps) {
         </div>
       )}
 
-      {/* Tab: Převys podle měst */}
+      {/* Tab: Převis podle měst */}
       {activeTab === 'mesta' && (
         <div>
           <div className="mb-4">
-            <h2 className="text-xl font-semibold">Převys poptávky podle měst (2026)</h2>
+            <h2 className="text-xl font-semibold">Převis poptávky podle měst (2026)</h2>
             <p className="text-slate-600 text-sm mt-1">
               Agregovaná data za všechny školy v daném městě, rozdělená podle typu a délky studia.
             </p>
