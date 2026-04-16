@@ -749,6 +749,10 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
     if (zamereniList && zamereniList.length > 0) {
       // Škola má zaměření - rozložit na jednotlivá zaměření
       for (const z of zamereniList) {
+        // Vypočítat index poptávky z dat zaměření (ne z agregovaného oboru)
+        const zamereniIndexPoptavky = z.kapacita > 0
+          ? Math.round((z.prihlasky / z.kapacita) * 100) / 100
+          : school.index_poptavky;
         programs.push({
           id: z.id,
           redizo: redizo,
@@ -761,7 +765,7 @@ export async function getProgramsByRedizo(redizo: string): Promise<SchoolProgram
           prihlasky: z.prihlasky,
           prijati: z.prijati,
           min_body: z.min_body,
-          index_poptavky: school.index_poptavky,
+          index_poptavky: zamereniIndexPoptavky,
           obec: school.obec,
           ...matchingMeta,
         });

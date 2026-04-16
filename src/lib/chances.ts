@@ -201,7 +201,31 @@ export function analyzeCombination(schools: SchoolApplication2026[]): Combinatio
   let riskDescription: string;
   let riskColor: string;
 
-  if (veryHighDemand === results.length) {
+  if (results.length === 1) {
+    // Speciální hodnocení pro jednu přihlášku
+    const result = results[0];
+    if (result.chanceLevel === 'high') {
+      overallRisk = 'safe';
+      riskLabel = 'Dobrá volba';
+      riskDescription = 'Vaše škola má příznivý poměr přihlášek a kapacity. Šance na přijetí jsou dobré.';
+      riskColor = 'text-green-600';
+    } else if (result.chanceLevel === 'medium') {
+      overallRisk = 'balanced';
+      riskLabel = 'Střední šance';
+      riskDescription = 'Vaše škola má středně silnou konkurenci. Důkladná příprava na přijímací zkoušky zvýší vaše šance.';
+      riskColor = 'text-blue-600';
+    } else if (result.chanceLevel === 'low') {
+      overallRisk = 'risky';
+      riskLabel = 'Nízká šance';
+      riskDescription = 'Vaše škola má silnou konkurenci. S jednou přihláškou je riziko nepřijetí vyšší.';
+      riskColor = 'text-orange-600';
+    } else {
+      overallRisk = 'very_risky';
+      riskLabel = 'Velmi nízká šance';
+      riskDescription = 'Vaše škola má velmi vysokou konkurenci. S jednou přihláškou je riziko nepřijetí značné.';
+      riskColor = 'text-red-600';
+    }
+  } else if (veryHighDemand === results.length) {
     overallRisk = 'very_risky';
     riskLabel = 'Velmi riziková kombinace';
     riskDescription = 'Všechny zvolené školy mají velmi vysokou konkurenci. Zvažte přidání záložní varianty s nižší konkurencí.';
@@ -226,12 +250,21 @@ export function analyzeCombination(schools: SchoolApplication2026[]): Combinatio
   // Doporučení
   const suggestions: string[] = [];
 
-  if (!hasBackup) {
-    suggestions.push('Zvažte přidání školy s nižší konkurencí jako záložní variantu.');
-  }
+  if (results.length === 1) {
+    // Doporučení pro jednu přihlášku
+    if (results[0].chanceLevel === 'high') {
+      suggestions.push('Vaše šance vypadají příznivě. Soustřeďte se na přípravu k přijímacím zkouškám.');
+    } else {
+      suggestions.push('Můžete podat až 3 přihlášky. Přidáním dalších škol zvýšíte svou šanci na přijetí.');
+    }
+  } else {
+    if (!hasBackup) {
+      suggestions.push('Zvažte přidání školy s nižší konkurencí jako záložní variantu.');
+    }
 
-  if (veryHighDemand >= 2) {
-    suggestions.push('Máte více škol s velmi vysokou konkurencí. Připravte se na přijímací zkoušky důkladně.');
+    if (veryHighDemand >= 2) {
+      suggestions.push('Máte více škol s velmi vysokou konkurencí. Připravte se na přijímací zkoušky důkladně.');
+    }
   }
 
   const allSameKraj = results.length > 1 && new Set(results.map(r => r.school.kraj)).size === 1;

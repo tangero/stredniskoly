@@ -98,6 +98,11 @@ const nextConfig: NextConfig = {
         destination: '/dostupnost',
         permanent: true,
       },
+      {
+        source: '/regiony/hlavni-mesto-praha',
+        destination: '/regiony/praha',
+        permanent: true,
+      },
     ];
   },
 

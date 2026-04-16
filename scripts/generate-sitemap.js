@@ -122,14 +122,35 @@ function buildSchoolSlugs(analysisData, schoolsData) {
   return Array.from(slugs).sort((a, b) => a.localeCompare(b, 'cs'));
 }
 
+// Must match krajNames in src/types/school.ts
+const krajNames = {
+  'CZ010': 'Praha',
+  'CZ020': 'Středočeský',
+  'CZ031': 'Jihočeský',
+  'CZ032': 'Plzeňský',
+  'CZ041': 'Karlovarský',
+  'CZ042': 'Ústecký',
+  'CZ051': 'Liberecký',
+  'CZ052': 'Královéhradecký',
+  'CZ053': 'Pardubický',
+  'CZ063': 'Vysočina',
+  'CZ064': 'Jihomoravský',
+  'CZ071': 'Olomoucký',
+  'CZ072': 'Zlínský',
+  'CZ080': 'Moravskoslezský'
+};
+
 function buildKrajSlugs(analysisData) {
   const schools = Object.values(analysisData || {});
-  const kraje = new Set();
+  const krajKods = new Set();
   for (const school of schools) {
-    if (!school?.kraj) continue;
-    kraje.add(slugify(school.kraj));
+    if (!school?.kraj_kod) continue;
+    krajKods.add(school.kraj_kod);
   }
-  return Array.from(kraje).sort((a, b) => a.localeCompare(b, 'cs'));
+  return Object.entries(krajNames)
+    .filter(([kod]) => krajKods.has(kod))
+    .map(([, nazev]) => slugify(nazev))
+    .sort((a, b) => a.localeCompare(b, 'cs'));
 }
 
 function urlEntry(url, lastmod, changefreq, priority) {
