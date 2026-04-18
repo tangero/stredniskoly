@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { krajNames } from '@/types/school';
 
 interface SearchResult {
   id: string;
@@ -325,7 +326,7 @@ export function Header() {
                   {matchedKraje.map((kraj) => (
                     <Link
                       key={kraj.kod}
-                      href={`/regiony/${normalizeText(kraj.nazev).replace(/\s+/g, '-')}`}
+                      href={`/regiony/${normalizeText(krajNames[kraj.kod] || kraj.nazev).replace(/\s+/g, '-')}`}
                       className="block px-4 py-3 hover:bg-blue-50 no-underline"
                       onClick={() => {
                         setIsSearchOpen(false);

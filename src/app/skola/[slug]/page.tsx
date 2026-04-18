@@ -106,6 +106,42 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Helper pro správné přiřazení 2026 dat k programu/zaměření
+function match2026ToProgram(data2026: School2026Data[], program: SchoolProgram): School2026Data | undefined {
+  const exact = data2026.find(d => d.id === program.id);
+  if (exact) return exact;
+
+  const programBaseId = program.id.split('_').slice(0, 2).join('_');
+  const candidates = data2026.filter(d => {
+    const baseId = d.id.split('_').slice(0, 2).join('_');
+    return baseId === programBaseId;
+  });
+
+  if (candidates.length <= 1) return candidates[0];
+
+  if (program.zamereni) {
+    const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length >= 3);
+    const programWords = norm(program.zamereni);
+
+    let bestMatch: School2026Data | undefined;
+    let bestScore = -1;
+
+    for (const c of candidates) {
+      const idZamPart = c.id.split('_').slice(2).join(' ');
+      if (!idZamPart) continue;
+      const candidateWords = norm(idZamPart);
+      const score = programWords.filter(w => candidateWords.some(cw => cw.includes(w) || w.includes(cw))).length;
+      if (score > bestScore) {
+        bestScore = score;
+        bestMatch = c;
+      }
+    }
+    if (bestMatch && bestScore > 0) return bestMatch;
+  }
+
+  return candidates[0];
+}
+
 // Helper pro zobrazení trendu min. bodů
 function MinBodyTrend({ trend }: { trend: YearlyTrendData | null }) {
   if (!trend || trend.minBody2024 === 0) return null;
@@ -591,9 +627,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                     {programsWith2026.map(program => {
                       const baseName = program.zamereni ? `${program.obor} - ${program.zamereni}` : program.obor;
                       const hasDuplicateName = (oborCountsOverview.get(baseName) || 0) > 1;
-                      // Matchovat podle celého ID (včetně zaměření), fallback na baseId
-                      const matching2026 = data2026.find(d => d.id === program.id)
-                        || data2026.find(d => d.id.split('_').slice(0, 2).join('_') === program.id.split('_').slice(0, 2).join('_'));
+                      const matching2026 = match2026ToProgram(data2026, program);
                       return (
                         <ProgramCard
                           key={program.id}
@@ -709,11 +743,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   // Načíst další data - pro zaměření použít specifickou funkci
   // Načíst data 2026
   const data2026ForDetail = await get2026DataByRedizo(redizo);
-  const program2026 = data2026ForDetail.find(d => {
-    const baseId = d.id.split('_').slice(0, 2).join('_');
-    const programBaseId = program.id.split('_').slice(0, 2).join('_');
-    return baseId === programBaseId;
-  });
+  const program2026 = match2026ToProgram(data2026ForDetail, program);
 
   const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData, extractions, programNote, schoolNote] = await Promise.all([
     getProgramsByRedizo(redizo),

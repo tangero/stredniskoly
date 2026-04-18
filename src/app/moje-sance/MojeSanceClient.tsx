@@ -463,7 +463,7 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
         <div className="mb-4">
           <h4 className="text-sm font-semibold text-slate-700 mb-2">Přihlášky podle priority (2026)</h4>
           <div className="space-y-1.5">
-            {s.prihlasky_priority_2026.map((count, i) => {
+            {(s.prihlasky_priority_2026 || []).map((count, i) => {
               const pct = s.prihlasky_2026 > 0 ? (count / s.prihlasky_2026 * 100) : 0;
               if (count === 0 && i > 2) return null;
               return (
