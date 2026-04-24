@@ -333,7 +333,7 @@ export function Header() {
                         setSearchQuery('');
                       }}
                     >
-                      <div className="font-medium text-slate-900">{highlightMatch(kraj.nazev, searchQuery)} kraj</div>
+                      <div className="font-medium text-slate-900">{highlightMatch(kraj.nazev, searchQuery)}{!kraj.nazev.includes('Praha') && kraj.nazev !== 'Vysočina' ? ' kraj' : ''}</div>
                       <div className="text-xs text-slate-400">Zobrazit všechny školy v kraji</div>
                     </Link>
                   ))}
