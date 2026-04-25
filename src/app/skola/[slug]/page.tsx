@@ -430,6 +430,11 @@ export default async function SchoolDetailPage({ params }: Props) {
               overviewSlug={overviewSlug}
             />
 
+            {/* Vibecoding promo */}
+            <div className="max-w-6xl mx-auto px-4 pt-6 pb-2">
+              <VibecordingPromo />
+            </div>
+
             {/* Obsah */}
             <div className="max-w-6xl mx-auto px-4 py-8 space-y-8">
               {/* Banner přihlášek 2026 */}
@@ -941,6 +946,11 @@ export default async function SchoolDetailPage({ params }: Props) {
             </div>
           </div>
         )}
+
+        {/* Vibecoding promo */}
+        <div className="max-w-6xl mx-auto px-4 pt-6 pb-2">
+          <VibecordingPromo />
+        </div>
 
         {/* Stats Grid */}
         <div className="max-w-6xl mx-auto px-4 py-8">
