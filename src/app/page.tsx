@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
+import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getAllSchools, getAllSchoolsForSearch, getAllKraje } from '@/lib/data';
 
 export default async function HomePage() {
@@ -116,6 +117,13 @@ export default async function HomePage() {
             Hledej podle názvu školy, oboru, města nebo kraje
           </p>
           <SchoolSearch schools={schools} kraje={kraje} />
+        </div>
+      </section>
+
+      {/* Vibecoding promo */}
+      <section className="py-4 pb-8" style={{ backgroundColor: '#ffffff' }}>
+        <div className="max-w-4xl mx-auto px-4">
+          <VibecordingPromo />
         </div>
       </section>
 
