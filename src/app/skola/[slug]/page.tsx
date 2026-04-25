@@ -8,6 +8,7 @@ import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolInfoSection } from '@/components/school-profile/SchoolInfoSection';
 import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, get2026DataByRedizo, type School2026Data } from '@/lib/data';
 import { Applications2026Banner } from '@/components/Applications2026Banner';
+import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getNoteForSchool } from '@/lib/school-notes';
 import { SchoolNote } from '@/components/SchoolNote';
 import { getDifficultyClass, getDemandClass, formatNumber, createSlug } from '@/lib/utils';
@@ -545,6 +546,11 @@ export default async function SchoolDetailPage({ params }: Props) {
                 </div>
               )}
             </div>
+          </div>
+
+          {/* Vibecoding promo */}
+          <div className="max-w-6xl mx-auto px-4 pt-6 pb-2">
+            <VibecordingPromo />
           </div>
 
           {/* Statistiky přehledu */}

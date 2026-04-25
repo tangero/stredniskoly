@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
+import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getAllSchools, getAllSchoolsForSearch, getAllKraje, getSchoolAnalysis } from '@/lib/data';
 import { createSlug } from '@/lib/utils';
 import { SchoolsPageTabs } from '@/components/SchoolsPageTabs';
@@ -71,6 +72,10 @@ export default async function SchoolsPage() {
             {/* Vyhledávání */}
             <SchoolSearch schools={searchSchools} kraje={kraje} />
           </div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 pt-6 pb-2">
+          <VibecordingPromo />
         </div>
 
         <div className="max-w-6xl mx-auto px-4 py-8">

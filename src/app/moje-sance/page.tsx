@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { MojeSanceClient } from './MojeSanceClient';
+import { VibecordingPromo } from '@/components/VibecordingPromo';
 
 export const metadata: Metadata = {
   title: 'Moje šance – kalkulačka přijetí na střední školu 2026',
@@ -28,6 +29,9 @@ export default function MojeSancePage() {
       <Header />
 
       <main className="flex-1">
+        <div className="max-w-6xl mx-auto px-4 pt-6 pb-2">
+          <VibecordingPromo />
+        </div>
         <Suspense fallback={<Loading />}>
           <MojeSanceClient />
         </Suspense>
