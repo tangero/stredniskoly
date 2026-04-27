@@ -100,7 +100,7 @@ export const categoryColors: Record<CategoryCode, { bg: string; text: string }> 
 };
 
 export const krajNames: Record<string, string> = {
-  'CZ010': 'Praha',
+  'CZ010': 'Hlavní město Praha',
   'CZ020': 'Středočeský',
   'CZ031': 'Jihočeský',
   'CZ032': 'Plzeňský',

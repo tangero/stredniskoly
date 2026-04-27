@@ -6,6 +6,14 @@ import { Footer } from '@/components/Footer';
 import { RegionSchoolsTable } from '@/components/RegionSchoolsTable';
 import { getAllKraje, getSchoolsByKraj, getRegionStats, getExtendedSchoolStatsForSchools, getTrendDataForSchools, ExtendedSchoolStats, YearlyTrendData } from '@/lib/data';
 
+const noKrajSuffix = ['Hlavní město Praha', 'Vysočina'];
+function krajLabel(nazev: string): string {
+  return noKrajSuffix.includes(nazev) ? nazev : `${nazev} kraj`;
+}
+function krajLabelV(nazev: string): string {
+  return noKrajSuffix.includes(nazev) ? `v regionu ${nazev}` : `v ${nazev} kraji`;
+}
+
 interface Props {
   params: Promise<{ kraj: string }>;
   searchParams: Promise<{ delka?: string }>;
@@ -26,11 +34,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${kraj.nazev} kraj - Přehled škol`,
-    description: `Přehled středních škol v ${kraj.nazev} kraji. ${kraj.count} škol a oborů, statistiky přijímacích zkoušek.`,
+    title: `${krajLabel(kraj.nazev)} - Přehled škol`,
+    description: `Přehled středních škol ${krajLabelV(kraj.nazev)}. ${kraj.count} škol a oborů, statistiky přijímacích zkoušek.`,
     openGraph: {
-      title: `${kraj.nazev} kraj | Přijímačky na střední školy`,
-      description: `Přehled ${kraj.count} středních škol v ${kraj.nazev} kraji.`,
+      title: `${krajLabel(kraj.nazev)} | Přijímačky na střední školy`,
+      description: `Přehled ${kraj.count} středních škol ${krajLabelV(kraj.nazev)}.`,
     },
   };
 }
@@ -99,7 +107,7 @@ export default async function RegionPage({ params, searchParams }: Props) {
 
         <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white py-12">
           <div className="max-w-6xl mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">{kraj.nazev} kraj</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">{krajLabel(kraj.nazev)}</h1>
             <p className="text-lg opacity-90">
               Přehled {stats.totalSchools} středních škol a oborů
             </p>
