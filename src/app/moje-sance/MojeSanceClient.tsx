@@ -752,7 +752,7 @@ export function MojeSanceClient() {
         <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-6">
           <h2 className="text-lg font-semibold text-slate-900 mb-1">Vaše přihlášky</h2>
           <p className="text-sm text-slate-500 mb-4">
-            Vyberte až 3 školy v pořadí vaší priority (1 = nejvyšší priorita).
+            Vyberte 1 až 3 školy v pořadí vaší priority (1 = nejvyšší priorita). Stačí i jedna škola.
           </p>
 
           <div className="space-y-3">
