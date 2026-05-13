@@ -1676,11 +1676,11 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
  */
 export async function get2026DataById(schoolId: string): Promise<School2026Data | null> {
   const allData = await getSchools2026Data();
-  // Zkusit přesné ID, pak baseId
+  const exact = allData.find(s => s.id === schoolId);
+  if (exact) return exact;
   const baseId = schoolId.split('_').slice(0, 2).join('_');
-  return allData.find(s => s.id === schoolId) ||
-         allData.find(s => s.id.startsWith(baseId)) ||
-         null;
+  const candidates = allData.filter(s => s.id.startsWith(baseId));
+  return candidates.length === 1 ? candidates[0] : null;
 }
 
 /**

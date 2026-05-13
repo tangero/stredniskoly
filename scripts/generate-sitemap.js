@@ -124,7 +124,7 @@ function buildSchoolSlugs(analysisData, schoolsData) {
 
 // Must match krajNames in src/types/school.ts
 const krajNames = {
-  'CZ010': 'Praha',
+  'CZ010': 'Hlavní město Praha',
   'CZ020': 'Středočeský',
   'CZ031': 'Jihočeský',
   'CZ032': 'Plzeňský',
