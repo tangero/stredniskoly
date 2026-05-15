@@ -1578,6 +1578,31 @@ export interface School2026Data {
   prev_zamereni_name?: string; // předchozí název zaměření (přejmenování)
 }
 
+// ── CERMAT výsledky (roční cyklus) ────────────────────────────────────────────
+
+export interface ResultsMeta {
+  latest_year: number;
+  available_years: number[];
+}
+
+export interface SchoolResult {
+  redizo: string;
+  kkov: string;
+  zamereni: string;
+  nazev: string;
+  kraj: string;
+  school_type: string;
+  kapacita: number;
+  prijati: number;
+  cj_ma_prijati: number;
+  cj_prijati: number;
+  ma_prijati: number;
+  cj_ma_prijati_prev: number;
+  delta_cj_ma: number | null;
+  rank_in_type: number;
+  type_total: number;
+}
+
 /** Raw záznam z applications_2026.json (jen dynamická data per obor) */
 interface Raw2026Record {
   id: string;
@@ -1591,6 +1616,8 @@ interface Raw2026Record {
 // Cache
 let raw2026Cache: Raw2026Record[] | null = null;
 let schools2026Cache: School2026Data[] | null = null;
+let resultsMetaCache: ResultsMeta | null = null;
+const resultsYearCache = new Map<number, Map<string, SchoolResult>>();
 
 /**
  * Načte raw data 2026 z applications_2026.json
@@ -1911,4 +1938,44 @@ export async function getInspectionExtractions(): Promise<Record<string, Inspect
 export async function getExtractionsByRedizo(redizo: string): Promise<InspectionExtraction[]> {
   const all = await getInspectionExtractions();
   return all[redizo] || [];
+}
+
+// ── CERMAT výsledky — funkce ──────────────────────────────────────────────────
+
+export async function getResultsMeta(): Promise<ResultsMeta> {
+  if (resultsMetaCache) return resultsMetaCache;
+  try {
+    const content = await fs.readFile(path.join(dataDir, 'cermat_results_meta.json'), 'utf-8');
+    resultsMetaCache = JSON.parse(content);
+  } catch {
+    resultsMetaCache = { latest_year: 2026, available_years: [2026] };
+  }
+  return resultsMetaCache!;
+}
+
+export async function getResultsForYear(year: number): Promise<Map<string, SchoolResult>> {
+  if (resultsYearCache.has(year)) return resultsYearCache.get(year)!;
+  try {
+    const filePath = path.join(dataDir, `cermat_results_${year}.json`);
+    const content = await fs.readFile(filePath, 'utf-8');
+    const raw = JSON.parse(content) as Record<string, SchoolResult>;
+    const map = new Map(Object.entries(raw));
+    resultsYearCache.set(year, map);
+    return map;
+  } catch {
+    const empty = new Map<string, SchoolResult>();
+    resultsYearCache.set(year, empty);
+    return empty;
+  }
+}
+
+export async function getSchoolResultsByRedizo(redizo: string, year?: number): Promise<SchoolResult[]> {
+  const meta = await getResultsMeta();
+  const targetYear = year ?? meta.latest_year;
+  const allResults = await getResultsForYear(targetYear);
+  const found: SchoolResult[] = [];
+  for (const [, rec] of allResults) {
+    if (rec.redizo === redizo) found.push(rec);
+  }
+  return found;
 }
