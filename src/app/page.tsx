@@ -60,7 +60,7 @@ export default async function HomePage() {
                 </div>
               </Link>
               <Link
-                href="/vysledky-2026"
+                href="/vysledky/2026"
                 className="block no-underline p-4 transition-opacity hover:opacity-90"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '8px' }}
               >
@@ -112,7 +112,7 @@ export default async function HomePage() {
           {/* Novinka: výsledky 2026 */}
           <div className="mt-10 pt-6" style={{ borderTop: '1px solid #e0e6ed' }}>
             <Link
-              href="/vysledky-2026"
+              href="/vysledky/2026"
               className="inline-flex items-center gap-2 text-base no-underline group font-semibold"
               style={{ color: '#16a34a' }}
             >

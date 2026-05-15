@@ -93,7 +93,7 @@ function ResultCard({ result }: { result: SchoolResult }) {
             </a>
             {' '}· přijato {result.prijati} z {result.kapacita} míst
           </p>
-          <Link href="/vysledky-2026" className="text-sm font-medium text-emerald-600 hover:text-emerald-700">
+          <Link href="/vysledky/2026" className="text-sm font-medium text-emerald-600 hover:text-emerald-700">
             Výsledky všech škol →
           </Link>
         </div>
