@@ -6,8 +6,9 @@ import { Footer } from '@/components/Footer';
 import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution, ProgramTabs } from '@/components/SchoolDetailClient';
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolInfoSection } from '@/components/school-profile/SchoolInfoSection';
-import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, get2026DataByRedizo, type School2026Data } from '@/lib/data';
+import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo, type SchoolResult } from '@/lib/data';
 import { Applications2026Banner } from '@/components/Applications2026Banner';
+import { SchoolResults2026 } from '@/components/SchoolResults2026';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getNoteForSchool } from '@/lib/school-notes';
 import { SchoolNote } from '@/components/SchoolNote';
@@ -338,11 +339,12 @@ export default async function SchoolDetailPage({ params }: Props) {
     if (!overview) notFound();
 
     // Načíst data ČŠI a AI extrakce
-    const [csiData, extractions, inspis, data2026] = await Promise.all([
+    const [csiData, extractions, inspis, data2026, results2026] = await Promise.all([
       getCSIDataByRedizo(redizo),
       getExtractionsByRedizo(redizo),
       inspisEnabled ? getInspisDataByRedizo(redizo) : Promise.resolve(null),
       get2026DataByRedizo(redizo),
+      getSchoolResultsByRedizo(redizo),
     ]);
 
     // Seřadit programy podle min_body (nejobtížnější první)
@@ -445,6 +447,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                   totalPrihlasky2025={totalPrihlasky}
                 />
               )}
+              <SchoolResults2026 results={results2026} />
 
               {/* Priority Cards */}
               <PriorityCardsGrid priorities={priorities} />
@@ -602,6 +605,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                 totalPrihlasky2025={totalPrihlasky}
               />
             )}
+            <SchoolResults2026 results={results2026} />
 
             {/* Rozdělit programy na ty s 2026 daty a ty pouze z 2025 */}
             {(() => {
@@ -756,7 +760,7 @@ export default async function SchoolDetailPage({ params }: Props) {
   const data2026ForDetail = await get2026DataByRedizo(redizo);
   const program2026 = match2026ToProgram(data2026ForDetail, program);
 
-  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData, extractions, programNote, schoolNote] = await Promise.all([
+  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData, extractions, programNote, schoolNote, results2026] = await Promise.all([
     getProgramsByRedizo(redizo),
     getSchoolDetail(program.id),
     pageInfo.type === 'zamereni'
@@ -768,6 +772,7 @@ export default async function SchoolDetailPage({ params }: Props) {
     getExtractionsByRedizo(redizo),
     getNoteForSchool(program.id),   // poznámka specifická pro zaměření/obor
     getNoteForSchool(school.id),    // fallback: poznámka pro celý obor (bez zaměření)
+    getSchoolResultsByRedizo(redizo),
   ]);
   // Použít zaměření-specifickou poznámku, nebo fallback na obecnou
   const schoolNoteToShow = programNote || schoolNote;
@@ -927,6 +932,15 @@ export default async function SchoolDetailPage({ params }: Props) {
               totalPrihlasky2025={program.prihlasky}
               singleProgram
             />
+          </div>
+        )}
+        {results2026.length > 0 && (
+          <div className="max-w-6xl mx-auto px-4">
+            <SchoolResults2026 results={results2026.filter(r => {
+              const programKkov = program.id.split('_')[1] ?? '';
+              return r.kkov === programKkov &&
+                (r.zamereni === (program.zamereni ?? '') || r.zamereni === '');
+            })} />
           </div>
         )}
 
