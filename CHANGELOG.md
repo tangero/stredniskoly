@@ -3,6 +3,20 @@
 Všechny podstatné změny v projektu jsou dokumentovány v tomto souboru.
 Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 
+## [0.4.0] — 2026-05-15
+
+### Přidáno
+- **Výsledky přijímacích zkoušek 2026** — nová datová vrstva s ročním cyklem (CERMAT xlsx → JSON pipeline)
+  - Widget „Výsledky přijímacích zkoušek 2026" na detailu každé školy — průměrné skóre ČJ+MA přijatých, srovnání s rokem 2025 (Δ), pořadí v rámci typu školy
+  - Nová stránka `/vysledky-2026` s makropřehledem: klíčová zjištění, srovnávací tabulka typů škol, žebříček gymnázií (GY4/GY8/GY6), rady pro přijímačky 2027, vyhledávání přes všechny školy
+  - Python pipeline `scripts/import_cermat_results.py --year YEAR` pro každoroční import nových dat
+
+### Klíčová zjištění 2026
+- Matematika posílila o 6–7 bodů průměrného skóre přijatých ve všech typech škol
+- O 7 702 méně přihlášek celkem oproti 2025 (demografický pokles)
+- Lycea: +925 nových míst, nejrychleji rostoucí typ školy
+- Top GY4: Gymnázium Jana Keplera 183.9 b, PORG 183.8 b, Gymnázium Christiana Dopplera 183.1 b
+
 ## [0.3.0] — 2026-03-08
 
 ### Přidáno
