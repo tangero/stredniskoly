@@ -52,18 +52,18 @@ export default async function HomePage() {
             </Link>
           </div>
 
-          {/* Novinka: přihlášky 2026 */}
+          {/* Novinka: výsledky 2026 */}
           <div className="mt-10 pt-6" style={{ borderTop: '1px solid #e0e6ed' }}>
             <Link
-              href="/moje-sance"
+              href="/vysledky-2026"
               className="inline-flex items-center gap-2 text-base no-underline group font-semibold"
-              style={{ color: '#0074e4' }}
+              style={{ color: '#16a34a' }}
             >
-              <span>Přihlášky 2026 jsou venku – zjistěte své šance na přijetí</span>
+              <span>Výsledky přijímaček 2026 jsou venku — porovnej výsledky své školy</span>
               <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
             </Link>
             <p className="mt-1 text-sm" style={{ color: '#818c99' }}>
-              156 409 uchazečů podalo 425 279 přihlášek. Porovnejte konkurenci na vašich školách.
+              Průměrné skóre ČJ+MA přijatých na každé škole. Data CERMAT, 15. 5. 2026.
             </p>
           </div>
 
@@ -102,8 +102,14 @@ export default async function HomePage() {
               <div className="text-sm" style={{ color: '#818c99' }}>Krajů ČR</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold" style={{ color: '#28313b' }}>2024-2026</div>
-              <div className="text-sm" style={{ color: '#818c99' }}>Data z let</div>
+              <div className="relative inline-block">
+                <div className="text-3xl md:text-4xl font-bold" style={{ color: '#16a34a' }}>2026 ✓</div>
+                <span className="absolute -top-2 -right-4 text-white font-bold rounded"
+                      style={{ backgroundColor: '#22c55e', fontSize: '8px', padding: '2px 4px', lineHeight: 1 }}>
+                  NOVÉ
+                </span>
+              </div>
+              <div className="text-sm font-medium" style={{ color: '#16a34a' }}>Aktuální výsledky</div>
             </div>
           </div>
         </div>
@@ -124,6 +130,78 @@ export default async function HomePage() {
       <section className="py-4 pb-8" style={{ backgroundColor: '#ffffff' }}>
         <div className="max-w-4xl mx-auto px-4">
           <VibecordingPromo />
+        </div>
+      </section>
+
+      {/* Výsledky 2026 — dvoupanelová sekce pro dvě skupiny */}
+      <section className="py-8 pb-4" style={{ backgroundColor: '#ffffff' }}>
+        <div className="max-w-4xl mx-auto px-4">
+          <div style={{
+            background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%)',
+            borderRadius: '12px',
+            padding: '24px',
+          }}>
+            <div style={{ fontSize: '10px', color: '#60a5fa', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '6px' }}>
+              Novinky · 15. května 2026
+            </div>
+            <h2 className="font-black mb-1" style={{ fontSize: '20px', color: '#ffffff' }}>
+              Víme, kolik bodů stačilo na každou školu v Česku
+            </h2>
+            <p className="mb-5" style={{ fontSize: '13px', color: '#94a3b8' }}>
+              CERMAT zveřejnil skóre přijatých uchazečů. 3&nbsp;080 škol, aktuální data.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+              {/* Levý panel — výsledky konkrétní školy (primární) */}
+              <Link
+                href="/skoly"
+                className="block no-underline rounded-lg p-4 transition-opacity hover:opacity-90"
+                style={{
+                  background: 'rgba(34, 197, 94, 0.10)',
+                  border: '1px solid rgba(34, 197, 94, 0.30)',
+                  borderRadius: '8px',
+                }}
+              >
+                <div style={{ fontSize: '9px', color: '#86efac', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
+                  📊 Výsledky konkrétní školy
+                </div>
+                <div className="font-black mb-2" style={{ fontSize: '15px', color: '#ffffff', lineHeight: 1.3 }}>
+                  Kolik bodů stačilo na vaši školu?
+                </div>
+                <div className="mb-4" style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.5 }}>
+                  Najdi školu, zjisti průměrné skóre přijatých uchazečů a srovnej s loňskem.
+                </div>
+                <div className="inline-block font-bold" style={{ background: '#22c55e', color: '#fff', fontSize: '12px', padding: '8px 16px', borderRadius: '6px' }}>
+                  Hledat školu →
+                </div>
+              </Link>
+
+              {/* Pravý panel — přijímačky 2027 (sekundární) */}
+              <Link
+                href="/vysledky-2026"
+                className="block no-underline rounded-lg p-4 transition-opacity hover:opacity-90"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.06)',
+                  border: '1px solid rgba(255, 255, 255, 0.10)',
+                  borderRadius: '8px',
+                }}
+              >
+                <div style={{ fontSize: '9px', color: '#93c5fd', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
+                  🎯 Chystáš se na přijímačky?
+                </div>
+                <div className="font-black mb-2" style={{ fontSize: '15px', color: '#ffffff', lineHeight: 1.3 }}>
+                  Co bude důležité pro přijímačky 2027?
+                </div>
+                <div className="mb-4" style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.5 }}>
+                  Matematika vzrostla o 6 bodů. Žebříčky škol, trendy a rady pro přípravu.
+                </div>
+                <div className="inline-block font-bold" style={{ background: '#3b82f6', color: '#fff', fontSize: '12px', padding: '8px 16px', borderRadius: '6px' }}>
+                  Zobrazit přehled výsledků →
+                </div>
+              </Link>
+
+            </div>
+          </div>
         </div>
       </section>
 
