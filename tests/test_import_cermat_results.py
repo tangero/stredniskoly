@@ -43,3 +43,28 @@ def test_is_valid_flat_filters_correctly():
     assert is_valid_flat(evening) is False
     no_jpz = {'FORMA VZDĚLÁVÁNÍ': 'den', 'ZKRÁCENÉ STUDIUM': 'ne', 'POVINNOST JPZ': 0}
     assert is_valid_flat(no_jpz) is False
+
+
+def test_extract_current_year_has_keplera():
+    path = CERMAT_DIR / 'PZ2026_kolo1_vysledky.xlsx'
+    records = load_flat_xlsx(path)
+    from import_cermat_results import extract_current_year
+    data = extract_current_year(records)
+    keplera_keys = [k for k, v in data.items() if 'Keplera' in v.get('nazev', '')]
+    assert len(keplera_keys) >= 1
+    keplera = data[keplera_keys[0]]
+    assert keplera['cj_ma_prijati'] > 180.0
+
+
+def test_compute_ranks_assigns_1_to_highest():
+    from import_cermat_results import compute_ranks
+    data = {
+        'a': {'school_type': 'GY4', 'cj_ma_prijati': 183.9},
+        'b': {'school_type': 'GY4', 'cj_ma_prijati': 160.0},
+        'c': {'school_type': 'GY4', 'cj_ma_prijati': 170.0},
+    }
+    result = compute_ranks(data)
+    assert result['a']['rank_in_type'] == 1
+    assert result['c']['rank_in_type'] == 2
+    assert result['b']['rank_in_type'] == 3
+    assert result['a']['type_total'] == 3
