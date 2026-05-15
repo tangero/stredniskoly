@@ -5,13 +5,10 @@ import { Footer } from '@/components/Footer';
 import { getResultsMeta, getResultsForYear } from '@/lib/data';
 import { ResultsClient } from './ResultsClient';
 
+export const dynamic = 'force-dynamic';
+
 interface Props {
   params: Promise<{ year: string }>;
-}
-
-export async function generateStaticParams() {
-  const meta = await getResultsMeta();
-  return meta.available_years.map(y => ({ year: String(y) }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
