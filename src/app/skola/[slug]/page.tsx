@@ -385,7 +385,7 @@ export default async function SchoolDetailPage({ params }: Props) {
       const quickFacts: QuickFact[] = [
         { label: "Min. body", value: program.min_body },
         { label: "Kapacita", value: program.kapacita },
-        { label: "Školné", value: inspis?.rocni_skolne ? `${inspis.rocni_skolne} Kč` : "0 Kč" },
+        { label: "Školné", value: inspis?.rocni_skolne ? `${inspis.rocni_skolne.toLocaleString('cs-CZ')} Kč` : inspis?.rocni_skolne === 0 ? "Zdarma" : "Neuvedeno" },
         { label: "Jazyky", value: inspis?.vyuka_jazyku?.slice(0, 2).join(", ") || "N/A" },
       ];
 
