@@ -21,8 +21,65 @@ export default async function HomePage() {
       <section className="py-16 md:py-20" style={{ backgroundColor: '#ffffff' }}>
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: '#28313b' }}>
-            Najdi si svou střední školu <br /> a zjisti své šance
+            Najdi si svou střední školu <br /> a výsledky přijímaček 2026
           </h1>
+
+          {/* Výsledky 2026 — dvoupanelová sekce hned pod nadpisem */}
+          <div className="mb-8" style={{
+            background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%)',
+            borderRadius: '12px',
+            padding: '24px',
+            textAlign: 'left',
+          }}>
+            <div style={{ fontSize: '10px', color: '#60a5fa', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '6px' }}>
+              Novinky · 15. května 2026
+            </div>
+            <h2 className="font-black mb-1" style={{ fontSize: '20px', color: '#ffffff' }}>
+              Víme, kolik bodů stačilo na každou školu v Česku
+            </h2>
+            <p className="mb-5" style={{ fontSize: '13px', color: '#94a3b8' }}>
+              CERMAT zveřejnil skóre přijatých uchazečů. 3&nbsp;080 škol, aktuální data.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <Link
+                href="/skoly"
+                className="block no-underline p-4 transition-opacity hover:opacity-90"
+                style={{ background: 'rgba(34,197,94,0.10)', border: '1px solid rgba(34,197,94,0.30)', borderRadius: '8px' }}
+              >
+                <div style={{ fontSize: '9px', color: '#86efac', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
+                  📊 Výsledky konkrétní školy
+                </div>
+                <div className="font-black mb-2" style={{ fontSize: '15px', color: '#ffffff', lineHeight: 1.3 }}>
+                  Kolik bodů stačilo na vaši školu?
+                </div>
+                <div className="mb-4" style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.5 }}>
+                  Najdi školu, zjisti průměrné skóre přijatých uchazečů a srovnej s loňskem.
+                </div>
+                <div className="inline-block font-bold" style={{ background: '#22c55e', color: '#fff', fontSize: '12px', padding: '8px 16px', borderRadius: '6px' }}>
+                  Hledat školu →
+                </div>
+              </Link>
+              <Link
+                href="/vysledky-2026"
+                className="block no-underline p-4 transition-opacity hover:opacity-90"
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '8px' }}
+              >
+                <div style={{ fontSize: '9px', color: '#93c5fd', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
+                  🎯 Chystáš se na přijímačky?
+                </div>
+                <div className="font-black mb-2" style={{ fontSize: '15px', color: '#ffffff', lineHeight: 1.3 }}>
+                  Co bude důležité pro přijímačky 2027?
+                </div>
+                <div className="mb-4" style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.5 }}>
+                  Matematika vzrostla o 6 bodů. Žebříčky škol, trendy a rady pro přípravu.
+                </div>
+                <div className="inline-block font-bold" style={{ background: '#3b82f6', color: '#fff', fontSize: '12px', padding: '8px 16px', borderRadius: '6px' }}>
+                  Zobrazit přehled výsledků →
+                </div>
+              </Link>
+            </div>
+          </div>
+
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto" style={{ color: '#818c99' }}>
             Přehledná data všech středních škol a maturitních oborů v České republice.
             Pozor: nejsou zde školy, kde se dělají jen talentové zkoušky! Chybí konzervatoře, sportovní a umělecké školy, cca 130 škol, nemají jednotné přijímačky.
@@ -130,78 +187,6 @@ export default async function HomePage() {
       <section className="py-4 pb-8" style={{ backgroundColor: '#ffffff' }}>
         <div className="max-w-4xl mx-auto px-4">
           <VibecordingPromo />
-        </div>
-      </section>
-
-      {/* Výsledky 2026 — dvoupanelová sekce pro dvě skupiny */}
-      <section className="py-8 pb-4" style={{ backgroundColor: '#ffffff' }}>
-        <div className="max-w-4xl mx-auto px-4">
-          <div style={{
-            background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%)',
-            borderRadius: '12px',
-            padding: '24px',
-          }}>
-            <div style={{ fontSize: '10px', color: '#60a5fa', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '6px' }}>
-              Novinky · 15. května 2026
-            </div>
-            <h2 className="font-black mb-1" style={{ fontSize: '20px', color: '#ffffff' }}>
-              Víme, kolik bodů stačilo na každou školu v Česku
-            </h2>
-            <p className="mb-5" style={{ fontSize: '13px', color: '#94a3b8' }}>
-              CERMAT zveřejnil skóre přijatých uchazečů. 3&nbsp;080 škol, aktuální data.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-
-              {/* Levý panel — výsledky konkrétní školy (primární) */}
-              <Link
-                href="/skoly"
-                className="block no-underline rounded-lg p-4 transition-opacity hover:opacity-90"
-                style={{
-                  background: 'rgba(34, 197, 94, 0.10)',
-                  border: '1px solid rgba(34, 197, 94, 0.30)',
-                  borderRadius: '8px',
-                }}
-              >
-                <div style={{ fontSize: '9px', color: '#86efac', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
-                  📊 Výsledky konkrétní školy
-                </div>
-                <div className="font-black mb-2" style={{ fontSize: '15px', color: '#ffffff', lineHeight: 1.3 }}>
-                  Kolik bodů stačilo na vaši školu?
-                </div>
-                <div className="mb-4" style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.5 }}>
-                  Najdi školu, zjisti průměrné skóre přijatých uchazečů a srovnej s loňskem.
-                </div>
-                <div className="inline-block font-bold" style={{ background: '#22c55e', color: '#fff', fontSize: '12px', padding: '8px 16px', borderRadius: '6px' }}>
-                  Hledat školu →
-                </div>
-              </Link>
-
-              {/* Pravý panel — přijímačky 2027 (sekundární) */}
-              <Link
-                href="/vysledky-2026"
-                className="block no-underline rounded-lg p-4 transition-opacity hover:opacity-90"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid rgba(255, 255, 255, 0.10)',
-                  borderRadius: '8px',
-                }}
-              >
-                <div style={{ fontSize: '9px', color: '#93c5fd', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
-                  🎯 Chystáš se na přijímačky?
-                </div>
-                <div className="font-black mb-2" style={{ fontSize: '15px', color: '#ffffff', lineHeight: 1.3 }}>
-                  Co bude důležité pro přijímačky 2027?
-                </div>
-                <div className="mb-4" style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.5 }}>
-                  Matematika vzrostla o 6 bodů. Žebříčky škol, trendy a rady pro přípravu.
-                </div>
-                <div className="inline-block font-bold" style={{ background: '#3b82f6', color: '#fff', fontSize: '12px', padding: '8px 16px', borderRadius: '6px' }}>
-                  Zobrazit přehled výsledků →
-                </div>
-              </Link>
-
-            </div>
-          </div>
         </div>
       </section>
 
