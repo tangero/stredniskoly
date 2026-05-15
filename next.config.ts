@@ -103,6 +103,11 @@ const nextConfig: NextConfig = {
         destination: '/regiony/hlavni-mesto-praha',
         permanent: true,
       },
+      {
+        source: '/vysledky-2026',
+        destination: '/vysledky/2026',
+        permanent: true,
+      },
     ];
   },
 
