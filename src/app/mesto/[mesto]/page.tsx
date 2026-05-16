@@ -304,7 +304,7 @@ export default async function MestoPage({ params }: Props) {
           <section>
             <h2 className="text-2xl font-bold mb-2">Přehled všech škol a oborů</h2>
             <p className="text-slate-600 mb-6 text-sm">
-              Data přijímacího řízení 2026 (kde dostupná) nebo 2025. CJ+MA = průměrný součet bodů přijatých uchazečů z přijímacích zkoušek CERMAT (max 100).
+              Data přijímacího řízení 2026 (kde dostupná) nebo 2025. CJ+MA = průměrný součet skóre přijatých uchazečů z přijímacích zkoušek CERMAT (max 200, tj. 100 ČJ + 100 MA).
             </p>
             <CitySchoolsTable schools={schools} />
           </section>
