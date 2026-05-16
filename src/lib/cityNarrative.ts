@@ -1,11 +1,6 @@
-import Anthropic from '@anthropic-ai/sdk';
+import { promises as fs } from 'fs';
+import path from 'path';
 import type { CityStats } from './cityData';
-
-let client: Anthropic | null = null;
-function getClient(): Anthropic {
-  if (!client) client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-  return client;
-}
 
 export interface CityNarrative {
   celkovyObraz: string;
@@ -13,6 +8,22 @@ export interface CityNarrative {
   odborneSkoly: string;
   koneknurence: string;
   trendVyvoj: string;
+}
+
+const CACHE_FILE = path.join(process.cwd(), 'data', 'city_narratives.json');
+
+async function readCache(): Promise<Record<string, CityNarrative>> {
+  try {
+    const raw = await fs.readFile(CACHE_FILE, 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
+}
+
+async function writeCache(cache: Record<string, CityNarrative>): Promise<void> {
+  await fs.mkdir(path.dirname(CACHE_FILE), { recursive: true });
+  await fs.writeFile(CACHE_FILE, JSON.stringify(cache, null, 2), 'utf-8');
 }
 
 function formatNum(n: number, decimals = 0): string {
@@ -74,6 +85,18 @@ function buildDataContext(stats: CityStats): string {
 }
 
 export async function generateCityNarrative(stats: CityStats): Promise<CityNarrative> {
+  const cacheKey = stats.mesto.slug;
+
+  // Return cached version if available — avoids API call on every deploy
+  const cache = await readCache();
+  if (cache[cacheKey]) {
+    return cache[cacheKey];
+  }
+
+  if (!process.env.OPENROUTER_API_KEY) {
+    throw new Error('OPENROUTER_API_KEY not set');
+  }
+
   const dataContext = buildDataContext(stats);
   const mestoName = stats.mesto.nazev;
 
@@ -105,31 +128,48 @@ BLOK:trend_vyvoj — Tříletý vývoj 2024→2025→2026: jak se vyvíjejí kap
 Data:
 ${dataContext}`;
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    throw new Error('ANTHROPIC_API_KEY not set');
-  }
-
-  const response = await getClient().messages.create({
-    model: 'claude-opus-4-7',
-    max_tokens: 2000,
-    system: systemPrompt,
-    messages: [{ role: 'user', content: userPrompt }],
+  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+      'Content-Type': 'application/json',
+      'HTTP-Referer': 'https://www.prijimackynaskolu.cz',
+      'X-Title': 'Prijimackynaskolu.cz',
+    },
+    body: JSON.stringify({
+      model: 'google/gemini-2.5-flash-preview',
+      max_tokens: 2000,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt },
+      ],
+    }),
   });
 
-  const text = response.content[0].type === 'text' ? response.content[0].text : '';
+  if (!response.ok) {
+    throw new Error(`OpenRouter error: ${response.status} ${await response.text()}`);
+  }
 
-  // Parse blocks
+  const json = await response.json();
+  const text: string = json.choices?.[0]?.message?.content ?? '';
+
   const parse = (key: string): string => {
     const regex = new RegExp(`BLOK:${key}\\s*\\n([\\s\\S]*?)(?=\\nBLOK:|$)`, 'i');
     const match = text.match(regex);
     return match ? match[1].trim() : '';
   };
 
-  return {
+  const narrative: CityNarrative = {
     celkovyObraz: parse('celkovy_obraz'),
     gymnazia: parse('gymnazia'),
     odborneSkoly: parse('odborne_skoly'),
     koneknurence: parse('konkurence'),
     trendVyvoj: parse('trend_vyvoj'),
   };
+
+  // Persist to cache so next build skips the API call
+  cache[cacheKey] = narrative;
+  await writeCache(cache);
+
+  return narrative;
 }

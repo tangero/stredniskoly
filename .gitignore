@@ -47,6 +47,7 @@ next-env.d.ts
 !/data/inspis_coverage_summary.json
 !/data/csi_manifest.json
 !/data/csi_diff_latest.json
+!/data/city_narratives.json
 !/data/csi_snapshots/
 !/data/csi_snapshots/*.json
 
