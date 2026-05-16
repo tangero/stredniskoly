@@ -335,9 +335,10 @@ export default async function MestoPage({ params }: Props) {
                 nebo přejmenovaných oborů může dojít k neshodě ID – v takovém případě zobrazujeme data z roku 2025.
               </ExplainerBox>
               <ExplainerBox title="Přihlášky ≠ odmítnuté osoby">
-                Každý uchazeč může od roku 2024 podat až 2 přihlášky. Proto počet přihlášek je vyšší než počet uchazečů.
-                Počet přijatých ÷ kapacita ≠ přesná míra úspěšnosti. Skutečný podíl nepřijatých uchazečů
-                (ne přihlášek) je proto nižší, než by naznačoval prostý součet.
+                Každý uchazeč může od roku 2024 podat v 1. kole až <strong>3 přihlášky</strong> (a navíc až 2 talentové).
+                Proto je počet přihlášek 2–3× vyšší než počet uchazečů. Skutečný počet odmítnutých osob
+                je tedy podstatně nižší než rozdíl (přihlášky − přijatí). Index poptávky 3× tak ve skutečnosti znamená
+                spíše 1–1,5 uchazeče na místo, ne tři.
               </ExplainerBox>
             </div>
           </section>

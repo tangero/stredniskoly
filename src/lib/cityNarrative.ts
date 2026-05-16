@@ -105,13 +105,23 @@ Píšeš pro rodiče a uchazeče o střední školy. Styl: přesný, srozumiteln
 Používáš čísla z dat, ale překládáš je do kontextu (snazší/těžší, roste/klesá, pod/nad průměrem ČR).
 Každý odstavec má 3-5 vět. Nepoužívej odrážky ani nadpisy. Piš v češtině.
 
-DŮLEŽITÉ:
+=== KONTEXT: JAK FUNGUJE PŘIJÍMACÍ ŘÍZENÍ NA STŘEDNÍ ŠKOLY V ČR (od roku 2024) ===
+- Centrální digitální systém přihlášek (DiPSy) spravuje CERMAT.
+- Každý uchazeč může v 1. kole podat až 3 přihlášky (do roku 2023 to byly 2). Pokud se hlásí na obor s talentovou zkouškou, podává navíc až 2 talentové přihlášky.
+- Uchazeč si přihlášky seřadí podle priority. Pokud uspěje na více školách, je přijat na tu s nejvyšší prioritou; ostatní pořadí se nepoužije.
+- Jednotnou přijímací zkoušku (JPZ) z češtiny a matematiky pořádá CERMAT pro všechny maturitní obory (gymnázia, lycea, SOŠ s maturitou). SOU/učiliště bez maturity JPZ nepíší.
+- Z této struktury plyne: počet PŘIHLÁŠEK ≠ počet UCHAZEČŮ. Jeden uchazeč může v datech vystupovat až 3×. Skutečný počet odmítnutých osob je tedy podstatně nižší než (přihlášky − přijatí); typicky se 1 uchazeč = ~2–3 přihlášky.
+- Index poptávky (přihlášky/kapacita) je proto inflační — hodnota 3× neznamená nutně 3 uchazeče na místo, ale spíše 1–1,5 uchazeče na místo po zohlednění duplikací.
+
+=== DŮLEŽITÉ POJMY ===
 - Index poptávky = přihlášky ÷ kapacita. Průměr ČR 2026 = 2,95×
 - CJ a MA jsou procentuální % skóre (0–100 % za každý předmět), CJ+MA celkem má rozsah 0–200
 - Při zmiňování výsledků říkej například "průměrné % skóre 69 z češtiny a 56 z matematiky" — nevyslovuj to jako body
 - Rank percentil: 80. percentil = lepší než 80 % škol daného typu v ČR
 - Data 2026 jsou z 1. kola přijímacího řízení (CERMAT), kapacity SOU bez JPZ mohou být neúplné
-- Každý uchazeč může podat 2 přihlášky → skutečný počet odmítnutých osob je nižší než přihlášky minus přijatí`;
+
+=== KLÍČOVÉ PRAVIDLO PRO INTERPRETACI ===
+Když píšeš o odmítnutých/neúspěšných uchazečích, NIKDY neuvádět rozdíl (přihlášky − přijatí) jako počet odmítnutých osob. Vždy zdůrazni, že protože jeden uchazeč mohl podat až 3 přihlášky, skutečný počet odmítnutých osob je výrazně nižší — odhadem 2–3× nižší než tento rozdíl.`;
 
   const userPrompt = `Níže jsou data pro město ${mestoName}. Napiš 5 oddělených odstavců (odděl je prázdným řádkem a prefixem ve formátu "BLOK:nazev_bloku"):
 
@@ -121,7 +131,7 @@ BLOK:gymnazia — Situace u gymnázií (všech typů, které ve městě jsou). K
 
 BLOK:odborne_skoly — Situace u odborných škol (SOŠ, SOU, lycea). Zájem o tyto školy, srovnání s gymnázii, jak moc jsou dostupná místa. Pokud data chybí, vysvětli proč (SOU bez JPZ zkoušek).
 
-BLOK:konkurence — Kolik uchazečů se nedostane. Přihlášky minus přijatí. Upozorni, že jeden uchazeč mohl podat 2 přihlášky, takže skutečné odmítnuté osoby je méně. Srovnej s ČR průměrem.
+BLOK:konkurence — Kolik uchazečů se nedostane. Vyjdi z čísel (přihlášky, přijatí, kapacita), ale POZOR: jeden uchazeč mohl podat až 3 přihlášky, takže rozdíl (přihlášky − přijatí) je zhruba 2–3× vyšší než skutečný počet odmítnutých osob. Tohle zohlední — neuváděj rozdíl jako počet uchazečů. Srovnej náročnost (index poptávky) s ČR průměrem 2,95×.
 
 BLOK:trend_vyvoj — Tříletý vývoj 2024→2025→2026: jak se vyvíjejí kapacity a zájem. Mění se obtížnost přijetí? Jsou nějaké výrazné změny oproti minulým rokům?
 
