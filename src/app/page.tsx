@@ -124,6 +124,18 @@ export default async function HomePage() {
             </p>
           </div>
 
+          {/* Přehled měst */}
+          <div className="mt-6 pt-6" style={{ borderTop: '1px solid #e0e6ed' }}>
+            <Link
+              href="/mesto"
+              className="inline-flex items-center gap-2 text-base no-underline group font-semibold"
+              style={{ color: '#0074e4' }}
+            >
+              <span>Jak si vedou školy ve tvém městě? Přehled 20 největších měst ČR</span>
+              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </Link>
+          </div>
+
           {/* Průvodce link */}
           <div className="mt-6 pt-6" style={{ borderTop: '1px solid #e0e6ed' }}>
             <Link
