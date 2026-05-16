@@ -49,8 +49,12 @@ export interface SchoolTypeStats {
   kapacita2026: number;
   prihlasky2026: number;
   prijati2026: number;
-  /** Průměr CJ+MA přijatých 2026 (z CERMAT) */
+  /** Průměr CJ+MA přijatých 2026, v % skóre 0–200 (z CERMAT) */
   avgCjMa2026: number | null;
+  /** Průměr jen CJ přijatých 2026, v % skóre 0–100 */
+  avgCj2026: number | null;
+  /** Průměr jen MA přijatých 2026, v % skóre 0–100 */
+  avgMa2026: number | null;
   /** Průměr CJ+MA přijatých 2025 (pro srovnání) */
   avgCjMaPrev: number | null;
   /** Průměrná delta CJ+MA (2026 vs 2025) */
@@ -86,7 +90,12 @@ export interface CitySchoolRow {
   prihlasky2026: number | null;
   index2026: number | null;
   prijati2026: number | null;
+  /** CJ+MA celkem 0–200 (% skóre) */
   avgCjMa2026: number | null;
+  /** CJ 0–100 (% skóre) */
+  avgCj2026: number | null;
+  /** MA 0–100 (% skóre) */
+  avgMa2026: number | null;
   avgCjMaPrev: number | null;
   delta2026: number | null;
   rankInType2026: number | null;
@@ -188,6 +197,8 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
       index2026: app26?.idx ?? null,
       prijati2026: cer26?.prijati ?? null,
       avgCjMa2026: cer26?.cj_ma_prijati ?? null,
+      avgCj2026: cer26?.cj_prijati ?? null,
+      avgMa2026: cer26?.ma_prijati ?? null,
       avgCjMaPrev: cer26?.cj_ma_prijati_prev ?? null,
       delta2026: cer26?.delta_cj_ma ?? null,
       rankInType2026: cer26?.rank_in_type ?? null,
@@ -229,6 +240,8 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
         prihlasky2026: sum(r => r.prihlasky2026),
         prijati2026: sum(r => r.prijati2026),
         avgCjMa2026: avg(r => r.avgCjMa2026),
+        avgCj2026: avg(r => r.avgCj2026),
+        avgMa2026: avg(r => r.avgMa2026),
         avgCjMaPrev: avg(r => r.avgCjMaPrev),
         avgDelta: avg(r => r.delta2026),
         avgRankPct: cermatItems.length

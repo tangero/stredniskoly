@@ -58,10 +58,12 @@ function buildDataContext(stats: CityStats): string {
     lines.push(`  Index poptávky 2026: ${idx2026 ? formatNum(idx2026, 2) : 'N/A'}×`);
     lines.push(`  Přijatí 2026: ${formatNum(t.prijati2026)}`);
     if (t.avgCjMa2026 !== null) {
-      lines.push(`  Průměr CJ+MA přijatých 2026: ${formatNum(t.avgCjMa2026, 1)} bodů (max 100)`);
-      lines.push(`  Průměr CJ+MA přijatých 2025: ${t.avgCjMaPrev !== null ? formatNum(t.avgCjMaPrev, 1) : 'N/A'} bodů`);
-      lines.push(`  Delta 2026 vs 2025: ${t.avgDelta !== null ? (t.avgDelta > 0 ? '+' : '') + formatNum(t.avgDelta, 1) : 'N/A'} bodů`);
-      lines.push(`  ČR průměr CJ+MA 2026 pro ${t.label}: ${natCjMa} bodů (z ${nat?.count ?? 0} oborů)`);
+      lines.push(`  Průměr CJ % skóre přijatých 2026: ${t.avgCj2026 !== null ? formatNum(t.avgCj2026, 1) : 'N/A'} % (škála 0–100 %)`);
+      lines.push(`  Průměr MA % skóre přijatých 2026: ${t.avgMa2026 !== null ? formatNum(t.avgMa2026, 1) : 'N/A'} % (škála 0–100 %)`);
+      lines.push(`  Průměr CJ+MA celkem 2026: ${formatNum(t.avgCjMa2026, 1)} (škála 0–200, součet obou % skóre)`);
+      lines.push(`  Průměr CJ+MA celkem 2025: ${t.avgCjMaPrev !== null ? formatNum(t.avgCjMaPrev, 1) : 'N/A'}`);
+      lines.push(`  Delta 2026 vs 2025: ${t.avgDelta !== null ? (t.avgDelta > 0 ? '+' : '') + formatNum(t.avgDelta, 1) : 'N/A'}`);
+      lines.push(`  ČR průměr CJ+MA 2026 pro ${t.label}: ${natCjMa} (z ${nat?.count ?? 0} oborů)`);
     }
     if (t.avgRankPct !== null) {
       lines.push(`  Průměrný percentil škol v ČR: ${formatNum(t.avgRankPct, 0)}. percentil (vyšší = lepší školy)`);
@@ -82,7 +84,8 @@ Každý odstavec má 3-5 vět. Nepoužívej odrážky ani nadpisy. Piš v češt
 
 DŮLEŽITÉ:
 - Index poptávky = přihlášky ÷ kapacita. Průměr ČR 2026 = 2,95×
-- CJ+MA skóre = součet bodů z češtiny (max 50) a matematiky (max 50), celkem max 100 bodů (CERMAT JPZ test)
+- CJ a MA jsou procentuální % skóre (0–100 % za každý předmět), CJ+MA celkem má rozsah 0–200
+- Při zmiňování výsledků říkej například "průměrné % skóre 69 z češtiny a 56 z matematiky" — nevyslovuj to jako body
 - Rank percentil: 80. percentil = lepší než 80 % škol daného typu v ČR
 - Data 2026 jsou z 1. kola přijímacího řízení (CERMAT), kapacity SOU bez JPZ mohou být neúplné
 - Každý uchazeč může podat 2 přihlášky → skutečný počet odmítnutých osob je nižší než přihlášky minus přijatí`;
