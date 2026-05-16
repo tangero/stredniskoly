@@ -1,11 +1,6 @@
-import Anthropic from '@anthropic-ai/sdk';
+import { promises as fs } from 'fs';
+import path from 'path';
 import type { CityStats } from './cityData';
-
-let client: Anthropic | null = null;
-function getClient(): Anthropic {
-  if (!client) client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-  return client;
-}
 
 export interface CityNarrative {
   celkovyObraz: string;
@@ -13,6 +8,22 @@ export interface CityNarrative {
   odborneSkoly: string;
   koneknurence: string;
   trendVyvoj: string;
+}
+
+const CACHE_FILE = path.join(process.cwd(), 'data', 'city_narratives.json');
+
+async function readCache(): Promise<Record<string, CityNarrative>> {
+  try {
+    const raw = await fs.readFile(CACHE_FILE, 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
+}
+
+async function writeCache(cache: Record<string, CityNarrative>): Promise<void> {
+  await fs.mkdir(path.dirname(CACHE_FILE), { recursive: true });
+  await fs.writeFile(CACHE_FILE, JSON.stringify(cache, null, 2), 'utf-8');
 }
 
 function formatNum(n: number, decimals = 0): string {
@@ -58,10 +69,12 @@ function buildDataContext(stats: CityStats): string {
     lines.push(`  Index poptávky 2026: ${idx2026 ? formatNum(idx2026, 2) : 'N/A'}×`);
     lines.push(`  Přijatí 2026: ${formatNum(t.prijati2026)}`);
     if (t.avgCjMa2026 !== null) {
-      lines.push(`  Průměr CJ+MA přijatých 2026: ${formatNum(t.avgCjMa2026, 1)} bodů (max 100)`);
-      lines.push(`  Průměr CJ+MA přijatých 2025: ${t.avgCjMaPrev !== null ? formatNum(t.avgCjMaPrev, 1) : 'N/A'} bodů`);
-      lines.push(`  Delta 2026 vs 2025: ${t.avgDelta !== null ? (t.avgDelta > 0 ? '+' : '') + formatNum(t.avgDelta, 1) : 'N/A'} bodů`);
-      lines.push(`  ČR průměr CJ+MA 2026 pro ${t.label}: ${natCjMa} bodů (z ${nat?.count ?? 0} oborů)`);
+      lines.push(`  Průměr CJ % skóre přijatých 2026: ${t.avgCj2026 !== null ? formatNum(t.avgCj2026, 1) : 'N/A'} % (škála 0–100 %)`);
+      lines.push(`  Průměr MA % skóre přijatých 2026: ${t.avgMa2026 !== null ? formatNum(t.avgMa2026, 1) : 'N/A'} % (škála 0–100 %)`);
+      lines.push(`  Průměr CJ+MA celkem 2026: ${formatNum(t.avgCjMa2026, 1)} (škála 0–200, součet obou % skóre)`);
+      lines.push(`  Průměr CJ+MA celkem 2025: ${t.avgCjMaPrev !== null ? formatNum(t.avgCjMaPrev, 1) : 'N/A'}`);
+      lines.push(`  Delta 2026 vs 2025: ${t.avgDelta !== null ? (t.avgDelta > 0 ? '+' : '') + formatNum(t.avgDelta, 1) : 'N/A'}`);
+      lines.push(`  ČR průměr CJ+MA 2026 pro ${t.label}: ${natCjMa} (z ${nat?.count ?? 0} oborů)`);
     }
     if (t.avgRankPct !== null) {
       lines.push(`  Průměrný percentil škol v ČR: ${formatNum(t.avgRankPct, 0)}. percentil (vyšší = lepší školy)`);
@@ -72,6 +85,18 @@ function buildDataContext(stats: CityStats): string {
 }
 
 export async function generateCityNarrative(stats: CityStats): Promise<CityNarrative> {
+  const cacheKey = stats.mesto.slug;
+
+  // Return cached version if available — avoids API call on every deploy
+  const cache = await readCache();
+  if (cache[cacheKey]) {
+    return cache[cacheKey];
+  }
+
+  if (!process.env.OPENROUTER_API_KEY) {
+    throw new Error('OPENROUTER_API_KEY not set');
+  }
+
   const dataContext = buildDataContext(stats);
   const mestoName = stats.mesto.nazev;
 
@@ -82,7 +107,8 @@ Každý odstavec má 3-5 vět. Nepoužívej odrážky ani nadpisy. Piš v češt
 
 DŮLEŽITÉ:
 - Index poptávky = přihlášky ÷ kapacita. Průměr ČR 2026 = 2,95×
-- CJ+MA skóre = součet bodů z češtiny (max 50) a matematiky (max 50), celkem max 100 bodů (CERMAT JPZ test)
+- CJ a MA jsou procentuální % skóre (0–100 % za každý předmět), CJ+MA celkem má rozsah 0–200
+- Při zmiňování výsledků říkej například "průměrné % skóre 69 z češtiny a 56 z matematiky" — nevyslovuj to jako body
 - Rank percentil: 80. percentil = lepší než 80 % škol daného typu v ČR
 - Data 2026 jsou z 1. kola přijímacího řízení (CERMAT), kapacity SOU bez JPZ mohou být neúplné
 - Každý uchazeč může podat 2 přihlášky → skutečný počet odmítnutých osob je nižší než přihlášky minus přijatí`;
@@ -102,31 +128,48 @@ BLOK:trend_vyvoj — Tříletý vývoj 2024→2025→2026: jak se vyvíjejí kap
 Data:
 ${dataContext}`;
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    throw new Error('ANTHROPIC_API_KEY not set');
-  }
-
-  const response = await getClient().messages.create({
-    model: 'claude-opus-4-7',
-    max_tokens: 2000,
-    system: systemPrompt,
-    messages: [{ role: 'user', content: userPrompt }],
+  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+      'Content-Type': 'application/json',
+      'HTTP-Referer': 'https://www.prijimackynaskolu.cz',
+      'X-Title': 'Prijimackynaskolu.cz',
+    },
+    body: JSON.stringify({
+      model: 'google/gemini-2.5-flash-preview',
+      max_tokens: 2000,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt },
+      ],
+    }),
   });
 
-  const text = response.content[0].type === 'text' ? response.content[0].text : '';
+  if (!response.ok) {
+    throw new Error(`OpenRouter error: ${response.status} ${await response.text()}`);
+  }
 
-  // Parse blocks
+  const json = await response.json();
+  const text: string = json.choices?.[0]?.message?.content ?? '';
+
   const parse = (key: string): string => {
     const regex = new RegExp(`BLOK:${key}\\s*\\n([\\s\\S]*?)(?=\\nBLOK:|$)`, 'i');
     const match = text.match(regex);
     return match ? match[1].trim() : '';
   };
 
-  return {
+  const narrative: CityNarrative = {
     celkovyObraz: parse('celkovy_obraz'),
     gymnazia: parse('gymnazia'),
     odborneSkoly: parse('odborne_skoly'),
     koneknurence: parse('konkurence'),
     trendVyvoj: parse('trend_vyvoj'),
   };
+
+  // Persist to cache so next build skips the API call
+  cache[cacheKey] = narrative;
+  await writeCache(cache);
+
+  return narrative;
 }

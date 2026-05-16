@@ -94,11 +94,33 @@ function TypeCard({ t, national }: { t: SchoolTypeStats; national: NationalTypeS
       {/* CERMAT skóre */}
       {hasResult && (
         <div className="border-t border-slate-100 pt-4 mt-4">
-          <div className="text-xs text-slate-500 mb-2 font-medium uppercase tracking-wide">Průměr přijatých (CJ+MA)</div>
-          <div className="flex items-center gap-3 flex-wrap">
+          <div className="text-xs text-slate-500 mb-3 font-medium uppercase tracking-wide">
+            Průměr přijatých — výsledky CERMAT
+          </div>
+
+          {/* CJ + MA mini-karty */}
+          <div className="grid grid-cols-2 gap-2 mb-3">
+            <div className="bg-blue-50 rounded-lg p-3 text-center">
+              <div className="text-lg font-bold text-blue-700">
+                {t.avgCj2026 !== null ? t.avgCj2026.toFixed(1) : '—'}
+              </div>
+              <div className="text-xs text-slate-500 mt-0.5">Český jazyk</div>
+              <div className="text-xs text-slate-400">z&nbsp;max&nbsp;100&nbsp;%</div>
+            </div>
+            <div className="bg-purple-50 rounded-lg p-3 text-center">
+              <div className="text-lg font-bold text-purple-700">
+                {t.avgMa2026 !== null ? t.avgMa2026.toFixed(1) : '—'}
+              </div>
+              <div className="text-xs text-slate-500 mt-0.5">Matematika</div>
+              <div className="text-xs text-slate-400">z&nbsp;max&nbsp;100&nbsp;%</div>
+            </div>
+          </div>
+
+          {/* Celkový součet + delta */}
+          <div className="flex items-center gap-3 flex-wrap mb-2">
             <div>
               <span className="text-2xl font-black text-emerald-700">{t.avgCjMa2026!.toFixed(1)}</span>
-              <span className="text-xs text-slate-400 ml-1">bodů / 100</span>
+              <span className="text-xs text-slate-400 ml-1">% skóre celkem (max 200)</span>
             </div>
             {t.avgDelta !== null && Math.abs(t.avgDelta) >= 0.5 && (
               <span className={`text-xs font-medium px-2 py-1 rounded-full ${t.avgDelta > 0 ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
@@ -106,15 +128,16 @@ function TypeCard({ t, national }: { t: SchoolTypeStats; national: NationalTypeS
               </span>
             )}
           </div>
+
           {national && (
-            <div className="mt-2 text-xs text-slate-500">
+            <div className="text-xs text-slate-500">
               ČR průměr: <span className={`font-semibold ${t.avgCjMa2026! < national.avgCjMa ? 'text-green-700' : 'text-red-600'}`}>
-                {national.avgCjMa.toFixed(1)} bodů
+                {national.avgCjMa.toFixed(1)}
               </span>
               {' '}·{' '}
               {t.avgCjMa2026! < national.avgCjMa
-                ? `o ${(national.avgCjMa - t.avgCjMa2026!).toFixed(1)} méně = dostupnější`
-                : `o ${(t.avgCjMa2026! - national.avgCjMa).toFixed(1)} více = náročnější`}
+                ? `o ${(national.avgCjMa - t.avgCjMa2026!).toFixed(1)} méně → dostupnější`
+                : `o ${(t.avgCjMa2026! - national.avgCjMa).toFixed(1)} více → náročnější`}
             </div>
           )}
           {t.avgRankPct !== null && (
@@ -281,7 +304,7 @@ export default async function MestoPage({ params }: Props) {
           <section>
             <h2 className="text-2xl font-bold mb-2">Přehled všech škol a oborů</h2>
             <p className="text-slate-600 mb-6 text-sm">
-              Data přijímacího řízení 2026 (kde dostupná) nebo 2025. CJ+MA = průměrný součet bodů přijatých uchazečů z přijímacích zkoušek CERMAT (max 100).
+              Data přijímacího řízení 2026 (kde dostupná) nebo 2025. CJ+MA = průměrný součet skóre přijatých uchazečů z přijímacích zkoušek CERMAT (max 200, tj. 100 ČJ + 100 MA).
             </p>
             <CitySchoolsTable schools={schools} />
           </section>
@@ -294,11 +317,12 @@ export default async function MestoPage({ params }: Props) {
                 Index poptávky = počet přihlášek ÷ kapacita. Hodnota 2× znamená, že o každé místo se ucházejí 2 uchazeči.
                 Celorepublikový průměr v roce 2026 je <strong>2,95×</strong>. Index nad 3× signalizuje vysokou konkurenci.
               </ExplainerBox>
-              <ExplainerBox title="Co jsou body CJ+MA?">
-                Body z přijímacích zkoušek CERMAT (Jednotná přijímací zkouška – JPZ). Maximální skóre je 100 bodů:
-                50 bodů z češtiny + 50 bodů z matematiky. Zobrazený průměr platí pro přijaté uchazeče –
-                reálné minimum pro přijetí bývá nižší. JPZ mají gymnázia, lycea a SOŠ s maturitou.
-                SOU (učiliště) JPZ nepíší, proto pro ně CERMAT data chybí.
+              <ExplainerBox title="Co jsou % skóre CJ a MA?">
+                CERMAT reportuje výsledky přijímacích zkoušek (JPZ) jako procentuální skóre: 0–100 % za český jazyk
+                a 0–100 % za matematiku. Součet CJ+MA má tedy rozsah 0–200. <strong>Nezaměňujte s body</strong> —
+                například 69 % v češtině neznamená 69 bodů z 50, ale 69 % z maximálního možného skóre daného roku.
+                Zobrazený průměr platí pro přijaté uchazeče; uchazeči, kteří se nedostali, mívají skóre nižší.
+                JPZ píší gymnázia, lycea a SOŠ s maturitou. SOU (učiliště) JPZ nepíší.
               </ExplainerBox>
               <ExplainerBox title="Co znamená pořadí (percentil) v ČR?">
                 Percentil vyjadřuje, jak náročná je škola ve srovnání se školami stejného typu v celé ČR.
