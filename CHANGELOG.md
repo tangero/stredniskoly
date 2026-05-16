@@ -3,6 +3,17 @@
 Všechny podstatné změny v projektu jsou dokumentovány v tomto souboru.
 Formát vychází z [Keep a Changelog](https://keepachangelog.com/cs/1.1.0/).
 
+## [0.4.1] — 2026-05-16
+
+### Přidáno
+- **Odkaz „Přehled měst" na homepage** — nový inline odkaz v hero sekci (za výsledky 2026) vedoucí na `/mesto` s přehledem 20 největších českých měst
+
+### Opraveno
+- **Redirect `/vysledky-2026` → `/vysledky/2026`** — oprava nefunkční URL šířené na sociálních sítích
+- **Popis rozsahu skóre CJ+MA na stránkách měst** — text „max 100" opraven na „max 200, tj. 100 ČJ + 100 MA"; CJ+MA je součet dvou škál 0–100, celkový rozsah je tedy 0–200
+
+---
+
 ## [0.4.0] — 2026-05-15
 
 ### Přidáno
