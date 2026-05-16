@@ -137,7 +137,7 @@ ${dataContext}`;
       'X-Title': 'Prijimackynaskolu.cz',
     },
     body: JSON.stringify({
-      model: 'google/gemini-2.5-flash-preview',
+      model: 'google/gemini-3-flash-preview',
       max_tokens: 2000,
       messages: [
         { role: 'system', content: systemPrompt },
