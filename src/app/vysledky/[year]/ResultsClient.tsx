@@ -38,7 +38,7 @@ function KeyInsights({ results, year }: { results: SchoolResult[]; year: number 
       titleColor: 'text-green-800',
       textColor: 'text-green-700',
       title: `Matematika posílila o ${Math.abs(avgMaDelta).toFixed(0)} bodů`,
-      text: `Průměrné MA skóre přijatých na GY4: ${avgMa.toFixed(1)} b — výrazně výše než vloni.`,
+      text: `Průměrné MA body přijatých na GY4: ${avgMa.toFixed(1)} b. (z max 50) — výrazně výše než vloni.`,
     },
     {
       icon: '📉',
@@ -61,8 +61,8 @@ function KeyInsights({ results, year }: { results: SchoolResult[]; year: number 
       color: 'border-purple-400 bg-purple-50',
       titleColor: 'text-purple-800',
       textColor: 'text-purple-700',
-      title: 'Skóre přijatých roste všude',
-      text: 'Průměrný ČJ+MA součet přijatých vzrostl ve všech typech škol — zejména v matematice.',
+      title: 'Body přijatých rostou všude',
+      text: 'Průměrné body ČJ+MA přijatých vzrostly ve všech typech škol — zejména v matematice.',
     },
   ];
 
@@ -109,8 +109,8 @@ function ComparisonTable({ results, year }: { results: SchoolResult[]; year: num
                 <th className="text-left px-4 py-3 text-sm font-semibold rounded-tl-xl">Typ školy</th>
                 <th className="text-right px-4 py-3 text-sm font-semibold">Kapacita</th>
                 <th className="text-right px-4 py-3 text-sm font-semibold">Přijatých</th>
-                <th className="text-right px-4 py-3 text-sm font-semibold">Prům. skóre</th>
-                <th className="text-right px-4 py-3 text-sm font-semibold rounded-tr-xl">Δ skóre</th>
+                <th className="text-right px-4 py-3 text-sm font-semibold">Prům. body ČJ+MA (max 100)</th>
+                <th className="text-right px-4 py-3 text-sm font-semibold rounded-tr-xl">Δ body</th>
               </tr>
             </thead>
             <tbody>
@@ -160,7 +160,7 @@ function RankingSection({ results, activeType, onTypeChange }: {
     <section className="py-12 px-4 bg-white">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold text-slate-900 mb-2">Top gymnázia — žebříček</h2>
-        <p className="text-slate-500 text-sm mb-6">Seřazeno podle průměrného ČJ+MA skóre přijatých</p>
+        <p className="text-slate-500 text-sm mb-6">Seřazeno podle průměrných bodů ČJ+MA přijatých (z max 100 b.)</p>
         <div className="flex gap-2 mb-6">
           {gymTypes.map(t => (
             <button
@@ -216,12 +216,12 @@ function AdviceSection({ results, year }: { results: SchoolResult[]; year: numbe
           {[
             {
               title: 'Procvičuj hlavně matematiku',
-              text: `Průměrné MA skóre přijatých na 4letá gymnázia bylo ${avgMa.toFixed(0)} bodů — a meziročně roste.`,
+              text: `Průměrné MA body přijatých na 4letá gymnázia byly ${avgMa.toFixed(0)} b. (z max 50) — a meziročně rostou.`,
               icon: '📐',
             },
             {
               title: 'Český jazyk je stabilní základ',
-              text: `Průměrné ČJ skóre přijatých: ${avgCj.toFixed(0)} bodů. Solidní příprava zajistí stabilní výsledek.`,
+              text: `Průměrné ČJ body přijatých: ${avgCj.toFixed(0)} b. (z max 50). Solidní příprava zajistí stabilní výsledek.`,
               icon: '📖',
             },
             {

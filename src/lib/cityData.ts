@@ -49,11 +49,11 @@ export interface SchoolTypeStats {
   kapacita2026: number;
   prihlasky2026: number;
   prijati2026: number;
-  /** Průměr CJ+MA přijatých 2026, v % skóre 0–200 (z CERMAT) */
+  /** Průměr ČJ+MA bodů přijatých 2026, škála 0–100 b. (z CERMAT, přepočet z % skóru /2) */
   avgCjMa2026: number | null;
-  /** Průměr jen CJ přijatých 2026, v % skóre 0–100 */
+  /** Průměr ČJ bodů přijatých 2026, škála 0–50 b. */
   avgCj2026: number | null;
-  /** Průměr jen MA přijatých 2026, v % skóre 0–100 */
+  /** Průměr MA bodů přijatých 2026, škála 0–50 b. */
   avgMa2026: number | null;
   /** Průměr CJ+MA přijatých 2025 (pro srovnání) */
   avgCjMaPrev: number | null;
@@ -90,11 +90,11 @@ export interface CitySchoolRow {
   prihlasky2026: number | null;
   index2026: number | null;
   prijati2026: number | null;
-  /** CJ+MA celkem 0–200 (% skóre) */
+  /** ČJ+MA celkem 0–100 b. */
   avgCjMa2026: number | null;
-  /** CJ 0–100 (% skóre) */
+  /** ČJ 0–50 b. */
   avgCj2026: number | null;
-  /** MA 0–100 (% skóre) */
+  /** MA 0–50 b. */
   avgMa2026: number | null;
   avgCjMaPrev: number | null;
   delta2026: number | null;

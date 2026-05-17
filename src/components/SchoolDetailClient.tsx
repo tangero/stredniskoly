@@ -1698,12 +1698,22 @@ export function ProgramTabs({ programs, currentProgramId }: ProgramTabsProps) {
       <div className="max-w-6xl mx-auto px-4 py-4">
         {/* Hlavička */}
         <div className="flex items-center justify-between mb-3">
-          <h2 className="text-sm font-semibold text-slate-900">
+          <h2 className="text-sm font-semibold text-slate-900 flex items-center">
             {hasZamereni ? 'Zaměření' : 'Obory'} školy
             <span className="ml-1.5 text-slate-400 font-normal">
               {programs.length} {programs.length === 1 ? 'obor' : programs.length < 5 ? 'obory' : 'oborů'}
               {totalKapacita > 0 && ` · ${totalKapacita} míst celkem`}
             </span>
+            <InfoTooltip title="Co znamená hodnota na konci řádku">
+              Jde o <strong>minimum bodů z JPZ</strong> přijatého studenta v roce 2025 — nejnižší bodový
+              zisk z testů ČJ+MA, se kterým se uchazeč ještě dostal (max 100 b., 50 b. za předmět).
+              <br /><br />
+              Pokud škola udílí body i za prospěch nebo školní zkoušku, může být celkové minimum
+              pro přijetí ještě vyšší (viz detail oboru).
+              <br /><br />
+              <strong>Pozn.:</strong> Data 2026 ještě nejsou kompletní — minima pro přijetí 2026
+              se objeví, až CERMAT zveřejní výsledky 1. kola.
+            </InfoTooltip>
           </h2>
         </div>
 

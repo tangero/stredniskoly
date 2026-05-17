@@ -112,7 +112,7 @@ export function CitySchoolsTable({ schools }: Props) {
               <th className="text-right px-3 py-2 font-medium text-slate-600 whitespace-nowrap">Kapacita 2026</th>
               <SortTh k="prihlasky2026">Přihlášky 2026</SortTh>
               <SortTh k="index2026">Index</SortTh>
-              <SortTh k="avgCjMa2026">CJ+MA přijatí</SortTh>
+              <SortTh k="avgCjMa2026">ČJ+MA průměr b. (max 100)</SortTh>
               <SortTh k="delta2026">Δ vs 2025</SortTh>
               <th className="text-right px-3 py-2 font-medium text-slate-600 whitespace-nowrap">Pořadí v ČR</th>
             </tr>
@@ -199,7 +199,7 @@ export function CitySchoolsTable({ schools }: Props) {
                   <div className="font-bold text-slate-900">
                     {row.avgCjMa2026 !== null ? row.avgCjMa2026.toFixed(1) : '—'}
                   </div>
-                  <div className="text-slate-500">CJ+MA</div>
+                  <div className="text-slate-500">ČJ+MA b. (max 100)</div>
                 </div>
               </div>
               {!has2026 && <div className="mt-2 text-xs text-amber-600">Zobrazena data 2025 (2026 nedostupná)</div>}

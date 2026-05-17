@@ -116,10 +116,12 @@ def extract_current_year(records: list[dict]) -> dict[str, dict]:
         if not redizo or not kkov:
             continue
         key = make_key(redizo, kkov, zamereni)
-        cj_ma = safe_float(r.get('ČJ+MA - % SKÓR - PRŮMĚR (PŘIJATI)'))
-        cj = safe_float(r.get('ČJ - % SKÓR - PRŮMĚR (PŘIJATI)'))
-        ma = safe_float(r.get('MA - % SKÓR - PRŮMĚR (PŘIJATI)'))
-        if cj_ma == 0:
+        # CERMAT dodává % skór (0-100 na předmět, 0-200 celkem).
+        # Pro konzistenci se zbytkem aplikace převádíme na body z testu (0-50 / 0-100).
+        cj_ma_pct = safe_float(r.get('ČJ+MA - % SKÓR - PRŮMĚR (PŘIJATI)'))
+        cj_pct = safe_float(r.get('ČJ - % SKÓR - PRŮMĚR (PŘIJATI)'))
+        ma_pct = safe_float(r.get('MA - % SKÓR - PRŮMĚR (PŘIJATI)'))
+        if cj_ma_pct == 0:
             continue
         result[key] = {
             'redizo': redizo,
@@ -130,9 +132,9 @@ def extract_current_year(records: list[dict]) -> dict[str, dict]:
             'school_type': str(r.get('TYP ŠKOLY') or ''),
             'kapacita': int(safe_float(r.get('KAPACITA'))),
             'prijati': int(safe_float(r.get('PŘIJATÍ'))),
-            'cj_ma_prijati': round(cj_ma, 2),
-            'cj_prijati': round(cj, 2),
-            'ma_prijati': round(ma, 2),
+            'cj_ma_prijati': round(cj_ma_pct / 2, 2),
+            'cj_prijati': round(cj_pct / 2, 2),
+            'ma_prijati': round(ma_pct / 2, 2),
         }
     return result
 
@@ -149,9 +151,10 @@ def extract_prev_year(records: list[dict]) -> dict[str, float]:
         if not redizo or not kkov:
             continue
         key = make_key(redizo, kkov, zamereni)
-        v = safe_float(r.get('ČJ+MA - % skór - průměr - přijati'))
-        if v > 0:
-            result[key] = round(v, 2)
+        # Stejný převod jako u flat: % skór (0-200) → body (0-100)
+        v_pct = safe_float(r.get('ČJ+MA - % skór - průměr - přijati'))
+        if v_pct > 0:
+            result[key] = round(v_pct / 2, 2)
     return result
 
 

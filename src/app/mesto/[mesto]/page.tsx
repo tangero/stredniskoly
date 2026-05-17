@@ -95,7 +95,7 @@ function TypeCard({ t, national }: { t: SchoolTypeStats; national: NationalTypeS
       {hasResult && (
         <div className="border-t border-slate-100 pt-4 mt-4">
           <div className="text-xs text-slate-500 mb-3 font-medium uppercase tracking-wide">
-            Průměr přijatých — výsledky CERMAT
+            Průměr bodů přijatých — výsledky CERMAT
           </div>
 
           {/* CJ + MA mini-karty */}
@@ -105,14 +105,14 @@ function TypeCard({ t, national }: { t: SchoolTypeStats; national: NationalTypeS
                 {t.avgCj2026 !== null ? t.avgCj2026.toFixed(1) : '—'}
               </div>
               <div className="text-xs text-slate-500 mt-0.5">Český jazyk</div>
-              <div className="text-xs text-slate-400">z&nbsp;max&nbsp;100&nbsp;%</div>
+              <div className="text-xs text-slate-400">z&nbsp;max&nbsp;50&nbsp;b.</div>
             </div>
             <div className="bg-purple-50 rounded-lg p-3 text-center">
               <div className="text-lg font-bold text-purple-700">
                 {t.avgMa2026 !== null ? t.avgMa2026.toFixed(1) : '—'}
               </div>
               <div className="text-xs text-slate-500 mt-0.5">Matematika</div>
-              <div className="text-xs text-slate-400">z&nbsp;max&nbsp;100&nbsp;%</div>
+              <div className="text-xs text-slate-400">z&nbsp;max&nbsp;50&nbsp;b.</div>
             </div>
           </div>
 
@@ -120,7 +120,7 @@ function TypeCard({ t, national }: { t: SchoolTypeStats; national: NationalTypeS
           <div className="flex items-center gap-3 flex-wrap mb-2">
             <div>
               <span className="text-2xl font-black text-emerald-700">{t.avgCjMa2026!.toFixed(1)}</span>
-              <span className="text-xs text-slate-400 ml-1">% skóre celkem (max 200)</span>
+              <span className="text-xs text-slate-400 ml-1">b. ČJ+MA celkem (max 100)</span>
             </div>
             {t.avgDelta !== null && Math.abs(t.avgDelta) >= 0.5 && (
               <span className={`text-xs font-medium px-2 py-1 rounded-full ${t.avgDelta > 0 ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
@@ -304,7 +304,7 @@ export default async function MestoPage({ params }: Props) {
           <section>
             <h2 className="text-2xl font-bold mb-2">Přehled všech škol a oborů</h2>
             <p className="text-slate-600 mb-6 text-sm">
-              Data přijímacího řízení 2026 (kde dostupná) nebo 2025. CJ+MA = průměrný součet skóre přijatých uchazečů z přijímacích zkoušek CERMAT (max 200, tj. 100 ČJ + 100 MA).
+              Data přijímacího řízení 2026 (kde dostupná) nebo 2025. ČJ+MA = průměrné body přijatých uchazečů z JPZ testů CERMAT (max 100 b., tj. 50 b. ČJ + 50 b. MA).
             </p>
             <CitySchoolsTable schools={schools} />
           </section>

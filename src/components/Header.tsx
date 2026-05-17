@@ -8,8 +8,11 @@ import { krajNames } from '@/types/school';
 interface SearchResult {
   id: string;
   nazev: string;
+  nazev_display?: string;
   obor: string;
   obec: string;
+  ulice?: string;
+  adresa?: string;
   kraj: string;
   slug: string;
   delka_studia?: number;
@@ -346,33 +349,49 @@ export function Header() {
                   <div className="px-4 py-2 text-xs font-semibold text-slate-500 bg-slate-50 uppercase tracking-wide">
                     Školy a obory
                   </div>
-                  {searchResults.map((school) => (
-                    <Link
-                      key={school.id}
-                      href={`/skola/${school.slug}`}
-                      className="block px-4 py-3 hover:bg-blue-50 no-underline"
-                      onClick={() => {
-                        setIsSearchOpen(false);
-                        setSearchQuery('');
-                      }}
-                    >
-                      <div className="font-medium text-slate-900">
-                        {highlightMatch(school.nazev, searchQuery)}
-                        {school.obor && (
-                          <>
-                            <span className="text-slate-400 mx-1.5">•</span>
-                            <span className="text-slate-700 font-normal">
-                              {highlightMatch(school.obor, searchQuery)}
-                              {school.delka_studia && (
-                                <span className="text-slate-500 text-sm ml-1">({school.delka_studia}leté)</span>
-                              )}
+                  {searchResults.map((school) => {
+                    // Pokud existuje rozšířený název (např. „Gymnázium, Praha 9, Špitálská 700"),
+                    // zobrazíme ho místo kratšího kanonického názvu — generické názvy ("Gymnázium")
+                    // by jinak byly k nerozeznání. nazev_display obvykle obsahuje ulici nebo MČ.
+                    const displayName = school.nazev_display && school.nazev_display.length > school.nazev.length
+                      ? school.nazev_display
+                      : school.nazev;
+                    const locationParts = [school.ulice, school.obec, school.kraj].filter(Boolean) as string[];
+                    return (
+                      <Link
+                        key={school.id}
+                        href={`/skola/${school.slug}`}
+                        className="block px-4 py-3 hover:bg-blue-50 no-underline"
+                        onClick={() => {
+                          setIsSearchOpen(false);
+                          setSearchQuery('');
+                        }}
+                      >
+                        <div className="font-medium text-slate-900">
+                          {highlightMatch(displayName, searchQuery)}
+                          {school.obor && (
+                            <>
+                              <span className="text-slate-400 mx-1.5">•</span>
+                              <span className="text-slate-700 font-normal">
+                                {highlightMatch(school.obor, searchQuery)}
+                                {school.delka_studia && (
+                                  <span className="text-slate-500 text-sm ml-1">({school.delka_studia}leté)</span>
+                                )}
+                              </span>
+                            </>
+                          )}
+                        </div>
+                        <div className="text-xs text-slate-400 mt-0.5">
+                          {locationParts.map((part, i) => (
+                            <span key={i}>
+                              {i > 0 && ' • '}
+                              {highlightMatch(part, searchQuery)}
                             </span>
-                          </>
-                        )}
-                      </div>
-                      <div className="text-xs text-slate-400 mt-0.5">{school.obec} • {school.kraj}</div>
-                    </Link>
-                  ))}
+                          ))}
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
             </div>

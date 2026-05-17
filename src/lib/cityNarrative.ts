@@ -69,12 +69,12 @@ function buildDataContext(stats: CityStats): string {
     lines.push(`  Index poptávky 2026: ${idx2026 ? formatNum(idx2026, 2) : 'N/A'}×`);
     lines.push(`  Přijatí 2026: ${formatNum(t.prijati2026)}`);
     if (t.avgCjMa2026 !== null) {
-      lines.push(`  Průměr CJ % skóre přijatých 2026: ${t.avgCj2026 !== null ? formatNum(t.avgCj2026, 1) : 'N/A'} % (škála 0–100 %)`);
-      lines.push(`  Průměr MA % skóre přijatých 2026: ${t.avgMa2026 !== null ? formatNum(t.avgMa2026, 1) : 'N/A'} % (škála 0–100 %)`);
-      lines.push(`  Průměr CJ+MA celkem 2026: ${formatNum(t.avgCjMa2026, 1)} (škála 0–200, součet obou % skóre)`);
-      lines.push(`  Průměr CJ+MA celkem 2025: ${t.avgCjMaPrev !== null ? formatNum(t.avgCjMaPrev, 1) : 'N/A'}`);
-      lines.push(`  Delta 2026 vs 2025: ${t.avgDelta !== null ? (t.avgDelta > 0 ? '+' : '') + formatNum(t.avgDelta, 1) : 'N/A'}`);
-      lines.push(`  ČR průměr CJ+MA 2026 pro ${t.label}: ${natCjMa} (z ${nat?.count ?? 0} oborů)`);
+      lines.push(`  Průměr ČJ bodů přijatých 2026: ${t.avgCj2026 !== null ? formatNum(t.avgCj2026, 1) : 'N/A'} b. (škála 0–50 b.)`);
+      lines.push(`  Průměr MA bodů přijatých 2026: ${t.avgMa2026 !== null ? formatNum(t.avgMa2026, 1) : 'N/A'} b. (škála 0–50 b.)`);
+      lines.push(`  Průměr ČJ+MA celkem 2026: ${formatNum(t.avgCjMa2026, 1)} b. (škála 0–100 b., součet obou předmětů)`);
+      lines.push(`  Průměr ČJ+MA celkem 2025: ${t.avgCjMaPrev !== null ? formatNum(t.avgCjMaPrev, 1) : 'N/A'} b.`);
+      lines.push(`  Delta 2026 vs 2025: ${t.avgDelta !== null ? (t.avgDelta > 0 ? '+' : '') + formatNum(t.avgDelta, 1) : 'N/A'} b.`);
+      lines.push(`  ČR průměr ČJ+MA 2026 pro ${t.label}: ${natCjMa} b. (z ${nat?.count ?? 0} oborů)`);
     }
     if (t.avgRankPct !== null) {
       lines.push(`  Průměrný percentil škol v ČR: ${formatNum(t.avgRankPct, 0)}. percentil (vyšší = lepší školy)`);
@@ -115,8 +115,8 @@ Každý odstavec má 3-5 vět. Nepoužívej odrážky ani nadpisy. Piš v češt
 
 === DŮLEŽITÉ POJMY ===
 - Index poptávky = přihlášky ÷ kapacita. Průměr ČR 2026 = 2,95×
-- CJ a MA jsou procentuální % skóre (0–100 % za každý předmět), CJ+MA celkem má rozsah 0–200
-- Při zmiňování výsledků říkej například "průměrné % skóre 69 z češtiny a 56 z matematiky" — nevyslovuj to jako body
+- ČJ a MA jsou body z JPZ testu (0–50 b. za každý předmět), ČJ+MA celkem má rozsah 0–100 b.
+- Při zmiňování výsledků říkej například "průměr 34 bodů z češtiny a 28 bodů z matematiky" (z max 50)
 - Rank percentil: 80. percentil = lepší než 80 % škol daného typu v ČR
 - Data 2026 jsou z 1. kola přijímacího řízení (CERMAT), kapacity SOU bez JPZ mohou být neúplné
 
@@ -127,7 +127,7 @@ Když píšeš o odmítnutých/neúspěšných uchazečích, NIKDY neuvádět ro
 
 BLOK:celkovy_obraz — Celkový přehled situace ve městě: počet míst, přihlášek, index poptávky vs ČR průměr, celkový trend kapacit. Zmiň, zda je ve městě snazší nebo těžší dostat se na střední školu než průměrně v ČR.
 
-BLOK:gymnazia — Situace u gymnázií (všech typů, které ve městě jsou). Kolik míst nabízí, jak velký je zájem, jak obtížné jsou přijímačky vs celorepublikový průměr (CJ+MA skóre), jak se to meziročně změnilo (delta). Zmiň percentilové umístění škol v ČR.
+BLOK:gymnazia — Situace u gymnázií (všech typů, které ve městě jsou). Kolik míst nabízí, jak velký je zájem, jak obtížné jsou přijímačky vs celorepublikový průměr (průměrné body ČJ+MA přijatých, max 100), jak se to meziročně změnilo (delta). Zmiň percentilové umístění škol v ČR.
 
 BLOK:odborne_skoly — Situace u odborných škol (SOŠ, SOU, lycea). Zájem o tyto školy, srovnání s gymnázii, jak moc jsou dostupná místa. Pokud data chybí, vysvětli proč (SOU bez JPZ zkoušek).
 

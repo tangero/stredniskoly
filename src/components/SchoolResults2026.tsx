@@ -40,6 +40,16 @@ function ResultCard({ result }: { result: SchoolResult }) {
     GY4: 'gymnázií 4letých', GY6: 'gymnázií 6letých', GY8: 'gymnázií 8letých',
     LYC: 'lyceí', SOS: 'SOŠ', SOU: 'SOU', NAS: 'nástaveb',
   };
+  const oborLabel: Record<string, string> = {
+    GY4: 'Gymnázium 4leté',
+    GY6: 'Gymnázium 6leté',
+    GY8: 'Gymnázium 8leté',
+    LYC: 'Lyceum',
+    SOS: 'SOŠ',
+    SOU: 'SOU',
+    NAS: 'Nástavbové studium',
+  };
+  const oborText = oborLabel[result.school_type] ?? result.school_type;
   return (
     <div className="border border-emerald-200 rounded-xl overflow-hidden">
       <div className="bg-emerald-700 px-5 py-3 flex items-center justify-between">
@@ -49,7 +59,10 @@ function ResultCard({ result }: { result: SchoolResult }) {
           </svg>
           <h3 className="font-semibold text-white text-sm">
             Výsledky přijímacích zkoušek 2026
-            {result.zamereni && <span className="font-normal text-emerald-200 ml-1">— {result.zamereni}</span>}
+            <span className="font-normal text-emerald-200 ml-1">
+              — {oborText}
+              {result.zamereni && ` · ${result.zamereni}`}
+            </span>
           </h3>
         </div>
       </div>
@@ -59,22 +72,30 @@ function ResultCard({ result }: { result: SchoolResult }) {
           <div>
             <div className="text-xs text-slate-500 mb-1">Průměr ČJ+MA — přijatí</div>
             <div className="text-4xl font-black text-emerald-700 leading-none">
-              {result.cj_ma_prijati.toFixed(1)}
+              {result.cj_ma_prijati.toFixed(1)} <span className="text-base font-semibold text-slate-400">b.</span>
             </div>
+            <div className="text-[11px] text-slate-400 mt-1">z max 100 b.</div>
             <div className="mt-1">
               <DeltaBadge delta={result.delta_cj_ma} />
             </div>
           </div>
           <div className="flex-1 grid grid-cols-2 gap-3">
             <div className="bg-blue-50 rounded-lg p-3 text-center">
-              <div className="text-lg font-bold text-blue-700">{result.cj_prijati.toFixed(1)}</div>
+              <div className="text-lg font-bold text-blue-700">{result.cj_prijati.toFixed(1)} <span className="text-xs text-slate-400">b.</span></div>
               <div className="text-xs text-slate-500">Český jazyk</div>
+              <div className="text-[10px] text-slate-400">z max 50 b.</div>
             </div>
             <div className="bg-purple-50 rounded-lg p-3 text-center">
-              <div className="text-lg font-bold text-purple-700">{result.ma_prijati.toFixed(1)}</div>
+              <div className="text-lg font-bold text-purple-700">{result.ma_prijati.toFixed(1)} <span className="text-xs text-slate-400">b.</span></div>
               <div className="text-xs text-slate-500">Matematika</div>
+              <div className="text-[10px] text-slate-400">z max 50 b.</div>
             </div>
           </div>
+        </div>
+
+        <div className="mb-3 px-3 py-2 bg-amber-50 border border-amber-200 rounded-lg text-xs text-amber-800">
+          <strong>Pozn.:</strong> Toto je <strong>průměr bodů přijatých</strong> studentů z JPZ testů (ČJ+MA),
+          nikoli minimum pro přijetí. Body z CERMATu jsou přepočtené z % skóru (1 b. = 2 %).
         </div>
 
         {result.rank_in_type && result.type_total && (
