@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import type { SchoolResult } from '@/lib/data';
 
@@ -160,7 +161,7 @@ function RankingSection({ results, activeType, onTypeChange }: {
     <section className="py-12 px-4 bg-white">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold text-slate-900 mb-2">Top gymnázia — žebříček</h2>
-        <p className="text-slate-500 text-sm mb-6">Seřazeno podle průměrného ČJ+MA skóre přijatých</p>
+        <p className="text-slate-500 text-sm mb-6">Seřazeno podle průměrného součtu bodů ČJ+MA přijatých (max. 200 b.)</p>
         <div className="flex gap-2 mb-6">
           {gymTypes.map(t => (
             <button
@@ -187,7 +188,7 @@ function RankingSection({ results, activeType, onTypeChange }: {
                 <div className="text-xs text-slate-400">{r.kraj}</div>
               </div>
               <div className="text-right shrink-0">
-                <div className="text-lg font-black text-slate-900">{r.cj_ma_prijati.toFixed(1)}</div>
+                <div className="text-lg font-black text-slate-900">{r.cj_ma_prijati.toFixed(1)} <span className="text-xs font-normal text-slate-400">b.</span></div>
                 {r.delta_cj_ma !== null && (
                   <div className={`text-xs font-medium ${r.delta_cj_ma >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                     {r.delta_cj_ma >= 0 ? '+' : ''}{r.delta_cj_ma.toFixed(1)}
@@ -336,10 +337,38 @@ export function ResultsClient({
   totalKapacita,
   totalPrijati,
 }: Props) {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filterType, setFilterType] = useState('');
-  const [filterKraj, setFilterKraj] = useState('');
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
+  const [filterType, setFilterType] = useState(searchParams.get('typ') || '');
+  const [filterKraj, setFilterKraj] = useState(searchParams.get('kraj') || '');
   const [rankingType, setRankingType] = useState('GY4');
+
+  const updateURL = useCallback((q: string, typ: string, kraj: string) => {
+    const params = new URLSearchParams();
+    if (q) params.set('q', q);
+    if (typ) params.set('typ', typ);
+    if (kraj) params.set('kraj', kraj);
+    const qs = params.toString();
+    router.replace(`${pathname}${qs ? '?' + qs : ''}`, { scroll: false });
+  }, [router, pathname]);
+
+  const handleSearchChange = useCallback((v: string) => {
+    setSearchQuery(v);
+    updateURL(v, filterType, filterKraj);
+  }, [updateURL, filterType, filterKraj]);
+
+  const handleTypeChange = useCallback((v: string) => {
+    setFilterType(v);
+    updateURL(searchQuery, v, filterKraj);
+  }, [updateURL, searchQuery, filterKraj]);
+
+  const handleKrajChange = useCallback((v: string) => {
+    setFilterKraj(v);
+    updateURL(searchQuery, filterType, v);
+  }, [updateURL, searchQuery, filterType]);
 
   const kraje = useMemo(
     () => [...new Set(results.map(r => r.kraj).filter(Boolean))].sort(),
@@ -403,11 +432,11 @@ export function ResultsClient({
         results={results}
         kraje={kraje}
         searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
+        setSearchQuery={handleSearchChange}
         filterType={filterType}
-        setFilterType={setFilterType}
+        setFilterType={handleTypeChange}
         filterKraj={filterKraj}
-        setFilterKraj={setFilterKraj}
+        setFilterKraj={handleKrajChange}
       />
     </div>
   );
