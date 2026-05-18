@@ -1590,6 +1590,7 @@ export interface SchoolResult {
   kkov: string;
   zamereni: string;
   nazev: string;
+  nazev_display?: string;
   kraj: string;
   school_type: string;
   kapacita: number;
@@ -1959,6 +1960,25 @@ export async function getResultsForYear(year: number): Promise<Map<string, Schoo
     const filePath = path.join(dataDir, `cermat_results_${year}.json`);
     const content = await fs.readFile(filePath, 'utf-8');
     const raw = JSON.parse(content) as Record<string, SchoolResult>;
+
+    // Enrich with nazev_display from schools_data.json
+    const schoolsData = await getSchoolsData();
+    const yearData: Array<Record<string, unknown>> = (schoolsData as Record<string, unknown>)['2025'] as Array<Record<string, unknown>> || [];
+    const displayNameByRedizo = new Map<string, string>();
+    for (const s of yearData) {
+      const redizo = s.redizo as string;
+      const nd = s.nazev_display as string;
+      if (redizo && nd && !displayNameByRedizo.has(redizo)) {
+        displayNameByRedizo.set(redizo, nd);
+      }
+    }
+    for (const result of Object.values(raw)) {
+      const displayName = displayNameByRedizo.get(result.redizo);
+      if (displayName) {
+        result.nazev_display = displayName;
+      }
+    }
+
     const map = new Map(Object.entries(raw));
     resultsYearCache.set(year, map);
     return map;
