@@ -1590,6 +1590,7 @@ export interface SchoolResult {
   kkov: string;
   zamereni: string;
   nazev: string;
+  nazev_display?: string;
   kraj: string;
   school_type: string;
   kapacita: number;
@@ -1960,6 +1961,34 @@ export async function getResultsForYear(year: number): Promise<Map<string, Schoo
     const content = await fs.readFile(filePath, 'utf-8');
     const raw = JSON.parse(content) as Record<string, SchoolResult>;
     const map = new Map(Object.entries(raw));
+
+    // Enrich with nazev_display from schools_data.json (try 2025, then 2024)
+    const schoolsData = await getSchoolsData();
+    const sdAny = schoolsData as Record<string, unknown>;
+    const buildLookup = (yearKey: string): Record<string, string> => {
+      const lookup: Record<string, string> = {};
+      const arr = sdAny[yearKey] as Array<Record<string, unknown>> | undefined;
+      if (arr) {
+        for (const s of arr) {
+          const redizo = s.redizo as string;
+          const nd = s.nazev_display as string;
+          if (redizo && nd && !lookup[redizo]) {
+            lookup[redizo] = nd;
+          }
+        }
+      }
+      return lookup;
+    };
+    const lookup2025 = buildLookup('2025');
+    const lookup2024 = buildLookup('2024');
+
+    for (const [, result] of map) {
+      const nd = lookup2025[result.redizo] || lookup2024[result.redizo];
+      if (nd && nd !== result.nazev) {
+        result.nazev_display = nd;
+      }
+    }
+
     resultsYearCache.set(year, map);
     return map;
   } catch {

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import type { SchoolResult } from '@/lib/data';
 
@@ -183,7 +184,7 @@ function RankingSection({ results, activeType, onTypeChange }: {
             >
               <span className="text-slate-400 font-bold text-sm w-6 text-center">#{i + 1}</span>
               <div className="flex-1 min-w-0">
-                <div className="font-semibold text-slate-800 truncate group-hover:text-slate-900">{r.nazev}</div>
+                <div className="font-semibold text-slate-800 truncate group-hover:text-slate-900">{r.nazev_display || r.nazev}</div>
                 <div className="text-xs text-slate-400">{r.kraj}</div>
               </div>
               <div className="text-right shrink-0">
@@ -264,7 +265,7 @@ function SearchSection({ results, kraje, searchQuery, setSearchQuery, filterType
       .filter(r => {
         if (!searchQuery) return true;
         const q = searchQuery.toLowerCase();
-        return r.nazev.toLowerCase().includes(q) || r.kraj.toLowerCase().includes(q);
+        return r.nazev.toLowerCase().includes(q) || (r.nazev_display && r.nazev_display.toLowerCase().includes(q)) || r.kraj.toLowerCase().includes(q);
       })
       .sort((a, b) => b.cj_ma_prijati - a.cj_ma_prijati)
       .slice(0, 100),
@@ -311,7 +312,7 @@ function SearchSection({ results, kraje, searchQuery, setSearchQuery, filterType
               className="flex items-center gap-4 bg-white border border-slate-200 rounded-xl px-4 py-3 hover:border-slate-400 transition-all"
             >
               <div className="flex-1 min-w-0">
-                <div className="font-medium text-slate-800 truncate">{r.nazev}</div>
+                <div className="font-medium text-slate-800 truncate">{r.nazev_display || r.nazev}</div>
                 <div className="text-xs text-slate-400">{TYP_LABELS[r.school_type] ?? r.school_type} · {r.kraj}</div>
               </div>
               <div className="text-right shrink-0">
@@ -336,9 +337,27 @@ export function ResultsClient({
   totalKapacita,
   totalPrijati,
 }: Props) {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filterType, setFilterType] = useState('');
-  const [filterKraj, setFilterKraj] = useState('');
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const searchQuery = searchParams.get('q') || '';
+  const filterType = searchParams.get('typ') || '';
+  const filterKraj = searchParams.get('kraj') || '';
+
+  const updateParam = (key: string, value: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (value) {
+      params.set(key, value);
+    } else {
+      params.delete(key);
+    }
+    router.replace(`?${params.toString()}`, { scroll: false });
+  };
+
+  const setSearchQuery = (v: string) => updateParam('q', v);
+  const setFilterType = (v: string) => updateParam('typ', v);
+  const setFilterKraj = (v: string) => updateParam('kraj', v);
+
   const [rankingType, setRankingType] = useState('GY4');
 
   const kraje = useMemo(

@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
@@ -36,14 +37,16 @@ export default async function VysledkyPage({ params }: Props) {
     <>
       <Header />
       <main>
-        <ResultsClient
-          results={results}
-          year={year}
-          prevYear={year - 1}
-          totalKapacita={totalKapacita}
-          totalPrijati={totalPrijati}
-          availableYears={meta.available_years}
-        />
+        <Suspense fallback={null}>
+          <ResultsClient
+            results={results}
+            year={year}
+            prevYear={year - 1}
+            totalKapacita={totalKapacita}
+            totalPrijati={totalPrijati}
+            availableYears={meta.available_years}
+          />
+        </Suspense>
       </main>
       <Footer />
     </>
