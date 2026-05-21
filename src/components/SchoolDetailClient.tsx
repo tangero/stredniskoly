@@ -680,12 +680,12 @@ export function AcceptanceByPriority({ prihlasky_priority, prijati_priority }: A
       {/* Interpretace */}
       <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
         <p className="text-sm text-blue-800">
-          <strong>Tip:</strong> Čím vyšší prioritu škole dáte, tím vyšší máte šanci na přijetí.
+          <strong>Tip:</strong> Priorita neurčuje šanci na přijetí — ta závisí na výsledku zkoušky. Priorita rozhoduje, na kterou školu nastoupíte, pokud jste přijati na více škol.
           {relevantChances[0]?.chance > 80 && relevantChances[0]?.priority === 1 && (
-            <> S 1. prioritou máte na této škole velmi vysokou šanci!</>
+            <> S vysokou šancí na přijetí si můžete dovolit dát této škole 1. prioritu.</>
           )}
           {relevantChances[0]?.chance < 50 && relevantChances[0]?.priority === 1 && (
-            <> I s 1. prioritou je konkurence vysoká - mějte připravenou zálohu.</>
+            <> Při nízké šanci na přijetí zvažte, zda chcete této škole dát nejvyšší prioritu — mějte připravenou zálohu.</>
           )}
         </p>
       </div>

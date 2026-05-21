@@ -1590,6 +1590,7 @@ export interface SchoolResult {
   kkov: string;
   zamereni: string;
   nazev: string;
+  nazev_display?: string;
   kraj: string;
   school_type: string;
   kapacita: number;
