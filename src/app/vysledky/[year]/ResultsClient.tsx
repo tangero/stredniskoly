@@ -185,7 +185,7 @@ function RankingSection({ results, activeType, onTypeChange }: {
               <span className="text-slate-400 font-bold text-sm w-6 text-center">#{i + 1}</span>
               <div className="flex-1 min-w-0">
                 <div className="font-semibold text-slate-800 truncate group-hover:text-slate-900">{r.nazev_display || r.nazev}</div>
-                <div className="text-xs text-slate-400">{r.kraj}</div>
+                <div className="text-xs text-slate-400">{r.zamereni ? `${r.zamereni} · ` : ''}{r.kraj}</div>
               </div>
               <div className="text-right shrink-0">
                 <div className="text-lg font-black text-slate-900">{r.cj_ma_prijati.toFixed(1)}</div>
@@ -313,7 +313,7 @@ function SearchSection({ results, kraje, searchQuery, setSearchQuery, filterType
             >
               <div className="flex-1 min-w-0">
                 <div className="font-medium text-slate-800 truncate">{r.nazev_display || r.nazev}</div>
-                <div className="text-xs text-slate-400">{TYP_LABELS[r.school_type] ?? r.school_type} · {r.kraj}</div>
+                <div className="text-xs text-slate-400">{TYP_LABELS[r.school_type] ?? r.school_type}{r.zamereni ? ` · ${r.zamereni}` : ''} · {r.kraj}</div>
               </div>
               <div className="text-right shrink-0">
                 <div className="font-bold text-slate-900">{r.cj_ma_prijati.toFixed(1)} b</div>
