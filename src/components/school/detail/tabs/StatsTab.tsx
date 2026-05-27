@@ -162,7 +162,7 @@ function AcceptanceByPriorityCard({ extendedStats }: { extendedStats: any }) {
 
       <div className="mt-4 p-3 bg-blue-50 rounded-lg">
         <div className="text-sm text-blue-900">
-          💡 <strong>Tip:</strong> Hlaste se jako 1. nebo 2. priorita pro nejvyšší šanci přijetí
+          💡 <strong>Tip:</strong> O přijetí rozhoduje výhradně váš počet bodů z testů, nikoliv pořadí škol na přihlášce. Priorita určuje, na kterou školu nastoupíte, pokud jste přijati na více škol.
         </div>
       </div>
     </div>
