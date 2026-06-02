@@ -602,9 +602,9 @@ export function AcceptanceByPriority({ prihlasky_priority, prijati_priority }: A
 
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm">
-      <h2 className="text-xl font-semibold mb-2">Šance přijetí podle priority</h2>
+      <h2 className="text-xl font-semibold mb-2">Statistika přijetí podle priority</h2>
       <p className="text-sm text-slate-600 mb-4">
-        Jak se liší šance na přijetí podle toho, jakou prioritu škole dáte?{hasExtendedPriorities && ' (4. a 5. priorita je možná u škol s talentovými zkouškami)'}
+        Jaká byla úspěšnost uchazečů s různou prioritou? Priorita sama o sobě šanci neovlivňuje — o přijetí rozhodují body z testů.{hasExtendedPriorities && ' (4. a 5. priorita je možná u škol s talentovými zkouškami)'}
       </p>
 
       <div className="space-y-4">
@@ -680,13 +680,7 @@ export function AcceptanceByPriority({ prihlasky_priority, prijati_priority }: A
       {/* Interpretace */}
       <div className="mt-4 p-4 bg-blue-50 border-l-4 border-blue-600 rounded-r-lg">
         <p className="text-sm text-blue-800">
-          <strong>Tip:</strong> Priorita neurčuje šanci na přijetí — ta závisí na výsledku zkoušky. Priorita rozhoduje, na kterou školu nastoupíte, pokud jste přijati na více škol.
-          {relevantChances[0]?.chance > 80 && relevantChances[0]?.priority === 1 && (
-            <> S vysokou šancí na přijetí si můžete dovolit dát této škole 1. prioritu.</>
-          )}
-          {relevantChances[0]?.chance < 50 && relevantChances[0]?.priority === 1 && (
-            <> Při nízké šanci na přijetí zvažte, zda chcete této škole dát nejvyšší prioritu — mějte připravenou zálohu.</>
-          )}
+          <strong>Tip:</strong> Priorita neurčuje šanci na přijetí — ta závisí výhradně na výsledku zkoušky. Priorita rozhoduje pouze o tom, na kterou školu nastoupíte, pokud jste přijati na více škol. Statistické rozdíly mezi prioritami odrážejí profil uchazečů, ne vliv priority na přijetí.
         </p>
       </div>
     </div>

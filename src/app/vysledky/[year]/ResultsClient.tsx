@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import type { SchoolResult } from '@/lib/data';
@@ -341,10 +341,45 @@ export function ResultsClient({
   const router = useRouter();
   const pathname = usePathname();
 
-  const searchQuery = searchParams.get('q') || '';
-  const filterType = searchParams.get('typ') || '';
-  const filterKraj = searchParams.get('kraj') || '';
+  const STORAGE_KEY = `vysledky-filters-${year}`;
+
+  const getInitialFilter = (key: string): string => {
+    const fromUrl = searchParams.get(key);
+    if (fromUrl) return fromUrl;
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = JSON.parse(sessionStorage.getItem(STORAGE_KEY) || '{}');
+        return saved[key] || '';
+      } catch { return ''; }
+    }
+    return '';
+  };
+
+  const searchQuery = getInitialFilter('q');
+  const filterType = getInitialFilter('typ');
+  const filterKraj = getInitialFilter('kraj');
   const [rankingType, setRankingType] = useState('GY4');
+
+  useEffect(() => {
+    try {
+      const filters: Record<string, string> = {};
+      if (searchQuery) filters.q = searchQuery;
+      if (filterType) filters.typ = filterType;
+      if (filterKraj) filters.kraj = filterKraj;
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify(filters));
+    } catch {}
+  }, [searchQuery, filterType, filterKraj, STORAGE_KEY]);
+
+  useEffect(() => {
+    const hasUrlParams = searchParams.get('q') || searchParams.get('typ') || searchParams.get('kraj');
+    if (!hasUrlParams && (searchQuery || filterType || filterKraj)) {
+      const params = new URLSearchParams();
+      if (searchQuery) params.set('q', searchQuery);
+      if (filterType) params.set('typ', filterType);
+      if (filterKraj) params.set('kraj', filterKraj);
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const updateParam = useCallback((key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
