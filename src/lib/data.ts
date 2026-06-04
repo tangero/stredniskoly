@@ -1591,6 +1591,7 @@ export interface SchoolResult {
   zamereni: string;
   nazev: string;
   nazev_display?: string;
+  obec?: string;
   kraj: string;
   school_type: string;
   kapacita: number;
