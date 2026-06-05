@@ -99,7 +99,7 @@ function PriorityDistributionCard({ extendedStats }: { extendedStats: any }) {
       </div>
 
       <div className="mt-4 text-xs text-slate-500">
-        💡 Vyšší podíl 1. a 2. priority znamená vyšší zájem uchazečů
+        💡 Podíl priorit ukazuje zájem uchazečů, nikoliv šanci na přijetí — ta závisí výhradně na bodech ze zkoušky
       </div>
     </div>
   );
