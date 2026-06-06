@@ -171,6 +171,38 @@ def compute_ranks(data: dict[str, dict]) -> dict[str, dict]:
     return data
 
 
+def enrich_nazev_display(data: dict[str, dict]) -> dict[str, dict]:
+    """Doplní nazev_display z schools_data.json (nazev + ulice pro disambiguaci)."""
+    sd_path = PUBLIC_DIR / 'schools_data.json'
+    if not sd_path.exists():
+        print("schools_data.json nenalezen — nazev_display nebude obohacen")
+        return data
+
+    sd = json.loads(sd_path.read_text())
+    lookup: dict[str, str] = {}
+    for year_data in sd.values():
+        if not isinstance(year_data, list):
+            continue
+        for school in year_data:
+            redizo = school.get('redizo', '')
+            nd = school.get('nazev_display', '')
+            if redizo and nd:
+                lookup[redizo] = nd
+
+    enriched = 0
+    for rec in data.values():
+        if rec.get('nazev_display'):
+            continue
+        nd = lookup.get(rec['redizo'], '')
+        if nd:
+            rec['nazev_display'] = nd
+            enriched += 1
+        else:
+            rec['nazev_display'] = rec['nazev']
+    print(f"Obohaceno nazev_display: {enriched}/{len(data)}")
+    return data
+
+
 def update_meta(year: int, meta_path: Path) -> None:
     if meta_path.exists():
         meta = json.loads(meta_path.read_text())
@@ -220,6 +252,7 @@ def main(year: int) -> None:
     print(f"Spárováno s předchozím rokem: {matched}/{len(data)}")
 
     data = compute_ranks(data)
+    data = enrich_nazev_display(data)
 
     out_path = PUBLIC_DIR / f'cermat_results_{year}.json'
     out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2))
