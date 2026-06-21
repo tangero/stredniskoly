@@ -15,6 +15,7 @@ interface PromoEvent {
   earlyBirdDeadline?: string;
   bannerDescription?: string;
   dateVariants?: { date: string }[] | null;
+  clickUrl?: string | null;
 }
 
 const MONTHS = ['ledna','února','března','dubna','května','června','července','srpna','září','října','listopadu','prosince'];
@@ -36,7 +37,17 @@ export function VibecordingPromo() {
 
   if (!event) return null;
 
-  const url = `https://www.vibecoding.cz/akce/${event.slug}/?utm_source=prijimackynaskolu&utm_medium=web&utm_campaign=event-promo`;
+  // Klik vede přes náš promo redirect (změří klik podle site/surface + připojí UTM).
+  // clickUrl nemá query string → parametry přes URL API, ne lepením '&'. Fallback na přímý odkaz.
+  let url = `https://www.vibecoding.cz/akce/${event.slug}/?utm_source=prijimackynaskolu&utm_medium=web&utm_campaign=event-promo`;
+  if (event.clickUrl) {
+    try {
+      const cu = new URL(event.clickUrl);
+      cu.searchParams.set('site', 'prijimackynaskolu');
+      cu.searchParams.set('surface', 'article');
+      url = cu.toString();
+    } catch { url = event.clickUrl; }
+  }
   const city = event.city || (event.location?.includes(',') ? event.location.split(',').slice(-1)[0].trim() : event.location || '');
   const dateText = [
     formatDate(event.date),
