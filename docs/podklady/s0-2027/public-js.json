@@ -1,0 +1,79 @@
+{
+  "checkedAt": "2026-09-11T11:07:24.703Z",
+  "page": "https://www.prijimackynaskolu.cz/simulator",
+  "status": 200,
+  "scripts": [
+    {
+      "path": "/_next/static/chunks/4c86ddcf3a767f1a.js?dpl=dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU",
+      "status": 200,
+      "bytes": 223454,
+      "sha256": "8b282f302f26de7f1dc2d85ea512023d8c8ad0713b449cbacb7c43cf5efae681",
+      "simulator": false,
+      "forbidden": []
+    },
+    {
+      "path": "/_next/static/chunks/e14ab6fa222c9c0f.js?dpl=dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU",
+      "status": 200,
+      "bytes": 151907,
+      "sha256": "0e30754500580bdf5ad53aacd1bf80e5466e3ef28ae0f108cdbfdda477116570",
+      "simulator": false,
+      "forbidden": []
+    },
+    {
+      "path": "/_next/static/chunks/turbopack-b8c650e3573c13a3.js?dpl=dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU",
+      "status": 200,
+      "bytes": 10635,
+      "sha256": "57983b5cd0c3a6ee7487dddd82fb4f064005d9730d7f2a285cf6a2e465b1ad08",
+      "simulator": false,
+      "forbidden": []
+    },
+    {
+      "path": "/_next/static/chunks/ff1a16fafef87110.js?dpl=dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU",
+      "status": 200,
+      "bytes": 282,
+      "sha256": "e9786b1305894e4119bb9811a816dac9cf576755596dd989ee15b455749fc35e",
+      "simulator": false,
+      "forbidden": []
+    },
+    {
+      "path": "/_next/static/chunks/d2be314c3ece3fbe.js?dpl=dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU",
+      "status": 200,
+      "bytes": 30681,
+      "sha256": "a6248517cd3ee53a8186b51c59e1e764e3dc0c512f4acbd50e818f9884663e21",
+      "simulator": false,
+      "forbidden": []
+    },
+    {
+      "path": "/_next/static/chunks/d66ad50f0a805600.js?dpl=dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU",
+      "status": 200,
+      "bytes": 15662,
+      "sha256": "31b2a3e13d5749585cd5c8f4fa19f39cd74777a7ef1ef9a732fe2650ee924c6e",
+      "simulator": false,
+      "forbidden": []
+    },
+    {
+      "path": "/_next/static/chunks/b80385d4f3b278de.js?dpl=dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU",
+      "status": 200,
+      "bytes": 41730,
+      "sha256": "150406cffefb44a2a3ba4f91c1b09a2b826390189f1dbc69dac348fa4c01f2df",
+      "simulator": true,
+      "forbidden": []
+    },
+    {
+      "path": "/_next/static/chunks/a6dad97d9634a72d.js?dpl=dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU",
+      "status": 200,
+      "bytes": 112594,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+      "simulator": false,
+      "forbidden": []
+    },
+    {
+      "path": "/_next/static/chunks/29f9c7b1d8cfb8cf.js?dpl=dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU",
+      "status": 200,
+      "bytes": 24328,
+      "sha256": "2a549c3019a2879f73febb439751bb7c38eb2cd5d45f5acd2c75289659f34ebc",
+      "simulator": false,
+      "forbidden": []
+    }
+  ]
+}

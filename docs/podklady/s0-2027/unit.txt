@@ -1,0 +1,23 @@
+(node:16447) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/patrickzandl/GitHub/gymnazium/src/lib/chances.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/patrickzandl/GitHub/gymnazium/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ veřejná analýza vrací historii bez odhadu přijetí či rizika kombinace (2.316ms)
+✔ chybějící jmenovatel není nulová historická úspěšnost (0.252833ms)
+✔ převod známé škály nezaměňuje nulu, chybějící hodnotu a jinou škálu (0.206167ms)
+✔ platné cvičné skóre 0–50, neplatná URL nevytváří falešné body (0.13475ms)
+✔ staré odkazy a nový formát zachovají pořadí i čárku uvnitř identity (2.501ms)
+(node:16448) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/patrickzandl/GitHub/gymnazium/src/lib/school-key.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/patrickzandl/GitHub/gymnazium/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ normalizuje diakritiku a oddělovače při zachování oboru (1.696709ms)
+✔ nepřiřadí první záznam při kolizi historických ID (0.292083ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 406.15625

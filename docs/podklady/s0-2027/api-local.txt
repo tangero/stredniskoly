@@ -1,17 +1,18 @@
-(node:87216) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/patrickzandl/GitHub/gymnazium/src/lib/school-key.ts is not specified and it doesn't parse as CommonJS.
+(node:21461) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///private/tmp/stredniskoly-s0-check/src/lib/school-key.ts is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
-To eliminate this warning, add "type": "module" to /Users/patrickzandl/GitHub/gymnazium/package.json.
+To eliminate this warning, add "type": "module" to /private/tmp/stredniskoly-s0-check/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-✔ skóre nemění seznam, pořadí ani celkový počet; stránkování zpřístupní další obory (97.854041ms)
-✔ filtry fungují bez diakritiky a prázdný výsledek není chyba (18.625292ms)
-✔ přímé načtení zachová pořadí, zaměření, čárky a neznámá ID (36.630958ms)
-✔ detail API nevrací falešné minimum, školní body ani žebříček ze součtu minim (31.6415ms)
-✔ veřejně doručovaný JS simulátoru neobsahuje původní predikční větve (28.294667ms)
-ℹ tests 5
+✔ skóre nemění seznam, pořadí ani celkový počet; stránkování zpřístupní další obory (96.3365ms)
+✔ filtry fungují bez diakritiky a prázdný výsledek není chyba (19.563833ms)
+✔ přímé načtení zachová pořadí, zaměření, čárky a neznámá ID (38.9685ms)
+✔ odkaz používá kanonický název profilu a rozlišuje délku studia (67.894833ms)
+✔ detail API nevrací falešné minimum, školní body ani žebříček ze součtu minim (27.325041ms)
+✔ veřejně doručovaný JS simulátoru neobsahuje původní predikční větve (18.261333ms)
+ℹ tests 6
 ℹ suites 0
-ℹ pass 5
+ℹ pass 6
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 323.234167
+ℹ duration_ms 386.943459

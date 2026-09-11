@@ -1,8 +1,8 @@
 # Oponentura návrhu rozvoje 2027
 
-Verze 5.1 / R5, doplněna odpověď autora a realizace S0. Původní oponentní vstup v5.0 je uchován v `historie/rozvoj-2027-r5-vstup/`. Zpracováno 11. 9. 2026. Předmět: `navrh-rozvoje-2027.md` v2.4 §16 (commit `69a7060`).
+Verze 5.2 / R5, doplněna odpověď autora a veřejná přejímka S0. Původní oponentní vstup v5.0 je uchován v `historie/rozvoj-2027-r5-vstup/`. Zpracováno 11. 9. 2026. Předmět: `navrh-rozvoje-2027.md` v2.4 §16 (commit `69a7060`).
 
-**Aktuální odpověď autora:** [návrh v2.5 §17](navrh-rozvoje-2027.md#vyporadani-r5) vypořádává všechna stanoviska R5. Realizace S0 schválena a provedena, lokální přejímky prošly; [veřejná přejímka](dodavka-s0-2027.md) zatím čeká na nasazení. Následující oponentní stav popisuje produkci před S0.
+**Aktuální odpověď autora:** [návrh v2.5 §17](navrh-rozvoje-2027.md#vyporadani-r5) vypořádává všechna stanoviska R5. S0 je schváleno, realizováno, nasazeno a [veřejně přejato](dodavka-s0-2027.md). **O-13/O-4 uzavřeny; původní produkční blokátory jsou vypořádané.** Následující oponentní stav popisuje produkci před S0.
 
 ## R5: souhlas se závěrem, další kolo nemá smysl
 
@@ -556,3 +556,4 @@ S0 nyní mění skutečný kód a jeho datové cesty. Úplný rozsah, přejímky
 |---|---|---|
 | 5.0 / R5 | 11. 9. 2026 | Oponentní vstup nad `69a7060`, zachován beze změny ve snímku R5. |
 | 5.1 / R5 | 11. 9. 2026 | Přijetí stanovisek, návrh v2.5, PRD v0.9, realizace S0 a lokální přejímky; produkční uzavření zatím čeká. |
+| 5.2 / R5 + S0 | 11. 9. 2026 | O-13/O-4 uzavřeny po PR #73/#74, READY produkci a 6/6 veřejných přejímkách. Návrh v2.5.1, PRD v0.9.1, dodávka S0 v1.1. |

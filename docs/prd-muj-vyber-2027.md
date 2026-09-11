@@ -1,6 +1,6 @@
 # PRD: Můj výběr 2027, profily oborů a podklady pro rozhodování
 
-- **Verze:** 0.9, pracovní návrh pro společnou diskusi.
+- **Verze:** 0.9.1, pracovní návrh pro společnou diskusi.
 - **Datum:** 11. 9. 2026.
 - **Stav:** Uživatel schválil směr: návrh Mého výběru, úpravu datového základu a profilů, následnou realizaci pilotu. Schváleny D1 a základ D2: okamžité ukládání, volitelný průvodce „Pomoz mi s výběrem“, jednoduchý účet bez hesla a odkaz k náhledu. Zbývající volby jsou označené níže.
 - **Rozsah této práce:** produktové zadání a interaktivní ukázka ovládání. Žádná nová produkční funkce ani rozesílka.
@@ -14,7 +14,7 @@
 
 **Revize R4:** [návrh v2.4 §16](navrh-rozvoje-2027.md#vyporadani-r4) potvrzuje uzavření O-21 po PR #72 a přijímá přechod k implementaci S0. Další posudek stejného plánu není podmínkou; přejímka O-13/O-4 se má týkat opraveného kódu a produkce. Toto dokumentační kolo S0 neimplementuje. D1/D2 a otevřené volby se nemění.
 
-**Revize R5:** návrh v2.5 §17 uzavírá posuzování plánu. S0 je implementováno a lokálně otestováno; veřejná přejímka čeká na nasazení. Stav a omezení jsou v [dodávce S0](dodavka-s0-2027.md).
+**Revize R5 + S0:** návrh v2.5.1 §17/§18 uzavírá posuzování plánu a dokládá veřejnou přejímku. S0 je hotové, nasazené a ověřené; O-13/O-4 uzavřeny. Stav a omezení jsou v [dodávce S0](dodavka-s0-2027.md).
 
 ## Aktuální stav realizace k 11. 9. 2026
 
@@ -25,10 +25,10 @@ Tento přehled odděluje dokončenou dodávku od návrhu následující etapy. S
 | Kalendář přijímání 2027 | **Hotovo a nasazeno** | Veřejná stránka s 20 událostmi pro SŠ, konzervatoře a druhé kolo, export ICS, odkazy z navigace a hlavní stránky. |
 | Obnova prvního kola 2026 | **Hotovo a nasazeno v uvedeném rozsahu** | Agregáty CERMAT platné k 17. 8. 2026; 3 091 nabídek s přihláškami a kapacitami, 3 076 nabídek s kladným zveřejněným průměrem. Srovnání používá současný zdroj 2025. Nejde o kompletní katalog všech škol a oborů. |
 | Opravy propojení a výkladu dat | **Hotovo a nasazeno v dotčených cestách** | Normalizace zaměření, odmítání nejednoznačného párování, opravy označení skóre a městských komentářů; odstranění nepodložených osobních procent a předpovědí z přehledu konkurence. Nejde o audit všech starších kalkulaček. |
-| Simulátor — O-13 | **Implementováno, čeká veřejná přejímka** | Odstraněny predikční kategorie, souhrny a filtrování podle bodů. Zachováno hledání, výběr a sdílení; přesně přiřazená historie 2026 se zdrojem. Viz dodávka S0. |
+| Simulátor — O-13 | **Hotovo, nasazeno a veřejně ověřeno** | Odstraněny predikční kategorie, souhrny a filtrování podle bodů. Zachováno hledání, výběr a sdílení; přesně přiřazená historie 2026 se zdrojem. Viz dodávka S0. |
 | Dostupnost OG obrázků — O-19 | **Opraveno, produkčně ověřeno** | Commit `c51b3c9`, produkce `dpl_NKpQBRZaberGrkd7jZuia9K77sxo`; všechny přímé i metadatové odkazy vracejí dekódované PNG 1200×630. |
 | Obsah a vzhled OG obrázků — O-21 | **Opraveno, nasazeno a veřejně ověřeno** | PR #72, commit `9146ef0`. Nové ilustrace, české fonty, rozlišení sezóny a výsledků, oddělená patička. [Doklad veřejné přejímky](oprava-og-nahledu-2027.md). |
-| Mrtvé predikční výpočty — O-4 | **Odstraněno, čeká veřejná přejímka S0** | `chances.ts` vrací pouze popisnou historii. Rozhraní bez osobních predikcí ověřuje regresní test. |
+| Mrtvé predikční výpočty — O-4 | **Odstraněno, S0 veřejně přejato** | `chances.ts` vrací pouze popisnou historii. Rozhraní bez osobních predikcí ověřuje regresní test. |
 | Rutinní přístup ke statistikám | **Implementováno a ověřeno lokálně** | Čtecí klient Matomo pro web 7, soukromé uložení tokenu, snímky a souhrny; viz `matomo-pristup.md`. Žádné automatické úlohy ani změny serverového měření. |
 | Vercel statistiky / místní propojení — O-17 | **Propojení opraveno, čtení statistik neověřeno** | Správný projekt potvrzen přes konektor a místní JSON opraven; samotný analytický přístup čeká na autorizaci/diagnostiku. 404 nedokládá nutnost vyššího tarifu. |
 | Měření přechodů a nových úkonů — M0 | **Navrženo, neimplementováno** | Ověřit klientskou navigaci a doplnit události při realizaci funkcí. Nynější API přístup tuto vadu neřeší. |
@@ -44,9 +44,9 @@ Tento přehled odděluje dokončenou dodávku od návrhu následující etapy. S
 
 **Doklad nasazení:** [PR #71](https://github.com/tangero/stredniskoly/pull/71), commit `c9ae45214c6cedfedcc37977999914d9283915b1`, přítomný na lokální větvi `main`. Při této aktualizaci dokumentace znovu ověřena odpověď HTTP 200 veřejného kalendáře a bajtová shoda veřejných souborů `prijimacky-2027.ics`, `cermat_results_2026.json`, `cermat_results_meta.json`, `applications_2026.json` a `school_analysis.json` s checkoutem. Podrobný rozsah a postupy kontrol jsou v [záznamu dodávky](aktualizace-kalendar-data-2027.md). Původní testy a prohlížečové kontroly byly provedeny při dodávce; při této úpravě dokumentace se znovu nespouštěly.
 
-**Co lze nyní testovat na veřejném webu:** [kalendář 2027](https://www.prijimackynaskolu.cz/prijimacky-2027), [export ICS](https://www.prijimackynaskolu.cz/prijimacky-2027.ics), [výsledky 2026](https://www.prijimackynaskolu.cz/vysledky/2026) a navazující zobrazení výsledků ve stávajících profilech a městských přehledech. Můj výběr lze zatím posuzovat na ukázce ovládání; nejde o dostupnou produkční funkci.
+**Co lze nyní testovat na veřejném webu:** opravený [simulátor](https://www.prijimackynaskolu.cz/simulator), [kalendář 2027](https://www.prijimackynaskolu.cz/prijimacky-2027), [export ICS](https://www.prijimackynaskolu.cz/prijimacky-2027.ics), [výsledky 2026](https://www.prijimackynaskolu.cz/vysledky/2026) a navazující zobrazení výsledků ve stávajících profilech a městských přehledech. Můj výběr lze zatím posuzovat na ukázce ovládání; nejde o dostupnou produkční funkci.
 
-**Další práce:** dokončit veřejnou přejímku S0 a navázat M0 a ověřenými datovými stavy nabídek 2027. Souběžně uzavřít otevřené otázky ovládání a připravit identitu a stavy nabídky pro nové profily. Implementace pilotu Mého výběru následuje po ověřeném uzavření S0. D8 (živý náhled nebo snímek) a D4 (umístění pracovního pořadí) zůstávají otevřené; žádná varianta nebyla tímto přehledem nově schválena.
+**Další práce:** navázat M0 a ověřenými datovými stavy nabídek 2027; S0 je přejato. Souběžně uzavřít otevřené otázky ovládání a připravit identitu a stavy nabídky pro nové profily. Implementace pilotu Mého výběru následuje po ověřeném uzavření S0. D8 (živý náhled nebo snímek) a D4 (umístění pracovního pořadí) zůstávají otevřené; žádná varianta nebyla tímto přehledem nově schválena.
 
 ## 1. Účel a zamýšlený výsledek
 
@@ -236,7 +236,7 @@ Konkrétní podklady: `src/components/school/guided/GuidedJourneyWizard.tsx`, `s
 
 ## 11. Rozdělení dodávky
 
-**S0 — opravná vlna:** zbývají O-13 a O-4 podle návrhu rozvoje §3. O-19 i následná vizuální oprava O-21 jsou veřejně ověřené a uzavřené. Podmínkou uzavření O-13 jsou změna kódu, příslušné kontroly, nasazení a ověření veřejného výsledku. Do té doby lze navrhovat A, ale implementaci pilotu B nezačínat.
+**S0 — opravná vlna: dokončeno a veřejně přejato.** O-13/O-4 uzavřeny po PR #73/#74, O-19/O-21 zůstávají uzavřené. [Důkazy](dodavka-s0-2027.md) splňují §3 návrhu. Pilot B může navázat po přípravě potřebného datového základu; M0 musí být ověřeno před vyhodnocováním jeho použití.
 
 **M0 — měření:** v obou přítomných trackerech (Matomo a Vercel) ověřit navigaci a definice úspěšných úkonů před měřeným vyhodnocením pilotu. Žádné dvojité pageview, žádné tokeny/poznámky v URL ani událostech. Nevysvětlené rozdíly agregátů nepovažovat automaticky za vliv dnešního dne. Pozorování strojových přístupů k API je samostatný experiment, nikoli náhrada M0. Neodkládá S0. Implementace událostí ukládání či zálohy patří až k funkčnímu kroku B/C.
 
@@ -300,8 +300,9 @@ Ukázka používá výhradně fiktivní školy a modelové hodnoty. Není doklad
 | 0.7 / R3 | 11. 9. 2026 | O-19 dostupnost uzavřena po kontrole produkce, samostatný O-21 pro vizuální vady; potvrzen export drainu, žádný nový vlastní logger. Původní v0.6 zachována ve snímku R3. |
 | 0.7.1 | 11. 9. 2026 | O-21 opraveno a produkčně ověřeno po PR #72; vyřazeno ze zbývající opravné vlny. O-13 a O-4 zůstávají otevřené. |
 | 0.8 / R4 | 11. 9. 2026 | Převzato doporučení přejít k S0 bez dalšího posudku stejného plánu; potvrzena oprava O-21. O-13/O-4 stále otevřené, metodická uzavření nejsou realizací funkcí. |
+| 0.9 / R5 | 11. 9. 2026 | Realizace S0, odstranění odhadů z rozhraní; lokální přejímky prošly, produkční uzavření čeká na nasazení. D1/D2 ani otevřené volby se nemění. |
+| 0.9.1 / S0 | 11. 9. 2026 | S0 nasazeno a veřejně přejato, O-13/O-4 uzavřeny. M0, katalog 2027, nové profily a Můj výběr zůstávají další etapou. |
 
 Verze 0.1 a 0.2 jsou popsány podle průběhu této práce; samostatné úplné snímky těchto dvou verzí nebyly uloženy. Snímek 0.3 je neměnný. Revize 0.4 patří do commitu označeného `rozvoj-2027-r1`. Nové produktové volby D4 a D8 zůstávají otevřené.
 
 Revize 0.4 je uložena v commitu `5a0f893` a ve snímku A1; 0.5 patří do revize `matomo-navstevnost-a1`. Návštěvnost neuzavírá D3, D4, D8 ani oponentní připomínky R1.
-| 0.9 / R5 | 11. 9. 2026 | Realizace S0, odstranění odhadů z rozhraní; lokální přejímky prošly, produkční uzavření čeká na nasazení. D1/D2 ani otevřené volby se nemění. |

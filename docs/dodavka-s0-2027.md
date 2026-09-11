@@ -1,6 +1,6 @@
 # Dodávka S0 — historická data bez osobních predikcí
 
-Verze 1.0, 11. 9. 2026. **Implementováno, veřejná přejímka zatím čeká na nasazení.** Rozsah: O-13 a O-4 z návrhu rozvoje §3. Schválení realizace: odpověď zadavatele k R5. Tento dokument není přejímkou Mého výběru ani potvrzením úplné nabídky 2027.
+Verze 1.1, 11. 9. 2026. **Hotovo, nasazeno a veřejně ověřeno. O-13 a O-4 uzavřeny.** Rozsah: O-13 a O-4 z návrhu rozvoje §3. Schválení realizace: odpověď zadavatele k R5. Tento dokument není přejímkou Mého výběru ani potvrzením úplné nabídky 2027.
 
 ## Změněné chování
 
@@ -9,6 +9,7 @@ Verze 1.0, 11. 9. 2026. **Implementováno, veřejná přejímka zatím čeká na
 - Katalog zůstává označen jako 2025. Výsledky 2026/1. kolo se připojují pouze jednoznačnou normalizovanou shodou celého ID včetně zaměření. Chybějící vazba je viditelná. Nejde o úplný katalog přijímání 2027.
 - Zobrazené průměry přijatých mají rok, kolo, zdroj a škálu. Průměr není minimum ani doporučený cíl. Osobní porovnání výslovně uvádí „Pro toto porovnání nemáme ověřený údaj“.
 - `chances.ts` vrací pouze popisnou historii. Odstraněny odhady procent přijetí, příštího minima, bezpečnosti kombinace a z nich odvozená doporučení. Nulový počet přijatých je 0 %, chybějící nebo neplatný jmenovatel je neznámý.
+- Karty zobrazují délku studia, aby se rozlišily například čtyřleté a osmileté gymnázium. Při změně výběru přes historii prohlížeče se nabídka starého kopírovaného odkazu skryje.
 - Odkazy z hledání používají kanonické názvy existujících profilů a rozlišují délku studia; rozdílný název ve zdroji už nesměruje potichu na obecný přehled.
 - Zachovány staré URL s `cj`, `ma`, `skoly`, `srovnani`. Nové odkazy ukládají ID jako JSON pole, protože zaměření mohou obsahovat čárky. Sdílení propouští pouze tyto veřejné parametry. Neznámé ID zůstane viditelné a lze ho odebrat; zpět/vpřed obnoví výběr včetně prázdného.
 
@@ -28,14 +29,27 @@ Změna rozšířených statistik zasahuje také její konzumenty na profilech a 
 ## Přejímky
 
 - `node --test tests/school-key.test.mjs tests/s0.test.mjs`: 7/7; nulové/chybějící hodnoty, škála, výstup O-4, kolize klíčů a staré/nové URL včetně čárek.
-- `BASE_URL=http://127.0.0.1:3217 node --test tests/s0-api.integration.mjs`: 5/5 proti produkčnímu lokálnímu buildu; změna skóre, filtry, stránkování, více zaměření, chybějící historie, kolize, detail API a skutečně doručovaný JS.
+- `BASE_URL=http://127.0.0.1:3218 node --test tests/s0-api.integration.mjs`: 6/6 proti oddělenému produkčnímu buildu commitu `5fc77fe`; změna skóre, filtry, stránkování, více zaměření, chybějící historie, kolize, detail API a skutečně doručovaný JS.
 - TypeScript a produkční `pnpm exec next build`: prošly, 1 168 statických cest. Známé varování Next.js o více lockfilech není novou chybou.
 - ESLint nového simulátoru, obou opravovaných API a nových pomocných modulů: bez chyb.
 - Browser přejímka: desktop 1280 px, mobil 390 px bez vodorovného přetečení; přidání, odebrání, pořadí, sdílení, starý odkaz, neznámé ID, zpět/vpřed včetně prázdného výběru. Při blokovaném API obě chyby viditelné, výběr zachován; po obnovení API opakování úspěšné. [Desktop](podklady/s0-2027/desktop.png), [mobil](podklady/s0-2027/mobile.png), [HTTP protokol](podklady/s0-2027/api-local.txt).
-- Veřejné nasazení: doplní závěrečný záznam níže.
+- Veřejné nasazení: přejato níže, včetně následné opravy rozlišení délky studia.
 
 Reprodukce HTTP testů vyžaduje checkout stejné datové revize jako testované nasazení. Testy porovnávají výstup s přesnými místními zdrojovými hodnotami, nikoli jen s přítomností pole.
 
 ## Návaznost
 
 Po veřejné přejímce navázat M0 (ověřené měření), identitou a stavy nabídky 2027 pro profily a pilotem Mého výběru podle D1/D2. Způsob uložení, pracovního pořadí a sdíleného náhledu řeší PRD. S0 nezavádí účet, synchronizaci ani oprávnění ke sdílení; současný odkaz je veřejným nastavením historického simulátoru.
+
+
+## Veřejná přejímka a historie vydání
+
+**11. 9. 2026, 11:07 UTC (13:07 Praha): přejato.** [PR #73](https://github.com/tangero/stredniskoly/pull/73) dodal S0 (`cb55e7f`, oprava odkazů `5fc77fe`, merge `bf79682`). [PR #74](https://github.com/tangero/stredniskoly/pull/74) doplnil rozlišení délky studia a skrytí zastaralého odkazu ke kopírování při změně historie (`ce04c51`, merge `e752c21a3dc2803cacbe953ff313836cf58d2eab`). Kontroly Vercelu i GitGuardian prošly u obou PR.
+
+- Produkce: `dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU`, stav READY, Git `e752c21`; [doklad](podklady/s0-2027/deployment.json).
+- [Veřejné HTTP přejímky](podklady/s0-2027/api-production.txt): **6/6** proti `https://www.prijimackynaskolu.cz`. Ověřeno skóre 0/100 bez vlivu na seznam, filtry a stránkování, zaměření, čárky, kolize, neznámé ID/historie, přesný oborový odkaz, detail API i doručovaný JS. Předchozí přejímka PR #73 je zachována zvlášť.
+- [Veřejné skripty se SHA-256](podklady/s0-2027/public-js.json): kontrolováno 9 skriptů. Aktuální simulátor `b80385d4f3b278de.js`, SHA-256 `150406cffefb44a2a3ba4f91c1b09a2b826390189f1dbc69dac348fa4c01f2df`. Původní tři kategorie ani `estimatedChancePct`/`estimatedMinScore` v doručovaných skriptech nejsou. Samotná případná existence starého souboru v CDN neznamená, že ho současná stránka používá.
+- Browser na produkci: starý sdílený odkaz načetl dva správné obory; karta výslovně uvádí 4leté/8leté studium, ročník a zdroj výsledků i neznámé osobní porovnání. Desktop 1280 px a mobil 390 px bez přetečení a bez chybové překryvné vrstvy. [Desktop](podklady/s0-2027/production-desktop.png), [mobil](podklady/s0-2027/production-mobile.png).
+- Test zpět po zkopírování odkazu: při jiném pořadí se stará nabídka kopírování skryje; ověřeno v poslední verzi klienta. Návrat k prázdnému výběru, chyby API a opakování jsou popsány výše.
+
+Tím je splněna přejímka §3 a uzavřeny O-13/O-4. O-19/O-21 zůstávají uzavřené. Nejde o plošné potvrzení kvality každého staršího ukazatele webu ani o dokončení Mého výběru, měření M0 nebo úplného katalogu 2027.

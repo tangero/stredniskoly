@@ -1,10 +1,10 @@
 # Návrh rozvoje Přijímaček na školu pro přijímací řízení 2027
 
-**Verze 2.5 / R5, 11. 9. 2026.** R5 ukončuje posuzování plánu; zadavatel schválil realizaci S0. [Vypořádání R5](#vyporadani-r5) a [záznam dodávky](dodavka-s0-2027.md) oddělují implementaci od veřejné přejímky. S0 je implementováno a lokálně otestováno; produkční uzavření O-13/O-4 čeká na nasazení. D1/D2 platí, další produktové volby se tím neschvalují.
+**Verze 2.5.1 / R5 + S0, 11. 9. 2026.** S0 je nasazeno a veřejně ověřeno: **O-13 a O-4 uzavřeny**, O-19/O-21 zůstávají uzavřené. [Vypořádání R5](#vyporadani-r5) zachovává stanoviska oponenta; [dodávka a přejímky S0](dodavka-s0-2027.md) dokládají změněný kód i produkci. Můžeme pokračovat M0, ověřenými profily a pilotem Mého výběru. D1/D2 platí, další produktové volby se tím neschvalují.
 
 Sekce 1 a úvod sekce 2 zachycují audit před dodávkou `c9ae452`; aktuální návrh v sekcích 3–9 je upraven podle zjištění R1 a R2. Úplné [původní znění](historie/rozvoj-2027-r0/navrh-rozvoje-2027.md) je zachováno. Každá připomínka O-1 až O-14 a obě přílohy mají [vypořádání níže](#vyporadani-r1), včetně nesouhlasu a důkazů. Historie a pravidla dalšího kola jsou na konci.
 
-Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.9](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **S0 je implementováno; uzavření O-13/O-4 čeká na veřejnou přejímku.** Starší stavy níže zachycují jednotlivá kola, nikoli aktuální stav kódu. [Vypořádání R3](#vyporadani-r3) zachycuje stav při uzavření dokumentačního kola; následný dodatek §15 uzavírá O-21 po opravě aplikace a nasazení. O-19 zůstává uzavřené.
+Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.9.1](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **S0 je hotovo, nasazeno a přejato; O-13/O-4 uzavřeny.** Starší stavy níže zachycují jednotlivá kola, nikoli aktuální stav kódu. [Vypořádání R3](#vyporadani-r3) zachycuje stav při uzavření dokumentačního kola; následný dodatek §15 uzavírá O-21 po opravě aplikace a nasazení. O-19 zůstává uzavřené.
 
 Doporučení: po opravné dodávce pokračovat ověřenými profily a Mým výběrem. Do návrhu profilů přidat historii JPZ 2017–2023 a maturitní výsledky školy jako oddělené datové oddíly. Výzkum návaznosti vstupu a výstupu ověřit samostatně; propojení agregátů přes školu samo nedokládá kohortu ani přidanou hodnotu.
 
@@ -614,5 +614,16 @@ Přejímka ověřila tři stránky a devět GET: přímé adresy, skutečné `og
 
 - Neměnný [vstup R5 a manifest](historie/rozvoj-2027-r5-vstup/manifest.json) zachovává necommitovanou oponenturu v5.0, návrh v2.4 a PRD v0.8 včetně SHA-256. Oponentův text se nemaže.
 - Výstup R5: návrh **v2.5**, PRD **v0.9**, oponentura **v5.1** a [dodávka S0 v1.0](dodavka-s0-2027.md). Identifikátor `rozvoj-2027-r5-s0`.
-- Aktuální stav: kód opraven a lokální přejímky prošly; O-13/O-4 se uzavřou teprve po nasazení a veřejném ověření, které bude samostatně zapsáno.
+- Stav při přípravě v2.5: kód opraven a lokální přejímky prošly, uzavření čekalo na produkci. Následující §18 zaznamenává její úspěšnou přejímku.
 - Potom pokračovat M0 a podkladem profilů (identita nabídky, rok, zdroj, stav kritérií 2027), následně pilotem Mého výběru. Nečekat na úplný historický import JPZ/MZ. Neověřený údaj se do nového produktu přenáší jako neznámý.
+
+
+## 18. Dodatek v2.5.1 — S0 přejato, pokračujeme vývojem
+
+**O-13/O-4 uzavřeny po nasazení a veřejné přejímce 11. 9. 2026.** Dodávka zahrnuje PR #73 a #74, produkční Git `e752c21`, deployment `dpl_8Y6NpEygY7NjTDUJ9jLDaQXC1GoU`. [Protokol](dodavka-s0-2027.md) uvádí 7 regresních testů, 6/6 veřejných HTTP přejímek, buildy a kontroly mobilu/desktopu. Nově doručovaný simulátor neobsahuje původní kategorie a výpočtové rozhraní nevrací osobní predikce. Neznámé minimum není nula ani odhad dalších školních bodů.
+
+Všech 21 oponentních ID má vypořádaný závěr, žádný z původních produkčních blokátorů nezůstává otevřený. To není tvrzení, že jsou implementovány všechny položky návrhu. Výklad a plán importů byly u řady ID uzavřeny bez samotné dodávky importu.
+
+Další postup: M0 a ověřené stavy/identita nabídek 2027 pro profily, poté pilot Mého výběru podle D1/D2. Úplný katalog 2027, školní kritéria, historické importy a příprava na JPZ zůstávají samostatnou prací. Otevřené otázky ovládání se řeší nad PRD; šesté kolo nezměněného plánu není potřeba.
+
+Historie: návrh **v2.5.1**, PRD **v0.9.1**, oponentura **v5.2**, dodávka S0 **v1.1**. Předchozí stavy a snímky se nemažou.
