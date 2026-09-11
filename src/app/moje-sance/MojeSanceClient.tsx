@@ -365,7 +365,7 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
             <div className="flex items-center justify-center gap-1 mb-1">
               <Shield className="w-3.5 h-3.5 text-slate-400" />
             </div>
-            <div className="text-lg font-bold text-slate-900">{result.acceptRate2025} %</div>
+            <div className="text-lg font-bold text-slate-900">{result.acceptRate2025 === null ? '—' : `${result.acceptRate2025} %`}</div>
             <div className="text-xs text-slate-500">Přijato v 2025</div>
             <div className="text-xs text-slate-400 mt-0.5">
               ({s.prijati_2025} z {s.prihlasky_2025})
@@ -421,7 +421,7 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
                   <td className="py-2 text-right">{s.kapacita_2025}</td>
                   <td className="py-2 text-right">{s.index_poptavky_2025.toFixed(1)}×</td>
                   <td className="py-2 text-right font-medium">{s.prijati_2025}</td>
-                  <td className="py-2 text-right font-medium">{result.acceptRate2025} %</td>
+                  <td className="py-2 text-right font-medium">{result.acceptRate2025 === null ? '—' : `${result.acceptRate2025} %`}</td>
                   <td className="py-2 text-right">{s.min_body_2025}</td>
                 </tr>
                 {s.prihlasky_2024 !== undefined && s.prihlasky_2024 > 0 && (

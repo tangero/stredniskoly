@@ -430,9 +430,9 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
               const zrizovatel = getZrizovatelBadge(school.zrizovatel);
               const stats = extendedStatsMap[school.id];
               const trend = trendDataMap[school.id];
-              const jpzMin = stats?.jpz_min || 0;
+              const jpzMin = stats?.jpz_min ?? null;
               const hasExtra = stats?.hasExtraCriteria || false;
-              const borderColor = getDifficultyBorder(jpzMin || school.min_body);
+              const borderColor = jpzMin === null ? 'border-l-slate-200' : getDifficultyBorder(jpzMin);
 
               // Barva konkurence
               let konkurenceColor = 'text-green-600';
@@ -483,7 +483,7 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
 
                   {/* Body min */}
                   <td className="p-3 text-center">
-                    {stats ? (
+                    {stats && jpzMin !== null ? (
                       <div>
                         <div className="text-lg font-bold text-slate-900">{jpzMin}</div>
                         <div className="text-xs text-slate-500">
@@ -555,9 +555,9 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
           const zrizovatel = getZrizovatelBadge(school.zrizovatel);
           const stats = extendedStatsMap[school.id];
           const trend = trendDataMap[school.id];
-          const jpzMin = stats?.jpz_min || 0;
+          const jpzMin = stats?.jpz_min ?? null;
           const hasExtra = stats?.hasExtraCriteria || false;
-          const borderColor = getDifficultyBorder(jpzMin || school.min_body);
+          const borderColor = jpzMin === null ? 'border-l-slate-200' : getDifficultyBorder(jpzMin);
 
           // Mini trend badge pro mobilní kartu
           const trendBadge = trend && trend.prihlasky2024 > 0 ? (
@@ -597,7 +597,7 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
                   <div className="text-xs text-slate-400 mt-1">{school.obec}</div>
                 </div>
                 <div className="text-right shrink-0">
-                  <div className="text-2xl font-bold text-blue-600">{jpzMin || school.min_body}</div>
+                  <div className="text-2xl font-bold text-blue-600">{jpzMin ?? '—'}</div>
                   <div className="text-xs text-slate-500">JPZ bodů</div>
                   {hasExtra && (
                     <div className="text-xs text-amber-600">skóre: {school.min_body}</div>

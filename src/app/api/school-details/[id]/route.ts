@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { subjectScore, unavailableAdmissionScores } from '@/lib/historical-scores';
+import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
 
 // Typy
 interface School {
@@ -91,16 +93,17 @@ function isValidSchoolId(id: string): boolean {
 }
 
 interface SchoolDetail {
+  year: number;
   total_applicants: number;
   priority_counts: number[];
   prihlasky_priority: number[];
   prijati_priority: number[];
-  cj_prumer: number;
-  cj_min: number;
-  ma_prumer: number;
-  ma_min: number;
-  min_body: number;
-  jpz_min: number;
+  cj_prumer: number | null;
+  cj_min: number | null;
+  ma_prumer: number | null;
+  ma_min: number | null;
+  min_body: number | null;
+  jpz_min: number | null;
   index_poptavky: number;
   obtiznost: number;
   kapacita: number;
@@ -182,64 +185,6 @@ async function getSchoolDetailFile(schoolId: string) {
   }
 }
 
-function calculateDifficultyProfile(school: School, allSchools: School[]) {
-  // Data jsou v % škále, převádíme na skutečné body (dělíme 2)
-  const getJpz = (s: School) => ((s.cj_min || 0) + (s.ma_min || 0)) / 2;
-  const getCj = (s: School) => (s.cj_min || 0) / 2;
-  const getMa = (s: School) => (s.ma_min || 0) / 2;
-
-  const jpzMin = getJpz(school);
-  if (!jpzMin) return null;
-
-  // Získat všechny školy se stejným typem
-  const sameTypeSchools = allSchools.filter(s => s.typ === school.typ && getJpz(s) > 0);
-  const allWithJpz = allSchools.filter(s => getJpz(s) > 0);
-
-  // Percentily
-  const nationalRank = allWithJpz.filter(s => getJpz(s) < jpzMin).length;
-  const typeRank = sameTypeSchools.filter(s => getJpz(s) < jpzMin).length;
-
-  const percentileNational = Math.round((nationalRank / allWithJpz.length) * 100);
-  const percentileType = sameTypeSchools.length > 1
-    ? Math.round((typeRank / sameTypeSchools.length) * 100)
-    : 50;
-
-  // Průměry pro z-skóre
-  const avgCj = allWithJpz.reduce((sum, s) => sum + getCj(s), 0) / allWithJpz.length;
-  const avgMa = allWithJpz.reduce((sum, s) => sum + getMa(s), 0) / allWithJpz.length;
-
-  const stdCj = Math.sqrt(allWithJpz.reduce((sum, s) => sum + Math.pow(getCj(s) - avgCj, 2), 0) / allWithJpz.length) || 1;
-  const stdMa = Math.sqrt(allWithJpz.reduce((sum, s) => sum + Math.pow(getMa(s) - avgMa, 2), 0) / allWithJpz.length) || 1;
-
-  const zScoreCj = (getCj(school) - avgCj) / stdCj;
-  const zScoreMa = (getMa(school) - avgMa) / stdMa;
-
-  // Focus index (-1 = humanitní, +1 = matematický)
-  const focusIndex = (zScoreMa - zScoreCj) / 2;
-  let focusLabel = 'Vyvážený';
-  if (focusIndex > 0.5) focusLabel = 'Matematicky zaměřený';
-  else if (focusIndex > 0.2) focusLabel = 'Mírně matematický';
-  else if (focusIndex < -0.5) focusLabel = 'Humanitně zaměřený';
-  else if (focusIndex < -0.2) focusLabel = 'Mírně humanitní';
-
-  // Srovnání s průměrem (v bodech)
-  const avgJpz = allWithJpz.reduce((sum, s) => sum + getJpz(s), 0) / allWithJpz.length;
-  const avgTypeJpz = sameTypeSchools.length > 0
-    ? sameTypeSchools.reduce((sum, s) => sum + getJpz(s), 0) / sameTypeSchools.length
-    : avgJpz;
-
-  return {
-    percentile_national: percentileNational,
-    percentile_type: percentileType,
-    z_score_cj: Math.round(zScoreCj * 100) / 100,
-    z_score_ma: Math.round(zScoreMa * 100) / 100,
-    focus_index: Math.round(focusIndex * 100) / 100,
-    focus_label: focusLabel,
-    comparison_to_avg: Math.round(jpzMin - avgJpz),
-    comparison_to_type: Math.round(jpzMin - avgTypeJpz),
-  };
-}
-
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -271,7 +216,7 @@ export async function GET(
     const year = schoolsData['2025'] ? '2025' : '2024';
     const schools = schoolsData[year] || [];
 
-    const school = schools.find((s: School) => s.id === id);
+    const school = uniqueSchoolIndex(schools, s => s.id).get(normalizeSchoolKey(id));
     if (!school) {
       return NextResponse.json({ error: 'School not found' }, { status: 404 });
     }
@@ -284,7 +229,7 @@ export async function GET(
     const schoolAnalysis = analysis?.schools?.[id];
 
     // Spočítat profil náročnosti
-    const difficultyProfile = calculateDifficultyProfile(school, schools);
+    const difficultyProfile = null; // Neověřený součet nezávislých minim odstraněn v S0.
 
     // Konkurenční školy - agregace ze všech priorit
     let competingSchools: Array<{
@@ -349,20 +294,10 @@ export async function GET(
       ? school.priority_counts
       : school.prihlasky_priority || schoolAnalysis?.prihlasky_priority || [0, 0, 0, 0, 0];
 
-    // Převod z % skórů na skutečné body (data z CERMATu jsou v % škále 0-100)
-    // JPZ test má max 50 bodů za předmět, takže dělíme 2
-    const cj_min_raw = school.cj_min || schoolAnalysis?.cj_min || 0;
-    const ma_min_raw = school.ma_min || schoolAnalysis?.ma_min || 0;
-    const cj_prumer_raw = school.cj_prumer || schoolAnalysis?.cj_prumer || 0;
-    const ma_prumer_raw = school.ma_prumer || schoolAnalysis?.ma_prumer || 0;
-    const min_body_raw = school.min_body || 0;
-
-    const cj_min = Math.round(cj_min_raw / 2);
-    const ma_min = Math.round(ma_min_raw / 2);
-    const cj_prumer = Math.round((cj_prumer_raw / 2) * 10) / 10;
-    const ma_prumer = Math.round((ma_prumer_raw / 2) * 10) / 10;
-    const min_body = Math.round(min_body_raw / 2);
-    const jpz_min = cj_min + ma_min;
+    const cj_min = subjectScore(school.cj_min);
+    const ma_min = subjectScore(school.ma_min);
+    const cj_prumer = subjectScore(school.cj_prumer);
+    const ma_prumer = subjectScore(school.ma_prumer);
 
     const result: SchoolDetail = {
       total_applicants: school.total_applicants || school.prihlasky || 0,
@@ -373,8 +308,8 @@ export async function GET(
       cj_min,
       ma_prumer,
       ma_min,
-      min_body,
-      jpz_min,
+      ...unavailableAdmissionScores(),
+      year: 2025,
       index_poptavky: school.index_poptavky || 0,
       obtiznost: school.obtiznost || 0,
       kapacita: school.kapacita || 0,

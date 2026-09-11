@@ -690,10 +690,10 @@ export function AcceptanceByPriority({ prihlasky_priority, prijati_priority }: A
 // Náročnost testů (ČJ vs MA)
 interface TestDifficultyProps {
   cj_prumer: number;
-  cj_at_jpz_min: number;  // ČJ body studenta s nejnižším celkovým JPZ
+  cj_at_jpz_min: number | null;  // ČJ body studenta s nejnižším celkovým JPZ
   ma_prumer: number;
-  ma_at_jpz_min: number;  // MA body studenta s nejnižším celkovým JPZ
-  jpz_min: number;        // Skutečné minimum JPZ (cj_at_jpz_min + ma_at_jpz_min)
+  ma_at_jpz_min: number | null;  // MA body studenta s nejnižším celkovým JPZ
+  jpz_min: number | null;        // Skutečné minimum JPZ (cj_at_jpz_min + ma_at_jpz_min)
 }
 
 export function TestDifficulty({ cj_prumer, cj_at_jpz_min, ma_prumer, ma_at_jpz_min, jpz_min }: TestDifficultyProps) {
@@ -712,7 +712,7 @@ export function TestDifficulty({ cj_prumer, cj_at_jpz_min, ma_prumer, ma_at_jpz_
     <div className="bg-white p-6 rounded-xl shadow-sm">
       <h2 className="text-xl font-semibold mb-2">Výsledky testů přijatých</h2>
       <p className="text-sm text-slate-600 mb-4">
-        Průměrné body přijatých a výsledky studenta s nejnižším celkovým skóre.
+        Průměr přijatých v roce 2025, přepočtený z procentního skóru CERMAT na škálu 0–50 za předmět.
       </p>
 
       <div className="grid md:grid-cols-2 gap-4">
@@ -734,7 +734,7 @@ export function TestDifficulty({ cj_prumer, cj_at_jpz_min, ma_prumer, ma_at_jpz_
               </div>
             </div>
 
-            {cj_at_jpz_min > 0 && (
+            {cj_at_jpz_min !== null && (
               <div className="flex justify-between text-sm">
                 <span className="text-slate-600">Min. přijatý student:</span>
                 <span className="font-medium text-blue-600">{cj_at_jpz_min} b.</span>
@@ -761,7 +761,7 @@ export function TestDifficulty({ cj_prumer, cj_at_jpz_min, ma_prumer, ma_at_jpz_
               </div>
             </div>
 
-            {ma_at_jpz_min > 0 && (
+            {ma_at_jpz_min !== null && (
               <div className="flex justify-between text-sm">
                 <span className="text-slate-600">Min. přijatý student:</span>
                 <span className="font-medium text-blue-600">{ma_at_jpz_min} b.</span>
@@ -774,12 +774,12 @@ export function TestDifficulty({ cj_prumer, cj_at_jpz_min, ma_prumer, ma_at_jpz_
       {/* Celkový součet */}
       <div className="mt-4 p-4 bg-slate-100 rounded-lg">
         <div className="flex justify-between items-center">
-          <span className="text-slate-700">Minimální JPZ pro přijetí:</span>
-          <span className="text-xl font-bold text-slate-900">{jpz_min} bodů</span>
+          <span className="text-slate-700">Ověřené historické minimum JPZ:</span>
+          <span className="text-xl font-bold text-slate-900">{jpz_min === null ? 'Údaj není k dispozici' : `${jpz_min} bodů`}</span>
         </div>
-        {cj_at_jpz_min > 0 && ma_at_jpz_min > 0 && (
+        {cj_at_jpz_min !== null && ma_at_jpz_min !== null && (
           <div className="text-xs text-slate-500 mt-1">
-            (ČJ {cj_at_jpz_min} + MA {ma_at_jpz_min} = {jpz_min} bodů z max. 100)
+            (ČJ {cj_at_jpz_min} + MA {ma_at_jpz_min} = {jpz_min === null ? 'Údaj není k dispozici' : `${jpz_min} bodů`} z max. 100)
           </div>
         )}
       </div>
@@ -834,10 +834,10 @@ interface DifficultyProfileProps {
   schoolType: string;
   cjPrumer: number;
   maPrumer: number;
-  jpzMin: number;           // Čisté JPZ body (cj_min + ma_min) - používáno pro srovnání
+  jpzMin: number | null;           // Čisté JPZ body (cj_min + ma_min) - používáno pro srovnání
   minBody: number;          // Celkové skóre pro přijetí
-  extraBody: number;        // Body za další kritéria (prospěch aj.)
-  hasExtraCriteria: boolean;// Má obor další kritéria?
+  extraBody: number | null;        // Body za další kritéria (prospěch aj.)
+  hasExtraCriteria: boolean | null;// Má obor další kritéria?
 }
 
 // Mapování typů škol na české názvy
@@ -1395,11 +1395,11 @@ interface StatsGridProps {
   totalApplicants: number;
   priority1Count: number;
   minBody: number;
-  jpzMin: number;              // skutečné minimum JPZ (z jednoho studenta)
-  cjAtJpzMin: number;          // ČJ body studenta s nejnižším JPZ
-  maAtJpzMin: number;          // MA body studenta s nejnižším JPZ
-  hasExtraCriteria: boolean;
-  extraBody: number;
+  jpzMin: number | null;              // skutečné minimum JPZ (z jednoho studenta)
+  cjAtJpzMin: number | null;          // ČJ body studenta s nejnižším JPZ
+  maAtJpzMin: number | null;          // MA body studenta s nejnižším JPZ
+  hasExtraCriteria: boolean | null;
+  extraBody: number | null;
   obtiznost: number;
   indexPoptavky: number;
   kapacita: number;
@@ -1503,42 +1503,10 @@ export function StatsGrid({
         </div>
       </div>
 
-      {/* Min. body z JPZ */}
       <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-        <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">Min. bodů z JPZ 2025</div>
-        <div className="text-2xl font-bold text-blue-600">
-          ČJ {cjAtJpzMin} <span className="text-slate-400">/</span> MA {maAtJpzMin}
-        </div>
-        <div className="text-xs text-slate-500 mt-1">(z max. 50 / 50)</div>
-        <div className="text-xs text-slate-600 mt-2 flex items-center justify-center">
-          celkem z JPZ: <span className="font-semibold ml-1">{jpzMin} b.</span>
-          <InfoTooltip title="Minimální JPZ body pro přijetí">
-            Toto jsou <strong>skutečné body z testů</strong> přijatého studenta s nejnižším JPZ skóre.
-            <br /><br />
-            ČJ {cjAtJpzMin} + MA {maAtJpzMin} = <strong>{jpzMin} bodů</strong> (z max. 100)
-            <br /><br />
-            Pokud dosáhnete alespoň tohoto skóre z JPZ testů, máte reálnou šanci na přijetí.
-          </InfoTooltip>
-        </div>
-        {hasExtraCriteria && (
-          <>
-            <div className="text-xs text-slate-600 mt-1">
-              min. celkové skóre: <span className="font-semibold text-amber-600">{minBody} b.</span>
-            </div>
-            <div className="text-xs text-amber-600 mt-1 flex items-center justify-center">
-              +{extraBody} b. za další kritéria
-              <InfoTooltip title="Dodatečná kritéria">
-                Tento obor přidává ke skóre z JPZ ještě <strong>+{extraBody} bodů</strong> za další kritéria
-                (typicky prospěch na ZŠ).
-                <br /><br />
-                Student s nejnižším JPZ ({jpzMin} b.) měl navíc {extraBody} bodů za prospěch,
-                a tak dosáhl celkového skóre {minBody} bodů.
-                <br /><br />
-                Konkrétní kritéria a jejich váhu nastudujte na stránkách školy.
-              </InfoTooltip>
-            </div>
-          </>
-        )}
+        <div className="text-xs text-slate-500 uppercase tracking-wide mb-2">Historické minimum JPZ 2025</div>
+        <p className="text-sm text-slate-600">Pro toto porovnání nemáme ověřený údaj.</p>
+        <p className="text-xs text-slate-500 mt-2">Kritéria a bodové hodnocení pro rok 2027 ověřte přímo u školy.</p>
       </div>
 
       {/* Obtížnost přijetí */}
