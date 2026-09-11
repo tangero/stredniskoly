@@ -9,12 +9,9 @@ def read(name):
     return json.loads(Path(name).read_text())
 
 def norm(value):
-    # Stejný postup jako src/lib/school-key.ts: odstranit diakritiku,
-    # normalizovat oddělovače a až potom rozhodnout o prázdném zaměření.
     parts = value.split('_')
-    focus = re.sub(r'[\u0300-\u036f]', '', unicodedata.normalize('NFKD', '_'.join(parts[2:])))
-    focus = re.sub('[^a-zA-Z0-9]+', '_', focus).strip('_').lower()
-    return '_'.join(parts[:2]) + ('_' + focus if focus else '')
+    focus = unicodedata.normalize('NFKD', '_'.join(parts[2:])).encode('ascii', 'ignore').decode().lower()
+    return '_'.join(parts[:2]) + ('_' + re.sub('[^a-z0-9]+', '_', focus).strip('_') if focus else '')
 
 old = read('public/schools_data.json')['2025']
 apps = read('public/applications_2026.json')['data']
@@ -30,9 +27,6 @@ profile = {
  'applications_2026':len(apps), 'result_offers_2026':len(results),
  'catalog_with_applications_2026':len(catalog.keys() & a.keys()),
  'catalog_with_results_2026':len(catalog.keys() & r.keys()),
- 'catalog_all_normalized_keys':len(counts),
- 'applications_2026_outside_all_keys':len(a.keys()-counts.keys()),
- 'applications_2026_ambiguous_counterpart':len((a.keys() & counts.keys())-catalog.keys()),
  'applications_2026_outside_catalog':len(a.keys()-catalog.keys()),
  'catalog_without_matching_applications_2026':len(catalog.keys()-a.keys()),
  'incomplete_outcomes':sum(not x['admission_context']['outcomes_complete'] for x in apps),
