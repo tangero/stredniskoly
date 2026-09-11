@@ -1,6 +1,6 @@
 # Návrh rozvoje Přijímaček na školu pro přijímací řízení 2027
 
-**Verze 2.2 / R2 — vypořádání druhého kola oponentury, 11. 9. 2026.** Stav: revidované zadání k další oponentuře. Nejde o potvrzení opravy produkčního simulátoru ani o schválení dosud otevřených produktových voleb.
+**Verze 2.2.1 / R2 — opakované ověření O-19, 11. 9. 2026.** Stav: revidované zadání k další oponentuře. Nejde o potvrzení opravy produkčního simulátoru ani o schválení dosud otevřených produktových voleb.
 
 Sekce 1 a úvod sekce 2 zachycují audit před dodávkou `c9ae452`; aktuální návrh v sekcích 3–9 je upraven podle zjištění R1 a R2. Úplné [původní znění](historie/rozvoj-2027-r0/navrh-rozvoje-2027.md) je zachováno. Každá připomínka O-1 až O-14 a obě přílohy mají [vypořádání níže](#vyporadani-r1), včetně nesouhlasu a důkazů. Historie a pravidla dalšího kola jsou na konci.
 
@@ -445,6 +445,8 @@ Počet návštěv ze sociálních sítí potvrzuje existující distribuční ka
 
 **Stav k času R2-E6:** dokumentačně zapracováno, kód rozpracován v souběžné práci, **produkce stále vrací 500**. Bod zůstává otevřenou produkční vadou do přejímky. O-13 nadále zůstává hlavním blokátorem doporučování; jeho uzavření a uzavření O-19 se evidují samostatně.
 
+**Následná kontrola na pokyn uživatele, 11. 9. 2026 v 11:33 CEST (09:33 UTC):** všechny tři přímé adresy stále vracejí HTTP 500. Stejný výsledek mají i skutečné odkazy `og:image` a `twitter:image` vyčtené z metadat hlavní stránky, regionů a simulátoru, včetně query parametrů a přesměrování z holé domény na `www`. Vracejí HTML chyby místo obrázku, `x-vercel-cache=MISS`. [Úplný HTTP podklad](podklady/oponentura-2027-o19-http-recheck.json). [Konektor Vercelu](podklady/oponentura-2027-o19-deployment-recheck.json) stále hlásí stejný produkční deployment `dpl_2yPr8A6U8xPpkF5oWcsfnEi1xU9o`. Místní změny tří generátorů zůstávají necommitované. Oprava tedy není na ověřované veřejné doméně doložena; O-19 zůstává otevřené. Tento krok nic nenasazoval.
+
 ### Historie a podmínky R3
 
 | Revize | Vstup | Výstup a změna |
@@ -455,3 +457,5 @@ Počet návštěv ze sociálních sítí potvrzuje existující distribuční ka
 | R2, 11. 9. 2026 | Oponentura v2.0 a doplnění v2.1 v pracovním stromu; přesný vstup v manifestu | Návrh v2.2 / PRD v0.6 / analýza v1.3 / oponentura v2.2 s odpovědí autora. Převzetí stanovisek k O-1–14, reakce na O-15–19, nové důkazy a lokální oprava propojení Vercelu. Identifikátor commitu `rozvoj-2027-r2`. |
 
 **19/19 ID má aktuální dispozici**, což neznamená 18 opravených či oponentem uzavřených vad. R3 má ověřit R2-E1 k O-15/O-16 a rozsah protidůkazů dokumentace Vercelu k O-17/O-18. R3 musí zvlášť doložit případné dokončení souběžné opravy O-19. Neuzavřené důkazní rozpory mají uvedeny požadované podklady, nebrání diskusi nad PRD. **O-13/S0 zůstává blokátorem implementace pilotu Mého výběru**; O-4 se řeší v téže opravné dodávce. O-19 je další otevřená produkční vada se souběžnou opravou a vlastní přejímkou. K uzavření S0 je stále nutný commit aplikace, příslušné kontroly a ověření veřejného výsledku. Toto dokumentační kolo je nenahrazuje. D1/D2 se nemění, D3–D8 se nepovažují za nově schválené.
+
+Doplnění historie **2.2.1 / R2**: opakované ověření veřejných OG adres a skutečných metadat po zprávě uživatele o opravě. Předchozí odpověď v2.2 je commit `b65d230`; stav O-19 se nemění, nové důkazy zachovávají čas kontroly.

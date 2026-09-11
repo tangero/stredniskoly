@@ -1,0 +1,126 @@
+{
+  "checked_at": "2026-09-11T09:33:17.137603+00:00",
+  "direct": [
+    {
+      "url": "https://www.prijimackynaskolu.cz/opengraph-image",
+      "final_url": "https://www.prijimackynaskolu.cz/opengraph-image",
+      "status": 500,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 6602,
+      "sha256": "36f106ff9bc7b7e4c51841ce6561db56e90baab3f1c5134f75ff5006c74458ef",
+      "cache": "MISS"
+    },
+    {
+      "url": "https://www.prijimackynaskolu.cz/regiony/opengraph-image",
+      "final_url": "https://www.prijimackynaskolu.cz/regiony/opengraph-image",
+      "status": 500,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 6602,
+      "sha256": "36f106ff9bc7b7e4c51841ce6561db56e90baab3f1c5134f75ff5006c74458ef",
+      "cache": "MISS"
+    },
+    {
+      "url": "https://www.prijimackynaskolu.cz/simulator/opengraph-image",
+      "final_url": "https://www.prijimackynaskolu.cz/simulator/opengraph-image",
+      "status": 500,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 6602,
+      "sha256": "36f106ff9bc7b7e4c51841ce6561db56e90baab3f1c5134f75ff5006c74458ef",
+      "cache": "MISS"
+    }
+  ],
+  "metadata": [
+    {
+      "page": {
+        "url": "https://www.prijimackynaskolu.cz/",
+        "final_url": "https://www.prijimackynaskolu.cz/",
+        "status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 2990178,
+        "sha256": "bb28964e77604e959655a637b9781006ccf291975107fab7d7c649cfd797397b",
+        "cache": "HIT"
+      },
+      "images": [
+        {
+          "type": "og:image",
+          "url": "https://prijimackynaskolu.cz/opengraph-image?63db45ffb17c61c1"
+        },
+        {
+          "type": "twitter:image",
+          "url": "https://prijimackynaskolu.cz/opengraph-image?63db45ffb17c61c1"
+        }
+      ]
+    },
+    {
+      "page": {
+        "url": "https://www.prijimackynaskolu.cz/regiony",
+        "final_url": "https://www.prijimackynaskolu.cz/regiony",
+        "status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 3054310,
+        "sha256": "c16e49108b13722ae1c687baf2ecd90f50d82895bdead76990945a74901a4b72",
+        "cache": "PRERENDER"
+      },
+      "images": [
+        {
+          "type": "og:image",
+          "url": "https://prijimackynaskolu.cz/regiony/opengraph-image?63a1f82120405cf0"
+        },
+        {
+          "type": "twitter:image",
+          "url": "https://prijimackynaskolu.cz/regiony/opengraph-image?63a1f82120405cf0"
+        }
+      ]
+    },
+    {
+      "page": {
+        "url": "https://www.prijimackynaskolu.cz/simulator",
+        "final_url": "https://www.prijimackynaskolu.cz/simulator",
+        "status": 200,
+        "content_type": "text/html; charset=utf-8",
+        "bytes": 25171,
+        "sha256": "c4c60d84e1f1b4e2c18e438aa9aa9f09c8fe9f76959671e7ab00cc8d8cd4416a",
+        "cache": "HIT"
+      },
+      "images": [
+        {
+          "type": "og:image",
+          "url": "https://prijimackynaskolu.cz/simulator/opengraph-image?e4628ba4b3afe593"
+        },
+        {
+          "type": "twitter:image",
+          "url": "https://prijimackynaskolu.cz/simulator/opengraph-image?e4628ba4b3afe593"
+        }
+      ]
+    }
+  ],
+  "linked_images": [
+    {
+      "url": "https://prijimackynaskolu.cz/opengraph-image?63db45ffb17c61c1",
+      "final_url": "https://www.prijimackynaskolu.cz/opengraph-image?63db45ffb17c61c1",
+      "status": 500,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 6602,
+      "sha256": "36f106ff9bc7b7e4c51841ce6561db56e90baab3f1c5134f75ff5006c74458ef",
+      "cache": "MISS"
+    },
+    {
+      "url": "https://prijimackynaskolu.cz/regiony/opengraph-image?63a1f82120405cf0",
+      "final_url": "https://www.prijimackynaskolu.cz/regiony/opengraph-image?63a1f82120405cf0",
+      "status": 500,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 6602,
+      "sha256": "36f106ff9bc7b7e4c51841ce6561db56e90baab3f1c5134f75ff5006c74458ef",
+      "cache": "MISS"
+    },
+    {
+      "url": "https://prijimackynaskolu.cz/simulator/opengraph-image?e4628ba4b3afe593",
+      "final_url": "https://www.prijimackynaskolu.cz/simulator/opengraph-image?e4628ba4b3afe593",
+      "status": 500,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 6602,
+      "sha256": "36f106ff9bc7b7e4c51841ce6561db56e90baab3f1c5134f75ff5006c74458ef",
+      "cache": "MISS"
+    }
+  ]
+}

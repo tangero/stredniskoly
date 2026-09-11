@@ -1,0 +1,24 @@
+{
+  "id": "prj_Yh3UGtfELluIwvXazLyVxF5JIPsD",
+  "name": "stredniskoly",
+  "framework": null,
+  "accountId": "team_6pc2wHKjeUuaXwZfCS3jOhvX",
+  "createdAt": 1769267594154,
+  "updatedAt": 1789118283249,
+  "nodeVersion": "24.x",
+  "live": false,
+  "latestDeployment": {
+    "id": "dpl_2yPr8A6U8xPpkF5oWcsfnEi1xU9o",
+    "url": "stredniskoly-97c6wd1ol-tangeros-projects.vercel.app",
+    "createdAt": 1789109642365,
+    "readyState": "READY",
+    "target": "production"
+  },
+  "domains": [
+    "stredniskoly.vercel.app",
+    "www.prijimackynaskolu.cz",
+    "prijimackynaskolu.cz",
+    "stredniskoly-tangeros-projects.vercel.app",
+    "stredniskoly-git-main-tangeros-projects.vercel.app"
+  ]
+}

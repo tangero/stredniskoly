@@ -1,6 +1,6 @@
 # Oponentura návrhu rozvoje 2027
 
-Verze 2.2 / R2 — doplněna odpověď autora 11. 9. 2026. Vstupní posudek v2.1/R2 zahrnoval O-19 po ověření Log Drainu. Předmět: `navrh-rozvoje-2027.md` v2.1, `prd-muj-vyber-2027.md` v0.5, `analyza-navstevnosti-2026.md` v1.1/A1.
+Verze 2.2.1 / R2 — doplněna následná kontrola O-19 11. 9. 2026. Vstupní posudek v2.1/R2 zahrnoval O-19 po ověření Log Drainu. Předmět: `navrh-rozvoje-2027.md` v2.1, `prd-muj-vyber-2027.md` v0.5, `analyza-navstevnosti-2026.md` v1.1/A1.
 
 Stav: oponentní posudek k rozhodnutí, nikoli schválená změna zadání. Body označené **OVĚŘENO** jsem doložil spuštěním kódu nebo stažením zdroje; **NÁZOR** je argumentace bez tvrdého důkazu.
 
@@ -558,3 +558,4 @@ Podrobnosti, důkazní přílohy a požadavky na doplnění oponentních důkaz�
 | 2.0 / R2 | 11. 9. 2026 | Oponent ověřil protidůkazy R1 a přidal O-15–18; pracovní vstup uchován ve snímku R2. |
 | 2.1 / R2 | 11. 9. 2026 | Oponent během auditu přidal O-19; zachován dodatečný snímek a manifest. |
 | 2.2 / R2 | 11. 9. 2026 | Odpověď autora na aktuálních 19 ID, nové důkazy a odkazy na návrh v2.2, PRD v0.6 a analýzu v1.3. Nejde o oponentní schválení odpovědi. |
+| 2.2.1 / R2 | 11. 9. 2026 | Opakovaná kontrola O-19 v 11:33 CEST: tři přímé adresy i tři skutečné odkazy metadat stále HTTP 500. Důkazy a stav v návrhu §13/O-19; oprava na produkci nepotvrzena. |
