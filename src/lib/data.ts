@@ -623,7 +623,6 @@ export interface RegionStats {
   totalKapacita: number;
   totalPrihlasky: number;
   avgIndexPoptavky: number;
-  avgMinBody: number;
 }
 
 export async function getRegionStats(schools: School[]): Promise<RegionStats> {
@@ -633,21 +632,18 @@ export async function getRegionStats(schools: School[]): Promise<RegionStats> {
       totalKapacita: 0,
       totalPrihlasky: 0,
       avgIndexPoptavky: 0,
-      avgMinBody: 0
     };
   }
 
   const totalKapacita = schools.reduce((sum, s) => sum + (s.kapacita || 0), 0);
   const totalPrihlasky = schools.reduce((sum, s) => sum + (s.prihlasky || 0), 0);
   const avgIndexPoptavky = schools.reduce((sum, s) => sum + (s.index_poptavky || 0), 0) / schools.length;
-  const avgMinBody = schools.reduce((sum, s) => sum + (s.min_body || 0), 0) / schools.length;
 
   return {
     totalSchools: schools.length,
     totalKapacita,
     totalPrihlasky,
     avgIndexPoptavky,
-    avgMinBody
   };
 }
 
