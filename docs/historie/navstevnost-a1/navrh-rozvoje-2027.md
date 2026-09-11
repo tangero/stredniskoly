@@ -1,10 +1,10 @@
 # Návrh rozvoje Přijímaček na školu pro přijímací řízení 2027
 
-**Verze 2.1 — doplnění ověřené návštěvnosti A1 po vypořádání R1, 11. 9. 2026.** Stav: revidované zadání k další oponentuře. Nejde o potvrzení opravy produkčního simulátoru ani o schválení dosud otevřených produktových voleb.
+**Verze 2.0 — vypořádání oponentury v1.1, kolo R1, 11. 9. 2026.** Stav: revidované zadání k další oponentuře. Nejde o potvrzení opravy produkčního simulátoru ani o schválení dosud otevřených produktových voleb.
 
 Sekce 1 a úvod sekce 2 zachycují audit před dodávkou `c9ae452`; aktuální návrh v sekcích 3–9 je upraven podle zjištění R1. Úplné [původní znění](historie/rozvoj-2027-r0/navrh-rozvoje-2027.md) je zachováno. Každá připomínka O-1 až O-14 a obě přílohy mají [vypořádání níže](#vyporadani-r1), včetně nesouhlasu a důkazů. Historie a pravidla dalšího kola jsou na konci.
 
-Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.5](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **O-13 zůstává otevřeným produkčním blokátorem:** odstranění zavádějících výstupů simulátoru je první opravná dodávka nezávislá na budoucí integraci Mého výběru. O-4 je navazující technický dluh. V tomto kole se mění zadání a podklady, nikoli aplikace.
+Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.4](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **O-13 zůstává otevřeným produkčním blokátorem:** odstranění zavádějících výstupů simulátoru je první opravná dodávka nezávislá na budoucí integraci Mého výběru. O-4 je navazující technický dluh. V tomto kole se mění zadání a podklady, nikoli aplikace.
 
 Doporučení: po opravné dodávce pokračovat ověřenými profily a Mým výběrem. Do návrhu profilů přidat historii JPZ 2017–2023 a maturitní výsledky školy jako oddělené datové oddíly. Výzkum návaznosti vstupu a výstupu ověřit samostatně; propojení agregátů přes školu samo nedokládá kohortu ani přidanou hodnotu.
 
@@ -74,14 +74,6 @@ Od 1. 9. 2026 se mění zejména režim konzervatoří a digitalizace doporučen
 
 Nabídku a kapacity 2027 nelze vydávat za kompletní jen na základě historie 2026. Rejstříkové oprávnění vyučovat obor není vyhlášením přijímacího řízení do tohoto oboru.
 
-### Návštěvnost A1: ověřený dopad na priority
-
-[Analýza v1.1](analyza-navstevnosti-2026.md) reprodukuje Matomo pro 11. 2.–11. 9. 2026: 25 762 návštěv a 44 527 zobrazení stránek. Dvě adresy simulátoru mají 4 062 zobrazení a 2 652 vstupů; školní profily a podstránky pod `/skola/` mají v úplném exportu 14 462 zobrazení. Telefony/phablety tvoří 65,4 % návštěv. Populace jsou relace měření, nikoli děti či rodiny.
-
-To potvrzuje opravu S0 a podporuje uložení konkrétního oboru přímo z profilu, hledání a opraveného simulátoru. Mobilní průchod je blokující podmínkou vydání. Předpokládaný zájem o nový obsah profilů, přípravu nebo sdílení se musí ověřit úkony, nikoli jen nynějšími návštěvami.
-
-Původní analýza obsahovala záměny návštěv/akcí/zobrazení a několik nedoložených interpretací; jejich kompletní vypořádání je v analýze v1.1 §9. Přímé vstupy nedokazují znalost značky, 8,4 % návštěv připsaných AI asistentům nedokládá účinek `llms.txt` a dostupná data neprokazují listopadový růst. Zachovat SEO a ověřovat distribuční pilot značenými odkazy. Doporučený nejzazší termín S0 **31. 10. 2026** vychází z kalendáře přihlášek na konzervatoře; opravu připravit nyní, nečekat na tento termín.
-
 ## 3. Co bych opravil před rozšiřováním
 
 **Opravná dodávka S0 — simulátor (O-13), před implementací Mého výběru.** Aktuální `src/app/simulator/SimulatorClient.tsx` kategorizuje rozdíl proti `min_body_2025` pomocí ±10 bodů jako vysokou/malou šanci. Vada je doložena i ve veřejně doručovaném JS. Zrušit tyto predikční kategorie, souhrny, filtrování a doporučování odvozené z nedoložené hranice. Nenahrazovat je jinou konstantou ani pouhým upozorněním. Zachovat hledání a ověřená historická fakta; u osobního porovnání bez srovnatelného údaje zobrazit „Pro toto porovnání nemáme ověřený údaj“.
@@ -91,8 +83,6 @@ Prověřit API `src/app/api/schools/search/route.ts` a jeho zpracování v simul
 **Podmínky uzavření S0:** zkontrolované API a všechny větve rozhraní včetně vybraných oborů, doporučení a sdílených URL; ověření chybějících hodnot a více zaměření jedné školy; vhodné regresní testy, build a kontrola mobilu/desktopu; po nasazení kontrola veřejného výsledku. Samotná změna textu návrhu O-13 neuzavírá.
 
 **Technický dluh O-4:** odstranění nepodložených `estimatedChancePct`, `estimatedMinScore`, kategorií a rizika kombinace z výpočtového rozhraní `chances.ts`. Zobrazené historické podíly a poptávka zůstávají popisné. Podmínkou uzavření je kontrola všech konzumentů a test, že veřejné rozhraní nevrací osobní predikci. Nyní se predikce v Moje šance nevykreslují, ale výpočet není odstraněn.
-
-**M0 — ověřit měření před hodnocením nových funkcí.** V kódu je jen úvodní `trackPageView`; v Matomo je report vlastních událostí prázdný. Nevyvozovat z toho nezájem o funkce. Ověřit klientské přechody Next.js včetně zpět/vpřed a zabránit dvojímu měření. Definovat úspěšné uložení, porovnání, zálohu a sdílení s jasným jmenovatelem a povolenými vlastnostmi bez soukromého obsahu či tokenů. M0 neodkládá odstranění vad v S0; blokuje vyhodnocení míry použití nového rozhraní, dokud nejsou události ověřené. Přijímací postup a limity jsou v analýze A1 §7. Rutinní čtení Matomo už je implementované podle [návodu](matomo-pristup.md); měření aplikace v této revizi opravené není.
 
 **Zachovat rok u každé informace.** Výsledky 2026, kapacita potvrzená pro 2027 a historické školné nesmějí působit jako údaje ze stejného období. Chybějící hodnota není nula. Historické minimum není předpověď příští hranice a samo o sobě nereprodukuje školní pořadí.
 
@@ -223,20 +213,19 @@ Původních 26–39 člověkodnů A–C je historický odhad před dodávkou, ni
 | Pořadí / balík | Zbývající obsah | Pracovní odhad |
 |---|---|---:|
 | S0 — současná zavádějící doporučení | O-13 celý tok simulátoru + odstranění mrtvých predikcí O-4; kontrola a nasazení | 2–4 člověkodny |
-| M0 — měření | Ověření a základ opravy navigačního měření; definice událostí nových funkcí, jejich realizace patří do C | 1–2 člověkodny navíc |
 | B — data a profily | Identita nabídky, nepokryté obory, stavy 2027, ověřování školou a moderace; bez zopakování obnovy prvního kola a kalendáře | 8–13 člověkodnů |
 | C — Můj výběr | Ukládání, porovnání, plán, účet bez hesla, záloha a náhled; dle uzavřeného PRD | 10–16 člověkodnů |
 | H — historie a maturita | Produkční adaptéry a popisné oddíly profilů po ověření vzorků R1 | 3–6 člověkodnů navíc |
 | V — studie vstupu/výstupu | Protokol, párování skupin, citlivost a rozhodnutí o publikaci; bez slibu kalibrované přidané hodnoty | 3–5 analytických dnů + metodická oponentura |
 | D — příprava | Rozbor, plán, původní úlohy, tutor; rozsah dosud neimplementován | Původní pracovní odhad 20–35 člověkodnů + 40–80 hodin učitele, nutno zpřesnit |
 
-S0+B+C: **20–33 zbývajících člověkodnů** podle rozsahu R1; s novým M0 **21–35**. Dny M0 nejsou naměřená spotřeba, případná změna archivace Matomo není součástí odhadu. H a V jsou oddělené volitelné rozšíření; neblokují základní ukládání, jejich datové místo v profilu se navrhne už nyní. Čísla nejsou příslibem termínu a jejich přesnost nebyla měřena. Návrh nemá oporu pro tvrzení, že všechno párování opravíme za několik hodin.
+S0+B+C: **20–33 zbývajících člověkodnů** podle nového rozsahu. H a V jsou oddělené volitelné rozšíření; neblokují základní ukládání, jejich datové místo v profilu se navrhne už nyní. Čísla nejsou příslibem termínu a jejich přesnost nebyla měřena. Návrh nemá oporu pro tvrzení, že všechno párování opravíme za několik hodin.
 
 S0 připravit jako následující opravnou dodávku, nezávisle na integraci simulátoru do Mého výběru. Po jejím uzavření implementovat pilot podle PRD; návrh ovládání a inventura dat mohou běžet souběžně. V lednu ověřovat vyhlášená kritéria 2027, další sezónní priority řídit kalendářem. Kalendář již byl publikován a znovu se nepočítá jako budoucí úkol.
 
 Kalendářní termíny škol nejsou termíny vydání našeho softwaru. Kritické listopadové informace o konzervatořích se musí objevit i tehdy, pokud plný katalog nebude dokončen.
 
-První průchod podle PRD ověřit s 5–8 rodinami, širší pilot hodnotit na 10–15 rodinách pro výběr škol a přibližně 30–50 žácích pro použitelnost přípravy. Tak malý vzorek neposkytne důkaz populační účinnosti nebo kalibrace predikce. Sledovat, zda rodina rozumí údajům, našla vhodnou alternativu, dokončila porovnání a zda se žák zlepšuje na jiných úlohách. Účinnost přípravy později ověřit s kontrolou výchozí úrovně, docházky a odpadávání uživatelů.
+Pilot hodnotit na 10–15 rodinách pro výběr škol a přibližně 30–50 žácích pro použitelnost přípravy. Tak malý vzorek neposkytne důkaz populační účinnosti nebo kalibrace predikce. Sledovat, zda rodina rozumí údajům, našla vhodnou alternativu, dokončila porovnání a zda se žák zlepšuje na jiných úlohách. Účinnost přípravy později ověřit s kontrolou výchozí úrovně, docházky a odpadávání uživatelů.
 
 Rozpočet určit z člověkodnů a skutečné sazby týmu. U tutora průběžně měřit náklad na aktivního žáka, počet dotazů, latenci a chyby. Provozní cenu nemá smysl odhadovat bez zvoleného modelu a reálné spotřeby. Odborná validace obsahu je samostatná položka.
 
@@ -338,12 +327,3 @@ Další kolo přidá odpověď R2 se stejnými ID, nové body dostanou další I
 | 2.0 / R1 | 11. 9. 2026 | Codex | Reakce na oponenturu v1.1: historie JPZ a MZ, limity kohorty, vyvrácení plošného párování, S0 před Mým výběrem, zbývající odhady a odpovědi na všechna ID/přílohy. Související PRD v0.4. |
 
 Identifikátor revize R1: `rozvoj-2027-r1`. Commit této odpovědi lze dohledat přes `git log --all --grep='rozvoj-2027-r1'`; hash se nezapisuje do vlastního commitovaného obsahu, aby nevznikla kruhová reference. Přesné vstupní dokumenty a jejich kontrolní součty jsou v [manifestu R0](historie/rozvoj-2027-r0/manifest.json). Nové kolo doplní konkrétní hash předchozího kola do své historie.
-
-
-## 12. Aktualizace A1 — návštěvnost a rutinní Matomo
-
-| Verze / doplnění | Datum | Změna a doklad |
-|---|---|---|
-| 2.1 / A1 | 11. 9. 2026 | Zapracování analýzy návštěvnosti v1.1, priorita uložení v profilech, mobil jako podmínka, M0 a interní cílový termín S0. Ověřený čtecí klient Matomo a reprodukovatelné agregáty. |
-
-Předchozí revize 2.0 / R1 je commit `5a0f893`, její přesný snímek i PRD v0.4 jsou v `historie/navstevnost-a1/`. A1 je doplnění nových dat, nikoli druhé oponentní kolo a nikoli souhlas oponenta s R1. Historie O-1 až O-14 zůstává beze změny; O-13 stále není opraveno v produkci. Tento zápis nevybírá varianty D4/D8 a neslibuje termín veřejného Mého výběru. Revizi lze dohledat pomocí `git log --all --grep='matomo-navstevnost-a1'`.

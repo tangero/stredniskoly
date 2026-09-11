@@ -1,14 +1,12 @@
 # PRD: Můj výběr 2027, profily oborů a podklady pro rozhodování
 
-- **Verze:** 0.5, pracovní návrh pro společnou diskusi.
+- **Verze:** 0.4, pracovní návrh pro společnou diskusi.
 - **Datum:** 11. 9. 2026.
 - **Stav:** Uživatel schválil směr: návrh Mého výběru, úpravu datového základu a profilů, následnou realizaci pilotu. Schváleny D1 a základ D2: okamžité ukládání, volitelný průvodce „Pomoz mi s výběrem“, jednoduchý účet bez hesla a odkaz k náhledu. Zbývající volby jsou označené níže.
 - **Rozsah této práce:** produktové zadání a interaktivní ukázka ovládání. Žádná nová produkční funkce ani rozesílka.
 - **Návaznost:** `navrh-rozvoje-2027.md`, `aktualizace-kalendar-data-2027.md`, samostatné `prd-priprava-na-jpz.md`.
 
 **Revize po oponentuře R1:** [návrh rozvoje v2.0](navrh-rozvoje-2027.md#vyporadani-r1) obsahuje odpovědi na O-1 až O-14 i přílohy. Tato verze zapracovává dopady do profilů a pořadí realizace. Původní [PRD v0.3](historie/rozvoj-2027-r0/prd-muj-vyber-2027.md) zůstává zachováno. Oponent zatím neověřil vypořádání R1.
-
-**Doplnění A1:** [ověřená návštěvnost v1.1](analyza-navstevnosti-2026.md) zpřesňuje dosah profilů a simulátoru, podíl telefonů a limity měření. Podle [návrhu v2.1](navrh-rozvoje-2027.md) doplňuje M0; není novým kolem externí oponentury. Původní PRD v0.4 je ve snímku `historie/navstevnost-a1/`.
 
 ## Aktuální stav realizace k 11. 9. 2026
 
@@ -21,8 +19,6 @@ Tento přehled odděluje dokončenou dodávku od návrhu následující etapy. S
 | Opravy propojení a výkladu dat | **Hotovo a nasazeno v dotčených cestách** | Normalizace zaměření, odmítání nejednoznačného párování, opravy označení skóre a městských komentářů; odstranění nepodložených osobních procent a předpovědí z přehledu konkurence. Nejde o audit všech starších kalkulaček. |
 | Simulátor — O-13 | **Otevřený produkční blokátor** | Veřejný JS stále obsahuje predikční kategorie s prahem ±10. Samostatná oprava S0 před implementací Mého výběru; změna PRD není opravou kódu. |
 | Mrtvé predikční výpočty — O-4 | **Otevřený technický dluh** | V Moje šance se nevykreslují, ale zůstávají v rozhraní `chances.ts`; odstranění v S0. |
-| Rutinní přístup ke statistikám | **Implementováno a ověřeno lokálně** | Čtecí klient Matomo pro web 7, soukromé uložení tokenu, snímky a souhrny; viz `matomo-pristup.md`. Žádné automatické úlohy ani změny serverového měření. |
-| Měření přechodů a nových úkonů — M0 | **Navrženo, neimplementováno** | Ověřit klientskou navigaci a doplnit události při realizaci funkcí. Nynější API přístup tuto vadu neřeší. |
 | Historie JPZ a maturitní data | **Inventura ověřena, produkční import nehotov** | Rozebrány JPZ 2017–2023 a vzorky MZ 2026j/2025jap. Obsah profilů navržen níže, žádný ukazatel přidané hodnoty školy není validován. |
 | Úplný katalog a nabídka 2027 | **Zbývá dokončit** | Doplnit obory mimo JPZ, nové a přejmenované nabídky a ověřená kritéria a kapacity 2027. Historické výsledky nejsou potvrzením otevření oboru v roce 2027. |
 | Výsledky druhého kola 2026 | **Nezapojeno** | Kalendář druhé kolo pokrývá, jeho výsledky dosud nejsou součástí této obnovy. |
@@ -79,12 +75,6 @@ Prázdný výběr má dvě cesty:
 - „Pomoz mi s výběrem“ otevře volitelný průvodce: odkud a po jaké třídě hledám, co mě baví, maturita/řemeslo/ještě nevím, dojíždění, případně školné a internát. Body z JPZ nejsou vstupní podmínkou.
 
 Výsledek průvodce je vysvětlitelný seznam kandidátů s možností měnit filtry. Není to psychologický test. Omezení „musí platit“ se oddělují od preferencí „bylo by příjemné“. Když výsledek neexistuje, systém navrhne, který filtr lze rozšířit, ale nezmění ho bez uživatele.
-
-### 4.1 Vstupy podle návštěvnosti A1
-
-Jednotná akce „Uložit do výběru“ patří na profil konkrétní nabídky, do výsledků hledání a do opraveného simulátoru. Nevyžaduje předchozí návštěvu hlavní stránky ani průvodce. Po úspěšném uložení zůstane uživatel v kontextu profilu a může zvolit „Otevřít Můj výběr“. Stav odlišuje uložení v prohlížeči a potvrzenou zálohu. Obecný profil školy s více obory nejprve nabídne volbu oboru; nelze uložit neurčitou školu a tvářit se, že jde o konkrétní přihláškovou nabídku.
-
-Podklad: `/skola/` včetně podstránek má 14 462 zobrazení v ověřeném exportu a telefony/phablety 65,4 % měřených návštěv. To podporuje místo akce a důraz na telefon, ale nedokazuje konverzi navrženého tlačítka ani preferenci seznamu před kartami. Schválené D1/D2 se nemění.
 
 ## 5. Pohled Výběr
 
@@ -229,8 +219,6 @@ Konkrétní podklady: `src/components/school/guided/GuidedJourneyWizard.tsx`, `s
 
 **S0 — oprava současného doporučování:** O-13 a O-4 podle návrhu rozvoje v2.0 §3. Podmínkou uzavření jsou změna kódu, příslušné kontroly, nasazení a ověření veřejného výsledku. Do té doby lze navrhovat A, ale implementaci pilotu B nezačínat.
 
-**M0 — měření:** ověřit navigaci a definice úspěšných úkonů před měřeným vyhodnocením pilotu. Žádné dvojité pageview, žádné tokeny/poznámky v URL ani událostech. Neodkládá S0. Implementace událostí ukládání či zálohy patří až k funkčnímu kroku B/C.
-
 **A — návrh a datové podmínky:** uzavřít D1–D4, otestovat prototyp s rodinami, sepsat stavy nabídky, identitu oboru a obsah profilu. Oddělit opravy historických výpočtů od nového osobního prostoru.
 
 **B — první použitelný výběr:** ukládání a odkládání oborů, místní persistence, poznámky, porovnání, základ plánu a návrh pořadí pro ověřené režimy. Datové importy a profily musejí umožnit nezaměnitelné položky. Nenabízet nepokryté obory jako kompletní katalog.
@@ -256,11 +244,9 @@ Návrh testů s 5–8 rodinami: nejde o statistický důkaz, ale o odhalení nep
 9. Zachovat práci při prošlém přihlašovacím odkazu i při otevření e-mailu na jiném zařízení.
 10. U maturitního údaje správně rozpoznat, zda popisuje školu nebo skupinu oborů, a neoznačit jej za výsledek konkrétního zaměření. Při zobrazené starší historii rozlišit konající uchazeče od přijatých. Tento scénář je podmínkou vydání příslušných datových oddílů.
 
-**Mobilní průchod je blokující podmínka vydání:** na šířkách 360/390 px a skutečném telefonu rodina zvládne přímý vstup na profil, volbu oboru, uložení, návrat, porovnání dvou možností a změnu pořadí bez přesného přetahování. Ověřit také desktop a klávesnici; device share neslouží jako omluva pro jejich nefunkčnost.
-
 Podmínky vydání: bez tiché ztráty dat, bez zaměněných identit, ověřené limity a kalendář podporovaných režimů, průchod klávesnicí a čtečkou, viditelné stavy chyb, mobilní ovládání bez přesného přetahování. Nulové či staré údaje nesmějí vést ke slibu přijetí.
 
-Měřit dokončení úloh v pilotu, návrat k uloženému výběru, použití porovnání a práci se zdroji. Produkční metriky musí rozlišovat uživatele od zařízení a mít stanovenou dobu pozorování; neodesílat obsah poznámek, přesné bydliště ani volný text do analytiky. Konkrétní cíle stanovit až po pilotu s ověřeným měřením M0. Do té doby prázdný report událostí ani nulové konverze nevykládat jako nulové používání. Událost zálohy vzniká až po potvrzení serveru, sdílení rozlišuje vytvoření a otevření odkazu. Vzniklá míra má uvedenou jednotku, způsobilý základ, období a pravidlo deduplikace; prohlížeč není automaticky člověk nebo rodina.
+Měřit dokončení úloh v pilotu, návrat k uloženému výběru, použití porovnání a práci se zdroji. Produkční metriky musí rozlišovat uživatele od zařízení a mít stanovenou dobu pozorování; neodesílat obsah poznámek, přesné bydliště ani volný text do analytiky. Konkrétní cíle stanovit až po pilotu.
 
 ## 13. Rozhodovací deník
 
@@ -286,8 +272,5 @@ Ukázka používá výhradně fiktivní školy a modelové hodnoty. Není doklad
 | 0.2 | 11. 9. 2026 | Zapsané D1 a základ D2 podle uživatele. |
 | 0.3 | 11. 9. 2026 | Přehled dokončené dodávky, návrhů a zbývající práce. Přesné znění uloženo v R0. |
 | 0.4 / R1 | 11. 9. 2026 | O-13 jako nezávislá přednostní oprava S0, technický dluh O-4, historie JPZ a MZ v profilech, ověření porozumění granularitě. Vypořádání všech připomínek v návrhu rozvoje v2.0. |
-| 0.5 / A1 | 11. 9. 2026 | Vstupy do ukládání podle ověřené návštěvnosti, blokující mobilní průchod, zadání M0 a hotový čtecí přístup k Matomo. |
 
 Verze 0.1 a 0.2 jsou popsány podle průběhu této práce; samostatné úplné snímky těchto dvou verzí nebyly uloženy. Snímek 0.3 je neměnný. Revize 0.4 patří do commitu označeného `rozvoj-2027-r1`. Nové produktové volby D4 a D8 zůstávají otevřené.
-
-Revize 0.4 je uložena v commitu `5a0f893` a ve snímku A1; 0.5 patří do revize `matomo-navstevnost-a1`. Návštěvnost neuzavírá D3, D4, D8 ani oponentní připomínky R1.

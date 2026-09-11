@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "source": {
+    "endpoint": "https://ma.hlidacstatu.cz/index.php",
+    "idSite": 7,
+    "snapshot_sha256": "9816b0c290bec2c92078b34a3caaabd63f83fd1d3c5ff2832512bd3ea981eae8",
+    "start": "2026-02-11",
+    "end_inclusive": "2026-09-11",
+    "timezone": "Europe/Prague",
+    "partial_current_day": true,
+    "queries": {
+      "visits": {
+        "params": {
+          "module": "API",
+          "method": "VisitsSummary.get",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:04.202801+00:00",
+        "response_sha256": "8878fd1fb9b683667b7c75b3c072bb5d3e73a5a63c161d0b3e78d2c70487fe4e"
+      },
+      "actions": {
+        "params": {
+          "module": "API",
+          "method": "Actions.get",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:04.405160+00:00",
+        "response_sha256": "0fb244ae5a2e508a6962a2970b38110f602354efd7fa2486e278e97905be012f"
+      },
+      "pages": {
+        "params": {
+          "module": "API",
+          "method": "Actions.getPageUrls",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:05.388190+00:00",
+        "response_sha256": "bc6d77a8f15631c469ee9b814651e5a4ef14499c45de31616aa88910d4ac1825"
+      },
+      "entries": {
+        "params": {
+          "module": "API",
+          "method": "Actions.getEntryPageUrls",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:05.823126+00:00",
+        "response_sha256": "9befd3240755d1e601ab90156da0d253bc866de0f60f09939a3bbece50cb4c6e"
+      },
+      "devices": {
+        "params": {
+          "module": "API",
+          "method": "DevicesDetection.getType",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:05.962138+00:00",
+        "response_sha256": "245c8ddbb59b74db0ccaa2eea9acd76a25c8d21c5ed5f9f48c76412647a52698"
+      },
+      "referrers": {
+        "params": {
+          "module": "API",
+          "method": "Referrers.getReferrerType",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:06.105378+00:00",
+        "response_sha256": "bdd5c2f22ad8cded5f855615a45e941c822d92afaf918802fed4f396a02ae219"
+      },
+      "socials": {
+        "params": {
+          "module": "API",
+          "method": "Referrers.getSocials",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:06.260996+00:00",
+        "response_sha256": "760ccef9a96b93e66f3d14435aa758370e8d65eaa6cd4f37c920b70a9482fbc0"
+      },
+      "returning": {
+        "params": {
+          "module": "API",
+          "method": "VisitFrequency.get",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:06.552303+00:00",
+        "response_sha256": "73832493b021240c767cfbb884e71319b7fb3fbe1d1d1e08408569590166643a"
+      },
+      "search": {
+        "params": {
+          "module": "API",
+          "method": "Actions.getSiteSearchKeywords",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:06.708186+00:00",
+        "response_sha256": "061233aa7c13704ad6752fd828f4155d9ba846612d0f83d501c8212b9daa5888"
+      },
+      "events": {
+        "params": {
+          "module": "API",
+          "method": "Events.getCategory",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:06.886957+00:00",
+        "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    }
+  },
+  "visits": 25762,
+  "actions": 46289,
+  "pageviews": 44527,
+  "avg_time_seconds": 285,
+  "returning": {
+    "nb_visits_new": 13833,
+    "nb_visits_returning": 11937,
+    "avg_time_on_site_new": 296,
+    "avg_time_on_site_returning": 272
+  },
+  "devices_visits": {
+    "Smartphone": 15155,
+    "Desktop": 8693,
+    "Phablet": 1689,
+    "Tablet": 212,
+    "Unknown": 13,
+    "Camera": 0,
+    "Car browser": 0,
+    "Console": 0,
+    "Feature phone": 0,
+    "Peripheral": 0,
+    "Portable media player": 0,
+    "Smart display": 0,
+    "Smart speaker": 0,
+    "Tv": 0,
+    "Wearable": 0
+  },
+  "referrers_visits": {
+    "Direct Entry": 13256,
+    "Search Engines": 5649,
+    "Social Networks": 2626,
+    "AI Assistants": 2167,
+    "Websites": 1650,
+    "Campaigns": 414
+  },
+  "phone_share": 0.6538312242838289,
+  "monthly": [
+    {
+      "start": "2026-02-11",
+      "end": "2026-02-28",
+      "visits": 7847,
+      "actions": 16739,
+      "pageviews": 16062,
+      "avg_time_seconds": 391,
+      "bounce_rate": 0.65,
+      "simulator_exact_page_visits": 1404,
+      "moje_sance_exact_page_visits": 0
+    },
+    {
+      "start": "2026-03-01",
+      "end": "2026-03-31",
+      "visits": 3464,
+      "actions": 5081,
+      "pageviews": 4832,
+      "avg_time_seconds": 154,
+      "bounce_rate": 0.76,
+      "simulator_exact_page_visits": 420,
+      "moje_sance_exact_page_visits": 299
+    },
+    {
+      "start": "2026-04-01",
+      "end": "2026-04-30",
+      "visits": 3458,
+      "actions": 5067,
+      "pageviews": 4923,
+      "avg_time_seconds": 184,
+      "bounce_rate": 0.73,
+      "simulator_exact_page_visits": 461,
+      "moje_sance_exact_page_visits": 117
+    },
+    {
+      "start": "2026-05-01",
+      "end": "2026-05-31",
+      "visits": 6349,
+      "actions": 12681,
+      "pageviews": 12216,
+      "avg_time_seconds": 381,
+      "bounce_rate": 0.68,
+      "simulator_exact_page_visits": 288,
+      "moje_sance_exact_page_visits": 329
+    },
+    {
+      "start": "2026-06-01",
+      "end": "2026-06-30",
+      "visits": 1582,
+      "actions": 2055,
+      "pageviews": 1980,
+      "avg_time_seconds": 94,
+      "bounce_rate": 0.83,
+      "simulator_exact_page_visits": 99,
+      "moje_sance_exact_page_visits": 53
+    },
+    {
+      "start": "2026-07-01",
+      "end": "2026-07-31",
+      "visits": 924,
+      "actions": 1217,
+      "pageviews": 1181,
+      "avg_time_seconds": 124,
+      "bounce_rate": 0.81,
+      "simulator_exact_page_visits": 26,
+      "moje_sance_exact_page_visits": 25
+    },
+    {
+      "start": "2026-08-01",
+      "end": "2026-08-31",
+      "visits": 1223,
+      "actions": 2069,
+      "pageviews": 2013,
+      "avg_time_seconds": 238,
+      "bounce_rate": 0.79,
+      "simulator_exact_page_visits": 44,
+      "moje_sance_exact_page_visits": 33
+    },
+    {
+      "start": "2026-09-01",
+      "end": "2026-09-11",
+      "visits": 915,
+      "actions": 1380,
+      "pageviews": 1320,
+      "avg_time_seconds": 143,
+      "bounce_rate": 0.74,
+      "simulator_exact_page_visits": 26,
+      "moje_sance_exact_page_visits": 34
+    }
+  ],
+  "named_pages": {
+    "/": {
+      "nb_hits": 17771,
+      "nb_visits": 11625,
+      "entry_nb_visits": 10128
+    },
+    "/simulator": {
+      "nb_hits": 3286,
+      "nb_visits": 2768,
+      "entry_nb_visits": 2165
+    },
+    "/moje-sance": {
+      "nb_hits": 1324,
+      "nb_visits": 890,
+      "entry_nb_visits": 713
+    },
+    "/skoly": {
+      "nb_hits": 1051,
+      "nb_visits": 862,
+      "entry_nb_visits": 611
+    },
+    "/dostupnost": {
+      "nb_hits": 921,
+      "nb_visits": 799,
+      "entry_nb_visits": 606
+    },
+    "/simulator?srovnani=1": {
+      "nb_hits": 776,
+      "nb_visits": 647,
+      "entry_nb_visits": 487
+    },
+    "/vysledky/2026": {
+      "nb_hits": 807,
+      "nb_visits": 614,
+      "entry_nb_visits": 502
+    }
+  },
+  "page_groups": {
+    "home_exact": {
+      "pageviews": 17771,
+      "entries": 10128,
+      "page_visit_sum_not_unique": 11625
+    },
+    "school_profiles_prefix": {
+      "pageviews": 14462,
+      "entries": 7768,
+      "page_visit_sum_not_unique": 12633
+    },
+    "simulator_two_urls": {
+      "pageviews": 4062,
+      "entries": 2652,
+      "page_visit_sum_not_unique": 3415
+    },
+    "other_pages": {
+      "pageviews": 8232,
+      "entries": 4892,
+      "page_visit_sum_not_unique": 6701
+    }
+  },
+  "events_report_rows": 0,
+  "checks": {
+    "monthly_visits_match": true,
+    "device_visits_match": true,
+    "referrer_visits_match": true,
+    "pageviews_match": true,
+    "entry_visits_unreconciled": 322,
+    "new_plus_returning_minus_total": 8
+  },
+  "limits": [
+    "Návštěvy nejsou lidé ani rodiny; skupinové návštěvy stránek nelze sčítat jako jedinečné návštěvy.",
+    "Skupina school_profiles_prefix zahrnuje podstránky i agregát Others.",
+    "simulator_two_urls zahrnuje jen /simulator a /simulator?srovnani=1.",
+    "Neuzavřené rozdíly kontrol se nesmějí automaticky přerozdělit mezi kategorie."
+  ]
+}

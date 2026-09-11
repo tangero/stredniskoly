@@ -1,0 +1,8 @@
+{
+  "scope": "Vstup revize A1: analýza v1.0, návrh v2.0 a PRD v0.4; stav 11. 9. 2026",
+  "sha256": {
+    "analyza-navstevnosti-2026.md": "c1c66ee37a56685d2118a9a7a188960a6ed8a9bec600efe814cb4e07a63c4095",
+    "navrh-rozvoje-2027.md": "b21dc63e329d446b53b51d768fd7750383b3d9ec05f8c9eee600ebbd84fac93d",
+    "prd-muj-vyber-2027.md": "5e97ef5be82dcff8bea7d6709924862ddd301a4d39981d5cdc15f1b1be585963"
+  }
+}
