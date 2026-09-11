@@ -1,6 +1,6 @@
 # P0 dat na kartách a návaznost O-13
 
-Verze 1.0, 11. 9. 2026. **Implementováno a lokálně ověřeno; veřejná přejímka čeká na nasazení. P0/O-13 zatím neuzavíráme.**
+Verze 1.1, 11. 9. 2026. **Implementováno a lokálně ověřeno; veřejná přejímka čeká na nasazení. P0/O-13 zatím neuzavíráme.**
 
 ## Dodaný rozsah
 
@@ -18,7 +18,7 @@ Verze 1.0, 11. 9. 2026. **Implementováno a lokálně ověřeno; veřejná přej
 ## Ověření před nasazením
 
 - 18 jednotkových/renderovacích testů (`p0-quality`, `admission-metric`, `detail-stats-render`, `s0`, `admission-summary`, `simulator-filter`).
-- 25 integračních testů (`p0-pages`, `detail-stats`, `s0-api`, `simulator-transit`) nad izolovaným sestavením.
+- 26 integračních testů (`p0-pages`, `detail-stats`, `s0-api`, `simulator-transit`) nad izolovaným sestavením.
 - TypeScript, cílený lint a produkční build. Lokální worktree používá webpack kvůli sdílené instalaci závislostí; Vercel musí navíc projít standardním buildem projektu.
 - Mobilní kontrola hlavního profilu při šířce 390 px. Čtenář vidí jednotky, zdroj, historické počty a odkazy na další obory.
 - Test doručeného JS dekóduje `\u`/`\x` zápis znaků, takže stejná kontrola funguje pro webpack i turbopack. Zakázané fráze se tím kontrolují také v escapovaném zápisu.
@@ -32,3 +32,8 @@ Souběžně zahájena inventura: `podklady/migrace-katalogu-2027/` obsahuje 1 00
 ## Veřejná přejímka
 
 Čeká na nasazení. Doplnit commit/PR, stav nasazení a běh integrační sady na `https://www.prijimackynaskolu.cz`; teprve potom uzavřít P0 a celowebové O-13.
+
+
+### Doplnění závěrečné kontroly
+
+PR #81 prošlo standardním Vercel buildem a bylo sloučeno (`3eb9f1374029bdd2d7bf77b8cbc0ea539345efaf`). Před uzavřením se rozsah doplňuje o souhrnné karty regionů: neověřený průměr minimálních bodů je nahrazen počtem přihlášek 2025 a odstraněn i z loaderu. Markdown označuje poměr přihlášek jako poptávku, nikoli obtížnost přijetí. Přejímka zahrnuje i `/regiony`, ne pouze tabulku konkrétního kraje. Starý nepoužívaný renderer priorit již neobsahuje osobní predikční text. P0 zůstává do veřejného ověření tohoto doplnění otevřené.

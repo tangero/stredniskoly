@@ -90,7 +90,7 @@ export async function GET(
       : program.index_poptavky >= 2
         ? 'Střední konkurence'
         : 'Nízká konkurence';
-    md += `- **Obtížnost přijetí:** ${konkurence}\n\n`;
+    md += `- **Poptávka 2025 (přihlášky na místo):** ${konkurence}\n\n`;
   }
 
   if (extractions.length > 0) {
