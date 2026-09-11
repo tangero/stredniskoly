@@ -1,6 +1,8 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
+// Bez 'edge' runtime: edge wrapper Next.js 16 selhává na chybějícím
+// NEXT_DEPLOYMENT_ID a vrací 500, takže odkazy sdílené na sítích
+// zůstávaly bez náhledového obrázku. Výchozí runtime generuje obrázek stejně.
 
 export const alt = 'Přehled středních škol podle krajů ČR';
 export const size = {
