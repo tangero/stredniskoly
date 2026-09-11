@@ -1,6 +1,6 @@
 # Audit dat na kartách škol a oborů
 
-Verze 1.2 · 11. 9. 2026 · vypořádání oponentury R2 · produkční nálezy ze stavu `37ebfbc`; žádné aplikační opravy touto revizí.
+Verze 1.1 · 11. 9. 2026 · vypořádání oponentury v1.0 · produkční nálezy ze stavu `37ebfbc`; žádné aplikační opravy touto revizí.
 
 ## Závěr
 
@@ -52,7 +52,7 @@ Předchozí S0 a PR #78 opravily konkrétní konzumenty, nikoli všechny výstup
 
 ### A-03 — Navazující mezera přejímky O-13: chybná škála a význam (P0, veřejně potvrzeno)
 
-Veřejný `/detail` Macharova lycea: ČJ průměr 36/100, MA 30/100, oboje „těžší“. `getExtendedSchoolStats` už hodnoty přepočítal na 0–50, ale `StatsTab.tsx:188,202` je označuje /100 a aplikuje hranice 65/50. Výkon skupiny uchazečů navíc není obtížnost testu. Ve stejném detailu „Počet přihlášek N/A“: komponenta čte `program.prihlasen`, loader dodává `prihlasky`. Nutná oprava schématu i významu, ne pouhá aktualizace dat. R2 doplňuje ověřený řetězec: zdroj ČJ 72,2 % → 36,1 na standardní škále 0–50 → zobrazených 36 /100; MA 60,2 % → 30,1 → 30 /100. Chybný jmenovatel snižuje vnímaný podíl maxima přibližně na polovinu a nepodložená nálepka jej dále zkresluje. Priorita zůstává P0. Podrobné srovnání s datasetem a jeho omezení jsou ve vypořádání R2 níže.
+Veřejný `/detail` Macharova lycea: ČJ průměr 36/100, MA 30/100, oboje „těžší“. `getExtendedSchoolStats` už hodnoty přepočítal na 0–50, ale `StatsTab.tsx:188,202` je označuje /100 a aplikuje hranice 65/50. Výkon skupiny uchazečů navíc není obtížnost testu. Ve stejném detailu „Počet přihlášek N/A“: komponenta čte `program.prihlasen`, loader dodává `prihlasky`. Nutná oprava schématu i významu, ne pouhá aktualizace dat.
 
 ### A-04 — Zastaralé události v InspIS (P0 pro zobrazení, vysoká jistota)
 
@@ -144,37 +144,7 @@ Navržený kontrakt pro novou přijímací vrstvu: `value`, `unit` (`jpz_subject
 
 Přejímací matice O-13: simulátor, Můj výběr, školní přehled, karty oborů, hlavní profil, `/detail`, `/pro-me`, regionální a městský výpis, JSON/Markdown a metadata. Vzorky: více zaměření, 4/6/8leté studium, nulový počet, chybějící údaj, zadržený průměr, neúplný rozpad, bez shody 2026, více míst výuky. Statická kontrola nedoložených polí + datové testy + vykreslené výstupy + veřejná kontrola relevantních cest. Veřejná přejímka všech jednotlivých škol není nahrazena slibem; garantuje se pokrytí kombinací datových větví a explicitně se evidují výjimky.
 
-## Vypořádání oponentury R2
-
-Vstup: `oponentura-auditu-dat-karet-2027.md`, verze 2.0, posuzovaný audit v1.1. R2 přijímá V-1 až V-3 a původní vypořádání. Tyto dokumentační výhrady jsou uzavřené; O-13 a aplikační nálezy zůstávají otevřené. V1.1 zachována v `podklady/audit-dat-karet-2027/v1.1/`.
-
-| Bod R2 | Vypořádání |
-|---|---|
-| Potvrzené 2 075, 978 + 26 = 1 004, rok 20236 | Přijato, výpočty beze změny. V odstavci R2 o podtržítkách je ale převrácená role skriptů: `normalizeSchoolKey` odstraňuje koncové oddělovače; chybná v1.0 auditního Pythonu je ponechávala po prázdném zaměření. Důkaz je helper a `overeni-oponentury.mjs`, nikoli domněnka o skriptu oponenta. |
-| Přijetí upřesnění 7/7 a referenčního rámce | Uzavřeno. Přesný poměr není falešně přesný jako popis svého vzorku; zavádějící je jeho prezentace jako osobní predikce. Preferovat počty, rok a populaci. |
-| ČJ 72,2 %, MA 60,2 %, převod na 36,1 a 30,1 | Potvrzeno přímo v datech a `subjectScore`. A-03 doplněno o celý řetězec a zkreslení podílu maxima. Procentní původ byl již uveden v inventáři a návrhu kontraktu; R2 přidává konkrétní kvantifikaci dopadu. |
-| Průměry 59,0 / 41,8 a percentily 82 / 88 | Potvrzeno při rovné váze všech 2 837 řádků 2025: průměry 58,9633 / 41,7879; empirické pořadí s vazbami `<=` 82,0233 / 88,0155 %. Viz reprodukce `overeni-r2.py` a `overeni-r2.json`. |
-| „Patří k lepší pětině“ | Platí pouze pro takto vymezené pořadí průměrů ve dvou předmětech. Není to hodnocení kvality školy, percentil konkrétního žáka ani pořadí mezi lycei. Dataset mísí typy a délky studia a obsahuje nejednoznačné/duplicitní klíče; výpočet R2 je diagnostický, není schválen jako produkční žebříček. |
-| „Dvojí převod“ | Technicky upřesněno: jeden převod procentního skóru na standardní škálu 0–50, následné zaokrouhlení pro zobrazení a chybný jmenovatel /100. Komponenta hodnotu podruhé číselně nepřevádí; význam zkreslí označením a prahy 65/50. |
-| Zvážit procenta / evidovat převod | Přijato s rozhodnutím níže: zachovat konzistentní primární standardní škálu v simulátoru a profilech, uchovat zdrojový skór a transformaci. Neprovádět další nezávislé převody v komponentách. |
-| Konzervatoře, souběh katalogu a rozsah importu | Potvrzené přijetí předchozího vypořádání. Listopadová nabídka se řeší odděleně od migrační mapy povinné JPZ. |
-| Renderer a runtime kontroly vedle typů | Potvrzené přijetí předchozího vypořádání. Zahrnuto do omezeného kontraktu a přejímky. |
-| Pracnost 21–48 ČD a částečné ověření A-06 | Beze změny; nejde o nezávisle potvrzený odhad ani plnou externí validaci A-06. Odhad přepočítat po vzorku, vlastní důkaz A-06 zůstává v auditu. |
-| Historická varování v oponentuře | Přijato; původní výroky se nečtou jako současně platné. Oponentův text se nepřepisuje, reakce se připojuje odděleně. |
-
-### Rozhodnutí o zobrazení a původu hodnoty
-
-Pro nejbližší opravu doporučuji zachovat ČJ a MA na standardní škále **0–50**, součet na **0–100**. Uchazeči je tak porovnají s výsledky cvičných JPZ a napříč webem bez střídání jednotek. Nejde o přímé původní body každého uchazeče u upravených testů. Popisek musí říkat, že jde o průměrný přepočtený skór skupiny, nikoli přijímací hranici. Procenta jako primární zobrazení jsou technicky možná, ale samotná změna formátu neřeší špatnou populaci, názvy ani duplikované převody.
-
-Rozšířit navržený kontrakt o `sourceValue`, `sourceUnit` (např. procentní skór 0–100), identifikaci zdrojového pole a `transformation` (`identity` / přepočet / pravidlo zaokrouhlení / verze). Uložit nezaokrouhlený přepočet a zaokrouhlovat až při formátování; nevydávat převod procent za rekonstrukci individuálních původních bodů. Příklad ČJ: zdroj 72,2 %, transformace násobení 0,5, výsledek 36,1 na škále 0–50. Toto je návrh implementace v rámci již odhadnutého úzkého kontraktu, nikoli hotová změna API.
-
-Stejný renderer musí zobrazit 36,1 / 50 a v podrobnosti zdrojových 72,2 % maxima. Nesmí přidávat „lehčí/těžší“ z průměru skupiny. Percentily R2 nepřidávat do produktu bez rozhodnutí o srovnatelné populaci, vahách, deduplikaci, vazbách a zacházení s malými skupinami.
-
-Přejímací případy navíc: 72,2 % → 36,1 / 50; 60,2 % → 30,1 / 50; 100 % → 50 / 50; nula zůstává nulou; chybějící údaj není nula; opakovaný převod typově nebo runtime odmítnout; původ a zaokrouhlení dohledatelné. Ověřit skutečné popisky a absenci klasifikace obtížnosti, nikoli pouze aritmetiku helperu.
-
 ## Historie
-
-- 1.2 — vypořádání R2; reprodukované diagnostické percentily, kvantifikace A-03, evidence transformace a rozhodnutí o jednotkách. Doplněna oprava obráceného popisu normalizátoru v R2; žádná změna aplikace.
 
 - 1.1 — vypořádání oponentury v1.0; oprava 2 075 a normalizace auditu; rozklad 1 004/978; vysvětlení chybného roku 20236; návaznost O-13, souběžný start katalogu, odhady a úzký kontrakt. Opravy aplikace zůstávají otevřené.
 

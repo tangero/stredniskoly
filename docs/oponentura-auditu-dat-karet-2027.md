@@ -1,16 +1,132 @@
 # Oponentura auditu dat na kartách škol
 
-Verze 1.0. Zpracováno 11. 9. 2026. Předmět: `audit-dat-karet-2027.md` v1.0, stav kódu `94c3c6e`.
+Verze 2.0 / R2. Zpracováno 11. 9. 2026. Předmět: `audit-dat-karet-2027.md` v1.1 (commit `acd604d`).
 
 **OVĚŘENO** = doloženo spuštěním kódu nebo stažením produkční stránky. **NÁZOR** = argumentace bez tvrdého důkazu.
 
-## Závěr oponentury
+## Závěr R2
 
-**Audit je věcně správný. Nenašel jsem tvrzení, které by bylo nepravdivé.** Ověřil jsem nezávisle všech šest nálezů označených P0 a P1 s vysokou jistotou; všechny se potvrdily, včetně tří na živé produkci.
+**Vypořádání přijímám bez věcných výhrad.** Ověřil jsem čtyři doložitelná tvrzení a všechna platí. Obě upřesnění, kterými mě autor opravuje, jsou správná a přijímám je.
 
-Mám tři výhrady, všechny k formě a prioritizaci, nikoli k faktům. A jedno doporučení, které považuji za důležitější než pořadí oprav.
+Přináším jedno nové zjištění, které **zpřesňuje nález A-03 a zvyšuje jeho závažnost**: zdrojová data nejsou v bodech, ale v procentech, takže vada není jen ve značce jednotky.
 
 ---
+
+## Co jsem ověřil ve vypořádání
+
+### Odchylka 2 073 / 2 075: příčina doložena
+
+**OVĚŘENO.** Audit uvádí jako příčinu dvě ID s koncovými podtržítky. Potvrzuji je v datech:
+
+```
+'600008045_63-41-M/02____'
+'600008045_78-42-M/02____'
+```
+
+Můj skript je normalizoval bez koncového podtržítka, produkční helper s ním. Nešlo o jinou verzi datasetu, jak jsem se domníval. **Oprava na 2 075 je správná** a mé vysvětlení „jiná verze dat“ bylo chybné.
+
+### Rozklad 1 004 / 978: sedí přesně
+
+**OVĚŘENO** vlastním přepočtem:
+
+| Základ porovnání | Počet |
+|---|---:|
+| Proti všem normalizovaným ID | 978 |
+| Proti jednoznačným ID | 1 004 |
+| Rozdíl (míří do nejednoznačné skupiny) | 26 |
+
+Kontrola 978 + 26 = 1 004 vychází. Doplnění rozkladu do auditu považuji za vyřešení mé připomínky.
+
+### Chybný rok 20236: vysvětlení potvrzeno
+
+**OVĚŘENO.** REDIZO `600032001` má u dne otevřených dveří text `14. 12. 20236`. Rozdíl mezi metodami je přesně ten, který audit popisuje:
+
+| Metoda | Nalezené roky |
+|---|---|
+| Volný `20\d{2}` (můj skript) | `['2023']` |
+| Ohraničený `\b20\d{2}\b` (audit) | `[]` |
+
+Můj regulární výraz zachytil podřetězec uvnitř pětimístného čísla. **Metoda auditu je správnější**, protože z chybného zápisu neodvozuje platný rok. Původní počty 776 a 165 zůstávají v platnosti, moje 777 a 164 byly méně přesné.
+
+---
+
+## Obě upřesnění přijímám
+
+### „7/7 nemá vypovídací hodnotu ani jako popis minulosti“ — nepřesné
+
+**Přijímám opravu.** Moje formulace byla příliš široká. Údaj 7 ze 7 přesně popisuje, co se stalo v pozorované skupině; malý vzorek omezuje zobecnění a predikci, nikoli popis.
+
+Navržené řešení („Přijato 7 ze 7 uchazečů s první prioritou v roce 2025“) je lepší než moje doporučení, protože zachovává informaci a odstraňuje jen klamavou formu. Procento na vzorku sedmi je zavádějící svou přesností, samotné počty nikoli.
+
+### „36 z 50 je nadprůměr“ — nedoložené tak, jak jsem to napsal
+
+**Přijímám opravu s doplněním.** Tvrdil jsem nadprůměr, aniž bych uvedl, proti čemu. To je stejná chyba, jakou audit vytýká jinde.
+
+Doložil jsem to dodatečně a vychází to v můj prospěch, ale až s uvedeným referenčním rámcem:
+
+| Ukazatel | Machar TL | Průměr napříč obory | Percentil |
+|---|---:|---:|---:|
+| Průměr ČJ | 72,2 % | 59,0 % | 82 |
+| Průměr MA | 60,2 % | 41,8 % | 88 |
+
+Jde o průměr **napříč obory v datasetu 2025**, nikoli o populaci všech konajících. Autorova výhrada tedy platí: bez tohoto rámce tvrzení nedrželo.
+
+---
+
+## Nové zjištění: A-03 je horší, než audit uvádí
+
+**OVĚŘENO.** **Nový nález R2.**
+
+Při ověřování předchozího bodu jsem zjistil, že zdrojová data nejsou v bodech, ale **v procentech**.
+
+V `schools_data.json` má Macharovo technické lyceum `cj_prumer = 72.2` a `ma_prumer = 60.2`. Funkce `subjectScore` v `src/lib/historical-scores.ts` je převádí vzorcem `Math.round(value * 5) / 10`, tedy dělí dvěma na body z 50:
+
+```
+72,2 % → 36,1 bodu z 50
+60,2 % → 30,1 bodu z 50
+```
+
+Komponenta pak zobrazí `36 /100`.
+
+**Proč to zvyšuje závažnost.** Audit popisuje A-03 jako chybu jednotky, tedy že se k hodnotě na škále 0–50 připojí `/100`. To je pravda, ale důsledek je silnější:
+
+| Co se zobrazí | Co data znamenají |
+|---|---|
+| ČJ průměr **36 /100 (těžší)** | 72,2 % maxima, 82. percentil mezi obory |
+| MA průměr **30 /100 (těžší)** | 60,2 % maxima, 88. percentil mezi obory |
+
+Uživatel vidí čísla pod polovinou škály s nálepkou „těžší“ u oboru, který patří k lepší pětině. **Zobrazená hodnota není jen špatně označená, nese opačné sdělení než zdroj.**
+
+Zároveň to potvrzuje druhou část původního nálezu ostřeji: pojmenování „Náročnost přijímaček“ je zavádějící, protože hodnota popisuje výsledky uchazečů, a to navíc po dvojím převodu (procenta → body → chybná škála).
+
+**Doporučení.** Při opravě neuvádět jen správnou škálu `/50`. Zvážit zobrazení v procentech, ve kterých jsou zdrojová data, protože každý převod je příležitost k další záměně. Pokud se body ponechají, kontrakt z auditu by měl u jednotky `jpz_subject_0_50` evidovat i to, že vznikla převodem z procent.
+
+---
+
+## Ke zbytku vypořádání
+
+**V-1, V-2, V-3 považuji za vyřešené.** Rozlišení A-02 jako pokračování původní vady a A-03 jako chyby jednotek ve stejné nekontrolované cestě je přesnější než moje „obojí je O-13“.
+
+**Souběžný start katalogu** přijímám. Oceňuji upozornění, které jsem ve své výhradě minul: konzervatoře nejsou v importu s povinnou JPZ, takže oprava 1 004 shod listopadovou nabídku sama nevyřeší. To je věcná oprava mé priority, ne jen doplnění.
+
+**Odhad 21 až 48 člověkodnů** nemám čím ověřit a nebudu ho komentovat. Za správné považuji, že rozptyl je přiznaný, ruční složka oddělená a je stanoven přepočet po vzorku sta případů.
+
+**Ke kontraktu.** Autorova námitka, že samotný typ nezakáže napsat `/100` v JSX, je správná a moje původní formulace ji přehlížela. Sdílený renderer, runtime validace a testy vykreslených popisků jsou nutná součást, nikoli doplněk. Beru zpět implikaci, že by problém vyřešil typový systém sám.
+
+---
+
+## Co jsem neověřoval
+
+- **A-06** zůstává ověřen jen částečně, stejně jako v R1.
+- **Odhad pracnosti** nemám s čím porovnat.
+- **Tvrzení o konzervatořích a rozsahu importu** jsem nekontroloval; přijímám je.
+- **Neopravoval jsem nic.** Tato oponentura mění jen dokumentaci.
+
+---
+
+## Historie: oponentura v1.0
+
+> **Pozor při čtení.** Následující text je původní znění z 11. 9. 2026 a zůstává beze změny jako doklad. Tři jeho tvrzení byla v R2 vyvrácena a **neplatí**: odchylka 2 073/2 075 nevznikla jinou verzí dat, ale koncovými podtržítky v ID; počty 777/164 u InspIS byly méně přesné než 776/165; a tvrzení „36 z 50 je nadprůměrný výsledek“ nebylo v původní podobě doloženo. Platné znění je v R2 výše.
 
 ## Co jsem ověřil a potvrdil
 
@@ -167,3 +283,7 @@ Pořadí oprav bych upravil takto: do P0 přesunout vypnutí závěru o neotevř
 ## Vypořádání autorem auditu — 11. 9. 2026
 
 Kompletní reakce včetně V-1 až V-3, číselných odchylek a doporučení kontraktu je v [auditu v1.1](audit-dat-karet-2027.md#vypořádání-oponentury-v10). Původní text oponentury výše zůstal zachován. Vypořádání dokumentu neuzavírá produkční blokátor O-13 ani nenahrazuje přejímku oprav.
+
+## Vypořádání autorem auditu — R2, 11. 9. 2026
+
+Úplná reakce je v [auditu v1.2](audit-dat-karet-2027.md#vypořádání-oponentury-r2). Nová kvantifikace A-03 je přijata s definicí referenčního souboru. Upřesněno: produkční normalizátor koncová podtržítka odstraňuje; jeden číselný převod následuje zaokrouhlení a chybný popisek. Původní text R2 výše zachován jako doklad. O-13 a aplikační opravy zůstávají otevřené.
