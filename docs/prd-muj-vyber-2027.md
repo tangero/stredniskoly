@@ -304,5 +304,4 @@ Ukázka používá výhradně fiktivní školy a modelové hodnoty. Není doklad
 Verze 0.1 a 0.2 jsou popsány podle průběhu této práce; samostatné úplné snímky těchto dvou verzí nebyly uloženy. Snímek 0.3 je neměnný. Revize 0.4 patří do commitu označeného `rozvoj-2027-r1`. Nové produktové volby D4 a D8 zůstávají otevřené.
 
 Revize 0.4 je uložena v commitu `5a0f893` a ve snímku A1; 0.5 patří do revize `matomo-navstevnost-a1`. Návštěvnost neuzavírá D3, D4, D8 ani oponentní připomínky R1.
-
 | 0.9 / R5 | 11. 9. 2026 | Realizace S0, odstranění odhadů z rozhraní; lokální přejímky prošly, produkční uzavření čeká na nasazení. D1/D2 ani otevřené volby se nemění. |

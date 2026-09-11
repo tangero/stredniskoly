@@ -79,6 +79,20 @@ test('přímé načtení zachová pořadí, zaměření, čárky a neznámá ID'
   assert.deepEqual((await search({ ids: JSON.stringify([ambiguous.id]) })).schools, []);
 });
 
+test('odkaz používá kanonický název profilu a rozlišuje délku studia', async () => {
+  const data = await search({ ids: '600001431_79-41-K/41,600001431_79-41-K/81' });
+  assert.deepEqual(data.schools.map(s => s.slug), [
+    '600001431-biskupske-gymnazium-konevova-gymnazium-4lete',
+    '600001431-biskupske-gymnazium-konevova-gymnazium-8lete',
+  ]);
+  for (const school of data.schools) {
+    const response = await fetch(new URL(`/skola/${school.slug}`, base));
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.ok(!html.includes('<title>Biskupské gymnázium, Koněvova - přehled oborů'));
+  }
+});
+
 test('detail API nevrací falešné minimum, školní body ani žebříček ze součtu minim', async () => {
   const row = [...index.values()].find(s => !s.zamereni);
   const detail = await get(`/api/school-details/${encodeURIComponent(row.id)}`);

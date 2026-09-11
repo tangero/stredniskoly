@@ -9,6 +9,7 @@ Verze 1.0, 11. 9. 2026. **Implementováno, veřejná přejímka zatím čeká na
 - Katalog zůstává označen jako 2025. Výsledky 2026/1. kolo se připojují pouze jednoznačnou normalizovanou shodou celého ID včetně zaměření. Chybějící vazba je viditelná. Nejde o úplný katalog přijímání 2027.
 - Zobrazené průměry přijatých mají rok, kolo, zdroj a škálu. Průměr není minimum ani doporučený cíl. Osobní porovnání výslovně uvádí „Pro toto porovnání nemáme ověřený údaj“.
 - `chances.ts` vrací pouze popisnou historii. Odstraněny odhady procent přijetí, příštího minima, bezpečnosti kombinace a z nich odvozená doporučení. Nulový počet přijatých je 0 %, chybějící nebo neplatný jmenovatel je neznámý.
+- Odkazy z hledání používají kanonické názvy existujících profilů a rozlišují délku studia; rozdílný název ve zdroji už nesměruje potichu na obecný přehled.
 - Zachovány staré URL s `cj`, `ma`, `skoly`, `srovnani`. Nové odkazy ukládají ID jako JSON pole, protože zaměření mohou obsahovat čárky. Sdílení propouští pouze tyto veřejné parametry. Neznámé ID zůstane viditelné a lze ho odebrat; zpět/vpřed obnoví výběr včetně prázdného.
 
 ## Datové rozhodnutí a důkazy

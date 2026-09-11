@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { createSlug } from '@/lib/utils';
 import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
-import { getResultsForYear } from '@/lib/data';
+import { getResultsForYear, getSchoolAnalysis } from '@/lib/data';
 import { readSchoolIds } from '@/lib/simulator-state';
 
 type SchoolsData = Record<string, School[]>;
@@ -51,21 +51,24 @@ function normalizeZamereni(zamereni?: string): string | undefined {
   return value.length > 0 ? value : undefined;
 }
 
-function buildSlugContext(schools: School[]) {
+function buildSlugContext(schools: School[], canonicalSchools: School[]) {
   const oborCountsByRedizo = new Map<string, Map<string, number>>();
   const zamereniCountsByRedizo = new Map<string, Map<string, number>>();
 
-  for (const school of schools) {
+  for (const school of canonicalSchools) {
     const redizo = school.id.split('_')[0];
     const obor = school.obor || '';
-    const zamereni = normalizeZamereni(school.zamereni);
-
     if (!oborCountsByRedizo.has(redizo)) {
       oborCountsByRedizo.set(redizo, new Map<string, number>());
     }
     const oborCounts = oborCountsByRedizo.get(redizo)!;
     oborCounts.set(obor, (oborCounts.get(obor) || 0) + 1);
 
+  }
+  for (const school of schools) {
+    const redizo = school.id.split('_')[0];
+    const obor = school.obor || '';
+    const zamereni = normalizeZamereni(school.zamereni);
     if (zamereni) {
       if (!zamereniCountsByRedizo.has(redizo)) {
         zamereniCountsByRedizo.set(redizo, new Map<string, number>());
@@ -118,7 +121,19 @@ export async function GET(request: NextRequest) {
     const data = await getSchoolsData();
     const index = uniqueSchoolIndex(data['2025'] || [], s => s.id);
     const schools = Array.from(index.values());
-    const slugContext = buildSlugContext(schools);
+    const canonicalSchools = Object.values(await getSchoolAnalysis());
+    const slugContext = buildSlugContext(data['2025'] || [], canonicalSchools);
+    const canonicalById = new Map(canonicalSchools.map(s => [s.id, s]));
+    const canonicalNames = new Map<string, string>();
+    for (const school of canonicalSchools) {
+      const redizo = school.id.split('_')[0];
+      if (!canonicalNames.has(redizo)) canonicalNames.set(redizo, school.nazev);
+    }
+    // Jen názvy pro existující adresy profilů. Historická fakta se tímto
+    // základním klíčem nikdy nepárují, používají úplné ID níže.
+    const routeSchool = (school: School): School => ({ ...school, nazev: school.zamereni
+      ? canonicalNames.get(school.id.split('_')[0]) ?? school.nazev
+      : canonicalById.get(school.id)?.nazev ?? school.nazev });
     if (!krajeCache) {
       const krajMap = new Map<string, string>();
       schools.forEach(s => { if (s.kraj_kod && s.kraj) krajMap.set(s.kraj_kod, s.kraj.trim()); });
@@ -135,7 +150,7 @@ export async function GET(request: NextRequest) {
         id: requestedId, nazev: s.nazev, nazev_display: s.nazev_display, obor: s.obor,
         zamereni: normalizeZamereni(s.zamereni), obec: s.obec, ulice: s.ulice, adresa: s.adresa,
         kraj: s.kraj, kraj_kod: s.kraj_kod, typ: s.typ, delka_studia: s.delka_studia,
-        slug: getSchoolSlug(s, slugContext),
+        slug: getSchoolSlug(routeSchool(s), slugContext),
         history: result ? {
           year: 2026, round: 1, source_valid_at: result.source_valid_at ?? null,
           accepted: finite(result.prijati), capacity: finite(result.kapacita),
