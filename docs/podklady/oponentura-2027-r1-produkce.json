@@ -1,0 +1,22 @@
+{
+  "checked_on": "2026-09-11",
+  "method": "HTTP GET hlavní stránky a /simulator; stažení script[src] z HTML simulátoru; textové výřezy vykreslovacích větví. Bez nové interakční zkoušky v prohlížeči.",
+  "home": {
+    "Průměr není hranice přijetí": true,
+    "Škol v historickém přehledu": true,
+    "prijimacky-2027": true
+  },
+  "simulator_chunks": [
+    {
+      "url": "https://www.prijimackynaskolu.cz/_next/static/chunks/d60f497abfc067f8.js?dpl=dpl_2yPr8A6U8xPpkF5oWcsfnEi1xU9o",
+      "matches": [
+        "ror(\"Error loading kraje:\",e),d(!1)})},[]);let F=(0,y.useCallback)(e=>{let t=$-e;return t>=10?{status:\"accepted\",label:\"Vysoká šance\",color:\"green\"}:t>=-10?{status:\"borderline\",label:\"Na hraně\",color:\"yellow\"}:{status:\"rejected\",label:\"Malá šance\",color:\"red\"}},[$]),U=(0,y.useMemo)",
+        "el:\"Vysoká šance\",color:\"green\"}:t>=-10?{status:\"borderline\",label:\"Na hraně\",color:\"yellow\"}:{status:\"rejected\",label:\"Malá šance\",color:\"red\"}},[$]),U=(0,y.useMemo)(()=>i,[i]),K=(0,y.useMemo)(()=>{let e=[],t=[],r=[];return U.forEach(n=>{let l=F(tN(n));\"accepted\"===l.status?e.pu",
+        "0,w.jsx)(\"span\",{className:\"w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-xs\",children:\"✓\"}),\"Vysoká šance (\",K.accepted.length,\" oborů)\"]}),(0,w.jsx)(\"div\",{className:\"space-y-1\",children:K.accepted.map(e=>(0,w.jsx)(tC,{school:e,status:\"accepted\",yourScor",
+        "[(0,w.jsx)(\"span\",{className:\"w-5 h-5 bg-red-100 rounded-full flex items-center justify-center text-xs\",children:\"✗\"}),\"Malá šance (\",K.rejected.length,\" oborů)\"]}),(0,w.jsx)(\"div\",{className:\"space-y-1\",children:K.rejected.map(e=>(0,w.jsx)(tC,{school:e,status:\"rejected\",yourScor",
+        "derline\"===b.status?\"bg-yellow-400/30 text-yellow-100\":\"bg-red-400/30 text-red-100\"}`,children:\"accepted\"===b.status?\"✓ Vysoká šance\":\"borderline\"===b.status?\"~ Na hraně\":\"✗ Malá šance\"})]}),a?(0,w.jsxs)(\"div\",{className:\"text-center py-4\",children:[(0,w.jsx)(\"div\",{className:\"anim",
+        ":\"bg-red-400/30 text-red-100\"}`,children:\"accepted\"===b.status?\"✓ Vysoká šance\":\"borderline\"===b.status?\"~ Na hraně\":\"✗ Malá šance\"})]}),a?(0,w.jsxs)(\"div\",{className:\"text-center py-4\",children:[(0,w.jsx)(\"div\",{className:\"animate-spin w-6 h-6 border-2 border-white/30 border-t-w"
+      ]
+    }
+  ]
+}

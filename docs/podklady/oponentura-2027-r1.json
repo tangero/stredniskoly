@@ -1,0 +1,511 @@
+{
+  "checked_at": "2026-09-11T08:32:39.962084+00:00",
+  "code_commit": "c9ae45214c6cedfedcc37977999914d9283915b1",
+  "source_files": [
+    {
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/JPZ2017_skoly-skolobory_vysledky.xlsx",
+      "sha256": "2b6908120883b648e877cbd154eacf4ea5a9e1aa932e7a82ab4b4e1b8da6b949",
+      "bytes": 448080,
+      "sheets": [
+        "JPZ2017_red",
+        "ciselniky"
+      ],
+      "physical_rows": 3423,
+      "columns": 22,
+      "school_rows": 3364,
+      "unique_redizo": 1086,
+      "header": [
+        "REDIZO / KRAJ / OBOROVÁ SKUPINA",
+        "OBOROVÁ SKUPINA",
+        "ROČNÍK",
+        "NÁZEV ŠKOLY",
+        "ADRESA ŠKOLY",
+        "KRAJ (KÓD)",
+        "KRAJ (NÁZEV)",
+        "ZŘIZOVATEL",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)"
+      ]
+    },
+    {
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/JPZ2018_skoly-skolobory_vysledky.xlsx",
+      "sha256": "fba50b5eb976f4c5ffedb6115f015f1370226e52d261ceb940a21701474623a2",
+      "bytes": 439181,
+      "sheets": [
+        "JPZ2018_red",
+        "ciselniky"
+      ],
+      "physical_rows": 3345,
+      "columns": 22,
+      "school_rows": 3286,
+      "unique_redizo": 1065,
+      "header": [
+        "REDIZO / KRAJ / OBOROVÁ SKUPINA",
+        "OBOROVÁ SKUPINA",
+        "ROČNÍK",
+        "NÁZEV ŠKOLY",
+        "ADRESA ŠKOLY",
+        "KRAJ (KÓD)",
+        "KRAJ (NÁZEV)",
+        "ZŘIZOVATEL",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)"
+      ]
+    },
+    {
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/JPZ2019_skoly-skolobory_vysledky.xlsx",
+      "sha256": "b79e76ea0dca092e26743a99a4395bfd3d486800eacba449bde5a49d7ae29312",
+      "bytes": 411379,
+      "sheets": [
+        "JPZ2019_red",
+        "ciselniky"
+      ],
+      "physical_rows": 3277,
+      "columns": 20,
+      "school_rows": 3218,
+      "unique_redizo": 1060,
+      "header": [
+        "REDIZO / KRAJ / OBOROVÁ SKUPINA",
+        "OBOROVÁ SKUPINA",
+        "ROČNÍK",
+        "NÁZEV ŠKOLY",
+        "ADRESA ŠKOLY",
+        "KRAJ (KÓD)",
+        "KRAJ (NÁZEV)",
+        "ZŘIZOVATEL",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)"
+      ]
+    },
+    {
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/JPZ2020_skoly-skolobory_vysledky.xlsx",
+      "sha256": "d409cd5ed848b00a8156a88c66198abd68a7333827c2f69a3d75b977ec8634f2",
+      "bytes": 584156,
+      "sheets": [
+        "JPZ2020_red",
+        "ciselniky"
+      ],
+      "physical_rows": 3270,
+      "columns": 24,
+      "school_rows": 3211,
+      "unique_redizo": 1052,
+      "header": [
+        "REDIZO / KRAJ / OBOROVÁ SKUPINA",
+        "OBOROVÁ SKUPINA",
+        "ROČNÍK",
+        "NÁZEV ŠKOLY",
+        "ADRESA ŠKOLY",
+        "KRAJ (KÓD)",
+        "KRAJ (NÁZEV)",
+        "ZŘIZOVATEL",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "OMLUVENI",
+        "NEOMLUVENI",
+        "VYLOUČENI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "OMLUVENI",
+        "NEOMLUVENI",
+        "VYLOUČENI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)"
+      ]
+    },
+    {
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/JPZ2021_skoly-skolobory_vysledky.xlsx",
+      "sha256": "a053689665035e5ae34e4ccafa64083d14a5c816e1a4b2166309f74f274d7021",
+      "bytes": 334456,
+      "sheets": [
+        "JPZ2021",
+        "ciselniky"
+      ],
+      "physical_rows": 2056,
+      "columns": 18,
+      "school_rows": 1997,
+      "unique_redizo": 719,
+      "header": [
+        "REDIZO / KRAJ / OBOROVÁ SKUPINA",
+        "OBOROVÁ SKUPINA",
+        "ROČNÍK",
+        "NÁZEV ŠKOLY",
+        "ADRESA ŠKOLY",
+        "KRAJ (KÓD)",
+        "KRAJ (NÁZEV)",
+        "ZŘIZOVATEL",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)"
+      ]
+    },
+    {
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/JPZ2022_skoly-skolobory_vysledky.xlsx",
+      "sha256": "69d0f8aee528001da08acec470f738686ad8a8ee94f35073b102bdaa99c942bf",
+      "bytes": 528690,
+      "sheets": [
+        "JPZ2022-radny a nahradni termin"
+      ],
+      "physical_rows": 3295,
+      "columns": 24,
+      "school_rows": 3235,
+      "unique_redizo": 1066,
+      "header": [
+        "REDIZO / KRAJ / OBOROVÁ SKUPINA",
+        "OBOROVÁ SKUPINA",
+        "ROČNÍK",
+        "NÁZEV ŠKOLY",
+        "ADRESA ŠKOLY",
+        "KRAJ (KÓD)",
+        "KRAJ (NÁZEV)",
+        "ZŘIZOVATEL",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)"
+      ]
+    },
+    {
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/JPZ2023_skoly-skolobory_vysledky.xlsx",
+      "sha256": "71bbd13141b01545409bd418f6051703765b1a8cd6cfd888605e512a29587164",
+      "bytes": 524236,
+      "sheets": [
+        "List1"
+      ],
+      "physical_rows": 3318,
+      "columns": 24,
+      "school_rows": 3258,
+      "unique_redizo": 1076,
+      "header": [
+        "REDIZO / KRAJ / OBOROVÁ SKUPINA",
+        "OBOROVÁ SKUPINA",
+        "ROČNÍK",
+        "NÁZEV ŠKOLY",
+        "ADRESA ŠKOLY",
+        "KRAJ (KÓD)",
+        "KRAJ (NÁZEV)",
+        "ZŘIZOVATEL",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)",
+        "PŘIHLÁŠENI",
+        "KONALI",
+        "NEKONALI",
+        "PRŮMĚRNÉ PERCENTILOVÉ UMÍSTĚNÍ",
+        "SMĚRODATNÁ ODCHYLKA (PERCENTIL. UMÍSTĚNÍ)"
+      ]
+    },
+    {
+      "url": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2026j_SC_skolobory.xlsx",
+      "sha256": "6a814e0a69c2603d5c6191b7c616b311d21910520dc40d1ce1d919bbf5337896",
+      "bytes": 2199369,
+      "sheets": [
+        "2026",
+        "vysvetlivky"
+      ],
+      "physical_rows": 3739,
+      "columns": 98,
+      "aggregation_rows": {
+        "total": 1,
+        "typ_skoly": 5,
+        "smo16": 16,
+        "kraj": 14,
+        "kraj_typ_skoly": 70,
+        "kraj_smo16": 222,
+        "redizo": 1112,
+        "redizo_smo16": 2297
+      },
+      "population": "prvomaturanti za daný rok celkem"
+    },
+    {
+      "url": "https://data.cermat.cz/files/files/MZ/agregovana_data_skoly/MZ2025jap_SC_skolobory.xlsx",
+      "sha256": "5ec37400982571601638887347853ac86c8d5c5025ba34613f31761a38aaef05",
+      "bytes": 2143738,
+      "sheets": [
+        "2025",
+        "vysvetlivky"
+      ],
+      "physical_rows": 3687,
+      "columns": 98,
+      "aggregation_rows": {
+        "total": 1,
+        "typ_skoly": 5,
+        "smo16": 16,
+        "kraj": 14,
+        "kraj_typ_skoly": 70,
+        "kraj_smo16": 222,
+        "redizo": 1107,
+        "redizo_smo16": 2250
+      },
+      "population": "prvomaturanti za daný rok celkem"
+    },
+    {
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_polozky/2026/JPZ2026_M4_ulohy_agregovane_vysledky.xlsx",
+      "sha256": "07fd05b842d3d07dec3260be1e45581c0440f0097baaad927c38dc54d477a136",
+      "bytes": 34312,
+      "sheets": [
+        "m4a",
+        "m4b",
+        "m4c",
+        "m4d"
+      ],
+      "physical_rows": 200,
+      "columns": 13,
+      "sheet_scope": "matematika - čtyřleté obory - 1. řádný termín",
+      "participants": 93358,
+      "mean_percent_score": 41.24730682373047,
+      "item_01_3_mean_percent_score": 36.79999923706055
+    }
+  ],
+  "local_sha256": {
+    "public/schools_data.json": "e53ddcaeaa63203315ea970d84b7fe6f9e4abf15f68db9c65dac6583df8d8530",
+    "public/cermat_results_2026.json": "39820d008c751e37f3099ec8887558507d52f99937f49028a69873cb43fc68e4"
+  },
+  "pairing": {
+    "methods": {
+      "rows_2025": {
+        "denominator": 2837,
+        "exact": 1443,
+        "base_exists": 2756,
+        "base_multiple_targets": 414,
+        "base_unique_both_raw": 2255,
+        "normalized_unique_both": 2075
+      },
+      "unique_ids_2025": {
+        "denominator": 2808,
+        "exact": 1425,
+        "base_exists": 2728,
+        "base_multiple_targets": 407,
+        "base_unique_both_raw": 2255,
+        "normalized_unique_both": 2075
+      }
+    },
+    "target_collision_groups": 185,
+    "counterexamples": [
+      {
+        "base": "600004775_63-41-M/02",
+        "source_ids": [
+          "600004775_63-41-M/02_OA_cestovní_ruch",
+          "600004775_63-41-M/02_OA_ekonomika_a_podnikání_v_Evropské_unii"
+        ],
+        "targets": [
+          {
+            "id": "600004775_63-41-M/02_oa_cestovni_ruch",
+            "mean": 54.41,
+            "admitted": 59
+          },
+          {
+            "id": "600004775_63-41-M/02_oa_ekonomika_a_podnikani_v_evropske_unii",
+            "mean": 61.42,
+            "admitted": 60
+          }
+        ]
+      },
+      {
+        "base": "600004856_29-41-M/01",
+        "source_ids": [
+          "600004856_29-41-M/01_Technologie_piva,_vína,_lihu_a_nealkoholických_nápojů",
+          "600004856_29-41-M/01_Zpracování_mouky,_technologie_pekařských_a_cukrářských_výrobků",
+          "600004856_29-41-M/01_Technologie_piva,_vína,_lihu_a_nealkoholických_nápojů",
+          "600004856_29-41-M/01_Technologie_zpracování_masa_a_masných_výrobků",
+          "600004856_29-41-M/01_Zpracování_mouky,_technologie_pekařských_a_cukrářských_výrobků"
+        ],
+        "targets": [
+          {
+            "id": "600004856_29-41-M/01_technologie_piva_vina_lihu_a_nealkoholickych_napoju",
+            "mean": 52.46,
+            "admitted": 24
+          },
+          {
+            "id": "600004856_29-41-M/01_technologie_zpracovani_masa_a_masnych_vyrobku",
+            "mean": 37.5,
+            "admitted": 2
+          },
+          {
+            "id": "600004856_29-41-M/01_zpracovani_mouky_technologie_pekarskych_a_cukrarskych_vyrobku",
+            "mean": 57.89,
+            "admitted": 9
+          }
+        ]
+      },
+      {
+        "base": "600004929_63-41-M/02",
+        "source_ids": [
+          "600004929_63-41-M/02_Obchodní_akademie",
+          "600004929_63-41-M/02_Sportovní_management"
+        ],
+        "targets": [
+          {
+            "id": "600004929_63-41-M/02_obchodni_akademie",
+            "mean": 74.47,
+            "admitted": 30
+          },
+          {
+            "id": "600004929_63-41-M/02_sportovni_management",
+            "mean": 73.18,
+            "admitted": 60
+          }
+        ]
+      },
+      {
+        "base": "600004961_79-41-K/61",
+        "source_ids": [
+          "600004961_79-41-K/61_estetickovýchovné_předměty___zaměření_na_VV_",
+          "600004961_79-41-K/61_vybrané_předměty_v_cizím_jazyce___zaměření_na_NJ_",
+          "600004961_79-41-K/61_všeobecné_studim"
+        ],
+        "targets": [
+          {
+            "id": "600004961_79-41-K/61_nemecky_jazyk",
+            "mean": 71.07,
+            "admitted": 30
+          },
+          {
+            "id": "600004961_79-41-K/61_vseobecne",
+            "mean": 78.23,
+            "admitted": 30
+          },
+          {
+            "id": "600004961_79-41-K/61_vytvarna_vychova",
+            "mean": 65.5,
+            "admitted": 30
+          }
+        ]
+      },
+      {
+        "base": "600005071_36-47-M/01",
+        "source_ids": [
+          "600005071_36-47-M/01_Architektura_a_interiérový_design",
+          "600005071_36-47-M/01_Pozemní_stavitelství",
+          "600005071_36-47-M/01_Stavitelství_a_architektura"
+        ],
+        "targets": [
+          {
+            "id": "600005071_36-47-M/01_architektura_a_interierovy_design",
+            "mean": 74.88,
+            "admitted": 60
+          },
+          {
+            "id": "600005071_36-47-M/01_pozemni_stavitelstvi",
+            "mean": 71.67,
+            "admitted": 60
+          },
+          {
+            "id": "600005071_36-47-M/01_stavitelstvi_a_architektura",
+            "mean": 78.6,
+            "admitted": 60
+          }
+        ]
+      },
+      {
+        "base": "600005143_79-41-K/61",
+        "source_ids": [
+          "600005143_79-41-K/61_s_posílenou_výukou_německého_jazyka",
+          "600005143_79-41-K/61_s_výukou_francouzského_jazyka",
+          "600005143_79-41-K/61_s_výukou_španělského_jazyka"
+        ],
+        "targets": [
+          {
+            "id": "600005143_79-41-K/61_s_posilenou_vyukou_nemciny",
+            "mean": 82.67,
+            "admitted": 30
+          },
+          {
+            "id": "600005143_79-41-K/61_s_vyukou_francouzstiny",
+            "mean": 81.34,
+            "admitted": 29
+          }
+        ]
+      },
+      {
+        "base": "600005275_63-41-M/01",
+        "source_ids": [
+          "600005275_63-41-M/01_management_cestovního_ruchu",
+          "600005275_63-41-M/01_management_obchodu",
+          "600005275_63-41-M/01_management_sportu"
+        ],
+        "targets": [
+          {
+            "id": "600005275_63-41-M/01_management_cestovniho_ruchu",
+            "mean": 44.0,
+            "admitted": 15
+          },
+          {
+            "id": "600005275_63-41-M/01_management_obchodu",
+            "mean": 43.48,
+            "admitted": 21
+          },
+          {
+            "id": "600005275_63-41-M/01_management_sportu",
+            "mean": 49.81,
+            "admitted": 27
+          }
+        ]
+      },
+      {
+        "base": "600005305_79-41-K/41",
+        "source_ids": [
+          "600005305_79-41-K/41_NextGen_Leaders:_Výuka_s_jasným_cílem",
+          "600005305_79-41-K/41_NextGen_Professionals:_AP_Diploma"
+        ],
+        "targets": [
+          {
+            "id": "600005305_79-41-K/41_nextgen_leaders_vyuka_s_jasnym_cilem",
+            "mean": 72.74,
+            "admitted": 65
+          },
+          {
+            "id": "600005305_79-41-K/41_nextgen_professionals_ap_diploma",
+            "mean": 77.8,
+            "admitted": 20
+          }
+        ]
+      }
+    ]
+  },
+  "limits": [
+    "Počet existujících základních klíčů není počet správně spárovaných zaměření.",
+    "Fyzické řádky XLSX zahrnují hlavičky a souhrny.",
+    "Inventura a kontrola vzorků nejsou produkční import ani validace kohortního modelu."
+  ]
+}

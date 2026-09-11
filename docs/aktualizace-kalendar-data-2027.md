@@ -1,6 +1,8 @@
 # Kalendář 2027 a obnova prvního kola 2026
 
-Připraveno 11. 9. 2026. První dodávka podle schváleného pořadí: kalendář a opravy dat; profily škol a Můj výběr následují.
+Dokončeno a nasazeno 11. 9. 2026 přes [PR #71](https://github.com/tangero/stredniskoly/pull/71), commit `c9ae45214c6cedfedcc37977999914d9283915b1`. První dodávka podle schváleného pořadí: kalendář a opravy dat; profily škol a Můj výběr následují.
+
+Veřejný kalendář a shoda publikovaných exportů byly znovu ověřeny 11. 9. 2026 při aktualizaci dokumentace. Souhrnný [stav všech oblastí rozvoje](prd-muj-vyber-2027.md#aktuální-stav-realizace-k-11-9-2026) je v PRD Mého výběru; následující text zachycuje rozsah této dokončené dodávky.
 
 ## Veřejné změny
 

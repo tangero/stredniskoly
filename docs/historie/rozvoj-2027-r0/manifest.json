@@ -1,0 +1,8 @@
+{
+  "description": "Neměnný vstup prvního vypořádání, 11. 9. 2026; původní návrh po aktualizaci stavu, PRD v0.3, oponentura v1.1.",
+  "sha256": {
+    "navrh-rozvoje-2027.md": "93329b9cda35411213060cd4401ee28574018e8f5addda7d86a96aa8f9608901",
+    "prd-muj-vyber-2027.md": "3e22cc7ba3a7dc6cbe96921623696d8b720e685e1c1336458d5462ed65980bd0",
+    "oponentura-navrhu-rozvoje-2027.md": "9b22573e477258c271e11b4d45e99b50b88397546c7692116f7c40796c702da8"
+  }
+}
