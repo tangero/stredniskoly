@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-09-11T10:11:59.137Z",
+  "id": "dpl_E9D6rFkMvGzAQJHexJeYEZFFe5TM",
+  "state": "READY",
+  "target": "production",
+  "git_sha": "9146ef032d21ad530dc2a9981b546e3ce7d68c57",
+  "aliases": [
+    "stredniskoly.vercel.app",
+    "www.prijimackynaskolu.cz",
+    "prijimackynaskolu.cz",
+    "stredniskoly-tangeros-projects.vercel.app",
+    "stredniskoly-git-main-tangeros-projects.vercel.app"
+  ],
+  "pr": "https://github.com/tangero/stredniskoly/pull/72"
+}

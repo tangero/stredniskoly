@@ -1,6 +1,6 @@
 # PRD: Můj výběr 2027, profily oborů a podklady pro rozhodování
 
-- **Verze:** 0.7, pracovní návrh pro společnou diskusi.
+- **Verze:** 0.7.1, pracovní návrh pro společnou diskusi.
 - **Datum:** 11. 9. 2026.
 - **Stav:** Uživatel schválil směr: návrh Mého výběru, úpravu datového základu a profilů, následnou realizaci pilotu. Schváleny D1 a základ D2: okamžité ukládání, volitelný průvodce „Pomoz mi s výběrem“, jednoduchý účet bez hesla a odkaz k náhledu. Zbývající volby jsou označené níže.
 - **Rozsah této práce:** produktové zadání a interaktivní ukázka ovládání. Žádná nová produkční funkce ani rozesílka.
@@ -23,7 +23,7 @@ Tento přehled odděluje dokončenou dodávku od návrhu následující etapy. S
 | Opravy propojení a výkladu dat | **Hotovo a nasazeno v dotčených cestách** | Normalizace zaměření, odmítání nejednoznačného párování, opravy označení skóre a městských komentářů; odstranění nepodložených osobních procent a předpovědí z přehledu konkurence. Nejde o audit všech starších kalkulaček. |
 | Simulátor — O-13 | **Otevřený produkční blokátor** | Veřejný JS stále obsahuje predikční kategorie s prahem ±10. Samostatná oprava S0 před implementací Mého výběru; změna PRD není opravou kódu. |
 | Dostupnost OG obrázků — O-19 | **Opraveno, produkčně ověřeno** | Commit `c51b3c9`, produkce `dpl_NKpQBRZaberGrkd7jZuia9K77sxo`; všechny přímé i metadatové odkazy vracejí dekódované PNG 1200×630. |
-| Obsah a vzhled OG obrázků — O-21 | **Nová otevřená vada** | Chybějící české znaky a zastaralý rok na hlavním obrázku; překrytí textu simulátoru. Důkazy a přejímka v návrhu §14. |
+| Obsah a vzhled OG obrázků — O-21 | **Opraveno, nasazeno a veřejně ověřeno** | PR #72, commit `9146ef0`. Nové ilustrace, české fonty, rozlišení sezóny a výsledků, oddělená patička. [Doklad veřejné přejímky](oprava-og-nahledu-2027.md). |
 | Mrtvé predikční výpočty — O-4 | **Otevřený technický dluh** | V Moje šance se nevykreslují, ale zůstávají v rozhraní `chances.ts`; odstranění v S0. |
 | Rutinní přístup ke statistikám | **Implementováno a ověřeno lokálně** | Čtecí klient Matomo pro web 7, soukromé uložení tokenu, snímky a souhrny; viz `matomo-pristup.md`. Žádné automatické úlohy ani změny serverového měření. |
 | Vercel statistiky / místní propojení — O-17 | **Propojení opraveno, čtení statistik neověřeno** | Správný projekt potvrzen přes konektor a místní JSON opraven; samotný analytický přístup čeká na autorizaci/diagnostiku. 404 nedokládá nutnost vyššího tarifu. |
@@ -232,7 +232,7 @@ Konkrétní podklady: `src/components/school/guided/GuidedJourneyWizard.tsx`, `s
 
 ## 11. Rozdělení dodávky
 
-**S0 — opravná vlna:** O-13 a O-4 podle návrhu rozvoje §3; O-19 je v R3 technicky uzavřené. Nově O-21 opraví obsah a vzhled OG obrázků podle §14; bez odkladu O-13. Podmínkou uzavření jsou změna kódu, příslušné kontroly, nasazení a ověření veřejného výsledku. Do té doby lze navrhovat A, ale implementaci pilotu B nezačínat.
+**S0 — opravná vlna:** zbývají O-13 a O-4 podle návrhu rozvoje §3. O-19 i následná vizuální oprava O-21 jsou veřejně ověřené a uzavřené. Podmínkou uzavření O-13 jsou změna kódu, příslušné kontroly, nasazení a ověření veřejného výsledku. Do té doby lze navrhovat A, ale implementaci pilotu B nezačínat.
 
 **M0 — měření:** v obou přítomných trackerech (Matomo a Vercel) ověřit navigaci a definice úspěšných úkonů před měřeným vyhodnocením pilotu. Žádné dvojité pageview, žádné tokeny/poznámky v URL ani událostech. Nevysvětlené rozdíly agregátů nepovažovat automaticky za vliv dnešního dne. Pozorování strojových přístupů k API je samostatný experiment, nikoli náhrada M0. Neodkládá S0. Implementace událostí ukládání či zálohy patří až k funkčnímu kroku B/C.
 
@@ -294,6 +294,7 @@ Ukázka používá výhradně fiktivní školy a modelové hodnoty. Není doklad
 | 0.5 / A1 | 11. 9. 2026 | Vstupy do ukládání podle ověřené návštěvnosti, blokující mobilní průchod, zadání M0 a hotový čtecí přístup k Matomo. |
 | 0.6 / R2 | 11. 9. 2026 | Převzata rozhodnutí oponenta R2, doplněn stav Vercelu a M0 pro oba trackery. O-13 nadále neopraveno; číselné závěry A1 se po kontrole Others nemění. Předchozí v0.5 zachována ve snímku R2. O-19 doplněno do S0, jeho souběžná oprava není potvrzeným nasazením. |
 | 0.7 / R3 | 11. 9. 2026 | O-19 dostupnost uzavřena po kontrole produkce, samostatný O-21 pro vizuální vady; potvrzen export drainu, žádný nový vlastní logger. Původní v0.6 zachována ve snímku R3. |
+| 0.7.1 | 11. 9. 2026 | O-21 opraveno a produkčně ověřeno po PR #72; vyřazeno ze zbývající opravné vlny. O-13 a O-4 zůstávají otevřené. |
 
 Verze 0.1 a 0.2 jsou popsány podle průběhu této práce; samostatné úplné snímky těchto dvou verzí nebyly uloženy. Snímek 0.3 je neměnný. Revize 0.4 patří do commitu označeného `rozvoj-2027-r1`. Nové produktové volby D4 a D8 zůstávají otevřené.
 
