@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { School, categoryLabels, categoryColors } from '@/types/school';
 import { ExtendedSchoolStats, YearlyTrendData } from '@/lib/data';
+import { createSlug } from '@/lib/utils';
 
 // Info tooltip komponenta
 function InfoTooltip({ title, children }: { title: string; children: React.ReactNode }) {
@@ -33,30 +34,28 @@ function InfoTooltip({ title, children }: { title: string; children: React.React
   );
 }
 
-// Lokální verze createSlug
-function createSlug(name: string, obor?: string): string {
-  let slug = name
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
+/**
+ * Odkaz na detail oboru. Používá sdílenou createSlug z lib/utils, aby tvar
+ * odpovídal tomu, co rozpoznává getSchoolPageType v lib/data.
+ *
+ * Délku studia doplňujeme jen tam, kde je název oboru v rámci školy
+ * nejednoznačný: "Gymnázium" se jmenuje čtyřleté i osmileté, takže bez ní
+ * vedly obě varianty na stejnou adresu a detail zobrazil vždy tu první
+ * v pořadí dat, tedy čtyřletou. Adresy bez délky zůstávají funkční.
+ */
+function buildSchoolSlug(school: School, schools: School[]): string {
+  const redizo = school.id.split('_')[0];
+  const sameOborName = schools.filter(
+    (s) => s.id.split('_')[0] === redizo && s.obor === school.obor
+  );
+  const needsLength = new Set(sameOborName.map((s) => s.delka_studia)).size > 1;
 
-  if (obor) {
-    const oborSlug = obor
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-')
-      .replace(/^-|-$/g, '');
-    slug = `${slug}-${oborSlug}`;
-  }
-
-  return slug;
+  return `${redizo}-${createSlug(
+    school.nazev,
+    school.obor,
+    undefined,
+    needsLength ? school.delka_studia : undefined
+  )}`;
 }
 
 // Helper komponenty
@@ -122,6 +121,8 @@ function SortIcon({ active, direction }: { active: boolean; direction: SortDir }
 
 interface Props {
   schools: School[];
+  /** Všechny obory kraje, i odfiltrované. Slouží jen k rozpoznání duplicit názvu oboru. */
+  allSchools?: School[];
   extendedStatsMap: Record<string, ExtendedSchoolStats>;
   trendDataMap: Record<string, YearlyTrendData>;
   krajName: string;
@@ -197,7 +198,7 @@ function SortableHeader({
   );
 }
 
-export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, krajName }: Props) {
+export function RegionSchoolsTable({ schools, allSchools, extendedStatsMap, trendDataMap, krajName }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>('jpz');
   const [sortDir, setSortDir] = useState<SortDir>('desc');
   const [currentPage, setCurrentPage] = useState(1);
@@ -425,7 +426,7 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
           </thead>
           <tbody>
             {paginatedSchools.map((school) => {
-              const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+              const slug = buildSchoolSlug(school, allSchools ?? schools);
               const category = categoryColors[school.category_code];
               const zrizovatel = getZrizovatelBadge(school.zrizovatel);
               const stats = extendedStatsMap[school.id];
@@ -550,7 +551,7 @@ export function RegionSchoolsTable({ schools, extendedStatsMap, trendDataMap, kr
       {/* Mobile karty */}
       <div className="md:hidden space-y-3 p-4">
         {paginatedSchools.map((school) => {
-          const slug = `${school.id.split('_')[0]}-${createSlug(school.nazev, school.obor)}`;
+          const slug = buildSchoolSlug(school, allSchools ?? schools);
           const category = categoryColors[school.category_code];
           const zrizovatel = getZrizovatelBadge(school.zrizovatel);
           const stats = extendedStatsMap[school.id];

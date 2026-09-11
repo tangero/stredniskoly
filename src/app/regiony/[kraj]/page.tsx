@@ -248,6 +248,10 @@ export default async function RegionPage({ params, searchParams }: Props) {
           {/* Tabulka škol */}
           <RegionSchoolsTable
             schools={filteredSchools}
+            // Nefiltrovaný seznam kraje: odkaz na detail musí poznat, že se
+            // název oboru v rámci školy opakuje s jinou délkou studia.
+            // Z filtrovaných dat by to při volbě jedné délky vidět nešlo.
+            allSchools={allSchools}
             extendedStatsMap={extendedStatsRecord}
             trendDataMap={trendDataRecord}
             krajName={kraj.nazev}
