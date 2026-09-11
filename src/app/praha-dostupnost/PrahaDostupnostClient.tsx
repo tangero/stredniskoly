@@ -581,20 +581,7 @@ export function PrahaDostupnostClient() {
                 </p>
               </div>
               <div>
-                <p className="font-medium text-slate-700 mb-2">Podbarvení školy podle našeho hodnocení náročnosti</p>
-                <div className="space-y-1 text-slate-700">
-                  {admissionThresholds ? (
-                    <>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-emerald-100"></span>nejvyšší náročnost: ≥ {admissionThresholds.highMax.toFixed(1)}</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-lime-100"></span>vyšší náročnost: {admissionThresholds.mediumMax.toFixed(1)} až {admissionThresholds.highMax.toFixed(1)}</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-amber-100"></span>střední náročnost: {admissionThresholds.lowMax.toFixed(1)} až {admissionThresholds.mediumMax.toFixed(1)}</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-orange-100"></span>nižší náročnost: {admissionThresholds.veryLowMax.toFixed(1)} až {admissionThresholds.lowMax.toFixed(1)}</p>
-                      <p><span className="inline-block w-3 h-3 rounded mr-2 align-middle bg-rose-100"></span>nejnižší náročnost: &lt; {admissionThresholds.veryLowMax.toFixed(1)}</p>
-                    </>
-                  ) : (
-                    <p>Hranice náročnosti budou k dispozici po načtení dat hodnocení.</p>
-                  )}
-                </div>
+                <p className="text-sm text-slate-600">Obtížnost přijetí nehodnotíme: ověřená hranice není k dispozici. Výsledky jsou seřazené podle dojezdu.</p>
               </div>
             </div>
           </div>

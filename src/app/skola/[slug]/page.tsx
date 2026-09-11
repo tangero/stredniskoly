@@ -1,30 +1,30 @@
+import { StatsTab } from '@/components/school/detail/tabs/StatsTab';
+import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ApplicantChoicesSection, PriorityDistributionBar, ApplicantStrategyAnalysis, AcceptanceByPriority, TestDifficulty, SchoolDifficultyProfile, StatsGrid, CohortDistribution, ProgramTabs } from '@/components/SchoolDetailClient';
+import { ProgramTabs } from '@/components/SchoolDetailClient';
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolInfoSection } from '@/components/school-profile/SchoolInfoSection';
-import { getSchoolPageType, getSchoolOverview, getSchoolDetail, getExtendedSchoolStats, getExtendedStatsForProgram, getSchoolDifficultyProfile, getProgramsByRedizo, getTrendDataForProgram, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo, type SchoolResult } from '@/lib/data';
+import { getSchoolPageType, getSchoolOverview, getExtendedStatsForProgram, getProgramsByRedizo, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo } from '@/lib/data';
 import { Applications2026Banner } from '@/components/Applications2026Banner';
 import { SchoolResults2026 } from '@/components/SchoolResults2026';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getNoteForSchool } from '@/lib/school-notes';
 import { SchoolNote } from '@/components/SchoolNote';
-import { getDemandClass, formatNumber, createSlug } from '@/lib/utils';
+import { getDemandClass, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
 // V2 Overview komponenty
 import {
   OverviewHero,
-  PriorityCardsGrid,
   QuickFactsCard,
   CSISummaryCard,
   CTASection,
   QuickFact,
 } from '@/components/school/overview';
-import { calculateAllPriorities } from '@/lib/priorities';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -88,7 +88,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const program = pageInfo.program;
   const oborNazev = program?.zamereni ? `${program.obor} - ${program.zamereni}` : school.obor;
   const title = `${school.nazev} - ${oborNazev}`;
-  const description = `Přijímací zkoušky ${school.nazev}: ${oborNazev}. Min. body ${program?.min_body || school.min_body}. ${school.obec}, ${krajNames[school.kraj_kod] || school.kraj}`;
+  const description = `Přijímací zkoušky ${school.nazev}: ${oborNazev}. Historické výsledky a přihlášky. ${school.obec}, ${krajNames[school.kraj_kod] || school.kraj}`;
 
   return {
     title,
@@ -110,59 +110,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 // Helper pro správné přiřazení 2026 dat k programu/zaměření
 function match2026ToProgram(data2026: School2026Data[], program: SchoolProgram): School2026Data | undefined {
-  const exact = data2026.find(d => d.id === program.id);
-  if (exact) return exact;
-
-  const programBaseId = program.id.split('_').slice(0, 2).join('_');
-  const candidates = data2026.filter(d => {
-    const baseId = d.id.split('_').slice(0, 2).join('_');
-    return baseId === programBaseId;
-  });
-
-  if (candidates.length <= 1) return candidates[0];
-
-  if (program.zamereni) {
-    const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length >= 3);
-    const programWords = norm(program.zamereni);
-
-    let bestMatch: School2026Data | undefined;
-    let bestScore = -1;
-
-    for (const c of candidates) {
-      const idZamPart = c.id.split('_').slice(2).join(' ');
-      if (!idZamPart) continue;
-      const candidateWords = norm(idZamPart);
-      const score = programWords.filter(w => candidateWords.some(cw => cw.includes(w) || w.includes(cw))).length;
-      if (score > bestScore) {
-        bestScore = score;
-        bestMatch = c;
-      }
-    }
-    if (bestMatch && bestScore > 0) return bestMatch;
-  }
-
-  return candidates[0];
-}
-
-// Helper pro zobrazení trendu min. bodů
-function MinBodyTrend({ trend }: { trend: YearlyTrendData | null }) {
-  if (!trend || trend.minBody2024 === 0) return null;
-
-  const change = trend.minBodyChange;
-  const isUp = change > 0;
-  const isDown = change < 0;
-
-  return (
-    <div className="flex items-center gap-1 text-xs">
-      <span className="text-slate-400">2024:</span>
-      <span className="font-medium text-slate-500">{trend.minBody2024}</span>
-      {change !== 0 && (
-        <span className={`font-medium ${isDown ? 'text-green-600' : isUp ? 'text-red-600' : 'text-slate-500'}`}>
-          ({isDown ? '' : '+'}{change})
-        </span>
-      )}
-    </div>
-  );
+  return uniqueSchoolIndex(data2026, row => row.id).get(normalizeSchoolKey(program.id));
 }
 
 // Helper pro délku studia badge
@@ -192,7 +140,7 @@ function StudyLengthBadge({ delka }: { delka: number }) {
 }
 
 // Komponenta pro kartu oboru v přehledu
-function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend, data2026ForProgram }: {
+function ProgramCard({ program, schoolNazev, redizo, showStudyLength, data2026ForProgram }: {
   program: SchoolProgram;
   schoolNazev: string;
   redizo: string;
@@ -244,7 +192,7 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend, dat
         <div className="mb-3 text-xs">
           {isNew && (
             <span className="inline-block px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-medium mr-2">
-              Nové 2026
+              V importu 2026
             </span>
           )}
           {prevName && (
@@ -276,7 +224,7 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend, dat
             {/* Doplňkový řádek s 2025 daty */}
             <div className="mt-3 pt-3 border-t border-slate-50 grid grid-cols-3 gap-4 text-xs text-slate-400">
               <div className="text-center">
-                <span className="font-medium text-red-600">{program.min_body}</span> min. body 2025
+                <span className="font-medium text-red-600">{program.prijati}</span> přijatých 2025
               </div>
               <div className="text-center">
                 {program.kapacita} míst 2025
@@ -289,9 +237,8 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, trend, dat
         ) : (
           <div className="grid grid-cols-3 gap-4 mt-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-red-600">{program.min_body}</div>
-              <div className="text-xs text-slate-500">Min. body 2025</div>
-              {trend && <MinBodyTrend trend={trend} />}
+              <div className="text-2xl font-bold text-slate-700">{program.prijati}</div>
+              <div className="text-xs text-slate-500">Přijatí 2025</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-slate-700">{program.kapacita}</div>
@@ -348,7 +295,7 @@ export default async function SchoolDetailPage({ params }: Props) {
     ]);
 
     // Seřadit programy podle min_body (nejobtížnější první)
-    const sortedPrograms = [...overview.programs].sort((a, b) => b.min_body - a.min_body);
+    const sortedPrograms = [...overview.programs].sort((a, b) => a.obor.localeCompare(b.obor, 'cs') || a.id.localeCompare(b.id));
 
     // Spočítat celkovou kapacitu a statistiky
     const totalKapacita = sortedPrograms.reduce((sum, p) => sum + p.kapacita, 0);
@@ -372,21 +319,10 @@ export default async function SchoolDetailPage({ params }: Props) {
       // Pro školy s 1 oborem použijeme V2 Overview stránku
       const program = sortedPrograms[0];
 
-      // Vypočítat priority scores
-      const priorities = calculateAllPriorities({
-        minBody: program.min_body,
-        obtiznost: school.obtiznost,
-        indexPoptavky: program.index_poptavky,
-        kapacita: program.kapacita,
-        prihlasky: program.prihlasky,
-        prijati: program.prijati,
-        typ: school.typ,
-      });
-
       // Quick facts pro kartu
       const quickFacts: QuickFact[] = [
-        { label: "Min. body", value: program.min_body },
-        { label: "Kapacita", value: program.kapacita },
+        { label: "Přijatí 2025", value: program.prijati },
+        { label: "Kapacita 2025", value: program.kapacita },
         { label: "Školné", value: inspis?.rocni_skolne ? `${inspis.rocni_skolne.toLocaleString('cs-CZ')} Kč` : inspis?.rocni_skolne === 0 ? "Zdarma" : "Neuvedeno" },
         { label: "Jazyky", value: inspis?.vyuka_jazyku?.slice(0, 2).join(", ") || "N/A" },
       ];
@@ -450,7 +386,7 @@ export default async function SchoolDetailPage({ params }: Props) {
               <SchoolResults2026 results={results2026} />
 
               {/* Priority Cards */}
-              <PriorityCardsGrid priorities={priorities} />
+              <StatsTab program={program} extendedStats={await getExtendedStatsForProgram(program.id)} />
 
               {/* Quick Facts */}
               <QuickFactsCard facts={quickFacts} />
@@ -589,9 +525,9 @@ export default async function SchoolDetailPage({ params }: Props) {
                   </div>
                   <div className="bg-white p-4 rounded-xl shadow-sm text-center">
                     <div className="text-3xl font-bold text-red-600">
-                      {Math.min(...sortedPrograms.map(p => p.min_body))} - {Math.max(...sortedPrograms.map(p => p.min_body))}
+                      {sortedPrograms.reduce((sum, p) => sum + p.prijati, 0)}
                     </div>
-                    <div className="text-sm text-slate-500">Rozsah min. bodů 2025</div>
+                    <div className="text-sm text-slate-500">Přijatí 2025</div>
                   </div>
                 </div>
               );
@@ -615,11 +551,8 @@ export default async function SchoolDetailPage({ params }: Props) {
               const matched2026BaseIds = new Set<string>();
 
               for (const p of sortedPrograms) {
-                const baseId = p.id.split('_').slice(0, 2).join('_');
-                const has2026 = data2026.some(d => {
-                  const d2026BaseId = d.id.split('_').slice(0, 2).join('_');
-                  return d2026BaseId === baseId;
-                });
+                const baseId = normalizeSchoolKey(p.id);
+                const has2026 = !!match2026ToProgram(data2026, p);
                 if (has2026) {
                   programsWith2026.push(p);
                   matched2026BaseIds.add(baseId);
@@ -664,7 +597,7 @@ export default async function SchoolDetailPage({ params }: Props) {
                         Obory z roku 2025
                       </h2>
                       <p className="text-sm text-slate-500 mb-4">
-                        Tyto obory se v roce 2026 na této škole neotevírají. Zobrazujeme data z roku 2025 pro orientaci.
+                        U těchto oborů nemáme jednoznačnou shodu s importem 2026. Neznamená to, že se neotevírají. Zobrazujeme historii 2025; nabídku 2027 ověřte u školy.
                       </p>
                       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 opacity-75">
                         {programsOnly2025.map(program => {
@@ -751,7 +684,6 @@ export default async function SchoolDetailPage({ params }: Props) {
   const program = pageInfo.program;
   if (!program) notFound();
 
-  const demand = getDemandClass(program.index_poptavky);
   const category = categoryColors[school.category_code];
 
   // Načíst další data - pro zaměření použít specifickou funkci
@@ -759,14 +691,9 @@ export default async function SchoolDetailPage({ params }: Props) {
   const data2026ForDetail = await get2026DataByRedizo(redizo);
   const program2026 = match2026ToProgram(data2026ForDetail, program);
 
-  const [detailedPrograms, schoolDetail, extendedStats, difficultyProfile, trendData, csiData, extractions, programNote, schoolNote, results2026] = await Promise.all([
+  const [detailedPrograms, extendedStats, csiData, extractions, programNote, schoolNote, results2026] = await Promise.all([
     getProgramsByRedizo(redizo),
-    getSchoolDetail(program.id),
-    pageInfo.type === 'zamereni'
-      ? getExtendedStatsForProgram(program.id)
-      : getExtendedSchoolStats(school.id),
-    getSchoolDifficultyProfile(program.id, program.typ),
-    getTrendDataForProgram(program.id),
+    getExtendedStatsForProgram(program.id),
     getCSIDataByRedizo(redizo),
     getExtractionsByRedizo(redizo),
     getNoteForSchool(program.id),   // poznámka specifická pro zaměření/obor
@@ -883,7 +810,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             {school.is_new_2026 && (
               <p className="text-sm mb-2">
                 <span className="inline-block px-2 py-0.5 rounded-full bg-amber-400/30 text-amber-100 font-medium text-xs">
-                  Nový obor 2026
+                  Obor v importu 2026
                 </span>
               </p>
             )}
@@ -935,16 +862,12 @@ export default async function SchoolDetailPage({ params }: Props) {
         )}
         {results2026.length > 0 && (
           <div className="max-w-6xl mx-auto px-4">
-            <SchoolResults2026 results={results2026.filter(r => {
-              const programKkov = program.id.split('_')[1] ?? '';
-              return r.kkov === programKkov &&
-                (r.zamereni === (program.zamereni ?? '') || r.zamereni === '');
-            })} />
+            <SchoolResults2026 results={results2026.filter(r => normalizeSchoolKey(r.offer_id ?? '') === normalizeSchoolKey(program.id))} />
           </div>
         )}
 
         {/* Oddělovač historických dat */}
-        {program2026 && (
+        {(
           <div className="max-w-6xl mx-auto px-4 pt-8">
             <div className="bg-slate-100 border border-slate-200 rounded-xl px-6 py-4 flex items-center gap-3">
               <div className="flex-shrink-0 w-10 h-10 bg-slate-200 rounded-lg flex items-center justify-center">
@@ -954,7 +877,7 @@ export default async function SchoolDetailPage({ params }: Props) {
               </div>
               <div>
                 <h2 className="text-lg font-bold text-slate-700">Data z přijímacího řízení 2025</h2>
-                <p className="text-sm text-slate-500">Výsledky loňského přijímacího řízení — minimální body, rozložení priorit a strategie uchazečů</p>
+                <p className="text-sm text-slate-500">Historický import 2025. Údaje nejsou podmínkami přijetí pro rok 2027.</p>
               </div>
             </div>
           </div>
@@ -967,181 +890,10 @@ export default async function SchoolDetailPage({ params }: Props) {
 
         {/* Stats Grid */}
         <div className="max-w-6xl mx-auto px-4 py-8">
-          <StatsGrid
-            totalApplicants={program.prihlasky}
-            priority1Count={extendedStats?.prihlasky_priority?.[0] || 0}
-            minBody={program.min_body}
-            jpzMin={extendedStats?.jpz_min ?? null}
-            cjAtJpzMin={extendedStats?.cj_at_jpz_min ?? null}
-            maAtJpzMin={extendedStats?.ma_at_jpz_min ?? null}
-            hasExtraCriteria={extendedStats?.hasExtraCriteria ?? null}
-            extraBody={extendedStats?.extra_body ?? null}
-            acceptedCount={program.prijati}
-            indexPoptavky={program.index_poptavky}
-            kapacita={program.kapacita}
-            trendData={trendData}
-            prijati2024={trendData?.prijati2024}
-          />
-
-          {/* Priority Distribution Bar */}
-          {extendedStats && (
-            <div className="mb-8">
-              <PriorityDistributionBar
-                priorityPcts={school.priority_pcts}
-                prihlasky_priority={extendedStats.prihlasky_priority}
-                prijati_priority={extendedStats.prijati_priority}
-              />
-            </div>
-          )}
-
-          {/* Kam se hlásí ostatní uchazeči */}
-          {schoolDetail && (
-            <div className="mb-8">
-              <ApplicantChoicesSection
-                schoolDetail={schoolDetail}
-                priorityCounts={school.priority_counts}
-              />
-            </div>
-          )}
-
-          {/* Analýza strategií uchazečů */}
-          {schoolDetail && (
-            <div className="mb-8">
-              <ApplicantStrategyAnalysis
-                schoolDetail={schoolDetail}
-                currentSchoolMinBody={program.min_body}
-              />
-            </div>
-          )}
-
-          {/* Šance přijetí podle priority a Náročnost testů */}
-          {extendedStats && (
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              {extendedStats.prihlasky_priority.length > 0 && extendedStats.prijati_priority.length > 0 && (
-                <AcceptanceByPriority
-                  prihlasky_priority={extendedStats.prihlasky_priority}
-                  prijati_priority={extendedStats.prijati_priority}
-                />
-              )}
-              {(extendedStats.cj_prumer > 0 || extendedStats.ma_prumer > 0) && (
-                <TestDifficulty
-                  cj_prumer={extendedStats.cj_prumer}
-                  cj_at_jpz_min={extendedStats.cj_at_jpz_min}
-                  ma_prumer={extendedStats.ma_prumer}
-                  ma_at_jpz_min={extendedStats.ma_at_jpz_min}
-                  jpz_min={extendedStats.jpz_min}
-                />
-              )}
-            </div>
-          )}
-
-          {/* Profily přijatých studentů */}
-          {extendedStats?.cohorts && (
-            <div className="mb-8">
-              <CohortDistribution cohorts={extendedStats.cohorts} />
-            </div>
-          )}
-
-          {/* Profil náročnosti školy */}
-          {difficultyProfile && extendedStats && (
-            <div className="mb-8">
-              <SchoolDifficultyProfile
-                profile={difficultyProfile}
-                schoolType={program.typ}
-                cjPrumer={extendedStats.cj_prumer}
-                maPrumer={extendedStats.ma_prumer}
-                jpzMin={extendedStats.jpz_min}
-                minBody={program.min_body}
-                extraBody={extendedStats.extra_body}
-                hasExtraCriteria={extendedStats.hasExtraCriteria}
-              />
-            </div>
-          )}
-
-          {/* Přihlášky a přijetí + Detail body */}
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h2 className="text-xl font-semibold mb-4">Přihlášky a přijetí 2025</h2>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-600">Počet přihlášek:</span>
-                  <span className="font-semibold">{formatNumber(program.prihlasky)}</span>
-                </div>
-                {trendData && trendData.prihlasky2024 > 0 && (
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-slate-500 pl-4">└ v roce 2024:</span>
-                    <span className="font-medium text-slate-600">
-                      {formatNumber(trendData.prihlasky2024)}
-                      {trendData.prihlaskyChange !== 0 && (
-                        <span className={`ml-2 ${trendData.prihlaskyDirection === 'down' ? 'text-green-600' : trendData.prihlaskyDirection === 'up' ? 'text-amber-600' : ''}`}>
-                          ({trendData.prihlaskyChange > 0 ? '+' : ''}{trendData.prihlaskyChange.toFixed(0)}%)
-                        </span>
-                      )}
-                    </span>
-                  </div>
-                )}
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-600">Počet přijatých:</span>
-                  <span className="font-semibold">{formatNumber(program.prijati)}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-600">Kapacita:</span>
-                  <span className="font-semibold">{formatNumber(program.kapacita)}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-600">Index poptávky:</span>
-                  <span className="font-semibold">{program.index_poptavky.toFixed(2)}× {demand.emoji}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <h2 className="text-xl font-semibold mb-4">Bodové statistiky</h2>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-600">Min. skóre pro přijetí (2025):</span>
-                  <span className="font-semibold text-red-600">{program.min_body}</span>
-                </div>
-                {trendData && trendData.minBody2024 > 0 && (
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-slate-500 pl-4">└ v roce 2024:</span>
-                    <span className="font-medium text-slate-600">
-                      {trendData.minBody2024}
-                      {trendData.minBodyChange !== 0 && (
-                        <span className={`ml-2 ${trendData.minBodyChange < 0 ? 'text-green-600' : 'text-red-600'}`}>
-                          ({trendData.minBodyChange > 0 ? '+' : ''}{trendData.minBodyChange} bodů)
-                        </span>
-                      )}
-                    </span>
-                  </div>
-                )}
-                {extendedStats && extendedStats.hasExtraCriteria && (
-                  <>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-slate-500 pl-4">└ z toho JPZ (ČJ+MA):</span>
-                      <span className="font-medium text-slate-700">{extendedStats.jpz_min}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-slate-500 pl-4">└ body za další kritéria:</span>
-                      <span className="font-medium text-amber-600">+{extendedStats.extra_body}</span>
-                    </div>
-                  </>
-                )}
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-600">Přihlášek na místo (2025):</span>
-                  <span className="font-semibold text-slate-900">
-                    {program.kapacita > 0 ? (program.prihlasky / program.kapacita).toLocaleString('cs-CZ', { maximumFractionDigits: 2 }) : '—'}
-                  </span>
-                </div>
-              </div>
-              {extendedStats && extendedStats.hasExtraCriteria && (
-                <div className="mt-4 p-3 bg-amber-50 rounded-lg text-xs text-amber-700">
-                  <strong>Poznámka:</strong> Tento obor přidává ke skóre z JPZ ještě body za další kritéria
-                  (typicky prospěch na ZŠ). Pro férové srovnání s ostatními školami používáme v percentilech
-                  náročnosti pouze čisté JPZ body ({extendedStats.jpz_min} b.).
-                </div>
-              )}
-            </div>
+          <StatsTab program={program} extendedStats={extendedStats} />
+          <div className="my-6 rounded-xl bg-white p-6">
+            <h2 className="font-semibold">Přijetí a kapacita · 2025</h2>
+            <p className="mt-2">Přijatí v roce 2025: {program.prijati}. Kapacita: {program.kapacita} míst.</p>
           </div>
 
           {/* Interpretace */}

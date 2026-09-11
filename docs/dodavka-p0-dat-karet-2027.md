@@ -1,0 +1,34 @@
+# P0 dat na kartách a návaznost O-13
+
+Verze 1.0, 11. 9. 2026. **Implementováno a lokálně ověřeno; veřejná přejímka čeká na nasazení. P0/O-13 zatím neuzavíráme.**
+
+## Dodaný rozsah
+
+| Nález | Oprava P0 | Přejímka |
+|---|---|---|
+| A-02 / O-13 | Hlavní profil a detail sdílejí `StatsTab`. Z hlavičky, karet, záložek a metadat odstraněna číselná neověřená minima. JSON/MD a staré API neposkytují minimum jako hranici. Zrušen neověřený žebříček obtížnosti. Staré predikční komponenty nevykreslují doporučení. | Machar hlavní profil/detail/přehled; Bohosudov 4/8; `/skoly`, region; JSON/MD; test doručeného JS simulátoru. |
+| A-02 / staré průvodce | `/pro-me` nabízí věcné otázky a odkaz do simulátoru, bez výpočtu z minima. `/moje-sance` směruje na udržovaný simulátor se zachováním parametru výběru. Konkurence v detailu neodvozuje doporučení z nedoložených bodů. | HTTP průvodce, redirect včetně výběru. |
+| A-03 | Kontrakt předmětového skóre a sdílený renderer /50 na profilu i v detailu, bez soudů „lehčí/těžší“. Dohledatelný zdroj a převod, nulové/chybějící hodnoty rozlišeny. | 72,2 → 36,1 /50; 60,2 → 30,1 /50; skutečné TSX i HTML. |
+| A-04 | Termíny a popis zkoušek InspIS jsou pod upozorněním „Pro rok 2027 neověřeno“, původní text pouze v zavřeném archivu. Neprovádí se odhad budoucího data z volného textu. | Přehled Bohosudova; renderer s daty 2024/2025, chybným 20236, bez roku a null. |
+| A-05 | Přihlášky i výsledky se na obor párují jen jednoznačným plným klíčem. Odstraněna záchrana prvním kandidátem a závěr „neotevírají“. | Test kolize, zaměření, 4/6/8 let; integrační zachování konkrétního oboru. |
+| A-06 | Výsledkový loader sdílí publikační kontrolu s kontextem, rozporný průměr není obnoven druhým JSONem. Pořadí/počty skupiny se přepočítají. Dopravní výpis používá stejné ověřené průměry 2026. | MESIT `600015611_64-41-L/51` vyřazen: 23 přijatých, ve zdroji 24 konajících přijatých. Runtime test rozporů a veřejně serializovaný přehled výsledků. |
+| A-07 | Odstraněna predikce oscilace a záměna kapacity za přijaté. Banner neporovnává rozdílné množiny nabídek. Regionální trend používá jednoznačné plné ID v obou letech; chybějící rok není nula. Neověřená změna průměru 2026/2025 se nezobrazuje. | Zdrojové cesty, profil/banner/region, kontrola absence prediktivních formulací. |
+| Další konzument dojezdu | API nevrací minimum ani legacy obtížnost/pásmo; výběr výchozího oboru nezávisí na minimu. Průměr je validovaný 2026 z /100, poptávka samostatně 2025. | Běžný i simulátorový kontrakt `/api/dostupnost`. |
+
+## Ověření před nasazením
+
+- 18 jednotkových/renderovacích testů (`p0-quality`, `admission-metric`, `detail-stats-render`, `s0`, `admission-summary`, `simulator-filter`).
+- 25 integračních testů (`p0-pages`, `detail-stats`, `s0-api`, `simulator-transit`) nad izolovaným sestavením.
+- TypeScript, cílený lint a produkční build. Lokální worktree používá webpack kvůli sdílené instalaci závislostí; Vercel musí navíc projít standardním buildem projektu.
+- Mobilní kontrola hlavního profilu při šířce 390 px. Čtenář vidí jednotky, zdroj, historické počty a odkazy na další obory.
+- Test doručeného JS dekóduje `\u`/`\x` zápis znaků, takže stejná kontrola funguje pro webpack i turbopack. Zakázané fráze se tím kontrolují také v escapovaném zápisu.
+
+## Co uzavření P0 neznamená
+
+Nejde o aktualizaci všech dat na 2027. Katalogová migrace, potvrzení nabídky, kapacit a kritérií 2027, nové kontakty/termíny škol a rozšíření mimo povinnou JPZ zůstávají navazující prací P1. Změna rozhraní neověřuje aktuálnost školného ani původní obsah inspekčních zpráv.
+
+Souběžně zahájena inventura: `podklady/migrace-katalogu-2027/` obsahuje 1 004 nespárovaných nabídek (978 bez klíče, 26 v kolizi), stratifikovaný pracovní vzorek 100 a hashe zdrojů. Ručně potvrzených mapování: **0**. Automatické heuristické mapování není nasazené. Konzervatoře potřebují samostatný zdroj.
+
+## Veřejná přejímka
+
+Čeká na nasazení. Doplnit commit/PR, stav nasazení a běh integrační sady na `https://www.prijimackynaskolu.cz`; teprve potom uzavřít P0 a celowebové O-13.

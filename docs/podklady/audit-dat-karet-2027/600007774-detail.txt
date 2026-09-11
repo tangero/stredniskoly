@@ -1,0 +1,159 @@
+https://www.prijimackynaskolu.cz/skola/600007774-gymnazium-j-s-machara-kralovicka-technicke-lyceum/detail
+Přijímačky na
+školu
+Kalendář 2027
+Moje šance
+Simulátor
+Analýza škol
+Dojezdovost MHD
+Regiony
+Průvodce
+Jak to funguje?
+Nahlášené chyby
+Hlídač státu
+Hledat
+O projektu
+Stránka využívá reálná data z CERMAT a ČŠI pro zobrazení dat a odhad šancí na přijetí na střední školy v ČR.
+Autor:
+Patrick Zandl
+a
+Hlídač státu
+patrick@zandl.cz
+|
+Vibecoding.cz
+Pro hlášení chyb použijte prosím tlačítko vpravo dole
+Rychlé odkazy
+Kalendář 2027
+Simulátor
+Analýza škol
+Školy dostupné MHD
+Přehled regionů
+Jak vybrat a uspět
+Zdroje dat
+CERMAT - Přijímací zkoušky
+data.cermat.cz
+Projekt
+Changelog (v2.4.1)
+Zdrojový kód
+Stránka slouží pouze k orientačním účelům. Skutečné výsledky záleží hlavně na výsledcích žáka. | Historická data 2024–2026 · kalendář přijímaček 2027 | ©
+2026
+Projekt Hlídače státu
+Nahlásit chybu
+Gymnázium J. S. Machara, Královická - Detail | Přijímačky na střední školy
+Přijímačky na
+školu
+Kalendář 2027
+Moje šance
+Simulátor
+Analýza škol
+Dojezdovost MHD
+Regiony
+Průvodce
+Jak to funguje?
+Nahlášené chyby
+Hlídač státu
+Hledat
+Domů
+/
+Školy
+/
+Středočeský
+/
+Gymnázium J. S. Machara, Královická
+/
+Detail
+Zpět na přehled školy
+Gymnázium J. S. Machara, Královická
+Technické lyceum
+Brandýs nad Labem-Stará Boleslav
+,
+Středočeský
+Min. body
+50
+Poptávka
+1.2
+×
+✓
+4
+leté studium
+Statistiky
+Konkurence
+Škola
+Praktické
+Vývoj
+Minimální body
+50
+Počet přihlášek
+N/A
+Šance přijetí podle priority
+1. priorita
+100
+%
+(
+7
+/
+7
+)
+2. priorita
+13
+%
+(
+2
+/
+15
+)
+3. priorita
+13
+%
+(
+2
+/
+15
+)
+4. priorita
+0
+%
+(
+0
+/
+0
+)
+💡
+Tip:
+O přijetí rozhoduje výhradně váš počet bodů z testů, nikoliv pořadí škol na přihlášce. Priorita určuje, na kterou školu nastoupíte, pokud jste přijati na více škol.
+Náročnost přijímaček
+ČJ průměr
+36
+/100
+(těžší)
+MA průměr
+30
+/100
+(těžší)
+Zobrazit detail
+O projektu
+Stránka využívá reálná data z CERMAT a ČŠI pro zobrazení dat a odhad šancí na přijetí na střední školy v ČR.
+Autor:
+Patrick Zandl
+a
+Hlídač státu
+patrick@zandl.cz
+|
+Vibecoding.cz
+Pro hlášení chyb použijte prosím tlačítko vpravo dole
+Rychlé odkazy
+Kalendář 2027
+Simulátor
+Analýza škol
+Školy dostupné MHD
+Přehled regionů
+Jak vybrat a uspět
+Zdroje dat
+CERMAT - Přijímací zkoušky
+data.cermat.cz
+Projekt
+Changelog (v2.4.1)
+Zdrojový kód
+Stránka slouží pouze k orientačním účelům. Skutečné výsledky záleží hlavně na výsledcích žáka. | Historická data 2024–2026 · kalendář přijímaček 2027 | ©
+2026
+Projekt Hlídače státu

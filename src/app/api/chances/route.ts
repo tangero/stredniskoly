@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
       kapacita_2025: chancesData.data2025?.kapacita || 0,
       prihlasky_2025: chancesData.data2025?.prihlasky || 0,
       prijati_2025: chancesData.data2025?.prijati || 0,
-      min_body_2025: Math.round((chancesData.data2025?.min_body || 0) / 2),
+      min_body_2025: null,
       prumer_body_2025: Math.round(((chancesData.data2025?.cj_prumer || 0) + (chancesData.data2025?.ma_prumer || 0)) / 2),
       index_poptavky_2025: chancesData.data2025?.index_poptavky || 0,
       prihlasky_priority_2025: chancesData.data2025?.prihlasky_priority,
@@ -59,7 +59,7 @@ export async function GET(request: NextRequest) {
       kapacita_2024: chancesData.data2024?.kapacita,
       prihlasky_2024: chancesData.data2024?.prihlasky,
       prijati_2024: chancesData.data2024?.prijati,
-      min_body_2024: chancesData.data2024 ? Math.round((chancesData.data2024.min_body || 0) / 2) : undefined,
+      min_body_2024: null,
       index_poptavky_2024: chancesData.data2024?.index_poptavky,
     });
   }

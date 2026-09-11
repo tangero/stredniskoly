@@ -1,0 +1,23 @@
+{
+  "source_sha256": "e53ddcaeaa63203315ea970d84b7fe6f9e4abf15f68db9c65dac6583df8d8530",
+  "population": "Všechny řádky datasetu 2025; bez deduplikace a rozdělení podle typu/délky studia; stejná váha každému řádku.",
+  "percentile_definition": "100 * počet hodnot <= hodnota oboru / počet platných hodnot",
+  "subjects": {
+    "cj_prumer": {
+      "source_percent": 72.2,
+      "converted_0_50": 36.1,
+      "rows": 2837,
+      "unweighted_mean_percent": 58.96334155798379,
+      "rank_percent_le": 82.02326401127952,
+      "rank_percent_lt": 81.84702150158618
+    },
+    "ma_prumer": {
+      "source_percent": 60.2,
+      "converted_0_50": 30.1,
+      "rows": 2837,
+      "unweighted_mean_percent": 41.787945012336976,
+      "rank_percent_le": 88.01550934085301,
+      "rank_percent_lt": 87.83926683115968
+    }
+  }
+}

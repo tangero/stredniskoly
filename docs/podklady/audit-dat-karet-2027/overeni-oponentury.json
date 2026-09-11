@@ -1,0 +1,19 @@
+{
+  "hashes": {
+    "public/schools_data.json": "e53ddcaeaa63203315ea970d84b7fe6f9e4abf15f68db9c65dac6583df8d8530",
+    "public/applications_2026.json": "db9924bdd4163a5a332f53e2690116a49a69d87782290acd411933a603365eee",
+    "public/cermat_results_2026.json": "39820d008c751e37f3099ec8887558507d52f99937f49028a69873cb43fc68e4",
+    "data/inspis_school_profiles.json": "66c027f2e3fc2bccf8dcec2c042e89a1e05dc4024a11761ae2dcdc31e2e0bbc2"
+  },
+  "catalog_all_keys": 2807,
+  "catalog_unambiguous": 2777,
+  "result_matches": 2075,
+  "missing_against_all": 978,
+  "missing_against_unambiguous": 1004,
+  "date_classification_difference": [
+    {
+      "redizo": "600032001",
+      "value": "14. 12. 20236"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+https://www.prijimackynaskolu.cz/skola/600001431-biskupske-gymnazium-konevova-gymnazium-4lete/detail
+Přijímačky na
+školu
+Kalendář 2027
+Moje šance
+Simulátor
+Analýza škol
+Dojezdovost MHD
+Regiony
+Průvodce
+Jak to funguje?
+Nahlášené chyby
+Hlídač státu
+Hledat
+O projektu
+Stránka využívá reálná data z CERMAT a ČŠI pro zobrazení dat a odhad šancí na přijetí na střední školy v ČR.
+Autor:
+Patrick Zandl
+a
+Hlídač státu
+patrick@zandl.cz
+|
+Vibecoding.cz
+Pro hlášení chyb použijte prosím tlačítko vpravo dole
+Rychlé odkazy
+Kalendář 2027
+Simulátor
+Analýza škol
+Školy dostupné MHD
+Přehled regionů
+Jak vybrat a uspět
+Zdroje dat
+CERMAT - Přijímací zkoušky
+data.cermat.cz
+Projekt
+Changelog (v2.4.1)
+Zdrojový kód
+Stránka slouží pouze k orientačním účelům. Skutečné výsledky záleží hlavně na výsledcích žáka. | Historická data 2024–2026 · kalendář přijímaček 2027 | ©
+2026
+Projekt Hlídače státu
+Nahlásit chybu
+Biskupské gymnázium, Koněvova - Detail | Přijímačky na střední školy
+Přijímačky na
+školu
+Kalendář 2027
+Moje šance
+Simulátor
+Analýza škol
+Dojezdovost MHD
+Regiony
+Průvodce
+Jak to funguje?
+Nahlášené chyby
+Hlídač státu
+Hledat
+Domů
+/
+Školy
+/
+Ústecký
+/
+Biskupské gymnázium, Koněvova
+/
+Detail
+Zpět na přehled školy
+Biskupské gymnázium, Koněvova
+Gymnázium
+Krupka
+,
+Ústecký
+Min. body
+12
+Poptávka
+5.3
+×
+🔥
+4
+leté studium
+Statistiky
+Konkurence
+Škola
+Praktické
+Vývoj
+Minimální body
+12
+Počet přihlášek
+N/A
+Šance přijetí podle priority
+1. priorita
+100
+%
+(
+14
+/
+14
+)
+2. priorita
+4
+%
+(
+2
+/
+54
+)
+3. priorita
+11
+%
+(
+6
+/
+53
+)
+4. priorita
+0
+%
+(
+0
+/
+1
+)
+💡
+Tip:
+O přijetí rozhoduje výhradně váš počet bodů z testů, nikoliv pořadí škol na přihlášce. Priorita určuje, na kterou školu nastoupíte, pokud jste přijati na více škol.
+Náročnost přijímaček
+ČJ průměr
+24
+/100
+(těžší)
+MA průměr
+16
+/100
+(těžší)
+Zobrazit detail
+O projektu
+Stránka využívá reálná data z CERMAT a ČŠI pro zobrazení dat a odhad šancí na přijetí na střední školy v ČR.
+Autor:
+Patrick Zandl
+a
+Hlídač státu
+patrick@zandl.cz
+|
+Vibecoding.cz
+Pro hlášení chyb použijte prosím tlačítko vpravo dole
+Rychlé odkazy
+Kalendář 2027
+Simulátor
+Analýza škol
+Školy dostupné MHD
+Přehled regionů
+Jak vybrat a uspět
+Zdroje dat
+CERMAT - Přijímací zkoušky
+data.cermat.cz
+Projekt
+Changelog (v2.4.1)
+Zdrojový kód
+Stránka slouží pouze k orientačním účelům. Skutečné výsledky záleží hlavně na výsledcích žáka. | Historická data 2024–2026 · kalendář přijímaček 2027 | ©
+2026
+Projekt Hlídače státu

@@ -53,3 +53,9 @@ Po veřejné přejímce navázat M0 (ověřené měření), identitou a stavy na
 - Test zpět po zkopírování odkazu: při jiném pořadí se stará nabídka kopírování skryje; ověřeno v poslední verzi klienta. Návrat k prázdnému výběru, chyby API a opakování jsou popsány výše.
 
 Tím je splněna přejímka §3 a uzavřeny O-13/O-4. O-19/O-21 zůstávají uzavřené. Nejde o plošné potvrzení kvality každého staršího ukazatele webu ani o dokončení Mého výběru, měření M0 nebo úplného katalogu 2027.
+
+## Doplnění 11. 9. 2026 — otevřená návaznost O-13 mimo přejaté cesty
+
+Audit dat karet v1.1 a jeho oponentura potvrdily, že hlavní profil a `/detail` dále publikují neověřené minimum/osobní interpretaci historického poměru; `/detail` navíc používá chybnou škálu. Původní výsledky přejímky výše zůstávají historickým důkazem pro tehdy testované cesty, nikoli důkazem očištění celého webu. **O-13 je v celowebovém rozsahu otevřený.** A-02 je pokračování původního blokátoru, A-03 související chyba jednotek a mezera stejné přejímky. Nejde o tvrzení, že se opravený simulátor vrátil ke starým predikcím.
+
+Uzavření vyžaduje matici konzumentů a datových větví v [auditu dat karet v1.1](audit-dat-karet-2027.md#návrh-sdíleného-kontraktu-a-přejímky), včetně exportů a alternativních detailů. Tímto doplněním se žádná produkční vada neopravuje.

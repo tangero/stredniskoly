@@ -1,5 +1,7 @@
 'use client';
 
+import { ArchivedAdmissionText } from '@/components/ArchivedAdmissionText';
+
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -40,7 +42,7 @@ function AdmissionCard({ data }: { data: SchoolInspisData }) {
       <div className="space-y-3 text-sm">
         <div>
           <div className="text-slate-500 mb-1">Forma</div>
-          <div className="text-slate-900">{data.prijimaci_zkousky || 'Neuvedeno'}</div>
+          <div className="text-slate-900"><ArchivedAdmissionText value={data.prijimaci_zkousky} /></div>
         </div>
 
         {data.zkousky_z_predmetu && data.zkousky_z_predmetu.length > 0 && (
@@ -52,7 +54,7 @@ function AdmissionCard({ data }: { data: SchoolInspisData }) {
 
         <div>
           <div className="text-slate-500 mb-1">Termín</div>
-          <div className="text-slate-900">{data.termin_prijimacich_zkousek || 'Neuvedeno'}</div>
+          <div className="text-slate-900"><ArchivedAdmissionText value={data.termin_prijimacich_zkousek} /></div>
         </div>
 
         <div className="flex items-center justify-between py-2 border-t border-slate-100">
@@ -62,7 +64,7 @@ function AdmissionCard({ data }: { data: SchoolInspisData }) {
 
         <div className="flex items-center justify-between py-2 border-t border-slate-100">
           <span className="text-slate-600">Dny otevřených dveří</span>
-          <span className="font-medium text-slate-900">{data.dny_otevrenych_dveri || 'Neuvedeno'}</span>
+          <span className="font-medium text-slate-900"><ArchivedAdmissionText value={data.dny_otevrenych_dveri} /></span>
         </div>
       </div>
     </div>

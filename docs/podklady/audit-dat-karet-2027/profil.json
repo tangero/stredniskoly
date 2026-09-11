@@ -1,0 +1,112 @@
+{
+  "catalog_2025_rows": 2837,
+  "catalog_unique_unambiguous": 2777,
+  "applications_2026": 3091,
+  "result_offers_2026": 3076,
+  "catalog_with_applications_2026": 2087,
+  "catalog_with_results_2026": 2075,
+  "catalog_all_normalized_keys": 2807,
+  "applications_2026_outside_all_keys": 978,
+  "applications_2026_ambiguous_counterpart": 26,
+  "applications_2026_outside_catalog": 1004,
+  "catalog_without_matching_applications_2026": 690,
+  "incomplete_outcomes": 65,
+  "inspis_generated_at": "2026-02-11T19:10:36.890Z",
+  "inspis_schools": 1180,
+  "inspis_fields": {
+    "dny_otevrenych_dveri": {
+      "non_null": 998,
+      "explicit_years": {
+        "2013": 1,
+        "2014": 23,
+        "2015": 38,
+        "2016": 8,
+        "2017": 2,
+        "2018": 39,
+        "2019": 52,
+        "2020": 16,
+        "2021": 86,
+        "2022": 167,
+        "2023": 232,
+        "2024": 360,
+        "2025": 288,
+        "2026": 57
+      },
+      "only_years_through_2025": 776,
+      "without_explicit_year": 165
+    },
+    "termin_prijimacich_zkousek": {
+      "non_null": 707,
+      "explicit_years": {
+        "2015": 20,
+        "2016": 4,
+        "2017": 1,
+        "2018": 2,
+        "2019": 42,
+        "2020": 2,
+        "2021": 51,
+        "2022": 33,
+        "2023": 86,
+        "2024": 78,
+        "2025": 140,
+        "2026": 31,
+        "2027": 1
+      },
+      "only_years_through_2025": 451,
+      "without_explicit_year": 225
+    },
+    "rocni_skolne": {
+      "non_null": 906,
+      "explicit_years": {}
+    },
+    "aktualni_pocet_zaku": {
+      "non_null": 1109,
+      "explicit_years": {}
+    },
+    "pripravne_kurzy": {
+      "non_null": 0,
+      "explicit_years": {}
+    }
+  },
+  "old_event_examples": [
+    {
+      "redizo": "600001431",
+      "dny": "12. 11. 2024, 23. 1. 2025"
+    },
+    {
+      "redizo": "600001661",
+      "dny": "24. a 25. 11. 2023, 26. 1. a 27. 1. 2024"
+    },
+    {
+      "redizo": "600001873",
+      "dny": "23.11.2023, 25.1.2024"
+    }
+  ],
+  "sample_catalog_gaps": [
+    {
+      "id": "600001661_79-41-K/41_Gymnazium",
+      "school": "Academic School, Gymnázium, SOŠ, ZŠ a MŠ, s.r.o.",
+      "obor": "Gymnázium"
+    },
+    {
+      "id": "600001873_79-41-K/81",
+      "school": "Gymnázium a Hudební škola hl.m.Prahy,ZUŠ",
+      "obor": "Gymnázium"
+    },
+    {
+      "id": "600004597_79-41-K/81",
+      "school": "Malostranské gymnázium",
+      "obor": "Gymnázium"
+    },
+    {
+      "id": "600004619_36-47-M/01_dle_volby_zamereni_ARS_BIM_POS_DOS_VES_od_2_rocniku",
+      "school": "VOŠ stavební a SPŠ stavební",
+      "obor": "Stavebnictví"
+    },
+    {
+      "id": "600004635_79-41-K/41_SVP_GYMNAZIA_JANA_PALACHA_PRAHA_1_s_r_o",
+      "school": "GYMNÁZIUM JANA PALACHA PRAHA 1, s.r.o.",
+      "obor": "Gymnázium"
+    }
+  ]
+}

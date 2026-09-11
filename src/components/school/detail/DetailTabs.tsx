@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import type { ExtendedSchoolStats, SchoolProgram } from '@/lib/data';
 import { BarChart3, Target, Building2, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -12,10 +13,10 @@ import { PracticalTab } from './tabs/PracticalTab';
 
 interface DetailTabsProps {
   school: any;
-  program: any;
+  program: SchoolProgram;
   programs: any[];
   schoolDetail: any;
-  extendedStats: any;
+  extendedStats: ExtendedSchoolStats | null;
   csiData: any;
   extractions: any[];
   inspis: any;
@@ -82,7 +83,6 @@ export function DetailTabs({
         {activeTab === 'stats' && (
           <div role="tabpanel" id="tabpanel-stats" aria-labelledby="tab-stats">
             <StatsTab
-              school={school}
               program={program}
               extendedStats={extendedStats}
             />
@@ -91,11 +91,7 @@ export function DetailTabs({
 
         {activeTab === 'competition' && (
           <div role="tabpanel" id="tabpanel-competition" aria-labelledby="tab-competition">
-            <CompetitionTab
-              school={school}
-              program={program}
-              schoolDetail={schoolDetail}
-            />
+            <CompetitionTab />
           </div>
         )}
 

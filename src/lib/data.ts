@@ -1,3 +1,5 @@
+import { canPublishAcceptedResult } from './result-quality';
+import { historicalSubjectAverage, type AdmissionScore } from './admission-metric';
 import type { AdmissionContext } from './admission-summary';
 import { subjectScore, unavailableAdmissionScores } from './historical-scores';
 import { normalizeSchoolKey, uniqueSchoolIndex } from './school-key';
@@ -880,6 +882,7 @@ export async function getSchoolHistoricalData(redizo: string): Promise<{
  * - JPZ celkem: max 100 bodů
  */
 export interface ExtendedSchoolStats {
+  subjectAverages: { cj: AdmissionScore; ma: AdmissionScore };
   prihlasky_priority: number[];  // přihlášky podle priority
   prijati_priority: number[];    // přijatí podle priority
   cj_prumer: number;             // průměr z češtiny (0-50 bodů)
@@ -915,12 +918,18 @@ async function getSchoolsDataById(): Promise<Map<string, ExtendedSchoolStats>> {
   const index = uniqueSchoolIndex(data['2025'] || [], school => school.id);
   const result = new Map<string, ExtendedSchoolStats>();
   for (const [id, school] of index) {
-    const cj_prumer = subjectScore(school.cj_prumer);
-    const ma_prumer = subjectScore(school.ma_prumer);
+    const subjectAverages = {
+      cj: historicalSubjectAverage({ value: school.cj_prumer, unit: 'percent_0_100', field: 'cj_prumer', offerId: id }),
+      ma: historicalSubjectAverage({ value: school.ma_prumer, unit: 'percent_0_100', field: 'ma_prumer', offerId: id }),
+    };
+    // Přechodné číselné aliasy pro dosud nemigrované konzumenty; žádný další převod.
+    const cj_prumer = subjectAverages.cj.value;
+    const ma_prumer = subjectAverages.ma.value;
     const cj_min = subjectScore(school.cj_min);
     const ma_min = subjectScore(school.ma_min);
     if (cj_prumer === null || ma_prumer === null || cj_min === null || ma_min === null) continue;
     result.set(id, {
+      subjectAverages,
       prihlasky_priority: school.prihlasky_priority || [],
       prijati_priority: school.prijati_priority || [],
       cj_prumer, ma_prumer, cj_min, ma_min,
@@ -1048,18 +1057,7 @@ async function getTrendDataMap(): Promise<Map<string, YearlyTrendData>> {
  * Získá trend data pro pole škol
  */
 export async function getTrendDataForSchools(schoolIds: string[]): Promise<Map<string, YearlyTrendData>> {
-  const allTrends = await getTrendDataMap();
-  const result = new Map<string, YearlyTrendData>();
-
-  for (const schoolId of schoolIds) {
-    const baseId = schoolId.split('_').slice(0, 2).join('_');
-    const trend = allTrends.get(baseId);
-    if (trend) {
-      result.set(schoolId, trend);
-    }
-  }
-
-  return result;
+  return getTrendDataForPrograms(schoolIds);
 }
 
 // Cache pro trend data programů (včetně zaměření)
@@ -1086,8 +1084,8 @@ async function getTrendDataByProgramMap(): Promise<Map<string, YearlyTrendData>>
     min_body: number;
   }>();
 
-  for (const school of (data['2024'] || [])) {
-    data2024Map.set(school.id, {
+  for (const school of uniqueSchoolIndex<{ id: string; prihlasky: number; prijati: number; index_poptavky: number; min_body: number }>(data['2024'] || [], row => row.id).values()) {
+    data2024Map.set(normalizeSchoolKey(school.id), {
       prihlasky: school.prihlasky || 0,
       prijati: school.prijati || 0,
       index_poptavky: school.index_poptavky || 0,
@@ -1096,8 +1094,9 @@ async function getTrendDataByProgramMap(): Promise<Map<string, YearlyTrendData>>
   }
 
   // Spárovat s daty 2025
-  for (const school of (data['2025'] || [])) {
-    const prev = data2024Map.get(school.id);
+  for (const school of uniqueSchoolIndex<{ id: string; prihlasky: number; prijati: number; index_poptavky: number; min_body: number }>(data['2025'] || [], row => row.id).values()) {
+    const prev = data2024Map.get(normalizeSchoolKey(school.id));
+    if (!prev || !Number.isInteger(prev.prihlasky) || prev.prihlasky <= 0 || !Number.isInteger(school.prihlasky) || school.prihlasky < 0) continue;
 
     const prihlasky2025 = school.prihlasky || 0;
     const prihlasky2024 = prev?.prihlasky || 0;
@@ -1121,7 +1120,7 @@ async function getTrendDataByProgramMap(): Promise<Map<string, YearlyTrendData>>
       }
     }
 
-    trendDataByProgramCache.set(school.id, {
+    trendDataByProgramCache.set(normalizeSchoolKey(school.id), {
       prihlasky2024,
       prihlasky2025,
       prihlaskyChange,
@@ -1144,7 +1143,7 @@ async function getTrendDataByProgramMap(): Promise<Map<string, YearlyTrendData>>
  */
 export async function getTrendDataForProgram(programId: string): Promise<YearlyTrendData | null> {
   const allTrends = await getTrendDataByProgramMap();
-  return allTrends.get(programId) || null;
+  return allTrends.get(normalizeSchoolKey(programId)) || null;
 }
 
 /**
@@ -1155,7 +1154,7 @@ export async function getTrendDataForPrograms(programIds: string[]): Promise<Map
   const result = new Map<string, YearlyTrendData>();
 
   for (const programId of programIds) {
-    const trend = allTrends.get(programId);
+    const trend = allTrends.get(normalizeSchoolKey(programId));
     if (trend) {
       result.set(programId, trend);
     }
@@ -1288,6 +1287,7 @@ export interface ResultsMeta {
 }
 
 export interface SchoolResult {
+  offer_id?: string;
   redizo: string;
   kkov: string;
   zamereni: string;
@@ -1645,7 +1645,21 @@ export async function getResultsForYear(year: number): Promise<Map<string, Schoo
     const filePath = path.join(dataDir, `cermat_results_${year}.json`);
     const content = await fs.readFile(filePath, 'utf-8');
     const raw = JSON.parse(content) as Record<string, SchoolResult>;
-    const map = new Map(Object.entries(raw));
+    const applications = year === 2026 ? uniqueSchoolIndex(await getSchools2026Data(), row => row.id) : null;
+    const map = new Map<string, SchoolResult>();
+    for (const [id, row] of uniqueSchoolIndex(Object.entries(raw), ([id]) => id).values()) {
+      const context = applications?.get(normalizeSchoolKey(id))?.admission_context;
+      // Stejná ochrana jako simulátor: zadržený průměr se nesmí obnovit z druhého souboru.
+      if (year === 2026 && !canPublishAcceptedResult(row, context)) continue;
+      map.set(id, { ...row, offer_id: id, delta_cj_ma: null });
+    }
+    // Po vyřazení neplatných řádků přepočítat i pořadí a jmenovatel skupiny.
+    const groups = new Map<string, SchoolResult[]>();
+    for (const row of map.values()) groups.set(row.school_type, [...(groups.get(row.school_type) ?? []), row]);
+    for (const rows of groups.values()) {
+      rows.sort((a, b) => b.cj_ma_prijati - a.cj_ma_prijati || a.offer_id!.localeCompare(b.offer_id!));
+      rows.forEach((row, index) => { row.rank_in_type = index + 1; row.type_total = rows.length; });
+    }
     resultsYearCache.set(year, map);
     return map;
   } catch {

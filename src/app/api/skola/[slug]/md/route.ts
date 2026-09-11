@@ -37,7 +37,7 @@ export async function GET(
   }
 
   const kraj = krajNames[overview.kraj_kod] || overview.kraj;
-  const sortedPrograms = [...programs].sort((a, b) => b.min_body - a.min_body);
+  const sortedPrograms = [...programs].sort((a, b) => a.obor.localeCompare(b.obor, 'cs'));
   const totalKapacita = sortedPrograms.reduce((sum, p) => sum + p.kapacita, 0);
   const totalPrihlasky = sortedPrograms.reduce((sum, p) => sum + p.prihlasky, 0);
 
@@ -74,7 +74,7 @@ export async function GET(
     md += `- **Přihlášek:** ${program.prihlasky}\n`;
     md += `- **Přijatých:** ${program.prijati}\n`;
     md += `- **Index poptávky:** ${program.index_poptavky.toFixed(1)}× (přihlášek na 1 místo)\n`;
-    md += `- **Minimální body pro přijetí:** ${program.min_body} z 100 (JPZ)\n`;
+    md += `- **Minimální body pro přijetí:** Neověřeno; údaj nezveřejňujeme jako hranici přijetí.\n`;
 
     const stats = statsMap.get(program.id);
     if (stats) {

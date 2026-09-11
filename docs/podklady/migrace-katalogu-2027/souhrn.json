@@ -1,0 +1,13 @@
+{
+  "sourceHashes": {
+    "public/schools_data.json": "e53ddcaeaa63203315ea970d84b7fe6f9e4abf15f68db9c65dac6583df8d8530",
+    "public/applications_2026.json": "db9924bdd4163a5a332f53e2690116a49a69d87782290acd411933a603365eee"
+  },
+  "offers2026": 3091,
+  "pending": 1004,
+  "absent": 978,
+  "ambiguous": 26,
+  "sample": 100,
+  "reviewed": 0,
+  "scope": "Import povinné JPZ; bez konzervatoří. Chybějící shoda neznamená nový ani uzavřený obor."
+}

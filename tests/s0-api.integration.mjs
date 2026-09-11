@@ -113,6 +113,8 @@ test('veřejně doručovaný JS simulátoru neobsahuje původní predikční vě
     assert.equal(script.status, 200);
     all += await script.text();
   }
+  // Webpack může diakritiku serializovat jako unicode escape; kontrolujeme stejný obsah.
+  all = all.replace(/\\u([0-9a-fA-F]{4})|\\x([0-9a-fA-F]{2})/g, (_, unicode, byte) => String.fromCharCode(parseInt(unicode ?? byte, 16)));
   for (const forbidden of ['Vysoká šance', 'Malá šance', 'Na hraně', 'estimatedChancePct', 'estimatedMinScore']) assert.ok(!all.includes(forbidden), forbidden);
   assert.ok(all.includes('Průměr není bodové minimum'));
   assert.ok(all.includes('není osobní šance na přijetí'));

@@ -49,7 +49,7 @@ export function Header() {
 
   const navLinks = [
     { href: '/prijimacky-2027', label: 'Kalendář 2027' },
-    { href: '/moje-sance', label: 'Moje šance' },
+
     { href: '/simulator', label: 'Simulátor' },
     { href: '/skoly', label: 'Analýza škol' },
     { href: '/dostupnost', label: 'Dojezdovost MHD' },
