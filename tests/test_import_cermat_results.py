@@ -97,3 +97,25 @@ def test_ranks_within_type():
 
 def test_key_normalization():
     assert make_key('123', '79-41-K/41', 'IT & Sítě') == '123_79-41-K/41_it_site'
+
+
+def test_admission_context_preserves_missing_and_valid_zero():
+    from refresh_cermat_data import admission_context
+    row = record(**{'ČJ+MA - KONALI': 6, 'ČJ+MA - KONALI (PŘIJATI)': 4,
+        'ČJ+MA - % SKÓR - PRŮMĚR': 140,
+        'NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU': 2,
+        'NEPŘIJATI - NEDOSTATEČNÁ KAPACITA': 0,
+        'NEPŘIJATI - NESPLNĚNÍ PODMÍNEK': 0, 'NEPŘIJATI - VZDAL SE PŘIJETÍ': 0})
+    ctx = admission_context(row)
+    assert ctx['average_all'] == 70 and ctx['average_accepted'] == 60
+    assert ctx['capacity_rejected'] == 0 and ctx['outcomes_complete']
+    row['NEPŘIJATI - NEDOSTATEČNÁ KAPACITA'] = None
+    assert admission_context(row)['capacity_rejected'] is None
+    assert not admission_context(row)['outcomes_complete']
+    row['ČJ+MA - KONALI (PŘIJATI)'] = 5
+    assert admission_context(row)['average_accepted'] is None
+    row['ČJ+MA - KONALI'] = 0
+    assert admission_context(row)['average_all'] is None
+    row['ČJ+MA - % SKÓR - PRŮMĚR'] = 201
+    with pytest.raises(ValueError):
+        admission_context(row)

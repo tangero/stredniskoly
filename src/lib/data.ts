@@ -1,3 +1,4 @@
+import type { AdmissionContext } from './admission-summary';
 import { subjectScore, unavailableAdmissionScores } from './historical-scores';
 import { normalizeSchoolKey, uniqueSchoolIndex } from './school-key';
 import { promises as fs } from 'fs';
@@ -1258,6 +1259,7 @@ export async function getInspisDataByRedizo(redizo: string): Promise<SchoolInspi
  * Sloučený záznam: dynamická data 2026 + statická data joinnutá z 2025
  */
 export interface School2026Data {
+  admission_context?: AdmissionContext;
   id: string;
   redizo: string;
   nazev: string;
@@ -1308,6 +1310,7 @@ export interface SchoolResult {
 
 /** Raw záznam z applications_2026.json (jen dynamická data per obor) */
 interface Raw2026Record {
+  admission_context?: AdmissionContext;
   redizo: string;
   kkov: string;
   nazev: string;
@@ -1384,6 +1387,7 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
       kapacita: r.kapacita,
       prihlasky: r.prihlasky,
       prihlasky_priority: r.pp,
+      admission_context: r.admission_context,
       index_poptavky: r.idx,
       ...(r.is_new ? { is_new: true } : {}),
     };

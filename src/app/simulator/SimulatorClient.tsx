@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { normalizeSchoolKey } from '@/lib/school-key';
 import { matchesSearchLocation, splitByCommute } from '@/lib/simulator-filter';
-import { applicationsPerPlace } from '@/lib/admission-summary';
+import { applicationsPerPlace, capacitySummary, type AdmissionContext } from '@/lib/admission-summary';
 import { MAX_SELECTION, readSelection, sharedSimulatorParams } from '@/lib/simulator-state';
 
 interface School {
@@ -20,7 +20,8 @@ interface School {
   adresa?: string;
   ulice?: string;
   kraj: string;
-  demand: { year: number; round: number; applications: number | null; capacity: number | null } | null;
+  admission_context: AdmissionContext | null;
+  demand: { first_priority: number | null; year: number; round: number; applications: number | null; capacity: number | null } | null;
   history: {
     year: number;
     round: number;
@@ -46,17 +47,29 @@ function HistoricalFacts({ school }: { school: School }) {
   const history = school.history;
   const demand = school.demand;
   const ratio = applicationsPerPlace(demand?.applications, demand?.capacity);
+  const context = school.admission_context;
+  const summary = capacitySummary(context);
   if (!history && !demand) return <p className="mt-4 rounded-lg bg-slate-50 px-4 py-3 text-sm text-slate-600">Výsledky a přihlášky 2026 se k této nabídce nepodařilo jednoznačně přiřadit. Neznamená to, že je obor snadnější nebo bez zájemců.</p>;
   return <section aria-label="Výsledky přijímání 2026" className="mt-5 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
     <p className="text-xs font-semibold uppercase tracking-wide text-slate-600">Přijímání 2026 · 1. kolo</p>
-    <dl className="mt-3 grid grid-cols-2 gap-4 xl:grid-cols-3">
-      <div><dt className="text-sm text-slate-600">Průměr JPZ přijatých</dt><dd className="mt-1 text-2xl font-bold tabular-nums text-slate-900">{value(history?.average)}{history?.average != null && <span className="ml-1 text-sm font-normal text-slate-600">/ 100 bodů</span>}</dd><p className="mt-1 text-xs text-slate-500">Čeština + matematika</p></div>
-      <div><dt className="text-sm text-slate-600">Konkurence na místo</dt><dd className="mt-1 text-2xl font-bold tabular-nums text-blue-800">{ratio === null ? '—' : ratio.toLocaleString('cs-CZ', { maximumFractionDigits: 1 })}<span className="ml-1 text-sm font-normal text-slate-600">{ratio === null ? '' : 'přihlášek / místo'}</span></dd><p className="mt-1 text-xs text-slate-500">{demand ? `${value(demand.applications)} přihlášek · ${value(demand.capacity)} míst` : 'Počet přihlášek není ověřen'}</p></div>
-      <div><dt className="text-sm text-slate-600">Přijato / kapacita</dt><dd className="mt-1 text-2xl font-bold tabular-nums text-slate-900">{value(history?.accepted)}<span className="mx-1 font-normal text-slate-400">/</span>{value(history?.capacity)}</dd><p className="mt-1 text-xs text-slate-500">Výsledek prvního kola</p></div>
+    <dl className="mt-3 grid grid-cols-2 gap-4 xl:grid-cols-4">
+      <div><dt className="text-sm text-slate-600">Průměr JPZ přijatých</dt><dd className="mt-1 text-2xl font-bold tabular-nums text-slate-900">{value(context ? context.average_accepted : history?.average)}{(context ? context.average_accepted : history?.average) != null && <span className="ml-1 text-sm font-normal text-slate-600">/ 100 bodů</span>}</dd><p className="mt-1 text-xs text-slate-500">Čeština + matematika · {value(context?.tested_accepted)} konajících</p></div>
+      <div><dt className="text-sm text-slate-600">Průměr JPZ všech konajících</dt><dd className="mt-1 text-2xl font-bold tabular-nums text-slate-900">{value(context?.average_all)}{context?.average_all != null && <span className="ml-1 text-sm font-normal text-slate-600">/ 100 bodů</span>}</dd><p className="mt-1 text-xs text-slate-500">Oba testy · {value(context?.tested_all)} konajících</p></div>
+      <div><dt className="text-sm text-slate-600">Zájem o obor</dt><dd className="mt-1 text-2xl font-bold tabular-nums text-blue-800">{ratio === null ? '—' : ratio.toLocaleString('cs-CZ', { maximumFractionDigits: 1 })}<span className="ml-1 text-sm font-normal text-slate-600">{ratio === null ? '' : 'přihlášek / místo'}</span></dd><p className="mt-1 text-xs text-slate-500">{demand ? `${value(demand.applications)} přihlášek · ${value(demand.capacity)} míst · ${value(demand.first_priority)} na 1. prioritě` : 'Počet přihlášek není ověřen'}</p></div>
+      <div><dt className="text-sm text-slate-600">Přijato / kapacita</dt><dd className="mt-1 text-2xl font-bold tabular-nums text-slate-900">{value(context ? context.accepted : history?.accepted)}<span className="mx-1 font-normal text-slate-400">/</span>{value(demand?.capacity ?? history?.capacity)}</dd><p className="mt-1 text-xs text-slate-500">Výsledek prvního kola</p></div>
     </dl>
+    {summary && <p className="mt-4 rounded-lg border border-blue-100 bg-white px-3 py-3 text-sm font-medium leading-relaxed text-slate-900">{summary}</p>}
+    {context && <div className="mt-4">
+      <p className="text-sm font-semibold text-slate-800">Jak dopadly ostatní přihlášky</p>
+      <dl className="mt-2 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+        {([['Přijati na preferovanější obor', context.higher_priority], ['Nepřijati kvůli nedostatku míst', context.capacity_rejected], ['Nesplnili podmínky přijetí', context.conditions_not_met], ['Vzdali se přijetí', context.withdrawn]] as const).map(([label, count]) => <div key={label} className="flex items-baseline justify-between gap-3"><dt className="text-slate-600">{label}</dt><dd className="font-semibold tabular-nums text-slate-900">{value(count)}</dd></div>)}
+      </dl>
+      {!context.outcomes_complete && <p className="mt-2 text-xs text-slate-600">Rozpad výsledků není úplný nebo nesouhlasí s počtem přihlášek. Souhrnný závěr proto neuvádíme.</p>}
+    </div>}
     <p className="mt-3 border-t border-slate-200 pt-3 text-xs leading-relaxed text-slate-600">Průměr není bodové minimum. Přihlášky zahrnují všechny priority; jejich počet na místo není osobní šance na přijetí.</p>
-    {(!history || history.average === null) && <p className="mt-2 text-xs text-slate-600">Pomlčka znamená chybějící nebo nejednoznačně přiřazený údaj, nikoli nulu.</p>}
+    {(!context || context.average_all === null || context.average_accepted === null) && <p className="mt-2 text-xs text-slate-600">Pomlčka znamená chybějící, nejednoznačně přiřazený nebo neověřený údaj, nikoli nulu.</p>}
     <details className="mt-2 text-xs text-slate-600"><summary className="min-h-8 cursor-pointer py-1 text-blue-700">Výsledky předmětů a zdroj</summary>
+      <p className="mb-2">Průměry ČJ + MA se týkají konajících oba testy, nikoli všech přihlášek. Skór je přepočten na standardní škálu; u upravených testů nejde o původní body. Nesplnění podmínek nemusí znamenat slabý výsledek JPZ. Přijetí není údaj o skutečném nástupu ke studiu.</p>
       <p>Průměr přijatých: ČJ {value(history?.average_cj)} / 50 · MA {value(history?.average_ma)} / 50.</p>
       <p className="mt-1"><a href={SOURCE} className="underline">CERMAT · výsledky a přihlášky 2026</a>{history?.source_valid_at ? ` · platnost ${history.source_valid_at}` : ''}</p>
     </details>
@@ -259,7 +272,7 @@ export function SimulatorClient() {
                 {!matching && <p className="mt-1 text-xs font-medium text-amber-800">Mimo zvolené filtry oboru, typu studia nebo lokality</p>}
                 {stop && <p className="mt-1 text-xs text-slate-600">{trip ? `Dojezd: odhad ${trip.minutes} min${trip.minutes > limit ? ' · nad tvým limitem' : ''}` : 'Dojezd v tomto rozsahu není ověřen'}</p>}
               </div><button className={button} aria-pressed={!!otherId} aria-label={`${otherId ? 'Odebrat' : 'Uložit'} další obor ${other.obor}, ${other.delka_studia} let, ${other.zamereni || other.obec}`} onClick={() => toggle(otherId || other.id)}>{otherId ? '✓ Uloženo' : '+ Uložit'}</button></div>
-              <p className="mt-2 text-sm text-slate-700">2026 · průměr JPZ přijatých <strong>{value(other.history?.average)} / 100</strong> · konkurence <strong>{ratio === null ? 'neznámá' : `${ratio.toLocaleString('cs-CZ', { maximumFractionDigits: 1 })} přihlášek / místo`}</strong></p>
+              <p className="mt-2 text-sm text-slate-700">2026 · průměr JPZ přijatých <strong>{value(other.admission_context ? other.admission_context.average_accepted : other.history?.average)} / 100</strong> · zájem <strong>{ratio === null ? 'neznámá' : `${ratio.toLocaleString('cs-CZ', { maximumFractionDigits: 1 })} přihlášek / místo`}</strong></p>
             </li>;
           })}</ul>}
         </details>}

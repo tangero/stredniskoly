@@ -8,6 +8,7 @@ z katalogu CERMAT. Při novější revizi změňte SOURCE_DATES podle katalogu.
 import argparse
 import hashlib
 import json
+import math
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -22,6 +23,44 @@ SOURCE_BASE = 'https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/'
 def normalize_id(value: str) -> str:
     parts = value.split('_')
     return make_key(parts[0], parts[1], '_'.join(parts[2:]))
+
+
+def admission_context(r: dict) -> dict:
+    """Agregáty i pro nabídky bez publikovaného skóru. Chybějící údaj není nula."""
+    def number(column: str, maximum: float = math.inf, count: bool = False):
+        v = r.get(column)
+        if v is None or isinstance(v, str):
+            return None
+        if isinstance(v, bool) or not math.isfinite(v) or not 0 <= v <= maximum or (count and int(v) != v):
+            raise ValueError(f'Neplatný údaj {column}: {v}')
+        return int(v) if count else v
+
+    def score(suffix: str, count):
+        v = number('ČJ+MA - % SKÓR - PRŮMĚR' + suffix, 200)
+        return round(v / 2, 2) if v is not None and count is not None and count > 0 else None
+
+    all_count = number('ČJ+MA - KONALI', count=True)
+    accepted_count = number('ČJ+MA - KONALI (PŘIJATI)', count=True)
+    result = {
+        'tested_all': all_count,
+        'tested_accepted': accepted_count,
+        'average_all': score('', all_count),
+        'average_accepted': score(' (PŘIJATI)', accepted_count),
+        'accepted': number('PŘIJATÍ', count=True),
+        'higher_priority': number('NEPŘIJATI - PŘIJAT NA VYŠŠÍ PRIORITU', count=True),
+        'capacity_rejected': number('NEPŘIJATI - NEDOSTATEČNÁ KAPACITA', count=True),
+        'conditions_not_met': number('NEPŘIJATI - NESPLNĚNÍ PODMÍNEK', count=True),
+        'withdrawn': number('NEPŘIJATI - VZDAL SE PŘIJETÍ', count=True),
+    }
+    applications = number('PŘIHLÁŠKY CELKEM', count=True)
+    outcomes = [result[k] for k in ('accepted', 'higher_priority', 'capacity_rejected', 'conditions_not_met', 'withdrawn')]
+    result['outcomes_complete'] = applications is not None and all(v is not None for v in outcomes) and sum(outcomes) == applications
+    if all_count is not None and applications is not None and all_count > applications:
+        raise ValueError('Více konajících než přihlášek')
+    if accepted_count is not None and result['accepted'] is not None and accepted_count > result['accepted']:
+        result['tested_accepted'] = None
+        result['average_accepted'] = None
+    return result
 
 
 def build_applications(records: list[dict], legacy: list[dict], history: list[dict]) -> list[dict]:
@@ -53,6 +92,7 @@ def build_applications(records: list[dict], legacy: list[dict], history: list[di
             'nazev': r['NÁZEV ŠKOLY'], 'obor': r['OBOR - NÁZEV'], 'typ': r['TYP ŠKOLY'],
             'obec': r['OBEC'], 'kraj': r['KRAJ - NÁZEV'], 'kraj_kod': r['KRAJ'],
             'delka_studia': r['DÉLKA STUDIA'], 'kapacita': capacity, 'prihlasky': applications,
+            'admission_context': admission_context(r),
             'pp': priorities, 'idx': round(applications / capacity, 2) if capacity else 0,
             **({'is_new': True} if key not in historic else {}),
         })
