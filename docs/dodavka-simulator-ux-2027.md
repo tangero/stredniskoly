@@ -48,3 +48,5 @@ Scénář dopravy: Andělská Hora, chaty, limit 30 minut. Dopravní API vrátil
 Podle další zpětné vazby uživatele má aktivní dojezd přednost před městem a krajem. Územní filtry jsou během dojezdu neaktivní a neomezují výsledky ani skupinu těsně za limitem. Po vypnutí dojezdu se obnoví; jejich uplatnění ukazuje souhrn nad výsledky.
 
 Textové hledání oboru a zaměření již neprohledává město. Pro lokalitu je samostatná roleta měst/obcí z katalogu. Nad výsledky je vždy uveden aktivní rozsah: dojezd, město/kraj nebo celá ČR. Obory a typ studia platí v obou režimech. Jednotková regrese ověřuje, že škola mimo původní město i kraj zůstane při dojezdu způsobilá a po vypnutí dojezdu znovu podléhá územnímu filtru.
+
+Přejímka 1.1: PR #76, merge `d0e515faad9161ff66f602120a9dc9b866038c24`, Vercel `dpl_BRwgpT9CmkfsdyJJahwkjNXYeiJq` READY. Produkční prohlížeč potvrdil scénář Praha → výchozí zastávka Andělská Hora, chaty → výsledky v Karlových Varech bez územního omezení → vypnutí dojezdu obnoví město Praha. Lokálně navíc ověřen současně vybraný kraj Praha, produkční build, TypeScript, cílený lint a 8 jednotkových kontrol. Následný záznam mění pouze dokumentaci.
