@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 
 type FormState = 'idle' | 'open' | 'submitting' | 'success' | 'error';
 
 export default function BugReportButton() {
+  const simulatorPage = usePathname() === '/simulator';
   const [state, setState] = useState<FormState>('idle');
   const [description, setDescription] = useState('');
   const [email, setEmail] = useState('');
@@ -107,7 +109,7 @@ export default function BugReportButton() {
         ref={buttonRef}
         onClick={open}
         aria-label="Nahlásit chybu"
-        className="fixed bottom-20 right-4 z-40 flex items-center gap-2 rounded-full px-4 py-2.5 shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50 text-sm font-semibold text-white"
+        className={`${simulatorPage ? "relative mx-auto my-4" : "fixed bottom-20 right-4 z-40"} flex items-center gap-2 rounded-full px-4 py-2.5 shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white/50 text-sm font-semibold text-white`}
         style={{ backgroundColor: '#0074e4' }}
       >
         <svg

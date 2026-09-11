@@ -62,6 +62,7 @@ type AggregatedSchool = {
 };
 
 type SearchRequest = {
+  view?: string;
   stopId?: string;
   maxMinutes?: number;
   page?: number;
@@ -421,7 +422,8 @@ function buildStopToSchoolsIndex(
       groupKeys = [locKey];
     } else {
       // Fallback: locKey is a plain redizo → get all groupKeys for this redizo
-      groupKeys = redizoToGroupKeys.get(locKey) ?? [];
+      const candidates = redizoToGroupKeys.get(locKey) ?? [];
+      groupKeys = candidates.length === 1 ? candidates : [];
     }
 
     for (const gk of groupKeys) {
@@ -551,10 +553,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Neplatný JSON payload.' }, { status: 400 });
   }
 
-  const stopId = (payload.stopId ?? '').trim();
+  const simulatorView = payload.view === 'simulator';
+  const stopId = typeof payload.stopId === 'string' ? payload.stopId.trim() : '';
   const maxMinutesRaw = Number(payload.maxMinutes ?? 60);
   const pageRaw = Number(payload.page ?? 1);
   const maxMinutes = Number.isFinite(maxMinutesRaw) ? Math.max(5, Math.min(180, maxMinutesRaw)) : 60;
+  const routingLimit = maxMinutes + 10;
   const requestedPage = Number.isFinite(pageRaw) ? Math.max(1, Math.floor(pageRaw)) : 1;
   const typFilter = (payload.typFilter ?? '').trim();
 
@@ -569,7 +573,7 @@ export async function POST(request: NextRequest) {
     typFilter,
   });
 
-  if (RESPONSE_CACHE_ENABLED) {
+  if (RESPONSE_CACHE_ENABLED && !simulatorView) {
     const cachedPayload = readCachedSearchResponse(cacheKey);
     if (cachedPayload) {
       const payloadCopy = structuredClone(cachedPayload);
@@ -605,7 +609,7 @@ export async function POST(request: NextRequest) {
     const [startName, startLat, startLon] = graph.stops[stopId];
 
     phaseStart = Date.now();
-    const reachableStops = dijkstra(graph.edges, graph.headways ?? {}, stopId, maxMinutes);
+    const reachableStops = dijkstra(graph.edges, graph.headways ?? {}, stopId, simulatorView ? routingLimit : maxMinutes + NEAR_MISS_EXTRA_MINUTES);
     timings.dijkstraMs = Date.now() - phaseStart;
 
     phaseStart = Date.now();
@@ -641,7 +645,7 @@ export async function POST(request: NextRequest) {
         const walkMin = (distanceKm * WALK_ROUTE_MULTIPLIER / WALK_SPEED_KMPH) * 60;
         const totalMin = transitMin + walkMin;
         // Porovnáváme zaokrouhlenou hodnotu, aby zobrazené časy odpovídaly filtru
-        if (Math.round(totalMin) > maxMinutes) continue;
+        if (Math.round(totalMin) > (simulatorView ? routingLimit : maxMinutes + NEAR_MISS_EXTRA_MINUTES)) continue;
 
         const existing = bestSchoolTimes.get(groupKey);
         if (!existing || totalMin < existing.totalMinutes) {
@@ -659,6 +663,26 @@ export async function POST(request: NextRequest) {
       }
     }
     timings.findSchoolsMs = Date.now() - phaseStart;
+
+    // Samostatný whitelist: simulátor nepřebírá stará minima ani obtížnost.
+    if (simulatorView) {
+      const coveredGroups = new Set(Array.from(stopSchoolIndex).filter(([id]) => graph.stops[id]).flatMap(([, items]) => items.map(item => item.groupKey)));
+      const estimates = Array.from(bestSchoolTimes, ([groupKey, timing]) => ({
+        programIds: schoolsMap.get(groupKey)?.programs.map(program => program.id) ?? [],
+        minutes: Math.round(timing.totalMinutes),
+        walkMinutes: Math.round(timing.walkMinutes),
+        transfers: timing.transfers,
+        lines: timing.usedRoutes,
+        stopName: timing.stopName,
+      }));
+      return NextResponse.json({
+        estimates,
+        mappedProgramIds: schools.filter(school => coveredGroups.has(school.groupKey)).flatMap(school => school.programs.map(program => program.id)),
+        originName: startName,
+        model: 'orientacni-ranni-profil',
+        searchedMinutes: routingLimit,
+      }, { headers: { 'Cache-Control': 'no-store' } });
+    }
 
     phaseStart = Date.now();
     const reachableSchools: Array<Record<string, unknown>> = [];
