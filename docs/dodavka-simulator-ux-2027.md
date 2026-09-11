@@ -42,3 +42,9 @@ Scénář dopravy: Andělská Hora, chaty, limit 30 minut. Dopravní API vrátil
 - Následný commit přejímky mění pouze dokumentaci, nikoli ověřený kód aplikace.
 
 Čas veřejné kontroly: 2026-09-11T14:53:28.503341+00:00
+
+## Doplnění 1.1: dojezd a územní omezení
+
+Podle další zpětné vazby uživatele má aktivní dojezd přednost před městem a krajem. Územní filtry jsou během dojezdu neaktivní a neomezují výsledky ani skupinu těsně za limitem. Po vypnutí dojezdu se obnoví; jejich uplatnění ukazuje souhrn nad výsledky.
+
+Textové hledání oboru a zaměření již neprohledává město. Pro lokalitu je samostatná roleta měst/obcí z katalogu. Nad výsledky je vždy uveden aktivní rozsah: dojezd, město/kraj nebo celá ČR. Obory a typ studia platí v obou režimech. Jednotková regrese ověřuje, že škola mimo původní město i kraj zůstane při dojezdu způsobilá a po vypnutí dojezdu znovu podléhá územnímu filtru.
