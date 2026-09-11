@@ -50,3 +50,11 @@ Podle další zpětné vazby uživatele má aktivní dojezd přednost před měs
 Textové hledání oboru a zaměření již neprohledává město. Pro lokalitu je samostatná roleta měst/obcí z katalogu. Nad výsledky je vždy uveden aktivní rozsah: dojezd, město/kraj nebo celá ČR. Obory a typ studia platí v obou režimech. Jednotková regrese ověřuje, že škola mimo původní město i kraj zůstane při dojezdu způsobilá a po vypnutí dojezdu znovu podléhá územnímu filtru.
 
 Přejímka 1.1: PR #76, merge `d0e515faad9161ff66f602120a9dc9b866038c24`, Vercel `dpl_BRwgpT9CmkfsdyJJahwkjNXYeiJq` READY. Produkční prohlížeč potvrdil scénář Praha → výchozí zastávka Andělská Hora, chaty → výsledky v Karlových Varech bez územního omezení → vypnutí dojezdu obnoví město Praha. Lokálně navíc ověřen současně vybraný kraj Praha, produkční build, TypeScript, cílený lint a 8 jednotkových kontrol. Následný záznam mění pouze dokumentaci.
+
+## Doplnění 1.2: výsledky přímo na kartě a další nabídky školy
+
+Po zpětné vazbě uživatele vráceny ověřené výsledky z rozbalení do hlavního výpisu. Výrazný název školy a oboru doplňuje panel: průměr JPZ přijatých / 100, konkurence jako počet přihlášek na místo (včetně surových počtů) a přijatí / kapacita. Rok 2026 a první kolo jsou explicitní; skóry předmětů a zdroj jsou v detailu. Průměr není minimum a poměr přihlášek není osobní pravděpodobnost přijetí. Prázdná či nejednoznačně spárovaná hodnota zůstává neznámá.
+
+Přihlášky se nově připojují k search API přes úplný normalizovaný klíč a jednoznačný index dat 2026, bez fallbacku na školu nebo obor bez zaměření. Konkurence se počítá z počtu přihlášek a kapacity téže nabídky, nula kapacity není platný jmenovatel.
+
+Každá karta ukazuje počet dalších nabídek stejné instituce (REDIZO) v dostupném katalogu. Po rozbalení jsou vidět i jiné obory, zaměření, délky a místa výuky. Nejde o tvrzení, že všechny nabídky jsou ve stejné budově nebo potvrzené pro rok 2027. Každá má vlastní údaje a uložení; odlišný typ/obor/lokalita nebo nadlimitní dojezd jsou označené. Další nabídky se nezapočítávají do výsledků vyhovujících filtrům.

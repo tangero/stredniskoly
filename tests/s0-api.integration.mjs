@@ -114,5 +114,19 @@ test('veřejně doručovaný JS simulátoru neobsahuje původní predikční vě
     all += await script.text();
   }
   for (const forbidden of ['Vysoká šance', 'Malá šance', 'Na hraně', 'estimatedChancePct', 'estimatedMinScore']) assert.ok(!all.includes(forbidden), forbidden);
-  assert.ok(all.includes('Pro toto porovnání nemáme ověřený údaj'));
+  assert.ok(all.includes('Průměr není bodové minimum'));
+  assert.ok(all.includes('není osobní šance na přijetí'));
+});
+
+test('poptávka 2026 odpovídá úplné identitě oboru, chybějící párování nemá fallback', async()=>{
+ const data = JSON.parse(await readFile(new URL('../public/applications_2026.json',import.meta.url),'utf8')).data;
+ const applications = uniqueSchoolIndex(data,s=>s.id);
+ const response = await search({simulatorCatalog:'1'});
+ let matched=0,missing=0;
+ for(const school of response.schools){
+  const row=applications.get(normalizeSchoolKey(school.id));
+  if(!row){assert.equal(school.demand,null);missing++;continue;}
+  assert.deepEqual(school.demand,{year:2026,round:1,applications:row.prihlasky,capacity:row.kapacita});matched++;
+ }
+ assert.ok(matched>0);assert.ok(missing>0);
 });
