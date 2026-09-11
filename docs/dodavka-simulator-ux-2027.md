@@ -1,6 +1,6 @@
 # Dodávka rozhraní simulátoru 2027
 
-Verze 1.0, 11. 9. 2026. Implementace schválené skici; stav nasazení doplněn po ověření.
+Verze 1.0, 11. 9. 2026. Implementace schválené skici; nasazeno a veřejně ověřeno.
 
 ## Rozsah
 
@@ -31,3 +31,14 @@ Nový dopravní režim API vrací whitelist údajů bez starých přijímacích 
 - Produkční build ověřován před vydáním; veřejný důkaz viz závěr záznamu.
 
 Scénář dopravy: Andělská Hora, chaty, limit 30 minut. Dopravní API vrátilo 9 míst výuky do 40 minut, z nich dvě nad 30 minut. Po rozložení na obory a filtru deváťáků UI ukázalo 12 oborů do limitu a 7 těsně za ním. Školy, místa výuky a obory mají záměrně odlišné počty.
+
+## Veřejná přejímka
+
+- PR [#75](https://github.com/tangero/stredniskoly/pull/75), implementace `397a80fdc00c5b83e60badf93cd19f33de9b90db`, sloučení `51c814035d68769998e4fb591fabb2305fee7620`.
+- Vercel produkce `dpl_CtseRUetj8Dsn4HwSxWrfcHwwgp1`, READY, veřejný alias `www.prijimackynaskolu.cz`.
+- Veřejná aplikace obsahuje „Které školy mi vyhovují?“ a požadovaný popisek „Čas na cestu tam v MHD“. Kontrola mobilního viewportu bez horizontálního přetečení; tlačítko hlášení chyby je relativní, nikoli plovoucí.
+- Všech 8 integračních testů prošlo i proti veřejné doméně. Záznam v `podklady/simulator-ux-2027/produkce-testy.txt`, snímek `produkce-mobil.png`.
+- Lokálně navíc ověřeno načtení uloženého výběru při novém vstupu na čistou URL a maximální limit 180 minut od Praha hlavní nádraží (HTTP 200, prohledaný rozsah 190 minut).
+- Následný commit přejímky mění pouze dokumentaci, nikoli ověřený kód aplikace.
+
+Čas veřejné kontroly: 2026-09-11T14:53:28.503341+00:00

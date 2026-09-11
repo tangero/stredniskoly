@@ -1,0 +1,20 @@
+(node:38590) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/patrickzandl/GitHub/gymnazium/src/lib/school-key.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/patrickzandl/GitHub/gymnazium/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ skóre nemění seznam, pořadí ani celkový počet; stránkování zpřístupní další obory (3404.800083ms)
+✔ filtry fungují bez diakritiky a prázdný výsledek není chyba (365.316708ms)
+✔ přímé načtení zachová pořadí, zaměření, čárky a neznámá ID (843.062709ms)
+✔ odkaz používá kanonický název profilu a rozlišuje délku studia (3106.299916ms)
+✔ detail API nevrací falešné minimum, školní body ani žebříček ze součtu minim (390.329875ms)
+✔ veřejně doručovaný JS simulátoru neobsahuje původní predikční větve (3278.286583ms)
+✔ dopravní kontrakt vrací jen dopravu a skutečné položky nad limitem (2952.711417ms)
+✔ úplný aktuálně dostupný katalog poskytuje skutečné názvy oborů bez změny běžného stránkování (816.391833ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11481.933375
