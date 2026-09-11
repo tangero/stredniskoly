@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     title: 'Přehled regionů | Přijímačky na střední školy',
     description: 'Přehled středních škol podle krajů ČR.',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Střední školy podle krajů',
+    description: 'Prozkoumejte školy, obory a možnosti dojíždění ve svém kraji.',
+  },
 };
 
 // Lokální verze createSlug

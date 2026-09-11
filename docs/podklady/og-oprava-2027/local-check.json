@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-09-11T10:04:27.993Z",
+  "base": "http://127.0.0.1:3107",
+  "mode": "development",
+  "images": [
+    {
+      "name": "home",
+      "url": "/opengraph-image",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 349796,
+      "width": 1200,
+      "height": 630,
+      "sha256": "c8a932ac631ad2a71a59830bd368f8c569d557dc7806709db92d86fd6057df2f"
+    },
+    {
+      "name": "regiony",
+      "url": "/regiony/opengraph-image",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 350796,
+      "width": 1200,
+      "height": 630,
+      "sha256": "9253d1fe8c9ad618f5c45c5191d4b6ddc397ff17293b5c7f2b375d5825bce31c"
+    },
+    {
+      "name": "simulator",
+      "url": "/simulator/opengraph-image",
+      "status": 200,
+      "type": "image/png",
+      "bytes": 348462,
+      "width": 1200,
+      "height": 630,
+      "sha256": "c11320b1c479b4a5ca564f631d2e7b5159abeb89c771094cfcd7e567eaf37304"
+    }
+  ]
+}

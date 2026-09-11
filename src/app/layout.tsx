@@ -20,11 +20,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://prijimackynaskolu.cz'),
   title: {
-    default: 'Najdi si svou střední školu a zjisti své šance | Přijímačky na střední školy',
+    default: 'Najdi si svou střední školu | Přijímačky na střední školy',
     template: '%s | Přijímačky na střední školy',
   },
   description:
-    'Zjistěte své šance na přijetí na střední školu. Simulátor využívá reálná data z jednotných přijímacích zkoušek 2024-2025 pro celou ČR.',
+    'Prozkoumejte střední školy, obory a možnosti dojíždění. Kalendář přijímání 2027 a historické výsledky škol do roku 2026.',
   keywords: [
     'přijímací zkoušky',
     'střední škola',
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
     siteName: 'Přijímačky na školu',
     title: 'Vyhledávání středních škol, přijímačky a dojíždění',
     description:
-      'Najděte si střední školu, zjistěte šance na přijetí a ověřte dostupnost dojíždění. Data z let 2024-2025.',
+      'Najděte si střední školu a ověřte dojíždění. Kalendář přijímání 2027 a historické výsledky škol do roku 2026.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Vyhledávání středních škol, přijímačky a dojíždění',
     description:
-      'Najděte si střední školu, zjistěte šance na přijetí a ověřte dostupnost dojíždění. Data z let 2024-2025.',
+      'Najděte si střední školu a ověřte dojíždění. Kalendář přijímání 2027 a historické výsledky škol do roku 2026.',
   },
   alternates: {
     canonical: 'https://prijimackynaskolu.cz',
