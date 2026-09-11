@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-09-11",
+  "source": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf",
+  "jpzSource": "https://msmt.gov.cz/media/wp-content/uploads/2026/08/Sdeleni-o-terminech_2026-2027.pdf",
+  "groups": [
+    {
+      "id": "stredni-skoly",
+      "title": "Střední školy · první kolo",
+      "intro": "Pro nástup v září 2027. Platí i pro víceletá gymnázia a obory SŠ s talentovou zkouškou; konzervatoře mají samostatný harmonogram níže.",
+      "events": [
+        {"id": "ss-kriteria", "start": "2027-01-15", "end": "2027-01-31", "date": "15.–31. ledna", "title": "Školy zveřejní kritéria", "note": "Ověř si otevírané obory, kapacity, bodování a požadované přílohy přímo u školy."},
+        {"id": "ss-prihlasky", "start": "2027-02-01", "end": "2027-02-22", "date": "1.–22. února", "title": "Podej přihlášky", "note": "Konec lhůty se posouvá z soboty 20. února na pondělí 22. února. Pořadí oborů sestav podle toho, kam chceš chodit.", "important": true},
+        {"id": "ss-skolni", "start": "2027-03-15", "end": "2027-04-23", "date": "15. března – 23. dubna", "title": "Školní a talentové zkoušky", "note": "Pokud je tvůj obor vyžaduje. Konkrétní pracovní den a čas určí škola v pozvánce."},
+        {"id": "jpz-4-1", "start": "2027-04-12", "date": "12. dubna · pondělí", "title": "JPZ: čtyřleté obory a nástavby · 1. termín", "note": "Čeština a matematika. Místo a čas ověř v pozvánce.", "important": true},
+        {"id": "jpz-4-2", "start": "2027-04-13", "date": "13. dubna · úterý", "title": "JPZ: čtyřleté obory a nástavby · 2. termín", "note": "Čeština a matematika. Místo a čas ověř v pozvánce.", "important": true},
+        {"id": "jpz-vice-1", "start": "2027-04-14", "date": "14. dubna · středa", "title": "JPZ: šestiletá a osmiletá gymnázia · 1. termín", "note": "Čeština a matematika. Místo a čas ověř v pozvánce.", "important": true},
+        {"id": "jpz-vice-2", "start": "2027-04-15", "date": "15. dubna · čtvrtek", "title": "JPZ: šestiletá a osmiletá gymnázia · 2. termín", "note": "Čeština a matematika. Místo a čas ověř v pozvánce.", "important": true},
+        {"id": "ss-skolni-nahradni", "start": "2027-04-26", "end": "2027-05-05", "date": "26. dubna – 5. května", "title": "Náhradní školní a talentové zkoušky", "note": "Konkrétní pracovní den mimo JPZ určí škola. Vyžaduje řádnou omluvu."},
+        {"id": "jpz-nahradni-1", "start": "2027-04-29", "date": "29. dubna · čtvrtek", "title": "Náhradní JPZ · 1. termín", "note": "Pro všechny délky studia; pro řádně omluvené uchazeče."},
+        {"id": "jpz-nahradni-2", "start": "2027-04-30", "date": "30. dubna · pátek", "title": "Náhradní JPZ · 2. termín", "note": "Pro všechny délky studia; pro řádně omluvené uchazeče."},
+        {"id": "ss-vysledky", "start": "2027-05-14", "date": "14. května · pátek", "title": "Výsledky prvního kola SŠ", "note": "Zveřejnění výsledků přijetí v DiPSy a ve škole. Jde o jiný termín než předání výsledků JPZ školám.", "important": true}
+      ]
+    },
+    {
+      "id": "konzervatore",
+      "title": "Konzervatoře · první kolo",
+      "intro": "Přihlášky se podávají už na podzim 2026. Nečekej na únorové přihlášky na ostatní střední školy.",
+      "events": [
+        {"id": "kon-kriteria", "start": "2026-10-15", "end": "2026-10-31", "date": "15.–31. října 2026", "title": "Konzervatoře zveřejní kritéria", "note": "Zkontroluj repertoár, požadavky talentové zkoušky a přílohy."},
+        {"id": "kon-prihlasky", "start": "2026-11-01", "end": "2026-11-30", "date": "1.–30. listopadu 2026", "title": "Podej přihlášky na konzervatoře", "note": "Samostatný podzimní termín pro nástup v září 2027.", "important": true},
+        {"id": "kon-zkousky", "start": "2027-01-04", "end": "2027-01-15", "date": "4.–15. ledna 2027", "title": "Školní a talentové zkoušky", "note": "Pracovní dny v období stanoveném MŠMT. Konkrétní termín a čas jsou v pozvánce školy."},
+        {"id": "kon-nahradni", "start": "2027-01-18", "end": "2027-01-29", "date": "18.–29. ledna 2027", "title": "Náhradní školní a talentové zkoušky", "note": "Konkrétní pracovní den určí konzervatoř; pro řádně omluvené uchazeče."},
+        {"id": "kon-vysledky", "start": "2027-02-08", "date": "8. února 2027 · pondělí", "title": "Výsledky prvního kola konzervatoří", "note": "Zveřejnění výsledků přijetí v DiPSy a ve škole.", "important": true}
+      ]
+    },
+    {
+      "id": "druhe-kolo",
+      "title": "Druhé kolo · všechny obory",
+      "intro": "Nabídka závisí na volných místech a vyhlášení konkrétní školou. Historické druhé kolo nezaručuje, že ho škola otevře i v roce 2027.",
+      "events": [
+        {"id": "k2-kriteria", "start": "2027-05-14", "end": "2027-05-18", "date": "14.–18. května", "title": "Zveřejnění oborů a kritérií druhého kola", "note": "Prohlédni nabídku v DiPSy a zkontroluj podmínky vybraných škol."},
+        {"id": "k2-prihlasky", "start": "2027-05-19", "end": "2027-05-24", "date": "19.–24. května", "title": "Podej přihlášky do druhého kola", "note": "Ověř si podmínky účasti podle své situace a informace o případném vzdání se přijetí v předchozím kole.", "important": true},
+        {"id": "k2-zkousky", "start": "2027-06-08", "end": "2027-06-14", "date": "8.–14. června", "title": "Školní a talentové zkoušky", "note": "Konkrétní pracovní den stanoví škola. Náhradní termín se nekoná; nová JPZ se ve druhém kole nepíše."},
+        {"id": "k2-vysledky", "start": "2027-06-22", "date": "22. června · úterý", "title": "Výsledky druhého kola", "note": "Zveřejnění výsledků přijetí v DiPSy a ve škole.", "important": true}
+      ]
+    }
+  ]
+}

@@ -23,7 +23,7 @@ function RankBar({ rank, total, schoolType }: { rank: number; total: number; sch
     <div className="mt-3">
       <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
         <span>Pořadí v {schoolType}</span>
-        <span className="font-semibold text-slate-700">{label} z {total} škol</span>
+        <span className="font-semibold text-slate-700">{label} z {total} oborů</span>
       </div>
       <div className="bg-slate-100 rounded-full h-2">
         <div
@@ -68,6 +68,7 @@ function ResultCard({ result }: { result: SchoolResult }) {
       </div>
 
       <div className="p-5 bg-white">
+        <p className="text-xs text-slate-600 mb-4">Průměr přijatých není hranice přijetí. Skór CERMAT je přepočtený na škálu 0–100 (ČJ a MA 0–50); u upravených testů nejde o původní body. Pořadí nehodnotí kvalitu výuky.</p>
         <div className="flex items-end gap-4 mb-4">
           <div>
             <div className="text-xs text-slate-500 mb-1">Průměr ČJ+MA — přijatí</div>
@@ -108,14 +109,14 @@ function ResultCard({ result }: { result: SchoolResult }) {
 
         <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
           <p className="text-xs text-slate-400">
-            Data:{' '}
+            1. kolo · platnost {result.source_valid_at} · zdroj:{' '}
             <a href="https://data.cermat.cz" className="underline hover:text-slate-600" target="_blank" rel="noopener noreferrer">
               CERMAT
             </a>
             {' '}· přijato {result.prijati} z {result.kapacita} míst
           </p>
           <Link href="/vysledky/2026" className="text-sm font-medium text-emerald-600 hover:text-emerald-700">
-            Výsledky všech škol →
+            Přehled výsledků →
           </Link>
         </div>
       </div>

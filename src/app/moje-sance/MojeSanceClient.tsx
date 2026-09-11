@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Search, TrendingUp, TrendingDown, Minus, Users, Target, BarChart3, Shield, AlertTriangle, CheckCircle, Info, X, Share2, Check, LinkIcon } from 'lucide-react';
+import { Search, TrendingUp, TrendingDown, Minus, Users, Target, BarChart3, Shield, Info, X, Check, LinkIcon } from 'lucide-react';
 import { analyzeCombination, type SchoolApplication2026, type CombinationAnalysis, type ChanceResult } from '@/lib/chances';
 
 interface SearchResult {
@@ -285,11 +285,7 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
                            result.trendDirection === 'down' ? 'text-green-600' :
                            'text-slate-500';
 
-  const chanceBarWidth = Math.max(5, result.estimatedChancePct);
-  const chanceBarColor = result.chanceLevel === 'high' ? 'bg-green-500' :
-                          result.chanceLevel === 'medium' ? 'bg-amber-500' :
-                          result.chanceLevel === 'low' ? 'bg-orange-500' :
-                          'bg-red-500';
+
 
   return (
     <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
@@ -312,31 +308,17 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
               {s.obor} · {s.obec}
               {s.is_new_2026 && (
                 <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
-                  Nové zaměření 2026
+                  Bez spárované historie 2025
                 </span>
               )}
             </p>
           </div>
         </div>
 
-        {/* Šance bar – skrýt pro nové obory bez historie */}
-        {!s.is_new_2026 && (
-        <div className="mb-4">
-          <div className="flex items-center justify-between mb-1">
-            <span className="text-sm font-medium text-slate-700">Odhad šancí na přijetí <span className="font-normal text-slate-500">(vždy záleží na počtu bodů!)</span></span>
-            <span className={`text-sm font-bold ${result.chanceColor}`}>
-              {result.estimatedChancePct} %
-            </span>
-          </div>
-          <div className="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
-            <div
-              className={`h-full rounded-full transition-all duration-500 ${chanceBarColor}`}
-              style={{ width: `${chanceBarWidth}%` }}
-            />
-          </div>
-          <div className="text-xs text-slate-500 mt-1">{result.chanceLabel}</div>
+        <div className="mb-4 rounded-lg bg-slate-50 p-3 text-sm text-slate-600">
+          <strong>Historická konkurence:</strong> přihlášky a kapacity popisují rok 2026.
+          Nejde o osobní pravděpodobnost přijetí. Hodnocení níže nezohledňuje tvoje skóre ani kritéria pro rok 2027.
         </div>
-        )}
 
         {/* Stats grid - hlavní čísla */}
         <div className={`grid ${s.is_new_2026 ? 'grid-cols-2' : 'grid-cols-2 md:grid-cols-4'} gap-3 mb-5`}>
@@ -370,10 +352,10 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
             <div className="flex items-center justify-center gap-1 mb-1">
               <BarChart3 className="w-3.5 h-3.5 text-slate-400" />
             </div>
-            <div className="text-lg font-bold text-red-600">{result.estimatedMinScore}</div>
-            <div className="text-xs text-slate-500">Odhad min. bodů</div>
+            <div className="text-lg font-bold text-red-600">{s.min_body_2025.toFixed(1)}</div>
+            <div className="text-xs text-slate-500">Minimum 2025</div>
             <div className="text-xs text-slate-400 mt-0.5">
-              (2025: {s.min_body_2025})
+              škála JPZ 0–100
             </div>
           </div>
           )}
@@ -397,7 +379,7 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
           <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
             <div className="text-sm text-amber-800">
               <span className="font-medium">Nové zaměření:</span>{' '}
-              Toto zaměření nemá historii z roku 2025, proto nemůžeme odhadnout šance na přijetí.
+              Toto zaměření nemá jednoznačně spárovanou historii 2025. Může jít o nové nebo přejmenované zaměření.
               Zobrazujeme pouze aktuální data o přihláškách.
             </div>
             <div className="text-xs text-amber-600 mt-1">
@@ -509,51 +491,11 @@ function SchoolResultCard({ result }: { result: ChanceResult }) {
 
 // Komponenta pro celkové hodnocení
 function CombinationResult({ analysis }: { analysis: CombinationAnalysis }) {
-  const riskIcon = analysis.overallRisk === 'safe' ? <CheckCircle className="w-6 h-6" /> :
-                   analysis.overallRisk === 'balanced' ? <Shield className="w-6 h-6" /> :
-                   <AlertTriangle className="w-6 h-6" />;
-
-  const riskBgColor = analysis.overallRisk === 'safe' ? 'bg-green-50 border-green-200' :
-                      analysis.overallRisk === 'balanced' ? 'bg-blue-50 border-blue-200' :
-                      analysis.overallRisk === 'risky' ? 'bg-orange-50 border-orange-200' :
-                      'bg-red-50 border-red-200';
-
-  const riskIconColor = analysis.overallRisk === 'safe' ? 'text-green-600' :
-                        analysis.overallRisk === 'balanced' ? 'text-blue-600' :
-                        analysis.overallRisk === 'risky' ? 'text-orange-600' :
-                        'text-red-600';
-
   return (
     <div className="space-y-6">
-      {/* Celkové hodnocení */}
-      <div className={`border rounded-xl p-6 ${riskBgColor}`}>
-        <div className="flex items-start gap-4">
-          <div className={riskIconColor}>
-            {riskIcon}
-          </div>
-          <div>
-            <h3 className={`font-bold text-lg ${analysis.riskColor}`}>
-              {analysis.riskLabel}
-            </h3>
-            <p className="text-sm text-slate-600 mt-1">
-              {analysis.riskDescription}
-            </p>
-          </div>
-        </div>
-
-        {analysis.suggestions.length > 0 && (
-          <div className="mt-4 pt-4 border-t border-slate-200/50">
-            <h4 className="text-sm font-semibold text-slate-700 mb-2">Doporučení</h4>
-            <ul className="space-y-1">
-              {analysis.suggestions.map((suggestion, i) => (
-                <li key={i} className="text-sm text-slate-600 flex items-start gap-2">
-                  <span className="text-slate-400 mt-0.5">•</span>
-                  {suggestion}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+      <div className="border border-blue-200 rounded-xl p-6 bg-blue-50">
+        <h3 className="font-bold text-lg">Srovnání historické poptávky</h3>
+        <p className="text-sm text-slate-600 mt-2">Přihlášky, kapacity a výsledky z minulých let pomáhají popsat konkurenci. Bez výsledku dítěte a kritérií školy pro rok 2027 nelze určit osobní šanci ani bezpečnost kombinace. Pořadí přihlášek sestav podle skutečné preference.</p>
       </div>
 
       {/* Jednotlivé školy */}
@@ -571,18 +513,15 @@ export function MojeSanceClient() {
   const [analysis, setAnalysis] = useState<CombinationAnalysis | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [initialLoadDone, setInitialLoadDone] = useState(false);
   const searchParams = useSearchParams();
+  const [initialLoadDone, setInitialLoadDone] = useState(() => !searchParams.get('skoly'));
   const router = useRouter();
 
   // Načtení škol z URL parametrů při prvním renderování
   useEffect(() => {
     if (initialLoadDone) return;
     const ids = searchParams.get('skoly');
-    if (!ids) {
-      setInitialLoadDone(true);
-      return;
-    }
+    if (!ids) return;
     const schoolIds = ids.split(',').slice(0, 3);
     const loadSchools = async () => {
       const loaded: (SchoolFullData | null)[] = [null, null, null];
@@ -773,7 +712,7 @@ export function MojeSanceClient() {
               disabled={selectedCount === 0 || isAnalyzing}
               className="bg-blue-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isAnalyzing ? 'Analyzuji...' : 'Zjistit šance'}
+              {isAnalyzing ? 'Analyzuji...' : 'Porovnat historická data'}
             </button>
             {selectedCount > 0 && (
               <button
@@ -825,9 +764,9 @@ export function MojeSanceClient() {
         {/* Disclaimer */}
         {analysis && (
           <div className="mt-6 p-4 bg-amber-50 rounded-xl text-xs text-amber-700">
-            <strong>Upozornění:</strong> Odhady šancí jsou orientační a vycházejí z historických dat.
+            <strong>Upozornění:</strong> Srovnání vychází z historických dat, nikoli z osobní pravděpodobnosti přijetí.
             Skutečné výsledky závisí na vašem skóre z přijímacích zkoušek, na dalších kritériích školy
-            a na tom, kolik uchazečů se vzdá přijetí na jiné školy. Kapacity škol se mohou měnit do 7. května 2026.
+            a na výsledcích ostatních uchazečů. Přihlášky a kapacity 2026 jsou historické údaje prvního kola, platné k 17. 8. 2026; nejsou nabídkou pro rok 2027.
             Data přihlášek 2026 pocházejí z portálu{' '}
             <a href="https://data.cermat.cz" className="underline hover:text-amber-900" target="_blank" rel="noopener noreferrer">
               data.cermat.cz

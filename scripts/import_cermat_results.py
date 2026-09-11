@@ -43,7 +43,7 @@ def make_key(redizo, kkov, zamereni=''):
 def load_flat_xlsx(path: Path) -> list[dict]:
     """Načte flat xlsx (2026 formát) — 1 list, hlavičky na řádku 1."""
     print(f"Načítám {path.name}...")
-    wb = openpyxl.load_workbook(path, read_only=True)
+    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     ws = wb.active
     rows = list(ws.iter_rows(values_only=True))
     headers = [str(h) if h else '' for h in rows[0]]
@@ -52,6 +52,10 @@ def load_flat_xlsx(path: Path) -> list[dict]:
         if row[0] is None:
             continue
         records.append(dict(zip(headers, row)))
+    wb.close()
+    required = {'REDIZO', 'KKOV', 'FORMA VZDĚLÁVÁNÍ', 'ČJ+MA - % SKÓR - PRŮMĚR (PŘIJATI)'}
+    if not required.issubset(headers):
+        raise ValueError(f'Neznámé hlavičky v {path.name}: {required - set(headers)}')
     print(f"  Načteno {len(records)} řádků")
     return records
 
@@ -117,16 +121,22 @@ def extract_current_year(records: list[dict]) -> dict[str, dict]:
             continue
         key = make_key(redizo, kkov, zamereni)
         # CERMAT dodává % skór (0-100 na předmět, 0-200 celkem).
-        # Pro konzistenci se zbytkem aplikace převádíme na body z testu (0-50 / 0-100).
+        # Přepočet na standardní škálu 0–50 / 0–100, nikoli původní body upravených testů.
         cj_ma_pct = safe_float(r.get('ČJ+MA - % SKÓR - PRŮMĚR (PŘIJATI)'))
         cj_pct = safe_float(r.get('ČJ - % SKÓR - PRŮMĚR (PŘIJATI)'))
         ma_pct = safe_float(r.get('MA - % SKÓR - PRŮMĚR (PŘIJATI)'))
         if cj_ma_pct == 0:
             continue
+        if key in result:
+            raise ValueError(f'Duplicitní klíč nabídky: {key}')
+        if not (0 <= cj_ma_pct <= 200 and 0 <= cj_pct <= 100 and 0 <= ma_pct <= 100):
+            raise ValueError(f'Skór mimo rozsah: {key}')
         result[key] = {
             'redizo': redizo,
             'kkov': kkov,
             'zamereni': zamereni,
+            'source_id': str(r.get('ID_SOF') or ''),
+            'obor': str(r.get('OBOR - NÁZEV') or ''),
             'nazev': str(r.get('NÁZEV ŠKOLY') or ''),
             'kraj': str(r.get('KRAJ - NÁZEV') or ''),
             'school_type': str(r.get('TYP ŠKOLY') or ''),
@@ -197,9 +207,9 @@ def main(year: int) -> None:
     prev_data: dict[str, float] = {}
     if prev_path.exists():
         wb_prev = openpyxl.load_workbook(prev_path, read_only=True, data_only=True)
-        sheets = wb_prev.sheetnames
+        headers = next(wb_prev.active.iter_rows(values_only=True))
         wb_prev.close()
-        if len(sheets) == 1:
+        if 'FORMA VZDĚLÁVÁNÍ' in headers:
             prev_records = load_flat_xlsx(prev_path)
             prev_flat = extract_current_year(prev_records)
             prev_data = {k: v['cj_ma_prijati'] for k, v in prev_flat.items()}

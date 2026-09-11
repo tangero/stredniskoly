@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback, useEffect } from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
+import resultsMeta from '@/../public/cermat_results_meta.json';
 import type { SchoolResult } from '@/lib/data';
 
 const TYP_LABELS: Record<string, string> = {
@@ -27,50 +28,17 @@ interface Props {
 }
 
 function KeyInsights({ results, year }: { results: SchoolResult[]; year: number }) {
-  const gy4 = results.filter(r => r.school_type === 'GY4' && r.cj_ma_prijati > 0);
-  const avgMa = gy4.length > 0 ? gy4.reduce((s, r) => s + r.ma_prijati, 0) / gy4.length : 0;
-  const avgMaDelta = gy4.filter(r => r.delta_cj_ma !== null).reduce((s, r) => s + (r.delta_cj_ma ?? 0), 0) / Math.max(gy4.filter(r => r.delta_cj_ma !== null).length, 1);
-  const lycCount = results.filter(r => r.school_type === 'LYC').reduce((s, r) => s + r.kapacita, 0);
-
   const insights = [
-    {
-      icon: '📐',
-      color: 'border-green-500 bg-green-50',
-      titleColor: 'text-green-800',
-      textColor: 'text-green-700',
-      title: `Matematika posílila o ${Math.abs(avgMaDelta).toFixed(0)} bodů`,
-      text: `Průměrné MA body přijatých na GY4: ${avgMa.toFixed(1)} b. (z max 50) — výrazně výše než vloni.`,
-    },
-    {
-      icon: '📉',
-      color: 'border-red-400 bg-red-50',
-      titleColor: 'text-red-800',
-      textColor: 'text-red-700',
-      title: 'Demografický pokles přichází',
-      text: `O tisíce méně přihlášek než v roce ${year - 1}. Trend bude pokračovat.`,
-    },
-    {
-      icon: '🎓',
-      color: 'border-amber-400 bg-amber-50',
-      titleColor: 'text-amber-800',
-      textColor: 'text-amber-700',
-      title: 'Lycea expandují',
-      text: `Celková kapacita lyceí: ${lycCount.toLocaleString('cs-CZ')} míst. Nejrychleji rostoucí typ školy.`,
-    },
-    {
-      icon: '🔍',
-      color: 'border-purple-400 bg-purple-50',
-      titleColor: 'text-purple-800',
-      textColor: 'text-purple-700',
-      title: 'Body přijatých rostou všude',
-      text: 'Průměrné body ČJ+MA přijatých vzrostly ve všech typech škol — zejména v matematice.',
-    },
-  ];
+    { title: 'Průměr není hranice přijetí', text: 'Skóre popisuje přijaté uchazeče. Samo o sobě neříká, kolik bodů stačilo k přijetí ani jaká bude hranice příští rok.' },
+    { title: 'Výsledky oborů s JPZ', text: `Přehled obsahuje ${results.length.toLocaleString('cs-CZ')} oborů a zaměření z ${year}, nikoli všechny střední školy. Zahrnujeme denní nezkrácené obory s kladným zveřejněným průměrem.` },
+    { title: 'Srovnatelná škála', text: 'Procentní skór CERMAT dělíme dvěma: ČJ a MA mají škálu 0–50, součet 0–100. U upravených testů to nemusí být původní počet bodů.' },
+    { title: 'Připravuj se podle svých potřeb', text: 'Zkus si cvičný test z obou předmětů a projdi vlastní chyby. Průměr přijatých na škole neurčuje, který předmět potřebuješ procvičit ty.' },
+  ].map(item => ({ ...item, icon: '', color: 'border-blue-400 bg-blue-50', titleColor: 'text-blue-900', textColor: 'text-slate-700' }));
 
   return (
     <section className="py-12 px-4 bg-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold text-slate-900 mb-6">Klíčová zjištění</h2>
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">Jak výsledky číst</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {insights.map((ins, i) => (
             <div key={i} className={`border-l-4 rounded-r-xl p-4 ${ins.color}`}>
@@ -102,6 +70,7 @@ function ComparisonTable({ results, year }: { results: SchoolResult[]; year: num
   return (
     <section className="py-12 px-4 bg-slate-50">
       <div className="max-w-4xl mx-auto">
+        <p className="text-sm text-slate-600 mb-4">Nevážené průměry oborových průměrů přijatých; každý obor má stejnou váhu. Meziroční změnu počítáme jen u stejného REDIZO, oboru a zaměření. Změny testů a kritérií mohou ovlivnit srovnání.</p>
         <h2 className="text-2xl font-bold text-slate-900 mb-6">Srovnání {year - 1} vs {year} podle typu školy</h2>
         <div className="overflow-x-auto">
           <table className="w-full bg-white rounded-xl shadow-sm border border-slate-200">
@@ -110,8 +79,8 @@ function ComparisonTable({ results, year }: { results: SchoolResult[]; year: num
                 <th className="text-left px-4 py-3 text-sm font-semibold rounded-tl-xl">Typ školy</th>
                 <th className="text-right px-4 py-3 text-sm font-semibold">Kapacita</th>
                 <th className="text-right px-4 py-3 text-sm font-semibold">Přijatých</th>
-                <th className="text-right px-4 py-3 text-sm font-semibold">Prům. body ČJ+MA (max 100)</th>
-                <th className="text-right px-4 py-3 text-sm font-semibold rounded-tr-xl">Δ body</th>
+                <th className="text-right px-4 py-3 text-sm font-semibold">Průměr skóre oborů (0–100)</th>
+                <th className="text-right px-4 py-3 text-sm font-semibold rounded-tr-xl">Δ u spárovaných oborů</th>
               </tr>
             </thead>
             <tbody>
@@ -160,8 +129,8 @@ function RankingSection({ results, activeType, onTypeChange }: {
   return (
     <section className="py-12 px-4 bg-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold text-slate-900 mb-2">Top gymnázia — žebříček</h2>
-        <p className="text-slate-500 text-sm mb-6">Seřazeno podle průměrných bodů ČJ+MA přijatých (z max 100 b.)</p>
+        <h2 className="text-2xl font-bold text-slate-900 mb-2">Gymnázia podle skóre přijatých</h2>
+        <p className="text-slate-500 text-sm mb-6">Seřazeno podle průměrného skóre ČJ+MA přijatých (škála 0–100). Pořadí nehodnotí kvalitu výuky.</p>
         <div className="flex gap-2 mb-6">
           {gymTypes.map(t => (
             <button
@@ -203,45 +172,13 @@ function RankingSection({ results, activeType, onTypeChange }: {
   );
 }
 
-function AdviceSection({ results, year }: { results: SchoolResult[]; year: number }) {
-  const gy4 = results.filter(r => r.school_type === 'GY4' && r.ma_prijati > 0);
-  const avgMa = gy4.length > 0 ? gy4.reduce((s, r) => s + r.ma_prijati, 0) / gy4.length : 0;
-  const avgCj = gy4.length > 0 ? gy4.reduce((s, r) => s + r.cj_prijati, 0) / gy4.length : 0;
-
+function AdviceSection({ year }: { year: number }) {
   return (
-    <section className="py-12 px-4 bg-slate-900 text-white">
+    <section className="py-10 px-4 bg-slate-900 text-white">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold mb-2">Co to znamená pro přijímačky {year + 1}?</h2>
-        <p className="text-slate-400 mb-8 text-sm">Rady na základě dat z letošního roku.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[
-            {
-              title: 'Procvičuj hlavně matematiku',
-              text: `Průměrné MA body přijatých na 4letá gymnázia byly ${avgMa.toFixed(0)} b. (z max 50) — a meziročně rostou.`,
-              icon: '📐',
-            },
-            {
-              title: 'Český jazyk je stabilní základ',
-              text: `Průměrné ČJ body přijatých: ${avgCj.toFixed(0)} b. (z max 50). Solidní příprava zajistí stabilní výsledek.`,
-              icon: '📖',
-            },
-            {
-              title: 'Lycea jsou dobrou alternativou',
-              text: 'Lycea otevírají nová místa a zájem roste pomaleji než kapacita. Dobrý moment.',
-              icon: '🎓',
-            },
-            {
-              title: 'Sleduj trendy u konkrétní školy',
-              text: 'Na detailu každé školy najdeš skóre přijatých z letošního roku i srovnání s minulým rokem.',
-              icon: '🔍',
-            },
-          ].map((item, i) => (
-            <div key={i} className="bg-white/10 rounded-xl p-5">
-              <div className="text-lg font-bold mb-2">{item.icon} {item.title}</div>
-              <div className="text-slate-300 text-sm">{item.text}</div>
-            </div>
-          ))}
-        </div>
+        <h2 className="text-2xl font-bold mb-3">Připravuješ se na přijímačky {year + 1}?</h2>
+        <p className="text-slate-300 mb-5">Historické skóre je jeden z podkladů. Při výběru zvaž obsah oboru, dojíždění a prostředí školy. Kapacity a pravidla bodování si ověř v kritériích pro nový ročník.</p>
+        <Link href="/prijimacky-2027" className="inline-block rounded-lg bg-blue-700 px-5 py-3 font-semibold hover:bg-blue-600">Termíny přijímaček 2027 →</Link>
       </div>
     </section>
   );
@@ -265,7 +202,7 @@ function SearchSection({ results, kraje, searchQuery, setSearchQuery, filterType
       .filter(r => {
         if (!searchQuery) return true;
         const q = searchQuery.toLowerCase();
-        return r.nazev.toLowerCase().includes(q) || (r.nazev_display || '').toLowerCase().includes(q) || r.kraj.toLowerCase().includes(q);
+        return r.nazev.toLowerCase().includes(q) || (r.nazev_display || '').toLowerCase().includes(q) || r.kraj.toLowerCase().includes(q) || (r.obor || '').toLowerCase().includes(q) || r.zamereni.toLowerCase().includes(q);
       })
       .sort((a, b) => b.cj_ma_prijati - a.cj_ma_prijati)
       .slice(0, 100),
@@ -275,16 +212,18 @@ function SearchSection({ results, kraje, searchQuery, setSearchQuery, filterType
   return (
     <section className="py-12 px-4 bg-slate-50">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold text-slate-900 mb-6">Prohledat všechny školy</h2>
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">Prohledat zveřejněné výsledky</h2>
         <div className="flex flex-wrap gap-3 mb-6">
           <input
+            aria-label="Hledat ve výsledcích"
             type="text"
-            placeholder="Hledat školu nebo kraj…"
+            placeholder="Hledat školu, obor nebo kraj…"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             className="flex-1 min-w-48 border border-slate-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-400"
           />
           <select
+            aria-label="Typ školy"
             value={filterType}
             onChange={e => setFilterType(e.target.value)}
             className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-400"
@@ -293,6 +232,7 @@ function SearchSection({ results, kraje, searchQuery, setSearchQuery, filterType
             {TYP_ORDER.map(t => <option key={t} value={t}>{TYP_LABELS[t]}</option>)}
           </select>
           <select
+            aria-label="Kraj"
             value={filterKraj}
             onChange={e => setFilterKraj(e.target.value)}
             className="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-slate-400"
@@ -302,7 +242,7 @@ function SearchSection({ results, kraje, searchQuery, setSearchQuery, filterType
           </select>
         </div>
         <div className="text-xs text-slate-400 mb-3">
-          {filtered.length} škol{filtered.length === 100 ? ' (zobrazeno prvních 100)' : ''}
+          {filtered.length} oborů a zaměření{filtered.length === 100 ? ' (zobrazeno prvních 100)' : ''}
         </div>
         <div className="flex flex-col gap-2">
           {filtered.map((r, i) => (
@@ -412,14 +352,14 @@ export function ResultsClient({
             Co přineslo přijímací řízení {year}?
           </h1>
           <p className="text-slate-400 text-lg mb-10 max-w-2xl">
-            Přehled výsledků, žebříčky škol a srovnání s rokem {year - 1}.
+            Přehled skóre přijatých v oborech s JPZ a srovnání s rokem {year - 1}.
           </p>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white/10 rounded-xl p-5 text-center">
               <div className="text-4xl font-black">
                 {totalKapacita.toLocaleString('cs-CZ')}
               </div>
-              <div className="text-slate-400 text-sm mt-1">míst celkem</div>
+              <div className="text-slate-400 text-sm mt-1">míst ve zobrazených oborech</div>
             </div>
             <div className="bg-white/10 rounded-xl p-5 text-center">
               <div className="text-4xl font-black">
@@ -440,7 +380,11 @@ export function ResultsClient({
         </div>
       </section>
 
-      {/* ② Klíčová zjištění */}
+      <aside className="max-w-4xl mx-auto px-4 pt-6 text-sm text-slate-600">
+        <p>Zdroj: <a href={resultsMeta.source.url} className="text-blue-700 underline">CERMAT, první kolo {year}</a> · platnost {new Date(resultsMeta.source.valid_at + 'T12:00:00Z').toLocaleDateString('cs-CZ', { timeZone: 'Europe/Prague' })} · ověřeno {new Date(resultsMeta.source.checked_at + 'T12:00:00Z').toLocaleDateString('cs-CZ', { timeZone: 'Europe/Prague' })}.</p>
+        <p className="mt-2">{resultsMeta.schools.toLocaleString('cs-CZ')} škol (REDIZO), {results.length.toLocaleString('cs-CZ')} oborů a zaměření. Dalších {resultsMeta.without_positive_score} oborů v tomto rozsahu nemá kladný zveřejněný průměr a ve skórovém přehledu není. Nejde o celkové počty míst a přijatých v celé ČR.</p>
+      </aside>
+      {/* ② Jak výsledky číst */}
       <KeyInsights results={results} year={year} />
 
       {/* ③ Srovnání */}
@@ -450,7 +394,7 @@ export function ResultsClient({
       <RankingSection results={results} activeType={rankingType} onTypeChange={setRankingType} />
 
       {/* ⑤ Rady */}
-      <AdviceSection results={results} year={year} />
+      <AdviceSection year={year} />
 
       {/* ⑥ Vyhledávání */}
       <SearchSection

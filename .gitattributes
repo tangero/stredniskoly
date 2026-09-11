@@ -1,0 +1,2 @@
+# RFC 5545 vyžaduje v kalendářích CRLF i při checkoutu na Unixu.
+*.ics -text whitespace=trailing-space,space-before-tab,cr-at-eol

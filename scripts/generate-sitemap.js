@@ -185,6 +185,8 @@ function main() {
   const urls = [];
   const staticRoutes = [
     ['/', 'weekly', '1.0'],
+    ['/prijimacky-2027', 'weekly', '0.9'],
+    ['/vysledky/2026', 'monthly', '0.8'],
     ['/simulator', 'weekly', '0.9'],
     ['/skoly', 'weekly', '0.9'],
     ['/regiony', 'weekly', '0.8'],

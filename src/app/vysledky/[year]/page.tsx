@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { year } = await params;
   return {
     title: `Výsledky přijímacích zkoušek ${year} — přehled škol a oborů`,
-    description: `Kompletní přehled výsledků 1. kola přijímacích zkoušek ${year}. Skóre přijatých, žebříčky gymnázií a srovnání s předchozím rokem.`,
+    description: `Přehled výsledků denních nezkrácených oborů s JPZ z 1. kola přijímacích zkoušek ${year}. Skóre přijatých, žebříčky gymnázií a srovnání s předchozím rokem.`,
   };
 }
 
