@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { normalizeSchoolKey } from '@/lib/school-key';
 import { matchesSearchLocation, splitByCommute } from '@/lib/simulator-filter';
-import { applicationsPerPlace, capacitySummary, type AdmissionContext } from '@/lib/admission-summary';
+import { applicationsPerPlace, capacitySummary, rankAdmissionOffers, rankingPages, type AdmissionContext } from '@/lib/admission-summary';
 import { MAX_SELECTION, readSelection, sharedSimulatorParams } from '@/lib/simulator-state';
 
 interface School {
@@ -107,6 +107,7 @@ export function SimulatorClient() {
   const [transitError, setTransitError] = useState('');
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [visible, setVisible] = useState(20);
+  const [rankingPagination, setRankingPagination] = useState({ key: '', page: 1 });
   const [notice, setNotice] = useState('');
   const [storageStatus, setStorageStatus] = useState('');
   const [shareUrl, setShareUrl] = useState('');
@@ -202,8 +203,19 @@ export function SimulatorClient() {
     const duration = grade === '5' ? 8 : grade === '7' ? 6 : null;
     if (duration ? s.delka_studia !== duration : grade === '9' && (s.delka_studia === 8 || s.delka_studia === 6)) return false;
     return matchesSearchLocation(s, { city, region, commute: !!stop }) && (!subjects.length || subjects.includes(s.obor)) &&
-      (!query || normalize([s.obor, s.zamereni].join(' ')).includes(normalize(query)));
+      (!query.trim() || normalize([s.obor, s.zamereni].join(' ')).includes(normalize(query.trim())));
   }), [catalog, grade, region, city, stop, subjects, query]);
+  const rankingMode = !stop && !city && !region && !subjects.length && !query.trim();
+  const ranked = useMemo(() => rankAdmissionOffers(filtered), [filtered]);
+  const rankingKey = JSON.stringify([grade, city, region, stop?.stopId, subjects, query]);
+  const rankingPageCount = Math.ceil(ranked.length / 20);
+  const rankingPage = Math.max(1, Math.min(rankingPagination.key === rankingKey ? rankingPagination.page : 1, rankingPageCount));
+  // Změna podmínek zahodí starou stránku i při pozdějším návratu do žebříčku.
+  if (rankingPagination.key !== rankingKey) setRankingPagination({ key: rankingKey, page: 1 });
+  function goToRankingPage(page: number) {
+    setRankingPagination({ key: rankingKey, page });
+    document.getElementById('simulator-results')?.scrollIntoView({ block: 'start' });
+  }
   const groups = stop ? splitByCommute(filtered, limit, s => estimates.byId.get(normalizeSchoolKey(s.id))?.minutes, s => mapped.has(normalizeSchoolKey(s.id))) : { within: filtered, near: [], unknown: [] };
   const pending = !!stop && !transit;
 
@@ -319,19 +331,29 @@ export function SimulatorClient() {
           <div className="flex gap-2">{[30, 45, 60].map(n => <button key={n} className={`${button} flex-1 px-2`} onClick={() => changeTime(String(n))}>{n} min</button>)}</div>
           <p className="mt-3 text-xs leading-relaxed text-slate-600">{stop ? 'Odhad od vybrané zastávky včetně čekání a chůze ke škole. Cestu z domova na zastávku připočti. Zahrnuje dostupné vlaky a autobusy, nejen MHD. Pokrytí se liší podle regionu.' : 'Pro použití časového limitu vyber výchozí zastávku.'}</p>
         </aside>
-        <section aria-label="Výsledky simulátoru" className="min-w-0">
+        <section id="simulator-results" aria-label="Výsledky simulátoru" className="min-w-0 scroll-mt-4">
           <div className="mb-4 border-l-2 border-blue-500 pl-3 text-sm" role="status">
-            <p className="font-semibold text-blue-900">{stop ? `Hledáš podle dojezdu: do ${limit} min ze zastávky ${stop.name}` : city ? `Hledáš školy v obci: ${city}` : region ? `Hledáš školy v kraji: ${region}` : 'Hledáš školy v celé ČR'}</p>
-            <p className="mt-1 text-slate-600">{stop ? 'Bez omezení městem nebo krajem. Zvolený typ studia a obory platí dál.' : `Bez omezení dojezdem.${city && region ? ` Současně platí kraj: ${region}.` : ''}`}</p>
+            <p className="font-semibold text-blue-900">{stop ? `Hledáš podle dojezdu: do ${limit} min ze zastávky ${stop.name}` : city ? `Hledáš školy v obci: ${city}` : region ? `Hledáš školy v kraji: ${region}` : rankingMode ? 'Žebříček škol podle výsledků JPZ 2026' : 'Hledáš školy v celé ČR'}</p>
+            <p className="mt-1 text-slate-600">{stop ? 'Bez omezení městem nebo krajem. Zvolený typ studia a obory platí dál.' : rankingMode ? 'Vyber obor, město, kraj nebo dojezd a zobrazíme školy podle tvých podmínek.' : `Bez omezení dojezdem.${city && region ? ` Současně platí kraj: ${region}.` : ''}`}</p>
             {!stop && (city || region) && <button className="mt-2 min-h-11 text-blue-700 underline" onClick={() => { setCity(''); setRegion(''); setVisible(20); }}>Zrušit územní omezení</button>}
           </div>
           <p className="mb-4 text-xs text-slate-500">Dostupný katalog 2025 s historií 2026. Úplná nabídka a kritéria 2027 se doplňují.</p>
           {pending ? <div role="status"><p>{transitError || 'Počítám orientační dojezd…'}</p>{transitError && <button className={`${button} mt-3`} onClick={() => { setTransitError(''); setRetry(retry + 1); }}>Zkusit znovu</button>}</div> : <>
-            <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="text-xl font-semibold" aria-live="polite">{countLabel(groups.within.length)}{stop ? ` do ${limit} min` : ''}</h2><span className="text-xs text-slate-500">{stop ? 'Podle odhadu dojezdu' : 'Podle názvu školy'}</span></div>
+            <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="text-xl font-semibold" aria-live="polite">{rankingMode ? `${countLabel(ranked.length)} s ověřeným průměrem` : countLabel(groups.within.length)}{stop ? ` do ${limit} min` : ''}</h2><span className="text-xs text-slate-500">{stop ? 'Podle odhadu dojezdu' : rankingMode ? 'Průměr JPZ přijatých · od nejvyššího' : 'Podle názvu školy'}</span></div>
             {!!groups.near.length && <div className="my-5 border-l-4 border-amber-500 bg-amber-50 p-4"><h3 className="font-semibold">Ještě {countLabel(groups.near.length)} těsně za limitem</h3><p className="mt-1 text-sm">Nejbližší je o {(estimates.byId.get(normalizeSchoolKey(groups.near[0].id))?.minutes ?? limit) - limit} min dál. Tvůj limit zůstává {limit} min.</p><div className="mt-3 flex flex-wrap gap-2"><a href="#near-schools" className={button}>Prohlédnout další obory</a>{limit < 180 && <button className={button} onClick={() => changeTime(String(Math.min(180, estimates.byId.get(normalizeSchoolKey(groups.near[groups.near.length - 1].id))?.minutes ?? limit + 10)))}>Zvýšit limit na {Math.min(180, estimates.byId.get(normalizeSchoolKey(groups.near[groups.near.length - 1].id))?.minutes ?? limit + 10)} min</button>}</div></div>}
             {catalog && !groups.within.length && <p className="my-5">V zadaných podmínkách není žádný obor. Zkus rozšířit čas, změnit kraj nebo zrušit některý filtr.</p>}
-            {groups.within.slice(0, visible).map(s => renderSchool(s))}
-            {groups.within.length > visible && <button className={`${button} my-4`} onClick={() => setVisible(visible + 20)}>Dalších 20 oborů</button>}
+            {rankingMode && <p className="mt-2 text-sm text-slate-600">Pořadí se týká jednotlivých oborů ve zvolené skupině studia. Výsledky přijatých nejsou hodnocením kvality školy ani šancí na přijetí.</p>}
+            {rankingMode ? <>
+              <p className="mt-3 text-sm text-slate-500">{ranked.length ? `Zobrazeno ${(rankingPage - 1) * 20 + 1}–${Math.min(rankingPage * 20, ranked.length)} z ${ranked.length} oborů` : 'Pro tuto skupinu zatím nemáme ověřené průměry.'}</p>
+              {ranked.slice((rankingPage - 1) * 20, rankingPage * 20).map((s, index) => <div key={s.id}><p className="mt-5 text-sm font-semibold text-blue-800">{(rankingPage - 1) * 20 + index + 1}. v žebříčku</p>{renderSchool(s)}</div>)}
+              {rankingPageCount > 1 && <nav aria-label="Stránkování žebříčku" className="my-6 flex flex-wrap items-center gap-2">
+                <p className="w-full text-sm text-slate-600">Stránka {rankingPage} z {rankingPageCount}</p>
+                <button className={button} disabled={rankingPage === 1} onClick={() => goToRankingPage(rankingPage - 1)}>Předchozí</button>
+                {rankingPages(rankingPage, rankingPageCount).map((page, index) => typeof page === 'number' ? <button key={page} className={`${button} ${page === rankingPage ? 'border-blue-600 bg-blue-50 text-blue-800' : ''}`} aria-label={`Stránka ${page}`} aria-current={page === rankingPage ? 'page' : undefined} onClick={() => goToRankingPage(page)}>{page}</button> : <span key={`gap-${index}`} className="px-1">{page}</span>)}
+                <button className={button} disabled={rankingPage === rankingPageCount} onClick={() => goToRankingPage(rankingPage + 1)}>Další</button>
+              </nav>}
+            </> : groups.within.slice(0, visible).map(s => renderSchool(s))}
+            {!rankingMode && groups.within.length > visible && <button className={`${button} my-4`} onClick={() => setVisible(visible + 20)}>Dalších 20 oborů</button>}
             {!!groups.near.length && <section id="near-schools" className="mt-8 scroll-mt-8"><h2 className="text-xl font-semibold">Těsně za limitem</h2><p className="mt-1 text-sm text-slate-600">Nejvýš o 10 minut dál, ostatní filtry platí.</p>{groups.near.slice(0, visible).map(s => renderSchool(s, true))}{groups.near.length > visible && <button className={`${button} mt-3`} onClick={() => setVisible(visible + 20)}>Další obory za limitem</button>}</section>}
             {!!groups.unknown.length && <details className="mt-8"><summary className="cursor-pointer font-semibold">Dojezd zatím neověřen ({groups.unknown.length})</summary><p className="mt-2 text-sm text-slate-600">Chybí jednoznačné přiřazení místa výuky k dopravním datům. Neznamená to, že škola není dostupná.</p>{groups.unknown.slice(0, visible).map(s => renderSchool(s))}{groups.unknown.length > visible && <button className={`${button} mt-3`} onClick={() => setVisible(visible + 20)}>Další obory bez ověřeného dojezdu</button>}</details>}
             {stop && <p className="mt-6 text-xs text-slate-500">Nenalezená cesta může znamenat překročení rozsahu i chybějící spoj v podkladech. Pro konkrétní den ověř spojení v jízdním řádu.</p>}

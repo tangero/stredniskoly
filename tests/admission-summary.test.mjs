@@ -14,3 +14,15 @@ test('souhrn kapacity rozlišuje nulu, neznámý údaj a nesouhlasící rozpad',
   assert.equal(capacitySummary({ outcomes_complete: false, capacity_rejected: 0 }), null);
   assert.equal(capacitySummary(null), null);
 });
+
+test('žebříček řadí ověřené průměry sestupně a nesahá po zadrženém skóru', async () => {
+  const { rankAdmissionOffers, rankingPages } = await import('../src/lib/admission-summary.ts');
+  const offers = [{ id: 'a', history: { average: 60 } }, { id: 'b', history: { average: 90 } },
+    { id: 'c', admission_context: { average_accepted: null }, history: { average: 99 } },
+    { id: 'd', history: null }, { id: 'e', history: { average: 90 } }];
+  assert.deepEqual(rankAdmissionOffers(offers).map(s => s.id), ['b', 'e', 'a']);
+  assert.deepEqual(offers.map(s => s.id), ['a', 'b', 'c', 'd', 'e']);
+  assert.deepEqual(rankingPages(1, 10), [1, 2, 3, 4, '…', 10]);
+  assert.deepEqual(rankingPages(5, 10), [1, '…', 4, 5, 6, '…', 10]);
+  assert.deepEqual(rankingPages(10, 10), [1, '…', 7, 8, 9, 10]);
+});
