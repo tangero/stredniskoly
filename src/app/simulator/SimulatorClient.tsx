@@ -12,6 +12,7 @@ interface School {
   nazev_display?: string;
   slug: string;
   obor: string;
+  delka_studia?: number;
   zamereni?: string;
   obec: string;
   kraj: string;
@@ -197,7 +198,7 @@ export function SimulatorClient() {
             <div className="flex items-start gap-3">
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-50 font-semibold text-blue-700">{index + 1}</span>
               <div className="min-w-0 flex-1">
-                {school ? <><Link href={`/skola/${school.slug}`} className="font-semibold text-blue-700 underline decoration-blue-200 underline-offset-2">{school.nazev_display || school.nazev}</Link><p className="text-sm text-slate-600">{school.obor}{school.zamereni ? ` · ${school.zamereni}` : ''} · {school.obec}</p></> : <><p className="font-medium">{missing.includes(id) ? 'Obor se nepodařilo jednoznačně dohledat' : selectionError ? 'Údaje nejsou načtené' : 'Načítání oboru…'}</p><p className="break-all text-xs text-slate-500">{id}</p></>}
+                {school ? <><Link href={`/skola/${school.slug}`} className="font-semibold text-blue-700 underline decoration-blue-200 underline-offset-2">{school.nazev_display || school.nazev}</Link><p className="text-sm text-slate-600">{school.obor}{school.delka_studia ? ` · ${school.delka_studia}leté studium` : ''}{school.zamereni ? ` · ${school.zamereni}` : ''} · {school.obec}</p></> : <><p className="font-medium">{missing.includes(id) ? 'Obor se nepodařilo jednoznačně dohledat' : selectionError ? 'Údaje nejsou načtené' : 'Načítání oboru…'}</p><p className="break-all text-xs text-slate-500">{id}</p></>}
               </div>
             </div>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -209,7 +210,7 @@ export function SimulatorClient() {
           </li>;
         })}
       </ol>
-      {shareUrl && <div className="mt-4 rounded-lg bg-blue-50 p-3">
+      {shareUrl && new URL(shareUrl).searchParams.toString() === sharedSimulatorParams(new URLSearchParams(params.toString())).toString() && <div className="mt-4 rounded-lg bg-blue-50 p-3">
         <p role="status" className="mb-2 text-sm">{shareMessage}</p>
         <label className="block text-sm">Odkaz obsahuje vybrané obory a zadané body. Uvidí je každý, komu ho předáte.
           <input ref={shareInput} readOnly value={shareUrl} onFocus={() => shareInput.current?.select()} className="mt-2 min-h-11 w-full rounded border border-blue-200 bg-white p-2" />
@@ -231,7 +232,7 @@ export function SimulatorClient() {
         <ul className="grid gap-4 md:grid-cols-2">
           {search?.schools.map(school => <li key={school.id} className="min-w-0 rounded-xl border border-slate-200 bg-white p-5">
             <Link href={`/skola/${school.slug}`} className="font-semibold text-blue-700 underline decoration-blue-200 underline-offset-2">{school.nazev_display || school.nazev}</Link>
-            <p className="mt-1 text-sm text-slate-700">{school.obor}{school.zamereni ? ` · ${school.zamereni}` : ''}</p>
+            <p className="mt-1 text-sm text-slate-700">{school.obor}{school.delka_studia ? ` · ${school.delka_studia}leté studium` : ''}{school.zamereni ? ` · ${school.zamereni}` : ''}</p>
             <p className="text-sm text-slate-500">{school.obec} · {school.kraj}</p>
             <HistoricalFacts school={school} />
             <button className={`${button} mt-4 w-full`} aria-pressed={selectedIds.includes(school.id)} disabled={!selectedIds.includes(school.id) && selectedIds.length >= MAX_SELECTION} onClick={() => toggle(school)}>{selectedIds.includes(school.id) ? 'Odebrat z výběru' : 'Přidat do výběru'}</button>
