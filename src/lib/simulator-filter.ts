@@ -17,3 +17,13 @@ export function splitByCommute<T extends { id: string }>(
   const byTime = (a: T, b: T) => (minutesFor(a) ?? Infinity) - (minutesFor(b) ?? Infinity);
   return { within: within.sort(byTime), near: near.sort(byTime), unknown };
 }
+
+/** Dojezd překračuje administrativní hranice; město/kraj platí jen bez něj. */
+export function matchesSearchLocation(
+  school: { obec: string; kraj: string },
+  scope: { city: string; region: string; commute: boolean },
+): boolean {
+  if (scope.commute) return true;
+  return (!scope.city || school.obec.trim() === scope.city) &&
+    (!scope.region || school.kraj.trim() === scope.region);
+}

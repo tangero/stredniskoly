@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { normalizeSchoolKey } from '@/lib/school-key';
-import { splitByCommute } from '@/lib/simulator-filter';
+import { matchesSearchLocation, splitByCommute } from '@/lib/simulator-filter';
 import { MISSING_COMPARISON } from '@/lib/historical-scores';
 import { MAX_SELECTION, readSelection, sharedSimulatorParams } from '@/lib/simulator-state';
 
@@ -78,6 +78,7 @@ export function SimulatorClient() {
   const [grade, setGrade] = useState('9');
   const [query, setQuery] = useState('');
   const [region, setRegion] = useState('');
+  const [city, setCity] = useState('');
   const [subjects, setSubjects] = useState<string[]>([]);
   const [stopQuery, setStopQuery] = useState('');
   const [stop, setStop] = useState<Stop | null>(null);
@@ -169,12 +170,13 @@ export function SimulatorClient() {
   }, [transit]);
   const mapped = useMemo(() => new Set((transit?.mappedProgramIds ?? []).map(normalizeSchoolKey).filter(id => !estimates.duplicates.has(id))), [transit, estimates]);
   const availableSubjects = useMemo(() => Array.from(new Set(catalog?.schools.map(s => s.obor).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'cs')), [catalog]);
+  const cities = useMemo(() => Array.from(new Set(catalog?.schools.map(s => s.obec.trim()).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'cs')), [catalog]);
   const filtered = useMemo(() => (catalog?.schools ?? []).filter(s => {
     const duration = grade === '5' ? 8 : grade === '7' ? 6 : null;
     if (duration ? s.delka_studia !== duration : grade === '9' && (s.delka_studia === 8 || s.delka_studia === 6)) return false;
-    return (!region || s.kraj.trim() === region) && (!subjects.length || subjects.includes(s.obor)) &&
-      (!query || normalize([s.nazev_display || s.nazev, s.obor, s.zamereni, s.obec].join(' ')).includes(normalize(query)));
-  }), [catalog, grade, region, subjects, query]);
+    return matchesSearchLocation(s, { city, region, commute: !!stop }) && (!subjects.length || subjects.includes(s.obor)) &&
+      (!query || normalize([s.obor, s.zamereni].join(' ')).includes(normalize(query)));
+  }), [catalog, grade, region, city, stop, subjects, query]);
   const groups = stop ? splitByCommute(filtered, limit, s => estimates.byId.get(normalizeSchoolKey(s.id))?.minutes, s => mapped.has(normalizeSchoolKey(s.id))) : { within: filtered, near: [], unknown: [] };
   const pending = !!stop && !transit;
 
@@ -248,8 +250,10 @@ export function SimulatorClient() {
           <label className="mt-4 block text-sm font-medium">Co tě zajímá<select className={field} value="" onChange={e => { if (e.target.value) setSubjects([...subjects, e.target.value]); setVisible(20); }}><option value="">{subjects.length ? 'Přidat další obor…' : 'Všechny obory · vyber obor'}</option>{availableSubjects.filter(s => !subjects.includes(s)).map(s => <option key={s}>{s}</option>)}</select></label>
           {subjects.length > 0 && <div className="mt-2 flex flex-wrap gap-2">{subjects.map(s => <button className={`${button} text-left text-blue-800`} key={s} aria-label={`Zrušit filtr ${s}`} onClick={() => { setSubjects(subjects.filter(value => value !== s)); setVisible(20); }}>{s} ×</button>)}</div>}
           <p className="mt-2 text-xs text-slate-500">Názvy z dostupného katalogu. Vybrané obory se kombinují jako alternativy.</p>
-          <label className="mt-4 block text-sm font-medium">Upřesnit obor nebo lokalitu<input className={field} value={query} onChange={e => { setQuery(e.target.value); setVisible(20); }} placeholder="Např. jazyky, Brno" /></label>
-          <label className="mt-4 block text-sm font-medium">Kraj<select className={field} value={region} onChange={e => { setRegion(e.target.value); setVisible(20); }}><option value="">Všechny kraje</option>{catalog?.kraje.map(kraj => <option key={kraj.kod}>{kraj.nazev}</option>)}</select></label>
+          <label className="mt-4 block text-sm font-medium">Upřesnit obor nebo zaměření<input className={field} value={query} onChange={e => { setQuery(e.target.value); setVisible(20); }} placeholder="Např. jazyky" /></label>
+          <label className="mt-4 block text-sm font-medium">Kraj školy<select disabled={!!stop} className={`${field} disabled:bg-slate-100 disabled:text-slate-500`} value={region} onChange={e => { setRegion(e.target.value); setVisible(20); }}><option value="">Všechny kraje</option>{catalog?.kraje.map(kraj => <option key={kraj.kod}>{kraj.nazev}</option>)}</select></label>
+          <label className="mt-4 block text-sm font-medium">Město nebo obec školy<select disabled={!!stop} className={`${field} disabled:bg-slate-100 disabled:text-slate-500`} value={city} onChange={e => { setCity(e.target.value); setVisible(20); }}><option value="">Všechna města a obce</option>{cities.map(name => <option key={name}>{name}</option>)}</select></label>
+          {stop && <p className="mt-2 text-sm text-blue-800">Při hledání podle dojezdu město ani kraj škol neomezují výsledky. Po vypnutí dojezdu se tvé územní filtry znovu použijí.</p>}
           <label className="mt-5 block text-sm font-medium">Výchozí zastávka<input className={field} autoComplete="off" value={stopQuery} onChange={e => { setStopQuery(e.target.value); setStop(null); setSuggestions([]); setStopStatus(e.target.value.trim().length >= 2 ? 'Hledám zastávky…' : ''); setTransitError(''); }} placeholder="Zadej zastávku nebo obec" /></label>
           {!stop && suggestions.length > 0 && <ul className="mt-1 rounded-lg border border-slate-300 bg-white">{suggestions.map(item => <li key={item.stopId}><button className="min-h-11 w-full border-b border-slate-100 px-3 py-2 text-left text-sm hover:bg-blue-50" onClick={() => { setStop(item); setStopQuery(item.name); setSuggestions([]); setStopStatus(''); setTransitError(''); setVisible(20); }}>{item.name}<span className="block text-xs text-slate-500">{item.context}</span></button></li>)}</ul>}
           <p role="status" className="mt-1 text-sm text-slate-600">{stopStatus}</p>
@@ -261,6 +265,11 @@ export function SimulatorClient() {
           <p className="mt-3 text-xs leading-relaxed text-slate-600">{stop ? 'Odhad od vybrané zastávky včetně čekání a chůze ke škole. Cestu z domova na zastávku připočti. Zahrnuje dostupné vlaky a autobusy, nejen MHD. Pokrytí se liší podle regionu.' : 'Pro použití časového limitu vyber výchozí zastávku.'}</p>
         </aside>
         <section aria-label="Výsledky simulátoru" className="min-w-0">
+          <div className="mb-4 border-l-2 border-blue-500 pl-3 text-sm" role="status">
+            <p className="font-semibold text-blue-900">{stop ? `Hledáš podle dojezdu: do ${limit} min ze zastávky ${stop.name}` : city ? `Hledáš školy v obci: ${city}` : region ? `Hledáš školy v kraji: ${region}` : 'Hledáš školy v celé ČR'}</p>
+            <p className="mt-1 text-slate-600">{stop ? 'Bez omezení městem nebo krajem. Zvolený typ studia a obory platí dál.' : `Bez omezení dojezdem.${city && region ? ` Současně platí kraj: ${region}.` : ''}`}</p>
+            {!stop && (city || region) && <button className="mt-2 min-h-11 text-blue-700 underline" onClick={() => { setCity(''); setRegion(''); setVisible(20); }}>Zrušit územní omezení</button>}
+          </div>
           <p className="mb-4 text-xs text-slate-500">Dostupný katalog 2025 s historií 2026. Úplná nabídka a kritéria 2027 se doplňují.</p>
           {pending ? <div role="status"><p>{transitError || 'Počítám orientační dojezd…'}</p>{transitError && <button className={`${button} mt-3`} onClick={() => { setTransitError(''); setRetry(retry + 1); }}>Zkusit znovu</button>}</div> : <>
             <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="text-xl font-semibold" aria-live="polite">{countLabel(groups.within.length)}{stop ? ` do ${limit} min` : ''}</h2><span className="text-xs text-slate-500">{stop ? 'Podle odhadu dojezdu' : 'Podle názvu školy'}</span></div>
