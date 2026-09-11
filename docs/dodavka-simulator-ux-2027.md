@@ -62,3 +62,13 @@ Každá karta ukazuje počet dalších nabídek stejné instituce (REDIZO) v dos
 Lokální přejímka 1.2: produkční build, TypeScript a cílený lint bez chyb; 9 jednotkových a 9 integračních kontrol prošlo. Původní kontrola přesného znění upozornění byla aktualizována na nové vysvětlení průměru a konkurence; zákaz predikčních větví zůstává. V prohlížeči ověřena mobilní karta s reálnými údaji (ekonomika a podnikání, 33,33 bodu, 49 přihlášek / 15 míst, 12 přijatých), rozbalení dalších oborů a jejich uložení. Žádné vodorovné přetečení.
 
 Veřejná přejímka 1.2: PR #77, merge `4418d6bcfd59f926552b9cbb16dcb2cc5637b61d`, Vercel `dpl_7AcBh25XLV7ujMFsoy4xw3rQVHFh` READY. Proti veřejné doméně prošlo 9 integračních kontrol. Veřejný prohlížeč potvrdil konkrétní výsledky na kartě školy v Kladně, dvě související nabídky s vlastními datovými stavy a mobil bez přetečení. Doklady: `podklady/simulator-ux-2027/produkce-karty-testy.txt` a `produkce-karty-obory.png`. Následný commit mění jen dokumentaci.
+
+## Doplnění 1.3 — úvodní žebříček (11. 9. 2026)
+
+Na požadavek uživatele simulátor bez věcných omezení zobrazuje žebříček místo abecedního výpisu všech nabídek. Výchozí deváťáci ani přepnutí skupiny studia samo nevypíná žebříček; aktivní obor, textové upřesnění, město, kraj nebo vybraná zastávka přepínají do výsledků hledání. Nevybraná zastávka ani samotné nastavení minut neomezují hledání.
+
+Řazení je sestupně podle ověřeného průměru JPZ přijatých 2026, shody stabilně podle ID. Jednotkou je nabídka oboru, nikoli unikátní instituce. Nad seznamem je vysvětlení, že výsledky přijatých nejsou hodnocením kvality školy ani osobní šancí. Obory bez ověřeného průměru nejsou v žebříčku, přes filtry zůstávají dostupné. Zadržený průměr z datového auditu nemá fallback na starší skóre.
+
+Stránkování po 20 položkách a rozložení čísel s výpustkami odpovídá `RegionSchoolsTable`. Její výchozí řazení používá historické minimum JPZ; toto neověřené kritérium se nepřebírá. Žebříček používá platný průměr přijatých. Změna podmínek resetuje stránku na 1, navigace stránkou posune pohled k výsledkům. Můj výběr zachovává uložené pořadí a není stránkován tímto žebříčkem.
+
+Lokálně prošel TypeScript, build, cílený lint bez varování, 3 testy statistických helperů a 11 integračních kontrol. V prohlížeči ověřeno 20 karet na stránce, přechod 1–20 → 21–40, přepnutí na filtrované výsledky a reset po zrušení filtru. Mobil 390 px bez horizontálního přetékání. Veřejná přejímka zatím nepotvrzena.
