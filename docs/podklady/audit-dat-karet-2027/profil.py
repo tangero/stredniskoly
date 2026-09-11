@@ -37,10 +37,10 @@ for f in fields:
  values=[x[f] for x in inspis['schools'].values() if x.get(f) is not None]
  years=Counter(y for v in values for y in set(re.findall(r'\b20\d{2}\b',str(v)))) if f in fields[:2] else Counter()
  profile['inspis_fields'][f]={'non_null':len(values),'explicit_years':dict(sorted(years.items()))}
-    if f in fields[:2]:
-        sets=[set(map(int,re.findall(r'\b20\d{2}\b',str(v)))) for v in values]
-        profile['inspis_fields'][f]['only_years_through_2025']=sum(bool(y) and max(y)<=2025 for y in sets)
-        profile['inspis_fields'][f]['without_explicit_year']=sum(not y for y in sets)
+ if f in fields[:2]:
+  sets=[set(map(int,re.findall(r'\b20\d{2}\b',str(v)))) for v in values]
+  profile['inspis_fields'][f]['only_years_through_2025']=sum(bool(y) and max(y)<=2025 for y in sets)
+  profile['inspis_fields'][f]['without_explicit_year']=sum(not y for y in sets)
 for key,x in inspis['schools'].items():
  if re.search('202[0-5]',str(x.get('dny_otevrenych_dveri',''))) and len(profile['old_event_examples'])<3:
   profile['old_event_examples'].append({'redizo':key,'dny':x['dny_otevrenych_dveri']})
