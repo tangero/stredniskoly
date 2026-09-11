@@ -6,3 +6,11 @@ test('historická poptávka rozlišuje nulové přihlášky, chybějící údaj 
  assert.equal(applicationsPerPlace(0,25),0);
  for(const [a,c] of [[null,25],[139,null],[139,0],[-1,25],[139,-1],[Infinity,25],[1,NaN]]) assert.equal(applicationsPerPlace(a,c),null);
 });
+
+test('souhrn kapacity rozlišuje nulu, neznámý údaj a nesouhlasící rozpad', async () => {
+  const { capacitySummary } = await import('../src/lib/admission-summary.ts');
+  assert.match(capacitySummary({ outcomes_complete: true, capacity_rejected: 0 }), /nikdo/);
+  assert.match(capacitySummary({ outcomes_complete: true, capacity_rejected: 12 }), /12/);
+  assert.equal(capacitySummary({ outcomes_complete: false, capacity_rejected: 0 }), null);
+  assert.equal(capacitySummary(null), null);
+});

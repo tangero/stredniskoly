@@ -149,7 +149,8 @@ export async function GET(request: NextRequest) {
       const result = results.get(normalizeSchoolKey(s.id))?.[1];
       const application = applications.get(normalizeSchoolKey(s.id));
       return {
-        demand: application ? { year: 2026, round: 1, applications: finite(application.prihlasky), capacity: finite(application.kapacita) } : null,
+        admission_context: application?.admission_context ?? null,
+        demand: application ? { year: 2026, round: 1, applications: finite(application.prihlasky), first_priority: finite(application.prihlasky_priority?.[0]), capacity: finite(application.kapacita) } : null,
         id: requestedId, nazev: s.nazev, nazev_display: s.nazev_display, obor: s.obor,
         zamereni: normalizeZamereni(s.zamereni), obec: s.obec, ulice: s.ulice, adresa: s.adresa,
         kraj: s.kraj, kraj_kod: s.kraj_kod, typ: s.typ, delka_studia: s.delka_studia,

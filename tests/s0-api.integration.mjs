@@ -126,7 +126,7 @@ test('poptávka 2026 odpovídá úplné identitě oboru, chybějící párován�
  for(const school of response.schools){
   const row=applications.get(normalizeSchoolKey(school.id));
   if(!row){assert.equal(school.demand,null);missing++;continue;}
-  assert.deepEqual(school.demand,{year:2026,round:1,applications:row.prihlasky,capacity:row.kapacita});matched++;
+  assert.deepEqual(school.demand,{year:2026,round:1,applications:row.prihlasky,first_priority:row.pp[0],capacity:row.kapacita});matched++;
  }
  assert.ok(matched>0);assert.ok(missing>0);
 });
@@ -143,5 +143,16 @@ test('profil Macharova lycea nenabízí nedoložený index jako snadné přijet�
  const result=await search({ids:JSON.stringify(['600007774_78-42-M/01'])});
  assert.equal(result.schools[0].history.average,68.74);
  assert.equal(result.schools[0].history.accepted,23);
- assert.deepEqual(result.schools[0].demand,{year:2026,round:1,applications:65,capacity:30});
+ assert.deepEqual(result.schools[0].demand,{year:2026,round:1,applications:65,first_priority:17,capacity:30});
+});
+
+test('simulátor vrací konající a důvody nepřijetí včetně skutečné nuly', async () => {
+  const response = await fetch(`${base}/api/schools/search?ids=${encodeURIComponent('600007774_78-42-M/01')}`);
+  const { schools } = await response.json();
+  assert.deepEqual(schools[0].admission_context, {
+    tested_all: 63, tested_accepted: 23, average_all: 70.73, average_accepted: 68.74,
+    accepted: 23, higher_priority: 32, capacity_rejected: 0, conditions_not_met: 10,
+    withdrawn: 0, outcomes_complete: true,
+  });
+  assert.equal(schools[0].demand.first_priority, 17);
 });

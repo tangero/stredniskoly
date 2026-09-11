@@ -47,3 +47,27 @@ Produkční build a TypeScript prošly. Cílený lint má 0 chyb a 7 stávajíc�
 ## Veřejná přejímka
 
 PR #78, merge `b28946bcc4b1efc6937a98737cadd84967f8ade3`, produkce Vercel `dpl_7YuCqjSz8wLDNGyD9w62Fpoc8APN` READY. Deset integračních kontrol prošlo i proti veřejné doméně; záznam v `podklady/audit-obtiznost-2027/produkce-testy.txt`. Veřejný prohlížeč potvrdil absenci starého indexu a příslibu vysoké šance na posuzovaném profilu a přítomnost počtu přijatých 2025. Následný commit mění pouze dokumentaci.
+
+## Doplnění v1.1 — výsledky všech konajících a důvody nepřijetí (11. 9. 2026)
+
+Uživatel schválil rozšíření popisných statistik. Návrh kompozitních vah 50/30/20 se nerealizuje: poměr přihlášek/přijatých nerozlišuje kapacitní odmítnutí od přijetí na vyšší prioritu. Původní audit a jeho přejímka výše zůstávají historií; toto je navazující dodávka.
+
+Živě ověřený XLSX se SHA-256 `a003441f4beed6fb9c181aa00f9d1a59a9c206ff10f113ad807740e68d5511d5` obsahuje rovněž počty konajících, průměry všech konajících a čtyři důvody nepřijetí. Dosavadní výsledkový import využíval jen přijaté s kladným publikovaným skórem. Nový `admission_context` v importu přihlášek zahrnuje všech 3 091 nabídek v dosavadním rozsahu; ostatní pole dat zůstávají beze změny. Lokální necommitovaný XLSX nebyl shodný s touto revizí, proto se použil znovu stažený soubor ověřený hashem.
+
+### Metodika a kvalita
+
+- ČJ+MA procentní skór / 2 = standardní škála 0–100; u upravených testů nejde o původní body. Každý průměr má vlastní počet konajících oba testy. Přihlášky nejsou jmenovatelem průměru.
+- Prázdná nebo textově potlačená hodnota zůstává `null`. Nulový počet konajících nedává publikovatelný průměr. Záporné, necelé počty a neplatné rozsahy zastaví import.
+- Rozpad je úplný pouze tehdy, pokud přijatí + vyšší priorita + kapacita + nesplnění podmínek + vzdání se přijetí souhlasí s počtem přihlášek a žádný údaj nechybí. U 65 nabídek zdroj tuto kontrolu nesplňuje. Jednotlivá pole jsou označena jako neúplný/nesouhlasící rozpad; automatické shrnutí se nevydává.
+- Source ID `e74e9ded-e788-4221-83a5-0df887ce8eb6`: 23 přijatých, ale 24 konajících přijatých. Nové bodové srovnání přijatých se pro tuto nabídku nevydává (průměr i počet `null`); příčina rozporu není prokázána. Starší výsledková data jiných stránek tento úzký zásah nemění.
+- Souhrn o nulovém kapacitním odmítnutí se zobrazí jen pro úplný rozpad. Nevyvozuje šanci do roku 2027, nesplnění podmínek se neztotožňuje se slabým JPZ a přijetí se neztotožňuje s nástupem do školy.
+
+### Zobrazení
+
+Karta oboru: průměr přijatých a všech konajících s počty, zájem na místo a počet prvních priorit, přijatí/kapacita. Pod nimi věta o doloženém kapacitním odmítnutí a rozpad ostatních přihlášek. Zachovány zdroj, rok, vysvětlení škály a upozornění, že průměr není minimum.
+
+Macharovo technické lyceum: 65 přihlášek, 30 míst, 17 prvních priorit; 63 konajících s průměrem 70,73; 23 přijatých konajících s průměrem 68,74; vyšší priorita 32, nedostatečná kapacita 0, nesplnění podmínek 10, vzdání se 0. Automatický souhrn: „V roce 2026 nebyl nikdo odmítnut kvůli nedostatku míst.“
+
+### Ověření a stav dodávky
+
+Lokálně prošlo 11 importních testů, 10 jednotkových testů a 11 integračních kontrol proti produkčnímu buildu. TypeScript i build prošly; cílený lint bez chyb, dvě stávající varování v data.ts. Mobilní karta 390 × 844 vizuálně zkontrolována bez vodorovného přetékání. Nasazení zatím nepotvrzeno.
