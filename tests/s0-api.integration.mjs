@@ -130,3 +130,18 @@ test('poptávka 2026 odpovídá úplné identitě oboru, chybějící párován�
  }
  assert.ok(matched>0);assert.ok(missing>0);
 });
+
+test('profil Macharova lycea nenabízí nedoložený index jako snadné přijetí', async()=>{
+ const response = await fetch(new URL('/skola/600007774-gymnazium-j-s-machara-kralovicka-technicke-lyceum',base));
+ assert.equal(response.status,200);
+ const html=await response.text();
+ const visible=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(/<[^>]+>/g,' ');
+ assert.ok(!visible.includes('Obtížnost přijetí'));
+ assert.ok(!visible.includes('SNADNÉ'));
+ assert.ok(!visible.includes('Šance na přijetí jsou vysoké i s průměrnými body'));
+ assert.ok(visible.includes('Přijatí v roce 2025'));
+ const result=await search({ids:JSON.stringify(['600007774_78-42-M/01'])});
+ assert.equal(result.schools[0].history.average,68.74);
+ assert.equal(result.schools[0].history.accepted,23);
+ assert.deepEqual(result.schools[0].demand,{year:2026,round:1,applications:65,capacity:30});
+});

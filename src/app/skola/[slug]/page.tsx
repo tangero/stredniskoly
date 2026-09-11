@@ -12,7 +12,7 @@ import { SchoolResults2026 } from '@/components/SchoolResults2026';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 import { getNoteForSchool } from '@/lib/school-notes';
 import { SchoolNote } from '@/components/SchoolNote';
-import { getDifficultyClass, getDemandClass, formatNumber, createSlug } from '@/lib/utils';
+import { getDemandClass, formatNumber, createSlug } from '@/lib/utils';
 import { categoryLabels, categoryColors, krajNames, getSchoolTypeFullName } from '@/types/school';
 
 // V2 Overview komponenty
@@ -751,7 +751,6 @@ export default async function SchoolDetailPage({ params }: Props) {
   const program = pageInfo.program;
   if (!program) notFound();
 
-  const difficulty = getDifficultyClass(school.obtiznost);
   const demand = getDemandClass(program.index_poptavky);
   const category = categoryColors[school.category_code];
 
@@ -977,7 +976,7 @@ export default async function SchoolDetailPage({ params }: Props) {
             maAtJpzMin={extendedStats?.ma_at_jpz_min ?? null}
             hasExtraCriteria={extendedStats?.hasExtraCriteria ?? null}
             extraBody={extendedStats?.extra_body ?? null}
-            obtiznost={school.obtiznost}
+            acceptedCount={program.prijati}
             indexPoptavky={program.index_poptavky}
             kapacita={program.kapacita}
             trendData={trendData}
@@ -1129,9 +1128,9 @@ export default async function SchoolDetailPage({ params }: Props) {
                   </>
                 )}
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-600">Obtížnost přijetí:</span>
-                  <span className={`font-semibold ${difficulty.colorClass}`}>
-                    {school.obtiznost.toFixed(0)} ({difficulty.label})
+                  <span className="text-slate-600">Přihlášek na místo (2025):</span>
+                  <span className="font-semibold text-slate-900">
+                    {program.kapacita > 0 ? (program.prihlasky / program.kapacita).toLocaleString('cs-CZ', { maximumFractionDigits: 2 }) : '—'}
                   </span>
                 </div>
               </div>
@@ -1149,11 +1148,9 @@ export default async function SchoolDetailPage({ params }: Props) {
           <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl mb-8">
             <h3 className="font-semibold text-blue-800 mb-2">Co to znamená?</h3>
             <p className="text-blue-700">
-              {program.index_poptavky >= 3
-                ? `O tento obor je vysoký zájem (${program.index_poptavky.toFixed(1)}× více přihlášek než míst). Doporučujeme mít záložní variantu.`
-                : program.index_poptavky >= 2
-                ? `Střední konkurence (${program.index_poptavky.toFixed(1)}× více přihlášek než míst). S dobrými body máte slušnou šanci.`
-                : `Nízká konkurence (${program.index_poptavky.toFixed(1)}×). Šance na přijetí jsou vysoké i s průměrnými body.`}
+              V roce 2025 bylo na tento obor podáno {program.prihlasky} přihlášek při kapacitě {program.kapacita} míst.
+              Počet přihlášek zahrnuje všechny priority. Popisuje historickou poptávku, nikoli osobní pravděpodobnost přijetí.
+              Pro aktuálnější srovnání použijte výsledky a přihlášky 2026 výše; kritéria pro rok 2027 ověřte u školy.
             </p>
           </div>
 

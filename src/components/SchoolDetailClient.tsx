@@ -1400,7 +1400,8 @@ interface StatsGridProps {
   maAtJpzMin: number | null;          // MA body studenta s nejnižším JPZ
   hasExtraCriteria: boolean | null;
   extraBody: number | null;
-  obtiznost: number;
+  obtiznost?: number; // Staré volání tolerujeme; neověřený index se nezobrazuje.
+  acceptedCount?: number;
   indexPoptavky: number;
   kapacita: number;
   // Trend data pro varování o oscilaci
@@ -1420,17 +1421,6 @@ function formatNumber(num: number): string {
   return num.toLocaleString('cs-CZ');
 }
 
-// Helper pro obtížnost
-function getDifficultyInfo(obtiznost: number): { label: string; colorClass: string; barColor: string } {
-  if (obtiznost >= 70) {
-    return { label: 'TĚŽKÉ', colorClass: 'text-red-600', barColor: 'bg-red-500' };
-  }
-  if (obtiznost >= 45) {
-    return { label: 'STŘEDNÍ', colorClass: 'text-yellow-600', barColor: 'bg-yellow-500' };
-  }
-  return { label: 'SNADNÉ', colorClass: 'text-green-600', barColor: 'bg-green-500' };
-}
-
 export function StatsGrid({
   totalApplicants,
   priority1Count,
@@ -1440,14 +1430,12 @@ export function StatsGrid({
   maAtJpzMin,
   hasExtraCriteria,
   extraBody,
-  obtiznost,
+  acceptedCount,
   indexPoptavky,
   kapacita,
   trendData,
   prijati2024
 }: StatsGridProps) {
-  const difficulty = getDifficultyInfo(obtiznost);
-  const percentage = Math.min(100, obtiznost);
 
   // Detekce oscilace přihlášek (normalizovaná na počet přijatých)
   // Pokud se "konkurence na místo" mění výrazně, může jít o efekt kyvadla
@@ -1509,32 +1497,16 @@ export function StatsGrid({
         <p className="text-xs text-slate-500 mt-2">Kritéria a bodové hodnocení pro rok 2027 ověřte přímo u školy.</p>
       </div>
 
-      {/* Obtížnost přijetí */}
+      {/* Ověřený počet místo historického indexu bez doloženého výpočtu. */}
       <div className="bg-white p-6 rounded-xl shadow-sm text-center">
-        <div className={`text-3xl font-bold ${difficulty.colorClass}`}>{obtiznost.toFixed(0)}</div>
+        <div className="text-3xl font-bold text-slate-900">{acceptedCount == null ? '—' : formatNumber(acceptedCount)}</div>
         <div className="text-sm text-slate-600 mt-1 flex items-center justify-center">
-          Obtížnost přijetí
-          <InfoTooltip title="Index obtížnosti přijetí">
-            <strong>Náročnost přijetí</strong> na škálu 0-100, kde:
-            <br /><br />
-            • <span className="text-green-400">0-44 = SNADNÉ</span> - vysoká šance na přijetí
-            <br />
-            • <span className="text-yellow-400">45-69 = STŘEDNÍ</span> - průměrná konkurence
-            <br />
-            • <span className="text-red-400">70-100 = TĚŽKÉ</span> - vysoká konkurence
-            <br /><br />
-            Index zohledňuje poměr přihlášek ke kapacitě a historické údaje o přijímání.
+          Přijatí v roce 2025
+          <InfoTooltip title="Historický počet přijatých">
+            Počet přijatých na tento obor v datech 2025. Není to počet všech uchazečů, kteří by splnili kritéria, ani osobní šance na přijetí.
           </InfoTooltip>
         </div>
-        <div className="h-2 bg-slate-100 rounded-full overflow-hidden mt-3">
-          <div
-            className={`h-full rounded-full ${difficulty.barColor}`}
-            style={{ width: `${percentage}%` }}
-          />
-        </div>
-        <div className={`text-xs font-medium mt-2 ${difficulty.colorClass}`}>
-          {difficulty.label}
-        </div>
+        <p className="mt-3 text-sm text-slate-600">Kapacita {formatNumber(kapacita)} míst</p>
       </div>
 
       {/* Konkurence + Kapacita (sloučeno) */}
