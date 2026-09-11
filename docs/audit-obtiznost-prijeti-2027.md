@@ -70,4 +70,4 @@ Macharovo technické lyceum: 65 přihlášek, 30 míst, 17 prvních priorit; 63 
 
 ### Ověření a stav dodávky
 
-Lokálně prošlo 11 importních testů, 10 jednotkových testů a 11 integračních kontrol proti produkčnímu buildu. TypeScript i build prošly; cílený lint bez chyb, dvě stávající varování v data.ts. Mobilní karta 390 × 844 vizuálně zkontrolována bez vodorovného přetékání. Nasazení zatím nepotvrzeno.
+Lokálně prošlo 11 importních testů, 10 jednotkových testů a 11 integračních kontrol proti produkčnímu buildu. TypeScript i build prošly; cílený lint bez chyb, dvě stávající varování v data.ts. Mobilní karta 390 × 844 vizuálně zkontrolována bez vodorovného přetékání. Veřejná přejímka: PR #79, merge `18f9b2cc773bdc17aedd0f7099f31cb9a4e5e670`, Vercel `dpl_DdF621azYLmvEeq549mNeLaDhbic` READY s veřejnou doménou. Všech 11 integračních kontrol prošlo i proti produkci. Veřejný prohlížeč potvrdil hodnoty Macharova lycea i nulové kapacitní odmítnutí, mobil bez přetékání. Doklad: `podklady/audit-obtiznost-2027/produkce-kontext-testy.txt`.
