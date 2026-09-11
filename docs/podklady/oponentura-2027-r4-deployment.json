@@ -1,0 +1,9 @@
+{
+  "deployment_id": "dpl_HhmvsBawUNJMa5LAukzsSrMjHQUJ",
+  "state": "READY",
+  "target": "production",
+  "git_sha": "ee0700e95e2f889ad670ebfbd8e7c13cee201f2d",
+  "verified_domains": ["www.prijimackynaskolu.cz", "prijimackynaskolu.cz"],
+  "source": "Vercel get_deployment, verified during R4 on 2026-09-11",
+  "og_fix_pr": "https://github.com/tangero/stredniskoly/pull/72"
+}

@@ -1,6 +1,6 @@
 # Oprava náhledů při sdílení — O-21
 
-Verze 1.2, 11. 9. 2026. **O-21 opraveno, nasazeno a veřejně ověřeno.** [PR #72](https://github.com/tangero/stredniskoly/pull/72), produkční commit `9146ef0`, [deployment READY](podklady/og-oprava-2027/deployment.json).
+Verze 1.1, 11. 9. 2026. **O-21 opraveno, nasazeno a veřejně ověřeno.** [PR #72](https://github.com/tangero/stredniskoly/pull/72), produkční commit `9146ef0`, [deployment READY](podklady/og-oprava-2027/deployment.json).
 
 ## Změna
 
@@ -28,5 +28,3 @@ Cache dříve sdílených příspěvků na sociálních sítích je samostatná 
 - R3 zachytilo původní vizuální vady v podkladech `oponentura-2027-r3-og-*.png`; ty zůstávají beze změny.
 - Verze 1.0 dokumentovala implementaci před nasazením (`79e29fc`); doplňující lokální přejímky jsou v `aa85c9e`.
 - Verze 1.1 uzavírá O-21 po veřejné přejímce commitu `9146ef0` na deploymentu `dpl_E9D6rFkMvGzAQJHexJeYEZFFe5TM`. O-13 zůstává otevřené; zobrazení historických údajů v náhledu neopravuje heuristiku simulátoru.
-
-- Verze 1.2 / R4 doplňuje [opakovanou kontrolu veřejných obrázků](podklady/oponentura-2027-r4-og-overeni.json) na navazující produkci `ee0700e`. [Kontrola fontů](podklady/oponentura-2027-r4-overeni.json) prokazuje chybějící české znaky v přibaleném latinském fontu rendereru a jejich přítomnost v obou nových fontech. Nejde o reprodukci přesné historické větve fallbacku. Rozšíření R4 o počet nabídek a bodový příklad je již pokryto touto dodávkou; podrobná dispozice v návrhu §16. Žádná další oprava aplikace v R4 neproběhla.

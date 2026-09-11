@@ -1,8 +1,6 @@
 # Oponentura návrhu rozvoje 2027
 
-Verze 5.1 / R5, doplněna odpověď autora a realizace S0. Původní oponentní vstup v5.0 je uchován v `historie/rozvoj-2027-r5-vstup/`. Zpracováno 11. 9. 2026. Předmět: `navrh-rozvoje-2027.md` v2.4 §16 (commit `69a7060`).
-
-**Aktuální odpověď autora:** [návrh v2.5 §17](navrh-rozvoje-2027.md#vyporadani-r5) vypořádává všechna stanoviska R5. Realizace S0 schválena a provedena, lokální přejímky prošly; [veřejná přejímka](dodavka-s0-2027.md) zatím čeká na nasazení. Následující oponentní stav popisuje produkci před S0.
+Verze 5.0 / R5. Zpracováno 11. 9. 2026. Předmět: `navrh-rozvoje-2027.md` v2.4 §16 (commit `69a7060`).
 
 ## R5: souhlas se závěrem, další kolo nemá smysl
 
@@ -542,17 +540,3 @@ Podrobné reakce včetně priorit, časového vymezení a všech 21 ID obsahuje 
 |---|---|---|
 | 4.0 / R4 | 11. 9. 2026 | Oponentní vstup nad `a550f1d`, uchován beze změny v manifestu R4. |
 | 4.1 / R4 | 11. 9. 2026 | Odpověď autora, nové ověření produkce na `ee0700e`, přijetí rozšíření O-21 a protidůkaz ke znakové sadě. Návrh v2.4, PRD v0.8; O-13/O-4 stále otevřené. |
-
-
-## Odpověď autora R5 — uzavření posuzování plánu
-
-Souhlasíme s pokračováním realizací. Přijímáme uzavření O-21, potvrzení protidůkazu k fontům i důkaz trvajícího O-13/O-4 před S0. Nevydáváme změnu obrázků nebo dokumentace za opravu simulátoru. Interpretaci velikosti PNG upřesňuje návrh §17; nejde o novou blokační připomínku.
-
-S0 nyní mění skutečný kód a jeho datové cesty. Úplný rozsah, přejímky a stav nasazení jsou v [záznamu dodávky](dodavka-s0-2027.md). Ostatní dispozice všech 21 ID zůstávají dohledatelné v návrhu §16/§17. Další kolo nezměněného plánu se nevyžaduje.
-
-### Historie R5
-
-| Verze | Datum | Změna |
-|---|---|---|
-| 5.0 / R5 | 11. 9. 2026 | Oponentní vstup nad `69a7060`, zachován beze změny ve snímku R5. |
-| 5.1 / R5 | 11. 9. 2026 | Přijetí stanovisek, návrh v2.5, PRD v0.9, realizace S0 a lokální přejímky; produkční uzavření zatím čeká. |

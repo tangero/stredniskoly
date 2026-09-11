@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { createSlug } from '@/lib/utils';
+import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
+import { getResultsForYear, getSchoolAnalysis } from '@/lib/data';
+import { readSchoolIds } from '@/lib/simulator-state';
 
 type SchoolsData = Record<string, School[]>;
 
@@ -48,39 +51,24 @@ function normalizeZamereni(zamereni?: string): string | undefined {
   return value.length > 0 ? value : undefined;
 }
 
-function normalizeMinBodyScore(minBody?: number): number {
-  if (typeof minBody !== 'number' || !Number.isFinite(minBody) || minBody <= 0) {
-    return 0;
-  }
-  // Data v schools_data.json jsou v % škále (0-200), převádíme na skutečné body (0-100).
-  return Math.round(minBody / 2);
-}
-
-function deduplicateById(schools: School[]): School[] {
-  const byId = new Map<string, School>();
-  for (const school of schools) {
-    if (!byId.has(school.id)) {
-      byId.set(school.id, school);
-    }
-  }
-  return Array.from(byId.values());
-}
-
-function buildSlugContext(schools: School[]) {
+function buildSlugContext(schools: School[], canonicalSchools: School[]) {
   const oborCountsByRedizo = new Map<string, Map<string, number>>();
   const zamereniCountsByRedizo = new Map<string, Map<string, number>>();
 
-  for (const school of schools) {
+  for (const school of canonicalSchools) {
     const redizo = school.id.split('_')[0];
     const obor = school.obor || '';
-    const zamereni = normalizeZamereni(school.zamereni);
-
     if (!oborCountsByRedizo.has(redizo)) {
       oborCountsByRedizo.set(redizo, new Map<string, number>());
     }
     const oborCounts = oborCountsByRedizo.get(redizo)!;
     oborCounts.set(obor, (oborCounts.get(obor) || 0) + 1);
 
+  }
+  for (const school of schools) {
+    const redizo = school.id.split('_')[0];
+    const obor = school.obor || '';
+    const zamereni = normalizeZamereni(school.zamereni);
     if (zamereni) {
       if (!zamereniCountsByRedizo.has(redizo)) {
         zamereniCountsByRedizo.set(redizo, new Map<string, number>());
@@ -123,163 +111,78 @@ function getSchoolSlug(
 }
 
 export async function GET(request: NextRequest) {
-  const searchParams = request.nextUrl.searchParams;
-
-  // Parametry filtrace
-  const minScore = parseInt(searchParams.get('minScore') || '0');
-  const maxScore = parseInt(searchParams.get('maxScore') || '100');
-  const delkaStudia = searchParams.get('delkaStudia');
-  const kraj = searchParams.get('kraj');
-  const search = searchParams.get('search') || '';
-  const limit = Math.min(parseInt(searchParams.get('limit') || '50'), 100);
-  const krajeOnly = searchParams.get('krajeOnly') === '1';
-  const idsParam = searchParams.get('ids') || '';
-
+  const params = request.nextUrl.searchParams;
+  // Staré minScore/maxScore záměrně nemění výběr ani pořadí výsledků.
+  const rawLimit = Number(params.get('limit') ?? 50);
+  const limit = Number.isFinite(rawLimit) ? Math.min(100, Math.max(1, Math.floor(rawLimit))) : 50;
+  const rawOffset = Number(params.get('offset') ?? 0);
+  const offset = Number.isFinite(rawOffset) ? Math.max(0, Math.floor(rawOffset)) : 0;
   try {
     const data = await getSchoolsData();
-    const year = data['2025'] ? '2025' : '2024';
-    const schoolsRaw: School[] = data[year] || [];
-    const schools = deduplicateById(schoolsRaw);
-    const slugContext = buildSlugContext(schools);
-
-    // Generovat seznam krajů (cachováno)
+    const index = uniqueSchoolIndex(data['2025'] || [], s => s.id);
+    const schools = Array.from(index.values());
+    const canonicalSchools = Object.values(await getSchoolAnalysis());
+    const slugContext = buildSlugContext(data['2025'] || [], canonicalSchools);
+    const canonicalById = new Map(canonicalSchools.map(s => [s.id, s]));
+    const canonicalNames = new Map<string, string>();
+    for (const school of canonicalSchools) {
+      const redizo = school.id.split('_')[0];
+      if (!canonicalNames.has(redizo)) canonicalNames.set(redizo, school.nazev);
+    }
+    // Jen názvy pro existující adresy profilů. Historická fakta se tímto
+    // základním klíčem nikdy nepárují, používají úplné ID níže.
+    const routeSchool = (school: School): School => ({ ...school, nazev: school.zamereni
+      ? canonicalNames.get(school.id.split('_')[0]) ?? school.nazev
+      : canonicalById.get(school.id)?.nazev ?? school.nazev });
     if (!krajeCache) {
       const krajMap = new Map<string, string>();
-      schools.forEach(s => {
-        if (s.kraj_kod && s.kraj) {
-          krajMap.set(s.kraj_kod, s.kraj.trim());
-        }
-      });
-      krajeCache = Array.from(krajMap.entries())
-        .map(([kod, nazev]) => ({ kod, nazev }))
+      schools.forEach(s => { if (s.kraj_kod && s.kraj) krajMap.set(s.kraj_kod, s.kraj.trim()); });
+      krajeCache = Array.from(krajMap, ([kod, nazev]) => ({ kod, nazev }))
         .sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs'));
     }
+    if (params.get('krajeOnly') === '1') return NextResponse.json({ kraje: krajeCache });
 
-    // Pokud je požadován pouze seznam krajů, vrátit
-    if (krajeOnly) {
-      return NextResponse.json({ kraje: krajeCache });
-    }
-
-    // Přímé načtení podle konkrétních ID (pro předvýběr v simulátoru)
-    if (idsParam) {
-      const requestedIds = Array.from(
-        new Set(
-          idsParam
-            .split(',')
-            .map(v => v.trim())
-            .filter(v => v.length > 0 && v.length <= 220)
-        )
-      ).slice(0, 200);
-
-      const byId = new Map<string, School>();
-      schools.forEach(s => byId.set(s.id, s));
-
-      const byIds = requestedIds
-        .map(id => byId.get(id))
-        .filter((s): s is School => Boolean(s))
-        .map(s => ({
-          id: s.id,
-          nazev: s.nazev,
-          nazev_display: s.nazev_display,
-          obor: s.obor,
-          zamereni: normalizeZamereni(s.zamereni),
-          obec: s.obec,
-          ulice: s.ulice,
-          adresa: s.adresa,
-          kraj: s.kraj,
-          kraj_kod: s.kraj_kod,
-          typ: s.typ,
-          delka_studia: s.delka_studia,
-          slug: getSchoolSlug(s, slugContext),
-          min_body_2025: normalizeMinBodyScore(s.min_body),
-          jpz_min: Math.max(s.jpz_min_actual || 0, normalizeMinBodyScore(s.min_body)),
-          index_poptavky_2025: s.index_poptavky || 0,
-        }));
-
-      return NextResponse.json({
-        schools: byIds,
-        kraje: krajeCache,
-        total: byIds.length,
+    const results = uniqueSchoolIndex(Array.from(await getResultsForYear(2026)), ([id]) => id);
+    const finite = (v: unknown, max = Infinity) => typeof v === 'number' && Number.isFinite(v) && v >= 0 && v <= max ? v : null;
+    const serialize = (s: School, requestedId = s.id) => {
+      const result = results.get(normalizeSchoolKey(s.id))?.[1];
+      return {
+        id: requestedId, nazev: s.nazev, nazev_display: s.nazev_display, obor: s.obor,
+        zamereni: normalizeZamereni(s.zamereni), obec: s.obec, ulice: s.ulice, adresa: s.adresa,
+        kraj: s.kraj, kraj_kod: s.kraj_kod, typ: s.typ, delka_studia: s.delka_studia,
+        slug: getSchoolSlug(routeSchool(s), slugContext),
+        history: result ? {
+          year: 2026, round: 1, source_valid_at: result.source_valid_at ?? null,
+          accepted: finite(result.prijati), capacity: finite(result.kapacita),
+          // Import už převedl procentní skór na škálu 0–100. Nedělit podruhé.
+          average: finite(result.cj_ma_prijati, 100),
+          average_cj: finite(result.cj_prijati, 50), average_ma: finite(result.ma_prijati, 50),
+        } : null,
+        comparison: { status: 'unavailable', minimum: null },
+      };
+    };
+    if (params.has('ids')) {
+      const ids = readSchoolIds(params.get('ids'));
+      const found = ids.flatMap(id => {
+        const school = index.get(normalizeSchoolKey(id));
+        return school ? [serialize(school, id)] : [];
       });
+      return NextResponse.json({ schools: found, kraje: krajeCache, total: found.length,
+        missingIds: ids.filter(id => !index.has(normalizeSchoolKey(id))), catalogYear: 2025 });
     }
-
-    // Filtrování škol
-    const searchNorm = search ? normalizeText(search) : '';
-    const delkaFilter = delkaStudia ? parseInt(delkaStudia) : null;
-
-    const filtered = schools
-      .filter(s => {
-        // JPZ min body - max z individuálních dat a per-zaměření CERMAT agregátu
-        const jpzMin = Math.max(s.jpz_min_actual || 0, normalizeMinBodyScore(s.min_body));
-
-        // Filtr podle délky studia
-        if (delkaFilter && s.delka_studia !== delkaFilter) return false;
-
-        // Filtr podle kraje
-        if (kraj && s.kraj_kod !== kraj) return false;
-
-        // Filtr podle hledání
-        if (searchNorm) {
-          const nazev = normalizeText(s.nazev || '');
-          const nazevDisplay = normalizeText(s.nazev_display || '');
-          const obor = normalizeText(s.obor || '');
-          const zamereni = normalizeText(normalizeZamereni(s.zamereni) || '');
-          const obec = normalizeText(s.obec || '');
-          const ulice = normalizeText(s.ulice || '');
-          const adresa = normalizeText(s.adresa || '');
-
-          if (!nazev.includes(searchNorm) &&
-              !nazevDisplay.includes(searchNorm) &&
-              !obor.includes(searchNorm) &&
-              !zamereni.includes(searchNorm) &&
-              !obec.includes(searchNorm) &&
-              !ulice.includes(searchNorm) &&
-              !adresa.includes(searchNorm)) {
-            return false;
-          }
-        }
-
-        // Filtr podle bodového rozmezí (pokud není hledání)
-        if (!searchNorm) {
-          if (jpzMin < minScore || jpzMin > maxScore) return false;
-        }
-
-        return true;
-      })
-      .map(s => ({
-        id: s.id,
-        nazev: s.nazev,
-        nazev_display: s.nazev_display,
-        obor: s.obor,
-        zamereni: normalizeZamereni(s.zamereni),
-        obec: s.obec,
-        ulice: s.ulice,
-        adresa: s.adresa,
-        kraj: s.kraj,
-        kraj_kod: s.kraj_kod,
-        typ: s.typ,
-        delka_studia: s.delka_studia,
-        slug: getSchoolSlug(s, slugContext),
-        min_body_2025: normalizeMinBodyScore(s.min_body),
-        jpz_min: Math.max(s.jpz_min_actual || 0, normalizeMinBodyScore(s.min_body)),
-        index_poptavky_2025: s.index_poptavky || 0,
-      }))
-      .sort((a, b) => {
-        // Řadit podle vzdálenosti od středu rozmezí
-        const center = (minScore + maxScore) / 2;
-        const diffA = Math.abs(a.jpz_min - center);
-        const diffB = Math.abs(b.jpz_min - center);
-        return diffA - diffB;
-      })
-      .slice(0, limit);
-
-    return NextResponse.json({
-      schools: filtered,
-      kraje: krajeCache,
-      total: filtered.length,
-    });
+    const query = normalizeText((params.get('search') || '').trim());
+    const duration = params.get('delkaStudia');
+    const region = params.get('kraj');
+    const filtered = schools.filter(s => {
+      if (duration && s.delka_studia !== Number(duration)) return false;
+      if (region && s.kraj_kod !== region) return false;
+      return !query || [s.nazev, s.nazev_display, s.obor, s.zamereni, s.obec, s.ulice, s.adresa]
+        .some(value => normalizeText(value || '').includes(query));
+    }).sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs') || a.id.localeCompare(b.id, 'cs'));
+    return NextResponse.json({ schools: filtered.slice(offset, offset + limit).map(s => serialize(s)),
+      kraje: krajeCache, total: filtered.length, catalogYear: 2025 });
   } catch (error) {
     console.error('Error searching schools:', error);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ error: 'Školy se nepodařilo načíst.' }, { status: 500 });
   }
 }

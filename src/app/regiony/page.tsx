@@ -62,7 +62,7 @@ export default async function RegionsPage() {
       const stats = extendedStatsMap.get(school.id);
       return {
         ...school,
-        jpzMin: stats?.jpz_min || school.min_body,
+        jpzMin: stats?.jpz_min ?? null,
         hasExtraCriteria: stats?.hasExtraCriteria || false
       };
     })

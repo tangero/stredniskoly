@@ -1,10 +1,10 @@
 # Návrh rozvoje Přijímaček na školu pro přijímací řízení 2027
 
-**Verze 2.5 / R5, 11. 9. 2026.** R5 ukončuje posuzování plánu; zadavatel schválil realizaci S0. [Vypořádání R5](#vyporadani-r5) a [záznam dodávky](dodavka-s0-2027.md) oddělují implementaci od veřejné přejímky. S0 je implementováno a lokálně otestováno; produkční uzavření O-13/O-4 čeká na nasazení. D1/D2 platí, další produktové volby se tím neschvalují.
+**Verze 2.4 / R4, 11. 9. 2026.** [Vypořádání R4](#vyporadani-r4) přijímá přechod od posuzování plánu k opravě S0. O-21 zůstává po opakované veřejné kontrole uzavřené; O-13 a O-4 zůstávají neopravené. Další kolo stejného plánu není podmínkou zahájení S0. Nejde o schválení dosud otevřených produktových voleb.
 
 Sekce 1 a úvod sekce 2 zachycují audit před dodávkou `c9ae452`; aktuální návrh v sekcích 3–9 je upraven podle zjištění R1 a R2. Úplné [původní znění](historie/rozvoj-2027-r0/navrh-rozvoje-2027.md) je zachováno. Každá připomínka O-1 až O-14 a obě přílohy mají [vypořádání níže](#vyporadani-r1), včetně nesouhlasu a důkazů. Historie a pravidla dalšího kola jsou na konci.
 
-Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.9](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **S0 je implementováno; uzavření O-13/O-4 čeká na veřejnou přejímku.** Starší stavy níže zachycují jednotlivá kola, nikoli aktuální stav kódu. [Vypořádání R3](#vyporadani-r3) zachycuje stav při uzavření dokumentačního kola; následný dodatek §15 uzavírá O-21 po opravě aplikace a nasazení. O-19 zůstává uzavřené.
+Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.8](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **O-13 zůstává otevřeným produkčním blokátorem:** odstranění zavádějících výstupů simulátoru je první opravná dodávka nezávislá na budoucí integraci Mého výběru. O-4 je navazující technický dluh. [Vypořádání R3](#vyporadani-r3) zachycuje stav při uzavření dokumentačního kola; následný dodatek §15 uzavírá O-21 po opravě aplikace a nasazení. O-19 zůstává uzavřené.
 
 Doporučení: po opravné dodávce pokračovat ověřenými profily a Mým výběrem. Do návrhu profilů přidat historii JPZ 2017–2023 a maturitní výsledky školy jako oddělené datové oddíly. Výzkum návaznosti vstupu a výstupu ověřit samostatně; propojení agregátů přes školu samo nedokládá kohortu ani přidanou hodnotu.
 
@@ -83,8 +83,6 @@ To potvrzuje opravu S0 a podporuje uložení konkrétního oboru přímo z profi
 Původní analýza obsahovala záměny návštěv/akcí/zobrazení a několik nedoložených interpretací; jejich kompletní vypořádání je v analýze v1.1 §9. Přímé vstupy nedokazují znalost značky, 8,4 % návštěv připsaných AI asistentům nedokládá účinek `llms.txt` a dostupná data neprokazují listopadový růst. Zachovat SEO a ověřovat distribuční pilot značenými odkazy. Doporučený nejzazší termín S0 **31. 10. 2026** vychází z kalendáře přihlášek na konzervatoře; opravu připravit nyní, nečekat na tento termín.
 
 ## 3. Co bych opravil před rozšiřováním
-
-**Stav R5:** následující text zůstává přejímacím zadáním. Implementaci a výsledky kontrol zaznamenává [dodávka S0](dodavka-s0-2027.md); formulace o původním kódu popisují stav před touto opravou.
 
 **Opravná dodávka S0 — simulátor (O-13), před implementací Mého výběru.** Aktuální `src/app/simulator/SimulatorClient.tsx` kategorizuje rozdíl proti `min_body_2025` pomocí ±10 bodů jako vysokou/malou šanci. Vada je doložena i ve veřejně doručovaném JS. Zrušit tyto predikční kategorie, souhrny, filtrování a doporučování odvozené z nedoložené hranice. Nenahrazovat je jinou konstantou ani pouhým upozorněním. Zachovat hledání a ověřená historická fakta; u osobního porovnání bez srovnatelného údaje zobrazit „Pro toto porovnání nemáme ověřený údaj“.
 
@@ -593,26 +591,3 @@ Přejímka ověřila tři stránky a devět GET: přímé adresy, skutečné `og
 - Výstup: návrh **v2.4**, oponentura **v4.1**, PRD **v0.8**, doplnění záznamu OG **v1.2**. Identifikátor revize `rozvoj-2027-r4`.
 - R4-E1 lze zopakovat `python3 scripts/audit-review-2027-r4.py`; nový běh přepíše pouze tento kontrolní podklad, nikoli historické snímky. Čas a SHA jsou součástí výsledku.
 - Příští kontrola se má týkat změněného kódu S0 a jeho přejímky. Tímto zápisem nevzniká další implementace ani nové nasazení.
-
-
-<a id="vyporadani-r5"></a>
-## 17. Vypořádání R5 a zahájení realizace S0
-
-**Přijato: pokračovat vývojem, bez šestého kola nezměněného plánu.** R5 potvrzuje předchozí důkazy a dostatečnost přejímek §3. Zadavatel výslovně schválil realizaci. Následující práce proto mění aplikaci, nikoli jen formulace plánu.
-
-| Připomínka / stanovisko R5 | Vypořádání a důkaz |
-|---|---|
-| O-21: všech pět vad opraveno, odstranění počtu a bodového příkladu přijato | Souhlas. O-21 je uzavřené na obou stranách; platí dodávka PR #72 a důkazy §15/§16. Nová oprava obrázků se neprovádí. |
-| Fonty: oponent přijímá chybějící české znaky výchozího TTF a opravuje svou metodu | Souhlas. Rozbor skutečné `cmap` je důkaz; samotná CSS deklarace jím není. Nevysvětlený historický rozdíl stránek není podmínkou pokračování. |
-| Růst PNG odpovídá vloženým fontům | Růst souboru nepoužíváme jako důkaz vložení TTF do PNG: `src/lib/og-image.tsx` předává font rendereru, který vytváří rastrový obrázek. Výstup obsahuje vykreslené pixely; zároveň se změnila ilustrace. Větší PNG samo neodděluje vliv ilustrace, písma a komprese. Toto upřesnění nijak neotevírá O-21. |
-| O-13: stejný veřejný JS nadále obsahuje tři predikční kategorie | Důkaz přijímáme pro produkci před S0. Nový simulátor tyto větve, bodové filtrování i souhrny odstraňuje. Přejímka musí ověřit nově doručované soubory; místní test není protidůkazem k tehdejší produkci. |
-| O-4: predikční výpočty dosud zůstávaly v kódu | Souhlas. Nové `chances.ts` odstraňuje procenta, odhad minima, kategorie šance i hodnocení rizika kombinace. Test kontroluje celé veřejné výstupní rozhraní, historické podíly zůstávají popisné. |
-| Oprava časového vymezení „jediné změny aplikace“ přijata | Souhlas; historie dodávek se nemění. Oprava OG nebyla opravou simulátoru. |
-| Zůstávají dva body v jedné dodávce; další posudek nepřinese hodnotu | Souhlas. S0 realizováno podle §3, následuje přejímka kódu a produkce. Ostatních 19 dispozic z tabulky R4 se nepřepisuje; jejich uzavření neznamená dokončené importy nebo Můj výběr. |
-
-### Historie a navazující práce
-
-- Neměnný [vstup R5 a manifest](historie/rozvoj-2027-r5-vstup/manifest.json) zachovává necommitovanou oponenturu v5.0, návrh v2.4 a PRD v0.8 včetně SHA-256. Oponentův text se nemaže.
-- Výstup R5: návrh **v2.5**, PRD **v0.9**, oponentura **v5.1** a [dodávka S0 v1.0](dodavka-s0-2027.md). Identifikátor `rozvoj-2027-r5-s0`.
-- Aktuální stav: kód opraven a lokální přejímky prošly; O-13/O-4 se uzavřou teprve po nasazení a veřejném ověření, které bude samostatně zapsáno.
-- Potom pokračovat M0 a podkladem profilů (identita nabídky, rok, zdroj, stav kritérií 2027), následně pilotem Mého výběru. Nečekat na úplný historický import JPZ/MZ. Neověřený údaj se do nového produktu přenáší jako neznámý.

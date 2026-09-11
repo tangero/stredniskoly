@@ -1,8 +1,6 @@
 /**
- * Výpočetní logika pro kalkulačku "Moje šance"
- *
- * Porovnává data přihlášek 2026 s historickými daty 2024/2025
- * a odhaduje šance na přijetí pro kombinaci přihlášek.
+ * Popisná data přihlášek 2026 a historie 2024/2025.
+ * Veřejné rozhraní neodhaduje přijetí jednotlivce ani riziko kombinace.
  */
 
 export interface SchoolApplication2026 {
@@ -51,15 +49,8 @@ export interface ChanceResult {
   trendDirection: 'up' | 'down' | 'stable';
   trendPct: number;
   trendLabel: string;
-  // Odhad šancí
-  estimatedChancePct: number;
-  chanceLevel: 'high' | 'medium' | 'low' | 'very_low';
-  chanceLabel: string;
-  chanceColor: string;
-  // Historická minimální hranice
-  estimatedMinScore: number;
   // Historická úspěšnost
-  acceptRate2025: number; // % přijatých v 2025
+  acceptRate2025: number | null; // % přijatých v 2025
   acceptRate2024?: number; // % přijatých v 2024
   // Priority analýza
   p1Applicants2026: number;
@@ -68,12 +59,7 @@ export interface ChanceResult {
 
 export interface CombinationAnalysis {
   results: ChanceResult[];
-  overallRisk: 'safe' | 'balanced' | 'risky' | 'very_risky';
-  riskLabel: string;
-  riskDescription: string;
-  riskColor: string;
-  hasBackup: boolean;
-  suggestions: string[];
+
 }
 
 /**
@@ -84,46 +70,6 @@ function getDemandLevel(index: number): { level: ChanceResult['demandLevel']; la
   if (index < 2.5) return { level: 'medium', label: 'Střední konkurence', color: 'text-amber-600' };
   if (index < 4) return { level: 'high', label: 'Vysoká konkurence', color: 'text-orange-600' };
   return { level: 'very_high', label: 'Velmi vysoká konkurence', color: 'text-red-600' };
-}
-
-/**
- * Odhadne šance na přijetí na základě historických dat a aktuálního tlaku
- */
-function estimateChance(school: SchoolApplication2026): {
-  chancePct: number;
-  level: ChanceResult['chanceLevel'];
-  label: string;
-  color: string;
-  estimatedMinScore: number;
-} {
-  const index2026 = school.index_poptavky_2026;
-  const index2025 = school.index_poptavky_2025;
-
-  // Základní šance odvozená z historické úspěšnosti přijetí
-  const historicalAcceptRate = school.prijati_2025 / Math.max(1, school.prihlasky_2025);
-
-  // Adjustovat podle změny v poptávce
-  const demandChange = index2026 / Math.max(0.1, index2025);
-  const adjustedRate = historicalAcceptRate / demandChange;
-
-  // Převést na procenta (0-100), omezit na realistický rozsah
-  const chancePct = Math.min(95, Math.max(5, adjustedRate * 100));
-
-  // Odhadnout minimální skóre
-  let estimatedMinScore = school.min_body_2025;
-  if (demandChange > 1.1) {
-    // Vyšší poptávka → vyšší požadované skóre
-    estimatedMinScore = Math.round(school.min_body_2025 * (1 + (demandChange - 1) * 0.3));
-  } else if (demandChange < 0.9) {
-    // Nižší poptávka → nižší požadované skóre
-    estimatedMinScore = Math.round(school.min_body_2025 * (1 - (1 - demandChange) * 0.2));
-  }
-
-  // Kategorizace
-  if (chancePct >= 70) return { chancePct: Math.round(chancePct), level: 'high', label: 'Vysoká šance', color: 'text-green-600', estimatedMinScore };
-  if (chancePct >= 45) return { chancePct: Math.round(chancePct), level: 'medium', label: 'Střední šance', color: 'text-amber-600', estimatedMinScore };
-  if (chancePct >= 25) return { chancePct: Math.round(chancePct), level: 'low', label: 'Nízká šance', color: 'text-orange-600', estimatedMinScore };
-  return { chancePct: Math.round(chancePct), level: 'very_low', label: 'Velmi nízká šance', color: 'text-red-600', estimatedMinScore };
 }
 
 /**
@@ -142,24 +88,27 @@ function calculateTrend(school: SchoolApplication2026): { direction: ChanceResul
   return { direction: 'stable', pct: Math.round(changePct), label: 'Stabilní zájem' };
 }
 
+/** Podíl přijatých z přihlášek v daném roce, nikdy osobní pravděpodobnost. */
+function historicalAcceptRate(accepted: number | undefined, applications: number | undefined): number | null {
+  if (typeof accepted !== 'number' || typeof applications !== 'number' ||
+      !Number.isFinite(accepted) || !Number.isFinite(applications) ||
+      applications <= 0 || accepted < 0 || accepted > applications) return null;
+  return Math.round(accepted / applications * 100);
+}
+
 /**
  * Analyzuje jednu školu
  */
 export function analyzeSchool(school: SchoolApplication2026): ChanceResult {
   const demand = getDemandLevel(school.index_poptavky_2026);
   const trend = calculateTrend(school);
-  const chance = estimateChance(school);
 
   const p1Applicants = school.prihlasky_priority_2026?.[0] || 0;
   const p1Ratio = school.kapacita_2026 > 0 ? p1Applicants / school.kapacita_2026 : 0;
 
   // Historická úspěšnost přijetí
-  const acceptRate2025 = school.prihlasky_2025 > 0
-    ? Math.round((school.prijati_2025 / school.prihlasky_2025) * 100)
-    : 0;
-  const acceptRate2024 = (school.prihlasky_2024 && school.prijati_2024 && school.prihlasky_2024 > 0)
-    ? Math.round((school.prijati_2024 / school.prihlasky_2024) * 100)
-    : undefined;
+  const acceptRate2025 = historicalAcceptRate(school.prijati_2025, school.prihlasky_2025);
+  const acceptRate2024 = historicalAcceptRate(school.prijati_2024, school.prihlasky_2024) ?? undefined;
 
   return {
     school,
@@ -169,11 +118,6 @@ export function analyzeSchool(school: SchoolApplication2026): ChanceResult {
     trendDirection: trend.direction,
     trendPct: trend.pct,
     trendLabel: trend.label,
-    estimatedChancePct: chance.chancePct,
-    chanceLevel: chance.level,
-    chanceLabel: chance.label,
-    chanceColor: chance.color,
-    estimatedMinScore: chance.estimatedMinScore,
     acceptRate2025,
     acceptRate2024,
     p1Applicants2026: p1Applicants,
@@ -181,112 +125,7 @@ export function analyzeSchool(school: SchoolApplication2026): ChanceResult {
   };
 }
 
-/**
- * Analyzuje kombinaci přihlášek a hodnotí strategii
- */
+/** Vrací pouze popisnou historii jednotlivých nabídek. */
 export function analyzeCombination(schools: SchoolApplication2026[]): CombinationAnalysis {
-  const results = schools.map(analyzeSchool);
-
-  // Počet škol s vysokou/nízkou šancí
-  const highChance = results.filter(r => r.chanceLevel === 'high').length;
-  const lowChance = results.filter(r => r.chanceLevel === 'low' || r.chanceLevel === 'very_low').length;
-  const veryHighDemand = results.filter(r => r.demandLevel === 'very_high').length;
-
-  // Má záložní variantu? (alespoň 1 škola se střední+ šancí)
-  const hasBackup = results.some(r => r.chanceLevel === 'high' || r.chanceLevel === 'medium');
-
-  // Celkové hodnocení rizika
-  let overallRisk: CombinationAnalysis['overallRisk'];
-  let riskLabel: string;
-  let riskDescription: string;
-  let riskColor: string;
-
-  if (results.length === 1) {
-    // Speciální hodnocení pro jednu přihlášku
-    const result = results[0];
-    if (result.chanceLevel === 'high') {
-      overallRisk = 'safe';
-      riskLabel = 'Dobrá volba';
-      riskDescription = 'Vaše škola má příznivý poměr přihlášek a kapacity. Šance na přijetí jsou dobré.';
-      riskColor = 'text-green-600';
-    } else if (result.chanceLevel === 'medium') {
-      overallRisk = 'balanced';
-      riskLabel = 'Střední šance';
-      riskDescription = 'Vaše škola má středně silnou konkurenci. Důkladná příprava na přijímací zkoušky zvýší vaše šance.';
-      riskColor = 'text-blue-600';
-    } else if (result.chanceLevel === 'low') {
-      overallRisk = 'risky';
-      riskLabel = 'Nízká šance';
-      riskDescription = 'Vaše škola má silnou konkurenci. S jednou přihláškou je riziko nepřijetí vyšší.';
-      riskColor = 'text-orange-600';
-    } else {
-      overallRisk = 'very_risky';
-      riskLabel = 'Velmi nízká šance';
-      riskDescription = 'Vaše škola má velmi vysokou konkurenci. S jednou přihláškou je riziko nepřijetí značné.';
-      riskColor = 'text-red-600';
-    }
-  } else if (veryHighDemand === results.length) {
-    overallRisk = 'very_risky';
-    riskLabel = 'Velmi riziková kombinace';
-    riskDescription = 'Všechny zvolené školy mají velmi vysokou konkurenci. Zvažte přidání záložní varianty s nižší konkurencí.';
-    riskColor = 'text-red-600';
-  } else if (lowChance >= 2 && !hasBackup) {
-    overallRisk = 'risky';
-    riskLabel = 'Riziková kombinace';
-    riskDescription = 'Většina vašich škol má nízké šance na přijetí a nemáte záložní variantu.';
-    riskColor = 'text-orange-600';
-  } else if (highChance >= 1 && lowChance <= 1) {
-    overallRisk = 'safe';
-    riskLabel = 'Bezpečná kombinace';
-    riskDescription = 'Vaše kombinace přihlášek obsahuje školy s různou úrovní náročnosti. Dobrá strategie!';
-    riskColor = 'text-green-600';
-  } else {
-    overallRisk = 'balanced';
-    riskLabel = 'Vyvážená kombinace';
-    riskDescription = 'Vaše přihlášky jsou rozumně rozložené mezi náročnější a dostupnější školy.';
-    riskColor = 'text-blue-600';
-  }
-
-  // Doporučení
-  const suggestions: string[] = [];
-
-  if (results.length === 1) {
-    // Doporučení pro jednu přihlášku
-    if (results[0].chanceLevel === 'high') {
-      suggestions.push('Vaše šance vypadají příznivě. Soustřeďte se na přípravu k přijímacím zkouškám.');
-    } else {
-      suggestions.push('Můžete podat až 3 přihlášky. Přidáním dalších škol zvýšíte svou šanci na přijetí.');
-    }
-  } else {
-    if (!hasBackup) {
-      suggestions.push('Zvažte přidání školy s nižší konkurencí jako záložní variantu.');
-    }
-
-    if (veryHighDemand >= 2) {
-      suggestions.push('Máte více škol s velmi vysokou konkurencí. Připravte se na přijímací zkoušky důkladně.');
-    }
-  }
-
-  const allSameKraj = results.length > 1 && new Set(results.map(r => r.school.kraj)).size === 1;
-  if (allSameKraj && results.length >= 3) {
-    suggestions.push('Všechny školy jsou ve stejném kraji. Zvažte i školy v okolních krajích pro větší šanci.');
-  }
-
-  if (results.some(r => r.trendDirection === 'up' && r.trendPct > 15)) {
-    suggestions.push('U některých škol výrazně roste zájem oproti minulému roku. Počítejte s vyšší konkurencí.');
-  }
-
-  if (suggestions.length === 0) {
-    suggestions.push('Vaše strategie vypadá dobře. Soustřeďte se na přípravu k přijímacím zkouškám.');
-  }
-
-  return {
-    results,
-    overallRisk,
-    riskLabel,
-    riskDescription,
-    riskColor,
-    hasBackup,
-    suggestions,
-  };
+  return { results: schools.map(analyzeSchool) };
 }

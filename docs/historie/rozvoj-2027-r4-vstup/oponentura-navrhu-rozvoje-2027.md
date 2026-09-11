@@ -1,79 +1,76 @@
 # Oponentura návrhu rozvoje 2027
 
-Verze 5.1 / R5, doplněna odpověď autora a realizace S0. Původní oponentní vstup v5.0 je uchován v `historie/rozvoj-2027-r5-vstup/`. Zpracováno 11. 9. 2026. Předmět: `navrh-rozvoje-2027.md` v2.4 §16 (commit `69a7060`).
+Verze 4.0 / R4. Zpracováno 11. 9. 2026. Předmět: `navrh-rozvoje-2027.md` v2.3 §14 (commit `a550f1d`).
 
-**Aktuální odpověď autora:** [návrh v2.5 §17](navrh-rozvoje-2027.md#vyporadani-r5) vypořádává všechna stanoviska R5. Realizace S0 schválena a provedena, lokální přejímky prošly; [veřejná přejímka](dodavka-s0-2027.md) zatím čeká na nasazení. Následující oponentní stav popisuje produkci před S0.
+## R4: odpověď na otázku „blížíme se k vypořádání blokačních problémů?“
 
-## R5: souhlas se závěrem, další kolo nemá smysl
+**Ano u dokumentace, ne u kódu. Aplikace se za celá čtyři kola nezměnila v ničem, co je blokátorem.**
 
-**Souhlasím: realizovat S0, další posudek nezměněného plánu není potřeba.** Toto je poslední oponentní kolo, které má hodnotu. Dvě věci k němu ověřuji, obě potvrzuji ve váš prospěch.
-
-Stav produkčních vad po pěti kolech:
+Stav produkčních vad, nikoli dokumentačních sporů:
 
 | Vada | Stav | Doklad |
 |---|---|---|
-| O-13 simulátor, práh ±10 | **OTEVŘENO**, blokátor | `d60f497abfc067f8.js` stále nese kategorie |
-| O-4 mrtvé predikce | **OTEVŘENO**, dluh v S0 | `chances.ts` beze změny |
-| O-19 HTTP 500 | Uzavřeno | Ověřeno v R4 |
-| O-21 vizuální vady | **UZAVŘENO v R5** | Ověřeno níže |
+| O-13 simulátor: kategorie s prahem ±10 | **OTEVŘENO**, blokátor | Veřejný JS stále obsahuje `Vysoká šance` / `Malá šance` |
+| O-4 mrtvé predikční výpočty | **OTEVŘENO**, dluh v téže dodávce | `chances.ts` stále vrací `chancePct` |
+| O-19 HTTP 500 u náhledů | **UZAVŘENO** | Opraveno, nasazeno, přejímka splněna |
+| O-21 vizuální vady náhledů | **OTEVŘENO**, nový nález | Potvrzuji a rozšiřuji, viz níže |
+
+Z 21 ID je 16 uzavřeno, ale **všechna uzavření kromě O-19 jsou dokumentační**. Jediná změna aplikace za čtyři kola je oprava náhledových obrázků, kterou si vyžádal uživatel mimo tento proces.
+
+Doporučení je jednoznačné a shodné s vaším: **zastavit oponentní kola a opravit S0**. Páté kolo posudků nad nezměněným kódem už nepřinese hodnotu. Sám k tomu přispívám dalšími nálezy, což je přesně ten důvod, proč je čas přestat hledat a začít opravovat.
 
 ---
 
-## O-21: oprava potvrzena, bod uzavírám
+## O-21: potvrzuji a rozšiřuji o dva nálezy
 
-**OVĚŘENO** stažením a vizuální kontrolou tří produkčních PNG po nasazení `ee0700e`.
+**OVĚŘENO** vizuální kontrolou tří produkčních PNG stažených 11. 9. 2026.
 
-Soubory se proti mé kontrole v R4 změnily a sedminásobně narostly (49,6 kB → 349,8 kB), což odpovídá vloženým fontům.
+### Co potvrzuji
 
-| Nález R4 | Stav po opravě |
+Chybějící glyfy na hlavním obrázku potvrzuji. Nadpis se vykreslí jako `Najdi si svou st␣ední ␣kolu`, podtitulek jako `Vyhledávání ␣kol, p␣ijíma␣ky i dojí␣d␣ní na jednom míst␣`. Popisky dlaždic ukazují `obor␣` a `kraj␣ ␣R`. Zastaralý rok 2025 označený jako „aktuální data“ potvrzuji.
+
+Překrytí u simulátoru potvrzuji: patička `prijimackynaskolu.cz/simulator` leží přímo pod textem `Zadej své body a zjisti šance na přijetí`.
+
+Regiony jsou skutečně bez vady.
+
+### Nález 1: obsah hlavního obrázku je věcně nesprávný
+
+Nejde jen o kosmetiku. Obrázek tvrdí:
+
+| Údaj na obrázku | Skutečnost |
 |---|---|
-| Chybějící glyfy `ř š ě ů` | **Opraveno.** Nadpis „Najdi si svou střední školu“ se vykresluje správně, stejně jako „Přijímačky na školu“ a „Přijímání 2027“ |
-| Zastaralý rok „2025 aktuální data“ | **Odstraněno.** Obrázek uvádí „Přijímání 2027“ a „Výsledky 2026“ odděleně |
-| Nesprávný počet „2200+ oborů“ | **Odstraněno.** Počet se neuvádí vůbec |
-| Nesprávná škála „160 z 200 bodů“ | **Odstraněno.** Bodový příklad zmizel |
-| Překrytí patičky u simulátoru | **Opraveno.** Text a patička se nepřekrývají |
+| `2200+ oborů` | 3 091 nabídek |
+| `2025 aktuální data` | Data platná k 17. 8. 2026 |
 
-Nad rámec nahlášeného: náhledy přibraly ilustraci a simulátor nese větu „Historická data nejsou zárukou přijetí“. To je věcně správné a v souladu se zásadami návrhu.
+Je to stejná třída vady, jakou návrh opakovaně řeší u webu: **zastaralý údaj vydávaný za aktuální**. Náhled je navíc to první, co uvidí člověk, kterému někdo odkaz pošle. Označení „střední priorita“ v R3 bych proto zvýšil.
 
-**Vaše řešení obou nálezů je lepší než moje doporučení.** Navrhoval jsem nahradit „2200+“ správným číslem; vy jste počet odstranil úplně. Máte pravdu, že 3 091 je počet nabídek v rozsahu importu, nikoli unikátních oborů ani úplný katalog, takže prosté nahrazení by přesné nebylo. Totéž u bodového příkladu: odstranění je bezpečnější než oprava čísel.
+### Nález 2: čísla v simulátoru neodpovídají realitě JPZ
 
----
+Obrázek simulátoru ukazuje: čeština 42 z 50, matematika 38 z 50, **celkové skóre 160 z 200 možných bodů**.
 
-## Fonty: váš protidůkaz je správný, můj závěr byl chybný
+JPZ má maximum 50 + 50 = 100 bodů, což správně uvádí i váš `llms.txt`. Součet 42 a 38 je 80, nikoli 160. Škála 200 bodů neexistuje.
 
-**OVĚŘENO** rozborem tabulek `cmap` v souborech TTF.
+Ilustrace v náhledu tedy učí rodiče nesprávnou bodovou škálu. Věcně to patří do stejné skupiny jako O-13: **nesprávná informace o bodech na produkci**. Doporučuji opravit v téže dodávce.
 
-V R4 jsem tvrdil, že rozdíl nebude v sadě znaků, protože fonty jsou deklarované shodně. Ověřil jsem to nezávisle a **mýlil jsem se**:
+### Co k O-21 nemám
 
-| Font | Znaků v cmap | Chybějící české znaky |
-|---|---:|---|
-| `noto-sans-v27-latin-regular.ttf` (výchozí v Next.js) | 224 | `čďěňřšťůžČĎĚŇŘŠŤŮŽ` |
-| `NotoSans-Regular.ttf` (nový, přibalený) | 2 444 | žádné |
-| `NotoSans-Bold.ttf` (nový, přibalený) | 2 444 | žádné |
+Příčinu chybějících glyfů jsem nedohledal. Vyloučil jsem tři hypotézy: fonty jsou deklarované shodně (`system-ui, sans-serif`), tloušťky i velikosti písma jsou srovnatelné, a znaky `ř` a `š` se v regionech vykreslí správně, zatímco jinde ne. Rozdíl tedy nebude v samotné sadě znaků. Pravděpodobnější je, že `ImageResponse` použije jiný systémový font podle dostupnosti, ale to jsem neověřil.
 
-Výchozí font přibalený k `@vercel/og` je **latinská podmnožina bez háčků a kroužků**. To přesně vysvětluje, proč se `ř`, `š`, `ě` a `ů` vykreslovaly jako obdélníky, zatímco `á`, `í` a `é` fungovaly.
-
-Moje úvaha měla vadu, kterou je vhodné pojmenovat: shodná deklarace `system-ui` neříká nic o tom, který soubor se nakonec načte ani jaké znaky obsahuje. Vyloučil jsem hypotézu na základě zdrojového kódu, místo abych se podíval do fontu. To byla chyba metody, ne jen výsledku.
-
-Otevřenou otázku, proč regiony vypadaly správně, zatímco úvod ne, nepovažuji za nutné dořešit. Příčina je odstraněna a oprava explicitními lokálními fonty je robustnější než jakékoli vysvětlení rozdílu.
+Praktický důsledek: oprava vyžaduje **explicitně načtený font s českými glyfy**, nikoli spoléhání na `system-ui`. Bez toho je výsledek závislý na prostředí a může se změnit s každým nasazením.
 
 ---
 
-## O-13 a O-4 trvají
+## Stanovisko k vypořádání R3
 
-**OVĚŘENO** nezávisle na vašich podkladech. Stáhl jsem produkční JavaScript simulátoru a v `d60f497abfc067f8.js` jsou stále řetězce „Vysoká šance“, „Malá šance“ a „Na hraně“. Soubor má shodný hash jako při mé kontrole v R4, takže se nezměnil.
+Ověřoval jsem jen to, co lze falzifikovat; k ostatnímu nemám výhrady.
 
-Přijímám i vaši výhradu, že mé tvrzení o „jediné změně aplikace“ bylo časově vázané na posuzovaný commit. Mezitím vyšla oprava O-21, takže změny aplikace jsou dvě. Blokátor to nemění.
+**O-15, O-16, O-17, O-20** jsou uzavřené v souladu s mým posudkem. U O-15 jste správně podotkl, že jazykový experiment nebyl pro závěr nutný; souhlasím.
 
----
+**O-18.** Vaše upozornění, že všech 14 řádků exportu má `MISS`, a export tedy nedokládá pokrytí `HIT`, je správné a v mém posudku chybělo. Přijímám bez výhrad.
 
-## Závěr po pěti kolech
+**O-19.** Přijímám rozlišení, které jsem neudělal dost ostře: uzavřena je **dostupnost**, nikoli vzhled. Moje přejímka ověřila hlavičku a rozměry, nikoli obsah. Vizuální kontrola, kterou jste doplnil, našla to, co moje kontrola minout musela.
 
-Z 21 bodů zůstávají otevřené dva, O-13 a navazující O-4, a oba se řeší jednou dodávkou.
-
-Proces splnil účel a dál ho neplňte. Poslední tři kola nacházela vady mimo původní zadání, z nichž dvě už jsou opravené. To je dobrá zpráva o kvalitě kontroly, ale i signál, že hledání se odpojilo od hlavního cíle.
-
-Souhlasím s vaším postupem: **další krok je implementace S0, nikoli šesté kolo posudků.** Přejímací podmínky, které jste stanovil v §3, pokládám za dostatečné a nemám k nim co dodat. Až bude S0 hotové, má smysl ověřit kód a produkci; do té doby by další posudek jen opakoval totéž.
+Rovněž přijímám, že jsem neměl tvrdit, že všechny starší náhledy jsou prázdné. Cache sociálních sítí jsem neověřoval.
 
 ---
 
@@ -523,36 +520,3 @@ Podrobnosti, důkazní přílohy a požadavky na doplnění oponentních důkaz�
 | 3.1 / R3 | 11. 9. 2026 | Odpověď autora, nezávislá kontrola Matomo/NDJSON/PNG/deploymentu, nový vizuální O-21. Návrh v2.3, PRD v0.7, analýza v1.4; aktuální stavy v návrhu §14. |
 
 R4 ověří novou odpověď a O-21; O-13 vyžaduje skutečnou opravu aplikace a veřejnou přejímku. Zachování starších otevřených stavů v historii není jejich znovuotevřením.
-
-
-## Odpověď autora R4 — souhrn
-
-- **Přechod k S0: přijato.** Další posudek stejného plánu není podmínkou implementace; následující kontrola má ověřit změněný kód a veřejný výsledek. O-13/O-4 potvrzeny novým důkazem, neuzavíráme je.
-- **O-21 a jeho dvě rozšíření: původní vady přijaty, dnes opravené.** Nová kontrola produkce potvrzuje PR #72. Údaj o počtu odstraněn, sezóna oddělena od roku výsledků, bodový příklad odstraněn a fonty přibaleny explicitně.
-- **Počet nabídek upřesněn:** 3 091 nabídek importu není počet unikátních oborů; nepoužít jako prostou náhradu starého popisku. Samotné větší číslo nevyvrací dolní mez „2 200+“.
-- **Bodová výhrada přijata pro čisté JPZ.** Náhled neodpovídal součtu 42 + 38; není však důkazem, že aplikace počítá do 200. Zdroj aplikace počítá do 100, přetrvává jiná vada kategorizace O-13.
-- **Závěr o fontové sadě rozporován konkrétními TTF.** Výchozí font postrádá část českých znaků, oba nové je obsahují. Přesná historická větev fallbacku nebyla reprodukována; hypotézu o jiném systémovém fontu nepřebíráme jako důkaz.
-- **O-15–20:** přijetí našich důkazů potvrzeno. Metodické uzavření není vysvětlením 322 vstupů, zprovozněním Web Analytics ani přejímkou celého drainu. Souhrnný počet uzavřených ID není podíl hotové aplikace.
-
-Podrobné reakce včetně priorit, časového vymezení a všech 21 ID obsahuje návrh §16. Nevyžadujeme páté kolo posuzování nezměněného plánu.
-
-### Historie R4
-
-| Verze | Datum | Změna |
-|---|---|---|
-| 4.0 / R4 | 11. 9. 2026 | Oponentní vstup nad `a550f1d`, uchován beze změny v manifestu R4. |
-| 4.1 / R4 | 11. 9. 2026 | Odpověď autora, nové ověření produkce na `ee0700e`, přijetí rozšíření O-21 a protidůkaz ke znakové sadě. Návrh v2.4, PRD v0.8; O-13/O-4 stále otevřené. |
-
-
-## Odpověď autora R5 — uzavření posuzování plánu
-
-Souhlasíme s pokračováním realizací. Přijímáme uzavření O-21, potvrzení protidůkazu k fontům i důkaz trvajícího O-13/O-4 před S0. Nevydáváme změnu obrázků nebo dokumentace za opravu simulátoru. Interpretaci velikosti PNG upřesňuje návrh §17; nejde o novou blokační připomínku.
-
-S0 nyní mění skutečný kód a jeho datové cesty. Úplný rozsah, přejímky a stav nasazení jsou v [záznamu dodávky](dodavka-s0-2027.md). Ostatní dispozice všech 21 ID zůstávají dohledatelné v návrhu §16/§17. Další kolo nezměněného plánu se nevyžaduje.
-
-### Historie R5
-
-| Verze | Datum | Změna |
-|---|---|---|
-| 5.0 / R5 | 11. 9. 2026 | Oponentní vstup nad `69a7060`, zachován beze změny ve snímku R5. |
-| 5.1 / R5 | 11. 9. 2026 | Přijetí stanovisek, návrh v2.5, PRD v0.9, realizace S0 a lokální přejímky; produkční uzavření zatím čeká. |

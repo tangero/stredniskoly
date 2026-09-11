@@ -972,11 +972,11 @@ export default async function SchoolDetailPage({ params }: Props) {
             totalApplicants={program.prihlasky}
             priority1Count={extendedStats?.prihlasky_priority?.[0] || 0}
             minBody={program.min_body}
-            jpzMin={extendedStats?.jpz_min || 0}
-            cjAtJpzMin={extendedStats?.cj_at_jpz_min || 0}
-            maAtJpzMin={extendedStats?.ma_at_jpz_min || 0}
-            hasExtraCriteria={extendedStats?.hasExtraCriteria || false}
-            extraBody={extendedStats?.extra_body || 0}
+            jpzMin={extendedStats?.jpz_min ?? null}
+            cjAtJpzMin={extendedStats?.cj_at_jpz_min ?? null}
+            maAtJpzMin={extendedStats?.ma_at_jpz_min ?? null}
+            hasExtraCriteria={extendedStats?.hasExtraCriteria ?? null}
+            extraBody={extendedStats?.extra_body ?? null}
             obtiznost={school.obtiznost}
             indexPoptavky={program.index_poptavky}
             kapacita={program.kapacita}
