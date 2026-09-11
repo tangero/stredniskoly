@@ -1,3 +1,4 @@
+import { normalizeSchoolKey, uniqueSchoolIndex } from './school-key';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { School, SchoolAnalysis, SchoolData, SchoolsData, SchoolDetail, krajNames, CSIDataset, CSISchoolData, InspectionExtraction } from '@/types/school';
@@ -1591,6 +1592,8 @@ export interface SchoolResult {
   zamereni: string;
   nazev: string;
   nazev_display?: string;
+  obor?: string;
+  source_valid_at?: string;
   kraj: string;
   school_type: string;
   kapacita: number;
@@ -1606,6 +1609,16 @@ export interface SchoolResult {
 
 /** Raw záznam z applications_2026.json (jen dynamická data per obor) */
 interface Raw2026Record {
+  redizo: string;
+  kkov: string;
+  nazev: string;
+  obor: string;
+  zamereni: string;
+  typ: string;
+  obec: string;
+  kraj: string;
+  kraj_kod: string;
+  delka_studia: number;
   id: string;
   kapacita: number;
   prihlasky: number;
@@ -1643,56 +1656,37 @@ async function getRaw2026Data(): Promise<Raw2026Record[]> {
 export async function getSchools2026Data(): Promise<School2026Data[]> {
   if (schools2026Cache) return schools2026Cache;
 
-  const [rawRecords, schoolsDataContent, analysisData] = await Promise.all([
+  const [rawRecords, schoolsDataContent] = await Promise.all([
     getRaw2026Data(),
     fs.readFile(path.join(dataDir, 'schools_data.json'), 'utf-8'),
-    getSchoolAnalysis(),
   ]);
 
   const schoolsData = JSON.parse(schoolsDataContent);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const schools2025: any[] = schoolsData['2025'] || [];
 
-  // Index statických dat 2025 podle ID (per obor/zaměření)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const staticIndex = new Map<string, any>();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const staticByBase = new Map<string, any>();
-  for (const s of schools2025) {
-    staticIndex.set(s.id, s);
-    // Index podle base key (REDIZO_KKOV) - první záznam vyhrává
-    const base = s.id.split('_').slice(0, 2).join('_');
-    if (!staticByBase.has(base)) {
-      staticByBase.set(base, s);
-    }
-  }
+  const staticIndex = uniqueSchoolIndex(schools2025, s => s.id);
 
   schools2026Cache = rawRecords.map(r => {
-    const baseKey = r.id.split('_').slice(0, 2).join('_');
-    const analysis = analysisData[baseKey];
-    // Lookup: přesné ID → matched_2025_id z analýzy → base key fallback
-    const s = staticIndex.get(r.id)
-      || (analysis?.matched_2025_id ? staticIndex.get(analysis.matched_2025_id) : null)
-      || staticByBase.get(baseKey);
+    const s = staticIndex.get(normalizeSchoolKey(r.id));
     return {
       id: r.id,
-      redizo: s?.redizo || r.id.split('_')[0],
-      nazev: s?.nazev || '',
-      nazev_display: s?.nazev_display || s?.nazev || '',
-      obor: s?.obor || '',
-      zamereni: s?.zamereni || '',
-      kkov: s?.kkov || '',
-      typ: s?.typ || '',
-      delka_studia: s?.delka_studia || 4,
-      obec: s?.obec || '',
-      kraj: s?.kraj || '',
-      kraj_kod: s?.kraj_kod || '',
+      redizo: r.redizo,
+      nazev: r.nazev,
+      nazev_display: s?.nazev_display || r.nazev,
+      obor: r.obor,
+      zamereni: r.zamereni,
+      kkov: r.kkov,
+      typ: r.typ,
+      delka_studia: r.delka_studia,
+      obec: r.obec,
+      kraj: r.kraj,
+      kraj_kod: r.kraj_kod,
       kapacita: r.kapacita,
       prihlasky: r.prihlasky,
       prihlasky_priority: r.pp,
       index_poptavky: r.idx,
       ...(r.is_new ? { is_new: true } : {}),
-      ...(analysis?.prev_zamereni_name ? { prev_zamereni_name: analysis.prev_zamereni_name } : {}),
     };
   });
 
@@ -1704,11 +1698,7 @@ export async function getSchools2026Data(): Promise<School2026Data[]> {
  */
 export async function get2026DataById(schoolId: string): Promise<School2026Data | null> {
   const allData = await getSchools2026Data();
-  // Zkusit přesné ID, pak baseId
-  const baseId = schoolId.split('_').slice(0, 2).join('_');
-  return allData.find(s => s.id === schoolId) ||
-         allData.find(s => s.id.startsWith(baseId)) ||
-         null;
+  return uniqueSchoolIndex(allData, s => s.id).get(normalizeSchoolKey(schoolId)) ?? null;
 }
 
 /**
@@ -1736,17 +1726,9 @@ export async function getChancesData(programId: string): Promise<{
   ]);
 
   const schoolsData = JSON.parse(schoolsDataContent);
-  const baseId = programId.split('_').slice(0, 2).join('_');
-
+  // Párujeme úplný klíč, nikoli první zaměření stejného KKOV.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const find = (yearData: any[]) => {
-    if (!yearData) return null;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return yearData.find((s: any) => s.id === programId) ||
-           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-           yearData.find((s: any) => s.id.startsWith(baseId)) ||
-           null;
-  };
+  const find = (yearData: any[]) => uniqueSchoolIndex(yearData || [], s => s.id).get(normalizeSchoolKey(programId)) ?? null;
 
   return {
     data2026,

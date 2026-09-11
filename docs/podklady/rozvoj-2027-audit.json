@@ -1,0 +1,66 @@
+{
+  "rows_round1": 6368,
+  "unique_redizo_round1": 1337,
+  "daily_nonshort_jpz_rows": 3091,
+  "legacy_export_new_count": 3076,
+  "legacy_export_old_count": 3080,
+  "common_keys": 3073,
+  "added_keys": 3,
+  "removed_keys": 7,
+  "changed_fields_on_common_keys": {
+    "cj_prijati": 1251,
+    "cj_ma_prijati": 1254,
+    "ma_prijati": 1299,
+    "prijati": 676
+  },
+  "existing_results_unique_redizo": 1104,
+  "exact_join_2025_to_2026_results": 1445,
+  "base_2025_rows": 2837,
+  "application_rows": 3087,
+  "types_full_source": {
+    "SOU": 390,
+    "SOS": 1712,
+    "SOU_VL": 2471,
+    "NAS": 323,
+    "SOUbezVL": 211,
+    "GY4": 446,
+    "GY8": 273,
+    "LYC": 293,
+    "GY6": 71,
+    "KON": 178
+  },
+  "rows_round2": 2707,
+  "checked_at": "2026-09-11",
+  "checkout_commit": "c17d42e",
+  "method": "Stažení aktuálních XLSX, načtení prvního datového listu, extract_current_year ze scripts/import_cermat_results.py bez spuštění main; porovnání pěti exportovaných polí na průniku klíčů s public/cermat_results_2026.json. Přesné párování ID 2025 je diagnostika cesty městských přehledů, nikoli míra chyb celého webu.",
+  "source_files": [
+    {
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo1_skolobory_vysledky.xlsx",
+      "sha256": "a003441f4beed6fb9c181aa00f9d1a59a9c206ff10f113ad807740e68d5511d5",
+      "catalog_valid_as_of": "2026-08-17"
+    },
+    {
+      "url": "https://data.cermat.cz/files/files/JPZ/agregovana_data_skoly/PZ2026_kolo2_skolobory_vysledky.xlsx",
+      "sha256": "c69aca68fb2b2c1633571b1d64a4a1c25dd47d58d6d3cc969f939989a98cc926",
+      "catalog_valid_as_of": "2026-08-17"
+    }
+  ],
+  "local_files": [
+    {
+      "path": "public/cermat_results_2026.json",
+      "sha256": "a1f04d89e171c5795607e4e3a763b893a3903f9ea3af8947fa0ddff0376ad4a8"
+    },
+    {
+      "path": "public/applications_2026.json",
+      "sha256": "86e106cb66a3a003a204040e84b0b07b44ea7f0454c871be98d551c382177b26"
+    },
+    {
+      "path": "public/schools_data.json",
+      "sha256": "e53ddcaeaa63203315ea970d84b7fe6f9e4abf15f68db9c65dac6583df8d8530"
+    },
+    {
+      "path": "scripts/import_cermat_results.py",
+      "sha256": "8fdd2f1449e4c7ba0d07de9538e3c169c784c0f71934ee549a16a1d6397e729b"
+    }
+  ]
+}

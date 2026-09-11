@@ -1,0 +1,254 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Prijimacky na skolu//Kalendar 2027//CS
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Přijímačky 2027
+BEGIN:VEVENT
+UID:ss-kriteria-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270201
+SUMMARY:Školy zveřejní kritéria
+DESCRIPTION:Střední školy · první kolo\nOvěř si otevírané obory\,
+  kapacity\, bodování a požadované přílohy přímo u školy.\nZdroj:
+  https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2
+ 026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ss-prihlasky-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270201
+DTEND;VALUE=DATE:20270223
+SUMMARY:Podej přihlášky
+DESCRIPTION:Střední školy · první kolo\nKonec lhůty se posouvá z sob
+ oty 20. února na pondělí 22. února. Pořadí oborů sestav podle toho\
+ , kam chceš chodit.\nZdroj: https://msmt.gov.cz/media/wp-content/uploads/
+ 2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ss-skolni-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270315
+DTEND;VALUE=DATE:20270424
+SUMMARY:Školní a talentové zkoušky
+DESCRIPTION:Střední školy · první kolo\nPokud je tvůj obor vyžaduje.
+  Konkrétní pracovní den a čas určí škola v pozvánce.\nZdroj: https
+ ://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-20
+ 27.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:jpz-4-1-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270412
+DTEND;VALUE=DATE:20270413
+SUMMARY:JPZ: čtyřleté obory a nástavby · 1. termín
+DESCRIPTION:Střední školy · první kolo\nČeština a matematika. Místo
+  a čas ověř v pozvánce.\nZdroj: https://msmt.gov.cz/media/wp-content/u
+ ploads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:jpz-4-2-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270413
+DTEND;VALUE=DATE:20270414
+SUMMARY:JPZ: čtyřleté obory a nástavby · 2. termín
+DESCRIPTION:Střední školy · první kolo\nČeština a matematika. Místo
+  a čas ověř v pozvánce.\nZdroj: https://msmt.gov.cz/media/wp-content/u
+ ploads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:jpz-vice-1-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270414
+DTEND;VALUE=DATE:20270415
+SUMMARY:JPZ: šestiletá a osmiletá gymnázia · 1. termín
+DESCRIPTION:Střední školy · první kolo\nČeština a matematika. Místo
+  a čas ověř v pozvánce.\nZdroj: https://msmt.gov.cz/media/wp-content/u
+ ploads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:jpz-vice-2-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270415
+DTEND;VALUE=DATE:20270416
+SUMMARY:JPZ: šestiletá a osmiletá gymnázia · 2. termín
+DESCRIPTION:Střední školy · první kolo\nČeština a matematika. Místo
+  a čas ověř v pozvánce.\nZdroj: https://msmt.gov.cz/media/wp-content/u
+ ploads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ss-skolni-nahradni-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270426
+DTEND;VALUE=DATE:20270506
+SUMMARY:Náhradní školní a talentové zkoušky
+DESCRIPTION:Střední školy · první kolo\nKonkrétní pracovní den mimo
+  JPZ určí škola. Vyžaduje řádnou omluvu.\nZdroj: https://msmt.gov.cz
+ /media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:jpz-nahradni-1-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270429
+DTEND;VALUE=DATE:20270430
+SUMMARY:Náhradní JPZ · 1. termín
+DESCRIPTION:Střední školy · první kolo\nPro všechny délky studia\; p
+ ro řádně omluvené uchazeče.\nZdroj: https://msmt.gov.cz/media/wp-cont
+ ent/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:jpz-nahradni-2-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270430
+DTEND;VALUE=DATE:20270501
+SUMMARY:Náhradní JPZ · 2. termín
+DESCRIPTION:Střední školy · první kolo\nPro všechny délky studia\; p
+ ro řádně omluvené uchazeče.\nZdroj: https://msmt.gov.cz/media/wp-cont
+ ent/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ss-vysledky-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270514
+DTEND;VALUE=DATE:20270515
+SUMMARY:Výsledky prvního kola SŠ
+DESCRIPTION:Střední školy · první kolo\nZveřejnění výsledků přij
+ etí v DiPSy a ve škole. Jde o jiný termín než předání výsledků J
+ PZ školám.\nZdroj: https://msmt.gov.cz/media/wp-content/uploads/2026/08/
+ Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#stredni-skoly
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kon-kriteria-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261101
+SUMMARY:Konzervatoře zveřejní kritéria
+DESCRIPTION:Konzervatoře · první kolo\nZkontroluj repertoár\, požadavk
+ y talentové zkoušky a přílohy.\nZdroj: https://msmt.gov.cz/media/wp-co
+ ntent/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#konzervatore
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kon-prihlasky-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20261101
+DTEND;VALUE=DATE:20261201
+SUMMARY:Podej přihlášky na konzervatoře
+DESCRIPTION:Konzervatoře · první kolo\nSamostatný podzimní termín pro
+  nástup v září 2027.\nZdroj: https://msmt.gov.cz/media/wp-content/uplo
+ ads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#konzervatore
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kon-zkousky-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270104
+DTEND;VALUE=DATE:20270116
+SUMMARY:Školní a talentové zkoušky
+DESCRIPTION:Konzervatoře · první kolo\nPracovní dny v období stanoven
+ ém MŠMT. Konkrétní termín a čas jsou v pozvánce školy.\nZdroj: htt
+ ps://msmt.gov.cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-
+ 2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#konzervatore
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kon-nahradni-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270118
+DTEND;VALUE=DATE:20270130
+SUMMARY:Náhradní školní a talentové zkoušky
+DESCRIPTION:Konzervatoře · první kolo\nKonkrétní pracovní den určí
+  konzervatoř\; pro řádně omluvené uchazeče.\nZdroj: https://msmt.gov
+ .cz/media/wp-content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#konzervatore
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:kon-vysledky-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270209
+SUMMARY:Výsledky prvního kola konzervatoří
+DESCRIPTION:Konzervatoře · první kolo\nZveřejnění výsledků přijet
+ í v DiPSy a ve škole.\nZdroj: https://msmt.gov.cz/media/wp-content/uploa
+ ds/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#konzervatore
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:k2-kriteria-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270514
+DTEND;VALUE=DATE:20270519
+SUMMARY:Zveřejnění oborů a kritérií druhého kola
+DESCRIPTION:Druhé kolo · všechny obory\nProhlédni nabídku v DiPSy a zk
+ ontroluj podmínky vybraných škol.\nZdroj: https://msmt.gov.cz/media/wp-
+ content/uploads/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#druhe-kolo
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:k2-prihlasky-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270519
+DTEND;VALUE=DATE:20270525
+SUMMARY:Podej přihlášky do druhého kola
+DESCRIPTION:Druhé kolo · všechny obory\nOvěř si podmínky účasti pod
+ le své situace a informace o případném vzdání se přijetí v předch
+ ozím kole.\nZdroj: https://msmt.gov.cz/media/wp-content/uploads/2026/08/C
+ asovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#druhe-kolo
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:k2-zkousky-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270608
+DTEND;VALUE=DATE:20270615
+SUMMARY:Školní a talentové zkoušky
+DESCRIPTION:Druhé kolo · všechny obory\nKonkrétní pracovní den stanov
+ í škola. Náhradní termín se nekoná\; nová JPZ se ve druhém kole ne
+ píše.\nZdroj: https://msmt.gov.cz/media/wp-content/uploads/2026/08/Casov
+ y-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#druhe-kolo
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:k2-vysledky-2027@prijimackynaskolu.cz
+DTSTAMP:20260911T000000Z
+DTSTART;VALUE=DATE:20270622
+DTEND;VALUE=DATE:20270623
+SUMMARY:Výsledky druhého kola
+DESCRIPTION:Druhé kolo · všechny obory\nZveřejnění výsledků přijet
+ í v DiPSy a ve škole.\nZdroj: https://msmt.gov.cz/media/wp-content/uploa
+ ds/2026/08/Casovy-harmonogram_2026-2027.pdf
+URL:https://www.prijimackynaskolu.cz/prijimacky-2027#druhe-kolo
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

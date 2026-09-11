@@ -30,6 +30,7 @@ export function Footer() {
             <h3 className="font-semibold mb-3 text-sm" style={{ color: '#28313b' }}>Rychlé odkazy</h3>
             <ul className="space-y-2 text-sm list-none p-0">
               {[
+                { href: '/prijimacky-2027', label: 'Kalendář 2027' },
                 { href: '/simulator', label: 'Simulátor' },
                 { href: '/skoly', label: 'Analýza škol' },
                 { href: '/dostupnost', label: 'Školy dostupné MHD' },
@@ -83,7 +84,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid #e0e6ed' }}>
           <p className="text-xs" style={{ color: '#818c99' }}>
-            Stránka slouží pouze k orientačním účelům. Skutečné výsledky záleží hlavně na výsledcích žáka. | Data z let 2024-2025 | &copy; {new Date().getFullYear()}
+            Stránka slouží pouze k orientačním účelům. Skutečné výsledky záleží hlavně na výsledcích žáka. | Historická data 2024–2026 · kalendář přijímaček 2027 | &copy; {new Date().getFullYear()}
           </p>
           <div className="flex items-center gap-3">
             <a

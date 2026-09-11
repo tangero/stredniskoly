@@ -233,7 +233,7 @@ export default async function MestoPage({ params }: Props) {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="bg-white/10 rounded-xl p-4">
                 <div className="text-2xl font-black">{schools.length}</div>
-                <div className="text-blue-200 text-sm">oborů / škol</div>
+                <div className="text-blue-200 text-sm">historických oborů</div>
               </div>
               <div className="bg-white/10 rounded-xl p-4">
                 <div className="text-2xl font-black">{fmt(totals.kapacita2026 || totals.kapacita2025)}</div>
@@ -281,7 +281,7 @@ export default async function MestoPage({ params }: Props) {
                 <NarrativeSection text={narrative.koneknurence} title="Konkurence a odmítnutí" />
                 <NarrativeSection text={narrative.trendVyvoj} title="Vývoj 2024–2026" />
                 <p className="text-xs text-slate-400 mt-4 pt-4 border-t border-slate-100">
-                  Text vygenerován automaticky z dat CERMAT a MŠMT. Vždy ověřte aktuálnost u konkrétní školy.
+                  Text vychází z právě zobrazených dat CERMAT. Vždy ověřte aktuálnost u konkrétní školy.
                 </p>
               </div>
             </section>
@@ -302,9 +302,9 @@ export default async function MestoPage({ params }: Props) {
 
           {/* Tabulka škol */}
           <section>
-            <h2 className="text-2xl font-bold mb-2">Přehled všech škol a oborů</h2>
+            <h2 className="text-2xl font-bold mb-2">Přehled spárovaných škol a oborů</h2>
             <p className="text-slate-600 mb-6 text-sm">
-              Data přijímacího řízení 2026 (kde dostupná) nebo 2025. ČJ+MA = průměrné body přijatých uchazečů z JPZ testů CERMAT (max 100 b., tj. 50 b. ČJ + 50 b. MA).
+              Základ tvoří obory z roku 2025. Spárované údaje prvního kola 2026 mají platnost k 17. 8. 2026. Nové a přejmenované obory nemusí být zahrnuté. ČJ+MA = průměrné body přijatých uchazečů z JPZ testů CERMAT (max 100 b., tj. 50 b. ČJ + 50 b. MA).
             </p>
             <CitySchoolsTable schools={schools} />
           </section>
@@ -314,31 +314,19 @@ export default async function MestoPage({ params }: Props) {
             <h2 className="text-xl font-bold mb-4 text-slate-700">Jak číst tato data</h2>
             <div className="space-y-2">
               <ExplainerBox title="Co je index poptávky?">
-                Index poptávky = počet přihlášek ÷ kapacita. Hodnota 2× znamená, že o každé místo se ucházejí 2 uchazeči.
-                Celorepublikový průměr v roce 2026 je <strong>2,95×</strong>. Index nad 3× signalizuje vysokou konkurenci.
+                Index poptávky = počet přihlášek ÷ kapacita. Hodnota 2× znamená dvě přihlášky na místo. Nejde o osobní pravděpodobnost přijetí. V našem vymezeném souboru 2026 je index {totals.nationalIndex2026.toLocaleString('cs-CZ', { maximumFractionDigits: 2 })}×.
               </ExplainerBox>
-              <ExplainerBox title="Co jsou % skóre CJ a MA?">
-                CERMAT reportuje výsledky přijímacích zkoušek (JPZ) jako procentuální skóre: 0–100 % za český jazyk
-                a 0–100 % za matematiku. Součet CJ+MA má tedy rozsah 0–200. <strong>Nezaměňujte s body</strong> —
-                například 69 % v češtině neznamená 69 bodů z 50, ale 69 % z maximálního možného skóre daného roku.
-                Zobrazený průměr platí pro přijaté uchazeče; uchazeči, kteří se nedostali, mívají skóre nižší.
-                JPZ píší gymnázia, lycea a SOŠ s maturitou. SOU (učiliště) JPZ nepíší.
+              <ExplainerBox title="Co znamená zobrazené skóre?">
+                Procentní skór CERMAT dělíme dvěma na škálu 0–50 za předmět a 0–100 za ČJ+MA. U upravených testů nejde o původní body. Průměry za typ školy jsou nevážené průměry oborů; průměr přijatých není hranicí přijetí.
               </ExplainerBox>
-              <ExplainerBox title="Co znamená pořadí (percentil) v ČR?">
-                Percentil vyjadřuje, jak náročná je škola ve srovnání se školami stejného typu v celé ČR.
-                90. percentil = těžší přijímačky než 90 % srovnatelných škol. Zobrazená hodnota „top X %"
-                říká, do kolika procent nejtěžších škol daná škola patří.
+              <ExplainerBox title="Co znamená pořadí v ČR?">
+                Pořadí srovnává průměrné skóre přijatých v zahrnutých oborech stejného typu. Nehodnotí kvalitu výuky ani obtížnost konkrétního přijímacího řízení.
               </ExplainerBox>
-              <ExplainerBox title="Proč mohou chybět data 2026 u některých škol?">
-                Data 2026 pocházejí ze dvou zdrojů: přihlášky (CERMAT data.cermat.cz, 1. kolo) a výsledky (CERMAT výsledky).
-                Obory bez JPZ (učiliště, SOU) data o přihláškách v systému nemají. U nových oborů otevřených v 2026
-                nebo přejmenovaných oborů může dojít k neshodě ID – v takovém případě zobrazujeme data z roku 2025.
+              <ExplainerBox title="Proč mohou chybět data 2026?">
+                Tento přehled spojuje historické obory 2025 s denními nezkrácenými obory s JPZ z roku 2026. CERMAT zveřejňuje i obory bez JPZ, ale zde je zatím nezahrnujeme. Nová nebo přejmenovaná zaměření nepárujeme odhadem; chybějící údaj není nula.
               </ExplainerBox>
-              <ExplainerBox title="Přihlášky ≠ odmítnuté osoby">
-                Každý uchazeč může od roku 2024 podat v 1. kole až <strong>3 přihlášky</strong> (a navíc až 2 talentové).
-                Proto je počet přihlášek 2–3× vyšší než počet uchazečů. Skutečný počet odmítnutých osob
-                je tedy podstatně nižší než rozdíl (přihlášky − přijatí). Index poptávky 3× tak ve skutečnosti znamená
-                spíše 1–1,5 uchazeče na místo, ne tři.
+              <ExplainerBox title="Přihlášky nejsou unikátní osoby">
+                Jeden uchazeč může podat více přihlášek. Rozdíl mezi přihláškami a přijatými proto nelze přepočítat na počet nepřijatých dětí pevným koeficientem. Přihlášky jednotlivých priorit nejsou příslibem přijetí.
               </ExplainerBox>
             </div>
           </section>

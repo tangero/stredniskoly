@@ -3,7 +3,12 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SchoolSearch } from '@/components/SchoolSearch';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
-import { getAllSchools, getAllSchoolsForSearch, getAllKraje } from '@/lib/data';
+import { getAllSchoolsForSearch, getAllKraje } from '@/lib/data';
+
+export const metadata = {
+  title: 'Výběr střední školy a kalendář přijímaček 2027',
+  description: 'Termíny přijímaček 2027 podle MŠMT a historické výsledky škol 2024–2026. Prozkoumej obory, porovnej výsledky a naplánuj přihlášky.',
+};
 
 export default async function HomePage() {
   const schools = await getAllSchoolsForSearch();
@@ -21,69 +26,29 @@ export default async function HomePage() {
       <section className="py-16 md:py-20" style={{ backgroundColor: '#ffffff' }}>
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight" style={{ color: '#28313b' }}>
-            Najdi si svou střední školu <br /> a výsledky přijímaček 2026
+            Najdi si svou střední školu <br /> připrav se na přijímačky 2027
           </h1>
 
-          {/* Výsledky 2026 — dvoupanelová sekce hned pod nadpisem */}
-          <div className="mb-8" style={{
-            background: 'linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%)',
-            borderRadius: '12px',
-            padding: '24px',
-            textAlign: 'left',
-          }}>
-            <div style={{ fontSize: '10px', color: '#60a5fa', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '6px' }}>
-              Novinky · 15. května 2026
-            </div>
-            <h2 className="font-black mb-1" style={{ fontSize: '20px', color: '#ffffff' }}>
-              Víme, kolik bodů stačilo na každou školu v Česku
-            </h2>
-            <p className="mb-5" style={{ fontSize: '13px', color: '#94a3b8' }}>
-              CERMAT zveřejnil skóre přijatých uchazečů. 3&nbsp;080 škol, aktuální data.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <Link
-                href="/skoly"
-                className="block no-underline p-4 transition-opacity hover:opacity-90"
-                style={{ background: 'rgba(34,197,94,0.10)', border: '1px solid rgba(34,197,94,0.30)', borderRadius: '8px' }}
-              >
-                <div style={{ fontSize: '9px', color: '#86efac', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
-                  📊 Výsledky konkrétní školy
-                </div>
-                <div className="font-black mb-2" style={{ fontSize: '15px', color: '#ffffff', lineHeight: 1.3 }}>
-                  Kolik bodů stačilo na vaši školu?
-                </div>
-                <div className="mb-4" style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.5 }}>
-                  Najdi školu, zjisti průměrné skóre přijatých uchazečů a srovnej s loňskem.
-                </div>
-                <div className="inline-block font-bold" style={{ background: '#22c55e', color: '#fff', fontSize: '12px', padding: '8px 16px', borderRadius: '6px' }}>
-                  Hledat školu →
-                </div>
+          <div className="mb-8 rounded-xl bg-slate-900 p-6 text-left text-white">
+            <p className="text-blue-300 text-sm mb-2">PŘIJÍMAČKY 2027</p>
+            <h2 className="text-2xl font-bold mb-3">Termíny už známe. Výběr školy může začít.</h2>
+            <p className="text-slate-300 mb-5">Přihlášky na SŠ: 1.–22. února 2027. Konzervatoře už 1.–30. listopadu 2026.</p>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <Link href="/prijimacky-2027" className="rounded-lg bg-blue-700 p-5 hover:bg-blue-600">
+                <h3 className="font-bold mb-2">Kalendář přijímaček 2027 →</h3>
+                <p className="text-sm text-blue-100">Přihlášky, JPZ, výsledky i druhé kolo. Termíny MŠMT a kalendář ke stažení.</p>
               </Link>
-              <Link
-                href="/vysledky/2026"
-                className="block no-underline p-4 transition-opacity hover:opacity-90"
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: '8px' }}
-              >
-                <div style={{ fontSize: '9px', color: '#93c5fd', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
-                  🎯 Chystáš se na přijímačky?
-                </div>
-                <div className="font-black mb-2" style={{ fontSize: '15px', color: '#ffffff', lineHeight: 1.3 }}>
-                  Co bude důležité pro přijímačky 2027?
-                </div>
-                <div className="mb-4" style={{ fontSize: '11px', color: '#94a3b8', lineHeight: 1.5 }}>
-                  Matematika vzrostla o 6 bodů. Žebříčky škol, trendy a rady pro přípravu.
-                </div>
-                <div className="inline-block font-bold" style={{ background: '#3b82f6', color: '#fff', fontSize: '12px', padding: '8px 16px', borderRadius: '6px' }}>
-                  Zobrazit přehled výsledků →
-                </div>
+              <Link href="/vysledky/2026" className="rounded-lg border border-slate-600 p-5 hover:bg-slate-800">
+                <h3 className="font-bold mb-2">Obnovené výsledky 2026 →</h3>
+                <p className="text-sm text-slate-300">Průměrné skóre přijatých podle CERMAT, platnost k 17. srpnu 2026. Průměr není hranice přijetí.</p>
               </Link>
             </div>
           </div>
-
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto" style={{ color: '#818c99' }}>
-            Přehledná data všech středních škol a maturitních oborů v České republice.
-            Pozor: nejsou zde školy, kde se dělají jen talentové zkoušky! Chybí konzervatoře, sportovní a umělecké školy, cca 130 škol, nemají jednotné přijímačky.
-            Simulátor, kam se dostanete podle výsledků zkoušek nanečisto využívá reálná data z jednotných přijímacích zkoušek. Autor: <a href="https://cs.wikipedia.org/wiki/Patrick_Zandl" style={{ color: '#0074e4' }}>Patrick Zandl</a>, kvůli svým dětem.
+          <p className="text-lg mb-8 max-w-2xl mx-auto text-slate-600">
+            Prozkoumej obory s jednotnou přijímací zkouškou a jejich historické výsledky.
+            Přehled zatím nepokrývá všechny formy studia ani obory bez JPZ, například učební obory a konzervatoře.
+            Simulátor porovnává cvičné skóre s minulými výsledky; přijetí v roce 2027 závisí na kritériích školy a výsledcích uchazečů.
+            Autor: <a href="https://cs.wikipedia.org/wiki/Patrick_Zandl" className="text-blue-700">Patrick Zandl</a>, kvůli svým dětem.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -120,7 +85,7 @@ export default async function HomePage() {
               <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
             </Link>
             <p className="mt-1 text-sm" style={{ color: '#818c99' }}>
-              Průměrné skóre ČJ+MA přijatých na každé škole. Data CERMAT, 15. 5. 2026.
+              Průměrné skóre přijatých v denních nezkrácených oborech s JPZ. Data CERMAT k 17. 8. 2026.
             </p>
           </div>
 
@@ -164,7 +129,7 @@ export default async function HomePage() {
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 mt-12">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold" style={{ color: '#28313b' }}>{totalSchools.toLocaleString('cs-CZ')}</div>
-              <div className="text-sm" style={{ color: '#818c99' }}>Škol a oborů</div>
+              <div className="text-sm" style={{ color: '#818c99' }}>Škol v historickém přehledu</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold" style={{ color: '#28313b' }}>{totalKraje}</div>

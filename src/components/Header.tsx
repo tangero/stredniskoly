@@ -48,6 +48,7 @@ export function Header() {
   const router = useRouter();
 
   const navLinks = [
+    { href: '/prijimacky-2027', label: 'Kalendář 2027' },
     { href: '/moje-sance', label: 'Moje šance' },
     { href: '/simulator', label: 'Simulátor' },
     { href: '/skoly', label: 'Analýza škol' },
@@ -192,7 +193,7 @@ export function Header() {
     <>
       {/* Navbar */}
       <nav className="bg-white shadow-md relative z-50" style={{ height: '72px' }}>
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 h-full flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 h-full flex items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 no-underline shrink-0">
             <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -207,7 +208,7 @@ export function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-5">
+          <div className="hidden xl:flex items-center gap-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -235,7 +236,7 @@ export function Header() {
             {/* Hamburger */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 -mr-2 rounded-lg transition-colors"
+              className="xl:hidden p-2 -mr-2 rounded-lg transition-colors"
               style={{ color: '#28313b' }}
               aria-label="Otevřít menu"
               aria-expanded={isMenuOpen}
@@ -253,7 +254,7 @@ export function Header() {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="lg:hidden bg-white border-t shadow-lg" style={{ borderColor: '#e0e6ed' }}>
+          <div className="xl:hidden bg-white border-t shadow-lg" style={{ borderColor: '#e0e6ed' }}>
             <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link

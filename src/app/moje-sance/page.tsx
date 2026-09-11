@@ -6,11 +6,11 @@ import { MojeSanceClient } from './MojeSanceClient';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
 
 export const metadata: Metadata = {
-  title: 'Moje šance – kalkulačka přijetí na střední školu 2026',
-  description: 'Zadejte školy, na které se hlásíte, a zjistěte své šance na přijetí. Porovnání přihlášek 2026 s historickými daty.',
+  title: 'Moje šance – historická konkurence na středních školách',
+  description: 'Porovnejte historické přihlášky, kapacity a výsledky vybraných oborů. Data 2026 nejsou osobní pravděpodobností přijetí v roce 2027.',
   openGraph: {
-    title: 'Moje šance – kalkulačka přijetí | Přijímačky na střední školy',
-    description: 'Zjistěte, jaké máte šance na přijetí na vybrané střední školy v roce 2026.',
+    title: 'Moje šance – srovnání historických dat',
+    description: 'Srovnání historické konkurence u vybraných oborů středních škol.',
   },
 };
 

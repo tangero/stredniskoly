@@ -1,3 +1,4 @@
+import { normalizeSchoolKey, uniqueSchoolIndex } from './school-key';
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -155,21 +156,23 @@ export async function getCityStats(mestoNazev: string): Promise<CityStats | null
 
   const all2024: RawSchool[] = schoolsData['2024'] || [];
   const all2025: RawSchool[] = schoolsData['2025'] || [];
-  const apps2026Map = new Map<string, RawSchool>(
-    (apps2026Parsed.data || []).map((r: RawSchool) => [r.id, r])
-  );
+  const apps2026Map = uniqueSchoolIndex<RawSchool>(apps2026Parsed.data || [], r => r.id);
+  const cermatIndex = uniqueSchoolIndex(Object.entries(cermat2026), ([key]) => key);
 
   const city2024 = all2024.filter(s => s.obec === mestoNazev);
   const city2025 = all2025.filter(s => s.obec === mestoNazev);
+  const unambiguousHistory = uniqueSchoolIndex(all2025, r => r.id);
 
   const map2024 = new Map<string, RawSchool>(city2024.map(s => [s.id, s]));
-  const map2025 = new Map<string, RawSchool>(city2025.map(s => [s.id, s]));
 
   // Build per-school rows (based on 2025 as primary)
   const rows: CitySchoolRow[] = city2025.map(s25 => {
     const s24 = map2024.get(s25.id);
-    const app26 = apps2026Map.get(s25.id);
-    const cer26 = cermat2026[s25.id];
+    const key = normalizeSchoolKey(s25.id);
+    // Starý export může mít stejné ID pro více nabídek; nesmíme zdvojit údaje 2026.
+    const canMatch = unambiguousHistory.has(key);
+    const app26 = canMatch ? apps2026Map.get(key) : undefined;
+    const cer26 = canMatch ? cermatIndex.get(key)?.[1] : undefined;
 
     const slug = `${s25.redizo}-${slugify(s25.nazev)}-${slugify(s25.obor)}`;
 
