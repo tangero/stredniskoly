@@ -1,6 +1,6 @@
 # P0 dat na kartách a návaznost O-13
 
-Verze 1.1, 11. 9. 2026. **Implementováno a lokálně ověřeno; veřejná přejímka čeká na nasazení. P0/O-13 zatím neuzavíráme.**
+Verze 1.2, 11. 9. 2026. **Nasazeno a veřejně ověřeno. P0 publikačních vad a celowebové O-13 uzavřeny v rozsahu níže. Aktualizace celého katalogu a nabídky 2027 dokončená není.**
 
 ## Dodaný rozsah
 
@@ -31,9 +31,13 @@ Souběžně zahájena inventura: `podklady/migrace-katalogu-2027/` obsahuje 1 00
 
 ## Veřejná přejímka
 
-Čeká na nasazení. Doplnit commit/PR, stav nasazení a běh integrační sady na `https://www.prijimackynaskolu.cz`; teprve potom uzavřít P0 a celowebové O-13.
+Dokončena 11. 9. 2026 na `https://www.prijimackynaskolu.cz`. PR #81 a #82 sloučeny; aplikační commit `04c369fb7a4d9b5e360dfb76260932e92c75524c`. Vercel deployment `dpl_GVJ5hgb9y9k5pTG3XZ7mSbTHgMaZ` je READY s produkčními aliasy včetně www.prijimackynaskolu.cz.
+
+Všech **26 veřejných integračních kontrol prošlo** (0 selhání). Mobilní prohlížeč potvrzuje 36,1 /50 a 30,1 /50 bez numerického minima v hlavičce. Na záložce Škola jsou staré údaje v zavřeném archivu s upozorněním na neověřený rok 2027; kontrola i při šířce 1440 px. Bez vodorovného přetékání. Důkazy: `podklady/audit-dat-karet-2027/p0-verejna-prejimka/` (výstup testů, strojový záznam, snímek mobilu).
+
+Tím uzavíráme P0 publikačních oprav A-02 až A-07 a pokračování O-13. Toto rozhodnutí se neopírá jen o úspěšný build nebo jeden profil: matice zahrnuje přehledy, detail, průvodce, regionální souhrny, exporty, výsledkový a dopravní kontrakt. Katalog A-01 a P1 části jednotlivých nálezů zůstávají otevřené.
 
 
-### Doplnění závěrečné kontroly
+### Historie v1.1 — doplnění závěrečné kontroly před přejímkou
 
 PR #81 prošlo standardním Vercel buildem a bylo sloučeno (`3eb9f1374029bdd2d7bf77b8cbc0ea539345efaf`). Před uzavřením se rozsah doplňuje o souhrnné karty regionů: neověřený průměr minimálních bodů je nahrazen počtem přihlášek 2025 a odstraněn i z loaderu. Markdown označuje poměr přihlášek jako poptávku, nikoli obtížnost přijetí. Přejímka zahrnuje i `/regiony`, ne pouze tabulku konkrétního kraje. Starý nepoužívaný renderer priorit již neobsahuje osobní predikční text. P0 zůstává do veřejného ověření tohoto doplnění otevřené.

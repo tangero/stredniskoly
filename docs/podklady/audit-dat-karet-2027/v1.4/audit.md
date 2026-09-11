@@ -1,6 +1,6 @@
 # Audit dat na kartách škol a oborů
 
-Verze 1.5 · 11. 9. 2026 · P0 publikačních vad a O-13 nasazeny a veřejně přejaty. Katalog a nabídka 2027 zůstávají otevřené. Historické nálezy níže zachycují stav před opravou.
+Verze 1.4 · 11. 9. 2026 · realizace P0; veřejná přejímka zatím čeká na nasazení. Historické nálezy ze stavu `37ebfbc` zůstávají níže; aktuální stav viz dodávka P0.
 
 ## Závěr
 
@@ -212,8 +212,3 @@ Historie: v1.0 audit → v1.1 R1 → v1.2 R2 → v1.3 uzavření R3 a první imp
 ## Dodatek v1.4 — realizace P0
 
 Implementace a přejímací matice jsou v [dodávce P0](dodavka-p0-dat-karet-2027.md). Opraveny publikační cesty A-02 až A-07 v rozsahu P0. Veřejné uzavření zatím čeká na nasazení a kontrolu. P1 části nálezů ani celý katalog 2027 tím nejsou vyřešeny. Inventura katalogu A-01 je zahájena v `podklady/migrace-katalogu-2027/`; mapování nejsou automaticky potvrzena. Architektura omezeného kontraktu: ADR 0001. Verze v1.3 zachována v `podklady/audit-dat-karet-2027/v1.3/audit.md`.
-
-
-## Dodatek v1.5 — veřejné uzavření P0 a O-13
-
-PR #81 + #82, aplikační commit `04c369fb7a4d9b5e360dfb76260932e92c75524c`, produkce Vercel READY. Na veřejné doméně prošlo všech 26 integračních kontrol a kontrola mobilního/desktopového zobrazení. P0 publikačních vad A-02 až A-07 a celowebové O-13 jsou uzavřené; podrobná matice, limity a důkazy jsou v [dodávce P0 v1.2](dodavka-p0-dat-karet-2027.md). Neznamená to uzavření A-01 ani P1 částí ostatních nálezů a neznamená to kompletní data 2027. V1.4 zachována v `podklady/audit-dat-karet-2027/v1.4/audit.md`.
