@@ -1,0 +1,15 @@
+{
+  "deployment_id": "dpl_NKpQBRZaberGrkd7jZuia9K77sxo",
+  "state": "READY",
+  "target": "production",
+  "git_sha": "0e37ec68abe2b65097d36d951e343e69c09dfcf9",
+  "branch": "main",
+  "aliases": [
+    "stredniskoly.vercel.app",
+    "www.prijimackynaskolu.cz",
+    "prijimackynaskolu.cz",
+    "stredniskoly-tangeros-projects.vercel.app",
+    "stredniskoly-git-main-tangeros-projects.vercel.app"
+  ],
+  "fix_commit": "c51b3c97865f68916663a6c18e10bbcf2de47338"
+}

@@ -1,6 +1,6 @@
 # Přístup k Vercel Web Analytics
 
-Verze 1.2 / R3, ověřeno 11. 9. 2026. Stav: projekt a integrace ověřeny; čtení statistik čeká na přihlášení nebo export. Žádné naměřené hodnoty Vercelu dosud nepřevzaty.
+Verze 1.1 / R2, ověřeno 11. 9. 2026. Stav: projekt a integrace ověřeny; čtení statistik čeká na přihlášení nebo export. Žádné naměřené hodnoty Vercelu dosud nepřevzaty.
 
 ## Správný projekt
 
@@ -41,10 +41,8 @@ Po autorizaci nejprve ověřit účet/tým/projekt, přesný podporovaný endpoi
 
 ## R2: runtime logy nejsou totéž jako Web Analytics
 
-`vercel_get_runtime_logs` vrací stručný výpis bez UA/refereru. [Detail požadavku v dokumentaci](https://vercel.com/docs/logs/runtime#log-details) však uvádí Request User Agent. R2 dostupnost refereru v exportu ještě nepotvrdilo. **R3 ji již ověřilo:** původní NDJSON BetterStacku obsahuje UA i referer, takže hlášení o jejich absenci v drainu bylo opraveno. [Kontrola schématu](podklady/oponentura-2027-r3-betterstack.json) a [aktuální návrh dotazu](navrh-logovani-api-endpointu.md) odlišují přítomnost polí od úplnosti sběru. Živý účet BetterStacku a uložené dotazy zde nebyly ovládány.
+`vercel_get_runtime_logs` vrací stručný výpis bez UA/refereru. [Detail požadavku v dokumentaci](https://vercel.com/docs/logs/runtime#log-details) však uvádí Request User Agent. Ověřit skutečné pole v dashboardu, možnost exportu/drainu a rozsah sběru; pole může být zjednodušený název prohlížeče, nemusí být dostatečné pro klasifikaci. Dostupnost refereru zde nebyla potvrzena. Souběžné hlášení o BetterStacku tvrdí absenci UA i ve vzorku drainu; tuto službu tato práce nekontrolovala.
 
 Nový vzorek MCP obsahuje i statické HIT, takže všechny platformní logy nelze vydávat za záznamy jen proběhlých handlerů. Vlastní logování uvnitř cachované routy naopak kompletní CDN provoz nepokrývá. Vyhodnocení nuly musí zahrnout veřejné rewrite adresy, limity, období a pokrytí logu.
 
 Historie: v1.0 zachována ve snímku R2; v1.1 zpřesňuje doložený stav přístupu, opravuje místní identitu a odlišuje výpis konektoru od detailu zdroje. Důkazy a dispozice jsou v návrhu rozvoje §13, O-17/O-18.
-
-Doplnění v1.2 / R3: oponent stáhl tarifní vysvětlení 404; NDJSON BetterStacku nezávisle ověřeno, pole UA/referer skutečně přítomna. Přístup k Web Analytics se tím nezprovoznil. Předchozí návod v1.1 zachován ve snímku R3.

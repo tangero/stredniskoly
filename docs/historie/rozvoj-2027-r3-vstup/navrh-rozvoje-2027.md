@@ -1,10 +1,10 @@
 # Návrh rozvoje Přijímaček na školu pro přijímací řízení 2027
 
-**Verze 2.3 / R3 — vypořádání třetího kola, 11. 9. 2026.** Stav: revidované zadání k další oponentuře. Nejde o potvrzení opravy produkčního simulátoru ani o schválení dosud otevřených produktových voleb.
+**Verze 2.2.1 / R2 — opakované ověření O-19, 11. 9. 2026.** Stav: revidované zadání k další oponentuře. Nejde o potvrzení opravy produkčního simulátoru ani o schválení dosud otevřených produktových voleb.
 
 Sekce 1 a úvod sekce 2 zachycují audit před dodávkou `c9ae452`; aktuální návrh v sekcích 3–9 je upraven podle zjištění R1 a R2. Úplné [původní znění](historie/rozvoj-2027-r0/navrh-rozvoje-2027.md) je zachováno. Každá připomínka O-1 až O-14 a obě přílohy mají [vypořádání níže](#vyporadani-r1), včetně nesouhlasu a důkazů. Historie a pravidla dalšího kola jsou na konci.
 
-Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.7](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **O-13 zůstává otevřeným produkčním blokátorem:** odstranění zavádějících výstupů simulátoru je první opravná dodávka nezávislá na budoucí integraci Mého výběru. O-4 je navazující technický dluh. Aktuální [vypořádání R3](#vyporadani-r3) uvádí stav všech 21 ID. Výpadek OG obrázků O-19 je po nezávislé kontrole uzavřen; při vizuální kontrole vznikl nový O-21. V této revizi se upravují dokumenty a důkazy, aplikace ani nasazení se nemění.
+Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.6](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **O-13 zůstává otevřeným produkčním blokátorem:** odstranění zavádějících výstupů simulátoru je první opravná dodávka nezávislá na budoucí integraci Mého výběru. O-4 je navazující technický dluh. V tomto kole se mění zadání a podklady a opravuje místní propojení Vercelu, nikoli aplikace či nasazení. Aktuální [vypořádání R2](#vyporadani-r2) zahrnuje všechna ID O-1 až O-19; oponent v R2 výslovně přijal protidůkazy k O-1/O-3/O-5/O-6 a opravu označení MZ v O-2.
 
 Doporučení: po opravné dodávce pokračovat ověřenými profily a Mým výběrem. Do návrhu profilů přidat historii JPZ 2017–2023 a maturitní výsledky školy jako oddělené datové oddíly. Výzkum návaznosti vstupu a výstupu ověřit samostatně; propojení agregátů přes školu samo nedokládá kohortu ani přidanou hodnotu.
 
@@ -88,7 +88,7 @@ Původní analýza obsahovala záměny návštěv/akcí/zobrazení a několik ne
 
 Prověřit API `src/app/api/schools/search/route.ts` a jeho zpracování v simulátoru i souběžné odvozování v `src/lib/data.ts`: význam `min_body`, převody škál, minima jednotlivých předmětů, vazbu na konkrétní zaměření a odvozování `extra_body`. Rozdíl minim neurčuje další školní kritéria a `Math.max` dvou metodicky různých hodnot není validací. Školní body se mohou zobrazit až ze skutečných kritérií školy pro daný rok; bez nich zůstávají neznámé.
 
-**OG obrázky po R3:** HTTP 500 (O-19) opraveno commitem `c51b3c9`, nasazení i PNG ověřeny. Znovu neplánovat odstranění edge runtime. Nový [O-21](#r3-o-21) řeší chybějící české znaky, zastaralý rok v hlavním obrázku a překrytí textu simulátoru; zařadit do opravné vlny bez odkladu O-13. Obnovení konkrétního náhledu v cache sociální sítě je samostatná neověřená distribuční kontrola.
+**Doplnění S0 / O-19 po R2:** opravit a ověřit tři nefunkční OG obrázky (`/opengraph-image`, `/regiony/opengraph-image`, `/simulator/opengraph-image`). V pracovním stromu už běží souběžná oprava runtime; nezakládat duplicitní implementaci. Její lokální přítomnost není důkaz nasazení. Přejímka je uvedena u [O-19](#r2-o-19); tato oprava nesmí odložit odstranění zavádějících výstupů O-13.
 
 **Podmínky uzavření S0:** zkontrolované API a všechny větve rozhraní včetně vybraných oborů, doporučení a sdílených URL; ověření chybějících hodnot a více zaměření jedné školy; vhodné regresní testy, build a kontrola mobilu/desktopu; po nasazení kontrola veřejného výsledku. Samotná změna textu návrhu O-13 neuzavírá.
 
@@ -225,8 +225,7 @@ Původních 26–39 člověkodnů A–C je historický odhad před dodávkou, ni
 | Pořadí / balík | Zbývající obsah | Pracovní odhad |
 |---|---|---:|
 | S0 — současná zavádějící doporučení | O-13 celý tok simulátoru + odstranění mrtvých predikcí O-4; kontrola a nasazení | 2–4 člověkodny |
-| O-19 — dostupnost OG obrázků | Opraveno a ověřeno v R3 | Hotovo, znovu nepočítat |
-| O-21 — obsah a vzhled OG obrázků | České znaky, aktuální popis dat, odstranění překrytí | Nový oddělený rozsah; odhad doplnit při opravě |
+| S0 / O-19 — OG obrázky | Souběžná oprava runtime, ověření všech tří adres a metadat po nasazení | Zbývající práce zatím neodhadnuta; není zahrnuta v původních 2–4 dnech S0 |
 | M0 — měření | Ověření a základ opravy navigačního měření; definice událostí nových funkcí, jejich realizace patří do C | 1–2 člověkodny navíc |
 | B — data a profily | Identita nabídky, nepokryté obory, stavy 2027, ověřování školou a moderace; bez zopakování obnovy prvního kola a kalendáře | 8–13 člověkodnů |
 | C — Můj výběr | Ukládání, porovnání, plán, účet bez hesla, záloha a náhled; dle uzavřeného PRD | 10–16 člověkodnů |
@@ -234,7 +233,7 @@ Původních 26–39 člověkodnů A–C je historický odhad před dodávkou, ni
 | V — studie vstupu/výstupu | Protokol, párování skupin, citlivost a rozhodnutí o publikaci; bez slibu kalibrované přidané hodnoty | 3–5 analytických dnů + metodická oponentura |
 | D — příprava | Rozbor, plán, původní úlohy, tutor; rozsah dosud neimplementován | Původní pracovní odhad 20–35 člověkodnů + 40–80 hodin učitele, nutno zpřesnit |
 
-S0+B+C: **20–33 zbývajících člověkodnů** podle rozsahu R1; s novým M0 **21–35**, **bez nového O-21**. O-19 je hotové a v těchto odhadech se znovu nepočítá. Pro O-21 doplnit odhad podle rozsahu typografické a obsahové opravy; nepřebírat původní odhad samotné změny runtime. Dny M0 nejsou naměřená spotřeba, případná změna archivace Matomo není součástí odhadu. H a V jsou oddělené volitelné rozšíření; neblokují základní ukládání, jejich datové místo v profilu se navrhne už nyní. Čísla nejsou příslibem termínu a jejich přesnost nebyla měřena. Návrh nemá oporu pro tvrzení, že všechno párování opravíme za několik hodin.
+S0+B+C: **20–33 zbývajících člověkodnů** podle rozsahu R1; s novým M0 **21–35**, stále **bez nově zjištěného O-19**. Před závazným termínem započítat zbývající přejímku souběžné opravy O-19; její spotřeba ani dokončení zatím nejsou doložené. Dny M0 nejsou naměřená spotřeba, případná změna archivace Matomo není součástí odhadu. H a V jsou oddělené volitelné rozšíření; neblokují základní ukládání, jejich datové místo v profilu se navrhne už nyní. Čísla nejsou příslibem termínu a jejich přesnost nebyla měřena. Návrh nemá oporu pro tvrzení, že všechno párování opravíme za několik hodin.
 
 S0 připravit jako následující opravnou dodávku, nezávisle na integraci simulátoru do Mého výběru. Po jejím uzavření implementovat pilot podle PRD; návrh ovládání a inventura dat mohou běžet souběžně. V lednu ověřovat vyhlášená kritéria 2027, další sezónní priority řídit kalendářem. Kalendář již byl publikován a znovu se nepočítá jako budoucí úkol.
 
@@ -358,8 +357,6 @@ Předchozí revize 2.0 / R1 je commit `5a0f893`, její přesný snímek i PRD v0
 <a id="vyporadani-r2"></a>
 ## 13. Vypořádání oponentury — kolo R2
 
-Historický stav R2; aktuální krátké dispozice a následná uzavření jsou v [R3](#vyporadani-r3). Pozdější důkazy nepřepisují tehdy zaznamenané výsledky.
-
 Předmět: oponentura v2.0/R2, doplněná během práce na v2.1/R2 o O-19 k návrhu v2.1, PRD v0.5 a analýze v1.1. Mezitím vznikla analýza v1.2 s doplněním Vercelu; její čísla A1 se nezměnila. [Přesné vstupy R2 a SHA-256](historie/rozvoj-2027-r2-vstup/manifest.json) zachovávají i uživatelovu oponenturu před touto odpovědí. Toto je odpověď autora, nikoli nové schválení oponentem.
 
 ### Důkazy R2
@@ -462,64 +459,3 @@ Počet návštěv ze sociálních sítí potvrzuje existující distribuční ka
 **19/19 ID má aktuální dispozici**, což neznamená 18 opravených či oponentem uzavřených vad. R3 má ověřit R2-E1 k O-15/O-16 a rozsah protidůkazů dokumentace Vercelu k O-17/O-18. R3 musí zvlášť doložit případné dokončení souběžné opravy O-19. Neuzavřené důkazní rozpory mají uvedeny požadované podklady, nebrání diskusi nad PRD. **O-13/S0 zůstává blokátorem implementace pilotu Mého výběru**; O-4 se řeší v téže opravné dodávce. O-19 je další otevřená produkční vada se souběžnou opravou a vlastní přejímkou. K uzavření S0 je stále nutný commit aplikace, příslušné kontroly a ověření veřejného výsledku. Toto dokumentační kolo je nenahrazuje. D1/D2 se nemění, D3–D8 se nepovažují za nově schválené.
 
 Doplnění historie **2.2.1 / R2**: opakované ověření veřejných OG adres a skutečných metadat po zprávě uživatele o opravě. Předchozí odpověď v2.2 je commit `b65d230`; stav O-19 se nemění, nové důkazy zachovávají čas kontroly.
-
-
-<a id="vyporadani-r3"></a>
-## 14. Vypořádání oponentury — kolo R3
-
-**Stav: připomínky R3 zapracovány; O-13 zůstává blokátorem, HTTP výpadek O-19 je uzavřen.** Aktuální návrh v2.3 navazuje na oponenturu v3.0. [Vstupní dokumenty se SHA-256](historie/rozvoj-2027-r3-vstup/manifest.json) zachovávají celý posudek i předchozí návrh v2.2.1. Následující tabulka je aktuální souhrn; §10 a §13 jsou historie.
-
-| ID | Aktuální stav po R3 |
-|---|---|
-| O-1 | Metodický spor uzavřen oponentem; historický import H zůstává plánovaný. |
-| O-2 | Označení a období MZ vyřešeno; import a mapování nejsou hotové. |
-| O-3 | Kohortní závěr stažen; případná studie je popisná. |
-| O-4 | Otevřený technický dluh v S0; predikční pole stále v kódu. |
-| O-5 | Plošné sloučení klíče staženo; neprovádět. |
-| O-6 | Spor o původ heuristiky uzavřen; podmínky budoucích adaptérů platí. |
-| O-7 | Dříve uzavřeno, R3 bez nových výhrad. |
-| O-8 | Dříve uzavřeno, R3 bez nových výhrad. |
-| O-9 | Přepočet zbytku zapracován; odhad není naměřená pracnost. |
-| O-10 | Rozlišení nedoložené a vydané implementace vyřešeno. |
-| O-11 | Zásada bez univerzálního skóre zachována. |
-| O-12 | Zásady a vypořádání příloh R1 zachovány, bez nových výhrad. |
-| O-13 | **Otevřený produkční blokátor.** Nový deployment stále doručuje stejný vadný JS. |
-| O-14 | Datová vazba PRD přijata; autentizace stále není implementovaná. |
-| O-15 | **Spor uzavřen.** Příčinou rozdílného dotazu byl začátek 1. vs. 11. února; A1 nepřepisovat. |
-| O-16 | Metodické upřesnění přijato; příčina 322 vstupů zůstává otevřená. |
-| O-17 | Tarifní vysvětlení 404 staženo; přístup k Web Analytics účtu stále neověřen. |
-| O-18 | **Přítomnost UA/refereru nezávisle potvrzena v NDJSON.** Vlastní logovací modul neplánovat; zbývá dotaz a kontrola pokrytí. |
-| O-19 | **HTTP 500 uzavřeno jako opravené.** Nové vizuální vady evidovány samostatně jako O-21. |
-| O-20 | **Přijato a ověřeno:** 1.–10. 2. je nula v reportu, nikoli důkaz nulové návštěvnosti webu. |
-| O-21 | **Nový nález autora R3:** chybějící glyfy, zastaralý obsah a překrytí OG obrázků; zatím neopraveno. |
-
-### Důkazy a krátké odpovědi k měněným bodům
-
-<a id="r3-o-15"></a>
-**O-15 — uzavřeno, přijímáme opravu parametrů oponenta.** [R3-E1](podklady/oponentura-2027-r3-overeni.json) reprodukuje při stejném konci 11. 9. Others **12 139 vs. 12 210**, prefix v obou případech **14 464**. Při konci 10. 9. je rozdíl **12 136 vs. 12 206**, prefix **14 458** v obou dotazech. Datum začátku mění složení Others i bez návštěv navíc; příčinu interní archivace tím netvrdíme jako prokázanou. Všechny dotazy zde používají `language=en`; jazykový experiment oponenta nebyl opakován a není pro přijetí závěru nutný. Původních 12 137 patří ke zmrazenému A1, nepřepisuje se novým průběžným dnem.
-
-<a id="r3-o-16"></a>
-**O-16 — upřesnění přijato oběma stranami.** Rozdíl 322 není vysvětlen změnami +13/+15. Původní i opakované kontrolní součty zůstávají v R2-E1; přesný konverzní trychtýř na nich nestavět. V R3 jej znovu neoznačujeme za opravený.
-
-<a id="r3-o-17"></a>
-**O-17 — spor o příčinu uzavřen stažením domněnky o tarifu.** Neověřený přístup k Web Analytics je samostatná otevřená provozní otázka; nový důkaz funkčního API R3 nedodalo. Místní identita projektu je již opravena z R2.
-
-<a id="r3-o-18"></a>
-**O-18 — doloženo, vlastní modul odpadá.** [R3-E2](podklady/oponentura-2027-r3-betterstack.json) ověřuje původní export: 14 logových řádků, 43 polí, UA vyplněn ve 14 a referer v devíti. Je v něm veřejná cesta `/skola/[slug].md` s 200 i `facebookexternalhit` u dřívějšího 500. To je doklad potřebných polí, ne objemu provozu. Vzorek má 12 různých request ID a všechny řádky mají MISS — **tento export sám úplné pokrytí HIT nepotvrzuje**. Před reportováním ověřit deduplikaci, veřejné rewrite cesty, retenci a úplnost exportu. Soukromý originál zůstává mimo Git; podklad obsahuje jen schéma, součty a anonymizované příklady. [Návrh logování v1.3](navrh-logovani-api-endpointu.md) už předepisuje dotaz nad existujícím drainem místo vývoje modulu/databáze. Uložený dotaz v BetterStacku v tomto kole nevznikl.
-
-<a id="r3-o-19"></a>
-**O-19 — uzavřena technická vada HTTP 500; celá vizuální přejímka tím potvrzena není.** [R3-E3](podklady/oponentura-2027-r3-deployment.json) dokládá READY produkci `dpl_NKpQBRZaberGrkd7jZuia9K77sxo` na commitu `0e37ec6`, jehož předkem je oprava `c51b3c9`. [R3-E1](podklady/oponentura-2027-r3-overeni.json) potvrzuje všech šest GET (tři přímé a tři z metadat), 200, `image/png`, plné dekódování PNG knihovnou Pillow a 1200×630. Velikosti 49 631 / 59 147 / 49 266 B souhlasí s R3. Oponentova kontrola samotné hlavičky byla doplněna dekódováním i vizuální kontrolou; ta našla O-21. Proto přijímáme uzavření dostupnosti, nikoli tvrzení, že celý vzhled je bez vady. Konkrétní stav cache Facebooku ani výsledek Sharing Debuggeru zde nebyl ověřen; nelze tvrdit, že všechny starší náhledy jsou prázdné. Obnova externí cache zůstává oddělený úkon, v této práci neprovedený.
-
-<a id="r3-o-20"></a>
-**O-20 — přijato a zapracováno do analýzy v1.4 §2.** R3-E1 pro `2026-02-01,2026-02-10` vrací nulu návštěv, akcí i zobrazení. To je výsledek měření, ne důkaz, že web neměl návštěvníky nebo že měření bylo před založením webu úplné. Únorový vrchol nedopočítáváme.
-
-<a id="r3-o-21"></a>
-**O-21 — nový otevřený nález, priorita střední; neodkládá O-13.** Veřejné obrazy uložené s hashem dokládají: [hlavní obrázek](podklady/oponentura-2027-r3-og-home.png) nahrazuje některé české znaky obdélníky a stále označuje 2025 za aktuální data; [simulátor](podklady/oponentura-2027-r3-og-simulator.png) překrývá spodní titulek s patičkou. [Regiony](podklady/oponentura-2027-r3-og-regiony.png) toto poškození nevykazují. Nejde o chybu PNG dekodéru ani chybovou HTML odpověď. Zadání opravy: ověřený font se všemi českými glyfy, rozestupy bez překrytí a pravdivé označení datového roku/rozsahu; u simulátoru sladit text i význam bodů s opravou O-13. Přejímka: nové veřejné PNG všech tří cest prohlédnout v plné velikosti i zmenšeném náhledu, znovu ověřit metadata a HTTP. O-21 není opravou implementovanou tímto dokumentem.
-
-**Připomínka ke čtivosti — přijato.** Aktuální stav je nahoře v tabulce a na začátku každého měněného bodu; staré dlouhé odpovědi zůstávají pouze jako označená historie.
-
-### Historie R3 a další krok
-
-Vstup: oponentura v3.0 a předchozí dokumenty na `0e37ec6`, zachované v manifestu. Výstup: návrh **v2.3**, PRD **v0.7**, analýza **v1.4**, oponentura **v3.1** s odpovědí autora a návrh logování **v1.3**. Identifikátor revize pro Git: `rozvoj-2027-r3`. 20 původních ID má aktuální dispozici; nová vizuální kontrola přidává O-21. Oponentní potvrzení nové odpovědi a O-21 zůstává pro R4.
-
-**Následuje oprava S0/O-13 a odstranění dluhu O-4; diskuse o ovládání může pokračovat.** O-21 je oddělená oprava ve stejné vlně, nikoli důvod odkládat O-13. D1/D2 platí, dosud otevřené produktové volby se tím neschvalují. Žádné úplné uzavření produkčních blokátorů zatím nenastalo.

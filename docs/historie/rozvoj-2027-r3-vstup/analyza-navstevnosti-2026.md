@@ -1,6 +1,6 @@
 # Analýza návštěvnosti 2026 a její dopad na rozvoj 2027
 
-Verze **1.4 / R3**, doplněno 11. 9. 2026 o R3: příčinu odlišného dotazu Others, nulový report 1.–10. února, ověřený export drainu a nový stav OG obrázků. Přímé čtení statistik Vercelu autorem této analýzy zatím neověřeno. Číselný základ byl ověřen 11. 9. 2026 přes Matomo API, `idSite=7`, časové pásmo Europe/Prague. Období **11. 2.–11. 9. 2026 včetně**, poslední den průběžný. [Původní analýza v1.0](historie/navstevnost-a1/analyza-navstevnosti-2026.md) je zachována; změny a rozdíly jsou na konci. Závěry zde rozlišují měřená data, interpretace a navržené kroky.
+Verze **1.3 / R2**, doplněno 11. 9. 2026 o vypořádání R2 (Others, rozdíly součtů, Vercel a OG obrázky). Přímé čtení statistik Vercelu autorem této analýzy zatím neověřeno. Číselný základ byl ověřen 11. 9. 2026 přes Matomo API, `idSite=7`, časové pásmo Europe/Prague. Období **11. 2.–11. 9. 2026 včetně**, poslední den průběžný. [Původní analýza v1.0](historie/navstevnost-a1/analyza-navstevnosti-2026.md) je zachována; změny a rozdíly jsou na konci. Závěry zde rozlišují měřená data, interpretace a navržené kroky.
 
 ## 1. Co z toho měníme v projektu
 
@@ -26,7 +26,7 @@ Verze **1.4 / R3**, doplněno 11. 9. 2026 o R3: příčinu odlišného dotazu Ot
 
 **INTERPRETACE.** Únor a květen mají v dostupném období vyšší objem než léto. Poměr naměřených únorových návštěv ke srpnovým je **6,42×**, nikoli osmkrát. Únor je přitom jen od 11. dne. Květen měl 4 435 identifikovaných návštěvníků, únor 4 969; tvrzení v1.0, že květen má nejvíce unikátních, neplatí. Identifikované návštěvníky nelze sčítat mezi měsíci ani vydávat za osoby.
 
-Souvislost vrcholů s přihláškami a výsledky je pravděpodobná interpretace načasování, nikoli prokázaná příčina. Nemáme podzim 2025 ani říjen–prosinec 2026, takže **růst od listopadu data nedokládají**. Založení webu v Matomo 11. 2. a první dostupný únorový report nepotvrzují úplnost každého dne sledování. Dotaz za **1.–10. 2. 2026 vrací nula návštěv, nula akcí a nula zobrazení**; měření v tomto intervalu nic nevykazuje, což nedokládá, že web neměl návštěvníky. Jde o ověřené doplnění O-20 v R3, nikoli zpětné potvrzení úplnosti sběru. Nezměřený provoz na začátku února nelze dopočítat jako jistý vyšší vrchol.
+Souvislost vrcholů s přihláškami a výsledky je pravděpodobná interpretace načasování, nikoli prokázaná příčina. Nemáme podzim 2025 ani říjen–prosinec 2026, takže **růst od listopadu data nedokládají**. Založení webu v Matomo 11. 2. a první dostupný únorový report nepotvrzují úplnost každého dne sledování. Chybějící začátek února nelze automaticky dopočítat jako jistý vyšší vrchol.
 
 **DOPAD.** Opravu S0 připravit nyní; **31. 10. 2026 je doporučený nejzazší interní termín před listopadovými přihláškami na konzervatoře**, odvozený z kalendáře, nikoli predikce návštěvnosti. Mezi roky zatím nesrovnávat. Při běžném reportování používat dokončené dny a srovnatelně dlouhá období; sezónní pokles nevykládat automaticky jako zhoršení produktu.
 
@@ -46,7 +46,7 @@ Simulátor je v tomto srovnání třetí konkrétní funkční oblast za hlavní
 
 Samotné `/simulator` má 3 286 zobrazení, 2 768 návštěv této URL a 2 165 vstupů; `?srovnani=1` má 776, 647 a 487. Návštěvy URL nelze sečíst jako unikátní návštěvy obou variant — tentýž návštěvník mohl v jedné relaci otevřít obě. Totéž platí pro součet návštěv jednotlivých profilů. Původní měsíční sloupec „Návštěv celkem“ neodpovídá `VisitsSummary.nb_visits`; většina hodnot odpovídá součtu návštěv URL. U prvních čtyř měsíců se navíc nepodařilo přesná čísla v1.0 reprodukovat z úplného exportu; původní parametry nad rámec přílohy a surová odpověď nebyly doloženy. Nenahrazujeme je domnělou příčinou.
 
-**DATA.** V `/skola/ - Others` je 12 137 zobrazení. Toto není celý souhrn profilů a skupinu nelze rozbalit jen změnou `filter_limit`. V1.0 uvedených 12 208 se nepodařilo reprodukovat jako součet všech profilů; snímek A1 dává pro prefix 14 462. R2 navrhovalo 12 208 přiřadit k Others; R3 dohledalo odlišný začátek dotazu 1. místo 11. února a návrh opravy stáhlo. Zmrazených 12 137 zůstává správně pro deklarovaný A1; detail nové reprodukce je v §12. Nejde o doklad růstu návštěvnosti od původní analýzy, ale o rozdíl vymezení/reprodukce. [Matomo — archivace do Others](https://matomo.org/faq/how-to/faq_54/).
+**DATA.** V `/skola/ - Others` je 12 137 zobrazení. Toto není celý souhrn profilů a skupinu nelze rozbalit jen změnou `filter_limit`. V1.0 uvedených 12 208 se nepodařilo reprodukovat jako součet všech profilů; snímek A1 dává pro prefix 14 462. R2 navrhuje 12 208 přiřadit k Others, ale zmrazená odpověď i nový dotaz potvrzují 12 137. Bez konkrétního odlišného řádku a času oponentova dotazu nelze změnu přijmout; podrobnosti a důkaz jsou v §11. Nejde o doklad růstu návštěvnosti od původní analýzy, ale o rozdíl vymezení/reprodukce. [Matomo — archivace do Others](https://matomo.org/faq/how-to/faq_54/).
 
 **DOPAD.** Nabídnout uložení u konkrétního oboru, po uložení malou akci „Otevřít Můj výběr“ a jasný stav „Uloženo v tomto prohlížeči“. Profil má fungovat samostatně i po vstupu z externího odkazu: vysvětlit školu/obor, stav roku 2027, zdroje a další krok. Je to navržená reakce na návštěvnost; report zatím neměří její účinnost. Na profily patří i opravy identity a interpretace, protože mají doložený dosah. Pořadí konkrétních škol z reportu s Others nevyvozovat.
 
@@ -120,7 +120,7 @@ Rutinní [přístup a příkazy](matomo-pristup.md) jsou připravené v `scripts
 | Květen má nejvíce unikátních | Únor 4 969, květen 4 435; opraveno. |
 | Měsíční zobrazení 16 739 atd. | Šlo o všechny akce; doplněn samostatný sloupec skutečných zobrazení. |
 | Návštěv celkem v tabulce kalkulaček | Nesprávný jmenovatel, nahrazen VisitsSummary; nepřesně reprodukovatelné hodnoty označeny. |
-| Profily souhrnně 12 208 zobrazení | Úplný součet prefixu 14 462, rozsah a Others uvedeny. V A1 příčina rozdílu nebyla doložena; R3 doložilo jiný počátek dotazu. Zmrazená čísla A1 zůstávají, viz §12. |
+| Profily souhrnně 12 208 zobrazení | Úplný součet prefixu 14 462, rozsah a Others uvedeny. Příčina rozdílu původního výpočtu nedoložena. O-15 v R2 tvrdí záměnu s Others 12 208; zmrazený i nový dotaz však potvrzují Others 12 137, viz §11. |
 | Druhá vstupní stránka po hlavní a profilech | Opraveno s vymezením funkčních skupin a konkrétních URL. |
 | Vracející se tráví nadprůměrně dlouho | 272 s proti 285 s celkem; tvrzení odstraněno. |
 | Přímé vstupy dokazují zapamatování a doporučení | Neprokázaná interpretace; nahrazena podmíněnou hypotézou. |
@@ -156,8 +156,6 @@ Uživatel doplnil [dashboard projektu za 30 dní](https://vercel.com/tangeros-pr
 
 ## 11. Vypořádání R2 a nové kontrolní snímky
 
-Historický stav R2; následné ověření a změny stavů jsou v §12.
-
 Předchozí analýza v1.2 je zachována ve [snímku R2](historie/rozvoj-2027-r2-vstup/analyza-navstevnosti-2026.md). Číselné tabulky A1 nadále popisují původní snímek, ne nejnovější stav průběžného dne. [Úplná odpověď na O-15 až O-19](navrh-rozvoje-2027.md#r2-o-15) obsahuje důkazy, rozporované závěry a podmínky uzavření.
 
 | Kontrola | Návštěvy | Zobrazení Actions / součet řádků | Vstupy řádků | Others `/skola/` | Rozdíl návštěvy−vstupy | Noví+vracející se−celkem |
@@ -180,16 +178,3 @@ Zdrojem je [auditní výstup](podklady/oponentura-2027-r2-matomo.json) s přesn�
 | Verze | Datum | Změna |
 |---|---|---|
 | 1.3 / R2 | 11. 9. 2026 | Reprodukce Others a součtů, zachování snímku A1, upřesnění Vercel přístupu/logů a doplnění vady OG obrázků. O-15 rozporováno důkazem; O-16 nezavírá neobjasněné rozdíly. |
-
-
-## 12. Doplnění R3 — rozsah dotazu, drain a náhledy
-
-**O-15/O-20 přijato:** nový [podklad R3-E1](podklady/oponentura-2027-r3-overeni.json) potvrzuje nulu v měření 1.–10. února a rozdílné Others při počátku 1. vs. 11. února. Při konci 11. září jde o 12 210 vs. 12 139, při konci 10. září o 12 206 vs. 12 136. Součet prefixu je v obou variantách stejného konce shodný. Pevný rozsah a zmrazený snímek jsou proto nutné; interní mechanismus změny archivované skupiny nebyl doložen. R3 stáhlo požadavek přepsat historické číslo A1.
-
-**O-18 ověřeno přímo z exportu:** [R3-E2](podklady/oponentura-2027-r3-betterstack.json) obsahuje 14 logových řádků a 43 polí včetně UA/refereru. Nezaměňovat 14 řádků za 14 stažení: request ID je jen 12. V tomto vzorku jsou pouze MISS; úplnost zachycení HIT vyžaduje další přejímku. Vlastní modul není kvůli těmto hlavičkám potřeba, zbývá uložený dotaz, retence a definice metrik. Primárním čtecím zdrojem návštěvnosti zůstává Matomo; API přístup Web Analytics tím není vyřešen.
-
-**O-19 HTTP výpadek uzavřen:** produkční PNG i skutečné metadatové odkazy fungují. **O-21 zůstává otevřené:** vizuální kontrola našla chybějící české znaky, zastaralý rok a překrytí textu; [doklady a zadání](navrh-rozvoje-2027.md#r3-o-21). Konkrétní cache Facebooku nebyla ověřena, dopad na prokliky neměříme. O-13 stále vyžaduje opravu.
-
-| Verze | Datum | Změna |
-|---|---|---|
-| 1.4 / R3 | 11. 9. 2026 | Nula zaznamenaná 1.–10. 2., rozřešený rozdíl parametrů O-15, ověřené schéma BetterStacku a aktualizace OG stavu. Původní v1.3 zachována ve snímku R3. |

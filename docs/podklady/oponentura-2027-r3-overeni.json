@@ -1,0 +1,483 @@
+{
+  "checked_at": "2026-09-11T09:46:47.820713+00:00",
+  "matomo": [
+    {
+      "date": "2026-02-01,2026-02-10",
+      "queries": [
+        {
+          "params": {
+            "module": "API",
+            "method": "VisitsSummary.get",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-01,2026-02-10",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:47.962660+00:00",
+          "response_sha256": "ef1d76a6848e5835747ee92aca396a867ae1cdb8c6435302aa0f73da3e7c9853"
+        },
+        {
+          "params": {
+            "module": "API",
+            "method": "Actions.get",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-01,2026-02-10",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:48.072247+00:00",
+          "response_sha256": "d8e6eb6e8c0372e0aa7333696567bf0e2fea9a4deb60ec5aa53338ac473e13b0"
+        },
+        {
+          "params": {
+            "module": "API",
+            "method": "Actions.getPageUrls",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-01,2026-02-10",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:48.166296+00:00",
+          "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        }
+      ],
+      "visits": 0,
+      "actions": 0,
+      "pageviews": 0,
+      "school_prefix": 0,
+      "school_others": 0,
+      "non_others_school_rows": 0
+    },
+    {
+      "date": "2026-02-11,2026-09-10",
+      "queries": [
+        {
+          "params": {
+            "module": "API",
+            "method": "VisitsSummary.get",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-11,2026-09-10",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:48.303824+00:00",
+          "response_sha256": "bad797a550065fd7776e1c5d9f32c0414bc4d3974b7e3ecfac6e2222c19bcd73"
+        },
+        {
+          "params": {
+            "module": "API",
+            "method": "Actions.get",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-11,2026-09-10",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:48.425933+00:00",
+          "response_sha256": "690dd2e9e12e8acd699f58cc139ffae0cae6e8261e69daf2a00a659bc019aefb"
+        },
+        {
+          "params": {
+            "module": "API",
+            "method": "Actions.getPageUrls",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-11,2026-09-10",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:48.969664+00:00",
+          "response_sha256": "1c9f025f50a6854fab674fe3efc188247bd88ace2c0a0e4e222d077c150e8088"
+        }
+      ],
+      "visits": 25740,
+      "actions": 46238,
+      "pageviews": 44484,
+      "school_prefix": 14458,
+      "school_others": 12136,
+      "non_others_school_rows": 100
+    },
+    {
+      "date": "2026-02-01,2026-09-10",
+      "queries": [
+        {
+          "params": {
+            "module": "API",
+            "method": "VisitsSummary.get",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-01,2026-09-10",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:49.103009+00:00",
+          "response_sha256": "bad797a550065fd7776e1c5d9f32c0414bc4d3974b7e3ecfac6e2222c19bcd73"
+        },
+        {
+          "params": {
+            "module": "API",
+            "method": "Actions.get",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-01,2026-09-10",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:49.261561+00:00",
+          "response_sha256": "690dd2e9e12e8acd699f58cc139ffae0cae6e8261e69daf2a00a659bc019aefb"
+        },
+        {
+          "params": {
+            "module": "API",
+            "method": "Actions.getPageUrls",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-01,2026-09-10",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:50.083498+00:00",
+          "response_sha256": "152af4de00f4bf8dc6b91eb06104f15ee52eec16a09aeb2d5db47d534b5b5974"
+        }
+      ],
+      "visits": 25740,
+      "actions": 46238,
+      "pageviews": 44484,
+      "school_prefix": 14458,
+      "school_others": 12206,
+      "non_others_school_rows": 100
+    },
+    {
+      "date": "2026-02-11,2026-09-11",
+      "queries": [
+        {
+          "params": {
+            "module": "API",
+            "method": "VisitsSummary.get",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-11,2026-09-11",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:50.184715+00:00",
+          "response_sha256": "4b0764c54006927ab7734d46ad19fcac2bf0633b445f384bde03aa63332ec93e"
+        },
+        {
+          "params": {
+            "module": "API",
+            "method": "Actions.get",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-11,2026-09-11",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:50.288210+00:00",
+          "response_sha256": "0fb244ae5a2e508a6962a2970b38110f602354efd7fa2486e278e97905be012f"
+        },
+        {
+          "params": {
+            "module": "API",
+            "method": "Actions.getPageUrls",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-11,2026-09-11",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:50.779486+00:00",
+          "response_sha256": "6cc430b0988cb9742d135f76cf503987ccc3aad2ad25fc671b728e8f828b2930"
+        }
+      ],
+      "visits": 25775,
+      "actions": 46304,
+      "pageviews": 44527,
+      "school_prefix": 14464,
+      "school_others": 12139,
+      "non_others_school_rows": 100
+    },
+    {
+      "date": "2026-02-01,2026-09-11",
+      "queries": [
+        {
+          "params": {
+            "module": "API",
+            "method": "VisitsSummary.get",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-01,2026-09-11",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:50.885088+00:00",
+          "response_sha256": "4b0764c54006927ab7734d46ad19fcac2bf0633b445f384bde03aa63332ec93e"
+        },
+        {
+          "params": {
+            "module": "API",
+            "method": "Actions.get",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-01,2026-09-11",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:51.002295+00:00",
+          "response_sha256": "5d1e2f496361c4a933bf302e46eef211742e6c8d3fbc6e70aca186e4d275f491"
+        },
+        {
+          "params": {
+            "module": "API",
+            "method": "Actions.getPageUrls",
+            "idSite": 7,
+            "format": "JSON",
+            "language": "en",
+            "format_metrics": 0,
+            "filter_limit": -1,
+            "period": "range",
+            "date": "2026-02-01,2026-09-11",
+            "flat": 1
+          },
+          "fetched_at": "2026-09-11T09:46:51.523081+00:00",
+          "response_sha256": "6db73bf9d8ac349fe02a085361ba7aaf474e8e0e67797b71b632a6ca855865d4"
+        }
+      ],
+      "visits": 25775,
+      "actions": 46304,
+      "pageviews": 44542,
+      "school_prefix": 14464,
+      "school_others": 12210,
+      "non_others_school_rows": 100
+    }
+  ],
+  "og": {
+    "direct": [
+      {
+        "url": "https://www.prijimackynaskolu.cz/opengraph-image",
+        "final_url": "https://www.prijimackynaskolu.cz/opengraph-image",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 49631,
+        "sha256": "98ca8a9069d8b7ee9cf8aefe50b7e1124a382ad81dc0221b1cb5431303258be7",
+        "decoded": {
+          "format": "PNG",
+          "size": [
+            1200,
+            630
+          ],
+          "mode": "RGBA"
+        },
+        "image_evidence": "oponentura-2027-r3-og-home.png"
+      },
+      {
+        "url": "https://www.prijimackynaskolu.cz/regiony/opengraph-image",
+        "final_url": "https://www.prijimackynaskolu.cz/regiony/opengraph-image",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 59147,
+        "sha256": "1616b26590909815142a965518f4d79879175546051dbeb7a4d98dd86f481b29",
+        "decoded": {
+          "format": "PNG",
+          "size": [
+            1200,
+            630
+          ],
+          "mode": "RGBA"
+        },
+        "image_evidence": "oponentura-2027-r3-og-regiony.png"
+      },
+      {
+        "url": "https://www.prijimackynaskolu.cz/simulator/opengraph-image",
+        "final_url": "https://www.prijimackynaskolu.cz/simulator/opengraph-image",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 49266,
+        "sha256": "08673d18a059fdb8a489f163836d7d36eaf8fd6ea15648e6e04464122042bfda",
+        "decoded": {
+          "format": "PNG",
+          "size": [
+            1200,
+            630
+          ],
+          "mode": "RGBA"
+        },
+        "image_evidence": "oponentura-2027-r3-og-simulator.png"
+      }
+    ],
+    "metadata": [
+      {
+        "page": {
+          "url": "https://www.prijimackynaskolu.cz/",
+          "final_url": "https://www.prijimackynaskolu.cz/",
+          "status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 2990178,
+          "sha256": "3d3867765adb4e63eb505840b90166dd450620a9fab911021b65b623ca39c735"
+        },
+        "images": [
+          {
+            "type": "og:image",
+            "url": "https://prijimackynaskolu.cz/opengraph-image?6a5de7e5797052fc"
+          },
+          {
+            "type": "twitter:image",
+            "url": "https://prijimackynaskolu.cz/opengraph-image?6a5de7e5797052fc"
+          }
+        ]
+      },
+      {
+        "page": {
+          "url": "https://www.prijimackynaskolu.cz/regiony",
+          "final_url": "https://www.prijimackynaskolu.cz/regiony",
+          "status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 3054310,
+          "sha256": "dd51ba961ea20045bd1432ae6ccaa5dd17e2192a69fd930886ccf920e752c6ba"
+        },
+        "images": [
+          {
+            "type": "og:image",
+            "url": "https://prijimackynaskolu.cz/regiony/opengraph-image?48d19b417e9ee887"
+          },
+          {
+            "type": "twitter:image",
+            "url": "https://prijimackynaskolu.cz/regiony/opengraph-image?48d19b417e9ee887"
+          }
+        ]
+      },
+      {
+        "page": {
+          "url": "https://www.prijimackynaskolu.cz/simulator",
+          "final_url": "https://www.prijimackynaskolu.cz/simulator",
+          "status": 200,
+          "content_type": "text/html; charset=utf-8",
+          "bytes": 25171,
+          "sha256": "33a6297d7053b64df3424d661a2d4840795d21e0c812c6e25aaf4409213e4a1f"
+        },
+        "images": [
+          {
+            "type": "og:image",
+            "url": "https://prijimackynaskolu.cz/simulator/opengraph-image?9c6de491320c9e28"
+          },
+          {
+            "type": "twitter:image",
+            "url": "https://prijimackynaskolu.cz/simulator/opengraph-image?9c6de491320c9e28"
+          }
+        ]
+      }
+    ],
+    "linked": [
+      {
+        "url": "https://prijimackynaskolu.cz/opengraph-image?6a5de7e5797052fc",
+        "final_url": "https://www.prijimackynaskolu.cz/opengraph-image?6a5de7e5797052fc",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 49631,
+        "sha256": "98ca8a9069d8b7ee9cf8aefe50b7e1124a382ad81dc0221b1cb5431303258be7",
+        "decoded": {
+          "format": "PNG",
+          "size": [
+            1200,
+            630
+          ],
+          "mode": "RGBA"
+        },
+        "image_evidence": "oponentura-2027-r3-og-home.png"
+      },
+      {
+        "url": "https://prijimackynaskolu.cz/regiony/opengraph-image?48d19b417e9ee887",
+        "final_url": "https://www.prijimackynaskolu.cz/regiony/opengraph-image?48d19b417e9ee887",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 59147,
+        "sha256": "1616b26590909815142a965518f4d79879175546051dbeb7a4d98dd86f481b29",
+        "decoded": {
+          "format": "PNG",
+          "size": [
+            1200,
+            630
+          ],
+          "mode": "RGBA"
+        },
+        "image_evidence": "oponentura-2027-r3-og-regiony.png"
+      },
+      {
+        "url": "https://prijimackynaskolu.cz/simulator/opengraph-image?9c6de491320c9e28",
+        "final_url": "https://www.prijimackynaskolu.cz/simulator/opengraph-image?9c6de491320c9e28",
+        "status": 200,
+        "content_type": "image/png",
+        "bytes": 49266,
+        "sha256": "08673d18a059fdb8a489f163836d7d36eaf8fd6ea15648e6e04464122042bfda",
+        "decoded": {
+          "format": "PNG",
+          "size": [
+            1200,
+            630
+          ],
+          "mode": "RGBA"
+        },
+        "image_evidence": "oponentura-2027-r3-og-simulator.png"
+      }
+    ],
+    "visual_review": {
+      "home": "Chybějící glyfy českých znaků; text 2025 aktuální data.",
+      "regiony": "Bez zjevného vizuálního poškození.",
+      "simulator": "Titulek u spodního okraje překrývá patičku; osobní šance jsou navázané na otevřené O-13.",
+      "social_validator": "Neprovedeno; konkrétní stav Facebook cache zde nebyl ověřen."
+    }
+  },
+  "simulator": [
+    {
+      "url": "https://www.prijimackynaskolu.cz/_next/static/chunks/d60f497abfc067f8.js?dpl=dpl_NKpQBRZaberGrkd7jZuia9K77sxo",
+      "sha256": "9d6d0d529d3421d4980374bbfc60cda11b91ef4c9a1646c8169da991d8e70a6e",
+      "excerpt": "})},[]);let F=(0,y.useCallback)(e=>{let t=$-e;return t>=10?{status:\"accepted\",label:\"Vysoká šance\",color:\"green\"}:t>=-10?{status:\"borderline\",label:\"Na hraně\",color:\"yellow\"}:{status:\"rejected\",label:\"Malá šance\",color:\"red\"}},[$]),U=(0,y.useMemo)(()=>i,[i]),K=(0,y.useMemo)(()=>{let e=[],t=[],r=[];return U.forEach(n=>{let l"
+    }
+  ]
+}
