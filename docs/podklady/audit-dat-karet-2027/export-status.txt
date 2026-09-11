@@ -1,0 +1,1 @@
+Manifest reportu prošel validate_artifact. HTML export přes předepsaný report:deliver selhal: static_charts / reader_timeout / Portable reader did not reach a terminal state within 5000ms (state: loading). HTML nebylo vydáno. Čitelný audit je docs/audit-dat-karet-2027.md, přesné podklady a notebook jsou vedle tohoto souboru.
