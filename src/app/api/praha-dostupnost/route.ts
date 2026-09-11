@@ -379,14 +379,7 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
     const obor = String(row.obor ?? '').trim();
     if (obor) item.obory.add(obor);
 
-    const minBody = toNumber(row.min_body);
-    if (minBody !== null) {
-      item.minBodyMin = item.minBodyMin === null ? minBody : Math.min(item.minBodyMin, minBody);
-      if (!item.simulatorSchoolId || item.simulatorSchoolMinBody === null || minBody < item.simulatorSchoolMinBody) {
-        item.simulatorSchoolId = schoolId || item.simulatorSchoolId;
-        item.simulatorSchoolMinBody = minBody;
-      }
-    } else if (!item.simulatorSchoolId && schoolId) {
+    if (!item.simulatorSchoolId && schoolId) {
       item.simulatorSchoolId = schoolId;
     }
 
@@ -406,7 +399,7 @@ async function loadPrahaSchools(): Promise<PrahaSchool[]> {
     ulice: value.ulice,
     mestskaCast: value.mestskaCast,
     obory: Array.from(value.obory).sort((a, b) => a.localeCompare(b, 'cs')),
-    minBodyMin: value.minBodyMin,
+    minBodyMin: null,
     indexPoptavkyAvg: value.indexPoptavkyCount > 0
       ? value.indexPoptavkySum / value.indexPoptavkyCount
       : null,
@@ -1408,11 +1401,11 @@ export async function POST(request: NextRequest) {
         routeType: estimate.routeType,
         usedLines: estimate.lines,
         transferStop: estimate.transferStop,
-        admissionBand: getDifficultyBand(school.difficultyScore, difficultyThresholdsCache),
+        admissionBand: 'unknown' as SchoolDifficultyBand,
         oboryPreview: school.obory.slice(0, 4),
         oboryCount: school.obory.length,
-        minBodyMin: school.minBodyMin,
-        difficultyScore: school.difficultyScore !== null ? roundToOne(school.difficultyScore) : null,
+        minBodyMin: null,
+        difficultyScore: null,
         indexPoptavkyAvg: school.indexPoptavkyAvg !== null
           ? Math.round(school.indexPoptavkyAvg * 100) / 100
           : null,
@@ -1429,7 +1422,7 @@ export async function POST(request: NextRequest) {
       return a.nazev.localeCompare(b.nazev, 'cs');
     });
 
-    const admissionThresholds = difficultyThresholdsCache;
+    const admissionThresholds = null;
 
     const totalItems = reachable.length;
     const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));

@@ -1,6 +1,6 @@
 # Audit dat na kartách škol a oborů
 
-Verze 1.4 · 11. 9. 2026 · realizace P0; veřejná přejímka zatím čeká na nasazení. Historické nálezy ze stavu `37ebfbc` zůstávají níže; aktuální stav viz dodávka P0.
+Verze 1.3 · 11. 9. 2026 · uzavření oponentury R3 a zahájení P0. Nálezy níže zachycují produkční stav `37ebfbc`; stav implementace je oddělen v dodatku R3.
 
 ## Závěr
 
@@ -207,8 +207,3 @@ Lokálně: 15 jednotkových/renderovacích kontrol, TypeScript, lint nových kom
 A-03 má lokální opravu v `/detail`; A-02 pouze dílčí opravu stejné záložky. A-01, A-04 až A-07, ostatní konzumenti A-02 a plošná přejímka O-13 zůstávají otevřené. Nadále platí souběžné zahájení migrační inventury katalogu podle plánu v1.2; tato dodávka jej nenahrazuje ani netvrdí jeho dokončení.
 
 Historie: v1.0 audit → v1.1 R1 → v1.2 R2 → v1.3 uzavření R3 a první implementace. Znění v1.2 je zachováno v `podklady/audit-dat-karet-2027/v1.2/audit.md`.
-
-
-## Dodatek v1.4 — realizace P0
-
-Implementace a přejímací matice jsou v [dodávce P0](dodavka-p0-dat-karet-2027.md). Opraveny publikační cesty A-02 až A-07 v rozsahu P0. Veřejné uzavření zatím čeká na nasazení a kontrolu. P1 části nálezů ani celý katalog 2027 tím nejsou vyřešeny. Inventura katalogu A-01 je zahájena v `podklady/migrace-katalogu-2027/`; mapování nejsou automaticky potvrzena. Architektura omezeného kontraktu: ADR 0001. Verze v1.3 zachována v `podklady/audit-dat-karet-2027/v1.3/audit.md`.

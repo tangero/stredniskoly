@@ -1,3 +1,5 @@
+
+import { ArchivedAdmissionText } from '@/components/ArchivedAdmissionText';
 import { SchoolInspisData } from '@/types/inspis';
 
 function formatTuition(value: number | null): string {
@@ -71,11 +73,11 @@ export function SchoolInfoSection({ data }: { data: SchoolInspisData }) {
 
         <div className="border border-slate-100 rounded-lg p-4">
           <h3 className="font-medium text-slate-900 mb-2">Přijímací řízení</h3>
-          <div className="text-sm text-slate-700"><strong>Zkoušky:</strong> {data.prijimaci_zkousky || 'Neuvedeno'}</div>
+          <div className="text-sm text-slate-700"><strong>Zkoušky:</strong> <ArchivedAdmissionText value={data.prijimaci_zkousky} /></div>
           <div className="text-sm text-slate-700"><strong>Předměty:</strong> {renderList(data.zkousky_z_predmetu)}</div>
           <div className="text-sm text-slate-700"><strong>Přípravné kurzy:</strong> {yesNo(data.pripravne_kurzy)}</div>
-          <div className="text-sm text-slate-700"><strong>Dny otevřených dveří:</strong> {data.dny_otevrenych_dveri || 'Neuvedeno'}</div>
-          <div className="text-sm text-slate-700"><strong>Termín přijímaček:</strong> {data.termin_prijimacich_zkousek || 'Neuvedeno'}</div>
+          <div className="text-sm text-slate-700"><strong>Dny otevřených dveří:</strong> <ArchivedAdmissionText value={data.dny_otevrenych_dveri} /></div>
+          <div className="text-sm text-slate-700"><strong>Termín přijímaček:</strong> <ArchivedAdmissionText value={data.termin_prijimacich_zkousek} /></div>
         </div>
 
         <div className="border border-slate-100 rounded-lg p-4">

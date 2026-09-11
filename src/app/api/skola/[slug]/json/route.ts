@@ -31,7 +31,7 @@ export async function GET(
   }
 
   const kraj = krajNames[overview.kraj_kod] || overview.kraj;
-  const sortedPrograms = [...programs].sort((a, b) => b.min_body - a.min_body);
+  const sortedPrograms = [...programs].sort((a, b) => a.obor.localeCompare(b.obor, 'cs'));
 
   const data = {
     nazev: overview.nazev,
@@ -54,8 +54,11 @@ export async function GET(
         prihlasky: p.prihlasky,
         prijati: p.prijati,
         index_poptavky: p.index_poptavky,
-        min_body: p.min_body,
+        min_body: null,
+        minimum_status: 'unverified',
+        year: 2025,
         ...(stats ? {
+          subject_averages: stats.subjectAverages,
           cj_prumer: stats.cj_prumer,
           ma_prumer: stats.ma_prumer,
           jpz_min: stats.jpz_min,

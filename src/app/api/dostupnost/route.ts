@@ -1,3 +1,5 @@
+import { getResultsForYear } from '@/lib/data';
+import { normalizeSchoolKey } from '@/lib/school-key';
 import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
@@ -218,6 +220,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
   const filePath = path.join(process.cwd(), 'public', 'schools_data.json');
   const raw = await fs.readFile(filePath, 'utf-8');
   const parsed = JSON.parse(raw) as Record<string, unknown>;
+  const verifiedScores = new Map(Array.from(await getResultsForYear(2026), ([id, row]) => [normalizeSchoolKey(id), row.cj_ma_prijati]));
   const yearData = pickYearData(parsed);
 
   const redizoDifficultyMap = new Map<string, number>();
@@ -300,8 +303,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
     if (obor) item.obory.add(obor);
 
     // Add per-program detail
-    const jpzMin = toNumber(row.jpz_min_actual);
-    const jpzPrumer = toNumber(row.jpz_prumer_actual);
+    const jpzPrumer = verifiedScores.get(normalizeSchoolKey(schoolId)) ?? null;
     const indexPoptavky = toNumber(row.index_poptavky);
     const kapacita = toNumber(row.kapacita);
     const prihlasky = toNumber(row.prihlasky);
@@ -314,22 +316,15 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
       zamereni,
       typ,
       delkaStudia: delkaStudia ?? 4,
-      jpzMin: jpzMin,
+      jpzMin: null,
       jpzPrumer: jpzPrumer,
       indexPoptavky: indexPoptavky,
       kapacita: kapacita !== null ? Math.round(kapacita) : null,
       prihlasky: prihlasky !== null ? Math.round(prihlasky) : null,
     });
 
-    // Use jpz_min_actual for the school-level minimum
-    const minBody = jpzMin !== null ? jpzMin : toNumber(row.min_body);
-    if (minBody !== null) {
-      item.minBodyMin = item.minBodyMin === null ? minBody : Math.min(item.minBodyMin, minBody);
-      if (!item.simulatorSchoolId || item.simulatorSchoolMinBody === null || minBody < item.simulatorSchoolMinBody) {
-        item.simulatorSchoolId = schoolId || item.simulatorSchoolId;
-        item.simulatorSchoolMinBody = minBody;
-      }
-    } else if (!item.simulatorSchoolId && schoolId) {
+    // Výchozí obor se nevybírá podle neověřeného minima.
+    if (!item.simulatorSchoolId && schoolId) {
       item.simulatorSchoolId = schoolId;
     }
   }
@@ -345,7 +340,7 @@ async function loadAllSchools(): Promise<AggregatedSchool[]> {
     typy: Array.from(value.typy).sort(),
     obory: Array.from(value.obory).sort((a, b) => a.localeCompare(b, 'cs')),
     programs: value.programs,
-    minBodyMin: value.minBodyMin,
+    minBodyMin: null,
     difficultyScore: redizoDifficultyMap.get(value.redizo) ?? null,
     simulatorSchoolId: value.simulatorSchoolId,
   }));
@@ -714,11 +709,11 @@ export async function POST(request: NextRequest) {
           waitMinutes: Math.round(timing.waitMinutes),
           transfers: timing.transfers,
           usedLines: timing.usedRoutes,
-          admissionBand: getDifficultyBand(school.difficultyScore, difficultyThresholdsCache),
+          admissionBand: 'unknown' as SchoolDifficultyBand,
           obory: school.obory,
           programs: school.programs,
-          minBodyMin: school.minBodyMin,
-          difficultyScore: school.difficultyScore !== null ? roundToOne(school.difficultyScore) : null,
+          minBodyMin: null,
+          difficultyScore: null,
           schoolUrl: `/skola/${schoolSlug}`,
           simulatorSchoolId: school.simulatorSchoolId,
         });
@@ -772,7 +767,7 @@ export async function POST(request: NextRequest) {
         extraMinutes: NEAR_MISS_EXTRA_MINUTES,
       } : null,
       legends: {
-        admissionThresholds: difficultyThresholdsCache,
+        admissionThresholds: null,
       },
       diagnostics: {
         totalSchoolsInDb: schools.length,
