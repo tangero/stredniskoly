@@ -69,3 +69,8 @@ python3 -m unittest discover -s tests -p test_matomo_report.py -v
 ```
 
 Připravený API klient neznamená opravu měření aplikace. Události Mého výběru a měření klientských přechodů jsou samostatná navržená práce M0. Žádný serverový účet, automatická rozesílka ani plánovaná úloha nebyly založeny.
+
+
+## Druhý zdroj: Vercel Web Analytics
+
+Doplněno 11. 9. 2026: uživatel poskytl také Vercel dashboard. [Stav přístupu a postup](vercel-analytics-pristup.md) rozlišuje ověřený projekt od dosud nenačtených statistik. Při srovnání použít stejné dokončené dny, domény a metriky podle [analýzy §10](analyza-navstevnosti-2026.md#10-vercel-web-analytics-jako-druhý-zdroj). Token ani klient Matomo neopravňují k Vercel API.

@@ -1,6 +1,6 @@
 # Analýza návštěvnosti 2026 a její dopad na rozvoj 2027
 
-Verze **1.1 / A1**, ověřeno 11. 9. 2026 přes Matomo API, `idSite=7`, časové pásmo Europe/Prague. Období **11. 2.–11. 9. 2026 včetně**, poslední den průběžný. [Původní analýza v1.0](historie/navstevnost-a1/analyza-navstevnosti-2026.md) je zachována; změny a rozdíly jsou na konci. Závěry zde rozlišují měřená data, interpretace a navržené kroky.
+Verze **1.2 / A1-V**, doplněno 11. 9. 2026 o Vercel jako další zdroj (jeho statistiky zatím nenačteny). Číselný základ byl ověřen 11. 9. 2026 přes Matomo API, `idSite=7`, časové pásmo Europe/Prague. Období **11. 2.–11. 9. 2026 včetně**, poslední den průběžný. [Původní analýza v1.0](historie/navstevnost-a1/analyza-navstevnosti-2026.md) je zachována; změny a rozdíly jsou na konci. Závěry zde rozlišují měřená data, interpretace a navržené kroky.
 
 ## 1. Co z toho měníme v projektu
 
@@ -133,3 +133,22 @@ Rutinní [přístup a příkazy](matomo-pristup.md) jsou připravené v `scripts
 |---|---|---|---|
 | 1.0 | 11. 9. 2026 | Dodaná analýza | Původní podklad, zachován ve snímku A1 se SHA-256. |
 | 1.1 / A1 | 11. 9. 2026 | Codex | Živé ověření Matomo, opravy metrik a interpretací, rutinní klient, dopady na profily/mobil a zadání M0. Neuzavírá oponenturu R1 ani neprovádí opravu aplikace. |
+| 1.2 / A1-V | 11. 9. 2026 | Codex | Doplněn Vercel Web Analytics, ověřena identita projektu a místní integrace. Přístup k samotným statistikám čeká na přihlášení či export. Čísla A1 ani produktová rozhodnutí se nemění; předchozí v1.1 je v commitu `ed0fd98`. |
+
+## 10. Vercel Web Analytics jako druhý zdroj
+
+Uživatel doplnil [dashboard projektu za 30 dní](https://vercel.com/tangeros-projects/stredniskoly/analytics?period=30d). Přes Vercel konektor byla ověřena identita projektu `stredniskoly`, `prj_Yh3UGtfELluIwvXazLyVxF5JIPsD`, tým `team_6pc2wHKjeUuaXwZfCS3jOhvX` a doména `www.prijimackynaskolu.cz`. V místním `src/app/layout.tsx` je import `@vercel/analytics/react` a `<Analytics />`; instalovaná verze je 1.6.1. To dokládá integraci v kódu, ne úplnost produkčního sběru. Používá se obecná React varianta, proto bez kontroly nepředpokládáme dostupnost seskupení podle šablony Next.js route.
+
+**Stav přístupu:** dostupný prohlížeč skončil na přihlášení, CLI 49.1.2 nemá přihlašovací údaje a dostupné MCP nástroje neobsahují čtení Web Analytics. Nebyly získány žádné počty z Vercelu. Prázdný či nepřístupný přehled nevykládáme jako nulovou návštěvnost. Matomo přístup zůstává funkční. [Návod k získání druhého podkladu](vercel-analytics-pristup.md).
+
+**Co může přinést:** kontrolu denního vývoje zobrazení, využití profilů, simulátoru a zařízení. Vercel popisuje zachycení následných zobrazení přes nativní rozhraní prohlížeče; je proto užitečný pro prověření rizika podměřených přechodů v Matomo. Rozdíl agregátů sám ale příčinu nedokazuje — rozhodne průchod stejnou navigací se sledováním obou měření. [Princip měření Vercel](https://vercel.com/docs/analytics).
+
+**Pravidla porovnání:**
+
+1. Shodné dokončené dny, časové hranice a časové pásmo; žádné porovnávání odkazu „30d“ s celým únorem–zářím nebo výchozími 28 dny Matomo. Navržený první interval je 12. 8.–10. 9. 2026 včetně v Praze; dostupnost historie Vercelu ověřit podle tarifu.
+2. Jen Production a stejný hostname; Matomo `idSite=7` samo neprokazuje omezení na jediný hostname. Před srovnáním ověřit jeho zahrnuté domény a případně segmentovat oba zdroje.
+3. Porovnávat pageviews se zobrazeními stránek, nikoli s akcemi či relacemi Matomo. Návštěvníky systémů nesčítat a nevydávat za stejnou populaci osob. [Metodika identifikace Vercel](https://vercel.com/docs/analytics/privacy-policy).
+4. Vercel Pages vynechává query parametry. Matomo adresy sloučit podle cesty, tedy i obě varianty simulátoru. Zachovat zvlášť profily a jejich podstránky; pro skupiny sečíst zobrazení, ne unikátní návštěvníky jednotlivých URL.
+5. Zaznamenat omezení exportu: CSV z panelu má nejvýše 250 řádků. Není to automaticky úplný katalog navštívených škol. Neúplný součet porovnat s celkem a přiznat zbytek. [Vercel — panely a export](https://vercel.com/docs/analytics/using-web-analytics).
+
+**Dopad na M0:** přejímka navigace a odstranění tajných částí URL musí pokrýt oba již přítomné trackery. Před přidáním událostí určit primární zdroj produktových ukazatelů; nenasazovat duplicitní sběr bez účelu. Vercel Web Analytics není log všech HTTP požadavků a nenahradí samostatné ověření strojových přístupů k API či llms.txt. Zatím není důvod měnit pořadí S0 → profily → Můj výběr ani snižovat odhad M0.
