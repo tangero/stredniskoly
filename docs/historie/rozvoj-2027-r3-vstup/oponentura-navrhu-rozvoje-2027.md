@@ -1,10 +1,8 @@
 # Oponentura návrhu rozvoje 2027
 
-Verze 3.1 / R3 — doplněna odpověď autora 11. 9. 2026. Původní posudek má verzi 3.0. Předmět: `navrh-rozvoje-2027.md` v2.2 §13, `prd-muj-vyber-2027.md` v0.6, `analyza-navstevnosti-2026.md`.
+Verze 3.0 / R3. Zpracováno 11. 9. 2026. Předmět: `navrh-rozvoje-2027.md` v2.2 §13, `prd-muj-vyber-2027.md` v0.6, `analyza-navstevnosti-2026.md`.
 
 Stav: oponentní posudek. **OVĚŘENO** = doloženo spuštěním kódu nebo stažením zdroje; **NÁZOR** = argumentace bez tvrdého důkazu.
-
-**Odpověď autora R3:** aktuální [stručné dispozice všech 21 ID](navrh-rozvoje-2027.md#vyporadani-r3). Původní [oponentura v3.0](historie/rozvoj-2027-r3-vstup/oponentura-navrhu-rozvoje-2027.md) je zachována. O-15 a O-20 potvrzeny dotazy, O-18 přímo z NDJSON; HTTP 500 v O-19 uzavřeno. Vizuální kontrola ale našla nový O-21, takže nepotvrzuje plné dokončení vizuální přejímky. O-13 zůstává blokátorem. Níže zůstává nezměněné stanovisko oponenta.
 
 ## R3: stanovisko k vypořádání R2
 
@@ -527,28 +525,3 @@ Podrobnosti, důkazní přílohy a požadavky na doplnění oponentních důkaz�
 | 2.1 / R2 | 11. 9. 2026 | Oponent během auditu přidal O-19; zachován dodatečný snímek a manifest. |
 | 2.2 / R2 | 11. 9. 2026 | Odpověď autora na aktuálních 19 ID, nové důkazy a odkazy na návrh v2.2, PRD v0.6 a analýzu v1.3. Nejde o oponentní schválení odpovědi. |
 | 2.2.1 / R2 | 11. 9. 2026 | Opakovaná kontrola O-19 v 11:33 CEST: tři přímé adresy i tři skutečné odkazy metadat stále HTTP 500. Důkazy a stav v návrhu §13/O-19; oprava na produkci nepotvrzena. |
-
-
-## Odpověď autora R3 — dispozice
-
-- **O-15:** přijato, spor uzavřen; prokázán rozdíl začátku dotazu, původní A1 se nemění.
-- **O-16:** společné metodické stanovisko přijato, příčina 322 vstupů zůstává otevřená.
-- **O-17:** stažení domněnky o tarifu přijato, samotný API přístup zatím neověřen.
-- **O-18:** NDJSON nalezen a nezávisle ověřen; UA/referer jsou dostupné. 14 řádků obsahuje 12 různých request ID a jen MISS. Proto přijata cesta přes drain, nikoli zatím tvrzení o úplnosti měření. Vlastní logger se neplánuje.
-- **O-19:** HTTP výpadek uzavřen; ověřen commit, nasazení, metadata a plné dekódování PNG. Požadovaná vizuální kontrola našla O-21; nelze prohlásit celý vzhled za přijatý. Konkrétní Facebook cache zde nebyla ověřena.
-- **O-20:** přijato, nula návštěv/akcí/zobrazení 1.–10. 2. doplněna do analýzy v1.4.
-- **O-1–14:** aktuální jednotlivé stavy v tabulce návrhu §14; beze změny schválených zásad, O-13 a dluh O-4 dosud neopravené.
-- **Čtivost:** přijato; aktuální stav je uveden před důvody a důkazy.
-
-### O-21 — nový nález autora při přejímce R3
-
-**Stav: otevřeno, priorita střední.** HTTP oprava O-19 funguje, ale veřejný [hlavní obrázek](podklady/oponentura-2027-r3-og-home.png) obsahuje obdélníky místo části českých znaků a text „2025 — aktuální data“. [Obrázek simulátoru](podklady/oponentura-2027-r3-og-simulator.png) překrývá titulek patičkou. Jde o přímé vizuální důkazy uložené s SHA v [R3-E1](podklady/oponentura-2027-r3-overeni.json). Podmínky opravy a rozlišení od HTTP dostupnosti jsou v [návrhu §14/O-21](navrh-rozvoje-2027.md#r3-o-21). Aplikace nebyla tímto vypořádáním upravena.
-
-### Historie aktuálního kola
-
-| Verze | Datum | Změna |
-|---|---|---|
-| 3.0 / R3 | 11. 9. 2026 | Oponent přijal protidůkazy R2, doložil změněné parametry Others a uzavření HTTP výpadku; přidal O-20. Vstup zachován se SHA-256. |
-| 3.1 / R3 | 11. 9. 2026 | Odpověď autora, nezávislá kontrola Matomo/NDJSON/PNG/deploymentu, nový vizuální O-21. Návrh v2.3, PRD v0.7, analýza v1.4; aktuální stavy v návrhu §14. |
-
-R4 ověří novou odpověď a O-21; O-13 vyžaduje skutečnou opravu aplikace a veřejnou přejímku. Zachování starších otevřených stavů v historii není jejich znovuotevřením.

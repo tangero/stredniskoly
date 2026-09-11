@@ -7,10 +7,15 @@ import { VibecordingPromo } from '@/components/VibecordingPromo';
 
 export const metadata: Metadata = {
   title: 'Simulátor přijímacích zkoušek',
-  description: 'Zadejte své body z českého jazyka a matematiky a zjistěte, na které střední školy máte šanci se dostat.',
+  description: 'Zadejte body z češtiny a matematiky a prohlédněte si historická data škol. Historická data nejsou zárukou přijetí.',
   openGraph: {
     title: 'Simulátor přijímacích zkoušek | Přijímačky na střední školy',
-    description: 'Zjistěte své šance na přijetí na střední školu.',
+    description: 'Body z češtiny a matematiky a historická data škol. Historická data nejsou zárukou přijetí.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Simulátor přijímacích zkoušek',
+    description: 'Body z češtiny a matematiky a historická data škol. Historická data nejsou zárukou přijetí.',
   },
 };
 

@@ -1,0 +1,170 @@
+{
+  "checked_at": "2026-09-11T10:07:50.504854+00:00",
+  "base": "http://127.0.0.1:3107",
+  "images_match_visually_reviewed_local_outputs": true,
+  "pages": [
+    {
+      "name": "home",
+      "page_url": "http://127.0.0.1:3107/",
+      "metadata": {
+        "og:title": "Vyhledávání středních škol, přijímačky a dojíždění",
+        "og:description": "Najděte si střední školu a ověřte dojíždění. Kalendář přijímání 2027 a historické výsledky škol do roku 2026.",
+        "og:url": "https://prijimackynaskolu.cz",
+        "og:site_name": "Přijímačky na školu",
+        "og:locale": "cs_CZ",
+        "og:image:alt": "Najdi si svou střední školu. Přijímání 2027 a historické výsledky škol.",
+        "og:image:type": "image/png",
+        "og:image": "http://localhost:3107/opengraph-image?60bb62c35d3c3832",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "og:type": "website",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Vyhledávání středních škol, přijímačky a dojíždění",
+        "twitter:description": "Najděte si střední školu a ověřte dojíždění. Kalendář přijímání 2027 a historické výsledky škol do roku 2026.",
+        "twitter:image:alt": "Najdi si svou střední školu. Přijímání 2027 a historické výsledky škol.",
+        "twitter:image:type": "image/png",
+        "twitter:image": "http://localhost:3107/opengraph-image?60bb62c35d3c3832",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "images": [
+        {
+          "kind": "direct",
+          "metadata_url": "http://127.0.0.1:3107/opengraph-image",
+          "requested_url": "http://127.0.0.1:3107/opengraph-image",
+          "final_url": "http://127.0.0.1:3107/opengraph-image",
+          "status": 200,
+          "mime": "image/png",
+          "bytes": 349796,
+          "sha256": "c8a932ac631ad2a71a59830bd368f8c569d557dc7806709db92d86fd6057df2f"
+        },
+        {
+          "kind": "og:image",
+          "metadata_url": "http://localhost:3107/opengraph-image?60bb62c35d3c3832",
+          "requested_url": "http://127.0.0.1:3107/opengraph-image?60bb62c35d3c3832",
+          "final_url": "http://127.0.0.1:3107/opengraph-image?60bb62c35d3c3832",
+          "status": 200,
+          "mime": "image/png",
+          "bytes": 349796,
+          "sha256": "c8a932ac631ad2a71a59830bd368f8c569d557dc7806709db92d86fd6057df2f"
+        },
+        {
+          "kind": "twitter:image",
+          "metadata_url": "http://localhost:3107/opengraph-image?60bb62c35d3c3832",
+          "requested_url": "http://127.0.0.1:3107/opengraph-image?60bb62c35d3c3832",
+          "final_url": "http://127.0.0.1:3107/opengraph-image?60bb62c35d3c3832",
+          "status": 200,
+          "mime": "image/png",
+          "bytes": 349796,
+          "sha256": "c8a932ac631ad2a71a59830bd368f8c569d557dc7806709db92d86fd6057df2f"
+        }
+      ]
+    },
+    {
+      "name": "regiony",
+      "page_url": "http://127.0.0.1:3107/regiony",
+      "metadata": {
+        "og:title": "Přehled regionů | Přijímačky na střední školy",
+        "og:description": "Přehled středních škol podle krajů ČR.",
+        "og:image:alt": "Střední školy podle krajů. Obory a možnosti dojíždění ve 14 krajích ČR.",
+        "og:image:type": "image/png",
+        "og:image": "http://localhost:3107/regiony/opengraph-image?3f71a3fafff3fa45",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Střední školy podle krajů",
+        "twitter:description": "Prozkoumejte školy, obory a možnosti dojíždění ve svém kraji.",
+        "twitter:image:alt": "Střední školy podle krajů. Obory a možnosti dojíždění ve 14 krajích ČR.",
+        "twitter:image:type": "image/png",
+        "twitter:image": "http://localhost:3107/regiony/opengraph-image?3f71a3fafff3fa45",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "images": [
+        {
+          "kind": "direct",
+          "metadata_url": "http://127.0.0.1:3107/regiony/opengraph-image",
+          "requested_url": "http://127.0.0.1:3107/regiony/opengraph-image",
+          "final_url": "http://127.0.0.1:3107/regiony/opengraph-image",
+          "status": 200,
+          "mime": "image/png",
+          "bytes": 350796,
+          "sha256": "9253d1fe8c9ad618f5c45c5191d4b6ddc397ff17293b5c7f2b375d5825bce31c"
+        },
+        {
+          "kind": "og:image",
+          "metadata_url": "http://localhost:3107/regiony/opengraph-image?3f71a3fafff3fa45",
+          "requested_url": "http://127.0.0.1:3107/regiony/opengraph-image?3f71a3fafff3fa45",
+          "final_url": "http://127.0.0.1:3107/regiony/opengraph-image?3f71a3fafff3fa45",
+          "status": 200,
+          "mime": "image/png",
+          "bytes": 350796,
+          "sha256": "9253d1fe8c9ad618f5c45c5191d4b6ddc397ff17293b5c7f2b375d5825bce31c"
+        },
+        {
+          "kind": "twitter:image",
+          "metadata_url": "http://localhost:3107/regiony/opengraph-image?3f71a3fafff3fa45",
+          "requested_url": "http://127.0.0.1:3107/regiony/opengraph-image?3f71a3fafff3fa45",
+          "final_url": "http://127.0.0.1:3107/regiony/opengraph-image?3f71a3fafff3fa45",
+          "status": 200,
+          "mime": "image/png",
+          "bytes": 350796,
+          "sha256": "9253d1fe8c9ad618f5c45c5191d4b6ddc397ff17293b5c7f2b375d5825bce31c"
+        }
+      ]
+    },
+    {
+      "name": "simulator",
+      "page_url": "http://127.0.0.1:3107/simulator",
+      "metadata": {
+        "og:title": "Simulátor přijímacích zkoušek | Přijímačky na střední školy",
+        "og:description": "Body z češtiny a matematiky a historická data škol. Historická data nejsou zárukou přijetí.",
+        "og:image:alt": "Simulátor přijímaček. Body z češtiny a matematiky a historická data škol.",
+        "og:image:type": "image/png",
+        "og:image": "http://localhost:3107/simulator/opengraph-image?a8e194255b47a803",
+        "og:image:width": "1200",
+        "og:image:height": "630",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "Simulátor přijímacích zkoušek",
+        "twitter:description": "Body z češtiny a matematiky a historická data škol. Historická data nejsou zárukou přijetí.",
+        "twitter:image:alt": "Simulátor přijímaček. Body z češtiny a matematiky a historická data škol.",
+        "twitter:image:type": "image/png",
+        "twitter:image": "http://localhost:3107/simulator/opengraph-image?a8e194255b47a803",
+        "twitter:image:width": "1200",
+        "twitter:image:height": "630"
+      },
+      "images": [
+        {
+          "kind": "direct",
+          "metadata_url": "http://127.0.0.1:3107/simulator/opengraph-image",
+          "requested_url": "http://127.0.0.1:3107/simulator/opengraph-image",
+          "final_url": "http://127.0.0.1:3107/simulator/opengraph-image",
+          "status": 200,
+          "mime": "image/png",
+          "bytes": 348462,
+          "sha256": "c11320b1c479b4a5ca564f631d2e7b5159abeb89c771094cfcd7e567eaf37304"
+        },
+        {
+          "kind": "og:image",
+          "metadata_url": "http://localhost:3107/simulator/opengraph-image?a8e194255b47a803",
+          "requested_url": "http://127.0.0.1:3107/simulator/opengraph-image?a8e194255b47a803",
+          "final_url": "http://127.0.0.1:3107/simulator/opengraph-image?a8e194255b47a803",
+          "status": 200,
+          "mime": "image/png",
+          "bytes": 348462,
+          "sha256": "c11320b1c479b4a5ca564f631d2e7b5159abeb89c771094cfcd7e567eaf37304"
+        },
+        {
+          "kind": "twitter:image",
+          "metadata_url": "http://localhost:3107/simulator/opengraph-image?a8e194255b47a803",
+          "requested_url": "http://127.0.0.1:3107/simulator/opengraph-image?a8e194255b47a803",
+          "final_url": "http://127.0.0.1:3107/simulator/opengraph-image?a8e194255b47a803",
+          "status": 200,
+          "mime": "image/png",
+          "bytes": 348462,
+          "sha256": "c11320b1c479b4a5ca564f631d2e7b5159abeb89c771094cfcd7e567eaf37304"
+        }
+      ]
+    }
+  ]
+}

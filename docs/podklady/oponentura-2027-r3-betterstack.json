@@ -1,0 +1,101 @@
+{
+  "source_filename": "stredniskoly_2026-09-09T09_21_27.544Z_2026-09-11T09_21_27.544Z.ndjson",
+  "source_sha256": "df1c7d667f8763e09a543559840018df699874738336ae415a3cec6a8b901f1e",
+  "row_count": 14,
+  "field_count": 43,
+  "fields": [
+    "_app",
+    "_source_id",
+    "context.trace.span_id",
+    "context.trace.trace_id",
+    "dt",
+    "message",
+    "platform",
+    "vercel.branch",
+    "vercel.build_id",
+    "vercel.deployment_id",
+    "vercel.edgeType",
+    "vercel.environment",
+    "vercel.executionRegion",
+    "vercel.host",
+    "vercel.id",
+    "vercel.instanceId",
+    "vercel.invocationId",
+    "vercel.level",
+    "vercel.path",
+    "vercel.projectName",
+    "vercel.project_id",
+    "vercel.proxy.cache_id",
+    "vercel.proxy.client_ip",
+    "vercel.proxy.host",
+    "vercel.proxy.lambdaRegion",
+    "vercel.proxy.method",
+    "vercel.proxy.path",
+    "vercel.proxy.pathType",
+    "vercel.proxy.pathTypeVariant",
+    "vercel.proxy.referer",
+    "vercel.proxy.region",
+    "vercel.proxy.scheme",
+    "vercel.proxy.status_code",
+    "vercel.proxy.timestamp",
+    "vercel.proxy.user_agent",
+    "vercel.proxy.vercelCache",
+    "vercel.request_id",
+    "vercel.source",
+    "vercel.source_type",
+    "vercel.spanId",
+    "vercel.statusCode",
+    "vercel.traceId",
+    "vercel.type"
+  ],
+  "ua_nonempty": 14,
+  "referer_nonempty": 9,
+  "cache_values": {
+    "MISS": 14
+  },
+  "selected_examples": [
+    {
+      "path_group": "/opengraph-image",
+      "status": null,
+      "ua_class_observed": "facebookexternalhit",
+      "ua_present": true,
+      "referer_present": false
+    },
+    {
+      "path_group": "/opengraph-image",
+      "status": 500,
+      "ua_class_observed": "facebookexternalhit",
+      "ua_present": true,
+      "referer_present": false
+    },
+    {
+      "path_group": "/opengraph-image",
+      "status": null,
+      "ua_class_observed": "facebookexternalhit",
+      "ua_present": true,
+      "referer_present": false
+    },
+    {
+      "path_group": "/opengraph-image",
+      "status": 500,
+      "ua_class_observed": "facebookexternalhit",
+      "ua_present": true,
+      "referer_present": false
+    },
+    {
+      "path_group": "/skola/[slug].md",
+      "status": 200,
+      "ua_class_observed": "browser_like",
+      "ua_present": true,
+      "referer_present": false
+    }
+  ],
+  "limits": [
+    "Výběrový export 14 záznamů, nikoli úplný provoz za časové okno názvu souboru.",
+    "Přítomnost polí neprokazuje retenci, úplnost doručení, deduplikaci ani hotový uložený dotaz.",
+    "Souhrn neobsahuje IP, syrové referery, identifikátory jednotlivých požadavků ani celé volné zprávy."
+  ],
+  "scalar_normalization": "Jednoprvkové seznamy exportu rozbaleny na skalár před počítáním obsahu.",
+  "rows_with_request_id": 14,
+  "distinct_request_ids": 12
+}
