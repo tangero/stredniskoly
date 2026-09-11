@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { normalizeSchoolKey } from '@/lib/school-key';
 import { matchesSearchLocation, splitByCommute } from '@/lib/simulator-filter';
-import { MISSING_COMPARISON } from '@/lib/historical-scores';
+import { applicationsPerPlace } from '@/lib/admission-summary';
 import { MAX_SELECTION, readSelection, sharedSimulatorParams } from '@/lib/simulator-state';
 
 interface School {
@@ -20,6 +20,7 @@ interface School {
   adresa?: string;
   ulice?: string;
   kraj: string;
+  demand: { year: number; round: number; applications: number | null; capacity: number | null } | null;
   history: {
     year: number;
     round: number;
@@ -43,19 +44,23 @@ const value = (number: number | null | undefined) => number == null ? '—' : nu
 
 function HistoricalFacts({ school }: { school: School }) {
   const history = school.history;
-  return <div className="mt-3 space-y-2 text-sm">
-    {history ? <>
-      <p className="font-medium text-slate-700">{history.year} · {history.round}. kolo · přijatí uchazeči</p>
-      <dl className="grid grid-cols-2 gap-3 rounded-lg bg-slate-50 p-3">
-        <div><dt className="text-slate-600">Průměr ČJ + MA</dt><dd className="font-semibold">{value(history.average)} / 100</dd></div>
-        <div><dt className="text-slate-600">Přijatí / kapacita</dt><dd className="font-semibold">{value(history.accepted)} / {value(history.capacity)}</dd></div>
-        <div><dt className="text-slate-600">Průměr ČJ</dt><dd>{value(history.average_cj)} / 50</dd></div>
-        <div><dt className="text-slate-600">Průměr MA</dt><dd>{value(history.average_ma)} / 50</dd></div>
-      </dl>
-      <p className="text-xs text-slate-500"><a href={SOURCE} className="underline">Zdroj: CERMAT</a>{history.source_valid_at ? ` · platnost ${history.source_valid_at}` : ''}</p>
-    </> : <p className="rounded-lg bg-slate-50 p-3 text-slate-600">Pro tento obor nemáme jednoznačně přiřazené výsledky 2026.</p>}
-    <p className="text-slate-600"><strong>Osobní porovnání:</strong> {MISSING_COMPARISON}.</p>
-  </div>;
+  const demand = school.demand;
+  const ratio = applicationsPerPlace(demand?.applications, demand?.capacity);
+  if (!history && !demand) return <p className="mt-4 rounded-lg bg-slate-50 px-4 py-3 text-sm text-slate-600">Výsledky a přihlášky 2026 se k této nabídce nepodařilo jednoznačně přiřadit. Neznamená to, že je obor snadnější nebo bez zájemců.</p>;
+  return <section aria-label="Výsledky přijímání 2026" className="mt-5 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
+    <p className="text-xs font-semibold uppercase tracking-wide text-slate-600">Přijímání 2026 · 1. kolo</p>
+    <dl className="mt-3 grid grid-cols-2 gap-4 xl:grid-cols-3">
+      <div><dt className="text-sm text-slate-600">Průměr JPZ přijatých</dt><dd className="mt-1 text-2xl font-bold tabular-nums text-slate-900">{value(history?.average)}{history?.average != null && <span className="ml-1 text-sm font-normal text-slate-600">/ 100 bodů</span>}</dd><p className="mt-1 text-xs text-slate-500">Čeština + matematika</p></div>
+      <div><dt className="text-sm text-slate-600">Konkurence na místo</dt><dd className="mt-1 text-2xl font-bold tabular-nums text-blue-800">{ratio === null ? '—' : ratio.toLocaleString('cs-CZ', { maximumFractionDigits: 1 })}<span className="ml-1 text-sm font-normal text-slate-600">{ratio === null ? '' : 'přihlášek / místo'}</span></dd><p className="mt-1 text-xs text-slate-500">{demand ? `${value(demand.applications)} přihlášek · ${value(demand.capacity)} míst` : 'Počet přihlášek není ověřen'}</p></div>
+      <div><dt className="text-sm text-slate-600">Přijato / kapacita</dt><dd className="mt-1 text-2xl font-bold tabular-nums text-slate-900">{value(history?.accepted)}<span className="mx-1 font-normal text-slate-400">/</span>{value(history?.capacity)}</dd><p className="mt-1 text-xs text-slate-500">Výsledek prvního kola</p></div>
+    </dl>
+    <p className="mt-3 border-t border-slate-200 pt-3 text-xs leading-relaxed text-slate-600">Průměr není bodové minimum. Přihlášky zahrnují všechny priority; jejich počet na místo není osobní šance na přijetí.</p>
+    {(!history || history.average === null) && <p className="mt-2 text-xs text-slate-600">Pomlčka znamená chybějící nebo nejednoznačně přiřazený údaj, nikoli nulu.</p>}
+    <details className="mt-2 text-xs text-slate-600"><summary className="min-h-8 cursor-pointer py-1 text-blue-700">Výsledky předmětů a zdroj</summary>
+      <p>Průměr přijatých: ČJ {value(history?.average_cj)} / 50 · MA {value(history?.average_ma)} / 50.</p>
+      <p className="mt-1"><a href={SOURCE} className="underline">CERMAT · výsledky a přihlášky 2026</a>{history?.source_valid_at ? ` · platnost ${history.source_valid_at}` : ''}</p>
+    </details>
+  </section>;
 }
 
 interface Stop { stopId: string; name: string; context?: string }
@@ -71,7 +76,6 @@ export function SimulatorClient() {
   const selectionKey = params.get('skoly') || '';
   const selectedIds = readSelection(selectionKey);
   const showingSelection = params.get('vyber') === '1' || params.get('srovnani') === '1';
-  const comparing = params.get('srovnani') === '1';
   const [catalog, setCatalog] = useState<SearchResponse | null>(null);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
@@ -93,6 +97,7 @@ export function SimulatorClient() {
   const [notice, setNotice] = useState('');
   const [storageStatus, setStorageStatus] = useState('');
   const [shareUrl, setShareUrl] = useState('');
+  const [expandedSchools, setExpandedSchools] = useState<Set<string>>(new Set());
   const routeKey = stop ? `${stop.stopId}:${limit}` : '';
   const transit = transitResult?.key === routeKey ? transitResult.data : null;
 
@@ -170,6 +175,15 @@ export function SimulatorClient() {
   }, [transit]);
   const mapped = useMemo(() => new Set((transit?.mappedProgramIds ?? []).map(normalizeSchoolKey).filter(id => !estimates.duplicates.has(id))), [transit, estimates]);
   const availableSubjects = useMemo(() => Array.from(new Set(catalog?.schools.map(s => s.obor).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'cs')), [catalog]);
+  const schoolPrograms = useMemo(() => {
+    const index = new Map<string, School[]>();
+    for (const school of catalog?.schools ?? []) {
+      const key = school.id.split('_')[0];
+      const programs = index.get(key) ?? [];
+      programs.push(school); index.set(key, programs);
+    }
+    return index;
+  }, [catalog]);
   const cities = useMemo(() => Array.from(new Set(catalog?.schools.map(s => s.obec.trim()).filter(Boolean))).sort((a, b) => a.localeCompare(b, 'cs')), [catalog]);
   const filtered = useMemo(() => (catalog?.schools ?? []).filter(s => {
     const duration = grade === '5' ? 8 : grade === '7' ? 6 : null;
@@ -206,22 +220,50 @@ export function SimulatorClient() {
     try { await navigator.clipboard.writeText(url); setNotice('Odkaz zkopírován.'); }
     catch { setNotice('Odkaz označ a zkopíruj ručně.'); }
   }
-  function renderSchool(school: School, near = false, selection = false) {
+  function renderSchool(school: School, near = false) {
     const estimate = transit ? estimates.byId.get(normalizeSchoolKey(school.id)) : undefined;
     const saved = selectedIds.some(id => normalizeSchoolKey(id) === normalizeSchoolKey(school.id));
     const selectedId = selectedIds.find(id => normalizeSchoolKey(id) === normalizeSchoolKey(school.id)) ?? school.id;
-    return <article key={school.id} className="flex items-start justify-between gap-3 border-b border-slate-200 py-5">
+    const otherPrograms = (schoolPrograms.get(school.id.split('_')[0]) ?? []).filter(s => s.id !== school.id);
+    return <article key={school.id} className="relative my-5 rounded-xl border border-slate-200 bg-white p-4 sm:p-5">
       <div className="min-w-0 flex-1">
-        <Link href={`/skola/${school.slug}`} className="text-lg font-semibold text-slate-900 hover:text-blue-700 hover:underline">{school.obor}</Link>
-        <p className="mt-1 text-sm text-slate-600">{school.nazev_display || school.nazev} · {school.obec}{school.adresa || school.ulice ? ` · ${school.adresa || school.ulice}` : ''}</p>
-        <p className="mt-1 text-sm text-slate-600">{school.delka_studia ? `${school.delka_studia}leté studium` : 'Délku studia ověř u školy'}{school.zamereni ? ` · ${school.zamereni}` : ''}</p>
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0 flex-1 basis-64">
+            <h3 className="text-xl font-bold leading-snug text-slate-900 sm:text-2xl"><Link href={`/skola/${school.slug}`} className="hover:text-blue-700 hover:underline">{school.nazev_display || school.nazev}</Link></h3>
+            <p className="mt-2 text-lg font-semibold leading-snug text-blue-800"><Link href={`/skola/${school.slug}`} className="hover:underline">{school.obor}</Link></p>
+            <p className="mt-1 text-sm font-medium text-slate-700">{school.delka_studia ? `${school.delka_studia}leté studium` : 'Délku studia ověř u školy'}{school.zamereni ? ` · ${school.zamereni}` : ''}</p>
+            <p className="mt-2 text-sm text-slate-500">{school.adresa || school.ulice || school.obec}</p>
+          </div>
+          <button className={`${button} shrink-0 ${saved ? 'border-blue-400 bg-blue-50 text-blue-800' : ''}`} aria-pressed={saved} aria-label={`${saved ? 'Odebrat' : 'Uložit'} ${school.obor}, ${school.nazev}`} onClick={() => toggle(selectedId)}>{saved ? '✓ Uloženo' : '+ Uložit obor'}</button>
+        </div>
         {stop && <p className="mt-3 font-medium text-blue-800">{estimate ? `Odhad ${estimate.minutes} min od zastávky` : pending ? 'Dojezd se načítá…' : 'Dojezd v tomto rozsahu není ověřen'}</p>}
         {near && estimate && <p className="mt-1 text-sm text-amber-800">O {estimate.minutes - limit} min nad tvým limitem</p>}
         <p className="mt-2 text-sm text-amber-800">Otevření oboru pro rok 2027 ověř u školy.</p>
         {estimate && <details className="mt-3 text-sm"><summary className="min-h-8 cursor-pointer text-blue-700">Podrobnosti odhadu cesty</summary><p>Ze zastávky {stop?.name} přes {estimate.stopName}; přestupy: {estimate.transfers}, chůze ke škole přibližně {estimate.walkMinutes} min. {estimate.lines.length ? `Linky v modelu: ${estimate.lines.join(', ')}.` : ''}</p><p className="mt-2 text-slate-600">Ranní profil zahrnuje odhad čekání. Není to konkrétní spojení; cestu z domova na výchozí zastávku nezahrnuje.</p></details>}
-        {selection && comparing ? <HistoricalFacts school={school} /> : <details className="mt-3"><summary className="min-h-8 cursor-pointer text-sm text-blue-700">Přijímání a historické výsledky</summary><HistoricalFacts school={school} /><p className="mt-2 text-sm">Historický průměr není minimem ani předpovědí přijetí.</p></details>}
+        <HistoricalFacts school={school} />
+        {otherPrograms.length > 0 && <details className="mt-4 border-t border-slate-200 pt-3" onToggle={event => {
+          const open = event.currentTarget.open;
+          setExpandedSchools(previous => { const next = new Set(previous); if (open) next.add(school.id); else next.delete(school.id); return next; });
+        }}>
+          <summary className="min-h-11 cursor-pointer py-2 font-semibold text-blue-800">Další nabídky této školy v katalogu ({otherPrograms.length})</summary>
+          <p className="mb-3 text-xs text-slate-600">Mohou mít jiné zaměření, délku studia i místo výuky. Zobrazujeme i nabídky mimo zvolené filtry.</p>
+          {expandedSchools.has(school.id) && <ul className="divide-y divide-slate-200">{otherPrograms.map(other => {
+            const otherId = selectedIds.find(id => normalizeSchoolKey(id) === normalizeSchoolKey(other.id));
+            const matching = filtered.some(s => s.id === other.id);
+            const trip = transit ? estimates.byId.get(normalizeSchoolKey(other.id)) : undefined;
+            const ratio = applicationsPerPlace(other.demand?.applications, other.demand?.capacity);
+            return <li key={other.id} className="py-4">
+              <div className="flex flex-wrap items-start justify-between gap-3"><div className="min-w-0 flex-1 basis-52">
+                <Link href={`/skola/${other.slug}`} className="font-semibold text-blue-800 hover:underline">{other.obor}{other.zamereni ? ` · ${other.zamereni}` : ''}</Link>
+                <p className="mt-1 text-sm text-slate-600">{other.delka_studia ? `${other.delka_studia}leté studium · ` : ''}{other.adresa || other.ulice || other.obec}</p>
+                {!matching && <p className="mt-1 text-xs font-medium text-amber-800">Mimo zvolené filtry oboru, typu studia nebo lokality</p>}
+                {stop && <p className="mt-1 text-xs text-slate-600">{trip ? `Dojezd: odhad ${trip.minutes} min${trip.minutes > limit ? ' · nad tvým limitem' : ''}` : 'Dojezd v tomto rozsahu není ověřen'}</p>}
+              </div><button className={button} aria-pressed={!!otherId} aria-label={`${otherId ? 'Odebrat' : 'Uložit'} další obor ${other.obor}, ${other.delka_studia} let, ${other.zamereni || other.obec}`} onClick={() => toggle(otherId || other.id)}>{otherId ? '✓ Uloženo' : '+ Uložit'}</button></div>
+              <p className="mt-2 text-sm text-slate-700">2026 · průměr JPZ přijatých <strong>{value(other.history?.average)} / 100</strong> · konkurence <strong>{ratio === null ? 'neznámá' : `${ratio.toLocaleString('cs-CZ', { maximumFractionDigits: 1 })} přihlášek / místo`}</strong></p>
+            </li>;
+          })}</ul>}
+        </details>}
       </div>
-      <button className={`${button} shrink-0 ${saved ? 'border-blue-400 bg-blue-50 text-blue-800' : ''}`} aria-pressed={saved} aria-label={`${saved ? 'Odebrat' : 'Uložit'} ${school.obor}, ${school.nazev}`} onClick={() => toggle(selectedId)}>{saved ? '✓ Uloženo' : '+ Uložit'}</button>
     </article>;
   }
 
@@ -234,9 +276,9 @@ export function SimulatorClient() {
     <p role="status" className="text-sm text-slate-600">{notice} {storageStatus}</p>
     {showingSelection ? <section className="mt-3">
       <h1 className="text-3xl font-bold">Můj výběr 2027</h1><p className="mt-2 text-slate-600">Uložené obory jsou kandidáti. Tento seznam není přihláška.</p>
-      {selectedIds.length > 0 && <div className="my-4 flex flex-wrap gap-2"><button className={button} onClick={() => updateUrl({ srovnani: comparing ? null : '1' })}>{comparing ? 'Skrýt porovnání historie' : 'Porovnat historii'}</button><button className={button} onClick={share}>Sdílet výběr</button></div>}
+      {selectedIds.length > 0 && <div className="my-4"><p className="mb-3 text-sm text-slate-600">Výsledky oborů můžeš porovnat přímo na kartách níže.</p><button className={button} onClick={share}>Sdílet výběr</button></div>}
       {!selectedIds.length && <p className="my-6">Zatím tu nic není. Přidej obor ze simulátoru.</p>}
-      {selectedIds.map(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? renderSchool(school, false, true) : <div key={id} className="my-4"><p>{!catalog && !error ? 'Načítám uložený obor…' : 'Uložený obor se nepodařilo jednoznačně dohledat. Výběr zůstal zachovaný.'}</p><button className={button} onClick={() => toggle(id)}>Odebrat nedohledaný obor</button></div>; })}
+      {selectedIds.map(id => { const school = catalogIndex.get(normalizeSchoolKey(id)); return school ? renderSchool(school) : <div key={id} className="my-4"><p>{!catalog && !error ? 'Načítám uložený obor…' : 'Uložený obor se nepodařilo jednoznačně dohledat. Výběr zůstal zachovaný.'}</p><button className={button} onClick={() => toggle(id)}>Odebrat nedohledaný obor</button></div>; })}
       {shareUrl && <label className="mt-4 block text-sm">Odkaz obsahuje jen výběr oborů a zobrazí ho každý, komu jej předáš. Zastávka ani dojezd se nesdílejí.<input className={field} value={shareUrl} readOnly onFocus={e => e.target.select()} /></label>}
     </section> : <>
       <p className="text-sm font-semibold text-blue-700">SIMULÁTOR 2027</p>

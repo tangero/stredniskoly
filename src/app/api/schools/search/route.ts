@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { createSlug } from '@/lib/utils';
 import { normalizeSchoolKey, uniqueSchoolIndex } from '@/lib/school-key';
-import { getResultsForYear, getSchoolAnalysis } from '@/lib/data';
+import { getResultsForYear, getSchoolAnalysis, getSchools2026Data } from '@/lib/data';
 import { readSchoolIds } from '@/lib/simulator-state';
 
 type SchoolsData = Record<string, School[]>;
@@ -143,10 +143,13 @@ export async function GET(request: NextRequest) {
     if (params.get('krajeOnly') === '1') return NextResponse.json({ kraje: krajeCache });
 
     const results = uniqueSchoolIndex(Array.from(await getResultsForYear(2026)), ([id]) => id);
+    const applications = uniqueSchoolIndex(await getSchools2026Data(), s => s.id);
     const finite = (v: unknown, max = Infinity) => typeof v === 'number' && Number.isFinite(v) && v >= 0 && v <= max ? v : null;
     const serialize = (s: School, requestedId = s.id) => {
       const result = results.get(normalizeSchoolKey(s.id))?.[1];
+      const application = applications.get(normalizeSchoolKey(s.id));
       return {
+        demand: application ? { year: 2026, round: 1, applications: finite(application.prihlasky), capacity: finite(application.kapacita) } : null,
         id: requestedId, nazev: s.nazev, nazev_display: s.nazev_display, obor: s.obor,
         zamereni: normalizeZamereni(s.zamereni), obec: s.obec, ulice: s.ulice, adresa: s.adresa,
         kraj: s.kraj, kraj_kod: s.kraj_kod, typ: s.typ, delka_studia: s.delka_studia,
