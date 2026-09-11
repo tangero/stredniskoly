@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "frozen_snapshot_sha256": "9816b0c290bec2c92078b34a3caaabd63f83fd1d3c5ff2832512bd3ea981eae8",
+  "frozen_A1": {
+    "queries": {
+      "visits": {
+        "params": {
+          "module": "API",
+          "method": "VisitsSummary.get",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:04.202801+00:00",
+        "response_sha256": "8878fd1fb9b683667b7c75b3c072bb5d3e73a5a63c161d0b3e78d2c70487fe4e"
+      },
+      "actions": {
+        "params": {
+          "module": "API",
+          "method": "Actions.get",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:04.405160+00:00",
+        "response_sha256": "0fb244ae5a2e508a6962a2970b38110f602354efd7fa2486e278e97905be012f"
+      },
+      "pages": {
+        "params": {
+          "module": "API",
+          "method": "Actions.getPageUrls",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:05.388190+00:00",
+        "response_sha256": "bc6d77a8f15631c469ee9b814651e5a4ef14499c45de31616aa88910d4ac1825"
+      },
+      "returning": {
+        "params": {
+          "module": "API",
+          "method": "VisitFrequency.get",
+          "idSite": 7,
+          "format": "JSON",
+          "language": "en",
+          "format_metrics": 0,
+          "filter_limit": -1,
+          "period": "range",
+          "date": "2026-02-11,2026-09-11",
+          "flat": 1
+        },
+        "fetched_at": "2026-09-11T08:57:06.552303+00:00",
+        "response_sha256": "73832493b021240c767cfbb884e71319b7fb3fbe1d1d1e08408569590166643a"
+      }
+    },
+    "visits": 25762,
+    "pageviews": 44527,
+    "page_rows_sum": 44527,
+    "entries_sum": 25440,
+    "school_prefix_pageviews": 14462,
+    "school_others": [
+      {
+        "label": "/skola/ - Others",
+        "nb_hits": 12137,
+        "nb_visits": 10709,
+        "entry_nb_visits": 6292
+      }
+    ],
+    "entry_residual": 322,
+    "new_plus_returning_residual": 8
+  },
+  "fresh": [
+    {
+      "label": "closed_first",
+      "summary": {
+        "queries": {
+          "visits": {
+            "params": {
+              "module": "API",
+              "method": "VisitsSummary.get",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-10",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:40.179908+00:00",
+            "response_sha256": "bad797a550065fd7776e1c5d9f32c0414bc4d3974b7e3ecfac6e2222c19bcd73"
+          },
+          "actions": {
+            "params": {
+              "module": "API",
+              "method": "Actions.get",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-10",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:40.406603+00:00",
+            "response_sha256": "690dd2e9e12e8acd699f58cc139ffae0cae6e8261e69daf2a00a659bc019aefb"
+          },
+          "pages": {
+            "params": {
+              "module": "API",
+              "method": "Actions.getPageUrls",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-10",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:41.557696+00:00",
+            "response_sha256": "1c9f025f50a6854fab674fe3efc188247bd88ace2c0a0e4e222d077c150e8088"
+          },
+          "returning": {
+            "params": {
+              "module": "API",
+              "method": "VisitFrequency.get",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-10",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:41.810748+00:00",
+            "response_sha256": "6c7bf4cbc115041d168d5f00fd37cc6aa8d3bdfd8d0425d0fdd5fd47d6229a9f"
+          }
+        },
+        "visits": 25740,
+        "pageviews": 44484,
+        "page_rows_sum": 44484,
+        "entries_sum": 25418,
+        "school_prefix_pageviews": 14458,
+        "school_others": [
+          {
+            "label": "/skola/ - Others",
+            "nb_hits": 12136,
+            "nb_visits": 10707,
+            "entry_nb_visits": 6289
+          }
+        ],
+        "entry_residual": 322,
+        "new_plus_returning_residual": 0
+      }
+    },
+    {
+      "label": "open_day",
+      "summary": {
+        "queries": {
+          "visits": {
+            "params": {
+              "module": "API",
+              "method": "VisitsSummary.get",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-11",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:41.962952+00:00",
+            "response_sha256": "4b0764c54006927ab7734d46ad19fcac2bf0633b445f384bde03aa63332ec93e"
+          },
+          "actions": {
+            "params": {
+              "module": "API",
+              "method": "Actions.get",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-11",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:42.080837+00:00",
+            "response_sha256": "0fb244ae5a2e508a6962a2970b38110f602354efd7fa2486e278e97905be012f"
+          },
+          "pages": {
+            "params": {
+              "module": "API",
+              "method": "Actions.getPageUrls",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-11",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:42.591606+00:00",
+            "response_sha256": "bc6d77a8f15631c469ee9b814651e5a4ef14499c45de31616aa88910d4ac1825"
+          },
+          "returning": {
+            "params": {
+              "module": "API",
+              "method": "VisitFrequency.get",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-11",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:42.901530+00:00",
+            "response_sha256": "6d1b0ac31d92b4e6252280a92fb00b96216623648dd65938e434511be4bfb4f6"
+          }
+        },
+        "visits": 25775,
+        "pageviews": 44527,
+        "page_rows_sum": 44527,
+        "entries_sum": 25440,
+        "school_prefix_pageviews": 14462,
+        "school_others": [
+          {
+            "label": "/skola/ - Others",
+            "nb_hits": 12137,
+            "nb_visits": 10709,
+            "entry_nb_visits": 6292
+          }
+        ],
+        "entry_residual": 335,
+        "new_plus_returning_residual": 9
+      }
+    },
+    {
+      "label": "closed_repeat",
+      "summary": {
+        "queries": {
+          "visits": {
+            "params": {
+              "module": "API",
+              "method": "VisitsSummary.get",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-10",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:43.015868+00:00",
+            "response_sha256": "bad797a550065fd7776e1c5d9f32c0414bc4d3974b7e3ecfac6e2222c19bcd73"
+          },
+          "actions": {
+            "params": {
+              "module": "API",
+              "method": "Actions.get",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-10",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:43.127688+00:00",
+            "response_sha256": "690dd2e9e12e8acd699f58cc139ffae0cae6e8261e69daf2a00a659bc019aefb"
+          },
+          "pages": {
+            "params": {
+              "module": "API",
+              "method": "Actions.getPageUrls",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-10",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:43.660705+00:00",
+            "response_sha256": "1c9f025f50a6854fab674fe3efc188247bd88ace2c0a0e4e222d077c150e8088"
+          },
+          "returning": {
+            "params": {
+              "module": "API",
+              "method": "VisitFrequency.get",
+              "idSite": 7,
+              "format": "JSON",
+              "language": "en",
+              "format_metrics": 0,
+              "filter_limit": -1,
+              "period": "range",
+              "date": "2026-02-11,2026-09-10",
+              "flat": 1
+            },
+            "fetched_at": "2026-09-11T09:21:43.790179+00:00",
+            "response_sha256": "6c7bf4cbc115041d168d5f00fd37cc6aa8d3bdfd8d0425d0fdd5fd47d6229a9f"
+          }
+        },
+        "visits": 25740,
+        "pageviews": 44484,
+        "page_rows_sum": 44484,
+        "entries_sum": 25418,
+        "school_prefix_pageviews": 14458,
+        "school_others": [
+          {
+            "label": "/skola/ - Others",
+            "nb_hits": 12136,
+            "nb_visits": 10707,
+            "entry_nb_visits": 6289
+          }
+        ],
+        "entry_residual": 322,
+        "new_plus_returning_residual": 0
+      }
+    }
+  ],
+  "limits": [
+    "Nové dotazy nejsou transakčně shodným snímkem a nezpětně nereprodukují čas oponentova měření.",
+    "Period=month zahrnuje celé kalendářní měsíce, proto není náhradou oříznutého range.",
+    "Rozdíl součtů zůstává otevřený, dokud jeho příčina není doložena."
+  ]
+}

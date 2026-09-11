@@ -1,6 +1,6 @@
 # Analýza návštěvnosti 2026 a její dopad na rozvoj 2027
 
-Verze **1.3 / R2**, doplněno 11. 9. 2026 o vypořádání R2 (Others, rozdíly součtů, Vercel a OG obrázky). Přímé čtení statistik Vercelu autorem této analýzy zatím neověřeno. Číselný základ byl ověřen 11. 9. 2026 přes Matomo API, `idSite=7`, časové pásmo Europe/Prague. Období **11. 2.–11. 9. 2026 včetně**, poslední den průběžný. [Původní analýza v1.0](historie/navstevnost-a1/analyza-navstevnosti-2026.md) je zachována; změny a rozdíly jsou na konci. Závěry zde rozlišují měřená data, interpretace a navržené kroky.
+Verze **1.2 / A1-V**, doplněno 11. 9. 2026 o Vercel jako další zdroj (jeho statistiky zatím nenačteny). Číselný základ byl ověřen 11. 9. 2026 přes Matomo API, `idSite=7`, časové pásmo Europe/Prague. Období **11. 2.–11. 9. 2026 včetně**, poslední den průběžný. [Původní analýza v1.0](historie/navstevnost-a1/analyza-navstevnosti-2026.md) je zachována; změny a rozdíly jsou na konci. Závěry zde rozlišují měřená data, interpretace a navržené kroky.
 
 ## 1. Co z toho měníme v projektu
 
@@ -46,7 +46,7 @@ Simulátor je v tomto srovnání třetí konkrétní funkční oblast za hlavní
 
 Samotné `/simulator` má 3 286 zobrazení, 2 768 návštěv této URL a 2 165 vstupů; `?srovnani=1` má 776, 647 a 487. Návštěvy URL nelze sečíst jako unikátní návštěvy obou variant — tentýž návštěvník mohl v jedné relaci otevřít obě. Totéž platí pro součet návštěv jednotlivých profilů. Původní měsíční sloupec „Návštěv celkem“ neodpovídá `VisitsSummary.nb_visits`; většina hodnot odpovídá součtu návštěv URL. U prvních čtyř měsíců se navíc nepodařilo přesná čísla v1.0 reprodukovat z úplného exportu; původní parametry nad rámec přílohy a surová odpověď nebyly doloženy. Nenahrazujeme je domnělou příčinou.
 
-**DATA.** V `/skola/ - Others` je 12 137 zobrazení. Toto není celý souhrn profilů a skupinu nelze rozbalit jen změnou `filter_limit`. V1.0 uvedených 12 208 se nepodařilo reprodukovat jako součet všech profilů; snímek A1 dává pro prefix 14 462. R2 navrhuje 12 208 přiřadit k Others, ale zmrazená odpověď i nový dotaz potvrzují 12 137. Bez konkrétního odlišného řádku a času oponentova dotazu nelze změnu přijmout; podrobnosti a důkaz jsou v §11. Nejde o doklad růstu návštěvnosti od původní analýzy, ale o rozdíl vymezení/reprodukce. [Matomo — archivace do Others](https://matomo.org/faq/how-to/faq_54/).
+**DATA.** V `/skola/ - Others` je 12 137 zobrazení. Toto není celý souhrn profilů a skupinu nelze rozbalit jen změnou `filter_limit`. V1.0 uvedených 12 208 zobrazení všech profilů se nepodařilo reprodukovat; aktuální součet prefixu dává 14 462. Nejde o doklad růstu návštěvnosti od původní analýzy, ale o rozdíl vymezení/reprodukce. [Matomo — archivace do Others](https://matomo.org/faq/how-to/faq_54/).
 
 **DOPAD.** Nabídnout uložení u konkrétního oboru, po uložení malou akci „Otevřít Můj výběr“ a jasný stav „Uloženo v tomto prohlížeči“. Profil má fungovat samostatně i po vstupu z externího odkazu: vysvětlit školu/obor, stav roku 2027, zdroje a další krok. Je to navržená reakce na návštěvnost; report zatím neměří její účinnost. Na profily patří i opravy identity a interpretace, protože mají doložený dosah. Pořadí konkrétních škol z reportu s Others nevyvozovat.
 
@@ -120,7 +120,7 @@ Rutinní [přístup a příkazy](matomo-pristup.md) jsou připravené v `scripts
 | Květen má nejvíce unikátních | Únor 4 969, květen 4 435; opraveno. |
 | Měsíční zobrazení 16 739 atd. | Šlo o všechny akce; doplněn samostatný sloupec skutečných zobrazení. |
 | Návštěv celkem v tabulce kalkulaček | Nesprávný jmenovatel, nahrazen VisitsSummary; nepřesně reprodukovatelné hodnoty označeny. |
-| Profily souhrnně 12 208 zobrazení | Úplný součet prefixu 14 462, rozsah a Others uvedeny. Příčina rozdílu původního výpočtu nedoložena. O-15 v R2 tvrdí záměnu s Others 12 208; zmrazený i nový dotaz však potvrzují Others 12 137, viz §11. |
+| Profily souhrnně 12 208 zobrazení | Úplný součet prefixu 14 462, rozsah a Others uvedeny. Příčina rozdílu původního výpočtu nedoložena. |
 | Druhá vstupní stránka po hlavní a profilech | Opraveno s vymezením funkčních skupin a konkrétních URL. |
 | Vracející se tráví nadprůměrně dlouho | 272 s proti 285 s celkem; tvrzení odstraněno. |
 | Přímé vstupy dokazují zapamatování a doporučení | Neprokázaná interpretace; nahrazena podmíněnou hypotézou. |
@@ -139,7 +139,7 @@ Rutinní [přístup a příkazy](matomo-pristup.md) jsou připravené v `scripts
 
 Uživatel doplnil [dashboard projektu za 30 dní](https://vercel.com/tangeros-projects/stredniskoly/analytics?period=30d). Přes Vercel konektor byla ověřena identita projektu `stredniskoly`, `prj_Yh3UGtfELluIwvXazLyVxF5JIPsD`, tým `team_6pc2wHKjeUuaXwZfCS3jOhvX` a doména `www.prijimackynaskolu.cz`. V místním `src/app/layout.tsx` je import `@vercel/analytics/react` a `<Analytics />`; instalovaná verze je 1.6.1. To dokládá integraci v kódu, ne úplnost produkčního sběru. Používá se obecná React varianta, proto bez kontroly nepředpokládáme dostupnost seskupení podle šablony Next.js route.
 
-**Stav přístupu:** dostupný prohlížeč skončil na přihlášení, CLI 49.1.2 nemá přihlašovací údaje a dostupné MCP nástroje neobsahují čtení Web Analytics. Nebyly získány žádné počty z Vercelu. Prázdný či nepřístupný přehled nevykládáme jako nulovou návštěvnost. R2 navíc hlásí API 404 bez úplného dotazu; důvod nelze určit a potřeba vyššího tarifu není doložena. Místní `.vercel/project.json` byl po ověření opraven na produkční projekt. Matomo přístup zůstává funkční. [Návod k získání druhého podkladu](vercel-analytics-pristup.md).
+**Stav přístupu:** dostupný prohlížeč skončil na přihlášení, CLI 49.1.2 nemá přihlašovací údaje a dostupné MCP nástroje neobsahují čtení Web Analytics. Nebyly získány žádné počty z Vercelu. Prázdný či nepřístupný přehled nevykládáme jako nulovou návštěvnost. Matomo přístup zůstává funkční. [Návod k získání druhého podkladu](vercel-analytics-pristup.md).
 
 **Co může přinést:** kontrolu denního vývoje zobrazení, využití profilů, simulátoru a zařízení. Vercel popisuje zachycení následných zobrazení přes nativní rozhraní prohlížeče; je proto užitečný pro prověření rizika podměřených přechodů v Matomo. Rozdíl agregátů sám ale příčinu nedokazuje — rozhodne průchod stejnou navigací se sledováním obou měření. [Princip měření Vercel](https://vercel.com/docs/analytics).
 
@@ -152,29 +152,3 @@ Uživatel doplnil [dashboard projektu za 30 dní](https://vercel.com/tangeros-pr
 5. Zaznamenat omezení exportu: CSV z panelu má nejvýše 250 řádků. Není to automaticky úplný katalog navštívených škol. Neúplný součet porovnat s celkem a přiznat zbytek. [Vercel — panely a export](https://vercel.com/docs/analytics/using-web-analytics).
 
 **Dopad na M0:** přejímka navigace a odstranění tajných částí URL musí pokrýt oba již přítomné trackery. Před přidáním událostí určit primární zdroj produktových ukazatelů; nenasazovat duplicitní sběr bez účelu. Vercel Web Analytics není log všech HTTP požadavků a nenahradí samostatné ověření strojových přístupů k API či llms.txt. Zatím není důvod měnit pořadí S0 → profily → Můj výběr ani snižovat odhad M0.
-
-
-## 11. Vypořádání R2 a nové kontrolní snímky
-
-Předchozí analýza v1.2 je zachována ve [snímku R2](historie/rozvoj-2027-r2-vstup/analyza-navstevnosti-2026.md). Číselné tabulky A1 nadále popisují původní snímek, ne nejnovější stav průběžného dne. [Úplná odpověď na O-15 až O-19](navrh-rozvoje-2027.md#r2-o-15) obsahuje důkazy, rozporované závěry a podmínky uzavření.
-
-| Kontrola | Návštěvy | Zobrazení Actions / součet řádků | Vstupy řádků | Others `/skola/` | Rozdíl návštěvy−vstupy | Noví+vracející se−celkem |
-|---|---:|---:|---:|---:|---:|---:|
-| Zmrazený A1, 11. 2.–11. 9. | 25 762 | 44 527 / 44 527 | 25 440 | 12 137 | 322 | 8 |
-| R2, 11. 2.–10. 9., první čtení | 25 740 | 44 484 / 44 484 | 25 418 | 12 136 | 322 | 0 |
-| R2, 11. 2.–11. 9., průběžný den | 25 775 | 44 527 / 44 527 | 25 440 | 12 137 | 335 | 9 |
-| R2, 11. 2.–10. 9., opakování | 25 740 | 44 484 / 44 484 | 25 418 | 12 136 | 322 | 0 |
-
-Zdrojem je [auditní výstup](podklady/oponentura-2027-r2-matomo.json) s přesnými parametry, časy a SHA. Všechny intervaly jsou včetně mezních dní. Opakování dokončeného období je shodné; 322 vstupů (1,25 %) tedy nelze uzavřít prostým vyloučením dnešního dne. Malé kolísání jiných součtů může souviset s časem či archivací; přesný mechanismus nebyl doložen. `period=month` zahrnuje kalendářní měsíc a bez oříznutí není totožným experimentem jako `range`. Reporty proto neslučujeme do domněle přesného trychtýře.
-
-**O-15:** číslo Others v A1 zachováno podle surové odpovědi; alternativních 12 208 oponenta se znovu nepodařilo reprodukovat. Jeho interpretace možného zdroje v1.0 není potvrzená.
-
-**O-16:** zásada dokončených dní potvrzena; vysvětlení rozdílu 322 zůstává otevřené. Doplnění měření M0 tím není hotové.
-
-**O-17/O-18:** dostupnost programového Vercel přístupu v účtu zatím neověřena, 404 nedokládá nutnost Plus. Stručný výpis runtime logu neobsahuje UA, ale dokumentace uvádí User Agent v detailu požadavku. Před vlastním sběrem ověřit, co lze získat existující cestou. Nově hlášený BetterStack drain je další podklad od oponenta, nikoli nezávisle prověřený zdroj této analýzy. Nula v omezeném výpisu nedokazuje nevyužívání strojových formátů.
-
-**O-19:** tři OG obrázky při nové HTTP kontrole vracejí 500. Priorita distribuční opravy je doložená funkční vadou, ne odhadem ušlých návštěv. Lokální souběžná změna runtime čeká na ověření nasazení; doplněna do S0. Z provozu sociálních sítí neodvozujeme kauzální ztrátu CTR.
-
-| Verze | Datum | Změna |
-|---|---|---|
-| 1.3 / R2 | 11. 9. 2026 | Reprodukce Others a součtů, zachování snímku A1, upřesnění Vercel přístupu/logů a doplnění vady OG obrázků. O-15 rozporováno důkazem; O-16 nezavírá neobjasněné rozdíly. |

@@ -1,0 +1,52 @@
+{
+  "checked_on": "2026-09-11",
+  "project": {
+    "id": "prj_Yh3UGtfELluIwvXazLyVxF5JIPsD",
+    "name": "stredniskoly",
+    "framework": null,
+    "accountId": "team_6pc2wHKjeUuaXwZfCS3jOhvX",
+    "createdAt": 1769267594154,
+    "updatedAt": 1789118283249,
+    "nodeVersion": "24.x",
+    "live": false,
+    "latestDeployment": {
+      "id": "dpl_2yPr8A6U8xPpkF5oWcsfnEi1xU9o",
+      "url": "stredniskoly-97c6wd1ol-tangeros-projects.vercel.app",
+      "createdAt": 1789109642365,
+      "readyState": "READY",
+      "target": "production"
+    },
+    "domains": [
+      "stredniskoly.vercel.app",
+      "www.prijimackynaskolu.cz",
+      "prijimackynaskolu.cz",
+      "stredniskoly-tangeros-projects.vercel.app",
+      "stredniskoly-git-main-tangeros-projects.vercel.app"
+    ]
+  },
+  "request": {
+    "tool": "vercel_get_runtime_logs",
+    "projectId": "prj_Yh3UGtfELluIwvXazLyVxF5JIPsD",
+    "teamId": "team_6pc2wHKjeUuaXwZfCS3jOhvX",
+    "environment": "production",
+    "since": "1h",
+    "limit": 3
+  },
+  "log_sample": "## Runtime Logs\n\n**Project:** prj_Yh3UGtfELluIwvXazLyVxF5JIPsD\n**Time range:** 2026-09-11T08:20:44.964Z → 2026-09-11T09:20:44.964Z\n\n### 09:20:35 GET /vysledky/2026 200 [info/serverless]\ndep=dpl_2yPr8A6U8xPpkF5oWcsfnEi1xU9o branch=main cache=MISS\n\n### 09:20:35 GET / 200 [info/static]\ndep=dpl_2yPr8A6U8xPpkF5oWcsfnEi1xU9o branch=main cache=HIT\n\n### 09:20:35 GET /prijimacky-2027 200 [info/static]\ndep=dpl_2yPr8A6U8xPpkF5oWcsfnEi1xU9o branch=main cache=HIT\n",
+  "limits": [
+    "Časový vzorek je nový; nereprodukuje blíže neurčenou hodinu oponentury.",
+    "Stručný MCP výpis nemá UA/referer; neprokazuje absenci v detailu zdroje.",
+    "Oponentova API 404 nemá doložený endpoint, parametry a čas; příčina nebyla reprodukována."
+  ],
+  "sources": [
+    "https://vercel.com/docs/analytics/web-analytics-api",
+    "https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli",
+    "https://vercel.com/docs/logs/runtime#log-details"
+  ],
+  "local_project_after": {
+    "projectId": "prj_Yh3UGtfELluIwvXazLyVxF5JIPsD",
+    "orgId": "team_6pc2wHKjeUuaXwZfCS3jOhvX",
+    "projectName": "stredniskoly"
+  },
+  "local_project_after_sha256": "639ed80c4c8b04db434c24b96c2b4e94cc13b0d3311a1dd9912d635d174d14c8"
+}

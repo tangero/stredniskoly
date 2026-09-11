@@ -1,10 +1,10 @@
 # Návrh rozvoje Přijímaček na školu pro přijímací řízení 2027
 
-**Verze 2.2 / R2 — vypořádání druhého kola oponentury, 11. 9. 2026.** Stav: revidované zadání k další oponentuře. Nejde o potvrzení opravy produkčního simulátoru ani o schválení dosud otevřených produktových voleb.
+**Verze 2.1 — doplnění ověřené návštěvnosti A1 po vypořádání R1, 11. 9. 2026.** Stav: revidované zadání k další oponentuře. Nejde o potvrzení opravy produkčního simulátoru ani o schválení dosud otevřených produktových voleb.
 
-Sekce 1 a úvod sekce 2 zachycují audit před dodávkou `c9ae452`; aktuální návrh v sekcích 3–9 je upraven podle zjištění R1 a R2. Úplné [původní znění](historie/rozvoj-2027-r0/navrh-rozvoje-2027.md) je zachováno. Každá připomínka O-1 až O-14 a obě přílohy mají [vypořádání níže](#vyporadani-r1), včetně nesouhlasu a důkazů. Historie a pravidla dalšího kola jsou na konci.
+Sekce 1 a úvod sekce 2 zachycují audit před dodávkou `c9ae452`; aktuální návrh v sekcích 3–9 je upraven podle zjištění R1. Úplné [původní znění](historie/rozvoj-2027-r0/navrh-rozvoje-2027.md) je zachováno. Každá připomínka O-1 až O-14 a obě přílohy mají [vypořádání níže](#vyporadani-r1), včetně nesouhlasu a důkazů. Historie a pravidla dalšího kola jsou na konci.
 
-Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.6](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **O-13 zůstává otevřeným produkčním blokátorem:** odstranění zavádějících výstupů simulátoru je první opravná dodávka nezávislá na budoucí integraci Mého výběru. O-4 je navazující technický dluh. V tomto kole se mění zadání a podklady a opravuje místní propojení Vercelu, nikoli aplikace či nasazení. Aktuální [vypořádání R2](#vyporadani-r2) zahrnuje všechna ID O-1 až O-19; oponent v R2 výslovně přijal protidůkazy k O-1/O-3/O-5/O-6 a opravu označení MZ v O-2.
+Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.5](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **O-13 zůstává otevřeným produkčním blokátorem:** odstranění zavádějících výstupů simulátoru je první opravná dodávka nezávislá na budoucí integraci Mého výběru. O-4 je navazující technický dluh. V tomto kole se mění zadání a podklady, nikoli aplikace.
 
 Doporučení: po opravné dodávce pokračovat ověřenými profily a Mým výběrem. Do návrhu profilů přidat historii JPZ 2017–2023 a maturitní výsledky školy jako oddělené datové oddíly. Výzkum návaznosti vstupu a výstupu ověřit samostatně; propojení agregátů přes školu samo nedokládá kohortu ani přidanou hodnotu.
 
@@ -88,13 +88,11 @@ Původní analýza obsahovala záměny návštěv/akcí/zobrazení a několik ne
 
 Prověřit API `src/app/api/schools/search/route.ts` a jeho zpracování v simulátoru i souběžné odvozování v `src/lib/data.ts`: význam `min_body`, převody škál, minima jednotlivých předmětů, vazbu na konkrétní zaměření a odvozování `extra_body`. Rozdíl minim neurčuje další školní kritéria a `Math.max` dvou metodicky různých hodnot není validací. Školní body se mohou zobrazit až ze skutečných kritérií školy pro daný rok; bez nich zůstávají neznámé.
 
-**Doplnění S0 / O-19 po R2:** opravit a ověřit tři nefunkční OG obrázky (`/opengraph-image`, `/regiony/opengraph-image`, `/simulator/opengraph-image`). V pracovním stromu už běží souběžná oprava runtime; nezakládat duplicitní implementaci. Její lokální přítomnost není důkaz nasazení. Přejímka je uvedena u [O-19](#r2-o-19); tato oprava nesmí odložit odstranění zavádějících výstupů O-13.
-
 **Podmínky uzavření S0:** zkontrolované API a všechny větve rozhraní včetně vybraných oborů, doporučení a sdílených URL; ověření chybějících hodnot a více zaměření jedné školy; vhodné regresní testy, build a kontrola mobilu/desktopu; po nasazení kontrola veřejného výsledku. Samotná změna textu návrhu O-13 neuzavírá.
 
 **Technický dluh O-4:** odstranění nepodložených `estimatedChancePct`, `estimatedMinScore`, kategorií a rizika kombinace z výpočtového rozhraní `chances.ts`. Zobrazené historické podíly a poptávka zůstávají popisné. Podmínkou uzavření je kontrola všech konzumentů a test, že veřejné rozhraní nevrací osobní predikci. Nyní se predikce v Moje šance nevykreslují, ale výpočet není odstraněn.
 
-**M0 — ověřit měření před hodnocením nových funkcí.** V kódu je jen úvodní `trackPageView`; v Matomo je report vlastních událostí prázdný. Nevyvozovat z toho nezájem o funkce. Ověřit klientské přechody Next.js včetně zpět/vpřed a zabránit dvojímu měření. Definovat úspěšné uložení, porovnání, zálohu a sdílení s jasným jmenovatelem a povolenými vlastnostmi bez soukromého obsahu či tokenů. M0 neodkládá odstranění vad v S0; blokuje vyhodnocení míry použití nového rozhraní, dokud nejsou události ověřené. Přijímací postup a limity jsou v analýze v1.3 §7, §10 a §11. M0 zahrne oba přítomné trackery (Matomo i Vercel), zejména navigaci a odstranění tajných částí URL. Číselný rozdíl mezi výpisy není bez důkazu chybou klienta ani vysvětlený jen dnešním provozem. Rutinní čtení Matomo už je implementované podle [návodu](matomo-pristup.md); měření aplikace v této revizi opravené není.
+**M0 — ověřit měření před hodnocením nových funkcí.** V kódu je jen úvodní `trackPageView`; v Matomo je report vlastních událostí prázdný. Nevyvozovat z toho nezájem o funkce. Ověřit klientské přechody Next.js včetně zpět/vpřed a zabránit dvojímu měření. Definovat úspěšné uložení, porovnání, zálohu a sdílení s jasným jmenovatelem a povolenými vlastnostmi bez soukromého obsahu či tokenů. M0 neodkládá odstranění vad v S0; blokuje vyhodnocení míry použití nového rozhraní, dokud nejsou události ověřené. Přijímací postup a limity jsou v analýze A1 §7. Rutinní čtení Matomo už je implementované podle [návodu](matomo-pristup.md); měření aplikace v této revizi opravené není.
 
 **Zachovat rok u každé informace.** Výsledky 2026, kapacita potvrzená pro 2027 a historické školné nesmějí působit jako údaje ze stejného období. Chybějící hodnota není nula. Historické minimum není předpověď příští hranice a samo o sobě nereprodukuje školní pořadí.
 
@@ -225,7 +223,6 @@ Původních 26–39 člověkodnů A–C je historický odhad před dodávkou, ni
 | Pořadí / balík | Zbývající obsah | Pracovní odhad |
 |---|---|---:|
 | S0 — současná zavádějící doporučení | O-13 celý tok simulátoru + odstranění mrtvých predikcí O-4; kontrola a nasazení | 2–4 člověkodny |
-| S0 / O-19 — OG obrázky | Souběžná oprava runtime, ověření všech tří adres a metadat po nasazení | Zbývající práce zatím neodhadnuta; není zahrnuta v původních 2–4 dnech S0 |
 | M0 — měření | Ověření a základ opravy navigačního měření; definice událostí nových funkcí, jejich realizace patří do C | 1–2 člověkodny navíc |
 | B — data a profily | Identita nabídky, nepokryté obory, stavy 2027, ověřování školou a moderace; bez zopakování obnovy prvního kola a kalendáře | 8–13 člověkodnů |
 | C — Můj výběr | Ukládání, porovnání, plán, účet bez hesla, záloha a náhled; dle uzavřeného PRD | 10–16 člověkodnů |
@@ -233,7 +230,7 @@ Původních 26–39 člověkodnů A–C je historický odhad před dodávkou, ni
 | V — studie vstupu/výstupu | Protokol, párování skupin, citlivost a rozhodnutí o publikaci; bez slibu kalibrované přidané hodnoty | 3–5 analytických dnů + metodická oponentura |
 | D — příprava | Rozbor, plán, původní úlohy, tutor; rozsah dosud neimplementován | Původní pracovní odhad 20–35 člověkodnů + 40–80 hodin učitele, nutno zpřesnit |
 
-S0+B+C: **20–33 zbývajících člověkodnů** podle rozsahu R1; s novým M0 **21–35**, stále **bez nově zjištěného O-19**. Před závazným termínem započítat zbývající přejímku souběžné opravy O-19; její spotřeba ani dokončení zatím nejsou doložené. Dny M0 nejsou naměřená spotřeba, případná změna archivace Matomo není součástí odhadu. H a V jsou oddělené volitelné rozšíření; neblokují základní ukládání, jejich datové místo v profilu se navrhne už nyní. Čísla nejsou příslibem termínu a jejich přesnost nebyla měřena. Návrh nemá oporu pro tvrzení, že všechno párování opravíme za několik hodin.
+S0+B+C: **20–33 zbývajících člověkodnů** podle rozsahu R1; s novým M0 **21–35**. Dny M0 nejsou naměřená spotřeba, případná změna archivace Matomo není součástí odhadu. H a V jsou oddělené volitelné rozšíření; neblokují základní ukládání, jejich datové místo v profilu se navrhne už nyní. Čísla nejsou příslibem termínu a jejich přesnost nebyla měřena. Návrh nemá oporu pro tvrzení, že všechno párování opravíme za několik hodin.
 
 S0 připravit jako následující opravnou dodávku, nezávisle na integraci simulátoru do Mého výběru. Po jejím uzavření implementovat pilot podle PRD; návrh ovládání a inventura dat mohou běžet souběžně. V lednu ověřovat vyhlášená kritéria 2027, další sezónní priority řídit kalendářem. Kalendář již byl publikován a znovu se nepočítá jako budoucí úkol.
 
@@ -256,8 +253,6 @@ Další konkrétní dodávka je S0. Následují profily s oddělenou historií a
 
 <a id="vyporadani-r1"></a>
 ## 10. Vypořádání oponentury — kolo R1
-
-Historický stav odpovědi R1 zůstává níže beze změny; aktuální stanovisko po oponentově ověření a nové body jsou v [R2](#vyporadani-r2).
 
 Vstup: [oponentura v1.1, neměnný snímek](historie/rozvoj-2027-r0/oponentura-navrhu-rozvoje-2027.md), proti návrhu před R1 a PRD v0.3. Autor odpovědi: Codex, 11. 9. 2026. **„Zapracováno“ znamená úpravu zadání; oponent ještě nepotvrdil uzavření.** Provedení navržené opravy se eviduje samostatně. Odpověď pokrývá všech 14 ID, podbody O-14, obě přílohy a závěrečné doporučení.
 
@@ -352,106 +347,3 @@ Identifikátor revize R1: `rozvoj-2027-r1`. Commit této odpovědi lze dohledat 
 | 2.1 / A1 | 11. 9. 2026 | Zapracování analýzy návštěvnosti v1.1, priorita uložení v profilech, mobil jako podmínka, M0 a interní cílový termín S0. Ověřený čtecí klient Matomo a reprodukovatelné agregáty. |
 
 Předchozí revize 2.0 / R1 je commit `5a0f893`, její přesný snímek i PRD v0.4 jsou v `historie/navstevnost-a1/`. A1 je doplnění nových dat, nikoli druhé oponentní kolo a nikoli souhlas oponenta s R1. Historie O-1 až O-14 zůstává beze změny; O-13 stále není opraveno v produkci. Tento zápis nevybírá varianty D4/D8 a neslibuje termín veřejného Mého výběru. Revizi lze dohledat pomocí `git log --all --grep='matomo-navstevnost-a1'`.
-
-
-<a id="vyporadani-r2"></a>
-## 13. Vypořádání oponentury — kolo R2
-
-Předmět: oponentura v2.0/R2, doplněná během práce na v2.1/R2 o O-19 k návrhu v2.1, PRD v0.5 a analýze v1.1. Mezitím vznikla analýza v1.2 s doplněním Vercelu; její čísla A1 se nezměnila. [Přesné vstupy R2 a SHA-256](historie/rozvoj-2027-r2-vstup/manifest.json) zachovávají i uživatelovu oponenturu před touto odpovědí. Toto je odpověď autora, nikoli nové schválení oponentem.
-
-### Důkazy R2
-
-- **R2-E1:** [zmrazený A1 a opakované dotazy Matomo](podklady/oponentura-2027-r2-matomo.json). Původní snímek má SHA-256 `9816b0c290bec2c92078b34a3caaabd63f83fd1d3c5ff2832512bd3ea981eae8`, shodné s evidencí A1. Obsahuje skutečný řádek Others, parametry, časy a kontrolní součty původních odpovědí; nikoli jen přepis čísla z dokumentu. Nové dotazy s `flat=1`, `filter_limit=-1`, `idSite=7`, jazykem `en`, bez segmentu a `period=range` byly provedeny pro 11. 2.–10. 9., 11. 2.–11. 9. a znovu 11. 2.–10. 9. 2026. Reprodukce: `python3 scripts/audit-review-2027-r2.py --source ~/.local/share/stredniskoly/matomo/overeni-2026-09-11.json --output /tmp/oponentura-r2-matomo.json`. Nová reprodukce musí mít vlastní čas; nemění se tím historický snímek.
-- **R2-E2:** [Vercel projekt, omezený vzorek výpisu logů a oprava místní konfigurace](podklady/oponentura-2027-r2-vercel.json). Projekt ověřen čtecím konektorem včetně veřejné domény. Tři nové záznamy z explicitně zaznamenaného hodinového okna obsahují i statické HIT; stručný výstup neobsahuje UA/referer. Není to zopakování neurčené původní hodiny oponenta ani úplný export.
-- **R2-E3:** [veřejné Web Analytics API](https://vercel.com/docs/analytics/web-analytics-api) a [čtení metrik CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli), ověřeno 11. 9. 2026. Dokumentace výslovně uvádí dostupnost Web Analytics přes `vercel metrics` bez Observability Plus. Neprokazuje oprávnění našeho konkrétního účtu ani příčinu oponentovy 404.
-- **R2-E4:** [Runtime Logs — Log details](https://vercel.com/docs/logs/runtime#log-details), ověřeno 11. 9. 2026: detail požadavku obsahuje položku „Request User Agent“, systém také umožňuje filtr podle prohlížeče. To vyvrací obecné tvrzení, že Vercel tuto informaci nemá; neprokazuje, že ji poskytuje zvolený MCP výpis, že jde o celý surový UA řetězec ani že je dostupný referer.
-- **R2-E5:** [nové veřejné ověření O-13](podklady/oponentura-2027-r2-produkce.json). HTML simulátoru stále odkazuje na JS s kategoriemi a prahem ±10. Souhlasí i místní `SimulatorClient.tsx`; `chances.ts` stále vrací predikční pole O-4. Neproběhla nová interakční přejímka ani oprava.
-
-### Převzetí rozhodnutí R2 k původním 14 ID
-
-| ID | Co R2 skutečně rozhodlo | Stav po odpovědi autora R2 |
-|---|---|---|
-| O-1 | Potvrzuje historické zdroje, stahuje závěr o kohortě | Metodický rozpor uzavřen souhlasem oponenta; import H dosud nehotov. |
-| O-2 | Přijímá opravu `jap` a dostupnosti roku 2026 | Spor o označení/období uzavřen; inventura doplněna v R1, produkční import a mapování nejsou hotové. |
-| O-3 | Stahuje možnost získat kohortu samotným REDIZO | Metodický rozpor uzavřen; popisná studie V zůstává volitelná a nesmí tvrdit přidanou hodnotu školy. |
-| O-4 | Nepřináší novou výhradu; R1 rozlišilo mrtvý výpočet a zobrazení | Technický dluh stále otevřený v S0. R2 jej výslovně neuzavírá. |
-| O-5 | Stahuje doporučení sloučit klíč bez zaměření | Nebezpečné doporučení uzavřeno jeho stažením; budoucí kontrola identity nabídek zůstává úkolem. |
-| O-6 | Potvrzuje historický zdroj heuristiky | Faktický rozpor uzavřen; budoucí historické adaptéry stále vyžadují přejímku formátu. |
-| O-7 | Neznovuotevírá | Dřívější uzavření zachováno, obnova dat znovu neplánována. |
-| O-8 | Neznovuotevírá | Dřívější uzavření zachováno; není to nový audit celého webu. |
-| O-9 | Bez nového samostatného rozhodnutí | Přepočet R1/A1 platí jako pracovní odhad, nikoli jako oponentem ověřená pracnost. |
-| O-10 | Neznovuotevírá | Dřívější uzavření výkladu „nedoloženo“ zachováno; příprava se tím nestává vydanou. |
-| O-11 | Bez nového samostatného rozhodnutí | Zákaz univerzálního skóre zachován; kohortní argument řídí přijaté vypořádání O-3. |
-| O-12 | Bez nového samostatného rozhodnutí | Pravidla z R1 a odpovědi k oběma přílohám zachovány; nevzniklo oprávnění přebírat chráněné testy. |
-| O-13 | Dokumentaci přijímá, opravu podmiňuje commitem a produkcí | **Otevřený produkční blokátor S0**, znovu doložen R2-E5. |
-| O-14 | Výslovně přijímá podbod 2, vazbu na data v PRD §8 | Dokumentační výhrada k obsahu profilu uzavřena. Better Auth zůstává kandidát; poznámka o doručování není důkaz hotové autentizace. |
-
-Pozdější O-19 navíc dokládá druhou produkční vadu. R2 není úplný audit všech produkčních rizik. Jeho formulaci „jediné otevřené produkční riziko“ čteme jako jediný takto doložený blokátor v této oponentuře, nikoli jako záruku, že jiné vady neexistují. Obě přílohy R1 zůstávají vypořádané v §10; R2 k nim nedodalo nový důkaz.
-
-<a id="r2-o-15"></a>
-### O-15 — rozporována navržená změna čísla, doplněna auditní stopa
-
-**Důkaz oponenta:** tentýž dotaz podle jeho popisu vrací Others 12 208 a prefix 14 462. **Protidůkaz R2-E1:** odpověď z 08:57:05 UTC v původním snímku uvádí pro `/skola/ - Others` `nb_hits=12137`, `nb_visits=10709`, `entry_nb_visits=6292`. Stejných 12 137 a prefix 14 462 vrací i nový dotaz zahrnující dnešek. Zápis A1 tedy odpovídá uloženému API výsledku a není chyba přepisu.
-
-Číslo **12 137 nepřepisujeme na 12 208**. Přijímáme logický rozdíl mezi agregátem Others a součtem celého prefixu, ten již analýza vysvětluje. Nebereme jako doložené, že původních 12 208 bylo právě hodnotou tohoto agregátu: oponent nedodal úplnou odpověď, čas a její hash. Mohl mít jiný snímek či parametry, příčinu neznáme. Do analýzy §3/§11 přidáváme konkrétní evidence a odlišujeme „nereprodukováno jako součet všech profilů“ od tvrzení, že hodnota nemohla v žádném jiném reportu nastat. Pro další ověření dodat konkrétní řádek, úplné netajné parametry, čas a SHA, nikoli token.
-
-**Stav:** vypořádáno autorem s protidůkazem, k oponentnímu ověření; nízká priorita, bez produktového blokátoru.
-
-<a id="r2-o-16"></a>
-### O-16 — přijata zásada dokončených dní, příčina rozdílů není uzavřená
-
-**Důkaz oponenta:** 25 775 proti 25 762 návštěv a 44 542 proti 44 527 zobrazení z různých reportů; vysvětluje průběžným dnem/archivací. R2-E1 skutečně nově vrací 25 775 návštěv, ale v témže kole Actions i řádky shodně 44 527 zobrazení. Požadavky nejsou atomický snímek, takže takové kolísání je možné. Ani `period=month` není obecně totožný interval jako oříznutý `range`.
-
-**Protidůkaz proti úplnému vysvětlení zbytků:** oba dotazy pouze do 10. 9. vracejí 25 740 návštěv, 44 484 zobrazení a **25 418 vstupů**, tedy stále rozdíl **322 (1,25 %)**. Rozdíl noví+vracející se je v těchto dvou dotazech nula, v původním průběžném snímku osm a v novém devět. To podporuje vliv časového snímku na malý rozdíl, ale nedokazuje konkrétní mechanismus archivace. Čísla +13 a +15 pod 0,1 % nevysvětlují automaticky původních 322.
-
-Číselný základ A1 zůstává zmrazený; nové hodnoty ho nepřepisují po částech. Analýza doplňuje kontrolu dokončených dní a ponechává 322 jako **nevysvětlený rozdíl**, který se nesmí použít k přesnému výpočtu konverzního trychtýře. Případná diagnostika archivace patří do M0, bez přepočtu serverových archivů v tomto kole.
-
-**Stav:** informativní bod vypořádán s upřesněním; příčina 322 zůstává otevřená, neblokuje návrh ani opravu S0.
-
-<a id="r2-o-17"></a>
-### O-17 — přístup otevřený, tarifní příčina nedoložená, místní propojení opraveno
-
-**Důkaz oponenta:** 404 na správném projektu a funkční dashboard/jiné dotazy. Přijímáme jako hlášené pozorování; chybí přesný endpoint, verze API, parametry, čas a odpověď bez tajemství. Proto ho nelze nezávisle reprodukovat ani vyloučit chybu dotazu či oprávnění. **R2-E3 rozporuje předpoklad nutnosti Observability Plus:** oficiální dokumentace výslovně umožňuje programové Web Analytics metriky bez něj. To neznamená, že libovolný endpoint, tarif nebo účet musí fungovat, ani že máme přístup už zprovozněný.
-
-Matomo zůstává ověřený rutinní zdroj. Ruční CSV je použitelná dočasná cesta; tvrzení „čísla je nutné vždy předávat ručně“ nahrazujeme stavem „programový přístup k tomuto účtu zatím neověřen“. Z 404 nevyvozovat potřebu kupovat vyšší tarif. Diagnostický postup je v [návodu Vercel](vercel-analytics-pristup.md).
-
-Neshodu `.vercel/project.json` potvrzuje snímek před změnou. Po novém ověření identity přes konektor (R2-E2) byl **místní soubor opraven** na `stredniskoly`, `prj_Yh3UGtfELluIwvXazLyVxF5JIPsD`, stejný tým. Kontrolní součet výsledku je v R2-E2. Soubor je záměrně ignorovaný Gitem; do historie patří předchozí netajná konfigurace a doklad, nikoli odstranění ignorování celé `.vercel`. Neměnilo se vzdálené nastavení, proměnné ani nasazení; případné lokálně stažené prostředí se nesmí automaticky považovat za prostředí opraveného projektu.
-
-**Stav:** místní nesoulad opraven a ověřen čtením; statistický přístup organizačně otevřen, tarifní vysvětlení rozporováno, bez blokace S0.
-
-<a id="r2-o-18"></a>
-### O-18 — potvrzen limit výpisu konektoru, rozporováno zobecnění na všechny logy
-
-**Důkaz oponenta:** stručný záznam neobsahuje UA/referer. R2-E2 toto potvrzuje v novém vzorku. **Protidůkaz R2-E4:** oficiální popis detailu požadavku na Vercelu uvádí Request User Agent. Ze stručného výpisu tedy nelze rozhodnout, že Vercel UA vůbec neuchovává a vlastní modul je nutný. O dostupnosti surové hlavičky, refereru či jejich exportu v tomto účtu zatím důkaz nemáme.
-
-Před implementací ověřit detail jednoho známého požadavku v dashboardu, možnosti exportu/drainu, dostupné pole, pokrytí HIT/MISS, retenční okno a cenu pro daný účet. Nový vzorek konektoru obsahuje i statické HIT; nelze tedy zaměnit všechny logy platformy za výpis jen provedených handlerů. Naopak vlastní logování uvnitř cachovaného handleru kompletní provoz CDN nezachytí. Cache kvůli tomu nevypínat.
-
-Oponentových 771 různých cest, 159 hledání a nulu pod `/api/skola/` vedeme jako jeho časově blíže neurčený vzorek, ne jako znovu ověřenou statistiku. Při interpretaci kontrolovat i veřejné rewrite cesty `/skola/*.md` a `/skola/*.json`, limity a úplnost výpisu. Nula v neúplném pozorování **není důkaz ani spolehlivý náznak nepoužívání formátů**. UA je tvrzení klienta, ne důkaz, že konkrétní model obsah použil k tréninku nebo že se člověk právě ptá na školu.
-
-Během práce autor návrhu logování doplnil živé ověření drainu BetterStack: jeho vzorek hlavičky také neobsahuje. Přijímáme jako nové hlášené pozorování, které zde nebylo nezávisle reprodukováno. Nevyvrací R2-E4 o detailu platformy. Tento souběžně měněný dokument nepřepisujeme; před jeho realizací platí upřesnění této odpovědi. Samotná retence v drainu ještě neřeší UA, pokrytí cache ani metodiku závěrů. Experiment strojových přístupů je samostatný, až po S0, a nenahrazuje M0. Bez ověření dostupného exportu nevytvářet úložiště ani zavazovat se k novému sběru.
-
-**Stav:** vypořádáno s protidůkazem a změnou zadání; prověření dostupnosti detailu/exportu zůstává otevřené, není blokátorem Mého výběru.
-
-<a id="r2-o-19"></a>
-### O-19 — přijato, produkční vada potvrzena; oprava rozpracována souběžně
-
-Bod přibyl během práce ve vstupní oponentuře v2.1; [doplňkový snímek](historie/rozvoj-2027-r2-vstup/oponentura-v2.1-doplneni-o19.md) a [manifest](historie/rozvoj-2027-r2-vstup/manifest-doplneni.json) jej zachovávají. **R2-E6:** [HTTP kontrola, log a stav souběžného kódu](podklady/oponentura-2027-r2-og.json) potvrzuje HTTP 500 u všech tří adres. Nový čtecí dotaz do runtime logů našel u všech tří chybu chybějícího `NEXT_DEPLOYMENT_ID` v edge wrapperu. Jde o doložené selhání generování obrázků; statistiku 23 chyb za hodinu jsme nezávisle nepřepočítávali.
-
-Odstranění `runtime = 'edge'` je přiměřený kandidát opravy, který už souběžná práce provedla v lokálních třech generátorech. Tato odpověď tyto soubory neupravovala. Log prokazuje bezprostřední místo selhání, ne celou příčinu konfigurace Vercelu ani účinnost opravy. [Dokumentace ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) nevyžaduje pro základní použití výslovné zapnutí edge. Nezavádět ručně falešnou hodnotu deployment ID jen pro potlačení výjimky.
-
-Přijímáme zařazení do opravné vlny S0 s oddělenou přejímkou: doložit commit příslušné opravy, build, úspěšné nasazení a následně **GET všech tří adres musí vracet 200, obrazový MIME typ a dekódovatelný obraz očekávaných rozměrů**, nikoli jen HTML s 200. Z hlaviček hlavní stránky, regionů a simulátoru ověřit skutečné `og:image`/twitter odkazy včetně parametrů a přesměrování na správnou doménu; zkontrolovat vizuální obsah a náhled v dostupném validátoru sociální sítě. Stav cache sociální sítě uvést odděleně od správně vráceného obrázku. Nenahrazovat tyto kroky samotným lintem či lokálním odstraněním řádku.
-
-Počet návštěv ze sociálních sítí potvrzuje existující distribuční kanál, nikoli velikost ztráty prokliků. Bez experimentu netvrdíme, že všech 2 626 návštěv vidělo chybný náhled nebo jak moc náhled ovlivnil CTR; některé služby mohou mít starší obrázek v cache. Do rozpočtu nepřebíráme odhad „drobná změna“ jako ověřenou celkovou pracnost.
-
-**Stav k času R2-E6:** dokumentačně zapracováno, kód rozpracován v souběžné práci, **produkce stále vrací 500**. Bod zůstává otevřenou produkční vadou do přejímky. O-13 nadále zůstává hlavním blokátorem doporučování; jeho uzavření a uzavření O-19 se evidují samostatně.
-
-### Historie a podmínky R3
-
-| Revize | Vstup | Výstup a změna |
-|---|---|---|
-| R1 | Oponentura v1.1 | Návrh v2.0 / PRD v0.4, commit `5a0f893`. |
-| A1 | Analýza v1.0 | Návrh v2.1 / PRD v0.5 / analýza v1.1, commit `ed0fd98`. |
-| A1-V | Doplnění dashboardu | Analýza v1.2 a návod Vercel, commit `c8a56aa`. |
-| R2, 11. 9. 2026 | Oponentura v2.0 a doplnění v2.1 v pracovním stromu; přesný vstup v manifestu | Návrh v2.2 / PRD v0.6 / analýza v1.3 / oponentura v2.2 s odpovědí autora. Převzetí stanovisek k O-1–14, reakce na O-15–19, nové důkazy a lokální oprava propojení Vercelu. Identifikátor commitu `rozvoj-2027-r2`. |
-
-**19/19 ID má aktuální dispozici**, což neznamená 18 opravených či oponentem uzavřených vad. R3 má ověřit R2-E1 k O-15/O-16 a rozsah protidůkazů dokumentace Vercelu k O-17/O-18. R3 musí zvlášť doložit případné dokončení souběžné opravy O-19. Neuzavřené důkazní rozpory mají uvedeny požadované podklady, nebrání diskusi nad PRD. **O-13/S0 zůstává blokátorem implementace pilotu Mého výběru**; O-4 se řeší v téže opravné dodávce. O-19 je další otevřená produkční vada se souběžnou opravou a vlastní přejímkou. K uzavření S0 je stále nutný commit aplikace, příslušné kontroly a ověření veřejného výsledku. Toto dokumentační kolo je nenahrazuje. D1/D2 se nemění, D3–D8 se nepovažují za nově schválené.

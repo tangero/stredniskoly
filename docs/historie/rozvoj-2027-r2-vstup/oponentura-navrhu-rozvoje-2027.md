@@ -1,11 +1,8 @@
 # Oponentura návrhu rozvoje 2027
 
-Verze 2.2 / R2 — doplněna odpověď autora 11. 9. 2026. Vstupní posudek v2.1/R2 zahrnoval O-19 po ověření Log Drainu. Předmět: `navrh-rozvoje-2027.md` v2.1, `prd-muj-vyber-2027.md` v0.5, `analyza-navstevnosti-2026.md` v1.1/A1.
+Verze 2.0 / R2. Zpracováno 11. 9. 2026. Předmět: `navrh-rozvoje-2027.md` v2.1, `prd-muj-vyber-2027.md` v0.5, `analyza-navstevnosti-2026.md` v1.1/A1.
 
 Stav: oponentní posudek k rozhodnutí, nikoli schválená změna zadání. Body označené **OVĚŘENO** jsem doložil spuštěním kódu nebo stažením zdroje; **NÁZOR** je argumentace bez tvrdého důkazu.
-
-
-**Aktuální odpověď autora R2:** úplné [vypořádání všech O-1 až O-19 v původním návrhu v2.2](navrh-rozvoje-2027.md#vyporadani-r2). Vstupní posudky [v2.0](historie/rozvoj-2027-r2-vstup/oponentura-navrhu-rozvoje-2027.md) i [doplněné v2.1](historie/rozvoj-2027-r2-vstup/oponentura-v2.1-doplneni-o19.md) jsou zachovány s kontrolními součty. Následující stanoviska oponenta nepřepisujeme; odpověď autora není jeho souhlasem s uzavřením. Nové důkazy rozporují O-15, část vysvětlení O-16 a zobecnění O-17/O-18. O-19 přijato jako další produkční vada; souběžná lokální oprava ještě není ověřenou opravou veřejného výsledku.
 
 ## R2: stanovisko k vypořádání R1
 
@@ -46,57 +43,7 @@ Vypořádání R1 je nadprůměrné ve dvou ohledech, které stojí za pojmenov�
 
 ## R2: nová zjištění
 
-### O-19. Náhledové obrázky pro sdílení jsou rozbité (HTTP 500)
-
-**Odpověď autora:** [O-19 — dispozice, důkazy a zbývající práce](navrh-rozvoje-2027.md#r2-o-19). Níže zůstává stanovisko oponenta ze vstupní R2.
-
-**Stav:** otevřeno. **Priorita:** vysoká, produkční vada. **OVĚŘENO** na produkci i v runtime logách. **Nalezeno mimochodem** při ověřování Log Drainu.
-
-Všechny tři generátory náhledových obrázků vracejí chybu:
-
-| Adresa | Stav |
-|---|---|
-| `/opengraph-image` | HTTP 500 |
-| `/regiony/opengraph-image` | HTTP 500 |
-| `/simulator/opengraph-image` | HTTP 500 |
-
-Chyba z runtime logu, opakuje se soustavně (23 chyb 500 za hodinu proti 3 854 úspěšným):
-
-```
-GET /opengraph-image 500 [error/edge-function]
-Error: process.env.NEXT_DEPLOYMENT_ID is missing but runtimeServerDeploymentId is enabled
-    at next/dist/esm/server/web/edge-route-module-wrapper.js:58:48
-```
-
-**Příčina.** Soubor `src/app/opengraph-image.tsx` má `export const runtime = 'edge'`. V kombinaci s Next.js 16.1.4 a zapnutým `runtimeServerDeploymentId` na straně Vercelu edge wrapper selže na chybějící proměnné. `NEXT_DEPLOYMENT_ID` není nikde v repozitáři, jde o nastavení platformy.
-
-**Dopad.** Hlavní stránka v hlavičce deklaruje `og:image` s odkazem na tuto adresu:
-
-```
-<meta property="og:image" content="https://prijimackynaskolu.cz/opengraph-image?63db45ffb17c61c1"/>
-```
-
-Odkaz na web sdílený na Facebooku, Twitteru nebo v chatu tedy **nemá náhledový obrázek**. Podle analýzy návštěvnosti přichází ze sociálních sítí 2 626 návštěv, z toho 1 750 z Facebooku, kde náhled zásadně ovlivňuje prokliknutelnost.
-
-**Potvrzení dopadu z logů.** Export z BetterStacku ukazuje, že chybu 500 dostával přímo `facebookexternalhit/1.1`, tedy robot Facebooku stahující náhled. Nejde o teoretický dopad.
-
-**OPRAVENO 11. 9. 2026.** Odstraněn `runtime = 'edge'` ze všech tří souborů (`src/app/opengraph-image.tsx`, `regiony/`, `simulator/`). Ověřeno sestavením a lokálním během:
-
-| Adresa | Před | Po |
-|---|---|---|
-| `/opengraph-image` | 500 | 200, PNG 1200×630, 49,9 kB |
-| `/regiony/opengraph-image` | 500 | 200, PNG 1200×630, 59,1 kB |
-| `/simulator/opengraph-image` | 500 | 200, PNG 1200×630, 49,3 kB |
-
-Vedlejší přínos: v build výstupu se všechny tři změnily z dynamické funkce na **staticky předgenerovaný obsah** (`○`). Odpadá tím volání funkce při každém stažení náhledu.
-
-**Zbývá:** nasadit a ověřit na produkci, ideálně přes validátor náhledu Facebooku, který si vynutí nové stažení. Stav: opraveno lokálně, **nenasazeno**.
-
----
-
 ### O-15. Nesrovnalost v analýze v1.1: hodnota Others
-
-**Odpověď autora:** [O-15 — dispozice, důkazy a zbývající práce](navrh-rozvoje-2027.md#r2-o-15). Níže zůstává stanovisko oponenta ze vstupní R2.
 
 **Stav:** otevřeno. **Priorita:** nízká, jde o přesnost údaje. **OVĚŘENO.**
 
@@ -108,8 +55,6 @@ Doporučení: opravit číslo 12 137 na 12 208 a v tabulce vypořádání upravi
 
 ### O-16. Drobná neshoda v součtech Matomo
 
-**Odpověď autora:** [O-16 — dispozice, důkazy a zbývající práce](navrh-rozvoje-2027.md#r2-o-16). Níže zůstává stanovisko oponenta ze vstupní R2.
-
 **Stav:** k informaci, neblokuje. **OVĚŘENO.**
 
 Analýza v1.1 poctivě eviduje neuzavřený rozdíl 322 vstupů a 8 návštěv. Dodávám pozorování, které jej vysvětluje: dotazy `period=range` a `period=month` vracejí mírně odlišné hodnoty (25 775 proti 25 762 návštěv; `Actions.get` uvádí 44 542 zobrazení proti 44 527 ze součtu řádků). Rozdíl je pod 0,1 % a odpovídá průběžnému dni a archivaci na straně Matomo.
@@ -117,8 +62,6 @@ Analýza v1.1 poctivě eviduje neuzavřený rozdíl 322 vstupů a 8 návštěv. 
 Nejde o chybu analýzy. Potvrzuje to ale zásadu z v1.1 pracovat s dokončenými dny; doporučuji ji dodržet i u příštích reportů, aby se rozdíl nevykládal jako nález.
 
 ### O-17. Vercel Web Analytics je přes API nedostupné
-
-**Odpověď autora:** [O-17 — dispozice, důkazy a zbývající práce](navrh-rozvoje-2027.md#r2-o-17). Níže zůstává stanovisko oponenta ze vstupní R2.
 
 **Stav:** otevřeno, organizační. **OVĚŘENO.**
 
@@ -130,8 +73,6 @@ Související zjištění: lokální `.vercel/project.json` ukazuje na projekt `
 
 ### O-18. Runtime logy Vercelu neobsahují user agent
 
-**Odpověď autora:** [O-18 — dispozice, důkazy a zbývající práce](navrh-rozvoje-2027.md#r2-o-18). Níže zůstává stanovisko oponenta ze vstupní R2.
-
 **Stav:** otevřeno, vstup pro rozhodnutí o měření. **OVĚŘENO.**
 
 Runtime logy na správném projektu fungují a za hodinu ukazují 771 různých cest. Záznam má tvar `GET /api/schools/search 200 [info/serverless] dep=… cache=MISS` a **neobsahuje user agent ani referer**. Klasifikaci agenta z nich tedy získat nelze, což je jádro měření navrženého v `navrh-logovani-api-endpointu.md`.
@@ -141,8 +82,6 @@ Za sledovanou hodinu nepřišel na `/api/skola/` ani jeden požadavek, zatímco 
 ---
 
 ## Historie: co se změnilo ve verzi 1.1
-
-**Historický text:** následující původní tvrzení a stavy nejsou aktuálním souhrnem. Kde byla v R2 stažena (zejména kohorta a plošné párování), platí rozhodnutí R2 výše a aktuální tabulka v návrhu §13. Ponecháváme je jako doklad původu připomínek.
 
 Autor mezitím vydal PRD v0.3, doplnil hlavičku návrhu rozvoje a upravil záznam dodávky. Změny reaguji takto:
 
@@ -534,27 +473,3 @@ Historické doporučení oponenta v1.1; aktuální odpověď k pořadí je v ná
 ## Odpověď autora R1 — další kolo
 
 Úplné [vypořádání v původním návrhu](navrh-rozvoje-2027.md#vyporadani-r1) obsahuje i obě přílohy, rozlišení souhlasu a protidůkazů a historii verzí. Pro další oponenturu ověřit především rozdílné populace JPZ/MZ (O-1/O-3/O-11), kolize při odstranění zaměření (O-5), zdroj původní heuristiky (O-6) a dostatečnost podmínek opravy S0 (O-13). O-13 nelze uzavřít jen tímto textem; veřejná vada zůstává doložená v R1. Rozhodnutí dalšího oponenta doplnit jako R2 bez mazání R1.
-
-
-## Odpověď autora R2 — souhrn pro další kolo
-
-| ID | Dispozice autora | Otevřená část |
-|---|---|---|
-| O-1–O-14 | Převzata jednotlivá stanoviska R2 v tabulce návrhu §13; nedeklarováno plošné uzavření všech bodů | O-13 produkční blokátor, O-4 technický dluh; plánované importy a produktové volby nejsou realizací. |
-| O-15 | Navržená změna na 12 208 odmítnuta proti zmrazené odpovědi i novému dotazu s 12 137 | Oponentní kontrola konkrétního řádku a parametrů. |
-| O-16 | Dokončené dny přijaty; rozdíl 322 přetrval i ve dvou takových dotazech | Příčina rozdílu není vysvětlená. |
-| O-17 | Místní projekt opraven; přístup zůstává neověřený, tarifní příčina 404 nedoložená | Autorizace a reprodukce přesného API dotazu. |
-| O-18 | Stručný MCP výpis nemá UA; dokumentace ho uvádí v detailu platformy | Dostupnost potřebných polí v účtu/exportu; hlášený drain je odlišný kanál. |
-| O-19 | HTTP 500 a chyba edge wrapperu potvrzeny | Souběžná lokální oprava vyžaduje commit, nasazení a přejímku všech tří obrázků a skutečných metadat. |
-
-Podrobnosti, důkazní přílohy a požadavky na doplnění oponentních důkazů jsou autoritativně v původním návrhu §13. Další kolo R3 doplní své rozhodnutí bez mazání této odpovědi. Opravy textů samy neuzavírají produkční vady.
-
-### Historie verzí oponentury
-
-| Verze | Datum | Autorství / změna |
-|---|---|---|
-| 1.1 | 11. 9. 2026 | Oponentní vstup R1, zachován ve snímku R0. |
-| 1.2 | 11. 9. 2026 | Doplněna odpověď autora R1; commit `5a0f893`. |
-| 2.0 / R2 | 11. 9. 2026 | Oponent ověřil protidůkazy R1 a přidal O-15–18; pracovní vstup uchován ve snímku R2. |
-| 2.1 / R2 | 11. 9. 2026 | Oponent během auditu přidal O-19; zachován dodatečný snímek a manifest. |
-| 2.2 / R2 | 11. 9. 2026 | Odpověď autora na aktuálních 19 ID, nové důkazy a odkazy na návrh v2.2, PRD v0.6 a analýzu v1.3. Nejde o oponentní schválení odpovědi. |

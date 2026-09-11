@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-09-11T09:22:46.369872+00:00",
+  "url": "https://www.prijimackynaskolu.cz/simulator",
+  "html_sha256": "c4c60d84e1f1b4e2c18e438aa9aa9f09c8fe9f76959671e7ab00cc8d8cd4416a",
+  "method": "HTTP GET HTML a jeho script[src]; bez interakčního průchodu",
+  "matches": [
+    {
+      "url": "https://www.prijimackynaskolu.cz/_next/static/chunks/d60f497abfc067f8.js?dpl=dpl_2yPr8A6U8xPpkF5oWcsfnEi1xU9o",
+      "sha256": "9d6d0d529d3421d4980374bbfc60cda11b91ef4c9a1646c8169da991d8e70a6e",
+      "excerpt": "})},[]);let F=(0,y.useCallback)(e=>{let t=$-e;return t>=10?{status:\"accepted\",label:\"Vysoká šance\",color:\"green\"}:t>=-10?{status:\"borderline\",label:\"Na hraně\",color:\"yellow\"}:{status:\"rejected\",label:\"Malá šance\",color:\"red\"}},[$]),U=(0,y.useMemo)(()=>i,[i]),K=(0,y.useMemo)(()=>{let e=[],t=[],r=[];return U.forEach(n=>{let l"
+    }
+  ]
+}

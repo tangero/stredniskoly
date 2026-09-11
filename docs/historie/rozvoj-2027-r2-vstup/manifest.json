@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-09-11",
+  "head": "c8a56aa229cf28d799da7aed32dbc9b6b3460d93",
+  "note": "Pracovní vstupy před odpovědí R2 včetně uživatelovy dosud necommitované oponentury a samostatného návrhu logování.",
+  "files": {
+    "navrh-rozvoje-2027.md": "fc69241aed839273f0b3c48d20d209aa062b195216999478dc1f2aac08f24a58",
+    "prd-muj-vyber-2027.md": "112b152611fe94855e0737648c6aad145a2da22c088d6054769d1492d81b526b",
+    "oponentura-navrhu-rozvoje-2027.md": "8064ad8b77ef1b909d8e6641b168aa755ef222cf53141b4deba3e2cd6267189b",
+    "analyza-navstevnosti-2026.md": "c115eb24ac95ec12eff41fbebd6df3ed79d11dcf3e244be59eccb12619a2189d",
+    "vercel-analytics-pristup.md": "20cb9a3032fd1d3009a0e831ea7e7fb40152a68d509343161c458c8509827810",
+    "navrh-logovani-api-endpointu.md": "ff345f9f6ead9229fe949b527bc80fc4f9a0b4b6a3d0c5ba9127b5a68609da4a",
+    "vercel-project-before.json": "8c98d3c12ea091e24fbba28e78949fca3c396dd912cf6344928c581f223d069d"
+  }
+}

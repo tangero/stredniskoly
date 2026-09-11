@@ -1,6 +1,6 @@
 # Přístup k Vercel Web Analytics
 
-Verze 1.1 / R2, ověřeno 11. 9. 2026. Stav: projekt a integrace ověřeny; čtení statistik čeká na přihlášení nebo export. Žádné naměřené hodnoty Vercelu dosud nepřevzaty.
+Verze 1.0, ověřeno 11. 9. 2026. Stav: projekt a integrace ověřeny; čtení statistik čeká na přihlášení nebo export. Žádné naměřené hodnoty Vercelu dosud nepřevzaty.
 
 ## Správný projekt
 
@@ -9,7 +9,7 @@ Verze 1.1 / R2, ověřeno 11. 9. 2026. Stav: projekt a integrace ověřeny; čte
 - Projekt: `stredniskoly`, `prj_Yh3UGtfELluIwvXazLyVxF5JIPsD`.
 - Veřejná doména: `www.prijimackynaskolu.cz`.
 
-Identita ověřena přes MCP `vercel_get_project`. Místní `.vercel/project.json` původně mířil na `gymnazium`; při R2 byl opraven na výše uvedené ID po novém ověření konektorem. Soubor zůstává ignorovaný Gitem. Před nasazením znovu ověřit identitu i případné lokálně stažené prostředí; samotná oprava JSON nepřepíná vzdálené prostředí. Čtení metadat projektu přes konektor není přístupem k analytickým reportům. Token Matomo nepoužívat pro Vercel.
+Identita ověřena přes MCP `vercel_get_project`. Nespoléhat na místní `.vercel/project.json`, jehož dříve zjištěné propojení mířilo jinam. Čtení metadat projektu přes konektor není přístupem k analytickým reportům. Token Matomo nepoužívat pro Vercel.
 
 ## Jednorázové čtení a export
 
@@ -31,18 +31,3 @@ Po zpřístupnění ověřit první report proti stejným filtrům dashboardu a 
 - [API, definice a parametry](https://vercel.com/docs/analytics/web-analytics-api)
 - [Čtení metrik přes CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli)
 - [Filtry a CSV export](https://vercel.com/docs/analytics/using-web-analytics)
-
-
-## R2: hlášená 404 a diagnostika
-
-Oponent hlásí `404 — Web Analytics not found` při fungujícím dashboardu. Chybí přesná adresa/verze endpointu, parametry, čas a netajná odpověď, takže tato chyba nebyla zde nezávisle reprodukována. Není důkazem, že účet nutně vyžaduje vyšší tarif. Oficiální návod výslovně uvádí dostupnost Web Analytics přes `vercel metrics` bez Observability Plus.
-
-Po autorizaci nejprve ověřit účet/tým/projekt, přesný podporovaný endpoint a parametry; pak dostupné schéma/rozsah historie a shodný filtr v dashboardu. Při chybě uchovat HTTP status, kód a čas bez tokenu; nevytvářet domnělou diagnózu podle samotné 404. Ruční CSV je dočasná cesta. Bez tohoto ověření nedoporučovat nákup tarifu.
-
-## R2: runtime logy nejsou totéž jako Web Analytics
-
-`vercel_get_runtime_logs` vrací stručný výpis bez UA/refereru. [Detail požadavku v dokumentaci](https://vercel.com/docs/logs/runtime#log-details) však uvádí Request User Agent. Ověřit skutečné pole v dashboardu, možnost exportu/drainu a rozsah sběru; pole může být zjednodušený název prohlížeče, nemusí být dostatečné pro klasifikaci. Dostupnost refereru zde nebyla potvrzena. Souběžné hlášení o BetterStacku tvrdí absenci UA i ve vzorku drainu; tuto službu tato práce nekontrolovala.
-
-Nový vzorek MCP obsahuje i statické HIT, takže všechny platformní logy nelze vydávat za záznamy jen proběhlých handlerů. Vlastní logování uvnitř cachované routy naopak kompletní CDN provoz nepokrývá. Vyhodnocení nuly musí zahrnout veřejné rewrite adresy, limity, období a pokrytí logu.
-
-Historie: v1.0 zachována ve snímku R2; v1.1 zpřesňuje doložený stav přístupu, opravuje místní identitu a odlišuje výpis konektoru od detailu zdroje. Důkazy a dispozice jsou v návrhu rozvoje §13, O-17/O-18.

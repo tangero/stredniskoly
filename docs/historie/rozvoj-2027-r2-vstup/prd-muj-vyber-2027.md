@@ -1,12 +1,12 @@
 # PRD: Můj výběr 2027, profily oborů a podklady pro rozhodování
 
-- **Verze:** 0.6, pracovní návrh pro společnou diskusi.
+- **Verze:** 0.5, pracovní návrh pro společnou diskusi.
 - **Datum:** 11. 9. 2026.
 - **Stav:** Uživatel schválil směr: návrh Mého výběru, úpravu datového základu a profilů, následnou realizaci pilotu. Schváleny D1 a základ D2: okamžité ukládání, volitelný průvodce „Pomoz mi s výběrem“, jednoduchý účet bez hesla a odkaz k náhledu. Zbývající volby jsou označené níže.
 - **Rozsah této práce:** produktové zadání a interaktivní ukázka ovládání. Žádná nová produkční funkce ani rozesílka.
 - **Návaznost:** `navrh-rozvoje-2027.md`, `aktualizace-kalendar-data-2027.md`, samostatné `prd-priprava-na-jpz.md`.
 
-**Revize po oponentuře R1:** [návrh rozvoje v2.0](navrh-rozvoje-2027.md#vyporadani-r1) obsahuje odpovědi na O-1 až O-14 i přílohy. Tato verze zapracovává dopady do profilů a pořadí realizace. Původní [PRD v0.3](historie/rozvoj-2027-r0/prd-muj-vyber-2027.md) zůstává zachováno. R2 již přijalo protidůkazy k párování, kohortám a importu a datovou vazbu v §8; podrobné aktuální dispozice jsou v [odpovědi R2](navrh-rozvoje-2027.md#vyporadani-r2). O-13 zůstává otevřené.
+**Revize po oponentuře R1:** [návrh rozvoje v2.0](navrh-rozvoje-2027.md#vyporadani-r1) obsahuje odpovědi na O-1 až O-14 i přílohy. Tato verze zapracovává dopady do profilů a pořadí realizace. Původní [PRD v0.3](historie/rozvoj-2027-r0/prd-muj-vyber-2027.md) zůstává zachováno. Oponent zatím neověřil vypořádání R1.
 
 **Doplnění A1:** [ověřená návštěvnost v1.1](analyza-navstevnosti-2026.md) zpřesňuje dosah profilů a simulátoru, podíl telefonů a limity měření. Podle [návrhu v2.1](navrh-rozvoje-2027.md) doplňuje M0; není novým kolem externí oponentury. Původní PRD v0.4 je ve snímku `historie/navstevnost-a1/`.
 
@@ -20,10 +20,8 @@ Tento přehled odděluje dokončenou dodávku od návrhu následující etapy. S
 | Obnova prvního kola 2026 | **Hotovo a nasazeno v uvedeném rozsahu** | Agregáty CERMAT platné k 17. 8. 2026; 3 091 nabídek s přihláškami a kapacitami, 3 076 nabídek s kladným zveřejněným průměrem. Srovnání používá současný zdroj 2025. Nejde o kompletní katalog všech škol a oborů. |
 | Opravy propojení a výkladu dat | **Hotovo a nasazeno v dotčených cestách** | Normalizace zaměření, odmítání nejednoznačného párování, opravy označení skóre a městských komentářů; odstranění nepodložených osobních procent a předpovědí z přehledu konkurence. Nejde o audit všech starších kalkulaček. |
 | Simulátor — O-13 | **Otevřený produkční blokátor** | Veřejný JS stále obsahuje predikční kategorie s prahem ±10. Samostatná oprava S0 před implementací Mého výběru; změna PRD není opravou kódu. |
-| OG náhledové obrázky — O-19 | **Produkční vada, oprava rozpracována souběžně** | Při kontrole R2-E6 všechny tři adresy vracejí 500; lokální změna runtime není nasazením. Přijímací podmínky v návrhu §13, O-19. |
 | Mrtvé predikční výpočty — O-4 | **Otevřený technický dluh** | V Moje šance se nevykreslují, ale zůstávají v rozhraní `chances.ts`; odstranění v S0. |
 | Rutinní přístup ke statistikám | **Implementováno a ověřeno lokálně** | Čtecí klient Matomo pro web 7, soukromé uložení tokenu, snímky a souhrny; viz `matomo-pristup.md`. Žádné automatické úlohy ani změny serverového měření. |
-| Vercel statistiky / místní propojení — O-17 | **Propojení opraveno, čtení statistik neověřeno** | Správný projekt potvrzen přes konektor a místní JSON opraven; samotný analytický přístup čeká na autorizaci/diagnostiku. 404 nedokládá nutnost vyššího tarifu. |
 | Měření přechodů a nových úkonů — M0 | **Navrženo, neimplementováno** | Ověřit klientskou navigaci a doplnit události při realizaci funkcí. Nynější API přístup tuto vadu neřeší. |
 | Historie JPZ a maturitní data | **Inventura ověřena, produkční import nehotov** | Rozebrány JPZ 2017–2023 a vzorky MZ 2026j/2025jap. Obsah profilů navržen níže, žádný ukazatel přidané hodnoty školy není validován. |
 | Úplný katalog a nabídka 2027 | **Zbývá dokončit** | Doplnit obory mimo JPZ, nové a přejmenované nabídky a ověřená kritéria a kapacity 2027. Historické výsledky nejsou potvrzením otevření oboru v roce 2027. |
@@ -229,9 +227,9 @@ Konkrétní podklady: `src/components/school/guided/GuidedJourneyWizard.tsx`, `s
 
 ## 11. Rozdělení dodávky
 
-**S0 — opravná vlna:** O-13 a O-4 podle návrhu rozvoje §3; po R2 přidán O-19 (OG obrázky) s odděleným ověřením podle §13. Zohlednit již rozpracovanou souběžnou změnu a nezakládat duplicitní opravu. Podmínkou uzavření jsou změna kódu, příslušné kontroly, nasazení a ověření veřejného výsledku. Do té doby lze navrhovat A, ale implementaci pilotu B nezačínat.
+**S0 — oprava současného doporučování:** O-13 a O-4 podle návrhu rozvoje v2.0 §3. Podmínkou uzavření jsou změna kódu, příslušné kontroly, nasazení a ověření veřejného výsledku. Do té doby lze navrhovat A, ale implementaci pilotu B nezačínat.
 
-**M0 — měření:** v obou přítomných trackerech (Matomo a Vercel) ověřit navigaci a definice úspěšných úkonů před měřeným vyhodnocením pilotu. Žádné dvojité pageview, žádné tokeny/poznámky v URL ani událostech. Nevysvětlené rozdíly agregátů nepovažovat automaticky za vliv dnešního dne. Pozorování strojových přístupů k API je samostatný experiment, nikoli náhrada M0. Neodkládá S0. Implementace událostí ukládání či zálohy patří až k funkčnímu kroku B/C.
+**M0 — měření:** ověřit navigaci a definice úspěšných úkonů před měřeným vyhodnocením pilotu. Žádné dvojité pageview, žádné tokeny/poznámky v URL ani událostech. Neodkládá S0. Implementace událostí ukládání či zálohy patří až k funkčnímu kroku B/C.
 
 **A — návrh a datové podmínky:** uzavřít D1–D4, otestovat prototyp s rodinami, sepsat stavy nabídky, identitu oboru a obsah profilu. Oddělit opravy historických výpočtů od nového osobního prostoru.
 
@@ -289,7 +287,6 @@ Ukázka používá výhradně fiktivní školy a modelové hodnoty. Není doklad
 | 0.3 | 11. 9. 2026 | Přehled dokončené dodávky, návrhů a zbývající práce. Přesné znění uloženo v R0. |
 | 0.4 / R1 | 11. 9. 2026 | O-13 jako nezávislá přednostní oprava S0, technický dluh O-4, historie JPZ a MZ v profilech, ověření porozumění granularitě. Vypořádání všech připomínek v návrhu rozvoje v2.0. |
 | 0.5 / A1 | 11. 9. 2026 | Vstupy do ukládání podle ověřené návštěvnosti, blokující mobilní průchod, zadání M0 a hotový čtecí přístup k Matomo. |
-| 0.6 / R2 | 11. 9. 2026 | Převzata rozhodnutí oponenta R2, doplněn stav Vercelu a M0 pro oba trackery. O-13 nadále neopraveno; číselné závěry A1 se po kontrole Others nemění. Předchozí v0.5 zachována ve snímku R2. O-19 doplněno do S0, jeho souběžná oprava není potvrzeným nasazením. |
 
 Verze 0.1 a 0.2 jsou popsány podle průběhu této práce; samostatné úplné snímky těchto dvou verzí nebyly uloženy. Snímek 0.3 je neměnný. Revize 0.4 patří do commitu označeného `rozvoj-2027-r1`. Nové produktové volby D4 a D8 zůstávají otevřené.
 

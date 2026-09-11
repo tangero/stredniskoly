@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-09-11T09:27:14.879105+00:00",
+  "http": [
+    {
+      "url": "https://www.prijimackynaskolu.cz/opengraph-image",
+      "status": 500,
+      "content_type": "text/html; charset=utf-8",
+      "body_sha256": "36f106ff9bc7b7e4c51841ce6561db56e90baab3f1c5134f75ff5006c74458ef"
+    },
+    {
+      "url": "https://www.prijimackynaskolu.cz/regiony/opengraph-image",
+      "status": 500,
+      "content_type": "text/html; charset=utf-8",
+      "body_sha256": "36f106ff9bc7b7e4c51841ce6561db56e90baab3f1c5134f75ff5006c74458ef"
+    },
+    {
+      "url": "https://www.prijimackynaskolu.cz/simulator/opengraph-image",
+      "status": 500,
+      "content_type": "text/html; charset=utf-8",
+      "body_sha256": "36f106ff9bc7b7e4c51841ce6561db56e90baab3f1c5134f75ff5006c74458ef"
+    }
+  ],
+  "runtime_log_observation": {
+    "window": "2026-09-11T08:26:14.400Z/2026-09-11T09:26:14.400Z",
+    "deployment": "dpl_2yPr8A6U8xPpkF5oWcsfnEi1xU9o",
+    "routes": [
+      "/opengraph-image",
+      "/regiony/opengraph-image",
+      "/simulator/opengraph-image"
+    ],
+    "status": 500,
+    "error": "process.env.NEXT_DEPLOYMENT_ID is missing but runtimeServerDeploymentId is enabled"
+  },
+  "concurrent_local_change": {
+    "src/app/opengraph-image.tsx": {
+      "sha256": "13e80fb18c191b83edd81f7e7aa949dbf21ff702b71afe3ee5494ded343fb896",
+      "edge_declaration_present": false
+    },
+    "src/app/regiony/opengraph-image.tsx": {
+      "sha256": "e566df8aa710ac4af3cbd852833785a0f40c2e11e1a2dd3044bf80f72a50c556",
+      "edge_declaration_present": false
+    },
+    "src/app/simulator/opengraph-image.tsx": {
+      "sha256": "0f4c4446dea6cf3d4dae406b7fb1839ac9824be822ef89bf3902fde1b579fe6a",
+      "edge_declaration_present": false
+    }
+  },
+  "limits": [
+    "Místní odstranění edge provedla souběžná práce; nejde o změnu této odpovědi.",
+    "Nebyla provedena přejímka opravy ani validátor sociální sítě."
+  ]
+}

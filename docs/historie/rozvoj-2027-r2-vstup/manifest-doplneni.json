@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-11",
+  "reason": "Během auditu doplněno O-19 a zpráva o BetterStack drainu. Původní manifest zůstává nezměněn.",
+  "files": {
+    "oponentura-v2.1-doplneni-o19.md": "d9bf6153a3153bcad29c39b6aa42fb223de98ca4984e28576b79f754aecc4539"
+  },
+  "private_log_proposal": {
+    "sha256": "b33a0085c03703f7416577559471012f5243654ce91ba68c9826e11152fe7d31",
+    "note": "Přesná pozdější verze uchována soukromě mimo Git, protože obsahuje konkrétní client_ip. Nebyla upravována v tomto kole."
+  }
+}
