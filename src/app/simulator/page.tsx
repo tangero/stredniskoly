@@ -3,19 +3,18 @@ import { Suspense } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { SimulatorClient } from './SimulatorClient';
-import { VibecordingPromo } from '@/components/VibecordingPromo';
 
 export const metadata: Metadata = {
-  title: 'Simulátor přijímacích zkoušek',
-  description: 'Zadejte body z češtiny a matematiky a prohlédněte si historická data škol. Historická data nejsou zárukou přijetí.',
+  title: 'Simulátor výběru školy 2027',
+  description: 'Vyberte obor a nastavte orientační dojezd veřejnou dopravou. Uložte si školy a prohlédněte si jejich historické výsledky.',
   openGraph: {
-    title: 'Simulátor přijímacích zkoušek | Přijímačky na střední školy',
-    description: 'Body z češtiny a matematiky a historická data škol. Historická data nejsou zárukou přijetí.',
+    title: 'Simulátor výběru školy 2027 | Přijímačky na střední školy',
+    description: 'Obory, orientační dojezd veřejnou dopravou a vlastní výběr škol pro rok 2027.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Simulátor přijímacích zkoušek',
-    description: 'Body z češtiny a matematiky a historická data škol. Historická data nejsou zárukou přijetí.',
+    title: 'Simulátor výběru školy 2027',
+    description: 'Obory, orientační dojezd veřejnou dopravou a vlastní výběr škol pro rok 2027.',
   },
 };
 
@@ -34,9 +33,6 @@ export default function SimulatorPage() {
       <Header />
 
       <main className="flex-1">
-        <div className="max-w-6xl mx-auto px-4 pt-6 pb-2">
-          <VibecordingPromo />
-        </div>
         <Suspense fallback={<SimulatorLoading />}>
           <SimulatorClient />
         </Suspense>

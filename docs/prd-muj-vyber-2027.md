@@ -16,6 +16,8 @@
 
 **Revize R5 + S0:** návrh v2.5.1 §17/§18 uzavírá posuzování plánu a dokládá veřejnou přejímku. S0 je hotové, nasazené a ověřené; O-13/O-4 uzavřeny. Stav a omezení jsou v [dodávce S0](dodavka-s0-2027.md).
 
+**Realizace rozhraní simulátoru:** [záznam dodávky](dodavka-simulator-ux-2027.md) odděluje nově implementovaný lokální výběr a dopravní filtr od nadále nehotových účtů, synchronizace, celého Mého výběru a nabídky 2027. Níže uvedený přehled zachycuje předchozí stav po S0; pro následnou UX dodávku platí tento záznam.
+
 ## Aktuální stav realizace k 11. 9. 2026
 
 Tento přehled odděluje dokončenou dodávku od návrhu následující etapy. Schválení produktové volby není dokladem její implementace.

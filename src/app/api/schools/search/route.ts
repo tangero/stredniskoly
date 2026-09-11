@@ -179,7 +179,7 @@ export async function GET(request: NextRequest) {
       return !query || [s.nazev, s.nazev_display, s.obor, s.zamereni, s.obec, s.ulice, s.adresa]
         .some(value => normalizeText(value || '').includes(query));
     }).sort((a, b) => a.nazev.localeCompare(b.nazev, 'cs') || a.id.localeCompare(b.id, 'cs'));
-    return NextResponse.json({ schools: filtered.slice(offset, offset + limit).map(s => serialize(s)),
+    return NextResponse.json({ schools: (params.get('simulatorCatalog') === '1' ? filtered : filtered.slice(offset, offset + limit)).map(s => serialize(s)),
       kraje: krajeCache, total: filtered.length, catalogYear: 2025 });
   } catch (error) {
     console.error('Error searching schools:', error);

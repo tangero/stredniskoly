@@ -1,0 +1,157 @@
+# Vyhledávač a simulátor: dvě cesty ke společnému výběru
+
+- Verze 0.3, 11. 9. 2026. Pracovní návrh k diskusi, nikoli schválená implementace.
+- Navazuje na [PRD v0.9.1](prd-muj-vyber-2027.md). D1/D2 se nemění.
+- [Interaktivní skica](prototypy/simulator-2027.html) používá výhradně fiktivní školy a časy. Nevolá geokódování, nepočítá trasy a nic neukládá trvale.
+- Produkce se v tomto kroku nemění. S0 zůstává datově přejaté; jeho UX vyžaduje opravu.
+
+## 1. Proč současné rozhraní nefunguje
+
+Při S0 se kromě odstranění nepodložených predikcí změnila i informační hierarchie a způsob práce. To nebylo nezbytnou součástí datové opravy. Nový formulář převzal body jako dominantní vstup, ale odstranil jejich účinek. Prázdný či rozšířený výběr odsunul hledání dolů. Uživatel nejdříve čte vysvětlení omezení dat, místo aby začal vybírat.
+
+Rozlišuji dvě předchozí rozhraní: `SchoolSearch.tsx` na hlavní stránce je jednoduché hledání školy a lokality s návrhy; původní `SimulatorClient.tsx` před S0 kombinoval body, vyhledávání a vybranou sadu. Jeho predikční kategorie nelze vrátit. Zachovat ale lze jednoduchý vstup, kompaktní výsledky, známou modrou barvu a návaznost na profil. Zdrojové srovnání simulátoru: commit `69a7060` proti aktuálnímu `61d589c`. Vizuální podklad aktuálního stavu: snímky v `podklady/s0-2027/`. Původní stav byl posouzen ze zdrojů, nikoli novým uživatelským testem.
+
+Hlavní vady:
+
+- **P1:** body nad hledáním, přestože nemění výsledky. Ovládání slibuje užitek, který nenásleduje.
+- **P1:** hledání je za výběrem; s každým přidaným oborem se vzdaluje.
+- **P1:** chybí jasně vysvětlený rozdíl vyhledávače a simulátoru a jejich návaznost na společný výběr. Samostatné vstupy jsou podle uživatele žádoucí; problém je nesourodé ovládání a přenos kontextu.
+- **P1:** chybí každodenní podmínky, zatímco historické statistiky dominují kartám.
+- **P2:** opakovaná upozornění, vnořené karty a velké mezery prodlužují čtení na telefonu. Plovoucí hlášení chyby překrývá obsah v doloženém snímku.
+- **P2:** číslování kandidátů předčasně naznačuje rozhodnuté pořadí. Uložit, porovnat a stanovit pořadí jsou různé úkony.
+- **P3:** sjednotit oslovení; pro uchazeče doporučuji prosté tykání bez infantilních ilustrací a soutěžních skóre.
+
+## 2. Co uchazeč potřebuje zjistit
+
+Pořadí je návrh podle rozhodovacího úkolu, ne výsledek výzkumu preferencí. Ověřená návštěvnost dokládá 65,4 % telefonů/phabletů a význam profilů, nikoli věk návštěvníků či váhu dojezdu.
+
+| Otázka uchazeče | Co má rozhraní nabídnout |
+|---|---|
+| Co mě bude bavit a co se naučím? | Srozumitelný obsah oboru, předměty, praxe, další studium a možnosti uplatnění; zdroj školního tvrzení. Volba „Ještě nevím“ a průvodce. |
+| Můžu se sem hlásit po své třídě? | Typ a délka studia, zakončení, forma, konkrétní místo výuky, stav nabídky 2027. |
+| Zvládnu tam denně jezdit? | Cesta ode dveří ke škole, příchod před výukou, pěší úseky, přestupy; později i návrat domů. |
+| Jaké jsou praktické podmínky? | Školné a další náklady, internát, přístupnost, jazyky; neznámé hodnoty nejsou nula. |
+| Co je potřeba k přijetí? | Ověřená kritéria 2027 a termíny; historie samostatně. Bez osobní pravděpodobnosti odvozené z průměru. |
+| Jak poznám, zda mi škola sedne? | Den otevřených dveří, vlastní otázky a poznámky, odkazy na ověřitelné informace o prostředí. |
+| Jak se v možnostech neztratit? | Okamžité uložení, porovnání několika oborů a návrat k rozpracovanému výběru. |
+
+## 3. Návrh ovládání
+
+**Schválené upřesnění uživatele:** vyhledávač škol a měst zůstane samostatný, simulátor rovněž. Obě cesty se propojí přes stejné profily a Můj výběr. Deváťáci jsou výchozí skupina, ostatní přes přepínač.
+
+- **Vyhledávač — vím, co hledám:** jedno pole „Škola nebo město“. Návrhy rozliší konkrétní školy a města. Škola otevře profil, město přehled místních škol. Bez dotazníku či bodů. Z přehledu města vede „Prozkoumat možnosti v simulátoru“, s potvrzením přenášeného kontextu; město samo není přesný počátek cesty.
+- **Simulátor — zkouším, co mi vyhovuje:** typ studia, zájmy a praktické podmínky včetně veřejné dopravy. Změna podmínky upraví výsledky a vysvětlí, co se změnilo. Například prodloužení limitu z 30 na 45 minut zpřístupní další obory. Nejde o simulaci osobní pravděpodobnosti přijetí. Toto konkrétní vymezení simulátoru je zatím návrh.
+- **Můj výběr — rozhoduji se mezi kandidáty:** společný seznam pro obě cesty, porovnání a plán. Profil nabízí stejné „Uložit“ i návrat do původního hledání nebo simulátoru.
+
+Dojezd patří zejména do simulátoru a profilu. Na městském přehledu může být odkaz „Najít i školy v dojezdové vzdálenosti“, který otevře simulátor. Hranice města pak nesmí neviditelně vyloučit sousední obec.
+
+### První obrazovka simulátoru
+
+Nadpis „Které školy mi vyhovují?“ s označením Simulátor 2027. Pod ním volba „Po 9. / 7. / 5. třídě / Jiná cesta“, zájem či obor a volitelná lokalita. Deváťáci jsou předvybráni podle rozhodnutí uživatele. Konkrétní školu lze dohledat odkazem do samostatného vyhledávače. „Jiná cesta“ nezavírá cestu ke konzervatořím a ostatním režimům; vyžaduje vlastní způsobilost v datech.
+
+Vedle přímého nastavení podmínek nenápadný vstup „Pomoz mi s výběrem“. Žádný povinný dotazník, body ani účet. Bez lokality jsou dostupné výsledky podle zájmu a typu, s viditelným řazením podle názvu; nevydávají se za personalizovaná doporučení.
+
+Na počítači filtry vlevo a kompaktní seznam vpravo. Na telefonu hledání, souhrn aktivních filtrů, tlačítko „Filtry (3)“ a jednořádková navigace do Mého výběru. Filtry lze jednotlivě zrušit. Mapa je přepínatelný doplněk; nemá vytlačit srovnatelné údaje ze seznamu.
+
+Výsledek reprezentuje konkrétní obor a místo výuky. Nadpis oboru, pod ním škola a obec; délka a zakončení; dojezd, pokud jej známe; stav 2027. Jedno hlavní tlačítko „Uložit“ se změní na „Uloženo“. Detail se otevře názvem nebo jasným odkazem. Podobné obory jedné školy se mohou seskupit, ale ukládá se až konkrétní nabídka.
+
+Historické průměry a zdroje patří do detailu nebo rozbalení „Přijímání a výsledky“. Stručné upozornění je u údaje, který vysvětluje. Neověřený stav nabídky 2027 musí zůstat viditelný již ve výsledku.
+
+### Můj výběr
+
+Výběr má vlastní pohled, při hledání zabírá pouze odkaz s počtem. Přidání uživatele nikam nepřesměruje. Uložení bez účtu podle D1; účet bez hesla nabídnout při záloze a synchronizaci podle D2. Ukládání kandidátů nečíslovat jako přihlášky. Dočasně zaškrtnout několik oborů k porovnání, teprve zvlášť sestavit vlastní pracovní pořadí.
+
+Porovnání: obsah studia, dojezd, školné, stav nabídky, přijímací podmínky a termíny; vlastní poznámka „Proč mě zajímá / Co ověřit“. Na telefonu porovnání po tématech, bez povinného vodorovného posouvání široké tabulky. Historie doplňuje rozhodnutí, neurčuje vítěze.
+
+## 4. Dojezd veřejnou dopravou
+
+Používat pojem **veřejná doprava**: zahrnuje MHD, regionální autobusy i vlaky. Samotná vzdálenost v kilometrech nebo hranice kraje je pro dojíždění nedostatečná.
+
+Ovládání postupně:
+
+1. „Odkud budeš jezdit?“ — adresa nebo zastávka, případně obec s upozorněním na hrubší výchozí bod. Poloha zařízení jen po výslovném stisku.
+2. „Kolik času chceš strávit cestou?“ — rychlé volby 30 / 45 / 60 minut a vlastní limit. Čas zahrnuje pěší úseky a čekání.
+3. Rozbalitelné preference: počet přestupů, nejdelší chůze. **Příchod do školy a konkrétní školní den zpřístupnit pro přesný výpočet až s odpovídajícími daty.** Nelze nabídnout účinně vypadající ovládání, které odhad ignoruje.
+4. Ve výsledku odlišit „Odhad 38 min“ od „Spojení na úterý, příchod 7:45“. Čísla jsou zde jen příklady textu. Interval lze ukazovat až po určení jeho skutečného významu a kalibraci, nikoli jako vymyšlenou nejistotu.
+5. Detail cesty: výchozí bod, místo výuky, pěšky / spoj / přestup / pěšky, stáří podkladu, přechod k ověření spojení. Případný předvyplněný externí odkaz předá adresu až vědomým otevřením.
+
+Dojezd bez podkladů: zvláštní skupina „Dojezd zatím neověřen“, nikoli nula minut či automatické vyřazení školy. Při nulovém výsledku nabídnout rozšíření času; limit nikdy nezměnit potichu. Řazení „Podle dojezdu“ se zobrazuje až po zadání počátku a dostupnosti výsledků, s vysvětlením odhadového režimu. Odlišné přesnosti se nesmí tvářit jako srovnatelná minutová měření.
+
+Přesná domácí adresa není součástí URL, sdíleného výběru ani analytických událostí. Výchozí návrh: v paměti aktuálního hledání, zapamatování jen na přání. Pokud vyhledání adresy nebo trasy volá poskytovatele, musí být jasné komu a proč údaj předáváme. Konkrétní dodavatel, oprávnění a retenční pravidla se teprve ověří.
+
+### Co máme a co chybí
+
+| Stávající kód | Zjištění při této revizi | Dopad |
+|---|---|---|
+| `api/dostupnost/route.ts` | Graf v `data/transit_graph.json`, počátek zastávka, průměrné čekání z ranního profilu; čekání omezené na 10 min, pěší vzdálenost odhadovaná. Žádné zadání konkrétního dne/příchodu. | Lze zkoumat jako orientační filtr, nikoli doklad dosažitelného ranního spoje. Zejména venkov vyžaduje ověření proti reálným odjezdům. |
+| `api/praha-dostupnost/route.ts` | Adresa, geokódování, PID zastávky a ranní profil, odhad linek; diagnostika výslovně říká, že nejde o přesný jízdní řád. | Použitelná zkušenost s adresním vstupem, nikoli hotový celostátní router. |
+| `DostupnostClient.tsx` | Upozornění na různé regionální pokrytí a samostatný přenos výběru do simulátoru. | Sjednotit stav výběru. Změřit skutečné pokrytí a čerstvost, neodvozovat je z popisku UI. |
+| Datové pole přijímání v dopravních API | Vyskytují se starší minima a klasifikace obtížnosti. | Přebírat jen ověřený dopravní kontrakt; přijímací data napojit na opravenou společnou vrstvu. |
+
+V tomto návrhu se neověřovala aktuálnost grafu, licence ani provozní pokrytí externího dodavatele. **Dojezd od bydliště v konkrétní školní ráno není hotová funkce.** Technický pilot má doložit vzorek město / předměstí / venkov, konkrétní kampusy, chůzi, přestupy, pracovní den i neexistující spoj. Teprve potom lze zvolit rozsah regionů a veřejný slib přesnosti.
+
+## 5. Doporučené pořadí dodávky a přejímka
+
+1. Schválit strukturu simulátoru na skice při zachování samostatného vyhledávače; sjednotit stávající vizuální jazyk a odstranit neúčinné body z vyhledávání. Bodový deník může později patřit do Přípravy s datem testu a skutečným vývojem výsledků.
+2. Dodělat společnou identitu nabídky a stav 2027, jednotné ukládání a měření klíčových přechodů M0. Existující datová omezení musí jít zobrazit v každé kartě.
+3. Souběžně prověřit dopravu, pak integrovat doložený režim do stejného hledání; u ostatních míst přiznat neznámý dojezd. Nemusí blokovat první použitelný simulátor a ukládání.
+4. Profily a porovnání rozšířit o obsah studia, praktické podmínky a ověřování školami; navázat plánem a přípravou.
+
+Ověřit s uchazeči na telefonu: najít obor, nastavit cestu, uložit dva kandidáty, vrátit se a porovnat je. Návrh pilotu: 5–8 uchazečů různých lokalit a několik rodičů; kvalitativní zjištění, nikoli reprezentativní průzkum. Sledovat dokončení bez pomoci, nedorozumění a důvod výběru. Přesnou domácí adresu při testu neshromažďovat, použít náhradní počátek.
+
+Přejímka: hledání dostupné před seznamem uložených položek; každé aktivní ovládání má viditelný účinek; přidání neodvádí z hledání; návrat obnoví kontext; neznámý dojezd není vyhovující dojezd; limit zahrnuje celou deklarovanou cestu; konkrétní den není dostupný u odhadu; údaj 2027 se nezamění s historií; klávesnice a telefon zvládnou uložení i změnu filtrů; žádné překrývání ovládání plovoucími prvky.
+
+## 6. Heuristický posudek současného S0
+
+Odborný odhad ze zdrojů a uloženého mobilního snímku, nikoli měření uživatelů či kompletní audit přístupnosti. Stupnice 0–4, vyšší znamená lepší naplnění principu.
+
+| Princip | Skóre | Důvod |
+|---|---:|---|
+| Viditelnost stavu | 3 | Načítání a chyby jsou viditelné, význam uchování přes URL méně zřejmý. |
+| Jazyk a přirozený postup | 1 | Body bez účinku a technická provenience před hledáním. |
+| Kontrola uživatele | 2 | Odebrání a změna pořadí existují; chybí pohodlné odložení s návratem. |
+| Konzistence | 1 | Hledání a dojezd jsou oddělené interakční celky. |
+| Prevence chyb | 3 | Validace a odstraněná predikce; číslování může mást s přihláškami. |
+| Rozpoznání místo pamatování | 2 | Vybrané položky viditelné, ale porovnání praktických podmínek chybí. |
+| Efektivita | 1 | Dlouhá cesta k hledání, neúčinný hlavní vstup. |
+| Úspornost a hierarchie | 1 | Repetice a vnořené bloky vytlačují hlavní úkol. |
+| Zotavení z chyb | 3 | Opakování načtení a zachování ID výběru. |
+| Kontextová pomoc | 2 | Datová omezení popsána, vlastní rozhodování méně podpořeno. |
+
+Kognitivní zátěž: selhává hlavní zaměření, hierarchie, postup po jednom rozhodnutí a postupné odkrývání podrobností. Seskupení souvisejících údajů existuje; množství voleb a nároky na paměť je třeba ověřit interaktivním testem. Čtyři zjevné problémy stačí k prioritní změně hierarchie.
+
+Průchody: (a) deváťák na telefonu musí překonat body a prázdný výběr před hledáním; (b) rodič z obce potřebuje ranní autobus, současný odhad mu konkrétní návaznost nedoloží; (c) uchazeč zná přesnou školu, potřebuje přímo profil a uložit obor bez vstupního průvodce. Návrh dává všem třem přímou cestu.
+
+## 7. Otevřené volby a historie
+
+- U1 uzavřeno uživatelem: vyhledávač konkrétních škol a měst dohromady; simulátor zvlášť, obě cesty propojené. Návrh jejich sloučení byl odmítnut a není zadáním implementace.
+- U2 uzavřeno uživatelem: výchozí deváťáci, ostatní přes přepínač. Nejde o schválení úplnosti katalogu pro všechny režimy.
+- U3: přesný rozsah prvního dopravního pilotu určí ověření dat. Uživatel zatím neschválil konkrétního poskytovatele ani přesnost.
+- D4/D8 z PRD zůstávají otevřené; tato skica je nerozhoduje.
+
+| Verze | Změna |
+|---|---|
+| 0.1 | Reakce na výhradu uživatele k UI S0; rozbor příčiny, priority uchazeče, sjednocené hledání, dopravní kontrakt a interaktivní skica. |
+
+| 0.2 | Zapracována odpověď uživatele: samostatný vyhledávač škol/měst a samostatný propojený simulátor; výchozí deváťáci. Scénářový význam simulátoru zůstává návrhem k diskusi. |
+
+## 8. Doplnění podle uživatele: nastavitelný dojezd a výběr oborů
+
+Uživatel přijal směr skici a požaduje vlastní časový limit, zobrazení škol těsně za hranicí a výběr oborů. Skica v0.3 doplňuje:
+
+- Vlastní počet minut (5–180), posuvník a rychlé volby 30/45/60. Minuty znamenají celou jednosměrnou cestu v deklarovaném režimu.
+- Oddělenou skupinu nad limitem, pracovně nejvýš o 10 minut. Tento rozsah je návrhová volba, nikoli uživatelem stanovené číslo. Všechny ostatní filtry platí dál.
+- Souhrn nad výsledky ukazuje počet dalších oborů, nejmenší překročení a explicitní akci zvýšení limitu. Prohlížení ani uložení nadlimitního oboru samo limit nemění.
+- Karty nad limitem uvádějí přesné překročení odhadu. Neznámý dojezd zůstává třetí oddělenou skupinou.
+- Vícenásobný výběr oblastí (logika NEBO), prázdný výběr znamená všechny. Ve skice čtyři ukázkové oblasti; produkční taxonomie a navazující výběr konkrétních oborů vyžadují mapování úplného katalogu. Oblast zájmu není oficiální kód oboru.
+- Počty označují obory, nikoli unikátní školy. Produkční souhrn může uvést obojí, až bude ověřena identita školy a místa výuky.
+
+Ukázka zůstává fiktivní, bez skutečného výpočtu tras, trvalého ukládání či změny produkce. Ověřeno v prohlížeči: limit 45 má dvě vyhovující nabídky a tři nadlimitní; zvýšení na 55 přesune všechny tři do vyhovujících výsledků.
+
+| Verze | Změna |
+|---|---|
+| 0.3 | Nastavitelný dojezd, oddělené možnosti do +10 minut a vícenásobný výběr oblastí podle další zpětné vazby uživatele. |
+
+## 9. Zahájení realizace
+
+Uživatel schválil realizaci a změnil popisek na „Čas na cestu tam v MHD“. Obory mají být v roletě; implementace ji plní skutečnými názvy z katalogu. Stav a hranice implementace jsou v [dodávce](dodavka-simulator-ux-2027.md). Historické skici zůstávají zachovány.

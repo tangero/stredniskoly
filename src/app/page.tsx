@@ -150,7 +150,7 @@ export default async function HomePage() {
       </section>
 
       {/* Vyhledávání škol */}
-      <section className="py-12" style={{ backgroundColor: '#ffffff' }}>
+      <section id="vyhledavani" className="py-12" style={{ backgroundColor: '#ffffff' }}>
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-4" style={{ color: '#28313b' }}>Najdi svou školu</h2>
           <p className="text-center mb-8" style={{ color: '#818c99' }}>
