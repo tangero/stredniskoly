@@ -1,3 +1,4 @@
+import { historicalSubjectAverage, type AdmissionScore } from './admission-metric';
 import type { AdmissionContext } from './admission-summary';
 import { subjectScore, unavailableAdmissionScores } from './historical-scores';
 import { normalizeSchoolKey, uniqueSchoolIndex } from './school-key';
@@ -880,6 +881,7 @@ export async function getSchoolHistoricalData(redizo: string): Promise<{
  * - JPZ celkem: max 100 bodů
  */
 export interface ExtendedSchoolStats {
+  subjectAverages: { cj: AdmissionScore; ma: AdmissionScore };
   prihlasky_priority: number[];  // přihlášky podle priority
   prijati_priority: number[];    // přijatí podle priority
   cj_prumer: number;             // průměr z češtiny (0-50 bodů)
@@ -915,12 +917,18 @@ async function getSchoolsDataById(): Promise<Map<string, ExtendedSchoolStats>> {
   const index = uniqueSchoolIndex(data['2025'] || [], school => school.id);
   const result = new Map<string, ExtendedSchoolStats>();
   for (const [id, school] of index) {
-    const cj_prumer = subjectScore(school.cj_prumer);
-    const ma_prumer = subjectScore(school.ma_prumer);
+    const subjectAverages = {
+      cj: historicalSubjectAverage({ value: school.cj_prumer, unit: 'percent_0_100', field: 'cj_prumer', offerId: id }),
+      ma: historicalSubjectAverage({ value: school.ma_prumer, unit: 'percent_0_100', field: 'ma_prumer', offerId: id }),
+    };
+    // Přechodné číselné aliasy pro dosud nemigrované konzumenty; žádný další převod.
+    const cj_prumer = subjectAverages.cj.value;
+    const ma_prumer = subjectAverages.ma.value;
     const cj_min = subjectScore(school.cj_min);
     const ma_min = subjectScore(school.ma_min);
     if (cj_prumer === null || ma_prumer === null || cj_min === null || ma_min === null) continue;
     result.set(id, {
+      subjectAverages,
       prihlasky_priority: school.prihlasky_priority || [],
       prijati_priority: school.prijati_priority || [],
       cj_prumer, ma_prumer, cj_min, ma_min,

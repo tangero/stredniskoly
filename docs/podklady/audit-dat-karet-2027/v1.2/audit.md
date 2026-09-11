@@ -1,6 +1,6 @@
 # Audit dat na kartách škol a oborů
 
-Verze 1.3 · 11. 9. 2026 · uzavření oponentury R3 a zahájení P0. Nálezy níže zachycují produkční stav `37ebfbc`; stav implementace je oddělen v dodatku R3.
+Verze 1.2 · 11. 9. 2026 · vypořádání oponentury R2 · produkční nálezy ze stavu `37ebfbc`; žádné aplikační opravy touto revizí.
 
 ## Závěr
 
@@ -179,31 +179,3 @@ Přejímací případy navíc: 72,2 % → 36,1 / 50; 60,2 % → 30,1 / 50; 100 %
 - 1.1 — vypořádání oponentury v1.0; oprava 2 075 a normalizace auditu; rozklad 1 004/978; vysvětlení chybného roku 20236; návaznost O-13, souběžný start katalogu, odhady a úzký kontrakt. Opravy aplikace zůstávají otevřené.
 
 - 1.0 — úplný inventář typů údajů, datasetové pokrytí, reprezentativní veřejná kontrola a prioritizace aktualizací.
-
-
-## Dodatek v1.3 — R3 uzavřeno, implementace zahájena
-
-R3 je přijata v celém rozsahu. Spory o popis všech sedmi nálezů jsou uzavřené. To není přejímka opravené aplikace; O-13 pro celý web zůstává otevřený.
-
-| Bod R3 | Vypořádání |
-|---|---|
-| Normalizátor a příčina odchylky | Souhlas. Produkční helper i opravený auditní skript dávají shodné klíče bez prázdného suffixu. Opět spuštěno `overeni-oponentury.mjs`: 2 075 shod, 978 / 1 004 chybějících podle množiny. |
-| Jeden převod a chybný popisek | Souhlas. Převod 72,2 % → 36,1 bodu z 50; následné zaokrouhlení v UI a chybná značka nejsou další převod jednotky. |
-| Percentily 82 / 88 | Souhlas s diagnostickým vymezením v1.2. Nezavádíme je do produktu ani je nezaměňujeme za percentily žáků. |
-| Jednotky a dohledatelnost | Souhlas. První implementace používá kontrakt předmětového skóre a společný renderer /50. Celkové skóre /100 ani ostatní druhy metrik nejsou touto dodávkou migrovány. |
-| Uzavření oponentury vs. produkční vady | Oponentura uzavřena. Produkční vady zůstávají otevřené do nasazení a ověření každé cesty. |
-
-### První implementace P0: statistiky rozšířeného detailu
-
-- `admission-metric.ts`: hodnota s jednotkou, úplným ID nabídky, rokem, původní hodnotou/polem/jednotkou, verzí převodu a zaokrouhlení. Neznámá populace, velikost skupiny, kolo a datum platnosti jsou výslovně neznámé; numerická validita není prohlášena za ověření celé provenience.
-- `AdmissionScoreValue`: jednotku odvozuje z kontraktu; testy vykreslují skutečné TSX komponenty.
-- `StatsTab`: 36,1 / 50 a 30,1 / 50; bez nálepek obtížnosti, neověřeného minima a osobních procent přijetí. Zachovány historické počty přihlášek/přijatých pro všechny dodané priority. Opraveno pole `prihlasky`; nula se nezaměňuje s chybějícím údajem.
-- Numerické aliasy rozšířených statistik dočasně zůstávají pro ostatní konzumenty. Tato dodávka není dokončením migrace kontraktu ani celého P0.
-
-### Přejímka a zbývající rozsah
-
-Lokálně: 15 jednotkových/renderovacích kontrol, TypeScript, lint nových komponent a produkční build; 12 integračních kontrol včetně skutečného HTML `/detail`. Jednotkové případy zahrnují nulu, chybějící údaj, rozsah, pokus o druhý převod, zdrojové hodnoty a vykreslené jednotky. Veřejná přejímka této opravy zatím neproběhla.
-
-A-03 má lokální opravu v `/detail`; A-02 pouze dílčí opravu stejné záložky. A-01, A-04 až A-07, ostatní konzumenti A-02 a plošná přejímka O-13 zůstávají otevřené. Nadále platí souběžné zahájení migrační inventury katalogu podle plánu v1.2; tato dodávka jej nenahrazuje ani netvrdí jeho dokončení.
-
-Historie: v1.0 audit → v1.1 R1 → v1.2 R2 → v1.3 uzavření R3 a první implementace. Znění v1.2 je zachováno v `podklady/audit-dat-karet-2027/v1.2/audit.md`.
