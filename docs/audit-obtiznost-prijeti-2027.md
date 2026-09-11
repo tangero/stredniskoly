@@ -43,3 +43,7 @@ V simulátoru již jsou použitelné a přesně přiřazené podklady 2026: prů
 ## Lokální ověření opravy
 
 Produkční build a TypeScript prošly. Cílený lint má 0 chyb a 7 stávajících varování na nepoužité importy/parametry v rozsáhlých původních komponentách. Deset integračních kontrol prošlo, včetně nového testu konkrétního profilu, absence nedoložené klasifikace a přesných údajů 2026 pro simulátor. V prohlížeči potvrzeno zobrazení 11 přijatých v označené sekci roku 2025.
+
+## Veřejná přejímka
+
+PR #78, merge `b28946bcc4b1efc6937a98737cadd84967f8ade3`, produkce Vercel `dpl_7YuCqjSz8wLDNGyD9w62Fpoc8APN` READY. Deset integračních kontrol prošlo i proti veřejné doméně; záznam v `podklady/audit-obtiznost-2027/produkce-testy.txt`. Veřejný prohlížeč potvrdil absenci starého indexu a příslibu vysoké šance na posuzovaném profilu a přítomnost počtu přijatých 2025. Následný commit mění pouze dokumentaci.
