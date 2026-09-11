@@ -1,8 +1,6 @@
 # Oponentura návrhu rozvoje 2027
 
-Verze 4.1 / R4 — doplněna odpověď autora; původní posudek v4.0. Zpracováno 11. 9. 2026. Předmět: `navrh-rozvoje-2027.md` v2.3 §14 (commit `a550f1d`).
-
-**Odpověď autora R4:** [aktuální dispozice všech ID a důkazy v návrhu v2.4](navrh-rozvoje-2027.md#vyporadani-r4). O-13/O-4 zůstávají neopravené; O-21 bylo po posuzovaném commitu opraveno a nasazeno. Původní stanovisko níže zůstává beze změny; celý vstup je v [archivu R4](historie/rozvoj-2027-r4-vstup/oponentura-navrhu-rozvoje-2027.md).
+Verze 4.0 / R4. Zpracováno 11. 9. 2026. Předmět: `navrh-rozvoje-2027.md` v2.3 §14 (commit `a550f1d`).
 
 ## R4: odpověď na otázku „blížíme se k vypořádání blokačních problémů?“
 
@@ -522,22 +520,3 @@ Podrobnosti, důkazní přílohy a požadavky na doplnění oponentních důkaz�
 | 3.1 / R3 | 11. 9. 2026 | Odpověď autora, nezávislá kontrola Matomo/NDJSON/PNG/deploymentu, nový vizuální O-21. Návrh v2.3, PRD v0.7, analýza v1.4; aktuální stavy v návrhu §14. |
 
 R4 ověří novou odpověď a O-21; O-13 vyžaduje skutečnou opravu aplikace a veřejnou přejímku. Zachování starších otevřených stavů v historii není jejich znovuotevřením.
-
-
-## Odpověď autora R4 — souhrn
-
-- **Přechod k S0: přijato.** Další posudek stejného plánu není podmínkou implementace; následující kontrola má ověřit změněný kód a veřejný výsledek. O-13/O-4 potvrzeny novým důkazem, neuzavíráme je.
-- **O-21 a jeho dvě rozšíření: původní vady přijaty, dnes opravené.** Nová kontrola produkce potvrzuje PR #72. Údaj o počtu odstraněn, sezóna oddělena od roku výsledků, bodový příklad odstraněn a fonty přibaleny explicitně.
-- **Počet nabídek upřesněn:** 3 091 nabídek importu není počet unikátních oborů; nepoužít jako prostou náhradu starého popisku. Samotné větší číslo nevyvrací dolní mez „2 200+“.
-- **Bodová výhrada přijata pro čisté JPZ.** Náhled neodpovídal součtu 42 + 38; není však důkazem, že aplikace počítá do 200. Zdroj aplikace počítá do 100, přetrvává jiná vada kategorizace O-13.
-- **Závěr o fontové sadě rozporován konkrétními TTF.** Výchozí font postrádá část českých znaků, oba nové je obsahují. Přesná historická větev fallbacku nebyla reprodukována; hypotézu o jiném systémovém fontu nepřebíráme jako důkaz.
-- **O-15–20:** přijetí našich důkazů potvrzeno. Metodické uzavření není vysvětlením 322 vstupů, zprovozněním Web Analytics ani přejímkou celého drainu. Souhrnný počet uzavřených ID není podíl hotové aplikace.
-
-Podrobné reakce včetně priorit, časového vymezení a všech 21 ID obsahuje návrh §16. Nevyžadujeme páté kolo posuzování nezměněného plánu.
-
-### Historie R4
-
-| Verze | Datum | Změna |
-|---|---|---|
-| 4.0 / R4 | 11. 9. 2026 | Oponentní vstup nad `a550f1d`, uchován beze změny v manifestu R4. |
-| 4.1 / R4 | 11. 9. 2026 | Odpověď autora, nové ověření produkce na `ee0700e`, přijetí rozšíření O-21 a protidůkaz ke znakové sadě. Návrh v2.4, PRD v0.8; O-13/O-4 stále otevřené. |

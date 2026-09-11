@@ -1,6 +1,6 @@
 # PRD: Můj výběr 2027, profily oborů a podklady pro rozhodování
 
-- **Verze:** 0.8, pracovní návrh pro společnou diskusi.
+- **Verze:** 0.7.1, pracovní návrh pro společnou diskusi.
 - **Datum:** 11. 9. 2026.
 - **Stav:** Uživatel schválil směr: návrh Mého výběru, úpravu datového základu a profilů, následnou realizaci pilotu. Schváleny D1 a základ D2: okamžité ukládání, volitelný průvodce „Pomoz mi s výběrem“, jednoduchý účet bez hesla a odkaz k náhledu. Zbývající volby jsou označené níže.
 - **Rozsah této práce:** produktové zadání a interaktivní ukázka ovládání. Žádná nová produkční funkce ani rozesílka.
@@ -11,8 +11,6 @@
 **Doplnění A1:** [ověřená návštěvnost v1.1](analyza-navstevnosti-2026.md) zpřesňuje dosah profilů a simulátoru, podíl telefonů a limity měření. Podle [návrhu v2.1](navrh-rozvoje-2027.md) doplňuje M0; není novým kolem externí oponentury. Původní PRD v0.4 je ve snímku `historie/navstevnost-a1/`.
 
 **Revize R3:** [návrh v2.3 §14](navrh-rozvoje-2027.md#vyporadani-r3) přebírá stažené výhrady, uzavírá HTTP výpadek O-19 a přidává vizuální O-21. Export BetterStacku potvrzuje UA/referer; samostatný vlastní logovací modul se neplánuje. Měření M0 a API přístup Vercelu tím nejsou dokončené.
-
-**Revize R4:** [návrh v2.4 §16](navrh-rozvoje-2027.md#vyporadani-r4) potvrzuje uzavření O-21 po PR #72 a přijímá přechod k implementaci S0. Další posudek stejného plánu není podmínkou; přejímka O-13/O-4 se má týkat opraveného kódu a produkce. Toto dokumentační kolo S0 neimplementuje. D1/D2 a otevřené volby se nemění.
 
 ## Aktuální stav realizace k 11. 9. 2026
 
@@ -297,7 +295,6 @@ Ukázka používá výhradně fiktivní školy a modelové hodnoty. Není doklad
 | 0.6 / R2 | 11. 9. 2026 | Převzata rozhodnutí oponenta R2, doplněn stav Vercelu a M0 pro oba trackery. O-13 nadále neopraveno; číselné závěry A1 se po kontrole Others nemění. Předchozí v0.5 zachována ve snímku R2. O-19 doplněno do S0, jeho souběžná oprava není potvrzeným nasazením. |
 | 0.7 / R3 | 11. 9. 2026 | O-19 dostupnost uzavřena po kontrole produkce, samostatný O-21 pro vizuální vady; potvrzen export drainu, žádný nový vlastní logger. Původní v0.6 zachována ve snímku R3. |
 | 0.7.1 | 11. 9. 2026 | O-21 opraveno a produkčně ověřeno po PR #72; vyřazeno ze zbývající opravné vlny. O-13 a O-4 zůstávají otevřené. |
-| 0.8 / R4 | 11. 9. 2026 | Převzato doporučení přejít k S0 bez dalšího posudku stejného plánu; potvrzena oprava O-21. O-13/O-4 stále otevřené, metodická uzavření nejsou realizací funkcí. |
 
 Verze 0.1 a 0.2 jsou popsány podle průběhu této práce; samostatné úplné snímky těchto dvou verzí nebyly uloženy. Snímek 0.3 je neměnný. Revize 0.4 patří do commitu označeného `rozvoj-2027-r1`. Nové produktové volby D4 a D8 zůstávají otevřené.
 

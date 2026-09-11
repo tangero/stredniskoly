@@ -1,10 +1,10 @@
 # Návrh rozvoje Přijímaček na školu pro přijímací řízení 2027
 
-**Verze 2.4 / R4, 11. 9. 2026.** [Vypořádání R4](#vyporadani-r4) přijímá přechod od posuzování plánu k opravě S0. O-21 zůstává po opakované veřejné kontrole uzavřené; O-13 a O-4 zůstávají neopravené. Další kolo stejného plánu není podmínkou zahájení S0. Nejde o schválení dosud otevřených produktových voleb.
+**Verze 2.3.1 — dodatek k R3, 11. 9. 2026.** O-21 je po [opravě a veřejné přejímce náhledů](oprava-og-nahledu-2027.md) uzavřené. Stav: revidované zadání k další oponentuře. Nejde o potvrzení opravy produkčního simulátoru ani o schválení dosud otevřených produktových voleb.
 
 Sekce 1 a úvod sekce 2 zachycují audit před dodávkou `c9ae452`; aktuální návrh v sekcích 3–9 je upraven podle zjištění R1 a R2. Úplné [původní znění](historie/rozvoj-2027-r0/navrh-rozvoje-2027.md) je zachováno. Každá připomínka O-1 až O-14 a obě přílohy mají [vypořádání níže](#vyporadani-r1), včetně nesouhlasu a důkazů. Historie a pravidla dalšího kola jsou na konci.
 
-Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.8](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **O-13 zůstává otevřeným produkčním blokátorem:** odstranění zavádějících výstupů simulátoru je první opravná dodávka nezávislá na budoucí integraci Mého výběru. O-4 je navazující technický dluh. [Vypořádání R3](#vyporadani-r3) zachycuje stav při uzavření dokumentačního kola; následný dodatek §15 uzavírá O-21 po opravě aplikace a nasazení. O-19 zůstává uzavřené.
+Kalendář a obnova prvního kola 2026 jsou nasazené; podrobnosti uvádí [záznam dodávky](aktualizace-kalendar-data-2027.md). [PRD Můj výběr v0.7.1](prd-muj-vyber-2027.md) rozlišuje hotové a navržené části. **O-13 zůstává otevřeným produkčním blokátorem:** odstranění zavádějících výstupů simulátoru je první opravná dodávka nezávislá na budoucí integraci Mého výběru. O-4 je navazující technický dluh. [Vypořádání R3](#vyporadani-r3) zachycuje stav při uzavření dokumentačního kola; následný dodatek §15 uzavírá O-21 po opravě aplikace a nasazení. O-19 zůstává uzavřené.
 
 Doporučení: po opravné dodávce pokračovat ověřenými profily a Mým výběrem. Do návrhu profilů přidat historii JPZ 2017–2023 a maturitní výsledky školy jako oddělené datové oddíly. Výzkum návaznosti vstupu a výstupu ověřit samostatně; propojení agregátů přes školu samo nedokládá kohortu ani přidanou hodnotu.
 
@@ -532,62 +532,3 @@ Vstup: oponentura v3.0 a předchozí dokumenty na `0e37ec6`, zachované v manife
 Přejímka ověřila tři stránky a devět GET: přímé adresy, skutečné `og:image` a `twitter:image`, parametry a přesměrování. Veřejné PNG jsou po bajtech shodné s dekódovanými a vizuálně prohlédnutými podklady. Původní vady a stanoviska R3 zůstávají výše jako historie; nové shrnutí nepřepisuje oponentův text.
 
 **Zbývající blokátor: O-13, související dluh O-4.** Oprava obrázků a metadat neopravuje výpočty simulátoru. D1/D2 a otevřené produktové otázky se nemění. Historie dodávky: kód `79e29fc`, lokální přejímky `aa85c9e`, sloučení a nasazení `9146ef0`; PRD aktualizováno na v0.7.1.
-
-
-<a id="vyporadani-r4"></a>
-## 16. Vypořádání oponentury — kolo R4
-
-**Závěr: opravit S0, další posudek stejného plánu není potřeba.** R4 v4.0 hodnotí `a550f1d`; následné PR #72 již opravilo O-21. Nová kontrola produkce na `ee0700e` potvrzuje opravu náhledů i přetrvávající O-13. Toto kolo doplňuje důkazy a dokumenty, neopravuje simulátor.
-
-### Aktuální dispozice všech ID
-
-| ID | Stav po R4 |
-|---|---|
-| O-1 | Metodický spor uzavřen; historický import JPZ stále plánovaný. |
-| O-2 | Výklad dat MZ vyřešen; import a párování stále plánované. |
-| O-3 | Kohortní závěr stažen; případná studie pouze popisná. |
-| O-4 | **Otevřený dluh S0**, predikční výstupy stále v kódu. |
-| O-5 | Plošné sloučení klíče staženo. |
-| O-6 | Spor o původ heuristiky uzavřen; podmínky adaptérů platí. |
-| O-7 | Dříve uzavřeno, bez nové výhrady. |
-| O-8 | Dříve uzavřeno, bez nové výhrady. |
-| O-9 | Odhad zbytku opraven; nejde o naměřenou pracnost. |
-| O-10 | Rozlišení dokončené a navržené práce zachováno. |
-| O-11 | Zásada bez univerzálního skóre škol zachována. |
-| O-12 | Dřívější vypořádání včetně příloh zachováno. |
-| O-13 | **Otevřený produkční blokátor S0**, znovu doložen veřejným JS. |
-| O-14 | Datová vazba přijata; autentizace neimplementovaná. |
-| O-15 | Spor o rozsah dotazu uzavřen oběma stranami. |
-| O-16 | Metodická připomínka uzavřena; příčina rozdílu 322 stále neznámá. |
-| O-17 | Tarifní vysvětlení staženo; přístup Web Analytics stále neověřený. |
-| O-18 | Výhrada k logům uzavřena; dotaz, retence a pokrytí HIT dosud nepřejaty. |
-| O-19 | **Opraveno a nasazeno**, dostupnost opět ověřena. |
-| O-20 | Doplnění nulového měření zapracováno, uzavřeno. |
-| O-21 | **Opraveno a nasazeno**, včetně obou rozšíření R4; důkazy níže. |
-
-21/21 ID má dispozici. Nepřevádíme to na procento hotové aplikace: uzavřený výklad dat, neimplementovaná funkce a opravená produkční vada jsou odlišné výsledky.
-
-### O-13/O-4 a doporučení přejít k realizaci
-
-**Přijato.** [R4-E1](podklady/oponentura-2027-r4-overeni.json) zachycuje veřejný JS se stejným SHA-256 `9d6d0d…e70a6e` a prahem ±10. `chances.ts` dál počítá `chancePct` a exportuje jej jako `estimatedChancePct`; zachovává i `estimatedMinScore`. Oprava náhledů tato místa nezměnila. Závěr „blokátor nebyl opraven“ tedy platí. Tvrzení o jediné změně aplikace je časově vázané na posuzovaný commit: následně byla vydána i obsahová oprava O-21. Ta však O-13 nenahrazuje.
-
-**Další dodávka je implementace S0 podle §3.** Přejímka musí prověřit odstranění predikčních kategorií i odvozeného filtrování/doporučení, bodové významy v API a UI, chybějící hodnoty, zaměření a sdílené URL; dále veřejné rozhraní O-4 bez predikcí, regresní testy, build, mobil/desktop a produkci. Nové dokumentační kolo není podmínkou. Implementace Mého výběru nadále čeká na uzavření O-13; schválené D1/D2 se nemění.
-
-### O-21 — oba nové nálezy i původní vady
-
-**Přijato jako popis starých obrázků; aktuální produkční stav „otevřeno“ je překonaný opravou.** [R4-E2](podklady/oponentura-2027-r4-og-overeni.json) ověřuje tři stránky a devět GET, včetně skutečných metadat, parametrů a přesměrování. PNG jsou po bajtech shodné s již prohlédnutými [opravenými náhledy](oprava-og-nahledu-2027.md). [R4-E3](podklady/oponentura-2027-r4-deployment.json) dokládá READY produkci na `ee0700e`, navazující na PR #72. Staré obrazové důkazy nepopíráme, pouze je nepovažujeme za obraz aktuálního nasazení.
-
-**Nález 1 — věcný obsah: přijat, číselná záměna upřesněna.** Paušální údaj „2025 aktuální data“ byl chybný a je odstraněný. Výhradu k jeho prioritě přijímáme jako věcnou, nikoli jen typografickou. R4-E1 však potvrzuje **3 091 nabídek v rozsahu importu**, z nich 3 076 s kladným zveřejněným průměrem; nejde o počet unikátních oborů ani úplnost katalogu. Samotných 3 091 navíc logicky nevyvrací dolní mez „2 200+“. Prosté nahrazení textem „3 091 oborů“ by proto nebylo doloženou opravou. Nový obrázek počet vůbec neuvádí a odděluje přijímání 2027 od výsledků 2026.
-
-**Nález 2 — bodová škála: přijat pro čisté body JPZ, příklad odstraněn.** [CERMAT](https://prijimacky.cermat.cz/menu/jednotna-prijimaci-zkouska.html) uvádí maximum 50 bodů za každý ze dvou testů. Z uvedených vstupů tedy plyne 80/100; starý náhled bez vysvětlení převodu nesprávně uváděl 160/200. Tvrzení „škála 200 neexistuje“ přijímáme v tomto vymezení čistých bodů JPZ, nezobecňujeme je na jiné veličiny a školní součty. Samotný náhled nedokazuje chybný součet v aplikaci: R4-E1 ukazuje, že aktuální simulátor již počítá `scoreCj + scoreMa` do 100. Jeho jiná vada O-13 přesto trvá. V novém náhledu není bodový příklad ani slib osobní šance.
-
-**Fonty — řešení přijato, vyloučení chybějících znaků rozporováno.** R4-E1 přímo kontroluje Unicode mapy TTF: přibalenému výchozímu fontu Next.js 16.1.4 chybí `čďěňřšťůžČĎĚŇŘŠŤŮŽ`; nové plné Noto Sans Regular/Bold obsahují celou ověřovanou českou sadu. Kód rendereru načítá tento výchozí latinský TTF; stejná deklarace `system-ui` proto není důkazem stejné úplné sady znaků. Neprohlašujeme za reprodukovanou přesnou historickou větev doplňování fontů ani příčinu rozdílu mezi regiony a úvodem. Oprava explicitními lokálními fonty je již provedena a výsledek veřejně ověřen.
-
-### Stanoviska k R3 a historie
-
-**O-15/O-16/O-17/O-18/O-19/O-20: souhlas s uvedeným přijetím našich důkazů.** U O-16 zůstává nevysvětlených 322 vstupů, u O-17 neověřený přístup a u O-18 nepřejaté měření HIT/retence. Neotevíráme znovu jejich metodické spory. Tvrzení o cache Facebooku je stažené; konkrétní cache ani její obnova nebyly ověřeny.
-
-- Vstup R4 v4.0 a předchozí dokumenty jsou zachovány v [manifestu se SHA-256](historie/rozvoj-2027-r4-vstup/manifest.json). Původní posudek ani staré obrazové důkazy se nepřepisují.
-- Výstup: návrh **v2.4**, oponentura **v4.1**, PRD **v0.8**, doplnění záznamu OG **v1.2**. Identifikátor revize `rozvoj-2027-r4`.
-- R4-E1 lze zopakovat `python3 scripts/audit-review-2027-r4.py`; nový běh přepíše pouze tento kontrolní podklad, nikoli historické snímky. Čas a SHA jsou součástí výsledku.
-- Příští kontrola se má týkat změněného kódu S0 a jeho přejímky. Tímto zápisem nevzniká další implementace ani nové nasazení.
