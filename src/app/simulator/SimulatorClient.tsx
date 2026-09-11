@@ -6,7 +6,9 @@ import { useSearchParams } from 'next/navigation';
 import { normalizeSchoolKey } from '@/lib/school-key';
 import { matchesSearchLocation, splitByCommute } from '@/lib/simulator-filter';
 import { applicationsPerPlace, capacitySummary, rankAdmissionOffers, rankingPages, type AdmissionContext } from '@/lib/admission-summary';
-import { MAX_SELECTION, readSelection, sharedSimulatorParams } from '@/lib/simulator-state';
+import { MAX_SELECTION, readSelection, selectionForShare, shareUrlFor } from '@/lib/simulator-state';
+import { OfferComparisonTable, type ComparisonOffer } from '@/components/simulator/OfferComparisonTable';
+import { SavedSelectionBar } from '@/components/simulator/SavedSelectionBar';
 
 interface School {
   id: string;
@@ -84,11 +86,39 @@ const field = 'mt-1 min-h-11 w-full rounded-lg border border-slate-300 bg-white 
 const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const countLabel = (n: number) => `${n} ${n === 1 ? 'obor' : n >= 2 && n <= 4 ? 'obory' : 'oborů'}`;
 
+/** Prázdné pole znamená „nevím“, nikoli nula bodů. */
+function readOwnScore(raw: string): number | null {
+  if (!raw.trim()) return null;
+  const number = Number(raw.replace(',', '.'));
+  return Number.isFinite(number) && number >= 0 && number <= 50 ? number : null;
+}
+
+function toComparisonOffer(school: School, commuteMinutes: number | null): ComparisonOffer {
+  const context = school.admission_context;
+  return {
+    id: school.id,
+    slug: school.slug,
+    name: school.nazev_display || school.nazev,
+    program: school.zamereni ? `${school.obor} · ${school.zamereni}` : school.obor,
+    place: school.adresa || school.ulice || school.obec,
+    acceptedTotal: context ? context.average_accepted : school.history?.average ?? null,
+    acceptedCzech: school.history?.average_cj ?? null,
+    acceptedMaths: school.history?.average_ma ?? null,
+    applications: school.demand?.applications ?? null,
+    capacity: school.demand?.capacity ?? school.history?.capacity ?? null,
+    commuteMinutes,
+  };
+}
+
 export function SimulatorClient() {
   const params = useSearchParams();
-  const selectionKey = params.get('skoly') || '';
-  const selectedIds = readSelection(selectionKey);
   const showingSelection = params.get('vyber') === '1' || params.get('srovnani') === '1';
+  // Uložený výběr je stav aplikace, nikoli obsah adresy: odkaz už celý výběr neunese.
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [ownCzech, setOwnCzech] = useState('');
+  const [ownMaths, setOwnMaths] = useState('');
+  const [onlySaved, setOnlySaved] = useState(false);
+  const [view, setView] = useState<'table' | 'cards'>('table');
   const [catalog, setCatalog] = useState<SearchResponse | null>(null);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
@@ -125,16 +155,25 @@ export function SimulatorClient() {
   }
 
   useEffect(() => {
-    // URL má přednost; sdílený výběr nepřepíšeme obsahem zařízení.
-    if (new URLSearchParams(window.location.search).has('skoly')) return;
-    try {
-      const ids = readSelection(localStorage.getItem(STORAGE_KEY));
-      if (ids.length) {
-        const next = new URLSearchParams(window.location.search);
-        next.set('skoly', JSON.stringify(ids));
-        window.history.replaceState(null, '', `${window.location.pathname}?${next}`);
-      }
-    } catch { /* Další pokus o uložení zobrazí chybu přímo u akce. */ }
+    // Sdílený odkaz má přednost a přidá se k tomu, co už v zařízení je;
+    // příjemce odkazu tak nepřijde o vlastní rozpracovaný výběr.
+    let stored: string[] = [];
+    try { stored = readSelection(localStorage.getItem(STORAGE_KEY)); }
+    catch { setStorageStatus('Uložený výběr se z tohoto prohlížeče nepodařilo načíst.'); }
+    const shared = readSelection(new URLSearchParams(window.location.search).get('skoly'));
+    const merged = Array.from(new Set([...stored, ...shared])).slice(0, MAX_SELECTION);
+    if (merged.length) setSelectedIds(merged);
+    if (shared.length && shared.some(id => !stored.includes(id))) {
+      setNotice('Obory ze sdíleného odkazu jsme přidali k tvému výběru.');
+      writeStorage(merged);
+    }
+    // Adresa dál nenese výběr: odkaz už ho v úplnosti unést nemůže.
+    if (new URLSearchParams(window.location.search).has('skoly')) {
+      const next = new URLSearchParams(window.location.search);
+      next.delete('skoly');
+      const query = next.toString();
+      window.history.replaceState(null, '', query ? `${window.location.pathname}?${query}` : window.location.pathname);
+    }
   }, []);
 
   useEffect(() => {
@@ -176,6 +215,16 @@ export function SimulatorClient() {
   }, [stop, limit, routeKey, retry]);
 
   const catalogIndex = useMemo(() => new Map(catalog?.schools.map(s => [normalizeSchoolKey(s.id), s]) ?? []), [catalog]);
+  const savedKeys = useMemo(() => new Set(selectedIds.map(normalizeSchoolKey)), [selectedIds]);
+  // Odkaz měříme podle hotové adresy, protože identifikátory mají různou délku.
+  const shareableIds = useMemo(
+    () => typeof window === 'undefined' ? selectedIds : selectionForShare(selectedIds, window.location.origin),
+    [selectedIds],
+  );
+  const ownScore = useMemo(() => ({
+    czech: readOwnScore(ownCzech),
+    maths: readOwnScore(ownMaths),
+  }), [ownCzech, ownMaths]);
   const estimates = useMemo(() => {
     const result = new Map<string, Estimate>();
     const duplicates = new Set<string>();
@@ -218,6 +267,14 @@ export function SimulatorClient() {
   }
   const groups = stop ? splitByCommute(filtered, limit, s => estimates.byId.get(normalizeSchoolKey(s.id))?.minutes, s => mapped.has(normalizeSchoolKey(s.id))) : { within: filtered, near: [], unknown: [] };
   const pending = !!stop && !transit;
+  // Filtr „jen uložené“ platí nad výsledky hledání, nikoli místo nich.
+  const shownOffers = onlySaved ? groups.within.filter(s => savedKeys.has(normalizeSchoolKey(s.id))) : groups.within;
+  const tableOffers = shownOffers.slice(0, visible).map(school =>
+    toComparisonOffer(school, estimates.byId.get(normalizeSchoolKey(school.id))?.minutes ?? null));
+  const savedItems = selectedIds.map(id => {
+    const school = catalogIndex.get(normalizeSchoolKey(id));
+    return { id, label: school ? `${school.obor} · ${school.nazev_display || school.nazev}` : 'Uložený obor se dohledává' };
+  });
 
   function changeTime(raw: string) {
     setMinuteInput(raw);
@@ -226,24 +283,31 @@ export function SimulatorClient() {
       setLimit(number); setVisible(20); setTransitError('');
     }
   }
-  function saveIds(ids: string[]) {
-    updateUrl({ skoly: JSON.stringify(ids) });
+  function writeStorage(ids: string[]) {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(ids)); setStorageStatus('Uloženo v tomto prohlížeči.'); }
-    catch { setStorageStatus('Uložení do prohlížeče selhalo. Výběr zůstává v odkazu; zkopíruj si ho přes Sdílet.'); }
+    catch { setStorageStatus('Uložení do prohlížeče selhalo. Výběr platí jen do zavření stránky; ulož si ho přes Sdílet.'); }
+  }
+  function saveIds(ids: string[]) {
+    setSelectedIds(ids);
+    setShareUrl('');
+    writeStorage(ids);
   }
   function toggle(id: string) {
-    const ids = readSelection(new URLSearchParams(window.location.search).get('skoly'));
-    if (!ids.includes(id) && ids.length >= MAX_SELECTION) { setNotice(`Můžeš uložit nejvýš ${MAX_SELECTION} oborů.`); return; }
-    saveIds(ids.includes(id) ? ids.filter(value => value !== id) : [...ids, id]);
-    setNotice(ids.includes(id) ? 'Obor odebrán z výběru.' : 'Obor přidán do výběru.');
+    const saved = selectedIds.includes(id);
+    if (!saved && selectedIds.length >= MAX_SELECTION) {
+      setNotice(`Výběr je zaplněný na ${MAX_SELECTION} oborů. Odeber některý, než přidáš další.`);
+      return;
+    }
+    saveIds(saved ? selectedIds.filter(value => value !== id) : [...selectedIds, id]);
+    setNotice(saved ? 'Obor odebrán z výběru.' : 'Obor přidán do výběru.');
   }
   async function share() {
-    const shared = sharedSimulatorParams(new URLSearchParams(window.location.search));
-    shared.delete('cj'); shared.delete('ma'); shared.set('vyber', '1');
-    const url = `${window.location.origin}/simulator?${shared}`;
+    const url = shareUrlFor(shareableIds, window.location.origin);
     setShareUrl(url);
-    try { await navigator.clipboard.writeText(url); setNotice('Odkaz zkopírován.'); }
-    catch { setNotice('Odkaz označ a zkopíruj ručně.'); }
+    const trimmed = selectedIds.length - shareableIds.length;
+    const note = trimmed > 0 ? ` Odkaz nese ${shareableIds.length} z ${selectedIds.length} oborů; zbytek se do adresy nevejde.` : '';
+    try { await navigator.clipboard.writeText(url); setNotice(`Odkaz zkopírován.${note}`); }
+    catch { setNotice(`Odkaz označ a zkopíruj ručně.${note}`); }
   }
   function renderSchool(school: School, near = false) {
     const estimate = transit ? estimates.byId.get(normalizeSchoolKey(school.id)) : undefined;
@@ -338,6 +402,37 @@ export function SimulatorClient() {
             {!stop && (city || region) && <button className="mt-2 min-h-11 text-blue-700 underline" onClick={() => { setCity(''); setRegion(''); setVisible(20); }}>Zrušit územní omezení</button>}
           </div>
           <p className="mb-4 text-xs text-slate-500">Dostupný katalog 2025 s historií 2026. Úplná nabídka a kritéria 2027 se doplňují.</p>
+          <div className="mb-4">
+            <SavedSelectionBar
+              items={savedItems}
+              storageStatus={storageStatus}
+              onlySaved={onlySaved}
+              onToggleOnlySaved={() => { setOnlySaved(!onlySaved); setVisible(20); }}
+              onRemove={toggle}
+              onShare={share}
+              shareableCount={shareableIds.length}
+            />
+            {shareUrl && <label className="mt-3 block text-sm">Odkaz obsahuje jen uložené obory. Zadané body ani zastávka se nesdílejí.
+              <input className={field} value={shareUrl} readOnly onFocus={e => e.target.select()} /></label>}
+          </div>
+          <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+            <div className="flex flex-wrap items-end gap-3">
+              <label className="text-sm font-medium">Moje čeština
+                <input className={`${field} w-28`} inputMode="decimal" value={ownCzech} onChange={e => setOwnCzech(e.target.value)} placeholder="z 50" aria-describedby="own-score-help" />
+              </label>
+              <label className="text-sm font-medium">Moje matematika
+                <input className={`${field} w-28`} inputMode="decimal" value={ownMaths} onChange={e => setOwnMaths(e.target.value)} placeholder="z 50" aria-describedby="own-score-help" />
+              </label>
+            </div>
+            <div className="flex gap-2" role="group" aria-label="Podoba výsledků">
+              <button className={`${button} ${view === 'table' ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={view === 'table'} onClick={() => setView('table')}>Tabulka</button>
+              <button className={`${button} ${view === 'cards' ? 'border-blue-500 bg-blue-50 text-blue-800' : ''}`} aria-pressed={view === 'cards'} onClick={() => setView('cards')}>Karty</button>
+            </div>
+          </div>
+          <p id="own-score-help" className="mb-4 text-xs text-slate-600">
+            Body zadej za každý test zvlášť, každý je na škále 0–50. Slouží jen k porovnání s loňskými průměry v tomto prohlížeči;
+            nikam se neodesílají a do sdíleného odkazu nepatří. Prázdné pole znamená „nevím“, nikoli nula.
+          </p>
           {pending ? <div role="status"><p>{transitError || 'Počítám orientační dojezd…'}</p>{transitError && <button className={`${button} mt-3`} onClick={() => { setTransitError(''); setRetry(retry + 1); }}>Zkusit znovu</button>}</div> : <>
             <div className="flex flex-wrap items-center justify-between gap-2"><h2 className="text-xl font-semibold" aria-live="polite">{rankingMode ? `${countLabel(ranked.length)} s ověřeným průměrem` : countLabel(groups.within.length)}{stop ? ` do ${limit} min` : ''}</h2><span className="text-xs text-slate-500">{stop ? 'Podle odhadu dojezdu' : rankingMode ? 'Průměr JPZ přijatých · od nejvyššího' : 'Podle názvu školy'}</span></div>
             {!!groups.near.length && <div className="my-5 border-l-4 border-amber-500 bg-amber-50 p-4"><h3 className="font-semibold">Ještě {countLabel(groups.near.length)} těsně za limitem</h3><p className="mt-1 text-sm">Nejbližší je o {(estimates.byId.get(normalizeSchoolKey(groups.near[0].id))?.minutes ?? limit) - limit} min dál. Tvůj limit zůstává {limit} min.</p><div className="mt-3 flex flex-wrap gap-2"><a href="#near-schools" className={button}>Prohlédnout další obory</a>{limit < 180 && <button className={button} onClick={() => changeTime(String(Math.min(180, estimates.byId.get(normalizeSchoolKey(groups.near[groups.near.length - 1].id))?.minutes ?? limit + 10)))}>Zvýšit limit na {Math.min(180, estimates.byId.get(normalizeSchoolKey(groups.near[groups.near.length - 1].id))?.minutes ?? limit + 10)} min</button>}</div></div>}
@@ -352,8 +447,11 @@ export function SimulatorClient() {
                 {rankingPages(rankingPage, rankingPageCount).map((page, index) => typeof page === 'number' ? <button key={page} className={`${button} ${page === rankingPage ? 'border-blue-600 bg-blue-50 text-blue-800' : ''}`} aria-label={`Stránka ${page}`} aria-current={page === rankingPage ? 'page' : undefined} onClick={() => goToRankingPage(page)}>{page}</button> : <span key={`gap-${index}`} className="px-1">{page}</span>)}
                 <button className={button} disabled={rankingPage === rankingPageCount} onClick={() => goToRankingPage(rankingPage + 1)}>Další</button>
               </nav>}
-            </> : groups.within.slice(0, visible).map(s => renderSchool(s))}
-            {!rankingMode && groups.within.length > visible && <button className={`${button} my-4`} onClick={() => setVisible(visible + 20)}>Dalších 20 oborů</button>}
+            </> : view === 'table'
+              ? <OfferComparisonTable offers={tableOffers} own={ownScore} savedIds={savedKeys} onToggleSave={toggle} />
+              : groups.within.slice(0, visible).map(s => renderSchool(s))}
+            {!rankingMode && view === 'cards' && groups.within.length > visible && <button className={`${button} my-4`} onClick={() => setVisible(visible + 20)}>Dalších 20 oborů</button>}
+            {!rankingMode && view === 'table' && shownOffers.length > visible && <button className={`${button} my-4`} onClick={() => setVisible(visible + 20)}>Dalších 20 oborů</button>}
             {!!groups.near.length && <section id="near-schools" className="mt-8 scroll-mt-8"><h2 className="text-xl font-semibold">Těsně za limitem</h2><p className="mt-1 text-sm text-slate-600">Nejvýš o 10 minut dál, ostatní filtry platí.</p>{groups.near.slice(0, visible).map(s => renderSchool(s, true))}{groups.near.length > visible && <button className={`${button} mt-3`} onClick={() => setVisible(visible + 20)}>Další obory za limitem</button>}</section>}
             {!!groups.unknown.length && <details className="mt-8"><summary className="cursor-pointer font-semibold">Dojezd zatím neověřen ({groups.unknown.length})</summary><p className="mt-2 text-sm text-slate-600">Chybí jednoznačné přiřazení místa výuky k dopravním datům. Neznamená to, že škola není dostupná.</p>{groups.unknown.slice(0, visible).map(s => renderSchool(s))}{groups.unknown.length > visible && <button className={`${button} mt-3`} onClick={() => setVisible(visible + 20)}>Další obory bez ověřeného dojezdu</button>}</details>}
             {stop && <p className="mt-6 text-xs text-slate-500">Nenalezená cesta může znamenat překročení rozsahu i chybějící spoj v podkladech. Pro konkrétní den ověř spojení v jízdním řádu.</p>}

@@ -1,4 +1,12 @@
-export const MAX_SELECTION = 30;
+/** Uložený výběr nemá produktový strop: rodina smí zvažovat desítky kandidátů.
+ * Mez existuje jen jako pojistka proti poškozenému úložišti, ne jako pravidlo výběru.
+ */
+export const MAX_SELECTION = 300;
+
+/** Sdílený odkaz omezuje délka adresy, nikoli počet oborů. Identifikátory mají
+ * různou délku, takže se měří hotová adresa, ne počet položek.
+ */
+export const MAX_SHARE_URL_LENGTH = 1900;
 
 export function readScore(value: string | null): number | null {
   if (value === null || value.trim() === '') return null;
@@ -21,6 +29,28 @@ export function readSchoolIds(value: string | null, limit = 200): string[] {
 
 export function readSelection(value: string | null): string[] {
   return readSchoolIds(value, MAX_SELECTION);
+}
+
+/** Odkaz nese jen tolik oborů, kolik se do adresy vejde celé.
+ * Zkrácení je vždy viditelné: volající musí rozdíl proti uloženému výběru sdělit.
+ */
+export function selectionForShare(ids: string[], origin: string, maxLength = MAX_SHARE_URL_LENGTH): string[] {
+  const fits = (count: number) => shareUrlFor(ids.slice(0, count), origin).length <= maxLength;
+  if (!ids.length || fits(ids.length)) return ids;
+  let low = 0, high = ids.length;
+  while (low < high) {
+    const middle = Math.ceil((low + high) / 2);
+    if (fits(middle)) low = middle; else high = middle - 1;
+  }
+  return ids.slice(0, low);
+}
+
+/** Jediné místo, kde vzniká podoba sdíleného odkazu; měření i sdílení musí souhlasit. */
+export function shareUrlFor(ids: string[], origin: string): string {
+  const shared = new URLSearchParams();
+  if (ids.length) shared.set('skoly', JSON.stringify(ids));
+  shared.set('vyber', '1');
+  return `${origin}/simulator?${shared}`;
 }
 
 /** Sdílení obsahuje jen veřejné nastavení simulátoru, nikoli jiné parametry URL. */
