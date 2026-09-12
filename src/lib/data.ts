@@ -1274,6 +1274,24 @@ export async function getInspisDataByRedizo(redizo: string): Promise<SchoolInspi
 /**
  * Sloučený záznam: dynamická data 2026 + statická data joinnutá z 2025
  */
+/**
+ * Záznam nabídky v ročníku 2025 podle identifikátoru katalogu.
+ * Slouží ke srovnání vývoje mezi ročníky; identifikátory jsou stabilní,
+ * takže sedí i na nabídku, které se mezi roky změnil text zaměření.
+ */
+export async function get2025RecordById(id: string): Promise<
+  { prihlasky?: number; kapacita?: number; prijati?: number } | undefined
+> {
+  const filePath = path.join(dataDir, 'schools_data.json');
+  const content = await fs.readFile(filePath, 'utf-8');
+  const data = JSON.parse(content);
+  const rok2025: Array<{ id: string; prihlasky?: number; kapacita?: number; prijati?: number }> =
+    data['2025'] || [];
+  const zaznam = rok2025.find(z => z.id === id);
+  if (!zaznam) return undefined;
+  return { prihlasky: zaznam.prihlasky, kapacita: zaznam.kapacita, prijati: zaznam.prijati };
+}
+
 export interface School2026Data {
   source_id: string;
   ulice?: string;

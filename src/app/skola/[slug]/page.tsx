@@ -8,7 +8,7 @@ import { Footer } from '@/components/Footer';
 import { ProgramTabs } from '@/components/SchoolDetailClient';
 import { InspectionSummary } from '@/components/InspectionSummary';
 import { SchoolInfoSection } from '@/components/school-profile/SchoolInfoSection';
-import { getSchoolPageType, getSchoolOverview, getExtendedStatsForProgram, getProgramsByRedizo, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo } from '@/lib/data';
+import { getSchoolPageType, getSchoolOverview, getExtendedStatsForProgram, getProgramsByRedizo, getTrendDataForPrograms, SchoolProgram, YearlyTrendData, getCSIDataByRedizo, getExtractionsByRedizo, getInspisDataByRedizo, get2026DataByRedizo, type School2026Data, getSchoolResultsByRedizo, get2025RecordById } from '@/lib/data';
 import { Applications2026Banner } from '@/components/Applications2026Banner';
 import { SchoolResults2026 } from '@/components/SchoolResults2026';
 import { VibecordingPromo } from '@/components/VibecordingPromo';
@@ -221,16 +221,16 @@ function ProgramCard({ program, schoolNazev, redizo, showStudyLength, data2026Fo
                 <div className="text-xs text-slate-500">Poptávka</div>
               </div>
             </div>
-            {/* Doplňkový řádek s 2025 daty */}
+            {/* Doplňkový řádek s čísly ročníku, ze kterého záznam pochází */}
             <div className="mt-3 pt-3 border-t border-slate-50 grid grid-cols-3 gap-4 text-xs text-slate-400">
               <div className="text-center">
-                <span className="font-medium text-red-600">{program.prijati}</span> přijatých 2025
+                <span className="font-medium text-red-600">{program.prijati}</span> přijatých {program.rok ?? 2025}
               </div>
               <div className="text-center">
-                {program.kapacita} míst 2025
+                {program.kapacita} míst {program.rok ?? 2025}
               </div>
               <div className="text-center">
-                {program.prihlasky} přihl. 2025
+                {program.prihlasky} přihl. {program.rok ?? 2025}
               </div>
             </div>
           </>
@@ -386,7 +386,13 @@ export default async function SchoolDetailPage({ params }: Props) {
               <SchoolResults2026 results={results2026} />
 
               {/* Priority Cards */}
-              <StatsTab program={program} extendedStats={await getExtendedStatsForProgram(program.id)} />
+              <StatsTab
+                program={program}
+                extendedStats={await getExtendedStatsForProgram(program.id)}
+                data2026={match2026ToProgram(data2026, program)}
+                result2026={results2026.find(r => normalizeSchoolKey(r.offer_id ?? '') === normalizeSchoolKey(program.id))}
+                data2025={await get2025RecordById(program.id)}
+              />
 
               {/* Quick Facts */}
               <QuickFactsCard facts={quickFacts} />
@@ -890,19 +896,25 @@ export default async function SchoolDetailPage({ params }: Props) {
 
         {/* Stats Grid */}
         <div className="max-w-6xl mx-auto px-4 py-8">
-          <StatsTab program={program} extendedStats={extendedStats} />
+          <StatsTab
+            program={program}
+            extendedStats={extendedStats}
+            data2026={program2026}
+            result2026={results2026.find(r => normalizeSchoolKey(r.offer_id ?? '') === normalizeSchoolKey(program.id))}
+            data2025={await get2025RecordById(program.id)}
+          />
           <div className="my-6 rounded-xl bg-white p-6">
-            <h2 className="font-semibold">Přijetí a kapacita · 2025</h2>
-            <p className="mt-2">Přijatí v roce 2025: {program.prijati}. Kapacita: {program.kapacita} míst.</p>
+            <h2 className="font-semibold">Přijetí a kapacita · {program.rok ?? 2025}</h2>
+            <p className="mt-2">Přijatí v roce {program.rok ?? 2025}: {program.prijati}. Kapacita: {program.kapacita} míst.</p>
           </div>
 
           {/* Interpretace */}
           <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl mb-8">
             <h3 className="font-semibold text-blue-800 mb-2">Co to znamená?</h3>
             <p className="text-blue-700">
-              V roce 2025 bylo na tento obor podáno {program.prihlasky} přihlášek při kapacitě {program.kapacita} míst.
-              Počet přihlášek zahrnuje všechny priority. Popisuje historickou poptávku, nikoli osobní pravděpodobnost přijetí.
-              Pro aktuálnější srovnání použijte výsledky a přihlášky 2026 výše; kritéria pro rok 2027 ověřte u školy.
+              V roce {program.rok ?? 2025} bylo na tento obor podáno {program.prihlasky} přihlášek při kapacitě {program.kapacita} míst.
+              Počet přihlášek zahrnuje všechny priority. Popisuje poptávku v daném ročníku, nikoli osobní pravděpodobnost přijetí.
+              Kritéria pro rok 2027 ověřte u školy.
             </p>
           </div>
 
