@@ -1,0 +1,56 @@
+{
+  "task_id": "R-691017344",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Gymnázium FOSTRA Meda s.r.o. (REDIZO 691017344, IČ 19552378, IZO 181142112, sídlo Eliášova 827/22, Bubeneč, Praha) je evidováno pouze ve snímku k 31. 3. 2025 s oborem 79-41-K/41 Gymnázium a místem výuky Slovačíkova 400/1, Kbely, Praha. Ve všech dalších snímcích (31. 12. 2025, 31. 3. 2026, 30. 6. 2026) subjekt i IZO 181142112 z rejstříku zcela zmizely. Souběžně nabízí REDIZO 600005950 (Gymnázium FOSTRA International s.r.o.) v 1. kole JPZ 2026 dvě nové nabídky se zaměřením 'Meda - Pro budoucí lékaře' a 'Meda - Pro budoucí psychology' - textově shodné s oběma zaměřeními, která REDIZO 691017344 nabízelo v roce 2025."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0178", "Q0179", "Q0200"],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2025 nabízel REDIZO 691017344 (Gymnázium FOSTRA Meda s.r.o., IZO 181142112, sídlo Eliášova 827/22, místo výuky Slovačíkova 400/1, Kbely) obor 79-41-K/41 Gymnázium ve dvou zaměřeních: 'Pro budoucí lékaře' a 'Pro budoucí psychology'. V roce 2026 nemá REDIZO 691017344 žádnou nabídku.",
+        "Rejstřík MŠMT eviduje REDIZO 691017344 a jeho IZO 181142112 pouze k 31. 3. 2025; ve snímcích k 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026 subjekt i IZO chybí zcela - stejný vzorec jako u sesterských REDIZO 691017280 (Aspira), 691017301 (Digita), 691017310 (Pontia) a 691017328 (Europea).",
+        "Již zpracovaný úkol R-600005950 (Gymnázium FOSTRA International, REDIZO 600005950) zjistil, že táž škola nabízí v 1. kole JPZ 2026 dvě nové nabídky 79-41-K/41 se zaměřením 'Meda - Pro budoucí psychology' a 'Meda - Pro budoucí lékaře' - klíčové fráze jsou textově IDENTICKÉ (beze změny slova) s oběma zaměřeními, která REDIZO 691017344 nabízelo v roce 2025, pouze s doplněným značkovým prefixem 'Meda'.",
+        "Nález úkolu R-600005950 k otázkám Q0325/Q0326 tuto shodu nezachytil - jeho tehdejší závěr zněl, že 'žádná z těchto nabídek nemá v datech 2025 obdobu - v tomto REDIZO ani v souvisejícím REDIZO 691017280', protože v době jeho zpracování ještě nebyl samostatně zpracován úkol R-691017344 s přesně odpovídajícími nabídkami 'Pro budoucí lékaře' / 'Pro budoucí psychology'. Tento nález tedy doplňuje a částečně opravuje závěr R-600005950.",
+        "Web fostra.cz (ověřeno 12. 9. 2026) potvrzuje aktuální existenci programu 'Fostra Meda' (pro budoucí lékaře) na adrese Havlíčkovo náměstí 300/10, Praha 3 - Žižkov, výhradně pod jedinou právnickou osobou Gymnázium FOSTRA International s.r.o. Program pro budoucí psychology je na webu nyní veden pod odlišnou značkou 'Fostra Alma' (nikoli 'Meda'), zatímco v datech CERMAT 2026 měla obě zaměření prefix 'Meda' - jde o novější přeznačení, které nemění textovou shodu klíčové fráze zaměření v datech CERMAT.",
+        "Místo výuky se mezi rokem 2025 (Slovačíkova 400/1, Kbely) a rokem 2026 (Havlíčkovo náměstí 300/10, Žižkov, dle webu i rejstříku IZO 108000877) změnilo.",
+        "Pokus o přímé ověření stavu společnosti IČ 19552378 v obchodním rejstříku (or.justice.cz) a v ARES selhal technicky (obě služby jsou postavené na JavaScriptové aplikaci nečitelné jako statická stránka)."
+      ],
+      "conclusion": "Obě nabídky 'Pro budoucí lékaře' a 'Pro budoucí psychology' z roku 2025 pod REDIZO 691017344 (Gymnázium FOSTRA Meda s.r.o.) pravděpodobně navazují na nabídky 'Meda - Pro budoucí lékaře' a 'Meda - Pro budoucí psychology' z roku 2026 pod REDIZO 600005950 (Gymnázium FOSTRA International s.r.o.) - textová shoda klíčových frází je zde úplná (beze změny formulace, jen s doplněným prefixem). V kombinaci se souběžným zánikem REDIZO 691017344 v rejstříku jde pravděpodobně o organizační sloučení menší sesterské školy do REDIZO 600005950, doprovázené změnou místa výuky z Kbel na Havlíčkovo náměstí. Přímé prohlášení školy k okamžiku a způsobu sloučení nebylo dohledáno.",
+      "alternative_explanations": [
+        "REDIZO 691017344 mohlo zaniknout bez formální fúze a shoda textu zaměření může být jen převzetím marketingového obsahu v rámci skupiny FOSTRA bez skutečné organizační návaznosti žáků.",
+        "Změna místa výuky (Kbely → Havlíčkovo náměstí) mezi lety může znamenat, že jde o odlišné fyzické pracoviště, a kontinuita konkrétní vyučované třídy tak nemusí být zachována i při sloučení právnických osob."
+      ],
+      "relationship": {
+        "type": "merge",
+        "from": ["691017344 Gymnázium FOSTRA Meda s.r.o. - Pro budoucí lékaře (2025)", "691017344 Gymnázium FOSTRA Meda s.r.o. - Pro budoucí psychology (2025)"],
+        "to": ["600005950 Gymnázium FOSTRA International s.r.o. - Meda - Pro budoucí lékaře (2026)", "600005950 Gymnázium FOSTRA International s.r.o. - Meda - Pro budoucí psychology (2026)"]
+      },
+      "addresses": [
+        {"text": "Eliášova 827/22, 160 00 Bubeneč, Praha", "role": "sídlo", "izo": "691017344", "valid_period": "pouze 2025-03-31 (subjekt dále nedohledán)", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"},
+        {"text": "Slovačíkova 400/1, 197 00 Kbely, Praha", "role": "místo výuky", "izo": "181142112", "valid_period": "pouze 2025-03-31", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"},
+        {"text": "Havlíčkovo náměstí 300/10, 130 00 Žižkov, Praha", "role": "místo výuky", "izo": "108000877", "valid_period": "2025-12-31 až 2026-06-30 (REDIZO 600005950)", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"}
+      ],
+      "evidence": [
+        {"url": "fronta-dohledavani-2025-2026.json, úkol R-691017344", "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)", "published_at": null, "checked_at": "2026-09-12", "supports": "Nabídky 79-41-K/41 'Pro budoucí lékaře' a 'Pro budoucí psychology' pod REDIZO 691017344 v roce 2025, žádná nabídka v roce 2026.", "applicable_period": "1. kola JPZ 2025 a 2026"},
+        {"url": "fronta-dohledavani-2025-2026.json, úkol R-600005950", "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ) k souvisejícímu úkolu", "published_at": null, "checked_at": "2026-09-12", "supports": "Nabídky 'Meda - Pro budoucí lékaře' a 'Meda - Pro budoucí psychology' pod REDIZO 600005950 v roce 2026 - textově shodné klíčové fráze s nabídkami REDIZO 691017344 z roku 2025.", "applicable_period": "1. kolo JPZ 2026"},
+        {"url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld", "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025", "published_at": null, "checked_at": "2026-09-12", "supports": "REDIZO 691017344 s IZO 181142112 evidován k 31. 3. 2025, místo výuky Slovačíkova 400/1, Kbely.", "applicable_period": "stav rejstříku k 31. 3. 2025"},
+        {"url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld", "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 12. 2025", "published_at": null, "checked_at": "2026-09-12", "supports": "REDIZO 691017344 i jeho IZO 181142112 ve snímku k 31. 12. 2025 chybí; IZO 108000877 (REDIZO 600005950) má nově místo výuky Havlíčkovo náměstí 300/10.", "applicable_period": "stav rejstříku k 31. 12. 2025"},
+        {"url": "docs/podklady/vysledky-navaznosti-2025-2026/R-600005950.json", "title": "Nález úkolu R-600005950 (Gymnázium FOSTRA International), otázky Q0325/Q0326", "published_at": "2026-09-12", "checked_at": "2026-09-12", "supports": "Popisuje nabídky 'Meda - Pro budoucí lékaře/psychology' v roce 2026 jako 'nové' bez obdoby v 2025 - tento nález ukazuje, že obdoba existuje v samostatném úkolu R-691017344, a doporučuje R-600005950 v tomto bodě přehodnotit.", "applicable_period": "zpracováno 2026-09-12"},
+        {"url": "https://www.fostra.cz/gymnazia", "title": "Gymnázia | Gymnázium Fostra", "published_at": null, "checked_at": "2026-09-12", "supports": "Program Fostra Meda (budoucí lékaři) na adrese Havlíčkovo náměstí 10, program pro budoucí psychology je nyní veden pod značkou Fostra Alma; obojí pod Gymnázium FOSTRA International s.r.o.", "applicable_period": "školní rok 2026/27"}
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "manual_review",
+      "related_task_ids": ["R-600005950"],
+      "unanswered_questions": [
+        "Zda bylo REDIZO 691017344 formálně sloučeno do REDIZO 600005950, nebo jen zrušeno bez organizačního nástupnictví; obchodně-rejstříkové potvrzení (or.justice.cz, ARES) se technicky nepodařilo dohledat.",
+        "Doporučujeme přehodnotit nález úkolu R-600005950 u otázek Q0325 a Q0326 - jejich tehdejší závěr 'žádná z těchto nabídek nemá v datech 2025 obdobu' je touto rešerší vyvrácen nálezem obdoby v REDIZO 691017344.",
+        "Zda přeznačení zaměření pro budoucí psychology z 'Meda' (CERMAT 2026) na 'Alma' (aktuální web) proběhlo až po podání přihlášek, a zda jde o totéž zaměření nebo o jeho rozdělení."
+      ]
+    }
+  ]
+}

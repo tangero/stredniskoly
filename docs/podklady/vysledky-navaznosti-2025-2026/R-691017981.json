@@ -1,0 +1,51 @@
+{
+  "task_id": "R-691017981",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "GAELY - střední škola, s.r.o. (REDIZO 691017981, IZO 181144417) je evidována beze změny REDIZO/IZO ve všech čtyřech snímcích. Sídlo se mění z Bělehradská 7/13, Nusle (k 31. 3. 2025) na U vinných sklepů 1062/11, Vysočany (od 31. 12. 2025 dosud). Registrovaný obor u IZO 181144417 je ve všech snímcích jen 79-41-K/41 Gymnázium (4leté, denní, český); obor 78-42-M/02 Ekonomické lyceum není zapsán v žádném ze čtyř snímků včetně posledního k 30. 6. 2026 - jde o odstup zápisu, potvrzený webem školy."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0394"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 nabízela škola (REDIZO 691017981, IZO izo_181144417, tehdy pod názvem GAELY - střední škola, s.r.o., adresa Bělehradská 7, Praha) jen obor 79-41-K/41 Gymnázium.",
+        "V 1. kole JPZ 2026 táž škola (nyní pod zkráceným názvem GAELY, adresa U vinných sklepů 1062, Praha) nabízí dvě nabídky: pokračující 79-41-K/41 Gymnázium (přiřazeno, mimo tuto otázku) a nově 78-42-M/02 Ekonomické lyceum (otázka Q0394).",
+        "Rejstřík MŠMT eviduje u IZO 181144417 ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) pouze obor 79-41-K/41 Gymnázium; obor 78-42-M/02 Ekonomické lyceum není zapsán ani v posledním dostupném snímku k 30. 6. 2026.",
+        "Web školy gaely.cz (ověřeno 12. 9. 2026) přímo uvádí: \"Naše škola v září 2026 otevírá dvě třídy gymnázia a nově i jednu třídu ekonomického lycea.\" - jde tedy o skutečně nový obor pro školní rok 2026/27, jehož absence v rejstříku MŠMT je jen odstup zápisu.",
+        "Web školy dále uvádí, že od školního roku 2026/27 škola dočasně přesouvá výuku do areálu MŠ a ZŠ Elektra na adrese Sousedíkova 1044/8, Praha 9 - jde o novou informaci o místě výuky, kterou dosavadní rejstřík ani CERMAT data (uvádějící sídlo/adresu U vinných sklepů) zatím nezachycují."
+      ],
+      "conclusion": "Obor 78-42-M/02 Ekonomické lyceum je nový obor otevíraný GAELY - střední škola, s.r.o. od školního roku 2026/27 vedle pokračujícího gymnázia 79-41-K/41; nemá předchůdce v nabídce 2025. Absence v rejstříku MŠMT je jen odstup zápisu, jak dokládá přímé prohlášení školy na jejím webu.",
+      "alternative_explanations": [
+        "Formální zápis oboru do rejstříku MŠMT mohl proběhnout až po 30. 6. 2026; to otevření oboru od září 2026 neovlivňuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/02 Ekonomické lyceum (2026)"]
+      },
+      "addresses": [
+        {"text": "Bělehradská 7/13, 140 00 Nusle, Praha", "role": "sídlo", "izo": "691017981", "valid_period": "pouze 2025-03-31", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"},
+        {"text": "Spálená 76/14, 110 00 Nové Město, Praha", "role": "místo výuky", "izo": "181144417", "valid_period": "pouze 2025-03-31", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"},
+        {"text": "U vinných sklepů 1062/11, 190 00 Vysočany, Praha", "role": "sídlo", "izo": "691017981", "valid_period": "2025-12-31 až 2026-06-30 (všechny další snímky)", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"},
+        {"text": "U vinných sklepů 1062/11, 190 00 Vysočany, Praha", "role": "místo výuky", "izo": "181144417", "valid_period": "2025-12-31 až 2026-06-30 (všechny další snímky)", "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"},
+        {"text": "Sousedíkova 1044/8, Praha 9 (areál MŠ a ZŠ Elektra)", "role": "jiná", "izo": "181144417", "valid_period": "dle webu školy dočasně od školního roku 2026/27, dosud nepotvrzeno rejstříkem MŠMT", "source_url": "https://www.gaely.cz"}
+      ],
+      "evidence": [
+        {"url": "fronta-dohledavani-2025-2026.json, úkol R-691017981", "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)", "published_at": null, "checked_at": "2026-09-12", "supports": "Nabídka 78-42-M/02 Ekonomické lyceum přítomna v roce 2026 pod REDIZO 691017981, chybějící v roce 2025.", "applicable_period": "1. kola JPZ 2025 a 2026"},
+        {"url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld", "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025", "published_at": null, "checked_at": "2026-09-12", "supports": "U IZO 181144417 zapsán jen obor 79-41-K/41 Gymnázium; sídlo Bělehradská 7/13.", "applicable_period": "stav rejstříku k 31. 3. 2025"},
+        {"url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld", "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 30. 6. 2026", "published_at": null, "checked_at": "2026-09-12", "supports": "U IZO 181144417 zapsán stále jen obor 79-41-K/41 Gymnázium; obor 78-42-M/02 chybí i v posledním snímku.", "applicable_period": "stav rejstříku k 30. 6. 2026"},
+        {"url": "https://www.gaely.cz", "title": "GAELY - hlavní stránka", "published_at": null, "checked_at": "2026-09-12", "supports": "Přímé prohlášení školy: v září 2026 otevírá dvě třídy gymnázia a nově jednu třídu ekonomického lycea; zmínka o dočasném přesunu výuky do areálu MŠ a ZŠ Elektra, Sousedíkova 1044/8, Praha 9.", "applicable_period": "školní rok 2026/27"}
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum a trvalost přesunu výuky do Sousedíkovy 1044/8 - zda jde o dočasné nebo trvalé místo výuky ekonomického lycea i gymnázia."
+      ]
+    }
+  ]
+}

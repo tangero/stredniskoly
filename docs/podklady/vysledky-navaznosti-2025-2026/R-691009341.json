@@ -1,0 +1,141 @@
+{
+  "task_id": "R-691009341",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "REDIZO 691009341 mění název ve všech čtyřech snímcích: k 2025-03-31 'Základní škola AVIDA s.r.o.', k 2025-12-31 'Základní škola a gymnázium AVIDA s.r.o.', k 2026-06-30 'AVIDA - gymnázium, střední škola a základní škola s.r.o.'. Sídlo K trnkám 2135/6, 143 00 Modřany, Praha zůstává beze změny ve všech snímcích. IZO 250002035 'Střední škola' (místo výuky Poláčkova 1067/3, 140 00 Krč, Praha) v rejstříku VŮBEC NENÍ k 2025-03-31 a poprvé se objevuje až ve snímku k 2025-12-31; ve stejné podobě (stejný obor, stejné místo výuky) pak trvá i ve snímcích k 2026-03-31 a 2026-06-30. Ve všech třech snímcích, kde IZO existuje, je zapsán jediný obor: 79-42-K/41 Gymnázium se sportovní přípravou (4leté, denní, český jazyk). Obor tedy formálně trvá i k poslednímu dostupnému snímku (30. 6. 2026)."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0167", "Q0194"],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2025 škola (uvedená jako 'Základní škola a gymnázium AVIDA s.r.o.', K trnkám 2135, Praha, REDIZO 691009341, IZO izo_250002035) nabízela obor 79-42-K/41 Gymnázium se sportovní přípravou (4leté, denní, český jazyk). V 1. kole JPZ 2026 stejná organizace nenabízí žádný obor.",
+        "IZO 250002035 chybí v rejstříku MŠMT k 2025-03-31 a objevuje se až ve snímku k 2025-12-31 (s oborem 79-42-K/41, místo výuky Poláčkova 1067/3, Krč). To je typický odstup zápisu do rejstříku vůči skutečnému běhu přijímacího řízení (obdobný jev je zdokumentován u jiných úkolů této fronty) – rejstřík zápis dohnal až poté, co škola už nabírala první ročník pro školní rok 2025/2026.",
+        "Nezařazená školní jednotka Q0194 (schools, rok 2025: IZO izo_250002035, adresa 'k trnkam 2135, praha, 14300', název 'zakladni skola a gymnazium avida s r o') odpovídá téže organizaci a témuž IZO jako nabídka Q0167 – jde o vznik gymnaziální větve školy AVIDA v roce 2025, zapsanou v CERMAT datech pod sídelní adresou K trnkám, zatímco skutečné místo výuky střední školy je dle rejstříku Poláčkova 1067/3, Krč.",
+        "Dokument '2. kolo přijímacího řízení na sportovní gymnázium AVIDA' (podepsán ředitelkou 12. 5. 2025) potvrzuje, že šlo o přijímací řízení pro obor 79-42-K/41 s předpokládaným počtem přijímaných žáků 16, s termínem podání přihlášek v systému DiPSy 19.–26. 5. 2025 a zveřejněním výsledků 15. 6. 2025 – tedy o řádné 1. otevření oboru pro školní rok 2025/2026, které se kryje s nabídkou v CERMAT datech 2025.",
+        "Vzdělávací koncepce gymnázia (dokument 'Gymnázium AVIDA – Vzdělávací koncepce gymnázia se sportovní přípravou, 79-42-K/41') popisuje gymnázium jako nově vznikající, 'přirozené pokračování úspěšné tradice základní školy AVIDA' – potvrzuje, že šlo o nově zakládanou střední školu/obor, nikoli o starší, dosud neevidovanou nabídku.",
+        "Aktuální web školy (sekce Gymnázium, https://www.skolyavida.cz/gymnazium/uvod, stav k 12. 9. 2026) neuvádí žádnou aktuálně běžící nabídku pro školní rok 2026/2027, ale doslova uvádí: „V září 2027 otevřeme všeobecné gymnázium, gymnázium se sportovní přípravou a pedagogické lyceum.“ Tedy tři obory (včetně stávajícího sportovního zaměření) jsou prezentovány jako budoucí, teprve plánované otevření od září 2027 – bez zmínky o přijímacím řízení pro rok 2026/2027.",
+        "Stránka přijímacího řízení gymnázia (https://www.skolyavida.cz/gymnazium/prijimaci-rizeni) nabízí ke stažení výhradně dokumenty datované a označené rokem 2025 (přihláška, kritéria pro 2. kolo, koncepce, dotazník sportovní specializace atd.) - žádný dokument pro přijímací řízení 2026/2027 na stránce nalezen nebyl.",
+        "Web školy potvrzuje organizační strukturu: sídlo/školička a školka na adrese K Trnkám 2135/6, Praha 4, zatímco základní škola i gymnázium sídlí na adrese Poláčkova 1067/3, Praha 4 - to odpovídá rejstříkovému rozlišení sídla právnické osoby (K trnkám) a místa výuky IZO 250002035 (Poláčkova, Krč)."
+      ],
+      "conclusion": "Gymnázium AVIDA (obor 79-42-K/41 Gymnázium se sportovní přípravou) skutečně poprvé otevřelo přijímací řízení pro školní rok 2025/2026 (CERMAT nabídka 2025, doloženo vlastními dokumenty školy z května 2025); zápis IZO 250002035 do rejstříku MŠMT tuto skutečnost jen se zpožděním dohnal až ve snímku k 2025-12-31. Chybějící nabídka v 1. kole JPZ 2026 je pravděpodobně důsledkem toho, že škola pro školní rok 2026/2027 nové přijímací řízení nevyhlásila a plánuje další (rozšířené) otevření až od září 2027, kdy chce nabízet tři obory najednou (všeobecné gymnázium, gymnázium se sportovní přípravou a pedagogické lyceum) - to odpovídá i formulaci na aktuálním webu školy. Nejde o doložený zánik oboru: 79-42-K/41 zůstává v rejstříku MŠMT zapsán ve všech snímcích od 2025-12-31 do 2026-06-30 včetně. Q0194 popisuje tutéž organizační jednotku (IZO izo_250002035) jako Q0167 - jde o vznik gymnaziální větve školy AVIDA v roce 2025, nikoli o samostatnou nepřiřazenou školu.",
+      "alternative_explanations": [
+        "Formulace 'V září 2027 otevřeme' se může týkat jen plánovaného rozšíření o dva nové obory (všeobecné gymnázium a pedagogické lyceum), zatímco stávající sportovní gymnázium mohlo v mezidobí (2026/2027) fakticky pokračovat jen s doběhem již přijatého ročníku bez nového náboru - to by se s absencí nabídky v CERMAT 2026 shodovalo, ale zdroj to explicitně nepotvrzuje ani nevyvrací.",
+        "Nelze vyloučit, že škola měla technické či kapacitní důvody k vynechání náboru pro rok 2026/2027 (např. nedostatečný zájem v prvním ročníku), které web nezveřejňuje.",
+        "Přejmenování subjektu k 2026-06-30 na 'AVIDA - gymnázium, střední škola a základní škola s.r.o.' může signalizovat přípravu právě na ohlášené rozšíření k září 2027, nikoli restrukturalizaci či zánik existující větve."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["79-42-K/41 (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "K trnkám 2135/6, 143 00 Modřany, Praha",
+          "role": "sídlo",
+          "izo": "691009341 (REDIZO, sídlo právnické osoby)",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Poláčkova 1067/3, 140 00 Krč, Praha",
+          "role": "místo výuky",
+          "izo": "250002035",
+          "valid_period": "2025-12-31 až 2026-06-30 (od vzniku IZO v rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "K trnkám 2135, Praha, 14300 (dle CERMAT/schools záznamu k izo_250002035 - shodné se sídlem právnické osoby, nikoli se skutečným místem výuky)",
+          "role": "nezjištěná",
+          "izo": "izo_250002035",
+          "valid_period": "2025 (CERMAT export)",
+          "source_url": "fronta-dohledavani-2025-2026.json, úkol R-691009341"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT - snímek celé ČR k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "IZO 250002035 ani obor 79-42-K/41 v tomto snímku vůbec nejsou evidovány u REDIZO 691009341.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT - snímek celé ČR k 31. 12. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "IZO 250002035 'Střední škola' se poprvé objevuje s oborem 79-42-K/41 Gymnázium se sportovní přípravou, místo výuky Poláčkova 1067/3, Krč; subjekt je přejmenován na 'Základní škola a gymnázium AVIDA s.r.o.'.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT - snímek celé ČR k 30. 6. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-42-K/41 u IZO 250002035 zůstává zapsán beze změny; subjekt je přejmenován na 'AVIDA - gymnázium, střední škola a základní škola s.r.o.'.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-691009341",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 79-42-K/41 Gymnázium se sportovní přípravou přítomna v 1. kole JPZ 2025 a zcela chybí v 1. kole JPZ 2026; obsahuje i nepřiřazenou školní jednotku (schools) IZO izo_250002035 pro rok 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://www.skolyavida.cz/gymnazium/uvod",
+          "title": "Gymnázium - AVIDA (úvodní stránka gymnázia)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Doslovná věta 'V září 2027 otevřeme všeobecné gymnázium, gymnázium se sportovní přípravou a pedagogické lyceum' - škola prezentuje otevření všech tří oborů (včetně stávajícího sportovního zaměření) jako budoucí událost od září 2027, bez zmínky o přijímacím řízení pro 2026/2027.",
+          "applicable_period": "stav webu k 12. 9. 2026"
+        },
+        {
+          "url": "https://www.skolyavida.cz/gymnazium/prijimaci-rizeni",
+          "title": "Přijímací řízení - Gymnázium AVIDA",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stránka nabízí ke stažení výhradně dokumenty přijímacího řízení označené a datované rokem 2025 (přihláška, kritéria 2. kola, koncepce, dotazník sportovní specializace, motivační dopis, doporučení trenéra, potvrzení klubu, školné, FAQ) - žádný dokument pro rok 2026/2027 nalezen.",
+          "applicable_period": "stav webu k 12. 9. 2026, dokumenty datované 2025"
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/61e960c9d571be06b0eb062a/68258fa3d41770c406aa33d1_2025%20GYM%20AVIDA_krite%CC%81ria_2.%20kolo.pdf",
+          "title": "2. kolo přijímacího řízení na sportovní gymnázium AVIDA - kritéria",
+          "published_at": "2025-05-12",
+          "checked_at": "2026-09-12",
+          "supports": "Dokument podepsaný ředitelkou 12. 5. 2025 popisuje 2. kolo přijímacího řízení pro obor 79-42-K/41 na školní rok 2025/2026, přihlášky přes DiPSy 19.-26. 5. 2025, předpokládaný počet přijímaných žáků 16, výsledky zveřejněny 15. 6. 2025 - potvrzuje reálné otevření oboru pro rok 2025/2026.",
+          "applicable_period": "přijímací řízení 2025/2026 (2. kolo)"
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/61e960c9d571be06b0eb062a/67a0a3e55bae17faf003f599_2025%20Gymna%CC%81zium%20AVIDA_Koncepce.pdf",
+          "title": "Gymnázium AVIDA - Vzdělávací koncepce gymnázia se sportovní přípravou (79-42-K/41)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popisuje gymnázium jako nově vznikající obor, 'přirozené pokračování úspěšné tradice základní školy AVIDA' - potvrzuje nově zakládaný charakter oboru v roce 2025.",
+          "applicable_period": "založení oboru, rok 2025"
+        },
+        {
+          "url": "https://www.skolyavida.cz/",
+          "title": "AVIDA - naše školy (hlavní stránka)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje organizační strukturu čtyř institucí AVIDA: školička a školka na adrese K Trnkám 2135/6, Praha 4, základní škola a gymnázium na adrese Poláčkova 1067/3, Praha 4 - odpovídá rozlišení sídla a místa výuky v rejstříku.",
+          "applicable_period": "stav webu k 12. 9. 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda gymnázium AVIDA v období 2026/2027 fakticky dobíhá s existujícím ročníkem bez nového náboru, nebo zda přijímací řízení pro rok 2026/2027 proběhlo jinou (např. neveřejnou/přímou) formou mimo systém DiPSy a CERMAT.",
+        "Přesný důvod přesunu plánovaného rozšíření (všeobecné gymnázium, pedagogické lyceum) na září 2027 a zda se týká i nového náboru do sportovního zaměření."
+      ]
+    }
+  ]
+}
