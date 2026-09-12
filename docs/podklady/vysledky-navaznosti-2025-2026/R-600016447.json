@@ -1,0 +1,144 @@
+{
+  "task_id": "R-600016447",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "REDIZO 600016447 beze změny identity subjektu ve všech čtyřech snímcích, ale se změnou názvu: k 31. 3. 2025 veden jako „Lékařské a přírodovědné GYMNÁZIUM PRIGO, s.r.o.“, od 31. 12. 2025 dále jako „PRIGO, gymnázium 8leté a 4leté, s.r.o.“ (sídlo Mojmírovců 1002/42, Mariánské Hory, Ostrava beze změny). IZO 060058871 „Střední škola“ je ve všech snímcích shodné, se třemi místy výuky: Mojmírovců 1002/42 (Ostrava-Mariánské Hory), Sokolská třída 2416/33 (Moravská Ostrava) a Cihelní 410 (Frýdek-Místek). Registrované obory jsou ve všech čtyřech snímcích shodné – 79-41-K/81 Gymnázium (8leté) a 79-41-K/41 Gymnázium (4leté), oba denní, dvojjazyčné/jiné. Rejstřík neeviduje žádný nový kód oboru pro rok 2026 – rozdělení čtyřletého studia na dvě profilace (LPG a JAHU) tedy proběhlo pouze na úrovni marketingového „zaměření“ v nabídce CERMAT, nikoli jako nový kód KKOV."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0103", "Q0289", "Q0290"],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2025 nabízela škola u REDIZO 600016447 jediný čtyřletý obor 79-41-K/41 Gymnázium bez uvedeného zaměření (pole ZAMĚŘENÍ OBORU prázdné) vedle osmiletého 79-41-K/81.",
+        "V 1. kole JPZ 2026 stejná škola nabízí u téhož kódu 79-41-K/41 dvě samostatné nabídky se zaměřením „Jazykové a humanitní gymnázium“ a „Lékařské a přírodovědné gymnázium“; osmiletý obor 79-41-K/81 pokračuje beze změny a není předmětem těchto otázek.",
+        "Rejstřík MŠMT k 31. 3. 2025 vedl školu pod názvem „Lékařské a přírodovědné GYMNÁZIUM PRIGO, s.r.o.“ – tedy dřívější celková identita subjektu odpovídala právě profilaci, která se v roce 2026 objevuje jako jedna ze dvou nabízených zaměření (LPG).",
+        "Od 31. 12. 2025 je subjekt v rejstříku veden pod obecnějším názvem „PRIGO, gymnázium 8leté a 4leté, s.r.o.“, což časově odpovídá rozšíření nabídky o druhou profilaci (JAHU) pro přijímací řízení 2026/27.",
+        "Oficiální web školy (mojmirovcu.cz) pro školní rok 2026/2027 popisuje čtyřleté studium jako rozdělené do dvou profilací: Lékařské a přírodovědné gymnázium (LPG, zaměření na medicínu, farmacii, veterinářství a přírodní vědy) a Jazykové a humanitní gymnázium (JAHU, rozšířená výuka jazyků a humanitních oborů); osmileté studium zůstává všeobecné.",
+        "Web ani žádný dohledaný zdroj neuvádí explicitně, od kterého data/školního roku byla dvě zaměření zavedena, ani nepotvrzuje jednoznačně, že jde o rozdělení dřívějšího jednotného oboru – pouze popisuje aktuální stav pro 2026/2027.",
+        "Skupina PRIGO provozuje v Ostravě druhé, samostatné gymnázium (REDIZO 600017591, Českobratrská), které bylo dříve vedeno jako „Jazykové a humanitní GYMNÁZIUM PRIGO, s.r.o.“ a je nyní přejmenováno na „PRIGO, gymnázium 6leté a 4leté, s.r.o.“ s nabídkou „Mezinárodní gymnázium PRIGO“ (6leté a 4leté, IB program). Tento REDIZO je ve frontě evidován jen v kategorii record_only (prostá změna názvu), není samostatným úkolem rešerše.",
+        "Souběh přejmenování obou ostravských gymnázií PRIGO v témže období (přechod názvu „Jazykové a humanitní“ z REDIZO 600017591 na nový obor u REDIZO 600016447) je nápadný, ale dohledané zdroje nepopisují přímý organizační přesun kapacity ani žáků mezi oběma REDIZO – může jít o souběžnou, nezávislou změnu značky v rámci skupiny PRIGO."
+      ],
+      "conclusion": "Nejpravděpodobnějším vysvětlením je organizační rozdělení (split): dosud nerozlišený čtyřletý obor 79-41-K/41 z roku 2025 (jehož obsah odpovídal názvu školy „Lékařské a přírodovědné GYMNÁZIUM“) se pro přijímací řízení 2026/27 rozdělil na dvě samostatně inzerované zaměření téhož kódu oboru – pokračující „Lékařské a přírodovědné gymnázium“ a nově přidané „Jazykové a humanitní gymnázium“. Přímý zdroj, který by explicitně potvrdil datum a mechanismus rozdělení, se nepodařilo dohledat, proto status pouze „pravděpodobné“, nikoli „potvrzeno“.",
+      "alternative_explanations": [
+        "Obě zaměření v roce 2026 mohou být považována za rovnocenně nové marketingové značky a nabídka z roku 2025 (bez zaměření) nemusí být jednoznačným předchůdcem právě LPG spíše než JAHU.",
+        "Název „Jazykové a humanitní gymnázium“ mohl na REDIZO 600016447 přejít v rámci reorganizace skupiny PRIGO ze sesterské školy REDIZO 600017591, což by změnilo interpretaci na částečný přesun kapacity/značky mezi dvěma právnickými osobami, nikoli čistý interní split.",
+        "Rejstříkový odstup zápisu nevylučuje, že k formálnímu rozlišení dvou zaměření došlo už dříve, jen se v CERMAT datech 2025 neprojevilo."
+      ],
+      "relationship": {
+        "type": "split",
+        "from": ["79-41-K/41 Gymnázium, bez zaměření (2025)"],
+        "to": [
+          "79-41-K/41 Gymnázium, zaměření Lékařské a přírodovědné gymnázium (2026)",
+          "79-41-K/41 Gymnázium, zaměření Jazykové a humanitní gymnázium (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Mojmírovců 1002/42, 709 00 Mariánské Hory, Ostrava",
+          "role": "sídlo",
+          "izo": "600016447",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Mojmírovců 1002/42, 709 00 Mariánské Hory, Ostrava",
+          "role": "místo výuky",
+          "izo": "060058871",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Sokolská třída 2416/33, 702 00 Moravská Ostrava, Ostrava",
+          "role": "místo výuky",
+          "izo": "060058871",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Cihelní 410, 738 01 Frýdek, Frýdek-Místek",
+          "role": "místo výuky",
+          "izo": "060058871",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.mojmirovcu.cz/o-gymnaziu/o-nas/",
+          "title": "O nás – PRIGO, gymnázium 8leté a 4leté",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola od školního roku 2026/2027 nabízí osmileté všeobecné gymnázium a čtyřleté gymnázium se dvěma profilacemi: LPG a JAHU.",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.mojmirovcu.cz/studium/",
+          "title": "Studium – PRIGO, gymnázium 8leté a 4leté",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje aktuální strukturu: osmileté gymnázium všeobecné, čtyřleté se dvěma profilacemi (LPG, JAHU); neuvádí datum ani mechanismus vzniku rozdělení.",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.mojmirovcu.cz/prijimaci-rizeni/obecne-informace/",
+          "title": "Obecné informace – přijímací řízení PRIGO, gymnázium 8leté a 4leté",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro 2. kolo přijímacího řízení 2026/2027 škola samostatně vypisuje počty přijímaných do „4letého oboru Lékařské a přírodovědné gymnázium PRIGO“ (16) a „4letého oboru Jazykové a humanitní gymnázium PRIGO“ (13) – potvrzuje, že jde o dvě paralelně běžící, samostatně obsazovaná zaměření.",
+          "applicable_period": "přijímací řízení 2026/2027, 2. kolo"
+        },
+        {
+          "url": "https://www.prigo.cz/gymnazia-a-stredni-skola/",
+          "title": "Gymnázia a střední škola – PRIGO",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popisuje dvě samostatná gymnázia skupiny PRIGO v Ostravě: „PRIGO, gymnázium 8leté a 4leté“ (Mojmírovců, LPG+JAHU) a „PRIGO, gymnázium 6leté a 4leté“ (Českobratrská, Mezinárodní gymnázium/IB) – dokládá souběžnou reorganizaci obou sesterských škol.",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.atlasskolstvi.cz/ss677-prigo-gymnazium-6lete-a-4lete-s-r-o",
+          "title": "PRIGO, gymnázium 6leté a 4leté, s.r.o. – AtlasŠkolství.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Dokládá existenci sesterské školy REDIZO 600017591 dříve spojované s názvem „Jazykové a humanitní GYMNÁZIUM PRIGO“; stránka historii přejmenování mezi lety 2025 a 2026 explicitně nepopisuje.",
+          "applicable_period": "stav webu k datu kontroly 2026-09-12"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 31. 3. 2025 je REDIZO 600016447 veden pod názvem „Lékařské a přírodovědné GYMNÁZIUM PRIGO, s.r.o.“, s registrovanými obory 79-41-K/41 a 79-41-K/81.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 30. 6. 2026 je subjekt veden pod názvem „PRIGO, gymnázium 8leté a 4leté, s.r.o.“; registrované obory 79-41-K/41 a 79-41-K/81 se od roku 2025 nezměnily – rozdělení na zaměření LPG/JAHU není v rejstříku vedeno jako nový kód oboru.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600016447",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 jedna nabídka 79-41-K/41 bez zaměření, v roce 2026 dvě nabídky téhož kódu se zaměřením Jazykové a humanitní gymnázium a Lékařské a přírodovědné gymnázium.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Je nabídka LPG (Q0290) skutečně přímým pokračovatelem nabídky z roku 2025 (Q0103), nebo jsou obě zaměření z pohledu obsahu ŠVP rovnocenně nová?",
+        "Souvisí rozdělení na LPG/JAHU s přejmenováním sesterské školy REDIZO 600017591 (bývalé „Jazykové a humanitní GYMNÁZIUM PRIGO“) na „PRIGO, gymnázium 6leté a 4leté“ – došlo k přesunu kapacity/značky mezi oběma právnickými osobami?",
+        "Od jakého přesného data/školního roku škola formálně zavedla rozdělení čtyřletého studia na dvě profilace?"
+      ]
+    }
+  ]
+}

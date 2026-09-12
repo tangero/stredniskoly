@@ -1,0 +1,90 @@
+{
+  "task_id": "R-600006930",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu 1. kladenská soukromá střední škola a základní škola (1. KŠPA), s.r.o. (REDIZO 600006930) ve všech čtyřech snímcích beze změny názvu i sídla (Holandská 2531, 272 01 Kročehlavy, Kladno). IZO 043784054 „Střední škola\" má ve všech snímcích shodná místa výuky (Cyrila Boudy 1444 a Holandská 2531) i shodný seznam registrovaných oborů (64-41-L/51 Podnikání, 65-42-M/02 Cestovní ruch ve více formách, 63-41-M/01 Ekonomika a podnikání, 82-41-M/04 Průmyslový design, 18-20-M/01 Informační technologie, 68-43-M/01 Veřejnosprávní činnost, 82-41-M/05 Grafický design). Obor 79-41-K/41 Gymnázium, který se objevuje jako nová nabídka CERMAT pro 1. kolo JPZ 2026, není evidován v žádném ze čtyř snímků včetně posledního k 30. 6. 2026 – jde o odstup v administrativním zápisu do rejstříku, nikoli o rozpor s nabídkou CERMAT ani o důkaz proti otevření oboru."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0270"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola obor 79-41-K/41 Gymnázium nenabízela; v 1. kole JPZ 2026 se tato nabídka objevuje nově (bez zaměření, 4leté, denní, český jazyk), zatímco ostatní čtyři obory (Informační technologie, Ekonomika a podnikání – Management sportu, Ekonomika a podnikání – Podnikání, Cestovní ruch) pokračují v obou letech beze změny.",
+        "Škola na vlastním webu (blogový příspěvek z 28. 1. 2026, nadpis „Otevření Gymnázia 1.KŠPA\") oznamuje: „Od 1.9.2026 otevíráme Gymnázium 1.KŠPA\" s humanitním a jazykovým zaměřením.",
+        "Stránka přijímacího řízení školy pro rok 2026/27 (1kspa-kladno.cz/prijimaci-rizeni/) uvádí Gymnázium mezi nabízenými obory vedle Informačních technologií, Cestovního ruchu, Grafického designu, Průmyslového designu a Ekonomiky a podnikání, s odkazem na kritéria 1. kola přijímacího řízení pro obor Gymnázium pro rok 2026/27.",
+        "V žádném ze čtyř snímků rejstříku MŠMT (31. 3. 2025 až 30. 6. 2026) není obor 79-41-K/41 Gymnázium u IZO 043784054 evidován – ostatní registrované obory (viz registry_check) se mezi snímky nemění a subjekt ani IZO nevykazují žádnou organizační změnu (sloučení, zánik, přesun).",
+        "Jde o soukromou školu (s.r.o.); dohledané zdroje nespecifikují formální rozhodovací orgán (např. usnesení zřizovatele) k otevření oboru – jen fakt, že škola obor od 1. 9. 2026 otevírá a vede k němu přijímací řízení."
+      ],
+      "conclusion": "Obor 79-41-K/41 Gymnázium (4leté, denní) je skutečně nově otevřený obor od školního roku 2026/2027, doložený vlastním oznámením školy i její stránkou přijímacího řízení pro rok 2026/27; v nabídce školy pro rok 2025 nemá žádného předchůdce. Chybějící zápis oboru v rejstříku MŠMT i ve snímku k 30. 6. 2026 je odstup v administrativním vedení rejstříku, nikoli rozpor s existencí nabídky – obdobný vzorec jako u jiných nově otevíraných oborů v jiných úkolech fronty (např. R-600012026).",
+      "alternative_explanations": [
+        "Formální zápis oboru do rejstříku MŠMT mohl proběhnout až po 30. 6. 2026 (poslední dostupný snímek); to samotné otevření a vyhlášení přijímacího řízení pro rok 2026/27 nevyvrací.",
+        "Přesný interní rozhodovací proces zřizovatele (jednatele s.r.o.) k založení oboru nebyl dohledán – doložen je pouze výsledný fakt otevření, ne jeho formální schválení."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["79-41-K/41 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Holandská 2531, 272 01 Kročehlavy, Kladno",
+          "role": "sídlo",
+          "izo": "600006930",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Cyrila Boudy 1444, 272 01 Kročehlavy, Kladno; Holandská 2531, 272 01 Kročehlavy, Kladno",
+          "role": "místo výuky",
+          "izo": "043784054",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://1kspa-kladno.cz/blog/2026/01/28/otevreni-gymnazia-1-kspa/",
+          "title": "Otevření Gymnazia 1.KŠPA | 1.KŠPA Kladno s.r.o.",
+          "published_at": "2026-01-28",
+          "checked_at": "2026-09-12",
+          "supports": "Oficiální oznámení školy: od 1. 9. 2026 otevírá Gymnázium 1.KŠPA s humanitním a jazykovým zaměřením.",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://1kspa-kladno.cz/prijimaci-rizeni/",
+          "title": "Přijímací řízení | 1.KŠPA Kladno s.r.o.",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Gymnázium je uvedeno mezi obory přijímacího řízení pro rok 2026/27 spolu s odkazem na kritéria 1. kola.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-41-K/41 Gymnázium není u IZO 043784054 evidován ani k 30. 6. 2026 (odstup zápisu do rejstříku); subjekt a ostatní registrované obory jsou beze změn.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006930",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 79-41-K/41 Gymnázium přítomna v roce 2026 a chybějící v roce 2025; ostatní čtyři obory pokračují beze změny.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Formální usnesení/rozhodnutí zřizovatele (s.r.o.) o založení oboru Gymnázium nebylo dohledáno mimo vlastní oznámení školy.",
+        "Přesné datum plánovaného zápisu oboru 79-41-K/41 do rejstříku MŠMT není známo (chybí i ve snímku k 30. 6. 2026)."
+      ]
+    }
+  ]
+}

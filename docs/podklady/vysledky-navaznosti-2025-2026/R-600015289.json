@@ -1,0 +1,76 @@
+{
+  "task_id": "R-600015289",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje kontinuitu subjektu: Střední odborná škola Prostějov (REDIZO 600015289), sídlo nám. Edmunda Husserla 30/1, 796 01 Prostějov, IZO 110015037 (Střední škola) figuruje beze změny ve všech čtyřech snímcích, se třemi místy výuky (nám. Edmunda Husserla 30/1; Západní 1/75, Krasice; Čs. armádního sboru 184/72, Vrahovice, vše Prostějov). Obor 64-41-L/51 Podnikání (2leté, denní, nástavbové) je registrován beze změny ve všech čtyřech snímcích včetně 30. 6. 2026."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0092"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela nástavbový obor 64-41-L/51 Podnikání (2 roky, denní); v 1. kole JPZ 2026 tato nabídka chybí, zatímco 65-41-L/01 Gastronomie a 69-41-L/01 Kosmetické služby pokračují v obou letech.",
+        "Oficiální stránka oboru na webu školy (sosprostejov.cz/podnikani) obsahuje explicitní upozornění: „UPOZORNĚNÍ: obor Podnikání nebude ve školním roce 2026/27 otevřen.“",
+        "Rejstřík MŠMT eviduje obor 64-41-L/51 Podnikání (2l, denní) u IZO 110015037 nepřetržitě ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace oboru trvá, mění se jen vyhlášení přijímacího řízení."
+      ],
+      "conclusion": "Nástavbové denní studium Podnikání (64-41-L/51, 2 roky) škola pro školní rok 2026/27 neotevírá – potvrzuje to přímo vlastní stránka oboru. Nejde o zánik oboru: obor zůstává registrován v rejstříku MŠMT i k 30. 6. 2026, chybějící nabídka v CERMAT datech 2026 je tedy přerušení přijímacího řízení, nikoli zrušení oboru.",
+      "alternative_explanations": [
+        "Obor může být do budoucna trvale zrušen, ale k datu zpracování k tomu nedošlo – registrace v rejstříku trvá a stránka o oboru zůstává na webu školy aktivní."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["64-41-L/51 Podnikání, 2l denní (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "nám. Edmunda Husserla 30/1, 796 01 Prostějov",
+          "role": "sídlo",
+          "izo": "600015289",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "nám. Edmunda Husserla 30/1; Západní 1/75, Krasice; Čs. armádního sboru 184/72, Vrahovice, vše 796 01/796 04 Prostějov",
+          "role": "nezjištěná",
+          "izo": "110015037",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://sosprostejov.cz/podnikani/",
+          "title": "Podnikání – Střední odborná škola Prostějov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přímé oznámení školy: obor Podnikání (64-41-L/51, 2 roky, denní) nebude ve školním roce 2026/27 otevřen.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 64-41-L/51 Podnikání (2l, denní) zůstává u IZO 110015037 registrován i k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600015289",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 64-41-L/51 Podnikání přítomna v roce 2025 a chybí v roce 2026; ostatní dva obory pokračují.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "task_id": "R-600007987",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil kontinuitu právnického subjektu: REDIZO 600007987 (IČ 47019719) existuje ve všech čtyřech snímcích, sídlo i místo výuky střední školy (IZO 000069167) zůstávají Pražská 1222, Rakovník (RÚIAN 8653852). Ve snímku k 31. 3. 2025 je subjekt veden jako „Masarykova obchodní akademie, Rakovník, Pražská 1222“, od snímku k 31. 12. 2025 jako „Masarykova obchodní a zemědělská akademie Rakovník, střední odborná škola - příspěvková organizace“. Současně rejstřík dokládá zánik druhého subjektu na téže adrese: Střední zemědělská škola, Rakovník, Pražská 1222 (REDIZO 600007936, IZO 000069272, IČ 47019689) je ve snímku k 31. 3. 2025 a od snímku k 31. 12. 2025 v rejstříku není; její školní jídelny (IZO 102814317 a IZO 181014521) přešly právě pod REDIZO 600007987. Rejstřík tak potvrzuje sloučení obou škol do subjektu 600007987 mezi 31. 3. 2025 a 31. 12. 2025."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0204", "Q0205"],
+      "status": "potvrzeno",
+      "observations": [
+        "V roce 2025 (1. kolo JPZ) nabízely na adrese Pražská 1222, Rakovník dvě samostatné školy: Masarykova obchodní akademie (REDIZO 600007987, IZO 000069167) obory Obchodní akademie 63-41-M/02, Obchodní akademie – Sportovní management 63-41-M/02 a Ekonomické lyceum 78-42-M/02, a Střední zemědělská škola (REDIZO 600007936, IZO 000069272) obory Agropodnikání 41-41-M/01 a Chovatelství 41-43-M/02 (údaje CERMAT v přiložených datech fronty).",
+        "V roce 2026 pod REDIZO 600007987 s názvem „Masarykova obch. a zeměděl. akademie Rakovník, SOŠ“ figurují kromě všech tří dosavadních oborů obchodní akademie také Agropodnikání 41-41-M/01 a Chovatelství 41-43-M/02 – tytéž kódy KKOV i názvy, jaké měla v roce 2025 Střední zemědělská škola. REDIZO 600007936 v datech 2026 žádnou nabídku nemá.",
+        "Rejstřík MŠMT dokládá, že subjekt 600007987 pokračuje pod týmž IČ 47019719, jen s rozšířeným názvem, a že subjekt Střední zemědělské školy (600007936) z rejstříku mezi snímky 31. 3. 2025 a 31. 12. 2025 zanikl; její dvě školní jídelny přešly pod 600007987.",
+        "Webová stránka školy (Historie školy, mozarako.cz) uvádí doslova: „2025 – od 1. 9. 2025 sloučení MOA a SZeŠ. Vznik Masarykovy obchodní a zemědělské akademie Rakovník, střední odborná škola – příspěvková organizace.“",
+        "Regionální tisk (Raport, květen 2025) potvrzuje, že o sloučení obou škol sídlících v jedné budově na Pražské ulici rozhodl zřizovatel, Středočeský kraj, s účinností od nového školního roku 2025/2026; nový název Masarykova obchodní a zemědělská akademie (MOZA). Wikipedia sloučení k 1. 9. 2025 rovněž uvádí.",
+        "Obě školy sdílely desítky let stejnou budovu Pražská 1222; adresa se sloučením nemění a není tedy indikátorem žádného přesunu výuky."
+      ],
+      "conclusion": "Nabídky Agropodnikání (41-41-M/01) a Chovatelství (41-43-M/02) pod REDIZO 600007987 v roce 2026 nejsou nově vzniklými obory Masarykovy obchodní akademie, ale pokračováním oborů Střední zemědělské školy Rakovník (REDIZO 600007936, IZO 000069272), která se k 1. 9. 2025 sloučila s Masarykovou obchodní akademií. Právním nástupcem je subjekt 600007987 přejmenovaný na Masarykovu obchodní a zemědělskou akademii Rakovník, SOŠ. Návaznost oborů je proto: Agropodnikání 2026 ← Agropodnikání SZeŠ 2025 a Chovatelství 2026 ← Chovatelství SZeŠ 2025 (beze změny kódu KKOV). Obchodní akademie a Ekonomické lyceum pokračují v rámci původního REDIZO 600007987.",
+      "alternative_explanations": [
+        "Zdroje nevylučují drobné změny vnitřní organizace výuky po sloučení (např. společné třídy, úpravy ŠVP), které by srovnatelnost statistik jemňovaly; samotná kontinuita oborů a kódů je ale doložená.",
+        "Přesný právní mechanismus (zánik SZeŠ sloučením vs. přeměna MOA a následný převod oborů) nelze z dostupných zdrojů rozlišit; na závěr o návaznosti nemá vliv."
+      ],
+      "relationship": {
+        "type": "merge",
+        "from": ["REDIZO 600007987 Masarykova obchodní akademie, Rakovník (IZO 000069167)", "REDIZO 600007936 Střední zemědělská škola, Rakovník (IZO 000069272)"],
+        "to": ["REDIZO 600007987 Masarykova obchodní a zemědělská akademie Rakovník, SOŠ (IZO 000069167)"]
+      },
+      "addresses": [
+        {
+          "text": "Pražská 1222, Rakovník II, 269 01",
+          "role": "sídlo",
+          "izo": "600007987",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"
+        },
+        {
+          "text": "Pražská 1222, Rakovník II (RÚIAN 8653852)",
+          "role": "místo výuky",
+          "izo": "000069167",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku); shodné místo výuky měla i zaniklá SZeŠ (IZO 000069272)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007987",
+          "title": "Přiložená data fronty: nabídky CERMAT 1. kola JPZ 2025 a 2026 pro REDIZO 600007987",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 pouze ekonomické obory pod názvem Masarykova obchodní akademie; v roce 2026 navíc Agropodnikání a Chovatelství pod novým názvem MOZA, se stejnými kódy KKOV jako měla SZeŠ v roce 2025.",
+          "applicable_period": "1. kolo JPZ 2025 a 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007936",
+          "title": "Přiložená data fronty: Střední zemědělská škola Rakovník (REDIZO 600007936)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "SZeŠ v roce 2025 nabízela Agropodnikání 41-41-M/01 a Chovatelství 41-43-M/02 na Pražské 1222; v roce 2026 nemá žádné nabídky.",
+          "applicable_period": "1. kolo JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Oba subjekty existují samostatně: Masarykova obchodní akademie (600007987, IČ 47019719) a Střední zemědělská škola (600007936, IČ 47019689), obě sídlem i místem výuky Pražská 1222, Rakovník; jídelny IZO 102814317 a 181014521 patří SZeŠ.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 12. 2025",
+          "published_at": "2025-12-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt 600007987 nese nový název Masarykova obchodní a zemědělská akademie Rakovník, SOŠ - příspěvková organizace a převzal jídelny IZO 102814317 a 181014521; REDIZO 600007936 v rejstříku již není.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2026",
+          "published_at": "2026-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Stav v období 1. kola JPZ 2026: MOZA pod REDIZO 600007987 pokračuje, SZeŠ neexistuje; název v datech CERMAT 2026 odpovídá rejstříkovému názvu.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://mozarako.cz/7-historie-skoly",
+          "title": "Historie školy – Masarykova obchodní a zemědělská akademie Rakovník",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Oficiální web školy: „od 1. 9. 2025 sloučení MOA a SZeŠ. Vznik Masarykovy obchodní a zemědělské akademie Rakovník, střední odborná škola – příspěvková organizace.“ Stránka zároveň dokumentuje historii oborů Agropodnikání a Chovatelství na SZeŠ.",
+          "applicable_period": "sloučení k 1. 9. 2025"
+        },
+        {
+          "url": "https://raport.cz/noviny/2025-20_slouceni-novy-nazev-a-rekonstrukce/2025-20",
+          "title": "Sloučení, nový název a rekonstrukce – Raport",
+          "published_at": "2025-05-01",
+          "checked_at": "2026-09-12",
+          "supports": "Zřizovatel (Středočeský kraj) rozhodl o sloučení Masarykovy obchodní akademie a Střední zemědělské školy od nového školního roku; nový název Masarykova obchodní a zemědělská akademie – MOZA. (Datum vydání odvozeno z čísla 2025-20; přesné datum na stránce neuvedeno.)",
+          "applicable_period": "2025, před zahájením školního roku 2025/2026"
+        },
+        {
+          "url": "https://cs.wikipedia.org/wiki/Masarykova_obchodn%C3%AD_a_zem%C4%9Bd%C4%9Blsk%C3%A1_akademie_Rakovn%C3%ADk",
+          "title": "Masarykova obchodní a zemědělská akademie Rakovník – Wikipedie",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nezávisle potvrzuje sloučení obou škol k 1. 9. 2025 a výčet oborů MOZA včetně Agropodnikání 41-41-M/01 a Chovatelství 41-43-M/02; sekundární zdroj opřený o web školy.",
+          "applicable_period": "sloučení k 1. 9. 2025, stav oborů 2025/2026"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": ["R-600007936"],
+      "unanswered_questions": []
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "task_id": "R-600013758",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "EKO GYMNÁZIUM BRNO o.p.s. (REDIZO 600013758) je beze změny názvu a sídla (Labská 269/27, Brno) ve všech čtyřech snímcích. IZO 048033413 má ve všech snímcích shodně registrovány tři obory: 79-41-K/41 Gymnázium (4l), 79-41-K/61 Gymnázium (6l) a 79-41-K/81 Gymnázium (8l), včetně tří míst výuky (Labská 269/27, Kamínky 368/5, Svážná 565/1). Registrace čtyřletého oboru se mezi snímky nemění."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0079"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela čtyřleté gymnázium 79-41-K/41 se zaměřením „všeobecné“ vedle šestiletého a osmiletého gymnázia; v 1. kole JPZ 2026 čtyřletá varianta v nabídce chybí, nabízeny jsou jen šestileté a osmileté gymnázium.",
+        "Web školy (eko-g.cz) k datu kontroly uvádí, že škola pro školní rok 2026/2027 otevírá pouze šestileté (79-41-K/61) a osmileté (79-41-K/81) gymnázium; čtyřletý obor mezi aktuálně nabízenými není.",
+        "Obor 79-41-K/41 zůstává v rejstříku MŠMT registrován u IZO 048033413 ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace oboru trvá, mění se jen to, zda do něj škola v daném roce přijímá."
+      ],
+      "conclusion": "Čtyřleté gymnázium 79-41-K/41 škola pro školní rok 2026/2027 nenabízí k přijetí, přestože obor zůstává registrován v rejstříku MŠMT. Jde o přerušení přijímacího řízení do tohoto oboru, nikoli o doložené zrušení oboru.",
+      "alternative_explanations": [
+        "Obor může být v budoucnu opět nabídnut, protože registrace v rejstříku trvá; žádný zdroj netvrdí, že byl formálně zrušen."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["79-41-K/41 (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Labská 269/27, 625 00 Starý Lískovec, Brno",
+          "role": "sídlo",
+          "izo": "600013758",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Svážná 565/1, 634 00 Nový Lískovec, Brno",
+          "role": "místo výuky",
+          "izo": "048033413",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013758",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 79-41-K/41 přítomna v roce 2025 a chybějící v roce 2026; šestileté a osmileté gymnázium pokračují v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-41-K/41 zůstává registrován u IZO 048033413.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://www.eko-g.cz/podminky-prijimaciho-rizeni",
+          "title": "Podmínky přijímacího řízení pro jednotlivé studijní obory – Eko gymnázium Brno",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola pro školní rok 2026/2027 otevírá jen šestileté a osmileté gymnázium; čtyřletý obor mezi nabízenými cykly chybí.",
+          "applicable_period": "přijímací řízení 2026/2027"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

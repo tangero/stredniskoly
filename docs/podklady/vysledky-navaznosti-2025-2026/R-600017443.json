@@ -1,0 +1,140 @@
+{
+  "task_id": "R-600017443",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Jazykové gymnázium Pavla Tigrida, Ostrava-Poruba, příspěvková organizace (REDIZO 600017443) figuruje beze změny ve všech čtyřech snímcích. IZO 000850047 (Střední škola) má ve všech snímcích stejné místo výuky Gustava Klimenta 493/3. Obory 79-41-K/41 Gymnázium (4leté) i 79-41-K/61 Gymnázium (6leté) jsou registrovány beze změny ve všech snímcích. Rejstřík neeviduje jazykové varianty (první cizí jazyk) uvnitř kódu 79-41-K/41 – rozlišení bylo nutné ověřit u školy."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0117", "Q0254"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 79-41-K/41 Gymnázium se zaznamenaným zaměřením „čtyřletý obor - první cizí jazyk německý jazyk“; v 1. kole JPZ 2026 je u téhož oboru zaznamenáno zaměření „Německý jazyk (první cizí jazyk)“.",
+        "Vlastní stránka školy (jazgym.cz) k přijímacímu řízení 2026 popisuje čtyřletý obor s prvním cizím jazykem německým (s druhým jazykem anglickým), pro 30 žáků – tedy stejnou jazykovou variantu jako v roce 2025, jen bez formulace „čtyřletý obor“ v názvu zaměření.",
+        "Text zaměření se mezi lety liší pouze slovosledem a vypuštěním úvodního „čtyřletý obor -“; obsahově jde o stejnou jazykovou variantu (první cizí jazyk německý)."
+      ],
+      "conclusion": "Jde o tutéž jazykovou variantu oboru Gymnázium 79-41-K/41 s prvním cizím jazykem německým v obou letech; mezi CERMAT nabídkami 2025 a 2026 se změnila jen formulace textu zaměření, nikoli obsah nabídky.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit drobnou úpravu doplňkových jazyků nebo počtu míst mezi lety; k tomu nebyl nalezen žádný doklad."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["79-41-K/41 Gymnázium – čtyřletý obor, první cizí jazyk německý jazyk, 2025"],
+        "to": ["79-41-K/41 Gymnázium – Německý jazyk (první cizí jazyk), 2026"]
+      },
+      "addresses": [
+        {
+          "text": "Gustava Klimenta 493/3, 708 00 Poruba, Ostrava",
+          "role": "sídlo",
+          "izo": "600017443",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Gustava Klimenta 493/3, 708 00 Poruba, Ostrava",
+          "role": "místo výuky",
+          "izo": "000850047",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jazgym.cz/cz/uchazecum/prijimaci-zkousky/informace-o-prijimacim-rizeni-2026-na-6lety-a-4lety-obor-jazykoveho-gymnazia-pavla-tigrida.html",
+          "title": "Informace o přijímacím řízení 2026 na 6letý a 4letý obor Jazykového gymnázia Pavla Tigrida",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola pro rok 2026 popisuje čtyřletý obor s prvním cizím jazykem německým (+ AJ, 30 žáků) jako pokračující nabídku.",
+          "applicable_period": "přijímací řízení 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-41-K/41 registrován u IZO 000850047 beze změny ve všech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017443",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření u 79-41-K/41 (německý jazyk) se mezi roky 2025 a 2026 liší jen formulací, počet nabízených programů zůstal stejný (3 v obou letech).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0118", "Q0255"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 79-41-K/41 Gymnázium se zaznamenaným zaměřením „čtyřletý obor - první cizí jazyk anglický jazyk“; v 1. kole JPZ 2026 je u téhož oboru zaznamenáno zaměření „Anglický jazyk (první cizí jazyk)“.",
+        "Vlastní stránka školy (jazgym.cz) k přijímacímu řízení 2026 popisuje čtyřletý obor s prvním cizím jazykem anglickým (+ FJ, ŠJ, NJ nebo RJ jako druhý jazyk), pro 60 žáků – tedy stejnou jazykovou variantu jako v roce 2025, jen bez formulace „čtyřletý obor“ v názvu zaměření.",
+        "Text zaměření se mezi lety liší pouze slovosledem a vypuštěním úvodního „čtyřletý obor -“; obsahově jde o stejnou jazykovou variantu (první cizí jazyk anglický)."
+      ],
+      "conclusion": "Jde o tutéž jazykovou variantu oboru Gymnázium 79-41-K/41 s prvním cizím jazykem anglickým v obou letech; mezi CERMAT nabídkami 2025 a 2026 se změnila jen formulace textu zaměření, nikoli obsah nabídky.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit drobnou úpravu nabídky druhých jazyků nebo počtu míst mezi lety; k tomu nebyl nalezen žádný doklad."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["79-41-K/41 Gymnázium – čtyřletý obor, první cizí jazyk anglický jazyk, 2025"],
+        "to": ["79-41-K/41 Gymnázium – Anglický jazyk (první cizí jazyk), 2026"]
+      },
+      "addresses": [
+        {
+          "text": "Gustava Klimenta 493/3, 708 00 Poruba, Ostrava",
+          "role": "sídlo",
+          "izo": "600017443",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Gustava Klimenta 493/3, 708 00 Poruba, Ostrava",
+          "role": "místo výuky",
+          "izo": "000850047",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jazgym.cz/cz/uchazecum/prijimaci-zkousky/informace-o-prijimacim-rizeni-2026-na-6lety-a-4lety-obor-jazykoveho-gymnazia-pavla-tigrida.html",
+          "title": "Informace o přijímacím řízení 2026 na 6letý a 4letý obor Jazykového gymnázia Pavla Tigrida",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola pro rok 2026 popisuje čtyřletý obor s prvním cizím jazykem anglickým (+ FJ/ŠJ/NJ/RJ, 60 žáků) jako pokračující nabídku.",
+          "applicable_period": "přijímací řízení 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-41-K/41 registrován u IZO 000850047 beze změny ve všech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017443",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření u 79-41-K/41 (anglický jazyk) se mezi roky 2025 a 2026 liší jen formulací, počet nabízených programů zůstal stejný (3 v obou letech).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

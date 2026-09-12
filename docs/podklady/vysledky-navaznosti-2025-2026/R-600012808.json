@@ -1,0 +1,93 @@
+{
+  "task_id": "R-600012808",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Subjekt REDIZO 600012808 (Střední škola obchodní a služeb SČMSD, Polička, s.r.o., sídlo Nám. B. Martinů 95, 572 01 Polička-Město) je ve všech čtyřech snímcích beze změny. IZO 110029470 „Střední škola\" má ve všech snímcích tři shodná místa výuky (Zákrejsova 142, Nám. B. Martinů 95, Riegrova 52, vše Polička). Obor 66-41-L/01 Obchodník je v rejstříku evidován jen na úrovni základního kódu (bez rozlišení zaměření) ve všech čtyřech snímcích beze změny, stejně jako Veřejnosprávní činnost a Kosmetické služby."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0067"],
+      "status": "potvrzeno",
+      "observations": [
+        "CERMAT 1. kolo JPZ 2025 nabízelo obor 66-41-L/01 Obchodník ve dvou zaměřeních: „Grafika v marketingu\" a „Finance a daně\"; v roce 2026 zůstává jen zaměření „Grafika v marketingu\", ostatní dva obory (Veřejnosprávní činnost – Personalistika a mzdy, Kosmetické služby – Výživové poradenství) pokračují beze změny.",
+        "Web školy (ssospolicka.cz) v aktuální nabídce oborů pro uchazeče uvádí pouze „Obchodník – Grafika v marketingu\"; zaměření „Finance a daně\" není na webu zmíněno jako aktuálně nabízené v žádné části stránky.",
+        "Rejstřík MŠMT eviduje pouze základní kód 66-41-L/01 Obchodník (bez rozlišení zaměření na úrovni datové položky) ve všech čtyřech snímcích beze změny – registrace oboru jako celku trvá i po 30. 6. 2026."
+      ],
+      "conclusion": "Zaměření „Finance a daně\" oboru Obchodník (66-41-L/01) nebylo pro školní rok 2026/2027 na webu školy nabídnuto ani vyhlášeno – jde o změnu nabízeného zaměření v rámci téhož registrovaného oboru, nikoli o zánik oboru 66-41-L/01 jako takového, který nadále běží se zaměřením Grafika v marketingu.",
+      "alternative_explanations": [
+        "Zaměření mohlo být obsahově sloučeno do zaměření Grafika v marketingu nebo dočasně pozastaveno pro nízký zájem uchazečů – zdroje konkrétní důvod neuvádí.",
+        "Zaměření se může v budoucích letech vrátit do nabídky."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["66-41-L/01 Finance a daně (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Nám. B. Martinů 95, 572 01 Polička-Město, Polička",
+          "role": "sídlo",
+          "izo": "600012808",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Nám. B. Martinů 95, 572 01 Polička-Město, Polička",
+          "role": "místo výuky",
+          "izo": "110029470",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Zákrejsova 142, 572 01 Dolní Předměstí, Polička",
+          "role": "místo výuky",
+          "izo": "110029470",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Riegrova 52, 572 01 Polička-Město, Polička",
+          "role": "místo výuky",
+          "izo": "110029470",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ssospolicka.cz/",
+          "title": "Střední škola obchodní a služeb SČMSD, Polička, s.r.o.",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuální nabídka oborů uvádí pouze „Obchodník – Grafika v marketingu\"; zaměření Finance a daně chybí.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 66-41-L/01 Obchodník zůstává u IZO 110029470 registrován beze změny (bez rozlišení zaměření).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600012808",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka zaměření Finance a daně přítomna v roce 2025 a chybějící v roce 2026; zaměření Grafika v marketingu pokračuje.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda škola plánuje zaměření Finance a daně v budoucnu znovu otevřít."
+      ]
+    }
+  ]
+}

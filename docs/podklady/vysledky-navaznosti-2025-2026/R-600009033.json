@@ -1,0 +1,105 @@
+{
+  "task_id": "R-600009033",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrdil plnou kontinuitu školy: Hotelová škola Mariánské Lázně, příspěvková organizace (REDIZO 600009033, IČ 00077119, IZO 000077119) je vedena ve všech čtyřech snímcích beze změny – stejné sídlo Komenského 449/2, Mariánské Lázně (RÚIAN 20929129) i stejná dvě místa výuky (Komenského 449/2 a Poštovní 60/7). Obor Gastronomie 65-41-L/51 (denní forma, dvouletý, kapacita 60) zůstává registrován ve všech snímcích včetně 30. 6. 2026, tedy i po skončení 1. kola JPZ 2026. Rejstřík tedy vyvrací zánik školy i zrušení oboru; absence oboru v nabídce CERMAT 2026 je pouze nevyhlášení oboru v daném přijímacím kole, nikoli výmaz z rejstříku."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0048"],
+      "status": "potvrzeno",
+      "observations": [
+        "Data fronty (CERMAT, 1. kolo JPZ, denní studium): v roce 2025 škola nabízela dva obory – Gastronomie 65-41-L/51 (dvouleté nástavbové studium) a Hotelnictví 65-42-M/01 (zaměření Hotelnictví a turismus); v roce 2026 jen Hotelnictví 65-42-M/01. Nabídka Gastronomie z roku 2025 nemá v roce 2026 protějšek, proto byla označena jako nepřiřazená.",
+        "Rejstřík MŠMT: obor 65-41-L/51 Gastronomie je u IZO 000077119 registrován ve všech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026) se stejnými parametry (denní forma, délka 2 roky, kapacita 60). Škola sama (REDIZO 600009033) ve všech snímcích existuje beze změny sídla i míst výuky.",
+        "Vyhlášení 1. kola přijímacího řízení pro školní rok 2025/2026 na webu školy uvádí čtyři nabízená studia denní formy: Hotelnictví a turismus 65-42-M/01 (96 míst), Kuchař 65-51-H/01 (32), Číšník, servírka 65-51-H/01 (32) a Gastronomie (nástavbové studium) 65-41-L/51 (32 míst).",
+        "Vyhlášení 1. kola přijímacího řízení pro školní rok 2026/2027 na webu školy uvádí pouze tři studia: Hotelnictví a turismus 65-42-M/01 (90 míst), Kuchař 65-51-H/01 (30) a Číšník, servírka 65-51-H/01 (30). Obor Gastronomie v něm není vyhlášen.",
+        "Název školy v datech CERMAT („Hotelová škola Mariánské Lázně“) je zkrácenou podobou úplného rejstříkového názvu „Hotelová škola Mariánské Lázně, příspěvková organizace“; jde o tutéž entitu se stejným REDIZO, IZO i adresou."
+      ],
+      "conclusion": "Škola i obor Gastronomie 65-41-L/51 pokračují beze změny – obor zůstal v rejstříku MŠMT registrován i po 1. kole JPZ 2026. Nepřiřazená nabídka je vysvětlena tím, že ředitelka školy obor Gastronomie pro školní rok 2026/2027 v 1. kole přijímacího řízení prostě nevyhlásila (v roce 2025 vyhlášen byl, s kapacitou 32 míst). Nejde o zánik oboru, sloučení ani přesun na jinou školu, ale o přerušení nabídky v přijímacím řízení; obor lze v budoucnu opět vyhlásit bez nové registrace.",
+      "alternative_explanations": [
+        "Škola mohla obor Gastronomie vyhlásit až v některém z dalších kol přijímacího řízení 2026 (2. kolo apod.), která přiložená data CERMAT nezahrnují – to by závěr o celoroční absenci nabídky zmírnilo, ale nevyvrátí ho pro 1. kolo.",
+        "Neobsazení ročníku může souviset s nízkým zájmem o nástavbové studium v předchozích letech; příčinu rozhodnutí školy zdroje nedokládají a dle pravidel rešerše ji nezkoumáme."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["600009033 / izo_000077119 / 65-41-L/51 Gastronomie (nabídka 2025)"],
+        "to": ["600009033 / izo_000077119 / 65-41-L/51 Gastronomie (registrován v rejstříku k 30. 6. 2026; v 1. kole JPZ 2026 nevyhlášen)"]
+      },
+      "addresses": [
+        {
+          "text": "Komenského 449/2, 353 01 Mariánské Lázně (RÚIAN 20929129)",
+          "role": "sídlo",
+          "izo": "000077119",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Komenského 449/2, Mariánské Lázně (RÚIAN 20929129)",
+          "role": "místo výuky",
+          "izo": "000077119",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Poštovní 60/7, Mariánské Lázně (RÚIAN 25020749)",
+          "role": "místo výuky",
+          "izo": "000077119",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600009033",
+          "title": "Data CERMAT z 1. kola JPZ 2025 a 2026 přiložená k úkolu",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka oboru Gastronomie 65-41-L/51 v roce 2025 a její absence v roce 2026; kontinuita oboru Hotelnictví 65-42-M/01 v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Existence školy (REDIZO 600009033, IZO 000077119) a registrace oboru 65-41-L/51 Gastronomie v období 1. kola JPZ 2025.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 30. 6. 2026",
+          "published_at": "2026-06-30",
+          "checked_at": "2026-09-12",
+          "supports": "Obor 65-41-L/51 Gastronomie je u školy registrován i po skončení 1. kola JPZ 2026 – nebyl zrušen; škola pokračuje beze změny sídla a míst výuky.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://hotelovaskola.cz/dokumenty/2025/1_kolo_PZ.pdf",
+          "title": "Vyhlášení prvního kola přijímacího řízení – Hotelová škola Mariánské Lázně (školní rok 2025/2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V 1. kole PŘ 2025/2026 škola vyhlásila obor 65-41-L/51 Gastronomie (nástavbové studium), denní forma, 32 přijímaných uchazečů. PDF staženo a ověřeno převodem na text.",
+          "applicable_period": "1. kolo PŘ pro školní rok 2025/2026"
+        },
+        {
+          "url": "https://hotelovaskola.cz/dokumenty/2026/1_kolo_PZ.pdf",
+          "title": "Vyhlášení prvního kola přijímacího řízení – Hotelová škola Mariánské Lázně (školní rok 2026/2027)",
+          "published_at": "2026-01-15",
+          "checked_at": "2026-09-12",
+          "supports": "V 1. kole PŘ 2026/2027 škola vyhlásila jen obory 65-42-M/01 Hotelnictví a turismus (90 míst) a 65-51-H/01 Kuchař a Číšník, servírka (30 + 30); obor Gastronomie vyhlášen nebyl. PDF staženo a ověřeno převodem na text.",
+          "applicable_period": "1. kolo PŘ pro školní rok 2026/2027"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda škola obor Gastronomie vyhlásila v některém z dalších kol přijímacího řízení 2026 (2. kolo apod.) – přiložená data ani zjištěné zdroje se týkají pouze 1. kola.",
+        "Zda škola plánuje obor Gastronomie opět vyhlásit pro školní rok 2027/2028."
+      ]
+    }
+  ]
+}

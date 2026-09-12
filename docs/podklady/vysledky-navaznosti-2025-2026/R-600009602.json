@@ -1,0 +1,113 @@
+{
+  "task_id": "R-600009602",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) bez změny potvrzuje subjekt Střední odborná škola obchodu, užitého umění a designu, Plzeň, Nerudova 33 (REDIZO 600009602, IČ 00520152) s IZO 000520152, sídlem Nerudova 1214/33, Plzeň – Jižní Předměstí (RÚIAN 24542032) a dvěma místy výuky (Nerudova 1214/33 a Klatovská třída 986/200). Škola tedy mezi přijímacími řízeními 2025 a 2026 nezanikla, nesloučila se ani nezměnila sídlo. Rejstřík zaměření oborů neeviduje (jen úroveň KKOV), takže zmizení zaměření „vnitřní obchod“ z nabídky 2026 rejstřík ani potvrdit, ani vyvrátit nemůže."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0053"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT z 1. kola JPZ 2025 škola (REDIZO 600009602, IZO 000520152, SOŠ obchodu, užitého umění a designu, Nerudova 1214, Plzeň) nabízela obor 63-41-M/01 Ekonomika a podnikání ve třech zaměřeních – zahraniční obchod, vnitřní obchod a cestovní ruch – plus Lyceum (78-42-M/08). V 1. kole JPZ 2026 nabízí zaměření cestovní ruch a zahraniční obchod a Lyceum; zaměření vnitřní obchod v nabídce 2026 chybí.",
+        "Web školy (nerudovka.cz) obor Ekonomika a podnikání – vnitřní obchod (63-41-M/01, denní, 4 roky, maturita) nadále prezentuje, ale s výslovným upozorněním: „Na tento obor není možné podávat přihlášky v přijímacím řízení na školní rok 2026/2027!“",
+        "Kritéria přijímacího řízení 2026 pro ekonomické maturitní obory na webu školy (termíny JPZ duben 2026, výsledkové listiny 15. 5. 2026) uvádějí pouze zaměření cestovní ruch a zahraniční obchod, každé s kapacitou 30 uchazečů; vnitřní obchod v nich nefiguruje.",
+        "Archivní snímek stránky oboru z 13. 5. 2025 (Wayback Machine) ukazuje, že v přijímacím roce 2025 škola vnitřní obchod běžně nabízela – stránka tehdy upozornění o nemožnosti podat přihlášku neobsahovala a škola na jaře 2025 pořádala přípravné kurzy k JPZ i pro vnitřní obchod.",
+        "Rejstřík MŠMT ve všech čtyřech snímcích 2025–2026 potvrzuje plnou kontinuitu školy: beze změny REDIZO 600009602, IZO 000520152, úplný název, sídlo Nerudova 1214/33 i místa výuky. Zaměření oborů rejstřík neeviduje, takže absence zaměření v nabídce neznamená zánik registrace oboru 63-41-M/01."
+      ],
+      "conclusion": "Zaměření „vnitřní obchod“ oboru 63-41-M/01 Ekonomika a podnikání škola v přijímacím řízení 2025 skutečně nabízela a pro školní rok 2026/2027 jej z nabídky vyřadila – škola sama na svém webu uvádí, že na tento obor nelze v PŘ 2026 podat přihlášku. Škola jako instituce přitom pokračuje beze změn (stejné REDIZO i IZO v rejstříku po celé období) a ostatní nabídky (cestovní ruch, zahraniční obchod, Lyceum) pokračují. Nepřiřazená nabídka 2025 tedy nemá v roce 2026 žádný protějšek a není důvod ji mapovat na jiné zaměření.",
+      "alternative_explanations": [
+        "Vyřazení může být pouze jednoroční přerušení: obor škola na webu nadále prezentuje a jeho registrace na úrovni KKOV trvá, takže nelze vyloučit obnovení nabídky v přijímacím řízení 2027.",
+        "Data CERMAT pokrývají pouze 1. kolo JPZ; teoreticky škola mohla vnitřní obchod otevřít až v dalším kole 2026, nic ale pro to nevypovídá – kritéria PŘ na webu školy jej neuvádějí vůbec."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["2025: 63-41-M/01 Ekonomika a podnikání – vnitřní obchod (ID_SOF d92e9f41-1e94-4498-a0b3-54d2657e9704)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Nerudova 1214/33, Plzeň – Jižní Předměstí, PSČ 301 00 (RÚIAN 24542032)",
+          "role": "sídlo",
+          "izo": "000520152",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Nerudova 1214/33, Plzeň – Jižní Předměstí (RÚIAN 24542032)",
+          "role": "místo výuky",
+          "izo": "000520152",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Klatovská třída 986/200, Plzeň – Jižní Předměstí (RÚIAN 24539392)",
+          "role": "místo výuky",
+          "izo": "000520152",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600009602",
+          "title": "Přiložená data fronty – context_offers 2025 a 2026 (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V 1. kole JPZ 2025 škola nabízela zaměření vnitřní obchod (vedle zahraničního obchodu, cestovního ruchu a Lycea); v 1. kole JPZ 2026 vnitřní obchod v nabídce není, ostatní tři nabídky pokračují.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://www.nerudovka.cz/obory/vnitrni-obchod",
+          "title": "Ekonomika a podnikání – vnitřní obchod (web školy)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola obor 63-41-M/01 vnitřní obchod prezentuje, ale výslovně uvádí: „Na tento obor není možné podávat přihlášky v přijímacím řízení na školní rok 2026/2027!“",
+          "applicable_period": "přijímací řízení 2026 (školní rok 2026/2027)"
+        },
+        {
+          "url": "https://www.nerudovka.cz/uchazec/prijimaci-rizeni/prijimaci-rizeni-ekonomicke-maturitni-obory",
+          "title": "Přijímací řízení – ekonomické obory s maturitní zkouškou (web školy)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Kritéria PŘ 2026 (termíny JPZ 10./13. 4. 2026, výsledky 15. 5. 2026) obsahují pouze zaměření cestovní ruch a zahraniční obchod; vnitřní obchod chybí.",
+          "applicable_period": "přijímací řízení 2026"
+        },
+        {
+          "url": "https://web.archive.org/web/20250513215934/https://nerudovka.cz/obory/vnitrni-obchod",
+          "title": "Ekonomika a podnikání – vnitřní obchod (archivní snímek webu školy z 13. 5. 2025)",
+          "published_at": "2025-05-13",
+          "checked_at": "2026-09-12",
+          "supports": "V květnu 2025 stránka oboru neobsahovala žádné omezení přihlášek a škola na jaře 2025 pořádala přípravné kurzy k JPZ i pro vnitřní obchod – obor byl tedy v PŘ 2025 v nabídce.",
+          "applicable_period": "přijímací řízení 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2025",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600009602 (SOŠ obchodu, užitého umění a designu, Plzeň, Nerudova 33) s IZO 000520152, sídlem Nerudova 1214/33 a místy výuky Nerudova 1214/33 a Klatovská třída 986/200.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 30. 6. 2026",
+          "published_at": "2026-06-30",
+          "checked_at": "2026-09-12",
+          "supports": "Tentýž subjekt i IZO beze změny názvu, sídla i míst výuky – škola mezi ročníky PŘ 2025 a 2026 nezanikla ani se neorganizovala; platí i pro mezisnímky 31. 12. 2025 a 31. 3. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda jde o trvalé ukončení výuky zaměření, nebo jen o nepřijímání nových žáků pro 2026/2027 (škola důvod na webu neuvádí; docházející ročníky zřejmě dokončí studium).",
+        "Zda škola vnitřní obchod případně otevřela v dodatečných kolech PŘ 2026 mimo data CERMAT z 1. kola (nevypovídá pro to nic, ale z dostupných zdrojů to vyloučit nelze)."
+      ]
+    }
+  ]
+}

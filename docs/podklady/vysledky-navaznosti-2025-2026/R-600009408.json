@@ -1,0 +1,96 @@
+{
+  "task_id": "R-600009408",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrzuje kontinuitu subjektu: Střední škola, Horažďovice, Blatenská 313 (REDIZO 600009408, IZO 107840294) je ve všech čtyřech snímcích vedena beze změny, se dvěma místy výuky (Strakonická 952 a Blatenská 313, Horažďovice). Obory 18-20-M/01 Informační technologie a 63-41-M/01 Ekonomika a podnikání NEJSOU zapsány v žádném ze čtyř snímků (2025-03-31 až 2026-06-30) – na rozdíl od ostatních úkolů této fronty jde o obory, které rejstřík neeviduje vůbec, ne jen s odstupem zápisu. Aktuální zapsané obory jsou: Aranžér, Kuchař-číšník, Gastronomie, Grafický design, Opravář zemědělských strojů, Cukrář a Podnikání."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0316", "Q0317"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí dva obory, které v roce 2025 v nabídce nebyly: 18-20-M/01 Informační technologie se zaměřením „Vývoj aplikací a her“ a 63-41-M/01 Ekonomika a podnikání se zaměřením „Marketingové a reklamní strategie“.",
+        "Web školy (sskola.horazdovice.cz) k oboru Informační technologie uvádí doslova: „Od školního roku 2026/2027 nabídneme žákům možnost studovat: 18–20–M/01 Informační technologie...“ se zaměřením na vývoj aplikací a počítačových her.",
+        "Web školy (aktuality) potvrzuje, že škola spouští DVA nové čtyřleté studijní obory pro rok 2026/2027: „Informační technologie – vývoj her“ a „Ekonomika a podnikání – marketingové a reklamní strategie“, oba od 1. 9. 2026.",
+        "Aktuální přehled oborů na webu školy (sskola.horazdovice.cz) uvádí oba obory jako součást nabídky čtyřletých studijních oborů vedle Grafického designu a Gastronomie (Food design).",
+        "V žádném ze čtyř snímků rejstříku MŠMT (2025-03-31 až 2026-06-30) nejsou tyto dva obory u IZO 107840294 zapsány – jde tedy o odstup zápisu vůči datu spuštění výuky (1. 9. 2026), nikoli o rozpor s existencí nabídky, protože nabídku dokládá jak CERMAT, tak přímo škola."
+      ],
+      "conclusion": "Oba obory – 18-20-M/01 Informační technologie (Vývoj aplikací a her) a 63-41-M/01 Ekonomika a podnikání (Marketingové a reklamní strategie) – jsou skutečně nové obory, které škola otevírá od školního roku 2026/2027 jako reakci na vývoj trhu práce a technologií. Nemají žádného předchůdce v nabídce školy z roku 2025. Absence zápisu v rejstříku MŠMT i k 30. 6. 2026 je jen odstupem administrativního zápisu vůči datu zahájení výuky.",
+      "alternative_explanations": [
+        "Formální zápis obou oborů do rejstříku MŠMT může proběhnout až těsně před 1. 9. 2026 nebo po tomto datu; to však otevření oborů od září 2026 nezpochybňuje, protože je potvrzeno jak nabídkou CERMAT, tak vlastním oznámením školy."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["18-20-M/01 (2026)", "63-41-M/01 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Blatenská 313, 341 01 Horažďovice",
+          "role": "sídlo",
+          "izo": "600009408",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Strakonická 952, 341 01 Horažďovice; Blatenská 313, 341 01 Horažďovice",
+          "role": "místo výuky",
+          "izo": "107840294",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://sskola.horazdovice.cz/",
+          "title": "Střední škola Horažďovice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola uvádí: „Od školního roku 2026/2027 nabídneme žákům možnost studovat: 18–20–M/01 Informační technologie...“ se zaměřením na vývoj aplikací a počítačových her.",
+          "applicable_period": "od školního roku 2026/2027"
+        },
+        {
+          "url": "https://sskola.horazdovice.cz/aktuality/",
+          "title": "Aktuality – Střední škola Horažďovice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola spouští dva nové čtyřleté obory od 1. 9. 2026: Informační technologie – vývoj her, a Ekonomika a podnikání – marketingové a reklamní strategie.",
+          "applicable_period": "od 1. 9. 2026"
+        },
+        {
+          "url": "https://sskola.horazdovice.cz/obory/",
+          "title": "Obory – Střední škola Horažďovice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuální přehled oborů zahrnuje Informační technologie (Vývoj aplikací a her) a Ekonomika a podnikání (Marketingové a reklamní strategie) jako čtyřleté studijní obory.",
+          "applicable_period": "aktuální stav (2026)"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obory 18-20-M/01 a 63-41-M/01 nejsou u IZO 107840294 evidovány ani k 30. 6. 2026 (odstup zápisu vůči zahájení výuky).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600009408",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídky 18-20-M/01 Informační technologie (Vývoj aplikací a her) a 63-41-M/01 Ekonomika a podnikání (Marketingové a reklamní strategie) přítomny v 1. kole JPZ 2026 a chybějící v 1. kole JPZ 2025; ostatní obory (Podnikání, Gastronomie) pokračují v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum formálního zápisu obou oborů do rejstříku MŠMT nebylo dohledáno (k 30. 6. 2026 ještě chyběl)."
+      ]
+    }
+  ]
+}

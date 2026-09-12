@@ -1,0 +1,115 @@
+{
+  "task_id": "R-600011941",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrdil nepřetržitou kontinuitu subjektu: Střední odborná škola a Střední odborné učiliště technické, Třemošnice, Sportovní 322 (REDIZO 600011941, IČ 15052796) je vedena ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) beze změny názvu, sídla (Sportovní 322, Třemošnice, RÚIAN 5241022) i struktury IZO – střední škola IZO 015052796 s místem výuky na adrese sídla a domov mládeže IZO 110020162. Žádné sloučení, rozdělení ani zánik se nekonalo. Kratší název „SOŠ a SOU technické“ v datech CERMAT 2025 oproti úplnému názvu v roce 2026 je jen rozdíl v zápisu – rejstřík uvádí úplný název v obou letech. Rejstřík eviduje obory jen na úrovni KKOV bez zaměření, takže novost zaměření Operátor bezpilotních systémů z něj přímo nevyplývá; novou nabídku 2026 potvrzují web školy a datované články."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0265"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT 1. kola JPZ 2025 škola (REDIZO 600011941, IZO 015052796) nabízela čtyři denní obory: Strojírenství (23-41-M/01), Mechanik strojů a zařízení (23-44-L/01), Mechanik seřizovač (23-45-L/01) a Operátor dřevařské a nábytkářské výroby (33-41-L/01). Obec Lyceum v nabídce 2025 není.",
+        "V roce 2026 všechny čtyři dosavadní obory pokračují beze změny kódu KKOV (u tří z nich se změnil pouze text zaměření – nově uvádí kombinaci s učebním oborem s výučním listem ve 3. ročníku) a přibyla pátá nabídka: 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření Operátor bezpilotních systémů, 4leté denní studium.",
+        "Škola na svém webu 7. 10. 2025 oznámila, že od školního roku 2026/2027 plánuje otevřít lyceum v rámci pokusného ověřování se zaměřením Operátor bezpilotních systémů (dronů).",
+        "Samostatná stránka školy k oboru uvádí kód a název 78-42-M/08 Lyceum a popisuje třípilířový program (pilotáž a legislativa, aplikace dronů, stavba/konstrukce/údržba UAV) včetně podmínek přijetí.",
+        "ČT24 v článku z 21. 11. 2025 potvrdila, že škola od příštího roku otevře nový obor Lyceum ve dvou zaměřeních – Operátor bezpilotních systémů a Právo a státní správa – s podporou zřizovatele (Pardubický kraj); ředitelka Helena Vančurová obor prezentuje jako reakci na poptávku trhu práce.",
+        "Rejstřík MŠMT dokládá, že škola ani její IZO se mezi roky 2025 a 2026 nijak nezměnily – jde o stejný subjekt na stejné adrese; nová nabídka tedy není důsledkem sloučení či převzetí jiné školy.",
+        "Zaměření Právo a státní správa, zmiňované školou a médii jako druhé zaměření lycea, se v datech CERMAT 1. kola JPZ 2026 pro toto REDIZO neobjevuje."
+      ],
+      "conclusion": "Nepřiřazená nabídka 2026 je doloženě nový obor: SOŠ a SOU technické Třemošnice (REDIZO 600011941, IZO 015052796) od školního roku 2026/2027 otevírá v režimu pokusného ověřování obor 78-42-M/08 Lyceum se zaměřením Operátor bezpilotních systémů. Nemá žádného předchůdce v nabídce 2025 – nejde o přejmenování ani pokračování jiného oboru, ale o novou nabídku vedle čtyř pokračujících oborů. Subjekt školy mezi roky pokračuje beze změny (kontinuita REDIZO, IZO i adresy doložena rejstříkem MŠMT ve všech čtyřech snímcích 2025–2026).",
+      "alternative_explanations": [
+        "Druhé zaměření lycea (Právo a státní správa) mohlo být v 1. kole JPZ 2026 nenabídnuto (např. nedokončené schvalovací řízení nebo pozdější kolo) – absence v datech CERMAT nedokazuje, že nebylo otevřeno.",
+        "Rejstřík eviduje obory jen na úrovni KKOV bez zaměření, takže nelze vyloučit, že registrace oboru v rejstříku proběhla dříve, než se obor objevil v přijímacím řízení; nabídku v přijímačkách ale pro rok 2025 data CERMAT neobsahují."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/08 Lyceum (režim pokusného ověřování), zaměření Operátor bezpilotních systémů – REDIZO 600011941, IZO 015052796"]
+      },
+      "addresses": [
+        {
+          "text": "Sportovní 322, 538 43 Třemošnice (RÚIAN 5241022)",
+          "role": "sídlo",
+          "izo": "600011941",
+          "valid_period": "2025-03-31 až 2026-06-30 (dle snímků rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Sportovní 322, Třemošnice (RÚIAN 5241022)",
+          "role": "místo výuky",
+          "izo": "015052796",
+          "valid_period": "2025-03-31 až 2026-06-30 (dle snímků rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600011941",
+          "title": "Přiložená data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026 pro REDIZO 600011941",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 2025 obsahuje 4 obory bez Lycea; nabídka 2026 obsahuje tytéž 4 obory plus nové 78-42-M/08 Lyceum, zaměření Operátor bezpilotních systémů.",
+          "applicable_period": "1. kolo JPZ 2025 a 2026, denní studium"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600011941 veden pod úplným názvem, sídlo Sportovní 322 Třemošnice, IZO 015052796 (střední škola) s místem výuky na adrese sídla.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Tentýž subjekt beze změny názvu, sídla i IZO v období 1. kola JPZ 2026 – škola pokračuje, žádné sloučení ani zánik.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 30. 6. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Kontinuita subjektu i po skončení školního roku 2025/2026; adresy sídla a místa výuky beze změny.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://sos-tremosnice.cz/2025/10/07/novy-obor-na-sos-a-sou-technickem-tremosnice/",
+          "title": "Nový obor na SOŠ a SOU technickém Třemošnice (web školy)",
+          "published_at": "2025-10-07",
+          "checked_at": "2026-09-12",
+          "supports": "Škola oznamuje, že od školního roku 2026/2027 plánuje otevřít lyceum v rámci pokusného ověřování – Operátor bezpilotních systémů (dronů).",
+          "applicable_period": "oznámení před 1. kolem JPZ 2026 (školní rok 2026/2027)"
+        },
+        {
+          "url": "https://sos-tremosnice.cz/operator-bezpilotnich-systemu/",
+          "title": "Operátor bezpilotních systémů – stránka oboru na webu školy",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola uvádí kód a název oboru 78-42-M/08 Lyceum, profil absolventa, obsah výuky a podmínky přijetí – obor je reálně nabízen.",
+          "applicable_period": "aktuální web školy (školní rok 2026/2027)"
+        },
+        {
+          "url": "https://ct24.ceskatelevize.cz/clanek/regiony/pardubicky-kraj/stredni-skola-v-tremosnici-otevre-obor-pro-operatory-dronu-367424",
+          "title": "Střední škola v Třemošnici otevře obor pro operátory dronů – ČT24",
+          "published_at": "2025-11-21",
+          "checked_at": "2026-09-12",
+          "supports": "Nezávislé datované potvrzení, že škola otevírá nový obor Lyceum se zaměřeními Operátor bezpilotních systémů a Právo a státní správa, s podporou zřizovatele (Pardubický kraj).",
+          "applicable_period": "listopad 2025, před 1. kolem JPZ 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Bylo druhé oznámené zaměření lycea (Právo a státní správa) skutečně otevřeno od 2026/2027, a proč se neobjevilo v nabídce 1. kola JPZ 2026 v datech CERMAT?"
+      ]
+    }
+  ]
+}

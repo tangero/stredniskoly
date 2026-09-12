@@ -1,0 +1,140 @@
+{
+  "task_id": "R-600017648",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Wichterlovo gymnázium, Ostrava-Poruba, příspěvková organizace (REDIZO 600017648) figuruje beze změny ve všech čtyřech snímcích. IZO 000842702 (Střední škola) má ve všech snímcích stejné místo výuky Čs. exilu 669/16. Obory 79-41-K/41 Gymnázium (4leté) i 79-41-K/81 Gymnázium (8leté) jsou registrovány beze změny ve všech snímcích. Rejstřík neeviduje jednotlivá zaměření uvnitř kódu 79-41-K/81 – rozlišení bylo nutné ověřit u školy."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0121", "Q0248"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 79-41-K/81 Gymnázium se zaznamenaným zaměřením „ŠVP Matematika a příroda“; v 1. kole JPZ 2026 je u téhož oboru zaznamenáno zaměření „Matematika a příroda“.",
+        "Web školy (wigym.cz/osmilete-studium) popisuje osmileté studium jako dvě dlouhodobě paralelně běžící třídy – jednu „zaměřenou na matematiku, informatiku a přírodní vědy“ (s badatelsky orientovanou výukou) a druhou jazykovou (viz níže) – a uvádí, že škola v tomto uspořádání otevírá dvě třídy již od školního roku 2015/2016.",
+        "Text zaměření se mezi lety liší pouze vypuštěním předpony „ŠVP“ (odkaz na školní vzdělávací program); obsahově jde o stejnou třídu zaměřenou na matematiku a přírodní vědy."
+      ],
+      "conclusion": "Jde o tutéž třídu osmiletého gymnázia 79-41-K/81 se zaměřením na matematiku a přírodní vědy v obou letech; mezi CERMAT nabídkami 2025 a 2026 se změnila jen formulace textu zaměření (vypuštění předpony „ŠVP“), nikoli obsah nabídky.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit dílčí úpravu ŠVP mezi lety; k tomu nebyl nalezen žádný doklad."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["79-41-K/81 Gymnázium – ŠVP Matematika a příroda, 2025"],
+        "to": ["79-41-K/81 Gymnázium – Matematika a příroda, 2026"]
+      },
+      "addresses": [
+        {
+          "text": "Čs. exilu 669/16, 708 00 Poruba, Ostrava",
+          "role": "sídlo",
+          "izo": "600017648",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Čs. exilu 669/16, 708 00 Poruba, Ostrava",
+          "role": "místo výuky",
+          "izo": "000842702",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.wigym.cz/osmilete-studium",
+          "title": "Osmileté studium – Wichterlovo gymnázium",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola popisuje dvě dlouhodobě paralelně vedené třídy osmiletého studia (matematika/přírodní vědy a jazyková), otevírané od školního roku 2015/2016, jako trvající nabídku.",
+          "applicable_period": "aktuální popis oboru, bez vazby na konkrétní ročník"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-41-K/81 registrován u IZO 000842702 beze změny ve všech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017648",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření u 79-41-K/81 (Matematika a příroda) se mezi roky 2025 a 2026 liší jen vypuštěním předpony „ŠVP“, počet nabízených programů zůstal stejný (3 v obou letech).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0122", "Q0249"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 79-41-K/81 Gymnázium se zaznamenaným zaměřením „ŠVP Mluvíme anglicky“; v 1. kole JPZ 2026 je u téhož oboru zaznamenáno zaměření „Mluvíme anglicky“.",
+        "Web školy (wigym.cz/osmilete-studium) popisuje druhou paralelní třídu osmiletého studia jako „všeobecnou třídu s rozšířenou výukou angličtiny“ s předmětem CLIL, a uvádí, že škola v tomto uspořádání (včetně jazykové třídy) otevírá dvě třídy již od školního roku 2015/2016.",
+        "Text zaměření se mezi lety liší pouze vypuštěním předpony „ŠVP“; obsahově jde o stejnou jazykovou třídu."
+      ],
+      "conclusion": "Jde o tutéž třídu osmiletého gymnázia 79-41-K/81 se zaměřením na angličtinu (Mluvíme anglicky) v obou letech; mezi CERMAT nabídkami 2025 a 2026 se změnila jen formulace textu zaměření (vypuštění předpony „ŠVP“), nikoli obsah nabídky.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit dílčí úpravu ŠVP mezi lety; k tomu nebyl nalezen žádný doklad."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["79-41-K/81 Gymnázium – ŠVP Mluvíme anglicky, 2025"],
+        "to": ["79-41-K/81 Gymnázium – Mluvíme anglicky, 2026"]
+      },
+      "addresses": [
+        {
+          "text": "Čs. exilu 669/16, 708 00 Poruba, Ostrava",
+          "role": "sídlo",
+          "izo": "600017648",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Čs. exilu 669/16, 708 00 Poruba, Ostrava",
+          "role": "místo výuky",
+          "izo": "000842702",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.wigym.cz/osmilete-studium",
+          "title": "Osmileté studium – Wichterlovo gymnázium",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola popisuje jazykovou třídu s rozšířenou výukou angličtiny a CLIL jako dlouhodobě otevíranou (od 2015/2016), tedy pokračující nabídku.",
+          "applicable_period": "aktuální popis oboru, bez vazby na konkrétní ročník"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-41-K/81 registrován u IZO 000842702 beze změny ve všech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017648",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření u 79-41-K/81 (Mluvíme anglicky) se mezi roky 2025 a 2026 liší jen vypuštěním předpony „ŠVP“, počet nabízených programů zůstal stejný (3 v obou letech).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

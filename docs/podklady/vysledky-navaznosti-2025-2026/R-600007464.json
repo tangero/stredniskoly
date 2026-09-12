@@ -1,0 +1,134 @@
+{
+  "task_id": "R-600007464",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) vede subjekt beze změny: REDIZO 600007464, Boleslavská soukromá střední odborná škola a Gymnázium, s.r.o., IČ 25121367, sídlo Viničná 463/17, Mladá Boleslav III, PSČ 293 01 (RÚIAN 21257906). Pod subjektem je jediná škola, IZO 108022650, se čtyřmi místy výuky (Viničná 463/17 a náměstí Míru 48 – C31, třída T. G. Masaryka 801 a Železná 107 – C11), rovněž beze změny napříč snímky. Rejstřík tedy potvrzuje plnou kontinuitu školy i míst výuky; obory na úrovni zaměření rejstřík neeviduje, takže novost oboru Kosmetické služby z rejstříku posoudit nelze."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0335"],
+      "status": "potvrzeno",
+      "observations": [
+        "Data fronty: v 1. kole JPZ 2025 škola (REDIZO 600007464, IZO 108022650) nabízela Předškolní a mimoškolní pedagogiku (75-31-M/01) a Gymnázium (79-41-K/41); v 1. kole JPZ 2026 nabízí tytéž dva obory a navíc Kosmetické služby (69-41-L/01), které jsou předmětem nepřiřazené nabídky Q0335.",
+        "Škola samotná pokračuje beze změny: rejstřík MŠMT ve všech čtyřech snímcích 2025–2026 uvádí stejné REDIZO, IZO, IČ, název, sídlo i místa výuky. Název v datech CERMAT („Boleslav. soukr. SOŠ a Gymnázium, s.r.o.“) je jen zkrácený rejstříkový název, adresa Viničná 463 odpovídá sídlu Viničná 463/17, Mladá Boleslav III.",
+        "Obor Kosmetické služby (69-41-L/01) není nový: AtlasŠkolství.cz (zdroj dat Cermat) uvádí u této školy pro tento obor kapacitu a přihlášky již v letech 2022 (30 míst, 14 přihlášek), 2023 (30/19), 2024 (30/51) a 2025 (10 míst, 0 přihlášek). Maturitní statistiky oborové skupiny dokládají maturanty v letech 2024 i 2025.",
+        "Web školy (sos.bossmb.cz) měl stránku čtyřletého denního oboru „Kosmetické služby“ (a „Hotelnictví“) zveřejněnou již před přijímacím řízením 2025 – archivní snímek Wayback Machine z 20. 1. 2025 nese titulek „Studijní obory 4leté denní - KOSMETICKÉ SLUŽBY, HOTELNICTVÍ“.",
+        "Absence oboru v souboru 1. kola JPZ 2025 tedy neznamená zánik ani novost: obor škola provozovala dlouhodobě, v roce 2025 zřejmě nebyl součástí nabídky 1. kola JPZ (AtlasŠkolství pro 2025 uvádí 10 volných míst a 0 přihlášek, tj. nabídka existovala mimo soubor 1. kola), a v roce 2026 se do nabídky 1. kola vrátil."
+      ],
+      "conclusion": "Nabídka Kosmetické služby (69-41-L/01) v 1. kole JPZ 2026 patří téže škole (REDIZO 600007464, IZO 108022650), která mezi roky 2025 a 2026 pokračuje beze změny identity. Nejedná se o nový obor – Kosmetické služby škola vyučuje nejméně od přijímacího řízení 2022 a oborová stránka existovala na webu školy i v lednu 2025; v roce 2025 obor pouze nefiguruje v datovém souboru 1. kola JPZ. Nepřiřazenou nabídku Q0335 lze přiřadit k existující škole a oboru s dlouhodobou historií.",
+      "alternative_explanations": [
+        "Nelze vyloučit, že obor byl pro školní rok 2025/2026 přihláškově neotevřen (v 1. kole 2025 chybí a AtlasŠkolství hlásí 0 přihlášek při 10 místech) a do 1. kola se vrátil až pro 2026/2027 – na závěru o kontinuitě oboru to nic nemění, šlo by jen o přerušení náboru, nikoli nový obor.",
+        "Zdroj dat AtlasŠkolství mohl údaj pro rok 2025 (10 míst) čerpat z 2. kola nebo od školy; přesné kolo, v němž byla nabídka 2025 evidována, z dostupných zdrojů nezjištěno."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["REDIZO 600007464 / IZO 108022650, KKOV 69-41-L/01 Kosmetické služby (nabízen před 2025, chybí v souboru 1. kola JPZ 2025)"],
+        "to": ["REDIZO 600007464 / IZO 108022650, KKOV 69-41-L/01 Kosmetické služby (1. kolo JPZ 2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Viničná 463/17, Mladá Boleslav III, PSČ 293 01 (RÚIAN 21257906)",
+          "role": "sídlo",
+          "izo": "108022650",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Viničná 463/17, Mladá Boleslav III (RÚIAN 21257906)",
+          "role": "místo výuky",
+          "izo": "108022650",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (C31, všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "náměstí Míru 48, Mladá Boleslav II (RÚIAN 21241465)",
+          "role": "místo výuky",
+          "izo": "108022650",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (C31, všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "třída T. G. Masaryka 801, Mladá Boleslav II (RÚIAN 21248729)",
+          "role": "místo výuky",
+          "izo": "108022650",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (C11, všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Železná 107, Mladá Boleslav II (RÚIAN 21241970)",
+          "role": "místo výuky",
+          "izo": "108022650",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (C11, všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stav rejstříku k 31. 3. 2025: REDIZO 600007464, IZO 108022650, název, sídlo i místa výuky – totožné s pozdějšími snímky.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stav rejstříku k 31. 12. 2025: subjekt a škola beze změny oproti březnu 2025.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stav rejstříku k 31. 3. 2026 (období 1. kola JPZ 2026): subjekt a škola beze změny.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stav rejstříku k 30. 6. 2026: subjekt a škola nadále vedeni beze změny.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://www.atlasskolstvi.cz/ss1016-boleslavska-soukroma-stredni-odborna-skola-a-gymnazium-s-r-o?obor=3901&forma=2&svp=&typ=10&delka_studia=4&pro_zaky=P%C5%A0D",
+          "title": "Obor: Kosmetické služby 69-41-L/01 – Boleslavská soukromá střední odborná škola a Gymnázium, s. r. o. | AtlasŠkolství.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Statistiky přijímacího řízení (zdroj Cermat) pro obor Kosmetické služby u této školy za roky 2022 (30 míst/14 přihlášek), 2023 (30/19), 2024 (30/51) a 2025 (10 míst/0 přihlášek) – dokládá, že obor existoval před rokem 2026.",
+          "applicable_period": "přijímací řízení 2022–2025"
+        },
+        {
+          "url": "https://web.archive.org/web/20250120104137/https://sos.bossmb.cz/index.php?type=Post&id=528&ids=516",
+          "title": "Studijní obory 4leté denní - KOSMETICKÉ SLUŽBY, HOTELNICTVÍ (archivní snímek webu školy)",
+          "published_at": "2025-01-20",
+          "checked_at": "2026-09-12",
+          "supports": "Titulek archivované stránky webu školy z 20. 1. 2025 dokládá, že obor Kosmetické služby (4leté denní studium) škola prezentovala již před přijímacím řízením 2025.",
+          "applicable_period": "stav webu školy k 20. 1. 2025"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007464",
+          "title": "Přiložená data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026 pro REDIZO 600007464",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Dokládá skladbu nabídky: 2025 (Předškolní a mimoškolní pedagogika, Gymnázium), 2026 (navíc Kosmetické služby 69-41-L/01); shoda REDIZO, IZO, názvu i adresy v obou letech.",
+          "applicable_period": "1. kolo JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Byl obor Kosmetické služby v roce 2025 nabízen v 2. kole JPZ, nebo jen s neobsazenou kapacitou mimo soubor 1. kola? (Na přiřazení nabídky nemá vliv, hodilo by se pro přesný popis historie náboru.)"
+      ]
+    }
+  ]
+}

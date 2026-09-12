@@ -1,0 +1,136 @@
+{
+  "task_id": "R-600006841",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje kontinuitu subjektu Střední odborná škola a Střední odborné učiliště, Hořovice, Palackého náměstí 100 (REDIZO 600006841), sídlo Palackého náměstí 100/17, 268 01 Hořovice. IZO 047558504 „Střední škola“ má ve všech snímcích tři shodná místa výuky: Masarykova 387/6 Hořovice, čp. 28 Tlustice, Palackého náměstí 100/17 Hořovice. Obor 16-01-M/01 Ekologie a životní prostředí je registrován beze změny ve všech čtyřech snímcích včetně 30. 6. 2026, stejně jako ostatní obory (23-41-M/01, 63-41-M/01, 43-41-M/01, 18-20-M/01, 26-41-L/01 - ten přibyl mezi snímky 2025-03-31 a 2025-12-31 - a učební obory). Obor 78-42-M/08 Lyceum (režim pokusného ověřování) není v žádném ze čtyř snímků evidován."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0036"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 16-01-M/01 Ekologie a životní prostředí se zaměřením „Ochrana a tvorba životního prostředí“; v 1. kole JPZ 2026 tato nabídka u téhož REDIZO chybí.",
+        "Aktuální stránka „Nabídka oborů“ na webu školy (soshorovice.cz) vyjmenovává pro školní rok 2026/27 maturitní obory Informační technologie, Strojírenství, Ekonomika a podnikání, Veterinářství a nově Lyceum (označené jako „nový obor od 1.9.2026“) - Ekologie a životní prostředí mezi nimi není.",
+        "Rejstřík MŠMT nadále eviduje obor 16-01-M/01 Ekologie a životní prostředí u IZO 047558504 ve všech čtyřech snímcích včetně 30. 6. 2026 - registrace oboru trvá, chybí jen jeho vyhlášení v přijímacím řízení pro rok 2026/27.",
+        "Škola dlouhodobě nese ocenění „Škola udržitelného rozvoje 1. stupně“ (Klub ekologické výchovy / česká komise UNESCO) - tematicky se překrývá jak s dosavadní Ekologií a životním prostředím, tak s novou oborovou orientací Lycea (viz nález k Q0283), přímá organizační souvislost mezi obory ale doložena nebyla."
+      ],
+      "conclusion": "Škola pro školní rok 2026/27 neotevírá přijímací řízení do oboru Ekologie a životní prostředí (16-01-M/01); obor zůstává registrován v rejstříku, ale v aktuální nabídce chybí. Nejde o doložený formální zánik oboru, jen o přerušení náboru.",
+      "alternative_explanations": [
+        "Obor může být kdykoliv znovu vyhlášen, protože zůstává zapsán v rejstříku; k datu zpracování nebyl nalezen žádný dokument o jeho formálním zrušení.",
+        "Tematický přesah k nové oborové orientaci Lycea „Přírodní a potravinové zdroje“ nasvědčuje možné obsahové návaznosti, není to ale doloženo jako organizační nástupnictví - jde o odlišný kód oboru."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["16-01-M/01 Ekologie a životní prostředí (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Palackého náměstí 100/17, 268 01 Hořovice",
+          "role": "sídlo",
+          "izo": "600006841",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Masarykova 387/6, 268 01 Hořovice; čp. 28, 268 01 Tlustice; Palackého náměstí 100/17, 268 01 Hořovice",
+          "role": "místo výuky",
+          "izo": "047558504",
+          "valid_period": "2025-03-31 až 2026-06-30 (tři místa výuky ve všech snímcích, bez určení, které se váže na Ekologii a životní prostředí)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://soshorovice.cz/nabidka-oboru/",
+          "title": "Nabídka oborů – SOŠ a SOU Hořovice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuální nabídka maturitních oborů pro 2026/27 neobsahuje Ekologii a životní prostředí; obsahuje nově Lyceum (\"nový obor od 1.9.2026\").",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 16-01-M/01 Ekologie a životní prostředí zůstává u IZO 047558504 registrován i k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006841",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 16-01-M/01 Ekologie a životní prostředí přítomna v roce 2025 a chybějící v roce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0283"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování) se zaměřením „1) Přírodní a potravinové zdroje 2) Udržitelný rozvoj společnosti“, který v roce 2025 v nabídce nebyl.",
+        "Web školy (soshorovice.cz, sekce Nabídka oborů) uvádí Lyceum jako „nový obor od 1.9.2026“ vedle stávajících maturitních oborů Informační technologie, Strojírenství, Ekonomika a podnikání a Veterinářství.",
+        "Obor 78-42-M/08 zatím není evidován v žádném ze čtyř snímků rejstříku MŠMT (poslední 30. 6. 2026) - jde o odstup zápisu u celostátně nového pokusného ověřování Lyceum, které MŠMT vyhlásilo v listopadu 2024.",
+        "Škola dlouhodobě nese ocenění „Škola udržitelného rozvoje“ - oborová orientace „Přírodní a potravinové zdroje“ a „Udržitelný rozvoj společnosti“ na tuto profilaci tematicky navazuje, stejně jako dříve nabízená Ekologie a životní prostředí (viz nález k Q0036), formálně jde ale o zcela odlišný kód oboru."
+      ],
+      "conclusion": "Lyceum 78-42-M/08 je nový pilotní obor (celostátní pokusné ověřování MŠMT), který škola zařadila do nabídky pro rok 2026/27 se zaměřením na přírodní zdroje a udržitelný rozvoj. Nemá formálního předchůdce v nabídce školy z roku 2025, i když tematicky navazuje na dřívější Ekologii a životní prostředí.",
+      "alternative_explanations": [
+        "Zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026 v souladu s harmonogramem pokusného ověřování; to otevření oboru od září 2026 neovlivňuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/08 Lyceum (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Palackého náměstí 100/17, 268 01 Hořovice / čp. 28, 268 01 Tlustice",
+          "role": "nezjištěná",
+          "izo": "047558504",
+          "valid_period": "od 2026/27 (nezapsáno v rejstříku k 30. 6. 2026, konkrétní budova výuky Lycea nebyla ověřena)",
+          "source_url": "https://soshorovice.cz/nabidka-oboru/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://soshorovice.cz/nabidka-oboru/",
+          "title": "Nabídka oborů – SOŠ a SOU Hořovice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Lyceum je uvedeno jako nový obor od 1. 9. 2026.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/08 není u IZO 047558504 evidován ani k 30. 6. 2026 (odstup zápisu).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006841",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/08 Lyceum se zaměřením Přírodní a potravinové zdroje / Udržitelný rozvoj společnosti přítomna v roce 2026 a chybějící v roce 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

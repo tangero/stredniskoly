@@ -1,0 +1,78 @@
+{
+  "task_id": "R-600006832",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje kontinuitu subjektu Obchodní akademie, Střední pedagogická škola a Jazyková škola s právem státní jazykové zkoušky, Beroun, U Stadionu 486 (REDIZO 600006832), sídlo U Stadionu 486/2, 266 01 Beroun-Město. IZO 047558415 „Střední škola“ má ve všech snímcích shodné místo výuky U Stadionu 486/2. Obory 63-41-M/02 Obchodní akademie, 78-42-M/02 Ekonomické lyceum, 78-42-M/03 Pedagogické lyceum a 75-31-M/01 Předškolní a mimoškolní pedagogika (ve více formách studia) jsou registrovány beze změny ve všech čtyřech snímcích; ve snímku 2025-03-31 navíc figurují dobíhající varianty stejných oborů se staršími kódy (75-31-M/005, 78-42-M/003, 63-41-M/004), které z dalších snímků mizí (dobíhající studium bylo dokončeno). Obor 78-42-M/08 Lyceum (režim pokusného ověřování) není v žádném ze čtyř snímků evidován."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0282"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování) vedle stávajících čtyř oborů (Obchodní akademie 63-41-M/02, Předškolní a mimoškolní pedagogika 75-31-M/01, Ekonomické lyceum 78-42-M/02, Pedagogické lyceum 78-42-M/03), které v obou letech beze změny pokračují.",
+        "Web školy (oaspgsberoun.cz) v sekci přijímacího řízení Obchodní akademie výslovně uvádí „78-42-M/08 Všeobecné lyceum – Nový obor v režimu pokusného ověřování“.",
+        "Obor 78-42-M/08 zatím není evidován v žádném ze čtyř snímků rejstříku MŠMT (poslední 30. 6. 2026) - jde o odstup zápisu u celostátně nového pokusného ověřování Lyceum, které MŠMT vyhlásilo v listopadu 2024.",
+        "Na rozdíl od jiných škol ve frontě (např. R-600006697) zde nejde o náhradu za rušený obor - všechny čtyři dosavadní obory školy pokračují nezměněny; 78-42-M/08 je čistě doplňková pátá nabídka."
+      ],
+      "conclusion": "Lyceum 78-42-M/08 je nový pilotní obor (celostátní pokusné ověřování MŠMT), který škola nově zařadila do nabídky pro rok 2026/27 jako doplněk ke stávajícím čtyřem oborům. Nemá předchůdce v nabídce školy z roku 2025.",
+      "alternative_explanations": [
+        "Zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026 v souladu s harmonogramem pokusného ověřování; to otevření oboru od září 2026 neovlivňuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/08 Lyceum (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "U Stadionu 486/2, 266 01 Beroun-Město, Beroun",
+          "role": "místo výuky",
+          "izo": "047558415",
+          "valid_period": "od 2026/27 (nezapsáno v rejstříku k 30. 6. 2026)",
+          "source_url": "https://www.oaspgsberoun.cz/oa/pro-zajemce-o-studium/prijimaci-rizeni/"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.oaspgsberoun.cz/oa/pro-zajemce-o-studium/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Obchodní akademie (OA, SPgŠ a JŠ Beroun)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola uvádí obor „78-42-M/08 Všeobecné lyceum“ jako nový obor v režimu pokusného ověřování.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://www.oaspgsberoun.cz/spgs/pro-uchazece/pedagogicke-lyceum/",
+          "title": "Pedagogické lyceum – Střední pedagogická škola (OA, SPgŠ a JŠ Beroun)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje, že Pedagogické lyceum 78-42-M/03 je nadále samostatně nabízeným oborem vedle nového Lycea 78-42-M/08.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/08 není u IZO 047558415 evidován ani k 30. 6. 2026; ostatní čtyři obory pokračují beze změny.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006832",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/08 Lyceum přítomna pouze v roce 2026, ostatní čtyři obory shodné v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

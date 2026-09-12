@@ -1,0 +1,126 @@
+{
+  "task_id": "R-600008088",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plynulou kontinuitu organizace: REDIZO 600008088 (Biskupské gymnázium J. N. Neumanna, církevní základní škola a základní umělecká škola České Budějovice, IČ 00666122) je vedeno ve všech čtyřech snímcích beze změny názvu a sídla (Jirsíkova 420/5, České Budějovice 1). IZO 000666122 (Střední škola) existuje ve všech snímcích; mezi 31. 3. 2025 a 31. 12. 2025 mu přibylo druhé místo výuky Žižkova tř. 250/4, České Budějovice 6 (kód C10), vedle dosavadního Jirsíkova 420/5 (C51). Rejstřík eviduje obory jen na úrovni KKOV, takže novost oboru Pedagogické lyceum z něj přímo nevyplývá, ale ničemu z něj neodporuje."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0247"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT z 1. kola JPZ 2026 se u REDIZO 600008088 / IZO 000666122 objevila nabídka oboru 78-42-M/03 Pedagogické lyceum (4leté, denní, český jazyk), která v roce 2025 u téže organizace nebyla. Všechny čtyři nabídky z roku 2025 (79-41-K/41, 79-41-K/61, 79-41-K/81, 79-43-K/61) pokračují i v roce 2026 beze změny kódu, názvu i délky studia.",
+        "Rejstřík MŠMT potvrzuje, že škola (REDIZO 600008088, IZO 000666122) existuje nepřetržitě od snímku k 31. 3. 2025 do snímku k 30. 6. 2026; názvem v CERMAT „Biskup. gymn. J.N.N., církevní ZŠ a ZUŠ“ jde o zkrácený rejstříkový název „Biskupské gymnázium J. N. Neumanna, církevní základní škola a základní umělecká škola České Budějovice“.",
+        "Web školy (bigycb.cz) na stránce studijních oborů uvádí: „Od školního roku 2026/2027 také nabízíme nový čtyřletý maturitní obor Pedagogické lyceum.“",
+        "Pedagogická fakulta Jihočeské univerzity v datovaném článku z 2. 9. 2026 potvrzuje, že Biskupské gymnázium J. N. Neumanna „otevřelo od prvního září 2026 nový studijní čtyřletý maturitní obor Pedagogické lyceum“, a popisuje zahájení prvního ročníku.",
+        "Vedlejší pozorování: snímky rejstříku k 31. 12. 2025 a pozdější evidují u střední školy nové místo výuky Žižkova tř. 250/4, České Budějovice 6; souvislost s novým oborem zdroje přímo nedokládají."
+      ],
+      "conclusion": "Pedagogické lyceum (78-42-M/03) je u Biskupského gymnázia J. N. Neumanna skutečně nový obor, otevřený k 1. 9. 2026 a poprvé nabízený v přijímacím řízení pro školní rok 2026/2027. Nejde o přejmenování ani převod žádné z gymnaziálních nabídek – ty všechny pokračují vedle něj. Nabídku lze přiřadit k téže škole (REDIZO 600008088 / IZO 000666122) jako nový obor bez historického předchůdce.",
+      "alternative_explanations": [
+        "Absence oboru v nabídce CERMAT 2025 by sama o sobě mohla znamenat jen neobsazení kola, ale proti tomu svědčí datovaná prohlášení školy i PF JCU o novém oboru od září 2026.",
+        "Zdroje nevylučují, že registrace oboru v rejstříku proběhla dříve (např. v průběhu 2025); pro otázku nabídky v přijímacím řízení je ale rozhodující první nabídka v JPZ 2026."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["REDIZO 600008088 / IZO 000666122, KKOV 78-42-M/03 Pedagogické lyceum (od JPZ 2026, výuka od 1. 9. 2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Jirsíkova 420/5, České Budějovice 1, PSČ 370 01 (RÚIAN 25015991)",
+          "role": "sídlo",
+          "izo": "000666122",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "Jirsíkova 420/5, České Budějovice 1 (RÚIAN 25015991, kód C51)",
+          "role": "místo výuky",
+          "izo": "000666122",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "Žižkova tř. 250/4, České Budějovice 6 (RÚIAN 23401982, kód C10)",
+          "role": "místo výuky",
+          "izo": "000666122",
+          "valid_period": "od snímku k 2025-12-31 do 2026-06-30",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600008088",
+          "title": "Přiložená data fronty: nabídky CERMAT 1. kolo JPZ 2025 a 2026 pro REDIZO 600008088",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pedagogické lyceum (78-42-M/03) je v nabídce 2026, nikoli 2025; všechny čtyři gymnaziální nabídky 2025 pokračují v 2026 beze změny.",
+          "applicable_period": "JPZ 2025 a 2026 (1. kolo)"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Existence REDIZO 600008088 a IZO 000666122 (Střední škola) se sídlem Jirsíkova 420/5; v té době jediné místo výuky střední školy Jirsíkova 420/5.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 12. 2025 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Kontinuita subjektu a IZO 000666122; nově evidované místo výuky Žižkova tř. 250/4, České Budějovice 6.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2026 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Kontinuita subjektu a IZO 000666122 v období 1. kola JPZ 2026; název a sídlo beze změny.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 30. 6. 2026 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt i IZO 000666122 nadále vedeny beze změny názvu a sídla.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://bigycb.cz/bigy/o-skole/studijni-obory/",
+          "title": "Studijní obory – Biskupské gymnázium J. N. Neumanna České Budějovice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola sama uvádí: „Od školního roku 2026/2027 také nabízíme nový čtyřletý maturitní obor Pedagogické lyceum.“",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.pf.jcu.cz/cz/fakulta/aktualne/prvniho-skolniho-dne-studentu-a-studentek-ctyrleteho-maturitniho-oboru-pedagogicke-lyceum-se-zucastnila-prodekanka-helena-koldova",
+          "title": "Prvního školního dne studentů a studentek čtyřletého maturitního oboru Pedagogické lyceum se zúčastnila proděkanka Helena Koldová (Pedagogická fakulta JU)",
+          "published_at": "2026-09-02",
+          "checked_at": "2026-09-12",
+          "supports": "Datované potvrzení nezávislého zdroje: Biskupské gymnázium otevřelo od 1. 9. 2026 nový čtyřletý maturitní obor Pedagogické lyceum; první ročník zahájen.",
+          "applicable_period": "září 2026"
+        },
+        {
+          "url": "https://bigycb.cz/bigy/o-skole/studijni-obory/pedagogicke-lyceum/",
+          "title": "Pedagogické lyceum – Biskupské gymnázium J. N. Neumanna České Budějovice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popis obsahu a učebního plánu nového oboru (pedagogika, psychologie, umělecké zaměření, praxe, spolupráce s JU); dokládá, že jde o samostatný obor odlišný od gymnázia.",
+          "applicable_period": "školní rok 2026/2027"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

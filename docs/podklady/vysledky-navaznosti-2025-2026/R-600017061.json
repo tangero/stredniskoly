@@ -1,0 +1,96 @@
+{
+  "task_id": "R-600017061",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Střední odborná škola obchodu a služeb, Olomouc, Štursova 14 (REDIZO 600017061) figuruje beze změny názvu i sídla (Štursova 904/14, 779 00 Hodolany, Olomouc) ve všech čtyřech snímcích. IZO 000577448 (Střední škola, místo výuky shodně Štursova 904/14) je registrováno se stejným místem výuky ve všech snímcích. Obor 65-41-L/01 Gastronomie i obor 65-51-H/01 Kuchař - číšník jsou v rejstříku zapsány u tohoto IZO ve všech čtyřech snímcích včetně 2025-03-31 – obor Gastronomie tedy nebyl nově zapsán do rejstříku k roku 2026, chybějící nabídka v CERMAT datech 2025 proto není dána chybějícím zápisem."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0238"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela pouze nástavbový obor 64-41-L/51 Podnikání; samostatný ani kombinovaný obor Gastronomie/Kuchař-číšník v nabídce 2025 nebyl.",
+        "V 1. kole JPZ 2026 škola nově nabízí obor 65-41-L/01 Gastronomie se zaznamenaným zaměřením „kombinace s oborem 65-51-H/01 Kuchař - číšník“.",
+        "Web školy (stursovka.cz) uvádí mezi obory pro přijímací řízení 2026/2027 položku „Gastronomie plus“ jako komplementární obor vzdělání kategorie H+L: žák nejprve skládá závěrečnou zkoušku oboru 65-51-H/01 Kuchař - číšník na konci 3. ročníku a poté pokračuje ve 4. ročníku k maturitní zkoušce v oboru 65-41-L/01 Gastronomie.",
+        "Stránka oboru „Gastronomie plus“ uvádí u programu údaj „platnost od 1. 9. 2026“, což odpovídá prvnímu běhu tohoto konkrétního kombinovaného studijního plánu od školního roku 2026/2027.",
+        "Samostatná stránka oboru Gastronomie (bez kombinace) uvádí u kódu 65-41-L/01 údaj „platnost od: 1. 9. 2016“ – samotný kód oboru je v rejstříku zaveden dlouhodobě, byl ale zjevně po roky mimo aktivní přijímací řízení v denní JPZ formě (v CERMAT datech školy před rokem 2026 nefiguruje jako samostatná nabídka)."
+      ],
+      "conclusion": "Nabídka Gastronomie (65-41-L/01) v kombinaci s Kuchařem-číšníkem (65-51-H/01) v 1. kole JPZ 2026 je nová konkrétní admisní varianta (kombinovaný obor H+L „Gastronomie plus“), poprvé vypsaná pro školní rok 2026/2027 – nemá předchůdce v nabídce školy z roku 2025. Podkladový kód oboru 65-41-L/01 byl sice v rejstříku registrován už dříve (od 2016) a zůstal zapsán i v roce 2025, ale nebyl v roce 2025 fakticky nabízen v 1. kole JPZ.",
+      "alternative_explanations": [
+        "Nelze vyloučit, že škola obor Gastronomie v minulosti nabízela mimo sledovaný rozsah (jiné kolo přijímacího řízení, jiná forma studia); k tomu nebyl dohledán žádný doklad."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["65-41-L/01 Gastronomie plus – kombinace s 65-51-H/01 Kuchař - číšník (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Štursova 904/14, 779 00 Hodolany, Olomouc",
+          "role": "sídlo",
+          "izo": "600017061",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Štursova 904/14, 779 00 Hodolany, Olomouc",
+          "role": "místo výuky",
+          "izo": "000577448",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.stursovka.cz/obory",
+          "title": "Obory | Štursovka.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Seznam oborů pro přijímací řízení 2026/2027 obsahuje samostatnou položku „Gastronomie plus“ jako komplementární obor H+L vedle standardní nabídky Kuchař - číšník.",
+          "applicable_period": "přijímací řízení 2026/2027"
+        },
+        {
+          "url": "https://www.stursovka.cz/obory/gastronomie-plus",
+          "title": "Gastronomie plus | Štursovka.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popis kombinovaného oboru H+L (Kuchař-číšník + Gastronomie) s údajem o platnosti programu od 1. 9. 2026.",
+          "applicable_period": "od školního roku 2026/2027"
+        },
+        {
+          "url": "https://www.stursovka.cz/obory/gastronomie",
+          "title": "Gastronomie | Štursovka.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Samostatný obor 65-41-L/01 Gastronomie uvádí platnost kódu oboru od 1. 9. 2016 (dlouhodobě zapsaný kód, nikoli nově vytvořený).",
+          "applicable_period": "obecný popis oboru, bez vazby na konkrétní ročník přijímacího řízení"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obory 65-41-L/01 Gastronomie a 65-51-H/01 Kuchař - číšník jsou u IZO 000577448 registrovány už ve snímku k 31. 3. 2025, tedy dříve než se objevily v nabídce CERMAT 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017061",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 65-41-L/01 Gastronomie s kombinací 65-51-H/01 Kuchař-číšník přítomna pouze v roce 2026; v roce 2025 škola nabízela jen obor Podnikání.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda obor Gastronomie (samostatně, bez kombinace s Kuchařem-číšníkem) byl školou v minulosti v denní JPZ formě vůbec nabízen, případně kdy naposledy."
+      ]
+    }
+  ]
+}

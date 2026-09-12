@@ -1,0 +1,158 @@
+{
+  "task_id": "R-600017133",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Střední škola technických profesí Olomouc, Kosinova 4 (REDIZO 600017133) figuruje beze změny názvu i sídla (Kosinova 872/4, 779 00 Olomouc) ve všech čtyřech snímcích. IZO 014451085 (Střední škola) má ve všech snímcích stejná dvě místa výuky (Kosinova 872/4 a U podjezdu 37/11, Pavlovičky). Obory 26-41-L/01 Mechanik elektrotechnik i 26-51-H/02 Elektrikář - silnoproud jsou registrovány beze změny ve všech snímcích. Rejstřík neeviduje jednotlivá zaměření/ŠVP uvnitř kódu oboru, takže sám o sobě nerozliší, zda se jedná o stejnou nebo jinou vnitřní specializaci – to bylo nutné ověřit u školy."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0114", "Q0264"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 26-41-L/01 Mechanik elektrotechnik se zaznamenaným zaměřením „silnoproudá zařízení - L0+H mechanik elektrotechnik silnoproudá zařízení + Elektrikář silnoproud“.",
+        "V 1. kole JPZ 2026 je u téhož oboru 26-41-L/01 zaznamenáno zaměření „26-51-H/02 Elektrikář - silnoproud“ – text byl zkrácen na odkaz na přidružený kód učebního oboru.",
+        "Vlastní stránka školy s výsledky přijímacího řízení 2026 (kosinka.com) uvádí u tohoto programu přesně formulaci „26-41-L/01 Mechanik elektrotechnik – silnoproudá zařízení (spojený s 26-51-H/02 Elektrikář silnoproud)“ – tedy stejné spojení L0+H jako v popisu z roku 2025, jen jinak formátované.",
+        "Přehled maturitních oborů školy (kosinka.com/pro-uchazece/maturitni-obory) dlouhodobě uvádí právě dvě zaměření Mechanika elektrotechnika: „výpočetní a elektronické systémy“ a „silnoproudá zařízení“ – žádné třetí ani nové zaměření uvedeno není."
+      ],
+      "conclusion": "Jde o tentýž studijní program (kombinovaná forma L0+H: Mechanik elektrotechnik 26-41-L/01 spojený s Elektrikář - silnoproud 26-51-H/02) v obou letech; mezi CERMAT nabídkami 2025 a 2026 se změnil pouze způsob zápisu textu zaměření (z popisného textu na odkaz kódem), nikoli obsah ani rozsah programu.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit drobnou úpravu ŠVP mezi lety, k tomu ale nebyl nalezen žádný doklad; škola program i nadále prezentuje jako jeden nepřerušený obor."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["26-41-L/01 Mechanik elektrotechnik – silnoproudá zařízení (L0+H s Elektrikář silnoproud), 2025"],
+        "to": ["26-41-L/01 Mechanik elektrotechnik – 26-51-H/02 Elektrikář - silnoproud, 2026"]
+      },
+      "addresses": [
+        {
+          "text": "Kosinova 872/4, 779 00 Olomouc",
+          "role": "sídlo",
+          "izo": "600017133",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Kosinova 872/4, 779 00 Olomouc; U podjezdu 37/11, 779 00 Pavlovičky, Olomouc",
+          "role": "místo výuky",
+          "izo": "014451085",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.kosinka.com/vysledky-prijimaciho-rizeni",
+          "title": "Výsledky přijímacího řízení – Střední škola technických profesí, Kosinova 4",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Program 2026 uveden jako „26-41-L/01 Mechanik elektrotechnik – silnoproudá zařízení (spojený s 26-51-H/02 Elektrikář silnoproud)“, tedy shodné spojení jako v CERMAT 2025.",
+          "applicable_period": "výsledky přijímacího řízení 2026"
+        },
+        {
+          "url": "https://www.kosinka.com/pro-uchazece/maturitni-obory",
+          "title": "Maturitní obory – Střední škola technických profesí, Kosinova 4",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola dlouhodobě nabízí právě dvě zaměření Mechanika elektrotechnika: výpočetní a elektronické systémy, silnoproudá zařízení.",
+          "applicable_period": "aktuální nabídka oborů, bez konkrétního data"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obory 26-41-L/01 a 26-51-H/02 registrovány u IZO 014451085 beze změny ve všech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017133",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření u 26-41-L/01 se mezi roky 2025 a 2026 změnil z popisného na kódový, počet nabízených programů zůstal stejný (5 v obou letech).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0115", "Q0263"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 26-41-L/01 Mechanik elektrotechnik se zaznamenaným zaměřením „výpočetní a elektronické systémy“.",
+        "V 1. kole JPZ 2026 je u téhož oboru 26-41-L/01 zaznamenáno zaměření „26-41-L/01 Výpočetní a elektronické systémy“ – jde o stejný text, jen doplněný o kód oboru na začátku.",
+        "Detailní stránka oboru (kosinka.com/.../mechanik-elektrotechnik-vypocetni-a-elektronicke-systemy) popisuje obsah výuky (práce s počítači, elektroinstalace, návrh plošných spojů, elektrotechnická měření) jako ustálený, dlouhodobě vedený maturitní program, bez zmínky o změně k roku 2026.",
+        "Výsledky přijímacího řízení 2026 (kosinka.com) uvádí týž program pod názvem „26-41-L/01 Mechanik elektrotechnik – výpočetní a elektronické systémy“."
+      ],
+      "conclusion": "Jde o tentýž studijní program (Mechanik elektrotechnik – výpočetní a elektronické systémy, 26-41-L/01) v obou letech; mezi CERMAT nabídkami 2025 a 2026 se změnilo pouze formátování textu zaměření (doplnění kódu oboru), nikoli obsah programu.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit drobnou úpravu ŠVP mezi lety, k tomu ale nebyl nalezen žádný doklad."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["26-41-L/01 Mechanik elektrotechnik – výpočetní a elektronické systémy, 2025"],
+        "to": ["26-41-L/01 Mechanik elektrotechnik – výpočetní a elektronické systémy, 2026"]
+      },
+      "addresses": [
+        {
+          "text": "Kosinova 872/4, 779 00 Olomouc",
+          "role": "sídlo",
+          "izo": "600017133",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Kosinova 872/4, 779 00 Olomouc; U podjezdu 37/11, 779 00 Pavlovičky, Olomouc",
+          "role": "místo výuky",
+          "izo": "014451085",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.kosinka.com/pro-uchazece/maturitni-obory/mechanik-elektrotechnik-vypocetni-a-elektronicke-systemy",
+          "title": "Mechanik elektrotechnik - výpočetní a elektronické systémy – Střední škola technických profesí, Kosinova 4",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popis obsahu programu 26-41-L/01 jako ustáleného maturitního oboru bez zmínky o změně k roku 2026.",
+          "applicable_period": "aktuální nabídka oboru, bez konkrétního data"
+        },
+        {
+          "url": "https://www.kosinka.com/vysledky-prijimaciho-rizeni",
+          "title": "Výsledky přijímacího řízení – Střední škola technických profesí, Kosinova 4",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Program 2026 uveden jako „26-41-L/01 Mechanik elektrotechnik – výpočetní a elektronické systémy“.",
+          "applicable_period": "výsledky přijímacího řízení 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 26-41-L/01 registrován u IZO 014451085 beze změny ve všech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017133",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření u 26-41-L/01 se mezi roky 2025 a 2026 liší jen doplněním kódu oboru na začátek textu.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

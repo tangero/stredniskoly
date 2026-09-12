@@ -1,0 +1,103 @@
+{
+  "task_id": "R-600006379",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrdil nepřetržitou existenci subjektu Střední odborná škola uměleckořemeslná s.r.o. (REDIZO 600006379, IČ 25641018) i školy IZO 000222411 ve všech čtyřech snímcích, se sídlem i jediným místem výuky Podkovářská 797/4, Praha 9 – Vysočany. Rozhodující nález na úrovni oborů: ve snímku k 31. 3. 2025 (období 1. kola JPZ 2025) obor 78-42-M/06 Kombinované lyceum evidován není; poprvé se objevuje ve snímku k 31. 12. 2025 (kapacita 100, denní forma, 4 roky) a trvá i v obou snímcích roku 2026. Obor 82-51-L/51 Umělecké řemeslné práce je registrován ve všech snímcích. Rejstřík tedy přímo dokládá, že Kombinované lyceum je nově registrovaný obor mezi 31. 3. a 31. 12. 2025, odpovídající jeho první nabídce v JPZ 2026."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0214"],
+      "status": "potvrzeno",
+      "observations": [
+        "Subjekt Střední odborná škola uměleckořemeslná s.r.o. (REDIZO 600006379, IZO 000222411) existuje nepřetržitě ve všech čtyřech snímcích rejstříku (31. 3. 2025 až 30. 6. 2026), se sídlem i místem výuky Podkovářská 797/4, Praha 9 – Vysočany; k žádnému sloučení, rozdělení ani změně adresy nedošlo.",
+        "V datech CERMAT z 1. kola JPZ 2025 škola nabízela pouze obor 82-51-L/51 Umělecké řemeslné práce (2leté nástavbové studium). V JPZ 2026 nabízí tento obor nadále a vedle něj nově 78-42-M/06 Kombinované lyceum (4leté, maturitní).",
+        "Snímek rejstříku k 31. 3. 2025 (období konání 1. kola JPZ 2025) pro IZO 000222411 obor 78-42-M/06 Kombinované lyceum neobsahuje – eviduje 11 řemeslných oborů a nástavbu Umělecké řemeslné práce. Obor Kombinované lyceum se v rejstříku objevuje poprvé ve snímku k 31. 12. 2025 (denní forma, 4 roky, kapacita 100) a je evidován i ve snímcích k 31. 3. 2026 a 30. 6. 2026.",
+        "Web školy obor popisuje jako čtyřleté maturitní studium se zaměřením humanitním a technickým od 3. ročníku; stránka uvádí, že podrobnější informace k přijímacímu řízení budou zveřejněny ve školním roce 2025/26, což odpovídá první nabídce oboru pro školní rok 2026/27. Profil školy na portálu schooljob.cz uvádí doslovně „Otevíráme nové lyceum“.",
+        "Nabídka Kombinovaného lycea v JPZ 2026 je tedy nová nabídka nově registrovaného oboru – v roce 2025 nemá žádného předchůdce, na kterého by bylo možné ji přiřadit. Nepřiřazenost nabídky je správný stav, nikoli chyba párování."
+      ],
+      "conclusion": "Obor 78-42-M/06 Kombinované lyceum je nová nabídka školy pro školní rok 2026/27: v rejstříku MŠMT byl zaregistrován mezi 31. 3. 2025 a 31. 12. 2025 a v JPZ 2025 nabízen nebyl. Škola samotná (IZO 000222411) pokračuje beze změny na stejné adrese; obor 82-51-L/51 Umělecké řemeslné práce nabízí v obou letech souběžně. Kombinované lyceum nemá v roce 2025 oborového předchůdce a historické statistiky přijímacího řízení z roku 2025 na něj nejsou přenositelné.",
+      "alternative_explanations": [
+        "Registrace oboru v rejstříku sama o sobě neznamená otevření výuky; teoreticky mohl být obor registrován dříve a v JPZ 2025 jen nenabízen. Tuto alternativu ale vylučuje snímek rejstříku k 31. 3. 2025, ve kterém obor evidován není.",
+        "Wayback Machine pro stav webu školy v roce 2025 nebylo možné ověřit (omezení přístupu k archivu v době rešerše); absence stránky oboru v roce 2025 tedy není z webu archivu přímo doložena, nicméně ji nepotřebujeme – rozhodující je datovaný stav rejstříku."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/06 Kombinované lyceum (denní, 4leté) u IZO 000222411, JPZ 2026"]
+      },
+      "addresses": [
+        {
+          "text": "Podkovářská 797/4, Vysočany, 190 00 Praha 9 (RÚIAN 22547029)",
+          "role": "sídlo",
+          "izo": "000222411",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Podkovářská 797/4, Vysočany, Praha 9 (RÚIAN 22547029)",
+          "role": "místo výuky",
+          "izo": "000222411",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek MŠMT k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stav k období 1. kola JPZ 2025: IZO 000222411 existuje, obor 78-42-M/06 Kombinované lyceum dosud není registrován; registrován je mimo jiné obor 82-51-L/51 Umělecké řemeslné práce.",
+          "applicable_period": "2025-03-31"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek MŠMT k 31. 12. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "První snímek, ve kterém je u IZO 000222411 registrován obor 78-42-M/06 Kombinované lyceum (denní, 4 roky, kapacita 100); registrace tedy vznikla mezi 31. 3. a 31. 12. 2025.",
+          "applicable_period": "2025-12-31"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek MŠMT k 31. 3. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stav k období 1. kola JPZ 2026: Kombinované lyceum i Umělecké řemeslné práce jsou registrovány, subjekt i místo výuky beze změny.",
+          "applicable_period": "2026-03-31"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek MŠMT k 30. 6. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Kontinuita subjektu, adresy a obou oborů i po skončení školního roku 2025/26.",
+          "applicable_period": "2026-06-30"
+        },
+        {
+          "url": "https://www.umeleckoremeslna.cz/kombinovane-lyceum/",
+          "title": "Kombinované lyceum – Střední odborná škola uměleckořemeslná s.r.o.",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Web školy popisuje obor 78-42-M/06 (denní, 4 roky, maturita, zaměření humanitní/technické od 3. ročníku) a uvádí, že podrobnosti k přijímacímu řízení budou zveřejněny ve školním roce 2025/26 – odpovídá první nabídce pro 2026/27.",
+          "applicable_period": "aktuální web k 2026-09-12"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006379",
+          "title": "Data CERMAT 1. kola JPZ 2025 a 2026 (context_offers úkolu)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V JPZ 2025 škola nabízela pouze 82-51-L/51; v JPZ 2026 nabízí 82-51-L/51 i nově 78-42-M/06 Kombinované lyceum na stejné adrese.",
+          "applicable_period": "JPZ 2025 a 2026, 1. kolo, denní studium"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "task_id": "R-600010198",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Gymnázium Děčín, příspěvková organizace (REDIZO 600010198, IČ 47274620) je ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) vedena beze změny — stejné sídlo Komenského nám. 340/4, Děčín I-Děčín (RÚIAN 209279) i stejné jediné IZO 047274620 (Střední škola) s místem výuky na adrese sídla. Žádné sloučení, rozdělení, zánik ani změna adresy. Rejstřík eviduje obory jen na úrovni KKOV bez zaměření, takže otázku zaměření nevyvrací ani nepotvrzuje; tu řeší data fronty a web školy."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0055", "Q0279"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech fronty figuruje v obou letech téhož REDIZO 600010198 a IZO izo_047274620, na stejné adrese (Komenského nám. 340, Děčín, 405 02), obor 79-41-K/41 Gymnázium, 4leté denní studium v češtině. V roce 2025 je nabídka zapsána jako „79-41-K/41 - humanitní zaměření“, v roce 2026 jako „79-41-K/41 Humanitní“ — liší se pouze formát zápisu zaměření, nikoli obor, škola ani parametry studia.",
+        "Web školy (kritéria přijímacího řízení pro šk. rok 2026/27, zkoušky duben 2026) uvádí u oboru 79-41-K/41 souběžně dvě třídy všeobecného zaměření a jednu třídu humanitního zaměření — škola tedy obě zaměření čtyřletého gymnázia skutečně nabízí jako samostatné přijímací okruhy.",
+        "Agregace CERMAT dat na stredniskoly.com ukazuje pro rok 2025 řádek „Gymnázium - humanitní zaměření (7941K41)“ (kapacita 30, 60 přihlášek, 17 přijatých) a pro rok 2026 řádek „Gymnázium Humanitní (7941K41)“ (kapacita 30, 64 přihlášek) — stejné zaměření, stejná kapacita, změněný pouze zápis názvu.",
+        "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) potvrzuje bezezměnkovou kontinuitu školy i IZO 047274620 na stejné adrese."
+      ],
+      "conclusion": "Nabídka „79-41-K/41 – humanitní zaměření“ (2025) a nabídka „79-41-K/41 Humanitní“ (2026) je jedna a táž nabídka téhož oboru na téže škole; mezi ročníky došlo pouze ke změně formátu zápisu zaměření v přihlašovacím systému, nikoli ke vzniku nového oboru nebo zániku starého. Návaznost je přímá 1:1 a historické výsledky (přihlášky, přijetí, skóre) jsou mezi roky 2025 a 2026 porovnatelné.",
+      "alternative_explanations": [
+        "Teoreticky by se mohlo jednat o jinou vnitřní třídu/třídy s jiným kurikulárním profilem pod stejným KKOV — tomu ale odporuje shodná kapacita 30 míst v obou letech a stejné označení humanitního zaměření na webu školy."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["offers 2025 idx 850 (ID_SOF d69a6c49-19c9-4dbe-accf-029b56cab303): 79-41-K/41 - humanitní zaměření"],
+        "to": ["offers 2026 idx 1163 (ID_SOF a18b0c5e-0a54-49d6-b8f5-6a4d1ce655a3): 79-41-K/41 Humanitní"]
+      },
+      "addresses": [
+        {
+          "text": "Komenského nám. 340/4, Děčín I-Děčín, 405 02 Děčín (RÚIAN 209279)",
+          "role": "sídlo",
+          "izo": "047274620",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Komenského nám. 340/4, Děčín I-Děčín, 405 02 Děčín (RÚIAN 209279)",
+          "role": "místo výuky",
+          "izo": "047274620",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600010198",
+          "title": "Přiložená data fronty (nabídky CERMAT 1. kola JPZ 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zápis nabídky 79-41-K/41 humanitního zaměření pod týmž REDIZO/IZO/adresou v obou letech; rozdíl pouze v textu pole ZAMĚŘENÍ OBORU.",
+          "applicable_period": "JPZ 2025 a JPZ 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Existence Gymnázia Děčín (REDIZO 600010198, IZO 047274620) se sídlem i místem výuky Komenského nám. 340/4 v období 1. kola JPZ 2025.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Beze změny téhož subjektu, IZO i adres v období 1. kola JPZ 2026 — žádné sloučení, rozdělení ani zánik.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://www.gymnaziumdc.cz/skola/novinka/prijimaci-rizeni",
+          "title": "Přijímací řízení – Gymnázium Děčín (kritéria pro šk. rok 2026/27)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola v JPZ 2026 přijímá v oboru 79-41-K/41 do 2 tříd všeobecného zaměření (56 míst) a 1 třídy humanitního zaměření (30 míst) — obě zaměření jsou skutečně samostatné přijímací okruhy.",
+          "applicable_period": "přijímací řízení 2026 (šk. rok 2026/27)"
+        },
+        {
+          "url": "https://www.stredniskoly.com/stredni-skoly-1/gymnazium-decin-prispevkova-organizace",
+          "title": "Gymnázium Děčín, příspěvková organizace – StředníŠkoly.com (zdroj dat CERMAT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Souběžné řádky „Gymnázium - humanitní zaměření (7941K41)“ v roce 2025 a „Gymnázium Humanitní (7941K41)“ v roce 2026 se shodnou kapacitou 30 — dokládá, že jde o totéž zaměření s jiným formátem zápisu.",
+          "applicable_period": "JPZ 2025 a JPZ 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0056", "Q0280"],
+      "status": "potvrzeno",
+      "observations": [
+        "Stejná škola, stejné IZO, stejná adresa i obor 79-41-K/41: v roce 2025 je nabídka zapsána „79-41-K/41 - všeobecné zaměření“, v roce 2026 „79-41-K/41 Všeobecné“ — opět jen jiný formát textu zaměření.",
+        "Web školy pro JPZ 2026 uvádí 2 třídy všeobecného zaměření (56 míst) vedle 1 třídy humanitního — všeobecné zaměření tedy v roce 2026 skutečně existuje jako samostatný přijímací okruh.",
+        "Agregace CERMAT dat ukazuje „Gymnázium - všeobecné zaměření (7941K41)“ v roce 2025 (kapacita 56, 154 přihlášek, 56 přijatých) a „Gymnázium Všeobecné (7941K41)“ v roce 2026 (kapacita 60, 123 přihlášek, 60 přijatých). Kapacita se mírně zvýšila (56 → 60), struktura nabídky zůstala.",
+        "Rejstřík MŠMT ve snímcích 31. 3. 2025 až 30. 6. 2026 potvrzuje kontinuitu subjektu i IZO bez jakékoli změny."
+      ],
+      "conclusion": "Nabídka „79-41-K/41 – všeobecné zaměření“ (2025) a „79-41-K/41 Všeobecné“ (2026) je jedna a táž nabídka téhož oboru na téže škole; změnil se pouze formát zápisu zaměření (a mírně kapacita z 56 na 60 míst). Návaznost je přímá 1:1 a historické výsledky jsou mezi roky 2025 a 2026 porovnatelné.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["offers 2025 idx 851 (ID_SOF 55a2534a-9490-41bc-b654-a891f1bcfe17): 79-41-K/41 - všeobecné zaměření"],
+        "to": ["offers 2026 idx 1164 (ID_SOF a7b556f8-8104-4d7a-b133-d4377cfce327): 79-41-K/41 Všeobecné"]
+      },
+      "addresses": [
+        {
+          "text": "Komenského nám. 340/4, Děčín I-Děčín, 405 02 Děčín (RÚIAN 209279)",
+          "role": "sídlo",
+          "izo": "047274620",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Komenského nám. 340/4, Děčín I-Děčín, 405 02 Děčín (RÚIAN 209279)",
+          "role": "místo výuky",
+          "izo": "047274620",
+          "valid_period": "31. 3. 2025 – 30. 6. 2026 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600010198",
+          "title": "Přiložená data fronty (nabídky CERMAT 1. kola JPZ 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zápis nabídky 79-41-K/41 všeobecného zaměření pod týmž REDIZO/IZO/adresou v obou letech; rozdíl pouze v textu pole ZAMĚŘENÍ OBORU.",
+          "applicable_period": "JPZ 2025 a JPZ 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Existence Gymnázia Děčín (REDIZO 600010198, IZO 047274620) v období 1. kola JPZ 2025 na adrese Komenského nám. 340/4.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Bezezměnková kontinuita subjektu a IZO v období 1. kola JPZ 2026.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://www.gymnaziumdc.cz/skola/novinka/prijimaci-rizeni",
+          "title": "Přijímací řízení – Gymnázium Děčín (kritéria pro šk. rok 2026/27)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V JPZ 2026 škola přijímá v oboru 79-41-K/41 do 2 tříd všeobecného zaměření (56 míst) a 1 třídy humanitního zaměření (30 míst).",
+          "applicable_period": "přijímací řízení 2026 (šk. rok 2026/27)"
+        },
+        {
+          "url": "https://www.stredniskoly.com/stredni-skoly-1/gymnazium-decin-prispevkova-organizace",
+          "title": "Gymnázium Děčín, příspěvková organizace – StředníŠkoly.com (zdroj dat CERMAT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Řádek „Gymnázium - všeobecné zaměření (7941K41)“ v roce 2025 a „Gymnázium Všeobecné (7941K41)“ v roce 2026 — totéž zaměření s jiným formátem zápisu; kapacita 56 → 60.",
+          "applicable_period": "JPZ 2025 a JPZ 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

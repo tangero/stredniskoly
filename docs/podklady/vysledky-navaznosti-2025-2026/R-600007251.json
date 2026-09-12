@@ -1,0 +1,99 @@
+{
+  "task_id": "R-600007251",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu Vyšší odborná škola, Střední průmyslová škola a Obchodní akademie, Čáslav, Přemysla Otakara II. 938 (REDIZO 600007251) beze změny názvu ani adresy ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), včetně IZO 061924008 „Střední škola“ na adrese Přemysla Otakara II. 938/18, 286 01 Čáslav-Nové Město. Registrované obory u tohoto IZO jsou ve všech čtyřech snímcích shodné: 23-41-M/01 Strojírenství, 63-41-M/02 Obchodní akademie a 78-42-M/02 Ekonomické lyceum. Obor 78-42-M/08 Lyceum (režim pokusného ověřování) není evidován v žádném ze čtyř snímků – jde o odstup zápisu, nikoli o rozpor s nabídkou CERMAT ani s webem školy."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0041", "Q0309"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela 78-42-M/02 Ekonomické lyceum (4leté, denní); v 1. kole JPZ 2026 tato nabídka chybí a místo ní se objevuje nová nabídka 78-42-M/08 Lyceum (režim pokusného ověřování), rovněž 4leté, denní. Ostatní dvě nabídky školy (23-41-M/01 Strojírenství, 63-41-M/02 Obchodní akademie) pokračují beze změny v obou letech.",
+        "Rejstřík MŠMT eviduje u IZO 061924008 ve všech čtyřech snímcích (31. 3. 2025 – 30. 6. 2026) pouze tři obory: 23-41-M/01 Strojírenství, 63-41-M/02 Obchodní akademie a 78-42-M/02 Ekonomické lyceum. Obor 78-42-M/08 není zapsán ani ve snímku k 30. 6. 2026.",
+        "Web školy (sps-caslav.cz) na stránce dřívějšího oboru Ekonomické lyceum (https://sps-caslav.cz/obory/obchodni-akademie/ekonomicke-lyceum/) uvádí, že tento program byl nahrazen novým studijním oborem: „Nový studijní obor: Lyceum – oborová orientace: Média a mediální komunikace (režim pokusného ověřování), od 1. 9. 2026“.",
+        "Samostatná stránka nového oboru (https://sps-caslav.cz/obory/obchodni-akademie/lyceum/, resp. https://sps-caslav.cz/prijimaci-rizeni/obor-lyceum-oborova-orientace-media-a-medialni-komunikace-78-42-m-08/) popisuje obor 78-42-M/08 Lyceum s oborovou orientací Média a mediální komunikace jako kombinaci všeobecného vzdělání s přípravou ke studiu na VŠ/VOŠ; stránka je zařazena ve stejné kategorii webu (\"Obchodní akademie\") jako dříve Ekonomické lyceum.",
+        "Kritéria přijímacího řízení pro školní rok 2026/2027 (https://sps-caslav.cz/prijimaci-rizeni/ss-kriteria-prijimaciho-rizeni-na-sps-a-oa-jaro-2025/) vyhlašují 1. kolo do oborů 78-42-M/08 Lyceum, 63-41-M/02 Obchodní akademie a 23-41-M/01 Strojírenství. Obor 78-42-M/02 Ekonomické lyceum mezi vyhlášenými obory pro rok 2026/2027 chybí – shoduje se s daty CERMAT.",
+        "Obor 78-42-M/08 Lyceum je celostátní pokusné ověřování nového rámcového vzdělávacího programu vyhlášené MŠMT (ověřování běží od školního roku 2024/2025, do ověřování bylo dle veřejně dostupných informací zapojeno cca 32 škol v ČR pro rok 2025/2026); jednotlivé zapojené školy si volí vlastní „oborovou orientaci“ v rámci společného kódu 78-42-M/08. Přímé ověření zápisu VOŠ, SPŠ a OA Čáslav v oficiálním seznamu MŠMT se nepodařilo dokončit – stránky msmt.gov.cz s vyhlášením a seznamem zapojených škol vracely při načtení chybu „Stránka nenalezena“ (patrně dynamicky generovaný obsah nedostupný pro automatizované stažení)."
+      ],
+      "conclusion": "Nepřiřazené nabídky Q0041 (2025: 78-42-M/02 Ekonomické lyceum) a Q0309 (2026: 78-42-M/08 Lyceum, režim pokusného ověřování) popisují jednu a tutéž organizační změnu u téže školy: od školního roku 2026/2027 škola nahradila dosavadní obor Ekonomické lyceum účastí v celostátním pokusném ověřování nového oboru Lyceum (78-42-M/08) s oborovou orientací Média a mediální komunikace. Doloženo přímo webem školy, který na stránce starého oboru uvádí nahrazení novým oborem od 1. 9. 2026, i kritérii přijímacího řízení 2026/2027, kde figuruje pouze nový kód. Vztah mezi oběma nabídkami proto klasifikuji jako pokračování/nástupnictví v rámci téže institucionální pozice (lyceální obor školy), nikoli jako dvě nezávislé události. Obsahová náplň se ale mění – dřívější ekonomické zaměření je nahrazeno mediální/komunikační orientací v rámci jiné (pokusně ověřované) akreditace – proto historická srovnatelnost dat mezi oběma kódy není zaručena. Chybějící zápis 78-42-M/08 v rejstříku MŠMT ve všech čtyřech snímcích je typický odstup zápisu u pokusně ověřovaných oborů (obdobný jev jako u jiných celostátně pokusně ověřovaných oborů) a nevyvrací závěr, protože nabídku dokládá CERMAT i samotná škola.",
+      "alternative_explanations": [
+        "Škola mohla dočasně přerušit nabídku Ekonomického lycea (78-42-M/02) z jiného důvodu a nová nabídka 78-42-M/08 mohla vzniknout nezávisle (např. z rozhodnutí zřizovatele o rozšíření nabídky); shoda by pak byla souhrou dvou samostatných událostí v tomtéž roce. Přímý text webu školy (\"nahrazeno\", \"nový studijní obor\" umístěný na stránce starého oboru) ale tuto alternativu činí méně pravděpodobnou.",
+        "Obor 78-42-M/02 zůstává formálně zapsán v rejstříku MŠMT i k 30. 6. 2026, takže registrace jako taková nezanikla – nelze vyloučit, že škola obor v budoucnu znovu otevře souběžně s pokusně ověřovaným Lyceem; k datu zpracování ale pro rok 2026/2027 vyhlášen nebyl."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["78-42-M/02 Ekonomické lyceum (2025)"],
+        "to": ["78-42-M/08 Lyceum, oborová orientace Média a mediální komunikace, režim pokusného ověřování (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Přemysla Otakara II. 938/18, 286 01 Čáslav-Nové Město, Čáslav",
+          "role": "sídlo",
+          "izo": "600007251",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Přemysla Otakara II. 938/18, 286 01 Čáslav-Nové Město, Čáslav",
+          "role": "místo výuky",
+          "izo": "061924008",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://sps-caslav.cz/obory/obchodni-akademie/ekonomicke-lyceum/",
+          "title": "Ekonomické lyceum – VOŠ, SPŠ a OA Čáslav",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stránka dřívějšího oboru Ekonomické lyceum (78-42-M/02) uvádí nahrazení novým studijním oborem Lyceum – oborová orientace Média a mediální komunikace (režim pokusného ověřování, 78-42-M/08) od 1. 9. 2026.",
+          "applicable_period": "přechod pro školní rok 2026/2027"
+        },
+        {
+          "url": "https://sps-caslav.cz/obory/obchodni-akademie/lyceum/",
+          "title": "Lyceum (režim pokusného ověřování) – VOŠ, SPŠ a OA Čáslav",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popis nového oboru 78-42-M/08 Lyceum s oborovou orientací Média a mediální komunikace jako kombinace všeobecného vzdělání s přípravou ke studiu na VŠ/VOŠ; zařazeno ve stejné rubrice webu jako dříve Ekonomické lyceum.",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://sps-caslav.cz/prijimaci-rizeni/ss-kriteria-prijimaciho-rizeni-na-sps-a-oa-jaro-2025/",
+          "title": "Kritéria přijímacího řízení pro školní rok 2026/2027 – VOŠ, SPŠ a OA Čáslav",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Ředitelka školy vyhlašuje 1. kolo přijímacího řízení do oborů 78-42-M/08 Lyceum, 63-41-M/02 Obchodní akademie a 23-41-M/01 Strojírenství pro rok 2026/2027; 78-42-M/02 Ekonomické lyceum mezi vyhlášenými obory chybí.",
+          "applicable_period": "přijímací řízení 2026/2027"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/02 Ekonomické lyceum zůstává u IZO 061924008 registrován i k 30. 6. 2026; obor 78-42-M/08 Lyceum v rejstříku k tomuto datu evidován není.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007251",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/02 Ekonomické lyceum přítomna v roce 2025 a chybějící v roce 2026; nabídka 78-42-M/08 Lyceum (režim pokusného ověřování) přítomna v roce 2026 a chybějící v roce 2025; ostatní dva obory (Strojírenství, Obchodní akademie) beze změny v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Nepodařilo se přímo ověřit zápis VOŠ, SPŠ a OA Čáslav v oficiálním seznamu MŠMT škol zapojených do pokusného ověřování oboru 78-42-M/08 Lyceum – stránky msmt.gov.cz s vyhlášením a se seznamem zapojených škol (např. https://msmt.gov.cz/vzdelavani/stredni-vzdelavani/vyhlaseni-pokusneho-overovani-vzdelavani-podle-ramcoveho a https://msmt.gov.cz/vzdelavani/stredni-vzdelavani/seznam-skol-zarazenych-do-pokusneho-overovani-vzdelavani) vrátily při automatizovaném načtení chybu „Stránka nenalezena“. Závěr je přesto podložen přímo webem školy a shodou s daty CERMAT.",
+        "Není ověřeno, zda a kdy bude obor 78-42-M/02 formálně vyřazen z rejstříku MŠMT, ani zda škola plánuje jeho budoucí obnovení souběžně s pokusně ověřovaným Lyceem."
+      ]
+    }
+  ]
+}

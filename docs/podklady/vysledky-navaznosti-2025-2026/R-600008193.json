@@ -1,0 +1,114 @@
+{
+  "task_id": "R-600008193",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrdil naprostou kontinuitu subjektu: REDIZO 600008193 (Vyšší odborná škola, Střední průmyslová škola automobilní a technická, České Budějovice, Skuherského 3, IČ 00582158) i IZO 110150031 (Střední škola) figuruje beze změny ve všech čtyřech snímcích od 31. 3. 2025 do 30. 6. 2026, včetně sídla Skuherského 1274/3 a všech míst výuky. Žádné sloučení, rozdělení ani zánik se nekonalo. Rejstřík eviduje obory jen na úrovni KKOV bez zaměření a bez vazby na konkrétní ročník přijímaček, takže k samotné nabídce oboru 78-42-M/08 v JPZ 2025/2026 nevypovídá."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0047"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT z 1. kola JPZ 2025 škola (REDIZO 600008193, IZO 110150031, VOŠ, SPŠ automobilní a technická, Skuherského 1274, České Budějovice) nabízela čtyřletý maturitní obor 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření Všeobecné lyceum, vedle pokračujícího oboru 78-42-M/01 Technické lyceum.",
+        "V datech CERMAT z 1. kola JPZ 2026 je nabídka školy identická s rokem 2025 až na jediný rozdíl: obor 78-42-M/08 Všeobecné lyceum v ní chybí. Technické lyceum 78-42-M/01 nabízeno zůstává.",
+        "Web školy zveřejnil výsledkové listiny 1. kola přijímacího řízení pro školní rok 2026/2027 — mezi cca 20 listinami oborů žádná pro 78-42-M/08 není. Totéž platí pro výsledkové listiny 2. kola 2026/2027. Obor tedy nebyl v přijímacím řízení 2026 vypsán v žádném kole.",
+        "Web školy má nadále samostatnou stránku oboru Všeobecné lyceum (78-42-M/08) a v září 2025 byl vydán školní vzdělávací program SVP_Vseobecne-lyceum_2025.pdf — tedy ročník přijatý v JPZ 2025 (školní rok 2025/2026) je skutečně vyučován a obor na škole dále běží, jen nebyl znovu vypsán pro nástup 2026/2027.",
+        "Rejstřík MŠMT potvrdil, že škola ani její střední škola (IZO 110150031) se mezi březnem 2025 a červnem 2026 organizačně nezměnily; jde tedy o změnu nabídky oboru, nikoli o změnu subjektu."
+      ],
+      "conclusion": "Obor 78-42-M/08 Lyceum (režim pokusného ověřování), zaměření Všeobecné lyceum, byl touto školou vypsán pouze v přijímacím řízení 2025 (pro školní rok 2025/2026). V přijímacím řízení 2026 — ani v 1., ani v 2. kole — vypsán nebyl, což dokládají výsledkové listiny zveřejněné samotnou školou. Nabídka z roku 2025 tedy nemá v roce 2026 žádného nástupce; jde o jednoroční (případně přerušenou) nabídku experimentálního oboru u beze změny pokračující školy.",
+      "alternative_explanations": [
+        "Obor může být v přijímacím řízení 2027 nebo později znovu vypsán (přerušení nabídky) — to z dostupných zdrojů vyloučit nelze.",
+        "Zdroje nevypovídají o důvodu nevypsání (např. ukončení zapojení do pokusného ověřování, kapacitní důvody); příčina nebyla zkoumána."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["2025: 78-42-M/08 Lyceum (režim pokusného ověřování) / Všeobecné lyceum, IZO 110150031"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Skuherského 1274/3, České Budějovice 3, PSČ 370 01 (RÚIAN 25078127)",
+          "role": "sídlo",
+          "izo": "110150031",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Skuherského 1274/3, České Budějovice 3 (místo výuky C31) — shodné se sídlem; CERMAT v datech JPZ uvádí adresu Skuherského 1274",
+          "role": "místo výuky",
+          "izo": "110150031",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600008193",
+          "title": "Přiložená data fronty: nabídky CERMAT 1. kola JPZ 2025 a 2026 pro REDIZO 600008193",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/08 Všeobecné lyceum je v nabídce 2025 a v nabídce 2026 chybí; ostatní obory (včetně 78-42-M/01 Technické lyceum) pokračují.",
+          "applicable_period": "1. kolo JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://spsautocb.cz/vysledky-1-kola-prijimaciho-rizeni-na-stredni-skolu-pro-skolni-rok-2026-2027/",
+          "title": "Výsledky 1. kola přijímacího řízení na střední školu pro školní rok 2026/2027 — VOŠ, SPŠ automobilní a technická",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola zveřejnila výsledkové listiny 1. kola JPZ 2026/2027; mezi nimi žádná listina pro obor 78-42-M/08 není — obor nebyl pro 2026/2027 vypsán.",
+          "applicable_period": "přijímací řízení 2026 (školní rok 2026/2027)"
+        },
+        {
+          "url": "https://spsautocb.cz/vysledky-2-kola-prijimaciho-rizeni-na-stredni-skolu-pro-skolni-rok-2026-2027/",
+          "title": "Výsledky 2. kola přijímacího řízení pro školní rok 2026/2027 — VOŠ, SPŠ automobilní a technická",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Ani ve 2. kole JPZ 2026/2027 není výsledková listina pro 78-42-M/08 — obor nebyl vypsán v žádném kole přijímaček 2026.",
+          "applicable_period": "přijímací řízení 2026 (školní rok 2026/2027)"
+        },
+        {
+          "url": "https://spsautocb.cz/obory/vseobecne-lyceum/",
+          "title": "Obor Všeobecné lyceum (78-42-M/08) — web školy",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Web školy nadále prezentuje obor Všeobecné lyceum 78-42-M/08 (se zaměřeními Ekologie dopravy a přepravy, Řízení služeb); dokládá existenci oboru na škole, nikoli jeho výpise v JPZ 2026.",
+          "applicable_period": "aktuální stav webu k 12. 9. 2026"
+        },
+        {
+          "url": "https://spsautocb.cz/wp-content/uploads/2025/09/SVP_Vseobecne-lyceum_2025.pdf",
+          "title": "ŠVP Všeobecné lyceum 2025 — VOŠ, SPŠ automobilní a technická",
+          "published_at": "2025-09",
+          "checked_at": "2026-09-12",
+          "supports": "Existence školního vzdělávacího programu pro Všeobecné lyceum ze září 2025 dokládá, že ročník přijatý v JPZ 2025 je vyučován. Pozn.: PDF (cca 20 MB) se nepodařilo načíst celé; závěr na něm nestojí, opírá se o načtené stránky výše.",
+          "applicable_period": "školní rok 2025/2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení — snímek celé ČR k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "REDIZO 600008193 a IZO 110150031 (Střední škola) evidovány se sídlem Skuherského 1274/3 v období 1. kola JPZ 2025.",
+          "applicable_period": "2025-03-31"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení — snímek celé ČR k 31. 3. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt i IZO 110150031 beze změny v období 1. kola JPZ 2026 — žádné sloučení, rozdělení ani zánik.",
+          "applicable_period": "2026-03-31"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Bude obor 78-42-M/08 Všeobecné lyceum znovu vypsán v přijímacím řízení 2027 nebo později?",
+        "Z jakého důvodu škola obor pro rok 2026/2027 nevypsala (příčina nebyla předmětem rešerše)?"
+      ]
+    }
+  ]
+}

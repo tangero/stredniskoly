@@ -1,0 +1,272 @@
+{
+  "task_id": "R-600005836",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plynulou kontinuitu subjektu Obchodní akademie Praha, s.r.o. (REDIZO 600005836, IČ 25603698) i školy IZO 060447109 ve všech čtyřech snímcích; sídlo je trvale Vinořská 163/17, Satalice. Klíčový nález: ve snímku k 31. 3. 2025 měla škola jediné místo výuky (Satalice), od snímku k 31. 12. 2025 má místa výuky dvě – Satalice (Vinořská 163/17) a nově Vinohrady (Slezská 1486/68). To přesně odpovídá zaměřením „Business - Satalice\" a „Business - Vinohrady\" v nabídkách CERMAT 2026. Rejstřík tedy vysvětluje zdvojení nabídek obou oborů mezi roky 2025 a 2026 otevřením nové pobočky, nikoli zánikem či vznikem školy."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0020", "Q0294"],
+      "status": "potvrzeno",
+      "observations": [
+        "V roce 2025 škola nabízela obor Obchodní akademie (63-41-M/02, denní, 4letý, česky s výukou vybraných předmětů v cizím jazyce) jako jedinou nabídku bez uvedeného zaměření; výuka probíhala na jediném místě výuky Vinořská 163/17, Satalice (rejstřík k 31. 3. 2025).",
+        "V roce 2026 jsou v datech CERMAT dvě nabídky téhož oboru: „Business - Satalice\" a „Business - Vinohrady\". Web školy je strukturován podle poboček Satalice a Vinohrady a uvádí, že pobočka Vinohrady sídlí v nově otevřené budově od roku 2025 a nabízí obor Obchodní akademie/Business (63-41-M/02).",
+        "Archivovaná domovská stránka školy z 27. 4. 2025 zmiňuje pouze pobočku Satalice; Vinohrady ani adresa Slezská se na ní nevyskytují.",
+        "Kritéria přijímacího řízení na webu školy pro školní rok 2026/2027 počítají na pobočce Satalice s jednou třídou oboru 63-41-M/02 v denní formě – obor na Satalicích tedy pokračuje vedle nové pobočky."
+      ],
+      "conclusion": "Nabídka oboru Obchodní akademie (63-41-M/02) z roku 2025 (Q0020) pokračuje v roce 2026 jako nabídka se zaměřením „Business - Satalice\" (Q0294) – jde o tentýž obor na téže pobočce, doplněný pouze o název zaměření odlišující pobočku. Druhá nabídka 2026, „Business - Vinohrady\" (Q0293), je nová nabídka téhož oboru na nově otevřené pobočce Vinohrady (Slezská 1486/68), která do rejstříku jako místo výuky přibyla mezi 31. 3. 2025 a 31. 12. 2025.",
+      "alternative_explanations": [
+        "Přesný obsah zaměření „Business\" (zda jde jen o označení pobočky, nebo o změnu studijního programu na Satalicích) z dostupných zdrojů jednoznačně nevyplývá; web školy označení „Business\" používá pro program na obou pobočkách, takže pravděpodobnější je jednotný rebranding zaměření. Příčinu změny zápisu zaměření dle pravidel rešerše nezkoumáme."
+      ],
+      "relationship": {
+        "type": "split",
+        "from": ["2025:63-41-M/02 (bez zaměření), IZO 060447109"],
+        "to": ["2026:63-41-M/02 Business - Satalice", "2026:63-41-M/02 Business - Vinohrady"]
+      },
+      "addresses": [
+        {
+          "text": "Vinořská 163/17, Satalice, 190 15 Praha 9",
+          "role": "sídlo",
+          "izo": "060447109",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Vinořská 163/17, Satalice, 190 15 Praha 9",
+          "role": "místo výuky",
+          "izo": "060447109",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "Slezská 1486/68, Vinohrady, 130 00 Praha 3",
+          "role": "místo výuky",
+          "izo": "060447109",
+          "valid_period": "od snímku 2025-12-31 (ve snímku 2025-03-31 ještě neevidováno)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005836",
+          "title": "Přiložená data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Výpis nabídek oboru 63-41-M/02: 2025 bez zaměření, 2026 se zaměřeními Business - Satalice a Business - Vinohrady; shodné REDIZO, IZO i adresa v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "IZO 060447109 má jediné místo výuky Vinořská 163/17, Satalice; žádné místo výuky na Vinohradech.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 12. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "U IZO 060447109 přibylo druhé místo výuky Slezská 1486/68, Vinohrady; Satalice zůstává.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://www.oapraha.cz/obchodni-akademie-praha-vinohrady/",
+          "title": "Obchodní akademie Praha Vinohrady – web školy",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola uvádí, že pobočka Vinohrady sídlí v nově otevřené budově od roku 2025 a nabízí obory Obchodní akademie/Business (63-41-M/02) a Lyceum s oborovou orientací business (78-42-M/08).",
+          "applicable_period": "aktuální stránka (2026); výrok o otevření od roku 2025"
+        },
+        {
+          "url": "https://web.archive.org/web/20250427153736/https://www.oapraha.cz/",
+          "title": "Archivovaná domovská stránka oapraha.cz z 27. 4. 2025 (Wayback Machine)",
+          "published_at": "2025-04-27",
+          "checked_at": "2026-09-12",
+          "supports": "V době 1. kola JPZ 2025 web školy zmiňoval pouze pobočku Satalice; Vinohrady ani Slezská se na stránce nevyskytují.",
+          "applicable_period": "27. 4. 2025"
+        },
+        {
+          "url": "https://www.oapraha.cz/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Obchodní akademie Praha Satalice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro školní rok 2026/2027 škola na pobočce Satalice otevírá jednu denní třídu oboru 63-41-M/02 a jednu denní třídu lycea 78-42-M/08 – obory na Satalicích pokračují.",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda zaměření „Business\" na pobočce Satalice znamená změnu obsahu studia oproti roku 2025, nebo pouze nové označení téhož programu – z dostupných zdrojů nejednoznačné; pro přenos statistik mezi 2025 (bez zaměření) a 2026 (Business - Satalice) doporučeno počítat s pobočkovou shodou."
+      ]
+    },
+    {
+      "issue_ids": ["Q0021", "Q0296"],
+      "status": "potvrzeno",
+      "observations": [
+        "V roce 2025 škola nabízela obor Lyceum v režimu pokusného ověřování (78-42-M/08, denní, 4letý, jazyk studia „Český\") bez zaměření; výuka na jediném místě výuky Satalice.",
+        "V roce 2026 jsou v datech dvě nabídky téhož oboru: „Business - Satalice\" a „Business - Vinohrady\", obě nově s jazykem studia „Český s výukou vybraných předmětů v cizím jazyce\" (změna zápisu jazyka oproti 2025 pouze konstatována, její příčina se nezkoumá).",
+        "Web školy uvádí na pobočce Vinohrady „Lyceum s oborovou orientací business a mezinárodní anglickou maturitou (78-42-M/08)\" a archivovaná stránka z dubna 2025 dokládá, že tehdy škola prezentovala pouze Satalice (s pilotním programem všeobecného lycea).",
+        "Kritéria přijímacího řízení pro 2026/2027 počítají na Satalicích s jednou denní třídou lycea 78-42-M/08."
+      ],
+      "conclusion": "Nabídka oboru Lyceum (78-42-M/08) z roku 2025 (Q0021) pokračuje v roce 2026 jako „Business - Satalice\" (Q0296) na téže pobočce; nabídka „Business - Vinohrady\" (Q0295) je nová nabídka téhož oboru na nové pobočce Vinohrady, otevřené od roku 2025. Škola ani obor nezanikly – zdvojení nabídek odpovídá rozšíření o druhé místo výuky doložené rejstříkem.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "split",
+        "from": ["2025:78-42-M/08 (bez zaměření), IZO 060447109"],
+        "to": ["2026:78-42-M/08 Business - Satalice", "2026:78-42-M/08 Business - Vinohrady"]
+      },
+      "addresses": [
+        {
+          "text": "Vinořská 163/17, Satalice, 190 15 Praha 9",
+          "role": "místo výuky",
+          "izo": "060447109",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "Slezská 1486/68, Vinohrady, 130 00 Praha 3",
+          "role": "místo výuky",
+          "izo": "060447109",
+          "valid_period": "od snímku 2025-12-31",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005836",
+          "title": "Přiložená data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Výpis nabídek oboru 78-42-M/08: 2025 bez zaměření (jazyk Český), 2026 se zaměřeními Business - Satalice a Business - Vinohrady (jazyk Český s výukou vybraných předmětů v cizím jazyce).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Jediné místo výuky školy Satalice – nabídka 2025 bez zaměření se vztahuje k Satalicím.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 12. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nové místo výuky Slezská 1486/68, Vinohrady vedle Satalic.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://www.oapraha.cz/obchodni-akademie-praha-vinohrady/",
+          "title": "Obchodní akademie Praha Vinohrady – web školy",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pobočka Vinohrady otevřená od roku 2025, nabízí Lyceum s oborovou orientací business (78-42-M/08).",
+          "applicable_period": "aktuální stránka (2026); výrok o otevření od roku 2025"
+        },
+        {
+          "url": "https://web.archive.org/web/20250427153736/https://www.oapraha.cz/",
+          "title": "Archivovaná domovská stránka oapraha.cz z 27. 4. 2025 (Wayback Machine)",
+          "published_at": "2025-04-27",
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 web prezentoval pouze pobočku Satalice, včetně pilotního programu všeobecného lycea.",
+          "applicable_period": "27. 4. 2025"
+        },
+        {
+          "url": "https://www.oapraha.cz/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Obchodní akademie Praha Satalice",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro 2026/2027 se na Satalicích otevírá jedna denní třída lycea 78-42-M/08 – obor na původní pobočce pokračuje.",
+          "applicable_period": "přijímací řízení pro školní rok 2026/2027"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda je změna jazyka studia z „Český\" (2025) na „Český s výukou vybraných předmětů v cizím jazyce\" (2026) reálnou změnou programu, nebo jen změnou zápisu – vliv na srovnatelnost statistik nelze z dosud doložených zdrojů vyloučit."
+      ]
+    },
+    {
+      "issue_ids": ["Q0293", "Q0295"],
+      "status": "potvrzeno",
+      "observations": [
+        "Nabídky „Business - Vinohrady\" obou oborů (63-41-M/02 a 78-42-M/08) nemají v roce 2025 žádný protějšek – v 1. kole JPZ 2025 škola nabízela každý obor jen jednou a podle rejstříku i archivovaného webu tehdy provozovala jedinou pobočku Satalice.",
+        "Místo výuky Vinohrady (Slezská 1486/68) je v rejstříku poprvé ve snímku k 31. 12. 2025 a web školy uvádí otevření pobočky „od roku 2025\" – Vinohrady tedy poprvé vstupují do přijímacího řízení pro školní rok 2026/2027.",
+        "Škola funguje pod stejným REDIZO 600005836 a IZO 060447109 v obou letech; nepřišlo ke vzniku nového právního subjektu ani ke sloučení."
+      ],
+      "conclusion": "Obě nabídky se zaměřením „Business - Vinohrady\" (Q0293, Q0295) jsou nové nabídky stávajících oborů na nově otevřené pobočce Vinohrady, nikoli přejmenování či přesun nabídek z roku 2025. Nemají historii z roku 2025, se kterou by bylo možné srovnávat výsledky přijímacího řízení.",
+      "alternative_explanations": [
+        "Pobočka mohla fyzicky zahájit výuku již ve školním roce 2025/2026 (otevření „od roku 2025\" dle webu); pro přijímací řízení je ale rozhodující, že v 1. kole JPZ 2025 nabídku za Vinohrady škola nevypsala, takže z pohledu statistik přijímaček jde o novou nabídku."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["2026:63-41-M/02 Business - Vinohrady", "2026:78-42-M/08 Business - Vinohrady"]
+      },
+      "addresses": [
+        {
+          "text": "Slezská 1486/68, Vinohrady, 130 00 Praha 3",
+          "role": "místo výuky",
+          "izo": "060447109",
+          "valid_period": "od snímku 2025-12-31 (ve snímku 2025-03-31 neevidováno)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005836",
+          "title": "Přiložená data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V datech 2025 neexistuje žádná nabídka se zaměřením Vinohrady; v 2026 se objevují dvě.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Místo výuky Vinohrady v době 1. kola JPZ 2025 ještě není evidováno.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 12. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Místo výuky Slezská 1486/68, Vinohrady je evidováno před 1. kolem JPZ 2026.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://www.oapraha.cz/obchodni-akademie-praha-vinohrady/",
+          "title": "Obchodní akademie Praha Vinohrady – web školy",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola sama uvádí pobočku Vinohrady jako „nově otevřenou budovu od roku 2025\" s obory 63-41-M/02 a 78-42-M/08.",
+          "applicable_period": "aktuální stránka (2026); výrok o otevření od roku 2025"
+        },
+        {
+          "url": "https://web.archive.org/web/20250427153736/https://www.oapraha.cz/",
+          "title": "Archivovaná domovská stránka oapraha.cz z 27. 4. 2025 (Wayback Machine)",
+          "published_at": "2025-04-27",
+          "checked_at": "2026-09-12",
+          "supports": "V době 1. kola JPZ 2025 web školy pobočku Vinohrady nezmiňoval.",
+          "applicable_period": "27. 4. 2025"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

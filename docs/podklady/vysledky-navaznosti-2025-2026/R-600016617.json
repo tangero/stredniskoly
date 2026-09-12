@@ -1,0 +1,120 @@
+{
+  "task_id": "R-600016617",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "REDIZO 600016617 je ve všech snímcích tentýž subjekt (IZO 046580336, sídlo Leonovova 1795/3, Karviná-Hranice), ale s přejmenováním: k 31. 3. 2025 „Obchodní akademie s.r.o.“, od 31. 12. 2025 „Obchodní akademie a Česko - anglická základní škola s.r.o.“. Registrované obory se nemění – 63-41-M/02 Obchodní akademie a 78-42-M/02 Ekonomické lyceum, oba 4leté, denní, český. Místa výuky se v čase rozšiřují: k 31. 3. 2025 už existují dvě adresy (Leonovova 1795/3 Karviná a Bohumíra Dvorského 1049/1 Ostrava-Bělský Les), od 31. 12. 2025 přibývá třetí adresa Mojmírovců 200/8, Ostrava-Mariánské Hory. Rejstřík zaměření v rámci oboru samostatně nezapisuje – texty zaměření jsou pouze marketingovou nadstavbou jednoho kódu KKOV."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0105", "Q0106", "Q0107", "Q0276", "Q0277", "Q0278"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 nabízela škola u REDIZO 600016617 obor 63-41-M/02 Obchodní akademie ve třech zaměřeních: „Trenérská akademie“, „Fotbalová akademie“ a „Ekonomika a sport“.",
+        "V 1. kole JPZ 2026 nabízí táž škola tentýž obor ve třech zaměřeních s doplněným názvem místa výuky: „Ostrava - Trenérská akademie“, „Ostrava - Fotbalová akademie“ a „Karviná - Ekonomika a sport“ – jádro názvu zaměření je v obou letech shodné, přidán je pouze prefix města.",
+        "Rejstřík MŠMT eviduje u IZO 046580336 od 31. 12. 2025 tři místa výuky: Leonovova 1795/3 (Karviná-Hranice), Bohumíra Dvorského 1049/1 (Ostrava-Bělský Les) a nově Mojmírovců 200/8 (Ostrava-Mariánské Hory) – rozšíření odpovídá potřebě rozlišit ostravská zaměření podle konkrétní budovy.",
+        "Oficiální web školy (infoabsolvent.cz cituje www.obaka.cz) potvrzuje aktuální stav: obor Obchodní akademie má tři zaměření – Ekonomika a sport (Karviná), Fotbalová akademie (Ostrava-Bělský Les) a Trenérská akademie (Ostrava-Mariánské Hory) – přesně odpovídá textům z CERMAT 2026 po odstranění prefixu města.",
+        "Samotná hlavní stránka www.obaka.cz potvrzuje dvě lokality (Ostrava, Karviná) a motto „Studium & sport“, ale neobsahuje historii přejmenování zaměření mezi lety 2025 a 2026.",
+        "Změna názvu právnické osoby (přidání „a Česko - anglická základní škola“) je pouze konstatovaná změna názvu bez zkoumání příčiny, nesouvisí přímo s přejmenováním zaměření Obchodní akademie.",
+        "Obor 78-42-M/02 Ekonomické lyceum (bez zaměření v roce 2025, „Karviná - Ekonomické lyceum“ v roce 2026) není mezi zadanými issue_ids této úlohy a do závěru se nezahrnuje."
+      ],
+      "conclusion": "Jde o pokračování tří stejných sportovně-ekonomických zaměření oboru Obchodní akademie 63-41-M/02 mezi lety 2025 a 2026, pouze s doplněním názvu města/lokality do textu zaměření kvůli rozlišení tří pracovišť (Karviná, Ostrava-Bělský Les, Ostrava-Mariánské Hory). Nejde o nové obory ani o zánik – 1:1 párování podle shodného jádra názvu je jednoznačné a potvrzené i aktuálním webem školy.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit, že u některého zaměření zároveň došlo k faktickému přesunu výuky na jinou budovu společně s přejmenováním; k tomu žádný zdroj přímo nesvědčí."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": [
+          "63-41-M/02 Trenérská akademie (2025)",
+          "63-41-M/02 Fotbalová akademie (2025)",
+          "63-41-M/02 Ekonomika a sport (2025)"
+        ],
+        "to": [
+          "63-41-M/02 Ostrava - Trenérská akademie (2026)",
+          "63-41-M/02 Ostrava - Fotbalová akademie (2026)",
+          "63-41-M/02 Karviná - Ekonomika a sport (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Leonovova 1795/3, 733 01 Hranice, Karviná",
+          "role": "sídlo",
+          "izo": "600016617",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Leonovova 1795/3, 733 01 Hranice, Karviná",
+          "role": "místo výuky",
+          "izo": "046580336",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky) – zaměření Ekonomika a sport",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Bohumíra Dvorského 1049/1, 700 30 Bělský Les, Ostrava",
+          "role": "místo výuky",
+          "izo": "046580336",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky) – zaměření Fotbalová akademie",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Mojmírovců 200/8, 709 00 Mariánské Hory, Ostrava",
+          "role": "místo výuky",
+          "izo": "046580336",
+          "valid_period": "2025-12-31 až 2026-06-30 – zaměření Trenérská akademie (nepřítomno ve snímku 2025-03-31)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.infoabsolvent.cz/Skoly/Skola/600016617",
+          "title": "Obchodní akademie a Česko-anglická základní škola, Karviná – InfoAbsolvent",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje tři zaměření oboru Obchodní akademie a jejich lokality: Ekonomika a sport (Karviná), Fotbalová akademie (Ostrava-Bělský Les), Trenérská akademie (Ostrava-Mariánské Hory); uvádí oficiální web www.obaka.cz.",
+          "applicable_period": "přijímací řízení 2026/2027"
+        },
+        {
+          "url": "http://www.obaka.cz",
+          "title": "Obchodní akademie a Česko-anglická základní škola – hlavní stránka",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje dvě lokality školy (Ostrava, Karviná) a sportovní zaměření školy; neobsahuje historii přejmenování.",
+          "applicable_period": "stav webu k datu kontroly 2026-09-12"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 30. 6. 2026 eviduje IZO 046580336 tři místa výuky (Karviná, Ostrava-Bělský Les, Ostrava-Mariánské Hory) a obor 63-41-M/02 beze změny kódu.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 31. 3. 2025 eviduje IZO 046580336 dvě místa výuky (Karviná, Ostrava-Bělský Les) a název subjektu „Obchodní akademie s.r.o.“; třetí místo výuky (Mojmírovců, Ostrava-Mariánské Hory) ještě chybí.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600016617",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 tři zaměření bez prefixu města, v roce 2026 tatáž tři zaměření s prefixem Ostrava/Karviná.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Došlo společně s doplněním prefixu města i k fyzickému přesunu výuky některého zaměření mezi budovami?"
+      ]
+    }
+  ]
+}

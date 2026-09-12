@@ -1,0 +1,87 @@
+{
+  "task_id": "R-600011348",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Subjekt Střední průmyslová škola, Ústí nad Labem, Resslova 5, příspěvková organizace (REDIZO 600011348, IZO 000082201) je ve všech čtyřech snímcích beze změny, sídlo Resslova 210/5, 400 01 Klíše, Ústí nad Labem. Místa výuky IZO se mezi snímky 2025-12-31 a 2026-03-31 zúžila – zmizel záznam adresy Resslova jako samostatného řádku v seznamu míst výuky ve výpisu (adresa zůstává sídlem), řádky pro Stavbařů 2857/5 a Výstupní 3219/2 trvají. Obor 78-42-M/01 Technické lyceum NENÍ registrován v žádném ze čtyř snímků rejstříku, ani k 30. 6. 2026."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0210"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/01 Technické lyceum (4leté, denní); v roce 2025 obor v nabídce nebyl.",
+        "Web školy (spsul.cz/obory/) uvádí obor „78-42-M/01 Technické lyceum – zaměření Elektrotechnika“ mezi maturitními obory vyučovanými na pracovišti Resslova.",
+        "Přijímací stránka školy (spsul.cz/prijimaci-rizeni/) potvrzuje, že Technické lyceum bylo součástí přijímacího řízení do 1. ročníku pro školní rok 2026/2027 a že se v 1. kole naplnila kapacita oboru.",
+        "Rejstřík MŠMT obor 78-42-M/01 u IZO 000082201 neeviduje v žádném ze čtyř sledovaných snímků, tedy ani k 30. 6. 2026 – jde o výraznější odstup zápisu do rejstříku, než je u jiných úkolů obvyklé (tam byl obor zapsán nejpozději do prosince 2025)."
+      ],
+      "conclusion": "Technické lyceum 78-42-M/01 je nový obor, který škola skutečně otevřela pro školní rok 2026/27 – dokládá to jak přítomnost v aktuální nabídce oborů na webu školy, tak zpráva o naplnění kapacity v 1. kole přijímacího řízení. Zápis oboru do rejstříku MŠMT dosud (ani k 30. 6. 2026) neproběhl, což podle zadání samo o sobě neznamená, že obor nevznikl – jde o odstup evidence, který je zde delší než u jiných dosud zpracovaných úkolů.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit, že jde o formální nesrovnalost v evidenci (např. odlišný kód dříve vyučovaného oboru), ale web školy obor jednoznačně vede jako aktivní se zaměřením Elektrotechnika, což odpovídá profilu školy (elektrotechnika, strojírenství, IT)."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/01 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Resslova 210/5, 400 01 Klíše, Ústí nad Labem",
+          "role": "sídlo",
+          "izo": "600011348",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Resslova 210/5, 400 01 Klíše, Ústí nad Labem",
+          "role": "místo výuky",
+          "izo": "000082201",
+          "valid_period": "2025-03-31 až 2026-06-30 (uvedeno ve výpisu míst výuky IZO ve všech snímcích)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://spsul.cz/obory/",
+          "title": "Obory | Střední průmyslová škola Ústí nad Labem",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/01 Technické lyceum (zaměření Elektrotechnika) je veden jako aktuálně vyučovaný na pracovišti Resslova.",
+          "applicable_period": "aktuální stav webu školy, září 2026"
+        },
+        {
+          "url": "https://spsul.cz/prijimaci-rizeni/",
+          "title": "Přijímací řízení | Střední průmyslová škola Ústí nad Labem",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Technické lyceum bylo součástí přijímacího řízení pro 2026/2027, v 1. kole se naplnila kapacita oboru.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/01 není u IZO 000082201 evidován ani k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600011348",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/01 přítomna v roce 2026 a chybějící v roce 2025; ostatní obory pokračují.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Kdy bude obor formálně zapsán do rejstříku MŠMT – k 30. 6. 2026 zápis ještě neproběhl."
+      ]
+    }
+  ]
+}

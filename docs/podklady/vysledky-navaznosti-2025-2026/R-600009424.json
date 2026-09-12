@@ -1,0 +1,191 @@
+{
+  "task_id": "R-600009424",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Střední škola zemědělská a potravinářská, Klatovy, Národních mučedníků 141 (REDIZO 600009424) je ve všech čtyřech snímcích vedena beze změny se sídlem Národních mučedníků 141, 339 01 Klatovy IV. Jediné IZO „Střední škola“ (000077313) má ve všech snímcích tři shodná místa výuky (Národních mučedníků 141 a Šmeralova 197 v Klatovech, Špičák 17 v Železné Ruse) a shodný seznam 13 oborů. Oba sledované obory – 16-01-M/01 Ekologie a životní prostředí i 68-43-M/01 Veřejnosprávní činnost – jsou u tohoto IZO zapsány ve všech čtyřech snímcích (2025-03-31 až 2026-06-30) beze změny, tedy včetně období před rokem 2025 i po roce 2026. Jde o dvě samostatné, spolu nesouvisející otázky nabídky, nikoli o jednu organizační událost."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0049"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 16-01-M/01 Ekologie a životní prostředí, zaměření „Ochrana přírody a prostředí“ (4 roky, denní, IZO 000077313); v 1. kole JPZ 2026 tato nabídka chybí.",
+        "Oficiální dokument školy „Kritéria přijímacího řízení do 1. ročníků pro školní rok 2026 - 2027“ (poslední změna 15. 1. 2026) vyjmenovává studijní obory 1. kola: Agropodnikání, Ekonomika a podnikání, Veřejnosprávní činnost a Gastronomie – Ekologie a životní prostředí mezi nimi není.",
+        "Oficiální dokument školy „Druhé kolo přijímacího řízení pro školní rok 2026-2027“ (poslední změna 14. 5. 2026) vyjmenovává volná místa 2. kola pouze pro Agropodnikání, Ekonomiku a podnikání a Veřejnosprávní činnost – Ekologie a životní prostředí chybí i zde.",
+        "Škola tedy do oboru Ekologie a životní prostředí pro školní rok 2026/2027 nevyhlásila přijímací řízení ani v 1., ani ve 2. kole – nejde o mezeru v datech CERMAT, ale o doložené nepřijímání nových žáků.",
+        "Obor 16-01-M/01 Ekologie a životní prostředí přesto zůstává v rejstříku MŠMT zapsán u IZO 000077313 ve všech čtyřech snímcích (2025-03-31 až 2026-06-30) – registrace oboru trvá.",
+        "Popisná stránka oboru na webu školy (ŠVP „Ochrana přírody a prostředí“, účinný od 1. 9. 2019) zůstává na webu aktivní jako součást nabízených studijních oborů; jde o obecnou, dlouhodobě neaktualizovanou stránku (poslední změna 25. 8. 2018), která nerozlišuje jednotlivé přijímací ročníky."
+      ],
+      "conclusion": "Škola pro školní rok 2026/2027 do oboru 16-01-M/01 Ekologie a životní prostředí doloženě nevyhlásila přijímací řízení (chybí v seznamu oborů 1. i 2. kola z vlastních oficiálních dokumentů školy). Obor přesto zůstává zapsán v rejstříku MŠMT ve všech snímcích včetně 30. 6. 2026 a jeho ŠVP nebylo z nabídky školy odstraněno. Jde tedy o přerušení přijímacího řízení do tohoto oboru pro nábor 2026/2027, nikoli o doložený zánik oboru.",
+      "alternative_explanations": [
+        "Obor mohl být pro rok 2026/2027 vynechán jen z důvodu nízkého očekávaného zájmu; k trvalému zrušení mohlo, ale nemuselo dojít – k datu zpracování k tomu není žádný doklad.",
+        "Nelze vyloučit, že škola otevře nábor do oboru znovu v některém z dalších přijímacích řízení (např. 2027/2028); zdroje k tomu nic neuvádějí."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["16-01-M/01 Ekologie a životní prostředí, zaměření Ochrana přírody a prostředí (nabídka 2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Národních mučedníků 141, 339 01 Klatovy IV, Klatovy",
+          "role": "sídlo",
+          "izo": "600009424",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Národních mučedníků 141, 339 01 Klatovy IV, Klatovy; Šmeralova 197, 339 01 Klatovy IV, Klatovy; 17, 340 04 Špičák, Železná Ruda",
+          "role": "místo výuky",
+          "izo": "000077313",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "http://www.sszp.kt.cz/index.php?pages=21&page=21&idp=3093&lang=cz&sm=0&task=on",
+          "title": "Kritéria přijímacího řízení do 1. ročníků pro školní rok 2026 - 2027 – SSZP Klatovy",
+          "published_at": "2026-01-15",
+          "checked_at": "2026-09-12",
+          "supports": "Seznam studijních oborů a počtů přijímaných žáků pro 1. kolo přijímacího řízení 2026/2027 neobsahuje obor Ekologie a životní prostředí (uvedeny jsou jen Agropodnikání, Ekonomika a podnikání, Veřejnosprávní činnost, Gastronomie).",
+          "applicable_period": "1. kolo přijímacího řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "http://www.sszp.kt.cz/index.php?pages=21&page=21&idp=3143&lang=cz&sm=0&task=on",
+          "title": "Druhé kolo přijímacího řízení pro školní rok 2026-2027 – SSZP Klatovy",
+          "published_at": "2026-05-14",
+          "checked_at": "2026-09-12",
+          "supports": "Seznam studijních oborů s volnými místy pro 2. kolo přijímacího řízení 2026/2027 neobsahuje obor Ekologie a životní prostředí (jen Agropodnikání, Ekonomika a podnikání, Veřejnosprávní činnost).",
+          "applicable_period": "2. kolo přijímacího řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "http://www.sszp.kt.cz/index.php?pages=21&page=210&lang=cz&sm=3",
+          "title": "Studijní obor Ekologie a životní prostředí (16-01-M/01), ŠVP Ochrana přírody a prostředí – SSZP Klatovy",
+          "published_at": "2018-08-25",
+          "checked_at": "2026-09-12",
+          "supports": "Obecná popisná stránka oboru (ŠVP účinný od 1. 9. 2019) zůstává na webu školy jako součást nabídky studijních oborů; stránka není vázána na konkrétní přijímací ročník.",
+          "applicable_period": "dlouhodobě, bez upřesnění ročníku"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 16-01-M/01 Ekologie a životní prostředí zůstává u IZO 000077313 registrován k 30. 6. 2026 (a stejně tak ve zbylých třech snímcích).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (a shodně 2025-03-31, 2025-12-31, 2026-03-31)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600009424",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 16-01-M/01 Ekologie a životní prostředí přítomna v 1. kole JPZ 2025 a chybějící v 1. kole JPZ 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda a od kdy případně škola nábor do oboru Ekologie a životní prostředí znovu otevře, nebylo dohledáno."
+      ]
+    },
+    {
+      "issue_ids": ["Q0209"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 68-43-M/01 Veřejnosprávní činnost (4 roky, denní, IZO 000077313); v 1. kole JPZ 2025 tato nabídka chybí.",
+        "Obor 68-43-M/01 Veřejnosprávní činnost je v rejstříku MŠMT zapsán u IZO 000077313 už ve snímku k 31. 3. 2025 (tedy před vyhlášením přijímacího řízení pro školní rok 2025/2026) a zůstává zapsán ve všech dalších snímcích až do 30. 6. 2026 – registrace oboru existovala dříve, než chyběl v CERMAT nabídce 2025.",
+        "Popisná stránka oboru na webu školy uvádí ŠVP „Veřejnosprávní činnost“ s účinností od 1. 9. 2020 – vzdělávací program tedy existuje od roku 2020, dlouho před rokem 2025.",
+        "Oficiální dokument školy „Kritéria přijímacího řízení do 1. ročníků pro školní rok 2026 - 2027“ (poslední změna 15. 1. 2026) vyhlašuje pro obor 68-43-M/01 Veřejnosprávní činnost (ŠVP Veřejnosprávní činnost) plán přijmout 30 žáků, denní forma.",
+        "Oficiální dokument školy „Druhé kolo přijímacího řízení pro školní rok 2026-2027“ (poslední změna 14. 5. 2026) vyhlašuje pro týž obor dalších 10 volných míst ve 2. kole.",
+        "Přiložená data fronty potvrzují, že v 1. kole JPZ 2025 obor 68-43-M/01 mezi pěti nabídkami školy chybí, ačkoli byl už tehdy v rejstříku zapsán – přijímací řízení do něj tedy v roce 2025 nebylo vyhlášeno."
+      ],
+      "conclusion": "Obor 68-43-M/01 Veřejnosprávní činnost není nový obor: jeho ŠVP platí od září 2020 a obor byl v rejstříku MŠMT zapsán už před rokem 2025. Škola do něj jen v roce 2025 nevyhlásila přijímací řízení (chybí v CERMAT nabídce 2025), zatímco pro školní rok 2026/2027 nábor obnovila – oficiálně vyhlásila 30 míst v 1. kole a dalších 10 ve 2. kole. Nepřiřazená nabídka 2026 je tedy obnovením přijímacího řízení do již existujícího a nepřetržitě registrovaného oboru, nikoli založením nového oboru.",
+      "alternative_explanations": [
+        "Přesný důvod, proč škola v roce 2025 do oboru nepřijímala (nedostatek zájemců, personální kapacita apod.), nebyl na webu školy zdokumentován a nebyl předmětem rešerše."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["68-43-M/01 Veřejnosprávní činnost, ŠVP účinný od 1. 9. 2020, registrován v rejstříku už k 2025-03-31, bez nabídky v 1. kole JPZ 2025"],
+        "to": ["68-43-M/01 Veřejnosprávní činnost (nabídka 2026, 1. kolo 30 míst + 2. kolo 10 míst)"]
+      },
+      "addresses": [
+        {
+          "text": "Národních mučedníků 141, 339 01 Klatovy IV, Klatovy",
+          "role": "sídlo",
+          "izo": "600009424",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Národních mučedníků 141, 339 01 Klatovy IV, Klatovy; Šmeralova 197, 339 01 Klatovy IV, Klatovy; 17, 340 04 Špičák, Železná Ruda",
+          "role": "místo výuky",
+          "izo": "000077313",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 68-43-M/01 Veřejnosprávní činnost je u IZO 000077313 zapsán už ve snímku k 31. 3. 2025, tedy před obdobím, kdy v CERMAT datech 2025 chybí.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "http://www.sszp.kt.cz/index.php?pages=21&page=21&idp=3093&lang=cz&sm=0&task=on",
+          "title": "Kritéria přijímacího řízení do 1. ročníků pro školní rok 2026 - 2027 – SSZP Klatovy",
+          "published_at": "2026-01-15",
+          "checked_at": "2026-09-12",
+          "supports": "Obor 68-43-M/01 Veřejnosprávní činnost (ŠVP Veřejnosprávní činnost) je vyhlášen pro 1. kolo přijímacího řízení 2026/2027 s plánem přijmout 30 žáků v denní formě.",
+          "applicable_period": "1. kolo přijímacího řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "http://www.sszp.kt.cz/index.php?pages=21&page=21&idp=3143&lang=cz&sm=0&task=on",
+          "title": "Druhé kolo přijímacího řízení pro školní rok 2026-2027 – SSZP Klatovy",
+          "published_at": "2026-05-14",
+          "checked_at": "2026-09-12",
+          "supports": "Pro obor 68-43-M/01 Veřejnosprávní činnost je ve 2. kole přijímacího řízení 2026/2027 vypsáno dalších 10 volných míst.",
+          "applicable_period": "2. kolo přijímacího řízení pro školní rok 2026/2027"
+        },
+        {
+          "url": "http://www.sszp.kt.cz/index.php?pages=21&page=95&lang=cz&sm=3",
+          "title": "Studijní obor Veřejnosprávní činnost (68-43-M/01), ŠVP Veřejnosprávní činnost – SSZP Klatovy",
+          "published_at": "2018-08-25",
+          "checked_at": "2026-09-12",
+          "supports": "ŠVP oboru je účinný od 1. 9. 2020 – vzdělávací program existuje dlouho před rokem 2025, obor tedy není nově založený.",
+          "applicable_period": "dlouhodobě, bez upřesnění ročníku"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 68-43-M/01 Veřejnosprávní činnost zůstává u IZO 000077313 registrován i k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600009424",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 68-43-M/01 Veřejnosprávní činnost chybí v 1. kole JPZ 2025 (mezi pěti nabídkami školy) a je přítomna v 1. kole JPZ 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesný důvod, proč škola v roce 2025 do oboru Veřejnosprávní činnost nepřijímala, nebyl dohledán (a dle zadání nebyl předmětem rešerše)."
+      ]
+    }
+  ]
+}

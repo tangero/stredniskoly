@@ -1,0 +1,79 @@
+{
+  "task_id": "R-600014860",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje kontinuitu subjektu: Škola ekonomiky a cestovního ruchu, soukromá střední odborná škola s.r.o. (REDIZO 600014860), sídlo Rantířovská 4375/9, 586 01 Jihlava, IZO 108047954 (Střední škola, místo výuky tamtéž) figuruje beze změny ve všech čtyřech snímcích. Registrované obory jsou ve všech snímcích shodné: 75-31-M/01 Předškolní a mimoškolní pedagogika (4l denní, 5l dálková), 68-43-M/01 Veřejnosprávní činnost, 65-42-M/02 Cestovní ruch, 64-41-L/51 Podnikání (3l dálková) a 41-51-H/02 Včelař (3l distanční). Obor 78-42-M/02 Ekonomické lyceum, který CERMAT eviduje v nabídce 1. kola JPZ 2026, není zapsán v rejstříku ani v posledním snímku k 30. 6. 2026 – jde o odstup zápisu, obdobně jako u jiných nově otevíraných oborů v této frontě."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0336"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/02 Ekonomické lyceum se zaměřením „Ekonomické lyceum s rozšířenou výukou jazyků“; v 1. kole JPZ 2025 tato nabídka chybí.",
+        "Oficiální stránka školy (sekce Přijímací řízení) uvádí: „Ve školním roce 2026/2027 nabízíme tyto studijní obory“ a v seznamu je mj. „RVP: 78-42-M/02 Ekonomické lyceum, ŠVP: Ekonomické lyceum s rozšířenou výukou jazyků, denní studium, 15 uchazečů“.",
+        "Ostatní tři obory z nabídky 2025 (65-42-M/02 Cestovní ruch, 68-43-M/01 Veřejnosprávní činnost, 75-31-M/01 Předškolní a mimoškolní pedagogika) pokračují i v roce 2026 beze změny.",
+        "Rejstřík MŠMT obor 78-42-M/02 neeviduje u IZO 108047954 ani ve snímku k 30. 6. 2026 – zápis do rejstříku má odstup, což CERMAT nabídku ani vyjádření školy nevyvrací."
+      ],
+      "conclusion": "Ekonomické lyceum 78-42-M/02 je nově zaváděný obor školy pro školní rok 2026/2027, potvrzený i vlastní stránkou přijímacího řízení školy. Nemá předchůdce v nabídce z roku 2025.",
+      "alternative_explanations": [
+        "Formální zápis oboru do rejstříku MŠMT mohl proběhnout až po 30. 6. 2026; to otevření oboru od září 2026 neovlivňuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/02 Ekonomické lyceum s rozšířenou výukou jazyků (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Rantířovská 4375/9, 586 01 Jihlava",
+          "role": "sídlo",
+          "izo": "600014860",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Rantířovská 4375/9, 586 01 Jihlava",
+          "role": "místo výuky",
+          "izo": "108047954",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.secr.cz/prijimaci-rizeni",
+          "title": "Přijímací řízení na Škole ekonomiky a cestovního ruchu",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola pro školní rok 2026/2027 nabízí obor RVP 78-42-M/02 Ekonomické lyceum, ŠVP Ekonomické lyceum s rozšířenou výukou jazyků, denní studium, 15 uchazečů.",
+          "applicable_period": "přijímací řízení 2026/2027"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/02 Ekonomické lyceum není u IZO 108047954 evidován ani k 30. 6. 2026; ostatní čtyři obory registrovány beze změny.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600014860",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/02 Ekonomické lyceum přítomna pouze v roce 2026, chybí v roce 2025; ostatní tři obory pokračují v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum vzniku ŠVP a formálního schválení oboru zřizovatelem (soukromá s.r.o.) nebylo dohledáno."
+      ]
+    }
+  ]
+}

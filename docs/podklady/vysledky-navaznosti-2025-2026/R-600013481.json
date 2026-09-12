@@ -1,0 +1,83 @@
+{
+  "task_id": "R-600013481",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje plnou kontinuitu subjektu Gymnázium Brno, třída Kapitána Jaroše, příspěvková organizace (REDIZO 600013481, IZO 000559032) ve všech čtyřech snímcích, se dvěma místy výuky (třída Kpt. Jaroše 1829/14 a Příční 123/16, Brno). Registrované obory 79-41-K/41 Gymnázium (4leté) a 79-41-K/81 Gymnázium (8leté) jsou ve všech snímcích shodné; rejstřík neeviduje vnitřní zaměření (všeobecné/matematické) jako samostatné kódy, proto zúžení nabídky matematického zaměření ve čtyřletém studiu rejstříkem nelze ani potvrdit, ani vyvrátit."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0074"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola u čtyřletého gymnázia 79-41-K/41 nabízela dvě zaměření: „všeobecné“ a „matematické“; v 1. kole JPZ 2026 nabízí u čtyřletého gymnázia pouze zaměření „všeobecné“ – matematické zaměření ve čtyřletém studiu v nabídce chybí. U osmiletého gymnázia 79-41-K/81 škola nabízí obě zaměření (všeobecné i matematické) beze změny v obou letech.",
+        "Rejstřík MŠMT eviduje obor 79-41-K/41 Gymnázium (4leté) u IZO 000559032 beze změny ve všech čtyřech snímcích – registrace oboru jako takového trvá; matematické zaměření je vnitřní profilací třídy, ne samostatným kódem v rejstříku.",
+        "Oficiální stránka školy „Organizace a kritéria přijímacího řízení 2026“ (jaroska.cz) potvrzuje, že pro školní rok 2026/27 škola u čtyřletého studia (79-41-K/41) otevírá jen třídu se všeobecným zaměřením, zatímco matematické zaměření zůstává nabízeno pouze v rámci osmiletého studia (79-41-K/81)."
+      ],
+      "conclusion": "Matematické zaměření ve čtyřletém gymnáziu (79-41-K/41) škola pro školní rok 2026/27 neotevírá; nabídka matematického zaměření zůstává zachována jen v osmiletém studiu. Obor 79-41-K/41 jako celek dál existuje a zůstává registrován – jde o zúžení vnitřní profilace tříd v rámci čtyřletého studia, nikoli o zánik oboru.",
+      "alternative_explanations": [
+        "Škola mohla matematickou třídu ve čtyřletém studiu pro rok 2026/27 jen dočasně neotevřít (např. kvůli nedostatku uchazečů); ze zdrojů nelze vyloučit obnovení v dalších letech."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["79-41-K/41 matematické (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "třída Kpt. Jaroše 1829/14, 602 00 Černá Pole, Brno",
+          "role": "sídlo",
+          "izo": "600013481",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "třída Kpt. Jaroše 1829/14, 602 00 Černá Pole, Brno",
+          "role": "místo výuky",
+          "izo": "000559032",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Příční 123/16, 602 00 Zábrdovice, Brno",
+          "role": "místo výuky",
+          "izo": "000559032",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jaroska.cz/organizace-a-kriteria-prijimaciho-rizeni-2026/",
+          "title": "Organizace a kritéria přijímacího řízení 2026 – Gymnázium Brno, třída Kapitána Jaroše",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro rok 2026 se u čtyřletého studia otevírá jen všeobecné zaměření; matematické zaměření je nabízeno jen u osmiletého studia.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-41-K/41 Gymnázium (4leté) zůstává u IZO 000559032 registrován beze změny.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013481",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 79-41-K/41 matematické přítomna jen v roce 2025, v roce 2026 chybí; všeobecné zaměření pokračuje v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

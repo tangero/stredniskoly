@@ -1,0 +1,140 @@
+{
+  "task_id": "R-600017460",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT potvrzuje plnou kontinuitu subjektu: Obchodní akademie, Ostrava-Poruba, příspěvková organizace (REDIZO 600017460) figuruje beze změny ve všech čtyřech snímcích. IZO 000602094 (Střední škola) má ve všech snímcích stejná dvě místa výuky (Polská 1542/8 a Polská 1543/6, Poruba). Obory 18-20-M/01 Informační technologie, 63-41-M/02 Obchodní akademie a 78-42-M/02 Ekonomické lyceum jsou registrovány beze změny ve všech snímcích. Rejstřík neeviduje jednotlivá zaměření uvnitř kódu 63-41-M/02 – rozlišení bylo nutné ověřit u školy."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0119", "Q0240"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 63-41-M/02 Obchodní akademie se zaznamenaným zaměřením „s rozšířenou výukou marketingu a digitálních technologií“; v 1. kole JPZ 2026 je u téhož oboru zaznamenáno zaměření „marketing a digitální technologie“.",
+        "Stránka školy k přijímacímu řízení (oa-poruba.cz/prijimaci-rizeni/) uvádí mezi aktuálně nabízenými zaměřeními oboru Obchodní akademie právě „zaměření na marketing a digitální technologie“ vedle zaměření na účetnictví a daně.",
+        "Obsahově jde o stejné tematické zaměření (marketing a digitální technologie); mezi lety se liší jen formulace textu (vypuštění „s rozšířenou výukou“)."
+      ],
+      "conclusion": "Jde o totéž zaměření oboru Obchodní akademie 63-41-M/02 na marketing a digitální technologie v obou letech; mezi CERMAT nabídkami 2025 a 2026 se změnila jen formulace textu zaměření, nikoli obsah nabídky.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit dílčí úpravu obsahu ŠVP mezi lety; k tomu nebyl nalezen žádný doklad."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["63-41-M/02 Obchodní akademie – s rozšířenou výukou marketingu a digitálních technologií, 2025"],
+        "to": ["63-41-M/02 Obchodní akademie – marketing a digitální technologie, 2026"]
+      },
+      "addresses": [
+        {
+          "text": "Polská 1543/6, 708 00 Poruba, Ostrava",
+          "role": "sídlo",
+          "izo": "600017460",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Polská 1542/8, 708 00 Poruba, Ostrava; Polská 1543/6, 708 00 Poruba, Ostrava",
+          "role": "místo výuky",
+          "izo": "000602094",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.oa-poruba.cz/prijimaci-rizeni/",
+          "title": "Přijímací řízení - Obchodní akademie Ostrava-Poruba",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola nabízí obor Obchodní akademie se zaměřením na marketing a digitální technologie jako pokračující nabídku vedle zaměření na účetnictví a daně.",
+          "applicable_period": "aktuální nabídka oborů, bez konkrétního data"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 63-41-M/02 registrován u IZO 000602094 beze změny ve všech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017460",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření u 63-41-M/02 (marketing) se mezi roky 2025 a 2026 liší jen formulací, počet nabízených programů zůstal stejný (3 v obou letech).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0120", "Q0241"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 63-41-M/02 Obchodní akademie se zaznamenaným zaměřením „se zaměřením na účetnictví a daně“; v 1. kole JPZ 2026 je u téhož oboru zaznamenáno zaměření „účetnictví a daně“.",
+        "Stránka školy k přijímacímu řízení (oa-poruba.cz/prijimaci-rizeni/) uvádí mezi aktuálně nabízenými zaměřeními oboru Obchodní akademie přesně formulaci „zaměření na účetnictví a daně“.",
+        "Obsahově jde o stejné tematické zaměření (účetnictví a daně); mezi lety se liší jen formulace textu (vypuštění „se zaměřením na“)."
+      ],
+      "conclusion": "Jde o totéž zaměření oboru Obchodní akademie 63-41-M/02 na účetnictví a daně v obou letech; mezi CERMAT nabídkami 2025 a 2026 se změnila jen formulace textu zaměření, nikoli obsah nabídky.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit dílčí úpravu obsahu ŠVP mezi lety; k tomu nebyl nalezen žádný doklad."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["63-41-M/02 Obchodní akademie – se zaměřením na účetnictví a daně, 2025"],
+        "to": ["63-41-M/02 Obchodní akademie – účetnictví a daně, 2026"]
+      },
+      "addresses": [
+        {
+          "text": "Polská 1543/6, 708 00 Poruba, Ostrava",
+          "role": "sídlo",
+          "izo": "600017460",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Polská 1542/8, 708 00 Poruba, Ostrava; Polská 1543/6, 708 00 Poruba, Ostrava",
+          "role": "místo výuky",
+          "izo": "000602094",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.oa-poruba.cz/prijimaci-rizeni/",
+          "title": "Přijímací řízení - Obchodní akademie Ostrava-Poruba",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola nabízí obor Obchodní akademie se zaměřením na účetnictví a daně jako pokračující nabídku vedle zaměření na marketing a digitální technologie.",
+          "applicable_period": "aktuální nabídka oborů, bez konkrétního data"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 63-41-M/02 registrován u IZO 000602094 beze změny ve všech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026 (shodně i dřívější snímky)"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600017460",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření u 63-41-M/02 (účetnictví) se mezi roky 2025 a 2026 liší jen formulací, počet nabízených programů zůstal stejný (3 v obou letech).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "R-600013766",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Střední škola Brno, Charbulova, příspěvková organizace (REDIZO 600013766) je beze změny názvu a sídla (Charbulova 1072/106, Brno) ve všech čtyřech snímcích. IZO 060552255 je rozsáhlé (desítky oborů, sedm míst výuky); obor 66-41-L/01 Obchodník i obor 66-51-H/01 Prodavač (denní i dálková forma) jsou registrovány ve všech čtyřech snímcích beze změny, stejně jako sedm míst výuky."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0080"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 66-41-L/01 Obchodník se zaměřením „66-51-H/01 Prodavač“; v 1. kole JPZ 2026 tato nabídka mezi osmi obory chybí (66-41-L/01 se v nabídce 2026 vůbec nevyskytuje).",
+        "Aktuální web školy (charbulova.cz) uvádí mezi sedmi obory s maturitou Cestovní ruch, Ekonomické lyceum, Ekonomiku a podnikání, Fotografa, Gastronomii, Hotelnictví a Kosmetické služby – Obchodník mezi nimi není.",
+        "Web školy zvlášť eviduje obor s výučním listem Prodavač (66-51-H/01) jako samostatnou nabídku; text zaměření „66-51-H/01 Prodavač“ u nabídky 2025 tedy zřejmě odkazuje na existující samostatný obor, nejde o důkaz sloučení dvou oborů.",
+        "Obor 66-41-L/01 Obchodník zůstává registrován v rejstříku MŠMT u IZO 060552255 ve všech čtyřech snímcích včetně 30. 6. 2026 – registrace trvá i bez aktuální nabídky k přijetí."
+      ],
+      "conclusion": "Obor 66-41-L/01 Obchodník škola pro školní rok 2026/2027 nenabízí k přijetí (chybí v CERMAT nabídce i na aktuálním webu mezi obory s maturitou), přestože zůstává registrován v rejstříku MŠMT. Jde o přerušení přijímacího řízení do oboru, nikoli o doložené zrušení.",
+      "alternative_explanations": [
+        "Obor může být v budoucnu znovu nabídnut, protože registrace trvá.",
+        "Text zaměření „66-51-H/01 Prodavač“ u nabídky 2025 nemusí znamenat obsahovou vazbu na obor Obchodník – příčina textu zaměření nebyla zkoumána."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["66-41-L/01 (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Charbulova 1072/106, 618 00 Černovice, Brno",
+          "role": "sídlo",
+          "izo": "600013766",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013766",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 66-41-L/01 Obchodník přítomna v roce 2025 a chybí v seznamu osmi oborů roku 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 66-41-L/01 Obchodník zůstává registrován u IZO 060552255.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://charbulova.cz/pro-uchazece-obory/",
+          "title": "Pro uchazeče – obory | Charbulova",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuální seznam oborů s maturitou (Cestovní ruch, Ekonomické lyceum, Ekonomika a podnikání, Fotograf, Gastronomie, Hotelnictví, Kosmetické služby) obor Obchodník neobsahuje.",
+          "applicable_period": "aktuální nabídka školy (2026)"
+        },
+        {
+          "url": "https://www.charbulova.cz/obory-vzdelani-s-vyucnim-listem",
+          "title": "Obory vzdělání s výučním listem | Charbulova",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor Prodavač je veden jako samostatný obor s výučním listem, nezávisle na Obchodníkovi.",
+          "applicable_period": "aktuální nabídka školy (2026)"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

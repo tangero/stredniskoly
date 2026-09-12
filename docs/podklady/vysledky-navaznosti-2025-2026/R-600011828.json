@@ -1,0 +1,93 @@
+{
+  "task_id": "R-600011828",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Subjekt REDIZO 600011828 (Střední průmyslová škola, Střední odborná škola a Střední odborné učiliště, Hradec Králové, sídlo Hradební 1029/2) je ve všech čtyřech snímcích beze změny. IZO 015062848 „Střední škola\" má ve všech snímcích tři shodná místa výuky (Hradecká 647/1, Hradební 1029/2, Dlouhá 190, vše Hradec Králové). Obor 23-43-L/51 Provozní technika je zapsán ve dvou formách – 2leté denní a 3leté dálková – ve všech čtyřech snímcích beze změny, stejně jako zbylých cca 20 dalších oborů."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0064"],
+      "status": "potvrzeno",
+      "observations": [
+        "CERMAT 1. kolo JPZ 2025 obsahovalo za REDIZO 600011828 devět nabídek, včetně 23-43-L/51 Provozní technika (2leté denní nástavbové); v roce 2026 zůstává osm z devíti oborů beze změny, chybí pouze tato denní dvouletá Provozní technika.",
+        "Škola na vlastním webu (hradebni.cz, sekce Nástavbové studium) k datu ověření výslovně uvádí, že obor „Provozní technika (23-43-L/51) v denní dvouleté formě pro školní rok 2026/2027 nebude otevřen\", zatímco příbuzný nástavbový obor Provozní elektrotechnika (26-41-L/52) denní pokračuje.",
+        "Rejstřík MŠMT eviduje obor 23-43-L/51 ve dvou variantách (2leté denní i 3leté dálková) ve všech čtyřech snímcích beze změny – registrace obou forem trvá i po 30. 6. 2026, chybějící nabídka tedy není zánikem oboru."
+      ],
+      "conclusion": "Denní dvouletá forma nástavbového oboru Provozní technika (23-43-L/51) není pro školní rok 2026/2027 podle vlastního oznámení školy otevírána. Jde o jednorázové neotevření ročníku, nikoli o zrušení oboru: škola obor nadále eviduje v rejstříku a souběžně nabízí jeho dálkovou variantu.",
+      "alternative_explanations": [
+        "Nedostatečný počet přihlášek mohl být bezprostřední příčinou; zdroj konkrétní důvod neuvádí.",
+        "Obor může být znovu otevřen v některém z příštích školních let."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["23-43-L/51 (2leté denní, 2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Hradební 1029/2, 500 03 Hradec Králové",
+          "role": "sídlo",
+          "izo": "600011828",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Hradební 1029/2, 500 03 Hradec Králové",
+          "role": "místo výuky",
+          "izo": "015062848",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Hradecká 647/1, 500 03 Hradec Králové",
+          "role": "místo výuky",
+          "izo": "015062848",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Dlouhá 190, 500 03 Hradec Králové",
+          "role": "místo výuky",
+          "izo": "015062848",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.hradebni.cz/nastavbove-studium",
+          "title": "Nástavbové studium – SPŠ, SOŠ a SOU Hradec Králové",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola výslovně uvádí, že obor Provozní technika 23-43-L/51 v denní dvouleté formě pro školní rok 2026/2027 nebude otevřen.",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 23-43-L/51 zůstává u IZO 015062848 registrován v obou formách (2leté denní i 3leté dálková).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600011828",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 23-43-L/51 (2leté denní) přítomna v roce 2025 a chybějící v roce 2026; ostatních 8 oborů pokračuje beze změny.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda a kdy škola plánuje denní Provozní techniku znovu otevřít."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "task_id": "R-600009467",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu Střední škola informatiky a finančních služeb, Plzeň, Klatovská 200 G (REDIZO 600009467) i IZO 000574406 „Střední škola“ ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), sídlo i místa výuky beze změny (Klatovská třída 2778/200 a Klatovská třída 2777/200, 301 00 Jižní Předměstí, Plzeň). Obor 18-20-M/01 Informační technologie je u tohoto IZO zapsán nepřetržitě ve všech snímcích; rejstřík ale eviduje jen kód oboru, ne jednotlivá zaměření/ŠVP uvnitř něj, takže samotný zápis nerozlišuje mezi zaměřením „Svět ekonomiky“/„Digitální svět“ (2025) a „IT ekonomické a zpracování dat“/„IT technické“ (2026)."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0051", "Q0236"],
+      "status": "potvrzeno",
+      "observations": [
+        "CERMAT 1. kolo JPZ 2025 (ID_SOF 82340993-1b72-49b7-a149-09784649a789): obor 18-20-M/01 Informační technologie, ŠVP „Informační technologie se specializací na ekonomické a podnikatelské kompetence a zpracování a vizualizaci (Svět ekonomiky)“.",
+        "CERMAT 1. kolo JPZ 2026 (ID_SOF 47a3f941-90b6-4987-a9c0-b21e7ddbb92e): stejný obor 18-20-M/01, ŠVP „Informační technologie se specializací na ekonomické a podnikatelské kompetence a zpracování a vizualizaci dat (IT ekonomické a zpracování dat)“.",
+        "Oficiální dokument školy „Kritéria pro přijetí“ pro školní rok 2025/2026 (podepsáno ředitelem 23. 1. 2025, uloženo na URL s cestou .../2025/01/25_kriteria_it_A.pdf) uvádí ŠVP: „Informační technologie se specializací na ekonomické a podnikatelské kompetence a zpracování a vizualizaci dat (Svět ekonomiky)“ – prakticky doslovná shoda s CERMAT nabídkou 2025 (Q0051), plánováno 30 přijatých.",
+        "Aktuální (září 2026) web školy má pro tento program trvale stejnou URL adresu https://infis.cz/uchazeci/obory/informacni-technologie-svet-ekonomiky/ (slug beze změny od roku 2025), ale zobrazovaný název zaměření je nyní „IT ekonomické a zpracování dat“ – shoduje se s CERMAT nabídkou 2026 (Q0236).",
+        "Popisný text zaměření (ekonomické a podnikatelské kompetence, zpracování a vizualizace dat) zůstává mezi lety 2025 a 2026 obsahově totožný; mění se pouze krátký marketingový název v závorce ze „Svět ekonomiky“ na „IT ekonomické a zpracování dat“.",
+        "Rejstřík MŠMT eviduje obor 18-20-M/01 u IZO 000574406 nepřetržitě ve všech čtyřech snímcích (2025-03-31 až 2026-06-30), ale nerozlišuje jednotlivá zaměření uvnitř oboru."
+      ],
+      "conclusion": "Q0051 (2025) a Q0236 (2026) představují totéž zaměření oboru 18-20-M/01 Informační technologie v rámci téže školy a téhož IZO – jde o přejmenování marketingového názvu zaměření ze „Svět ekonomiky“ na „IT ekonomické a zpracování dat“, nikoli o zánik a vznik nového oboru. Doloženo shodou popisné části ŠVP v oficiálním dokumentu školy z ledna 2025 (užívajícím název „Svět ekonomiky“) s CERMAT nabídkou 2025 a shodou aktuálního webu školy (stejná URL, název „IT ekonomické a zpracování dat“) s CERMAT nabídkou 2026.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit dílčí úpravu obsahu/ŠVP spolu s přejmenováním (např. změnu poměru předmětů) – dostupné zdroje ale popisují zaměření shodně jako ekonomicko-datovou specializaci v obou letech, bez zmínky o věcné změně obsahu.",
+        "Aktuální kritéria pro přijetí publikovaná na stránce s novým názvem se nepodařilo dohledat (odkaz na kritéria k datu kontroly stále směřoval na dokument z ledna 2025); nelze tedy porovnat detailní kritéria přijímacího řízení pro ročník 2026, jen název zaměření a obecný popis."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["18-20-M/01 Informační technologie – Svět ekonomiky (2025)"],
+        "to": ["18-20-M/01 Informační technologie – IT ekonomické a zpracování dat (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Klatovská třída 2778/200, 301 00 Jižní Předměstí, Plzeň",
+          "role": "sídlo",
+          "izo": "600009467",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Klatovská třída 2778/200, 301 00 Jižní Předměstí, Plzeň; Klatovská třída 2777/200, 301 00 Jižní Předměstí, Plzeň",
+          "role": "místo výuky",
+          "izo": "000574406",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://infis.cz/website/wp-content/uploads/2025/01/25_kriteria_it_A.pdf",
+          "title": "Přijímací řízení pro uchazeče o vzdělávání pro školní rok 2025/2026 – 18-20-M/01 Informační technologie, ŠVP „...zpracování a vizualizaci dat (Svět ekonomiky)“",
+          "published_at": "2025-01-23",
+          "checked_at": "2026-09-12",
+          "supports": "Oficiální dokument školy potvrzuje přesný název ŠVP/zaměření „Svět ekonomiky“ shodný s CERMAT nabídkou 2025 (Q0051); plánováno 30 přijatých.",
+          "applicable_period": "přijímací řízení pro školní rok 2025/2026"
+        },
+        {
+          "url": "https://infis.cz/uchazeci/obory/informacni-technologie-svet-ekonomiky/",
+          "title": "INFIS | Informační technologie – IT ekonomické a zpracování dat (URL slug beze změny: informacni-technologie-svet-ekonomiky)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuální stránka školy pro obor 18-20-M/01 na téže URL jako v roce 2025 nyní uvádí název „IT ekonomické a zpracování dat“, shodný s CERMAT nabídkou 2026 (Q0236); popis specializace (ekonomika, zpracování a vizualizace dat) odpovídá dřívějšímu zaměření.",
+          "applicable_period": "stav webu školy k září 2026 (aktuální nabídka, patrně pro přijímací řízení 2026/2027)"
+        },
+        {
+          "url": "https://infis.cz/uchazeci/obory/",
+          "title": "INFIS | Obory vzdělání",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přehled aktuálně nabízených oborů školy potvrzuje, že Informační technologie se nabízí ve dvou zaměřeních se stejným popisem specializací jako v roce 2025.",
+          "applicable_period": "stav webu školy k září 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 18-20-M/01 zůstává u IZO 000574406 registrován nepřetržitě; subjekt i IZO jsou beze změn.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600009467",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přesné znění nabídek 2025 (Q0051) a 2026 (Q0236) pro obor 18-20-M/01, včetně ID_SOF a plánovaného počtu tříd/uchazečů.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Internet Archive (web.archive.org) byl v době kontroly (12. 9. 2026) nedostupný („Temporarily Offline“), takže se nepodařilo přímo nahlédnout do archivované verze webu z roku 2025 – závěr se opírá o dochovaný PDF dokument kritérií z ledna 2025 na webu školy, nikoli o Wayback Machine.",
+        "Nebylo ověřeno, zda se spolu s přejmenováním změnil i obsah ŠVP (hodinové dotace, předměty) – dostupné zdroje potvrzují jen shodu krátkého popisu zaměření."
+      ]
+    },
+    {
+      "issue_ids": ["Q0052", "Q0237"],
+      "status": "potvrzeno",
+      "observations": [
+        "CERMAT 1. kolo JPZ 2025 (ID_SOF 9a464390-c409-4758-9b2e-3eb9e57f01c7): obor 18-20-M/01 Informační technologie, ŠVP „Informační technologie se specializací na datovou analytiku nebo grafiku na PC nebo programování a vývoj SW nebo na počítačové sítě a kybernetickou bezpečnost (Digitální svět)“.",
+        "CERMAT 1. kolo JPZ 2026 (ID_SOF b4bfdeb3-d063-4777-97a8-8d2010bffd1a): stejný obor 18-20-M/01, identický popis specializace, jen „(IT technické)“ místo „(Digitální svět)“.",
+        "Oficiální dokument školy „Kritéria pro přijetí“ pro školní rok 2025/2026 (podepsáno ředitelem 23. 1. 2025, uloženo na URL s cestou .../2025/01/25_kriteria_it_EF.pdf) uvádí ŠVP: „Informační technologie se specializací na datovou analytiku nebo grafiku na PC nebo programování a vývoj SW nebo na počítačové sítě a kybernetickou bezpečnost (Digitální svět)“ – doslovná shoda s CERMAT nabídkou 2025 (Q0052), plánováno 60 přijatých.",
+        "Aktuální (září 2026) web školy má pro tento program trvale stejnou URL adresu https://infis.cz/uchazeci/obory/informacni-technologie-digi/ (slug „digi“ beze změny od roku 2025), ale zobrazovaný název zaměření je nyní „IT technické“ – shoduje se s CERMAT nabídkou 2026 (Q0237).",
+        "Aktuální stránka popisuje stejné čtyři technické specializace (datová analytika, grafika na PC, programování a vývoj SW, počítačové sítě a kybernetická bezpečnost) jako CERMAT nabídka 2025 i 2026 – obsah zaměření je beze změny, mění se jen krátký název v závorce.",
+        "Rejstřík MŠMT eviduje obor 18-20-M/01 u IZO 000574406 nepřetržitě ve všech čtyřech snímcích (2025-03-31 až 2026-06-30), ale nerozlišuje jednotlivá zaměření uvnitř oboru."
+      ],
+      "conclusion": "Q0052 (2025) a Q0237 (2026) představují totéž zaměření oboru 18-20-M/01 Informační technologie v rámci téže školy a téhož IZO – jde o přejmenování marketingového názvu zaměření z „Digitální svět“ na „IT technické“, nikoli o zánik a vznik nového oboru. Doloženo doslovnou shodou popisné části ŠVP v oficiálním dokumentu školy z ledna 2025 (název „Digitální svět“) s CERMAT nabídkou 2025 a shodou aktuálního webu školy (stejná URL, název „IT technické“, stejný popis čtyř specializací) s CERMAT nabídkou 2026.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit dílčí úpravu obsahu ŠVP nebo přerozdělení specializací uvnitř zaměření spolu s přejmenováním – dostupné zdroje ale popisují zaměření identickým výčtem čtyř specializací v obou letech.",
+        "Aktuální kritéria pro přijetí publikovaná na stránce s novým názvem se nepodařilo dohledat (odkaz na kritéria k datu kontroly stále směřoval na dokument z ledna 2025); nelze tedy porovnat detailní kritéria přijímacího řízení pro ročník 2026, jen název zaměření a obecný popis."
+      ],
+      "relationship": {
+        "type": "rename_only",
+        "from": ["18-20-M/01 Informační technologie – Digitální svět (2025)"],
+        "to": ["18-20-M/01 Informační technologie – IT technické (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Klatovská třída 2778/200, 301 00 Jižní Předměstí, Plzeň",
+          "role": "sídlo",
+          "izo": "600009467",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Klatovská třída 2778/200, 301 00 Jižní Předměstí, Plzeň; Klatovská třída 2777/200, 301 00 Jižní Předměstí, Plzeň",
+          "role": "místo výuky",
+          "izo": "000574406",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://infis.cz/website/wp-content/uploads/2025/01/25_kriteria_it_EF.pdf",
+          "title": "Přijímací řízení pro uchazeče o vzdělávání pro školní rok 2025/2026 – 18-20-M/01 Informační technologie, ŠVP „...počítačové sítě a kybernetickou bezpečnost (Digitální svět)“",
+          "published_at": "2025-01-23",
+          "checked_at": "2026-09-12",
+          "supports": "Oficiální dokument školy potvrzuje přesný název ŠVP/zaměření „Digitální svět“ shodný s CERMAT nabídkou 2025 (Q0052); plánováno 60 přijatých.",
+          "applicable_period": "přijímací řízení pro školní rok 2025/2026"
+        },
+        {
+          "url": "https://infis.cz/uchazeci/obory/informacni-technologie-digi/",
+          "title": "INFIS | Informační technologie – IT technické (URL slug beze změny: informacni-technologie-digi)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktuální stránka školy pro obor 18-20-M/01 na téže URL jako v roce 2025 nyní uvádí název „IT technické“, shodný s CERMAT nabídkou 2026 (Q0237); popis čtyř specializací (datová analytika, grafika na PC, programování a vývoj SW, počítačové sítě a kybernetická bezpečnost) je shodný s rokem 2025.",
+          "applicable_period": "stav webu školy k září 2026 (aktuální nabídka, patrně pro přijímací řízení 2026/2027)"
+        },
+        {
+          "url": "https://infis.cz/uchazeci/obory/",
+          "title": "INFIS | Obory vzdělání",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přehled aktuálně nabízených oborů školy potvrzuje, že Informační technologie se nabízí ve dvou zaměřeních se stejným popisem specializací jako v roce 2025.",
+          "applicable_period": "stav webu školy k září 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 18-20-M/01 zůstává u IZO 000574406 registrován nepřetržitě; subjekt i IZO jsou beze změn.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600009467",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přesné znění nabídek 2025 (Q0052) a 2026 (Q0237) pro obor 18-20-M/01, včetně ID_SOF a plánovaného počtu tříd/uchazečů.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Internet Archive (web.archive.org) byl v době kontroly (12. 9. 2026) nedostupný („Temporarily Offline“), takže se nepodařilo přímo nahlédnout do archivované verze webu z roku 2025 – závěr se opírá o dochovaný PDF dokument kritérií z ledna 2025 na webu školy, nikoli o Wayback Machine.",
+        "Nebylo ověřeno, zda se spolu s přejmenováním změnil i obsah ŠVP (hodinové dotace, předměty) – dostupné zdroje potvrzují jen shodu popisu čtyř specializací."
+      ]
+    }
+  ]
+}

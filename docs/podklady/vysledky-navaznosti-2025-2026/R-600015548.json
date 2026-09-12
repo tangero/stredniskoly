@@ -1,0 +1,76 @@
+{
+  "task_id": "R-600015548",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje kontinuitu subjektu: Střední průmyslová škola a Obchodní akademie Uherský Brod (REDIZO 600015548), sídlo Nivnická 1781, 688 01 Uherský Brod, IZO 014450437 (Střední škola) figuruje beze změny ve všech čtyřech snímcích, se dvěma místy výuky (Nivnická 1781; Předbranská 415, obojí Uherský Brod). Rejstřík eviduje rozsáhlé portfolio oborů (denní i dobíhající), ale obor 18-20-M/01 Informační technologie mezi nimi není zapsán ani ve snímku k 30. 6. 2026."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0261"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 18-20-M/01 Informační technologie; v 1. kole JPZ 2025 tato nabídka chybí, ostatní pět oborů (23-41-M/01 Strojírenství, 26-41-L/01 Mechanik elektrotechnik, 64-41-L/51 Podnikání, 68-43-M/01 Veřejnosprávní činnost, 75-41-M/01 Sociální činnost) pokračuje beze změny.",
+        "Oficiální stránka oboru na webu školy (spsoa-ub.cz) uvádí doslova: „NOVINKA! Začínáme ve školním roce 2026/2027“, s popisem zaměření na programování, práci s daty, kybernetickou bezpečnost a základy umělé inteligence.",
+        "Rejstřík MŠMT obor 18-20-M/01 Informační technologie u IZO 014450437 neeviduje v žádném ze čtyř snímků – zápis do rejstříku má odstup, což vyjádření školy nevyvrací."
+      ],
+      "conclusion": "Informační technologie 18-20-M/01 je nově zaváděný obor školy pro školní rok 2026/2027, potvrzený vlastní stránkou školy. Nemá předchůdce v nabídce z roku 2025.",
+      "alternative_explanations": [
+        "Formální zápis oboru do rejstříku MŠMT mohl proběhnout až po 30. 6. 2026; to otevření oboru od září 2026 neovlivňuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["18-20-M/01 Informační technologie (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Nivnická 1781, 688 01 Uherský Brod",
+          "role": "sídlo",
+          "izo": "600015548",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Nivnická 1781; Předbranská 415, obojí 688 01 Uherský Brod",
+          "role": "nezjištěná",
+          "izo": "014450437",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.spsoa-ub.cz/uchazeci/technicke-obory/elektro-obory/informacni-technologie/",
+          "title": "Informační technologie - SPŠ OA Uherský Brod",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Doslovný text: „NOVINKA! Začínáme ve školním roce 2026/2027“ u oboru Informační technologie.",
+          "applicable_period": "od školního roku 2026/2027"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 18-20-M/01 Informační technologie není u IZO 014450437 evidován v žádném ze čtyř snímků.",
+          "applicable_period": "stav rejstříku 2025-03-31 až 2026-06-30"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600015548",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 18-20-M/01 Informační technologie přítomna jen v roce 2026, chybí v roce 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

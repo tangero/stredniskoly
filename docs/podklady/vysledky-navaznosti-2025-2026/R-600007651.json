@@ -1,0 +1,140 @@
+{
+  "task_id": "R-600007651",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu i IZO: Střední škola designu Lysá nad Labem, příspěvková organizace (REDIZO 600007651, sídlo Stržiště 475, 289 22 Lysá nad Labem) a IZO 150068654 „Střední škola\" figurují beze změny ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026), se stejnými místy výuky (Stržiště 475; Československé armády 549/3; U Dráhy 1280/2). Mezi snímky 2025-03-31 a 2025-12-31 se u VŠECH čtyř registrovaných oborů IZO 150068654 (82-41-M/05 Grafický design, 82-41-M/07 Modelářství a návrhářství oděvů, 82-41-M/14 Textilní výtvarnictví, 63-41-M/01 Ekonomika a podnikání) současně změnila hodnota formy z „český\" na „dvojjazyčný/jiný\"; tento stav trvá i ve snímcích 2026-03-31 a 2026-06-30. Kód oboru, zaměření, délka studia (4 roky) a forma studia (denní) zůstávají u 63-41-M/01 ve všech snímcích shodné."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q1039"],
+      "status": "pravděpodobné",
+      "observations": [
+        "CERMAT nabídka 1. kola JPZ 2025: 63-41-M/01 Ekonomika a podnikání, zaměření „Produkční činnost v umění a reklamě\", 4leté, denní, forma „Český\" (ID_SOF 713856b3-6d2f-4c13-8a88-43df30eeda5a).",
+        "CERMAT nabídka 1. kola JPZ 2026: tentýž kód oboru, totéž zaměření, tatáž délka a forma denní, forma „Český s výukou vybraných předmětů v cizím jazyce\" (ID_SOF 0a224629-b357-4e9b-bd76-b156a5d44146). Jde o stejný obor a zaměření, změnila se jen deklarovaná forma/jazyk výuky.",
+        "Rejstřík MŠMT zaznamenal přesně tutéž změnu: mezi snímky 2025-03-31 (forma „český\") a 2025-12-31 (forma „dvojjazyčný/jiný\") u oboru 63-41-M/01 pod IZO 150068654. Změna trvá i ve snímcích 2026-03-31 a 2026-06-30.",
+        "Stejná změna formy (český → dvojjazyčný/jiný) proběhla ve stejném okamžiku i u zbylých tří oborů školy (82-41-M/05 Grafický design, 82-41-M/07 Modelářství a návrhářství oděvů, 82-41-M/14 Textilní výtvarnictví) – jde tedy o plošnou, současnou změnu evidované formy vzdělávání pro celou školu, ne o krok specifický jen pro Ekonomiku a podnikání.",
+        "Web školy (ssdlysa.cz, ověřená doména pro REDIZO 600007651) na hlavní stránce, na stránce oboru Produkční činnost v umění a reklamě (ssdlysa.cz/obor-produkcni-cinnost), na stránce přijímacího řízení (ssdlysa.cz/prijimaci-rizeni) ani v aktualitě o vyhlášení 1. kola přijímacího řízení pro 2026/2027 (ssdlysa.cz/aktuality/vyhlaseni-1kola-vyberoveho-rizeni) neobsahuje žádnou zmínku o zavedení výuky vybraných předmětů v cizím jazyce, o dvojjazyčném režimu ani o jakékoli změně jazyka výuky u kteréhokoli ze čtyř oborů. Popis oboru Produkční činnost uvádí pouze standardní ekonomické a umělecké předměty v češtině.",
+        "Jediný dohledaný doklad o výuce v cizím jazyce na této škole je stránka ssdlysa.cz/index.php?oid=3627126 popisující projekt z roku 2012 (výukové moduly „Dějiny kultury\" v angličtině, němčině a ruštině) – týkal se však jen oborů Oděvní design a Grafický design, nikoli Ekonomiky a podnikání, a je o 13 let starší než sledovaná změna; k současné změně formy vzdělávání se nevztahuje.",
+        "Cílenými dotazy (WebSearch) na kombinace „Střední škola designu Lysá nad Labem\" + dvojjazyčná výuka / cizí jazyk / kritéria přijímacího řízení 2026/2027 se nepodařilo dohledat žádnou tiskovou zprávu, oznámení zřizovatele (Středočeský kraj) ani jiný nezávislý zdroj, který by změnu formy vysvětloval nebo potvrzoval jako záměrnou pedagogickou změnu."
+      ],
+      "conclusion": "Jde o pokračování téhož oboru a zaměření (63-41-M/01 Ekonomika a podnikání, „Produkční činnost v umění a reklamě\", 4leté, denní) pod stejnou školou (REDIZO 600007651) a stejným IZO (150068654) – to je doloženo shodně jak srovnáním nabídek CERMAT 2025/2026, tak čtyřmi snímky rejstříku MŠMT. Mění se pouze evidovaná forma/jazyk výuky z „český\" na „český s výukou vybraných předmětů v cizím jazyce\" (v rejstříku „dvojjazyčný/jiný\"). Protože se stejná změna formy udála současně u všech čtyř oborů školy a na webu školy ani jinde se nepodařilo dohledat žádné oznámení o zavedení výuky v cizím jazyce, nelze potvrdit, zda jde o skutečnou obsahovou/pedagogickou změnu (rozšíření výuky o vybrané předměty v cizím jazyce) nebo o plošnou administrativní/evidenční změnu způsobu zápisu formy vzdělávání v rejstříku, která se promítla i do nabídky CERMAT 2026. Kontinuita oboru samotného je tedy pravděpodobná a dobře doložená, ale povaha a rozsah změny formy výuky zůstávají bez nezávislého zdroje neověřené.",
+      "alternative_explanations": [
+        "Škola mohla od školního roku 2026/27 skutečně zavést výuku vybraných předmětů v cizím jazyce plošně ve všech oborech, aniž by to zatím zveřejnila na webu (web nemusí být aktuální nebo úplný).",
+        "Změna formy může být čistě evidenční/technická záležitost na straně MŠMT nebo školy při aktualizaci údajů v rejstříku (např. sjednocení kódování pole „forma vzdělávání\"), bez reálného dopadu na obsah výuky – tomu nasvědčuje, že proběhla identicky a současně u všech čtyř oborů školy, včetně oborů, kde CERMAT žádnou změnu formy nezaznamenal jako novou nabídku."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["63-41-M/01 Ekonomika a podnikání – Produkční činnost v umění a reklamě, denní, Český (2025)"],
+        "to": ["63-41-M/01 Ekonomika a podnikání – Produkční činnost v umění a reklamě, denní, Český s výukou vybraných předmětů v cizím jazyce (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Stržiště 475, 289 22 Lysá nad Labem",
+          "role": "sídlo",
+          "izo": "600007651",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Stržiště 475, 289 22 Lysá nad Labem; Československé armády 549/3, 289 22 Lysá nad Labem; U Dráhy 1280/2, 289 22 Lysá nad Labem",
+          "role": "místo výuky (IZO 150068654, bez rozlišení na konkrétní obor v datech rejstříku)",
+          "izo": "150068654",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 31. 3. 2025 má obor 63-41-M/01 Ekonomika a podnikání (a shodně i další tři obory IZO 150068654) formu „český\".",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 31. 12. 2025 mají všechny čtyři obory IZO 150068654 (včetně 63-41-M/01) formu „dvojjazyčný/jiný\" – změna proti snímku 2025-03-31 nastala plošně u celé školy současně.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Forma „dvojjazyčný/jiný\" u 63-41-M/01 (i ostatních tří oborů) trvá i k 31. 3. 2026, subjekt a IZO beze změny.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Forma „dvojjazyčný/jiný\" u 63-41-M/01 (i ostatních tří oborů) trvá i k 30. 6. 2026, subjekt a IZO beze změny.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007651",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 63-41-M/01 Ekonomika a podnikání / Produkční činnost v umění a reklamě, 4leté, denní, přítomná v obou letech; jediný rozdíl je forma „Český\" (2025) vs. „Český s výukou vybraných předmětů v cizím jazyce\" (2026).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://www.ssdlysa.cz/",
+          "title": "Střední škola designu Lysá nad Labem, příspěvková organizace – hlavní stránka",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Hlavní stránka školy neobsahuje žádnou zmínku o zavedení výuky vybraných předmětů v cizím jazyce ani o dvojjazyčném režimu u žádného oboru (negativní nález).",
+          "applicable_period": "stav webu k 12. 9. 2026"
+        },
+        {
+          "url": "https://www.ssdlysa.cz/obor-produkcni-cinnost",
+          "title": "Produkční činnost v umění a reklamě – Střední škola designu Lysá nad Labem",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Popis oboru uvádí pouze standardní ekonomické a umělecké předměty v češtině; žádná zmínka o výuce v cizím jazyce nebo o dvojjazyčném režimu (negativní nález).",
+          "applicable_period": "stav webu k 12. 9. 2026"
+        },
+        {
+          "url": "https://www.ssdlysa.cz/prijimaci-rizeni",
+          "title": "Přijímací řízení – Střední škola designu Lysá nad Labem",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stránka (obsahující primárně starší údaje o přijímacím řízení 2024/25) neobsahuje zmínku o výuce v cizím jazyce ani o dvojjazyčném režimu u žádného oboru (negativní nález, s omezením že stránka nemusí být aktuální pro ročník 2026/27).",
+          "applicable_period": "stav webu k 12. 9. 2026, obsahově vztaženo k přijímacímu řízení 2024/25"
+        },
+        {
+          "url": "https://www.ssdlysa.cz/aktuality/vyhlaseni-1kola-vyberoveho-rizeni",
+          "title": "Vyhlášení 1. kola přijímacího řízení na šk. rok 2026/2027 – Střední škola designu Lysá nad Labem",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Aktualita vyhlašující 1. kolo přijímacího řízení pro 2026/2027 (odkazuje na PDF kritéria pro Grafický design, Design interiéru, Oděvní design a Produkční činnost) neobsahuje v textu stránky zmínku o výuce v cizím jazyce ani o dvojjazyčném režimu (negativní nález; samotné PDF přílohy s kritérii nebyly staženy).",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://www.ssdlysa.cz/index.php?oid=3627126",
+          "title": "Projekt Dějiny kultury v cizích jazycích – Střední škola designu Lysá nad Labem",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Dokumentuje pouze starší (2012) projekt výukových modulů v angličtině, němčině a ruštině pro obory Oděvní design a Grafický design; netýká se Ekonomiky a podnikání ani současné (2025/2026) změny formy vzdělávání.",
+          "applicable_period": "školní rok 2012 (nesouvisí přímo se sledovanou změnou 2025/2026)"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Jde u obou zaznamenaných forem (CERMAT) a hodnoty „dvojjazyčný/jiný\" (rejstřík) o skutečné zavedení výuky vybraných předmětů v cizím jazyce v obsahu ŠVP oboru Ekonomika a podnikání, nebo o administrativní/evidenční přeznačení pole „forma vzdělávání\" v rejstříku, které se promítlo do všech čtyř oborů školy současně?",
+        "Pokud jde o skutečnou pedagogickou změnu, kdy a jakým rozhodnutím (školy, zřizovatele Středočeský kraj) byla zavedena a v jakém rozsahu (které předměty, u kterých oborů)?"
+      ]
+    }
+  ]
+}

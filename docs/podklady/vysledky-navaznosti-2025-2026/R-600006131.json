@@ -1,0 +1,105 @@
+{
+  "task_id": "R-600006131",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) shodně eviduje Gymnázium Čakovice, Praha 9, nám. 25. března 100 (IČ 61387835, REDIZO 600006131) s jedinou střední školou IZO 108001270. Sídlo i místo výuky jsou totožné (náměstí 25. března 100/2, Čakovice, RÚIAN 22405631) a nemění se. Rejstřík tedy potvrzuje plnou kontinuitu právnické osoby i IZO mezi ročníky přijímaček 2025 a 2026; zaměření oborů rejstřík neeviduje, takže rozdělení čtyřletého studia na zaměření KOMPAS a KOTVA z něj vyčíst nelze."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0026", "Q0329", "Q0330"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT 1. kola JPZ má Gymnázium Čakovice (REDIZO 600006131, IZO 108001270) v roce 2025 dvě nabídky: čtyřleté gymnázium 79-41-K/41 bez uvedeného zaměření a šestileté gymnázium 79-41-K/61.",
+        "V roce 2026 má škola tři nabídky: čtyřleté gymnázium 79-41-K/41 se zaměřením KOMPAS, čtyřleté gymnázium 79-41-K/41 se zaměřením KOTVA a beze změny šestileté gymnázium 79-41-K/61.",
+        "Vyhlášení přijímacího řízení pro školní rok 2025/2026 na webu školy (archivní snímek z 1. 3. 2025, vyhlášeno 31. 1. 2025) uvádí, že škola otevírá 1 třídu čtyřletého studia jazyků (30 žáků) a 1 třídu šestiletého studia – tedy v roce 2025 existovala jediná čtyřletá třída, v datech CERMAT bez formálního zaměření.",
+        "Vyhlášení přijímacího řízení pro školní rok 2026/2027 na webu školy (vyhlášeno 16. 10. 2025) uvádí, že škola otevírá 1 třídu čtyřletého studia zaměření KOMPAS (30 žáků), 1 třídu čtyřletého studia zaměření KOTVA (30 žáků) a 1 třídu šestiletého studia (30 žáků).",
+        "Kód oboru KKOV 79-41-K/41 zůstává v obou letech stejný, mění se pouze počet tříd (1 → 2) a nově jsou třídy odlišeny pojmenovanými zaměřeními KOMPAS a KOTVA. Zaměření se liší i kritérii přijímání (KOMPAS vyžaduje video, KOTVA výsledky předchozího vzdělávání).",
+        "Rejstřík MŠMT potvrzuje nepřetržitou existenci školy i IZO 108001270 na stejné adrese ve všech snímcích od 31. 3. 2025 do 30. 6. 2026."
+      ],
+      "conclusion": "Škola (REDIZO 600006131, IZO 108001270) mezi ročníky 2025 a 2026 pokračuje beze změny identity, sídla i místa výuky. Čtyřletý obor 79-41-K/41 se nerozdělil na úrovni kódu ani nevznikl nový obor: v roce 2025 škola otevírala jednu třídu čtyřletého studia (interně jazykově zaměřenou, v datech CERMAT bez zaměření) a pro rok 2026 rozšířila nabídku na dvě třídy téhož oboru, nově odlišené zaměřeními KOMPAS a KOTVA. Jde tedy o změnu zápisu nabídky (rozšíření o druhou třídu a přidání názvů zaměření) v rámci pokračujícího oboru, nikoli o zánik či vznik oboru. Šestileté studium 79-41-K/61 pokračuje beze změny.",
+      "alternative_explanations": [
+        "Zdroje nevylučují, že zaměření KOTVA fakticky navazuje na dosavadní jazykovou třídu a KOMPAS je zcela nová třída; web školy toto přiřazení výslovně neuvádí, takže obě nové nabídky lze považovat za společného nástupce dosavadní jediné čtyřleté nabídky."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["79-41-K/41 Gymnázium (2025, bez zaměření, 1 třída)"],
+        "to": ["79-41-K/41 Gymnázium – KOMPAS (2026)", "79-41-K/41 Gymnázium – KOTVA (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "náměstí 25. března 100/2, Čakovice, PSČ 196 00",
+          "role": "sídlo",
+          "izo": "108001270",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "náměstí 25. března 100/2, Čakovice (RÚIAN 22405631)",
+          "role": "místo výuky",
+          "izo": "108001270",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006131",
+          "title": "Přiložená data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídky školy v obou letech: 2025 čtyřleté bez zaměření + šestileté; 2026 čtyřleté KOMPAS + KOTVA + šestileté; stejný kód KKOV, REDIZO, IZO i adresa.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://web.archive.org/web/20250301000000/https://gymcak.cz/prijimaci-rizeni/",
+          "title": "Gymnázium Čakovice – Přijímací řízení pro školní rok 2025/2026 (archivní snímek)",
+          "published_at": "2025-01-31",
+          "checked_at": "2026-09-12",
+          "supports": "Vyhlášení ředitelky ze dne 31. 1. 2025: škola otevírá 1 třídu čtyřletého studia jazyků (30 žáků) a 1 třídu šestiletého studia; kódy 79-41-K/41 a 79-41-K/61 bez názvů zaměření.",
+          "applicable_period": "přijímací řízení 2025 (školní rok 2025/2026)"
+        },
+        {
+          "url": "https://gymcak.cz/prijimaci-rizeni/",
+          "title": "Gymnázium Čakovice – Přijímací řízení pro školní rok 2026/2027",
+          "published_at": "2025-10-16",
+          "checked_at": "2026-09-12",
+          "supports": "Vyhlášení ředitelky ze dne 16. 10. 2025: škola otevírá 1 třídu čtyřletého studia zaměření KOMPAS, 1 třídu zaměření KOTVA (obě 79-41-K/41, po 30 žácích) a 1 třídu šestiletého studia 79-41-K/61; zaměření se liší i kritérii přijímání.",
+          "applicable_period": "přijímací řízení 2026 (školní rok 2026/2027)"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek k 31. 3. 2025",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Gymnázium Čakovice (REDIZO 600006131, IČ 61387835) s IZO 108001270, sídlo i místo výuky náměstí 25. března 100/2, Čakovice – stav v době 1. kola JPZ 2025.",
+          "applicable_period": "2025-03-31"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek k 31. 3. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Shodný stav subjektu, IZO i adres v době 1. kola JPZ 2026 – potvrzuje kontinuitu mezi ročníky.",
+          "applicable_period": "2026-03-31"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek k 30. 6. 2026",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt i IZO 108001270 nadále evidovány beze změny; žádný zánik ani převod.",
+          "applicable_period": "2026-06-30"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda zaměření KOTVA přímo navazuje na dosavadní jazykovou třídu z roku 2025 a KOMPAS je nově otevřená druhá třída, web školy výslovně neuvádí; pro srovnávání historických výsledků je proto vhodné obě nové zaměření vázat na společnou předchozí nabídku, nikoli 1:1."
+      ]
+    }
+  ]
+}

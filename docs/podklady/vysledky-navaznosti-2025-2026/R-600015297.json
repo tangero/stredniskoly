@@ -1,0 +1,180 @@
+{
+  "task_id": "R-600015297",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje kontinuitu subjektu: ART ECON - Střední škola, s.r.o. (REDIZO 600015297), sídlo Husovo nám. 2061/91, 796 01 Prostějov, IZO 110012186 (Střední škola, jediné místo výuky tamtéž) figuruje beze změny ve všech čtyřech snímcích. Obor 63-41-M/01 Ekonomika a podnikání (4l, denní) je registrován beze změny ve všech čtyřech snímcích; rejstřík na úrovni ŠVP/zaměření jednotlivé programy nerozlišuje."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0093"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela v rámci oboru 63-41-M/01 Ekonomika a podnikání zaměření „Management v reklamě a médiích“; v 1. kole JPZ 2026 toto zaměření v nabídce chybí.",
+        "Aktuální stránka přijímacího řízení ECON (artecon.cz) uvádí pro školní rok 2026/2027 pouze tři zaměření: Firemní management, Sportovní management a Státní služba a správní řízení – „Management v reklamě a médiích“ mezi nimi není.",
+        "Rejstřík MŠMT eviduje obor 63-41-M/01 Ekonomika a podnikání u IZO 110012186 nepřetržitě ve všech čtyřech snímcích – registrace kódu RVP trvá, rejstřík ale nerozlišuje jednotlivá zaměření/ŠVP v jeho rámci."
+      ],
+      "conclusion": "Zaměření „Management v reklamě a médiích“ školní vzdělávací program pro školní rok 2026/2027 v aktuální nabídce přijímacího řízení nemá; obor 63-41-M/01 jako takový zůstává registrován, ale toto konkrétní zaměření se v datech ani na webu školy pro rok 2026 neobjevuje.",
+      "alternative_explanations": [
+        "Zaměření mohlo být přejmenováno nebo sloučeno s jiným (např. nově otevíraným Sportovním managementem), to však žádný zdroj přímo nepotvrzuje ani nevyvrací."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["63-41-M/01 Ekonomika a podnikání zaměření Management v reklamě a médiích (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Husovo nám. 2061/91, 796 01 Prostějov",
+          "role": "sídlo",
+          "izo": "600015297",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Husovo nám. 2061/91, 796 01 Prostějov",
+          "role": "místo výuky",
+          "izo": "110012186",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://artecon.cz/prostejov/zajemci-o-studium/prijimaci-rizeni-econ/",
+          "title": "Přijímací řízení ECON | ART ECON Prostějov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro školní rok 2026/2027 jsou v jednotném přijímacím řízení ECON nabízena jen tři zaměření: Firemní management, Sportovní management, Státní služba a správní řízení; Management v reklamě a médiích mezi nimi chybí.",
+          "applicable_period": "přijímací řízení 2026/2027"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 63-41-M/01 Ekonomika a podnikání registrován u IZO 110012186 nepřetržitě ve všech čtyřech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600015297",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zaměření Management v reklamě a médiích přítomno jen v nabídce 2025, v nabídce 2026 chybí.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Nebylo dohledáno, zda a kdy bylo zaměření formálně zrušeno v ŠVP, ani zda jeho obsah převzalo jiné zaměření."
+      ]
+    },
+    {
+      "issue_ids": ["Q0094", "Q0347"],
+      "status": "potvrzeno",
+      "observations": [
+        "CERMAT eviduje v 1. kole JPZ 2025 zaměření „Ekonomika a podnikání zaměření Firemní management“ a v 1. kole JPZ 2026 zaměření „zaměření Firemní management“ – automatické spárování selhalo jen kvůli zkrácení textu (vypuštění prefixu „Ekonomika a podnikání“).",
+        "Web školy (artecon.cz) vede Firemní management jako řádnou, dlouhodobě nabízenou specializaci oboru 63-41-M/01 bez jakéhokoli upozornění na novost či rušení, na rozdíl např. od oboru Tradiční krejčí, u kterého je explicitně uvedeno, že se v roce 2026/27 neotevře.",
+        "Aktuální stránka přijímacího řízení ECON pro 2026/2027 uvádí Firemní management jako jedno ze tří nabízených zaměření."
+      ],
+      "conclusion": "Zaměření Firemní management pokračuje beze změny obsahu z roku 2025 do roku 2026; rozdíl v textu nabídky CERMAT je jen zkrácení popisu (vypuštění společného prefixu „Ekonomika a podnikání“), nikoli věcná změna.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "continuation",
+        "from": ["63-41-M/01 Ekonomika a podnikání zaměření Firemní management (2025)"],
+        "to": ["63-41-M/01 zaměření Firemní management (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Husovo nám. 2061/91, 796 01 Prostějov",
+          "role": "místo výuky",
+          "izo": "110012186",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.artecon.cz/prostejov/studijni_obory/firemni-management/",
+          "title": "Firemní management - ART ECON Prostějov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Firemní management je vedený jako běžně nabízený obor bez poznámky o novosti nebo ukončení, na rozdíl od explicitně označeného neotevíraného oboru Tradiční krejčí.",
+          "applicable_period": "aktuální nabídka školy"
+        },
+        {
+          "url": "https://artecon.cz/prostejov/zajemci-o-studium/prijimaci-rizeni-econ/",
+          "title": "Přijímací řízení ECON | ART ECON Prostějov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Firemní management uveden mezi třemi zaměřeními nabízenými pro školní rok 2026/2027.",
+          "applicable_period": "přijímací řízení 2026/2027"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600015297",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Text zaměření se mezi lety 2025 a 2026 liší jen vypuštěním prefixu „Ekonomika a podnikání“, jádro názvu „Firemní management“ zůstává shodné.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0348"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí zaměření „Sportovní management“ v rámci oboru 63-41-M/01; v roce 2025 tato nabídka neexistovala.",
+        "Web školy k tomuto zaměření uvádí doslova: „Tento studijní obor NOVĚ OTVÍRÁME od nového školního roku 2026/2027“ – formulace se na stránce objevuje dvakrát.",
+        "Rejstřík MŠMT eviduje obor 63-41-M/01 Ekonomika a podnikání u IZO 110012186 nepřetržitě, ale na úrovni ŠVP/zaměření jednotlivé programy nerozlišuje, takže zápis oboru sám o sobě novost zaměření nevyvrací ani nepotvrzuje."
+      ],
+      "conclusion": "Sportovní management je nově zaváděné zaměření oboru 63-41-M/01 pro školní rok 2026/2027, potvrzené přímo vlastní stránkou školy. Nemá předchůdce v nabídce 2025.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["63-41-M/01 zaměření Sportovní management (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Husovo nám. 2061/91, 796 01 Prostějov",
+          "role": "místo výuky",
+          "izo": "110012186",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://artecon.cz/prostejov/studijni-obory/sportovni-management/",
+          "title": "Sportovní management | ART ECON Prostějov",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Doslovný text: „Tento studijní obor NOVĚ OTVÍRÁME od nového školního roku 2026/2027“.",
+          "applicable_period": "od školního roku 2026/2027"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600015297",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Zaměření Sportovní management přítomno pouze v nabídce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

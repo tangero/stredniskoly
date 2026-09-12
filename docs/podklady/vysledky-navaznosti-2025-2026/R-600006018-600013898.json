@@ -1,0 +1,286 @@
+{
+ "task_id": "R-600006018-600013898",
+ "queue_version": 2,
+ "processed_at": "2026-09-12",
+ "registry_check": {
+  "checked_at": "2026-09-12",
+  "snapshots": [
+   "2025-03-31",
+   "2025-12-31",
+   "2026-03-31",
+   "2026-06-30"
+  ],
+  "summary": "Dvě samostatné právnické osoby: REDIZO 600006018 „PORG - gymnázium, základní škola a mateřská škola, o.p.s.“ (IZO 000550591, sídlo Lindnerova 517/3, Libeň, Praha; místa výuky Praha-Krč, Praha-Libeň, Ostrava-Vítkovice) a REDIZO 600013898 „PORG Brno - gymnázium, základní škola a mateřská škola, o.p.s.“ (IZO 046315284, sídlo Mendlovo náměstí 1/3, Staré Brno; místa výuky Mendlovo náměstí 1/3 a 1/4 a Pionýrská 254/23, Ponava). Obě REDIZO existují ve všech čtyřech snímcích rejstříku beze zjevného zániku. Klíčová změna: mezi snímky 2025-12-31 a 2026-03-31 se u REDIZO 600006018 nově objevují brněnská místa výuky (Mendlovo náměstí 1/3, 1/4) i brněnské obory (79-41-K/81 8leté český, 79-41-K/61 6leté, 75-31-M/01 Předškolní a mimoškolní pedagogika, 79-41-K/41 5leté dálkové) – tedy prakticky duplicitně s tím, co eviduje REDIZO 600013898. Rejstřík tedy k 30. 6. 2026 ještě formálně nezobrazuje zánik REDIZO 600013898, ale ukazuje převzetí jeho míst výuky a oborů pod REDIZO 600006018."
+ },
+ "findings": [
+  {
+   "issue_ids": [
+    "Q0441"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "Otázka Q0441 navrhuje návaznost mezi školní jednotkou 2025 pod REDIZO 600013898 (IZO izo_046315284, „PORG Brno - gymnázium ZŠ a MŠ, o.p.s.“, Mendlovo náměstí 1, Brno) a školní jednotkou 2026 pod REDIZO 600006018 (IZO izo_000550591, „PORG - gymnázium ZŠ a MŠ, o.p.s.“, tatáž adresa Mendlovo náměstí 1, Brno).",
+    "PORG na svém webu zveřejnil oficiální oznámení pro věřitele „Projekt fúze PORG o.p.s. a PORG Brno o.p.s.“, které popisuje převzetí společnosti PORG Brno o.p.s. společností PORG o.p.s. s plánovanou účinností k 1. 1. 2026.",
+    "Rejstřík MŠMT potvrzuje časovou souvislost: mezi snímky 2025-12-31 a 2026-03-31 (tedy právě kolem uváděného data účinnosti fúze 1. 1. 2026) REDIZO 600006018 nově získává brněnská místa výuky a obory shodné s tím, co dosud eviduje REDIZO 600013898.",
+    "REDIZO 600013898 zatím ve všech čtyřech snímcích rejstříku (včetně 30. 6. 2026) formálně neschází – jde tedy o souběh dvou identifikátorů v přechodném období, nikoli o okamžitý zánik jednoho z nich."
+   ],
+   "conclusion": "Návaznost školní jednotky Brno mezi REDIZO 600013898 (2025) a REDIZO 600006018 (2026) je potvrzena: jde o organizační sloučení (fúzi) PORG Brno o.p.s. do PORG o.p.s. s účinností od 1. 1. 2026, doložené vlastním oznámením zřizovatele pro věřitele i změnou míst výuky/oborů v rejstříku MŠMT mezi 31. 12. 2025 a 31. 3. 2026.",
+   "alternative_explanations": [
+    "Formální výmaz REDIZO 600013898 z rejstříku škol může proběhnout s dalším časovým odstupem po 30. 6. 2026, protože rejstřík se aktualizuje s prodlevou vůči skutečnému právnímu stavu."
+   ],
+   "relationship": {
+    "type": "merge",
+    "from": [
+     "600013898 PORG Brno - gymnázium, základní škola a mateřská škola, o.p.s."
+    ],
+    "to": [
+     "600006018 PORG - gymnázium, základní škola a mateřská škola, o.p.s."
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Mendlovo náměstí 1/3, 603 00 Staré Brno, Brno",
+     "role": "sídlo",
+     "izo": "600013898",
+     "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Mendlovo náměstí 1/3 a 1/4, 603 00 Staré Brno, Brno; Pionýrská 254/23, 602 00 Ponava, Brno",
+     "role": "místo výuky",
+     "izo": "000550591",
+     "valid_period": "2026-03-31 až 2026-06-30",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "https://www.porg.cz/projekt-fuze-porg-o-p-s-a-porg-brno-o-p-s-upozorneni-pro-veritele/",
+     "title": "Projekt fúze PORG o.p.s. a PORG Brno o.p.s - upozornění pro věřitele | PORG",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Oficiální oznámení o fúzi: PORG Brno o.p.s. je přebírána společností PORG o.p.s., plánovaná účinnost 1. 1. 2026.",
+     "applicable_period": "fúze k 1. 1. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 12. 2025",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 600006018 zde ještě nemá brněnská místa výuky ani obory.",
+     "applicable_period": "stav rejstříku k 31. 12. 2025"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 600006018 nově eviduje brněnská místa výuky (Mendlovo náměstí 1/3, 1/4, Pionýrská) a obory shodné s REDIZO 600013898.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    },
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006018-600013898",
+     "title": "Přiložená data fronty (CERMAT schools 2025/2026)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Školní jednotka na adrese Mendlovo náměstí 1, Brno je v roce 2025 vedena pod REDIZO 600013898 a v roce 2026 pod REDIZO 600006018.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Přesné datum formálního výmazu REDIZO 600013898 z rejstříku MŠMT (k 30. 6. 2026 ještě evidováno)."
+   ]
+  },
+  {
+   "issue_ids": [
+    "Q0087",
+    "Q0232"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 nabízel REDIZO 600013898 (PORG Brno) obor 79-41-K/81 Gymnázium se zaměřením „8leté PORG Brno“ na adrese Mendlovo náměstí 1, Brno.",
+    "V 1. kole JPZ 2026 nabízí táž nabídka – identický text zaměření „8leté PORG Brno“, stejný obor 79-41-K/81, stejná adresa Mendlovo náměstí 1, Brno – ale už pod REDIZO 600006018 (PORG), v souladu s fúzí popsanou v nálezu k Q0441.",
+    "Rejstřík MŠMT potvrzuje, že obor 79-41-K/81 (8leté, dvojjazyčný) je u brněnského pracoviště registrován nepřetržitě, jen se v roce 2026 přesouvá pod IZO 000550591 (REDIZO 600006018) namísto IZO 046315284 (REDIZO 600013898)."
+   ],
+   "conclusion": "Nabídka „8leté PORG Brno“ je stejný obor a stejné pracoviště v obou letech; změnilo se pouze REDIZO/IZO organizace v důsledku fúze PORG Brno do PORG. Jde o pokračování, nikoli o zánik ani nový obor.",
+   "alternative_explanations": [],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "600013898 79-41-K/81 8leté PORG Brno (2025)"
+    ],
+    "to": [
+     "600006018 79-41-K/81 8leté PORG Brno (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Mendlovo náměstí 1/4, 603 00 Staré Brno, Brno",
+     "role": "místo výuky",
+     "izo": "046315284",
+     "valid_period": "2025-03-31 až 2026-06-30",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Mendlovo náměstí 1/4, 603 00 Staré Brno, Brno",
+     "role": "místo výuky",
+     "izo": "000550591",
+     "valid_period": "2026-03-31 až 2026-06-30",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006018-600013898",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Identický text zaměření \"8leté PORG Brno\" v letech 2025 (pod 600013898) a 2026 (pod 600006018).",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://www.porg.cz/vysledky-prijimaciho-rizeni-do-primy-skolniho-roku-2026-2027-osmileteho-gymnazia-porg-brno/",
+     "title": "Výsledky přijímacího řízení do primy školního roku 2026/2027 osmiletého gymnázia PORG Brno | PORG",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola i po fúzi nadále provozuje a inzeruje osmileté gymnázium PORG Brno na Mendlově náměstí.",
+     "applicable_period": "přijímací řízení 2026/27"
+    }
+   ],
+   "history_comparability": "comparable",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": []
+  },
+  {
+   "issue_ids": [
+    "Q0086",
+    "Q0231"
+   ],
+   "status": "potvrzeno",
+   "observations": [
+    "V 1. kole JPZ 2025 nabízel REDIZO 600013898 obor 75-31-M/01 Předškolní a mimoškolní pedagogika bez uvedeného textu zaměření, na adrese Mendlovo náměstí 1, Brno.",
+    "V 1. kole JPZ 2026 nabízí táž obor 75-31-M/01 pod REDIZO 600006018 se zaměřením „střední pedagogická škola, Brno“ – stejná adresa, stejná délka i forma studia, jen doplněný popisný text a organizace přejmenovaná fúzí (viz nález k Q0441).",
+    "Rejstřík MŠMT eviduje obor 75-31-M/01 u brněnského pracoviště nepřetržitě ve všech snímcích, od 2026-03-31 pod IZO 000550591 (REDIZO 600006018) namísto IZO 046315284 (REDIZO 600013898)."
+   ],
+   "conclusion": "Obor Předškolní a mimoškolní pedagogika na Mendlově náměstí v Brně pokračuje beze změny obsahu; mění se jen organizační zastřešení (fúze) a doplňuje se text zaměření.",
+   "alternative_explanations": [],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "600013898 75-31-M/01 (2025)"
+    ],
+    "to": [
+     "600006018 75-31-M/01 střední pedagogická škola, Brno (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Mendlovo náměstí 1/4, 603 00 Staré Brno, Brno",
+     "role": "místo výuky",
+     "izo": "046315284",
+     "valid_period": "2025-03-31 až 2026-06-30",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    },
+    {
+     "text": "Mendlovo náměstí 1/4, 603 00 Staré Brno, Brno",
+     "role": "místo výuky",
+     "izo": "000550591",
+     "valid_period": "2026-03-31 až 2026-06-30",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006018-600013898",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Obor 75-31-M/01 přítomen v obou letech na téže adrese, pouze pod jiným REDIZO a s doplněným zaměřením.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://www.porg.cz/projekt-fuze-porg-o-p-s-a-porg-brno-o-p-s-upozorneni-pro-veritele/",
+     "title": "Projekt fúze PORG o.p.s. a PORG Brno o.p.s – upozornění pro věřitele | PORG",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Změna organizačního zastřešení brněnské větve: PORG Brno o.p.s. je přebírána společností PORG o.p.s. s účinností 1. 1. 2026 – vysvětluje, proč táž nabídka přechází pod jiné REDIZO.",
+     "applicable_period": "fúze k 1. 1. 2026"
+    },
+    {
+     "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+     "title": "Rejstřík škol a školských zařízení MŠMT – snímek k 31. 3. 2026",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "REDIZO 600006018 nově eviduje brněnská místa výuky a obor 75-31-M/01 Předškolní a mimoškolní pedagogika, který dříve patřil pod REDIZO 600013898 – obor pokračuje, mění se jen zastřešující subjekt.",
+     "applicable_period": "stav rejstříku k 31. 3. 2026"
+    }
+   ],
+   "history_comparability": "comparable",
+   "recommended_action": "approve_mapping",
+   "related_task_ids": [],
+   "unanswered_questions": []
+  },
+  {
+   "issue_ids": [
+    "Q0595"
+   ],
+   "status": "pravděpodobné",
+   "observations": [
+    "REDIZO 600006018 nabízel v 1. kole JPZ 2025 obor 79-41-K/41 Gymnázium se zaměřením „4leté Nový PORG, Praha 4“, forma vzdělávání „Český“, na adrese Pod Krčským lesem 1300/25, Praha 4.",
+    "V 1. kole JPZ 2026 nabízí tentýž REDIZO/IZO a tutéž adresu obor 79-41-K/41 se zaměřením „4leté Nový PORG Praha 4“ (bez čárky), nově ale s jazykovým profilem „Český s výukou vybraných předmětů v cizím jazyce“ místo čistě českého.",
+    "Web PORG obecně popisuje koncept výuky vybraných odborných předmětů v angličtině napříč sítí škol PORG, což je v souladu se změnou jazykového profilu u tohoto zaměření, ale stránka neuvádí konkrétní datum zavedení této změny pro obor 4leté Nový PORG Praha 4.",
+    "Tato otázka je podle zadání spojena k tomuto úkolu priority 1, ačkoli je věcně samostatná – netýká se brněnského sloučení, ale pražské pobočky Nový PORG."
+   ],
+   "conclusion": "Jde pravděpodobně o pokračování téhož zaměření na téže adrese pod stejným REDIZO/IZO; změnil se jazykový profil výuky (rozšíření o výuku vybraných předmětů v cizím jazyce) a odstranila se čárka v textu zaměření. Přímé oznámení školy potvrzující přesný důvod a datum této změny nebylo dohledáno.",
+   "alternative_explanations": [
+    "Změna jazykového profilu mohla být jen upřesněním/opravou dřívějšího nepřesného zápisu ve zdrojových datech CERMAT, nikoli skutečnou změnou kurikula od roku 2026."
+   ],
+   "relationship": {
+    "type": "continuation",
+    "from": [
+     "600006018 79-41-K/41 4leté Nový PORG, Praha 4 (2025)"
+    ],
+    "to": [
+     "600006018 79-41-K/41 4leté Nový PORG Praha 4 (2026)"
+    ]
+   },
+   "addresses": [
+    {
+     "text": "Pod Krčským lesem 1300/25, Krč, Praha 4",
+     "role": "místo výuky",
+     "izo": "000550591",
+     "valid_period": "2025-03-31 až 2026-06-30 (Jánošíkova 1300/6 dle rejstříku odpovídá témuž areálu)",
+     "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+    }
+   ],
+   "evidence": [
+    {
+     "url": "fronta-dohledavani-2025-2026.json, úkol R-600006018-600013898",
+     "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Shodné REDIZO/IZO/adresa a téměř identický text zaměření v letech 2025 a 2026, jen se změnou pole jazyk/forma studia.",
+     "applicable_period": "1. kola JPZ 2025 a 2026"
+    },
+    {
+     "url": "https://www.porg.cz/",
+     "title": "PORG | Gymnázium a základní škola, Praha, Ostrava, Brno",
+     "published_at": null,
+     "checked_at": "2026-09-12",
+     "supports": "Škola obecně deklaruje výuku vybraných odborných předmětů v angličtině v rámci koncepce PORG.",
+     "applicable_period": "obecný popis konceptu školy, bez konkrétního data"
+    }
+   ],
+   "history_comparability": "partially",
+   "recommended_action": "manual_review",
+   "related_task_ids": [],
+   "unanswered_questions": [
+    "Přesný důvod a datum změny jazykového profilu výuky u zaměření 4leté Nový PORG Praha 4."
+   ]
+  }
+ ]
+}

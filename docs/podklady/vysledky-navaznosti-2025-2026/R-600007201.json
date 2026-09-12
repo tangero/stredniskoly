@@ -1,0 +1,128 @@
+{
+  "task_id": "R-600007201",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Ve snímku k 31. 3. 2025 je Střední odborné učiliště, Čáslav, Žižkovo nám. 75 (REDIZO 600007201, IČ 00069515, IZO 107820391) samostatně vedeno; vedle něj existuje samostatná Střední zemědělská škola, Čáslav, Sadová 1234 (REDIZO 600007278, IČ 49797999). Ve snímcích k 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026 REDIZO 600007201 ani IZO 107820391 již nejsou evidovány; REDIZO 600007278 se přejmenovalo na Střední zemědělská škola a Střední odborné učiliště Čáslav, příspěvková organizace a převzalo obě místa výuky bývalého učiliště (nám. Jana Žižky z Trocnova 75/12 – ID místa výuky převzalo původní IZO 107820391, a Travní 1595) pod svou IZO 049797999 Střední škola. Rejstřík tedy dokládá sloučení SOU Čáslav do (přejmenované) SZeŠ Čáslav mezi 31. 3. 2025 a 31. 12. 2025."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0040", "Q0189"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT z 1. kola JPZ 2025 figuruje Střední odborné učiliště (REDIZO 600007201, IZO izo_107820391), nám. Jana Žižky z Trocnova 75, Čáslav, s jedinou nabídkou: nástavbový obor Podnikání 64-41-L/51, 2leté denní studium, bez zaměření. V roce 2026 pod tímto REDIZO žádná nabídka není.",
+        "Rejstřík MŠMT ke dni 31. 3. 2025 školu samostatně eviduje (úplný název Střední odborné učiliště, Čáslav, Žižkovo nám. 75, IČ 00069515; místa výuky nám. Jana Žižky z Trocnova 75/12 a Travní 1595). Ke dni 31. 12. 2025 již subjekt v rejstříku není.",
+        "Současně se v rejstříku k 31. 12. 2025 sousední Střední zemědělská škola, Čáslav, Sadová 1234 (REDIZO 600007278) přejmenovala na Střední zemědělská škola a Střední odborné učiliště Čáslav, příspěvková organizace a převzala obě budovy bývalého učiliště – adresa Žižkovo nám. 75/12 figuruje u její střední školy (IZO 049797999) jako místo výuky s převzatým identifikátorem místa 107820391.",
+        "Portál AtlasŠkolství.cz u sloučené školy uvádí: „Od 1. 9. 2025 došlo ke sloučení SZeŠ Čáslav a SOU Čáslav, přičemž výuka oborů zůstává v původních budovách.“ Web původního učiliště (soucaslav.cz) konstatuje, že budova na Žižkově náměstí je součástí Střední zemědělské školy a Středního odborného učiliště Čáslav, p. o.",
+        "V projektových datech CERMAT pro 1. kolo JPZ 2026 (PZ2026_kolo1_skolobory_kapacity.xlsx, PZ2026_kolo1_skolobory_prihlasky.xlsx) nabízí REDIZO 600007278 obor Podnikání 64-41-L/51, 2leté denní studium bez zaměření – shodný kód KKOV, délka, forma i zaměření jako u nabídky REDIZO 600007201 v roce 2025. AtlasŠkolství.cz u této nástavby uvádí pro 2026/27 plán přijetí 23 žáků a pro 2025/26 poměr 42 přihlášených / 20 přijatých.",
+        "Prázdná nabídka REDIZO 600007201 v roce 2026 tedy není zánikem oboru, ale důsledkem sloučení školy: obor Podnikání pokračuje pod právnickou osobou 600007278 ve stejné budově na Žižkově náměstí."
+      ],
+      "conclusion": "K 1. 9. 2025 se Střední odborné učiliště, Čáslav, Žižkovo nám. 75 (REDIZO 600007201) sloučilo se Střední zemědělskou školou, Čáslav, Sadová 1234 (REDIZO 600007278), která se přejmenovala na Střední zemědělská škola a Střední odborné učiliště Čáslav, příspěvková organizace. Nástavbový obor Podnikání 64-41-L/51 (2letý, denní) z nabídky 2025 pokračuje v přijímacím řízení 2026 pod REDIZO 600007278, výuka zůstává v původní budově na nám. Jana Žižky z Trocnova 75. Návaznost lze mapovat jako 600007201/64-41-L/51 → 600007278/64-41-L/51.",
+      "alternative_explanations": [
+        "Rejstřík sám nedokládá přesné datum sloučení ani právní formu (převzetí vs. nový subjekt); datum 1. 9. 2025 vychází z údaje AtlasŠkolství.cz a souhlasí s mezí mezi snímky rejstříku (31. 3. – 31. 12. 2025).",
+        "Zdroje nevylučují, že součástí sloučení byly drobné organizační změny uvnitř budov (např. rozdělení oborů mezi pracoviště); kontinuitu výuky v původních budovách však výslovně potvrzuje AtlasŠkolství.cz i web školy."
+      ],
+      "relationship": {
+        "type": "merge",
+        "from": ["600007201"],
+        "to": ["600007278"]
+      },
+      "addresses": [
+        {
+          "text": "nám. Jana Žižky z Trocnova 75/12, Čáslav-Staré Město, 286 01",
+          "role": "sídlo",
+          "izo": "107820391",
+          "valid_period": "do sloučení k 1. 9. 2025 (sídlo REDIZO 600007201); poté místo výuky REDIZO 600007278",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "nám. Jana Žižky z Trocnova 75/12, Čáslav-Staré Město, 286 01",
+          "role": "místo výuky",
+          "izo": "049797999",
+          "valid_period": "od sloučení 2025; stav rejstříku k 31. 12. 2025, 31. 3. 2026 a 30. 6. 2026 (ID místa výuky převzalo původní IZO 107820391)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"
+        },
+        {
+          "text": "Travní 1595, Čáslav-Nové Město, 286 01",
+          "role": "místo výuky",
+          "izo": "107820391",
+          "valid_period": "místo výuky SOU Čáslav k 31. 3. 2025; po sloučení místo výuky IZO 049797999 (REDIZO 600007278)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld"
+        },
+        {
+          "text": "Sadová 1234/1, Čáslav-Nové Město, 286 01",
+          "role": "sídlo",
+          "izo": "049797999",
+          "valid_period": "sídlo nástupnické školy REDIZO 600007278 (před sloučením i po něm); stav k 31. 12. 2025",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek k 31. 3. 2025 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "REDIZO 600007201 (Střední odborné učiliště, Čáslav, Žižkovo nám. 75, IČ 00069515, IZO 107820391) je samostatně vedeno, s místy výuky Žižkovo nám. 75/12 a Travní 1595; REDIZO 600007278 existuje samostatně jako Střední zemědělská škola, Čáslav, Sadová 1234.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek k 31. 12. 2025 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "REDIZO 600007201 ani IZO 107820391 již nejsou evidovány; REDIZO 600007278 nese název Střední zemědělská škola a Střední odborné učiliště Čáslav, příspěvková organizace a převzalo místa výuky Žižkovo nám. 75/12 (s ID místa 107820391) a Travní 1595 pod IZO 049797999.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek k 31. 3. 2026 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stav v období 1. kola JPZ 2026: sloučená škola REDIZO 600007278 nadále existuje včetně místa výuky Žižkovo nám. 75/12; REDIZO 600007201 není evidováno.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://www.atlasskolstvi.cz/ss993-stredni-zemedelska-skola-a-stredni-odborne-uciliste-caslav-prispevkova-organizace",
+          "title": "Střední zemědělská škola a Střední odborné učiliště Čáslav, příspěvková organizace | AtlasŠkolství.cz",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Uvádí sloučení SZeŠ Čáslav a SOU Čáslav od 1. 9. 2025 s výukou v původních budovách a pro rok 2026/27 nabídku nástavbového oboru Podnikání 64-41-L/51 (2 roky, plán přijetí 23; pro 2025/26 poměr 42 přihlášených / 20 přijatých).",
+          "applicable_period": "přijímací řízení 2026 (školní rok 2026/27), sloučení od 1. 9. 2025"
+        },
+        {
+          "url": "https://www.soucaslav.cz/",
+          "title": "Střední odborné učiliště Čáslav – SOU Čáslav (web původní školy)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Web školy uvádí, že budova na náměstí Jana Žižky z Trocnova v Čáslavi je součástí Střední zemědělské školy a Středního odborného učiliště Čáslav, příspěvkové organizace zřizované Středočeským krajem – dokládá kontinuitu provozu v původní budově po sloučení.",
+          "applicable_period": "aktuální stav webu (ověřeno 12. 9. 2026); dokládá stav po sloučení 2025"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007201",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 REDIZO 600007201 nabízelo obor Podnikání 64-41-L/51 (2letý, denní, bez zaměření) na adrese nám. Jana Žižky z Trocnova 75, Čáslav; v roce 2026 pod tímto REDIZO žádná nabídka není.",
+          "applicable_period": "1. kolo JPZ 2025 a 2026"
+        },
+        {
+          "url": "data/PZ2026_kolo1_skolobory_kapacity.xlsx a data/PZ2026_kolo1_skolobory_prihlasky.xlsx (lokální projektová data CERMAT, 1. kolo JPZ 2026)",
+          "title": "CERMAT 1. kolo JPZ 2026 – kapacity a přihlášky škol/oborů",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "REDIZO 600007278 (Střední zemědělská škola a Střední odbor. učiliště) nabízí v 1. kole JPZ 2026 obor Podnikání 64-41-L/51, 2letý, denní, bez zaměření – shodný zápis s nabídkou REDIZO 600007201 v roce 2025.",
+          "applicable_period": "1. kolo JPZ 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": ["R-600007278"],
+      "unanswered_questions": [
+        "Přesný právní mechanismus sloučení (rozhodnutí zřizovatele Středočeského kraje) nebyl dohledán v primárním dokumentu; datum 1. 9. 2025 je doloženo sekundárním zdrojem (AtlasŠkolství.cz) a je konzistentní se snímky rejstříku."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "task_id": "R-600010601",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Subjekt Střední škola Kateřinky - Liberec, s.r.o. (REDIZO 600010601, IZO 110025202) je ve všech čtyřech snímcích beze změny, sídlo i místo výuky Horská 167, 460 14 Liberec XVII-Kateřinky. Registrovaná nabídka oborů IZO je ve všech snímcích shodná a zahrnuje mimo jiné oba nástavbové obory 33-42-L/51 Nábytkářská a dřevařská výroba (2l, denní) a 66-42-L/51 Propagace (2l, denní) – oba zůstávají registrovány beze změny i k 30. 6. 2026."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0355", "Q0356"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola obory 33-42-L/51 Nábytkářská a dřevařská výroba a 66-42-L/51 Propagace nenabízela; v 1. kole JPZ 2026 se oba objevují nově jako nabízené (2 roky, denní).",
+        "Rejstřík MŠMT oba obory eviduje u IZO 110025202 nepřetržitě už od 31. 3. 2025 – tedy i v době, kdy CERMAT žádnou nabídku pro rok 2025 nezaznamenal. Jde o nástavbové obory pro absolventy tříletých učebních oborů školy (Truhlář/Čalouník pro NDV, Aranžér pro Propagaci).",
+        "Web školy (skolakaterinky.cz) k oběma oborům aktuálně (září 2026) uvádí, že „1. ročník bude otevřen od 1. 9. 2028“ – tedy po datu zpracování tohoto úkolu popisuje až následující plánované otevření, což je v souladu s tím, že běh otevřený v roce 2026 (dle CERMAT) již proběhl a příští je plánován za dva roky.",
+        "Oba obory jsou nástavbové s omezeným okruhem uchazečů (absolventi konkrétního tříletého učebního oboru téže školy) a přijímací řízení do nich škola zjevně nevyhlašuje každoročně, ale ve víceletých intervalech podle počtu absolventů."
+      ],
+      "conclusion": "Nepřiřazené nabídky obou nástavbových oborů v roce 2026 dokládají obnovení přijímacího řízení, nikoli vznik nových oborů – oba obory jsou v rejstříku MŠMT registrovány nepřetržitě již od 31. 3. 2025, tedy i před rokem, kdy CERMAT žádnou nabídku nezaznamenal. Aktuální stav webu školy (plánované otevření dalšího běhu až od 1. 9. 2028) je konzistentní s tím, že poslední přijímací řízení proběhlo právě pro rok 2026 a škola tyto nástavby otevírá jen ve víceletých intervalech.",
+      "alternative_explanations": [
+        "Přesná periodicita otevírání (dvouletá, nebo nepravidelná podle počtu absolventů) není zdroji výslovně potvrzena, jde o odvození z kombinace rejstříku, CERMAT dat a aktuálního textu webu.",
+        "Nelze zcela vyloučit, že jde o dva různé důvody přerušení u obou oborů (např. jiný počet absolventů předchozích učebních oborů), zdroje to nerozlišují."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["33-42-L/51 (2025, bez nabídky)", "66-42-L/51 (2025, bez nabídky)"],
+        "to": ["33-42-L/51 (2026)", "66-42-L/51 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Horská 167, 460 14 Liberec XVII-Kateřinky, Liberec",
+          "role": "sídlo",
+          "izo": "600010601",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Horská 167, 460 14 Liberec XVII-Kateřinky, Liberec",
+          "role": "místo výuky",
+          "izo": "110025202",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://skolakaterinky.cz/p/nabytkarska-a-drevarska-vyroba",
+          "title": "Nábytkářská a dřevařská výroba – Škola Kateřinky",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stránka oboru 33-42-L/51 uvádí: „1. ročník bude otevřen od 1. 9. 2028.“",
+          "applicable_period": "aktuální stav webu školy, září 2026"
+        },
+        {
+          "url": "https://skolakaterinky.cz/propagace",
+          "title": "Propagace – Škola Kateřinky",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Stránka oboru 66-42-L/51 uvádí: „1. ročník bude otevřen od 1. 9. 2028.“",
+          "applicable_period": "aktuální stav webu školy, září 2026"
+        },
+        {
+          "url": "https://skolakaterinky.cz/pro-uchazece",
+          "title": "Pro uchazeče – Škola Kateřinky",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Přehled všech nabízených oborů školy včetně obou nástavbových oborů NDV a Propagace.",
+          "applicable_period": "aktuální stav webu školy, září 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Oba obory (33-42-L/51, 66-42-L/51) registrovány u IZO 110025202 už k 31. 3. 2025, tedy před rokem bez nabídky CERMAT.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600010601",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Oba obory chybí v nabídce 2025 a objevují se v nabídce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesná perioda/pravidlo, podle kterého škola otevírá tyto nástavbové obory (dvouletý cyklus vs. podle počtu absolventů)."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "task_id": "R-600013383",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje kontinuitu subjektu Střední škola cestovního ruchu a gastronomie, s.r.o. (REDIZO 600013383, IZO 110000048) ve všech čtyřech snímcích, se dvěma místy výuky (Hybešova 240/1 a Masarykova 1355/12, Blansko). Obor 65-41-L/51 Gastronomie je registrován ve všech snímcích včetně 31. 3. 2025 – tedy dříve, než se objevil v nabídce CERMAT 2026. Obor 78-42-M/02 Ekonomické lyceum přibyl v rejstříku mezi 31. 3. 2025 a 31. 12. 2025, což je mimo rozsah otázky tohoto úkolu."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0337"],
+      "status": "pravděpodobné",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 65-41-L/51 Gastronomie se zaměřením „Gastronomický management“ (2 roky, denní); v roce 2025 tato nabídka u REDIZO 600013383 chyběla.",
+        "Rejstřík MŠMT eviduje obor 65-41-L/51 Gastronomie u IZO 110000048 ve všech čtyřech snímcích, včetně 31. 3. 2025 – obor byl tedy registrován už předtím, než se objevil v nabídce CERMAT 2026.",
+        "Web školy (cergas-bk.cz) popisuje Gastronomický management jako maturitní nástavbové studium určené pro absolventy gastronomických učebních oborů (např. Kuchař-číšník) – odpovídá kódu L/51 (nástavba po tříletém oboru s výučním listem)."
+      ],
+      "conclusion": "Jde pravděpodobně o obnovení přijímacího řízení do dříve registrovaného, ale v 1. kole JPZ 2025 nenabízeného nástavbového oboru Gastronomie/Gastronomický management, nikoli o obor s nově vzniklým kódem.",
+      "alternative_explanations": [
+        "Nelze vyloučit, že šlo o nabídku mimo hlavní proud dat 1. kola JPZ (např. jen v dalších kolech nebo jiné formě studia) už dříve, kterou tento úkol nezachytil jako předchůdce."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["65-41-L/51 Gastronomický management (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Masarykova 1355/12, 678 01 Blansko",
+          "role": "sídlo",
+          "izo": "600013383",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Hybešova 240/1, 678 01 Blansko",
+          "role": "místo výuky",
+          "izo": "110000048",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Masarykova 1355/12, 678 01 Blansko",
+          "role": "místo výuky",
+          "izo": "110000048",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.cergas-bk.cz/prijimani-zaku/vzdelavani-dospelych-na-ss-cergas-blansko",
+          "title": "Vzdělávání dospělých na SŠ CERGAS Blansko",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Gastronomický management je maturitní (nástavbové) studium pro absolventy gastronomických učebních oborů.",
+          "applicable_period": "aktuální nabídka školy (stav k 12. 9. 2026)"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 65-41-L/51 Gastronomie zůstává u IZO 110000048 registrován, subjekt i IZO beze změn.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013383",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 65-41-L/51 Gastronomický management přítomna jen v roce 2026, v roce 2025 chybí.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum vyhlášení přijímacího řízení pro Gastronomický management 2026/27 nebylo na webu školy dohledáno.",
+        "Není jasné, zda obor byl v minulosti (před rokem 2025) fakticky vyučován, nebo zůstával v rejstříku jen formálně neaktivní."
+      ]
+    }
+  ]
+}

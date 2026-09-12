@@ -1,0 +1,114 @@
+{
+  "task_id": "R-600007332",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025, 31. 12. 2025, 31. 3. 2026, 30. 6. 2026) vykazuje naprosto stabilní subjekt: Dvořákovo gymnázium Kralupy nad Vltavou, příspěvková organizace (REDIZO 600007332, IČ 49518925), sídlo Dvořákovo nám. 800/9, Kralupy nad Vltavou, PSČ 278 01 (RÚIAN 6227104), s IZO 000068845 (střední škola) a IZO 110035747 (školní jídelna), obě s místem výuky na adrese sídla. Žádná změna názvu, sídla, IZO ani struktury subjektu mezi ročníky přijímacího řízení 2025 a 2026; rejstřík tedy kontinuitu školy potvrzuje a žádné sloučení či zánik na úrovni subjektu nenastal. Rejstřík eviduje obory jen na úrovni KKOV bez zaměření, takže ke změně v zápisu zaměření čtyřletého gymnázia nemůže nic říct."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0043", "Q0044", "Q0201"],
+      "status": "potvrzeno",
+      "observations": [
+        "Škola (Dvořákovo gymnázium Kralupy nad Vltavou, REDIZO 600007332, IZO 000068845) je ve snímcích rejstříku MŠMT k 31. 3. 2025, 31. 12. 2025, 31. 3. 2026 i 30. 6. 2026 zcela beze změny – stejný název, IČ, sídlo i místo výuky na Dvořákově nám. 800/9. Kontinuita školy jako subjektu je tedy plně doložena.",
+        "V datech CERMAT z 1. kola JPZ 2025 škola nabízela čtyřleté gymnázium (79-41-K/41, denní forma) ve dvou samostatných nabídkách podle zaměření ŠVP: „Společenskovědní zaměření švp 0007/2024“ a „Přírodovědně-technické zaměření švp 0008/2024“. Vedle nich stála nabídka osmiletého gymnázia (79-41-K/81) bez zaměření.",
+        "V datech CERMAT z 1. kola JPZ 2026 je čtyřleté gymnázium (79-41-K/41) nabízeno jako jediná nabídka bez uvedeného zaměření; osmileté gymnázium (79-41-K/81) pokračuje beze změny. Kód oboru, délka studia, forma, adresa i IZO jsou v obou letech totožné.",
+        "Web školy v archivované podobě z 9. 2. 2025 (Wayback Machine, tj. v době 1. kola JPZ 2025) uvádí pro rok 2025: „Čtyřleté gymnázium: 79-41-K/41 Gymnázium, zaměření přírodovědně-technické (ŠVP 0008/2024) – předpokládaný počet 30 přijatých; zaměření společenskovědní (ŠVP 0007/2024) – předpokládaný počet 30 přijatých. U čtyřletého gymnázia si může uchazeč podat na naši školu 2 přihlášky, každou s jiným zaměřením.“",
+        "Aktuální stránka školy k přijímacímu řízení, aktualizovaná pro rok 2026 (kritéria datována 27. 1. 2026, text 21. 12. 2025), uvádí pro rok 2026 pouze dvě nabídky: osmileté gymnázium 79-41-K/81 (30 přijímaných) a čtyřleté gymnázium 79-41-K/41 (60 přijímaných) – bez jakéhokoli dělení na zaměření. Součet kapacit obou zaměření z roku 2025 (30 + 30) přesně odpovídá kapacitě jednotné nabídky 2026 (60).",
+        "Prázdné pole „ZAMĚŘENÍ OBORU“ v datech CERMAT 2026 tedy není chybějící údaj, ale odráží skutečnou změnu nabídky: škola pro rok 2026 sloučila obě zaměření čtyřletého studia do jedné společné přijímací nabídky."
+      ],
+      "conclusion": "Dvořákovo gymnázium Kralupy nad Vltavou pokračuje jako tentýž subjekt (stejné REDIZO, IČ i IZO, beze změny adresy). Obor 79-41-K/41 Gymnázium (čtyřleté, denní studium) v něm pokračuje, ale škola pro přijímací řízení 2026 sloučila dosavadní dvě nabídky dle zaměření ŠVP (společenskovědné 0007/2024 a přírodovědně-technické 0008/2024, po 30 místech) do jedné společné nabídky bez uvedeného zaměření s kapacitou 60 míst. Obě „nepřiřazené“ nabídky z roku 2025 (Q0043, Q0044) tak navazují na jedinou „nepřiřazenou“ nabídku z roku 2026 (Q0201) vztahem 2:1. Osmileté gymnázium 79-41-K/81 pokračuje beze změny a v této frontě neřešené.",
+      "alternative_explanations": [
+        "Zdroje nevylučují, že obě zaměření ŠVP (0007/2024 a 0008/2024) interně existují i nadále a škola pouze pro účely přijímacího řízení přijímá uchazeče do jednoho společného oboru – z dostupných zdrojů (webová kritéria 2026, data CERMAT) to nelze rozlišit a rejstřík zaměření ŠVP neeviduje.",
+        "Alternativně škola mohla jedno ze zaměření skutečně ukončit a druhé ponechat; i to by ale vedlo k jediné nabídce bez uvedení zaměření a pro návaznost přijímacích nabídek nemá praktický rozdíl."
+      ],
+      "relationship": {
+        "type": "merge",
+        "from": ["offers 2025 index 423 (79-41-K/41, zaměření společenskovědné švp 0007/2024)", "offers 2025 index 424 (79-41-K/41, zaměření přírodovědně-technické švp 0008/2024)"],
+        "to": ["offers 2026 index 25 (79-41-K/41, bez zaměření)"]
+      },
+      "addresses": [
+        {
+          "text": "Dvořákovo nám. 800/9, 278 01 Kralupy nad Vltavou (RÚIAN 6227104)",
+          "role": "sídlo",
+          "izo": "000068845",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku beze změny)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Dvořákovo nám. 800/9, Kralupy nad Vltavou (RÚIAN 6227104)",
+          "role": "místo výuky",
+          "izo": "000068845",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku beze změny)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600007332",
+          "title": "Přiložená data fronty – nabídky CERMAT 1. kola JPZ 2025 a 2026 pro REDIZO 600007332",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 dvě nabídky 79-41-K/41 se zaměřeními (společenskovědné švp 0007/2024, přírodovědně-technické švp 0008/2024), v roce 2026 jediná nabídka 79-41-K/41 bez zaměření; osmiletý obor 79-41-K/81 v obou letech; identické REDIZO, IZO a adresa.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek k 31. 3. 2025 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt 600007332 (Dvořákovo gymnázium Kralupy nad Vltavou, p. o., IČ 49518925) se sídlem Dvořákovo nám. 800/9 a IZO 000068845 existuje v době 1. kola JPZ 2025.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek k 31. 12. 2025 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt i IZO 000068845 beze změny oproti březnu 2025; žádné sloučení či zánik na úrovni subjektu.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek k 31. 3. 2026 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt i IZO 000068845 beze změny v době 1. kola JPZ 2026; stejné sídlo a místo výuky.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR, snímek k 30. 6. 2026 (MŠMT)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt i IZO 000068845 nadále beze změny i po skončení hlavní části přijímacího řízení 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://web.archive.org/web/20250209081814/https://www.dgkralupy.cz/studium/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Dvořákovo gymnázium Kralupy nad Vltavou (archivní snímek webu školy z 9. 2. 2025)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro rok 2025 škola uvádí čtyřleté gymnázium 79-41-K/41 ve dvou zaměřeních (přírodovědně-technické ŠVP 0008/2024 a společenskovědné ŠVP 0007/2024), každé s předpokládaným počtem 30 přijatých, s možností podat 2 přihlášky – potvrzuje zápis v datech CERMAT 2025.",
+          "applicable_period": "přijímací řízení 2025 (stav webu k 9. 2. 2025)"
+        },
+        {
+          "url": "https://www.dgkralupy.cz/studium/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Dvořákovo gymnázium Kralupy nad Vltavou (aktualizováno pro PZ 2026, text ze dne 21. 12. 2025, kritéria 27. 1. 2026)",
+          "published_at": "2026-01-27",
+          "checked_at": "2026-09-12",
+          "supports": "Pro rok 2026 škola uvádí pouze dvě nabídky: 79-41-K/81 osmileté gymnázium (30 přijímaných) a 79-41-K/41 čtyřleté gymnázium (60 přijímaných), bez dělení na zaměření – potvrzuje sloučení obou zaměření do jedné nabídky o kapacitě 60 míst.",
+          "applicable_period": "přijímací řízení 2026 (1. kolo)"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda zaměření ŠVP 0007/2024 a 0008/2024 existují ve škole interně i pro ročník přijatý v roce 2026 (např. výběr zaměření až po přijetí), nebo zda škola zaměření čtyřletého studia skutečně zrušila – z dostupných zdrojů nelze rozhodnout."
+      ]
+    }
+  ]
+}

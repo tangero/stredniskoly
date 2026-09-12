@@ -1,0 +1,83 @@
+{
+  "task_id": "R-600010996",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Subjekt Střední odborné učiliště a Střední odborná škola SČMSD, Žatec, s.r.o. (REDIZO 600010996, IZO 110032829) je ve všech čtyřech snímcích beze změny, sídlo Hošťálkovo náměstí 132, 438 01 Žatec, místa výuky Josefa Hory 95 a Hošťálkovo náměstí 132. Obor 78-42-M/06 Kombinované lyceum NENÍ registrován ve snímku k 31. 3. 2025, ale je registrován ve všech třech následujících snímcích (31. 12. 2025, 31. 3. 2026, 30. 6. 2026) – jde o nově zapsaný obor mezi březnem a prosincem 2025."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0368"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/06 Kombinované lyceum (4leté, denní), který v roce 2025 v nabídce nebyl.",
+        "Rejstřík MŠMT obor 78-42-M/06 neeviduje k 31. 3. 2025, ale eviduje jej u IZO 110032829 ve všech snímcích od 31. 12. 2025 dále – zápis do rejstříku proběhl v tomto rozmezí.",
+        "Aktualita na webu školy (skolazatec.cz, publikováno 21. 7. 2025) přímo uvádí: „Od 1. září 2026 otevíráme nový studijní obor KOMBINOVANÉ LYCEUM“ – čtyřletý maturitní obor se všeobecným základem, se zaměřením humanitním nebo přírodovědným od konce 2. ročníku.",
+        "Časová posloupnost (oznámení 7/2025 → zápis do rejstříku mezi 3/2025 a 12/2025 → nabídka v JPZ 2026) je vzájemně konzistentní."
+      ],
+      "conclusion": "Kombinované lyceum 78-42-M/06 je skutečně nový obor, otevřený od školního roku 2026/27, jak oznámila škola v červenci 2025 a jak dokládá i zápis oboru do rejstříku MŠMT mezi 31. 3. 2025 a 31. 12. 2025. Obor nemá žádného předchůdce v nabídce školy z roku 2025.",
+      "alternative_explanations": [],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/06 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Hošťálkovo náměstí 132, 438 01 Žatec",
+          "role": "sídlo",
+          "izo": "600010996",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Hošťálkovo náměstí 132, 438 01 Žatec; Josefa Hory 95, 438 01 Žatec",
+          "role": "místo výuky",
+          "izo": "110032829",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.skolazatec.cz/aktuality/kombinovane-lyceum-novy-studijni-obor",
+          "title": "Kombinované lyceum - nový studijní obor | Střední odborná škola a Střední odborné učiliště SČMSD",
+          "published_at": "2025-07-21",
+          "checked_at": "2026-09-12",
+          "supports": "Škola oznamuje otevření nového oboru Kombinované lyceum od 1. 9. 2026, popisuje strukturu (humanitní/přírodovědné zaměření od 2. ročníku).",
+          "applicable_period": "přijímací řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/06 u IZO 110032829 k 31. 3. 2025 ještě registrován není.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/06 je u IZO 110032829 nově registrován k 31. 12. 2025.",
+          "applicable_period": "stav rejstříku k 31. 12. 2025"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600010996",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/06 přítomna v roce 2026 a chybějící v roce 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

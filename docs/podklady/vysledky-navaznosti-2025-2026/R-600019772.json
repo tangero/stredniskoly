@@ -1,0 +1,108 @@
+{
+  "task_id": "R-600019772",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plnou kontinuitu subjektu: Vyšší odborná škola zdravotnická a Střední zdravotnická škola, Hradec Králové, Komenského 234 (REDIZO 600019772), sídlo Komenského 234/6, 500 03 Hradec Králové, figuruje beze změny ve všech čtyřech snímcích. IZO 110030591 (Střední škola, místo výuky Komenského 234/6) má ve všech čtyřech snímcích shodný seznam registrovaných oborů: 53-43-M/01 Laboratorní asistent, 53-41-H/01 Ošetřovatel, 53-41-M/03 Praktická sestra, 53-44-M/03 Asistent zubního technika, 53-41-M/01 Zdravotnický asistent (dobíhající), 78-42-M/04 Zdravotnické lyceum. Oba sporné obory (Laboratorní asistent i Asistent zubního technika) jsou zapsány ve všech čtyřech snímcích beze změny – registrace v rejstříku sama tedy nerozlišuje, proč obor v daném roce chybí v 1. kole JPZ."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0135", "Q0361"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 53-43-M/01 Laboratorní asistent (4 roky, denní, český); v 1. kole JPZ 2026 tato nabídka chybí.",
+        "V 1. kole JPZ 2026 škola nově nabízí obor 53-44-M/03 Asistent zubního technika (4 roky, denní, český); v 1. kole JPZ 2025 tato nabídka chybí.",
+        "Rejstřík MŠMT eviduje oba obory u IZO 110030591 beze změny ve všech čtyřech snímcích (2025-03-31 až 2026-06-30) – ani jeden obor v rejstříku nezaniká ani nevzniká, mění se jen to, zda se v daném roce vyhlašuje přijímací řízení.",
+        "Web školy (zshk.cz) na stránce Obory SŠ u oboru Laboratorní asistent uvádí doslovně: „Obor otevíráme v lichém roce.“",
+        "Tentýž web u oboru Asistent zubního technika uvádí doslovně: „Obor otevíráme vždy v sudém roce.“",
+        "Tento popis přesně odpovídá pozorovanému vzorci: Laboratorní asistent byl nabízen v přijímacím řízení pro lichý školní rok 2025 (nástup 2025/26) a chybí pro sudý rok 2026 (nástup 2026/27); Asistent zubního technika chybí pro lichý rok 2025 a je nabízen pro sudý rok 2026.",
+        "Jde o textovou obecnou informaci na aktuální verzi webu (bez datace vzniku textu ani historie); nejde o dokument specifický pro přijímací řízení 2025/26 nebo 2026/27, ale o dlouhodobě platné organizační pravidlo školy pro tyto dva menší obory."
+      ],
+      "conclusion": "Škola u obou oborů (Laboratorní asistent 53-43-M/01 a Asistent zubního technika 53-44-M/03) dlouhodobě uplatňuje střídavé (dvouleté) otevírání přijímacího řízení – Laboratorní asistent v lichých letech, Asistent zubního technika v sudých letech – jak sama uvádí na webu. Chybějící nabídka Laboratorního asistenta v CERMAT 2026 a chybějící nabídka Asistenta zubního technika v CERMAT 2025 tedy nejsou zánik ani nový vznik oborů, ale očekávaný důsledek tohoto střídavého schématu. Oba obory zůstávají v rejstříku MŠMT zapsány po celé sledované období u téhož IZO 110030591 a jde o pokračování téhož oboru téže školy, nikoli o dvě různé entity.",
+      "alternative_explanations": [
+        "Text na webu je aktuální (bez timestampu) a nelze vyloučit, že popisované schéma bylo zavedeno teprve nedávno a v minulosti platilo jiné pravidlo; k tomu ale neexistuje žádný náznak v datech.",
+        "Škola si vyhrazuje právo obor v daném roce neotevřít i mimo toto schéma (např. při nedostatku zájemců) – u obou oborů ale sledovaný rok přesně odpovídá deklarovanému schématu, takže to není potřeba předpokládat."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["53-43-M/01 Laboratorní asistent (IZO 110030591, 2025)", "53-44-M/03 Asistent zubního technika (IZO 110030591, 2025 registrace/2026 nabídka)"],
+        "to": ["53-43-M/01 Laboratorní asistent (IZO 110030591, další lichý rok)", "53-44-M/03 Asistent zubního technika (IZO 110030591, 2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Komenského 234/6, 500 03 Hradec Králové",
+          "role": "sídlo",
+          "izo": "600019772",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Komenského 234/6, 500 03 Hradec Králové",
+          "role": "místo výuky",
+          "izo": "110030591",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.zshk.cz/obory-ss/",
+          "title": "Obory SŠ - ZSHK",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Doslovná citace: u Laboratorního asistenta „Obor otevíráme v lichém roce.“; u Asistenta zubního technika „Obor otevíráme vždy v sudém roce.“ Potvrzuje dlouhodobé střídavé vyhlašování přijímacího řízení u obou oborů.",
+          "applicable_period": "aktuální stav webu k 2026-09-12, obecně platné organizační pravidlo (bez datace zavedení)"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Oba obory (53-43-M/01 i 53-44-M/03) jsou u IZO 110030591 zapsány již k 31. 3. 2025, tedy před nabídkou Asistenta zubního technika v CERMAT 2026.",
+          "applicable_period": "stav rejstříku k 2025-03-31"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-12-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Oba obory zůstávají zapsány u IZO 110030591 beze změny.",
+          "applicable_period": "stav rejstříku k 2025-12-31"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Oba obory zůstávají zapsány u IZO 110030591 beze změny.",
+          "applicable_period": "stav rejstříku k 2026-03-31"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Oba obory (53-43-M/01 i 53-44-M/03) zůstávají u IZO 110030591 zapsány i po chybějící nabídce Laboratorního asistenta v CERMAT 2026.",
+          "applicable_period": "stav rejstříku k 2026-06-30"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600019772",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 53-43-M/01 Laboratorní asistent přítomna v CERMAT 2025 a chybějící v CERMAT 2026; nabídka 53-44-M/03 Asistent zubního technika přítomna v CERMAT 2026 a chybějící v CERMAT 2025; obor 53-41-M/03 Praktická sestra a 78-42-M/04 Zdravotnické lyceum nabízeny beze změny v obou letech.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda schéma lichý/sudý rok platí i pro roky před 2025 a jak dlouho je zavedeno – web to nedatuje.",
+        "Přesné datum, od kdy web uvádí toto schéma (nelze vyloučit, že bylo zveřejněno až po vyhlášení přijímacího řízení 2026/27)."
+      ]
+    }
+  ]
+}

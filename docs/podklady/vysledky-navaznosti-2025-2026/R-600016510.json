@@ -1,0 +1,91 @@
+{
+  "task_id": "R-600016510",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "REDIZO 600016510 (Střední škola polytechnická, Havířov-Šumbark, příspěvková organizace, Sýkorova 613/1) je ve všech čtyřech snímcích beze změny názvu, sídla i IZO 107880245. Registrované obory se mezi snímky nemění: 26-41-L/01 Mechanik elektrotechnik (4leté), 26-41-M/01 Elektrotechnika (4leté), 26-41-L/52 Provozní elektrotechnika (2leté), 23-44-L/01 Mechanik strojů a zařízení (4leté) a další učební obory. Rejstřík neeviduje samostatné zaměření jako součást kódu KKOV – 26-41-L/01 zůstává jediným kódem po celé sledované období, takže dělení na „Počítačové systémy a sítě“ a „Digitální technika a mechatronika“ je pouze marketingová/organizační profilace v rámci jednoho oboru, nikoli změna zápisu v rejstříku."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0104", "Q0322", "Q0323"],
+      "status": "potvrzeno",
+      "observations": [
+        "V CERMAT datech 1. kola JPZ 2025 je u REDIZO 600016510 jeden řádek pro obor 26-41-L/01 Mechanik elektrotechnik, jehož pole zaměření obsahuje oba texty spojené: „Počítačové systémy a sítě (+ Elektrikář) | Digitální technika a mechatronika (+ Elektrikář)“.",
+        "V CERMAT datech 1. kola JPZ 2026 je stejný obor 26-41-L/01 rozepsán do dvou samostatných řádků se zaměřeními „Digitální technika a mechatronika (+ Elektrikář)“ a „Počítačové systémy a sítě (+ Elektrikář)“ – textově identickými s částmi spojeného pole z roku 2025.",
+        "Ostatní obory školy (23-44-L/01, 26-41-L/52, 26-41-M/01) se mezi lety 2025 a 2026 nemění a nejsou předmětem těchto otázek.",
+        "Oficiální web školy (ssph.cz, sekce Obory vzdělání) popisuje obor Mechanik elektrotechnik 26-41-L/01 jako jeden obor se dvěma zaměřeními – „Digitální technika a mechatronika“ a „Počítačové systémy a sítě“ – bez zmínky o nedávné změně nebo novém zavedení kteréhokoli z nich.",
+        "Rejstřík MŠMT eviduje obor 26-41-L/01 pod jediným kódem ve všech čtyřech snímcích; jednotlivá zaměření se v rejstříku samostatně nezapisují, takže shoda/neshoda počtu řádků v CERMAT datech mezi lety odráží spíše způsob zpracování vstupního souboru než organizační změnu."
+      ],
+      "conclusion": "Jde o stejná dvě zaměření oboru 26-41-L/01 Mechanik elektrotechnik, která škola nabízí dlouhodobě (potvrzeno i aktuálním webem školy) – v datech CERMAT 2025 byla z technických/formátovacích důvodů zapsána jako jeden spojený řádek, v roce 2026 jako dva samostatné řádky se shodným textem zaměření. Nejde o zánik, nový obor ani organizační rozdělení, pouze o rozdílnou granularitu zápisu téhož oboru v ročních souborech CERMAT.",
+      "alternative_explanations": [
+        "Teoreticky mohla škola v roce 2025 skutečně otevírat jen jednu společnou třídu s kombinovaným zaměřením a až od 2026 nabírat žáky do dvou oddělených tříd – tuto možnost přímý zdroj nevyvrací ani nepotvrzuje, web školy popisuje pouze aktuální stav."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["26-41-L/01 Mechanik elektrotechnik, spojený záznam obou zaměření (2025)"],
+        "to": [
+          "26-41-L/01 Mechanik elektrotechnik, zaměření Digitální technika a mechatronika (2026)",
+          "26-41-L/01 Mechanik elektrotechnik, zaměření Počítačové systémy a sítě (2026)"
+        ]
+      },
+      "addresses": [
+        {
+          "text": "Sýkorova 613/1, 736 01 Šumbark, Havířov",
+          "role": "sídlo",
+          "izo": "600016510",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Sýkorova 613/1, 736 01 Šumbark, Havířov",
+          "role": "místo výuky",
+          "izo": "107880245",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.ssph.cz/obory-vzdelani/",
+          "title": "Obory vzdělání – Střední škola polytechnická, Havířov-Šumbark",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 26-41-L/01 Mechanik elektrotechnik je popsán jako jeden obor se dvěma zaměřeními: Digitální technika a mechatronika a Počítačové systémy a sítě, bez zmínky o nedávné organizační změně.",
+          "applicable_period": "stav webu k datu kontroly 2026-09-12"
+        },
+        {
+          "url": "https://www.infoabsolvent.cz/Skoly/Skola/600016510",
+          "title": "Střední škola polytechnická Havířov-Šumbark – InfoAbsolvent",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzuje oficiální web školy (ssph.cz) a existenci dvou zaměření Mechanik elektrotechnik pro přijímací řízení 2026/2027 s kapacitou 60 přijímaných.",
+          "applicable_period": "přijímací řízení 2026/2027"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 26-41-L/01 je u IZO 107880245 registrován jako jediný kód KKOV bez rozlišení zaměření, shodně ve všech čtyřech snímcích.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600016510",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 jeden spojený záznam s oběma zaměřeními, v roce 2026 dva samostatné záznamy s textově totožnými zaměřeními.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Šlo v roce 2025 skutečně o jednu společnou třídu, nebo jen o formátovací spojení dvou tříd v jednom řádku XLSX?"
+      ]
+    }
+  ]
+}

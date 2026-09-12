@@ -1,0 +1,162 @@
+{
+  "task_id": "R-600006026",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík MŠMT ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) potvrzuje identitu školy beze změny: REDIZO 600006026, IZO 016499671, úplný název „Královská střední škola, s.r.o.“ (IČ 25116509), sídlo Svídnická 599/1, Troja, Praha (RÚIAN 22399283) a jediné místo výuky Svídnická 506/1, Troja (RÚIAN 22398376). Rejstřík tedy vysvětluje rozdíl adres mezi roky 2025 (CERMAT uvádí Svídnickou 599 = sídlo) a 2026 (Svídnická 506 = místo výuky): obě adresy škole patří v obou letech, žádné stěhování se nekonalo. Závěr, že Business Academy je nová nabídka pro rok 2026/2027, rejstřík nepotvrzuje ani nevyvrací – zaměření v rámci oboru 63-41-M/02 neeviduje."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0025", "Q0266"],
+      "status": "potvrzeno",
+      "observations": [
+        "V datech CERMAT za 1. kolo přijímacího řízení 2025 má Královská střední škola, s.r.o. (REDIZO 600006026, IZO 016499671) jednu čtyřletou denní nabídku oboru 63-41-M/02 Obchodní akademie bez uvedeného zaměření, s jazykem studia „Český s výukou vybraných předmětů v cizím jazyce“ a adresou Svídnická 599.",
+        "V roce 2026 jsou v datech u téhož oboru dvě nabídky se shodným jazykovým označením: „Obchodní akademie (ČJ)“ a „Business Academy (ČJ/AJ)“, obě s adresou Svídnická 506. Kód KKOV 63-41-M/02, délka studia i forma jsou u všech tří nabídek shodné.",
+        "Rozdíl adres 599 vs. 506 není stěhování: rejstřík MŠMT vede ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) sídlo školy na adrese Svídnická 599/1, Troja, a zároveň místo výuky Svídnická 506/1, Troja. CERMAT tedy jen mezi roky změnil, kterou ze dvou rejstříkových adres zapisuje. Že kancelář školy skutečně sídlí na adrese 506/1, dokládá i web školy, kam se odevzdávají papírové přihlášky (stránka přijímacího řízení uvádí „Svídnická 1/506“).",
+        "Název školy, REDIZO, IZO i zřizovatel (soukromý, IČ 25116509) jsou v obou letech shodné; škola podle rejstříku nezanikla ani se nesloučila.",
+        "Škola na svém webu popisuje obchodní akademii jako ekonomicky a podnikatelsky zaměřený čtyřletý maturitní obor; variantu Business Academy uvádí výslovně jako novinku školního roku 2026/2027 (viz samostatný nález k Q0267). Nabídka „Obchodní akademie (ČJ)“ z roku 2026 tedy odpovídá dosavadnímu českému proudu oboru."
+      ],
+      "conclusion": "Nabídka „Obchodní akademie (ČJ)“ z 1. kola JPZ 2026 je přímým pokračováním nabídky Obchodní akademie (63-41-M/02) z roku 2025: tentýž obor, stejná škola, stejné jazykové označení i délka studia. Doplnění „(ČJ)“ je jen upřesnění zápisu zaměření, které v roce 2026 odlišuje český proud od nově otevřené Business Academy. Změna adresy ze Svídnické 599 na 506 je pouze změna zapisovaného adresního údaje (sídlo vs. místo výuky), nikoli přestěhování školy.",
+      "alternative_explanations": [
+        "Formálně by jediná nabídka z roku 2025 mohla v roce 2026 pokračovat jako Business Academy a „Obchodní akademie (ČJ)“ by mohla být nová; tomu ale odporuje web školy, který Business Academy označuje za novinku 2026/2027, a shodné jazykové označení české varianty napříč roky."
+      ],
+      "relationship": {
+        "type": "continuation",
+        "from": ["2025: 63-41-M/02 Obchodní akademie (4leté, denní), ID_SOF 26d41b2a-1073-477c-ad44-606be3b06a23"],
+        "to": ["2026: 63-41-M/02 Obchodní akademie, zaměření „Obchodní akademie (ČJ)“ (4leté, denní), ID_SOF 0a04a89a-0831-408e-91e0-fc65649e7720"]
+      },
+      "addresses": [
+        {
+          "text": "Svídnická 599/1, Troja, 181 00 Praha (RÚIAN 22399283)",
+          "role": "sídlo",
+          "izo": "izo_016499671",
+          "valid_period": "2025 i 2026 (beze změny ve všech čtyřech snímcích rejstříku); v datech CERMAT zapsána jako ULICE v roce 2025",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
+        },
+        {
+          "text": "Svídnická 506/1, Troja, 181 00 Praha (RÚIAN 22398376)",
+          "role": "místo výuky",
+          "izo": "izo_016499671",
+          "valid_period": "2025 i 2026 (beze změny ve všech čtyřech snímcích rejstříku); v datech CERMAT zapsána jako ULICE v roce 2026",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006026",
+          "title": "Data CERMAT 1. kola JPZ 2025 a 2026 (přiložené context_offers a records)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Seznam nabídek školy v obou letech: 2025 jedna nabídka Obchodní akademie bez zaměření (Svídnická 599), 2026 dvě nabídky téhož oboru (Obchodní akademie (ČJ) a Business Academy (ČJ/AJ), Svídnická 506); shodné IZO, REDIZO, kód KKOV, délka i jazykové označení.",
+          "applicable_period": "přijímací řízení 2025 a 2026 (školní roky 2025/2026 a 2026/2027)"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2025)",
+          "published_at": "2025-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Subjekt REDIZO 600006026 (Královská střední škola, s.r.o., IČ 25116509) a IZO 016499671 jsou vedeny v době 1. kola JPZ 2025; sídlo Svídnická 599/1, Troja, místo výuky Svídnická 506/1, Troja.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": "2026-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Tentýž subjekt i IZO 016499671 jsou v době 1. kola JPZ 2026 vedeny beze změny názvu, sídla i místa výuky oproti snímku k 31. 3. 2025; dokládá kontinuitu školy i obou adres mezi roky 2025 a 2026.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        },
+        {
+          "url": "https://skolabohnice.cz/obchodni-akademie/",
+          "title": "Obchodní akademie – Královská střední škola a gymnázium (web školy)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola provozuje obchodní akademii jako ekonomický čtyřletý maturitní obor; stránka potvrzuje, že obor je trvalou součástí nabídky školy.",
+          "applicable_period": "aktuální web školy (2026); charakter oboru odpovídá oběma rokům"
+        },
+        {
+          "url": "https://skolabohnice.cz/prijimaci-rizeni/",
+          "title": "Přijímací řízení – Královská střední škola a gymnázium (web školy)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola uvádí kancelář pro podání přihlášek na adrese „Svídnická 1/506“ – potvrzuje, že číslo 506 je dlouhodobě provozní adresa školy (místo výuky), nikoli nová adresa z roku 2026.",
+          "applicable_period": "aktuální web školy (obsah stránky pochází z přijímacího řízení 2024/2025)"
+        }
+      ],
+      "history_comparability": "comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0267"],
+      "status": "potvrzeno",
+      "observations": [
+        "Nabídka „Business Academy (ČJ/AJ)“ (63-41-M/02 Obchodní akademie, 4leté denní studium) se v datech CERMAT objevuje pouze v roce 2026; v roce 2025 škola uváděla jedinou nabídku obchodní akademie bez zaměření.",
+        "Web školy Business Academy výslovně označuje jako „Novinka školního roku 2026/2027“ s textem „Poprvé otevíráme Business Academy – moderně pojaté čtyřleté denní maturitní studium“; program vychází z oboru Obchodní akademie 63-41-M/02 s výrazným důrazem na angličtinu (výuka CZ/EN).",
+        "Nezávislý popis školy (Prahalove.cz, aktualizováno 8. 8. 2026) potvrzuje, že varianta Business Academy u obchodní akademie navazuje na dvojjazyčnou metodu Královských škol, tedy že jde o jazykově diferencovanou variantu téhož oboru.",
+        "Oba přijímací proudy 2026 sdílejí kód KKOV, školu, délku studia i formální jazykové označení „Český s výukou vybraných předmětů v cizím jazyce“; liší se jen názvem zaměření (český vs. česko-anglický proud)."
+      ],
+      "conclusion": "Business Academy (ČJ/AJ) je nová přijímací nabídka, kterou škola poprvé otevřela pro školní rok 2026/2027 jako anglicky posílenou variantu oboru 63-41-M/02 Obchodní akademie. V roce 2025 nemá samostatného předchůdce – vznikla rozštěpením dosud jediné nabídky oboru na český a česko-anglický proud.",
+      "alternative_explanations": [
+        "Teoreticky mohla škola dvojjazyčnou výuku uvnitř oboru provozovat už dříve (Královské školy jsou na ní postavené) a teprve v roce 2026 ji vyčlenit do samostatné přijímací nabídky; data o přijímacím řízení 2025 ale žádnou samostatnou nabídku tohoto typu neobsahují a škola program sama označuje za novinku."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["2026: 63-41-M/02 Obchodní akademie, zaměření „Business Academy (ČJ/AJ)“ (4leté, denní), ID_SOF bd351f16-c8cb-4aaf-83ab-490d45a7eb52"]
+      },
+      "addresses": [
+        {
+          "text": "Svídnická 506/1, Troja, 181 00 Praha (RÚIAN 22398376)",
+          "role": "místo výuky",
+          "izo": "izo_016499671",
+          "valid_period": "2025 i 2026 (dle rejstříku MŠMT ve všech čtyřech snímcích)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006026",
+          "title": "Data CERMAT 1. kola JPZ 2025 a 2026 (přiložené context_offers a records)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka Business Academy (ČJ/AJ) existuje pouze v roce 2026; v nabídkách 2025 žádná druhá nabídka oboru 63-41-M/02 není.",
+          "applicable_period": "přijímací řízení 2025 a 2026"
+        },
+        {
+          "url": "https://skolabohnice.cz/business-academy/",
+          "title": "Business Academy Praha | Novinka na Královské střední škole (web školy)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola sama uvádí: „Novinka školního roku 2026/2027 – Poprvé otevíráme Business Academy“, čtyřleté denní maturitní studium vycházející z oboru Obchodní akademie 63-41-M/02 s důrazem na angličtinu (CZ/EN).",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://www.prahalove.cz/kralovska-stredni-skola-praha/",
+          "title": "Královská střední škola: obchodní akademie i veřejná správa (Prahalove.cz)",
+          "published_at": "2026-08-05",
+          "checked_at": "2026-09-12",
+          "supports": "Nezávislé potvrzení, že škola u obchodní akademie nabízí variantu Business Academy s češtinou a angličtinou jako vyučovacími jazyky; zmiňuje i dvojí adresní údaj školy (506/1 vs. 599/1a).",
+          "applicable_period": "srpen 2026 (aktualizace článku)"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – celá ČR (snímek MŠMT k 31. 3. 2026)",
+          "published_at": "2026-03-31",
+          "checked_at": "2026-09-12",
+          "supports": "Škola (REDIZO 600006026, IZO 016499671) je v době 1. kola JPZ 2026 vedena beze změny oproti roku 2025; nová nabídka je změnou na úrovni zaměření oboru, nikoli novým subjektem. Zaměření oborů rejstřík neeviduje.",
+          "applicable_period": "stav rejstříku k 31. 3. 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda se obsah nového proudu Business Academy liší od dosavadní výuky oboru jen jazykově, nebo i tematicky, nelze z dostupných zdrojů plně posoudit; pomohl by ŠVP Business Academy, který škola na webu zatím nezveřejnila."
+      ]
+    }
+  ]
+}

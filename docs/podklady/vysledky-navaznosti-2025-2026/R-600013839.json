@@ -1,0 +1,89 @@
+{
+  "task_id": "R-600013839",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Obchodní akademie ELDO, o.p.s. (REDIZO 600013839) je beze změny názvu a sídla (Střední 552/59, Brno) ve všech čtyřech snímcích. IZO 044012667 má ve všech snímcích shodně registrovány obory 63-41-M/02 Obchodní akademie (denní 4l i dálková 5l), 78-42-M/02 Ekonomické lyceum a 78-42-M/03 Pedagogické lyceum, na dvou místech výuky (Střední 552/59 a Loosova 800/1). Rejstřík neeviduje jednotlivá zaměření/ŠVP v rámci oboru 63-41-M/02 samostatně, takže rozdělení nabídky na dvě zaměření v roce 2026 v rejstříku vidět není."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0081", "Q0271", "Q0272"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 63-41-M/02 Obchodní akademie bez uvedeného zaměření; v 1. kole JPZ 2026 je stejný kód oboru nabízen dvakrát – jednou se zaměřením „Obchodní akademie“ a jednou se zaměřením „Management sportu“.",
+        "Stránka přijímacího řízení školy pro školní rok 2025/2026 (oaeldo.cz) uvádí pro tento ročník otevření jen tří oborů: Obchodní akademie, Ekonomické lyceum (ŠVP Marketingová komunikace) a Pedagogické lyceum – samostatná třída Management sportu mezi otevíranými obory pro 2025/2026 uvedena není.",
+        "Stránka přijímacího řízení pro školní rok 2026/2027 (oaeldo.cz) naopak uvádí čtyři samostatně počítané třídy: Obchodní akademie (32 uchazečů), Obchodní akademie se zaměřením ŠVP Management sportu (16 uchazečů), Ekonomické lyceum (23) a Pedagogické lyceum (52).",
+        "Podle vlastní stránky programu (oaeldo.cz/.../management-sportu) je Management sportu veden pod stejným kódem 63-41-M/02 jako samostatný ŠVP určený žákům se sportovní přípravou (fotbal, hokej, florbal aj.); AtlasŠkolství eviduje tento ŠVP u školy jako existující akreditovanou variantu oboru nezávisle na aktuálním roce.",
+        "Rejstřík MŠMT vede obor 63-41-M/02 jako jeden celek bez rozlišení zaměření, a to shodně ve všech čtyřech snímcích."
+      ],
+      "conclusion": "Škola v roce 2026 rozdělila dosud jednotně vykazovaný obor 63-41-M/02 Obchodní akademie na dvě paralelní přijímané třídy se stejným kódem: obecnou „Obchodní akademii“ (pokračování nabídky 2025) a „Management sportu“ – existující akreditovaný ŠVP, který ale pro přijímací řízení 2025/2026 nebyl school jako samostatná otevíraná třída inzerován. Nejde o vznik nového oboru v rejstříkovém smyslu (kód je stejný), ale o rozšíření/obnovení počtu paralelně otevíraných zaměření v rámci téhož oboru.",
+      "alternative_explanations": [
+        "Management sportu mohl být otevírán jako samostatná třída i v dřívějších letech před rokem 2025/2026 a pro tento konkrétní ročník jen chyběl – dostupné zdroje pokrývají jen školní roky 2025/2026 a 2026/2027."
+      ],
+      "relationship": {
+        "type": "split",
+        "from": ["63-41-M/02 (2025)"],
+        "to": ["63-41-M/02 Obchodní akademie (2026)", "63-41-M/02 Management sportu (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Střední 552/59, 602 00 Ponava, Brno",
+          "role": "místo výuky",
+          "izo": "044012667",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013839",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ 2025 a 2026)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 jedna nabídka 63-41-M/02 bez zaměření, v roce 2026 dvě nabídky téhož kódu se zaměřeními Obchodní akademie a Management sportu.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 63-41-M/02 zůstává registrován u IZO 044012667 jako jeden celek bez rozlišení zaměření.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "https://www.oaeldo.cz/pro-uchazece/prijimaci-rizeni/prijimaci-rizeni-do-sk-roku-2025-2026/",
+          "title": "Přijímací řízení do šk. roku 2025/2026 – Obchodní akademie ELDO, o.p.s.",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro školní rok 2025/2026 škola otevírala jen obecnou Obchodní akademii, Ekonomické lyceum a Pedagogické lyceum – bez samostatné třídy Management sportu.",
+          "applicable_period": "přijímací řízení 2025/2026"
+        },
+        {
+          "url": "https://www.oaeldo.cz/pro-uchazece/prijimaci-rizeni/prijimaci-rizeni-do-sk-roku-2026-2027/",
+          "title": "Přijímací řízení do šk. roku 2026/2027 – Obchodní akademie ELDO, o.p.s.",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Pro školní rok 2026/2027 škola otevírá zvlášť Obchodní akademii (32 uchazečů) a Obchodní akademii se zaměřením Management sportu (16 uchazečů).",
+          "applicable_period": "přijímací řízení 2026/2027"
+        },
+        {
+          "url": "https://www.oaeldo.cz/pro-uchazece/nabizene-obory/management-sportu/",
+          "title": "Management sportu – Obchodní akademie ELDO, o.p.s.",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Management sportu je veden pod kódem 63-41-M/02 jako samostatný ŠVP pro žáky se sportovní přípravou.",
+          "applicable_period": "aktuální popis programu (2026)"
+        }
+      ],
+      "history_comparability": "partially",
+      "recommended_action": "manual_review",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Zda byla třída Management sportu otevírána i v letech před 2025/2026, a tedy zda jde o obnovení, nebo o skutečně první samostatné otevření vedle obecné Obchodní akademie."
+      ]
+    }
+  ]
+}

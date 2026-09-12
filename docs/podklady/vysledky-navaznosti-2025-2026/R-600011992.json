@@ -1,0 +1,94 @@
+{
+  "task_id": "R-600011992",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrdil plnou kontinuitu školy: REDIZO 600011992 (Lepařovo gymnázium, Jičín, Jiráskova 30, IČ 60116781) i IZO 000087131 jsou ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) vedeny beze změny, sídlo i jediné místo výuky Jiráskova 30, Jičín (RÚIAN 25337661). Žádné sloučení, zánik ani změna názvu. Rejstřík ale ani ve snímku k 30. 6. 2026 eviduje pouze obory 79-41-K/41 a 79-41-K/61; nový obor 79-42-K/41 (zápis schválen MŠMT 15. 10. 2025) v datech otevřených dat zatím není — jde o známý limit snímků (obory na úrovni KKOV, promítnutí s odstupem), nikoli o důkaz proti existenci oboru."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0211"],
+      "status": "potvrzeno",
+      "observations": [
+        "Data fronty ukazují, že obory 79-41-K/41 (Gymnázium, 4leté) a 79-41-K/61 (Gymnázium, 6leté) Lepařova gymnázia Jičín (REDIZO 600011992, IZO 000087131) pokračují v nabídce 1. kola JPZ beze změny z roku 2025 do 2026; roku 2026 k nim přibyla třetí nabídka 79-42-K/41 Gymnázium se sportovní přípravou (4leté, denní).",
+        "Florbal Jičín zveřejnil 26. 10. 2025 dopis z ředitelství Lepařova gymnázia: MŠMT rozhodnutím z 15. 10. 2025 vyhovělo žádosti školy o zápis nového oboru 79-42-K/41 Gymnázium se sportovní přípravou do rejstříku škol; od školního roku 2026/27 se otevírá nová třída navíc ke stávajícím (kapacita oboru 100 žáků, do prvního ročníku předpoklad 20 uchazečů), s talentovými zkouškami a kmenovými sporty házená, florbal, judo a lehká atletika.",
+        "Český svaz házené (říjen 2025) potvrzuje otevření sportovní třídy od školního roku 2026/27 ve spolupráci s HBC Jičín, včetně dne otevřených dveří 4. 12. 2025.",
+        "Rejstřík MŠMT ve snímcích 31. 3. 2025 až 30. 6. 2026 potvrzuje nepřetržitou existenci školy (REDIZO i IZO beze změny, sídlo i místo výuky Jiráskova 30, Jičín), ale nový obor 79-42-K/41 ani ve snímku k 30. 6. 2026 neuvádí — absence v otevřených datech rejstříku zde nevyvrací existenci oboru, protože registraci schválenou 15. 10. 2025 přímo dokládá datovaný dopis školy a samotná nabídka CERMAT v 1. kole JPZ 2026.",
+        "Mimo zadání otázky: u pokračujících oborů 79-41-K/41 a 79-41-K/61 vypadlo v datech 2026 zaměření 'Gymnázium všeobecné' (2025 uvedeno, 2026 prázdné) — jde pouze o změnu zápisu, kódy KKOV ani názvy se nezměnily."
+      ],
+      "conclusion": "Nabídka 79-42-K/41 Gymnázium se sportovní přípravou je nový obor, který Lepařovo gymnázium Jičín otevřelo od školního roku 2026/27 po zápisu do rejstříku schváleném MŠMT 15. 10. 2025. Neexistuje žádný předchůdce v roce 2025, na který by měla být přiřazena — jde o rozšíření nabídky pokračující školy, nikoli o chybu párování ani o přejmenování stávajícího oboru.",
+      "alternative_explanations": [
+        "Rejstříková data by teoreticky mohla obor evidovat až po 30. 6. 2026 (snímky nekončí), ale dopis školy citující rozhodnutí MŠMT z 15. 10. 2025 tuto alternativu prakticky vylučuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["REDIZO 600011992 / IZO 000087131 / KKOV 79-42-K/41 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Jiráskova 30, Holínské Předměstí, 506 01 Jičín (RÚIAN 25337661)",
+          "role": "sídlo",
+          "izo": "000087131",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Jiráskova 30, Holínské Předměstí, Jičín (RÚIAN 25337661)",
+          "role": "místo výuky",
+          "izo": "000087131",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky rejstříku)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.florbaljicin.cz/c/leparovo-gymnazium-otevre-sportovni-tridu-481",
+          "title": "Lepařovo gymnázium otevře sportovní třídu! (Florbal Jičín)",
+          "published_at": "2025-10-26",
+          "checked_at": "2026-09-12",
+          "supports": "Dopis ředitelství školy: MŠMT rozhodnutím z 15. 10. 2025 zapsalo nový obor 79-42-K/41 Gymnázium se sportovní přípravou; otevření třídy od školního roku 2026/27 navíc ke stávajícím oborům, kapacity a termíny přijímacího řízení 2026.",
+          "applicable_period": "říjen 2025 / školní rok 2026/27"
+        },
+        {
+          "url": "https://www.handball.cz/aktualita/leparovo-gymnazium-otevira-sportovni-tridu-hbc-jicin-rijen-2025",
+          "title": "Lepařovo gymnázium otevírá ve spolupráci s HBC Jičín sportovní třídu (Český svaz házené)",
+          "published_at": "2025-10-27",
+          "checked_at": "2026-09-12",
+          "supports": "Nezávislé potvrzení otevření oboru Gymnázium se sportovní přípravou od školního roku 2026/27; den otevřených dveří 4. 12. 2025.",
+          "applicable_period": "říjen 2025 / školní rok 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/e9c07729-877e-4af0-be4a-9d36e45806ae/rssz-cela-cr-2025-03-31.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 31. 3. 2025 (MŠMT, otevřená data)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 31. 3. 2025 škola REDIZO 600011992 / IZO 000087131 existuje se sídlem i místem výuky Jiráskova 30, Jičín; evidovány pouze obory 79-41-K/41 a 79-41-K/61.",
+          "applicable_period": "stav rejstříku k 31. 3. 2025"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení – snímek k 30. 6. 2026 (MŠMT, otevřená data)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "K 30. 6. 2026 škola nadále existuje beze změny (REDIZO, IZO, sídlo, místo výuky); obor 79-42-K/41 v otevřených datech zatím není uveden, což odpovídá limitu snímků (promítání zápisů s odstupem).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600011992",
+          "title": "Data CERMAT 1. kola JPZ 2025 a 2026 přiložená k úkolu",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "V roce 2025 nabídka pouze 79-41-K/41 a 79-41-K/61; v roce 2026 oba obory pokračují a přibývá 79-42-K/41 Gymnázium se sportovní přípravou — nový obor vedle pokračujících je patrný přímo z dat.",
+          "applicable_period": "1. kolo JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "approve_mapping",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

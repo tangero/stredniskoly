@@ -1,0 +1,134 @@
+{
+  "task_id": "R-600006859",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje kontinuitu subjektu Střední odborná škola a Střední odborné učiliště, Beroun - Hlinky, Okružní 1404 (REDIZO 600006859), sídlo Okružní 1404, 266 01 Beroun-Město. IZO 000664740 „Střední škola“ má ve všech snímcích dvě shodná místa výuky: Okružní 1404 Beroun-Město a Svatojánská 217/19 Beroun-Závodí. Obor 37-41-M/01 Provoz a ekonomika dopravy je registrován beze změny ve všech čtyřech snímcích včetně 30. 6. 2026, stejně jako 64-41-L/51 Podnikání a 65-42-M/02 Cestovní ruch a řada učebních oborů. Obor 78-42-M/08 Lyceum (režim pokusného ověřování) není v žádném ze čtyř snímků evidován."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0037"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela obor 37-41-M/01 Provoz a ekonomika dopravy; v 1. kole JPZ 2026 tato nabídka u téhož REDIZO chybí, zatímco Podnikání (64-41-L/51) a Cestovní ruch (65-42-M/02) pokračují v obou letech.",
+        "Oficiální kritéria 1. kola přijímacího řízení pro školní rok 2026/2027 (soshlinky.cz, PDF) uvádějí u maturitních oborů výhradně tři obory: 65-42-M/02 Cestovní ruch, 78-42-M/08 Lyceum a 64-41-L/51 Podnikání - Provoz a ekonomika dopravy mezi nimi není.",
+        "Rejstřík MŠMT nadále eviduje obor 37-41-M/01 Provoz a ekonomika dopravy u IZO 000664740 ve všech čtyřech snímcích včetně 30. 6. 2026 - registrace oboru trvá, chybí jen jeho vyhlášení v přijímacím řízení pro rok 2026/27."
+      ],
+      "conclusion": "Škola pro školní rok 2026/27 neotevírá přijímací řízení do oboru Provoz a ekonomika dopravy (37-41-M/01); obor zůstává registrován v rejstříku, ale v oficiálních kritériích přijímacího řízení 2026/27 chybí. Nejde o doložený formální zánik oboru, jen o přerušení náboru; místo něj škola nově otevírá obor Lyceum (viz nález k Q0246).",
+      "alternative_explanations": [
+        "Obor může být kdykoliv znovu vyhlášen, protože zůstává zapsán v rejstříku; k datu zpracování nebyl nalezen žádný dokument o jeho formálním zrušení."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["37-41-M/01 Provoz a ekonomika dopravy (2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Okružní 1404, 266 01 Beroun-Město, Beroun",
+          "role": "sídlo",
+          "izo": "600006859",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Okružní 1404, 266 01 Beroun-Město; Svatojánská 217/19, 266 01 Beroun-Závodí",
+          "role": "místo výuky",
+          "izo": "000664740",
+          "valid_period": "2025-03-31 až 2026-06-30 (dvě místa výuky ve všech snímcích, bez určení, které se váže na Provoz a ekonomiku dopravy)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.soshlinky.cz/documents/uploads/Krit%C3%A9ria%20p%C5%99ij%C3%ADmac%C3%ADho%20%C5%99%C3%ADzen%C3%AD%20SO%C5%A0%20%20a%20SOU%20BEROUN-HLINKY%20-%202026-27%20(1).pdf",
+          "title": "1. kolo přijímacího řízení pro školní rok 2026/2027 – kritéria SOŠ a SOU Beroun-Hlinky",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Seznam maturitních oborů pro 2026/27 obsahuje jen Cestovní ruch, Lyceum a Podnikání; Provoz a ekonomika dopravy chybí (schválený počet tříd/žáků u zbylých oborů uveden, u Provozu a ekonomiky dopravy žádný řádek).",
+          "applicable_period": "1. kolo přijímacího řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 37-41-M/01 Provoz a ekonomika dopravy zůstává u IZO 000664740 registrován i k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006859",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 37-41-M/01 Provoz a ekonomika dopravy přítomna v roce 2025 a chybějící v roce 2026.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    },
+    {
+      "issue_ids": ["Q0246"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 78-42-M/08 Lyceum (režim pokusného ověřování), který v roce 2025 v nabídce nebyl.",
+        "Oficiální kritéria 1. kola přijímacího řízení pro školní rok 2026/2027 (soshlinky.cz, PDF) uvádějí obor 78-42-M/08 Lyceum se schváleným počtem 2 tříd a 60 žáků - jde o největší plánovaný obor školy pro daný ročník.",
+        "Kritéria řadí Lyceum mezi obory s jednotnou přijímací zkouškou (společně s Cestovním ruchem), s podmínkou minimálně 15 bodů z českého jazyka a 10 bodů z matematiky pro zařazení do pořadí.",
+        "Obor 78-42-M/08 zatím není evidován v žádném ze čtyř snímků rejstříku MŠMT (poslední 30. 6. 2026) - jde o odstup zápisu u celostátně nového pokusného ověřování Lyceum, které MŠMT vyhlásilo v listopadu 2024."
+      ],
+      "conclusion": "Lyceum 78-42-M/08 je nový pilotní obor (celostátní pokusné ověřování MŠMT), který škola zařadila do nabídky pro rok 2026/27 jako svůj největší maturitní obor. Nemá formálního předchůdce v nabídce školy z roku 2025; v přijímacím řízení fakticky nahradil dříve nabízený obor Provoz a ekonomika dopravy (viz nález k Q0037), formálně jde ale o odlišný kód oboru.",
+      "alternative_explanations": [
+        "Zápis oboru do rejstříku MŠMT může proběhnout až po 30. 6. 2026 v souladu s harmonogramem pokusného ověřování; to otevření oboru od září 2026 neovlivňuje."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["78-42-M/08 Lyceum (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Okružní 1404, 266 01 Beroun-Město, Beroun",
+          "role": "nezjištěná",
+          "izo": "000664740",
+          "valid_period": "od 2026/27 (nezapsáno v rejstříku k 30. 6. 2026, konkrétní budova výuky Lycea mezi dvěma pracovišti nebyla ověřena)",
+          "source_url": "https://www.soshlinky.cz/documents/uploads/Krit%C3%A9ria%20p%C5%99ij%C3%ADmac%C3%ADho%20%C5%99%C3%ADzen%C3%AD%20SO%C5%A0%20%20a%20SOU%20BEROUN-HLINKY%20-%202026-27%20(1).pdf"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.soshlinky.cz/documents/uploads/Krit%C3%A9ria%20p%C5%99ij%C3%ADmac%C3%ADho%20%C5%99%C3%ADzen%C3%AD%20SO%C5%A0%20%20a%20SOU%20BEROUN-HLINKY%20-%202026-27%20(1).pdf",
+          "title": "1. kolo přijímacího řízení pro školní rok 2026/2027 – kritéria SOŠ a SOU Beroun-Hlinky",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/08 Lyceum je zařazen mezi maturitní obory se schváleným počtem 2 tříd / 60 žáků pro 2026/27.",
+          "applicable_period": "1. kolo přijímacího řízení 2026/27"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 78-42-M/08 není u IZO 000664740 evidován ani k 30. 6. 2026 (odstup zápisu).",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600006859",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 78-42-M/08 Lyceum přítomna v roce 2026 a chybějící v roce 2025.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": []
+    }
+  ]
+}

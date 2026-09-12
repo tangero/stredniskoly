@@ -1,0 +1,89 @@
+{
+  "task_id": "R-600013090",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Rejstřík potvrzuje kontinuitu subjektu i IZO 000087939 (místo výuky Předměstí 427, Králíky) ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026). Mezi snímky 31. 12. 2025 a 31. 3. 2026 se změnil název subjektu ze „Střední odborné učiliště opravárenské, Králíky, Předměstí 427“ na „Střední škola technická a sociální Králíky“ – REDIZO 600013090 i IZO 000087939 zůstávají shodné, jde o týž subjekt. Registrované obory (23-51-H/01 Strojní mechanik, 41-45-M/01 Mechanizace a služby, 41-55-H/01 Opravář zemědělských strojů, 64-41-L/51 Podnikání ve dvou formách) jsou ve všech snímcích shodné. Nový obor 75-41-M/01 Sociální činnost, nabízený v CERMAT datech od roku 2026, není v rejstříku evidován v žádném ze čtyř snímků – jde o odstup zápisu, nikoli o rozpor s existencí oboru."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0212"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2026 škola nově nabízí obor 75-41-M/01 Sociální činnost (4 roky, denní); v roce 2025 tato nabídka u REDIZO 600013090 chyběla.",
+        "Rejstřík MŠMT obor 75-41-M/01 neeviduje u IZO 000087939 v žádném ze čtyř snímků (do 30. 6. 2026) – jde o odstup zápisu, který sám o sobě neznamená, že obor neexistuje.",
+        "Mezi snímky rejstříku k 31. 12. 2025 a 31. 3. 2026 se subjekt přejmenoval ze „Střední odborné učiliště opravárenské, Králíky, Předměstí 427“ na „Střední škola technická a sociální Králíky“; REDIZO a IZO zůstávají beze změny.",
+        "Orlický deník (7. 2. 2026) informuje, že škola (přezdívaná Lipka) otevírá od září 2026 nový maturitní obor Sociální činnost zaměřený na přímou péči (základy psychologie, pedagogiky, práva); reaguje tak na nedostatek kvalifikovaných pracovníků v sociálních službách v regionu. Škola uzavřela memorandum s Oblastní charitou Ústí nad Orlicí pro zajištění praxí a očekává cca 32 studentů. Článek nezmiňuje sloučení s jinou právnickou osobou.",
+        "Web soukraliky.edupage.org potvrzuje aktuální název školy „Střední škola technická a sociální Králíky“."
+      ],
+      "conclusion": "Obor 75-41-M/01 Sociální činnost je nově zavedený maturitní obor, otevíraný od školního roku 2026/27 na dosud existujícím subjektu (stejné REDIZO i IZO). Změna názvu školy časově souvisí s rozšířením nabídky o sociální zaměření, ale nejde o doložené sloučení s jinou organizací. Obor nemá předchůdce v nabídce školy.",
+      "alternative_explanations": [
+        "Přesné datum účinnosti přejmenování školy nebylo zjištěno – z rejstříku je jisté jen to, že proběhlo mezi 31. 12. 2025 a 31. 3. 2026."
+      ],
+      "relationship": {
+        "type": "new_offer",
+        "from": [],
+        "to": ["75-41-M/01 (2026)"]
+      },
+      "addresses": [
+        {
+          "text": "Předměstí 427, 561 69 Králíky",
+          "role": "sídlo",
+          "izo": "600013090",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Předměstí 427, 561 69 Králíky",
+          "role": "místo výuky",
+          "izo": "000087939",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://orlicky.denik.cz/zpravy_region/stredni-skola-v-kralikach-otevre-novy-obor-pomuze-socialnim-sluzbam-i-regionu-20.html",
+          "title": "Sociální obor na technické škole? V Králíkách ano. Výhodou je vlastní autoškola",
+          "published_at": "2026-02-07",
+          "checked_at": "2026-09-12",
+          "supports": "Škola od září 2026 otevírá nový maturitní obor Sociální činnost, důvody a kontext (memorandum s charitou, demografie regionu); nejde o sloučení.",
+          "applicable_period": "školní rok 2026/2027"
+        },
+        {
+          "url": "https://soukraliky.edupage.org/",
+          "title": "Střední škola technická a sociální Králíky",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Potvrzení aktuálního názvu školy.",
+          "applicable_period": "stav webu k 12. 9. 2026"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 75-41-M/01 není u IZO 000087939 evidován ani k 30. 6. 2026; subjekt nese název Střední škola technická a sociální Králíky.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600013090",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 75-41-M/01 Sociální činnost přítomna jen v roce 2026, v roce 2025 chybí.",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesné datum účinnosti přejmenování školy (mezi 31. 12. 2025 a 31. 3. 2026) nebylo zjištěno.",
+        "Zápis oboru 75-41-M/01 do rejstříku MŠMT dosud neproběhl (k 30. 6. 2026); datum plánovaného zápisu není známo."
+      ]
+    }
+  ]
+}

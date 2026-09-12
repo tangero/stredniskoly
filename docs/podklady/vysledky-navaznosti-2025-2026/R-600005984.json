@@ -1,0 +1,79 @@
+{
+  "task_id": "R-600005984",
+  "queue_version": 2,
+  "processed_at": "2026-09-12",
+  "registry_check": {
+    "checked_at": "2026-09-12",
+    "snapshots": ["2025-03-31", "2025-12-31", "2026-03-31", "2026-06-30"],
+    "summary": "Gymnázium Přírodní škola, z.ú. (REDIZO 600005984, IZO 108056911) je ve všech čtyřech snímcích beze změny – shodný název, sídlo Prusíkova 2577/16, 155 00 Stodůlky, Praha, jediné místo výuky tamtéž a jediný registrovaný obor 79-41-K/81 Gymnázium (8leté, denní, český). Žádný signál sloučení, rozdělení ani změny adresy."
+  },
+  "findings": [
+    {
+      "issue_ids": ["Q0024", "Q0188"],
+      "status": "potvrzeno",
+      "observations": [
+        "V 1. kole JPZ 2025 škola nabízela osmileté gymnázium 79-41-K/81 (bez uvedeného textu zaměření); v 1. kole JPZ 2026 nemá REDIZO 600005984 žádnou nabídku a v datech se proto neobjevuje ani jako školní jednotka pro rok 2026 (Q0188).",
+        "Vlastní web školy (prirodniskola.cz, sekce Přijímání ke studiu) k datu ověření uvádí: „Přijímací řízení do primy (školní rok 2027/2028) – Další přijímací řízení do primy osmiletého studia proběhne na jaře 2027.“ To znamená, že přijímací řízení do 1. ročníku (primy) osmiletého gymnázia se nekoná každoročně, ale v delším cyklu (přijímací řízení do primy pro 2026/2027 podle všeho neproběhlo, další je plánováno až pro rok 2027/2028).",
+        "Táž stránka školy zároveň zveřejňuje výsledky přijímacího řízení pro školní rok 2026/2027 do II. a VI. ročníku osmiletého studia (obor 79-41-K/81) – škola tedy v roce 2026 přijímala pouze do vyšších ročníků (doplnění volných míst), nikoli do primy, což vysvětluje absenci nabídky v 1. kole JPZ pro nové uchazeče z 5. tříd ZŠ.",
+        "Rejstřík MŠMT eviduje obor 79-41-K/81 u IZO 108056911 nepřerušeně ve všech čtyřech snímcích (31. 3. 2025 až 30. 6. 2026) – registrace oboru i entity trvá beze změny."
+      ],
+      "conclusion": "Chybějící nabídka 2026 není zánik oboru ani školy: obor 79-41-K/81 zůstává v rejstříku MŠMT registrován a škola sama na webu potvrzuje, že přijímací řízení do primy osmiletého gymnázia neprobíhá každoročně – v roce 2026 se nekonalo (příští je plánováno na jaro 2027 pro školní rok 2027/2028), zatímco pro školní rok 2026/2027 škola obsazovala jen uvolněná místa ve vyšších ročnících (II. a VI.), nikoli 1. ročník formou JPZ. Nepřiřazená školní jednotka (Q0188) má stejnou příčinu – REDIZO/IZO se v datech pro 1. kolo JPZ 2026 neobjevuje, protože pro tento ročník žádnou nabídku nevyhlásilo.",
+      "alternative_explanations": [
+        "Nelze zcela vyloučit, že škola do budoucna přejde na jiný interval přijímání, nebo že plán z roku 2027 bude ještě upraven; k datu ověření ale žádný zdroj nenaznačuje trvalé ukončení oboru."
+      ],
+      "relationship": {
+        "type": "closed",
+        "from": ["79-41-K/81 (nabídka do primy 2025)"],
+        "to": []
+      },
+      "addresses": [
+        {
+          "text": "Prusíkova 2577/16, 155 00 Stodůlky, Praha",
+          "role": "sídlo",
+          "izo": "600005984",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        },
+        {
+          "text": "Prusíkova 2577/16, 155 00 Stodůlky, Praha",
+          "role": "místo výuky",
+          "izo": "108056911",
+          "valid_period": "2025-03-31 až 2026-06-30 (všechny snímky)",
+          "source_url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "http://www.prirodniskola.cz/studium/zajemci-o-studium/",
+          "title": "Přijímání ke studiu | Přírodní škola",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Škola uvádí, že další přijímací řízení do primy osmiletého studia proběhne až na jaře 2027 (pro školní rok 2027/2028), a zveřejňuje výsledky přijímacího řízení pro rok 2026/2027 pouze do II. a VI. ročníku.",
+          "applicable_period": "přijímací řízení 2026/27 a plán na 2027/28"
+        },
+        {
+          "url": "https://lkod-ftp.msmt.gov.cz/00022985/250d6b3f-71a2-4441-b8a0-4df141071f13/rssz-cela-cr-2026-06-30.jsonld",
+          "title": "Rejstřík škol a školských zařízení MŠMT – snímek celé ČR",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Obor 79-41-K/81 zůstává u IZO 108056911 registrován i k 30. 6. 2026.",
+          "applicable_period": "stav rejstříku k 30. 6. 2026"
+        },
+        {
+          "url": "fronta-dohledavani-2025-2026.json, úkol R-600005984",
+          "title": "Přiložená data fronty (CERMAT, 1. kolo JPZ)",
+          "published_at": null,
+          "checked_at": "2026-09-12",
+          "supports": "Nabídka 79-41-K/81 přítomna v roce 2025 a zcela chybějící v roce 2026 (0 nabídek, škola se v datech 2026 neobjevuje).",
+          "applicable_period": "1. kola JPZ 2025 a 2026"
+        }
+      ],
+      "history_comparability": "not_comparable",
+      "recommended_action": "record_only",
+      "related_task_ids": [],
+      "unanswered_questions": [
+        "Přesný důvod a pravidelnost víceletého cyklu přijímání do primy (dvouletý interval?) nebyl na webu explicitně vysvětlen."
+      ]
+    }
+  ]
+}
