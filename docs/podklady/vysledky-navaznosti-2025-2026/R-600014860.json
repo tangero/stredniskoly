@@ -81,9 +81,12 @@
    "recommended_action": "record_only",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Přesné datum vzniku ŠVP a formálního schválení oboru zřizovatelem (soukromá s.r.o.) nebylo dohledáno."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Přesné datum vzniku ŠVP a formálního schválení oboru zřizovatelem (soukromá s.r.o.) nebylo dohledáno."
+    ]
+   }
   }
  ]
 }

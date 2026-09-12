@@ -177,7 +177,7 @@ details[open] summary::before{transform:rotate(90deg)}
     <select id="vztah" aria-label="Typ návaznosti"></select>
     <select id="status" aria-label="Stav nálezu"></select>
     <label class="toggle" for="jenOtevrene"><input type="checkbox" id="jenOtevrene"> Jen s otevřenou otázkou</label>
-    <label class="toggle" for="jenRozhodnuti"><input type="checkbox" id="jenRozhodnuti"> Jen k rozhodnutí</label>
+    <label class="toggle" for="jenRozhodnuti"><input type="checkbox" id="jenRozhodnuti"> Jen odložené</label>
     <span id="count"></span>
   </div>
 </div>
@@ -256,8 +256,9 @@ details[open] summary::before{transform:rotate(90deg)}
     var flags = "";
     if(c.otevrene.length) flags += '<div class="flag"><b>Otevřeno:</b><ul>'
       + c.otevrene.map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("") + '</ul></div>';
-    if(c.rozhodnuti.length) flags += '<div class="flag"><b>K rozhodnutí:</b><ul>'
-      + c.rozhodnuti.map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("") + '</ul></div>';
+    if(c.odlozeno.length) flags += '<div class="flag"><b>Odloženo:</b><ul>'
+      + c.odlozeno.map(function(t){ return '<li>'+esc(t)+'</li>'; }).join("")
+      + '</ul></div>';
 
     var kont = (c.kontext["2025"]||[]).map(function(n){ return "2025 · "+n.kkov+" "+n.obor
           +(n.zamereni?" · "+n.zamereni:""); })
@@ -326,13 +327,13 @@ details[open] summary::before{transform:rotate(90deg)}
     "Všechny stavy");
 
   var otevrene = P.reduce(function(a,c){ return a+c.otevrene.length; },0);
-  var rozhod = P.reduce(function(a,c){ return a+c.rozhodnuti.length; },0);
+  var rozhod = P.reduce(function(a,c){ return a+c.odlozeno.length; },0);
   el.tally.innerHTML =
       '<li><b>'+D.pocty.ukolu+'</b><span>úkolů</span></li>'
     + '<li><b>'+D.pocty.nalezu+'</b><span>nálezů</span></li>'
     + '<li class="ok"><b>0</b><span>sporů</span></li>'
     + '<li><b>'+otevrene+'</b><span>otevřených</span></li>'
-    + '<li><b>'+rozhod+'</b><span>k rozhodnutí</span></li>';
+    + '<li><b>'+rozhod+'</b><span>odložených</span></li>';
 
   function render(){
     var q = el.q.value.trim().toLowerCase();
@@ -341,7 +342,7 @@ details[open] summary::before{transform:rotate(90deg)}
       if(v && c.vztah!==v) return false;
       if(s && c.status!==s) return false;
       if(el.jenOtevrene.checked && !c.otevrene.length) return false;
-      if(el.jenRozhodnuti.checked && !c.rozhodnuti.length) return false;
+      if(el.jenRozhodnuti.checked && !c.odlozeno.length) return false;
       if(q && c.hledej.indexOf(q)===-1) return false;
       return true;
     });

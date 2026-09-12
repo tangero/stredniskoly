@@ -103,9 +103,6 @@
    "recommended_action": "manual_review",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Zda se výrok o „zkráceném studiu“ na webu vztahuje i na tyto dva nástavbové obory, nebo jde o zcela jinou (H/E) kategorii programů."
-   ],
    "resolved_questions": [
     {
      "otazka": "Zda dálková tříletá varianta obou oborů (evidovaná v rejstříku) reálně běží pro stávající studenty.",
@@ -115,7 +112,13 @@
      "otazka": "Zda škola formálně zrušila akreditaci obou oborů, nebo jen dočasně nevyhlásila přijímací řízení.",
      "uzavreno": "Uzavřeno podle zadání: školy obory zřizují a zase nevypisují, důvod ani trvalost rozhodnutí se nedohledávají. Pro návaznost stačí konstatovat, že škola obor v daném roce nevypsala. Pokud se objeví v nabídce dalšího ročníku, zaznamená se to tehdy."
     }
-   ]
+   ],
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Zda se výrok o „zkráceném studiu“ na webu vztahuje i na tyto dva nástavbové obory, nebo jde o zcela jinou (H/E) kategorii programů."
+    ]
+   }
   },
   {
    "issue_ids": [

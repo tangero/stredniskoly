@@ -103,10 +103,13 @@
    "recommended_action": "manual_review",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Provozovala škola anglický a český program odděleně už v roce 2025, nebo jde o nové organizační rozdělení pro 2026?",
-    "Je Na Příkopě 850/8 nové sídlo, další místo výuky, nebo jen korespondenční/marketingová adresa? Proč rejstřík MŠMT tuto adresu k 30. 6. 2026 neeviduje?"
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Provozovala škola anglický a český program odděleně už v roce 2025, nebo jde o nové organizační rozdělení pro 2026?",
+     "Je Na Příkopě 850/8 nové sídlo, další místo výuky, nebo jen korespondenční/marketingová adresa? Proč rejstřík MŠMT tuto adresu k 30. 6. 2026 neeviduje?"
+    ]
+   }
   }
  ]
 }

@@ -1,6 +1,6 @@
 # Dohledávání návaznosti škol a oborů 2025–2026
 
-Verze 1.5 · 12. 9. 2026. Fronta k výzkumu, nikoli schválená migrační mapa. Rešerše je provedena pro všech 192 úkolů; výsledky jsou podklad k přezkoumání, ne schválené mapování.
+Verze 1.6 · 12. 9. 2026. Fronta k výzkumu, nikoli schválená migrační mapa. Rešerše je provedena pro všech 192 úkolů; výsledky jsou podklad k přezkoumání, ne schválené mapování.
 
 Souhrn celého úkolu, stav realizace a přejímací podmínky: [Návaznost škol a oborů](ukol-navaznost-skol-a-oboru-2027.md).
 
@@ -110,7 +110,8 @@ Nález může navíc nést dvě nepovinná pole, která oddělují tři různé 
 
 - `unanswered_questions` — otázka, na kterou by odpověděl další zdroj, ale ten se nenašel;
 - `resolved_questions` — otázka uzavřená bez dalšího dohledávání, každá jako `{"otazka": …, "uzavreno": …}`, kde `uzavreno` říká proč (schválené pravidlo, nebo data, která odpověděla);
-- `decisions_required` — věc, která nečeká na zdroj, ale na rozhodnutí člověka při přezkumu, typicky rozdělení historických statistik.
+- `decisions_required` — věc, která nečeká na zdroj, ale na rozhodnutí člověka při přezkumu, typicky rozdělení historických statistik;
+- `decisions_deferred` — totéž, ale vědomě odložené: `{"duvod": …, "polozky": […]}`. Web u dotčené nabídky místo rozhodnutí přizná, co není jisté.
 
 Rozdíl je podstatný: počet otevřených otázek jinak přeceňuje zbývající práci. Otázka na přesné datum události není mezera v rešerši, ale vědomé rozhodnutí podle pravidla 8.
 
@@ -139,6 +140,7 @@ Fronta nemění produkci ani lokálně uložená rozhodnutí prohlížeče. Reš
 ## Historie
 
 - **1.0:** 526 úkolů; do rešerše byly zahrnuty i prosté změny údajů a neúplné adresy.
+- **1.6:** O srovnatelnosti se v tomto běhu nerozhoduje; položky jsou v `decisions_deferred` a web u dotčené nabídky přiznává nejistotu s výzvou nahlásit opravu přes GitHub Issues.
 - **1.5:** Doplněno pravidlo, že se nedohledává důvod ani trvalost nevypsání oboru, a `scripts/match-zamereni.py` pro párování mírně odlišných názvů zaměření.
 - **1.4:** Doplněna zásada, že zápis v číselníku je dokladem existence a běh řeší jen spory. Přidán `scripts/find-data-conflicts.py`.
 - **1.3:** Doplněna pole `resolved_questions` a `decisions_required`, aby se uzavřené otázky a rozhodnutí nemíchaly s otevřenými. Přidán `scripts/offer-history.py` nad soubory CERMAT 2024–2026.

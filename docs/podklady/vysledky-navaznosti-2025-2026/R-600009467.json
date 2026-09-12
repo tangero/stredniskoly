@@ -109,9 +109,12 @@
      "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
     }
    ],
-   "decisions_required": [
-    "Nebylo ověřeno, zda se spolu s přejmenováním změnil i obsah ŠVP (hodinové dotace, předměty) – dostupné zdroje potvrzují jen shodu krátkého popisu zaměření."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Nebylo ověřeno, zda se spolu s přejmenováním změnil i obsah ŠVP (hodinové dotace, předměty) – dostupné zdroje potvrzují jen shodu krátkého popisu zaměření."
+    ]
+   }
   },
   {
    "issue_ids": [
@@ -209,9 +212,12 @@
      "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
     }
    ],
-   "decisions_required": [
-    "Nebylo ověřeno, zda se spolu s přejmenováním změnil i obsah ŠVP (hodinové dotace, předměty) – dostupné zdroje potvrzují jen shodu popisu čtyř specializací."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Nebylo ověřeno, zda se spolu s přejmenováním změnil i obsah ŠVP (hodinové dotace, předměty) – dostupné zdroje potvrzují jen shodu popisu čtyř specializací."
+    ]
+   }
   }
  ]
 }

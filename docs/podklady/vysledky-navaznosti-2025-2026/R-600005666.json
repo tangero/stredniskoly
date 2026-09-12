@@ -178,9 +178,12 @@
      "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
     }
    ],
-   "decisions_required": [
-    "Zda má zaměření sportovní management samostatný plánovaný počet přijímaných žáků oddělený od obecné Obchodní akademie, lze dořešit z PDF kritérií 2026/2027 na webu školy."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Zda má zaměření sportovní management samostatný plánovaný počet přijímaných žáků oddělený od obecné Obchodní akademie, lze dořešit z PDF kritérií 2026/2027 na webu školy."
+    ]
+   }
   }
  ],
  "registry_check": {

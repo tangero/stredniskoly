@@ -136,9 +136,12 @@
      "uzavreno": "Vazba na jiný úkol je zaznamenána v related_task_ids; spojení obou úkolů je věcí přezkumu, ne dalšího dohledávání."
     }
    ],
-   "decisions_required": [
-    "Web soucaslav.cz (dřívější web SOU Čáslav) vracel při ověřování chybu 503, obsah se nepodařilo přečíst a nebyl proto použit jako zdroj."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Web soucaslav.cz (dřívější web SOU Čáslav) vracel při ověřování chybu 503, obsah se nepodařilo přečíst a nebyl proto použit jako zdroj."
+    ]
+   }
   }
  ]
 }

@@ -156,9 +156,12 @@
      "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina samotné změny se nezkoumá. Pro návaznost nabídky není důvod rozhodnutí školy potřebný."
     }
    ],
-   "decisions_required": [
-    "Je nabídka LPG (Q0290) skutečně přímým pokračovatelem nabídky z roku 2025 (Q0103), nebo jsou obě zaměření z pohledu obsahu ŠVP rovnocenně nová?"
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Je nabídka LPG (Q0290) skutečně přímým pokračovatelem nabídky z roku 2025 (Q0103), nebo jsou obě zaměření z pohledu obsahu ŠVP rovnocenně nová?"
+    ]
+   }
   }
  ]
 }

@@ -135,9 +135,12 @@
      "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v číselníku je dokladem, že existuje po právu. Běh řeší jen spory mezi zdroji, ne doplňující potvrzení."
     }
    ],
-   "decisions_required": [
-    "Historická statistika přijímacího řízení pro 23-44-L/01 z roku 2025 se vztahuje jen k jednomu zaměření (svařování) – před sloučením/rozdělením statistik na úrovni zaměření by bylo třeba ověřit, zda CERMAT/škola vedou zaměření jako oddělené obory pro účely přijímacích statistik i v dalších letech."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Historická statistika přijímacího řízení pro 23-44-L/01 z roku 2025 se vztahuje jen k jednomu zaměření (svařování) – před sloučením/rozdělením statistik na úrovni zaměření by bylo třeba ověřit, zda CERMAT/škola vedou zaměření jako oddělené obory pro účely přijímacích statistik i v dalších letech."
+    ]
+   }
   }
  ]
 }

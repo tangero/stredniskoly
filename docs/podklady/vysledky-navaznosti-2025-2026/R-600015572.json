@@ -80,9 +80,12 @@
    "recommended_action": "record_only",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Nebylo dohledáno přesné datum schválení ŠVP zaměření ani zda proběhlo jednotné přijímací řízení s ostatními zaměřeními oboru."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Nebylo dohledáno přesné datum schválení ŠVP zaměření ani zda proběhlo jednotné přijímací řízení s ostatními zaměřeními oboru."
+    ]
+   }
   }
  ]
 }

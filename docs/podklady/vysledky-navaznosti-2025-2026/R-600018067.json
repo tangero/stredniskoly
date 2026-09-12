@@ -94,9 +94,12 @@
    "recommended_action": "manual_review",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Od kterého přesně školního roku škola sloučila zaměření do jednotného programu – přímý dokument (ŠVP, výroční zpráva) nebyl dohledán, jen aktuální stav webu."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Od kterého přesně školního roku škola sloučila zaměření do jednotného programu – přímý dokument (ŠVP, výroční zpráva) nebyl dohledán, jen aktuální stav webu."
+    ]
+   }
   }
  ]
 }

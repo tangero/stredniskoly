@@ -115,9 +115,12 @@
      "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
     }
    ],
-   "decisions_required": [
-    "Zda škola současně s otevřením Autotroniku omezila nabídku souvisejícího učebního oboru Autoelektrikář 26-57-H/01 v přijímacím řízení 2026 – přiložená data fronty učební obory této školy neobsahují, takže to z nich nelze posoudit."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Zda škola současně s otevřením Autotroniku omezila nabídku souvisejícího učebního oboru Autoelektrikář 26-57-H/01 v přijímacím řízení 2026 – přiložená data fronty učební obory této školy neobsahují, takže to z nich nelze posoudit."
+    ]
+   }
   }
  ]
 }

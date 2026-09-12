@@ -112,9 +112,12 @@
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Zda zaměření KOTVA přímo navazuje na dosavadní jazykovou třídu z roku 2025 a KOMPAS je nově otevřená druhá třída, web školy výslovně neuvádí; pro srovnávání historických výsledků je proto vhodné obě nové zaměření vázat na společnou předchozí nabídku, nikoli 1:1."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Zda zaměření KOTVA přímo navazuje na dosavadní jazykovou třídu z roku 2025 a KOMPAS je nově otevřená druhá třída, web školy výslovně neuvádí; pro srovnávání historických výsledků je proto vhodné obě nové zaměření vázat na společnou předchozí nabídku, nikoli 1:1."
+    ]
+   }
   }
  ]
 }

@@ -92,9 +92,12 @@
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Web školy necituje doslovný text „Ekonom - specializace sportovní“ z roku 2025 (archiv webu nebyl dostupný) – kontinuita je doložena shodou oboru, ŠVP a obsahu specializace, nikoli přímým dobovým snímkem webu z roku 2025."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Web školy necituje doslovný text „Ekonom - specializace sportovní“ z roku 2025 (archiv webu nebyl dostupný) – kontinuita je doložena shodou oboru, ŠVP a obsahu specializace, nikoli přímým dobovým snímkem webu z roku 2025."
+    ]
+   }
   },
   {
    "issue_ids": [
@@ -175,9 +178,12 @@
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Web školy necituje doslovný text „Ekonom - specializace jazyková a odborná“ z roku 2025 (archiv webu nebyl dostupný) – kontinuita je doložena shodou oboru, ŠVP a obsahu specializace, nikoli přímým dobovým snímkem webu z roku 2025."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Web školy necituje doslovný text „Ekonom - specializace jazyková a odborná“ z roku 2025 (archiv webu nebyl dostupný) – kontinuita je doložena shodou oboru, ŠVP a obsahu specializace, nikoli přímým dobovým snímkem webu z roku 2025."
+    ]
+   }
   }
  ]
 }

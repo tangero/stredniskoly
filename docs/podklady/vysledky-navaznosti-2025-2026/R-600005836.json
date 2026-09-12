@@ -116,9 +116,12 @@
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Zda zaměření „Business\" na pobočce Satalice znamená změnu obsahu studia oproti roku 2025, nebo pouze nové označení téhož programu – z dostupných zdrojů nejednoznačné; pro přenos statistik mezi 2025 (bez zaměření) a 2026 (Business - Satalice) doporučeno počítat s pobočkovou shodou."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Zda zaměření „Business\" na pobočce Satalice znamená změnu obsahu studia oproti roku 2025, nebo pouze nové označení téhož programu – z dostupných zdrojů nejednoznačné; pro přenos statistik mezi 2025 (bez zaměření) a 2026 (Business - Satalice) doporučeno počítat s pobočkovou shodou."
+    ]
+   }
   },
   {
    "issue_ids": [
@@ -214,9 +217,12 @@
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Zda je změna jazyka studia z „Český\" (2025) na „Český s výukou vybraných předmětů v cizím jazyce\" (2026) reálnou změnou programu, nebo jen změnou zápisu – vliv na srovnatelnost statistik nelze z dosud doložených zdrojů vyloučit."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Zda je změna jazyka studia z „Český\" (2025) na „Český s výukou vybraných předmětů v cizím jazyce\" (2026) reálnou změnou programu, nebo jen změnou zápisu – vliv na srovnatelnost statistik nelze z dosud doložených zdrojů vyloučit."
+    ]
+   }
   },
   {
    "issue_ids": [

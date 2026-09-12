@@ -111,7 +111,8 @@ def main():
                 "zdroje": [{"url": e.get("url"), "titul": e.get("title"),
                             "dokládá": e.get("supports")} for e in (f.get("evidence") or [])],
                 "otevrene": f.get("unanswered_questions") or [],
-                "rozhodnuti": f.get("decisions_required") or [],
+                "odlozeno": (f.get("decisions_deferred") or {}).get("polozky") or [],
+                "odlozeno_duvod": (f.get("decisions_deferred") or {}).get("duvod"),
                 "uzavrene": f.get("resolved_questions") or [],
                 "souvisi": f.get("related_task_ids") or [],
             })

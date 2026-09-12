@@ -131,9 +131,12 @@
    "recommended_action": "record_only",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Zda nový obor 78-42-M/08 obsahově navazuje na některý dřívější školní vzdělávací program školy (případné datumované vyjádření na oa-kubelikova.cz se nepodařilo dohledat; aktuální web školy stránku k přijímacímu řízení zpřístupňuje jen částečně)."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Zda nový obor 78-42-M/08 obsahově navazuje na některý dřívější školní vzdělávací program školy (případné datumované vyjádření na oa-kubelikova.cz se nepodařilo dohledat; aktuální web školy stránku k přijímacímu řízení zpřístupňuje jen částečně)."
+    ]
+   }
   }
  ]
 }

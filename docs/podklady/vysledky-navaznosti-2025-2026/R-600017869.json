@@ -105,10 +105,13 @@
    "recommended_action": "manual_review",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Je zaměření „Dopravní a vodohospodářské stavby\" formálně totožné s dřívějším „Inženýrské stavby\", nebo jde o obsahově novou variantu zavedenou ŠVP od 1. 9. 2025?",
-    "Byla pro školní rok 2026/27 (cyklus, ke kterému se vztahují data CERMAT 2026) nabídka skutečně jednotná, nebo šlo jen o způsob zápisu do CERMAT XLSX a zaměření se volilo stejně jako v roce 2025? Přímý dokument (kritéria přijímacího řízení 2026) nebyl na webu dohledán."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Je zaměření „Dopravní a vodohospodářské stavby\" formálně totožné s dřívějším „Inženýrské stavby\", nebo jde o obsahově novou variantu zavedenou ŠVP od 1. 9. 2025?",
+     "Byla pro školní rok 2026/27 (cyklus, ke kterému se vztahují data CERMAT 2026) nabídka skutečně jednotná, nebo šlo jen o způsob zápisu do CERMAT XLSX a zaměření se volilo stejně jako v roce 2025? Přímý dokument (kritéria přijímacího řízení 2026) nebyl na webu dohledán."
+    ]
+   }
   }
  ]
 }

@@ -1,0 +1,1522 @@
+{
+ "meta": {
+  "version": "1.0",
+  "last_updated": "2026-09-12",
+  "description": "Poznámky o návaznosti nabídek mezi roky 2025 a 2026. Generuje scripts/build-navaznost-notes.py; ruční poznámky z GitHub Issues jsou v school_notes.json a mají přednost.",
+  "generator": "scripts/build-navaznost-notes.py"
+ },
+ "notes": {
+  "600001661_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600001661",
+   "date": "2026-09-12"
+  },
+  "600004554_26-45-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Telekomunikace (26-45-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600004554",
+   "date": "2026-09-12"
+  },
+  "600004929_78-42-M/08": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600004929",
+   "date": "2026-09-12"
+  },
+  "600004961_79-41-K/61": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „estetickovýchovné předměty - zaměření na VV“ v roce 2025 a „Výtvarná výchova“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „vybrané předměty v cizím jazyce - zaměření na NJ“ v roce 2025 a „Německý jazyk“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „všeobecné studim“ v roce 2025 a „Všeobecné“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600004961",
+   "date": "2026-09-12"
+  },
+  "600005143_79-41-K/61": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „s výukou francouzského jazyka“ v roce 2025 a „s výukou francouzštiny“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „s posílenou výukou německého jazyka“ v roce 2025 a „s posílenou výukou němčiny“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Obor Gymnázium (79-41-K/61) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005143",
+   "date": "2026-09-12"
+  },
+  "600005381_39-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „23-68-H/01 Mechanik opravář motorových vozidel“ v roce 2025 a „Mechanik opravář motorových vozidel 23-68-H/01“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „26-57-H/01 Autoelektrikář“ v roce 2025 a „Autoelektrikář 26-57-H/01“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005381",
+   "date": "2026-09-12"
+  },
+  "600005500_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „ŠVP GOP“ v roce 2025 a „ŠVP GOP všeobecné“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Obor Gymnázium (79-41-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005500",
+   "date": "2026-09-12"
+  },
+  "600005518_79-41-K/81": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Myslím, tedy jsem (zaměření na matematiku s rozšířenou výukou informatiky a fyziky)“ v roce 2025 a „Myslím, tedy jsem“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „Cizí jazyky – brána do světa (zaměření na živé jazyky)“ v roce 2025 a „Cizí jazyky – brána do světa“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005518",
+   "date": "2026-09-12"
+  },
+  "600005542_65-42-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Škola prošla organizační změnou: nabídka Hotelnictví (65-42-M/01) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005542",
+   "date": "2026-09-12"
+  },
+  "600005631_65-42-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Hotelnictví (65-42-M/01) pokračuje z roku 2025 beze změny. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005631",
+   "date": "2026-09-12"
+  },
+  "600005631_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) pokračuje z roku 2025 beze změny. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005631",
+   "date": "2026-09-12"
+  },
+  "600005631_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Škola prošla organizační změnou: nabídka Gymnázium (79-41-K/41) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005631",
+   "date": "2026-09-12"
+  },
+  "600005658_23-43-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Provozní technika (23-43-L/51) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005658",
+   "date": "2026-09-12"
+  },
+  "600005658_78-42-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Technické lyceum (78-42-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005658",
+   "date": "2026-09-12"
+  },
+  "600005666_63-41-M/02": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Obchodní akademie (63-41-M/02) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005666",
+   "date": "2026-09-12"
+  },
+  "600005836_63-41-M/02": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Nabídka Obchodní akademie (63-41-M/02) se od roku 2026 dělí na víc zaměření. Starší výsledky se vztahují ke společnému předchůdci. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Obor Obchodní akademie (63-41-M/02) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005836",
+   "date": "2026-09-12"
+  },
+  "600005836_78-42-M/08": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Nabídka Lyceum (režim pokusného ověřování) (78-42-M/08) se od roku 2026 dělí na víc zaměření. Starší výsledky se vztahují ke společnému předchůdci. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005836",
+   "date": "2026-09-12"
+  },
+  "600005950_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Rozvíjíme v globálních souvislostech Praha 5“ v roce 2025 a „International - Rozvíjíme v globálních souvislostech Praha 3“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Škola prošla organizační změnou: nabídka Gymnázium (79-41-K/41) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005950",
+   "date": "2026-09-12"
+  },
+  "600005984_79-41-K/81": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/81) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600005984",
+   "date": "2026-09-12"
+  },
+  "600006018_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „4leté Nový PORG, Praha 4“ v roce 2025 a „4leté Nový PORG Praha 4“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006018-600013898",
+   "date": "2026-09-12"
+  },
+  "600006026_63-41-M/02": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Obchodní akademie (63-41-M/02) pokračuje z roku 2025 beze změny. Obor Obchodní akademie (63-41-M/02) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006026",
+   "date": "2026-09-12"
+  },
+  "600006077_75-41-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Sociální činnost (75-41-L/51) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006077",
+   "date": "2026-09-12"
+  },
+  "600006131_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gymnázium (79-41-K/41) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006131",
+   "date": "2026-09-12"
+  },
+  "600006310_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006310",
+   "date": "2026-09-12"
+  },
+  "600006328_41-44-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Zahradnictví (41-44-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006328",
+   "date": "2026-09-12"
+  },
+  "600006328_63-41-M/02": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Obchodní akademie (63-41-M/02) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006328",
+   "date": "2026-09-12"
+  },
+  "600006379_78-42-M/06": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Kombinované lyceum (78-42-M/06) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006379",
+   "date": "2026-09-12"
+  },
+  "600006433_65-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Gastronomie - číšník“ v roce 2025 a „Číšník“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „Gastronomie - kuchař“ v roce 2025 a „Kuchař“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006433",
+   "date": "2026-09-12"
+  },
+  "600006689_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Škola prošla organizační změnou: nabídka Lyceum (režim pokusného ověřování) (78-42-M/08) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006689",
+   "date": "2026-09-12"
+  },
+  "600006697_23-45-L/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Mechanik seřizovač (23-45-L/01) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006697",
+   "date": "2026-09-12"
+  },
+  "600006697_78-42-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Technické lyceum (78-42-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006697",
+   "date": "2026-09-12"
+  },
+  "600006697_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006697",
+   "date": "2026-09-12"
+  },
+  "600006832_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006832",
+   "date": "2026-09-12"
+  },
+  "600006841_16-01-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Ekologie a životní prostředí (16-01-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006841",
+   "date": "2026-09-12"
+  },
+  "600006841_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006841",
+   "date": "2026-09-12"
+  },
+  "600006859_37-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Provoz a ekonomika dopravy (37-41-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006859",
+   "date": "2026-09-12"
+  },
+  "600006859_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006859",
+   "date": "2026-09-12"
+  },
+  "600006905_26-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Aplikace elektrotechniky - Automatizační technika“ v roce 2025 a „Aplikace elektrotechniky, zaměření Automatizace a robotika“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Zaměření se v datech jmenuje jinak než loni: „Aplikace elektrotechniky - Elektroenergetika“ v roce 2025 a „Aplikace elektrotechniky, zaměření Elektroenergetika“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006905",
+   "date": "2026-09-12"
+  },
+  "600006930_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006930",
+   "date": "2026-09-12"
+  },
+  "600007022_64-41-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Podnikání (64-41-L/51) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007022",
+   "date": "2026-09-12"
+  },
+  "600007201_64-41-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Škola prošla organizační změnou: nabídka Podnikání (64-41-L/51) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007201",
+   "date": "2026-09-12"
+  },
+  "600007251_78-42-M/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Ekonomické lyceum (78-42-M/02) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007251",
+   "date": "2026-09-12"
+  },
+  "600007260_23-45-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Dopravní prostředky (23-45-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007260",
+   "date": "2026-09-12"
+  },
+  "600007278_64-41-L/51": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Škola prošla organizační změnou: nabídka Podnikání (64-41-L/51) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007278",
+   "date": "2026-09-12"
+  },
+  "600007286_78-42-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Technické lyceum (78-42-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007286",
+   "date": "2026-09-12"
+  },
+  "600007294_26-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Mechanik elektrotechnik (26-41-L/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007294",
+   "date": "2026-09-12"
+  },
+  "600007332_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Škola prošla organizační změnou: nabídka Gymnázium (79-41-K/41) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007332",
+   "date": "2026-09-12"
+  },
+  "600007383_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007383",
+   "date": "2026-09-12"
+  },
+  "600007464_69-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Kosmetické služby (69-41-L/01) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007464",
+   "date": "2026-09-12"
+  },
+  "600007561_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007561",
+   "date": "2026-09-12"
+  },
+  "600007651_63-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Ekonomika a podnikání (63-41-M/01) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007651",
+   "date": "2026-09-12"
+  },
+  "600007707_23-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Strojírenství (23-41-M/01) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007707",
+   "date": "2026-09-12"
+  },
+  "600007936_41-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Škola prošla organizační změnou: nabídka Agropodnikání (41-41-M/01) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007936",
+   "date": "2026-09-12"
+  },
+  "600007987_41-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Škola prošla organizační změnou: nabídka Agropodnikání (41-41-M/01) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600007987",
+   "date": "2026-09-12"
+  },
+  "600008088_78-42-M/03": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Pedagogické lyceum (78-42-M/03) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600008088",
+   "date": "2026-09-12"
+  },
+  "600008193_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600008193",
+   "date": "2026-09-12"
+  },
+  "600009033_65-41-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gastronomie (65-41-L/51) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600009033",
+   "date": "2026-09-12"
+  },
+  "600009106_65-41-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gastronomie (65-41-L/51) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600009106",
+   "date": "2026-09-12"
+  },
+  "600009408_18-20-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Informační technologie (18-20-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600009408",
+   "date": "2026-09-12"
+  },
+  "600009416_39-41-L/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Autotronik (39-41-L/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600009416",
+   "date": "2026-09-12"
+  },
+  "600009424_16-01-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Ekologie a životní prostředí (16-01-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600009424",
+   "date": "2026-09-12"
+  },
+  "600009424_68-43-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Veřejnosprávní činnost (68-43-M/01) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600009424",
+   "date": "2026-09-12"
+  },
+  "600009459_79-42-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „volejbal (jen dívky)“ v roce 2025 a „Volejbal - dívky“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Obor Gymnázium se sportovní přípravou (79-42-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600009459",
+   "date": "2026-09-12"
+  },
+  "600009467_18-20-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Informační technologie se specializací na ekonomické a podnikatelské kompetence a zpracování a vizualizaci (Svět ekonomiky)“ v roce 2025 a „Informační technologie se specializací na ekonomické a podnikatelské kompetence a zpracování a vizualizaci dat (IT ekonomické a zpracování dat)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Zaměření se v datech jmenuje jinak než loni: „Informační technologie se specializací na datovou analytiku nebo grafiku na PC nebo programování a vývoj SW nebo na počítačové sítě a kybernetickou bezpečnost (Digitální svět)“ v roce 2025 a „Informační technologie se specializací na datovou analytiku nebo grafiku na PC nebo programování a vývoj SW nebo na počítačové sítě a kybernetickou bezpečnost (IT technické)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600009467",
+   "date": "2026-09-12"
+  },
+  "600009602_63-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Ekonomika a podnikání (63-41-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600009602",
+   "date": "2026-09-12"
+  },
+  "600010180_34-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Polygrafie (34-41-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600010180",
+   "date": "2026-09-12"
+  },
+  "600010198_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „79-41-K/41 - humanitní zaměření“ v roce 2025 a „79-41-K/41 Humanitní“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „79-41-K/41 - všeobecné zaměření“ v roce 2025 a „79-41-K/41 Všeobecné“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600010198",
+   "date": "2026-09-12"
+  },
+  "600010309_63-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Ekonomika a podnikání (63-41-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600010309",
+   "date": "2026-09-12"
+  },
+  "600010368_64-41-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Škola prošla organizační změnou: nabídka Podnikání (64-41-L/51) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600010368",
+   "date": "2026-09-12"
+  },
+  "600010571_68-43-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Veřejnosprávní činnost (68-43-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600010571",
+   "date": "2026-09-12"
+  },
+  "600010589_78-42-M/03": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Pedagogické lyceum (78-42-M/03) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600010589",
+   "date": "2026-09-12"
+  },
+  "600010601_33-42-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Nábytkářská a dřevařská výroba (33-42-L/51) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600010601",
+   "date": "2026-09-12"
+  },
+  "600010996_78-42-M/06": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Kombinované lyceum (78-42-M/06) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600010996",
+   "date": "2026-09-12"
+  },
+  "600011348_78-42-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Technické lyceum (78-42-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600011348",
+   "date": "2026-09-12"
+  },
+  "600011747_33-42-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Nábytkářská a dřevařská výroba (33-42-L/51) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600011747",
+   "date": "2026-09-12"
+  },
+  "600011828_23-43-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Provozní technika (23-43-L/51) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600011828",
+   "date": "2026-09-12"
+  },
+  "600011941_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600011941",
+   "date": "2026-09-12"
+  },
+  "600011992_79-42-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium se sportovní přípravou (79-42-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600011992",
+   "date": "2026-09-12"
+  },
+  "600012026_78-42-M/03": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Pedagogické lyceum (78-42-M/03) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600012026",
+   "date": "2026-09-12"
+  },
+  "600012026_79-41-K/81": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/81) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600012026",
+   "date": "2026-09-12"
+  },
+  "600012514_64-41-L/51": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Podnikání (64-41-L/51) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600012514",
+   "date": "2026-09-12"
+  },
+  "600012808_66-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Obchodník (66-41-L/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600012808",
+   "date": "2026-09-12"
+  },
+  "600012875_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gymnázium (79-41-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600012875",
+   "date": "2026-09-12"
+  },
+  "600012891_79-41-K/81": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gymnázium (79-41-K/81) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Obor Gymnázium (79-41-K/81) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600012891",
+   "date": "2026-09-12"
+  },
+  "600013090_75-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Sociální činnost (75-41-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013090",
+   "date": "2026-09-12"
+  },
+  "600013197_39-41-L/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Mechanik opravář motorových vozidel“ v roce 2025 a „Mechanik opravář motorových vozidel (AU+MOMV)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Zaměření se v datech jmenuje jinak než loni: „Autoelektrikář“ v roce 2025 a „Autoelektrikář (AU+AEL)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Obor Autotronik (39-41-L/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013197",
+   "date": "2026-09-12"
+  },
+  "600013383_65-41-L/51": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gastronomie (65-41-L/51) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013383",
+   "date": "2026-09-12"
+  },
+  "600013391_78-42-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Technické lyceum (78-42-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013391",
+   "date": "2026-09-12"
+  },
+  "600013481_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013481",
+   "date": "2026-09-12"
+  },
+  "600013537_79-41-K/61": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/61) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013537",
+   "date": "2026-09-12"
+  },
+  "600013537_79-41-K/81": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gymnázium (79-41-K/81) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013537",
+   "date": "2026-09-12"
+  },
+  "600013634_79-42-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „atletika, basketbal dívky, volejbal“ v roce 2025 a „Gymnázium se sportovní přípravou-atletika, basketbal dívky, volejbal“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „fotbal chlapci, plavání“ v roce 2025 a „Gymnázium se sportovní přípravou-fotbal chlapci, plavání“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013634",
+   "date": "2026-09-12"
+  },
+  "600013651_78-42-M/08": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013651",
+   "date": "2026-09-12"
+  },
+  "600013731_78-42-M/03": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Pedagogické lyceum (78-42-M/03) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013731",
+   "date": "2026-09-12"
+  },
+  "600013758_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013758",
+   "date": "2026-09-12"
+  },
+  "600013766_66-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Obchodník (66-41-L/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013766",
+   "date": "2026-09-12"
+  },
+  "600013839_63-41-M/02": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Nabídka Obchodní akademie (63-41-M/02) se od roku 2026 dělí na víc zaměření. Starší výsledky se vztahují ke společnému předchůdci. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013839",
+   "date": "2026-09-12"
+  },
+  "600013855_23-45-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Elektromechanik pro zařízení a přístroje“ v roce 2025 a „elektromechanik pro zařízení a přístroje (L0+H)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „Obráběč kovů“ v roce 2025 a „obráběč kovů (L0+H)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013855",
+   "date": "2026-09-12"
+  },
+  "600013855_26-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Elektromechanik pro zařízení a přístroje“ v roce 2025 a „elektromechanik pro zařízení a přístroje (L0+H)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „Elektrikář - silnoproud“ v roce 2025 a „elektrikář - silnoproud (L0+H)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013855",
+   "date": "2026-09-12"
+  },
+  "600013898_75-31-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Předškolní a mimoškolní pedagogika (75-31-M/01) pokračuje z roku 2025 beze změny. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006018-600013898",
+   "date": "2026-09-12"
+  },
+  "600013898_79-41-K/81": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/81) pokračuje z roku 2025 beze změny. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600006018-600013898",
+   "date": "2026-09-12"
+  },
+  "600013910_78-42-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Technické lyceum (78-42-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013910",
+   "date": "2026-09-12"
+  },
+  "600013936_78-42-M/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Ekonomické lyceum (78-42-M/02) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600013936",
+   "date": "2026-09-12"
+  },
+  "600014665_63-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Ekonomika a podnikání (63-41-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600014665",
+   "date": "2026-09-12"
+  },
+  "600014771_78-42-M/03": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Pedagogické lyceum (78-42-M/03) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600014771",
+   "date": "2026-09-12"
+  },
+  "600014843_78-42-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Technické lyceum (78-42-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600014843",
+   "date": "2026-09-12"
+  },
+  "600014860_78-42-M/02": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Ekonomické lyceum (78-42-M/02) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600014860",
+   "date": "2026-09-12"
+  },
+  "600015092_65-42-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „hotelnictví a rekreologie“ v roce 2025 a „ŠVP hotelnictví a rekreologie“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600015092",
+   "date": "2026-09-12"
+  },
+  "600015289_64-41-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Podnikání (64-41-L/51) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600015289",
+   "date": "2026-09-12"
+  },
+  "600015297_63-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Ekonomika a podnikání (63-41-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Zaměření se v datech jmenuje jinak než loni: „Ekonomika a podnikání zaměření Firemní management“ v roce 2025 a „zaměření Firemní management“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Obor Ekonomika a podnikání (63-41-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600015297",
+   "date": "2026-09-12"
+  },
+  "600015548_18-20-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Informační technologie (18-20-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600015548",
+   "date": "2026-09-12"
+  },
+  "600015572_63-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Ekonomika a podnikání (63-41-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600015572",
+   "date": "2026-09-12"
+  },
+  "600015726_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Nabídka Gymnázium (79-41-K/41) se od roku 2026 dělí na víc zaměření. Starší výsledky se vztahují ke společnému předchůdci. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600015726",
+   "date": "2026-09-12"
+  },
+  "600015815_69-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Kosmetické služby (69-41-L/01) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600015815",
+   "date": "2026-09-12"
+  },
+  "600015815_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600015815",
+   "date": "2026-09-12"
+  },
+  "600016218_64-41-L/51": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Podnikání (64-41-L/51) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600016218",
+   "date": "2026-09-12"
+  },
+  "600016358_63-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Podnikání v euroregionu a pozemní stavitelství“ v roce 2025 a „Pozemní stavitelství“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600016358",
+   "date": "2026-09-12"
+  },
+  "600016366_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Nabídka Gymnázium (79-41-K/41) se od roku 2026 dělí na víc zaměření. Starší výsledky se vztahují ke společnému předchůdci. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600016366",
+   "date": "2026-09-12"
+  },
+  "600016374_18-20-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Počítačové sítě / kyberbezpečnost“ v roce 2025 a „Programování internet věcí“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600016374",
+   "date": "2026-09-12"
+  },
+  "600016447_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Nabídka Gymnázium (79-41-K/41) se od roku 2026 dělí na víc zaměření. Starší výsledky se vztahují ke společnému předchůdci. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600016447",
+   "date": "2026-09-12"
+  },
+  "600016510_26-41-L/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Počítačové systémy a sítě (+ Elektrikář) | Digitální technika a mechatronika (+ Elektrikář)“ v roce 2025 a „Digitální technika a mechatronika (+ Elektrikář)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600016510",
+   "date": "2026-09-12"
+  },
+  "600016617_63-41-M/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Trenérská akademie“ v roce 2025 a „Ostrava - Trenérská akademie“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600016617",
+   "date": "2026-09-12"
+  },
+  "600016676_23-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Strojírenství (23-41-M/01) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600016676",
+   "date": "2026-09-12"
+  },
+  "600016901_18-20-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Počítačová grafika“ v roce 2025 a „Robotika“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600016901",
+   "date": "2026-09-12"
+  },
+  "600016935_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „ŠJ“ v roce 2025 a „všeobecné s rozšířenou výukou NJ“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Obor Gymnázium (79-41-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600016935",
+   "date": "2026-09-12"
+  },
+  "600017061_65-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gastronomie (65-41-L/01) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600017061",
+   "date": "2026-09-12"
+  },
+  "600017133_26-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „silnoproudá zařízení - L0+H mechanik elektrotechnik silnoproudá zařízení + Elektrikář silnoproud“ v roce 2025 a „26-51-H/02 Elektrikář - silnoproud“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „výpočetní a elektronické systémy“ v roce 2025 a „26-41-L/01 Výpočetní a elektronické systémy“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600017133",
+   "date": "2026-09-12"
+  },
+  "600017168_34-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Polygrafie (34-41-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600017168",
+   "date": "2026-09-12"
+  },
+  "600017443_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „čtyřletý obor - první cizí jazyk německý jazyk“ v roce 2025 a „Německý jazyk (první cizí jazyk)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „čtyřletý obor - první cizí jazyk anglický jazyk“ v roce 2025 a „Anglický jazyk (první cizí jazyk)“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600017443",
+   "date": "2026-09-12"
+  },
+  "600017460_63-41-M/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „s rozšířenou výukou marketingu a digitálních technologií“ v roce 2025 a „marketing a digitální technologie“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „se zaměřením na účetnictví a daně“ v roce 2025 a „účetnictví a daně“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600017460",
+   "date": "2026-09-12"
+  },
+  "600017648_79-41-K/81": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „ŠVP Matematika a příroda“ v roce 2025 a „Matematika a příroda“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „ŠVP Mluvíme anglicky“ v roce 2025 a „Mluvíme anglicky“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600017648",
+   "date": "2026-09-12"
+  },
+  "600017699_23-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Strojírenství (23-41-M/01) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600017699",
+   "date": "2026-09-12"
+  },
+  "600017869_36-47-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Stavebnictví (36-47-M/01) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600017869",
+   "date": "2026-09-12"
+  },
+  "600018067_75-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Sociální činnost (75-41-M/01) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600018067",
+   "date": "2026-09-12"
+  },
+  "600018318_41-45-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Mechanizace a služby (41-45-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600018318",
+   "date": "2026-09-12"
+  },
+  "600019462_69-41-L/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Masér sportovní a rekondiční (69-41-L/02) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019462",
+   "date": "2026-09-12"
+  },
+  "600019471_53-44-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Ortoticko - protetický technik (53-44-M/01) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019471",
+   "date": "2026-09-12"
+  },
+  "600019527_53-43-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Laboratorní asistent (53-43-M/01) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019527",
+   "date": "2026-09-12"
+  },
+  "600019560_53-41-M/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Nutriční asistent (53-41-M/02) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019560",
+   "date": "2026-09-12"
+  },
+  "600019578_69-41-L/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Masér sportovní a rekondiční (69-41-L/02) pokračuje z roku 2025 beze změny. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019578",
+   "date": "2026-09-12"
+  },
+  "600019616_78-42-M/04": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Zdravotnické lyceum (78-42-M/04) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019616",
+   "date": "2026-09-12"
+  },
+  "600019624_78-42-M/04": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Zdravotnické lyceum (78-42-M/04) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019624",
+   "date": "2026-09-12"
+  },
+  "600019641_53-41-M/04": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Masér ve zdravotnictví (53-41-M/04) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019641",
+   "date": "2026-09-12"
+  },
+  "600019641_53-43-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Laboratorní asistent (53-43-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019641",
+   "date": "2026-09-12"
+  },
+  "600019675_53-41-M/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Nutriční asistent (53-41-M/02) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019675",
+   "date": "2026-09-12"
+  },
+  "600019675_53-44-M/03": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Asistent zubního technika (53-44-M/03) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019675",
+   "date": "2026-09-12"
+  },
+  "600019772_53-43-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Laboratorní asistent (53-43-M/01) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019772",
+   "date": "2026-09-12"
+  },
+  "600019781_75-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Sociální činnost (75-41-M/01) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019781",
+   "date": "2026-09-12"
+  },
+  "600019942_75-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Sociální činnost (75-41-M/01) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600019942",
+   "date": "2026-09-12"
+  },
+  "600020053_53-44-M/03": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Asistent zubního technika (53-44-M/03) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600020053",
+   "date": "2026-09-12"
+  },
+  "600020070_53-43-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Laboratorní asistent (53-43-M/01) pokračuje z roku 2025 beze změny. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600020070",
+   "date": "2026-09-12"
+  },
+  "600020355_78-42-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Technické lyceum (78-42-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600020355",
+   "date": "2026-09-12"
+  },
+  "600020797_72-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Informační služby (72-41-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600020797",
+   "date": "2026-09-12"
+  },
+  "600024016_33-42-L/51": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Nábytkářská a dřevařská výroba (33-42-L/51) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600024016",
+   "date": "2026-09-12"
+  },
+  "600025047_69-41-L/02": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Masér sportovní a rekondiční (69-41-L/02) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600025047",
+   "date": "2026-09-12"
+  },
+  "600073017_23-45-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Mechanik seřizovač (23-45-L/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600073017",
+   "date": "2026-09-12"
+  },
+  "600170080_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Elektromobilita“ v roce 2025 a „Elektromobility“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „Multimédia“ v roce 2025 a „Multimédií“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170080",
+   "date": "2026-09-12"
+  },
+  "600170161_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170161",
+   "date": "2026-09-12"
+  },
+  "600170179_72-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Informační služby (72-41-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170179",
+   "date": "2026-09-12"
+  },
+  "600170179_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170179",
+   "date": "2026-09-12"
+  },
+  "600170195_23-43-L/51": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Provozní technika (23-43-L/51) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170195",
+   "date": "2026-09-12"
+  },
+  "600170195_64-41-L/51": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Podnikání (64-41-L/51) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170195",
+   "date": "2026-09-12"
+  },
+  "600170241_65-42-M/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Cestovní ruch (65-42-M/02) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170241",
+   "date": "2026-09-12"
+  },
+  "600170241_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170241",
+   "date": "2026-09-12"
+  },
+  "600170284_23-44-L/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Mechanik strojů a zařízení (23-44-L/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170284",
+   "date": "2026-09-12"
+  },
+  "600170349_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170349",
+   "date": "2026-09-12"
+  },
+  "600170381_23-44-L/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Mechanik strojů a zařízení (23-44-L/01) pokračuje z roku 2025 beze změny. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170381",
+   "date": "2026-09-12"
+  },
+  "600170462_39-08-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Požární ochrana (39-08-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170462",
+   "date": "2026-09-12"
+  },
+  "600170586_26-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Elektrotechnika (26-41-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170586",
+   "date": "2026-09-12"
+  },
+  "600170837_39-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Automechanik“ v roce 2025 a „26-57-H/01 Autoelektrikář“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600170837",
+   "date": "2026-09-12"
+  },
+  "600171183_63-41-M/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Obchodní akademie (63-41-M/02) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600171183",
+   "date": "2026-09-12"
+  },
+  "600171370_23-43-L/51": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Provozní technika (23-43-L/51) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600171370",
+   "date": "2026-09-12"
+  },
+  "600171388_26-41-L/52": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Provozní elektrotechnika (26-41-L/52) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600171388",
+   "date": "2026-09-12"
+  },
+  "600171400_28-42-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Chemik operátor (28-42-L/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600171400",
+   "date": "2026-09-12"
+  },
+  "600171400_78-42-M/05": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Přírodovědné lyceum (78-42-M/05) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600171400",
+   "date": "2026-09-12"
+  },
+  "600171779_75-41-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Sociální činnost (75-41-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-600171779",
+   "date": "2026-09-12"
+  },
+  "610100581_26-41-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Informační technologie“ v roce 2025 a „informační technologie, uč. obor 26-51-H/01 Elektrikář“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „Silnoproudá zařízení“ v roce 2025 a „silnoproudá zařízení, uč. obor 26-51-H/02 Elektrikář silnoproud“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „Elektronická zařízení“ v roce 2025 a „elektronická zařízení, uč. obor 26-51-H/01 Elektrikář“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-610100581",
+   "date": "2026-09-12"
+  },
+  "610200381_18-20-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Informační technologie – informatika a management“ v roce 2025 a „informatika a management“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Zaměření se v datech jmenuje jinak než loni: „Informační technologie – elektronické počítačové systémy“ v roce 2025 a „elektronické počítačové systémy“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-610200381",
+   "date": "2026-09-12"
+  },
+  "610450620_68-43-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Veřejnosprávní činnost (68-43-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-610450620",
+   "date": "2026-09-12"
+  },
+  "610450620_78-42-M/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Ekonomické lyceum (78-42-M/02) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-610450620",
+   "date": "2026-09-12"
+  },
+  "610451049_39-08-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Požární ochrana (39-08-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-610451049",
+   "date": "2026-09-12"
+  },
+  "650069021_23-43-L/51": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Provozní technika (23-43-L/51) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-650069021",
+   "date": "2026-09-12"
+  },
+  "651012988_69-41-L/52": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Vlasová kosmetika (69-41-L/52) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-651012988",
+   "date": "2026-09-12"
+  },
+  "651017459_18-20-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Robotika“ v roce 2025 a „Programování, vývoj aplikací a robotika“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Zaměření se v datech jmenuje jinak než loni: „Počítačová grafika“ v roce 2025 a „Počítačová grafika, audio-video tvorba a produkční tisk“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-651017459",
+   "date": "2026-09-12"
+  },
+  "651028922_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Nabídka Gymnázium (79-41-K/41) se od roku 2026 dělí na víc zaměření. Starší výsledky se vztahují ke společnému předchůdci. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-651028922",
+   "date": "2026-09-12"
+  },
+  "680000011_68-42-L/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Vnitřní pořádek a bezpečnost (režim pokusného ověřování) (68-42-L/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-680000011",
+   "date": "2026-09-12"
+  },
+  "680000011_68-42-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Bezpečnostně právní činnost (68-42-M/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-680000011",
+   "date": "2026-09-12"
+  },
+  "691000212_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691000212",
+   "date": "2026-09-12"
+  },
+  "691000549_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691000549",
+   "date": "2026-09-12"
+  },
+  "691001111_63-41-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „Ekonom - specializace sportovní“ v roce 2025 a „specializace sportovní“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Zaměření se v datech jmenuje jinak než loni: „Ekonom - specializace jazyková a odborná“ v roce 2025 a „specializace jazyková a odborná“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691001111",
+   "date": "2026-09-12"
+  },
+  "691007144_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691007144",
+   "date": "2026-09-12"
+  },
+  "691009341_79-42-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gymnázium se sportovní přípravou (79-42-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691009341",
+   "date": "2026-09-12"
+  },
+  "691010366_78-42-M/04": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Zdravotnické lyceum (78-42-M/04) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Obor Zdravotnické lyceum (78-42-M/04) pokračuje z roku 2025 beze změny. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691010366",
+   "date": "2026-09-12"
+  },
+  "691012431_34-52-L/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Tiskař na polygrafických strojích (34-52-L/01) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691012431",
+   "date": "2026-09-12"
+  },
+  "691012458_79-41-K/81": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gymnázium (79-41-K/81) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691012458",
+   "date": "2026-09-12"
+  },
+  "691015163_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gymnázium (79-41-K/41) pokračuje z roku 2025 beze změny. Obor Gymnázium (79-41-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691015163",
+   "date": "2026-09-12"
+  },
+  "691016551_65-41-L/51": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gastronomie (65-41-L/51) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691016551",
+   "date": "2026-09-12"
+  },
+  "691016640_78-42-M/08": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Lyceum (režim pokusného ověřování) (78-42-M/08) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691016640",
+   "date": "2026-09-12"
+  },
+  "691016836_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691016836",
+   "date": "2026-09-12"
+  },
+  "691017280_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Škola prošla organizační změnou: nabídka Gymnázium (79-41-K/41) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691017280",
+   "date": "2026-09-12"
+  },
+  "691017301_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gymnázium (79-41-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691017301",
+   "date": "2026-09-12"
+  },
+  "691017310_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gymnázium (79-41-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691017310",
+   "date": "2026-09-12"
+  },
+  "691017328_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Gymnázium (79-41-K/41) škola pro přijímací řízení 2026 nevypsala. V roce 2025 jej v nabídce měla, proto tu najdete starší výsledky. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691017328",
+   "date": "2026-09-12"
+  },
+  "691017344_79-41-K/41": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Škola prošla organizační změnou: nabídka Gymnázium (79-41-K/41) přešla pod tuto školu od jiného subjektu. Starší výsledky pocházejí od předchůdce. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Starší výsledky proto nejsou s letošní nabídkou plně srovnatelné. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691017344",
+   "date": "2026-09-12"
+  },
+  "691017981_78-42-M/02": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Ekonomické lyceum (78-42-M/02) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691017981",
+   "date": "2026-09-12"
+  },
+  "691018707_79-42-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Zaměření se v datech jmenuje jinak než loni: „basketbal“ v roce 2025 a „basketbal 79-42-K/41“ v roce 2026. Jde o tutéž nabídku, starší výsledky proto patří k ní. Obor Gymnázium se sportovní přípravou (79-42-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691018707",
+   "date": "2026-09-12"
+  },
+  "691018715_75-31-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Předškolní a mimoškolní pedagogika (75-31-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691018715",
+   "date": "2026-09-12"
+  },
+  "691018731_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691018731",
+   "date": "2026-09-12"
+  },
+  "691018839_23-44-L/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Mechanik strojů a zařízení (23-44-L/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691018839",
+   "date": "2026-09-12"
+  },
+  "691018871_78-42-M/01": {
+   "type": "warning",
+   "title": "Návaznost na loňskou nabídku není jistá",
+   "message": "Obor Technické lyceum (78-42-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Spojení s dřívější nabídkou nemáme doložené jednoznačně. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691018871",
+   "date": "2026-09-12"
+  },
+  "691019088_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691019088",
+   "date": "2026-09-12"
+  },
+  "691019193_79-41-K/41": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Gymnázium (79-41-K/41) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691019193",
+   "date": "2026-09-12"
+  },
+  "691019258_75-31-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Předškolní a mimoškolní pedagogika (75-31-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691019258",
+   "date": "2026-09-12"
+  },
+  "691020035_75-31-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Předškolní a mimoškolní pedagogika (75-31-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691020035",
+   "date": "2026-09-12"
+  },
+  "691020060_75-31-M/01": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Předškolní a mimoškolní pedagogika (75-31-M/01) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691020060",
+   "date": "2026-09-12"
+  },
+  "691020094_78-42-M/06": {
+   "type": "info",
+   "title": "Nabídka se mezi roky změnila",
+   "message": "Obor Kombinované lyceum (78-42-M/06) je v nabídce nově pro rok 2026. Z dřívějších let k němu výsledky nemáme. Pokud to víte jinak, dejte nám prosím vědět tlačítkem „Nahlásit chybu“ dole na stránce. Opravíme to.",
+   "source": "Rešerše návazností 2025–2026, R-691020094",
+   "date": "2026-09-12"
+  }
+ }
+}

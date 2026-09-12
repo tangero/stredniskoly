@@ -86,9 +86,12 @@
    "recommended_action": "manual_review",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Jak správně rozdělit statistiku přijímacího řízení 2026 (jeden souhrnný záznam) zpět na dvě zaměření pro srovnání s rokem 2025."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Jak správně rozdělit statistiku přijímacího řízení 2026 (jeden souhrnný záznam) zpět na dvě zaměření pro srovnání s rokem 2025."
+    ]
+   }
   },
   {
    "issue_ids": [

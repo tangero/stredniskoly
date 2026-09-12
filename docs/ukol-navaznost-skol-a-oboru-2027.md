@@ -64,6 +64,16 @@ Všech 192 úkolů fronty má vlastní soubor výsledku a všech 436 otázek fro
 | sloučení | 16 | | | |
 | rozdělení | 7 | | | |
 
+### Co se odkládá a co se přiznává na webu
+
+O srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Třicet čtyři takových položek je v nálezech vedeno v poli `decisions_deferred` i s důvodem odložení.
+
+Místo toho web u dotčené nabídky pravdivě uvede, co není jisté, a nabídne nahlášení opravy. Poznámky generuje `scripts/build-navaznost-notes.py` do `public/navaznost_notes.json`: 216 poznámek, z toho 70 s přiznanou nejistotou. Klíčem je základní `REDIZO_KKOV`, na který má stránka školy fallback; klíč se zaměřením by se kvůli odlišným textům k nabídce nedostal.
+
+Ruční poznámky z GitHub Issues zůstávají v `public/school_notes.json` a při shodě klíče mají přednost, protože vycházejí z konkrétního podnětu od člověka. Obojí spojuje `src/lib/school-notes.ts`, takže stránky škol není potřeba měnit.
+
+Každá poznámka končí výzvou nahlásit opravu tlačítkem „Nahlásit chybu“, které zakládá GitHub Issue. Tím se uzavírá smyčka: co nevíme, přiznáme, a kdo to ví, může nám to říct.
+
 Doporučená akce není schválením. `approve_mapping` znamená návrh k přijetí do migrační mapy, `record_only` pouhou evidenci beze změny statistik, `manual_review` případ, který vyžaduje rozhodnutí člověka.
 
 Nálezy nesly 227 otevřených otázek. Dnes jich je nula: 190 je uzavřeno i s důvodem a 34 přesunuto mezi rozhodnutí k přezkumu. Poslední skupinu uzavřelo pravidlo, že se nedohledává důvod ani trvalost toho, že škola obor v daném roce nevypsala. Rozbor podle cesty k uzavření je v [přehledu konfliktů](prehled-konfliktu-navaznosti.md).
@@ -114,6 +124,7 @@ Ze 461 externích odkazů odpovědělo 443 kódem 200. Zbývajících 18 rozebí
 | [Spory v datech](podklady/spory-v-datech-2025-2026.json) | Výstup hledání rozporů mezi číselníky |
 | [Návrhy párování](podklady/navrhy-parovani-zamereni.json) | Dvojice zaměření, která jsou totéž jinými slovy |
 | [Prohlížeč konfliktů](../tools/konflikty-prohlizec/README.md) | Kontrola dvojic nabídek vedle sebe za oba ročníky |
+| [Poznámky na web](../public/navaznost_notes.json) | Co se u nabídky přizná návštěvníkovi; generuje `scripts/build-navaznost-notes.py` |
 | [Podklad cyklu](podklady/dvoulety-cyklus-2024-2026.json) | Stopa každé nepřiřazené nabídky v roce 2024 |
 
 ## 5. Reprodukce
@@ -137,7 +148,7 @@ Generátory přepisují své výstupy. Ruční výsledky rešerší ukládat odd
 1. Zpracovat prioritní nejasné návaznosti podle zadání agenta; využít přiložená data a primární zdroje. Rešerše neznamená automatické schválení mapování.
 2. Zapsat a přezkoumat návaznosti škol a oborů včetně vazeb 1:N/N:1. Evidovat zdroj, období a stav potvrzení. Organizační události neduplikovat jako nezávislé události pro každý obor.
 3. Začlenit nová pozorování a výsledky do prohlížeče. Před změnou jeho datového otisku navrhnout migraci uložených rozhodnutí a ověřit export/import. Stávající ruční rozhodnutí zachovat.
-4. Implementovat na profilech historické názvy a adresní údaje podle schválených formulací. Chybějící údaj nevykreslovat jako `None` ani jako změnu.
+4. Implementovat na profilech historické názvy a adresní údaje podle schválených formulací. Chybějící údaj nevykreslovat jako `None` ani jako změnu. Poznámky o návaznosti už datovou vrstvu mají, zbývá ověřit jejich zobrazení na produkčních stránkách.
 5. Doložit místa výuky pro dojezdovost; jde o širší datový úkol i mimo spornou frontu. Záznam bez ověřeného místa výuky neprezentovat jako přesný dojezd do školy.
 6. Aktualizovat schválené návaznosti a veřejné stránky. Ověřit skutečné produkční stránky a navazující odkazy; lokální test či sestavení neprokazuje nasazení.
 
@@ -159,7 +170,7 @@ Tato dokumentační dodávka sama neprovádí žádný z těchto kroků v produk
 
 **Hotovo:** adresní rozbor; matice a reprodukovatelné skripty; zúžená fronta; zadání rešerše a formát výsledku; pravidla pro historické poznámky; oprava nesprávného zařazení Tachova. Ověřeny součty, jedinečnost a úplnost rozdělení ročníků, zachování 1 076 původních otázek mezi rešerší, prostou evidencí a mezerami v datech. Nově: stažené datované snímky rejstříku MŠMT a jejich dávkové propojení s frontou; rešerše všech 192 úkolů s uloženými nálezy; prohlížeč výsledků; strojová kontrola nálezů i dostupnosti citovaných zdrojů.
 
-**Nehotovo:** schválená migrační mapa (rešerše je podklad k přezkoumání, ne schválení), začlenění nové fronty do původního prohlížeče rozboru 1 004 případů, implementace poznámek na profilech, doplnění skutečných míst výuky pro dojezdovost, nasazení těchto změn. Otevřené zůstává 45 nálezů s doporučením ruční přezkum a 34 položek k rozhodnutí při přezkumu; žádný nález není bez doloženého závěru. Tato dokumentace netvrdí, že data 2027 jsou úplná.
+**Nehotovo:** schválená migrační mapa (rešerše je podklad k přezkoumání, ne schválení), začlenění nové fronty do původního prohlížeče rozboru 1 004 případů, implementace poznámek na profilech, doplnění skutečných míst výuky pro dojezdovost, nasazení těchto změn. Otevřené zůstává 45 nálezů s doporučením ruční přezkum; 34 položek o srovnatelnosti je vědomě odloženo a web u nich přiznává nejistotu. Žádný nález není bez doloženého závěru. Tato dokumentace netvrdí, že data 2027 jsou úplná.
 
 **Historie rozhodnutí:**
 

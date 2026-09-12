@@ -106,9 +106,12 @@
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Do jaké míry se změnil školní vzdělávací program (ŠVP) při přejmenování z Počítačové grafiky na Multimédia a z Automatizace a robotiky na Robotiku – jde jen o marketingovou úpravu, nebo o věcnou změnu obsahu výuky?"
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Do jaké míry se změnil školní vzdělávací program (ŠVP) při přejmenování z Počítačové grafiky na Multimédia a z Automatizace a robotiky na Robotiku – jde jen o marketingovou úpravu, nebo o věcnou změnu obsahu výuky?"
+    ]
+   }
   }
  ]
 }

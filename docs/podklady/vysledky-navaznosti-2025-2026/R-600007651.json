@@ -143,15 +143,18 @@
    "recommended_action": "manual_review",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Jde u obou zaznamenaných forem (CERMAT) a hodnoty „dvojjazyčný/jiný\" (rejstřík) o skutečné zavedení výuky vybraných předmětů v cizím jazyce v obsahu ŠVP oboru Ekonomika a podnikání, nebo o administrativní/evidenční přeznačení pole „forma vzdělávání\" v rejstříku, které se promítlo do všech čtyř oborů školy současně?"
-   ],
    "resolved_questions": [
     {
      "otazka": "Pokud jde o skutečnou pedagogickou změnu, kdy a jakým rozhodnutím (školy, zřizovatele Středočeský kraj) byla zavedena a v jakém rozsahu (které předměty, u kterých oborů)?",
      "uzavreno": "Uzavřeno podle schváleného pravidla 1: příčina rozhodnutí školy se nezkoumá, pro návaznost nabídky není potřebná."
     }
-   ]
+   ],
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Jde u obou zaznamenaných forem (CERMAT) a hodnoty „dvojjazyčný/jiný\" (rejstřík) o skutečné zavedení výuky vybraných předmětů v cizím jazyce v obsahu ŠVP oboru Ekonomika a podnikání, nebo o administrativní/evidenční přeznačení pole „forma vzdělávání\" v rejstříku, které se promítlo do všech čtyř oborů školy současně?"
+    ]
+   }
   }
  ]
 }

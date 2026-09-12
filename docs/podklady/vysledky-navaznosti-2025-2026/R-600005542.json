@@ -151,9 +151,12 @@
      "uzavreno": "Uzavřeno podle zadání tohoto běhu: zápis školy nebo oboru v některém z číselníků (data CERMAT, rejstřík MŠMT, ARES) je dostatečným dokladem, že existuje po právu. Běh řeší jen spory, kde si zdroje odporují; další potvrzení téhož se nedohledává."
     }
    ],
-   "decisions_required": [
-    "Historické statistiky přijímacího řízení 2025 pro Hotelnictví, Cestovní ruch a Lyceum se vztahují k samostatné Radlické škole s vlastními kritérii; po sloučení platí pro rok 2026/2027 nová kritéria sloučené školy (u Lycea školní testy a pohovor s cut-off 40 bodů, u Hotelnictví a Cestovního ruchu pouze JPZ s minimem 15 bodů), takže srovnatelnost výsledků je jen částečná a měla by být prezentována s poznámkou o změně organizace i kritérií."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Historické statistiky přijímacího řízení 2025 pro Hotelnictví, Cestovní ruch a Lyceum se vztahují k samostatné Radlické škole s vlastními kritérii; po sloučení platí pro rok 2026/2027 nová kritéria sloučené školy (u Lycea školní testy a pohovor s cut-off 40 bodů, u Hotelnictví a Cestovního ruchu pouze JPZ s minimem 15 bodů), takže srovnatelnost výsledků je jen částečná a měla by být prezentována s poznámkou o změně organizace i kritérií."
+    ]
+   }
   }
  ],
  "registry_check": {

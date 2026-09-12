@@ -108,9 +108,12 @@
      "uzavreno": "Uzavřeno podle schváleného pravidla 8: změnu mezi dvěma snímky lze datovat jen do intervalu mezi nimi, přesné datum se nedohledává. Interval, který zdroje dovolují, je zaznamenán v pozorováních nálezu."
     }
    ],
-   "decisions_required": [
-    "Jak se historické výsledky přijímacího řízení oboru 79-41-K/41 (2025) mají promítnout do dvou nových zaměření – proporcionálně, nebo jen k jednomu z nich (Všeobecné zaměření jako přímý nástupce)?"
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Jak se historické výsledky přijímacího řízení oboru 79-41-K/41 (2025) mají promítnout do dvou nových zaměření – proporcionálně, nebo jen k jednomu z nich (Všeobecné zaměření jako přímý nástupce)?"
+    ]
+   }
   }
  ]
 }

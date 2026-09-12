@@ -93,9 +93,12 @@
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Zda zkrácení názvu doprovázela i změna obsahu ŠVP jednotlivých zaměření."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Zda zkrácení názvu doprovázela i změna obsahu ŠVP jednotlivých zaměření."
+    ]
+   }
   }
  ]
 }

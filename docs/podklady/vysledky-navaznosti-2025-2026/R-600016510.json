@@ -95,9 +95,12 @@
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Šlo v roce 2025 skutečně o jednu společnou třídu, nebo jen o formátovací spojení dvou tříd v jednom řádku XLSX?"
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Šlo v roce 2025 skutečně o jednu společnou třídu, nebo jen o formátovací spojení dvou tříd v jednom řádku XLSX?"
+    ]
+   }
   }
  ]
 }

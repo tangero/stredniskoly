@@ -171,9 +171,12 @@
    "recommended_action": "record_only",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Zda se obsah nového proudu Business Academy liší od dosavadní výuky oboru jen jazykově, nebo i tematicky, nelze z dostupných zdrojů plně posoudit; pomohl by ŠVP Business Academy, který škola na webu zatím nezveřejnila."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Zda se obsah nového proudu Business Academy liší od dosavadní výuky oboru jen jazykově, nebo i tematicky, nelze z dostupných zdrojů plně posoudit; pomohl by ŠVP Business Academy, který škola na webu zatím nezveřejnila."
+    ]
+   }
   }
  ]
 }

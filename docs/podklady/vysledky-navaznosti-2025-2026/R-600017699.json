@@ -113,9 +113,12 @@
    "recommended_action": "manual_review",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Od kdy přesně (který školní rok) škola formálně rozdělila přijímací řízení do tří zaměření – primární zdroj (ŠVP, výroční zpráva) nebyl dohledán, jen aktuální stav webu."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Od kdy přesně (který školní rok) škola formálně rozdělila přijímací řízení do tří zaměření – primární zdroj (ŠVP, výroční zpráva) nebyl dohledán, jen aktuální stav webu."
+    ]
+   }
   }
  ]
 }

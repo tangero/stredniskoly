@@ -138,6 +138,13 @@ def main():
                     chyby.append(f"{oznaceni}: evidence bez url")
                 if not e.get("checked_at"):
                     chyby.append(f"{oznaceni}: evidence {url[:60]} bez checked_at")
+            deferred = f.get("decisions_deferred")
+            if deferred is not None:
+                if not isinstance(deferred, dict) or not deferred.get("duvod") \
+                        or not isinstance(deferred.get("polozky"), list) \
+                        or not deferred["polozky"]:
+                    chyby.append(f"{oznaceni}: decisions_deferred musí mít 'duvod' "
+                                 f"a neprázdný seznam 'polozky'")
             for pole, popis in (("resolved_questions", "uzavřená otázka"),
                                 ("decisions_required", "rozhodnutí k přezkumu")):
                 hodnota = f.get(pole)

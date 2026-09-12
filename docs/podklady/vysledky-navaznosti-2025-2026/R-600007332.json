@@ -121,9 +121,12 @@
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Zda zaměření ŠVP 0007/2024 a 0008/2024 existují ve škole interně i pro ročník přijatý v roce 2026 (např. výběr zaměření až po přijetí), nebo zda škola zaměření čtyřletého studia skutečně zrušila – z dostupných zdrojů nelze rozhodnout."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Zda zaměření ŠVP 0007/2024 a 0008/2024 existují ve škole interně i pro ročník přijatý v roce 2026 (např. výběr zaměření až po přijetí), nebo zda škola zaměření čtyřletého studia skutečně zrušila – z dostupných zdrojů nelze rozhodnout."
+    ]
+   }
   }
  ]
 }

@@ -26,8 +26,32 @@ interface SchoolNotesData {
 
 let notesCache: SchoolNotesData | null = null;
 
+const PRAZDNE_TYPY = {
+  warning: { icon: '⚠️', color: 'amber', description: '' },
+  info: { icon: 'ℹ️', color: 'blue', description: '' },
+  update: { icon: '🔄', color: 'green', description: '' },
+};
+
 /**
- * Načte poznámky ke školám ze school_notes.json
+ * Načte poznámky ze souboru; chybějící soubor není chyba.
+ */
+async function nactiSoubor(jmeno: string): Promise<Record<string, SchoolNote>> {
+  const filePath = path.join(process.cwd(), 'public', jmeno);
+  try {
+    const data = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(data).notes ?? {};
+  } catch {
+    return {};
+  }
+}
+
+/**
+ * Načte poznámky ke školám.
+ *
+ * Skládají se ze dvou zdrojů: navaznost_notes.json generuje rešerše návazností
+ * a popisuje, co se s nabídkou mezi roky stalo, zatímco school_notes.json píšeme
+ * ručně podle hlášení z GitHub Issues. Ruční poznámka má přednost, protože
+ * vychází z konkrétního podnětu od člověka.
  */
 export async function getSchoolNotes(): Promise<SchoolNotesData> {
   if (notesCache) return notesCache;
@@ -37,19 +61,21 @@ export async function getSchoolNotes(): Promise<SchoolNotesData> {
 
   try {
     const data = await fs.readFile(filePath, 'utf-8');
-    notesCache = JSON.parse(data);
+    const rucni: SchoolNotesData = JSON.parse(data);
+    const generovane = await nactiSoubor('navaznost_notes.json');
+    notesCache = {
+      ...rucni,
+      notes: { ...generovane, ...rucni.notes },
+      types: rucni.types ?? PRAZDNE_TYPY,
+    };
     return notesCache!;
   } catch (error) {
     console.error('Error loading school notes:', error);
     // Vrátit prázdnou strukturu pokud soubor neexistuje
     return {
       meta: { version: '1.0', last_updated: '', description: '' },
-      notes: {},
-      types: {
-        warning: { icon: '⚠️', color: 'amber', description: '' },
-        info: { icon: 'ℹ️', color: 'blue', description: '' },
-        update: { icon: '🔄', color: 'green', description: '' },
-      },
+      notes: await nactiSoubor('navaznost_notes.json'),
+      types: PRAZDNE_TYPY,
     };
   }
 }

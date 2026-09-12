@@ -108,9 +108,12 @@
    "recommended_action": "approve_mapping",
    "related_task_ids": [],
    "unanswered_questions": [],
-   "decisions_required": [
-    "Nebylo nezávisle ověřeno (mimo infoabsolvent.cz), zda škola pro rok 2025/2026 obor formálně vůbec vyhlásila s nulovou kapacitou, nebo řízení nevyhlásila vůbec – rozdíl nemá dopad na závěr o kontinuitě oboru, ale je relevantní pro případné srovnání statistik přijímacího řízení."
-   ]
+   "decisions_deferred": {
+    "duvod": "Odloženo: o srovnatelnosti a přenosu historických výsledků se v tomto běhu nerozhoduje. Web u dotčené nabídky přizná, co není jisté, a nabídne nahlášení opravy přes GitHub Issues.",
+    "polozky": [
+     "Nebylo nezávisle ověřeno (mimo infoabsolvent.cz), zda škola pro rok 2025/2026 obor formálně vůbec vyhlásila s nulovou kapacitou, nebo řízení nevyhlásila vůbec – rozdíl nemá dopad na závěr o kontinuitě oboru, ale je relevantní pro případné srovnání statistik přijímacího řízení."
+    ]
+   }
   }
  ]
 }
