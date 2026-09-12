@@ -1,0 +1,45 @@
+{
+ "self_test": "ok",
+ "checked_at": "2026-09-12T14:27:34.094248+00:00",
+ "code_commit": "7ade56263297ec118089243eaf13c1b389f7f30a",
+ "data": "syntetická; datový server CERMAT nebyl z vývojového prostředí dostupný",
+ "design": {
+  "stable_world": "školní efekt SD 4 percentilové body, stálý v čase",
+  "null_world": "školní efekt SD 0; veškerý rozptyl je vstup a šum",
+  "outcome_model": "MZ ČJ percentil = 0,8 · vstup + 10 + školní efekt + šum/sqrt(n)"
+ },
+ "stable_world": {
+  "pairs": 1194,
+  "schools": 199,
+  "r2": 0.878,
+  "intakeCoefficient": 0.745,
+  "residualSd": 4.318,
+  "lag1Pairs": 995,
+  "lag1Correlation": 0.55,
+  "betweenSchoolVariance": 11.865,
+  "withinSchoolVariance": 6.784
+ },
+ "stable_decision": "predlozit_metodicke_oponenture",
+ "null_world": {
+  "pairs": 1224,
+  "schools": 204,
+  "r2": 0.956,
+  "intakeCoefficient": 0.741,
+  "residualSd": 2.718,
+  "lag1Pairs": 1020,
+  "lag1Correlation": -0.033,
+  "betweenSchoolVariance": 1.089,
+  "withinSchoolVariance": 6.296
+ },
+ "null_decision": "nepublikovat",
+ "publish_threshold": 0.3,
+ "qualifier_counts": {
+  "pod_skupinou": 551,
+  "nerozlisitelne": 1799,
+  "nad_skupinou": 530
+ },
+ "limits": [
+  "syntetická data potvrzují, že kritérium §5.3 rozliší stabilní efekt od šumu; neříkají nic o skutečných školách",
+  "loader byl testován proti souborům, které skript sám zapsal; mapa sloupců MZ zůstává neověřená proti CERMAT"
+ ]
+}
