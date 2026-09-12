@@ -1,0 +1,324 @@
+<title>Gymnázium J. S. Machara</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Literata:opsz,wght@7..72,600;7..72,700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{
+  --paper:#fbfaf7; --card:#fff; --sunk:#f2f0ec;
+  --ink:#1d1b18; --ink-2:#585249; --ink-3:#847e74;
+  --rule:#e4e0d9; --rule-2:#cbc5ba;
+  --accent:#1b4d7a;
+  --warm:#8a4b16; --warm-bg:#fbf1e6;
+  --care:#7a2e2a; --care-bg:#fbeceb;
+  --serif:"Literata",Georgia,serif;
+  --sans:"Source Sans 3",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#15161a; --card:#1c1e23; --sunk:#23252b;
+  --ink:#ecebe8; --ink-2:#aaa59d; --ink-3:#817b72;
+  --rule:#2b2d33; --rule-2:#3c3e46;
+  --accent:#82b3df; --warm:#dba167; --warm-bg:#2b2318;
+  --care:#e08d87; --care-bg:#2d1c1b;
+}}
+:root[data-theme="dark"]{
+  --paper:#15161a; --card:#1c1e23; --sunk:#23252b;
+  --ink:#ecebe8; --ink-2:#aaa59d; --ink-3:#817b72;
+  --rule:#2b2d33; --rule-2:#3c3e46;
+  --accent:#82b3df; --warm:#dba167; --warm-bg:#2b2318;
+  --care:#e08d87; --care-bg:#2d1c1b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--sans);
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:740px;margin:0 auto;padding-inline:20px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+header{border-bottom:1px solid var(--rule);background:var(--card)}
+.head{padding-block:26px 20px}
+.eyebrow{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+h1{font:700 30px/1.12 var(--serif);margin:0;letter-spacing:-.015em;text-wrap:balance}
+.place{margin:7px 0 0;color:var(--ink-2);font-size:15px}
+
+.basics{background:var(--card);border-bottom:1px solid var(--rule)}
+.basics-in{display:flex;flex-wrap:wrap;gap:10px 32px;padding-block:13px}
+.basics dt{font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.basics dd{margin:2px 0 0;font-size:15px;font-weight:600}
+
+.picker{background:var(--sunk);border-bottom:1px solid var(--rule)}
+.picker-in{padding-block:15px}
+.picker h2{font:600 13px/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);margin:0 0 10px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{font:inherit;font-size:15px;background:var(--card);color:var(--ink);cursor:pointer;
+  border:1px solid var(--rule-2);border-radius:8px;padding:10px 14px;text-align:left;
+  display:flex;flex-direction:column;gap:2px;min-width:0}
+.tab[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.tab small{font-size:12.5px;opacity:.78}
+
+main{padding-block:4px 60px}
+section{margin-top:36px}
+.qmark{font:700 23px/1.2 var(--serif);margin:0 0 10px;letter-spacing:-.01em}
+.verdict{margin:0 0 14px;font:600 19px/1.45 var(--sans);max-width:56ch;
+  border-left:3px solid var(--accent);padding-left:14px}
+.verdict.warm{border-left-color:var(--warm)}
+.lede{margin:0 0 16px;color:var(--ink-2);font-size:15.5px;max-width:62ch}
+
+.fact{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:18px 20px;margin-bottom:12px}
+.fact-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.fact h3{font:600 15px/1.35 var(--sans);margin:0;flex:1 1 15ch}
+.num{font:500 29px/1 var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.means{margin:10px 0 0;font-size:15.5px}
+.means b{font-weight:600}
+.scale{margin-top:13px}
+.bar{height:7px;border-radius:4px;background:var(--sunk);position:relative;overflow:hidden}
+.bar i{position:absolute;inset-block:0;left:0;background:var(--accent);border-radius:4px}
+.bar.warm i{background:var(--warm)}
+.ticks{margin-top:6px;font-size:13px;color:var(--ink-3)}
+.src{margin:11px 0 0;font-size:13.5px;color:var(--ink-3)}
+
+.gap{background:var(--sunk);border:1px dashed var(--rule-2);border-radius:10px;
+  padding:16px 20px;margin-bottom:12px}
+.gap h3{font:600 15px/1.35 var(--sans);margin:0 0 5px}
+.gap p{margin:0;font-size:15px;color:var(--ink-2)}
+
+.two{display:grid;gap:12px}
+@media(min-width:640px){.two{grid-template-columns:1fr 1fr}}
+.panel{border:1px solid var(--rule);border-radius:10px;padding:18px 20px;background:var(--card)}
+.panel.plus{background:var(--card)}
+.panel.minus{background:var(--care-bg);border-color:transparent}
+.panel h3{font:600 15px/1.35 var(--sans);margin:0 0 10px}
+.panel.minus h3{color:var(--care)}
+.panel ul{margin:0;padding:0;list-style:none;display:grid;gap:11px}
+.panel li{font-size:15px}
+.panel li b{display:block;font-weight:600;font-size:15.5px}
+.panel li span{color:var(--ink-2)}
+
+.ask{background:var(--warm-bg);border-radius:10px;padding:18px 20px;margin-top:12px}
+.ask h3{font:600 15px/1.35 var(--sans);margin:0 0 9px;color:var(--warm)}
+.ask ol{margin:0;padding-left:20px;display:grid;gap:7px;font-size:15px}
+
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:9px 0;text-align:left;border-top:1px solid var(--rule)}
+td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:500}
+thead th{border-top:0;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:600}
+caption{text-align:left;font:600 15px/1.35 var(--sans);padding-bottom:9px}
+
+footer{border-top:1px solid var(--rule);padding-block:20px 44px;color:var(--ink-3);font-size:13.5px}
+@media (max-width:520px){
+  h1{font-size:25px} .qmark{font-size:20px} .verdict{font-size:17px} .num{font-size:26px}
+  .tabs{flex-direction:column} .tab{width:100%}
+}
+</style>
+
+<header>
+  <div class="wrap head">
+    <p class="eyebrow">Profil školy</p>
+    <h1>Gymnázium J. S. Machara</h1>
+    <p class="place">Královická 668, Brandýs nad Labem-Stará Boleslav · veřejná škola · tři obory</p>
+  </div>
+</header>
+
+<div class="basics">
+  <div class="wrap basics-in">
+    <div><dt>Zřizovatel</dt><dd>veřejná škola, bez školného</dd></div>
+    <div><dt>Míst v 1. kole 2026</dt><dd>90 ve třech oborech</dd></div>
+    <div><dt>Poslední inspekce</dt><dd>leden 2025</dd></div>
+  </div>
+</div>
+
+<div class="picker">
+  <div class="wrap picker-in">
+    <h2>Který obor vás zajímá</h2>
+    <div class="tabs" id="tabs"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <h2 class="qmark">Dostanu se sem?</h2>
+    <p class="verdict" id="verdikt1"></p>
+    <p class="lede" id="lede1"></p>
+    <div id="blok1"></div>
+  </section>
+
+  <section>
+    <h2 class="qmark">Jaké tu budou nároky?</h2>
+    <p class="verdict warm" id="verdikt2"></p>
+    <p class="lede" id="lede2"></p>
+    <div id="blok2"></div>
+  </section>
+
+  <section>
+    <h2 class="qmark">Jaká je to škola?</h2>
+    <p class="verdict" id="verdikt3"></p>
+    <p class="lede">Tato část platí pro celou školu, ne pro jednotlivý obor. Vychází z inspekční zprávy z ledna 2025.</p>
+    <div id="blok3"></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  Čísla: CERMAT, 1. kolo přijímacího řízení 2026, stav k 17. 8. 2026.
+  Popis školy: Česká školní inspekce, zpráva z 14.–16. ledna 2025.
+  Prototyp k posouzení, ne veřejná stránka.
+</footer>
+
+<script>
+(function(){
+  var OBORY = [
+    {id:'gy8', nadpis:'Gymnázium 8leté', vstup:'z 5. třídy', skupina:'osmiletých gymnázií',
+     kap:30, prih:233, pp:[123,56,54,0,0], prij:30, pret:82, jinam:36, nesplnil:85,
+     prumer:80.13, cj:39.5, ma:40.63, poptavka:7.77, tlak:4.10,
+     pctP:86, pctT:94, pctM:94, n:273, medT:1.73, medP:3.31, medM:60.9},
+    {id:'gy4', nadpis:'Gymnázium 4leté', vstup:'z 9. třídy', skupina:'čtyřletých gymnázií',
+     kap:30, prih:94, pp:[41,40,11,1,1], prij:30, pret:14, jinam:45, nesplnil:5,
+     prumer:80.28, cj:42.34, ma:37.93, poptavka:3.13, tlak:1.37,
+     pctP:70, pctT:73, pctM:86, n:437, medT:1.03, medP:2.60, medM:69.1},
+    {id:'lyc', nadpis:'Technické lyceum', vstup:'z 9. třídy', skupina:'lyceí',
+     kap:30, prih:65, pp:[17,18,30,0,0], prij:23, pret:0, jinam:32, nesplnil:10,
+     prumer:68.74, cj:34.57, ma:34.17, poptavka:2.17, tlak:0.57,
+     pctP:37, pctT:41, pctM:85, n:289, medT:0.68, medP:2.77, medM:57.3}
+  ];
+
+  var SILNE = [
+    {t:'Výborné výsledky', d:'Žáci dlouhodobě dosahují velmi dobrých výsledků v průběhu i při ukončování studia, řada prospívá s vyznamenáním.'},
+    {t:'Moderní zázemí', d:'Škola prošla rozsáhlou rekonstrukcí s novými učebnami pro badatelskou výuku, tělocvičnou a venkovní učebnou.'},
+    {t:'Kvalitní estetická výuka', d:'Výuka umění využívá zážitkovou pedagogiku a rozvíjí kreativitu i praktické dovednosti.'}
+  ];
+  var RIZIKA = [
+    {t:'Málo aktivní výuky', d:'Zhruba v polovině hodin chybí diskuse mezi žáky, vzájemná spolupráce a ohlédnutí za pokrokem.'},
+    {t:'Málo individuálního přístupu', d:'Výuka není vždy přizpůsobena potřebám jednotlivce; potenciál nadaných žáků zůstává nevyužitý.'},
+    {t:'Absence v sedmém ročníku', d:'V sedmém ročníku osmiletého studia vzrostla absence až na 267 hodin za rok a zhoršil se prospěch.'}
+  ];
+  // Doslovné shrnutí z inspekční zprávy, nikoli naše parafráze.
+  var SHRNUTI = 'Kvalitní škola s výborným prospěchem žáků a moderním zázemím. '
+    + 'Slabiny se týkají omezené aktivizace žáků ve výuce, nedostatečné diferenciace '
+    + 'a zvýšené absence v sedmém ročníku.';
+
+  var OTAZKY = [
+    'Jak konkrétně podporujete nadané žáky a jak se liší přístup k různě schopným dětem?',
+    'Jaké kroky podnikáte proti zvýšené absenci v sedmém ročníku?',
+    'Jak se ve výuce uplatňuje sebehodnocení a hodnocení mezi žáky navzájem?'
+  ];
+
+  // Stejná stupnice jako verdikt, aby záložka a nadpis neříkaly každý něco jiného.
+  function narocnost(pct){
+    return pct >= 90 ? 'velmi těžké' : pct >= 70 ? 'těžké'
+         : pct >= 40 ? 'středně těžké' : 'snazší';
+  }
+
+  function cs(n, d){ return n.toLocaleString('cs-CZ', {maximumFractionDigits: d===undefined?0:d}); }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function fakt(o){
+    return '<div class="fact">'
+      + '<div class="fact-top"><h3>'+esc(o.nadpis)+'</h3><span class="num">'+esc(o.hodnota)+'</span></div>'
+      + '<p class="means">'+o.vyznam+'</p>'
+      + (o.pct!==undefined
+          ? '<div class="scale"><div class="bar'+(o.teple?' warm':'')+'">'
+            + '<i style="width:'+Math.max(2,o.pct)+'%"></i></div>'
+            + '<div class="ticks">Vyšší než u '+o.pct+' ze 100 '+esc(o.skupina)+' v celé zemi ('+cs(o.n)+' oborů).</div></div>'
+          : '')
+      + (o.zdroj ? '<p class="src">'+o.zdroj+'</p>' : '')
+      + '</div>';
+  }
+
+  function render(o){
+    // ---- Dostanu se sem?
+    // Verdikt se odvozuje ze zařazení mezi srovnatelné obory, ne z absolutní
+    // hodnoty: 1,4 uchazeče na místo znamená u gymnázia něco jiného než u nástavby.
+    var v1 = o.pctT >= 90 ? 'Dostat se sem je velmi těžké.'
+           : o.pctT >= 70 ? 'Dostat se sem je těžké.'
+           : o.pctT >= 40 ? 'Dostat se sem je středně těžké.'
+           : 'Dostat se sem bývá snazší, než se podle počtu přihlášek zdá.';
+    var v1b = o.tlak >= 1
+      ? ' Obor si jako první volbu zapsalo víc lidí, než kolik má míst.'
+      : ' Obor si jako první volbu zapsalo méně lidí, než kolik má míst, takže bere i ty, pro které byl druhou nebo třetí volbou.';
+    document.getElementById('verdikt1').textContent = v1 + v1b;
+
+    document.getElementById('lede1').textContent =
+      'Kapacita ' + cs(o.kap) + ' míst. Čísla popisují 1. kolo roku 2026 a nejsou předpovědí pro rok 2027.';
+
+    var pretVeta = o.pret > 0
+      ? cs(o.pret) + ' uchazečů splnilo podmínky, ale nevešlo se. Přijato bylo ' + cs(o.prij) + ' z ' + cs(o.kap) + ' míst.'
+      : 'Nikdo neodešel kvůli nedostatku míst. Přijato bylo ' + cs(o.prij) + ' z ' + cs(o.kap) + ' míst, obor se tedy nenaplnil.';
+
+    document.getElementById('blok1').innerHTML =
+      fakt({nadpis:'Uchazečů na jedno místo, kteří sem chtěli nejvíc', hodnota:cs(o.tlak,2)+'×',
+        vyznam:'Obor si jako <b>první volbu</b> zapsalo ' + cs(o.pp[0]) + ' uchazečů na ' + cs(o.kap)
+          + ' míst. Běžná hodnota mezi ' + o.skupina + ' je ' + cs(o.medT,2) + '×.',
+        pct:o.pctT, n:o.n, skupina:o.skupina,
+        zdroj:'Toto číslo nejlépe říká, jak těžké je se dostat. Ověřili jsme to na starším ročníku: vezmeme-li dva obory, jeden s přetlakem a jeden bez něj, hodnota z roku 2025 je správně seřadí v 87 případech ze 100.'})
+      + fakt({nadpis:'Přihlášek na jedno místo', hodnota:cs(o.poptavka,2)+'×',
+        vyznam:cs(o.prih) + ' přihlášek na ' + cs(o.kap) + ' míst. Běžná hodnota je ' + cs(o.medP,2)
+          + '×. <b>Toto číslo konkurenci nadsazuje</b>: každý uchazeč podává až tři přihlášky a část z nich jsou pojistky.',
+        pct:o.pctP, n:o.n, skupina:o.skupina})
+      + fakt({nadpis:'Kolik uchazečů se nevešlo', hodnota:cs(o.pret), vyznam:pretVeta,
+        zdroj:cs(o.jinam) + ' uchazečů, kteří by se sem dostali, nastoupilo na obor, který měli na přihlášce výš.'})
+      + (o.nesplnil / o.prih >= 0.2
+        ? fakt({nadpis:'Kolik uchazečů nesplnilo podmínky', hodnota:cs(o.nesplnil),
+            vyznam:'To je ' + cs(o.nesplnil / o.prih * 100) + ' % všech přihlášených. '
+              + 'Tak velký podíl znamená, že škola má vlastní požadavky nad rámec jednotné zkoušky. '
+              + '<b>Přečtěte si kritéria školy dřív, než podáte přihlášku.</b>'})
+        : '')
+      + '<div class="gap"><h3>Kolik bodů bylo potřeba, nevíme</h3>'
+      + '<p>CERMAT nezveřejňuje, kolik bodů měl poslední přijatý, a z průměru se to spočítat nedá. Kritéria pro rok 2027 zveřejňuje škola na svém webu.</p></div>';
+
+    // ---- Jaké tu budou nároky?
+    var v2 = o.pctM >= 90 ? 'Spolužáci sem přicházejí s velmi dobrými výsledky, tempo bude rychlé.'
+           : o.pctM >= 70 ? 'Spolužáci sem přicházejí s nadprůměrnými výsledky.'
+           : 'Spolužáci sem přicházejí s výsledky kolem běžné úrovně.';
+    document.getElementById('verdikt2').textContent = v2;
+    document.getElementById('lede2').textContent =
+      'O nárocích studia vypovídá nejvíc to, jak si vedou maturanti. Ta data zatím nemáme, takže zde stojí výsledky přijatých v přijímací zkoušce.';
+
+    document.getElementById('blok2').innerHTML =
+      fakt({nadpis:'Průměr přijatých v přijímací zkoušce', hodnota:cs(o.prumer,1)+' ze 100',
+        vyznam:'Přijatí měli v testech průměr ' + cs(o.prumer,1) + ' bodu ze 100, zatímco běžná hodnota mezi '
+          + o.skupina + ' je ' + cs(o.medM,1) + '. Napoví to, s jakými spolužáky se tu potkáte.',
+        pct:o.pctM, n:o.n, skupina:o.skupina, teple:true,
+        zdroj:'Čeština ' + cs(o.cj,1) + ' z 50, matematika ' + cs(o.ma,1) + ' z 50. Není to hranice přijetí.'})
+      + '<div class="gap"><h3>Maturitní výsledky zatím nemáme</h3>'
+      + '<p>CERMAT je zveřejňuje za školu a skupinu oborů. Import zatím neproběhl. Až bude hotový, ukážeme úspěšnost u maturity a průměrný výsledek, protože o náročnosti studia vypovídají víc než přijímačky.</p></div>';
+
+    // ---- Jaká je to škola? (nezávisí na oboru)
+    document.getElementById('verdikt3').textContent = SHRNUTI;
+
+    document.getElementById('blok3').innerHTML =
+      '<div class="two">'
+      + '<div class="panel plus"><h3>Co inspekce chválí</h3><ul>'
+      + SILNE.map(function(s){ return '<li><b>'+esc(s.t)+'</b><span>'+esc(s.d)+'</span></li>'; }).join('')
+      + '</ul></div>'
+      + '<div class="panel minus"><h3>Co inspekce vytýká</h3><ul>'
+      + RIZIKA.map(function(s){ return '<li><b>'+esc(s.t)+'</b><span>'+esc(s.d)+'</span></li>'; }).join('')
+      + '</ul></div></div>'
+      + '<div class="ask"><h3>Na co se zeptat na dni otevřených dveří</h3><ol>'
+      + OTAZKY.map(function(q){ return '<li>'+esc(q)+'</li>'; }).join('')
+      + '</ol></div>'
+      + '<div class="fact" style="margin-top:12px"><table>'
+      + '<caption>Jak se obory školy liší</caption>'
+      + '<thead><tr><th>Obor</th><th class="n">Míst</th><th class="n">Na místo (1. volby)</th><th class="n">Průměr přijatých</th></tr></thead><tbody>'
+      + OBORY.map(function(x){ return '<tr><td>'+esc(x.nadpis)+'</td><td class="n">'+cs(x.kap)
+          +'</td><td class="n">'+cs(x.tlak,2)+'×</td><td class="n">'+cs(x.prumer,1)+'</td></tr>'; }).join('')
+      + '</tbody></table>'
+      + '<p class="src">Obory téže školy se liší sedminásobně, proto neuvádíme jedno číslo za celou školu.</p></div>';
+  }
+
+  var tabs = document.getElementById('tabs');
+  tabs.innerHTML = OBORY.map(function(o,i){
+    return '<button class="tab" type="button" id="tab-'+o.id+'" aria-pressed="'+(i===0)+'">'
+      + '<span>'+esc(o.nadpis)+'</span><small>'+esc(o.vstup)+' · '+o.kap+' míst · '+esc(narocnost(o.pctT))+'</small></button>';
+  }).join('');
+  OBORY.forEach(function(o){
+    document.getElementById('tab-'+o.id).addEventListener('click', function(){
+      OBORY.forEach(function(x){
+        document.getElementById('tab-'+x.id).setAttribute('aria-pressed', String(x.id===o.id));
+      });
+      render(o);
+    });
+  });
+  render(OBORY[0]);
+})();
+</script>
