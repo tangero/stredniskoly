@@ -66,7 +66,8 @@ test('chybějící rozpad předmětů se zobrazí pomlčkou a vysvětlí, ne jak
 
 test('bez zadaných bodů tabulka neuvádí odstup ani stav', () => {
   const html = render([offer()], { czech: null, maths: null });
-  assert.match(html, /Průměr není ověřen/);
+  assert.match(html, /Zadej své body/);
+  assert.doesNotMatch(html, /Průměr není ověřen|nepodařilo jednoznačně přiřadit/);
   assert.match(html, /80,8/);
   assert.doesNotMatch(html, /Nad průměrem přijatých|Pod průměrem přijatých/);
 });
@@ -96,4 +97,12 @@ test('tabulka nikde neslibuje přijetí ani pravděpodobnost', () => {
 test('prázdný výsledek poradí, co změnit, místo prázdné tabulky', () => {
   const html = render([], { czech: 38, maths: 34 });
   assert.match(html, /není žádný obor/);
+});
+
+test('chybějící historický průměr se odlišuje od nezadaných vlastních bodů', () => {
+  const html = render([offer({ acceptedTotal: null })], { czech: 38, maths: 34 });
+  assert.match(html, /Průměr není ověřen/);
+  assert.doesNotMatch(html, /Zadej své body/);
+  assert.match(html, /Srovnání s přijatými/);
+  assert.doesNotMatch(html, />Šance</);
 });

@@ -51,10 +51,10 @@ function totalScore(own: OwnScore): number | null {
   return own.czech === null || own.maths === null ? null : own.czech + own.maths;
 }
 
-function Standing({ gap }: { gap: AdmissionGap }) {
+function Standing({ gap, needsOwnScore }: { gap: AdmissionGap; needsOwnScore: boolean }) {
   return (
     <span className={`inline-flex items-center rounded-md px-2 py-1 text-xs font-semibold ring-1 ring-inset ${STANDING_STYLE[gap.standing]}`}>
-      {STANDING_LABEL[gap.standing]}
+      {needsOwnScore ? 'Zadej své body' : STANDING_LABEL[gap.standing]}
     </span>
   );
 }
@@ -98,7 +98,7 @@ export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Pr
     };
   });
 
-  const withoutSubjects = rows.filter(row => row.czech.standing === 'unknown' || row.maths.standing === 'unknown').length;
+  const withoutSubjects = offers.filter(offer => offer.acceptedCzech === null || offer.acceptedMaths === null).length;
 
   if (!rows.length) {
     return (
@@ -122,7 +122,7 @@ export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Pr
               </div>
               <SaveButton saved={saved} offer={offer} onToggle={() => onToggleSave(offer.id)} />
             </div>
-            <div className="mt-3"><Standing gap={total} /></div>
+            <div className="mt-3"><Standing gap={total} needsOwnScore={mine === null && offer.acceptedTotal !== null} /></div>
             {imbalance && <p className="mt-2 text-sm text-slate-600">{imbalance}</p>}
             <dl className="mt-3 grid grid-cols-3 gap-3 border-t border-slate-200 pt-3 text-sm">
               {([['Celkem', offer.acceptedTotal, total, '100'], ['Čeština', offer.acceptedCzech, czech, '50'], ['Matematika', offer.acceptedMaths, maths, '50']] as const).map(([label, accepted, gap, max]) => (
@@ -148,7 +148,7 @@ export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Pr
             <tr className="border-b border-slate-200 bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-600">
               <th scope="col" rowSpan={2} className="px-3 py-2 font-semibold">Uložit</th>
               <th scope="col" rowSpan={2} className="px-3 py-2 font-semibold">Škola a obor</th>
-              <th scope="col" rowSpan={2} className="px-3 py-2 font-semibold">Šance</th>
+              <th scope="col" rowSpan={2} className="px-3 py-2 font-semibold">Srovnání s přijatými</th>
               <th scope="col" colSpan={2} className="border-l border-slate-200 px-3 py-2 text-center font-semibold">Celkem ze 100</th>
               <th scope="col" colSpan={2} className="border-l border-slate-200 bg-violet-50/60 px-3 py-2 text-center font-semibold">Čeština z 50</th>
               <th scope="col" colSpan={2} className="border-l border-slate-200 bg-teal-50/60 px-3 py-2 text-center font-semibold">Matematika z 50</th>
@@ -173,7 +173,7 @@ export function OfferComparisonTable({ offers, own, savedIds, onToggleSave }: Pr
                   <span className="mt-0.5 block text-xs text-slate-500">{offer.program} · {offer.place}</span>
                 </td>
                 <td className="px-3 py-3">
-                  <Standing gap={total} />
+                  <Standing gap={total} needsOwnScore={mine === null && offer.acceptedTotal !== null} />
                   {imbalance && <span className="mt-1 block text-xs text-slate-600">{imbalance}</span>}
                 </td>
                 <td className="border-l border-slate-200 px-3 py-3 text-right font-semibold tabular-nums text-slate-900">{number(offer.acceptedTotal)}</td>
